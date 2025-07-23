@@ -75,7 +75,8 @@ const response = await this.callCursorAPI(prompt)
 const analysis = this.parseCodeQualityResponse(response);
     
     this.lastAnalysis = {
-      type: 'codeQuality','      data: analysis,
+      type: 'codeQuality',
+      data: analysis,
       timestamp: new Date().toISOString()
     };
     
@@ -89,13 +90,14 @@ const analysis = this.parseCodeQualityResponse(response);
    */
   async analyzePerformance() {
     console.log('⚡ Analyzing performance with Cursor AI...');
-const performanceData = await this.collectPerformanceData()
-const prompt = this.buildPerformancePrompt(performanceData)
-const response = await this.callCursorAPI(prompt)
+const performanceData = await this.collectPerformanceData();
+const prompt = this.buildPerformancePrompt(performanceData);
+const response = await this.callCursorAPI(prompt);
 const analysis = this.parsePerformanceResponse(response);
     
     this.lastAnalysis = {
-      type: 'performance','      data: analysis,
+      type: 'performance',
+      data: analysis,
       timestamp: new Date().toISOString()
     };
     
@@ -109,13 +111,14 @@ const analysis = this.parsePerformanceResponse(response);
    */
   async analyzeSecurity() {
     console.log('🔒 Analyzing security with Cursor AI...');
-const securityData = await this.collectSecurityData()
-const prompt = this.buildSecurityPrompt(securityData)
-const response = await this.callCursorAPI(prompt)
+const securityData = await this.collectSecurityData();
+const prompt = this.buildSecurityPrompt(securityData);
+const response = await this.callCursorAPI(prompt);
 const analysis = this.parseSecurityResponse(response);
     
     this.lastAnalysis = {
-      type: 'security','      data: analysis,
+      type: 'security',
+      data: analysis,
       timestamp: new Date().toISOString()
     };
     
@@ -128,9 +131,9 @@ const analysis = this.parseSecurityResponse(response);
    * Get improvement suggestions
    */
   async getImprovementSuggestions(analysis) {
-    console.log('💡 Getting improvement suggestions from Cursor AI...')
-const prompt = this.buildImprovementPrompt(analysis)
-const response = await this.callCursorAPI(prompt);
+    console.log('💡 Getting improvement suggestions from Cursor AI...');
+    const prompt = this.buildImprovementPrompt(analysis);
+    const response = await this.callCursorAPI(prompt);
     
     return this.parseImprovementResponse(response);
   }
@@ -139,8 +142,8 @@ const response = await this.callCursorAPI(prompt);
    * Apply code improvements
    */
   async applyCodeImprovements(suggestions) {
-    console.log('🔧 Applying code improvements with Cursor AI...')
-const results = [];
+    console.log('🔧 Applying code improvements with Cursor AI...');
+    const results = [];
     
     for (const suggestion of suggestions) {
       try {
@@ -149,7 +152,8 @@ const results = [];
       } catch (error) {
         results.push({
           suggestion,
-          status: 'failed','          error: error.message
+          status: 'failed',
+          error: error.message
         });
       }
     }
@@ -161,14 +165,15 @@ const results = [];
    * Get target files for analysis
    */
   async getTargetFiles() {
-    const extensions = ['.ts', '.tsx', '.js', '.jsx'];'    const excludeDirs = ['node_modules', '.next', 'dist', 'build', 'coverage'];'    
-    const files = []
+    const extensions = ['.ts', '.tsx', '.js', '.jsx'];
+    const excludeDirs = ['node_modules', '.next', 'dist', 'build', 'coverage'];
+    const files = [];
 const walkDir = (dir) => {
       const items = fs.readdirSync(dir);
       
       for (const item of items) {
-        const fullPath = path.join(dir, item)
-const stat = fs.statSync(fullPath);
+        const fullPath = path.join(dir, item);
+        const stat = fs.statSync(fullPath);
         
         if (stat.isDirectory()) {
           if (!excludeDirs.includes(item)) {
@@ -205,7 +210,8 @@ const stats = fs.statSync(file);
         data.files.push({
           path: file,
           size: stats.size,
-          lines: content.split('\n').length,'          lastModified: stats.mtime.toISOString()
+          lines: content.split('\n').length,
+          lastModified: stats.mtime.toISOString()
         });
       } catch (error) {
         console.warn(`Warning: Could not read file ${file}: ${error.message}`);
@@ -214,7 +220,9 @@ const stats = fs.statSync(file);
     
     // Run linting
     try {
-      const lintOutput = execSync('npm run lint -- --format json', { '        stdio: 'pipe','        cwd: this.config.projectPath 
+      const lintOutput = execSync('npm run lint -- --format json', {
+        stdio: 'pipe',
+        cwd: this.config.projectPath
       }).toString();
       data.lintResults = JSON.parse(lintOutput);
     } catch (error) {
@@ -223,15 +231,20 @@ const stats = fs.statSync(file);
     
     // Run tests
     try {
-      const testOutput = execSync('npm run test -- --json --outputFile=test-results.json', { '        stdio: 'pipe','        cwd: this.config.projectPath 
+      const testOutput = execSync('npm run test -- --json --outputFile=test-results.json', {
+        stdio: 'pipe',
+        cwd: this.config.projectPath
       }).toString();
-      data.testResults = JSON.parse(fs.readFileSync('test-results.json', 'utf8'));'    } catch (error) {
+      data.testResults = JSON.parse(fs.readFileSync('test-results.json', 'utf8'));
+    } catch (error) {
       data.testResults = { success: false, error: error.message };
     }
     
     // Analyze bundle
     try {
-      const bundleOutput = execSync('npm run bundle:analyze', { '        stdio: 'pipe','        cwd: this.config.projectPath 
+      const bundleOutput = execSync('npm run bundle:analyze', {
+        stdio: 'pipe',
+        cwd: this.config.projectPath
       }).toString();
       data.bundleAnalysis = this.parseBundleAnalysis(bundleOutput);
     } catch (error) {
@@ -256,14 +269,17 @@ const stats = fs.statSync(file);
     // Measure build time
     try {
       const startTime = Date.now();
-      execSync('npm run build', { stdio: 'pipe', cwd: this.config.projectPath });'      data.buildTime = Date.now() - startTime;
+      execSync('npm run build', { stdio: 'pipe', cwd: this.config.projectPath });
+      data.buildTime = Date.now() - startTime;
     } catch (error) {
       data.buildTime = { error: error.message };
     }
     
     // Get bundle size
     try {
-      const bundleOutput = execSync('npm run bundle:report', { '        stdio: 'pipe','        cwd: this.config.projectPath 
+      const bundleOutput = execSync('npm run bundle:report', {
+        stdio: 'pipe',
+        cwd: this.config.projectPath
       }).toString();
       data.bundleSize = this.parseBundleSize(bundleOutput);
     } catch (error) {
@@ -289,7 +305,9 @@ const stats = fs.statSync(file);
     
     // Check for vulnerabilities
     try {
-      const auditOutput = execSync('npm audit --json', { '        stdio: 'pipe','        cwd: this.config.projectPath 
+      const auditOutput = execSync('npm audit --json', {
+        stdio: 'pipe',
+        cwd: this.config.projectPath
       }).toString();
       data.vulnerabilities = JSON.parse(auditOutput);
     } catch (error) {
@@ -298,10 +316,12 @@ const stats = fs.statSync(file);
     
     // Get dependency information
     try {
-      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));'      data.dependencies = {
+      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+      data.dependencies = {
         total: Object.keys(packageJson.dependencies || {}).length,
         devDependencies: Object.keys(packageJson.devDependencies || {}).length,
-        outdated: JSON.parse(execSync('npm outdated --json', { stdio: 'pipe' }).toString() || '{}')'      };
+        outdated: JSON.parse(execSync('npm outdated --json', { stdio: 'pipe' }).toString() || '{}')
+      };
     } catch (error) {
       data.dependencies = { error: error.message };
     }
@@ -339,7 +359,8 @@ Please provide:
 6. Specific code examples for improvements
 
 Focus on practical, implementable improvements that will have the most impact on code quality and maintainability.`,
-      context: 'code-quality-analysis','      maxTokens: 3000
+      context: 'code-quality-analysis',
+      maxTokens: 3000
     };
   }
 
@@ -370,7 +391,8 @@ Please provide:
 7. Specific implementation suggestions
 
 Focus on measurable performance improvements that will enhance user experience.`,
-      context: 'performance-analysis','      maxTokens: 3000
+      context: 'performance-analysis',
+      maxTokens: 3000
     };
   }
 
@@ -398,7 +420,8 @@ Please provide:
 7. Specific security fixes with code examples
 
 Focus on security improvements that will protect user data and prevent security breaches.`,
-      context: 'security-analysis','      maxTokens: 3000
+      context: 'security-analysis',
+      maxTokens: 3000
     };
   }
 
@@ -428,7 +451,8 @@ For each suggestion, include:
 - Priority level (critical, high, medium, low)
 
 Focus on improvements that can be implemented immediately and will have the most positive impact.`,
-      context: 'improvement-suggestions','      maxTokens: 4000
+      context: 'improvement-suggestions',
+      maxTokens: 4000
     };
   }
 
@@ -441,20 +465,32 @@ Focus on improvements that can be implemented immediately and will have the most
 const options = {
         hostname: new URL(this.config.apiEndpoint).hostname,
         port: 443,
-        path: '/api/analyze','        method: 'POST','        headers: {
-          'Content-Type': 'application/json','          'Authorization': `Bearer ${this.config.apiKey}`,'          'Content-Length': Buffer.byteLength(postData)'        },
+        path: '/api/analyze',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.config.apiKey}`,
+          'Content-Length': Buffer.byteLength(postData)
+        },
         timeout: this.config.timeout
       }
 const req = https.request(options, (res) => {
-        let data = '';'        res.on('data', (chunk) => data += chunk);'        res.on('end', () => {'          try {
+        let data = '';
+        res.on('data', (chunk) => data += chunk);
+        res.on('end', () => {
+          try {
             resolve(JSON.parse(data));
           } catch (error) {
-            reject(new Error('Invalid JSON response from Cursor API'));'          }
+            reject(new Error('Invalid JSON response from Cursor API'));
+          }
         });
       });
 
-      req.on('error', reject);      req.on('timeout', () => {'        req.destroy();
-        reject(new Error('Request timeout'));'      });
+      req.on('error', reject);
+      req.on('timeout', () => {
+        req.destroy();
+        reject(new Error('Request timeout'));
+      });
 
       req.write(postData);
       req.end();
@@ -470,15 +506,18 @@ const req = https.request(options, (res) => {
         issues: response.issues || [],
         recommendations: response.recommendations || [],
         metrics: response.metrics || {},
-        priority: response.priority || 'medium','        confidence: response.confidence || 0.8
+        priority: response.priority || 'medium',
+        confidence: response.confidence || 0.8
       };
     } catch (error) {
       return {
         issues: [],
         recommendations: [],
         metrics: {},
-        priority: 'medium','        confidence: 0.5,
-        error: 'Failed to parse response'      };
+        priority: 'medium',
+        confidence: 0.5,
+        error: 'Failed to parse response'
+      };
     }
   }
 
@@ -491,15 +530,18 @@ const req = https.request(options, (res) => {
         optimizations: response.optimizations || [],
         bottlenecks: response.bottlenecks || [],
         metrics: response.metrics || {},
-        priority: response.priority || 'medium','        confidence: response.confidence || 0.8
+        priority: response.priority || 'medium',
+        confidence: response.confidence || 0.8
       };
     } catch (error) {
       return {
         optimizations: [],
         bottlenecks: [],
         metrics: {},
-        priority: 'medium','        confidence: 0.5,
-        error: 'Failed to parse response'      };
+        priority: 'medium',
+        confidence: 0.5,
+        error: 'Failed to parse response'
+      };
     }
   }
 
@@ -511,14 +553,19 @@ const req = https.request(options, (res) => {
       return {
         vulnerabilities: response.vulnerabilities || [],
         recommendations: response.recommendations || [],
-        riskLevel: response.riskLevel || 'medium','        priority: response.priority || 'high','        confidence: response.confidence || 0.9
+        riskLevel: response.riskLevel || 'medium',
+        priority: response.priority || 'high',
+        confidence: response.confidence || 0.9
       };
     } catch (error) {
       return {
         vulnerabilities: [],
         recommendations: [],
-        riskLevel: 'medium','        priority: 'high','        confidence: 0.5,
-        error: 'Failed to parse response'      };
+        riskLevel: 'medium',
+        priority: 'high',
+        confidence: 0.5,
+        error: 'Failed to parse response'
+      };
     }
   }
 
@@ -529,14 +576,16 @@ const req = https.request(options, (res) => {
     try {
       return {
         suggestions: response.suggestions || [],
-        priority: response.priority || 'medium','        implementation: response.implementation || {},
+        priority: response.priority || 'medium',
+        implementation: response.implementation || {},
         testing: response.testing || [],
         risks: response.risks || []
       };
     } catch (error) {
       return {
         suggestions: [],
-        priority: 'medium','        implementation: {},
+        priority: 'medium',
+        implementation: {},
         testing: [],
         risks: [],
         error: 'Failed to parse response'      };
@@ -562,9 +611,10 @@ Please provide the exact code changes needed, including:
 5. Any additional files to create
 
 Make sure the changes are safe and maintain the existing functionality.`,
-        context: 'code-application','        maxTokens: 2000
-      }
-const response = await this.callCursorAPI(prompt)
+        context: 'code-application',
+        maxTokens: 2000
+      };
+      const response = await this.callCursorAPI(prompt);
 const changes = this.parseCodeChanges(response);
       
       // Apply the changes
@@ -572,13 +622,15 @@ const changes = this.parseCodeChanges(response);
       
       return {
         suggestion,
-        status: 'completed','        changes: results,
+        status: 'completed',
+        changes: results,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
         suggestion,
-        status: 'failed','        error: error.message
+        status: 'failed',
+        error: error.message
       };
     }
   }
@@ -602,17 +654,21 @@ const changes = this.parseCodeChanges(response);
     
     for (const change of changes) {
       try {
-        if (change.type === 'modify') {          const result = await this.modifyFile(change.file, change.changes);
+        if (change.type === 'modify') {
+          const result = await this.modifyFile(change.file, change.changes);
           results.push(result);
-        } else if (change.type === 'create') {          const result = await this.createFile(change.file, change.content);
+        } else if (change.type === 'create') {
+          const result = await this.createFile(change.file, change.content);
           results.push(result);
-        } else if (change.type === 'delete') {          const result = await this.deleteFile(change.file);
+        } else if (change.type === 'delete') {
+          const result = await this.deleteFile(change.file);
           results.push(result);
         }
       } catch (error) {
         results.push({
           change,
-          status: 'failed','          error: error.message
+          status: 'failed',
+          error: error.message
         });
       }
     }
@@ -640,7 +696,8 @@ const changes = this.parseCodeChanges(response);
       
       return {
         file: filePath,
-        status: 'modified','        timestamp: new Date().toISOString()
+        status: 'modified',
+        timestamp: new Date().toISOString()
       };
     } catch (error) {
       throw new Error(`Failed to modify file ${filePath}: ${error.message}`);
@@ -652,8 +709,8 @@ const changes = this.parseCodeChanges(response);
    */
   async createFile(filePath, content) {
     try {
-      const fullPath = path.resolve(filePath)
-const dir = path.dirname(fullPath);
+      const fullPath = path.resolve(filePath);
+      const dir = path.dirname(fullPath);
       
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
@@ -663,7 +720,8 @@ const dir = path.dirname(fullPath);
       
       return {
         file: filePath,
-        status: 'created','        timestamp: new Date().toISOString()
+        status: 'created',
+        timestamp: new Date().toISOString()
       };
     } catch (error) {
       throw new Error(`Failed to create file ${filePath}: ${error.message}`);
@@ -680,7 +738,8 @@ const dir = path.dirname(fullPath);
       
       return {
         file: filePath,
-        status: 'deleted','        timestamp: new Date().toISOString()
+        status: 'deleted',
+        timestamp: new Date().toISOString()
       };
     } catch (error) {
       throw new Error(`Failed to delete file ${filePath}: ${error.message}`);
@@ -697,7 +756,11 @@ const dir = path.dirname(fullPath);
 const bundleInfo = {};
       
       for (const line of lines) {
-        if (line.includes('Bundle size:')) {'          bundleInfo.size = line.split(':')[1].trim();'        } else if (line.includes('Chunks:')) {'          bundleInfo.chunks = parseInt(line.split(':')[1].trim());'        }
+        if (line.includes('Bundle size:')) {
+          bundleInfo.size = line.split(':')[1].trim();
+        } else if (line.includes('Chunks:')) {
+          bundleInfo.chunks = parseInt(line.split(':')[1].trim());
+        }
       }
       
       return bundleInfo;
@@ -716,7 +779,13 @@ const bundleInfo = {};
 const sizeInfo = {};
       
       for (const line of lines) {
-        if (line.includes('Total size:')) {'          sizeInfo.total = line.split(':')[1].trim();'        } else if (line.includes('JavaScript:')) {'          sizeInfo.javascript = line.split(':')[1].trim();'        } else if (line.includes('CSS:')) {'          sizeInfo.css = line.split(':')[1].trim();'        }
+        if (line.includes('Total size:')) {
+          sizeInfo.total = line.split(':')[1].trim();
+        } else if (line.includes('JavaScript:')) {
+          sizeInfo.javascript = line.split(':')[1].trim();
+        } else if (line.includes('CSS:')) {
+          sizeInfo.css = line.split(':')[1].trim();
+        }
       }
       
       return sizeInfo;

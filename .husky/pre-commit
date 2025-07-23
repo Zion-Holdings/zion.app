@@ -1,3 +1,64 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-npx lint-staged
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🚀 Autonomous Pre-commit System Starting..."
+
+# Set environment variables for autonomous operation
+export AUTONOMOUS_MODE=true
+export HUSKY_AUTOMATION=true
+export AUTO_FIX_ENABLED=true
+
+# Run comprehensive pre-commit checks
+echo "📋 Running comprehensive pre-commit checks..."
+
+# 1. Lint and auto-fix
+echo "🔍 Linting and auto-fixing..."
+npm run lint || {
+    echo "⚠️  Linting issues found, attempting auto-fix..."
+    npm run lint -- --fix || {
+        echo "❌ Linting failed and could not be auto-fixed"
+        exit 1
+    }
+}
+
+# 2. Type checking
+echo "🔍 Type checking..."
+npm run type-check || {
+    echo "❌ Type checking failed"
+    exit 1
+}
+
+# 3. Format code
+echo "🎨 Formatting code..."
+npm run format || {
+    echo "❌ Code formatting failed"
+    exit 1
+}
+
+# 4. Run tests
+echo "🧪 Running tests..."
+npm test || {
+    echo "❌ Tests failed"
+    exit 1
+}
+
+# 5. Check for security vulnerabilities
+echo "🔒 Security check..."
+npm audit --audit-level=moderate || {
+    echo "⚠️  Security vulnerabilities found, but continuing..."
+}
+
+# 6. Build check
+echo "🏗️  Build check..."
+npm run build || {
+    echo "❌ Build failed"
+    exit 1
+}
+
+# 7. Autonomous improvements
+echo "🤖 Running autonomous improvements..."
+node automation/enhanced-automation-system.js pre-commit || {
+    echo "⚠️  Autonomous improvements failed, but continuing..."
+}
+
+echo "✅ Pre-commit checks completed successfully!"

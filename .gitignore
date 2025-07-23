@@ -66,3 +66,12 @@ yarn.lock
 # Media kit zip
 public/toolkit_assets/media_kit.zip
 __pycache__/
+
+# Automation files
+automation/logs/*.log
+automation/temp/*
+automation/reports/*.json
+automation/data/commit-metadata.json
+.autonomous-status.json
+auto_commit.log
+.auto_commit_status

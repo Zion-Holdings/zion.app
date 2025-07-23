@@ -13,14 +13,14 @@
  * - Security scanning and fixes
  * - Code quality enhancement
  */
-const fs = require('fs')
-const path = require('path')
-const { execSync, spawn } = require('child_process')
-const https = require('https')
-const http = require('http')
+const fs = require('fs');
+const path = require('path');
+const { execSync, spawn } = require('child_process');
+const https = require('https');
+const http = require('http');
 // Import AI modules
-const AIOptimizer = require('./ai-optimizer')
-const CursorIntegration = require('./cursor-integration')
+const AIOptimizer = require('./ai-optimizer');
+const CursorIntegration = require('./cursor-integration');
 class EnhancedAutomation {
   constructor() {
     this.config = {

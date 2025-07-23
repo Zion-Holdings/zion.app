@@ -35,13 +35,15 @@ const CONFIG = {
   
   // Cursor AI integration
   CURSOR: {
-    API_ENDPOINT: process.env.CURSOR_API_ENDPOINT || 'https://api.cursor.sh','    API_KEY: process.env.CURSOR_API_KEY,
+    API_ENDPOINT: process.env.CURSOR_API_ENDPOINT || 'https://api.cursor.sh',
+    API_KEY: process.env.CURSOR_API_KEY,
     WORKSPACE_ID: process.env.CURSOR_WORKSPACE_ID,
   },
   
   // Monitoring endpoints
   MONITORING: {
-    LIGHTHOUSE_URL: process.env.LIGHTHOUSE_URL || 'http://localhost:3000','    ERROR_TRACKING_URL: process.env.ERROR_TRACKING_URL,
+    LIGHTHOUSE_URL: process.env.LIGHTHOUSE_URL || 'http://localhost:3000',
+    ERROR_TRACKING_URL: process.env.ERROR_TRACKING_URL,
     ANALYTICS_URL: process.env.ANALYTICS_URL,
   }
 }
@@ -59,8 +61,9 @@ class ContinuousImprovementSystem {
   async initialize() {
     console.log('🚀 Initializing Zion App Continuous Improvement System...');    
     // Validate configuration
-    this.validateConfig()
-// Setup monitoring
+    this.validateConfig();
+    
+    // Setup monitoring
     await this.setupMonitoring();
     
     // Start the improvement loop
@@ -73,11 +76,16 @@ class ContinuousImprovementSystem {
    */
   validateConfig() {
     const requiredEnvVars = [
-      'CURSOR_API_KEY','      'CURSOR_WORKSPACE_ID''    ]
-const missing = requiredEnvVars.filter(varName => !process.env[varName]);
+      'CURSOR_API_KEY',
+      'CURSOR_WORKSPACE_ID'
+    ];
+    
+    const missing = requiredEnvVars.filter(varName => !process.env[varName]);
     
     if (missing.length > 0) {
-      console.warn(`⚠️  Missing environment variables: ${missing.join(', ')}`);'      console.warn('Some features may be limited without proper configuration');    }
+      console.warn(`⚠️  Missing environment variables: ${missing.join(', ')}`);
+      console.warn('Some features may be limited without proper configuration');
+    }
   }
 
   /**
@@ -85,31 +93,36 @@ const missing = requiredEnvVars.filter(varName => !process.env[varName]);
    */
   async setupMonitoring() {
     // Code quality monitoring
-    this.monitors.set('codeQuality', {'      interval: CONFIG.INTERVALS.CODE_QUALITY,
+    this.monitors.set('codeQuality', {
+      interval: CONFIG.INTERVALS.CODE_QUALITY,
       lastRun: 0,
       handler: () => this.monitorCodeQuality()
     });
 
     // Performance monitoring
-    this.monitors.set('performance', {'      interval: CONFIG.INTERVALS.PERFORMANCE,
+    this.monitors.set('performance', {
+      interval: CONFIG.INTERVALS.PERFORMANCE,
       lastRun: 0,
       handler: () => this.monitorPerformance()
     });
 
     // Security monitoring
-    this.monitors.set('security', {'      interval: CONFIG.INTERVALS.SECURITY,
+    this.monitors.set('security', {
+      interval: CONFIG.INTERVALS.SECURITY,
       lastRun: 0,
       handler: () => this.monitorSecurity()
     });
 
     // User experience monitoring
-    this.monitors.set('userExperience', {'      interval: CONFIG.INTERVALS.USER_EXPERIENCE,
+    this.monitors.set('userExperience', {
+      interval: CONFIG.INTERVALS.USER_EXPERIENCE,
       lastRun: 0,
       handler: () => this.monitorUserExperience()
     });
 
     // Dependencies monitoring
-    this.monitors.set('dependencies', {'      interval: CONFIG.INTERVALS.DEPENDENCIES,
+    this.monitors.set('dependencies', {
+      interval: CONFIG.INTERVALS.DEPENDENCIES,
       lastRun: 0,
       handler: () => this.monitorDependencies()
     });
@@ -119,8 +132,9 @@ const missing = requiredEnvVars.filter(varName => !process.env[varName]);
    * Start the main improvement loop
    */
   startImprovementLoop() {
-    this.isRunning = true
-const loop = () => {
+    this.isRunning = true;
+    
+    const loop = () => {
       if (!this.isRunning) return
 const now = Date.now();
       

@@ -1,105 +1,33 @@
 {
-  "autonomous": {
-    "enabled": true,
-    "selfHealing": true,
-    "learning": true,
-    "adaptiveScheduling": true
+  "autonomousMode": true,
+  "autoFixEnabled": true,
+  "autoCommitEnabled": true,
+  "autoPushEnabled": true,
+  "maxRetries": 3,
+  "logLevel": "info",
+  "performance": {
+    "bundleSizeThreshold": 5242880,
+    "buildTimeThreshold": 60000,
+    "testTimeThreshold": 30000
   },
-  "monitoring": {
-    "enabled": true,
-    "interval": 60000,
-    "healthCheckInterval": 300000
+  "security": {
+    "scanSensitiveData": true,
+    "blockOnHighSeverity": true,
+    "excludePatterns": [
+      "node_modules/**",
+      ".git/**",
+      ".next/**",
+      "dist/**",
+      "build/**"
+    ]
   },
-  "reporting": {
-    "enabled": true,
-    "daily": true,
-    "weekly": true,
-    "monthly": false
-  },
-  "dashboard": {
-    "enabled": true,
-    "port": 3001,
-    "auth": {
-      "enabled": false
-    }
-  },
-  "tasks": {
-    "dependencyUpdater": {
-      "enabled": true,
-      "interval": 86400000,
-      "dryRun": false,
-      "autoCreatePR": true,
-      "skipMajorUpdates": true,
-      "maxUpdates": 5
-    },
-    "securityScanner": {
-      "enabled": true,
-      "interval": 21600000,
-      "autoFix": true,
-      "alertThreshold": "high",
-      "scanPatterns": true,
-      "scanSecrets": true
-    },
-    "codeQualityEnforcer": {
-      "enabled": true,
-      "interval": 7200000,
-      "autoFix": true,
-      "createPR": true,
-      "tools": ["eslint", "prettier", "typescript"]
-    },
-    "staleCleaner": {
-      "enabled": true,
-      "interval": 43200000,
-      "staleBranchDays": 30,
-      "stalePRDays": 14,
-      "dryRun": false,
-      "autoDelete": false
-    }
-  },
-  "notifications": {
-    "slack": {
-      "enabled": true,
-      "channel": "#automation",
-      "username": "Automation Bot",
-      "iconEmoji": ":robot_face:"
-    },
-    "email": {
-      "enabled": false
-    },
-    "rateLimiting": {
-      "maxNotificationsPerMinute": 10,
-      "maxNotificationsPerHour": 50
-    }
-  },
-  "anomalyDetection": {
-    "enabled": true,
-    "metrics": {
-      "cpuLoad": {
-        "threshold": 0.8,
-        "sensitivity": 2.0
-      },
-      "memoryUsage": {
-        "threshold": 0.85,
-        "sensitivity": 1.5
-      },
-      "errorRate": {
-        "threshold": 0.3,
-        "sensitivity": 2.5
-      }
-    },
-    "learning": {
-      "enabled": true,
-      "baselineWindow": 86400000,
-      "minDataPoints": 50
-    }
-  },
-  "scheduling": {
-    "adaptiveFactors": {
-      "errorRateThreshold": 0.3,
-      "loadThreshold": 0.8,
-      "successRateThreshold": 0.9,
-      "minIntervalMultiplier": 0.5,
-      "maxIntervalMultiplier": 3.0
+  "commit": {
+    "messageTemplate": "🤖 Autonomous improvement: {description}",
+    "maxFilesPerCommit": 10,
+    "minChangesForCommit": 1,
+    "branchProtection": {
+      "main": true,
+      "develop": true
     }
   }
-} 
+}

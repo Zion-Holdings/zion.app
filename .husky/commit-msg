@@ -1,0 +1,49 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🚀 Autonomous Commit Message System Starting..."
+
+# Set environment variables for autonomous operation
+export AUTONOMOUS_MODE=true
+export HUSKY_AUTOMATION=true
+export COMMIT_MSG_MODE=true
+
+# Get the commit message file
+COMMIT_MSG_FILE="$1"
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+
+echo "💬 Processing commit message: $COMMIT_MSG"
+
+# Run autonomous commit message processing
+echo "🤖 Running autonomous commit message processing..."
+
+# 1. Validate commit message format
+echo "✅ Validating commit message format..."
+node automation/enhanced-automation-system.js validate-commit-message "$COMMIT_MSG" || {
+    echo "❌ Commit message validation failed"
+    exit 1
+}
+
+# 2. Enhance commit message if needed
+echo "✨ Enhancing commit message..."
+ENHANCED_MSG=$(node automation/enhanced-automation-system.js enhance-commit-message "$COMMIT_MSG") || {
+    echo "⚠️  Failed to enhance commit message, using original"
+    ENHANCED_MSG="$COMMIT_MSG"
+}
+
+# 3. Update commit message file if enhanced
+if [ "$ENHANCED_MSG" != "$COMMIT_MSG" ]; then
+    echo "📝 Updating commit message with enhanced version..."
+    echo "$ENHANCED_MSG" > "$COMMIT_MSG_FILE"
+    echo "✅ Commit message enhanced successfully!"
+else
+    echo "✅ Commit message is already optimal"
+fi
+
+# 4. Generate commit metadata
+echo "📊 Generating commit metadata..."
+node automation/enhanced-automation-system.js generate-commit-metadata "$COMMIT_MSG" || {
+    echo "⚠️  Failed to generate commit metadata"
+}
+
+echo "✅ Commit message processing completed successfully!"
