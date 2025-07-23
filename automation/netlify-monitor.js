@@ -35,7 +35,7 @@ class NetlifyBuildMonitor {
     const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
 
     console.log(logEntry);
-    fs.appendFileSync(this.config.logFile, logEntry + \n');
+    fs.appendFileSync(this.config.logFile, logEntry + '\n');
   }
 
   loadStatus() {
@@ -43,11 +43,11 @@ class NetlifyBuildMonitor {
       if (fs.existsSync(this.config.statusFile)) {
         this.status = {
           ...this.status,
-          ...JSON.parse(fs.readFileSync(this.config.statusFile, utf8'))
+          ...JSON.parse(fs.readFileSync(this.config.statusFile, 'utf8'))
         };
       }
     } catch (error) {
-      this.log(`Error loading status: ${error.message}`, error');
+      this.log(`Error loading status: ${error.message}`, 'error');
     }
   }
 
@@ -58,35 +58,35 @@ class NetlifyBuildMonitor {
         JSON.stringify(this.status, null, 2),
       );
     } catch (error) {
-      this.log(`Error saving status: ${error.message}`, error');
+      this.log(`Error saving status: ${error.message}`, 'error');
     }
   }
 
-  async makeNetlifyRequest(endpoint, method = GET';;, data = null) {
+  async makeNetlifyRequest(endpoint, method = 'GET', data = null) {
     return new Promise((resolve, reject) => {
       const options = {
-        hostname: api.netlify.com',
+        hostname: 'api.netlify.com',
         port: 443,
         path: `/api/v1${endpoint}`,
         method: method,
         headers: {
           Authorization: `Bearer ${this.config.netlifyToken}`,
-          Content-Type': application/json',
-          User-Agent': NetlifyBuildMonitor/1.0
+          'Content-Type': 'application/json',
+          'User-Agent': 'NetlifyBuildMonitor/1.0'
         }
       };
 
       if (data) {
-        const postData = JSON';.stringify(data);
-        options.headers['Content-Length'] = Buffer';.byteLength(postData);
+        const postData = JSON.stringify(data);
+        options.headers['Content-Length'] = Buffer.byteLength(postData);
       }
 
-      const req = https';.request(options, (res) => {
-        let body = ;
-        res.on('data', (chunk) => (body += chunk';));
+      const req = https.request(options, (res) => {
+        let body = '';
+        res.on('data', (chunk) => (body += chunk));
         res.on('end', () => {
           try {
-            const response = JSON';.parse(body);
+            const response = JSON.parse(body);
             resolve(response);
           } catch (error) {
             reject(new Error(`Invalid JSON response: ${body}`));
@@ -108,24 +108,24 @@ class NetlifyBuildMonitor {
 
   async getSiteBuilds() {
     try {
-      const builds = await'; this.makeNetlifyRequest(
+      const builds = await this.makeNetlifyRequest(
         `/sites/${this.config.netlifySiteId}/builds?per_page=10`,
       );
       return builds;
     } catch (error) {
-      this.log(`Error fetching builds: ${error.message}`, error');
+      this.log(`Error fetching builds: ${error.message}`, 'error');
       return [];
     }
   }
 
   async getBuildDetails(buildId) {
     try {
-      const build = await'; this.makeNetlifyRequest(
+      const build = await this.makeNetlifyRequest(
         `/sites/${this.config.netlifySiteId}/builds/${buildId}`,
       );
       return build;
     } catch (error) {
-      this.log(`Error fetching build details: ${error.message}`, error');
+      this.log(`Error fetching build details: ${error.message}`, 'error');
       return null;
     }
   }
@@ -133,9 +133,9 @@ class NetlifyBuildMonitor {
   async triggerBuild() {
     try {
       this.log('Triggering new Netlify build...')
-      const build = await'; this.makeNetlifyRequest(
+      const build = await this.makeNetlifyRequest(
         `/sites/${this.config.netlifySiteId}/builds`,
-        POST',
+        'POST',
         {
           clear_cache: true
         },
@@ -143,7 +143,7 @@ class NetlifyBuildMonitor {
       this.log(`Build triggered successfully: ${build.id}`);
       return build;
     } catch (error) {
-      this.log(`Error triggering build: ${error.message}`, error');
+      this.log(`Error triggering build: ${error.message}`, 'error');
       return null;
     }
   }
@@ -153,45 +153,45 @@ class NetlifyBuildMonitor {
 
     if (build.error_message) {
       errors.push({
-        type: build_error',
+        type: 'build_error',
         message: build.error_message,
-        severity: high
+        severity: 'high'
       });
     }
 
-    if (build.deploy_ssl_url && build.state === error';;) {
+    if (build.deploy_ssl_url && build.state === 'error') {
       errors.push({
-        type: deploy_error',
-        message: Build failed to deploy',
-        severity: high
+        type: 'deploy_error',
+        message: 'Build failed to deploy',
+        severity: 'high'
       });
     }
 
     // Analyze build logs for common patterns
     if (build.logs) {
-      const logText = JSON';.stringify(build.logs).toLowerCase();
+      const logText = JSON.stringify(build.logs).toLowerCase();
 
       if (logText.includes('out of memory')) {
         errors.push({
-          type: memory_error',
-          message: Build failed due to memory constraints',
-          severity: high
+          type: 'memory_error',
+          message: 'Build failed due to memory constraints',
+          severity: 'high'
         });
       }
 
       if (logText.includes('timeout')) {
         errors.push({
-          type: timeout_error',
-          message: Build timed out',
-          severity: medium
+          type: 'timeout_error',
+          message: 'Build timed out',
+          severity: 'medium'
         });
       }
 
       if (logText.includes('dependency') && logText.includes('error')) {
         errors.push({
-          type: dependency_error',
-          message: Dependency installation failed',
-          severity: medium
+          type: 'dependency_error',
+          message: 'Dependency installation failed',
+          severity: 'medium'
         });
       }
     }
@@ -204,19 +204,19 @@ class NetlifyBuildMonitor {
 
     try {
       switch (error.type) {
-        case memory_error':
+        case 'memory_error':
           return await this.fixMemoryError();
-        case timeout_error':
+        case 'timeout_error':
           return await this.fixTimeoutError();
-        case dependency_error':
+        case 'dependency_error':
           return await this.fixDependencyError();
-        case build_error':
+        case 'build_error':
           return await this.fixBuildError(error.message);
         default:
           return await this.fixGenericError(error);
       }
     } catch (fixError) {
-      this.log(`Error fixing ${error.type}: ${fixError.message}`, error');
+      this.log(`Error fixing ${error.type}: ${fixError.message}`, 'error');
       return false;
     }
   }
@@ -227,10 +227,10 @@ class NetlifyBuildMonitor {
     // Optimize build configuration
     const netlifyConfig = {
       build: {
-        command: npm run build',
-        publish: .next',
+        command: 'npm run build',
+        publish: '.next',
         environment: {
-          NODE_OPTIONS: --max-old-space-size=4096
+          NODE_OPTIONS: '--max-old-space-size=4096'
         }
       }
     };
@@ -238,9 +238,9 @@ class NetlifyBuildMonitor {
     fs.writeFileSync('netlify.toml', JSON.stringify(netlifyConfig, null, 2));
 
     // Update package.json build script
-    const packageJson = JSON';.parse(fs.readFileSync('package.json', utf8'));
+    const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
     packageJson.scripts.build =
-      NODE_OPTIONS="--max-old-space-size=4096" next build';
+      'NODE_OPTIONS="--max-old-space-size=4096" next build';
     fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));
 
     return true;
@@ -252,8 +252,8 @@ class NetlifyBuildMonitor {
     // Increase build timeout
     const netlifyConfig = {
       build: {
-        command: npm run build',
-        publish: .next
+        command: 'npm run build',
+        publish: '.next'
       },
       build_timeout: 1800, // 30 minutes
     };
@@ -268,15 +268,15 @@ class NetlifyBuildMonitor {
 
     try {
       // Clear cache and reinstall dependencies
-      execSync('rm -rf node_modules package-lock.json', { stdio: inherit' });
-      execSync('npm install', { stdio: inherit' });
+      execSync('rm -rf node_modules package-lock.json', { stdio: 'inherit' });
+      execSync('npm install', { stdio: 'inherit' });
 
       // Update package.json with latest compatible versions
-      execSync('npm audit fix', { stdio: inherit' });
+      execSync('npm audit fix', { stdio: 'inherit' });
 
       return true;
     } catch (error) {
-      this.log(`Dependency fix failed: ${error.message}`, error');
+      this.log(`Dependency fix failed: ${error.message}`, 'error');
       return false;
     }
   }
@@ -305,15 +305,15 @@ class NetlifyBuildMonitor {
 
     try {
       // Run type check and fix common issues
-      execSync('npx tsc --noEmit', { stdio: inherit' });
+      execSync('npx tsc --noEmit', { stdio: 'inherit' });
 
       // Auto-fix common TypeScript issues
-      const tsConfig = JSON';.parse(fs.readFileSync('tsconfig.json', utf8'));
+      const tsConfig = JSON.parse(fs.readFileSync('tsconfig.json', 'utf8'));
       tsConfig.compilerOptions.strict = false;
       tsConfig.compilerOptions.noImplicitAny = false;
       fs.writeFileSync('tsconfig.json', JSON.stringify(tsConfig, null, 2));
     } catch (error) {
-      this.log(`TypeScript fix failed: ${error.message}`, error');
+      this.log(`TypeScript fix failed: ${error.message}`, 'error');
     }
   }
 
@@ -321,9 +321,9 @@ class NetlifyBuildMonitor {
     this.log('Fixing ESLint errors...');
 
     try {
-      execSync('npm run lint:fix', { stdio: inherit' });
+      execSync('npm run lint:fix', { stdio: 'inherit' });
     } catch (error) {
-      this.log(`ESLint fix failed: ${error.message}`, error');
+      this.log(`ESLint fix failed: ${error.message}`, 'error');
     }
   }
 
@@ -332,7 +332,7 @@ class NetlifyBuildMonitor {
 
     try {
       // Clear Next.js cache
-      execSync('rm -rf .next', { stdio: inherit' });
+      execSync('rm -rf .next', { stdio: 'inherit' });
 
       // Update next.config.js with common fixes
       const nextConfig = `
@@ -355,7 +355,7 @@ module.exports = {
 `;
       fs.writeFileSync('next.config.js', nextConfig);
     } catch (error) {
-      this.log(`Next.js fix failed: ${error.message}`, error');
+      this.log(`Next.js fix failed: ${error.message}`, 'error');
     }
   }
 
@@ -364,15 +364,15 @@ module.exports = {
 
     try {
       // Commit current changes
-      execSync('git add .', { stdio: inherit' });
+      execSync('git add .', { stdio: 'inherit' });
       execSync('git commit -m "Auto-fix: Apply build error fixes"', {
-        stdio: inherit
+        stdio: 'inherit'
       });
-      execSync('git push', { stdio: inherit' });
+      execSync('git push', { stdio: 'inherit' });
 
       return true;
     } catch (error) {
-      this.log(`Generic fix failed: ${error.message}`, error');
+      this.log(`Generic fix failed: ${error.message}`, 'error');
       return false;
     }
   }
@@ -381,23 +381,23 @@ module.exports = {
     try {
       this.log('Committing and pushing fixes...');
 
-      execSync('git add .', { stdio: inherit' });
+      execSync('git add .', { stdio: 'inherit' });
       execSync('git commit -m "Auto-fix: Apply Netlify build fixes"', {
-        stdio: inherit
+        stdio: 'inherit'
       });
-      execSync('git push', { stdio: inherit' });
+      execSync('git push', { stdio: 'inherit' });
 
       this.log('Fixes committed and pushed successfully');
       return true;
     } catch (error) {
-      this.log(`Failed to commit fixes: ${error.message}`, error');
+      this.log(`Failed to commit fixes: ${error.message}`, 'error');
       return false;
     }
   }
 
   async monitorBuilds() {
     this.log('Starting Netlify build monitoring...');
-    this.status.isRunning = true';;
+    this.status.isRunning = true;
     this.saveStatus();
 
     while (this.status.isRunning) {
@@ -407,7 +407,7 @@ module.exports = {
           setTimeout(resolve, this.config.checkInterval),
         );
       } catch (error) {
-        this.log(`Monitoring error: ${error.message}`, error');
+        this.log(`Monitoring error: ${error.message}`, 'error');
         await new Promise((resolve) => setTimeout(resolve, 60000)); // Wait 1 minute on error
       }
     }
@@ -428,25 +428,25 @@ module.exports = {
 
   async checkBuilds() {
     this.log('Checking Netlify builds...')
-    const builds = await'; this.getSiteBuilds();
+    const builds = await this.getSiteBuilds();
     if (!builds || builds.length === 0) {
       this.log('No builds found');
       return;
     }
 
-    const latestBuild = builds';[0];
+    const latestBuild = builds[0];
     this.status.lastCheck = new Date().toISOString();
 
     // Check if this is a new build
     if (
       this.status.currentBuild &&
-      this.status.currentBuild.id === latestBuild';.id
+      this.status.currentBuild.id === latestBuild.id
     ) {
       this.log('No new builds detected');
       return;
     }
 
-    this.status.currentBuild = latestBuild';;
+    this.status.currentBuild = latestBuild;
     this.status.buildHistory.unshift({
       id: latestBuild.id,
       state: latestBuild.state,
@@ -456,16 +456,16 @@ module.exports = {
 
     // Keep only last 50 builds
     if (this.status.buildHistory.length > 50) {
-      this.status.buildHistory = this';.status.buildHistory.slice(0, 50);
+      this.status.buildHistory = this.status.buildHistory.slice(0, 50);
     }
 
     this.log(`Build ${latestBuild.id} state: ${latestBuild.state}`);
 
     // Check for errors
-    if (latestBuild.state === error';;) {
+    if (latestBuild.state === 'error') {
       this.log('Build failed, analyzing errors...')
-      const buildDetails = await'; this.getBuildDetails(latestBuild.id)
-      const errors = this';.analyzeBuildError(buildDetails || latestBuild);
+      const buildDetails = await this.getBuildDetails(latestBuild.id)
+      const errors = this.analyzeBuildError(buildDetails || latestBuild);
 
       this.status.errors.push({
         buildId: latestBuild.id,
@@ -476,14 +476,14 @@ module.exports = {
       // Emit build error event
       this.emit('buildError', {
         buildId: latestBuild.id,
-        type: errors.length > 0 ? errors[0].type : unknown',
-        message: latestBuild.error_message || Build failed',
+        type: errors.length > 0 ? errors[0].type : 'unknown',
+        message: latestBuild.error_message || 'Build failed',
         errors: errors
       });
 
       // Attempt to fix errors
       for (const error of errors) {
-        const fixed = await'; this.fixBuildError(error);
+        const fixed = await this.fixBuildError(error);
 
         this.status.fixes.push({
           buildId: latestBuild.id,
@@ -495,20 +495,20 @@ module.exports = {
         if (fixed) {
           this.log(`Successfully fixed ${error.type}`);
         } else {
-          this.log(`Failed to fix ${error.type}`, error');
+          this.log(`Failed to fix ${error.type}`, 'error');
         }
       }
 
       // Commit and push fixes if any were successful
-      const successfulFixes = this';.status.fixes.filter(
-        (fix) => fix.buildId === latestBuild';.id && fix.success,
+      const successfulFixes = this.status.fixes.filter(
+        (fix) => fix.buildId === latestBuild.id && fix.success,
       );
 
       if (successfulFixes.length > 0) {
         await this.commitAndPushFixes();
         await this.triggerBuild();
       }
-    } else if (latestBuild.state === ready';;) {
+    } else if (latestBuild.state === 'ready') {
       // Emit build success event
       this.emit('buildSuccess', latestBuild);
     }
@@ -519,11 +519,11 @@ module.exports = {
   async generateReport() {
     const report = {
       timestamp: new Date().toISOString(),
-      status: this''.status,
+      status: this.status,
       summary: {
         totalBuilds: this.status.buildHistory.length,
         failedBuilds: this.status.buildHistory.filter(
-          (b) => b.state === error';;,
+          (b) => b.state === 'error',
         ).length,
         successfulFixes: this.status.fixes.filter((f) => f.success).length,
         totalFixes: this.status.fixes.length
@@ -531,7 +531,7 @@ module.exports = {
     };
 
     fs.writeFileSync(
-      path.join(__dirname, netlify-report.json'),
+      path.join(__dirname, 'netlify-report.json'),
       JSON.stringify(report, null, 2),
     );
     return report;
@@ -545,28 +545,28 @@ module.exports = {
 }
 
 // CLI interface
-if (require.main === module';) {
+if (require.main === module) {
   const monitor = new NetlifyBuildMonitor()
-  const command = process';.argv[2];
+  const command = process.argv[2];
 
   switch (command) {
-    case start':
+    case 'start':
       monitor.monitorBuilds();
       break;
-    case check':
+    case 'check':
       monitor.checkBuilds();
       break;
-    case report':
+    case 'report':
       monitor.generateReport().then((report) => {
         console.log(JSON.stringify(report, null, 2));
       });
       break;
-    case status':
+    case 'status':
       console.log(JSON.stringify(monitor.status, null, 2));
       break;
     default:
-      console.log('Usage: node netlify-monitor.js [start|check|report|status]);
+      console.log('Usage: node netlify-monitor.js [start|check|report|status]');
   }
 }
 
-module.exports = NetlifyBuildMonitor';;
+module.exports = NetlifyBuildMonitor;
