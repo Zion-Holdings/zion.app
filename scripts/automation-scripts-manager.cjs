@@ -1060,43 +1060,39 @@ if (require.main === module) {
   const manager = new AutomationScriptsManager();
   const command = process.argv[2] || 'start';
   
-  switch (command) {
-    case 'start':
-      manager.start().catch(error => {
-        console.error('Failed to start manager:', error);
-        process.exit(1);
-      });
-      break;
-      
-    case 'stop':
-      manager.stop().catch(error => {
-        console.error('Failed to stop manager:', error);
-        process.exit(1);
-      });
-      break;
-      
-    case 'status':
-      console.log(JSON.stringify(manager.getStatus(), null, 2));
-      break;
-      
-    case 'discover':
-      manager.discoverScripts().then(scripts => {
+  const runCommand = async () => {
+    // Load persistent data first
+    await manager.loadPersistentData();
+    
+    switch (command) {
+      case 'start':
+        await manager.start();
+        break;
+        
+      case 'stop':
+        await manager.stop();
+        break;
+        
+      case 'status':
+        console.log(JSON.stringify(manager.getStatus(), null, 2));
+        break;
+        
+      case 'discover':
+        const scripts = await manager.discoverScripts();
         console.log(`Discovered ${scripts.size} automation scripts`);
-      });
-      break;
-      
-    case 'improve':
-      manager.improveAllScripts().then(results => {
+        break;
+        
+      case 'improve':
+        const results = await manager.improveAllScripts();
         console.log(`Improved ${results.length} scripts`);
-      });
-      break;
-      
-    case 'report':
-      console.log(JSON.stringify(manager.generateReport(), null, 2));
-      break;
-      
-    default:
-      console.log(`
+        break;
+        
+      case 'report':
+        console.log(JSON.stringify(manager.generateReport(), null, 2));
+        break;
+        
+      default:
+        console.log(`
 Automation Scripts Manager
 
 Usage: node automation-scripts-manager.cjs [command]
@@ -1108,8 +1104,14 @@ Commands:
   discover  Discover automation scripts
   improve   Improve all scripts
   report    Generate detailed report
-      `);
-  }
+        `);
+    }
+  };
+  
+  runCommand().catch(error => {
+    console.error('Command failed:', error);
+    process.exit(1);
+  });
 }
 
 module.exports = AutomationScriptsManager; 
