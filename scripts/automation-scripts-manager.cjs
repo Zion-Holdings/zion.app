@@ -583,6 +583,9 @@ class AutomationScriptsManager extends EventEmitter {
         this.stats.improvements++;
         this.stats.lastImprovement = new Date();
         
+        // Save to persistent storage
+        await this.savePersistentData();
+        
         this.log(`✅ Improved script: ${script.name} (${improvements.join(', ')})`);
         this.emit('scriptImproved', { script, improvements });
         
