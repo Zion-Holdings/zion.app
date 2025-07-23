@@ -38,6 +38,7 @@
     "automation:status": "node scripts/automation-scripts-manager.cjs status",
     "automation:logs": "tail -f logs/automation-manager.log",
     "automation:dashboard": "open http://localhost:3004",
+    "automation:api": "node scripts/automation-api-server.cjs",
     "automation:test": "node scripts/automation-scripts-manager.cjs test",
     "automation:setup": "node scripts/automation-scripts-manager.cjs setup",
     "automation:clean": "node scripts/automation-scripts-manager.cjs clean",
