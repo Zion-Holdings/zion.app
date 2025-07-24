@@ -601,7 +601,10 @@ class SecurityScanner extends AutomationTask {
     if (error.message.includes('network') || error.message.includes('connection')) {
       logger.info('⏳ Network issue detected, waiting before retry...');
       await new Promise(resolve => 
-const timeoutId = setTimeout(resolve,  30000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   30000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
       return;

@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 class Script {
   constructor() {
     this.isRunning = false;
@@ -6,7 +29,7 @@ class Script {
 
   async start() {
     this.isRunning = true;
-    console.log('Starting Script...');
+    logger.info('Starting Script...');
     
     try {
       #!/usr/bin/env node;
@@ -14,13 +37,13 @@ import { writeFile } from fs/promises';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 if (!OPENAI_API_KEY) {
-  console.error('Missing OPENAI_API_KEY environment variable');  process.exit(1);
+  logger.error('Missing OPENAI_API_KEY environment variable');  process.exit(1);
 }
 
 const keywords = process.argv.slice(2);
 
 if (keywords.length === 0) {
-  console.error('Usage: node scripts/generate-ai-blog-post.js <keyword1> <keyword2> ...');  process.exit(1);
+  logger.error('Usage: node scripts/generate-ai-blog-post.js <keyword1> <keyword2> ...');  process.exit(1);
 }
 
 async function generateBlogPost(keywordList) {
@@ -51,10 +74,10 @@ generateBlogPost(keywords)
   .then(async (post) => {
     const slug = slugify(post.title)
 const filePath = `generated-${slug}.json`;
-    await writeFile(filePath, JSON.stringify(post, null, 2), utf8');    console.warn(`Blog post saved to ${filePath}`);
+    await writeFile(filePath, JSON.stringify(post, null, 2), utf8');    logger.warn(`Blog post saved to ${filePath}`);
   })
   .catch((err) => {
-    console.error(error);
+    logger.error(error);
     process.exit(1);
   });
 
@@ -62,25 +85,25 @@ const filePath = `generated-${slug}.json`;
 
 // Graceful shutdown handling
 process.on('SIGINT', () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
 
 process.on('SIGTERM', () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
     } catch (error) {
-      console.error('Error in Script:', error);
+      logger.error('Error in Script:', error);
       throw error;
     }
   }
 
   stop() {
     this.isRunning = false;
-    console.log('Stopping Script...');
+    logger.info('Stopping Script...');
   }
 }
 
@@ -88,7 +111,7 @@ process.on('SIGTERM', () => {
 if (require.main === module) {
   const script = new Script();
   script.start().catch(error => {
-    console.error('Failed to start Script:', error);
+    logger.error('Failed to start Script:', error);
     process.exit(1);
   });
 }

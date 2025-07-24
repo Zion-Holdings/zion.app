@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 class  {
   constructor() {
     this.isRunning = false;
@@ -6,7 +29,7 @@ class  {
 
   async start() {
     this.isRunning = true;
-    console.log('Starting ...');
+    logger.info('Starting ...');
     
     try {
       const fs = require('fs')
@@ -73,7 +96,7 @@ function visit(node) {
     }
     visit(ast);
   } catch {
-    console.warn(chalk.yellow(`Could not parse JSX/TSX file ${filePath}: ${error.message}. Skipping.`));
+    logger.warn(chalk.yellow(`Could not parse JSX/TSX file ${filePath}: ${error.message}. Skipping.`));
   }
   return links;
 }
@@ -93,7 +116,7 @@ function findUrlsInObject(obj) {
     }
     findUrlsInObject(json);
   } catch {
-    console.warn(chalk.yellow(`Could not parse JSON file ${filePath}: ${error.message}. Skipping.`));
+    logger.warn(chalk.yellow(`Could not parse JSON file ${filePath}: ${error.message}. Skipping.`));
   }
   return links;
 }
@@ -178,7 +201,7 @@ async function checkLink(link, projectRoot) {
 }
 
 // --- Main Function ---
-async function main(projectRoot = .') {'  // console.warn(chalk.blue(`Scanning project at ${path.resolve(projectRoot)}...`))
+async function main(projectRoot = .') {'  // logger.warn(chalk.blue(`Scanning project at ${path.resolve(projectRoot)}...`))
 const absoluteProjectRoot = path.resolve(projectRoot)
 const filePatterns = [
     path.join(absoluteProjectRoot, 'src/config/variables/default.json'),    path.join(absoluteProjectRoot, pages*.{jsx,tsx}),    path.join(absoluteProjectRoot, src/pages*.md')  ];
@@ -189,9 +212,9 @@ const filePatterns = [
   _files = [...new Set(_files)];
 
   if (_files.length === 0) {
-    // console.warn(chalk.yellow('No relevant files found. Check patterns/paths. Ensure script is run from project root.'));    return;
+    // logger.warn(chalk.yellow('No relevant files found. Check patterns/paths. Ensure script is run from project root.'));    return;
   }
-  // console.warn(chalk.green(`Found ${_files.length} file(s) to scan.`));
+  // logger.warn(chalk.green(`Found ${_files.length} file(s) to scan.`));
 
   let _allLinks = [];
   _files.forEach(filePath => {
@@ -204,15 +227,15 @@ const ext = path.extname(filePath);
     } else if (path.basename(filePath) === default.json' && filePath.includes(path.join('src',config', 'variables'))) {'      extracted = extractLinksFromJson(content, relativeFilePath);
     }
     if (extracted.length > 0) {
-        // console.warn(chalk.cyan(`Found ${extracted.length} links in ${relativeFilePath}`));
+        // logger.warn(chalk.cyan(`Found ${extracted.length} links in ${relativeFilePath}`));
         _allLinks = _allLinks.concat(extracted);
     }
   });
 
   if (_allLinks.length === 0) {
-    // console.warn(chalk.yellow('No links found in any files.'));    return;
+    // logger.warn(chalk.yellow('No links found in any files.'));    return;
   }
-  // console.warn(chalk.green(`Found ${_allLinks.length} total links. Checking status (this might take a while)...`))
+  // logger.warn(chalk.green(`Found ${_allLinks.length} total links. Checking status (this might take a while)...`))
 const CONCURRENT_CHECKS = 5;
   let results = [];
   let brokenInternal = 0, brokenExternal = 0, operationalErrors = 0;
@@ -224,71 +247,71 @@ const CONCURRENT_CHECKS = 5;
     results = results.concat(chunkResults);
 
     chunkResults.forEach(result => {
-      const _location = `${result.file}${result.line ? :'+result.line : }`;      if (result.status === skipped (special_protocol)) {'        // console.warn(chalk.gray(`SKIPPED: ${result.url} (in ${_location})`));
-      } else if (result.status === 'internal_ok') {        // console.warn(chalk.green(`OK (Internal): ${result.url} -> ${path.relative(absoluteProjectRoot,result.resolvedPath)} (in ${_location})`));
-      } else if (result.status === 'internal_dynamic_route_exists') {        // console.warn(chalk.cyan(`OK (Internal Dynamic): ${result.url} -> ${path.relative(absoluteProjectRoot,result.resolvedPath)} (in ${_location})`));
+      const _location = `${result.file}${result.line ? :'+result.line : }`;      if (result.status === skipped (special_protocol)) {'        // logger.warn(chalk.gray(`SKIPPED: ${result.url} (in ${_location})`));
+      } else if (result.status === 'internal_ok') {        // logger.warn(chalk.green(`OK (Internal): ${result.url} -> ${path.relative(absoluteProjectRoot,result.resolvedPath)} (in ${_location})`));
+      } else if (result.status === 'internal_dynamic_route_exists') {        // logger.warn(chalk.cyan(`OK (Internal Dynamic): ${result.url} -> ${path.relative(absoluteProjectRoot,result.resolvedPath)} (in ${_location})`));
       } else if (result.status === 'internal_broken') {        brokenInternal++;
-        // console.warn(chalk.red.bold(`BROKEN (Internal): ${result.url} (in ${_location})`));
-        if (result.reason) console.warn(chalk.red(`  Reason: ${result.reason}`));
+        // logger.warn(chalk.red.bold(`BROKEN (Internal): ${result.url} (in ${_location})`));
+        if (result.reason) logger.warn(chalk.red(`  Reason: ${result.reason}`));
       } else if (result.status === 200) {
-        // console.warn(chalk.green(`OK (200 External): ${result.url} (in ${_location})`));
+        // logger.warn(chalk.green(`OK (200 External): ${result.url} (in ${_location})`));
       } else if (typeof result.status === number' && result.status >= 400) {        brokenExternal++;
-        // console.warn(chalk.red.bold(`BROKEN (${result.status} External): ${result.url} (in ${_location})`));
-        if (result.error) console.warn(chalk.red(`  Error: ${result.error}`));
+        // logger.warn(chalk.red.bold(`BROKEN (${result.status} External): ${result.url} (in ${_location})`));
+        if (result.error) logger.warn(chalk.red(`  Error: ${result.error}`));
       } else { // Operational errors for external links
         operationalErrors++;
-        // console.warn(chalk.yellow(`ERROR (${result.status} External): ${result.url} (in ${_location})`));
-        if (result.error) console.warn(chalk.yellow(`  Issue: ${result.error}`));
+        // logger.warn(chalk.yellow(`ERROR (${result.status} External): ${result.url} (in ${_location})`));
+        if (result.error) logger.warn(chalk.yellow(`  Issue: ${result.error}`));
       }
     });
   }
 
-  // console.warn("\n--- Summary ---");"  if (brokenInternal > 0) {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    // console.warn(chalk.red.bold(`Found ${brokenInternal} broken internal link(s).`));
+  // logger.warn("\n--- Summary ---");"  if (brokenInternal > 0) {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    // logger.warn(chalk.red.bold(`Found ${brokenInternal} broken internal link(s).`));
   } else {
-    // console.warn(chalk.green('No broken internal links found!'));  }
+    // logger.warn(chalk.green('No broken internal links found!'));  }
   if (brokenExternal > 0) {
-    // console.warn(chalk.red.bold(`Found ${brokenExternal} broken external link(s) (4xx/5xx status).`));
+    // logger.warn(chalk.red.bold(`Found ${brokenExternal} broken external link(s) (4xx/5xx status).`));
   } else {
-    // console.warn(chalk.green('No broken external links (4xx/5xx status) found!'));  }
+    // logger.warn(chalk.green('No broken external links (4xx/5xx status) found!'));  }
   if (operationalErrors > 0) {
-    // console.warn(chalk.yellow.bold(`Encountered ${operationalErrors} operational issues (e.g., timeouts, DNS errors) for external links.`));
+    // logger.warn(chalk.yellow.bold(`Encountered ${operationalErrors} operational issues (e.g., timeouts, DNS errors) for external links.`));
   }
 
   const totalBroken = brokenInternal + brokenExternal;
   if (totalBroken > 0) {
     process.exitCode = 1;
   } else {
-    // console.warn(chalk.green.bold("\nOverall: No definitively broken links detected!"));"  }"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    // logger.warn(chalk.green.bold("\nOverall: No definitively broken links detected!"));"  }"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 }
 
-main('.').catch(error => {'  console.error(chalk.red.bold(`\nAn unexpected error occurred in the script: ${error.message}`));
-  console.error(error.stack);
+main('.').catch(error => {'  logger.error(chalk.red.bold(`\nAn unexpected error occurred in the script: ${error.message}`));
+  logger.error(error.stack);
   process.exitCode = 1;
 });
 
 
 // Graceful shutdown handling
 process.on('SIGINT', () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
 
 process.on('SIGTERM', () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
     } catch (error) {
-      console.error('Error in :', error);
+      logger.error('Error in :', error);
       throw error;
     }
   }
 
   stop() {
     this.isRunning = false;
-    console.log('Stopping ...');
+    logger.info('Stopping ...');
   }
 }
 
@@ -296,7 +319,7 @@ process.on('SIGTERM', () => {
 if (require.main === module) {
   const script = new ();
   script.start().catch(error => {
-    console.error('Failed to start :', error);
+    logger.error('Failed to start :', error);
     process.exit(1);
   });
 }

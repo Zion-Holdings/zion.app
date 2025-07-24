@@ -156,7 +156,10 @@ const logEntry = `[${timestamp}] PIPELINE: ${message}`;
       // Schedule next run
       if (this.isRunning) {
         
-const timeoutId = setTimeout(runPipeline,  CONFIG.pipelineInterval);
+const timeoutId = 
+const timeoutId = setTimeout(runPipeline,   CONFIG.pipelineInterval);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
       }
@@ -648,7 +651,10 @@ Automated by Continuous Improvement Pipeline`;
 
       // Wait a moment
       await new Promise((resolve) => 
-const timeoutId = setTimeout(resolve,  5000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   5000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
 

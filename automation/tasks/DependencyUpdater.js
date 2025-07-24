@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 const AutomationTask = require('../core/AutomationTask');
 const { execSync, spawn } = require('child_process');
 const fs = require('fs').promises;
@@ -20,26 +43,26 @@ class DependencyUpdater extends AutomationTask {
   }
 
   async run() {
-    console.log('🔍 Starting dependency update check...');
+    logger.info('🔍 Starting dependency update check...');
     
     try {
       // Check for outdated packages
       const outdatedPackages = await this.checkOutdatedPackages();
       
       if (outdatedPackages.length === 0) {
-        console.log('✅ All packages are up to date');
+        logger.info('✅ All packages are up to date');
         this.lastStatus = 'success';
         this.lastRun = new Date();
         return { status: 'up_to_date', packages: [] };
       }
       
-      console.log(`📦 Found ${outdatedPackages.length} outdated packages`);
+      logger.info(`📦 Found ${outdatedPackages.length} outdated packages`);
       
       // Filter packages based on update strategy
       const packagesToUpdate = await this.filterPackagesForUpdate(outdatedPackages);
       
       if (packagesToUpdate.length === 0) {
-        console.log('⚠️ No packages selected for update');
+        logger.info('⚠️ No packages selected for update');
         this.lastStatus = 'success';
         this.lastRun = new Date();
         return { status: 'no_updates_needed', packages: [] };
@@ -75,7 +98,7 @@ class DependencyUpdater extends AutomationTask {
       };
       
     } catch (error) {
-      console.error('❌ Dependency update failed:', error);
+      logger.error('❌ Dependency update failed:', error);
       this.lastStatus = 'failed';
       this.lastError = error.message;
       this.lastRun = new Date();
@@ -107,7 +130,7 @@ class DependencyUpdater extends AutomationTask {
         location: outdated[packageName].location
       }));
     } catch (error) {
-      console.error('Error checking outdated packages:', error);
+      logger.error('Error checking outdated packages:', error);
       return [];
     }
   }
@@ -118,19 +141,19 @@ class DependencyUpdater extends AutomationTask {
     for (const pkg of packages) {
       // Skip critical packages for major updates
       if (this.isCriticalPackage(pkg.name) && this.isMajorUpdate(pkg.current, pkg.latest)) {
-        console.log(`⚠️ Skipping major update for critical package: ${pkg.name}`);
+        logger.info(`⚠️ Skipping major update for critical package: ${pkg.name}`);
         continue;
       }
       
       // Check for breaking changes
       if (await this.hasBreakingChanges(pkg.name, pkg.current, pkg.latest)) {
-        console.log(`⚠️ Skipping update with breaking changes: ${pkg.name}`);
+        logger.info(`⚠️ Skipping update with breaking changes: ${pkg.name}`);
         continue;
       }
       
       // Check if version is too recent
       if (await this.isTooRecent(pkg.name, pkg.latest)) {
-        console.log(`⚠️ Skipping too recent version: ${pkg.name}@${pkg.latest}`);
+        logger.info(`⚠️ Skipping too recent version: ${pkg.name}@${pkg.latest}`);
         continue;
       }
       
@@ -193,7 +216,7 @@ class DependencyUpdater extends AutomationTask {
     
     for (const pkg of packages) {
       try {
-        console.log(`📦 Updating ${pkg.name} from ${pkg.current} to ${pkg.latest}`);
+        logger.info(`📦 Updating ${pkg.name} from ${pkg.current} to ${pkg.latest}`);
         
         // Update the package
         const updateCommand = pkg.location === 'dependencies' ? 
@@ -209,10 +232,10 @@ class DependencyUpdater extends AutomationTask {
           status: 'updated'
         });
         
-        console.log(`✅ Successfully updated ${pkg.name}`);
+        logger.info(`✅ Successfully updated ${pkg.name}`);
         
       } catch (error) {
-        console.error(`❌ Failed to update ${pkg.name}:`, error.message);
+        logger.error(`❌ Failed to update ${pkg.name}:`, error.message);
         
         results.push({
           name: pkg.name,
@@ -229,29 +252,29 @@ class DependencyUpdater extends AutomationTask {
 
   async testUpdates() {
     try {
-      console.log('🧪 Testing updates...');
+      logger.info('🧪 Testing updates...');
       
       // Run tests
       execSync('npm test', { stdio: 'pipe' });
-      console.log('✅ Tests passed');
+      logger.info('✅ Tests passed');
       
       // Run build
       execSync('npm run build', { stdio: 'pipe' });
-      console.log('✅ Build successful');
+      logger.info('✅ Build successful');
       
       // Run lint
       execSync('npm run lint', { stdio: 'pipe' });
-      console.log('✅ Lint passed');
+      logger.info('✅ Lint passed');
       
     } catch (error) {
-      console.error('❌ Tests failed:', error.message);
+      logger.error('❌ Tests failed:', error.message);
       throw error;
     }
   }
 
   async createPullRequest(updates) {
     try {
-      console.log('🔀 Creating pull request...');
+      logger.info('🔀 Creating pull request...');
       
       // Setup git if needed
       this.setupGit();
@@ -273,10 +296,10 @@ class DependencyUpdater extends AutomationTask {
       // Create PR using GitHub CLI or API
       await this.createGitHubPR(branchName, updates);
       
-      console.log('✅ Pull request created successfully');
+      logger.info('✅ Pull request created successfully');
       
     } catch (error) {
-      console.error('❌ Failed to create pull request:', error.message);
+      logger.error('❌ Failed to create pull request:', error.message);
       throw error;
     }
   }
@@ -303,7 +326,7 @@ This is an automated update by the dependency updater.`;
         stdio: 'pipe'
       });
     } catch (error) {
-      console.warn('GitHub CLI not available, skipping PR creation');
+      logger.warn('GitHub CLI not available, skipping PR creation');
     }
   }
 
@@ -335,7 +358,7 @@ This update was automatically generated by the dependency updater.`;
       execSync('git config user.name', { stdio: 'pipe' });
       execSync('git config user.email', { stdio: 'pipe' });
     } catch (error) {
-      console.log('⚠️ Git configuration missing, setting up...');
+      logger.info('⚠️ Git configuration missing, setting up...');
       execSync('git config user.name "Dependency Updater Bot"', { stdio: 'pipe' });
       execSync('git config user.email "bot@zion.app"', { stdio: 'pipe' });
     }
@@ -352,7 +375,7 @@ This update was automatically generated by the dependency updater.`;
       execSync('git pull origin main', { stdio: 'pipe' });
       
     } catch (error) {
-      console.error('Error during cleanup:', error.message);
+      logger.error('Error during cleanup:', error.message);
     }
   }
 }

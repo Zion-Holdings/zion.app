@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 class Script {
   constructor() {
     this.isRunning = false;
@@ -6,7 +29,7 @@ class Script {
 
   async start() {
     this.isRunning = true;
-    console.log('Starting Script...');
+    logger.info('Starting Script...');
     
     try {
       #!/usr/bin/env node
@@ -14,8 +37,8 @@ class Script {
 const fs = require('fs')
 const path = require('path');
 
-console.warn('📊 Bundle Analysis Report');
-console.warn('========================\n');
+logger.warn('📊 Bundle Analysis Report');
+logger.warn('========================\n');
 
 try {
   // Analyze build manifest
@@ -27,10 +50,10 @@ try {
   if (fs.existsSync(buildManifestPath)) {
     const manifest = JSON.parse(fs.readFileSync(buildManifestPath, 'utf8'));
 
-    console.warn('📋 Build Manifest Analysis:');
-    console.warn(`- Total pages: ${Object.keys(manifest.pages || {}).length}`);
-    console.warn(`- CSS files: ${manifest.cssFiles?.length || 0}`);
-    console.warn(`- All files: ${manifest.allFiles?.length || 0}\n`);
+    logger.warn('📋 Build Manifest Analysis:');
+    logger.warn(`- Total pages: ${Object.keys(manifest.pages || {}).length}`);
+    logger.warn(`- CSS files: ${manifest.cssFiles?.length || 0}`);
+    logger.warn(`- All files: ${manifest.allFiles?.length || 0}\n`);
   }
 
   // Analyze server build
@@ -39,9 +62,9 @@ try {
     const serverPages = fs.readdirSync(
       path.join(serverBuildPath, 'pages'),
     ).length;
-    console.warn('🖥️  Server Build Analysis:');
-    console.warn(`- Server pages: ${serverPages}`);
-    console.warn(`- SSR/API support: ✅ Enabled\n`);
+    logger.warn('🖥️  Server Build Analysis:');
+    logger.warn(`- Server pages: ${serverPages}`);
+    logger.warn(`- SSR/API support: ✅ Enabled\n`);
   }
 
   // Analyze static build
@@ -53,9 +76,9 @@ try {
 const jsChunks = chunks.filter((f) => f.endsWith('.js'))
 const cssChunks = chunks.filter((f) => f.endsWith('.css'));
 
-      console.warn('📦 Static Assets Analysis:');
-      console.warn(`- JavaScript chunks: ${jsChunks.length}`);
-      console.warn(`- CSS chunks: ${cssChunks.length}`);
+      logger.warn('📦 Static Assets Analysis:');
+      logger.warn(`- JavaScript chunks: ${jsChunks.length}`);
+      logger.warn(`- CSS chunks: ${cssChunks.length}`);
 
       // Calculate total JS size
       let totalJSSize = 0;
@@ -66,51 +89,51 @@ const cssChunks = chunks.filter((f) => f.endsWith('.css'));
         }
       });
 
-      console.warn(
+      logger.warn(
         `- Total JS size: ${(totalJSSize / 1024 / 1024).toFixed(2)} MB`,
       );
-      console.warn(
+      logger.warn(
         `- Average chunk size: ${(totalJSSize / jsChunks.length / 1024).toFixed(2)} KB\n`,
       );
     }
   }
 
   // Bundle optimization recommendations
-  console.warn('💡 Optimization Recommendations:');
-  console.warn('- ✅ Chunk splitting implemented');
-  console.warn('- ✅ Framework code separated');
-  console.warn('- ✅ UI libraries optimized');
-  console.warn('- ✅ Vendor code split');
-  console.warn('- ✅ Dynamic imports working');
-  console.warn('- ✅ Tree shaking enabled\n');
+  logger.warn('💡 Optimization Recommendations:');
+  logger.warn('- ✅ Chunk splitting implemented');
+  logger.warn('- ✅ Framework code separated');
+  logger.warn('- ✅ UI libraries optimized');
+  logger.warn('- ✅ Vendor code split');
+  logger.warn('- ✅ Dynamic imports working');
+  logger.warn('- ✅ Tree shaking enabled\n');
 
-  console.warn('🎯 Performance Metrics:');
-  console.warn('- ✅ Build time: ~3.5 minutes (was hanging 18+ minutes)');
-  console.warn('- ✅ No hanging issues');
-  console.warn('- ✅ Memory usage: Optimized (6GB limit)');
-  console.warn('- ✅ Bundle splitting: Advanced');
-  console.warn('- ✅ Cache efficiency: Improved\n');
+  logger.warn('🎯 Performance Metrics:');
+  logger.warn('- ✅ Build time: ~3.5 minutes (was hanging 18+ minutes)');
+  logger.warn('- ✅ No hanging issues');
+  logger.warn('- ✅ Memory usage: Optimized (6GB limit)');
+  logger.warn('- ✅ Bundle splitting: Advanced');
+  logger.warn('- ✅ Cache efficiency: Improved\n');
 
-  console.warn('🚀 Deployment Status:');
-  console.warn('- ✅ Netlify plugin compatible');
-  console.warn('- ✅ ISR & API routes supported');
-  console.warn('- ✅ All 176+ pages built');
-  console.warn('- ✅ Production ready\n');
+  logger.warn('🚀 Deployment Status:');
+  logger.warn('- ✅ Netlify plugin compatible');
+  logger.warn('- ✅ ISR & API routes supported');
+  logger.warn('- ✅ All 176+ pages built');
+  logger.warn('- ✅ Production ready\n');
 } catch (error) {
-  console.error('❌ Error analyzing bundle:', error.message);
+  logger.error('❌ Error analyzing bundle:', error.message);
 }
 
-console.warn('🎉 Bundle analysis complete!');
-console.warn('Your application is optimized and ready for deployment.');
+logger.warn('🎉 Bundle analysis complete!');
+logger.warn('Your application is optimized and ready for deployment.');
     } catch (error) {
-      console.error('Error in Script:', error);
+      logger.error('Error in Script:', error);
       throw error;
     }
   }
 
   stop() {
     this.isRunning = false;
-    console.log('Stopping Script...');
+    logger.info('Stopping Script...');
   }
 }
 
@@ -118,9 +141,24 @@ console.warn('Your application is optimized and ready for deployment.');
 if (require.main === module) {
   const script = new Script();
   script.start().catch(error => {
-    console.error('Failed to start Script:', error);
+    logger.error('Failed to start Script:', error);
     process.exit(1);
   });
 }
 
 module.exports = Script;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

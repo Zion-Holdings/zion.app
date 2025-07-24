@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 class Script {
   constructor() {
     this.isRunning = false;
@@ -6,7 +29,7 @@ class Script {
 
   async start() {
     this.isRunning = true;
-    console.log('Starting Script...');
+    logger.info('Starting Script...');
     
     try {
       #!/usr/bin/env node
@@ -14,7 +37,7 @@ class Script {
 const fs = require('fs');const { execSync } = require('child_process')
 const summaryPath = process.argv[2] || logs/coverage/hourly/coverage-summary.json';
 if (!fs.existsSync(summaryPath)) {
-  console.error(`Coverage summary not found at ${summaryPath}`);
+  logger.error(`Coverage summary not found at ${summaryPath}`);
   process.exit(1);
 }
 ;
@@ -32,31 +55,31 @@ if (pct < 85) {
     execSync(`gh issue create --title "${title}" --body "${body}"`, { stdio: 'inherit' });  } catch {
     console.or('Failed to create GitHub issue:', );  }
 } else {
-  console.warn(`Coverage is ${pct}%, which meets the threshold.`);
+  logger.warn(`Coverage is ${pct}%, which meets the threshold.`);
 }
-console.warn('Coverage check completed');console.warn('Coverage threshold met');
+logger.warn('Coverage check completed');logger.warn('Coverage threshold met');
 
 // Graceful shutdown handling
 process.on('SIGINT', () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
 
 process.on('SIGTERM', () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
     } catch (error) {
-      console.error('Error in Script:', error);
+      logger.error('Error in Script:', error);
       throw error;
     }
   }
 
   stop() {
     this.isRunning = false;
-    console.log('Stopping Script...');
+    logger.info('Stopping Script...');
   }
 }
 
@@ -64,7 +87,7 @@ process.on('SIGTERM', () => {
 if (require.main === module) {
   const script = new Script();
   script.start().catch(error => {
-    console.error('Failed to start Script:', error);
+    logger.error('Failed to start Script:', error);
     process.exit(1);
   });
 }

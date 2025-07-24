@@ -218,6 +218,7 @@ const successContent = `export default function Success() {
 
       // Wait for server to start
       
+const timeoutId = 
 const timeoutId = setTimeout(() => {
         if (!resolved) {
           resolved = true;
@@ -225,7 +226,9 @@ const timeoutId = setTimeout(() => {
           this.log('🌐 Open http://localhost:3006 in your browser');
           this.log('🎉 Success page: http://localhost:3006/success');
           this.log('📊 Health check: http://localhost:3006/api/health');
-          resolve({ success: true,  server });
+          resolve({ success: true,   server });
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
         }

@@ -165,7 +165,10 @@ const options = args.slice(1);
     
     // Simulate optimization process
     await new Promise(resolve => 
-const timeoutId = setTimeout(resolve,  1000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
     

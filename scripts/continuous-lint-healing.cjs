@@ -136,9 +136,12 @@ const watcher = chokidar.watch(this.config.watchPatterns, {
 
     // Check for lint issues after a short delay
     
+const timeoutId = 
 const timeoutId = setTimeout(async () => {
       await this.checkForIssuesAndHeal();
-    },  2000);
+    },   2000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
   }
@@ -270,7 +273,10 @@ const timeoutId = setTimeout(async () => {
 
   sleep(ms) {
     return new Promise((resolve) => 
-const timeoutId = setTimeout(resolve,  ms);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   ms);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
   }

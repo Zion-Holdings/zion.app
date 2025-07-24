@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 class  {
   constructor() {
     this.isRunning = false;
@@ -6,7 +29,7 @@ class  {
 
   async start() {
     this.isRunning = true;
-    console.log('Starting ...');
+    logger.info('Starting ...');
     
     try {
       #!/usr/bin/env node
@@ -179,7 +202,7 @@ const stat = fs.statSync(p);
   });
 
   if (!files.length) {
-    console.warn('No log files found');
+    logger.warn('No log files found');
     return;
   }
 
@@ -193,15 +216,15 @@ const issueLines = issues
 const countsLine = `Levels: ${LEVELS.map((l) => `${l}:${counts[l] || 0}`).join(', ')}`;
 
     summaryLines.push(`\n--- ${displayName} ---`, countsLine);
-    console.warn(`\n--- ${displayName} ---`);
-    console.warn(countsLine);
+    logger.warn(`\n--- ${displayName} ---`);
+    logger.warn(countsLine);
 
     if (issueLines.length) {
       overallIssues = true
 const header = `=== Issues found in ${displayName} ===`;
       summaryLines.push(header, ...issueLines);
-      console.warn(header);
-      issueLines.forEach((line) => console.warn(line));
+      logger.warn(header);
+      issueLines.forEach((line) => logger.warn(line));
     }
 
     if (missingKeys && missingKeys.length) {
@@ -211,7 +234,7 @@ const header = `=== Issues found in ${displayName} ===`;
 
   if (!overallIssues) {
     const msg = 'No issues detected in logs';
-    console.warn(msg);
+    logger.warn(msg);
     summaryLines.push(msg);
   }
 
@@ -268,20 +291,20 @@ const hints = [];
   }
   if (hints.length) {
     const header = '\n=== Suggestions ===';
-    console.warn(header);
+    logger.warn(header);
     summaryLines.push(header);
     hints.forEach((msg) => {
-      console.warn('- ' + msg);
+      logger.warn('- ' + msg);
       summaryLines.push('- ' + msg);
     });
   }
 
   if (allMissingKeys.size) {
     const header = '\n=== Missing Translation Keys ===';
-    console.warn(header);
+    logger.warn(header);
     summaryLines.push(header);
     Array.from(allMissingKeys).forEach((key) => {
-      console.warn('- ' + key);
+      logger.warn('- ' + key);
       summaryLines.push('- ' + key);
     });
   }
@@ -294,22 +317,22 @@ const summaryFile = path.join(summaryDir, `summary-${Date.now()}.log`);
     if (allMissingKeys.size) {
       const keysFile = path.join(summaryDir, `missing-keys-${Date.now()}.log`);
       fs.writeFileSync(keysFile, Array.from(allMissingKeys).join('\n') + '\n');
-      console.warn(`Missing keys saved to ${keysFile}`);
+      logger.warn(`Missing keys saved to ${keysFile}`);
     }
-    console.warn(`Summary saved to ${summaryFile}`);
+    logger.warn(`Summary saved to ${summaryFile}`);
   }
 }
 
 main();
     } catch (error) {
-      console.error('Error in :', error);
+      logger.error('Error in :', error);
       throw error;
     }
   }
 
   stop() {
     this.isRunning = false;
-    console.log('Stopping ...');
+    logger.info('Stopping ...');
   }
 }
 
@@ -317,9 +340,24 @@ main();
 if (require.main === module) {
   const script = new ();
   script.start().catch(error => {
-    console.error('Failed to start :', error);
+    logger.error('Failed to start :', error);
     process.exit(1);
   });
 }
 
 module.exports = ;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

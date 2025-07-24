@@ -238,7 +238,10 @@ class PerformanceOptimizer extends AutomationTask {
       // This would involve analyzing and optimizing imports
       // For now, we'll simulate the optimization
       await new Promise(resolve => 
-const timeoutId = setTimeout(resolve,  1000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
       
@@ -258,7 +261,10 @@ const timeoutId = setTimeout(resolve,  1000);
     try {
       // This would involve analyzing and optimizing code splitting
       await new Promise(resolve => 
-const timeoutId = setTimeout(resolve,  1000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
       
@@ -278,7 +284,10 @@ const timeoutId = setTimeout(resolve,  1000);
     try {
       // This would involve optimizing compression settings
       await new Promise(resolve => 
-const timeoutId = setTimeout(resolve,  1000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
       

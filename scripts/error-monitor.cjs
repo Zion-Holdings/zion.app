@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 const fs = require('fs')
 const path = require('path');
 
@@ -48,11 +71,11 @@ class ErrorMonitor {
     try {
       if (!fs.existsSync(CONFIG.logsDir)) {
         fs.mkdirSync(CONFIG.logsDir, { recursive: true });
-        // console.warn('📁 Created logs directory');
+        // logger.warn('📁 Created logs directory');
       }
       return true;
     } catch (_error) {
-      console.error('❌ Failed to initialize error monitor:', error.message);
+      logger.error('❌ Failed to initialize error monitor:', error.message);
       return false;
     }
   }
@@ -76,7 +99,7 @@ const found = files
         }
       }
 
-      // console.warn(`📋 Found ${logFiles.length} log files`);
+      // logger.warn(`📋 Found ${logFiles.length} log files`);
 
       for (const filePath of logFiles) {
         const file = path.basename(filePath)
@@ -102,7 +125,7 @@ const lines = content.split('\n').filter((line) => line.trim());
         (a, b) => new Date(b.timestamp || 0) - new Date(a.timestamp || 0),
       );
     } catch (_error) {
-      console.error('❌ Error reading logs:', error.message);
+      logger.error('❌ Error reading logs:', error.message);
     }
   }
 
@@ -531,86 +554,86 @@ const hasSuccessContext =
    * Generate and display comprehensive report
    */
   generateReport() {
-    // console.warn('\n🔍 ERROR MONITORING REPORT');
-    // console.warn('=' .repeat(50));
+    // logger.warn('\n🔍 ERROR MONITORING REPORT');
+    // logger.warn('=' .repeat(50));
 
     // Summary
-    // console.warn('\n📊 SUMMARY');
-    // console.warn('-'.repeat(20));
-    // console.warn(`Total Log Entries: ${this.summary.totalEntries}`);
-    // console.warn(`Errors: ${this.summary.errorCount}`);
-    // console.warn(`Warnings: ${this.summary.warningCount}`);
-    // console.warn(`Critical Issues: ${this.summary.criticalCount}`);
+    // logger.warn('\n📊 SUMMARY');
+    // logger.warn('-'.repeat(20));
+    // logger.warn(`Total Log Entries: ${this.summary.totalEntries}`);
+    // logger.warn(`Errors: ${this.summary.errorCount}`);
+    // logger.warn(`Warnings: ${this.summary.warningCount}`);
+    // logger.warn(`Critical Issues: ${this.summary.criticalCount}`);
 
     if (this.summary.timeRange) {
-      // console.warn(`Time Range: ${this.summary.timeRange.start.toISOString()} to ${this.summary.timeRange.end.toISOString()}`);
+      // logger.warn(`Time Range: ${this.summary.timeRange.start.toISOString()} to ${this.summary.timeRange.end.toISOString()}`);
     }
 
     // Recent critical errors
     if (this.errors.length > 0) {
-      // console.warn('\n🚨 RECENT ERRORS (Top 5)');
-      // console.warn('-'.repeat(20));
+      // logger.warn('\n🚨 RECENT ERRORS (Top 5)');
+      // logger.warn('-'.repeat(20));
       // this.errors.slice(0, 5).forEach((error, index) => {
-      //   console.warn(`${index + 1}. [${error.timestamp || 'Unknown'}] ${error.message}`);
-      //   if (error.category) console.warn(`   Category: ${error.category}`);
-      //   if (error.component) console.warn(`   Component: ${error.component}`);
+      //   logger.warn(`${index + 1}. [${error.timestamp || 'Unknown'}] ${error.message}`);
+      //   if (error.category) logger.warn(`   Category: ${error.category}`);
+      //   if (error.component) logger.warn(`   Component: ${error.component}`);
       // });
     }
 
     // Error patterns
     const patterns = this.analyzePatterns();
     if (patterns.length > 0) {
-      // console.warn('\n📈 ERROR PATTERNS (Top 5)');
-      // console.warn('-'.repeat(20));
+      // logger.warn('\n📈 ERROR PATTERNS (Top 5)');
+      // logger.warn('-'.repeat(20));
       // patterns.slice(0, 5).forEach(([pattern, data], index) => {
-      //   console.warn(`${index + 1}. Count: ${data.count} | Level: ${data.level}`);
-      //   console.warn(`   Pattern: ${pattern}`);
-      //   console.warn(`   Example: ${data.examples[0]}`);
-      //   console.warn('');
+      //   logger.warn(`${index + 1}. Count: ${data.count} | Level: ${data.level}`);
+      //   logger.warn(`   Pattern: ${pattern}`);
+      //   logger.warn(`   Example: ${data.examples[0]}`);
+      //   logger.warn('');
       // });
     }
 
     // Performance insights
     const perfInsights = this.analyzePerformance();
     if (perfInsights) {
-      // console.warn('\n⚡ PERFORMANCE INSIGHTS');
-      // console.warn('-'.repeat(20));
-      // console.warn(`Average Memory Usage: ${(perfInsights.memoryUsage.avg / 1024 / 1024).toFixed(2)} MB`);
-      // console.warn(`Peak Memory Usage: ${(perfInsights.memoryUsage.max / 1024 / 1024).toFixed(2)} MB`);
-      // console.warn(`Average Response Time: ${perfInsights.responseTime.avg.toFixed(2)} ms`);
-      // console.warn(`Max Response Time: ${perfInsights.responseTime.max.toFixed(2)} ms`);
+      // logger.warn('\n⚡ PERFORMANCE INSIGHTS');
+      // logger.warn('-'.repeat(20));
+      // logger.warn(`Average Memory Usage: ${(perfInsights.memoryUsage.avg / 1024 / 1024).toFixed(2)} MB`);
+      // logger.warn(`Peak Memory Usage: ${(perfInsights.memoryUsage.max / 1024 / 1024).toFixed(2)} MB`);
+      // logger.warn(`Average Response Time: ${perfInsights.responseTime.avg.toFixed(2)} ms`);
+      // logger.warn(`Max Response Time: ${perfInsights.responseTime.max.toFixed(2)} ms`);
 
       if (perfInsights.memoryUsage.alerts.length > 0) {
-        // console.warn(`Memory Alerts: ${perfInsights.memoryUsage.alerts.length}`);
+        // logger.warn(`Memory Alerts: ${perfInsights.memoryUsage.alerts.length}`);
       }
       if (perfInsights.responseTime.alerts.length > 0) {
-        // console.warn(`Performance Alerts: ${perfInsights.responseTime.alerts.length}`);
+        // logger.warn(`Performance Alerts: ${perfInsights.responseTime.alerts.length}`);
       }
     }
 
     // Recommendations
     const recommendations = this.generateRecommendations();
     if (recommendations.length > 0) {
-      // console.warn('\n💡 RECOMMENDATIONS');
-      // console.warn('-'.repeat(20));
+      // logger.warn('\n💡 RECOMMENDATIONS');
+      // logger.warn('-'.repeat(20));
       // recommendations.forEach((rec, index) => {
-      //   console.warn(`${index + 1}. [${rec.priority}] ${rec.category}`);
-      //   console.warn(`   Issue: ${rec.issue}`);
-      //   console.warn(`   Recommendation: ${rec.recommendation}`);
-      //   console.warn(`   Action: ${rec.action}`);
-      //   console.warn('');
+      //   logger.warn(`${index + 1}. [${rec.priority}] ${rec.category}`);
+      //   logger.warn(`   Issue: ${rec.issue}`);
+      //   logger.warn(`   Recommendation: ${rec.recommendation}`);
+      //   logger.warn(`   Action: ${rec.action}`);
+      //   logger.warn('');
       // });
     }
 
     // Health score
     const _healthScore = this.calculateHealthScore();
-    // console.warn('\n🏥 SYSTEM HEALTH SCORE');
-    // console.warn('-'.repeat(20));
-    // console.warn(`Score: ${healthScore.score}/100 (${healthScore.grade})`);
-    // console.warn(`Status: ${healthScore.status}`);
+    // logger.warn('\n🏥 SYSTEM HEALTH SCORE');
+    // logger.warn('-'.repeat(20));
+    // logger.warn(`Score: ${healthScore.score}/100 (${healthScore.grade})`);
+    // logger.warn(`Status: ${healthScore.status}`);
 
-    // console.warn('\n' + '='.repeat(50));
-    // console.warn('Report generated at:', new Date().toISOString());
+    // logger.warn('\n' + '='.repeat(50));
+    // logger.warn('Report generated at:', new Date().toISOString());
   }
 
   /**
@@ -673,13 +696,13 @@ const reportPath = path.join(
       filename || 'error-report.json',
     );
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    // console.warn(`📄 Report exported to: ${reportPath}`);
+    // logger.warn(`📄 Report exported to: ${reportPath}`);
   }
 }
 
 // Main execution
 async function main() {
-  // console.warn('🚀 Starting Error Monitor...\n')
+  // logger.warn('🚀 Starting Error Monitor...\n')
 const monitor = new ErrorMonitor();
 
   if (!monitor.init()) {
@@ -698,10 +721,10 @@ const monitor = new ErrorMonitor();
   // Exit with appropriate code based on health score
   const healthScore = monitor.calculateHealthScore();
   if (healthScore.score < 70) {
-    // console.warn('\n⚠️  System health is below acceptable threshold');
+    // logger.warn('\n⚠️  System health is below acceptable threshold');
     process.exit(1);
   } else {
-    // console.warn('\n✅ System health is acceptable');
+    // logger.warn('\n✅ System health is acceptable');
     process.exit(0);
   }
 }
@@ -709,7 +732,7 @@ const monitor = new ErrorMonitor();
 // Run if called directly
 if (require.main === module) {
   main().catch((error) => {
-    console.error('❌ Error monitor failed:', error);
+    logger.error('❌ Error monitor failed:', error);
     process.exit(1);
   });
 }
@@ -719,13 +742,13 @@ module.exports = { ErrorMonitor, CONFIG };
 
 // Graceful shutdown handling
 process.on('SIGINT', () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
 
 process.on('SIGTERM', () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });

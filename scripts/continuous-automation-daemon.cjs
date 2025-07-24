@@ -312,10 +312,13 @@ const now = Date.now();
 
     // Schedule restart
     
+const timeoutId = 
 const timeoutId = setTimeout(async () => {
       if (this.isRunning) {
         logger.info(`🔄 Restarting service: ${serviceName}`);
-        this.log('SERVICE_RESTART',  `Restarting service ${serviceName}`);
+        this.log('SERVICE_RESTART',   `Restarting service ${serviceName}`);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 
@@ -550,7 +553,10 @@ const logEntry = `[${timestamp}] [${serviceName}] [${level}] ${message}`;
    */
   sleep(ms) {
     return new Promise((resolve) => 
-const timeoutId = setTimeout(resolve,  ms);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   ms);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
   }

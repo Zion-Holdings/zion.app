@@ -74,7 +74,10 @@ const idx = todos.findIndex((t) => !t.done);
   // Here, you would implement the actual improvement logic (AI/code automation)
   // For now, just simulate completion
   await new Promise((res) => 
-const timeoutId = setTimeout(res,  5000);
+const timeoutId = 
+const timeoutId = setTimeout(res,   5000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 )
 const result = Simulated improvement complete.';
@@ -91,7 +94,10 @@ async function loop() {
       logger.error('Error in auto-improver:', e);
     }
     await new Promise((res) => 
-const timeoutId = setTimeout(res,  CHECK_INTERVAL);
+const timeoutId = 
+const timeoutId = setTimeout(res,   CHECK_INTERVAL);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
   }
@@ -121,3 +127,18 @@ if (require.main === module) {
 }
 
 module.exports = Script;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

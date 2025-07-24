@@ -178,7 +178,10 @@ class AutomationManager {
     
     await this.stopSystem();
     await new Promise(resolve => 
-const timeoutId = setTimeout(resolve,  2000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   2000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ); // Wait 2 seconds
     await this.startSystem();
@@ -286,7 +289,10 @@ const timeoutId = setTimeout(resolve,  2000);
         logger.info('⚠️  Automation system is not running. Starting...');
         await this.startSystem();
         await new Promise(resolve => 
-const timeoutId = setTimeout(resolve,  3000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   3000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ); // Wait for startup
       }
@@ -517,7 +523,10 @@ SLACK_SIGNING_SECRET=your_slack_signing_secret_here
       }
       
       await new Promise(resolve => 
-const timeoutId = setTimeout(resolve,  1000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
       attempts++;

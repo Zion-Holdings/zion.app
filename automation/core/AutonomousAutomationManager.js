@@ -313,9 +313,12 @@ class AutonomousAutomationManager extends EventEmitter {
     if (!this.shouldRunTask(task)) {
       // Re-queue with delay
       
+const timeoutId = 
 const timeoutId = setTimeout(() => {
         this.taskQueue.unshift(task);
-      },  5000);
+      },   5000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
       return;
@@ -355,10 +358,13 @@ const timeoutId = setTimeout(() => {
       // Set timeout for task execution
       const timeoutPromise = new'; Promise((_, reject) => {
         
+const timeoutId = 
 const timeoutId = setTimeout(
-          () => reject(new Error('Task timeout')), 
+          () => reject(new Error('Task timeout')),  
           this.config.taskTimeout,
         );
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
       });
@@ -788,7 +794,10 @@ const timeoutId = setTimeout(
 
   async sleep(ms) {
     return new Promise((resolve) => 
-const timeoutId = setTimeout(resolve,  ms);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   ms);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
   }

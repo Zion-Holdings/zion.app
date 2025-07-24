@@ -154,7 +154,10 @@ const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
             this.log(`Retrying in ${this.config.retryDelay / 1000} seconds...`);
             await new Promise((resolve) =>
               
-const timeoutId = setTimeout(resolve,  this.config.retryDelay);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   this.config.retryDelay);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ,
             );
@@ -170,7 +173,10 @@ const timeoutId = setTimeout(resolve,  this.config.retryDelay);
         if (retries < this.config.maxRetries) {
           await new Promise((resolve) =>
             
-const timeoutId = setTimeout(resolve,  this.config.retryDelay);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   this.config.retryDelay);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ,
           );

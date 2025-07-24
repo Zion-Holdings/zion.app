@@ -333,10 +333,13 @@ class AutonomousAutomationDaemon extends EventEmitter {
     return new Promise((resolve) => {
       const startUsage = process.cpuUsage();
       
+const timeoutId = 
 const timeoutId = setTimeout(() => {
         const endUsage = process.cpuUsage(startUsage);
         const cpuPercent = (endUsage.user + endUsage.system) / 1000000;
-        resolve(Math.min(100,  cpuPercent);
+        resolve(Math.min(100,   cpuPercent);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
       }, 100);
@@ -631,11 +634,14 @@ const timeoutId = setTimeout(() => {
       try {
         automation.process.kill('SIGTERM');
         
+const timeoutId = 
 const timeoutId = setTimeout(() => {
           if (automation.process) {
             automation.process.kill('SIGKILL');
           }
-        },  5000);
+        },   5000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
       } catch (error) {
@@ -656,7 +662,10 @@ const timeoutId = setTimeout(() => {
 
       await this.stopAutomation(name);
       await new Promise(resolve => 
-const timeoutId = setTimeout(resolve,  2000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   2000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
       await this.startAutomation(name, automation.script);

@@ -481,10 +481,13 @@ class AutonomousAutomationSystem extends EventEmitter {
       
       // Set timeout
       
+const timeoutId = 
 const timeoutId = setTimeout(() => {
         child.kill();
         reject(new Error('Agent script timeout'));
-      },  300000);
+      },   300000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ; // 5 minutes
     });
@@ -575,7 +578,10 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
     
     // Simulate AI response
     await new Promise(resolve => 
-const timeoutId = setTimeout(resolve,  1000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
     
@@ -746,13 +752,19 @@ const timeoutId = setTimeout(resolve,  1000);
       switch (decision.decision) {
         case retry_immediately':
           
-const timeoutId = setTimeout(() => this.executeAgent(agentName),  1000);
+const timeoutId = 
+const timeoutId = setTimeout(() => this.executeAgent(agentName),   1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
           break;
         case retry_with_backoff':
           
-const timeoutId = setTimeout(() => this.executeAgent(agentName),  30000);
+const timeoutId = 
+const timeoutId = setTimeout(() => this.executeAgent(agentName),   30000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
           break;
@@ -973,7 +985,10 @@ const timeoutId = setTimeout(() => this.executeAgent(agentName),  30000);
     logger.info('🔄 Restarting Autonomous Automation System...');
     this.stop().then(() => {
       
-const timeoutId = setTimeout(() => this.start(),  1000);
+const timeoutId = 
+const timeoutId = setTimeout(() => this.start(),   1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
     });

@@ -398,13 +398,19 @@ module.exports = {
       try {
         await this.checkBuilds();
         await new Promise((resolve) => 
-const timeoutId = setTimeout(resolve,  this.config.checkInterval);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   this.config.checkInterval);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
       } catch (error) {
         this.log(`Monitoring error: ${error.message}`, error');
         await new Promise((resolve) => 
-const timeoutId = setTimeout(resolve,  60000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   60000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ); // Wait 1 minute on error
       }

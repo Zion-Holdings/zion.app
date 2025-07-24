@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 class Sh {
   constructor() {
     this.isRunning = false;
@@ -6,7 +29,7 @@ class Sh {
 
   async start() {
     this.isRunning = true;
-    console.log('Starting Sh...');
+    logger.info('Starting Sh...');
     
     try {
       #!/bin/bash
@@ -140,14 +163,14 @@ echo -e "• ${GREEN}/suggestions${NC} - Get optimization suggestions"
 echo ""
 echo -e "${YELLOW}⚠️ Don't forget to configure your Slack app and Cursor agent settings!${NC}"
     } catch (error) {
-      console.error('Error in Sh:', error);
+      logger.error('Error in Sh:', error);
       throw error;
     }
   }
 
   stop() {
     this.isRunning = false;
-    console.log('Stopping Sh...');
+    logger.info('Stopping Sh...');
   }
 }
 
@@ -155,9 +178,24 @@ echo -e "${YELLOW}⚠️ Don't forget to configure your Slack app and Cursor age
 if (require.main === module) {
   const script = new Sh();
   script.start().catch(error => {
-    console.error('Failed to start Sh:', error);
+    logger.error('Failed to start Sh:', error);
     process.exit(1);
   });
 }
 
 module.exports = Sh;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

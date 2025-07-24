@@ -1,10 +1,10 @@
-import { createClient } from @supabase/supabase-js';import type { NextApiRequest, NextApiResponse } from next';import { withErrorLogging } from @/utils/withErrorLogging';;
+import { createClient } from @supabase/supabase-js';import type { NextApiRequest, NextApiResponse } from 'next';import { withErrorLogging } from @/utils/withErrorLogging';;
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string;
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY as string;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== POST') {'    res.setHeader('Allow', POST');    return res.status(405).end();
+  if (req.method !== 'POST') {'    res.setHeader('Allow', POST');    return res.status(405).end();
   }
 
   const { userId, amount, reason } = req['body'] || {};  if (!userId || typeof amount !== number') {'    return res.status(400).json({ error: userId and amount required' });  }

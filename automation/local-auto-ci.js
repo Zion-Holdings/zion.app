@@ -65,7 +65,10 @@ async function mainLoop() {
     }
     log(`Waiting ${WAIT_MINUTES} minutes before next run...`);
     await new Promise((res) => 
-const timeoutId = setTimeout(res,  WAIT_MINUTES * 60 * 1000);
+const timeoutId = 
+const timeoutId = setTimeout(res,   WAIT_MINUTES * 60 * 1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
   }
@@ -94,3 +97,18 @@ if (require.main === module) {
 }
 
 module.exports = Script;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

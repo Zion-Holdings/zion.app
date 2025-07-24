@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from next';import mongoose from mongoose';import { z } from zod';import type { Document, Model } from mongoose';import { withErrorLogging } from @/utils/withErrorLogging';;
+import type { NextApiRequest, NextApiResponse } from 'next';import mongoose from mongoose';import { z } from zod';import type { Document, Model } from mongoose';import { withErrorLogging } from @/utils/withErrorLogging';;
 const mongoUri = process.env.MONGO_URI || mongodb://localhost:27017/zion';;
 const feedbackSchema = new mongoose.Schema({
   rating: { type: Number, required: true, min: 1, max: 5 },
@@ -34,7 +34,7 @@ const FeedbackValidator = z.object({
 });
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== POST') {'    res.setHeader('Allow', POST');    return res.status(405).end(`Method ${req.method} Not Allowed`);
+  if (req.method !== 'POST') {'    res.setHeader('Allow', POST');    return res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
   const parsed = FeedbackValidator.safeParse(req['body']);  if (!parsed.success) {

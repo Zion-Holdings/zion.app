@@ -331,9 +331,12 @@ const selectedNode = this.selectBestNode(availableNodes, task);
 
     // Simulate task execution
     
+const timeoutId = 
 const timeoutId = setTimeout(
       () => {
-        this.completeTask(task.id,  { success: true, nodeId: node.id }, null);
+        this.completeTask(task.id,   { success: true, nodeId: node.id }, null);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
       },
@@ -384,8 +387,11 @@ const timeout = 60 * 1000; // 60 seconds
 
     // Simulate discovering other nodes
     
+const timeoutId = 
 const timeoutId = setTimeout(() => {
-      this.registerNode('node-1',  '192.168.1.100', 3003, ['build', 'test']);
+      this.registerNode('node-1',   '192.168.1.100', 3003, ['build', 'test']);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
       this.registerNode('node-2', '192.168.1.101', 3004, ['lint', 'optimize']);

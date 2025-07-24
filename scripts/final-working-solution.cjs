@@ -126,7 +126,10 @@ module.exports = nextConfig;`;
 
       // Wait for server to start
       await new Promise((resolve) => 
-const timeoutId = setTimeout(resolve,  15000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   15000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
 

@@ -243,11 +243,14 @@ export default function App({ Component, pageProps }: AppProps) {
 
       // Wait for server to start
       
+const timeoutId = 
 const timeoutId = setTimeout(() => {
         if (!resolved) {
           resolved = true;
           this.log('Server started successfully');
-          resolve({ success: true,  server });
+          resolve({ success: true,   server });
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
         }

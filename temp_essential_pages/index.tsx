@@ -1,4 +1,4 @@
-import React from react';import { useRouter } from next/router';import Home from @/src/pages/Home';import type { GetStaticProps } from next';import { ErrorBanner } from @/components/talent/ErrorBanner';;
+import React from react';import { useRouter } from next/router';import Home from @/src/pages/Home';import type { GetStaticProps } from 'next';import { ErrorBanner } from @/components/talent/ErrorBanner';;
 interface HomePageProps {
   hasError?: boolean;
   errorMessage?: string;

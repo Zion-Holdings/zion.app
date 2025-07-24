@@ -1,0 +1,1145 @@
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      [2025-07-23T03:09:01.683Z] [INFO] 📊 Updating commit metadata...
+[2025-07-23T03:09:01.698Z] [WARN] ⚠️  No existing metadata found
+[2025-07-23T03:09:01.813Z] [INFO] 🔄 Starting post-commit autonomous improvements...
+[2025-07-23T03:09:01.831Z] [INFO] 📚 Generating documentation updates...
+[2025-07-23T03:09:01.832Z] [INFO] 📝 Updating changelog...
+[2025-07-23T03:09:01.833Z] [INFO] 🔄 Running post-commit optimizations...
+[2025-07-23T03:09:01.833Z] [INFO] ✅ Post-commit improvements completed
+[2025-07-23T03:09:01.939Z] [INFO] 📚 Updating documentation...
+[2025-07-23T03:09:01.953Z] [INFO] 📖 Generating API documentation...
+[2025-07-23T03:09:01.954Z] [INFO] 📖 Updating README...
+[2025-07-23T03:09:01.954Z] [INFO] 📝 Generating changelog...
+[2025-07-23T03:09:01.955Z] [INFO] ✅ Documentation updated
+[2025-07-23T03:09:02.156Z] [INFO] 📋 Generating commit report...
+[2025-07-23T03:09:03.179Z] [INFO] ✅ Commit report generated
+[2025-07-23T03:09:03.312Z] [INFO] 🚀 Preparing for deployment...
+[2025-07-23T03:09:03.658Z] [DEBUG] > project@0.0.0 build
+> next build
+[2025-07-23T03:09:04.789Z] [DEBUG] ▲ Next.js 15.4.2
+[2025-07-23T03:09:04.790Z] [DEBUG] - Environments: .env.local, .env
+[2025-07-23T03:09:04.858Z] [DEBUG] Creating an optimized production build ...
+[2025-07-23T03:09:11.973Z] [WARN] Failed to compile.
+[2025-07-23T03:09:11.973Z] [WARN] ./src/utils/server-polyfill.ts
+Error:   [31mx[0m 'const' declarations must be initialized
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/utils/server-polyfill.ts[0m:2:1]
+ [2m1[0m | // server-polyfill module placeholder
+ [2m2[0m | export const server-polyfill = {
+   : [35;1m             ^^^^^^[0m
+ [2m3[0m |   // TODO: Implement server-polyfill functionality
+ [2m4[0m | };
+   `----
+  [31mx[0m Expected a semicolon
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/utils/server-polyfill.ts[0m:2:1]
+ [2m1[0m | // server-polyfill module placeholder
+ [2m2[0m | export const server-polyfill = {
+   : [35;1m                   ^[0m
+ [2m3[0m |   // TODO: Implement server-polyfill functionality
+ [2m4[0m | };
+   `----
+  [31mx[0m Expression expected
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/utils/server-polyfill.ts[0m:4:1]
+ [2m1[0m | // server-polyfill module placeholder
+ [2m2[0m | export const server-polyfill = {
+ [2m3[0m |   // TODO: Implement server-polyfill functionality
+ [2m4[0m | };
+   : [35;1m^[0m
+   `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/utils/server-polyfill.ts
+
+./pages/api/auth/[...nextauth].ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/[...nextauth].ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/[...nextauth].ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/[...nextauth]',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/[...nextauth].ts
+
+./pages/api/auth/confirm.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/confirm.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/confirm.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/confirm',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/confirm.ts
+
+./pages/api/auth/forgot.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/forgot.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/forgot.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/forgot',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/forgot.ts
+
+./pages/api/auth/health.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/health.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/health.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/health',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/health.ts
+[2025-07-23T03:09:11.996Z] [WARN] 
+[2025-07-23T03:09:11.997Z] [WARN] > Build failed because of webpack errors
+[2025-07-23T03:09:12.022Z] [ERROR] ❌ Deployment preparation failed: Command failed with code 1: Failed to compile.
+
+./src/utils/server-polyfill.ts
+Error:   [31mx[0m 'const' declarations must be initialized
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/utils/server-polyfill.ts[0m:2:1]
+ [2m1[0m | // server-polyfill module placeholder
+ [2m2[0m | export const server-polyfill = {
+   : [35;1m             ^^^^^^[0m
+ [2m3[0m |   // TODO: Implement server-polyfill functionality
+ [2m4[0m | };
+   `----
+  [31mx[0m Expected a semicolon
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/utils/server-polyfill.ts[0m:2:1]
+ [2m1[0m | // server-polyfill module placeholder
+ [2m2[0m | export const server-polyfill = {
+   : [35;1m                   ^[0m
+ [2m3[0m |   // TODO: Implement server-polyfill functionality
+ [2m4[0m | };
+   `----
+  [31mx[0m Expression expected
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/utils/server-polyfill.ts[0m:4:1]
+ [2m1[0m | // server-polyfill module placeholder
+ [2m2[0m | export const server-polyfill = {
+ [2m3[0m |   // TODO: Implement server-polyfill functionality
+ [2m4[0m | };
+   : [35;1m^[0m
+   `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/utils/server-polyfill.ts
+
+./pages/api/auth/[...nextauth].ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/[...nextauth].ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/[...nextauth].ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/[...nextauth]',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/[...nextauth].ts
+
+./pages/api/auth/confirm.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/confirm.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/confirm.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/confirm',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/confirm.ts
+
+./pages/api/auth/forgot.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/forgot.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/forgot.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/forgot',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/forgot.ts
+
+./pages/api/auth/health.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/health.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/health.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/health',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/health.ts
+
+
+> Build failed because of webpack errors
+
+[2025-07-23T03:09:12.089Z] [INFO] 🤖 Updating automation status...
+[2025-07-23T03:09:12.133Z] [INFO] ✅ Automation status updated
+[2025-07-23T04:29:24.943Z] [INFO] 📊 Updating commit metadata...
+[2025-07-23T04:29:24.954Z] [WARN] ⚠️  No existing metadata found
+[2025-07-23T04:29:25.036Z] [INFO] 🔄 Starting post-commit autonomous improvements...
+[2025-07-23T04:29:25.061Z] [INFO] 📚 Generating documentation updates...
+[2025-07-23T04:29:25.064Z] [INFO] 📝 Updating changelog...
+[2025-07-23T04:29:25.064Z] [INFO] 🔄 Running post-commit optimizations...
+[2025-07-23T04:29:25.064Z] [INFO] ✅ Post-commit improvements completed
+[2025-07-23T04:29:25.166Z] [INFO] 📚 Updating documentation...
+[2025-07-23T04:29:25.182Z] [INFO] 📖 Generating API documentation...
+[2025-07-23T04:29:25.184Z] [INFO] 📖 Updating README...
+[2025-07-23T04:29:25.184Z] [INFO] 📝 Generating changelog...
+[2025-07-23T04:29:25.185Z] [INFO] ✅ Documentation updated
+[2025-07-23T04:29:25.294Z] [INFO] 📋 Generating commit report...
+[2025-07-23T04:29:25.366Z] [INFO] ✅ Commit report generated
+[2025-07-23T04:29:25.438Z] [INFO] 🚀 Preparing for deployment...
+[2025-07-23T04:29:25.822Z] [DEBUG] > project@0.0.0 build
+> next build
+[2025-07-23T04:29:27.364Z] [DEBUG] ▲ Next.js 15.4.2
+[2025-07-23T04:29:27.365Z] [DEBUG] - Environments: .env.local, .env
+[2025-07-23T04:29:27.434Z] [DEBUG] Creating an optimized production build ...
+[2025-07-23T04:29:34.494Z] [WARN] Failed to compile.
+[2025-07-23T04:29:34.495Z] [WARN] ./src/utils/server-polyfill.ts
+Error:   [31mx[0m 'const' declarations must be initialized
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/utils/server-polyfill.ts[0m:2:1]
+ [2m1[0m | // server-polyfill module placeholder
+ [2m2[0m | export const server-polyfill = {
+   : [35;1m             ^^^^^^[0m
+ [2m3[0m |   // TODO: Implement server-polyfill functionality
+ [2m4[0m | };
+   `----
+  [31mx[0m Expected a semicolon
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/utils/server-polyfill.ts[0m:2:1]
+ [2m1[0m | // server-polyfill module placeholder
+ [2m2[0m | export const server-polyfill = {
+   : [35;1m                   ^[0m
+ [2m3[0m |   // TODO: Implement server-polyfill functionality
+ [2m4[0m | };
+   `----
+  [31mx[0m Expression expected
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/utils/server-polyfill.ts[0m:4:1]
+ [2m1[0m | // server-polyfill module placeholder
+ [2m2[0m | export const server-polyfill = {
+ [2m3[0m |   // TODO: Implement server-polyfill functionality
+ [2m4[0m | };
+   : [35;1m^[0m
+   `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/utils/server-polyfill.ts
+
+./pages/api/auth/[...nextauth].ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/[...nextauth].ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/[...nextauth].ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/[...nextauth]',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/[...nextauth].ts
+
+./pages/api/auth/confirm.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/confirm.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/confirm.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/confirm',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/confirm.ts
+
+./pages/api/auth/forgot.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/forgot.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/forgot.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/forgot',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/forgot.ts
+
+./pages/api/auth/health.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/health.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/health.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/health',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/health.ts
+[2025-07-23T04:29:34.518Z] [WARN] 
+[2025-07-23T04:29:34.519Z] [WARN] > Build failed because of webpack errors
+[2025-07-23T04:29:34.547Z] [ERROR] ❌ Deployment preparation failed: Command failed with code 1: Failed to compile.
+
+./src/utils/server-polyfill.ts
+Error:   [31mx[0m 'const' declarations must be initialized
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/utils/server-polyfill.ts[0m:2:1]
+ [2m1[0m | // server-polyfill module placeholder
+ [2m2[0m | export const server-polyfill = {
+   : [35;1m             ^^^^^^[0m
+ [2m3[0m |   // TODO: Implement server-polyfill functionality
+ [2m4[0m | };
+   `----
+  [31mx[0m Expected a semicolon
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/utils/server-polyfill.ts[0m:2:1]
+ [2m1[0m | // server-polyfill module placeholder
+ [2m2[0m | export const server-polyfill = {
+   : [35;1m                   ^[0m
+ [2m3[0m |   // TODO: Implement server-polyfill functionality
+ [2m4[0m | };
+   `----
+  [31mx[0m Expression expected
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/utils/server-polyfill.ts[0m:4:1]
+ [2m1[0m | // server-polyfill module placeholder
+ [2m2[0m | export const server-polyfill = {
+ [2m3[0m |   // TODO: Implement server-polyfill functionality
+ [2m4[0m | };
+   : [35;1m^[0m
+   `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./src/utils/server-polyfill.ts
+
+./pages/api/auth/[...nextauth].ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/[...nextauth].ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/[...nextauth].ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/[...nextauth]',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/[...nextauth].ts
+
+./pages/api/auth/confirm.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/confirm.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/confirm.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/confirm',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/confirm.ts
+
+./pages/api/auth/forgot.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/forgot.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/forgot.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/forgot',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/forgot.ts
+
+./pages/api/auth/health.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/health.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/health.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/health',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/health.ts
+
+
+> Build failed because of webpack errors
+
+[2025-07-23T04:29:34.616Z] [INFO] 🤖 Updating automation status...
+[2025-07-23T04:29:34.657Z] [INFO] ✅ Automation status updated
+[2025-07-23T04:29:38.831Z] [INFO] ✅ Validating commit message...
+[2025-07-23T04:29:38.842Z] [WARN] ⚠️  Commit message does not follow conventional format
+[2025-07-23T04:29:56.191Z] [INFO] ✅ Validating commit message...
+[2025-07-23T04:29:56.196Z] [WARN] ⚠️  Commit message does not follow conventional format
+[2025-07-23T04:33:25.142Z] [INFO] 📊 Updating commit metadata...
+[2025-07-23T04:33:25.152Z] [WARN] ⚠️  No existing metadata found
+[2025-07-23T04:33:25.222Z] [INFO] 🔄 Starting post-commit autonomous improvements...
+[2025-07-23T04:33:25.233Z] [INFO] 📚 Generating documentation updates...
+[2025-07-23T04:33:25.234Z] [INFO] 📝 Updating changelog...
+[2025-07-23T04:33:25.234Z] [INFO] 🔄 Running post-commit optimizations...
+[2025-07-23T04:33:25.235Z] [INFO] ✅ Post-commit improvements completed
+[2025-07-23T04:33:25.354Z] [INFO] 📚 Updating documentation...
+[2025-07-23T04:33:25.367Z] [INFO] 📖 Generating API documentation...
+[2025-07-23T04:33:25.369Z] [INFO] 📖 Updating README...
+[2025-07-23T04:33:25.372Z] [INFO] 📝 Generating changelog...
+[2025-07-23T04:33:25.375Z] [INFO] ✅ Documentation updated
+[2025-07-23T04:33:25.521Z] [INFO] 📋 Generating commit report...
+[2025-07-23T04:33:25.630Z] [INFO] ✅ Commit report generated
+[2025-07-23T04:33:25.717Z] [INFO] 🚀 Preparing for deployment...
+[2025-07-23T04:33:26.020Z] [DEBUG] > project@0.0.0 build
+> next build
+[2025-07-23T04:33:27.197Z] [DEBUG] ▲ Next.js 15.4.2
+[2025-07-23T04:33:27.197Z] [DEBUG] - Environments: .env.local, .env
+[2025-07-23T04:33:27.337Z] [DEBUG] Creating an optimized production build ...
+[2025-07-23T04:33:31.938Z] [INFO] 📊 Updating commit metadata...
+[2025-07-23T04:33:31.950Z] [WARN] ⚠️  No existing metadata found
+[2025-07-23T04:33:32.027Z] [INFO] 🔄 Starting post-commit autonomous improvements...
+[2025-07-23T04:33:32.039Z] [INFO] 📚 Generating documentation updates...
+[2025-07-23T04:33:32.039Z] [INFO] 📝 Updating changelog...
+[2025-07-23T04:33:32.040Z] [INFO] 🔄 Running post-commit optimizations...
+[2025-07-23T04:33:32.040Z] [INFO] ✅ Post-commit improvements completed
+[2025-07-23T04:33:32.122Z] [INFO] 📚 Updating documentation...
+[2025-07-23T04:33:32.138Z] [INFO] 📖 Generating API documentation...
+[2025-07-23T04:33:32.139Z] [INFO] 📖 Updating README...
+[2025-07-23T04:33:32.140Z] [INFO] 📝 Generating changelog...
+[2025-07-23T04:33:32.140Z] [INFO] ✅ Documentation updated
+[2025-07-23T04:33:32.230Z] [INFO] 📋 Generating commit report...
+[2025-07-23T04:33:32.334Z] [INFO] ✅ Commit report generated
+[2025-07-23T04:33:32.410Z] [INFO] 🚀 Preparing for deployment...
+[2025-07-23T04:33:32.801Z] [DEBUG] > project@0.0.0 build
+> next build
+[2025-07-23T04:33:34.046Z] [WARN] Failed to compile.
+[2025-07-23T04:33:34.047Z] [WARN] ./pages/api/auth/login.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/login.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/login.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/login',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/login.ts
+
+./pages/api/auth/register.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/register.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/register.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/register',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/register.ts
+
+./pages/api/auth/resend-verification-email.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/resend-verification-email.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/resend-verification-email.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/resend-verification-email',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/resend-verification-email.ts
+
+./pages/api/auth/session.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/session.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/session.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/session',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/session.ts
+
+./pages/api/blog/[slug].ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/blog/[slug].ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/blog/[slug].ts[0m:13:1]
+ [2m10[0m |     endpoint: 'blog/[slug]',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/blog/[slug].ts
+[2025-07-23T04:33:34.071Z] [WARN] 
+[2025-07-23T04:33:34.072Z] [WARN] > Build failed because of webpack errors
+[2025-07-23T04:33:34.101Z] [ERROR] ❌ Deployment preparation failed: Command failed with code 1: Failed to compile.
+
+./pages/api/auth/login.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/login.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/login.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/login',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/login.ts
+
+./pages/api/auth/register.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/register.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/register.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/register',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/register.ts
+
+./pages/api/auth/resend-verification-email.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/resend-verification-email.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/resend-verification-email.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/resend-verification-email',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/resend-verification-email.ts
+
+./pages/api/auth/session.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/session.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/session.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/session',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/session.ts
+
+./pages/api/blog/[slug].ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/blog/[slug].ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/blog/[slug].ts[0m:13:1]
+ [2m10[0m |     endpoint: 'blog/[slug]',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/blog/[slug].ts
+
+
+> Build failed because of webpack errors
+
+[2025-07-23T04:33:34.266Z] [DEBUG] ▲ Next.js 15.4.2
+[2025-07-23T04:33:34.267Z] [DEBUG] - Environments: .env.local, .env
+[2025-07-23T04:33:34.431Z] [DEBUG] Creating an optimized production build ...
+[2025-07-23T04:33:40.672Z] [WARN] Failed to compile.
+[2025-07-23T04:33:40.672Z] [WARN] ./pages/api/auth/login.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/login.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/login.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/login',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/login.ts
+
+./pages/api/auth/register.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/register.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/register.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/register',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/register.ts
+
+./pages/api/auth/resend-verification-email.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/resend-verification-email.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/resend-verification-email.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/resend-verification-email',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/resend-verification-email.ts
+
+./pages/api/auth/session.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/session.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/session.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/session',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/session.ts
+
+./pages/api/blog/[slug].ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/blog/[slug].ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/blog/[slug].ts[0m:13:1]
+ [2m10[0m |     endpoint: 'blog/[slug]',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/blog/[slug].ts
+[2025-07-23T04:33:40.696Z] [WARN] 
+[2025-07-23T04:33:40.697Z] [WARN] > Build failed because of webpack errors
+[2025-07-23T04:33:40.724Z] [ERROR] ❌ Deployment preparation failed: Command failed with code 1: Failed to compile.
+
+./pages/api/auth/login.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/login.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/login.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/login',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/login.ts
+
+./pages/api/auth/register.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/register.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/register.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/register',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/register.ts
+
+./pages/api/auth/resend-verification-email.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/resend-verification-email.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/resend-verification-email.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/resend-verification-email',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/resend-verification-email.ts
+
+./pages/api/auth/session.ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/session.ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/auth/session.ts[0m:13:1]
+ [2m10[0m |     endpoint: 'auth/session',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/auth/session.ts
+
+./pages/api/blog/[slug].ts
+Error:   [31mx[0m Unterminated string constant
+   ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/blog/[slug].ts[0m:1:1]
+ [2m1[0m | import type { NextApiRequest, NextApiResponse } from 'next;
+   : [35;1m                                                     ^^^^^^[0m
+ [2m2[0m | 
+ [2m3[0m | export default function handler(req: NextApiRequest, res: NextApiResponse) {
+ [2m4[0m |   if (req.method !== 'GET' && req.method !== 'POST') {
+   `----
+  [31mx[0m Expected '}', got '<eof>'
+    ,-[[36;1;4m/Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/api/blog/[slug].ts[0m:13:1]
+ [2m10[0m |     endpoint: 'blog/[slug]',
+ [2m11[0m |     method: req.method,
+ [2m12[0m |     timestamp: new Date().toISOString(),
+ [2m13[0m |   });
+    : [35;1m    ^[0m
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./pages/api/blog/[slug].ts
+
+
+> Build failed because of webpack errors
+
+[2025-07-23T04:41:02.677Z] [INFO] ✅ Validating commit message...
+[2025-07-23T04:41:02.688Z] [WARN] ⚠️  Commit message does not follow conventional format
+[2025-07-23T04:41:03.730Z] [INFO] ✅ Validating commit message...
+[2025-07-23T04:41:03.741Z] [WARN] ⚠️  Commit message does not follow conventional format
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

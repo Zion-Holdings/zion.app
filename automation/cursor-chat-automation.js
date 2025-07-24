@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 /**
  * Cursor Chat Automation System
  * 
@@ -36,7 +59,7 @@ class CursorChatAutomation extends EventEmitter {
   }
 
   async initialize() {
-    console.log('🤖 Initializing Cursor Chat Automation...');
+    logger.info('🤖 Initializing Cursor Chat Automation...');
     
     try {
       // Ensure data directory exists
@@ -49,10 +72,10 @@ class CursorChatAutomation extends EventEmitter {
       this.startMonitoring();
       
       this.isRunning = true;
-      console.log('✅ Cursor Chat Automation initialized');
+      logger.info('✅ Cursor Chat Automation initialized');
       
     } catch (error) {
-      console.error('❌ Failed to initialize Cursor Chat Automation:', error);
+      logger.error('❌ Failed to initialize Cursor Chat Automation:', error);
       throw error;
     }
   }
@@ -63,7 +86,7 @@ class CursorChatAutomation extends EventEmitter {
       await fs.mkdir(path.dirname(this.config.todoFile), { recursive: true });
       await fs.mkdir(path.dirname(this.config.queueFile), { recursive: true });
     } catch (error) {
-      console.error('Error creating data directories:', error);
+      logger.error('Error creating data directories:', error);
     }
   }
 
@@ -75,7 +98,7 @@ class CursorChatAutomation extends EventEmitter {
         const todos = JSON.parse(todoData);
         this.todos = new Map(Object.entries(todos));
       } catch (error) {
-        console.log('No existing todos found, starting fresh');
+        logger.info('No existing todos found, starting fresh');
       }
 
       // Load queue
@@ -83,7 +106,7 @@ class CursorChatAutomation extends EventEmitter {
         const queueData = await fs.readFile(this.config.queueFile, utf8');
         this.queue = JSON.parse(queueData);
       } catch (error) {
-        console.log('No existing queue found, starting fresh');
+        logger.info('No existing queue found, starting fresh');
       }
 
       // Load chat history
@@ -97,11 +120,11 @@ class CursorChatAutomation extends EventEmitter {
           }
         }
       } catch (error) {
-        console.log('No existing chat history found');
+        logger.info('No existing chat history found');
       }
 
     } catch (error) {
-      console.error('Error loading data:', error);
+      logger.error('Error loading data:', error);
     }
   }
 
@@ -167,7 +190,7 @@ class CursorChatAutomation extends EventEmitter {
   }
 
   startMonitoring() {
-    console.log('👀 Starting Cursor chat monitoring...');
+    logger.info('👀 Starting Cursor chat monitoring...');
     
     // Monitor for new chat interactions
     setInterval(async () => {
@@ -201,7 +224,7 @@ class CursorChatAutomation extends EventEmitter {
         await this.processChat(chat);
       }
     } catch (error) {
-      console.error('Error processing new chats:', error);
+      logger.error('Error processing new chats:', error);
     }
   }
 
@@ -212,7 +235,7 @@ class CursorChatAutomation extends EventEmitter {
   }
 
   async processChat(chat) {
-    console.log(`📝 Processing chat: ${chat.id}`);
+    logger.info(`📝 Processing chat: ${chat.id}`);
     
     // Extract todos from chat content
     const todos = this.extractTodos(chat.content);
@@ -301,7 +324,7 @@ class CursorChatAutomation extends EventEmitter {
     
     await this.saveTodos();
     
-    console.log(`✅ Created todo: ${todo.text} (${todo.priority})`);
+    logger.info(`✅ Created todo: ${todo.text} (${todo.priority})`);
     this.emit('todoCreated', todo);
   }
 
@@ -309,7 +332,7 @@ class CursorChatAutomation extends EventEmitter {
     if (!this.config.autoQueueTasks) return;
     
     if (this.queue.length >= this.config.maxQueueSize) {
-      console.warn('⚠️ Queue is full, removing oldest item');
+      logger.warn('⚠️ Queue is full, removing oldest item');
       this.queue.shift();
     }
     
@@ -322,14 +345,14 @@ class CursorChatAutomation extends EventEmitter {
     
     await this.saveQueue();
     
-    console.log(`📋 Added to queue: ${item.text} (${item.type})`);
+    logger.info(`📋 Added to queue: ${item.text} (${item.type})`);
     this.emit('itemQueued', item);
   }
 
   async processQueue() {
     if (this.queue.length === 0) return;
     
-    console.log(`🔄 Processing ${this.queue.length} items in queue...`);
+    logger.info(`🔄 Processing ${this.queue.length} items in queue...`);
     
     // Sort by priority and timestamp
     this.queue.sort((a, b) => {
@@ -355,7 +378,7 @@ class CursorChatAutomation extends EventEmitter {
   }
 
   async processQueueItem(item) {
-    console.log(`⚡ Processing queue item: ${item.text}`);
+    logger.info(`⚡ Processing queue item: ${item.text}`);
     
     try {
       // This would integrate with project management tools
@@ -382,7 +405,7 @@ class CursorChatAutomation extends EventEmitter {
       this.emit('itemProcessed', item);
       
     } catch (error) {
-      console.error(`Error processing queue item: ${error.message}`);
+      logger.error(`Error processing queue item: ${error.message}`);
       item.status = failed';
       item.error = error.message;
     }
@@ -424,7 +447,7 @@ class CursorChatAutomation extends EventEmitter {
     const reportFile = path.join(this.config.dataDir, `report-${Date.now()}.json`);
     await fs.writeFile(reportFile, JSON.stringify(report, null, 2));
     
-    console.log(`📊 Generated report: ${reportFile}`);
+    logger.info(`📊 Generated report: ${reportFile}`);
     this.emit('reportGenerated', report);
   }
 
@@ -499,7 +522,7 @@ class CursorChatAutomation extends EventEmitter {
   }
 
   stop() {
-    console.log('🛑 Stopping Cursor Chat Automation...');
+    logger.info('🛑 Stopping Cursor Chat Automation...');
     this.isRunning = false;
   }
 }
@@ -512,13 +535,13 @@ if (require.main === module) {
   const automation = new CursorChatAutomation();
   
   automation.initialize().catch(error => {
-    console.error('Failed to initialize Cursor Chat Automation:', error);
+    logger.error('Failed to initialize Cursor Chat Automation:', error);
     process.exit(1);
   });
   
   // Handle graceful shutdown
   process.on('SIGINT', () => {
-    console.log('\n🛑 Shutting down Cursor Chat Automation...');
+    logger.info('\n🛑 Shutting down Cursor Chat Automation...');
     automation.stop();
     process.exit(0);
   });

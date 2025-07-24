@@ -1,6 +1,29 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 const { execSync } = require('child_process');
 
-console.warn('📦 Installing build dependencies for Netlify...');
+logger.warn('📦 Installing build dependencies for Netlify...');
 
 // List of essential build dependencies
 const buildDeps = [
@@ -13,26 +36,26 @@ const buildDeps = [
 ];
 
 try {
-  console.warn('Installing:', buildDeps.join(', '));
+  logger.warn('Installing:', buildDeps.join(', '));
   execSync(`npm install ${buildDeps.join(' ')} --save-dev --legacy-peer-deps`, {
     stdio: 'inherit',
   });
-  console.warn('✅ Build dependencies installed successfully');
+  logger.warn('✅ Build dependencies installed successfully');
 } catch (_error) {
-  console.error('❌ Failed to install build dependencies:', _error.message);
+  logger.error('❌ Failed to install build dependencies:', _error.message);
   process.exit(1);
 }
 
 
 // Graceful shutdown handling
 process.on('SIGINT', () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
 
 process.on('SIGTERM', () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });

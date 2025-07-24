@@ -77,7 +77,10 @@ const colors = {
           ['ai-improver', 'optimizer', 'monitor'].includes(name)
         ) {
           
-const timeoutId = setTimeout(() => this.startProcess(name,  command, args);
+const timeoutId = 
+const timeoutId = setTimeout(() => this.startProcess(name,   command, args);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 , 5000);
         }
@@ -145,7 +148,10 @@ const timeoutId = setTimeout(() => this.startProcess(name,  command, args);
     for (const proc of processes) {
       await this.startProcess(proc.name, proc.command, proc.args);
       await new Promise((resolve) => 
-const timeoutId = setTimeout(resolve,  1000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ); // Stagger starts
     }

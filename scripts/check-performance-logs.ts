@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 class IgnoreparsingErroroccurredorsforinvalidJSON {
   constructor() {
     this.isRunning = false;
@@ -6,7 +29,7 @@ class IgnoreparsingErroroccurredorsforinvalidJSON {
 
   async start() {
     this.isRunning = true;
-    console.log('Starting IgnoreparsingErroroccurredorsforinvalidJSON...');
+    logger.info('Starting IgnoreparsingErroroccurredorsforinvalidJSON...');
     
     try {
       #!/usr/bin/env node;
@@ -47,26 +70,26 @@ function createPR(avg: number): void {
 function main() {
   const times = parseTimes(LOG_FILE);
   if (!times.length) {
-    // console.warn('No log entries found');    return;
+    // logger.warn('No log entries found');    return;
   }
   const avg = average(times);
-  // console.warn(`Average response time: ${avg.toFixed(2)}ms`);
+  // logger.warn(`Average response time: ${avg.toFixed(2)}ms`);
   if (avg > THRESHOLD_MS) {
-    // console.warn('Threshold exceeded. Opening PR...');    createPR(avg);
+    // logger.warn('Threshold exceeded. Opening PR...');    createPR(avg);
   } else {
-    // console.warn('Performance within threshold');  }
+    // logger.warn('Performance within threshold');  }
 }
 
 main();
     } catch (error) {
-      console.error('Error in IgnoreparsingErroroccurredorsforinvalidJSON:', error);
+      logger.error('Error in IgnoreparsingErroroccurredorsforinvalidJSON:', error);
       throw error;
     }
   }
 
   stop() {
     this.isRunning = false;
-    console.log('Stopping IgnoreparsingErroroccurredorsforinvalidJSON...');
+    logger.info('Stopping IgnoreparsingErroroccurredorsforinvalidJSON...');
   }
 }
 
@@ -74,9 +97,24 @@ main();
 if (require.main === module) {
   const script = new IgnoreparsingErroroccurredorsforinvalidJSON();
   script.start().catch(error => {
-    console.error('Failed to start IgnoreparsingErroroccurredorsforinvalidJSON:', error);
+    logger.error('Failed to start IgnoreparsingErroroccurredorsforinvalidJSON:', error);
     process.exit(1);
   });
 }
 
 module.exports = IgnoreparsingErroroccurredorsforinvalidJSON;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

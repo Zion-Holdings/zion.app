@@ -257,9 +257,12 @@ class MasterAutomationOrchestrator extends EventEmitter {
       try {
         // Start system with delay
         
+const timeoutId = 
 const timeoutId = setTimeout(async () => {
           await this.startSystem(systemId);
-        },  systemConfig.schedule.startDelay);
+        },   systemConfig.schedule.startDelay);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
       } catch (error) {
@@ -354,11 +357,14 @@ const timeoutId = setTimeout(async () => {
         
         // Wait for graceful shutdown
         
+const timeoutId = 
 const timeoutId = setTimeout(() => {
           if (process.killed === false) {
             process.kill('SIGKILL');
           }
-        },  5000);
+        },   5000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
       } else {
@@ -463,9 +469,12 @@ const timeoutId = setTimeout(() => {
     
     // Wait before restart
     
+const timeoutId = 
 const timeoutId = setTimeout(async () => {
       await this.startSystem(systemId);
-    },  5000 * (restartAttempts + 1);
+    },   5000 * (restartAttempts + 1);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ); // Exponential backoff
   }
@@ -562,7 +571,10 @@ const timeoutId = setTimeout(async () => {
           this.log('info', `Restarting overloaded system ${systemLoad.systemId}`);
           await this.stopSystem(systemLoad.systemId);
           
-const timeoutId = setTimeout(() => this.startSystem(systemLoad.systemId),  5000);
+const timeoutId = 
+const timeoutId = setTimeout(() => this.startSystem(systemLoad.systemId),   5000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
         }

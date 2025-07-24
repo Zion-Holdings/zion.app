@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 /**
  * Cursor Chat Monitor
  * 
@@ -33,7 +56,7 @@ class CursorChatMonitor extends EventEmitter {
   }
 
   async initialize() {
-    console.log('👀 Initializing Cursor Chat Monitor...');
+    logger.info('👀 Initializing Cursor Chat Monitor...');
     
     try {
       // Ensure output directory exists
@@ -46,10 +69,10 @@ class CursorChatMonitor extends EventEmitter {
       await this.startMonitoring();
       
       this.isRunning = true;
-      console.log('✅ Cursor Chat Monitor initialized');
+      logger.info('✅ Cursor Chat Monitor initialized');
       
     } catch (error) {
-      console.error('❌ Failed to initialize Cursor Chat Monitor:', error);
+      logger.error('❌ Failed to initialize Cursor Chat Monitor:', error);
       throw error;
     }
   }
@@ -58,7 +81,7 @@ class CursorChatMonitor extends EventEmitter {
     try {
       await fs.mkdir(this.config.outputDir, { recursive: true });
     } catch (error) {
-      console.error('Error creating output directory:', error);
+      logger.error('Error creating output directory:', error);
     }
   }
 
@@ -67,15 +90,15 @@ class CursorChatMonitor extends EventEmitter {
       const historyFile = path.join(this.config.outputDir, 'chat-history.json');
       const historyData = await fs.readFile(historyFile, 'utf8');
       this.chatHistory = JSON.parse(historyData);
-      console.log(`📚 Loaded ${this.chatHistory.length} chat history entries`);
+      logger.info(`📚 Loaded ${this.chatHistory.length} chat history entries`);
     } catch (error) {
-      console.log('No existing chat history found, starting fresh');
+      logger.info('No existing chat history found, starting fresh');
       this.chatHistory = [];
     }
   }
 
   async startMonitoring() {
-    console.log('🔍 Starting Cursor chat monitoring...');
+    logger.info('🔍 Starting Cursor chat monitoring...');
     
     // Monitor Cursor data directory for new chat files
     this.watcher = chokidar.watch(this.config.cursorDataDir, {
@@ -88,7 +111,7 @@ class CursorChatMonitor extends EventEmitter {
       .on('add', (filePath) => this.handleNewFile(filePath))
       .on('change', (filePath) => this.handleFileChange(filePath))
       .on('unlink', (filePath) => this.handleFileRemoved(filePath))
-      .on('error', (error) => console.error('Watcher error:', error));
+      .on('error', (error) => logger.error('Watcher error:', error));
 
     // Also monitor for existing files
     await this.scanExistingFiles();
@@ -97,13 +120,13 @@ class CursorChatMonitor extends EventEmitter {
   async scanExistingFiles() {
     try {
       const files = await this.findChatFiles(this.config.cursorDataDir);
-      console.log(`🔍 Found ${files.length} existing chat files`);
+      logger.info(`🔍 Found ${files.length} existing chat files`);
       
       for (const file of files) {
         await this.processChatFile(file);
       }
     } catch (error) {
-      console.error('Error scanning existing files:', error);
+      logger.error('Error scanning existing files:', error);
     }
   }
 
@@ -146,21 +169,21 @@ class CursorChatMonitor extends EventEmitter {
 
   async handleNewFile(filePath) {
     if (this.isChatFile(path.basename(filePath))) {
-      console.log(`📄 New chat file detected: ${filePath}`);
+      logger.info(`📄 New chat file detected: ${filePath}`);
       await this.processChatFile(filePath);
     }
   }
 
   async handleFileChange(filePath) {
     if (this.isChatFile(path.basename(filePath))) {
-      console.log(`📝 Chat file changed: ${filePath}`);
+      logger.info(`📝 Chat file changed: ${filePath}`);
       await this.processChatFile(filePath);
     }
   }
 
   async handleFileRemoved(filePath) {
     if (this.isChatFile(path.basename(filePath))) {
-      console.log(`🗑️ Chat file removed: ${filePath}`);
+      logger.info(`🗑️ Chat file removed: ${filePath}`);
       // Could implement cleanup logic here
     }
   }
@@ -178,11 +201,11 @@ class CursorChatMonitor extends EventEmitter {
         await this.saveChatData(chatData);
         this.processedFiles.add(filePath);
         
-        console.log(`✅ Processed chat file: ${path.basename(filePath)}`);
+        logger.info(`✅ Processed chat file: ${path.basename(filePath)}`);
         this.emit('chatProcessed', chatData);
       }
     } catch (error) {
-      console.error(`Error processing chat file ${filePath}:`, error);
+      logger.error(`Error processing chat file ${filePath}:`, error);
     }
   }
 
@@ -339,7 +362,7 @@ class CursorChatMonitor extends EventEmitter {
   }
 
   stop() {
-    console.log('🛑 Stopping Cursor Chat Monitor...');
+    logger.info('🛑 Stopping Cursor Chat Monitor...');
     this.isRunning = false;
     
     if (this.watcher) {
@@ -357,13 +380,13 @@ if (require.main === module) {
   const monitor = new CursorChatMonitor();
   
   monitor.initialize().catch(error => {
-    console.error('Failed to initialize Cursor Chat Monitor:', error);
+    logger.error('Failed to initialize Cursor Chat Monitor:', error);
     process.exit(1);
   });
   
   // Handle graceful shutdown
   process.on('SIGINT', () => {
-    console.log('\n🛑 Shutting down Cursor Chat Monitor...');
+    logger.info('\n🛑 Shutting down Cursor Chat Monitor...');
     monitor.stop();
     process.exit(0);
   });

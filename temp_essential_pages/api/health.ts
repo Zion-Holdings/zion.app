@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from next';import { withErrorLogging } from @/utils/withErrorLogging';
+import type { NextApiRequest, NextApiResponse } from 'next';import { withErrorLogging } from @/utils/withErrorLogging';
 type HealthResponse = {
   status: string;
   version: string;

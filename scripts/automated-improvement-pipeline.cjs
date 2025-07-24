@@ -231,7 +231,10 @@ const improvementLoop = async () => {
 
       // Schedule next iteration
       
-const timeoutId = setTimeout(improvementLoop,  30000);
+const timeoutId = 
+const timeoutId = setTimeout(improvementLoop,   30000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ; // Every 30 seconds
     };

@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 class  {
   constructor() {
     this.isRunning = false;
@@ -6,7 +29,7 @@ class  {
 
   async start() {
     this.isRunning = true;
-    console.log('Starting ...');
+    logger.info('Starting ...');
     
     try {
       #!/usr/bin/env node
@@ -16,21 +39,21 @@ class  {
 const fs = require('fs')
 const path = require('path');
 
-console.warn('🔍 BUNDLE ANALYSIS REPORT');
-console.warn('========================\n');
+logger.warn('🔍 BUNDLE ANALYSIS REPORT');
+logger.warn('========================\n');
 
 // Check if build output exists
 const buildStatsPath = path.join(process.cwd(), '.next');
 if (!fs.existsSync(buildStatsPath)) {
-  console.warn('❌ No build output found. Run `npm run build` first.');
+  logger.warn('❌ No build output found. Run `npm run build` first.');
   process.exit(1);
 }
 
 // Analyze static chunks
 const staticPath = path.join(buildStatsPath, 'static', 'chunks');
 if (fs.existsSync(staticPath)) {
-  console.warn('📦 LARGE STATIC CHUNKS (>500KB):');
-  console.warn('================================')
+  logger.warn('📦 LARGE STATIC CHUNKS (>500KB):');
+  logger.warn('================================')
 const chunks = fs.readdirSync(staticPath)
 const largeChunks = [];
 
@@ -47,17 +70,17 @@ const sizeKB = Math.round(stats.size / 1024);
   largeChunks
     .sort((a, b) => b.size - a.size)
     .forEach((chunk) => {
-      console.warn(`  📄 ${chunk.name}: ${chunk.size}KB`);
+      logger.warn(`  📄 ${chunk.name}: ${chunk.size}KB`);
     });
 
-  console.warn(`\n📊 Found ${largeChunks.length} large chunks\n`);
+  logger.warn(`\n📊 Found ${largeChunks.length} large chunks\n`);
 }
 
 // Analyze pages
 const pagesPath = path.join(buildStatsPath, 'static', 'chunks', 'pages');
 if (fs.existsSync(pagesPath)) {
-  console.warn('📱 LARGE PAGE CHUNKS (>400KB):');
-  console.warn('==============================')
+  logger.warn('📱 LARGE PAGE CHUNKS (>400KB):');
+  logger.warn('==============================')
 const pages = fs.readdirSync(pagesPath)
 const largePages = [];
 
@@ -74,57 +97,57 @@ const sizeKB = Math.round(stats.size / 1024);
   largePages
     .sort((a, b) => b.size - a.size)
     .forEach((page) => {
-      console.warn(`  📄 ${page.name}: ${page.size}KB`);
+      logger.warn(`  📄 ${page.name}: ${page.size}KB`);
     });
 
-  console.warn(`\n📊 Found ${largePages.length} large page chunks\n`);
+  logger.warn(`\n📊 Found ${largePages.length} large page chunks\n`);
 }
 
 // Optimization recommendations
-console.warn('🎯 OPTIMIZATION RECOMMENDATIONS:');
-console.warn('=================================');
-console.warn('1. 📦 Bundle Splitting:');
-console.warn('   - Split large vendor libraries');
-console.warn('   - Implement dynamic imports for heavy components');
-console.warn('   - Use React.lazy() for page-level code splitting\n');
+logger.warn('🎯 OPTIMIZATION RECOMMENDATIONS:');
+logger.warn('=================================');
+logger.warn('1. 📦 Bundle Splitting:');
+logger.warn('   - Split large vendor libraries');
+logger.warn('   - Implement dynamic imports for heavy components');
+logger.warn('   - Use React.lazy() for page-level code splitting\n');
 
-console.warn('2. 🔄 Dependency Optimization:');
-console.warn('   - Review and remove unused dependencies');
-console.warn('   - Replace heavy libraries with lighter alternatives');
-console.warn('   - Use tree-shaking for better dead code elimination\n');
+logger.warn('2. 🔄 Dependency Optimization:');
+logger.warn('   - Review and remove unused dependencies');
+logger.warn('   - Replace heavy libraries with lighter alternatives');
+logger.warn('   - Use tree-shaking for better dead code elimination\n');
 
-console.warn('3. ⚡ Performance Strategies:');
-console.warn('   - Implement progressive loading');
-console.warn('   - Add service worker for caching');
-console.warn('   - Optimize critical rendering path\n');
+logger.warn('3. ⚡ Performance Strategies:');
+logger.warn('   - Implement progressive loading');
+logger.warn('   - Add service worker for caching');
+logger.warn('   - Optimize critical rendering path\n');
 
-console.warn('✅ Analysis Complete!');
-console.warn(
+logger.warn('✅ Analysis Complete!');
+logger.warn(
   '💡 Run `npm run analyze` for detailed webpack-bundle-analyzer output',
 );
 
 
 // Graceful shutdown handling
 process.on('SIGINT', () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
 
 process.on('SIGTERM', () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
     } catch (error) {
-      console.error('Error in :', error);
+      logger.error('Error in :', error);
       throw error;
     }
   }
 
   stop() {
     this.isRunning = false;
-    console.log('Stopping ...');
+    logger.info('Stopping ...');
   }
 }
 
@@ -132,7 +155,7 @@ process.on('SIGTERM', () => {
 if (require.main === module) {
   const script = new ();
   script.start().catch(error => {
-    console.error('Failed to start :', error);
+    logger.error('Failed to start :', error);
     process.exit(1);
   });
 }

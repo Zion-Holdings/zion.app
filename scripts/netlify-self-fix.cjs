@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 class Script {
   constructor() {
     this.isRunning = false;
@@ -6,7 +29,7 @@ class Script {
 
   async start() {
     this.isRunning = true;
-    console.log('Starting Script...');
+    logger.info('Starting Script...');
     
     try {
       #!/usr/bin/env node
@@ -39,7 +62,7 @@ const files = fs.readdirSync(dir);
   }
 }
 
-// console.warn('🔧 Fixing Netlify "self is not defined" issue...')
+// logger.warn('🔧 Fixing Netlify "self is not defined" issue...')
 function patchVendorsFile() {
   try {
     // Find all vendors files in .next/server directory
@@ -48,12 +71,12 @@ const vendorsPattern = path.join(serverDir, 'vendors*.js')
 const vendorFiles = globSync(vendorsPattern);
 
     if (vendorFiles.length === 0) {
-      // console.warn('📁 No vendors.js file found to patch');
+      // logger.warn('📁 No vendors.js file found to patch');
       return;
     }
 
     vendorFiles.forEach((vendorFile) => {
-      // console.warn(`🔧 Patching ${path.basename(vendorFile)}...`);
+      // logger.warn(`🔧 Patching ${path.basename(vendorFile)}...`);
 
       let content = fs.readFileSync(vendorFile, 'utf8');
 
@@ -62,7 +85,7 @@ const vendorFiles = globSync(vendorsPattern);
         content.startsWith('(self["webpackChunk_N_E"]') ||
         content.includes('self["webpackChunk_N_E"]')
       ) {
-        // console.warn('🎯 Found problematic self reference, applying fix...');
+        // logger.warn('🎯 Found problematic self reference, applying fix...');
 
         // Create comprehensive polyfill
         const polyfill = `// Netlify Serverless Self Polyfill
@@ -92,13 +115,13 @@ if (typeof self !== 'undefined' && !self.webpackChunk_N_E) {
 
         // Write the patched content back
         fs.writeFileSync(vendorFile, content, 'utf8');
-        // console.warn(`✅ Successfully patched ${path.basename(vendorFile)}`);
+        // logger.warn(`✅ Successfully patched ${path.basename(vendorFile)}`);
       } else {
-        // console.warn(`ℹ️ ${path.basename(vendorFile)} doesn't need patching`);
+        // logger.warn(`ℹ️ ${path.basename(vendorFile)} doesn't need patching`);
       }
     });
   } catch (_error) {
-    console.error('❌ Error patching vendors file:', error.message);
+    logger.error('❌ Error patching vendors file:', error.message);
     throw error;
   }
 }
@@ -109,7 +132,7 @@ function patchChunkFiles() {
     const staticDir = path.join(process.cwd(), '.next', 'static', 'chunks');
 
     if (!fs.existsSync(staticDir)) {
-      // console.warn('📁 Static chunks directory not found');
+      // logger.warn('📁 Static chunks directory not found');
       return;
     }
 
@@ -122,7 +145,7 @@ function patchChunkFiles() {
         content.includes('self["webpackChunk_N_E"]') ||
         content.includes('self.webpackChunk_N_E')
       ) {
-        // console.warn(`🔧 Patching chunk ${path.basename(chunkFile)}...`);
+        // logger.warn(`🔧 Patching chunk ${path.basename(chunkFile)}...`);
 
         // Replace self references with safe access
         content = content.replace(
@@ -136,11 +159,11 @@ function patchChunkFiles() {
         );
 
         fs.writeFileSync(chunkFile, content, 'utf8');
-        // console.warn(`✅ Patched chunk ${path.basename(chunkFile)}`);
+        // logger.warn(`✅ Patched chunk ${path.basename(chunkFile)}`);
       }
     });
   } catch (_error) {
-    console.warn('⚠️ Error patching chunk files:', error.message);
+    logger.warn('⚠️ Error patching chunk files:', error.message);
     // Don't throw here as chunk patching is optional
   }
 }
@@ -178,14 +201,14 @@ module.exports = {
 `;
 
     fs.writeFileSync(polyfillPath, polyfillContent, 'utf8');
-    // console.warn('✅ Created global self polyfill');
+    // logger.warn('✅ Created global self polyfill');
   } catch (_error) {
-    console.warn('⚠️ Could not create global polyfill:', error.message);
+    logger.warn('⚠️ Could not create global polyfill:', error.message);
   }
 }
 
 function main() {
-  // console.warn('🚀 Starting Netlify self reference fix...');
+  // logger.warn('🚀 Starting Netlify self reference fix...');
 
   try {
     // Step 1: Patch vendors.js file
@@ -197,9 +220,9 @@ function main() {
     // Step 3: Create global polyfill
     createGlobalPolyfill();
 
-    // console.warn('✅ Netlify self fix completed successfully!');
+    // logger.warn('✅ Netlify self fix completed successfully!');
   } catch (_error) {
-    console.error('❌ Netlify self fix failed:', error.message);
+    logger.error('❌ Netlify self fix failed:', error.message);
     process.exit(1);
   }
 }
@@ -219,25 +242,25 @@ module.exports = {
 
 // Graceful shutdown handling
 process.on('SIGINT', () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
 
 process.on('SIGTERM', () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
     } catch (error) {
-      console.error('Error in Script:', error);
+      logger.error('Error in Script:', error);
       throw error;
     }
   }
 
   stop() {
     this.isRunning = false;
-    console.log('Stopping Script...');
+    logger.info('Stopping Script...');
   }
 }
 
@@ -245,7 +268,7 @@ process.on('SIGTERM', () => {
 if (require.main === module) {
   const script = new Script();
   script.start().catch(error => {
-    console.error('Failed to start Script:', error);
+    logger.error('Failed to start Script:', error);
     process.exit(1);
   });
 }

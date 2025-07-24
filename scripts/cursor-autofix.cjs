@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 class  {
   constructor() {
     this.isRunning = false;
@@ -6,7 +29,7 @@ class  {
 
   async start() {
     this.isRunning = true;
-    console.log('Starting ...');
+    logger.info('Starting ...');
     
     try {
       #!/usr/bin/env node
@@ -20,7 +43,7 @@ const apiKey = process.env.CURSOR_API_KEY
 const projectId = process.env.CURSOR_PROJECT_ID;
 
 if (!apiKey || !projectId) {
-  console.error('Missing CURSOR_API_KEY or CURSOR_PROJECT_ID');
+  logger.error('Missing CURSOR_API_KEY or CURSOR_PROJECT_ID');
   process.exit(1);
 }
 
@@ -55,16 +78,16 @@ function applyPatch(diffText) {
 async function run() {
   const issues = await getIssues();
   if (!Array.isArray(issues) || issues.length === 0) {
-    console.warn('No open Cursor issues to auto-fix.');
+    logger.warn('No open Cursor issues to auto-fix.');
     return;
   }
 
   for (const issue of issues) {
     try {
-      console.warn('Requesting patch for issue', issue.id)
+      logger.warn('Requesting patch for issue', issue.id)
 const { diff, message } = await requestPatch(issue.id);
       if (!diff) {
-        console.warn('No diff returned for', issue.id);
+        logger.warn('No diff returned for', issue.id);
         continue;
       }
       applyPatch(diff);
@@ -72,7 +95,7 @@ const { diff, message } = await requestPatch(issue.id);
       execSync('git config user.email "bot@example.com"');
       execSync(`git commit -am "${message || 'cursor auto fix'}"`);
     } catch (_err) {
-      console.error('Auto-fix failed for issue', issue.id, err);
+      logger.error('Auto-fix failed for issue', issue.id, err);
     }
   }
 
@@ -86,32 +109,32 @@ const { diff, message } = await requestPatch(issue.id);
 }
 
 run().catch((e) => {
-  console.error(e);
+  logger.error(e);
   process.exit(1);
 });
 
 
 // Graceful shutdown handling
 process.on('SIGINT', () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
 
 process.on('SIGTERM', () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
     } catch (error) {
-      console.error('Error in :', error);
+      logger.error('Error in :', error);
       throw error;
     }
   }
 
   stop() {
     this.isRunning = false;
-    console.log('Stopping ...');
+    logger.info('Stopping ...');
   }
 }
 
@@ -119,7 +142,7 @@ process.on('SIGTERM', () => {
 if (require.main === module) {
   const script = new ();
   script.start().catch(error => {
-    console.error('Failed to start :', error);
+    logger.error('Failed to start :', error);
     process.exit(1);
   });
 }

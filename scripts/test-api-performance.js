@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 class  {
   constructor() {
     this.isRunning = false;
@@ -6,7 +29,7 @@ class  {
 
   async start() {
     this.isRunning = true;
-    console.log('Starting ...');
+    logger.info('Starting ...');
     
     try {
       #!/usr/bin/env node
@@ -104,8 +127,8 @@ const responseTime = endTime - startTime;
 
 
 async function testEndpoint(endpoint) {
-  // console.warn(`\n🧪 Testing: ${endpoint.name}`);
-  // console.warn(`   URL: ${endpoint.path}`)
+  // logger.warn(`\n🧪 Testing: ${endpoint.name}`);
+  // logger.warn(`   URL: ${endpoint.path}`)
 const results = {
     name: endpoint.name,
     path: endpoint.path,
@@ -114,7 +137,7 @@ const results = {
 
   // Test 1: Cold request (no cache)
   try {
-    // console.warn('   ⏱️  Cold request (no cache)...');    const coldResult = await makeRequest(endpoint)
+    // logger.warn('   ⏱️  Cold request (no cache)...');    const coldResult = await makeRequest(endpoint)
 const coldTest = {
       type: 'cold',      success: coldResult.statusCode >= 200 && coldResult.statusCode < 300,
       responseTime: coldResult.responseTime,
@@ -125,21 +148,24 @@ const coldTest = {
     results.tests.push(coldTest);
     
     if (coldTest.success) {
-      // console.warn(`   ✅ Cold: ${Math.round(coldTest.responseTime)}ms (${coldResult.statusCode})`);
+      // logger.warn(`   ✅ Cold: ${Math.round(coldTest.responseTime)}ms (${coldResult.statusCode})`);
       
       // Check if response has data
       if (coldResult.data && typeof coldResult.data === 'object') {        const _dataLength = Array.isArray(coldResult.data) ? coldResult.data.length : 
                           coldResult.data.results ? coldResult.data.results.length :
                           Object.keys(coldResult.data).length;
-        // console.warn(`   📊 Data: ${_dataLength} items, ${coldResult.size} bytes`);
+        // logger.warn(`   📊 Data: ${_dataLength} items, ${coldResult.size} bytes`);
       }
     } else {
-      // console.warn(`   ❌ Cold: Failed with ${coldResult.statusCode}`);
+      // logger.warn(`   ❌ Cold: Failed with ${coldResult.statusCode}`);
     }
     
     // Test 2: Warm request (should be cached)
-    // console.warn('   🔄 Warm request (should be cached)...');    await new Promise(resolve => 
-const timeoutId = setTimeout(resolve,  100);
+    // logger.warn('   🔄 Warm request (should be cached)...');    await new Promise(resolve => 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   100);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ); // Small delay
     
@@ -154,16 +180,16 @@ const warmTest = {
     results.tests.push(warmTest);
     
     if (warmTest.success) {
-      // console.warn(`   ✅ Warm: ${Math.round(warmTest.responseTime)}ms (${warmResult.statusCode})`);
+      // logger.warn(`   ✅ Warm: ${Math.round(warmTest.responseTime)}ms (${warmResult.statusCode})`);
       if (warmTest.improvement > 0) {
-        // console.warn(`   🚀 Improvement: ${Math.round(warmTest.improvement)}ms faster`);
+        // logger.warn(`   🚀 Improvement: ${Math.round(warmTest.improvement)}ms faster`);
       }
     } else {
-      // console.warn(`   ❌ Warm: Failed with ${warmResult.statusCode}`);
+      // logger.warn(`   ❌ Warm: Failed with ${warmResult.statusCode}`);
     }
     
   } catch {
-    // console.warn(`   ❌ Error: ${'Error occurred'.'Error occurred'} (${Math.round(error.responseTime)}ms)`);    results.tests.push({
+    // logger.warn(`   ❌ Error: ${'Error occurred'.'Error occurred'} (${Math.round(error.responseTime)}ms)`);    results.tests.push({
       type: 'error',      success: false,
       error: error.error,
       responseTime: error.responseTime
@@ -175,9 +201,9 @@ const warmTest = {
 
 
 async function runPerformanceTests() {
-  // console.warn('🚀 API Performance Test Suite');  // console.warn('================================');  // console.warn(`Testing against: ${BASE_URL}`);
-  // console.warn(`Timeout threshold: ${TIMEOUT_THRESHOLD}ms`);
-  // console.warn(`Max acceptable cached response: ${MAX_ACCEPTABLE_TIME}ms`)
+  // logger.warn('🚀 API Performance Test Suite');  // logger.warn('================================');  // logger.warn(`Testing against: ${BASE_URL}`);
+  // logger.warn(`Timeout threshold: ${TIMEOUT_THRESHOLD}ms`);
+  // logger.warn(`Max acceptable cached response: ${MAX_ACCEPTABLE_TIME}ms`)
 const allResults = [];
   
   for (const endpoint of TEST_ENDPOINTS) {
@@ -186,59 +212,62 @@ const allResults = [];
     
     // Small delay between tests
     await new Promise(resolve => 
-const timeoutId = setTimeout(resolve,  200);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   200);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
   }
   
   // Summary
-  // console.warn('\n📊 PERFORMANCE SUMMARY');  // console.warn('=====================');  
+  // logger.warn('\n📊 PERFORMANCE SUMMARY');  // logger.warn('=====================');  
   let totalTests = 0;
   let passedTests = 0;
   let timeoutIssues = 0;
   let cacheIssues = 0;
   
   allResults.forEach(result => {
-    // console.warn(`\n${result.name}:`);
+    // logger.warn(`\n${result.name}:`);
     
     result.tests.forEach(test => {
       totalTests++;
       
       if (test.success) {
         passedTests++;
-        // console.warn(`  ✅ ${test.type}: ${Math.round(test.responseTime)}ms`);
+        // logger.warn(`  ✅ ${test.type}: ${Math.round(test.responseTime)}ms`);
         
         // Check for performance issues
         if (test.responseTime > TIMEOUT_THRESHOLD) {
           timeoutIssues++;
-          // console.warn(`    ⚠️  SLOW: Exceeds ${TIMEOUT_THRESHOLD}ms threshold`);
+          // logger.warn(`    ⚠️  SLOW: Exceeds ${TIMEOUT_THRESHOLD}ms threshold`);
         } else if (test.type === warm' && test.responseTime > MAX_ACCEPTABLE_TIME) {          cacheIssues++;
-          // console.warn(`    ⚠️  CACHE: Warm request should be faster`);
+          // logger.warn(`    ⚠️  CACHE: Warm request should be faster`);
         }
       } else {
-        // console.warn(`  ❌ ${test.type}: ${test.error || Failed'}`);      }
+        // logger.warn(`  ❌ ${test.type}: ${test.error || Failed'}`);      }
     });
   });
   
-  // console.warn('\n OVERALL RESULTS');  // console.warn('==================');  // console.warn(`Tests passed: ${passedTests}/${totalTests}`);
-  // console.warn(`Success rate: ${Math.round((passedTests / totalTests) * 100)}%`);
+  // logger.warn('\n OVERALL RESULTS');  // logger.warn('==================');  // logger.warn(`Tests passed: ${passedTests}/${totalTests}`);
+  // logger.warn(`Success rate: ${Math.round((passedTests / totalTests) * 100)}%`);
   
   if (timeoutIssues === 0) {
-    // console.warn('✅ No timeout issues detected');  } else {
-    // console.warn(`❌ ${timeoutIssues} timeout issues detected`);
+    // logger.warn('✅ No timeout issues detected');  } else {
+    // logger.warn(`❌ ${timeoutIssues} timeout issues detected`);
   }
   
   if (cacheIssues === 0) {
-    // console.warn('✅ Caching appears to be working effectively');  } else {
-    // console.warn(`⚠️  ${cacheIssues} cache performance issues detected`);
+    // logger.warn('✅ Caching appears to be working effectively');  } else {
+    // logger.warn(`⚠️  ${cacheIssues} cache performance issues detected`);
   }
   
   // Final verdict
   const success = timeoutIssues === 0 && (passedTests / totalTests) >= 0.8;
   
   if (success) {
-    // console.warn('\n🎉 API PERFORMANCE: GOOD');    // console.warn('The timeout issues from issue #16 appear to be resolved!');  } else {
-    // console.warn('\n❌ API PERFORMANCE: NEEDS ATTENTION');    // console.warn('Some endpoints are still experiencing performance issues.');  }
+    // logger.warn('\n🎉 API PERFORMANCE: GOOD');    // logger.warn('The timeout issues from issue #16 appear to be resolved!');  } else {
+    // logger.warn('\n❌ API PERFORMANCE: NEEDS ATTENTION');    // logger.warn('Some endpoints are still experiencing performance issues.');  }
   
   return {
     success,
@@ -261,13 +290,13 @@ async function checkServer() {
 
 // Main execution
 async function main() {
-  // console.warn('Checking if development server is running...')
+  // logger.warn('Checking if development server is running...')
 const serverRunning = await checkServer();
   if (!serverRunning) {
-    // console.warn('❌ Development server is not running or not responding');    // console.warn('Please start the server with: npm run dev');    process.exit(1);
+    // logger.warn('❌ Development server is not running or not responding');    // logger.warn('Please start the server with: npm run dev');    process.exit(1);
   }
   
-  // console.warn('✅ Server is running\n');  
+  // logger.warn('✅ Server is running\n');  
   try {
     const results = await runPerformanceTests();
     process.exit(results.success ? 0 : 1);
@@ -289,25 +318,25 @@ module.exports = {
 
 // Graceful shutdown handling
 process.on('SIGINT', () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
 
 process.on('SIGTERM', () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
     } catch (error) {
-      console.error('Error in :', error);
+      logger.error('Error in :', error);
       throw error;
     }
   }
 
   stop() {
     this.isRunning = false;
-    console.log('Stopping ...');
+    logger.info('Stopping ...');
   }
 }
 
@@ -315,7 +344,7 @@ process.on('SIGTERM', () => {
 if (require.main === module) {
   const script = new ();
   script.start().catch(error => {
-    console.error('Failed to start :', error);
+    logger.error('Failed to start :', error);
     process.exit(1);
   });
 }

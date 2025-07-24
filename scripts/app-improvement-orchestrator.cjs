@@ -118,9 +118,12 @@ class AppImprovementOrchestrator {
 
       // Wait for system to start
       
+const timeoutId = 
 const timeoutId = setTimeout(() => {
         resolve();
-      },  3000);
+      },   3000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
     });

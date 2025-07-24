@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 class  {
   constructor() {
     this.isRunning = false;
@@ -6,7 +29,7 @@ class  {
 
   async start() {
     this.isRunning = true;
-    console.log('Starting ...');
+    logger.info('Starting ...');
     
     try {
       #!/usr/bin/env node
@@ -88,31 +111,31 @@ const hasDts = versions['.d.ts'];
 }
 
 function main() {
-  console.warn('🔍 Scanning for duplicate pages...\n')
+  logger.warn('🔍 Scanning for duplicate pages...\n')
 const toDelete = findDuplicates();
   
   if (toDelete.length === 0) {
-    console.warn('✅ No duplicate pages found!');
+    logger.warn('✅ No duplicate pages found!');
     return;
   }
 
-  console.warn(`📋 Found ${toDelete.length} files to delete:\n`);
+  logger.warn(`📋 Found ${toDelete.length} files to delete:\n`);
   
   toDelete.forEach((item, index) => {
-    console.warn(`${index + 1}. ${item.file}`);
-    console.warn(`   Reason: ${item.reason}\n`);
+    logger.warn(`${index + 1}. ${item.file}`);
+    logger.warn(`   Reason: ${item.reason}\n`);
   });
 
   // Check if we should actually delete
   const shouldDelete = process.argv.includes('--delete');
   
   if (!shouldDelete) {
-    console.warn('💡 Run with --delete flag to actually remove these files');
-    console.warn('   node scripts/cleanup-duplicate-pages.js --delete');
+    logger.warn('💡 Run with --delete flag to actually remove these files');
+    logger.warn('   node scripts/cleanup-duplicate-pages.js --delete');
     return;
   }
 
-  console.warn('🗑️  Deleting files...\n');
+  logger.warn('🗑️  Deleting files...\n');
   
   let deleteCount = 0;
   let errorCount = 0;
@@ -120,21 +143,21 @@ const toDelete = findDuplicates();
   for (const item of toDelete) {
     try {
       fs.unlinkSync(item.file);
-      console.warn(`✅ Deleted: ${item.file}`);
+      logger.warn(`✅ Deleted: ${item.file}`);
       deleteCount++;
     } catch (error) {
-      console.warn(`❌ Failed to delete: ${item.file} - ${error.message}`);
+      logger.warn(`❌ Failed to delete: ${item.file} - ${error.message}`);
       errorCount++;
     }
   }
 
-  console.warn(`\n📊 Summary:`);
-  console.warn(`   ✅ Successfully deleted: ${deleteCount} files`);
-  console.warn(`   ❌ Failed to delete: ${errorCount} files`);
+  logger.warn(`\n📊 Summary:`);
+  logger.warn(`   ✅ Successfully deleted: ${deleteCount} files`);
+  logger.warn(`   ❌ Failed to delete: ${errorCount} files`);
   
   if (deleteCount > 0) {
-    console.warn('\n🎉 Duplicate pages cleanup completed!');
-    console.warn('💡 You should now restart your Next.js dev server to see the changes');
+    logger.warn('\n🎉 Duplicate pages cleanup completed!');
+    logger.warn('💡 You should now restart your Next.js dev server to see the changes');
   }
 }
 
@@ -145,14 +168,14 @@ if (import.meta.url === `file://${process.argv[1]}`) {
 
 export { findDuplicates };
     } catch (error) {
-      console.error('Error in :', error);
+      logger.error('Error in :', error);
       throw error;
     }
   }
 
   stop() {
     this.isRunning = false;
-    console.log('Stopping ...');
+    logger.info('Stopping ...');
   }
 }
 
@@ -160,9 +183,24 @@ export { findDuplicates };
 if (require.main === module) {
   const script = new ();
   script.start().catch(error => {
-    console.error('Failed to start :', error);
+    logger.error('Failed to start :', error);
     process.exit(1);
   });
 }
 
 module.exports = ;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

@@ -1330,6 +1330,7 @@ const hasBuildScript = packageJson.scripts && packageJson.scripts.build;
     );
 
     
+const timeoutId = 
 const timeoutId = setTimeout(async () => {
       try {
         await this.initializeConnection();
@@ -1337,7 +1338,9 @@ const timeoutId = setTimeout(async () => {
         this.logger.error(`Reconnection failed: ${error.message}`);
         this.reconnect();
       }
-    },  this.reconnectDelay);
+    },   this.reconnectDelay);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
   }

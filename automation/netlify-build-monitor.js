@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 const fs = require('fs');
 const path = require('path');
 const { execSync, spawn } = require('child_process');
@@ -19,7 +42,7 @@ class NetlifyBuildMonitor {
 
   // Monitor build status
   async monitorBuild(buildId) {
-    console.log(`🔍 Monitoring build: ${buildId}`);
+    logger.info(`🔍 Monitoring build: ${buildId}`);
     
     let retries = 0;
     while (retries < this.config.maxRetries) {
@@ -27,26 +50,26 @@ class NetlifyBuildMonitor {
         const status = await this.getBuildStatus(buildId);
         
         if (status === 'ready') {
-          console.log('✅ Build completed successfully!');
+          logger.info('✅ Build completed successfully!');
           return true;
         } else if (status === 'error') {
-          console.log('❌ Build failed, analyzing errors...');
+          logger.info('❌ Build failed, analyzing errors...');
           await this.analyzeAndFixErrors();
           return false;
         } else if (status === 'building') {
-          console.log('⏳ Build in progress...');
+          logger.info('⏳ Build in progress...');
           await this.sleep(this.config.checkInterval);
         }
         
         retries++;
       } catch (error) {
-        console.error(`Error monitoring build: ${error.message}`);
+        logger.error(`Error monitoring build: ${error.message}`);
         retries++;
         await this.sleep(this.config.checkInterval);
       }
     }
     
-    console.log('⚠️ Max retries reached');
+    logger.info('⚠️ Max retries reached');
     return false;
   }
 
@@ -57,14 +80,14 @@ class NetlifyBuildMonitor {
       const build = JSON.parse(result);
       return build.state;
     } catch (error) {
-      console.error('Error getting build status:', error.message);
+      logger.error('Error getting build status:', error.message);
       return unknown';
     }
   }
 
   // Analyze build errors and apply fixes
   async analyzeAndFixErrors() {
-    console.log('🔧 Analyzing build errors...');
+    logger.info('🔧 Analyzing build errors...');
     
     // Common error patterns and their fixes
     const errorPatterns = [
@@ -97,7 +120,7 @@ class NetlifyBuildMonitor {
 
     for (const errorPattern of errorPatterns) {
       if (this.errors.some(error => errorPattern.pattern.test(error))) {
-        console.log(`🔧 Applying fix: ${errorPattern.description}`);
+        logger.info(`🔧 Applying fix: ${errorPattern.description}`);
         await errorPattern.fix();
       }
     }
@@ -105,7 +128,7 @@ class NetlifyBuildMonitor {
 
   // Fix string constant errors
   async fixStringConstants() {
-    console.log('🔧 Fixing string constant errors...');
+    logger.info('🔧 Fixing string constant errors...');
     
     const tsFiles = this.findTsFiles('.');
     let fixedCount = 0;
@@ -137,16 +160,16 @@ class NetlifyBuildMonitor {
           this.fixes.push(`Fixed string constants in ${file}`);
         }
       } catch (error) {
-        console.error(`Error fixing ${file}:`, error.message);
+        logger.error(`Error fixing ${file}:`, error.message);
       }
     }
     
-    console.log(`✅ Fixed string constants in ${fixedCount} files`);
+    logger.info(`✅ Fixed string constants in ${fixedCount} files`);
   }
 
   // Fix import statement errors
   async fixImportStatements() {
-    console.log('🔧 Fixing import statement errors...');
+    logger.info('🔧 Fixing import statement errors...');
     
     const tsFiles = this.findTsFiles('.');
     let fixedCount = 0;
@@ -180,16 +203,16 @@ class NetlifyBuildMonitor {
           this.fixes.push(`Fixed imports in ${file}`);
         }
       } catch (error) {
-        console.error(`Error fixing imports in ${file}:`, error.message);
+        logger.error(`Error fixing imports in ${file}:`, error.message);
       }
     }
     
-    console.log(`✅ Fixed import statements in ${fixedCount} files`);
+    logger.info(`✅ Fixed import statements in ${fixedCount} files`);
   }
 
   // Fix TypeScript type errors
   async fixTypeErrors() {
-    console.log('🔧 Fixing TypeScript type errors...');
+    logger.info('🔧 Fixing TypeScript type errors...');
     
     try {
       // Run TypeScript compiler to get detailed error information
@@ -206,16 +229,16 @@ class NetlifyBuildMonitor {
         }
       }
       
-      console.log(`Found ${this.errors.length} TypeScript errors`);
+      logger.info(`Found ${this.errors.length} TypeScript errors`);
     } catch (error) {
       // TypeScript compilation failed, which is expected
-      console.log('TypeScript check completed');
+      logger.info('TypeScript check completed');
     }
   }
 
   // Fix module errors
   async fixModuleErrors() {
-    console.log('🔧 Fixing module errors...');
+    logger.info('🔧 Fixing module errors...');
     
     try {
       // Check for missing dependencies
@@ -232,27 +255,27 @@ class NetlifyBuildMonitor {
       }
       
       if (missingDeps.length > 0) {
-        console.log(`Installing missing dependencies: ${missingDeps.join(', )}`);
+        logger.info(`Installing missing dependencies: ${missingDeps.join(', )}`);
         execSync(`npm install ${missingDeps.join(' )}`, { stdio: 'inherit' });
         this.fixes.push(`Installed missing dependencies: ${missingDeps.join(', )}`);
       }
     } catch (error) {
-      console.error('Error fixing module errors:', error.message);
+      logger.error('Error fixing module errors:', error.message);
     }
   }
 
   // Fix missing dependencies
   async fixMissingDependencies() {
-    console.log('🔧 Fixing missing dependencies...');
+    logger.info('🔧 Fixing missing dependencies...');
     
     try {
       // Reinstall dependencies
-      console.log('Reinstalling dependencies...');
+      logger.info('Reinstalling dependencies...');
       execSync('rm -rf node_modules package-lock.json', { stdio: 'inherit' });
       execSync('npm install', { stdio: 'inherit' });
       this.fixes.push('Reinstalled all dependencies');
     } catch (error) {
-      console.error('Error reinstalling dependencies:', error.message);
+      logger.error('Error reinstalling dependencies:', error.message);
     }
   }
 
@@ -272,7 +295,7 @@ class NetlifyBuildMonitor {
         }
       }
     } catch (error) {
-      console.error(`Error reading directory ${dir}:`, error.message);
+      logger.error(`Error reading directory ${dir}:`, error.message);
     }
     
     return files;
@@ -280,7 +303,7 @@ class NetlifyBuildMonitor {
 
   // Trigger a new build
   async triggerBuild() {
-    console.log('🚀 Triggering new build...');
+    logger.info('🚀 Triggering new build...');
     
     try {
       // Commit and push changes
@@ -288,10 +311,10 @@ class NetlifyBuildMonitor {
       execSync('git commit -m "Auto-fix: Build errors resolved"', { stdio: 'inherit' });
       execSync('git push origin main', { stdio: 'inherit' });
       
-      console.log('✅ Changes pushed, new build triggered');
+      logger.info('✅ Changes pushed, new build triggered');
       return true;
     } catch (error) {
-      console.error('Error triggering build:', error.message);
+      logger.error('Error triggering build:', error.message);
       return false;
     }
   }
@@ -312,18 +335,21 @@ class NetlifyBuildMonitor {
     const reportPath = `automation/reports/build-fix-${Date.now()}.json`;
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
-    console.log(`📊 Build report saved to: ${reportPath}`);
+    logger.info(`📊 Build report saved to: ${reportPath}`);
     return report;
   }
 
   // Utility function to sleep
   sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise(resolve => 
+const timeoutId = setTimeout(resolve,  ms);
+// Store timeoutId for cleanup if needed
+);
   }
 
   // Main execution method
   async run() {
-    console.log('🚀 Starting Netlify Build Monitor...');
+    logger.info('🚀 Starting Netlify Build Monitor...');
     
     try {
       // Check if we're in a CI environment
@@ -346,15 +372,15 @@ class NetlifyBuildMonitor {
       const report = this.generateReport();
       
       if (report.summary.success) {
-        console.log('🎉 Build monitor completed successfully!');
+        logger.info('🎉 Build monitor completed successfully!');
         process.exit(0);
       } else {
-        console.log('⚠️ Build monitor completed with issues');
+        logger.info('⚠️ Build monitor completed with issues');
         process.exit(1);
       }
       
     } catch (error) {
-      console.error('❌ Build monitor failed:', error.message);
+      logger.error('❌ Build monitor failed:', error.message);
       process.exit(1);
     }
   }
@@ -367,3 +393,17 @@ if (require.main === module) {
 }
 
 module.exports = NetlifyBuildMonitor; 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

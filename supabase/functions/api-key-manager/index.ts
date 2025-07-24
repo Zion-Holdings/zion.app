@@ -187,7 +187,7 @@ async function revokeApiKey(userId: string, keyId: string) {
     }
 
     return new Response(JSON.stringify({
-      message: API key revoked successfully',      key: data[0]
+      message: 'API key revoked successfully',      key: data[0]
     }), {
       status: 200,
       headers: { Content-Type': application/json' },    });

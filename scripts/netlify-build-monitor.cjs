@@ -147,9 +147,12 @@ const logEntry = `[${timestamp}] [${level}] ${message}`;
 
     // Set up build timeout
     
+const timeoutId = 
 const timeoutId = setTimeout(() => {
       if (this.currentBuild) {
-        this.log('Build timeout reached,  triggering self-healing...');
+        this.log('Build timeout reached,   triggering self-healing...');
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
         this.handleBuildTimeout();

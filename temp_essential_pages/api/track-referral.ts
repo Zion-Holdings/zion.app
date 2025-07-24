@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from next';import { withErrorLogging } from @/utils/withErrorLogging';
+import { NextApiRequest, NextApiResponse } from 'next';import { withErrorLogging } from @/utils/withErrorLogging';
 async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== POST') {'    res.setHeader('Allow', POST');    return res.status(405).end();
+  if (req.method !== 'POST') {'    res.setHeader('Allow', POST');    return res.status(405).end();
   }
 
   try {

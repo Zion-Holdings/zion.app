@@ -225,9 +225,12 @@ class AutonomousDaemon extends EventEmitter {
       this.restartCount++;
       
       
+const timeoutId = 
 const timeoutId = setTimeout(() => {
         this.startInfiniteImprovementLoop();
-      },  this.restartDelay);
+      },   this.restartDelay);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
     } else if (this.restartCount >= this.maxRestarts) {
@@ -317,9 +320,12 @@ const timeoutId = setTimeout(() => {
     }
     
     
+const timeoutId = 
 const timeoutId = setTimeout(() => {
       this.startInfiniteImprovementLoop();
-    },  1000);
+    },   1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
   }
@@ -345,7 +351,10 @@ const timeoutId = setTimeout(() => {
       // Wait for process to exit
       await new Promise((resolve) => {
         
-const timeoutId = setTimeout(resolve,  5000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   5000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
       });

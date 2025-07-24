@@ -1,4 +1,4 @@
-import { createMocks } from node-mocks-http';import type { NextApiRequest, NextApiResponse } from next';// Import the handler directly to test it
+import { createMocks } from node-mocks-http';import type { NextApiRequest, NextApiResponse } from 'next';// Import the handler directly to test it
 // We will extract getAuth0ManagementToken for separate unit tests later if needed,
 // or test it implicitly via the main handler. For now, let's focus on the handler.'import registerHandler from ../../../pages/api/auth/register';
 // Mock the global fetch function
@@ -58,7 +58,7 @@ describe('/api/auth/register API Endpoint', () => {'  const ORIGINAL_ENV = { ...
 
     expect(res._getStatusCode()).toBe(500);
     expect(res._getJSONData()).toEqual({
-      error: Authentication service not configured',      message: Authentication service not configured',    });
+      error: Authentication service not configured',      message: 'Authentication service not configured',    });
   });
 
   describe('Auth0 Management Token Retrieval and User Creation', () => {'    const validRequestBody = {

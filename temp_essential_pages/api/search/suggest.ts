@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from next';import { PrismaClient } from @prisma/client';import * as Sentry from @sentry/nextjs';;
+import type { NextApiRequest, NextApiResponse } from 'next';import { PrismaClient } from @prisma/client';import * as Sentry from @sentry/nextjs';;
 const prisma = new PrismaClient();
 
 interface SearchSuggestion {
@@ -11,7 +11,7 @@ default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<SearchSuggestion[] | { error: string }>
 ) {
-  if (req.method !== GET') {'    res.setHeader('Allow', GET');    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+  if (req.method !== 'GET') {'    res.setHeader('Allow', GET');    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 
   try {

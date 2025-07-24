@@ -865,7 +865,10 @@ module.exports = ${tool.name.replace(/[^a-zA-Z0-9]/g, '')};
       
       req.on('error', reject);
       req.
-const timeoutId = setTimeout(10000,  ();
+const timeoutId = 
+const timeoutId = setTimeout(10000,   ();
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
  => req.destroy());
     });

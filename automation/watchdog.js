@@ -99,7 +99,10 @@ function startCursorChat() {
       );
       cursorChatActive = false;
       
-const timeoutId = setTimeout(startCursorChat,  1000);
+const timeoutId = 
+const timeoutId = setTimeout(startCursorChat,   1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ; // Start new chat after 1s
     },
@@ -171,3 +174,18 @@ if (require.main === module) {
 }
 
 module.exports = Script;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

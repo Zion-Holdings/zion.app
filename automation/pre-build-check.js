@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
@@ -11,7 +34,7 @@ class PreBuildChecker {
 
   // Run all pre-build checks
   async runChecks() {
-    console.log('🔍 Running pre-build checks...');
+    logger.info('🔍 Running pre-build checks...');
     
     await this.checkSyntaxErrors();
     await this.checkTypeScriptErrors();
@@ -22,17 +45,17 @@ class PreBuildChecker {
     this.generateReport();
     
     if (this.issues.length > 0) {
-      console.log(`❌ Found ${this.issues.length} issues that need to be fixed`);
+      logger.info(`❌ Found ${this.issues.length} issues that need to be fixed`);
       process.exit(1);
     } else {
-      console.log('✅ All pre-build checks passed!');
+      logger.info('✅ All pre-build checks passed!');
       process.exit(0);
     }
   }
 
   // Check for syntax errors
   async checkSyntaxErrors() {
-    console.log('🔍 Checking for syntax errors...');
+    logger.info('🔍 Checking for syntax errors...');
     
     const tsFiles = this.findTsFiles('.');
     let errorCount = 0;
@@ -71,12 +94,12 @@ class PreBuildChecker {
       }
     }
     
-    console.log(`Found ${errorCount} syntax errors`);
+    logger.info(`Found ${errorCount} syntax errors`);
   }
 
   // Check TypeScript errors
   async checkTypeScriptErrors() {
-    console.log('🔍 Checking TypeScript errors...');
+    logger.info('🔍 Checking TypeScript errors...');
     
     try {
       const result = execSync('npx tsc --noEmit --pretty false', { 
@@ -103,16 +126,16 @@ class PreBuildChecker {
         }
       }
       
-      console.log(`Found ${errorCount} TypeScript errors`);
+      logger.info(`Found ${errorCount} TypeScript errors`);
     } catch (error) {
       // TypeScript compilation failed, which is expected
-      console.log('TypeScript check completed');
+      logger.info('TypeScript check completed');
     }
   }
 
   // Check dependencies
   async checkDependencies() {
-    console.log('🔍 Checking dependencies...');
+    logger.info('🔍 Checking dependencies...');
     
     try {
       // Check if package.json exists
@@ -145,7 +168,7 @@ class PreBuildChecker {
         });
       }
       
-      console.log('Dependencies check completed');
+      logger.info('Dependencies check completed');
     } catch (error) {
       this.issues.push({
         type: 'dependency',
@@ -156,7 +179,7 @@ class PreBuildChecker {
 
   // Check environment variables
   async checkEnvironmentVariables() {
-    console.log('🔍 Checking environment variables...');
+    logger.info('🔍 Checking environment variables...');
     
     const requiredEnvVars = [
       NEXT_PUBLIC_SUPABASE_URL',
@@ -172,12 +195,12 @@ class PreBuildChecker {
       }
     }
     
-    console.log('Environment variables check completed');
+    logger.info('Environment variables check completed');
   }
 
   // Check build configuration
   async checkBuildConfiguration() {
-    console.log('🔍 Checking build configuration...');
+    logger.info('🔍 Checking build configuration...');
     
     // Check if netlify.toml exists
     if (!fs.existsSync('netlify.toml')) {
@@ -195,7 +218,7 @@ class PreBuildChecker {
       });
     }
     
-    console.log('Build configuration check completed');
+    logger.info('Build configuration check completed');
   }
 
   // Find TypeScript files
@@ -214,7 +237,7 @@ class PreBuildChecker {
         }
       }
     } catch (error) {
-      console.error(`Error reading directory ${dir}:`, error.message);
+      logger.error(`Error reading directory ${dir}:`, error.message);
     }
     
     return files;
@@ -249,16 +272,16 @@ class PreBuildChecker {
     const reportPath = `automation/reports/pre-build-${Date.now()}.json`;
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
-    console.log(`📊 Pre-build report saved to: ${reportPath}`);
+    logger.info(`📊 Pre-build report saved to: ${reportPath}`);
     
     // Print summary
-    console.log('\n📋 Pre-build Check Summary:');
-    console.log(`Total Issues: ${report.summary.totalIssues}`);
-    console.log(`Syntax Errors: ${report.summary.syntaxErrors}`);
-    console.log(`TypeScript Errors: ${report.summary.typescriptErrors}`);
-    console.log(`Dependency Issues: ${report.summary.dependencyIssues}`);
-    console.log(`Environment Issues: ${report.summary.environmentIssues}`);
-    console.log(`Configuration Issues: ${report.summary.configurationIssues}`);
+    logger.info('\n📋 Pre-build Check Summary:');
+    logger.info(`Total Issues: ${report.summary.totalIssues}`);
+    logger.info(`Syntax Errors: ${report.summary.syntaxErrors}`);
+    logger.info(`TypeScript Errors: ${report.summary.typescriptErrors}`);
+    logger.info(`Dependency Issues: ${report.summary.dependencyIssues}`);
+    logger.info(`Environment Issues: ${report.summary.environmentIssues}`);
+    logger.info(`Configuration Issues: ${report.summary.configurationIssues}`);
     
     return report;
   }
@@ -271,3 +294,17 @@ if (require.main === module) {
 }
 
 module.exports = PreBuildChecker; 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

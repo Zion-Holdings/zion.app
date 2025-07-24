@@ -18,7 +18,7 @@ serve(async (req) => {
     errorLoggerPayload.body = { contentType, userPromptLength: userPrompt?.length, keywords };
 
     if (!contentType || !userPrompt) {
-      console.warn(JSON.stringify({ ...errorLoggerPayload, level: WARN', type: validation_error', message: Missing contentType or userPrompt' }));      return new Response(JSON.stringify({ error: Missing contentType or userPrompt in request body' }), {'        status: 400, headers: { ...corsHeaders, Content-Type': application/json' }      });
+      console.warn(JSON.stringify({ ...errorLoggerPayload, level: WARN', type: validation_error', message: 'Missing contentType or userPrompt' }));      return new Response(JSON.stringify({ error: Missing contentType or userPrompt in request body' }), {'        status: 400, headers: { ...corsHeaders, Content-Type': application/json' }      });
     }
 
     if (!OPENAI_API_KEY) {

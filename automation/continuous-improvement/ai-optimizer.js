@@ -167,13 +167,19 @@ class AIOptimizer {
         
         // Schedule next analysis
         
-const timeoutId = setTimeout(analysisLoop,  AI_CONFIG.INTERVALS.QUICK_SCAN);
+const timeoutId = 
+const timeoutId = setTimeout(analysisLoop,   AI_CONFIG.INTERVALS.QUICK_SCAN);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
       } catch (error) {
         logger.error('❌ Error in analysis loop:', error);
         
-const timeoutId = setTimeout(analysisLoop,  AI_CONFIG.INTERVALS.QUICK_SCAN);
+const timeoutId = 
+const timeoutId = setTimeout(analysisLoop,   AI_CONFIG.INTERVALS.QUICK_SCAN);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
       }
@@ -195,13 +201,19 @@ const timeoutId = setTimeout(analysisLoop,  AI_CONFIG.INTERVALS.QUICK_SCAN);
         
         // Schedule next processing
         
-const timeoutId = setTimeout(processLoop,  10000);
+const timeoutId = 
+const timeoutId = setTimeout(processLoop,   10000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ; // 10 seconds
       } catch (error) {
         logger.error('❌ Error in improvement processing:', error);
         
-const timeoutId = setTimeout(processLoop,  10000);
+const timeoutId = 
+const timeoutId = setTimeout(processLoop,   10000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
       }

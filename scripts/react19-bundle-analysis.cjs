@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 class Script {
   constructor() {
     this.isRunning = false;
@@ -6,7 +29,7 @@ class Script {
 
   async start() {
     this.isRunning = true;
-    console.log('Starting Script...');
+    logger.info('Starting Script...');
     
     try {
       #!/usr/bin/env node
@@ -15,11 +38,11 @@ class Script {
 const fs = require('fs')
 const _path = require('path');
 
-// console.warn('🚀 React 19 Bundle Analysis Starting...\n')
+// logger.warn('🚀 React 19 Bundle Analysis Starting...\n')
 const bundleAnalysis = {
   // Analyze React 19 specific optimizations
   analyzeReact19Features() {
-    // console.warn('📊 React 19 Feature Analysis:')
+    // logger.warn('📊 React 19 Feature Analysis:')
 const features = [
       { name: 'Concurrent Features', enabled: true, impact: 'High' },
       { name: 'Automatic Batching', enabled: true, impact: 'Medium' },
@@ -31,25 +54,25 @@ const features = [
 
     features.forEach((feature) => {
       const _status = feature.enabled ? '✅' : '❌';
-      // console.warn(`  ${_status} ${feature.name} (Impact: ${feature.impact})`);
+      // logger.warn(`  ${_status} ${feature.name} (Impact: ${feature.impact})`);
     });
-    // console.warn();
+    // logger.warn();
   },
 
   // Analyze bundle size improvements with React 19
   analyzeBundleSize() {
-    // console.warn('📦 Bundle Size Analysis:')
+    // logger.warn('📦 Bundle Size Analysis:')
 const _buildPath = '.next';
     if (fs.existsSync(_buildPath)) {
       const _stats = this.getBundleStats(_buildPath);
-      // console.warn(`  📄 Total JS Bundle: ${_stats.totalJS} KB`);
-      // console.warn(`  🎨 Total CSS Bundle: ${_stats.totalCSS} KB`);
-      // console.warn(`  📊 React 19 Overhead: ${_stats.reactOverhead} KB`);
-      // console.warn(`  ⚡ Estimated Performance Gain: ${_stats.performanceGain}%`);
+      // logger.warn(`  📄 Total JS Bundle: ${_stats.totalJS} KB`);
+      // logger.warn(`  🎨 Total CSS Bundle: ${_stats.totalCSS} KB`);
+      // logger.warn(`  📊 React 19 Overhead: ${_stats.reactOverhead} KB`);
+      // logger.warn(`  ⚡ Estimated Performance Gain: ${_stats.performanceGain}%`);
     } else {
-      // console.warn('  ⚠️  Build directory not found. Run npm run build first.');
+      // logger.warn('  ⚠️  Build directory not found. Run npm run build first.');
     }
-    // console.warn();
+    // logger.warn();
   },
 
   getBundleStats(_buildPath) {
@@ -64,7 +87,7 @@ const _buildPath = '.next';
 
   // Check for React 19 optimization opportunities
   checkOptimizations() {
-    // console.warn('🔍 React 19 Optimization Opportunities:')
+    // logger.warn('🔍 React 19 Optimization Opportunities:')
 const opportunities = [
       {
         area: 'Component Memoization',
@@ -93,10 +116,10 @@ const opportunities = [
     ];
 
     opportunities.forEach((_opp) => {
-      // console.warn(`  🎯 ${_opp.area}:`);
-      // console.warn(`    Current: ${_opp.current}`);
-      // console.warn(`    Opportunity: ${_opp.opportunity}`);
-      // console.warn(`    Impact: ${_opp.impact}\n`);
+      // logger.warn(`  🎯 ${_opp.area}:`);
+      // logger.warn(`    Current: ${_opp.current}`);
+      // logger.warn(`    Opportunity: ${_opp.opportunity}`);
+      // logger.warn(`    Impact: ${_opp.impact}\n`);
     });
   },
 
@@ -125,7 +148,7 @@ const opportunities = [
     }
 const reportPath = 'react19-analysis-report.json';
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    // console.warn(`📋 Detailed report saved to: ${reportPath}`);
+    // logger.warn(`📋 Detailed report saved to: ${reportPath}`);
   },
 };
 
@@ -135,21 +158,21 @@ bundleAnalysis.analyzeBundleSize();
 bundleAnalysis.checkOptimizations();
 bundleAnalysis.generateReport();
 
-// console.warn('✅ React 19 Bundle Analysis Complete!\n');
-// console.warn('🚀 Next Steps:');
-// console.warn('  1. Review optimization opportunities above');
-// console.warn('  2. Implement startTransition for heavy operations');
-// console.warn('  3. Use React 19 concurrent features');
-// console.warn('  4. Monitor performance improvements\n');
+// logger.warn('✅ React 19 Bundle Analysis Complete!\n');
+// logger.warn('🚀 Next Steps:');
+// logger.warn('  1. Review optimization opportunities above');
+// logger.warn('  2. Implement startTransition for heavy operations');
+// logger.warn('  3. Use React 19 concurrent features');
+// logger.warn('  4. Monitor performance improvements\n');
     } catch (error) {
-      console.error('Error in Script:', error);
+      logger.error('Error in Script:', error);
       throw error;
     }
   }
 
   stop() {
     this.isRunning = false;
-    console.log('Stopping Script...');
+    logger.info('Stopping Script...');
   }
 }
 
@@ -157,9 +180,24 @@ bundleAnalysis.generateReport();
 if (require.main === module) {
   const script = new Script();
   script.start().catch(error => {
-    console.error('Failed to start Script:', error);
+    logger.error('Failed to start Script:', error);
     process.exit(1);
   });
 }
 
 module.exports = Script;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

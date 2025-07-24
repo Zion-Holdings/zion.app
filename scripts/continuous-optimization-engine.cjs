@@ -159,7 +159,10 @@ const optimization = await this.optimizePerformance();
       }
 
       
-const timeoutId = setTimeout(performanceLoop,  this.config.performanceCheckInterval);
+const timeoutId = 
+const timeoutId = setTimeout(performanceLoop,   this.config.performanceCheckInterval);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
     };
@@ -188,7 +191,10 @@ const optimization = await this.optimizeSecurity();
       }
 
       
-const timeoutId = setTimeout(securityLoop,  this.config.securityCheckInterval);
+const timeoutId = 
+const timeoutId = setTimeout(securityLoop,   this.config.securityCheckInterval);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
     };
@@ -217,7 +223,10 @@ const optimization = await this.optimizeBundle();
       }
 
       
-const timeoutId = setTimeout(bundleLoop,  this.config.bundleAnalysisInterval);
+const timeoutId = 
+const timeoutId = setTimeout(bundleLoop,   this.config.bundleAnalysisInterval);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
     };
@@ -246,7 +255,10 @@ const optimization = await this.optimizeCodeQuality();
       }
 
       
-const timeoutId = setTimeout(qualityLoop,  this.config.optimizationInterval);
+const timeoutId = 
+const timeoutId = setTimeout(qualityLoop,   this.config.optimizationInterval);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
     };
@@ -275,7 +287,10 @@ const optimization = await this.optimizeDependencies();
       }
 
       
-const timeoutId = setTimeout(dependencyLoop,  this.config.optimizationInterval * 2);
+const timeoutId = 
+const timeoutId = setTimeout(dependencyLoop,   this.config.optimizationInterval * 2);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
     };
@@ -304,7 +319,10 @@ const optimization = await this.optimizeImages();
       }
 
       
-const timeoutId = setTimeout(imageLoop,  this.config.optimizationInterval * 3);
+const timeoutId = 
+const timeoutId = setTimeout(imageLoop,   this.config.optimizationInterval * 3);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
     };
@@ -333,7 +351,10 @@ const optimization = await this.runTests();
       }
 
       
-const timeoutId = setTimeout(testLoop,  this.config.optimizationInterval * 2);
+const timeoutId = 
+const timeoutId = setTimeout(testLoop,   this.config.optimizationInterval * 2);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
     };
@@ -359,7 +380,10 @@ const timeoutId = setTimeout(testLoop,  this.config.optimizationInterval * 2);
       }
 
       
-const timeoutId = setTimeout(monitoringLoop,  60 * 1000);
+const timeoutId = 
+const timeoutId = setTimeout(monitoringLoop,   60 * 1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ; // Every minute
     };

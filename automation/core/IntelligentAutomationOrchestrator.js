@@ -216,7 +216,10 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
         if (task.errorCount < task.retryAttempts) {
           logger.info(`🔄 Retrying task: ${task.name} (${task.errorCount}/${task.retryAttempts})`);
           
-const timeoutId = setTimeout(() => runTask(),  5000);
+const timeoutId = 
+const timeoutId = setTimeout(() => runTask(),   5000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
         }
@@ -225,7 +228,10 @@ const timeoutId = setTimeout(() => runTask(),  5000);
     
     // Schedule initial run
     
-const timeoutId = setTimeout(runTask,  1000);
+const timeoutId = 
+const timeoutId = setTimeout(runTask,   1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
     
@@ -255,7 +261,10 @@ const timeoutId = setTimeout(runTask,  1000);
 
   async simulateDependencyUpdate() {
     await new Promise(resolve => 
-const timeoutId = setTimeout(resolve,  2000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   2000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
     logger.info('📦 Dependencies updated successfully');
@@ -263,7 +272,10 @@ const timeoutId = setTimeout(resolve,  2000);
 
   async simulateSecurityScan() {
     await new Promise(resolve => 
-const timeoutId = setTimeout(resolve,  3000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   3000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
     logger.info('🔒 Security scan completed - no vulnerabilities found');
@@ -271,7 +283,10 @@ const timeoutId = setTimeout(resolve,  3000);
 
   async simulateCodeQualityCheck() {
     await new Promise(resolve => 
-const timeoutId = setTimeout(resolve,  1500);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   1500);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
     logger.info('📊 Code quality check passed');
@@ -279,7 +294,10 @@ const timeoutId = setTimeout(resolve,  1500);
 
   async simulateStaleCleanup() {
     await new Promise(resolve => 
-const timeoutId = setTimeout(resolve,  1000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
     logger.info('🧹 Stale files cleaned up');
@@ -287,7 +305,10 @@ const timeoutId = setTimeout(resolve,  1000);
 
   async simulateGenericTask() {
     await new Promise(resolve => 
-const timeoutId = setTimeout(resolve,  1000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
     logger.info('⚙️ Generic task completed');

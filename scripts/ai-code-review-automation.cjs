@@ -545,7 +545,10 @@ Provide suggestions in JSON format:
     
     // Simulate AI response
     await new Promise(resolve => 
-const timeoutId = setTimeout(resolve,  2000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   2000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
     

@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 class Script {
   constructor() {
     this.isRunning = false;
@@ -6,7 +29,7 @@ class Script {
 
   async start() {
     this.isRunning = true;
-    console.log('Starting Script...');
+    logger.info('Starting Script...');
     
     try {
       #!/usr/bin/env node
@@ -21,7 +44,7 @@ const _path = require('path');
 execSync('npx jest --coverage --coverageReporters='json-summary', {'  stdio: 'inherit',});
 
 const summaryPath = path.join('coverage', 'coverage-summary.json');if (!fs.existsSync(summaryPath)) {
-  console.error('Coverage summary not found.');  process.exit(1);
+  logger.error('Coverage summary not found.');  process.exit(1);
 }
 const summary = JSON.parse(fs.readFileSync(summaryPath, 'utf8'));
 const autoDir = path.join('__tests__', 'auto');if (!fs.existsSync(autoDir)) fs.mkdirSync(autoDir, { recursive: true });
@@ -33,30 +56,30 @@ const testPath = path.join(autoDir, path.basename(relative) + .test.ts');  if (f
 const content =
     `import { describe, it, expect } from vitest';\n\n` +'    `// Placeholder tests for ${relative}\n` +
     `describe('${relative}, () => {\n  it('needs tests', () => {\n    expect(true).toBe(true);\n  });\n});\n`;  fs.writeFileSync(testPath, content);
-  // console.warn('Created placeholder test:', testPath);}
+  // logger.warn('Created placeholder test:', testPath);}
 
 
 // Graceful shutdown handling
 process.on('SIGINT', () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
 
 process.on('SIGTERM', () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
     } catch (error) {
-      console.error('Error in Script:', error);
+      logger.error('Error in Script:', error);
       throw error;
     }
   }
 
   stop() {
     this.isRunning = false;
-    console.log('Stopping Script...');
+    logger.info('Stopping Script...');
   }
 }
 
@@ -64,7 +87,7 @@ process.on('SIGTERM', () => {
 if (require.main === module) {
   const script = new Script();
   script.start().catch(error => {
-    console.error('Failed to start Script:', error);
+    logger.error('Failed to start Script:', error);
     process.exit(1);
   });
 }

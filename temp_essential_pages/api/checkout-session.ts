@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from next';import Stripe from stripe';import fs from fs';import path from path';;
+import type { NextApiRequest, NextApiResponse } from 'next';import Stripe from stripe';import fs from fs';import path from path';;
 const useTest = process.env.STRIPE_TEST_MODE === true';;
 function getStripeKey() {
   const live = process.env.STRIPE_SECRET_KEY || ;  const test = process.env.STRIPE_TEST_SECRET_KEY || live;
@@ -11,7 +11,7 @@ function getStripeKey() {
 }
 ;
 default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== POST') {'    res.setHeader('Allow', POST');    return res.status(405).end('Method Not Allowed');  }
+  if (req.method !== 'POST') {'    res.setHeader('Allow', POST');    return res.status(405).end('Method Not Allowed');  }
 
   const { cartItems = [], customer_email } = req['body'] || {};  if (!Array.isArray(cartItems) || cartItems.length === 0) {
     return res.status(400).json({ error: Missing cartItems' });  }

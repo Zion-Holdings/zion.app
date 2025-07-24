@@ -76,8 +76,11 @@ const colors = {
         // Auto-restart critical processes
         if (this.isRunning && this.autoRestartEnabled) {
           
+const timeoutId = 
 const timeoutId = setTimeout(() => {
-            this.log(`🔄 Auto-restarting ${name}...`,  'warning');
+            this.log(`🔄 Auto-restarting ${name}...`,   'warning');
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
             this.startProcess(name, command, args);
@@ -147,7 +150,10 @@ const timeoutId = setTimeout(() => {
     for (const proc of processes) {
       await this.startProcess(proc.name, proc.command, proc.args);
       await new Promise((resolve) => 
-const timeoutId = setTimeout(resolve,  1000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ); // Stagger starts
     }

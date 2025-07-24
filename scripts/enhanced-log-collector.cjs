@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 /**
  * Enhanced Log Collector for Zion.App
  * Collects, processes, and analyzes logs from multiple sources
@@ -61,7 +84,7 @@ class EnhancedLogCollector {
 
       return true;
     } catch (_error) {
-      console.error('❌ Failed to initialize log collector:', error.message);
+      logger.error('❌ Failed to initialize log collector:', error.message);
       return false;
     }
   }
@@ -82,7 +105,7 @@ const report = {
       },
     };
 
-    console.warn('🔍 Collecting logs from all sources...\n');
+    logger.warn('🔍 Collecting logs from all sources...\n');
 
     // Collect build logs
     await this.collectBuildLogs(report);
@@ -109,7 +132,7 @@ const report = {
    * Collect Next.js build logs
    */
   async collectBuildLogs(report) {
-    console.warn('📦 Collecting build logs...');
+    logger.warn('📦 Collecting build logs...');
 
     try {
       // Check for .next directory
@@ -157,19 +180,19 @@ const logPath = path.join(
             report.summary.warningCount++;
           }
         } catch (_error) {
-          console.warn('  ⚠️  Could not capture build output');
+          logger.warn('  ⚠️  Could not capture build output');
         }
 
         report.sources.build = buildInfo;
         report.summary.totalFiles += buildInfo.files.length;
-        console.warn(
+        logger.warn(
           `  ✅ Build logs collected (${buildInfo.files.length} files)`,
         );
       } else {
-        console.warn('  ℹ️  No .next directory found');
+        logger.warn('  ℹ️  No .next directory found');
       }
     } catch (_error) {
-      console.warn('  ⚠️  Error collecting build logs:', error.message);
+      logger.warn('  ⚠️  Error collecting build logs:', error.message);
     }
   }
 
@@ -177,7 +200,7 @@ const logPath = path.join(
    * Collect application runtime logs
    */
   async collectApplicationLogs(report) {
-    console.warn('🏃 Collecting application logs...')
+    logger.warn('🏃 Collecting application logs...')
 const appInfo = {
       timestamp: new Date().toISOString(),
       files: [],
@@ -256,7 +279,7 @@ const isWarning =
                 }
               });
             } catch (_readError) {
-              console.warn(`    ⚠️  Could not read ${filePath}`);
+              logger.warn(`    ⚠️  Could not read ${filePath}`);
             }
           }
         }
@@ -267,11 +290,11 @@ const isWarning =
       report.summary.errorCount += appInfo.errors.length;
       report.summary.warningCount += appInfo.warnings.length;
 
-      console.warn(
+      logger.warn(
         `  ✅ Application logs collected (${appInfo.files.length} files, ${appInfo.errors.length} errors, ${appInfo.warnings.length} warnings)`,
       );
     } catch (_error) {
-      console.warn('  ⚠️  Error collecting application logs:', error.message);
+      logger.warn('  ⚠️  Error collecting application logs:', error.message);
     }
   }
 
@@ -279,7 +302,7 @@ const isWarning =
    * Collect test logs
    */
   async collectTestLogs(report) {
-    console.warn('🧪 Collecting test logs...')
+    logger.warn('🧪 Collecting test logs...')
 const testInfo = {
       timestamp: new Date().toISOString(),
       jest: { files: [], lastRun: null },
@@ -323,7 +346,7 @@ const testInfo = {
                 }, []) || [],
             };
           } catch (_parseError) {
-            console.warn('    ⚠️  Could not parse Playwright results');
+            logger.warn('    ⚠️  Could not parse Playwright results');
           }
         }
       }
@@ -343,9 +366,9 @@ const totalTestFiles =
         testInfo.cypress.files.length;
       report.summary.totalFiles += totalTestFiles;
 
-      console.warn(`  ✅ Test logs collected (${totalTestFiles} files)`);
+      logger.warn(`  ✅ Test logs collected (${totalTestFiles} files)`);
     } catch (_error) {
-      console.warn('  ⚠️  Error collecting test logs:', error.message);
+      logger.warn('  ⚠️  Error collecting test logs:', error.message);
     }
   }
 
@@ -353,7 +376,7 @@ const totalTestFiles =
    * Collect system logs
    */
   async collectSystemLogs(report) {
-    console.warn('🖥️  Collecting system logs...')
+    logger.warn('🖥️  Collecting system logs...')
 const systemInfo = {
       timestamp: new Date().toISOString(),
       nodejs: {},
@@ -377,7 +400,7 @@ const { stdout: npmConfig } = await execAsync(
         );
         systemInfo.npm.config = JSON.parse(npmConfig || '{}');
       } catch (_npmError) {
-        console.warn('    ⚠️  Could not get NPM info');
+        logger.warn('    ⚠️  Could not get NPM info');
       }
 
       // System resources
@@ -390,13 +413,13 @@ const { stdout: npmConfig } = await execAsync(
           systemInfo.system.memory = memInfo;
         }
       } catch (_sysError) {
-        console.warn('    ⚠️  Could not get system info');
+        logger.warn('    ⚠️  Could not get system info');
       }
 
       report.sources.system = systemInfo;
-      console.warn('  ✅ System logs collected');
+      logger.warn('  ✅ System logs collected');
     } catch (_error) {
-      console.warn('  ⚠️  Error collecting system logs:', error.message);
+      logger.warn('  ⚠️  Error collecting system logs:', error.message);
     }
   }
 
@@ -404,7 +427,7 @@ const { stdout: npmConfig } = await execAsync(
    * Collect Git logs
    */
   async collectGitLogs(report) {
-    console.warn('🔀 Collecting Git logs...')
+    logger.warn('🔀 Collecting Git logs...')
 const gitInfo = {
       timestamp: new Date().toISOString(),
       commits: [],
@@ -444,11 +467,11 @@ const gitInfo = {
       };
 
       report.sources.git = gitInfo;
-      console.warn(
+      logger.warn(
         `  ✅ Git logs collected (${gitInfo.commits.length} recent commits)`,
       );
     } catch (_error) {
-      console.warn('  ⚠️  Error collecting Git logs:', error.message);
+      logger.warn('  ⚠️  Error collecting Git logs:', error.message);
     }
   }
 
@@ -456,7 +479,7 @@ const gitInfo = {
    * Generate consolidated report
    */
   async generateConsolidatedReport(report) {
-    console.warn('\n📊 Generating consolidated report...')
+    logger.warn('\n📊 Generating consolidated report...')
 const reportPath = path.join(
       this.config.outputDir,
       `consolidated-report-${Date.now()}.json`,
@@ -468,18 +491,18 @@ const reportPath = path.join(
 const summary = this.generateTextSummary(report);
     fs.writeFileSync(summaryPath, summary);
 
-    console.warn(`  ✅ Report saved to: ${reportPath}`);
-    console.warn(`  ✅ Summary saved to: ${summaryPath}`);
+    logger.warn(`  ✅ Report saved to: ${reportPath}`);
+    logger.warn(`  ✅ Summary saved to: ${summaryPath}`);
 
     // Display key metrics
-    console.warn('\n📈 Key Metrics:');
-    console.warn(`  Total files analyzed: ${report.summary.totalFiles}`);
-    console.warn(`  Errors found: ${report.summary.errorCount}`);
-    console.warn(`  Warnings found: ${report.summary.warningCount}`);
+    logger.warn('\n📈 Key Metrics:');
+    logger.warn(`  Total files analyzed: ${report.summary.totalFiles}`);
+    logger.warn(`  Errors found: ${report.summary.errorCount}`);
+    logger.warn(`  Warnings found: ${report.summary.warningCount}`);
 
     if (report.sources.tests?.playwright?.lastRun?.stats) {
       const stats = report.sources.tests.playwright.lastRun.stats;
-      console.warn(`  Test failures: ${stats.unexpected || 0}`);
+      logger.warn(`  Test failures: ${stats.unexpected || 0}`);
     }
   }
 
@@ -562,7 +585,7 @@ const summary = this.generateTextSummary(report);
    * Clean old logs based on retention policy
    */
   async cleanOldLogs() {
-    console.warn('🧹 Cleaning old logs...')
+    logger.warn('🧹 Cleaning old logs...')
 const cutoffDate = new Date();
     cutoffDate.setDate(cutoffDate.getDate() - this.config.retention.days);
 
@@ -586,16 +609,16 @@ const stats = fs.statSync(filePath);
       };
 
       walkDir(this.config.outputDir);
-      console.warn(`  ✅ Cleaned ${deletedCount} old log files`);
+      logger.warn(`  ✅ Cleaned ${deletedCount} old log files`);
     } catch (_error) {
-      console.warn('  ⚠️  Error cleaning logs:', error.message);
+      logger.warn('  ⚠️  Error cleaning logs:', error.message);
     }
   }
 }
 
 // Main execution
 async function main() {
-  console.warn('🚀 Enhanced Log Collector\n')
+  logger.warn('🚀 Enhanced Log Collector\n')
 const collector = new EnhancedLogCollector();
 
   if (!(await collector.init())) {
@@ -624,11 +647,11 @@ const monitor = new ErrorMonitor();
     }
   }
 
-  console.warn('\n✅ Log collection completed!');
+  logger.warn('\n✅ Log collection completed!');
 
   // Exit with error code if significant issues found
   if (report.summary.errorCount > 5) {
-    console.warn('⚠️  High error count detected');
+    logger.warn('⚠️  High error count detected');
     process.exit(1);
   }
 }
@@ -636,7 +659,7 @@ const monitor = new ErrorMonitor();
 // Run if called directly
 if (require.main === module) {
   main().catch((error) => {
-    console.error('❌ Log collector failed:', error);
+    logger.error('❌ Log collector failed:', error);
     process.exit(1);
   });
 }
@@ -646,13 +669,13 @@ module.exports = { EnhancedLogCollector };
 
 // Graceful shutdown handling
 process.on('SIGINT', () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
 
 process.on('SIGTERM', () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });

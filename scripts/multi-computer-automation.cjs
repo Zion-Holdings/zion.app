@@ -375,7 +375,10 @@ const req = protocol.get(url, (res) => {
 
       req.on('error', reject);
       req.
-const timeoutId = setTimeout(5000,  ();
+const timeoutId = 
+const timeoutId = setTimeout(5000,   ();
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
  => req.destroy());
     });

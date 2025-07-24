@@ -105,7 +105,10 @@ const selfHealing = spawn(
       if (this.isRunning) {
         this.log('Restarting self-healing system...');
         
-const timeoutId = setTimeout(() => this.startSelfHealing(),  5000);
+const timeoutId = 
+const timeoutId = setTimeout(() => this.startSelfHealing(),   5000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
       }
@@ -138,7 +141,10 @@ const buildMonitor = spawn(
       if (this.isRunning) {
         this.log('Restarting build monitor...');
         
-const timeoutId = setTimeout(() => this.startBuildMonitor(),  5000);
+const timeoutId = 
+const timeoutId = setTimeout(() => this.startBuildMonitor(),   5000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
       }
@@ -436,9 +442,12 @@ const command = process.argv[2];
 
           // Wait a bit then start
           
+const timeoutId = 
 const timeoutId = setTimeout(() => {
             daemon.start();
-          },  2000);
+          },   2000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
         } catch (error) {

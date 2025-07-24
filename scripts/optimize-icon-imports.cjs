@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 class  {
   constructor() {
     this.isRunning = false;
@@ -6,7 +29,7 @@ class  {
 
   async start() {
     this.isRunning = true;
-    console.log('Starting ...');
+    logger.info('Starting ...');
     
     try {
       #!/usr/bin/env node
@@ -266,7 +289,7 @@ const newImport = `import { ${iconList} } from '@/components/ui/icons';`;
     const wildcardPattern =
       /import\s*\*\s*as\s+(\w+)\s+from\s*['"]lucide-react['"];?/g;
     if (wildcardPattern.test(content)) {
-      console.warn(
+      logger.warn(
         `⚠️  Wildcard import found in ${filePath} - manual review needed`,
       );
     }
@@ -278,17 +301,17 @@ const newImport = `import { ${iconList} } from '@/components/ui/icons';`;
 
     return false;
   } catch (_error) {
-    console.error(`❌ Error processing ${filePath}:`, error.message);
+    logger.error(`❌ Error processing ${filePath}:`, error.message);
     return false;
   }
 }
 
 function main() {
-  console.warn('🚀 Starting icon import optimization...\n');
+  logger.warn('🚀 Starting icon import optimization...\n');
 
   // Find all files to process
   const files = findFiles(SRC_DIR);
-  console.warn(`📁 Found ${files.length} files to process\n`);
+  logger.warn(`📁 Found ${files.length} files to process\n`);
 
   let optimizedCount = 0;
   let errorCount = 0;
@@ -300,30 +323,30 @@ function main() {
 const wasOptimized = optimizeFile(file);
 
       if (wasOptimized) {
-        console.warn(`✅ Optimized: ${relativePath}`);
+        logger.warn(`✅ Optimized: ${relativePath}`);
         optimizedCount++;
       }
     } catch (_error) {
-      console.error(`❌ Error: ${file}`, error.message);
+      logger.error(`❌ Error: ${file}`, error.message);
       errorCount++;
     }
   }
 
-  console.warn('\n📊 Optimization Summary:');
-  console.warn(`✅ Files optimized: ${optimizedCount}`);
-  console.warn(`❌ Errors: ${errorCount}`);
-  console.warn(`📁 Total files processed: ${files.length}`);
+  logger.warn('\n📊 Optimization Summary:');
+  logger.warn(`✅ Files optimized: ${optimizedCount}`);
+  logger.warn(`❌ Errors: ${errorCount}`);
+  logger.warn(`📁 Total files processed: ${files.length}`);
 
   if (optimizedCount > 0) {
-    console.warn(
+    logger.warn(
       '\n🎯 Expected bundle size reduction: 60-80% from lucide-react',
     );
-    console.warn(
+    logger.warn(
       '💡 Run "npm run build:analyze" to verify bundle size improvements',
     );
   }
 
-  console.warn('\n✨ Icon import optimization complete!');
+  logger.warn('\n✨ Icon import optimization complete!');
 }
 
 // Run the script
@@ -333,14 +356,14 @@ if (require.main === module) {
 
 module.exports = { optimizeFile, findFiles };
     } catch (error) {
-      console.error('Error in :', error);
+      logger.error('Error in :', error);
       throw error;
     }
   }
 
   stop() {
     this.isRunning = false;
-    console.log('Stopping ...');
+    logger.info('Stopping ...');
   }
 }
 
@@ -348,9 +371,24 @@ module.exports = { optimizeFile, findFiles };
 if (require.main === module) {
   const script = new ();
   script.start().catch(error => {
-    console.error('Failed to start :', error);
+    logger.error('Failed to start :', error);
     process.exit(1);
   });
 }
 
 module.exports = ;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

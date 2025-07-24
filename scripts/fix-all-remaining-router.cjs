@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 class Script {
   constructor() {
     this.isRunning = false;
@@ -6,7 +29,7 @@ class Script {
 
   async start() {
     this.isRunning = true;
-    console.log('Starting Script...');
+    logger.info('Starting Script...');
     
     try {
       const fs = require('fs')
@@ -149,7 +172,7 @@ const paramAccess = params.split(',').map(p => {
 ]
 function fixFile(filePath) {
   try {
-    console.warn(`Processing: ${filePath}`);
+    logger.warn(`Processing: ${filePath}`);
     let content = fs.readFileSync(filePath, 'utf8');
     let modified = false;
     
@@ -167,38 +190,38 @@ function fixFile(filePath) {
     
     if (modified) {
       fs.writeFileSync(filePath, content);
-      console.warn(`✓ Fixed: ${filePath}`);
+      logger.warn(`✓ Fixed: ${filePath}`);
     } else {
-      console.warn(`- No changes needed: ${filePath}`);
+      logger.warn(`- No changes needed: ${filePath}`);
     }
     
   } catch (_error) {
-    console.error(`Error processing ${filePath}:`, error.message);
+    logger.error(`Error processing ${filePath}:`, error.message);
   }
 }
 
 // Process all files
-console.warn('Starting React Router to Next.js conversion...\n');
+logger.warn('Starting React Router to Next.js conversion...\n');
 
 filesToFix.forEach(filePath => {
   if (fs.existsSync(filePath)) {
     fixFile(filePath);
   } else {
-    console.warn(`- File not found: ${filePath}`);
+    logger.warn(`- File not found: ${filePath}`);
   }
 });
 
-console.warn('\n✓ Conversion complete!');
-console.warn('\nNote: Route component files in src/routes/ need manual conversion to Next.js pages structure.');
+logger.warn('\n✓ Conversion complete!');
+logger.warn('\nNote: Route component files in src/routes/ need manual conversion to Next.js pages structure.');
     } catch (error) {
-      console.error('Error in Script:', error);
+      logger.error('Error in Script:', error);
       throw error;
     }
   }
 
   stop() {
     this.isRunning = false;
-    console.log('Stopping Script...');
+    logger.info('Stopping Script...');
   }
 }
 
@@ -206,9 +229,24 @@ console.warn('\nNote: Route component files in src/routes/ need manual conversio
 if (require.main === module) {
   const script = new Script();
   script.start().catch(error => {
-    console.error('Failed to start Script:', error);
+    logger.error('Failed to start Script:', error);
     process.exit(1);
   });
 }
 
 module.exports = Script;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 /**
  * Cursor Integration System
  * 
@@ -42,7 +65,7 @@ class CursorIntegrationSystem extends EventEmitter {
   }
 
   async initialize() {
-    console.log('🤖 Initializing Cursor Integration System...');
+    logger.info('🤖 Initializing Cursor Integration System...');
     
     try {
       // Initialize components
@@ -62,16 +85,16 @@ class CursorIntegrationSystem extends EventEmitter {
       this.setupIntegration();
       
       this.isRunning = true;
-      console.log('✅ Cursor Integration System initialized');
+      logger.info('✅ Cursor Integration System initialized');
       
     } catch (error) {
-      console.error('❌ Failed to initialize Cursor Integration System:', error);
+      logger.error('❌ Failed to initialize Cursor Integration System:', error);
       throw error;
     }
   }
 
   async initializeChatAutomation() {
-    console.log('🔧 Initializing Cursor Chat Automation...');
+    logger.info('🔧 Initializing Cursor Chat Automation...');
     
     this.chatAutomation = new CursorChatAutomation({
       dataDir: path.join(this.config.dataDir, 'cursor-chats'),
@@ -87,18 +110,18 @@ class CursorIntegrationSystem extends EventEmitter {
     this.chatAutomation.on('todoCreated', (todo) => {
       this.integrationStats.todosCreated++;
       this.integrationStats.lastActivity = new Date().toISOString();
-      console.log(`📝 Todo created via chat automation: ${todo.text}`);
+      logger.info(`📝 Todo created via chat automation: ${todo.text}`);
     });
     
     this.chatAutomation.on('itemQueued', (item) => {
       this.integrationStats.queueItemsAdded++;
       this.integrationStats.lastActivity = new Date().toISOString();
-      console.log(`📋 Item queued via chat automation: ${item.text}`);
+      logger.info(`📋 Item queued via chat automation: ${item.text}`);
     });
   }
 
   async initializeChatMonitor() {
-    console.log('👀 Initializing Cursor Chat Monitor...');
+    logger.info('👀 Initializing Cursor Chat Monitor...');
     
     this.chatMonitor = new CursorChatMonitor({
       outputDir: path.join(this.config.dataDir, 'cursor-chats'),
@@ -111,7 +134,7 @@ class CursorIntegrationSystem extends EventEmitter {
     this.chatMonitor.on('chatProcessed', (chatData) => {
       this.integrationStats.chatsProcessed++;
       this.integrationStats.lastActivity = new Date().toISOString();
-      console.log(`💬 Chat processed: ${chatData.id}`);
+      logger.info(`💬 Chat processed: ${chatData.id}`);
       
       // Auto-process chat if enabled
       if (this.config.autoProcessChats && this.chatAutomation) {
@@ -121,7 +144,7 @@ class CursorIntegrationSystem extends EventEmitter {
   }
 
   async initializeTodoQueueManager() {
-    console.log('📋 Initializing Todo and Queue Manager...');
+    logger.info('📋 Initializing Todo and Queue Manager...');
     
     this.todoQueueManager = new TodoQueueManager({
       dataDir: this.config.dataDir,
@@ -134,16 +157,16 @@ class CursorIntegrationSystem extends EventEmitter {
     
     // Listen for events
     this.todoQueueManager.on('todoCreated', (todo) => {
-      console.log(`✅ Todo created via manager: ${todo.title}`);
+      logger.info(`✅ Todo created via manager: ${todo.title}`);
     });
     
     this.todoQueueManager.on('itemQueued', (item) => {
-      console.log(`📋 Item queued via manager: ${item.title}`);
+      logger.info(`📋 Item queued via manager: ${item.title}`);
     });
   }
 
   setupIntegration() {
-    console.log('🔗 Setting up integration between components...');
+    logger.info('🔗 Setting up integration between components...');
     
     // Connect chat automation to todo/queue manager
     if (this.chatAutomation && this.todoQueueManager) {
@@ -158,7 +181,7 @@ class CursorIntegrationSystem extends EventEmitter {
             chatId: todo.chatId
           });
         } catch (error) {
-          console.error('Error adding todo to manager:', error);
+          logger.error('Error adding todo to manager:', error);
         }
       });
       
@@ -173,7 +196,7 @@ class CursorIntegrationSystem extends EventEmitter {
             chatId: item.chatId
           });
         } catch (error) {
-          console.error('Error adding item to queue:', error);
+          logger.error('Error adding item to queue:', error);
         }
       });
     }
@@ -203,12 +226,12 @@ class CursorIntegrationSystem extends EventEmitter {
       await this.chatAutomation.processChat(chat);
       
     } catch (error) {
-      console.error('Error processing chat with automation:', error);
+      logger.error('Error processing chat with automation:', error);
     }
   }
 
   async processManualChat(content, metadata = {}) {
-    console.log('📝 Processing manual chat input...');
+    logger.info('📝 Processing manual chat input...');
     
     const chat = {
       id: `manual_${Date.now()}`,
@@ -327,7 +350,7 @@ class CursorIntegrationSystem extends EventEmitter {
     const reportFile = path.join(this.config.dataDir, `integration-report-${Date.now()}.json`);
     await fs.writeFile(reportFile, JSON.stringify(report, null, 2));
     
-    console.log(`📊 Generated integration report: ${reportFile}`);
+    logger.info(`📊 Generated integration report: ${reportFile}`);
     this.emit('reportGenerated', report);
     
     return report;
@@ -346,7 +369,7 @@ class CursorIntegrationSystem extends EventEmitter {
   }
 
   async stop() {
-    console.log('🛑 Stopping Cursor Integration System...');
+    logger.info('🛑 Stopping Cursor Integration System...');
     this.isRunning = false;
     
     if (this.chatAutomation) {
@@ -361,7 +384,7 @@ class CursorIntegrationSystem extends EventEmitter {
       this.todoQueueManager.stop();
     }
     
-    console.log('✅ Cursor Integration System stopped');
+    logger.info('✅ Cursor Integration System stopped');
   }
 }
 
@@ -378,13 +401,13 @@ if (require.main === module) {
   });
   
   integration.initialize().catch(error => {
-    console.error('Failed to initialize Cursor Integration System:', error);
+    logger.error('Failed to initialize Cursor Integration System:', error);
     process.exit(1);
   });
   
   // Handle graceful shutdown
   process.on('SIGINT', async () => {
-    console.log('\n🛑 Shutting down Cursor Integration System...');
+    logger.info('\n🛑 Shutting down Cursor Integration System...');
     await integration.stop();
     process.exit(0);
   });

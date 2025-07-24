@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from vitest';import { loginUser } from @/services/authService';import { NextApiRequest, NextApiResponse } from next';;
+import { describe, it, expect, vi, beforeEach, afterEach } from vitest';import { loginUser } from @/services/authService';import { NextApiRequest, NextApiResponse } from 'next';;
 const mockSignInWithPassword = vi.fn();
 
 vi.mock('@supabase/supabase-js', () => ({'  createClient: vi.fn(() => ({
@@ -65,7 +65,7 @@ describe('/api/auth/login API Handler', () => {'  beforeEach(() => {
   it('should return 403 for login with unconfirmed email', async () => {'    const testEmail = unconfirmed@example.com';    const testPassword = password123';
     mockSignInWithPassword.mockResolvedValueOnce({
       data: { session: null, user: null },
-      error: { message: Email not confirmed' },    });
+      error: { message: 'Email not confirmed' },    });
 
     const req = mockApiReq({ email: testEmail, password: testPassword });
     const res = mockApiRes();
@@ -80,7 +80,7 @@ describe('/api/auth/login API Handler', () => {'  beforeEach(() => {
   it('should return 401 for invalid credentials', async () => {'    const testEmail = wrong@example.com';    const testPassword = wrongpassword';
     mockSignInWithPassword.mockResolvedValueOnce({
       data: { session: null, user: null },
-      error: { message: Invalid login credentials' },    });
+      error: { message: 'Invalid login credentials' },    });
 
     const req = mockApiReq({ email: testEmail, password: testPassword });
     const res = mockApiRes();
@@ -93,7 +93,7 @@ describe('/api/auth/login API Handler', () => {'  beforeEach(() => {
   it('should return 401 for AuthApiError with status 400', async () => {'    const testEmail = authapierror@example.com';    const testPassword = password123';
     mockSignInWithPassword.mockResolvedValueOnce({
       data: null,
-      error: { name: AuthApiError', status: 400, message: Bad request by client' },    });
+      error: { name: AuthApiError', status: 400, message: 'Bad request by client' },    });
 
     const req = mockApiReq({ email: testEmail, password: testPassword });
     const res = mockApiRes();
@@ -106,7 +106,7 @@ describe('/api/auth/login API Handler', () => {'  beforeEach(() => {
   it('should return 500 for generic error with status', async () => {'    const testEmail = servererror@example.com';    const testPassword = password123';
     mockSignInWithPassword.mockResolvedValueOnce({
       data: null,
-      error: { message: Some other error', status: 500 },    });
+      error: { message: 'Some other error', status: 500 },    });
 
     const req = mockApiReq({ email: testEmail, password: testPassword });
     const res = mockApiRes();
@@ -119,7 +119,7 @@ describe('/api/auth/login API Handler', () => {'  beforeEach(() => {
   it('should return 500 for generic error without status (defaults to 500), async () => {'    const testEmail = genericerror@example.com';    const testPassword = password123';
     mockSignInWithPassword.mockResolvedValueOnce({
       data: null,
-      error: { message: Another error without status' }, // No status property'    });
+      error: { message: 'Another error without status' }, // No status property'    });
 
     const req = mockApiReq({ email: testEmail, password: testPassword });
     const res = mockApiRes();

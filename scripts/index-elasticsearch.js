@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 class Script {
   constructor() {
     this.isRunning = false;
@@ -6,14 +29,14 @@ class Script {
 
   async start() {
     this.isRunning = true;
-    console.log('Starting Script...');
+    logger.info('Starting Script...');
     
     try {
       import { Client } from @elastic/elasticsearch';import { NEW_PRODUCTS } from ../src/data/newProductsData.js';import { NEW_SERVICES } from ../src/data/newServicesData.js';import { MOCK_TALENTS } from ../src/data/mockTalents.js';
 const { ELASTIC_CLOUD_ID, ELASTIC_API_KEY } = process.env;
 
 if (!ELASTIC_CLOUD_ID || !ELASTIC_API_KEY) {
-  console.error('Missing ELASTIC_CLOUD_ID or ELASTIC_API_KEY');  process.exit(1);
+  logger.error('Missing ELASTIC_CLOUD_ID or ELASTIC_API_KEY');  process.exit(1);
 }
 
 const client = new Client({
@@ -41,36 +64,36 @@ const body = docs.flatMap(doc => [
   ])
 const resp = await client.bulk({ refresh: true, body });
   if (resp.errors) {
-    console.error('Some documents failed to index');  }
-  console.warn(`Indexed ${docs.length} documents`);
+    logger.error('Some documents failed to index');  }
+  logger.warn(`Indexed ${docs.length} documents`);
 }
 
 run().catch(err => {
-  console.error('Indexing error', err);  process.exit(1);
+  logger.error('Indexing error', err);  process.exit(1);
 });
 
 
 // Graceful shutdown handling
 process.on('SIGINT', () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
 
 process.on('SIGTERM', () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
     } catch (error) {
-      console.error('Error in Script:', error);
+      logger.error('Error in Script:', error);
       throw error;
     }
   }
 
   stop() {
     this.isRunning = false;
-    console.log('Stopping Script...');
+    logger.info('Stopping Script...');
   }
 }
 
@@ -78,7 +101,7 @@ process.on('SIGTERM', () => {
 if (require.main === module) {
   const script = new Script();
   script.start().catch(error => {
-    console.error('Failed to start Script:', error);
+    logger.error('Failed to start Script:', error);
     process.exit(1);
   });
 }

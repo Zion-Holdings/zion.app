@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from next';import { withErrorLogging } from @/utils/withErrorLogging';import { users } from ./data';;
+import type { NextApiRequest, NextApiResponse } from 'next';import { withErrorLogging } from @/utils/withErrorLogging';import { users } from ./data';;
 function handler(req: NextApiRequest, res: NextApiResponse) {
   const { _id } = req.query as { id: string | string[] };
   const user = users[String(id)];

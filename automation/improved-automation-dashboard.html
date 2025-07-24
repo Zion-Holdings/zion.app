@@ -535,7 +535,10 @@
                     if (response.ok) {
                         this.addLog({ level: 'success', message: `Started system: ${name}` });
                         
-const timeoutId = setTimeout(() => this.requestStatus(),  2000);
+const timeoutId = 
+const timeoutId = setTimeout(() => this.requestStatus(),   2000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
                     } else {
@@ -555,7 +558,10 @@ const timeoutId = setTimeout(() => this.requestStatus(),  2000);
                     if (response.ok) {
                         this.addLog({ level: 'success', message: `Stopped system: ${name}` });
                         
-const timeoutId = setTimeout(() => this.requestStatus(),  2000);
+const timeoutId = 
+const timeoutId = setTimeout(() => this.requestStatus(),   2000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
                     } else {
@@ -575,7 +581,10 @@ const timeoutId = setTimeout(() => this.requestStatus(),  2000);
                     if (response.ok) {
                         this.addLog({ level: 'success', message: `Restarted system: ${name}` });
                         
-const timeoutId = setTimeout(() => this.requestStatus(),  2000);
+const timeoutId = 
+const timeoutId = setTimeout(() => this.requestStatus(),   2000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
                     } else {
@@ -626,9 +635,12 @@ const timeoutId = setTimeout(() => this.requestStatus(),  2000);
                 container.innerHTML = `<div class="error-message">❌ ${message}</div>`;
                 
                 
+const timeoutId = 
 const timeoutId = setTimeout(() => {
                     container.innerHTML = '';
-                },  5000);
+                },   5000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
             }

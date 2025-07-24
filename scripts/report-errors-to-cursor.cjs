@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 class  {
   constructor() {
     this.isRunning = false;
@@ -6,7 +29,7 @@ class  {
 
   async start() {
     this.isRunning = true;
-    console.log('Starting ...');
+    logger.info('Starting ...');
     
     try {
       #!/usr/bin/env node
@@ -28,14 +51,14 @@ const files = fs
 async function main() {
   const reportPath = findLatestReport();
   if (!reportPath) {
-    console.error('No Jest report found. Run npm run test:collect first.');
+    logger.error('No Jest report found. Run npm run test:collect first.');
     process.exit(1);
   }
 
   const data = JSON.parse(fs.readFileSync(reportPath, 'utf8'))
 const failedSuites = data.testResults.filter((tr) => tr.numFailingTests > 0);
   if (failedSuites.length === 0) {
-    console.warn('✅ No failing tests — nothing to report.');
+    logger.warn('✅ No failing tests — nothing to report.');
     return;
   }
 
@@ -52,8 +75,8 @@ const payload = {
   }
 const apiKey = process.env.CURSOR_API_KEY;
   if (!apiKey) {
-    console.warn('CURSOR_API_KEY not set; printing payload instead:');
-    console.warn(payload.message);
+    logger.warn('CURSOR_API_KEY not set; printing payload instead:');
+    logger.warn(payload.message);
     return;
   }
 
@@ -67,7 +90,7 @@ const apiKey = process.env.CURSOR_API_KEY;
       body: JSON.stringify(payload),
     });
     if (!res.ok) {
-      console.error(
+      logger.error(
         'Failed to create Cursor issue:',
         res.status,
         await res.text(),
@@ -76,9 +99,9 @@ const apiKey = process.env.CURSOR_API_KEY;
       return;
     }
     const json = await res.json();
-    console.warn('📧 Sent error report to Cursor. Issue id:', json.id);
+    logger.warn('📧 Sent error report to Cursor. Issue id:', json.id);
   } catch (_err) {
-    console.error('Error while sending report:', err);
+    logger.error('Error while sending report:', err);
     process.exitCode = 1;
   }
 }
@@ -88,25 +111,25 @@ main();
 
 // Graceful shutdown handling
 process.on('SIGINT', () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
 
 process.on('SIGTERM', () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
   // Add cleanup logic here
   process.exit(0);
 });
     } catch (error) {
-      console.error('Error in :', error);
+      logger.error('Error in :', error);
       throw error;
     }
   }
 
   stop() {
     this.isRunning = false;
-    console.log('Stopping ...');
+    logger.info('Stopping ...');
   }
 }
 
@@ -114,7 +137,7 @@ process.on('SIGTERM', () => {
 if (require.main === module) {
   const script = new ();
   script.start().catch(error => {
-    console.error('Failed to start :', error);
+    logger.error('Failed to start :', error);
     process.exit(1);
   });
 }

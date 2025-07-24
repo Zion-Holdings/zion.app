@@ -97,7 +97,10 @@ const watcher = chokidar.watch(buildFiles, {
 
     // Wait a bit for the file to be fully written
     await new Promise((resolve) => 
-const timeoutId = setTimeout(resolve,  1000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
 
@@ -236,7 +239,10 @@ const detectedIssues = [];
 
       // Wait a bit and try building again
       await new Promise((resolve) => 
-const timeoutId = setTimeout(resolve,  5000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   5000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
       await this.runBuildCheck();

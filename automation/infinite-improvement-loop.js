@@ -834,7 +834,10 @@ class InfiniteImprovementLoop extends EventEmitter {
 
   sleep(ms) {
     return new Promise((resolve) => 
-const timeoutId = setTimeout(resolve,  ms);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   ms);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
   }

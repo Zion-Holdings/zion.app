@@ -171,7 +171,10 @@ class AllAutomationStarter {
       await this.startSystem(system);
       // Small delay between starts to avoid overwhelming the system
       await new Promise((resolve) => 
-const timeoutId = setTimeout(resolve,  1000);
+const timeoutId = 
+const timeoutId = setTimeout(resolve,   1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 );
     }
@@ -231,7 +234,10 @@ const timeoutId = setTimeout(resolve,  1000);
               `🔄 Restarting ${system.name} (attempt ${restartCount + 1}/${system.maxRestarts})`,
             );
             
-const timeoutId = setTimeout(() => this.restartSystem(system),  5000);
+const timeoutId = 
+const timeoutId = setTimeout(() => this.restartSystem(system),   5000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
           } else {
@@ -290,7 +296,10 @@ const timeoutId = setTimeout(() => this.restartSystem(system),  5000);
       this.updateStatus();
 
       
-const timeoutId = setTimeout(monitoringLoop,  30 * 1000);
+const timeoutId = 
+const timeoutId = setTimeout(monitoringLoop,   30 * 1000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ; // Check every 30 seconds
     };
@@ -312,7 +321,10 @@ const timeoutId = setTimeout(monitoringLoop,  30 * 1000);
           if (processInfo.restartCount < processInfo.system.maxRestarts) {
             logger.info(`🔄 Auto-restarting ${name}...`);
             
-const timeoutId = setTimeout(() => this.restartSystem(processInfo.system),  5000);
+const timeoutId = 
+const timeoutId = setTimeout(() => this.restartSystem(processInfo.system),   5000);
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
           }
