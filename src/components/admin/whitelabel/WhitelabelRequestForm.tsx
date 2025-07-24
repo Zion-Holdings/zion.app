@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function WhitelabelRequestForm()   {
+export function WhitelabelRequestForm() {
   return (
     <div>
       <h1>Component</h1>

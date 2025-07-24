@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function TeamActivity()   {
+export function TeamActivity() {
   return (
     <div>
       <h1>Component</h1>

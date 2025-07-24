@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function ProfileRatings()   {
+export function ProfileRatings() {
   return (
     <div>
       <h1>Component</h1>

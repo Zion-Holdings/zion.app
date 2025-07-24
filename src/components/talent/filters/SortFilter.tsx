@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function SortFilter()   {
+export function SortFilter() {
   return (
     <div>
       <h1>Component</h1>

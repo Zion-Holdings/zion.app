@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function SummitHero()   {
+export function SummitHero() {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function JobApplicationsTable()   {
+export function JobApplicationsTable() {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function GeneratedContentDisplay()   {
+export function GeneratedContentDisplay() {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function JobMatchesCard()   {
+export function JobMatchesCard() {
   return (
     <div>
       <h1>Component</h1>

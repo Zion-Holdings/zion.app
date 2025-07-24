@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function SkillCategory()   {
+export function SkillCategory() {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function markdown()   {
+export function markdown() {
   return (
     <div>
       <h1>Component</h1>

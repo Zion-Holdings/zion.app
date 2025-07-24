@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function TranslatableJobForm()   {
+export function TranslatableJobForm() {
   return (
     <div>
       <h1>Component</h1>

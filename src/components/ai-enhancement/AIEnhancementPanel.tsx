@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function AIEnhancementPanel()   {
+export function AIEnhancementPanel() {
   return (
     <div>
       <h1>Component</h1>

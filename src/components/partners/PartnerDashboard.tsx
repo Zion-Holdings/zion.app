@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function PartnerDashboard()   {
+export function PartnerDashboard() {
   return (
     <div>
       <h1>Component</h1>

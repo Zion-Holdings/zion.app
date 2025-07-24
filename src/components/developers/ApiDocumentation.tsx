@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function ApiDocumentation()   {
+export function ApiDocumentation() {
   return (
     <div>
       <h1>Component</h1>

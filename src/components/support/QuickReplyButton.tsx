@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function QuickReplyButton()   {
+export function QuickReplyButton() {
   return (
     <div>
       <h1>Component</h1>

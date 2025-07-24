@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function QuoteStatusCards()   {
+export function QuoteStatusCards() {
   return (
     <div>
       <h1>Component</h1>

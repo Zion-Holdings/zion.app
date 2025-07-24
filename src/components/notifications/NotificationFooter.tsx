@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function NotificationFooter()   {
+export function NotificationFooter() {
   return (
     <div>
       <h1>Component</h1>

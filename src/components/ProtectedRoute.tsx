@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function ProtectedRoute()   {
+export function ProtectedRoute() {
   return (
     <div>
       <h1>Component</h1>

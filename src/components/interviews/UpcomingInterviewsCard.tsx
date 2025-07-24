@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function UpcomingInterviewsCard()   {
+export function UpcomingInterviewsCard() {
   return (
     <div>
       <h1>Component</h1>

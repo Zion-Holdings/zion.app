@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function InvoiceHistory()   {
+export function InvoiceHistory() {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function RoleManagement()   {
+export function RoleManagement() {
   return (
     <div>
       <h1>Component</h1>

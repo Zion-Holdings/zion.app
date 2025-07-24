@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function MetadataForm()   {
+export function MetadataForm() {
   return (
     <div>
       <h1>Component</h1>

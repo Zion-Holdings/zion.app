@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function CreatorSidebar()   {
+export function CreatorSidebar() {
   return (
     <div>
       <h1>Component</h1>

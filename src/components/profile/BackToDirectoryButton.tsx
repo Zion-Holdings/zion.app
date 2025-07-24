@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function BackToDirectoryButton()   {
+export function BackToDirectoryButton() {
   return (
     <div>
       <h1>Component</h1>

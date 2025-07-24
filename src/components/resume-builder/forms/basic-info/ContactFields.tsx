@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function ContactFields()   {
+export function ContactFields() {
   return (
     <div>
       <h1>Component</h1>

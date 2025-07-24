@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function ProfileExperience()   {
+export function ProfileExperience() {
   return (
     <div>
       <h1>Component</h1>

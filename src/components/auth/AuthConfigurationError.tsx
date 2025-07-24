@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function AuthConfigurationError()   {
+export function AuthConfigurationError() {
   return (
     <div>
       <h1>Component</h1>

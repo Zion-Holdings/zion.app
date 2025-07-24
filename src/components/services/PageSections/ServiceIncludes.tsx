@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function ServiceIncludes()   {
+export function ServiceIncludes() {
   return (
     <div>
       <h1>Component</h1>

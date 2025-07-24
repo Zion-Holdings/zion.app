@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function alert()   {
+export function alert() {
   return (
     <div>
       <h1>Component</h1>
