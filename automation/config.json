@@ -6,5 +6,10 @@
   "enableLogging": true,
   "autoFixEnabled": true,
   "performanceThreshold": 80,
-  "securityLevel": "high"
+  "securityLevel": "high",
+  "dashboard": {
+    "enabled": true,
+    "port": 3001
+  },
+  "enableDashboard": true
 }
