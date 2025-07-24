@@ -100,7 +100,7 @@ async function testAutomationSystem() {
       return { status: 'PASS', error: null };
     } else {
       console.log('❌ Automation system tests failed');
-      return { status: 'FAIL', error: Tests failed' };
+      return { status: 'FAIL', error: 'Tests failed' };
     }
   } catch (error) {
     console.log(`❌ Automation system test failed: ${error.message}`);
@@ -135,7 +135,7 @@ async function main() {
   });
 
   // Print results
-  console.log('\n' + ='.repeat(60));
+  console.log('\n' + '='.repeat(60));
   console.log('📊 Test Results Summary');
   console.log('='.repeat(60));
 
