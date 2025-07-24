@@ -4,7 +4,7 @@ const _currentFilename = path.basename(__filename)
 const _currentDirname = undefined; // Unused path.dirname(currentFilename);
 
 function parseFile(filePath) {
-  const raw = fs.readFileSync(filePath, utf8')
+  const raw = fs.readFileSync(filePath, 'utf8')
 const match = raw.match(/---\n([\s\S]+?)\n---\n([\s\S]*)/);
   if (!match) return null
 const meta = JSON.parse(match[1])
@@ -20,5 +20,5 @@ function writeTS(data, outPath, varName, typeImport, typeFile) {
   const ts = `import { ${typeImport} } from @/types/${typeFile};\nconst ${varName}: ${typeImport}[] = ${JSON.stringify(data, null, 2)};\n`;  fs.writeFileSync(outPath, ts);
 }
 
-const blog = build(path.join(__dirname, ..', content', blog'));const caseStudies = build(path.join(__dirname, ..', content', case-studies'));const tutorials = build(path.join(__dirname, ..', content', tutorials'));const partners = build(path.join(__dirname, ..', content', partners'));
-writeTS(blog, path.join(__dirname, ..', src', data', blog-posts.ts'), BLOG_POSTS', BlogPost', blog');writeTS(caseStudies, path.join(__dirname, ..', src', data', case-studies.ts'), CASE_STUDIES', CaseStudy', caseStudy');writeTS(tutorials, path.join(__dirname, ..', src', data', tutorials.ts'), TUTORIALS', Tutorial', tutorial');writeTS(partners, path.join(__dirname, ..', src', data', partner-profiles.ts'), PARTNER_PROFILES', PartnerProfileContent', partners');
+const blog = build(path.join(__dirname, ..', content', 'blog'));const caseStudies = build(path.join(__dirname, ..', content', 'case-studies'));const tutorials = build(path.join(__dirname, ..', content', 'tutorials'));const partners = build(path.join(__dirname, ..', content', 'partners'));
+writeTS(blog, path.join(__dirname, ..', src', data', 'blog-posts.ts'), BLOG_POSTS', BlogPost', blog');writeTS(caseStudies, path.join(__dirname, ..', src', data', 'case-studies.ts'), CASE_STUDIES', CaseStudy', caseStudy');writeTS(tutorials, path.join(__dirname, ..', src', data', 'tutorials.ts'), TUTORIALS', Tutorial', tutorial');writeTS(partners, path.join(__dirname, ..', src', data', 'partner-profiles.ts'), PARTNER_PROFILES', PartnerProfileContent', partners');

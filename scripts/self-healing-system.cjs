@@ -387,7 +387,7 @@ const closeBraces = (newContent.match(/\}/g) || []).length;
 
   async fixLintErrors() {
     try {
-      execSync('npm run lint:fix', { stdio: 'inherit' });
+      execSync('npm run lint: 'fix', { stdio: 'inherit' });
       this.log('Applied ESLint auto-fixes');
       return true;
     } catch (error) {

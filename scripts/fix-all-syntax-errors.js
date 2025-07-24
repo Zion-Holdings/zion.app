@@ -12,26 +12,25 @@ class Script {
       const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 ;
 import fs from fs';import path from path';import { execSync } from child_process';import { fileURLToPath } from url';
 const __filename = fileURLToPath(import.meta.url)
@@ -159,7 +158,7 @@ const throwBacktickMatches = fixed.match(throwBacktickPattern);
 // Function to process a single file
 function processFile(filePath) {
   try {
-    const content = fs.readFileSync(filePath, utf8')
+    const content = fs.readFileSync(filePath, 'utf8')
 const { fixed, changes } = fixSyntaxErrors(content);
     
     if (changes > 0) {
@@ -196,7 +195,7 @@ const sourceFiles = findSourceFiles('./src');  logger.info(`📄 Found ${sourceF
   
   if (totalChanges > 0) {
     logger.info('\n🔍 Running build to check for remaining issues...');    try {
-      execSync('npm run build', { stdio: inherit' });      logger.info('✅ Build completed successfully!');    } catch (buildError) {
+      execSync('npm run build', { stdio: 'inherit' });      logger.info('✅ Build completed successfully!');    } catch (buildError) {
       logger.info('⚠️  Build still has issues, but syntax errors have been reduced.');    }
   } else {
     logger.info('✨ No syntax errors found!');  }

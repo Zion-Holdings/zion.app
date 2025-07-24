@@ -2,20 +2,20 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
@@ -34,7 +34,7 @@ class DashboardServer extends EventEmitter {
       host: process.env.DASHBOARD_HOST || localhost',
       enableCORS: true,
       enableWebSocket: true,
-      staticPath: path.join(__dirname, public'),
+      staticPath: path.join(__dirname, 'public'),
       apiPrefix: /api',
       auth: {
         enabled: false,
@@ -65,7 +65,7 @@ class DashboardServer extends EventEmitter {
         res.header('Access-Control-Allow-Origin', *');
         res.header('Access-Control-Allow-Methods', GET, POST, PUT, DELETE, OPTIONS');
         res.header('Access-Control-Allow-Headers', Content-Type, Authorization');
-        if (req.method === OPTIONS') {
+        if (req.method === 'OPTIONS') {
           res.sendStatus(200);
         } else {
           next();
@@ -100,7 +100,7 @@ class DashboardServer extends EventEmitter {
     // Health check
     this.app.get(`${api}/health`, (req, res) => {
       res.json({
-        status: healthy',
+        status: 'healthy',
         timestamp: new Date().toISOString(),
         uptime: process.uptime()
       });
@@ -247,7 +247,7 @@ class DashboardServer extends EventEmitter {
 
     // Catch-all for SPA
     this.app.get('*', (req, res) => {
-      res.sendFile(path.join(this.config.staticPath, index.html'));
+      res.sendFile(path.join(this.config.staticPath, 'index.html'));
     });
   }
 
@@ -263,7 +263,7 @@ class DashboardServer extends EventEmitter {
 
       // Send initial status
       ws.send(JSON.stringify({
-        type: status',
+        type: 'status',
         data: this.getSystemStatus()
       }));
 
@@ -311,7 +311,7 @@ class DashboardServer extends EventEmitter {
   // API Methods
   getSystemStatus() {
     return {
-      status: running',
+      status: 'running',
       uptime: process.uptime(),
       timestamp: new Date().toISOString(),
       version: process.env.npm_package_version || 1.0.0',
@@ -407,7 +407,7 @@ class DashboardServer extends EventEmitter {
 
     return await this.notificationManager.sendNotification(
       Test notification from dashboard',
-      { priority: medium', category: info', taskName: dashboard' }
+      { priority: 'medium', category: 'info', taskName: 'dashboard' }
     );
   }
 

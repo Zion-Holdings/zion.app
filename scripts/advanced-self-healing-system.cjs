@@ -83,7 +83,7 @@ const CONFIG = {
     },
     'ESLint error': {
       type: 'linting',
-      fix: 'npm run lint:fix',
+      fix: 'npm run lint: 'fix',
       severity: 'low',
       cursorPrompt: 'Fix ESLint code style and quality issues',
     },
@@ -462,7 +462,7 @@ const recentLines = logContent.split('\n').slice(-100); // Last 100 lines
 
       try {
         // Try auto-fix first
-        execSync('npm run lint:fix', {
+        execSync('npm run lint: 'fix', {
           stdio: 'inherit',
           timeout: 120000,
         });
@@ -520,7 +520,7 @@ const recentLines = logContent.split('\n').slice(-100); // Last 100 lines
       },
       linting: async () => {
         this.log('Applying linting fix...');
-        execSync('npm run lint:fix', { stdio: 'inherit' });
+        execSync('npm run lint: 'fix', { stdio: 'inherit' });
       },
       styling: async () => {
         this.log('Applying styling fix...');
@@ -568,7 +568,7 @@ const fixStrategy = fixStrategies[issue.type];
     // This would implement sophisticated import analysis
     // For now, we'll just run a basic check
     try {
-      execSync('npm run fix:imports', { stdio: 'inherit' });
+      execSync('npm run fix: 'imports', { stdio: 'inherit' });
     } catch (error) {
       this.log(`Import fix failed: ${error.message}`, 'ERROR');
     }

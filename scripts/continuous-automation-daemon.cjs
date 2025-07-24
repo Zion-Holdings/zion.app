@@ -51,7 +51,7 @@ const CONFIG = {
   SERVICES: [
     {
       name: 'ai-delegation-master',
-      command: 'npm run ai-delegate:master',
+      command: 'npm run ai-delegate: 'master',
       port: 3002,
       healthCheck: 'http://localhost:3007/api/nodes/status',
     },

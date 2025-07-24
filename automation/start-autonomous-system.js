@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 /**
  * Autonomous Automation System - Main Entry Point
@@ -58,14 +57,14 @@ class AutonomousAutomationSystem {
       this.orchestrator = new IntelligentAutomationOrchestrator({
         port: process.env.AUTOMATION_PORT || 3001,
         logLevel: process.env.LOG_LEVEL || info',
-        enableDashboard: process.env.ENABLE_DASHBOARD !== false',
-        enableAPI: process.env.ENABLE_API !== false',
+        enableDashboard: process.env.ENABLE_DASHBOARD !== 'false',
+        enableAPI: process.env.ENABLE_API !== 'false',
         
         // Task configuration
         autoLoadTasks: true,
         defaultTaskConfig: {
           enabled: true,
-          priority: normal',
+          priority: 'normal',
           retryAttempts: 3,
           timeout: 300000
         },

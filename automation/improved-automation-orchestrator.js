@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 const { spawn } = require('child_process');
 const express = require('express');
@@ -41,28 +40,28 @@ class ImprovedAutomationOrchestrator {
     
     this.systemConfigs = {
       continuous-improvement': {
-        script: continuous-improvement/index.js',
+        script: 'continuous-improvement/index.js',
         name: Continuous Improvement System',
         description: Monitors and improves code quality, performance, and security',
         autoRestart: true,
         maxRestarts: 5
       },
       enhanced-infinite-improvement': {
-        script: enhanced-infinite-improvement.js',
+        script: 'enhanced-infinite-improvement.js',
         name: Enhanced Infinite Improvement Loop',
         description: AI-powered continuous improvement with learning capabilities',
         autoRestart: true,
         maxRestarts: 3
       },
       autonomous-system': {
-        script: autonomous-system.js',
+        script: 'autonomous-system.js',
         name: Autonomous Automation System',
         description: Multi-module autonomous system for various tasks',
         autoRestart: true,
         maxRestarts: 5
       },
       intelligent-orchestrator': {
-        script: intelligent-automation-orchestrator.js',
+        script: 'intelligent-automation-orchestrator.js',
         name: Intelligent Automation Orchestrator',
         description: Coordinates and manages all automation systems',
         autoRestart: false,
@@ -130,7 +129,7 @@ class ImprovedAutomationOrchestrator {
   setupHealthEndpoints() {
     this.app.get('/health', (req, res) => {
       res.json({
-        status: healthy',
+        status: 'healthy',
         timestamp: new Date().toISOString(),
         systems: this.getSystemStatus(),
         orchestrator: {
@@ -168,13 +167,13 @@ class ImprovedAutomationOrchestrator {
     logger.info('🤖 Initializing automation systems...');
     
     for (const [systemName, config] of Object.entries(this.systemConfigs)) {
-      if (systemName === intelligent-orchestrator') continue; // Skip self
+      if (systemName === 'intelligent-orchestrator') continue; // Skip self
       
       const system = {
         name: systemName,
         config: config,
         process: null,
-        status: stopped',
+        status: 'stopped',
         restarts: 0,
         lastStart: null,
         lastError: null,
@@ -194,7 +193,7 @@ class ImprovedAutomationOrchestrator {
       return false;
     }
 
-    if (system.status === running') {
+    if (system.status === 'running') {
       logger.info(`⚠️  System ${systemName} is already running`);
       return true;
     }
@@ -210,7 +209,7 @@ class ImprovedAutomationOrchestrator {
       const child = spawn('node', [scriptPath], {
         cwd: __dirname,
         stdio: ['pipe', pipe', pipe'],
-        env: { ...process.env, NODE_ENV: production' }
+        env: { ...process.env, NODE_ENV: 'production' }
       });
 
       system.process = child;
@@ -220,14 +219,14 @@ class ImprovedAutomationOrchestrator {
 
       child.stdout.on('data', (data) => {
         const log = data.toString().trim();
-        system.logs.push({ timestamp: new Date(), type: stdout', message: log });
+        system.logs.push({ timestamp: new Date(), type: 'stdout', message: log });
         if (system.logs.length > 100) system.logs.shift();
         logger.info(`[${systemName}] ${log}`);
       });
 
       child.stderr.on('data', (data) => {
         const log = data.toString().trim();
-        system.logs.push({ timestamp: new Date(), type: stderr', message: log });
+        system.logs.push({ timestamp: new Date(), type: 'stderr', message: log });
         if (system.logs.length > 100) system.logs.shift();
         logger.error(`[${systemName}] ERROR: ${log}`);
       });
@@ -263,7 +262,7 @@ const timeoutId = setTimeout(() => this.startSystem(systemName),  5000);
       // Wait for system to start
       await this.waitForSystemStart(systemName);
       
-      if (system.status === running') {
+      if (system.status === 'running') {
         logger.info(`✅ ${systemName} started successfully`);
         this.broadcastStatus();
         return true;
@@ -286,7 +285,7 @@ const timeoutId = setTimeout(() => this.startSystem(systemName),  5000);
     
     return new Promise((resolve) => {
       const checkStatus = () => {
-        if (system.status === running') {
+        if (system.status === 'running') {
           resolve(true);
         } else if (Date.now() - startTime > timeout) {
           resolve(false);

@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 /**
  * Zion App - Enhanced Continuous Improvement Startup Script
@@ -44,7 +43,7 @@ class AutomationStartup {
     // Configuration
     this.config = {
       port: process.env.AUTOMATION_PORT || 3001,
-      logLevel: process.env.LOG_LEVEL || info',      enableDashboard: process.env.ENABLE_DASHBOARD === true',      enableSlack: process.env.ENABLE_SLACK === true',      enableMonitoring: process.env.ENABLE_MONITORING === true''    };
+      logLevel: process.env.LOG_LEVEL || info',      enableDashboard: process.env.ENABLE_DASHBOARD === 'true',      enableSlack: process.env.ENABLE_SLACK === 'true',      enableMonitoring: process.env.ENABLE_MONITORING === true''    };
   }
 
   /**
@@ -142,7 +141,7 @@ const optionalEnvVars = [
   async startMonitoring() {
     logger.info('📡 Starting monitoring system...');    
     // Start performance monitoring
-    const monitorProcess = spawn('node', ['automation/performance/monitor.js'], {'      stdio: pipe',      detached: false
+    const monitorProcess = spawn('node', ['automation/performance/monitor.js'], {'      stdio: 'pipe',      detached: false
     });
     
     monitorProcess.stdout.on('data', (data) => {'      logger.info(`📊 Monitor: ${data.toString().trim()}`);
@@ -165,9 +164,9 @@ const optionalEnvVars = [
     const express = require('express');    const app = express();
     
     app.use(express.json());
-    app.use(express.static(path.join(__dirname, dashboard')));    
+    app.use(express.static(path.join(__dirname, 'dashboard')));    
     // Dashboard routes
-    app.get('/dashboard', (req, res) => {'      res.sendFile(path.join(__dirname, dashboard', index.html'));    });
+    app.get('/dashboard', (req, res) => {'      res.sendFile(path.join(__dirname, dashboard', 'index.html'));    });
     
     app.get('/api/status', (req, res) => {'      res.json(this.automation.getStatus());
     });
@@ -185,7 +184,7 @@ const optionalEnvVars = [
     });
     
     app.get('/health', (req, res) => {'      res.json({
-        status: healthy',        uptime: process.uptime(),
+        status: 'healthy',        uptime: process.uptime(),
         automation: this.automation.getStatus(),
         timestamp: new Date().toISOString()
       });
@@ -245,7 +244,7 @@ const optionalEnvVars = [
     
     logger.info('📊 Initial Status:', JSON.stringify(status, null, 2));    
     // Save status to file
-    const statusPath = path.join(__dirname, ..', logs', automation-status.json');    fs.writeFileSync(statusPath, JSON.stringify(status, null, 2));
+    const statusPath = path.join(__dirname, ..', logs', 'automation-status.json');    fs.writeFileSync(statusPath, JSON.stringify(status, null, 2));
   }
 
   /**

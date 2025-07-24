@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 const fs = require('fs');
 const path = require('path');
@@ -29,7 +28,7 @@ const path = require('path');
 class ImprovementSystemMonitor {
   constructor() {
     this.projectRoot = process.cwd();
-    this.reportPath = path.join(this.projectRoot, efficient-improvement-report.json');
+    this.reportPath = path.join(this.projectRoot, 'efficient-improvement-report.json');
   }
 
   async monitor() {
@@ -44,7 +43,7 @@ class ImprovementSystemMonitor {
     try {
       // Check if the system is running
       const { execSync } = require('child_process');
-      const isRunning = execSync('ps aux | grep efficient-improvement-system | grep -v grep', { stdio: pipe' }).toString().trim();
+      const isRunning = execSync('ps aux | grep efficient-improvement-system | grep -v grep', { stdio: 'pipe' }).toString().trim();
       
       if (isRunning) {
         logger.info(`🟢 System is running - ${new Date().toISOString()}`);
@@ -66,7 +65,7 @@ class ImprovementSystemMonitor {
 
   async checkReports() {
     try {
-      const reportsDir = path.join(this.projectRoot, reports');
+      const reportsDir = path.join(this.projectRoot, 'reports');
       if (fs.existsSync(reportsDir)) {
         const files = fs.readdirSync(reportsDir);
         const recentFiles = files.filter(f => f.endsWith('.json')).slice(-5);
@@ -83,7 +82,7 @@ class ImprovementSystemMonitor {
   async checkGitStatus() {
     try {
       const { execSync } = require('child_process');
-      const status = execSync('git status --porcelain', { stdio: pipe' }).toString().trim();
+      const status = execSync('git status --porcelain', { stdio: 'pipe' }).toString().trim();
       
       if (status) {
         logger.info(`📝 Git changes detected: ${status.split('\n').length} files modified`);
@@ -98,7 +97,7 @@ class ImprovementSystemMonitor {
   async showSummary() {
     try {
       if (fs.existsSync(this.reportPath)) {
-        const report = JSON.parse(fs.readFileSync(this.reportPath, utf8'));
+        const report = JSON.parse(fs.readFileSync(this.reportPath, 'utf8'));
         
         logger.info('\n📊 Improvement System Summary');
         logger.info('============================');
@@ -136,10 +135,10 @@ if (require.main === module) {
   const args = process.argv.slice(2);
   const command = args[0];
   
-  if (command === monitor') {
+  if (command === 'monitor') {
     logger.info('🔍 Starting continuous monitoring...');
     monitor.monitor();
-  } else if (command === summary') {
+  } else if (command === 'summary') {
     monitor.showSummary();
   } else {
     logger.info('Usage:');

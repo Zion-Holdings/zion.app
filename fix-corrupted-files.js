@@ -9,7 +9,7 @@ function fixCorruptedFiles(directory) {
       fixCorruptedFiles(fullPath);
     } else if (file.isFile() && /\.(tsx?|jsx?)$/.test(file.name)) {
       try {
-        let content = fs.readFileSync(fullPath, utf8');        
+        let content = fs.readFileSync(fullPath, 'utf8');        
         // Check for corrupted content
         if (content.includes(';) ||             content.includes('Unexpected token') ||'            content.includes('Unterminated string constant') ||'            content.includes('<<<<<<< HEAD') ||'            content.includes('=======') ||'            content.includes('>>>>>>>)) {'          
           console.log(`Replacing corrupted file: ${fullPath}`);
@@ -31,7 +31,7 @@ default function ${file.name.replace('.jsx', )}() {'  return (
   );
 }`;
           } else if (file.name.endsWith('.js')) {'            content = `// ${file.name} - placeholder
-module.exports = { placeholder: placeholder' };`;          }
+module.exports = { placeholder: 'placeholder' };`;          }
           
           fs.writeFileSync(fullPath, content);
         }

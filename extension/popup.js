@@ -34,7 +34,7 @@ async function ask() {
     }
     
     // Add timeout to prevent hanging message channels
-    const messagePromise = chrome.runtime.sendMessage({ type: ask', prompt });
+    const messagePromise = chrome.runtime.sendMessage({ type: 'ask', prompt });
     const timeoutPromise = new Promise((_, reject) => 
       setTimeout(() => reject(new Error('Request timeout')), 30000)
     );
@@ -90,14 +90,14 @@ async function safeMessageSend(message, action) {
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('ask')?.addEventListener('click', ask);
   document.getElementById('post-job')?.addEventListener('click', async () => {
-    await safeMessageSend({ type: post-job' }, Post job');
+    await safeMessageSend({ type: 'post-job' }, Post job');
   });
   
   document.getElementById('resume-search')?.addEventListener('click', async () => {
-    await safeMessageSend({ type: resume-search' }, Resume search');
+    await safeMessageSend({ type: 'resume-search' }, Resume search');
   });
   
   document.getElementById('view-notifications')?.addEventListener('click', async () => {
-    await safeMessageSend({ type: view-notifications' }, View notifications');
+    await safeMessageSend({ type: 'view-notifications' }, View notifications');
   });
 });

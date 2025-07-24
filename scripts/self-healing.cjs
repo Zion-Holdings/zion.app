@@ -74,7 +74,7 @@ const CONFIG = {
     },
     'ESLint error': {
       type: 'linting',
-      fix: 'npm run lint:fix',
+      fix: 'npm run lint: 'fix',
       severity: 'low',
     },
     'Tailwind CSS': {
@@ -379,7 +379,7 @@ const detectedIssues = this.detectIssues(allLogs);
     this.log('Fixing linting issues...');
 
     try {
-      execSync('npm run lint:fix', { stdio: 'inherit' });
+      execSync('npm run lint: 'fix', { stdio: 'inherit' });
       this.log('Linting issues fixed');
     } catch (error) {
       this.log(`Linting fix failed: ${error.message}`, 'error');

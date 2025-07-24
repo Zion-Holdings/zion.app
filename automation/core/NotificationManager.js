@@ -2,20 +2,20 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
@@ -320,8 +320,8 @@ const timeoutId = setTimeout(() => {
   // Convenience methods for common notification types
   async notifyError(message, taskName, data = {}) {
     return this.sendNotification(message, {
-      priority: critical',
-      category: error',
+      priority: 'critical',
+      category: 'error',
       taskName,
       data
     });
@@ -329,8 +329,8 @@ const timeoutId = setTimeout(() => {
 
   async notifyWarning(message, taskName, data = {}) {
     return this.sendNotification(message, {
-      priority: high',
-      category: warning',
+      priority: 'high',
+      category: 'warning',
       taskName,
       data
     });
@@ -338,8 +338,8 @@ const timeoutId = setTimeout(() => {
 
   async notifySuccess(message, taskName, data = {}) {
     return this.sendNotification(message, {
-      priority: medium',
-      category: success',
+      priority: 'medium',
+      category: 'success',
       taskName,
       data
     });
@@ -347,8 +347,8 @@ const timeoutId = setTimeout(() => {
 
   async notifyInfo(message, taskName, data = {}) {
     return this.sendNotification(message, {
-      priority: medium',
-      category: info',
+      priority: 'medium',
+      category: 'info',
       taskName,
       data
     });
@@ -356,8 +356,8 @@ const timeoutId = setTimeout(() => {
 
   async notifySecurity(message, taskName, data = {}) {
     return this.sendNotification(message, {
-      priority: critical',
-      category: security',
+      priority: 'critical',
+      category: 'security',
       taskName,
       data
     });

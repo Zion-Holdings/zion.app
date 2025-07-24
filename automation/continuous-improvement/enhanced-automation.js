@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 /**
  * Zion App - Enhanced Continuous Improvement Automation
@@ -44,25 +43,25 @@ class EnhancedAutomation {
   constructor(config = {}) {
     this.config = {
       interval: 300000, // 5 minutes
-      logLevel: info',
+      logLevel: 'info',
       ai: {
         cursor: {
-          enabled: process.env.CURSOR_AI_ENABLED === true',
+          enabled: process.env.CURSOR_AI_ENABLED === 'true',
           apiKey: process.env.CURSOR_API_KEY,
           workspaceId: process.env.CURSOR_WORKSPACE_ID
         },
         openai: {
-          enabled: process.env.OPENAI_ENABLED === true',
+          enabled: process.env.OPENAI_ENABLED === 'true',
           apiKey: process.env.OPENAI_API_KEY,
           model: process.env.OPENAI_MODEL || gpt-4-turbo-preview
         },
         claude: {
-          enabled: process.env.CLAUDE_ENABLED === true',
+          enabled: process.env.CLAUDE_ENABLED === 'true',
           apiKey: process.env.CLAUDE_API_KEY,
           model: process.env.CLAUDE_MODEL || claude-3-sonnet-20240229
         },
         local: {
-          enabled: process.env.LOCAL_AI_ENABLED === true',
+          enabled: process.env.LOCAL_AI_ENABLED === 'true',
           endpoint: process.env.LOCAL_AI_ENDPOINT || http://localhost:11434',
           model: process.env.LOCAL_AI_MODEL || codellama:7b
         }
@@ -133,7 +132,7 @@ class EnhancedAutomation {
       id: Date.now().toString(),
       type,
       data,
-      status: queued',
+      status: 'queued',
       priority: this.getTaskPriority(type),
       timestamp: new Date().toISOString()
     };
@@ -494,17 +493,17 @@ const timeoutId = setTimeout(processLoop,  1000);
   async checkBuildStatus() {
     try {
       const startTime = Date.now();
-      execSync('npm run build', { stdio: pipe' });
+      execSync('npm run build', { stdio: 'pipe' });
       const buildTime = Date.now() - startTime;
       
       return {
-        status: success',
+        status: 'success',
         buildTime,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: failed',
+        status: 'failed',
         error: error.message,
         timestamp: new Date().toISOString()
       };
@@ -535,8 +534,8 @@ const timeoutId = setTimeout(processLoop,  1000);
 
   async checkDependencyStatus() {
     try {
-      const packageJson = JSON.parse(fs.readFileSync('package.json', utf8'));
-      const outdated = execSync('npm outdated --json', { stdio: pipe' }).toString();
+      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+      const outdated = execSync('npm outdated --json', { stdio: 'pipe' }).toString();
       
       return {
         totalDependencies: Object.keys({ ...packageJson.dependencies, ...packageJson.devDependencies }).length,
@@ -549,12 +548,12 @@ const timeoutId = setTimeout(processLoop,  1000);
 
   async analyzeCodeQuality() {
     try {
-      const lintResults = execSync('npm run lint -- --format json', { stdio: pipe' }).toString();
-      const testResults = execSync('npm run test -- --json --outputFile=test-results.json', { stdio: pipe' }).toString();
+      const lintResults = execSync('npm run lint -- --format json', { stdio: 'pipe' }).toString();
+      const testResults = execSync('npm run test -- --json --outputFile=test-results.json', { stdio: 'pipe' }).toString();
       
       return {
         lint: JSON.parse(lintResults),
-        tests: JSON.parse(fs.readFileSync('test-results.json', utf8')),
+        tests: JSON.parse(fs.readFileSync('test-results.json', 'utf8')),
         timestamp: new Date().toISOString()
       };
     } catch (error) {
@@ -564,7 +563,7 @@ const timeoutId = setTimeout(processLoop,  1000);
 
   async analyzePerformance() {
     try {
-      const bundleOutput = execSync('npm run bundle:analyze', { stdio: pipe' }).toString();
+      const bundleOutput = execSync('npm run bundle: 'analyze', { stdio: 'pipe' }).toString();
       
       return {
         bundleAnalysis: this.parseBundleAnalysis(bundleOutput),
@@ -578,7 +577,7 @@ const timeoutId = setTimeout(processLoop,  1000);
 
   async analyzeSecurity() {
     try {
-      const auditOutput = execSync('npm audit --json', { stdio: pipe' }).toString();
+      const auditOutput = execSync('npm audit --json', { stdio: 'pipe' }).toString();
       
       return {
         audit: JSON.parse(auditOutput),
@@ -592,7 +591,7 @@ const timeoutId = setTimeout(processLoop,  1000);
 
   async analyzeBundleSize() {
     try {
-      const output = execSync('npm run bundle:report', { stdio: pipe' }).toString();
+      const output = execSync('npm run bundle: 'report', { stdio: 'pipe' }).toString();
       return this.parseBundleAnalysis(output);
     } catch (error) {
       return { error: error.message };
@@ -602,7 +601,7 @@ const timeoutId = setTimeout(processLoop,  1000);
   async measureBuildTime() {
     try {
       const startTime = Date.now();
-      execSync('npm run build', { stdio: pipe' });
+      execSync('npm run build', { stdio: 'pipe' });
       return Date.now() - startTime;
     } catch (error) {
       return null;
@@ -611,7 +610,7 @@ const timeoutId = setTimeout(processLoop,  1000);
 
   async checkVulnerabilities() {
     try {
-      const output = execSync('npm audit --json', { stdio: pipe' }).toString();
+      const output = execSync('npm audit --json', { stdio: 'pipe' }).toString();
       return JSON.parse(output);
     } catch (error) {
       return { error: error.message };
@@ -620,7 +619,7 @@ const timeoutId = setTimeout(processLoop,  1000);
 
   async checkOutdatedPackages() {
     try {
-      const output = execSync('npm outdated --json', { stdio: pipe' }).toString();
+      const output = execSync('npm outdated --json', { stdio: 'pipe' }).toString();
       return JSON.parse(output || {});
     } catch (error) {
       return { error: error.message };
@@ -629,7 +628,7 @@ const timeoutId = setTimeout(processLoop,  1000);
 
   async findUnusedDependencies() {
     try {
-      const output = execSync('npx depcheck --json', { stdio: pipe' }).toString();
+      const output = execSync('npx depcheck --json', { stdio: 'pipe' }).toString();
       return JSON.parse(output);
     } catch (error) {
       return { error: error.message };
@@ -638,7 +637,7 @@ const timeoutId = setTimeout(processLoop,  1000);
 
   async analyzeDependencySize() {
     try {
-      const output = execSync('npm run bundle:analyze', { stdio: pipe' }).toString();
+      const output = execSync('npm run bundle: 'analyze', { stdio: 'pipe' }).toString();
       return this.parseBundleAnalysis(output);
     } catch (error) {
       return { error: error.message };
@@ -669,16 +668,16 @@ const timeoutId = setTimeout(processLoop,  1000);
     
     if (results.lighthouse?.performance < this.config.thresholds.performance.lighthouseScore) {
       issues.push({
-        type: performance',
-        severity: high',
+        type: 'performance',
+        severity: 'high',
         message: `Lighthouse performance score (${results.lighthouse.performance}) below threshold (${this.config.thresholds.performance.lighthouseScore})`
       });
     }
     
     if (results.buildTime > this.config.thresholds.performance.loadTime) {
       issues.push({
-        type: performance',
-        severity: medium',
+        type: 'performance',
+        severity: 'medium',
         message: `Build time (${results.buildTime}ms) exceeds threshold (${this.config.thresholds.performance.loadTime}ms)`
       });
     }
@@ -691,8 +690,8 @@ const timeoutId = setTimeout(processLoop,  1000);
     
     if (results.vulnerabilities?.metadata?.vulnerabilities > this.config.thresholds.security.vulnerabilities) {
       issues.push({
-        type: security',
-        severity: critical',
+        type: 'security',
+        severity: 'critical',
         message: `Found ${results.vulnerabilities.metadata.vulnerabilities} security vulnerabilities`
       });
     }
@@ -700,8 +699,8 @@ const timeoutId = setTimeout(processLoop,  1000);
     const outdatedCount = Object.keys(results.outdatedPackages || {}).length;
     if (outdatedCount > this.config.thresholds.security.outdatedPackages) {
       issues.push({
-        type: security',
-        severity: medium',
+        type: 'security',
+        severity: 'medium',
         message: `${outdatedCount} outdated packages found`
       });
     }
@@ -719,7 +718,7 @@ const timeoutId = setTimeout(processLoop,  1000);
 
   async runSecurityAudit() {
     try {
-      const output = execSync('npm audit --json', { stdio: pipe' }).toString();
+      const output = execSync('npm audit --json', { stdio: 'pipe' }).toString();
       return JSON.parse(output);
     } catch (error) {
       return { error: error.message };
@@ -738,7 +737,7 @@ const timeoutId = setTimeout(processLoop,  1000);
 
     // Save status to file
     fs.writeFileSync(
-      path.join(this.config.paths.reports, system-status.json'),
+      path.join(this.config.paths.reports, 'system-status.json'),
       JSON.stringify(status, null, 2)
     );
 
@@ -747,8 +746,8 @@ const timeoutId = setTimeout(processLoop,  1000);
       status,
       summary: {
         totalTasks: this.results.length,
-        successfulTasks: this.results.filter(r => r.status === completed').length,
-        failedTasks: this.results.filter(r => r.status === failed').length,
+        successfulTasks: this.results.filter(r => r.status === 'completed').length,
+        failedTasks: this.results.filter(r => r.status === 'failed').length,
         totalImprovements: this.improvementHistory.length,
         totalErrors: this.errors.length
       },
@@ -770,8 +769,8 @@ const timeoutId = setTimeout(processLoop,  1000);
     
     if (this.calculateAverageMemory() > 100 * 1024 * 1024) { // 100MB
       recommendations.push({
-        type: performance',
-        priority: high',
+        type: 'performance',
+        priority: 'high',
         message: High memory usage detected. Consider optimizing memory usage.',
         action: Review memory-intensive operations and implement memory optimization strategies.
       });
@@ -779,8 +778,8 @@ const timeoutId = setTimeout(processLoop,  1000);
     
     if (this.errors.length > 10) {
       recommendations.push({
-        type: reliability',
-        priority: high',
+        type: 'reliability',
+        priority: 'high',
         message: High error rate detected. Review error handling and system stability.',
         action: Investigate error patterns and improve error handling mechanisms.
       });
@@ -788,8 +787,8 @@ const timeoutId = setTimeout(processLoop,  1000);
     
     if (this.improvementHistory.length < 5) {
       recommendations.push({
-        type: optimization',
-        priority: medium',
+        type: 'optimization',
+        priority: 'medium',
         message: Low improvement activity. Consider more aggressive optimization strategies.',
         action: Review optimization thresholds and increase automation frequency.
       });

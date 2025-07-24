@@ -2,20 +2,20 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
@@ -29,7 +29,7 @@ const path = require('path');
 class CodeQualityEnforcer extends AutomationTask {
   constructor(config = {}) {
     super({
-      name: CodeQualityEnforcer',
+      name: 'CodeQualityEnforcer',
       schedule: 0 */4 * * *', // Every 4 hours
       enabled: true,
       autoFix: true,
@@ -126,7 +126,7 @@ class CodeQualityEnforcer extends AutomationTask {
     try {
       // Run ESLint with JSON output
       const output = execSync('npx eslint . --ext .js,.jsx,.ts,.tsx --format json', {
-        encoding: utf8',
+        encoding: 'utf8',
         stdio: pipe
       });
       
@@ -220,7 +220,7 @@ class CodeQualityEnforcer extends AutomationTask {
     try {
       // Check formatting
       const output = execSync('npx prettier --check "**/*.{js,jsx,ts,tsx,json,css,md}"', {
-        encoding: utf8',
+        encoding: 'utf8',
         stdio: pipe
       });
       
@@ -246,7 +246,7 @@ class CodeQualityEnforcer extends AutomationTask {
       if (line.trim() && !line.includes('Checking formatting')) {
         violations.push({
           file: line.trim(),
-          type: formatting',
+          type: 'formatting',
           message: File needs formatting
         });
       }
@@ -260,7 +260,7 @@ class CodeQualityEnforcer extends AutomationTask {
     
     try {
       const output = execSync('npx tsc --noEmit', {
-        encoding: utf8',
+        encoding: 'utf8',
         stdio: pipe
       });
       
@@ -304,7 +304,7 @@ class CodeQualityEnforcer extends AutomationTask {
     
     try {
       const output = execSync('npm test', {
-        encoding: utf8',
+        encoding: 'utf8',
         stdio: pipe
       });
       
@@ -340,8 +340,8 @@ class CodeQualityEnforcer extends AutomationTask {
     logger.info('📊 Checking test coverage...');
     
     try {
-      const output = execSync('npm run test:coverage', {
-        encoding: utf8',
+      const output = execSync('npm run test: 'coverage', {
+        encoding: 'utf8',
         stdio: pipe
       });
       
@@ -427,13 +427,13 @@ class CodeQualityEnforcer extends AutomationTask {
       // Fix ESLint violations
       if (this.violations.some(v => v.tool === eslint' && v.fixable)) {
         logger.info('🔧 Fixing ESLint violations...');
-        execSync('npx eslint . --ext .js,.jsx,.ts,.tsx --fix', { stdio: pipe' });
+        execSync('npx eslint . --ext .js,.jsx,.ts,.tsx --fix', { stdio: 'pipe' });
       }
       
       // Fix Prettier violations
-      if (this.violations.some(v => v.tool === prettier')) {
+      if (this.violations.some(v => v.tool === 'prettier')) {
         logger.info('🔧 Fixing Prettier violations...');
-        execSync('npx prettier --write "**/*.{js,jsx,ts,tsx,json,css,md}"', { stdio: pipe' });
+        execSync('npx prettier --write "**/*.{js,jsx,ts,tsx,json,css,md}"', { stdio: 'pipe' });
       }
       
       logger.info('✅ Auto-fix completed');
@@ -451,7 +451,7 @@ class CodeQualityEnforcer extends AutomationTask {
     
     try {
       // Check if there are changes to commit
-      const status = execSync('git status --porcelain', { encoding: utf8' });
+      const status = execSync('git status --porcelain', { encoding: 'utf8' });
       
       if (!status.trim()) {
         logger.info('ℹ️ No changes to commit');
@@ -460,17 +460,17 @@ class CodeQualityEnforcer extends AutomationTask {
       
       // Create a new branch
       const branchName = `quality/auto-fix-${Date.now()}`;
-      execSync(`git checkout -b ${branchName}`, { stdio: pipe' });
+      execSync(`git checkout -b ${branchName}`, { stdio: 'pipe' });
       
       // Stage all changes
-      execSync('git add .', { stdio: pipe' });
+      execSync('git add .', { stdio: 'pipe' });
       
       // Commit changes
       const commitMessage = this.generateQualityCommitMessage();
-      execSync(`git commit -m "${commitMessage}"`, { stdio: pipe' });
+      execSync(`git commit -m "${commitMessage}"`, { stdio: 'pipe' });
       
       // Push branch
-      execSync(`git push origin ${branchName}`, { stdio: pipe' });
+      execSync(`git push origin ${branchName}`, { stdio: 'pipe' });
       
       // Create PR
       await this.createGitHubQualityPR(branchName);

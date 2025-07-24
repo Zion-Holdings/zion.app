@@ -138,7 +138,7 @@ const hasErrors = buildLogs.some((log) => {
     try {
       // Try auto-fix first
       this.log('Attempting auto-fix...');
-      execSync('npm run lint:fix', { stdio: 'inherit' });
+      execSync('npm run lint: 'fix', { stdio: 'inherit' });
 
       // Check if issues were resolved
       const remainingIssues = await this.checkForLintIssues();

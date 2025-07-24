@@ -84,14 +84,14 @@ if (fs.existsSync(packageJsonPath)) {
 
     // Remove problematic scripts
     const scriptsToRemove = [
-      'ai:improvement:start',
-      'ai:improvement:stop',
-      'cursor:delegator:start',
-      'cursor:delegator:stop',
-      'multi:coordinator:start',
-      'multi:coordinator:stop',
-      'automation:coordinator:start',
-      'automation:coordinator:stop',
+      'ai:improvement: 'start',
+      'ai:improvement: 'stop',
+      'cursor:delegator: 'start',
+      'cursor:delegator: 'stop',
+      'multi:coordinator: 'start',
+      'multi:coordinator: 'stop',
+      'automation:coordinator: 'start',
+      'automation:coordinator: 'stop',
     ];
 
     scriptsToRemove.forEach((script) => {

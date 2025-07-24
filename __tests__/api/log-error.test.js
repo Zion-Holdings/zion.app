@@ -18,7 +18,7 @@ vi.mock('@prisma/client', () => ({'  PrismaClient: vi.fn(() => ({
     errorAnalysisSuggestion: mockPrismaErrorAnalysisSuggestion
   })),
   // Mocking the enum, assuming it's used like ErrorAnalysisStatus.NEW'  // If it's just strings NEW', ANALYZED', etc., this specific mock isn't strictly necessary'  // but it's good practice if the actual enum objects are imported and used.'  ErrorAnalysisStatus: {
-    NEW: NEW',    ANALYZED: ANALYZED',    FIX_SUGGESTED: FIX_SUGGESTED',    // Add other statuses if they are directly used in the API logic being tested
+    NEW: 'NEW',    ANALYZED: 'ANALYZED',    FIX_SUGGESTED: 'FIX_SUGGESTED',    // Add other statuses if they are directly used in the API logic being tested
   }
 }));
 
@@ -41,7 +41,7 @@ vi.mock('@sentry/nextjs', () => ({'  captureException: mockCaptureException
 // For this example, let's assume the handler is exported from a file that can be imported.'// If it's a Next.js API route, we'd typically use something like `http.createServer` with `apiResolver`'// from `next/dist/server/api-utils/node`. For simplicity here, we'll assume a direct import is possible'// or we'll test the handler function directly.'// For now, we'll need to refactor `api/log-error.js` to its handler if it doesn't already.'// For this test structure, let's assume `logErrorApiHandler` is the actual function.'// This part might need adjustment based on how the API route is actually structured and invoked.;// Let's assume `log-error.js` exports its handler function.'let logErrorApiHandler;
 
 // Utility to create mock Next.js req/res objects for testing the handler;
-const createMockReqRes = (method = POST', body = {}) => {'  const req = {
+const createMockReqRes = (method = 'POST', body = {}) => {'  const req = {
     method,
     body,
     headers: {}, // Add headers if your API checks them
@@ -74,7 +74,7 @@ describe('/api/log-error Endpoint', () => {'  beforeAll(async () => {
     // Adjust the path if your project structure is different.
     try {
       const { default: apiModule } = await import('../../pages/api/log-error.ts'); // Path relative to this test file'      logErrorApiHandler = apiModule; // ES module default export
-      if (typeof logErrorApiHandler !== function') {'        throw new Error("Failed to load API handler. Ensure pages/api/log-error.ts exports its handler function as default.");"      }""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+      if (typeof logErrorApiHandler !== 'function') {'        throw new Error("Failed to load API handler. Ensure pages/api/log-error.ts exports its handler function as default.");"      }""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     } catch (error) {
       console.error("Error loading API handler for tests:", error);"      // This will cause tests to fail if handler can't be loaded.'      // Consider if the test setup needs to be different for Next.js API routes (e.g. using next-test-api-route-handler)
     }
@@ -86,7 +86,7 @@ describe('/api/log-error Endpoint', () => {'  beforeAll(async () => {
 
     // Default mock implementations
     mockPrismaErrorAnalysisSuggestion.findUnique.mockResolvedValue(null);
-    mockPrismaErrorAnalysisSuggestion.create.mockImplementation(data => Promise.resolve({ id: new-db-id-123', ...data.data }));    mockPrismaErrorAnalysisSuggestion.update.mockImplementation(data => Promise.resolve({ id: data.where.id || updated-db-id-456', ...data.data }));    mockExec.mockImplementation((command, callback) => callback(null, {"success":true,"suggestion":"Mocked Codex suggestion","model":"gpt-4o-mock"}, ));  });
+    mockPrismaErrorAnalysisSuggestion.create.mockImplementation(data => Promise.resolve({ id: 'new-db-id-123', ...data.data }));    mockPrismaErrorAnalysisSuggestion.update.mockImplementation(data => Promise.resolve({ id: data.where.id || updated-db-id-456', ...data.data }));    mockExec.mockImplementation((command, callback) => callback(null, {"success":true,"suggestion":"Mocked Codex suggestion","model":"gpt-4o-mock"}, ));  });
 
   // Test Case: Invalid HTTP Method
   test('should return 405 if not a POST request', async () => {'    if (!logErrorApiHandler) return; // Skip if handler not loaded
@@ -101,7 +101,7 @@ describe('/api/log-error Endpoint', () => {'  beforeAll(async () => {
     expect(res.json).toHaveBeenCalledWith(expect.objectContaining({ error: expect.stringContaining('message and stack are required') }));  });
 
   const validErrorPayload = {
-    message: Test error message',    stack: Error: Test error message\n    at test (test.js:1:1),    componentStack: in TestComponent (created by App),    url: http://localhost/test',    source: GlobalErrorBoundary',    userAgent: TestAgent/1.0',    timestamp: new Date().toISOString()
+    message: Test error message',    stack: Error: Test error message\n    at test (test.js:1:1),    componentStack: in TestComponent (created by App),    url: http://localhost/test',    source: 'GlobalErrorBoundary',    userAgent: 'TestAgent/1.0',    timestamp: new Date().toISOString()
   };
 
   // Test Case: New Error - Codex Success
@@ -110,7 +110,7 @@ describe('/api/log-error Endpoint', () => {'  beforeAll(async () => {
     // findUnique returns null (new error)
     mockPrismaErrorAnalysisSuggestion.findUnique.mockResolvedValue(null);
     // create returns a new record
-    const createdRecord = { id: new-record-id', occurrence_count: 1, ...validErrorPayload };    mockPrismaErrorAnalysisSuggestion.create.mockResolvedValue(createdRecord);
+    const createdRecord = { id: 'new-record-id', occurrence_count: 1, ...validErrorPayload };    mockPrismaErrorAnalysisSuggestion.create.mockResolvedValue(createdRecord);
     // exec will be successful (default mock)
 
     await logErrorApiHandler(req, res);
@@ -123,7 +123,7 @@ describe('/api/log-error Endpoint', () => {'  beforeAll(async () => {
     }));
 
     expect(mockPrismaErrorAnalysisSuggestion.create).toHaveBeenCalledWith(expect.objectContaining({
-      data: expect.objectContaining({ error_message: validErrorPayload.message, status: NEW' })    }));
+      data: expect.objectContaining({ error_message: validErrorPayload.message, status: 'NEW' })    }));
     expect(mockExec).toHaveBeenCalledTimes(1);
 
     // Wait for exec callback to complete (requires async handling in test or flush promises)
@@ -134,12 +134,12 @@ describe('/api/log-error Endpoint', () => {'  beforeAll(async () => {
 
     expect(mockPrismaErrorAnalysisSuggestion.update).toHaveBeenCalledWith(expect.objectContaining({
       where: { id: createdRecord.id },
-      data: expect.objectContaining({ status: FIX_SUGGESTED', codex_suggestion: Mocked Codex suggestion' })    }));
+      data: expect.objectContaining({ status: 'FIX_SUGGESTED', codex_suggestion: Mocked Codex suggestion' })    }));
   });
 
   // Test Case: New Error - Codex Failure (Script Error via stderr)
   test('New Error - Codex Failure (Script Error): should update with ANALYZED status and analysis_error', async () => {'    if (!logErrorApiHandler) return;
-    const { req, res } = createMockReqRes('POST', validErrorPayload);    const createdRecord = { id: script-fail-id', ...validErrorPayload };    mockPrismaErrorAnalysisSuggestion.create.mockResolvedValue(createdRecord);
+    const { req, res } = createMockReqRes('POST', validErrorPayload);    const createdRecord = { id: 'script-fail-id', ...validErrorPayload };    mockPrismaErrorAnalysisSuggestion.create.mockResolvedValue(createdRecord);
 
     const scriptErrorOutput = { success: false, error: Codex script internal error' };    mockExec.mockImplementation((command, callback) => callback(null, , JSON.stringify(scriptErrorOutput))); // stdout is empty, stderr has JSON error
     await logErrorApiHandler(req, res);
@@ -149,12 +149,12 @@ describe('/api/log-error Endpoint', () => {'  beforeAll(async () => {
 
     expect(mockPrismaErrorAnalysisSuggestion.update).toHaveBeenCalledWith(expect.objectContaining({
       where: { id: createdRecord.id },
-      data: expect.objectContaining({ status: ANALYZED', analysis_error: scriptErrorOutput.error })    }));
+      data: expect.objectContaining({ status: 'ANALYZED', analysis_error: scriptErrorOutput.error })    }));
   });
 
   // Test Case: New Error - Codex Failure (Exec Error)
   test('New Error - Codex Failure (Exec Error): should update with ANALYZED status and exec error message', async () => {'    if (!logErrorApiHandler) return;
-    const { req, res } = createMockReqRes('POST', validErrorPayload);    const createdRecord = { id: exec-fail-id', ...validErrorPayload };    mockPrismaErrorAnalysisSuggestion.create.mockResolvedValue(createdRecord);
+    const { req, res } = createMockReqRes('POST', validErrorPayload);    const createdRecord = { id: 'exec-fail-id', ...validErrorPayload };    mockPrismaErrorAnalysisSuggestion.create.mockResolvedValue(createdRecord);
 
     const execError = new Error('Command failed');    mockExec.mockImplementation((command, callback) => callback(execError, , ));
     await logErrorApiHandler(req, res);
@@ -164,16 +164,16 @@ describe('/api/log-error Endpoint', () => {'  beforeAll(async () => {
 
     expect(mockPrismaErrorAnalysisSuggestion.update).toHaveBeenCalledWith(expect.objectContaining({
       where: { id: createdRecord.id },
-      data: expect.objectContaining({ status: ANALYZED', analysis_error: expect.stringContaining('Exec error: Command failed') })    }));
+      data: expect.objectContaining({ status: 'ANALYZED', analysis_error: expect.stringContaining('Exec error: Command failed') })    }));
   });
 
   // Test Case: Recurring Error - Codex Success
   test('Recurring Error - Codex Success: should update count, call exec, then update with suggestion', async () => {'    if (!logErrorApiHandler) return;
-    const { req, res } = createMockReqRes('POST', validErrorPayload);    const existingRecord = { id: recurring-id-123', occurrence_count: 5, ...validErrorPayload };    mockPrismaErrorAnalysisSuggestion.findUnique.mockResolvedValue(existingRecord);
+    const { req, res } = createMockReqRes('POST', validErrorPayload);    const existingRecord = { id: 'recurring-id-123', occurrence_count: 5, ...validErrorPayload };    mockPrismaErrorAnalysisSuggestion.findUnique.mockResolvedValue(existingRecord);
     // First update (increment count)
     mockPrismaErrorAnalysisSuggestion.update.mockResolvedValueOnce({ ...existingRecord, occurrence_count: 6 });
     // Second update (after Codex)
-    mockPrismaErrorAnalysisSuggestion.update.mockResolvedValueOnce({ ...existingRecord, status: FIX_SUGGESTED', codex_suggestion: Mocked Codex suggestion' });
+    mockPrismaErrorAnalysisSuggestion.update.mockResolvedValueOnce({ ...existingRecord, status: 'FIX_SUGGESTED', codex_suggestion: Mocked Codex suggestion' });
 
     await logErrorApiHandler(req, res);
 
@@ -194,7 +194,7 @@ describe('/api/log-error Endpoint', () => {'  beforeAll(async () => {
     // Check second update (Codex suggestion)
     expect(mockPrismaErrorAnalysisSuggestion.update).toHaveBeenNthCalledWith(2, expect.objectContaining({
       where: { id: existingRecord.id },
-      data: expect.objectContaining({ status: FIX_SUGGESTED', codex_suggestion: Mocked Codex suggestion' })    }));
+      data: expect.objectContaining({ status: 'FIX_SUGGESTED', codex_suggestion: Mocked Codex suggestion' })    }));
   });
 
   // Test Case: Recurring Error - Already Has Suggestion (Future Optimization Point)
@@ -234,7 +234,7 @@ describe('/api/log-error Endpoint', () => {'  beforeAll(async () => {
 
   // Test Case: Database Error during Codex callback update
   test('Database Error (Callback): should log error if Prisma throws during exec callback update (API already returned 202), async () => {'    if (!logErrorApiHandler) return;
-    const consoleErrorSpy = vi.spyOn(console, error').mockImplementation(() => {}); // Suppress console.error for this test'    const { req, res } = createMockReqRes('POST', validErrorPayload);    const createdRecord = { id: db-error-callback-id', ...validErrorPayload };    mockPrismaErrorAnalysisSuggestion.create.mockResolvedValue(createdRecord);
+    const consoleErrorSpy = vi.spyOn(console, error').mockImplementation(() => {}); // Suppress console.error for this test'    const { req, res } = createMockReqRes('POST', validErrorPayload);    const createdRecord = { id: 'db-error-callback-id', ...validErrorPayload };    mockPrismaErrorAnalysisSuggestion.create.mockResolvedValue(createdRecord);
 
     // exec is successful
     mockExec.mockImplementation((command, callback) => callback(null, {"success":true,"suggestion":"Test suggestion","model":"gpt-4o-mock"}, ));    // But the subsequent prisma.update in the callback fails

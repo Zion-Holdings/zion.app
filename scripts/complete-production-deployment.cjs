@@ -37,8 +37,8 @@ class ProductionDeploymentCompleter {
     console.warn('  • OR: Local .env.production file (for testing)');
     console.warn('');
     console.warn('🔑 VARIABLES TO ADD:');
-    console.warn('  1. NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url');
-    console.warn('  2. NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key');
+    console.warn('  1. NEXT_PUBLIC_SUPABASE_URL='your_supabase_project_url');
+    console.warn('  2. NEXT_PUBLIC_SUPABASE_ANON_KEY='your_supabase_anon_key');
     console.warn('');
     console.warn('📖 HOW TO GET THESE VALUES:');
     console.warn('  1. Go to: https://supabase.com/dashboard');

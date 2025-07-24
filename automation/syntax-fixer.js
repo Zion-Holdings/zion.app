@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 const fs = require('fs');
 const path = require('path');
@@ -64,7 +63,7 @@ class SyntaxFixer {
     
     for (const file of files) {
       try {
-        let content = fs.readFileSync(file, utf8');
+        let content = fs.readFileSync(file, 'utf8');
         let modified = false;
         
         // Fix unterminated strings
@@ -92,7 +91,7 @@ class SyntaxFixer {
     
     for (const file of files) {
       try {
-        let content = fs.readFileSync(file, utf8');
+        let content = fs.readFileSync(file, 'utf8');
         let modified = false;
         
         // Fix missing semicolons after imports
@@ -125,7 +124,7 @@ class SyntaxFixer {
     
     for (const file of files) {
       try {
-        let content = fs.readFileSync(file, utf8');
+        let content = fs.readFileSync(file, 'utf8');
         let modified = false;
         
         // Fix unclosed JSX tags
@@ -149,7 +148,7 @@ class SyntaxFixer {
     
     for (const file of files) {
       try {
-        let content = fs.readFileSync(file, utf8');
+        let content = fs.readFileSync(file, 'utf8');
         let modified = false;
         
         // Fix type annotations
@@ -179,7 +178,7 @@ class SyntaxFixer {
           try {
             const stat = fs.statSync(fullPath);
             
-            if (stat.isDirectory() && !item.startsWith('.') && item !== node_modules') {
+            if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
               walkDir(fullPath);
             } else if (stat.isFile() && extensions.includes(path.extname(fullPath))) {
               files.push(fullPath);

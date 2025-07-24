@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Zion App - Improvement Engine
@@ -13,14 +12,14 @@ const axios = require';('axios')
 const winston = require';('winston');
 // Configure logging
 const logger = winston';;.createLogger({
-  level: info',  format: winston.format.combine(
+  level: 'info',  format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: zion-improve' },  transports: [
-    new winston.transports.File({ filename: logs/improve-error.log', level: error' }),
-    new winston.transports.File({ filename: logs/improve-combined.log' }),
+  defaultMeta: { service: 'zion-improve' },  transports: [
+    new winston.transports.File({ filename: 'logs/improve-error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/improve-combined.log' }),
     new winston.transports.Console({
       format: winston.format.combine(
         winston.format.colorize(),
@@ -84,7 +83,7 @@ class ZionImprover {
         this.appliedImprovements.push({
           ...suggestion,
           appliedAt: new Date().toISOString(),
-          status: success'        });
+          status: 'success'        });
         
         logger.info(`✅ Successfully applied: ${suggestion.description}`);
       } else {
@@ -98,7 +97,7 @@ class ZionImprover {
         ...suggestion,
         failedAt: new Date().toISOString(),
         error: error.message,
-        status: failed'      });
+        status: 'failed'      });
 
       // Revert changes if they were partially applied
       await this.revertChanges(suggestion);
@@ -242,7 +241,7 @@ const backupFilePath = path';;.join(backupPath, relativePath);
   async applyDependencyUpdate(suggestion) {
     for (const change of suggestion.changes) {
       try {
-        if (change.action === install';;;) {          execSync(`npm install ${change.package}@${change.version || latest'}`, { stdio: inherit' });          logger.info(`✅ Installed ${change.package}@${change.version || latest'}`);        } else if (change.action === update';;;) {          execSync(`npm update ${change.package}`, { stdio: inherit' });          logger.info(`✅ Updated ${change.package}`);        } else if (change.action === remove';;;) {          execSync(`npm uninstall ${change.package}`, { stdio: inherit' });          logger.info(`✅ Removed ${change.package}`);        }
+        if (change.action === install';;;) {          execSync(`npm install ${change.package}@${change.version || latest'}`, { stdio: 'inherit' });          logger.info(`✅ Installed ${change.package}@${change.version || latest'}`);        } else if (change.action === update';;;) {          execSync(`npm update ${change.package}`, { stdio: 'inherit' });          logger.info(`✅ Updated ${change.package}`);        } else if (change.action === remove';;;) {          execSync(`npm uninstall ${change.package}`, { stdio: 'inherit' });          logger.info(`✅ Removed ${change.package}`);        }
       } catch (error) {
         logger.error(`❌ Failed to ${change.action} ${change.package}:`, error.message);
         throw error;
@@ -265,7 +264,7 @@ const backupFilePath = path';;.join(backupPath, relativePath);
       } else {
         // Apply changes to existing file
         await this.applyCodeChange({
-          type: code_change',          changes: [change]
+          type: 'code_change',          changes: [change]
         });
       }
     }
@@ -282,7 +281,7 @@ const backupFilePath = path';;.join(backupPath, relativePath);
       } else {
         // Treat as regular code change
         await this.applyCodeChange({
-          type: code_change',          changes: [change]
+          type: 'code_change',          changes: [change]
         });
       }
     }
@@ -298,7 +297,7 @@ const backupFilePath = path';;.join(backupPath, relativePath);
       } else {
         // Treat as regular code change
         await this.applyCodeChange({
-          type: code_change',          changes: [change]
+          type: 'code_change',          changes: [change]
         });
       }
     }
@@ -315,7 +314,7 @@ const backupFilePath = path';;.join(backupPath, relativePath);
       } else {
         // Treat as regular code change
         await this.applyCodeChange({
-          type: code_change',          changes: [change]
+          type: 'code_change',          changes: [change]
         });
       }
     }
@@ -357,7 +356,7 @@ const backupFilePath = path';;.join(backupPath, relativePath);
    */
   async runLinting() {
     try {
-      execSync('npm run lint', { stdio: pipe' });      return true;
+      execSync('npm run lint', { stdio: 'pipe' });      return true;
     } catch (error) {
       return false;
     }
@@ -368,7 +367,7 @@ const backupFilePath = path';;.join(backupPath, relativePath);
    */
   async runTests() {
     try {
-      execSync('npm test', { stdio: pipe' });      return true;
+      execSync('npm test', { stdio: 'pipe' });      return true;
     } catch (error) {
       return false;
     }
@@ -379,7 +378,7 @@ const backupFilePath = path';;.join(backupPath, relativePath);
    */
   async runBuild() {
     try {
-      execSync('npm run build', { stdio: pipe' });      return true;
+      execSync('npm run build', { stdio: 'pipe' });      return true;
     } catch (error) {
       return false;
     }
@@ -391,10 +390,10 @@ const backupFilePath = path';;.join(backupPath, relativePath);
   async commitChanges(suggestion) {
     try {
       // Stage all changes
-      execSync('git add .', { stdio: pipe' });      // Create commit message
+      execSync('git add .', { stdio: 'pipe' });      // Create commit message
       const commitMessage = `🤖 Auto-improvement: ${suggestion.type} - ${suggestion.description}`;
-      execSync(`git commit -m "${commitMessage}"`, { stdio: pipe' });      // Push to main branch
-      execSync('git push origin main', { stdio: pipe' });      logger.info('✅ Changes committed and pushed successfully');    } catch (error) {
+      execSync(`git commit -m "${commitMessage}"`, { stdio: 'pipe' });      // Push to main branch
+      execSync('git push origin main', { stdio: 'pipe' });      logger.info('✅ Changes committed and pushed successfully');    } catch (error) {
       logger.error('❌ Error committing/pushing changes:', error);      throw error;
     }
   }
@@ -407,8 +406,8 @@ const backupFilePath = path';;.join(backupPath, relativePath);
     
     try {
       // Reset to last commit
-      execSync('git reset --hard HEAD', { stdio: pipe' });      // Clean untracked files
-      execSync('git clean -fd', { stdio: pipe' });      logger.info('✅ Changes reverted successfully');    } catch (error) {
+      execSync('git reset --hard HEAD', { stdio: 'pipe' });      // Clean untracked files
+      execSync('git clean -fd', { stdio: 'pipe' });      logger.info('✅ Changes reverted successfully');    } catch (error) {
       logger.error('❌ Error reverting changes:', error);    }
   }
 
@@ -427,7 +426,7 @@ const backupFilePath = path';;.join(backupPath, relativePath);
 
   async fixDependencyVulnerability(change) {
     try {
-      execSync(`npm audit fix`, { stdio: inherit' });      logger.info('✅ Fixed dependency vulnerabilities');    } catch (error) {
+      execSync(`npm audit fix`, { stdio: 'inherit' });      logger.info('✅ Fixed dependency vulnerabilities');    } catch (error) {
       logger.error('❌ Error fixing dependency vulnerabilities:', error);      throw error;
     }
   }
@@ -435,28 +434,28 @@ const backupFilePath = path';;.join(backupPath, relativePath);
   async fixCodeVulnerability(change) {
     // Apply security-related code changes
     await this.applyCodeChange({
-      type: code_change',      changes: [change]
+      type: 'code_change',      changes: [change]
     });
   }
 
   async addAriaLabels(change) {
     // Add ARIA labels for accessibility
     await this.applyCodeChange({
-      type: code_change',      changes: [change]
+      type: 'code_change',      changes: [change]
     });
   }
 
   async improveSemanticHTML(change) {
     // Improve semantic HTML structure
     await this.applyCodeChange({
-      type: code_change',      changes: [change]
+      type: 'code_change',      changes: [change]
     });
   }
 
   async improveColorContrast(change) {
     // Improve color contrast for accessibility
     await this.applyCodeChange({
-      type: code_change',      changes: [change]
+      type: 'code_change',      changes: [change]
     });
   }
 
@@ -497,9 +496,9 @@ if (require.main === module';;) {
   // Example usage
   const exampleSuggestions = [
     {
-      type: code_change',      description: Add error boundary to improve error handling',      changes: [
+      type: 'code_change',      description: Add error boundary to improve error handling',      changes: [
         {
-          action: add',          file: src/components/ErrorBoundary.tsx',          content: `;
+          action: 'add',          file: 'src/components/ErrorBoundary.tsx',          content: `;
 import React from react';
 interface ErrorBoundaryState {
   hasError: boolean;

@@ -99,7 +99,7 @@ const missingEnvVars = requiredEnvVars.filter(
 
     // Check for security vulnerabilities
     try {
-      execSync('npm audit --audit-level=high', { stdio: 'pipe' });
+      execSync('npm audit --audit-level='high', { stdio: 'pipe' });
       // logger.warn('   ✅ Security audit passed');
     } catch (_error) {
       this.optimizationResults.warnings.push(

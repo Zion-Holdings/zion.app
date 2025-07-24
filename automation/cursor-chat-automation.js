@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Cursor Chat Automation System
@@ -111,42 +110,42 @@ class CursorChatAutomation extends EventEmitter {
       todoPatterns: [
         {
           pattern: /(?:TODO|FIXME|BUG|HACK|NOTE|XXX|FIX|REVIEW|OPTIMIZE|REFACTOR)/gi,
-          priority: medium',
+          priority: 'medium',
           type: code_todo
         },
         {
           pattern: /(?:need to|should|must|have to|got to|gotta)\s+(?:implement|add|create|fix|update|improve|optimize|refactor)/gi,
-          priority: high',
+          priority: 'high',
           type: action_item
         },
         {
           pattern: /(?:error|bug|issue|problem|broken|not working|failing)/gi,
-          priority: critical',
+          priority: 'critical',
           type: bug_fix
         },
         {
           pattern: /(?:feature|enhancement|improvement|upgrade|update)/gi,
-          priority: medium',
+          priority: 'medium',
           type: feature_request
         },
         {
           pattern: /(?:test|testing|unit test|integration test|e2e test)/gi,
-          priority: low',
+          priority: 'low',
           type: testing
         },
         {
           pattern: /(?:documentation|docs|readme|comment|explain)/gi,
-          priority: low',
+          priority: 'low',
           type: documentation
         },
         {
           pattern: /(?:performance|speed|optimization|efficiency)/gi,
-          priority: medium',
+          priority: 'medium',
           type: performance
         },
         {
           pattern: /(?:security|vulnerability|secure|protect)/gi,
-          priority: high',
+          priority: 'high',
           type: security
         }
       ],
@@ -373,11 +372,11 @@ class CursorChatAutomation extends EventEmitter {
           type: item.type,
           context: item.context,
           timestamp: new Date().toISOString(),
-          status: pending',
+          status: 'pending',
           source: queue_processing
         };
         
-        await this.createTodo(todo, { id: queue', timestamp: new Date().toISOString() });
+        await this.createTodo(todo, { id: 'queue', timestamp: new Date().toISOString() });
       }
       
       this.emit('itemProcessed', item);
@@ -396,9 +395,9 @@ class CursorChatAutomation extends EventEmitter {
 
   determinePriority(item) {
     // Determine priority based on type and content
-    if (item.type === bug_fix') return critical';
-    if (item.type === security') return high';
-    if (item.type === performance') return medium';
+    if (item.type === 'bug_fix') return critical';
+    if (item.type === 'security') return high';
+    if (item.type === 'performance') return medium';
     return low';
   }
 
@@ -479,7 +478,7 @@ class CursorChatAutomation extends EventEmitter {
   }
 
   async saveChatHistory() {
-    const historyFile = path.join(this.config.dataDir, chat-history.json');
+    const historyFile = path.join(this.config.dataDir, 'chat-history.json');
     await fs.writeFile(historyFile, JSON.stringify(this.chatHistory, null, 2));
   }
 

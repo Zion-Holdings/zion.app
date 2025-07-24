@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 /**
  * Zion App - Infinite Improvement Loop System
@@ -69,20 +68,20 @@ const AI_CONFIG = {
 
   // Local AI Models
   LOCAL_AI: {
-    ENABLED: process.env.LOCAL_AI_ENABLED === true',
+    ENABLED: process.env.LOCAL_AI_ENABLED === 'true',
     ENDPOINT: process.env.LOCAL_AI_ENDPOINT || http://localhost:11434',
     MODEL: process.env.LOCAL_AI_MODEL || codellama:7b
   },
 
   // GitHub Copilot
   COPILOT: {
-    ENABLED: process.env.COPILOT_ENABLED === true',
+    ENABLED: process.env.COPILOT_ENABLED === 'true',
     API_KEY: process.env.COPILOT_API_KEY
   },
 
   // Custom AI Agents
   CUSTOM_AGENTS: {
-    ENABLED: process.env.CUSTOM_AGENTS_ENABLED === true',
+    ENABLED: process.env.CUSTOM_AGENTS_ENABLED === 'true',
     ENDPOINTS: {
       codeReview: process.env.CODE_REVIEW_AGENT_URL,
       security: process.env.SECURITY_AGENT_URL,
@@ -168,7 +167,7 @@ class InfiniteImprovementLoop extends EventEmitter {
     // Claude
     if (AI_CONFIG.CLAUDE.API_KEY) {
       this.aiProviders.set('claude', {
-        name: Claude',
+        name: 'Claude',
         analyze: (data) => this.analyzeWithClaude(data),
         suggest: (problem) => this.suggestWithClaude(problem),
         implement: (suggestion) => this.implementWithClaude(suggestion)
@@ -212,7 +211,7 @@ class InfiniteImprovementLoop extends EventEmitter {
   setupExpress() {
     this.app = express();
     this.app.use(express.json());
-    this.app.use(express.static(path.join(__dirname, dashboard')));
+    this.app.use(express.static(path.join(__dirname, 'dashboard')));
 
     // API Routes
     this.app.get('/api/status', (req, res) => {
@@ -443,8 +442,8 @@ class InfiniteImprovementLoop extends EventEmitter {
     // Performance improvements
     if (analysis.performance.score < AI_CONFIG.THRESHOLDS.PERFORMANCE_SCORE) {
       opportunities.push({
-        type: performance',
-        priority: high',
+        type: 'performance',
+        priority: 'high',
         data: {
           currentScore: analysis.performance.score,
           targetScore: AI_CONFIG.THRESHOLDS.PERFORMANCE_SCORE
@@ -455,8 +454,8 @@ class InfiniteImprovementLoop extends EventEmitter {
     // Security improvements
     if (analysis.security.score < AI_CONFIG.THRESHOLDS.SECURITY_SCORE) {
       opportunities.push({
-        type: security',
-        priority: critical',
+        type: 'security',
+        priority: 'critical',
         data: {
           currentScore: analysis.security.score,
           targetScore: AI_CONFIG.THRESHOLDS.SECURITY_SCORE
@@ -467,8 +466,8 @@ class InfiniteImprovementLoop extends EventEmitter {
     // Code quality improvements
     if (analysis.codeQuality.score < AI_CONFIG.THRESHOLDS.CODE_QUALITY_SCORE) {
       opportunities.push({
-        type: codeQuality',
-        priority: medium',
+        type: 'codeQuality',
+        priority: 'medium',
         data: {
           currentScore: analysis.codeQuality.score,
           targetScore: AI_CONFIG.THRESHOLDS.CODE_QUALITY_SCORE
@@ -481,8 +480,8 @@ class InfiniteImprovementLoop extends EventEmitter {
       analysis.accessibility.score < AI_CONFIG.THRESHOLDS.ACCESSIBILITY_SCORE
     ) {
       opportunities.push({
-        type: accessibility',
-        priority: medium',
+        type: 'accessibility',
+        priority: 'medium',
         data: {
           currentScore: analysis.accessibility.score,
           targetScore: AI_CONFIG.THRESHOLDS.ACCESSIBILITY_SCORE
@@ -493,8 +492,8 @@ class InfiniteImprovementLoop extends EventEmitter {
     // SEO improvements
     if (analysis.seo.score < AI_CONFIG.THRESHOLDS.SEO_SCORE) {
       opportunities.push({
-        type: seo',
-        priority: low',
+        type: 'seo',
+        priority: 'low',
         data: {
           currentScore: analysis.seo.score,
           targetScore: AI_CONFIG.THRESHOLDS.SEO_SCORE
@@ -505,8 +504,8 @@ class InfiniteImprovementLoop extends EventEmitter {
     // Test coverage improvements
     if (analysis.testCoverage < AI_CONFIG.THRESHOLDS.TEST_COVERAGE) {
       opportunities.push({
-        type: testCoverage',
-        priority: medium',
+        type: 'testCoverage',
+        priority: 'medium',
         data: {
           currentCoverage: analysis.testCoverage,
           targetCoverage: AI_CONFIG.THRESHOLDS.TEST_COVERAGE
@@ -520,7 +519,7 @@ class InfiniteImprovementLoop extends EventEmitter {
   /**
    * Queue an improvement
    */
-  async queueImprovement(type, priority = normal', data = {}) {
+  async queueImprovement(type, priority = 'normal', data = {}) {
     const improvement = {
       id: Date.now() + Math.random(),
       type,
@@ -614,7 +613,7 @@ class InfiniteImprovementLoop extends EventEmitter {
     logger.info('📊 Evaluating improvements...');
 
     const recentImprovements = this.improvementHistory
-      .filter((h) => h.status === completed')
+      .filter((h) => h.status === 'completed')
       .slice(-10); // Last 10 improvements
 
     for (const improvement of recentImprovements) {
@@ -642,7 +641,7 @@ class InfiniteImprovementLoop extends EventEmitter {
     );
 
     const failedImprovements = this.improvementHistory.filter(
-      (h) => h.status === failed',
+      (h) => h.status === 'failed',
     );
 
     // Analyze patterns
@@ -681,42 +680,42 @@ class InfiniteImprovementLoop extends EventEmitter {
     // Implementation for Cursor AI analysis
     logger.info('🤖 Analyzing with Cursor AI...');
     // Add actual Cursor AI API calls here
-    return { provider: cursor', suggestions: [] };
+    return { provider: 'cursor', suggestions: [] };
   }
 
   async analyzeWithOpenAI(data) {
     // Implementation for OpenAI analysis
     logger.info('🤖 Analyzing with OpenAI...');
     // Add actual OpenAI API calls here
-    return { provider: openai', suggestions: [] };
+    return { provider: 'openai', suggestions: [] };
   }
 
   async analyzeWithClaude(data) {
     // Implementation for Claude analysis
     logger.info('🤖 Analyzing with Claude...');
     // Add actual Claude API calls here
-    return { provider: claude', suggestions: [] };
+    return { provider: 'claude', suggestions: [] };
   }
 
   async analyzeWithLocalAI(data) {
     // Implementation for Local AI analysis
     logger.info('🤖 Analyzing with Local AI...');
     // Add actual Local AI API calls here
-    return { provider: local', suggestions: [] };
+    return { provider: 'local', suggestions: [] };
   }
 
   async analyzeWithCopilot(data) {
     // Implementation for GitHub Copilot analysis
     logger.info('🤖 Analyzing with GitHub Copilot...');
     // Add actual Copilot API calls here
-    return { provider: copilot', suggestions: [] };
+    return { provider: 'copilot', suggestions: [] };
   }
 
   async analyzeWithCustomAgents(data) {
     // Implementation for Custom AI Agents analysis
     logger.info('🤖 Analyzing with Custom AI Agents...');
     // Add actual Custom AI Agents API calls here
-    return { provider: custom', suggestions: [] };
+    return { provider: 'custom', suggestions: [] };
   }
 
   // Analysis Methods

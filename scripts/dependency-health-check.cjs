@@ -198,9 +198,9 @@ function checkPackageScripts() {
 const scripts = packageJson.scripts || {}
 const requiredScripts = [
       'build',
-      'deps:check',
-      'deps:update',
-      'deps:clean',
+      'deps: 'check',
+      'deps: 'update',
+      'deps: 'clean',
     ];
 
     requiredScripts.forEach((script) => {

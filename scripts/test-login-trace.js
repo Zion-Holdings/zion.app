@@ -17,7 +17,7 @@ const BASE_URL = _http://localhost:3000';
 // 🔐 SECURITY: Generate test cases from environment variables
 const getTestCases = () => {
   // Only run in development mode
-  if (process.env.NODE_ENV !== development') {    process.stdout.write('❌ This script only runs in development mode for security\n');    return [];
+  if (process.env.NODE_ENV !== 'development') {    process.stdout.write('❌ This script only runs in development mode for security\n');    return [];
   }
 
   const testCases = [];
@@ -41,7 +41,7 @@ const devUser3Password = process.env.DEV_USER_3_PASSWORD;
     // Test wrong password for same user
     testCases.push({
       name: Invalid Password - Dev User 1',      email: devUser1Email,
-      password: wrongpassword',      expectedStatus: 401,
+      password: 'wrongpassword',      expectedStatus: 401,
       description: Should fail with incorrect password'    });
   }
 
@@ -66,10 +66,10 @@ const devUser3Password = process.env.DEV_USER_3_PASSWORD;
     process.stdout.write('⚠️  No development users configured in environment variables\n');    process.stdout.write('💡 Using fallback test cases with generic credentials\n');    
     testCases.push(
       {
-        name: Fallback User Test',        email: dev@example.com',        password: dev123',        expectedStatus: 200,
+        name: Fallback User Test',        email: dev@example.com',        password: 'dev123',        expectedStatus: 200,
         description: Should succeed with fallback development user'      },
       {
-        name: Fallback Invalid Test',        email: dev@example.com',        password: wrongpassword',        expectedStatus: 401,
+        name: Fallback Invalid Test',        email: dev@example.com',        password: 'wrongpassword',        expectedStatus: 401,
         description: Should fail with incorrect password'      }
     );
   }
@@ -77,7 +77,7 @@ const devUser3Password = process.env.DEV_USER_3_PASSWORD;
   // Always add these standard test cases
   testCases.push(
     {
-      name: User Not Found',      email: nonexistent@example.com',      password: anypassword',      expectedStatus: 401,
+      name: User Not Found',      email: nonexistent@example.com',      password: 'anypassword',      expectedStatus: 401,
       description: Should fail with user not found message'    },
     {
       name: Missing Credentials',      email: ,      password: ,      expectedStatus: 400,
@@ -90,7 +90,7 @@ const devUser3Password = process.env.DEV_USER_3_PASSWORD;
 async function makeLoginRequest(email, password) {
   try {
     const response = await fetch(`${BASE_URL}/api/auth/login`, {
-      method: POST',      headers: {
+      method: 'POST',      headers: {
         Content-Type': application/json',      },
       body: JSON.stringify({ email, password })
     })
@@ -141,7 +141,7 @@ const result = await makeLoginRequest(testCase.email, testCase.password);
 async function runAllTests() {
   process.stdout.write('🔐 SECURITY: Login Tracing Test Suite\n');  process.stdout.write('=====================================\n\n');
   // Security check
-  if (process.env.NODE_ENV !== development') {    process.stdout.write('❌ This script only runs in development mode for security\n');    return;
+  if (process.env.NODE_ENV !== 'development') {    process.stdout.write('❌ This script only runs in development mode for security\n');    return;
   }
 
   process.stdout.write('🔒 Environment Security Check:\n');  process.stdout.write(`📋 NODE_ENV: ${process.env.NODE_ENV}\n`);

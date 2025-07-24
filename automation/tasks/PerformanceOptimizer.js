@@ -2,20 +2,20 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
@@ -29,11 +29,11 @@ const path = require('path');
 class PerformanceOptimizer extends AutomationTask {
   constructor(config = {}) {
     super({
-      name: PerformanceOptimizer',
+      name: 'PerformanceOptimizer',
       schedule: 0 */4 * * *', // Every 4 hours
       enabled: true,
       autoOptimize: true,
-      optimizationLevel: aggressive', // conservative, moderate, aggressive
+      optimizationLevel: 'aggressive', // conservative, moderate, aggressive
       tools: ['bundle', lighthouse', webpack', images', dependencies'],
       ...config
     });
@@ -146,7 +146,7 @@ class PerformanceOptimizer extends AutomationTask {
       const optimizations = [];
       
       // Tree shaking optimization
-      if (this.config.optimizationLevel !== conservative') {
+      if (this.config.optimizationLevel !== 'conservative') {
         optimizations.push(await this.optimizeTreeShaking());
       }
       
@@ -177,7 +177,7 @@ class PerformanceOptimizer extends AutomationTask {
   async measureBundleSize() {
     try {
       // Build the project
-      execSync('npm run build', { stdio: pipe' });
+      execSync('npm run build', { stdio: 'pipe' });
       
       // Analyze bundle size
       const buildDir = path.join(process.cwd(), .next');
@@ -243,12 +243,12 @@ const timeoutId = setTimeout(resolve,  1000);
 );
       
       return {
-        type: tree_shaking',
+        type: 'tree_shaking',
         description: Removed unused code through tree shaking',
         impact: medium
       };
     } catch (error) {
-      return { type: tree_shaking', error: error.message };
+      return { type: 'tree_shaking', error: error.message };
     }
   }
 
@@ -263,12 +263,12 @@ const timeoutId = setTimeout(resolve,  1000);
 );
       
       return {
-        type: code_splitting',
+        type: 'code_splitting',
         description: Optimized code splitting for better loading performance',
         impact: high
       };
     } catch (error) {
-      return { type: code_splitting', error: error.message };
+      return { type: 'code_splitting', error: error.message };
     }
   }
 
@@ -283,12 +283,12 @@ const timeoutId = setTimeout(resolve,  1000);
 );
       
       return {
-        type: compression',
+        type: 'compression',
         description: Optimized compression settings for better file sizes',
         impact: medium
       };
     } catch (error) {
-      return { type: compression', error: error.message };
+      return { type: 'compression', error: error.message };
     }
   }
 
@@ -298,15 +298,15 @@ const timeoutId = setTimeout(resolve,  1000);
     try {
       // Check if Lighthouse is available
       try {
-        execSync('lighthouse --version', { stdio: pipe' });
+        execSync('lighthouse --version', { stdio: 'pipe' });
       } catch {
         logger.warn('⚠️ Lighthouse not available, skipping audit');
         return { error: Lighthouse not installed' };
       }
       
       // Run Lighthouse audit
-      const output = execSync('lighthouse http://localhost:3000 --output=json --only-categories=performance', {
-        encoding: utf8',
+      const output = execSync('lighthouse http://localhost:3000 --output=json --only-categories='performance', {
+        encoding: 'utf8',
         stdio: pipe
       });
       
@@ -371,7 +371,7 @@ const timeoutId = setTimeout(resolve,  1000);
 
   async optimizeWebpackBundles() {
     return {
-      type: webpack_bundles',
+      type: 'webpack_bundles',
       description: Optimized webpack bundle configuration',
       impact: high
     };
@@ -379,7 +379,7 @@ const timeoutId = setTimeout(resolve,  1000);
 
   async optimizeWebpackCaching() {
     return {
-      type: webpack_caching',
+      type: 'webpack_caching',
       description: Optimized webpack caching strategy',
       impact: medium
     };
@@ -476,7 +476,7 @@ const timeoutId = setTimeout(resolve,  1000);
       // Remove unused dependencies
       if (analysis.unused.length > 0) {
         optimizations.push({
-          type: remove_unused',
+          type: 'remove_unused',
           dependencies: analysis.unused,
           impact: medium
         });
@@ -485,7 +485,7 @@ const timeoutId = setTimeout(resolve,  1000);
       // Update outdated dependencies
       if (analysis.outdated.length > 0) {
         optimizations.push({
-          type: update_outdated',
+          type: 'update_outdated',
           dependencies: analysis.outdated,
           impact: low
         });
@@ -494,7 +494,7 @@ const timeoutId = setTimeout(resolve,  1000);
       // Replace heavy dependencies
       if (analysis.heavy.length > 0) {
         optimizations.push({
-          type: replace_heavy',
+          type: 'replace_heavy',
           dependencies: analysis.heavy,
           impact: high
         });
@@ -541,7 +541,7 @@ const timeoutId = setTimeout(resolve,  1000);
   async measureBuildTime() {
     try {
       const startTime = Date.now();
-      execSync('npm run build', { stdio: pipe' });
+      execSync('npm run build', { stdio: 'pipe' });
       const endTime = Date.now();
       
       return {
@@ -698,11 +698,11 @@ const timeoutId = setTimeout(resolve,  1000);
   async fixBuildIssues() {
     try {
       // Clear build cache
-      execSync('rm -rf .next', { stdio: pipe' });
+      execSync('rm -rf .next', { stdio: 'pipe' });
       logger.info('🧹 Cleared build cache');
       
       // Reinstall dependencies
-      execSync('npm install', { stdio: pipe' });
+      execSync('npm install', { stdio: 'pipe' });
       logger.info('📦 Reinstalled dependencies');
       
     } catch (error) {

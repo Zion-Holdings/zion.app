@@ -160,7 +160,7 @@ const specificFixes = [
           },
           {
             pattern: /res: NextApiResponse/,
-            replacement: 'res: NextApiResponse',
+            replacement: 'res: 'NextApiResponse',
           },
         ],
       },
@@ -177,7 +177,7 @@ const specificFixes = [
           },
           {
             pattern: /res: NextApiResponse/,
-            replacement: 'res: NextApiResponse',
+            replacement: 'res: 'NextApiResponse',
           },
         ],
       },
@@ -194,7 +194,7 @@ const specificFixes = [
           },
           {
             pattern: /res: NextApiResponse/,
-            replacement: 'res: NextApiResponse',
+            replacement: 'res: 'NextApiResponse',
           },
         ],
       },

@@ -75,7 +75,7 @@ class MasterAutomationScheduler {
       },
       {
         name: 'Linting Fix',
-        command: 'npm run lint:fix',
+        command: 'npm run lint: 'fix',
         description: 'ESLint fixes and code formatting',
       },
       {

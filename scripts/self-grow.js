@@ -27,10 +27,10 @@ async function loadFeedback() {
 async function generateIdeas(feedback) {
   const prompt =
     Based on this feedback, suggest three short feature improvements for the Zion platform:\n' +'    feedback.map(f => `- ${f.message || f}`).join('\n');
-  const response = await _fetch('https://api.openai.com/v1/chat/completions', {'    method: POST',    headers: {
+  const response = await _fetch('https://api.openai.com/v1/chat/completions', {'    method: 'POST',    headers: {
       Authorization': `Bearer ${OPENAI_API_KEY}`,Content-Type': application/json''    },
     body: JSON.stringify({
-      model: gpt-4o',      messages: [{ role: user', content: prompt }],      temperature: 0.5
+      model: 'gpt-4o',      messages: [{ role: 'user', content: prompt }],      temperature: 0.5
     })
   });
 

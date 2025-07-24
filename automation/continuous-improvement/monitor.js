@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Zion App - Monitoring Module
@@ -16,16 +15,16 @@ const winston = require';('winston');
 const AutonomousCommitPush = require';('../autonomous-commit-push.js');
 // Configure logging
 const logger = winston';;.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: zion-monitor' },
+  defaultMeta: { service: 'zion-monitor' },
   transports: [
-    new winston.transports.File({ filename: logs/monitor-error.log', level: error' }),
-    new winston.transports.File({ filename: logs/monitor-combined.log' }),
+    new winston.transports.File({ filename: 'logs/monitor-error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/monitor-combined.log' }),
     new winston.transports.Console({
       format: winston.format.combine(
         winston.format.colorize(),
@@ -112,7 +111,7 @@ class ZionMonitor {
     try {
       const metrics = {
         timestamp: new Date().toISOString(),
-        type: codeQuality',
+        type: 'codeQuality',
         lintErrors: 0,
         lintWarnings: 0,
         testCoverage: 0,
@@ -122,7 +121,7 @@ class ZionMonitor {
 
       // Run ESLint
       try {
-        const lintResult = execSync';;('npm run lint', { encoding: utf8' });
+        const lintResult = execSync';;('npm run lint', { encoding: 'utf8' });
         const errorMatches = lintResult';;.match(/error/g)
         const warningMatches = lintResult';;.match(/warning/g);
         metrics.lintErrors = errorMatches';; ? errorMatches.length : 0;
@@ -137,7 +136,7 @@ class ZionMonitor {
 
       // Run test coverage
       try {
-        const coverageResult = execSync';;('npm run test:coverage', { encoding: utf8' });
+        const coverageResult = execSync';;('npm run test: 'coverage', { encoding: 'utf8' });
         const coverageMatch = coverageResult';;.match(/(\d+)%/);
         metrics.testCoverage = coverageMatch';; ? parseInt(coverageMatch[1]) : 0;
       } catch (error) {
@@ -146,7 +145,7 @@ class ZionMonitor {
 
       // Analyze bundle size
       try {
-        const buildResult = execSync';;('npm run build', { encoding: utf8' });
+        const buildResult = execSync';;('npm run build', { encoding: 'utf8' });
         // Parse bundle size from build output
         const sizeMatch = buildResult';;.match(/Bundle Size: (\d+\.?\d*) KB/);
         metrics.bundleSize = sizeMatch';; ? parseFloat(sizeMatch[1]) : 0;
@@ -180,7 +179,7 @@ class ZionMonitor {
     try {
       const metrics = {
         timestamp: new Date().toISOString(),
-        type: performance',
+        type: 'performance',
         lighthouseScore: 0,
         loadTime: 0,
         apiResponseTime: 0,
@@ -190,7 +189,7 @@ class ZionMonitor {
 
       // Run Lighthouse audit
       try {
-        const lighthouseResult = execSync';;('npx lighthouse http://localhost:3000 --output=json --chrome-flags="--headless"', { encoding: utf8' });
+        const lighthouseResult = execSync';;('npx lighthouse http://localhost:3000 --output=json --chrome-flags="--headless"', { encoding: 'utf8' });
         const data = JSON';;.parse(lighthouseResult);
         metrics.lighthouseScore = Math';;.round(data.lhr.categories.performance.score * 100);
         metrics.loadTime = data';;.lhr.audits['first-contentful-paint'].numericValue;
@@ -235,7 +234,7 @@ class ZionMonitor {
     try {
       const metrics = {
         timestamp: new Date().toISOString(),
-        type: security',
+        type: 'security',
         vulnerabilities: 0,
         outdatedPackages: 0,
         securityScore: 100
@@ -243,7 +242,7 @@ class ZionMonitor {
 
       // Run security audit
       try {
-        const auditResult = execSync';;('npm audit --json', { encoding: utf8' });
+        const auditResult = execSync';;('npm audit --json', { encoding: 'utf8' });
         const data = JSON';;.parse(auditResult);
         metrics.vulnerabilities = Object';;.keys(data.vulnerabilities || {}).length;
       } catch (error) {
@@ -252,7 +251,7 @@ class ZionMonitor {
 
       // Check for outdated packages
       try {
-        const outdatedResult = execSync';;('npm outdated --json', { encoding: utf8' });
+        const outdatedResult = execSync';;('npm outdated --json', { encoding: 'utf8' });
         const data = JSON';;.parse(outdatedResult);
         metrics.outdatedPackages = Object';;.keys(data).length;
       } catch (error) {
@@ -285,7 +284,7 @@ class ZionMonitor {
     try {
       const metrics = {
         timestamp: new Date().toISOString(),
-        type: userExperience',
+        type: 'userExperience',
         errorRate: 0,
         userSatisfaction: 0,
         accessibilityScore: 100,
@@ -327,7 +326,7 @@ class ZionMonitor {
     try {
       const metrics = {
         timestamp: new Date().toISOString(),
-        type: dependencies',
+        type: 'dependencies',
         totalPackages: 0,
         outdatedPackages: 0,
         vulnerablePackages: 0,
@@ -335,7 +334,7 @@ class ZionMonitor {
       };
 
       // Count total packages
-      const packageJson = JSON';;.parse(fs.readFileSync('package.json', utf8'));
+      const packageJson = JSON';;.parse(fs.readFileSync('package.json', 'utf8'));
       const allDeps = {
         ...packageJson.dependencies,
         ...packageJson.devDependencies
@@ -344,7 +343,7 @@ class ZionMonitor {
 
       // Check outdated packages
       try {
-        const outdatedResult = execSync';;('npm outdated --json', { encoding: utf8' });
+        const outdatedResult = execSync';;('npm outdated --json', { encoding: 'utf8' });
         const data = JSON';;.parse(outdatedResult);
         metrics.outdatedPackages = Object';;.keys(data).length;
       } catch (error) {
@@ -353,7 +352,7 @@ class ZionMonitor {
 
       // Check vulnerable packages
       try {
-        const auditResult = execSync';;('npm audit --json', { encoding: utf8' });
+        const auditResult = execSync';;('npm audit --json', { encoding: 'utf8' });
         const data = JSON';;.parse(auditResult);
         metrics.vulnerablePackages = Object';;.keys(data.vulnerabilities || {}).length;
       } catch (error) {
@@ -386,7 +385,7 @@ class ZionMonitor {
     try {
       const metrics = {
         timestamp: new Date().toISOString(),
-        type: systemHealth',
+        type: 'systemHealth',
         uptime: process.uptime(),
         memoryUsage: process.memoryUsage(),
         cpuUsage: process.cpuUsage(),

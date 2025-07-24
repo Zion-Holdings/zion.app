@@ -245,7 +245,7 @@ const lines = content.split('\n');
     this.log('Applying ESLint auto-fixes...');
 
     try {
-      execSync('npm run lint:fix', { stdio: 'inherit' });
+      execSync('npm run lint: 'fix', { stdio: 'inherit' });
       this.log('Applied ESLint auto-fixes');
       this.fixesApplied.push('ESLint fix');
       return true;

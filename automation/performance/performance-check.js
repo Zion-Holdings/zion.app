@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 const fs = require('fs');
 const path = require('path');
@@ -30,7 +29,7 @@ const { execSync } = require('child_process');
 class PerformanceChecker {
     constructor() {
         this.projectRoot = process.cwd();
-        this.reportsDir = path.join(this.projectRoot, automation', reports');
+        this.reportsDir = path.join(this.projectRoot, automation', 'reports');
         this.ensureDirectory(this.reportsDir);
     }
 
@@ -72,12 +71,12 @@ class PerformanceChecker {
 
         try {
             // Build the project
-            execSync('npm run build', { stdio: pipe' });
+            execSync('npm run build', { stdio: 'pipe' });
 
             // Get bundle stats
-            const statsFile = path.join(this.projectRoot, .next', build-manifest.json');
+            const statsFile = path.join(this.projectRoot, .next', 'build-manifest.json');
             if (fs.existsSync(statsFile)) {
-                const stats = JSON.parse(fs.readFileSync(statsFile, utf8'));
+                const stats = JSON.parse(fs.readFileSync(statsFile, 'utf8'));
                 
                 let totalSize = 0;
                 const fileSizes = {};
@@ -113,7 +112,7 @@ class PerformanceChecker {
 
         try {
             const startTime = Date.now();
-            execSync('npm run build', { stdio: pipe' });
+            execSync('npm run build', { stdio: 'pipe' });
             const endTime = Date.now();
             const buildTime = endTime - startTime;
 
@@ -132,7 +131,7 @@ class PerformanceChecker {
 
         try {
             const startTime = Date.now();
-            execSync('npm test', { stdio: pipe' });
+            execSync('npm test', { stdio: 'pipe' });
             const endTime = Date.now();
             const testTime = endTime - startTime;
 
@@ -170,8 +169,8 @@ class PerformanceChecker {
         // Bundle size recommendations
         if (results.bundleSize && results.bundleSize.totalSize > 5 * 1024 * 1024) {
             recommendations.push({
-                type: bundle-size',
-                priority: high',
+                type: 'bundle-size',
+                priority: 'high',
                 message: Bundle size is large (>5MB). Consider code splitting and lazy loading.',
                 action: Implement dynamic imports and code splitting
             });
@@ -180,8 +179,8 @@ class PerformanceChecker {
         // Build time recommendations
         if (results.buildTime && results.buildTime.buildTime > 60000) {
             recommendations.push({
-                type: build-time',
-                priority: medium',
+                type: 'build-time',
+                priority: 'medium',
                 message: Build time is slow (>60s). Consider optimizing build configuration.',
                 action: Review webpack configuration and dependencies
             });
@@ -190,8 +189,8 @@ class PerformanceChecker {
         // Test performance recommendations
         if (results.testPerformance && results.testPerformance.testTime > 30000) {
             recommendations.push({
-                type: test-performance',
-                priority: medium',
+                type: 'test-performance',
+                priority: 'medium',
                 message: Test execution is slow (>30s). Consider parallel testing.',
                 action: Implement parallel test execution
             });
@@ -200,8 +199,8 @@ class PerformanceChecker {
         // Memory usage recommendations
         if (results.memoryUsage && results.memoryUsage.rss > 100 * 1024 * 1024) {
             recommendations.push({
-                type: memory-usage',
-                priority: medium',
+                type: 'memory-usage',
+                priority: 'medium',
                 message: Memory usage is high (>100MB). Consider memory optimization.',
                 action: Review memory leaks and optimize data structures
             });

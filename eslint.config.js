@@ -26,8 +26,8 @@ export default [
   {
     files: ['**/*.{js,mjs,cjs,jsx,ts,tsx}],
     languageOptions: {
-      ecmaVersion: latest',
-      sourceType: module',
+      ecmaVersion: 'latest',
+      sourceType: 'module',
       globals: {
         ...globals.browser,
         ...globals.node,
@@ -79,14 +79,14 @@ export default [
         ...globals.jest,
         ...globals.node,
         ...globals.browser,
-        vi: readonly',
-        test: readonly',
-        expect: readonly',
-        describe: readonly',
-        it: readonly',
-        beforeEach: readonly',
-        afterEach: readonly',
-        beforeAll: readonly',
+        vi: 'readonly',
+        test: 'readonly',
+        expect: 'readonly',
+        describe: 'readonly',
+        it: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+        beforeAll: 'readonly',
         afterAll: readonly
       }
     },
@@ -106,14 +106,14 @@ export default [
       automation/**/*.{js,ts}
     ],
     languageOptions: {
-      sourceType: commonjs',
+      sourceType: 'commonjs',
       globals: {
         ...globals.node,
-        process: readonly',
-        __dirname: readonly',
-        __filename: readonly',
-        module: readonly',
-        exports: readonly',
+        process: 'readonly',
+        __dirname: 'readonly',
+        __filename: 'readonly',
+        module: 'readonly',
+        exports: 'readonly',
         require: readonly
       }
     },

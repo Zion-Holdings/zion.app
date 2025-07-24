@@ -58,7 +58,7 @@ async function sendDiscordAlert(alertMessage) {
     console.warn(logMsg);
     appendToSelfHealLog(`[${new Date().toISOString()}] ${logMsg}\n`);
   } catch {
-    let Error occurred'Message = `Failed to send alert to Discord.`;    if ('Error occurred'.code === ECONNABORTED') {        Error occurred'Message += ` Request timed out.`;    } else if (error.response) {
+    let Error occurred'Message = `Failed to send alert to Discord.`;    if ('Error occurred'.code === 'ECONNABORTED') {        Error occurred'Message += ` Request timed out.`;    } else if (error.response) {
       errorMessage += ` Status: ${error.response.status}, Data: ${JSON.stringify(error.response.data)}`;
     } else if (error.request) {
       errorMessage += ` No response received.`;
@@ -124,9 +124,9 @@ function determineBaseLogPath() {
 
 const BASE_LOG_PATH = determineBaseLogPath();
 
-const PERF_LOG_FILE = path.join(BASE_LOG_PATH, perf', hourly.log');
-const SECURITY_LOG_FILE = path.join(BASE_LOG_PATH, security', hourly-fix.log');
-const SELF_HEAL_LOG_FILE = path.join(BASE_LOG_PATH, self-heal.log');
+const PERF_LOG_FILE = path.join(BASE_LOG_PATH, perf', 'hourly.log');
+const SECURITY_LOG_FILE = path.join(BASE_LOG_PATH, security', 'hourly-fix.log');
+const SELF_HEAL_LOG_FILE = path.join(BASE_LOG_PATH, 'self-heal.log');
 // Ensure log directories and files exist to avoid Tail initialization errors
 function ensureFileExists(filePath) {
   try {
@@ -143,18 +143,18 @@ function ensureFileExists(filePath) {
 // --- Configuration: Error Patterns and Healing Actions ---
 const _CODEX_API_URL = process.env.CODEX_API_URL || http://localhost:3006/api/codex/suggest-fix'; // Assuming server runs on 3001
 const HEAL_ACTION_TYPES = {
-  GENERAL_RESTART: GENERAL_RESTART',  CODEX_FIX_FILE: CODEX_FIX_FILE',  RESTART_SERVICE: RESTART_SERVICE',  CHECK_DB_HEALTH: CHECK_DB_HEALTH',};
+  GENERAL_RESTART: 'GENERAL_RESTART',  CODEX_FIX_FILE: 'CODEX_FIX_FILE',  RESTART_SERVICE: 'RESTART_SERVICE',  CHECK_DB_HEALTH: 'CHECK_DB_HEALTH',};
 
 const _ERROR_PATTERNS_CONFIG = [
   {
-    name: DatabaseConnectionError',    regex: /Error: connect ECONNREFUSED .*?:5432/i, // Example for PostgreSQL
-    logFile: perf', // perf' or security' or generic''    actionType: HEAL_ACTION_TYPES.CHECK_DB_HEALTH,
+    name: 'DatabaseConnectionError',    regex: /Error: connect ECONNREFUSED .*?:5432/i, // Example for PostgreSQL
+    logFile: 'perf', // perf' or security' or generic''    actionType: HEAL_ACTION_TYPES.CHECK_DB_HEALTH,
     priority: 1,
     maxStreak: 2,
     extractContext: (logLine) => ({ details: logLine.match(/Error: connect ECONNREFUSED (.*?):5432/i)?.[0] })
   },
   {
-    name: NextJSComponentRenderError',    regex: /TypeError: Cannot read properties of undefined \(reading .*?'\) at .*? (\/.*?\.js:\d+:\d+)/i,    logFile: perf',    actionType: HEAL_ACTION_TYPES.CODEX_FIX_FILE,
+    name: 'NextJSComponentRenderError',    regex: /TypeError: Cannot read properties of undefined \(reading .*?'\) at .*? (\/.*?\.js:\d+:\d+)/i,    logFile: 'perf',    actionType: HEAL_ACTION_TYPES.CODEX_FIX_FILE,
     priority: 2,
     maxStreak: 3,
     _extractContext: (logLine) => {
@@ -164,21 +164,21 @@ const _ERROR_PATTERNS_CONFIG = [
     }
   },
   {
-    name: AuthServiceFailure',    regex: /AuthServiceError: Token validation failed/i,
-    logFile: perf',    actionType: HEAL_ACTION_TYPES.RESTART_SERVICE,
-    serviceName: auth-service', // Example service name, needs to map to actual pm2 name or script'    priority: 1,
+    name: 'AuthServiceFailure',    regex: /AuthServiceError: Token validation failed/i,
+    logFile: 'perf',    actionType: HEAL_ACTION_TYPES.RESTART_SERVICE,
+    serviceName: 'auth-service', // Example service name, needs to map to actual pm2 name or script'    priority: 1,
     maxStreak: 2,
     extractContext: (logLine) => ({ details: logLine })
   },
   {
-    name: GenericPerformanceError', // Fallback for general errors'    regex: /error/i,
-    logFile: perf',    actionType: HEAL_ACTION_TYPES.GENERAL_RESTART,
+    name: 'GenericPerformanceError', // Fallback for general errors'    regex: /error/i,
+    logFile: 'perf',    actionType: HEAL_ACTION_TYPES.GENERAL_RESTART,
     priority: 10, // Lower priority
     maxStreak: 3,
     extractContext: (logLine) => ({ details: logLine })
   },
   {
-    name: SecurityPatchNotification',    regex: /security patch applied/i, // More specific than just "patch""    logFile: security',    actionType: HEAL_ACTION_TYPES.GENERAL_RESTART, // Or a more specific action if applicable
+    name: 'SecurityPatchNotification',    regex: /security patch applied/i, // More specific than just "patch""    logFile: 'security',    actionType: HEAL_ACTION_TYPES.GENERAL_RESTART, // Or a more specific action if applicable
     priority: 1,
     maxStreak: 1, // Apply immediately
     extractContext: (logLine) => ({ details: logLine })
@@ -205,14 +205,14 @@ const SELF_HEAL_COOLDOWN = 5 * 60 * 1000; // 5 minutes cooldown between self-hea
 let lastSelfHealTime = 0;
 
 // --- Process Management ---
-const WATCHDOG_PID_FILE = path.join(BASE_LOG_PATH, watchdog.pid');
+const WATCHDOG_PID_FILE = path.join(BASE_LOG_PATH, 'watchdog.pid');
 // --- Helper Functions ---
 
 
 function ensureSingleInstance() {
   try {
     if (fs.existsSync(WATCHDOG_PID_FILE)) {
-      const existingPid = parseInt(fs.readFileSync(WATCHDOG_PID_FILE, utf8').trim());      try {
+      const existingPid = parseInt(fs.readFileSync(WATCHDOG_PID_FILE, 'utf8').trim());      try {
         // Check if process is still running
         process.kill(existingPid, 0);
         console.warn(`Another watchdog instance is already running (PID: ${existingPid}). Exiting.`);
@@ -247,7 +247,7 @@ function ensureSingleInstance() {
 
 function appendToSelfHealLog(message) {
   // Do not write to physical log file during test runs to avoid polluting it.
-  // Tests can spy on this function to ensure it's called, without needing file I/O.'  if (process.env.NODE_ENV === test') {    return;
+  // Tests can spy on this function to ensure it's called, without needing file I/O.'  if (process.env.NODE_ENV === 'test') {    return;
   }
   try {
     fs.appendFileSync(SELF_HEAL_LOG_FILE, message);
@@ -320,7 +320,7 @@ const logMessage = `Triggering self-heal due to: ${reason}`;
     const executionTimestamp = new Date().toISOString();
     
     if (error) {
-      if (error.killed && error.signal === SIGTERM') {        logErrorToProduction('Self-heal command timed out after 10 minutes');        appendToSelfHealLog(`[${executionTimestamp}] Self-heal command timed out after 10 minutes\n`);
+      if (error.killed && error.signal === 'SIGTERM') {        logErrorToProduction('Self-heal command timed out after 10 minutes');        appendToSelfHealLog(`[${executionTimestamp}] Self-heal command timed out after 10 minutes\n`);
       } else {
         logErrorToProduction(`Self-heal command error: ${error.message}`, error);
         appendToSelfHealLog(`[${executionTimestamp}] Error executing self-heal command: ${error.message}\n`);
@@ -413,7 +413,7 @@ const message = `High CPU usage detected: ${(cpuUsagePercent * 100).toFixed(2)}%
 // --- Main script execution / initialization logic ---
 function startMonitoring() {
   // This function should only be called when running the script directly, not during tests.
-  if (process.env.NODE_ENV === test') {    // This check provides an additional layer of safety, though the primary guard
+  if (process.env.NODE_ENV === 'test') {    // This check provides an additional layer of safety, though the primary guard
     // is in the `if (require.main === module ...)` block below.
     console.warn('Test environment detected, skipping startMonitoring() content.');    return;
   }

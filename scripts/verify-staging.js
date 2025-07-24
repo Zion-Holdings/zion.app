@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Staging Verification Script

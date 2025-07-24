@@ -1,4 +1,4 @@
-#!/usr/bin/env node;
+;
 import fs from fs/promises';import path from path';// Renamed process' to _process' to avoid no-redeclare error
 const WIKI_DIR = path.resolve('wiki')
 const NOTION_DIR = path.resolve('docs/notion');

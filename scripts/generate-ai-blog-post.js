@@ -26,11 +26,11 @@ if (keywords.length === 0) {
 async function generateBlogPost(keywordList) {
   const userPrompt = `Write an SEO-focused blog post for Zion Tech Group that targets the keywords: ${keywordList.join(', )}. ` +'    `Use <h1> for the title and <h2> for section headings. Include at least two internal links to relevant service pages such as /services or /it-onsite-services. ` +
     `Provide a concise meta description. Return your response as JSON with the fields title, metaDescription, and body (HTML).`
-const response = await fetch('https://api.openai.com/v1/chat/completions', {'    method: POST',    headers: {
+const response = await fetch('https://api.openai.com/v1/chat/completions', {'    method: 'POST',    headers: {
       Authorization': `Bearer ${OPENAI_API_KEY}`,Content-Type': application/json''    },
     body: JSON.stringify({
-      model: gpt-4o',      messages: [
-        { role: system', content: You are an expert SEO content writer.' },        { role: user', content: userPrompt }      ],
+      model: 'gpt-4o',      messages: [
+        { role: 'system', content: You are an expert SEO content writer.' },        { role: 'user', content: userPrompt }      ],
       temperature: 0.7
     })
   });

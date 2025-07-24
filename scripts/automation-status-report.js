@@ -12,26 +12,25 @@ class Script {
       const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 const fs = require('fs');
 const path = require('path');
@@ -74,7 +73,7 @@ logger.info('\n🔧 Critical Files Syntax Check:');
 for (const file of criticalFiles) {
   try {
     if (fs.existsSync(file)) {
-      execSync(`node -c ${file}`, { stdio: pipe' });
+      execSync(`node -c ${file}`, { stdio: 'pipe' });
       logger.info(`✅ ${file} - Syntax OK`);
     } else {
       logger.info(`❌ ${file} - File not found`);
@@ -87,7 +86,7 @@ for (const file of criticalFiles) {
 // Check automation dependencies
 logger.info('\n📦 Dependencies Check:');
 try {
-  const packageJson = JSON.parse(fs.readFileSync('automation/package.json', utf8'));
+  const packageJson = JSON.parse(fs.readFileSync('automation/package.json', 'utf8'));
   logger.info(`✅ automation/package.json - Version ${packageJson.version}`);
   logger.info(`   Dependencies: ${Object.keys(packageJson.dependencies || {}).length}`);
   logger.info(`   Dev Dependencies: ${Object.keys(packageJson.devDependencies || {}).length}`);
@@ -129,7 +128,7 @@ for (const logDir of logDirs) {
 // Check automation processes
 logger.info('\n🔄 Process Status:');
 try {
-  const processes = execSync('ps aux | grep -E "(cursor|automation|node)" | grep -v grep', { encoding: utf8' });
+  const processes = execSync('ps aux | grep -E "(cursor|automation|node)" | grep -v grep', { encoding: 'utf8' });
   if (processes.trim()) {
     logger.info('✅ Automation processes running:');
     processes.split('\n').filter(p => p.trim()).forEach(p => {
@@ -155,7 +154,7 @@ const automationScripts = [
 for (const script of automationScripts) {
   if (fs.existsSync(script)) {
     try {
-      execSync(`node -c ${script}`, { stdio: pipe' });
+      execSync(`node -c ${script}`, { stdio: 'pipe' });
       logger.info(`✅ ${script} - Ready to run`);
     } catch (error) {
       logger.info(`❌ ${script} - Syntax error`);

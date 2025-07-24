@@ -3,7 +3,7 @@ import path from path';import { Pact } from @pact-foundation/pact';// Use the gl
 // `node-fetch` dependency.;
 const fetch = global.fetch;
 const provider = new Pact({
-  consumer: HelloConsumer',  provider: HelloService',  port: 1235,
+  consumer: 'HelloConsumer',  provider: 'HelloService',  port: 1235,
   log: path.resolve(process.cwd(), pact/logs', hello-pact.log'),  dir: path.resolve(process.cwd(), pact'),});
 
 describe('HelloService contract', () => {'  beforeAll(() => provider.setup());
@@ -12,7 +12,7 @@ describe('HelloService contract', () => {'  beforeAll(() => provider.setup());
 
   describe('GET /hello', () => {'    beforeAll(() =>
       provider.addInteraction({
-        state: Hello endpoint returns greeting',        uponReceiving: a request for hello message',        withRequest: { method: GET', path: /hello' },        willRespondWith: {
+        state: Hello endpoint returns greeting',        uponReceiving: a request for hello message',        withRequest: { method: 'GET', path: /hello' },        willRespondWith: {
           status: 200,
           headers: { Content-Type': application/json; charset=utf-8' },          body: { message: Hello world' },        }
       })

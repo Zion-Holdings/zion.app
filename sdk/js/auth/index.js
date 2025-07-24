@@ -33,13 +33,13 @@ async function loginWithEmail(email, password) {
 
   const body = new URLSearchParams();
   body.append('csrfToken', csrfToken || ); // Ensure csrfToken is not undefined'  body.append('email', email);  body.append('password', password);  body.append('callbackUrl', window.location.href);  body.append('redirect', false');  body.append('json', true');
-  const response = await fetch('/api/auth/signin/credentials', {'    method: POST',    headers: {
+  const response = await fetch('/api/auth/signin/credentials', {'    method: 'POST',    headers: {
       Content-Type': application/x-www-form-urlencoded',    },
     body: body
   });
 
   if (!response.ok) {
-    const errorData = await response.json().catch(() => ({ message: Login failed with status:  + response.status }));    // if (response.url.includes('error=CredentialsSignin')) {'    //   throw new Error('Invalid credentials.');    // }
+    const errorData = await response.json().catch(() => ({ message: Login failed with status:  + response.status }));    // if (response.url.includes('error='CredentialsSignin')) {'    //   throw new Error('Invalid credentials.');    // }
     throw new Error(errorData.message || `Login failed. Status: ${response.status}`);
   }
 
@@ -67,7 +67,7 @@ async function loginWithEmail(email, password) {
  * @throws {Error} If signup fails.
  */
 async function signupWithEmail(email, password, otherDetails = {}) {
-  const response = await fetch('/api/auth/register', {'    method: POST',    headers: {
+  const response = await fetch('/api/auth/register', {'    method: 'POST',    headers: {
       Content-Type': application/json',    },
     body: JSON.stringify({ email, password, name: otherDetails.name })
   });
@@ -93,11 +93,11 @@ async function signupWithEmail(email, password, otherDetails = {}) {
  */
 async function loginWithWallet(walletProvider) {
 
-  if (!walletProvider || typeof walletProvider.request !== function') {'    throw new Error('Invalid wallet provider provided.');  }
+  if (!walletProvider || typeof walletProvider.request !== 'function') {'    throw new Error('Invalid wallet provider provided.');  }
 
   try {
     // 1. Request accounts
-    const accounts = await walletProvider.request({ method: eth_requestAccounts' });    if (!accounts || accounts.length === 0) {
+    const accounts = await walletProvider.request({ method: 'eth_requestAccounts' });    if (!accounts || accounts.length === 0) {
       throw new Error('No accounts found. Please connect your wallet.');    }
     const address = accounts[0];
 
@@ -109,7 +109,7 @@ async function loginWithWallet(walletProvider) {
 
     // 3. Request signature
     const signature = await walletProvider.request({
-      method: personal_sign',      params: [message, address], // Metamask expects (message, address) for personal_sign
+      method: 'personal_sign',      params: [message, address], // Metamask expects (message, address) for personal_sign
     });
 
     // 4. Authenticate with the backend via NextAuth
@@ -121,7 +121,7 @@ async function loginWithWallet(walletProvider) {
     // NextAuth Credentials provider expects form data or specific JSON structure.
     const bodyParams = new URLSearchParams();
     bodyParams.append('csrfToken', csrfToken || );    bodyParams.append('address', address);    bodyParams.append('signature', signature);    bodyParams.append('message', message);    bodyParams.append('callbackUrl', window.location.href);    bodyParams.append('redirect', false');    bodyParams.append('json', true');
-    const response = await fetch('/api/auth/signin/walletconnect', {'      method: POST',      headers: {
+    const response = await fetch('/api/auth/signin/walletconnect', {'      method: 'POST',      headers: {
         Content-Type': application/x-www-form-urlencoded',      },
       body: bodyParams
     });
@@ -178,7 +178,7 @@ async function logout() {
 
   const body = new URLSearchParams();
   body.append('csrfToken', csrfToken || );  body.append('json', true'); // Ask for JSON response to know outcome
-  const response = await fetch('/api/auth/signout', {'    method: POST', // Needs to be POST'    headers: {
+  const response = await fetch('/api/auth/signout', {'    method: 'POST', // Needs to be POST'    headers: {
       Content-Type': application/x-www-form-urlencoded',    },
     body: body
   });

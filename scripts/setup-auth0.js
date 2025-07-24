@@ -118,7 +118,7 @@ async function main() {
     
     if (isConfigured) {
       logInfo('Auth0 appears to be already configured.');      const reconfigure = await question('Do you want to reconfigure anyway? (y/N): );      
-      if (reconfigure.toLowerCase() !== y') {'        logInfo('Skipping configuration. Testing existing setup...');        const testPassed = await testConfiguration();
+      if (reconfigure.toLowerCase() !== 'y') {'        logInfo('Skipping configuration. Testing existing setup...');        const testPassed = await testConfiguration();
         
         if (testPassed) {
           logSuccess('Existing configuration is working correctly!');          await displayNextSteps();

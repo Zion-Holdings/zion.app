@@ -625,7 +625,7 @@ const cacheDirs = ['.next', 'node_modules/.cache', '.cache', 'dist', 'out'];
     this.log('Auto-fixing linting issues...');
 
     try {
-      execSync('npm run lint:fix', { stdio: 'inherit' });
+      execSync('npm run lint: 'fix', { stdio: 'inherit' });
     } catch (error) {
       this.log('Lint auto-fix failed, trying alternative...');
       execSync('npx eslint --fix .', { stdio: 'inherit' });

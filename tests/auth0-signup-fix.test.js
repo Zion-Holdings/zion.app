@@ -86,7 +86,7 @@ AUTH0_CLIENT_SECRET=xKY9p2qr-s8HvFc_x1tBn2oP7aM8kLwX9pYrK3dFgHjQwErT
   describe('API Health Check Scenarios', () => {'    
     test('health check passes with valid Auth0 configuration', async () => {'      // Mock successful health check response
       const mockHealthResponse = {
-        status: ok',        service: {
+        status: 'ok',        service: {
           issuer: https://dev-zion.us.auth0.com',          authorization_endpoint: https://dev-zion.us.auth0.com/authorize',          token_endpoint: https://dev-zion.us.auth0.com/oauth/token''        }
       };
       

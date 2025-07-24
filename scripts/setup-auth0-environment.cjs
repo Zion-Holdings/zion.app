@@ -163,8 +163,8 @@ function printInstructions() {
 
   console.warn('3. 🔐 Update .env.local with your Auth0 credentials:');
   console.warn('   • AUTH0_ISSUER_BASE_URL=https://your-tenant.us.auth0.com');
-  console.warn('   • AUTH0_CLIENT_ID=your_actual_client_id');
-  console.warn('   • AUTH0_CLIENT_SECRET=your_actual_client_secret');
+  console.warn('   • AUTH0_CLIENT_ID='your_actual_client_id');
+  console.warn('   • AUTH0_CLIENT_SECRET='your_actual_client_secret');
   console.warn('   • AUTH0_SECRET is already generated for you!\n');
 
   console.warn('4. 🌐 For Production (Netlify):');

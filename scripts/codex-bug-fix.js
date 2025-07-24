@@ -55,7 +55,7 @@ const octokit = new Octokit({ auth: GITHUB_TOKEN });
 function runGitCommand(command) {
   try {
     console.warn(`Executing: ${command}`)
-const output = execSync(command, { stdio: pipe' }).toString();    if (output) console.warn(output); // Only log if there's output'    return output;
+const output = execSync(command, { stdio: 'pipe' }).toString();    if (output) console.warn(output); // Only log if there's output'    return output;
   } catch {
     const errDetails = {
       command,
@@ -109,12 +109,12 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
 
 async function sendPromptToOpenAI(promptMessage) {
   console.warn("Sending prompt to OpenAI API...");"  try {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {'      method: POST',      headers: {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {'      method: 'POST',      headers: {
         Authorization': `Bearer ${OPENAI_API_KEY}`,Content-Type': application/json''      },
       body: JSON.stringify({
         model: MODEL_TO_USE,
         messages: [
-          { role: system', content: You are Codex, an expert software engineer. Analyze the following issue and code, then provide a code patch in standard diff format to fix the bug. If you cannot provide a patch, explain the reason clearly.' },          { role: user', content: promptMessage }        ],
+          { role: 'system', content: You are Codex, an expert software engineer. Analyze the following issue and code, then provide a code patch in standard diff format to fix the bug. If you cannot provide a patch, explain the reason clearly.' },          { role: 'user', content: promptMessage }        ],
         temperature: 0.2
       })
     });
@@ -210,7 +210,7 @@ ${patch}
 
     console.warn("Adding changes to staging area...");"    runGitCommand('git add .');
     try {
-      execSync('git diff --staged --quiet', { stdio: ignore' }); // Use ignore if no output is needed on success'      console.warn("No changes were staged after applying the patch. This might mean the patch was empty or did not apply correctly.");"      const noChangeMessage = `Codex suggested a patch for issue #${ISSUE_NUMBER}, but it resulted in no actual changes to the files after \`git apply\`. This could be due to an empty patch, a patch that doesn't alter current file states, or an issue with how the patch was applied.'Patch provided:
+      execSync('git diff --staged --quiet', { stdio: 'ignore' }); // Use ignore if no output is needed on success'      console.warn("No changes were staged after applying the patch. This might mean the patch was empty or did not apply correctly.");"      const noChangeMessage = `Codex suggested a patch for issue #${ISSUE_NUMBER}, but it resulted in no actual changes to the files after \`git apply\`. This could be due to an empty patch, a patch that doesn't alter current file states, or an issue with how the patch was applied.'Patch provided:
 \`\`\`diff
 ${patch}
 \`\`\``;

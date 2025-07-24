@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 const io = require('socket.io-client');
 
@@ -44,19 +43,19 @@ const DEMO_CONFIG = {
 const CHAT_SESSIONS = [
   {
     name: General Chat Widget',
-    roomId: general-chat',
+    roomId: 'general-chat',
     color: 🔵',
     socketUrl: http://localhost:3006
   },
   {
     name: AI Assistant Chat',
-    roomId: ai-assistant',
+    roomId: 'ai-assistant',
     color: 🟣',
     socketUrl: http://localhost:3006
   },
   {
     name: Support Chatbot',
-    roomId: support-chat',
+    roomId: 'support-chat',
     color: 🟢',
     socketUrl: http://localhost:3006
   }
@@ -286,7 +285,7 @@ const session = {
         {
           roomId: session.roomId,
           message: message,
-          sender: demo-user',
+          sender: 'demo-user',
           type: text
         },
         (response) => {

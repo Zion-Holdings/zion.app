@@ -151,7 +151,7 @@ const _buildCommand = process.argv.includes('--analyze')
 // This is needed because Netlify sets NODE_ENV=production which skips devDependencies
 // logger.warn('🔄 Installing all dependencies (including devDependencies)...');
 try {
-  execSync('npm install --production=false', {
+  execSync('npm install --production='false', {
     stdio: 'inherit',
     cwd: process.cwd(),
     env: {

@@ -1,1 +1,1 @@
-const fs = require('fs');;  if (req.method !== POST') {'';    res.setHeader('Allow', POST');;    res.end('Method Not Allowed');;    res.json({ error: Missing required fields' });;  fs.appendFileSync('service_requests.log', JSON.stringify(entry) + \n');
+const fs = require('fs');;  if (req.method !== 'POST') {'';    res.setHeader('Allow', POST');;    res.end('Method Not Allowed');;    res.json({ error: Missing required fields' });;  fs.appendFileSync('service_requests.log', JSON.stringify(entry) + \n');

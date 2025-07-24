@@ -12,26 +12,25 @@ class Script {
       const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 const { exec } = require('child_process')
 const path = require('path')
 const fs = require('fs')
@@ -41,7 +40,7 @@ const SCRIPTS = [
   dependency-update.js',
   dependency-update.py
 ]
-const LOG_DIR = path.join(__dirname, logs');
+const LOG_DIR = path.join(__dirname, 'logs');
 if (!fs.existsSync(LOG_DIR)) fs.mkdirSync(LOG_DIR)
 function runScript(script) {
   const ext = path.extname(script)
@@ -53,7 +52,7 @@ const cmd =
         : null;
   if (!cmd) return
 const logFile = path.join(LOG_DIR, `${script.replace(/\..+$/, )}.log`)
-const out = fs.createWriteStream(logFile, { flags: a' })
+const out = fs.createWriteStream(logFile, { flags: 'a' })
 const proc = exec(cmd, { cwd: __dirname });
   proc.stdout.pipe(out);
   proc.stderr.pipe(out);

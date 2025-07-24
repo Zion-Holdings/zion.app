@@ -112,7 +112,7 @@ const results = await Promise.allSettled(analysis);
 
     try {
       // Run ESLint analysis
-      const lintOutput = execSync('npm run lint -- --format=json', {
+      const lintOutput = execSync('npm run lint -- --format='json', {
         stdio: 'pipe',
       }).toString()
 const lintResults = JSON.parse(lintOutput);

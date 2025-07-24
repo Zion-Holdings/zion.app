@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 const fs = require('fs');
 const path = require('path');
@@ -31,7 +30,7 @@ class HuskyAutomationSetup {
     constructor() {
         this.projectRoot = process.cwd();
         this.huskyDir = path.join(this.projectRoot, .husky');
-        this.automationDir = path.join(this.projectRoot, automation');
+        this.automationDir = path.join(this.projectRoot, 'automation');
     }
 
     log(message) {
@@ -41,7 +40,7 @@ class HuskyAutomationSetup {
     async runCommand(command, args = []) {
         return new Promise((resolve, reject) => {
             const child = spawn(command, args, {
-                stdio: inherit',
+                stdio: 'inherit',
                 shell: true,
                 cwd: this.projectRoot
             });
@@ -101,19 +100,19 @@ class HuskyAutomationSetup {
 
         const hooks = [
             {
-                name: pre-commit',
+                name: 'pre-commit',
                 content: this.getPreCommitHook()
             },
             {
-                name: pre-push',
+                name: 'pre-push',
                 content: this.getPrePushHook()
             },
             {
-                name: post-commit',
+                name: 'post-commit',
                 content: this.getPostCommitHook()
             },
             {
-                name: commit-msg',
+                name: 'commit-msg',
                 content: this.getCommitMsgHook()
             }
         ];

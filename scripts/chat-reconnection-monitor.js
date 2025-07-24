@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 /**
  * Advanced Chat Reconnection System Monitor
@@ -37,7 +36,7 @@ const path = require('path');
 // Configuration
 const CONFIG = {
   CHAT_SERVER: http://localhost:3009',
-  LOG_FILE: logs/chat-reconnection.log',
+  LOG_FILE: 'logs/chat-reconnection.log',
   MONITOR_INTERVAL: 30000, // 30 seconds
   ALERT_THRESHOLDS: {
     uptime_minutes: 60,
@@ -263,11 +262,11 @@ const timeoutId = setTimeout(5000,  ();
 
   getAlertSeverity(type) {
     const severityMap = {
-      HEALTH_CHECK_FAILED: CRITICAL',
-      DISCONNECTED: HIGH',
-      NO_WORKERS: MEDIUM',
-      SLOW_RESPONSE: MEDIUM',
-      HIGH_ERROR_RATE: HIGH',
+      HEALTH_CHECK_FAILED: 'CRITICAL',
+      DISCONNECTED: 'HIGH',
+      NO_WORKERS: 'MEDIUM',
+      SLOW_RESPONSE: 'MEDIUM',
+      HIGH_ERROR_RATE: 'HIGH',
       LOW_UPTIME: LOW
     };
 
@@ -359,7 +358,7 @@ const cpuUsage = process.cpuUsage();
         return;
       }
 
-      const logContent = fs.readFileSync(CONFIG.LOG_FILE, utf8')
+      const logContent = fs.readFileSync(CONFIG.LOG_FILE, 'utf8')
 const lines = logContent.split('\n').filter((line) => line.trim());
 
       // Get last 100 lines

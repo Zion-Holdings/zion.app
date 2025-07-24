@@ -2,20 +2,20 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
@@ -30,13 +30,13 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     super();
     this.config = {
       port: 3001,
-      logLevel: info',
+      logLevel: 'info',
       enableDashboard: true,
       enableAPI: true,
       autoLoadTasks: true,
       defaultTaskConfig: {
         enabled: true,
-        priority: normal',
+        priority: 'normal',
         retryAttempts: 3,
         timeout: 300000
       },
@@ -135,7 +135,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       interval: taskConfig.interval || 3600000,
       lastRun: null,
       nextRun: null,
-      status: idle',
+      status: 'idle',
       errorCount: 0,
       successCount: 0,
       config: taskConfig

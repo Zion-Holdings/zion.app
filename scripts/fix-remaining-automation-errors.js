@@ -19,7 +19,7 @@ logger.info('🔧 Fixing remaining automation syntax errors...\n');
 // Specific files that need manual fixes
 const specificFixes = [
   {
-    file: automation/continuous-improvement/start.js',
+    file: 'automation/continuous-improvement/start.js',
     patterns: [
       {
         pattern: /const { spawn } = require\('child_process'\);/g,
@@ -28,7 +28,7 @@ const specificFixes = [
     ]
   },
   {
-    file: automation/continuous-improvement/cursor-integration.js',
+    file: 'automation/continuous-improvement/cursor-integration.js',
     patterns: [
       {
         pattern: /apiEndpoint: process\.env\.CURSOR_API_ENDPOINT \|\| https:\/\/api\.cursor\.sh',/g,
@@ -37,7 +37,7 @@ const specificFixes = [
     ]
   },
   {
-    file: automation/continuous-improvement/index.js',
+    file: 'automation/continuous-improvement/index.js',
     patterns: [
       {
         pattern: /const http = require\('http'\);/g,
@@ -46,7 +46,7 @@ const specificFixes = [
     ]
   },
   {
-    file: automation/continuous-improvement/ai-optimizer.js',
+    file: 'automation/continuous-improvement/ai-optimizer.js',
     patterns: [
       {
         pattern: /const http = require\('http'\);/g,
@@ -55,25 +55,16 @@ const specificFixes = [
     ]
   },
   {
-    file: automation/continuous-improvement/monitor.js',
+    file: 'automation/continuous-improvement/monitor.js',
     patterns: [
       {
-        pattern: /level: info',/g,
-        replacement: "level: info',"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        pattern: /level: 'info',/g,
+        replacement: "level: 'info',"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
       }
     ]
   },
   {
-    file: automation/continuous-improvement/improve.js',
-    patterns: [
-      {
-        pattern: /const winston = require\('winston'\);/g,
-        replacement: "const winston = require('winston');"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-      }
-    ]
-  },
-  {
-    file: automation/continuous-improvement/test-system.js',
+    file: 'automation/continuous-improvement/improve.js',
     patterns: [
       {
         pattern: /const winston = require\('winston'\);/g,
@@ -82,7 +73,16 @@ const specificFixes = [
     ]
   },
   {
-    file: automation/tests/system-diagnostic.js',
+    file: 'automation/continuous-improvement/test-system.js',
+    patterns: [
+      {
+        pattern: /const winston = require\('winston'\);/g,
+        replacement: "const winston = require('winston');"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+      }
+    ]
+  },
+  {
+    file: 'automation/tests/system-diagnostic.js',
     patterns: [
       {
         pattern: /require\('dotenv'\)\.config\(\);const axios = require\('axios'\);const fs = require\('fs'\)\.promises;const path = require\('path'\);/g,
@@ -95,7 +95,7 @@ const specificFixes = [
 // Scripts that need fixes
 const scriptFixes = [
   {
-    file: scripts/__mocks__/tail.js',
+    file: 'scripts/__mocks__/tail.js',
     patterns: [
       {
         pattern: /if \(this\.eventCallbacks && this\.eventCallbacks\['line'\]\) {      this\.eventCallbacks\['line'\]\.forEach\(cb => cb\(data\)\);/g,
@@ -104,16 +104,16 @@ const scriptFixes = [
     ]
   },
   {
-    file: scripts/security-headers.js',
+    file: 'scripts/security-headers.js',
     patterns: [
       {
-        pattern: /key: X-DNS-Prefetch-Control',    value: on'  },/g,
-        replacement: "key: X-DNS-Prefetch-Control',\n    value: on'\n  },"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        pattern: /key: 'X-DNS-Prefetch-Control',    value: 'on'  },/g,
+        replacement: "key: 'X-DNS-Prefetch-Control',\n    value: on'\n  },"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
       }
     ]
   },
   {
-    file: scripts/update-icon-imports.js',
+    file: 'scripts/update-icon-imports.js',
     patterns: [
       {
         pattern: /\/import\\s\+{\([^}]*\)}\\s\+from\\s\+\[\\"\]lucide-react\[\\"\]/g,"      import {$1} from "@/components/icons";    \);/g,
@@ -122,7 +122,7 @@ const scriptFixes = [
     ]
   },
   {
-    file: scripts/post-build-healer.js',
+    file: 'scripts/post-build-healer.js',
     patterns: [
       {
         pattern: /this\.logFile = logs\/post-build-healer\.log';    this\.ensureLogDirectory\(\);/g,
@@ -131,7 +131,7 @@ const scriptFixes = [
     ]
   },
   {
-    file: scripts/check_coverage_and_notify.js',
+    file: 'scripts/check_coverage_and_notify.js',
     patterns: [
       {
         pattern: /const fs = require\('fs'\);const { execSync } = require\('child_process'\)/g,
@@ -140,7 +140,7 @@ const scriptFixes = [
     ]
   },
   {
-    file: scripts/auto-lint-fix.js',
+    file: 'scripts/auto-lint-fix.js',
     patterns: [
       {
         pattern: /const GIT_BRANCH_NAME = auto\/fix-hourly';const GIT_USER_NAME = process\.env\.GIT_AUTHOR_NAME \|\| GitHub Actions Bot';const GIT_USER_EMAIL = process\.env\.GIT_AUTHOR_EMAIL \|\| actions-bot@users\.noreply\.github\.com'; \/\/ Replace with a suitable bot email'/g,
@@ -149,16 +149,16 @@ const scriptFixes = [
     ]
   },
   {
-    file: scripts/link-checker/index.js',
+    file: 'scripts/link-checker/index.js',
     patterns: [
       {
-        pattern: /sourceType: module',      plugins: \['jsx', typescript'\],      errorRecovery: true/g,
-        replacement: "sourceType: module',\n      plugins: ['jsx', typescript'],\n      errorRecovery: true"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        pattern: /sourceType: 'module',      plugins: \['jsx', typescript'\],      errorRecovery: true/g,
+        replacement: "sourceType: 'module',\n      plugins: ['jsx', typescript'],\n      errorRecovery: true"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
       }
     ]
   },
   {
-    file: scripts/debug-login.js',
+    file: 'scripts/debug-login.js',
     patterns: [
       {
         pattern: /const isDevMode = process\.env\.NODE_ENV === development';    console\.warn\('📋 Environment mode:', process\.env\.NODE_ENV \|\| undefined'\);    console\.warn\('📋 Development mode:', isDevMode\);/g,
@@ -167,7 +167,7 @@ const scriptFixes = [
     ]
   },
   {
-    file: scripts/heal-and-deploy.js',
+    file: 'scripts/heal-and-deploy.js',
     patterns: [
       {
         pattern: /this\.logFile = logs\/heal-and-deploy\.log';    this\.ensureLogDirectory\(\);/g,
@@ -176,7 +176,7 @@ const scriptFixes = [
     ]
   },
   {
-    file: scripts/watchdog.test.js',
+    file: 'scripts/watchdog.test.js',
     patterns: [
       {
         pattern: /} = require\('\.\/watchdog'\);/g,
@@ -185,7 +185,7 @@ const scriptFixes = [
     ]
   },
   {
-    file: scripts/verify-production.js',
+    file: 'scripts/verify-production.js',
     patterns: [
       {
         pattern: /const BASE_URL = process\.env\.NEXT_PUBLIC_APP_URL \|\| http:\/\/localhost:3000';/g,
@@ -194,7 +194,7 @@ const scriptFixes = [
     ]
   },
   {
-    file: scripts/test-api-performance.js',
+    file: 'scripts/test-api-performance.js',
     patterns: [
       {
         pattern: /const https = require\('http'\);const { performance: _performance } = require\('perf_hooks'\)/g,
@@ -203,7 +203,7 @@ const scriptFixes = [
     ]
   },
   {
-    file: scripts/verify-staging.js',
+    file: 'scripts/verify-staging.js',
     patterns: [
       {
         pattern: /const https = require\('https'\);const http = require\('http'\)/g,
@@ -212,7 +212,7 @@ const scriptFixes = [
     ]
   },
   {
-    file: scripts/test-root-path.js',
+    file: 'scripts/test-root-path.js',
     patterns: [
       {
         pattern: /const http = require\('http'\);const https = require\('https'\)/g,
@@ -221,7 +221,7 @@ const scriptFixes = [
     ]
   },
   {
-    file: scripts/test-login-trace.js',
+    file: 'scripts/test-login-trace.js',
     patterns: [
       {
         pattern: /const BASE_URL = _http:\/\/localhost:3000';/g,
@@ -230,7 +230,7 @@ const scriptFixes = [
     ]
   },
   {
-    file: scripts/maintenance/generate-tests.js',
+    file: 'scripts/maintenance/generate-tests.js',
     patterns: [
       {
         pattern: /const _path = require\('path'\);/g,
@@ -239,7 +239,7 @@ const scriptFixes = [
     ]
   },
   {
-    file: scripts/perf/monitor.js',
+    file: 'scripts/perf/monitor.js',
     patterns: [
       {
         pattern: /const _path = require\('path'\);const { _exec } = require\('child_process'\)/g,
@@ -248,7 +248,7 @@ const scriptFixes = [
     ]
   },
   {
-    file: scripts/codexWebhookServer.js',
+    file: 'scripts/codexWebhookServer.js',
     patterns: [
       {
         pattern: /app\.post\('\/webhook\/trigger-fix', \(req, res\) => {'  console\.warn\('🔁 Webhook received! Starting Codex fix pipeline\.\.\.'\);/g,
@@ -257,7 +257,7 @@ const scriptFixes = [
     ]
   },
   {
-    file: scripts/check-coverage-threshold.js',
+    file: 'scripts/check-coverage-threshold.js',
     patterns: [
       {
         pattern: /const coverageSummaryPath = path\.join\(process\.cwd\(\), logs', coverage', hourly', coverage-summary\.json'\);const coverageThreshold = 80; \/\/ Minimum percentage/g,
@@ -266,7 +266,7 @@ const scriptFixes = [
     ]
   },
   {
-    file: scripts/continuous-healing.js',
+    file: 'scripts/continuous-healing.js',
     patterns: [
       {
         pattern: /const AutoFixSystem = require\('\.\/auto-fix-errors'\);/g,
@@ -283,7 +283,7 @@ function fixFile(filePath, patterns) {
       return false;
     }
 
-    let content = fs.readFileSync(filePath, utf8');
+    let content = fs.readFileSync(filePath, 'utf8');
     let originalContent = content;
     let fixed = false;
 
@@ -332,7 +332,7 @@ const { execSync } = require('child_process');
 
 try {
   // Check automation directory
-  const automationResult = execSync('find automation -name "*.js" -not -path "*/node_modules/*" -exec node -c {} \\; 2>&1', { encoding: utf8' });
+  const automationResult = execSync('find automation -name "*.js" -not -path "*/node_modules/*" -exec node -c {} \\; 2>&1', { encoding: 'utf8' });
   if (automationResult.trim()) {
     logger.info('⚠️  Remaining errors in automation:');
     logger.info(automationResult);
@@ -346,7 +346,7 @@ try {
 
 try {
   // Check scripts directory
-  const scriptsResult = execSync('find scripts -name "*.js" -exec node -c {} \\; 2>&1', { encoding: utf8' });
+  const scriptsResult = execSync('find scripts -name "*.js" -exec node -c {} \\; 2>&1', { encoding: 'utf8' });
   if (scriptsResult.trim()) {
     logger.info('\n⚠️  Remaining errors in scripts:');
     logger.info(scriptsResult);

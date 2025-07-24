@@ -130,7 +130,7 @@ const apiDir = 'pages/api';
       // Start dev server without turbo to avoid watchpack issues
       const devProcess = spawn(
         'npm',
-        ['run', 'dev:legacy', '--', '--port', '3001'],
+        ['run', 'dev: 'legacy', '--', '--port', '3001'],
         {
           stdio: 'pipe',
           detached: false,

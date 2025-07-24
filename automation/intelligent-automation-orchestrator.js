@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 /**
  * Zion App - Intelligent Automation Orchestrator
@@ -107,7 +106,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     // Health check endpoint
     this.app.get('/health', (req, res) => {
       res.json({
-        status: healthy',
+        status: 'healthy',
         systems: Array.from(this.automationSystems.keys()),
         resourceUsage: this.resourceManager.getUsage(),
         conflicts: this.conflictResolver.getActiveConflicts(),
@@ -160,7 +159,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     this.automationSystems.set('autonomous', {
       name: Autonomous System',
       process: null,
-      status: stopped',
+      status: 'stopped',
       health: 0,
       performance: 0,
       lastActivity: null,
@@ -174,7 +173,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     this.automationSystems.set('infinite-improvement', {
       name: Infinite Improvement Loop',
       process: null,
-      status: stopped',
+      status: 'stopped',
       health: 0,
       performance: 0,
       lastActivity: null,
@@ -188,7 +187,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     this.automationSystems.set('enhanced-improvement', {
       name: Enhanced Infinite Improvement Loop',
       process: null,
-      status: stopped',
+      status: 'stopped',
       health: 0,
       performance: 0,
       lastActivity: null,
@@ -202,7 +201,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     this.automationSystems.set('continuous-improvement', {
       name: Continuous Improvement System',
       process: null,
-      status: stopped',
+      status: 'stopped',
       health: 0,
       performance: 0,
       lastActivity: null,
@@ -317,7 +316,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       throw new Error(`System ${systemName} not found`);
     }
 
-    if (system.status === running') {
+    if (system.status === 'running') {
       logger.info(`⚠️ System ${systemName} is already running`);
       return;
     }
@@ -334,7 +333,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       // Start the system process
       const scriptPath = this.getSystemScriptPath(systemName);
       system.process = spawn('node', [scriptPath], {
-        stdio: pipe',
+        stdio: 'pipe',
         detached: false,
         env: { ...process.env, PORT: system.port }
       });
@@ -392,7 +391,7 @@ const timeoutId = setTimeout(() => this.restartSystem(systemName),  5000);
       throw new Error(`System ${systemName} not found`);
     }
 
-    if (system.status === stopped') {
+    if (system.status === 'stopped') {
       logger.info(`⚠️ System ${systemName} is already stopped`);
       return;
     }
@@ -522,7 +521,7 @@ const timeoutId = setTimeout(() => this.restartSystem(systemName),  5000);
   async monitorSystems() {
     for (const [name, system] of this.automationSystems) {
       try {
-        if (system.status === running') {
+        if (system.status === 'running') {
           // Check system health
           const health = await this.checkSystemHealth(name, system.port);
           system.health = health.overall;
@@ -847,7 +846,7 @@ class ConflictResolver {
     for (const [name, system] of systems) {
       if (ports.has(system.port)) {
         conflicts.push({
-          type: port_conflict',
+          type: 'port_conflict',
           description: `${name} and ${ports.get(system.port)} are using port ${system.port}`,
           systems: [name, ports.get(system.port)],
           port: system.port
@@ -881,9 +880,9 @@ class DecisionEngine {
     
     // Check for failed systems and restart them
     for (const [name, system] of systems) {
-      if (system.status === failed') {
+      if (system.status === 'failed') {
         decisions.push({
-          action: restart',
+          action: 'restart',
           target: name,
           reason: System failed
         });

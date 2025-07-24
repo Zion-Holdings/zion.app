@@ -2,20 +2,20 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
@@ -117,9 +117,9 @@ class CursorExtensionBackground {
     // Check for console.log in production code
     if (content.includes('logger.info(')) {
       issues.push({
-        type: debug_code',
+        type: 'debug_code',
         message: Console.log statement found',
-        severity: low',
+        severity: 'low',
         line: this.findLineNumber(content, logger.info(')
       });
     }
@@ -127,9 +127,9 @@ class CursorExtensionBackground {
     // Check for TODO/FIXME comments
     if (content.includes('TODO') || content.includes('FIXME')) {
       issues.push({
-        type: todo_items',
+        type: 'todo_items',
         message: TODO/FIXME comment found',
-        severity: medium',
+        severity: 'medium',
         line: this.findLineNumber(content, TODO')
       });
     }
@@ -137,9 +137,9 @@ class CursorExtensionBackground {
     // Check for var usage
     if (content.includes('var ) && !content.includes('var _')) {
       issues.push({
-        type: var_usage',
+        type: 'var_usage',
         message: var keyword used instead of const/let',
-        severity: medium',
+        severity: 'medium',
         line: this.findLineNumber(content, var )
       });
     }
@@ -183,9 +183,9 @@ class CursorExtensionBackground {
       
       if (!matches || matches.length <= 1) { // Only the import statement
         issues.push({
-          type: unused_import',
+          type: 'unused_import',
           message: `Unused import: ${importItem.name}`,
-          severity: low',
+          severity: 'low',
           importName: importItem.name,
           modulePath: importItem.modulePath
         });
@@ -202,7 +202,7 @@ class CursorExtensionBackground {
       switch (issue.type) {
         case debug_code':
           suggestions.push({
-            type: remove_debug',
+            type: 'remove_debug',
             message: Remove console.log statement',
             code: // Remove or replace with proper logging',
             severity: issue.severity
@@ -211,7 +211,7 @@ class CursorExtensionBackground {
 
         case todo_items':
           suggestions.push({
-            type: address_todo',
+            type: 'address_todo',
             message: Address TODO/FIXME comment',
             code: // Implement the TODO item',
             severity: issue.severity
@@ -220,7 +220,7 @@ class CursorExtensionBackground {
 
         case var_usage':
           suggestions.push({
-            type: replace_var',
+            type: 'replace_var',
             message: Replace var with const or let',
             code: const variableName = value; // or let if reassignment needed',
             severity: issue.severity
@@ -229,7 +229,7 @@ class CursorExtensionBackground {
 
         case unused_import':
           suggestions.push({
-            type: remove_import',
+            type: 'remove_import',
             message: `Remove unused import: ${issue.importName}`,
             code: `// Remove: ${issue.importName} from ${issue.modulePath}`,
             severity: issue.severity
@@ -305,7 +305,7 @@ class CursorExtensionBackground {
         
         // Send analysis results back to content script
         chrome.tabs.sendMessage(item.tabId, {
-          type: ANALYSIS_RESULT',
+          type: 'ANALYSIS_RESULT',
           analysis
         });
       } catch (error) {

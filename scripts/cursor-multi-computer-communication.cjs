@@ -549,7 +549,7 @@ const timeoutId = setTimeout(() => {
     try {
       switch (fixData.type) {
         case 'lint':
-          execSync('npm run lint:fix', { stdio: 'pipe' });
+          execSync('npm run lint: 'fix', { stdio: 'pipe' });
           break;
         case 'format':
           execSync('npm run format', { stdio: 'pipe' });

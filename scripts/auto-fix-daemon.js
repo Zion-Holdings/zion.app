@@ -12,20 +12,20 @@ class Script {
       const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
@@ -61,15 +61,15 @@ function runFixers() {
   try {
     for (const cmd of FIXER_COMMANDS) {
       logger.info(`[auto-fix-daemon] Executing: ${cmd}`);
-      execSync(cmd, { stdio: inherit' });
+      execSync(cmd, { stdio: 'inherit' });
     }
     // Check for changes
     const status = execSync('git status --porcelain').toString();
     if (status.trim()) {
       changes = true;
-      execSync('git add .', { stdio: inherit' });
-      execSync('git commit -m "chore(auto-fix): automated fixes [auto-fix-daemon]"', { stdio: inherit' });
-      execSync('git push', { stdio: inherit' });
+      execSync('git add .', { stdio: 'inherit' });
+      execSync('git commit -m "chore(auto-fix): automated fixes [auto-fix-daemon]"', { stdio: 'inherit' });
+      execSync('git push', { stdio: 'inherit' });
       logger.info('[auto-fix-daemon] Changes committed and pushed.');
     } else {
       logger.info('[auto-fix-daemon] No changes to commit.');

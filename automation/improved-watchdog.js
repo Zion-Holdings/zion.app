@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 const { spawn, exec } = require('child_process');
 const fs = require('fs');
@@ -34,7 +33,7 @@ class ImprovedWatchdog {
       checkInterval: 30000, // 30 seconds
       maxRestarts: 5,
       restartDelay: 5000, // 5 seconds
-      logFile: path.join(__dirname, watchdog.log')
+      logFile: path.join(__dirname, 'watchdog.log')
     };
     
     this.isRunning = false;
@@ -61,7 +60,7 @@ class ImprovedWatchdog {
     
     if (fs.existsSync(pidFile)) {
       try {
-        const data = JSON.parse(fs.readFileSync(pidFile, utf8'));
+        const data = JSON.parse(fs.readFileSync(pidFile, 'utf8'));
         for (const [name, info] of Object.entries(data)) {
           if (this.isProcessRunning(info.pid)) {
             this.processes.set(name, {
@@ -208,7 +207,7 @@ const timeoutId = setTimeout(async () => {
     for (const [name, processInfo] of this.processes) {
       const isRunning = this.isProcessRunning(processInfo.pid);
       
-      if (!isRunning && processInfo.status === running') {
+      if (!isRunning && processInfo.status === 'running') {
         this.log(`⚠️  Process ${name} (PID: ${processInfo.pid}) is not responding`);
         processInfo.status = stopped';
         

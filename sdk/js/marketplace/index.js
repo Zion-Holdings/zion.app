@@ -81,7 +81,7 @@ async function submitQuoteRequest(quoteDetails) {
   if (!quoteDetails || !quoteDetails.name || !quoteDetails.email || !quoteDetails.phone || !quoteDetails.details) {
     throw new Error('Missing required fields in quoteDetails: name, email, phone, details are required.');  }
 
-  const response = await fetch('/api/quotes', {'    method: POST',    headers: {
+  const response = await fetch('/api/quotes', {'    method: 'POST',    headers: {
       Content-Type': application/json',    },
     body: JSON.stringify(quoteDetails)
   });

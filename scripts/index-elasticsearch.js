@@ -24,20 +24,20 @@ const client = new Client({
 async function run() {
   const docs = [];
   for (const p of NEW_PRODUCTS) {
-    docs.push({ id: `product-${p.id}`, title: p.title, description: p.description, type: product' });  }
+    docs.push({ id: `product-${p.id}`, title: p.title, description: p.description, type: 'product' });  }
   for (const s of NEW_SERVICES) {
-    docs.push({ id: `service-${s.id}`, title: s.title, description: s.description, type: service' });  }
+    docs.push({ id: `service-${s.id}`, title: s.title, description: s.description, type: 'service' });  }
   for (const t of MOCK_TALENTS) {
-    docs.push({ id: `talent-${t.id}`, title: t.name, description: t.title, type: talent' });  }
+    docs.push({ id: `talent-${t.id}`, title: t.name, description: t.title, type: 'talent' });  }
 
   await client.indices.create({
-    index: listings',    mappings: {
+    index: 'listings',    mappings: {
       properties: {
-        title: { type: text' },        description: { type: text' },        type: { type: keyword' },        suggest: { type: completion' }      }
+        title: { type: 'text' },        description: { type: 'text' },        type: { type: 'keyword' },        suggest: { type: 'completion' }      }
     }
   }, { ignore: [400] })
 const body = docs.flatMap(doc => [
-    { index: { _index: listings', _id: doc.id } },    { ...doc, suggest: { input: [doc.title] } }
+    { index: { _index: 'listings', _id: doc.id } },    { ...doc, suggest: { input: [doc.title] } }
   ])
 const resp = await client.bulk({ refresh: true, body });
   if (resp.errors) {

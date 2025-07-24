@@ -336,8 +336,8 @@ const timeoutId = setTimeout(() => {
     this.log('Running performance optimizations...')
 const optimizations = [
       'npm run optimize',
-      'npm run bundle:analyze',
-      'npm run perf:audit',
+      'npm run bundle: 'analyze',
+      'npm run perf: 'audit',
     ];
 
     for (const optimization of optimizations) {

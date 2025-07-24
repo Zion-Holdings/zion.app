@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 /**
  * Zion App - Automatic Continuous Improvement System
@@ -211,8 +210,8 @@ const timeoutId = setTimeout(loop,  60000);
       
       if (needsImprovement) {
         await this.queueImprovement('codeQuality', {
-          type: codeQuality',
-          severity: medium',
+          type: 'codeQuality',
+          severity: 'medium',
           data: {
             lintErrors: lintResults.errors,
             coverage: coverageResults.coverage,
@@ -248,8 +247,8 @@ const timeoutId = setTimeout(loop,  60000);
       
       if (needsImprovement) {
         await this.queueImprovement('performance', {
-          type: performance',
-          severity: high',
+          type: 'performance',
+          severity: 'high',
           data: {
             lighthouseScore: lighthouseResults.performance,
             webVitals,
@@ -283,8 +282,8 @@ const timeoutId = setTimeout(loop,  60000);
       
       if (needsImprovement) {
         await this.queueImprovement('security', {
-          type: security',
-          severity: critical',
+          type: 'security',
+          severity: 'critical',
           data: {
             securityIssues: securityAudit.issues,
             vulnerabilities: vulnerabilities.count,
@@ -320,8 +319,8 @@ const timeoutId = setTimeout(loop,  60000);
       
       if (needsImprovement) {
         await this.queueImprovement('userExperience', {
-          type: userExperience',
-          severity: medium',
+          type: 'userExperience',
+          severity: 'medium',
           data: {
             accessibility,
             seo,
@@ -355,8 +354,8 @@ const timeoutId = setTimeout(loop,  60000);
       
       if (needsImprovement) {
         await this.queueImprovement('dependencies', {
-          type: dependencies',
-          severity: low',
+          type: 'dependencies',
+          severity: 'low',
           data: {
             outdated,
             vulnerabilities

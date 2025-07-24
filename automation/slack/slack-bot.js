@@ -2,20 +2,20 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
@@ -54,12 +54,12 @@ const options = args.slice(1);
 
       try {
         await respond({
-          response_type: in_channel',
+          response_type: 'in_channel',
           blocks: [
             {
-              type: section',
+              type: 'section',
               text: {
-                type: mrkdwn',
+                type: 'mrkdwn',
                 text: `🚀 *Starting optimization for: ${target}*\n\nInitiating Cursor agents...`
               }
             }
@@ -72,7 +72,7 @@ const options = args.slice(1);
       } catch (error) {
         logger.error('Optimization command error:', error);
         await respond({
-          response_type: ephemeral',
+          response_type: 'ephemeral',
           text: `❌ Error: ${error.message}`
         });
       }
@@ -85,12 +85,12 @@ const options = args.slice(1);
       try {
         const status = await this.getPerformanceStatus();
         await respond({
-          response_type: in_channel',
+          response_type: 'in_channel',
           blocks: [
             {
-              type: section',
+              type: 'section',
               text: {
-                type: mrkdwn',
+                type: 'mrkdwn',
                 text: `📊 *Performance Status*\n\n${status.summary}`
               }
             }
@@ -98,7 +98,7 @@ const options = args.slice(1);
         });
       } catch (error) {
         await respond({
-          response_type: ephemeral',
+          response_type: 'ephemeral',
           text: `❌ Error: ${error.message}`
         });
       }
@@ -110,9 +110,9 @@ const options = args.slice(1);
       await say({
         blocks: [
           {
-            type: section',
+            type: 'section',
             text: {
-              type: mrkdwn',
+              type: 'mrkdwn',
               text: `🚨 *Performance Alert*\n\n${event.message}`
             }
           }
@@ -124,9 +124,9 @@ const options = args.slice(1);
       await say({
         blocks: [
           {
-            type: section',
+            type: 'section',
             text: {
-              type: mrkdwn',
+              type: 'mrkdwn',
               text: `✅ *Optimization Complete*\n\n${event.message}`
             }
           }
@@ -146,7 +146,7 @@ const options = args.slice(1);
         
         await complete({
           outputs: {
-            status: completed',
+            status: 'completed',
             target: target
           }
         });

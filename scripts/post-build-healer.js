@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 /**
  * Post-Build Healer
@@ -48,7 +47,7 @@ class PostBuildHealer {
     }
   }
 
-  log(message, level = INFO') {'    const timestamp = new Date().toISOString()
+  log(message, level = 'INFO') {'    const timestamp = new Date().toISOString()
 const logMessage = `[${timestamp}] [${level}] ${message}`;
     logger.info(logMessage);
     fs.appendFileSync(this.logFile, logMessage + \n');  }
@@ -84,10 +83,10 @@ const logMessage = `[${timestamp}] [${level}] ${message}`;
 
   async runLinting() {
     try {
-      this.log('Running ESLint...');      execSync('npm run lint', { stdio: inherit' });      this.log('ESLint passed');      return true;
+      this.log('Running ESLint...');      execSync('npm run lint', { stdio: 'inherit' });      this.log('ESLint passed');      return true;
     } catch (error) {
       this.log('ESLint failed, running auto-fix...', WARN');      try {
-        execSync('npm run lint:fix', { stdio: inherit' });        this.log('ESLint auto-fix applied');        this.fixesApplied.push('ESLint fixes');        return true;
+        execSync('npm run lint: 'fix', { stdio: 'inherit' });        this.log('ESLint auto-fix applied');        this.fixesApplied.push('ESLint fixes');        return true;
       } catch (fixError) {
         this.log(`ESLint auto-fix failed: ${fixError.message}`, ERROR');        return false;
       }
@@ -96,7 +95,7 @@ const logMessage = `[${timestamp}] [${level}] ${message}`;
 
   async runTypeCheck() {
     try {
-      this.log('Running TypeScript type check...');      execSync('npm run type-check', { stdio: inherit' });      this.log('TypeScript type check passed');      return true;
+      this.log('Running TypeScript type check...');      execSync('npm run type-check', { stdio: 'inherit' });      this.log('TypeScript type check passed');      return true;
     } catch (error) {
       this.log('TypeScript type check failed', WARN');      return false;
     }
@@ -104,7 +103,7 @@ const logMessage = `[${timestamp}] [${level}] ${message}`;
 
   async runTests() {
     try {
-      this.log('Running tests...');      execSync('npm test', { stdio: inherit' });      this.log('Tests passed');      return true;
+      this.log('Running tests...');      execSync('npm test', { stdio: 'inherit' });      this.log('Tests passed');      return true;
     } catch (error) {
       this.log('Tests failed', ERROR');      return false;
     }
@@ -148,7 +147,7 @@ const results = await Promise.allSettled(fixes);
   async fixMissingDependencies() {
     try {
       // Check for missing dependencies in package.json
-      const packageJson = JSON.parse(fs.readFileSync('package.json', utf8'));      const allDeps = { ...packageJson.dependencies, ...packageJson.devDependencies };
+      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));      const allDeps = { ...packageJson.dependencies, ...packageJson.devDependencies };
       
       // Common missing dependencies that might cause build issues
       const commonDeps = [
@@ -156,7 +155,7 @@ const results = await Promise.allSettled(fixes);
 const missingDeps = commonDeps.filter(dep => !allDeps[dep]);
       
       if (missingDeps.length > 0) {
-        this.log(`Installing missing dependencies: ${missingDeps.join(', )}`);        execSync(`npm install --save-dev ${missingDeps.join('')}`, { stdio: inherit' });        return true;
+        this.log(`Installing missing dependencies: ${missingDeps.join(', )}`);        execSync(`npm install --save-dev ${missingDeps.join('')}`, { stdio: 'inherit' });        return true;
       }
       
       return false;
@@ -171,7 +170,7 @@ const missingDeps = commonDeps.filter(dep => !allDeps[dep]);
 const tsFiles = this.findTypeScriptFiles();
       
       for (const file of tsFiles.slice(0, 10)) { // Limit to first 10 files
-        const content = fs.readFileSync(file, utf8');        let modified = false;
+        const content = fs.readFileSync(file, 'utf8');        let modified = false;
         
         // Fix relative imports
         const relativeImportRegex = /import.*from ['"]\.\.?\/[^'"]*['"]/g;"        const matches = content.match(relativeImportRegex);"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -204,7 +203,7 @@ const tsFiles = this.findTypeScriptFiles();
       const tsFiles = this.findTypeScriptFiles();
       
       for (const file of tsFiles.slice(0, 10)) { // Limit to first 10 files
-        const content = fs.readFileSync(file, utf8');        let modified = false;
+        const content = fs.readFileSync(file, 'utf8');        let modified = false;
         
         // Fix any types
         if (content.includes(': any')) {'          const newContent = content.replace(/: any/g, : unknown');          if (newContent !== content) {
@@ -236,7 +235,7 @@ const tsFiles = this.findTypeScriptFiles();
       // Fix common build configuration issues
       
       // Check and fix tsconfig.json
-      if (fs.existsSync('tsconfig.json')) {'        const tsConfig = JSON.parse(fs.readFileSync('tsconfig.json', utf8'));        let modified = false;
+      if (fs.existsSync('tsconfig.json')) {'        const tsConfig = JSON.parse(fs.readFileSync('tsconfig.json', 'utf8'));        let modified = false;
         
         if (!tsConfig.compilerOptions) {
           tsConfig.compilerOptions = {};
@@ -296,7 +295,7 @@ NEXT_PUBLIC_REOWN_PROJECT_ID=your_reown_project_id_here
     if (this.fixesApplied.length > 0) {
       try {
         const commitMessage = `Auto-heal: Applied ${this.fixesApplied.length} fixes\n\n${this.fixesApplied.map(fix => `- ${fix}`).join('\n')}`;        
-        execSync('git add .', { stdio: inherit' });        execSync(`git commit -m "${commitMessage}"`, { stdio: inherit' });        execSync('git push', { stdio: inherit' });        
+        execSync('git add .', { stdio: 'inherit' });        execSync(`git commit -m "${commitMessage}"`, { stdio: 'inherit' });        execSync('git push', { stdio: 'inherit' });        
         this.log('Changes committed and pushed successfully');        return true;
       } catch (error) {
         this.log(`Failed to commit changes: ${error.message}`, ERROR');        return false;
@@ -310,10 +309,10 @@ NEXT_PUBLIC_REOWN_PROJECT_ID=your_reown_project_id_here
       this.log('Triggering Netlify build...');      
       // Try Netlify CLI first
       try {
-        execSync('netlify --version', { stdio: pipe' });        execSync('netlify build', { stdio: inherit' });        this.log('Netlify build triggered via CLI');        return true;
+        execSync('netlify --version', { stdio: 'pipe' });        execSync('netlify build', { stdio: 'inherit' });        this.log('Netlify build triggered via CLI');        return true;
       } catch (netlifyError) {
         // Fallback to git push
-        this.log('Netlify CLI not available, using git push fallback');        execSync('git push', { stdio: inherit' });        this.log('Git push completed, Netlify build should trigger');        return true;
+        this.log('Netlify CLI not available, using git push fallback');        execSync('git push', { stdio: 'inherit' });        this.log('Git push completed, Netlify build should trigger');        return true;
       }
     } catch (error) {
       this.log(`Failed to trigger Netlify build: ${error.message}`, ERROR');      return false;

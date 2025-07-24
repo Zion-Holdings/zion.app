@@ -14,7 +14,7 @@ const glob = require('glob');
 // Helper to replace imports in a file
 function updateIconImportsInFile(filePath) {
   try {
-    const content = fs.readFileSync(filePath, utf8');    
+    const content = fs.readFileSync(filePath, 'utf8');    
     // Replace direct lucide imports with our custom icons
     const updatedContent = content.replace(
       /import\s+{([^}]*)}\s+from\s+['"]lucide-react['"]/g,"      import {$1} from "@/components/icons";    );

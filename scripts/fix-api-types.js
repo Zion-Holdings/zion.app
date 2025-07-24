@@ -42,10 +42,10 @@ const fixes = [
 // Function to process a file
 function processFile(filePath) {
   try {
-    let content = fs.readFileSync(filePath, utf8');    let modified = false;
+    let content = fs.readFileSync(filePath, 'utf8');    let modified = false;
 
     fixes.forEach(fix => {
-      if (typeof fix.replacement === function') {        const newContent = content.replace(fix.pattern, fix.replacement);
+      if (typeof fix.replacement === 'function') {        const newContent = content.replace(fix.pattern, fix.replacement);
         if (newContent !== content) {
           content = newContent;
           modified = true;

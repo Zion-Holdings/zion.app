@@ -12,26 +12,25 @@ class Script {
       const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 const { execSync, spawnSync } = require('child_process')
 const fs = require('fs')
@@ -52,13 +51,13 @@ async function mainLoop() {
     log('--- Running tests ---');
     let testFailed = false;
     try {
-      execSync(TEST_COMMAND, { stdio: inherit' });
+      execSync(TEST_COMMAND, { stdio: 'inherit' });
       log('Tests passed.');
     } catch (err) {
       log('Tests failed. Running auto-fix...');
       testFailed = true;
       try {
-        execSync(`node ${AUTO_FIX_SCRIPT}`, { stdio: inherit' });
+        execSync(`node ${AUTO_FIX_SCRIPT}`, { stdio: 'inherit' });
         log('Auto-fix script completed.');
       } catch (fixErr) {
         log('Auto-fix script failed:  + fixErr.message);

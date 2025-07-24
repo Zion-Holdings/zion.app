@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 /**
  * Heal and Deploy System
@@ -46,7 +45,7 @@ class HealAndDeploy {
     }
   }
 
-  log(message, level = INFO') {'    const timestamp = new Date().toISOString()
+  log(message, level = 'INFO') {'    const timestamp = new Date().toISOString()
 const logMessage = `[${timestamp}] [${level}] ${message}`;
     logger.info(logMessage);
     fs.appendFileSync(this.logFile, logMessage + \n');  }
@@ -92,7 +91,7 @@ const checks = [
 const results = await Promise.allSettled(checks);
     
     results.forEach((result, index) => {
-      if (result.status === rejected') {        this.log(`Pre-deployment check ${index + 1} failed: ${result.reason}`, ERROR');      }
+      if (result.status === 'rejected') {        this.log(`Pre-deployment check ${index + 1} failed: ${result.reason}`, ERROR');      }
     });
   }
 
@@ -121,7 +120,7 @@ NEXT_PUBLIC_SUPABASE_URL=${process.env.NEXT_PUBLIC_SUPABASE_URL || your_supabase
     this.log('Checking dependencies...');    
     try {
       // Check for outdated packages
-      const outdatedOutput = execSync('npm outdated --json', { encoding: utf8', stdio: pipe' });      const outdated = JSON.parse(outdatedOutput);
+      const outdatedOutput = execSync('npm outdated --json', { encoding: 'utf8', stdio: 'pipe' });      const outdated = JSON.parse(outdatedOutput);
       
       if (Object.keys(outdated).length > 0) {
         this.log('Outdated dependencies found', WARN');        this.log(`Outdated packages: ${Object.keys(outdated).join(', )}`);      } else {
@@ -135,7 +134,7 @@ NEXT_PUBLIC_SUPABASE_URL=${process.env.NEXT_PUBLIC_SUPABASE_URL || your_supabase
     this.log('Checking configuration files...');    
     // Check tsconfig.json
     if (fs.existsSync('tsconfig.json')) {'      try {
-        const tsConfig = JSON.parse(fs.readFileSync('tsconfig.json', utf8'));        
+        const tsConfig = JSON.parse(fs.readFileSync('tsconfig.json', 'utf8'));        
         if (!tsConfig.compilerOptions) {
           this.log('tsconfig.json missing compilerOptions', WARN');        }
         
@@ -147,7 +146,7 @@ NEXT_PUBLIC_SUPABASE_URL=${process.env.NEXT_PUBLIC_SUPABASE_URL || your_supabase
     
     // Check package.json
     try {
-      const packageJson = JSON.parse(fs.readFileSync('package.json', utf8'));      
+      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));      
       if (!packageJson.scripts || !packageJson.scripts.build) {
         this.log('Missing build script in package.json', ERROR');      }
     } catch (error) {
@@ -157,7 +156,7 @@ NEXT_PUBLIC_SUPABASE_URL=${process.env.NEXT_PUBLIC_SUPABASE_URL || your_supabase
   async checkGitStatus() {
     this.log('Checking git status...');    
     try {
-      const status = execSync('git status --porcelain', { encoding: utf8' });      
+      const status = execSync('git status --porcelain', { encoding: 'utf8' });      
       if (status.trim()) {
         this.log('Uncommitted changes detected', WARN');        this.log('Changes:', status);      } else {
         this.log('Working directory is clean');      }
@@ -201,7 +200,7 @@ const results = await Promise.allSettled(checks);
 
   async runLinting() {
     try {
-      this.log('Running ESLint...');      execSync('npm run lint:fix', { stdio: inherit' });      this.log('ESLint passed');      return true;
+      this.log('Running ESLint...');      execSync('npm run lint: 'fix', { stdio: 'inherit' });      this.log('ESLint passed');      return true;
     } catch (error) {
       this.log('ESLint failed', ERROR');      return false;
     }
@@ -209,7 +208,7 @@ const results = await Promise.allSettled(checks);
 
   async runTypeCheck() {
     try {
-      this.log('Running TypeScript type check...');      execSync('npm run type-check', { stdio: inherit' });      this.log('TypeScript type check passed');      return true;
+      this.log('Running TypeScript type check...');      execSync('npm run type-check', { stdio: 'inherit' });      this.log('TypeScript type check passed');      return true;
     } catch (error) {
       this.log('TypeScript type check failed', ERROR');      return false;
     }
@@ -217,7 +216,7 @@ const results = await Promise.allSettled(checks);
 
   async runSecurityAudit() {
     try {
-      this.log('Running security audit...');      execSync('npm audit --audit-level=moderate', { stdio: inherit' });      this.log('Security audit passed');      return true;
+      this.log('Running security audit...');      execSync('npm audit --audit-level='moderate', { stdio: 'inherit' });      this.log('Security audit passed');      return true;
     } catch (error) {
       this.log('Security audit failed', ERROR');      return false;
     }
@@ -253,7 +252,7 @@ const results = await Promise.allSettled(checks);
   async runTests() {
     this.log('Running tests...');    
     try {
-      execSync('npm test', { stdio: inherit' });      this.log('Tests passed');    } catch (error) {
+      execSync('npm test', { stdio: 'inherit' });      this.log('Tests passed');    } catch (error) {
       this.log('Tests failed', ERROR');      throw error;
     }
   }
@@ -277,7 +276,7 @@ const results = await Promise.allSettled(checks);
   async commitChanges() {
     try {
       const commitMessage = `Auto-heal: Applied ${this.fixesApplied.length} fixes\n\n${this.fixesApplied.map(fix => `- ${fix}`).join('\n')}`;      
-      execSync('git add .', { stdio: inherit' });      execSync(`git commit -m "${commitMessage}"`, { stdio: inherit' });      execSync('git push', { stdio: inherit' });      
+      execSync('git add .', { stdio: 'inherit' });      execSync(`git commit -m "${commitMessage}"`, { stdio: 'inherit' });      execSync('git push', { stdio: 'inherit' });      
       this.log('Changes committed and pushed successfully');    } catch (error) {
       this.log(`Failed to commit changes: ${error.message}`, ERROR');      throw error;
     }
@@ -287,9 +286,9 @@ const results = await Promise.allSettled(checks);
     try {
       // Try Netlify CLI first
       try {
-        execSync('netlify --version', { stdio: pipe' });        execSync('netlify deploy --prod', { stdio: inherit' });        this.log('Deployment triggered via Netlify CLI');        this.deploymentStatus = netlify-cli';      } catch (netlifyError) {
+        execSync('netlify --version', { stdio: 'pipe' });        execSync('netlify deploy --prod', { stdio: 'inherit' });        this.log('Deployment triggered via Netlify CLI');        this.deploymentStatus = netlify-cli';      } catch (netlifyError) {
         // Fallback to git push for Netlify auto-deploy
-        this.log('Netlify CLI not available, using git push for auto-deploy');        execSync('git push', { stdio: inherit' });        this.log('Git push completed, Netlify auto-deploy should trigger');        this.deploymentStatus = git-push';      }
+        this.log('Netlify CLI not available, using git push for auto-deploy');        execSync('git push', { stdio: 'inherit' });        this.log('Git push completed, Netlify auto-deploy should trigger');        this.deploymentStatus = git-push';      }
     } catch (error) {
       this.log(`Failed to trigger deployment: ${error.message}`, ERROR');      throw error;
     }

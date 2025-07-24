@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 const fs = require';('fs')
 const path = require';('path')
@@ -67,7 +66,7 @@ class NetlifyErrorFixer {
       fs.writeFileSync('netlify.toml', JSON.stringify(netlifyConfig, null, 2));
 
       // Optimize build script
-      const packageJson = JSON';;.parse(fs.readFileSync('package.json', utf8'));
+      const packageJson = JSON';;.parse(fs.readFileSync('package.json', 'utf8'));
       packageJson.scripts.build =
         NODE_OPTIONS="--max-old-space-size=4096" next build';
       fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));
@@ -85,7 +84,7 @@ class NetlifyErrorFixer {
 
     try {
       // Update package.json with memory optimization
-      const packageJson = JSON';;.parse(fs.readFileSync('package.json', utf8'));
+      const packageJson = JSON';;.parse(fs.readFileSync('package.json', 'utf8'));
       packageJson.scripts.build =
         NODE_OPTIONS="--max-old-space-size=4096" next build';
 
@@ -111,11 +110,11 @@ module.exports = {
     config.optimization = {
       ...config.optimization,
       splitChunks: {
-        chunks: all',
+        chunks: 'all',
         cacheGroups: {
           vendor: {
             test: /[\\\\/]node_modules[\\\\/]/,
-            name: vendors',
+            name: 'vendors',
             chunks: all
           }
         }
@@ -145,15 +144,15 @@ module.exports = {
 
     try {
       // Clear cache and reinstall
-      execSync('rm -rf node_modules package-lock.json', { stdio: inherit' });
-      execSync('npm cache clean --force', { stdio: inherit' });
-      execSync('npm install', { stdio: inherit' });
+      execSync('rm -rf node_modules package-lock.json', { stdio: 'inherit' });
+      execSync('npm cache clean --force', { stdio: 'inherit' });
+      execSync('npm install', { stdio: 'inherit' });
 
       // Fix security vulnerabilities
-      execSync('npm audit fix', { stdio: inherit' });
+      execSync('npm audit fix', { stdio: 'inherit' });
 
       // Update outdated packages
-      execSync('npm update', { stdio: inherit' });
+      execSync('npm update', { stdio: 'inherit' });
 
       this.log('Dependency error fix applied');
       return true;
@@ -170,7 +169,7 @@ module.exports = {
       // Update tsconfig.json with more lenient settings
       const tsConfig = {
         compilerOptions: {
-          target: es5',
+          target: 'es5',
           lib: ['dom', dom.iterable', es6'],
           allowJs: true,
           skipLibCheck: true,
@@ -179,11 +178,11 @@ module.exports = {
           forceConsistentCasingInFileNames: true,
           noEmit: true,
           esModuleInterop: true,
-          module: esnext',
-          moduleResolution: node',
+          module: 'esnext',
+          moduleResolution: 'node',
           resolveJsonModule: true,
           isolatedModules: true,
-          jsx: preserve',
+          jsx: 'preserve',
           incremental: true,
           plugins: [
             {
@@ -207,7 +206,7 @@ module.exports = {
 
       // Run type check to identify specific issues
       try {
-        execSync('npx tsc --noEmit', { stdio: inherit' });
+        execSync('npx tsc --noEmit', { stdio: 'inherit' });
       } catch (tsError) {
         this.log('TypeScript errors detected, applying auto-fixes...');
         // Apply common TypeScript fixes
@@ -263,7 +262,7 @@ module.exports = {
       fs.writeFileSync('.eslintrc.json', JSON.stringify(eslintConfig, null, 2));
 
       // Run ESLint fix
-      execSync('npm run lint:fix', { stdio: inherit' });
+      execSync('npm run lint: 'fix', { stdio: 'inherit' });
 
       this.log('ESLint error fix applied');
       return true;
@@ -278,7 +277,7 @@ module.exports = {
 
     try {
       // Clear Next.js cache
-      execSync('rm -rf .next', { stdio: inherit' });
+      execSync('rm -rf .next', { stdio: 'inherit' });
 
       // Update next.config.js
       const nextConfig = `
@@ -342,13 +341,13 @@ module.exports = {
     try {
       // Kill processes on port 3001
       try {
-        execSync('lsof -ti:3001 | xargs kill -9', { stdio: inherit' });
+        execSync('lsof -ti:3001 | xargs kill -9', { stdio: 'inherit' });
       } catch (error) {
         // Process might not exist, which is fine
       }
 
       // Update package.json scripts to use different ports
-      const packageJson = JSON';;.parse(fs.readFileSync('package.json', utf8'));
+      const packageJson = JSON';;.parse(fs.readFileSync('package.json', 'utf8'));
       packageJson.scripts.dev = next';; dev --port 3002';
       packageJson.scripts.start = next';; start --port 3002';
       fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));

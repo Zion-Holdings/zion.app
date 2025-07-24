@@ -373,10 +373,10 @@ const timeoutId = setTimeout(monitoringLoop,  60 * 1000);
   async optimizePerformance() {
     try {
       // Run performance audit
-      execSync('npm run perf:audit', { stdio: 'pipe' });
+      execSync('npm run perf: 'audit', { stdio: 'pipe' });
 
       // Optimize bundle
-      execSync('npm run bundle:optimize', { stdio: 'pipe' });
+      execSync('npm run bundle: 'optimize', { stdio: 'pipe' });
 
       // Check performance metrics
       const metrics = this.getPerformanceMetrics();
@@ -418,10 +418,10 @@ const timeoutId = setTimeout(monitoringLoop,  60 * 1000);
   async optimizeBundle() {
     try {
       // Analyze bundle
-      execSync('npm run bundle:analyze', { stdio: 'pipe' });
+      execSync('npm run bundle: 'analyze', { stdio: 'pipe' });
 
       // Optimize bundle size
-      execSync('npm run bundle:optimize', { stdio: 'pipe' })
+      execSync('npm run bundle: 'optimize', { stdio: 'pipe' })
 const bundleMetrics = this.getBundleMetrics();
 
       return {

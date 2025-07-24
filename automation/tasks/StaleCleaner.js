@@ -2,20 +2,20 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
@@ -120,7 +120,7 @@ class StaleCleaner extends AutomationTask {
     try {
       // Get all remote branches
       const branchesOutput = execSync('git branch -r --format="%(refname:short) %(committerdate:iso8601)"', {
-        encoding: utf8',
+        encoding: 'utf8',
         cwd: process.cwd()
       });
       
@@ -158,7 +158,7 @@ class StaleCleaner extends AutomationTask {
     try {
       // Use GitHub CLI to get stale PRs
       const prsOutput = execSync(`gh pr list --state open --limit 100 --json number,title,createdAt,updatedAt,author`, {
-        encoding: utf8',
+        encoding: 'utf8',
         cwd: process.cwd()
       });
       
@@ -203,7 +203,7 @@ class StaleCleaner extends AutomationTask {
         
         if (hasUnmergedCommits && !this.config.autoDelete) {
           logger.info(`⚠️ Skipping ${branch.name} - has unmerged commits`);
-          results.skipped.push({ ...branch, reason: unmerged_commits' });
+          results.skipped.push({ ...branch, reason: 'unmerged_commits' });
           continue;
         }
         
@@ -265,7 +265,7 @@ class StaleCleaner extends AutomationTask {
     try {
       const branchNameClean = branchName.replace('origin/', );
       const output = execSync(`git log --oneline origin/main..origin/${branchNameClean}`, {
-        encoding: utf8',
+        encoding: 'utf8',
         cwd: process.cwd(),
         stdio: pipe
       });
@@ -325,8 +325,8 @@ class StaleCleaner extends AutomationTask {
   async checkGitConfiguration() {
     try {
       // Check git user configuration
-      const userName = execSync('git config user.name', { encoding: utf8', stdio: pipe' }).trim();
-      const userEmail = execSync('git config user.email', { encoding: utf8', stdio: pipe' }).trim();
+      const userName = execSync('git config user.name', { encoding: 'utf8', stdio: 'pipe' }).trim();
+      const userEmail = execSync('git config user.email', { encoding: 'utf8', stdio: 'pipe' }).trim();
       
       logger.info('✅ Git configuration:', { userName, userEmail });
       
@@ -337,11 +337,11 @@ class StaleCleaner extends AutomationTask {
 
   async checkGitHubCLI() {
     try {
-      const version = execSync('gh --version', { encoding: utf8', stdio: pipe' });
+      const version = execSync('gh --version', { encoding: 'utf8', stdio: 'pipe' });
       logger.info('✅ GitHub CLI version:', version.trim());
       
       // Check authentication
-      const authStatus = execSync('gh auth status', { encoding: utf8', stdio: pipe' });
+      const authStatus = execSync('gh auth status', { encoding: 'utf8', stdio: 'pipe' });
       logger.info('✅ GitHub CLI auth status:', authStatus.trim());
       
     } catch (error) {

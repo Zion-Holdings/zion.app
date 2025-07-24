@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 const fs = require('fs')
 const path = require('path')
@@ -30,12 +29,12 @@ class AutomationSetup {
   constructor() {
     this.config = {
       envFile: .env.local',
-      netlifyConfig: netlify.toml',
+      netlifyConfig: 'netlify.toml',
       automationConfig: automation-config.json
     };
   }
 
-  log(message, level = info') {
+  log(message, level = 'info') {
     const timestamp = new Date().toISOString();
     logger.info(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
   }
@@ -83,14 +82,14 @@ const majorVersion = parseInt(nodeVersion.slice(1).split('.')[0]);
 
     // Check if git is available
     try {
-      execSync('git --version', { stdio: pipe' });
+      execSync('git --version', { stdio: 'pipe' });
     } catch (error) {
       throw new Error('Git is required but not found');
     }
 
     // Check if npm is available
     try {
-      execSync('npm --version', { stdio: pipe' });
+      execSync('npm --version', { stdio: 'pipe' });
     } catch (error) {
       throw new Error('npm is required but not found');
     }
@@ -209,8 +208,8 @@ const automationConfig = {
         }
       },
       logging: {
-        level: info',
-        file: netlify-automation.log',
+        level: 'info',
+        file: 'netlify-automation.log',
         maxSize: 10MB',
         maxFiles: 5
       }
@@ -229,7 +228,7 @@ const automationConfig = {
     this.log('Installing automation dependencies...');
 
     try {
-      execSync('npm install', { stdio: inherit', cwd: __dirname });
+      execSync('npm install', { stdio: 'inherit', cwd: __dirname });
       this.log('Dependencies installed successfully');
     } catch (error) {
       throw new Error(`Failed to install dependencies: ${error.message}`);
@@ -271,8 +270,8 @@ const automationConfig = {
     this.log('Adding automation scripts to main package.json...');
 
     try {
-      const mainPackagePath = path.join(__dirname, ..', package.json')
-const mainPackage = JSON.parse(fs.readFileSync(mainPackagePath, utf8'))
+      const mainPackagePath = path.join(__dirname, ..', 'package.json')
+const mainPackage = JSON.parse(fs.readFileSync(mainPackagePath, 'utf8'))
 const automationScripts = {
         automation:start': cd automation && npm start',
         automation:stop': cd automation && npm run stop',

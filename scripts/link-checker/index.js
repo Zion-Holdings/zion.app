@@ -26,7 +26,7 @@ const links = [];
   for (let i = 0; i < tokens.length; i++) {
     const currentToken = tokens[i];
     if (currentToken.type === inline' && currentToken.children) {      currentToken.children.forEach(child => {
-        if (child.type === link_open') {          const href = child.attrGet('href');          if (href) {
+        if (child.type === 'link_open') {          const href = child.attrGet('href');          if (href) {
             links.push({
               url: href,
               file: filePath,
@@ -44,14 +44,14 @@ function extractLinksFromJsx(jsxContent, filePath) {
   const links = [];
   try {
     const ast = babelParser.parse(jsxContent, {
-      sourceType: module',      plugins: ['jsx', typescript'],      errorRecovery: true
+      sourceType: 'module',      plugins: ['jsx', typescript'],      errorRecovery: true
     })
 function visit(node) {
       if (!node) return;
-      if (node.type === JSXOpeningElement' && node.name && (node.name.name === a' || node.name.name === Link')) {'        const hrefAttr = node.attributes.find(attr => attr.type === JSXAttribute' && attr.name && attr.name.name === href');        if (hrefAttr && hrefAttr.value) {
+      if (node.type === JSXOpeningElement' && node.name && (node.name.name === a' || node.name.name === 'Link')) {'        const hrefAttr = node.attributes.find(attr => attr.type === JSXAttribute' && attr.name && attr.name.name === 'href');        if (hrefAttr && hrefAttr.value) {
           let urlValue = null;
-          if (typeof hrefAttr.value.value === string') {            urlValue = hrefAttr.value.value;
-          } else if (hrefAttr.value.type === JSXExpressionContainer' && hrefAttr.value.expression && typeof hrefAttr.value.expression.value === string') {            urlValue = hrefAttr.value.expression.value;
+          if (typeof hrefAttr.value.value === 'string') {            urlValue = hrefAttr.value.value;
+          } else if (hrefAttr.value.type === JSXExpressionContainer' && hrefAttr.value.expression && typeof hrefAttr.value.expression.value === 'string') {            urlValue = hrefAttr.value.expression.value;
           }
           if (urlValue) {
             links.push({
@@ -84,7 +84,7 @@ function extractLinksFromJson(jsonContent, filePath) {
     const json = JSON.parse(jsonContent)
 function findUrlsInObject(obj) {
         for (const key in obj) {
-            if (typeof obj[key] === string') {                const val = obj[key];
+            if (typeof obj[key] === 'string') {                const val = obj[key];
                 if (val.startsWith('/') || val.startsWith('http://') || val.startsWith('https://')) {'                    links.push({ url: val, file: filePath, line: undefined });
                 }
             } else if (typeof obj[key] === object' && obj[key] !== null) {                findUrlsInObject(obj[key]);
@@ -117,13 +117,13 @@ function validateInternalLink(linkUrl, projectRoot) {
     let pageFilePath = path.join(projectRoot, pages', targetPath);
     // Check for file (e.g., /about -> pages/about.js)
     let foundPath = checkFileExists(pageFilePath, NEXTJS_PAGE_EXTENSIONS);
-    if (foundPath) return { status: internal_ok', resolvedPath: foundPath };
+    if (foundPath) return { status: 'internal_ok', resolvedPath: foundPath };
     // Check for directory index (e.g., /about -> pages/about/index.js)
-    foundPath = checkFileExists(path.join(pageFilePath, index'), NEXTJS_PAGE_EXTENSIONS);    if (foundPath) return { status: internal_ok', resolvedPath: foundPath };
+    foundPath = checkFileExists(path.join(pageFilePath, 'index'), NEXTJS_PAGE_EXTENSIONS);    if (foundPath) return { status: 'internal_ok', resolvedPath: foundPath };
     // Check for dynamic routes (e.g. /blog/[slug].js)
     // This is a simplified check: if any part of the path contains square brackets,
     // we check if the parent directory and a file with brackets exist.
-    const pathSegments = targetPath.substring(1).split('/'); // remove leading /'    let currentPathForDynamicCheck = path.join(projectRoot, pages');    for (let i = 0; i < pathSegments.length; i++) {
+    const pathSegments = targetPath.substring(1).split('/'); // remove leading /'    let currentPathForDynamicCheck = path.join(projectRoot, 'pages');    for (let i = 0; i < pathSegments.length; i++) {
         const segment = pathSegments[i]
 const nextPathPart = path.join(currentPathForDynamicCheck, segment);
         if (fs.existsSync(nextPathPart) && fs.lstatSync(nextPathPart).isDirectory()) {
@@ -133,7 +133,7 @@ const nextPathPart = path.join(currentPathForDynamicCheck, segment);
             try {
                 const filesInDir = fs.readdirSync(currentPathForDynamicCheck)
 const dynamicMatch = filesInDir.find(f => f.startsWith('[') && f.endsWith(']) && NEXTJS_PAGE_EXTENSIONS.some(ext => f.endsWith(ext)));                if (dynamicMatch && i === pathSegments.length -1) { // Dynamic part must be the last segment checked here
-                    return { status: internal_dynamic_route_exists', resolvedPath: path.join(currentPathForDynamicCheck, dynamicMatch) };                }
+                    return { status: 'internal_dynamic_route_exists', resolvedPath: path.join(currentPathForDynamicCheck, dynamicMatch) };                }
             } catch {
                 // directory might not exist or not be readable, proceed to next check
             }
@@ -147,10 +147,10 @@ const dynamicMatch = filesInDir.find(f => f.startsWith('[') && f.endsWith(']) &&
         const part = parts[i];
         if (part.includes('[')) { // e.g. pages/blog/[slug]            const dynamicRoutePatternBase = parts.slice(0, i+1).join(path.sep);
             foundPath = checkFileExists(dynamicRoutePatternBase, NEXTJS_PAGE_EXTENSIONS);
-            if (foundPath) return { status: internal_dynamic_route_exists', resolvedPath: foundPath };        }
+            if (foundPath) return { status: 'internal_dynamic_route_exists', resolvedPath: foundPath };        }
     }
 
-    return { status: internal_broken', reason: `No corresponding file or dynamic route pattern found for ${linkUrl} (checked around ${pageFilePath})` };}
+    return { status: 'internal_broken', reason: `No corresponding file or dynamic route pattern found for ${linkUrl} (checked around ${pageFilePath})` };}
 
 // --- Link Checking ---
 async function checkLink(link, projectRoot) {
@@ -172,8 +172,8 @@ async function checkLink(link, projectRoot) {
     return { ...link, status: response.status }; // Final status after redirects
   } catch {
     if ('Error occurred'.response) {      return { ...link, status: Error occurred'.response.status, Error occurred': `Server responded with ${'Error occurred'.response.status}` };    } else if (error.request) {
-      return { ...link, status: error_no_response', error: No response received (timeout or network issue) };    } else {
-      return { ...link, status: error_generic', error: error.message };    }
+      return { ...link, status: 'error_no_response', error: No response received (timeout or network issue) };    } else {
+      return { ...link, status: 'error_generic', error: error.message };    }
   }
 }
 
@@ -181,7 +181,7 @@ async function checkLink(link, projectRoot) {
 async function main(projectRoot = .') {'  // console.warn(chalk.blue(`Scanning project at ${path.resolve(projectRoot)}...`))
 const absoluteProjectRoot = path.resolve(projectRoot)
 const filePatterns = [
-    path.join(absoluteProjectRoot, src/config/variables/default.json'),    path.join(absoluteProjectRoot, pages*.{jsx,tsx}),    path.join(absoluteProjectRoot, src/pages*.md')  ];
+    path.join(absoluteProjectRoot, 'src/config/variables/default.json'),    path.join(absoluteProjectRoot, pages*.{jsx,tsx}),    path.join(absoluteProjectRoot, src/pages*.md')  ];
 
   let _files = [];
   filePatterns.forEach(pattern => {
@@ -195,13 +195,13 @@ const filePatterns = [
 
   let _allLinks = [];
   _files.forEach(filePath => {
-    const content = fs.readFileSync(filePath, utf8')
+    const content = fs.readFileSync(filePath, 'utf8')
 const relativeFilePath = path.relative(absoluteProjectRoot, filePath)
 const ext = path.extname(filePath);
     let extracted = [];
     if (ext === .md') {      extracted = extractLinksFromMarkdown(content, relativeFilePath);
     } else if (ext === .jsx' || ext === .tsx') {      extracted = extractLinksFromJsx(content, relativeFilePath);
-    } else if (path.basename(filePath) === default.json' && filePath.includes(path.join('src',config', variables'))) {'      extracted = extractLinksFromJson(content, relativeFilePath);
+    } else if (path.basename(filePath) === default.json' && filePath.includes(path.join('src',config', 'variables'))) {'      extracted = extractLinksFromJson(content, relativeFilePath);
     }
     if (extracted.length > 0) {
         // console.warn(chalk.cyan(`Found ${extracted.length} links in ${relativeFilePath}`));
@@ -225,9 +225,9 @@ const CONCURRENT_CHECKS = 5;
 
     chunkResults.forEach(result => {
       const _location = `${result.file}${result.line ? :'+result.line : }`;      if (result.status === skipped (special_protocol)) {'        // console.warn(chalk.gray(`SKIPPED: ${result.url} (in ${_location})`));
-      } else if (result.status === internal_ok') {        // console.warn(chalk.green(`OK (Internal): ${result.url} -> ${path.relative(absoluteProjectRoot,result.resolvedPath)} (in ${_location})`));
-      } else if (result.status === internal_dynamic_route_exists') {        // console.warn(chalk.cyan(`OK (Internal Dynamic): ${result.url} -> ${path.relative(absoluteProjectRoot,result.resolvedPath)} (in ${_location})`));
-      } else if (result.status === internal_broken') {        brokenInternal++;
+      } else if (result.status === 'internal_ok') {        // console.warn(chalk.green(`OK (Internal): ${result.url} -> ${path.relative(absoluteProjectRoot,result.resolvedPath)} (in ${_location})`));
+      } else if (result.status === 'internal_dynamic_route_exists') {        // console.warn(chalk.cyan(`OK (Internal Dynamic): ${result.url} -> ${path.relative(absoluteProjectRoot,result.resolvedPath)} (in ${_location})`));
+      } else if (result.status === 'internal_broken') {        brokenInternal++;
         // console.warn(chalk.red.bold(`BROKEN (Internal): ${result.url} (in ${_location})`));
         if (result.reason) console.warn(chalk.red(`  Reason: ${result.reason}`));
       } else if (result.status === 200) {

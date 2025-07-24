@@ -9,7 +9,7 @@ function fixMergeConflicts(directory) {
       fixMergeConflicts(fullPath);
     } else if (file.isFile() && /\.(tsx?|jsx?)$/.test(file.name)) {
       try {
-        let content = fs.readFileSync(fullPath, utf8');        
+        let content = fs.readFileSync(fullPath, 'utf8');        
         if (content.includes('<<<<<<< HEAD')) {'          console.log(`Fixing merge conflicts in: ${fullPath}`);
           
           // Remove merge conflict markers and keep HEAD version

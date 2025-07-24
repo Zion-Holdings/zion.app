@@ -148,10 +148,10 @@ const errors = [];
   async optimizePerformance() {
     this.log('Running performance optimizations...')
 const optimizations = [
-      { name: 'Bundle Analysis', command: 'npm run bundle:analyze' },
-      { name: 'Performance Audit', command: 'npm run perf:audit' },
-      { name: 'Bundle Optimization', command: 'npm run optimize:bundle' },
-      { name: 'Image Optimization', command: 'npm run optimize:images' },
+      { name: 'Bundle Analysis', command: 'npm run bundle: 'analyze' },
+      { name: 'Performance Audit', command: 'npm run perf: 'audit' },
+      { name: 'Bundle Optimization', command: 'npm run optimize: 'bundle' },
+      { name: 'Image Optimization', command: 'npm run optimize: 'images' },
     ];
 
     let improvements = 0;

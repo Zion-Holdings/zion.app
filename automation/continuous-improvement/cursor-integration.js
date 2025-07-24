@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 /**
  * Enhanced Cursor AI Integration for Zion App
@@ -77,7 +76,7 @@ class CursorIntegration {
   async testConnection() {
     try {
       const response = await this.callCursorAPI({
-        action: ping',        workspaceId: this.config.workspaceId
+        action: 'ping',        workspaceId: this.config.workspaceId
       });
       
       logger.info('🔗 Cursor API connection successful');      return true;
@@ -98,7 +97,7 @@ const response = await this.callCursorAPI(prompt)
 const analysis = this.parseCodeQualityResponse(response);
     
     this.lastAnalysis = {
-      type: codeQuality',
+      type: 'codeQuality',
       data: analysis,
       timestamp: new Date().toISOString()
     };
@@ -119,7 +118,7 @@ const response = await this.callCursorAPI(prompt);
 const analysis = this.parsePerformanceResponse(response);
     
     this.lastAnalysis = {
-      type: performance',
+      type: 'performance',
       data: analysis,
       timestamp: new Date().toISOString()
     };
@@ -140,7 +139,7 @@ const response = await this.callCursorAPI(prompt);
 const analysis = this.parseSecurityResponse(response);
     
     this.lastAnalysis = {
-      type: security',
+      type: 'security',
       data: analysis,
       timestamp: new Date().toISOString()
     };
@@ -175,7 +174,7 @@ const analysis = this.parseSecurityResponse(response);
       } catch (error) {
         results.push({
           suggestion,
-          status: failed',
+          status: 'failed',
           error: error.message
         });
       }
@@ -227,7 +226,7 @@ const walkDir = (dir) => {
     // Collect file information
     for (const file of files) {
       try {
-        const content = fs.readFileSync(file, utf8')
+        const content = fs.readFileSync(file, 'utf8')
 const stats = fs.statSync(file);
         
         data.files.push({
@@ -244,7 +243,7 @@ const stats = fs.statSync(file);
     // Run linting
     try {
       const lintOutput = execSync('npm run lint -- --format json', {
-        stdio: pipe',
+        stdio: 'pipe',
         cwd: this.config.projectPath
       }).toString();
       data.lintResults = JSON.parse(lintOutput);
@@ -255,18 +254,18 @@ const stats = fs.statSync(file);
     // Run tests
     try {
       const testOutput = execSync('npm run test -- --json --outputFile=test-results.json', {
-        stdio: pipe',
+        stdio: 'pipe',
         cwd: this.config.projectPath
       }).toString();
-      data.testResults = JSON.parse(fs.readFileSync('test-results.json', utf8'));
+      data.testResults = JSON.parse(fs.readFileSync('test-results.json', 'utf8'));
     } catch (error) {
       data.testResults = { success: false, error: error.message };
     }
     
     // Analyze bundle
     try {
-      const bundleOutput = execSync('npm run bundle:analyze', {
-        stdio: pipe',
+      const bundleOutput = execSync('npm run bundle: 'analyze', {
+        stdio: 'pipe',
         cwd: this.config.projectPath
       }).toString();
       data.bundleAnalysis = this.parseBundleAnalysis(bundleOutput);
@@ -292,7 +291,7 @@ const stats = fs.statSync(file);
     // Measure build time
     try {
       const startTime = Date.now();
-      execSync('npm run build', { stdio: pipe', cwd: this.config.projectPath });
+      execSync('npm run build', { stdio: 'pipe', cwd: this.config.projectPath });
       data.buildTime = Date.now() - startTime;
     } catch (error) {
       data.buildTime = { error: error.message };
@@ -300,8 +299,8 @@ const stats = fs.statSync(file);
     
     // Get bundle size
     try {
-      const bundleOutput = execSync('npm run bundle:report', {
-        stdio: pipe',
+      const bundleOutput = execSync('npm run bundle: 'report', {
+        stdio: 'pipe',
         cwd: this.config.projectPath
       }).toString();
       data.bundleSize = this.parseBundleSize(bundleOutput);
@@ -329,7 +328,7 @@ const stats = fs.statSync(file);
     // Check for vulnerabilities
     try {
       const auditOutput = execSync('npm audit --json', {
-        stdio: pipe',
+        stdio: 'pipe',
         cwd: this.config.projectPath
       }).toString();
       data.vulnerabilities = JSON.parse(auditOutput);
@@ -339,11 +338,11 @@ const stats = fs.statSync(file);
     
     // Get dependency information
     try {
-      const packageJson = JSON.parse(fs.readFileSync('package.json', utf8'));
+      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
       data.dependencies = {
         total: Object.keys(packageJson.dependencies || {}).length,
         devDependencies: Object.keys(packageJson.devDependencies || {}).length,
-        outdated: JSON.parse(execSync('npm outdated --json', { stdio: pipe' }).toString() || {})
+        outdated: JSON.parse(execSync('npm outdated --json', { stdio: 'pipe' }).toString() || {})
       };
     } catch (error) {
       data.dependencies = { error: error.message };
@@ -382,7 +381,7 @@ Please provide:
 6. Specific code examples for improvements
 
 Focus on practical, implementable improvements that will have the most impact on code quality and maintainability.`,
-      context: code-quality-analysis',
+      context: 'code-quality-analysis',
       maxTokens: 3000
     };
   }
@@ -414,7 +413,7 @@ Please provide:
 7. Specific implementation suggestions
 
 Focus on measurable performance improvements that will enhance user experience.`,
-      context: performance-analysis',
+      context: 'performance-analysis',
       maxTokens: 3000
     };
   }
@@ -443,7 +442,7 @@ Please provide:
 7. Specific security fixes with code examples
 
 Focus on security improvements that will protect user data and prevent security breaches.`,
-      context: security-analysis',
+      context: 'security-analysis',
       maxTokens: 3000
     };
   }
@@ -474,7 +473,7 @@ For each suggestion, include:
 - Priority level (critical, high, medium, low)
 
 Focus on improvements that can be implemented immediately and will have the most positive impact.`,
-      context: improvement-suggestions',
+      context: 'improvement-suggestions',
       maxTokens: 4000
     };
   }
@@ -489,7 +488,7 @@ const options = {
         hostname: new URL(this.config.apiEndpoint).hostname,
         port: 443,
         path: /api/analyze',
-        method: POST',
+        method: 'POST',
         headers: {
           Content-Type': application/json',
           Authorization': `Bearer ${this.config.apiKey}`,
@@ -537,7 +536,7 @@ const req = https.request(options, (res) => {
         issues: [],
         recommendations: [],
         metrics: {},
-        priority: medium',
+        priority: 'medium',
         confidence: 0.5,
         error: Failed to parse response
       };
@@ -561,7 +560,7 @@ const req = https.request(options, (res) => {
         optimizations: [],
         bottlenecks: [],
         metrics: {},
-        priority: medium',
+        priority: 'medium',
         confidence: 0.5,
         error: Failed to parse response
       };
@@ -584,8 +583,8 @@ const req = https.request(options, (res) => {
       return {
         vulnerabilities: [],
         recommendations: [],
-        riskLevel: medium',
-        priority: high',
+        riskLevel: 'medium',
+        priority: 'high',
         confidence: 0.5,
         error: Failed to parse response
       };
@@ -607,7 +606,7 @@ const req = https.request(options, (res) => {
     } catch (error) {
       return {
         suggestions: [],
-        priority: medium',
+        priority: 'medium',
         implementation: {},
         testing: [],
         risks: [],
@@ -634,7 +633,7 @@ Please provide the exact code changes needed, including:
 5. Any additional files to create
 
 Make sure the changes are safe and maintain the existing functionality.`,
-        context: code-application',
+        context: 'code-application',
         maxTokens: 2000
       };
       const response = await this.callCursorAPI(prompt);
@@ -645,14 +644,14 @@ const changes = this.parseCodeChanges(response);
       
       return {
         suggestion,
-        status: completed',
+        status: 'completed',
         changes: results,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
         suggestion,
-        status: failed',
+        status: 'failed',
         error: error.message
       };
     }
@@ -677,20 +676,20 @@ const changes = this.parseCodeChanges(response);
     
     for (const change of changes) {
       try {
-        if (change.type === modify') {
+        if (change.type === 'modify') {
           const result = await this.modifyFile(change.file, change.changes);
           results.push(result);
-        } else if (change.type === create') {
+        } else if (change.type === 'create') {
           const result = await this.createFile(change.file, change.content);
           results.push(result);
-        } else if (change.type === delete') {
+        } else if (change.type === 'delete') {
           const result = await this.deleteFile(change.file);
           results.push(result);
         }
       } catch (error) {
         results.push({
           change,
-          status: failed',
+          status: 'failed',
           error: error.message
         });
       }
@@ -705,7 +704,7 @@ const changes = this.parseCodeChanges(response);
   async modifyFile(filePath, changes) {
     try {
       const fullPath = path.resolve(filePath);
-      let content = fs.readFileSync(fullPath, utf8');      
+      let content = fs.readFileSync(fullPath, 'utf8');      
       // Apply changes
       for (const change of changes) {
         if (change.find && change.replace) {
@@ -719,7 +718,7 @@ const changes = this.parseCodeChanges(response);
       
       return {
         file: filePath,
-        status: modified',
+        status: 'modified',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
@@ -743,7 +742,7 @@ const changes = this.parseCodeChanges(response);
       
       return {
         file: filePath,
-        status: created',
+        status: 'created',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
@@ -761,7 +760,7 @@ const changes = this.parseCodeChanges(response);
       
       return {
         file: filePath,
-        status: deleted',
+        status: 'deleted',
         timestamp: new Date().toISOString()
       };
     } catch (error) {

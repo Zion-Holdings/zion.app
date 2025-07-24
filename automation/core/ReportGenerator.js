@@ -2,20 +2,20 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
@@ -47,7 +47,7 @@ class ReportGenerator extends EventEmitter {
         }
       },
       output: {
-        format: markdown', // markdown, json, html
+        format: 'markdown', // markdown, json, html
         saveToFile: true,
         directory: ./reports',
         sendToSlack: true,
@@ -410,7 +410,7 @@ ${this.generateStatusOverview(summary.taskStatuses)}
     // Analyze data and generate recommendations
     if (data.summary?.healthScore < 70) {
       recommendations.push({
-        priority: high',
+        priority: 'high',
         title: System Health Improvement Needed',
         impact: High - System performance may be degraded',
         action: Review recent anomalies and system metrics
@@ -419,7 +419,7 @@ ${this.generateStatusOverview(summary.taskStatuses)}
     
     if (data.summary?.errorRate > 10) {
       recommendations.push({
-        priority: high',
+        priority: 'high',
         title: High Error Rate Detected',
         impact: High - Many tasks are failing',
         action: Investigate and fix failing tasks
@@ -428,7 +428,7 @@ ${this.generateStatusOverview(summary.taskStatuses)}
     
     if (data.summary?.successRate < 90) {
       recommendations.push({
-        priority: medium',
+        priority: 'medium',
         title: Task Success Rate Below Target',
         impact: Medium - Some automation tasks are failing',
         action: Review task configurations and error logs

@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 const fs = require('fs');
 const path = require('path');
@@ -35,29 +34,29 @@ class AutonomousOrchestrator {
     this.restartDelay = 10000; // 10 seconds
     this.scripts = [
       {
-        name: efficient-improvement-system',
-        path: automation/efficient-improvement-system.js',
+        name: 'efficient-improvement-system',
+        path: 'automation/efficient-improvement-system.js',
         args: [],
         autoRestart: true,
         memoryLimit: 512
       },
       {
-        name: syntax-fixer',
-        path: automation/syntax-fixer.js',
+        name: 'syntax-fixer',
+        path: 'automation/syntax-fixer.js',
         args: [],
         autoRestart: true,
         memoryLimit: 256
       },
       {
-        name: monitor-system',
-        path: automation/monitor-improvement-system.js',
+        name: 'monitor-system',
+        path: 'automation/monitor-improvement-system.js',
         args: ['monitor'],
         autoRestart: true,
         memoryLimit: 128
       }
     ];
     this.projectRoot = process.cwd();
-    this.logDir = path.join(this.projectRoot, logs');
+    this.logDir = path.join(this.projectRoot, 'logs');
     this.pidFile = path.join(this.projectRoot, automation', .orchestrator.pid');
   }
 
@@ -77,7 +76,7 @@ class AutonomousOrchestrator {
     if (!fs.existsSync(this.logDir)) {
       fs.mkdirSync(this.logDir, { recursive: true });
     }
-    const automationDir = path.join(this.projectRoot, automation');
+    const automationDir = path.join(this.projectRoot, 'automation');
     if (!fs.existsSync(automationDir)) {
       fs.mkdirSync(automationDir, { recursive: true });
     }
@@ -195,17 +194,17 @@ if (require.main === module) {
   const orchestrator = new AutonomousOrchestrator();
   const args = process.argv.slice(2);
   const command = args[0];
-  if (command === start') {
+  if (command === 'start') {
     orchestrator.start().catch(error => {
       logger.error('❌ Failed to start orchestrator:', error);
       process.exit(1);
     });
-  } else if (command === stop') {
+  } else if (command === 'stop') {
     orchestrator.stop().catch(error => {
       logger.error('❌ Failed to stop orchestrator:', error);
       process.exit(1);
     });
-  } else if (command === status') {
+  } else if (command === 'status') {
     const status = orchestrator.getStatus();
     logger.info('📊 Orchestrator Status:', JSON.stringify(status, null, 2));
   } else {

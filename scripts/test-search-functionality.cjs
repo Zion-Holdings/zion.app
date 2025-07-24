@@ -22,7 +22,7 @@ async function testSearchAPI() {
   console.warn('1. Testing Search API...');
 
   try {
-    const response = await fetch('http://localhost:3000/api/search?query=AI')
+    const response = await fetch('http://localhost:3000/api/search?query='AI')
 const data = await response.json();
 
     if (response.ok && data.results) {
@@ -45,7 +45,7 @@ async function testSuggestionsAPI() {
 
   try {
     const response = await fetch(
-      'http://localhost:3000/api/search/suggest?q=GPU',
+      'http://localhost:3000/api/search/suggest?q='GPU',
     )
 const data = await response.json();
 
@@ -139,7 +139,7 @@ async function runTests() {
 
   console.warn('\n📋 Summary of Changes:');
   console.warn(
-    '   📁 Modified: src/components/search/AutocompleteSuggestions.tsx',
+    '   📁 Modified: 'src/components/search/AutocompleteSuggestions.tsx',
   );
   console.warn('   📁 Modified: src/components/SearchBar.tsx');
   console.warn('   📁 Modified: src/components/search/EnhancedSearchInput.tsx');

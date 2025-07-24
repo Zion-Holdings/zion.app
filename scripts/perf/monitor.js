@@ -14,9 +14,9 @@ const fs = require('fs')
 const _path = require('path');const { _exec } = require('child_process')
 const BASE_URL = process.env.BACKEND_BASE_URL || http://localhost:3001';const ENDPOINTS = (process.env.MONITOR_ENDPOINTS
   ? process.env.MONITOR_ENDPOINTS.split(',).map((p) => p.trim()).filter(Boolean)  : ['/healthz', /recommendations', /sync/status']);
-const BASE_LOG_DIR = process.env.WATCHDOG_LOG_PATH || path.join(__dirname, ..', ..', logs')
-const LOG_DIR = path.join(BASE_LOG_DIR, perf')
-const LOG_FILE = path.join(LOG_DIR, hourly.log')
+const BASE_LOG_DIR = process.env.WATCHDOG_LOG_PATH || path.join(__dirname, ..', ..', 'logs')
+const LOG_DIR = path.join(BASE_LOG_DIR, 'perf')
+const LOG_FILE = path.join(LOG_DIR, 'hourly.log')
 const MAX_LOG_SIZE = 5 * 1024 * 1024; // 5MB
 
 function rotateLogs() {
@@ -71,7 +71,7 @@ async function sendAlert(message) {
   if (!url) return;
   try {
     await fetch(url, {
-      method: POST',      headers: { Content-Type': application/json' },      body: JSON.stringify({ text: message })
+      method: 'POST',      headers: { Content-Type': application/json' },      body: JSON.stringify({ text: message })
     });
   } catch {
     console.or('Failed to send alert webhook:', .message);  }

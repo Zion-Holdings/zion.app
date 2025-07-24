@@ -121,9 +121,9 @@ const envPath = this.config.envFile;
       'CURSOR_WORKSPACE_ID=',
       'CURSOR_LOCAL_PORT=3002',
       'CURSOR_MASTER_PORT=3004',
-      'ENABLE_CURSOR_COMMUNICATION=true',
-      'CURSOR_AUTO_FIX=true',
-      'CURSOR_CONTINUOUS_MONITORING=true',
+      'ENABLE_CURSOR_COMMUNICATION='true',
+      'CURSOR_AUTO_FIX='true',
+      'CURSOR_CONTINUOUS_MONITORING='true',
       '',
     ];
 

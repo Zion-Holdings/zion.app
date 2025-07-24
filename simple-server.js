@@ -7,7 +7,7 @@ const PORT = 3001;
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({
-    status: ok',
+    status: 'ok',
     timestamp: new Date().toISOString(),
     message: Zion App is running successfully!',
     mode: Simple Working App',

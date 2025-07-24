@@ -12,26 +12,25 @@ class  {
       const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 
 
@@ -67,15 +66,15 @@ async function testComponents() {
     logger.info('\n1️⃣ Testing core components instantiation...');
     
     const notificationManager = new NotificationManager();
-    results.tests.push({ name: NotificationManager', status: PASS' });
+    results.tests.push({ name: 'NotificationManager', status: 'PASS' });
     results.passed++;
     
     const anomalyDetector = new AnomalyDetector();
-    results.tests.push({ name: AnomalyDetector', status: PASS' });
+    results.tests.push({ name: 'AnomalyDetector', status: 'PASS' });
     results.passed++;
     
     const taskScheduler = new TaskScheduler();
-    results.tests.push({ name: TaskScheduler', status: PASS' });
+    results.tests.push({ name: 'TaskScheduler', status: 'PASS' });
     results.passed++;
     
     const automationManager = new AutonomousAutomationManager({
@@ -83,13 +82,13 @@ async function testComponents() {
       anomalyDetector,
       taskScheduler
     });
-    results.tests.push({ name: AutonomousAutomationManager', status: PASS' });
+    results.tests.push({ name: 'AutonomousAutomationManager', status: 'PASS' });
     results.passed++;
     
     const reportGenerator = new ReportGenerator({
       notificationManager
     });
-    results.tests.push({ name: ReportGenerator', status: PASS' });
+    results.tests.push({ name: 'ReportGenerator', status: 'PASS' });
     results.passed++;
     
     logger.info('✅ All core components instantiated successfully');
@@ -98,19 +97,19 @@ async function testComponents() {
     logger.info('\n2️⃣ Testing automation tasks...');
     
     const dependencyUpdater = new DependencyUpdater({ dryRun: true });
-    results.tests.push({ name: DependencyUpdater', status: PASS' });
+    results.tests.push({ name: 'DependencyUpdater', status: 'PASS' });
     results.passed++;
     
     const securityScanner = new SecurityScanner({ dryRun: true });
-    results.tests.push({ name: SecurityScanner', status: PASS' });
+    results.tests.push({ name: 'SecurityScanner', status: 'PASS' });
     results.passed++;
     
     const codeQualityEnforcer = new CodeQualityEnforcer({ dryRun: true });
-    results.tests.push({ name: CodeQualityEnforcer', status: PASS' });
+    results.tests.push({ name: 'CodeQualityEnforcer', status: 'PASS' });
     results.passed++;
     
     const staleCleaner = new StaleCleaner({ dryRun: true });
-    results.tests.push({ name: StaleCleaner', status: PASS' });
+    results.tests.push({ name: 'StaleCleaner', status: 'PASS' });
     results.passed++;
     
     logger.info('✅ All automation tasks instantiated successfully');
@@ -122,11 +121,11 @@ async function testComponents() {
     const stats = taskScheduler.getSchedulingStats();
     
     if (stats.tasks && Object.keys(stats.tasks).length > 0) {
-      results.tests.push({ name: TaskScheduler Recording', status: PASS' });
+      results.tests.push({ name: TaskScheduler Recording', status: 'PASS' });
       results.passed++;
       logger.info('✅ Task scheduler recording works');
     } else {
-      results.tests.push({ name: TaskScheduler Recording', status: FAIL' });
+      results.tests.push({ name: TaskScheduler Recording', status: 'FAIL' });
       results.failed++;
       logger.info('❌ Task scheduler recording failed');
     }
@@ -139,11 +138,11 @@ async function testComponents() {
     
     const anomalyStats = anomalyDetector.getAnomalyStats();
     if (anomalyStats.total >= 0) {
-      results.tests.push({ name: Anomaly Detection', status: PASS' });
+      results.tests.push({ name: Anomaly Detection', status: 'PASS' });
       results.passed++;
       logger.info('✅ Anomaly detection works');
     } else {
-      results.tests.push({ name: Anomaly Detection', status: FAIL' });
+      results.tests.push({ name: Anomaly Detection', status: 'FAIL' });
       results.failed++;
       logger.info('❌ Anomaly detection failed');
     }
@@ -154,13 +153,13 @@ async function testComponents() {
     try {
       await notificationManager.sendNotification(
         Test notification from automation system',
-        { priority: medium', category: info', taskName: test' }
+        { priority: 'medium', category: 'info', taskName: 'test' }
       );
-      results.tests.push({ name: Notification System', status: PASS' });
+      results.tests.push({ name: Notification System', status: 'PASS' });
       results.passed++;
       logger.info('✅ Notification system works');
     } catch (error) {
-      results.tests.push({ name: Notification System', status: FAIL' });
+      results.tests.push({ name: Notification System', status: 'FAIL' });
       results.failed++;
       logger.info('❌ Notification system failed:', error.message);
     }
@@ -179,16 +178,16 @@ async function testComponents() {
       const report = await reportGenerator.generateReport('daily', reportData);
       
       if (report && report.content) {
-        results.tests.push({ name: Report Generation', status: PASS' });
+        results.tests.push({ name: Report Generation', status: 'PASS' });
         results.passed++;
         logger.info('✅ Report generation works');
       } else {
-        results.tests.push({ name: Report Generation', status: FAIL' });
+        results.tests.push({ name: Report Generation', status: 'FAIL' });
         results.failed++;
         logger.info('❌ Report generation failed');
       }
     } catch (error) {
-      results.tests.push({ name: Report Generation', status: FAIL' });
+      results.tests.push({ name: Report Generation', status: 'FAIL' });
       results.failed++;
       logger.info('❌ Report generation failed:', error.message);
     }
@@ -213,14 +212,14 @@ async function testComponents() {
       const orchestrator = new IntelligentAutomationOrchestrator(config);
       await orchestrator.initialize();
       
-      results.tests.push({ name: Orchestrator Integration', status: PASS' });
+      results.tests.push({ name: Orchestrator Integration', status: 'PASS' });
       results.passed++;
       logger.info('✅ Orchestrator integration works');
       
       await orchestrator.stop();
       
     } catch (error) {
-      results.tests.push({ name: Orchestrator Integration', status: FAIL' });
+      results.tests.push({ name: Orchestrator Integration', status: 'FAIL' });
       results.failed++;
       logger.info('❌ Orchestrator integration failed:', error.message);
     }
@@ -228,26 +227,26 @@ async function testComponents() {
     // Test 8: Configuration Loading
     logger.info('\n8️⃣ Testing configuration loading...');
     
-    const configPath = path.join(__dirname, config.json');
+    const configPath = path.join(__dirname, 'config.json');
     if (fs.existsSync(configPath)) {
       try {
-        const config = JSON.parse(fs.readFileSync(configPath, utf8'));
+        const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
         if (config.autonomous && config.tasks) {
-          results.tests.push({ name: Configuration Loading', status: PASS' });
+          results.tests.push({ name: Configuration Loading', status: 'PASS' });
           results.passed++;
           logger.info('✅ Configuration loading works');
         } else {
-          results.tests.push({ name: Configuration Loading', status: FAIL' });
+          results.tests.push({ name: Configuration Loading', status: 'FAIL' });
           results.failed++;
           logger.info('❌ Configuration loading failed - invalid structure');
         }
       } catch (error) {
-        results.tests.push({ name: Configuration Loading', status: FAIL' });
+        results.tests.push({ name: Configuration Loading', status: 'FAIL' });
         results.failed++;
         logger.info('❌ Configuration loading failed:', error.message);
       }
     } else {
-      results.tests.push({ name: Configuration Loading', status: FAIL' });
+      results.tests.push({ name: Configuration Loading', status: 'FAIL' });
       results.failed++;
       logger.info('❌ Configuration file not found');
     }

@@ -419,7 +419,7 @@ export default function Signup() {
       // Start dev server with fixed configuration
       const devProcess = spawn(
         'npm',
-        ['run', 'dev:stable', '--', '--port', '3001'],
+        ['run', 'dev: 'stable', '--', '--port', '3001'],
         {
           stdio: 'pipe',
           detached: false,

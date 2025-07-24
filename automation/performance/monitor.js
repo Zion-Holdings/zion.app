@@ -2,20 +2,20 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
@@ -29,8 +29,8 @@ class PerformanceMonitor {
   constructor(config = {}) {
     this.config = {
       interval: 60000, // 1 minute
-      logFile: path.join(__dirname, performance.log'),
-      reportFile: path.join(__dirname, performance-report.json'),
+      logFile: path.join(__dirname, 'performance.log'),
+      reportFile: path.join(__dirname, 'performance-report.json'),
       thresholds: {
         memory: 100 * 1024 * 1024, // 100MB
         cpu: 80, // 80%
@@ -121,7 +121,7 @@ class PerformanceMonitor {
 
   async getDiskUsage() {
     try {
-      const output = execSync('df -h .', { encoding: utf8' });
+      const output = execSync('df -h .', { encoding: 'utf8' });
       const lines = output.split('\n');
       const data = lines[1].split(/\s+/);
       
@@ -148,17 +148,17 @@ class PerformanceMonitor {
   async getBuildMetrics() {
     try {
       const startTime = Date.now();
-      execSync('npm run build', { stdio: pipe' });
+      execSync('npm run build', { stdio: 'pipe' });
       const buildTime = Date.now() - startTime;
       
       return {
-        status: success',
+        status: 'success',
         buildTime,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: failed',
+        status: 'failed',
         error: error.message,
         timestamp: new Date().toISOString()
       };
@@ -167,7 +167,7 @@ class PerformanceMonitor {
 
   async getBundleMetrics() {
     try {
-      const output = execSync('npm run bundle:analyze', { stdio: pipe' });
+      const output = execSync('npm run bundle: 'analyze', { stdio: 'pipe' });
       return this.parseBundleAnalysis(output);
     } catch (error) {
       return { error: error.message };
@@ -199,8 +199,8 @@ class PerformanceMonitor {
     // Memory threshold
     if (metrics.memory.heapUsed > this.config.thresholds.memory) {
       alerts.push({
-        type: memory',
-        severity: warning',
+        type: 'memory',
+        severity: 'warning',
         message: `High memory usage: ${Math.round(metrics.memory.heapUsed / 1024 / 1024)}MB`,
         timestamp: metrics.timestamp
       });
@@ -209,8 +209,8 @@ class PerformanceMonitor {
     // Build time threshold
     if (metrics.build.status === success' && metrics.build.buildTime > this.config.thresholds.responseTime) {
       alerts.push({
-        type: build',
-        severity: warning',
+        type: 'build',
+        severity: 'warning',
         message: `Slow build time: ${metrics.build.buildTime}ms`,
         timestamp: metrics.timestamp
       });
@@ -271,8 +271,8 @@ class PerformanceMonitor {
 
     if (this.calculateAverageMemory() > 100 * 1024 * 1024) { // 100MB
       recommendations.push({
-        type: performance',
-        priority: high',
+        type: 'performance',
+        priority: 'high',
         message: High memory usage detected. Consider optimizing memory usage.',
         action: Review memory-intensive operations and implement memory optimization strategies.
       });
@@ -280,8 +280,8 @@ class PerformanceMonitor {
 
     if (this.alerts.length > 10) {
       recommendations.push({
-        type: reliability',
-        priority: high',
+        type: 'reliability',
+        priority: 'high',
         message: High alert rate detected. Review system performance.',
         action: Investigate performance bottlenecks and optimize critical paths.
       });

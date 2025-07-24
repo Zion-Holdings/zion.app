@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 /**
  * Chat Reconnection System Optimizer
@@ -37,7 +36,7 @@ const http = require('http');
 // Configuration
 const CONFIG = {
   CHAT_SERVER: http://localhost:3009',
-  LOG_DIR: logs',
+  LOG_DIR: 'logs',
   MAX_LOG_SIZE: 50 * 1024 * 1024, // 50MB
   MAX_LOG_AGE: 7 * 24 * 60 * 60 * 1000, // 7 days
   OPTIMIZATION_INTERVAL: 300000, // 5 minutes
@@ -159,7 +158,7 @@ const age = Date.now() - stats.mtime.getTime();
 const backupFile = `${logFile}.${timestamp}`;
 
     // Read current log
-    const content = fs.readFileSync(logFile, utf8');
+    const content = fs.readFileSync(logFile, 'utf8');
 
     // Keep only last 1000 lines
     const lines = content.split('\n')
@@ -188,7 +187,7 @@ const heapUsedMB = Math.round(memUsage.heapUsed / 1024 / 1024);
     if (heapUsedMB > 100) {
       logger.info(`⚠️ High memory usage: ${heapUsedMB}MB`);
       this.optimizations.push({
-        type: MEMORY_HIGH',
+        type: 'MEMORY_HIGH',
         timestamp: Date.now(),
         value: heapUsedMB
       });

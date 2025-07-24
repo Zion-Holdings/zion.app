@@ -366,7 +366,7 @@ const health = await response.json();
 
     try {
       // Run linting fixes
-      execSync('npm run lint:fix', { stdio: 'inherit' });
+      execSync('npm run lint: 'fix', { stdio: 'inherit' });
 
       // Run TypeScript check
       execSync('npm run typecheck', { stdio: 'inherit' });

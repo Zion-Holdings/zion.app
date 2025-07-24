@@ -2,20 +2,20 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
@@ -29,7 +29,7 @@ const path = require('path');
 class AIEnhancer extends AutomationTask {
   constructor(config = {}) {
     super({
-      name: AIEnhancer',
+      name: 'AIEnhancer',
       schedule: 0 */6 * * *', // Every 6 hours
       enabled: true,
       autoApply: false, // Don't auto-apply by default
@@ -102,17 +102,17 @@ class AIEnhancer extends AutomationTask {
   loadAIConfig() {
     return {
       openai: {
-        enabled: process.env.OPENAI_ENABLED === true',
+        enabled: process.env.OPENAI_ENABLED === 'true',
         apiKey: process.env.OPENAI_API_KEY,
         model: process.env.OPENAI_MODEL || gpt-4-turbo-preview
       },
       claude: {
-        enabled: process.env.CLAUDE_ENABLED === true',
+        enabled: process.env.CLAUDE_ENABLED === 'true',
         apiKey: process.env.CLAUDE_API_KEY,
         model: process.env.CLAUDE_MODEL || claude-3-sonnet-20240229
       },
       local: {
-        enabled: process.env.LOCAL_AI_ENABLED === true',
+        enabled: process.env.LOCAL_AI_ENABLED === 'true',
         endpoint: process.env.LOCAL_AI_ENDPOINT || http://localhost:11434',
         model: process.env.LOCAL_AI_MODEL || codellama:7b
       }
@@ -284,7 +284,7 @@ Format the response as JSON with the following structure:
     return {
       suggestions: [
         {
-          type: quality',
+          type: 'quality',
           description: Consider using TypeScript for better type safety',
           code: // Add type annotations',
           impact: high
@@ -306,7 +306,7 @@ Format the response as JSON with the following structure:
     return {
       suggestions: [
         {
-          type: performance',
+          type: 'performance',
           description: Optimize component rendering with React.memo',
           code: const Component = React.memo(({ props }) => { ... }),
           impact: medium
@@ -328,7 +328,7 @@ Format the response as JSON with the following structure:
     return {
       suggestions: [
         {
-          type: security',
+          type: 'security',
           description: Sanitize user input to prevent XSS attacks',
           code: const sanitizedInput = DOMPurify.sanitize(userInput),
           impact: high
@@ -345,7 +345,7 @@ Format the response as JSON with the following structure:
 
   parseAIResponse(response) {
     try {
-      if (typeof response === string') {
+      if (typeof response === 'string') {
         return JSON.parse(response);
       }
       return response;
@@ -362,7 +362,7 @@ Format the response as JSON with the following structure:
     // Check for common issues
     if (content.includes('console.log')) {
       suggestions.push({
-        type: quality',
+        type: 'quality',
         description: Remove console.log statements from production code',
         code: // Remove or use proper logging',
         impact: low
@@ -371,7 +371,7 @@ Format the response as JSON with the following structure:
     
     if (content.includes('var )) {
       suggestions.push({
-        type: quality',
+        type: 'quality',
         description: Use const or let instead of var',
         code: const variable = value;,
         impact: medium
@@ -431,7 +431,7 @@ Format the response as JSON with the following structure:
       const stats = await fs.stat(readmePath);
       docFiles.push({
         path: readmePath,
-        name: README.md',
+        name: 'README.md',
         size: stats.size,
         relativePath: README.md
       });
@@ -758,7 +758,7 @@ Format the response as JSON with the following structure:
   async getBuildTime() {
     try {
       const startTime = Date.now();
-      execSync('npm run build', { stdio: pipe' });
+      execSync('npm run build', { stdio: 'pipe' });
       return Date.now() - startTime;
     } catch {
       return 0;
@@ -803,7 +803,7 @@ Format the response as JSON with the following structure:
     const summary = {
       totalEnhancements: 0,
       totalSuggestions: results.suggestions.length,
-      highImpactSuggestions: results.suggestions.filter(s => s.impact === high').length,
+      highImpactSuggestions: results.suggestions.filter(s => s.impact === 'high').length,
       appliedEnhancements: 0
     };
     

@@ -9,10 +9,10 @@ async function askZionGPT(prompt) {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 25000); // 25 second timeout
     
-    const res = await fetch('https://api.openai.com/v1/chat/completions', {'      method: POST',      headers: {
+    const res = await fetch('https://api.openai.com/v1/chat/completions', {'      method: 'POST',      headers: {
         Content-Type': application/json',Authorization': `Bearer ${OPENAI_API_KEY}`'      },
       body: JSON.stringify({
-        model: gpt-3.5-turbo',        messages: [{ role: user', content: prompt }]      }),
+        model: 'gpt-3.5-turbo',        messages: [{ role: 'user', content: prompt }]      }),
       signal: controller.signal
     });
 
@@ -23,7 +23,7 @@ async function askZionGPT(prompt) {
 
     const data = await res.json();
     return { answer: data.choices?.[0]?.message?.content ||  };  } catch (error) {
-    if (error.name === AbortError') {'      console.error('OpenAI request timed out');      return { answer: Request timed out. Please try again.' };    }
+    if (error.name === 'AbortError') {'      console.error('OpenAI request timed out');      return { answer: Request timed out. Please try again.' };    }
     console.error('OpenAI request error', error);    return { answer: Error contacting model' };  }
 }
 
@@ -40,7 +40,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     return false; // Don't keep the message channel open'  }
 
   // Handle different message types
-  if (message.type === ask') {'    // Handle async operation properly with error handling
+  if (message.type === 'ask') {'    // Handle async operation properly with error handling
     askZionGPT(message.prompt)
       .then(response => {
         try {
@@ -56,7 +56,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     return true; // Keep the message channel open for async response
   }
 
-  if (message.type === post-job') {'    try {
+  if (message.type === 'post-job') {'    try {
       chrome.tabs.create({ url: `${BASE_URL}/jobs/new` });
       sendResponse({ ok: true });
     } catch (error) {
@@ -67,7 +67,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     return false; // Synchronous response
   }
   
-  if (message.type === resume-search') {'    try {
+  if (message.type === 'resume-search') {'    try {
       chrome.tabs.create({ url: `${BASE_URL}/talent` });
       sendResponse({ ok: true });
     } catch (error) {
@@ -78,7 +78,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     return false; // Synchronous response
   }
   
-  if (message.type === view-notifications') {'    try {
+  if (message.type === 'view-notifications') {'    try {
       chrome.tabs.create({ url: `${BASE_URL}/notifications` });
       sendResponse({ ok: true });
     } catch (error) {

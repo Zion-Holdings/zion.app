@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 const fs = require('fs');
 const path = require('path');
@@ -31,7 +30,7 @@ function findFiles(dir, extensions = ['.ts', .tsx', .js', .jsx']) {
 // Function to fix a single file by removing extraneous single quotes
 function fixFile(filePath) {
   try {
-    let content = fs.readFileSync(filePath, utf8');
+    let content = fs.readFileSync(filePath, 'utf8');
     let originalContent = content;
     
     // Remove all sequences of 3 or more single quotes
@@ -99,7 +98,7 @@ console.log(`\n✨ Fixed ${fixedCount} files.`);
 
 console.log('\n🔍 Running syntax check...');
 try {
-  execSync('npx tsc --noEmit --skipLibCheck', { stdio: inherit' });
+  execSync('npx tsc --noEmit --skipLibCheck', { stdio: 'inherit' });
   console.log('✅ TypeScript syntax check passed');
 } catch (error) {
   console.error('⚠️ TypeScript syntax check failed - some files may still need manual fixing');

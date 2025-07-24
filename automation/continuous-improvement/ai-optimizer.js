@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 /**
  * AI Optimizer for Continuous Improvement
@@ -60,7 +59,7 @@ const AI_CONFIG = {
   
   // Local AI Models
   LOCAL_AI: {
-    ENABLED: process.env.LOCAL_AI_ENABLED === true',
+    ENABLED: process.env.LOCAL_AI_ENABLED === 'true',
     ENDPOINT: process.env.LOCAL_AI_ENDPOINT || http://localhost:11434',
     MODEL: process.env.LOCAL_AI_MODEL || codellama:7b
   },
@@ -120,7 +119,7 @@ class AIOptimizer {
     // Claude
     if (AI_CONFIG.CLAUDE.API_KEY) {
       this.aiProviders.set('claude', {
-        name: Claude',
+        name: 'Claude',
         analyze: (data) => this.analyzeWithClaude(data),
         suggest: (problem) => this.suggestWithClaude(problem),
         implement: (suggestion) => this.implementWithClaude(suggestion)
@@ -228,7 +227,7 @@ const timeoutId = setTimeout(processLoop,  10000);
     
     // Combine results and generate improvement suggestions
     const combinedResults = results
-      .filter(result => result.status === fulfilled')
+      .filter(result => result.status === 'fulfilled')
       .map(result => result.value);
     
     await this.generateComprehensiveSuggestions(combinedResults);
@@ -240,7 +239,7 @@ const timeoutId = setTimeout(processLoop,  10000);
   async collectQuickScanData() {
     return {
       timestamp: new Date().toISOString(),
-      type: quick_scan',
+      type: 'quick_scan',
       data: {
         buildStatus: await this.checkBuildStatus(),
         errorLogs: await this.getRecentErrors(),
@@ -297,7 +296,7 @@ const timeoutId = setTimeout(processLoop,  10000);
     try {
       const response = await this.callClaudeAPI(prompt);
       return {
-        provider: Claude',
+        provider: 'Claude',
         analysis: this.parseClaudeResponse(response),
         confidence: 0.88,
         timestamp: new Date().toISOString()
@@ -336,7 +335,7 @@ const timeoutId = setTimeout(processLoop,  10000);
 ${JSON.stringify(data, null, 2)}
 
 Focus on practical, implementable improvements that will have the most impact.`,
-      context: continuous-improvement',
+      context: 'continuous-improvement',
       maxTokens: 2000
     };
   }
@@ -348,11 +347,11 @@ Focus on practical, implementable improvements that will have the most impact.`,
     return {
       messages: [
         {
-          role: system',
+          role: 'system',
           content: You are an expert software engineer specializing in web application optimization and continuous improvement.
         },
         {
-          role: user',
+          role: 'user',
           content: `Analyze this application data and provide optimization suggestions:
 
 ${JSON.stringify(data, null, 2)}
@@ -372,7 +371,7 @@ Focus on practical, implementable improvements that will have the most impact.`
     return {
       messages: [
         {
-          role: user',
+          role: 'user',
           content: `As an expert software engineer, analyze this application data and provide optimization suggestions:
 
 ${JSON.stringify(data, null, 2)}
@@ -410,7 +409,7 @@ Focus on practical, implementable improvements that will have the most impact.`,
         hostname: new URL(AI_CONFIG.CURSOR.API_ENDPOINT).hostname,
         port: 443,
         path: /api/analyze',
-        method: POST',
+        method: 'POST',
         headers: {
           Content-Type': application/json',
           Authorization': `Bearer ${AI_CONFIG.CURSOR.API_KEY}`,
@@ -443,10 +442,10 @@ Focus on practical, implementable improvements that will have the most impact.`,
     return new Promise((resolve, reject) => {
       const postData = JSON.stringify(prompt);
       const options = {
-        hostname: api.openai.com',
+        hostname: 'api.openai.com',
         port: 443,
         path: /v1/chat/completions',
-        method: POST',
+        method: 'POST',
         headers: {
           Content-Type': application/json',
           Authorization': `Bearer ${AI_CONFIG.OPENAI.API_KEY}`,
@@ -479,10 +478,10 @@ Focus on practical, implementable improvements that will have the most impact.`,
     return new Promise((resolve, reject) => {
       const postData = JSON.stringify(prompt);
       const options = {
-        hostname: api.anthropic.com',
+        hostname: 'api.anthropic.com',
         port: 443,
         path: /v1/messages',
-        method: POST',
+        method: 'POST',
         headers: {
           Content-Type': application/json',
           x-api-key': AI_CONFIG.CLAUDE.API_KEY,
@@ -519,7 +518,7 @@ Focus on practical, implementable improvements that will have the most impact.`,
         hostname: new URL(AI_CONFIG.LOCAL_AI.ENDPOINT).hostname,
         port: new URL(AI_CONFIG.LOCAL_AI.ENDPOINT).port || 80,
         path: /api/generate',
-        method: POST',
+        method: 'POST',
         headers: {
           Content-Type': application/json',
           Content-Length': Buffer.byteLength(postData)
@@ -556,7 +555,7 @@ Focus on practical, implementable improvements that will have the most impact.`,
         priority: response.priority || medium
       };
     } catch (error) {
-      return { suggestions: [], issues: [], improvements: [], priority: low' };
+      return { suggestions: [], issues: [], improvements: [], priority: 'low' };
     }
   }
 
@@ -573,7 +572,7 @@ Focus on practical, implementable improvements that will have the most impact.`,
         priority: this.extractPriority(content)
       };
     } catch (error) {
-      return { suggestions: [], issues: [], improvements: [], priority: low' };
+      return { suggestions: [], issues: [], improvements: [], priority: 'low' };
     }
   }
 
@@ -590,7 +589,7 @@ Focus on practical, implementable improvements that will have the most impact.`,
         priority: this.extractPriority(content)
       };
     } catch (error) {
-      return { suggestions: [], issues: [], improvements: [], priority: low' };
+      return { suggestions: [], issues: [], improvements: [], priority: 'low' };
     }
   }
 
@@ -607,7 +606,7 @@ Focus on practical, implementable improvements that will have the most impact.`,
         priority: this.extractPriority(content)
       };
     } catch (error) {
-      return { suggestions: [], issues: [], improvements: [], priority: low' };
+      return { suggestions: [], issues: [], improvements: [], priority: 'low' };
     }
   }
 
@@ -738,9 +737,9 @@ Focus on practical, implementable improvements that will have the most impact.`,
   async checkBuildStatus() {
     try {
       // This would check the actual build status
-      return { status: success', timestamp: new Date().toISOString() };
+      return { status: 'success', timestamp: new Date().toISOString() };
     } catch (error) {
-      return { status: error', error: error.message };
+      return { status: 'error', error: error.message };
     }
   }
 
@@ -778,9 +777,9 @@ Focus on practical, implementable improvements that will have the most impact.`,
   async checkDependencyStatus() {
     try {
       // This would check actual dependency status
-      return { status: up-to-date' };
+      return { status: 'up-to-date' };
     } catch (error) {
-      return { status: unknown' };
+      return { status: 'unknown' };
     }
   }
 

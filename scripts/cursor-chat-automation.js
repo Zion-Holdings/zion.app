@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 const io = require('socket.io-client')
 const { EventEmitter } = require('events')
@@ -42,8 +41,8 @@ class CursorChatAutomation extends EventEmitter {
       reconnectInterval: 5000,
       heartbeatInterval: 30000,
       maxReconnectAttempts: 10,
-      logFile: logs/cursor-chat-automation.log',
-      statusFile: logs/cursor-chat-status.json',
+      logFile: 'logs/cursor-chat-automation.log',
+      statusFile: 'logs/cursor-chat-status.json',
       ...config
     };
 
@@ -262,12 +261,12 @@ class CursorChatAutomation extends EventEmitter {
 
   sendPresenceMessage() {
     const message = {
-      roomId: cursor-chat',
+      roomId: 'cursor-chat',
       message: `🤖 Cursor Chat Automation active - ${new Date().toISOString()}`,
-      sender: cursor-automation',
-      type: text',
+      sender: 'cursor-automation',
+      type: 'text',
       metadata: {
-        type: presence',
+        type: 'presence',
         uptime: this.getUptime(),
         version: 1.0.0
       }
@@ -278,12 +277,12 @@ class CursorChatAutomation extends EventEmitter {
 
   sendReconnectionMessage(attemptNumber) {
     const message = {
-      roomId: cursor-chat',
+      roomId: 'cursor-chat',
       message: `🔄 Cursor Chat Automation reconnected after ${attemptNumber} attempts`,
-      sender: cursor-automation',
-      type: text',
+      sender: 'cursor-automation',
+      type: 'text',
       metadata: {
-        type: reconnection',
+        type: 'reconnection',
         attempts: attemptNumber,
         timestamp: Date.now()
       }
@@ -294,12 +293,12 @@ class CursorChatAutomation extends EventEmitter {
 
   sendHeartbeat() {
     const message = {
-      roomId: cursor-chat',
+      roomId: 'cursor-chat',
       message: `💓 Cursor Chat Automation heartbeat - Uptime: ${this.getUptime()}`,
-      sender: cursor-automation',
-      type: text',
+      sender: 'cursor-automation',
+      type: 'text',
       metadata: {
-        type: heartbeat',
+        type: 'heartbeat',
         uptime: this.getUptime(),
         timestamp: Date.now()
       }
@@ -310,7 +309,7 @@ class CursorChatAutomation extends EventEmitter {
 
   sendAutoResponse(receivedMessage) {
     // Don't respond to our own messages
-    if (receivedMessage.sender === cursor-automation') {
+    if (receivedMessage.sender === 'cursor-automation') {
       return;
     }
 
@@ -324,12 +323,12 @@ class CursorChatAutomation extends EventEmitter {
 const randomResponse =
       responses[Math.floor(Math.random() * responses.length)]
 const message = {
-      roomId: cursor-chat',
+      roomId: 'cursor-chat',
       message: randomResponse,
-      sender: cursor-automation',
-      type: text',
+      sender: 'cursor-automation',
+      type: 'text',
       metadata: {
-        type: auto_response',
+        type: 'auto_response',
         inReplyTo: receivedMessage.id,
         timestamp: Date.now()
       }
@@ -521,12 +520,12 @@ const nextTodo = this.getNextTodo();
         this.activeChat = { id: chatId, todo: nextTodo };
         this.log(`🟢 Opening new chat for TODO: ${nextTodo.content}`);
         this.sendMessage({
-          roomId: cursor-chat',
+          roomId: 'cursor-chat',
           message: `🔔 New improvement step: ${nextTodo.content}\n(Chat ID: ${chatId})`,
-          sender: cursor-automation',
-          type: text',
+          sender: 'cursor-automation',
+          type: 'text',
           metadata: {
-            type: improvement_step',
+            type: 'improvement_step',
             todo: nextTodo.content,
             chatId,
             timestamp: Date.now()
@@ -539,12 +538,12 @@ const nextTodo = this.getNextTodo();
           this.completedChats.add(this.activeChat.id);
           // Close chat (send closing message)
           this.sendMessage({
-            roomId: cursor-chat',
+            roomId: 'cursor-chat',
             message: `✅ Improvement step completed: ${nextTodo.content}\n(Chat ID: ${this.activeChat.id})`,
-            sender: cursor-automation',
-            type: text',
+            sender: 'cursor-automation',
+            type: 'text',
             metadata: {
-              type: improvement_step_completed',
+              type: 'improvement_step_completed',
               todo: nextTodo.content,
               chatId: this.activeChat.id,
               timestamp: Date.now()

@@ -615,7 +615,7 @@ const sourceFiles = this.findSourceFiles();
   async fixPerformanceErrors() {
     try {
       // Optimize performance
-      execSync('npm run bundle:optimize', { stdio: 'pipe' });
+      execSync('npm run bundle: 'optimize', { stdio: 'pipe' });
 
       return {
         type: 'performance_fix',

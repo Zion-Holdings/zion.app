@@ -21,24 +21,24 @@ const MAX_ACCEPTABLE_TIME = 2000; // 2 seconds for cached responses
 const TEST_ENDPOINTS = [
   {
     name: Categories API',    path: /api/categories',    expectedCached: true,
-    method: GET'  },
+    method: 'GET'  },
   {
     name: Blog API (all posts),    path: /api/blog',    expectedCached: true,
-    method: GET'  },
+    method: 'GET'  },
   {
-    name: Blog API (search),    path: /api/blog?query=AI',    expectedCached: true,
-    method: GET'  },
+    name: Blog API (search),    path: /api/blog?query='AI',    expectedCached: true,
+    method: 'GET'  },
   {
     name: Jobs API',    path: /api/jobs',    expectedCached: true,
-    method: GET',    headers: {
+    method: 'GET',    headers: {
       Authorization': Bearer demo_key_123''    }
   },
   {
-    name: Search API',    path: /api/search?query=GPU',    expectedCached: true,
-    method: GET'  },
+    name: Search API',    path: /api/search?query='GPU',    expectedCached: true,
+    method: 'GET'  },
   {
-    name: Search Suggestions',    path: /api/search/suggest?q=AI',    expectedCached: true,
-    method: GET'  }
+    name: Search Suggestions',    path: /api/search/suggest?q='AI',    expectedCached: true,
+    method: 'GET'  }
 ];
 
 
@@ -46,7 +46,7 @@ function makeRequest(endpoint, timeoutMs = TIMEOUT_THRESHOLD) {
   return new Promise((resolve, reject) => {
     const startTime = _performance.now()
 const options = {
-      hostname: localhost',      port: 3000,
+      hostname: 'localhost',      port: 3000,
       path: endpoint.path,
       method: endpoint.method,
       headers: {
@@ -116,7 +116,7 @@ const results = {
   try {
     // console.warn('   ⏱️  Cold request (no cache)...');    const coldResult = await makeRequest(endpoint)
 const coldTest = {
-      type: cold',      success: coldResult.statusCode >= 200 && coldResult.statusCode < 300,
+      type: 'cold',      success: coldResult.statusCode >= 200 && coldResult.statusCode < 300,
       responseTime: coldResult.responseTime,
       statusCode: coldResult.statusCode,
       cacheHeader: coldResult.headers['x-cache'] || coldResult.headers['x-cache-strategy'],      dataSize: coldResult.size
@@ -128,7 +128,7 @@ const coldTest = {
       // console.warn(`   ✅ Cold: ${Math.round(coldTest.responseTime)}ms (${coldResult.statusCode})`);
       
       // Check if response has data
-      if (coldResult.data && typeof coldResult.data === object') {        const _dataLength = Array.isArray(coldResult.data) ? coldResult.data.length : 
+      if (coldResult.data && typeof coldResult.data === 'object') {        const _dataLength = Array.isArray(coldResult.data) ? coldResult.data.length : 
                           coldResult.data.results ? coldResult.data.results.length :
                           Object.keys(coldResult.data).length;
         // console.warn(`   📊 Data: ${_dataLength} items, ${coldResult.size} bytes`);
@@ -145,7 +145,7 @@ const timeoutId = setTimeout(resolve,  100);
     
     const warmResult = await makeRequest(endpoint)
 const warmTest = {
-      type: warm',      success: warmResult.statusCode >= 200 && warmResult.statusCode < 300,
+      type: 'warm',      success: warmResult.statusCode >= 200 && warmResult.statusCode < 300,
       responseTime: warmResult.responseTime,
       statusCode: warmResult.statusCode,
       cacheHeader: warmResult.headers['x-cache'] || warmResult.headers['x-cache-strategy'],      improvement: coldResult.responseTime - warmResult.responseTime
@@ -164,7 +164,7 @@ const warmTest = {
     
   } catch {
     // console.warn(`   ❌ Error: ${'Error occurred'.'Error occurred'} (${Math.round(error.responseTime)}ms)`);    results.tests.push({
-      type: error',      success: false,
+      type: 'error',      success: false,
       error: error.error,
       responseTime: error.responseTime
     });
@@ -253,7 +253,7 @@ const timeoutId = setTimeout(resolve,  200);
 
 async function checkServer() {
   try {
-    await makeRequest({ path: /api/health', method: GET' }, 2000);    return true;
+    await makeRequest({ path: /api/health', method: 'GET' }, 2000);    return true;
   } catch {
     return false;
   }

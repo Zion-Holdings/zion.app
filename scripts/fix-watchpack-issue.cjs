@@ -175,7 +175,7 @@ const packageJson = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
     return new Promise((resolve) => {
       const devProcess = require('child_process').spawn(
         'npm',
-        ['run', 'dev:stable', '--', '--port', '3001'],
+        ['run', 'dev: 'stable', '--', '--port', '3001'],
         {
           stdio: 'pipe',
           shell: true,

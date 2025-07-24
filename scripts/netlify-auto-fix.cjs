@@ -451,7 +451,7 @@ const { execSync } = require('child_process');
 
 logger.info('Installing build dependencies...');
 try {
-  execSync('npm install --production=false', { stdio: 'inherit' });
+  execSync('npm install --production='false', { stdio: 'inherit' });
   logger.info('Build dependencies installed successfully');
 } catch (error) {
   logger.error('Failed to install build dependencies:', error.message);
@@ -588,7 +588,7 @@ const cacheDirs = [
     this.log('Testing build after fixes...');
 
     try {
-      execSync('npm run build:netlify:prepare', {
+      execSync('npm run build:netlify: 'prepare', {
         stdio: 'inherit',
         timeout: 300000, // 5 minutes
       });

@@ -515,7 +515,7 @@ const optimizations = [];
     // Bundle optimization
     if (CONFIG.OPTIMIZATION.AUTO_OPTIMIZE_BUNDLE) {
       try {
-        execSync('npm run bundle:optimize', { stdio: 'inherit' });
+        execSync('npm run bundle: 'optimize', { stdio: 'inherit' });
         optimizations.push('bundle_optimization');
       } catch (error) {
         logger.warn('⚠️  Bundle optimization failed:', error.message);
@@ -525,7 +525,7 @@ const optimizations = [];
     // Image optimization
     if (CONFIG.OPTIMIZATION.AUTO_OPTIMIZE_IMAGES) {
       try {
-        execSync('npm run optimize:images', { stdio: 'inherit' });
+        execSync('npm run optimize: 'images', { stdio: 'inherit' });
         optimizations.push('image_optimization');
       } catch (error) {
         logger.warn('⚠️  Image optimization failed:', error.message);
@@ -553,7 +553,7 @@ const improvements = [];
     // Auto-fix lint errors
     if (CONFIG.CODE_QUALITY.AUTO_FIX_LINT) {
       try {
-        execSync('npm run lint:fix', { stdio: 'inherit' });
+        execSync('npm run lint: 'fix', { stdio: 'inherit' });
         improvements.push('lint_fixes');
       } catch (error) {
         logger.warn('⚠️  Lint fixes failed:', error.message);
@@ -710,7 +710,7 @@ const improvements = [];
     // Bundle optimization
     if (CONFIG.OPTIMIZATION.AUTO_OPTIMIZE_BUNDLE) {
       try {
-        execSync('npm run bundle:optimize', { stdio: 'ignore' });
+        execSync('npm run bundle: 'optimize', { stdio: 'ignore' });
       } catch (error) {
         logger.warn('⚠️  Bundle optimization failed:', error.message);
       }
@@ -855,7 +855,7 @@ const remoteCommit = execSync('git rev-parse origin/main', {
       execSync('npm run build', { stdio: 'inherit' });
 
       // Deploy to Netlify (or other platform)
-      execSync('npm run deploy:netlify', { stdio: 'inherit' });
+      execSync('npm run deploy: 'netlify', { stdio: 'inherit' });
 
       logger.info('✅ Deployment completed successfully');
     } catch (error) {

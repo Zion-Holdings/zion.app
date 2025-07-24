@@ -26,7 +26,7 @@ exports.receiveSyncUpdate = (req, res) => {
 
   syncStore.lastUpdated = Date.now();
 
-  res.json({ status: ok', updated: syncStore.lastUpdated });};
+  res.json({ status: 'ok', updated: syncStore.lastUpdated });};
 exports.getSyncState = (_req, res) => {
   const state = {
     proposals: Array.from(syncStore.proposals.values()),

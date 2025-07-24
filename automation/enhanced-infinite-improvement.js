@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 /**
  * Zion App - Enhanced Infinite Improvement Loop System
@@ -64,20 +63,20 @@ const AI_CONFIG = {
 
   // Local AI Models
   LOCAL_AI: {
-    ENABLED: process.env.LOCAL_AI_ENABLED === true',
+    ENABLED: process.env.LOCAL_AI_ENABLED === 'true',
     ENDPOINT: process.env.LOCAL_AI_ENDPOINT || http://localhost:11434',
     MODEL: process.env.LOCAL_AI_MODEL || codellama:7b
   },
 
   // GitHub Copilot
   COPILOT: {
-    ENABLED: process.env.COPILOT_ENABLED === true',
+    ENABLED: process.env.COPILOT_ENABLED === 'true',
     API_KEY: process.env.COPILOT_API_KEY
   },
 
   // Custom AI Agents
   CUSTOM_AGENTS: {
-    ENABLED: process.env.CUSTOM_AGENTS_ENABLED === true',
+    ENABLED: process.env.CUSTOM_AGENTS_ENABLED === 'true',
     ENDPOINTS: {
       codeReview: process.env.CODE_REVIEW_AGENT_URL,
       security: process.env.SECURITY_AGENT_URL,
@@ -172,7 +171,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
     // Initialize Claude
     if (AI_CONFIG.CLAUDE.API_KEY) {
       this.aiProviders.set('claude', {
-        name: Claude',
+        name: 'Claude',
         enabled: true,
         analyze: (data) => this.analyzeWithClaude(data)
       });
@@ -200,7 +199,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
     // Health check endpoint
     this.app.get('/health', (req, res) => {
       res.json({
-        status: healthy',
+        status: 'healthy',
         cycle: this.improvementCycle,
         totalImprovements: this.totalImprovements,
         successfulImprovements: this.successfulImprovements,
@@ -224,7 +223,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
     // Manual improvement trigger
     this.app.post('/improve', async (req, res) => {
       try {
-        const { type, priority = normal', data = {} } = req.body;
+        const { type, priority = 'normal', data = {} } = req.body;
         await this.queueImprovement(type, priority, data);
         res.json({ success: true, message: Improvement queued successfully' });
       } catch (error) {
@@ -466,8 +465,8 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
     // Performance improvements
     if (analysis.performance < AI_CONFIG.THRESHOLDS.PERFORMANCE_SCORE) {
       improvements.push({
-        type: performance',
-        priority: high',
+        type: 'performance',
+        priority: 'high',
         data: { currentScore: analysis.performance, targetScore: AI_CONFIG.THRESHOLDS.PERFORMANCE_SCORE }
       });
     }
@@ -475,8 +474,8 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
     // Security improvements
     if (analysis.security < AI_CONFIG.THRESHOLDS.SECURITY_SCORE) {
       improvements.push({
-        type: security',
-        priority: critical',
+        type: 'security',
+        priority: 'critical',
         data: { currentScore: analysis.security, targetScore: AI_CONFIG.THRESHOLDS.SECURITY_SCORE }
       });
     }
@@ -484,8 +483,8 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
     // Code quality improvements
     if (analysis.codeQuality < AI_CONFIG.THRESHOLDS.CODE_QUALITY_SCORE) {
       improvements.push({
-        type: codeQuality',
-        priority: medium',
+        type: 'codeQuality',
+        priority: 'medium',
         data: { currentScore: analysis.codeQuality, targetScore: AI_CONFIG.THRESHOLDS.CODE_QUALITY_SCORE }
       });
     }
@@ -493,8 +492,8 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
     // Accessibility improvements
     if (analysis.accessibility < AI_CONFIG.THRESHOLDS.ACCESSIBILITY_SCORE) {
       improvements.push({
-        type: accessibility',
-        priority: medium',
+        type: 'accessibility',
+        priority: 'medium',
         data: { currentScore: analysis.accessibility, targetScore: AI_CONFIG.THRESHOLDS.ACCESSIBILITY_SCORE }
       });
     }
@@ -502,8 +501,8 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
     // SEO improvements
     if (analysis.seo < AI_CONFIG.THRESHOLDS.SEO_SCORE) {
       improvements.push({
-        type: seo',
-        priority: low',
+        type: 'seo',
+        priority: 'low',
         data: { currentScore: analysis.seo, targetScore: AI_CONFIG.THRESHOLDS.SEO_SCORE }
       });
     }
@@ -511,8 +510,8 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
     // Test coverage improvements
     if (analysis.testCoverage < AI_CONFIG.THRESHOLDS.TEST_COVERAGE) {
       improvements.push({
-        type: testCoverage',
-        priority: medium',
+        type: 'testCoverage',
+        priority: 'medium',
         data: { currentScore: analysis.testCoverage, targetScore: AI_CONFIG.THRESHOLDS.TEST_COVERAGE }
       });
     }
@@ -523,7 +522,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
   /**
    * Queue an improvement
    */
-  async queueImprovement(type, priority = normal', data = {}) {
+  async queueImprovement(type, priority = 'normal', data = {}) {
     const improvement = {
       id: `improvement_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
       type,
@@ -867,7 +866,7 @@ class PortManager {
       });
       
       server.on('error', (err) => {
-        if (err.code === EADDRINUSE') {
+        if (err.code === 'EADDRINUSE') {
           // Try next port
           this.findAvailablePort(startPort + 1).then(resolve).catch(reject);
         } else {

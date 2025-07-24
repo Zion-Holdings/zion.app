@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 /**
  * Test Script for Automated Chat Reconnection System
@@ -150,7 +149,7 @@ class ChatReconnectionTester {
       // Send test message
       ws.send(
         JSON.stringify({
-          type: chat',
+          type: 'chat',
           message: Test message from WebSocket',
           room: test
         }),
@@ -194,7 +193,7 @@ const timeoutId = setTimeout(() => {
       connections.forEach((ws, index) => {
         ws.send(
           JSON.stringify({
-            type: chat',
+            type: 'chat',
             message: `Message from computer ${index + 1}`,
             room: test
           }),
@@ -288,11 +287,11 @@ const computerCount = 5;
         // Send registration message
         computer.connection.send(
           JSON.stringify({
-            type: register',
+            type: 'register',
             computerId: computer.id,
             capabilities: {
               platform: computer.platform,
-              arch: x64',
+              arch: 'x64',
               nodeVersion: process.version
             }
           }),
@@ -314,7 +313,7 @@ const computerCount = 5;
 const timeoutId = setTimeout(() => {
           computer.connection.send(
             JSON.stringify({
-              type: chat', 
+              type: 'chat', 
               message: `Hello from ${computer.name}!`,
               room: general
             });
@@ -346,7 +345,7 @@ const timeoutId = setTimeout(() => {
     }
   }
 
-  async makeHttpRequest(path, method = GET', body = null) {
+  async makeHttpRequest(path, method = 'GET', body = null) {
     return new Promise((resolve, reject) => {
       const url = new URL(path, CONFIG.CHAT_SERVER)
 const options = {

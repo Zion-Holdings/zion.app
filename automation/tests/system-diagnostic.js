@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 /* eslint-disable @typescript-eslint/no-require-imports */
 
 require('dotenv').config();
@@ -12,7 +11,7 @@ class SystemDiagnostic {
       dependencies: {},
       connections: {},
       files: {},
-      overall: unknown'    };
+      overall: 'unknown'    };
   }
 
   async run() {
@@ -65,9 +64,9 @@ const dependencies = [
     for (const dep of dependencies) {
       try {
         require.resolve(dep);
-        this.results.dependencies[dep] = { status: installed' };      } catch {
+        this.results.dependencies[dep] = { status: 'installed' };      } catch {
         this.results.dependencies[dep] = { 
-          status: missing',          error: Module not found''        };
+          status: 'missing',          error: Module not found''        };
       }
     }
     
@@ -83,9 +82,9 @@ const optionalFiles = [
     for (const file of requiredFiles) {
       try {
         await fs.access(file);
-        this.results.files[file] = { status: exists', required: true };      } catch {
+        this.results.files[file] = { status: 'exists', required: true };      } catch {
         this.results.files[file] = { 
-          status: missing',           required: true,
+          status: 'missing',           required: true,
           error: File not found''        };
       }
     }
@@ -93,9 +92,9 @@ const optionalFiles = [
     for (const file of optionalFiles) {
       try {
         await fs.access(file);
-        this.results.files[file] = { status: exists', required: false };      } catch {
+        this.results.files[file] = { status: 'exists', required: false };      } catch {
         this.results.files[file] = { 
-          status: missing',           required: false 
+          status: 'missing',           required: false 
         };
       }
     }
@@ -108,9 +107,9 @@ const optionalFiles = [
     if (process.env.SLACK_WEBHOOK_URL) {
       try {
         await this.testSlackWebhook();
-        this.results.connections.slack_webhook = { status: connected' };      } catch {
+        this.results.connections.slack_webhook = { status: 'connected' };      } catch {
         this.results.connections.slack_webhook = { 
-          status: failed',          error: Slack webhook test failed''        };
+          status: 'failed',          error: Slack webhook test failed''        };
       }
     } else {
       this.results.connections.slack_webhook = { 
@@ -121,9 +120,9 @@ const optionalFiles = [
     if (process.env.CURSOR_API_KEY) {
       try {
         await this.testCursorAPI();
-        this.results.connections.cursor_api = { status: connected' };      } catch {
+        this.results.connections.cursor_api = { status: 'connected' };      } catch {
         this.results.connections.cursor_api = { 
-          status: failed',          error: Cursor API test failed''        };
+          status: 'failed',          error: Cursor API test failed''        };
       }
     } else {
       this.results.connections.cursor_api = { 
@@ -133,9 +132,9 @@ const optionalFiles = [
     // Test local automation server
     try {
       await this.testLocalServer();
-      this.results.connections.local_server = { status: connected' };    } catch {
+      this.results.connections.local_server = { status: 'connected' };    } catch {
       this.results.connections.local_server = { 
-        status: not_running',        error: Automation server not running''      };
+        status: 'not_running',        error: Automation server not running''      };
     }
     
     console.warn('✅ Connections check complete\n');  }
@@ -168,25 +167,25 @@ const optionalFiles = [
     
     // Check required environment variables
     for (const [_key, config] of Object.entries(this.results.environment)) {
-      if (config.required && config.status === missing') {        score -= 20;
+      if (config.required && config.status === 'missing') {        score -= 20;
       }
     }
     
     // Check required files
     for (const [_key, config] of Object.entries(this.results.files)) {
-      if (config.required && config.status === missing') {        score -= 15;
+      if (config.required && config.status === 'missing') {        score -= 15;
       }
     }
     
     // Check dependencies
     for (const [_key, config] of Object.entries(this.results.dependencies)) {
-      if (config.status === missing') {        score -= 10;
+      if (config.status === 'missing') {        score -= 10;
       }
     }
     
     // Check connections
     for (const [_key, config] of Object.entries(this.results.connections)) {
-      if (config.status === failed') {        score -= 5;
+      if (config.status === 'failed') {        score -= 5;
       }
     }
     
@@ -238,19 +237,19 @@ const optionalFiles = [
     
     // Check for missing required environment variables
     for (const [key, config] of Object.entries(this.results.environment)) {
-      if (config.required && config.status === missing') {        issues.push(`Configure ${key} in your .env file`);
+      if (config.required && config.status === 'missing') {        issues.push(`Configure ${key} in your .env file`);
       }
     }
     
     // Check for missing dependencies
     for (const [key, config] of Object.entries(this.results.dependencies)) {
-      if (config.status === missing') {        issues.push(`Install missing dependency: npm install ${key}`);
+      if (config.status === 'missing') {        issues.push(`Install missing dependency: npm install ${key}`);
       }
     }
     
     // Check for missing files
     for (const [key, config] of Object.entries(this.results.files)) {
-      if (config.required && config.status === missing') {        issues.push(`Create missing file: ${key}`);
+      if (config.required && config.status === 'missing') {        issues.push(`Create missing file: ${key}`);
       }
     }
     
@@ -260,7 +259,7 @@ const optionalFiles = [
       });
       console.warn('');    }
     
-    console.warn('🚀 Next Steps:');    if (this.results.overall === excellent') {      console.warn('  • System is ready! Start with: npm run automation:start');    } else if (this.results.overall === good') {      console.warn('  • Address minor issues above, then start the system');    } else {
+    console.warn('🚀 Next Steps:');    if (this.results.overall === 'excellent') {      console.warn('  • System is ready! Start with: npm run automation:start');    } else if (this.results.overall === 'good') {      console.warn('  • Address minor issues above, then start the system');    } else {
       console.warn('  • Fix critical issues above before starting');      console.warn('  • Run setup script: ./automation/scripts/setup.sh');      console.warn('  • Configure environment variables in .env file');    }
     
     console.warn('  • View documentation: automation/README.md');    console.warn('  • Test connections: npm run automation:test-slack');  }

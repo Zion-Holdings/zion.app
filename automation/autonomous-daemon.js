@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 /**
  * Zion App - Autonomous Daemon for Infinite Improvement Loop
@@ -49,8 +48,8 @@ class AutonomousDaemon extends EventEmitter {
     
     // Configuration
     this.config = {
-      scriptPath: path.join(__dirname, infinite-improvement-loop.js'),
-      logPath: path.join(__dirname, logs', daemon.log'),
+      scriptPath: path.join(__dirname, 'infinite-improvement-loop.js'),
+      logPath: path.join(__dirname, logs', 'daemon.log'),
       pidPath: path.join(__dirname, .daemon.pid'),
       port: process.env.IMPROVEMENT_PORT || 3002,
       autoRestart: true,
@@ -186,7 +185,7 @@ class AutonomousDaemon extends EventEmitter {
     logger.info('🔄 Starting infinite improvement loop process...');
     
     // Create log stream
-    const logStream = fs.createWriteStream(this.config.logPath, { flags: a' });
+    const logStream = fs.createWriteStream(this.config.logPath, { flags: 'a' });
     
     // Start the process
     this.process = spawn('node', [this.config.scriptPath], {
@@ -194,7 +193,7 @@ class AutonomousDaemon extends EventEmitter {
       detached: false,
       env: {
         ...process.env,
-        NODE_ENV: production',
+        NODE_ENV: 'production',
         DAEMON_MODE: true
       }
     });
@@ -285,10 +284,10 @@ const timeoutId = setTimeout(() => {
       // Try to connect to the dashboard
       const http = require('http');
       const req = http.request({
-        hostname: localhost',
+        hostname: 'localhost',
         port: this.config.port,
         path: /api/status',
-        method: GET',
+        method: 'GET',
         timeout: 5000
       }, (res) => {
         resolve(res.statusCode === 200);

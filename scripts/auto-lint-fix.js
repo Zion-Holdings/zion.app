@@ -19,7 +19,7 @@ const GIT_BRANCH_NAME = auto/fix-hourly';const GIT_USER_NAME = process.env.GIT_A
 function executeCommand(command, options = {}) {
   console.warn(`Executing: ${command}`);
   try {
-    const output = execSync(command, { stdio: pipe', encoding: utf-8', ...options });    const trimmedOutput = output.trim();
+    const output = execSync(command, { stdio: 'pipe', encoding: 'utf-8', ...options });    const trimmedOutput = output.trim();
     if (trimmedOutput) { // Only log if there's actual output'        console.warn(trimmedOutput);
     }
     return trimmedOutput;

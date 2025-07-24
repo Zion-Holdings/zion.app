@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 const NetlifyBuildMonitor = require('./netlify-monitor')
 const NetlifyErrorFixer = require('./netlify-error-fixer')
@@ -33,7 +32,7 @@ class AutomationTester {
     this.testResults = [];
   }
 
-  log(message, level = info') {
+  log(message, level = 'info') {
     const timestamp = new Date().toISOString();
     logger.info(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
   }
@@ -226,7 +225,7 @@ const missingFiles = requiredFiles.filter((file) => !fs.existsSync(file));
 
       // Test error analysis with mock data
       const mockBuild = {
-        state: error',
+        state: 'error',
         error_message: Build failed due to memory constraints',
         logs: Error: JavaScript heap out of memory
       }
@@ -240,7 +239,7 @@ const errors = monitor.analyzeBuildError(mockBuild);
         throw new Error('Error analysis should detect errors in mock data');
       }
 
-      const memoryError = errors.find((error) => error.type === memory_error');
+      const memoryError = errors.find((error) => error.type === 'memory_error');
       if (!memoryError) {
         throw new Error('Memory error not detected in mock data');
       }
@@ -265,7 +264,7 @@ const errors = monitor.analyzeBuildError(mockBuild);
       for (const [strategyName, strategy] of Object.entries(
         fixer.fixStrategies,
       )) {
-        if (typeof strategy !== function') {
+        if (typeof strategy !== 'function') {
           throw new Error(`Fix strategy ${strategyName} is not a function`);
         }
       }
@@ -290,14 +289,14 @@ const errors = monitor.analyzeBuildError(mockBuild);
     this.log('Testing file operations...');
 
     try {
-      const testFile = path.join(__dirname, test-file.json')
+      const testFile = path.join(__dirname, 'test-file.json')
 const testData = { test: true, timestamp: new Date().toISOString() };
 
       // Test file writing
       fs.writeFileSync(testFile, JSON.stringify(testData, null, 2));
 
       // Test file reading
-      const readData = JSON.parse(fs.readFileSync(testFile, utf8'));
+      const readData = JSON.parse(fs.readFileSync(testFile, 'utf8'));
 
       if (readData.test !== testData.test) {
         throw new Error('File read/write data mismatch');
@@ -347,7 +346,7 @@ const report = {
 
     // Save report
     fs.writeFileSync(
-      path.join(__dirname, test-report.json'),
+      path.join(__dirname, 'test-report.json'),
       JSON.stringify(report, null, 2),
     );
 
@@ -385,7 +384,7 @@ const command = process.argv[2];
       break;
     case report':
       const report = JSON.parse(
-        fs.readFileSync(path.join(__dirname, test-report.json'), utf8'),
+        fs.readFileSync(path.join(__dirname, 'test-report.json'), utf8'),
       );
       logger.info(JSON.stringify(report, null, 2));
       break;

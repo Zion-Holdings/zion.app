@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 const fs = require('fs');
 const path = require('path');
@@ -30,7 +29,7 @@ const crypto = require('crypto');
 class SecurityChecker {
     constructor() {
         this.projectRoot = process.cwd();
-        this.reportsDir = path.join(this.projectRoot, automation', reports');
+        this.reportsDir = path.join(this.projectRoot, automation', 'reports');
         this.ensureDirectory(this.reportsDir);
         
         // Patterns to detect sensitive data
@@ -188,7 +187,7 @@ class SecurityChecker {
                 return;
             }
 
-            const content = fs.readFileSync(filePath, utf8');
+            const content = fs.readFileSync(filePath, 'utf8');
             const relativePath = path.relative(this.projectRoot, filePath);
 
             // Check for sensitive patterns
@@ -239,26 +238,26 @@ class SecurityChecker {
         const secretPatterns = [
             {
                 pattern: /['"`](sk_live_|pk_live_|sk_test_|pk_test_)[a-zA-Z0-9]{24}['"`]/g,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-                category: stripe_keys',
-                severity: high',
+                category: 'stripe_keys',
+                severity: 'high',
                 recommendation: Use environment variables for Stripe keys
             },
             {
                 pattern: /['"`](ghp_|gho_|ghu_|ghs_|ghr_)[a-zA-Z0-9]{36}['"`]/g,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-                category: github_tokens',
-                severity: high',
+                category: 'github_tokens',
+                severity: 'high',
                 recommendation: Use environment variables for GitHub tokens
             },
             {
                 pattern: /['"`](xoxb-|xoxp-|xoxa-|xoxr-)[a-zA-Z0-9-]+['"`]/g,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-                category: slack_tokens',
-                severity: high',
+                category: 'slack_tokens',
+                severity: 'high',
                 recommendation: Use environment variables for Slack tokens
             },
             {
                 pattern: /['"`]AIza[0-9A-Za-z-_]{35}['"`]/g,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-                category: google_api_keys',
-                severity: high',
+                category: 'google_api_keys',
+                severity: 'high',
                 recommendation: Use environment variables for Google API keys
             }
         ];
@@ -282,16 +281,16 @@ class SecurityChecker {
 
     getSeverity(category) {
         const severityMap = {
-            apiKeys: high',
-            passwords: high',
-            database: high',
-            aws: critical',
-            stripe: critical',
-            github: high',
-            slack: high',
-            email: medium',
-            phone: medium',
-            ssn: critical',
+            apiKeys: 'high',
+            passwords: 'high',
+            database: 'high',
+            aws: 'critical',
+            stripe: 'critical',
+            github: 'high',
+            slack: 'high',
+            email: 'medium',
+            phone: 'medium',
+            ssn: 'critical',
             creditCard: critical
         };
         

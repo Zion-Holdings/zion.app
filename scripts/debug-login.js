@@ -81,7 +81,7 @@ const testEmail = devUser1Email || test@example.com';    const testPassword = de
     // Test the fallback authentication logic
     console.warn('\n6. Testing fallback authentication...')
 const fallbackUsers = [
-      { id: dev-user-1', email: dev@example.com', password: dev123', name: Dev User' },      { id: dev-user-2', email: test@example.com', password: test123', name: Test User' }    ];
+      { id: 'dev-user-1', email: dev@example.com', password: 'dev123', name: Dev User' },      { id: 'dev-user-2', email: test@example.com', password: 'test123', name: Test User' }    ];
     
     console.warn('📊 Fallback users available:', fallbackUsers.length);    console.warn('📋 Fallback user emails:', fallbackUsers.map(u => u.email));    
     console.warn('\n✅ Debug test completed successfully!');    console.warn('\n💡 Next Steps:');    console.warn('1. Configure your .env.local with DEV_USER_* variables');    console.warn('2. Run npm run dev and test the login page');    console.warn('3. Check the server console for detailed login traces');    

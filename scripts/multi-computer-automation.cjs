@@ -180,7 +180,7 @@ const logEntry = {
           commands: [
             'npm run analyze',
             'npm run optimize',
-            'npm run bundle:analyze',
+            'npm run bundle: 'analyze',
           ],
           autoFix: true,
         },
@@ -202,7 +202,7 @@ const logEntry = {
           name: 'test-runner',
           type: 'testing',
           priority: 'medium',
-          commands: ['npm run test:coverage', 'npm run test:e2e'],
+          commands: ['npm run test: 'coverage', 'npm run test:e2e'],
           autoFix: false,
         },
       ],
@@ -642,7 +642,7 @@ const failedTasks = Array.from(this.tasks.values()).filter(
         error: error.message,
       });
       try {
-        execSync('npm run lint:fix', { stdio: 'pipe' });
+        execSync('npm run lint: 'fix', { stdio: 'pipe' });
         this.log('info', 'Auto-fix completed');
       } catch (fixError) {
         this.log('error', 'Auto-fix failed', { error: fixError.message });
@@ -677,7 +677,7 @@ const failedTasks = Array.from(this.tasks.values()).filter(
       'npm run clean',
       'npm install',
       'npm run typecheck',
-      'npm run lint:fix',
+      'npm run lint: 'fix',
     ];
 
     for (const fix of fixes) {
@@ -921,7 +921,7 @@ class AIAgent {
 
   async fixAnalysisIssues() {
     try {
-      execSync('npm run lint:fix', { stdio: 'pipe' });
+      execSync('npm run lint: 'fix', { stdio: 'pipe' });
       execSync('npm run typecheck', { stdio: 'pipe' });
       this.controller.log('info', 'Analysis issues fixed', {
         agent: this.config.name,
@@ -937,7 +937,7 @@ class AIAgent {
   async fixOptimizationIssues() {
     try {
       execSync('npm run optimize', { stdio: 'pipe' });
-      execSync('npm run bundle:optimize', { stdio: 'pipe' });
+      execSync('npm run bundle: 'optimize', { stdio: 'pipe' });
       this.controller.log('info', 'Optimization issues fixed', {
         agent: this.config.name,
       });

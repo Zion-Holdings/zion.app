@@ -318,7 +318,7 @@ const lines = content.split('\n');
     this.log('Fixing ESLint issues...');
     
     try {
-      execSync('npm run lint:fix', { stdio: 'inherit' });
+      execSync('npm run lint: 'fix', { stdio: 'inherit' });
       this.log('Applied ESLint auto-fixes');
       return true;
     } catch (error) {

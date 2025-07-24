@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 /**
  * Zion App - Unified Automation Manager
@@ -42,9 +41,9 @@ class AutomationManager {
     const isInAutomationDir = currentDir.endsWith('automation');
     
     this.config = {
-      automationDir: isInAutomationDir ? currentDir : path.join(currentDir, automation'),
-      scriptsDir: isInAutomationDir ? path.join(currentDir, ..', scripts') : path.join(currentDir, scripts'),
-      logsDir: isInAutomationDir ? path.join(currentDir, ..', logs') : path.join(currentDir, logs'),
+      automationDir: isInAutomationDir ? currentDir : path.join(currentDir, 'automation'),
+      scriptsDir: isInAutomationDir ? path.join(currentDir, ..', 'scripts') : path.join(currentDir, 'scripts'),
+      logsDir: isInAutomationDir ? path.join(currentDir, ..', 'logs') : path.join(currentDir, 'logs'),
       port: process.env.AUTOMATION_PORT || 3001
     };
     
@@ -113,9 +112,9 @@ class AutomationManager {
 
       // Start the enhanced automation system
       const automationProcess = spawn('node', [
-        path.join(this.config.automationDir, autonomous-system.js')
+        path.join(this.config.automationDir, 'autonomous-system.js')
       ], {
-        stdio: pipe',
+        stdio: 'pipe',
         detached: false
       });
 
@@ -250,7 +249,7 @@ const timeoutId = setTimeout(resolve,  2000);
     logger.info('📝 Zion App Automation System Logs\n');
 
     try {
-      const logFile = path.join(this.config.logsDir, automation.log');
+      const logFile = path.join(this.config.logsDir, 'automation.log');
       
       if (await this.fileExists(logFile)) {
         const logs = await fs.readFile(logFile, utf8')
@@ -325,7 +324,7 @@ const timeoutId = setTimeout(resolve,  3000);
     try {
       // Run test suite
       const testProcess = spawn('npm', ['test'], {
-        stdio: inherit',
+        stdio: 'inherit',
         cwd: this.config.automationDir
       });
 
@@ -353,10 +352,10 @@ const timeoutId = setTimeout(resolve,  3000);
       // Create required directories
       const dirs = [
         this.config.logsDir,
-        path.join(this.config.automationDir, logs'),
-        path.join(this.config.automationDir, reports'),
-        path.join(this.config.automationDir, temp'),
-        path.join(this.config.automationDir, backups')
+        path.join(this.config.automationDir, 'logs'),
+        path.join(this.config.automationDir, 'reports'),
+        path.join(this.config.automationDir, 'temp'),
+        path.join(this.config.automationDir, 'backups')
       ];
 
       for (const dir of dirs) {
@@ -367,7 +366,7 @@ const timeoutId = setTimeout(resolve,  3000);
       // Install dependencies
       logger.info('\n📦 Installing dependencies...');
       execSync('npm install', { 
-        stdio: inherit', 
+        stdio: 'inherit', 
         cwd: this.config.automationDir 
       });
 
@@ -440,7 +439,7 @@ SLACK_SIGNING_SECRET=your_slack_signing_secret_here
       }
 
       // Clean temporary files
-      const tempDir = path.join(this.config.automationDir, temp');
+      const tempDir = path.join(this.config.automationDir, 'temp');
       if (await this.fileExists(tempDir)) {
         const tempFiles = await fs.readdir(tempDir);
         for (const file of tempFiles) {
@@ -533,7 +532,7 @@ const timeoutId = setTimeout(resolve,  1000);
   async killRemainingProcesses() {
     try {
       // Kill processes on the automation port
-      execSync(`lsof -ti:${this.config.port} | xargs kill -9`, { stdio: ignore' });
+      execSync(`lsof -ti:${this.config.port} | xargs kill -9`, { stdio: 'ignore' });
     } catch {
       // Ignore errors if no processes found
     }

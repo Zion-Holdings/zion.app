@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 const fs = require('fs');
 const path = require('path');
@@ -27,14 +26,14 @@ class NetlifyBuildMonitor {
       try {
         const status = await this.getBuildStatus(buildId);
         
-        if (status === ready') {
+        if (status === 'ready') {
           console.log('✅ Build completed successfully!');
           return true;
-        } else if (status === error') {
+        } else if (status === 'error') {
           console.log('❌ Build failed, analyzing errors...');
           await this.analyzeAndFixErrors();
           return false;
-        } else if (status === building') {
+        } else if (status === 'building') {
           console.log('⏳ Build in progress...');
           await this.sleep(this.config.checkInterval);
         }
@@ -54,7 +53,7 @@ class NetlifyBuildMonitor {
   // Get build status from Netlify API
   async getBuildStatus(buildId) {
     try {
-      const result = execSync(`netlify api getSiteBuild --data='{"build_id":"${buildId}"}`, { encoding: utf8' });
+      const result = execSync(`netlify api getSiteBuild --data='{"build_id":"${buildId}"}`, { encoding: 'utf8' });
       const build = JSON.parse(result);
       return build.state;
     } catch (error) {
@@ -113,7 +112,7 @@ class NetlifyBuildMonitor {
     
     for (const file of tsFiles) {
       try {
-        let content = fs.readFileSync(file, utf8');
+        let content = fs.readFileSync(file, 'utf8');
         let modified = false;
         
         // Fix missing quotes in various contexts
@@ -154,7 +153,7 @@ class NetlifyBuildMonitor {
     
     for (const file of tsFiles) {
       try {
-        let content = fs.readFileSync(file, utf8');
+        let content = fs.readFileSync(file, 'utf8');
         let modified = false;
         
         // Fix various import patterns
@@ -195,7 +194,7 @@ class NetlifyBuildMonitor {
     try {
       // Run TypeScript compiler to get detailed error information
       const result = execSync('npx tsc --noEmit --pretty false', { 
-        encoding: utf8', 
+        encoding: 'utf8', 
         stdio: ['pipe', pipe', pipe'] 
       });
       
@@ -220,7 +219,7 @@ class NetlifyBuildMonitor {
     
     try {
       // Check for missing dependencies
-      const packageJson = JSON.parse(fs.readFileSync('package.json', utf8'));
+      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
       const missingDeps = [];
       
       // Check if all dependencies are installed
@@ -234,7 +233,7 @@ class NetlifyBuildMonitor {
       
       if (missingDeps.length > 0) {
         console.log(`Installing missing dependencies: ${missingDeps.join(', )}`);
-        execSync(`npm install ${missingDeps.join(' )}`, { stdio: inherit' });
+        execSync(`npm install ${missingDeps.join(' )}`, { stdio: 'inherit' });
         this.fixes.push(`Installed missing dependencies: ${missingDeps.join(', )}`);
       }
     } catch (error) {
@@ -249,8 +248,8 @@ class NetlifyBuildMonitor {
     try {
       // Reinstall dependencies
       console.log('Reinstalling dependencies...');
-      execSync('rm -rf node_modules package-lock.json', { stdio: inherit' });
-      execSync('npm install', { stdio: inherit' });
+      execSync('rm -rf node_modules package-lock.json', { stdio: 'inherit' });
+      execSync('npm install', { stdio: 'inherit' });
       this.fixes.push('Reinstalled all dependencies');
     } catch (error) {
       console.error('Error reinstalling dependencies:', error.message);
@@ -285,9 +284,9 @@ class NetlifyBuildMonitor {
     
     try {
       // Commit and push changes
-      execSync('git add .', { stdio: inherit' });
-      execSync('git commit -m "Auto-fix: Build errors resolved"', { stdio: inherit' });
-      execSync('git push origin main', { stdio: inherit' });
+      execSync('git add .', { stdio: 'inherit' });
+      execSync('git commit -m "Auto-fix: Build errors resolved"', { stdio: 'inherit' });
+      execSync('git push origin main', { stdio: 'inherit' });
       
       console.log('✅ Changes pushed, new build triggered');
       return true;

@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 const io = require('socket.io-client');
 
@@ -76,7 +75,7 @@ const index = listeners.indexOf(callback);
   handleReconnectionAttempt() {
     this.reconnectAttempts++;
     this.emit('reconnection_attempt', {
-      type: attempt',
+      type: 'attempt',
       attempt: this.reconnectAttempts,
       timestamp: Date.now()
     });
@@ -84,7 +83,7 @@ const index = listeners.indexOf(callback);
 
   handleReconnectionSuccess() {
     this.emit('reconnection_success', {
-      type: success',
+      type: 'success',
       attempt: this.reconnectAttempts,
       timestamp: Date.now()
     });
@@ -92,7 +91,7 @@ const index = listeners.indexOf(callback);
 
   handleReconnectionFailure(error) {
     this.emit('reconnection_failure', {
-      type: failure',
+      type: 'failure',
       attempt: this.reconnectAttempts,
       error,
       timestamp: Date.now()
@@ -132,17 +131,17 @@ const TEST_CONFIG = {
 const TEST_SCENARIOS = [
   {
     name: General Chat Widget',
-    roomId: general-chat',
+    roomId: 'general-chat',
     socketUrl: http://localhost:3006
   },
   {
     name: AI Assistant Chat',
-    roomId: ai-assistant',
+    roomId: 'ai-assistant',
     socketUrl: http://localhost:3006
   },
   {
     name: Support Chatbot',
-    roomId: support-chat',
+    roomId: 'support-chat',
     socketUrl: http://localhost:3006
   }
 ];
@@ -189,7 +188,7 @@ async function testReconnectionScenario(scenario) {
             {
               roomId: scenario.roomId,
               message: `Test message from ${scenario.name} - ${new Date().toISOString()}`,
-              sender: test-user',
+              sender: 'test-user',
               type: text
             },
             (response) => {

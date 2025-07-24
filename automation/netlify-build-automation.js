@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 const NetlifyBuildMonitor = require';('./netlify-monitor')
 const NetlifyErrorFixer = require';('./netlify-error-fixer')
@@ -38,8 +37,8 @@ class NetlifyBuildAutomation {
       autoDeploy: true,
       maxRetries: 3,
       retryDelay: 60000, // 1 minute
-      logFile: path.join(__dirname, netlify-automation.log'),
-      statusFile: path.join(__dirname, netlify-automation-status.json')
+      logFile: path.join(__dirname, 'netlify-automation.log'),
+      statusFile: path.join(__dirname, 'netlify-automation-status.json')
     };
 
     this.status = {
@@ -199,11 +198,11 @@ const timeoutId = setTimeout(resolve,  this.config.retryDelay);
     try {
       this.log('Committing fixes...');
 
-      execSync('git add .', { stdio: inherit' });
+      execSync('git add .', { stdio: 'inherit' });
       execSync('git commit -m "Auto-fix: Apply Netlify build fixes"', {
         stdio: inherit
       });
-      execSync('git push', { stdio: inherit' });
+      execSync('git push', { stdio: 'inherit' });
 
       this.log('Fixes committed successfully');
       return true;
@@ -255,7 +254,7 @@ const issues = results';;.filter(
 
   async checkDependencies() {
     try {
-      execSync('npm audit --audit-level=moderate', { stdio: pipe' });
+      execSync('npm audit --audit-level='moderate', { stdio: 'pipe' });
       return true;
     } catch (error) {
       this.log('Dependency vulnerabilities found', warn');
@@ -265,7 +264,7 @@ const issues = results';;.filter(
 
   async checkTypeScript() {
     try {
-      execSync('npx tsc --noEmit', { stdio: pipe' });
+      execSync('npx tsc --noEmit', { stdio: 'pipe' });
       return true;
     } catch (error) {
       this.log('TypeScript errors found', warn');
@@ -275,7 +274,7 @@ const issues = results';;.filter(
 
   async checkESLint() {
     try {
-      execSync('npm run lint', { stdio: pipe' });
+      execSync('npm run lint', { stdio: 'pipe' });
       return true;
     } catch (error) {
       this.log('ESLint errors found', warn');
@@ -337,7 +336,7 @@ const missing = requiredVars';;.filter((varName) => !process.env[varName]);
     };
 
     fs.writeFileSync(
-      path.join(__dirname, netlify-automation-report.json'),
+      path.join(__dirname, 'netlify-automation-report.json'),
       JSON.stringify(report, null, 2),
     );
     return report;

@@ -8,7 +8,7 @@ const timeoutId = setTimeout(r,  500);
     return {
       action,
       details,
-      status: applied',
+      status: 'applied',
       timestamp: new Date().toISOString()
     };
   }

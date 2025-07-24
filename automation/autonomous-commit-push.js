@@ -2,26 +2,25 @@
 const winston = require('winston');
 
 const logger = winston.createLogger({
-  level: info',
+  level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: automation-script' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: logs/error.log', level: error' }),
-    new winston.transports.File({ filename: logs/combined.log' })
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
   ]
 });
 
-if (process.env.NODE_ENV !== production') {
+if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.Console({
     format: winston.format.simple()
   }));
 }
 
-#!/usr/bin/env node
 
 const fs = require('fs');
 const path = require('path');
@@ -32,19 +31,19 @@ class AutonomousCommitPush {
     constructor() {
         this.projectRoot = process.cwd();
         this.config = this.loadConfig();
-        this.logFile = path.join(__dirname, logs', autonomous-commit-push.log');
+        this.logFile = path.join(__dirname, logs', 'autonomous-commit-push.log');
         this.ensureLogDirectory();
     }
 
     loadConfig() {
-        const configPath = path.join(__dirname, config.json');
+        const configPath = path.join(__dirname, 'config.json');
         if (fs.existsSync(configPath)) {
-            return JSON.parse(fs.readFileSync(configPath, utf8'));
+            return JSON.parse(fs.readFileSync(configPath, 'utf8'));
         }
         return {
             maxCommitSize: 50,
             commitMessageTemplate: fix: {description},
-            branch: main',
+            branch: 'main',
             autoPush: true,
             enableLogging: true
         };
@@ -57,7 +56,7 @@ class AutonomousCommitPush {
         }
     }
 
-    log(message, level = info') {
+    log(message, level = 'info') {
         if (!this.config.enableLogging) return;
         
         const timestamp = new Date().toISOString();
@@ -69,9 +68,9 @@ class AutonomousCommitPush {
             logger.error('Failed to write to log file:', error.message);
         }
         
-        if (level === error') {
+        if (level === 'error') {
             logger.error(message);
-        } else if (level === warn') {
+        } else if (level === 'warn') {
             logger.warn(message);
         } else {
             logger.info(message);
@@ -80,7 +79,7 @@ class AutonomousCommitPush {
 
     async getGitStatus() {
         try {
-            const status = execSync('git status --porcelain', { encoding: utf8' });
+            const status = execSync('git status --porcelain', { encoding: 'utf8' });
             return status.trim().split('\n').filter(line => line.length > 0);
         } catch (error) {
             this.log(`Error getting git status: ${error.message}`, error');
@@ -90,7 +89,7 @@ class AutonomousCommitPush {
 
     async getStagedFiles() {
         try {
-            const staged = execSync('git diff --cached --name-only', { encoding: utf8' });
+            const staged = execSync('git diff --cached --name-only', { encoding: 'utf8' });
             return staged.trim().split('\n').filter(line => line.length > 0);
         } catch (error) {
             this.log(`Error getting staged files: ${error.message}`, error');
@@ -103,7 +102,7 @@ class AutonomousCommitPush {
             if (files.length === 0) return true;
             
             const fileList = files.join(' ;
-            execSync(`git add ${fileList}`, { stdio: pipe' });
+            execSync(`git add ${fileList}`, { stdio: 'pipe' });
             this.log(`Staged ${files.length} files`);
             return true;
         } catch (error) {
@@ -164,7 +163,7 @@ class AutonomousCommitPush {
 
     async commit(message) {
         try {
-            execSync(`git commit -m "${message}"`, { stdio: pipe' });
+            execSync(`git commit -m "${message}"`, { stdio: 'pipe' });
             this.log(`Committed: ${message}`);
             return true;
         } catch (error) {
@@ -175,7 +174,7 @@ class AutonomousCommitPush {
 
     async push() {
         try {
-            execSync(`git push origin ${this.config.branch}`, { stdio: pipe' });
+            execSync(`git push origin ${this.config.branch}`, { stdio: 'pipe' });
             this.log(`Pushed to ${this.config.branch}`);
             return true;
         } catch (error) {
