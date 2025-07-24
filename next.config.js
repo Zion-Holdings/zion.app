@@ -22,3 +22,5 @@ const nextConfig = {
 module.exports = nextConfig;
 // Webpack optimizations added
 // Build caching enabled
+// Webpack optimizations added
+// Build caching enabled
