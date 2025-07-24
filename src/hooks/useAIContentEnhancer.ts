@@ -1,4 +1,5 @@
-// useAIContentEnhancer module placeholder
-const useAIContentEnhancer = {
-  // TODO: Implement useAIContentEnhancer functionality
+// Hook for useAIContentEnhancer
+export const useUseAIContentEnhancer = () => {
+  // TODO: Implement hook logic
+  return {};
 };

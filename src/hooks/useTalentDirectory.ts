@@ -1,4 +1,5 @@
-// useTalentDirectory module placeholder
-const useTalentDirectory = {
-  // TODO: Implement useTalentDirectory functionality
+// Hook for useTalentDirectory
+export const useUseTalentDirectory = () => {
+  // TODO: Implement hook logic
+  return {};
 };

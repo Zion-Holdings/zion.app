@@ -1,4 +1,4 @@
-// globalAppErrors module placeholder
-const globalAppErrors = {
-  // TODO: Implement globalAppErrors functionality
+// Utility functions for globalAppErrors
+export const globalAppErrors = {
+  // TODO: Implement utility functions
 };

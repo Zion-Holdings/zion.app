@@ -1,4 +1,4 @@
-// utils module placeholder
-const utils = {
-  // TODO: Implement utils functionality
+// Module for utils
+export const utils = {
+  // TODO: Implement module functionality
 };

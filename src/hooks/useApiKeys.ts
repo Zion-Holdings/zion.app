@@ -1,4 +1,5 @@
-// useApiKeys module placeholder
-const useApiKeys = {
-  // TODO: Implement useApiKeys functionality
+// Hook for useApiKeys
+export const useUseApiKeys = () => {
+  // TODO: Implement hook logic
+  return {};
 };

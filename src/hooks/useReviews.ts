@@ -1,4 +1,5 @@
-// useReviews module placeholder
-const useReviews = {
-  // TODO: Implement useReviews functionality
+// Hook for useReviews
+export const useUseReviews = () => {
+  // TODO: Implement hook logic
+  return {};
 };

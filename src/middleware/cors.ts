@@ -1,4 +1,4 @@
-// cors module placeholder
-const cors = {
-  // TODO: Implement cors functionality
+// Module for cors
+export const cors = {
+  // TODO: Implement module functionality
 };

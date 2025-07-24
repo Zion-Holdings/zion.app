@@ -1,4 +1,4 @@
-// apiClient module placeholder
-const apiClient = {
-  // TODO: Implement apiClient functionality
+// Service for apiClient
+export const apiClientService = {
+  // TODO: Implement service methods
 };

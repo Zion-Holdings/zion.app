@@ -1,4 +1,5 @@
-// useDisputeCheck module placeholder
-const useDisputeCheck = {
-  // TODO: Implement useDisputeCheck functionality
+// Hook for useDisputeCheck
+export const useUseDisputeCheck = () => {
+  // TODO: Implement hook logic
+  return {};
 };

@@ -1,9 +1,10 @@
-import React from react';
-default function verify-email() {
+import React from 'react';
+
+export default function verify-email() {
   return (
     <div>
       <h1>verify-email</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

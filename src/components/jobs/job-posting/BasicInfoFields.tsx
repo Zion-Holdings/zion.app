@@ -1,9 +1,10 @@
-import React from react';
-default function BasicInfoFields() {
+import React from 'react';
+
+export default function BasicInfoFields() {
   return (
     <div>
       <h1>BasicInfoFields</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

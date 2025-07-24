@@ -1,9 +1,10 @@
-import React from react';
-default function RaiseDisputeButton() {
+import React from 'react';
+
+export default function RaiseDisputeButton() {
   return (
     <div>
       <h1>RaiseDisputeButton</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

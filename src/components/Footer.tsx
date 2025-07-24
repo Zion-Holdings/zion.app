@@ -1,9 +1,10 @@
-import React from react';
-default function Footer() {
+import React from 'react';
+
+export default function Footer() {
   return (
     <div>
       <h1>Footer</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

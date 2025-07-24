@@ -1,4 +1,4 @@
-// bundleOptimization module placeholder
-const bundleOptimization = {
-  // TODO: Implement bundleOptimization functionality
+// Utility functions for bundleOptimization
+export const bundleOptimization = {
+  // TODO: Implement utility functions
 };

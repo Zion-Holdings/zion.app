@@ -1,9 +1,10 @@
-import React from react';
-default function FraudStatsCards() {
+import React from 'react';
+
+export default function FraudStatsCards() {
   return (
     <div>
       <h1>FraudStatsCards</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

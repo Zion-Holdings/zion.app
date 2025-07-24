@@ -1,9 +1,10 @@
-import React from react';
-default function ClientOnboardingSteps() {
+import React from 'react';
+
+export default function ClientOnboardingSteps() {
   return (
     <div>
       <h1>ClientOnboardingSteps</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

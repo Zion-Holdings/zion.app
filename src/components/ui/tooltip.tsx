@@ -1,9 +1,10 @@
-import React from react';
-default function tooltip() {
+import React from 'react';
+
+export default function tooltip() {
   return (
     <div>
       <h1>tooltip</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

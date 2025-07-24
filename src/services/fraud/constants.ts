@@ -1,4 +1,4 @@
-// constants module placeholder
-const constants = {
-  // TODO: Implement constants functionality
+// Service for constants
+export const constantsService = {
+  // TODO: Implement service methods
 };

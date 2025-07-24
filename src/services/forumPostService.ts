@@ -1,4 +1,4 @@
-// forumPostService module placeholder
-const forumPostService = {
-  // TODO: Implement forumPostService functionality
+// Service for forumPostService
+export const forumPostServiceService = {
+  // TODO: Implement service methods
 };

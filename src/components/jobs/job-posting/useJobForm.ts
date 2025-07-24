@@ -1,4 +1,4 @@
-// useJobForm module placeholder
-const useJobForm = {
-  // TODO: Implement useJobForm functionality
+// Module for useJobForm
+export const useJobForm = {
+  // TODO: Implement module functionality
 };

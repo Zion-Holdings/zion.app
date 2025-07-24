@@ -1,4 +1,4 @@
-// blog-posts module placeholder
-const blog-posts = {
-  // TODO: Implement blog-posts functionality
+// Module for blog-posts
+export const blog-posts = {
+  // TODO: Implement module functionality
 };

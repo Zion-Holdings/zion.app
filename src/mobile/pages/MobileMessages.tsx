@@ -1,9 +1,10 @@
-import React from react';
-default function MobileMessages() {
+import React from 'react';
+
+export default function MobileMessages() {
   return (
     <div>
       <h1>MobileMessages</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

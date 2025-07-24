@@ -1,4 +1,5 @@
-// useFetchResume module placeholder
-const useFetchResume = {
-  // TODO: Implement useFetchResume functionality
+// Hook for useFetchResume
+export const useUseFetchResume = () => {
+  // TODO: Implement hook logic
+  return {};
 };

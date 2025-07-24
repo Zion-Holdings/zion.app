@@ -1,4 +1,4 @@
-// stripe.d module placeholder
-const stripe.d = {
-  // TODO: Implement stripe.d functionality
-};
+// Type definitions for stripe.d
+export interface stripe.d {
+  // TODO: Add proper type definitions
+}

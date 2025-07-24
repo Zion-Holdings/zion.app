@@ -1,9 +1,10 @@
-import React from react';
-default function ITServicePricingTable() {
+import React from 'react';
+
+export default function ITServicePricingTable() {
   return (
     <div>
       <h1>ITServicePricingTable</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

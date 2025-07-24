@@ -1,4 +1,4 @@
-// db-optimizer module placeholder
-const db-optimizer = {
-  // TODO: Implement db-optimizer functionality
+// Utility functions for db-optimizer
+export const db-optimizer = {
+  // TODO: Implement utility functions
 };

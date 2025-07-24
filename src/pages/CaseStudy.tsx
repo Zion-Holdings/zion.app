@@ -1,7 +1,10 @@
-import React from react';
+import React from 'react';
 
 export default function CaseStudy() {
   return (
-    <div>Case Study</div>
+    <div>
+      <h1>CaseStudy</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
   );
 }

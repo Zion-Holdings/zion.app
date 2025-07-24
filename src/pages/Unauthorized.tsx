@@ -1,7 +1,10 @@
-import React from react';
+import React from 'react';
 
 export default function Unauthorized() {
   return (
-    <div>Unauthorized</div>
+    <div>
+      <h1>Unauthorized</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
   );
 }

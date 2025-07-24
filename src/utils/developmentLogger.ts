@@ -1,4 +1,4 @@
-// developmentLogger module placeholder
-const developmentLogger = {
-  // TODO: Implement developmentLogger functionality
+// Utility functions for developmentLogger
+export const developmentLogger = {
+  // TODO: Implement utility functions
 };

@@ -1,4 +1,4 @@
-// messaging module placeholder
-const messaging = {
-  // TODO: Implement messaging functionality
-};
+// Type definitions for messaging
+export interface messaging {
+  // TODO: Add proper type definitions
+}

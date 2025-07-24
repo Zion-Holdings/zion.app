@@ -1,7 +1,10 @@
-import React from react';
+import React from 'react';
 
 export default function SummitPage() {
   return (
-    <div>Summit Page</div>
+    <div>
+      <h1>SummitPage</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-// onsiteServicePricing module placeholder
-const onsiteServicePricing = {
-  // TODO: Implement onsiteServicePricing functionality
+// Module for onsiteServicePricing
+export const onsiteServicePricing = {
+  // TODO: Implement module functionality
 };

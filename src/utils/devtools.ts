@@ -1,4 +1,4 @@
-// devtools module placeholder
-const devtools = {
-  // TODO: Implement devtools functionality
+// Utility functions for devtools
+export const devtools = {
+  // TODO: Implement utility functions
 };

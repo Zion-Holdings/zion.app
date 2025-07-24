@@ -1,4 +1,5 @@
-// useResumeUtils module placeholder
-const useResumeUtils = {
-  // TODO: Implement useResumeUtils functionality
+// Hook for useResumeUtils
+export const useUseResumeUtils = () => {
+  // TODO: Implement hook logic
+  return {};
 };

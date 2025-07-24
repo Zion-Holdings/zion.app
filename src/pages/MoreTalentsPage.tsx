@@ -1,7 +1,10 @@
-import React from react';
+import React from 'react';
 
 export default function MoreTalentsPage() {
   return (
-    <div>More Talents Page</div>
+    <div>
+      <h1>MoreTalentsPage</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
   );
 }

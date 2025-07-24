@@ -1,4 +1,4 @@
-// projects module placeholder
-const projects = {
-  // TODO: Implement projects functionality
-};
+// Type definitions for projects
+export interface projects {
+  // TODO: Add proper type definitions
+}

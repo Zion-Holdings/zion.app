@@ -1,9 +1,10 @@
-import React from react';
-default function ServicesPage() {
+import React from 'react';
+
+export default function ServicesPage() {
   return (
     <div>
       <h1>ServicesPage</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

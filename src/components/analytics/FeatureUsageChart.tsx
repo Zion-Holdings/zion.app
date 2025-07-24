@@ -1,9 +1,10 @@
-import React from react';
-default function FeatureUsageChart() {
+import React from 'react';
+
+export default function FeatureUsageChart() {
   return (
     <div>
       <h1>FeatureUsageChart</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

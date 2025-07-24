@@ -1,4 +1,4 @@
-// db module placeholder
-const db = {
-  // TODO: Implement db functionality
+// Module for db
+export const db = {
+  // TODO: Implement module functionality
 };

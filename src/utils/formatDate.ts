@@ -1,4 +1,4 @@
-// formatDate module placeholder
-const formatDate = {
-  // TODO: Implement formatDate functionality
+// Utility functions for formatDate
+export const formatDate = {
+  // TODO: Implement utility functions
 };

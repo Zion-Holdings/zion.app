@@ -1,4 +1,4 @@
-// auth module placeholder
-const auth = {
-  // TODO: Implement auth functionality
-};
+// Type definitions for auth
+export interface auth {
+  // TODO: Add proper type definitions
+}

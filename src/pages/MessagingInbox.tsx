@@ -1,9 +1,10 @@
-import React from react';
-default function MessagingInbox() {
+import React from 'react';
+
+export default function MessagingInbox() {
   return (
     <div>
       <h1>MessagingInbox</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

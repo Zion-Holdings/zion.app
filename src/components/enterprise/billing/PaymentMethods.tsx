@@ -1,9 +1,10 @@
-import React from react';
-default function PaymentMethods() {
+import React from 'react';
+
+export default function PaymentMethods() {
   return (
     <div>
       <h1>PaymentMethods</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

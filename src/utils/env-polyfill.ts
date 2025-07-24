@@ -1,4 +1,4 @@
-// env-polyfill module placeholder
-const env-polyfill = {
-  // TODO: Implement env-polyfill functionality
+// Utility functions for env-polyfill
+export const env-polyfill = {
+  // TODO: Implement utility functions
 };

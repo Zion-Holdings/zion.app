@@ -1,4 +1,4 @@
-// common module placeholder
-const common = {
-  // TODO: Implement common functionality
-};
+// Type definitions for common
+export interface common {
+  // TODO: Add proper type definitions
+}

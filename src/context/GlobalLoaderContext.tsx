@@ -1,9 +1,10 @@
-import React from react';
-default function GlobalLoaderContext() {
+import React from 'react';
+
+export default function GlobalLoaderContext() {
   return (
     <div>
       <h1>GlobalLoaderContext</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

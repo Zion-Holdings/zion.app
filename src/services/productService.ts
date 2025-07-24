@@ -1,4 +1,4 @@
-// productService module placeholder
-const productService = {
-  // TODO: Implement productService functionality
+// Service for productService
+export const productServiceService = {
+  // TODO: Implement service methods
 };

@@ -1,4 +1,4 @@
-// cookies module placeholder
-const cookies = {
-  // TODO: Implement cookies functionality
+// Utility functions for cookies
+export const cookies = {
+  // TODO: Implement utility functions
 };

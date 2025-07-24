@@ -1,4 +1,5 @@
-// index module placeholder
-const index = {
-  // TODO: Implement index functionality
+// Hook for index
+export const useIndex = () => {
+  // TODO: Implement hook logic
+  return {};
 };

@@ -1,4 +1,4 @@
-// prompts module placeholder
-const prompts = {
-  // TODO: Implement prompts functionality
-};
+// Type definitions for prompts
+export interface prompts {
+  // TODO: Add proper type definitions
+}

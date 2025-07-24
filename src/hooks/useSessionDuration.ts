@@ -1,4 +1,5 @@
-// useSessionDuration module placeholder
-const useSessionDuration = {
-  // TODO: Implement useSessionDuration functionality
+// Hook for useSessionDuration
+export const useUseSessionDuration = () => {
+  // TODO: Implement hook logic
+  return {};
 };

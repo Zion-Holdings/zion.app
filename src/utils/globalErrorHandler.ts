@@ -1,4 +1,4 @@
-// globalErrorHandler module placeholder
-const globalErrorHandler = {
-  // TODO: Implement globalErrorHandler functionality
+// Utility functions for globalErrorHandler
+export const globalErrorHandler = {
+  // TODO: Implement utility functions
 };

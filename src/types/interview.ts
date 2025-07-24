@@ -1,4 +1,4 @@
-// interview module placeholder
-const interview = {
-  // TODO: Implement interview functionality
-};
+// Type definitions for interview
+export interface interview {
+  // TODO: Add proper type definitions
+}

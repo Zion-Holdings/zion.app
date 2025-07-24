@@ -1,4 +1,4 @@
-// pricingSuggestionService module placeholder
-const pricingSuggestionService = {
-  // TODO: Implement pricingSuggestionService functionality
+// Service for pricingSuggestionService
+export const pricingSuggestionServiceService = {
+  // TODO: Implement service methods
 };

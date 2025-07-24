@@ -1,9 +1,10 @@
-import React from react';
-default function skeleton() {
+import React from 'react';
+
+export default function skeleton() {
   return (
     <div>
       <h1>skeleton</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

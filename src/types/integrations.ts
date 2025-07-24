@@ -1,4 +1,4 @@
-// integrations module placeholder
-const integrations = {
-  // TODO: Implement integrations functionality
-};
+// Type definitions for integrations
+export interface integrations {
+  // TODO: Add proper type definitions
+}

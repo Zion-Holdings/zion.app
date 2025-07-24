@@ -1,9 +1,10 @@
-import React from react';
-default function BrowseCards() {
+import React from 'react';
+
+export default function BrowseCards() {
   return (
     <div>
       <h1>BrowseCards</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

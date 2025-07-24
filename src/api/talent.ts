@@ -1,4 +1,4 @@
-// talent module placeholder
-const talent = {
-  // TODO: Implement talent functionality
+// Module for talent
+export const talent = {
+  // TODO: Implement module functionality
 };

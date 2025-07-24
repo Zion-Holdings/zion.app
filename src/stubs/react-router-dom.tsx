@@ -1,7 +1,10 @@
-import React from react';
+import React from 'react';
 
-export default function StubRouter() {
+export default function react-router-dom() {
   return (
-    <div>Stub Router</div>
+    <div>
+      <h1>react-router-dom</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-// suggestFix module placeholder
-const suggestFix = {
-  // TODO: Implement suggestFix functionality
+// Utility functions for suggestFix
+export const suggestFix = {
+  // TODO: Implement utility functions
 };

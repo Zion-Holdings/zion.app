@@ -1,4 +1,4 @@
-// recommendations module placeholder
-const recommendations = {
-  // TODO: Implement recommendations functionality
+// Module for recommendations
+export const recommendations = {
+  // TODO: Implement module functionality
 };

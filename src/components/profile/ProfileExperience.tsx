@@ -1,9 +1,10 @@
-import React from react';
-default function ProfileExperience() {
+import React from 'react';
+
+export default function ProfileExperience() {
   return (
     <div>
       <h1>ProfileExperience</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

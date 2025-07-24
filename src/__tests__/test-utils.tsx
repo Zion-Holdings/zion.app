@@ -1,9 +1,10 @@
-import React from react';
-default function test-utils() {
+import React from 'react';
+
+export default function test-utils() {
   return (
     <div>
       <h1>test-utils</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

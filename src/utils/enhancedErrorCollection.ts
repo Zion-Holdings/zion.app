@@ -1,4 +1,4 @@
-// enhancedErrorCollection module placeholder
-const enhancedErrorCollection = {
-  // TODO: Implement enhancedErrorCollection functionality
+// Utility functions for enhancedErrorCollection
+export const enhancedErrorCollection = {
+  // TODO: Implement utility functions
 };

@@ -1,9 +1,10 @@
-import React from react';
-default function ApplicationActions() {
+import React from 'react';
+
+export default function ApplicationActions() {
   return (
     <div>
       <h1>ApplicationActions</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

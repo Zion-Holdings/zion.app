@@ -1,9 +1,10 @@
-import React from react';
-default function CountryTabs() {
+import React from 'react';
+
+export default function CountryTabs() {
   return (
     <div>
       <h1>CountryTabs</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,10 @@
-import React from react';
-default function ApiSampleCode() {
+import React from 'react';
+
+export default function ApiSampleCode() {
   return (
     <div>
       <h1>ApiSampleCode</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

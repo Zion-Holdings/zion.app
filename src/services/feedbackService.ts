@@ -1,4 +1,4 @@
-// feedbackService module placeholder
-const feedbackService = {
-  // TODO: Implement feedbackService functionality
+// Service for feedbackService
+export const feedbackServiceService = {
+  // TODO: Implement service methods
 };

@@ -1,4 +1,4 @@
-// docsSearchData module placeholder
-const docsSearchData = {
-  // TODO: Implement docsSearchData functionality
+// Module for docsSearchData
+export const docsSearchData = {
+  // TODO: Implement module functionality
 };

@@ -1,9 +1,10 @@
-import React from react';
-default function WebhooksManager() {
+import React from 'react';
+
+export default function WebhooksManager() {
   return (
     <div>
       <h1>WebhooksManager</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

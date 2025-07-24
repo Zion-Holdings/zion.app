@@ -1,4 +1,4 @@
-// signupApi.test module placeholder
-const signupApi.test = {
-  // TODO: Implement signupApi.test functionality
+// Service for signupApi.test
+export const signupApi.testService = {
+  // TODO: Implement service methods
 };

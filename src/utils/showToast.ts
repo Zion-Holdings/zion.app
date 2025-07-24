@@ -1,4 +1,4 @@
-// showToast module placeholder
-const showToast = {
-  // TODO: Implement showToast functionality
+// Utility functions for showToast
+export const showToast = {
+  // TODO: Implement utility functions
 };

@@ -1,9 +1,10 @@
-import React from react';
-default function JobsList() {
+import React from 'react';
+
+export default function JobsList() {
   return (
     <div>
       <h1>JobsList</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

@@ -1,4 +1,4 @@
-// withErrorLogging module placeholder
-const withErrorLogging = {
-  // TODO: Implement withErrorLogging functionality
+// Utility functions for withErrorLogging
+export const withErrorLogging = {
+  // TODO: Implement utility functions
 };

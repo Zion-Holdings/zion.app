@@ -1,4 +1,4 @@
-// listings module placeholder
-const listings = {
-  // TODO: Implement listings functionality
-};
+// Type definitions for listings
+export interface listings {
+  // TODO: Add proper type definitions
+}

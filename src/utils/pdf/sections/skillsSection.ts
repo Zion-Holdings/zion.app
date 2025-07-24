@@ -1,4 +1,4 @@
-// skillsSection module placeholder
-const skillsSection = {
-  // TODO: Implement skillsSection functionality
+// Utility functions for skillsSection
+export const skillsSection = {
+  // TODO: Implement utility functions
 };

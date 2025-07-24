@@ -1,4 +1,4 @@
-// talent-api.d module placeholder
-const talent-api.d = {
-  // TODO: Implement talent-api.d functionality
-};
+// Type definitions for talent-api.d
+export interface talent-api.d {
+  // TODO: Add proper type definitions
+}

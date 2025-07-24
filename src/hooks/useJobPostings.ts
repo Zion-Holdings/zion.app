@@ -1,4 +1,5 @@
-// useJobPostings module placeholder
-const useJobPostings = {
-  // TODO: Implement useJobPostings functionality
+// Hook for useJobPostings
+export const useUseJobPostings = () => {
+  // TODO: Implement hook logic
+  return {};
 };

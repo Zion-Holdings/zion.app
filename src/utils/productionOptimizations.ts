@@ -1,4 +1,4 @@
-// productionOptimizations module placeholder
-const productionOptimizations = {
-  // TODO: Implement productionOptimizations functionality
+// Utility functions for productionOptimizations
+export const productionOptimizations = {
+  // TODO: Implement utility functions
 };

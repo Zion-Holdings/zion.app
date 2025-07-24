@@ -1,4 +1,4 @@
-// createSystemNotification module placeholder
-const createSystemNotification = {
-  // TODO: Implement createSystemNotification functionality
+// Utility functions for createSystemNotification
+export const createSystemNotification = {
+  // TODO: Implement utility functions
 };

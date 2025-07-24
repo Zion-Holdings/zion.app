@@ -1,9 +1,10 @@
-import React from react';
-default function aspect-ratio() {
+import React from 'react';
+
+export default function aspect-ratio() {
   return (
     <div>
       <h1>aspect-ratio</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

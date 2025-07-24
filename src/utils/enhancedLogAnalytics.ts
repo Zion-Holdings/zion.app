@@ -1,4 +1,4 @@
-// enhancedLogAnalytics module placeholder
-const enhancedLogAnalytics = {
-  // TODO: Implement enhancedLogAnalytics functionality
+// Utility functions for enhancedLogAnalytics
+export const enhancedLogAnalytics = {
+  // TODO: Implement utility functions
 };

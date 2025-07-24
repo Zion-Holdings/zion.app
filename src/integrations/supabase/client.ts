@@ -1,4 +1,4 @@
-// client module placeholder
-const client = {
-  // TODO: Implement client functionality
+// Module for client
+export const client = {
+  // TODO: Implement module functionality
 };

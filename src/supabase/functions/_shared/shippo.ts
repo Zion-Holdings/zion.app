@@ -1,4 +1,4 @@
-// shippo module placeholder
-const shippo = {
-  // TODO: Implement shippo functionality
+// Module for shippo
+export const shippo = {
+  // TODO: Implement module functionality
 };

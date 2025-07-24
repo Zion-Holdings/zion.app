@@ -1,4 +1,5 @@
-// useAdminQuotes module placeholder
-const useAdminQuotes = {
-  // TODO: Implement useAdminQuotes functionality
+// Hook for useAdminQuotes
+export const useUseAdminQuotes = () => {
+  // TODO: Implement hook logic
+  return {};
 };

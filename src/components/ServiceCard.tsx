@@ -1,9 +1,10 @@
-import React from react';
-default function ServiceCard() {
+import React from 'react';
+
+export default function ServiceCard() {
   return (
     <div>
       <h1>ServiceCard</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

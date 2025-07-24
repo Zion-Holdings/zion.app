@@ -1,4 +1,5 @@
-// usePoints module placeholder
-const usePoints = {
-  // TODO: Implement usePoints functionality
+// Hook for usePoints
+export const useUsePoints = () => {
+  // TODO: Implement hook logic
+  return {};
 };

@@ -1,4 +1,4 @@
-// filters module placeholder
-const filters = {
-  // TODO: Implement filters functionality
-};
+// Type definitions for filters
+export interface filters {
+  // TODO: Add proper type definitions
+}

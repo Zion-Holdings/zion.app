@@ -1,4 +1,5 @@
-// useRouterReady module placeholder
-const useRouterReady = {
-  // TODO: Implement useRouterReady functionality
+// Hook for useRouterReady
+export const useUseRouterReady = () => {
+  // TODO: Implement hook logic
+  return {};
 };

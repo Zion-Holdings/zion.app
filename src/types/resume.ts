@@ -1,4 +1,4 @@
-// resume module placeholder
-const resume = {
-  // TODO: Implement resume functionality
-};
+// Type definitions for resume
+export interface resume {
+  // TODO: Add proper type definitions
+}

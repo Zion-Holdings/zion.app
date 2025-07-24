@@ -1,9 +1,10 @@
-import React from react';
-default function ProfilePage.test() {
+import React from 'react';
+
+export default function ProfilePage.test() {
   return (
     <div>
       <h1>ProfilePage.test</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

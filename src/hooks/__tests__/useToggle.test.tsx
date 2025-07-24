@@ -1,9 +1,10 @@
-import React from react';
-default function useToggle.test() {
+import React from 'react';
+
+export default function useToggle.test() {
   return (
     <div>
       <h1>useToggle.test</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

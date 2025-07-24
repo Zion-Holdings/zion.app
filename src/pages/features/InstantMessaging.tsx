@@ -1,9 +1,10 @@
-import React from react';
-default function InstantMessaging() {
+import React from 'react';
+
+export default function InstantMessaging() {
   return (
     <div>
       <h1>InstantMessaging</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

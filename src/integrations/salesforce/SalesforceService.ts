@@ -1,4 +1,4 @@
-// SalesforceService module placeholder
-const SalesforceService = {
-  // TODO: Implement SalesforceService functionality
+// Module for SalesforceService
+export const SalesforceService = {
+  // TODO: Implement module functionality
 };

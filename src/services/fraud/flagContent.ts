@@ -1,4 +1,4 @@
-// flagContent module placeholder
-const flagContent = {
-  // TODO: Implement flagContent functionality
+// Service for flagContent
+export const flagContentService = {
+  // TODO: Implement service methods
 };

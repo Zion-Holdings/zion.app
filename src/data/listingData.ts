@@ -1,4 +1,4 @@
-// listingData module placeholder
-const listingData = {
-  // TODO: Implement listingData functionality
+// Module for listingData
+export const listingData = {
+  // TODO: Implement module functionality
 };

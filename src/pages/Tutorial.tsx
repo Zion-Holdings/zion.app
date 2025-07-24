@@ -1,7 +1,10 @@
-import React from react';
+import React from 'react';
 
 export default function Tutorial() {
   return (
-    <div>Tutorial</div>
+    <div>
+      <h1>Tutorial</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
   );
 }

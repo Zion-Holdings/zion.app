@@ -1,4 +1,4 @@
-// fetchWithRetry module placeholder
-const fetchWithRetry = {
-  // TODO: Implement fetchWithRetry functionality
+// Utility functions for fetchWithRetry
+export const fetchWithRetry = {
+  // TODO: Implement utility functions
 };

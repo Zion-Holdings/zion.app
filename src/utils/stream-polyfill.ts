@@ -1,4 +1,4 @@
-// stream-polyfill module placeholder
-const stream-polyfill = {
-  // TODO: Implement stream-polyfill functionality
+// Utility functions for stream-polyfill
+export const stream-polyfill = {
+  // TODO: Implement utility functions
 };

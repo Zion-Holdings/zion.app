@@ -1,9 +1,10 @@
-import React from react';
-default function ChatWidget() {
+import React from 'react';
+
+export default function ChatWidget() {
   return (
     <div>
       <h1>ChatWidget</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

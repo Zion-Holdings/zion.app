@@ -1,4 +1,4 @@
-// api-helpers module placeholder
-const api-helpers = {
-  // TODO: Implement api-helpers functionality
+// Utility functions for api-helpers
+export const api-helpers = {
+  // TODO: Implement utility functions
 };

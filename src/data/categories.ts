@@ -1,4 +1,4 @@
-// categories module placeholder
-const categories = {
-  // TODO: Implement categories functionality
+// Module for categories
+export const categories = {
+  // TODO: Implement module functionality
 };

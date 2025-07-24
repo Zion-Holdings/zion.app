@@ -1,4 +1,5 @@
-// useTalentProfile module placeholder
-const useTalentProfile = {
-  // TODO: Implement useTalentProfile functionality
+// Hook for useTalentProfile
+export const useUseTalentProfile = () => {
+  // TODO: Implement hook logic
+  return {};
 };

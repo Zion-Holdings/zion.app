@@ -1,9 +1,10 @@
-import React from react';
-default function AdminRoutes() {
+import React from 'react';
+
+export default function AdminRoutes() {
   return (
     <div>
       <h1>AdminRoutes</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

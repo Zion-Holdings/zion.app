@@ -1,7 +1,10 @@
-import React from react';
+import React from 'react';
 
 export default function ZionBook() {
   return (
-    <div>Zion Book</div>
+    <div>
+      <h1>ZionBook</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
   );
 }

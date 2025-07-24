@@ -1,4 +1,4 @@
-// string module placeholder
-const string = {
-  // TODO: Implement string functionality
+// Utility functions for string
+export const string = {
+  // TODO: Implement utility functions
 };

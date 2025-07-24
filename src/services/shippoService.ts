@@ -1,4 +1,4 @@
-// shippoService module placeholder
-const shippoService = {
-  // TODO: Implement shippoService functionality
+// Service for shippoService
+export const shippoServiceService = {
+  // TODO: Implement service methods
 };

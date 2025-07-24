@@ -1,4 +1,4 @@
-// network module placeholder
-const network = {
-  // TODO: Implement network functionality
+// Utility functions for network
+export const network = {
+  // TODO: Implement utility functions
 };

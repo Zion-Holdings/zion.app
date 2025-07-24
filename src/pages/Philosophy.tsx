@@ -1,7 +1,10 @@
-import React from react';
+import React from 'react';
 
 export default function Philosophy() {
   return (
-    <div>Philosophy</div>
+    <div>
+      <h1>Philosophy</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
   );
 }

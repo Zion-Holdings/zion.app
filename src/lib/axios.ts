@@ -1,4 +1,4 @@
-// axios module placeholder
-const axios = {
-  // TODO: Implement axios functionality
+// Module for axios
+export const axios = {
+  // TODO: Implement module functionality
 };

@@ -1,9 +1,10 @@
-import React from react';
-default function Favorites() {
+import React from 'react';
+
+export default function Favorites() {
   return (
     <div>
       <h1>Favorites</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

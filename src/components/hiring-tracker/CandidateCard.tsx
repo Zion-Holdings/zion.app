@@ -1,9 +1,10 @@
-import React from react';
-default function CandidateCard() {
+import React from 'react';
+
+export default function CandidateCard() {
   return (
     <div>
       <h1>CandidateCard</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

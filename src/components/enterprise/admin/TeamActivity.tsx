@@ -1,9 +1,10 @@
-import React from react';
-default function TeamActivity() {
+import React from 'react';
+
+export default function TeamActivity() {
   return (
     <div>
       <h1>TeamActivity</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

@@ -1,4 +1,4 @@
-// generateStorybookPdf module placeholder
-const generateStorybookPdf = {
-  // TODO: Implement generateStorybookPdf functionality
+// Utility functions for generateStorybookPdf
+export const generateStorybookPdf = {
+  // TODO: Implement utility functions
 };

@@ -1,7 +1,10 @@
-import React from react';
+import React from 'react';
 
 export default function PrimaryNav() {
   return (
-    <nav>Primary Navigation</nav>
+    <div>
+      <h1>PrimaryNav</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
   );
 }

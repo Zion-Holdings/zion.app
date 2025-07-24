@@ -1,4 +1,4 @@
-// talent module placeholder
-const talent = {
-  // TODO: Implement talent functionality
-};
+// Type definitions for talent
+export interface talent {
+  // TODO: Add proper type definitions
+}

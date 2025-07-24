@@ -1,4 +1,4 @@
-// zionGPTService module placeholder
-const zionGPTService = {
-  // TODO: Implement zionGPTService functionality
+// Service for zionGPTService
+export const zionGPTServiceService = {
+  // TODO: Implement service methods
 };

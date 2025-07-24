@@ -1,4 +1,4 @@
-// safeStorageAdapter module placeholder
-const safeStorageAdapter = {
-  // TODO: Implement safeStorageAdapter functionality
+// Module for safeStorageAdapter
+export const safeStorageAdapter = {
+  // TODO: Implement module functionality
 };

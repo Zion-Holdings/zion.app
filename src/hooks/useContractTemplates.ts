@@ -1,4 +1,5 @@
-// useContractTemplates module placeholder
-const useContractTemplates = {
-  // TODO: Implement useContractTemplates functionality
+// Hook for useContractTemplates
+export const useUseContractTemplates = () => {
+  // TODO: Implement hook logic
+  return {};
 };

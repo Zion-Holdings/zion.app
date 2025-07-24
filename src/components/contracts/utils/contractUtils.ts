@@ -1,4 +1,4 @@
-// contractUtils module placeholder
-const contractUtils = {
-  // TODO: Implement contractUtils functionality
+// Utility functions for contractUtils
+export const contractUtils = {
+  // TODO: Implement utility functions
 };

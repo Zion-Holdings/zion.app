@@ -1,4 +1,4 @@
-// postFeedback.test module placeholder
-const postFeedback.test = {
-  // TODO: Implement postFeedback.test functionality
+// Service for postFeedback.test
+export const postFeedback.testService = {
+  // TODO: Implement service methods
 };

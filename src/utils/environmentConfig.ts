@@ -1,4 +1,4 @@
-// environmentConfig module placeholder
-const environmentConfig = {
-  // TODO: Implement environmentConfig functionality
+// Utility functions for environmentConfig
+export const environmentConfig = {
+  // TODO: Implement utility functions
 };

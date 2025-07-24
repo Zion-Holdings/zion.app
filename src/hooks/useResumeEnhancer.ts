@@ -1,4 +1,5 @@
-// useResumeEnhancer module placeholder
-const useResumeEnhancer = {
-  // TODO: Implement useResumeEnhancer functionality
+// Hook for useResumeEnhancer
+export const useUseResumeEnhancer = () => {
+  // TODO: Implement hook logic
+  return {};
 };

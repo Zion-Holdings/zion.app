@@ -1,4 +1,4 @@
-// badgeConfig module placeholder
-const badgeConfig = {
-  // TODO: Implement badgeConfig functionality
+// Module for badgeConfig
+export const badgeConfig = {
+  // TODO: Implement module functionality
 };

@@ -1,4 +1,4 @@
-// productionErrorMonitoring module placeholder
-const productionErrorMonitoring = {
-  // TODO: Implement productionErrorMonitoring functionality
+// Utility functions for productionErrorMonitoring
+export const productionErrorMonitoring = {
+  // TODO: Implement utility functions
 };

@@ -1,4 +1,4 @@
-// investor-matching module placeholder
-const investor-matching = {
-  // TODO: Implement investor-matching functionality
+// Module for investor-matching
+export const investor-matching = {
+  // TODO: Implement module functionality
 };

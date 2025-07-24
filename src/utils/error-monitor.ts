@@ -1,4 +1,4 @@
-// error-monitor module placeholder
-const error-monitor = {
-  // TODO: Implement error-monitor functionality
+// Utility functions for error-monitor
+export const error-monitor = {
+  // TODO: Implement utility functions
 };

@@ -1,4 +1,4 @@
-// formatters module placeholder
-const formatters = {
-  // TODO: Implement formatters functionality
+// Utility functions for formatters
+export const formatters = {
+  // TODO: Implement utility functions
 };

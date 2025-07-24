@@ -1,4 +1,4 @@
-// governanceConfig module placeholder
-const governanceConfig = {
-  // TODO: Implement governanceConfig functionality
+// Module for governanceConfig
+export const governanceConfig = {
+  // TODO: Implement module functionality
 };

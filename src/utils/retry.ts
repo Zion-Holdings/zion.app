@@ -1,4 +1,4 @@
-// retry module placeholder
-const retry = {
-  // TODO: Implement retry functionality
+// Utility functions for retry
+export const retry = {
+  // TODO: Implement utility functions
 };

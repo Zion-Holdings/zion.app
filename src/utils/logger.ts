@@ -1,4 +1,4 @@
-// logger module placeholder
-const logger = {
-  // TODO: Implement logger functionality
+// Utility functions for logger
+export const logger = {
+  // TODO: Implement utility functions
 };

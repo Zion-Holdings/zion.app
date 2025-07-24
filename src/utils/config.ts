@@ -1,4 +1,4 @@
-// config module placeholder
-const config = {
-  // TODO: Implement config functionality
+// Utility functions for config
+export const config = {
+  // TODO: Implement utility functions
 };

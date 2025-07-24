@@ -1,4 +1,4 @@
-// servicesAutoFeedAlgorithm module placeholder
-const servicesAutoFeedAlgorithm = {
-  // TODO: Implement servicesAutoFeedAlgorithm functionality
+// Utility functions for servicesAutoFeedAlgorithm
+export const servicesAutoFeedAlgorithm = {
+  // TODO: Implement utility functions
 };

@@ -1,9 +1,10 @@
-import React from react';
-default function ProjectActions() {
+import React from 'react';
+
+export default function ProjectActions() {
   return (
     <div>
       <h1>ProjectActions</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

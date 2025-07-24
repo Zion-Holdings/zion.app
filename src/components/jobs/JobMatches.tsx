@@ -1,9 +1,10 @@
-import React from react';
-default function JobMatches() {
+import React from 'react';
+
+export default function JobMatches() {
   return (
     <div>
       <h1>JobMatches</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,10 @@
-import React from react';
-default function MarketplaceErrorBoundary() {
+import React from 'react';
+
+export default function MarketplaceErrorBoundary() {
   return (
     <div>
       <h1>MarketplaceErrorBoundary</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

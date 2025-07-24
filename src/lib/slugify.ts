@@ -1,4 +1,4 @@
-// slugify module placeholder
-const slugify = {
-  // TODO: Implement slugify functionality
+// Module for slugify
+export const slugify = {
+  // TODO: Implement module functionality
 };

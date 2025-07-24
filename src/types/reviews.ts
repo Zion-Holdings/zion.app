@@ -1,4 +1,4 @@
-// reviews module placeholder
-const reviews = {
-  // TODO: Implement reviews functionality
-};
+// Type definitions for reviews
+export interface reviews {
+  // TODO: Add proper type definitions
+}

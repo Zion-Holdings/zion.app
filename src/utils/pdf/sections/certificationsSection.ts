@@ -1,4 +1,4 @@
-// certificationsSection module placeholder
-const certificationsSection = {
-  // TODO: Implement certificationsSection functionality
+// Utility functions for certificationsSection
+export const certificationsSection = {
+  // TODO: Implement utility functions
 };

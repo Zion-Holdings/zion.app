@@ -1,9 +1,10 @@
-import React from react';
-default function AdminPerformancePage() {
+import React from 'react';
+
+export default function AdminPerformancePage() {
   return (
     <div>
       <h1>AdminPerformancePage</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

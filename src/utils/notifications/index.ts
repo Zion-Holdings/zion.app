@@ -1,4 +1,4 @@
-// index module placeholder
-const index = {
-  // TODO: Implement index functionality
+// Utility functions for index
+export const index = {
+  // TODO: Implement utility functions
 };

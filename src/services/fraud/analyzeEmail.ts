@@ -1,4 +1,4 @@
-// analyzeEmail module placeholder
-const analyzeEmail = {
-  // TODO: Implement analyzeEmail functionality
+// Service for analyzeEmail
+export const analyzeEmailService = {
+  // TODO: Implement service methods
 };

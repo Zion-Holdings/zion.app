@@ -1,9 +1,10 @@
-import React from react';
-default function TemplateList() {
+import React from 'react';
+
+export default function TemplateList() {
   return (
     <div>
       <h1>TemplateList</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

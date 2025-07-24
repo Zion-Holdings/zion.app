@@ -1,4 +1,4 @@
-// prismaConnect module placeholder
-const prismaConnect = {
-  // TODO: Implement prismaConnect functionality
+// Utility functions for prismaConnect
+export const prismaConnect = {
+  // TODO: Implement utility functions
 };

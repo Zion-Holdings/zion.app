@@ -1,4 +1,4 @@
-// memoization module placeholder
-const memoization = {
-  // TODO: Implement memoization functionality
+// Utility functions for memoization
+export const memoization = {
+  // TODO: Implement utility functions
 };

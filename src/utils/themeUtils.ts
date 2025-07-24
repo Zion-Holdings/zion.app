@@ -1,4 +1,4 @@
-// themeUtils module placeholder
-const themeUtils = {
-  // TODO: Implement themeUtils functionality
+// Utility functions for themeUtils
+export const themeUtils = {
+  // TODO: Implement utility functions
 };

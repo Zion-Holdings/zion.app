@@ -1,9 +1,10 @@
-import React from react';
-default function JobMatchCard() {
+import React from 'react';
+
+export default function JobMatchCard() {
   return (
     <div>
       <h1>JobMatchCard</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

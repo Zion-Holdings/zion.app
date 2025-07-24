@@ -1,9 +1,10 @@
-import React from react';
-default function PwaInstallButton() {
+import React from 'react';
+
+export default function PwaInstallButton() {
   return (
     <div>
       <h1>PwaInstallButton</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

@@ -1,4 +1,5 @@
-// useWorkExperience module placeholder
-const useWorkExperience = {
-  // TODO: Implement useWorkExperience functionality
+// Hook for useWorkExperience
+export const useUseWorkExperience = () => {
+  // TODO: Implement hook logic
+  return {};
 };

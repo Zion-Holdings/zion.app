@@ -1,9 +1,10 @@
-import React from react';
-default function input() {
+import React from 'react';
+
+export default function input() {
   return (
     <div>
       <h1>input</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

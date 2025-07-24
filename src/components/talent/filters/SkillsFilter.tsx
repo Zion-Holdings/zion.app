@@ -1,9 +1,10 @@
-import React from react';
-default function SkillsFilter() {
+import React from 'react';
+
+export default function SkillsFilter() {
   return (
     <div>
       <h1>SkillsFilter</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

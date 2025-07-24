@@ -1,4 +1,4 @@
-// customErrorReporter module placeholder
-const customErrorReporter = {
-  // TODO: Implement customErrorReporter functionality
+// Utility functions for customErrorReporter
+export const customErrorReporter = {
+  // TODO: Implement utility functions
 };

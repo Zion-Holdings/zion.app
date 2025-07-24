@@ -1,4 +1,4 @@
-// react-devtools.d module placeholder
-const react-devtools.d = {
-  // TODO: Implement react-devtools.d functionality
-};
+// Type definitions for react-devtools.d
+export interface react-devtools.d {
+  // TODO: Add proper type definitions
+}

@@ -1,4 +1,4 @@
-// types module placeholder
-const types = {
-  // TODO: Implement types functionality
+// Module for types
+export const types = {
+  // TODO: Implement module functionality
 };

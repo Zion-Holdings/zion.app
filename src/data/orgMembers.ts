@@ -1,4 +1,4 @@
-// orgMembers module placeholder
-const orgMembers = {
-  // TODO: Implement orgMembers functionality
+// Module for orgMembers
+export const orgMembers = {
+  // TODO: Implement module functionality
 };

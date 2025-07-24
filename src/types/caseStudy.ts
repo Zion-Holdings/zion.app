@@ -1,4 +1,4 @@
-// caseStudy module placeholder
-const caseStudy = {
-  // TODO: Implement caseStudy functionality
-};
+// Type definitions for caseStudy
+export interface caseStudy {
+  // TODO: Add proper type definitions
+}

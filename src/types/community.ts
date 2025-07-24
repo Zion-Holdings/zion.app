@@ -1,4 +1,4 @@
-// community module placeholder
-const community = {
-  // TODO: Implement community functionality
-};
+// Type definitions for community
+export interface community {
+  // TODO: Add proper type definitions
+}

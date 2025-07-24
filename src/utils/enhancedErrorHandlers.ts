@@ -1,4 +1,4 @@
-// enhancedErrorHandlers module placeholder
-const enhancedErrorHandlers = {
-  // TODO: Implement enhancedErrorHandlers functionality
+// Utility functions for enhancedErrorHandlers
+export const enhancedErrorHandlers = {
+  // TODO: Implement utility functions
 };

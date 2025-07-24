@@ -1,4 +1,5 @@
-// useWhitelabelTenant module placeholder
-const useWhitelabelTenant = {
-  // TODO: Implement useWhitelabelTenant functionality
+// Hook for useWhitelabelTenant
+export const useUseWhitelabelTenant = () => {
+  // TODO: Implement hook logic
+  return {};
 };

@@ -1,4 +1,4 @@
-// posthog module placeholder
-const posthog = {
-  // TODO: Implement posthog functionality
+// Module for posthog
+export const posthog = {
+  // TODO: Implement module functionality
 };

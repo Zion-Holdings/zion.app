@@ -1,7 +1,10 @@
-import React from react';
+import React from 'react';
 
 export default function ApiGettingStarted() {
   return (
-    <div>API Getting Started</div>
+    <div>
+      <h1>ApiGettingStarted</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
   );
 }

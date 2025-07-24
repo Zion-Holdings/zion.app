@@ -1,4 +1,4 @@
-// cache-optimizer module placeholder
-const cache-optimizer = {
-  // TODO: Implement cache-optimizer functionality
+// Utility functions for cache-optimizer
+export const cache-optimizer = {
+  // TODO: Implement utility functions
 };

@@ -1,4 +1,5 @@
-// useUploadDeliverable module placeholder
-const useUploadDeliverable = {
-  // TODO: Implement useUploadDeliverable functionality
+// Hook for useUploadDeliverable
+export const useUseUploadDeliverable = () => {
+  // TODO: Implement hook logic
+  return {};
 };

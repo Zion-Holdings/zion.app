@@ -1,4 +1,4 @@
-// logIssue module placeholder
-const logIssue = {
-  // TODO: Implement logIssue functionality
+// Utility functions for logIssue
+export const logIssue = {
+  // TODO: Implement utility functions
 };

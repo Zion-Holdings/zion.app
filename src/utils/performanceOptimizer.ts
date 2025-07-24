@@ -1,4 +1,4 @@
-// performanceOptimizer module placeholder
-const performanceOptimizer = {
-  // TODO: Implement performanceOptimizer functionality
+// Utility functions for performanceOptimizer
+export const performanceOptimizer = {
+  // TODO: Implement utility functions
 };

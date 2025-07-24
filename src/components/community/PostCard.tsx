@@ -1,9 +1,10 @@
-import React from react';
-default function PostCard() {
+import React from 'react';
+
+export default function PostCard() {
   return (
     <div>
       <h1>PostCard</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

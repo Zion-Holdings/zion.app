@@ -1,4 +1,4 @@
-// errorReportingDashboard module placeholder
-const errorReportingDashboard = {
-  // TODO: Implement errorReportingDashboard functionality
+// Utility functions for errorReportingDashboard
+export const errorReportingDashboard = {
+  // TODO: Implement utility functions
 };

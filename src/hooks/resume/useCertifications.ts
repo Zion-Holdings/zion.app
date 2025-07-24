@@ -1,4 +1,5 @@
-// useCertifications module placeholder
-const useCertifications = {
-  // TODO: Implement useCertifications functionality
+// Hook for useCertifications
+export const useUseCertifications = () => {
+  // TODO: Implement hook logic
+  return {};
 };

@@ -1,4 +1,4 @@
-// profile module placeholder
-const profile = {
-  // TODO: Implement profile functionality
-};
+// Type definitions for profile
+export interface profile {
+  // TODO: Add proper type definitions
+}

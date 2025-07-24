@@ -1,4 +1,4 @@
-// google-analytics.d module placeholder
-const google-analytics.d = {
-  // TODO: Implement google-analytics.d functionality
-};
+// Type definitions for google-analytics.d
+export interface google-analytics.d {
+  // TODO: Add proper type definitions
+}

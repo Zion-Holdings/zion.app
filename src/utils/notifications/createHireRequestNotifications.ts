@@ -1,4 +1,4 @@
-// createHireRequestNotifications module placeholder
-const createHireRequestNotifications = {
-  // TODO: Implement createHireRequestNotifications functionality
+// Utility functions for createHireRequestNotifications
+export const createHireRequestNotifications = {
+  // TODO: Implement utility functions
 };

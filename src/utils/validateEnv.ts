@@ -1,4 +1,4 @@
-// validateEnv module placeholder
-const validateEnv = {
-  // TODO: Implement validateEnv functionality
+// Utility functions for validateEnv
+export const validateEnv = {
+  // TODO: Implement utility functions
 };

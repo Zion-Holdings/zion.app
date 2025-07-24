@@ -1,7 +1,10 @@
-import React from react';
+import React from 'react';
 
 export default function FounderBackupVault() {
   return (
-    <div>Founder Backup Vault</div>
+    <div>
+      <h1>FounderBackupVault</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
   );
 }

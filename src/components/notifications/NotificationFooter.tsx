@@ -1,9 +1,10 @@
-import React from react';
-default function NotificationFooter() {
+import React from 'react';
+
+export default function NotificationFooter() {
   return (
     <div>
       <h1>NotificationFooter</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

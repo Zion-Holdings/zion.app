@@ -1,4 +1,5 @@
-// useEmailAuth module placeholder
-const useEmailAuth = {
-  // TODO: Implement useEmailAuth functionality
+// Hook for useEmailAuth
+export const useUseEmailAuth = () => {
+  // TODO: Implement hook logic
+  return {};
 };

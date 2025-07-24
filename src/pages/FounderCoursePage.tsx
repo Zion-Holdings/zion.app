@@ -1,7 +1,10 @@
-import React from react';
+import React from 'react';
 
 export default function FounderCoursePage() {
   return (
-    <div>Founder Course Page</div>
+    <div>
+      <h1>FounderCoursePage</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
   );
 }

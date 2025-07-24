@@ -1,4 +1,4 @@
-// profileConverter module placeholder
-const profileConverter = {
-  // TODO: Implement profileConverter functionality
+// Utility functions for profileConverter
+export const profileConverter = {
+  // TODO: Implement utility functions
 };

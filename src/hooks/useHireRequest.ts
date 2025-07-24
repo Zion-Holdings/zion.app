@@ -1,4 +1,5 @@
-// useHireRequest module placeholder
-const useHireRequest = {
-  // TODO: Implement useHireRequest functionality
+// Hook for useHireRequest
+export const useUseHireRequest = () => {
+  // TODO: Implement hook logic
+  return {};
 };

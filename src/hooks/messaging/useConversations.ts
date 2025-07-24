@@ -1,4 +1,5 @@
-// useConversations module placeholder
-const useConversations = {
-  // TODO: Implement useConversations functionality
+// Hook for useConversations
+export const useUseConversations = () => {
+  // TODO: Implement hook logic
+  return {};
 };

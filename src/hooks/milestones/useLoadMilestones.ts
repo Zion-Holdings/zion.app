@@ -1,4 +1,5 @@
-// useLoadMilestones module placeholder
-const useLoadMilestones = {
-  // TODO: Implement useLoadMilestones functionality
+// Hook for useLoadMilestones
+export const useUseLoadMilestones = () => {
+  // TODO: Implement hook logic
+  return {};
 };

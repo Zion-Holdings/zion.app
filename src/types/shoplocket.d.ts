@@ -1,4 +1,4 @@
-// shoplocket.d module placeholder
-const shoplocket.d = {
-  // TODO: Implement shoplocket.d functionality
-};
+// Type definitions for shoplocket.d
+export interface shoplocket.d {
+  // TODO: Add proper type definitions
+}

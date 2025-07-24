@@ -1,4 +1,5 @@
-// useCreateMilestone module placeholder
-const useCreateMilestone = {
-  // TODO: Implement useCreateMilestone functionality
+// Hook for useCreateMilestone
+export const useUseCreateMilestone = () => {
+  // TODO: Implement hook logic
+  return {};
 };

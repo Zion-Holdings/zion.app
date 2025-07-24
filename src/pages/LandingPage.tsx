@@ -1,9 +1,10 @@
-import React from react';
-default function LandingPage() {
+import React from 'react';
+
+export default function LandingPage() {
   return (
     <div>
       <h1>LandingPage</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

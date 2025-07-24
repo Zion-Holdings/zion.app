@@ -1,9 +1,10 @@
-import React from react';
-default function PrimaryNav.test() {
+import React from 'react';
+
+export default function PrimaryNav.test() {
   return (
     <div>
       <h1>PrimaryNav.test</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

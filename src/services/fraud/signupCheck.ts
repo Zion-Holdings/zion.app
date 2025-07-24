@@ -1,4 +1,4 @@
-// signupCheck module placeholder
-const signupCheck = {
-  // TODO: Implement signupCheck functionality
+// Service for signupCheck
+export const signupCheckService = {
+  // TODO: Implement service methods
 };

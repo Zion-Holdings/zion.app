@@ -1,9 +1,10 @@
-import React from react';
-default function ResumeSelector() {
+import React from 'react';
+
+export default function ResumeSelector() {
   return (
     <div>
       <h1>ResumeSelector</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

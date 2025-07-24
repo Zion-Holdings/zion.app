@@ -1,7 +1,10 @@
-import React from react';
+import React from 'react';
 
 export default function Checkout() {
   return (
-    <div>Checkout</div>
+    <div>
+      <h1>Checkout</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
   );
 }

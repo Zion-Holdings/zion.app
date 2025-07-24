@@ -1,9 +1,10 @@
-import React from react';
-default function ThemeContext() {
+import React from 'react';
+
+export default function ThemeContext() {
   return (
     <div>
       <h1>ThemeContext</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

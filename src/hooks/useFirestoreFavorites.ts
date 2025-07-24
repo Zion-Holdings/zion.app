@@ -1,4 +1,5 @@
-// useFirestoreFavorites module placeholder
-const useFirestoreFavorites = {
-  // TODO: Implement useFirestoreFavorites functionality
+// Hook for useFirestoreFavorites
+export const useUseFirestoreFavorites = () => {
+  // TODO: Implement hook logic
+  return {};
 };

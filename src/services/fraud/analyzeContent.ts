@@ -1,4 +1,4 @@
-// analyzeContent module placeholder
-const analyzeContent = {
-  // TODO: Implement analyzeContent functionality
+// Service for analyzeContent
+export const analyzeContentService = {
+  // TODO: Implement service methods
 };

@@ -1,9 +1,10 @@
-import React from react';
-default function ClientDashboard() {
+import React from 'react';
+
+export default function ClientDashboard() {
   return (
     <div>
       <h1>ClientDashboard</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

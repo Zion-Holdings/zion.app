@@ -1,9 +1,10 @@
-import React from react';
-default function DashboardRoutes() {
+import React from 'react';
+
+export default function DashboardRoutes() {
   return (
     <div>
       <h1>DashboardRoutes</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

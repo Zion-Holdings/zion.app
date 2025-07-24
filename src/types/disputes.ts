@@ -1,4 +1,4 @@
-// disputes module placeholder
-const disputes = {
-  // TODO: Implement disputes functionality
-};
+// Type definitions for disputes
+export interface disputes {
+  // TODO: Add proper type definitions
+}

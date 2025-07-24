@@ -1,9 +1,10 @@
-import React from react';
-default function AdvancedSearchResults() {
+import React from 'react';
+
+export default function AdvancedSearchResults() {
   return (
     <div>
       <h1>AdvancedSearchResults</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

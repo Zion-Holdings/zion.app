@@ -1,4 +1,4 @@
-// monitorContent module placeholder
-const monitorContent = {
-  // TODO: Implement monitorContent functionality
+// Service for monitorContent
+export const monitorContentService = {
+  // TODO: Implement service methods
 };

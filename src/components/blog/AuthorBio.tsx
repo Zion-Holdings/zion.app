@@ -1,9 +1,10 @@
-import React from react';
-default function AuthorBio() {
+import React from 'react';
+
+export default function AuthorBio() {
   return (
     <div>
       <h1>AuthorBio</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

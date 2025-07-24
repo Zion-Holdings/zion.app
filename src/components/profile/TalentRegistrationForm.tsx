@@ -1,9 +1,10 @@
-import React from react';
-default function TalentRegistrationForm() {
+import React from 'react';
+
+export default function TalentRegistrationForm() {
   return (
     <div>
       <h1>TalentRegistrationForm</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,10 @@
-import React from react';
-default function TalentPlaceholder() {
+import React from 'react';
+
+export default function TalentPlaceholder() {
   return (
     <div>
       <h1>TalentPlaceholder</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

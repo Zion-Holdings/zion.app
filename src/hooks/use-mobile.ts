@@ -1,4 +1,5 @@
-// use-mobile module placeholder
-const use-mobile = {
-  // TODO: Implement use-mobile functionality
+// Hook for use-mobile
+export const useUse-mobile = () => {
+  // TODO: Implement hook logic
+  return {};
 };

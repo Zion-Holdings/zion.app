@@ -1,9 +1,10 @@
-import React from react';
-default function GeneratedDescriptionDisplay() {
+import React from 'react';
+
+export default function GeneratedDescriptionDisplay() {
   return (
     <div>
       <h1>GeneratedDescriptionDisplay</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

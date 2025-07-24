@@ -1,4 +1,5 @@
-// useTalentQuotes module placeholder
-const useTalentQuotes = {
-  // TODO: Implement useTalentQuotes functionality
+// Hook for useTalentQuotes
+export const useUseTalentQuotes = () => {
+  // TODO: Implement hook logic
+  return {};
 };

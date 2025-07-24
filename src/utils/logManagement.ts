@@ -1,4 +1,4 @@
-// logManagement module placeholder
-const logManagement = {
-  // TODO: Implement logManagement functionality
+// Utility functions for logManagement
+export const logManagement = {
+  // TODO: Implement utility functions
 };

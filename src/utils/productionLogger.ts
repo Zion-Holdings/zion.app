@@ -1,4 +1,4 @@
-// productionLogger module placeholder
-const productionLogger = {
-  // TODO: Implement productionLogger functionality
+// Utility functions for productionLogger
+export const productionLogger = {
+  // TODO: Implement utility functions
 };

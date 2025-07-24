@@ -1,4 +1,4 @@
-// TermsOfService.d module placeholder
-const TermsOfService.d = {
-  // TODO: Implement TermsOfService.d functionality
-};
+// Type definitions for TermsOfService.d
+export interface TermsOfService.d {
+  // TODO: Add proper type definitions
+}

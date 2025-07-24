@@ -1,9 +1,10 @@
-import React from react';
-default function EnhancedNewsletterForm() {
+import React from 'react';
+
+export default function EnhancedNewsletterForm() {
   return (
     <div>
       <h1>EnhancedNewsletterForm</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

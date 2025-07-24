@@ -1,4 +1,4 @@
-// consoleErrorToast module placeholder
-const consoleErrorToast = {
-  // TODO: Implement consoleErrorToast functionality
+// Utility functions for consoleErrorToast
+export const consoleErrorToast = {
+  // TODO: Implement utility functions
 };

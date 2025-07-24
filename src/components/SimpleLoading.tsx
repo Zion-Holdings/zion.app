@@ -1,9 +1,10 @@
-import React from react';
-default function SimpleLoading() {
+import React from 'react';
+
+export default function SimpleLoading() {
   return (
     <div>
       <h1>SimpleLoading</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

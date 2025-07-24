@@ -1,4 +1,4 @@
-// authUtils module placeholder
-const authUtils = {
-  // TODO: Implement authUtils functionality
+// Utility functions for authUtils
+export const authUtils = {
+  // TODO: Implement utility functions
 };

@@ -1,4 +1,4 @@
-// validation module placeholder
-const validation = {
-  // TODO: Implement validation functionality
+// Module for validation
+export const validation = {
+  // TODO: Implement module functionality
 };

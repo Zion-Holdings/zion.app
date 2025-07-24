@@ -1,4 +1,5 @@
-// useWebhooks module placeholder
-const useWebhooks = {
-  // TODO: Implement useWebhooks functionality
+// Hook for useWebhooks
+export const useUseWebhooks = () => {
+  // TODO: Implement hook logic
+  return {};
 };

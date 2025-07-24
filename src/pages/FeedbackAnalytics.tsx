@@ -1,7 +1,10 @@
-import React from react';
+import React from 'react';
 
 export default function FeedbackAnalytics() {
   return (
-    <div>Feedback Analytics</div>
+    <div>
+      <h1>FeedbackAnalytics</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
   );
 }

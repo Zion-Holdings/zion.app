@@ -1,4 +1,4 @@
-// index module placeholder
-const index = {
-  // TODO: Implement index functionality
+// Service for index
+export const indexService = {
+  // TODO: Implement service methods
 };

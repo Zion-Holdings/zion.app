@@ -1,7 +1,10 @@
-import React from react';
+import React from 'react';
 
 export default function EnterprisePlans() {
   return (
-    <div>Enterprise Plans</div>
+    <div>
+      <h1>EnterprisePlans</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-// systemHealthMonitor module placeholder
-const systemHealthMonitor = {
-  // TODO: Implement systemHealthMonitor functionality
+// Utility functions for systemHealthMonitor
+export const systemHealthMonitor = {
+  // TODO: Implement utility functions
 };

@@ -1,9 +1,10 @@
-import React from react';
-default function SmartAppBanner() {
+import React from 'react';
+
+export default function SmartAppBanner() {
   return (
     <div>
       <h1>SmartAppBanner</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

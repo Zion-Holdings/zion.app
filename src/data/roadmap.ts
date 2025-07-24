@@ -1,4 +1,4 @@
-// roadmap module placeholder
-const roadmap = {
-  // TODO: Implement roadmap functionality
+// Module for roadmap
+export const roadmap = {
+  // TODO: Implement module functionality
 };

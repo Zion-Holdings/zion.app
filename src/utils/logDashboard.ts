@@ -1,4 +1,4 @@
-// logDashboard module placeholder
-const logDashboard = {
-  // TODO: Implement logDashboard functionality
+// Utility functions for logDashboard
+export const logDashboard = {
+  // TODO: Implement utility functions
 };

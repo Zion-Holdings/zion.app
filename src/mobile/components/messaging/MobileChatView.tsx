@@ -1,9 +1,10 @@
-import React from react';
-default function MobileChatView() {
+import React from 'react';
+
+export default function MobileChatView() {
   return (
     <div>
       <h1>MobileChatView</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

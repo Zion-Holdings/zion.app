@@ -1,4 +1,5 @@
-// useMessages module placeholder
-const useMessages = {
-  // TODO: Implement useMessages functionality
+// Hook for useMessages
+export const useUseMessages = () => {
+  // TODO: Implement hook logic
+  return {};
 };

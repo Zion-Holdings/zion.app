@@ -1,4 +1,4 @@
-// dynamicComponents module placeholder
-const dynamicComponents = {
-  // TODO: Implement dynamicComponents functionality
+// Utility functions for dynamicComponents
+export const dynamicComponents = {
+  // TODO: Implement utility functions
 };

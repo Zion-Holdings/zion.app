@@ -1,4 +1,4 @@
-// server module placeholder
-const server = {
-  // TODO: Implement server functionality
+// Module for server
+export const server = {
+  // TODO: Implement module functionality
 };

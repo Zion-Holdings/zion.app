@@ -1,4 +1,4 @@
-// commentService module placeholder
-const commentService = {
-  // TODO: Implement commentService functionality
+// Service for commentService
+export const commentServiceService = {
+  // TODO: Implement service methods
 };

@@ -1,4 +1,4 @@
-// handlers module placeholder
-const handlers = {
-  // TODO: Implement handlers functionality
+// Module for handlers
+export const handlers = {
+  // TODO: Implement module functionality
 };

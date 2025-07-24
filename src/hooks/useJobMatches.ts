@@ -1,4 +1,5 @@
-// useJobMatches module placeholder
-const useJobMatches = {
-  // TODO: Implement useJobMatches functionality
+// Hook for useJobMatches
+export const useUseJobMatches = () => {
+  // TODO: Implement hook logic
+  return {};
 };

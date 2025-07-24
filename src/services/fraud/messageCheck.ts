@@ -1,4 +1,4 @@
-// messageCheck module placeholder
-const messageCheck = {
-  // TODO: Implement messageCheck functionality
+// Service for messageCheck
+export const messageCheckService = {
+  // TODO: Implement service methods
 };

@@ -1,4 +1,4 @@
-// withAsyncErrorGuard module placeholder
-const withAsyncErrorGuard = {
-  // TODO: Implement withAsyncErrorGuard functionality
+// Utility functions for withAsyncErrorGuard
+export const withAsyncErrorGuard = {
+  // TODO: Implement utility functions
 };

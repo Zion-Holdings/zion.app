@@ -1,7 +1,10 @@
-import React from react';
+import React from 'react';
 
 export default function MobileLaunchPage() {
   return (
-    <div>Mobile Launch Page</div>
+    <div>
+      <h1>MobileLaunchPage</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
   );
 }

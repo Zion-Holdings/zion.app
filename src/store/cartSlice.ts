@@ -1,4 +1,4 @@
-// cartSlice module placeholder
-const cartSlice = {
-  // TODO: Implement cartSlice functionality
+// Store slice for cartSlice
+export const cartSliceSlice = {
+  // TODO: Implement store slice
 };

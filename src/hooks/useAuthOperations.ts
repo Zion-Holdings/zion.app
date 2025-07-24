@@ -1,4 +1,5 @@
-// useAuthOperations module placeholder
-const useAuthOperations = {
-  // TODO: Implement useAuthOperations functionality
+// Hook for useAuthOperations
+export const useUseAuthOperations = () => {
+  // TODO: Implement hook logic
+  return {};
 };

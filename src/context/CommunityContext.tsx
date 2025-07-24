@@ -1,9 +1,10 @@
-import React from react';
-default function CommunityContext() {
+import React from 'react';
+
+export default function CommunityContext() {
   return (
     <div>
       <h1>CommunityContext</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

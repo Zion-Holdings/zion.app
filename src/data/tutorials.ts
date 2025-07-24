@@ -1,4 +1,4 @@
-// tutorials module placeholder
-const tutorials = {
-  // TODO: Implement tutorials functionality
+// Module for tutorials
+export const tutorials = {
+  // TODO: Implement module functionality
 };

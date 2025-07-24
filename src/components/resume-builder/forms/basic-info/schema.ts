@@ -1,4 +1,4 @@
-// schema module placeholder
-const schema = {
-  // TODO: Implement schema functionality
+// Module for schema
+export const schema = {
+  // TODO: Implement module functionality
 };
