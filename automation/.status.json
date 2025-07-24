@@ -1,0 +1,10 @@
+{
+    "status": "failed",
+    "message": "Failed to start system",
+    "timestamp": "2025-07-24T15:48:53Z",
+    "pid": "46268",
+    "monitor_pid": "",
+    "uptime": "0",
+    "restart_count": "0",
+    "last_restart": ""
+}
