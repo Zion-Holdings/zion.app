@@ -139,27 +139,27 @@ function parseArguments() {
         process.exit(0);
         break;
 
-      case --version':
-      case -v':
+      case '--version':
+      case '-v':
         showVersion();
         process.exit(0);
         break;
 
-      case --config':
+      case '--config':
         if (i + 1 < args.length) {
           options.configFile = args[++i];
         }
         break;
 
-      case --dry-run':
+      case '--dry-run':
         options.dryRun = true;
         break;
 
-      case --no-dashboard':
+      case '--no-dashboard':
         options.noDashboard = true;
         break;
 
-      case --port':
+      case '--port':
         if (i + 1 < args.length) {
           options.port = parseInt(args[++i]);
         }
@@ -204,11 +204,11 @@ Examples:
 }
 
 function showVersion() {
-  const packagePath = path.join(__dirname, ..', package.json');
+  const packagePath = path.join(__dirname, '..', 'package.json');
 
   if (fs.existsSync(packagePath)) {
     try {
-      const packageData = JSON.parse(fs.readFileSync(packagePath, utf8'));
+      const packageData = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
       console.log(`Intelligent Automation System v${packageData.version}`);
     } catch (error) {
       console.log('Intelligent Automation System v1.0.0');
@@ -229,11 +229,11 @@ if (require.main === module) {
   }
 
   if (options.noDashboard) {
-    process.env.DISABLE_DASHBOARD = true';
+    process.env.DISABLE_DASHBOARD = 'true';
   }
 
   if (options.dryRun) {
-    process.env.DRY_RUN = true';
+    process.env.DRY_RUN = true;
   }
 
   // Start the system

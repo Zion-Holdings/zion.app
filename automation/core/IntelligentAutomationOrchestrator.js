@@ -30,7 +30,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     
     this.tasks = new Map();
     this.isRunning = false;
-    this.healthStatus = ''healthy'
+    this.healthStatus = 'healthy';
     this.performanceMetrics = {};
     this.startTime = null;
   }
@@ -133,7 +133,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       
       this.startTime = Date.now();
       this.isRunning = true;
-      this.healthStatus = ''healthy'
+      this.healthStatus = 'healthy';
       
       // Start all enabled tasks
       await this.startTasks();
@@ -277,9 +277,9 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     if (healthRatio < 0.8) {
       this.healthStatus = 'degraded';
     } else if (healthRatio < 0.5) {
-      this.healthStatus = 'un'healthy'
+      this.healthStatus = 'unhealthy';
     } else {
-      this.healthStatus = ''healthy'
+      this.healthStatus = 'healthy';
     }
     
     this.performanceMetrics = {
