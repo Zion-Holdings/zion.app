@@ -31,7 +31,7 @@ class EnhancedAutomationSystem {
         }
     }
 
-    log(message, level = info') {
+    log(message, level = 'info') {
         if (!this.config.enableLogging) return;
         
         const timestamp = new Date().toISOString();
@@ -43,9 +43,9 @@ class EnhancedAutomationSystem {
             console.error('Failed to write to log file:', error.message);
         }
         
-        if (level === error') {
+        if (level === 'error') {
             console.error(message);
-        } else if (level === warn') {
+        } else if (level === 'warn') {
             console.warn(message);
         } else {
             console.log(message);

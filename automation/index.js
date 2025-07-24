@@ -233,7 +233,7 @@ if (require.main === module) {
   }
 
   if (options.dryRun) {
-    process.env.DRY_RUN = true;
+    process.env.DRY_RUN = 'true';
   }
 
   // Start the system
