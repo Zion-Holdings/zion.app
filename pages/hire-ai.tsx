@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 ;
-export export default function hireai()      {;
+export default function hireai()      {;
   return (
     <>
       <Head><title>hire-ai - Zion App</title><meta name="description" content="hire-ai page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">hire-ai</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;

@@ -1,4 +1,4 @@
-export export export default function Home()      {;
+export export default function Home()      {;
   return (
     <div style={{ ;
       padding: '2rem', 

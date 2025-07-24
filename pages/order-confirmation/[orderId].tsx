@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 ;
-export export default function orderId()      {;
+export default function orderId()      {;
   return (
     <>
       <Head><title>order-confirmation/[orderId] - Zion App</title><meta name="description" content="order-confirmation/[orderId] page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">;

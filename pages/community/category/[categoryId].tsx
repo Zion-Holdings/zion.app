@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 ;
-export export default function categoryId()      {;
+export default function categoryId()      {;
   return (
     <>
       <Head><title>community/category/[categoryId] - Zion App</title><meta

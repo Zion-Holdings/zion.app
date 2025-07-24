@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 ;
-export export default function country()      {;
+export default function country()      {;
   return (
     <>
       <Head><title>it-onsite-services/[country] - Zion App</title><meta name="description" content="it-onsite-services/[country] page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 ;
-export export default function aicontentgeneration()      {;
+export default function aicontentgeneration()      {;
   return (
     <>
       <Head><title>features/ai-content-generation - Zion App</title><meta

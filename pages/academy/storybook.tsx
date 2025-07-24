@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 ;
-export export default function storybook()      {;
+export default function storybook()      {;
   return (
     <>
       <Head><title>academy/storybook - Zion App</title><meta name="description" content="academy/storybook page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">academy/storybook</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
