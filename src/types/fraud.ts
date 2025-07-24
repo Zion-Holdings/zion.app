@@ -1,4 +1,4 @@
 // Type definitions for fraud;
-export interface fraud {;
+interface fraud {;
   // TODO: Add proper type definitions;
 };

@@ -1,4 +1,4 @@
 // Type definitions for points;
-export interface points {;
+interface points {;
   // TODO: Add proper type definitions;
 };

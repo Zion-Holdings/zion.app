@@ -1,4 +1,4 @@
 // Type definitions for wallet.d;
-export interface wallet.d {;
+interface wallet.d {;
   // TODO: Add proper type definitions;
 }

@@ -1,4 +1,4 @@
 // Type definitions for cart;
-export interface cart {;
+interface cart {;
   // TODO: Add proper type definitions;
 };

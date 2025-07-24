@@ -1,4 +1,4 @@
 // Type definitions for next;
-export interface next {;
+interface next {;
   // TODO: Add proper type definitions;
 };

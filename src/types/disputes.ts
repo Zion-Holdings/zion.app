@@ -1,4 +1,4 @@
 // Type definitions for disputes;
-export interface disputes {;
+interface disputes {;
   // TODO: Add proper type definitions;
 };

@@ -1,4 +1,4 @@
 // Type definitions for jobs;
-export interface jobs {;
+interface jobs {;
   // TODO: Add proper type definitions;
 };

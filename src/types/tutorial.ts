@@ -1,4 +1,4 @@
 // Type definitions for tutorial;
-export interface tutorial {;
+interface tutorial {;
   // TODO: Add proper type definitions;
 };

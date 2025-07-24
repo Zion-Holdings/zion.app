@@ -1,4 +1,4 @@
 // Type definitions for tokens;
-export interface tokens {;
+interface tokens {;
   // TODO: Add proper type definitions;
 };

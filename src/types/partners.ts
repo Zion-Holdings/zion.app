@@ -1,4 +1,4 @@
 // Type definitions for partners;
-export interface partners {;
+interface partners {;
   // TODO: Add proper type definitions;
 };

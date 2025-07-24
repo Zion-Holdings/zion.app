@@ -1,4 +1,4 @@
 // Type definitions for reviews;
-export interface reviews {;
+interface reviews {;
   // TODO: Add proper type definitions;
 };

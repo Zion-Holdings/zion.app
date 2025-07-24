@@ -1,4 +1,4 @@
 // Type definitions for filters;
-export interface filters {;
+interface filters {;
   // TODO: Add proper type definitions;
 };

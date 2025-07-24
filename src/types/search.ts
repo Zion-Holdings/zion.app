@@ -1,4 +1,4 @@
 // Type definitions for search;
-export interface search {;
+interface search {;
   // TODO: Add proper type definitions;
 };

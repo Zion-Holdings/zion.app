@@ -1,4 +1,4 @@
 // Type definitions for contracts;
-export interface contracts {;
+interface contracts {;
   // TODO: Add proper type definitions;
 };

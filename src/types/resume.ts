@@ -1,4 +1,4 @@
 // Type definitions for resume;
-export interface resume {;
+interface resume {;
   // TODO: Add proper type definitions;
 };

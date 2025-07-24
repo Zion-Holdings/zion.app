@@ -1,4 +1,4 @@
 // Type definitions for api;
-export interface api {;
+interface api {;
   // TODO: Add proper type definitions;
 };

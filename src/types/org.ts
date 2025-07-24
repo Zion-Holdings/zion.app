@@ -1,4 +1,4 @@
 // Type definitions for org;
-export interface org {;
+interface org {;
   // TODO: Add proper type definitions;
 };

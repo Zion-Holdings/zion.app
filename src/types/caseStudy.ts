@@ -1,4 +1,4 @@
 // Type definitions for caseStudy;
-export interface caseStudy {;
+interface caseStudy {;
   // TODO: Add proper type definitions;
 };

@@ -1,4 +1,4 @@
 // Type definitions for talent;
-export interface talent {;
+interface talent {;
   // TODO: Add proper type definitions;
 };

@@ -1,4 +1,4 @@
 // Type definitions for profile;
-export interface profile {;
+interface profile {;
   // TODO: Add proper type definitions;
 };

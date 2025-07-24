@@ -1,4 +1,4 @@
 // Type definitions for moderation;
-export interface moderation {;
+interface moderation {;
   // TODO: Add proper type definitions;
 };

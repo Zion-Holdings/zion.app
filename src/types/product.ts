@@ -1,4 +1,4 @@
 // Type definitions for product;
-export interface product {;
+interface product {;
   // TODO: Add proper type definitions;
 };

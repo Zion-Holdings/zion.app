@@ -1,4 +1,4 @@
 // Type definitions for projects;
-export interface projects {;
+interface projects {;
   // TODO: Add proper type definitions;
 };

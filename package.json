@@ -2,10 +2,9 @@
   "name": "project",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "node scripts/simple-dev-server.cjs",
-    "build": "next build --no-lint --no-lint --no-lint --no-lint --no-lint --no-lint --no-lint --no-lint",
+    "build": "next build --no-lint --no-lint --no-lint --no-lint --no-lint --no-lint --no-lint --no-lint --no-lint --no-lint --no-lint",
     "start": "node simple-server.js",
     "dev:next": "next dev --port 3001",
     "lint": "next lint",

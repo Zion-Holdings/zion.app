@@ -1,4 +1,4 @@
 // Type definitions for pwa;
-export interface pwa {;
+interface pwa {;
   // TODO: Add proper type definitions;
 };

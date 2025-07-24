@@ -1,4 +1,4 @@
 // Type definitions for auth;
-export interface auth {;
+interface auth {;
   // TODO: Add proper type definitions;
 };

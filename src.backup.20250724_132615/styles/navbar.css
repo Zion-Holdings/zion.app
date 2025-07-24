@@ -1,0 +1,147 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  /* Assuming a default border, e.g., a light bottom border */
+  border-bottom: 1px solid var(--border);
+  background-color: var(--bg-primary); /* Uses accessible token */
+  padding: 1rem 0; /* Example padding */
+}
+
+.navbar.scrolled {
+  /* Ensure this class doesn't add a second border or conflict.
+     If it's meant to change the border, it should override, not add.
+     For example, if the scrolled state has a different border color: */
+  border-bottom-color: var(--primary); /* Example: changes color on scroll */
+}
+
+.navbar-brand {
+  /* Basic styling for the brand/logo area */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-toggler {
+  /* Styles for the hamburger button */
+  display: none; /* Hidden by default, shown on mobile */
+  background: none;
+  border: 1px solid var(--foreground); /* Use theme variable */
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+.navbar-toggler-icon {
+  /* Simple three-line icon for the hamburger */
+  display: block;
+  width: 1.5em;
+  height: 0.2em;
+  background-color: var(--foreground); /* Use theme variable */
+  position: relative;
+  margin: 0.3em 0;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: '';
+  display: block;
+  width: 1.5em;
+  height: 0.2em;
+  background-color: var(--foreground); /* Use theme variable */
+  position: absolute;
+}
+
+.navbar-toggler-icon::before {
+  top: -0.5em;
+}
+
+.navbar-toggler-icon::after {
+  bottom: -0.5em;
+}
+
+.navbar-collapse {
+  /* Container for navigation links */
+  display: flex; /* On desktop, links are typically inline */
+  flex-grow: 1;
+  align-items: center;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding-left: 0;
+  margin-left: auto; /* Pushes nav to the right, adjust as needed */
+  display: flex;
+}
+
+.nav-item {
+  padding: 0 0.5rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-primary); /* Use accessible token */
+  padding: 0.5rem;
+  display: block;
+  outline: none;
+}
+
+.nav-link:hover {
+  color: var(--primary); /* Use theme variable */
+}
+
+.nav-link:focus-visible,
+.navbar-toggler:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Mobile Styles - using 768px as a breakpoint */
+@media (max-width: 768px) {
+  .navbar {
+    /* Ensure navbar itself is flexible for brand and toggler */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-toggler {
+    display: block; /* Show hamburger button */
+  }
+
+  .navbar-collapse {
+    display: none; /* Hide the nav links container by default */
+    width: 100%;
+    position: absolute;
+    top: 100%; /* Position below the navbar (assuming navbar height is covered by its padding) */
+    left: 0;
+    background-color: var(--background); /* Use theme variable */
+    border-top: 1px solid var(--border); /* Add a separator */
+    padding: 1rem;
+    z-index: 1000; /* Ensure it's above other content if navbar has lower z-index */
+  }
+
+  .navbar-collapse.open {
+    display: block; /* Show when toggled */
+  }
+
+  .navbar-nav {
+    flex-direction: column; /* Stack links vertically */
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .nav-item {
+    padding: 0;
+    width: 100%;
+  }
+
+  .nav-link {
+    padding: 0.75rem 1rem; /* Adjust padding for touch targets */
+    border-bottom: 1px solid var(--border); /* Separator for links */
+    color: var(--text-primary);
+  }
+
+  .nav-item:last-child .nav-link {
+    border-bottom: none;
+  }
+}

@@ -1,0 +1,10 @@
+import React from 'react';
+;
+export default function MobileAppHero() {;
+  return (;
+    <div>;
+      <h1>MobileAppHero</h1>;
+      <p>Component placeholder - needs implementation</p>;
+    </div>;
+  );
+}

@@ -1,4 +1,4 @@
 // Type definitions for blog;
-export interface blog {;
+interface blog {;
   // TODO: Add proper type definitions;
 };
