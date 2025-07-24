@@ -1,4 +1,4 @@
 // Type definitions for jest.d;
-interface jest.d {;
+export interface jest.d {;
   // TODO: Add proper type definitions;
 }

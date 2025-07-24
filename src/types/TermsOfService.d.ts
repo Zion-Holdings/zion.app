@@ -1,4 +1,4 @@
 // Type definitions for TermsOfService.d;
-interface TermsOfService.d {;
+export interface TermsOfService.d {;
   // TODO: Add proper type definitions;
 }

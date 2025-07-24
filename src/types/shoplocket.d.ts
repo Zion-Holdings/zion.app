@@ -1,4 +1,4 @@
 // Type definitions for shoplocket.d;
-interface shoplocket.d {;
+export interface shoplocket.d {;
   // TODO: Add proper type definitions;
 }

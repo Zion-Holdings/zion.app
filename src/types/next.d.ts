@@ -1,4 +1,4 @@
 // Type definitions for next.d;
-interface next.d {;
+export interface next.d {;
   // TODO: Add proper type definitions;
 }

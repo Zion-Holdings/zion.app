@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from react';
+import { useState, useRef, useCallback } from 'react'
 ;
 export function useWebSocketReconnection(options: unknown = {}) {;
   const [isReconnecting, setIsReconnecting] = useState(false);
