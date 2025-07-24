@@ -5,6 +5,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     res.status(405).end();
     return;
   }
-  // TODO: Implement forgot password logic here
   res.status(200).json({ message: 'Forgot endpoint placeholder' });
 }

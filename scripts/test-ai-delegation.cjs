@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,21 +5,22 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
-
 
 /**
  * Zion App - AI Delegation Test Script
@@ -28,9 +28,9 @@ if (process.env.NODE_ENV !== 'production') {
  * Tests the AI-driven continuous improvement system
  */
 
-const fs = require('fs')
-const path = require('path')
-const { execSync, spawn } = require('child_process')
+const fs = require('fs');
+const path = require('path');
+const { execSync, spawn } = require('child_process');
 const axios = require('axios');
 
 // Configuration
@@ -76,7 +76,7 @@ const CONFIG = {
       },
     },
   ],
-}
+};
 class AIDelegationTest {
   constructor() {
     this.testResults = [];
@@ -171,8 +171,8 @@ class AIDelegationTest {
    * Test service availability
    */
   async testServiceAvailability() {
-    logger.info('🌐 Testing service availability...')
-const services = [
+    logger.info('🌐 Testing service availability...');
+    const services = [
       {
         name: 'AI Improvement System',
         url: `${CONFIG.ENDPOINTS.AI_IMPROVEMENT}/health`,
@@ -221,12 +221,12 @@ const services = [
     // Test Cursor API connection
     if (process.env.CURSOR_API_KEY) {
       try {
-        const AIContinuousImprovementSystem = require('./ai-continuous-improvement.cjs')
-const aiSystem = new AIContinuousImprovementSystem();
+        const AIContinuousImprovementSystem = require('./ai-continuous-improvement.cjs');
+        const aiSystem = new AIContinuousImprovementSystem();
 
         // Test API call
-        const testPrompt = 'Test connection'
-const response = await aiSystem.callCursorAPI(testPrompt);
+        const testPrompt = 'Test connection';
+        const response = await aiSystem.callCursorAPI(testPrompt);
 
         if (response) {
           this.logTest('PASS', 'Cursor API connection successful');
@@ -242,15 +242,15 @@ const response = await aiSystem.callCursorAPI(testPrompt);
 
     // Test AI suggestion generation
     try {
-      const CursorAIDelegator = require('./cursor-ai-delegator.cjs')
-const delegator = new CursorAIDelegator();
+      const CursorAIDelegator = require('./cursor-ai-delegator.cjs');
+      const delegator = new CursorAIDelegator();
 
       // Test prompt building
       const testTask = {
         type: 'code_analysis',
         data: { files: ['test.tsx'] },
-      }
-const prompt = delegator.buildTaskPrompt(testTask);
+      };
+      const prompt = delegator.buildTaskPrompt(testTask);
 
       if (prompt && prompt.includes('code_analysis')) {
         this.logTest('PASS', 'AI prompt building works correctly');
@@ -272,8 +272,8 @@ const prompt = delegator.buildTaskPrompt(testTask);
 
     // Test task submission
     try {
-      const testTask = CONFIG.TEST_TASKS[0]
-const response = await axios.post(
+      const testTask = CONFIG.TEST_TASKS[0];
+      const response = await axios.post(
         `${CONFIG.ENDPOINTS.CURSOR_DELEGATOR}/api/tasks/submit`,
         testTask,
         {
@@ -283,8 +283,8 @@ const response = await axios.post(
       );
 
       if (response.status === 200 && response.data.taskId) {
-        this.logTest('PASS', 'Task submission successful')
-const taskId = response.data.taskId;
+        this.logTest('PASS', 'Task submission successful');
+        const taskId = response.data.taskId;
 
         // Test task status checking
         await this.testTaskStatus(taskId);
@@ -383,8 +383,8 @@ const taskId = response.data.taskId;
       const invalidTask = {
         type: 'invalid_type',
         data: {},
-      }
-const response = await axios.post(
+      };
+      const response = await axios.post(
         `${CONFIG.ENDPOINTS.CURSOR_DELEGATOR}/api/tasks/submit`,
         invalidTask,
         {
@@ -424,10 +424,10 @@ const response = await axios.post(
    * Generate test report
    */
   async generateTestReport() {
-    logger.info('📊 Generating test report...')
-const endTime = Date.now()
-const duration = endTime - this.startTime
-const report = {
+    logger.info('📊 Generating test report...');
+    const endTime = Date.now();
+    const duration = endTime - this.startTime;
+    const report = {
       timestamp: new Date().toISOString(),
       duration: duration,
       summary: {
@@ -450,8 +450,8 @@ const report = {
         masterNode: process.env.MASTER_NODE === 'true',
         nodeId: process.env.NODE_ID || 'unknown',
       },
-    }
-const reportPath = path.join(process.cwd(), 'logs', 'test-report.json');
+    };
+    const reportPath = path.join(process.cwd(), 'logs', 'test-report.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
     // Print summary
@@ -491,8 +491,8 @@ const reportPath = path.join(process.cwd(), 'logs', 'test-report.json');
       timestamp: new Date().toISOString(),
     };
 
-    this.testResults.push(result)
-const statusIcon = {
+    this.testResults.push(result);
+    const statusIcon = {
       PASS: '✅',
       FAIL: '❌',
       WARN: '⚠️',

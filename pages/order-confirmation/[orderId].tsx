@@ -1,7 +1,7 @@
-import React from react';;
-import Head from next/head;;
+import React from 'react';
+import Head from 'next/head';
 
-default function orderId() {
+export default function orderId() {
   return (
     <>
       <Head>
@@ -21,3 +21,4 @@ default function orderId() {
       </div>
     </>
   );
+}

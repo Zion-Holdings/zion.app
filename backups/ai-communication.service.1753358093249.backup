@@ -1,0 +1,32 @@
+[Unit]
+Description=Persistent AI Communication System
+After=network.target
+Wants=network.target
+
+[Service]
+Type=forking
+User=%i
+WorkingDirectory=/Users/miami2/Documents/GitHub/bolt.new.zion.app
+ExecStart=/Users/miami2/Documents/GitHub/bolt.new.zion.app/scripts/start-persistent-communication.sh start
+ExecStop=/Users/miami2/Documents/GitHub/bolt.new.zion.app/scripts/start-persistent-communication.sh stop
+ExecReload=/Users/miami2/Documents/GitHub/bolt.new.zion.app/scripts/start-persistent-communication.sh restart
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Environment variables
+Environment=NODE_ENV=production
+Environment=AI_SERVER_URL=https://api.cursor.sh
+Environment=LOCAL_PORT=3002
+Environment=MASTER_PORT=3004
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/Users/miami2/Documents/GitHub/bolt.new.zion.app/logs
+
+[Install]
+WantedBy=multi-user.target 

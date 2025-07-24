@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,25 +5,26 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
 
-
-const fs = require('fs')
-const path = require('path')
-const { exec } = require('child_process')
+const fs = require('fs');
+const path = require('path');
+const { exec } = require('child_process');
 class ZionAutomation {
   constructor() {
     this.fixes = [];
@@ -104,8 +104,8 @@ class ZionAutomation {
           // Fix malformed function names
           const paramMatch = fileName.match(/\[([^\]]+)\]/);
           if (paramMatch) {
-            const paramName = paramMatch[1]
-const componentName =
+            const paramName = paramMatch[1];
+            const componentName =
               paramName.charAt(0).toUpperCase() + paramName.slice(1) + 'Page';
 
             content = content.replace(
@@ -156,8 +156,8 @@ const componentName =
         'https://git.new/pathToRegexpError',
         'Missing parameter name',
         'path-to-regexp',
-      ]
-const filesToCheck = [
+      ];
+      const filesToCheck = [
         'next.config.js',
         'package.json',
         'scripts/simple-dev-server.cjs',
@@ -323,8 +323,8 @@ const filesToCheck = [
   }
 
   async generateReport() {
-    this.log('📊 Generating automation report...')
-const report = {
+    this.log('📊 Generating automation report...');
+    const report = {
       timestamp: new Date().toISOString(),
       fixes: this.fixes,
       issues: this.issues,
@@ -360,7 +360,6 @@ automation.run().catch((error) => {
   process.exit(1);
 });
 
-
 // Graceful shutdown handling
 process.on('SIGINT', () => {
   console.log('\n🛑 Received SIGINT, shutting down gracefully...');
@@ -373,4 +372,3 @@ process.on('SIGTERM', () => {
   // Add cleanup logic here
   process.exit(0);
 });
-

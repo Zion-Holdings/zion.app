@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,21 +5,22 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
-
 
 /**
  * AI Coordinator
@@ -29,11 +29,11 @@ if (process.env.NODE_ENV !== 'production') {
  * to work together on continuous app improvement.
  */
 
-const fs = require('fs')
-const path = require('path')
-const { execSync, spawn } = require('child_process')
-const os = require('os')
-const crypto = require('crypto')
+const fs = require('fs');
+const path = require('path');
+const { execSync, spawn } = require('child_process');
+const os = require('os');
+const crypto = require('crypto');
 const EventEmitter = require('events');
 
 // Configuration
@@ -117,7 +117,7 @@ const COORDINATOR_CONFIG = {
     autoScaling: true,
     maxConcurrentTasks: 10,
   },
-}
+};
 class AICoordinator extends EventEmitter {
   constructor() {
     super();
@@ -154,8 +154,8 @@ class AICoordinator extends EventEmitter {
     this.log = (level, message, data = {}) => {
       const currentLevel = logLevels[process.env.LOG_LEVEL || 'info'] || 2;
       if (logLevels[level] <= currentLevel) {
-        const timestamp = new Date().toISOString()
-const logEntry = {
+        const timestamp = new Date().toISOString();
+        const logEntry = {
           timestamp,
           level,
           message,
@@ -166,8 +166,8 @@ const logEntry = {
         logger.info(`[${timestamp}] [${level.toUpperCase()}] ${message}`, data);
 
         // Write to log file
-        const logFile = path.join(process.cwd(), 'logs', 'ai-coordinator.log')
-const logDir = path.dirname(logFile);
+        const logFile = path.join(process.cwd(), 'logs', 'ai-coordinator.log');
+        const logDir = path.dirname(logFile);
         if (!fs.existsSync(logDir)) {
           fs.mkdirSync(logDir, { recursive: true });
         }
@@ -234,9 +234,9 @@ const logDir = path.dirname(logFile);
 
       for (const file of assistantFiles) {
         try {
-          const configPath = path.join(configDir, file)
-const config = JSON.parse(fs.readFileSync(configPath, 'utf8'))
-const assistant = new AIAssistant(config, this, 'local');
+          const configPath = path.join(configDir, file);
+          const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+          const assistant = new AIAssistant(config, this, 'local');
           await assistant.initialize();
 
           this.assistants.set(assistant.id, assistant);
@@ -293,9 +293,9 @@ const assistant = new AIAssistant(config, this, 'local');
       const result = await this.executeRemoteCommand(
         ip,
         'find ~/.cursor/config/assistants -name "*.json" -exec cat {} \\;',
-      )
-const assistants = []
-const lines = result.split('\n').filter((line) => line.trim());
+      );
+      const assistants = [];
+      const lines = result.split('\n').filter((line) => line.trim());
 
       for (const line of lines) {
         try {
@@ -313,8 +313,8 @@ const lines = result.split('\n').filter((line) => line.trim());
   }
 
   getNetworkRange() {
-    const interfaces = os.networkInterfaces()
-const ips = [];
+    const interfaces = os.networkInterfaces();
+    const ips = [];
 
     for (const [name, nets] of Object.entries(interfaces)) {
       for (const net of nets) {
@@ -437,11 +437,11 @@ const ips = [];
         if (task.priority === 'critical') {
           return capableAssistants.reduce((best, assistant) => {
             const bestPriority =
-              COORDINATOR_CONFIG.assistantTypes[best.type]?.priority || 'low'
-const assistantPriority =
+              COORDINATOR_CONFIG.assistantTypes[best.type]?.priority || 'low';
+            const assistantPriority =
               COORDINATOR_CONFIG.assistantTypes[assistant.type]?.priority ||
-              'low'
-const priorityOrder = { critical: 0, high: 1, medium: 2, low: 3 };
+              'low';
+            const priorityOrder = { critical: 0, high: 1, medium: 2, low: 3 };
             return priorityOrder[assistantPriority] <
               priorityOrder[bestPriority]
               ? assistant
@@ -502,8 +502,8 @@ const priorityOrder = { critical: 0, high: 1, medium: 2, low: 3 };
   }
 
   async rebalanceLoad() {
-    const assistants = Array.from(this.assistants.values())
-const avgLoad =
+    const assistants = Array.from(this.assistants.values());
+    const avgLoad =
       assistants.reduce((sum, a) => sum + a.currentTasks, 0) /
       assistants.length;
 
@@ -579,8 +579,8 @@ const avgLoad =
           });
 
           // Cancel task
-          task.status = 'timeout'
-const assistant = this.assistants.get(task.assignedTo);
+          task.status = 'timeout';
+          const assistant = this.assistants.get(task.assignedTo);
           if (assistant) {
             assistant.currentTasks--;
           }
@@ -661,9 +661,9 @@ const assistant = this.assistants.get(task.assignedTo);
     const totalTasks =
       this.taskQueue.length +
       Array.from(this.tasks.values()).filter((t) => t.status === 'running')
-        .length
-const totalAssistants = this.assistants.size
-const maxConcurrentTasks =
+        .length;
+    const totalAssistants = this.assistants.size;
+    const maxConcurrentTasks =
       COORDINATOR_CONFIG.coordination.maxConcurrentTasks;
 
     // Scale up if needed
@@ -723,8 +723,8 @@ const maxConcurrentTasks =
   async collectPerformanceMetrics() {
     const completedTasks = Array.from(this.tasks.values()).filter(
       (t) => t.status === 'completed',
-    )
-const avgDuration =
+    );
+    const avgDuration =
       completedTasks.length > 0
         ? completedTasks.reduce((sum, t) => sum + (t.duration || 0), 0) /
           completedTasks.length
@@ -838,8 +838,8 @@ const avgDuration =
       process.cwd(),
       'logs',
       `ai-coordinator-report_${Date.now()}.json`,
-    )
-const logsDir = path.dirname(reportPath);
+    );
+    const logsDir = path.dirname(reportPath);
     if (!fs.existsSync(logsDir)) {
       fs.mkdirSync(logsDir, { recursive: true });
     }
@@ -1130,8 +1130,8 @@ const logsDir = path.dirname(reportPath);
   // Event handlers
   handleTaskCompleted(task) {
     this.stats.completedTasks++;
-    this.updateTaskDuration(task)
-const assistant = this.assistants.get(task.assignedTo);
+    this.updateTaskDuration(task);
+    const assistant = this.assistants.get(task.assignedTo);
     if (assistant) {
       assistant.currentTasks--;
     }
@@ -1144,8 +1144,8 @@ const assistant = this.assistants.get(task.assignedTo);
   }
 
   handleTaskFailed(task) {
-    this.stats.failedTasks++
-const assistant = this.assistants.get(task.assignedTo);
+    this.stats.failedTasks++;
+    const assistant = this.assistants.get(task.assignedTo);
     if (assistant) {
       assistant.currentTasks--;
     }

@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,25 +5,26 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
-
 
 /**
  * AI Tools Integration System
- * 
+ *
  * Integrates with the best AI tools and services to provide comprehensive
  * capabilities for the infinite improvement loop system.
  */
@@ -39,7 +39,7 @@ const http = require('http');
 class AIToolsIntegration extends EventEmitter {
   constructor() {
     super();
-    
+
     this.config = {
       // AI Services Configuration
       services: {
@@ -50,15 +50,15 @@ class AIToolsIntegration extends EventEmitter {
           models: {
             gpt4: 'gpt-4-turbo-preview',
             gpt35: 'gpt-3.5-turbo',
-            dallE: 'dall-e-3'
+            dallE: 'dall-e-3',
           },
           endpoints: {
             chat: 'https://api.openai.com/v1/chat/completions',
             images: 'https://api.openai.com/v1/images/generations',
-            embeddings: 'https://api.openai.com/v1/embeddings'
-          }
+            embeddings: 'https://api.openai.com/v1/embeddings',
+          },
         },
-        
+
         // Anthropic Claude
         claude: {
           enabled: process.env.CLAUDE_ENABLED === 'true',
@@ -66,11 +66,11 @@ class AIToolsIntegration extends EventEmitter {
           models: {
             sonnet: 'claude-3-sonnet-20240229',
             haiku: 'claude-3-haiku-20240307',
-            opus: 'claude-3-opus-20240229'
+            opus: 'claude-3-opus-20240229',
           },
-          endpoint: 'https://api.anthropic.com/v1/messages'
+          endpoint: 'https://api.anthropic.com/v1/messages',
         },
-        
+
         // Google Gemini
         gemini: {
           enabled: process.env.GEMINI_ENABLED === 'true',
@@ -78,11 +78,11 @@ class AIToolsIntegration extends EventEmitter {
           models: {
             pro: 'gemini-pro',
             proVision: 'gemini-pro-vision',
-            flash: 'gemini-1.5-flash'
+            flash: 'gemini-1.5-flash',
           },
-          endpoint: 'https://generativelanguage.googleapis.com/v1beta/models'
+          endpoint: 'https://generativelanguage.googleapis.com/v1beta/models',
         },
-        
+
         // Local AI Models
         localAI: {
           enabled: process.env.LOCAL_AI_ENABLED === 'true',
@@ -91,81 +91,104 @@ class AIToolsIntegration extends EventEmitter {
             codellama: 'codellama:7b',
             llama2: 'llama2:7b',
             mistral: 'mistral:7b',
-            neural: 'neural-chat:7b'
-          }
+            neural: 'neural-chat:7b',
+          },
         },
-        
+
         // GitHub Copilot
         copilot: {
           enabled: process.env.GITHUB_COPILOT_ENABLED === 'true',
           token: process.env.GITHUB_TOKEN,
-          capabilities: ['code_completion', 'documentation', 'testing', 'refactoring']
+          capabilities: [
+            'code_completion',
+            'documentation',
+            'testing',
+            'refactoring',
+          ],
         },
-        
+
         // Cursor AI
         cursor: {
           enabled: process.env.CURSOR_AI_ENABLED === 'true',
           apiKey: process.env.CURSOR_API_KEY,
           workspaceId: process.env.CURSOR_WORKSPACE_ID,
-          capabilities: ['code_review', 'refactoring', 'suggestions', 'chat']
+          capabilities: ['code_review', 'refactoring', 'suggestions', 'chat'],
         },
-        
+
         // Code Analysis Tools
         sonarQube: {
           enabled: process.env.SONARQUBE_ENABLED === 'true',
           endpoint: process.env.SONARQUBE_ENDPOINT,
           token: process.env.SONARQUBE_TOKEN,
-          capabilities: ['code_quality', 'security', 'maintainability', 'coverage']
+          capabilities: [
+            'code_quality',
+            'security',
+            'maintainability',
+            'coverage',
+          ],
         },
-        
+
         semgrep: {
           enabled: process.env.SEMGREP_ENABLED === 'true',
           token: process.env.SEMGREP_TOKEN,
-          capabilities: ['security_scanning', 'code_patterns', 'vulnerabilities']
+          capabilities: [
+            'security_scanning',
+            'code_patterns',
+            'vulnerabilities',
+          ],
         },
-        
+
         // Performance Tools
         lighthouse: {
           enabled: process.env.LIGHTHOUSE_ENABLED === 'true',
-          capabilities: ['performance', 'accessibility', 'best_practices', 'seo']
+          capabilities: [
+            'performance',
+            'accessibility',
+            'best_practices',
+            'seo',
+          ],
         },
-        
+
         // Testing Tools
         jest: {
           enabled: process.env.JEST_ENABLED === 'true',
-          capabilities: ['unit_testing', 'coverage', 'performance_testing']
+          capabilities: ['unit_testing', 'coverage', 'performance_testing'],
         },
-        
+
         playwright: {
           enabled: process.env.PLAYWRIGHT_ENABLED === 'true',
-          capabilities: ['e2e_testing', 'visual_testing', 'performance_testing']
+          capabilities: [
+            'e2e_testing',
+            'visual_testing',
+            'performance_testing',
+          ],
         },
-        
+
         // Code Generation Tools
         githubCopilot: {
           enabled: process.env.GITHUB_COPILOT_ENABLED === 'true',
-          capabilities: ['code_generation', 'documentation', 'testing']
+          capabilities: ['code_generation', 'documentation', 'testing'],
         },
-        
+
         // Documentation Tools
         jsdoc: {
           enabled: process.env.JSDOC_ENABLED === 'true',
-          capabilities: ['documentation_generation', 'api_docs', 'type_docs']
+          capabilities: ['documentation_generation', 'api_docs', 'type_docs'],
         },
-        
+
         // Security Tools
         npmAudit: {
           enabled: process.env.NPM_AUDIT_ENABLED === 'true',
-          capabilities: ['dependency_scanning', 'vulnerability_detection']
+          capabilities: ['dependency_scanning', 'vulnerability_detection'],
         },
-        
+
         snyk: {
           enabled: process.env.SNYK_ENABLED === 'true',
           token: process.env.SNYK_TOKEN,
-          capabilities: ['security_scanning', 'vulnerability_management']
-        }
+          capabilities: ['security_scanning', 'vulnerability_management'],
+        },
       },
-      
+
       // Integration settings
       integration: {
         parallelProcessing: true,
@@ -174,33 +197,33 @@ class AIToolsIntegration extends EventEmitter {
         retryAttempts: 3,
         retryDelay: 1000,
         cacheEnabled: true,
-        cacheTTL: 3600000 // 1 hour
+        cacheTTL: 3600000, // 1 hour
       },
-      
+
       // Paths
       paths: {
         projectRoot: process.cwd(),
         cache: path.join(process.cwd(), 'cache'),
         logs: path.join(process.cwd(), 'logs'),
-        data: path.join(process.cwd(), 'data')
-      }
+        data: path.join(process.cwd(), 'data'),
+      },
     };
-    
+
     this.services = new Map();
     this.cache = new Map();
     this.requestQueue = [];
     this.activeRequests = 0;
-    
+
     this.initializeServices();
   }
 
   async initializeServices() {
     try {
       this.log('info', '🔧 Initializing AI Tools Integration...');
-      
+
       // Create directories
       await this.createDirectories();
-      
+
       // Initialize each service
       await this.initializeOpenAI();
       await this.initializeClaude();
@@ -216,9 +239,8 @@ class AIToolsIntegration extends EventEmitter {
       await this.initializeJSDoc();
       await this.initializeNpmAudit();
       await this.initializeSnyk();
-      
+
       this.log('info', `✅ Initialized ${this.services.size} AI services`);
-      
     } catch (error) {
       this.log('error', `Failed to initialize services: ${error.message}`);
       throw error;
@@ -229,7 +251,7 @@ class AIToolsIntegration extends EventEmitter {
     const dirs = [
       this.config.paths.cache,
       this.config.paths.logs,
-      this.config.paths.data
+      this.config.paths.data,
     ];
 
     for (const dir of dirs) {
@@ -251,10 +273,10 @@ class AIToolsIntegration extends EventEmitter {
         imageGeneration: this.openAIImageGeneration.bind(this),
         embeddings: this.openAIEmbeddings.bind(this),
         codeGeneration: this.openAICodeGeneration.bind(this),
-        analysis: this.openAIAnalysis.bind(this)
+        analysis: this.openAIAnalysis.bind(this),
       },
       models: this.config.services.openai.models,
-      endpoints: this.config.services.openai.endpoints
+      endpoints: this.config.services.openai.endpoints,
     });
 
     this.log('info', '✅ OpenAI service initialized');
@@ -270,10 +292,10 @@ class AIToolsIntegration extends EventEmitter {
         analysis: this.claudeAnalysis.bind(this),
         reasoning: this.claudeReasoning.bind(this),
         planning: this.claudePlanning.bind(this),
-        evaluation: this.claudeEvaluation.bind(this)
+        evaluation: this.claudeEvaluation.bind(this),
       },
       models: this.config.services.claude.models,
-      endpoint: this.config.services.claude.endpoint
+      endpoint: this.config.services.claude.endpoint,
     });
 
     this.log('info', '✅ Claude service initialized');
@@ -288,10 +310,10 @@ class AIToolsIntegration extends EventEmitter {
         chat: this.geminiChat.bind(this),
         multimodal: this.geminiMultimodal.bind(this),
         analysis: this.geminiAnalysis.bind(this),
-        generation: this.geminiGeneration.bind(this)
+        generation: this.geminiGeneration.bind(this),
       },
       models: this.config.services.gemini.models,
-      endpoint: this.config.services.gemini.endpoint
+      endpoint: this.config.services.gemini.endpoint,
     });
 
     this.log('info', '✅ Gemini service initialized');
@@ -306,10 +328,10 @@ class AIToolsIntegration extends EventEmitter {
         chat: this.localAIChat.bind(this),
         analysis: this.localAIAnalysis.bind(this),
         generation: this.localAIGeneration.bind(this),
-        fastProcessing: this.localAIFastProcessing.bind(this)
+        fastProcessing: this.localAIFastProcessing.bind(this),
       },
       models: this.config.services.localAI.models,
-      endpoint: this.config.services.localAI.endpoint
+      endpoint: this.config.services.localAI.endpoint,
     });
 
     this.log('info', '✅ Local AI service initialized');
@@ -324,8 +346,8 @@ class AIToolsIntegration extends EventEmitter {
         codeCompletion: this.copilotCodeCompletion.bind(this),
         documentation: this.copilotDocumentation.bind(this),
         testing: this.copilotTesting.bind(this),
-        refactoring: this.copilotRefactoring.bind(this)
-      }
+        refactoring: this.copilotRefactoring.bind(this),
+      },
     });
 
     this.log('info', '✅ GitHub Copilot service initialized');
@@ -340,8 +362,8 @@ class AIToolsIntegration extends EventEmitter {
         codeReview: this.cursorCodeReview.bind(this),
         refactoring: this.cursorRefactoring.bind(this),
         suggestions: this.cursorSuggestions.bind(this),
-        chat: this.cursorChat.bind(this)
-      }
+        chat: this.cursorChat.bind(this),
+      },
     });
 
     this.log('info', '✅ Cursor AI service initialized');
@@ -356,8 +378,8 @@ class AIToolsIntegration extends EventEmitter {
         codeQuality: this.sonarQubeCodeQuality.bind(this),
         security: this.sonarQubeSecurity.bind(this),
         maintainability: this.sonarQubeMaintainability.bind(this),
-        coverage: this.sonarQubeCoverage.bind(this)
-      }
+        coverage: this.sonarQubeCoverage.bind(this),
+      },
     });
 
     this.log('info', '✅ SonarQube service initialized');
@@ -371,8 +393,8 @@ class AIToolsIntegration extends EventEmitter {
       capabilities: {
         securityScanning: this.semgrepSecurityScanning.bind(this),
         codePatterns: this.semgrepCodePatterns.bind(this),
-        vulnerabilities: this.semgrepVulnerabilities.bind(this)
-      }
+        vulnerabilities: this.semgrepVulnerabilities.bind(this),
+      },
     });
 
     this.log('info', '✅ Semgrep service initialized');
@@ -387,8 +409,8 @@ class AIToolsIntegration extends EventEmitter {
         performance: this.lighthousePerformance.bind(this),
         accessibility: this.lighthouseAccessibility.bind(this),
         bestPractices: this.lighthouseBestPractices.bind(this),
-        seo: this.lighthouseSEO.bind(this)
-      }
+        seo: this.lighthouseSEO.bind(this),
+      },
     });
 
     this.log('info', '✅ Lighthouse service initialized');
@@ -402,8 +424,8 @@ class AIToolsIntegration extends EventEmitter {
       capabilities: {
         unitTesting: this.jestUnitTesting.bind(this),
         coverage: this.jestCoverage.bind(this),
-        performanceTesting: this.jestPerformanceTesting.bind(this)
-      }
+        performanceTesting: this.jestPerformanceTesting.bind(this),
+      },
     });
 
     this.log('info', '✅ Jest service initialized');
@@ -417,8 +439,8 @@ class AIToolsIntegration extends EventEmitter {
       capabilities: {
         e2eTesting: this.playwrightE2ETesting.bind(this),
         visualTesting: this.playwrightVisualTesting.bind(this),
-        performanceTesting: this.playwrightPerformanceTesting.bind(this)
-      }
+        performanceTesting: this.playwrightPerformanceTesting.bind(this),
+      },
     });
 
     this.log('info', '✅ Playwright service initialized');
@@ -432,8 +454,8 @@ class AIToolsIntegration extends EventEmitter {
       capabilities: {
         documentationGeneration: this.jsdocDocumentationGeneration.bind(this),
         apiDocs: this.jsdocApiDocs.bind(this),
-        typeDocs: this.jsdocTypeDocs.bind(this)
-      }
+        typeDocs: this.jsdocTypeDocs.bind(this),
+      },
     });
 
     this.log('info', '✅ JSDoc service initialized');
@@ -446,8 +468,8 @@ class AIToolsIntegration extends EventEmitter {
       name: 'NPM Audit',
       capabilities: {
         dependencyScanning: this.npmAuditDependencyScanning.bind(this),
-        vulnerabilityDetection: this.npmAuditVulnerabilityDetection.bind(this)
-      }
+        vulnerabilityDetection: this.npmAuditVulnerabilityDetection.bind(this),
+      },
     });
 
     this.log('info', '✅ NPM Audit service initialized');
@@ -460,8 +482,8 @@ class AIToolsIntegration extends EventEmitter {
       name: 'Snyk',
       capabilities: {
         securityScanning: this.snykSecurityScanning.bind(this),
-        vulnerabilityManagement: this.snykVulnerabilityManagement.bind(this)
-      }
+        vulnerabilityManagement: this.snykVulnerabilityManagement.bind(this),
+      },
     });
 
     this.log('info', '✅ Snyk service initialized');
@@ -470,7 +492,7 @@ class AIToolsIntegration extends EventEmitter {
   // OpenAI Service Methods
   async openAIChat(prompt, model = 'gpt-4-turbo-preview') {
     const cacheKey = `openai_chat_${model}_${this.hashString(prompt)}`;
-    
+
     if (this.config.integration.cacheEnabled && this.cache.has(cacheKey)) {
       return this.cache.get(cacheKey);
     }
@@ -479,7 +501,7 @@ class AIToolsIntegration extends EventEmitter {
       model,
       messages: [{ role: 'user', content: prompt }],
       max_tokens: 4000,
-      temperature: 0.7
+      temperature: 0.7,
     });
 
     if (this.config.integration.cacheEnabled) {
@@ -494,7 +516,7 @@ class AIToolsIntegration extends EventEmitter {
       model,
       prompt,
       n: 1,
-      size: '1024x1024'
+      size: '1024x1024',
     });
 
     return response;
@@ -503,7 +525,7 @@ class AIToolsIntegration extends EventEmitter {
   async openAIEmbeddings(text, model = 'text-embedding-3-small') {
     const response = await this.makeOpenAIRequest('embeddings', {
       model,
-      input: text
+      input: text,
     });
 
     return response;
@@ -512,20 +534,20 @@ class AIToolsIntegration extends EventEmitter {
   async openAICodeGeneration(prompt, language = 'javascript') {
     const enhancedPrompt = `Generate ${language} code for the following requirement: ${prompt}. 
     Provide only the code without explanations.`;
-    
+
     return await this.openAIChat(enhancedPrompt, 'gpt-4-turbo-preview');
   }
 
   async openAIAnalysis(data, analysisType = 'general') {
     const prompt = `Analyze the following ${analysisType} data and provide insights: ${JSON.stringify(data)}`;
-    
+
     return await this.openAIChat(prompt, 'gpt-4-turbo-preview');
   }
 
   // Claude Service Methods
   async claudeChat(prompt, model = 'claude-3-sonnet-20240229') {
     const cacheKey = `claude_chat_${model}_${this.hashString(prompt)}`;
-    
+
     if (this.config.integration.cacheEnabled && this.cache.has(cacheKey)) {
       return this.cache.get(cacheKey);
     }
@@ -533,7 +555,7 @@ class AIToolsIntegration extends EventEmitter {
     const response = await this.makeClaudeRequest({
       model,
       max_tokens: 4000,
-      messages: [{ role: 'user', content: prompt }]
+      messages: [{ role: 'user', content: prompt }],
     });
 
     if (this.config.integration.cacheEnabled) {
@@ -545,32 +567,32 @@ class AIToolsIntegration extends EventEmitter {
 
   async claudeAnalysis(data, analysisType = 'general') {
     const prompt = `Analyze the following ${analysisType} data and provide detailed insights: ${JSON.stringify(data)}`;
-    
+
     return await this.claudeChat(prompt);
   }
 
   async claudeReasoning(problem) {
     const prompt = `Use step-by-step reasoning to solve this problem: ${problem}`;
-    
+
     return await this.claudeChat(prompt);
   }
 
   async claudePlanning(goal) {
     const prompt = `Create a detailed plan to achieve this goal: ${goal}`;
-    
+
     return await this.claudeChat(prompt);
   }
 
   async claudeEvaluation(criteria, data) {
     const prompt = `Evaluate the following data against these criteria: ${JSON.stringify(criteria)}. Data: ${JSON.stringify(data)}`;
-    
+
     return await this.claudeChat(prompt);
   }
 
   // Gemini Service Methods
   async geminiChat(prompt, model = 'gemini-pro') {
     const response = await this.makeGeminiRequest(model, {
-      contents: [{ parts: [{ text: prompt }] }]
+      contents: [{ parts: [{ text: prompt }] }],
     });
 
     return response;
@@ -578,12 +600,14 @@ class AIToolsIntegration extends EventEmitter {
 
   async geminiMultimodal(prompt, imageData, model = 'gemini-pro-vision') {
     const response = await this.makeGeminiRequest(model, {
-      contents: [{
-        parts: [
-          { text: prompt },
-          { inline_data: { mime_type: 'image/jpeg', data: imageData } }
-        ]
-      }]
+      contents: [
+        {
+          parts: [
+            { text: prompt },
+            { inline_data: { mime_type: 'image/jpeg', data: imageData } },
+          ],
+        },
+      ],
     });
 
     return response;
@@ -591,13 +615,13 @@ class AIToolsIntegration extends EventEmitter {
 
   async geminiAnalysis(data, analysisType = 'general') {
     const prompt = `Analyze the following ${analysisType} data: ${JSON.stringify(data)}`;
-    
+
     return await this.geminiChat(prompt);
   }
 
   async geminiGeneration(prompt, generationType = 'text') {
     const enhancedPrompt = `Generate ${generationType} for: ${prompt}`;
-    
+
     return await this.geminiChat(enhancedPrompt);
   }
 
@@ -605,7 +629,7 @@ class AIToolsIntegration extends EventEmitter {
   async localAIChat(prompt, model = 'codellama:7b') {
     const response = await this.makeLocalAIRequest(model, {
       prompt,
-      stream: false
+      stream: false,
     });
 
     return response;
@@ -613,13 +637,13 @@ class AIToolsIntegration extends EventEmitter {
 
   async localAIAnalysis(data, analysisType = 'general') {
     const prompt = `Analyze this ${analysisType} data: ${JSON.stringify(data)}`;
-    
+
     return await this.localAIChat(prompt);
   }
 
   async localAIGeneration(prompt, generationType = 'text') {
     const enhancedPrompt = `Generate ${generationType}: ${prompt}`;
-    
+
     return await this.localAIChat(enhancedPrompt);
   }
 
@@ -662,7 +686,9 @@ class AIToolsIntegration extends EventEmitter {
 
   async cursorSuggestions(code, context) {
     // Implementation for Cursor AI suggestions
-    return { suggestions: ['// Cursor AI suggestion 1', '// Cursor AI suggestion 2'] };
+    return {
+      suggestions: ['// Cursor AI suggestion 1', '// Cursor AI suggestion 2'],
+    };
   }
 
   async cursorChat(message) {
@@ -802,8 +828,8 @@ class AIToolsIntegration extends EventEmitter {
   async makeOpenAIRequest(type, data) {
     const endpoint = this.config.services.openai.endpoints[type];
     const headers = {
-      'Authorization': `Bearer ${this.config.services.openai.apiKey}`,
-      'Content-Type': 'application/json'
+      Authorization: `Bearer ${this.config.services.openai.apiKey}`,
+      'Content-Type': 'application/json',
     };
 
     return await this.makeHTTPRequest(endpoint, 'POST', headers, data);
@@ -813,21 +839,26 @@ class AIToolsIntegration extends EventEmitter {
     const headers = {
       'x-api-key': this.config.services.claude.apiKey,
       'Content-Type': 'application/json',
-      'anthropic-version': '2023-06-01'
+      'anthropic-version': '2023-06-01',
     };
 
-    return await this.makeHTTPRequest(this.config.services.claude.endpoint, 'POST', headers, data);
+    return await this.makeHTTPRequest(
+      this.config.services.claude.endpoint,
+      'POST',
+      headers,
+      data,
+    );
   }
 
   async makeGeminiRequest(model, data) {
     const endpoint = `${this.config.services.gemini.endpoint}/${model}:generateContent`;
     const headers = {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     };
 
     const requestData = {
       ...data,
-      key: this.config.services.gemini.apiKey
+      key: this.config.services.gemini.apiKey,
     };
 
     return await this.makeHTTPRequest(endpoint, 'POST', headers, requestData);
@@ -836,12 +867,12 @@ class AIToolsIntegration extends EventEmitter {
   async makeLocalAIRequest(model, data) {
     const endpoint = `${this.config.services.localAI.endpoint}/api/generate`;
     const headers = {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     };
 
     const requestData = {
       model,
-      ...data
+      ...data,
     };
 
     return await this.makeHTTPRequest(endpoint, 'POST', headers, requestData);
@@ -852,16 +883,16 @@ class AIToolsIntegration extends EventEmitter {
       const options = {
         method,
         headers,
-        timeout: this.config.integration.requestTimeout
+        timeout: this.config.integration.requestTimeout,
       };
 
       const req = https.request(url, options, (res) => {
         let responseData = '';
-        
+
         res.on('data', (chunk) => {
           responseData += chunk;
         });
-        
+
         res.on('end', () => {
           try {
             const parsed = JSON.parse(responseData);
@@ -884,7 +915,7 @@ class AIToolsIntegration extends EventEmitter {
       if (data) {
         req.write(JSON.stringify(data));
       }
-      
+
       req.end();
     });
   }
@@ -894,7 +925,7 @@ class AIToolsIntegration extends EventEmitter {
     let hash = 0;
     for (let i = 0; i < str.length; i++) {
       const char = str.charCodeAt(i);
-      hash = ((hash << 5) - hash) + char;
+      hash = (hash << 5) - hash + char;
       hash = hash & hash; // Convert to 32-bit integer
     }
     return hash.toString();
@@ -907,60 +938,69 @@ class AIToolsIntegration extends EventEmitter {
 
   async getAllCapabilities() {
     const capabilities = {};
-    
+
     for (const [serviceName, service] of this.services) {
       capabilities[serviceName] = Object.keys(service.capabilities);
     }
-    
+
     return capabilities;
   }
 
   async executeCapability(serviceName, capability, ...args) {
     const service = this.services.get(serviceName);
-    
+
     if (!service) {
       throw new Error(`Service ${serviceName} not found`);
     }
-    
+
     if (!service.capabilities[capability]) {
-      throw new Error(`Capability ${capability} not found in service ${serviceName}`);
+      throw new Error(
+        `Capability ${capability} not found in service ${serviceName}`,
+      );
     }
-    
+
     return await service.capabilities[capability](...args);
   }
 
   async executeParallelCapabilities(capabilities) {
     const results = {};
-    
+
     const promises = capabilities.map(async ({ service, capability, args }) => {
       try {
-        const result = await this.executeCapability(service, capability, ...args);
+        const result = await this.executeCapability(
+          service,
+          capability,
+          ...args,
+        );
         return { service, capability, success: true, result };
       } catch (error) {
         return { service, capability, success: false, error: error.message };
       }
     });
-    
+
     const resultsArray = await Promise.all(promises);
-    
+
     for (const result of resultsArray) {
       if (!results[result.service]) {
         results[result.service] = {};
       }
       results[result.service][result.capability] = result;
     }
-    
+
     return results;
   }
 
   log(level, message) {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] [${level.toUpperCase()}] [AI-TOOLS-INTEGRATION] ${message}`;
-    
+
     logger.info(logMessage);
-    
+
     // Save to log file
-    const logPath = path.join(this.config.paths.logs, 'ai-tools-integration.log');
+    const logPath = path.join(
+      this.config.paths.logs,
+      'ai-tools-integration.log',
+    );
     fs.appendFile(logPath, logMessage + '\n').catch(() => {});
   }
 
@@ -969,7 +1009,7 @@ class AIToolsIntegration extends EventEmitter {
       services: Array.from(this.services.keys()),
       capabilities: this.getAllCapabilities(),
       cacheSize: this.cache.size,
-      activeRequests: this.activeRequests
+      activeRequests: this.activeRequests,
     };
   }
 }
@@ -988,7 +1028,9 @@ async function main() {
       logger.info(JSON.stringify(capabilities, null, 2));
       break;
     case 'test':
-      const testResult = await integration.openAIChat('Hello, this is a test message');
+      const testResult = await integration.openAIChat(
+        'Hello, this is a test message',
+      );
       logger.info(JSON.stringify(testResult, null, 2));
       break;
     default:
@@ -1029,13 +1071,13 @@ Examples:
 }
 
 if (require.main === module) {
-  main().catch(error => {
+  main().catch((error) => {
     logger.error('AI Tools Integration failed:', error.message);
     process.exit(1);
   });
 }
 
-module.exports = AIToolsIntegration; 
+module.exports = AIToolsIntegration;
 
 // Graceful shutdown handling
 process.on('SIGINT', () => {
@@ -1049,4 +1091,3 @@ process.on('SIGTERM', () => {
   // Add cleanup logic here
   process.exit(0);
 });
-

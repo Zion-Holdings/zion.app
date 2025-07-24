@@ -58,7 +58,7 @@ describe('/api/auth/register API Endpoint', () => {'  const ORIGINAL_ENV = { ...
 
     expect(res._getStatusCode()).toBe(500);
     expect(res._getJSONData()).toEqual({
-      error: Authentication service not configured',      message: 'Authentication service not configured',    });
+      error: Authentication service not configured',      message:' 'Authentication service not configured',    });
   });
 
   describe('Auth0 Management Token Retrieval and User Creation', () => {'    const validRequestBody = {

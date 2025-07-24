@@ -1,7 +1,7 @@
-import React from react';;
-import Head from next/head;;
+import React from 'react';
+import Head from 'next/head';
 
-default function convene() {
+export default function convene() {
   return (
     <>
       <Head>
@@ -19,3 +19,4 @@ default function convene() {
       </div>
     </>
   );
+}

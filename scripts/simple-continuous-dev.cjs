@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,25 +5,26 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
 
-
-const { exec } = require('child_process')
-const fs = require('fs')
-const path = require('path')
+const { exec } = require('child_process');
+const fs = require('fs');
+const path = require('path');
 class SimpleContinuousDev {
   constructor() {
     this.fixes = [];
@@ -237,8 +237,8 @@ class SimpleContinuousDev {
         await this.execCommand('git add .');
 
         // Create commit with timestamp
-        const timestamp = new Date().toISOString()
-const commitMessage = `🤖 Auto-improvement: ${timestamp}\n\n- Issues fixed: ${this.issues.length}\n- Improvements: ${this.improvements.length}\n- Continuous development active`;
+        const timestamp = new Date().toISOString();
+        const commitMessage = `🤖 Auto-improvement: ${timestamp}\n\n- Issues fixed: ${this.issues.length}\n- Improvements: ${this.improvements.length}\n- Continuous development active`;
 
         await this.execCommand(`git commit -m "${commitMessage}"`);
 

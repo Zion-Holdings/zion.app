@@ -1,7 +1,7 @@
-import React from react';;
-import Head from next/head;;
+import React from 'react';
+import Head from 'next/head';
 
-default function mobilelaunch() {
+export default function mobilelaunch() {
   return (
     <>
       <Head>
@@ -19,3 +19,4 @@ default function mobilelaunch() {
       </div>
     </>
   );
+}

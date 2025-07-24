@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,32 +5,33 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
 
-
-const fs = require('fs')
-const path = require('path')
+const fs = require('fs');
+const path = require('path');
 class AutomationMonitor {
   constructor() {
     this.logFile = 'logs/automation.log';
   }
 
   log(message) {
-    const timestamp = new Date().toISOString()
-const logMessage = `[${timestamp}] ${message}`;
+    const timestamp = new Date().toISOString();
+    const logMessage = `[${timestamp}] ${message}`;
     logger.info(logMessage);
     fs.appendFileSync(this.logFile, logMessage + '\n');
   }
@@ -46,10 +46,8 @@ const logMessage = `[${timestamp}] ${message}`;
 
 if (require.main === module) {
   try {
-    
-  const monitor = new AutomationMonitor();
-  monitor.start();
-
+    const monitor = new AutomationMonitor();
+    monitor.start();
   } catch (error) {
     console.error('Script execution failed:', error);
     process.exit(1);
@@ -57,7 +55,6 @@ if (require.main === module) {
 }
 
 module.exports = AutomationMonitor;
-
 
 // Graceful shutdown handling
 process.on('SIGINT', () => {
@@ -71,4 +68,3 @@ process.on('SIGTERM', () => {
   // Add cleanup logic here
   process.exit(0);
 });
-

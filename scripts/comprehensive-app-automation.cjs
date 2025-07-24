@@ -302,10 +302,139 @@ const result = await this.runCommand('npm run build');
       // Timeout after 30 seconds
       
 const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
 const timeoutId = setTimeout(() => {
         if (!resolved) {
           resolved = true;
-          this.log('Server startup timeout',   'WARN');
+          this.log('Server startup timeout',                                              'WARN');
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -410,7 +539,136 @@ const reportPath = path.join(
       if (this.serverStarted) {
         await new Promise((resolve) => 
 const timeoutId = 
-const timeoutId = setTimeout(resolve,   5000);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                                              5000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed

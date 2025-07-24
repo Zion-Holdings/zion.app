@@ -1,7 +1,7 @@
-import React from react';;
-import Head from next/head;;
+import React from 'react';
+import Head from 'next/head';
 
-default function debug() {
+export default function debug() {
   return (
     <>
       <Head>
@@ -19,3 +19,4 @@ default function debug() {
       </div>
     </>
   );
+}

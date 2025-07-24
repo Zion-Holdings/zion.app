@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,28 +5,29 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
-
 
 /**
  * Emergency App Loading Fix
  * Temporary fix for app loading issues
  */
 
-const fs = require('fs')
+const fs = require('fs');
 const { _execSync } = require('child_process');
 
 // Replace console.log with console.warn for allowed console methods
@@ -72,8 +72,8 @@ function checkAppStatus() {
 
   // Test if the main app file exists and is readable
   try {
-    const appContent = fs.readFileSync('pages/_app.tsx', 'utf8')
-const loadingFixMarkers = [
+    const appContent = fs.readFileSync('pages/_app.tsx', 'utf8');
+    const loadingFixMarkers = [
       'Force initializing after timeout',
       'Force completing app initialization due to timeout',
       'Force initialization completion',
@@ -94,8 +94,8 @@ const loadingFixMarkers = [
 
 // Create a minimal app component for emergency use
 function createMinimalApp() {
-  logger.warn('🔧 Creating minimal emergency app component...')
-const minimalAppContent = `import React from 'react';
+  logger.warn('🔧 Creating minimal emergency app component...');
+  const minimalAppContent = `import React from 'react';
 import type { AppProps } from 'next/app';
 import '../src/index.css';
 
@@ -163,8 +163,8 @@ export default MyApp;
 // Run diagnostics
 function runDiagnostics() {
   logger.warn('\n🔍 RUNNING APP DIAGNOSTICS');
-  logger.warn('==========================')
-const checks = [
+  logger.warn('==========================');
+  const checks = [
     {
       name: 'App file exists',
       check: () => fs.existsSync('pages/_app.tsx'),

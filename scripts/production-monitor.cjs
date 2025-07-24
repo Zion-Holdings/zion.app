@@ -1,11 +1,10 @@
-
 /**
  * Production Monitoring System
  * Comprehensive health monitoring for production deployment
  */
 
-const https = require('https')
-const fs = require('fs')
+const https = require('https');
+const fs = require('fs');
 class ProductionMonitor {
   constructor() {
     this.baseUrl =
@@ -20,8 +19,8 @@ class ProductionMonitor {
 
   async checkEndpoint(endpoint) {
     return new Promise((resolve) => {
-      const url = `${this.baseUrl}${endpoint}`
-const startTime = Date.now();
+      const url = `${this.baseUrl}${endpoint}`;
+      const startTime = Date.now();
 
       https
         .get(url, (res) => {
@@ -55,17 +54,17 @@ const startTime = Date.now();
   }
 
   async runHealthChecks() {
-    process.stdout.write('\ud83d\udd0d Running Production Health Checks...\n')
-const results = [];
+    process.stdout.write('\ud83d\udd0d Running Production Health Checks...\n');
+    const results = [];
     for (const check of this.healthChecks) {
-      process.stdout.write(`Checking ${check.name}...\n`)
-const result = await this.checkEndpoint(check.endpoint);
+      process.stdout.write(`Checking ${check.name}...\n`);
+      const result = await this.checkEndpoint(check.endpoint);
       if (check.name === 'Authentication' && result.status === 401) {
         // 401 indicates no active session but endpoint reachable
         result.success = true;
       }
-      results.push({ ...check, ...result })
-const emoji = result.success ? '✅' : '❌';
+      results.push({ ...check, ...result });
+      const emoji = result.success ? '✅' : '❌';
       process.stdout.write(
         `  ${emoji} ${check.name}: ${result.status} (${result.responseTime}ms)\n`,
       );

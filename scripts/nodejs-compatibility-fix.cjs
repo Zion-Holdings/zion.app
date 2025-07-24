@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,25 +5,26 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
 
-
-const fs = require('fs')
-const path = require('path')
-const { execSync } = require('child_process')
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
 class NodeJSCompatibilityFix {
   constructor() {
     this.projectRoot = process.cwd();
@@ -33,10 +33,10 @@ class NodeJSCompatibilityFix {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString()
-const logMessage = `[${timestamp}] [${level}] ${message}`;
-    logger.info(logMessage)
-const logsDir = path.dirname(this.logFile);
+    const timestamp = new Date().toISOString();
+    const logMessage = `[${timestamp}] [${level}] ${message}`;
+    logger.info(logMessage);
+    const logsDir = path.dirname(this.logFile);
     if (!fs.existsSync(logsDir)) {
       fs.mkdirSync(logsDir, { recursive: true });
     }
@@ -53,8 +53,8 @@ const logsDir = path.dirname(this.logFile);
 
   async runCommand(command, options = {}) {
     try {
-      this.log(`Running command: ${command}`)
-const result = execSync(command, {
+      this.log(`Running command: ${command}`);
+      const result = execSync(command, {
         cwd: this.projectRoot,
         encoding: 'utf8',
         stdio: 'pipe',
@@ -74,8 +74,8 @@ const result = execSync(command, {
 
   checkNodeVersion() {
     const nodeVersion = process.version;
-    this.log(`Current Node.js version: ${nodeVersion}`)
-const majorVersion = parseInt(nodeVersion.slice(1).split('.')[0]);
+    this.log(`Current Node.js version: ${nodeVersion}`);
+    const majorVersion = parseInt(nodeVersion.slice(1).split('.')[0]);
     return majorVersion;
   }
 
@@ -114,8 +114,8 @@ const majorVersion = parseInt(nodeVersion.slice(1).split('.')[0]);
   }
 
   async installCompatibleNodeVersion() {
-    this.log('Installing compatible Node.js version...')
-const compatibleVersions = ['18.19.0', '20.11.0', '18.20.0', '20.12.0'];
+    this.log('Installing compatible Node.js version...');
+    const compatibleVersions = ['18.19.0', '20.11.0', '18.20.0', '20.12.0'];
 
     for (const version of compatibleVersions) {
       try {
@@ -137,16 +137,16 @@ const compatibleVersions = ['18.19.0', '20.11.0', '18.20.0', '20.12.0'];
   }
 
   async fixNextConfig() {
-    this.log('Fixing Next.js configuration for Node.js compatibility...')
-const nextConfigPath = path.join(this.projectRoot, 'next.config.js');
+    this.log('Fixing Next.js configuration for Node.js compatibility...');
+    const nextConfigPath = path.join(this.projectRoot, 'next.config.js');
     if (!fs.existsSync(nextConfigPath)) {
       this.log('next.config.js not found', 'ERROR');
       return false;
     }
 
     try {
-      let content = fs.readFileSync(nextConfigPath, 'utf8')
-const originalContent = content;
+      let content = fs.readFileSync(nextConfigPath, 'utf8');
+      const originalContent = content;
 
       // Add Node.js 22 compatibility workarounds
       const compatibilityCode = `
@@ -183,16 +183,16 @@ if (!process.env.NODE_OPTIONS.includes('--max-old-space-size=4096')) {
   }
 
   async updatePackageScripts() {
-    this.log('Updating package.json scripts for Node.js compatibility...')
-const packageJsonPath = path.join(this.projectRoot, 'package.json');
+    this.log('Updating package.json scripts for Node.js compatibility...');
+    const packageJsonPath = path.join(this.projectRoot, 'package.json');
     if (!fs.existsSync(packageJsonPath)) {
       this.log('package.json not found', 'ERROR');
       return false;
     }
 
     try {
-      const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'))
-const originalScripts = JSON.stringify(packageJson.scripts);
+      const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+      const originalScripts = JSON.stringify(packageJson.scripts);
 
       // Add Node.js compatibility scripts
       packageJson.scripts = {
@@ -205,8 +205,8 @@ const originalScripts = JSON.stringify(packageJson.scripts);
           'NODE_OPTIONS="--no-deprecation --max-old-space-size=4096" next build',
         'start:compatible':
           'NODE_OPTIONS="--no-deprecation --max-old-space-size=4096" next start',
-      }
-const newScripts = JSON.stringify(packageJson.scripts);
+      };
+      const newScripts = JSON.stringify(packageJson.scripts);
 
       if (newScripts !== originalScripts) {
         fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
@@ -222,8 +222,8 @@ const newScripts = JSON.stringify(packageJson.scripts);
   }
 
   async createCompatibilityScript() {
-    this.log('Creating Node.js compatibility script...')
-const scriptContent = `#!/bin/bash
+    this.log('Creating Node.js compatibility script...');
+    const scriptContent = `#!/bin/bash
 
 # Node.js Compatibility Script
 # This script ensures the app runs with compatible Node.js settings
@@ -237,8 +237,8 @@ echo "Using Node.js version: $NODE_VERSION"
 # Start the development server
 echo "Starting development server with compatibility settings..."
 npm run dev -- --port 3001
-`
-const scriptPath = path.join(this.projectRoot, 'start-compatible.sh');
+`;
+    const scriptPath = path.join(this.projectRoot, 'start-compatible.sh');
     fs.writeFileSync(scriptPath, scriptContent);
     execSync(`chmod +x ${scriptPath}`);
 
@@ -270,8 +270,8 @@ const scriptPath = path.join(this.projectRoot, 'start-compatible.sh');
   }
 
   async runFullFix() {
-    this.log('Starting Node.js compatibility fix...')
-const nodeVersion = this.checkNodeVersion();
+    this.log('Starting Node.js compatibility fix...');
+    const nodeVersion = this.checkNodeVersion();
 
     if (nodeVersion >= 22) {
       this.log('Node.js 22+ detected, applying compatibility fixes...');
@@ -321,7 +321,6 @@ if (require.main === module) {
 
 module.exports = NodeJSCompatibilityFix;
 
-
 // Graceful shutdown handling
 process.on('SIGINT', () => {
   console.log('\n🛑 Received SIGINT, shutting down gracefully...');
@@ -334,4 +333,3 @@ process.on('SIGTERM', () => {
   // Add cleanup logic here
   process.exit(0);
 });
-

@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,24 +5,25 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
 
-
-const fs = require('fs')
-const { execSync } = require('child_process')
+const fs = require('fs');
+const { execSync } = require('child_process');
 class AutomationMasterController {
   constructor() {
     this.processes = [
@@ -79,9 +79,9 @@ class AutomationMasterController {
     logger.info('========================\n');
 
     for (const process of this.processes) {
-      const count = this.checkProcess(process)
-const status = count > 0 ? '✅ RUNNING' : '❌ STOPPED'
-const instances = count > 0 ? ` (${count} instances)` : '';
+      const count = this.checkProcess(process);
+      const status = count > 0 ? '✅ RUNNING' : '❌ STOPPED';
+      const instances = count > 0 ? ` (${count} instances)` : '';
 
       this.log(
         `${status} ${process}${instances}`,
@@ -92,9 +92,9 @@ const instances = count > 0 ? ` (${count} instances)` : '';
 
     // Master Statistics
     logger.info('\n📊 MASTER STATISTICS:');
-    logger.info('=====================')
-const runtime = Date.now() - this.startTime
-const uptime = Math.round(runtime / 1000);
+    logger.info('=====================');
+    const runtime = Date.now() - this.startTime;
+    const uptime = Math.round(runtime / 1000);
 
     this.log(`Total Processes: ${totalProcesses}`, 'info');
     this.log(
@@ -109,8 +109,8 @@ const uptime = Math.round(runtime / 1000);
 
     // Master Reports Status
     logger.info('\n📈 MASTER REPORTS:');
-    logger.info('==================')
-const reportFiles = [
+    logger.info('==================');
+    const reportFiles = [
       'automation/ai-improvement-report.json',
       'automation/health-report.json',
       'automation/optimization-report.json',
@@ -123,8 +123,8 @@ const reportFiles = [
     for (const file of reportFiles) {
       try {
         if (fs.existsSync(file)) {
-          const data = JSON.parse(fs.readFileSync(file, 'utf8'))
-const timestamp = new Date(
+          const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+          const timestamp = new Date(
             data.timestamp || Date.now(),
           ).toLocaleString();
           this.log(`✅ ${file} - Last updated: ${timestamp}`, 'success');
@@ -138,16 +138,16 @@ const timestamp = new Date(
 
     // Master System Health
     logger.info('\n🏥 MASTER SYSTEM HEALTH:');
-    logger.info('========================')
-const healthStatus =
+    logger.info('========================');
+    const healthStatus =
       totalRunning >= totalProcesses * 0.8
         ? 'EXCELLENT'
         : totalRunning >= totalProcesses * 0.6
           ? 'GOOD'
           : totalRunning >= totalProcesses * 0.4
             ? 'FAIR'
-            : 'POOR'
-const healthColor =
+            : 'POOR';
+    const healthColor =
       healthStatus === 'EXCELLENT'
         ? 'success'
         : healthStatus === 'GOOD'
@@ -164,8 +164,8 @@ const healthColor =
 
     // Master Performance Metrics
     logger.info('\n⚡ MASTER PERFORMANCE METRICS:');
-    logger.info('==============================')
-const memoryUsage = process.memoryUsage();
+    logger.info('==============================');
+    const memoryUsage = process.memoryUsage();
     this.log(
       `Memory Usage: ${Math.round(memoryUsage.heapUsed / 1024 / 1024)}MB`,
       'info',

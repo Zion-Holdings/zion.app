@@ -1,13 +1,12 @@
-
 /**
  * Zion App - AI-Powered Syntax Fixer
- * 
+ *
  * Uses pattern matching and AI-like logic to fix complex syntax errors
  */
 
-const fs = require('fs')
-const path = require('path')
-const chalk = require('chalk')
+const fs = require('fs');
+const path = require('path');
+const chalk = require('chalk');
 class AISyntaxFixer {
   constructor() {
     this.fixesApplied = 0;
@@ -19,7 +18,7 @@ class AISyntaxFixer {
       info: chalk.blue,
       success: chalk.green,
       warning: chalk.yellow,
-      error: chalk.red
+      error: chalk.red,
     };
     console.log(`${colors[type](`[AI-FIXER]`)} ${message}`);
   }
@@ -30,37 +29,39 @@ class AISyntaxFixer {
       {
         name: 'Fix broken imports',
         pattern: /import\s+([^;]+)\s+from\s+['"]([^'"]*)\s*$/gm,
-        fix: (match, imports, path) => `import ${imports.trim()} from '${path.trim()}';`
+        fix: (match, imports, path) =>
+          `import ${imports.trim()} from '${path.trim()}';`,
       },
       // Fix unterminated string literals in JSX
       {
         name: 'Fix JSX string literals',
         pattern: /(\w+)=['"]([^'"]*)\s*$/gm,
-        fix: (match, prop, value) => `${prop}="${value.trim()}"`
+        fix: (match, prop, value) => `${prop}="${value.trim()}"`,
       },
       // Fix malformed function declarations
       {
         name: 'Fix function declarations',
-        pattern: /export\s+default\s+function\s+(\w+)\s*\([^)]*\):\s*unknown\s*\{[^}]*\}\s*\{[^}]*\}/g,
-        fix: (match, funcName) => `export default function ${funcName}() {`
+        pattern:
+          /export\s+default\s+function\s+(\w+)\s*\([^)]*\):\s*unknown\s*\{[^}]*\}\s*\{[^}]*\}/g,
+        fix: (match, funcName) => `export default function ${funcName}() {`,
       },
       // Fix double const declarations
       {
         name: 'Fix double const',
         pattern: /const\s+const\s+/g,
-        fix: () => 'const '
+        fix: () => 'const ',
       },
       // Fix extra quotes in object properties
       {
         name: 'Fix object properties',
         pattern: /(\w+):\s*"([^"]*)"\s*,/g,
-        fix: (match, key, value) => `${key}: ${value},`
+        fix: (match, key, value) => `${key}: ${value},`,
       },
       // Fix malformed JSX tags
       {
         name: 'Fix JSX tags',
         pattern: /<(\w+);\s*>/g,
-        fix: (match, tag) => `<${tag}>`
+        fix: (match, tag) => `<${tag}>`,
       },
       // Fix extra semicolons
       {
@@ -72,20 +73,22 @@ class AISyntaxFixer {
       {
         name: 'Fix template literals',
         pattern: /\$\{([^}]*)\s*$/gm,
-        fix: (match, content) => `\${${content.trim()}}`
+        fix: (match, content) => `\${${content.trim()}}`,
       },
       // Fix malformed destructuring
       {
         name: 'Fix destructuring',
         pattern: /const\s*\{\s*([^}]*)\s*\}\s*=\s*([^;]*);\s*$/gm,
-        fix: (match, destructured, source) => `const { ${destructured.trim()} } = ${source.trim()};`
+        fix: (match, destructured, source) =>
+          `const { ${destructured.trim()} } = ${source.trim()};`,
       },
       // Fix broken async/await
       {
         name: 'Fix async/await',
         pattern: /const\s+(\w+):\s*await\s+([^;]*);/g,
-        fix: (match, varName, expression) => `const ${varName} = await ${expression};`
-      }
+        fix: (match, varName, expression) =>
+          `const ${varName} = await ${expression};`,
+      },
     ];
   }
 
@@ -100,7 +103,10 @@ class AISyntaxFixer {
         if (matches) {
           content = content.replace(pattern.pattern, pattern.fix);
           fileFixes += matches.length;
-          this.log(`Applied ${pattern.name} (${matches.length} fixes)`, 'success');
+          this.log(
+            `Applied ${pattern.name} (${matches.length} fixes)`,
+            'success',
+          );
         }
       }
 
@@ -110,7 +116,10 @@ class AISyntaxFixer {
       if (content !== originalContent) {
         fs.writeFileSync(filePath, content);
         this.fixesApplied += fileFixes;
-        this.log(`Fixed ${fileFixes} issues in ${path.basename(filePath)}`, 'success');
+        this.log(
+          `Fixed ${fileFixes} issues in ${path.basename(filePath)}`,
+          'success',
+        );
         return true;
       }
 
@@ -125,49 +134,59 @@ class AISyntaxFixer {
     // Fix common React/Next.js patterns
     content = content
       // Fix broken useEffect
-      .replace(/useEffect\s*\(\s*\(\s*\)\s*=>\s*\{[^}]*\}\s*,\s*\[[^\]]*\]\s*\)\s*;+/g, 
-        (match) => match.replace(/;+/g, ''))
-      
+      .replace(
+        /useEffect\s*\(\s*\(\s*\)\s*=>\s*\{[^}]*\}\s*,\s*\[[^\]]*\]\s*\)\s*;+/g,
+        (match) => match.replace(/;+/g, ''),
+      )
+
       // Fix broken useState
-      .replace(/const\s*\[\s*([^,]+),\s*([^\]]+)\s*\]\s*=\s*useState\s*\(\s*([^)]+)\s*\)\s*;+/g,
-        (match, state, setter, initial) => `const [${state.trim()}, ${setter.trim()}] = useState(${initial.trim()});`)
-      
+      .replace(
+        /const\s*\[\s*([^,]+),\s*([^\]]+)\s*\]\s*=\s*useState\s*\(\s*([^)]+)\s*\)\s*;+/g,
+        (match, state, setter, initial) =>
+          `const [${state.trim()}, ${setter.trim()}] = useState(${initial.trim()});`,
+      )
+
       // Fix broken JSX return statements
-      .replace(/return\s*\(\s*<[^>]*>\s*[^<]*<\/[^>]*>\s*\)\s*;+/g,
-        (match) => match.replace(/;+/g, ''))
-      
+      .replace(/return\s*\(\s*<[^>]*>\s*[^<]*<\/[^>]*>\s*\)\s*;+/g, (match) =>
+        match.replace(/;+/g, ''),
+      )
+
       // Fix broken interface declarations
-      .replace(/interface\s+(\w+)\s*\{[^}]*\}\s*;+/g,
-        (match) => match.replace(/;+/g, ''));
+      .replace(/interface\s+(\w+)\s*\{[^}]*\}\s*;+/g, (match) =>
+        match.replace(/;+/g, ''),
+      );
 
     return content;
   }
 
   async fixAllFiles() {
-    this.log('🔧 Starting AI-powered syntax fixing...', 'info')
-const srcDir = path.join(process.cwd(), 'src')
-const files = this.getAllFiles(srcDir);
-    
+    this.log('🔧 Starting AI-powered syntax fixing...', 'info');
+    const srcDir = path.join(process.cwd(), 'src');
+    const files = this.getAllFiles(srcDir);
+
     let filesFixed = 0;
-    
+
     for (const file of files) {
       if (await this.fixFile(file)) {
         filesFixed++;
       }
     }
-    
-    this.log(`✅ Fixed ${this.fixesApplied} issues across ${filesFixed} files`, 'success');
+
+    this.log(
+      `✅ Fixed ${this.fixesApplied} issues across ${filesFixed} files`,
+      'success',
+    );
     return { filesFixed, totalFixes: this.fixesApplied };
   }
 
   getAllFiles(dir) {
-    const files = []
-const walkDir = (currentDir) => {
+    const files = [];
+    const walkDir = (currentDir) => {
       const items = fs.readdirSync(currentDir);
       for (const item of items) {
-        const fullPath = path.join(currentDir, item)
-const stat = fs.statSync(fullPath);
-        
+        const fullPath = path.join(currentDir, item);
+        const stat = fs.statSync(fullPath);
+
         if (stat.isDirectory()) {
           walkDir(fullPath);
         } else if (item.match(/\.(ts|tsx|js|jsx)$/)) {
@@ -175,7 +194,7 @@ const stat = fs.statSync(fullPath);
         }
       }
     };
-    
+
     walkDir(dir);
     return files;
   }
@@ -183,8 +202,11 @@ const stat = fs.statSync(fullPath);
 
 // Run the AI syntax fixer
 const fixer = new AISyntaxFixer();
-fixer.fixAllFiles().then(({ filesFixed, totalFixes }) => {
-  console.log(chalk.green(`🎉 AI Syntax Fixer completed!`));
-  console.log(chalk.blue(`📊 Files processed: ${filesFixed}`));
-  console.log(chalk.blue(`🔧 Total fixes applied: ${totalFixes}`));
-}).catch(console.error); 
+fixer
+  .fixAllFiles()
+  .then(({ filesFixed, totalFixes }) => {
+    console.log(chalk.green(`🎉 AI Syntax Fixer completed!`));
+    console.log(chalk.blue(`📊 Files processed: ${filesFixed}`));
+    console.log(chalk.blue(`🔧 Total fixes applied: ${totalFixes}`));
+  })
+  .catch(console.error);

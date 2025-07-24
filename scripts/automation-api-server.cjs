@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,24 +5,26 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
 
 /**
  * Automation API Server
- * 
+ *
  * REST API server for the automation scripts manager dashboard
  */
 
@@ -40,7 +41,7 @@ class AutomationAPIServer {
     this.port = 3004;
     this.logs = [];
     this.logId = 0;
-    
+
     this.setupMiddleware();
     this.setupRoutes();
     this.setupEventHandlers();
@@ -92,10 +93,10 @@ class AutomationAPIServer {
     this.app.post('/api/automation/discover', async (req, res) => {
       try {
         const scripts = await this.manager.discoverScripts();
-        res.json({ 
-          success: true, 
+        res.json({
+          success: true,
           scripts: Array.from(scripts.values()),
-          message: `Discovered ${scripts.size} scripts`
+          message: `Discovered ${scripts.size} scripts`,
         });
       } catch (error) {
         res.status(500).json({ success: false, error: error.message });
@@ -117,7 +118,9 @@ class AutomationAPIServer {
       try {
         const { scriptPath } = req.body;
         if (!scriptPath) {
-          return res.status(400).json({ success: false, error: 'Script path is required' });
+          return res
+            .status(400)
+            .json({ success: false, error: 'Script path is required' });
         }
 
         await this.manager.startScript(scriptPath);
@@ -132,7 +135,9 @@ class AutomationAPIServer {
       try {
         const { scriptPath } = req.body;
         if (!scriptPath) {
-          return res.status(400).json({ success: false, error: 'Script path is required' });
+          return res
+            .status(400)
+            .json({ success: false, error: 'Script path is required' });
         }
 
         await this.manager.stopScript(scriptPath);
@@ -147,14 +152,18 @@ class AutomationAPIServer {
       try {
         const { scriptPath } = req.body;
         if (!scriptPath) {
-          return res.status(400).json({ success: false, error: 'Script path is required' });
+          return res
+            .status(400)
+            .json({ success: false, error: 'Script path is required' });
         }
 
         const result = await this.manager.improveScript(scriptPath);
-        res.json({ 
-          success: result.success, 
+        res.json({
+          success: result.success,
           improvements: result.improvements,
-          message: result.success ? 'Script improved successfully' : result.error
+          message: result.success
+            ? 'Script improved successfully'
+            : result.error,
         });
       } catch (error) {
         res.status(500).json({ success: false, error: error.message });
@@ -165,12 +174,12 @@ class AutomationAPIServer {
     this.app.post('/api/automation/improve', async (req, res) => {
       try {
         const results = await this.manager.improveAllScripts();
-        const successful = results.filter(r => r.result.success).length;
-        
-        res.json({ 
-          success: true, 
+        const successful = results.filter((r) => r.result.success).length;
+
+        res.json({
+          success: true,
           improvements: results,
-          message: `Improved ${successful}/${results.length} scripts`
+          message: `Improved ${successful}/${results.length} scripts`,
         });
       } catch (error) {
         res.status(500).json({ success: false, error: error.message });
@@ -207,7 +216,9 @@ class AutomationAPIServer {
 
     // Serve dashboard
     this.app.get('/', (req, res) => {
-      res.sendFile(path.join(__dirname, '../automation/automation-dashboard.html'));
+      res.sendFile(
+        path.join(__dirname, '../automation/automation-dashboard.html'),
+      );
     });
 
     // Error handler
@@ -230,16 +241,25 @@ class AutomationAPIServer {
 
     this.manager.on('scriptCompleted', ({ script, processInfo, code }) => {
       const status = code === 0 ? 'completed successfully' : 'failed';
-      this.addLog(`Script ${status}: ${script.name}`, code === 0 ? 'info' : 'error');
+      this.addLog(
+        `Script ${status}: ${script.name}`,
+        code === 0 ? 'info' : 'error',
+      );
     });
 
     this.manager.on('scriptImproved', ({ script, improvements }) => {
-      this.addLog(`Script improved: ${script.name} (${improvements.join(', ')})`, 'info');
+      this.addLog(
+        `Script improved: ${script.name} (${improvements.join(', ')})`,
+        'info',
+      );
     });
 
     this.manager.on('improvementCycleCompleted', (results) => {
-      const successful = results.filter(r => r.result.success).length;
-      this.addLog(`Improvement cycle completed: ${successful}/${results.length} scripts improved`, 'info');
+      const successful = results.filter((r) => r.result.success).length;
+      this.addLog(
+        `Improvement cycle completed: ${successful}/${results.length} scripts improved`,
+        'info',
+      );
     });
   }
 
@@ -248,11 +268,11 @@ class AutomationAPIServer {
       id: ++this.logId,
       message,
       level,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     };
-    
+
     this.logs.push(logEntry);
-    
+
     // Keep only last 1000 logs
     if (this.logs.length > 1000) {
       this.logs = this.logs.slice(-1000);
@@ -263,14 +283,15 @@ class AutomationAPIServer {
     try {
       // Start the manager
       await this.manager.start();
-      
+
       // Start the API server
       this.server = this.app.listen(this.port, () => {
-        logger.info(`🚀 Automation API Server running on http://localhost:${this.port}`);
+        logger.info(
+          `🚀 Automation API Server running on http://localhost:${this.port}`,
+        );
         logger.info(`📊 Dashboard available at http://localhost:${this.port}`);
         this.addLog(`API Server started on port ${this.port}`, 'info');
       });
-      
     } catch (error) {
       logger.error('Failed to start API server:', error);
       throw error;
@@ -281,15 +302,14 @@ class AutomationAPIServer {
     try {
       // Stop the manager
       await this.manager.stop();
-      
+
       // Stop the server
       if (this.server) {
         this.server.close();
       }
-      
+
       this.addLog('API Server stopped', 'info');
       logger.info('🛑 Automation API Server stopped');
-      
     } catch (error) {
       logger.error('Error stopping API server:', error);
       throw error;
@@ -300,19 +320,19 @@ class AutomationAPIServer {
 // Start the server if run directly
 if (require.main === module) {
   const server = new AutomationAPIServer();
-  
-  server.start().catch(error => {
+
+  server.start().catch((error) => {
     logger.error('Failed to start server:', error);
     process.exit(1);
   });
-  
+
   // Handle graceful shutdown
   process.on('SIGINT', async () => {
     logger.info('\n🛑 Shutting down API server...');
     await server.stop();
     process.exit(0);
   });
-  
+
   process.on('SIGTERM', async () => {
     logger.info('\n🛑 Received SIGTERM, shutting down...');
     await server.stop();
@@ -320,4 +340,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = AutomationAPIServer; 
+module.exports = AutomationAPIServer;

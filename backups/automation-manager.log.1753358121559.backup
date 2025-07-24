@@ -1,0 +1,48 @@
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      [2025-07-24T11:54:21.178Z] [INFO] 🚀 Starting Automation Scripts Manager...
+[2025-07-24T11:54:21.184Z] [INFO] 🔍 Discovering automation scripts...
+[2025-07-24T11:54:21.186Z] [WARN] Error scanning directory scripts: ENOENT: no such file or directory, stat '/Users/miami2/Documents/GitHub/bolt.new.zion.app/scripts/scripts'
+[2025-07-24T11:54:21.187Z] [WARN] Error scanning directory automation: ENOENT: no such file or directory, stat '/Users/miami2/Documents/GitHub/bolt.new.zion.app/scripts/automation'
+[2025-07-24T11:54:21.188Z] [WARN] Error scanning directory automation/scripts: ENOENT: no such file or directory, stat '/Users/miami2/Documents/GitHub/bolt.new.zion.app/scripts/automation/scripts'
+[2025-07-24T11:54:21.188Z] [WARN] Error scanning directory automation/core: ENOENT: no such file or directory, stat '/Users/miami2/Documents/GitHub/bolt.new.zion.app/scripts/automation/core'
+[2025-07-24T11:54:21.189Z] [WARN] Error scanning directory automation/tasks: ENOENT: no such file or directory, stat '/Users/miami2/Documents/GitHub/bolt.new.zion.app/scripts/automation/tasks'
+[2025-07-24T11:54:21.190Z] [WARN] Error scanning directory automation/performance: ENOENT: no such file or directory, stat '/Users/miami2/Documents/GitHub/bolt.new.zion.app/scripts/automation/performance'
+[2025-07-24T11:54:21.190Z] [WARN] Error scanning directory automation/security: ENOENT: no such file or directory, stat '/Users/miami2/Documents/GitHub/bolt.new.zion.app/scripts/automation/security'
+[2025-07-24T11:54:21.191Z] [WARN] Error scanning directory automation/continuous-improvement: ENOENT: no such file or directory, stat '/Users/miami2/Documents/GitHub/bolt.new.zion.app/scripts/automation/continuous-improvement'
+[2025-07-24T11:54:21.195Z] [INFO] ✅ Discovered 0 automation scripts
+[2025-07-24T11:54:21.195Z] [INFO] 📊 Starting automation monitoring...
+[2025-07-24T11:54:21.198Z] [INFO] ✅ Monitoring started
+[2025-07-24T11:54:21.199Z] [INFO] ✅ Automation Scripts Manager started successfully
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;
+[2025-07-24T11:55:21.195Z] [DEBUG] 🏥 Performing health check...

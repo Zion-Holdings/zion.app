@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,30 +5,31 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
-
 
 /**
  * Simple Self-Healing System
  * Focuses on the most common build and code issues
  */
 
-const fs = require('fs')
-const path = require('path')
-const { execSync, spawn } = require('child_process')
+const fs = require('fs');
+const path = require('path');
+const { execSync, spawn } = require('child_process');
 class SimpleHealer {
   constructor() {
     this.logFile = 'logs/simple-healer.log';
@@ -45,8 +45,8 @@ class SimpleHealer {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString()
-const logMessage = `[${timestamp}] [${level}] ${message}`;
+    const timestamp = new Date().toISOString();
+    const logMessage = `[${timestamp}] [${level}] ${message}`;
     logger.info(logMessage);
     fs.appendFileSync(this.logFile, logMessage + '\n');
   }
@@ -85,8 +85,8 @@ const logMessage = `[${timestamp}] [${level}] ${message}`;
   }
 
   async applyCommonFixes() {
-    this.log('Applying common fixes...')
-const fixes = [
+    this.log('Applying common fixes...');
+    const fixes = [
       this.fixUnusedVariables(),
       this.fixConsoleLogs(),
       this.fixMissingImports(),
@@ -108,14 +108,14 @@ const fixes = [
   }
 
   async fixUnusedVariables() {
-    this.log('Fixing unused variables...')
-const tsFiles = this.findTsFiles();
+    this.log('Fixing unused variables...');
+    const tsFiles = this.findTsFiles();
     let fixed = false;
 
     for (const file of tsFiles) {
       try {
-        const content = fs.readFileSync(file, 'utf8')
-const lines = content.split('\n');
+        const content = fs.readFileSync(file, 'utf8');
+        const lines = content.split('\n');
         let modified = false;
 
         for (let i = 0; i < lines.length; i++) {
@@ -141,14 +141,14 @@ const lines = content.split('\n');
   }
 
   async fixConsoleLogs() {
-    this.log('Fixing console.log statements...')
-const tsFiles = this.findTsFiles();
+    this.log('Fixing console.log statements...');
+    const tsFiles = this.findTsFiles();
     let fixed = false;
 
     for (const file of tsFiles) {
       try {
-        const content = fs.readFileSync(file, 'utf8')
-const lines = content.split('\n');
+        const content = fs.readFileSync(file, 'utf8');
+        const lines = content.split('\n');
         let modified = false;
 
         for (let i = 0; i < lines.length; i++) {
@@ -197,8 +197,8 @@ const lines = content.split('\n');
   }
 
   async fixSyntaxIssues() {
-    this.log('Fixing syntax issues...')
-const tsFiles = this.findTsFiles();
+    this.log('Fixing syntax issues...');
+    const tsFiles = this.findTsFiles();
     let fixed = false;
 
     for (const file of tsFiles) {
@@ -210,8 +210,8 @@ const tsFiles = this.findTsFiles();
         newContent = newContent.replace(/([^;])\n/g, '$1;\n');
 
         // Fix missing brackets
-        const openBraces = (newContent.match(/\{/g) || []).length
-const closeBraces = (newContent.match(/\}/g) || []).length;
+        const openBraces = (newContent.match(/\{/g) || []).length;
+        const closeBraces = (newContent.match(/\}/g) || []).length;
         if (openBraces > closeBraces) {
           newContent += '\n}'.repeat(openBraces - closeBraces);
         }
@@ -230,8 +230,8 @@ const closeBraces = (newContent.match(/\}/g) || []).length;
   }
 
   async fixTypeIssues() {
-    this.log('Fixing type issues...')
-const tsFiles = this.findTsFiles();
+    this.log('Fixing type issues...');
+    const tsFiles = this.findTsFiles();
     let fixed = false;
 
     for (const file of tsFiles) {
@@ -260,8 +260,8 @@ const tsFiles = this.findTsFiles();
   }
 
   async applyAdvancedFixes() {
-    this.log('Applying advanced fixes...')
-const fixes = [
+    this.log('Applying advanced fixes...');
+    const fixes = [
       this.fixBuildConfig(),
       this.fixPackageJson(),
       this.fixTsConfig(),
@@ -372,9 +372,9 @@ const fixes = [
   }
 
   findTsFiles() {
-    const files = []
-const srcDir = 'src'
-const pagesDir = 'pages';
+    const files = [];
+    const srcDir = 'src';
+    const pagesDir = 'pages';
 
     if (fs.existsSync(srcDir)) {
       this.findFilesRecursive(srcDir, '.ts', files);
@@ -393,8 +393,8 @@ const pagesDir = 'pages';
     const items = fs.readdirSync(dir);
 
     for (const item of items) {
-      const fullPath = path.join(dir, item)
-const stat = fs.statSync(fullPath);
+      const fullPath = path.join(dir, item);
+      const stat = fs.statSync(fullPath);
 
       if (stat.isDirectory()) {
         this.findFilesRecursive(fullPath, ext, files);
@@ -478,7 +478,6 @@ if (require.main === module) {
 
 module.exports = SimpleHealer;
 
-
 // Graceful shutdown handling
 process.on('SIGINT', () => {
   console.log('\n🛑 Received SIGINT, shutting down gracefully...');
@@ -491,4 +490,3 @@ process.on('SIGTERM', () => {
   // Add cleanup logic here
   process.exit(0);
 });
-

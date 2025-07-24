@@ -6,10 +6,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   // Mock API response
-  res.status(200).json({
-    message: 'API endpoint working',
-    endpoint: 'auth/session',
-    method: req.method,
-    timestamp: new Date().toISOString()
-  });
+  res.status(200).json({ message: 'Session endpoint placeholder' });
 }

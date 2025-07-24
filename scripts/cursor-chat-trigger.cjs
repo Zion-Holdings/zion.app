@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,30 +5,31 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
-
 
 /**
  * Cursor Chat Trigger
  * Triggers new Cursor chats with detailed information for continuous app improvement
  */
 
-const fs = require('fs')
-const path = require('path')
-const { execSync } = require('child_process')
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
 const https = require('https');
 
 // Configuration
@@ -100,7 +100,7 @@ const CONFIG = {
     'hooks/',
     'context/',
   ],
-}
+};
 class CursorChatTrigger {
   constructor() {
     this.logFile = 'logs/cursor-chat-triggers.log';
@@ -108,8 +108,8 @@ class CursorChatTrigger {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString()
-const logEntry = `[${timestamp}] [${level}] ${message}`;
+    const timestamp = new Date().toISOString();
+    const logEntry = `[${timestamp}] [${level}] ${message}`;
 
     logger.info(logEntry);
     fs.appendFileSync(this.logFile, logEntry + '\n');
@@ -127,11 +127,11 @@ const logEntry = `[${timestamp}] [${level}] ${message}`;
 
     try {
       // Gather comprehensive information
-      const projectInfo = await this.gatherProjectInformation()
-const currentIssues = await this.gatherCurrentIssues()
-const performanceData = await this.gatherPerformanceData()
-const securityData = await this.gatherSecurityData()
-const accessibilityData = await this.gatherAccessibilityData();
+      const projectInfo = await this.gatherProjectInformation();
+      const currentIssues = await this.gatherCurrentIssues();
+      const performanceData = await this.gatherPerformanceData();
+      const securityData = await this.gatherSecurityData();
+      const accessibilityData = await this.gatherAccessibilityData();
 
       // Generate detailed prompt
       const prompt = this.generateComprehensivePrompt({
@@ -355,8 +355,8 @@ const accessibilityData = await this.gatherAccessibilityData();
       const vulnerableDeps = ['lodash', 'moment', 'jquery', 'express'];
 
       if (fs.existsSync('package.json')) {
-        const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'))
-const allDeps = {
+        const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+        const allDeps = {
           ...packageJson.dependencies,
           ...packageJson.devDependencies,
         };
@@ -440,16 +440,16 @@ const allDeps = {
   }
 
   getDirectoryStructure(dir, maxDepth, currentDepth = 0) {
-    if (currentDepth >= maxDepth) return '...'
-const structure = {};
+    if (currentDepth >= maxDepth) return '...';
+    const structure = {};
 
     try {
       const items = fs.readdirSync(dir);
 
       for (const item of items.slice(0, 10)) {
         // Limit to 10 items
-        const fullPath = path.join(dir, item)
-const stat = fs.statSync(fullPath);
+        const fullPath = path.join(dir, item);
+        const stat = fs.statSync(fullPath);
 
         if (stat.isDirectory()) {
           structure[item] = this.getDirectoryStructure(
@@ -506,8 +506,8 @@ const stat = fs.statSync(fullPath);
       performanceData,
       securityData,
       accessibilityData,
-    } = data
-const categoryInfo =
+    } = data;
+    const categoryInfo =
       CONFIG.chatCategories[category] || CONFIG.chatCategories.build;
 
     return `# ${categoryInfo.title} - Comprehensive Analysis and Improvement
@@ -579,8 +579,8 @@ Please provide specific, actionable recommendations with code examples where app
           system: 'cursor-chat-trigger',
           category: 'comprehensive-improvement',
         },
-      })
-const options = {
+      });
+      const options = {
         hostname: new URL(CONFIG.cursorApiUrl).hostname,
         port: 443,
         path: '/api/chat',
@@ -590,8 +590,8 @@ const options = {
           'Content-Length': Buffer.byteLength(postData),
           Authorization: `Bearer ${CONFIG.cursorApiKey}`,
         },
-      }
-const req = https.request(options, (res) => {
+      };
+      const req = https.request(options, (res) => {
         let data = '';
 
         res.on('data', (chunk) => {
@@ -617,8 +617,8 @@ const req = https.request(options, (res) => {
   }
 
   async triggerSpecificChat(issue) {
-    this.log(`Triggering specific Cursor chat for issue: ${issue.type}`)
-const prompt = `# Specific Issue Resolution
+    this.log(`Triggering specific Cursor chat for issue: ${issue.type}`);
+    const prompt = `# Specific Issue Resolution
 
 ## Issue Details
 - **Type**: ${issue.type}
@@ -649,10 +649,10 @@ Please provide specific code examples and step-by-step instructions.`;
 
 // CLI interface
 if (require.main === module) {
-  const trigger = new CursorChatTrigger()
-const command = process.argv[2]
-const category = process.argv[3] || 'general'
-const specificIssue = process.argv[4];
+  const trigger = new CursorChatTrigger();
+  const command = process.argv[2];
+  const category = process.argv[3] || 'general';
+  const specificIssue = process.argv[4];
 
   switch (command) {
     case 'comprehensive':
@@ -708,7 +708,6 @@ Environment Variables:
 
 module.exports = CursorChatTrigger;
 
-
 // Graceful shutdown handling
 process.on('SIGINT', () => {
   console.log('\n🛑 Received SIGINT, shutting down gracefully...');
@@ -721,4 +720,3 @@ process.on('SIGTERM', () => {
   // Add cleanup logic here
   process.exit(0);
 });
-

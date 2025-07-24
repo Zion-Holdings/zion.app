@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,31 +5,32 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
-
 
 /**
  * Fix misplaced import statements
  * The console replacement script sometimes places imports in wrong locations
  */
 
-const fs = require('fs')
-const path = require('path')
-const glob = require('glob')
-const PROJECT_ROOT = process.cwd()
+const fs = require('fs');
+const path = require('path');
+const glob = require('glob');
+const PROJECT_ROOT = process.cwd();
 class ImportFixer {
   constructor() {
     this.fixedFiles = 0;
@@ -60,13 +60,13 @@ class ImportFixer {
    */
   fixFile(filePath) {
     try {
-      const fullPath = path.join(PROJECT_ROOT, filePath)
-const content = fs.readFileSync(fullPath, 'utf8');
+      const fullPath = path.join(PROJECT_ROOT, filePath);
+      const content = fs.readFileSync(fullPath, 'utf8');
 
       // Look for misplaced imports (imports after export statements)
-      const lines = content.split('\n')
-const importLines = []
-const otherLines = [];
+      const lines = content.split('\n');
+      const importLines = [];
+      const otherLines = [];
       let inExportFunction = false;
       let _hasExportFunction = false;
 
@@ -171,9 +171,9 @@ const otherLines = [];
    */
   async processAllFiles() {
     // logger.warn('🔧 Fixing misplaced import statements...')
-const files = this.getFilesToProcess();
+    const files = this.getFilesToProcess();
     // logger.warn(`📋 Found ${files.length} files to check`)
-const results = [];
+    const results = [];
 
     for (const filePath of files) {
       const result = this.fixFile(filePath);
@@ -232,7 +232,6 @@ if (require.main === module) {
 
 module.exports = ImportFixer;
 
-
 // Graceful shutdown handling
 process.on('SIGINT', () => {
   logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
@@ -245,4 +244,3 @@ process.on('SIGTERM', () => {
   // Add cleanup logic here
   process.exit(0);
 });
-

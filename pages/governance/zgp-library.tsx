@@ -1,7 +1,7 @@
-import React from react';;
-import Head from next/head;;
+import React from 'react';
+import Head from 'next/head';
 
-default function zgplibrary() {
+export default function zgplibrary() {
   return (
     <>
       <Head>
@@ -19,3 +19,4 @@ default function zgplibrary() {
       </div>
     </>
   );
+}

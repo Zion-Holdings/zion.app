@@ -1,4 +1,3 @@
-
 /**
  * Enhanced Log Monitoring System for Zion.App
  * Provides real-time error detection, automated alerts, and comprehensive health monitoring
@@ -11,8 +10,8 @@
  * - Automated self-healing recommendations
  */
 
-const fs = require('fs')
-const path = require('path')
+const fs = require('fs');
+const path = require('path');
 const { _EventEmitter } = require('events');
 // const WebSocket = require('ws')
 class EnhancedLogMonitor extends EventEmitter {
@@ -130,13 +129,13 @@ class EnhancedLogMonitor extends EventEmitter {
   }
 
   watchLogFiles() {
-    const logExtensions = ['.log', '.json']
-const watchDirectory = (dirPath) => {
+    const logExtensions = ['.log', '.json'];
+    const watchDirectory = (dirPath) => {
       if (!fs.existsSync(dirPath)) return;
 
       fs.readdirSync(dirPath).forEach((file) => {
-        const filePath = path.join(dirPath, file)
-const stat = fs.statSync(filePath);
+        const filePath = path.join(dirPath, file);
+        const stat = fs.statSync(filePath);
 
         if (stat.isDirectory()) {
           watchDirectory(filePath);
@@ -171,8 +170,8 @@ const stat = fs.statSync(filePath);
 
   async processLogFileChanges(filePath) {
     try {
-      const content = fs.readFileSync(filePath, 'utf8')
-const lines = content.split('\n').filter((line) => line.trim());
+      const content = fs.readFileSync(filePath, 'utf8');
+      const lines = content.split('\n').filter((line) => line.trim());
 
       // Process only new lines (simple implementation)
       const newLines = lines.slice(-10); // Process last 10 lines
@@ -331,8 +330,8 @@ const lines = content.split('\n').filter((line) => line.trim());
         /response.*time[:\s]+(\d+(?:\.\d+)?)\s*(ms|milliseconds|s|seconds)/i,
       memory: /memory[:\s]+(\d+(?:\.\d+)?)\s*(mb|gb|bytes?)/i,
       cpu: /cpu[:\s]+(\d+(?:\.\d+)?)\s*%?/i,
-    }
-const result = {};
+    };
+    const result = {};
 
     for (const [key, pattern] of Object.entries(patterns)) {
       const match = message.match(pattern);
@@ -362,8 +361,8 @@ const result = {};
     }
 
     // Calculate error rate
-    const recentErrors = this.metrics.errors.slice(-100)
-const recentTotal = Math.max(recentMetrics.length, recentErrors.length);
+    const recentErrors = this.metrics.errors.slice(-100);
+    const recentTotal = Math.max(recentMetrics.length, recentErrors.length);
     this.metrics.system.errorRate =
       recentTotal > 0 ? recentErrors.length / recentTotal : 0;
   }
@@ -390,8 +389,8 @@ const recentTotal = Math.max(recentMetrics.length, recentErrors.length);
       this.config.logDir,
       'security',
       'events.log',
-    )
-const securityEntry = JSON.stringify({
+    );
+    const securityEntry = JSON.stringify({
       ...entry,
       securityEvent: true,
       handled: new Date().toISOString(),
@@ -513,8 +512,8 @@ const securityEntry = JSON.stringify({
       database_connection_failed: () => this.restartDatabaseConnection(),
       memory_leak_detected: () => this.triggerGarbageCollection(),
       rate_limit_exceeded: () => this.implementBackoff(),
-    }
-const strategy = Object.keys(healingStrategies).find((key) =>
+    };
+    const strategy = Object.keys(healingStrategies).find((key) =>
       entry.message.toLowerCase().includes(key.replace(/_/g, ' ')),
     );
 
@@ -614,8 +613,8 @@ const strategy = Object.keys(healingStrategies).find((key) =>
 
   cleanupOldEntries() {
     const retentionTime =
-      this.config.monitoring.retentionDays * 24 * 60 * 60 * 1000
-const cutoff = Date.now() - retentionTime;
+      this.config.monitoring.retentionDays * 24 * 60 * 60 * 1000;
+    const cutoff = Date.now() - retentionTime;
 
     this.metrics.errors = this.metrics.errors.filter(
       (entry) => new Date(entry.timestamp).getTime() > cutoff,
@@ -671,8 +670,8 @@ const cutoff = Date.now() - retentionTime;
   }
 
   log(message, level = 'info') {
-    const timestamp = new Date().toISOString()
-const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
+    const timestamp = new Date().toISOString();
+    const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
 
     if (level === 'error') {
       console.error(logEntry);

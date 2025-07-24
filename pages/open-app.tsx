@@ -1,7 +1,7 @@
-import React from react';;
-import Head from next/head;;
+import React from 'react';
+import Head from 'next/head';
 
-default function openapp() {
+export default function openapp() {
   return (
     <>
       <Head>
@@ -19,3 +19,4 @@ default function openapp() {
       </div>
     </>
   );
+}

@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,24 +5,25 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
 
-
-const fs = require('fs')
-const path = require('path')
+const fs = require('fs');
+const path = require('path');
 const { execSync } = require('child_process');
 
 logger.info('🔧 Final Comprehensive Fix - Addressing All Remaining Issues...');
@@ -68,7 +68,7 @@ try {
 }
 
 // 2. Clean up problematic automation scripts
-logger.info('\n2. Cleaning up problematic automation scripts...')
+logger.info('\n2. Cleaning up problematic automation scripts...');
 const problematicScripts = [
   'scripts/ai-continuous-improvement.cjs',
   'scripts/cursor-ai-delegator.cjs',
@@ -89,7 +89,7 @@ problematicScripts.forEach((script) => {
 });
 
 // 3. Clean up problematic directories
-logger.info('\n3. Cleaning up problematic directories...')
+logger.info('\n3. Cleaning up problematic directories...');
 const problematicDirs = [
   'ai-improvement-data',
   'automation-data',
@@ -110,7 +110,7 @@ problematicDirs.forEach((dir) => {
 });
 
 // 4. Fix Next.js configuration
-logger.info('\n4. Fixing Next.js configuration...')
+logger.info('\n4. Fixing Next.js configuration...');
 const nextConfig = `module.exports = {
   reactStrictMode: true,
   swcMinify: false,
@@ -287,7 +287,7 @@ fs.writeFileSync('public/index.html', htmlContent);
 logger.info('✅ Created simple HTML file');
 
 // 9. Final status report
-logger.info('\n9. Generating final status report...')
+logger.info('\n9. Generating final status report...');
 const finalStatus = {
   timestamp: new Date().toISOString(),
   status: 'SUCCESS',

@@ -1,0 +1,59 @@
+{
+  "name": "zion-continuous-improvement",
+  "version": "1.0.0",
+  "description": "Automatic continuous improvement system for Zion App",
+  "main": "index.js",
+  "scripts": {
+    "start": "node start.js",
+    "dev": "nodemon start.js",
+    "test": "jest --passWithNoTests",
+    "test-system": "node test-system.js",
+    "lint": "eslint .",
+    "monitor": "node monitor.js",
+    "improve": "node improve.js",
+    "status": "./scripts/status.sh"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "chalk": "^4.1.2",
+    "commander": "^11.1.0",
+    "cron": "^3.1.6",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "lighthouse": "^11.4.0",
+    "node-cron": "^3.0.3",
+    "simple-git": "^3.20.0",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "automation",
+    "continuous-improvement",
+    "monitoring",
+    "ai",
+    "cursor"
+  ],
+  "author": "Zion App Team",
+  "license": "MIT"
+} 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

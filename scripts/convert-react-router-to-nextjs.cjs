@@ -1,6 +1,5 @@
-
-const fs = require('fs')
-const path = require('path')
+const fs = require('fs');
+const path = require('path');
 const { _execSync } = require('child_process');
 
 console.warn('🔄 Converting React Router to Next.js routing...\n');

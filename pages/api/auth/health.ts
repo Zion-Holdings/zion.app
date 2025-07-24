@@ -5,6 +5,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     res.status(405).end();
     return;
   }
-  // TODO: Implement health check logic here
   res.status(200).json({ message: 'Health endpoint placeholder' });
 }

@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,21 +5,22 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
-
 
 /**
  * Enhanced Log Collector for Zion.App
@@ -28,11 +28,11 @@ if (process.env.NODE_ENV !== 'production') {
  * Provides structured output and automated error detection
  */
 
-const fs = require('fs')
-const path = require('path')
-const { _exec } = require('child_process')
-const { _promisify } = require('util')
-const execAsync = promisify(exec)
+const fs = require('fs');
+const path = require('path');
+const { _exec } = require('child_process');
+const { _promisify } = require('util');
+const execAsync = promisify(exec);
 class EnhancedLogCollector {
   constructor() {
     this.config = {
@@ -93,8 +93,8 @@ class EnhancedLogCollector {
    * Collect logs from all configured sources
    */
   async collectAllLogs() {
-    const timestamp = new Date().toISOString()
-const report = {
+    const timestamp = new Date().toISOString();
+    const report = {
       timestamp,
       sources: {},
       summary: {
@@ -158,14 +158,14 @@ const report = {
         try {
           const { stdout: buildOutput } = await execAsync(
             'npm run build --silent 2>&1 | tail -20',
-          )
-const buildLog = {
+          );
+          const buildLog = {
             timestamp: new Date().toISOString(),
             output: buildOutput,
             hasErrors: buildOutput.toLowerCase().includes('error'),
             hasWarnings: buildOutput.toLowerCase().includes('warning'),
-          }
-const logPath = path.join(
+          };
+          const logPath = path.join(
             this.config.outputDir,
             'builds',
             `build-${Date.now()}.log`,
@@ -200,8 +200,8 @@ const logPath = path.join(
    * Collect application runtime logs
    */
   async collectApplicationLogs(report) {
-    logger.warn('🏃 Collecting application logs...')
-const appInfo = {
+    logger.warn('🏃 Collecting application logs...');
+    const appInfo = {
       timestamp: new Date().toISOString(),
       files: [],
       errors: [],
@@ -225,8 +225,8 @@ const appInfo = {
             .filter((f) => f.endsWith('.log'));
 
           for (const file of files) {
-            const filePath = path.join(logDir, file)
-const stats = fs.statSync(filePath);
+            const filePath = path.join(logDir, file);
+            const stats = fs.statSync(filePath);
 
             appInfo.files.push({
               path: filePath,
@@ -236,12 +236,12 @@ const stats = fs.statSync(filePath);
 
             // Analyze log content for errors/warnings
             try {
-              const content = fs.readFileSync(filePath, 'utf-8')
-const lines = content.split('\n');
+              const content = fs.readFileSync(filePath, 'utf-8');
+              const lines = content.split('\n');
 
               lines.forEach((line, index) => {
-                const lower = line.toLowerCase()
-const errorFalsePositives = [
+                const lower = line.toLowerCase();
+                const errorFalsePositives = [
                   'no error',
                   'no errors',
                   'no compilation errors',
@@ -251,14 +251,14 @@ const errorFalsePositives = [
                   'error-monitor',
                   'error count',
                   'errors:',
-                ]
-const isError =
+                ];
+                const isError =
                   lower.includes('error') &&
                   !errorFalsePositives.some((p) => lower.includes(p)) &&
                   !lower.includes('errors: 0') &&
                   !line.includes('✅') &&
-                  !lower.startsWith('- ')
-const isWarning =
+                  !lower.startsWith('- ');
+                const isWarning =
                   lower.includes('warn') &&
                   !lower.includes('no warnings') &&
                   !lower.includes('warnings: 0');
@@ -302,8 +302,8 @@ const isWarning =
    * Collect test logs
    */
   async collectTestLogs(report) {
-    logger.warn('🧪 Collecting test logs...')
-const testInfo = {
+    logger.warn('🧪 Collecting test logs...');
+    const testInfo = {
       timestamp: new Date().toISOString(),
       jest: { files: [], lastRun: null },
       playwright: { files: [], lastRun: null },
@@ -359,8 +359,8 @@ const testInfo = {
         );
       }
 
-      report.sources.tests = testInfo
-const totalTestFiles =
+      report.sources.tests = testInfo;
+      const totalTestFiles =
         testInfo.jest.files.length +
         testInfo.playwright.files.length +
         testInfo.cypress.files.length;
@@ -376,8 +376,8 @@ const totalTestFiles =
    * Collect system logs
    */
   async collectSystemLogs(report) {
-    logger.warn('🖥️  Collecting system logs...')
-const systemInfo = {
+    logger.warn('🖥️  Collecting system logs...');
+    const systemInfo = {
       timestamp: new Date().toISOString(),
       nodejs: {},
       npm: {},
@@ -394,8 +394,8 @@ const systemInfo = {
       // NPM info
       try {
         const { stdout: npmVersion } = await execAsync('npm --version');
-        systemInfo.npm.version = npmVersion.trim()
-const { stdout: npmConfig } = await execAsync(
+        systemInfo.npm.version = npmVersion.trim();
+        const { stdout: npmConfig } = await execAsync(
           'npm config list --json 2>/dev/null || echo "{}"',
         );
         systemInfo.npm.config = JSON.parse(npmConfig || '{}');
@@ -427,8 +427,8 @@ const { stdout: npmConfig } = await execAsync(
    * Collect Git logs
    */
   async collectGitLogs(report) {
-    logger.warn('🔀 Collecting Git logs...')
-const gitInfo = {
+    logger.warn('🔀 Collecting Git logs...');
+    const gitInfo = {
       timestamp: new Date().toISOString(),
       commits: [],
       branches: [],
@@ -479,16 +479,16 @@ const gitInfo = {
    * Generate consolidated report
    */
   async generateConsolidatedReport(report) {
-    logger.warn('\n📊 Generating consolidated report...')
-const reportPath = path.join(
+    logger.warn('\n📊 Generating consolidated report...');
+    const reportPath = path.join(
       this.config.outputDir,
       `consolidated-report-${Date.now()}.json`,
     );
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
     // Generate summary
-    const summaryPath = path.join(this.config.outputDir, 'latest-summary.txt')
-const summary = this.generateTextSummary(report);
+    const summaryPath = path.join(this.config.outputDir, 'latest-summary.txt');
+    const summary = this.generateTextSummary(report);
     fs.writeFileSync(summaryPath, summary);
 
     logger.warn(`  ✅ Report saved to: ${reportPath}`);
@@ -585,19 +585,19 @@ const summary = this.generateTextSummary(report);
    * Clean old logs based on retention policy
    */
   async cleanOldLogs() {
-    logger.warn('🧹 Cleaning old logs...')
-const cutoffDate = new Date();
+    logger.warn('🧹 Cleaning old logs...');
+    const cutoffDate = new Date();
     cutoffDate.setDate(cutoffDate.getDate() - this.config.retention.days);
 
     let deletedCount = 0;
 
     try {
       const walkDir = (dir) => {
-        if (!fs.existsSync(dir)) return
-const files = fs.readdirSync(dir);
+        if (!fs.existsSync(dir)) return;
+        const files = fs.readdirSync(dir);
         for (const file of files) {
-          const filePath = path.join(dir, file)
-const stats = fs.statSync(filePath);
+          const filePath = path.join(dir, file);
+          const stats = fs.statSync(filePath);
 
           if (stats.isDirectory()) {
             walkDir(filePath);
@@ -618,8 +618,8 @@ const stats = fs.statSync(filePath);
 
 // Main execution
 async function main() {
-  logger.warn('🚀 Enhanced Log Collector\n')
-const collector = new EnhancedLogCollector();
+  logger.warn('🚀 Enhanced Log Collector\n');
+  const collector = new EnhancedLogCollector();
 
   if (!(await collector.init())) {
     process.exit(1);
@@ -635,8 +635,8 @@ const collector = new EnhancedLogCollector();
 
   // Run error monitoring if requested
   if (process.argv.includes('--analyze')) {
-    const { _ErrorMonitor } = require('./error-monitor.cjs')
-const monitor = new ErrorMonitor();
+    const { _ErrorMonitor } = require('./error-monitor.cjs');
+    const monitor = new ErrorMonitor();
     if (monitor.init()) {
       await monitor.readLogs();
       monitor.generateReport();
@@ -666,7 +666,6 @@ if (require.main === module) {
 
 module.exports = { EnhancedLogCollector };
 
-
 // Graceful shutdown handling
 process.on('SIGINT', () => {
   logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
@@ -679,4 +678,3 @@ process.on('SIGTERM', () => {
   // Add cleanup logic here
   process.exit(0);
 });
-

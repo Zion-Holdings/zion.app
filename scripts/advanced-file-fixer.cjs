@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,25 +5,26 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
 
-
-const fs = require('fs')
-const path = require('path')
-const { execSync } = require('child_process')
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
 class AdvancedFileFixer {
   constructor() {
     this.projectRoot = process.cwd();
@@ -33,10 +33,10 @@ class AdvancedFileFixer {
   }
 
   log(message, level = 'INFO') {
-    const timestamp = new Date().toISOString()
-const logMessage = `[${timestamp}] [${level}] ${message}`;
-    logger.info(logMessage)
-const logsDir = path.dirname(this.logFile);
+    const timestamp = new Date().toISOString();
+    const logMessage = `[${timestamp}] [${level}] ${message}`;
+    logger.info(logMessage);
+    const logsDir = path.dirname(this.logFile);
     if (!fs.existsSync(logsDir)) {
       fs.mkdirSync(logsDir, { recursive: true });
     }
@@ -53,16 +53,16 @@ const logsDir = path.dirname(this.logFile);
 
   fixApiFile(filePath) {
     try {
-      let content = fs.readFileSync(filePath, 'utf8')
-const originalContent = content;
+      let content = fs.readFileSync(filePath, 'utf8');
+      const originalContent = content;
 
       // Check if the file is all on one line (corrupted)
       if (content.split('\n').length === 1 && content.length > 200) {
         this.log(`Fixing corrupted file: ${filePath}`);
 
         // Extract imports
-        const importMatches = content.match(/import[^;]+;/g) || []
-const imports = importMatches.join('\n');
+        const importMatches = content.match(/import[^;]+;/g) || [];
+        const imports = importMatches.join('\n');
 
         // Extract the main function
         const functionMatch = content.match(
@@ -98,8 +98,8 @@ const imports = importMatches.join('\n');
   }
 
   createBackupApiFiles() {
-    this.log('Creating backup API files...')
-const apiDir = path.join(this.projectRoot, 'pages', 'api');
+    this.log('Creating backup API files...');
+    const apiDir = path.join(this.projectRoot, 'pages', 'api');
     if (!fs.existsSync(apiDir)) {
       this.log('API directory not found');
       return;
@@ -114,9 +114,9 @@ const apiDir = path.join(this.projectRoot, 'pages', 'api');
       const items = fs.readdirSync(dir);
 
       for (const item of items) {
-        const fullPath = path.join(dir, item)
-const backupFullPath = path.join(backupPath, item)
-const stat = fs.statSync(fullPath);
+        const fullPath = path.join(dir, item);
+        const backupFullPath = path.join(backupPath, item);
+        const stat = fs.statSync(fullPath);
 
         if (stat.isDirectory()) {
           if (!fs.existsSync(backupFullPath)) {
@@ -134,9 +134,9 @@ const stat = fs.statSync(fullPath);
   }
 
   restoreApiFiles() {
-    this.log('Restoring API files from backup...')
-const apiDir = path.join(this.projectRoot, 'pages', 'api')
-const backupDir = path.join(this.projectRoot, 'pages', 'api_backup');
+    this.log('Restoring API files from backup...');
+    const apiDir = path.join(this.projectRoot, 'pages', 'api');
+    const backupDir = path.join(this.projectRoot, 'pages', 'api_backup');
 
     if (!fs.existsSync(backupDir)) {
       this.log('No backup found', 'ERROR');
@@ -147,9 +147,9 @@ const backupDir = path.join(this.projectRoot, 'pages', 'api_backup');
       const items = fs.readdirSync(dir);
 
       for (const item of items) {
-        const fullPath = path.join(dir, item)
-const restoreFullPath = path.join(restorePath, item)
-const stat = fs.statSync(fullPath);
+        const fullPath = path.join(dir, item);
+        const restoreFullPath = path.join(restorePath, item);
+        const stat = fs.statSync(fullPath);
 
         if (stat.isDirectory()) {
           if (!fs.existsSync(restoreFullPath)) {
@@ -168,8 +168,8 @@ const stat = fs.statSync(fullPath);
   }
 
   createCleanApiFiles() {
-    this.log('Creating clean API files...')
-const apiDir = path.join(this.projectRoot, 'pages', 'api');
+    this.log('Creating clean API files...');
+    const apiDir = path.join(this.projectRoot, 'pages', 'api');
     if (!fs.existsSync(apiDir)) {
       fs.mkdirSync(apiDir, { recursive: true });
     }
@@ -230,8 +230,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     logger.error('Login error:', error);
     return res.status(500).json({ error: 'Internal server error' });
   }
-}`
-const authDir = path.join(apiDir, 'auth');
+}`;
+    const authDir = path.join(apiDir, 'auth');
     if (!fs.existsSync(authDir)) {
       fs.mkdirSync(authDir, { recursive: true });
     }
@@ -255,8 +255,8 @@ const authDir = path.join(apiDir, 'auth');
           let fixedCount = 0;
 
           for (const item of items) {
-            const fullPath = path.join(dir, item)
-const stat = fs.statSync(fullPath);
+            const fullPath = path.join(dir, item);
+            const stat = fs.statSync(fullPath);
 
             if (stat.isDirectory()) {
               fixedCount += processDirectory(fullPath);
@@ -268,8 +268,8 @@ const stat = fs.statSync(fullPath);
           }
 
           return fixedCount;
-        }
-const fixedCount = processDirectory(apiDir);
+        };
+        const fixedCount = processDirectory(apiDir);
         this.log(`Fixed ${fixedCount} API files`);
 
         if (fixedCount === 0) {
@@ -306,7 +306,6 @@ if (require.main === module) {
 
 module.exports = AdvancedFileFixer;
 
-
 // Graceful shutdown handling
 process.on('SIGINT', () => {
   console.log('\n🛑 Received SIGINT, shutting down gracefully...');
@@ -319,4 +318,3 @@ process.on('SIGTERM', () => {
   // Add cleanup logic here
   process.exit(0);
 });
-

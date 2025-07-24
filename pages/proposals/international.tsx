@@ -1,7 +1,7 @@
-import React from react';;
-import Head from next/head;;
+import React from 'react';
+import Head from 'next/head';
 
-default function international() {
+export default function international() {
   return (
     <>
       <Head>
@@ -19,3 +19,4 @@ default function international() {
       </div>
     </>
   );
+}

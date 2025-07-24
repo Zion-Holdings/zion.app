@@ -4,10 +4,10 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   const { _email } = req['body'] as { email?: string };  if (!email) {
-    return res.status(400).json({ message: 'Email is required' });  }
+    return res.status(400).json({ message:' 'Email is required' });  }
 
   if (!ENV_CONFIG.supabase.isConfigured) {
-    return res.status(503).json({ message: 'Auth provider not configured' });  }
+    return res.status(503).json({ message:' 'Auth provider not configured' });  }
 
   const supabase = createClient(
     ENV_CONFIG.supabase.url,
@@ -21,6 +21,6 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
   return res
     .status(200)
-    .json({ message: 'Verification email resent successfully' });}
+    .json({ message:' 'Verification email resent successfully' });}
 ;
 default withErrorLogging(handler);

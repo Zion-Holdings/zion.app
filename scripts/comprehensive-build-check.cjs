@@ -1,9 +1,8 @@
-
 // Comprehensive build monitoring and error suppression
 // Handles webpack runtime warnings while preserving critical error detection
 
-const { _spawn } = require('child_process')
-const fs = require('fs')
+const { _spawn } = require('child_process');
+const fs = require('fs');
 const path = require('path');
 
 // Configuration
@@ -67,7 +66,7 @@ const colors = {
   blue: '\x1b[34m',
   magenta: '\x1b[35m',
   cyan: '\x1b[36m',
-}
+};
 function colorize(text, color) {
   return `${color}${text}${colors.reset}`;
 }
@@ -147,8 +146,8 @@ function classifyLogLine(line) {
 }
 
 function processLogLine(line) {
-  if (!line.trim()) return
-const classification = classifyLogLine(line);
+  if (!line.trim()) return;
+  const classification = classifyLogLine(line);
 
   switch (classification) {
     case 'critical':
@@ -192,8 +191,8 @@ const classification = classifyLogLine(line);
 }
 
 function generateBuildReport() {
-  const buildDuration = Date.now() - buildStartTime
-const report = {
+  const buildDuration = Date.now() - buildStartTime;
+  const report = {
     timestamp: new Date().toISOString(),
     duration: buildDuration,
     success: buildSuccess,
@@ -262,9 +261,9 @@ async function runBuild(attempt = 1) {
 
   return new Promise((resolve, reject) => {
     // Prepare build command with enhanced Node.js options
-    const buildCommand = 'npm'
-const buildArgs = ['run', 'build']
-const buildProcess = spawn(buildCommand, buildArgs, {
+    const buildCommand = 'npm';
+    const buildArgs = ['run', 'build'];
+    const buildProcess = spawn(buildCommand, buildArgs, {
       stdio: ['inherit', 'pipe', 'pipe'],
       env: {
         ...process.env,

@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,28 +5,29 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
-
 
 /**
  * Performance and Health Check Script
  * Monitors various aspects of the application
  */
 
-const fs = require('fs')
+const fs = require('fs');
 const path = require('path');
 
 // Load environment variables from .env.local if it exists
@@ -48,7 +48,7 @@ if (fs.existsSync(envPath)) {
 const config = {
   baseUrl: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
   timeout: 10000, // 10 seconds
-}
+};
 class PerformanceChecker {
   constructor() {
     this.results = {
@@ -63,12 +63,12 @@ class PerformanceChecker {
   async checkServerHealth() {
     // logger.warn('🔍 Checking server health...');
     try {
-      const startTime = Date.now()
-const response = await fetch(`${config.baseUrl}/api/health`, {
+      const startTime = Date.now();
+      const response = await fetch(`${config.baseUrl}/api/health`, {
         timeout: config.timeout,
-      })
-const endTime = Date.now()
-const responseTime = endTime - startTime;
+      });
+      const endTime = Date.now();
+      const responseTime = endTime - startTime;
       this.results.performance.serverResponseTime = responseTime;
 
       if (response.ok) {
@@ -95,18 +95,18 @@ const responseTime = endTime - startTime;
   async checkPageLoad() {
     // logger.warn('🔍 Checking page load performance...');
     try {
-      const startTime = Date.now()
-const response = await fetch(config.baseUrl, {
+      const startTime = Date.now();
+      const response = await fetch(config.baseUrl, {
         timeout: config.timeout,
-      })
-const endTime = Date.now()
-const responseTime = endTime - startTime;
+      });
+      const endTime = Date.now();
+      const responseTime = endTime - startTime;
       this.results.performance.pageLoadTime = responseTime;
 
       if (response.ok) {
-        const html = await response.text()
-const hasTitle = html.includes('<title>')
-const hasReact = html.includes('__NEXT_DATA__');
+        const html = await response.text();
+        const hasTitle = html.includes('<title>');
+        const hasReact = html.includes('__NEXT_DATA__');
 
         this.results.checks.push({
           name: 'Page Load',
@@ -135,19 +135,19 @@ const hasReact = html.includes('__NEXT_DATA__');
 
   async checkImageOptimization() {
     // logger.warn('🔍 Checking image optimization...')
-const imageUrl = `${config.baseUrl}/_next/image?url=%2Flogos%2Fzion-logo.png&w=64&q=75`;
+    const imageUrl = `${config.baseUrl}/_next/image?url=%2Flogos%2Fzion-logo.png&w=64&q=75`;
 
     try {
-      const startTime = Date.now()
-const response = await fetch(imageUrl, {
+      const startTime = Date.now();
+      const response = await fetch(imageUrl, {
         timeout: config.timeout,
-      })
-const endTime = Date.now()
-const responseTime = endTime - startTime;
+      });
+      const endTime = Date.now();
+      const responseTime = endTime - startTime;
 
       if (response.ok) {
-        const contentType = response.headers.get('content-type')
-const contentLength = response.headers.get('content-length');
+        const contentType = response.headers.get('content-type');
+        const contentLength = response.headers.get('content-length');
 
         this.results.checks.push({
           name: 'Image Optimization',
@@ -179,15 +179,15 @@ const contentLength = response.headers.get('content-length');
 
   checkFileSystem() {
     // logger.warn('🔍 Checking file system...')
-const criticalFiles = [
+    const criticalFiles = [
       'package.json',
       'next.config.js',
       '.env.local',
       'public/logos/zion-logo.png',
       'pages/index.tsx',
-    ]
-const missingFiles = []
-const fileInfo = {};
+    ];
+    const missingFiles = [];
+    const fileInfo = {};
 
     criticalFiles.forEach((file) => {
       try {
@@ -229,19 +229,19 @@ const fileInfo = {};
 
   checkEnvironmentVariables() {
     // logger.warn('🔍 Checking environment configuration...')
-const criticalEnvVars = [
+    const criticalEnvVars = [
       'NODE_ENV',
       'NEXT_PUBLIC_SUPABASE_URL',
       'NEXT_PUBLIC_SUPABASE_ANON_KEY',
-    ]
-const optionalEnvVars = [
+    ];
+    const optionalEnvVars = [
       'NEXT_PUBLIC_SENTRY_DSN',
       'NEXT_PUBLIC_REOWN_PROJECT_ID',
       'SUPABASE_SERVICE_ROLE_KEY',
-    ]
-const missing = []
-const present = []
-const placeholder = [];
+    ];
+    const missing = [];
+    const present = [];
+    const placeholder = [];
 
     [...criticalEnvVars, ...optionalEnvVars].forEach((varName) => {
       const value = process.env[varName];
@@ -257,8 +257,8 @@ const placeholder = [];
       } else {
         present.push(varName);
       }
-    })
-const criticalMissing = criticalEnvVars.filter((v) => missing.includes(v));
+    });
+    const criticalMissing = criticalEnvVars.filter((v) => missing.includes(v));
 
     this.results.checks.push({
       name: 'Environment Variables',
@@ -296,11 +296,11 @@ const criticalMissing = criticalEnvVars.filter((v) => missing.includes(v));
   }
 
   calculateOverallStatus() {
-    const hasErrors = this.results.errors.length > 0
-const hasFailures = this.results.checks.some(
+    const hasErrors = this.results.errors.length > 0;
+    const hasFailures = this.results.checks.some(
       (check) => check.status === 'fail',
-    )
-const hasWarnings = this.results.warnings.length > 0;
+    );
+    const hasWarnings = this.results.warnings.length > 0;
 
     if (hasErrors || hasFailures) {
       this.results.overall = 'fail';
@@ -400,7 +400,6 @@ if (require.main === module) {
 
 module.exports = PerformanceChecker;
 
-
 // Graceful shutdown handling
 process.on('SIGINT', () => {
   logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
@@ -413,4 +412,3 @@ process.on('SIGTERM', () => {
   // Add cleanup logic here
   process.exit(0);
 });
-

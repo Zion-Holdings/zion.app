@@ -46,7 +46,7 @@ function setup(success = true, errorMsg?: string, status = success ? 201 : 400) 
   if (success) {
     mockedAxios.post.mockResolvedValue({
       status,
-      data: { message: 'Success' },    });
+      data: { message:' 'Success' },    });
   } else {
     mockedAxios.post.mockRejectedValue({
       response: {
@@ -129,7 +129,7 @@ describe('Signup form', () => {'  beforeEach(() => {
     // Mock successful response for retry
     mockedAxios.post.mockResolvedValue({
       status: 201,
-      data: { message: 'Success' },    });
+      data: { message:' 'Success' },    });
     
     // Change email and resubmit
     fireEvent.input(screen.getByLabelText(/email address/i), { target: { value: new@example.com' } });    fireEvent.submit(screen.getByRole('button', { name: /create account/i }));    

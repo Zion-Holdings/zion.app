@@ -73,7 +73,7 @@ describe('WhitepaperViewPage', () => {'  beforeEach(() => {
     mockUseAuth.mockReturnValue({ isAdmin: false });
     mockSupabaseInvoke.mockResolvedValue({
       data: null,
-      error: { message: 'Fetch error' },    });
+      error: { message:' 'Fetch error' },    });
     render(
       <MemoryRouterProvider>
         <WhitepaperViewPage />

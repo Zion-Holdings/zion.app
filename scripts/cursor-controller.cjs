@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,21 +5,22 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
-
 
 /**
  * Cursor Controller for Multi-Computer Automation
@@ -29,10 +29,10 @@ if (process.env.NODE_ENV !== 'production') {
  * across multiple computers for automated app improvement tasks.
  */
 
-const { execSync, spawn } = require('child_process')
-const os = require('os')
-const fs = require('fs')
-const path = require('path')
+const { execSync, spawn } = require('child_process');
+const os = require('os');
+const fs = require('fs');
+const path = require('path');
 class CursorController {
   constructor() {
     this.platform = os.platform();
@@ -64,8 +64,8 @@ class CursorController {
           ? `open -a Cursor "${projectPath}"`
           : `"${this.cursorPath}" "${projectPath}"`;
 
-      execSync(command)
-const instanceId = this.generateInstanceId();
+      execSync(command);
+      const instanceId = this.generateInstanceId();
       this.activeInstances.set(instanceId, {
         path: projectPath,
         startedAt: new Date(),
@@ -250,8 +250,8 @@ const instanceId = this.generateInstanceId();
 
   async autoFixIssues() {
     try {
-      logger.info('🔧 Starting automatic issue fixing...')
-const fixes = [
+      logger.info('🔧 Starting automatic issue fixing...');
+      const fixes = [
         { type: 'lint', description: 'Fixing linting issues' },
         { type: 'format', description: 'Formatting code' },
         { type: 'typecheck', description: 'Checking types' },
@@ -354,9 +354,9 @@ module.exports = CursorController;
 
 // Main execution
 if (require.main === module) {
-  const controller = new CursorController()
-const command = process.argv[2]
-const args = process.argv.slice(3);
+  const controller = new CursorController();
+  const command = process.argv[2];
+  const args = process.argv.slice(3);
 
   switch (command) {
     case 'open':

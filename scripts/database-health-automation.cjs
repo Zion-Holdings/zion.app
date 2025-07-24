@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,25 +5,26 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
-
 
 /**
  * Database Health Automation System
- * 
+ *
  * Autonomous system that continuously monitors and optimizes database health,
  * including performance, integrity, and maintenance tasks.
  */
@@ -37,7 +37,7 @@ const EventEmitter = require('events');
 class DatabaseHealthAutomation extends EventEmitter {
   constructor() {
     super();
-    
+
     this.config = {
       // Database settings
       database: {
@@ -45,36 +45,36 @@ class DatabaseHealthAutomation extends EventEmitter {
         connectionString: process.env.DATABASE_URL,
         backupEnabled: true,
         backupInterval: 24 * 60 * 60 * 1000, // 24 hours
-        maxBackups: 7
+        maxBackups: 7,
       },
-      
+
       // Health monitoring
       monitoring: {
         interval: 25 * 60 * 1000, // 25 minutes
         performance: true,
         integrity: true,
         space: true,
-        connections: true
+        connections: true,
       },
-      
+
       // Maintenance settings
       maintenance: {
         autoOptimize: true,
         vacuumInterval: 7 * 24 * 60 * 60 * 1000, // 7 days
         analyzeInterval: 24 * 60 * 60 * 1000, // 24 hours
-        cleanupInterval: 12 * 60 * 60 * 1000 // 12 hours
+        cleanupInterval: 12 * 60 * 60 * 1000, // 12 hours
       },
-      
+
       // Paths
       paths: {
         projectRoot: process.cwd(),
         logs: path.join(process.cwd(), 'logs'),
         reports: path.join(process.cwd(), 'reports'),
         backups: path.join(process.cwd(), 'backups'),
-        database: path.join(process.cwd(), 'database')
-      }
+        database: path.join(process.cwd(), 'database'),
+      },
     };
-    
+
     this.isRunning = false;
     this.currentCheck = null;
     this.checkHistory = [];
@@ -84,9 +84,9 @@ class DatabaseHealthAutomation extends EventEmitter {
       successfulChecks: 0,
       failedChecks: 0,
       optimizationsApplied: 0,
-      lastCheck: null
+      lastCheck: null,
     };
-    
+
     this.initializeDirectories();
   }
 
@@ -95,7 +95,7 @@ class DatabaseHealthAutomation extends EventEmitter {
       this.config.paths.logs,
       this.config.paths.reports,
       this.config.paths.backups,
-      this.config.paths.database
+      this.config.paths.database,
     ];
 
     for (const dir of dirs) {
@@ -156,11 +156,14 @@ class DatabaseHealthAutomation extends EventEmitter {
   }
 
   startMaintenanceTasks() {
-    this.maintenanceTimer = setInterval(async () => {
-      if (this.isRunning) {
-        await this.performMaintenance();
-      }
-    }, 60 * 60 * 1000); // Every hour
+    this.maintenanceTimer = setInterval(
+      async () => {
+        if (this.isRunning) {
+          await this.performMaintenance();
+        }
+      },
+      60 * 60 * 1000,
+    ); // Every hour
   }
 
   async performHealthCheck() {
@@ -168,7 +171,7 @@ class DatabaseHealthAutomation extends EventEmitter {
       this.currentCheck = {
         id: `check_${Date.now()}`,
         startTime: Date.now(),
-        status: 'running'
+        status: 'running',
       };
 
       this.log('info', '🔍 Starting database health check...');
@@ -209,7 +212,7 @@ class DatabaseHealthAutomation extends EventEmitter {
       this.currentCheck.results = {
         ...results,
         issues: issues.length,
-        optimizations: optimizationsApplied.length
+        optimizations: optimizationsApplied.length,
       };
 
       this.checkHistory.push(this.currentCheck);
@@ -221,9 +224,11 @@ class DatabaseHealthAutomation extends EventEmitter {
       // Generate report
       await this.generateHealthReport(results, issues, optimizationsApplied);
 
-      this.log('info', `✅ Health check completed: ${issues.length} issues, ${optimizationsApplied.length} optimizations`);
+      this.log(
+        'info',
+        `✅ Health check completed: ${issues.length} issues, ${optimizationsApplied.length} optimizations`,
+      );
       this.emit('checkCompleted', this.currentCheck);
-
     } catch (error) {
       this.log('error', `Health check failed: ${error.message}`);
       this.stats.failedChecks++;
@@ -255,9 +260,13 @@ class DatabaseHealthAutomation extends EventEmitter {
 
   async checkSQLitePerformance() {
     try {
-      const dbPath = path.join(this.config.paths.projectRoot, 'backend', 'db.sqlite3');
-      
-      if (!await this.fileExists(dbPath)) {
+      const dbPath = path.join(
+        this.config.paths.projectRoot,
+        'backend',
+        'db.sqlite3',
+      );
+
+      if (!(await this.fileExists(dbPath))) {
         return { status: 'not_found', metrics: {} };
       }
 
@@ -273,8 +282,8 @@ class DatabaseHealthAutomation extends EventEmitter {
         metrics: {
           size: sizeMB,
           slowQueries: slowQueries.length,
-          fragmentation: await this.checkFragmentation()
-        }
+          fragmentation: await this.checkFragmentation(),
+        },
       };
     } catch (error) {
       return { status: 'error', error: error.message };
@@ -284,15 +293,17 @@ class DatabaseHealthAutomation extends EventEmitter {
   async checkPostgresPerformance() {
     try {
       // Run PostgreSQL performance checks
-      const result = execSync('psql -c "SELECT version();"', { encoding: 'utf8' });
-      
+      const result = execSync('psql -c "SELECT version();"', {
+        encoding: 'utf8',
+      });
+
       return {
         status: 'healthy',
         metrics: {
           version: result.trim(),
           activeConnections: await this.getPostgresConnections(),
-          slowQueries: await this.getPostgresSlowQueries()
-        }
+          slowQueries: await this.getPostgresSlowQueries(),
+        },
       };
     } catch (error) {
       return { status: 'error', error: error.message };
@@ -302,15 +313,17 @@ class DatabaseHealthAutomation extends EventEmitter {
   async checkMySQLPerformance() {
     try {
       // Run MySQL performance checks
-      const result = execSync('mysql -e "SELECT VERSION();"', { encoding: 'utf8' });
-      
+      const result = execSync('mysql -e "SELECT VERSION();"', {
+        encoding: 'utf8',
+      });
+
       return {
         status: 'healthy',
         metrics: {
           version: result.trim(),
           activeConnections: await this.getMySQLConnections(),
-          slowQueries: await this.getMySQLSlowQueries()
-        }
+          slowQueries: await this.getMySQLSlowQueries(),
+        },
       };
     } catch (error) {
       return { status: 'error', error: error.message };
@@ -320,15 +333,17 @@ class DatabaseHealthAutomation extends EventEmitter {
   async checkMongoDBPerformance() {
     try {
       // Run MongoDB performance checks
-      const result = execSync('mongosh --eval "db.version()"', { encoding: 'utf8' });
-      
+      const result = execSync('mongosh --eval "db.version()"', {
+        encoding: 'utf8',
+      });
+
       return {
         status: 'healthy',
         metrics: {
           version: result.trim(),
           activeConnections: await this.getMongoDBConnections(),
-          slowQueries: await this.getMongoDBSlowQueries()
-        }
+          slowQueries: await this.getMongoDBSlowQueries(),
+        },
       };
     } catch (error) {
       return { status: 'error', error: error.message };
@@ -357,20 +372,26 @@ class DatabaseHealthAutomation extends EventEmitter {
 
   async checkSQLiteIntegrity() {
     try {
-      const dbPath = path.join(this.config.paths.projectRoot, 'backend', 'db.sqlite3');
-      
-      if (!await this.fileExists(dbPath)) {
+      const dbPath = path.join(
+        this.config.paths.projectRoot,
+        'backend',
+        'db.sqlite3',
+      );
+
+      if (!(await this.fileExists(dbPath))) {
         return { status: 'not_found', issues: [] };
       }
 
       // Run integrity check
-      const result = execSync(`sqlite3 "${dbPath}" "PRAGMA integrity_check;"`, { encoding: 'utf8' });
-      
+      const result = execSync(`sqlite3 "${dbPath}" "PRAGMA integrity_check;"`, {
+        encoding: 'utf8',
+      });
+
       const isHealthy = result.trim() === 'ok';
-      
+
       return {
         status: isHealthy ? 'healthy' : 'corrupted',
-        issues: isHealthy ? [] : ['Database corruption detected']
+        issues: isHealthy ? [] : ['Database corruption detected'],
       };
     } catch (error) {
       return { status: 'error', error: error.message };
@@ -380,11 +401,13 @@ class DatabaseHealthAutomation extends EventEmitter {
   async checkPostgresIntegrity() {
     try {
       // Run PostgreSQL integrity checks
-      const result = execSync('psql -c "SELECT pg_check_visible();"', { encoding: 'utf8' });
-      
+      const result = execSync('psql -c "SELECT pg_check_visible();"', {
+        encoding: 'utf8',
+      });
+
       return {
         status: 'healthy',
-        issues: []
+        issues: [],
       };
     } catch (error) {
       return { status: 'error', error: error.message };
@@ -394,11 +417,13 @@ class DatabaseHealthAutomation extends EventEmitter {
   async checkMySQLIntegrity() {
     try {
       // Run MySQL integrity checks
-      const result = execSync('mysqlcheck --all-databases', { encoding: 'utf8' });
-      
+      const result = execSync('mysqlcheck --all-databases', {
+        encoding: 'utf8',
+      });
+
       return {
         status: 'healthy',
-        issues: []
+        issues: [],
       };
     } catch (error) {
       return { status: 'error', error: error.message };
@@ -408,11 +433,13 @@ class DatabaseHealthAutomation extends EventEmitter {
   async checkMongoDBIntegrity() {
     try {
       // Run MongoDB integrity checks
-      const result = execSync('mongosh --eval "db.runCommand({dbHash: 1})"', { encoding: 'utf8' });
-      
+      const result = execSync('mongosh --eval "db.runCommand({dbHash: 1})"', {
+        encoding: 'utf8',
+      });
+
       return {
         status: 'healthy',
-        issues: []
+        issues: [],
       };
     } catch (error) {
       return { status: 'error', error: error.message };
@@ -421,21 +448,25 @@ class DatabaseHealthAutomation extends EventEmitter {
 
   async checkDiskSpace() {
     try {
-      const dbPath = path.join(this.config.paths.projectRoot, 'backend', 'db.sqlite3');
-      
+      const dbPath = path.join(
+        this.config.paths.projectRoot,
+        'backend',
+        'db.sqlite3',
+      );
+
       if (await this.fileExists(dbPath)) {
         const stats = await fs.stat(dbPath);
         const sizeMB = Math.round(stats.size / 1024 / 1024);
-        
+
         return {
           status: 'healthy',
           metrics: {
             size: sizeMB,
-            available: await this.getAvailableSpace()
-          }
+            available: await this.getAvailableSpace(),
+          },
         };
       }
-      
+
       return { status: 'not_found', metrics: {} };
     } catch (error) {
       return { status: 'error', error: error.message };
@@ -474,7 +505,10 @@ class DatabaseHealthAutomation extends EventEmitter {
 
   async getPostgresConnections() {
     try {
-      const result = execSync('psql -c "SELECT count(*) FROM pg_stat_activity;"', { encoding: 'utf8' });
+      const result = execSync(
+        'psql -c "SELECT count(*) FROM pg_stat_activity;"',
+        { encoding: 'utf8' },
+      );
       return parseInt(result.trim().split('\n')[2]);
     } catch (error) {
       return 0;
@@ -483,7 +517,10 @@ class DatabaseHealthAutomation extends EventEmitter {
 
   async getMySQLConnections() {
     try {
-      const result = execSync('mysql -e "SHOW STATUS LIKE \'Threads_connected\';"', { encoding: 'utf8' });
+      const result = execSync(
+        'mysql -e "SHOW STATUS LIKE \'Threads_connected\';"',
+        { encoding: 'utf8' },
+      );
       const lines = result.split('\n');
       return parseInt(lines[1].split('\t')[1]);
     } catch (error) {
@@ -493,7 +530,10 @@ class DatabaseHealthAutomation extends EventEmitter {
 
   async getMongoDBConnections() {
     try {
-      const result = execSync('mongosh --eval "db.serverStatus().connections"', { encoding: 'utf8' });
+      const result = execSync(
+        'mongosh --eval "db.serverStatus().connections"',
+        { encoding: 'utf8' },
+      );
       const match = result.match(/"current" : (\d+)/);
       return match ? parseInt(match[1]) : 0;
     } catch (error) {
@@ -508,19 +548,27 @@ class DatabaseHealthAutomation extends EventEmitter {
 
   async checkFragmentation() {
     try {
-      const dbPath = path.join(this.config.paths.projectRoot, 'backend', 'db.sqlite3');
-      
-      if (!await this.fileExists(dbPath)) {
+      const dbPath = path.join(
+        this.config.paths.projectRoot,
+        'backend',
+        'db.sqlite3',
+      );
+
+      if (!(await this.fileExists(dbPath))) {
         return 0;
       }
 
-      const result = execSync(`sqlite3 "${dbPath}" "PRAGMA page_count;"`, { encoding: 'utf8' });
+      const result = execSync(`sqlite3 "${dbPath}" "PRAGMA page_count;"`, {
+        encoding: 'utf8',
+      });
       const pageCount = parseInt(result.trim());
-      
-      const result2 = execSync(`sqlite3 "${dbPath}" "PRAGMA freelist_count;"`, { encoding: 'utf8' });
+
+      const result2 = execSync(`sqlite3 "${dbPath}" "PRAGMA freelist_count;"`, {
+        encoding: 'utf8',
+      });
       const freelistCount = parseInt(result2.trim());
-      
-      return freelistCount / pageCount * 100;
+
+      return (freelistCount / pageCount) * 100;
     } catch (error) {
       return 0;
     }
@@ -528,53 +576,57 @@ class DatabaseHealthAutomation extends EventEmitter {
 
   analyzeHealthResults(results) {
     const issues = [];
-    
+
     // Performance issues
     if (results.performance && results.performance.status !== 'healthy') {
       issues.push({
         type: 'performance',
         severity: 'high',
         description: 'Database performance issues detected',
-        details: results.performance
+        details: results.performance,
       });
     }
-    
+
     // Integrity issues
     if (results.integrity && results.integrity.status !== 'healthy') {
       issues.push({
         type: 'integrity',
         severity: 'critical',
         description: 'Database integrity issues detected',
-        details: results.integrity
+        details: results.integrity,
       });
     }
-    
+
     // Space issues
-    if (results.space && results.space.metrics && results.space.metrics.size > 1000) {
+    if (
+      results.space &&
+      results.space.metrics &&
+      results.space.metrics.size > 1000
+    ) {
       issues.push({
         type: 'space',
         severity: 'medium',
         description: 'Database size is large',
-        details: results.space
+        details: results.space,
       });
     }
-    
+
     // Connection issues
     if (results.connections && results.connections.connections > 100) {
       issues.push({
         type: 'connections',
         severity: 'medium',
         description: 'High number of database connections',
-        details: results.connections
+        details: results.connections,
       });
     }
-    
+
     return issues;
   }
 
   async applyOptimizations(issues) {
     const optimizations = [];
-    
+
     for (const issue of issues) {
       try {
         const result = await this.applyOptimization(issue);
@@ -585,7 +637,7 @@ class DatabaseHealthAutomation extends EventEmitter {
         this.log('error', `Failed to apply optimization: ${error.message}`);
       }
     }
-    
+
     return optimizations;
   }
 
@@ -625,14 +677,18 @@ class DatabaseHealthAutomation extends EventEmitter {
 
   async optimizeSQLitePerformance() {
     try {
-      const dbPath = path.join(this.config.paths.projectRoot, 'backend', 'db.sqlite3');
-      
+      const dbPath = path.join(
+        this.config.paths.projectRoot,
+        'backend',
+        'db.sqlite3',
+      );
+
       // Run VACUUM to optimize database
       execSync(`sqlite3 "${dbPath}" "VACUUM;"`, { stdio: 'pipe' });
-      
+
       // Run ANALYZE to update statistics
       execSync(`sqlite3 "${dbPath}" "ANALYZE;"`, { stdio: 'pipe' });
-      
+
       return { success: true, message: 'SQLite performance optimized' };
     } catch (error) {
       return { success: false, error: error.message };
@@ -662,7 +718,9 @@ class DatabaseHealthAutomation extends EventEmitter {
   async optimizeMongoDBPerformance() {
     try {
       // Run MongoDB optimization commands
-      execSync('mongosh --eval "db.runCommand({compact: \"collection\"})"', { stdio: 'pipe' });
+      execSync('mongosh --eval "db.runCommand({compact: \"collection\"})"', {
+        stdio: 'pipe',
+      });
       return { success: true, message: 'MongoDB performance optimized' };
     } catch (error) {
       return { success: false, error: error.message };
@@ -673,7 +731,7 @@ class DatabaseHealthAutomation extends EventEmitter {
     try {
       // Create backup before integrity fix
       await this.createBackup();
-      
+
       switch (this.config.database.type) {
         case 'sqlite':
           return await this.fixSQLiteIntegrity();
@@ -693,11 +751,17 @@ class DatabaseHealthAutomation extends EventEmitter {
 
   async fixSQLiteIntegrity() {
     try {
-      const dbPath = path.join(this.config.paths.projectRoot, 'backend', 'db.sqlite3');
-      
+      const dbPath = path.join(
+        this.config.paths.projectRoot,
+        'backend',
+        'db.sqlite3',
+      );
+
       // Run integrity check and fix
-      execSync(`sqlite3 "${dbPath}" "PRAGMA integrity_check;"`, { stdio: 'pipe' });
-      
+      execSync(`sqlite3 "${dbPath}" "PRAGMA integrity_check;"`, {
+        stdio: 'pipe',
+      });
+
       return { success: true, message: 'SQLite integrity checked' };
     } catch (error) {
       return { success: false, error: error.message };
@@ -752,29 +816,28 @@ class DatabaseHealthAutomation extends EventEmitter {
   async performMaintenance() {
     try {
       this.log('info', '🔧 Performing database maintenance...');
-      
+
       // Create backup
       if (this.config.database.backupEnabled) {
         await this.createBackup();
       }
-      
+
       // Run maintenance tasks based on intervals
       const now = Date.now();
-      
+
       if (now % this.config.maintenance.vacuumInterval < 60000) {
         await this.runVacuum();
       }
-      
+
       if (now % this.config.maintenance.analyzeInterval < 60000) {
         await this.runAnalyze();
       }
-      
+
       if (now % this.config.maintenance.cleanupInterval < 60000) {
         await this.runCleanup();
       }
-      
+
       this.log('info', '✅ Database maintenance completed');
-      
     } catch (error) {
       this.log('error', `Database maintenance failed: ${error.message}`);
     }
@@ -783,14 +846,23 @@ class DatabaseHealthAutomation extends EventEmitter {
   async createBackup() {
     try {
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const backupPath = path.join(this.config.paths.backups, `db-backup-${timestamp}.sqlite3`);
-      
-      const dbPath = path.join(this.config.paths.projectRoot, 'backend', 'db.sqlite3');
-      
+      const backupPath = path.join(
+        this.config.paths.backups,
+        `db-backup-${timestamp}.sqlite3`,
+      );
+
+      const dbPath = path.join(
+        this.config.paths.projectRoot,
+        'backend',
+        'db.sqlite3',
+      );
+
       if (await this.fileExists(dbPath)) {
-        execSync(`sqlite3 "${dbPath}" ".backup '${backupPath}'"`, { stdio: 'pipe' });
+        execSync(`sqlite3 "${dbPath}" ".backup '${backupPath}'"`, {
+          stdio: 'pipe',
+        });
         this.log('info', `Database backup created: ${backupPath}`);
-        
+
         // Clean up old backups
         await this.cleanupOldBackups();
       }
@@ -803,12 +875,17 @@ class DatabaseHealthAutomation extends EventEmitter {
     try {
       const backupDir = this.config.paths.backups;
       const files = await fs.readdir(backupDir);
-      const backupFiles = files.filter(f => f.startsWith('db-backup-') && f.endsWith('.sqlite3'));
-      
+      const backupFiles = files.filter(
+        (f) => f.startsWith('db-backup-') && f.endsWith('.sqlite3'),
+      );
+
       if (backupFiles.length > this.config.database.maxBackups) {
         backupFiles.sort();
-        const toDelete = backupFiles.slice(0, backupFiles.length - this.config.database.maxBackups);
-        
+        const toDelete = backupFiles.slice(
+          0,
+          backupFiles.length - this.config.database.maxBackups,
+        );
+
         for (const file of toDelete) {
           await fs.unlink(path.join(backupDir, file));
           this.log('info', `Deleted old backup: ${file}`);
@@ -821,7 +898,11 @@ class DatabaseHealthAutomation extends EventEmitter {
 
   async runVacuum() {
     try {
-      const dbPath = path.join(this.config.paths.projectRoot, 'backend', 'db.sqlite3');
+      const dbPath = path.join(
+        this.config.paths.projectRoot,
+        'backend',
+        'db.sqlite3',
+      );
       execSync(`sqlite3 "${dbPath}" "VACUUM;"`, { stdio: 'pipe' });
       this.log('info', 'Database vacuum completed');
     } catch (error) {
@@ -831,7 +912,11 @@ class DatabaseHealthAutomation extends EventEmitter {
 
   async runAnalyze() {
     try {
-      const dbPath = path.join(this.config.paths.projectRoot, 'backend', 'db.sqlite3');
+      const dbPath = path.join(
+        this.config.paths.projectRoot,
+        'backend',
+        'db.sqlite3',
+      );
       execSync(`sqlite3 "${dbPath}" "ANALYZE;"`, { stdio: 'pipe' });
       this.log('info', 'Database analyze completed');
     } catch (error) {
@@ -860,36 +945,43 @@ class DatabaseHealthAutomation extends EventEmitter {
         databaseType: this.config.database.type,
         totalIssues: issues.length,
         optimizationsApplied: optimizations.length,
-        healthScore: this.calculateHealthScore(results)
-      }
+        healthScore: this.calculateHealthScore(results),
+      },
     };
 
-    const reportPath = path.join(this.config.paths.reports, `database-health-${Date.now()}.json`);
+    const reportPath = path.join(
+      this.config.paths.reports,
+      `database-health-${Date.now()}.json`,
+    );
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
-    
+
     this.log('info', `Generated health report: ${reportPath}`);
     return report;
   }
 
   calculateHealthScore(results) {
     let score = 100;
-    
+
     if (results.performance && results.performance.status !== 'healthy') {
       score -= 30;
     }
-    
+
     if (results.integrity && results.integrity.status !== 'healthy') {
       score -= 50;
     }
-    
-    if (results.space && results.space.metrics && results.space.metrics.size > 1000) {
+
+    if (
+      results.space &&
+      results.space.metrics &&
+      results.space.metrics.size > 1000
+    ) {
       score -= 10;
     }
-    
+
     if (results.connections && results.connections.connections > 100) {
       score -= 10;
     }
-    
+
     return Math.max(0, score);
   }
 
@@ -905,9 +997,9 @@ class DatabaseHealthAutomation extends EventEmitter {
   log(level, message) {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] [${level.toUpperCase()}] [DB-HEALTH] ${message}`;
-    
+
     logger.info(logMessage);
-    
+
     // Save to log file
     const logPath = path.join(this.config.paths.logs, 'database-health.log');
     fs.appendFile(logPath, logMessage + '\n').catch(() => {});
@@ -919,7 +1011,7 @@ class DatabaseHealthAutomation extends EventEmitter {
       currentCheck: this.currentCheck,
       stats: this.stats,
       databaseType: this.config.database.type,
-      lastCheck: this.stats.lastCheck
+      lastCheck: this.stats.lastCheck,
     };
   }
 }
@@ -946,19 +1038,21 @@ async function main() {
       await automation.createBackup();
       break;
     default:
-      logger.info('Usage: node database-health-automation.cjs [start|stop|status|check|backup]');
+      logger.info(
+        'Usage: node database-health-automation.cjs [start|stop|status|check|backup]',
+      );
       break;
   }
 }
 
 if (require.main === module) {
-  main().catch(error => {
+  main().catch((error) => {
     logger.error('Database Health Automation failed:', error.message);
     process.exit(1);
   });
 }
 
-module.exports = DatabaseHealthAutomation; 
+module.exports = DatabaseHealthAutomation;
 
 // Graceful shutdown handling
 process.on('SIGINT', () => {
@@ -972,4 +1066,3 @@ process.on('SIGTERM', () => {
   // Add cleanup logic here
   process.exit(0);
 });
-

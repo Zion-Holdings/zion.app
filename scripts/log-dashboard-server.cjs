@@ -1,15 +1,14 @@
-
 /**
  * Log Dashboard Server
  * Serves log files with a minimal HTTP interface so no extra
  * dependencies are required.
  */
 
-const http = require('http')
-const fs = require('fs')
-const path = require('path')
-const logsDir = path.join(__dirname, '..', 'logs')
-const port = process.env.PORT || 9000
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+const logsDir = path.join(__dirname, '..', 'logs');
+const port = process.env.PORT || 9000;
 function listLogs() {
   if (!fs.existsSync(logsDir)) return [];
   return fs.readdirSync(logsDir).filter((f) => f.endsWith('.log'));

@@ -1,0 +1,19 @@
+[Unit]
+Description=Zion App Continuous Development System
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=miami2
+WorkingDirectory=/Users/miami2/Documents/GitHub/bolt.new.zion.app
+ExecStart=/usr/bin/node scripts/simple-continuous-dev.cjs
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+Environment=NODE_ENV=development
+Environment=PORT=3001
+
+[Install]
+WantedBy=multi-user.target 

@@ -1,7 +1,7 @@
-import React from react';;
-import Head from next/head;;
+import React from 'react';
+import Head from 'next/head';
 
-default function ordersuccess() {
+export default function ordersuccess() {
   return (
     <>
       <Head>
@@ -19,3 +19,4 @@ default function ordersuccess() {
       </div>
     </>
   );
+}

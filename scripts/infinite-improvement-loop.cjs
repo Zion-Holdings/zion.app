@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,25 +5,26 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
-
 
 /**
  * Infinite Improvement Loop System
- * 
+ *
  * A self-improving AI system that continuously enhances all automation systems
  * using the best AI tools available, creating an infinite improvement cycle.
  */
@@ -39,7 +39,7 @@ const http = require('http');
 class InfiniteImprovementLoop extends EventEmitter {
   constructor() {
     super();
-    
+
     this.config = {
       // AI Enhancement settings
       enhancement: {
@@ -48,39 +48,39 @@ class InfiniteImprovementLoop extends EventEmitter {
         autoApply: true,
         backupBeforeEnhancement: true,
         testAfterEnhancement: true,
-        rollbackOnFailure: true
+        rollbackOnFailure: true,
       },
-      
+
       // AI Tools for improvement
       aiTools: {
         openai: {
           enabled: process.env.OPENAI_ENABLED === 'true',
           apiKey: process.env.OPENAI_API_KEY,
           model: process.env.OPENAI_MODEL || 'gpt-4-turbo-preview',
-          endpoint: 'https://api.openai.com/v1/chat/completions'
+          endpoint: 'https://api.openai.com/v1/chat/completions',
         },
         claude: {
           enabled: process.env.CLAUDE_ENABLED === 'true',
           apiKey: process.env.CLAUDE_API_KEY,
           model: process.env.CLAUDE_MODEL || 'claude-3-sonnet-20240229',
-          endpoint: 'https://api.anthropic.com/v1/messages'
+          endpoint: 'https://api.anthropic.com/v1/messages',
         },
         cursor: {
           enabled: process.env.CURSOR_AI_ENABLED === 'true',
           apiKey: process.env.CURSOR_API_KEY,
-          workspaceId: process.env.CURSOR_WORKSPACE_ID
+          workspaceId: process.env.CURSOR_WORKSPACE_ID,
         },
         local: {
           enabled: process.env.LOCAL_AI_ENABLED === 'true',
           endpoint: process.env.LOCAL_AI_ENDPOINT || 'http://localhost:11434',
-          model: process.env.LOCAL_AI_MODEL || 'codellama:7b'
+          model: process.env.LOCAL_AI_MODEL || 'codellama:7b',
         },
         github: {
           enabled: true,
-          token: process.env.GITHUB_TOKEN
-        }
+          token: process.env.GITHUB_TOKEN,
+        },
       },
-      
+
       // Improvement categories
       categories: {
         codeQuality: true,
@@ -90,9 +90,9 @@ class InfiniteImprovementLoop extends EventEmitter {
         aiIntegration: true,
         automation: true,
         monitoring: true,
-        documentation: true
+        documentation: true,
       },
-      
+
       // Paths
       paths: {
         projectRoot: process.cwd(),
@@ -100,10 +100,10 @@ class InfiniteImprovementLoop extends EventEmitter {
         reports: path.join(process.cwd(), 'reports'),
         backups: path.join(process.cwd(), 'backups'),
         improvements: path.join(process.cwd(), 'improvements'),
-        aiModels: path.join(process.cwd(), 'ai-models')
-      }
+        aiModels: path.join(process.cwd(), 'ai-models'),
+      },
     };
-    
+
     this.isRunning = false;
     this.currentImprovement = null;
     this.improvementHistory = [];
@@ -116,41 +116,50 @@ class InfiniteImprovementLoop extends EventEmitter {
       aiToolsDiscovered: 0,
       aiToolsIntegrated: 0,
       lastImprovement: null,
-      improvementScore: 0
+      improvementScore: 0,
     };
-    
+
     this.initializeAIProviders();
     this.initializeDirectories();
   }
 
   async initializeAIProviders() {
     // Initialize OpenAI
-    if (this.config.aiTools.openai.enabled && this.config.aiTools.openai.apiKey) {
+    if (
+      this.config.aiTools.openai.enabled &&
+      this.config.aiTools.openai.apiKey
+    ) {
       this.aiProviders.set('openai', {
         name: 'OpenAI GPT',
         enhance: this.enhanceWithOpenAI.bind(this),
         analyze: this.analyzeWithOpenAI.bind(this),
-        discover: this.discoverWithOpenAI.bind(this)
+        discover: this.discoverWithOpenAI.bind(this),
       });
     }
 
     // Initialize Claude
-    if (this.config.aiTools.claude.enabled && this.config.aiTools.claude.apiKey) {
+    if (
+      this.config.aiTools.claude.enabled &&
+      this.config.aiTools.claude.apiKey
+    ) {
       this.aiProviders.set('claude', {
         name: 'Claude',
         enhance: this.enhanceWithClaude.bind(this),
         analyze: this.analyzeWithClaude.bind(this),
-        discover: this.discoverWithClaude.bind(this)
+        discover: this.discoverWithClaude.bind(this),
       });
     }
 
     // Initialize Cursor AI
-    if (this.config.aiTools.cursor.enabled && this.config.aiTools.cursor.apiKey) {
+    if (
+      this.config.aiTools.cursor.enabled &&
+      this.config.aiTools.cursor.apiKey
+    ) {
       this.aiProviders.set('cursor', {
         name: 'Cursor AI',
         enhance: this.enhanceWithCursor.bind(this),
         analyze: this.analyzeWithCursor.bind(this),
-        discover: this.discoverWithCursor.bind(this)
+        discover: this.discoverWithCursor.bind(this),
       });
     }
 
@@ -160,11 +169,14 @@ class InfiniteImprovementLoop extends EventEmitter {
         name: 'Local AI',
         enhance: this.enhanceWithLocalAI.bind(this),
         analyze: this.analyzeWithLocalAI.bind(this),
-        discover: this.discoverWithLocalAI.bind(this)
+        discover: this.discoverWithLocalAI.bind(this),
       });
     }
 
-    this.log('info', `Initialized ${this.aiProviders.size} AI providers for infinite improvement`);
+    this.log(
+      'info',
+      `Initialized ${this.aiProviders.size} AI providers for infinite improvement`,
+    );
   }
 
   async initializeDirectories() {
@@ -173,7 +185,7 @@ class InfiniteImprovementLoop extends EventEmitter {
       this.config.paths.reports,
       this.config.paths.backups,
       this.config.paths.improvements,
-      this.config.paths.aiModels
+      this.config.paths.aiModels,
     ];
 
     for (const dir of dirs) {
@@ -241,19 +253,25 @@ class InfiniteImprovementLoop extends EventEmitter {
   }
 
   startAIDiscovery() {
-    this.discoveryTimer = setInterval(async () => {
-      if (this.isRunning) {
-        await this.discoverNewAITools();
-      }
-    }, 30 * 60 * 1000); // Every 30 minutes
+    this.discoveryTimer = setInterval(
+      async () => {
+        if (this.isRunning) {
+          await this.discoverNewAITools();
+        }
+      },
+      30 * 60 * 1000,
+    ); // Every 30 minutes
   }
 
   startSelfImprovementMonitoring() {
-    this.monitoringTimer = setInterval(async () => {
-      if (this.isRunning) {
-        await this.monitorSelfImprovement();
-      }
-    }, 10 * 60 * 1000); // Every 10 minutes
+    this.monitoringTimer = setInterval(
+      async () => {
+        if (this.isRunning) {
+          await this.monitorSelfImprovement();
+        }
+      },
+      10 * 60 * 1000,
+    ); // Every 10 minutes
   }
 
   async performImprovementCycle() {
@@ -261,26 +279,27 @@ class InfiniteImprovementLoop extends EventEmitter {
       this.currentImprovement = {
         id: `improvement_${Date.now()}`,
         startTime: Date.now(),
-        status: 'running'
+        status: 'running',
       };
 
       this.log('info', '🔄 Starting improvement cycle...');
 
       // Step 1: Analyze current system state
       const analysis = await this.analyzeCurrentState();
-      
+
       // Step 2: Discover improvement opportunities
-      const opportunities = await this.discoverImprovementOpportunities(analysis);
-      
+      const opportunities =
+        await this.discoverImprovementOpportunities(analysis);
+
       // Step 3: Generate improvements using AI
       const improvements = await this.generateImprovements(opportunities);
-      
+
       // Step 4: Apply improvements
       const appliedImprovements = await this.applyImprovements(improvements);
-      
+
       // Step 5: Measure improvement impact
       const impact = await this.measureImprovementImpact(appliedImprovements);
-      
+
       // Step 6: Update improvement score
       this.updateImprovementScore(impact);
 
@@ -290,7 +309,7 @@ class InfiniteImprovementLoop extends EventEmitter {
         opportunities: opportunities.length,
         improvements: improvements.length,
         applied: appliedImprovements.length,
-        impact: impact
+        impact: impact,
       };
 
       this.improvementHistory.push(this.currentImprovement);
@@ -301,9 +320,11 @@ class InfiniteImprovementLoop extends EventEmitter {
       // Generate improvement report
       await this.generateImprovementReport();
 
-      this.log('info', `✅ Improvement cycle completed: ${appliedImprovements.length} improvements applied`);
+      this.log(
+        'info',
+        `✅ Improvement cycle completed: ${appliedImprovements.length} improvements applied`,
+      );
       this.emit('improvementCompleted', this.currentImprovement);
-
     } catch (error) {
       this.log('error', `Improvement cycle failed: ${error.message}`);
       this.stats.failedImprovements++;
@@ -323,7 +344,7 @@ class InfiniteImprovementLoop extends EventEmitter {
       aiIntegration: await this.analyzeAIIntegration(),
       automation: await this.analyzeAutomation(),
       monitoring: await this.analyzeMonitoring(),
-      documentation: await this.analyzeDocumentation()
+      documentation: await this.analyzeDocumentation(),
     };
 
     return analysis;
@@ -338,7 +359,7 @@ class InfiniteImprovementLoop extends EventEmitter {
         complexity: 0,
         maintainability: 0,
         testCoverage: 0,
-        documentation: 0
+        documentation: 0,
       };
 
       for (const file of files) {
@@ -362,7 +383,7 @@ class InfiniteImprovementLoop extends EventEmitter {
         bundleSize: await this.getBundleSize(),
         loadTime: await this.getLoadTime(),
         memoryUsage: await this.getMemoryUsage(),
-        cpuUsage: await this.getCPUUsage()
+        cpuUsage: await this.getCPUUsage(),
       };
     } catch (error) {
       this.log('warn', `Performance analysis failed: ${error.message}`);
@@ -375,11 +396,11 @@ class InfiniteImprovementLoop extends EventEmitter {
       // Run security analysis
       const npmAudit = await this.runNpmAudit();
       const securityScan = await this.runSecurityScan();
-      
+
       return {
         vulnerabilities: npmAudit.vulnerabilities || 0,
         securityIssues: securityScan.issues || 0,
-        securityScore: securityScan.score || 0
+        securityScore: securityScan.score || 0,
       };
     } catch (error) {
       this.log('warn', `Security analysis failed: ${error.message}`);
@@ -394,7 +415,7 @@ class InfiniteImprovementLoop extends EventEmitter {
         modularity: this.calculateModularity(),
         coupling: this.calculateCoupling(),
         cohesion: this.calculateCohesion(),
-        scalability: this.calculateScalability()
+        scalability: this.calculateScalability(),
       };
     } catch (error) {
       this.log('warn', `Architecture analysis failed: ${error.message}`);
@@ -409,7 +430,7 @@ class InfiniteImprovementLoop extends EventEmitter {
         aiProviders: this.aiProviders.size,
         aiTools: await this.countAITools(),
         aiEffectiveness: this.calculateAIEffectiveness(),
-        aiCoverage: this.calculateAICoverage()
+        aiCoverage: this.calculateAICoverage(),
       };
     } catch (error) {
       this.log('warn', `AI integration analysis failed: ${error.message}`);
@@ -423,7 +444,7 @@ class InfiniteImprovementLoop extends EventEmitter {
       return {
         automationSystems: await this.countAutomationSystems(),
         automationCoverage: this.calculateAutomationCoverage(),
-        automationEffectiveness: this.calculateAutomationEffectiveness()
+        automationEffectiveness: this.calculateAutomationEffectiveness(),
       };
     } catch (error) {
       this.log('warn', `Automation analysis failed: ${error.message}`);
@@ -437,7 +458,7 @@ class InfiniteImprovementLoop extends EventEmitter {
       return {
         monitoringCoverage: this.calculateMonitoringCoverage(),
         alertingEffectiveness: this.calculateAlertingEffectiveness(),
-        loggingQuality: this.calculateLoggingQuality()
+        loggingQuality: this.calculateLoggingQuality(),
       };
     } catch (error) {
       this.log('warn', `Monitoring analysis failed: ${error.message}`);
@@ -451,7 +472,7 @@ class InfiniteImprovementLoop extends EventEmitter {
       return {
         documentationCoverage: this.calculateDocumentationCoverage(),
         documentationQuality: this.calculateDocumentationQuality(),
-        documentationFreshness: this.calculateDocumentationFreshness()
+        documentationFreshness: this.calculateDocumentationFreshness(),
       };
     } catch (error) {
       this.log('warn', `Documentation analysis failed: ${error.message}`);
@@ -468,15 +489,22 @@ class InfiniteImprovementLoop extends EventEmitter {
         const aiOpportunities = await provider.analyze(analysis);
         opportunities.push(...aiOpportunities);
       } catch (error) {
-        this.log('warn', `AI provider ${providerName} failed to discover opportunities: ${error.message}`);
+        this.log(
+          'warn',
+          `AI provider ${providerName} failed to discover opportunities: ${error.message}`,
+        );
       }
     }
 
     // Remove duplicates and prioritize
     const uniqueOpportunities = this.deduplicateOpportunities(opportunities);
-    const prioritizedOpportunities = this.prioritizeOpportunities(uniqueOpportunities);
+    const prioritizedOpportunities =
+      this.prioritizeOpportunities(uniqueOpportunities);
 
-    return prioritizedOpportunities.slice(0, this.config.enhancement.maxImprovements);
+    return prioritizedOpportunities.slice(
+      0,
+      this.config.enhancement.maxImprovements,
+    );
   }
 
   async generateImprovements(opportunities) {
@@ -491,11 +519,14 @@ class InfiniteImprovementLoop extends EventEmitter {
             improvements.push({
               ...improvement,
               provider: providerName,
-              opportunity: opportunity
+              opportunity: opportunity,
             });
           }
         } catch (error) {
-          this.log('warn', `AI provider ${providerName} failed to generate improvement: ${error.message}`);
+          this.log(
+            'warn',
+            `AI provider ${providerName} failed to generate improvement: ${error.message}`,
+          );
         }
       }
     }
@@ -515,14 +546,17 @@ class InfiniteImprovementLoop extends EventEmitter {
 
         // Apply the improvement
         const result = await this.applyImprovement(improvement);
-        
+
         if (result.success) {
           // Test the improvement if enabled
           if (this.config.enhancement.testAfterEnhancement) {
             const testResult = await this.testImprovement(improvement);
             if (testResult.success) {
               appliedImprovements.push(improvement);
-              this.log('info', `✅ Applied improvement: ${improvement.description}`);
+              this.log(
+                'info',
+                `✅ Applied improvement: ${improvement.description}`,
+              );
             } else {
               this.log('warn', `Improvement test failed: ${testResult.error}`);
               if (this.config.enhancement.rollbackOnFailure) {
@@ -552,13 +586,14 @@ class InfiniteImprovementLoop extends EventEmitter {
       security: 0,
       maintainability: 0,
       functionality: 0,
-      overall: 0
+      overall: 0,
     };
 
     for (const improvement of improvements) {
       // Measure individual improvement impact
-      const improvementImpact = await this.measureSingleImprovementImpact(improvement);
-      
+      const improvementImpact =
+        await this.measureSingleImprovementImpact(improvement);
+
       impact.performance += improvementImpact.performance || 0;
       impact.security += improvementImpact.security || 0;
       impact.maintainability += improvementImpact.maintainability || 0;
@@ -566,14 +601,22 @@ class InfiniteImprovementLoop extends EventEmitter {
     }
 
     // Calculate overall impact
-    impact.overall = (impact.performance + impact.security + impact.maintainability + impact.functionality) / 4;
+    impact.overall =
+      (impact.performance +
+        impact.security +
+        impact.maintainability +
+        impact.functionality) /
+      4;
 
     return impact;
   }
 
   updateImprovementScore(impact) {
     this.stats.improvementScore += impact.overall;
-    this.stats.improvementScore = Math.min(100, Math.max(0, this.stats.improvementScore));
+    this.stats.improvementScore = Math.min(
+      100,
+      Math.max(0, this.stats.improvementScore),
+    );
   }
 
   async discoverNewAITools() {
@@ -605,7 +648,6 @@ class InfiniteImprovementLoop extends EventEmitter {
 
       this.stats.aiToolsDiscovered += discoveredTools.length;
       this.log('info', `✅ Discovered ${discoveredTools.length} new AI tools`);
-
     } catch (error) {
       this.log('error', `AI tool discovery failed: ${error.message}`);
     }
@@ -618,7 +660,7 @@ class InfiniteImprovementLoop extends EventEmitter {
         improvementRate: this.calculateImprovementRate(),
         aiProviderEffectiveness: this.calculateAIProviderEffectiveness(),
         systemHealth: await this.checkSystemHealth(),
-        resourceUsage: await this.getResourceUsage()
+        resourceUsage: await this.getResourceUsage(),
       };
 
       // Self-improve the improvement system
@@ -628,9 +670,8 @@ class InfiniteImprovementLoop extends EventEmitter {
 
       this.improvementMetrics.push({
         timestamp: Date.now(),
-        ...selfMetrics
+        ...selfMetrics,
       });
-
     } catch (error) {
       this.log('error', `Self-improvement monitoring failed: ${error.message}`);
     }
@@ -656,7 +697,7 @@ Return the improvement as JSON.`;
       description: 'AI-generated code improvement',
       changes: [],
       impact: { performance: 0.1, security: 0.05, maintainability: 0.1 },
-      implementation: 'Automated code changes'
+      implementation: 'Automated code changes',
     };
   }
 
@@ -677,7 +718,7 @@ Return the improvement as JSON.`;
       description: 'Claude-generated architecture improvement',
       changes: [],
       impact: { performance: 0.15, security: 0.1, maintainability: 0.2 },
-      implementation: 'Architecture refactoring'
+      implementation: 'Architecture refactoring',
     };
   }
 
@@ -698,7 +739,7 @@ Return the improvement as JSON.`;
       description: 'Cursor-generated code improvement',
       changes: [],
       impact: { performance: 0.08, security: 0.03, maintainability: 0.12 },
-      implementation: 'Code generation and refactoring'
+      implementation: 'Code generation and refactoring',
     };
   }
 
@@ -719,7 +760,7 @@ Return the improvement as JSON.`;
       description: 'Local AI-generated optimization',
       changes: [],
       impact: { performance: 0.12, security: 0.08, maintainability: 0.15 },
-      implementation: 'Local optimization'
+      implementation: 'Local optimization',
     };
   }
 
@@ -737,27 +778,34 @@ Return the improvement as JSON.`;
   async getAllSourceFiles() {
     const files = [];
     const dirs = ['scripts', 'src', 'pages', 'components', 'lib', 'utils'];
-    
+
     for (const dir of dirs) {
       try {
-        await this.scanDirectory(path.join(this.config.paths.projectRoot, dir), files);
+        await this.scanDirectory(
+          path.join(this.config.paths.projectRoot, dir),
+          files,
+        );
       } catch (error) {
         // Directory might not exist
       }
     }
-    
-    return files.filter(file => 
-      file.endsWith('.js') || file.endsWith('.jsx') || file.endsWith('.ts') || file.endsWith('.tsx')
+
+    return files.filter(
+      (file) =>
+        file.endsWith('.js') ||
+        file.endsWith('.jsx') ||
+        file.endsWith('.ts') ||
+        file.endsWith('.tsx'),
     );
   }
 
   async scanDirectory(dir, files) {
     try {
       const entries = await fs.readdir(dir, { withFileTypes: true });
-      
+
       for (const entry of entries) {
         const fullPath = path.join(dir, entry.name);
-        
+
         if (entry.isDirectory()) {
           await this.scanDirectory(fullPath, files);
         } else if (entry.isFile()) {
@@ -770,9 +818,19 @@ Return the improvement as JSON.`;
   }
 
   calculateComplexity(content) {
-    const complexityKeywords = ['if', 'else', 'for', 'while', 'switch', 'case', 'catch', '&&', '||'];
+    const complexityKeywords = [
+      'if',
+      'else',
+      'for',
+      'while',
+      'switch',
+      'case',
+      'catch',
+      '&&',
+      '||',
+    ];
     let complexity = 1;
-    
+
     for (const keyword of complexityKeywords) {
       const regex = new RegExp(`\\b${keyword}\\b`, 'g');
       const matches = content.match(regex);
@@ -780,16 +838,24 @@ Return the improvement as JSON.`;
         complexity += matches.length;
       }
     }
-    
+
     return complexity;
   }
 
   calculateMaintainability(content) {
     const lines = content.split('\n').length;
     const complexity = this.calculateComplexity(content);
-    const commentLines = (content.match(/\/\/.*$/gm) || []).length + (content.match(/\/\*[\s\S]*?\*\//gm) || []).length;
-    
-    const maintainability = Math.max(0, 171 - 5.2 * Math.log(complexity) - 0.23 * Math.log(lines) - 16.2 * Math.log(commentLines));
+    const commentLines =
+      (content.match(/\/\/.*$/gm) || []).length +
+      (content.match(/\/\*[\s\S]*?\*\//gm) || []).length;
+
+    const maintainability = Math.max(
+      0,
+      171 -
+        5.2 * Math.log(complexity) -
+        0.23 * Math.log(lines) -
+        16.2 * Math.log(commentLines),
+    );
     return Math.min(100, Math.max(0, maintainability));
   }
 
@@ -911,7 +977,7 @@ Return the improvement as JSON.`;
 
   deduplicateOpportunities(opportunities) {
     const seen = new Set();
-    return opportunities.filter(opp => {
+    return opportunities.filter((opp) => {
       const key = `${opp.type}-${opp.description}`;
       if (seen.has(key)) {
         return false;
@@ -986,7 +1052,7 @@ Return the improvement as JSON.`;
       performance: improvement.impact.performance || 0,
       security: improvement.impact.security || 0,
       maintainability: improvement.impact.maintainability || 0,
-      functionality: improvement.impact.functionality || 0
+      functionality: improvement.impact.functionality || 0,
     };
   }
 
@@ -1016,9 +1082,11 @@ Return the improvement as JSON.`;
 
   calculateImprovementRate() {
     if (this.improvementHistory.length < 2) return 0;
-    
+
     const recent = this.improvementHistory.slice(-5);
-    const improvements = recent.filter(h => h.results && h.results.applied > 0).length;
+    const improvements = recent.filter(
+      (h) => h.results && h.results.applied > 0,
+    ).length;
     return improvements / recent.length;
   }
 
@@ -1033,7 +1101,7 @@ Return the improvement as JSON.`;
   async getResourceUsage() {
     return {
       memory: await this.getMemoryUsage(),
-      cpu: await this.getCPUUsage()
+      cpu: await this.getCPUUsage(),
     };
   }
 
@@ -1043,17 +1111,20 @@ Return the improvement as JSON.`;
   }
 
   async createBackup() {
-    const backupPath = path.join(this.config.paths.backups, `improvement-backup-${Date.now()}`);
+    const backupPath = path.join(
+      this.config.paths.backups,
+      `improvement-backup-${Date.now()}`,
+    );
     await fs.mkdir(backupPath, { recursive: true });
-    
+
     // Backup relevant files
     const filesToBackup = ['scripts/', 'src/', 'package.json'];
-    
+
     for (const file of filesToBackup) {
       try {
         const sourcePath = path.join(this.config.paths.projectRoot, file);
         const destPath = path.join(backupPath, file);
-        
+
         if (await this.fileExists(sourcePath)) {
           await this.copyFile(sourcePath, destPath);
         }
@@ -1071,16 +1142,21 @@ Return the improvement as JSON.`;
       improvementMetrics: this.improvementMetrics.slice(-20),
       summary: {
         totalImprovements: this.stats.totalImprovements,
-        successRate: this.stats.successfulImprovements / this.stats.totalImprovements * 100,
+        successRate:
+          (this.stats.successfulImprovements / this.stats.totalImprovements) *
+          100,
         improvementScore: this.stats.improvementScore,
         aiToolsDiscovered: this.stats.aiToolsDiscovered,
-        aiToolsIntegrated: this.stats.aiToolsIntegrated
-      }
+        aiToolsIntegrated: this.stats.aiToolsIntegrated,
+      },
     };
 
-    const reportPath = path.join(this.config.paths.reports, `infinite-improvement-${Date.now()}.json`);
+    const reportPath = path.join(
+      this.config.paths.reports,
+      `infinite-improvement-${Date.now()}.json`,
+    );
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
-    
+
     this.log('info', `Generated improvement report: ${reportPath}`);
     return report;
   }
@@ -1102,11 +1178,14 @@ Return the improvement as JSON.`;
   log(level, message) {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] [${level.toUpperCase()}] [INFINITE-IMPROVEMENT] ${message}`;
-    
+
     logger.info(logMessage);
-    
+
     // Save to log file
-    const logPath = path.join(this.config.paths.logs, 'infinite-improvement.log');
+    const logPath = path.join(
+      this.config.paths.logs,
+      'infinite-improvement.log',
+    );
     fs.appendFile(logPath, logMessage + '\n').catch(() => {});
   }
 
@@ -1116,7 +1195,7 @@ Return the improvement as JSON.`;
       currentImprovement: this.currentImprovement,
       stats: this.stats,
       aiProviders: Array.from(this.aiProviders.keys()),
-      lastImprovement: this.stats.lastImprovement
+      lastImprovement: this.stats.lastImprovement,
     };
   }
 }
@@ -1143,19 +1222,21 @@ async function main() {
       await loop.discoverNewAITools();
       break;
     default:
-      logger.info('Usage: node infinite-improvement-loop.cjs [start|stop|status|improve|discover]');
+      logger.info(
+        'Usage: node infinite-improvement-loop.cjs [start|stop|status|improve|discover]',
+      );
       break;
   }
 }
 
 if (require.main === module) {
-  main().catch(error => {
+  main().catch((error) => {
     logger.error('Infinite Improvement Loop failed:', error.message);
     process.exit(1);
   });
 }
 
-module.exports = InfiniteImprovementLoop; 
+module.exports = InfiniteImprovementLoop;
 
 // Graceful shutdown handling
 process.on('SIGINT', () => {
@@ -1169,4 +1250,3 @@ process.on('SIGTERM', () => {
   // Add cleanup logic here
   process.exit(0);
 });
-

@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,29 +5,30 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
-
 
 /**
  * Production Build Validator
  * Validates production build integrity and readiness
  */
 
-const fs = require('fs')
-const path = require('path')
+const fs = require('fs');
+const path = require('path');
 class BuildValidator {
   constructor() {
     this.buildPath = '.next';
@@ -47,8 +47,8 @@ class BuildValidator {
   }
 
   validateStaticFiles() {
-    const staticPath = path.join(this.buildPath, 'static')
-const exists = fs.existsSync(staticPath);
+    const staticPath = path.join(this.buildPath, 'static');
+    const exists = fs.existsSync(staticPath);
     this.checks.push({
       name: 'Static Assets',
       status: exists ? 'pass' : 'fail',
@@ -57,8 +57,8 @@ const exists = fs.existsSync(staticPath);
   }
 
   validateServerFiles() {
-    const serverPath = path.join(this.buildPath, 'server')
-const exists = fs.existsSync(serverPath);
+    const serverPath = path.join(this.buildPath, 'server');
+    const exists = fs.existsSync(serverPath);
     this.checks.push({
       name: 'Server Build',
       status: exists ? 'pass' : 'fail',
@@ -67,8 +67,8 @@ const exists = fs.existsSync(serverPath);
   }
 
   validateManifest() {
-    const manifestPath = path.join(this.buildPath, 'build-manifest.json')
-const exists = fs.existsSync(manifestPath);
+    const manifestPath = path.join(this.buildPath, 'build-manifest.json');
+    const exists = fs.existsSync(manifestPath);
     this.checks.push({
       name: 'Build Manifest',
       status: exists ? 'pass' : 'fail',
@@ -80,19 +80,17 @@ const exists = fs.existsSync(manifestPath);
     this.validateBuildExists();
     this.validateStaticFiles();
     this.validateServerFiles();
-    this.validateManifest()
-const allPassed = this.checks.every((check) => check.status === 'pass');
+    this.validateManifest();
+    const allPassed = this.checks.every((check) => check.status === 'pass');
     return allPassed;
   }
 }
 
 if (require.main === module) {
   try {
-    
-  const validator = new BuildValidator()
-const isValid = validator.run();
-  process.exit(isValid ? 0 : 1);
-
+    const validator = new BuildValidator();
+    const isValid = validator.run();
+    process.exit(isValid ? 0 : 1);
   } catch (error) {
     logger.error('Script execution failed:', error);
     process.exit(1);
@@ -100,7 +98,6 @@ const isValid = validator.run();
 }
 
 module.exports = BuildValidator;
-
 
 // Graceful shutdown handling
 process.on('SIGINT', () => {
@@ -114,4 +111,3 @@ process.on('SIGTERM', () => {
   // Add cleanup logic here
   process.exit(0);
 });
-

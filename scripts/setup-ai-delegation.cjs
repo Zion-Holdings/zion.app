@@ -1,12 +1,11 @@
-
 /**
  * Zion App - AI Delegation Setup Script
  *
  * Sets up the AI-driven continuous improvement system across multiple computers
  */
 
-const fs = require('fs')
-const path = require('path')
+const fs = require('fs');
+const path = require('path');
 const { execSync } = require('child_process');
 
 // Configuration
@@ -39,7 +38,7 @@ const CONFIG = {
 
   // Configuration files
   CONFIG_FILES: ['.env.ai-delegation', 'ai-delegation-config.json'],
-}
+};
 class AIDelegationSetup {
   constructor() {
     this.setupLog = [];
@@ -53,8 +52,8 @@ class AIDelegationSetup {
 
     try {
       // Check system requirements
-      await this.checkSystemRequirements()
-// Setup environment
+      await this.checkSystemRequirements();
+      // Setup environment
       await this.setupEnvironment();
 
       // Install dependencies
@@ -64,8 +63,8 @@ class AIDelegationSetup {
       await this.createDirectories();
 
       // Create configuration files
-      await this.createConfigFiles()
-// Setup logging
+      await this.createConfigFiles();
+      // Setup logging
       await this.setupLogging();
 
       // Test setup
@@ -95,8 +94,8 @@ class AIDelegationSetup {
     logger.info('🔍 Checking system requirements...');
 
     // Check Node.js version
-    const nodeVersion = process.version
-const nodeMajor = parseInt(nodeVersion.slice(1).split('.')[0]);
+    const nodeVersion = process.version;
+    const nodeMajor = parseInt(nodeVersion.slice(1).split('.')[0]);
 
     if (nodeMajor < 16) {
       throw new Error(
@@ -123,8 +122,8 @@ const nodeMajor = parseInt(nodeVersion.slice(1).split('.')[0]);
     }
 
     // Check available memory
-    const os = require('os')
-const totalMemory = Math.round(os.totalmem() / (1024 * 1024 * 1024));
+    const os = require('os');
+    const totalMemory = Math.round(os.totalmem() / (1024 * 1024 * 1024));
 
     if (totalMemory < 4) {
       logger.warn(
@@ -152,15 +151,15 @@ const totalMemory = Math.round(os.totalmem() / (1024 * 1024 * 1024));
     logger.info('🔧 Setting up environment...');
 
     // Check existing .env file
-    const envPath = path.join(process.cwd(), '.env')
-const aiEnvPath = path.join(process.cwd(), '.env.ai-delegation');
+    const envPath = path.join(process.cwd(), '.env');
+    const aiEnvPath = path.join(process.cwd(), '.env.ai-delegation');
 
     if (fs.existsSync(envPath)) {
       this.log('✅ Found existing .env file');
 
       // Read existing environment variables
-      const envContent = fs.readFileSync(envPath, 'utf8')
-const envVars = this.parseEnvFile(envContent);
+      const envContent = fs.readFileSync(envPath, 'utf8');
+      const envVars = this.parseEnvFile(envContent);
 
       // Check for required variables
       const missing = CONFIG.REQUIRED_ENV_VARS.filter(
@@ -193,8 +192,8 @@ const envVars = this.parseEnvFile(envContent);
    * Install dependencies
    */
   async installDependencies() {
-    logger.info('📦 Installing dependencies...')
-const missingDeps = [];
+    logger.info('📦 Installing dependencies...');
+    const missingDeps = [];
 
     // Check for missing dependencies
     for (const dep of CONFIG.REQUIRED_DEPENDENCIES) {
@@ -265,8 +264,8 @@ const missingDeps = [];
       process.cwd(),
       'logs',
       'ai-delegation-log-config.json',
-    )
-const logConfig = this.generateLogConfig();
+    );
+    const logConfig = this.generateLogConfig();
     fs.writeFileSync(logConfigPath, JSON.stringify(logConfig, null, 2));
     this.log('✅ Created log configuration');
 
@@ -355,8 +354,8 @@ const logConfig = this.generateLogConfig();
    * Generate setup report
    */
   async generateSetupReport() {
-    logger.info('📊 Generating setup report...')
-const report = {
+    logger.info('📊 Generating setup report...');
+    const report = {
       timestamp: new Date().toISOString(),
       nodeId: process.env.NODE_ID || 'unknown',
       system: {
@@ -390,8 +389,8 @@ const report = {
         })),
       },
       logs: this.setupLog,
-    }
-const reportPath = path.join(process.cwd(), 'logs', 'setup-report.json');
+    };
+    const reportPath = path.join(process.cwd(), 'logs', 'setup-report.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
     this.log('✅ Setup report generated: logs/setup-report.json');
@@ -415,8 +414,8 @@ const reportPath = path.join(process.cwd(), 'logs', 'setup-report.json');
   }
 
   parseEnvFile(content) {
-    const vars = {}
-const lines = content.split('\n');
+    const vars = {};
+    const lines = content.split('\n');
 
     for (const line of lines) {
       const match = line.match(/^([^#=]+)=(.*)$/);
@@ -566,7 +565,6 @@ if (require.main === module) {
 
 module.exports = AIDelegationSetup;
 
-
 // Graceful shutdown handling
 process.on('SIGINT', () => {
   console.log('\n🛑 Received SIGINT, shutting down gracefully...');
@@ -579,4 +577,3 @@ process.on('SIGTERM', () => {
   // Add cleanup logic here
   process.exit(0);
 });
-

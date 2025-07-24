@@ -13,8 +13,8 @@ function check(deps) {
   });
 }
 
-const { _spawnSync } = require('child_process')
-const deps = ['jest', 'vitest']
+const { _spawnSync } = require('child_process');
+const deps = ['jest', 'vitest'];
 const missing = check(deps);
 
 if (missing.length === deps.length) {

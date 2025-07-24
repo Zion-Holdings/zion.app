@@ -1,4 +1,27 @@
 
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
 class Script {
   constructor() {
     this.isRunning = false;
@@ -6,7 +29,7 @@ class Script {
 
   async start() {
     this.isRunning = true;
-    console.log('Starting Script...');
+    logger.info('Starting Script...');
     
     try {
       # Cursor Automation Systems Status Report
@@ -200,14 +223,14 @@ Queues for Processing:
 **Last Updated**: 2025-07-23 20:45:00 UTC
 **Next Review**: Continuous monitoring active
     } catch (error) {
-      console.error('Error in Script:', error);
+      logger.error('Error in Script:', error);
       throw error;
     }
   }
 
   stop() {
     this.isRunning = false;
-    console.log('Stopping Script...');
+    logger.info('Stopping Script...');
   }
 }
 
@@ -215,9 +238,24 @@ Queues for Processing:
 if (require.main === module) {
   const script = new Script();
   script.start().catch(error => {
-    console.error('Failed to start Script:', error);
+    logger.error('Failed to start Script:', error);
     process.exit(1);
   });
 }
 
 module.exports = Script;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

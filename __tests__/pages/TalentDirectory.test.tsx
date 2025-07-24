@@ -131,7 +131,7 @@ describe('TalentDirectory Page', () => {
       Promise.resolve({
         ok: false,
         statusText: Server Error',
-        json: () => Promise.resolve({ message: 'Failed to fetch talent' })
+        json: () => Promise.resolve({ message:' 'Failed to fetch talent' })
       }),
     );
 

@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,25 +5,26 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
 
-
-const fs = require('fs')
-const path = require('path')
-const { execSync } = require('child_process')
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
 class ComprehensiveSyntaxFixer {
   constructor() {
     this.fixedFiles = [];
@@ -62,9 +62,9 @@ class ComprehensiveSyntaxFixer {
   }
 
   getAllFiles() {
-    const files = []
-const extensions = ['.ts', '.tsx', '.js', '.jsx']
-function walkDir(dir) {
+    const files = [];
+    const extensions = ['.ts', '.tsx', '.js', '.jsx'];
+    function walkDir(dir) {
       try {
         const items = fs.readdirSync(dir);
 
@@ -102,8 +102,8 @@ function walkDir(dir) {
 
   async fixFile(filePath) {
     try {
-      const content = fs.readFileSync(filePath, 'utf8')
-const originalContent = content;
+      const content = fs.readFileSync(filePath, 'utf8');
+      const originalContent = content;
 
       // Fix common syntax errors
       let fixedContent = this.fixCommonErrors(content);
@@ -198,8 +198,8 @@ const originalContent = content;
   }
 
   async createMinimalWorkingVersion(filePath, content) {
-    const ext = path.extname(filePath)
-const fileName = path.basename(filePath, ext);
+    const ext = path.extname(filePath);
+    const fileName = path.basename(filePath, ext);
 
     // Create minimal working versions based on file type
     if (ext === '.tsx' || ext === '.jsx') {

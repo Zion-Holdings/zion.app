@@ -7,7 +7,7 @@ const env = {
   ...process.env,
   WEBPACK_CACHE: 'filesystem',
   NEXT_PRIVATE_BUILD_CACHE: 'true',
-}
+};
 const build = spawn('npx', ['next', 'build', '--no-lint'], {
   env,
   stdio: 'inherit',

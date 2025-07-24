@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,25 +5,26 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
-
 
 /**
  * UX Enhancement Automation System
- * 
+ *
  * Autonomous system that continuously analyzes and improves user experience,
  * including accessibility, usability, and interface optimizations.
  */
@@ -37,7 +37,7 @@ const EventEmitter = require('events');
 class UXEnhancementAutomation extends EventEmitter {
   constructor() {
     super();
-    
+
     this.config = {
       // UX analysis settings
       analysis: {
@@ -46,27 +46,27 @@ class UXEnhancementAutomation extends EventEmitter {
         usability: true,
         performance: true,
         mobile: true,
-        seo: true
+        seo: true,
       },
-      
+
       // Enhancement settings
       enhancement: {
         autoEnhance: true,
         backupBeforeEnhancement: true,
         testAfterEnhancement: true,
-        maxEnhancements: 5
+        maxEnhancements: 5,
       },
-      
+
       // Paths
       paths: {
         projectRoot: process.cwd(),
         logs: path.join(process.cwd(), 'logs'),
         reports: path.join(process.cwd(), 'reports'),
         backups: path.join(process.cwd(), 'backups'),
-        ux: path.join(process.cwd(), 'ux')
-      }
+        ux: path.join(process.cwd(), 'ux'),
+      },
     };
-    
+
     this.isRunning = false;
     this.currentAnalysis = null;
     this.analysisHistory = [];
@@ -76,9 +76,9 @@ class UXEnhancementAutomation extends EventEmitter {
       successfulAnalyses: 0,
       failedAnalyses: 0,
       enhancementsApplied: 0,
-      lastAnalysis: null
+      lastAnalysis: null,
     };
-    
+
     this.initializeDirectories();
   }
 
@@ -87,7 +87,7 @@ class UXEnhancementAutomation extends EventEmitter {
       this.config.paths.logs,
       this.config.paths.reports,
       this.config.paths.backups,
-      this.config.paths.ux
+      this.config.paths.ux,
     ];
 
     for (const dir of dirs) {
@@ -145,7 +145,7 @@ class UXEnhancementAutomation extends EventEmitter {
       this.currentAnalysis = {
         id: `analysis_${Date.now()}`,
         startTime: Date.now(),
-        status: 'running'
+        status: 'running',
       };
 
       this.log('info', '🔍 Starting UX analysis...');
@@ -191,7 +191,7 @@ class UXEnhancementAutomation extends EventEmitter {
       this.currentAnalysis.results = {
         ...results,
         enhancements: enhancements.length,
-        applied: appliedEnhancements.length
+        applied: appliedEnhancements.length,
       };
 
       this.analysisHistory.push(this.currentAnalysis);
@@ -203,9 +203,11 @@ class UXEnhancementAutomation extends EventEmitter {
       // Generate report
       await this.generateUXReport(results, enhancements, appliedEnhancements);
 
-      this.log('info', `✅ UX analysis completed: ${enhancements.length} enhancements, ${appliedEnhancements.length} applied`);
+      this.log(
+        'info',
+        `✅ UX analysis completed: ${enhancements.length} enhancements, ${appliedEnhancements.length} applied`,
+      );
       this.emit('analysisCompleted', this.currentAnalysis);
-
     } catch (error) {
       this.log('error', `UX analysis failed: ${error.message}`);
       this.stats.failedAnalyses++;
@@ -218,24 +220,29 @@ class UXEnhancementAutomation extends EventEmitter {
   async analyzeAccessibility() {
     try {
       // Run Lighthouse accessibility audit
-      const lighthouseResult = execSync('npx lighthouse http://localhost:3000 --only-categories=accessibility --output=json --chrome-flags="--headless"', { encoding: 'utf8' });
+      const lighthouseResult = execSync(
+        'npx lighthouse http://localhost:3000 --only-categories=accessibility --output=json --chrome-flags="--headless"',
+        { encoding: 'utf8' },
+      );
       const audit = JSON.parse(lighthouseResult);
-      
-      const accessibilityScore = Math.round(audit.categories.accessibility.score * 100);
+
+      const accessibilityScore = Math.round(
+        audit.categories.accessibility.score * 100,
+      );
       const issues = audit.audits
-        .filter(audit => audit.score !== null && audit.score < 1)
-        .map(audit => ({
+        .filter((audit) => audit.score !== null && audit.score < 1)
+        .map((audit) => ({
           id: audit.id,
           title: audit.title,
           description: audit.description,
           score: audit.score,
-          severity: audit.score < 0.5 ? 'high' : 'medium'
+          severity: audit.score < 0.5 ? 'high' : 'medium',
         }));
 
       return {
         score: accessibilityScore,
         issues,
-        recommendations: this.generateAccessibilityRecommendations(issues)
+        recommendations: this.generateAccessibilityRecommendations(issues),
       };
     } catch (error) {
       this.log('warn', `Accessibility analysis failed: ${error.message}`);
@@ -248,11 +255,14 @@ class UXEnhancementAutomation extends EventEmitter {
       // Analyze component structure and user flow
       const components = await this.analyzeComponents();
       const userFlows = await this.analyzeUserFlows();
-      
+
       return {
         components,
         userFlows,
-        recommendations: this.generateUsabilityRecommendations(components, userFlows)
+        recommendations: this.generateUsabilityRecommendations(
+          components,
+          userFlows,
+        ),
       };
     } catch (error) {
       this.log('warn', `Usability analysis failed: ${error.message}`);
@@ -263,21 +273,29 @@ class UXEnhancementAutomation extends EventEmitter {
   async analyzePerformance() {
     try {
       // Run Lighthouse performance audit
-      const lighthouseResult = execSync('npx lighthouse http://localhost:3000 --only-categories=performance --output=json --chrome-flags="--headless"', { encoding: 'utf8' });
+      const lighthouseResult = execSync(
+        'npx lighthouse http://localhost:3000 --only-categories=performance --output=json --chrome-flags="--headless"',
+        { encoding: 'utf8' },
+      );
       const audit = JSON.parse(lighthouseResult);
-      
-      const performanceScore = Math.round(audit.categories.performance.score * 100);
+
+      const performanceScore = Math.round(
+        audit.categories.performance.score * 100,
+      );
       const metrics = {
-        firstContentfulPaint: audit.audits['first-contentful-paint']?.numericValue,
-        largestContentfulPaint: audit.audits['largest-contentful-paint']?.numericValue,
+        firstContentfulPaint:
+          audit.audits['first-contentful-paint']?.numericValue,
+        largestContentfulPaint:
+          audit.audits['largest-contentful-paint']?.numericValue,
         firstInputDelay: audit.audits['max-potential-fid']?.numericValue,
-        cumulativeLayoutShift: audit.audits['cumulative-layout-shift']?.numericValue
+        cumulativeLayoutShift:
+          audit.audits['cumulative-layout-shift']?.numericValue,
       };
 
       return {
         score: performanceScore,
         metrics,
-        recommendations: this.generatePerformanceRecommendations(metrics)
+        recommendations: this.generatePerformanceRecommendations(metrics),
       };
     } catch (error) {
       this.log('warn', `Performance analysis failed: ${error.message}`);
@@ -290,11 +308,14 @@ class UXEnhancementAutomation extends EventEmitter {
       // Analyze mobile responsiveness
       const responsiveIssues = await this.analyzeResponsiveness();
       const touchTargets = await this.analyzeTouchTargets();
-      
+
       return {
         responsiveIssues,
         touchTargets,
-        recommendations: this.generateMobileRecommendations(responsiveIssues, touchTargets)
+        recommendations: this.generateMobileRecommendations(
+          responsiveIssues,
+          touchTargets,
+        ),
       };
     } catch (error) {
       this.log('warn', `Mobile analysis failed: ${error.message}`);
@@ -305,23 +326,26 @@ class UXEnhancementAutomation extends EventEmitter {
   async analyzeSEO() {
     try {
       // Run Lighthouse SEO audit
-      const lighthouseResult = execSync('npx lighthouse http://localhost:3000 --only-categories=seo --output=json --chrome-flags="--headless"', { encoding: 'utf8' });
+      const lighthouseResult = execSync(
+        'npx lighthouse http://localhost:3000 --only-categories=seo --output=json --chrome-flags="--headless"',
+        { encoding: 'utf8' },
+      );
       const audit = JSON.parse(lighthouseResult);
-      
+
       const seoScore = Math.round(audit.categories.seo.score * 100);
       const issues = audit.audits
-        .filter(audit => audit.score !== null && audit.score < 1)
-        .map(audit => ({
+        .filter((audit) => audit.score !== null && audit.score < 1)
+        .map((audit) => ({
           id: audit.id,
           title: audit.title,
           description: audit.description,
-          score: audit.score
+          score: audit.score,
         }));
 
       return {
         score: seoScore,
         issues,
-        recommendations: this.generateSEORecommendations(issues)
+        recommendations: this.generateSEORecommendations(issues),
       };
     } catch (error) {
       this.log('warn', `SEO analysis failed: ${error.message}`);
@@ -331,11 +355,11 @@ class UXEnhancementAutomation extends EventEmitter {
 
   async analyzeComponents() {
     const components = [];
-    
+
     try {
       // Scan for React components
       const componentFiles = await this.findComponentFiles();
-      
+
       for (const file of componentFiles) {
         const content = await fs.readFile(file, 'utf8');
         const analysis = this.analyzeComponentStructure(content, file);
@@ -344,34 +368,38 @@ class UXEnhancementAutomation extends EventEmitter {
     } catch (error) {
       this.log('warn', `Component analysis failed: ${error.message}`);
     }
-    
+
     return components;
   }
 
   async findComponentFiles() {
     const files = [];
     const dirs = ['components', 'src/components', 'pages'];
-    
+
     for (const dir of dirs) {
       try {
-        await this.scanDirectory(path.join(this.config.paths.projectRoot, dir), files);
+        await this.scanDirectory(
+          path.join(this.config.paths.projectRoot, dir),
+          files,
+        );
       } catch (error) {
         // Directory might not exist
       }
     }
-    
-    return files.filter(file => 
-      file.endsWith('.jsx') || file.endsWith('.tsx') || file.endsWith('.js')
+
+    return files.filter(
+      (file) =>
+        file.endsWith('.jsx') || file.endsWith('.tsx') || file.endsWith('.js'),
     );
   }
 
   async scanDirectory(dir, files) {
     try {
       const entries = await fs.readdir(dir, { withFileTypes: true });
-      
+
       for (const entry of entries) {
         const fullPath = path.join(dir, entry.name);
-        
+
         if (entry.isDirectory()) {
           await this.scanDirectory(fullPath, files);
         } else if (entry.isFile()) {
@@ -390,13 +418,15 @@ class UXEnhancementAutomation extends EventEmitter {
       state: [],
       hooks: [],
       accessibility: [],
-      issues: []
+      issues: [],
     };
 
     // Analyze props
     const propMatches = content.match(/props\.(\w+)/g);
     if (propMatches) {
-      analysis.props = [...new Set(propMatches.map(p => p.replace('props.', '')))];
+      analysis.props = [
+        ...new Set(propMatches.map((p) => p.replace('props.', ''))),
+      ];
     }
 
     // Analyze state
@@ -432,10 +462,10 @@ class UXEnhancementAutomation extends EventEmitter {
   async analyzeUserFlows() {
     // Analyze user flows by examining page structure
     const flows = [];
-    
+
     try {
       const pageFiles = await this.findPageFiles();
-      
+
       for (const file of pageFiles) {
         const content = await fs.readFile(file, 'utf8');
         const flow = this.analyzeUserFlow(content, file);
@@ -444,24 +474,28 @@ class UXEnhancementAutomation extends EventEmitter {
     } catch (error) {
       this.log('warn', `User flow analysis failed: ${error.message}`);
     }
-    
+
     return flows;
   }
 
   async findPageFiles() {
     const files = [];
     const dirs = ['pages', 'src/pages'];
-    
+
     for (const dir of dirs) {
       try {
-        await this.scanDirectory(path.join(this.config.paths.projectRoot, dir), files);
+        await this.scanDirectory(
+          path.join(this.config.paths.projectRoot, dir),
+          files,
+        );
       } catch (error) {
         // Directory might not exist
       }
     }
-    
-    return files.filter(file => 
-      file.endsWith('.jsx') || file.endsWith('.tsx') || file.endsWith('.js')
+
+    return files.filter(
+      (file) =>
+        file.endsWith('.jsx') || file.endsWith('.tsx') || file.endsWith('.js'),
     );
   }
 
@@ -471,7 +505,7 @@ class UXEnhancementAutomation extends EventEmitter {
       actions: [],
       navigation: [],
       forms: [],
-      issues: []
+      issues: [],
     };
 
     // Analyze clickable elements
@@ -497,10 +531,10 @@ class UXEnhancementAutomation extends EventEmitter {
 
   async analyzeResponsiveness() {
     const issues = [];
-    
+
     try {
       const cssFiles = await this.findCSSFiles();
-      
+
       for (const file of cssFiles) {
         const content = await fs.readFile(file, 'utf8');
         const responsiveIssues = this.analyzeCSSResponsiveness(content, file);
@@ -509,59 +543,65 @@ class UXEnhancementAutomation extends EventEmitter {
     } catch (error) {
       this.log('warn', `Responsiveness analysis failed: ${error.message}`);
     }
-    
+
     return issues;
   }
 
   async findCSSFiles() {
     const files = [];
     const dirs = ['styles', 'src/styles', 'css'];
-    
+
     for (const dir of dirs) {
       try {
-        await this.scanDirectory(path.join(this.config.paths.projectRoot, dir), files);
+        await this.scanDirectory(
+          path.join(this.config.paths.projectRoot, dir),
+          files,
+        );
       } catch (error) {
         // Directory might not exist
       }
     }
-    
-    return files.filter(file => 
-      file.endsWith('.css') || file.endsWith('.scss') || file.endsWith('.sass')
+
+    return files.filter(
+      (file) =>
+        file.endsWith('.css') ||
+        file.endsWith('.scss') ||
+        file.endsWith('.sass'),
     );
   }
 
   analyzeCSSResponsiveness(content, filePath) {
     const issues = [];
-    
+
     // Check for media queries
     const mediaQueries = content.match(/@media/g);
     if (!mediaQueries) {
       issues.push({
         file: filePath,
         issue: 'No responsive design (media queries)',
-        severity: 'high'
+        severity: 'high',
       });
     }
-    
+
     // Check for flexbox/grid
     const flexbox = content.match(/display:\s*flex|display:\s*grid/g);
     if (!flexbox) {
       issues.push({
         file: filePath,
         issue: 'No modern layout (flexbox/grid)',
-        severity: 'medium'
+        severity: 'medium',
       });
     }
-    
+
     return issues;
   }
 
   async analyzeTouchTargets() {
     const issues = [];
-    
+
     try {
       const componentFiles = await this.findComponentFiles();
-      
+
       for (const file of componentFiles) {
         const content = await fs.readFile(file, 'utf8');
         const touchIssues = this.analyzeTouchTargetsInComponent(content, file);
@@ -570,13 +610,13 @@ class UXEnhancementAutomation extends EventEmitter {
     } catch (error) {
       this.log('warn', `Touch target analysis failed: ${error.message}`);
     }
-    
+
     return issues;
   }
 
   analyzeTouchTargetsInComponent(content, filePath) {
     const issues = [];
-    
+
     // Check for buttons without proper sizing
     const buttonMatches = content.match(/<button[^>]*>/g);
     if (buttonMatches) {
@@ -586,85 +626,86 @@ class UXEnhancementAutomation extends EventEmitter {
             file: filePath,
             element: 'button',
             issue: 'Button may be too small for touch targets',
-            severity: 'medium'
+            severity: 'medium',
           });
         }
       }
     }
-    
+
     return issues;
   }
 
   generateEnhancements(results) {
     const enhancements = [];
-    
+
     // Accessibility enhancements
     if (results.accessibility && results.accessibility.score < 90) {
       enhancements.push({
         type: 'accessibility',
         priority: 'high',
         description: 'Improve accessibility score',
-        actions: results.accessibility.recommendations
+        actions: results.accessibility.recommendations,
       });
     }
-    
+
     // Usability enhancements
     if (results.usability) {
       const usabilityIssues = results.usability.components
-        .flatMap(c => c.issues)
-        .concat(results.usability.userFlows.flatMap(f => f.issues));
-      
+        .flatMap((c) => c.issues)
+        .concat(results.usability.userFlows.flatMap((f) => f.issues));
+
       if (usabilityIssues.length > 0) {
         enhancements.push({
           type: 'usability',
           priority: 'medium',
           description: 'Fix usability issues',
-          actions: results.usability.recommendations
+          actions: results.usability.recommendations,
         });
       }
     }
-    
+
     // Performance enhancements
     if (results.performance && results.performance.score < 80) {
       enhancements.push({
         type: 'performance',
         priority: 'high',
         description: 'Improve performance score',
-        actions: results.performance.recommendations
+        actions: results.performance.recommendations,
       });
     }
-    
+
     // Mobile enhancements
     if (results.mobile) {
-      const mobileIssues = results.mobile.responsiveIssues
-        .concat(results.mobile.touchTargets);
-      
+      const mobileIssues = results.mobile.responsiveIssues.concat(
+        results.mobile.touchTargets,
+      );
+
       if (mobileIssues.length > 0) {
         enhancements.push({
           type: 'mobile',
           priority: 'medium',
           description: 'Improve mobile experience',
-          actions: results.mobile.recommendations
+          actions: results.mobile.recommendations,
         });
       }
     }
-    
+
     // SEO enhancements
     if (results.seo && results.seo.score < 90) {
       enhancements.push({
         type: 'seo',
         priority: 'medium',
         description: 'Improve SEO score',
-        actions: results.seo.recommendations
+        actions: results.seo.recommendations,
       });
     }
-    
+
     return enhancements.slice(0, this.config.enhancement.maxEnhancements);
   }
 
   async applyEnhancements(enhancements) {
     const applied = [];
-    
+
     for (const enhancement of enhancements) {
       try {
         const result = await this.applyEnhancement(enhancement);
@@ -675,7 +716,7 @@ class UXEnhancementAutomation extends EventEmitter {
         this.log('error', `Failed to apply enhancement: ${error.message}`);
       }
     }
-    
+
     return applied;
   }
 
@@ -684,7 +725,7 @@ class UXEnhancementAutomation extends EventEmitter {
     if (this.config.enhancement.backupBeforeEnhancement) {
       await this.createBackup();
     }
-    
+
     switch (enhancement.type) {
       case 'accessibility':
         return await this.applyAccessibilityEnhancement(enhancement);
@@ -748,7 +789,7 @@ class UXEnhancementAutomation extends EventEmitter {
 
   generateAccessibilityRecommendations(issues) {
     const recommendations = [];
-    
+
     for (const issue of issues) {
       switch (issue.id) {
         case 'button-name':
@@ -764,29 +805,31 @@ class UXEnhancementAutomation extends EventEmitter {
           recommendations.push(`Fix ${issue.title}`);
       }
     }
-    
+
     return recommendations;
   }
 
   generateUsabilityRecommendations(components, userFlows) {
     const recommendations = [];
-    
+
     // Component recommendations
     for (const component of components) {
       if (component.issues.includes('Missing accessibility attributes')) {
-        recommendations.push(`Add accessibility attributes to ${component.file}`);
+        recommendations.push(
+          `Add accessibility attributes to ${component.file}`,
+        );
       }
       if (component.issues.includes('Missing keyboard navigation')) {
         recommendations.push(`Add keyboard navigation to ${component.file}`);
       }
     }
-    
+
     return recommendations;
   }
 
   generatePerformanceRecommendations(metrics) {
     const recommendations = [];
-    
+
     if (metrics.firstContentfulPaint > 2000) {
       recommendations.push('Optimize First Contentful Paint');
     }
@@ -796,26 +839,26 @@ class UXEnhancementAutomation extends EventEmitter {
     if (metrics.firstInputDelay > 100) {
       recommendations.push('Reduce First Input Delay');
     }
-    
+
     return recommendations;
   }
 
   generateMobileRecommendations(responsiveIssues, touchTargets) {
     const recommendations = [];
-    
+
     if (responsiveIssues.length > 0) {
       recommendations.push('Add responsive design with media queries');
     }
     if (touchTargets.length > 0) {
       recommendations.push('Ensure touch targets are at least 44px');
     }
-    
+
     return recommendations;
   }
 
   generateSEORecommendations(issues) {
     const recommendations = [];
-    
+
     for (const issue of issues) {
       switch (issue.id) {
         case 'document-title':
@@ -831,22 +874,25 @@ class UXEnhancementAutomation extends EventEmitter {
           recommendations.push(`Fix ${issue.title}`);
       }
     }
-    
+
     return recommendations;
   }
 
   async createBackup() {
-    const backupPath = path.join(this.config.paths.backups, `ux-backup-${Date.now()}`);
+    const backupPath = path.join(
+      this.config.paths.backups,
+      `ux-backup-${Date.now()}`,
+    );
     await fs.mkdir(backupPath, { recursive: true });
-    
+
     // Backup relevant files
     const filesToBackup = ['components/', 'pages/', 'styles/', 'src/'];
-    
+
     for (const file of filesToBackup) {
       try {
         const sourcePath = path.join(this.config.paths.projectRoot, file);
         const destPath = path.join(backupPath, file);
-        
+
         if (await this.fileExists(sourcePath)) {
           await this.copyFile(sourcePath, destPath);
         }
@@ -869,13 +915,16 @@ class UXEnhancementAutomation extends EventEmitter {
         performanceScore: results.performance?.score || 0,
         seoScore: results.seo?.score || 0,
         totalEnhancements: enhancements.length,
-        appliedEnhancements: appliedEnhancements.length
-      }
+        appliedEnhancements: appliedEnhancements.length,
+      },
     };
 
-    const reportPath = path.join(this.config.paths.reports, `ux-report-${Date.now()}.json`);
+    const reportPath = path.join(
+      this.config.paths.reports,
+      `ux-report-${Date.now()}.json`,
+    );
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
-    
+
     this.log('info', `Generated UX report: ${reportPath}`);
     return report;
   }
@@ -897,9 +946,9 @@ class UXEnhancementAutomation extends EventEmitter {
   log(level, message) {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] [${level.toUpperCase()}] [UX] ${message}`;
-    
+
     logger.info(logMessage);
-    
+
     // Save to log file
     const logPath = path.join(this.config.paths.logs, 'ux-enhancement.log');
     fs.appendFile(logPath, logMessage + '\n').catch(() => {});
@@ -910,7 +959,7 @@ class UXEnhancementAutomation extends EventEmitter {
       isRunning: this.isRunning,
       currentAnalysis: this.currentAnalysis,
       stats: this.stats,
-      lastAnalysis: this.stats.lastAnalysis
+      lastAnalysis: this.stats.lastAnalysis,
     };
   }
 }
@@ -934,19 +983,21 @@ async function main() {
       await automation.performUXAnalysis();
       break;
     default:
-      logger.info('Usage: node ux-enhancement-automation.cjs [start|stop|status|analyze]');
+      logger.info(
+        'Usage: node ux-enhancement-automation.cjs [start|stop|status|analyze]',
+      );
       break;
   }
 }
 
 if (require.main === module) {
-  main().catch(error => {
+  main().catch((error) => {
     logger.error('UX Enhancement Automation failed:', error.message);
     process.exit(1);
   });
 }
 
-module.exports = UXEnhancementAutomation; 
+module.exports = UXEnhancementAutomation;
 
 // Graceful shutdown handling
 process.on('SIGINT', () => {
@@ -960,4 +1011,3 @@ process.on('SIGTERM', () => {
   // Add cleanup logic here
   process.exit(0);
 });
-

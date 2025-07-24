@@ -1,7 +1,7 @@
-import React from react';;
-import Head from next/head;;
+import React from 'react';
+import Head from 'next/head';
 
-default function Page500() {
+export default function Page500() {
   return (
     <>
       <Head>
@@ -19,3 +19,4 @@ default function Page500() {
       </div>
     </>
   );
+}

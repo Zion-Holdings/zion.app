@@ -1,0 +1,864 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+/**
+ * Zion App Self-Healing System
+ * Automatically detects and fixes common issues after builds
+ */
+
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const https = require('https')
+const http = require('http');
+
+// Configuration
+const CONFIG = {
+  // Build monitoring
+  BUILD_LOG_PATH: path.join(process.cwd(), 'logs', 'build.log'),
+  ERROR_LOG_PATH: path.join(process.cwd(), 'logs', 'errors.log'),
+  HEALTH_CHECK_INTERVAL: 5 * 60 * 1000, // 5 minutes
+  MAX_RETRY_ATTEMPTS: 3,
+
+  // File patterns to monitor
+  CRITICAL_FILES: [
+    'package.json',
+    'next.config.js',
+    'tailwind.config.js',
+    'tsconfig.json',
+    '.env.local',
+    'src/context/WalletContext.tsx',
+    'src/utils/supabase/client.ts',
+    'src/utils/supabase/server.ts',
+    'middleware.ts',
+  ],
+
+  // Common error patterns and their fixes
+  ERROR_PATTERNS: {
+    // Build errors
+    'Module not found': {
+      type: 'dependency',
+      fix: 'npm install',
+      severity: 'high',
+    },
+    'Cannot resolve module': {
+      type: 'import',
+      fix: 'check_imports',
+      severity: 'medium',
+    },
+    'TypeScript error': {
+      type: 'typescript',
+      fix: 'fix_typescript',
+      severity: 'medium',
+    },
+    'ESLint error': {
+      type: 'linting',
+      fix: 'npm run lint: 'fix',
+      severity: 'low',
+    },
+    'Tailwind CSS': {
+      type: 'styling',
+      fix: 'fix_tailwind',
+      severity: 'medium',
+    },
+    'Wallet connection': {
+      type: 'wallet',
+      fix: 'fix_wallet_context',
+      severity: 'high',
+    },
+    'Supabase connection': {
+      type: 'database',
+      fix: 'fix_supabase',
+      severity: 'high',
+    },
+    'Environment variable': {
+      type: 'env',
+      fix: 'fix_environment',
+      severity: 'high',
+    },
+  },
+
+  // Health check endpoints
+  HEALTH_ENDPOINTS: [
+    'https://zion-app.netlify.app',
+    'https://zion-app.netlify.app/api/health',
+    'https://zion-app.netlify.app/api/auth/health',
+  ],
+}
+class SelfHealingSystem {
+  constructor() {
+    this.isRunning = false;
+    this.lastCheck = null;
+    this.errorCount = 0;
+    this.fixCount = 0;
+    this.initializeLogging();
+  }
+
+  initializeLogging() {
+    // Ensure logs directory exists
+    const logsDir = path.dirname(CONFIG.BUILD_LOG_PATH);
+    if (!fs.existsSync(logsDir)) {
+      fs.mkdirSync(logsDir, { recursive: true });
+    }
+  }
+
+  log(message, level = 'info') {
+    const timestamp = new Date().toISOString()
+const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}\n`;
+
+    // Console output
+    logger.info(logEntry.trim());
+
+    // File logging
+    const logPath =
+      level === 'error' ? CONFIG.ERROR_LOG_PATH : CONFIG.BUILD_LOG_PATH;
+    fs.appendFileSync(logPath, logEntry);
+  }
+
+  async start() {
+    if (this.isRunning) {
+      this.log('Self-healing system is already running');
+      return;
+    }
+
+    this.isRunning = true;
+    this.log('Starting Zion App Self-Healing System...');
+
+    // Initial health check
+    await this.performHealthCheck();
+
+    // Start monitoring loop
+    this.monitoringLoop();
+  }
+
+  async monitoringLoop() {
+    while (this.isRunning) {
+      try {
+        await this.performHealthCheck();
+        await this.checkBuildStatus();
+        await this.analyzeLogs();
+        await this.verifyCriticalFiles();
+
+        // Wait before next check
+        await this.sleep(CONFIG.HEALTH_CHECK_INTERVAL);
+      } catch (error) {
+        this.log(`Error in monitoring loop: ${error.message}`, 'error');
+        await this.sleep(30000); // Wait 30 seconds on error
+      }
+    }
+  }
+
+  async performHealthCheck() {
+    this.log('Performing health check...');
+
+    for (const endpoint of CONFIG.HEALTH_ENDPOINTS) {
+      try {
+        const isHealthy = await this.checkEndpoint(endpoint);
+        if (!isHealthy) {
+          this.log(`Health check failed for ${endpoint}`, 'error');
+          await this.triggerHealing('health_check_failed', { endpoint });
+        } else {
+          this.log(`Health check passed for ${endpoint}`);
+        }
+      } catch (error) {
+        this.log(
+          `Health check error for ${endpoint}: ${error.message}`,
+          'error',
+        );
+      }
+    }
+  }
+
+  async checkEndpoint(url) {
+    return new Promise((resolve) => {
+      const protocol = url.startsWith('https:') ? https : http
+const req = protocol.get(url, { timeout: 10000 }, (res) => {
+        resolve(res.statusCode >= 200 && res.statusCode < 500);
+      });
+
+      req.on('error', () => resolve(false));
+      req.on('timeout', () => {
+        req.destroy();
+        resolve(false);
+      });
+    });
+  }
+
+  async checkBuildStatus() {
+    this.log('Checking build status...');
+
+    try {
+      // Check if there's a recent build failure
+      const buildLog = this.readLogFile(CONFIG.BUILD_LOG_PATH)
+const recentErrors = this.extractRecentErrors(buildLog);
+
+      if (recentErrors.length > 0) {
+        this.log(`Found ${recentErrors.length} recent build errors`, 'error');
+        await this.analyzeAndFixErrors(recentErrors);
+      }
+    } catch (error) {
+      this.log(`Error checking build status: ${error.message}`, 'error');
+    }
+  }
+
+  async analyzeLogs() {
+    this.log('Analyzing logs for patterns...');
+
+    try {
+      const errorLog = this.readLogFile(CONFIG.ERROR_LOG_PATH)
+const buildLog = this.readLogFile(CONFIG.BUILD_LOG_PATH)
+const allLogs = errorLog + '\n' + buildLog
+const detectedIssues = this.detectIssues(allLogs);
+
+      for (const issue of detectedIssues) {
+        await this.triggerHealing(issue.type, issue.data);
+      }
+    } catch (error) {
+      this.log(`Error analyzing logs: ${error.message}`, 'error');
+    }
+  }
+
+  detectIssues(logContent) {
+    const issues = [];
+
+    for (const [pattern, config] of Object.entries(CONFIG.ERROR_PATTERNS)) {
+      if (logContent.toLowerCase().includes(pattern.toLowerCase())) {
+        issues.push({
+          type: config.type,
+          pattern,
+          severity: config.severity,
+          data: { pattern, config },
+        });
+      }
+    }
+
+    return issues;
+  }
+
+  async verifyCriticalFiles() {
+    this.log('Verifying critical files...');
+
+    for (const filePath of CONFIG.CRITICAL_FILES) {
+      try {
+        const fullPath = path.join(process.cwd(), filePath);
+        if (!fs.existsSync(fullPath)) {
+          this.log(`Critical file missing: ${filePath}`, 'error');
+          await this.triggerHealing('missing_critical_file', { filePath });
+        } else {
+          // Check file integrity
+          const content = fs.readFileSync(fullPath, 'utf8');
+          if (content.trim().length === 0) {
+            this.log(`Critical file is empty: ${filePath}`, 'error');
+            await this.triggerHealing('empty_critical_file', { filePath });
+          }
+        }
+      } catch (error) {
+        this.log(`Error verifying file ${filePath}: ${error.message}`, 'error');
+      }
+    }
+  }
+
+  async triggerHealing(issueType, data) {
+    this.log(`Triggering healing for issue: ${issueType}`, 'error');
+
+    try {
+      switch (issueType) {
+        case 'dependency':
+          await this.fixDependencies();
+          break;
+        case 'typescript':
+          await this.fixTypeScript();
+          break;
+        case 'linting':
+          await this.fixLinting();
+          break;
+        case 'wallet':
+          await this.fixWalletContext();
+          break;
+        case 'supabase':
+          await this.fixSupabase();
+          break;
+        case 'environment':
+          await this.fixEnvironment();
+          break;
+        case 'missing_critical_file':
+          await this.restoreCriticalFile(data.filePath);
+          break;
+        case 'empty_critical_file':
+          await this.restoreCriticalFile(data.filePath);
+          break;
+        case 'health_check_failed':
+          await this.restartApplication();
+          break;
+        default:
+          await this.genericFix(issueType, data);
+      }
+
+      this.fixCount++;
+      this.log(`Healing completed for ${issueType}`);
+    } catch (error) {
+      this.log(`Healing failed for ${issueType}: ${error.message}`, 'error');
+      this.errorCount++;
+    }
+  }
+
+  async fixDependencies() {
+    this.log('Fixing dependency issues...');
+
+    try {
+      // Remove node_modules and package-lock.json
+      execSync('rm -rf node_modules package-lock.json', { stdio: 'inherit' });
+
+      // Clear npm cache
+      execSync('npm cache clean --force', { stdio: 'inherit' });
+
+      // Reinstall dependencies
+      execSync('npm install', { stdio: 'inherit' });
+
+      this.log('Dependencies fixed successfully');
+    } catch (error) {
+      throw new Error(`Failed to fix dependencies: ${error.message}`);
+    }
+  }
+
+  async fixTypeScript() {
+    this.log('Fixing TypeScript issues...');
+
+    try {
+      // Run TypeScript compiler to check for errors
+      execSync('npx tsc --noEmit', { stdio: 'inherit' });
+
+      // Auto-fix TypeScript issues where possible
+      execSync('npx tsc --noEmit --skipLibCheck', { stdio: 'inherit' });
+
+      this.log('TypeScript issues fixed');
+    } catch (error) {
+      // TypeScript errors are expected, try to fix common issues
+      await this.fixCommonTypeScriptIssues();
+    }
+  }
+
+  async fixCommonTypeScriptIssues() {
+    this.log('Fixing common TypeScript issues...');
+
+    try {
+      // Fix import issues
+      execSync('npx tsc-alias', { stdio: 'inherit' });
+
+      // Fix type issues
+      execSync('npx tsc --noEmit --skipLibCheck', { stdio: 'inherit' });
+
+      this.log('Common TypeScript issues fixed');
+    } catch (error) {
+      this.log(`TypeScript fix attempt failed: ${error.message}`, 'error');
+    }
+  }
+
+  async fixLinting() {
+    this.log('Fixing linting issues...');
+
+    try {
+      execSync('npm run lint: 'fix', { stdio: 'inherit' });
+      this.log('Linting issues fixed');
+    } catch (error) {
+      this.log(`Linting fix failed: ${error.message}`, 'error');
+    }
+  }
+
+  async fixWalletContext() {
+    this.log('Fixing wallet context issues...');
+
+    try {
+      const walletContextPath = path.join(
+        process.cwd(),
+        'src/context/WalletContext.tsx',
+      );
+
+      if (fs.existsSync(walletContextPath)) {
+        let content = fs.readFileSync(walletContextPath, 'utf8');
+
+        // Fix common wallet context issues
+        content = this.fixWalletContextContent(content);
+
+        fs.writeFileSync(walletContextPath, content);
+        this.log('Wallet context fixed');
+      }
+    } catch (error) {
+      throw new Error(`Failed to fix wallet context: ${error.message}`);
+    }
+  }
+
+  fixWalletContextContent(content) {
+    // Fix common issues in WalletContext
+    let fixed = content;
+
+    // Ensure proper imports
+    if (!fixed.includes('import { createAppKit }')) {
+      fixed = `import { createAppKit } from '@reown/appkit/react';\n${fixed}`;
+    }
+
+    // Fix provider initialization
+    fixed = fixed.replace(
+      /appKitRef\.current = createAppKit\({/g,
+      'appKitRef.current = createAppKit({\n          adapters: [],\n          networks: [targetNetwork],\n          defaultNetwork: targetNetwork,',
+    );
+
+    return fixed;
+  }
+
+  async fixSupabase() {
+    this.log('Fixing Supabase issues...');
+
+    try {
+      const clientPath = path.join(
+        process.cwd(),
+        'src/utils/supabase/client.ts',
+      )
+const serverPath = path.join(
+        process.cwd(),
+        'src/utils/supabase/server.ts',
+      );
+
+      // Verify Supabase configuration
+      if (fs.existsSync(clientPath)) {
+        let content = fs.readFileSync(clientPath, 'utf8');
+        content = this.fixSupabaseContent(content);
+        fs.writeFileSync(clientPath, content);
+      }
+
+      if (fs.existsSync(serverPath)) {
+        let content = fs.readFileSync(serverPath, 'utf8');
+        content = this.fixSupabaseContent(content);
+        fs.writeFileSync(serverPath, content);
+      }
+
+      this.log('Supabase configuration fixed');
+    } catch (error) {
+      throw new Error(`Failed to fix Supabase: ${error.message}`);
+    }
+  }
+
+  fixSupabaseContent(content) {
+    // Fix common Supabase issues
+    let fixed = content;
+
+    // Ensure proper environment variable usage
+    fixed = fixed.replace(
+      /process\.env\.NEXT_PUBLIC_SUPABASE_URL/g,
+      'process.env.NEXT_PUBLIC_SUPABASE_URL || ""',
+    );
+
+    fixed = fixed.replace(
+      /process\.env\.NEXT_PUBLIC_SUPABASE_ANON_KEY/g,
+      'process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ""',
+    );
+
+    return fixed;
+  }
+
+  async fixEnvironment() {
+    this.log('Fixing environment issues...');
+
+    try {
+      const envPath = path.join(process.cwd(), '.env.local');
+
+      if (!fs.existsSync(envPath)) {
+        // Create basic environment file
+        const envContent = this.generateBasicEnvContent();
+        fs.writeFileSync(envPath, envContent);
+        this.log('Created basic environment file');
+      } else {
+        // Verify environment file
+        const content = fs.readFileSync(envPath, 'utf8')
+const fixedContent = this.fixEnvironmentContent(content);
+        fs.writeFileSync(envPath, fixedContent);
+        this.log('Environment file verified and fixed');
+      }
+    } catch (error) {
+      throw new Error(`Failed to fix environment: ${error.message}`);
+    }
+  }
+
+  generateBasicEnvContent() {
+    return `# Zion App Environment Variables
+# Supabase Configuration
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url_here
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+
+# Reown AppKit Configuration
+NEXT_PUBLIC_REOWN_PROJECT_ID=your_reown_project_id_here
+
+# Application Configuration
+NEXT_PUBLIC_APP_URL=https://zion-app.netlify.app
+NODE_ENV=production
+
+# Add other environment variables as needed
+`;
+  }
+
+  fixEnvironmentContent(content) {
+    // Fix common environment issues
+    let fixed = content;
+
+    // Ensure required variables exist
+    const requiredVars = [
+      'NEXT_PUBLIC_SUPABASE_URL',
+      'NEXT_PUBLIC_SUPABASE_ANON_KEY',
+      'NEXT_PUBLIC_REOWN_PROJECT_ID',
+    ];
+
+    for (const varName of requiredVars) {
+      if (!fixed.includes(varName)) {
+        fixed += `\n${varName}=your_${varName.toLowerCase()}_here`;
+      }
+    }
+
+    return fixed;
+  }
+
+  async restoreCriticalFile(filePath) {
+    this.log(`Restoring critical file: ${filePath}`);
+
+    try {
+      const fullPath = path.join(process.cwd(), filePath)
+const backupPath = `${fullPath}.backup`;
+
+      if (fs.existsSync(backupPath)) {
+        fs.copyFileSync(backupPath, fullPath);
+        this.log(`Restored ${filePath} from backup`);
+      } else {
+        // Create basic file content
+        const content = this.generateBasicFileContent(filePath);
+        fs.writeFileSync(fullPath, content);
+        this.log(`Created basic ${filePath}`);
+      }
+    } catch (error) {
+      throw new Error(`Failed to restore ${filePath}: ${error.message}`);
+    }
+  }
+
+  generateBasicFileContent(filePath) {
+    const fileName = path.basename(filePath);
+
+    switch (fileName) {
+      case 'package.json':
+        return JSON.stringify(
+          {
+            name: 'zion-app',
+            version: '1.0.0',
+            private: true,
+            scripts: {
+              dev: 'next dev',
+              build: 'next build',
+              start: 'next start',
+              lint: 'next lint',
+            },
+            dependencies: {
+              next: 'latest',
+              react: 'latest',
+              'react-dom': 'latest',
+            },
+          },
+          null,
+          2,
+        );
+
+      case 'next.config.js':
+        return `/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+}
+
+module.exports = nextConfig`;
+
+      case 'tsconfig.json':
+        return JSON.stringify(
+          {
+            compilerOptions: {
+              target: 'es5',
+              lib: ['dom', 'dom.iterable', 'es6'],
+              allowJs: true,
+              skipLibCheck: true,
+              strict: true,
+              forceConsistentCasingInFileNames: true,
+              noEmit: true,
+              esModuleInterop: true,
+              module: 'esnext',
+              moduleResolution: 'node',
+              resolveJsonModule: true,
+              isolatedModules: true,
+              jsx: 'preserve',
+              incremental: true,
+              baseUrl: '.',
+              paths: {
+                '@/*': ['./src/*'],
+              },
+            },
+            include: ['next-env.d.ts', '**/*.ts', '**/*.tsx'],
+            exclude: ['node_modules'],
+          },
+          null,
+          2,
+        );
+
+      default:
+        return `// Auto-generated basic file for ${fileName}
+// Please configure this file according to your needs`;
+    }
+  }
+
+  async restartApplication() {
+    this.log('Restarting application...');
+
+    try {
+      // Kill existing processes
+      execSync('pkill -f "next"', { stdio: 'ignore' });
+
+      // Wait a moment
+      await this.sleep(2000);
+
+      // Restart the application
+      execSync('npm run dev', { stdio: 'inherit', detached: true });
+
+      this.log('Application restarted');
+    } catch (error) {
+      this.log(`Failed to restart application: ${error.message}`, 'error');
+    }
+  }
+
+  async genericFix(issueType, data) {
+    this.log(`Applying generic fix for ${issueType}`);
+
+    try {
+      // Try common fixes
+      await this.fixDependencies();
+      await this.fixTypeScript();
+      await this.fixLinting();
+
+      this.log(`Generic fix completed for ${issueType}`);
+    } catch (error) {
+      throw new Error(`Generic fix failed: ${error.message}`);
+    }
+  }
+
+  async analyzeAndFixErrors(errors) {
+    this.log(`Analyzing ${errors.length} errors...`);
+
+    for (const error of errors) {
+      const issue = this.detectIssues(error)[0];
+      if (issue) {
+        await this.triggerHealing(issue.type, issue.data);
+      }
+    }
+  }
+
+  extractRecentErrors(logContent) {
+    const lines = logContent.split('\n')
+const recentErrors = []
+const oneHourAgo = Date.now() - 60 * 60 * 1000;
+
+    for (const line of lines) {
+      if (
+        line.includes('ERROR') ||
+        line.includes('error') ||
+        line.includes('Error')
+      ) {
+        const timestamp = this.extractTimestamp(line);
+        if (timestamp && timestamp > oneHourAgo) {
+          recentErrors.push(line);
+        }
+      }
+    }
+
+    return recentErrors;
+  }
+
+  extractTimestamp(line) {
+    const timestampMatch = line.match(/\[(.*?)\]/);
+    if (timestampMatch) {
+      return new Date(timestampMatch[1]).getTime();
+    }
+    return null;
+  }
+
+  readLogFile(filePath) {
+    try {
+      if (fs.existsSync(filePath)) {
+        return fs.readFileSync(filePath, 'utf8');
+      }
+      return '';
+    } catch (error) {
+      this.log(`Error reading log file ${filePath}: ${error.message}`, 'error');
+      return '';
+    }
+  }
+
+  sleep(ms) {
+    return new Promise((resolve) => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                                    ms);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
+  }
+
+  stop() {
+    this.isRunning = false;
+    this.log('Self-healing system stopped');
+  }
+
+  getStats() {
+    return {
+      isRunning: this.isRunning,
+      lastCheck: this.lastCheck,
+      errorCount: this.errorCount,
+      fixCount: this.fixCount,
+    };
+  }
+}
+
+// CLI interface
+if (require.main === module) {
+  const healingSystem = new SelfHealingSystem();
+
+  // Handle process signals
+  process.on('SIGINT', () => {
+    healingSystem.stop();
+    process.exit(0);
+  });
+
+  process.on('SIGTERM', () => {
+    healingSystem.stop();
+    process.exit(0);
+  });
+
+  // Start the system
+  healingSystem.start().catch((error) => {
+    logger.error('Failed to start self-healing system:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = SelfHealingSystem;

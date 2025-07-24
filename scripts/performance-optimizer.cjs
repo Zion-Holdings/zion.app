@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,25 +5,26 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
 
-
-const fs = require('fs')
-const path = require('path')
-const { execSync } = require('child_process')
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
 class PerformanceOptimizer {
   constructor() {
     this.optimizations = 0;
@@ -32,8 +32,8 @@ class PerformanceOptimizer {
   }
 
   log(message, type = 'info') {
-    const timestamp = new Date().toISOString()
-const colors = {
+    const timestamp = new Date().toISOString();
+    const colors = {
       info: '\x1b[36m',
       success: '\x1b[32m',
       error: '\x1b[31m',
@@ -53,8 +53,8 @@ const colors = {
   }
 
   async optimizeImages() {
-    this.log('🖼️ Optimizing images...', 'info')
-const imageDirs = ['public/images', 'public/logos'];
+    this.log('🖼️ Optimizing images...', 'info');
+    const imageDirs = ['public/images', 'public/logos'];
     for (const dir of imageDirs) {
       if (fs.existsSync(dir)) {
         const files = fs
@@ -138,8 +138,8 @@ const imageDirs = ['public/images', 'public/logos'];
   }
 
   async generateReport() {
-    const runtime = Date.now() - this.startTime
-const report = {
+    const runtime = Date.now() - this.startTime;
+    const report = {
       timestamp: new Date().toISOString(),
       runtime: runtime,
       optimizations: this.optimizations,

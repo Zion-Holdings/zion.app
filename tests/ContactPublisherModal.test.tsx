@@ -30,7 +30,7 @@ test('successful send closes modal and shows toast', async () => {'  render(<Con
   expect(toastHook.toast.success).toHaveBeenCalledWith('Message sent');  expect(defaultProps.onClose).toHaveBeenCalled();
 });
 
-test('shows toast when send fails', async () => {'  postMock.mockRejectedValueOnce({ message: 'Bad' });
+test('shows toast when send fails', async () => {'  postMock.mockRejectedValueOnce({ message:' 'Bad' });
   render(<ContactPublisherModal {...defaultProps} />);
 
   fireEvent.input(screen.getByLabelText(/subject/i), {

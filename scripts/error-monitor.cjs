@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,23 +5,24 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
 
-
-const fs = require('fs')
+const fs = require('fs');
 const path = require('path');
 
 // Configuration
@@ -49,7 +49,7 @@ const CONFIG = {
     memoryUsage: 512 * 1024 * 1024, // 512MB
     errorRate: 0.05, // 5%
   },
-}
+};
 class ErrorMonitor {
   constructor() {
     this.errors = [];
@@ -89,8 +89,8 @@ class ErrorMonitor {
       let logFiles = [];
       for (const dir of dirs) {
         try {
-          const files = fs.readdirSync(dir)
-const found = files
+          const files = fs.readdirSync(dir);
+          const found = files
             .filter((f) => f.endsWith('.log'))
             .map((f) => path.join(dir, f));
           logFiles = logFiles.concat(found);
@@ -102,9 +102,9 @@ const found = files
       // logger.warn(`📋 Found ${logFiles.length} log files`);
 
       for (const filePath of logFiles) {
-        const file = path.basename(filePath)
-const content = fs.readFileSync(filePath, 'utf-8')
-const lines = content.split('\n').filter((line) => line.trim());
+        const file = path.basename(filePath);
+        const content = fs.readFileSync(filePath, 'utf-8');
+        const lines = content.split('\n').filter((line) => line.trim());
 
         for (const line of lines) {
           try {
@@ -183,8 +183,8 @@ const lines = content.split('\n').filter((line) => line.trim());
    * Process plain text log entries (fallback)
    */
   processPlainTextLog(line, filename) {
-    this.summary.totalEntries++
-const entry = {
+    this.summary.totalEntries++;
+    const entry = {
       message: line,
       timestamp: new Date().toISOString(),
       source: filename,
@@ -319,8 +319,8 @@ const entry = {
     // Only flag as error if it matches error patterns and doesn't contain success context
     const hasErrorPattern = errorPatterns.some((pattern) =>
       pattern.test(upperText),
-    )
-const hasSuccessContext =
+    );
+    const hasSuccessContext =
       upperText.includes('FIX') ||
       upperText.includes('RESOLV') ||
       upperText.includes('SUCCESS') ||
@@ -690,8 +690,8 @@ const hasSuccessContext =
       performance: this.analyzePerformance(),
       recommendations: this.generateRecommendations(),
       healthScore: this.calculateHealthScore(),
-    }
-const reportPath = path.join(
+    };
+    const reportPath = path.join(
       CONFIG.logsDir,
       filename || 'error-report.json',
     );
@@ -703,7 +703,7 @@ const reportPath = path.join(
 // Main execution
 async function main() {
   // logger.warn('🚀 Starting Error Monitor...\n')
-const monitor = new ErrorMonitor();
+  const monitor = new ErrorMonitor();
 
   if (!monitor.init()) {
     process.exit(1);
@@ -739,7 +739,6 @@ if (require.main === module) {
 
 module.exports = { ErrorMonitor, CONFIG };
 
-
 // Graceful shutdown handling
 process.on('SIGINT', () => {
   logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
@@ -752,4 +751,3 @@ process.on('SIGTERM', () => {
   // Add cleanup logic here
   process.exit(0);
 });
-

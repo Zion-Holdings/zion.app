@@ -1,12 +1,11 @@
-
-const _fs = require('fs')
+const _fs = require('fs');
 const requiredDependencies = [
   'react',
   'react-dom',
   'react-router-dom',
   'lucide-react',
   '@tanstack/react-query',
-]
+];
 const missing = requiredDependencies.filter((dep) => {
   try {
     require.resolve(dep);

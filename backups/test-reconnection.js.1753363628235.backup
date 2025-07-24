@@ -1,0 +1,644 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+const io = require('socket.io-client');
+
+// Simple reconnection manager for testing
+class TestReconnectionManager {
+  constructor(config = {}) {
+    this.config = {
+      baseDelay: 1000,
+      maxDelay: 5000,
+      maxAttempts: 5,
+      backoffMultiplier: 2,
+      jitter: true,
+      healthCheckInterval: 5000,
+      pingTimeout: 3000,
+      ...config
+    };
+
+    this.reconnectAttempts = 0;
+    this.connectionHealth = {
+      latency: 0,
+      lastPing: 0,
+      failedPings: 0,
+      connectionQuality: disconnected
+    };
+    this.pingHistory = [];
+    this.eventListeners = new Map();
+  }
+
+  on(event, callback) {
+    if (!this.eventListeners.has(event)) {
+      this.eventListeners.set(event, []);
+    }
+    this.eventListeners.get(event).push(callback);
+  }
+
+  off(event, callback) {
+    if (this.eventListeners.has(event)) {
+      const listeners = this.eventListeners.get(event)
+const index = listeners.indexOf(callback);
+      if (index > -1) {
+        listeners.splice(index, 1);
+      }
+    }
+  }
+
+  emit(event, data) {
+    if (this.eventListeners.has(event)) {
+      this.eventListeners.get(event).forEach((callback) => callback(data));
+    }
+  }
+
+  handleReconnectionAttempt() {
+    this.reconnectAttempts++;
+    this.emit('reconnection_attempt', {
+      type: 'attempt',
+      attempt: this.reconnectAttempts,
+      timestamp: Date.now()
+    });
+  }
+
+  handleReconnectionSuccess() {
+    this.emit('reconnection_success', {
+      type: 'success',
+      attempt: this.reconnectAttempts,
+      timestamp: Date.now()
+    });
+  }
+
+  handleReconnectionFailure(error) {
+    this.emit('reconnection_failure', {
+      type: 'failure',
+      attempt: this.reconnectAttempts,
+      error,
+      timestamp: Date.now()
+    });
+  }
+
+  getConnectionHealth() {
+    return this.connectionHealth;
+  }
+
+  getAverageLatency() {
+    if (this.pingHistory.length === 0) return 0;
+    return (
+      this.pingHistory.reduce((a, b) => a + b, 0) / this.pingHistory.length
+    );
+  }
+
+  stop() {
+    this.eventListeners.clear();
+  }
+}
+
+logger.info('🧪 Testing Automatic Reconnection System...\n');
+
+// Test configuration
+const TEST_CONFIG = {
+  baseDelay: 1000,
+  maxDelay: 5000,
+  maxAttempts: 5,
+  backoffMultiplier: 2,
+  jitter: true,
+  healthCheckInterval: 5000,
+  pingTimeout: 3000
+};
+
+// Test scenarios
+const TEST_SCENARIOS = [
+  {
+    name: General Chat Widget',
+    roomId: 'general-chat',
+    socketUrl: http://localhost:3006
+  },
+  {
+    name: AI Assistant Chat',
+    roomId: 'ai-assistant',
+    socketUrl: http://localhost:3006
+  },
+  {
+    name: Support Chatbot',
+    roomId: 'support-chat',
+    socketUrl: http://localhost:3006
+  }
+];
+
+async function testReconnectionScenario(scenario) {
+  logger.info(`\n📋 Testing: ${scenario.name}`);
+  logger.info(`📍 Room: ${scenario.roomId}`);
+  logger.info(`🔗 Socket URL: ${scenario.socketUrl}`);
+
+  return new Promise((resolve) => {
+    let connectionAttempts = 0;
+    let reconnectionAttempts = 0;
+    let successfulReconnections = 0;
+    let testCompleted = false;
+
+    // Create reconnection manager
+    const reconnectionManager = new TestReconnectionManager(TEST_CONFIG);
+
+    // Create socket connection
+    const socket = io(scenario.socketUrl, {
+      transports: ['websocket', polling'],
+      timeout: 5000,
+      reconnection: true,
+      reconnectionAttempts: 5,
+      reconnectionDelay: 1000,
+      reconnectionDelayMax: 5000
+    });
+
+    // Track connection events
+    socket.on('connect', () => {
+      connectionAttempts++;
+      logger.info(
+        `✅ Connected to ${scenario.name} (attempt ${connectionAttempts})`,
+      );
+
+      // Join room
+      socket.emit('join-room', scenario.roomId, (response) => {
+        if (response && response.success) {
+          logger.info(`🎯 Joined room: ${scenario.roomId}`);
+
+          // Send test message
+          socket.emit(
+            send-message',
+            {
+              roomId: scenario.roomId,
+              message: `Test message from ${scenario.name} - ${new Date().toISOString()}`,
+              sender: 'test-user',
+              type: text
+            },
+            (response) => {
+              if (response && response.success) {
+                logger.info(`💬 Test message sent successfully`);
+              }
+            },
+          );
+        }
+      });
+    });
+
+    socket.on('disconnect', (reason) => {
+      logger.info(`🔌 Disconnected from ${scenario.name}: ${reason}`);
+    });
+
+    socket.on('reconnect', (attemptNumber) => {
+      reconnectionAttempts++;
+      successfulReconnections++;
+      logger.info(
+        `🔄 Reconnected to ${scenario.name} after ${attemptNumber} attempts`,
+      );
+      reconnectionManager.handleReconnectionSuccess();
+    });
+
+    socket.on('reconnect_attempt', (attemptNumber) => {
+      reconnectionAttempts++;
+      logger.info(
+        `🔄 Reconnection attempt ${attemptNumber} for ${scenario.name}`,
+      );
+      reconnectionManager.handleReconnectionAttempt();
+    });
+
+    socket.on('reconnect_error', (error) => {
+      logger.info(
+        `❌ Reconnection error for ${scenario.name}: ${error.message}`,
+      );
+      reconnectionManager.handleReconnectionFailure(error.message);
+    });
+
+    socket.on('reconnect_failed', () => {
+      logger.info(`❌ Reconnection failed for ${scenario.name}`);
+      reconnectionManager.handleReconnectionFailure('Max attempts reached');
+    });
+
+    // Listen to reconnection manager events
+    reconnectionManager.on('reconnection_attempt', (event) => {
+      logger.info(
+        `📊 Reconnection manager: Attempt ${event.attempt} for ${scenario.name}`,
+      );
+    });
+
+    reconnectionManager.on('reconnection_success', (event) => {
+      logger.info(
+        `✅ Reconnection manager: Success for ${scenario.name} after ${event.attempt} attempts`,
+      );
+    });
+
+    reconnectionManager.on('reconnection_failure', (event) => {
+      logger.info(
+        `❌ Reconnection manager: Failure for ${scenario.name} - ${event.error}`,
+      );
+    });
+
+    reconnectionManager.on('health_check', (event) => {
+      logger.info(
+        `💓 Health check for ${scenario.name}: ${event.health.connectionQuality} (${event.health.latency}ms)`,
+      );
+    });
+
+    // Simulate network interruption after 3 seconds
+    
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => {
+      logger.info(
+        `\n🌐 Simulating network interruption for ${scenario.name}...`,                              
+      );
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+      socket.disconnect();
+
+      // Wait for reconnection attempts
+      
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => {
+        if (!testCompleted) {
+          testCompleted = true;
+          logger.info(`\n📊 Test Results for ${scenario.name}:`);
+          logger.info(`   Connection attempts: ${connectionAttempts}`);
+          logger.info(`   Reconnection attempts: ${reconnectionAttempts}`);
+          logger.info(
+            `   Successful reconnections: ${successfulReconnections}`,                              
+          );
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+          logger.info(
+            `   Connection quality: ${reconnectionManager.getConnectionHealth().connectionQuality}`,
+          );
+          logger.info(
+            `   Average latency: ${reconnectionManager.getAverageLatency()}ms`,
+          );
+
+          socket.disconnect();
+          reconnectionManager.stop();
+          resolve({
+            name: scenario.name,
+            connectionAttempts,
+            reconnectionAttempts,
+            successfulReconnections,
+            connectionQuality:
+              reconnectionManager.getConnectionHealth().connectionQuality,
+            averageLatency: reconnectionManager.getAverageLatency()
+          });
+        }
+      }, 15000); // Wait 15 seconds for reconnection attempts
+    }, 3000);
+  });
+}
+
+async function runAllTests() {
+  logger.info('🚀 Starting comprehensive reconnection tests...\n')
+const results = [];
+
+  for (const scenario of TEST_SCENARIOS) {
+    try {
+      const result = await testReconnectionScenario(scenario);
+      results.push(result);
+    } catch (error) {
+      logger.error(`❌ Test failed for ${scenario.name}:`, error.message);
+      results.push({
+        name: scenario.name,
+        error: error.message
+      });
+    }
+
+    // Wait between tests
+    await new Promise((resolve) => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                               2000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
+  }
+
+  // Print summary
+  logger.info('\n📋 Test Summary:');
+  logger.info('================');
+
+  results.forEach((result) => {
+    if (result.error) {
+      logger.info(`❌ ${result.name}: FAILED - ${result.error}`);
+    } else {
+      logger.info(`✅ ${result.name}:`);
+      logger.info(`   Connections: ${result.connectionAttempts}`);
+      logger.info(`   Reconnections: ${result.reconnectionAttempts}`);
+      logger.info(
+        `   Success Rate: ${result.successfulReconnections}/${result.reconnectionAttempts}`,
+      );
+      logger.info(`   Quality: ${result.connectionQuality}`);
+      logger.info(`   Latency: ${result.averageLatency}ms`);
+    }
+  })
+const successfulTests = results.filter((r) => !r.error).length
+const totalTests = results.length;
+
+  logger.info(
+    `\n🎯 Overall Results: ${successfulTests}/${totalTests} tests passed`,
+  );
+
+  if (successfulTests === totalTests) {
+    logger.info(
+      🎉 All reconnection tests passed! The automatic reconnection system is working correctly.',
+    );
+  } else {
+    logger.info('⚠️  Some tests failed. Please check the implementation.');
+  }
+
+  process.exit(successfulTests === totalTests ? 0 : 1);
+}
+
+// Handle graceful shutdown
+process.on('SIGINT', () => {
+  logger.info('\n🛑 Test interrupted by user');
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  logger.info('\n🛑 Test terminated');
+  process.exit(0);
+});
+
+// Run tests
+runAllTests().catch((error) => {
+  logger.error('❌ Test suite failed:', error);
+  process.exit(1);
+});

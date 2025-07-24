@@ -1,7 +1,7 @@
-import React from react';;
-import Head from next/head;;
+import React from 'react';
+import Head from 'next/head';
 
-default function workfutures() {
+export default function workfutures() {
   return (
     <>
       <Head>
@@ -19,3 +19,4 @@ default function workfutures() {
       </div>
     </>
   );
+}

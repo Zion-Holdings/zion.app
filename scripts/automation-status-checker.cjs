@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,25 +5,26 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
 
-
-const fs = require('fs')
-const path = require('path')
-const { execSync } = require('child_process')
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
 class AutomationStatusChecker {
   constructor() {
     this.processes = [
@@ -72,9 +72,9 @@ class AutomationStatusChecker {
     let totalProcesses = this.processes.length;
 
     for (const process of this.processes) {
-      const count = this.checkProcessStatus(process)
-const status = count > 0 ? '✅ RUNNING' : '❌ STOPPED'
-const instances = count > 0 ? ` (${count} instances)` : '';
+      const count = this.checkProcessStatus(process);
+      const status = count > 0 ? '✅ RUNNING' : '❌ STOPPED';
+      const instances = count > 0 ? ` (${count} instances)` : '';
 
       this.log(
         `${status} ${process}${instances}`,
@@ -107,8 +107,8 @@ const instances = count > 0 ? ` (${count} instances)` : '';
 
   checkAutomationReports() {
     logger.info('\n📈 AUTOMATION REPORTS');
-    logger.info('====================')
-const reportFiles = [
+    logger.info('====================');
+    const reportFiles = [
       'automation/ai-improvement-report.json',
       'automation/health-report.json',
       'automation/optimization-report.json',
@@ -118,8 +118,8 @@ const reportFiles = [
     for (const file of reportFiles) {
       try {
         if (fs.existsSync(file)) {
-          const data = JSON.parse(fs.readFileSync(file, 'utf8'))
-const timestamp = new Date(
+          const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+          const timestamp = new Date(
             data.timestamp || Date.now(),
           ).toLocaleString();
           this.log(`✅ ${file} - Last updated: ${timestamp}`, 'success');

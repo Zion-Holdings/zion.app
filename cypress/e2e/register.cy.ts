@@ -11,7 +11,7 @@ describe('register flow', () => {'  beforeEach(() => {
     const uniqueEmail = `testuser-${Date.now()}@example.com`;
 
     cy.intercept('POST', /api/auth/register', {'      statusCode: 201, // Or 200, depending on your API
-      body: { message: 'User registered successfully' }, // Adjust as per your API response'    }).as('registerUser');
+      body: { message:' 'User registered successfully' }, // Adjust as per your API response'    }).as('registerUser');
     cy.visit('/signup');    cy.url().should('include', /signup');    cy.get('h2').should('contain.text', Create your account');    cy.get('input[name="displayName"]).type(Cypress.env('TEST_USER_DISPLAY_NAME'));    cy.get('input[name="email"]).type(uniqueEmail);    cy.get('input[name="password"]).type(Cypress.env('TEST_USER_PASSWORD'));    cy.get('input[name="confirmPassword"]).type(Cypress.env('TEST_USER_PASSWORD'));    cy.get('input[type="checkbox"]).check();    cy.contains('Create Account').click();    cy.wait('@registerUser');    // Add assertions here based on your application's behavior after successful registration'    // For example, redirect to login or dashboard
     // cy.url().should('include', /login');  });
 
