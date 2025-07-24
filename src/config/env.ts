@@ -1,4 +1,4 @@
-// Module for env
-export const env = {
-  // TODO: Implement module functionality
+// Module for env;
+export const env: unknown = {;
+  // TODO: Implement module functionality;
 };

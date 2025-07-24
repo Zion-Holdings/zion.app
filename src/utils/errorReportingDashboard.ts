@@ -1,4 +1,4 @@
-// Utility functions for errorReportingDashboard
-export const errorReportingDashboard = {
-  // TODO: Implement utility functions
+// Utility functions for errorReportingDashboard;
+export const errorReportingDashboard: unknown = {;
+  // TODO: Implement utility functions;
 };

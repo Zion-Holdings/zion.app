@@ -1,5 +1,5 @@
-// Hook for useWorkExperience
-export const useUseWorkExperience = () => {
-  // TODO: Implement hook logic
+// Hook for useWorkExperience;
+export const useUseWorkExperience: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

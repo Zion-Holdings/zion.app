@@ -1,4 +1,4 @@
-// Utility functions for dynamicComponents
-export const dynamicComponents = {
-  // TODO: Implement utility functions
+// Utility functions for dynamicComponents;
+export const dynamicComponents: unknown = {;
+  // TODO: Implement utility functions;
 };

@@ -1,4 +1,4 @@
-// Module for serverCache
-export const serverCache = {
-  // TODO: Implement module functionality
+// Module for serverCache;
+export const serverCache: unknown = {;
+  // TODO: Implement module functionality;
 };

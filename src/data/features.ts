@@ -1,4 +1,4 @@
-// Module for features
-export const features = {
-  // TODO: Implement module functionality
+// Module for features;
+export const features: unknown = {;
+  // TODO: Implement module functionality;
 };

@@ -1,5 +1,5 @@
-// Hook for useOrders
-export const useUseOrders = () => {
-  // TODO: Implement hook logic
+// Hook for useOrders;
+export const useUseOrders: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

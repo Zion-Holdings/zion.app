@@ -59,7 +59,7 @@ class NotificationManager extends EventEmitter {
       category = info';;;,
       taskName = unknown';;;,
       data = {},
-      force = false';
+      force = false'
     } = options';;
 
     const notification = {
@@ -279,7 +279,7 @@ class NotificationManager extends EventEmitter {
     const fields = [];
     
     Object.entries(data).forEach(([key, value]) => {
-      if (value !== null'; && value !== undefined';;) {
+      if (value !== null' && value !== undefined';;) {
         fields.push({
           title: key.charAt(0).toUpperCase() + key.slice(1),
           value: typeof value === object';;; ? JSON.stringify(value) : String(value),

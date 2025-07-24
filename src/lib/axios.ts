@@ -1,4 +1,4 @@
-// Module for axios
-export const axios = {
-  // TODO: Implement module functionality
+// Module for axios;
+export const axios: unknown = {;
+  // TODO: Implement module functionality;
 };

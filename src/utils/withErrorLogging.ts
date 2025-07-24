@@ -1,4 +1,4 @@
-// Utility functions for withErrorLogging
-export const withErrorLogging = {
-  // TODO: Implement utility functions
+// Utility functions for withErrorLogging;
+export const withErrorLogging: unknown = {;
+  // TODO: Implement utility functions;
 };

@@ -1,4 +1,4 @@
-// Utility functions for config
-export const config = {
-  // TODO: Implement utility functions
+// Utility functions for config;
+export const config: unknown = {;
+  // TODO: Implement utility functions;
 };

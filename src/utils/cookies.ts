@@ -1,4 +1,4 @@
-// Utility functions for cookies
-export const cookies = {
-  // TODO: Implement utility functions
+// Utility functions for cookies;
+export const cookies: unknown = {;
+  // TODO: Implement utility functions;
 };

@@ -1,4 +1,4 @@
-// Module for profileMapper
-export const profileMapper = {
-  // TODO: Implement module functionality
+// Module for profileMapper;
+export const profileMapper: unknown = {;
+  // TODO: Implement module functionality;
 };

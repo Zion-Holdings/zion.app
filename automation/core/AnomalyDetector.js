@@ -99,8 +99,8 @@ class AnomalyDetector extends EventEmitter {
     const history = this';;.metricHistory.get(metricName) || [];
     const baseline = this';;.baselines.get(metricName);
     
-    let isAnomaly = false';;
-    let anomalyType = null';;
+    let isAnomaly = false;
+    let anomalyType = null;
     let severity = medium';;
     
     // Check threshold-based anomaly

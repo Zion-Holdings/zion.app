@@ -1,10 +1,10 @@
 import React from 'react';
-
-export default function FavoritesContext() {
-  return (
-    <div>
-      <h1>FavoritesContext</h1>
-      <p>Component placeholder - needs implementation</p>
-    </div>
+;
+export default function FavoritesContext() {;
+  return (;
+    <div>;
+      <h1>FavoritesContext</h1>;
+      <p>Component placeholder - needs implementation</p>;
+    </div>;
   );
 }

@@ -1,4 +1,4 @@
-// Module for authSocial
-export const authSocial = {
-  // TODO: Implement module functionality
+// Module for authSocial;
+export const authSocial: unknown = {;
+  // TODO: Implement module functionality;
 };

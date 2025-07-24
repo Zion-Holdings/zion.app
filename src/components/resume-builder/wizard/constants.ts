@@ -1,4 +1,4 @@
-// Module for constants
-export const constants = {
-  // TODO: Implement module functionality
+// Module for constants;
+export const constants: unknown = {;
+  // TODO: Implement module functionality;
 };

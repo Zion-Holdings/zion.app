@@ -1,4 +1,4 @@
-// Service for newsletterService
-export const newsletterServiceService = {
-  // TODO: Implement service methods
+// Service for newsletterService;
+export const newsletterServiceService: unknown = {;
+  // TODO: Implement service methods;
 };

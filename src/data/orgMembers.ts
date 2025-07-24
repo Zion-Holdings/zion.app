@@ -1,4 +1,4 @@
-// Module for orgMembers
-export const orgMembers = {
-  // TODO: Implement module functionality
+// Module for orgMembers;
+export const orgMembers: unknown = {;
+  // TODO: Implement module functionality;
 };

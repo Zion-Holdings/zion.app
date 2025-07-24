@@ -1,5 +1,5 @@
-// Hook for useReviews
-export const useUseReviews = () => {
-  // TODO: Implement hook logic
+// Hook for useReviews;
+export const useUseReviews: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

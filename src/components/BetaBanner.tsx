@@ -1,10 +1,10 @@
 import React from 'react';
-
-export default function BetaBanner() {
-  return (
-    <div>
-      <h1>BetaBanner</h1>
-      <p>Component placeholder - needs implementation</p>
-    </div>
+;
+export default function BetaBanner() {;
+  return (;
+    <div>;
+      <h1>BetaBanner</h1>;
+      <p>Component placeholder - needs implementation</p>;
+    </div>;
   );
 }

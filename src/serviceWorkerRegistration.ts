@@ -1,4 +1,4 @@
-// Module for serviceWorkerRegistration
-export const serviceWorkerRegistration = {
-  // TODO: Implement module functionality
+// Module for serviceWorkerRegistration;
+export const serviceWorkerRegistration: unknown = {;
+  // TODO: Implement module functionality;
 };

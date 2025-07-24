@@ -8,14 +8,6 @@ export AUTONOMOUS_MODE=true
 export HUSKY_AUTOMATION=true
 export AUTO_FIX_ENABLED=true
 
-# Load configuration
-CONFIG_FILE="automation/config.json"
-if [ -f "$CONFIG_FILE" ]; then
-    echo "📋 Loading configuration from $CONFIG_FILE"
-else
-    echo "⚠️  Configuration file not found, using defaults"
-fi
-
 # Run comprehensive pre-commit checks
 echo "📋 Running comprehensive pre-commit checks..."
 
@@ -63,29 +55,10 @@ npm run build || {
     exit 1
 }
 
-# 7. Performance check
-echo "⚡ Performance check..."
-if [ -f "automation/performance/performance-check.js" ]; then
-    node automation/performance/performance-check.js || {
-        echo "⚠️  Performance check failed, but continuing..."
-    }
-fi
-
-# 8. Autonomous improvements
+# 7. Autonomous improvements
 echo "🤖 Running autonomous improvements..."
-if [ -f "automation/enhanced-automation-system.js" ]; then
-    node automation/enhanced-automation-system.js pre-commit || {
-        echo "⚠️  Autonomous improvements failed, but continuing..."
-    }
-fi
-
-# 9. Enhanced autonomous commit system
-echo "🤖 Running enhanced autonomous commit system..."
-if [ -f "automation/enhanced-autonomous-commit.js" ]; then
-    node automation/enhanced-autonomous-commit.js || {
-        echo "⚠️  Enhanced autonomous commit failed, but continuing..."
-    }
-fi
+node automation/enhanced-automation-system.js pre-commit || {
+    echo "⚠️  Autonomous improvements failed, but continuing..."
+}
 
 echo "✅ Pre-commit checks completed successfully!"
-echo "🎉 Your code is ready for commit!"

@@ -1,4 +1,4 @@
-// Module for docsSearchData
-export const docsSearchData = {
-  // TODO: Implement module functionality
+// Module for docsSearchData;
+export const docsSearchData: unknown = {;
+  // TODO: Implement module functionality;
 };

@@ -1,10 +1,10 @@
 import React from 'react';
-
-export default function SelectResumeSection() {
-  return (
-    <div>
-      <h1>SelectResumeSection</h1>
-      <p>Component placeholder - needs implementation</p>
-    </div>
+;
+export default function SelectResumeSection() {;
+  return (;
+    <div>;
+      <h1>SelectResumeSection</h1>;
+      <p>Component placeholder - needs implementation</p>;
+    </div>;
   );
 }

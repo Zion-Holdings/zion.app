@@ -1,4 +1,4 @@
-// Store slice for cartSlice
-export const cartSliceSlice = {
-  // TODO: Implement store slice
+// Store slice for cartSlice;
+export const cartSliceSlice: unknown = {;
+  // TODO: Implement store slice;
 };

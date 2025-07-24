@@ -1,4 +1,4 @@
-// Store slice for wishlistSlice
-export const wishlistSliceSlice = {
-  // TODO: Implement store slice
+// Store slice for wishlistSlice;
+export const wishlistSliceSlice: unknown = {;
+  // TODO: Implement store slice;
 };

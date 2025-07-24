@@ -1,4 +1,4 @@
-// Module for equipmentData
-export const equipmentData = {
-  // TODO: Implement module functionality
+// Module for equipmentData;
+export const equipmentData: unknown = {;
+  // TODO: Implement module functionality;
 };

@@ -1,4 +1,4 @@
-// Module for talent
-export const talent = {
-  // TODO: Implement module functionality
+// Module for talent;
+export const talent: unknown = {;
+  // TODO: Implement module functionality;
 };

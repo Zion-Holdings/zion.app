@@ -1,4 +1,4 @@
-// Utility functions for authUtils
-export const authUtils = {
-  // TODO: Implement utility functions
+// Utility functions for authUtils;
+export const authUtils: unknown = {;
+  // TODO: Implement utility functions;
 };

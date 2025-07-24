@@ -1,4 +1,4 @@
-// Module for useNotificationOperations
-export const useNotificationOperations = {
-  // TODO: Implement module functionality
+// Module for useNotificationOperations;
+export const useNotificationOperations: unknown = {;
+  // TODO: Implement module functionality;
 };

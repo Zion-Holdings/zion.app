@@ -1,4 +1,4 @@
-// Module for validation
-export const validation = {
-  // TODO: Implement module functionality
+// Module for validation;
+export const validation: unknown = {;
+  // TODO: Implement module functionality;
 };

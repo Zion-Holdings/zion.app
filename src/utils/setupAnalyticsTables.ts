@@ -1,4 +1,4 @@
-// Utility functions for setupAnalyticsTables
-export const setupAnalyticsTables = {
-  // TODO: Implement utility functions
+// Utility functions for setupAnalyticsTables;
+export const setupAnalyticsTables: unknown = {;
+  // TODO: Implement utility functions;
 };

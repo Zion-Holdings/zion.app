@@ -1,4 +1,4 @@
-// Utility functions for string
-export const string = {
-  // TODO: Implement utility functions
+// Utility functions for string;
+export const string: unknown = {;
+  // TODO: Implement utility functions;
 };

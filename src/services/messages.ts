@@ -1,4 +1,4 @@
-// Service for messages
-export const messagesService = {
-  // TODO: Implement service methods
+// Service for messages;
+export const messagesService: unknown = {;
+  // TODO: Implement service methods;
 };

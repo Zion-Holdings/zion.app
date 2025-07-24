@@ -1,6 +1,6 @@
 [build]
   # Use standard Next.js build command
-  command = "npm run build"
+  command = "npm run build:optimized"
   # Netlify UI sets `publish` to `out` which causes the Next.js plugin to fail
   # because no exported directory exists. Explicitly publish the `.next`
   # directory so the plugin can run correctly.

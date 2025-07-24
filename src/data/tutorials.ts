@@ -1,4 +1,4 @@
-// Module for tutorials
-export const tutorials = {
-  // TODO: Implement module functionality
+// Module for tutorials;
+export const tutorials: unknown = {;
+  // TODO: Implement module functionality;
 };

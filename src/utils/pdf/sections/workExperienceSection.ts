@@ -1,4 +1,4 @@
-// Utility functions for workExperienceSection
-export const workExperienceSection = {
-  // TODO: Implement utility functions
+// Utility functions for workExperienceSection;
+export const workExperienceSection: unknown = {;
+  // TODO: Implement utility functions;
 };

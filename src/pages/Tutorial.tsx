@@ -1,10 +1,10 @@
 import React from 'react';
-
-export default function Tutorial() {
-  return (
-    <div>
-      <h1>Tutorial</h1>
-      <p>Component placeholder - needs implementation</p>
-    </div>
+;
+export default function Tutorial() {;
+  return (;
+    <div>;
+      <h1>Tutorial</h1>;
+      <p>Component placeholder - needs implementation</p>;
+    </div>;
   );
-}
+};

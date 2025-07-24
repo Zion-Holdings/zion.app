@@ -1,10 +1,10 @@
 import React from 'react';
-
-export default function hover-card() {
-  return (
-    <div>
-      <h1>hover-card</h1>
-      <p>Component placeholder - needs implementation</p>
-    </div>
+;
+export default function hover-card() {;
+  return (;
+    <div>;
+      <h1>hover-card</h1>;
+      <p>Component placeholder - needs implementation</p>;
+    </div>;
   );
 }

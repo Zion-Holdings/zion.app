@@ -1,10 +1,10 @@
 import React from 'react';
-
-export default function TalentCardSaveButton() {
-  return (
-    <div>
-      <h1>TalentCardSaveButton</h1>
-      <p>Component placeholder - needs implementation</p>
-    </div>
+;
+export default function TalentCardSaveButton() {;
+  return (;
+    <div>;
+      <h1>TalentCardSaveButton</h1>;
+      <p>Component placeholder - needs implementation</p>;
+    </div>;
   );
 }

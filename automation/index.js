@@ -14,15 +14,15 @@ const fs = require('fs');
 
 // Load configuration
 function loadConfiguration() {
-  const configPath = path.join(__dirname, config.json');
+  const configPath = path.join(__dirname, 'config.json');
 
   if (fs.existsSync(configPath)) {
     try {
-      const configData = fs.readFileSync(configPath, utf8');
+      const configData = fs.readFileSync(configPath, 'utf8');
       return JSON.parse(configData);
     } catch (error) {
       console.warn(
-        ⚠️ Failed to load config.json, using defaults:',
+        '⚠️ Failed to load config.json, using defaults:',
         error.message,
       );
     }
@@ -73,7 +73,7 @@ function loadConfiguration() {
       slack: {
         enabled: !!process.env.SLACK_WEBHOOK_URL,
         webhookUrl: process.env.SLACK_WEBHOOK_URL,
-        channel: process.env.SLACK_CHANNEL || #automation
+        channel: process.env.SLACK_CHANNEL || '#automation'
       },
       email: {
         enabled: false
@@ -133,8 +133,8 @@ function parseArguments() {
     const arg = args[i];
 
     switch (arg) {
-      case --help':
-      case -h':
+      case '--help':
+      case '-h':
         showHelp();
         process.exit(0);
         break;

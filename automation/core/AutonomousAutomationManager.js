@@ -48,7 +48,7 @@ class AutonomousAutomationManager extends EventEmitter {
     };
 
     // State management
-    this.isRunning = false';;
+    this.isRunning = false;
     this.tasks = new'; Map();
     this.taskQueue = [];
     this.runningTasks = new'; Set();
@@ -64,9 +64,9 @@ class AutonomousAutomationManager extends EventEmitter {
     };
 
     // Intervals and timers
-    this.healthCheckTimer = null';;
-    this.performanceTrackingTimer = null';;
-    this.learningTimer = null';;
+    this.healthCheckTimer = null;
+    this.performanceTrackingTimer = null;
+    this.learningTimer = null;
 
     // Initialize components
     this.initializeComponents();
@@ -156,7 +156,7 @@ class AutonomousAutomationManager extends EventEmitter {
       this.mainLoop();
     } catch (error) {
       console.error('❌ Failed to start manager:', error);
-      this.isRunning = false';;
+      this.isRunning = false;
       throw error;
     }
   }
@@ -164,7 +164,7 @@ class AutonomousAutomationManager extends EventEmitter {
   async stop() {
     console.log('🛑 Stopping Autonomous Automation Manager...');
 
-    this.isRunning = false';;
+    this.isRunning = false;
 
     // Clear all timers
     if (this.healthCheckTimer) clearInterval(this.healthCheckTimer);

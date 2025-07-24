@@ -1,5 +1,5 @@
-// Hook for useAuth
-export const useUseAuth = () => {
-  // TODO: Implement hook logic
+// Hook for useAuth;
+export const useUseAuth: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

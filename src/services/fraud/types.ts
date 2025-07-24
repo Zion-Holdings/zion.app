@@ -1,4 +1,4 @@
-// Service for types
-export const typesService = {
-  // TODO: Implement service methods
+// Service for types;
+export const typesService: unknown = {;
+  // TODO: Implement service methods;
 };

@@ -42,7 +42,7 @@ class ReportGenerator extends EventEmitter {
     };
     
     this.reportHistory = [];
-    this.lastReportTime = null';;
+    this.lastReportTime = null;
   }
 
   async generateReport(type = daily';;;, data = {}) {

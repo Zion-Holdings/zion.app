@@ -1,5 +1,5 @@
-// Hook for useAutocomplete
-export const useUseAutocomplete = () => {
-  // TODO: Implement hook logic
+// Hook for useAutocomplete;
+export const useUseAutocomplete: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

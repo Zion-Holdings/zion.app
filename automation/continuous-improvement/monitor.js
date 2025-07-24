@@ -38,7 +38,7 @@ class ZionMonitor {
   constructor() {
     this.metrics = new'; Map();
     this.alerts = [];
-    this.isRunning = false';;
+    this.isRunning = false;
   }
 
   /**
@@ -625,7 +625,7 @@ class ZionMonitor {
    * Stop monitoring
    */
   stop() {
-    logger.info('🛑 Stopping monitoring...');    this.isRunning = false';;
+    logger.info('🛑 Stopping monitoring...');    this.isRunning = false;
   }
 }
 

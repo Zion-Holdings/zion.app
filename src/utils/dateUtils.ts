@@ -1,4 +1,4 @@
-// Utility functions for dateUtils
-export const dateUtils = {
-  // TODO: Implement utility functions
+// Utility functions for dateUtils;
+export const dateUtils: unknown = {;
+  // TODO: Implement utility functions;
 };

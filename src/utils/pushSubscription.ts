@@ -1,4 +1,4 @@
-// Utility functions for pushSubscription
-export const pushSubscription = {
-  // TODO: Implement utility functions
+// Utility functions for pushSubscription;
+export const pushSubscription: unknown = {;
+  // TODO: Implement utility functions;
 };

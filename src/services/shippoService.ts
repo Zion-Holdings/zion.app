@@ -1,4 +1,4 @@
-// Service for shippoService
-export const shippoServiceService = {
-  // TODO: Implement service methods
+// Service for shippoService;
+export const shippoServiceService: unknown = {;
+  // TODO: Implement service methods;
 };

@@ -1,4 +1,4 @@
-// Utility functions for enhancedLogAnalytics
-export const enhancedLogAnalytics = {
-  // TODO: Implement utility functions
+// Utility functions for enhancedLogAnalytics;
+export const enhancedLogAnalytics: unknown = {;
+  // TODO: Implement utility functions;
 };

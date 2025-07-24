@@ -1,4 +1,4 @@
-// Service for escrowService
-export const escrowServiceService = {
-  // TODO: Implement service methods
+// Service for escrowService;
+export const escrowServiceService: unknown = {;
+  // TODO: Implement service methods;
 };

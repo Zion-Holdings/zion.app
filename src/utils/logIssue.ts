@@ -1,4 +1,4 @@
-// Utility functions for logIssue
-export const logIssue = {
-  // TODO: Implement utility functions
+// Utility functions for logIssue;
+export const logIssue: unknown = {;
+  // TODO: Implement utility functions;
 };

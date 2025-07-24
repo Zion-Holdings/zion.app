@@ -1,4 +1,4 @@
-// Utility functions for setupSupabaseTables
-export const setupSupabaseTables = {
-  // TODO: Implement utility functions
+// Utility functions for setupSupabaseTables;
+export const setupSupabaseTables: unknown = {;
+  // TODO: Implement utility functions;
 };

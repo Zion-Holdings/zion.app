@@ -1,4 +1,4 @@
-// Utility functions for pdfExport
-export const pdfExport = {
-  // TODO: Implement utility functions
+// Utility functions for pdfExport;
+export const pdfExport: unknown = {;
+  // TODO: Implement utility functions;
 };

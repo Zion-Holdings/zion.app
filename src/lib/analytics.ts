@@ -1,4 +1,4 @@
-// Module for analytics
-export const analytics = {
-  // TODO: Implement module functionality
+// Module for analytics;
+export const analytics: unknown = {;
+  // TODO: Implement module functionality;
 };

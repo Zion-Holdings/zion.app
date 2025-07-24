@@ -1,4 +1,4 @@
-// Utility functions for advancedLogCollector
-export const advancedLogCollector = {
-  // TODO: Implement utility functions
+// Utility functions for advancedLogCollector;
+export const advancedLogCollector: unknown = {;
+  // TODO: Implement utility functions;
 };

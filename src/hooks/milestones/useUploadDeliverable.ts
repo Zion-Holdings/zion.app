@@ -1,5 +1,5 @@
-// Hook for useUploadDeliverable
-export const useUseUploadDeliverable = () => {
-  // TODO: Implement hook logic
+// Hook for useUploadDeliverable;
+export const useUseUploadDeliverable: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

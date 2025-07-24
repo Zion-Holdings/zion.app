@@ -1,4 +1,4 @@
-// Module for onsiteServicePricing
-export const onsiteServicePricing = {
-  // TODO: Implement module functionality
+// Module for onsiteServicePricing;
+export const onsiteServicePricing: unknown = {;
+  // TODO: Implement module functionality;
 };

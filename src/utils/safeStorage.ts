@@ -1,4 +1,4 @@
-// Utility functions for safeStorage
-export const safeStorage = {
-  // TODO: Implement utility functions
+// Utility functions for safeStorage;
+export const safeStorage: unknown = {;
+  // TODO: Implement utility functions;
 };

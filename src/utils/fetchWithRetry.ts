@@ -1,4 +1,4 @@
-// Utility functions for fetchWithRetry
-export const fetchWithRetry = {
-  // TODO: Implement utility functions
+// Utility functions for fetchWithRetry;
+export const fetchWithRetry: unknown = {;
+  // TODO: Implement utility functions;
 };

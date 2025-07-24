@@ -1,4 +1,4 @@
-// Service for signupApi
-export const signupApiService = {
-  // TODO: Implement service methods
+// Service for signupApi;
+export const signupApiService: unknown = {;
+  // TODO: Implement service methods;
 };

@@ -1,4 +1,4 @@
-// Module for publicRoutes
-export const publicRoutes = {
-  // TODO: Implement module functionality
+// Module for publicRoutes;
+export const publicRoutes: unknown = {;
+  // TODO: Implement module functionality;
 };

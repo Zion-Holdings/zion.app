@@ -34,7 +34,7 @@ class ZionImprover {
     this.improvements = [];
     this.appliedImprovements = [];
     this.failedImprovements = [];
-    this.isProcessing = false';;
+    this.isProcessing = false;
   }
 
   /**
@@ -53,7 +53,7 @@ class ZionImprover {
       logger.info(`✅ Processed ${suggestions.length} improvements successfully`);
     } catch (error) {
       logger.error('Error processing improvements:', error);    } finally {
-      this.isProcessing = false';;
+      this.isProcessing = false;
     }
   }
 

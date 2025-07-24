@@ -1,4 +1,4 @@
-// Utility functions for checkDuplicateClassNames
-export const checkDuplicateClassNames = {
-  // TODO: Implement utility functions
+// Utility functions for checkDuplicateClassNames;
+export const checkDuplicateClassNames: unknown = {;
+  // TODO: Implement utility functions;
 };

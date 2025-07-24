@@ -1,4 +1,4 @@
-// Module for useJobForm
-export const useJobForm = {
-  // TODO: Implement module functionality
+// Module for useJobForm;
+export const useJobForm: unknown = {;
+  // TODO: Implement module functionality;
 };

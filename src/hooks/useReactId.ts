@@ -1,5 +1,5 @@
-// Hook for useReactId
-export const useUseReactId = () => {
-  // TODO: Implement hook logic
+// Hook for useReactId;
+export const useUseReactId: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

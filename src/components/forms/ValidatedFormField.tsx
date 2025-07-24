@@ -1,10 +1,10 @@
 import React from 'react';
-
-export default function ValidatedFormField() {
-  return (
-    <div>
-      <h1>ValidatedFormField</h1>
-      <p>Component placeholder - needs implementation</p>
-    </div>
+;
+export default function ValidatedFormField() {;
+  return (;
+    <div>;
+      <h1>ValidatedFormField</h1>;
+      <p>Component placeholder - needs implementation</p>;
+    </div>;
   );
 }

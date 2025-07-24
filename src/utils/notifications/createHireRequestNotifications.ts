@@ -1,4 +1,4 @@
-// Utility functions for createHireRequestNotifications
-export const createHireRequestNotifications = {
-  // TODO: Implement utility functions
+// Utility functions for createHireRequestNotifications;
+export const createHireRequestNotifications: unknown = {;
+  // TODO: Implement utility functions;
 };

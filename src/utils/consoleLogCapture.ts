@@ -1,4 +1,4 @@
-// Utility functions for consoleLogCapture
-export const consoleLogCapture = {
-  // TODO: Implement utility functions
+// Utility functions for consoleLogCapture;
+export const consoleLogCapture: unknown = {;
+  // TODO: Implement utility functions;
 };

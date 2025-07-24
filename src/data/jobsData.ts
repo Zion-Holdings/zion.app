@@ -1,4 +1,4 @@
-// Module for jobsData
-export const jobsData = {
-  // TODO: Implement module functionality
+// Module for jobsData;
+export const jobsData: unknown = {;
+  // TODO: Implement module functionality;
 };

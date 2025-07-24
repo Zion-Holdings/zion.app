@@ -1,5 +1,5 @@
-// Hook for useResumeList
-export const useUseResumeList = () => {
-  // TODO: Implement hook logic
+// Hook for useResumeList;
+export const useUseResumeList: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

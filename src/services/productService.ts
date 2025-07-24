@@ -1,4 +1,4 @@
-// Service for productService
-export const productServiceService = {
-  // TODO: Implement service methods
+// Service for productService;
+export const productServiceService: unknown = {;
+  // TODO: Implement service methods;
 };

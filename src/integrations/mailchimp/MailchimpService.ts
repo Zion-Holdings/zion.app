@@ -1,4 +1,4 @@
-// Module for MailchimpService
-export const MailchimpService = {
-  // TODO: Implement module functionality
+// Module for MailchimpService;
+export const MailchimpService: unknown = {;
+  // TODO: Implement module functionality;
 };

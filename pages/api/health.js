@@ -1,10 +1,1 @@
-export default function handler(req, res) {
-  res.status(200).json({
-    status: 'healthy',
-    timestamp: new Date().toISOString(),
-    message: 'App is running successfully!',
-    automation: 'completed',
-    nodeVersion: process.version,
-    environment: process.env.NODE_ENV || 'development'
-  });
-}
+export default function handler(req, res) { res.status(200).json({ status: 'healthy', timestamp: new Date().toISOString(), message: 'App is running successfully!', automation: 'completed', nodeVersion: process.version, environment: process.env.NODE_ENV || 'development' }); }

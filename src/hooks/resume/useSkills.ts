@@ -1,5 +1,5 @@
-// Hook for useSkills
-export const useUseSkills = () => {
-  // TODO: Implement hook logic
+// Hook for useSkills;
+export const useUseSkills: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

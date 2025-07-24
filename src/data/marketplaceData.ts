@@ -1,4 +1,4 @@
-// Module for marketplaceData
-export const marketplaceData = {
-  // TODO: Implement module functionality
+// Module for marketplaceData;
+export const marketplaceData: unknown = {;
+  // TODO: Implement module functionality;
 };

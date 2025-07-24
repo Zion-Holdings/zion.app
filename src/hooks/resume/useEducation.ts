@@ -1,5 +1,5 @@
-// Hook for useEducation
-export const useUseEducation = () => {
-  // TODO: Implement hook logic
+// Hook for useEducation;
+export const useUseEducation: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

@@ -1,5 +1,5 @@
-// Hook for useWishlist
-export const useUseWishlist = () => {
-  // TODO: Implement hook logic
+// Hook for useWishlist;
+export const useUseWishlist: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

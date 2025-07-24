@@ -1,4 +1,4 @@
-// Service for forumPostService
-export const forumPostServiceService = {
-  // TODO: Implement service methods
+// Service for forumPostService;
+export const forumPostServiceService: unknown = {;
+  // TODO: Implement service methods;
 };

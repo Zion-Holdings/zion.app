@@ -1,4 +1,4 @@
-// Service for apiClient
-export const apiClientService = {
-  // TODO: Implement service methods
+// Service for apiClient;
+export const apiClientService: unknown = {;
+  // TODO: Implement service methods;
 };

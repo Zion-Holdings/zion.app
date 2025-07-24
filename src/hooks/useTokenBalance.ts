@@ -1,5 +1,5 @@
-// Hook for useTokenBalance
-export const useUseTokenBalance = () => {
-  // TODO: Implement hook logic
+// Hook for useTokenBalance;
+export const useUseTokenBalance: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

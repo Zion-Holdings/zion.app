@@ -414,7 +414,7 @@ const results = {};
         results[errorType] = await';; fixStrategy();
       } catch (error) {
         this.log(`Error applying ${errorType} fix: ${error.message}`, error');
-        results[errorType] = false';;
+        results[errorType] = false;
       }
     }
 

@@ -1,4 +1,4 @@
-// Module for server
-export const server = {
-  // TODO: Implement module functionality
+// Module for server;
+export const server: unknown = {;
+  // TODO: Implement module functionality;
 };

@@ -1,13 +1,26 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "🔍 Checking commit message format..."
+echo "🚀 Enhanced Commit Message Validation..."
 
-# Example: enforce conventional commits
-if ! grep -qE '^(feat|fix|docs|style|refactor|perf|test|chore|revert)((.+))?: .{1,50}' "$1"; then
-    echo "❌ Commit message does not follow Conventional Commits format."
-    echo "   Please use: <type>(<scope>): <subject>"
+# Validate commit message format
+COMMIT_MSG_FILE=$1
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+
+# Check for conventional commit format
+if ! echo "$COMMIT_MSG" | grep -qE "^(feat|fix|docs|style|refactor|test|chore|perf|ci|build|revert)((.+))?: .+"; then
+    echo "❌ Commit message does not follow conventional commit format"
+    echo "Expected format: type(scope): description"
+    echo "Types: feat, fix, docs, style, refactor, test, chore, perf, ci, build, revert"
+    echo "Example: feat(auth): add login functionality"
     exit 1
 fi
 
-echo "✅ Commit message format is valid!"
+# Check message length
+MSG_LENGTH=$(echo "$COMMIT_MSG" | wc -c)
+if [ "$MSG_LENGTH" -gt 72 ]; then
+    echo "⚠️  Commit message is longer than 72 characters"
+    echo "Consider using a shorter description"
+fi
+
+echo "✅ Commit message validation passed!"

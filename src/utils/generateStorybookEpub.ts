@@ -1,4 +1,4 @@
-// Utility functions for generateStorybookEpub
-export const generateStorybookEpub = {
-  // TODO: Implement utility functions
+// Utility functions for generateStorybookEpub;
+export const generateStorybookEpub: unknown = {;
+  // TODO: Implement utility functions;
 };

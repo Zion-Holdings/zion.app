@@ -1,4 +1,4 @@
-// Utility functions for profileConverter
-export const profileConverter = {
-  // TODO: Implement utility functions
+// Utility functions for profileConverter;
+export const profileConverter: unknown = {;
+  // TODO: Implement utility functions;
 };

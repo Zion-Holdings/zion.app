@@ -1,4 +1,4 @@
-// Service for jobService
-export const jobServiceService = {
-  // TODO: Implement service methods
+// Service for jobService;
+export const jobServiceService: unknown = {;
+  // TODO: Implement service methods;
 };

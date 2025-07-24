@@ -1,4 +1,4 @@
-// Module for interests
-export const interests = {
-  // TODO: Implement module functionality
+// Module for interests;
+export const interests: unknown = {;
+  // TODO: Implement module functionality;
 };

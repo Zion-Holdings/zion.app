@@ -1,4 +1,4 @@
-// Module for sortOptions
-export const sortOptions = {
-  // TODO: Implement module functionality
+// Module for sortOptions;
+export const sortOptions: unknown = {;
+  // TODO: Implement module functionality;
 };

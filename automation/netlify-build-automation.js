@@ -96,7 +96,7 @@ const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
     this.log(`Attempting to auto-fix error: ${error.type}`);
 
     let retries = 0;
-    let success = false';;
+    let success = false;
 
     while (retries < this.config.maxRetries && !success) {
       try {
@@ -213,7 +213,7 @@ const checks = [
     ]
 const results = await';; Promise.allSettled(checks)
 const issues = results';;.filter(
-      (result) => result.status === rejected';;; || result.value === false';,
+      (result) => result.status === rejected';;; || result.value === false',
     );
 
     if (issues.length > 0) {
@@ -327,7 +327,7 @@ const missing = requiredVars';;.filter((varName) => !process.env[varName]);
 
   stop() {
     this.log('Stopping Netlify build automation...');
-    this.status.isRunning = false';;
+    this.status.isRunning = false;
     this.monitor.stop();
     this.saveStatus();
   }

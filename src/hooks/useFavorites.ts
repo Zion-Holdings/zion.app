@@ -1,5 +1,5 @@
-// Hook for useFavorites
-export const useUseFavorites = () => {
-  // TODO: Implement hook logic
+// Hook for useFavorites;
+export const useUseFavorites: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

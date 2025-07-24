@@ -1,4 +1,4 @@
-// Type definitions for prompts
-export interface prompts {
-  // TODO: Add proper type definitions
-}
+// Type definitions for prompts;
+export interface prompts {;
+  // TODO: Add proper type definitions;
+};

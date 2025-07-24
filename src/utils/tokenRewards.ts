@@ -1,4 +1,4 @@
-// Utility functions for tokenRewards
-export const tokenRewards = {
-  // TODO: Implement utility functions
+// Utility functions for tokenRewards;
+export const tokenRewards: unknown = {;
+  // TODO: Implement utility functions;
 };

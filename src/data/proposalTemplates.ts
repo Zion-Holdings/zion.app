@@ -1,4 +1,4 @@
-// Module for proposalTemplates
-export const proposalTemplates = {
-  // TODO: Implement module functionality
+// Module for proposalTemplates;
+export const proposalTemplates: unknown = {;
+  // TODO: Implement module functionality;
 };

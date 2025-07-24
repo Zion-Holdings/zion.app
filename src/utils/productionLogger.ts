@@ -1,4 +1,4 @@
-// Utility functions for productionLogger
-export const productionLogger = {
-  // TODO: Implement utility functions
+// Utility functions for productionLogger;
+export const productionLogger: unknown = {;
+  // TODO: Implement utility functions;
 };

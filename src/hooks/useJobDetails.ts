@@ -1,5 +1,5 @@
-// Hook for useJobDetails
-export const useUseJobDetails = () => {
-  // TODO: Implement hook logic
+// Hook for useJobDetails;
+export const useUseJobDetails: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

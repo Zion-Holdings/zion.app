@@ -1,4 +1,4 @@
-// Service for marketplace
-export const marketplaceService = {
-  // TODO: Implement service methods
+// Service for marketplace;
+export const marketplaceService: unknown = {;
+  // TODO: Implement service methods;
 };

@@ -1,4 +1,4 @@
-// Service for constants
-export const constantsService = {
-  // TODO: Implement service methods
+// Service for constants;
+export const constantsService: unknown = {;
+  // TODO: Implement service methods;
 };

@@ -9,7 +9,7 @@ class EnhancedAutonomousCommit {
     constructor() {
         this.projectRoot = process.cwd();
         this.config = this.loadConfig();
-        this.logFile = path.join(__dirname, 'logs', 'enhanced-autonomous-commit.log');
+        this.logFile = path.join(__dirname, 'logs', 'autonomous-commit.log');
         this.ensureLogDirectory();
     }
 
@@ -24,9 +24,7 @@ class EnhancedAutonomousCommit {
             branch: 'main',
             autoPush: true,
             enableLogging: true,
-            autoFixEnabled: true,
-            performanceThreshold: 80,
-            securityLevel: 'high'
+            autoFixEnabled: true
         };
     }
 
@@ -68,16 +66,6 @@ class EnhancedAutonomousCommit {
         }
     }
 
-    async getStagedFiles() {
-        try {
-            const staged = execSync('git diff --cached --name-only', { encoding: 'utf8' });
-            return staged.trim().split('\n').filter(line => line.length > 0);
-        } catch (error) {
-            this.log(`Error getting staged files: ${error.message}`, 'error');
-            return [];
-        }
-    }
-
     async stageFiles(files) {
         try {
             if (files.length === 0) return true;
@@ -95,8 +83,7 @@ class EnhancedAutonomousCommit {
     generateCommitMessage(files) {
         const fileTypes = this.analyzeFileTypes(files);
         const description = this.generateDescription(fileTypes);
-        const changeType = this.determineChangeType(fileTypes);
-        return this.config.commitMessageTemplate.replace('{description}', `${changeType}: ${description}`);
+        return this.config.commitMessageTemplate.replace('{description}', description);
     }
 
     analyzeFileTypes(files) {
@@ -106,29 +93,6 @@ class EnhancedAutonomousCommit {
             types[ext] = (types[ext] || 0) + 1;
         });
         return types;
-    }
-
-    determineChangeType(fileTypes) {
-        const hasTS = fileTypes['.ts'] || fileTypes['.tsx'];
-        const hasJS = fileTypes['.js'] || fileTypes['.jsx'];
-        const hasCSS = fileTypes['.css'] || fileTypes['.scss'];
-        const hasJSON = fileTypes['.json'];
-        const hasMD = fileTypes['.md'];
-        const hasHTML = fileTypes['.html'];
-
-        if (hasTS || hasJS) {
-            return 'fix';
-        } else if (hasCSS) {
-            return 'style';
-        } else if (hasJSON) {
-            return 'chore';
-        } else if (hasMD) {
-            return 'docs';
-        } else if (hasHTML) {
-            return 'feat';
-        } else {
-            return 'fix';
-        }
     }
 
     generateDescription(fileTypes) {
@@ -142,10 +106,6 @@ class EnhancedAutonomousCommit {
                 descriptions.push(`${count} style file${count > 1 ? 's' : ''}`);
             } else if (ext === '.json') {
                 descriptions.push(`${count} config file${count > 1 ? 's' : ''}`);
-            } else if (ext === '.md') {
-                descriptions.push(`${count} documentation file${count > 1 ? 's' : ''}`);
-            } else if (ext === '.html') {
-                descriptions.push(`${count} HTML file${count > 1 ? 's' : ''}`);
             } else {
                 descriptions.push(`${count} ${ext.slice(1)} file${count > 1 ? 's' : ''}`);
             }
@@ -191,94 +151,6 @@ class EnhancedAutonomousCommit {
         }
     }
 
-    async checkPerformance() {
-        try {
-            this.log('Checking performance...');
-            if (fs.existsSync(path.join(__dirname, 'performance', 'performance-check.js'))) {
-                execSync('node automation/performance/performance-check.js', { stdio: 'pipe' });
-                this.log('Performance check completed');
-            }
-            return true;
-        } catch (error) {
-            this.log(`Performance check failed: ${error.message}`, 'warn');
-            return false;
-        }
-    }
-
-    async checkSecurity() {
-        try {
-            this.log('Checking security...');
-            execSync('npm audit --audit-level=moderate', { stdio: 'pipe' });
-            this.log('Security check completed');
-            return true;
-        } catch (error) {
-            this.log(`Security check failed: ${error.message}`, 'warn');
-            return false;
-        }
-    }
-
-    async generateCommitReport(commitHash) {
-        try {
-            const report = {
-                timestamp: new Date().toISOString(),
-                commitHash: commitHash,
-                branch: this.config.branch,
-                filesChanged: await this.getStagedFiles(),
-                performance: await this.checkPerformance(),
-                security: await this.checkSecurity(),
-                autoFix: this.config.autoFixEnabled
-            };
-
-            const reportPath = path.join(__dirname, 'reports', `commit-${commitHash}.json`);
-            fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-            this.log(`Commit report generated: ${reportPath}`);
-            return true;
-        } catch (error) {
-            this.log(`Failed to generate commit report: ${error.message}`, 'error');
-            return false;
-        }
-    }
-
-    async watch() {
-        this.log('👀 Starting enhanced file watcher for autonomous commits...');
-        
-        const chokidar = require('chokidar');
-        const watchConfig = this.config.watchMode || {
-            patterns: ['src/**/*', 'components/**/*', 'pages/**/*'],
-            ignored: ['node_modules/**/*', '.git/**/*'],
-            delay: 5000
-        };
-
-        const watcher = chokidar.watch(watchConfig.patterns, {
-            ignored: watchConfig.ignored,
-            persistent: true,
-            ignoreInitial: true
-        });
-
-        let commitTimeout;
-        const commitDelay = watchConfig.delay || 5000;
-
-        watcher.on('change', (filePath) => {
-            this.log(`File changed: ${filePath}`);
-            
-            // Clear existing timeout
-            if (commitTimeout) {
-                clearTimeout(commitTimeout);
-            }
-            
-            // Set new timeout for commit
-            commitTimeout = setTimeout(async () => {
-                await this.execute();
-            }, commitDelay);
-        });
-
-        watcher.on('error', (error) => {
-            this.log(`Watcher error: ${error.message}`, 'error');
-        });
-
-        this.log(`✅ Enhanced file watcher started. Changes will be auto-committed after ${commitDelay}ms of inactivity.`);
-    }
-
     async execute() {
         this.log('🚀 Starting enhanced autonomous commit...');
         
@@ -306,12 +178,6 @@ class EnhancedAutonomousCommit {
             return;
         }
 
-        // Get commit hash for report
-        const commitHash = execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
-
-        // Generate commit report
-        await this.generateCommitReport(commitHash);
-
         // Push if enabled
         if (this.config.autoPush) {
             await this.push();
@@ -321,52 +187,9 @@ class EnhancedAutonomousCommit {
     }
 }
 
-// Main execution
+// Run the script
 const autonomousCommit = new EnhancedAutonomousCommit();
-const command = process.argv[2] || 'execute';
-
-switch (command) {
-    case 'execute':
-        autonomousCommit.execute().catch(error => {
-            console.error('Enhanced autonomous commit failed:', error.message);
-            process.exit(1);
-        });
-        break;
-    case 'watch':
-        autonomousCommit.watch().catch(error => {
-            console.error('Watch mode failed:', error.message);
-            process.exit(1);
-        });
-        break;
-    case 'test':
-        console.log('🧪 Testing enhanced autonomous commit system...');
-        autonomousCommit.log('Test log entry');
-        console.log('✅ Test completed successfully');
-        break;
-    default:
-        console.log(`
-🚀 Enhanced Autonomous Commit System
-
-Usage:
-  node automation/enhanced-autonomous-commit.js [command]
-
-Commands:
-  execute  - Execute enhanced autonomous commit
-  watch    - Watch for file changes and auto-commit
-  test     - Test the system
-
-Features:
-  ✅ Intelligent commit message generation
-  ✅ Auto-fix capabilities
-  ✅ Performance monitoring
-  ✅ Security checks
-  ✅ Commit reporting
-  ✅ File watching
-  ✅ Configuration-driven behavior
-
-Examples:
-  node automation/enhanced-autonomous-commit.js execute
-  node automation/enhanced-autonomous-commit.js watch
-        `);
-        break;
-} 
+autonomousCommit.execute().catch(error => {
+    console.error('Autonomous commit failed:', error.message);
+    process.exit(1);
+});

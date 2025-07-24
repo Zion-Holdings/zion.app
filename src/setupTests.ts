@@ -1,4 +1,4 @@
-// Module for setupTests
-export const setupTests = {
-  // TODO: Implement module functionality
+// Module for setupTests;
+export const setupTests: unknown = {;
+  // TODO: Implement module functionality;
 };

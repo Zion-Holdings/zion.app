@@ -1,4 +1,4 @@
-// Module for ipfs
-export const ipfs = {
-  // TODO: Implement module functionality
+// Module for ipfs;
+export const ipfs: unknown = {;
+  // TODO: Implement module functionality;
 };

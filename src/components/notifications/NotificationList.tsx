@@ -1,10 +1,10 @@
 import React from 'react';
-
-export default function NotificationList() {
-  return (
-    <div>
-      <h1>NotificationList</h1>
-      <p>Component placeholder - needs implementation</p>
-    </div>
+;
+export default function NotificationList() {;
+  return (;
+    <div>;
+      <h1>NotificationList</h1>;
+      <p>Component placeholder - needs implementation</p>;
+    </div>;
   );
 }

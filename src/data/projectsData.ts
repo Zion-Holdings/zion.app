@@ -1,4 +1,4 @@
-// Module for projectsData
-export const projectsData = {
-  // TODO: Implement module functionality
+// Module for projectsData;
+export const projectsData: unknown = {;
+  // TODO: Implement module functionality;
 };

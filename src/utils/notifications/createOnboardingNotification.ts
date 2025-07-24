@@ -1,4 +1,4 @@
-// Utility functions for createOnboardingNotification
-export const createOnboardingNotification = {
-  // TODO: Implement utility functions
+// Utility functions for createOnboardingNotification;
+export const createOnboardingNotification: unknown = {;
+  // TODO: Implement utility functions;
 };

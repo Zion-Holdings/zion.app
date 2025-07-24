@@ -1,4 +1,4 @@
-// Utility functions for globalFetchInterceptor
-export const globalFetchInterceptor = {
-  // TODO: Implement utility functions
+// Utility functions for globalFetchInterceptor;
+export const globalFetchInterceptor: unknown = {;
+  // TODO: Implement utility functions;
 };

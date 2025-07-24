@@ -1,4 +1,4 @@
-// Module for categories
-export const categories = {
-  // TODO: Implement module functionality
+// Module for categories;
+export const categories: unknown = {;
+  // TODO: Implement module functionality;
 };

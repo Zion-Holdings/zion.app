@@ -1,4 +1,4 @@
-// Store slice for index
-export const indexSlice = {
-  // TODO: Implement store slice
+// Store slice for index;
+export const indexSlice: unknown = {;
+  // TODO: Implement store slice;
 };

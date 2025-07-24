@@ -1,4 +1,4 @@
-// Module for useHireRequestForm
-export const useHireRequestForm = {
-  // TODO: Implement module functionality
+// Module for useHireRequestForm;
+export const useHireRequestForm: unknown = {;
+  // TODO: Implement module functionality;
 };

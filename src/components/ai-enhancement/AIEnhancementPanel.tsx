@@ -1,10 +1,10 @@
 import React from 'react';
-
-export default function AIEnhancementPanel() {
-  return (
-    <div>
-      <h1>AIEnhancementPanel</h1>
-      <p>Component placeholder - needs implementation</p>
-    </div>
+;
+export default function AIEnhancementPanel() {;
+  return (;
+    <div>;
+      <h1>AIEnhancementPanel</h1>;
+      <p>Component placeholder - needs implementation</p>;
+    </div>;
   );
 }

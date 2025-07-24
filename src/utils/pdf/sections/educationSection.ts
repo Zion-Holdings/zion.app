@@ -1,4 +1,4 @@
-// Utility functions for educationSection
-export const educationSection = {
-  // TODO: Implement utility functions
+// Utility functions for educationSection;
+export const educationSection: unknown = {;
+  // TODO: Implement utility functions;
 };

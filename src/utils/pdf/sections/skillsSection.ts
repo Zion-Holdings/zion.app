@@ -1,4 +1,4 @@
-// Utility functions for skillsSection
-export const skillsSection = {
-  // TODO: Implement utility functions
+// Utility functions for skillsSection;
+export const skillsSection: unknown = {;
+  // TODO: Implement utility functions;
 };

@@ -1,5 +1,5 @@
-// Hook for usePricingSuggestionAnalytics
-export const useUsePricingSuggestionAnalytics = () => {
-  // TODO: Implement hook logic
+// Hook for usePricingSuggestionAnalytics;
+export const useUsePricingSuggestionAnalytics: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

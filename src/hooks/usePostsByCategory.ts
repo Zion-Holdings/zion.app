@@ -1,5 +1,5 @@
-// Hook for usePostsByCategory
-export const useUsePostsByCategory = () => {
-  // TODO: Implement hook logic
+// Hook for usePostsByCategory;
+export const useUsePostsByCategory: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

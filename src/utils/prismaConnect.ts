@@ -1,4 +1,4 @@
-// Utility functions for prismaConnect
-export const prismaConnect = {
-  // TODO: Implement utility functions
+// Utility functions for prismaConnect;
+export const prismaConnect: unknown = {;
+  // TODO: Implement utility functions;
 };

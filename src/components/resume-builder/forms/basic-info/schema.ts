@@ -1,4 +1,4 @@
-// Module for schema
-export const schema = {
-  // TODO: Implement module functionality
+// Module for schema;
+export const schema: unknown = {;
+  // TODO: Implement module functionality;
 };

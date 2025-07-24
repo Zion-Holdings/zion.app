@@ -1,4 +1,4 @@
-// Module for orbitdb
-export const orbitdb = {
-  // TODO: Implement module functionality
+// Module for orbitdb;
+export const orbitdb: unknown = {;
+  // TODO: Implement module functionality;
 };

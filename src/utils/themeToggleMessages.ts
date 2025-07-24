@@ -1,4 +1,4 @@
-// Utility functions for themeToggleMessages
-export const themeToggleMessages = {
-  // TODO: Implement utility functions
+// Utility functions for themeToggleMessages;
+export const themeToggleMessages: unknown = {;
+  // TODO: Implement utility functions;
 };

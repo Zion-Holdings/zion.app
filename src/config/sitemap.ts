@@ -1,4 +1,4 @@
-// Module for sitemap
-export const sitemap = {
-  // TODO: Implement module functionality
+// Module for sitemap;
+export const sitemap: unknown = {;
+  // TODO: Implement module functionality;
 };

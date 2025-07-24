@@ -1,4 +1,4 @@
-// Utility functions for customErrorReporter
-export const customErrorReporter = {
-  // TODO: Implement utility functions
+// Utility functions for customErrorReporter;
+export const customErrorReporter: unknown = {;
+  // TODO: Implement utility functions;
 };

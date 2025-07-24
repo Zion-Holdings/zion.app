@@ -1,10 +1,10 @@
 import React from 'react';
-
-export default function SummitPage() {
-  return (
-    <div>
-      <h1>SummitPage</h1>
-      <p>Component placeholder - needs implementation</p>
-    </div>
+;
+export default function SummitPage() {;
+  return (;
+    <div>;
+      <h1>SummitPage</h1>;
+      <p>Component placeholder - needs implementation</p>;
+    </div>;
   );
-}
+};

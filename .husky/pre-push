@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "🚀 Autonomous Pre-push System Starting..."
+echo "🚀 Enhanced Pre-push System Starting..."
 
 # Set environment variables for autonomous operation
 export AUTONOMOUS_MODE=true

@@ -1,4 +1,4 @@
-// Service for pricingSuggestionService
-export const pricingSuggestionServiceService = {
-  // TODO: Implement service methods
+// Service for pricingSuggestionService;
+export const pricingSuggestionServiceService: unknown = {;
+  // TODO: Implement service methods;
 };

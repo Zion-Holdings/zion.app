@@ -1,4 +1,4 @@
-// Service for index
-export const indexService = {
-  // TODO: Implement service methods
+// Service for index;
+export const indexService: unknown = {;
+  // TODO: Implement service methods;
 };

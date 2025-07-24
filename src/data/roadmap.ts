@@ -1,4 +1,4 @@
-// Module for roadmap
-export const roadmap = {
-  // TODO: Implement module functionality
+// Module for roadmap;
+export const roadmap: unknown = {;
+  // TODO: Implement module functionality;
 };

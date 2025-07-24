@@ -13,41 +13,41 @@ async function fixSyntaxErrors() {
   
   const automationDir = __dirname;
   const files = [
-    core/IntelligentAutomationOrchestrator.js',
-    core/AutonomousAutomationManager.js',
-    core/TaskScheduler.js',
-    core/NotificationManager.js',
-    core/AnomalyDetector.js',
-    core/ReportGenerator.js',
-    netlify-monitor.js',
-    netlify-error-fixer.js',
-    netlify-build-automation.js',
-    performance/monitor.js',
-    performance/frontend-fix.js',
-    continuous-improvement/enhanced-automation.js',
-    continuous-improvement/monitor.js',
-    continuous-improvement/improve.js',
-    tasks/DependencyUpdater.js
+    'core/IntelligentAutomationOrchestrator.js',
+    'core/AutonomousAutomationManager.js',
+    'core/TaskScheduler.js',
+    'core/NotificationManager.js',
+    'core/AnomalyDetector.js',
+    'core/ReportGenerator.js',
+    'netlify-monitor.js',
+    'netlify-error-fixer.js',
+    'netlify-build-automation.js',
+    'performance/monitor.js',
+    'performance/frontend-fix.js',
+    'continuous-improvement/enhanced-automation.js',
+    'continuous-improvement/monitor.js',
+    'continuous-improvement/improve.js',
+    'tasks/DependencyUpdater.js'
   ];
 
   for (const file of files) {
     const filePath = path.join(automationDir, file);
     try {
-      const content = await fs.readFile(filePath, utf8');
+      const content = await fs.readFile(filePath, 'utf8');
       
       // Fix common syntax errors
       let fixedContent = content
         // Fix require statements with extra quotes
-        .replace(/require';\(/g, require(')
-        .replace(/require';\(/g, require(')
+        .replace(/require'\(/g, "require('")
+        .replace(/require'\(/g, "require('")
         // Fix new statements with extra quotes
-        .replace(/new'; /g, new )
+        .replace(/new' /g, "new ")
         // Fix null assignments with extra quotes
-        .replace(/null';;/g, null;)
-        .replace(/null';/g, null')
+        .replace(/null';;/g, "null;")
+        .replace(/null';/g, "null'")
         // Fix false assignments with extra quotes
-        .replace(/false';;/g, false;)
-        .replace(/false';/g, false')
+        .replace(/false';;/g, "false;")
+        .replace(/false';/g, "false'")
         // Fix string literals with missing quotes
         .replace(/✅ Intelligent Automation Orchestrator initialized successfully',/g, "'✅ Intelligent Automation Orchestrator initialized successfully'")
         .replace(/healthy';/g, "'healthy'")
@@ -57,7 +57,7 @@ async function fixSyntaxErrors() {
         .replace(/anomalyDetector',/g, "'anomalyDetector'");
 
       if (content !== fixedContent) {
-        await fs.writeFile(filePath, fixedContent, utf8');
+        await fs.writeFile(filePath, fixedContent, 'utf8');
         console.log(`✅ Fixed: ${file}`);
       } else {
         console.log(`✅ No changes needed: ${file}`);

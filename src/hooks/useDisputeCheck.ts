@@ -1,5 +1,5 @@
-// Hook for useDisputeCheck
-export const useUseDisputeCheck = () => {
-  // TODO: Implement hook logic
+// Hook for useDisputeCheck;
+export const useUseDisputeCheck: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

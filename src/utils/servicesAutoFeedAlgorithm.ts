@@ -1,4 +1,4 @@
-// Utility functions for servicesAutoFeedAlgorithm
-export const servicesAutoFeedAlgorithm = {
-  // TODO: Implement utility functions
+// Utility functions for servicesAutoFeedAlgorithm;
+export const servicesAutoFeedAlgorithm: unknown = {;
+  // TODO: Implement utility functions;
 };

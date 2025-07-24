@@ -1,10 +1,10 @@
 import React from 'react';
-
-export default function LanguageSelector.test() {
-  return (
-    <div>
-      <h1>LanguageSelector.test</h1>
-      <p>Component placeholder - needs implementation</p>
-    </div>
+;
+export default function LanguageSelector.test() {;
+  return (;
+    <div>;
+      <h1>LanguageSelector.test</h1>;
+      <p>Component placeholder - needs implementation</p>;
+    </div>;
   );
 }

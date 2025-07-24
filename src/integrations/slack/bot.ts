@@ -1,4 +1,4 @@
-// Module for bot
-export const bot = {
-  // TODO: Implement module functionality
+// Module for bot;
+export const bot: unknown = {;
+  // TODO: Implement module functionality;
 };

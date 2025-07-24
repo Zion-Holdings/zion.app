@@ -1,4 +1,4 @@
-// Module for termsContent
-export const termsContent = {
-  // TODO: Implement module functionality
+// Module for termsContent;
+export const termsContent: unknown = {;
+  // TODO: Implement module functionality;
 };

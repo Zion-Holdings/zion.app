@@ -1,5 +1,5 @@
-// Hook for useSocialAuth
-export const useUseSocialAuth = () => {
-  // TODO: Implement hook logic
+// Hook for useSocialAuth;
+export const useUseSocialAuth: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

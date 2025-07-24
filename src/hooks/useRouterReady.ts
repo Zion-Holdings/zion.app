@@ -1,5 +1,5 @@
-// Hook for useRouterReady
-export const useUseRouterReady = () => {
-  // TODO: Implement hook logic
+// Hook for useRouterReady;
+export const useUseRouterReady: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

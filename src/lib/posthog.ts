@@ -1,4 +1,4 @@
-// Module for posthog
-export const posthog = {
-  // TODO: Implement module functionality
+// Module for posthog;
+export const posthog: unknown = {;
+  // TODO: Implement module functionality;
 };

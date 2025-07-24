@@ -1,5 +1,5 @@
-// Hook for useCreateMilestone
-export const useUseCreateMilestone = () => {
-  // TODO: Implement hook logic
+// Hook for useCreateMilestone;
+export const useUseCreateMilestone: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

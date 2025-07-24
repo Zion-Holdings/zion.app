@@ -1,4 +1,4 @@
-// Service for authService
-export const authServiceService = {
-  // TODO: Implement service methods
+// Service for authService;
+export const authServiceService: unknown = {;
+  // TODO: Implement service methods;
 };

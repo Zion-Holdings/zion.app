@@ -1,5 +1,5 @@
-// Hook for useWebhooks
-export const useUseWebhooks = () => {
-  // TODO: Implement hook logic
+// Hook for useWebhooks;
+export const useUseWebhooks: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

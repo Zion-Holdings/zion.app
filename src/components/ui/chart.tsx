@@ -1,10 +1,10 @@
 import React from 'react';
-
-export default function chart() {
-  return (
-    <div>
-      <h1>chart</h1>
-      <p>Component placeholder - needs implementation</p>
-    </div>
+;
+export default function chart() {;
+  return (;
+    <div>;
+      <h1>chart</h1>;
+      <p>Component placeholder - needs implementation</p>;
+    </div>;
   );
 }

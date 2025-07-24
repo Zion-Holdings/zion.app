@@ -1,4 +1,4 @@
-// Service for analyzeContent
-export const analyzeContentService = {
-  // TODO: Implement service methods
+// Service for analyzeContent;
+export const analyzeContentService: unknown = {;
+  // TODO: Implement service methods;
 };

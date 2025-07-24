@@ -1,4 +1,4 @@
-// Utility functions for memoization
-export const memoization = {
-  // TODO: Implement utility functions
+// Utility functions for memoization;
+export const memoization: unknown = {;
+  // TODO: Implement utility functions;
 };

@@ -1,4 +1,4 @@
-// Utility functions for server
-export const server = {
-  // TODO: Implement utility functions
+// Utility functions for server;
+export const server: unknown = {;
+  // TODO: Implement utility functions;
 };

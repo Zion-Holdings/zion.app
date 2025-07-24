@@ -1,4 +1,4 @@
-// Utility functions for logDashboard
-export const logDashboard = {
-  // TODO: Implement utility functions
+// Utility functions for logDashboard;
+export const logDashboard: unknown = {;
+  // TODO: Implement utility functions;
 };

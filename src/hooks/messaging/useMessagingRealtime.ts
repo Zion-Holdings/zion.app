@@ -1,5 +1,5 @@
-// Hook for useMessagingRealtime
-export const useUseMessagingRealtime = () => {
-  // TODO: Implement hook logic
+// Hook for useMessagingRealtime;
+export const useUseMessagingRealtime: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

@@ -1,4 +1,4 @@
-// Utility functions for generateBookPdf
-export const generateBookPdf = {
-  // TODO: Implement utility functions
+// Utility functions for generateBookPdf;
+export const generateBookPdf: unknown = {;
+  // TODO: Implement utility functions;
 };

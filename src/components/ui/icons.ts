@@ -1,4 +1,4 @@
-// Module for icons
-export const icons = {
-  // TODO: Implement module functionality
+// Module for icons;
+export const icons: unknown = {;
+  // TODO: Implement module functionality;
 };

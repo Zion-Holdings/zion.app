@@ -1,5 +1,5 @@
-// Hook for useResumeActions
-export const useUseResumeActions = () => {
-  // TODO: Implement hook logic
+// Hook for useResumeActions;
+export const useUseResumeActions: unknown = () => {
+  // TODO: Implement hook logic;
   return {};
 };

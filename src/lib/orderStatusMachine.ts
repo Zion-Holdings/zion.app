@@ -1,4 +1,4 @@
-// Module for orderStatusMachine
-export const orderStatusMachine = {
-  // TODO: Implement module functionality
+// Module for orderStatusMachine;
+export const orderStatusMachine: unknown = {;
+  // TODO: Implement module functionality;
 };
