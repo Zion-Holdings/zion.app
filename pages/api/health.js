@@ -1,8 +1,10 @@
-default function handler(req, res) {
+export default function handler(req, res) {
   res.status(200).json({
-    status: ok',
+    status: 'healthy',
     timestamp: new Date().toISOString(),
-    message: Zion App is running successfully!',
-    mode: Simple Working App',
-    build: Working
+    message: 'App is running successfully!',
+    automation: 'completed',
+    nodeVersion: process.version,
+    environment: process.env.NODE_ENV || 'development'
   });
+}
