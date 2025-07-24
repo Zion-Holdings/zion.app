@@ -67,14 +67,6 @@ else
     echo "❌ No automation summary available"
 fi
 
-# Check scheduler health if it exists
-if [ -f "automation/scheduler-health.json" ]; then
-    echo ""
-    echo "🏥 Scheduler Health:"
-    echo "==================="
-    cat automation/scheduler-health.json | jq -r '. | "   Status: \(if .isRunning then "Running" else "Stopped" end)\n   Last Run: \(.lastRun)\n   Next Run: \(.nextRun)\n   Success Rate: \(.successRate)%"' 2>/dev/null || echo "   (health file exists but cannot be parsed)"
-fi
-
 echo ""
 echo "🔧 Quick Commands:"
 echo "=================="
@@ -82,4 +74,3 @@ echo "   View all logs: tail -f logs/cron-*.log"
 echo "   Check cron jobs: crontab -l"
 echo "   Remove automation jobs: ./scripts/remove-cron-automation.sh"
 echo "   Start manual automation: ./scripts/start-master-automation.sh"
-echo "   View master scheduler logs: tail -f logs/master-automation-scheduler.log"
