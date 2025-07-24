@@ -2,6 +2,6 @@
 export const serverPolyfill = {
   // TODO: Implement server-polyfill functionality
   init: () => {
-    console.log('Server polyfill initialized');
-  }
+    //     console.log('Server polyfill initialized');
+  },
 };

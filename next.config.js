@@ -1,22 +1,17 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // Disable all experimental features
-  experimental: {},
-  // Ignore all errors
-  typescript: {
-    ignoreBuildErrors: true
+module.exports = {
+  reactStrictMode: true,
+  swcMinify: false,
+  experimental: {
+    optimizePackageImports: []
   },
-  eslint: {
-    ignoreDuringBuilds: true
-  },
-  // Disable image optimization
-  images: {
-    unoptimized: true
-  },
-  // Remove output: export' to allow API routes
-  trailingSlash: true,
-  // Minimal environment
-  env: {}
+  // Disable problematic features
+  webpack: (config, { dev, isServer }) => {
+    if (dev) {
+      config.watchOptions = {
+        poll: false,
+        ignored: ['**/node_modules', '**/.git', '**/.next']
+      };
+    }
+    return config;
+  }
 };
-
-module.exports = nextConfig;
