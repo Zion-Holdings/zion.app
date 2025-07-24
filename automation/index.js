@@ -8,13 +8,12 @@
  * coordinates all automation components.
  */
 
-const IntelligentAutomationOrchestrator = require('./core/IntelligentAutomationOrchestrator');
 const path = require('path');
 const fs = require('fs');
 
 // Load configuration
 function loadConfiguration() {
-  const configPath = path.join(__dirname, 'config.json');
+  const configPath = path.join(__dirname, 'automation-config.json');
 
   if (fs.existsSync(configPath)) {
     try {
@@ -22,7 +21,7 @@ function loadConfiguration() {
       return JSON.parse(configData);
     } catch (error) {
       console.warn(
-        '⚠️ Failed to load config.json, using defaults:',
+        '⚠️ Failed to load automation-config.json, using defaults:',
         error.message,
       );
     }
@@ -92,32 +91,26 @@ async function main() {
     const config = loadConfiguration();
     console.log('📋 Configuration loaded');
 
-    // Create orchestrator
-    const orchestrator = new IntelligentAutomationOrchestrator(config);
+    // Start the unified automation launcher
+    const { UnifiedAutomationLauncher } = require('./unified-automation-launcher');
+    const launcher = new UnifiedAutomationLauncher();
 
-    // Setup event listeners
-    orchestrator.on('initialized', () => {
-      console.log('✅ System initialized successfully');
+    // Start all automation components
+    await launcher.startAll();
+
+    console.log('🎉 Intelligent Automation System is now running!');
+    console.log('='.repeat(60));
+    console.log('📊 Dashboard: http://localhost:' + config.dashboard.port);
+    console.log('🔧 Press Ctrl+C to stop the system');
+    console.log('='.repeat(60));
+
+    // Keep the process running
+    process.on('SIGINT', async () => {
+      console.log('\n🛑 Shutting down automation system...');
+      await launcher.stopAll();
+      process.exit(0);
     });
 
-    orchestrator.on('started', () => {
-      console.log('🎉 Intelligent Automation System is now running!');
-      console.log('='.repeat(60));
-      console.log('📊 Dashboard: http://localhost:' + config.dashboard.port);
-      console.log('🔧 Press Ctrl+C to stop the system');
-      console.log('='.repeat(60));
-    });
-
-    orchestrator.on('stopped', () => {
-      console.log('🛑 System stopped gracefully');
-    });
-
-    orchestrator.on('error', (error) => {
-      console.error('❌ System error:', error);
-    });
-
-    // Start the orchestrator
-    await orchestrator.start();
   } catch (error) {
     console.error('❌ Failed to start automation system:', error);
     process.exit(1);
@@ -211,10 +204,10 @@ function showVersion() {
       const packageData = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
       console.log(`Intelligent Automation System v${packageData.version}`);
     } catch (error) {
-      console.log('Intelligent Automation System v1.0.0');
+      console.log('Intelligent Automation System v2.0.0');
     }
   } else {
-    console.log('Intelligent Automation System v1.0.0');
+    console.log('Intelligent Automation System v2.0.0');
   }
 }
 
@@ -233,7 +226,7 @@ if (require.main === module) {
   }
 
   if (options.dryRun) {
-    process.env.DRY_RUN = 'true';
+    process.env.DRY_RUN = true;
   }
 
   // Start the system
@@ -244,7 +237,6 @@ if (require.main === module) {
 }
 
 module.exports = {
-  IntelligentAutomationOrchestrator,
   main,
   loadConfiguration
 };
