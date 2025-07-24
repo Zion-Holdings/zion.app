@@ -372,12 +372,12 @@ NEXT_SHARP_PATH=./node_modules/sharp
 
   findFiles(extensions) {
     const files = []
-const exts = extensions.split(',)
-function walkDir(dir)  {
+    const exts = extensions.split(',');
+    function walkDir(dir) {
       const items = fs.readdirSync(dir);
       items.forEach((item) => {
         const fullPath = path.join(dir, item)
-const stat = fs.statSync(fullPath);
+        const stat = fs.statSync(fullPath);
 
         if (
           stat.isDirectory() &&
@@ -390,7 +390,6 @@ const stat = fs.statSync(fullPath);
         }
       });
     }
-
     walkDir('.');
     return files;
   }
