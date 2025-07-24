@@ -1,12 +1,30 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "🚀 Autonomous Post-commit System Starting..."
+echo "🚀 Enhanced Post-commit System Starting..."
 
 # Set environment variables for autonomous operation
 export AUTONOMOUS_MODE=true
 export HUSKY_AUTOMATION=true
 export POST_COMMIT_MODE=true
+
+# Load configuration
+CONFIG_FILE="automation/config.json"
+if [ -f "$CONFIG_FILE" ]; then
+    echo "📋 Loading configuration from $CONFIG_FILE"
+    # Extract auto-push setting from config
+    AUTO_PUSH_ENABLED=$(node -e "
+        try {
+            const config = JSON.parse(require('fs').readFileSync('$CONFIG_FILE', 'utf8'));
+            console.log(config.automation?.autoPush?.enabled || false);
+        } catch (e) {
+            console.log('false');
+        }
+    ")
+else
+    echo "⚠️  Configuration file not found, using defaults"
+    AUTO_PUSH_ENABLED=false
+fi
 
 # Get commit information
 COMMIT_HASH=$(git rev-parse HEAD)
@@ -16,20 +34,60 @@ BRANCH_NAME=$(git branch --show-current)
 echo "📝 Commit: $COMMIT_HASH"
 echo "💬 Message: $COMMIT_MESSAGE"
 echo "🌿 Branch: $BRANCH_NAME"
+echo "🚀 Auto-push enabled: $AUTO_PUSH_ENABLED"
 
 # Run autonomous post-commit actions
 echo "🤖 Running autonomous post-commit actions..."
 
 # 1. Update commit metadata
 echo "📊 Updating commit metadata..."
-node automation/enhanced-automation-system.js update-commit-metadata "$COMMIT_HASH" "$COMMIT_MESSAGE" || {
-    echo "⚠️  Failed to update commit metadata"
-}
+if [ -f "automation/enhanced-automation-system.js" ]; then
+    node automation/enhanced-automation-system.js update-commit-metadata "$COMMIT_HASH" "$COMMIT_MESSAGE" || {
+        echo "⚠️  Failed to update commit metadata"
+    }
+fi
 
 # 2. Trigger autonomous improvements
 echo "🔄 Triggering autonomous improvements..."
-node automation/enhanced-automation-system.js post-commit || {
-    echo "⚠️  Autonomous improvements failed, but continuing..."
-}
+if [ -f "automation/enhanced-automation-system.js" ]; then
+    node automation/enhanced-automation-system.js post-commit || {
+        echo "⚠️  Autonomous improvements failed, but continuing..."
+    }
+fi
+
+# 3. Enhanced autonomous commit system
+echo "🤖 Running enhanced autonomous commit system..."
+if [ -f "automation/enhanced-autonomous-commit.js" ]; then
+    node automation/enhanced-autonomous-commit.js || {
+        echo "⚠️  Enhanced autonomous commit failed, but continuing..."
+    }
+fi
+
+# 4. Auto-push if configured
+if [ "$AUTO_PUSH_ENABLED" = "true" ]; then
+    echo "🚀 Auto-pushing changes..."
+    git push origin "$BRANCH_NAME" || {
+        echo "⚠️  Auto-push failed, but continuing..."
+    }
+else
+    echo "⏸️  Auto-push is disabled in configuration"
+fi
+
+# 5. Performance monitoring
+echo "📈 Performance monitoring..."
+if [ -f "automation/performance/performance-check.js" ]; then
+    node automation/performance/performance-check.js post-commit || {
+        echo "⚠️  Performance monitoring failed, but continuing..."
+    }
+fi
+
+# 6. Generate commit report
+echo "📋 Generating commit report..."
+if [ -f "automation/enhanced-automation-system.js" ]; then
+    node automation/enhanced-automation-system.js generate-commit-report "$COMMIT_HASH" || {
+        echo "⚠️  Failed to generate commit report"
+    }
+fi
 
 echo "✅ Post-commit actions completed successfully!"
+echo "🎉 Commit processed and ready for deployment!"

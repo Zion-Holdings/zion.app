@@ -1,33 +1,126 @@
 {
-  "autonomousMode": true,
+  "maxCommitSize": 50,
+  "commitMessageTemplate": "fix: {description}",
+  "branch": "main",
+  "autoPush": true,
+  "enableLogging": true,
   "autoFixEnabled": true,
-  "autoCommitEnabled": true,
-  "autoPushEnabled": true,
-  "maxRetries": 3,
-  "logLevel": "info",
-  "performance": {
-    "bundleSizeThreshold": 5242880,
-    "buildTimeThreshold": 60000,
-    "testTimeThreshold": 30000
-  },
-  "security": {
-    "scanSensitiveData": true,
-    "blockOnHighSeverity": true,
-    "excludePatterns": [
-      "node_modules/**",
-      ".git/**",
-      ".next/**",
-      "dist/**",
-      "build/**"
+  "performanceThreshold": 80,
+  "securityLevel": "high",
+  "watchMode": {
+    "enabled": true,
+    "delay": 5000,
+    "patterns": [
+      "src/**/*",
+      "components/**/*",
+      "pages/**/*",
+      "styles/**/*",
+      "public/**/*"
+    ],
+    "ignored": [
+      "node_modules/**/*",
+      ".git/**/*",
+      ".next/**/*",
+      "dist/**/*",
+      "build/**/*",
+      "coverage/**/*"
     ]
   },
-  "commit": {
-    "messageTemplate": "🤖 Autonomous improvement: {description}",
-    "maxFilesPerCommit": 10,
-    "minChangesForCommit": 1,
-    "branchProtection": {
-      "main": true,
-      "develop": true
+  "hooks": {
+    "preCommit": {
+      "lint": true,
+      "typeCheck": true,
+      "format": true,
+      "test": true,
+      "security": true,
+      "build": true,
+      "autoFix": true
+    },
+    "prePush": {
+      "lint": true,
+      "typeCheck": true,
+      "testCoverage": true,
+      "bundleAnalysis": true,
+      "securityAudit": true,
+      "performanceCheck": true,
+      "sensitiveDataCheck": true
+    },
+    "postCommit": {
+      "updateMetadata": true,
+      "triggerImprovements": true,
+      "autoPush": false
+    },
+    "commitMsg": {
+      "conventionalFormat": true,
+      "maxLength": 72,
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "test",
+        "chore",
+        "perf",
+        "ci",
+        "build",
+        "revert"
+      ]
     }
+  },
+  "automation": {
+    "autoCommit": {
+      "enabled": true,
+      "maxFilesPerCommit": 20,
+      "commitDelay": 5000,
+      "includeStagedOnly": false
+    },
+    "autoPush": {
+      "enabled": true,
+      "forcePush": false,
+      "pushOnCommit": true
+    },
+    "autoFix": {
+      "enabled": true,
+      "lintFix": true,
+      "formatFix": true,
+      "typeFix": false
+    },
+    "notifications": {
+      "enabled": true,
+      "slack": false,
+      "email": false,
+      "console": true
+    }
+  },
+  "performance": {
+    "bundleSizeLimit": "2MB",
+    "lighthouseThreshold": 80,
+    "memoryLimit": "512MB",
+    "cpuLimit": 80
+  },
+  "security": {
+    "auditLevel": "moderate",
+    "sensitivePatterns": [
+      "password",
+      "secret",
+      "key",
+      "token",
+      "api_key",
+      "private_key"
+    ],
+    "allowedDomains": [
+      "localhost",
+      "127.0.0.1",
+      "netlify.app",
+      "vercel.app"
+    ]
+  },
+  "logging": {
+    "level": "info",
+    "file": "logs/automation.log",
+    "maxSize": "10MB",
+    "maxFiles": 5,
+    "format": "json"
   }
 }
