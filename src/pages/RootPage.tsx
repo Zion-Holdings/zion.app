@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function RootPage()   {
+export function RootPage() {
   return (
     <div>
       <h1>Component</h1>

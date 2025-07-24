@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function AdminRoutes()   {
+export function AdminRoutes() {
   return (
     <div>
       <h1>Component</h1>

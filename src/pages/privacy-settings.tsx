@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export export export default function privacy-settings()   {;
+export export export default function privacy-settings()      {;
   return (
     <div>
       <h1>Component</h1>

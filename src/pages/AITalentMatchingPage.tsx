@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function AITalentMatchingPage()   {
+export function AITalentMatchingPage() {
   return (
     <div>
       <h1>Component</h1>

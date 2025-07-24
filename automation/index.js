@@ -81,7 +81,8 @@ function loadConfiguration()  {
   };
 }
 
-// Main function async function main()  {
+// Main function
+async function main() {
   console.log('🚀 Starting Intelligent Automation System...');
   console.log('='.repeat(60));
 

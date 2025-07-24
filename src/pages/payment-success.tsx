@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export export export default function payment-success()   {;
+export export export default function payment-success()      {;
   return (
     <div>
       <h1>Component</h1>

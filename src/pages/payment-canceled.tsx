@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export export export default function payment-canceled()   {;
+export export export default function payment-canceled()      {;
   return (
     <div>
       <h1>Component</h1>

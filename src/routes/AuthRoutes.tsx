@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function AuthRoutes()   {
+export function AuthRoutes() {
   return (
     <div>
       <h1>Component</h1>

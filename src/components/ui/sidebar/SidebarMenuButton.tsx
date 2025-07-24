@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function SidebarMenuButton()   {
+export function SidebarMenuButton() {
   return (
     <div>
       <h1>Component</h1>

@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export export export default function ProfilePage.test()   {;
+export export export default function ProfilePage.test()      {;
   return (
     <div>
       <h1>Component</h1>

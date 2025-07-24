@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function ReviewsModeration()   {
+export function ReviewsModeration() {
   return (
     <div>
       <h1>Component</h1>

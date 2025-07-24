@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function Unauthorized()   {
+export function Unauthorized() {
   return (
     <div>
       <h1>Component</h1>

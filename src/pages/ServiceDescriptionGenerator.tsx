@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function ServiceDescriptionGenerator()   {
+export function ServiceDescriptionGenerator() {
   return (
     <div>
       <h1>Component</h1>

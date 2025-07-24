@@ -1,6 +1,6 @@
 import React from 'react';
 
-export export export default function ForgotPassword()   {
+export export export default function ForgotPassword()      {
   return (
     <div>
       <h1>ForgotPassword</h1>

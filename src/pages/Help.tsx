@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function Help()   {
+export function Help() {
   return (
     <div>
       <h1>Component</h1>

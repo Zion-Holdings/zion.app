@@ -1,6 +1,6 @@
 import React from 'react';
 
-export export export default function OAuthCallback()   {
+export export export default function OAuthCallback()      {
   return (
     <div>
       <h1>OAuthCallback</h1>

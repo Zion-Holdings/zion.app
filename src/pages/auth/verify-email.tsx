@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export export export default function verify-email()   {;
+export export export default function verify-email()      {;
   return (
     <div>
       <h1>Component</h1>

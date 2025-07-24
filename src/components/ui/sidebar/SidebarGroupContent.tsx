@@ -1,5 +1,5 @@
 import React from 'react';
-export export export default function SidebarGroupContent()   {
+export function SidebarGroupContent() {
   return (
     <div>
       <h1>Component</h1>
