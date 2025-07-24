@@ -92,7 +92,7 @@ async function testAutomationSystem() {
     // Test the automation system directly
     const result = execSync('cd automation && npm test', {
       encoding: 'utf8',
-      stdio: pipe
+      stdio: 'pipe'
     });
 
     if (result.includes('All tests passed')) {
