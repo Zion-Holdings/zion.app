@@ -173,7 +173,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(() => this.startScript(script),                                              this.restartDelay);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => this.startScript(script),                                                this.restartDelay);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed

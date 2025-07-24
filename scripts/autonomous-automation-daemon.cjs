@@ -377,10 +377,16 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
+const timeoutId = 
+const timeoutId = 
 const timeoutId = setTimeout(() => {
         const endUsage = process.cpuUsage(startUsage);
         const cpuPercent = (endUsage.user + endUsage.system) / 1000000;
-        resolve(Math.min(100,                                              cpuPercent);
+        resolve(Math.min(100,                                                cpuPercent);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -807,11 +813,17 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
+const timeoutId = 
+const timeoutId = 
 const timeoutId = setTimeout(() => {
           if (automation.process) {
             automation.process.kill('SIGKILL');
           }
-        },                                              5000);
+        },                                                5000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -964,7 +976,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(resolve,                                              2000);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                                                2000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed

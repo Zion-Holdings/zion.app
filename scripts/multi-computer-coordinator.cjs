@@ -375,9 +375,15 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
+const timeoutId = 
+const timeoutId = 
 const timeoutId = setTimeout(
       () => {
-        this.completeTask(task.id,                                              { success: true, nodeId: node.id }, null);
+        this.completeTask(task.id,                                                { success: true, nodeId: node.id }, null);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -560,8 +566,14 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
+const timeoutId = 
+const timeoutId = 
 const timeoutId = setTimeout(() => {
-      this.registerNode('node-1',                                              '192.168.1.100', 3003, ['build', 'test']);
+      this.registerNode('node-1',                                                '192.168.1.100', 3003, ['build', 'test']);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed

@@ -211,7 +211,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(analysisLoop,                                              AI_CONFIG.INTERVALS.QUICK_SCAN);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(analysisLoop,                                                AI_CONFIG.INTERVALS.QUICK_SCAN);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -349,7 +355,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(analysisLoop,                                              AI_CONFIG.INTERVALS.QUICK_SCAN);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(analysisLoop,                                                AI_CONFIG.INTERVALS.QUICK_SCAN);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -503,7 +515,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(processLoop,                                              10000);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(processLoop,                                                10000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -641,7 +659,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(processLoop,                                              10000);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(processLoop,                                                10000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed

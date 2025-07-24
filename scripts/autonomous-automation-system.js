@@ -525,10 +525,16 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
+const timeoutId = 
+const timeoutId = 
 const timeoutId = setTimeout(() => {
         child.kill();
         reject(new Error('Agent script timeout'));
-      },                                              300000);
+      },                                                300000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -751,7 +757,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(resolve,                                              1000);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                                                1000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -1054,7 +1066,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(() => this.executeAgent(agentName),                                              1000);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => this.executeAgent(agentName),                                                1000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -1192,7 +1210,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(() => this.executeAgent(agentName),                                              30000);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => this.executeAgent(agentName),                                                30000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -1545,7 +1569,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(() => this.start(),                                              1000);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => this.start(),                                                1000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed

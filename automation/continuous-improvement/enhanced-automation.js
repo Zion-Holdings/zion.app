@@ -207,7 +207,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(processLoop,                                              1000);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(processLoop,                                                1000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed

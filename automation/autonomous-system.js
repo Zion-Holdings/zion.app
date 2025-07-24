@@ -277,9 +277,15 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
+const timeoutId = 
+const timeoutId = 
 const timeoutId = setTimeout(() => {
           this.taskQueue.push(task);
-        },                                              Math.pow(2, task.attempts);
+        },                                                Math.pow(2, task.attempts);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed

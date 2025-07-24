@@ -301,9 +301,15 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
+const timeoutId = 
+const timeoutId = 
 const timeoutId = setTimeout(async () => {
           await this.startSystem(systemId);
-        },                                              systemConfig.schedule.startDelay);
+        },                                                systemConfig.schedule.startDelay);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -530,11 +536,17 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
+const timeoutId = 
+const timeoutId = 
 const timeoutId = setTimeout(() => {
           if (process.killed === false) {
             process.kill('SIGKILL');
           }
-        },                                              5000);
+        },                                                5000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -771,9 +783,15 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
+const timeoutId = 
+const timeoutId = 
 const timeoutId = setTimeout(async () => {
       await this.startSystem(systemId);
-    },                                              5000 * (restartAttempts + 1);
+    },                                                5000 * (restartAttempts + 1);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -1002,7 +1020,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(() => this.startSystem(systemLoad.systemId),                                              5000);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => this.startSystem(systemLoad.systemId),                                                5000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed

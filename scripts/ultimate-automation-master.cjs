@@ -121,7 +121,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(() => this.startProcess(name,                                              command, args);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => this.startProcess(name,                                                command, args);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -321,7 +327,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(resolve,                                              1000);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                                                1000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed

@@ -205,9 +205,15 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
+const timeoutId = 
+const timeoutId = 
 const timeoutId = setTimeout(() => {
       this.restartProcess(name);
-    },                                              this.config.restartDelay);
+    },                                                this.config.restartDelay);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -357,8 +363,14 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
+const timeoutId = 
+const timeoutId = 
 const timeoutId = setTimeout(async () => {
-      await this.startProcess(name,                                              processInfo.command, processInfo.args, processInfo.options);
+      await this.startProcess(name,                                                processInfo.command, processInfo.args, processInfo.options);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed

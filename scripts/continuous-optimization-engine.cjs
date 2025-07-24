@@ -203,7 +203,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(performanceLoop,                                              this.config.performanceCheckInterval);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(performanceLoop,                                                this.config.performanceCheckInterval);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -364,7 +370,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(securityLoop,                                              this.config.securityCheckInterval);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(securityLoop,                                                this.config.securityCheckInterval);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -525,7 +537,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(bundleLoop,                                              this.config.bundleAnalysisInterval);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(bundleLoop,                                                this.config.bundleAnalysisInterval);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -686,7 +704,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(qualityLoop,                                              this.config.optimizationInterval);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(qualityLoop,                                                this.config.optimizationInterval);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -847,7 +871,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(dependencyLoop,                                              this.config.optimizationInterval * 2);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(dependencyLoop,                                                this.config.optimizationInterval * 2);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -1008,7 +1038,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(imageLoop,                                              this.config.optimizationInterval * 3);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(imageLoop,                                                this.config.optimizationInterval * 3);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -1169,7 +1205,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(testLoop,                                              this.config.optimizationInterval * 2);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(testLoop,                                                this.config.optimizationInterval * 2);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -1327,7 +1369,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(monitoringLoop,                                              60 * 1000);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(monitoringLoop,                                                60 * 1000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed

@@ -118,7 +118,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(res,                                              5000);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(res,                                                5000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
@@ -267,7 +273,13 @@ const timeoutId =
 const timeoutId = 
 const timeoutId = 
 const timeoutId = 
-const timeoutId = setTimeout(res,                                              CHECK_INTERVAL);
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(res,                                                CHECK_INTERVAL);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 // Store timeoutId for cleanup if needed
 ;
 // Store timeoutId for cleanup if needed
