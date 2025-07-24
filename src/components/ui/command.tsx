@@ -1,5 +1,5 @@
 import React from 'react';
-export default function command() {
+export export export default function command()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function PublishProduct() {
+export export export default function PublishProduct()   {
   return (
     <div>
       <h1>Component</h1>

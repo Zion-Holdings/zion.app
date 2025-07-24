@@ -1,5 +1,5 @@
 import React from 'react';
-export default function badge() {
+export export export default function badge()   {
   return (
     <div>
       <h1>Component</h1>

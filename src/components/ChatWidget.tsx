@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ChatWidget() {
+export export export default function ChatWidget()   {
   return (
     <div>
       <h1>Component</h1>

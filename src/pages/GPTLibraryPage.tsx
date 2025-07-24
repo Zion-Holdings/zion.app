@@ -1,5 +1,5 @@
 import React from 'react';
-export default function GPTLibraryPage() {
+export export export default function GPTLibraryPage()   {
   return (
     <div>
       <h1>Component</h1>

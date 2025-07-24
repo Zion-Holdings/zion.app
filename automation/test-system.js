@@ -24,7 +24,7 @@ const SecurityScanner = require('./tasks/SecurityScanner');
 const CodeQualityEnforcer = require('./tasks/CodeQualityEnforcer');
 const StaleCleaner = require('./tasks/StaleCleaner');
 
-async function testComponents() {
+async function testComponents()  {
   console.log('🧪 Testing Intelligent Automation System Components...');
   console.log('=' .repeat(60));
   

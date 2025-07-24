@@ -1,5 +1,5 @@
 import React from 'react';
-export default function MessageTalentModal() {
+export export export default function MessageTalentModal()   {
   return (
     <div>
       <h1>Component</h1>

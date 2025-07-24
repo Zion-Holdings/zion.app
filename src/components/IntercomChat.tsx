@@ -1,5 +1,5 @@
 import React from 'react';
-export default function IntercomChat() {
+export export export default function IntercomChat()   {
   return (
     <div>
       <h1>Component</h1>

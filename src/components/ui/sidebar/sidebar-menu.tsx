@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function sidebar-menu() {;
+export export export default function sidebar-menu()   {;
   return (
     <div>
       <h1>Component</h1>

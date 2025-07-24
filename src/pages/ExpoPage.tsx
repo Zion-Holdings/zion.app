@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ExpoPage() {
+export export export default function ExpoPage()   {
   return (
     <div>
       <h1>Component</h1>

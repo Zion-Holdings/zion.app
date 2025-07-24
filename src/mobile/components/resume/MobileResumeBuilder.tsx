@@ -1,5 +1,5 @@
 import React from 'react';
-export default function MobileResumeBuilder() {
+export export export default function MobileResumeBuilder()   {
   return (
     <div>
       <h1>Component</h1>

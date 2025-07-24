@@ -1,5 +1,5 @@
 import React from 'react';
-export default function WaitlistSection() {
+export export export default function WaitlistSection()   {
   return (
     <div>
       <h1>Component</h1>

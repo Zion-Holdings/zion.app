@@ -1,5 +1,5 @@
 import React from 'react';
-export default function PartnerReferralLinks() {
+export export export default function PartnerReferralLinks()   {
   return (
     <div>
       <h1>Component</h1>

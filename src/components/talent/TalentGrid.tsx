@@ -1,5 +1,5 @@
 import React from 'react';
-export default function TalentGrid() {
+export export export default function TalentGrid()   {
   return (
     <div>
       <h1>Component</h1>

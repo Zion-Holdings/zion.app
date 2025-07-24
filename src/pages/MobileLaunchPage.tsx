@@ -1,5 +1,5 @@
 import React from 'react';
-export default function MobileLaunchPage() {
+export export export default function MobileLaunchPage()   {
   return (
     <div>
       <h1>Component</h1>

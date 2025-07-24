@@ -1,5 +1,5 @@
 import React from 'react';
-export default function MobileChatView() {
+export export export default function MobileChatView()   {
   return (
     <div>
       <h1>Component</h1>

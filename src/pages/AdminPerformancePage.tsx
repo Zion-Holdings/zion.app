@@ -1,5 +1,5 @@
 import React from 'react';
-export default function AdminPerformancePage() {
+export export export default function AdminPerformancePage()   {
   return (
     <div>
       <h1>Component</h1>

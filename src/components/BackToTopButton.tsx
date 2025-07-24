@@ -1,5 +1,5 @@
 import React from 'react';
-export default function BackToTopButton() {
+export export export default function BackToTopButton()   {
   return (
     <div>
       <h1>Component</h1>

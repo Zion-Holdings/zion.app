@@ -1,5 +1,5 @@
 import React from 'react';
-export default function GreenIT() {
+export export export default function GreenIT()   {
   return (
     <div>
       <h1>Component</h1>

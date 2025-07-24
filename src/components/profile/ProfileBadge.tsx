@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ProfileBadge() {
+export export export default function ProfileBadge()   {
   return (
     <div>
       <h1>Component</h1>

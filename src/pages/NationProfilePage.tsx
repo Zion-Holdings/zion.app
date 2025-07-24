@@ -1,5 +1,5 @@
 import React from 'react';
-export default function NationProfilePage() {
+export export export default function NationProfilePage()   {
   return (
     <div>
       <h1>Component</h1>

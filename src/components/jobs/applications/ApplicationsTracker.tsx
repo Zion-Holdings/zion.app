@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ApplicationsTracker() {
+export export export default function ApplicationsTracker()   {
   return (
     <div>
       <h1>Component</h1>

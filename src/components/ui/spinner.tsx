@@ -1,5 +1,5 @@
 import React from 'react';
-export default function spinner() {
+export export export default function spinner()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function performance-dashboard() {;
+export export export default function performance-dashboard()   {;
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function FounderCoursePage() {
+export export export default function FounderCoursePage()   {
   return (
     <div>
       <h1>Component</h1>

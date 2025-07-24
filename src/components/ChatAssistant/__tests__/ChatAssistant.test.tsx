@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function ChatAssistant.test() {;
+export export export default function ChatAssistant.test()   {;
   return (
     <div>
       <h1>Component</h1>

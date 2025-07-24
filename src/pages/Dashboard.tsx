@@ -1,5 +1,5 @@
 import React from 'react';
-export default function Dashboard() {
+export export export default function Dashboard()   {
   return (
     <div>
       <h1>Component</h1>

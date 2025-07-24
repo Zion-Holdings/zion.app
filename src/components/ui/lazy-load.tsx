@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function lazy-load() {;
+export export export default function lazy-load()   {;
   return (
     <div>
       <h1>Component</h1>

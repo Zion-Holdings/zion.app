@@ -1,5 +1,5 @@
 import React from 'react';
-export default function QuoteFormSection() {
+export export export default function QuoteFormSection()   {
   return (
     <div>
       <h1>Component</h1>

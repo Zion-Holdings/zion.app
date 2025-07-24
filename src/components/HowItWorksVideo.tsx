@@ -1,5 +1,5 @@
 import React from 'react';
-export default function HowItWorksVideo() {
+export export export default function HowItWorksVideo()   {
   return (
     <div>
       <h1>Component</h1>

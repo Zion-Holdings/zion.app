@@ -1,5 +1,5 @@
 import React from 'react';
-export default function BlogPost() {
+export export export default function BlogPost()   {
   return (
     <div>
       <h1>Component</h1>

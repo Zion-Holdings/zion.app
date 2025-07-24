@@ -1,5 +1,5 @@
 import React from 'react';
-export default function RequestQuoteWizard() {
+export export export default function RequestQuoteWizard()   {
   return (
     <div>
       <h1>Component</h1>

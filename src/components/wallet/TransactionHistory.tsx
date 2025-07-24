@@ -1,5 +1,5 @@
 import React from 'react';
-export default function TransactionHistory() {
+export export export default function TransactionHistory()   {
   return (
     <div>
       <h1>Component</h1>

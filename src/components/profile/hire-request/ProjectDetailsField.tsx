@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ProjectDetailsField() {
+export export export default function ProjectDetailsField()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ResumeSteps() {
+export export export default function ResumeSteps()   {
   return (
     <div>
       <h1>Component</h1>

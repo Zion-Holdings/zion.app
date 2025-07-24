@@ -1,5 +1,5 @@
 import React from 'react';
-export default function toggle() {
+export export export default function toggle()   {
   return (
     <div>
       <h1>Component</h1>

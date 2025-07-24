@@ -1,5 +1,5 @@
 import React from 'react';
-export default function MobileApp() {
+export export export default function MobileApp()   {
   return (
     <div>
       <h1>Component</h1>

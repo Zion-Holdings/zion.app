@@ -1,5 +1,5 @@
 import React from 'react';
-export default function FraudDetection() {
+export export export default function FraudDetection()   {
   return (
     <div>
       <h1>Component</h1>

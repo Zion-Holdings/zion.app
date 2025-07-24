@@ -1,5 +1,5 @@
 import React from 'react';
-export default function RequestService() {
+export export export default function RequestService()   {
   return (
     <div>
       <h1>Component</h1>

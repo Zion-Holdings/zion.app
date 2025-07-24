@@ -1,5 +1,5 @@
 import React from 'react';
-export default function Sitemap() {
+export export export default function Sitemap()   {
   return (
     <div>
       <h1>Component</h1>

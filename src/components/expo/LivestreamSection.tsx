@@ -1,5 +1,5 @@
 import React from 'react';
-export default function LivestreamSection() {
+export export export default function LivestreamSection()   {
   return (
     <div>
       <h1>Component</h1>

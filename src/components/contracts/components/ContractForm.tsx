@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ContractForm() {
+export export export default function ContractForm()   {
   return (
     <div>
       <h1>Component</h1>

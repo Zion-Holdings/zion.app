@@ -1,5 +1,5 @@
 import React from 'react';
-export default function AddMilestoneForm() {
+export export export default function AddMilestoneForm()   {
   return (
     <div>
       <h1>Component</h1>

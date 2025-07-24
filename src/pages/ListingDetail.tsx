@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ListingDetail() {
+export export export default function ListingDetail()   {
   return (
     <div>
       <h1>Component</h1>

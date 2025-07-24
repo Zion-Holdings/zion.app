@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function dropdown-menu() {;
+export export export default function dropdown-menu()   {;
   return (
     <div>
       <h1>Component</h1>

@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function sidebar-group() {;
+export export export default function sidebar-group()   {;
   return (
     <div>
       <h1>Component</h1>

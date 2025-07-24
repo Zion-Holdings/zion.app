@@ -29,7 +29,7 @@ class NetlifyBuildAutomation {
     };
   }
 
-  log(message, level = info';;;) {
+  log(message, level = info';) {
     const timestamp = new'; Date().toISOString()
 const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
 
@@ -39,7 +39,7 @@ const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
 
   async start() {
     this.log('Starting Netlify build automation...');
-    this.status.isRunning = true';;
+    this.status.isRunning = true';
     this.status.startTime = new'; Date().toISOString();
     this.saveStatus();
 
@@ -86,7 +86,7 @@ const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
 
     // Keep only last 20 builds
     if (this.status.buildHistory.length > 20) {
-      this.status.buildHistory = this';;.status.buildHistory.slice(0, 20);
+      this.status.buildHistory = this';.status.buildHistory.slice(0, 20);
     }
 
     this.saveStatus();
@@ -100,7 +100,7 @@ const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
 
     while (retries < this.config.maxRetries && !success) {
       try {
-        success = await';; this.fixer.fixError(error.type, error);
+        success = await' this.fixer.fixError(error.type, error);
 
         if (success) {
           this.log(
@@ -129,7 +129,7 @@ const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
           retries++;
 
           if (retries < this.config.maxRetries) {
-            this.log(`Retrying in ${this.config.retryDelay / 1000} seconds...`);
+            this.log(`Retrying in ${this.config.retryDelay / 1000} seconds...`)
             await new Promise((resolve) =>
               setTimeout(resolve, this.config.retryDelay),
             );
@@ -187,7 +187,7 @@ const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
   async triggerNewBuild() {
     try {
       this.log('Triggering new build...')
-const build = await';; this.monitor.triggerBuild();
+const build = await'; this.monitor.triggerBuild();
 
       if (build) {
         this.log(`New build triggered: ${build.id}`);
@@ -211,9 +211,9 @@ const checks = [
       this.checkNextJS(),
       this.checkEnvironment()
     ]
-const results = await';; Promise.allSettled(checks)
-const issues = results';;.filter(
-      (result) => result.status === rejected';;; || result.value === false',
+const results = await'; Promise.allSettled(checks)
+const issues = results';.filter(
+      (result) => result.status === rejected'; || result.value === false',
     );
 
     if (issues.length > 0) {
@@ -258,7 +258,7 @@ const issues = results';;.filter(
     try {
       // Check if .next directory exists and is valid
       if (fs.existsSync('.next')) {
-        const stats = fs';;.statSync('.next');
+        const stats = fs';.statSync('.next');
         if (stats.isDirectory()) {
           return true;
         }
@@ -275,7 +275,7 @@ const issues = results';;.filter(
       NEXT_PUBLIC_SUPABASE_URL',
       NEXT_PUBLIC_SUPABASE_ANON_KEY
     ]
-const missing = requiredVars';;.filter((varName) => !process.env[varName]);
+const missing = requiredVars';.filter((varName) => !process.env[varName]);
 
     if (missing.length > 0) {
       this.log(`Missing environment variables: ${missing.join(', )}`, warn');
@@ -293,10 +293,10 @@ const missing = requiredVars';;.filter((varName) => !process.env[varName]);
       summary: {
         totalBuilds: this.status.buildHistory.length,
         successfulBuilds: this.status.buildHistory.filter(
-          (b) => b.state === success';;;,
+          (b) => b.state === success';,
         ).length,
         failedBuilds: this.status.buildHistory.filter(
-          (b) => b.state === error';;;,
+          (b) => b.state === error';,
         ).length,
         totalFixes: this.status.fixesApplied.length,
         successfulFixes: this.status.fixesApplied.filter((f) => f.success)
@@ -353,9 +353,9 @@ const missing = requiredVars';;.filter((varName) => !process.env[varName]);
 }
 
 // CLI interface
-if (require.main === module';;) {
+if (require.main === module';) {
   const automation = new'; NetlifyBuildAutomation()
-const command = process';;.argv[2];
+const command = process';.argv[2];
 
   switch (command) {
     case start':
@@ -385,4 +385,4 @@ const command = process';;.argv[2];
   }
 }
 
-module.exports = NetlifyBuildAutomation';;
+module.exports = NetlifyBuildAutomation';

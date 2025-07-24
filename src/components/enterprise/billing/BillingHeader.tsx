@@ -1,5 +1,5 @@
 import React from 'react';
-export default function BillingHeader() {
+export export export default function BillingHeader()   {
   return (
     <div>
       <h1>Component</h1>

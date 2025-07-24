@@ -1,5 +1,5 @@
 import React from 'react';
-export default function BudgetStep() {
+export export export default function BudgetStep()   {
   return (
     <div>
       <h1>Component</h1>

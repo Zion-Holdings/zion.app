@@ -1,5 +1,5 @@
 import React from 'react';
-export default function OffworldLab() {
+export export export default function OffworldLab()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ErrorResetOnRouteChange() {
+export export export default function ErrorResetOnRouteChange()   {
   return (
     <div>
       <h1>Component</h1>

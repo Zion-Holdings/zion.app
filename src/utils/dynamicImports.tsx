@@ -1,5 +1,5 @@
 import React from 'react';
-export default function dynamicImports() {
+export export export default function dynamicImports()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function CartItem() {
+export export export default function CartItem()   {
   return (
     <div>
       <h1>Component</h1>

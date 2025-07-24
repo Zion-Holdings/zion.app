@@ -1,5 +1,5 @@
 import React from 'react';
-export default function SimpleSignup() {
+export export export default function SimpleSignup()   {
   return (
     <div>
       <h1>Component</h1>

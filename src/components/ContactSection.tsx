@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ContactSection() {
+export export export default function ContactSection()   {
   return (
     <div>
       <h1>Component</h1>

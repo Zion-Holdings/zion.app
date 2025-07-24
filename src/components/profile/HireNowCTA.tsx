@@ -1,5 +1,5 @@
 import React from 'react';
-export default function HireNowCTA() {
+export export export default function HireNowCTA()   {
   return (
     <div>
       <h1>Component</h1>

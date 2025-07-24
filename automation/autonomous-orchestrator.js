@@ -105,7 +105,7 @@ class AutonomousOrchestrator {
     const procInfo = this.processes.get(script.name);
     if (!procInfo) return;
     if (script.autoRestart && procInfo.restartCount < this.maxRestartAttempts) {
-      procInfo.restartCount++;
+      procInfo.restartCount++
       setTimeout(() => this.startScript(script), this.restartDelay);
     } else {
       this.processes.delete(script.name);

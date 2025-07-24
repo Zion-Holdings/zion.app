@@ -1,5 +1,5 @@
 import React from 'react';
-export default function PaymentSummary() {
+export export export default function PaymentSummary()   {
   return (
     <div>
       <h1>Component</h1>

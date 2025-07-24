@@ -1,5 +1,5 @@
 import React from 'react';
-export default function WorkspaceHeader() {
+export export export default function WorkspaceHeader()   {
   return (
     <div>
       <h1>Component</h1>

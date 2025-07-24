@@ -1,5 +1,5 @@
 import React from 'react';
-export default function QuoteStatusBadge() {
+export export export default function QuoteStatusBadge()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function AIListingForm() {
+export export export default function AIListingForm()   {
   return (
     <div>
       <h1>Component</h1>

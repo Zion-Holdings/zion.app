@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ProjectOfferBanner() {
+export export export default function ProjectOfferBanner()   {
   return (
     <div>
       <h1>Component</h1>

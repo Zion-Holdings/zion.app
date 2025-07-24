@@ -1,5 +1,5 @@
 import React from 'react';
-export default function PartnerManager() {
+export export export default function PartnerManager()   {
   return (
     <div>
       <h1>Component</h1>

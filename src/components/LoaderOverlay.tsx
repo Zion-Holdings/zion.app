@@ -1,5 +1,5 @@
 import React from 'react';
-export default function LoaderOverlay() {
+export export export default function LoaderOverlay()   {
   return (
     <div>
       <h1>Component</h1>

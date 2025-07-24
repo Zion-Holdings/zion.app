@@ -1,5 +1,5 @@
 import React from 'react';
-export default function SocialShareSection() {
+export export export default function SocialShareSection()   {
   return (
     <div>
       <h1>Component</h1>

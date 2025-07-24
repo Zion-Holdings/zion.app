@@ -200,7 +200,7 @@ class AutonomousDaemon extends EventEmitter {
     
     if (this.isRunning && this.config.autoRestart && this.restartCount < this.maxRestarts) {
       console.log(`🔄 Restarting process (attempt ${this.restartCount + 1}/${this.maxRestarts})...`);
-      this.restartCount++;
+      this.restartCount++
       
       setTimeout(() => {
         this.startInfiniteImprovementLoop();

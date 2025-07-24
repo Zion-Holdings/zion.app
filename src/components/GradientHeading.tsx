@@ -1,5 +1,5 @@
 import React from 'react';
-export default function GradientHeading() {
+export export export default function GradientHeading()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function SmartContractDeployment() {
+export export export default function SmartContractDeployment()   {
   return (
     <div>
       <h1>Component</h1>

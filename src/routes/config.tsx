@@ -1,5 +1,5 @@
 import React from 'react';
-export default function config() {
+export export export default function config()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ForumCategoryPage() {
+export export export default function ForumCategoryPage()   {
   return (
     <div>
       <h1>Component</h1>

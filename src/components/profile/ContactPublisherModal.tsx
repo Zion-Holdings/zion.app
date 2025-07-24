@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ContactPublisherModal() {
+export export export default function ContactPublisherModal()   {
   return (
     <div>
       <h1>Component</h1>

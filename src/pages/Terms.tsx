@@ -1,5 +1,5 @@
 import React from 'react';
-export default function Terms() {
+export export export default function Terms()   {
   return (
     <div>
       <h1>Component</h1>

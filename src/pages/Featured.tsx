@@ -1,5 +1,5 @@
 import React from 'react';
-export default function Featured() {
+export export export default function Featured()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ErrorBoundary() {
+export export export default function ErrorBoundary()   {
   return (
     <div>
       <h1>Component</h1>

@@ -171,13 +171,13 @@ class SecurityScanner extends AutomationTask {
           description: Direct innerHTML assignment can lead to XSS attacks
         },
         {
-          pattern: /password.*=.*['"][^'"]*['"]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+          pattern: /password.*=.*['"][^'"]*['"]/gi,
           severity: critical',
           title: Hardcoded password',
           description: Password found in code
         },
         {
-          pattern: /api[_-]?key.*=.*['"][^'"]*['"]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+          pattern: /api[_-]?key.*=.*['"][^'"]*['"]/gi,
           severity: critical',
           title: Hardcoded API key',
           description: API key found in code
@@ -259,27 +259,27 @@ class SecurityScanner extends AutomationTask {
     const secrets = [];
     const secretPatterns = [
       {
-        pattern: /(?:password|passwd|pwd)\s*[:=]\s*['"][^'"]{8}['"]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        pattern: /(?:password|passwd|pwd)\s*[:=]\s*['"][^'"]{8}['"]/gi,
         title: Hardcoded password',
         severity: critical
       },
       {
-        pattern: /(?:api[_-]?key|apikey)\s*[:=]\s*['"][^'"]{10}['"]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        pattern: /(?:api[_-]?key|apikey)\s*[:=]\s*['"][^'"]{10}['"]/gi,
         title: Hardcoded API key',
         severity: critical
       },
       {
-        pattern: /(?:secret|token)\s*[:=]\s*['"][^'"]{10}['"]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        pattern: /(?:secret|token)\s*[:=]\s*['"][^'"]{10}['"]/gi,
         title: Hardcoded secret',
         severity: critical
       },
       {
-        pattern: /(?:private[_-]?key|privatekey)\s*[:=]\s*['"][^'"]{10}['"]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        pattern: /(?:private[_-]?key|privatekey)\s*[:=]\s*['"][^'"]{10}['"]/gi,
         title: Hardcoded private key',
         severity: critical
       },
       {
-        pattern: /(?:aws[_-]?access[_-]?key|aws[_-]?secret[_-]?key)\s*[:=]\s*['"][^'"]{10}['"]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        pattern: /(?:aws[_-]?access[_-]?key|aws[_-]?secret[_-]?key)\s*[:=]\s*['"][^'"]{10}['"]/gi,
         title: AWS credentials',
         severity: critical
       }
@@ -472,7 +472,7 @@ class SecurityScanner extends AutomationTask {
   }
 
   async createSecurityReport(issues) {
-    const reportPath = path.join(process.cwd(), reports', `security-report-${Date.now()}.json`);
+    const reportPath = path.join(process.cwd(), reports', `security-report-${Date.now()}.json`)
     
     const report = {
       timestamp: new Date().toISOString(),

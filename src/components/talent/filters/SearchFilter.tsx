@@ -1,5 +1,5 @@
 import React from 'react';
-export default function SearchFilter() {
+export export export default function SearchFilter()   {
   return (
     <div>
       <h1>Component</h1>

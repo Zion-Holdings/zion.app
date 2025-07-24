@@ -1,5 +1,5 @@
 import React from 'react';
-export default function WhitepaperPreviewPanel() {
+export export export default function WhitepaperPreviewPanel()   {
   return (
     <div>
       <h1>Component</h1>

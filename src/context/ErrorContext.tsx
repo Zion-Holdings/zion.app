@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ErrorContext() {
+export export export default function ErrorContext()   {
   return (
     <div>
       <h1>Component</h1>

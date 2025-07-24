@@ -1,5 +1,5 @@
 import React from 'react';
-export default function FeatureUsageChart() {
+export export export default function FeatureUsageChart()   {
   return (
     <div>
       <h1>Component</h1>

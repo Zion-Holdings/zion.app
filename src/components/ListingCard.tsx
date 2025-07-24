@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ListingCard() {
+export export export default function ListingCard()   {
   return (
     <div>
       <h1>Component</h1>

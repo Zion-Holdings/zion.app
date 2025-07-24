@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function toggle-group() {;
+export export export default function toggle-group()   {;
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function PortfolioBuilder() {
+export export export default function PortfolioBuilder()   {
   return (
     <div>
       <h1>Component</h1>

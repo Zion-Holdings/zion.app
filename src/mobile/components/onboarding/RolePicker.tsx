@@ -1,5 +1,5 @@
 import React from 'react';
-export default function RolePicker() {
+export export export default function RolePicker()   {
   return (
     <div>
       <h1>Component</h1>

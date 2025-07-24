@@ -1,5 +1,5 @@
 import React from 'react';
-export default function VerifyIdentity() {
+export export export default function VerifyIdentity()   {
   return (
     <div>
       <h1>Component</h1>

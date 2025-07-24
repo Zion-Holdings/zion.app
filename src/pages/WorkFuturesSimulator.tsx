@@ -1,5 +1,5 @@
 import React from 'react';
-export default function WorkFuturesSimulator() {
+export export export default function WorkFuturesSimulator()   {
   return (
     <div>
       <h1>Component</h1>

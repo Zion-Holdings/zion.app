@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ScoreBadge() {
+export export export default function ScoreBadge()   {
   return (
     <div>
       <h1>Component</h1>

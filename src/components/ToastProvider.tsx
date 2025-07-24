@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ToastProvider() {
+export export export default function ToastProvider()   {
   return (
     <div>
       <h1>Component</h1>

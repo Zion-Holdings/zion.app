@@ -1,5 +1,5 @@
 import React from 'react';
-export default function RequestsHeader() {
+export export export default function RequestsHeader()   {
   return (
     <div>
       <h1>Component</h1>

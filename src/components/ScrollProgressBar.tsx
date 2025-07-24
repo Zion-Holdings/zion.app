@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ScrollProgressBar() {
+export export export default function ScrollProgressBar()   {
   return (
     <div>
       <h1>Component</h1>

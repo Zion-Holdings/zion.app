@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ServiceProcessSteps() {
+export export export default function ServiceProcessSteps()   {
   return (
     <div>
       <h1>Component</h1>

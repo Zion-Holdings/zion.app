@@ -1,5 +1,5 @@
 import React from 'react';
-export default function CertificationsSection() {
+export export export default function CertificationsSection()   {
   return (
     <div>
       <h1>Component</h1>

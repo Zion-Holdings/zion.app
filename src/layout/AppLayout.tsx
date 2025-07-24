@@ -1,5 +1,5 @@
 import React from 'react';
-export default function AppLayout() {
+export export export default function AppLayout()   {
   return (
     <div>
       <h1>Component</h1>

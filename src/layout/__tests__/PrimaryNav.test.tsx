@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function PrimaryNav.test() {;
+export export export default function PrimaryNav.test()   {;
   return (
     <div>
       <h1>Component</h1>

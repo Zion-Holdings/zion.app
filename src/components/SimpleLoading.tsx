@@ -1,5 +1,5 @@
 import React from 'react';
-export default function SimpleLoading() {
+export export export default function SimpleLoading()   {
   return (
     <div>
       <h1>Component</h1>

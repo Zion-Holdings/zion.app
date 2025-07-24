@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function Signup.spec() {;
+export export export default function Signup.spec()   {;
   return (
     <div>
       <h1>Component</h1>

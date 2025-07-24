@@ -1,5 +1,5 @@
 import React from 'react';
-export default function Onboarding() {
+export export export default function Onboarding()   {
   return (
     <div>
       <h1>Component</h1>

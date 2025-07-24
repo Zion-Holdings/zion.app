@@ -1,5 +1,5 @@
 import React from 'react';
-export default function AppStoreBanner() {
+export export export default function AppStoreBanner()   {
   return (
     <div>
       <h1>Component</h1>

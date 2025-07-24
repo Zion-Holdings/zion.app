@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ContentRoutes() {
+export export export default function ContentRoutes()   {
   return (
     <div>
       <h1>Component</h1>

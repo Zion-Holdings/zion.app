@@ -1,5 +1,5 @@
 import React from 'react';
-export default function IntegrationsSyncLog() {
+export export export default function IntegrationsSyncLog()   {
   return (
     <div>
       <h1>Component</h1>

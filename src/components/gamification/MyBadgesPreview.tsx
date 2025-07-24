@@ -1,5 +1,5 @@
 import React from 'react';
-export default function MyBadgesPreview() {
+export export export default function MyBadgesPreview()   {
   return (
     <div>
       <h1>Component</h1>

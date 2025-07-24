@@ -1,5 +1,5 @@
 import React from 'react';
-export default function PublicRoutes() {
+export export export default function PublicRoutes()   {
   return (
     <div>
       <h1>Component</h1>

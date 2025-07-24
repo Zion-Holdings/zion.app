@@ -1,5 +1,5 @@
 import React from 'react';
-export default function MobileHome() {
+export export export default function MobileHome()   {
   return (
     <div>
       <h1>Component</h1>

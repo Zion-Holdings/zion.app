@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ModelManager() {
+export export export default function ModelManager()   {
   return (
     <div>
       <h1>Component</h1>

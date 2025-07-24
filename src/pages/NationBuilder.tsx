@@ -1,5 +1,5 @@
 import React from 'react';
-export default function NationBuilder() {
+export export export default function NationBuilder()   {
   return (
     <div>
       <h1>Component</h1>

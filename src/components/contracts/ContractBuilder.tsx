@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ContractBuilder() {
+export export export default function ContractBuilder()   {
   return (
     <div>
       <h1>Component</h1>

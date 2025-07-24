@@ -1,5 +1,5 @@
 import React from 'react';
-export default function Web3Login() {
+export export export default function Web3Login()   {
   return (
     <div>
       <h1>Component</h1>

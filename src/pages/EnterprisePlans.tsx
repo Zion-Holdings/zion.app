@@ -1,5 +1,5 @@
 import React from 'react';
-export default function EnterprisePlans() {
+export export export default function EnterprisePlans()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function TalentDirectoryHeader() {
+export export export default function TalentDirectoryHeader()   {
   return (
     <div>
       <h1>Component</h1>

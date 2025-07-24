@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ApplicationActions() {
+export export export default function ApplicationActions()   {
   return (
     <div>
       <h1>Component</h1>

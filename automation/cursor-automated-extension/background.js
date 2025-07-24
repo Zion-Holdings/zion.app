@@ -143,7 +143,7 @@ class CursorExtensionBackground {
     const importRegex = /import\s+{([^}]+)}\s+from\s+['"]([^'"]+)['"]/g;
     const imports = [];
     
-    let match;
+    let match
     while ((match = importRegex.exec(content)) !== null) {
       const importNames = match[1].split(',).map(name => name.trim());
       const modulePath = match[2];
@@ -173,7 +173,7 @@ class CursorExtensionBackground {
   }
 
   generateSuggestions(issues) {
-    const suggestions = [];
+    const suggestions = []
 
     issues.forEach(issue => {
       switch (issue.type) {

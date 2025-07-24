@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ServiceDetailsSection() {
+export export export default function ServiceDetailsSection()   {
   return (
     <div>
       <h1>Component</h1>

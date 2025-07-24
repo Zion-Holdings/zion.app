@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function clickable-badge() {;
+export export export default function clickable-badge()   {;
   return (
     <div>
       <h1>Component</h1>

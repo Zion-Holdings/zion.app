@@ -12,7 +12,7 @@ const path = require('path');
 const fs = require('fs');
 
 // Load configuration
-function loadConfiguration() {
+function loadConfiguration()  {
   const configPath = path.join(__dirname, 'automation-config.json');
 
   if (fs.existsSync(configPath)) {
@@ -81,8 +81,7 @@ function loadConfiguration() {
   };
 }
 
-// Main function
-async function main() {
+// Main function async function main()  {
   console.log('🚀 Starting Intelligent Automation System...');
   console.log('='.repeat(60));
 
@@ -118,7 +117,7 @@ async function main() {
 }
 
 // Handle command line arguments
-function parseArguments() {
+function parseArguments()  {
   const args = process.argv.slice(2);
   const options = {};
 
@@ -164,10 +163,10 @@ function parseArguments() {
     }
   }
 
-  return options;
+  return options
 }
 
-function showHelp() {
+function showHelp()  {
   console.log(`
 Intelligent Automation System
 
@@ -196,7 +195,7 @@ Examples:
   `);
 }
 
-function showVersion() {
+function showVersion()  {
   const packagePath = path.join(__dirname, '..', 'package.json');
 
   if (fs.existsSync(packagePath)) {

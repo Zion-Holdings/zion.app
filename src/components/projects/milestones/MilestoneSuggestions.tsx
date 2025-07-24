@@ -1,5 +1,5 @@
 import React from 'react';
-export default function MilestoneSuggestions() {
+export export export default function MilestoneSuggestions()   {
   return (
     <div>
       <h1>Component</h1>

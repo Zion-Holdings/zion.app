@@ -1,5 +1,5 @@
 import React from 'react';
-export default function EnterprisePricingTable() {
+export export export default function EnterprisePricingTable()   {
   return (
     <div>
       <h1>Component</h1>

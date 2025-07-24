@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function optimized-image() {;
+export export export default function optimized-image()   {;
   return (
     <div>
       <h1>Component</h1>

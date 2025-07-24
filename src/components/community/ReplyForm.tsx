@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ReplyForm() {
+export export export default function ReplyForm()   {
   return (
     <div>
       <h1>Component</h1>

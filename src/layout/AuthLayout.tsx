@@ -1,5 +1,5 @@
 import React from 'react';
-export default function AuthLayout() {
+export export export default function AuthLayout()   {
   return (
     <div>
       <h1>Component</h1>

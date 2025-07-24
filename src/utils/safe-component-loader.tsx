@@ -1,5 +1,5 @@
 import React from 'react';
-export default function safecomponentloader() {
+export export export default function safecomponentloader()   {
   return (
     <div>
       <h1>Component</h1>

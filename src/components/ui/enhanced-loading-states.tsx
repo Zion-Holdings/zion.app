@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function enhanced-loading-states() {;
+export export export default function enhanced-loading-states()   {;
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function TemplateList() {
+export export export default function TemplateList()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function LanguageThemeSelector() {
+export export export default function LanguageThemeSelector()   {
   return (
     <div>
       <h1>Component</h1>

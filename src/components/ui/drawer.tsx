@@ -1,5 +1,5 @@
 import React from 'react';
-export default function drawer() {
+export export export default function drawer()   {
   return (
     <div>
       <h1>Component</h1>

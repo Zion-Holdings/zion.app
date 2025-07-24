@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function hover-card() {;
+export export export default function hover-card()   {;
   return (
     <div>
       <h1>Component</h1>

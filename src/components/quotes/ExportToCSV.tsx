@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ExportToCSV() {
+export export export default function ExportToCSV()   {
   return (
     <div>
       <h1>Component</h1>

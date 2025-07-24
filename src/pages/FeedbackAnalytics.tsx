@@ -1,5 +1,5 @@
 import React from 'react';
-export default function FeedbackAnalytics() {
+export export export default function FeedbackAnalytics()   {
   return (
     <div>
       <h1>Component</h1>

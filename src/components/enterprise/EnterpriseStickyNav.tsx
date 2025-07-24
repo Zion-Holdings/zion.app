@@ -1,5 +1,5 @@
 import React from 'react';
-export default function EnterpriseStickyNav() {
+export export export default function EnterpriseStickyNav()   {
   return (
     <div>
       <h1>Component</h1>

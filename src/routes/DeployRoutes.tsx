@@ -1,5 +1,5 @@
 import React from 'react';
-export default function DeployRoutes() {
+export export export default function DeployRoutes()   {
   return (
     <div>
       <h1>Component</h1>

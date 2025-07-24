@@ -1,5 +1,5 @@
 import React from 'react';
-export default function JobsList() {
+export export export default function JobsList()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ApplyForm() {
+export export export default function ApplyForm()   {
   return (
     <div>
       <h1>Component</h1>

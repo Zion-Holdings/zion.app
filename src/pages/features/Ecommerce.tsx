@@ -1,5 +1,5 @@
 import React from 'react';
-export default function Ecommerce() {
+export export export default function Ecommerce()   {
   return (
     <div>
       <h1>Component</h1>

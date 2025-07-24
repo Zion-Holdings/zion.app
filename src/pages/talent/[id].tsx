@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function [id]() {;
+export export export default function [id]()   {;
   return (
     <div>
       <h1>Component</h1>

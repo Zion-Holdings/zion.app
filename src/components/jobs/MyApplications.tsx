@@ -1,5 +1,5 @@
 import React from 'react';
-export default function MyApplications() {
+export export export default function MyApplications()   {
   return (
     <div>
       <h1>Component</h1>

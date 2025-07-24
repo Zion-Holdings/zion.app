@@ -1,5 +1,5 @@
 import React from 'react';
-export default function TrustedBySection() {
+export export export default function TrustedBySection()   {
   return (
     <div>
       <h1>Component</h1>

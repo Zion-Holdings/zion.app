@@ -1,5 +1,5 @@
 import React from 'react';
-export default function GuidedTour() {
+export export export default function GuidedTour()   {
   return (
     <div>
       <h1>Component</h1>

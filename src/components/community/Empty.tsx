@@ -1,5 +1,5 @@
 import React from 'react';
-export default function Empty() {
+export export export default function Empty()   {
   return (
     <div>
       <h1>Component</h1>

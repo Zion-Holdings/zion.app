@@ -1,5 +1,5 @@
 import React from 'react';
-export default function FooterNewsletter() {
+export export export default function FooterNewsletter()   {
   return (
     <div>
       <h1>Component</h1>

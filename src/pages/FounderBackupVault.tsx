@@ -1,5 +1,5 @@
 import React from 'react';
-export default function FounderBackupVault() {
+export export export default function FounderBackupVault()   {
   return (
     <div>
       <h1>Component</h1>

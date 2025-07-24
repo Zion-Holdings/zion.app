@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ResumeTab() {
+export export export default function ResumeTab()   {
   return (
     <div>
       <h1>Component</h1>

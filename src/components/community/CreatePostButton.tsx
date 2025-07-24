@@ -1,5 +1,5 @@
 import React from 'react';
-export default function CreatePostButton() {
+export export export default function CreatePostButton()   {
   return (
     <div>
       <h1>Component</h1>

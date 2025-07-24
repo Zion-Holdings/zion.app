@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function scroll-area() {;
+export export export default function scroll-area()   {;
   return (
     <div>
       <h1>Component</h1>

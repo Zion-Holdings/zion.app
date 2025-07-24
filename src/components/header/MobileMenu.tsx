@@ -1,5 +1,5 @@
 import React from 'react';
-export default function MobileMenu() {
+export export export default function MobileMenu()   {
   return (
     <div>
       <h1>Component</h1>

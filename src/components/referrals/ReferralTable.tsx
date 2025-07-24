@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ReferralTable() {
+export export export default function ReferralTable()   {
   return (
     <div>
       <h1>Component</h1>

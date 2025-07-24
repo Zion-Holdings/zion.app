@@ -1,5 +1,5 @@
 import React from 'react';
-export default function RateOptimizationSection() {
+export export export default function RateOptimizationSection()   {
   return (
     <div>
       <h1>Component</h1>

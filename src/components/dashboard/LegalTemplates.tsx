@@ -1,5 +1,5 @@
 import React from 'react';
-export default function LegalTemplates() {
+export export export default function LegalTemplates()   {
   return (
     <div>
       <h1>Component</h1>

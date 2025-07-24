@@ -1,5 +1,5 @@
 import React from 'react';
-export default function Referrals() {
+export export export default function Referrals()   {
   return (
     <div>
       <h1>Component</h1>

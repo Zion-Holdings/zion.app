@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function quick-actions() {;
+export export export default function quick-actions()   {;
   return (
     <div>
       <h1>Component</h1>

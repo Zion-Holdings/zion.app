@@ -1,5 +1,5 @@
 import React from 'react';
-export default function CommunityTrust() {
+export export export default function CommunityTrust()   {
   return (
     <div>
       <h1>Component</h1>

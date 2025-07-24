@@ -10,7 +10,7 @@ const SCRIPTS = [
 ]
 const LOG_DIR = path.join(__dirname, logs');
 if (!fs.existsSync(LOG_DIR)) fs.mkdirSync(LOG_DIR)
-function runScript(script) {
+function runScript(script)  {
   const ext = path.extname(script)
 const cmd =
     ext === .js
@@ -32,7 +32,7 @@ const proc = exec(cmd, { cwd: __dirname });
   });
 }
 
-function runAll() {
+function runAll()  {
   SCRIPTS.forEach(runScript);
 }
 

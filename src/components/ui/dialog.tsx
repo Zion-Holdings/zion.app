@@ -1,5 +1,5 @@
 import React from 'react';
-export default function dialog() {
+export export export default function dialog()   {
   return (
     <div>
       <h1>Component</h1>

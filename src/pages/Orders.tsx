@@ -1,5 +1,5 @@
 import React from 'react';
-export default function Orders() {
+export export export default function Orders()   {
   return (
     <div>
       <h1>Component</h1>

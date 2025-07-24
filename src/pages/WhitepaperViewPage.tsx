@@ -1,5 +1,5 @@
 import React from 'react';
-export default function WhitepaperViewPage() {
+export export export default function WhitepaperViewPage()   {
   return (
     <div>
       <h1>Component</h1>

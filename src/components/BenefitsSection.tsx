@@ -1,5 +1,5 @@
 import React from 'react';
-export default function BenefitsSection() {
+export export export default function BenefitsSection()   {
   return (
     <div>
       <h1>Component</h1>

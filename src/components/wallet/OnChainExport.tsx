@@ -1,5 +1,5 @@
 import React from 'react';
-export default function OnChainExport() {
+export export export default function OnChainExport()   {
   return (
     <div>
       <h1>Component</h1>

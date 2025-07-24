@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ApiLogs() {
+export export export default function ApiLogs()   {
   return (
     <div>
       <h1>Component</h1>

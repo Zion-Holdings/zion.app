@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function bundle-analyzer() {;
+export export export default function bundle-analyzer()   {;
   return (
     <div>
       <h1>Component</h1>

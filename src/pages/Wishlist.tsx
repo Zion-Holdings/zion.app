@@ -1,5 +1,5 @@
 import React from 'react';
-export default function Wishlist() {
+export export export default function Wishlist()   {
   return (
     <div>
       <h1>Component</h1>

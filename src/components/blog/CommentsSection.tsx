@@ -1,5 +1,5 @@
 import React from 'react';
-export default function CommentsSection() {
+export export export default function CommentsSection()   {
   return (
     <div>
       <h1>Component</h1>

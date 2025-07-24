@@ -1,5 +1,5 @@
 import React from 'react';
-export default function CurrentSubscription() {
+export export export default function CurrentSubscription()   {
   return (
     <div>
       <h1>Component</h1>

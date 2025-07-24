@@ -1,5 +1,5 @@
 import React from 'react';
-export default function IntegrationsHub() {
+export export export default function IntegrationsHub()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ContentGenerator() {
+export export export default function ContentGenerator()   {
   return (
     <div>
       <h1>Component</h1>

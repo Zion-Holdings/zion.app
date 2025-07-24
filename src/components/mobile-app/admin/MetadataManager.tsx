@@ -1,5 +1,5 @@
 import React from 'react';
-export default function MetadataManager() {
+export export export default function MetadataManager()   {
   return (
     <div>
       <h1>Component</h1>

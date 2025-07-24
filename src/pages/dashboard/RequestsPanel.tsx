@@ -1,5 +1,5 @@
 import React from 'react';
-export default function RequestsPanel() {
+export export export default function RequestsPanel()   {
   return (
     <div>
       <h1>Component</h1>

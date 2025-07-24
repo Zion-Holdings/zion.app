@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ProfileHero() {
+export export export default function ProfileHero()   {
   return (
     <div>
       <h1>Component</h1>

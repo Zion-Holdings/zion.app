@@ -1,5 +1,5 @@
 import React from 'react';
-export default function PasswordStrengthMeter() {
+export export export default function PasswordStrengthMeter()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function SupportChatbot() {
+export export export default function SupportChatbot()   {
   return (
     <div>
       <h1>Component</h1>

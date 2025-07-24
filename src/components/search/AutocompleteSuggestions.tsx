@@ -1,5 +1,5 @@
 import React from 'react';
-export default function AutocompleteSuggestions() {
+export export export default function AutocompleteSuggestions()   {
   return (
     <div>
       <h1>Component</h1>

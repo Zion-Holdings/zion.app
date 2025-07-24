@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ToastContainer() {
+export export export default function ToastContainer()   {
   return (
     <div>
       <h1>Component</h1>

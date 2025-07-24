@@ -1,5 +1,5 @@
 import React from 'react';
-export default function AuthContext() {
+export export export default function AuthContext()   {
   return (
     <div>
       <h1>Component</h1>

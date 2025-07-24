@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ApplicationsTable() {
+export export export default function ApplicationsTable()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function PodcastHost() {
+export export export default function PodcastHost()   {
   return (
     <div>
       <h1>Component</h1>

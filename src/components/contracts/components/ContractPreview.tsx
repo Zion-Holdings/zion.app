@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ContractPreview() {
+export export export default function ContractPreview()   {
   return (
     <div>
       <h1>Component</h1>

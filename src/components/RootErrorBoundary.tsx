@@ -1,5 +1,5 @@
 import React from 'react';
-export default function RootErrorBoundary() {
+export export export default function RootErrorBoundary()   {
   return (
     <div>
       <h1>Component</h1>

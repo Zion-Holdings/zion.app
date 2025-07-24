@@ -1,5 +1,5 @@
 import React from 'react';
-export default function TalentOnboardingForm() {
+export export export default function TalentOnboardingForm()   {
   return (
     <div>
       <h1>Component</h1>

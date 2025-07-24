@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function MarketplaceSidebar() {
+export export export default function MarketplaceSidebar()   {
   return (
     <div>
       <h1>MarketplaceSidebar</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function QuoteRequestCard() {
+export export export default function QuoteRequestCard()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function HireConfirmationModal() {
+export export export default function HireConfirmationModal()   {
   return (
     <div>
       <h1>Component</h1>

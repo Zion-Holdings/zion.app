@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ApplicationRow() {
+export export export default function ApplicationRow()   {
   return (
     <div>
       <h1>Component</h1>

@@ -38,27 +38,27 @@ class SyntaxErrorFixer {
             let fixed = false;
 
             // Fix extra semicolons after imports
-            content = content.replace(/import\s+([^;]+);;/g, 'import $1;');
-            content = content.replace(/from\s+([^;]+);;/g, 'from $1;');
+            content = content.replace(/import\s+([^;]+);/g, 'import $1;');
+            content = content.replace(/from\s+([^;]+);/g, 'from $1;');
 
             // Fix unterminated string literals (remove extra quotes)
-            content = content.replace(/"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""/g, '');
-            content = content.replace(/""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""/g, '');
+            content = content.replace(//g, '');
+            content = content.replace(//g, '');
 
             // Fix extra semicolons in JSX
-            content = content.replace(/<([^>]+);;/g, '<$1');
-            content = content.replace(/>;;/g, '>;');
-            content = content.replace(/;;/g, ';');
+            content = content.replace(/<([^>]+);/g, '<$1')
+            content = content.replace(/>;/g, '>;');
+            content = content.replace(/;/g, ';');
 
             // Fix missing quotes in imports
             content = content.replace(/import\s+React\s+from\s+react';/g, "import React from 'react';");
             content = content.replace(/import\s+Head\s+from\s+next\/head';/g, "import Head from 'next/head';");
 
             // Fix export syntax
-            content = content.replace(/default\s+function/g, 'export default function');
+            content = content.replace(/default\s+function/g, 'export export default function');
 
             // Fix missing closing braces
-            content = content.replace(/function\s+([^{]+)\s*{/g, 'function $1 {');
+            content = content.replace(/function\s+([^{]+)\s*{/g, 'function $1  {');
 
             // Fix module specifier issues
             content = content.replace(/import\s+([^;]+)\s+from\s+([^;]+);/g, (match, importName, modulePath) => {
@@ -71,19 +71,19 @@ class SyntaxErrorFixer {
             // Fix API route exports
             if (filePath.includes('/api/') && filePath.endsWith('.ts')) {
                 if (!content.includes('export default') && !content.includes('export {')) {
-                    content = content.replace(/export\s+default\s+function\s+([^{]+)\s*{/g, 'export default function $1 {');
+                    content = content.replace(/export\s+default\s+function\s+([^{]+)\s*{/g, 'export export export default function $1   {');
                 }
             }
 
             // Fix React component syntax
-            content = content.replace(/default\s+function\s+([^{]+)\s*{/g, 'export default function $1 {');
+            content = content.replace(/default\s+function\s+([^{]+)\s*{/g, 'export export export default function $1   {');
 
             // Remove extra semicolons at the end of lines
-            content = content.replace(/;;+/g, ';');
+            content = content.replace(/;+/g, ';');
 
             // Fix JSX syntax
-            content = content.replace(/<([^>]+);/g, '<$1');
-            content = content.replace(/>;;/g, '>;');
+            content = content.replace(/<([^>]+);/g, '<$1')
+            content = content.replace(/>;/g, '>;');
 
             if (content !== originalContent) {
                 fs.writeFileSync(filePath, content, 'utf8');

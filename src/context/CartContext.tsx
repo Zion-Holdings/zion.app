@@ -1,5 +1,5 @@
 import React from 'react';
-export default function CartContext() {
+export export export default function CartContext()   {
   return (
     <div>
       <h1>Component</h1>

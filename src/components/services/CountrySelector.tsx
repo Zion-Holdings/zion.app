@@ -1,5 +1,5 @@
 import React from 'react';
-export default function CountrySelector() {
+export export export default function CountrySelector()   {
   return (
     <div>
       <h1>Component</h1>

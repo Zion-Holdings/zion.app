@@ -1,5 +1,5 @@
 import React from 'react';
-export default function useAdvancedOnboardingStatus() {
+export export export default function useAdvancedOnboardingStatus()   {
   return (
     <div>
       <h1>Component</h1>

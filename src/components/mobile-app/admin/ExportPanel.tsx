@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ExportPanel() {
+export export export default function ExportPanel()   {
   return (
     <div>
       <h1>Component</h1>

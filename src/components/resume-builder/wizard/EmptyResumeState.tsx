@@ -1,5 +1,5 @@
 import React from 'react';
-export default function EmptyResumeState() {
+export export export default function EmptyResumeState()   {
   return (
     <div>
       <h1>Component</h1>

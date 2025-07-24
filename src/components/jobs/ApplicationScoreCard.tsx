@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ApplicationScoreCard() {
+export export export default function ApplicationScoreCard()   {
   return (
     <div>
       <h1>Component</h1>

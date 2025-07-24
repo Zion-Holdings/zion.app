@@ -1,5 +1,5 @@
 import React from 'react';
-export default function TalentRateRecommender() {
+export export export default function TalentRateRecommender()   {
   return (
     <div>
       <h1>Component</h1>

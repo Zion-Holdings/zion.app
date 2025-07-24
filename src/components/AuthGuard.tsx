@@ -1,5 +1,5 @@
 import React from 'react';
-export default function AuthGuard() {
+export export export default function AuthGuard()   {
   return (
     <div>
       <h1>Component</h1>

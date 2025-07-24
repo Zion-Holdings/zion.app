@@ -1,5 +1,5 @@
 import React from 'react';
-export default function InstantMessaging() {
+export export export default function InstantMessaging()   {
   return (
     <div>
       <h1>Component</h1>

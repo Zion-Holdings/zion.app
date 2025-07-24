@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ApiPlayground() {
+export export export default function ApiPlayground()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function FeedbackWidget() {
+export export export default function FeedbackWidget()   {
   return (
     <div>
       <h1>Component</h1>

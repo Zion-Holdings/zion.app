@@ -1,5 +1,5 @@
 import React from 'react';
-export default function TalentProfile() {
+export export export default function TalentProfile()   {
   return (
     <div>
       <h1>Component</h1>

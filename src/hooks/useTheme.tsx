@@ -1,5 +1,5 @@
 import React from 'react';
-export default function useTheme() {
+export export export default function useTheme()   {
   return (
     <div>
       <h1>Component</h1>

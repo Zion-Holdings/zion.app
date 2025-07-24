@@ -1,5 +1,5 @@
 import React from 'react';
-export default function PartnerResources() {
+export export export default function PartnerResources()   {
   return (
     <div>
       <h1>Component</h1>

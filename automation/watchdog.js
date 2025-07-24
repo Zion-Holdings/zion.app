@@ -10,7 +10,7 @@ const CHECK_INTERVAL = 10000; // 10 seconds
 
 let cursorChatProcess = null;
 let cursorChatActive = false
-function isPortInUse(port) {
+function isPortInUse(port)  {
   try {
     const output = execSync(
       `lsof -i :${port} | grep LISTEN || true`,
@@ -21,7 +21,7 @@ function isPortInUse(port) {
   }
 }
 
-function killPort(port) {
+function killPort(port)  {
   try {
     execSync(`lsof -ti :${port} | xargs kill -9 || true`);
     console.log(`[Watchdog] Killed processes on port ${port}`);
@@ -30,7 +30,7 @@ function killPort(port) {
   }
 }
 
-function isProcessRunning(cmd) {
+function isProcessRunning(cmd)  {
   try {
     const output = execSync(
       `ps aux | grep ${cmd} | grep -v grep || true`,
@@ -41,7 +41,7 @@ function isProcessRunning(cmd) {
   }
 }
 
-function startProcess(cmd, cwd = process.cwd(), onExit) {
+function startProcess(cmd, cwd = process.cwd(), onExit)  {
   console.log(`[Watchdog] Starting: ${cmd}`)
 const proc = spawn(cmd, {
     shell: true,
@@ -55,7 +55,7 @@ const proc = spawn(cmd, {
   return proc;
 }
 
-function startCursorChat() {
+function startCursorChat()  {
   if (cursorChatActive) return;
   cursorChatActive = true;
   cursorChatProcess = startProcess(
@@ -72,7 +72,7 @@ function startCursorChat() {
   console.log('[Watchdog] Cursor chat session started.');
 }
 
-function killAllCursorChats() {
+function killAllCursorChats()  {
   try {
     execSync(
       `ps aux | grep cursor-multi-computer-communication.cjs chat' | grep -v grep | awk {print $2} | xargs kill -9 || true`,
@@ -83,7 +83,7 @@ function killAllCursorChats() {
   }
 }
 
-function watchdogLoop() {
+function watchdogLoop()  {
   setInterval(() => {
     // Ensure port is not blocked
     if (isPortInUse(PORT)) {

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ProductionErrorBoundary() {
+export export export default function ProductionErrorBoundary()   {
   return (
     <div>
       <h1>Component</h1>

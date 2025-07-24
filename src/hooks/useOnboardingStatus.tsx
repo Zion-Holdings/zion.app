@@ -1,5 +1,5 @@
 import React from 'react';
-export default function useOnboardingStatus() {
+export export export default function useOnboardingStatus()   {
   return (
     <div>
       <h1>Component</h1>

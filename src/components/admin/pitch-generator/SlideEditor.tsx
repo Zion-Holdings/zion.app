@@ -1,5 +1,5 @@
 import React from 'react';
-export default function SlideEditor() {
+export export export default function SlideEditor()   {
   return (
     <div>
       <h1>Component</h1>

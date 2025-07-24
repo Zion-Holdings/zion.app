@@ -1,5 +1,5 @@
 import React from 'react';
-export default function MoreTalentsPage() {
+export export export default function MoreTalentsPage()   {
   return (
     <div>
       <h1>Component</h1>

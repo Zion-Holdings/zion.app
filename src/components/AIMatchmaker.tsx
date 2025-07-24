@@ -1,5 +1,5 @@
 import React from 'react';
-export default function AIMatchmaker() {
+export export export default function AIMatchmaker()   {
   return (
     <div>
       <h1>Component</h1>

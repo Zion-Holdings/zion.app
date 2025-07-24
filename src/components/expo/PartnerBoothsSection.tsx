@@ -1,5 +1,5 @@
 import React from 'react';
-export default function PartnerBoothsSection() {
+export export export default function PartnerBoothsSection()   {
   return (
     <div>
       <h1>Component</h1>

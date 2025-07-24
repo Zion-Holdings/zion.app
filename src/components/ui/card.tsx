@@ -1,5 +1,5 @@
 import React from 'react';
-export default function card() {
+export export export default function card()   {
   return (
     <div>
       <h1>Component</h1>

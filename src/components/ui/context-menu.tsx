@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function context-menu() {;
+export export export default function context-menu()   {;
   return (
     <div>
       <h1>Component</h1>

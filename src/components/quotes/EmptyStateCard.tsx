@@ -1,5 +1,5 @@
 import React from 'react';
-export default function EmptyStateCard() {
+export export export default function EmptyStateCard()   {
   return (
     <div>
       <h1>Component</h1>

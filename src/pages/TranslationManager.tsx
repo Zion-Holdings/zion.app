@@ -1,5 +1,5 @@
 import React from 'react';
-export default function TranslationManager() {
+export export export default function TranslationManager()   {
   return (
     <div>
       <h1>Component</h1>

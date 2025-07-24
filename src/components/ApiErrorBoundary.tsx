@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ApiErrorBoundary() {
+export export export default function ApiErrorBoundary()   {
   return (
     <div>
       <h1>Component</h1>

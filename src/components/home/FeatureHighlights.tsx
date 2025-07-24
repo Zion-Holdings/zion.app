@@ -1,5 +1,5 @@
 import React from 'react';
-export default function FeatureHighlights() {
+export export export default function FeatureHighlights()   {
   return (
     <div>
       <h1>Component</h1>

@@ -285,7 +285,7 @@ class SecurityAgent {
         priority: critical',
         description: Security score is below threshold',
         action: Fix identified vulnerabilities immediately
-      });
+      })
     }
     
     if (analysis.codeScan.xss > 0) {
@@ -365,7 +365,7 @@ class CodeQualityAgent {
     };
   }
 
-  async analyzeDuplication() {
+  async analyzeDuplication()  {
     // Simulate duplication analysis
     return {
       duplicatedLines: 45,
@@ -413,7 +413,7 @@ class CodeQualityAgent {
         priority: medium',
         description: Code quality score is below threshold',
         action: Fix linting errors and reduce complexity
-      });
+      })
     }
     
     if (analysis.linting.errors > 0) {
@@ -538,7 +538,7 @@ class AccessibilityAgent {
         priority: medium',
         description: Accessibility score is below threshold',
         action: Fix accessibility violations
-      });
+      })
     }
     
     if (analysis.axeResults.violations > 0) {
@@ -796,4 +796,4 @@ class TestCoverageAgent {
   }
 }
 
-module.exports = AIImprovementAgents; 
+module.exports = AIImprovementAgents 

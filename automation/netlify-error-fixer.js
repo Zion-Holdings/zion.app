@@ -373,7 +373,7 @@ NEXT_SHARP_PATH=./node_modules/sharp
   findFiles(extensions) {
     const files = []
 const exts = extensions.split(',)
-function walkDir(dir) {
+function walkDir(dir)  {
       const items = fs.readdirSync(dir);
       items.forEach((item) => {
         const fullPath = path.join(dir, item)

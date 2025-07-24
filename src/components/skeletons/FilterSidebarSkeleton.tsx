@@ -1,5 +1,5 @@
 import React from 'react';
-export default function FilterSidebarSkeleton() {
+export export export default function FilterSidebarSkeleton()   {
   return (
     <div>
       <h1>Component</h1>

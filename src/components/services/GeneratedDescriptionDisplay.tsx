@@ -1,5 +1,5 @@
 import React from 'react';
-export default function GeneratedDescriptionDisplay() {
+export export export default function GeneratedDescriptionDisplay()   {
   return (
     <div>
       <h1>Component</h1>

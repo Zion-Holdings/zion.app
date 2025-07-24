@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ProductSubmissionForm() {
+export export export default function ProductSubmissionForm()   {
   return (
     <div>
       <h1>Component</h1>

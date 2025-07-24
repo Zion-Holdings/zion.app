@@ -1,5 +1,5 @@
 import React from 'react';
-export default function UsageOverview() {
+export export export default function UsageOverview()   {
   return (
     <div>
       <h1>Component</h1>

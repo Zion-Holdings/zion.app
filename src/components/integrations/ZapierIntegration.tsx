@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ZapierIntegration() {
+export export export default function ZapierIntegration()   {
   return (
     <div>
       <h1>Component</h1>

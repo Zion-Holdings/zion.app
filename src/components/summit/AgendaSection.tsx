@@ -1,5 +1,5 @@
 import React from 'react';
-export default function AgendaSection() {
+export export export default function AgendaSection()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function WalletDashboard() {
+export export export default function WalletDashboard()   {
   return (
     <div>
       <h1>Component</h1>

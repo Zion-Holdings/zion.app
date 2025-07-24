@@ -1,5 +1,5 @@
 import React from 'react';
-export default function QuoteRequestForm() {
+export export export default function QuoteRequestForm()   {
   return (
     <div>
       <h1>Component</h1>

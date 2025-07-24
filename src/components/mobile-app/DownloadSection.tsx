@@ -1,5 +1,5 @@
 import React from 'react';
-export default function DownloadSection() {
+export export export default function DownloadSection()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function BottomNavigation() {
+export export export default function BottomNavigation()   {
   return (
     <div>
       <h1>Component</h1>

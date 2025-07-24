@@ -1,5 +1,5 @@
 import React from 'react';
-export default function carousel() {
+export export export default function carousel()   {
   return (
     <div>
       <h1>Component</h1>

@@ -78,8 +78,8 @@ class ImprovedAutomationOrchestrator {
   setupWebSocket() {
     this.io = socketIo(this.server, {
       cors: {
-        origin: "*","""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-        methods: ["GET", "POST"]"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        origin: "*",
+        methods: ["GET", "POST"]
       }
     });
 
@@ -219,7 +219,7 @@ class ImprovedAutomationOrchestrator {
           
           if (system.config.autoRestart && system.restarts < system.config.maxRestarts) {
             system.restarts++;
-            console.log(`🔄 Auto-restarting ${systemName} (attempt ${system.restarts}/${system.config.maxRestarts})`);
+            console.log(`🔄 Auto-restarting ${systemName} (attempt ${system.restarts}/${system.config.maxRestarts})`)
             setTimeout(() => this.startSystem(systemName), 5000);
           }
         }
@@ -361,7 +361,7 @@ class PortManager {
       }
     }
     
-    throw new Error('No available ports found');
+    throw new Error('No available ports found')
   }
 
   isPortAvailable(port) {

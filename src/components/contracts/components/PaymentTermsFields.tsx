@@ -1,5 +1,5 @@
 import React from 'react';
-export default function PaymentTermsFields() {
+export export export default function PaymentTermsFields()   {
   return (
     <div>
       <h1>Component</h1>

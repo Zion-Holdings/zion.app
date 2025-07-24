@@ -1,5 +1,5 @@
 import React from 'react';
-export default function FavoritesContext() {
+export export export default function FavoritesContext()   {
   return (
     <div>
       <h1>Component</h1>

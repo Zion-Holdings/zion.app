@@ -1,5 +1,5 @@
 import React from 'react';
-export default function AIListingGenerator() {
+export export export default function AIListingGenerator()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function OfflineToast() {
+export export export default function OfflineToast()   {
   return (
     <div>
       <h1>Component</h1>

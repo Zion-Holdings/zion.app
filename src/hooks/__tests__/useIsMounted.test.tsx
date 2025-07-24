@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function useIsMounted.test() {;
+export export export default function useIsMounted.test()   {;
   return (
     <div>
       <h1>Component</h1>

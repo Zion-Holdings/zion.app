@@ -1,5 +1,5 @@
 import React from 'react';
-export default function SnackbarContext() {
+export export export default function SnackbarContext()   {
   return (
     <div>
       <h1>Component</h1>

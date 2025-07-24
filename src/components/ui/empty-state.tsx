@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function empty-state() {;
+export export export default function empty-state()   {;
   return (
     <div>
       <h1>Component</h1>

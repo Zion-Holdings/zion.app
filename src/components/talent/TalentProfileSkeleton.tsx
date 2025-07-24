@@ -1,5 +1,5 @@
 import React from 'react';
-export default function TalentProfileSkeleton() {
+export export export default function TalentProfileSkeleton()   {
   return (
     <div>
       <h1>Component</h1>

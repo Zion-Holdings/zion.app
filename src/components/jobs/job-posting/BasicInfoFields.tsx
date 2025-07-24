@@ -1,5 +1,5 @@
 import React from 'react';
-export default function BasicInfoFields() {
+export export export default function BasicInfoFields()   {
   return (
     <div>
       <h1>Component</h1>

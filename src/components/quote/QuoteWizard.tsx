@@ -1,5 +1,5 @@
 import React from 'react';
-export default function QuoteWizard() {
+export export export default function QuoteWizard()   {
   return (
     <div>
       <h1>Component</h1>

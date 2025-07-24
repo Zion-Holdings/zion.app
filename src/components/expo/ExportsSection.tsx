@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ExportsSection() {
+export export export default function ExportsSection()   {
   return (
     <div>
       <h1>Component</h1>

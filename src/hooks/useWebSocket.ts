@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from react';
 ;
-export function useWebSocket(options: unknown) {;
+export function useWebSocket(options: unknown)  {;
   const [isConnected, setIsConnected] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const wsRef: unknown = useRef<WebSocket | null>(null);
@@ -35,7 +35,7 @@ export function useWebSocket(options: unknown) {;
             options.reconnectInterval || 3000,;
           );
         };
-      };
+      }
       ws.onerror = (event) => {;
         setError('WebSocket error occurred');
         options.onError?.(event);

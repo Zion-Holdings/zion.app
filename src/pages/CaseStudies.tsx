@@ -1,5 +1,5 @@
 import React from 'react';
-export default function CaseStudies() {
+export export export default function CaseStudies()   {
   return (
     <div>
       <h1>Component</h1>

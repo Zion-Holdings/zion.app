@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function input-otp() {;
+export export export default function input-otp()   {;
   return (
     <div>
       <h1>Component</h1>

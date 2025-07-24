@@ -1,5 +1,5 @@
 import React from 'react';
-export default function AppFallback() {
+export export export default function AppFallback()   {
   return (
     <div>
       <h1>Component</h1>

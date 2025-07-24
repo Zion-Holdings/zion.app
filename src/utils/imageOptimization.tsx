@@ -1,5 +1,5 @@
 import React from 'react';
-export default function imageOptimization() {
+export export export default function imageOptimization()   {
   return (
     <div>
       <h1>Component</h1>

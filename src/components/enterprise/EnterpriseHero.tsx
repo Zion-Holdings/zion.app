@@ -1,5 +1,5 @@
 import React from 'react';
-export default function EnterpriseHero() {
+export export export default function EnterpriseHero()   {
   return (
     <div>
       <h1>Component</h1>

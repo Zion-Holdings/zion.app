@@ -1,5 +1,5 @@
 import React from 'react';
-export default function AuthButtons() {
+export export export default function AuthButtons()   {
   return (
     <div>
       <h1>Component</h1>

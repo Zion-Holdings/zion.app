@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ZionBrainDashboard() {
+export export export default function ZionBrainDashboard()   {
   return (
     <div>
       <h1>Component</h1>

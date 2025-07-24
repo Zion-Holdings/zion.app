@@ -1,5 +1,5 @@
 import React from 'react';
-export default function OpenAppRedirect() {
+export export export default function OpenAppRedirect()   {
   return (
     <div>
       <h1>Component</h1>

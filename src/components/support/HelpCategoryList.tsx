@@ -1,5 +1,5 @@
 import React from 'react';
-export default function HelpCategoryList() {
+export export export default function HelpCategoryList()   {
   return (
     <div>
       <h1>Component</h1>

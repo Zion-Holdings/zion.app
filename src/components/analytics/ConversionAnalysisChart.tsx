@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ConversionAnalysisChart() {
+export export export default function ConversionAnalysisChart()   {
   return (
     <div>
       <h1>Component</h1>

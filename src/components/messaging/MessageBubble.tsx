@@ -1,5 +1,5 @@
 import React from 'react';
-export default function MessageBubble() {
+export export export default function MessageBubble()   {
   return (
     <div>
       <h1>Component</h1>

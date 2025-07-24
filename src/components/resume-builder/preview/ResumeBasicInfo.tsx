@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ResumeBasicInfo() {
+export export export default function ResumeBasicInfo()   {
   return (
     <div>
       <h1>Component</h1>

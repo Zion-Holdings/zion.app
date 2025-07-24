@@ -1,5 +1,5 @@
 import React from 'react';
-export default function PointsBadge() {
+export export export default function PointsBadge()   {
   return (
     <div>
       <h1>Component</h1>

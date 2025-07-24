@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ConversationItem() {
+export export export default function ConversationItem()   {
   return (
     <div>
       <h1>Component</h1>

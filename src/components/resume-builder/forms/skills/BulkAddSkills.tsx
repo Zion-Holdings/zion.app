@@ -1,5 +1,5 @@
 import React from 'react';
-export default function BulkAddSkills() {
+export export export default function BulkAddSkills()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ServiceDescriptionForm() {
+export export export default function ServiceDescriptionForm()   {
   return (
     <div>
       <h1>Component</h1>

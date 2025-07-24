@@ -8,7 +8,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 
-async function fixSyntaxErrors() {
+async function fixSyntaxErrors()  {
   console.log('🔧 Fixing syntax errors in automation files...');
   
   const automationDir = __dirname;
@@ -43,10 +43,10 @@ async function fixSyntaxErrors() {
         // Fix new statements with extra quotes
         .replace(/new' /g, "new ")
         // Fix null assignments with extra quotes
-        .replace(/null';;/g, "null;")
+        .replace(/null';/g, "null;")
         .replace(/null';/g, "null'")
         // Fix false assignments with extra quotes
-        .replace(/false';;/g, "false;")
+        .replace(/false';/g, "false;")
         .replace(/false';/g, "false'")
         // Fix string literals with missing quotes
         .replace(/✅ Intelligent Automation Orchestrator initialized successfully',/g, "'✅ Intelligent Automation Orchestrator initialized successfully'")

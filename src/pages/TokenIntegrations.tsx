@@ -1,5 +1,5 @@
 import React from 'react';
-export default function TokenIntegrations() {
+export export export default function TokenIntegrations()   {
   return (
     <div>
       <h1>Component</h1>

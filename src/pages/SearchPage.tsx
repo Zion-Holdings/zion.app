@@ -1,5 +1,5 @@
 import React from 'react';
-export default function SearchPage() {
+export export export default function SearchPage()   {
   return (
     <div>
       <h1>Component</h1>

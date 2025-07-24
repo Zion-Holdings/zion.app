@@ -1,5 +1,5 @@
 import React from 'react';
-export default function SearchResultCard() {
+export export export default function SearchResultCard()   {
   return (
     <div>
       <h1>Component</h1>

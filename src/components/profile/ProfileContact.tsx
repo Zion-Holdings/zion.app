@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ProfileContact() {
+export export export default function ProfileContact()   {
   return (
     <div>
       <h1>Component</h1>

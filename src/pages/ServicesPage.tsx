@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ServicesPage() {
+export export export default function ServicesPage()   {
   return (
     <div>
       <h1>Component</h1>

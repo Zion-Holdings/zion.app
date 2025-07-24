@@ -1,5 +1,5 @@
 import React from 'react';
-export default function label() {
+export export export default function label()   {
   return (
     <div>
       <h1>Component</h1>

@@ -191,7 +191,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
         
         // Retry logic
         if (task.errorCount < task.retryAttempts) {
-          console.log(`🔄 Retrying task: ${task.name} (${task.errorCount}/${task.retryAttempts})`);
+          console.log(`🔄 Retrying task: ${task.name} (${task.errorCount}/${task.retryAttempts})`)
           setTimeout(() => runTask(), 5000);
         }
       }
@@ -267,7 +267,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       if (task.enabled) {
         totalTasks++;
         if (task.errorCount < 3) {
-          healthyTasks++;
+          healthyTasks++
         }
       }
     }
@@ -318,7 +318,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     this.healthStatus = 'stopped';
     
     this.emit('stopped');
-    console.log('✅ Intelligent Automation Orchestrator stopped');
+    console.log('✅ Intelligent Automation Orchestrator stopped')
   }
 
   getStatus() {

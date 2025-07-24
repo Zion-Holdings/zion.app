@@ -1,5 +1,5 @@
 import React from 'react';
-export default function AuthProvider() {
+export export export default function AuthProvider()   {
   return (
     <div>
       <h1>Component</h1>

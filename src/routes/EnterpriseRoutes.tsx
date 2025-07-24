@@ -1,5 +1,5 @@
 import React from 'react';
-export default function EnterpriseRoutes() {
+export export export default function EnterpriseRoutes()   {
   return (
     <div>
       <h1>Component</h1>

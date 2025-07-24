@@ -1,5 +1,5 @@
 import React from 'react';
-export default function HireRequestModal() {
+export export export default function HireRequestModal()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function SharedInbox() {
+export export export default function SharedInbox()   {
   return (
     <div>
       <h1>Component</h1>

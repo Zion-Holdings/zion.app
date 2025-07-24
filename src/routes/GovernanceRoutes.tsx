@@ -1,5 +1,5 @@
 import React from 'react';
-export default function GovernanceRoutes() {
+export export export default function GovernanceRoutes()   {
   return (
     <div>
       <h1>Component</h1>

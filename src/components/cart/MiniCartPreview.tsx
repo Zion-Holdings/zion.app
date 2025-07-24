@@ -1,5 +1,5 @@
 import React from 'react';
-export default function MiniCartPreview() {
+export export export default function MiniCartPreview()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function NotificationList() {
+export export export default function NotificationList()   {
   return (
     <div>
       <h1>Component</h1>

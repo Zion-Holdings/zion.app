@@ -1,5 +1,5 @@
 import React from 'react';
-export default function MainNavigation() {
+export export export default function MainNavigation()   {
   return (
     <div>
       <h1>Component</h1>

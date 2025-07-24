@@ -1,5 +1,5 @@
 import React from 'react';
-export default function InteractiveMap() {
+export export export default function InteractiveMap()   {
   return (
     <div>
       <h1>Component</h1>

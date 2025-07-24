@@ -1,5 +1,5 @@
 import React from 'react';
-export default function PostForm() {
+export export export default function PostForm()   {
   return (
     <div>
       <h1>Component</h1>

@@ -294,7 +294,7 @@ class AutonomousGitManager {
 
     generateCommitMessage(files, groupIndex = 0) {
         const fileGroups = this.groupFilesIntelligently(files);
-        const descriptions = [];
+        const descriptions = []
         
         fileGroups.forEach(group => {
             const ext = path.extname(group[0]).toLowerCase();
@@ -491,7 +491,7 @@ class AutonomousGitManager {
             if (!staged) continue;
             
             // Generate commit message
-            const message = this.generateCommitMessage(group, i);
+            const message = this.generateCommitMessage(group, i)
             
             // Commit with delay for performance optimization
             if (i > 0) {

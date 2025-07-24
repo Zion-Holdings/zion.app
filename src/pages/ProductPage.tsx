@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ProductPage() {
+export export export default function ProductPage()   {
   return (
     <div>
       <h1>Component</h1>

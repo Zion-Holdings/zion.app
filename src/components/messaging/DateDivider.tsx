@@ -1,5 +1,5 @@
 import React from 'react';
-export default function DateDivider() {
+export export export default function DateDivider()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function HeroSection() {
+export export export default function HeroSection()   {
   return (
     <div>
       <h1>Component</h1>

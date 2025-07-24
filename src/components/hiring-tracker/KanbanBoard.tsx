@@ -1,5 +1,5 @@
 import React from 'react';
-export default function KanbanBoard() {
+export export export default function KanbanBoard()   {
   return (
     <div>
       <h1>Component</h1>

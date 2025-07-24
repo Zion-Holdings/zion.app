@@ -1,5 +1,5 @@
 import React from 'react';
-export default function OrgChart() {
+export export export default function OrgChart()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function PreviewHeader() {
+export export export default function PreviewHeader()   {
   return (
     <div>
       <h1>Component</h1>

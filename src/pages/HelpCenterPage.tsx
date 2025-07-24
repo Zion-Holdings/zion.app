@@ -1,5 +1,5 @@
 import React from 'react';
-export default function HelpCenterPage() {
+export export export default function HelpCenterPage()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function CountryServiceCard() {
+export export export default function CountryServiceCard()   {
   return (
     <div>
       <h1>Component</h1>

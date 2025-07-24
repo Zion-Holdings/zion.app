@@ -244,7 +244,7 @@ class IntelligentGitOrchestrator {
             tests: [],
             automation: [],
             other: []
-        };
+        }
         
         files.forEach(file => {
             const ext = path.extname(file).toLowerCase();
@@ -488,7 +488,7 @@ class IntelligentGitOrchestrator {
             if (!staged) continue;
             
             // Generate intelligent commit message
-            const message = this.generateIntelligentCommitMessage(batch, i);
+            const message = this.generateIntelligentCommitMessage(batch, i)
             
             // Commit with delay for performance optimization
             if (i > 0) {

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ResumeSelector() {
+export export export default function ResumeSelector()   {
   return (
     <div>
       <h1>Component</h1>

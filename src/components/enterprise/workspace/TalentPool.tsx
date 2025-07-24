@@ -1,5 +1,5 @@
 import React from 'react';
-export default function TalentPool() {
+export export export default function TalentPool()   {
   return (
     <div>
       <h1>Component</h1>

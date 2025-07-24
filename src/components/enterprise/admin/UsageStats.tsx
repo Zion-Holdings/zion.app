@@ -1,5 +1,5 @@
 import React from 'react';
-export default function UsageStats() {
+export export export default function UsageStats()   {
   return (
     <div>
       <h1>Component</h1>

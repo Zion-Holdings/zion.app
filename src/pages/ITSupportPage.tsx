@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ITSupportPage() {
+export export export default function ITSupportPage()   {
   return (
     <div>
       <h1>Component</h1>

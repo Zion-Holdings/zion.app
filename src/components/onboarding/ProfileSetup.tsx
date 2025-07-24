@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ProfileSetup() {
+export export export default function ProfileSetup()   {
   return (
     <div>
       <h1>Component</h1>

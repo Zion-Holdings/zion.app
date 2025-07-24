@@ -1,5 +1,5 @@
 import React from 'react';
-export default function AICoreDashboard() {
+export export export default function AICoreDashboard()   {
   return (
     <div>
       <h1>Component</h1>

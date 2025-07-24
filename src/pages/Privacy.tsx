@@ -1,5 +1,5 @@
 import React from 'react';
-export default function Privacy() {
+export export export default function Privacy()   {
   return (
     <div>
       <h1>Component</h1>

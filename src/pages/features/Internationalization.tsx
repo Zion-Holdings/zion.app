@@ -1,5 +1,5 @@
 import React from 'react';
-export default function Internationalization() {
+export export export default function Internationalization()   {
   return (
     <div>
       <h1>Component</h1>

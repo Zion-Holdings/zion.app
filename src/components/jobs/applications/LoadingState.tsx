@@ -1,5 +1,5 @@
 import React from 'react';
-export default function LoadingState() {
+export export export default function LoadingState()   {
   return (
     <div>
       <h1>Component</h1>

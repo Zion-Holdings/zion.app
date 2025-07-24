@@ -1,5 +1,5 @@
 import React from 'react';
-export default function steps() {
+export export export default function steps()   {
   return (
     <div>
       <h1>Component</h1>

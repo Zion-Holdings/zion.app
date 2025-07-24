@@ -1,5 +1,5 @@
 import React from 'react';
-export default function EducationFormFields() {
+export export export default function EducationFormFields()   {
   return (
     <div>
       <h1>Component</h1>

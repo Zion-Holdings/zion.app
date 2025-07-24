@@ -1,5 +1,5 @@
 import React from 'react';
-export default function CategoryDetail() {
+export export export default function CategoryDetail()   {
   return (
     <div>
       <h1>Component</h1>

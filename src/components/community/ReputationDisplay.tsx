@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ReputationDisplay() {
+export export export default function ReputationDisplay()   {
   return (
     <div>
       <h1>Component</h1>

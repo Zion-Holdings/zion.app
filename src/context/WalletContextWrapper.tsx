@@ -1,5 +1,5 @@
 import React from 'react';
-export default function WalletContextWrapper() {
+export export export default function WalletContextWrapper()   {
   return (
     <div>
       <h1>Component</h1>

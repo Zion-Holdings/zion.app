@@ -1,5 +1,5 @@
 import React from 'react';
-export default function SummitPage() {
+export export export default function SummitPage()   {
   return (
     <div>
       <h1>Component</h1>

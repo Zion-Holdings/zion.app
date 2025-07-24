@@ -1,5 +1,5 @@
 import React from 'react';
-export default function InterviewResponseForm() {
+export export export default function InterviewResponseForm()   {
   return (
     <div>
       <h1>Component</h1>

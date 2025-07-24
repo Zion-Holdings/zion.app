@@ -1,5 +1,5 @@
 import React from 'react';
-export default function OnsiteQuoteModal() {
+export export export default function OnsiteQuoteModal()   {
   return (
     <div>
       <h1>Component</h1>

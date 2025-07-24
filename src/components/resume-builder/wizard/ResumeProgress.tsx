@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ResumeProgress() {
+export export export default function ResumeProgress()   {
   return (
     <div>
       <h1>Component</h1>

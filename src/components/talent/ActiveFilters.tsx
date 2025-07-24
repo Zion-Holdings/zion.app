@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ActiveFilters() {
+export export export default function ActiveFilters()   {
   return (
     <div>
       <h1>Component</h1>

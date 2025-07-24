@@ -1,5 +1,5 @@
 import React from 'react';
-export default function checkbox() {
+export export export default function checkbox()   {
   return (
     <div>
       <h1>Component</h1>

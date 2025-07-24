@@ -1,5 +1,5 @@
 import React from 'react';
-export default function AnalyticsContext() {
+export export export default function AnalyticsContext()   {
   return (
     <div>
       <h1>Component</h1>

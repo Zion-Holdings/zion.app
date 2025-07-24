@@ -1,5 +1,5 @@
 import React from 'react';
-export default function QuoteDetails() {
+export export export default function QuoteDetails()   {
   return (
     <div>
       <h1>Component</h1>

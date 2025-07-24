@@ -1,5 +1,5 @@
 import React from 'react';
-export default function EnterpriseAdmin() {
+export export export default function EnterpriseAdmin()   {
   return (
     <div>
       <h1>Component</h1>

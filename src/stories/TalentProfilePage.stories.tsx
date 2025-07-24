@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function TalentProfilePage.stories() {;
+export export export default function TalentProfilePage.stories()   {;
   return (
     <div>
       <h1>Component</h1>

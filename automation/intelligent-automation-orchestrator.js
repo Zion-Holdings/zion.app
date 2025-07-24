@@ -230,8 +230,8 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
   setupWebSocket() {
     this.io = socketIo(this.server, {
       cors: {
-        origin: "*","""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-        methods: ["GET", "POST"]"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        origin: "*",
+        methods: ["GET", "POST"]
       }
     });
 
@@ -436,7 +436,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       await this.sleep(1000);
     }
     
-    throw new Error(`System ${systemName} failed to start within ${maxWaitTime}ms`);
+    throw new Error(`System ${systemName} failed to start within ${maxWaitTime}ms`)
   }
 
   /**

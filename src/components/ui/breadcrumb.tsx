@@ -1,5 +1,5 @@
 import React from 'react';
-export default function breadcrumb() {
+export export export default function breadcrumb()   {
   return (
     <div>
       <h1>Component</h1>

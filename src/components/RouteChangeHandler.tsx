@@ -1,5 +1,5 @@
 import React from 'react';
-export default function RouteChangeHandler() {
+export export export default function RouteChangeHandler()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ViewModeContext() {
+export export export default function ViewModeContext()   {
   return (
     <div>
       <h1>Component</h1>

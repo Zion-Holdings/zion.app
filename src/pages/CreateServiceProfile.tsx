@@ -1,5 +1,5 @@
 import React from 'react';
-export default function CreateServiceProfile() {
+export export export default function CreateServiceProfile()   {
   return (
     <div>
       <h1>Component</h1>

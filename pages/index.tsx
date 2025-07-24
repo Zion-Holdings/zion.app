@@ -1,10 +1,10 @@
-export default function Home() {;
+export export export default function Home()   {;
   return (;
     <div style={{ ;
       padding: '2rem', ;
       fontFamily: 'Arial, sans-serif',;
       maxWidth: '800px',;
-      margin: '0 auto';
+      margin: '0 auto'
     }}>;
       <h1>🚀 Bolt New Zion App</h1>;
       <p>✅ The app is running successfully!</p>;
@@ -14,7 +14,7 @@ export default function Home() {;
         marginTop: '2rem', ;
         padding: '1rem', ;
         backgroundColor: '#f0f0f0', ;
-        borderRadius: '8px' ;
+        borderRadius: '8px' 
       }}>;
         <h3>✅ Success Indicators:</h3>;
         <ul>;
@@ -30,7 +30,7 @@ export default function Home() {;
         marginTop: '2rem', ;
         padding: '1rem', ;
         backgroundColor: '#e8f5e8', ;
-        borderRadius: '8px' ;
+        borderRadius: '8px' 
       }}>;
         <h3>🔧 Available Automation Scripts:</h3>;
         <ul>;

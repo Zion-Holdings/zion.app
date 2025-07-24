@@ -519,7 +519,7 @@ class InfiniteImprovementLoop extends EventEmitter {
   async processImprovementQueue() {
     console.log(
       `🔄 Processing ${this.improvementQueue.length} improvements...`,
-    );
+    )
 
     // Sort by priority
     this.improvementQueue.sort((a, b) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function TalentCard() {
+export export export default function TalentCard()   {
   return (
     <div>
       <h1>Component</h1>

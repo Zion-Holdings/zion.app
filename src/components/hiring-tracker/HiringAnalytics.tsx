@@ -1,5 +1,5 @@
 import React from 'react';
-export default function HiringAnalytics() {
+export export export default function HiringAnalytics()   {
   return (
     <div>
       <h1>Component</h1>

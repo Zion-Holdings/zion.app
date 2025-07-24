@@ -1,5 +1,5 @@
 import React from 'react';
-export default function TokenManager() {
+export export export default function TokenManager()   {
   return (
     <div>
       <h1>Component</h1>

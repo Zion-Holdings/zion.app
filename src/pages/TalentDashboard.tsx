@@ -1,5 +1,5 @@
 import React from 'react';
-export default function TalentDashboard() {
+export export export default function TalentDashboard()   {
   return (
     <div>
       <h1>Component</h1>

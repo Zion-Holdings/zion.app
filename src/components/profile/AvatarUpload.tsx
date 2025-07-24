@@ -1,5 +1,5 @@
 import React from 'react';
-export default function AvatarUpload() {
+export export export default function AvatarUpload()   {
   return (
     <div>
       <h1>Component</h1>

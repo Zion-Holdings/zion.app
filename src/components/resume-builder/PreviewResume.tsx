@@ -1,5 +1,5 @@
 import React from 'react';
-export default function PreviewResume() {
+export export export default function PreviewResume()   {
   return (
     <div>
       <h1>Component</h1>

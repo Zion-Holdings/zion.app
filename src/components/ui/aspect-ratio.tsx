@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function aspect-ratio() {;
+export export export default function aspect-ratio()   {;
   return (
     <div>
       <h1>Component</h1>

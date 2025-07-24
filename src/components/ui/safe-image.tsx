@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function safe-image() {;
+export export export default function safe-image()   {;
   return (
     <div>
       <h1>Component</h1>

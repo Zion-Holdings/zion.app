@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function sidebar-trigger() {;
+export export export default function sidebar-trigger()   {;
   return (
     <div>
       <h1>Component</h1>

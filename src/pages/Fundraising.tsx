@@ -1,5 +1,5 @@
 import React from 'react';
-export default function Fundraising() {
+export export export default function Fundraising()   {
   return (
     <div>
       <h1>Component</h1>

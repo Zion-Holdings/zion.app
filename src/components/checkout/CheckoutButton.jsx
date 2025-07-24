@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function CheckoutButton() {
+export export export default function CheckoutButton()   {
   return (
     <div>
       <h1>CheckoutButton</h1>

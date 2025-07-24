@@ -1,5 +1,5 @@
 import React from 'react';
-export default function JobMatches() {
+export export export default function JobMatches()   {
   return (
     <div>
       <h1>Component</h1>

@@ -1,5 +1,5 @@
 import React from 'react';
-export default function UserBadges() {
+export export export default function UserBadges()   {
   return (
     <div>
       <h1>Component</h1>

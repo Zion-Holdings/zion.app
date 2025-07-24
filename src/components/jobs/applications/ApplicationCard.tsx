@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ApplicationCard() {
+export export export default function ApplicationCard()   {
   return (
     <div>
       <h1>Component</h1>

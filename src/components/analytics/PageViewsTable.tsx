@@ -1,5 +1,5 @@
 import React from 'react';
-export default function PageViewsTable() {
+export export export default function PageViewsTable()   {
   return (
     <div>
       <h1>Component</h1>

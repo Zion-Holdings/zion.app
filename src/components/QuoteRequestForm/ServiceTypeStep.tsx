@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ServiceTypeStep() {
+export export export default function ServiceTypeStep()   {
   return (
     <div>
       <h1>Component</h1>

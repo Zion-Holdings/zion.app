@@ -1,5 +1,5 @@
 import React from 'react';
-export default function MarketplaceRoutes() {
+export export export default function MarketplaceRoutes()   {
   return (
     <div>
       <h1>Component</h1>

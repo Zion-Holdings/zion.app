@@ -1,5 +1,5 @@
 import React from 'react';
-export default function ZionBook() {
+export export export default function ZionBook()   {
   return (
     <div>
       <h1>Component</h1>

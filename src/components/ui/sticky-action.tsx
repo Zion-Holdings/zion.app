@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function sticky-action() {;
+export export export default function sticky-action()   {;
   return (
     <div>
       <h1>Component</h1>

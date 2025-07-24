@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function AvatarMenu.test() {;
+export export export default function AvatarMenu.test()   {;
   return (
     <div>
       <h1>Component</h1>

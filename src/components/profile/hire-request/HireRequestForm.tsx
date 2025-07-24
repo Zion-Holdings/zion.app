@@ -1,5 +1,5 @@
 import React from 'react';
-export default function HireRequestForm() {
+export export export default function HireRequestForm()   {
   return (
     <div>
       <h1>Component</h1>

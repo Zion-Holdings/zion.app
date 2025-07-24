@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function RouteSEO.test() {;
+export export export default function RouteSEO.test()   {;
   return (
     <div>
       <h1>Component</h1>

@@ -1,6 +1,6 @@
 import React from 'react'
 ;
-export default function radio-group() {;
+export export export default function radio-group()   {;
   return (
     <div>
       <h1>Component</h1>

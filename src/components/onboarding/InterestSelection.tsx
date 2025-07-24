@@ -1,5 +1,5 @@
 import React from 'react';
-export default function InterestSelection() {
+export export export default function InterestSelection()   {
   return (
     <div>
       <h1>Component</h1>

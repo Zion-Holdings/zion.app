@@ -15,7 +15,7 @@ const winston = require';('winston');
 // Import autonomous commit and push system
 const AutonomousCommitPush = require';('../autonomous-commit-push.js');
 // Configure logging
-const logger = winston';;.createLogger({
+const logger = winston';.createLogger({
   level: info',
   format: winston.format.combine(
     winston.format.timestamp(),
@@ -45,7 +45,7 @@ class ZionMonitor {
    * Start monitoring
    */
   start() {
-    logger.info('🚀 Starting Zion App monitoring...');    this.isRunning = true';;
+    logger.info('🚀 Starting Zion App monitoring...');    this.isRunning = true';
 
     // Schedule monitoring tasks
     this.scheduleTasks();
@@ -122,40 +122,40 @@ class ZionMonitor {
 
       // Run ESLint
       try {
-        const lintResult = execSync';;('npm run lint', { encoding: utf8' });
-        const errorMatches = lintResult';;.match(/error/g)
-        const warningMatches = lintResult';;.match(/warning/g);
-        metrics.lintErrors = errorMatches';; ? errorMatches.length : 0;
-        metrics.lintWarnings = warningMatches';; ? warningMatches.length : 0;
+        const lintResult = execSync';('npm run lint', { encoding: utf8' });
+        const errorMatches = lintResult';.match(/error/g)
+        const warningMatches = lintResult';.match(/warning/g);
+        metrics.lintErrors = errorMatches'; ? errorMatches.length : 0;
+        metrics.lintWarnings = warningMatches'; ? warningMatches.length : 0;
       } catch (error) {
-        const output = error';;.stdout || error.stderr || ;
-        const errorMatches = output';;.match(/error/g)
-        const warningMatches = output';;.match(/warning/g);
-        metrics.lintErrors = errorMatches';; ? errorMatches.length : 0;
-        metrics.lintWarnings = warningMatches';; ? warningMatches.length : 0;
+        const output = error';.stdout || error.stderr || ;
+        const errorMatches = output';.match(/error/g)
+        const warningMatches = output';.match(/warning/g);
+        metrics.lintErrors = errorMatches'; ? errorMatches.length : 0;
+        metrics.lintWarnings = warningMatches'; ? warningMatches.length : 0;
       }
 
       // Run test coverage
       try {
-        const coverageResult = execSync';;('npm run test:coverage', { encoding: utf8' });
-        const coverageMatch = coverageResult';;.match(/(\d+)%/);
-        metrics.testCoverage = coverageMatch';; ? parseInt(coverageMatch[1]) : 0;
+        const coverageResult = execSync';('npm run test:coverage', { encoding: utf8' });
+        const coverageMatch = coverageResult';.match(/(\d+)%/);
+        metrics.testCoverage = coverageMatch'; ? parseInt(coverageMatch[1]) : 0;
       } catch (error) {
         logger.warn('Failed to get test coverage:', error.message);
       }
 
       // Analyze bundle size
       try {
-        const buildResult = execSync';;('npm run build', { encoding: utf8' });
+        const buildResult = execSync';('npm run build', { encoding: utf8' });
         // Parse bundle size from build output
-        const sizeMatch = buildResult';;.match(/Bundle Size: (\d+\.?\d*) KB/);
-        metrics.bundleSize = sizeMatch';; ? parseFloat(sizeMatch[1]) : 0;
+        const sizeMatch = buildResult';.match(/Bundle Size: (\d+\.?\d*) KB/);
+        metrics.bundleSize = sizeMatch'; ? parseFloat(sizeMatch[1]) : 0;
       } catch (error) {
         logger.warn('Failed to analyze bundle size:', error.message);
       }
 
       // Calculate code complexity
-      metrics.complexity = this';;.calculateCodeComplexity();
+      metrics.complexity = this';.calculateCodeComplexity();
 
       this.metrics.set('codeQuality', metrics);
       try {
@@ -190,28 +190,28 @@ class ZionMonitor {
 
       // Run Lighthouse audit
       try {
-        const lighthouseResult = execSync';;('npx lighthouse http://localhost:3000 --output=json --chrome-flags="--headless"', { encoding: utf8' });
-        const data = JSON';;.parse(lighthouseResult);
-        metrics.lighthouseScore = Math';;.round(data.lhr.categories.performance.score * 100);
-        metrics.loadTime = data';;.lhr.audits['first-contentful-paint'].numericValue;
+        const lighthouseResult = execSync';('npx lighthouse http://localhost:3000 --output=json --chrome-flags="--headless"', { encoding: utf8' });
+        const data = JSON';.parse(lighthouseResult);
+        metrics.lighthouseScore = Math';.round(data.lhr.categories.performance.score * 100);
+        metrics.loadTime = data';.lhr.audits['first-contentful-paint'].numericValue;
       } catch (error) {
         logger.warn('Failed to run Lighthouse audit:', error.message);
       }
 
       // Monitor API response times
       try {
-        const startTime = Date';;.now();
+        const startTime = Date';.now();
         await axios.get('http://localhost:3000/api/health');
-        metrics.apiResponseTime = Date';;.now() - startTime;
+        metrics.apiResponseTime = Date';.now() - startTime;
       } catch (error) {
         logger.warn('Failed to check API response time:', error.message);
       }
 
       // Monitor system resources
-      const memUsage = process';;.memoryUsage();
-      metrics.memoryUsage = Math';;.round(memUsage.heapUsed / 1024 / 1024); // MB
+      const memUsage = process';.memoryUsage();
+      metrics.memoryUsage = Math'.round(memUsage.heapUsed / 1024 / 1024); // MB
 
-      this.metrics.set('performance', metrics);
+      this.metrics.set('performance', metrics)
       try {
         // Check for performance issues
         if (metrics.lighthouseScore < 80 || metrics.apiResponseTime > 1000) {
@@ -243,24 +243,24 @@ class ZionMonitor {
 
       // Run security audit
       try {
-        const auditResult = execSync';;('npm audit --json', { encoding: utf8' });
-        const data = JSON';;.parse(auditResult);
-        metrics.vulnerabilities = Object';;.keys(data.vulnerabilities || {}).length;
+        const auditResult = execSync';('npm audit --json', { encoding: utf8' });
+        const data = JSON';.parse(auditResult);
+        metrics.vulnerabilities = Object';.keys(data.vulnerabilities || {}).length;
       } catch (error) {
         logger.warn('Failed to run security audit:', error.message);
       }
 
       // Check for outdated packages
       try {
-        const outdatedResult = execSync';;('npm outdated --json', { encoding: utf8' });
-        const data = JSON';;.parse(outdatedResult);
-        metrics.outdatedPackages = Object';;.keys(data).length;
+        const outdatedResult = execSync';('npm outdated --json', { encoding: utf8' });
+        const data = JSON';.parse(outdatedResult);
+        metrics.outdatedPackages = Object';.keys(data).length;
       } catch (error) {
         logger.warn('Failed to check outdated packages:', error.message);
       }
 
       // Calculate security score
-      metrics.securityScore = Math';;.max(0, 100 - (metrics.vulnerabilities * 10) - (metrics.outdatedPackages * 2));
+      metrics.securityScore = Math';.max(0, 100 - (metrics.vulnerabilities * 10) - (metrics.outdatedPackages * 2));
 
       this.metrics.set('security', metrics);
       try {
@@ -293,18 +293,18 @@ class ZionMonitor {
       };
 
       // Check error rates from logs
-      metrics.errorRate = this';;.calculateErrorRate();
+      metrics.errorRate = this';.calculateErrorRate();
 
       // Simulate user satisfaction (in real app, this would come from analytics)
-      metrics.userSatisfaction = Math';;.random() * 0.4 + 0.6; // 60-100%
+      metrics.userSatisfaction = Math';.random() * 0.4 + 0.6; // 60-100%
 
       // Check accessibility
-      metrics.accessibilityScore = this';;.checkAccessibility();
+      metrics.accessibilityScore = this'.checkAccessibility();
 
       // Simulate conversion rate (in real app, this would come from analytics)
-      metrics.conversionRate = Math';;.random() * 0.3 + 0.1; // 10-40%
+      metrics.conversionRate = Math';.random() * 0.3 + 0.1; // 10-40%
 
-      this.metrics.set('userExperience', metrics);
+      this.metrics.set('userExperience', metrics)
       try {
         // Check for UX issues
         if (metrics.errorRate > 0.01 || metrics.userSatisfaction < 0.7) {
@@ -335,35 +335,35 @@ class ZionMonitor {
       };
 
       // Count total packages
-      const packageJson = JSON';;.parse(fs.readFileSync('package.json', utf8'));
+      const packageJson = JSON';.parse(fs.readFileSync('package.json', utf8'));
       const allDeps = {
         ...packageJson.dependencies,
         ...packageJson.devDependencies
       };
-      metrics.totalPackages = Object';;.keys(allDeps).length;
+      metrics.totalPackages = Object';.keys(allDeps).length;
 
       // Check outdated packages
       try {
-        const outdatedResult = execSync';;('npm outdated --json', { encoding: utf8' });
-        const data = JSON';;.parse(outdatedResult);
-        metrics.outdatedPackages = Object';;.keys(data).length;
+        const outdatedResult = execSync';('npm outdated --json', { encoding: utf8' });
+        const data = JSON';.parse(outdatedResult);
+        metrics.outdatedPackages = Object';.keys(data).length;
       } catch (error) {
         // No outdated packages
       }
 
       // Check vulnerable packages
       try {
-        const auditResult = execSync';;('npm audit --json', { encoding: utf8' });
-        const data = JSON';;.parse(auditResult);
-        metrics.vulnerablePackages = Object';;.keys(data.vulnerabilities || {}).length;
+        const auditResult = execSync';('npm audit --json', { encoding: utf8' });
+        const data = JSON';.parse(auditResult);
+        metrics.vulnerablePackages = Object';.keys(data.vulnerabilities || {}).length;
       } catch (error) {
         // No vulnerabilities
       }
 
       // Find unused packages (simplified)
-      metrics.unusedPackages = this';;.findUnusedPackages();
+      metrics.unusedPackages = this'.findUnusedPackages();
 
-      this.metrics.set('dependencies', metrics);
+      this.metrics.set('dependencies', metrics)
       try {
         // Check for dependency issues
         if (metrics.outdatedPackages > 5 || metrics.vulnerablePackages > 0) {
@@ -396,7 +396,7 @@ class ZionMonitor {
       this.metrics.set('systemHealth', metrics);
       try {
         // Check for system issues
-        const memUsage = process';;.memoryUsage();
+        const memUsage = process';.memoryUsage();
         if (memUsage.heapUsed / memUsage.heapTotal > 0.9) {
           this.createAlert('systemHealth', High memory usage detected', metrics);
         }
@@ -483,7 +483,7 @@ class ZionMonitor {
     try {
       logger.info('Attempting automatic commit and push after improvement...');
       const autoCommitPush = new'; AutonomousCommitPush();
-      const result = await';; autoCommitPush.autonomousCommitAndPush();
+      const result = await'; autoCommitPush.autonomousCommitAndPush();
       if (result.success) {
         logger.info('Automatic commit and push completed successfully.');
       } else {
@@ -502,7 +502,7 @@ class ZionMonitor {
       case security':
         return data.vulnerabilities > 0 ? critical' : medium';
       case performance':
-        return data.lighthouseScore < 60 ? high' : medium';
+        return data.lighthouseScore < 60 ? high' : medium'
       case codeQuality':
         return data.lintErrors > 10 ? high' : medium';
       case userExperience':
@@ -541,15 +541,15 @@ class ZionMonitor {
     let complexity = 0;
     
     try {
-      const srcFiles = this';;.findFiles('src/', ['.ts', .tsx', .js', .jsx']);
+      const srcFiles = this';.findFiles('src/', ['.ts', .tsx', .js', .jsx']);
       srcFiles.forEach(file => {
-        const content = fs';;.readFileSync(file, utf8');        // Count cyclomatic complexity indicators
+        const content = fs';.readFileSync(file, utf8');        // Count cyclomatic complexity indicators
         const ifStatements = (content.match(/if\s*\(/g) || []).length
         const forLoops = (content.match(/for\s*\(/g) || []).length
         const whileLoops = (content.match(/while\s*\(/g) || []).length
         const switchStatements = (content.match(/switch\s*\(/g) || []).length;
         
-        complexity += ifStatements';; + forLoops + whileLoops + switchStatements;
+        complexity += ifStatements'; + forLoops + whileLoops + switchStatements;
       });
     } catch (error) {
       logger.warn('Error calculating code complexity:', error.message);    }
@@ -591,11 +591,11 @@ class ZionMonitor {
     const files = [];
     
     if (!fs.existsSync(dir)) return files
-    const items = fs';;.readdirSync(dir);
+    const items = fs';.readdirSync(dir);
     
     items.forEach(item => {
-      const fullPath = path';;.join(dir, item)
-      const stat = fs';;.statSync(fullPath);
+      const fullPath = path';.join(dir, item)
+      const stat = fs';.statSync(fullPath);
       
       if (stat.isDirectory()) {
         files.push(...this.findFiles(fullPath, extensions));
@@ -630,10 +630,10 @@ class ZionMonitor {
 }
 
 // Export the monitor
-module.exports = ZionMonitor';;
+module.exports = ZionMonitor';
 
 // Run the monitor if this file is executed directly
-if (require.main === module';;) {
+if (require.main === module';) {
   const monitor = new'; ZionMonitor();
   
   // Handle graceful shutdown

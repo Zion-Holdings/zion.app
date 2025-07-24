@@ -1,5 +1,5 @@
 import React from 'react';
-export default function PageViewsChart() {
+export export export default function PageViewsChart()   {
   return (
     <div>
       <h1>Component</h1>

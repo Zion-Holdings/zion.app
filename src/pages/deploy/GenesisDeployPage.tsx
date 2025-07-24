@@ -1,5 +1,5 @@
 import React from 'react';
-export default function GenesisDeployPage() {
+export export export default function GenesisDeployPage()   {
   return (
     <div>
       <h1>Component</h1>

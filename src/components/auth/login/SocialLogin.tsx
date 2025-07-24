@@ -1,5 +1,5 @@
 import React from 'react';
-export default function SocialLogin() {
+export export export default function SocialLogin()   {
   return (
     <div>
       <h1>Component</h1>
