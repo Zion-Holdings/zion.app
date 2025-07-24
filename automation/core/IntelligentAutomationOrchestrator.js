@@ -142,7 +142,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
       this.startHealthMonitoring();
       
       // Start dashboard if enabled
-      if (this.config.enableDashboard) {
+      if (this.config.dashboard && this.config.dashboard.enabled) {
         await this.startDashboard();
       }
       
