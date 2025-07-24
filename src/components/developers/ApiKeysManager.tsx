@@ -1,9 +1,9 @@
-import React from react';
-default function ApiKeysManager() {
+import React from 'react';
+export function ApiKeysManager() {
   return (
     <div>
-      <h1>ApiKeysManager</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

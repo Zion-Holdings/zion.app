@@ -1,9 +1,9 @@
-import React from react';
-default function ReferralLeaderboard() {
+import React from 'react';
+export function ReferralLeaderboard() {
   return (
     <div>
-      <h1>ReferralLeaderboard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

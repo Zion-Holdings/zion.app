@@ -1,4 +1,5 @@
-// useUndoRedo module placeholder
-const useUndoRedo = {
-  // TODO: Implement useUndoRedo functionality
+// Hook for useUndoRedo;
+export const useUseUndoRedo: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

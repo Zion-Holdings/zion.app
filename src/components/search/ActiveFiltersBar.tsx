@@ -1,9 +1,9 @@
-import React from react';
-default function ActiveFiltersBar() {
+import React from 'react';
+export function ActiveFiltersBar() {
   return (
     <div>
-      <h1>ActiveFiltersBar</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

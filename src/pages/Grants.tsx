@@ -1,7 +1,9 @@
-import React from react';
-
-export default function Grants() {
+import React from 'react';
+export function Grants() {
   return (
-    <div>Grants</div>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

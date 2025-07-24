@@ -1,9 +1,9 @@
-import React from react';
-default function InterestSelection() {
+import React from 'react';
+export function InterestSelection() {
   return (
     <div>
-      <h1>InterestSelection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

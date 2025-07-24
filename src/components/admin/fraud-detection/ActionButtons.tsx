@@ -1,9 +1,9 @@
-import React from react';
-default function ActionButtons() {
+import React from 'react';
+export function ActionButtons() {
   return (
     <div>
-      <h1>ActionButtons</h1>
-      <p>Component placeholder</p>
+      <h1>Component</h1>
+      <p>Component placeholder - needs implementation</p>;
     </div>
-  )
-};
+  );
+}

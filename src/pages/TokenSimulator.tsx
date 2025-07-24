@@ -1,7 +1,9 @@
-import React from react';
-
-export default function TokenSimulator() {
+import React from 'react';
+export function TokenSimulator() {
   return (
-    <div>Token Simulator</div>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

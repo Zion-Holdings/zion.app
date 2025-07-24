@@ -1,9 +1,9 @@
-import React from react';
-default function MobileFeatureShowcase() {
+import React from 'react';
+export function MobileFeatureShowcase() {
   return (
     <div>
-      <h1>MobileFeatureShowcase</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

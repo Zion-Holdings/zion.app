@@ -1,9 +1,9 @@
-import React from react';
-default function MessageTab() {
+import React from 'react';
+export function MessageTab() {
   return (
     <div>
-      <h1>MessageTab</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

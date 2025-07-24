@@ -1,9 +1,9 @@
-import React from react';
-default function separator() {
+import React from 'react';
+export function separator() {
   return (
     <div>
-      <h1>separator</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

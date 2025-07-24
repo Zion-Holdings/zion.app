@@ -1,8 +1,8 @@
-import React from react';
-export default function NewServicesPage() {
+import React from 'react';
+export function NewServicesPage() {
   return (
     <div>
-      <h1>NewServicesPage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

@@ -1,9 +1,9 @@
-import React from react';
-default function command() {
+import React from 'react';
+export function command() {
   return (
     <div>
-      <h1>command</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

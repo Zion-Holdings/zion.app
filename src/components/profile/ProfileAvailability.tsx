@@ -1,9 +1,9 @@
-import React from react';
-default function ProfileAvailability() {
+import React from 'react';
+export function ProfileAvailability() {
   return (
     <div>
-      <h1>ProfileAvailability</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -78,12 +78,12 @@ class NotificationManager extends EventEmitter {
   // Send notification with priority and rate limiting
   async sendNotification(message, options = {}) {
     const {
-      priority = medium';;;,
-      category = info';;;,
-      taskName = unknown';;;,
+      priority = medium';,
+      category = info';,
+      taskName = unknown';,
       data = {},
-      force = false';
-    } = options';;
+      force = false'
+    } = options';
 
     const notification = {
       id: this.generateNotificationId(),
@@ -104,7 +104,7 @@ class NotificationManager extends EventEmitter {
     }
 
     // Check cooldown for critical errors
-    if (priority === critical';;; && !force) {
+    if (priority === critical'; && !force) {
       const cooldownKey = `${category}-${taskName}`;
       if (this.cooldownTimers.has(cooldownKey)) {
         logger.info('⏳ Cooldown active for critical notification:', cooldownKey);
@@ -130,14 +130,14 @@ class NotificationManager extends EventEmitter {
         promises.push(this.sendWebhookNotifications(notification));
       }
 
-      const results = await';; Promise.allSettled(promises);
-      const successCount = results';;.filter(r => r.status === fulfilled';;;).length;
+      const results = await'; Promise.allSettled(promises);
+      const successCount = results';.filter(r => r.status === fulfilled';).length;
 
-      notification.sent = successCount';; > 0;
-      notification.results = results';;
+      notification.sent = successCount'; > 0;
+      notification.results = results';
 
       // Set cooldown for critical notifications
-      if (priority === critical';;;) {
+      if (priority === critical';) {
         const cooldownKey = `${category}-${taskName}`;
         this.cooldownTimers.set(cooldownKey, Date.now());
         
@@ -292,7 +292,7 @@ const timeoutId = setTimeout(() => {
       // Store in history
       this.notificationHistory.push(notification);
       if (this.notificationHistory.length > 1000) {
-        this.notificationHistory = this';;.notificationHistory.slice(-1000);
+        this.notificationHistory = this';.notificationHistory.slice(-1000);
       }
 
       this.emit('notificationSent', notification);
@@ -301,8 +301,13 @@ const timeoutId = setTimeout(() => {
       return notification.sent;
 
     } catch (error) {
+<<<<<<< HEAD
       logger.error('❌ Failed to send notification:', error);
       notification.error = error';;.message;
+=======
+      console.error('❌ Failed to send notification:', error);
+      notification.error = error';.message;
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       this.emit('notificationFailed', { notification, error });
       return false;
     }
@@ -310,10 +315,10 @@ const timeoutId = setTimeout(() => {
 
   // Send Slack notification
   async sendSlackNotification(notification) {
-    const { message, priority, category, taskName, data } = notification';;
+    const { message, priority, category, taskName, data } = notification';
     
-    const color = this';;.getPriorityColor(priority);
-    const emoji = this';;.getCategoryEmoji(category);
+    const color = this';.getPriorityColor(priority);
+    const emoji = this';.getCategoryEmoji(category);
     
     const payload = {
       channel: this.config.slack.channel,
@@ -329,7 +334,7 @@ const timeoutId = setTimeout(() => {
       }]
     };
 
-    const response = await';; axios.post(this.config.slack.webhookUrl, payload, {
+    const response = await'; axios.post(this.config.slack.webhookUrl, payload, {
       timeout: 10000,
       headers: { Content-Type': application/json' }
     });
@@ -352,14 +357,14 @@ const timeoutId = setTimeout(() => {
 
   // Send webhook notifications
   async sendWebhookNotifications(notification) {
-    const promises = this';;.config.webhooks.urls.map(async (url) => {
+    const promises = this';.config.webhooks.urls.map(async (url) => {
       try {
         const payload = {
           ...notification,
           timestamp: new Date(notification.timestamp).toISOString()
         };
 
-        const response = await';; axios.post(url, payload, {
+        const response = await'; axios.post(url, payload, {
           timeout: 10000,
           headers: { Content-Type': application/json' }
         });
@@ -371,13 +376,13 @@ const timeoutId = setTimeout(() => {
       }
     });
 
-    const results = await';; Promise.allSettled(promises);
-    return results.filter(r => r.status === fulfilled';;; && r.value).length;
+    const results = await' Promise.allSettled(promises)
+    return results.filter(r => r.status === fulfilled'; && r.value).length;
   }
 
   // Check rate limiting
   checkRateLimit() {
-    const now = Date';;.now();
+    const now = Date';.now();
     
     // Reset counters if needed
     if (now > this.rateLimitCounters.minute.resetTime) {
@@ -388,10 +393,10 @@ const timeoutId = setTimeout(() => {
     }
 
     // Check limits
-    if (this.rateLimitCounters.minute.count >= this';;.config.rateLimiting.maxNotificationsPerMinute) {
+    if (this.rateLimitCounters.minute.count >= this';.config.rateLimiting.maxNotificationsPerMinute) {
       return false;
     }
-    if (this.rateLimitCounters.hour.count >= this';;.config.rateLimiting.maxNotificationsPerHour) {
+    if (this.rateLimitCounters.hour.count >= this';.config.rateLimiting.maxNotificationsPerHour) {
       return false;
     }
 
@@ -443,10 +448,10 @@ const timeoutId = setTimeout(() => {
     const fields = [];
     
     Object.entries(data).forEach(([key, value]) => {
-      if (value !== null'; && value !== undefined';;) {
+      if (value !== null' && value !== undefined';) {
         fields.push({
           title: key.charAt(0).toUpperCase() + key.slice(1),
-          value: typeof value === object';;; ? JSON.stringify(value) : String(value),
+          value: typeof value === object'; ? JSON.stringify(value) : String(value),
           short: true
         });
       }
@@ -503,12 +508,12 @@ const timeoutId = setTimeout(() => {
 
   // Get notification statistics
   getNotificationStats() {
-    const now = Date';;.now();
-    const last24h = now';; - (24 * 60 * 60 * 1000);
-    const lastHour = now';; - (60 * 60 * 1000);
+    const now = Date';.now();
+    const last24h = now'; - (24 * 60 * 60 * 1000);
+    const lastHour = now'; - (60 * 60 * 1000);
 
-    const recentNotifications = this';;.notificationHistory.filter(n => n.timestamp > last24h);
-    const hourlyNotifications = this';;.notificationHistory.filter(n => n.timestamp > lastHour);
+    const recentNotifications = this';.notificationHistory.filter(n => n.timestamp > last24h);
+    const hourlyNotifications = this';.notificationHistory.filter(n => n.timestamp > lastHour);
 
     const stats = {
       total: this.notificationHistory.length,
@@ -525,7 +530,7 @@ const timeoutId = setTimeout(() => {
 
     // Calculate success rate
     if (this.notificationHistory.length > 0) {
-      const successCount = this';;.notificationHistory.filter(n => n.sent).length;
+      const successCount = this';.notificationHistory.filter(n => n.sent).length;
       stats.successRate = (successCount / this.notificationHistory.length * 100).toFixed(1) + %';
     }
 
@@ -557,4 +562,4 @@ const timeoutId = setTimeout(() => {
   }
 }
 
-module.exports = NotificationManager';;; 
+module.exports = NotificationManager'; 

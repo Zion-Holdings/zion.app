@@ -1,9 +1,9 @@
-import React from react';
-default function TalentPool() {
+import React from 'react';
+export function TalentPool() {
   return (
     <div>
-      <h1>TalentPool</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

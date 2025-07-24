@@ -1,9 +1,9 @@
-import React from react';
-default function FeatureCard() {
+import React from 'react';
+export function FeatureCard() {
   return (
     <div>
-      <h1>FeatureCard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

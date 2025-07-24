@@ -1,9 +1,9 @@
-import React from react';
-default function NationProfilePage() {
+import React from 'react';
+export function NationProfilePage() {
   return (
     <div>
-      <h1>NationProfilePage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

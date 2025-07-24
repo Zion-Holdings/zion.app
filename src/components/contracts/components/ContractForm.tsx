@@ -1,9 +1,9 @@
-import React from react';
-default function ContractForm() {
+import React from 'react';
+export function ContractForm() {
   return (
     <div>
-      <h1>ContractForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

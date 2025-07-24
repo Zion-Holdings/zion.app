@@ -1,9 +1,9 @@
-import React from react';
-default function NotificationContext() {
+import React from 'react';
+export function NotificationContext() {
   return (
     <div>
-      <h1>NotificationContext</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

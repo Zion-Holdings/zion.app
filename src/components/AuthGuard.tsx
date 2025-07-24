@@ -1,9 +1,9 @@
-import React from react';
-default function AuthGuard() {
+import React from 'react';
+export function AuthGuard() {
   return (
     <div>
-      <h1>AuthGuard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

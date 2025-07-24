@@ -1,9 +1,9 @@
-import React from react';
-default function DeployRoutes() {
+import React from 'react';
+export function DeployRoutes() {
   return (
     <div>
-      <h1>DeployRoutes</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

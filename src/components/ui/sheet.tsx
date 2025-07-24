@@ -1,9 +1,9 @@
-import React from react';
-default function sheet() {
+import React from 'react';
+export function sheet() {
   return (
     <div>
-      <h1>sheet</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

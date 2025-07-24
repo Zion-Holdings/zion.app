@@ -1,9 +1,9 @@
-import React from react';
-default function AdvancedOnboardingSteps() {
+import React from 'react';
+export function AdvancedOnboardingSteps() {
   return (
     <div>
-      <h1>AdvancedOnboardingSteps</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

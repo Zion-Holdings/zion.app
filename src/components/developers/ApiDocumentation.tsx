@@ -1,9 +1,9 @@
-import React from react';
-default function ApiDocumentation() {
+import React from 'react';
+export function ApiDocumentation() {
   return (
     <div>
-      <h1>ApiDocumentation</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

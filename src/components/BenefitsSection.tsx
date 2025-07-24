@@ -1,9 +1,9 @@
-import React from react';
-default function BenefitsSection() {
+import React from 'react';
+export function BenefitsSection() {
   return (
     <div>
-      <h1>BenefitsSection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

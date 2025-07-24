@@ -1,4 +1,5 @@
-// useJobDetails module placeholder
-const useJobDetails = {
-  // TODO: Implement useJobDetails functionality
+// Hook for useJobDetails;
+export const useUseJobDetails: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

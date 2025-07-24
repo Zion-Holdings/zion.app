@@ -1,4 +1,5 @@
-// useAuth module placeholder
-const useAuth = {
-  // TODO: Implement useAuth functionality
+// Hook for useAuth;
+export const useUseAuth: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

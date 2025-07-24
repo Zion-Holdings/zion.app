@@ -1,9 +1,9 @@
-import React from react';
-default function SidebarGroupLabel() {
+import React from 'react';
+export function SidebarGroupLabel() {
   return (
     <div>
-      <h1>SidebarGroupLabel</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

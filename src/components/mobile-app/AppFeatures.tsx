@@ -1,9 +1,9 @@
-import React from react';
-default function AppFeatures() {
+import React from 'react';
+export function AppFeatures() {
   return (
     <div>
-      <h1>AppFeatures</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

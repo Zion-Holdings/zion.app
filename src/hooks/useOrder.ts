@@ -1,4 +1,5 @@
-// useOrder module placeholder
-const useOrder = {
-  // TODO: Implement useOrder functionality
+// Hook for useOrder;
+export const useUseOrder: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

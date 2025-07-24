@@ -1,7 +1,9 @@
-import React from react';
-
-export default function SummitPage() {
+import React from 'react';
+export function SummitPage() {
   return (
-    <div>Summit Page</div>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

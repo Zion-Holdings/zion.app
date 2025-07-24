@@ -1,9 +1,9 @@
-import React from react';
-default function NotificationHeader() {
+import React from 'react';
+export function NotificationHeader() {
   return (
     <div>
-      <h1>NotificationHeader</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

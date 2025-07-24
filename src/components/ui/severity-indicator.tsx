@@ -1,9 +1,10 @@
-import React from react';
-default function severity-indicator() {
+import React from 'react'
+;
+export export export default function severity-indicator()   {;
   return (
     <div>
-      <h1>severity-indicator</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

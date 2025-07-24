@@ -1,4 +1,4 @@
-// pwa.d module placeholder
-const pwa.d = {
-  // TODO: Implement pwa.d functionality
-};
+// Type definitions for pwa.d;
+export interface pwa.d {;
+  // TODO: Add proper type definitions;
+}

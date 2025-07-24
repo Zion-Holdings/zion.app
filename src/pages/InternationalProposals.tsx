@@ -1,8 +1,8 @@
-import React from react';
-export default function InternationalProposals() {
+import React from 'react';
+export function InternationalProposals() {
   return (
     <div>
-      <h1>InternationalProposals</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

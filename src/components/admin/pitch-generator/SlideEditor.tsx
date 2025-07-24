@@ -1,9 +1,9 @@
-import React from react';
-default function SlideEditor() {
+import React from 'react';
+export function SlideEditor() {
   return (
     <div>
-      <h1>SlideEditor</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

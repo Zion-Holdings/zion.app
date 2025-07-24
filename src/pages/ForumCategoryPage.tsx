@@ -1,8 +1,8 @@
-import React from react';
-export default function ForumCategoryPage() {
+import React from 'react';
+export function ForumCategoryPage() {
   return (
     <div>
-      <h1>ForumCategoryPage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

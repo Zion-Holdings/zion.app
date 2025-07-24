@@ -1,9 +1,9 @@
-import React from react';
-default function ErrorState() {
+import React from 'react';
+export function ErrorState() {
   return (
     <div>
-      <h1>ErrorState</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

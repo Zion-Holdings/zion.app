@@ -789,7 +789,7 @@ SLACK_SIGNING_SECRET=your_slack_signing_secret_here
 
     while (attempts < maxAttempts) {
       if (await this.isSystemRunning()) {
-        return true;
+        return true
       }
       
       await new Promise(resolve => 

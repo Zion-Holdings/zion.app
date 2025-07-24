@@ -1,9 +1,9 @@
-import React from react';
-default function PageErrorBoundary() {
+import React from 'react';
+export function PageErrorBoundary() {
   return (
     <div>
-      <h1>PageErrorBoundary</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

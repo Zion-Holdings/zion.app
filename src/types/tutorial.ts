@@ -1,4 +1,4 @@
-// tutorial module placeholder
-const tutorial = {
-  // TODO: Implement tutorial functionality
+// Type definitions for tutorial;
+interface tutorial {;
+  // TODO: Add proper type definitions;
 };

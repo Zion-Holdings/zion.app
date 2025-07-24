@@ -1,9 +1,9 @@
-import React from react';
-default function Web3Login() {
+import React from 'react';
+export function Web3Login() {
   return (
     <div>
-      <h1>Web3Login</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function ServiceLandingTemplate() {
+import React from 'react';
+export function ServiceLandingTemplate() {
   return (
     <div>
-      <h1>ServiceLandingTemplate</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

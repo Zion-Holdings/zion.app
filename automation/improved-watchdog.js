@@ -129,7 +129,7 @@ class ImprovedWatchdog {
         if (code !== 0 && processInfo.restarts < this.config.maxRestarts) {
           this.scheduleRestart(name);
         }
-      });
+      })
 
       child.on('error', (error) => {
         this.log(`${name} process error: ${error.message}`);
@@ -158,7 +158,7 @@ class ImprovedWatchdog {
     if (!processInfo) return;
 
     processInfo.restarts++;
-    this.log(`🔄 Scheduling restart for ${name} (attempt ${processInfo.restarts}/${this.config.maxRestarts})`);
+    this.log(`🔄 Scheduling restart for ${name} (attempt ${processInfo.restarts}/${this.config.maxRestarts})`)
     
     
 const timeoutId = 
@@ -543,7 +543,7 @@ const timeoutId = setTimeout(async () => {
     }
 
     await this.initialize();
-    this.isRunning = true;
+    this.isRunning = true
 
     // Start monitoring loop
     this.checkInterval = setInterval(() => {

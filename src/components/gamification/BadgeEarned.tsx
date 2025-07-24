@@ -1,9 +1,9 @@
-import React from react';
-default function BadgeEarned() {
+import React from 'react';
+export function BadgeEarned() {
   return (
     <div>
-      <h1>BadgeEarned</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

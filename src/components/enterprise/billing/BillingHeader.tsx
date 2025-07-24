@@ -1,9 +1,9 @@
-import React from react';
-default function BillingHeader() {
+import React from 'react';
+export function BillingHeader() {
   return (
     <div>
-      <h1>BillingHeader</h1>
-      <p>Component placeholder</p>
+      <h1>Component</h1>
+      <p>Component placeholder - needs implementation</p>;
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function RequestQuoteWizard() {
+import React from 'react';
+export function RequestQuoteWizard() {
   return (
     <div>
-      <h1>RequestQuoteWizard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

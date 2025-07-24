@@ -1,9 +1,9 @@
-import React from react';
-default function SummitHero() {
+import React from 'react';
+export function SummitHero() {
   return (
     <div>
-      <h1>SummitHero</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

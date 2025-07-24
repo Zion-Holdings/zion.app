@@ -1,9 +1,9 @@
-import React from react';
-default function AddMilestoneForm() {
+import React from 'react';
+export function AddMilestoneForm() {
   return (
     <div>
-      <h1>AddMilestoneForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

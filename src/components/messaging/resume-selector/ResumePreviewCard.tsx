@@ -1,9 +1,9 @@
-import React from react';
-default function ResumePreviewCard() {
+import React from 'react';
+export function ResumePreviewCard() {
   return (
     <div>
-      <h1>ResumePreviewCard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

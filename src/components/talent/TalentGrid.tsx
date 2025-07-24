@@ -1,9 +1,9 @@
-import React from react';
-default function TalentGrid() {
+import React from 'react';
+export function TalentGrid() {
   return (
     <div>
-      <h1>TalentGrid</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

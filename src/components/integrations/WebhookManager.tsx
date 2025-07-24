@@ -1,9 +1,9 @@
-import React from react';
-default function WebhookManager() {
+import React from 'react';
+export function WebhookManager() {
   return (
     <div>
-      <h1>WebhookManager</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

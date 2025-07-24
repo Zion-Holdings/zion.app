@@ -1,8 +1,8 @@
-import React from react';
-export default function ProfileDetail() {
+import React from 'react';
+export function ProfileDetail() {
   return (
     <div>
-      <h1>ProfileDetail</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

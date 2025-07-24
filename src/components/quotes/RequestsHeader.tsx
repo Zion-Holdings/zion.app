@@ -1,9 +1,9 @@
-import React from react';
-default function RequestsHeader() {
+import React from 'react';
+export function RequestsHeader() {
   return (
     <div>
-      <h1>RequestsHeader</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

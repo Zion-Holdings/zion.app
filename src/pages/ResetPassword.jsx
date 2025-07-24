@@ -1,7 +1,10 @@
-import React from react';
+import React from 'react';
 
-export default function ResetPassword() {
+export export export default function ResetPassword()      {
   return (
-    <div>Reset Password</div>
+    <div>
+      <h1>ResetPassword</h1>
+      <p>Component placeholder - needs implementation</p>
+    </div>
   );
 }

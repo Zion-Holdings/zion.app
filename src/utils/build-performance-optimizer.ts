@@ -1,4 +1,4 @@
-// build-performance-optimizer module placeholder
-const build-performance-optimizer = {
-  // TODO: Implement build-performance-optimizer functionality
+// Utility functions for build-performance-optimizer;
+export const build-performance-optimizer = {;
+  // TODO: Implement utility functions;
 };

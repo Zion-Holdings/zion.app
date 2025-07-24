@@ -1,9 +1,9 @@
-import React from react';
-default function AuthRoutes() {
+import React from 'react';
+export function AuthRoutes() {
   return (
     <div>
-      <h1>AuthRoutes</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

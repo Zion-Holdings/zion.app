@@ -1,9 +1,9 @@
-import React from react';
-default function InteractiveFeatures() {
+import React from 'react';
+export function InteractiveFeatures() {
   return (
     <div>
-      <h1>InteractiveFeatures</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

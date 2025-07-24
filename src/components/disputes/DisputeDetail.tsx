@@ -1,9 +1,9 @@
-import React from react';
-default function DisputeDetail() {
+import React from 'react';
+export function DisputeDetail() {
   return (
     <div>
-      <h1>DisputeDetail</h1>
-      <p>Component placeholder</p>
+      <h1>Component</h1>
+      <p>Component placeholder - needs implementation</p>;
     </div>
-  )
-};
+  );
+}

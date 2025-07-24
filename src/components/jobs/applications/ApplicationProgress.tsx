@@ -1,9 +1,9 @@
-import React from react';
-default function ApplicationProgress() {
+import React from 'react';
+export function ApplicationProgress() {
   return (
     <div>
-      <h1>ApplicationProgress</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

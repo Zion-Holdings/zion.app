@@ -1,9 +1,9 @@
-import React from react';
-default function ConversationDetailView() {
+import React from 'react';
+export function ConversationDetailView() {
   return (
     <div>
-      <h1>ConversationDetailView</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

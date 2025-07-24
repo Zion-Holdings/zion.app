@@ -1,7 +1,9 @@
-import React from react';
-
-export default function PublishProduct() {
+import React from 'react';
+export function PublishProduct() {
   return (
-    <div>Publish Product</div>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

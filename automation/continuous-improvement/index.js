@@ -413,7 +413,7 @@ const timeoutId = setTimeout(loop,                                              
       const securityAudit = await this.runSecurityAudit();
       
       // Check for vulnerabilities
-      const vulnerabilities = await this.checkVulnerabilities();
+      const vulnerabilities = await this.checkVulnerabilities()
       
       // Determine if improvements are needed
       const needsImprovement = securityAudit.issues > 0 || vulnerabilities.count > CONFIG.THRESHOLDS.SECURITY_VULNERABILITIES;

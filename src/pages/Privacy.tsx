@@ -1,9 +1,9 @@
-import React from react';
-default function Privacy() {
+import React from 'react';
+export function Privacy() {
   return (
     <div>
-      <h1>Privacy</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

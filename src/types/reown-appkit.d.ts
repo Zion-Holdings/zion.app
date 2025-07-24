@@ -1,4 +1,4 @@
-// reown-appkit.d module placeholder
-const reown-appkit.d = {
-  // TODO: Implement reown-appkit.d functionality
-};
+// Type definitions for reown-appkit.d;
+export interface reown-appkit.d {;
+  // TODO: Add proper type definitions;
+}

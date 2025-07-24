@@ -1,9 +1,9 @@
-import React from react';
-default function EnterpriseCallToAction() {
+import React from 'react';
+export function EnterpriseCallToAction() {
   return (
     <div>
-      <h1>EnterpriseCallToAction</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function AITalentMatchingPage() {
+import React from 'react';
+export function AITalentMatchingPage() {
   return (
     <div>
-      <h1>AITalentMatchingPage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

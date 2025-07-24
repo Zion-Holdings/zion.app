@@ -1,9 +1,9 @@
-import React from react';
-default function ProfileBadge() {
+import React from 'react';
+export function ProfileBadge() {
   return (
     <div>
-      <h1>ProfileBadge</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function PasswordStrengthMeter() {
+import React from 'react';
+export function PasswordStrengthMeter() {
   return (
     <div>
-      <h1>PasswordStrengthMeter</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

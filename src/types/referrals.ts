@@ -1,4 +1,4 @@
-// referrals module placeholder
-const referrals = {
-  // TODO: Implement referrals functionality
+// Type definitions for referrals;
+interface referrals {;
+  // TODO: Add proper type definitions;
 };

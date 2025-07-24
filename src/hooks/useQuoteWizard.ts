@@ -1,4 +1,5 @@
-// useQuoteWizard module placeholder
-const useQuoteWizard = {
-  // TODO: Implement useQuoteWizard functionality
+// Hook for useQuoteWizard;
+export const useUseQuoteWizard: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

@@ -1,9 +1,9 @@
-import React from react';
-default function WaitlistSection() {
+import React from 'react';
+export function WaitlistSection() {
   return (
     <div>
-      <h1>WaitlistSection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

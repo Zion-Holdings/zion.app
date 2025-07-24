@@ -1,9 +1,9 @@
-import React from react';
-default function SeverityDisplay() {
+import React from 'react';
+export function SeverityDisplay() {
   return (
     <div>
-      <h1>SeverityDisplay</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

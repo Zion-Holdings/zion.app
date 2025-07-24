@@ -1,9 +1,9 @@
-import React from react';
-default function UserBadges() {
+import React from 'react';
+export function UserBadges() {
   return (
     <div>
-      <h1>UserBadges</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

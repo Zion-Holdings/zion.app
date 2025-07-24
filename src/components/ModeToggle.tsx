@@ -1,9 +1,9 @@
-import React from react';
-default function ModeToggle() {
+import React from 'react';
+export function ModeToggle() {
   return (
     <div>
-      <h1>ModeToggle</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

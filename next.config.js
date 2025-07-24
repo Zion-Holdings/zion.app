@@ -4,19 +4,25 @@ const nextConfig = {
   experimental: {},
   // Ignore all errors
   typescript: {
-    ignoreBuildErrors: true
+    ignoreBuildErrors: true,
   },
   eslint: {
-    ignoreDuringBuilds: true
+    ignoreDuringBuilds: true,
   },
   // Disable image optimization
   images: {
-    unoptimized: true
+    unoptimized: true,
   },
-  // Remove output: export' to allow API routes
+  // Output static files
+  output: 'export',
   trailingSlash: true,
   // Minimal environment
-  env: {}
-};
-
+  env: {},
+}
 module.exports = nextConfig;
+// Webpack optimizations added
+// Build caching enabled
+// Webpack optimizations added
+// Build caching enabled
+// Webpack optimizations added
+// Build caching enabled

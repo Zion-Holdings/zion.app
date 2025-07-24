@@ -1,9 +1,9 @@
-import React from react';
-default function ApiLogsChart() {
+import React from 'react';
+export function ApiLogsChart() {
   return (
     <div>
-      <h1>ApiLogsChart</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

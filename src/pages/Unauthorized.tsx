@@ -1,7 +1,9 @@
-import React from react';
-
-export default function Unauthorized() {
+import React from 'react';
+export function Unauthorized() {
   return (
-    <div>Unauthorized</div>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

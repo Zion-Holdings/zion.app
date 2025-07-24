@@ -1,6 +1,2 @@
-import { createClient } from @supabase/supabase_js';
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ;
-
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// Auto-generated basic file for client.ts
+// Please configure this file according to your needs

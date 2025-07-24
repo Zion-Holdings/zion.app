@@ -1,9 +1,9 @@
-import React from react';
-default function BudgetFields() {
+import React from 'react';
+export function BudgetFields() {
   return (
     <div>
-      <h1>BudgetFields</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

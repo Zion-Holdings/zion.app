@@ -1,9 +1,9 @@
-import React from react';
-default function AuthModal() {
+import React from 'react';
+export function AuthModal() {
   return (
     <div>
-      <h1>AuthModal</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

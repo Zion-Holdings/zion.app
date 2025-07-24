@@ -1,9 +1,9 @@
-import React from react';
-default function GradientHeading() {
+import React from 'react';
+export function GradientHeading() {
   return (
     <div>
-      <h1>GradientHeading</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

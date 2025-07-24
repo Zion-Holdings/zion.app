@@ -1,9 +1,9 @@
-import React from react';
-default function slider() {
+import React from 'react';
+export function slider() {
   return (
     <div>
-      <h1>slider</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

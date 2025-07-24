@@ -1,9 +1,9 @@
-import React from react';
-default function ProductionErrorBoundary() {
+import React from 'react';
+export function ProductionErrorBoundary() {
   return (
     <div>
-      <h1>ProductionErrorBoundary</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

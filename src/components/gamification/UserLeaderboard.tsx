@@ -1,9 +1,9 @@
-import React from react';
-default function UserLeaderboard() {
+import React from 'react';
+export function UserLeaderboard() {
   return (
     <div>
-      <h1>UserLeaderboard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

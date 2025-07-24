@@ -1,9 +1,9 @@
-import React from react';
-default function TokenManager() {
+import React from 'react';
+export function TokenManager() {
   return (
     <div>
-      <h1>TokenManager</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

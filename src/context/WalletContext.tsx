@@ -1,9 +1,9 @@
-import React from react';
-default function WalletContext() {
+import React from 'react';
+export function WalletContext() {
   return (
     <div>
-      <h1>WalletContext</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

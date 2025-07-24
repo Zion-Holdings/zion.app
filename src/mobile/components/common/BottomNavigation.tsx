@@ -1,9 +1,9 @@
-import React from react';
-default function BottomNavigation() {
+import React from 'react';
+export function BottomNavigation() {
   return (
     <div>
-      <h1>BottomNavigation</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

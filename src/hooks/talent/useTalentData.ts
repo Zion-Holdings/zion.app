@@ -1,4 +1,5 @@
-// useTalentData module placeholder
-const useTalentData = {
-  // TODO: Implement useTalentData functionality
+// Hook for useTalentData;
+export const useUseTalentData: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

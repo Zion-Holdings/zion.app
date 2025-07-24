@@ -1,9 +1,9 @@
-import React from react';
-default function CategorySelection() {
+import React from 'react';
+export function CategorySelection() {
   return (
     <div>
-      <h1>CategorySelection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

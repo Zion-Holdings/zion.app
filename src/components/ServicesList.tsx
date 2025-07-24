@@ -1,9 +1,9 @@
-import React from react';
-default function ServicesList() {
+import React from 'react';
+export function ServicesList() {
   return (
     <div>
-      <h1>ServicesList</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

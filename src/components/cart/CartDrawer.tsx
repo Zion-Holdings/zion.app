@@ -1,9 +1,9 @@
-import React from react';
-default function CartDrawer() {
+import React from 'react';
+export function CartDrawer() {
   return (
     <div>
-      <h1>CartDrawer</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

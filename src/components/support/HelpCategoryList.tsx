@@ -1,9 +1,9 @@
-import React from react';
-default function HelpCategoryList() {
+import React from 'react';
+export function HelpCategoryList() {
   return (
     <div>
-      <h1>HelpCategoryList</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

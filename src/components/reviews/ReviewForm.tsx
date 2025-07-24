@@ -1,9 +1,9 @@
-import React from react';
-default function ReviewForm() {
+import React from 'react';
+export function ReviewForm() {
   return (
     <div>
-      <h1>ReviewForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

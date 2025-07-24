@@ -1,9 +1,9 @@
-import React from react';
-default function FavoritesContext() {
+import React from 'react';
+export function FavoritesContext() {
   return (
     <div>
-      <h1>FavoritesContext</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

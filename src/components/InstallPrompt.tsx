@@ -1,9 +1,9 @@
-import React from react';
-default function InstallPrompt() {
+import React from 'react';
+export function InstallPrompt() {
   return (
     <div>
-      <h1>InstallPrompt</h1>
-      <p>Component placeholder</p>
+      <h1>Component</h1>
+      <p>Component placeholder - needs implementation</p>;
     </div>
-  )
-};
+  );
+}

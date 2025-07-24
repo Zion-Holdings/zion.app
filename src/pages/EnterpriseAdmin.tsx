@@ -1,9 +1,9 @@
-import React from react';
-default function EnterpriseAdmin() {
+import React from 'react';
+export function EnterpriseAdmin() {
   return (
     <div>
-      <h1>EnterpriseAdmin</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

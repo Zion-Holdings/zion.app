@@ -1,9 +1,9 @@
-import React from react';
-default function calendar() {
+import React from 'react';
+export function calendar() {
   return (
     <div>
-      <h1>calendar</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

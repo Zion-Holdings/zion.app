@@ -1,9 +1,9 @@
-import React from react';
-default function MilestoneSuggestions() {
+import React from 'react';
+export function MilestoneSuggestions() {
   return (
     <div>
-      <h1>MilestoneSuggestions</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

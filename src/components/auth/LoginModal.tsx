@@ -1,9 +1,9 @@
-import React from react';
-default function LoginModal() {
+import React from 'react';
+export function LoginModal() {
   return (
     <div>
-      <h1>LoginModal</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

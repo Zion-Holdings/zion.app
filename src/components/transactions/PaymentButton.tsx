@@ -1,9 +1,9 @@
-import React from react';
-default function PaymentButton() {
+import React from 'react';
+export function PaymentButton() {
   return (
     <div>
-      <h1>PaymentButton</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

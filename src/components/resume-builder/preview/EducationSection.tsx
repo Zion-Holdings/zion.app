@@ -1,9 +1,9 @@
-import React from react';
-default function EducationSection() {
+import React from 'react';
+export function EducationSection() {
   return (
     <div>
-      <h1>EducationSection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

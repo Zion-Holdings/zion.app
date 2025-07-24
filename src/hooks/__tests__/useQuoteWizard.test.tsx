@@ -1,9 +1,10 @@
-import React from react';
-default function useQuoteWizard.test() {
+import React from 'react'
+;
+export export export default function useQuoteWizard.test()   {;
   return (
     <div>
-      <h1>useQuoteWizard.test</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

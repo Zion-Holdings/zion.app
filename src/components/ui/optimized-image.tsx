@@ -1,9 +1,10 @@
-import React from react';
-default function optimized-image() {
+import React from 'react'
+;
+export export export default function optimized-image()   {;
   return (
     <div>
-      <h1>optimized-image</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

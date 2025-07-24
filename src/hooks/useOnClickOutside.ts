@@ -1,4 +1,5 @@
-// useOnClickOutside module placeholder
-const useOnClickOutside = {
-  // TODO: Implement useOnClickOutside functionality
+// Hook for useOnClickOutside;
+export const useUseOnClickOutside: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

@@ -1,9 +1,8 @@
-import React from react';
-
-export default function ClientDashboard() {
+import React from 'react';
+export function ClientDashboard() {
   return (
     <div>
-      <h1>ClientDashboard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

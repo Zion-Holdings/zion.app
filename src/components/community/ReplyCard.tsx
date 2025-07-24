@@ -1,9 +1,9 @@
-import React from react';
-default function ReplyCard() {
+import React from 'react';
+export function ReplyCard() {
   return (
     <div>
-      <h1>ReplyCard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,4 +1,4 @@
-// react19-optimizations module placeholder
-const react19-optimizations = {
-  // TODO: Implement react19-optimizations functionality
+// Utility functions for react19-optimizations;
+export const react19-optimizations = {;
+  // TODO: Implement utility functions;
 };

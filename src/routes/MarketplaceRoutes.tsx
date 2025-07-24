@@ -1,9 +1,9 @@
-import React from react';
-default function MarketplaceRoutes() {
+import React from 'react';
+export function MarketplaceRoutes() {
   return (
     <div>
-      <h1>MarketplaceRoutes</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

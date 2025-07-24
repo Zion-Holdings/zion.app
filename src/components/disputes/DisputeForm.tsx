@@ -1,9 +1,9 @@
-import React from react';
-default function DisputeForm() {
+import React from 'react';
+export function DisputeForm() {
   return (
     <div>
-      <h1>DisputeForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function ResumeSteps() {
+import React from 'react';
+export function ResumeSteps() {
   return (
     <div>
-      <h1>ResumeSteps</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

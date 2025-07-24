@@ -1,9 +1,9 @@
-import React from react';
-default function SupportWidget() {
+import React from 'react';
+export function SupportWidget() {
   return (
     <div>
-      <h1>SupportWidget</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

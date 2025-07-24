@@ -1,9 +1,9 @@
-import React from react';
-default function ContactSection() {
+import React from 'react';
+export function ContactSection() {
   return (
     <div>
-      <h1>ContactSection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -39,14 +39,14 @@ const LOG_FILE = path.join(__dirname, ../logs/local-auto-ci.log')
 const AUTO_FIX_SCRIPT = path.join(__dirname, ../scripts/auto-fix-errors.cjs')
 const TEST_COMMAND = npm test'; // Change if your main test command is different
 const WAIT_MINUTES = 10
-function log(message) {
+function log(message)  {
   const timestamp = new Date().toISOString()
 const logMessage = `[${timestamp}] ${message}`;
   logger.info(logMessage);
   fs.appendFileSync(LOG_FILE, logMessage + \n');
 }
 
-async function mainLoop() {
+async function mainLoop()  {
   while (true) {
     log('--- Running tests ---');
     let testFailed = false;

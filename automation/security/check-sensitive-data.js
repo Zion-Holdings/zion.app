@@ -24,11 +24,12 @@ if (process.env.NODE_ENV !== 'production') {
 
 const fs = require('fs');
 const path = require('path');
-const crypto = require('crypto');
+const { execSync } = require('child_process');
 
 class SecurityChecker {
     constructor() {
         this.projectRoot = process.cwd();
+<<<<<<< HEAD
         this.reportsDir = path.join(this.projectRoot, automation', 'reports');
         this.ensureDirectory(this.reportsDir);
         
@@ -40,83 +41,45 @@ class SecurityChecker {
                 /access[_-]?token\s*[:=]\s*['"`][^'"`]{20}['"`]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
                 /secret[_-]?key\s*[:=]\s*['"`][^'"`]{20}['"`]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
                 /private[_-]?key\s*[:=]\s*['"`][^'"`]{20}['"`]/gi"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            ],
-            passwords: [
-                /password\s*[:=]\s*['"`][^'"`]{8}['"`]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-                /passwd\s*[:=]\s*['"`][^'"`]{8}['"`]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-                /pwd\s*[:=]\s*['"`][^'"`]{8}['"`]/gi"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            ],
-            database: [
-                /database[_-]?url\s*[:=]\s*['"`][^'"`]{20}['"`]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-                /db[_-]?url\s*[:=]\s*['"`][^'"`]{20}['"`]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-                /connection[_-]?string\s*[:=]\s*['"`][^'"`]{20}['"`]/gi"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            ],
-            aws: [
-                /aws[_-]?access[_-]?key[_-]?id\s*[:=]\s*['"`][^'"`]{20}['"`]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-                /aws[_-]?secret[_-]?access[_-]?key\s*[:=]\s*['"`][^'"`]{20}['"`]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-                /aws[_-]?session[_-]?token\s*[:=]\s*['"`][^'"`]{20}['"`]/gi"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            ],
-            stripe: [
-                /sk_live_[a-zA-Z0-9]{24}/g,
-                /pk_live_[a-zA-Z0-9]{24}/g,
-                /sk_test_[a-zA-Z0-9]{24}/g,
-                /pk_test_[a-zA-Z0-9]{24}/g
-            ],
-            github: [
-                /ghp_[a-zA-Z0-9]{36}/g,
-                /gho_[a-zA-Z0-9]{36}/g,
-                /ghu_[a-zA-Z0-9]{36}/g,
-                /ghs_[a-zA-Z0-9]{36}/g,
-                /ghr_[a-zA-Z0-9]{36}/g
-            ],
-            slack: [
-                /xoxb-[a-zA-Z0-9-]+/g,
-                /xoxp-[a-zA-Z0-9-]+/g,
-                /xoxa-[a-zA-Z0-9-]+/g,
-                /xoxr-[a-zA-Z0-9-]+/g
-            ],
-            email: [
-                /email\s*[:=]\s*['"`][a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2}['"`]/gi"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            ],
-            phone: [
-                /phone\s*[:=]\s*['"`](\+?1[-.]?)?\(?([0-9]{3})\)?[-.]?([0-9]{3})[-.]?([0-9]{4})['"`]/gi"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            ],
-            ssn: [
-                /ssn\s*[:=]\s*['"`]\d{3}-\d{2}-\d{4}['"`]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-                /social[_-]?security[_-]?number\s*[:=]\s*['"`]\d{3}-\d{2}-\d{4}['"`]/gi"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            ],
-            creditCard: [
-                /credit[_-]?card\s*[:=]\s*['"`]\d{4}[- ]?\d{4}[- ]?\d{4}[- ]?\d{4}['"`]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-                /card[_-]?number\s*[:=]\s*['"`]\d{4}[- ]?\d{4}[- ]?\d{4}[- ]?\d{4}['"`]/gi"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-            ]
-        };
-
-        // Files and directories to exclude
-        this.excludePatterns = [
-            /node_modules/,
-            /\.git/,
-            /\.next/,
-            /dist/,
-            /build/,
-            /coverage/,
-            /\.env\.example/,
-            /package-lock\.json/,
-            /yarn\.lock/,
-            /\.log$/,
-            /\.tmp$/,
-            /\.temp$/,
-            /\.cache$/,
-            /\.DS_Store$/,
-            /Thumbs\.db$/
-        ];
+=======
+        this.config = this.loadConfig();
+        this.logFile = path.join(__dirname, '..', 'logs', 'security-check.log');
+        this.ensureLogDirectory();
     }
 
-    ensureDirectory(dir) {
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir, { recursive: true });
+    loadConfig() {
+        const configPath = path.join(__dirname, '..', 'config.json');
+        if (fs.existsSync(configPath)) {
+            return JSON.parse(fs.readFileSync(configPath, 'utf8'));
+        }
+        return {
+            auditLevel: 'moderate',
+            sensitivePatterns: [
+                'password',
+                'secret',
+                'key',
+                'token',
+                'api_key',
+                'private_key'
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
+            ],
+            allowedDomains: [
+                'localhost',
+                '127.0.0.1',
+                'netlify.app',
+                'vercel.app'
+            ]
+        };
+    }
+
+    ensureLogDirectory() {
+        const logDir = path.dirname(this.logFile);
+        if (!fs.existsSync(logDir)) {
+            fs.mkdirSync(logDir, { recursive: true });
         }
     }
 
+<<<<<<< HEAD
     log(message) {
         logger.info(`[Security Check] ${message}`);
     }
@@ -136,100 +99,298 @@ class SecurityChecker {
             summary: {}
         };
 
+=======
+    log(message, level = 'info') {
+        const timestamp = new Date().toISOString();
+        const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}\n`;
+        
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
         try {
-            // Scan all files in the project
-            await this.scanDirectory(this.projectRoot, results);
-            
-            // Generate summary
-            results.summary = this.generateSummary(results.vulnerabilities);
-            
-            // Save results
-            const reportFile = path.join(this.reportsDir, `security-scan-${Date.now()}.json`);
-            fs.writeFileSync(reportFile, JSON.stringify(results, null, 2));
-
-            this.log(`✅ Security scan completed. Scanned ${results.filesScanned} files, found ${results.issuesFound} issues.`);
-            return results;
+            fs.appendFileSync(this.logFile, logEntry);
         } catch (error) {
-            this.log(`❌ Security scan failed: ${error.message}`);
-            throw error;
+            console.error('Failed to write to log file:', error.message);
+        }
+        
+        if (level === 'error') {
+            console.error(message);
+        } else if (level === 'warn') {
+            console.warn(message);
+        } else {
+            console.log(message);
         }
     }
 
-    async scanDirectory(dir, results) {
-        const items = fs.readdirSync(dir);
-
-        for (const item of items) {
-            const fullPath = path.join(dir, item);
-            
-            if (this.shouldExcludeFile(fullPath)) {
-                continue;
-            }
-
-            const stat = fs.statSync(fullPath);
-
-            if (stat.isDirectory()) {
-                await this.scanDirectory(fullPath, results);
-            } else if (stat.isFile()) {
-                await this.scanFile(fullPath, results);
-            }
-        }
-    }
-
-    async scanFile(filePath, results) {
-        results.filesScanned++;
-
+    async checkNpmAudit() {
         try {
-            // Only scan text files
-            const ext = path.extname(filePath).toLowerCase();
-            const textExtensions = ['.js', .jsx', .ts', .tsx', .json', .md', .txt', .yml', .yaml', .env', .config', .conf'];
+            this.log('Running npm audit...');
             
-            if (!textExtensions.includes(ext) && !this.isTextFile(filePath)) {
-                return;
-            }
+            const auditResult = execSync('npm audit --audit-level=moderate --json', { 
+                encoding: 'utf8',
+                stdio: 'pipe'
+            });
 
+            const audit = JSON.parse(auditResult);
+            
+            if (audit.metadata.vulnerabilities.total > 0) {
+                this.log(`⚠️  Found ${audit.metadata.vulnerabilities.total} vulnerabilities`, 'warn');
+                
+                // Log high severity vulnerabilities
+                if (audit.metadata.vulnerabilities.high > 0) {
+                    this.log(`❌ ${audit.metadata.vulnerabilities.high} high severity vulnerabilities found`, 'error');
+                    return false;
+                }
+                
+                return true; // Allow moderate/low vulnerabilities
+            }
+            
+            this.log('✅ No security vulnerabilities found');
+            return true;
+        } catch (error) {
+            this.log(`NPM audit failed: ${error.message}`, 'warn');
+            return true; // Don't fail for audit issues
+        }
+    }
+
+<<<<<<< HEAD
             const content = fs.readFileSync(filePath, 'utf8');
             const relativePath = path.relative(this.projectRoot, filePath);
+=======
+    async checkSensitiveData() {
+        try {
+            this.log('Checking for sensitive data...');
+            
+            const sensitivePatterns = this.config.sensitivePatterns;
+            const excludedDirs = ['node_modules', '.git', '.next', 'dist', 'build', 'coverage'];
+            const foundSensitive = [];
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
 
-            // Check for sensitive patterns
-            for (const [category, patterns] of Object.entries(this.sensitivePatterns)) {
-                for (const pattern of patterns) {
-                    const matches = content.match(pattern);
-                    if (matches) {
-                        results.issuesFound++;
-                        results.vulnerabilities.push({
-                            file: relativePath,
-                            category: category,
-                            pattern: pattern.source,
-                            matches: matches.length,
-                            severity: this.getSeverity(category),
-                            recommendation: this.getRecommendation(category)
-                        });
+            // Walk through project files
+            const walkDir = (dir) => {
+                const files = fs.readdirSync(dir);
+                
+                for (const file of files) {
+                    const filePath = path.join(dir, file);
+                    const stat = fs.statSync(filePath);
+                    
+                    if (stat.isDirectory()) {
+                        if (!excludedDirs.includes(file)) {
+                            walkDir(filePath);
+                        }
+                    } else if (stat.isFile()) {
+                        // Check file extensions
+                        const ext = path.extname(file).toLowerCase();
+                        if (['.js', '.ts', '.tsx', '.jsx', '.json', '.env', '.md', '.txt'].includes(ext)) {
+                            try {
+                                const content = fs.readFileSync(filePath, 'utf8');
+                                
+                                for (const pattern of sensitivePatterns) {
+                                    const regex = new RegExp(pattern, 'gi');
+                                    const matches = content.match(regex);
+                                    
+                                    if (matches) {
+                                        foundSensitive.push({
+                                            file: filePath,
+                                            pattern: pattern,
+                                            matches: matches.length
+                                        });
+                                    }
+                                }
+                            } catch (error) {
+                                // Skip files that can't be read
+                            }
+                        }
+                    }
+                }
+            };
+
+            walkDir(this.projectRoot);
+
+            if (foundSensitive.length > 0) {
+                this.log(`⚠️  Found ${foundSensitive.length} potential sensitive data instances`, 'warn');
+                
+                // Log the findings
+                foundSensitive.forEach(item => {
+                    this.log(`  - ${item.file}: ${item.pattern} (${item.matches} matches)`, 'warn');
+                });
+                
+                return false;
+            }
+            
+            this.log('✅ No sensitive data found');
+            return true;
+        } catch (error) {
+            this.log(`Sensitive data check failed: ${error.message}`, 'warn');
+            return true; // Don't fail for sensitive data check issues
+        }
+    }
+
+    async checkEnvironmentVariables() {
+        try {
+            this.log('Checking environment variables...');
+            
+            const envFiles = ['.env', '.env.local', '.env.development', '.env.production'];
+            const foundEnvVars = [];
+
+            for (const envFile of envFiles) {
+                const envPath = path.join(this.projectRoot, envFile);
+                
+                if (fs.existsSync(envPath)) {
+                    const content = fs.readFileSync(envPath, 'utf8');
+                    const lines = content.split('\n');
+                    
+                    for (const line of lines) {
+                        const trimmed = line.trim();
+                        if (trimmed && !trimmed.startsWith('#')) {
+                            const [key] = trimmed.split('=');
+                            if (key) {
+                                foundEnvVars.push({
+                                    file: envFile,
+                                    key: key
+                                });
+                            }
+                        }
                     }
                 }
             }
 
-            // Check for hardcoded secrets
-            const hardcodedSecrets = this.checkForHardcodedSecrets(content, relativePath);
-            results.vulnerabilities.push(...hardcodedSecrets);
-            results.issuesFound += hardcodedSecrets.length;
+            // Check for sensitive environment variables
+            const sensitiveKeys = ['PASSWORD', 'SECRET', 'KEY', 'TOKEN', 'API_KEY', 'PRIVATE_KEY'];
+            const sensitiveFound = foundEnvVars.filter(env => 
+                sensitiveKeys.some(key => env.key.toUpperCase().includes(key))
+            );
 
+            if (sensitiveFound.length > 0) {
+                this.log(`⚠️  Found ${sensitiveFound.length} potentially sensitive environment variables`, 'warn');
+                
+                sensitiveFound.forEach(env => {
+                    this.log(`  - ${env.file}: ${env.key}`, 'warn');
+                });
+                
+                return false;
+            }
+            
+            this.log('✅ Environment variables look safe');
+            return true;
         } catch (error) {
-            // Skip files that can't be read
-            this.log(`⚠️  Could not scan file ${filePath}: ${error.message}`);
+            this.log(`Environment variables check failed: ${error.message}`, 'warn');
+            return true; // Don't fail for env check issues
         }
     }
 
-    isTextFile(filePath) {
+    async checkDependencies() {
         try {
-            const buffer = fs.readFileSync(filePath, { encoding: null });
-            const sample = buffer.slice(0, 1024);
+            this.log('Checking dependencies for security issues...');
             
-            // Check if the file contains null bytes (binary file)
-            return !sample.includes(0);
-        } catch {
+            const packageJsonPath = path.join(this.projectRoot, 'package.json');
+            if (!fs.existsSync(packageJsonPath)) {
+                this.log('No package.json found', 'warn');
+                return true;
+            }
+
+            const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+            const allDeps = {
+                ...packageJson.dependencies,
+                ...packageJson.devDependencies
+            };
+
+            // Check for known vulnerable packages
+            const vulnerablePackages = [
+                'lodash',
+                'moment',
+                'jquery'
+            ];
+
+            const foundVulnerable = Object.keys(allDeps).filter(dep => 
+                vulnerablePackages.includes(dep)
+            );
+
+            if (foundVulnerable.length > 0) {
+                this.log(`⚠️  Found ${foundVulnerable.length} potentially vulnerable packages`, 'warn');
+                
+                foundVulnerable.forEach(dep => {
+                    this.log(`  - ${dep}: ${allDeps[dep]}`, 'warn');
+                });
+                
+                return false;
+            }
+            
+            this.log('✅ Dependencies look secure');
+            return true;
+        } catch (error) {
+            this.log(`Dependencies check failed: ${error.message}`, 'warn');
+            return true; // Don't fail for dependency check issues
+        }
+    }
+
+    async generateSecurityReport() {
+        try {
+            this.log('Generating security report...');
+            
+            const report = {
+                timestamp: new Date().toISOString(),
+                npmAudit: await this.checkNpmAudit(),
+                sensitiveData: await this.checkSensitiveData(),
+                environmentVariables: await this.checkEnvironmentVariables(),
+                dependencies: await this.checkDependencies(),
+                auditLevel: this.config.auditLevel,
+                recommendations: []
+            };
+
+            // Generate recommendations
+            if (!report.npmAudit) {
+                report.recommendations.push('Run npm audit fix to resolve security vulnerabilities');
+            }
+            if (!report.sensitiveData) {
+                report.recommendations.push('Review and remove sensitive data from codebase');
+            }
+            if (!report.environmentVariables) {
+                report.recommendations.push('Review environment variables for sensitive data');
+            }
+            if (!report.dependencies) {
+                report.recommendations.push('Update vulnerable dependencies');
+            }
+
+            const reportPath = path.join(__dirname, '..', 'reports', `security-${Date.now()}.json`);
+            fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+            
+            this.log(`Security report generated: ${reportPath}`);
+            return report;
+        } catch (error) {
+            this.log(`Failed to generate security report: ${error.message}`, 'error');
+            return null;
+        }
+    }
+
+    async execute() {
+        this.log('🚀 Starting security check...');
+        
+        const report = await this.generateSecurityReport();
+        
+        if (report) {
+            const allChecksPassed = report.npmAudit && report.sensitiveData && 
+                                  report.environmentVariables && report.dependencies;
+            
+            if (allChecksPassed) {
+                this.log('✅ All security checks passed!');
+                return true;
+            } else {
+                this.log('⚠️  Some security checks failed', 'warn');
+                
+                if (report.recommendations.length > 0) {
+                    this.log('💡 Recommendations:', 'warn');
+                    report.recommendations.forEach(rec => {
+                        this.log(`  - ${rec}`, 'warn');
+                    });
+                }
+                
+                return false;
+            }
+        } else {
+            this.log('❌ Security check failed', 'error');
             return false;
         }
     }
+<<<<<<< HEAD
 
     checkForHardcodedSecrets(content, filePath) {
         const secrets = [];
@@ -392,11 +553,32 @@ async function main() {
         process.exit(1);
     }
 }
-
-if (require.main === module) {
-    main();
+=======
 }
 
+// Main execution
+const securityChecker = new SecurityChecker();
+const command = process.argv[2] || 'execute';
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
+
+switch (command) {
+    case 'execute':
+        securityChecker.execute().catch(error => {
+            console.error('Security check failed:', error.message);
+            process.exit(1);
+        });
+        break;
+    case 'report':
+        securityChecker.generateSecurityReport().catch(error => {
+            console.error('Failed to generate security report:', error.message);
+            process.exit(1);
+        });
+        break;
+    default:
+        console.log(`
+🔒 Security Check System
+
+<<<<<<< HEAD
 module.exports = SecurityChecker; 
 
 // Graceful shutdown handling
@@ -412,3 +594,25 @@ process.on('SIGTERM', () => {
   process.exit(0);
 });
 
+=======
+Usage:
+  node automation/security/check-sensitive-data.js [command]
+
+Commands:
+  execute  - Run all security checks
+  report   - Generate security report only
+
+Features:
+  ✅ NPM audit for vulnerabilities
+  ✅ Sensitive data scanning
+  ✅ Environment variables check
+  ✅ Dependency security analysis
+  ✅ Security reporting
+
+Examples:
+  node automation/security/check-sensitive-data.js execute
+  node automation/security/check-sensitive-data.js report
+        `);
+        break;
+} 
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858

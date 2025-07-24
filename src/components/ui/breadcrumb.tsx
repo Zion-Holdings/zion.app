@@ -1,9 +1,9 @@
-import React from react';
-default function breadcrumb() {
+import React from 'react';
+export function breadcrumb() {
   return (
     <div>
-      <h1>breadcrumb</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

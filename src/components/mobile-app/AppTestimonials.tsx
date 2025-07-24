@@ -1,9 +1,9 @@
-import React from react';
-default function AppTestimonials() {
+import React from 'react';
+export function AppTestimonials() {
   return (
     <div>
-      <h1>AppTestimonials</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

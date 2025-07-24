@@ -1,9 +1,9 @@
-import React from react';
-default function LoginContent() {
+import React from 'react';
+export function LoginContent() {
   return (
     <div>
-      <h1>LoginContent</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

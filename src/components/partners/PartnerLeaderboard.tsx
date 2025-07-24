@@ -1,9 +1,9 @@
-import React from react';
-default function PartnerLeaderboard() {
+import React from 'react';
+export function PartnerLeaderboard() {
   return (
     <div>
-      <h1>PartnerLeaderboard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

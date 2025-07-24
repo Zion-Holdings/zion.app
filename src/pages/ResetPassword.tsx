@@ -1,9 +1,9 @@
-import React from react';
-default function ResetPassword() {
+import React from 'react';
+export function ResetPassword() {
   return (
     <div>
-      <h1>ResetPassword</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

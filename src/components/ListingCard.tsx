@@ -1,9 +1,9 @@
-import React from react';
-default function ListingCard() {
+import React from 'react';
+export function ListingCard() {
   return (
     <div>
-      <h1>ListingCard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

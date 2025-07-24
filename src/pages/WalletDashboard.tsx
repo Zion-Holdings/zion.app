@@ -1,9 +1,9 @@
-import React from react';
-default function WalletDashboard() {
+import React from 'react';
+export function WalletDashboard() {
   return (
     <div>
-      <h1>WalletDashboard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

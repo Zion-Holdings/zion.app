@@ -1,4 +1,4 @@
-// sidebar.types module placeholder
-const sidebar.types = {
-  // TODO: Implement sidebar.types functionality
+// Module for sidebar.types;
+export const sidebar.types = {;
+  // TODO: Implement module functionality;
 };

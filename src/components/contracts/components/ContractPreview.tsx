@@ -1,9 +1,9 @@
-import React from react';
-default function ContractPreview() {
+import React from 'react';
+export function ContractPreview() {
   return (
     <div>
-      <h1>ContractPreview</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

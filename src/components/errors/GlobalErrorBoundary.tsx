@@ -1,9 +1,9 @@
-import React from react';
-default function GlobalErrorBoundary() {
+import React from 'react';
+export function GlobalErrorBoundary() {
   return (
     <div>
-      <h1>GlobalErrorBoundary</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

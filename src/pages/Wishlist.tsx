@@ -1,8 +1,8 @@
-import React from react';
-export default function Wishlist() {
+import React from 'react';
+export function Wishlist() {
   return (
     <div>
-      <h1>Wishlist</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

@@ -1,4 +1,5 @@
-// useUpdateMilestone module placeholder
-const useUpdateMilestone = {
-  // TODO: Implement useUpdateMilestone functionality
+// Hook for useUpdateMilestone;
+export const useUseUpdateMilestone: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

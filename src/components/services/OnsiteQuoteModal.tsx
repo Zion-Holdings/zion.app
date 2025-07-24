@@ -1,9 +1,9 @@
-import React from react';
-default function OnsiteQuoteModal() {
+import React from 'react';
+export function OnsiteQuoteModal() {
   return (
     <div>
-      <h1>OnsiteQuoteModal</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

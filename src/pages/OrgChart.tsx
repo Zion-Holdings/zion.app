@@ -1,9 +1,9 @@
-import React from react';
-default function OrgChart() {
+import React from 'react';
+export function OrgChart() {
   return (
     <div>
-      <h1>OrgChart</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function tabs() {
+import React from 'react';
+export function tabs() {
   return (
     <div>
-      <h1>tabs</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

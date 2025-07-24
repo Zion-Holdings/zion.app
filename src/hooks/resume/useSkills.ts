@@ -1,4 +1,5 @@
-// useSkills module placeholder
-const useSkills = {
-  // TODO: Implement useSkills functionality
+// Hook for useSkills;
+export const useUseSkills: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

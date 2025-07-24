@@ -1,9 +1,9 @@
-import React from react';
-default function HowItWorksSection() {
+import React from 'react';
+export function HowItWorksSection() {
   return (
     <div>
-      <h1>HowItWorksSection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

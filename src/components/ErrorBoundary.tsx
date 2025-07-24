@@ -1,9 +1,9 @@
-import React from react';
-default function ErrorBoundary() {
+import React from 'react';
+export function ErrorBoundary() {
   return (
     <div>
-      <h1>ErrorBoundary</h1>
-      <p>Component placeholder</p>
+      <h1>Component</h1>
+      <p>Component placeholder - needs implementation</p>;
     </div>
-  )
-};
+  );
+}

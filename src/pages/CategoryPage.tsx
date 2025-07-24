@@ -1,9 +1,9 @@
-import React from react';
-default function CategoryPage() {
+import React from 'react';
+export function CategoryPage() {
   return (
     <div>
-      <h1>CategoryPage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

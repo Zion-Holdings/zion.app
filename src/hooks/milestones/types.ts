@@ -1,4 +1,5 @@
-// types module placeholder
-const types = {
-  // TODO: Implement types functionality
+// Hook for types;
+export const useTypes: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

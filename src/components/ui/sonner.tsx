@@ -1,9 +1,9 @@
-import React from react';
-default function sonner() {
+import React from 'react';
+export function sonner() {
   return (
     <div>
-      <h1>sonner</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

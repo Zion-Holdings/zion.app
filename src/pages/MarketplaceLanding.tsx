@@ -1,9 +1,9 @@
-import React from react';
-default function MarketplaceLanding() {
+import React from 'react';
+export function MarketplaceLanding() {
   return (
     <div>
-      <h1>MarketplaceLanding</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

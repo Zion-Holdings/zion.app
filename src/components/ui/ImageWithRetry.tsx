@@ -1,9 +1,9 @@
-import React from react';
-default function ImageWithRetry() {
+import React from 'react';
+export function ImageWithRetry() {
   return (
     <div>
-      <h1>ImageWithRetry</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,0 +1,200 @@
+{
+  "timestamp": "2025-07-24T17:16:13.874Z",
+  "duration": 195,
+  "summary": {
+    "total": 22,
+    "passed": 3,
+    "failed": 19,
+    "successRate": 13.636363636363635
+  },
+  "results": [
+    {
+      "testName": "Core File: core/IntelligentAutomationOrchestrator.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "core/IntelligentAutomationOrchestrator.js"
+      },
+      "timestamp": "2025-07-24T17:16:13.839Z"
+    },
+    {
+      "testName": "Core File: core/AutonomousAutomationManager.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "core/AutonomousAutomationManager.js"
+      },
+      "timestamp": "2025-07-24T17:16:13.840Z"
+    },
+    {
+      "testName": "Core File: core/TaskScheduler.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "core/TaskScheduler.js"
+      },
+      "timestamp": "2025-07-24T17:16:13.840Z"
+    },
+    {
+      "testName": "Core File: core/NotificationManager.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "core/NotificationManager.js"
+      },
+      "timestamp": "2025-07-24T17:16:13.840Z"
+    },
+    {
+      "testName": "Core File: core/AnomalyDetector.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "core/AnomalyDetector.js"
+      },
+      "timestamp": "2025-07-24T17:16:13.840Z"
+    },
+    {
+      "testName": "Core File: core/ReportGenerator.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "core/ReportGenerator.js"
+      },
+      "timestamp": "2025-07-24T17:16:13.840Z"
+    },
+    {
+      "testName": "Core System Import",
+      "passed": true,
+      "message": "Core system imported successfully",
+      "details": null,
+      "timestamp": "2025-07-24T17:16:13.843Z"
+    },
+    {
+      "testName": "Netlify File: netlify-monitor.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "netlify-monitor.js"
+      },
+      "timestamp": "2025-07-24T17:16:13.843Z"
+    },
+    {
+      "testName": "Netlify File: netlify-error-fixer.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "netlify-error-fixer.js"
+      },
+      "timestamp": "2025-07-24T17:16:13.843Z"
+    },
+    {
+      "testName": "Netlify File: netlify-build-automation.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "netlify-build-automation.js"
+      },
+      "timestamp": "2025-07-24T17:16:13.844Z"
+    },
+    {
+      "testName": "Netlify Monitor Import",
+      "passed": true,
+      "message": "Netlify monitor imported successfully",
+      "details": null,
+      "timestamp": "2025-07-24T17:16:13.856Z"
+    },
+    {
+      "testName": "Performance File: performance/monitor.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "performance/monitor.js"
+      },
+      "timestamp": "2025-07-24T17:16:13.859Z"
+    },
+    {
+      "testName": "Performance File: performance/frontend-fix.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "performance/frontend-fix.js"
+      },
+      "timestamp": "2025-07-24T17:16:13.859Z"
+    },
+    {
+      "testName": "Performance Monitor Import",
+      "passed": false,
+      "message": "Import failed: missing ) after argument list",
+      "details": null,
+      "timestamp": "2025-07-24T17:16:13.861Z"
+    },
+    {
+      "testName": "CI File: continuous-improvement/enhanced-automation.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "continuous-improvement/enhanced-automation.js"
+      },
+      "timestamp": "2025-07-24T17:16:13.861Z"
+    },
+    {
+      "testName": "CI File: continuous-improvement/monitor.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "continuous-improvement/monitor.js"
+      },
+      "timestamp": "2025-07-24T17:16:13.862Z"
+    },
+    {
+      "testName": "CI File: continuous-improvement/improve.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "continuous-improvement/improve.js"
+      },
+      "timestamp": "2025-07-24T17:16:13.862Z"
+    },
+    {
+      "testName": "CI System Import",
+      "passed": true,
+      "message": "CI system imported successfully",
+      "details": null,
+      "timestamp": "2025-07-24T17:16:13.864Z"
+    },
+    {
+      "testName": "Task File: tasks/DependencyUpdater.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "tasks/DependencyUpdater.js"
+      },
+      "timestamp": "2025-07-24T17:16:13.865Z"
+    },
+    {
+      "testName": "Task System Import",
+      "passed": false,
+      "message": "Import failed: Unexpected token '?'",
+      "details": null,
+      "timestamp": "2025-07-24T17:16:13.867Z"
+    },
+    {
+      "testName": "Cursor File: cursor-automated-communication.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "cursor-automated-communication.js"
+      },
+      "timestamp": "2025-07-24T17:16:13.871Z"
+    },
+    {
+      "testName": "Cursor File: cursor-automated-extension/background.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "cursor-automated-extension/background.js"
+      },
+      "timestamp": "2025-07-24T17:16:13.872Z"
+    }
+  ]
+}

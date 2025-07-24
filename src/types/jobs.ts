@@ -1,4 +1,4 @@
-// jobs module placeholder
-const jobs = {
-  // TODO: Implement jobs functionality
+// Type definitions for jobs;
+interface jobs {;
+  // TODO: Add proper type definitions;
 };

@@ -1,9 +1,9 @@
-import React from react';
-default function BasicInfoForm() {
+import React from 'react';
+export function BasicInfoForm() {
   return (
     <div>
-      <h1>BasicInfoForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

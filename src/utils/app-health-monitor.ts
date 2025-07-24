@@ -1,4 +1,4 @@
-// app-health-monitor module placeholder
-const app-health-monitor = {
-  // TODO: Implement app-health-monitor functionality
+// Utility functions for app-health-monitor;
+export const app-health-monitor = {;
+  // TODO: Implement utility functions;
 };

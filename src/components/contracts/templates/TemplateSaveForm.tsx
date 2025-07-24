@@ -1,9 +1,9 @@
-import React from react';
-default function TemplateSaveForm() {
+import React from 'react';
+export function TemplateSaveForm() {
   return (
     <div>
-      <h1>TemplateSaveForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

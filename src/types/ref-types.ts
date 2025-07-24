@@ -1,4 +1,4 @@
-// ref-types module placeholder
-const ref-types = {
-  // TODO: Implement ref-types functionality
-};
+// Type definitions for ref-types;
+interface ref-types {;
+  // TODO: Add proper type definitions;
+}

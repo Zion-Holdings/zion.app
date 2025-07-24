@@ -1,9 +1,9 @@
-import React from react';
-default function MyBadgesPreview() {
+import React from 'react';
+export function MyBadgesPreview() {
   return (
     <div>
-      <h1>MyBadgesPreview</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

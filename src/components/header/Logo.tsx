@@ -1,9 +1,9 @@
-import React from react';
-default function Logo() {
+import React from 'react';
+export function Logo() {
   return (
     <div>
-      <h1>Logo</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

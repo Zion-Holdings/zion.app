@@ -1,9 +1,9 @@
-import React from react';
-default function GenesisDeployPage() {
+import React from 'react';
+export function GenesisDeployPage() {
   return (
     <div>
-      <h1>GenesisDeployPage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

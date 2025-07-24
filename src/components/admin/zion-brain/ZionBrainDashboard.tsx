@@ -1,9 +1,9 @@
-import React from react';
-default function ZionBrainDashboard() {
+import React from 'react';
+export function ZionBrainDashboard() {
   return (
     <div>
-      <h1>ZionBrainDashboard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

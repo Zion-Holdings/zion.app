@@ -1,7 +1,10 @@
-import React from react';
-
-export default function PaymentSuccess() {
+import React from 'react'
+;
+export export export default function payment-success()      {;
   return (
-    <div>Payment Success</div>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

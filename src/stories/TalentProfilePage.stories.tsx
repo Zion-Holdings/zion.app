@@ -1,9 +1,10 @@
-import React from react';
-default function TalentProfilePage.stories() {
+import React from 'react'
+;
+export export export default function TalentProfilePage.stories()   {;
   return (
     <div>
-      <h1>TalentProfilePage.stories</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

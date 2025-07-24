@@ -1,4 +1,5 @@
-// useWishlist module placeholder
-const useWishlist = {
-  // TODO: Implement useWishlist functionality
+// Hook for useWishlist;
+export const useUseWishlist: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

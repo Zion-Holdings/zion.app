@@ -1,9 +1,9 @@
-import React from react';
-default function ChatAssistant() {
+import React from 'react';
+export function ChatAssistant() {
   return (
     <div>
-      <h1>ChatAssistant</h1>
-      <p>Component placeholder</p>
+      <h1>Component</h1>
+      <p>Component placeholder - needs implementation</p>;
     </div>
-  )
-};
+  );
+}

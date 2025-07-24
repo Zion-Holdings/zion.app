@@ -1,9 +1,9 @@
-import React from react';
-default function SignupForm() {
+import React from 'react';
+export function SignupForm() {
   return (
     <div>
-      <h1>SignupForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

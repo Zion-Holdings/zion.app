@@ -1,9 +1,9 @@
-import React from react';
-default function ErrorOverlay() {
+import React from 'react';
+export function ErrorOverlay() {
   return (
     <div>
-      <h1>ErrorOverlay</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

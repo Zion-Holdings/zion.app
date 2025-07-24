@@ -1,9 +1,9 @@
-import React from react';
-default function ApiErrorCodes() {
+import React from 'react';
+export function ApiErrorCodes() {
   return (
     <div>
-      <h1>ApiErrorCodes</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

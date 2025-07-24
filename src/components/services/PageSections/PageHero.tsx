@@ -1,9 +1,9 @@
-import React from react';
-default function PageHero() {
+import React from 'react';
+export function PageHero() {
   return (
     <div>
-      <h1>PageHero</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

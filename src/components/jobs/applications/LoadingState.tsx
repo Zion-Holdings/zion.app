@@ -1,9 +1,9 @@
-import React from react';
-default function LoadingState() {
+import React from 'react';
+export function LoadingState() {
   return (
     <div>
-      <h1>LoadingState</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

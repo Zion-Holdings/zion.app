@@ -1,9 +1,9 @@
-import React from react';
-default function MobileFilterDrawer() {
+import React from 'react';
+export function MobileFilterDrawer() {
   return (
     <div>
-      <h1>MobileFilterDrawer</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

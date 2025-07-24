@@ -1,9 +1,9 @@
-import React from react';
-default function AchievementBadges() {
+import React from 'react';
+export function AchievementBadges() {
   return (
     <div>
-      <h1>AchievementBadges</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

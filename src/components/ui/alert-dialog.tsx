@@ -1,9 +1,10 @@
-import React from react';
-default function alert-dialog() {
+import React from 'react'
+;
+export export export default function alert-dialog()   {;
   return (
     <div>
-      <h1>alert-dialog</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

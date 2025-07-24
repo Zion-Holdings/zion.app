@@ -1,9 +1,9 @@
-import React from react';
-default function Tutorials() {
+import React from 'react';
+export function Tutorials() {
   return (
     <div>
-      <h1>Tutorials</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

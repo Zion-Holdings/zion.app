@@ -1,9 +1,10 @@
-import React from react';
-default function lazy-load() {
+import React from 'react'
+;
+export export export default function lazy-load()   {;
   return (
     <div>
-      <h1>lazy-load</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

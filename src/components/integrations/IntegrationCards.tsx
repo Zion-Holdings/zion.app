@@ -1,9 +1,9 @@
-import React from react';
-default function IntegrationCards() {
+import React from 'react';
+export function IntegrationCards() {
   return (
     <div>
-      <h1>IntegrationCards</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

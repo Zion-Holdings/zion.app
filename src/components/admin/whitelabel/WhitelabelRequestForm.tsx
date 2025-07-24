@@ -1,9 +1,9 @@
-import React from react';
-default function WhitelabelRequestForm() {
+import React from 'react';
+export function WhitelabelRequestForm() {
   return (
     <div>
-      <h1>WhitelabelRequestForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

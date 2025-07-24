@@ -1,9 +1,9 @@
-import React from react';
-default function OrderTimeline() {
+import React from 'react';
+export function OrderTimeline() {
   return (
     <div>
-      <h1>OrderTimeline</h1>
-      <p>Component placeholder</p>
+      <h1>Component</h1>
+      <p>Component placeholder - needs implementation</p>;
     </div>
-  )
-};
+  );
+}

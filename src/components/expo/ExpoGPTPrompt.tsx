@@ -1,9 +1,9 @@
-import React from react';
-default function ExpoGPTPrompt() {
+import React from 'react';
+export function ExpoGPTPrompt() {
   return (
     <div>
-      <h1>ExpoGPTPrompt</h1>
-      <p>Component placeholder</p>
+      <h1>Component</h1>
+      <p>Component placeholder - needs implementation</p>;
     </div>
-  )
-};
+  );
+}

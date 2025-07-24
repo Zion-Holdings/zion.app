@@ -1,9 +1,9 @@
-import React from react';
-default function Internationalization() {
+import React from 'react';
+export function Internationalization() {
   return (
     <div>
-      <h1>Internationalization</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

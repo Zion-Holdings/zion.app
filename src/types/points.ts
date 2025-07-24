@@ -1,4 +1,4 @@
-// points module placeholder
-const points = {
-  // TODO: Implement points functionality
+// Type definitions for points;
+interface points {;
+  // TODO: Add proper type definitions;
 };

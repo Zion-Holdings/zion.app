@@ -1,8 +1,8 @@
-import React from react';
-export default function Categories() {
+import React from 'react';
+export function Categories() {
   return (
     <div>
-      <h1>Categories</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

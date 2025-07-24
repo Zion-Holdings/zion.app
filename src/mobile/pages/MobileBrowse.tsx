@@ -1,9 +1,9 @@
-import React from react';
-default function MobileBrowse() {
+import React from 'react';
+export function MobileBrowse() {
   return (
     <div>
-      <h1>MobileBrowse</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

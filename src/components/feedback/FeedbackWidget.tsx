@@ -1,9 +1,9 @@
-import React from react';
-default function FeedbackWidget() {
+import React from 'react';
+export function FeedbackWidget() {
   return (
     <div>
-      <h1>FeedbackWidget</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function imageOptimization() {
+import React from 'react';
+export function imageOptimization() {
   return (
     <div>
-      <h1>imageOptimization</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

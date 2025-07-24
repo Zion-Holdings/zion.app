@@ -1,9 +1,9 @@
-import React from react';
-default function AnalyticsConsentBanner() {
+import React from 'react';
+export function AnalyticsConsentBanner() {
   return (
     <div>
-      <h1>AnalyticsConsentBanner</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

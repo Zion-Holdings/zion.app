@@ -1,9 +1,9 @@
-import React from react';
-default function CategoriesSection() {
+import React from 'react';
+export function CategoriesSection() {
   return (
     <div>
-      <h1>CategoriesSection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

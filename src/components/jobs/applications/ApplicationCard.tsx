@@ -1,9 +1,9 @@
-import React from react';
-default function ApplicationCard() {
+import React from 'react';
+export function ApplicationCard() {
   return (
     <div>
-      <h1>ApplicationCard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

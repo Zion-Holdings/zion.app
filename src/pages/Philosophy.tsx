@@ -1,7 +1,9 @@
-import React from react';
-
-export default function Philosophy() {
+import React from 'react';
+export function Philosophy() {
   return (
-    <div>Philosophy</div>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

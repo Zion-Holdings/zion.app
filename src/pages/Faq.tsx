@@ -1,9 +1,9 @@
-import React from react';
-default function Faq() {
+import React from 'react';
+export function Faq() {
   return (
     <div>
-      <h1>Faq</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

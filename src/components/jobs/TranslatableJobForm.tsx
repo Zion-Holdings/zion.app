@@ -1,9 +1,9 @@
-import React from react';
-default function TranslatableJobForm() {
+import React from 'react';
+export function TranslatableJobForm() {
   return (
     <div>
-      <h1>TranslatableJobForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

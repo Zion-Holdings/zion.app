@@ -1,9 +1,9 @@
-import React from react';
-default function MilestoneCard() {
+import React from 'react';
+export function MilestoneCard() {
   return (
     <div>
-      <h1>MilestoneCard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

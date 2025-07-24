@@ -1,9 +1,9 @@
-import React from react';
-default function JobApplicationsTable() {
+import React from 'react';
+export function JobApplicationsTable() {
   return (
     <div>
-      <h1>JobApplicationsTable</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function Points() {
+import React from 'react';
+export function Points() {
   return (
     <div>
-      <h1>Points</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

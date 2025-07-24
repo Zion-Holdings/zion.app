@@ -1,9 +1,9 @@
-import React from react';
-default function EmptyStateCard() {
+import React from 'react';
+export function EmptyStateCard() {
   return (
     <div>
-      <h1>EmptyStateCard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

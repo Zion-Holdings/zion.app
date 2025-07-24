@@ -1,9 +1,9 @@
-import React from react';
-default function PostCardSkeleton() {
+import React from 'react';
+export function PostCardSkeleton() {
   return (
     <div>
-      <h1>PostCardSkeleton</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function GlobalErrorHandler() {
+import React from 'react';
+export function GlobalErrorHandler() {
   return (
     <div>
-      <h1>GlobalErrorHandler</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

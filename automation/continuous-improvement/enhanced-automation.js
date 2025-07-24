@@ -809,7 +809,7 @@ const timeoutId = setTimeout(processLoop,                                       
         type: 'performance',
         severity: 'high',
         message: `Lighthouse performance score (${results.lighthouse.performance}) below threshold (${this.config.thresholds.performance.lighthouseScore})`
-      });
+      })
     }
     
     if (results.buildTime > this.config.thresholds.performance.loadTime) {
@@ -936,7 +936,7 @@ const timeoutId = setTimeout(processLoop,                                       
   }
 
   calculateAverageMemory() {
-    if (this.performanceHistory.length === 0) return 0;
+    if (this.performanceHistory.length === 0) return 0
     const totalMemory = this.performanceHistory.reduce((sum, entry) => {
       return sum + entry.memory.heapUsed;
     }, 0);

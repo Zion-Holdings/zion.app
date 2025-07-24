@@ -1,7 +1,9 @@
-import React from react';
-
-export default function ApiGettingStarted() {
+import React from 'react';
+export function ApiGettingStarted() {
   return (
-    <div>API Getting Started</div>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

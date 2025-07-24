@@ -1,9 +1,9 @@
-import React from react';
-default function button() {
+import React from 'react';
+export function button() {
   return (
     <div>
-      <h1>button</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

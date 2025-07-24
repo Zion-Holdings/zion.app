@@ -1,9 +1,9 @@
-import React from react';
-default function TrustedBySection() {
+import React from 'react';
+export function TrustedBySection() {
   return (
     <div>
-      <h1>TrustedBySection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

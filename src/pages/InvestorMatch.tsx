@@ -1,9 +1,9 @@
-import React from react';
-default function InvestorMatch() {
+import React from 'react';
+export function InvestorMatch() {
   return (
     <div>
-      <h1>InvestorMatch</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

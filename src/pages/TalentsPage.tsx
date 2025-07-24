@@ -1,8 +1,8 @@
-import React from react';
-export default function TalentsPage() {
+import React from 'react';
+export function TalentsPage() {
   return (
     <div>
-      <h1>TalentsPage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

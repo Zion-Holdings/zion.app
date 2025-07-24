@@ -1,9 +1,9 @@
-import React from react';
-default function ServiceDetailsSection() {
+import React from 'react';
+export function ServiceDetailsSection() {
   return (
     <div>
-      <h1>ServiceDetailsSection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

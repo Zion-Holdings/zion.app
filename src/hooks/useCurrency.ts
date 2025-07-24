@@ -1,4 +1,5 @@
-// useCurrency module placeholder
-const useCurrency = {
-  // TODO: Implement useCurrency functionality
+// Hook for useCurrency;
+export const useUseCurrency: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

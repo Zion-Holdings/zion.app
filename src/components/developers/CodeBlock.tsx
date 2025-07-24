@@ -1,9 +1,9 @@
-import React from react';
-default function CodeBlock() {
+import React from 'react';
+export function CodeBlock() {
   return (
     <div>
-      <h1>CodeBlock</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

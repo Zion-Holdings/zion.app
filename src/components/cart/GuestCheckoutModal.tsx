@@ -1,9 +1,9 @@
-import React from react';
-default function GuestCheckoutModal() {
+import React from 'react';
+export function GuestCheckoutModal() {
   return (
     <div>
-      <h1>GuestCheckoutModal</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

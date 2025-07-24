@@ -1,4 +1,5 @@
-// useFilterTalents module placeholder
-const useFilterTalents = {
-  // TODO: Implement useFilterTalents functionality
+// Hook for useFilterTalents;
+export const useUseFilterTalents: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

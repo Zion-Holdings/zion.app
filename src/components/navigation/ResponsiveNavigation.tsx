@@ -1,9 +1,9 @@
-import React from react';
-default function ResponsiveNavigation() {
+import React from 'react';
+export function ResponsiveNavigation() {
   return (
     <div>
-      <h1>ResponsiveNavigation</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

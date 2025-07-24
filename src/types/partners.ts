@@ -1,4 +1,4 @@
-// partners module placeholder
-const partners = {
-  // TODO: Implement partners functionality
+// Type definitions for partners;
+interface partners {;
+  // TODO: Add proper type definitions;
 };

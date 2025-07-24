@@ -1,9 +1,9 @@
-import React from react';
-default function MobileJobPost() {
+import React from 'react';
+export function MobileJobPost() {
   return (
     <div>
-      <h1>MobileJobPost</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

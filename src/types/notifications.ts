@@ -1,4 +1,4 @@
-// notifications module placeholder
-const notifications = {
-  // TODO: Implement notifications functionality
+// Type definitions for notifications;
+interface notifications {;
+  // TODO: Add proper type definitions;
 };

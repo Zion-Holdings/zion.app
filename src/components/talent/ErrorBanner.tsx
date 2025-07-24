@@ -1,9 +1,9 @@
-import React from react';
-default function ErrorBanner() {
+import React from 'react';
+export function ErrorBanner() {
   return (
     <div>
-      <h1>ErrorBanner</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

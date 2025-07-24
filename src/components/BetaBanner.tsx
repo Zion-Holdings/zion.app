@@ -1,9 +1,9 @@
-import React from react';
-default function BetaBanner() {
+import React from 'react';
+export function BetaBanner() {
   return (
     <div>
-      <h1>BetaBanner</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

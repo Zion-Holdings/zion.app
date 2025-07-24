@@ -1,9 +1,10 @@
-import React from react';
-default function quick-actions() {
+import React from 'react'
+;
+export export export default function quick-actions()   {;
   return (
     <div>
-      <h1>quick-actions</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

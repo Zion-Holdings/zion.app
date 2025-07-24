@@ -1,9 +1,9 @@
-import React from react';
-default function AnalyticsContext() {
+import React from 'react';
+export function AnalyticsContext() {
   return (
     <div>
-      <h1>AnalyticsContext</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,4 +1,4 @@
-// case-studies module placeholder
-const case-studies = {
-  // TODO: Implement case-studies functionality
+// Module for case-studies;
+export const case-studies = {;
+  // TODO: Implement module functionality;
 };

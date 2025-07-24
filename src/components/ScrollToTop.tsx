@@ -1,9 +1,9 @@
-import React from react';
-default function ScrollToTop() {
+import React from 'react';
+export function ScrollToTop() {
   return (
     <div>
-      <h1>ScrollToTop</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,4 +1,4 @@
-// product module placeholder
-const product = {
-  // TODO: Implement product functionality
+// Type definitions for product;
+interface product {;
+  // TODO: Add proper type definitions;
 };

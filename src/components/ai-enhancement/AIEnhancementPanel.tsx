@@ -1,9 +1,9 @@
-import React from react';
-default function AIEnhancementPanel() {
+import React from 'react';
+export function AIEnhancementPanel() {
   return (
     <div>
-      <h1>AIEnhancementPanel</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

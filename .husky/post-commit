@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "🚀 Autonomous Post-commit System Starting..."
+echo "🚀 Enhanced Post-commit System Starting..."
 
 # Set environment variables for autonomous operation
 export AUTONOMOUS_MODE=true
@@ -31,5 +31,13 @@ echo "🔄 Triggering autonomous improvements..."
 node automation/enhanced-automation-system.js post-commit || {
     echo "⚠️  Autonomous improvements failed, but continuing..."
 }
+
+# 3. Auto-push if configured
+if [ "$AUTO_PUSH_ENABLED" = "true" ]; then
+    echo "🚀 Auto-pushing changes..."
+    git push origin "$BRANCH_NAME" || {
+        echo "⚠️  Auto-push failed, but continuing..."
+    }
+fi
 
 echo "✅ Post-commit actions completed successfully!"

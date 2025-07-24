@@ -1,9 +1,9 @@
-import React from react';
-default function SkillsSection() {
+import React from 'react';
+export function SkillsSection() {
   return (
     <div>
-      <h1>SkillsSection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

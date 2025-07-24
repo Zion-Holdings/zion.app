@@ -1,9 +1,9 @@
-import React from react';
-default function IntercomChat() {
+import React from 'react';
+export function IntercomChat() {
   return (
     <div>
-      <h1>IntercomChat</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function MessageBubble() {
+import React from 'react';
+export function MessageBubble() {
   return (
     <div>
-      <h1>MessageBubble</h1>
-      <p>Component placeholder</p>
+      <h1>Component</h1>
+      <p>Component placeholder - needs implementation</p>;
     </div>
-  )
-};
+  );
+}

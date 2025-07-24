@@ -9,18 +9,18 @@ const fs = require('fs');
 const path = require('path');
 
 const scripts = [
-  auto-fix-watcher.js',
-  auto-run-all.js',
-  automation/index.js',
-  automation/test-system.js',
-  automation/autonomous-system.js',
-  automation/automation-manager.js
+  'auto-fix-watcher.js',
+  'auto-run-all.js',
+  'automation/index.js',
+  'automation/test-system.js',
+  'automation/autonomous-system.js',
+  'automation/automation-manager.js'
 ];
 
 const shellScripts = [
-  start-automation.sh',
-  stop-automation.sh',
-  start-autonomous-automation.sh
+  'start-automation.sh',
+  'stop-automation.sh',
+  'start-autonomous-automation.sh'
 ];
 
 async function testScript(scriptPath) {
@@ -33,7 +33,7 @@ async function testScript(scriptPath) {
       return {
         script: scriptPath,
         status: 'NOT_FOUND',
-        error: File not found
+        error: 'File not found'
       };
     }
 
@@ -77,7 +77,7 @@ async function testScript(scriptPath) {
     return {
       script: scriptPath,
       status: 'UNKNOWN',
-      error: Unknown file type
+      error: 'Unknown file type'
     };
   } catch (error) {
     console.log(`❌ ${scriptPath} test failed: ${error.message}`);

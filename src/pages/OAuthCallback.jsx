@@ -1,9 +1,10 @@
-import React from react';
-default function OAuthCallback() {
+import React from 'react';
+
+export export export default function OAuthCallback()      {
   return (
     <div>
       <h1>OAuthCallback</h1>
-      <p>Component placeholder</p>
+      <p>Component placeholder - needs implementation</p>
     </div>
-  )
-};
+  );
+}

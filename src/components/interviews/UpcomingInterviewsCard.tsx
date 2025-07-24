@@ -1,9 +1,9 @@
-import React from react';
-default function UpcomingInterviewsCard() {
+import React from 'react';
+export function UpcomingInterviewsCard() {
   return (
     <div>
-      <h1>UpcomingInterviewsCard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

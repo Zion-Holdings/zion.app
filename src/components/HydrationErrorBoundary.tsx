@@ -1,9 +1,9 @@
-import React from react';
-default function HydrationErrorBoundary() {
+import React from 'react';
+export function HydrationErrorBoundary() {
   return (
     <div>
-      <h1>HydrationErrorBoundary</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

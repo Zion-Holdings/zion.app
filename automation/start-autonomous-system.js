@@ -464,7 +464,7 @@ const timeoutId = setTimeout(resolve,                                           
 }
 
 // CLI interface
-async function main() {
+async function main()  {
   const system = new AutonomousAutomationSystem();
   const command = process.argv[2];
   

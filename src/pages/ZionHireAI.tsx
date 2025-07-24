@@ -1,9 +1,9 @@
-import React from react';
-default function ZionHireAI() {
+import React from 'react';
+export function ZionHireAI() {
   return (
     <div>
-      <h1>ZionHireAI</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

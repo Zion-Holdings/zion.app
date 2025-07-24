@@ -1,9 +1,9 @@
-import React from react';
-default function HowItWorksVideo() {
+import React from 'react';
+export function HowItWorksVideo() {
   return (
     <div>
-      <h1>HowItWorksVideo</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

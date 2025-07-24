@@ -1,9 +1,9 @@
-import React from react';
-default function EducationList() {
+import React from 'react';
+export function EducationList() {
   return (
     <div>
-      <h1>EducationList</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

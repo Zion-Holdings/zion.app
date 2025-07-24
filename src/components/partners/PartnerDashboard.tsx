@@ -1,9 +1,9 @@
-import React from react';
-default function PartnerDashboard() {
+import React from 'react';
+export function PartnerDashboard() {
   return (
     <div>
-      <h1>PartnerDashboard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

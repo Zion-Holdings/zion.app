@@ -1,9 +1,9 @@
-import React from react';
-default function AIMilestoneGenerator() {
+import React from 'react';
+export function AIMilestoneGenerator() {
   return (
     <div>
-      <h1>AIMilestoneGenerator</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

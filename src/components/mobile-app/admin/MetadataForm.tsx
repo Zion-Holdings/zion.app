@@ -1,9 +1,9 @@
-import React from react';
-default function MetadataForm() {
+import React from 'react';
+export function MetadataForm() {
   return (
     <div>
-      <h1>MetadataForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

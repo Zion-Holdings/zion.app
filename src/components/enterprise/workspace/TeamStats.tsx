@@ -1,9 +1,9 @@
-import React from react';
-default function TeamStats() {
+import React from 'react';
+export function TeamStats() {
   return (
     <div>
-      <h1>TeamStats</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

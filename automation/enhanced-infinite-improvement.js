@@ -251,8 +251,8 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
   setupWebSocket() {
     this.io = socketIo(this.server, {
       cors: {
-        origin: "*",""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-        methods: ["GET", "POST"]""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        origin: "*",
+        methods: ["GET", "POST"]
       }
     });
 
@@ -540,7 +540,7 @@ class EnhancedInfiniteImprovementLoop extends EventEmitter {
       this.io.emit('improvementQueued', improvement);
     }
 
-    return improvement;
+    return improvement
   }
 
   /**

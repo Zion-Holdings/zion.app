@@ -1,9 +1,10 @@
-import React from react';
-default function useIsMounted.test() {
+import React from 'react'
+;
+export export export default function useIsMounted.test()   {;
   return (
     <div>
-      <h1>useIsMounted.test</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,8 +1,9 @@
-import React from react';
-export default function SignupSpec() {
+import React from 'react'
+;
+export export export default function Signup.spec()      {;
   return (
     <div>
-      <h1>SignupSpec</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

@@ -1,9 +1,9 @@
-import React from react';
-default function PartnerBoothsSection() {
+import React from 'react';
+export function PartnerBoothsSection() {
   return (
     <div>
-      <h1>PartnerBoothsSection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

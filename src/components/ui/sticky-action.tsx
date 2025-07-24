@@ -1,9 +1,10 @@
-import React from react';
-default function sticky-action() {
+import React from 'react'
+;
+export export export default function sticky-action()   {;
   return (
     <div>
-      <h1>sticky-action</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,7 +1,9 @@
-import React from react';
-
-export default function Tutorial() {
+import React from 'react';
+export function Tutorial() {
   return (
-    <div>Tutorial</div>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

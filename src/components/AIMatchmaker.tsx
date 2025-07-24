@@ -1,9 +1,9 @@
-import React from react';
-default function AIMatchmaker() {
+import React from 'react';
+export function AIMatchmaker() {
   return (
     <div>
-      <h1>AIMatchmaker</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

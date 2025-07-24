@@ -1,9 +1,9 @@
-import React from react';
-default function label() {
+import React from 'react';
+export function label() {
   return (
     <div>
-      <h1>label</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

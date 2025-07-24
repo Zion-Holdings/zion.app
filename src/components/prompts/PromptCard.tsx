@@ -1,9 +1,9 @@
-import React from react';
-default function PromptCard() {
+import React from 'react';
+export function PromptCard() {
   return (
     <div>
-      <h1>PromptCard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

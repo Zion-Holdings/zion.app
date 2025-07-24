@@ -1,9 +1,10 @@
-import React from react';
-default function bundle-analyzer() {
+import React from 'react'
+;
+export export export default function bundle-analyzer()   {;
   return (
     <div>
-      <h1>bundle-analyzer</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

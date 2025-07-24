@@ -1,9 +1,9 @@
-import React from react';
-default function PerformanceDashboard() {
+import React from 'react';
+export function PerformanceDashboard() {
   return (
     <div>
-      <h1>PerformanceDashboard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function CountrySelector() {
+import React from 'react';
+export function CountrySelector() {
   return (
     <div>
-      <h1>CountrySelector</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

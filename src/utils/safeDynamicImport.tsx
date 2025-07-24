@@ -1,9 +1,9 @@
-import React from react';
-default function safeDynamicImport() {
+import React from 'react';
+export function safeDynamicImport() {
   return (
     <div>
-      <h1>safeDynamicImport</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

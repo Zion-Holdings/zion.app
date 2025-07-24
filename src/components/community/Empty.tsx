@@ -1,9 +1,9 @@
-import React from react';
-default function Empty() {
+import React from 'react';
+export function Empty() {
   return (
     <div>
-      <h1>Empty</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

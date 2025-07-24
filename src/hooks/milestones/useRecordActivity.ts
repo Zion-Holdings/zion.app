@@ -1,4 +1,5 @@
-// useRecordActivity module placeholder
-const useRecordActivity = {
-  // TODO: Implement useRecordActivity functionality
+// Hook for useRecordActivity;
+export const useUseRecordActivity: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

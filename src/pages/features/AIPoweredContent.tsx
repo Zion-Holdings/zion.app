@@ -1,9 +1,9 @@
-import React from react';
-default function AIPoweredContent() {
+import React from 'react';
+export function AIPoweredContent() {
   return (
     <div>
-      <h1>AIPoweredContent</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

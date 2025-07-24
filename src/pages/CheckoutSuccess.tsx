@@ -1,9 +1,9 @@
-import React from react';
-default function CheckoutSuccess() {
+import React from 'react';
+export function CheckoutSuccess() {
   return (
     <div>
-      <h1>CheckoutSuccess</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

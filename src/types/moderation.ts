@@ -1,4 +1,4 @@
-// moderation module placeholder
-const moderation = {
-  // TODO: Implement moderation functionality
+// Type definitions for moderation;
+interface moderation {;
+  // TODO: Add proper type definitions;
 };

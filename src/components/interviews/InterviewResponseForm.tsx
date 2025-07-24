@@ -1,9 +1,9 @@
-import React from react';
-default function InterviewResponseForm() {
+import React from 'react';
+export function InterviewResponseForm() {
   return (
     <div>
-      <h1>InterviewResponseForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

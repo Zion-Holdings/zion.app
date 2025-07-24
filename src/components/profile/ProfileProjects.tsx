@@ -1,9 +1,9 @@
-import React from react';
-default function ProfileProjects() {
+import React from 'react';
+export function ProfileProjects() {
   return (
     <div>
-      <h1>ProfileProjects</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

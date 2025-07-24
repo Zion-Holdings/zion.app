@@ -1,9 +1,9 @@
-import React from react';
-default function VerifyIdentity() {
+import React from 'react';
+export function VerifyIdentity() {
   return (
     <div>
-      <h1>VerifyIdentity</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

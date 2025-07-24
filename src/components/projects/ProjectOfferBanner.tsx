@@ -1,9 +1,9 @@
-import React from react';
-default function ProjectOfferBanner() {
+import React from 'react';
+export function ProjectOfferBanner() {
   return (
     <div>
-      <h1>ProjectOfferBanner</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

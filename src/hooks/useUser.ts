@@ -1,4 +1,5 @@
-// useUser module placeholder
-const useUser = {
-  // TODO: Implement useUser functionality
+// Hook for useUser;
+export const useUseUser: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

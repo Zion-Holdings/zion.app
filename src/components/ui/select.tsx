@@ -1,9 +1,9 @@
-import React from react';
-default function select() {
+import React from 'react';
+export function select() {
   return (
     <div>
-      <h1>select</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

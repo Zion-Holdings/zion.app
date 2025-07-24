@@ -1,9 +1,9 @@
-import React from react';
-default function SmartAppBanner() {
+import React from 'react';
+export function SmartAppBanner() {
   return (
     <div>
-      <h1>SmartAppBanner</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

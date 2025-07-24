@@ -1,9 +1,9 @@
-import React from react';
-default function EnterpriseFeatures() {
+import React from 'react';
+export function EnterpriseFeatures() {
   return (
     <div>
-      <h1>EnterpriseFeatures</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

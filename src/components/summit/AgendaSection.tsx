@@ -1,9 +1,9 @@
-import React from react';
-default function AgendaSection() {
+import React from 'react';
+export function AgendaSection() {
   return (
     <div>
-      <h1>AgendaSection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

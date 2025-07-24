@@ -1,9 +1,9 @@
-import React from react';
-default function EmptyFraudState() {
+import React from 'react';
+export function EmptyFraudState() {
   return (
     <div>
-      <h1>EmptyFraudState</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,10 @@
-import React from react';
-default function [id]() {
+import React from 'react'
+;
+export export export default function [id]()      {;
   return (
     <div>
-      <h1>[id]</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

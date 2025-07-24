@@ -1,4 +1,5 @@
-// useInfiniteScroll module placeholder
-const useInfiniteScroll = {
-  // TODO: Implement useInfiniteScroll functionality
+// Hook for useInfiniteScroll;
+export const useUseInfiniteScroll: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

@@ -1,9 +1,9 @@
-import React from react';
-default function ProfileSkills() {
+import React from 'react';
+export function ProfileSkills() {
   return (
     <div>
-      <h1>ProfileSkills</h1>
-      <p>Component placeholder</p>
+      <h1>Component</h1>
+      <p>Component placeholder - needs implementation</p>;
     </div>
-  )
-};
+  );
+}

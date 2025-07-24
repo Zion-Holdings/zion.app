@@ -1,9 +1,9 @@
-import React from react';
-default function ServiceCard() {
+import React from 'react';
+export function ServiceCard() {
   return (
     <div>
-      <h1>ServiceCard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

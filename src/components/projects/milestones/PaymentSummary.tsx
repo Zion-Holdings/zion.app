@@ -1,9 +1,9 @@
-import React from react';
-default function PaymentSummary() {
+import React from 'react';
+export function PaymentSummary() {
   return (
     <div>
-      <h1>PaymentSummary</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

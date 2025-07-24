@@ -1,9 +1,9 @@
-import React from react';
-default function NotFound() {
+import React from 'react';
+export function NotFound() {
   return (
     <div>
-      <h1>NotFound</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

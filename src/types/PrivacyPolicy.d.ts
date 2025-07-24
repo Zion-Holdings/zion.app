@@ -1,4 +1,4 @@
-// PrivacyPolicy.d module placeholder
-const PrivacyPolicy.d = {
-  // TODO: Implement PrivacyPolicy.d functionality
-};
+// Type definitions for PrivacyPolicy.d;
+export interface PrivacyPolicy.d {;
+  // TODO: Add proper type definitions;
+}

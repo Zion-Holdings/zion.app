@@ -1,4 +1,4 @@
-// jest.d module placeholder
-const jest.d = {
-  // TODO: Implement jest.d functionality
-};
+// Type definitions for jest.d;
+export interface jest.d {;
+  // TODO: Add proper type definitions;
+}

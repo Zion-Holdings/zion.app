@@ -1,9 +1,9 @@
-import React from react';
-default function AICorePage() {
+import React from 'react';
+export function AICorePage() {
   return (
     <div>
-      <h1>AICorePage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function TalentDirectoryHeader() {
+import React from 'react';
+export function TalentDirectoryHeader() {
   return (
     <div>
-      <h1>TalentDirectoryHeader</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

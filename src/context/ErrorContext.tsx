@@ -1,9 +1,9 @@
-import React from react';
-default function ErrorContext() {
+import React from 'react';
+export function ErrorContext() {
   return (
     <div>
-      <h1>ErrorContext</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

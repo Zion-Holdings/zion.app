@@ -1,9 +1,9 @@
-import React from react';
-default function GlobalServiceSection() {
+import React from 'react';
+export function GlobalServiceSection() {
   return (
     <div>
-      <h1>GlobalServiceSection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

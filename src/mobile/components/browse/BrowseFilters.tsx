@@ -1,9 +1,9 @@
-import React from react';
-default function BrowseFilters() {
+import React from 'react';
+export function BrowseFilters() {
   return (
     <div>
-      <h1>BrowseFilters</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

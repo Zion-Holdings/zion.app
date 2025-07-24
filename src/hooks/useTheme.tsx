@@ -1,9 +1,9 @@
-import React from react';
-default function useTheme() {
+import React from 'react';
+export function useTheme() {
   return (
     <div>
-      <h1>useTheme</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

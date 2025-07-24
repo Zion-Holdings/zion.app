@@ -1,9 +1,9 @@
-import React from react';
-default function LanguageSelector() {
+import React from 'react';
+export function LanguageSelector() {
   return (
     <div>
-      <h1>LanguageSelector</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

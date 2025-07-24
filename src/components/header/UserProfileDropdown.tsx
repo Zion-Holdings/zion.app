@@ -1,9 +1,9 @@
-import React from react';
-default function UserProfileDropdown() {
+import React from 'react';
+export function UserProfileDropdown() {
   return (
     <div>
-      <h1>UserProfileDropdown</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

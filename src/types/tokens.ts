@@ -1,4 +1,4 @@
-// tokens module placeholder
-const tokens = {
-  // TODO: Implement tokens functionality
+// Type definitions for tokens;
+interface tokens {;
+  // TODO: Add proper type definitions;
 };

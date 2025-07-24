@@ -1,7 +1,9 @@
-import React from react';
-
-export default function ApiDocsHub() {
+import React from 'react';
+export function ApiDocsHub() {
   return (
-    <div>API Docs Hub</div>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

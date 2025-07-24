@@ -1,9 +1,9 @@
-import React from react';
-default function BlogPost() {
+import React from 'react';
+export function BlogPost() {
   return (
     <div>
-      <h1>BlogPost</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

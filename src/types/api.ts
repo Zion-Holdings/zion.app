@@ -1,4 +1,4 @@
-// api module placeholder
-const api = {
-  // TODO: Implement api functionality
+// Type definitions for api;
+interface api {;
+  // TODO: Add proper type definitions;
 };

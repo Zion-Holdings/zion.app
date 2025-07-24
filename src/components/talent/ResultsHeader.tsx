@@ -1,9 +1,9 @@
-import React from react';
-default function ResultsHeader() {
+import React from 'react';
+export function ResultsHeader() {
   return (
     <div>
-      <h1>ResultsHeader</h1>
-      <p>Component placeholder</p>
+      <h1>Component</h1>
+      <p>Component placeholder - needs implementation</p>;
     </div>
-  )
-};
+  );
+}

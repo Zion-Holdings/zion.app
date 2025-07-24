@@ -1,9 +1,9 @@
-import React from react';
-default function MobileEmailCapture() {
+import React from 'react';
+export function MobileEmailCapture() {
   return (
     <div>
-      <h1>MobileEmailCapture</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

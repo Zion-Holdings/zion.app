@@ -1,9 +1,9 @@
-import React from react';
-default function CreatePostPage() {
+import React from 'react';
+export function CreatePostPage() {
   return (
     <div>
-      <h1>CreatePostPage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

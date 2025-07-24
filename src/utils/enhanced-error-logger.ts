@@ -1,4 +1,4 @@
-// enhanced-error-logger module placeholder
-const enhanced-error-logger = {
-  // TODO: Implement enhanced-error-logger functionality
+// Utility functions for enhanced-error-logger;
+export const enhanced-error-logger = {;
+  // TODO: Implement utility functions;
 };

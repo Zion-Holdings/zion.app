@@ -1,4 +1,4 @@
-// wallet.d module placeholder
-const wallet.d = {
-  // TODO: Implement wallet.d functionality
-};
+// Type definitions for wallet.d;
+export interface wallet.d {;
+  // TODO: Add proper type definitions;
+}

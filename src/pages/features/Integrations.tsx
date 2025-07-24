@@ -1,9 +1,9 @@
-import React from react';
-default function Integrations() {
+import React from 'react';
+export function Integrations() {
   return (
     <div>
-      <h1>Integrations</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

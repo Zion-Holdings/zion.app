@@ -1,4 +1,4 @@
-// search module placeholder
-const search = {
-  // TODO: Implement search functionality
+// Type definitions for search;
+interface search {;
+  // TODO: Add proper type definitions;
 };

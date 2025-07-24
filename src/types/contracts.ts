@@ -1,4 +1,4 @@
-// contracts module placeholder
-const contracts = {
-  // TODO: Implement contracts functionality
+// Type definitions for contracts;
+interface contracts {;
+  // TODO: Add proper type definitions;
 };

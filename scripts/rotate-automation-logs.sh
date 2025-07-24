@@ -67,16 +67,8 @@ for logfile in "$LOGS_DIR"/cron-*.log; do
     fi
 done
 
-# Rotate master automation scheduler log
-if [ -f "$LOGS_DIR/master-automation-scheduler.log" ]; then
-    backup_file="$BACKUP_DIR/master-automation-scheduler_${BACKUP_DATE}.log"
-    mv "$LOGS_DIR/master-automation-scheduler.log" "$backup_file"
-    touch "$LOGS_DIR/master-automation-scheduler.log"
-    echo "   Rotated: master-automation-scheduler.log -> $(basename "$backup_file")"
-fi
-
 # Keep only last 7 days of backups
-find "$BACKUP_DIR" -name "*.log" -mtime +7 -delete 2>/dev/null || true
+find "$BACKUP_DIR" -name "cron-*.log" -mtime +7 -delete 2>/dev/null || true
 
 echo "✅ Log rotation completed"
 echo "📁 Backup location: $BACKUP_DIR"

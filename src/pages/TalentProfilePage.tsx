@@ -1,9 +1,9 @@
-import React from react';
-default function TalentProfilePage() {
+import React from 'react';
+export function TalentProfilePage() {
   return (
     <div>
-      <h1>TalentProfilePage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

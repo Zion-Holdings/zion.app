@@ -1,9 +1,9 @@
-import React from react';
-default function VideoCallRoom() {
+import React from 'react';
+export function VideoCallRoom() {
   return (
     <div>
-      <h1>VideoCallRoom</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function QuoteManager() {
+import React from 'react';
+export function QuoteManager() {
   return (
     <div>
-      <h1>QuoteManager</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

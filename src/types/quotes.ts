@@ -1,4 +1,4 @@
-// quotes module placeholder
-const quotes = {
-  // TODO: Implement quotes functionality
+// Type definitions for quotes;
+interface quotes {;
+  // TODO: Add proper type definitions;
 };

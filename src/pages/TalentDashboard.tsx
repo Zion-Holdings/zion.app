@@ -1,7 +1,9 @@
-import React from react';
-
-export default function TalentDashboard() {
+import React from 'react';
+export function TalentDashboard() {
   return (
-    <div>Talent Dashboard</div>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

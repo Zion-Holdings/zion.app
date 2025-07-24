@@ -1,9 +1,9 @@
-import React from react';
-default function OfflineIndicator() {
+import React from 'react';
+export function OfflineIndicator() {
   return (
     <div>
-      <h1>OfflineIndicator</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

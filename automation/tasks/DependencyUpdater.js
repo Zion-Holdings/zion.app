@@ -299,8 +299,13 @@ class DependencyUpdater extends AutomationTask {
       logger.info('✅ Pull request created successfully');
       
     } catch (error) {
+<<<<<<< HEAD
       logger.error('❌ Failed to create pull request:', error.message);
       throw error;
+=======
+      console.error('❌ Failed to create pull request:', error.message);
+      throw error
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
     }
   }
 

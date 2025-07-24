@@ -1,9 +1,10 @@
-import React from react';
-default function performance-monitor() {
+import React from 'react'
+;
+export export export default function performance-monitor()   {;
   return (
     <div>
-      <h1>performance-monitor</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

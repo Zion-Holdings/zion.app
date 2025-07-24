@@ -1,9 +1,9 @@
-import React from react';
-default function GlobalMap() {
+import React from 'react';
+export function GlobalMap() {
   return (
     <div>
-      <h1>GlobalMap</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

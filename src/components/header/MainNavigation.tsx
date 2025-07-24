@@ -1,9 +1,9 @@
-import React from react';
-default function MainNavigation() {
+import React from 'react';
+export function MainNavigation() {
   return (
     <div>
-      <h1>MainNavigation</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

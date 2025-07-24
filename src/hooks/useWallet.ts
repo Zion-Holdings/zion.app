@@ -1,4 +1,5 @@
-// useWallet module placeholder
-const useWallet = {
-  // TODO: Implement useWallet functionality
+// Hook for useWallet;
+export const useUseWallet: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

@@ -1,9 +1,9 @@
-import React from react';
-default function GeneratedContentDisplay() {
+import React from 'react';
+export function GeneratedContentDisplay() {
   return (
     <div>
-      <h1>GeneratedContentDisplay</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

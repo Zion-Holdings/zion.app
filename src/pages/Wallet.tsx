@@ -1,8 +1,8 @@
-import React from react';
-export default function Wallet() {
+import React from 'react';
+export function Wallet() {
   return (
     <div>
-      <h1>Wallet</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

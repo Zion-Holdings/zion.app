@@ -1,4 +1,5 @@
-// useReferrals module placeholder
-const useReferrals = {
-  // TODO: Implement useReferrals functionality
+// Hook for useReferrals;
+export const useUseReferrals: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

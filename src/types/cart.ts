@@ -1,4 +1,4 @@
-// cart module placeholder
-const cart = {
-  // TODO: Implement cart functionality
+// Type definitions for cart;
+interface cart {;
+  // TODO: Add proper type definitions;
 };

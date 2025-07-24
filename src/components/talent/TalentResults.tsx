@@ -1,9 +1,9 @@
-import React from react';
-default function TalentResults() {
+import React from 'react';
+export function TalentResults() {
   return (
     <div>
-      <h1>TalentResults</h1>
-      <p>Component placeholder</p>
+      <h1>Component</h1>
+      <p>Component placeholder - needs implementation</p>;
     </div>
-  )
-};
+  );
+}

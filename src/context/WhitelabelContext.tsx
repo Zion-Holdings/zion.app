@@ -1,9 +1,9 @@
-import React from react';
-default function WhitelabelContext() {
+import React from 'react';
+export function WhitelabelContext() {
   return (
     <div>
-      <h1>WhitelabelContext</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

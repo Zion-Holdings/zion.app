@@ -1,9 +1,9 @@
-import React from react';
-default function ReplyForm() {
+import React from 'react';
+export function ReplyForm() {
   return (
     <div>
-      <h1>ReplyForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

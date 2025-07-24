@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Script {
   constructor() {
     this.isRunning = false;
@@ -92,11 +93,31 @@ class Script {
   stop() {
     this.isRunning = false;
     console.log('Stopping Script...');
+=======
+#!/usr/bin/env node
+
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
+const _currentFilename = path.basename(__filename)
+class BundleAnalyzer {
+  constructor() {
+    this.analysis = {};
+  }
+
+  analyzeBundle() {
+    try {
+      console.log('Bundle analysis completed');
+    } catch (error) {
+      console.error('Bundle analysis failed:', error);
+    }
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
   }
 }
 
 // Start the script
 if (require.main === module) {
+<<<<<<< HEAD
   const script = new Script();
   script.start().catch((error) => {
     console.error('Failed to start Script:', error);
@@ -118,3 +139,10 @@ process.on('SIGTERM', () => {
   // Add cleanup logic here
   process.exit(0);
 });
+=======
+  const analyzer = new BundleAnalyzer();
+  analyzer.analyzeBundle();
+}
+
+module.exports = BundleAnalyzer;
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858

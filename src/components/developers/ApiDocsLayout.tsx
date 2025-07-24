@@ -1,9 +1,9 @@
-import React from react';
-default function ApiDocsLayout() {
+import React from 'react';
+export function ApiDocsLayout() {
   return (
     <div>
-      <h1>ApiDocsLayout</h1>
-      <p>Component placeholder</p>
+      <h1>Component</h1>
+      <p>Component placeholder - needs implementation</p>;
     </div>
-  )
-};
+  );
+}

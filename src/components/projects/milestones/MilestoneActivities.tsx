@@ -1,9 +1,9 @@
-import React from react';
-default function MilestoneActivities() {
+import React from 'react';
+export function MilestoneActivities() {
   return (
     <div>
-      <h1>MilestoneActivities</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

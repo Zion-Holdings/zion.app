@@ -1,9 +1,9 @@
-import React from react';
-default function index() {
+import React from 'react';
+export function index() {
   return (
     <div>
-      <h1>index</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

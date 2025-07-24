@@ -1,9 +1,9 @@
-import React from react';
-default function NavigationButtons() {
+import React from 'react';
+export function NavigationButtons() {
   return (
     <div>
-      <h1>NavigationButtons</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function TemplateManager() {
+import React from 'react';
+export function TemplateManager() {
   return (
     <div>
-      <h1>TemplateManager</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

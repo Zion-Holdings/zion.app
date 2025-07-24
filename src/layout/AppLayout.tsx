@@ -1,9 +1,9 @@
-import React from react';
-default function AppLayout() {
+import React from 'react';
+export function AppLayout() {
   return (
     <div>
-      <h1>AppLayout</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

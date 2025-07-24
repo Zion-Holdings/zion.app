@@ -1,9 +1,9 @@
-import React from react';
-default function BackToTopButton() {
+import React from 'react';
+export function BackToTopButton() {
   return (
     <div>
-      <h1>BackToTopButton</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

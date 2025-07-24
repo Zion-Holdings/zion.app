@@ -1,9 +1,9 @@
-import React from react';
-default function AdditionalTalentsPage() {
+import React from 'react';
+export function AdditionalTalentsPage() {
   return (
     <div>
-      <h1>AdditionalTalentsPage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

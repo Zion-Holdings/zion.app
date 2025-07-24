@@ -65,9 +65,15 @@ class EnhancedAutomationSystem {
         }
         
         if (level === 'error') {
+<<<<<<< HEAD
             logger.error(message);
         } else if (level === 'warn') {
             logger.warn(message);
+=======
+            console.error(message);
+        } else if (level === 'warn') {
+            console.warn(message);
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
         } else {
             logger.info(message);
         }

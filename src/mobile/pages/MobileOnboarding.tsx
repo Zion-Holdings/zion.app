@@ -1,9 +1,9 @@
-import React from react';
-default function MobileOnboarding() {
+import React from 'react';
+export function MobileOnboarding() {
   return (
     <div>
-      <h1>MobileOnboarding</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

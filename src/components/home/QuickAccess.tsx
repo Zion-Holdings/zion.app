@@ -1,9 +1,9 @@
-import React from react';
-default function QuickAccess() {
+import React from 'react';
+export function QuickAccess() {
   return (
     <div>
-      <h1>QuickAccess</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,4 +1,4 @@
-// blog module placeholder
-const blog = {
-  // TODO: Implement blog functionality
+// Type definitions for blog;
+interface blog {;
+  // TODO: Add proper type definitions;
 };

@@ -1,9 +1,9 @@
-import React from react';
-default function AuthContext() {
+import React from 'react';
+export function AuthContext() {
   return (
     <div>
-      <h1>AuthContext</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

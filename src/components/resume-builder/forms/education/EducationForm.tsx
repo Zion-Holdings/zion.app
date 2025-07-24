@@ -1,9 +1,9 @@
-import React from react';
-default function EducationForm() {
+import React from 'react';
+export function EducationForm() {
   return (
     <div>
-      <h1>EducationForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

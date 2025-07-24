@@ -1,9 +1,9 @@
-import React from react';
-default function FraudTabContent() {
+import React from 'react';
+export function FraudTabContent() {
   return (
     <div>
-      <h1>FraudTabContent</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

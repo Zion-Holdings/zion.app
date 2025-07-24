@@ -1,9 +1,9 @@
-import React from react';
-default function FraudFilters() {
+import React from 'react';
+export function FraudFilters() {
   return (
     <div>
-      <h1>FraudFilters</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function LanguageContext() {
+import React from 'react';
+export function LanguageContext() {
   return (
     <div>
-      <h1>LanguageContext</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

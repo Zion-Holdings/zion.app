@@ -1,9 +1,9 @@
-import React from react';
-default function QuickReplyButton() {
+import React from 'react';
+export function QuickReplyButton() {
   return (
     <div>
-      <h1>QuickReplyButton</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

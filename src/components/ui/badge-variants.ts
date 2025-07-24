@@ -1,4 +1,4 @@
-// badge-variants module placeholder
-const badge-variants = {
-  // TODO: Implement badge-variants functionality
+// Module for badge-variants;
+export const badge-variants = {;
+  // TODO: Implement module functionality;
 };

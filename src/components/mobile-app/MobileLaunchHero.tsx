@@ -1,9 +1,9 @@
-import React from react';
-default function MobileLaunchHero() {
+import React from 'react';
+export function MobileLaunchHero() {
   return (
     <div>
-      <h1>MobileLaunchHero</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

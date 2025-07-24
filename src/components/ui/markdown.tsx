@@ -1,9 +1,9 @@
-import React from react';
-default function markdown() {
+import React from 'react';
+export function markdown() {
   return (
     <div>
-      <h1>markdown</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

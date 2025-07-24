@@ -1,4 +1,5 @@
-// useFollowedCategories module placeholder
-const useFollowedCategories = {
-  // TODO: Implement useFollowedCategories functionality
+// Hook for useFollowedCategories;
+export const useUseFollowedCategories: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

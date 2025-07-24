@@ -1,9 +1,9 @@
-import React from react';
-default function AnalyticsChart() {
+import React from 'react';
+export function AnalyticsChart() {
   return (
     <div>
-      <h1>AnalyticsChart</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

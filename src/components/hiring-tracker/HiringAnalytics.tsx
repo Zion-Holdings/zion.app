@@ -1,9 +1,9 @@
-import React from react';
-default function HiringAnalytics() {
+import React from 'react';
+export function HiringAnalytics() {
   return (
     <div>
-      <h1>HiringAnalytics</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

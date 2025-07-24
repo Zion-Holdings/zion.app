@@ -1,9 +1,9 @@
-import React from react';
-default function NotificationCenter() {
+import React from 'react';
+export function NotificationCenter() {
   return (
     <div>
-      <h1>NotificationCenter</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

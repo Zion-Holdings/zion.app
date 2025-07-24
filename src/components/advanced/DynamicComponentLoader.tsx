@@ -1,9 +1,9 @@
-import React from react';
-default function DynamicComponentLoader() {
+import React from 'react';
+export function DynamicComponentLoader() {
   return (
     <div>
-      <h1>DynamicComponentLoader</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

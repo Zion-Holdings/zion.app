@@ -1,9 +1,9 @@
-import React from react';
-default function Orders() {
+import React from 'react';
+export function Orders() {
   return (
     <div>
-      <h1>Orders</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

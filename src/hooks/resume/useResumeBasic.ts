@@ -1,4 +1,5 @@
-// useResumeBasic module placeholder
-const useResumeBasic = {
-  // TODO: Implement useResumeBasic functionality
+// Hook for useResumeBasic;
+export const useUseResumeBasic: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

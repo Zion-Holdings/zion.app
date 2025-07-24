@@ -1,9 +1,9 @@
-import React from react';
-default function ReviewsList() {
+import React from 'react';
+export function ReviewsList() {
   return (
     <div>
-      <h1>ReviewsList</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

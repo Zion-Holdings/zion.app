@@ -1,9 +1,9 @@
-import React from react';
-default function IntegrationsSyncLog() {
+import React from 'react';
+export function IntegrationsSyncLog() {
   return (
     <div>
-      <h1>IntegrationsSyncLog</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

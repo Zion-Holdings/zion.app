@@ -1,9 +1,9 @@
-import React from react';
-default function ExpoHero() {
+import React from 'react';
+export function ExpoHero() {
   return (
     <div>
-      <h1>ExpoHero</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

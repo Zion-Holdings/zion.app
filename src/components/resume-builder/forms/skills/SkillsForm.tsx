@@ -1,9 +1,9 @@
-import React from react';
-default function SkillsForm() {
+import React from 'react';
+export function SkillsForm() {
   return (
     <div>
-      <h1>SkillsForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

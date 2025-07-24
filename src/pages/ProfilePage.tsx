@@ -1,8 +1,8 @@
-import React from react';
-export default function ProfilePage() {
+import React from 'react';
+export function ProfilePage() {
   return (
     <div>
-      <h1>ProfilePage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

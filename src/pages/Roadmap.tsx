@@ -1,8 +1,8 @@
-import React from react';
-export default function Roadmap() {
+import React from 'react';
+export function Roadmap() {
   return (
     <div>
-      <h1>Roadmap</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

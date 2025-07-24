@@ -1,9 +1,9 @@
-import React from react';
-default function PreviewResume() {
+import React from 'react';
+export function PreviewResume() {
   return (
     <div>
-      <h1>PreviewResume</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

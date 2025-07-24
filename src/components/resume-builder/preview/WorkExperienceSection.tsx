@@ -1,9 +1,9 @@
-import React from react';
-default function WorkExperienceSection() {
+import React from 'react';
+export function WorkExperienceSection() {
   return (
     <div>
-      <h1>WorkExperienceSection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

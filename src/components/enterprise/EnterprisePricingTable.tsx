@@ -1,9 +1,9 @@
-import React from react';
-default function EnterprisePricingTable() {
+import React from 'react';
+export function EnterprisePricingTable() {
   return (
     <div>
-      <h1>EnterprisePricingTable</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

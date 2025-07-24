@@ -127,6 +127,7 @@ class AutonomousOrchestrator {
     const procInfo = this.processes.get(script.name);
     if (!procInfo) return;
     if (script.autoRestart && procInfo.restartCount < this.maxRestartAttempts) {
+<<<<<<< HEAD
       procInfo.restartCount++;
       
 const timeoutId = 
@@ -270,6 +271,10 @@ const timeoutId = setTimeout(() => this.startScript(script),                    
 ;
 // Store timeoutId for cleanup if needed
 ;
+=======
+      procInfo.restartCount++
+      setTimeout(() => this.startScript(script), this.restartDelay);
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
     } else {
       this.processes.delete(script.name);
     }

@@ -1,9 +1,9 @@
-import React from react';
-default function useOnboardingStatus() {
+import React from 'react';
+export function useOnboardingStatus() {
   return (
     <div>
-      <h1>useOnboardingStatus</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

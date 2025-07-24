@@ -1,9 +1,9 @@
-import React from react';
-default function input() {
+import React from 'react';
+export function input() {
   return (
     <div>
-      <h1>input</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

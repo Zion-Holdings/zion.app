@@ -1,9 +1,9 @@
-import React from react';
-default function CommentsSection() {
+import React from 'react';
+export function CommentsSection() {
   return (
     <div>
-      <h1>CommentsSection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

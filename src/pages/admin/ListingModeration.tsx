@@ -1,9 +1,9 @@
-import React from react';
-default function ListingModeration() {
+import React from 'react';
+export function ListingModeration() {
   return (
     <div>
-      <h1>ListingModeration</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

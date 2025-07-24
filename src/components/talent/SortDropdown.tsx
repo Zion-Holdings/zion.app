@@ -1,9 +1,9 @@
-import React from react';
-default function SortDropdown() {
+import React from 'react';
+export function SortDropdown() {
   return (
     <div>
-      <h1>SortDropdown</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

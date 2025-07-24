@@ -1,4 +1,4 @@
-// client.d module placeholder
-const client.d = {
-  // TODO: Implement client.d functionality
-};
+// Type definitions for client.d;
+export interface client.d {;
+  // TODO: Add proper type definitions;
+}

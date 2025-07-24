@@ -1,9 +1,9 @@
-import React from react';
-default function FeatureHighlights() {
+import React from 'react';
+export function FeatureHighlights() {
   return (
     <div>
-      <h1>FeatureHighlights</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

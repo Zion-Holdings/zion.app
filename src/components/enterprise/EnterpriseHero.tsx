@@ -1,9 +1,9 @@
-import React from react';
-default function EnterpriseHero() {
+import React from 'react';
+export function EnterpriseHero() {
   return (
     <div>
-      <h1>EnterpriseHero</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

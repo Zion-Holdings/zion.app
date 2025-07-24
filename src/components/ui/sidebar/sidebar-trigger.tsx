@@ -1,9 +1,10 @@
-import React from react';
-default function sidebar-trigger() {
+import React from 'react'
+;
+export export export default function sidebar-trigger()   {;
   return (
     <div>
-      <h1>sidebar-trigger</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

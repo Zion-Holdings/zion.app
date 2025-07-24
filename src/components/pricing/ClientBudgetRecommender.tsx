@@ -1,9 +1,9 @@
-import React from react';
-default function ClientBudgetRecommender() {
+import React from 'react';
+export function ClientBudgetRecommender() {
   return (
     <div>
-      <h1>ClientBudgetRecommender</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

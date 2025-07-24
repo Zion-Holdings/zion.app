@@ -1,9 +1,9 @@
-import React from react';
-default function ActiveProjectsCard() {
+import React from 'react';
+export function ActiveProjectsCard() {
   return (
     <div>
-      <h1>ActiveProjectsCard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function NewsletterForm() {
+import React from 'react';
+export function NewsletterForm() {
   return (
     <div>
-      <h1>NewsletterForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

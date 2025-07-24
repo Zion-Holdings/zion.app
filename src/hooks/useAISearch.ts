@@ -1,4 +1,5 @@
-// useAISearch module placeholder
-const useAISearch = {
-  // TODO: Implement useAISearch functionality
+// Hook for useAISearch;
+export const useUseAISearch: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

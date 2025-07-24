@@ -43,8 +43,8 @@ let content = fs.readFileSync(filePath, 'utf8');
 // Fix syntax errors
 const fixes = [
   // Fix missing semicolons and quotes in object properties
-  [/'([^']+),\s*'([^']+)/g, "'$1',\n        $2'"],"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  [/'([^']+),\s*([^]+)/g, "'$1',\n        $2"],"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  [/'([^']+),\s*'([^']+)/g, "'$1',\n        $2'"],
+  [/'([^']+),\s*([^]+)/g, "'$1',\n        $2"],
   
   // Fix missing semicolons after const declarations
   [/const ([^=]+)=([^;]+)/g, const $1=$2;],
@@ -63,7 +63,7 @@ const fixes = [
 ];
 
 // Apply fixes
-fixes.forEach(([pattern, replacement]) => {
+fixes.forEach(([pattern, replacement]) =>  {
   content = content.replace(pattern, replacement);
 });
 

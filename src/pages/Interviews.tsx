@@ -1,8 +1,8 @@
-import React from react';
-export default function Interviews() {
+import React from 'react';
+export function Interviews() {
   return (
     <div>
-      <h1>Interviews</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

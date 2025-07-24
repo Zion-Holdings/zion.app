@@ -1,9 +1,9 @@
-import React from react';
-default function EnvironmentCheck() {
+import React from 'react';
+export function EnvironmentCheck() {
   return (
     <div>
-      <h1>EnvironmentCheck</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

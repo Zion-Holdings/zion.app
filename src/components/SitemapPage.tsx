@@ -1,9 +1,9 @@
-import React from react';
-default function SitemapPage() {
+import React from 'react';
+export function SitemapPage() {
   return (
     <div>
-      <h1>SitemapPage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function QuoteRequestCard() {
+import React from 'react';
+export function QuoteRequestCard() {
   return (
     <div>
-      <h1>QuoteRequestCard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

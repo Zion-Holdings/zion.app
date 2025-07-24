@@ -1,4 +1,5 @@
-// useEducation module placeholder
-const useEducation = {
-  // TODO: Implement useEducation functionality
+// Hook for useEducation;
+export const useUseEducation: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

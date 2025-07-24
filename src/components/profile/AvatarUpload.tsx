@@ -1,9 +1,9 @@
-import React from react';
-default function AvatarUpload() {
+import React from 'react';
+export function AvatarUpload() {
   return (
     <div>
-      <h1>AvatarUpload</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

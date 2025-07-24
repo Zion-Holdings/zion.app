@@ -1,7 +1,9 @@
-import React from react';
-
-export default function FoundationPage() {
+import React from 'react';
+export function FoundationPage() {
   return (
-    <div>Foundation Page</div>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

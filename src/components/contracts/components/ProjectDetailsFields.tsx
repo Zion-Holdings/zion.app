@@ -1,9 +1,9 @@
-import React from react';
-default function ProjectDetailsFields() {
+import React from 'react';
+export function ProjectDetailsFields() {
   return (
     <div>
-      <h1>ProjectDetailsFields</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

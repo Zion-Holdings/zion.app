@@ -1,9 +1,9 @@
-import React from react';
-default function Sidebar() {
+import React from 'react';
+export function Sidebar() {
   return (
     <div>
-      <h1>Sidebar</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

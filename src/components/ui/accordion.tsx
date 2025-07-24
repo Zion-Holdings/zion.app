@@ -1,9 +1,9 @@
-import React from react';
-default function accordion() {
+import React from 'react';
+export function accordion() {
   return (
     <div>
-      <h1>accordion</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

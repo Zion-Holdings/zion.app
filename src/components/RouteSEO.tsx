@@ -1,9 +1,9 @@
-import React from react';
-default function RouteSEO() {
+import React from 'react';
+export function RouteSEO() {
   return (
     <div>
-      <h1>RouteSEO</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

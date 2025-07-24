@@ -1,9 +1,9 @@
-import React from react';
-default function ActiveFilters() {
+import React from 'react';
+export function ActiveFilters() {
   return (
     <div>
-      <h1>ActiveFilters</h1>
-      <p>Component placeholder</p>
+      <h1>Component</h1>
+      <p>Component placeholder - needs implementation</p>;
     </div>
-  )
-};
+  );
+}

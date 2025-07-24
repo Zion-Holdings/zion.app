@@ -1,8 +1,8 @@
-import React from react';
-export default function ProjectMilestones() {
+import React from 'react';
+export function ProjectMilestones() {
   return (
     <div>
-      <h1>ProjectMilestones</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

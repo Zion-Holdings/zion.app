@@ -1,9 +1,9 @@
-import React from react';
-default function OnboardingWizard() {
+import React from 'react';
+export function OnboardingWizard() {
   return (
     <div>
-      <h1>OnboardingWizard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

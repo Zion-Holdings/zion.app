@@ -1,9 +1,9 @@
-import React from react';
-default function WorkspaceHeader() {
+import React from 'react';
+export function WorkspaceHeader() {
   return (
     <div>
-      <h1>WorkspaceHeader</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

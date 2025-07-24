@@ -1,9 +1,9 @@
-import React from react';
-default function PreviewHeader() {
+import React from 'react';
+export function PreviewHeader() {
   return (
     <div>
-      <h1>PreviewHeader</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

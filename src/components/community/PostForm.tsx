@@ -1,9 +1,9 @@
-import React from react';
-default function PostForm() {
+import React from 'react';
+export function PostForm() {
   return (
     <div>
-      <h1>PostForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

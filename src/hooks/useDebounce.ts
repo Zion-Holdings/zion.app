@@ -1,4 +1,5 @@
-// useDebounce module placeholder
-const useDebounce = {
-  // TODO: Implement useDebounce functionality
+// Hook for useDebounce;
+export const useUseDebounce: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

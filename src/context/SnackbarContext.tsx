@@ -1,9 +1,9 @@
-import React from react';
-default function SnackbarContext() {
+import React from 'react';
+export function SnackbarContext() {
   return (
     <div>
-      <h1>SnackbarContext</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

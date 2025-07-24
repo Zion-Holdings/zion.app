@@ -1,9 +1,9 @@
-import React from react';
-default function NationDashboard() {
+import React from 'react';
+export function NationDashboard() {
   return (
     <div>
-      <h1>NationDashboard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

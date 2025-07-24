@@ -1,9 +1,9 @@
-import React from react';
-default function PodcastHost() {
+import React from 'react';
+export function PodcastHost() {
   return (
     <div>
-      <h1>PodcastHost</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

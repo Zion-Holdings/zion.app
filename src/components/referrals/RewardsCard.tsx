@@ -1,9 +1,9 @@
-import React from react';
-default function RewardsCard() {
+import React from 'react';
+export function RewardsCard() {
   return (
     <div>
-      <h1>RewardsCard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

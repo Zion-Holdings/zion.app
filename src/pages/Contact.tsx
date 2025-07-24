@@ -1,7 +1,9 @@
-import React from react';
-
-export default function Contact() {
+import React from 'react';
+export function Contact() {
   return (
-    <div>Contact Page</div>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

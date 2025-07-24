@@ -1,8 +1,8 @@
-import React from react';
-export default function ITSupportPage() {
+import React from 'react';
+export function ITSupportPage() {
   return (
     <div>
-      <h1>ITSupportPage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

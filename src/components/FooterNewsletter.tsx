@@ -1,9 +1,9 @@
-import React from react';
-default function FooterNewsletter() {
+import React from 'react';
+export function FooterNewsletter() {
   return (
     <div>
-      <h1>FooterNewsletter</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

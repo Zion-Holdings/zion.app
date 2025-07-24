@@ -1,9 +1,9 @@
-import React from react';
-default function useAdvancedOnboardingStatus() {
+import React from 'react';
+export function useAdvancedOnboardingStatus() {
   return (
     <div>
-      <h1>useAdvancedOnboardingStatus</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

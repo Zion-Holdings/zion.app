@@ -1,9 +1,9 @@
-import React from react';
-default function PriceFilter() {
+import React from 'react';
+export function PriceFilter() {
   return (
     <div>
-      <h1>PriceFilter</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

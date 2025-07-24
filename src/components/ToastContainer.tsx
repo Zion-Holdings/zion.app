@@ -1,9 +1,9 @@
-import React from react';
-default function ToastContainer() {
+import React from 'react';
+export function ToastContainer() {
   return (
     <div>
-      <h1>ToastContainer</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

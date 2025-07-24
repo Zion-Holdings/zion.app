@@ -97,14 +97,14 @@ class SyntaxFixer {
         // Fix missing semicolons after imports
         content = content.replace(/import\s+.*?from\s+['"][^'"]+['"](?!;)/g, (match) => {""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
           modified = true;
-          return match + ;;
+          return match + ;
         });
         
         // Fix missing semicolons after exports
         content = content.replace(/export\s+.*?(?!;)/g, (match) => {
           if (!match.endsWith(';) && !match.endsWith('})) {
             modified = true;
-            return match + ;;
+            return match + ;
           }
           return match;
         });

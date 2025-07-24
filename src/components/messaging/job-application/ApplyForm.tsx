@@ -1,9 +1,9 @@
-import React from react';
-default function ApplyForm() {
+import React from 'react';
+export function ApplyForm() {
   return (
     <div>
-      <h1>ApplyForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

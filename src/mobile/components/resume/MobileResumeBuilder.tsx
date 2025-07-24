@@ -1,9 +1,9 @@
-import React from react';
-default function MobileResumeBuilder() {
+import React from 'react';
+export function MobileResumeBuilder() {
   return (
     <div>
-      <h1>MobileResumeBuilder</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function ExpoPage() {
+import React from 'react';
+export function ExpoPage() {
   return (
     <div>
-      <h1>ExpoPage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

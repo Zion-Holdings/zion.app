@@ -34,21 +34,30 @@ if (process.env.NODE_ENV !== 'production') {
 
 
 
-const IntelligentAutomationOrchestrator = require('./core/IntelligentAutomationOrchestrator');
 const path = require('path');
 const fs = require('fs');
 
 // Load configuration
+<<<<<<< HEAD
 function loadConfiguration() {
   const configPath = path.join(__dirname, 'config.json');
+=======
+function loadConfiguration()  {
+  const configPath = path.join(__dirname, 'automation-config.json');
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
 
   if (fs.existsSync(configPath)) {
     try {
       const configData = fs.readFileSync(configPath, 'utf8');
       return JSON.parse(configData);
     } catch (error) {
+<<<<<<< HEAD
       logger.warn(
         ⚠️ Failed to load config.json, using defaults:',
+=======
+      console.warn(
+        '⚠️ Failed to load automation-config.json, using defaults:',
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
         error.message,
       );
     }
@@ -99,7 +108,7 @@ function loadConfiguration() {
       slack: {
         enabled: !!process.env.SLACK_WEBHOOK_URL,
         webhookUrl: process.env.SLACK_WEBHOOK_URL,
-        channel: process.env.SLACK_CHANNEL || #automation
+        channel: process.env.SLACK_CHANNEL || '#automation'
       },
       email: {
         enabled: false
@@ -118,9 +127,11 @@ async function main() {
     const config = loadConfiguration();
     logger.info('📋 Configuration loaded');
 
-    // Create orchestrator
-    const orchestrator = new IntelligentAutomationOrchestrator(config);
+    // Start the unified automation launcher
+    const { UnifiedAutomationLauncher } = require('./unified-automation-launcher');
+    const launcher = new UnifiedAutomationLauncher();
 
+<<<<<<< HEAD
     // Setup event listeners
     orchestrator.on('initialized', () => {
       logger.info('✅ System initialized successfully');
@@ -144,6 +155,24 @@ async function main() {
 
     // Start the orchestrator
     await orchestrator.start();
+=======
+    // Start all automation components
+    await launcher.startAll();
+
+    console.log('🎉 Intelligent Automation System is now running!');
+    console.log('='.repeat(60));
+    console.log('📊 Dashboard: http://localhost:' + config.dashboard.port);
+    console.log('🔧 Press Ctrl+C to stop the system');
+    console.log('='.repeat(60));
+
+    // Keep the process running
+    process.on('SIGINT', async () => {
+      console.log('\n🛑 Shutting down automation system...');
+      await launcher.stopAll();
+      process.exit(0);
+    });
+
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
   } catch (error) {
     logger.error('❌ Failed to start automation system:', error);
     process.exit(1);
@@ -151,7 +180,7 @@ async function main() {
 }
 
 // Handle command line arguments
-function parseArguments() {
+function parseArguments()  {
   const args = process.argv.slice(2);
   const options = {};
 
@@ -159,33 +188,33 @@ function parseArguments() {
     const arg = args[i];
 
     switch (arg) {
-      case --help':
-      case -h':
+      case '--help':
+      case '-h':
         showHelp();
         process.exit(0);
         break;
 
-      case --version':
-      case -v':
+      case '--version':
+      case '-v':
         showVersion();
         process.exit(0);
         break;
 
-      case --config':
+      case '--config':
         if (i + 1 < args.length) {
           options.configFile = args[++i];
         }
         break;
 
-      case --dry-run':
+      case '--dry-run':
         options.dryRun = true;
         break;
 
-      case --no-dashboard':
+      case '--no-dashboard':
         options.noDashboard = true;
         break;
 
-      case --port':
+      case '--port':
         if (i + 1 < args.length) {
           options.port = parseInt(args[++i]);
         }
@@ -197,11 +226,16 @@ function parseArguments() {
     }
   }
 
-  return options;
+  return options
 }
 
+<<<<<<< HEAD
 function showHelp() {
   logger.info(`
+=======
+function showHelp()  {
+  console.log(`
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
 Intelligent Automation System
 
 Usage: node automation/index.js [options]
@@ -229,18 +263,32 @@ Examples:
   `);
 }
 
+<<<<<<< HEAD
 function showVersion() {
   const packagePath = path.join(__dirname, ..', 'package.json');
+=======
+function showVersion()  {
+  const packagePath = path.join(__dirname, '..', 'package.json');
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
 
   if (fs.existsSync(packagePath)) {
     try {
       const packageData = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
+<<<<<<< HEAD
       logger.info(`Intelligent Automation System v${packageData.version}`);
     } catch (error) {
       logger.info('Intelligent Automation System v1.0.0');
     }
   } else {
     logger.info('Intelligent Automation System v1.0.0');
+=======
+      console.log(`Intelligent Automation System v${packageData.version}`);
+    } catch (error) {
+      console.log('Intelligent Automation System v2.0.0');
+    }
+  } else {
+    console.log('Intelligent Automation System v2.0.0');
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
   }
 }
 
@@ -255,11 +303,11 @@ if (require.main === module) {
   }
 
   if (options.noDashboard) {
-    process.env.DISABLE_DASHBOARD = true';
+    process.env.DISABLE_DASHBOARD = 'true';
   }
 
   if (options.dryRun) {
-    process.env.DRY_RUN = true';
+    process.env.DRY_RUN = true;
   }
 
   // Start the system
@@ -270,7 +318,6 @@ if (require.main === module) {
 }
 
 module.exports = {
-  IntelligentAutomationOrchestrator,
   main,
   loadConfiguration
 };

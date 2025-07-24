@@ -1,9 +1,9 @@
-import React from react';
-default function AIMatcher() {
+import React from 'react';
+export function AIMatcher() {
   return (
     <div>
-      <h1>AIMatcher</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function ITServicePricingTable() {
+import React from 'react';
+export function ITServicePricingTable() {
   return (
     <div>
-      <h1>ITServicePricingTable</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

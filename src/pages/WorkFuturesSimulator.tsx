@@ -1,8 +1,8 @@
-import React from react';
-export default function WorkFuturesSimulator() {
+import React from 'react';
+export function WorkFuturesSimulator() {
   return (
     <div>
-      <h1>WorkFuturesSimulator</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

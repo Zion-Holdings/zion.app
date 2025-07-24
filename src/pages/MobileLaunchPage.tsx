@@ -1,7 +1,9 @@
-import React from react';
-
-export default function MobileLaunchPage() {
+import React from 'react';
+export function MobileLaunchPage() {
   return (
-    <div>Mobile Launch Page</div>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

@@ -1,9 +1,9 @@
-import React from react';
-default function drawer() {
+import React from 'react';
+export function drawer() {
   return (
     <div>
-      <h1>drawer</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function TalentRoutes() {
+import React from 'react';
+export function TalentRoutes() {
   return (
     <div>
-      <h1>TalentRoutes</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

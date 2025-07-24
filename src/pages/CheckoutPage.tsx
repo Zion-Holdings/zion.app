@@ -1,8 +1,8 @@
-import React from react';
-export default function CheckoutPage() {
+import React from 'react';
+export function CheckoutPage() {
   return (
     <div>
-      <h1>CheckoutPage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

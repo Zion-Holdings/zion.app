@@ -1,4 +1,5 @@
-// useLogout module placeholder
-const useLogout = {
-  // TODO: Implement useLogout functionality
+// Hook for useLogout;
+export const useUseLogout: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

@@ -1,9 +1,9 @@
-import React from react';
-default function JobCard() {
+import React from 'react';
+export function JobCard() {
   return (
     <div>
-      <h1>JobCard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

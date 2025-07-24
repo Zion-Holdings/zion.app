@@ -1,9 +1,9 @@
-import React from react';
-default function ProjectForm() {
+import React from 'react';
+export function ProjectForm() {
   return (
     <div>
-      <h1>ProjectForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function IntegrationsPage() {
+import React from 'react';
+export function IntegrationsPage() {
   return (
     <div>
-      <h1>IntegrationsPage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

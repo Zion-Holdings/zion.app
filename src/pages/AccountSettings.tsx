@@ -1,9 +1,9 @@
-import React from react';
-default function AccountSettings() {
+import React from 'react';
+export function AccountSettings() {
   return (
     <div>
-      <h1>AccountSettings</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function GovernanceRoutes() {
+import React from 'react';
+export function GovernanceRoutes() {
   return (
     <div>
-      <h1>GovernanceRoutes</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

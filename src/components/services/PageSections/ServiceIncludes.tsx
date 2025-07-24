@@ -1,9 +1,9 @@
-import React from react';
-default function ServiceIncludes() {
+import React from 'react';
+export function ServiceIncludes() {
   return (
     <div>
-      <h1>ServiceIncludes</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function NewPostDialog() {
+import React from 'react';
+export function NewPostDialog() {
   return (
     <div>
-      <h1>NewPostDialog</h1>
-      <p>Component placeholder</p>
+      <h1>Component</h1>
+      <p>Component placeholder - needs implementation</p>;
     </div>
-  )
-};
+  );
+}

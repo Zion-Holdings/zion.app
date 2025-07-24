@@ -1,9 +1,9 @@
-import React from react';
-default function Help() {
+import React from 'react';
+export function Help() {
   return (
     <div>
-      <h1>Help</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

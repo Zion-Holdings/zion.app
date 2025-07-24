@@ -1,9 +1,9 @@
-import React from react';
-default function ProfileRatings() {
+import React from 'react';
+export function ProfileRatings() {
   return (
     <div>
-      <h1>ProfileRatings</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

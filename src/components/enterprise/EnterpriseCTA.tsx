@@ -1,9 +1,9 @@
-import React from react';
-default function EnterpriseCTA() {
+import React from 'react';
+export function EnterpriseCTA() {
   return (
     <div>
-      <h1>EnterpriseCTA</h1>
-      <p>Component placeholder</p>
+      <h1>Component</h1>
+      <p>Component placeholder - needs implementation</p>;
     </div>
-  )
-};
+  );
+}

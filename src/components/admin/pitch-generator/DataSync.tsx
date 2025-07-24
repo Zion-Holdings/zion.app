@@ -1,9 +1,9 @@
-import React from react';
-default function DataSync() {
+import React from 'react';
+export function DataSync() {
   return (
     <div>
-      <h1>DataSync</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

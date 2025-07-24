@@ -1,9 +1,9 @@
-import React from react';
-default function TalentCardAvailability() {
+import React from 'react';
+export function TalentCardAvailability() {
   return (
     <div>
-      <h1>TalentCardAvailability</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

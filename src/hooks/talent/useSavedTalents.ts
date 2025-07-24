@@ -1,4 +1,5 @@
-// useSavedTalents module placeholder
-const useSavedTalents = {
-  // TODO: Implement useSavedTalents functionality
+// Hook for useSavedTalents;
+export const useUseSavedTalents: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

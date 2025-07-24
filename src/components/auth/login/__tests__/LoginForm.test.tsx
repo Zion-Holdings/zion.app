@@ -1,9 +1,10 @@
-import React from react';
-default function LoginForm.test() {
+import React from 'react'
+;
+export export export default function LoginForm.test()   {;
   return (
     <div>
-      <h1>LoginForm.test</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

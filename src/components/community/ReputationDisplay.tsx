@@ -1,9 +1,9 @@
-import React from react';
-default function ReputationDisplay() {
+import React from 'react';
+export function ReputationDisplay() {
   return (
     <div>
-      <h1>ReputationDisplay</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

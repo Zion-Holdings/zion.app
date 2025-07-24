@@ -1,9 +1,9 @@
-import React from react';
-default function PartnerRegistrationForm() {
+import React from 'react';
+export function PartnerRegistrationForm() {
   return (
     <div>
-      <h1>PartnerRegistrationForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

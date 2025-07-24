@@ -1,9 +1,9 @@
-import React from react';
-default function SocialShareSection() {
+import React from 'react';
+export function SocialShareSection() {
   return (
     <div>
-      <h1>SocialShareSection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

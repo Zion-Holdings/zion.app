@@ -1,9 +1,9 @@
-import React from react';
-default function SmartContractDeployment() {
+import React from 'react';
+export function SmartContractDeployment() {
   return (
     <div>
-      <h1>SmartContractDeployment</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

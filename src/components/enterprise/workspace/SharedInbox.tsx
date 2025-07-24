@@ -1,9 +1,9 @@
-import React from react';
-default function SharedInbox() {
+import React from 'react';
+export function SharedInbox() {
   return (
     <div>
-      <h1>SharedInbox</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

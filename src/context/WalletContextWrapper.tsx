@@ -1,9 +1,9 @@
-import React from react';
-default function WalletContextWrapper() {
+import React from 'react';
+export function WalletContextWrapper() {
   return (
     <div>
-      <h1>WalletContextWrapper</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

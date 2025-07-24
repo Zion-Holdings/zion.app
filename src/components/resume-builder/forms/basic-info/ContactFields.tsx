@@ -1,9 +1,9 @@
-import React from react';
-default function ContactFields() {
+import React from 'react';
+export function ContactFields() {
   return (
     <div>
-      <h1>ContactFields</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

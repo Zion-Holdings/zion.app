@@ -1,9 +1,9 @@
-import React from react';
-default function ReferralLink() {
+import React from 'react';
+export function ReferralLink() {
   return (
     <div>
-      <h1>ReferralLink</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

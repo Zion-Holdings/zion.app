@@ -1,9 +1,9 @@
-import React from react';
-default function AddSkillForm() {
+import React from 'react';
+export function AddSkillForm() {
   return (
     <div>
-      <h1>AddSkillForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

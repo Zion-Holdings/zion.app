@@ -1,9 +1,9 @@
-import React from react';
-default function SpeakersSection() {
+import React from 'react';
+export function SpeakersSection() {
   return (
     <div>
-      <h1>SpeakersSection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

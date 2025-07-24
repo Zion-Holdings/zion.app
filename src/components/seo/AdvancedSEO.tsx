@@ -1,9 +1,9 @@
-import React from react';
-default function AdvancedSEO() {
+import React from 'react';
+export function AdvancedSEO() {
   return (
     <div>
-      <h1>AdvancedSEO</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -100,8 +100,8 @@ class ImprovedAutomationOrchestrator {
   setupWebSocket() {
     this.io = socketIo(this.server, {
       cors: {
-        origin: "*","""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-        methods: ["GET", "POST"]"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        origin: "*",
+        methods: ["GET", "POST"]
       }
     });
 
@@ -241,6 +241,7 @@ class ImprovedAutomationOrchestrator {
           
           if (system.config.autoRestart && system.restarts < system.config.maxRestarts) {
             system.restarts++;
+<<<<<<< HEAD
             logger.info(`🔄 Auto-restarting ${systemName} (attempt ${system.restarts}/${system.config.maxRestarts})`);
             
 const timeoutId = 
@@ -384,6 +385,10 @@ const timeoutId = setTimeout(() => this.startSystem(systemName),                
 ;
 // Store timeoutId for cleanup if needed
 ;
+=======
+            console.log(`🔄 Auto-restarting ${systemName} (attempt ${system.restarts}/${system.config.maxRestarts})`)
+            setTimeout(() => this.startSystem(systemName), 5000);
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
           }
         }
         
@@ -947,7 +952,7 @@ class PortManager {
       }
     }
     
-    throw new Error('No available ports found');
+    throw new Error('No available ports found')
   }
 
   isPortAvailable(port) {

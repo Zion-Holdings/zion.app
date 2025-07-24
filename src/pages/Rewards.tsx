@@ -1,8 +1,8 @@
-import React from react';
-export default function Rewards() {
+import React from 'react';
+export function Rewards() {
   return (
     <div>
-      <h1>Rewards</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

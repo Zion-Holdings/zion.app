@@ -1,7 +1,9 @@
-import React from react';
-
-export default function PartnerIntegration() {
+import React from 'react';
+export function PartnerIntegration() {
   return (
-    <div>Partner Integration</div>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

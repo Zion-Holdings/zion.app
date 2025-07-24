@@ -1,9 +1,9 @@
-import React from react';
-default function TimelineStep() {
+import React from 'react';
+export function TimelineStep() {
   return (
     <div>
-      <h1>TimelineStep</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

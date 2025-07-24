@@ -1,9 +1,9 @@
-import React from react';
-default function EnhancedSearchInput() {
+import React from 'react';
+export function EnhancedSearchInput() {
   return (
     <div>
-      <h1>EnhancedSearchInput</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

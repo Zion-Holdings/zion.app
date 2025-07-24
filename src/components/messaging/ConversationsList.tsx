@@ -1,9 +1,9 @@
-import React from react';
-default function ConversationsList() {
+import React from 'react';
+export function ConversationsList() {
   return (
     <div>
-      <h1>ConversationsList</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

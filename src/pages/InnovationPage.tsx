@@ -1,9 +1,9 @@
-import React from react';
-default function InnovationPage() {
+import React from 'react';
+export function InnovationPage() {
   return (
     <div>
-      <h1>InnovationPage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function ResumeBasicInfo() {
+import React from 'react';
+export function ResumeBasicInfo() {
   return (
     <div>
-      <h1>ResumeBasicInfo</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

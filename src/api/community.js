@@ -1,4 +1,4 @@
-// community module placeholder
-const community = {
-  // TODO: Implement community functionality
+// Module for community
+export const community = {
+  // TODO: Implement module functionality
 };

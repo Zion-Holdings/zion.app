@@ -1,9 +1,9 @@
-import React from react';
-default function MobileProjectView() {
+import React from 'react';
+export function MobileProjectView() {
   return (
     <div>
-      <h1>MobileProjectView</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

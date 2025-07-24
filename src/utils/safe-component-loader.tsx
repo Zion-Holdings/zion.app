@@ -1,9 +1,9 @@
-import React from react';
-default function safe-component-loader() {
+import React from 'react';
+export function safecomponentloader() {
   return (
     <div>
-      <h1>safe-component-loader</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

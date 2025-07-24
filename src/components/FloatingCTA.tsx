@@ -1,9 +1,9 @@
-import React from react';
-default function FloatingCTA() {
+import React from 'react';
+export function FloatingCTA() {
   return (
     <div>
-      <h1>FloatingCTA</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,8 +1,8 @@
-import React from react';
-export default function EditPostPage() {
+import React from 'react';
+export function EditPostPage() {
   return (
     <div>
-      <h1>EditPostPage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

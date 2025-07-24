@@ -1,9 +1,9 @@
-import React from react';
-default function TenantOnboarding() {
+import React from 'react';
+export function TenantOnboarding() {
   return (
     <div>
-      <h1>TenantOnboarding</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

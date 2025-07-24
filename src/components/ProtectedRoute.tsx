@@ -1,9 +1,9 @@
-import React from react';
-default function ProtectedRoute() {
+import React from 'react';
+export function ProtectedRoute() {
   return (
     <div>
-      <h1>ProtectedRoute</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

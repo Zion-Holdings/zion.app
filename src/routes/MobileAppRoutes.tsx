@@ -1,9 +1,9 @@
-import React from react';
-default function MobileAppRoutes() {
+import React from 'react';
+export function MobileAppRoutes() {
   return (
     <div>
-      <h1>MobileAppRoutes</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

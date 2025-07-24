@@ -1,9 +1,9 @@
-import React from react';
-default function BillingDashboard() {
+import React from 'react';
+export function BillingDashboard() {
   return (
     <div>
-      <h1>BillingDashboard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

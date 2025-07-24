@@ -1,9 +1,9 @@
-import React from react';
-default function ApplicationScoreCard() {
+import React from 'react';
+export function ApplicationScoreCard() {
   return (
     <div>
-      <h1>ApplicationScoreCard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

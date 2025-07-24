@@ -1,9 +1,9 @@
-import React from react';
-default function ErrorGuard() {
+import React from 'react';
+export function ErrorGuard() {
   return (
     <div>
-      <h1>ErrorGuard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

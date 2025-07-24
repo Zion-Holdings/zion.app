@@ -1,9 +1,9 @@
-import React from react';
-default function TenantsList() {
+import React from 'react';
+export function TenantsList() {
   return (
     <div>
-      <h1>TenantsList</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

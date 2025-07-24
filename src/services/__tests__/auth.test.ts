@@ -1,4 +1,4 @@
-// auth.test module placeholder
-const auth.test = {
-  // TODO: Implement auth.test functionality
+// Service for auth.test;
+export const auth.testService = {;
+  // TODO: Implement service methods;
 };

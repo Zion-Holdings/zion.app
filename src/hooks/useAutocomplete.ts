@@ -1,4 +1,5 @@
-// useAutocomplete module placeholder
-const useAutocomplete = {
-  // TODO: Implement useAutocomplete functionality
+// Hook for useAutocomplete;
+export const useUseAutocomplete: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

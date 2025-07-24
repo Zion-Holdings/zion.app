@@ -1,9 +1,9 @@
-import React from react';
-default function NewsletterSection() {
+import React from 'react';
+export function NewsletterSection() {
   return (
     <div>
-      <h1>NewsletterSection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

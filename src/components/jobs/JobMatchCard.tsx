@@ -1,9 +1,9 @@
-import React from react';
-default function JobMatchCard() {
+import React from 'react';
+export function JobMatchCard() {
   return (
     <div>
-      <h1>JobMatchCard</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

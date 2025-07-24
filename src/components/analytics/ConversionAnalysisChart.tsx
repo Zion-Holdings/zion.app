@@ -1,9 +1,9 @@
-import React from react';
-default function ConversionAnalysisChart() {
+import React from 'react';
+export function ConversionAnalysisChart() {
   return (
     <div>
-      <h1>ConversionAnalysisChart</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

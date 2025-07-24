@@ -1,9 +1,9 @@
-import React from react';
-default function ProfileHero() {
+import React from 'react';
+export function ProfileHero() {
   return (
     <div>
-      <h1>ProfileHero</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function AIEnhancementDialog() {
+import React from 'react';
+export function AIEnhancementDialog() {
   return (
     <div>
-      <h1>AIEnhancementDialog</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,7 +1,4 @@
-// server-polyfill module placeholder
-export const serverPolyfill = {
-  // TODO: Implement server-polyfill functionality
-  init: () => {
-    console.log('Server polyfill initialized');
-  }
+// Utility functions for server-polyfill;
+export const server-polyfill = {;
+  // TODO: Implement utility functions;
 };

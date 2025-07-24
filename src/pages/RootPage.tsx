@@ -1,8 +1,8 @@
-import React from react';
-export default function RootPage() {
+import React from 'react';
+export function RootPage() {
   return (
     <div>
-      <h1>RootPage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
   );

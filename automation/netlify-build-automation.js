@@ -22,15 +22,16 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 
-const NetlifyBuildMonitor = require';('./netlify-monitor')
-const NetlifyErrorFixer = require';('./netlify-error-fixer')
-const fs = require';('fs')
-const path = require';('path')
-const { execSync } = require';('child_process')
+const NetlifyBuildMonitor = require('./netlify-monitor');
+const NetlifyErrorFixer = require('./netlify-error-fixer');
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
+
 class NetlifyBuildAutomation {
   constructor() {
-    this.monitor = new'; NetlifyBuildMonitor();
-    this.fixer = new'; NetlifyErrorFixer();
+    this.monitor = new NetlifyBuildMonitor();
+    this.fixer = new NetlifyErrorFixer();
     this.config = {
       autoFix: true,
       autoCommit: true,
@@ -51,18 +52,23 @@ class NetlifyBuildAutomation {
     };
   }
 
-  log(message, level = info';;;) {
-    const timestamp = new'; Date().toISOString()
-const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
+  log(message, level = 'info') {
+    const timestamp = new Date().toISOString();
+    const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
 
+<<<<<<< HEAD
     logger.info(logEntry);
     fs.appendFileSync(this.config.logFile, logEntry + \n');
+=======
+    console.log(logEntry);
+    fs.appendFileSync(this.config.logFile, logEntry + '\n');
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
   }
 
   async start() {
     this.log('Starting Netlify build automation...');
-    this.status.isRunning = true';;
-    this.status.startTime = new'; Date().toISOString();
+    this.status.isRunning = true;
+    this.status.startTime = new Date().toISOString();
     this.saveStatus();
 
     // Start monitoring
@@ -101,14 +107,14 @@ const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
     this.status.lastBuild = {
       id: build.id,
       timestamp: new Date().toISOString(),
-      state: success
+      state: 'success'
     };
 
     this.status.buildHistory.unshift(this.status.lastBuild);
 
     // Keep only last 20 builds
     if (this.status.buildHistory.length > 20) {
-      this.status.buildHistory = this';;.status.buildHistory.slice(0, 20);
+      this.status.buildHistory = this.status.buildHistory.slice(0, 20);
     }
 
     this.saveStatus();
@@ -118,11 +124,11 @@ const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
     this.log(`Attempting to auto-fix error: ${error.type}`);
 
     let retries = 0;
-    let success = false';;
+    let success = false;
 
     while (retries < this.config.maxRetries && !success) {
       try {
-        success = await';; this.fixer.fixError(error.type, error);
+        success = await this.fixer.fixError(error.type, error);
 
         if (success) {
           this.log(
@@ -352,7 +358,7 @@ const timeoutId = setTimeout(resolve,                                           
       } catch (fixError) {
         this.log(
           `Error during fix attempt ${retries + 1}: ${fixError.message}`,
-          error',
+          'error',
         );
         retries++;
 
@@ -559,7 +565,7 @@ const timeoutId = setTimeout(resolve,                                           
     if (!success) {
       this.log(
         `Failed to fix ${error.type} after ${this.config.maxRetries} attempts`,
-        error',
+        'error',
       );
 
       this.status.fixesApplied.push({
@@ -578,48 +584,48 @@ const timeoutId = setTimeout(resolve,                                           
 
       execSync('git add .', { stdio: 'inherit' });
       execSync('git commit -m "Auto-fix: Apply Netlify build fixes"', {
-        stdio: inherit
+        stdio: 'inherit'
       });
       execSync('git push', { stdio: 'inherit' });
 
       this.log('Fixes committed successfully');
       return true;
     } catch (error) {
-      this.log(`Failed to commit fixes: ${error.message}`, error');
+      this.log(`Failed to commit fixes: ${error.message}`, 'error');
       return false;
     }
   }
 
   async triggerNewBuild() {
     try {
-      this.log('Triggering new build...')
-const build = await';; this.monitor.triggerBuild();
+      this.log('Triggering new build...');
+      const build = await this.monitor.triggerBuild();
 
       if (build) {
         this.log(`New build triggered: ${build.id}`);
         return build;
       } else {
-        this.log('Failed to trigger new build', error');
+        this.log('Failed to trigger new build', 'error');
         return null;
       }
     } catch (error) {
-      this.log(`Error triggering new build: ${error.message}`, error');
+      this.log(`Error triggering new build: ${error.message}`, 'error');
       return null;
     }
   }
 
   async runPreBuildChecks() {
-    this.log('Running pre-build checks...')
-const checks = [
+    this.log('Running pre-build checks...');
+    const checks = [
       this.checkDependencies(),
       this.checkTypeScript(),
       this.checkESLint(),
       this.checkNextJS(),
       this.checkEnvironment()
-    ]
-const results = await';; Promise.allSettled(checks)
-const issues = results';;.filter(
-      (result) => result.status === rejected';;; || result.value === false';,
+    ];
+    const results = await Promise.allSettled(checks);
+    const issues = results.filter(
+      (result) => result.status === 'rejected' || result.value === false,
     );
 
     if (issues.length > 0) {
@@ -632,10 +638,14 @@ const issues = results';;.filter(
 
   async checkDependencies() {
     try {
+<<<<<<< HEAD
       execSync('npm audit --audit-level='moderate', { stdio: 'pipe' });
+=======
+      execSync('npm audit --audit-level=moderate', { stdio: 'pipe' });
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       return true;
     } catch (error) {
-      this.log('Dependency vulnerabilities found', warn');
+      this.log('Dependency vulnerabilities found', 'warn');
       return false;
     }
   }
@@ -645,7 +655,7 @@ const issues = results';;.filter(
       execSync('npx tsc --noEmit', { stdio: 'pipe' });
       return true;
     } catch (error) {
-      this.log('TypeScript errors found', warn');
+      this.log('TypeScript errors found', 'warn');
       return false;
     }
   }
@@ -655,7 +665,7 @@ const issues = results';;.filter(
       execSync('npm run lint', { stdio: 'pipe' });
       return true;
     } catch (error) {
-      this.log('ESLint errors found', warn');
+      this.log('ESLint errors found', 'warn');
       return false;
     }
   }
@@ -664,27 +674,27 @@ const issues = results';;.filter(
     try {
       // Check if .next directory exists and is valid
       if (fs.existsSync('.next')) {
-        const stats = fs';;.statSync('.next');
+        const stats = fs.statSync('.next');
         if (stats.isDirectory()) {
           return true;
         }
       }
       return false;
     } catch (error) {
-      this.log('Next.js cache issues found', warn');
+      this.log('Next.js cache issues found', 'warn');
       return false;
     }
   }
 
   async checkEnvironment() {
     const requiredVars = [
-      NEXT_PUBLIC_SUPABASE_URL',
-      NEXT_PUBLIC_SUPABASE_ANON_KEY
-    ]
-const missing = requiredVars';;.filter((varName) => !process.env[varName]);
+      'NEXT_PUBLIC_SUPABASE_URL',
+      'NEXT_PUBLIC_SUPABASE_ANON_KEY'
+    ];
+    const missing = requiredVars.filter((varName) => !process.env[varName]);
 
     if (missing.length > 0) {
-      this.log(`Missing environment variables: ${missing.join(', )}`, warn');
+      this.log(`Missing environment variables: ${missing.join(', ')}`, 'warn');
       return false;
     }
 
@@ -699,10 +709,10 @@ const missing = requiredVars';;.filter((varName) => !process.env[varName]);
       summary: {
         totalBuilds: this.status.buildHistory.length,
         successfulBuilds: this.status.buildHistory.filter(
-          (b) => b.state === success';;;,
+          (b) => b.state === 'success',
         ).length,
         failedBuilds: this.status.buildHistory.filter(
-          (b) => b.state === error';;;,
+          (b) => b.state === 'error',
         ).length,
         totalFixes: this.status.fixesApplied.length,
         successfulFixes: this.status.fixesApplied.filter((f) => f.success)
@@ -727,13 +737,13 @@ const missing = requiredVars';;.filter((varName) => !process.env[varName]);
         JSON.stringify(this.status, null, 2),
       );
     } catch (error) {
-      this.log(`Error saving status: ${error.message}`, error');
+      this.log(`Error saving status: ${error.message}`, 'error');
     }
   }
 
   stop() {
     this.log('Stopping Netlify build automation...');
-    this.status.isRunning = false';;
+    this.status.isRunning = false;
     this.monitor.stop();
     this.saveStatus();
   }
@@ -753,42 +763,51 @@ const missing = requiredVars';;.filter((varName) => !process.env[varName]);
 
       this.log('Full automation cycle completed');
     } catch (error) {
-      this.log(`Error in full cycle: ${error.message}`, error');
+      this.log(`Error in full cycle: ${error.message}`, 'error');
     }
   }
 }
 
 // CLI interface
-if (require.main === module';;) {
-  const automation = new'; NetlifyBuildAutomation()
-const command = process';;.argv[2];
+if (require.main === module) {
+  const automation = new NetlifyBuildAutomation();
+  const command = process.argv[2];
 
   switch (command) {
-    case start':
+    case 'start':
       automation.start();
       break;
-    case stop':
+    case 'stop':
       automation.stop();
       break;
-    case cycle':
+    case 'cycle':
       automation.runFullCycle();
       break;
-    case check':
+    case 'check':
       automation.runPreBuildChecks();
       break;
-    case report':
+    case 'report':
       automation.generateReport().then((report) => {
         logger.info(JSON.stringify(report, null, 2));
       });
       break;
+<<<<<<< HEAD
     case status':
       logger.info(JSON.stringify(automation.status, null, 2));
       break;
     default:
       logger.info(
         Usage: node netlify-build-automation.js [start|stop|cycle|check|report|status],
+=======
+    case 'status':
+      console.log(JSON.stringify(automation.status, null, 2));
+      break;
+    default:
+      console.log(
+        'Usage: node netlify-build-automation.js [start|stop|cycle|check|report|status]',
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       );
   }
 }
 
-module.exports = NetlifyBuildAutomation';;
+module.exports = NetlifyBuildAutomation;

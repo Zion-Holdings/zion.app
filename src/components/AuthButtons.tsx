@@ -1,9 +1,9 @@
-import React from react';
-default function AuthButtons() {
+import React from 'react';
+export function AuthButtons() {
   return (
     <div>
-      <h1>AuthButtons</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

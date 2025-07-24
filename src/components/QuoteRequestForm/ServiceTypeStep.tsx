@@ -1,9 +1,9 @@
-import React from react';
-default function ServiceTypeStep() {
+import React from 'react';
+export function ServiceTypeStep() {
   return (
     <div>
-      <h1>ServiceTypeStep</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

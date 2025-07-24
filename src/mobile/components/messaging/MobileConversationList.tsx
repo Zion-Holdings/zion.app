@@ -1,9 +1,9 @@
-import React from react';
-default function MobileConversationList() {
+import React from 'react';
+export function MobileConversationList() {
   return (
     <div>
-      <h1>MobileConversationList</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

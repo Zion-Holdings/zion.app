@@ -1,9 +1,9 @@
-import React from react';
-default function Constitution() {
+import React from 'react';
+export function Constitution() {
   return (
     <div>
-      <h1>Constitution</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

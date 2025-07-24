@@ -1,8 +1,9 @@
-import React from react';
-function ServiceProcessSteps() {
+import React from 'react';
+export function ServiceProcessSteps() {
   return (
     <div>
-      <h2>Service Process Steps</h2>
-      <p>This component is under construction.</p>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
     </div>
   );
+}

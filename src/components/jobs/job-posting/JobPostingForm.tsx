@@ -1,9 +1,9 @@
-import React from react';
-default function JobPostingForm() {
+import React from 'react';
+export function JobPostingForm() {
   return (
     <div>
-      <h1>JobPostingForm</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

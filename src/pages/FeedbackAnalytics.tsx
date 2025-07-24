@@ -1,7 +1,9 @@
-import React from react';
-
-export default function FeedbackAnalytics() {
+import React from 'react';
+export function FeedbackAnalytics() {
   return (
-    <div>Feedback Analytics</div>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

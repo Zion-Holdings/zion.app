@@ -1,9 +1,9 @@
-import React from react';
-default function EmailVerificationBanner() {
+import React from 'react';
+export function EmailVerificationBanner() {
   return (
     <div>
-      <h1>EmailVerificationBanner</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

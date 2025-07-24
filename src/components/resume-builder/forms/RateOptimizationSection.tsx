@@ -1,9 +1,9 @@
-import React from react';
-default function RateOptimizationSection() {
+import React from 'react';
+export function RateOptimizationSection() {
   return (
     <div>
-      <h1>RateOptimizationSection</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

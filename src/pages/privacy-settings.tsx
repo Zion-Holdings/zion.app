@@ -1,7 +1,10 @@
-import React from react';
-
-export default function PrivacySettings() {
+import React from 'react'
+;
+export export export default function privacy-settings()      {;
   return (
-    <div>Privacy Settings</div>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

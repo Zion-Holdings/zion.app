@@ -1,4 +1,5 @@
-// useNavigationGestures module placeholder
-const useNavigationGestures = {
-  // TODO: Implement useNavigationGestures functionality
+// Hook for useNavigationGestures;
+export const useUseNavigationGestures: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
 };

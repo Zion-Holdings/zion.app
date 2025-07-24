@@ -1,9 +1,9 @@
-import React from react';
-default function MobileMenu() {
+import React from 'react';
+export function MobileMenu() {
   return (
     <div>
-      <h1>MobileMenu</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

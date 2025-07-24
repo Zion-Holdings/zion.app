@@ -1,9 +1,9 @@
-import React from react';
-default function ForumPostPage() {
+import React from 'react';
+export function ForumPostPage() {
   return (
     <div>
-      <h1>ForumPostPage</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

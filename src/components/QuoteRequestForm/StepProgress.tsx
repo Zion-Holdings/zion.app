@@ -1,9 +1,9 @@
-import React from react';
-default function StepProgress() {
+import React from 'react';
+export function StepProgress() {
   return (
     <div>
-      <h1>StepProgress</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function FeedbackContext() {
+import React from 'react';
+export function FeedbackContext() {
   return (
     <div>
-      <h1>FeedbackContext</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

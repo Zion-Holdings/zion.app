@@ -1,4 +1,4 @@
-// fraud module placeholder
-const fraud = {
-  // TODO: Implement fraud functionality
+// Type definitions for fraud;
+interface fraud {;
+  // TODO: Add proper type definitions;
 };

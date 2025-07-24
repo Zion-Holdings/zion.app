@@ -167,7 +167,11 @@ class PerformanceMonitor {
 
   async getBundleMetrics() {
     try {
+<<<<<<< HEAD
       const output = execSync('npm run bundle: 'analyze', { stdio: 'pipe' });
+=======
+      const output = execSync('npm run bundle:analyze', { stdio: 'pipe' });
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       return this.parseBundleAnalysis(output);
     } catch (error) {
       return { error: error.message };
@@ -207,7 +211,7 @@ class PerformanceMonitor {
     }
 
     // Build time threshold
-    if (metrics.build.status === success' && metrics.build.buildTime > this.config.thresholds.responseTime) {
+    if (metrics.build.status === 'success' && metrics.build.buildTime > this.config.thresholds.responseTime) {
       alerts.push({
         type: 'build',
         severity: 'warning',
@@ -229,7 +233,7 @@ class PerformanceMonitor {
 
   async logMetrics(metrics) {
     const logEntry = JSON.stringify(metrics);
-    await fs.appendFile(this.config.logFile, logEntry + \n');
+    await fs.appendFile(this.config.logFile, logEntry + '\n');
   }
 
   async generateReport() {
@@ -273,8 +277,13 @@ class PerformanceMonitor {
       recommendations.push({
         type: 'performance',
         priority: 'high',
+<<<<<<< HEAD
         message: High memory usage detected. Consider optimizing memory usage.',
         action: Review memory-intensive operations and implement memory optimization strategies.
+=======
+        message: 'High memory usage detected. Consider optimizing memory usage.',
+        action: 'Review memory-intensive operations and implement memory optimization strategies.'
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       });
     }
 
@@ -282,8 +291,13 @@ class PerformanceMonitor {
       recommendations.push({
         type: 'reliability',
         priority: 'high',
+<<<<<<< HEAD
         message: High alert rate detected. Review system performance.',
         action: Investigate performance bottlenecks and optimize critical paths.
+=======
+        message: 'High alert rate detected. Review system performance.',
+        action: 'Investigate performance bottlenecks and optimize critical paths.'
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       });
     }
 

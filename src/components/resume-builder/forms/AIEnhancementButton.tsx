@@ -1,9 +1,9 @@
-import React from react';
-default function AIEnhancementButton() {
+import React from 'react';
+export function AIEnhancementButton() {
   return (
     <div>
-      <h1>AIEnhancementButton</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

@@ -1,9 +1,9 @@
-import React from react';
-default function ChatAssistantTrigger() {
+import React from 'react';
+export function ChatAssistantTrigger() {
   return (
     <div>
-      <h1>ChatAssistantTrigger</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

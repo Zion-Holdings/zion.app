@@ -1,9 +1,9 @@
-import React from react';
-default function OfflineToast() {
+import React from 'react';
+export function OfflineToast() {
   return (
     <div>
-      <h1>OfflineToast</h1>
+      <h1>Component</h1>
       <p>Component placeholder</p>
     </div>
-  )
-};
+  );
+}

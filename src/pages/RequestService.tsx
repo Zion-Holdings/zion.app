@@ -1,7 +1,9 @@
-import React from react';
-
-export default function RequestService() {
+import React from 'react';
+export function RequestService() {
   return (
-    <div>Request Service</div>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }
