@@ -88,9 +88,9 @@ echo ""
 
 # Check backups
 echo -e "${BLUE}💾 Backups:${NC}"
-local backup_dir="$AUTOMATION_DIR/backups"
+backup_dir="$AUTOMATION_DIR/backups"
 if [ -d "$backup_dir" ]; then
-    local backup_count=$(find "$backup_dir" -name "sync-backup-*" -type d | wc -l)
+    backup_count=$(find "$backup_dir" -name "sync-backup-*" -type d | wc -l)
     echo -e "${GREEN}✅ Backup count: $backup_count${NC}"
 else
     echo -e "${YELLOW}⚠️ No backup directory found${NC}"
