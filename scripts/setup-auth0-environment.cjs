@@ -1,9 +1,40 @@
-#!/usr/bin/env node
 
-/**
- * Auth0 Environment Setup Script for Zion Tech Marketplace
- * Helps configure required environment variables for Auth0 authentication
- */
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
+
+
 
 const fs = require('fs')
 const path = require('path')
@@ -113,14 +144,14 @@ function createEnvFiles() {
   const envExamplePath = path.join(process.cwd(), '.env.example')
 const envLocalPath = path.join(process.cwd(), '.env.local');
 
-  console.warn('🔧 Creating Auth0 environment configuration files...\n');
+  logger.warn('🔧 Creating Auth0 environment configuration files...\n');
 
   // Create .env.example
   if (!fs.existsSync(envExamplePath)) {
     fs.writeFileSync(envExamplePath, auth0EnvExample);
-    console.warn('✅ Created .env.example');
+    logger.warn('✅ Created .env.example');
   } else {
-    console.warn('⚠️  .env.example already exists, skipping...');
+    logger.warn('⚠️  .env.example already exists, skipping...');
   }
 
   // Create .env.local if it doesn't exist
@@ -130,51 +161,51 @@ const envLocalPath = path.join(process.cwd(), '.env.local');
       `AUTH0_SECRET=${generateAuth0Secret()}`,
     );
     fs.writeFileSync(envLocalPath, localEnvWithSecret);
-    console.warn('✅ Created .env.local with generated AUTH0_SECRET');
+    logger.warn('✅ Created .env.local with generated AUTH0_SECRET');
   } else {
-    console.warn('⚠️  .env.local already exists, skipping...');
-    console.warn('   You may need to manually add Auth0 variables');
+    logger.warn('⚠️  .env.local already exists, skipping...');
+    logger.warn('   You may need to manually add Auth0 variables');
   }
 }
 
 function printInstructions() {
-  console.warn('\n📚 Auth0 Setup Instructions:\n');
+  logger.warn('\n📚 Auth0 Setup Instructions:\n');
 
-  console.warn('1. 🏗️  Create Auth0 Application:');
-  console.warn('   • Go to https://manage.auth0.com/dashboard');
-  console.warn('   • Create new application or use existing one');
-  console.warn('   • Choose "Single Page Application" type');
-  console.warn('   • Note down your Domain, Client ID, and Client Secret\n');
+  logger.warn('1. 🏗️  Create Auth0 Application:');
+  logger.warn('   • Go to https://manage.auth0.com/dashboard');
+  logger.warn('   • Create new application or use existing one');
+  logger.warn('   • Choose "Single Page Application" type');
+  logger.warn('   • Note down your Domain, Client ID, and Client Secret\n');
 
-  console.warn('2. ⚙️  Configure Auth0 Application Settings:');
-  console.warn(
+  logger.warn('2. ⚙️  Configure Auth0 Application Settings:');
+  logger.warn(
     '   • Allowed Callback URLs: http://localhost:3000/api/auth/callback',
   );
-  console.warn('   • Allowed Logout URLs: http://localhost:3000');
-  console.warn('   • Allowed Web Origins: http://localhost:3000\n');
+  logger.warn('   • Allowed Logout URLs: http://localhost:3000');
+  logger.warn('   • Allowed Web Origins: http://localhost:3000\n');
 
-  console.warn('3. 🔐 Update .env.local with your Auth0 credentials:');
-  console.warn('   • AUTH0_ISSUER_BASE_URL=https://your-tenant.us.auth0.com');
-  console.warn('   • AUTH0_CLIENT_ID=your_actual_client_id');
-  console.warn('   • AUTH0_CLIENT_SECRET=your_actual_client_secret');
-  console.warn('   • AUTH0_SECRET is already generated for you!\n');
+  logger.warn('3. 🔐 Update .env.local with your Auth0 credentials:');
+  logger.warn('   • AUTH0_ISSUER_BASE_URL=https://your-tenant.us.auth0.com');
+  logger.warn('   • AUTH0_CLIENT_ID='your_actual_client_id');
+  logger.warn('   • AUTH0_CLIENT_SECRET='your_actual_client_secret');
+  logger.warn('   • AUTH0_SECRET is already generated for you!\n');
 
-  console.warn('4. 🌐 For Production (Netlify):');
-  console.warn('   • Set all Auth0 variables in Netlify UI');
-  console.warn('   • Update AUTH0_BASE_URL to your production domain');
-  console.warn('   • Add production URLs to Auth0 application settings\n');
+  logger.warn('4. 🌐 For Production (Netlify):');
+  logger.warn('   • Set all Auth0 variables in Netlify UI');
+  logger.warn('   • Update AUTH0_BASE_URL to your production domain');
+  logger.warn('   • Add production URLs to Auth0 application settings\n');
 
-  console.warn('5. ✅ Validate Configuration:');
-  console.warn('   • Run: npm run validate-env');
-  console.warn('   • Start development: npm run dev');
-  console.warn('   • Test authentication flow\n');
+  logger.warn('5. ✅ Validate Configuration:');
+  logger.warn('   • Run: npm run validate-env');
+  logger.warn('   • Start development: npm run dev');
+  logger.warn('   • Test authentication flow\n');
 
-  console.warn('📖 Additional Resources:');
-  console.warn(
+  logger.warn('📖 Additional Resources:');
+  logger.warn(
     '   • Auth0 Next.js Guide: https://auth0.com/docs/quickstart/webapp/nextjs',
   );
-  console.warn('   • Migration Guide: docs/AUTH0_MIGRATION_GUIDE.md');
-  console.warn('   • Environment Setup: docs/ENVIRONMENT_SETUP.md\n');
+  logger.warn('   • Migration Guide: docs/AUTH0_MIGRATION_GUIDE.md');
+  logger.warn('   • Environment Setup: docs/ENVIRONMENT_SETUP.md\n');
 }
 
 function checkDependencies() {
@@ -189,42 +220,42 @@ const dependencies = {
 const hasAuth0 = '@auth0/nextjs-auth0' in dependencies
 const hasSupabase = '@supabase/supabase-js' in dependencies;
 
-    console.warn('\n🔍 Dependency Check:');
+    logger.warn('\n🔍 Dependency Check:');
 
     if (hasAuth0) {
-      console.warn('✅ @auth0/nextjs-auth0 is installed');
+      logger.warn('✅ @auth0/nextjs-auth0 is installed');
     } else {
-      console.warn('❌ @auth0/nextjs-auth0 is NOT installed');
-      console.warn('   Run: npm install @auth0/nextjs-auth0');
+      logger.warn('❌ @auth0/nextjs-auth0 is NOT installed');
+      logger.warn('   Run: npm install @auth0/nextjs-auth0');
     }
 
     if (hasSupabase) {
-      console.warn('⚠️  Supabase dependencies still installed');
-      console.warn(
+      logger.warn('⚠️  Supabase dependencies still installed');
+      logger.warn(
         '   Consider removing: npm uninstall @supabase/supabase-js @supabase/auth-ui-react',
       );
     } else {
-      console.warn('✅ Supabase dependencies have been removed');
+      logger.warn('✅ Supabase dependencies have been removed');
     }
 
-    console.warn('');
+    logger.warn('');
   }
 }
 
 function main() {
-  console.warn('🚀 Auth0 Environment Setup for Zion Tech Marketplace\n');
+  logger.warn('🚀 Auth0 Environment Setup for Zion Tech Marketplace\n');
 
   try {
     createEnvFiles();
     checkDependencies();
     printInstructions();
 
-    console.warn('🎉 Auth0 environment setup complete!');
-    console.warn(
+    logger.warn('🎉 Auth0 environment setup complete!');
+    logger.warn(
       '   Next steps: Update .env.local with your Auth0 credentials and run npm run validate-env\n',
     );
   } catch (_error) {
-    console.error('❌ Setup failed:', error.message);
+    logger.error('❌ Setup failed:', error.message);
     process.exit(1);
   }
 }
@@ -238,3 +269,39 @@ module.exports = {
   createEnvFiles,
   printInstructions,
 };
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+    } catch (error) {
+      logger.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    logger.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

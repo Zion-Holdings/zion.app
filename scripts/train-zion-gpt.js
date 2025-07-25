@@ -1,4 +1,4 @@
-#!/usr/bin/env node;
+;
 import { readFile, writeFile } from fs/promises';import { execSync } from child_process';import path from path';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 if (!OPENAI_API_KEY) {

@@ -1,16 +1,46 @@
-#!/usr/bin/env node
 
-/**
- * 🔧 Login Tracing Test Script
- * Tests the enhanced login API with verbose logging
- * 🔐 SECURITY: Uses environment variables, no hardcoded credentials
- */
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
+
+
 
 const BASE_URL = _http://localhost:3000';
 // 🔐 SECURITY: Generate test cases from environment variables
 const getTestCases = () => {
   // Only run in development mode
-  if (process.env.NODE_ENV !== development') {    process.stdout.write('❌ This script only runs in development mode for security\n');    return [];
+  if (process.env.NODE_ENV !== 'development') {    process.stdout.write('❌ This script only runs in development mode for security\n');    return [];
   }
 
   const testCases = [];
@@ -34,7 +64,7 @@ const devUser3Password = process.env.DEV_USER_3_PASSWORD;
     // Test wrong password for same user
     testCases.push({
       name: Invalid Password - Dev User 1',      email: devUser1Email,
-      password: wrongpassword',      expectedStatus: 401,
+      password: 'wrongpassword',      expectedStatus: 401,
       description: Should fail with incorrect password'    });
   }
 
@@ -59,10 +89,10 @@ const devUser3Password = process.env.DEV_USER_3_PASSWORD;
     process.stdout.write('⚠️  No development users configured in environment variables\n');    process.stdout.write('💡 Using fallback test cases with generic credentials\n');    
     testCases.push(
       {
-        name: Fallback User Test',        email: dev@example.com',        password: dev123',        expectedStatus: 200,
+        name: Fallback User Test',        email: dev@example.com',        password: 'dev123',        expectedStatus: 200,
         description: Should succeed with fallback development user'      },
       {
-        name: Fallback Invalid Test',        email: dev@example.com',        password: wrongpassword',        expectedStatus: 401,
+        name: Fallback Invalid Test',        email: dev@example.com',        password: 'wrongpassword',        expectedStatus: 401,
         description: Should fail with incorrect password'      }
     );
   }
@@ -70,7 +100,7 @@ const devUser3Password = process.env.DEV_USER_3_PASSWORD;
   // Always add these standard test cases
   testCases.push(
     {
-      name: User Not Found',      email: nonexistent@example.com',      password: anypassword',      expectedStatus: 401,
+      name: User Not Found',      email: nonexistent@example.com',      password: 'anypassword',      expectedStatus: 401,
       description: Should fail with user not found message'    },
     {
       name: Missing Credentials',      email: ,      password: ,      expectedStatus: 400,
@@ -83,7 +113,7 @@ const devUser3Password = process.env.DEV_USER_3_PASSWORD;
 async function makeLoginRequest(email, password) {
   try {
     const response = await fetch(`${BASE_URL}/api/auth/login`, {
-      method: POST',      headers: {
+      method: 'POST',      headers: {
         Content-Type': application/json',      },
       body: JSON.stringify({ email, password })
     })
@@ -134,7 +164,7 @@ const result = await makeLoginRequest(testCase.email, testCase.password);
 async function runAllTests() {
   process.stdout.write('🔐 SECURITY: Login Tracing Test Suite\n');  process.stdout.write('=====================================\n\n');
   // Security check
-  if (process.env.NODE_ENV !== development') {    process.stdout.write('❌ This script only runs in development mode for security\n');    return;
+  if (process.env.NODE_ENV !== 'development') {    process.stdout.write('❌ This script only runs in development mode for security\n');    return;
   }
 
   process.stdout.write('🔒 Environment Security Check:\n');  process.stdout.write(`📋 NODE_ENV: ${process.env.NODE_ENV}\n`);
@@ -173,4 +203,41 @@ if (require.main === module) {
   runAllTests().catch(console.error);
 }
 
-module.exports = { runAllTests, getTestCases, makeLoginRequest }; 
+module.exports = { runAllTests, getTestCases, makeLoginRequest };
+    } catch (error) {
+      logger.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    logger.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 const fs = require('fs');
 const path = require('path');
@@ -31,7 +30,7 @@ function fixSyntaxErrors(content, filePath) {
 // Function to process a file
 function processFile(filePath) {
   try {
-    const content = fs.readFileSync(filePath, utf8');
+    const content = fs.readFileSync(filePath, 'utf8');
     const fixed = fixSyntaxErrors(content, filePath);
     
     if (content !== fixed) {
@@ -86,7 +85,7 @@ console.log(`✅ Fixed ${fixedCount} files in ${Date.now() - startTime}ms`);
 // Run ESLint to check if issues are resolved
 console.log('🔍 Running ESLint to verify fixes...');
 try {
-  execSync('npx eslint . --ext .js,.ts,.tsx --max-warnings 100', { stdio: inherit' });
+  execSync('npx eslint . --ext .js,.ts,.tsx --max-warnings 100', { stdio: 'inherit' });
   console.log('✅ ESLint passed!');
 } catch (error) {
   console.log('⚠️  Some ESLint issues remain, but syntax errors should be fixed.');

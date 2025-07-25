@@ -1,7 +1,29 @@
-#!/usr/bin/env node
+const winston = require('winston');
 
-const fs = require('fs')
-const { execSync } = require('child_process')
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json(),
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
+
+const fs = require('fs');
+const { execSync } = require('child_process');
 class UltimateAutomationDashboard {
   constructor() {
     this.processes = [
@@ -29,7 +51,7 @@ class UltimateAutomationDashboard {
       warning: '\x1b[33m',
       reset: '\x1b[0m',
     };
-    console.log(`${colors[type]}${message}${colors.reset}`);
+    logger.info(`${colors[type]}${message}${colors.reset}`);
   }
 
   checkProcess(processName) {
@@ -45,20 +67,20 @@ class UltimateAutomationDashboard {
 
   async generateDashboard() {
     console.clear();
-    console.log('\n🎯 ULTIMATE AUTOMATION DASHBOARD');
-    console.log('==================================\n');
+    logger.info('\n🎯 ULTIMATE AUTOMATION DASHBOARD');
+    logger.info('==================================\n');
 
     let totalRunning = 0;
     let totalProcesses = this.processes.length;
 
     // Process Status
-    console.log('🤖 AUTOMATION PROCESSES:');
-    console.log('========================\n');
+    logger.info('🤖 AUTOMATION PROCESSES:');
+    logger.info('========================\n');
 
     for (const process of this.processes) {
-      const count = this.checkProcess(process)
-const status = count > 0 ? '✅ RUNNING' : '❌ STOPPED'
-const instances = count > 0 ? ` (${count} instances)` : '';
+      const count = this.checkProcess(process);
+      const status = count > 0 ? '✅ RUNNING' : '❌ STOPPED';
+      const instances = count > 0 ? ` (${count} instances)` : '';
 
       this.log(
         `${status} ${process}${instances}`,
@@ -68,10 +90,10 @@ const instances = count > 0 ? ` (${count} instances)` : '';
     }
 
     // Statistics
-    console.log('\n📊 AUTOMATION STATISTICS:');
-    console.log('==========================')
-const runtime = Date.now() - this.startTime
-const uptime = Math.round(runtime / 1000);
+    logger.info('\n📊 AUTOMATION STATISTICS:');
+    logger.info('==========================');
+    const runtime = Date.now() - this.startTime;
+    const uptime = Math.round(runtime / 1000);
 
     this.log(`Total Processes: ${totalProcesses}`, 'info');
     this.log(
@@ -85,9 +107,9 @@ const uptime = Math.round(runtime / 1000);
     this.log(`Uptime: ${uptime}s`, 'info');
 
     // Reports Status
-    console.log('\n📈 AUTOMATION REPORTS:');
-    console.log('======================')
-const reportFiles = [
+    logger.info('\n📈 AUTOMATION REPORTS:');
+    logger.info('======================');
+    const reportFiles = [
       'automation/ai-improvement-report.json',
       'automation/health-report.json',
       'automation/optimization-report.json',
@@ -99,8 +121,8 @@ const reportFiles = [
     for (const file of reportFiles) {
       try {
         if (fs.existsSync(file)) {
-          const data = JSON.parse(fs.readFileSync(file, 'utf8'))
-const timestamp = new Date(
+          const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+          const timestamp = new Date(
             data.timestamp || Date.now(),
           ).toLocaleString();
           this.log(`✅ ${file} - Last updated: ${timestamp}`, 'success');
@@ -113,17 +135,17 @@ const timestamp = new Date(
     }
 
     // System Health
-    console.log('\n🏥 SYSTEM HEALTH:');
-    console.log('=================')
-const healthStatus =
+    logger.info('\n🏥 SYSTEM HEALTH:');
+    logger.info('=================');
+    const healthStatus =
       totalRunning >= totalProcesses * 0.8
         ? 'EXCELLENT'
         : totalRunning >= totalProcesses * 0.6
           ? 'GOOD'
           : totalRunning >= totalProcesses * 0.4
             ? 'FAIR'
-            : 'POOR'
-const healthColor =
+            : 'POOR';
+    const healthColor =
       healthStatus === 'EXCELLENT'
         ? 'success'
         : healthStatus === 'GOOD'
@@ -139,9 +161,9 @@ const healthColor =
     );
 
     // Performance Metrics
-    console.log('\n⚡ PERFORMANCE METRICS:');
-    console.log('=======================')
-const memoryUsage = process.memoryUsage();
+    logger.info('\n⚡ PERFORMANCE METRICS:');
+    logger.info('=======================');
+    const memoryUsage = process.memoryUsage();
     this.log(
       `Memory Usage: ${Math.round(memoryUsage.heapUsed / 1024 / 1024)}MB`,
       'info',
@@ -156,7 +178,7 @@ const memoryUsage = process.memoryUsage();
   }
 
   async startContinuousMonitoring() {
-    console.log('\n🔄 Starting continuous monitoring...\n');
+    logger.info('\n🔄 Starting continuous monitoring...\n');
 
     setInterval(async () => {
       await this.generateDashboard();

@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 /**
  * Zion App - Autonomous Automation System
@@ -75,8 +97,8 @@ class AutonomousAutomationSystem extends EventEmitter {
       
       // Logging and monitoring
       logging: {
-        level: info',
-        file: logs/autonomous-automation.log',
+        level: 'info',
+        file: 'logs/autonomous-automation.log',
         maxSize: 10m',
         maxFiles: 5
       }
@@ -89,7 +111,7 @@ class AutonomousAutomationSystem extends EventEmitter {
       agents: new Map(),
       tasks: new Map(),
       health: {
-        status: healthy',
+        status: 'healthy',
         lastCheck: Date.now(),
         failures: 0,
         uptime: 0
@@ -108,7 +130,7 @@ class AutonomousAutomationSystem extends EventEmitter {
   }
 
   async initializeComponents() {
-    console.log('🤖 Initializing Autonomous Automation System...');
+    logger.info('🤖 Initializing Autonomous Automation System...');
     
     // Create log directory
     await this.ensureLogDirectory();
@@ -131,7 +153,7 @@ class AutonomousAutomationSystem extends EventEmitter {
     // Initialize task scheduler
     this.initializeTaskScheduler();
     
-    console.log('✅ Autonomous Automation System initialized');
+    logger.info('✅ Autonomous Automation System initialized');
   }
 
   async ensureLogDirectory() {
@@ -139,7 +161,7 @@ class AutonomousAutomationSystem extends EventEmitter {
     try {
       await fs.mkdir(logDir, { recursive: true });
     } catch (error) {
-      console.warn('⚠️ Could not create log directory:', error.message);
+      logger.warn('⚠️ Could not create log directory:', error.message);
     }
   }
 
@@ -170,7 +192,7 @@ class AutonomousAutomationSystem extends EventEmitter {
     // Health check
     this.app.get('/health', (req, res) => {
       res.json({
-        status: healthy',
+        status: 'healthy',
         system: this.config.systemName,
         version: this.config.version,
         uptime: this.getUptime(),
@@ -224,77 +246,77 @@ class AutonomousAutomationSystem extends EventEmitter {
 
   setupWebSocketEvents() {
     this.io.on('connection', (socket) => {
-      console.log('🔌 Client connected to autonomous system');
+      logger.info('🔌 Client connected to autonomous system');
       
       // Send initial state
-      socket.emit('system:state', this.state);
+      socket.emit('system: 'state', this.state);
       
       // Handle client events
-      socket.on('agent:trigger', async (data) => {
+      socket.on('agent: 'trigger', async (data) => {
         try {
           const result = await this.executeAgent(data.agent);
-          socket.emit('agent:result', { agent: data.agent, result });
+          socket.emit('agent: 'result', { agent: data.agent, result });
         } catch (error) {
-          socket.emit('agent:error', { agent: data.agent, error: error.message });
+          socket.emit('agent: 'error', { agent: data.agent, error: error.message });
         }
       });
       
       socket.on('disconnect', () => {
-        console.log('🔌 Client disconnected from autonomous system');
+        logger.info('🔌 Client disconnected from autonomous system');
       });
     });
   }
 
   async initializeAgents() {
-    console.log('🤖 Initializing autonomous agents...');
+    logger.info('🤖 Initializing autonomous agents...');
     
     const agentDefinitions = [
       {
-        name: codeQuality',
+        name: 'codeQuality',
         description: Code quality analysis and improvement',
-        script: scripts/ai-code-review-automation.cjs',
+        script: 'scripts/ai-code-review-automation.cjs',
         dependencies: ['node', npm']
       },
       {
-        name: performance',
+        name: 'performance',
         description: Performance monitoring and optimization',
-        script: scripts/performance-optimization-automation.cjs',
+        script: 'scripts/performance-optimization-automation.cjs',
         dependencies: ['node']
       },
       {
-        name: security',
+        name: 'security',
         description: Security scanning and vulnerability detection',
-        script: scripts/security-monitoring-automation.cjs',
+        script: 'scripts/security-monitoring-automation.cjs',
         dependencies: ['node', npm']
       },
       {
-        name: deployment',
+        name: 'deployment',
         description: Automated deployment and release management',
-        script: scripts/deployment-automation.cjs',
+        script: 'scripts/deployment-automation.cjs',
         dependencies: ['node', git']
       },
       {
-        name: monitoring',
+        name: 'monitoring',
         description: System monitoring and alerting',
-        script: scripts/monitoring-automation.cjs',
+        script: 'scripts/monitoring-automation.cjs',
         dependencies: ['node']
       },
       {
-        name: optimization',
+        name: 'optimization',
         description: Continuous optimization and improvement',
-        script: scripts/optimization-automation.cjs',
+        script: 'scripts/optimization-automation.cjs',
         dependencies: ['node', npm']
       },
       {
-        name: testing',
+        name: 'testing',
         description: Automated testing and quality assurance',
-        script: scripts/testing-automation.cjs',
+        script: 'scripts/testing-automation.cjs',
         dependencies: ['node', npm']
       },
       {
-        name: documentation',
+        name: 'documentation',
         description: Documentation generation and maintenance',
-        script: scripts/documentation-automation.cjs',
+        script: 'scripts/documentation-automation.cjs',
         dependencies: ['node']
       }
     ];
@@ -314,7 +336,7 @@ class AutonomousAutomationSystem extends EventEmitter {
       
       const agent = {
         ...agentDef,
-        status: idle',
+        status: 'idle',
         lastRun: null,
         nextRun: null,
         successCount: 0,
@@ -324,13 +346,13 @@ class AutonomousAutomationSystem extends EventEmitter {
       };
       
       this.state.agents.set(agentDef.name, agent);
-      console.log(`✅ Registered agent: ${agentDef.name}`);
+      logger.info(`✅ Registered agent: ${agentDef.name}`);
       
       // Schedule agent execution
       this.scheduleAgent(agentDef.name);
       
     } catch (error) {
-      console.warn(`⚠️ Could not register agent ${agentDef.name}:`, error.message);
+      logger.warn(`⚠️ Could not register agent ${agentDef.name}:`, error.message);
     }
   }
 
@@ -345,7 +367,7 @@ class AutonomousAutomationSystem extends EventEmitter {
       await this.executeAgent(agentName);
     });
     
-    console.log(`📅 Scheduled agent: ${agentName} (${interval})`);
+    logger.info(`📅 Scheduled agent: ${agentName} (${interval})`);
   }
 
   async executeAgent(agentName) {
@@ -355,11 +377,11 @@ class AutonomousAutomationSystem extends EventEmitter {
     }
     
     if (agent.isRunning) {
-      console.log(`⏳ Agent ${agentName} is already running`);
+      logger.info(`⏳ Agent ${agentName} is already running`);
       return;
     }
     
-    console.log(`🚀 Executing agent: ${agentName}`);
+    logger.info(`🚀 Executing agent: ${agentName}`);
     
     agent.isRunning = true;
     agent.status = running';
@@ -393,11 +415,11 @@ class AutonomousAutomationSystem extends EventEmitter {
         this.state.metrics.performanceGains += result.performanceGain;
       }
       
-      console.log(`✅ Agent ${agentName} completed successfully (${executionTime}ms)`);
+      logger.info(`✅ Agent ${agentName} completed successfully (${executionTime}ms)`);
       
       // Emit event for real-time updates
-      this.emit('agent:completed', { agent: agentName, result, executionTime });
-      this.io.emit('agent:completed', { agent: agentName, result, executionTime });
+      this.emit('agent: 'completed', { agent: agentName, result, executionTime });
+      this.io.emit('agent: 'completed', { agent: agentName, result, executionTime });
       
       return result;
       
@@ -406,14 +428,14 @@ class AutonomousAutomationSystem extends EventEmitter {
       agent.status = failed';
       this.state.metrics.tasksFailed++;
       
-      console.error(`❌ Agent ${agentName} failed:`, error.message);
+      logger.error(`❌ Agent ${agentName} failed:`, error.message);
       
       // Trigger self-healing
       await this.triggerSelfHealing(agentName, error);
       
       // Emit event for real-time updates
-      this.emit('agent:failed', { agent: agentName, error: error.message });
-      this.io.emit('agent:failed', { agent: agentName, error: error.message });
+      this.emit('agent: 'failed', { agent: agentName, error: error.message });
+      this.io.emit('agent: 'failed', { agent: agentName, error: error.message });
       
       throw error;
       
@@ -458,10 +480,151 @@ class AutonomousAutomationSystem extends EventEmitter {
       });
       
       // Set timeout
-      setTimeout(() => {
+      
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => {
         child.kill();
         reject(new Error('Agent script timeout'));
-      }, 300000); // 5 minutes
+      },                                                300000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+; // 5 minutes
     });
   }
 
@@ -471,7 +634,7 @@ class AutonomousAutomationSystem extends EventEmitter {
   }
 
   async initializeAIDecisionEngine() {
-    console.log('🧠 Initializing AI decision engine...');
+    logger.info('🧠 Initializing AI decision engine...');
     
     // Initialize AI providers
     this.aiProviders = new Map();
@@ -496,14 +659,14 @@ class AutonomousAutomationSystem extends EventEmitter {
     
     if (this.config.ai.providers.includes('claude')) {
       this.aiProviders.set('claude', {
-        name: Claude',
+        name: 'Claude',
         enabled: true,
         apiKey: process.env.CLAUDE_API_KEY,
         model: process.env.CLAUDE_MODEL || claude-3-sonnet-20240229
       });
     }
     
-    console.log(`✅ AI decision engine initialized with ${this.aiProviders.size} providers`);
+    logger.info(`✅ AI decision engine initialized with ${this.aiProviders.size} providers`);
   }
 
   async makeAIDecision(context, options = []) {
@@ -521,7 +684,7 @@ class AutonomousAutomationSystem extends EventEmitter {
               return decision;
             }
           } catch (error) {
-            console.warn(`⚠️ AI provider ${providerName} failed:`, error.message);
+            logger.warn(`⚠️ AI provider ${providerName} failed:`, error.message);
             continue;
           }
         }
@@ -531,7 +694,7 @@ class AutonomousAutomationSystem extends EventEmitter {
       return this.makeFallbackDecision(context, options);
       
     } catch (error) {
-      console.error('❌ AI decision making failed:', error.message);
+      logger.error('❌ AI decision making failed:', error.message);
       return this.makeFallbackDecision(context, options);
     }
   }
@@ -549,7 +712,148 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
     `;
     
     // Simulate AI response
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise(resolve => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                                                1000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
     
     return {
       decision: options[0] || no_action',
@@ -562,10 +866,10 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
   makeFallbackDecision(context, options) {
     // Rule-based fallback decision making
     const rules = [
-      { condition: () => context.errors > 0, action: fix_errors', priority: 1 },
-      { condition: () => context.performance < 80, action: optimize_performance', priority: 2 },
-      { condition: () => context.securityIssues > 0, action: fix_security', priority: 1 },
-      { condition: () => context.testCoverage < 80, action: improve_tests', priority: 3 }
+      { condition: () => context.errors > 0, action: 'fix_errors', priority: 1 },
+      { condition: () => context.performance < 80, action: 'optimize_performance', priority: 2 },
+      { condition: () => context.securityIssues > 0, action: 'fix_security', priority: 1 },
+      { condition: () => context.testCoverage < 80, action: 'improve_tests', priority: 3 }
     ];
     
     for (const rule of rules.sort((a, b) => a.priority - b.priority)) {
@@ -580,7 +884,7 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
     }
     
     return {
-      decision: no_action',
+      decision: 'no_action',
       confidence: 0.8,
       reasoning: No critical issues detected',
       provider: rule_based
@@ -590,7 +894,7 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
   initializeSelfHealing() {
     if (!this.config.selfHealing.enabled) return;
     
-    console.log('🔧 Initializing self-healing system...');
+    logger.info('🔧 Initializing self-healing system...');
     
     // Health check interval
     setInterval(() => {
@@ -598,16 +902,16 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
     }, this.config.selfHealing.healthCheckInterval);
     
     // Failure monitoring
-    this.on('agent:failed', async (data) => {
+    this.on('agent: 'failed', async (data) => {
       await this.handleAgentFailure(data.agent, data.error);
     });
     
-    console.log('✅ Self-healing system initialized');
+    logger.info('✅ Self-healing system initialized');
   }
 
   async performHealthCheck() {
     const health = {
-      status: healthy',
+      status: 'healthy',
       timestamp: Date.now(),
       agents: {},
       system: {}
@@ -639,8 +943,8 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
     this.state.health = health;
     
     // Emit health update
-    this.emit('health:update', health);
-    this.io.emit('health:update', health);
+    this.emit('health: 'update', health);
+    this.io.emit('health: 'update', health);
   }
 
   async getSystemResources() {
@@ -658,20 +962,20 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
   }
 
   async handleAgentFailure(agentName, error) {
-    console.log(`🔧 Handling failure for agent: ${agentName}`);
+    logger.info(`🔧 Handling failure for agent: ${agentName}`);
     
     const agent = this.state.agents.get(agentName);
     if (!agent) return;
     
     // Check failure threshold
     if (agent.failureCount >= this.config.selfHealing.failureThreshold) {
-      console.log(`🚨 Agent ${agentName} exceeded failure threshold, triggering recovery`);
+      logger.info(`🚨 Agent ${agentName} exceeded failure threshold, triggering recovery`);
       await this.triggerAgentRecovery(agentName);
     }
   }
 
   async triggerAgentRecovery(agentName) {
-    console.log(`🔄 Triggering recovery for agent: ${agentName}`);
+    logger.info(`🔄 Triggering recovery for agent: ${agentName}`);
     
     try {
       // Reset agent state
@@ -682,10 +986,10 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
       // Attempt to restart agent
       await this.executeAgent(agentName);
       
-      console.log(`✅ Agent ${agentName} recovered successfully`);
+      logger.info(`✅ Agent ${agentName} recovered successfully`);
       
     } catch (error) {
-      console.error(`❌ Failed to recover agent ${agentName}:`, error.message);
+      logger.error(`❌ Failed to recover agent ${agentName}:`, error.message);
       
       // Mark agent as disabled
       const agent = this.state.agents.get(agentName);
@@ -697,7 +1001,7 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
   async triggerSelfHealing(agentName, error) {
     if (!this.config.selfHealing.enabled) return;
     
-    console.log(`🔧 Triggering self-healing for ${agentName}`);
+    logger.info(`🔧 Triggering self-healing for ${agentName}`);
     
     try {
       // Make AI decision on how to handle the error
@@ -712,15 +1016,297 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
         restart_system
       ]);
       
-      console.log(`🤖 AI decision for ${agentName}: ${decision.decision}`);
+      logger.info(`🤖 AI decision for ${agentName}: ${decision.decision}`);
       
       // Execute the decision
       switch (decision.decision) {
         case retry_immediately':
-          setTimeout(() => this.executeAgent(agentName), 1000);
+          
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => this.executeAgent(agentName),                                                1000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
           break;
         case retry_with_backoff':
-          setTimeout(() => this.executeAgent(agentName), 30000);
+          
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => this.executeAgent(agentName),                                                30000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
           break;
         case disable_agent':
           const agent = this.state.agents.get(agentName);
@@ -728,18 +1314,18 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
           agent.status = disabled';
           break;
         case restart_system':
-          console.log('🔄 AI decided to restart the system');
+          logger.info('🔄 AI decided to restart the system');
           this.restart();
           break;
       }
       
     } catch (error) {
-      console.error('❌ Self-healing failed:', error.message);
+      logger.error('❌ Self-healing failed:', error.message);
     }
   }
 
   initializeResourceMonitor() {
-    console.log('📊 Initializing resource monitor...');
+    logger.info('📊 Initializing resource monitor...');
     
     // Resource cleanup interval
     setInterval(() => {
@@ -752,16 +1338,16 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
       
       if (resources.memory > this.config.resources.maxMemoryUsage ||
           resources.cpu > this.config.resources.maxCpuUsage) {
-        console.warn('⚠️ High resource usage detected');
+        logger.warn('⚠️ High resource usage detected');
         await this.optimizeResourceUsage();
       }
     }, 60000); // Check every minute
     
-    console.log('✅ Resource monitor initialized');
+    logger.info('✅ Resource monitor initialized');
   }
 
   async performResourceCleanup() {
-    console.log('🧹 Performing resource cleanup...');
+    logger.info('🧹 Performing resource cleanup...');
     
     try {
       // Clean up old logs
@@ -773,24 +1359,24 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
       // Optimize memory usage
       global.gc && global.gc();
       
-      console.log('✅ Resource cleanup completed');
+      logger.info('✅ Resource cleanup completed');
     } catch (error) {
-      console.error('❌ Resource cleanup failed:', error.message);
+      logger.error('❌ Resource cleanup failed:', error.message);
     }
   }
 
   async cleanupOldLogs() {
     // Implementation for cleaning old log files
-    console.log('📝 Cleaning old log files...');
+    logger.info('📝 Cleaning old log files...');
   }
 
   async cleanupTempFiles() {
     // Implementation for cleaning temporary files
-    console.log('🗑️ Cleaning temporary files...');
+    logger.info('🗑️ Cleaning temporary files...');
   }
 
   async optimizeResourceUsage() {
-    console.log('⚡ Optimizing resource usage...');
+    logger.info('⚡ Optimizing resource usage...');
     
     // Reduce concurrent tasks
     this.config.ai.maxConcurrentTasks = Math.max(1, this.config.ai.maxConcurrentTasks - 1);
@@ -808,7 +1394,7 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
   }
 
   initializeTaskScheduler() {
-    console.log('📅 Initializing task scheduler...');
+    logger.info('📅 Initializing task scheduler...');
     
     // Task queue management
     this.taskQueue = [];
@@ -819,7 +1405,7 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
       this.processTaskQueue();
     }, 1000);
     
-    console.log('✅ Task scheduler initialized');
+    logger.info('✅ Task scheduler initialized');
   }
 
   async processTaskQueue() {
@@ -835,14 +1421,14 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
     try {
       await this.executeTask(task);
     } catch (error) {
-      console.error(`❌ Task ${task.id} failed:`, error.message);
+      logger.error(`❌ Task ${task.id} failed:`, error.message);
     } finally {
       this.runningTasks.delete(task.id);
     }
   }
 
   async executeTask(task) {
-    console.log(`🚀 Executing task: ${task.id}`);
+    logger.info(`🚀 Executing task: ${task.id}`);
     
     switch (task.type) {
       case agent':
@@ -850,7 +1436,7 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
         break;
       case ai_decision':
         const decision = await this.makeAIDecision(task.context, task.options);
-        this.emit('task:completed', { task, result: decision });
+        this.emit('task: 'completed', { task, result: decision });
         break;
       case system_action':
         await this.executeSystemAction(task.action, task.params);
@@ -883,43 +1469,43 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
 
   async start() {
     if (this.state.isRunning) {
-      console.log('⚠️ Autonomous system is already running');
+      logger.info('⚠️ Autonomous system is already running');
       return;
     }
     
-    console.log('🚀 Starting Autonomous Automation System...');
+    logger.info('🚀 Starting Autonomous Automation System...');
     
     this.state.isRunning = true;
     this.state.startTime = Date.now();
     
     // Start server
     this.server.listen(this.config.port, () => {
-      console.log(`✅ Autonomous system running on port ${this.config.port}`);
-      console.log(`🌐 Dashboard: http://localhost:${this.config.port}`);
-      console.log(`📊 Health: http://localhost:${this.config.port}/health`);
+      logger.info(`✅ Autonomous system running on port ${this.config.port}`);
+      logger.info(`🌐 Dashboard: http://localhost:${this.config.port}`);
+      logger.info(`📊 Health: http://localhost:${this.config.port}/health`);
     });
     
     // Emit start event
     this.emit('system:started');
-    this.io.emit('system:started', { timestamp: Date.now() });
+    this.io.emit('system: 'started', { timestamp: Date.now() });
     
-    console.log('🎉 Autonomous Automation System is now running!');
+    logger.info('🎉 Autonomous Automation System is now running!');
   }
 
   async stop() {
     if (!this.state.isRunning) {
-      console.log('⚠️ Autonomous system is not running');
+      logger.info('⚠️ Autonomous system is not running');
       return;
     }
     
-    console.log('🛑 Stopping Autonomous Automation System...');
+    logger.info('🛑 Stopping Autonomous Automation System...');
     
     this.state.isRunning = false;
     
     // Stop all agents
     for (const [name, agent] of this.state.agents) {
       if (agent.isRunning) {
-        console.log(`⏹️ Stopping agent: ${name}`);
+        logger.info(`⏹️ Stopping agent: ${name}`);
         agent.status = stopped';
       }
     }
@@ -932,13 +1518,154 @@ Return JSON format: {"decision": "option_name", "confidence": 0.95, "reasoning":
     // Emit stop event
     this.emit('system:stopped');
     
-    console.log('✅ Autonomous Automation System stopped');
+    logger.info('✅ Autonomous Automation System stopped');
   }
 
   restart() {
-    console.log('🔄 Restarting Autonomous Automation System...');
+    logger.info('🔄 Restarting Autonomous Automation System...');
     this.stop().then(() => {
-      setTimeout(() => this.start(), 1000);
+      
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => this.start(),                                                1000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
     });
   }
 }
@@ -952,20 +1679,20 @@ if (require.main === module) {
   
   // Handle graceful shutdown
   process.on('SIGINT', async () => {
-    console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
     await system.stop();
     process.exit(0);
   });
   
   process.on('SIGTERM', async () => {
-    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
     await system.stop();
     process.exit(0);
   });
   
   // Start the system
   system.start().catch(error => {
-    console.error('❌ Failed to start autonomous system:', error.message);
+    logger.error('❌ Failed to start autonomous system:', error.message);
     process.exit(1);
   });
 } 

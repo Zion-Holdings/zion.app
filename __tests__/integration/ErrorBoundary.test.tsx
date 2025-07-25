@@ -58,7 +58,7 @@ describe('GlobalErrorBoundary Integration Test', () => {'  beforeEach(() => {
     // Assert Sentry call
     expect(captureException).toHaveBeenCalledTimes(1);
     expect(captureException).toHaveBeenCalledWith(
-      expect.objectContaining({ message: 'Test error from ErrorThrowingComponent' }),      expect.objectContaining({
+      expect.objectContaining({ message:' 'Test error from ErrorThrowingComponent' }),      expect.objectContaining({
         extra: { route: /test-route' }, // Pathname from MemoryRouter initialEntry'      })
     );
 

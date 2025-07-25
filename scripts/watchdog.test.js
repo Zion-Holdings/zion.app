@@ -1,5 +1,38 @@
- 
-// Linter workaround: define unused variables to satisfy no-undef errors
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting Script...');
+    
+    try {
+      // Linter workaround: define unused variables to satisfy no-undef errors
 // These are not referenced anywhere in the code, but the linter incorrectly reports them as undefined.
 const _PERF_ERROR_REGEX = undefined
 const _perfErrorStreak = undefined; // Unused undefined
@@ -237,3 +270,40 @@ const os = require('os-utils'); // Get the mock from __mocks__'    os.memUsage.m
 // expect(mockLogError).toHaveBeenCalledWith -> expect(mockLogErrorImpl).toHaveBeenCalledWith
 // This change is separate from the primary diff for triggerSelfHeal but related.
 // I'll do this in a subsequent step if tests still fail on these specific lines.'// For now, focusing on the triggerSelfHeal suite's beforeEach.
+    } catch (error) {
+      logger.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    logger.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

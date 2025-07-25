@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 const express = require('express');
 const path = require('path');
 const EventEmitter = require('events');
@@ -11,7 +34,7 @@ class DashboardServer extends EventEmitter {
       host: process.env.DASHBOARD_HOST || localhost',
       enableCORS: true,
       enableWebSocket: true,
-      staticPath: path.join(__dirname, public'),
+      staticPath: path.join(__dirname, 'public'),
       apiPrefix: /api',
       auth: {
         enabled: false,
@@ -42,7 +65,7 @@ class DashboardServer extends EventEmitter {
         res.header('Access-Control-Allow-Origin', *');
         res.header('Access-Control-Allow-Methods', GET, POST, PUT, DELETE, OPTIONS');
         res.header('Access-Control-Allow-Headers', Content-Type, Authorization');
-        if (req.method === OPTIONS') {
+        if (req.method === 'OPTIONS') {
           res.sendStatus(200);
         } else {
           next();
@@ -66,7 +89,7 @@ class DashboardServer extends EventEmitter {
 
     // Logging
     this.app.use((req, res, next) => {
-      console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
+      logger.info(`${new Date().toISOString()} - ${req.method} ${req.path}`);
       next();
     });
   }
@@ -77,7 +100,7 @@ class DashboardServer extends EventEmitter {
     // Health check
     this.app.get(`${api}/health`, (req, res) => {
       res.json({
-        status: healthy',
+        status: 'healthy',
         timestamp: new Date().toISOString(),
         uptime: process.uptime()
       });
@@ -224,7 +247,7 @@ class DashboardServer extends EventEmitter {
 
     // Catch-all for SPA
     this.app.get('*', (req, res) => {
-      res.sendFile(path.join(this.config.staticPath, index.html'));
+      res.sendFile(path.join(this.config.staticPath, 'index.html'));
     });
   }
 
@@ -235,12 +258,12 @@ class DashboardServer extends EventEmitter {
     this.wss = new WebSocket.Server({ noServer: true });
 
     this.wss.on('connection', (ws) => {
-      console.log('🔌 WebSocket client connected');
+      logger.info('🔌 WebSocket client connected');
       this.clients.add(ws);
 
       // Send initial status
       ws.send(JSON.stringify({
-        type: status',
+        type: 'status',
         data: this.getSystemStatus()
       }));
 
@@ -249,12 +272,12 @@ class DashboardServer extends EventEmitter {
           const data = JSON.parse(message);
           this.handleWebSocketMessage(ws, data);
         } catch (error) {
-          console.error('WebSocket message error:', error);
+          logger.error('WebSocket message error:', error);
         }
       });
 
       ws.on('close', () => {
-        console.log('🔌 WebSocket client disconnected');
+        logger.info('🔌 WebSocket client disconnected');
         this.clients.delete(ws);
       });
     });
@@ -270,7 +293,7 @@ class DashboardServer extends EventEmitter {
         this.handleCommand(data.command, data.params);
         break;
       default:
-        console.log('Unknown WebSocket message type:', data.type);
+        logger.info('Unknown WebSocket message type:', data.type);
     }
   }
 
@@ -288,7 +311,7 @@ class DashboardServer extends EventEmitter {
   // API Methods
   getSystemStatus() {
     return {
-      status: running',
+      status: 'running',
       uptime: process.uptime(),
       timestamp: new Date().toISOString(),
       version: process.env.npm_package_version || 1.0.0',
@@ -384,7 +407,7 @@ class DashboardServer extends EventEmitter {
 
     return await this.notificationManager.sendNotification(
       Test notification from dashboard',
-      { priority: medium', category: info', taskName: dashboard' }
+      { priority: 'medium', category: 'info', taskName: 'dashboard' }
     );
   }
 
@@ -409,12 +432,12 @@ class DashboardServer extends EventEmitter {
 
   restartSystem() {
     this.emit('restart');
-    console.log('🔄 System restart initiated');
+    logger.info('🔄 System restart initiated');
   }
 
   shutdownSystem() {
     this.emit('shutdown');
-    console.log('🛑 System shutdown initiated');
+    logger.info('🛑 System shutdown initiated');
   }
 
   getConfiguration() {
@@ -430,7 +453,7 @@ class DashboardServer extends EventEmitter {
 
   updateConfiguration(newConfig) {
     // This would update the configuration and restart affected components
-    console.log('⚙️ Configuration update requested:', newConfig);
+    logger.info('⚙️ Configuration update requested:', newConfig);
     return { message: Configuration update initiated' };
   }
 
@@ -490,7 +513,7 @@ class DashboardServer extends EventEmitter {
     return new Promise((resolve, reject) => {
       try {
         this.server = this.app.listen(this.config.port, this.config.host, () => {
-          console.log(`🌐 Dashboard server running at http://${this.config.host}:${this.config.port}`);
+          logger.info(`🌐 Dashboard server running at http://${this.config.host}:${this.config.port}`);
           resolve();
         });
 
@@ -513,7 +536,7 @@ class DashboardServer extends EventEmitter {
     return new Promise((resolve) => {
       if (this.server) {
         this.server.close(() => {
-          console.log('🛑 Dashboard server stopped');
+          logger.info('🛑 Dashboard server stopped');
           resolve();
         });
       } else {

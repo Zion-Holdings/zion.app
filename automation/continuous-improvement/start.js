@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 /**
  * Zion App - Enhanced Continuous Improvement Startup Script
@@ -21,14 +43,14 @@ class AutomationStartup {
     // Configuration
     this.config = {
       port: process.env.AUTOMATION_PORT || 3001,
-      logLevel: process.env.LOG_LEVEL || info',      enableDashboard: process.env.ENABLE_DASHBOARD === true',      enableSlack: process.env.ENABLE_SLACK === true',      enableMonitoring: process.env.ENABLE_MONITORING === true''    };
+      logLevel: process.env.LOG_LEVEL || info',      enableDashboard: process.env.ENABLE_DASHBOARD === 'true',      enableSlack: process.env.ENABLE_SLACK === 'true',      enableMonitoring: process.env.ENABLE_MONITORING === true''    };
   }
 
   /**
    * Start the automation system
    */
   async start() {
-    console.log('🚀 Starting Zion App Enhanced Automation System...');    console.log('=' .repeat(60));    
+    logger.info('🚀 Starting Zion App Enhanced Automation System...');    logger.info('=' .repeat(60));    
     try {
       // Validate environment
       await this.validateEnvironment();
@@ -57,7 +79,7 @@ class AutomationStartup {
       this.isRunning = true;
       this.startTime = new Date();
       
-      console.log('✅ Enhanced Automation System started successfully!');      console.log('📊 Dashboard: http://localhost:' + this.config.port + /dashboard');      console.log('🔗 Health Check: http://localhost:' + this.config.port + /health');      console.log('📈 Monitoring:  + (this.config.enableMonitoring ? Enabled' : Disabled'));      console.log('🤖 Slack Integration:  + (this.config.enableSlack ? Enabled' : Disabled'));      console.log('=' .repeat(60));      
+      logger.info('✅ Enhanced Automation System started successfully!');      logger.info('📊 Dashboard: http://localhost:' + this.config.port + /dashboard');      logger.info('🔗 Health Check: http://localhost:' + this.config.port + /health');      logger.info('📈 Monitoring:  + (this.config.enableMonitoring ? Enabled' : Disabled'));      logger.info('🤖 Slack Integration:  + (this.config.enableSlack ? Enabled' : Disabled'));      logger.info('=' .repeat(60));      
       // Log initial status
       this.logStatus();
       
@@ -65,7 +87,7 @@ class AutomationStartup {
       this.startStatusUpdates();
       
     } catch (error) {
-      console.error('❌ Failed to start automation system:', error);      process.exit(1);
+      logger.error('❌ Failed to start automation system:', error);      process.exit(1);
     }
   }
 
@@ -73,7 +95,7 @@ class AutomationStartup {
    * Validate environment configuration
    */
   async validateEnvironment() {
-    console.log('🔍 Validating environment configuration...')
+    logger.info('🔍 Validating environment configuration...')
 const requiredEnvVars = [
       CURSOR_API_KEY',CURSOR_WORKSPACE_ID''    ]
 const optionalEnvVars = [
@@ -82,12 +104,12 @@ const optionalEnvVars = [
     // Check required environment variables
     const missing = requiredEnvVars.filter(varName => !process.env[varName]);
     if (missing.length > 0) {
-      console.warn('⚠️ Missing required environment variables:', missing.join(', ));      console.warn('Some features may be limited without proper configuration');    }
+      logger.warn('⚠️ Missing required environment variables:', missing.join(', ));      logger.warn('Some features may be limited without proper configuration');    }
     
     // Check optional environment variables
     const available = optionalEnvVars.filter(varName => process.env[varName]);
     if (available.length > 0) {
-      console.log('✅ Available optional features:', available.join(', ));    }
+      logger.info('✅ Available optional features:', available.join(', ));    }
     
     // Check project structure
     const requiredFiles = [
@@ -99,52 +121,52 @@ const optionalEnvVars = [
       }
     }
     
-    console.log('✅ Environment validation completed');  }
+    logger.info('✅ Environment validation completed');  }
 
   /**
    * Initialize the automation system
    */
   async initializeAutomation() {
-    console.log('🔧 Initializing enhanced automation system...');    
+    logger.info('🔧 Initializing enhanced automation system...');    
     this.automation = new EnhancedAutomation();
     
     // Start the automation
     await this.automation.start();
     
-    console.log('✅ Automation system initialized');  }
+    logger.info('✅ Automation system initialized');  }
 
   /**
    * Start monitoring system
    */
   async startMonitoring() {
-    console.log('📡 Starting monitoring system...');    
+    logger.info('📡 Starting monitoring system...');    
     // Start performance monitoring
-    const monitorProcess = spawn('node', ['automation/performance/monitor.js'], {'      stdio: pipe',      detached: false
+    const monitorProcess = spawn('node', ['automation/performance/monitor.js'], {'      stdio: 'pipe',      detached: false
     });
     
-    monitorProcess.stdout.on('data', (data) => {'      console.log(`📊 Monitor: ${data.toString().trim()}`);
+    monitorProcess.stdout.on('data', (data) => {'      logger.info(`📊 Monitor: ${data.toString().trim()}`);
     });
     
-    monitorProcess.stderr.on('data', (data) => {'      console.error(`❌ Monitor Error: ${data.toString().trim()}`);
+    monitorProcess.stderr.on('data', (data) => {'      logger.error(`❌ Monitor Error: ${data.toString().trim()}`);
     });
     
-    monitorProcess.on('close', (code) => {'      console.log(`📡 Monitor process exited with code ${code}`);
+    monitorProcess.on('close', (code) => {'      logger.info(`📡 Monitor process exited with code ${code}`);
     });
     
-    console.log('✅ Monitoring system started');  }
+    logger.info('✅ Monitoring system started');  }
 
   /**
    * Start dashboard
    */
   async startDashboard() {
-    console.log('📊 Starting dashboard...');    
+    logger.info('📊 Starting dashboard...');    
     // Create simple dashboard server
     const express = require('express');    const app = express();
     
     app.use(express.json());
-    app.use(express.static(path.join(__dirname, dashboard')));    
+    app.use(express.static(path.join(__dirname, 'dashboard')));    
     // Dashboard routes
-    app.get('/dashboard', (req, res) => {'      res.sendFile(path.join(__dirname, dashboard', index.html'));    });
+    app.get('/dashboard', (req, res) => {'      res.sendFile(path.join(__dirname, dashboard', 'index.html'));    });
     
     app.get('/api/status', (req, res) => {'      res.json(this.automation.getStatus());
     });
@@ -162,7 +184,7 @@ const optionalEnvVars = [
     });
     
     app.get('/health', (req, res) => {'      res.json({
-        status: healthy',        uptime: process.uptime(),
+        status: 'healthy',        uptime: process.uptime(),
         automation: this.automation.getStatus(),
         timestamp: new Date().toISOString()
       });
@@ -170,23 +192,23 @@ const optionalEnvVars = [
     
     // Start dashboard server
     app.listen(this.config.port, () => {
-      console.log(`📊 Dashboard running on port ${this.config.port}`);
+      logger.info(`📊 Dashboard running on port ${this.config.port}`);
     });
     
-    console.log('✅ Dashboard started');  }
+    logger.info('✅ Dashboard started');  }
 
   /**
    * Start Slack integration
    */
   async startSlackIntegration() {
-    console.log('🤖 Starting Slack integration...');    
+    logger.info('🤖 Starting Slack integration...');    
     try {
       const SlackBot = require('../slack/slack-bot');      const slackBot = new SlackBot();
       
       await slackBot.start();
       
-      console.log('✅ Slack integration started');    } catch (error) {
-      console.warn('⚠️ Slack integration failed:', error.message);    }
+      logger.info('✅ Slack integration started');    } catch (error) {
+      logger.warn('⚠️ Slack integration failed:', error.message);    }
   }
 
   /**
@@ -194,7 +216,7 @@ const optionalEnvVars = [
    */
   setupGracefulShutdown() {
     const shutdown = async (signal) => {
-      console.log(`\n🛑 Received ${signal}. Shutting down gracefully...`);
+      logger.info(`\n🛑 Received ${signal}. Shutting down gracefully...`);
       
       this.isRunning = false;
       
@@ -202,7 +224,7 @@ const optionalEnvVars = [
         await this.automation.stop();
       }
       
-      console.log('✅ Shutdown completed');      process.exit(0);
+      logger.info('✅ Shutdown completed');      process.exit(0);
     };
     
     process.on('SIGINT', () => shutdown('SIGINT'));    process.on('SIGTERM', () => shutdown('SIGTERM'));    process.on('SIGQUIT', () => shutdown('SIGQUIT'));  }
@@ -220,9 +242,9 @@ const optionalEnvVars = [
       timestamp: new Date().toISOString()
     };
     
-    console.log('📊 Initial Status:', JSON.stringify(status, null, 2));    
+    logger.info('📊 Initial Status:', JSON.stringify(status, null, 2));    
     // Save status to file
-    const statusPath = path.join(__dirname, ..', logs', automation-status.json');    fs.writeFileSync(statusPath, JSON.stringify(status, null, 2));
+    const statusPath = path.join(__dirname, ..', logs', 'automation-status.json');    fs.writeFileSync(statusPath, JSON.stringify(status, null, 2));
   }
 
   /**
@@ -240,7 +262,7 @@ const optionalEnvVars = [
    * Generate comprehensive report
    */
   async generateReport() {
-    console.log('📋 Generating comprehensive report...');    
+    logger.info('📋 Generating comprehensive report...');    
     if (!this.automation) {
       throw new Error('Automation system not initialized');    }
     
@@ -249,7 +271,7 @@ const optionalEnvVars = [
     // Save report
     const reportPath = path.join(__dirname, ..', reports', `comprehensive-report-${Date.now()}.json`);    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
-    console.log(`✅ Report generated: ${reportPath}`);
+    logger.info(`✅ Report generated: ${reportPath}`);
     
     return report;
   }
@@ -258,14 +280,14 @@ const optionalEnvVars = [
    * Stop the automation system
    */
   async stop() {
-    console.log('🛑 Stopping automation system...');    
+    logger.info('🛑 Stopping automation system...');    
     this.isRunning = false;
     
     if (this.automation) {
       await this.automation.stop();
     }
     
-    console.log('✅ Automation system stopped');  }
+    logger.info('✅ Automation system stopped');  }
 }
 
 // Main execution
@@ -275,7 +297,7 @@ if (require.main === module) {
   // Handle command line arguments
   const args = process.argv.slice(2);
   
-  if (args.includes('--help') || args.includes('-h')) {'    console.log(`
+  if (args.includes('--help') || args.includes('-h')) {'    logger.info(`
 Zion App Enhanced Automation System
 
 Usage:
@@ -314,36 +336,36 @@ Examples:
   if (args.includes('--report') || args.includes('-r')) {'    startup.start().then(() => {
       return startup.generateReport();
     }).then((report) => {
-      console.log('📋 Report Summary:');      console.log(`- Total Tasks: ${report.summary.totalTasks}`);
-      console.log(`- Successful: ${report.summary.successfulTasks}`);
-      console.log(`- Failed: ${report.summary.failedTasks}`);
-      console.log(`- Improvements: ${report.summary.totalImprovements}`);
-      console.log(`- Errors: ${report.summary.totalErrors}`);
+      logger.info('📋 Report Summary:');      logger.info(`- Total Tasks: ${report.summary.totalTasks}`);
+      logger.info(`- Successful: ${report.summary.successfulTasks}`);
+      logger.info(`- Failed: ${report.summary.failedTasks}`);
+      logger.info(`- Improvements: ${report.summary.totalImprovements}`);
+      logger.info(`- Errors: ${report.summary.totalErrors}`);
       process.exit(0);
     }).catch((error) => {
-      console.error('❌ Error generating report:', error);      process.exit(1);
+      logger.error('❌ Error generating report:', error);      process.exit(1);
     });
   }
   
   if (args.includes('--status') || args.includes('-s')) {'    startup.start().then(() => {
       const status = startup.automation.getStatus();
-      console.log('📊 Current Status:', JSON.stringify(status, null, 2));      process.exit(0);
+      logger.info('📊 Current Status:', JSON.stringify(status, null, 2));      process.exit(0);
     }).catch((error) => {
-      console.error('❌ Error getting status:', error);      process.exit(1);
+      logger.error('❌ Error getting status:', error);      process.exit(1);
     });
   }
   
   if (args.includes('--stop')) {'    // Implementation for stopping would require process management
-    console.log('🛑 Stop command received. Use Ctrl+C to stop the running process.');    process.exit(0);
+    logger.info('🛑 Stop command received. Use Ctrl+C to stop the running process.');    process.exit(0);
   }
   
   if (args.includes('--restart')) {'    // Implementation for restarting would require process management
-    console.log('🔄 Restart command received. Please stop and start manually.');    process.exit(0);
+    logger.info('🔄 Restart command received. Please stop and start manually.');    process.exit(0);
   }
   
   // Default: start the automation system
   startup.start().catch((error) => {
-    console.error('❌ Failed to start automation system:', error);    process.exit(1);
+    logger.error('❌ Failed to start automation system:', error);    process.exit(1);
   });
 }
 

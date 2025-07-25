@@ -1,4 +1,36 @@
-# Setting up Cron Job for Automated ESLint Fixes
+const winston = require('winston');
+
+const logger = winston.createLogger({
+level: 'info',
+format: winston.format.combine(
+winston.format.timestamp(),
+winston.format.errors({ stack: true }),
+winston.format.json()
+),
+defaultMeta: { service: 'automation-script' },
+transports: [
+new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+new winston.transports.File({ filename: 'logs/combined.log' })
+]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+logger.add(new winston.transports.Console({
+format: winston.format.simple()
+}));
+}
+
+class Script {
+constructor() {
+this.isRunning = false;
+}
+
+async start() {
+this.isRunning = true;
+logger.info('Starting Script...');
+
+    try {
+      # Setting up Cron Job for Automated ESLint Fixes
 
 This document provides instructions on how to set up a cron job to run the `auto-lint-fix.js` script periodically. This script will automatically lint your project, fix issues, and commit them to the `auto/fix-hourly` branch.
 
@@ -65,3 +97,40 @@ To run the script hourly (at the beginning of every hour), add the following lin
 ```
 
 ```
+
+    } catch (error) {
+      logger.error('Error in Script:', error);
+      throw error;
+    }
+
+}
+
+stop() {
+this.isRunning = false;
+logger.info('Stopping Script...');
+}
+}
+
+// Start the script
+if (require.main === module) {
+const script = new Script();
+script.start().catch(error => {
+logger.error('Failed to start Script:', error);
+process.exit(1);
+});
+}
+
+module.exports = Script;
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+// Add cleanup logic here
+process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+// Add cleanup logic here
+process.exit(0);
+});

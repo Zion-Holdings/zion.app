@@ -1,14 +1,36 @@
-#!/usr/bin/env node
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json(),
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
 
 /**
  * Fix misplaced import statements
  * The console replacement script sometimes places imports in wrong locations
  */
 
-const fs = require('fs')
-const path = require('path')
-const glob = require('glob')
-const PROJECT_ROOT = process.cwd()
+const fs = require('fs');
+const path = require('path');
+const glob = require('glob');
+const PROJECT_ROOT = process.cwd();
 class ImportFixer {
   constructor() {
     this.fixedFiles = 0;
@@ -38,13 +60,13 @@ class ImportFixer {
    */
   fixFile(filePath) {
     try {
-      const fullPath = path.join(PROJECT_ROOT, filePath)
-const content = fs.readFileSync(fullPath, 'utf8');
+      const fullPath = path.join(PROJECT_ROOT, filePath);
+      const content = fs.readFileSync(fullPath, 'utf8');
 
       // Look for misplaced imports (imports after export statements)
-      const lines = content.split('\n')
-const importLines = []
-const otherLines = [];
+      const lines = content.split('\n');
+      const importLines = [];
+      const otherLines = [];
       let inExportFunction = false;
       let _hasExportFunction = false;
 
@@ -148,15 +170,15 @@ const otherLines = [];
    * Process all files
    */
   async processAllFiles() {
-    // console.warn('🔧 Fixing misplaced import statements...')
-const files = this.getFilesToProcess();
-    // console.warn(`📋 Found ${files.length} files to check`)
-const results = [];
+    // logger.warn('🔧 Fixing misplaced import statements...')
+    const files = this.getFilesToProcess();
+    // logger.warn(`📋 Found ${files.length} files to check`)
+    const results = [];
 
     for (const filePath of files) {
       const result = this.fixFile(filePath);
       if (result.fixed) {
-        // console.warn(`✅ Fixed ${filePath} (${result.importsFixed} imports moved)`);
+        // logger.warn(`✅ Fixed ${filePath} (${result.importsFixed} imports moved)`);
         results.push({ file: filePath, ...result });
       }
     }
@@ -168,33 +190,33 @@ const results = [];
    * Print summary
    */
   printSummary(results) {
-    // console.warn('\n' + '='.repeat(60));
-    // console.warn('📊 IMPORT FIXING SUMMARY');
-    // console.warn('='.repeat(60));
-    // console.warn(`✅ Files fixed: ${this.fixedFiles}`);
-    // console.warn(`❌ Errors encountered: ${this.errors.length}`);
+    // logger.warn('\n' + '='.repeat(60));
+    // logger.warn('📊 IMPORT FIXING SUMMARY');
+    // logger.warn('='.repeat(60));
+    // logger.warn(`✅ Files fixed: ${this.fixedFiles}`);
+    // logger.warn(`❌ Errors encountered: ${this.errors.length}`);
 
     if (results.length > 0) {
-      // console.warn('\n📝 Fixed files:');
+      // logger.warn('\n📝 Fixed files:');
       results.forEach(({ file: _file, _importsFixed: _importsFixed }) => {
-        // console.warn(`   ${_file}: ${_importsFixed} imports moved`);
+        // logger.warn(`   ${_file}: ${_importsFixed} imports moved`);
       });
     }
 
     if (this.errors.length > 0) {
-      // console.warn('\n⚠️  Errors:');
+      // logger.warn('\n⚠️  Errors:');
       this.errors.forEach(({ file: _file, _error: _error }) => {
-        // console.warn(`   ${_file}: ${_error}`);
+        // logger.warn(`   ${_file}: ${_error}`);
       });
     }
 
     if (this.fixedFiles > 0) {
-      // console.warn('\n🎉 Import placement issues fixed!');
-      // console.warn('📋 Next steps:');
-      // console.warn('   1. Run: npm run build');
-      // console.warn('   2. Test the application: npm run dev');
+      // logger.warn('\n🎉 Import placement issues fixed!');
+      // logger.warn('📋 Next steps:');
+      // logger.warn('   1. Run: npm run build');
+      // logger.warn('   2. Test the application: npm run dev');
     } else {
-      // console.warn('\n ℹ️ No misplaced imports found.');
+      // logger.warn('\n ℹ️ No misplaced imports found.');
     }
   }
 }
@@ -203,9 +225,22 @@ const results = [];
 if (require.main === module) {
   const fixer = new ImportFixer();
   fixer.processAllFiles().catch((_error) => {
-    // console.error('💥 Fatal error:', _error);
+    // logger.error('💥 Fatal error:', _error);
     process.exit(1);
   });
 }
 
 module.exports = ImportFixer;
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});

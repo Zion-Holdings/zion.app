@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 const AutomationTask = require('../continuous-improvement/AutomationTask');
 const { execSync, spawn } = require('child_process');
 const fs = require('fs').promises;
@@ -6,11 +29,11 @@ const path = require('path');
 class SecurityScanner extends AutomationTask {
   constructor(config = {}) {
     super({
-      name: SecurityScanner',
+      name: 'SecurityScanner',
       schedule: 0 */6 * * *', // Every 6 hours
       enabled: true,
       autoFix: false, // Don't auto-fix by default
-      severityThreshold: medium',
+      severityThreshold: 'medium',
       scanTypes: ['npm', code', secrets', dependencies'],
       ...config
     });
@@ -20,7 +43,7 @@ class SecurityScanner extends AutomationTask {
   }
 
   async run() {
-    console.log('🔒 Starting security scan...');
+    logger.info('🔒 Starting security scan...');
     
     try {
       const scanResults = {
@@ -57,10 +80,10 @@ class SecurityScanner extends AutomationTask {
       this.vulnerabilities = this.extractVulnerabilities(scanResults);
       
       // Check if any high-severity issues found
-      const highSeverityIssues = this.vulnerabilities.filter(v => v.severity === high' || v.severity === critical');
+      const highSeverityIssues = this.vulnerabilities.filter(v => v.severity === high' || v.severity === 'critical');
       
       if (highSeverityIssues.length > 0) {
-        console.warn(`⚠️ Found ${highSeverityIssues.length} high-severity security issues`);
+        logger.warn(`⚠️ Found ${highSeverityIssues.length} high-severity security issues`);
         await this.handleHighSeverityIssues(highSeverityIssues);
       }
       
@@ -78,7 +101,7 @@ class SecurityScanner extends AutomationTask {
       return scanResults;
       
     } catch (error) {
-      console.error('❌ Security scan failed:', error);
+      logger.error('❌ Security scan failed:', error);
       this.lastStatus = failed';
       this.lastError = error.message;
       this.lastRun = new Date();
@@ -88,11 +111,11 @@ class SecurityScanner extends AutomationTask {
   }
 
   async scanNpmVulnerabilities() {
-    console.log('📦 Scanning npm vulnerabilities...');
+    logger.info('📦 Scanning npm vulnerabilities...');
     
     try {
       const output = execSync('npm audit --json', { 
-        encoding: utf8',
+        encoding: 'utf8',
         stdio: pipe
       });
       
@@ -102,7 +125,7 @@ class SecurityScanner extends AutomationTask {
       if (audit.vulnerabilities) {
         for (const [packageName, vuln] of Object.entries(audit.vulnerabilities)) {
           vulnerabilities.push({
-            type: npm',
+            type: 'npm',
             package: packageName,
             severity: vuln.severity,
             title: vuln.title,
@@ -115,7 +138,7 @@ class SecurityScanner extends AutomationTask {
         }
       }
       
-      console.log(`✅ Found ${vulnerabilities.length} npm vulnerabilities`);
+      logger.info(`✅ Found ${vulnerabilities.length} npm vulnerabilities`);
       return vulnerabilities;
       
     } catch (error) {
@@ -137,7 +160,7 @@ class SecurityScanner extends AutomationTask {
         const parts = line.split('│').map(p => p.trim()).filter(p => p);
         if (parts.length >= 4) {
           vulnerabilities.push({
-            type: npm',
+            type: 'npm',
             package: parts[0],
             severity: parts[1],
             title: parts[2],
@@ -151,7 +174,7 @@ class SecurityScanner extends AutomationTask {
   }
 
   async scanCodeSecurity() {
-    console.log('🔍 Scanning code for security issues...');
+    logger.info('🔍 Scanning code for security issues...');
     
     const issues = [];
     
@@ -160,31 +183,41 @@ class SecurityScanner extends AutomationTask {
       const patterns = [
         {
           pattern: /eval\s*\(/g,
-          severity: high',
+          severity: 'high',
           title: Use of eval(),
           description: eval() can execute arbitrary code and is a security risk
         },
         {
           pattern: /innerHTML\s*=/g,
-          severity: medium',
+          severity: 'medium',
           title: Direct innerHTML assignment',
           description: Direct innerHTML assignment can lead to XSS attacks
         },
         {
+<<<<<<< HEAD
+          pattern: /password.*=.*['"][^'"]*['"]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+          severity: 'critical',
+=======
           pattern: /password.*=.*['"][^'"]*['"]/gi,
           severity: critical',
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
           title: Hardcoded password',
           description: Password found in code
         },
         {
+<<<<<<< HEAD
+          pattern: /api[_-]?key.*=.*['"][^'"]*['"]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+          severity: 'critical',
+=======
           pattern: /api[_-]?key.*=.*['"][^'"]*['"]/gi,
           severity: critical',
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
           title: Hardcoded API key',
           description: API key found in code
         },
         {
           pattern: /console\.log.*password/gi,
-          severity: medium',
+          severity: 'medium',
           title: Password logging',
           description: Password being logged to console
         }
@@ -201,7 +234,7 @@ class SecurityScanner extends AutomationTask {
             const matches = content.match(pattern.pattern);
             if (matches) {
               issues.push({
-                type: code',
+                type: 'code',
                 file: file,
                 severity: pattern.severity,
                 title: pattern.title,
@@ -211,15 +244,15 @@ class SecurityScanner extends AutomationTask {
             }
           }
         } catch (error) {
-          console.warn(`⚠️ Could not read file ${file}:`, error.message);
+          logger.warn(`⚠️ Could not read file ${file}:`, error.message);
         }
       }
       
-      console.log(`✅ Found ${issues.length} code security issues`);
+      logger.info(`✅ Found ${issues.length} code security issues`);
       return issues;
       
     } catch (error) {
-      console.error('❌ Code security scan failed:', error);
+      logger.error('❌ Code security scan failed:', error);
       return [];
     }
   }
@@ -245,7 +278,7 @@ class SecurityScanner extends AutomationTask {
           }
         }
       } catch (error) {
-        console.warn(`⚠️ Could not scan directory ${dir}:`, error.message);
+        logger.warn(`⚠️ Could not scan directory ${dir}:`, error.message);
       }
     };
     
@@ -254,7 +287,7 @@ class SecurityScanner extends AutomationTask {
   }
 
   async scanForSecrets() {
-    console.log('🔐 Scanning for secrets...');
+    logger.info('🔐 Scanning for secrets...');
     
     const secrets = [];
     const secretPatterns = [
@@ -296,7 +329,7 @@ class SecurityScanner extends AutomationTask {
             const matches = content.match(pattern.pattern);
             if (matches) {
               secrets.push({
-                type: secret',
+                type: 'secret',
                 file: file,
                 severity: pattern.severity,
                 title: pattern.title,
@@ -306,21 +339,21 @@ class SecurityScanner extends AutomationTask {
             }
           }
         } catch (error) {
-          console.warn(`⚠️ Could not read file ${file}:`, error.message);
+          logger.warn(`⚠️ Could not read file ${file}:`, error.message);
         }
       }
       
-      console.log(`✅ Found ${secrets.length} potential secrets`);
+      logger.info(`✅ Found ${secrets.length} potential secrets`);
       return secrets;
       
     } catch (error) {
-      console.error('❌ Secret scan failed:', error);
+      logger.error('❌ Secret scan failed:', error);
       return [];
     }
   }
 
   async scanDependencies() {
-    console.log('📋 Scanning dependencies for security issues...');
+    logger.info('📋 Scanning dependencies for security issues...');
     
     const issues = [];
     
@@ -339,10 +372,10 @@ class SecurityScanner extends AutomationTask {
       for (const [packageName, version] of Object.entries(allDeps)) {
         if (vulnerablePackages.includes(packageName)) {
           issues.push({
-            type: dependency',
+            type: 'dependency',
             package: packageName,
             version: version,
-            severity: medium',
+            severity: 'medium',
             title: `Known vulnerable package: ${packageName}`,
             description: `${packageName} has known security vulnerabilities`
           });
@@ -353,11 +386,11 @@ class SecurityScanner extends AutomationTask {
       const oldPackages = await this.checkForOldPackages(allDeps);
       issues.push(...oldPackages);
       
-      console.log(`✅ Found ${issues.length} dependency issues`);
+      logger.info(`✅ Found ${issues.length} dependency issues`);
       return issues;
       
     } catch (error) {
-      console.error('❌ Dependency scan failed:', error);
+      logger.error('❌ Dependency scan failed:', error);
       return [];
     }
   }
@@ -370,7 +403,7 @@ class SecurityScanner extends AutomationTask {
     for (const [packageName, version] of Object.entries(dependencies)) {
       try {
         const output = execSync(`npm view ${packageName}@${version} time --json`, {
-          encoding: utf8',
+          encoding: 'utf8',
           stdio: pipe
         });
         
@@ -379,10 +412,10 @@ class SecurityScanner extends AutomationTask {
         
         if (publishTime < cutoffDate) {
           issues.push({
-            type: dependency',
+            type: 'dependency',
             package: packageName,
             version: version,
-            severity: low',
+            severity: 'low',
             title: `Old package: ${packageName}`,
             description: `${packageName}@${version} was published ${Math.floor((Date.now() - publishTime.getTime()) / (1000 * 60 * 60 * 24))} days ago`
           });
@@ -439,11 +472,11 @@ class SecurityScanner extends AutomationTask {
   }
 
   async handleHighSeverityIssues(issues) {
-    console.log('🚨 Handling high-severity security issues...');
+    logger.info('🚨 Handling high-severity security issues...');
     
     // Log issues
     for (const issue of issues) {
-      console.error(`🔴 ${issue.severity.toUpperCase()}: ${issue.title} - ${issue.description}`);
+      logger.error(`🔴 ${issue.severity.toUpperCase()}: ${issue.title} - ${issue.description}`);
     }
     
     // Send notifications if configured
@@ -457,11 +490,11 @@ class SecurityScanner extends AutomationTask {
 
   async sendSecurityAlert(issues) {
     // This would integrate with your notification system
-    console.log('📢 Sending security alert...');
+    logger.info('📢 Sending security alert...');
     
     const alert = {
-      type: security_alert',
-      severity: high',
+      type: 'security_alert',
+      severity: 'high',
       issues: issues,
       timestamp: new Date().toISOString(),
       summary: `Found ${issues.length} high-severity security issues`
@@ -478,43 +511,43 @@ class SecurityScanner extends AutomationTask {
       timestamp: new Date().toISOString(),
       issues: issues,
       summary: this.generateSummary({ 
-        npmVulnerabilities: issues.filter(i => i.type === npm'),
-        codeIssues: issues.filter(i => i.type === code'),
-        secretsFound: issues.filter(i => i.type === secret'),
-        dependencyIssues: issues.filter(i => i.type === dependency')
+        npmVulnerabilities: issues.filter(i => i.type === 'npm'),
+        codeIssues: issues.filter(i => i.type === 'code'),
+        secretsFound: issues.filter(i => i.type === 'secret'),
+        dependencyIssues: issues.filter(i => i.type === 'dependency')
       }),
       recommendations: this.generateRecommendations(issues)
     };
     
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
-    console.log(`📄 Security report saved to: ${reportPath}`);
+    logger.info(`📄 Security report saved to: ${reportPath}`);
   }
 
   generateRecommendations(issues) {
     const recommendations = [];
     
-    const npmIssues = issues.filter(i => i.type === npm');
+    const npmIssues = issues.filter(i => i.type === 'npm');
     if (npmIssues.length > 0) {
       recommendations.push({
-        type: npm',
+        type: 'npm',
         action: Run npm audit fix to automatically fix vulnerabilities',
         priority: high
       });
     }
     
-    const secretIssues = issues.filter(i => i.type === secret');
+    const secretIssues = issues.filter(i => i.type === 'secret');
     if (secretIssues.length > 0) {
       recommendations.push({
-        type: secrets',
+        type: 'secrets',
         action: Remove hardcoded secrets and use environment variables',
         priority: critical
       });
     }
     
-    const codeIssues = issues.filter(i => i.type === code');
+    const codeIssues = issues.filter(i => i.type === 'code');
     if (codeIssues.length > 0) {
       recommendations.push({
-        type: code',
+        type: 'code',
         action: Review and fix code security issues',
         priority: high
       });
@@ -524,17 +557,17 @@ class SecurityScanner extends AutomationTask {
   }
 
   async autoFixIssues(scanResults) {
-    console.log('🔧 Attempting to auto-fix security issues...');
+    logger.info('🔧 Attempting to auto-fix security issues...');
     
     try {
       // Auto-fix npm vulnerabilities
       if (scanResults.npmVulnerabilities.length > 0) {
-        console.log('📦 Auto-fixing npm vulnerabilities...');
-        execSync('npm audit fix', { stdio: pipe' });
+        logger.info('📦 Auto-fixing npm vulnerabilities...');
+        execSync('npm audit fix', { stdio: 'pipe' });
       }
       
       // Auto-fix low-severity issues
-      const lowSeverityIssues = this.vulnerabilities.filter(v => v.severity === low');
+      const lowSeverityIssues = this.vulnerabilities.filter(v => v.severity === 'low');
       
       for (const issue of lowSeverityIssues) {
         if (issue.type === code' && issue.title.includes('console.log')) {
@@ -543,10 +576,10 @@ class SecurityScanner extends AutomationTask {
         }
       }
       
-      console.log('✅ Auto-fix completed');
+      logger.info('✅ Auto-fix completed');
       
     } catch (error) {
-      console.error('❌ Auto-fix failed:', error);
+      logger.error('❌ Auto-fix failed:', error);
     }
   }
 
@@ -558,10 +591,10 @@ class SecurityScanner extends AutomationTask {
       content = content.replace(/console\.log.*password.*;?\n?/gi, );
       
       await fs.writeFile(filePath, content);
-      console.log(`✅ Removed sensitive logs from ${filePath}`);
+      logger.info(`✅ Removed sensitive logs from ${filePath}`);
       
     } catch (error) {
-      console.warn(`⚠️ Could not remove sensitive logs from ${filePath}:`, error.message);
+      logger.warn(`⚠️ Could not remove sensitive logs from ${filePath}:`, error.message);
     }
   }
 
@@ -569,20 +602,209 @@ class SecurityScanner extends AutomationTask {
     const reportPath = path.join(process.cwd(), reports', `security-scan-${Date.now()}.json`);
     
     await fs.writeFile(reportPath, JSON.stringify(scanResults, null, 2));
-    console.log(`📄 Security scan report saved to: ${reportPath}`);
+    logger.info(`📄 Security scan report saved to: ${reportPath}`);
   }
 
   async selfHeal(error) {
-    console.log('🔧 Attempting self-healing for SecurityScanner...');
+    logger.info('🔧 Attempting self-healing for SecurityScanner...');
     
     if (error.message.includes('network') || error.message.includes('connection')) {
-      console.log('⏳ Network issue detected, waiting before retry...');
-      await new Promise(resolve => setTimeout(resolve, 30000));
+      logger.info('⏳ Network issue detected, waiting before retry...');
+      await new Promise(resolve => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                                                                30000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
       return;
     }
     
     if (error.message.includes('permission') || error.message.includes('access')) {
-      console.log('🔐 Permission issue detected, checking file permissions...');
+      logger.info('🔐 Permission issue detected, checking file permissions...');
       await this.checkFilePermissions();
       return;
     }
@@ -593,7 +815,7 @@ class SecurityScanner extends AutomationTask {
       const reportDir = path.join(process.cwd(), reports');
       await fs.access(reportDir, fs.constants.W_OK);
     } catch (error) {
-      console.log('⚠️ Reports directory not writable, creating...');
+      logger.info('⚠️ Reports directory not writable, creating...');
       await fs.mkdir(path.join(process.cwd(), reports'), { recursive: true });
     }
   }
@@ -604,7 +826,7 @@ class SecurityScanner extends AutomationTask {
       scanHistory: this.scanHistory.slice(-5), // Last 5 scans
       totalScans: this.scanHistory.length,
       currentVulnerabilities: this.vulnerabilities.length,
-      highSeverityCount: this.vulnerabilities.filter(v => v.severity === high' || v.severity === critical').length
+      highSeverityCount: this.vulnerabilities.filter(v => v.severity === high' || v.severity === 'critical').length
     };
   }
 }

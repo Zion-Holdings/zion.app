@@ -1,4 +1,4 @@
-#!/usr/bin/env node;
+;
 import fs from fs';import path from path';
 const {
   BACKLINK_API_URL: apiUrl,
@@ -9,8 +9,8 @@ if (!apiUrl || !apiKey) {
   console.error('Missing BACKLINK_API_URL or BACKLINK_API_KEY');  process.exit(1);
 }
 
-const DATA_DIR = path.join(process.cwd(), seo');const DATA_FILE = path.join(DATA_DIR, backlinks.json')
-const REPORT_FILE = path.join(DATA_DIR, backlink-report.json');
+const DATA_DIR = path.join(process.cwd(), seo');const DATA_FILE = path.join(DATA_DIR, 'backlinks.json')
+const REPORT_FILE = path.join(DATA_DIR, 'backlink-report.json');
 async function fetchBacklinks() {
   const res = await fetch(apiUrl, {
     headers: {
@@ -22,7 +22,7 @@ async function fetchBacklinks() {
 
 function loadBacklinks(file) {
   if (fs.existsSync(file)) {
-    return JSON.parse(fs.readFileSync(file, utf8'));  }
+    return JSON.parse(fs.readFileSync(file, 'utf8'));  }
   return [];
 }
 

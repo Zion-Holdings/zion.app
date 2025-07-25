@@ -1,10 +1,38 @@
-#!/usr/bin/env node
 
-/**
- * Environment Validation Script
- * Runs during build to ensure all required environment variables are properly configured
- * Prevents deployment with missing or placeholder values
- */
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+
 
 let chalk;
 try {
@@ -23,7 +51,7 @@ let _dotenv;
 try {
   _dotenv = require('dotenv');
 } catch (_err) {
-  console.warn(
+  logger.warn(
     '⚠️  Optional dependency "dotenv" not found. Skipping env file loading.',
   );
   _dotenv = null;
@@ -31,7 +59,7 @@ try {
 
 const envPath = _path.resolve(process.cwd(), '.env.local');
 if (!_fs.existsSync(envPath)) {
-  console.warn(
+  logger.warn(
     chalk.yellow(
       '⚠️  .env.local file not found. Environment variables may be missing.',
     ),
@@ -132,9 +160,7 @@ const RECOMMENDED_VARS = {
   NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: 'Cloudinary cloud name for image hosting',
 };
 
-/**
- * Check if a value appears to be a placeholder
- */
+
 function isPlaceholder(value) {
   if (!value || typeof value !== 'string') return true
 const placeholderPatterns = [
@@ -153,9 +179,7 @@ const placeholderPatterns = [
   return placeholderPatterns.some((pattern) => pattern.test(value));
 }
 
-/**
- * Validate environment configuration
- */
+
 function validateEnvironment() {
   // Remove all console.log/info/debug, keep only warn/error
   // Prefix unused variables with underscore (e.g., _path, _err, _value)
@@ -203,52 +227,52 @@ const _suggestions = [];
 
   // Report results
   if (_errors.length > 0) {
-    console.error(chalk.red('❌ CRITICAL ERRORS - BUILD WILL FAIL:\n'));
-    console.error(
+    logger.error(chalk.red('❌ CRITICAL ERRORS - BUILD WILL FAIL:\n'));
+    logger.error(
       chalk.red('================================================\n\n'),
     );
 
     _errors.forEach(({ variable, error, description, current }) => {
-      console.error(chalk.red(`✗ ${variable}\n`));
-      console.error(chalk.red(`  Error: ${error}\n`));
-      console.error(chalk.gray(`  Description: ${description}\n`));
-      console.error(chalk.gray(`  Current: ${current}\n`));
-      console.error('\n');
+      logger.error(chalk.red(`✗ ${variable}\n`));
+      logger.error(chalk.red(`  Error: ${error}\n`));
+      logger.error(chalk.gray(`  Description: ${description}\n`));
+      logger.error(chalk.gray(`  Current: ${current}\n`));
+      logger.error('\n');
     });
 
-    console.error(chalk.red('🚨 TO FIX THESE ERRORS:\n'));
-    console.error(chalk.yellow('1. Check your .env.local file\n'));
-    console.error(chalk.yellow('2. Set up Supabase authentication\n'));
-    console.error(
+    logger.error(chalk.red('🚨 TO FIX THESE ERRORS:\n'));
+    logger.error(chalk.yellow('1. Check your .env.local file\n'));
+    logger.error(chalk.yellow('2. Set up Supabase authentication\n'));
+    logger.error(
       chalk.yellow('3. Add the missing variables with actual values\n'),
     );
-    console.error(chalk.yellow('4. Restart your development server\n\n'));
+    logger.error(chalk.yellow('4. Restart your development server\n\n'));
 
     // Don't exit here - let the pre-build check handle it
   }
 
   if (_warnings.length > 0) {
-    console.error(chalk.yellow('⚠️  WARNINGS:\n'));
-    console.error(chalk.yellow('=============\n\n'));
+    logger.error(chalk.yellow('⚠️  WARNINGS:\n'));
+    logger.error(chalk.yellow('=============\n\n'));
 
     _warnings.forEach(({ variable, warning, current }) => {
-      console.error(chalk.yellow(`! ${variable}: ${warning}\n`));
-      console.error(chalk.gray(`  Current: ${current}\n\n`));
+      logger.error(chalk.yellow(`! ${variable}: ${warning}\n`));
+      logger.error(chalk.gray(`  Current: ${current}\n\n`));
     });
   }
 
   if (_suggestions.length > 0 && !isLocalDev) {
-    console.error(chalk.cyan('💡 RECOMMENDATIONS:\n'));
-    console.error(chalk.cyan('===================\n\n'));
+    logger.error(chalk.cyan('💡 RECOMMENDATIONS:\n'));
+    logger.error(chalk.cyan('===================\n\n'));
 
     _suggestions.slice(0, 5).forEach(({ variable, description, current }) => {
-      console.error(chalk.cyan(`• ${variable}\n`));
-      console.error(chalk.gray(`  ${description}\n`));
-      console.error(chalk.gray(`  Current: ${current}\n\n`));
+      logger.error(chalk.cyan(`• ${variable}\n`));
+      logger.error(chalk.gray(`  ${description}\n`));
+      logger.error(chalk.gray(`  Current: ${current}\n\n`));
     });
 
     if (_suggestions.length > 5) {
-      console.error(
+      logger.error(
         chalk.gray(
           `... and ${_suggestions.length - 5} more optional variables\n\n`,
         ),
@@ -257,11 +281,11 @@ const _suggestions = [];
   }
 
   if (_errors.length === 0) {
-    console.error(chalk.green('✅ Environment validation passed!\n'));
+    logger.error(chalk.green('✅ Environment validation passed!\n'));
     if (isLocalDev) {
-      console.error(chalk.green('Ready for local development.\n\n'));
+      logger.error(chalk.green('Ready for local development.\n\n'));
     } else {
-      console.error(
+      logger.error(
         chalk.green(
           'All critical environment variables are properly configured.\n\n',
         ),
@@ -277,9 +301,7 @@ const _suggestions = [];
   };
 }
 
-/**
- * Generate environment setup guide
- */
+
 function generateSetupGuide() {
   const guide = `
 # Environment Setup Guide for Netlify
@@ -321,7 +343,7 @@ After setting up, you can verify by visiting:
 `
 const guidePath = _path.join(__dirname, '..', 'NETLIFY_ENVIRONMENT_SETUP.md');
   _fs.writeFileSync(guidePath, guide.trim());
-  console.error(chalk.green(`📋 Setup guide generated: ${guidePath}\n`));
+  logger.error(chalk.green(`📋 Setup guide generated: ${guidePath}\n`));
 }
 
 // Run validation
@@ -331,7 +353,7 @@ if (require.main === module) {
   // Only exit with error if there are actual critical errors
   if (!result.isValid) {
     if (isNetlifyBuild) {
-      console.warn(
+      logger.warn(
         '⚠️  Environment validation failed, continuing Netlify build.\n',
       );
     } else {
@@ -341,3 +363,39 @@ if (require.main === module) {
 }
 
 module.exports = { validateEnvironment, isPlaceholder };
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

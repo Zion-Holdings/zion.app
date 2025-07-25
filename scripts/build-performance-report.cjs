@@ -1,31 +1,62 @@
-#!/usr/bin/env node
 
-/**
- * Build Performance Report Script
- * Analyzes the Next.js build output and provides performance insights
- */
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
+
+
 
 const fs = require('fs')
 const path = require('path');
 
-console.warn('📊 Build Performance Report');
-console.warn('==========================\n')
+logger.warn('📊 Build Performance Report');
+logger.warn('==========================\n')
 function analyzeBuildStats() {
   const buildDir = path.join(process.cwd(), '.next');
 
   if (!fs.existsSync(buildDir)) {
-    console.warn('❌ No build directory found. Run npm run build first.');
+    logger.warn('❌ No build directory found. Run npm run build first.');
     return;
   }
 
-  console.warn('🔍 Build Analysis:');
+  logger.warn('🔍 Build Analysis:');
 
   // Check for build manifest
   const manifestPath = path.join(buildDir, 'build-manifest.json');
   if (fs.existsSync(manifestPath)) {
     const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'))
 const entryFiles = Object.keys(manifest.pages);
-    console.warn(`   📄 Total pages: ${entryFiles.length}`);
+    logger.warn(`   📄 Total pages: ${entryFiles.length}`);
   }
 
   // Check server pages
@@ -33,7 +64,7 @@ const entryFiles = Object.keys(manifest.pages);
   if (fs.existsSync(serverDir)) {
     const serverPages = fs.readdirSync(serverDir, { recursive: true })
 const pageCount = serverPages.filter((file) => file.endsWith('.js')).length;
-    console.warn(`   🖥️  Server pages: ${pageCount}`);
+    logger.warn(`   🖥️  Server pages: ${pageCount}`);
   }
 
   // Check static pages
@@ -42,13 +73,13 @@ const pageCount = serverPages.filter((file) => file.endsWith('.js')).length;
     const staticFiles = fs.readdirSync(staticDir, { recursive: true })
 const jsFiles = staticFiles.filter((file) => file.endsWith('.js'))
 const cssFiles = staticFiles.filter((file) => file.endsWith('.css'));
-    console.warn(`   📦 Static JS files: ${jsFiles.length}`);
-    console.warn(`   🎨 CSS files: ${cssFiles.length}`);
+    logger.warn(`   📦 Static JS files: ${jsFiles.length}`);
+    logger.warn(`   🎨 CSS files: ${cssFiles.length}`);
   }
 
   // Build size analysis
   const buildSize = getDirSize(buildDir);
-  console.warn(`   💾 Total build size: ${formatBytes(buildSize)}`);
+  logger.warn(`   💾 Total build size: ${formatBytes(buildSize)}`);
 }
 
 function getDirSize(dirPath) {
@@ -68,7 +99,7 @@ function calculateSize(currentPath) {
   try {
     calculateSize(dirPath);
   } catch {
-    console.warn(`Warning: Could not calculate size for ${dirPath}`);
+    logger.warn(`Warning: Could not calculate size for ${dirPath}`);
   }
 
   return totalSize;
@@ -83,24 +114,24 @@ const i = Math.floor(Math.log(bytes) / Math.log(k));
 }
 
 function provideOptimizationSuggestions() {
-  console.warn('\n💡 Optimization Recommendations:');
-  console.warn('================================');
+  logger.warn('\n💡 Optimization Recommendations:');
+  logger.warn('================================');
 
-  console.warn('✅ Environment validation is working');
-  console.warn('✅ Search functionality has been optimized');
-  console.warn('✅ Pre-build checks prevent deployment issues');
+  logger.warn('✅ Environment validation is working');
+  logger.warn('✅ Search functionality has been optimized');
+  logger.warn('✅ Pre-build checks prevent deployment issues');
 
-  console.warn('\n🎯 Next Steps for Further Optimization:');
-  console.warn('• Consider implementing dynamic imports for large components');
-  console.warn('• Add bundle analyzer for detailed size analysis');
-  console.warn('• Implement service worker for better caching');
-  console.warn('• Consider image optimization for better performance');
-  console.warn('• Add performance monitoring in production');
+  logger.warn('\n🎯 Next Steps for Further Optimization:');
+  logger.warn('• Consider implementing dynamic imports for large components');
+  logger.warn('• Add bundle analyzer for detailed size analysis');
+  logger.warn('• Implement service worker for better caching');
+  logger.warn('• Consider image optimization for better performance');
+  logger.warn('• Add performance monitoring in production');
 }
 
 function checkBuildHealth() {
-  console.warn('\n🏥 Build Health Check:');
-  console.warn('======================')
+  logger.warn('\n🏥 Build Health Check:');
+  logger.warn('======================')
 const checks = [
     { name: 'Build directory exists', check: () => fs.existsSync('.next') },
     {
@@ -119,7 +150,7 @@ const checks = [
 
   checks.forEach(({ name, check }) => {
     const result = check();
-    console.warn(`   ${result ? '✅' : '❌'} ${name}`);
+    logger.warn(`   ${result ? '✅' : '❌'} ${name}`);
   });
 }
 
@@ -128,5 +159,42 @@ analyzeBuildStats();
 checkBuildHealth();
 provideOptimizationSuggestions();
 
-console.warn('\n🎉 Build Performance Report Complete!');
-console.warn('=====================================');
+logger.warn('\n🎉 Build Performance Report Complete!');
+logger.warn('=====================================');
+    } catch (error) {
+      logger.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    logger.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

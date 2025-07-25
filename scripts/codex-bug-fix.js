@@ -1,4 +1,38 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class Ignore {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting Ignore...');
+    
+    try {
+      #!/usr/bin/env node
 // Use different variable name to avoid conflict with built-in globals;
 import processEnv from process';import { Octokit } from "@octokit/rest";"import fs from fs';import { execSync } from child_process';
 const {
@@ -20,7 +54,7 @@ function printErrorAndExit(errorMessage, details = null, exitCode = 1) {
   if (details) {
     errorOutput.details = details;
   }
-  console.error(JSON.stringify(errorOutput, null, 2));
+  logger.error(JSON.stringify(errorOutput, null, 2));
   process.exit(exitCode);
 }
 
@@ -43,8 +77,8 @@ const octokit = new Octokit({ auth: GITHUB_TOKEN });
 
 function runGitCommand(command) {
   try {
-    console.warn(`Executing: ${command}`)
-const output = execSync(command, { stdio: pipe' }).toString();    if (output) console.warn(output); // Only log if there's output'    return output;
+    logger.warn(`Executing: ${command}`)
+const output = execSync(command, { stdio: 'pipe' }).toString();    if (output) logger.warn(output); // Only log if there's output'    return output;
   } catch {
     const errDetails = {
       command,
@@ -57,14 +91,14 @@ const output = execSync(command, { stdio: pipe' }).toString();    if (output) co
 
 async function commentOnIssue(octokitInstance, owner, repo, issueNumber, commentBody) {
   try {
-    console.warn(`Commenting on issue #${issueNumber}...`);
+    logger.warn(`Commenting on issue #${issueNumber}...`);
     await octokitInstance.rest.issues.createComment({
       owner,
       repo,
       issue_number: issueNumber,
       body: commentBody
     });
-    console.warn("Successfully commented on issue.");"  } catch {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    logger.warn("Successfully commented on issue.");"  } catch {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     console.'Error occurred'(`Failed to comment on issue #${issueNumber}: ${error.message}`);    // Log the error but don't let it stop the script.'    // The main error (e.g., patch apply failure) is more critical.
   }
 }
@@ -84,26 +118,26 @@ async function fetchFileContent(octokitInstance, owner, repo, filePath) {
       path: filePath
     });
     if (response.data.type === file' && response.data.content) {      return Buffer.from(response.data.content, base64').toString('utf-8');    } else {
-      console.warn(`Path ${filePath} is not a file or has no content. Data:`, response.data);
+      logger.warn(`Path ${filePath} is not a file or has no content. Data:`, response.data);
       return null;
     }
   } catch {
-    if ('Error occurred'.status === 404) {      console.warn(`File not found: ${filePath}`);
+    if ('Error occurred'.status === 404) {      logger.warn(`File not found: ${filePath}`);
       return null;
     }
-    console.error(`Error fetching file ${filePath}: ${error.message}`);
+    logger.error(`Error fetching file ${filePath}: ${error.message}`);
     throw error;
   }
 }
 
 async function sendPromptToOpenAI(promptMessage) {
-  console.warn("Sending prompt to OpenAI API...");"  try {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {'      method: POST',      headers: {
+  logger.warn("Sending prompt to OpenAI API...");"  try {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {'      method: 'POST',      headers: {
         Authorization': `Bearer ${OPENAI_API_KEY}`,Content-Type': application/json''      },
       body: JSON.stringify({
         model: MODEL_TO_USE,
         messages: [
-          { role: system', content: You are Codex, an expert software engineer. Analyze the following issue and code, then provide a code patch in standard diff format to fix the bug. If you cannot provide a patch, explain the reason clearly.' },          { role: user', content: promptMessage }        ],
+          { role: 'system', content: You are Codex, an expert software engineer. Analyze the following issue and code, then provide a code patch in standard diff format to fix the bug. If you cannot provide a patch, explain the reason clearly.' },          { role: 'user', content: promptMessage }        ],
         temperature: 0.2
       })
     });
@@ -113,7 +147,7 @@ async function sendPromptToOpenAI(promptMessage) {
       let apiError = errorText;
       try {
         apiError = JSON.parse(errorText);
-      } catch { /* ignore */ }
+      } catch {  }
       printErrorAndExit(`OpenAI API error: ${response.status} ${response.statusText}`, { errorDetails: apiError });
     }
     const data = await response.json();
@@ -136,30 +170,30 @@ const match = responseText.match(diffRegex);
 }
 
 async function main() {
-  console.warn("Starting codex-bug-fix.js script...");"  const owner = REPO_CONTEXT.owner.login"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  logger.warn("Starting codex-bug-fix.js script...");"  const owner = REPO_CONTEXT.owner.login"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 const repo = REPO_CONTEXT.name;
 
-  console.warn(`Operating on repository: ${owner}/${repo}`);
-  console.warn("Issue Number:", ISSUE_NUMBER);"  console.warn("Issue Title:", ISSUE_TITLE);""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  logger.warn(`Operating on repository: ${owner}/${repo}`);
+  logger.warn("Issue Number:", ISSUE_NUMBER);"  logger.warn("Issue Title:", ISSUE_TITLE);""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   const filePaths = extractFilePaths(ISSUE_BODY);
-  console.warn("Extracted file paths:", filePaths);""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  logger.warn("Extracted file paths:", filePaths);""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   const filesContent = [];
   if (filePaths.length > 0) {
-    console.warn("Fetching content for file paths...");"    for (const filePath of filePaths) {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-      if (!filePath) { console.warn("Encountered an undefined/null filePath."); continue; }"      try {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    logger.warn("Fetching content for file paths...");"    for (const filePath of filePaths) {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+      if (!filePath) { logger.warn("Encountered an undefined/null filePath."); continue; }"      try {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
         const content = await fetchFileContent(octokit, owner, repo, filePath.trim());
         if (content !== null) {
           filesContent.push({ path: filePath.trim(), content });
-          console.warn(`Successfully fetched content for ${filePath.trim()}`);
+          logger.warn(`Successfully fetched content for ${filePath.trim()}`);
         } else {
-          console.warn(`No content returned for ${filePath.trim()}.`);
+          logger.warn(`No content returned for ${filePath.trim()}.`);
         }
       } catch {
-        console.warn(`Skipping file ${filePath.trim()} due to error: ${error.message}`);
+        logger.warn(`Skipping file ${filePath.trim()} due to error: ${error.message}`);
       }
     }
   } else {
-    console.warn("No file paths found in issue body.");"  }"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    logger.warn("No file paths found in issue body.");"  }"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
   let promptForCodex = `Issue Title: ${ISSUE_TITLE}\nIssue Body: ${ISSUE_BODY || "No body provided."}\n\n`;"  if (filesContent.length > 0) {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     promptForCodex += "Relevant file contents:\n";"    for (const file of filesContent) {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -168,21 +202,21 @@ const repo = REPO_CONTEXT.name;
   } else {
     promptForCodex += "No files were automatically extracted or fetched.\n";"  }"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   promptForCodex += "Based on the issue described and provided files, generate a code patch in standard diff format. Ensure the patch is clearly delimited by ```diff ... ``` marks. If you cannot generate a patch, explain why. If multiple files need changes, provide separate diffs for each file.";""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  console.warn("Constructed prompt for OpenAI. Length:", promptForCodex.length);"  const codexResponseContent = await sendPromptToOpenAI(promptForCodex);"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  console.warn("Raw response from Codex received.");""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  logger.warn("Constructed prompt for OpenAI. Length:", promptForCodex.length);"  const codexResponseContent = await sendPromptToOpenAI(promptForCodex);"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+  logger.warn("Raw response from Codex received.");""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   const patch = extractPatch(codexResponseContent);
 
   if (patch) {
-    console.warn("Extracted patch:\n", patch);""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    console.warn("Configuring Git user...");"    runGitCommand('git config user.name "github-actions[bot]"');    runGitCommand('git config user.email "github-actions[bot]@users.noreply.github.com"');
+    logger.warn("Extracted patch:\n", patch);""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    logger.warn("Configuring Git user...");"    runGitCommand('git config user.name "github-actions[bot]"');    runGitCommand('git config user.email "github-actions[bot]@users.noreply.github.com"');
     const branchName = `autofix/issue-${ISSUE_NUMBER}`;
-    console.warn(`Creating and switching to new branch: ${branchName}`);
+    logger.warn(`Creating and switching to new branch: ${branchName}`);
     runGitCommand(`git checkout -b ${branchName}`);
 
-    console.warn("Applying patch...");"    const patchFilePath = ./temp.patch';    try {
+    logger.warn("Applying patch...");"    const patchFilePath = ./temp.patch';    try {
       fs.writeFileSync(patchFilePath, patch);
       runGitCommand(`git apply --whitespace=fix ${patchFilePath}`);
-      console.warn("Patch applied successfully via git apply.");"    } catch (_applyError) {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+      logger.warn("Patch applied successfully via git apply.");"    } catch (_applyError) {"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
       // This catch is for fs.writeFileSync or if runGitCommand for git apply throws (which it will on failure)
       if (fs.existsSync(patchFilePath)) fs.unlinkSync(patchFilePath)
 const failureMessage = `Failed to apply the patch suggested by Codex for issue #${ISSUE_NUMBER}.
@@ -197,9 +231,9 @@ ${patch}
         if (fs.existsSync(patchFilePath)) fs.unlinkSync(patchFilePath); // Ensure cleanup
     }
 
-    console.warn("Adding changes to staging area...");"    runGitCommand('git add .');
+    logger.warn("Adding changes to staging area...");"    runGitCommand('git add .');
     try {
-      execSync('git diff --staged --quiet', { stdio: ignore' }); // Use ignore if no output is needed on success'      console.warn("No changes were staged after applying the patch. This might mean the patch was empty or did not apply correctly.");"      const noChangeMessage = `Codex suggested a patch for issue #${ISSUE_NUMBER}, but it resulted in no actual changes to the files after \`git apply\`. This could be due to an empty patch, a patch that doesn't alter current file states, or an issue with how the patch was applied.'Patch provided:
+      execSync('git diff --staged --quiet', { stdio: 'ignore' }); // Use ignore if no output is needed on success'      logger.warn("No changes were staged after applying the patch. This might mean the patch was empty or did not apply correctly.");"      const noChangeMessage = `Codex suggested a patch for issue #${ISSUE_NUMBER}, but it resulted in no actual changes to the files after \`git apply\`. This could be due to an empty patch, a patch that doesn't alter current file states, or an issue with how the patch was applied.'Patch provided:
 \`\`\`diff
 ${patch}
 \`\`\``;
@@ -207,25 +241,25 @@ ${patch}
       // Exiting gracefully as this isn't a script failure, but an ineffective patch.'      // The workflow should ideally not proceed to PR creation.
       process.exit(0);
     } catch {
-      // This Error occurred' (non-zero exit code from `git diff --staged --quiet`) means there ARE staged changes.'      console.warn("Changes staged, proceeding to commit.");"    }"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+      // This Error occurred' (non-zero exit code from `git diff --staged --quiet`) means there ARE staged changes.'      logger.warn("Changes staged, proceeding to commit.");"    }"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
     const commitMessage = `Autofix: ${ISSUE_TITLE}\n\nFixes #${ISSUE_NUMBER}`;
-    console.warn("Committing changes...");"    const escapedCommitMessage = commitMessage.replace(/"/g, \\"'); // Escape for command line'    runGitCommand(`git commit -m "${escapedCommitMessage}"`);""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    console.warn(`Pushing branch ${branchName} to origin...`);
+    logger.warn("Committing changes...");"    const escapedCommitMessage = commitMessage.replace(/"/g, \\"'); // Escape for command line'    runGitCommand(`git commit -m "${escapedCommitMessage}"`);""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    logger.warn(`Pushing branch ${branchName} to origin...`);
     runGitCommand(`git push origin ${branchName}`); // Removed --force
 
-    console.warn(`Successfully created branch ${branchName}, applied patch, committed, and pushed.`);
-    console.warn(`::set-output name=branch_name::${branchName}`); // Output for workflow
+    logger.warn(`Successfully created branch ${branchName}, applied patch, committed, and pushed.`);
+    logger.warn(`::set-output name=branch_name::${branchName}`); // Output for workflow
 
     // Next step in the workflow should be PR creation.
   } else {
-    console.warn("No diff-formatted patch found in Codex response.");"    const explanation = codexResponseContent || "No specific explanation content found.";"    const explanationMessage = `Codex analysis for issue #${ISSUE_NUMBER}:"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    logger.warn("No diff-formatted patch found in Codex response.");"    const explanation = codexResponseContent || "No specific explanation content found.";"    const explanationMessage = `Codex analysis for issue #${ISSUE_NUMBER}:"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 ${explanation}
 
 No patch was automatically applied.`;
     await commentOnIssue(octokit, owner, repo, ISSUE_NUMBER, explanationMessage);
-    console.warn("Exiting gracefully as no patch was generated. No branch created.");"    // Ensure no output is set for branch_name here"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    logger.warn("Exiting gracefully as no patch was generated. No branch created.");"    // Ensure no output is set for branch_name here"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     process.exit(0); // Successful exit, as AI providing an explanation is a valid outcome.
   }
 }
@@ -250,3 +284,25 @@ Please review the script logs for more details.`)
   } else {
     printErrorAndExit("Unhandled error in main execution (and failed to comment on issue)", details);"  }"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 });
+    } catch (error) {
+      logger.error('Error in Ignore:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping Ignore...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Ignore();
+  script.start().catch(error => {
+    logger.error('Failed to start Ignore:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Ignore;

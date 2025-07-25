@@ -1,8 +1,30 @@
-#!/usr/bin/env node
+const winston = require('winston');
 
-const { exec } = require('child_process')
-const fs = require('fs')
-const path = require('path')
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json(),
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
+
+const { exec } = require('child_process');
+const fs = require('fs');
+const path = require('path');
 class SimpleContinuousDev {
   constructor() {
     this.fixes = [];
@@ -13,7 +35,7 @@ class SimpleContinuousDev {
 
   log(message, type = 'INFO') {
     const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] [${type}] ${message}`);
+    logger.info(`[${timestamp}] [${type}] ${message}`);
   }
 
   async start() {
@@ -215,8 +237,8 @@ class SimpleContinuousDev {
         await this.execCommand('git add .');
 
         // Create commit with timestamp
-        const timestamp = new Date().toISOString()
-const commitMessage = `🤖 Auto-improvement: ${timestamp}\n\n- Issues fixed: ${this.issues.length}\n- Improvements: ${this.improvements.length}\n- Continuous development active`;
+        const timestamp = new Date().toISOString();
+        const commitMessage = `🤖 Auto-improvement: ${timestamp}\n\n- Issues fixed: ${this.issues.length}\n- Improvements: ${this.improvements.length}\n- Continuous development active`;
 
         await this.execCommand(`git commit -m "${commitMessage}"`);
 
@@ -258,14 +280,14 @@ const commitMessage = `🤖 Auto-improvement: ${timestamp}\n\n- Issues fixed: ${
 
 // Handle graceful shutdown
 process.on('SIGINT', async () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
   if (global.simpleContinuousDev) {
     await global.simpleContinuousDev.stop();
   }
 });
 
 process.on('SIGTERM', async () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
   if (global.simpleContinuousDev) {
     await global.simpleContinuousDev.stop();
   }
@@ -276,6 +298,6 @@ const simpleContinuousDev = new SimpleContinuousDev();
 global.simpleContinuousDev = simpleContinuousDev;
 
 simpleContinuousDev.start().catch((error) => {
-  console.error('❌ Failed to start simple continuous development:', error);
+  logger.error('❌ Failed to start simple continuous development:', error);
   process.exit(1);
 });

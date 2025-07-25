@@ -1,14 +1,12 @@
-#!/usr/bin/env node
-
 /**
  * Fix TypeScript errors in production logger calls
  * The logger expects specific parameter types that need to be corrected
  */
 
-const fs = require('fs')
-const path = require('path')
-const glob = require('glob')
-const PROJECT_ROOT = process.cwd()
+const fs = require('fs');
+const path = require('path');
+const glob = require('glob');
+const PROJECT_ROOT = process.cwd();
 class LoggerTypeFixer {
   constructor() {
     this.fixedFiles = 0;
@@ -76,8 +74,8 @@ class LoggerTypeFixer {
         content = content.replace(pattern.regex, pattern.replacement);
 
         if (content !== originalContent) {
-          hasChanges = true
-const matches = originalContent.match(pattern.regex);
+          hasChanges = true;
+          const matches = originalContent.match(pattern.regex);
           if (matches) {
             changesCount += matches.length;
           }
@@ -145,12 +143,12 @@ const matches = originalContent.match(pattern.regex);
    * Process all files
    */
   async processAllFiles() {
-    console.warn('🔧 Fixing TypeScript errors in logger calls...')
-const files = this.getFilesToProcess();
+    console.warn('🔧 Fixing TypeScript errors in logger calls...');
+    const files = this.getFilesToProcess();
     console.warn(
       `📋 Found ${files.length} files with productionLogger imports`,
-    )
-const results = [];
+    );
+    const results = [];
 
     for (const filePath of files) {
       const result = this.fixFile(filePath);

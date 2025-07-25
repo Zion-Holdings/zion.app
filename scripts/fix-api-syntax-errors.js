@@ -9,7 +9,7 @@ console.log(`Found ${apiFiles.length} API files to fix...`);
 
 apiFiles.forEach(filePath => {
   try {
-    let content = fs.readFileSync(filePath, utf8');
+    let content = fs.readFileSync(filePath, 'utf8');
     
     // Fix the unterminated string constant
     content = content.replace(
@@ -24,7 +24,7 @@ apiFiles.forEach(filePath => {
     // Fix missing closing brace after if statement
     content = content.replace(
       /if \(req\.method !== GET' && req\.method !== POST'\) \{\s+return res\.status\(405\)\.json\(\{ error: Method not allowed' \}\);\s*\n\s*\/\/ Mock API response/,
-      "if (req.method !== GET' && req.method !== POST') {\n    return res.status(405).json({ error: Method not allowed' });\n  }\n\n  // Mock API response"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+      "if (req.method !== GET' && req.method !== 'POST') {\n    return res.status(405).json({ error: Method not allowed' });\n  }\n\n  // Mock API response"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     );
     
     fs.writeFileSync(filePath, content);

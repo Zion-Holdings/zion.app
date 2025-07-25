@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 /**
  * Auto-Fix Common Build Errors
@@ -26,7 +48,7 @@ class AutoFixSystem {
   log(message, level = 'INFO') {
     const timestamp = new Date().toISOString()
 const logMessage = `[${timestamp}] [${level}] ${message}`;
-    console.log(logMessage);
+    logger.info(logMessage);
     fs.appendFileSync(this.logFile, logMessage + '\n');
   }
 
@@ -283,7 +305,7 @@ const lines = content.split('\n');
 
     try {
       // Run ESLint with auto-fix
-      execSync('npm run lint:fix', { stdio: 'inherit' });
+      execSync('npm run lint: 'fix', { stdio: 'inherit' });
       this.log('ESLint auto-fixes applied');
       this.fixesApplied.push('ESLint auto-fixes');
     } catch (error) {
@@ -438,9 +460,24 @@ const importMatches = content.match(/import.*from ['"]([^'"]+)['"]/g);
 if (require.main === module) {
   const autoFix = new AutoFixSystem();
   autoFix.run().catch((error) => {
-    console.error('Auto-fix system failed:', error);
+    logger.error('Auto-fix system failed:', error);
     process.exit(1);
   });
 }
 
 module.exports = AutoFixSystem;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

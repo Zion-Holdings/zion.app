@@ -9,7 +9,7 @@ try {
     process.stdout.write(`Coverage summary file not found at ${coverageSummaryPath}\n`);
     process.exit(1); // Exit with error if summary file doesn't exist'  }
 
-  const coverageSummary = JSON.parse(fs.readFileSync(coverageSummaryPath, utf8'));
+  const coverageSummary = JSON.parse(fs.readFileSync(coverageSummaryPath, 'utf8'));
   // Assuming total.lines.pct' is the key for overall line coverage percentage'  // This might need adjustment based on your Jest coverage reporter's output structure'  const linesCoverage = coverageSummary.total && coverageSummary.total.lines && coverageSummary.total.lines.pct;
 
   if (linesCoverage === undefined || linesCoverage === null) {

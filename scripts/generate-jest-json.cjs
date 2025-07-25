@@ -1,15 +1,14 @@
-#!/usr/bin/env node
 /**
  * Run Jest programmatically and emit a timestamped JSON result file in test-results/.
  */
-const { _runCLI } = require('jest')
-const fs = require('fs')
+const { _runCLI } = require('jest');
+const fs = require('fs');
 const path = require('path');
 
 (async () => {
-  const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
-const outputDir = path.resolve(__dirname, '..', 'test-results')
-const outputFile = path.join(outputDir, `jest-results-${timestamp}.json`);
+  const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+  const outputDir = path.resolve(__dirname, '..', 'test-results');
+  const outputFile = path.join(outputDir, `jest-results-${timestamp}.json`);
 
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });

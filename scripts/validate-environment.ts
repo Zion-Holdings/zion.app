@@ -1,15 +1,40 @@
-#!/usr/bin/env ts-node
 
-/**
- * Environment Configuration Validator
- * 
- * This script validates that all required environment variables are properly
- * configured for Supabase authentication and other critical services.
- * 
- * Usage:
- *   npm run validate-env
- *   npx tsx scripts/validate-environment.ts
- */
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting ...');
+    
+    try {
+      #!/usr/bin/env ts-node
+
+
 ;
 import { z } from zod';import * as dotenv from dotenv';import path from path';import fs from fs';import { fileURLToPath } from url';
 // ES module compatibility;
@@ -19,7 +44,7 @@ const isMainModule = process.argv[1] === __filename;
 
 // Load environment variables;
 const envPath = path.resolve(process.cwd(), .env.local');if (!fs.existsSync(envPath)) {
-  console.warn('⚠️  .env.local file not found. Create one to configure environment variables.');} else {
+  logger.warn('⚠️  .env.local file not found. Create one to configure environment variables.');} else {
   dotenv.config({ path: envPath });
 }
 
@@ -27,11 +52,11 @@ const envPath = path.resolve(process.cwd(), .env.local');if (!fs.existsSync(envP
 const colors = {
   reset: \x1b[0m',  bright: \x1b[1m',  red: \x1b[31m',  green: \x1b[32m',  yellow: \x1b[33m',  blue: \x1b[34m',  magenta: \x1b[35m',  cyan: \x1b[36m''};
 const _log = {
-  success: (msg: string) => console.warn(`${colors.green}✅ ${msg}${colors.reset}`),
-  error: (msg: string) => console.warn(`${colors.red}❌ ${msg}${colors.reset}`),
-  warning: (msg: string) => console.warn(`${colors.yellow}⚠️  ${msg}${colors.reset}`),
-  info: (msg: string) => console.warn(`${colors.blue}ℹ️  ${msg}${colors.reset}`),
-  header: (msg: string) => console.warn(`${colors.bright}${colors.cyan}${msg}${colors.reset}`)
+  success: (msg: string) => logger.warn(`${colors.green}✅ ${msg}${colors.reset}`),
+  error: (msg: string) => logger.warn(`${colors.red}❌ ${msg}${colors.reset}`),
+  warning: (msg: string) => logger.warn(`${colors.yellow}⚠️  ${msg}${colors.reset}`),
+  info: (msg: string) => logger.warn(`${colors.blue}ℹ️  ${msg}${colors.reset}`),
+  header: (msg: string) => logger.warn(`${colors.bright}${colors.cyan}${msg}${colors.reset}`)
 };
 
 interface ValidationResult {
@@ -71,9 +96,7 @@ const envSchema = z.object({
 
 type Environment = z.infer<typeof envSchema>;
 
-/**
- * Check if a value is a placeholder
- */;
+;
 function isPlaceholder(value: string | undefined): boolean {
   if (!value) return true;
   
@@ -85,18 +108,14 @@ function isPlaceholder(value: string | undefined): boolean {
   return placeholderPatterns.some(pattern => lowerValue.includes(pattern));
 }
 
-/**
- * Validate Auth0 domain format
- */;
+;
 function validateAuth0Domain(domain: string): boolean {
   // Auth0 domains should match pattern: https://tenant.region.auth0.com or https://tenant.auth0.com
   const auth0DomainPattern = /^https:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)?\.auth0\.com$/;
   return auth0DomainPattern.test(domain);
 }
 
-/**
- * Validate Auth0 secret format (should be hex string)
- */;
+;
 function validateAuth0Secret(secret: string): boolean {
   // Auth0 secret should be a hex string of at least 32 characters
   return /^[a-fA-F0-9]{32}$/.test(secret);
@@ -192,24 +211,24 @@ function validateConfiguration(env: Environment): ValidationResult {
 }
 ;
 function printResults(result: ValidationResult): void {
-  console.warn('\n🔍 Environment Configuration Validation\n');
+  logger.warn('\n🔍 Environment Configuration Validation\n');
   if (result.errors.length > 0) {
     _log.error('❌ ERRORS (must be fixed):');    result.errors.forEach(error => _log.error(`   • ${error}`));
-    console.warn('');  }
+    logger.warn('');  }
 
   if (result.warnings.length > 0) {
     _log.warning('⚠️  WARNINGS:');    result.warnings.forEach(warning => _log.warning(`   • ${warning}`));
-    console.warn('');  }
+    logger.warn('');  }
 
   if (result.suggestions.length > 0) {
     _log.info('💡 SUGGESTIONS:');    result.suggestions.forEach(suggestion => _log.info(`   • ${suggestion}`));
-    console.warn('');  }
+    logger.warn('');  }
 
   if (result.isValid) {
     _log.success('✅ Environment configuration is valid!');  } else {
     _log.error('❌ Environment configuration has errors that must be fixed.');  }
 
-  _log.info('\n📚 Setup Instructions:');  _log.info('   • Auth0: https://manage.auth0.com/dashboard');  _log.info('   • Generate Auth0 Secret: openssl rand -hex 32');  _log.info('   • Sentry: https://sentry.io/settings/');  _log.info('   • Reown: https://cloud.reown.com/');  console.warn('');}
+  _log.info('\n📚 Setup Instructions:');  _log.info('   • Auth0: https://manage.auth0.com/dashboard');  _log.info('   • Generate Auth0 Secret: openssl rand -hex 32');  _log.info('   • Sentry: https://sentry.io/settings/');  _log.info('   • Reown: https://cloud.reown.com/');  logger.warn('');}
 ;
 function main(): void {
   try {
@@ -233,3 +252,38 @@ if (isMainModule) {
 }
 ;
 { validateConfiguration, isPlaceholder }; 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+    } catch (error) {
+      logger.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    logger.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

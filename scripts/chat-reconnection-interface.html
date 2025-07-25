@@ -1,10 +1,19 @@
-<!DOCTYPE html>
+const winston = require('winston'); const logger = winston.createLogger({ level:
+'info', format: winston.format.combine( winston.format.timestamp(),
+winston.format.errors({ stack: true }), winston.format.json() ), defaultMeta: {
+service: 'automation-script' }, transports: [ new winston.transports.File({
+filename: 'logs/error.log', level: 'error' }), new winston.transports.File({
+filename: 'logs/combined.log' }) ] }); if (process.env.NODE_ENV !==
+'production') { logger.add(new winston.transports.Console({ format:
+winston.format.simple() })); }
+
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>🤖 Automated Chat Reconnection System</title>
-        <style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🤖 Automated Chat Reconnection System</title>
+    <style>
       * {
         margin: 0;
         padding: 0;
@@ -356,390 +365,560 @@
           font-size: 2rem;
         }
       }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">
-                <h1>🤖 Automated Chat Reconnection System</h1>
-                <p>Monitor and control chat connections across all computers with Cursor</p>
-            </div>
-            <div class="status-bar">
-                <div class="status-item">
-                    <div class="status-indicator" id="systemStatus"></div>
-                    <span id="systemStatusText">Checking system status...</span>
-                </div>
-                <div class="status-item">
-                    <span>🖥️ Computers Online: <strong id="onlineCount">-</strong></span>
-                </div>
-                <div class="status-item">
-                    <span>💬 Active Chats: <strong id="activeChats">-</strong></span>
-                </div>
-                <div class="status-item">
-                    <span>⏱️ Uptime: <strong id="uptime">-</strong></span>
-                </div>
-            </div>
-            <div class="main-content">
-                <div class="panel">
-                    <h2>🖥️ Connected Computers</h2>
-                    <div class="computer-grid" id="computerGrid">
-                        <div class="loading">Loading computers...</div>
-                    </div>
-                </div>
-                <div class="panel">
-                    <h2>📊 System Statistics</h2>
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <div class="stat-value" id="totalComputers">-</div>
-                            <div class="stat-label">Total Computers</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value" id="onlineComputers">-</div>
-                            <div class="stat-label">Online</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value" id="chatMessages">-</div>
-                            <div class="stat-label">Chat Messages</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-value" id="reconnections">-</div>
-                            <div class="stat-label">Reconnections</div>
-                        </div>
-                    </div>
-                    <div class="quick-actions">
-                        <button class="quick-btn"
-                                onclick="triggerChat('build', 'Please analyze the current build process')">
-                            🔨 Build Analysis
-                        </button>
-                        <button class="quick-btn"
-                                onclick="triggerChat('lint', 'Check for code quality issues')">🧹 Code Quality</button>
-                        <button class="quick-btn"
-                                onclick="triggerChat('test', 'Run comprehensive tests')">🧪 Run Tests</button>
-                        <button class="quick-btn"
-                                onclick="triggerChat('deploy', 'Prepare for deployment')">🚀 Deploy</button>
-                        <button class="quick-btn"
-                                onclick="triggerChat('optimize', 'Optimize performance')">⚡ Optimize</button>
-                        <button class="quick-btn" onclick="triggerChat('security', 'Security audit')">🔒 Security</button>
-                    </div>
-                </div>
-                <div class="panel chat-section">
-                    <h2>💬 Live Chat</h2>
-                    <div class="chat-container">
-                        <div class="chat-header">
-                            <span>System Chat</span>
-                            <span id="chatStatus">Connected</span>
-                        </div>
-                        <div class="chat-messages" id="chatMessages">
-                            <div class="message system">System initialized. Ready to chat with all connected computers.</div>
-                        </div>
-                        <div class="chat-input">
-                            <input type="text"
-                                   id="messageInput"
-                                   placeholder="Type your message..."
-                                   onkeypress="handleKeyPress(event)" />
-                            <button onclick="sendMessage()">Send</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🤖 Automated Chat Reconnection System</h1>
+        <p>
+          Monitor and control chat connections across all computers with Cursor
+        </p>
+      </div>
+      <div class="status-bar">
+        <div class="status-item">
+          <div class="status-indicator" id="systemStatus"></div>
+          <span id="systemStatusText">Checking system status...</span>
         </div>
-        <script>
-      // Configuration
-      const CONFIG = {
-        API_BASE: 'http://localhost:3009',
-        UPDATE_INTERVAL: 5000,
-        WEBSOCKET_URL: 'ws://localhost:3009',
-      };
+        <div class="status-item">
+          <span>🖥️ Computers Online: <strong id="onlineCount">-</strong></span>
+        </div>
+        <div class="status-item">
+          <span>💬 Active Chats: <strong id="activeChats">-</strong></span>
+        </div>
+        <div class="status-item">
+          <span>⏱️ Uptime: <strong id="uptime">-</strong></span>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="panel">
+          <h2>🖥️ Connected Computers</h2>
+          <div class="computer-grid" id="computerGrid">
+            <div class="loading">Loading computers...</div>
+          </div>
+        </div>
+        <div class="panel">
+          <h2>📊 System Statistics</h2>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-value" id="totalComputers">-</div>
+              <div class="stat-label">Total Computers</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="onlineComputers">-</div>
+              <div class="stat-label">Online</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="chatMessages">-</div>
+              <div class="stat-label">Chat Messages</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="reconnections">-</div>
+              <div class="stat-label">Reconnections</div>
+            </div>
+          </div>
+          <div class="quick-actions">
+            <button
+              class="quick-btn"
+              onclick="triggerChat('build', 'Please analyze the current build process')"
+            >
+              🔨 Build Analysis
+            </button>
+            <button
+              class="quick-btn"
+              onclick="triggerChat('lint', 'Check for code quality issues')"
+            >
+              🧹 Code Quality
+            </button>
+            <button
+              class="quick-btn"
+              onclick="triggerChat('test', 'Run comprehensive tests')"
+            >
+              🧪 Run Tests
+            </button>
+            <button
+              class="quick-btn"
+              onclick="triggerChat('deploy', 'Prepare for deployment')"
+            >
+              🚀 Deploy
+            </button>
+            <button
+              class="quick-btn"
+              onclick="triggerChat('optimize', 'Optimize performance')"
+            >
+              ⚡ Optimize
+            </button>
+            <button
+              class="quick-btn"
+              onclick="triggerChat('security', 'Security audit')"
+            >
+              🔒 Security
+            </button>
+          </div>
+        </div>
+        <div class="panel chat-section">
+          <h2>💬 Live Chat</h2>
+          <div class="chat-container">
+            <div class="chat-header">
+              <span>System Chat</span>
+              <span id="chatStatus">Connected</span>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+              <div class="message system">
+                System initialized. Ready to chat with all connected computers.
+              </div>
+            </div>
+            <div class="chat-input">
+              <input
+                type="text"
+                id="messageInput"
+                placeholder="Type your message..."
+                onkeypress="handleKeyPress(event)"
+              />
+              <button onclick="sendMessage()">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+            // Configuration
+            const CONFIG = {
+              API_BASE: 'http://localhost:3009',
+              UPDATE_INTERVAL: 5000,
+              WEBSOCKET_URL: 'ws://localhost:3009',
+            };
 
-      // State
-      let computers = [];
-      let chatHistory = [];
-      let websocket = null;
-      let updateInterval = null;
+            // State
+            let computers = [];
+            let chatHistory = [];
+            let websocket = null;
+            let updateInterval = null;
 
-      // Initialize
-      document.addEventListener('DOMContentLoaded', function () {
-        initializeWebSocket();
-        startPeriodicUpdates();
-        loadInitialData();
-      });
+            // Initialize
+            document.addEventListener('DOMContentLoaded', function () {
+              initializeWebSocket();
+              startPeriodicUpdates();
+              loadInitialData();
+            });
 
-      // WebSocket connection
-      function initializeWebSocket() {
-        try {
-          websocket = new WebSocket(CONFIG.WEBSOCKET_URL);
+            // WebSocket connection
+            function initializeWebSocket() {
+              try {
+                websocket = new WebSocket(CONFIG.WEBSOCKET_URL);
 
-          websocket.onopen = function () {
-            console.log('WebSocket connected');
-            updateChatStatus('Connected', 'online');
-          };
+                websocket.onopen = function () {
+                  logger.info('WebSocket connected');
+                  updateChatStatus('Connected', 'online');
+                };
 
-          websocket.onmessage = function (event) {
-            const data = JSON.parse(event.data);
-            handleWebSocketMessage(data);
-          };
+                websocket.onmessage = function (event) {
+                  const data = JSON.parse(event.data);
+                  handleWebSocketMessage(data);
+                };
 
-          websocket.onclose = function () {
-            console.log('WebSocket disconnected');
-            updateChatStatus('Disconnected', 'offline');
-            // Reconnect after 5 seconds
-            setTimeout(initializeWebSocket, 5000);
-          };
+                websocket.onclose = function () {
+                  logger.info('WebSocket disconnected');
+                  updateChatStatus('Disconnected', 'offline');
+                  // Reconnect after 5 seconds
 
-          websocket.onerror = function (error) {
-            console.error('WebSocket error:', error);
-            updateChatStatus('Error', 'offline');
-          };
-        } catch (error) {
-          console.error('Failed to initialize WebSocket:', error);
-          updateChatStatus('Failed to connect', 'offline');
-        }
-      }
+      const timeoutId =
+      const timeoutId =
+      const timeoutId =
+      const timeoutId =
+      const timeoutId =
+      const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(initializeWebSocket,                                                5000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+      // Store timeoutId for cleanup if needed
+      ;
+      // Store timeoutId for cleanup if needed
+      ;
+      // Store timeoutId for cleanup if needed
+      ;
+      // Store timeoutId for cleanup if needed
+      ;
+      // Store timeoutId for cleanup if needed
+      ;
+      // Store timeoutId for cleanup if needed
+      ;
+                };
 
-      // Handle WebSocket messages
-      function handleWebSocketMessage(data) {
-        switch (data.type) {
-          case 'chat':
-            addChatMessage(data.message, 'ai', data.computerId);
-            break;
-          case 'system':
-            addChatMessage(data.message, 'system');
-            break;
-          case 'computer_status':
-            updateComputerStatus(data);
-            break;
-          default:
-            console.log('Unknown message type:', data.type);
-        }
-      }
+                websocket.onerror = function (error) {
+                  logger.error('WebSocket error:', error);
+                  updateChatStatus('Error', 'offline');
+                };
+              } catch (error) {
+                logger.error('Failed to initialize WebSocket:', error);
+                updateChatStatus('Failed to connect', 'offline');
+              }
+            }
 
-      // Periodic updates
-      function startPeriodicUpdates() {
-        updateInterval = setInterval(() => {
-          fetchSystemStatus();
-          fetchComputers();
-        }, CONFIG.UPDATE_INTERVAL);
-      }
+            // Handle WebSocket messages
+            function handleWebSocketMessage(data) {
+              switch (data.type) {
+                case 'chat':
+                  addChatMessage(data.message, 'ai', data.computerId);
+                  break;
+                case 'system':
+                  addChatMessage(data.message, 'system');
+                  break;
+                case 'computer_status':
+                  updateComputerStatus(data);
+                  break;
+                default:
+                  logger.info('Unknown message type:', data.type);
+              }
+            }
 
-      // Load initial data
-      async function loadInitialData() {
-        await Promise.all([fetchSystemStatus(), fetchComputers()]);
-      }
+            // Periodic updates
+            function startPeriodicUpdates() {
+              updateInterval = setInterval(() => {
+                fetchSystemStatus();
+                fetchComputers();
+              }, CONFIG.UPDATE_INTERVAL);
+            }
 
-      // Fetch system status
-      async function fetchSystemStatus() {
-        try {
-          const response = await fetch(`${CONFIG.API_BASE}/status`);
-          const data = await response.json();
-          updateSystemStatus(data);
-        } catch (error) {
-          console.error('Failed to fetch system status:', error);
-          updateSystemStatus({ isConnected: false });
-        }
-      }
+            // Load initial data
+            async function loadInitialData() {
+              await Promise.all([fetchSystemStatus(), fetchComputers()]);
+            }
 
-      // Fetch computers
-      async function fetchComputers() {
-        try {
-          const response = await fetch(`${CONFIG.API_BASE}/computers`);
-          const data = await response.json();
-          computers = data;
-          updateComputerGrid();
-          updateStatistics();
-        } catch (error) {
-          console.error('Failed to fetch computers:', error);
-        }
-      }
+            // Fetch system status
+            async function fetchSystemStatus() {
+              try {
+                const response = await fetch(`${CONFIG.API_BASE}/status`);
+                const data = await response.json();
+                updateSystemStatus(data);
+              } catch (error) {
+                logger.error('Failed to fetch system status:', error);
+                updateSystemStatus({ isConnected: false });
+              }
+            }
 
-      // Update system status
-      function updateSystemStatus(data) {
-        const statusIndicator = document.getElementById('systemStatus');
-        const statusText = document.getElementById('systemStatusText');
-        const onlineCount = document.getElementById('onlineCount');
-        const activeChats = document.getElementById('activeChats');
-        const uptime = document.getElementById('uptime');
+            // Fetch computers
+            async function fetchComputers() {
+              try {
+                const response = await fetch(`${CONFIG.API_BASE}/computers`);
+                const data = await response.json();
+                computers = data;
+                updateComputerGrid();
+                updateStatistics();
+              } catch (error) {
+                logger.error('Failed to fetch computers:', error);
+              }
+            }
 
-        if (data.isConnected) {
-          statusIndicator.className = 'status-indicator online';
-          statusText.textContent = 'System Online';
-        } else {
-          statusIndicator.className = 'status-indicator offline';
-          statusText.textContent = 'System Offline';
-        }
+            // Update system status
+            function updateSystemStatus(data) {
+              const statusIndicator = document.getElementById('systemStatus');
+              const statusText = document.getElementById('systemStatusText');
+              const onlineCount = document.getElementById('onlineCount');
+              const activeChats = document.getElementById('activeChats');
+              const uptime = document.getElementById('uptime');
 
-        onlineCount.textContent = data.discoveredComputers || 0;
-        activeChats.textContent = data.activeConnections || 0;
-        uptime.textContent = formatUptime(data.uptime || 0);
-      }
+              if (data.isConnected) {
+                statusIndicator.className = 'status-indicator online';
+                statusText.textContent = 'System Online';
+              } else {
+                statusIndicator.className = 'status-indicator offline';
+                statusText.textContent = 'System Offline';
+              }
 
-      // Update computer grid
-      function updateComputerGrid() {
-        const grid = document.getElementById('computerGrid');
+              onlineCount.textContent = data.discoveredComputers || 0;
+              activeChats.textContent = data.activeConnections || 0;
+              uptime.textContent = formatUptime(data.uptime || 0);
+            }
 
-        if (computers.length === 0) {
-          grid.innerHTML = '<div class="loading">No computers discovered</div>';
-          return;
-        }
+            // Update computer grid
+            function updateComputerGrid() {
+              const grid = document.getElementById('computerGrid');
 
-        grid.innerHTML = computers
-          .map(
-            (computer) => `
-                <div class="computer-card ${computer.isConnected ? 'online' : 'offline'}">
-                    <div class="computer-header">
-                        <div class="computer-name">${computer.hostname}</div>
-                        <div class="computer-status ${computer.isConnected ? 'online' : 'offline'}">
-                            ${computer.isConnected ? 'Online' : 'Offline'}
-                        </div>
-                    </div>
-                    <div class="computer-details">
-                        <div>ID: ${computer.computerId}</div>
-                        <div>Platform: ${computer.platform}</div>
-                        <div>Last Seen: ${formatTimestamp(computer.lastSeen)}</div>
-                    </div>
-                </div>
-            `,
-          )
-          .join('');
-      }
+              if (computers.length === 0) {
+                grid.innerHTML = '<div class="loading">No computers discovered</div>';
+                return;
+              }
 
-      // Update statistics
-      function updateStatistics() {
-        const totalComputers = document.getElementById('totalComputers');
-        const onlineComputers = document.getElementById('onlineComputers');
-        const chatMessages = document.getElementById('chatMessages');
-        const reconnections = document.getElementById('reconnections');
+              grid.innerHTML = computers
+                .map(
+                  (computer) => `
+                      <div class="computer-card ${computer.isConnected ? 'online' : 'offline'}">
+                          <div class="computer-header">
+                              <div class="computer-name">${computer.hostname}</div>
+                              <div class="computer-status ${computer.isConnected ? 'online' : 'offline'}">
+                                  ${computer.isConnected ? 'Online' : 'Offline'}
+                              </div>
+                          </div>
+                          <div class="computer-details">
+                              <div>ID: ${computer.computerId}</div>
+                              <div>Platform: ${computer.platform}</div>
+                              <div>Last Seen: ${formatTimestamp(computer.lastSeen)}</div>
+                          </div>
+                      </div>
+                  `,
+                )
+                .join('');
+            }
 
-        const online = computers.filter((c) => c.isConnected).length;
+            // Update statistics
+            function updateStatistics() {
+              const totalComputers = document.getElementById('totalComputers');
+              const onlineComputers = document.getElementById('onlineComputers');
+              const chatMessages = document.getElementById('chatMessages');
+              const reconnections = document.getElementById('reconnections');
 
-        totalComputers.textContent = computers.length;
-        onlineComputers.textContent = online;
-        chatMessages.textContent = chatHistory.length;
-        reconnections.textContent = '0'; // TODO: Track reconnections
-      }
+              const online = computers.filter((c) => c.isConnected).length;
 
-      // Update computer status
-      function updateComputerStatus(data) {
-        const index = computers.findIndex(
-          (c) => c.computerId === data.computerId,
-        );
-        if (index !== -1) {
-          computers[index] = { ...computers[index], ...data };
-          updateComputerGrid();
-          updateStatistics();
-        }
-      }
+              totalComputers.textContent = computers.length;
+              onlineComputers.textContent = online;
+              chatMessages.textContent = chatHistory.length;
+              reconnections.textContent = '0'; // TODO: Track reconnections
+            }
 
-      // Update chat status
-      function updateChatStatus(status, type) {
-        const chatStatus = document.getElementById('chatStatus');
-        chatStatus.textContent = status;
-        chatStatus.className = type;
-      }
+            // Update computer status
+            function updateComputerStatus(data) {
+              const index = computers.findIndex(
+                (c) => c.computerId === data.computerId,
+              );
+              if (index !== -1) {
+                computers[index] = { ...computers[index], ...data };
+                updateComputerGrid();
+                updateStatistics();
+              }
+            }
 
-      // Add chat message
-      function addChatMessage(message, type, computerId = null) {
-        const messagesContainer = document.getElementById('chatMessages');
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${type}`;
+            // Update chat status
+            function updateChatStatus(status, type) {
+              const chatStatus = document.getElementById('chatStatus');
+              chatStatus.textContent = status;
+              chatStatus.className = type;
+            }
 
-        let displayMessage = message;
-        if (computerId && type === 'ai') {
-          displayMessage = `[${computerId}]: ${message}`;
-        }
+            // Add chat message
+            function addChatMessage(message, type, computerId = null) {
+              const messagesContainer = document.getElementById('chatMessages');
+              const messageDiv = document.createElement('div');
+              messageDiv.className = `message ${type}`;
 
-        messageDiv.textContent = displayMessage;
-        messagesContainer.appendChild(messageDiv);
+              let displayMessage = message;
+              if (computerId && type === 'ai') {
+                displayMessage = `[${computerId}]: ${message}`;
+              }
 
-        // Scroll to bottom
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+              messageDiv.textContent = displayMessage;
+              messagesContainer.appendChild(messageDiv);
 
-        // Store in history
-        chatHistory.push({
-          message,
-          type,
-          computerId,
-          timestamp: Date.now(),
-        });
+              // Scroll to bottom
+              messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
-        // Keep only last 100 messages
-        if (chatHistory.length > 100) {
-          chatHistory = chatHistory.slice(-100);
-        }
+              // Store in history
+              chatHistory.push({
+                message,
+                type,
+                computerId,
+                timestamp: Date.now(),
+              });
 
-        updateStatistics();
-      }
+              // Keep only last 100 messages
+              if (chatHistory.length > 100) {
+                chatHistory = chatHistory.slice(-100);
+              }
 
-      // Send message
-      function sendMessage() {
-        const input = document.getElementById('messageInput');
-        const message = input.value.trim();
+              updateStatistics();
+            }
 
-        if (!message) return;
+            // Send message
+            function sendMessage() {
+              const input = document.getElementById('messageInput');
+              const message = input.value.trim();
 
-        // Add user message
-        addChatMessage(message, 'user');
+              if (!message) return;
 
-        // Send via WebSocket
-        if (websocket && websocket.readyState === WebSocket.OPEN) {
-          websocket.send(
-            JSON.stringify({
-              type: 'chat',
-              message: message,
-              room: 'general',
-            }),
-          );
-        }
+              // Add user message
+              addChatMessage(message, 'user');
 
-        // Clear input
-        input.value = '';
-      }
+              // Send via WebSocket
+              if (websocket && websocket.readyState === WebSocket.OPEN) {
+                websocket.send(
+                  JSON.stringify({
+                    type: 'chat',
+                    message: message,
+                    room: 'general',
+                  }),
+                );
+              }
 
-      // Handle key press
-      function handleKeyPress(event) {
-        if (event.key === 'Enter') {
-          sendMessage();
-        }
-      }
+              // Clear input
+              input.value = '';
+            }
 
-      // Trigger chat
-      function triggerChat(category, message) {
-        addChatMessage(`Triggering ${category} chat: ${message}`, 'system');
+            // Handle key press
+            function handleKeyPress(event) {
+              if (event.key === 'Enter') {
+                sendMessage();
+              }
+            }
 
-        if (websocket && websocket.readyState === WebSocket.OPEN) {
-          websocket.send(
-            JSON.stringify({
-              type: 'chat_trigger',
-              category: category,
-              message: message,
-              priority: 'medium',
-              automated: false,
-            }),
-          );
-        }
-      }
+            // Trigger chat
+            function triggerChat(category, message) {
+              addChatMessage(`Triggering ${category} chat: ${message}`, 'system');
 
-      // Utility functions
-      function formatUptime(seconds) {
-        const hours = Math.floor(seconds / 3600);
-        const minutes = Math.floor((seconds % 3600) / 60);
-        return `${hours}h ${minutes}m`;
-      }
+              if (websocket && websocket.readyState === WebSocket.OPEN) {
+                websocket.send(
+                  JSON.stringify({
+                    type: 'chat_trigger',
+                    category: category,
+                    message: message,
+                    priority: 'medium',
+                    automated: false,
+                  }),
+                );
+              }
+            }
 
-      function formatTimestamp(timestamp) {
-        if (!timestamp) return 'Unknown';
-        const date = new Date(timestamp);
-        return date.toLocaleString();
-      }
+            // Utility functions
+            function formatUptime(seconds) {
+              const hours = Math.floor(seconds / 3600);
+              const minutes = Math.floor((seconds % 3600) / 60);
+              return `${hours}h ${minutes}m`;
+            }
 
-      // Cleanup on page unload
-      window.addEventListener('beforeunload', function () {
-        if (updateInterval) {
-          clearInterval(updateInterval);
-        }
-        if (websocket) {
-          websocket.close();
-        }
-      });
-        </script>
-    </body>
+            function formatTimestamp(timestamp) {
+              if (!timestamp) return 'Unknown';
+              const date = new Date(timestamp);
+              return date.toLocaleString();
+            }
+
+            // Cleanup on page unload
+            window.addEventListener('beforeunload', function () {
+              if (updateInterval) {
+                clearInterval(updateInterval);
+              }
+              if (websocket) {
+                websocket.close();
+              }
+            });
+    </script>
+  </body>
 </html>

@@ -1,3 +1,36 @@
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 if (newContent !== content) {
           fs.writeFileSync(file, newContent);
           this.log(`Fixed merge conflicts in ${file}`);
@@ -212,7 +245,7 @@ const lines = content.split('\n');
 
         for (let i = 0; i < lines.length; i++) {
           const line = lines[i];
-          if (line.includes('console.log(') && !file.includes('.test.') && !file.includes('.spec.')) {
+          if (line.includes('logger.info(') && !file.includes('.test.') && !file.includes('.spec.')) {
             lines[i] = `// ${line}`;
             modified = true;
           }
@@ -285,7 +318,7 @@ const lines = content.split('\n');
     this.log('Fixing ESLint issues...');
     
     try {
-      execSync('npm run lint:fix', { stdio: 'inherit' });
+      execSync('npm run lint: 'fix', { stdio: 'inherit' });
       this.log('Applied ESLint auto-fixes');
       return true;
     } catch (error) {
@@ -487,9 +520,44 @@ if (require.main === module) {
   const healer = new ComprehensiveHealer();
   
   healer.run().catch(error => {
-    console.error('Comprehensive healer failed:', error);
+    logger.error('Comprehensive healer failed:', error);
     process.exit(1);
   });
 }
 
 module.exports = ComprehensiveHealer;
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

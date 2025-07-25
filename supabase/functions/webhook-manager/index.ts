@@ -80,7 +80,7 @@ async function createWebhook(userId: string, name: string, url: string, eventTyp
 
     return new Response(JSON.stringify({ 
       webhook: data[0],
-      message: 'Webhook created successfully''    }), {
+      message:' 'Webhook created successfully''    }), {
       status: 201,
       headers: { Content-Type': application/json' },    });
   } catch {
@@ -144,7 +144,7 @@ async function deleteWebhook(userId: string, webhookId: string) {
     }
 
     return new Response(JSON.stringify({
-      message: 'Webhook deleted successfully',      id: webhookId
+      message:' 'Webhook deleted successfully',      id: webhookId
     }), {
       status: 200,
       headers: { Content-Type': application/json' },    });
@@ -190,7 +190,7 @@ async function testWebhook(userId: string, webhookId: string, eventType: string)
       // Return the response status and body
       const responseText = await webhookResponse.text();
       return new Response(JSON.stringify({
-        message: 'Test webhook sent',        status: webhookResponse.status,
+        message:' 'Test webhook sent',        status: webhookResponse.status,
         statusText: webhookResponse.statusText,
         responseBody: responseText.substring(0, 500) // Limit response body size
       }), {
@@ -287,7 +287,7 @@ function createTestPayload(eventType: string) {
         event_type: test_event',        event_id: eventId,
         timestamp,
         data: {
-          message: 'This is a test webhook event''        }
+          message:' 'This is a test webhook event''        }
       };
   }
 }

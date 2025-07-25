@@ -1,48 +1,80 @@
-#!/usr/bin/env node
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-console.log('🔧 Final Automation System Fix & Summary\n');
-console.log('=' .repeat(60));
+logger.info('🔧 Final Automation System Fix & Summary\n');
+logger.info('=' .repeat(60));
 
 // Final fixes for remaining syntax errors
 const finalFixes = [
   {
-    file: automation/continuous-improvement/start.js',
+    file: 'automation/continuous-improvement/start.js',
     find: "const EnhancedAutomation = require('./enhanced-automation');",""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     replace: "const EnhancedAutomation = require('./enhanced-automation');"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   },
   {
-    file: automation/continuous-improvement/cursor-integration.js',
+    file: 'automation/continuous-improvement/cursor-integration.js',
     find: "throw new Error('CURSOR_API_KEY environment variable is required');",""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     replace: "throw new Error('CURSOR_API_KEY environment variable is required');"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   },
   {
-    file: automation/continuous-improvement/cursor-integration.js',
+    file: 'automation/continuous-improvement/cursor-integration.js',
     find: "throw new Error('CURSOR_WORKSPACE_ID environment variable is required');",""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     replace: "throw new Error('CURSOR_WORKSPACE_ID environment variable is required');"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   },
   {
-    file: automation/continuous-improvement/cursor-integration.js',
-    find: "action: ping',",""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    replace: "action: ping',"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    file: 'automation/continuous-improvement/cursor-integration.js',
+    find: "action: 'ping',",""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    replace: "action: 'ping',"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   },
   {
-    file: automation/continuous-improvement/cursor-integration.js',
-    find: "console.log('🔍 Analyzing code quality with Cursor AI...')",""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    replace: "console.log('🔍 Analyzing code quality with Cursor AI...');"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    file: 'automation/continuous-improvement/cursor-integration.js',
+    find: "logger.info('🔍 Analyzing code quality with Cursor AI...')",""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    replace: "logger.info('🔍 Analyzing code quality with Cursor AI...');"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   },
   {
-    file: automation/continuous-improvement/cursor-integration.js',
-    find: "console.log('⚡ Analyzing performance with Cursor AI...')",""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    replace: "console.log('⚡ Analyzing performance with Cursor AI...');"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    file: 'automation/continuous-improvement/cursor-integration.js',
+    find: "logger.info('⚡ Analyzing performance with Cursor AI...')",""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    replace: "logger.info('⚡ Analyzing performance with Cursor AI...');"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   },
   {
-    file: automation/continuous-improvement/cursor-integration.js',
-    find: "console.log('🔒 Analyzing security with Cursor AI...')",""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    replace: "console.log('🔒 Analyzing security with Cursor AI...');"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    file: 'automation/continuous-improvement/cursor-integration.js',
+    find: "logger.info('🔒 Analyzing security with Cursor AI...')",""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    replace: "logger.info('🔒 Analyzing security with Cursor AI...');"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   }
 ];
 
@@ -52,21 +84,21 @@ function fixFile(filePath, findStr, replaceStr) {
       return false;
     }
 
-    let content = fs.readFileSync(filePath, utf8');
+    let content = fs.readFileSync(filePath, 'utf8');
     if (content.includes(findStr)) {
       content = content.replace(findStr, replaceStr);
       fs.writeFileSync(filePath, content, utf8');
-      console.log(`✅ Fixed: ${filePath}`);
+      logger.info(`✅ Fixed: ${filePath}`);
       return true;
     }
   } catch (error) {
-    console.error(`❌ Error fixing ${filePath}:`, error.message);
+    logger.error(`❌ Error fixing ${filePath}:`, error.message);
   }
   return false;
 }
 
 // Apply final fixes
-console.log('🔧 Applying final syntax fixes...');
+logger.info('🔧 Applying final syntax fixes...');
 let totalFixed = 0;
 for (const fix of finalFixes) {
   if (fixFile(fix.file, fix.find, fix.replace)) {
@@ -74,10 +106,10 @@ for (const fix of finalFixes) {
   }
 }
 
-console.log(`✅ Fixed ${totalFixed} syntax issues\n`);
+logger.info(`✅ Fixed ${totalFixed} syntax issues\n`);
 
 // Test all critical automation files
-console.log('🔍 Testing all critical automation files...');
+logger.info('🔍 Testing all critical automation files...');
 const criticalFiles = [
   automation/index.js',
   automation/continuous-improvement/enhanced-automation.js',
@@ -89,45 +121,45 @@ const criticalFiles = [
 let syntaxErrors = 0;
 for (const file of criticalFiles) {
   try {
-    execSync(`node -c ${file}`, { stdio: pipe' });
-    console.log(`✅ ${file} - Syntax OK`);
+    execSync(`node -c ${file}`, { stdio: 'pipe' });
+    logger.info(`✅ ${file} - Syntax OK`);
   } catch (error) {
-    console.log(`❌ ${file} - Syntax Error`);
+    logger.info(`❌ ${file} - Syntax Error`);
     syntaxErrors++;
   }
 }
 
 // Create log directories if missing
-console.log('\n📁 Creating missing log directories...');
+logger.info('\n📁 Creating missing log directories...');
 const logDirs = ['logs', automation/logs', scripts/logs'];
 for (const logDir of logDirs) {
   if (!fs.existsSync(logDir)) {
     fs.mkdirSync(logDir, { recursive: true });
-    console.log(`✅ Created: ${logDir}`);
+    logger.info(`✅ Created: ${logDir}`);
   } else {
-    console.log(`✅ Exists: ${logDir}`);
+    logger.info(`✅ Exists: ${logDir}`);
   }
 }
 
 // Check automation dependencies
-console.log('\n📦 Checking automation dependencies...');
+logger.info('\n📦 Checking automation dependencies...');
 try {
-  const packageJson = JSON.parse(fs.readFileSync('automation/package.json', utf8'));
-  console.log(`✅ automation/package.json - Version ${packageJson.version}`);
+  const packageJson = JSON.parse(fs.readFileSync('automation/package.json', 'utf8'));
+  logger.info(`✅ automation/package.json - Version ${packageJson.version}`);
   
   // Check if node_modules exists
   if (fs.existsSync('automation/node_modules')) {
-    console.log('✅ automation/node_modules - Dependencies installed');
+    logger.info('✅ automation/node_modules - Dependencies installed');
   } else {
-    console.log('⚠️ automation/node_modules - Dependencies not installed');
-    console.log('   Run: cd automation && npm install');
+    logger.info('⚠️ automation/node_modules - Dependencies not installed');
+    logger.info('   Run: cd automation && npm install');
   }
 } catch (error) {
-  console.log(`❌ automation/package.json - Error: ${error.message}`);
+  logger.info(`❌ automation/package.json - Error: ${error.message}`);
 }
 
 // Create automation startup script
-console.log('\n🚀 Creating automation startup script...');
+logger.info('\n🚀 Creating automation startup script...');
 const startupScript = `#!/bin/bash
 
 echo "🤖 Starting Zion App Automation Systems..."""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -158,7 +190,7 @@ echo "🔗 Dashboard: http://localhost:3001/dashboard"""""""""""""""""""""""""""
 
 fs.writeFileSync('start-automation.sh', startupScript);
 fs.chmodSync('start-automation.sh', 755');
-console.log('✅ Created: start-automation.sh');
+logger.info('✅ Created: start-automation.sh');
 
 // Create automation stop script
 const stopScript = `#!/bin/bash
@@ -176,10 +208,10 @@ echo "✅ All automation systems stopped!"""""""""""""""""""""""""""""""""""""""
 
 fs.writeFileSync('stop-automation.sh', stopScript);
 fs.chmodSync('stop-automation.sh', 755');
-console.log('✅ Created: stop-automation.sh');
+logger.info('✅ Created: stop-automation.sh');
 
 // Create environment template
-console.log('\n⚙️ Creating environment configuration template...');
+logger.info('\n⚙️ Creating environment configuration template...');
 const envTemplate = `# Zion App Automation Environment Configuration
 
 # Cursor AI Configuration
@@ -233,51 +265,88 @@ CODE_COMPLEXITY_THRESHOLD=10
 `;
 
 fs.writeFileSync('.env.automation.template', envTemplate);
-console.log('✅ Created: .env.automation.template');
+logger.info('✅ Created: .env.automation.template');
 
 // Final summary
-console.log('\n' + =' .repeat(60));
-console.log('🎯 AUTOMATION SYSTEM SUMMARY');
-console.log('=' .repeat(60));
+logger.info('\n' + =' .repeat(60));
+logger.info('🎯 AUTOMATION SYSTEM SUMMARY');
+logger.info('=' .repeat(60));
 
 if (syntaxErrors === 0) {
-  console.log('\n✅ ALL CRITICAL AUTOMATION FILES HAVE VALID SYNTAX!');
+  logger.info('\n✅ ALL CRITICAL AUTOMATION FILES HAVE VALID SYNTAX!');
 } else {
-  console.log(`\n⚠️ ${syntaxErrors} critical files still have syntax errors`);
+  logger.info(`\n⚠️ ${syntaxErrors} critical files still have syntax errors`);
 }
 
-console.log('\n📊 Automation System Components:');
-console.log('   ✅ Main Automation System (automation/index.js));
-console.log('   ✅ Enhanced Automation (automation/continuous-improvement/enhanced-automation.js));
-console.log('   ✅ Cursor Chat Automation (scripts/cursor-chat-automation.js));
-console.log('   ✅ Continuous Improvement (automation/continuous-improvement/start.js));
-console.log('   ✅ Cursor Integration (automation/continuous-improvement/cursor-integration.js));
-console.log('   ✅ Performance Monitoring (automation/performance/));
-console.log('   ✅ Slack Integration (automation/slack/));
-console.log('   ✅ Watchdog System (scripts/watchdog.js));
+logger.info('\n📊 Automation System Components:');
+logger.info('   ✅ Main Automation System (automation/index.js));
+logger.info('   ✅ Enhanced Automation (automation/continuous-improvement/enhanced-automation.js));
+logger.info('   ✅ Cursor Chat Automation (scripts/cursor-chat-automation.js));
+logger.info('   ✅ Continuous Improvement (automation/continuous-improvement/start.js));
+logger.info('   ✅ Cursor Integration (automation/continuous-improvement/cursor-integration.js));
+logger.info('   ✅ Performance Monitoring (automation/performance/));
+logger.info('   ✅ Slack Integration (automation/slack/));
+logger.info('   ✅ Watchdog System (scripts/watchdog.js));
 
-console.log('\n🚀 Quick Start Commands:');
-console.log('   1. Configure environment: cp .env.automation.template .env.local');
-console.log('   2. Install dependencies: cd automation && npm install');
-console.log('   3. Start all systems: ./start-automation.sh');
-console.log('   4. Stop all systems: ./stop-automation.sh');
+logger.info('\n🚀 Quick Start Commands:');
+logger.info('   1. Configure environment: cp .env.automation.template .env.local');
+logger.info('   2. Install dependencies: cd automation && npm install');
+logger.info('   3. Start all systems: ./start-automation.sh');
+logger.info('   4. Stop all systems: ./stop-automation.sh');
 
-console.log('\n🔧 Individual System Commands:');
-console.log('   • Cursor Chat: node scripts/cursor-chat-automation.js start');
-console.log('   • Main Automation: node automation/index.js');
-console.log('   • Continuous Improvement: node automation/continuous-improvement/start.js');
-console.log('   • Watchdog: node scripts/watchdog.js');
+logger.info('\n🔧 Individual System Commands:');
+logger.info('   • Cursor Chat: node scripts/cursor-chat-automation.js start');
+logger.info('   • Main Automation: node automation/index.js');
+logger.info('   • Continuous Improvement: node automation/continuous-improvement/start.js');
+logger.info('   • Watchdog: node scripts/watchdog.js');
 
-console.log('\n📈 Monitoring & Logs:');
-console.log('   • Dashboard: http://localhost:3001/dashboard');
-console.log('   • Health Check: http://localhost:3001/health');
-console.log('   • Logs: logs/ directory');
-console.log('   • Status Report: node scripts/automation-status-report.js');
+logger.info('\n📈 Monitoring & Logs:');
+logger.info('   • Dashboard: http://localhost:3001/dashboard');
+logger.info('   • Health Check: http://localhost:3001/health');
+logger.info('   • Logs: logs/ directory');
+logger.info('   • Status Report: node scripts/automation-status-report.js');
 
-console.log('\n🎉 AUTOMATION SYSTEM IS READY FOR DEPLOYMENT!');
-console.log('\nNext steps:');
-console.log('1. Configure your environment variables');
-console.log('2. Install dependencies if needed');
-console.log('3. Start the automation systems');
-console.log('4. Monitor logs and dashboard');
-console.log('5. Set up cron jobs for continuous operation'); 
+logger.info('\n🎉 AUTOMATION SYSTEM IS READY FOR DEPLOYMENT!');
+logger.info('\nNext steps:');
+logger.info('1. Configure your environment variables');
+logger.info('2. Install dependencies if needed');
+logger.info('3. Start the automation systems');
+logger.info('4. Monitor logs and dashboard');
+logger.info('5. Set up cron jobs for continuous operation');
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

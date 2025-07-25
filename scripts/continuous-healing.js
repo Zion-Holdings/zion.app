@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 /**
  * Continuous Healing System
@@ -26,9 +48,9 @@ class ContinuousHealer {
     }
   }
 
-  log(message, level = INFO') {'    const timestamp = new Date().toISOString()
+  log(message, level = 'INFO') {'    const timestamp = new Date().toISOString()
 const logMessage = `[${timestamp}] [${level}] ${message}`;
-    console.log(logMessage);
+    logger.info(logMessage);
     fs.appendFileSync(this.logFile, logMessage + \n');  }
 
   async startMonitoring() {
@@ -154,7 +176,7 @@ const logMessage = `[${timestamp}] [${level}] ${message}`;
   async checkFileForErrors(filePath) {
     try {
       if (filePath.endsWith('.ts') || filePath.endsWith('.tsx')) {'        // Run TypeScript check on the specific file
-        execSync(`npx tsc --noEmit ${filePath}`, { stdio: pipe' });        return false; // No errors
+        execSync(`npx tsc --noEmit ${filePath}`, { stdio: 'pipe' });        return false; // No errors
       }
       return false;
     } catch (error) {
@@ -164,7 +186,7 @@ const logMessage = `[${timestamp}] [${level}] ${message}`;
 
   async applyFileFixes(filePath) {
     try {
-      const content = fs.readFileSync(filePath, utf8');      let modified = false;
+      const content = fs.readFileSync(filePath, 'utf8');      let modified = false;
       let newContent = content;
 
       // Fix common issues
@@ -187,7 +209,7 @@ const logMessage = `[${timestamp}] [${level}] ${message}`;
 
   async setupNewFile(filePath) {
     try {
-      const content = fs.readFileSync(filePath, utf8');      
+      const content = fs.readFileSync(filePath, 'utf8');      
       // Add basic React component structure if it's a TSX file'      if (filePath.endsWith('.tsx') && !content.includes('default')) {'        const componentName = path.basename(filePath, .tsx')
 const newContent = `import React from react';
 interface ${componentName}Props {
@@ -216,7 +238,7 @@ default ${componentName};
 const tsFiles = this.findTypeScriptFiles();
       
       for (const file of tsFiles) {
-        const content = fs.readFileSync(file, utf8')
+        const content = fs.readFileSync(file, 'utf8')
 const importRegex = new RegExp(`import.*from ['"][^'"]*${fileName}['"]`, g');        
         if (importRegex.test(content)) {
           this.log(`Found orphaned import in ${file}, removing...`)
@@ -230,22 +252,22 @@ const newContent = content.replace(importRegex, );          fs.writeFileSync(fil
   async handlePackageJsonChange() {
     try {
       // Check if dependencies were added
-      const packageJson = JSON.parse(fs.readFileSync('package.json', utf8'));      
+      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));      
       // Run npm install if package.json changed
-      this.log('Package.json changed, running npm install...');      execSync('npm install', { stdio: inherit' });    } catch (error) {
+      this.log('Package.json changed, running npm install...');      execSync('npm install', { stdio: 'inherit' });    } catch (error) {
       this.log(`Error handling package.json change: ${error.message}`, ERROR');    }
   }
 
   async handleTsConfigChange() {
     try {
       // Validate tsconfig.json
-      execSync('npx tsc --noEmit', { stdio: pipe' });      this.log('TypeScript configuration is valid');    } catch (error) {
+      execSync('npx tsc --noEmit', { stdio: 'pipe' });      this.log('TypeScript configuration is valid');    } catch (error) {
       this.log('TypeScript configuration has issues', WARN');    }
   }
 
   async checkBuildStatus() {
     try {
-      execSync('npm run type-check', { stdio: pipe' });      return { success: true };
+      execSync('npm run type-check', { stdio: 'pipe' });      return { success: true };
     } catch (error) {
       return { success: false, error: error.message };
     }
@@ -279,7 +301,7 @@ const newContent = content.replace(importRegex, );          fs.writeFileSync(fil
 
   async runTypeCheck() {
     try {
-      execSync('npm run type-check', { stdio: pipe' });      return true;
+      execSync('npm run type-check', { stdio: 'pipe' });      return true;
     } catch (error) {
       this.log('TypeScript errors detected during health check', WARN');      return false;
     }
@@ -287,7 +309,7 @@ const newContent = content.replace(importRegex, );          fs.writeFileSync(fil
 
   async runLinting() {
     try {
-      execSync('npm run lint', { stdio: pipe' });      return true;
+      execSync('npm run lint', { stdio: 'pipe' });      return true;
     } catch (error) {
       this.log('ESLint errors detected during health check', WARN');      return false;
     }
@@ -299,8 +321,8 @@ const newContent = content.replace(importRegex, );          fs.writeFileSync(fil
       const tsFiles = this.findTypeScriptFiles();
       
       for (const file of tsFiles) {
-        const content = fs.readFileSync(file, utf8');        
-        if (content.includes('console.log(') && !file.includes('.test.') && !file.includes('.spec.')) {'          this.log(`Found console.log in production file: ${file}`, WARN');        }
+        const content = fs.readFileSync(file, 'utf8');        
+        if (content.includes('logger.info(') && !file.includes('.test.') && !file.includes('.spec.')) {'          this.log(`Found console.log in production file: ${file}`, WARN');        }
       }
     } catch (error) {
       this.log(`Error checking for common issues: ${error.message}`, ERROR');    }
@@ -350,7 +372,7 @@ if (require.main === module) {
   });
 
   healer.startMonitoring().catch(error => {
-    console.error('Continuous healer failed:', error);    process.exit(1);
+    logger.error('Continuous healer failed:', error);    process.exit(1);
   });
 }
 

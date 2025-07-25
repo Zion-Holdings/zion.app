@@ -1,7 +1,5 @@
-#!/usr/bin/env node
-
-const fs = require('fs')
-const path = require('path')
+const fs = require('fs');
+const path = require('path');
 const { execSync: _execSync } = require('child_process');
 
 // Performance monitoring and optimization script
@@ -29,10 +27,10 @@ class PerformanceMonitor {
   }
 
   formatBytes(bytes) {
-    if (bytes === 0) return '0 B'
-const k = 1024
-const sizes = ['B', 'kB', 'MB', 'GB']
-const i = Math.floor(Math.log(bytes) / Math.log(k));
+    if (bytes === 0) return '0 B';
+    const k = 1024;
+    const sizes = ['B', 'kB', 'MB', 'GB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
   }
 
@@ -61,8 +59,8 @@ const i = Math.floor(Math.log(bytes) / Math.log(k));
   }
 
   checkNodeVersion() {
-    const version = process.version
-const majorVersion = parseInt(version.slice(1).split('.')[0]);
+    const version = process.version;
+    const majorVersion = parseInt(version.slice(1).split('.')[0]);
     if (majorVersion < 18) {
       throw new Error(`Node.js ${version} (upgrade to v18+ recommended)`);
     }
@@ -70,8 +68,8 @@ const majorVersion = parseInt(version.slice(1).split('.')[0]);
   }
 
   checkDependencies() {
-    const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'))
-const nodeModules = fs.existsSync('node_modules');
+    const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+    const nodeModules = fs.existsSync('node_modules');
     if (!nodeModules) {
       throw new Error('node_modules not found - run npm install');
     }
@@ -94,8 +92,8 @@ const nodeModules = fs.existsSync('node_modules');
 
     const buildManifest = path.join('.next', 'build-manifest.json');
     if (fs.existsSync(buildManifest)) {
-      const manifest = JSON.parse(fs.readFileSync(buildManifest, 'utf8'))
-const pageCount = Object.keys(manifest.pages || {}).length;
+      const manifest = JSON.parse(fs.readFileSync(buildManifest, 'utf8'));
+      const pageCount = Object.keys(manifest.pages || {}).length;
       return `Built successfully (${pageCount} pages)`;
     }
 
@@ -147,12 +145,12 @@ const pageCount = Object.keys(manifest.pages || {}).length;
   }
 
   getChunkInfo(dir) {
-    const chunks = []
-const files = fs.readdirSync(dir);
+    const chunks = [];
+    const files = fs.readdirSync(dir);
 
     for (const file of files) {
-      const filePath = path.join(dir, file)
-const stat = fs.statSync(filePath);
+      const filePath = path.join(dir, file);
+      const stat = fs.statSync(filePath);
 
       if (stat.isFile() && file.endsWith('.js')) {
         chunks.push({
@@ -245,8 +243,8 @@ const stat = fs.statSync(filePath);
   }
 
   saveMetrics(metrics) {
-    const timestamp = new Date().toISOString()
-const data = {
+    const timestamp = new Date().toISOString();
+    const data = {
       timestamp,
       ...metrics,
     };
@@ -278,8 +276,8 @@ const data = {
 
     await this.runHealthCheck();
     this.analyzeBundle();
-    this.generateOptimizationReport()
-const duration = Date.now() - startTime;
+    this.generateOptimizationReport();
+    const duration = Date.now() - startTime;
     // console.warn(this.colorize(`\n⏱️  Analysis completed in ${this.formatTime(duration)}`, 'green'));
 
     // Save basic metrics

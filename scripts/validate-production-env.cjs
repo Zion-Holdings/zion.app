@@ -1,17 +1,15 @@
-#!/usr/bin/env node
-
 /**
  * Production Environment Validator
  * Validates all required environment variables for production deployment
  */
 
 // Load environment variables from .env.local if it exists
-const fs = require('fs')
-const _path = require('path')
+const fs = require('fs');
+const _path = require('path');
 function loadEnvFile(envPath) {
   if (fs.existsSync(envPath)) {
-    const envContent = fs.readFileSync(envPath, 'utf8')
-const lines = envContent.split('\n');
+    const envContent = fs.readFileSync(envPath, 'utf8');
+    const lines = envContent.split('\n');
 
     for (const line of lines) {
       const trimmed = line.trim();
@@ -28,7 +26,7 @@ const lines = envContent.split('\n');
 }
 
 // Load from .env.local for development
-loadEnvFile('.env.local')
+loadEnvFile('.env.local');
 const requiredEnvVars = {
   critical: ['NEXT_PUBLIC_SUPABASE_URL', 'NEXT_PUBLIC_SUPABASE_ANON_KEY'],
   authentication: [
@@ -39,7 +37,7 @@ const requiredEnvVars = {
     'AUTH0_CLIENT_SECRET',
   ],
   recommended: ['NEXT_PUBLIC_SENTRY_DSN', 'SENTRY_ORG', 'SENTRY_PROJECT'],
-}
+};
 function validateEnvironment() {
   // console.warn('🔍 Validating Production Environment Variables\n');
 

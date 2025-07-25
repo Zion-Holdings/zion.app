@@ -1,11 +1,45 @@
-const cron = require('node-cron')
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting Script...');
+    
+    try {
+      const cron = require('node-cron')
 const fs = require('fs')
 const _path = require('path');const { _exec } = require('child_process')
 const BASE_URL = process.env.BACKEND_BASE_URL || http://localhost:3001';const ENDPOINTS = (process.env.MONITOR_ENDPOINTS
   ? process.env.MONITOR_ENDPOINTS.split(',).map((p) => p.trim()).filter(Boolean)  : ['/healthz', /recommendations', /sync/status']);
-const BASE_LOG_DIR = process.env.WATCHDOG_LOG_PATH || path.join(__dirname, ..', ..', logs')
-const LOG_DIR = path.join(BASE_LOG_DIR, perf')
-const LOG_FILE = path.join(LOG_DIR, hourly.log')
+const BASE_LOG_DIR = process.env.WATCHDOG_LOG_PATH || path.join(__dirname, ..', ..', 'logs')
+const LOG_DIR = path.join(BASE_LOG_DIR, 'perf')
+const LOG_FILE = path.join(LOG_DIR, 'hourly.log')
 const MAX_LOG_SIZE = 5 * 1024 * 1024; // 5MB
 
 function rotateLogs() {
@@ -50,8 +84,8 @@ const lines = results
 function restartService() {
   const cmd = process.env.RESTART_CMD || pm2 restart all';  exec(cmd, (err, _stdout, _stderr) => {
     if (err) {
-      console.error('Service restart failed:', err.message);    } else {
-      // console.warn('Service restarted:', _stdout || _stderr);    }
+      logger.error('Service restart failed:', err.message);    } else {
+      // logger.warn('Service restarted:', _stdout || _stderr);    }
   });
 }
 
@@ -60,7 +94,7 @@ async function sendAlert(message) {
   if (!url) return;
   try {
     await fetch(url, {
-      method: POST',      headers: { Content-Type': application/json' },      body: JSON.stringify({ text: message })
+      method: 'POST',      headers: { Content-Type': application/json' },      body: JSON.stringify({ text: message })
     });
   } catch {
     console.or('Failed to send alert webhook:', .message);  }
@@ -82,4 +116,41 @@ const slow = results.find((r) => r.avg > 500);
 
 cron.schedule('0 * * * *', monitor);
 // Run immediately when script starts
-monitor().catch((err) => console.error('Monitor error:', err));
+monitor().catch((err) => logger.error('Monitor error:', err));
+    } catch (error) {
+      logger.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    logger.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

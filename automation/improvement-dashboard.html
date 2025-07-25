@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -718,27 +741,27 @@
         startBtn.addEventListener('click', () => {
             fetch('/api/start', { method: 'POST' })
                 .then(response => response.json())
-                .then(data => console.log('Started:', data))
-                .catch(error => console.error('Error starting:', error));
+                .then(data => logger.info('Started:', data))
+                .catch(error => logger.error('Error starting:', error));
         });
 
         pauseBtn.addEventListener('click', () => {
             fetch('/api/pause', { method: 'POST' })
                 .then(response => response.json())
-                .then(data => console.log('Paused:', data))
-                .catch(error => console.error('Error pausing:', error));
+                .then(data => logger.info('Paused:', data))
+                .catch(error => logger.error('Error pausing:', error));
         });
 
         stopBtn.addEventListener('click', () => {
             fetch('/api/stop', { method: 'POST' })
                 .then(response => response.json())
-                .then(data => console.log('Stopped:', data))
-                .catch(error => console.error('Error stopping:', error));
+                .then(data => logger.info('Stopped:', data))
+                .catch(error => logger.error('Error stopping:', error));
         });
 
         // Socket.IO event handlers
         socket.on('connect', () => {
-            console.log('Connected to infinite improvement loop');
+            logger.info('Connected to infinite improvement loop');
         });
 
         socket.on('status', (data) => {
@@ -840,7 +863,7 @@
                 updateStatus(data);
                 updateMetrics(data);
             })
-            .catch(error => console.error('Error fetching status:', error));
+            .catch(error => logger.error('Error fetching status:', error));
     </script>
 </body>
 </html> 

@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 /**
  * Zion App - Autonomous Daemon for Infinite Improvement Loop
@@ -26,8 +48,8 @@ class AutonomousDaemon extends EventEmitter {
     
     // Configuration
     this.config = {
-      scriptPath: path.join(__dirname, infinite-improvement-loop.js'),
-      logPath: path.join(__dirname, logs', daemon.log'),
+      scriptPath: path.join(__dirname, 'infinite-improvement-loop.js'),
+      logPath: path.join(__dirname, logs', 'daemon.log'),
       pidPath: path.join(__dirname, .daemon.pid'),
       port: process.env.IMPROVEMENT_PORT || 3002,
       autoRestart: true,
@@ -54,17 +76,17 @@ class AutonomousDaemon extends EventEmitter {
       
       // Check if already running
       if (await this.isAlreadyRunning()) {
-        console.log('🚨 Daemon is already running');
+        logger.info('🚨 Daemon is already running');
         return false;
       }
       
       // Write PID file
       await this.writePidFile();
       
-      console.log('✅ Daemon initialized successfully');
+      logger.info('✅ Daemon initialized successfully');
       return true;
     } catch (error) {
-      console.error('❌ Failed to initialize daemon:', error);
+      logger.error('❌ Failed to initialize daemon:', error);
       return false;
     }
   }
@@ -130,11 +152,11 @@ class AutonomousDaemon extends EventEmitter {
    */
   async start() {
     if (this.isRunning) {
-      console.log('🚨 Daemon is already running');
+      logger.info('🚨 Daemon is already running');
       return;
     }
 
-    console.log('🚀 Starting autonomous daemon...');
+    logger.info('🚀 Starting autonomous daemon...');
     
     if (!(await this.initialize())) {
       return;
@@ -151,19 +173,19 @@ class AutonomousDaemon extends EventEmitter {
     // Handle process signals
     this.setupSignalHandlers();
     
-    console.log('✅ Autonomous daemon started successfully');
-    console.log(`📊 Dashboard available at: http://localhost:${this.config.port}`);
-    console.log(`📝 Logs: ${this.config.logPath}`);
+    logger.info('✅ Autonomous daemon started successfully');
+    logger.info(`📊 Dashboard available at: http://localhost:${this.config.port}`);
+    logger.info(`📝 Logs: ${this.config.logPath}`);
   }
 
   /**
    * Start the infinite improvement loop process
    */
   startInfiniteImprovementLoop() {
-    console.log('🔄 Starting infinite improvement loop process...');
+    logger.info('🔄 Starting infinite improvement loop process...');
     
     // Create log stream
-    const logStream = fs.createWriteStream(this.config.logPath, { flags: a' });
+    const logStream = fs.createWriteStream(this.config.logPath, { flags: 'a' });
     
     // Start the process
     this.process = spawn('node', [this.config.scriptPath], {
@@ -171,7 +193,7 @@ class AutonomousDaemon extends EventEmitter {
       detached: false,
       env: {
         ...process.env,
-        NODE_ENV: production',
+        NODE_ENV: 'production',
         DAEMON_MODE: true
       }
     });
@@ -188,7 +210,7 @@ class AutonomousDaemon extends EventEmitter {
     const timestamp = new Date().toISOString();
     logStream.write(`\n[${timestamp}] 🚀 Infinite improvement loop process started (PID: ${this.process.pid})\n`);
     
-    console.log(`✅ Infinite improvement loop process started (PID: ${this.process.pid})`);
+    logger.info(`✅ Infinite improvement loop process started (PID: ${this.process.pid})`);
   }
 
   /**
@@ -196,17 +218,163 @@ class AutonomousDaemon extends EventEmitter {
    */
   handleProcessExit(code, signal) {
     const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] 🔄 Process exited with code ${code} and signal ${signal}`);
+    logger.info(`[${timestamp}] 🔄 Process exited with code ${code} and signal ${signal}`);
     
     if (this.isRunning && this.config.autoRestart && this.restartCount < this.maxRestarts) {
+<<<<<<< HEAD
+      logger.info(`🔄 Restarting process (attempt ${this.restartCount + 1}/${this.maxRestarts})...`);
+      this.restartCount++;
+=======
       console.log(`🔄 Restarting process (attempt ${this.restartCount + 1}/${this.maxRestarts})...`);
       this.restartCount++
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       
-      setTimeout(() => {
+      
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => {
         this.startInfiniteImprovementLoop();
-      }, this.restartDelay);
+      },                                                this.restartDelay);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
     } else if (this.restartCount >= this.maxRestarts) {
-      console.log('❌ Maximum restart attempts reached. Stopping daemon.');
+      logger.info('❌ Maximum restart attempts reached. Stopping daemon.');
       this.stop();
     }
   }
@@ -216,7 +384,7 @@ class AutonomousDaemon extends EventEmitter {
    */
   handleProcessError(error) {
     const timestamp = new Date().toISOString();
-    console.error(`[${timestamp}] ❌ Process error:`, error);
+    logger.error(`[${timestamp}] ❌ Process error:`, error);
     
     // Log error to file
     fs.appendFile(this.config.logPath, `[${timestamp}] ❌ Process error: ${error.message}\n`).catch(() => {});
@@ -242,12 +410,12 @@ class AutonomousDaemon extends EventEmitter {
         const isResponsive = await this.checkProcessResponsiveness();
         
         if (!isResponsive) {
-          console.log('⚠️ Process is not responsive, restarting...');
+          logger.info('⚠️ Process is not responsive, restarting...');
           this.restart();
         }
       }
     } catch (error) {
-      console.error('❌ Health check failed:', error);
+      logger.error('❌ Health check failed:', error);
     }
   }
 
@@ -259,10 +427,10 @@ class AutonomousDaemon extends EventEmitter {
       // Try to connect to the dashboard
       const http = require('http');
       const req = http.request({
-        hostname: localhost',
+        hostname: 'localhost',
         port: this.config.port,
         path: /api/status',
-        method: GET',
+        method: 'GET',
         timeout: 5000
       }, (res) => {
         resolve(res.statusCode === 200);
@@ -285,22 +453,163 @@ class AutonomousDaemon extends EventEmitter {
    * Restart the process
    */
   restart() {
-    console.log('🔄 Restarting infinite improvement loop process...');
+    logger.info('🔄 Restarting infinite improvement loop process...');
     
     if (this.process) {
       this.process.kill('SIGTERM');
     }
     
-    setTimeout(() => {
+    
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => {
       this.startInfiniteImprovementLoop();
-    }, 1000);
+    },                                                1000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
   }
 
   /**
    * Stop the daemon
    */
   async stop() {
-    console.log('🛑 Stopping autonomous daemon...');
+    logger.info('🛑 Stopping autonomous daemon...');
     
     this.isRunning = false;
     
@@ -316,7 +625,148 @@ class AutonomousDaemon extends EventEmitter {
       
       // Wait for process to exit
       await new Promise((resolve) => {
-        setTimeout(resolve, 5000);
+        
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                                                5000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
       });
       
       // Force kill if still running
@@ -332,7 +782,7 @@ class AutonomousDaemon extends EventEmitter {
       // PID file might not exist
     }
     
-    console.log('✅ Autonomous daemon stopped');
+    logger.info('✅ Autonomous daemon stopped');
   }
 
   /**
@@ -340,24 +790,24 @@ class AutonomousDaemon extends EventEmitter {
    */
   setupSignalHandlers() {
     process.on('SIGINT', async () => {
-      console.log('\n🛑 Received SIGINT, shutting down...');
+      logger.info('\n🛑 Received SIGINT, shutting down...');
       await this.stop();
       process.exit(0);
     });
     
     process.on('SIGTERM', async () => {
-      console.log('\n🛑 Received SIGTERM, shutting down...');
+      logger.info('\n🛑 Received SIGTERM, shutting down...');
       await this.stop();
       process.exit(0);
     });
     
     process.on('SIGUSR1', () => {
-      console.log('📊 Status request received');
+      logger.info('📊 Status request received');
       this.logStatus();
     });
     
     process.on('SIGUSR2', () => {
-      console.log('🔄 Restart request received');
+      logger.info('🔄 Restart request received');
       this.restart();
     });
   }
@@ -373,7 +823,7 @@ class AutonomousDaemon extends EventEmitter {
       timestamp: new Date().toISOString()
     };
     
-    console.log('📊 Daemon Status:', JSON.stringify(status, null, 2));
+    logger.info('📊 Daemon Status:', JSON.stringify(status, null, 2));
   }
 
   /**
@@ -421,12 +871,12 @@ if (require.main === module) {
       break;
     case status':
       daemon.getStatus().then(status => {
-        console.log('Status:', status);
+        logger.info('Status:', status);
         process.exit(0);
       });
       break;
     default:
-      console.log('Usage: node autonomous-daemon.js [start|stop|restart|status]);
+      logger.info('Usage: node autonomous-daemon.js [start|stop|restart|status]);
       process.exit(1);
   }
 } 

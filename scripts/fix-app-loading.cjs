@@ -1,46 +1,68 @@
-#!/usr/bin/env node
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json(),
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
 
 /**
  * Emergency App Loading Fix
  * Temporary fix for app loading issues
  */
 
-const fs = require('fs')
+const fs = require('fs');
 const { _execSync } = require('child_process');
 
 // Replace console.log with console.warn for allowed console methods
-console.warn('Starting app loading fix...');
-console.warn('Checking for app loading issues...');
+logger.warn('Starting app loading fix...');
+logger.warn('Checking for app loading issues...');
 
 // Check if we need to apply emergency fixes
 function checkAppStatus() {
-  console.warn('🔍 Checking app loading status...');
+  logger.warn('🔍 Checking app loading status...');
 
   // Ensure dependencies are installed
   if (!fs.existsSync('node_modules')) {
-    console.warn('❌ node_modules directory is missing');
-    console.warn(
+    logger.warn('❌ node_modules directory is missing');
+    logger.warn(
       '   -> Attempting to install dependencies via "./setup.sh npm"',
     );
     try {
       _execSync('./setup.sh npm', { stdio: 'inherit' });
     } catch (_installErr) {
-      console.error('Failed to install dependencies:', _installErr.message);
+      logger.error('Failed to install dependencies:', _installErr.message);
       if (/EAI_AGAIN|ENOTFOUND|403 Forbidden/.test(_installErr.message)) {
-        console.error('Network access appears to be restricted.');
-        console.error(
+        logger.error('Network access appears to be restricted.');
+        logger.error(
           'Ensure internet connectivity or configure a proxy before running the setup script.',
         );
-        console.error('Attempting to start offline development mode...');
+        logger.error('Attempting to start offline development mode...');
         try {
           _execSync('bash offline-dev.sh', { stdio: 'inherit' });
-          console.warn('✅ Offline development mode started.');
+          logger.warn('✅ Offline development mode started.');
         } catch (_offlineErr) {
-          console.error('Failed to start offline mode:', _offlineErr.message);
-          console.error('You can still run "./offline-dev.sh" manually.');
+          logger.error('Failed to start offline mode:', _offlineErr.message);
+          logger.error('You can still run "./offline-dev.sh" manually.');
         }
       }
-      console.warn(
+      logger.warn(
         '   -> Please run "./setup.sh npm" manually when connectivity is restored.',
       );
       return false;
@@ -50,30 +72,30 @@ function checkAppStatus() {
 
   // Test if the main app file exists and is readable
   try {
-    const appContent = fs.readFileSync('pages/_app.tsx', 'utf8')
-const loadingFixMarkers = [
+    const appContent = fs.readFileSync('pages/_app.tsx', 'utf8');
+    const loadingFixMarkers = [
       'Force initializing after timeout',
       'Force completing app initialization due to timeout',
       'Force initialization completion',
     ];
 
     if (loadingFixMarkers.some((marker) => appContent.includes(marker))) {
-      console.warn('✅ Latest loading fix is already applied');
+      logger.warn('✅ Latest loading fix is already applied');
       return true;
     } else {
-      console.warn('⚠️  App may need loading fix');
+      logger.warn('⚠️  App may need loading fix');
       return false;
     }
   } catch (_error) {
-    console.warn('❌ Cannot read app file:', _error.message);
+    logger.warn('❌ Cannot read app file:', _error.message);
     return false;
   }
 }
 
 // Create a minimal app component for emergency use
 function createMinimalApp() {
-  console.warn('🔧 Creating minimal emergency app component...')
-const minimalAppContent = `import React from 'react';
+  logger.warn('🔧 Creating minimal emergency app component...');
+  const minimalAppContent = `import React from 'react';
 import type { AppProps } from 'next/app';
 import '../src/index.css';
 
@@ -83,7 +105,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   React.useEffect(() => {
     setIsClient(true);
-    console.warn('✅ Emergency app component loaded successfully');
+    logger.warn('✅ Emergency app component loaded successfully');
   }, []);
 
   if (!isClient) {
@@ -118,31 +140,31 @@ export default MyApp;
   try {
     const currentApp = fs.readFileSync('pages/_app.tsx', 'utf8');
     fs.writeFileSync('pages/_app.tsx.backup', currentApp);
-    console.warn('📄 Current app backed up to _app.tsx.backup');
+    logger.warn('📄 Current app backed up to _app.tsx.backup');
   } catch (_error) {
-    console.warn('⚠️  Could not backup current app:', _error.message);
+    logger.warn('⚠️  Could not backup current app:', _error.message);
   }
 
   // Write minimal app
   try {
     fs.writeFileSync('pages/_app.tsx.emergency', minimalAppContent);
-    console.warn('✅ Emergency app component created: _app.tsx.emergency');
+    logger.warn('✅ Emergency app component created: _app.tsx.emergency');
 
-    console.warn('\n🔧 TO USE EMERGENCY APP:');
-    console.warn('  mv pages/_app.tsx.emergency pages/_app.tsx');
-    console.warn('  npm run build');
-    console.warn('\n🔄 TO RESTORE ORIGINAL:');
-    console.warn('  mv pages/_app.tsx.backup pages/_app.tsx');
+    logger.warn('\n🔧 TO USE EMERGENCY APP:');
+    logger.warn('  mv pages/_app.tsx.emergency pages/_app.tsx');
+    logger.warn('  npm run build');
+    logger.warn('\n🔄 TO RESTORE ORIGINAL:');
+    logger.warn('  mv pages/_app.tsx.backup pages/_app.tsx');
   } catch (_error) {
-    console.warn('❌ Could not create emergency app:', _error.message);
+    logger.warn('❌ Could not create emergency app:', _error.message);
   }
 }
 
 // Run diagnostics
 function runDiagnostics() {
-  console.warn('\n🔍 RUNNING APP DIAGNOSTICS');
-  console.warn('==========================')
-const checks = [
+  logger.warn('\n🔍 RUNNING APP DIAGNOSTICS');
+  logger.warn('==========================');
+  const checks = [
     {
       name: 'App file exists',
       check: () => fs.existsSync('pages/_app.tsx'),
@@ -170,16 +192,16 @@ const checks = [
 
   checks.forEach(({ name, check }) => {
     const result = check();
-    console.warn(`  ${result ? '✅' : '❌'} ${name}`);
+    logger.warn(`  ${result ? '✅' : '❌'} ${name}`);
   });
 
-  console.warn('\n📊 RECOMMENDATIONS:');
-  console.warn('  1. Try refreshing the browser (Ctrl+F5)');
-  console.warn('  2. Clear browser cache');
-  console.warn('  3. Check browser console for JavaScript errors');
-  console.warn('  4. Run: npm run build && npm run start');
-  console.warn('  5. Ensure dependencies are installed: ./setup.sh npm');
-  console.warn('  6. If still stuck, use emergency app component');
+  logger.warn('\n📊 RECOMMENDATIONS:');
+  logger.warn('  1. Try refreshing the browser (Ctrl+F5)');
+  logger.warn('  2. Clear browser cache');
+  logger.warn('  3. Check browser console for JavaScript errors');
+  logger.warn('  4. Run: npm run build && npm run start');
+  logger.warn('  5. Ensure dependencies are installed: ./setup.sh npm');
+  logger.warn('  6. If still stuck, use emergency app component');
 }
 
 // Main execution
@@ -187,32 +209,32 @@ async function main() {
   const statusOk = checkAppStatus();
 
   if (statusOk) {
-    console.warn('\n🎯 RECOMMENDATIONS TO FIX LOADING:');
-    console.warn('==================================');
-    console.warn('1. 🔄 Hard refresh browser (Ctrl+Shift+R)');
-    console.warn('2. 🧹 Clear browser cache completely');
-    console.warn('3. 🔍 Check browser console for errors');
-    console.warn('4. 🔨 Rebuild app: npm run build');
-    console.warn('5. 🚀 Restart dev server: npm run dev');
-    console.warn('');
-    console.warn(
+    logger.warn('\n🎯 RECOMMENDATIONS TO FIX LOADING:');
+    logger.warn('==================================');
+    logger.warn('1. 🔄 Hard refresh browser (Ctrl+Shift+R)');
+    logger.warn('2. 🧹 Clear browser cache completely');
+    logger.warn('3. 🔍 Check browser console for errors');
+    logger.warn('4. 🔨 Rebuild app: npm run build');
+    logger.warn('5. 🚀 Restart dev server: npm run dev');
+    logger.warn('');
+    logger.warn(
       '💡 The app has timeout protection - it should load within 3 seconds',
     );
-    console.warn('💡 If still stuck, check browser developer tools console');
+    logger.warn('💡 If still stuck, check browser developer tools console');
   } else {
     createMinimalApp();
     runDiagnostics();
 
-    console.warn('\n🎯 IMMEDIATE FIXES TO TRY:');
-    console.warn('==========================');
-    console.warn('1. Hard refresh: Ctrl+Shift+R (Chrome/Firefox)');
-    console.warn(
+    logger.warn('\n🎯 IMMEDIATE FIXES TO TRY:');
+    logger.warn('==========================');
+    logger.warn('1. Hard refresh: Ctrl+Shift+R (Chrome/Firefox)');
+    logger.warn(
       '2. Clear cache: F12 → Application → Storage → Clear site data',
     );
-    console.warn('3. Check console: F12 → Console tab for errors');
-    console.warn('4. Rebuild: npm run build && npm run start');
-    console.warn('');
-    console.warn('✅ App should now load within 3 seconds max!');
+    logger.warn('3. Check console: F12 → Console tab for errors');
+    logger.warn('4. Rebuild: npm run build && npm run start');
+    logger.warn('');
+    logger.warn('✅ App should now load within 3 seconds max!');
   }
 }
 

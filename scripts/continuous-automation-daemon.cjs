@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 /**
  * Zion App - Continuous Automation Daemon
@@ -29,7 +51,7 @@ const CONFIG = {
   SERVICES: [
     {
       name: 'ai-delegation-master',
-      command: 'npm run ai-delegate:master',
+      command: 'npm run ai-delegate: 'master',
       port: 3002,
       healthCheck: 'http://localhost:3007/api/nodes/status',
     },
@@ -85,7 +107,7 @@ class ContinuousAutomationDaemon {
    * Start the daemon
    */
   async start() {
-    console.log('🚀 Starting Zion Automation Daemon...');
+    logger.info('🚀 Starting Zion Automation Daemon...');
 
     // Create log directory
     const logDir = path.dirname(CONFIG.DAEMON.LOG_FILE);
@@ -110,10 +132,10 @@ class ContinuousAutomationDaemon {
     // Start metrics collection
     this.startMetricsCollection();
 
-    console.log('✅ Zion Automation Daemon started successfully');
-    console.log(`📊 PID: ${process.pid}`);
-    console.log(`📝 Logs: ${CONFIG.DAEMON.LOG_FILE}`);
-    console.log(`📈 Metrics: ${CONFIG.MONITORING.METRICS_FILE}`);
+    logger.info('✅ Zion Automation Daemon started successfully');
+    logger.info(`📊 PID: ${process.pid}`);
+    logger.info(`📝 Logs: ${CONFIG.DAEMON.LOG_FILE}`);
+    logger.info(`📈 Metrics: ${CONFIG.MONITORING.METRICS_FILE}`);
 
     // Log startup
     this.log('DAEMON_STARTED', 'Zion Automation Daemon started successfully');
@@ -123,13 +145,13 @@ class ContinuousAutomationDaemon {
    * Start all services
    */
   async startAllServices() {
-    console.log('🔧 Starting all automation services...');
+    logger.info('🔧 Starting all automation services...');
 
     for (const serviceConfig of CONFIG.SERVICES) {
       await this.startService(serviceConfig);
     }
 
-    console.log('✅ All services started');
+    logger.info('✅ All services started');
   }
 
   /**
@@ -137,11 +159,11 @@ class ContinuousAutomationDaemon {
    */
   async startService(serviceConfig) {
     try {
-      console.log(`🚀 Starting service: ${serviceConfig.name}`);
+      logger.info(`🚀 Starting service: ${serviceConfig.name}`);
 
       // Check if service is already running
       if (this.services.has(serviceConfig.name)) {
-        console.log(`⚠️  Service ${serviceConfig.name} is already running`);
+        logger.info(`⚠️  Service ${serviceConfig.name} is already running`);
         return;
       }
 
@@ -188,7 +210,7 @@ class ContinuousAutomationDaemon {
       // Check if service started successfully
       if (service.exitCode === null) {
         this.services.get(serviceConfig.name).status = 'running';
-        console.log(`✅ Service ${serviceConfig.name} started successfully`);
+        logger.info(`✅ Service ${serviceConfig.name} started successfully`);
         this.log(
           'SERVICE_STARTED',
           `Service ${serviceConfig.name} started successfully`,
@@ -199,7 +221,7 @@ class ContinuousAutomationDaemon {
         );
       }
     } catch (error) {
-      console.error(
+      logger.error(
         `❌ Failed to start service ${serviceConfig.name}:`,
         error.message,
       );
@@ -217,7 +239,7 @@ class ContinuousAutomationDaemon {
    * Handle service exit
    */
   handleServiceExit(serviceName, code, signal) {
-    console.log(
+    logger.info(
       `🔄 Service ${serviceName} exited with code ${code} and signal ${signal}`,
     );
     this.log(
@@ -249,7 +271,7 @@ const service = this.services.get(serviceName);
    * Handle service error
    */
   handleServiceError(serviceName, error) {
-    console.error(`❌ Service ${serviceName} error:`, error.message);
+    logger.error(`❌ Service ${serviceName} error:`, error.message);
     this.log('SERVICE_ERROR', `Service ${serviceName} error: ${error.message}`);
 
     // Schedule restart
@@ -275,7 +297,7 @@ const now = Date.now();
     this.lastRestarts.set(serviceName, recentRestarts);
 
     if (recentRestarts.length >= CONFIG.DAEMON.MAX_RESTARTS) {
-      console.error(
+      logger.error(
         `❌ Service ${serviceName} exceeded restart limit. Stopping restarts.`,
       );
       this.log(
@@ -289,10 +311,151 @@ const now = Date.now();
     }
 
     // Schedule restart
-    setTimeout(async () => {
+    
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(async () => {
       if (this.isRunning) {
-        console.log(`🔄 Restarting service: ${serviceName}`);
-        this.log('SERVICE_RESTART', `Restarting service ${serviceName}`);
+        logger.info(`🔄 Restarting service: ${serviceName}`);
+        this.log('SERVICE_RESTART',                                                `Restarting service ${serviceName}`);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
 
         // Update restart tracking
         this.restartCounts.set(serviceName, restartCount + 1);
@@ -316,7 +479,7 @@ const now = Date.now();
   startMonitoring() {
     if (!CONFIG.MONITORING.ENABLED) return;
 
-    console.log('📊 Starting monitoring...');
+    logger.info('📊 Starting monitoring...');
 
     setInterval(() => {
       this.collectMetrics();
@@ -331,7 +494,7 @@ const now = Date.now();
    * Start health checks
    */
   startHealthChecks() {
-    console.log('💚 Starting health checks...');
+    logger.info('💚 Starting health checks...');
 
     setInterval(async () => {
       for (const serviceConfig of CONFIG.SERVICES) {
@@ -359,7 +522,7 @@ const now = Date.now();
       }
 
       // Service is unhealthy, restart it
-      console.warn(`⚠️  Service ${serviceConfig.name} health check failed`);
+      logger.warn(`⚠️  Service ${serviceConfig.name} health check failed`);
       this.log(
         'SERVICE_UNHEALTHY',
         `Service ${serviceConfig.name} health check failed`,
@@ -369,7 +532,7 @@ const service = this.services.get(serviceConfig.name);
         service.process.kill('SIGTERM');
       }
     } catch (error) {
-      console.warn(
+      logger.warn(
         `⚠️  Health check failed for ${serviceConfig.name}:`,
         error.message,
       );
@@ -380,7 +543,7 @@ const service = this.services.get(serviceConfig.name);
    * Start metrics collection
    */
   startMetricsCollection() {
-    console.log('📈 Starting metrics collection...');
+    logger.info('📈 Starting metrics collection...');
 
     setInterval(() => {
       this.updateServiceMetrics();
@@ -437,7 +600,7 @@ const service = this.services.get(serviceConfig.name);
         JSON.stringify(this.metrics, null, 2),
       );
     } catch (error) {
-      console.error('❌ Failed to save metrics:', error.message);
+      logger.error('❌ Failed to save metrics:', error.message);
     }
   }
 
@@ -445,7 +608,7 @@ const service = this.services.get(serviceConfig.name);
    * Send alert
    */
   sendAlert(message) {
-    console.log(`🚨 ALERT: ${message}`);
+    logger.info(`🚨 ALERT: ${message}`);
 
     // Send to Slack if configured
     if (CONFIG.MONITORING.SLACK_WEBHOOK) {
@@ -473,7 +636,7 @@ const service = this.services.get(serviceConfig.name);
         }),
       });
     } catch (error) {
-      console.error('❌ Failed to send Slack alert:', error.message);
+      logger.error('❌ Failed to send Slack alert:', error.message);
     }
   }
 
@@ -482,7 +645,7 @@ const service = this.services.get(serviceConfig.name);
    */
   async sendEmailAlert(message) {
     // Implementation would use a mail service
-    console.log(
+    logger.info(
       `📧 Email alert would be sent to ${CONFIG.MONITORING.ALERT_EMAIL}: ${message}`,
     );
   }
@@ -497,7 +660,7 @@ const logEntry = `[${timestamp}] [${level}] ${message}\n`;
     try {
       fs.appendFileSync(CONFIG.DAEMON.LOG_FILE, logEntry);
     } catch (error) {
-      console.error('❌ Failed to write to log file:', error.message);
+      logger.error('❌ Failed to write to log file:', error.message);
     }
   }
 
@@ -513,7 +676,7 @@ const logEntry = `[${timestamp}] [${serviceName}] [${level}] ${message}`;
     try {
       fs.appendFileSync(serviceLogFile, logEntry + '\n');
     } catch (error) {
-      console.error(
+      logger.error(
         `❌ Failed to write to service log ${serviceLogFile}:`,
         error.message,
       );
@@ -524,24 +687,165 @@ const logEntry = `[${timestamp}] [${serviceName}] [${level}] ${message}`;
    * Sleep utility
    */
   sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
+    return new Promise((resolve) => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                                                ms);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
   }
 
   /**
    * Stop the daemon
    */
   async stop() {
-    console.log('⏹️  Stopping Zion Automation Daemon...');
+    logger.info('⏹️  Stopping Zion Automation Daemon...');
 
     this.isRunning = false;
 
     // Stop all services
     for (const [serviceName, service] of this.services) {
-      console.log(`🛑 Stopping service: ${serviceName}`);
+      logger.info(`🛑 Stopping service: ${serviceName}`);
       try {
         service.process.kill('SIGTERM');
       } catch (error) {
-        console.error(
+        logger.error(
           `❌ Error stopping service ${serviceName}:`,
           error.message,
         );
@@ -570,7 +874,7 @@ const logEntry = `[${timestamp}] [${serviceName}] [${level}] ${message}`;
     // Save final metrics
     this.saveMetrics();
 
-    console.log('✅ Zion Automation Daemon stopped');
+    logger.info('✅ Zion Automation Daemon stopped');
     this.log('DAEMON_STOPPED', 'Zion Automation Daemon stopped');
   }
 
@@ -599,20 +903,20 @@ if (require.main === module) {
 
   // Handle process signals
   process.on('SIGINT', async () => {
-    console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
     await daemon.stop();
     process.exit(0);
   });
 
   process.on('SIGTERM', async () => {
-    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
     await daemon.stop();
     process.exit(0);
   });
 
   // Start the daemon
   daemon.start().catch((error) => {
-    console.error('❌ Failed to start automation daemon:', error);
+    logger.error('❌ Failed to start automation daemon:', error);
     process.exit(1);
   });
 }

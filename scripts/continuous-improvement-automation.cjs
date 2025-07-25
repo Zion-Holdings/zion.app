@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 const fs = require('fs')
 const path = require('path')
@@ -27,7 +49,7 @@ class ContinuousImprovementAutomation {
   log(message, level = 'INFO') {
     const timestamp = new Date().toISOString()
 const logMessage = `[${timestamp}] [${level}] ${message}`;
-    console.log(logMessage)
+    logger.info(logMessage)
 const logsDir = path.dirname(this.logFile);
     if (!fs.existsSync(logsDir)) {
       fs.mkdirSync(logsDir, { recursive: true });
@@ -126,10 +148,10 @@ const errors = [];
   async optimizePerformance() {
     this.log('Running performance optimizations...')
 const optimizations = [
-      { name: 'Bundle Analysis', command: 'npm run bundle:analyze' },
-      { name: 'Performance Audit', command: 'npm run perf:audit' },
-      { name: 'Bundle Optimization', command: 'npm run optimize:bundle' },
-      { name: 'Image Optimization', command: 'npm run optimize:images' },
+      { name: 'Bundle Analysis', command: 'npm run bundle: 'analyze' },
+      { name: 'Performance Audit', command: 'npm run perf: 'audit' },
+      { name: 'Bundle Optimization', command: 'npm run optimize: 'bundle' },
+      { name: 'Image Optimization', command: 'npm run optimize: 'images' },
     ];
 
     let improvements = 0;

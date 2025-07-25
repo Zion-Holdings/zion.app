@@ -1,13 +1,11 @@
-#!/usr/bin/env node
-
 /**
  * Minify JS and CSS files in the public folder.
  * Simple whitespace/comment removal to reduce file size without dependencies.
  */
 
-const fs = require('fs')
-const path = require('path')
-const publicDir = path.join(process.cwd(), 'public')
+const fs = require('fs');
+const path = require('path');
+const publicDir = path.join(process.cwd(), 'public');
 function minifyJs(code) {
   return code
     .replace(/\/\*[\s\S]*?\*\//g, '') // remove block comments
@@ -26,8 +24,8 @@ function minifyCss(code) {
 
 function processFile(file) {
   const ext = path.extname(file);
-  let content = fs.readFileSync(file, 'utf8')
-const originalSize = Buffer.byteLength(content, 'utf8');
+  let content = fs.readFileSync(file, 'utf8');
+  const originalSize = Buffer.byteLength(content, 'utf8');
   if (ext === '.js') {
     content = minifyJs(content);
   } else if (ext === '.css') {

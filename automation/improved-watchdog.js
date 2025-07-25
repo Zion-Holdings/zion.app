@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 const { spawn, exec } = require('child_process');
 const fs = require('fs');
@@ -11,7 +33,7 @@ class ImprovedWatchdog {
       checkInterval: 30000, // 30 seconds
       maxRestarts: 5,
       restartDelay: 5000, // 5 seconds
-      logFile: path.join(__dirname, watchdog.log')
+      logFile: path.join(__dirname, 'watchdog.log')
     };
     
     this.isRunning = false;
@@ -19,7 +41,7 @@ class ImprovedWatchdog {
   }
 
   async initialize() {
-    console.log('🐕 Initializing Improved Watchdog System...');
+    logger.info('🐕 Initializing Improved Watchdog System...');
     
     // Create log directory if it doesn't exist
     const logDir = path.dirname(this.config.logFile);
@@ -30,7 +52,7 @@ class ImprovedWatchdog {
     // Load existing processes
     await this.loadExistingProcesses();
     
-    console.log('✅ Improved Watchdog System initialized');
+    logger.info('✅ Improved Watchdog System initialized');
   }
 
   async loadExistingProcesses() {
@@ -38,7 +60,7 @@ class ImprovedWatchdog {
     
     if (fs.existsSync(pidFile)) {
       try {
-        const data = JSON.parse(fs.readFileSync(pidFile, utf8'));
+        const data = JSON.parse(fs.readFileSync(pidFile, 'utf8'));
         for (const [name, info] of Object.entries(data)) {
           if (this.isProcessRunning(info.pid)) {
             this.processes.set(name, {
@@ -46,11 +68,11 @@ class ImprovedWatchdog {
               restarts: 0,
               lastCheck: Date.now()
             });
-            console.log(`📋 Loaded existing process: ${name} (PID: ${info.pid})`);
+            logger.info(`📋 Loaded existing process: ${name} (PID: ${info.pid})`);
           }
         }
       } catch (error) {
-        console.warn('⚠️  Failed to load existing processes:', error.message);
+        logger.warn('⚠️  Failed to load existing processes:', error.message);
       }
     }
   }
@@ -65,7 +87,7 @@ class ImprovedWatchdog {
   }
 
   async startProcess(name, command, args = [], options = {}) {
-    console.log(`🚀 Starting process: ${name}`);
+    logger.info(`🚀 Starting process: ${name}`);
     
     const processInfo = {
       name,
@@ -122,7 +144,7 @@ class ImprovedWatchdog {
       this.processes.set(name, processInfo);
       this.saveProcessInfo();
       
-      console.log(`✅ Started ${name} (PID: ${child.pid})`);
+      logger.info(`✅ Started ${name} (PID: ${child.pid})`);
       return true;
       
     } catch (error) {
@@ -138,16 +160,157 @@ class ImprovedWatchdog {
     processInfo.restarts++;
     this.log(`🔄 Scheduling restart for ${name} (attempt ${processInfo.restarts}/${this.config.maxRestarts})`)
     
-    setTimeout(() => {
+    
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => {
       this.restartProcess(name);
-    }, this.config.restartDelay);
+    },                                                this.config.restartDelay);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
   }
 
   async restartProcess(name) {
     const processInfo = this.processes.get(name);
     if (!processInfo) return;
 
-    console.log(`🔄 Restarting ${name}...`);
+    logger.info(`🔄 Restarting ${name}...`);
     
     // Stop the current process
     if (processInfo.child) {
@@ -155,8 +318,149 @@ class ImprovedWatchdog {
     }
     
     // Wait a bit then restart
-    setTimeout(async () => {
-      await this.startProcess(name, processInfo.command, processInfo.args, processInfo.options);
+    
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(async () => {
+      await this.startProcess(name,                                                processInfo.command, processInfo.args, processInfo.options);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
     }, 1000);
   }
 
@@ -164,7 +468,7 @@ class ImprovedWatchdog {
     const processInfo = this.processes.get(name);
     if (!processInfo) return false;
 
-    console.log(`🛑 Stopping ${name}...`);
+    logger.info(`🛑 Stopping ${name}...`);
     
     if (processInfo.child) {
       processInfo.child.kill('SIGTERM');
@@ -179,7 +483,7 @@ class ImprovedWatchdog {
     for (const [name, processInfo] of this.processes) {
       const isRunning = this.isProcessRunning(processInfo.pid);
       
-      if (!isRunning && processInfo.status === running') {
+      if (!isRunning && processInfo.status === 'running') {
         this.log(`⚠️  Process ${name} (PID: ${processInfo.pid}) is not responding`);
         processInfo.status = stopped';
         
@@ -212,7 +516,7 @@ class ImprovedWatchdog {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] ${message}`;
     
-    console.log(logMessage);
+    logger.info(logMessage);
     
     // Append to log file
     fs.appendFileSync(this.config.logFile, logMessage + \n');
@@ -234,7 +538,7 @@ class ImprovedWatchdog {
 
   async start() {
     if (this.isRunning) {
-      console.log('⚠️  Watchdog is already running');
+      logger.info('⚠️  Watchdog is already running');
       return;
     }
 
@@ -246,9 +550,9 @@ class ImprovedWatchdog {
       this.checkProcesses();
     }, this.config.checkInterval);
 
-    console.log('🐕 Improved Watchdog System started');
-    console.log(`📊 Check interval: ${this.config.checkInterval}ms`);
-    console.log(`📝 Log file: ${this.config.logFile}`);
+    logger.info('🐕 Improved Watchdog System started');
+    logger.info(`📊 Check interval: ${this.config.checkInterval}ms`);
+    logger.info(`📝 Log file: ${this.config.logFile}`);
   }
 
   stop() {
@@ -263,7 +567,7 @@ class ImprovedWatchdog {
     }
 
     this.isRunning = false;
-    console.log('🛑 Improved Watchdog System stopped');
+    logger.info('🛑 Improved Watchdog System stopped');
   }
 }
 
@@ -273,20 +577,20 @@ if (require.main === module) {
   
   // Handle graceful shutdown
   process.on('SIGINT', () => {
-    console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
     watchdog.stop();
     process.exit(0);
   });
 
   process.on('SIGTERM', () => {
-    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
     watchdog.stop();
     process.exit(0);
   });
 
   // Start the watchdog
   watchdog.start().catch(error => {
-    console.error('❌ Failed to start Improved Watchdog:', error);
+    logger.error('❌ Failed to start Improved Watchdog:', error);
     process.exit(1);
   });
 }

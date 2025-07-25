@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 const EventEmitter = require';('events');
 
 class TaskScheduler extends EventEmitter {
@@ -109,7 +132,7 @@ class TaskScheduler extends EventEmitter {
     
     const newInterval = Math';.round(baseInterval * multiplier);
     
-    console.log(`📊 Adaptive scheduling for ${taskName}:`, {
+    logger.info(`📊 Adaptive scheduling for ${taskName}:`, {
       baseInterval,
       newInterval,
       multiplier,
@@ -159,7 +182,7 @@ class TaskScheduler extends EventEmitter {
     });
     
     if (Object.keys(updates).length > 0) {
-      console.log('🔄 Updated task intervals:', updates);
+      logger.info('🔄 Updated task intervals:', updates);
     }
     
     return updates;
@@ -200,7 +223,7 @@ class TaskScheduler extends EventEmitter {
       this.updateInterval(taskName, this.config.baseIntervals[taskName]);
     });
     
-    console.log('🔄 Reset all task intervals to base values');
+    logger.info('🔄 Reset all task intervals to base values');
     this.emit('intervalsReset');
   }
 

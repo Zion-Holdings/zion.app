@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 /**
  * Zion App - AI Delegation Cleanup Script
@@ -50,7 +72,7 @@ class AIDelegationCleanup {
    * Run the complete cleanup
    */
   async run() {
-    console.log('🧹 Starting AI Delegation System Cleanup...\n');
+    logger.info('🧹 Starting AI Delegation System Cleanup...\n');
 
     try {
       // Stop running processes
@@ -71,9 +93,9 @@ class AIDelegationCleanup {
       // Generate cleanup report
       await this.generateCleanupReport();
 
-      console.log('\n✅ AI Delegation System cleanup completed successfully!');
+      logger.info('\n✅ AI Delegation System cleanup completed successfully!');
     } catch (error) {
-      console.error('\n❌ Cleanup failed:', error.message);
+      logger.error('\n❌ Cleanup failed:', error.message);
       await this.generateCleanupReport();
       process.exit(1);
     }
@@ -83,7 +105,7 @@ class AIDelegationCleanup {
    * Stop running processes
    */
   async stopProcesses() {
-    console.log('🛑 Stopping running processes...');
+    logger.info('🛑 Stopping running processes...');
 
     for (const processName of CONFIG.PROCESSES) {
       try {
@@ -113,14 +135,14 @@ class AIDelegationCleanup {
       }
     }
 
-    console.log('✅ Process cleanup completed\n');
+    logger.info('✅ Process cleanup completed\n');
   }
 
   /**
    * Clean up directories
    */
   async cleanupDirectories() {
-    console.log('📁 Cleaning up directories...');
+    logger.info('📁 Cleaning up directories...');
 
     for (const dir of CONFIG.DIRECTORIES) {
       const dirPath = path.join(process.cwd(), dir);
@@ -161,14 +183,14 @@ const stat = fs.statSync(filePath);
       }
     }
 
-    console.log('✅ Directory cleanup completed\n');
+    logger.info('✅ Directory cleanup completed\n');
   }
 
   /**
    * Clean up files
    */
   async cleanupFiles() {
-    console.log('📄 Cleaning up files...');
+    logger.info('📄 Cleaning up files...');
 
     for (const file of CONFIG.FILES) {
       const filePath = path.join(process.cwd(), file);
@@ -191,7 +213,7 @@ const stat = fs.statSync(filePath);
     // Clean up temporary files
     await this.cleanupTempFiles();
 
-    console.log('✅ File cleanup completed\n');
+    logger.info('✅ File cleanup completed\n');
   }
 
   /**
@@ -243,7 +265,7 @@ const tempDirs = ['logs', 'ai-improvement-data', 'cursor-ai-data'];
    * Check for remaining processes
    */
   async checkRemainingProcesses() {
-    console.log('🔍 Checking for remaining processes...');
+    logger.info('🔍 Checking for remaining processes...');
 
     for (const processName of CONFIG.PROCESSES) {
       try {
@@ -254,14 +276,14 @@ const tempDirs = ['logs', 'ai-improvement-data', 'cursor-ai-data'];
       }
     }
 
-    console.log('✅ Process check completed\n');
+    logger.info('✅ Process check completed\n');
   }
 
   /**
    * Check for remaining ports
    */
   async checkRemainingPorts() {
-    console.log('🔌 Checking for remaining ports...');
+    logger.info('🔌 Checking for remaining ports...');
 
     for (const port of CONFIG.PORTS) {
       try {
@@ -272,14 +294,14 @@ const tempDirs = ['logs', 'ai-improvement-data', 'cursor-ai-data'];
       }
     }
 
-    console.log('✅ Port check completed\n');
+    logger.info('✅ Port check completed\n');
   }
 
   /**
    * Generate cleanup report
    */
   async generateCleanupReport() {
-    console.log('📊 Generating cleanup report...')
+    logger.info('📊 Generating cleanup report...')
 const endTime = Date.now()
 const duration = endTime - this.startTime
 const report = {
@@ -331,40 +353,181 @@ const reportPath = path.join(process.cwd(), 'logs', 'cleanup-report.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
     // Print summary
-    console.log('\n📋 Cleanup Summary:');
-    console.log(`Total Actions: ${report.summary.total}`);
-    console.log(`Successful: ${report.summary.passed}`);
-    console.log(`Failed: ${report.summary.failed}`);
-    console.log(`Warnings: ${report.summary.warnings}`);
-    console.log(`Info: ${report.summary.info}`);
-    console.log(`Duration: ${duration}ms`);
+    logger.info('\n📋 Cleanup Summary:');
+    logger.info(`Total Actions: ${report.summary.total}`);
+    logger.info(`Successful: ${report.summary.passed}`);
+    logger.info(`Failed: ${report.summary.failed}`);
+    logger.info(`Warnings: ${report.summary.warnings}`);
+    logger.info(`Info: ${report.summary.info}`);
+    logger.info(`Duration: ${duration}ms`);
 
     if (report.summary.failed > 0) {
-      console.log('\n❌ Failed Actions:');
+      logger.info('\n❌ Failed Actions:');
       this.cleanupLog
         .filter((r) => r.status === 'FAIL')
-        .forEach((r) => console.log(`  - ${r.message}`));
+        .forEach((r) => logger.info(`  - ${r.message}`));
     }
 
     if (report.summary.warnings > 0) {
-      console.log('\n⚠️  Warnings:');
+      logger.info('\n⚠️  Warnings:');
       this.cleanupLog
         .filter((r) => r.status === 'WARN')
-        .forEach((r) => console.log(`  - ${r.message}`));
+        .forEach((r) => logger.info(`  - ${r.message}`));
     }
 
     this.logCleanup(
       'INFO',
       `Cleanup report saved to: logs/cleanup-report.json`,
     );
-    console.log('✅ Cleanup report completed\n');
+    logger.info('✅ Cleanup report completed\n');
   }
 
   /**
    * Sleep utility
    */
   sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
+    return new Promise((resolve) => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                                                ms);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
   }
 
   /**
@@ -385,7 +548,7 @@ const statusIcon = {
       INFO: 'ℹ️',
     };
 
-    console.log(`${statusIcon[status] || '❓'} ${message}`);
+    logger.info(`${statusIcon[status] || '❓'} ${message}`);
   }
 }
 
@@ -393,7 +556,7 @@ const statusIcon = {
 if (require.main === module) {
   const cleanup = new AIDelegationCleanup();
   cleanup.run().catch((error) => {
-    console.error('❌ Cleanup execution failed:', error);
+    logger.error('❌ Cleanup execution failed:', error);
     process.exit(1);
   });
 }

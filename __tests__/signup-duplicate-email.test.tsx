@@ -53,7 +53,7 @@ describe('Signup - Duplicate Email Error Handling', () => {'  beforeEach(() => {
     mockedAxios.post.mockRejectedValue({
       response: {
         status: 409,
-        data: { message: 'Email already registered' },      }
+        data: { message:' 'Email already registered' },      }
     });
 
     render(<Signup />);
@@ -74,7 +74,7 @@ describe('Signup - Duplicate Email Error Handling', () => {'  beforeEach(() => {
     mockedAxios.post.mockRejectedValue({
       response: {
         status: 409,
-        data: { message: 'Email already registered' },      }
+        data: { message:' 'Email already registered' },      }
     });
 
     render(<Signup />);
@@ -92,7 +92,7 @@ describe('Signup - Duplicate Email Error Handling', () => {'  beforeEach(() => {
     mockedAxios.post.mockRejectedValue({
       response: {
         status: 409,
-        data: { message: 'Email already registered' },      }
+        data: { message:' 'Email already registered' },      }
     });
 
     render(<Signup />);
@@ -107,7 +107,7 @@ describe('Signup - Duplicate Email Error Handling', () => {'  beforeEach(() => {
     mockedAxios.post.mockRejectedValue({
       response: {
         status: 409,
-        data: { message: 'Email already registered' },      }
+        data: { message:' 'Email already registered' },      }
     });
 
     render(<Signup />);
@@ -119,7 +119,7 @@ describe('Signup - Duplicate Email Error Handling', () => {'  beforeEach(() => {
     // Mock successful response for retry
     mockedAxios.post.mockResolvedValue({
       status: 201,
-      data: { message: 'Success' },    });
+      data: { message:' 'Success' },    });
 
     // Change email and resubmit
     fireEvent.input(screen.getByLabelText(/email address/i), { target: { value: new@example.com' } });    fireEvent.submit(screen.getByRole('button', { name: /create account/i }));
@@ -138,7 +138,7 @@ describe('Signup - Duplicate Email Error Handling', () => {'  beforeEach(() => {
     mockedAxios.post.mockRejectedValue({
       response: {
         status: 409,
-        data: { message: 'User with this email already exists' },      }
+        data: { message:' 'User with this email already exists' },      }
     });
 
     render(<Signup />);
@@ -157,7 +157,7 @@ describe('Signup - Duplicate Email Error Handling', () => {'  beforeEach(() => {
     mockedAxios.post.mockRejectedValue({
       response: {
         status: 409,
-        data: { message: 'Email already registered' },      }
+        data: { message:' 'Email already registered' },      }
     });
 
     render(<Signup />);

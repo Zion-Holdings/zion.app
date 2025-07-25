@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Automated Chat Reconnection System for Cursor
@@ -882,7 +881,7 @@ node scripts/automated-chat-reconnection.cjs
 
     fs.writeFileSync('scripts/start-chat-service.bat', serviceScript);
     console.log(
-      '✅ Windows service script created: scripts/start-chat-service.bat',
+      '✅ Windows service script created: 'scripts/start-chat-service.bat',
     );
   } else if (platform === 'darwin') {
     // macOS LaunchAgent
@@ -942,7 +941,7 @@ WantedBy=multi-user.target`;
     );
 
     console.log(
-      '✅ Linux systemd service created: scripts/cursor-chat-reconnection.service',
+      '✅ Linux systemd service created: 'scripts/cursor-chat-reconnection.service',
     );
     console.log(
       'Run: sudo cp scripts/cursor-chat-reconnection.service /etc/systemd/system/',

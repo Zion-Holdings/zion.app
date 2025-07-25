@@ -4,7 +4,7 @@ class CursorAutomatedPopup {
   constructor() {
     this.status = {
       isEnabled: false,
-      connectionStatus: disconnected',
+      connectionStatus: 'disconnected',
       computerId: -',
       activeTabs: 0,
       improvements: 0,
@@ -34,7 +34,7 @@ class CursorAutomatedPopup {
 
   async loadStatus() {
     try {
-      const response = await chrome.runtime.sendMessage({ type: GET_STATUS' });
+      const response = await chrome.runtime.sendMessage({ type: 'GET_STATUS' });
       this.status = { ...this.status, ...response };
     } catch (error) {
       console.error('Failed to load status:', error);
@@ -67,7 +67,7 @@ class CursorAutomatedPopup {
   updateUI() {
     // Update status indicator
     const statusIndicator = document.getElementById('statusIndicator');
-    if (this.status.connectionStatus === connected') {
+    if (this.status.connectionStatus === 'connected') {
       statusIndicator.className = status-indicator online';
     } else {
       statusIndicator.className = status-indicator offline';
@@ -128,7 +128,7 @@ class CursorAutomatedPopup {
       score -= 5;
     }
 
-    if (this.status.connectionStatus === disconnected') {
+    if (this.status.connectionStatus === 'disconnected') {
       score -= 20;
     }
 
@@ -180,7 +180,7 @@ class CursorAutomatedPopup {
     const typeMap = {
       development_activity: Development Activity',
       active_session: Active Session',
-      navigation: Navigation',
+      navigation: 'Navigation',
       file_change: File Change',
       performance_issue: Performance Issue',
       quick_improvement: Quick Improvement',
@@ -251,13 +251,13 @@ class CursorAutomatedPopup {
   async sendImprovement() {
     try {
       const improvement = {
-        type: manual_improvement',
+        type: 'manual_improvement',
         message: User requested improvement',
         timestamp: Date.now()
       };
 
       await chrome.runtime.sendMessage({
-        type: SEND_IMPROVEMENT',
+        type: 'SEND_IMPROVEMENT',
         improvement: improvement
       });
 
@@ -274,7 +274,7 @@ class CursorAutomatedPopup {
 
   async syncComputers() {
     try {
-      await chrome.runtime.sendMessage({ type: SYNC_COMPUTERS' });
+      await chrome.runtime.sendMessage({ type: 'SYNC_COMPUTERS' });
       this.showNotification('Syncing with other computers...');
 
       // Reload status after sync
@@ -297,7 +297,7 @@ class CursorAutomatedPopup {
 
   async clearImprovements() {
     try {
-      await chrome.runtime.sendMessage({ type: CLEAR_IMPROVEMENTS' });
+      await chrome.runtime.sendMessage({ type: 'CLEAR_IMPROVEMENTS' });
       this.showNotification('Improvements cleared');
 
       // Reload status
@@ -309,7 +309,7 @@ class CursorAutomatedPopup {
     }
   }
 
-  showNotification(message, type = success') {
+  showNotification(message, type = 'success') {
     // Create a temporary notification element
     const notification = document.createElement('div');
     notification.style.cssText = `
@@ -359,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Handle messages from background script
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message.type === AUTOMATION_TOGGLED') {
+  if (message.type === 'AUTOMATION_TOGGLED') {
     // Update UI when automation is toggled from background
     location.reload();
   }

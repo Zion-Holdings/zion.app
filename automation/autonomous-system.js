@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 const { EventEmitter } = require('events');
 const fs = require('fs').promises;
@@ -13,8 +35,8 @@ class AutonomousAutomationSystem extends EventEmitter {
     
     this.config = {
       baseDir: process.cwd(),
-      logDir: logs/automation',
-      statusFile: logs/automation/status.json',
+      logDir: 'logs/automation',
+      statusFile: 'logs/automation/status.json',
       aiEndpoint: https://api.openai.com/v1/chat/completions',
       webSearchEndpoint: https://api.duckduckgo.com/',
       checkInterval: 30000, // 30 seconds
@@ -49,7 +71,7 @@ class AutonomousAutomationSystem extends EventEmitter {
   }
 
   async setupModules() {
-    console.log('🔧 Setting up autonomous automation modules...');
+    logger.info('🔧 Setting up autonomous automation modules...');
     
     // Initialize all automation modules
     this.modules.codeAnalysis = new CodeAnalysisModule(this);
@@ -73,22 +95,22 @@ class AutonomousAutomationSystem extends EventEmitter {
 
     // Performance events
     this.modules.performanceMonitor.on('performance-degradation', (metrics) => {
-      this.queueTask('optimize-performance', { metrics, priority: high' });
+      this.queueTask('optimize-performance', { metrics, priority: 'high' });
     });
 
     // Security events
     this.modules.securityScanner.on('vulnerability-found', (vuln) => {
-      this.queueTask('fix-security', { vulnerability: vuln, priority: critical' });
+      this.queueTask('fix-security', { vulnerability: vuln, priority: 'critical' });
     });
 
     // Test events
     this.modules.testRunner.on('test-failure', (failure) => {
-      this.queueTask('fix-test', { failure, priority: medium' });
+      this.queueTask('fix-test', { failure, priority: 'medium' });
     });
   }
 
   async start() {
-    console.log('🚀 Starting Autonomous Automation System...');
+    logger.info('🚀 Starting Autonomous Automation System...');
     this.isRunning = true;
     this.stats.startTime = Date.now();
 
@@ -107,7 +129,7 @@ class AutonomousAutomationSystem extends EventEmitter {
     // Start health monitoring
     this.startHealthMonitoring();
 
-    console.log('✅ Autonomous Automation System started successfully');
+    logger.info('✅ Autonomous Automation System started successfully');
     this.log('System started');
   }
 
@@ -115,9 +137,9 @@ class AutonomousAutomationSystem extends EventEmitter {
     const modulePromises = Object.entries(this.modules).map(async ([name, module]) => {
       try {
         await module.start();
-        console.log(`✅ ${name} module started`);
+        logger.info(`✅ ${name} module started`);
       } catch (error) {
-        console.error(`❌ Failed to start ${name} module:`, error.message);
+        logger.error(`❌ Failed to start ${name} module:`, error.message);
       }
     });
 
@@ -133,27 +155,27 @@ class AutonomousAutomationSystem extends EventEmitter {
   startScheduledTasks() {
     // Code analysis every 5 minutes
     cron.schedule('*/5 * * * *', () => {
-      this.queueTask('analyze-code', { priority: low' });
+      this.queueTask('analyze-code', { priority: 'low' });
     });
 
     // Performance monitoring every 10 minutes
     cron.schedule('*/10 * * * *', () => {
-      this.queueTask('monitor-performance', { priority: medium' });
+      this.queueTask('monitor-performance', { priority: 'medium' });
     });
 
     // Security scan every hour
     cron.schedule('0 * * * *', () => {
-      this.queueTask('security-scan', { priority: high' });
+      this.queueTask('security-scan', { priority: 'high' });
     });
 
     // Dependency updates daily at 2 AM
     cron.schedule('0 2 * * *', () => {
-      this.queueTask('update-dependencies', { priority: medium' });
+      this.queueTask('update-dependencies', { priority: 'medium' });
     });
 
     // Full system health check every 6 hours
     cron.schedule('0 */6 * * *', () => {
-      this.queueTask('health-check', { priority: low' });
+      this.queueTask('health-check', { priority: 'low' });
     });
   }
 
@@ -170,7 +192,7 @@ class AutonomousAutomationSystem extends EventEmitter {
       type,
       data,
       priority: data.priority || medium',
-      status: queued',
+      status: 'queued',
       createdAt: Date.now(),
       attempts: 0,
       maxAttempts: 3
@@ -210,9 +232,150 @@ class AutonomousAutomationSystem extends EventEmitter {
 
       if (task.attempts < task.maxAttempts) {
         // Re-queue with exponential backoff
-        setTimeout(() => {
+        
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => {
           this.taskQueue.push(task);
-        }, Math.pow(2, task.attempts) * 1000);
+        },                                                Math.pow(2, task.attempts);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+ * 1000);
       }
 
       this.log(`Task failed: ${task.type} (${task.id}) - ${error.message}`);
@@ -280,7 +443,7 @@ class AutonomousAutomationSystem extends EventEmitter {
       try {
         health.modules[name] = await module.getHealth();
       } catch (error) {
-        health.modules[name] = { status: error', error: error.message };
+        health.modules[name] = { status: 'error', error: error.message };
       }
     }
 
@@ -299,12 +462,12 @@ class AutonomousAutomationSystem extends EventEmitter {
     
     // Alert if any critical issues
     const criticalIssues = Object.entries(health.modules)
-      .filter(([name, status]) => status.status === error')
+      .filter(([name, status]) => status.status === 'error')
       .map(([name]) => name);
 
     if (criticalIssues.length > 0) {
       this.emit('health-alert', {
-        type: critical',
+        type: 'critical',
         modules: criticalIssues,
         timestamp: Date.now()
       });
@@ -324,9 +487,9 @@ class AutonomousAutomationSystem extends EventEmitter {
     const logEntry = `[${timestamp}] ${message}\n`;
     
     try {
-      await fs.appendFile(path.join(this.config.logDir, system.log'), logEntry);
+      await fs.appendFile(path.join(this.config.logDir, 'system.log'), logEntry);
     } catch (error) {
-      console.error('Failed to write to log file:', error.message);
+      logger.error('Failed to write to log file:', error.message);
     }
   }
 
@@ -337,7 +500,7 @@ class AutonomousAutomationSystem extends EventEmitter {
         JSON.stringify(this.stats, null, 2)
       );
     } catch (error) {
-      console.error('Failed to save stats:', error.message);
+      logger.error('Failed to save stats:', error.message);
     }
   }
 
@@ -348,26 +511,26 @@ class AutonomousAutomationSystem extends EventEmitter {
         JSON.stringify(health, null, 2)
       );
     } catch (error) {
-      console.error('Failed to save health report:', error.message);
+      logger.error('Failed to save health report:', error.message);
     }
   }
 
   async stop() {
-    console.log('🛑 Stopping Autonomous Automation System...');
+    logger.info('🛑 Stopping Autonomous Automation System...');
     this.isRunning = false;
 
     // Stop all modules
     for (const [name, module] of Object.entries(this.modules)) {
       try {
         await module.stop();
-        console.log(`✅ ${name} module stopped`);
+        logger.info(`✅ ${name} module stopped`);
       } catch (error) {
-        console.error(`❌ Failed to stop ${name} module:`, error.message);
+        logger.error(`❌ Failed to stop ${name} module:`, error.message);
       }
     }
 
     this.log('System stopped');
-    console.log('✅ Autonomous Automation System stopped');
+    logger.info('✅ Autonomous Automation System stopped');
   }
 
   getStatus() {
@@ -379,7 +542,7 @@ class AutonomousAutomationSystem extends EventEmitter {
       modules: Object.fromEntries(
         Object.entries(this.modules).map(([name, module]) => [
           name,
-          module.getStatus ? module.getStatus() : { status: unknown' }
+          module.getStatus ? module.getStatus() : { status: 'unknown' }
         ])
       )
     };
@@ -406,7 +569,7 @@ class CodeAnalysisModule extends EventEmitter {
   }
 
   async getHealth() {
-    return { status: healthy' };
+    return { status: 'healthy' };
   }
 
   async stop() {
@@ -433,7 +596,7 @@ class PerformanceMonitorModule extends EventEmitter {
   }
 
   async getHealth() {
-    return { status: healthy' };
+    return { status: 'healthy' };
   }
 
   async stop() {
@@ -460,7 +623,7 @@ class SecurityScannerModule extends EventEmitter {
   }
 
   async getHealth() {
-    return { status: healthy' };
+    return { status: 'healthy' };
   }
 
   async stop() {
@@ -483,7 +646,7 @@ class DependencyManagerModule extends EventEmitter {
   }
 
   async getHealth() {
-    return { status: healthy' };
+    return { status: 'healthy' };
   }
 
   async stop() {
@@ -506,7 +669,7 @@ class TestRunnerModule extends EventEmitter {
   }
 
   async getHealth() {
-    return { status: healthy' };
+    return { status: 'healthy' };
   }
 
   async stop() {
@@ -525,7 +688,7 @@ class DeploymentManagerModule extends EventEmitter {
   }
 
   async getHealth() {
-    return { status: healthy' };
+    return { status: 'healthy' };
   }
 
   async stop() {
@@ -548,7 +711,7 @@ class AIAssistantModule extends EventEmitter {
   }
 
   async getHealth() {
-    return { status: healthy' };
+    return { status: 'healthy' };
   }
 
   async stop() {
@@ -571,7 +734,7 @@ class WebSearchModule extends EventEmitter {
   }
 
   async getHealth() {
-    return { status: healthy' };
+    return { status: 'healthy' };
   }
 
   async stop() {
@@ -596,7 +759,7 @@ if (require.main === module) {
   });
 
   system.start().catch(error => {
-    console.error('Failed to start autonomous automation system:', error);
+    logger.error('Failed to start autonomous automation system:', error);
     process.exit(1);
   });
 } 

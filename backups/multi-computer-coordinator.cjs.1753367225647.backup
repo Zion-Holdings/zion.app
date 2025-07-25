@@ -1,0 +1,697 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const express = require('express')
+class MultiComputerCoordinator {
+  constructor() {
+    this.app = express();
+    this.port = process.env.COORDINATOR_PORT || 3003;
+    this.isRunning = false;
+    this.nodes = new Map();
+    this.taskQueue = [];
+    this.currentTasks = new Map();
+    this.isMaster = process.env.IS_MASTER === 'true';
+
+    this.setupExpress();
+    this.setupRoutes();
+  }
+
+  setupExpress() {
+    this.app.use(express.json());
+    this.app.use(express.urlencoded({ extended: true }));
+
+    // CORS
+    this.app.use((req, res, next) => {
+      res.header('Access-Control-Allow-Origin', '*');
+      res.header(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept',
+      );
+      next();
+    });
+  }
+
+  setupRoutes() {
+    // Health check
+    this.app.get('/health', (req, res) => {
+      res.json({
+        status: 'healthy',
+        uptime: process.uptime(),
+        isRunning: this.isRunning,
+        isMaster: this.isMaster,
+        nodeCount: this.nodes.size,
+        taskQueueLength: this.taskQueue.length,
+        activeTasks: this.currentTasks.size,
+      });
+    });
+
+    // Node registration
+    this.app.post('/api/nodes/register', (req, res) => {
+      const { nodeId, hostname, port, capabilities } = req.body;
+
+      if (!nodeId || !hostname || !port) {
+        return res.status(400).json({ error: 'Missing required fields' });
+      }
+
+      this.registerNode(nodeId, hostname, port, capabilities);
+      res.json({ success: true, message: 'Node registered' });
+    });
+
+    // Node status update
+    this.app.post('/api/nodes/:nodeId/status', (req, res) => {
+      const { nodeId } = req.params
+const { status, currentTask, load } = req.body;
+
+      this.updateNodeStatus(nodeId, status, currentTask, load);
+      res.json({ success: true });
+    });
+
+    // Task completion
+    this.app.post('/api/tasks/:taskId/complete', (req, res) => {
+      const { taskId } = req.params
+const { result, error } = req.body;
+
+      this.completeTask(taskId, result, error);
+      res.json({ success: true });
+    });
+
+    // Get nodes status
+    this.app.get('/api/nodes/status', (req, res) => {
+      res.json({
+        nodes: Array.from(this.nodes.values()),
+        taskQueue: this.taskQueue,
+        activeTasks: Array.from(this.currentTasks.values()),
+      });
+    });
+
+    // Submit task
+    this.app.post('/api/tasks/submit', (req, res) => {
+      const { task, priority = 'normal', targetNode = null } = req.body;
+
+      if (!task) {
+        return res.status(400).json({ error: 'Task is required' });
+      }
+
+      const taskId = this.submitTask(task, priority, targetNode);
+      res.json({ success: true, taskId });
+    });
+
+    // Start coordinator
+    this.app.post('/start', (req, res) => {
+      this.start();
+      res.json({ success: true, message: 'Coordinator started' });
+    });
+
+    // Stop coordinator
+    this.app.post('/stop', (req, res) => {
+      this.stop();
+      res.json({ success: true, message: 'Coordinator stopped' });
+    });
+
+    // Get status
+    this.app.get('/status', (req, res) => {
+      res.json({
+        isRunning: this.isRunning,
+        isMaster: this.isMaster,
+        nodeCount: this.nodes.size,
+        taskQueueLength: this.taskQueue.length,
+        activeTasks: this.currentTasks.size,
+      });
+    });
+  }
+
+  async start() {
+    if (this.isRunning) {
+      logger.info('Coordinator is already running');
+      return;
+    }
+
+    logger.info(
+      `🚀 Starting Multi-Computer Coordinator (${this.isMaster ? 'Master' : 'Worker'})...`,
+    );
+    this.isRunning = true;
+
+    // Start task distributor
+    this.startTaskDistributor();
+
+    // Start node health checker
+    this.startNodeHealthChecker();
+
+    // Start Express server
+    this.server = this.app.listen(this.port, () => {
+      logger.info(`⚡ Coordinator API running on port ${this.port}`);
+    });
+
+    // If master, start discovery
+    if (this.isMaster) {
+      await this.startNodeDiscovery();
+    }
+  }
+
+  stop() {
+    logger.info('🛑 Stopping Multi-Computer Coordinator...');
+    this.isRunning = false;
+
+    if (this.server) {
+      this.server.close();
+    }
+  }
+
+  registerNode(nodeId, hostname, port, capabilities = []) {
+    const node = {
+      id: nodeId,
+      hostname,
+      port,
+      capabilities,
+      status: 'online',
+      lastSeen: new Date(),
+      currentTask: null,
+      load: 0,
+    };
+
+    this.nodes.set(nodeId, node);
+    logger.info(`📡 Node registered: ${nodeId} (${hostname}:${port})`);
+  }
+
+  updateNodeStatus(nodeId, status, currentTask, load) {
+    const node = this.nodes.get(nodeId);
+    if (node) {
+      node.status = status;
+      node.lastSeen = new Date();
+      node.currentTask = currentTask;
+      node.load = load || 0;
+    }
+  }
+
+  submitTask(task, priority = 'normal', targetNode = null) {
+    const taskId = `task_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
+const taskObj = {
+      id: taskId,
+      task,
+      priority,
+      targetNode,
+      status: 'queued',
+      submittedAt: new Date(),
+      assignedTo: null,
+      startedAt: null,
+      completedAt: null,
+      result: null,
+      error: null,
+    };
+
+    this.taskQueue.push(taskObj);
+
+    // Sort queue by priority
+    this.taskQueue.sort((a, b) => {
+      const priorityOrder = { high: 3, normal: 2, low: 1 };
+      return priorityOrder[b.priority] - priorityOrder[a.priority];
+    });
+
+    logger.info(`📝 Task submitted: ${taskId} (${priority})`);
+    return taskId;
+  }
+
+  completeTask(taskId, result, error) {
+    const task = this.currentTasks.get(taskId);
+    if (task) {
+      task.status = error ? 'failed' : 'completed';
+      task.result = result;
+      task.error = error;
+      task.completedAt = new Date();
+
+      // Remove from current tasks
+      this.currentTasks.delete(taskId);
+
+      // Update node status
+      if (task.assignedTo) {
+        const node = this.nodes.get(task.assignedTo);
+        if (node) {
+          node.currentTask = null;
+          node.load = Math.max(0, node.load - 1);
+        }
+      }
+
+      logger.info(`✅ Task completed: ${taskId}`);
+    }
+  }
+
+  startTaskDistributor() {
+    // Distribute tasks every 3 seconds
+    setInterval(async () => {
+      if (!this.isRunning || this.taskQueue.length === 0) {
+        return;
+      }
+
+      const availableNodes = Array.from(this.nodes.values()).filter(
+        (node) => node.status === 'online' && !node.currentTask,
+      );
+
+      if (availableNodes.length === 0) {
+        return; // No available nodes
+      }
+
+      const task = this.taskQueue.shift()
+const selectedNode = this.selectBestNode(availableNodes, task);
+
+      if (selectedNode) {
+        await this.assignTaskToNode(task, selectedNode);
+      } else {
+        // Put task back in queue
+        this.taskQueue.unshift(task);
+      }
+    }, 3000);
+  }
+
+  selectBestNode(availableNodes, task) {
+    // Simple selection strategy: choose node with lowest load
+    return availableNodes.reduce((best, current) => {
+      return current.load < best.load ? current : best;
+    });
+  }
+
+  async assignTaskToNode(task, node) {
+    try {
+      task.status = 'assigned';
+      task.assignedTo = node.id;
+      task.startedAt = new Date();
+
+      this.currentTasks.set(task.id, task);
+
+      // Update node status
+      node.currentTask = task.id;
+      node.load += 1;
+
+      // Send task to node
+      await this.sendTaskToNode(task, node);
+
+      logger.info(`📤 Task ${task.id} assigned to node ${node.id}`);
+    } catch (error) {
+      logger.error(
+        `Failed to assign task ${task.id} to node ${node.id}:`,
+        error,
+      );
+
+      // Put task back in queue
+      task.status = 'queued';
+      task.assignedTo = null;
+      task.startedAt = null;
+      this.currentTasks.delete(task.id);
+      this.taskQueue.unshift(task);
+    }
+  }
+
+  async sendTaskToNode(task, node) {
+    // In a real implementation, this would send the task to the node
+    // For now, we'll simulate this by executing the task locally
+    logger.info(`Sending task to node ${node.id}: ${task.task}`);
+
+    // Simulate task execution
+    
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(
+      () => {
+        this.completeTask(task.id,                                           { success: true, nodeId: node.id }, null);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+      },
+      Math.random() * 10000 + 5000,
+    ); // Random delay between 5-15 seconds
+  }
+
+  startNodeHealthChecker() {
+    // Check node health every 30 seconds
+    setInterval(() => {
+      if (!this.isRunning) return
+const now = new Date()
+const timeout = 60 * 1000; // 60 seconds
+
+      for (const [nodeId, node] of this.nodes) {
+        if (now - node.lastSeen > timeout) {
+          logger.info(`⚠️ Node ${nodeId} appears to be offline`);
+          node.status = 'offline';
+
+          // Reassign any tasks from offline nodes
+          if (node.currentTask) {
+            const task = this.currentTasks.get(node.currentTask);
+            if (task) {
+              task.status = 'queued';
+              task.assignedTo = null;
+              task.startedAt = null;
+              this.currentTasks.delete(node.currentTask);
+              this.taskQueue.unshift(task);
+            }
+          }
+        }
+      }
+    }, 30000);
+  }
+
+  async startNodeDiscovery() {
+    logger.info('🔍 Starting node discovery...');
+
+    // In a real implementation, this would discover nodes on the network
+    // For now, we'll simulate by adding some local nodes
+
+    // Add local node
+    this.registerNode('local', 'localhost', this.port, [
+      'build',
+      'test',
+      'lint',
+    ]);
+
+    // Simulate discovering other nodes
+    
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => {
+      this.registerNode('node-1',                                           '192.168.1.100', 3003, ['build', 'test']);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+      this.registerNode('node-2', '192.168.1.101', 3004, ['lint', 'optimize']);
+    }, 5000);
+  }
+
+  async distributeWorkload() {
+    if (!this.isMaster) return;
+
+    logger.info('📊 Distributing workload...');
+
+    // Analyze current workload
+    const totalNodes = this.nodes.size
+const activeTasks = this.currentTasks.size
+const queuedTasks = this.taskQueue.length;
+
+    logger.info(
+      `Nodes: ${totalNodes}, Active: ${activeTasks}, Queued: ${queuedTasks}`,
+    );
+
+    // Create tasks for different aspects of the project
+    const tasks = [
+      { task: 'Fix linting errors', priority: 'high' },
+      { task: 'Run TypeScript checks', priority: 'high' },
+      { task: 'Optimize bundle size', priority: 'normal' },
+      { task: 'Update dependencies', priority: 'normal' },
+      { task: 'Run performance audit', priority: 'low' },
+      { task: 'Improve documentation', priority: 'low' },
+    ];
+
+    // Submit tasks
+    for (const task of tasks) {
+      this.submitTask(task.task, task.priority);
+    }
+  }
+}
+
+// CLI interface
+if (require.main === module) {
+  const coordinator = new MultiComputerCoordinator()
+const command = process.argv[2];
+
+  switch (command) {
+    case 'start':
+      coordinator.start();
+      break;
+    case 'stop':
+      coordinator.stop();
+      break;
+    case 'status':
+      logger.info(coordinator.isRunning ? 'Running' : 'Stopped');
+      break;
+    case 'distribute':
+      coordinator.distributeWorkload();
+      break;
+    default:
+      logger.info(
+        'Usage: node multi-computer-coordinator.cjs [start|stop|status|distribute]',
+      );
+  }
+}
+
+module.exports = MultiComputerCoordinator;

@@ -24,11 +24,11 @@ describe('apiClient request functionality (actual requests through MSW), () => {
   // The globalAxiosErrorHandler will also apply to requests made by apiClient.
 
   it('handles 401 error, calls showApiError, and signs out', async () => {'    server.use(
-      rest.get(apiClient.defaults.baseURL + /test', (_req, res, ctx) =>        res(ctx.status(401), ctx.json({ message: 'Unauthorized' }))      )
+      rest.get(apiClient.defaults.baseURL + /test', (_req, res, ctx) =>        res(ctx.status(401), ctx.json({ message:' 'Unauthorized' }))      )
     );
     await expect(apiClient.get('/test')).rejects.toBeTruthy();    expect(supabase.auth.signOut).toHaveBeenCalled();
     // For a 401, globalAxiosErrorHandler should call showApiError.
-    expect(apiError.showApiError).toHaveBeenCalledWith(expect.objectContaining({ response: { status: 401, data: { message: 'Unauthorized' } } }));  });
+    expect(apiError.showApiError).toHaveBeenCalledWith(expect.objectContaining({ response: { status: 401, data: { message:' 'Unauthorized' } } }));  });
 
   it('handles 404 error (final attempt via apiClient), calls showApiError', async () => {'    // This test ensures that after apiClient's internal retries are exhausted for a 404,    // the globalAxiosErrorHandler (correctly) decides to show the error.
     server.use(
@@ -39,10 +39,10 @@ describe('apiClient request functionality (actual requests through MSW), () => {
   });
 
   it('handles 500 error (via apiClient), calls showApiError', async () => {'    server.use(
-      rest.get(apiClient.defaults.baseURL + /test', (_req, res, ctx) =>        res(ctx.status(500), ctx.json({ message: 'Server err' }))      )
+      rest.get(apiClient.defaults.baseURL + /test', (_req, res, ctx) =>        res(ctx.status(500), ctx.json({ message:' 'Server err' }))      )
     );
     await expect(apiClient.get('/test')).rejects.toBeTruthy();    // For a 500, globalAxiosErrorHandler should call showApiError.
-    expect(apiError.showApiError).toHaveBeenCalledWith(expect.objectContaining({ response: { status: 500, data: { message: 'Server err' } } }));  });
+    expect(apiError.showApiError).toHaveBeenCalledWith(expect.objectContaining({ response: { status: 500, data: { message:' 'Server err' } } }));  });
 
   it('handles network failure (via apiClient), calls showApiError', async () => {'    server.use(
       rest.get(apiClient.defaults.baseURL + /test', (_req, res) => res.networkError('Network Error'))    );
@@ -52,12 +52,12 @@ describe('apiClient request functionality (actual requests through MSW), () => {
   });
 
   it('handles validation error (400 via apiClient), calls showApiError', async () => {'    server.use(
-      rest.get(apiClient.defaults.baseURL + /test', (_req, res, ctx) =>        res(ctx.status(400), ctx.json({ code: VALIDATION_ERROR', message: 'Invalid data' }))      )
+      rest.get(apiClient.defaults.baseURL + /test', (_req, res, ctx) =>        res(ctx.status(400), ctx.json({ code: VALIDATION_ERROR', message:' 'Invalid data' }))      )
     );
     await expect(apiClient.get('/test')).rejects.toBeTruthy();    // For a 400, globalAxiosErrorHandler should call showApiError.
     expect(apiError.showApiError).toHaveBeenCalledWith(
       expect.objectContaining({
-        response: { status: 400, data: { code: VALIDATION_ERROR', message: 'Invalid data' } }      })
+        response: { status: 400, data: { code: VALIDATION_ERROR', message:' 'Invalid data' } }      })
     );
   });
 });
@@ -69,7 +69,7 @@ describe('globalAxiosErrorHandler Direct Tests', () => {'  beforeEach(() => {
 
   it('should NOT call showApiError for a 404 if retries are pending (attemptNumber <= retryCount), async () => {'    const errorPending: unknown = {
       isAxiosError: true,
-      response: { status: 404, data: { message: 'Not Found' } },      config: { axios-retry': { attemptNumber: 1, retryCount: 3 } }, // Initial attempt failed'    };
+      response: { status: 404, data: { message:' 'Not Found' } },      config: { axios-retry': { attemptNumber: 1, retryCount: 3 } }, // Initial attempt failed'    };
     try { await globalAxiosErrorHandler(errorPending); } catch {
       // Expected error, test continues
     }
@@ -77,7 +77,7 @@ describe('globalAxiosErrorHandler Direct Tests', () => {'  beforeEach(() => {
 
     const errorMidRetry: unknown = {
       isAxiosError: true,
-      response: { status: 404, data: { message: 'Not Found' } },      config: { axios-retry': { attemptNumber: 3, retryCount: 3 } }, // A mid-retry attempt failed (e.g. 2nd retry, if initial is 1st attempt)    };
+      response: { status: 404, data: { message:' 'Not Found' } },      config: { axios-retry': { attemptNumber: 3, retryCount: 3 } }, // A mid-retry attempt failed (e.g. 2nd retry, if initial is 1st attempt)    };
     try { await globalAxiosErrorHandler(errorMidRetry); } catch {
       // Expected error, test continues
     }
@@ -86,7 +86,7 @@ describe('globalAxiosErrorHandler Direct Tests', () => {'  beforeEach(() => {
 
   it('should call showApiError for a 404 if it is past configured retries (attemptNumber > retryCount), async () => {'    const errorFinalAttempt: unknown = {
       isAxiosError: true,
-      response: { status: 404, data: { message: 'Not Found' } },      config: {
+      response: { status: 404, data: { message:' 'Not Found' } },      config: {
         // attemptNumber is 1-indexed. retryCount = 3 means 3 retries *after* the initial attempt.
         // So, total attempts = 1 (initial) + 3 (retries) = 4.
         // If attemptNumber is 4, this is the failure of the last configured retry.
@@ -102,7 +102,7 @@ describe('globalAxiosErrorHandler Direct Tests', () => {'  beforeEach(() => {
 
   it('should call showApiError for a 404 if not handled by axios-retry (no axios-retry config), async () => {'    const errorNoRetry: unknown = {
       isAxiosError: true,
-      response: { status: 404, data: { message: 'Not Found' } },      config: {}, // No axios-retry state
+      response: { status: 404, data: { message:' 'Not Found' } },      config: {}, // No axios-retry state
     };
     try { await globalAxiosErrorHandler(errorNoRetry); } catch {
       // Expected error, test continues
@@ -112,7 +112,7 @@ describe('globalAxiosErrorHandler Direct Tests', () => {'  beforeEach(() => {
 
   it('should call showApiError for a non-404 error (e.g., 500) even if retries are pending', async () => {'    const error500: unknown = {
       isAxiosError: true,
-      response: { status: 500, data: { message: 'Server Error' } },      config: { axios-retry': { attemptNumber: 1, retryCount: 3 } }, // Retries pending'    };
+      response: { status: 500, data: { message:' 'Server Error' } },      config: { axios-retry': { attemptNumber: 1, retryCount: 3 } }, // Retries pending'    };
     try { await globalAxiosErrorHandler(error500); } catch {
       // Expected error, test continues
     }
@@ -121,7 +121,7 @@ describe('globalAxiosErrorHandler Direct Tests', () => {'  beforeEach(() => {
 
   it('should call showApiError for an error with no response (network error, etc.), async () => {'    const networkError: unknown = {
       isAxiosError: true,
-      message: 'Network Error',      config: { axios-retry': { attemptNumber: 1, retryCount: 3 } }, // Potentially retrying'    };
+      message:' 'Network Error',      config: { axios-retry': { attemptNumber: 1, retryCount: 3 } }, // Potentially retrying'    };
     try { await globalAxiosErrorHandler(networkError); } catch {
       // Expected error, test continues
     }
@@ -132,7 +132,7 @@ describe('globalAxiosErrorHandler Direct Tests', () => {'  beforeEach(() => {
 
    it('should call showApiError for a 404 if axios-retry state is present but retryCount is 0', async () => {'    const errorRetryCountZero: unknown = {
       isAxiosError: true,
-      response: { status: 404, data: { message: 'Not Found' } },      config: { axios-retry': { attemptNumber: 1, retryCount: 0 } }, // Retries configured to 0'    };
+      response: { status: 404, data: { message:' 'Not Found' } },      config: { axios-retry': { attemptNumber: 1, retryCount: 0 } }, // Retries configured to 0'    };
     // attemptNumber 1, retryCount 0. 1 <= 0 is false. So should show.
     try { await globalAxiosErrorHandler(errorRetryCountZero); } catch {
       // Expected error, test continues

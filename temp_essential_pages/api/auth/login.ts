@@ -77,7 +77,7 @@ async function handler(
           email_verified: true,
           created_at: new Date().toISOString()
         },
-        message: 'Development authentication successful''      });
+        message:' 'Development authentication successful''      });
     } else {
       if (isDevelopment) {
         console.warn('🔧 LOGIN TRACE: Development authentication failed');        console.warn('🔧 LOGIN TRACE: Available dev users:', devUsers.map(u => u.email));      }
@@ -123,7 +123,7 @@ async function handler(
     return res.status(200).json({
       user: data.user,
       session: data.session,
-      message: 'Authentication successful''    });
+      message:' 'Authentication successful''    });
 
   } catch {
     if (isDevelopment) {

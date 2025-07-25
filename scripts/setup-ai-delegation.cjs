@@ -1,13 +1,11 @@
-#!/usr/bin/env node
-
 /**
  * Zion App - AI Delegation Setup Script
  *
  * Sets up the AI-driven continuous improvement system across multiple computers
  */
 
-const fs = require('fs')
-const path = require('path')
+const fs = require('fs');
+const path = require('path');
 const { execSync } = require('child_process');
 
 // Configuration
@@ -40,7 +38,7 @@ const CONFIG = {
 
   // Configuration files
   CONFIG_FILES: ['.env.ai-delegation', 'ai-delegation-config.json'],
-}
+};
 class AIDelegationSetup {
   constructor() {
     this.setupLog = [];
@@ -50,12 +48,12 @@ class AIDelegationSetup {
    * Run the complete setup
    */
   async run() {
-    console.log('🚀 Setting up AI Delegation System...\n');
+    logger.info('🚀 Setting up AI Delegation System...\n');
 
     try {
       // Check system requirements
-      await this.checkSystemRequirements()
-// Setup environment
+      await this.checkSystemRequirements();
+      // Setup environment
       await this.setupEnvironment();
 
       // Install dependencies
@@ -65,8 +63,8 @@ class AIDelegationSetup {
       await this.createDirectories();
 
       // Create configuration files
-      await this.createConfigFiles()
-// Setup logging
+      await this.createConfigFiles();
+      // Setup logging
       await this.setupLogging();
 
       // Test setup
@@ -75,16 +73,16 @@ class AIDelegationSetup {
       // Generate setup report
       await this.generateSetupReport();
 
-      console.log('\n✅ AI Delegation System setup completed successfully!');
-      console.log('\n📋 Next steps:');
-      console.log(
+      logger.info('\n✅ AI Delegation System setup completed successfully!');
+      logger.info('\n📋 Next steps:');
+      logger.info(
         '1. Configure your Cursor API credentials in .env.ai-delegation',
       );
-      console.log('2. Run "npm run ai-delegate:master" on the master computer');
-      console.log('3. Run "npm run ai-delegate:worker" on worker computers');
-      console.log('4. Monitor with "npm run ai-delegate:monitor"');
+      logger.info('2. Run "npm run ai-delegate:master" on the master computer');
+      logger.info('3. Run "npm run ai-delegate:worker" on worker computers');
+      logger.info('4. Monitor with "npm run ai-delegate:monitor"');
     } catch (error) {
-      console.error('\n❌ Setup failed:', error.message);
+      logger.error('\n❌ Setup failed:', error.message);
       process.exit(1);
     }
   }
@@ -93,11 +91,11 @@ class AIDelegationSetup {
    * Check system requirements
    */
   async checkSystemRequirements() {
-    console.log('🔍 Checking system requirements...');
+    logger.info('🔍 Checking system requirements...');
 
     // Check Node.js version
-    const nodeVersion = process.version
-const nodeMajor = parseInt(nodeVersion.slice(1).split('.')[0]);
+    const nodeVersion = process.version;
+    const nodeMajor = parseInt(nodeVersion.slice(1).split('.')[0]);
 
     if (nodeMajor < 16) {
       throw new Error(
@@ -120,15 +118,15 @@ const nodeMajor = parseInt(nodeVersion.slice(1).split('.')[0]);
       const gitVersion = execSync('git --version', { encoding: 'utf8' }).trim();
       this.log('✅ git version:', gitVersion);
     } catch (error) {
-      console.warn('⚠️  git not found. Some features may be limited.');
+      logger.warn('⚠️  git not found. Some features may be limited.');
     }
 
     // Check available memory
-    const os = require('os')
-const totalMemory = Math.round(os.totalmem() / (1024 * 1024 * 1024));
+    const os = require('os');
+    const totalMemory = Math.round(os.totalmem() / (1024 * 1024 * 1024));
 
     if (totalMemory < 4) {
-      console.warn(
+      logger.warn(
         `⚠️  Low memory detected: ${totalMemory}GB. Recommended: 8GB+`,
       );
     } else {
@@ -138,30 +136,30 @@ const totalMemory = Math.round(os.totalmem() / (1024 * 1024 * 1024));
     // Check available disk space
     const diskSpace = await this.getDiskSpace();
     if (diskSpace < 1) {
-      console.warn(`⚠️  Low disk space: ${diskSpace}GB. Recommended: 5GB+`);
+      logger.warn(`⚠️  Low disk space: ${diskSpace}GB. Recommended: 5GB+`);
     } else {
       this.log('✅ Available disk space:', `${diskSpace}GB`);
     }
 
-    console.log('✅ System requirements check completed\n');
+    logger.info('✅ System requirements check completed\n');
   }
 
   /**
    * Setup environment variables
    */
   async setupEnvironment() {
-    console.log('🔧 Setting up environment...');
+    logger.info('🔧 Setting up environment...');
 
     // Check existing .env file
-    const envPath = path.join(process.cwd(), '.env')
-const aiEnvPath = path.join(process.cwd(), '.env.ai-delegation');
+    const envPath = path.join(process.cwd(), '.env');
+    const aiEnvPath = path.join(process.cwd(), '.env.ai-delegation');
 
     if (fs.existsSync(envPath)) {
       this.log('✅ Found existing .env file');
 
       // Read existing environment variables
-      const envContent = fs.readFileSync(envPath, 'utf8')
-const envVars = this.parseEnvFile(envContent);
+      const envContent = fs.readFileSync(envPath, 'utf8');
+      const envVars = this.parseEnvFile(envContent);
 
       // Check for required variables
       const missing = CONFIG.REQUIRED_ENV_VARS.filter(
@@ -169,10 +167,10 @@ const envVars = this.parseEnvFile(envContent);
       );
 
       if (missing.length > 0) {
-        console.warn(
+        logger.warn(
           `⚠️  Missing required environment variables: ${missing.join(', ')}`,
         );
-        console.warn(
+        logger.warn(
           'Please add them to your .env file or .env.ai-delegation file',
         );
       }
@@ -187,15 +185,15 @@ const envVars = this.parseEnvFile(envContent);
       this.log('✅ Found existing .env.ai-delegation file');
     }
 
-    console.log('✅ Environment setup completed\n');
+    logger.info('✅ Environment setup completed\n');
   }
 
   /**
    * Install dependencies
    */
   async installDependencies() {
-    console.log('📦 Installing dependencies...')
-const missingDeps = [];
+    logger.info('📦 Installing dependencies...');
+    const missingDeps = [];
 
     // Check for missing dependencies
     for (const dep of CONFIG.REQUIRED_DEPENDENCIES) {
@@ -209,7 +207,7 @@ const missingDeps = [];
 
     // Install missing dependencies
     if (missingDeps.length > 0) {
-      console.log(
+      logger.info(
         `📥 Installing missing dependencies: ${missingDeps.join(', ')}`,
       );
 
@@ -221,14 +219,14 @@ const missingDeps = [];
       }
     }
 
-    console.log('✅ Dependencies check completed\n');
+    logger.info('✅ Dependencies check completed\n');
   }
 
   /**
    * Create directories
    */
   async createDirectories() {
-    console.log('📁 Creating directories...');
+    logger.info('📁 Creating directories...');
 
     for (const dir of CONFIG.DIRECTORIES) {
       const dirPath = path.join(process.cwd(), dir);
@@ -241,14 +239,14 @@ const missingDeps = [];
       }
     }
 
-    console.log('✅ Directory creation completed\n');
+    logger.info('✅ Directory creation completed\n');
   }
 
   /**
    * Create configuration files
    */
   async createConfigFiles() {
-    console.log('⚙️  Creating configuration files...');
+    logger.info('⚙️  Creating configuration files...');
 
     // Create AI delegation config
     const configPath = path.join(process.cwd(), 'ai-delegation-config.json');
@@ -266,19 +264,19 @@ const missingDeps = [];
       process.cwd(),
       'logs',
       'ai-delegation-log-config.json',
-    )
-const logConfig = this.generateLogConfig();
+    );
+    const logConfig = this.generateLogConfig();
     fs.writeFileSync(logConfigPath, JSON.stringify(logConfig, null, 2));
     this.log('✅ Created log configuration');
 
-    console.log('✅ Configuration files created\n');
+    logger.info('✅ Configuration files created\n');
   }
 
   /**
    * Setup logging
    */
   async setupLogging() {
-    console.log('📝 Setting up logging...');
+    logger.info('📝 Setting up logging...');
 
     // Create log files
     const logFiles = [
@@ -302,14 +300,14 @@ const logConfig = this.generateLogConfig();
       }
     }
 
-    console.log('✅ Logging setup completed\n');
+    logger.info('✅ Logging setup completed\n');
   }
 
   /**
    * Test setup
    */
   async testSetup() {
-    console.log('🧪 Testing setup...');
+    logger.info('🧪 Testing setup...');
 
     // Test script loading
     try {
@@ -349,15 +347,15 @@ const logConfig = this.generateLogConfig();
       throw new Error(`Dependency test failed: ${error.message}`);
     }
 
-    console.log('✅ Setup tests completed\n');
+    logger.info('✅ Setup tests completed\n');
   }
 
   /**
    * Generate setup report
    */
   async generateSetupReport() {
-    console.log('📊 Generating setup report...')
-const report = {
+    logger.info('📊 Generating setup report...');
+    const report = {
       timestamp: new Date().toISOString(),
       nodeId: process.env.NODE_ID || 'unknown',
       system: {
@@ -391,12 +389,12 @@ const report = {
         })),
       },
       logs: this.setupLog,
-    }
-const reportPath = path.join(process.cwd(), 'logs', 'setup-report.json');
+    };
+    const reportPath = path.join(process.cwd(), 'logs', 'setup-report.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
     this.log('✅ Setup report generated: logs/setup-report.json');
-    console.log('✅ Setup report completed\n');
+    logger.info('✅ Setup report completed\n');
   }
 
   /**
@@ -416,8 +414,8 @@ const reportPath = path.join(process.cwd(), 'logs', 'setup-report.json');
   }
 
   parseEnvFile(content) {
-    const vars = {}
-const lines = content.split('\n');
+    const vars = {};
+    const lines = content.split('\n');
 
     for (const line of lines) {
       const match = line.match(/^([^#=]+)=(.*)$/);
@@ -552,7 +550,7 @@ ENABLE_SLACK_COMMANDS=false
     const logEntry =
       `[${new Date().toISOString()}] ${message} ${args.join(' ')}`.trim();
     this.setupLog.push(logEntry);
-    console.log(logEntry);
+    logger.info(logEntry);
   }
 }
 
@@ -560,9 +558,22 @@ ENABLE_SLACK_COMMANDS=false
 if (require.main === module) {
   const setup = new AIDelegationSetup();
   setup.run().catch((error) => {
-    console.error('❌ Setup failed:', error);
+    logger.error('❌ Setup failed:', error);
     process.exit(1);
   });
 }
 
 module.exports = AIDelegationSetup;
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});

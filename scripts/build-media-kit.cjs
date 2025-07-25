@@ -1,8 +1,7 @@
-#!/usr/bin/env node
-const { execSync } = require('child_process')
-const fs = require('fs')
-const path = require('path')
-const kitDir = path.join(__dirname, '../public/toolkit_assets/media_kit')
+const { execSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+const kitDir = path.join(__dirname, '../public/toolkit_assets/media_kit');
 const zipFile = path.join(__dirname, '../public/toolkit_assets/media_kit.zip');
 
 if (!fs.existsSync(kitDir)) {

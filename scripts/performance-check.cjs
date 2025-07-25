@@ -1,11 +1,33 @@
-#!/usr/bin/env node
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json(),
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
 
 /**
  * Performance and Health Check Script
  * Monitors various aspects of the application
  */
 
-const fs = require('fs')
+const fs = require('fs');
 const path = require('path');
 
 // Load environment variables from .env.local if it exists
@@ -26,7 +48,7 @@ if (fs.existsSync(envPath)) {
 const config = {
   baseUrl: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
   timeout: 10000, // 10 seconds
-}
+};
 class PerformanceChecker {
   constructor() {
     this.results = {
@@ -39,14 +61,14 @@ class PerformanceChecker {
   }
 
   async checkServerHealth() {
-    // console.warn('🔍 Checking server health...');
+    // logger.warn('🔍 Checking server health...');
     try {
-      const startTime = Date.now()
-const response = await fetch(`${config.baseUrl}/api/health`, {
+      const startTime = Date.now();
+      const response = await fetch(`${config.baseUrl}/api/health`, {
         timeout: config.timeout,
-      })
-const endTime = Date.now()
-const responseTime = endTime - startTime;
+      });
+      const endTime = Date.now();
+      const responseTime = endTime - startTime;
       this.results.performance.serverResponseTime = responseTime;
 
       if (response.ok) {
@@ -55,7 +77,7 @@ const responseTime = endTime - startTime;
           status: 'pass',
           responseTime: `${responseTime}ms`,
         });
-        // console.warn(`✅ Server healthy (${responseTime}ms)`);
+        // logger.warn(`✅ Server healthy (${responseTime}ms)`);
       } else {
         throw new Error(`HTTP ${response.status}`);
       }
@@ -66,25 +88,25 @@ const responseTime = endTime - startTime;
         error: error.message,
       });
       this.results.errors.push(`Server health check failed: ${error.message}`);
-      // console.warn(`❌ Server health check failed: ${error.message}`);
+      // logger.warn(`❌ Server health check failed: ${error.message}`);
     }
   }
 
   async checkPageLoad() {
-    // console.warn('🔍 Checking page load performance...');
+    // logger.warn('🔍 Checking page load performance...');
     try {
-      const startTime = Date.now()
-const response = await fetch(config.baseUrl, {
+      const startTime = Date.now();
+      const response = await fetch(config.baseUrl, {
         timeout: config.timeout,
-      })
-const endTime = Date.now()
-const responseTime = endTime - startTime;
+      });
+      const endTime = Date.now();
+      const responseTime = endTime - startTime;
       this.results.performance.pageLoadTime = responseTime;
 
       if (response.ok) {
-        const html = await response.text()
-const hasTitle = html.includes('<title>')
-const hasReact = html.includes('__NEXT_DATA__');
+        const html = await response.text();
+        const hasTitle = html.includes('<title>');
+        const hasReact = html.includes('__NEXT_DATA__');
 
         this.results.checks.push({
           name: 'Page Load',
@@ -96,7 +118,7 @@ const hasReact = html.includes('__NEXT_DATA__');
             contentLength: html.length,
           },
         });
-        // console.warn(`✅ Page loads successfully (${responseTime}ms)`);
+        // logger.warn(`✅ Page loads successfully (${responseTime}ms)`);
       } else {
         throw new Error(`HTTP ${response.status}`);
       }
@@ -107,25 +129,25 @@ const hasReact = html.includes('__NEXT_DATA__');
         error: error.message,
       });
       this.results.errors.push(`Page load failed: ${error.message}`);
-      // console.warn(`❌ Page load failed: ${error.message}`);
+      // logger.warn(`❌ Page load failed: ${error.message}`);
     }
   }
 
   async checkImageOptimization() {
-    // console.warn('🔍 Checking image optimization...')
-const imageUrl = `${config.baseUrl}/_next/image?url=%2Flogos%2Fzion-logo.png&w=64&q=75`;
+    // logger.warn('🔍 Checking image optimization...')
+    const imageUrl = `${config.baseUrl}/_next/image?url=%2Flogos%2Fzion-logo.png&w=64&q=75`;
 
     try {
-      const startTime = Date.now()
-const response = await fetch(imageUrl, {
+      const startTime = Date.now();
+      const response = await fetch(imageUrl, {
         timeout: config.timeout,
-      })
-const endTime = Date.now()
-const responseTime = endTime - startTime;
+      });
+      const endTime = Date.now();
+      const responseTime = endTime - startTime;
 
       if (response.ok) {
-        const contentType = response.headers.get('content-type')
-const contentLength = response.headers.get('content-length');
+        const contentType = response.headers.get('content-type');
+        const contentLength = response.headers.get('content-length');
 
         this.results.checks.push({
           name: 'Image Optimization',
@@ -138,7 +160,7 @@ const contentLength = response.headers.get('content-length');
               : 'unknown',
           },
         });
-        // console.warn(`✅ Image optimization working (${responseTime}ms, ${contentType})`);
+        // logger.warn(`✅ Image optimization working (${responseTime}ms, ${contentType})`);
       } else {
         throw new Error(`HTTP ${response.status}`);
       }
@@ -151,21 +173,21 @@ const contentLength = response.headers.get('content-length');
       this.results.warnings.push(
         `Image optimization not working: ${error.message}`,
       );
-      // console.warn(`⚠️ Image optimization issue: ${error.message}`);
+      // logger.warn(`⚠️ Image optimization issue: ${error.message}`);
     }
   }
 
   checkFileSystem() {
-    // console.warn('🔍 Checking file system...')
-const criticalFiles = [
+    // logger.warn('🔍 Checking file system...')
+    const criticalFiles = [
       'package.json',
       'next.config.js',
       '.env.local',
       'public/logos/zion-logo.png',
       'pages/index.tsx',
-    ]
-const missingFiles = []
-const fileInfo = {};
+    ];
+    const missingFiles = [];
+    const fileInfo = {};
 
     criticalFiles.forEach((file) => {
       try {
@@ -199,27 +221,27 @@ const fileInfo = {};
 
     if (missingFiles.length > 0) {
       this.results.warnings.push(`Missing files: ${missingFiles.join(', ')}`);
-      // console.warn(`⚠️ Missing critical files: ${missingFiles.join(', ')}`);
+      // logger.warn(`⚠️ Missing critical files: ${missingFiles.join(', ')}`);
     } else {
-      // console.warn('✅ All critical files present');
+      // logger.warn('✅ All critical files present');
     }
   }
 
   checkEnvironmentVariables() {
-    // console.warn('🔍 Checking environment configuration...')
-const criticalEnvVars = [
+    // logger.warn('🔍 Checking environment configuration...')
+    const criticalEnvVars = [
       'NODE_ENV',
       'NEXT_PUBLIC_SUPABASE_URL',
       'NEXT_PUBLIC_SUPABASE_ANON_KEY',
-    ]
-const optionalEnvVars = [
+    ];
+    const optionalEnvVars = [
       'NEXT_PUBLIC_SENTRY_DSN',
       'NEXT_PUBLIC_REOWN_PROJECT_ID',
       'SUPABASE_SERVICE_ROLE_KEY',
-    ]
-const missing = []
-const present = []
-const placeholder = [];
+    ];
+    const missing = [];
+    const present = [];
+    const placeholder = [];
 
     [...criticalEnvVars, ...optionalEnvVars].forEach((varName) => {
       const value = process.env[varName];
@@ -235,8 +257,8 @@ const placeholder = [];
       } else {
         present.push(varName);
       }
-    })
-const criticalMissing = criticalEnvVars.filter((v) => missing.includes(v));
+    });
+    const criticalMissing = criticalEnvVars.filter((v) => missing.includes(v));
 
     this.results.checks.push({
       name: 'Environment Variables',
@@ -260,25 +282,25 @@ const criticalMissing = criticalEnvVars.filter((v) => missing.includes(v));
       this.results.errors.push(
         `Missing critical environment variables: ${criticalMissing.join(', ')}`,
       );
-      // console.warn(`❌ Missing critical env vars: ${criticalMissing.join(', ')}`);
+      // logger.warn(`❌ Missing critical env vars: ${criticalMissing.join(', ')}`);
     } else {
-      // console.warn('✅ All critical environment variables present');
+      // logger.warn('✅ All critical environment variables present');
     }
 
     if (placeholder.length > 0) {
       this.results.warnings.push(
         `Placeholder values detected: ${placeholder.join(', ')}`,
       );
-      // console.warn(`⚠️ Placeholder values: ${placeholder.join(', ')}`);
+      // logger.warn(`⚠️ Placeholder values: ${placeholder.join(', ')}`);
     }
   }
 
   calculateOverallStatus() {
-    const hasErrors = this.results.errors.length > 0
-const hasFailures = this.results.checks.some(
+    const hasErrors = this.results.errors.length > 0;
+    const hasFailures = this.results.checks.some(
       (check) => check.status === 'fail',
-    )
-const hasWarnings = this.results.warnings.length > 0;
+    );
+    const hasWarnings = this.results.warnings.length > 0;
 
     if (hasErrors || hasFailures) {
       this.results.overall = 'fail';
@@ -290,59 +312,59 @@ const hasWarnings = this.results.warnings.length > 0;
   }
 
   printSummary() {
-    // console.warn('\n📊 Performance Check Summary');
-    // console.warn('================================');
+    // logger.warn('\n📊 Performance Check Summary');
+    // logger.warn('================================');
 
     // Remove or prefix all remaining unused variables and arguments for linter compliance, including 'warning' and 'error'.
     // Ensure no unused variables remain in the file.
-    // console.warn(`Overall Status: ${this.results.overall.toUpperCase()}`);
+    // logger.warn(`Overall Status: ${this.results.overall.toUpperCase()}`);
 
-    // console.warn('\nCheck Results:');
+    // logger.warn('\nCheck Results:');
     this.results.checks.forEach((check) => {
-      // console.warn(`  ${this.results.overall.toUpperCase()} ${check.name}: ${check.status}`);
+      // logger.warn(`  ${this.results.overall.toUpperCase()} ${check.name}: ${check.status}`);
       if (check.responseTime) {
-        // console.warn(`    Response Time: ${check.responseTime}`);
+        // logger.warn(`    Response Time: ${check.responseTime}`);
       }
       if (check.error) {
-        // console.warn(`    Error: ${check.error}`);
+        // logger.warn(`    Error: ${check.error}`);
       }
     });
 
     if (this.results.performance.serverResponseTime) {
-      // console.warn('\nPerformance Metrics:');
-      // console.warn(`  Server Response: ${this.results.performance.serverResponseTime}ms`);
+      // logger.warn('\nPerformance Metrics:');
+      // logger.warn(`  Server Response: ${this.results.performance.serverResponseTime}ms`);
       if (this.results.performance.pageLoadTime) {
-        // console.warn(`  Page Load: ${this.results.performance.pageLoadTime}ms`);
+        // logger.warn(`  Page Load: ${this.results.performance.pageLoadTime}ms`);
       }
     }
 
     if (this.results.warnings.length > 0) {
-      // console.warn('\nWarnings:');
+      // logger.warn('\nWarnings:');
       this.results.warnings.forEach((_warning) => {
-        // console.warn(`  ⚠️ ${_warning}`);
+        // logger.warn(`  ⚠️ ${_warning}`);
       });
     }
 
     if (this.results.errors.length > 0) {
-      // console.warn('\nErrors:');
+      // logger.warn('\nErrors:');
       this.results.errors.forEach((_error) => {
-        // console.warn(`  ❌ ${_error}`);
+        // logger.warn(`  ❌ ${_error}`);
       });
     }
 
-    // console.warn('\n💡 Recommendations:');
+    // logger.warn('\n💡 Recommendations:');
     if (this.results.overall === 'pass') {
-      // console.warn('  🎉 Everything looks great! Your application is running optimally.');
+      // logger.warn('  🎉 Everything looks great! Your application is running optimally.');
     } else if (this.results.overall === 'warn') {
-      // console.warn('  📝 Address the warnings above to improve performance and reliability.');
+      // logger.warn('  📝 Address the warnings above to improve performance and reliability.');
     } else {
-      // console.warn('  🔧 Fix the errors above before deploying to production.');
+      // logger.warn('  🔧 Fix the errors above before deploying to production.');
     }
   }
 
   async run() {
-    // console.warn('🚀 Starting Performance Check');
-    // console.warn('=============================\n');
+    // logger.warn('🚀 Starting Performance Check');
+    // logger.warn('=============================\n');
 
     // Run all checks
     await this.checkServerHealth();
@@ -371,9 +393,22 @@ if (require.main === module) {
       process.exit(results.overall === 'fail' ? 1 : 0);
     })
     .catch((_error) => {
-      // console.error('❌ Performance check failed:', _error);
+      // logger.error('❌ Performance check failed:', _error);
       process.exit(1);
     });
 }
 
 module.exports = PerformanceChecker;
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});

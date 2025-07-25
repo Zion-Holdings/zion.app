@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 const express = require('express')
 const { createServer } = require('http')
@@ -92,7 +91,7 @@ const connection = activeConnections.get(socket.id);
   // Handle chat messages
   socket.on('send-message', (data, callback) => {
     try {
-      const { roomId, message, sender, type = text', metadata } = data
+      const { roomId, message, sender, type = 'text', metadata } = data
 const messageData = {
         id: `msg_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
         roomId,
@@ -206,7 +205,7 @@ const connection = activeConnections.get(socket.id);
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.json({
-    status: healthy',
+    status: 'healthy',
     message: Socket.IO server is running',
     activeConnections: activeConnections.size,
     timestamp: new Date().toISOString()
@@ -216,7 +215,7 @@ app.get('/health', (req, res) => {
 // Socket status endpoint
 app.get('/api/socket', (req, res) => {
   res.json({
-    status: running',
+    status: 'running',
     message: Socket.IO server is running',
     activeConnections: activeConnections.size,
     timestamp: new Date().toISOString()

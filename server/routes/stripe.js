@@ -2,7 +2,7 @@ const express = require('express');const router = express.Router();
 const stripe = require('stripe'); // Import the stripe library'const User = require('../models/User'); // Assuming you have a User model'const Subscription = require('../models/Subscription'); // Assuming you have a Subscription model';
 const PROD_DOMAIN = app.ziontechgroup.com';function isProdDomain() {
   const context = process.env.CONTEXT;
-  if (context && context !== production') {'    return false;
+  if (context && context !== 'production') {'    return false;
   }
   const url = process.env.URL || ;  try {
     return new URL(url).hostname === PROD_DOMAIN;
@@ -23,14 +23,14 @@ const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 // This needs to be BEFORE any other middleware that might parse the body (like express.json()).
 // However, since this router is specific and /webhook is the first route using it,
 // placing it here is fine. If other routes in this router didn't need raw body,// you would apply it only to the /webhook route:
-// router.post('/webhook', express.raw({ type: application/json' }), (req, res) => { ... });// For simplicity, as this file grows, this router-level .use() might be too broad.
-// Let's make it specific to the webhook route.'// router.use('/webhook', express.raw({ type: application/json' })); // Moving this to be route-specific for clarity
+// router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) => { ... });// For simplicity, as this file grows, this router-level .use() might be too broad.
+// Let's make it specific to the webhook route.'// router.use('/webhook', express.raw({ type: 'application/json' })); // Moving this to be route-specific for clarity
 /**
  * @route POST /api/stripe/webhook
  * @desc Handle Stripe webhook events
  * @access Public (secured with Stripe signature verification)
  */
-router.post('/webhook', express.raw({ type: application/json' }), (req, res) => {'  if (!stripeInstance) {
+router.post('/webhook', express.raw({ type: 'application/json' }), (req, res) => {'  if (!stripeInstance) {
     // process.stdout.write('Stripe SDK not initialized. STRIPE_SECRET_KEY might be missing.');    return res.status(500).send('Internal Server Error: Stripe SDK not initialized.');  }
 
   if (!webhookSecret) {
@@ -51,7 +51,7 @@ router.post('/webhook', express.raw({ type: application/json' }), (req, res) => 
   switch (event.type) {
     case invoice.payment_succeeded': {'      const invoice = event.data.object;
 
-      if (invoice.billing_reason === subscription_create' || invoice.billing_reason === subscription_cycle' || invoice.billing_reason === subscription_update') {'        if (invoice.subscription) {
+      if (invoice.billing_reason === subscription_create' || invoice.billing_reason === subscription_cycle' || invoice.billing_reason === 'subscription_update') {'        if (invoice.subscription) {
           try {
             const subscription = await stripeInstance.subscriptions.retrieve(invoice.subscription);
             if (!subscription) {

@@ -1,4 +1,4 @@
-#!/usr/bin/env node;
+;
 import _process from process';
 const {
   NETLIFY_AUTH_TOKEN: token,
@@ -24,7 +24,7 @@ const domains = await res.json();
 
 async function assignDomain(siteId) {
   const res = await fetch(`https://api.netlify.com/api/v1/sites/${siteId}/domains`, {
-    method: POST',    headers,
+    method: 'POST',    headers,
     body: JSON.stringify({ domain })
   });
   if (!res.ok && res.status !== 422) {
@@ -36,7 +36,7 @@ async function assignDomain(siteId) {
 
 async function removeDomain(siteId) {
   const res = await fetch(`https://api.netlify.com/api/v1/sites/${siteId}/domains/${domain}`, {
-    method: DELETE',    headers
+    method: 'DELETE',    headers
   });
   if (!res.ok && res.status !== 404) {
     throw new Error(`Remove domain failed: ${res.statusText}`);

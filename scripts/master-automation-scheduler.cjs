@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 const { exec } = require('child_process')
 const fs = require('fs')
@@ -17,7 +39,7 @@ class MasterAutomationScheduler {
 
   log(message, type = 'INFO') {
     const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] [${type}] ${message}`);
+    logger.info(`[${timestamp}] [${type}] ${message}`);
   }
 
   async start() {
@@ -53,7 +75,7 @@ class MasterAutomationScheduler {
       },
       {
         name: 'Linting Fix',
-        command: 'npm run lint:fix',
+        command: 'npm run lint: 'fix',
         description: 'ESLint fixes and code formatting',
       },
       {
@@ -348,7 +370,7 @@ const status = {
 
 // Handle graceful shutdown
 process.on('SIGINT', async () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
   if (global.masterScheduler) {
     await global.masterScheduler.stop();
   }
@@ -356,7 +378,7 @@ process.on('SIGINT', async () => {
 });
 
 process.on('SIGTERM', async () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
   if (global.masterScheduler) {
     await global.masterScheduler.stop();
   }
@@ -368,6 +390,6 @@ const masterScheduler = new MasterAutomationScheduler();
 global.masterScheduler = masterScheduler;
 
 masterScheduler.start().catch((error) => {
-  console.error('❌ Failed to start master automation scheduler:', error);
+  logger.error('❌ Failed to start master automation scheduler:', error);
   process.exit(1);
 });

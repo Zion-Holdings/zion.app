@@ -57,7 +57,7 @@ describe('RegistrationForm', () => {'  beforeEach(() => {
   });
 
   it('shows error toast on server 400', async () => {'    (toastHook.toast.error as jest.Mock).mockImplementation(() => {}); // Changed vi.Mock to jest.Mock
-    mockFetch({ message: 'Bad' }, 400);
+    mockFetch({ message:' 'Bad' }, 400);
     render(
       <MemoryRouter>
         <Signup />

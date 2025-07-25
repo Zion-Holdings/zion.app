@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 /**
  * Autonomous AI Code Review Agent
@@ -69,7 +91,7 @@ class AICodeReviewAgent extends EventEmitter {
   }
 
   async analyze() {
-    console.log('🔍 Starting AI Code Review Analysis...');
+    logger.info('🔍 Starting AI Code Review Analysis...');
     
     this.state.isRunning = true;
     const startTime = Date.now();
@@ -77,7 +99,7 @@ class AICodeReviewAgent extends EventEmitter {
     try {
       // Get files to analyze
       const files = await this.getFilesToAnalyze();
-      console.log(`📁 Found ${files.length} files to analyze`);
+      logger.info(`📁 Found ${files.length} files to analyze`);
       
       const results = {
         summary: {
@@ -107,7 +129,7 @@ class AICodeReviewAgent extends EventEmitter {
           }
           
         } catch (error) {
-          console.warn(`⚠️ Failed to analyze ${file}:`, error.message);
+          logger.warn(`⚠️ Failed to analyze ${file}:`, error.message);
         }
       }
       
@@ -128,13 +150,13 @@ class AICodeReviewAgent extends EventEmitter {
       this.state.issuesFound += results.summary.issuesFound;
       this.state.filesAnalyzed += results.summary.filesAnalyzed;
       
-      console.log(`✅ Analysis completed in ${results.summary.executionTime}ms`);
-      console.log(`📊 Summary: ${results.summary.filesAnalyzed} files, ${results.summary.issuesFound} issues, ${results.summary.improvementsApplied} improvements`);
+      logger.info(`✅ Analysis completed in ${results.summary.executionTime}ms`);
+      logger.info(`📊 Summary: ${results.summary.filesAnalyzed} files, ${results.summary.issuesFound} issues, ${results.summary.improvementsApplied} improvements`);
       
       return results;
       
     } catch (error) {
-      console.error('❌ Analysis failed:', error.message);
+      logger.error('❌ Analysis failed:', error.message);
       throw error;
     } finally {
       this.state.isRunning = false;
@@ -175,7 +197,7 @@ class AICodeReviewAgent extends EventEmitter {
           }
         }
       } catch (error) {
-        console.warn(`⚠️ Could not scan directory ${dir}:`, error.message);
+        logger.warn(`⚠️ Could not scan directory ${dir}:`, error.message);
       }
     }
     
@@ -184,7 +206,7 @@ class AICodeReviewAgent extends EventEmitter {
   }
 
   async analyzeFile(filePath) {
-    console.log(`🔍 Analyzing: ${filePath}`);
+    logger.info(`🔍 Analyzing: ${filePath}`);
     
     const result = {
       file: filePath,
@@ -215,7 +237,7 @@ class AICodeReviewAgent extends EventEmitter {
       result.qualityScore = this.calculateQualityScore(result);
       
     } catch (error) {
-      console.warn(`⚠️ Failed to analyze ${filePath}:`, error.message);
+      logger.warn(`⚠️ Failed to analyze ${filePath}:`, error.message);
       result.error = error.message;
     }
     
@@ -488,7 +510,7 @@ class AICodeReviewAgent extends EventEmitter {
       }
       
     } catch (error) {
-      console.warn(`⚠️ AI analysis failed for ${filePath}:`, error.message);
+      logger.warn(`⚠️ AI analysis failed for ${filePath}:`, error.message);
     }
     
     return result;
@@ -522,7 +544,148 @@ Provide suggestions in JSON format:
     `;
     
     // Simulate AI response
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise(resolve => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                                                2000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
     
     return [
       {
@@ -612,13 +775,13 @@ Provide suggestions in JSON format:
   async applyImprovements(improvements) {
     if (!this.config.improvements.autoApply) return;
     
-    console.log(`🔧 Applying ${improvements.length} improvements...`);
+    logger.info(`🔧 Applying ${improvements.length} improvements...`);
     
     for (const improvement of improvements) {
       try {
         await this.applyImprovement(improvement);
       } catch (error) {
-        console.warn(`⚠️ Failed to apply improvement:`, error.message);
+        logger.warn(`⚠️ Failed to apply improvement:`, error.message);
       }
     }
   }
@@ -633,7 +796,7 @@ Provide suggestions in JSON format:
     
     // Apply the improvement
     // This is a simplified implementation
-    console.log(`✅ Applied improvement: ${improvement.description}`);
+    logger.info(`✅ Applied improvement: ${improvement.description}`);
   }
 
   async createBackup(filePath) {
@@ -651,12 +814,26 @@ if (require.main === module) {
   
   agent.analyze()
     .then(results => {
-      console.log('📊 Analysis Results:');
-      console.log(JSON.stringify(results, null, 2));
+      logger.info('📊 Analysis Results:');
+      logger.info(JSON.stringify(results, null, 2));
       process.exit(0);
     })
     .catch(error => {
-      console.error('❌ Analysis failed:', error.message);
+      logger.error('❌ Analysis failed:', error.message);
       process.exit(1);
     });
 } 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

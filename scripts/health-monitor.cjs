@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 /**
  * Zion App Health Monitor
@@ -36,7 +58,7 @@ class HealthMonitor {
   }
 
   async startMonitoring() {
-    console.log('Starting health monitoring...');
+    logger.info('Starting health monitoring...');
 
     // Initial health check
     await this.performHealthCheck();
@@ -60,7 +82,7 @@ class HealthMonitor {
         successCount++;
       } catch (error) {
         errorCount++;
-        console.error(`Health check failed for ${endpoint}:`, error.message);
+        logger.error(`Health check failed for ${endpoint}:`, error.message);
       }
     }
 
@@ -124,11 +146,152 @@ const req = protocol.get(
 
       // Check CPU usage (simplified)
       const startUsage = process.cpuUsage();
-      await new Promise((resolve) => setTimeout(resolve, 100))
+      await new Promise((resolve) => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                                                100);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+)
 const endUsage = process.cpuUsage(startUsage);
       this.metrics.cpuUsage = (endUsage.user + endUsage.system) / 1000000; // Convert to seconds
     } catch (error) {
-      console.error('Error checking system resources:', error.message);
+      logger.error('Error checking system resources:', error.message);
     }
   }
 
@@ -142,7 +305,7 @@ const endUsage = process.cpuUsage(startUsage);
   }
 
   async triggerHealing() {
-    console.log('Health thresholds exceeded, triggering healing...');
+    logger.info('Health thresholds exceeded, triggering healing...');
 
     try {
       // Run self-healing script
@@ -151,9 +314,9 @@ const endUsage = process.cpuUsage(startUsage);
         cwd: process.cwd(),
       });
 
-      console.log('Healing process completed');
+      logger.info('Healing process completed');
     } catch (error) {
-      console.error('Healing process failed:', error.message);
+      logger.error('Healing process failed:', error.message);
     }
   }
 
@@ -167,7 +330,7 @@ const endUsage = process.cpuUsage(startUsage);
       cpuUsage: this.metrics.cpuUsage,
     };
 
-    console.log('Health Metrics:', JSON.stringify(logEntry, null, 2));
+    logger.info('Health Metrics:', JSON.stringify(logEntry, null, 2));
 
     // Save to metrics file
     const metricsPath = path.join(process.cwd(), 'logs', 'health-metrics.json');
@@ -185,18 +348,18 @@ if (require.main === module) {
 
   // Handle process signals
   process.on('SIGINT', () => {
-    console.log('Stopping health monitor...');
+    logger.info('Stopping health monitor...');
     process.exit(0);
   });
 
   process.on('SIGTERM', () => {
-    console.log('Stopping health monitor...');
+    logger.info('Stopping health monitor...');
     process.exit(0);
   });
 
   // Start monitoring
   monitor.startMonitoring().catch((error) => {
-    console.error('Failed to start health monitor:', error);
+    logger.error('Failed to start health monitor:', error);
     process.exit(1);
   });
 }

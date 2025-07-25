@@ -1,4 +1,38 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class Js {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting Js...');
+    
+    try {
+      #!/usr/bin/env node
 
 const fs = require('fs')
 const path = require('path')
@@ -31,7 +65,7 @@ function analyzeBuildOutput() {
   const buildDir = path.join(process.cwd(), '.next');
 
   if (!fs.existsSync(buildDir)) {
-    console.warn(
+    logger.warn(
       colorize(
         '⚠️  Build directory not found. Please run "npm run build" first.',
         'yellow',
@@ -40,8 +74,8 @@ function analyzeBuildOutput() {
     return;
   }
 
-  console.warn(colorize('\n🔍 Build Analysis Report', 'bright'));
-  console.warn(colorize('========================\n', 'cyan'));
+  logger.warn(colorize('\n🔍 Build Analysis Report', 'bright'));
+  logger.warn(colorize('========================\n', 'cyan'));
 
   // Analyze static files
   const staticDir = path.join(buildDir, 'static');
@@ -60,8 +94,8 @@ function analyzeBuildOutput() {
 }
 
 function analyzeStaticFiles(staticDir) {
-  console.warn(colorize('📦 Static Assets Analysis', 'blue'));
-  console.warn(colorize('-------------------------', 'blue'))
+  logger.warn(colorize('📦 Static Assets Analysis', 'blue'));
+  logger.warn(colorize('-------------------------', 'blue'))
 const jsDir = path.join(staticDir, 'chunks')
 const cssDir = path.join(staticDir, 'css');
 
@@ -71,8 +105,8 @@ const totalJSSize = jsFiles.reduce((total, file) => {
       return total + fs.statSync(file).size;
     }, 0);
 
-    console.warn(colorize(`📄 JavaScript Files: ${jsFiles.length}`, 'green'));
-    console.warn(
+    logger.warn(colorize(`📄 JavaScript Files: ${jsFiles.length}`, 'green'));
+    logger.warn(
       colorize(`📏 Total JS Size: ${formatBytes(totalJSSize)}`, 'green'),
     );
 
@@ -86,9 +120,9 @@ const totalJSSize = jsFiles.reduce((total, file) => {
       .sort((a, b) => b.size - a.size)
       .slice(0, 10);
 
-    console.warn(colorize('\n🔥 Largest JS Chunks:', 'yellow'));
+    logger.warn(colorize('\n🔥 Largest JS Chunks:', 'yellow'));
     largechunks.forEach((chunk, i) => {
-      console.warn(`${i + 1}. ${chunk.name} - ${formatBytes(chunk.size)}`);
+      logger.warn(`${i + 1}. ${chunk.name} - ${formatBytes(chunk.size)}`);
     });
   }
 
@@ -98,24 +132,24 @@ const totalCSSSize = cssFiles.reduce((total, file) => {
       return total + fs.statSync(file).size;
     }, 0);
 
-    console.warn(colorize(`\n🎨 CSS Files: ${cssFiles.length}`, 'magenta'));
-    console.warn(
+    logger.warn(colorize(`\n🎨 CSS Files: ${cssFiles.length}`, 'magenta'));
+    logger.warn(
       colorize(`📏 Total CSS Size: ${formatBytes(totalCSSSize)}`, 'magenta'),
     );
   }
 }
 
 function analyzeServerFiles(serverDir) {
-  console.warn(colorize('\n🖥️  Server Files Analysis', 'blue'));
-  console.warn(colorize('-------------------------', 'blue'))
+  logger.warn(colorize('\n🖥️  Server Files Analysis', 'blue'));
+  logger.warn(colorize('-------------------------', 'blue'))
 const pagesDir = path.join(serverDir, 'pages');
   if (fs.existsSync(pagesDir)) {
     const pageFiles = getAllFiles(pagesDir, '.js');
-    console.warn(colorize(`📄 Server Pages: ${pageFiles.length}`, 'green'))
+    logger.warn(colorize(`📄 Server Pages: ${pageFiles.length}`, 'green'))
 const totalServerSize = pageFiles.reduce((total, file) => {
       return total + fs.statSync(file).size;
     }, 0);
-    console.warn(
+    logger.warn(
       colorize(
         `📏 Total Server Size: ${formatBytes(totalServerSize)}`,
         'green',
@@ -143,8 +177,8 @@ const stat = fs.statSync(fullPath);
 }
 
 function provideRecommendations() {
-  console.warn(colorize('\n💡 Performance Recommendations', 'bright'));
-  console.warn(colorize('================================', 'cyan'))
+  logger.warn(colorize('\n💡 Performance Recommendations', 'bright'));
+  logger.warn(colorize('================================', 'cyan'))
 const recommendations = [
     '🚀 Consider implementing dynamic imports for large components',
     '📦 Use webpack-bundle-analyzer for detailed bundle analysis',
@@ -159,17 +193,54 @@ const recommendations = [
   ];
 
   recommendations.forEach((rec) => {
-    console.warn(rec);
+    logger.warn(rec);
   });
 
-  console.warn(colorize('\n📈 Bundle Analysis Commands', 'blue'));
-  console.warn(colorize('---------------------------', 'blue'));
-  console.warn('npm install --save-dev webpack-bundle-analyzer');
-  console.warn('ANALYZE=true npm run build');
-  console.warn('npx webpack-bundle-analyzer .next/static/chunks/*.js');
+  logger.warn(colorize('\n📈 Bundle Analysis Commands', 'blue'));
+  logger.warn(colorize('---------------------------', 'blue'));
+  logger.warn('npm install --save-dev webpack-bundle-analyzer');
+  logger.warn('ANALYZE=true npm run build');
+  logger.warn('npx webpack-bundle-analyzer .next/static/chunks/*.js');
 
-  console.warn(colorize('\n✅ Build analysis complete!', 'green'));
+  logger.warn(colorize('\n✅ Build analysis complete!', 'green'));
 }
 
 // Run analysis
 analyzeBuildOutput();
+    } catch (error) {
+      logger.error('Error in Js:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping Js...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Js();
+  script.start().catch(error => {
+    logger.error('Failed to start Js:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Js;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

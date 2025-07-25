@@ -1,8 +1,39 @@
-#!/usr/bin/env node
-/**
- * Summarize failing Jest tests and open a GitHub issue labeled 'autofix'
- * so Codex can attempt a fix via the codex-fix workflow.
- */
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
+
 const fs = require('fs')
 const path = require('path')
 const { _Octokit } = require('@octokit/rest')
@@ -33,13 +64,13 @@ const lines = failedSuites.flatMap((suite) =>
 async function main() {
   const reportPath = findLatestReport();
   if (!reportPath) {
-    console.error('No Jest report found. Run npm run test:collect first.');
+    logger.error('No Jest report found. Run npm run test:collect first.');
     process.exit(1);
   }
 
   const data = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
   if (data.numFailedTests === 0) {
-    console.warn('✅ No failing tests — nothing to report.');
+    logger.warn('✅ No failing tests — nothing to report.');
     return;
   }
 
@@ -55,7 +86,7 @@ const bodyLines = [
 const token = process.env.GITHUB_TOKEN
 const repoSlug = process.env.GITHUB_REPOSITORY;
   if (!token || !repoSlug) {
-    console.error('GITHUB_TOKEN or GITHUB_REPOSITORY env vars missing.');
+    logger.error('GITHUB_TOKEN or GITHUB_REPOSITORY env vars missing.');
     process.exit(1);
   }
   const [owner, repo] = repoSlug.split('/')
@@ -69,11 +100,47 @@ const octokit = new Octokit({ auth: token });
       body: bodyLines.join('\n'),
       labels: ['autofix'],
     });
-    console.warn('📨 Created issue for Codex autofix');
+    logger.warn('📨 Created issue for Codex autofix');
   } catch (_err) {
-    console.error('Failed to create issue:', err.message);
+    logger.error('Failed to create issue:', err.message);
     process.exit(1);
   }
 }
 
 main();
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+    } catch (error) {
+      logger.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    logger.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

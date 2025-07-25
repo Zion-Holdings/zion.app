@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Zion App - Improvement Engine
@@ -13,7 +12,11 @@ const axios = require('axios');
 const winston = require('winston');
 
 // Configure logging
+<<<<<<< HEAD
+const logger = winston';;.createLogger({
+=======
 const logger = winston.createLogger({
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
   level: 'info',  format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
@@ -243,7 +246,11 @@ const backupFilePath = path.join(backupPath, relativePath);
   async applyDependencyUpdate(suggestion) {
     for (const change of suggestion.changes) {
       try {
+<<<<<<< HEAD
+        if (change.action === install';;;) {          execSync(`npm install ${change.package}@${change.version || latest'}`, { stdio: 'inherit' });          logger.info(`✅ Installed ${change.package}@${change.version || latest'}`);        } else if (change.action === update';;;) {          execSync(`npm update ${change.package}`, { stdio: 'inherit' });          logger.info(`✅ Updated ${change.package}`);        } else if (change.action === remove';;;) {          execSync(`npm uninstall ${change.package}`, { stdio: 'inherit' });          logger.info(`✅ Removed ${change.package}`);        }
+=======
         if (change.action === 'install') {          execSync(`npm install ${change.package}@${change.version || 'latest'}`, { stdio: 'inherit' });          logger.info(`✅ Installed ${change.package}@${change.version || 'latest'}`);        } else if (change.action === 'update') {          execSync(`npm update ${change.package}`, { stdio: 'inherit' });          logger.info(`✅ Updated ${change.package}`);        } else if (change.action === 'remove') {          execSync(`npm uninstall ${change.package}`, { stdio: 'inherit' });          logger.info(`✅ Removed ${change.package}`);        }
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       } catch (error) {
         logger.error(`❌ Failed to ${change.action} ${change.package}:`, error.message);
         throw error;
@@ -498,10 +505,17 @@ if (require.main === module) {
   // Example usage
   const exampleSuggestions = [
     {
+<<<<<<< HEAD
+      type: 'code_change',      description: Add error boundary to improve error handling',      changes: [
+        {
+          action: 'add',          file: 'src/components/ErrorBoundary.tsx',          content: `;
+import React from react';
+=======
       type: 'code_change',      description: 'Add error boundary to improve error handling',      changes: [
         {
           action: 'add',          file: 'src/components/ErrorBoundary.tsx',          content: `;
 import React from 'react';
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
 interface ErrorBoundaryState {
   hasError: boolean;
   error?: Error;

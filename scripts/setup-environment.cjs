@@ -1,9 +1,40 @@
-#!/usr/bin/env node
 
-/**
- * Environment Setup Script for Zion AI Marketplace
- * Helps configure required environment variables
- */
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
+
+
 
 const fs = require('fs')
 const path = require('path')
@@ -118,30 +149,74 @@ function createEnvFiles() {
 
   // Create .env.example
   fs.writeFileSync(path.join(rootDir, '.env.example'), envExample);
-  console.warn('✅ Created .env.example');
+  logger.warn('✅ Created .env.example');
 
   // Create .env.local.example
   fs.writeFileSync(path.join(rootDir, '.env.local.example'), envLocal);
-  console.warn('✅ Created .env.local.example');
+  logger.warn('✅ Created .env.local.example');
 
   // Check if .env.local exists
   const envLocalPath = path.join(rootDir, '.env.local');
   if (!fs.existsSync(envLocalPath)) {
     fs.writeFileSync(envLocalPath, envLocal);
-    console.warn('✅ Created .env.local with development defaults');
+    logger.warn('✅ Created .env.local with development defaults');
   } else {
-    console.warn('ℹ️  .env.local already exists, skipping');
+    logger.warn('ℹ️  .env.local already exists, skipping');
   }
 
-  console.warn('\n📋 Next Steps:');
-  console.warn('1. Edit .env.local with your actual environment values');
-  console.warn('2. For Supabase: Visit https://supabase.com/dashboard');
-  console.warn('3. For Wallet: Visit https://cloud.walletconnect.com');
-  console.warn('4. Generate NextAuth secret: openssl rand -base64 32');
+  logger.warn('\n📋 Next Steps:');
+  logger.warn('1. Edit .env.local with your actual environment values');
+  logger.warn('2. For Supabase: Visit https://supabase.com/dashboard');
+  logger.warn('3. For Wallet: Visit https://cloud.walletconnect.com');
+  logger.warn('4. Generate NextAuth secret: openssl rand -base64 32');
 }
 
 if (require.main === module) {
+  try {
+    
   createEnvFiles();
+
+  } catch (error) {
+    logger.error('Script execution failed:', error);
+    process.exit(1);
+  }
 }
 
 module.exports = { createEnvFiles };
+    } catch (error) {
+      logger.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    logger.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 const { spawn } = require('child_process');
 const express = require('express');
@@ -18,28 +40,28 @@ class ImprovedAutomationOrchestrator {
     
     this.systemConfigs = {
       continuous-improvement': {
-        script: continuous-improvement/index.js',
+        script: 'continuous-improvement/index.js',
         name: Continuous Improvement System',
         description: Monitors and improves code quality, performance, and security',
         autoRestart: true,
         maxRestarts: 5
       },
       enhanced-infinite-improvement': {
-        script: enhanced-infinite-improvement.js',
+        script: 'enhanced-infinite-improvement.js',
         name: Enhanced Infinite Improvement Loop',
         description: AI-powered continuous improvement with learning capabilities',
         autoRestart: true,
         maxRestarts: 3
       },
       autonomous-system': {
-        script: autonomous-system.js',
+        script: 'autonomous-system.js',
         name: Autonomous Automation System',
         description: Multi-module autonomous system for various tasks',
         autoRestart: true,
         maxRestarts: 5
       },
       intelligent-orchestrator': {
-        script: intelligent-automation-orchestrator.js',
+        script: 'intelligent-automation-orchestrator.js',
         name: Intelligent Automation Orchestrator',
         description: Coordinates and manages all automation systems',
         autoRestart: false,
@@ -49,7 +71,7 @@ class ImprovedAutomationOrchestrator {
   }
 
   async initialize() {
-    console.log('🚀 Initializing Improved Automation Orchestrator...');
+    logger.info('🚀 Initializing Improved Automation Orchestrator...');
     
     // Setup Express server
     this.setupExpressServer();
@@ -63,7 +85,7 @@ class ImprovedAutomationOrchestrator {
     // Initialize automation systems
     await this.initializeAutomationSystems();
     
-    console.log('✅ Improved Automation Orchestrator initialized successfully');
+    logger.info('✅ Improved Automation Orchestrator initialized successfully');
   }
 
   setupExpressServer() {
@@ -71,7 +93,7 @@ class ImprovedAutomationOrchestrator {
     this.app.use(express.static(path.join(__dirname, ..')));
     
     this.server = this.app.listen(this.port, () => {
-      console.log(`🌐 Improved Automation Orchestrator running on port ${this.port}`);
+      logger.info(`🌐 Improved Automation Orchestrator running on port ${this.port}`);
     });
   }
 
@@ -84,7 +106,7 @@ class ImprovedAutomationOrchestrator {
     });
 
     this.io.on('connection', (socket) => {
-      console.log('🔌 Client connected to orchestrator');
+      logger.info('🔌 Client connected to orchestrator');
       
       socket.on('get-status', () => {
         socket.emit('status-update', this.getSystemStatus());
@@ -107,7 +129,7 @@ class ImprovedAutomationOrchestrator {
   setupHealthEndpoints() {
     this.app.get('/health', (req, res) => {
       res.json({
-        status: healthy',
+        status: 'healthy',
         timestamp: new Date().toISOString(),
         systems: this.getSystemStatus(),
         orchestrator: {
@@ -142,16 +164,16 @@ class ImprovedAutomationOrchestrator {
   }
 
   async initializeAutomationSystems() {
-    console.log('🤖 Initializing automation systems...');
+    logger.info('🤖 Initializing automation systems...');
     
     for (const [systemName, config] of Object.entries(this.systemConfigs)) {
-      if (systemName === intelligent-orchestrator') continue; // Skip self
+      if (systemName === 'intelligent-orchestrator') continue; // Skip self
       
       const system = {
         name: systemName,
         config: config,
         process: null,
-        status: stopped',
+        status: 'stopped',
         restarts: 0,
         lastStart: null,
         lastError: null,
@@ -161,23 +183,23 @@ class ImprovedAutomationOrchestrator {
       this.automationSystems.set(systemName, system);
     }
     
-    console.log(`✅ Initialized ${this.automationSystems.size} automation systems`);
+    logger.info(`✅ Initialized ${this.automationSystems.size} automation systems`);
   }
 
   async startSystem(systemName) {
     const system = this.automationSystems.get(systemName);
     if (!system) {
-      console.error(`❌ System ${systemName} not found`);
+      logger.error(`❌ System ${systemName} not found`);
       return false;
     }
 
-    if (system.status === running') {
-      console.log(`⚠️  System ${systemName} is already running`);
+    if (system.status === 'running') {
+      logger.info(`⚠️  System ${systemName} is already running`);
       return true;
     }
 
     try {
-      console.log(`🚀 Starting ${systemName}...`);
+      logger.info(`🚀 Starting ${systemName}...`);
       
       const scriptPath = path.join(__dirname, system.config.script);
       if (!fs.existsSync(scriptPath)) {
@@ -187,7 +209,7 @@ class ImprovedAutomationOrchestrator {
       const child = spawn('node', [scriptPath], {
         cwd: __dirname,
         stdio: ['pipe', pipe', pipe'],
-        env: { ...process.env, NODE_ENV: production' }
+        env: { ...process.env, NODE_ENV: 'production' }
       });
 
       system.process = child;
@@ -197,16 +219,16 @@ class ImprovedAutomationOrchestrator {
 
       child.stdout.on('data', (data) => {
         const log = data.toString().trim();
-        system.logs.push({ timestamp: new Date(), type: stdout', message: log });
+        system.logs.push({ timestamp: new Date(), type: 'stdout', message: log });
         if (system.logs.length > 100) system.logs.shift();
-        console.log(`[${systemName}] ${log}`);
+        logger.info(`[${systemName}] ${log}`);
       });
 
       child.stderr.on('data', (data) => {
         const log = data.toString().trim();
-        system.logs.push({ timestamp: new Date(), type: stderr', message: log });
+        system.logs.push({ timestamp: new Date(), type: 'stderr', message: log });
         if (system.logs.length > 100) system.logs.shift();
-        console.error(`[${systemName}] ERROR: ${log}`);
+        logger.error(`[${systemName}] ERROR: ${log}`);
       });
 
       child.on('close', (code) => {
@@ -215,12 +237,158 @@ class ImprovedAutomationOrchestrator {
         
         if (code !== 0) {
           system.lastError = `Process exited with code ${code}`;
-          console.error(`❌ System ${systemName} exited with code ${code}`);
+          logger.error(`❌ System ${systemName} exited with code ${code}`);
           
           if (system.config.autoRestart && system.restarts < system.config.maxRestarts) {
             system.restarts++;
+<<<<<<< HEAD
+            logger.info(`🔄 Auto-restarting ${systemName} (attempt ${system.restarts}/${system.config.maxRestarts})`);
+            
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => this.startSystem(systemName),                                                5000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+=======
             console.log(`🔄 Auto-restarting ${systemName} (attempt ${system.restarts}/${system.config.maxRestarts})`)
             setTimeout(() => this.startSystem(systemName), 5000);
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
           }
         }
         
@@ -230,15 +398,15 @@ class ImprovedAutomationOrchestrator {
       child.on('error', (error) => {
         system.status = error';
         system.lastError = error.message;
-        console.error(`❌ Failed to start ${systemName}:`, error.message);
+        logger.error(`❌ Failed to start ${systemName}:`, error.message);
         this.broadcastStatus();
       });
 
       // Wait for system to start
       await this.waitForSystemStart(systemName);
       
-      if (system.status === running') {
-        console.log(`✅ ${systemName} started successfully`);
+      if (system.status === 'running') {
+        logger.info(`✅ ${systemName} started successfully`);
         this.broadcastStatus();
         return true;
       } else {
@@ -248,7 +416,7 @@ class ImprovedAutomationOrchestrator {
     } catch (error) {
       system.status = error';
       system.lastError = error.message;
-      console.error(`❌ Failed to start ${systemName}:`, error.message);
+      logger.error(`❌ Failed to start ${systemName}:`, error.message);
       this.broadcastStatus();
       return false;
     }
@@ -260,12 +428,153 @@ class ImprovedAutomationOrchestrator {
     
     return new Promise((resolve) => {
       const checkStatus = () => {
-        if (system.status === running') {
+        if (system.status === 'running') {
           resolve(true);
         } else if (Date.now() - startTime > timeout) {
           resolve(false);
         } else {
-          setTimeout(checkStatus, 1000);
+          
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(checkStatus,                                                1000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
         }
       };
       
@@ -276,11 +585,11 @@ class ImprovedAutomationOrchestrator {
   stopSystem(systemName) {
     const system = this.automationSystems.get(systemName);
     if (!system || !system.process) {
-      console.log(`⚠️  System ${systemName} is not running`);
+      logger.info(`⚠️  System ${systemName} is not running`);
       return false;
     }
 
-    console.log(`🛑 Stopping ${systemName}...`);
+    logger.info(`🛑 Stopping ${systemName}...`);
     system.process.kill('SIGTERM');
     system.status = stopping';
     this.broadcastStatus();
@@ -288,9 +597,150 @@ class ImprovedAutomationOrchestrator {
   }
 
   restartSystem(systemName) {
-    console.log(`🔄 Restarting ${systemName}...`);
+    logger.info(`🔄 Restarting ${systemName}...`);
     this.stopSystem(systemName);
-    setTimeout(() => this.startSystem(systemName), 2000);
+    
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => this.startSystem(systemName),                                                2000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
   }
 
   getSystemStatus() {
@@ -317,7 +767,7 @@ class ImprovedAutomationOrchestrator {
 
   async start() {
     if (this.isRunning) {
-      console.log('⚠️  Orchestrator is already running');
+      logger.info('⚠️  Orchestrator is already running');
       return;
     }
 
@@ -325,19 +775,160 @@ class ImprovedAutomationOrchestrator {
     this.isRunning = true;
 
     // Start all automation systems
-    console.log('🚀 Starting all automation systems...');
+    logger.info('🚀 Starting all automation systems...');
     for (const systemName of this.automationSystems.keys()) {
       await this.startSystem(systemName);
       await this.sleep(2000); // Wait between starts
     }
 
-    console.log('✅ All automation systems started');
-    console.log(`📊 Dashboard: http://localhost:${this.port}`);
-    console.log(`🔗 API: http://localhost:${this.port}/health`);
+    logger.info('✅ All automation systems started');
+    logger.info(`📊 Dashboard: http://localhost:${this.port}`);
+    logger.info(`🔗 API: http://localhost:${this.port}/health`);
   }
 
   sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise(resolve => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                                                ms);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
   }
 }
 
@@ -389,7 +980,7 @@ if (require.main === module) {
   const orchestrator = new ImprovedAutomationOrchestrator();
   
   orchestrator.start().catch(error => {
-    console.error('❌ Failed to start Improved Automation Orchestrator:', error);
+    logger.error('❌ Failed to start Improved Automation Orchestrator:', error);
     process.exit(1);
   });
 }

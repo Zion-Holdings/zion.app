@@ -1,5 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+
+export default function Document() {
+  return (
+    <html>
+      <Head />
+      <body>
+        <div id="root" />
+      </body>
+    </html>
+  );
+}
+=======
 ;
 export default function document()      {;
   return (
@@ -9,3 +22,4 @@ export default function document()      {;
   );
 
 }
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858

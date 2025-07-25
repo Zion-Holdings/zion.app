@@ -1,15 +1,37 @@
-#!/usr/bin/env node
+const winston = require('winston');
 
-const fs = require('fs')
-const path = require('path')
-const { spawn } = require('child_process')
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json(),
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
+
+const fs = require('fs');
+const path = require('path');
+const { spawn } = require('child_process');
 class SimpleStart {
   constructor() {
     this.projectRoot = process.cwd();
   }
 
   log(message) {
-    console.log(`[${new Date().toISOString()}] ${message}`);
+    logger.info(`[${new Date().toISOString()}] ${message}`);
   }
 
   createMinimalApp() {
@@ -73,8 +95,8 @@ export default function App({ Component, pageProps }: AppProps) {
   }
 
   startServer() {
-    this.log('Starting development server...')
-const server = spawn('npm', ['run', 'dev', '--', '--port', '3001'], {
+    this.log('Starting development server...');
+    const server = spawn('npm', ['run', 'dev', '--', '--port', '3001'], {
       cwd: this.projectRoot,
       stdio: 'inherit',
       env: {

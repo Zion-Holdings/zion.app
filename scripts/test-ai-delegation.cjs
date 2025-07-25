@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json(),
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
 
 /**
  * Zion App - AI Delegation Test Script
@@ -6,9 +28,9 @@
  * Tests the AI-driven continuous improvement system
  */
 
-const fs = require('fs')
-const path = require('path')
-const { execSync, spawn } = require('child_process')
+const fs = require('fs');
+const path = require('path');
+const { execSync, spawn } = require('child_process');
 const axios = require('axios');
 
 // Configuration
@@ -54,7 +76,7 @@ const CONFIG = {
       },
     },
   ],
-}
+};
 class AIDelegationTest {
   constructor() {
     this.testResults = [];
@@ -65,7 +87,7 @@ class AIDelegationTest {
    * Run all tests
    */
   async run() {
-    console.log('🧪 Running AI Delegation System Tests...\n');
+    logger.info('🧪 Running AI Delegation System Tests...\n');
 
     try {
       // Test system setup
@@ -89,9 +111,9 @@ class AIDelegationTest {
       // Generate test report
       await this.generateTestReport();
 
-      console.log('\n✅ All tests completed successfully!');
+      logger.info('\n✅ All tests completed successfully!');
     } catch (error) {
-      console.error('\n❌ Test failed:', error.message);
+      logger.error('\n❌ Test failed:', error.message);
       await this.generateTestReport();
       process.exit(1);
     }
@@ -101,7 +123,7 @@ class AIDelegationTest {
    * Test system setup
    */
   async testSystemSetup() {
-    console.log('🔍 Testing system setup...');
+    logger.info('🔍 Testing system setup...');
 
     // Check required files
     const requiredFiles = [
@@ -142,15 +164,15 @@ class AIDelegationTest {
       }
     }
 
-    console.log('✅ System setup tests completed\n');
+    logger.info('✅ System setup tests completed\n');
   }
 
   /**
    * Test service availability
    */
   async testServiceAvailability() {
-    console.log('🌐 Testing service availability...')
-const services = [
+    logger.info('🌐 Testing service availability...');
+    const services = [
       {
         name: 'AI Improvement System',
         url: `${CONFIG.ENDPOINTS.AI_IMPROVEMENT}/health`,
@@ -187,24 +209,24 @@ const services = [
       }
     }
 
-    console.log('✅ Service availability tests completed\n');
+    logger.info('✅ Service availability tests completed\n');
   }
 
   /**
    * Test AI integration
    */
   async testAIIntegration() {
-    console.log('🤖 Testing AI integration...');
+    logger.info('🤖 Testing AI integration...');
 
     // Test Cursor API connection
     if (process.env.CURSOR_API_KEY) {
       try {
-        const AIContinuousImprovementSystem = require('./ai-continuous-improvement.cjs')
-const aiSystem = new AIContinuousImprovementSystem();
+        const AIContinuousImprovementSystem = require('./ai-continuous-improvement.cjs');
+        const aiSystem = new AIContinuousImprovementSystem();
 
         // Test API call
-        const testPrompt = 'Test connection'
-const response = await aiSystem.callCursorAPI(testPrompt);
+        const testPrompt = 'Test connection';
+        const response = await aiSystem.callCursorAPI(testPrompt);
 
         if (response) {
           this.logTest('PASS', 'Cursor API connection successful');
@@ -220,15 +242,15 @@ const response = await aiSystem.callCursorAPI(testPrompt);
 
     // Test AI suggestion generation
     try {
-      const CursorAIDelegator = require('./cursor-ai-delegator.cjs')
-const delegator = new CursorAIDelegator();
+      const CursorAIDelegator = require('./cursor-ai-delegator.cjs');
+      const delegator = new CursorAIDelegator();
 
       // Test prompt building
       const testTask = {
         type: 'code_analysis',
         data: { files: ['test.tsx'] },
-      }
-const prompt = delegator.buildTaskPrompt(testTask);
+      };
+      const prompt = delegator.buildTaskPrompt(testTask);
 
       if (prompt && prompt.includes('code_analysis')) {
         this.logTest('PASS', 'AI prompt building works correctly');
@@ -239,19 +261,19 @@ const prompt = delegator.buildTaskPrompt(testTask);
       this.logTest('FAIL', `AI integration test failed: ${error.message}`);
     }
 
-    console.log('✅ AI integration tests completed\n');
+    logger.info('✅ AI integration tests completed\n');
   }
 
   /**
    * Test task processing
    */
   async testTaskProcessing() {
-    console.log('📋 Testing task processing...');
+    logger.info('📋 Testing task processing...');
 
     // Test task submission
     try {
-      const testTask = CONFIG.TEST_TASKS[0]
-const response = await axios.post(
+      const testTask = CONFIG.TEST_TASKS[0];
+      const response = await axios.post(
         `${CONFIG.ENDPOINTS.CURSOR_DELEGATOR}/api/tasks/submit`,
         testTask,
         {
@@ -261,8 +283,8 @@ const response = await axios.post(
       );
 
       if (response.status === 200 && response.data.taskId) {
-        this.logTest('PASS', 'Task submission successful')
-const taskId = response.data.taskId;
+        this.logTest('PASS', 'Task submission successful');
+        const taskId = response.data.taskId;
 
         // Test task status checking
         await this.testTaskStatus(taskId);
@@ -273,7 +295,7 @@ const taskId = response.data.taskId;
       this.logTest('FAIL', `Task processing test failed: ${error.message}`);
     }
 
-    console.log('✅ Task processing tests completed\n');
+    logger.info('✅ Task processing tests completed\n');
   }
 
   /**
@@ -308,7 +330,7 @@ const taskId = response.data.taskId;
    * Test coordination
    */
   async testCoordination() {
-    console.log('🔗 Testing multi-computer coordination...');
+    logger.info('🔗 Testing multi-computer coordination...');
 
     try {
       const response = await axios.get(
@@ -347,22 +369,22 @@ const taskId = response.data.taskId;
       this.logTest('FAIL', 'Shared storage not found');
     }
 
-    console.log('✅ Coordination tests completed\n');
+    logger.info('✅ Coordination tests completed\n');
   }
 
   /**
    * Test error handling
    */
   async testErrorHandling() {
-    console.log('⚠️  Testing error handling...');
+    logger.info('⚠️  Testing error handling...');
 
     // Test invalid task submission
     try {
       const invalidTask = {
         type: 'invalid_type',
         data: {},
-      }
-const response = await axios.post(
+      };
+      const response = await axios.post(
         `${CONFIG.ENDPOINTS.CURSOR_DELEGATOR}/api/tasks/submit`,
         invalidTask,
         {
@@ -395,17 +417,17 @@ const response = await axios.post(
       }
     }
 
-    console.log('✅ Error handling tests completed\n');
+    logger.info('✅ Error handling tests completed\n');
   }
 
   /**
    * Generate test report
    */
   async generateTestReport() {
-    console.log('📊 Generating test report...')
-const endTime = Date.now()
-const duration = endTime - this.startTime
-const report = {
+    logger.info('📊 Generating test report...');
+    const endTime = Date.now();
+    const duration = endTime - this.startTime;
+    const report = {
       timestamp: new Date().toISOString(),
       duration: duration,
       summary: {
@@ -428,35 +450,35 @@ const report = {
         masterNode: process.env.MASTER_NODE === 'true',
         nodeId: process.env.NODE_ID || 'unknown',
       },
-    }
-const reportPath = path.join(process.cwd(), 'logs', 'test-report.json');
+    };
+    const reportPath = path.join(process.cwd(), 'logs', 'test-report.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
     // Print summary
-    console.log('\n📋 Test Summary:');
-    console.log(`Total Tests: ${report.summary.total}`);
-    console.log(`Passed: ${report.summary.passed}`);
-    console.log(`Failed: ${report.summary.failed}`);
-    console.log(`Warnings: ${report.summary.warnings}`);
-    console.log(`Skipped: ${report.summary.skipped}`);
-    console.log(`Duration: ${duration}ms`);
+    logger.info('\n📋 Test Summary:');
+    logger.info(`Total Tests: ${report.summary.total}`);
+    logger.info(`Passed: ${report.summary.passed}`);
+    logger.info(`Failed: ${report.summary.failed}`);
+    logger.info(`Warnings: ${report.summary.warnings}`);
+    logger.info(`Skipped: ${report.summary.skipped}`);
+    logger.info(`Duration: ${duration}ms`);
 
     if (report.summary.failed > 0) {
-      console.log('\n❌ Failed Tests:');
+      logger.info('\n❌ Failed Tests:');
       this.testResults
         .filter((r) => r.status === 'FAIL')
-        .forEach((r) => console.log(`  - ${r.message}`));
+        .forEach((r) => logger.info(`  - ${r.message}`));
     }
 
     if (report.summary.warnings > 0) {
-      console.log('\n⚠️  Warnings:');
+      logger.info('\n⚠️  Warnings:');
       this.testResults
         .filter((r) => r.status === 'WARN')
-        .forEach((r) => console.log(`  - ${r.message}`));
+        .forEach((r) => logger.info(`  - ${r.message}`));
     }
 
     this.logTest('INFO', `Test report saved to: logs/test-report.json`);
-    console.log('✅ Test report completed\n');
+    logger.info('✅ Test report completed\n');
   }
 
   /**
@@ -469,8 +491,8 @@ const reportPath = path.join(process.cwd(), 'logs', 'test-report.json');
       timestamp: new Date().toISOString(),
     };
 
-    this.testResults.push(result)
-const statusIcon = {
+    this.testResults.push(result);
+    const statusIcon = {
       PASS: '✅',
       FAIL: '❌',
       WARN: '⚠️',
@@ -478,7 +500,7 @@ const statusIcon = {
       INFO: 'ℹ️',
     };
 
-    console.log(`${statusIcon[status] || '❓'} ${message}`);
+    logger.info(`${statusIcon[status] || '❓'} ${message}`);
   }
 }
 
@@ -486,7 +508,7 @@ const statusIcon = {
 if (require.main === module) {
   const test = new AIDelegationTest();
   test.run().catch((error) => {
-    console.error('❌ Test execution failed:', error);
+    logger.error('❌ Test execution failed:', error);
     process.exit(1);
   });
 }

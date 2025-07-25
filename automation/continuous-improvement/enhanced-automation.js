@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 /**
  * Zion App - Enhanced Continuous Improvement Automation
@@ -31,24 +53,24 @@ class EnhancedAutomation {
         openai: {
           enabled: process.env.OPENAI_ENABLED === 'true',
           apiKey: process.env.OPENAI_API_KEY,
-          model: process.env.OPENAI_MODEL || 'gpt-4-turbo-preview'
+          model: process.env.OPENAI_MODEL || gpt-4-turbo-preview
         },
         claude: {
           enabled: process.env.CLAUDE_ENABLED === 'true',
           apiKey: process.env.CLAUDE_API_KEY,
-          model: process.env.CLAUDE_MODEL || 'claude-3-sonnet-20240229'
+          model: process.env.CLAUDE_MODEL || claude-3-sonnet-20240229
         },
         local: {
           enabled: process.env.LOCAL_AI_ENABLED === 'true',
-          endpoint: process.env.LOCAL_AI_ENDPOINT || 'http://localhost:11434',
-          model: process.env.LOCAL_AI_MODEL || 'codellama:7b'
+          endpoint: process.env.LOCAL_AI_ENDPOINT || http://localhost:11434',
+          model: process.env.LOCAL_AI_MODEL || codellama:7b
         }
       },
       paths: {
         projectRoot: process.cwd(),
-        logs: path.join(process.cwd(), 'logs'),
-        reports: path.join(process.cwd(), 'reports'),
-        temp: path.join(process.cwd(), 'temp')
+        logs: path.join(process.cwd(), logs'),
+        reports: path.join(process.cwd(), reports'),
+        temp: path.join(process.cwd(), temp')
       }
     };
 
@@ -63,11 +85,11 @@ class EnhancedAutomation {
 
   async start() {
     if (this.isRunning) {
-      console.log('⚠️ Enhanced Automation is already running');
+      logger.info('⚠️ Enhanced Automation is already running');
       return;
     }
 
-    console.log('🚀 Starting Enhanced Automation System...');
+    logger.info('🚀 Starting Enhanced Automation System...');
     
     try {
       await this.initialize();
@@ -76,16 +98,16 @@ class EnhancedAutomation {
       
       this.isRunning = true;
       
-      console.log('✅ Enhanced Automation System started successfully');
+      logger.info('✅ Enhanced Automation System started successfully');
     } catch (error) {
-      console.error('❌ Failed to start Enhanced Automation:', error);
+      logger.error('❌ Failed to start Enhanced Automation:', error);
       throw error;
     }
   }
 
   async initialize() {
     // Create necessary directories
-    const dirs = ['logs', 'reports', 'temp'];
+    const dirs = ['logs', reports', temp'];
     for (const dir of dirs) {
       const dirPath = path.join(process.cwd(), dir);
       if (!fs.existsSync(dirPath)) {
@@ -96,13 +118,13 @@ class EnhancedAutomation {
 
   async stop() {
     if (!this.isRunning) {
-      console.log('⚠️ Enhanced Automation is not running');
+      logger.info('⚠️ Enhanced Automation is not running');
       return;
     }
 
-    console.log('🛑 Stopping Enhanced Automation System...');
+    logger.info('🛑 Stopping Enhanced Automation System...');
     this.isRunning = false;
-    console.log('✅ Enhanced Automation System stopped');
+    logger.info('✅ Enhanced Automation System stopped');
   }
 
   addTask(type, data = {}) {
@@ -116,17 +138,17 @@ class EnhancedAutomation {
     };
 
     this.taskQueue.push(task);
-    console.log(`📋 Added task: ${type}`);
+    logger.info(`📋 Added task: ${type}`);
   }
 
   getTaskPriority(type) {
     const priorities = {
-      'quickScan': 1,
-      'deepAnalysis': 2,
-      'fullAudit': 3,
-      'performanceCheck': 2,
-      'securityScan': 3,
-      'dependencyCheck': 1
+      quickScan': 1,
+      deepAnalysis': 2,
+      fullAudit': 3,
+      performanceCheck': 2,
+      securityScan': 3,
+      dependencyCheck': 1
     };
     return priorities[type] || 1;
   }
@@ -140,46 +162,187 @@ class EnhancedAutomation {
         await this.processTask(task);
       }
       
-      setTimeout(processLoop, 1000);
+      
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(processLoop,                                                1000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
     };
     
     processLoop();
   }
 
   async processTask(task) {
-    console.log(`🔄 Processing task: ${task.type}`);
+    logger.info(`🔄 Processing task: ${task.type}`);
     
     this.currentTask = task;
-    task.status = 'processing';
+    task.status = processing';
     task.startedAt = new Date().toISOString();
     
     try {
       let result;
       
       switch (task.type) {
-        case 'quickScan':
+        case quickScan':
           result = await this.performQuickScan();
           break;
-        case 'deepAnalysis':
+        case deepAnalysis':
           result = await this.performDeepAnalysis();
           break;
-        case 'fullAudit':
+        case fullAudit':
           result = await this.performFullAudit();
           break;
-        case 'performanceCheck':
+        case performanceCheck':
           result = await this.performPerformanceCheck();
           break;
-        case 'securityScan':
+        case securityScan':
           result = await this.performSecurityScan();
           break;
-        case 'dependencyCheck':
+        case dependencyCheck':
           result = await this.performDependencyCheck();
           break;
         default:
           throw new Error(`Unknown task type: ${task.type}`);
       }
       
-      task.status = 'completed';
+      task.status = completed';
       task.result = result;
       task.completedAt = new Date().toISOString();
       
@@ -188,12 +351,12 @@ class EnhancedAutomation {
       // Apply improvements if needed
       await this.applyImprovements(task);
       
-      console.log(`✅ Task completed: ${task.type}`);
+      logger.info(`✅ Task completed: ${task.type}`);
       
     } catch (error) {
-      console.error(`❌ Task failed: ${task.type}`, error);
+      logger.error(`❌ Task failed: ${task.type}`, error);
       
-      task.status = 'failed';
+      task.status = failed';
       task.error = error.message;
       task.failedAt = new Date().toISOString();
       
@@ -209,7 +372,7 @@ class EnhancedAutomation {
   }
 
   async performQuickScan() {
-    console.log('🔍 Performing quick scan...');
+    logger.info('🔍 Performing quick scan...');
     
     const results = {
       buildStatus: await this.checkBuildStatus(),
@@ -229,7 +392,7 @@ class EnhancedAutomation {
   }
 
   async performDeepAnalysis() {
-    console.log('🔍 Performing deep analysis...');
+    logger.info('🔍 Performing deep analysis...');
     
     const results = {
       performance: await this.analyzePerformance(),
@@ -249,7 +412,7 @@ class EnhancedAutomation {
   }
 
   async performFullAudit() {
-    console.log('🔍 Performing full audit...');
+    logger.info('🔍 Performing full audit...');
     
     const results = {
       quickScan: await this.performQuickScan(),
@@ -271,7 +434,7 @@ class EnhancedAutomation {
   }
 
   async performPerformanceCheck() {
-    console.log('⚡ Performing performance check...');
+    logger.info('⚡ Performing performance check...');
     
     const results = {
       buildTime: await this.measureBuildTime(),
@@ -291,7 +454,7 @@ class EnhancedAutomation {
   }
 
   async performSecurityScan() {
-    console.log('🔒 Performing security scan...');
+    logger.info('🔒 Performing security scan...');
     
     const results = {
       vulnerabilities: await this.checkVulnerabilities(),
@@ -310,7 +473,7 @@ class EnhancedAutomation {
   }
 
   async performDependencyCheck() {
-    console.log('📦 Performing dependency check...');
+    logger.info('📦 Performing dependency check...');
     
     const results = {
       outdated: await this.checkOutdatedPackages(),
@@ -331,13 +494,13 @@ class EnhancedAutomation {
       // Try Cursor AI first
       if (this.config.ai.cursor.enabled) {
         switch (type) {
-          case 'quickScan':
+          case quickScan':
             analysis.cursor = await this.cursorIntegration.analyzeCodeQuality();
             break;
-          case 'deepAnalysis':
+          case deepAnalysis':
             analysis.cursor = await this.cursorIntegration.analyzePerformance();
             break;
-          case 'fullAudit':
+          case fullAudit':
             analysis.cursor = await this.cursorIntegration.analyzeSecurity();
             break;
         }
@@ -347,11 +510,11 @@ class EnhancedAutomation {
       try {
         analysis.aiOptimizer = await this.aiOptimizer.analyzeWithAI(data);
       } catch (error) {
-        console.warn('AI Optimizer analysis failed:', error.message);
+        logger.warn('AI Optimizer analysis failed:', error.message);
       }
       
     } catch (error) {
-      console.warn('AI analysis failed:', error.message);
+      logger.warn('AI analysis failed:', error.message);
     }
     
     return analysis;
@@ -388,7 +551,7 @@ class EnhancedAutomation {
         );
         suggestions.push(...cursorSuggestions);
       } catch (error) {
-        console.warn('Cursor AI suggestions failed:', error.message);
+        logger.warn('Cursor AI suggestions failed:', error.message);
       }
     }
     
@@ -401,7 +564,7 @@ class EnhancedAutomation {
         });
         suggestions.push(...aiSuggestions);
       } catch (error) {
-        console.warn('AI Optimizer suggestions failed:', error.message);
+        logger.warn('AI Optimizer suggestions failed:', error.message);
       }
     }
     
@@ -493,7 +656,7 @@ class EnhancedAutomation {
       const errors = [];
       
       for (const file of logFiles) {
-        const content = fs.readFileSync(path.join(this.config.paths.logs, file), 'utf8');
+        const content = fs.readFileSync(path.join(this.config.paths.logs, file), utf8');
         const errorLines = content.split('\n')
           .filter(line => line.toLowerCase().includes('error') || line.toLowerCase().includes('exception'))
           .slice(-10);
@@ -514,7 +677,7 @@ class EnhancedAutomation {
       
       return {
         totalDependencies: Object.keys({ ...packageJson.dependencies, ...packageJson.devDependencies }).length,
-        outdated: JSON.parse(outdated || '{}')
+        outdated: JSON.parse(outdated || {})
       };
     } catch (error) {
       return { error: error.message };
@@ -538,7 +701,7 @@ class EnhancedAutomation {
 
   async analyzePerformance() {
     try {
-      const bundleOutput = execSync('npm run bundle:analyze', { stdio: 'pipe' }).toString();
+      const bundleOutput = execSync('npm run bundle: 'analyze', { stdio: 'pipe' }).toString();
       
       return {
         bundleAnalysis: this.parseBundleAnalysis(bundleOutput),
@@ -566,7 +729,7 @@ class EnhancedAutomation {
 
   async analyzeBundleSize() {
     try {
-      const output = execSync('npm run bundle:report', { stdio: 'pipe' }).toString();
+      const output = execSync('npm run bundle: 'report', { stdio: 'pipe' }).toString();
       return this.parseBundleAnalysis(output);
     } catch (error) {
       return { error: error.message };
@@ -595,7 +758,7 @@ class EnhancedAutomation {
   async checkOutdatedPackages() {
     try {
       const output = execSync('npm outdated --json', { stdio: 'pipe' }).toString();
-      return JSON.parse(output || '{}');
+      return JSON.parse(output || {});
     } catch (error) {
       return { error: error.message };
     }
@@ -612,7 +775,7 @@ class EnhancedAutomation {
 
   async analyzeDependencySize() {
     try {
-      const output = execSync('npm run bundle:analyze', { stdio: 'pipe' }).toString();
+      const output = execSync('npm run bundle: 'analyze', { stdio: 'pipe' }).toString();
       return this.parseBundleAnalysis(output);
     } catch (error) {
       return { error: error.message };
@@ -746,8 +909,8 @@ class EnhancedAutomation {
       recommendations.push({
         type: 'performance',
         priority: 'high',
-        message: 'High memory usage detected. Consider optimizing memory usage.',
-        action: 'Review memory-intensive operations and implement memory optimization strategies.'
+        message: High memory usage detected. Consider optimizing memory usage.',
+        action: Review memory-intensive operations and implement memory optimization strategies.
       });
     }
     
@@ -755,8 +918,8 @@ class EnhancedAutomation {
       recommendations.push({
         type: 'reliability',
         priority: 'high',
-        message: 'High error rate detected. Review error handling and system stability.',
-        action: 'Investigate error patterns and improve error handling mechanisms.'
+        message: High error rate detected. Review error handling and system stability.',
+        action: Investigate error patterns and improve error handling mechanisms.
       });
     }
     
@@ -764,8 +927,8 @@ class EnhancedAutomation {
       recommendations.push({
         type: 'optimization',
         priority: 'medium',
-        message: 'Low improvement activity. Consider more aggressive optimization strategies.',
-        action: 'Review optimization thresholds and increase automation frequency.'
+        message: Low improvement activity. Consider more aggressive optimization strategies.',
+        action: Review optimization thresholds and increase automation frequency.
       });
     }
     

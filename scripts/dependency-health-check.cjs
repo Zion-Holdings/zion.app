@@ -1,9 +1,40 @@
-#!/usr/bin/env node
 
-/**
- * Dependency Health Check Script
- * Comprehensive check for SWC dependencies, punycode issues, and overall project health
- */
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
+
+
 
 const { _spawn } = require('child_process')
 const fs = require('fs')
@@ -11,9 +42,7 @@ const path = require('path');
 
 process.stdout.write('\ud83d\udd0d Dependency Health Check\n');
 
-/**
- * Check SWC dependencies
- */
+
 async function checkSWCDependencies() {
   process.stdout.write('\u2699\ufe0f  SWC Dependencies Check:\n');
 
@@ -66,9 +95,7 @@ const helperMatches = output.match(/@swc\/helpers@(\d+\.\d+\.\d+)/g);
   });
 }
 
-/**
- * Check punycode dependencies
- */
+
 async function checkPunycodeDependencies() {
   process.stdout.write('\n\ud83c\udf10 Punycode Dependencies Check:\n');
 
@@ -112,9 +139,7 @@ async function checkPunycodeDependencies() {
   });
 }
 
-/**
- * Test build with warning suppression
- */
+
 async function testBuildWithWarnings() {
   process.stdout.write(
     '\n\ud83c\udfd7\ufe0f  Build Test (with warning suppression):\n',
@@ -187,9 +212,7 @@ const errorLines = errorOutput.split('\n').slice(0, 5);
   });
 }
 
-/**
- * Check package.json scripts
- */
+
 function checkPackageScripts() {
   process.stdout.write('\n\ud83d\udccb Package Scripts Check:\n');
 
@@ -198,9 +221,9 @@ function checkPackageScripts() {
 const scripts = packageJson.scripts || {}
 const requiredScripts = [
       'build',
-      'deps:check',
-      'deps:update',
-      'deps:clean',
+      'deps: 'check',
+      'deps: 'update',
+      'deps: 'clean',
     ];
 
     requiredScripts.forEach((script) => {
@@ -228,9 +251,7 @@ const requiredScripts = [
   }
 }
 
-/**
- * Generate health report
- */
+
 function generateHealthReport(swcCheck, punycodeCheck, buildCheck) {
   process.stdout.write('\n\ud83d\udcca Health Report Summary:\n');
   process.stdout.write('='.repeat(50) + '\n')
@@ -273,9 +294,7 @@ const emoji = status === 'HEALTHY' ? '🟢' : '🟡';
   }
 }
 
-/**
- * Main health check function
- */
+
 async function runHealthCheck() {
   process.stdout.write('Starting comprehensive dependency health check...\n')
 const swcCheck = await checkSWCDependencies()
@@ -290,3 +309,40 @@ const buildCheck = await testBuildWithWarnings();
 
 // Run the health check
 runHealthCheck().catch(console.error);
+    } catch (error) {
+      logger.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    logger.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

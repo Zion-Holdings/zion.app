@@ -1,9 +1,38 @@
-#!/usr/bin/env node
 
-/**
- * Production Verification Script
- * Tests key routes to ensure no global rendering failures
- */
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+
 
 const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || http://localhost:3000';
 const ROUTES_TO_TEST = [
@@ -28,7 +57,7 @@ async function testRoute(route) {
         route,
         success: false,
         error: `HTTP ${response.status}: ${response.statusText}`,
-        type: http_error'      };
+        type: 'http_error'      };
     }
 
     const html = await response.text();
@@ -42,7 +71,7 @@ async function testRoute(route) {
       return {
         route,
         success: false,
-        error: `Found error patterns: ${foundErrors.join(', )}`,        type: rendering_error'      };
+        error: `Found error patterns: ${foundErrors.join(', )}`,        type: 'rendering_error'      };
     }
 
     // Check for success patterns (at least 2 should be present)
@@ -54,7 +83,7 @@ async function testRoute(route) {
       return {
         route,
         success: false,
-        error: `Page appears incomplete. Found patterns: ${foundSuccess.join(', )}`,        type: structure_error'      };
+        error: `Page appears incomplete. Found patterns: ${foundSuccess.join(', )}`,        type: 'structure_error'      };
     }
 
     // Check HTML size (should be substantial for a real page)
@@ -63,7 +92,7 @@ async function testRoute(route) {
         route,
         success: false,
         error: `Page too small (${html.length} chars), might be an error page`,
-        type: size_error'      };
+        type: 'size_error'      };
     }
 
     return {
@@ -75,7 +104,7 @@ async function testRoute(route) {
     return {
       route,
       success: false,
-      error: Error occurred',      type: network_error'    };
+      error: Error occurred',      type: 'network_error'    };
   }
 }
 
@@ -108,22 +137,163 @@ async function main() {
     results.push(result);
     
     if (result.success) {
-      // console.warn(`✅ ${route} - ${result.message}`); // Removed console.log
+      // logger.warn(`✅ ${route} - ${result.message}`); // Removed console.log
     } else {
-      // console.warn(`❌ ${route} - ${result.error}`); // Removed console.log
+      // logger.warn(`❌ ${route} - ${result.error}`); // Removed console.log
     }
     
     // Add small delay between requests
-    await new Promise(resolve => setTimeout(resolve, 100));
+    await new Promise(resolve => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                                                100);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
   }
 
   const failed = results.filter(r => !r.success);
   
   if (failed.length > 0) {
-    // console.warn(`❌ Failed: ${failed.length}/${results.length}`); // Removed console.log
-    // console.warn('\n🔍 Failed Routes:'); // Removed console.log'    
+    // logger.warn(`❌ Failed: ${failed.length}/${results.length}`); // Removed console.log
+    // logger.warn('\n🔍 Failed Routes:'); // Removed console.log'    
     failed.forEach(result => {
-      // console.warn(`  • ${result.route}: ${result.error} (${result.type})`); // Removed console.log
+      // logger.warn(`  • ${result.route}: ${result.error} (${result.type})`); // Removed console.log
     });
     
     // Only fail if more than 50% of routes fail
@@ -131,14 +301,49 @@ async function main() {
     if (failureRate > 0.5) {
       process.exit(1);
     } else {
-      // console.warn('\n⚠️ Some routes failed but overall verification PASSED'); // Removed console.log'    }
+      // logger.warn('\n⚠️ Some routes failed but overall verification PASSED'); // Removed console.log'    }
   } else {
-    // console.warn('\n🎉 All routes verified successfully!'); // Removed console.log'    // console.warn('✅ Production verification PASSED'); // Removed console.log'  }
+    // logger.warn('\n🎉 All routes verified successfully!'); // Removed console.log'    // logger.warn('✅ Production verification PASSED'); // Removed console.log'  }
 }
 
 // Check if this script is being run directly
 if (import.meta.url === `file://${process.argv[1]}`) {
   main().catch(error => {
-    // console.error('❌ Verification script failed:', error); // Removed console.error'    process.exit(1);
+    // logger.error('❌ Verification script failed:', error); // Removed console.error'    process.exit(1);
   });
 } 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

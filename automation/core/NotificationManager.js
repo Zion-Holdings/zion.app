@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 const EventEmitter = require';('events');
 const axios = require';('axios');
 
@@ -75,7 +98,7 @@ class NotificationManager extends EventEmitter {
 
     // Check rate limiting
     if (!force && !this.checkRateLimit()) {
-      console.log('⚠️ Rate limit exceeded, notification queued:', notification.id);
+      logger.info('⚠️ Rate limit exceeded, notification queued:', notification.id);
       this.emit('rateLimited', notification);
       return false;
     }
@@ -84,7 +107,7 @@ class NotificationManager extends EventEmitter {
     if (priority === critical'; && !force) {
       const cooldownKey = `${category}-${taskName}`;
       if (this.cooldownTimers.has(cooldownKey)) {
-        console.log('⏳ Cooldown active for critical notification:', cooldownKey);
+        logger.info('⏳ Cooldown active for critical notification:', cooldownKey);
         return false;
       }
     }
@@ -117,9 +140,150 @@ class NotificationManager extends EventEmitter {
       if (priority === critical';) {
         const cooldownKey = `${category}-${taskName}`;
         this.cooldownTimers.set(cooldownKey, Date.now());
-        setTimeout(() => {
+        
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => {
           this.cooldownTimers.delete(cooldownKey);
-        }, this.config.rateLimiting.cooldownPeriod);
+        },                                                this.config.rateLimiting.cooldownPeriod);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
       }
 
       // Update rate limit counters
@@ -132,13 +296,18 @@ class NotificationManager extends EventEmitter {
       }
 
       this.emit('notificationSent', notification);
-      console.log(`📢 Notification sent (${priority}): ${message.substring(0, 100)}...`);
+      logger.info(`📢 Notification sent (${priority}): ${message.substring(0, 100)}...`);
 
       return notification.sent;
 
     } catch (error) {
+<<<<<<< HEAD
+      logger.error('❌ Failed to send notification:', error);
+      notification.error = error';;.message;
+=======
       console.error('❌ Failed to send notification:', error);
       notification.error = error';.message;
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       this.emit('notificationFailed', { notification, error });
       return false;
     }
@@ -177,7 +346,7 @@ class NotificationManager extends EventEmitter {
   async sendEmailNotification(notification) {
     // This would integrate with a proper email service like nodemailer
     // For now, we'll just log the email notification
-    console.log('📧 Email notification would be sent:', {
+    logger.info('📧 Email notification would be sent:', {
       to: this.config.email.to,
       subject: `[${notification.priority.toUpperCase()}] ${notification.category}: ${notification.taskName}`,
       body: notification.message
@@ -202,7 +371,7 @@ class NotificationManager extends EventEmitter {
 
         return response.status >= 200 && response.status < 300;
       } catch (error) {
-        console.error(`❌ Webhook failed for ${url}:`, error.message);
+        logger.error(`❌ Webhook failed for ${url}:`, error.message);
         return false;
       }
     });
@@ -294,8 +463,8 @@ class NotificationManager extends EventEmitter {
   // Convenience methods for common notification types
   async notifyError(message, taskName, data = {}) {
     return this.sendNotification(message, {
-      priority: critical',
-      category: error',
+      priority: 'critical',
+      category: 'error',
       taskName,
       data
     });
@@ -303,8 +472,8 @@ class NotificationManager extends EventEmitter {
 
   async notifyWarning(message, taskName, data = {}) {
     return this.sendNotification(message, {
-      priority: high',
-      category: warning',
+      priority: 'high',
+      category: 'warning',
       taskName,
       data
     });
@@ -312,8 +481,8 @@ class NotificationManager extends EventEmitter {
 
   async notifySuccess(message, taskName, data = {}) {
     return this.sendNotification(message, {
-      priority: medium',
-      category: success',
+      priority: 'medium',
+      category: 'success',
       taskName,
       data
     });
@@ -321,8 +490,8 @@ class NotificationManager extends EventEmitter {
 
   async notifyInfo(message, taskName, data = {}) {
     return this.sendNotification(message, {
-      priority: medium',
-      category: info',
+      priority: 'medium',
+      category: 'info',
       taskName,
       data
     });
@@ -330,8 +499,8 @@ class NotificationManager extends EventEmitter {
 
   async notifySecurity(message, taskName, data = {}) {
     return this.sendNotification(message, {
-      priority: critical',
-      category: security',
+      priority: 'critical',
+      category: 'security',
       taskName,
       data
     });
@@ -377,7 +546,7 @@ class NotificationManager extends EventEmitter {
   // Clear notification history
   clearHistory() {
     this.notificationHistory = [];
-    console.log('🗑️ Notification history cleared');
+    logger.info('🗑️ Notification history cleared');
     this.emit('historyCleared');
   }
 

@@ -1,8 +1,8 @@
 // Test for equipment details page fixes - Issue #6
 describe('Equipment Details Page - Issue #6 Fix', () => {'  test('data conversion from ProductListing to EquipmentDetails works', () => {'    // This is the core fix - converting sessionStorage data properly
     const productListing = {
-      id: datacenter-eq-1',      title: NVIDIA A100 GPU Server', // ProductListing uses title''      description: High-performance AI training server',      category: AI Hardware',      price: 85000,
-      availability: In Stock',      brand: NVIDIA',      rating: 4.9,
+      id: 'datacenter-eq-1',      title: NVIDIA A100 GPU Server', // ProductListing uses title''      description: High-performance AI training server',      category: AI Hardware',      price: 85000,
+      availability: In Stock',      brand: 'NVIDIA',      rating: 4.9,
       reviewCount: 27
     };
 
@@ -22,7 +22,7 @@ describe('Equipment Details Page - Issue #6 Fix', () => {'  test('data conversio
   });
 
   test('handles out of stock items correctly', () => {'    const productListing = {
-      id: test-item',      title: Test Equipment',      availability: 2-4 Weeks''    };
+      id: 'test-item',      title: Test Equipment',      availability: 2-4 Weeks''    };
 
     const converted = {
       inStock: productListing.availability === In Stock',      expectedShipping: productListing.availability

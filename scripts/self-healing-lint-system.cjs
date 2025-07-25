@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Self-Healing Lint System
@@ -248,7 +247,7 @@ const success = await this.applyLintStrategy(strategy, issues);
 
     try {
       // Try npm run lint:fix first
-      execSync('npm run lint:fix', {
+      execSync('npm run lint: 'fix', {
         stdio: 'inherit',
         timeout: CONFIG.lintTimeout,
       });
@@ -365,7 +364,7 @@ const finalIssues = await this.checkForLintIssues();
       }
 
       // Run lint fix with relaxed rules
-      execSync('npm run lint:fix', {
+      execSync('npm run lint: 'fix', {
         stdio: 'inherit',
         timeout: CONFIG.lintTimeout,
       });
@@ -386,7 +385,7 @@ const finalIssues = await this.checkForLintIssues();
       await this.fixCommonIssues(issues);
 
       // Run lint fix again
-      execSync('npm run lint:fix', {
+      execSync('npm run lint: 'fix', {
         stdio: 'inherit',
         timeout: CONFIG.lintTimeout,
       });

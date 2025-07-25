@@ -1,7 +1,5 @@
-#!/usr/bin/env node
-
-const fs = require('fs')
-const path = require('path')
+const fs = require('fs');
+const path = require('path');
 const { execSync } = require('child_process');
 
 // Function to fix common lint errors
@@ -105,9 +103,9 @@ async function registerUser(userData) {
 // Function to process a single file
 function processFile(filePath) {
   try {
-    const content = fs.readFileSync(filePath, 'utf8')
-const originalContent = content
-const fixed = fixLintErrors(content, filePath);
+    const content = fs.readFileSync(filePath, 'utf8');
+    const originalContent = content;
+    const fixed = fixLintErrors(content, filePath);
 
     if (fixed !== originalContent) {
       fs.writeFileSync(filePath, fixed, 'utf8');
@@ -123,26 +121,26 @@ const fixed = fixLintErrors(content, filePath);
 
 // Function to find and process all relevant files
 function processAllFiles() {
-  const extensions = ['.js', '.ts', '.tsx', '.cjs']
-const excludeDirs = [
+  const extensions = ['.js', '.ts', '.tsx', '.cjs'];
+  const excludeDirs = [
     'node_modules',
     '.git',
     'coverage',
     'dist',
     'build',
     '.next',
-  ]
-function shouldExclude(dir) {
+  ];
+  function shouldExclude(dir) {
     return excludeDirs.some((exclude) => dir.includes(exclude));
   }
 
   function walkDir(dir) {
-    const files = []
-const items = fs.readdirSync(dir);
+    const files = [];
+    const items = fs.readdirSync(dir);
 
     for (const item of items) {
-      const fullPath = path.join(dir, item)
-const stat = fs.statSync(fullPath);
+      const fullPath = path.join(dir, item);
+      const stat = fs.statSync(fullPath);
 
       if (stat.isDirectory() && !shouldExclude(fullPath)) {
         files.push(...walkDir(fullPath));
@@ -171,6 +169,6 @@ const stat = fs.statSync(fullPath);
 }
 
 // Main execution
-console.log('Fixing lint errors...')
+console.log('Fixing lint errors...');
 const fixedCount = processAllFiles();
 console.log(`\nCompleted! Fixed ${fixedCount} files.`);

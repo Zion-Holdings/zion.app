@@ -1,10 +1,32 @@
-#!/usr/bin/env node
+const winston = require('winston');
 
-const fs = require('fs')
-const path = require('path')
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json(),
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
+
+const fs = require('fs');
+const path = require('path');
 const glob = require('glob');
 
-console.log('🔧 Aggressive syntax fix - Final pass...');
+logger.info('🔧 Aggressive syntax fix - Final pass...');
 
 // Find all TypeScript and JavaScript files
 const files = glob.sync('src/**/*.{ts,tsx,js,jsx}', {
@@ -372,14 +394,14 @@ export const ${moduleName} = {
       fixedFiles++;
       totalIssues += fileIssues;
       if (fileIssues > 0) {
-        console.log(`✅ Fixed ${fileIssues} issues in ${file}`);
+        logger.info(`✅ Fixed ${fileIssues} issues in ${file}`);
       }
     }
   } catch (error) {
-    console.error(`❌ Error processing ${file}:`, error.message);
+    logger.error(`❌ Error processing ${file}:`, error.message);
   }
 });
 
-console.log(
+logger.info(
   `\n🎉 Fixed ${totalIssues} syntax issues across ${fixedFiles} files`,
 );

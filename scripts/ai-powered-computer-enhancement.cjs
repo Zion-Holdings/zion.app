@@ -1,8 +1,30 @@
-#!/usr/bin/env node
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json(),
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
 
 /**
  * AI-Powered Computer Enhancement System
- * 
+ *
  * The ultimate infinite improvement loop that continuously enhances
  * the entire computer system using the best AI tools available.
  */
@@ -17,7 +39,7 @@ const http = require('http');
 class AIPoweredComputerEnhancement extends EventEmitter {
   constructor() {
     super();
-    
+
     this.config = {
       // Enhancement settings
       enhancement: {
@@ -27,70 +49,70 @@ class AIPoweredComputerEnhancement extends EventEmitter {
         backupBeforeEnhancement: true,
         testAfterEnhancement: true,
         rollbackOnFailure: true,
-        parallelEnhancements: 3
+        parallelEnhancements: 3,
       },
-      
+
       // AI Enhancement engines
       engines: {
         infiniteImprovement: {
           enabled: true,
           script: 'scripts/infinite-improvement-loop.cjs',
-          priority: 1
+          priority: 1,
         },
         aiToolDiscovery: {
           enabled: true,
           script: 'scripts/ai-tool-discovery-engine.cjs',
-          priority: 2
+          priority: 2,
         },
         aiCodeReview: {
           enabled: true,
           script: 'scripts/ai-code-review-automation.cjs',
-          priority: 3
+          priority: 3,
         },
         performanceOptimization: {
           enabled: true,
           script: 'scripts/performance-optimization-automation.cjs',
-          priority: 4
+          priority: 4,
         },
         securityMonitoring: {
           enabled: true,
           script: 'scripts/security-monitoring-automation.cjs',
-          priority: 5
+          priority: 5,
         },
         uxEnhancement: {
           enabled: true,
           script: 'scripts/ux-enhancement-automation.cjs',
-          priority: 6
+          priority: 6,
         },
         databaseHealth: {
           enabled: true,
           script: 'scripts/database-health-automation.cjs',
-          priority: 7
-        }
+          priority: 7,
+        },
       },
-      
+
       // AI Providers
       aiProviders: {
         openai: {
           enabled: process.env.OPENAI_ENABLED === 'true',
           apiKey: process.env.OPENAI_API_KEY,
-          model: process.env.OPENAI_MODEL || 'gpt-4-turbo-preview'
+          model: process.env.OPENAI_MODEL || 'gpt-4-turbo-preview',
         },
         claude: {
           enabled: process.env.CLAUDE_ENABLED === 'true',
           apiKey: process.env.CLAUDE_API_KEY,
-          model: process.env.CLAUDE_MODEL || 'claude-3-sonnet-20240229'
+          model: process.env.CLAUDE_MODEL || 'claude-3-sonnet-20240229',
         },
         cursor: {
           enabled: process.env.CURSOR_AI_ENABLED === 'true',
-          apiKey: process.env.CURSOR_API_KEY
+          apiKey: process.env.CURSOR_API_KEY,
         },
         local: {
           enabled: process.env.LOCAL_AI_ENABLED === 'true',
-          endpoint: process.env.LOCAL_AI_ENDPOINT || 'http://localhost:11434'
-        }
+          endpoint: process.env.LOCAL_AI_ENDPOINT || 'http://localhost:11434',
+        },
       },
-      
+
       // Enhancement categories
       categories: {
         systemOptimization: true,
@@ -102,9 +124,9 @@ class AIPoweredComputerEnhancement extends EventEmitter {
         aiIntegration: true,
         monitoring: true,
         documentation: true,
-        testing: true
+        testing: true,
       },
-      
+
       // Paths
       paths: {
         projectRoot: process.cwd(),
@@ -113,10 +135,10 @@ class AIPoweredComputerEnhancement extends EventEmitter {
         backups: path.join(process.cwd(), 'backups'),
         enhancements: path.join(process.cwd(), 'enhancements'),
         aiModels: path.join(process.cwd(), 'ai-models'),
-        integrations: path.join(process.cwd(), 'integrations')
-      }
+        integrations: path.join(process.cwd(), 'integrations'),
+      },
     };
-    
+
     this.isRunning = false;
     this.currentEnhancement = null;
     this.enhancementHistory = [];
@@ -132,9 +154,9 @@ class AIPoweredComputerEnhancement extends EventEmitter {
       systemImprovements: 0,
       lastEnhancement: null,
       enhancementScore: 0,
-      computerIntelligence: 0
+      computerIntelligence: 0,
     };
-    
+
     this.initializeDirectories();
     this.initializeAIProviders();
   }
@@ -146,7 +168,7 @@ class AIPoweredComputerEnhancement extends EventEmitter {
       this.config.paths.backups,
       this.config.paths.enhancements,
       this.config.paths.aiModels,
-      this.config.paths.integrations
+      this.config.paths.integrations,
     ];
 
     for (const dir of dirs) {
@@ -160,31 +182,40 @@ class AIPoweredComputerEnhancement extends EventEmitter {
 
   initializeAIProviders() {
     this.aiProviders = new Map();
-    
-    if (this.config.aiProviders.openai.enabled && this.config.aiProviders.openai.apiKey) {
+
+    if (
+      this.config.aiProviders.openai.enabled &&
+      this.config.aiProviders.openai.apiKey
+    ) {
       this.aiProviders.set('openai', {
         name: 'OpenAI GPT',
         enhance: this.enhanceWithOpenAI.bind(this),
         analyze: this.analyzeWithOpenAI.bind(this),
-        discover: this.discoverWithOpenAI.bind(this)
+        discover: this.discoverWithOpenAI.bind(this),
       });
     }
 
-    if (this.config.aiProviders.claude.enabled && this.config.aiProviders.claude.apiKey) {
+    if (
+      this.config.aiProviders.claude.enabled &&
+      this.config.aiProviders.claude.apiKey
+    ) {
       this.aiProviders.set('claude', {
         name: 'Claude',
         enhance: this.enhanceWithClaude.bind(this),
         analyze: this.analyzeWithClaude.bind(this),
-        discover: this.discoverWithClaude.bind(this)
+        discover: this.discoverWithClaude.bind(this),
       });
     }
 
-    if (this.config.aiProviders.cursor.enabled && this.config.aiProviders.cursor.apiKey) {
+    if (
+      this.config.aiProviders.cursor.enabled &&
+      this.config.aiProviders.cursor.apiKey
+    ) {
       this.aiProviders.set('cursor', {
         name: 'Cursor AI',
         enhance: this.enhanceWithCursor.bind(this),
         analyze: this.analyzeWithCursor.bind(this),
-        discover: this.discoverWithCursor.bind(this)
+        discover: this.discoverWithCursor.bind(this),
       });
     }
 
@@ -193,11 +224,14 @@ class AIPoweredComputerEnhancement extends EventEmitter {
         name: 'Local AI',
         enhance: this.enhanceWithLocalAI.bind(this),
         analyze: this.analyzeWithLocalAI.bind(this),
-        discover: this.discoverWithLocalAI.bind(this)
+        discover: this.discoverWithLocalAI.bind(this),
       });
     }
 
-    this.log('info', `Initialized ${this.aiProviders.size} AI providers for computer enhancement`);
+    this.log(
+      'info',
+      `Initialized ${this.aiProviders.size} AI providers for computer enhancement`,
+    );
   }
 
   async start() {
@@ -224,7 +258,10 @@ class AIPoweredComputerEnhancement extends EventEmitter {
     // Start self-improvement
     this.startSelfImprovement();
 
-    this.log('info', '✅ AI-Powered Computer Enhancement System started successfully');
+    this.log(
+      'info',
+      '✅ AI-Powered Computer Enhancement System started successfully',
+    );
     this.emit('started');
   }
 
@@ -259,22 +296,28 @@ class AIPoweredComputerEnhancement extends EventEmitter {
       try {
         await this.startEngine(engineName, engineConfig);
       } catch (error) {
-        this.log('error', `Failed to start engine ${engineName}: ${error.message}`);
+        this.log(
+          'error',
+          `Failed to start engine ${engineName}: ${error.message}`,
+        );
       }
     }
   }
 
   async startEngine(engineName, engineConfig) {
-    const scriptPath = path.join(this.config.paths.projectRoot, engineConfig.script);
-    
-    if (!await this.fileExists(scriptPath)) {
+    const scriptPath = path.join(
+      this.config.paths.projectRoot,
+      engineConfig.script,
+    );
+
+    if (!(await this.fileExists(scriptPath))) {
       this.log('warn', `Engine script not found: ${scriptPath}`);
       return;
     }
 
     const child = spawn('node', [scriptPath, 'start'], {
       stdio: ['pipe', 'pipe', 'pipe'],
-      detached: false
+      detached: false,
     });
 
     child.stdout.on('data', (data) => {
@@ -298,7 +341,7 @@ class AIPoweredComputerEnhancement extends EventEmitter {
     this.activeEngines.set(engineName, {
       process: child,
       config: engineConfig,
-      startTime: Date.now()
+      startTime: Date.now(),
     });
 
     this.log('info', `✅ Started enhancement engine: ${engineName}`);
@@ -310,7 +353,10 @@ class AIPoweredComputerEnhancement extends EventEmitter {
         engine.process.kill('SIGTERM');
         this.log('info', `Stopped enhancement engine: ${engineName}`);
       } catch (error) {
-        this.log('warn', `Failed to stop engine ${engineName}: ${error.message}`);
+        this.log(
+          'warn',
+          `Failed to stop engine ${engineName}: ${error.message}`,
+        );
       }
     }
     this.activeEngines.clear();
@@ -325,27 +371,36 @@ class AIPoweredComputerEnhancement extends EventEmitter {
   }
 
   startAIToolDiscovery() {
-    this.discoveryTimer = setInterval(async () => {
-      if (this.isRunning) {
-        await this.discoverNewAITools();
-      }
-    }, 10 * 60 * 1000); // Every 10 minutes
+    this.discoveryTimer = setInterval(
+      async () => {
+        if (this.isRunning) {
+          await this.discoverNewAITools();
+        }
+      },
+      10 * 60 * 1000,
+    ); // Every 10 minutes
   }
 
   startSystemMonitoring() {
-    this.monitoringTimer = setInterval(async () => {
-      if (this.isRunning) {
-        await this.monitorSystemHealth();
-      }
-    }, 5 * 60 * 1000); // Every 5 minutes
+    this.monitoringTimer = setInterval(
+      async () => {
+        if (this.isRunning) {
+          await this.monitorSystemHealth();
+        }
+      },
+      5 * 60 * 1000,
+    ); // Every 5 minutes
   }
 
   startSelfImprovement() {
-    this.selfImprovementTimer = setInterval(async () => {
-      if (this.isRunning) {
-        await this.improveSelf();
-      }
-    }, 15 * 60 * 1000); // Every 15 minutes
+    this.selfImprovementTimer = setInterval(
+      async () => {
+        if (this.isRunning) {
+          await this.improveSelf();
+        }
+      },
+      15 * 60 * 1000,
+    ); // Every 15 minutes
   }
 
   async performEnhancementCycle() {
@@ -353,26 +408,27 @@ class AIPoweredComputerEnhancement extends EventEmitter {
       this.currentEnhancement = {
         id: `enhancement_${Date.now()}`,
         startTime: Date.now(),
-        status: 'running'
+        status: 'running',
       };
 
       this.log('info', '🔄 Starting computer enhancement cycle...');
 
       // Step 1: Analyze current system state
       const analysis = await this.analyzeCurrentState();
-      
+
       // Step 2: Discover enhancement opportunities
-      const opportunities = await this.discoverEnhancementOpportunities(analysis);
-      
+      const opportunities =
+        await this.discoverEnhancementOpportunities(analysis);
+
       // Step 3: Generate enhancements using AI
       const enhancements = await this.generateEnhancements(opportunities);
-      
+
       // Step 4: Apply enhancements in parallel
       const appliedEnhancements = await this.applyEnhancements(enhancements);
-      
+
       // Step 5: Measure enhancement impact
       const impact = await this.measureEnhancementImpact(appliedEnhancements);
-      
+
       // Step 6: Update enhancement score and computer intelligence
       this.updateEnhancementScore(impact);
       this.updateComputerIntelligence(impact);
@@ -383,7 +439,7 @@ class AIPoweredComputerEnhancement extends EventEmitter {
         opportunities: opportunities.length,
         enhancements: enhancements.length,
         applied: appliedEnhancements.length,
-        impact: impact
+        impact: impact,
       };
 
       this.enhancementHistory.push(this.currentEnhancement);
@@ -394,9 +450,11 @@ class AIPoweredComputerEnhancement extends EventEmitter {
       // Generate enhancement report
       await this.generateEnhancementReport();
 
-      this.log('info', `✅ Enhancement cycle completed: ${appliedEnhancements.length} enhancements applied`);
+      this.log(
+        'info',
+        `✅ Enhancement cycle completed: ${appliedEnhancements.length} enhancements applied`,
+      );
       this.emit('enhancementCompleted', this.currentEnhancement);
-
     } catch (error) {
       this.log('error', `Enhancement cycle failed: ${error.message}`);
       this.stats.failedEnhancements++;
@@ -418,7 +476,7 @@ class AIPoweredComputerEnhancement extends EventEmitter {
       aiIntegration: await this.analyzeAIIntegration(),
       monitoring: await this.analyzeMonitoring(),
       documentation: await this.analyzeDocumentation(),
-      testing: await this.analyzeTesting()
+      testing: await this.analyzeTesting(),
     };
 
     return analysis;
@@ -433,7 +491,7 @@ class AIPoweredComputerEnhancement extends EventEmitter {
         memoryUsage: process.memoryUsage(),
         cpuUsage: process.cpuUsage(),
         uptime: process.uptime(),
-        pid: process.pid
+        pid: process.pid,
       };
     } catch (error) {
       this.log('warn', `System analysis failed: ${error.message}`);
@@ -450,7 +508,7 @@ class AIPoweredComputerEnhancement extends EventEmitter {
         complexity: 0,
         maintainability: 0,
         testCoverage: 0,
-        documentation: 0
+        documentation: 0,
       };
 
       for (const file of files) {
@@ -474,7 +532,7 @@ class AIPoweredComputerEnhancement extends EventEmitter {
         loadTime: await this.getLoadTime(),
         memoryUsage: await this.getMemoryUsage(),
         cpuUsage: await this.getCPUUsage(),
-        responseTime: await this.getResponseTime()
+        responseTime: await this.getResponseTime(),
       };
     } catch (error) {
       this.log('warn', `Performance analysis failed: ${error.message}`);
@@ -486,11 +544,11 @@ class AIPoweredComputerEnhancement extends EventEmitter {
     try {
       const npmAudit = await this.runNpmAudit();
       const securityScan = await this.runSecurityScan();
-      
+
       return {
         vulnerabilities: npmAudit.vulnerabilities || 0,
         securityIssues: securityScan.issues || 0,
-        securityScore: securityScan.score || 0
+        securityScore: securityScan.score || 0,
       };
     } catch (error) {
       this.log('warn', `Security analysis failed: ${error.message}`);
@@ -504,7 +562,7 @@ class AIPoweredComputerEnhancement extends EventEmitter {
         accessibility: await this.getAccessibilityScore(),
         usability: await this.getUsabilityScore(),
         mobileResponsiveness: await this.getMobileResponsivenessScore(),
-        seoScore: await this.getSEOScore()
+        seoScore: await this.getSEOScore(),
       };
     } catch (error) {
       this.log('warn', `User experience analysis failed: ${error.message}`);
@@ -517,7 +575,7 @@ class AIPoweredComputerEnhancement extends EventEmitter {
       return {
         automationSystems: this.activeEngines.size,
         automationCoverage: this.calculateAutomationCoverage(),
-        automationEffectiveness: this.calculateAutomationEffectiveness()
+        automationEffectiveness: this.calculateAutomationEffectiveness(),
       };
     } catch (error) {
       this.log('warn', `Automation analysis failed: ${error.message}`);
@@ -531,7 +589,7 @@ class AIPoweredComputerEnhancement extends EventEmitter {
         aiProviders: this.aiProviders.size,
         aiTools: await this.countAITools(),
         aiEffectiveness: this.calculateAIEffectiveness(),
-        aiCoverage: this.calculateAICoverage()
+        aiCoverage: this.calculateAICoverage(),
       };
     } catch (error) {
       this.log('warn', `AI integration analysis failed: ${error.message}`);
@@ -544,7 +602,7 @@ class AIPoweredComputerEnhancement extends EventEmitter {
       return {
         monitoringCoverage: this.calculateMonitoringCoverage(),
         alertingEffectiveness: this.calculateAlertingEffectiveness(),
-        loggingQuality: this.calculateLoggingQuality()
+        loggingQuality: this.calculateLoggingQuality(),
       };
     } catch (error) {
       this.log('warn', `Monitoring analysis failed: ${error.message}`);
@@ -557,7 +615,7 @@ class AIPoweredComputerEnhancement extends EventEmitter {
       return {
         documentationCoverage: this.calculateDocumentationCoverage(),
         documentationQuality: this.calculateDocumentationQuality(),
-        documentationFreshness: this.calculateDocumentationFreshness()
+        documentationFreshness: this.calculateDocumentationFreshness(),
       };
     } catch (error) {
       this.log('warn', `Documentation analysis failed: ${error.message}`);
@@ -570,7 +628,7 @@ class AIPoweredComputerEnhancement extends EventEmitter {
       return {
         testCoverage: await this.getTestCoverage(),
         testQuality: await this.getTestQuality(),
-        testEffectiveness: await this.getTestEffectiveness()
+        testEffectiveness: await this.getTestEffectiveness(),
       };
     } catch (error) {
       this.log('warn', `Testing analysis failed: ${error.message}`);
@@ -587,15 +645,22 @@ class AIPoweredComputerEnhancement extends EventEmitter {
         const aiOpportunities = await provider.analyze(analysis);
         opportunities.push(...aiOpportunities);
       } catch (error) {
-        this.log('warn', `AI provider ${providerName} failed to discover opportunities: ${error.message}`);
+        this.log(
+          'warn',
+          `AI provider ${providerName} failed to discover opportunities: ${error.message}`,
+        );
       }
     }
 
     // Remove duplicates and prioritize
     const uniqueOpportunities = this.deduplicateOpportunities(opportunities);
-    const prioritizedOpportunities = this.prioritizeOpportunities(uniqueOpportunities);
+    const prioritizedOpportunities =
+      this.prioritizeOpportunities(uniqueOpportunities);
 
-    return prioritizedOpportunities.slice(0, this.config.enhancement.maxEnhancements);
+    return prioritizedOpportunities.slice(
+      0,
+      this.config.enhancement.maxEnhancements,
+    );
   }
 
   async generateEnhancements(opportunities) {
@@ -610,11 +675,14 @@ class AIPoweredComputerEnhancement extends EventEmitter {
             enhancements.push({
               ...enhancement,
               provider: providerName,
-              opportunity: opportunity
+              opportunity: opportunity,
             });
           }
         } catch (error) {
-          this.log('warn', `AI provider ${providerName} failed to generate enhancement: ${error.message}`);
+          this.log(
+            'warn',
+            `AI provider ${providerName} failed to generate enhancement: ${error.message}`,
+          );
         }
       }
     }
@@ -627,9 +695,16 @@ class AIPoweredComputerEnhancement extends EventEmitter {
     const enhancementPromises = [];
 
     // Process enhancements in parallel
-    for (let i = 0; i < enhancements.length; i += this.config.enhancement.parallelEnhancements) {
-      const batch = enhancements.slice(i, i + this.config.enhancement.parallelEnhancements);
-      
+    for (
+      let i = 0;
+      i < enhancements.length;
+      i += this.config.enhancement.parallelEnhancements
+    ) {
+      const batch = enhancements.slice(
+        i,
+        i + this.config.enhancement.parallelEnhancements,
+      );
+
       const batchPromises = batch.map(async (enhancement) => {
         try {
           // Create backup if enabled
@@ -639,7 +714,7 @@ class AIPoweredComputerEnhancement extends EventEmitter {
 
           // Apply the enhancement
           const result = await this.applyEnhancement(enhancement);
-          
+
           if (result.success) {
             // Test the enhancement if enabled
             if (this.config.enhancement.testAfterEnhancement) {
@@ -647,7 +722,10 @@ class AIPoweredComputerEnhancement extends EventEmitter {
               if (testResult.success) {
                 return enhancement;
               } else {
-                this.log('warn', `Enhancement test failed: ${testResult.error}`);
+                this.log(
+                  'warn',
+                  `Enhancement test failed: ${testResult.error}`,
+                );
                 if (this.config.enhancement.rollbackOnFailure) {
                   await this.rollbackEnhancement(enhancement);
                 }
@@ -674,7 +752,7 @@ class AIPoweredComputerEnhancement extends EventEmitter {
 
     // Wait for all enhancements to complete
     const results = await Promise.all(enhancementPromises);
-    
+
     // Filter out failed enhancements
     for (const result of results) {
       if (result) {
@@ -695,13 +773,14 @@ class AIPoweredComputerEnhancement extends EventEmitter {
       userExperience: 0,
       automation: 0,
       aiIntegration: 0,
-      overall: 0
+      overall: 0,
     };
 
     for (const enhancement of enhancements) {
       // Measure individual enhancement impact
-      const enhancementImpact = await this.measureSingleEnhancementImpact(enhancement);
-      
+      const enhancementImpact =
+        await this.measureSingleEnhancementImpact(enhancement);
+
       impact.performance += enhancementImpact.performance || 0;
       impact.security += enhancementImpact.security || 0;
       impact.maintainability += enhancementImpact.maintainability || 0;
@@ -712,28 +791,41 @@ class AIPoweredComputerEnhancement extends EventEmitter {
     }
 
     // Calculate overall impact
-    impact.overall = (
-      impact.performance + impact.security + impact.maintainability + 
-      impact.functionality + impact.userExperience + impact.automation + 
-      impact.aiIntegration
-    ) / 7;
+    impact.overall =
+      (impact.performance +
+        impact.security +
+        impact.maintainability +
+        impact.functionality +
+        impact.userExperience +
+        impact.automation +
+        impact.aiIntegration) /
+      7;
 
     return impact;
   }
 
   updateEnhancementScore(impact) {
     this.stats.enhancementScore += impact.overall;
-    this.stats.enhancementScore = Math.min(100, Math.max(0, this.stats.enhancementScore));
+    this.stats.enhancementScore = Math.min(
+      100,
+      Math.max(0, this.stats.enhancementScore),
+    );
   }
 
   updateComputerIntelligence(impact) {
     this.stats.computerIntelligence += impact.overall * 0.1;
-    this.stats.computerIntelligence = Math.min(100, Math.max(0, this.stats.computerIntelligence));
+    this.stats.computerIntelligence = Math.min(
+      100,
+      Math.max(0, this.stats.computerIntelligence),
+    );
   }
 
   async discoverNewAITools() {
     try {
-      this.log('info', '🔍 Discovering new AI tools for computer enhancement...');
+      this.log(
+        'info',
+        '🔍 Discovering new AI tools for computer enhancement...',
+      );
 
       const discoveredTools = [];
 
@@ -743,7 +835,10 @@ class AIPoweredComputerEnhancement extends EventEmitter {
           const tools = await provider.discover();
           discoveredTools.push(...tools);
         } catch (error) {
-          this.log('warn', `AI provider ${providerName} failed to discover tools: ${error.message}`);
+          this.log(
+            'warn',
+            `AI provider ${providerName} failed to discover tools: ${error.message}`,
+          );
         }
       }
 
@@ -758,7 +853,6 @@ class AIPoweredComputerEnhancement extends EventEmitter {
 
       this.stats.aiToolsDiscovered += discoveredTools.length;
       this.log('info', `✅ Discovered ${discoveredTools.length} new AI tools`);
-
     } catch (error) {
       this.log('error', `AI tool discovery failed: ${error.message}`);
     }
@@ -768,20 +862,25 @@ class AIPoweredComputerEnhancement extends EventEmitter {
     try {
       // Monitor system health
       const health = await this.checkSystemHealth();
-      
+
       if (health.status !== 'healthy') {
-        this.log('warn', `System health issue detected: ${health.issues.join(', ')}`);
+        this.log(
+          'warn',
+          `System health issue detected: ${health.issues.join(', ')}`,
+        );
         await this.applyHealthFixes(health.issues);
       }
 
       // Monitor enhancement engines
       for (const [engineName, engine] of this.activeEngines) {
         if (!engine.process.connected) {
-          this.log('warn', `Enhancement engine ${engineName} disconnected, restarting...`);
+          this.log(
+            'warn',
+            `Enhancement engine ${engineName} disconnected, restarting...`,
+          );
           await this.restartEngine(engineName, engine.config);
         }
       }
-
     } catch (error) {
       this.log('error', `System monitoring failed: ${error.message}`);
     }
@@ -793,17 +892,16 @@ class AIPoweredComputerEnhancement extends EventEmitter {
 
       // Analyze current system performance
       const analysis = await this.analyzeCurrentState();
-      
+
       // Generate self-improvements
       const improvements = await this.generateSelfImprovements(analysis);
-      
+
       // Apply self-improvements
       for (const improvement of improvements) {
         await this.applySelfImprovement(improvement);
       }
 
       this.log('info', '✅ Computer enhancement system improved');
-
     } catch (error) {
       this.log('error', `Self-improvement failed: ${error.message}`);
     }
@@ -829,7 +927,7 @@ Return the enhancement as JSON.`;
       description: 'AI-generated system enhancement',
       changes: [],
       impact: { performance: 0.15, security: 0.1, maintainability: 0.12 },
-      implementation: 'Automated system improvements'
+      implementation: 'Automated system improvements',
     };
   }
 
@@ -850,7 +948,7 @@ Return the enhancement as JSON.`;
       description: 'Claude-generated AI integration enhancement',
       changes: [],
       impact: { aiIntegration: 0.2, automation: 0.15, performance: 0.1 },
-      implementation: 'AI integration improvements'
+      implementation: 'AI integration improvements',
     };
   }
 
@@ -871,7 +969,7 @@ Return the enhancement as JSON.`;
       description: 'Cursor-generated code enhancement',
       changes: [],
       impact: { maintainability: 0.18, performance: 0.08, functionality: 0.12 },
-      implementation: 'Code generation and refactoring'
+      implementation: 'Code generation and refactoring',
     };
   }
 
@@ -892,7 +990,7 @@ Return the enhancement as JSON.`;
       description: 'Local AI-generated optimization',
       changes: [],
       impact: { performance: 0.12, security: 0.08, userExperience: 0.1 },
-      implementation: 'Local optimization'
+      implementation: 'Local optimization',
     };
   }
 
@@ -910,27 +1008,34 @@ Return the enhancement as JSON.`;
   async getAllSourceFiles() {
     const files = [];
     const dirs = ['scripts', 'src', 'pages', 'components', 'lib', 'utils'];
-    
+
     for (const dir of dirs) {
       try {
-        await this.scanDirectory(path.join(this.config.paths.projectRoot, dir), files);
+        await this.scanDirectory(
+          path.join(this.config.paths.projectRoot, dir),
+          files,
+        );
       } catch (error) {
         // Directory might not exist
       }
     }
-    
-    return files.filter(file => 
-      file.endsWith('.js') || file.endsWith('.jsx') || file.endsWith('.ts') || file.endsWith('.tsx')
+
+    return files.filter(
+      (file) =>
+        file.endsWith('.js') ||
+        file.endsWith('.jsx') ||
+        file.endsWith('.ts') ||
+        file.endsWith('.tsx'),
     );
   }
 
   async scanDirectory(dir, files) {
     try {
       const entries = await fs.readdir(dir, { withFileTypes: true });
-      
+
       for (const entry of entries) {
         const fullPath = path.join(dir, entry.name);
-        
+
         if (entry.isDirectory()) {
           await this.scanDirectory(fullPath, files);
         } else if (entry.isFile()) {
@@ -943,9 +1048,19 @@ Return the enhancement as JSON.`;
   }
 
   calculateComplexity(content) {
-    const complexityKeywords = ['if', 'else', 'for', 'while', 'switch', 'case', 'catch', '&&', '||'];
+    const complexityKeywords = [
+      'if',
+      'else',
+      'for',
+      'while',
+      'switch',
+      'case',
+      'catch',
+      '&&',
+      '||',
+    ];
     let complexity = 1;
-    
+
     for (const keyword of complexityKeywords) {
       const regex = new RegExp(`\\b${keyword}\\b`, 'g');
       const matches = content.match(regex);
@@ -953,16 +1068,24 @@ Return the enhancement as JSON.`;
         complexity += matches.length;
       }
     }
-    
+
     return complexity;
   }
 
   calculateMaintainability(content) {
     const lines = content.split('\n').length;
     const complexity = this.calculateComplexity(content);
-    const commentLines = (content.match(/\/\/.*$/gm) || []).length + (content.match(/\/\*[\s\S]*?\*\//gm) || []).length;
-    
-    const maintainability = Math.max(0, 171 - 5.2 * Math.log(complexity) - 0.23 * Math.log(lines) - 16.2 * Math.log(commentLines));
+    const commentLines =
+      (content.match(/\/\/.*$/gm) || []).length +
+      (content.match(/\/\*[\s\S]*?\*\//gm) || []).length;
+
+    const maintainability = Math.max(
+      0,
+      171 -
+        5.2 * Math.log(complexity) -
+        0.23 * Math.log(lines) -
+        16.2 * Math.log(commentLines),
+    );
     return Math.min(100, Math.max(0, maintainability));
   }
 
@@ -1100,7 +1223,7 @@ Return the enhancement as JSON.`;
 
   deduplicateOpportunities(opportunities) {
     const seen = new Set();
-    return opportunities.filter(opp => {
+    return opportunities.filter((opp) => {
       const key = `${opp.type}-${opp.description}`;
       if (seen.has(key)) {
         return false;
@@ -1185,7 +1308,7 @@ Return the enhancement as JSON.`;
       functionality: enhancement.impact.functionality || 0,
       userExperience: enhancement.impact.userExperience || 0,
       automation: enhancement.impact.automation || 0,
-      aiIntegration: enhancement.impact.aiIntegration || 0
+      aiIntegration: enhancement.impact.aiIntegration || 0,
     };
   }
 
@@ -1211,7 +1334,10 @@ Return the enhancement as JSON.`;
     try {
       await this.startEngine(engineName, engineConfig);
     } catch (error) {
-      this.log('error', `Failed to restart engine ${engineName}: ${error.message}`);
+      this.log(
+        'error',
+        `Failed to restart engine ${engineName}: ${error.message}`,
+      );
     }
   }
 
@@ -1225,17 +1351,20 @@ Return the enhancement as JSON.`;
   }
 
   async createBackup() {
-    const backupPath = path.join(this.config.paths.backups, `enhancement-backup-${Date.now()}`);
+    const backupPath = path.join(
+      this.config.paths.backups,
+      `enhancement-backup-${Date.now()}`,
+    );
     await fs.mkdir(backupPath, { recursive: true });
-    
+
     // Backup relevant files
     const filesToBackup = ['scripts/', 'src/', 'package.json'];
-    
+
     for (const file of filesToBackup) {
       try {
         const sourcePath = path.join(this.config.paths.projectRoot, file);
         const destPath = path.join(backupPath, file);
-        
+
         if (await this.fileExists(sourcePath)) {
           await this.copyFile(sourcePath, destPath);
         }
@@ -1254,17 +1383,22 @@ Return the enhancement as JSON.`;
       aiProviders: Array.from(this.aiProviders.keys()),
       summary: {
         totalEnhancements: this.stats.totalEnhancements,
-        successRate: this.stats.successfulEnhancements / this.stats.totalEnhancements * 100,
+        successRate:
+          (this.stats.successfulEnhancements / this.stats.totalEnhancements) *
+          100,
         enhancementScore: this.stats.enhancementScore,
         computerIntelligence: this.stats.computerIntelligence,
         aiToolsDiscovered: this.stats.aiToolsDiscovered,
-        aiToolsIntegrated: this.stats.aiToolsIntegrated
-      }
+        aiToolsIntegrated: this.stats.aiToolsIntegrated,
+      },
     };
 
-    const reportPath = path.join(this.config.paths.reports, `computer-enhancement-${Date.now()}.json`);
+    const reportPath = path.join(
+      this.config.paths.reports,
+      `computer-enhancement-${Date.now()}.json`,
+    );
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
-    
+
     this.log('info', `Generated enhancement report: ${reportPath}`);
     return report;
   }
@@ -1286,11 +1420,14 @@ Return the enhancement as JSON.`;
   log(level, message) {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] [${level.toUpperCase()}] [COMPUTER-ENHANCEMENT] ${message}`;
-    
-    console.log(logMessage);
-    
+
+    logger.info(logMessage);
+
     // Save to log file
-    const logPath = path.join(this.config.paths.logs, 'computer-enhancement.log');
+    const logPath = path.join(
+      this.config.paths.logs,
+      'computer-enhancement.log',
+    );
     fs.appendFile(logPath, logMessage + '\n').catch(() => {});
   }
 
@@ -1302,7 +1439,7 @@ Return the enhancement as JSON.`;
       activeEngines: this.activeEngines.size,
       aiProviders: this.aiProviders.size,
       lastEnhancement: this.stats.lastEnhancement,
-      computerIntelligence: this.stats.computerIntelligence
+      computerIntelligence: this.stats.computerIntelligence,
     };
   }
 }
@@ -1320,7 +1457,7 @@ async function main() {
       await enhancement.stop();
       break;
     case 'status':
-      console.log(JSON.stringify(enhancement.getStatus(), null, 2));
+      logger.info(JSON.stringify(enhancement.getStatus(), null, 2));
       break;
     case 'enhance':
       await enhancement.performEnhancementCycle();
@@ -1332,16 +1469,18 @@ async function main() {
       await enhancement.improveSelf();
       break;
     default:
-      console.log('Usage: node ai-powered-computer-enhancement.cjs [start|stop|status|enhance|discover|improve]');
+      logger.info(
+        'Usage: node ai-powered-computer-enhancement.cjs [start|stop|status|enhance|discover|improve]',
+      );
       break;
   }
 }
 
 if (require.main === module) {
-  main().catch(error => {
-    console.error('AI-Powered Computer Enhancement failed:', error.message);
+  main().catch((error) => {
+    logger.error('AI-Powered Computer Enhancement failed:', error.message);
     process.exit(1);
   });
 }
 
-module.exports = AIPoweredComputerEnhancement; 
+module.exports = AIPoweredComputerEnhancement;

@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 /**
  * Cursor Automated Extension Background Script
  * 
@@ -15,7 +38,7 @@ class CursorExtensionBackground {
   }
 
   async initialize() {
-    console.log('🚀 Initializing Cursor Extension Background...');
+    logger.info('🚀 Initializing Cursor Extension Background...');
     
     try {
       // Set up message listeners
@@ -25,10 +48,10 @@ class CursorExtensionBackground {
       this.startBackgroundProcessing();
       
       this.isActive = true;
-      console.log('✅ Cursor Extension Background initialized');
+      logger.info('✅ Cursor Extension Background initialized');
       
     } catch (error) {
-      console.error('❌ Failed to initialize extension background:', error);
+      logger.error('❌ Failed to initialize extension background:', error);
       throw error;
     }
   }
@@ -92,21 +115,21 @@ class CursorExtensionBackground {
     const issues = [];
 
     // Check for console.log in production code
-    if (content.includes('console.log(')) {
+    if (content.includes('logger.info(')) {
       issues.push({
-        type: debug_code',
+        type: 'debug_code',
         message: Console.log statement found',
-        severity: low',
-        line: this.findLineNumber(content, console.log(')
+        severity: 'low',
+        line: this.findLineNumber(content, logger.info(')
       });
     }
 
     // Check for TODO/FIXME comments
     if (content.includes('TODO') || content.includes('FIXME')) {
       issues.push({
-        type: todo_items',
+        type: 'todo_items',
         message: TODO/FIXME comment found',
-        severity: medium',
+        severity: 'medium',
         line: this.findLineNumber(content, TODO')
       });
     }
@@ -114,9 +137,9 @@ class CursorExtensionBackground {
     // Check for var usage
     if (content.includes('var ) && !content.includes('var _')) {
       issues.push({
-        type: var_usage',
+        type: 'var_usage',
         message: var keyword used instead of const/let',
-        severity: medium',
+        severity: 'medium',
         line: this.findLineNumber(content, var )
       });
     }
@@ -160,9 +183,9 @@ class CursorExtensionBackground {
       
       if (!matches || matches.length <= 1) { // Only the import statement
         issues.push({
-          type: unused_import',
+          type: 'unused_import',
           message: `Unused import: ${importItem.name}`,
-          severity: low',
+          severity: 'low',
           importName: importItem.name,
           modulePath: importItem.modulePath
         });
@@ -179,7 +202,7 @@ class CursorExtensionBackground {
       switch (issue.type) {
         case debug_code':
           suggestions.push({
-            type: remove_debug',
+            type: 'remove_debug',
             message: Remove console.log statement',
             code: // Remove or replace with proper logging',
             severity: issue.severity
@@ -188,7 +211,7 @@ class CursorExtensionBackground {
 
         case todo_items':
           suggestions.push({
-            type: address_todo',
+            type: 'address_todo',
             message: Address TODO/FIXME comment',
             code: // Implement the TODO item',
             severity: issue.severity
@@ -197,7 +220,7 @@ class CursorExtensionBackground {
 
         case var_usage':
           suggestions.push({
-            type: replace_var',
+            type: 'replace_var',
             message: Replace var with const or let',
             code: const variableName = value; // or let if reassignment needed',
             severity: issue.severity
@@ -206,7 +229,7 @@ class CursorExtensionBackground {
 
         case unused_import':
           suggestions.push({
-            type: remove_import',
+            type: 'remove_import',
             message: `Remove unused import: ${issue.importName}`,
             code: `// Remove: ${issue.importName} from ${issue.modulePath}`,
             severity: issue.severity
@@ -251,10 +274,10 @@ class CursorExtensionBackground {
         applied: true
       });
 
-      console.log(`✅ Applied improvement to ${data.file}`);
+      logger.info(`✅ Applied improvement to ${data.file}`);
     } catch (error) {
       result.error = error.message;
-      console.error(`❌ Failed to apply improvement: ${error.message}`);
+      logger.error(`❌ Failed to apply improvement: ${error.message}`);
     }
 
     return result;
@@ -272,7 +295,7 @@ class CursorExtensionBackground {
   async processAnalysisQueue() {
     if (this.analysisQueue.length === 0) return;
 
-    console.log(`🔄 Processing ${this.analysisQueue.length} items in analysis queue`);
+    logger.info(`🔄 Processing ${this.analysisQueue.length} items in analysis queue`);
 
     while (this.analysisQueue.length > 0) {
       const item = this.analysisQueue.shift();
@@ -282,11 +305,11 @@ class CursorExtensionBackground {
         
         // Send analysis results back to content script
         chrome.tabs.sendMessage(item.tabId, {
-          type: ANALYSIS_RESULT',
+          type: 'ANALYSIS_RESULT',
           analysis
         });
       } catch (error) {
-        console.error('Error processing analysis item:', error);
+        logger.error('Error processing analysis item:', error);
       }
     }
   }
@@ -307,7 +330,7 @@ class CursorExtensionBackground {
   }
 
   stop() {
-    console.log('🛑 Stopping Cursor Extension Background...');
+    logger.info('🛑 Stopping Cursor Extension Background...');
     this.isActive = false;
   }
 }
@@ -315,16 +338,16 @@ class CursorExtensionBackground {
 // Initialize the background script
 const background = new CursorExtensionBackground();
 background.initialize().catch(error => {
-  console.error('Failed to initialize background script:', error);
+  logger.error('Failed to initialize background script:', error);
 });
 
 // Handle extension lifecycle
 chrome.runtime.onInstalled.addListener(() => {
-  console.log('Cursor Automated Extension installed');
+  logger.info('Cursor Automated Extension installed');
 });
 
 chrome.runtime.onStartup.addListener(() => {
-  console.log('Cursor Automated Extension started');
+  logger.info('Cursor Automated Extension started');
 });
 
 // Export for testing

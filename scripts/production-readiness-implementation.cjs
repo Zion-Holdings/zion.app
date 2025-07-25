@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 NODE_ENV=production
 NEXT_TELEMETRY_DISABLED=1
 NODE_OPTIONS=--no-deprecation --max-old-space-size=6144 --no-warnings
@@ -473,35 +496,35 @@ Once these are set, the application is **100% production-ready** for enterprise 
       this.printResults();
       
     } catch (_error) {
-      console.error('❌ Production readiness implementation failed:', error);
+      logger.error('❌ Production readiness implementation failed:', error);
       process.exit(1);
     }
   }
 
   printResults() {
     
-    // console.warn('\n🎉 PHASE 3 PRODUCTION READINESS - IMPLEMENTATION COMPLETE!');
-    // console.warn('='.repeat(60));
+    // logger.warn('\n🎉 PHASE 3 PRODUCTION READINESS - IMPLEMENTATION COMPLETE!');
+    // logger.warn('='.repeat(60));
     
-    // console.warn('\n✅ IMPLEMENTED FEATURES:');
+    // logger.warn('\n✅ IMPLEMENTED FEATURES:');
     this.results.implemented.forEach(item => {
-      // console.warn(`  ✅ ${item}`);
+      // logger.warn(`  ✅ ${item}`);
     });
     
-    // console.warn('\n🚀 NEXT STEPS:');
-    // console.warn('  1. Configure environment variables (see .env.production.example)');
-    // console.warn('  2. Run: npm run validate:env:production');
-    // console.warn('  3. Run: npm run build:production');
-    // console.warn('  4. Deploy to production');
-    // console.warn('  5. Run: npm run monitor:production');
+    // logger.warn('\n🚀 NEXT STEPS:');
+    // logger.warn('  1. Configure environment variables (see .env.production.example)');
+    // logger.warn('  2. Run: npm run validate:env:production');
+    // logger.warn('  3. Run: npm run build:production');
+    // logger.warn('  4. Deploy to production');
+    // logger.warn('  5. Run: npm run monitor:production');
     
-    // console.warn('\n📋 DOCUMENTATION CREATED:');
-    // console.warn('  📄 docs/PRODUCTION_DEPLOYMENT_CHECKLIST.md');
-    // console.warn('  📄 .env.production.example');
-    // console.warn('  🔧 scripts/validate-production-env.cjs');
-    // console.warn('  📊 scripts/production-monitor.cjs');
+    // logger.warn('\n📋 DOCUMENTATION CREATED:');
+    // logger.warn('  📄 docs/PRODUCTION_DEPLOYMENT_CHECKLIST.md');
+    // logger.warn('  📄 .env.production.example');
+    // logger.warn('  🔧 scripts/validate-production-env.cjs');
+    // logger.warn('  📊 scripts/production-monitor.cjs');
     
-    // console.warn('\n�� STATUS: ENTERPRISE PRODUCTION READY! 🚀');
+    // logger.warn('\n�� STATUS: ENTERPRISE PRODUCTION READY! 🚀');
   }
 }
 
@@ -512,3 +535,17 @@ if (require.main === module) {
 }
 
 module.exports = ProductionReadinessImplementer;
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

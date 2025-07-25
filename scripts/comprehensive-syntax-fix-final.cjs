@@ -1,8 +1,30 @@
-#!/usr/bin/env node
+const winston = require('winston');
 
-const fs = require('fs')
-const path = require('path')
-const { execSync } = require('child_process')
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json(),
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
+
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
 class ComprehensiveSyntaxFixer {
   constructor() {
     this.fixedFiles = [];
@@ -15,14 +37,14 @@ class ComprehensiveSyntaxFixer {
   }
 
   async fixAllSyntaxErrors() {
-    console.log('🔧 Starting comprehensive syntax fix...');
+    logger.info('🔧 Starting comprehensive syntax fix...');
 
     try {
       // Get all TypeScript/JavaScript files
       const files = this.getAllFiles();
       this.stats.total = files.length;
 
-      console.log(`📁 Found ${files.length} files to check`);
+      logger.info(`📁 Found ${files.length} files to check`);
 
       for (const file of files) {
         try {
@@ -35,14 +57,14 @@ class ComprehensiveSyntaxFixer {
 
       this.generateReport();
     } catch (error) {
-      console.error('❌ Comprehensive fix failed:', error);
+      logger.error('❌ Comprehensive fix failed:', error);
     }
   }
 
   getAllFiles() {
-    const files = []
-const extensions = ['.ts', '.tsx', '.js', '.jsx']
-function walkDir(dir) {
+    const files = [];
+    const extensions = ['.ts', '.tsx', '.js', '.jsx'];
+    function walkDir(dir) {
       try {
         const items = fs.readdirSync(dir);
 
@@ -80,8 +102,8 @@ function walkDir(dir) {
 
   async fixFile(filePath) {
     try {
-      const content = fs.readFileSync(filePath, 'utf8')
-const originalContent = content;
+      const content = fs.readFileSync(filePath, 'utf8');
+      const originalContent = content;
 
       // Fix common syntax errors
       let fixedContent = this.fixCommonErrors(content);
@@ -99,10 +121,10 @@ const originalContent = content;
         fs.writeFileSync(filePath, fixedContent, 'utf8');
         this.fixedFiles.push(filePath);
         this.stats.fixed++;
-        console.log(`✅ Fixed: ${filePath}`);
+        logger.info(`✅ Fixed: ${filePath}`);
       }
     } catch (error) {
-      console.error(`❌ Error fixing ${filePath}:`, error.message);
+      logger.error(`❌ Error fixing ${filePath}:`, error.message);
       throw error;
     }
   }
@@ -176,8 +198,8 @@ const originalContent = content;
   }
 
   async createMinimalWorkingVersion(filePath, content) {
-    const ext = path.extname(filePath)
-const fileName = path.basename(filePath, ext);
+    const ext = path.extname(filePath);
+    const fileName = path.basename(filePath, ext);
 
     // Create minimal working versions based on file type
     if (ext === '.tsx' || ext === '.jsx') {
@@ -221,23 +243,23 @@ export default ${fileName};
   }
 
   generateReport() {
-    console.log('\n📊 Comprehensive Syntax Fix Report');
-    console.log('=====================================');
-    console.log(`Total files processed: ${this.stats.total}`);
-    console.log(`Files fixed: ${this.stats.fixed}`);
-    console.log(`Errors encountered: ${this.stats.errors}`);
+    logger.info('\n📊 Comprehensive Syntax Fix Report');
+    logger.info('=====================================');
+    logger.info(`Total files processed: ${this.stats.total}`);
+    logger.info(`Files fixed: ${this.stats.fixed}`);
+    logger.info(`Errors encountered: ${this.stats.errors}`);
 
     if (this.fixedFiles.length > 0) {
-      console.log('\n✅ Fixed files:');
+      logger.info('\n✅ Fixed files:');
       this.fixedFiles.forEach((file) => {
-        console.log(`  - ${file}`);
+        logger.info(`  - ${file}`);
       });
     }
 
     if (this.errors.length > 0) {
-      console.log('\n❌ Errors:');
+      logger.info('\n❌ Errors:');
       this.errors.forEach(({ file, error }) => {
-        console.log(`  - ${file}: ${error}`);
+        logger.info(`  - ${file}: ${error}`);
       });
     }
 
@@ -250,7 +272,7 @@ export default ${fileName};
     };
 
     fs.writeFileSync('syntax-fix-report.json', JSON.stringify(report, null, 2));
-    console.log('\n📄 Report saved to: syntax-fix-report.json');
+    logger.info('\n📄 Report saved to: syntax-fix-report.json');
   }
 }
 

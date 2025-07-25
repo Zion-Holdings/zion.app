@@ -1,10 +1,42 @@
-#!/usr/bin/env node
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 ;
 import fs from fs';import path from path';import { execSync } from child_process';import { fileURLToPath } from url';
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename);
 
-console.log('🔧 Starting comprehensive syntax error fix...');
+logger.info('🔧 Starting comprehensive syntax error fix...');
 // Function to recursively find all TypeScript/JavaScript files
 function findSourceFiles(dir, extensions = ['.ts', .tsx', .js', .jsx']) {'  const files = []
 function traverse(currentDir) {
@@ -126,24 +158,24 @@ const throwBacktickMatches = fixed.match(throwBacktickPattern);
 // Function to process a single file
 function processFile(filePath) {
   try {
-    const content = fs.readFileSync(filePath, utf8')
+    const content = fs.readFileSync(filePath, 'utf8')
 const { fixed, changes } = fixSyntaxErrors(content);
     
     if (changes > 0) {
-      fs.writeFileSync(filePath, fixed, utf8');      console.log(`✅ Fixed ${changes} syntax errors in ${path.relative(process.cwd(), filePath)}`);
+      fs.writeFileSync(filePath, fixed, utf8');      logger.info(`✅ Fixed ${changes} syntax errors in ${path.relative(process.cwd(), filePath)}`);
       return changes;
     }
     return 0;
   } catch (error) {
-    console.error(`❌ Error processing ${filePath}:`, error.message);
+    logger.error(`❌ Error processing ${filePath}:`, error.message);
     return 0;
   }
 }
 
 // Main execution
 try {
-  console.log('📁 Scanning for source files...')
-const sourceFiles = findSourceFiles('./src');  console.log(`📄 Found ${sourceFiles.length} source files`);
+  logger.info('📁 Scanning for source files...')
+const sourceFiles = findSourceFiles('./src');  logger.info(`📄 Found ${sourceFiles.length} source files`);
   
   let totalChanges = 0;
   let processedFiles = 0;
@@ -156,18 +188,53 @@ const sourceFiles = findSourceFiles('./src');  console.log(`📄 Found ${sourceF
     }
   }
   
-  console.log(`\n🎉 Syntax error fix completed!`);
-  console.log(`📊 Summary:`);
-  console.log(`   - Files processed: ${processedFiles}`);
-  console.log(`   - Total syntax errors fixed: ${totalChanges}`);
+  logger.info(`\n🎉 Syntax error fix completed!`);
+  logger.info(`📊 Summary:`);
+  logger.info(`   - Files processed: ${processedFiles}`);
+  logger.info(`   - Total syntax errors fixed: ${totalChanges}`);
   
   if (totalChanges > 0) {
-    console.log('\n🔍 Running build to check for remaining issues...');    try {
-      execSync('npm run build', { stdio: inherit' });      console.log('✅ Build completed successfully!');    } catch (buildError) {
-      console.log('⚠️  Build still has issues, but syntax errors have been reduced.');    }
+    logger.info('\n🔍 Running build to check for remaining issues...');    try {
+      execSync('npm run build', { stdio: 'inherit' });      logger.info('✅ Build completed successfully!');    } catch (buildError) {
+      logger.info('⚠️  Build still has issues, but syntax errors have been reduced.');    }
   } else {
-    console.log('✨ No syntax errors found!');  }
+    logger.info('✨ No syntax errors found!');  }
   
 } catch (error) {
-  console.error('❌ Error during syntax fix:', error.message);  process.exit(1);
+  logger.error('❌ Error during syntax fix:', error.message);  process.exit(1);
 } 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

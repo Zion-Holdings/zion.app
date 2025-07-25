@@ -1,0 +1,475 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+class UltimateAppAutomation {
+  constructor() {
+    this.issues = [];
+    this.fixes = [];
+    this.startTime = Date.now();
+    this.ensureDirectories();
+  }
+
+  ensureDirectories() {
+    const dirs = [
+      'logs',
+      'ai-improvement-data',
+      'ai-improvement-data/analysis',
+      'ai-improvement-data/improvements',
+      'temp',
+      'src/pages',
+    ];
+
+    dirs.forEach((dir) => {
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+      }
+    });
+  }
+
+  log(message, level = 'INFO') {
+    const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [${level}] ${message}`;
+    logger.info(logMessage);
+    fs.appendFileSync('logs/automation.log', logMessage + '\n');
+  }
+
+  async fixAllIssues() {
+    this.log('🚀 Starting Ultimate App Automation...');
+
+    await this.fixPackageJson();
+    await this.fixNextConfig();
+    await this.fixDependencies();
+    await this.fixMissingFiles();
+    await this.fixScriptIssues();
+    await this.cleanBuildArtifacts();
+    await this.startDevServer();
+
+    this.log('📊 Automation Summary:');
+    this.log(`✅ Fixes applied: ${this.fixes.length}`);
+    this.log(`❌ Issues encountered: ${this.issues.length}`);
+
+    if (this.fixes.length > 0) {
+      this.log('Applied fixes:');
+      this.fixes.forEach((fix) => this.log(`  - ${fix}`));
+    }
+
+    if (this.issues.length > 0) {
+      this.log('Issues encountered:');
+      this.issues.forEach((issue) => this.log(`  - ${issue}`, 'ERROR'));
+    }
+
+    this.log('🎉 Ultimate Automation completed!');
+  }
+
+  async fixPackageJson() {
+    this.log('🔧 Fixing package.json...');
+
+    try {
+      const packagePath = 'package.json';
+      let content = fs.readFileSync(packagePath, 'utf8');
+
+      // Remove any merge conflict markers
+      content = content.replace(/<<<<<<< HEAD\n/g, '');
+      content = content.replace(/=======\n/g, '');
+      content = content.replace(/>>>>>>> [^\n]*\n/g, '');
+
+      // Parse and validate JSON
+      const packageJson = JSON.parse(content);
+
+      // Add missing dependencies
+      if (!packageJson.dependencies) packageJson.dependencies = {};
+      if (!packageJson.devDependencies) packageJson.devDependencies = {};
+
+      // Add required OpenTelemetry dependencies
+      packageJson.dependencies['@opentelemetry/context-async-hooks'] = '^2.0.1';
+      packageJson.dependencies['@opentelemetry/core'] = '^2.0.1';
+      packageJson.dependencies['@opentelemetry/sdk-trace-base'] = '^2.0.1';
+      packageJson.dependencies['@opentelemetry/instrumentation'] = '^0.203.0';
+
+      // Add missing React dependencies
+      packageJson.dependencies['@types/react'] = '^19.0.0';
+      packageJson.dependencies['@types/react-dom'] = '^19.0.0';
+
+      // Update Next.js to stable version
+      packageJson.dependencies['next'] = '^15.4.1';
+
+      fs.writeFileSync(packagePath, JSON.stringify(packageJson, null, 2));
+      this.fixes.push('Fixed package.json and added missing dependencies');
+      this.log('✅ Package.json fixed');
+    } catch (error) {
+      this.log(`❌ Error fixing package.json: ${error.message}`, 'ERROR');
+      this.issues.push(`Package.json fix failed: ${error.message}`);
+    }
+  }
+
+  async fixNextConfig() {
+    this.log('🔧 Fixing next.config.js...');
+
+    try {
+      const nextConfig = `/** @type {import('next').NextConfig} */
+const nextConfig = {
+  webpack: (config, { dev, isServer }) => {
+    if (dev && !isServer) {
+      config.watchOptions = {
+        ...config.watchOptions,
+        poll: 1000,
+        aggregateTimeout: 300,
+        ignored: ['**/node_modules', '**/.next', '**/logs']
+      };
+    }
+    return config;
+  },
+  // Use turbopack instead of experimental.turbo
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
+    },
+  },
+  // Add proper file watching
+  onDemandEntries: {
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
+  },
+  // Fix path resolution issues
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+  // Ensure proper module resolution
+  transpilePackages: [],
+  // Fix asset handling
+  assetPrefix: process.env.NODE_ENV === 'production' ? undefined : '',
+  // Ensure proper environment detection
+  env: {
+    CUSTOM_KEY: process.env.CUSTOM_KEY,
+  },
+}
+module.exports = nextConfig;`;
+
+      fs.writeFileSync('next.config.js', nextConfig);
+      this.fixes.push('Fixed next.config.js');
+      this.log('✅ Next.config.js fixed');
+    } catch (error) {
+      this.log(`❌ Error fixing next.config.js: ${error.message}`, 'ERROR');
+      this.issues.push(`Next.config.js fix failed: ${error.message}`);
+    }
+  }
+
+  async fixDependencies() {
+    this.log('🔧 Installing missing dependencies...');
+
+    try {
+      // Install missing OpenTelemetry packages
+      execSync(
+        'npm install @opentelemetry/context-async-hooks @opentelemetry/core @opentelemetry/sdk-trace-base @opentelemetry/instrumentation',
+        { stdio: 'inherit' },
+      );
+      this.fixes.push('Installed missing OpenTelemetry dependencies');
+
+      // Install other missing dependencies
+      execSync('npm install @types/react @types/react-dom', {
+        stdio: 'inherit',
+      });
+      this.fixes.push('Installed missing React type dependencies');
+
+      this.log('✅ Dependencies fixed');
+    } catch (error) {
+      this.log(`❌ Error installing dependencies: ${error.message}`, 'ERROR');
+      this.issues.push(`Dependency installation failed: ${error.message}`);
+    }
+  }
+
+  async fixMissingFiles() {
+    this.log('🔧 Creating missing files...');
+
+    try {
+      // Create missing Profile page
+      const profileContent = `import React from 'react';
+
+export default function Profile() {
+  return (
+    <div>
+      <h1>Profile Page</h1>
+      <p>Profile page content</p>
+    </div>
+  );
+}`;
+
+      fs.writeFileSync('src/pages/Profile.tsx', profileContent);
+      this.fixes.push('Created missing Profile page');
+
+      // Create missing Signup page
+      const signupContent = `import React from 'react';
+
+export default function Signup() {
+  return (
+    <div>
+      <h1>Signup Page</h1>
+      <p>Signup page content</p>
+    </div>
+  );
+}`;
+
+      fs.writeFileSync('src/pages/Signup.tsx', signupContent);
+      this.fixes.push('Created missing Signup page');
+
+      // Fix analyze-bundle.js
+      const analyzeBundleContent = `#!/usr/bin/env node
+
+const fs = require('fs')
+const path = require('path')
+const { execSync } = require('child_process')
+const _currentFilename = path.basename(__filename)
+class BundleAnalyzer {
+  constructor() {
+    this.analysis = {};
+  }
+
+  analyzeBundle() {
+    try {
+      logger.info('Bundle analysis completed');
+    } catch (error) {
+      logger.error('Bundle analysis failed:', error);
+    }
+  }
+}
+
+if (require.main === module) {
+  const analyzer = new BundleAnalyzer();
+  analyzer.analyzeBundle();
+}
+
+module.exports = BundleAnalyzer;`;
+
+      fs.writeFileSync('scripts/analyze-bundle.cjs', analyzeBundleContent);
+      this.fixes.push('Fixed analyze-bundle script');
+
+      this.log('✅ Missing files created');
+    } catch (error) {
+      this.log(`❌ Error creating missing files: ${error.message}`, 'ERROR');
+      this.issues.push(`Missing files creation failed: ${error.message}`);
+    }
+  }
+
+  async fixScriptIssues() {
+    this.log('🔧 Fixing script issues...');
+
+    try {
+      // Remove scripts/package.json if it exists to fix __filename issue
+      const scriptsPackagePath = 'scripts/package.json';
+      if (fs.existsSync(scriptsPackagePath)) {
+        fs.unlinkSync(scriptsPackagePath);
+        this.fixes.push('Removed scripts/package.json to fix __filename issue');
+      }
+
+      this.log('✅ Script issues fixed');
+    } catch (error) {
+      this.log(`❌ Error fixing script issues: ${error.message}`, 'ERROR');
+      this.issues.push(`Script fix failed: ${error.message}`);
+    }
+  }
+
+  async cleanBuildArtifacts() {
+    this.log('🧹 Cleaning build artifacts...');
+
+    try {
+      // Clean .next directory
+      if (fs.existsSync('.next')) {
+        execSync('rm -rf .next', { stdio: 'inherit' });
+        this.fixes.push('Cleaned .next directory');
+      }
+
+      // Clean node_modules cache
+      if (fs.existsSync('node_modules/.cache')) {
+        execSync('rm -rf node_modules/.cache', { stdio: 'inherit' });
+        this.fixes.push('Cleaned node_modules cache');
+      }
+
+      this.log('✅ Build artifacts cleaned');
+    } catch (error) {
+      this.log(`❌ Error cleaning build artifacts: ${error.message}`, 'ERROR');
+      this.issues.push(`Build cleanup failed: ${error.message}`);
+    }
+  }
+
+  async startDevServer() {
+    this.log('🚀 Starting development server...');
+
+    try {
+      // Kill any existing processes
+      execSync('pkill -f "next dev" || true', { stdio: 'ignore' });
+
+      // Start dev server
+      const devProcess = spawn(
+        'npm',
+        ['run', 'dev: 'stable', '--', '--port', '3001'],
+        {
+          stdio: 'pipe',
+          detached: false,
+        },
+      );
+
+      devProcess.stdout.on('data', (data) => {
+        this.log(`DEV: ${data.toString().trim()}`);
+      });
+
+      devProcess.stderr.on('data', (data) => {
+        this.log(`DEV ERROR: ${data.toString().trim()}`, 'ERROR');
+      });
+
+      // Wait for server to start
+      await new Promise((resolve) => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                        15000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
+
+      // Test if server is responding
+      try {
+        const response = execSync(
+          'curl -s http://localhost:3006/api/health || echo "Server not responding"',
+          { encoding: 'utf8' },
+        );
+        this.log(`Server test response: ${response.trim()}`);
+
+        if (response.includes('Server not responding')) {
+          this.log(
+            '⚠️ Server started but not responding to health check',
+            'WARN',
+          );
+        } else {
+          this.fixes.push('Development server started successfully');
+          this.log('✅ Development server started and responding');
+        }
+      } catch (error) {
+        this.log('⚠️ Server test failed, but continuing...', 'WARN');
+      }
+
+      return devProcess;
+    } catch (error) {
+      this.log(`❌ Error starting dev server: ${error.message}`, 'ERROR');
+      this.issues.push(`Dev server start failed: ${error.message}`);
+      return null;
+    }
+  }
+}
+
+// Run if called directly
+if (require.main === module) {
+  const automation = new UltimateAppAutomation();
+  automation.fixAllIssues().catch((error) => {
+    logger.error('Automation failed:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = UltimateAppAutomation;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

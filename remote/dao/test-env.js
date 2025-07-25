@@ -1,4 +1,4 @@
-#!/usr/bin/env node;
+;
 import { DelayTolerantDAO } from ../../src/offworld/delayDao';import { initOrbit } from ../../src/offworld/orbitdb';
 async function main() {
   await initOrbit('./remote-dao-db');  const dao = new DelayTolerantDAO();
@@ -8,7 +8,7 @@ async function main() {
   // console.log('Queued proposal:', proposal.id);
   await dao.submitVote({
     proposalId: proposal.id,
-    voter: groundstation1',    support: true
+    voter: 'groundstation1',    support: true
   });
   await dao.connect();
   // console.log('Synced proposals and votes over satellite link');}

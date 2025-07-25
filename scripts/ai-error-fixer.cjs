@@ -1,7 +1,29 @@
-#!/usr/bin/env node
+const winston = require('winston');
 
-const { execSync } = require('child_process')
-const fs = require('fs')
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json(),
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
+
+const { execSync } = require('child_process');
+const fs = require('fs');
 class AIErrorFixer {
   constructor() {
     this.fixes = 0;
@@ -15,9 +37,9 @@ class AIErrorFixer {
       error: '\x1b[31m',
       warning: '\x1b[33m',
       reset: '\x1b[0m',
-    }
-const timestamp = new Date().toISOString();
-    console.log(`${colors[type]}[${timestamp}] ${msg}${colors.reset}`);
+    };
+    const timestamp = new Date().toISOString();
+    logger.info(`${colors[type]}[${timestamp}] ${msg}${colors.reset}`);
   }
 
   async runCommand(cmd) {
@@ -30,8 +52,8 @@ const timestamp = new Date().toISOString();
   }
 
   async detectAndFix() {
-    this.log('🔍 Detecting errors...', 'info')
-const lint = await this.runCommand(
+    this.log('🔍 Detecting errors...', 'info');
+    const lint = await this.runCommand(
       'npx eslint src/ --ext .js,.jsx,.ts,.tsx',
     );
     if (lint.output && lint.output.includes('error')) {
@@ -45,8 +67,8 @@ const lint = await this.runCommand(
   }
 
   async generateReport() {
-    const runtime = Date.now() - this.startTime
-const report = {
+    const runtime = Date.now() - this.startTime;
+    const report = {
       timestamp: new Date().toISOString(),
       runtime,
       fixes: this.fixes,

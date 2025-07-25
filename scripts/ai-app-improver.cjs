@@ -1,9 +1,31 @@
-#!/usr/bin/env node
+const winston = require('winston');
 
-const fs = require('fs')
-const path = require('path')
-const { execSync, spawn } = require('child_process')
-const chokidar = require('chokidar')
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json(),
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
+
+const fs = require('fs');
+const path = require('path');
+const { execSync, spawn } = require('child_process');
+const chokidar = require('chokidar');
 class AIAppImprover {
   constructor() {
     this.improvements = 0;
@@ -14,15 +36,15 @@ class AIAppImprover {
   }
 
   log(message, type = 'info') {
-    const timestamp = new Date().toISOString()
-const colors = {
+    const timestamp = new Date().toISOString();
+    const colors = {
       info: '\x1b[36m',
       success: '\x1b[32m',
       error: '\x1b[31m',
       warning: '\x1b[33m',
       reset: '\x1b[0m',
     };
-    console.log(`${colors[type]}[${timestamp}] ${message}${colors.reset}`);
+    logger.info(`${colors[type]}[${timestamp}] ${message}${colors.reset}`);
   }
 
   async runCommand(command, options = {}) {
@@ -39,8 +61,8 @@ const colors = {
   }
 
   async analyzeCodebase() {
-    this.log('🔍 Analyzing codebase for improvement opportunities...', 'info')
-const analysis = {
+    this.log('🔍 Analyzing codebase for improvement opportunities...', 'info');
+    const analysis = {
       performance: await this.analyzePerformance(),
       security: await this.analyzeSecurity(),
       codeQuality: await this.analyzeCodeQuality(),
@@ -295,8 +317,8 @@ const analysis = {
   }
 
   async generateReport() {
-    const runtime = Date.now() - this.startTime
-const report = {
+    const runtime = Date.now() - this.startTime;
+    const report = {
       timestamp: new Date().toISOString(),
       runtime: runtime,
       cycles: this.cycleCount,

@@ -1,5 +1,19 @@
 import React from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+
+export default function About() {
+  return (
+    <div>
+      <Head>
+        <title>About - Zion</title>
+      </Head>
+      <h1>About Zion</h1>
+      <p>Welcome to Zion - the future of decentralized innovation.</p>
+    </div>
+  );
+}
+=======
 ;
 export default function about()      {;
   return (
@@ -9,3 +23,4 @@ export default function about()      {;
   );
 
 }
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858

@@ -12,6 +12,6 @@ afterAll((done) => {
 });
 
 test('HelloService meets contract', async () => {'  const opts = {
-    provider: HelloService',    providerBaseUrl: http://localhost:4011',    pactUrls: [path.resolve(__dirname, ../pact/HelloConsumer-HelloService.json')],  };
+    provider: 'HelloService',    providerBaseUrl: http://localhost:4011',    pactUrls: [path.resolve(__dirname, ../pact/HelloConsumer-HelloService.json')],  };
   await new Verifier(opts).verifyProvider();
 });

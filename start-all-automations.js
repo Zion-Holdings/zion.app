@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Start All Automations
@@ -36,12 +35,12 @@ class StartAllAutomations {
     });
 
     this.manager.on('scriptCompleted', ({ script, processInfo, code }) => {
-      const status = code === 0 ? ✅' : ❌';
+      const status = code === 0 ? '✅' : '❌';
       console.log(`${status} Completed: ${script.name} (${processInfo.duration}ms)`);
     });
 
     this.manager.on('scriptImproved', ({ script, improvements }) => {
-      console.log(`🔧 Improved: ${script.name} (${improvements.join(', )})`);
+      console.log(`🔧 Improved: ${script.name} (${improvements.join(', ')})`);
     });
 
     this.manager.on('improvementCycleCompleted', (results) => {
@@ -69,12 +68,12 @@ class StartAllAutomations {
     const status = this.manager.getStatus();
     console.log('\n📊 Automation Scripts Manager Status');
     console.log('='.repeat(50));
-    console.log(`Status: ${status.isRunning ? ✅ Running' : ❌ Stopped'}`);
+    console.log(`Status: ${status.isRunning ? '✅ Running' : '❌ Stopped'}`);
     console.log(`Total Scripts: ${status.totalScripts}`);
     console.log(`Running Scripts: ${status.runningScripts.length}`);
     console.log(`Uptime: ${Math.round(status.uptime / 1000)}s`);
-    console.log(`Last Discovery: ${status.lastDiscovery ? status.lastDiscovery.toLocaleString() : Never'}`);
-    console.log(`Last Improvement: ${status.lastImprovement ? status.lastImprovement.toLocaleString() : Never'}`);
+    console.log(`Last Discovery: ${status.lastDiscovery ? status.lastDiscovery.toLocaleString() : 'Never'}`);
+    console.log(`Last Improvement: ${status.lastImprovement ? status.lastImprovement.toLocaleString() : 'Never'}`);
     
     if (status.runningScripts.length > 0) {
       console.log('\n🔄 Currently Running:');

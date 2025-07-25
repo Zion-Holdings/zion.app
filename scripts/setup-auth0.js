@@ -1,4 +1,38 @@
-# Sentry Error Monitoring (Optional)
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting Script...');
+    
+    try {
+      # Sentry Error Monitoring (Optional)
 # NEXT_PUBLIC_SENTRY_DSN=https://your-sentry-dsn@sentry.io/project-id
 
 # Reown Wallet Integration (Optional) 
@@ -15,7 +49,7 @@ NODE_ENV=development
 async function promptForAuth0Config() {
   logSection('AUTH0 CONFIGURATION SETUP');  
   logInfo('You need to set up an Auth0 account and application first.');  logInfo('Visit: https://manage.auth0.com/');  logInfo('Create a "Regular Web Application" and get your credentials.');  
-  console.warn('\n')
+  logger.warn('\n')
 const config = {};
   
   // Auth0 Domain
@@ -71,7 +105,7 @@ const missing = requiredVars.filter(varName => !process.env[varName]);
   try {
     const fetch = require('node-fetch');    const wellKnownUrl = `${process.env.AUTH0_ISSUER_BASE_URL}/.well-known/openid_configuration`;
     
-    console.warn(`Testing: ${wellKnownUrl}`)
+    logger.warn(`Testing: ${wellKnownUrl}`)
 const response = await fetch(wellKnownUrl);
     
     if (response.ok) {
@@ -89,13 +123,13 @@ const response = await fetch(wellKnownUrl);
 
 async function displayNextSteps() {
   logSection('NEXT STEPS');  
-  console.warn('');  logStep(1, Configure Auth0 Application Settings');  logInfo('In your Auth0 Dashboard → Applications → Settings, add:');  console.warn('');  console.warn('  Allowed Callback URLs:', yellow');  console.warn('    http://localhost:3000/api/auth/callback');  console.warn('    https://yourdomain.com/api/auth/callback');  console.warn('');  console.warn('  Allowed Logout URLs:', yellow');  console.warn('    http://localhost:3000');  console.warn('    https://yourdomain.com');  console.warn('');  console.warn('  Allowed Web Origins:', yellow');  console.warn('    http://localhost:3000');  console.warn('    https://yourdomain.com');  
-  logStep(2, Grant Management API Permissions');  logInfo('In Auth0 Dashboard → Applications → APIs → Machine to Machine:');  console.warn('  • Authorize your app for "Auth0 Management API"');  console.warn('  • Grant scopes: create:users, read:users, update:users');  
-  logStep(3, Restart Your Application');  console.warn('  npm run dev', cyan');  console.warn('  # or', white');  console.warn('  yarn dev', cyan');  
-  logStep(4, Test the Signup Flow');  console.warn('  1. Visit: http://localhost:3000/signup', cyan');  console.warn('  2. Fill out the form with test data', cyan');  console.warn('  3. Verify no error messages appear', cyan');  console.warn('  4. Check email for verification link', cyan');  
-  logStep(5, Verify Health Check');  console.warn('  Visit: http://localhost:3000/api/auth/health', cyan');  console.warn('  Should return: {"status": "ok", ...}, cyan');  
-  console.warn('');  logSuccess('Setup complete! Follow the steps above to finish the configuration.');  
-  console.warn('');  logInfo('For detailed instructions, see: AUTH0_SETUP_GUIDE_ISSUE_1.md');  logInfo('For troubleshooting, check the Auth0 Dashboard → Monitoring → Logs');}
+  logger.warn('');  logStep(1, Configure Auth0 Application Settings');  logInfo('In your Auth0 Dashboard → Applications → Settings, add:');  logger.warn('');  logger.warn('  Allowed Callback URLs:', yellow');  logger.warn('    http://localhost:3000/api/auth/callback');  logger.warn('    https://yourdomain.com/api/auth/callback');  logger.warn('');  logger.warn('  Allowed Logout URLs:', yellow');  logger.warn('    http://localhost:3000');  logger.warn('    https://yourdomain.com');  logger.warn('');  logger.warn('  Allowed Web Origins:', yellow');  logger.warn('    http://localhost:3000');  logger.warn('    https://yourdomain.com');  
+  logStep(2, Grant Management API Permissions');  logInfo('In Auth0 Dashboard → Applications → APIs → Machine to Machine:');  logger.warn('  • Authorize your app for "Auth0 Management API"');  logger.warn('  • Grant scopes: create:users, read:users, update:users');  
+  logStep(3, Restart Your Application');  logger.warn('  npm run dev', cyan');  logger.warn('  # or', white');  logger.warn('  yarn dev', cyan');  
+  logStep(4, Test the Signup Flow');  logger.warn('  1. Visit: http://localhost:3000/signup', cyan');  logger.warn('  2. Fill out the form with test data', cyan');  logger.warn('  3. Verify no error messages appear', cyan');  logger.warn('  4. Check email for verification link', cyan');  
+  logStep(5, Verify Health Check');  logger.warn('  Visit: http://localhost:3000/api/auth/health', cyan');  logger.warn('  Should return: {"status": "ok", ...}, cyan');  
+  logger.warn('');  logSuccess('Setup complete! Follow the steps above to finish the configuration.');  
+  logger.warn('');  logInfo('For detailed instructions, see: AUTH0_SETUP_GUIDE_ISSUE_1.md');  logInfo('For troubleshooting, check the Auth0 Dashboard → Monitoring → Logs');}
 
 async function main() {
   console.clear();
@@ -107,7 +141,7 @@ async function main() {
     
     if (isConfigured) {
       logInfo('Auth0 appears to be already configured.');      const reconfigure = await question('Do you want to reconfigure anyway? (y/N): );      
-      if (reconfigure.toLowerCase() !== y') {'        logInfo('Skipping configuration. Testing existing setup...');        const testPassed = await testConfiguration();
+      if (reconfigure.toLowerCase() !== 'y') {'        logInfo('Skipping configuration. Testing existing setup...');        const testPassed = await testConfiguration();
         
         if (testPassed) {
           logSuccess('Existing configuration is working correctly!');          await displayNextSteps();
@@ -135,14 +169,14 @@ async function main() {
     await displayNextSteps();
     
   } catch {
-    logErrorToProduction(`Setup failed: ${_'Error occurred'}`);    console.error(_error);
+    logErrorToProduction(`Setup failed: ${_'Error occurred'}`);    logger.error(_error);
   } finally {
     rl.close();
   }
 }
 
 // Handle script termination
-process.on('SIGINT', () => {'  console.warn('\n');  logInfo('Setup cancelled by user');  rl.close();
+process.on('SIGINT', () => {'  logger.warn('\n');  logInfo('Setup cancelled by user');  rl.close();
   process.exit(0);
 });
 
@@ -168,3 +202,25 @@ module.exports = {
   validateAuth0Domain,
   isPlaceholderValue
 };
+    } catch (error) {
+      logger.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    logger.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

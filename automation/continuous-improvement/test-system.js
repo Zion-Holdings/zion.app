@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Zion App - Continuous Improvement System Test
@@ -11,13 +10,13 @@ const path = require('path')
 const winston = require('winston');
 // Configure logging
 const logger = winston.createLogger({
-  level: info',  format: winston.format.combine(
+  level: 'info',  format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
-  defaultMeta: { service: test-system' },  transports: [
-    new winston.transports.File({ filename: logs/test-error.log', level: error' }),    new winston.transports.File({ filename: logs/test-combined.log' }),    new winston.transports.Console({
+  defaultMeta: { service: 'test-system' },  transports: [
+    new winston.transports.File({ filename: 'logs/test-error.log', level: 'error' }),    new winston.transports.File({ filename: 'logs/test-combined.log' }),    new winston.transports.Console({
       format: winston.format.combine(
         winston.format.colorize(),
         winston.format.simple()
@@ -88,7 +87,7 @@ const requiredDirs = [
   async testDependencies() {
     console.log('📦 Testing dependencies...');    
     try {
-      const packageJson = JSON.parse(fs.readFileSync('package.json', utf8'));      
+      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));      
       // Check required dependencies
       const requiredDeps = [
         axios',winston',node-cron',dotenv''      ];
@@ -120,7 +119,7 @@ const requiredDirs = [
   async testConfiguration() {
     console.log('⚙️  Testing configuration...');    
     try {
-      const envContent = fs.readFileSync('.env', utf8');      
+      const envContent = fs.readFileSync('.env', 'utf8');      
       // Check for required environment variables
       const requiredVars = ['CURSOR_API_KEY', CURSOR_WORKSPACE_ID'];      for (const varName of requiredVars) {
         if (envContent.includes(varName)) {
@@ -146,12 +145,12 @@ const requiredDirs = [
       // Test monitor module loading
       const Monitor = require('./monitor');      const monitor = new Monitor();
       
-      if (monitor && typeof monitor.start === function') {        this.pass('Monitor module loads successfully');      } else {
+      if (monitor && typeof monitor.start === 'function') {        this.pass('Monitor module loads successfully');      } else {
         this.fail('Monitor module failed to load');      }
 
       // Test metrics collection
       const metrics = monitor.getMetrics();
-      if (metrics && typeof metrics === object') {        this.pass('Metrics collection works');      } else {
+      if (metrics && typeof metrics === 'object') {        this.pass('Metrics collection works');      } else {
         this.fail('Metrics collection failed');      }
 
       // Test alerts
@@ -173,19 +172,19 @@ const requiredDirs = [
       // Test improver module loading
       const Improver = require('./improve');      const improver = new Improver();
       
-      if (improver && typeof improver.processImprovements === function') {        this.pass('Improver module loads successfully');      } else {
+      if (improver && typeof improver.processImprovements === 'function') {        this.pass('Improver module loads successfully');      } else {
         this.fail('Improver module failed to load');      }
 
       // Test stats collection
       const stats = improver.getStats();
-      if (stats && typeof stats === object') {        this.pass('Stats collection works');      } else {
+      if (stats && typeof stats === 'object') {        this.pass('Stats collection works');      } else {
         this.fail('Stats collection failed');      }
 
       // Test suggestion validation
       const testSuggestion = {
-        type: code_change',        description: Test improvement',        changes: [
+        type: 'code_change',        description: Test improvement',        changes: [
           {
-            action: add',            file: test-file.js',            content: console.log("test");          }
+            action: 'add',            file: 'test-file.js',            content: console.log("test");          }
         ]
       };
 
@@ -209,12 +208,12 @@ const requiredDirs = [
       // Test cursor integration module loading
       const CursorIntegration = require('./cursor-integration');      const cursor = new CursorIntegration();
       
-      if (cursor && typeof cursor.generateSuggestions === function') {        this.pass('Cursor integration module loads successfully');      } else {
+      if (cursor && typeof cursor.generateSuggestions === 'function') {        this.pass('Cursor integration module loads successfully');      } else {
         this.fail('Cursor integration module failed to load');      }
 
       // Test prompt building
       const testData = {
-        type: codeQuality',        severity: medium',        data: { lintErrors: 5 }
+        type: 'codeQuality',        severity: 'medium',        data: { lintErrors: 5 }
       }
 const prompt = cursor.buildPrompt(testData);
       if (prompt && prompt.includes('codeQuality')) {'        this.pass('Prompt building works');      } else {
@@ -226,8 +225,8 @@ const prompt = cursor.buildPrompt(testData);
           message: {
             content: JSON.stringify({
               improvements: [{
-                type: code_change',                description: Test improvement',                changes: [{
-                  action: add',                  file: test-file.js',                  content: console.log("test");                }]
+                type: 'code_change',                description: Test improvement',                changes: [{
+                  action: 'add',                  file: 'test-file.js',                  content: console.log("test");                }]
               }]
             })
           }
@@ -255,7 +254,7 @@ const Improver = require('./improve');      const improver = new Improver();
       
       if (improver.createBackup) {
         const backupPath = await improver.createBackup({
-          type: test',          changes: [{ file: testFile }]
+          type: 'test',          changes: [{ file: testFile }]
         });
         
         if (fs.existsSync(backupPath)) {
@@ -347,3 +346,17 @@ if (require.main === module) {
 }
 
 module.exports = TestSystem; 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

@@ -1,0 +1,61 @@
+{
+  "timestamp": "2025-07-23T02:37:23.995Z",
+  "duration": 237,
+  "summary": {
+    "total": 7,
+    "passed": 6,
+    "failed": 1,
+    "successRate": "85.7"
+  },
+  "results": [
+    {
+      "testName": "Core Automation System",
+      "passed": true,
+      "message": "All core components loaded successfully",
+      "details": null,
+      "timestamp": "2025-07-23T02:37:23.977Z"
+    },
+    {
+      "testName": "Netlify Automation",
+      "passed": true,
+      "message": "Netlify components loaded successfully",
+      "details": null,
+      "timestamp": "2025-07-23T02:37:23.983Z"
+    },
+    {
+      "testName": "Cursor Chat Automation",
+      "passed": true,
+      "message": "Cursor chat automation script accessible",
+      "details": null,
+      "timestamp": "2025-07-23T02:37:23.984Z"
+    },
+    {
+      "testName": "Performance Monitoring",
+      "passed": true,
+      "message": "Performance monitoring components loaded successfully",
+      "details": null,
+      "timestamp": "2025-07-23T02:37:23.989Z"
+    },
+    {
+      "testName": "Continuous Improvement",
+      "passed": false,
+      "message": "CI system import failed: Invalid or unexpected token",
+      "details": null,
+      "timestamp": "2025-07-23T02:37:23.992Z"
+    },
+    {
+      "testName": "File System and Config",
+      "passed": true,
+      "message": "All required directories and config files accessible",
+      "details": null,
+      "timestamp": "2025-07-23T02:37:23.993Z"
+    },
+    {
+      "testName": "System Integration",
+      "passed": true,
+      "message": "Main automation system loads successfully",
+      "details": null,
+      "timestamp": "2025-07-23T02:37:23.993Z"
+    }
+  ]
+}

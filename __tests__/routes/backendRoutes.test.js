@@ -28,47 +28,47 @@ describe('Auth endpoints', () => {'  let app;
 
   describe('POST /auth/login', () => {'    it('returns token on success', async () => {'      User.findOne.mockReturnValue({
         select: jest.fn().mockResolvedValue({
-          _id: 1',          email: user@example.com',          name: User',          passwordHash: hash',        })
+          _id: 1',          email: user@example.com',          name: 'User',          passwordHash: 'hash',        })
       });
       bcrypt.compare.mockResolvedValue(true);
       jwt.sign.mockReturnValue('jwt');
       const res = await request(app)
-        .post('/auth/login')        .send({ email: user@example.com', password: pass' });
+        .post('/auth/login')        .send({ email: user@example.com', password: 'pass' });
       expect(res.status).toBe(200);
       expect(res.body).toEqual({
-        accessToken: jwt',        user: { id: 1', email: user@example.com', name: User' },      });
+        accessToken: 'jwt',        user: { id: 1', email: user@example.com', name: 'User' },      });
     });
 
     it('fails with 401 for wrong password', async () => {'      User.findOne.mockReturnValue({
         select: jest.fn().mockResolvedValue({
-          _id: 1',          email: user@example.com',          name: User',          passwordHash: hash',        })
+          _id: 1',          email: user@example.com',          name: 'User',          passwordHash: 'hash',        })
       });
       bcrypt.compare.mockResolvedValue(false);
 
       const res = await request(app)
-        .post('/auth/login')        .send({ email: user@example.com', password: bad' });
+        .post('/auth/login')        .send({ email: user@example.com', password: 'bad' });
       expect(res.status).toBe(401);
       expect(res.body.code).toBe('WRONG_PASSWORD');    });
 
     it('fails with 500 when email missing', async () => {'      const res = await request(app)
-        .post('/auth/login')        .send({ password: pass' });
+        .post('/auth/login')        .send({ password: 'pass' });
       expect(res.status).toBe(500);
     });
   });
 
   describe('POST /auth/register', () => {'    it('creates user on success', async () => {'      User.mockImplementation(() => ({ setPassword: jest.fn() }));
-      const saved = { _id: 1', email: user@example.com', name: User' };      User.create.mockResolvedValue(saved);
+      const saved = { _id: 1', email: user@example.com', name: 'User' };      User.create.mockResolvedValue(saved);
       User.findOne.mockResolvedValue(saved);
       jwt.sign.mockReturnValue('jwt');
       const res = await request(app)
-        .post('/auth/register')        .send({ name: User', email: user@example.com', password: pass' });
+        .post('/auth/register')        .send({ name: 'User', email: user@example.com', password: 'pass' });
       expect(res.status).toBe(201);
       expect(res.body).toEqual({
-        accessToken: jwt',        user: { id: 1', email: user@example.com', name: User' },      });
+        accessToken: 'jwt',        user: { id: 1', email: user@example.com', name: 'User' },      });
     });
 
     it('returns 400 when required fields missing', async () => {'      const res = await request(app)
-        .post('/auth/register')        .send({ name: User', email: user@example.com' });
+        .post('/auth/register')        .send({ name: 'User', email: user@example.com' });
       expect(res.status).toBe(400);
     });
 
@@ -78,7 +78,7 @@ describe('Auth endpoints', () => {'  let app;
       User.create.mockRejectedValue(err);
 
       const res = await request(app)
-        .post('/auth/register')        .send({ name: User', email: user@example.com', password: pass' });
+        .post('/auth/register')        .send({ name: 'User', email: user@example.com', password: 'pass' });
       expect(res.status).toBe(409);
       expect(res.body.code).toBe('EMAIL_EXISTS');    });
   });
@@ -93,7 +93,7 @@ describe('Sync endpoints', () => {'  let app;
   });
 
   describe('GET /sync/status', () => {'    it('returns current sync state', async () => {'      syncStore.lastUpdated = Date.now();
-      syncStore.proposals.set('p1', { id: p1' });
+      syncStore.proposals.set('p1', { id: 'p1' });
       const res = await request(app).get('/sync/status');
       expect(res.status).toBe(200);
       expect(res.body.proposals).toHaveLength(1);
@@ -102,12 +102,12 @@ describe('Sync endpoints', () => {'  let app;
   });
 
   describe('POST /sync/hub', () => {'    it('updates store and returns ok', async () => {'      const res = await request(app)
-        .post('/sync/hub')        .send({ proposals: [{ id: p1', version: 1 }] });
+        .post('/sync/hub')        .send({ proposals: [{ id: 'p1', version: 1 }] });
       expect(res.status).toBe(200);
-      expect(res.body.status).toBe('ok');      expect(syncStore.proposals.get('p1')).toEqual({ id: p1', version: 1 });    });
+      expect(res.body.status).toBe('ok');      expect(syncStore.proposals.get('p1')).toEqual({ id: 'p1', version: 1 });    });
 
     it('rejects invalid merkle root', async () => {'      const res = await request(app)
-        .post('/sync/hub')        .send({ merkleRoot: bad', proposals: [] });
+        .post('/sync/hub')        .send({ merkleRoot: 'bad', proposals: [] });
       expect(res.status).toBe(400);
       expect(res.body.error).toBe('Invalid merkle root');    });
   });

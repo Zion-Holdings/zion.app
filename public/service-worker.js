@@ -22,11 +22,11 @@ workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute(self.__WB_MANIFEST || []);
 
 workbox.routing.registerRoute(
-  ({request}) => request.method === GET' && request.url.includes('/api/'),  new workbox.strategies.StaleWhileRevalidate({ cacheName: api-get' }));
+  ({request}) => request.method === GET' && request.url.includes('/api/'),  new workbox.strategies.StaleWhileRevalidate({ cacheName: 'api-get' }));
 
 workbox.routing.registerRoute(
   ({request}) => ['image',font'].includes(request.destination),  new workbox.strategies.CacheFirst({
-    cacheName: assets',    plugins: [
+    cacheName: 'assets',    plugins: [
       new workbox.expiration.ExpirationPlugin({ maxEntries: 60, maxAgeSeconds: 30 * 24 * 60 * 60 })
     ]
   })
@@ -34,7 +34,7 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
   ({ url }) => url.href.includes('/product_images/'),  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: product-images',    plugins: [
+    cacheName: 'product-images',    plugins: [
       new workbox.expiration.ExpirationPlugin({
         maxEntries: 100,
         maxAgeSeconds: 7 * 24 * 60 * 60
@@ -46,7 +46,7 @@ workbox.routing.registerRoute(
 // Cache documentation pages for offline access
 workbox.routing.registerRoute(
   ({ url }) => url.pathname.startsWith('/docs') || url.pathname.startsWith('/resources/docs'),  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: docs-pages',    plugins: [
+    cacheName: 'docs-pages',    plugins: [
       new workbox.expiration.ExpirationPlugin({
         maxEntries: 50,
         maxAgeSeconds: 30 * 24 * 60 * 60
@@ -61,7 +61,7 @@ try {
       queueDidReplay: async () => {
         const clients = await self.clients.matchAll();
         for (const client of clients) {
-          client.postMessage({ type: QUEUE_SYNCED' });        }
+          client.postMessage({ type: 'QUEUE_SYNCED' });        }
       }
     }
   });
@@ -70,11 +70,11 @@ try {
 ;
 const networkOnlyOptions = bgSyncPlugin ? { plugins: [bgSyncPlugin] } : {};
 workbox.routing.registerRoute(
-  ({url, request}) => url.pathname.startsWith('/api/') && request.method !== GET',  new workbox.strategies.NetworkOnly(networkOnlyOptions)
+  ({url, request}) => url.pathname.startsWith('/api/') && request.method !== 'GET',  new workbox.strategies.NetworkOnly(networkOnlyOptions)
 );
 
 workbox.routing.setCatchHandler(async ({ event }) => {
-  if (event.request.destination === document') {'    return caches.match('/offline.html');  }
+  if (event.request.destination === 'document') {'    return caches.match('/offline.html');  }
   return Response.error();
 });
 
@@ -102,7 +102,7 @@ self.addEventListener('message', event => {'  try {
         .then(() => {
           // Send success response if there's a port'          if (event.ports && event.ports[0]) {
             try {
-              event.ports[0].postMessage({ type: SYNC_SUCCESS' });            } catch (_postError) {
+              event.ports[0].postMessage({ type: 'SYNC_SUCCESS' });            } catch (_postError) {
               console.error('Failed to post sync success message:', postError);            }
           }
         })
@@ -111,7 +111,7 @@ self.addEventListener('message', event => {'  try {
           return self.clients.matchAll().then(clients => {
             clients.forEach(client => {
               try {
-                client.postMessage({ type: SYNC_FAILED', error: err.message });              } catch (_postError) {
+                client.postMessage({ type: 'SYNC_FAILED', error: err.message });              } catch (_postError) {
                 console.error('Failed to post sync failure message:', postError);              }
             });
           });
@@ -123,7 +123,7 @@ self.addEventListener('message', event => {'  try {
             console.error('Background sync timed out:', timeoutError);            return self.clients.matchAll().then(clients => {
               clients.forEach(client => {
                 try {
-                  client.postMessage({ type: SYNC_TIMEOUT', error: Sync operation timed out' });                } catch (_postError) {
+                  client.postMessage({ type: 'SYNC_TIMEOUT', error: Sync operation timed out' });                } catch (_postError) {
                   console.error('Failed to post sync timeout message:', postError);                }
               });
             });
@@ -133,7 +133,7 @@ self.addEventListener('message', event => {'  try {
       // Handle other message types or send error response
       if (event.ports && event.ports[0]) {
         try {
-          event.ports[0].postMessage({ type: UNKNOWN_MESSAGE_TYPE' });        } catch (_postError) {
+          event.ports[0].postMessage({ type: 'UNKNOWN_MESSAGE_TYPE' });        } catch (_postError) {
           console.error('Failed to post error message:', postError);        }
       }
     }
@@ -141,7 +141,7 @@ self.addEventListener('message', event => {'  try {
     console.('Error handling service worker message:', );    // Try to send  response if possible
     if (event.ports && event.ports[0]) {
       try {
-        event.ports[0].postMessage({ type: MESSAGE_ERROR', : .message });      } catch (_postError) {
+        event.ports[0].postMessage({ type: 'MESSAGE_ERROR', : .message });      } catch (_postError) {
         console.error('Failed to post error message:', postError);      }
     }
   }

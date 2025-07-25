@@ -1,7 +1,29 @@
-#!/usr/bin/env node
+const winston = require('winston');
 
-const fs = require('fs')
-const { execSync } = require('child_process')
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json(),
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
+
+const fs = require('fs');
+const { execSync } = require('child_process');
 class SecurityScanner {
   constructor() {
     this.vulnerabilities = 0;
@@ -9,15 +31,15 @@ class SecurityScanner {
   }
 
   log(message, type = 'info') {
-    const timestamp = new Date().toISOString()
-const colors = {
+    const timestamp = new Date().toISOString();
+    const colors = {
       info: '\x1b[36m',
       success: '\x1b[32m',
       error: '\x1b[31m',
       warning: '\x1b[33m',
       reset: '\x1b[0m',
     };
-    console.log(`${colors[type]}[${timestamp}] ${message}${colors.reset}`);
+    logger.info(`${colors[type]}[${timestamp}] ${message}${colors.reset}`);
   }
 
   async runCommand(command) {
@@ -30,8 +52,8 @@ const colors = {
   }
 
   async scanDependencies() {
-    this.log('🔒 Scanning dependencies for vulnerabilities...', 'info')
-const auditResult = await this.runCommand('npm audit --json');
+    this.log('🔒 Scanning dependencies for vulnerabilities...', 'info');
+    const auditResult = await this.runCommand('npm audit --json');
     if (auditResult.success) {
       const audit = JSON.parse(auditResult.output);
       if (audit.metadata && audit.metadata.vulnerabilities) {
@@ -49,8 +71,8 @@ const auditResult = await this.runCommand('npm audit --json');
   }
 
   async scanSecrets() {
-    this.log('🔑 Scanning for secrets in code...', 'info')
-const secretsResult = await this.runCommand(
+    this.log('🔑 Scanning for secrets in code...', 'info');
+    const secretsResult = await this.runCommand(
       'grep -r "password\|secret\|key" --include="*.js" --include="*.ts" --include="*.tsx" src/ 2>/dev/null | grep -v "//" | head -5 || true',
     );
     if (secretsResult.success && secretsResult.output.trim()) {
@@ -72,8 +94,8 @@ const secretsResult = await this.runCommand(
   }
 
   async generateReport() {
-    const runtime = Date.now() - this.startTime
-const report = {
+    const runtime = Date.now() - this.startTime;
+    const report = {
       timestamp: new Date().toISOString(),
       runtime: runtime,
       vulnerabilities: this.vulnerabilities,

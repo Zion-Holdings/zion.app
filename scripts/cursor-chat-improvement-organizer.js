@@ -1,4 +1,36 @@
-#!/usr/bin/env node
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 const fs = require('fs')
 const path = require('path')
@@ -26,7 +58,7 @@ const GENERIC_TASKS = [
 function appendTodo(line) {
   const todo = `- [] ${new Date().toISOString()} | ${line.trim()}`;
   fs.appendFileSync(TODO_FILE, todo + \n');
-  console.log('TODO added:', todo);
+  logger.info('TODO added:', todo);
 }
 
 function processLine(line) {
@@ -57,7 +89,7 @@ function ensureTodoQueue() {
         GENERIC_TASKS[Math.floor(Math.random() * GENERIC_TASKS.length)]
 const todo = `- [] ${new Date().toISOString()} | ${task}`;
       fs.appendFileSync(TODO_FILE, todo + \n');
-      console.log('Auto-added TODO:', todo);
+      logger.info('Auto-added TODO:', todo);
     }
   }
 }
@@ -84,7 +116,7 @@ function watchForCompletions() {
         GENERIC_TASKS[Math.floor(Math.random() * GENERIC_TASKS.length)]
 const todo = `- [] ${new Date().toISOString()} | ${task}`;
       fs.appendFileSync(TODO_FILE, todo + \n');
-      console.log('Auto-added TODO after completion:', todo);
+      logger.info('Auto-added TODO after completion:', todo);
     }
     lastDoneCount = doneCount;
   }, 5000);
@@ -96,7 +128,7 @@ function tailLog() {
     fileSize = fs.statSync(LOG_FILE).size;
   }
   const stream = fs.createReadStream(LOG_FILE, {
-    encoding: utf8',
+    encoding: 'utf8',
     start: fileSize
   })
 const rl = readline.createInterface({ input: stream });
@@ -105,7 +137,7 @@ const rl = readline.createInterface({ input: stream });
     const newSize = fs.statSync(LOG_FILE).size;
     if (newSize > fileSize) {
       const diffStream = fs.createReadStream(LOG_FILE, {
-        encoding: utf8',
+        encoding: 'utf8',
         start: fileSize,
         end: newSize
       })
@@ -119,4 +151,41 @@ const diffRl = readline.createInterface({ input: diffStream });
 tailLog();
 ensureTodoQueue();
 watchForCompletions();
-console.log('Cursor Chat Improvement Organizer started. Watching for TODOs...');
+logger.info('Cursor Chat Improvement Organizer started. Watching for TODOs...');
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

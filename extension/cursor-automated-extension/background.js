@@ -227,12 +227,12 @@ class CursorAutomatedBackground {
 
       case SEND_IMPROVEMENT':
         await this.sendImprovement(message.improvement);
-        sendResponse({ status: sent' });
+        sendResponse({ status: 'sent' });
         break;
 
       case SYNC_COMPUTERS':
         await this.syncWithOtherComputers();
-        sendResponse({ status: synced' });
+        sendResponse({ status: 'synced' });
         break;
 
       case GET_IMPROVEMENTS':
@@ -242,7 +242,7 @@ class CursorAutomatedBackground {
       case CLEAR_IMPROVEMENTS':
         this.improvements = [];
         await this.saveState();
-        sendResponse({ status: cleared' });
+        sendResponse({ status: 'cleared' });
         break;
 
       case GET_PERFORMANCE':
@@ -302,7 +302,7 @@ class CursorAutomatedBackground {
 
   trackDevelopmentActivity(tabId, tab) {
     const activity = {
-      type: development_activity',
+      type: 'development_activity',
       tabId,
       url: tab.url,
       title: tab.title,
@@ -315,7 +315,7 @@ class CursorAutomatedBackground {
 
   trackActiveSession(tabId) {
     const session = {
-      type: active_session',
+      type: 'active_session',
       tabId,
       timestamp: Date.now(),
       computerId: this.computerId
@@ -326,7 +326,7 @@ class CursorAutomatedBackground {
 
   trackNavigation(details) {
     const navigation = {
-      type: navigation',
+      type: 'navigation',
       url: details.url,
       tabId: details.tabId,
       timestamp: Date.now(),
@@ -351,7 +351,7 @@ class CursorAutomatedBackground {
 
       // Send to local system
       await fetch(`http://localhost:${this.config.localPort}/heartbeat`, {
-        method: POST',
+        method: 'POST',
         headers: { Content-Type': application/json' },
         body: JSON.stringify(heartbeat)
       });
@@ -360,7 +360,7 @@ class CursorAutomatedBackground {
       await fetch(
         `http://localhost:${this.config.coordinationPort}/heartbeat`,
         {
-          method: POST',
+          method: 'POST',
           headers: { Content-Type': application/json' },
           body: JSON.stringify(heartbeat)
         },
@@ -387,7 +387,7 @@ class CursorAutomatedBackground {
       const response = await fetch(
         `http://localhost:${this.config.coordinationPort}/sync`,
         {
-          method: POST',
+          method: 'POST',
           headers: { Content-Type': application/json' },
           body: JSON.stringify(syncData)
         },
@@ -451,7 +451,7 @@ class CursorAutomatedBackground {
 
   trackFileChange(filename) {
     const fileChange = {
-      type: file_change',
+      type: 'file_change',
       filename,
       timestamp: Date.now(),
       computerId: this.computerId
@@ -518,7 +518,7 @@ class CursorAutomatedBackground {
 
     if (issues.length > 0) {
       const performanceIssue = {
-        type: performance_issue',
+        type: 'performance_issue',
         issues,
         metrics: this.performanceMetrics,
         timestamp: Date.now(),
@@ -538,7 +538,7 @@ class CursorAutomatedBackground {
     try {
       // Send to local system
       await fetch(`http://localhost:${this.config.localPort}/improvement`, {
-        method: POST',
+        method: 'POST',
         headers: { Content-Type': application/json' },
         body: JSON.stringify(improvement)
       });
@@ -572,7 +572,7 @@ class CursorAutomatedBackground {
       tabs.forEach((tab) => {
         chrome.tabs
           .sendMessage(tab.id, {
-            type: AUTOMATION_TOGGLED',
+            type: 'AUTOMATION_TOGGLED',
             isEnabled: this.isEnabled
           })
           .catch(() => {
@@ -584,7 +584,7 @@ class CursorAutomatedBackground {
 
   sendQuickImprovement() {
     const quickImprovement = {
-      type: quick_improvement',
+      type: 'quick_improvement',
       message: User requested quick improvement',
       timestamp: Date.now(),
       computerId: this.computerId
@@ -601,7 +601,7 @@ const background = new CursorAutomatedBackground();
 chrome.runtime.onInstalled.addListener((details) => {
   console.log('Extension installed:', details.reason);
 
-  if (details.reason === install') {
+  if (details.reason === 'install') {
     // First time installation
     background.isEnabled = true;
     background.saveState();

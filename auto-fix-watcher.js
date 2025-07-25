@@ -11,7 +11,7 @@ const runCommand = (cmd) => {
 };
 
 const log = (...args) => {
-  console.log('[auto-fix-watcher], ...args);
+  console.log('[auto-fix-watcher]', ...args);
 };
 
 const runBuildAndTest = async () => {

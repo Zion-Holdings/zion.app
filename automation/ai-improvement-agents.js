@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 /**
  * Zion App - Specialized AI Improvement Agents
@@ -51,10 +73,10 @@ class AIImprovementAgents {
     
     for (const [type, agent] of this.agents) {
       try {
-        console.log(`🤖 Running ${type} agent...`);
+        logger.info(`🤖 Running ${type} agent...`);
         results[type] = await agent.analyze(codebaseData);
       } catch (error) {
-        console.error(`❌ Error running ${type} agent:`, error);
+        logger.error(`❌ Error running ${type} agent:`, error);
         results[type] = { error: error.message };
       }
     }
@@ -85,7 +107,7 @@ class PerformanceAgent {
   }
 
   async analyze(codebaseData) {
-    console.log('⚡ Performance Agent analyzing...');
+    logger.info('⚡ Performance Agent analyzing...');
     
     const analysis = {
       agent: this.name,
@@ -120,7 +142,7 @@ class PerformanceAgent {
   async analyzeBundleSize() {
     try {
       // Run webpack bundle analyzer or similar
-      const result = execSync('npm run build:analyze', { encoding: utf8' });
+      const result = execSync('npm run build: 'analyze', { encoding: 'utf8' });
       return { size: 450KB', analysis: result };
     } catch (error) {
       return { error: error.message };
@@ -161,8 +183,8 @@ class PerformanceAgent {
     
     if (analysis.bundleSize.size > 500KB') {
       suggestions.push({
-        type: bundle-optimization',
-        priority: high',
+        type: 'bundle-optimization',
+        priority: 'high',
         description: Bundle size is too large',
         action: Implement tree shaking and code splitting
       });
@@ -170,8 +192,8 @@ class PerformanceAgent {
     
     if (analysis.loadTimes.firstContentfulPaint > 1500) {
       suggestions.push({
-        type: load-time-optimization',
-        priority: high',
+        type: 'load-time-optimization',
+        priority: 'high',
         description: First contentful paint is slow',
         action: Optimize critical rendering path
       });
@@ -191,7 +213,7 @@ class SecurityAgent {
   }
 
   async analyze(codebaseData) {
-    console.log('🔒 Security Agent analyzing...');
+    logger.info('🔒 Security Agent analyzing...');
     
     const analysis = {
       agent: this.name,
@@ -225,7 +247,7 @@ class SecurityAgent {
 
   async runNpmAudit() {
     try {
-      const result = execSync('npm audit --json', { encoding: utf8' });
+      const result = execSync('npm audit --json', { encoding: 'utf8' });
       return JSON.parse(result);
     } catch (error) {
       return { error: error.message };
@@ -281,8 +303,8 @@ class SecurityAgent {
     
     if (analysis.securityScore < 90) {
       suggestions.push({
-        type: security-hardening',
-        priority: critical',
+        type: 'security-hardening',
+        priority: 'critical',
         description: Security score is below threshold',
         action: Fix identified vulnerabilities immediately
       })
@@ -290,8 +312,8 @@ class SecurityAgent {
     
     if (analysis.codeScan.xss > 0) {
       suggestions.push({
-        type: xss-prevention',
-        priority: high',
+        type: 'xss-prevention',
+        priority: 'high',
         description: XSS vulnerabilities detected',
         action: Implement proper input sanitization
       });
@@ -311,7 +333,7 @@ class CodeQualityAgent {
   }
 
   async analyze(codebaseData) {
-    console.log('📝 Code Quality Agent analyzing...');
+    logger.info('📝 Code Quality Agent analyzing...');
     
     const analysis = {
       agent: this.name,
@@ -348,7 +370,7 @@ class CodeQualityAgent {
 
   async runLinting() {
     try {
-      const result = execSync('npm run lint', { encoding: utf8' });
+      const result = execSync('npm run lint', { encoding: 'utf8' });
       return { output: result, errors: 0, warnings: 2 };
     } catch (error) {
       return { error: error.message, errors: 5, warnings: 10 };
@@ -409,8 +431,8 @@ class CodeQualityAgent {
     
     if (analysis.qualityScore < 80) {
       suggestions.push({
-        type: code-quality',
-        priority: medium',
+        type: 'code-quality',
+        priority: 'medium',
         description: Code quality score is below threshold',
         action: Fix linting errors and reduce complexity
       })
@@ -418,8 +440,8 @@ class CodeQualityAgent {
     
     if (analysis.linting.errors > 0) {
       suggestions.push({
-        type: linting-fixes',
-        priority: high',
+        type: 'linting-fixes',
+        priority: 'high',
         description: Linting errors detected',
         action: Fix all linting errors
       });
@@ -439,7 +461,7 @@ class AccessibilityAgent {
   }
 
   async analyze(codebaseData) {
-    console.log('♿ Accessibility Agent analyzing...');
+    logger.info('♿ Accessibility Agent analyzing...');
     
     const analysis = {
       agent: this.name,
@@ -481,9 +503,9 @@ class AccessibilityAgent {
       passes: 45,
       incomplete: 2,
       violations: [
-        { id: color-contrast', description: Insufficient color contrast' },
-        { id: missing-alt-text', description: Images missing alt text' },
-        { id: empty-heading', description: Empty heading elements' }
+        { id: 'color-contrast', description: Insufficient color contrast' },
+        { id: 'missing-alt-text', description: Images missing alt text' },
+        { id: 'empty-heading', description: Empty heading elements' }
       ]
     };
   }
@@ -501,7 +523,7 @@ class AccessibilityAgent {
     // Simulate keyboard navigation analysis
     return {
       focusableElements: 45,
-      tabOrder: logical',
+      tabOrder: 'logical',
       suggestions: ['Ensure logical tab order', Add skip links']
     };
   }
@@ -510,7 +532,7 @@ class AccessibilityAgent {
     // Simulate color contrast analysis
     return {
       contrastRatio: 3.2,
-      wcagLevel: AA',
+      wcagLevel: 'AA',
       suggestions: ['Improve color contrast', Add high contrast mode']
     };
   }
@@ -534,8 +556,8 @@ class AccessibilityAgent {
     
     if (analysis.accessibilityScore < 85) {
       suggestions.push({
-        type: accessibility-improvement',
-        priority: medium',
+        type: 'accessibility-improvement',
+        priority: 'medium',
         description: Accessibility score is below threshold',
         action: Fix accessibility violations
       })
@@ -543,8 +565,8 @@ class AccessibilityAgent {
     
     if (analysis.axeResults.violations > 0) {
       suggestions.push({
-        type: axe-violations',
-        priority: high',
+        type: 'axe-violations',
+        priority: 'high',
         description: Accessibility violations detected',
         action: Fix all axe violations
       });
@@ -564,7 +586,7 @@ class SEOAgent {
   }
 
   async analyze(codebaseData) {
-    console.log('🔍 SEO Agent analyzing...');
+    logger.info('🔍 SEO Agent analyzing...');
     
     const analysis = {
       agent: this.name,
@@ -602,11 +624,11 @@ class SEOAgent {
   async analyzeMetaTags() {
     // Simulate meta tag analysis
     return {
-      title: present',
-      description: present',
-      keywords: missing',
-      ogTags: partial',
-      twitterCards: missing',
+      title: 'present',
+      description: 'present',
+      keywords: 'missing',
+      ogTags: 'partial',
+      twitterCards: 'missing',
       suggestions: ['Add meta keywords', Complete Open Graph tags']
     };
   }
@@ -614,9 +636,9 @@ class SEOAgent {
   async analyzeStructuredData() {
     // Simulate structured data analysis
     return {
-      jsonLd: present',
-      microdata: missing',
-      rdfa: missing',
+      jsonLd: 'present',
+      microdata: 'missing',
+      rdfa: 'missing',
       suggestions: ['Add microdata markup', Implement RDFa']
     };
   }
@@ -633,9 +655,9 @@ class SEOAgent {
   async analyzeContent() {
     // Simulate content analysis
     return {
-      headings: proper',
-      images: with-alt',
-      links: descriptive',
+      headings: 'proper',
+      images: 'with-alt',
+      links: 'descriptive',
       suggestions: ['Add more descriptive links', Optimize image alt text']
     };
   }
@@ -644,16 +666,16 @@ class SEOAgent {
     let score = 100;
     
     // Deduct points for missing meta tags
-    if (analysis.metaTags.keywords === missing') {
+    if (analysis.metaTags.keywords === 'missing') {
       score -= 5;
     }
     
-    if (analysis.metaTags.ogTags === partial') {
+    if (analysis.metaTags.ogTags === 'partial') {
       score -= 10;
     }
     
     // Deduct points for missing structured data
-    if (analysis.structuredData.microdata === missing') {
+    if (analysis.structuredData.microdata === 'missing') {
       score -= 5;
     }
     
@@ -665,17 +687,17 @@ class SEOAgent {
     
     if (analysis.seoScore < 80) {
       suggestions.push({
-        type: seo-optimization',
-        priority: low',
+        type: 'seo-optimization',
+        priority: 'low',
         description: SEO score is below threshold',
         action: Implement SEO best practices
       });
     }
     
-    if (analysis.metaTags.ogTags === partial') {
+    if (analysis.metaTags.ogTags === 'partial') {
       suggestions.push({
-        type: og-tags',
-        priority: medium',
+        type: 'og-tags',
+        priority: 'medium',
         description: Incomplete Open Graph tags',
         action: Complete all Open Graph meta tags
       });
@@ -695,7 +717,7 @@ class TestCoverageAgent {
   }
 
   async analyze(codebaseData) {
-    console.log('🧪 Test Coverage Agent analyzing...');
+    logger.info('🧪 Test Coverage Agent analyzing...');
     
     const analysis = {
       agent: this.name,
@@ -728,7 +750,7 @@ class TestCoverageAgent {
 
   async runTestCoverage() {
     try {
-      const result = execSync('npm run test:coverage', { encoding: utf8' });
+      const result = execSync('npm run test: 'coverage', { encoding: 'utf8' });
       return {
         lineCoverage: 75,
         branchCoverage: 68,
@@ -776,8 +798,8 @@ class TestCoverageAgent {
     
     if (analysis.coverageScore < 80) {
       suggestions.push({
-        type: test-coverage',
-        priority: medium',
+        type: 'test-coverage',
+        priority: 'medium',
         description: Test coverage is below threshold',
         action: Add more comprehensive tests
       });
@@ -785,8 +807,8 @@ class TestCoverageAgent {
     
     if (analysis.coverage.lineCoverage < 80) {
       suggestions.push({
-        type: line-coverage',
-        priority: high',
+        type: 'line-coverage',
+        priority: 'high',
         description: Line coverage is insufficient',
         action: Add unit tests for uncovered lines
       });

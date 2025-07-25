@@ -1,8 +1,30 @@
-#!/usr/bin/env node
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json(),
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
 
 /**
  * AI Discovery Automation System
- * 
+ *
  * Autonomous system that continuously searches the web for new AI tools,
  * features, and capabilities, then integrates them into the automation system.
  */
@@ -17,7 +39,7 @@ const http = require('http');
 class AIDiscoveryAutomation extends EventEmitter {
   constructor() {
     super();
-    
+
     this.config = {
       // Discovery settings
       discovery: {
@@ -32,7 +54,7 @@ class AIDiscoveryAutomation extends EventEmitter {
           'anthropic.com/blog',
           'ai.google',
           'research.microsoft.com',
-          'ai.meta.com'
+          'ai.meta.com',
         ],
         keywords: [
           'new AI tools',
@@ -46,28 +68,28 @@ class AIDiscoveryAutomation extends EventEmitter {
           'AI optimization',
           'AI security',
           'AI performance',
-          'AI monitoring'
-        ]
+          'AI monitoring',
+        ],
       },
-      
+
       // Integration settings
       integration: {
         autoIntegrate: false, // Set to true for automatic integration
         testBeforeIntegration: true,
         backupBeforeChanges: true,
-        notifyOnDiscovery: true
+        notifyOnDiscovery: true,
       },
-      
+
       // Paths
       paths: {
         projectRoot: process.cwd(),
         logs: path.join(process.cwd(), 'logs'),
         discoveries: path.join(process.cwd(), 'discoveries'),
         integrations: path.join(process.cwd(), 'integrations'),
-        backups: path.join(process.cwd(), 'backups')
-      }
+        backups: path.join(process.cwd(), 'backups'),
+      },
     };
-    
+
     this.isRunning = false;
     this.currentDiscovery = null;
     this.discoveryHistory = [];
@@ -79,9 +101,9 @@ class AIDiscoveryAutomation extends EventEmitter {
       failedDiscoveries: 0,
       toolsDiscovered: 0,
       toolsIntegrated: 0,
-      lastDiscovery: null
+      lastDiscovery: null,
     };
-    
+
     this.initializeDirectories();
   }
 
@@ -90,7 +112,7 @@ class AIDiscoveryAutomation extends EventEmitter {
       this.config.paths.logs,
       this.config.paths.discoveries,
       this.config.paths.integrations,
-      this.config.paths.backups
+      this.config.paths.backups,
     ];
 
     for (const dir of dirs) {
@@ -152,11 +174,14 @@ class AIDiscoveryAutomation extends EventEmitter {
 
   startPeriodicDiscovery() {
     // Perform deep discovery every 6 hours
-    this.periodicTimer = setInterval(async () => {
-      if (this.isRunning && !this.currentDiscovery) {
-        await this.performDeepDiscovery();
-      }
-    }, 6 * 60 * 60 * 1000);
+    this.periodicTimer = setInterval(
+      async () => {
+        if (this.isRunning && !this.currentDiscovery) {
+          await this.performDeepDiscovery();
+        }
+      },
+      6 * 60 * 60 * 1000,
+    );
   }
 
   async performQuickDiscovery() {
@@ -165,20 +190,21 @@ class AIDiscoveryAutomation extends EventEmitter {
         id: `discovery_${Date.now()}`,
         type: 'quick',
         startTime: Date.now(),
-        status: 'running'
+        status: 'running',
       };
 
       this.log('info', '🔍 Starting quick AI discovery...');
 
       // Search for new AI tools
       const discoveries = await this.searchForAITools();
-      
+
       // Analyze discoveries
       const analyzedDiscoveries = await this.analyzeDiscoveries(discoveries);
-      
+
       // Filter relevant discoveries
-      const relevantDiscoveries = this.filterRelevantDiscoveries(analyzedDiscoveries);
-      
+      const relevantDiscoveries =
+        this.filterRelevantDiscoveries(analyzedDiscoveries);
+
       // Store discoveries
       await this.storeDiscoveries(relevantDiscoveries);
 
@@ -187,7 +213,9 @@ class AIDiscoveryAutomation extends EventEmitter {
       this.currentDiscovery.results = {
         totalDiscovered: discoveries.length,
         relevantDiscovered: relevantDiscoveries.length,
-        newTools: relevantDiscoveries.filter(d => !this.discoveredTools.has(d.id)).length
+        newTools: relevantDiscoveries.filter(
+          (d) => !this.discoveredTools.has(d.id),
+        ).length,
       };
 
       this.discoveryHistory.push(this.currentDiscovery);
@@ -196,9 +224,11 @@ class AIDiscoveryAutomation extends EventEmitter {
       this.stats.toolsDiscovered += relevantDiscoveries.length;
       this.stats.lastDiscovery = Date.now();
 
-      this.log('info', `✅ Quick discovery completed: ${discoveries.length} found, ${relevantDiscoveries.length} relevant`);
+      this.log(
+        'info',
+        `✅ Quick discovery completed: ${discoveries.length} found, ${relevantDiscoveries.length} relevant`,
+      );
       this.emit('discoveryCompleted', this.currentDiscovery);
-
     } catch (error) {
       this.log('error', `Quick discovery failed: ${error.message}`);
       this.stats.failedDiscoveries++;
@@ -214,36 +244,41 @@ class AIDiscoveryAutomation extends EventEmitter {
         id: `discovery_${Date.now()}`,
         type: 'deep',
         startTime: Date.now(),
-        status: 'running'
+        status: 'running',
       };
 
       this.log('info', '🔍 Starting deep AI discovery...');
 
       // Comprehensive search across all sources
       const allDiscoveries = [];
-      
+
       for (const source of this.config.discovery.aiSources) {
         try {
           const sourceDiscoveries = await this.searchSource(source);
           allDiscoveries.push(...sourceDiscoveries);
         } catch (error) {
-          this.log('warn', `Failed to search source ${source}: ${error.message}`);
+          this.log(
+            'warn',
+            `Failed to search source ${source}: ${error.message}`,
+          );
         }
       }
 
       // Analyze all discoveries
       const analyzedDiscoveries = await this.analyzeDiscoveries(allDiscoveries);
-      
+
       // Filter and rank discoveries
-      const relevantDiscoveries = this.filterRelevantDiscoveries(analyzedDiscoveries);
+      const relevantDiscoveries =
+        this.filterRelevantDiscoveries(analyzedDiscoveries);
       const rankedDiscoveries = this.rankDiscoveries(relevantDiscoveries);
-      
+
       // Store discoveries
       await this.storeDiscoveries(rankedDiscoveries);
 
       // Generate integration suggestions
-      const integrationSuggestions = await this.generateIntegrationSuggestions(rankedDiscoveries);
-      
+      const integrationSuggestions =
+        await this.generateIntegrationSuggestions(rankedDiscoveries);
+
       // Auto-integrate if enabled
       if (this.config.integration.autoIntegrate) {
         await this.autoIntegrateTools(integrationSuggestions);
@@ -254,7 +289,7 @@ class AIDiscoveryAutomation extends EventEmitter {
       this.currentDiscovery.results = {
         totalDiscovered: allDiscoveries.length,
         relevantDiscovered: relevantDiscoveries.length,
-        integrationSuggestions: integrationSuggestions.length
+        integrationSuggestions: integrationSuggestions.length,
       };
 
       this.discoveryHistory.push(this.currentDiscovery);
@@ -266,9 +301,11 @@ class AIDiscoveryAutomation extends EventEmitter {
       // Generate report
       await this.generateDiscoveryReport();
 
-      this.log('info', `✅ Deep discovery completed: ${allDiscoveries.length} found, ${relevantDiscoveries.length} relevant`);
+      this.log(
+        'info',
+        `✅ Deep discovery completed: ${allDiscoveries.length} found, ${relevantDiscoveries.length} relevant`,
+      );
       this.emit('discoveryCompleted', this.currentDiscovery);
-
     } catch (error) {
       this.log('error', `Deep discovery failed: ${error.message}`);
       this.stats.failedDiscoveries++;
@@ -280,26 +317,29 @@ class AIDiscoveryAutomation extends EventEmitter {
 
   async searchForAITools() {
     const discoveries = [];
-    
+
     // Search with different keywords
     for (const keyword of this.config.discovery.keywords) {
       try {
         const keywordDiscoveries = await this.searchKeyword(keyword);
         discoveries.push(...keywordDiscoveries);
       } catch (error) {
-        this.log('warn', `Failed to search keyword "${keyword}": ${error.message}`);
+        this.log(
+          'warn',
+          `Failed to search keyword "${keyword}": ${error.message}`,
+        );
       }
     }
-    
+
     return discoveries;
   }
 
   async searchKeyword(keyword) {
     const discoveries = [];
-    
+
     // Simulate web search (in real implementation, use actual search APIs)
     const searchResults = await this.simulateWebSearch(keyword);
-    
+
     for (const result of searchResults) {
       discoveries.push({
         id: this.generateId(result.url),
@@ -309,20 +349,20 @@ class AIDiscoveryAutomation extends EventEmitter {
         source: 'web_search',
         keyword: keyword,
         timestamp: Date.now(),
-        relevance: this.calculateRelevance(result, keyword)
+        relevance: this.calculateRelevance(result, keyword),
       });
     }
-    
+
     return discoveries;
   }
 
   async searchSource(source) {
     const discoveries = [];
-    
+
     try {
       // Simulate source scraping (in real implementation, use actual scraping)
       const sourceContent = await this.simulateSourceScraping(source);
-      
+
       for (const item of sourceContent) {
         discoveries.push({
           id: this.generateId(item.url),
@@ -331,13 +371,13 @@ class AIDiscoveryAutomation extends EventEmitter {
           url: item.url,
           source: source,
           timestamp: Date.now(),
-          relevance: this.calculateRelevance(item, 'AI tools')
+          relevance: this.calculateRelevance(item, 'AI tools'),
         });
       }
     } catch (error) {
       this.log('warn', `Failed to search source ${source}: ${error.message}`);
     }
-    
+
     return discoveries;
   }
 
@@ -347,13 +387,13 @@ class AIDiscoveryAutomation extends EventEmitter {
       {
         title: `New AI Tool for ${keyword}`,
         description: `Latest AI tool that helps with ${keyword}`,
-        url: `https://example.com/ai-tool-${Date.now()}`
+        url: `https://example.com/ai-tool-${Date.now()}`,
       },
       {
         title: `AI Automation for ${keyword}`,
         description: `Automated AI solution for ${keyword}`,
-        url: `https://example.com/ai-automation-${Date.now()}`
-      }
+        url: `https://example.com/ai-automation-${Date.now()}`,
+      },
     ];
   }
 
@@ -363,26 +403,29 @@ class AIDiscoveryAutomation extends EventEmitter {
       {
         title: `AI Tool from ${source}`,
         description: `New AI tool discovered from ${source}`,
-        url: `https://${source}/ai-tool-${Date.now()}`
-      }
+        url: `https://${source}/ai-tool-${Date.now()}`,
+      },
     ];
   }
 
   async analyzeDiscoveries(discoveries) {
     const analyzed = [];
-    
+
     for (const discovery of discoveries) {
       try {
         const analysis = await this.analyzeDiscovery(discovery);
         analyzed.push({
           ...discovery,
-          analysis
+          analysis,
         });
       } catch (error) {
-        this.log('warn', `Failed to analyze discovery ${discovery.id}: ${error.message}`);
+        this.log(
+          'warn',
+          `Failed to analyze discovery ${discovery.id}: ${error.message}`,
+        );
       }
     }
-    
+
     return analyzed;
   }
 
@@ -394,9 +437,9 @@ class AIDiscoveryAutomation extends EventEmitter {
       integrationDifficulty: this.assessIntegrationDifficulty(discovery),
       impact: this.assessImpact(discovery),
       requirements: this.extractRequirements(discovery),
-      alternatives: this.findAlternatives(discovery)
+      alternatives: this.findAlternatives(discovery),
     };
-    
+
     return analysis;
   }
 
@@ -404,66 +447,77 @@ class AIDiscoveryAutomation extends EventEmitter {
     const categories = {
       'code-generation': ['code generation', 'codegen', 'autocomplete'],
       'code-review': ['code review', 'static analysis', 'linting'],
-      'testing': ['testing', 'test generation', 'test automation'],
-      'debugging': ['debugging', 'error detection', 'bug finding'],
-      'optimization': ['optimization', 'performance', 'efficiency'],
-      'security': ['security', 'vulnerability', 'threat detection'],
-      'monitoring': ['monitoring', 'observability', 'logging'],
-      'deployment': ['deployment', 'ci/cd', 'automation']
+      testing: ['testing', 'test generation', 'test automation'],
+      debugging: ['debugging', 'error detection', 'bug finding'],
+      optimization: ['optimization', 'performance', 'efficiency'],
+      security: ['security', 'vulnerability', 'threat detection'],
+      monitoring: ['monitoring', 'observability', 'logging'],
+      deployment: ['deployment', 'ci/cd', 'automation'],
     };
-    
+
     const text = `${discovery.title} ${discovery.description}`.toLowerCase();
-    
+
     for (const [category, keywords] of Object.entries(categories)) {
-      if (keywords.some(keyword => text.includes(keyword))) {
+      if (keywords.some((keyword) => text.includes(keyword))) {
         return category;
       }
     }
-    
+
     return 'general';
   }
 
   assessPotential(discovery) {
     // Assess the potential value of the discovery
     let score = 0;
-    
+
     // Relevance scoring
     score += discovery.relevance * 0.4;
-    
+
     // Source credibility
-    const credibleSources = ['github.com', 'openai.com', 'anthropic.com', 'google.com'];
-    if (credibleSources.some(source => discovery.url.includes(source))) {
+    const credibleSources = [
+      'github.com',
+      'openai.com',
+      'anthropic.com',
+      'google.com',
+    ];
+    if (credibleSources.some((source) => discovery.url.includes(source))) {
       score += 0.3;
     }
-    
+
     // Recency
     const age = Date.now() - discovery.timestamp;
-    if (age < 24 * 60 * 60 * 1000) { // Less than 24 hours
+    if (age < 24 * 60 * 60 * 1000) {
+      // Less than 24 hours
       score += 0.2;
-    } else if (age < 7 * 24 * 60 * 60 * 1000) { // Less than 7 days
+    } else if (age < 7 * 24 * 60 * 60 * 1000) {
+      // Less than 7 days
       score += 0.1;
     }
-    
+
     // Description quality
     if (discovery.description.length > 100) {
       score += 0.1;
     }
-    
+
     return Math.min(1, Math.max(0, score));
   }
 
   assessIntegrationDifficulty(discovery) {
     // Assess how difficult it would be to integrate this tool
     const text = `${discovery.title} ${discovery.description}`.toLowerCase();
-    
-    if (text.includes('api') || text.includes('sdk') || text.includes('library')) {
+
+    if (
+      text.includes('api') ||
+      text.includes('sdk') ||
+      text.includes('library')
+    ) {
       return 'easy';
     } else if (text.includes('plugin') || text.includes('extension')) {
       return 'medium';
     } else if (text.includes('standalone') || text.includes('service')) {
       return 'hard';
     }
-    
+
     return 'unknown';
   }
 
@@ -471,19 +525,19 @@ class AIDiscoveryAutomation extends EventEmitter {
     // Assess the potential impact of integrating this tool
     const category = this.categorizeDiscovery(discovery);
     const potential = this.assessPotential(discovery);
-    
+
     const impactScores = {
       'code-generation': 0.9,
       'code-review': 0.8,
-      'testing': 0.7,
-      'debugging': 0.8,
-      'optimization': 0.6,
-      'security': 0.9,
-      'monitoring': 0.5,
-      'deployment': 0.6,
-      'general': 0.4
+      testing: 0.7,
+      debugging: 0.8,
+      optimization: 0.6,
+      security: 0.9,
+      monitoring: 0.5,
+      deployment: 0.6,
+      general: 0.4,
     };
-    
+
     return (impactScores[category] || 0.4) * potential;
   }
 
@@ -491,23 +545,23 @@ class AIDiscoveryAutomation extends EventEmitter {
     // Extract requirements for integrating this tool
     const requirements = [];
     const text = `${discovery.title} ${discovery.description}`.toLowerCase();
-    
+
     if (text.includes('api key') || text.includes('authentication')) {
       requirements.push('api_key');
     }
-    
+
     if (text.includes('docker') || text.includes('container')) {
       requirements.push('docker');
     }
-    
+
     if (text.includes('python') || text.includes('pip')) {
       requirements.push('python');
     }
-    
+
     if (text.includes('node') || text.includes('npm')) {
       requirements.push('nodejs');
     }
-    
+
     return requirements;
   }
 
@@ -515,37 +569,37 @@ class AIDiscoveryAutomation extends EventEmitter {
     // Find alternative tools in the same category
     const category = this.categorizeDiscovery(discovery);
     const alternatives = [];
-    
+
     for (const [id, tool] of this.discoveredTools) {
       if (tool.analysis.category === category && id !== discovery.id) {
         alternatives.push({
           id: tool.id,
           title: tool.title,
-          url: tool.url
+          url: tool.url,
         });
       }
     }
-    
+
     return alternatives;
   }
 
   filterRelevantDiscoveries(discoveries) {
-    return discoveries.filter(discovery => {
+    return discoveries.filter((discovery) => {
       // Filter by relevance score
       if (discovery.relevance < 0.3) {
         return false;
       }
-      
+
       // Filter by potential
       if (discovery.analysis.potential < 0.4) {
         return false;
       }
-      
+
       // Filter duplicates
       if (this.discoveredTools.has(discovery.id)) {
         return false;
       }
-      
+
       return true;
     });
   }
@@ -555,19 +609,19 @@ class AIDiscoveryAutomation extends EventEmitter {
       // Rank by impact score
       const impactA = a.analysis.impact;
       const impactB = b.analysis.impact;
-      
+
       if (impactA !== impactB) {
         return impactB - impactA;
       }
-      
+
       // Then by potential
       const potentialA = a.analysis.potential;
       const potentialB = b.analysis.potential;
-      
+
       if (potentialA !== potentialB) {
         return potentialB - potentialA;
       }
-      
+
       // Then by relevance
       return b.relevance - a.relevance;
     });
@@ -576,48 +630,62 @@ class AIDiscoveryAutomation extends EventEmitter {
   async storeDiscoveries(discoveries) {
     for (const discovery of discoveries) {
       this.discoveredTools.set(discovery.id, discovery);
-      
+
       // Save to file
-      const filePath = path.join(this.config.paths.discoveries, `${discovery.id}.json`);
+      const filePath = path.join(
+        this.config.paths.discoveries,
+        `${discovery.id}.json`,
+      );
       await fs.writeFile(filePath, JSON.stringify(discovery, null, 2));
     }
   }
 
   async generateIntegrationSuggestions(discoveries) {
     const suggestions = [];
-    
+
     for (const discovery of discoveries) {
-      if (discovery.analysis.impact > 0.7 && discovery.analysis.integrationDifficulty !== 'hard') {
+      if (
+        discovery.analysis.impact > 0.7 &&
+        discovery.analysis.integrationDifficulty !== 'hard'
+      ) {
         suggestions.push({
           tool: discovery,
           priority: discovery.analysis.impact > 0.8 ? 'high' : 'medium',
           reason: `High impact (${discovery.analysis.impact.toFixed(2)}) and ${discovery.analysis.integrationDifficulty} integration`,
-          estimatedEffort: this.estimateIntegrationEffort(discovery)
+          estimatedEffort: this.estimateIntegrationEffort(discovery),
         });
       }
     }
-    
-    return suggestions.sort((a, b) => b.tool.analysis.impact - a.tool.analysis.impact);
+
+    return suggestions.sort(
+      (a, b) => b.tool.analysis.impact - a.tool.analysis.impact,
+    );
   }
 
   estimateIntegrationEffort(discovery) {
     const effortScores = {
-      'easy': 1,
-      'medium': 3,
-      'hard': 5,
-      'unknown': 2
+      easy: 1,
+      medium: 3,
+      hard: 5,
+      unknown: 2,
     };
-    
+
     return effortScores[discovery.analysis.integrationDifficulty] || 2;
   }
 
   async autoIntegrateTools(suggestions) {
     for (const suggestion of suggestions) {
-      if (suggestion.priority === 'high' && this.config.integration.autoIntegrate) {
+      if (
+        suggestion.priority === 'high' &&
+        this.config.integration.autoIntegrate
+      ) {
         try {
           await this.integrateTool(suggestion.tool);
         } catch (error) {
-          this.log('error', `Failed to auto-integrate tool ${suggestion.tool.id}: ${error.message}`);
+          this.log(
+            'error',
+            `Failed to auto-integrate tool ${suggestion.tool.id}: ${error.message}`,
+          );
         }
       }
     }
@@ -625,15 +693,15 @@ class AIDiscoveryAutomation extends EventEmitter {
 
   async integrateTool(discovery) {
     this.log('info', `🔧 Integrating tool: ${discovery.title}`);
-    
+
     // Create backup
     if (this.config.integration.backupBeforeChanges) {
       await this.createBackup();
     }
-    
+
     // Generate integration code
     const integrationCode = await this.generateIntegrationCode(discovery);
-    
+
     // Test integration
     if (this.config.integration.testBeforeIntegration) {
       const testResult = await this.testIntegration(integrationCode);
@@ -641,34 +709,37 @@ class AIDiscoveryAutomation extends EventEmitter {
         throw new Error(`Integration test failed: ${testResult.error}`);
       }
     }
-    
+
     // Apply integration
     await this.applyIntegration(discovery, integrationCode);
-    
+
     // Mark as integrated
     this.integratedTools.set(discovery.id, {
       ...discovery,
       integratedAt: Date.now(),
-      integrationCode
+      integrationCode,
     });
-    
+
     this.stats.toolsIntegrated++;
-    
+
     this.log('info', `✅ Successfully integrated tool: ${discovery.title}`);
   }
 
   async createBackup() {
-    const backupPath = path.join(this.config.paths.backups, `backup-${Date.now()}`);
+    const backupPath = path.join(
+      this.config.paths.backups,
+      `backup-${Date.now()}`,
+    );
     await fs.mkdir(backupPath, { recursive: true });
-    
+
     // Copy relevant files
     const filesToBackup = ['package.json', 'automation/', 'scripts/'];
-    
+
     for (const file of filesToBackup) {
       try {
         const sourcePath = path.join(this.config.paths.projectRoot, file);
         const destPath = path.join(backupPath, file);
-        
+
         if (await this.fileExists(sourcePath)) {
           await this.copyFile(sourcePath, destPath);
         }
@@ -681,7 +752,7 @@ class AIDiscoveryAutomation extends EventEmitter {
   async generateIntegrationCode(discovery) {
     // Generate integration code based on discovery
     const template = this.getIntegrationTemplate(discovery);
-    
+
     return template
       .replace('{{TOOL_NAME}}', discovery.title)
       .replace('{{TOOL_URL}}', discovery.url)
@@ -691,7 +762,7 @@ class AIDiscoveryAutomation extends EventEmitter {
 
   getIntegrationTemplate(discovery) {
     const category = discovery.analysis.category;
-    
+
     const templates = {
       'code-generation': `
 // AI Code Generation Integration
@@ -723,7 +794,7 @@ const ${discovery.title.replace(/\s+/g, '').toLowerCase()} = {
 
 module.exports = ${discovery.title.replace(/\s+/g, '').toLowerCase()};
       `,
-      'default': `
+      default: `
 // AI Tool Integration
 const ${discovery.title.replace(/\s+/g, '').toLowerCase()} = {
   name: '{{TOOL_NAME}}',
@@ -737,9 +808,9 @@ const ${discovery.title.replace(/\s+/g, '').toLowerCase()} = {
 };
 
 module.exports = ${discovery.title.replace(/\s+/g, '').toLowerCase()};
-      `
+      `,
     };
-    
+
     return templates[category] || templates.default;
   }
 
@@ -747,15 +818,18 @@ module.exports = ${discovery.title.replace(/\s+/g, '').toLowerCase()};
     // Test the integration code
     try {
       // Create temporary test file
-      const testFile = path.join(this.config.paths.integrations, 'test-integration.js');
+      const testFile = path.join(
+        this.config.paths.integrations,
+        'test-integration.js',
+      );
       await fs.writeFile(testFile, integrationCode);
-      
+
       // Test syntax
       const syntaxCheck = execSync(`node -c ${testFile}`, { encoding: 'utf8' });
-      
+
       // Clean up
       await fs.unlink(testFile);
-      
+
       return { success: true };
     } catch (error) {
       return { success: false, error: error.message };
@@ -764,27 +838,34 @@ module.exports = ${discovery.title.replace(/\s+/g, '').toLowerCase()};
 
   async applyIntegration(discovery, integrationCode) {
     // Apply the integration
-    const integrationFile = path.join(this.config.paths.integrations, `${discovery.id}.js`);
+    const integrationFile = path.join(
+      this.config.paths.integrations,
+      `${discovery.id}.js`,
+    );
     await fs.writeFile(integrationFile, integrationCode);
-    
+
     // Update package.json if needed
     await this.updatePackageJson(discovery);
-    
+
     // Update automation system
     await this.updateAutomationSystem(discovery);
   }
 
   async updatePackageJson(discovery) {
     // Update package.json with new dependencies if needed
-    const packagePath = path.join(this.config.paths.projectRoot, 'package.json');
-    
+    const packagePath = path.join(
+      this.config.paths.projectRoot,
+      'package.json',
+    );
+
     try {
       const packageJson = JSON.parse(await fs.readFile(packagePath, 'utf8'));
-      
+
       // Add new script if needed
       const scriptName = discovery.title.replace(/\s+/g, '-').toLowerCase();
-      packageJson.scripts[`ai:${scriptName}`] = `node integrations/${discovery.id}.js`;
-      
+      packageJson.scripts[`ai:${scriptName}`] =
+        `node integrations/${discovery.id}.js`;
+
       await fs.writeFile(packagePath, JSON.stringify(packageJson, null, 2));
     } catch (error) {
       this.log('warn', `Failed to update package.json: ${error.message}`);
@@ -793,14 +874,18 @@ module.exports = ${discovery.title.replace(/\s+/g, '').toLowerCase()};
 
   async updateAutomationSystem(discovery) {
     // Update the automation system to include the new tool
-    const automationFile = path.join(this.config.paths.projectRoot, 'automation', 'enhanced-automation-system.js');
-    
+    const automationFile = path.join(
+      this.config.paths.projectRoot,
+      'automation',
+      'enhanced-automation-system.js',
+    );
+
     try {
       let automationCode = await fs.readFile(automationFile, 'utf8');
-      
+
       // Add import for new tool
       const importStatement = `const ${discovery.title.replace(/\s+/g, '').toLowerCase()} = require('../integrations/${discovery.id}.js');\n`;
-      
+
       if (!automationCode.includes(importStatement)) {
         automationCode = importStatement + automationCode;
         await fs.writeFile(automationFile, automationCode);
@@ -818,18 +903,23 @@ module.exports = ${discovery.title.replace(/\s+/g, '').toLowerCase()};
       topDiscoveries: Array.from(this.discoveredTools.values())
         .sort((a, b) => b.analysis.impact - a.analysis.impact)
         .slice(0, 10),
-      integrationSuggestions: await this.generateIntegrationSuggestions(Array.from(this.discoveredTools.values())),
+      integrationSuggestions: await this.generateIntegrationSuggestions(
+        Array.from(this.discoveredTools.values()),
+      ),
       summary: {
         totalTools: this.discoveredTools.size,
         integratedTools: this.integratedTools.size,
         averageImpact: this.calculateAverageImpact(),
-        topCategories: this.getTopCategories()
-      }
+        topCategories: this.getTopCategories(),
+      },
     };
 
-    const reportPath = path.join(this.config.paths.discoveries, `discovery-report-${Date.now()}.json`);
+    const reportPath = path.join(
+      this.config.paths.discoveries,
+      `discovery-report-${Date.now()}.json`,
+    );
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
-    
+
     this.log('info', `Generated discovery report: ${reportPath}`);
     return report;
   }
@@ -837,21 +927,24 @@ module.exports = ${discovery.title.replace(/\s+/g, '').toLowerCase()};
   calculateAverageImpact() {
     const tools = Array.from(this.discoveredTools.values());
     if (tools.length === 0) return 0;
-    
-    const totalImpact = tools.reduce((sum, tool) => sum + tool.analysis.impact, 0);
+
+    const totalImpact = tools.reduce(
+      (sum, tool) => sum + tool.analysis.impact,
+      0,
+    );
     return totalImpact / tools.length;
   }
 
   getTopCategories() {
     const categories = {};
-    
+
     for (const tool of this.discoveredTools.values()) {
       const category = tool.analysis.category;
       categories[category] = (categories[category] || 0) + 1;
     }
-    
+
     return Object.entries(categories)
-      .sort(([,a], [,b]) => b - a)
+      .sort(([, a], [, b]) => b - a)
       .slice(0, 5)
       .map(([category, count]) => ({ category, count }));
   }
@@ -860,14 +953,14 @@ module.exports = ${discovery.title.replace(/\s+/g, '').toLowerCase()};
     // Calculate relevance score based on keyword matching
     const text = `${result.title} ${result.description}`.toLowerCase();
     const keywordLower = keyword.toLowerCase();
-    
+
     let score = 0;
-    
+
     // Exact keyword match
     if (text.includes(keywordLower)) {
       score += 0.5;
     }
-    
+
     // Partial keyword match
     const keywordWords = keywordLower.split(' ');
     for (const word of keywordWords) {
@@ -875,21 +968,31 @@ module.exports = ${discovery.title.replace(/\s+/g, '').toLowerCase()};
         score += 0.1;
       }
     }
-    
+
     // AI-related terms
-    const aiTerms = ['ai', 'artificial intelligence', 'machine learning', 'ml', 'neural', 'deep learning'];
+    const aiTerms = [
+      'ai',
+      'artificial intelligence',
+      'machine learning',
+      'ml',
+      'neural',
+      'deep learning',
+    ];
     for (const term of aiTerms) {
       if (text.includes(term)) {
         score += 0.2;
       }
     }
-    
+
     return Math.min(1, Math.max(0, score));
   }
 
   generateId(url) {
     // Generate a unique ID based on URL
-    return Buffer.from(url).toString('base64').replace(/[^a-zA-Z0-9]/g, '').substring(0, 16);
+    return Buffer.from(url)
+      .toString('base64')
+      .replace(/[^a-zA-Z0-9]/g, '')
+      .substring(0, 16);
   }
 
   async fileExists(filePath) {
@@ -909,9 +1012,9 @@ module.exports = ${discovery.title.replace(/\s+/g, '').toLowerCase()};
   log(level, message) {
     const timestamp = new Date().toISOString();
     const logMessage = `[${timestamp}] [${level.toUpperCase()}] [AI-DISCOVERY] ${message}`;
-    
-    console.log(logMessage);
-    
+
+    logger.info(logMessage);
+
     // Save to log file
     const logPath = path.join(this.config.paths.logs, 'ai-discovery.log');
     fs.appendFile(logPath, logMessage + '\n').catch(() => {});
@@ -924,7 +1027,7 @@ module.exports = ${discovery.title.replace(/\s+/g, '').toLowerCase()};
       stats: this.stats,
       discoveredTools: this.discoveredTools.size,
       integratedTools: this.integratedTools.size,
-      lastDiscovery: this.stats.lastDiscovery
+      lastDiscovery: this.stats.lastDiscovery,
     };
   }
 }
@@ -942,7 +1045,7 @@ async function main() {
       await automation.stop();
       break;
     case 'status':
-      console.log(JSON.stringify(automation.getStatus(), null, 2));
+      logger.info(JSON.stringify(automation.getStatus(), null, 2));
       break;
     case 'discover':
       await automation.performQuickDiscovery();
@@ -951,16 +1054,31 @@ async function main() {
       await automation.performDeepDiscovery();
       break;
     default:
-      console.log('Usage: node ai-discovery-automation.cjs [start|stop|status|discover|deep]');
+      logger.info(
+        'Usage: node ai-discovery-automation.cjs [start|stop|status|discover|deep]',
+      );
       break;
   }
 }
 
 if (require.main === module) {
-  main().catch(error => {
-    console.error('AI Discovery Automation failed:', error.message);
+  main().catch((error) => {
+    logger.error('AI Discovery Automation failed:', error.message);
     process.exit(1);
   });
 }
 
-module.exports = AIDiscoveryAutomation; 
+module.exports = AIDiscoveryAutomation;
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});

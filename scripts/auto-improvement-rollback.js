@@ -5,7 +5,7 @@ module.exports = {
     return {
       reverted: true,
       action: actionResult,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     };
-  }
+  },
 };

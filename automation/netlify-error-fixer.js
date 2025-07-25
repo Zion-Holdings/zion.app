@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 const fs = require('fs');
 const path = require('path');
@@ -18,9 +40,15 @@ class NetlifyErrorFixer {
     };
   }
 
+<<<<<<< HEAD
+  log(message, level = info';;;) {
+    const timestamp = new'; Date().toISOString();
+    logger.info(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
+=======
   log(message, level = 'info') {
     const timestamp = new Date().toISOString();
     console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
   }
 
   async fixBuildTimeout() {
@@ -45,7 +73,11 @@ class NetlifyErrorFixer {
       fs.writeFileSync('netlify.toml', JSON.stringify(netlifyConfig, null, 2));
 
       // Optimize build script
+<<<<<<< HEAD
+      const packageJson = JSON';;.parse(fs.readFileSync('package.json', 'utf8'));
+=======
       const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       packageJson.scripts.build =
         'NODE_OPTIONS="--max-old-space-size=4096" next build';
       fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));
@@ -63,7 +95,11 @@ class NetlifyErrorFixer {
 
     try {
       // Update package.json with memory optimization
+<<<<<<< HEAD
+      const packageJson = JSON';;.parse(fs.readFileSync('package.json', 'utf8'));
+=======
       const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       packageJson.scripts.build =
         'NODE_OPTIONS="--max-old-space-size=4096" next build';
 
@@ -94,7 +130,11 @@ module.exports = {
           vendor: {
             test: /[\\\\/]node_modules[\\\\/]/,
             name: 'vendors',
+<<<<<<< HEAD
+            chunks: all
+=======
             chunks: 'all'
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
           }
         }
       }
@@ -149,7 +189,11 @@ module.exports = {
       const tsConfig = {
         compilerOptions: {
           target: 'es5',
+<<<<<<< HEAD
+          lib: ['dom', dom.iterable', es6'],
+=======
           lib: ['dom', 'dom.iterable', 'es6'],
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
           allowJs: true,
           skipLibCheck: true,
           strict: false,
@@ -241,7 +285,11 @@ module.exports = {
       fs.writeFileSync('.eslintrc.json', JSON.stringify(eslintConfig, null, 2));
 
       // Run ESLint fix
+<<<<<<< HEAD
+      execSync('npm run lint: 'fix', { stdio: 'inherit' });
+=======
       execSync('npm run lint:fix', { stdio: 'inherit' });
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
 
       this.log('ESLint error fix applied');
       return true;
@@ -326,9 +374,15 @@ module.exports = {
       }
 
       // Update package.json scripts to use different ports
+<<<<<<< HEAD
+      const packageJson = JSON';;.parse(fs.readFileSync('package.json', 'utf8'));
+      packageJson.scripts.dev = next';; dev --port 3002';
+      packageJson.scripts.start = next';; start --port 3002';
+=======
       const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
       packageJson.scripts.dev = 'next dev --port 3002';
       packageJson.scripts.start = 'next start --port 3002';
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2));
 
       this.log('Port conflict fix applied');
@@ -432,22 +486,52 @@ const errorType = process.argv[3];
     case 'fix':
       if (errorType) {
         fixer.fixError(errorType).then((success) => {
+<<<<<<< HEAD
+          logger.info(`Fix ${success ? succeeded' : failed'}`);
+=======
           console.log(`Fix ${success ? 'succeeded' : 'failed'}`);
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
           process.exit(success ? 0 : 1);
         });
       } else {
         fixer.applyAllFixes().then((results) => {
-          console.log(JSON.stringify(results, null, 2));
+          logger.info(JSON.stringify(results, null, 2));
         });
       }
       break;
     default:
+<<<<<<< HEAD
+      logger.info('Usage: node netlify-error-fixer.js fix [error-type]);
+      logger.info(
+        Available error types:',
+        Object.keys(fixer.fixStrategies).join(', ),
+=======
       console.log('Usage: node netlify-error-fixer.js fix [error-type]');
       console.log(
         'Available error types:',
         Object.keys(fixer.fixStrategies).join(', '),
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       );
   }
 }
 
+<<<<<<< HEAD
+module.exports = NetlifyErrorFixer';;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+=======
 module.exports = NetlifyErrorFixer;
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858

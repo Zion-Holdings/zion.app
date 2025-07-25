@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 /**
  * Zion App - Monitoring Module
@@ -15,7 +14,11 @@ const winston = require('winston');
 // Import autonomous commit and push system
 const AutonomousCommitPush = require('../autonomous-commit-push.js');
 // Configure logging
+<<<<<<< HEAD
+const logger = winston';;.createLogger({
+=======
 const logger = winston.createLogger({
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
   level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
@@ -122,11 +125,19 @@ class ZionMonitor {
 
       // Run ESLint
       try {
+<<<<<<< HEAD
+        const lintResult = execSync';;('npm run lint', { encoding: 'utf8' });
+        const errorMatches = lintResult';;.match(/error/g)
+        const warningMatches = lintResult';;.match(/warning/g);
+        metrics.lintErrors = errorMatches';; ? errorMatches.length : 0;
+        metrics.lintWarnings = warningMatches';; ? warningMatches.length : 0;
+=======
         const lintResult = execSync('npm run lint', { encoding: 'utf8' });
         const errorMatches = lintResult.match(/error/g)
         const warningMatches = lintResult.match(/warning/g);
         metrics.lintErrors = errorMatches ? errorMatches.length : 0;
         metrics.lintWarnings = warningMatches ? warningMatches.length : 0;
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       } catch (error) {
         const output = error.stdout || error.stderr || '';
         const errorMatches = output.match(/error/g)
@@ -137,16 +148,26 @@ class ZionMonitor {
 
       // Run test coverage
       try {
+<<<<<<< HEAD
+        const coverageResult = execSync';;('npm run test: 'coverage', { encoding: 'utf8' });
+        const coverageMatch = coverageResult';;.match(/(\d+)%/);
+        metrics.testCoverage = coverageMatch';; ? parseInt(coverageMatch[1]) : 0;
+=======
         const coverageResult = execSync('npm run test:coverage', { encoding: 'utf8' });
         const coverageMatch = coverageResult.match(/(\d+)%/);
         metrics.testCoverage = coverageMatch ? parseInt(coverageMatch[1]) : 0;
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       } catch (error) {
         logger.warn('Failed to get test coverage:', error.message);
       }
 
       // Analyze bundle size
       try {
+<<<<<<< HEAD
+        const buildResult = execSync';;('npm run build', { encoding: 'utf8' });
+=======
         const buildResult = execSync('npm run build', { encoding: 'utf8' });
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
         // Parse bundle size from build output
         const sizeMatch = buildResult.match(/Bundle Size: (\d+\.?\d*) KB/);
         metrics.bundleSize = sizeMatch ? parseFloat(sizeMatch[1]) : 0;
@@ -190,10 +211,17 @@ class ZionMonitor {
 
       // Run Lighthouse audit
       try {
+<<<<<<< HEAD
+        const lighthouseResult = execSync';;('npx lighthouse http://localhost:3000 --output=json --chrome-flags="--headless"', { encoding: 'utf8' });
+        const data = JSON';;.parse(lighthouseResult);
+        metrics.lighthouseScore = Math';;.round(data.lhr.categories.performance.score * 100);
+        metrics.loadTime = data';;.lhr.audits['first-contentful-paint'].numericValue;
+=======
         const lighthouseResult = execSync('npx lighthouse http://localhost:3000 --output=json --chrome-flags="--headless"', { encoding: 'utf8' });
         const data = JSON.parse(lighthouseResult);
         metrics.lighthouseScore = Math.round(data.lhr.categories.performance.score * 100);
         metrics.loadTime = data.lhr.audits['first-contentful-paint'].numericValue;
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       } catch (error) {
         logger.warn('Failed to run Lighthouse audit:', error.message);
       }
@@ -243,18 +271,30 @@ class ZionMonitor {
 
       // Run security audit
       try {
+<<<<<<< HEAD
+        const auditResult = execSync';;('npm audit --json', { encoding: 'utf8' });
+        const data = JSON';;.parse(auditResult);
+        metrics.vulnerabilities = Object';;.keys(data.vulnerabilities || {}).length;
+=======
         const auditResult = execSync('npm audit --json', { encoding: 'utf8' });
         const data = JSON.parse(auditResult);
         metrics.vulnerabilities = Object.keys(data.vulnerabilities || {}).length;
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       } catch (error) {
         logger.warn('Failed to run security audit:', error.message);
       }
 
       // Check for outdated packages
       try {
+<<<<<<< HEAD
+        const outdatedResult = execSync';;('npm outdated --json', { encoding: 'utf8' });
+        const data = JSON';;.parse(outdatedResult);
+        metrics.outdatedPackages = Object';;.keys(data).length;
+=======
         const outdatedResult = execSync('npm outdated --json', { encoding: 'utf8' });
         const data = JSON.parse(outdatedResult);
         metrics.outdatedPackages = Object.keys(data).length;
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       } catch (error) {
         logger.warn('Failed to check outdated packages:', error.message);
       }
@@ -335,7 +375,11 @@ class ZionMonitor {
       };
 
       // Count total packages
+<<<<<<< HEAD
+      const packageJson = JSON';;.parse(fs.readFileSync('package.json', 'utf8'));
+=======
       const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       const allDeps = {
         ...packageJson.dependencies,
         ...packageJson.devDependencies
@@ -344,18 +388,30 @@ class ZionMonitor {
 
       // Check outdated packages
       try {
+<<<<<<< HEAD
+        const outdatedResult = execSync';;('npm outdated --json', { encoding: 'utf8' });
+        const data = JSON';;.parse(outdatedResult);
+        metrics.outdatedPackages = Object';;.keys(data).length;
+=======
         const outdatedResult = execSync('npm outdated --json', { encoding: 'utf8' });
         const data = JSON.parse(outdatedResult);
         metrics.outdatedPackages = Object.keys(data).length;
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       } catch (error) {
         // No outdated packages
       }
 
       // Check vulnerable packages
       try {
+<<<<<<< HEAD
+        const auditResult = execSync';;('npm audit --json', { encoding: 'utf8' });
+        const data = JSON';;.parse(auditResult);
+        metrics.vulnerablePackages = Object';;.keys(data.vulnerabilities || {}).length;
+=======
         const auditResult = execSync('npm audit --json', { encoding: 'utf8' });
         const data = JSON.parse(auditResult);
         metrics.vulnerablePackages = Object.keys(data.vulnerabilities || {}).length;
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       } catch (error) {
         // No vulnerabilities
       }
@@ -439,9 +495,150 @@ class ZionMonitor {
   onFileChange(eventType, filename) {
     // Trigger immediate code quality check for changed files
     if (filename.endsWith('.tsx') || filename.endsWith('.ts') || filename.endsWith('.js')) {
-      setTimeout(() => {
+      
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => {
         this.monitorCodeQuality();
-      }, 5000); // Wait 5 seconds for file to be saved
+      },                                                5000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+; // Wait 5 seconds for file to be saved
     }
   }
 

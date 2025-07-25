@@ -1,12 +1,34 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 const io = require('socket.io-client');
 
-console.log('🎬 Live Demonstration: Automatic Reconnection System\n');
-console.log(
+logger.info('🎬 Live Demonstration: Automatic Reconnection System\n');
+logger.info(
   This demonstration will show how the automatic reconnection system',
 );
-console.log('handles network interruptions for all chat sessions.\n');
+logger.info('handles network interruptions for all chat sessions.\n');
 
 // Demo configuration
 const DEMO_CONFIG = {
@@ -21,19 +43,19 @@ const DEMO_CONFIG = {
 const CHAT_SESSIONS = [
   {
     name: General Chat Widget',
-    roomId: general-chat',
+    roomId: 'general-chat',
     color: 🔵',
     socketUrl: http://localhost:3006
   },
   {
     name: AI Assistant Chat',
-    roomId: ai-assistant',
+    roomId: 'ai-assistant',
     color: 🟣',
     socketUrl: http://localhost:3006
   },
   {
     name: Support Chatbot',
-    roomId: support-chat',
+    roomId: 'support-chat',
     color: 🟢',
     socketUrl: http://localhost:3006
   }
@@ -46,7 +68,7 @@ class LiveReconnectionDemo {
   }
 
   async start() {
-    console.log('🚀 Starting live reconnection demonstration...\n');
+    logger.info('🚀 Starting live reconnection demonstration...\n');
     this.isRunning = true;
 
     // Step 1: Establish initial connections
@@ -69,18 +91,18 @@ class LiveReconnectionDemo {
   }
 
   async step1_EstablishConnections() {
-    console.log('📡 Step 1: Establishing initial connections...\n');
+    logger.info('📡 Step 1: Establishing initial connections...\n');
 
     for (const session of CHAT_SESSIONS) {
       await this.createSession(session);
       await this.delay(1000);
     }
 
-    console.log('✅ All chat sessions connected successfully!\n');
+    logger.info('✅ All chat sessions connected successfully!\n');
   }
 
   async step2_SendMessages() {
-    console.log('💬 Step 2: Sending messages to all sessions...\n');
+    logger.info('💬 Step 2: Sending messages to all sessions...\n');
 
     for (const [sessionName, session] of this.sessions) {
       const message = `Hello from ${sessionName} - ${new Date().toLocaleTimeString()}`;
@@ -88,53 +110,53 @@ class LiveReconnectionDemo {
       await this.delay(800);
     }
 
-    console.log('✅ Messages sent to all sessions!\n');
+    logger.info('✅ Messages sent to all sessions!\n');
   }
 
   async step3_SimulateInterruption() {
-    console.log('🌐 Step 3: Simulating network interruption...\n');
-    console.log(
+    logger.info('🌐 Step 3: Simulating network interruption...\n');
+    logger.info(
       ⚠️  Network interruption detected! All connections will be lost.\n',
     );
 
     // Disconnect all sessions
     for (const [sessionName, session] of this.sessions) {
-      console.log(`${session.color} Disconnecting ${sessionName}...`);
+      logger.info(`${session.color} Disconnecting ${sessionName}...`);
       session.socket.disconnect();
       await this.delay(500);
     }
 
-    console.log(
+    logger.info(
       🔌 All connections lost. Automatic reconnection will begin...\n',
     );
   }
 
   async step4_ShowReconnection() {
-    console.log('🔄 Step 4: Automatic reconnection attempts...\n');
+    logger.info('🔄 Step 4: Automatic reconnection attempts...\n');
 
     // Wait for reconnection attempts
     await this.delay(3000);
 
-    console.log('📊 Reconnection Status:');
+    logger.info('📊 Reconnection Status:');
     for (const [sessionName, session] of this.sessions) {
       const status = session.socket.connected
         ? ✅ Connected
         : 🔄 Reconnecting...';
-      console.log(`${session.color} ${sessionName}: ${status}`);
+      logger.info(`${session.color} ${sessionName}: ${status}`);
     }
-    console.log('');
+    logger.info('');
   }
 
   async step5_SuccessfulReconnection() {
-    console.log('✅ Step 5: Successful reconnection demonstration...\n');
+    logger.info('✅ Step 5: Successful reconnection demonstration...\n');
 
     // Wait for reconnections to complete
     await this.delay(5000);
 
-    console.log('🎉 Reconnection Results:');
+    logger.info('🎉 Reconnection Results:');
     for (const [sessionName, session] of this.sessions) {
       if (session.socket.connected) {
-        console.log(
+        logger.info(
           `${session.color} ${sessionName}: ✅ Successfully reconnected!`,
         );
 
@@ -142,17 +164,17 @@ class LiveReconnectionDemo {
         const message = `Reconnected successfully at ${new Date().toLocaleTimeString()}`;
         await this.sendMessage(session, message);
       } else {
-        console.log(`${session.color} ${sessionName}: ❌ Reconnection failed`);
+        logger.info(`${session.color} ${sessionName}: ❌ Reconnection failed`);
       }
     }
-    console.log('');
+    logger.info('');
   }
 
   async step6_FinalStatus() {
-    console.log('📋 Step 6: Final system status...\n');
+    logger.info('📋 Step 6: Final system status...\n');
 
-    console.log('🎯 Demonstration Summary:');
-    console.log('========================');
+    logger.info('🎯 Demonstration Summary:');
+    logger.info('========================');
 
     let connectedCount = 0;
     for (const [sessionName, session] of this.sessions) {
@@ -162,27 +184,27 @@ class LiveReconnectionDemo {
 const attempts = session.reconnectionAttempts || 0
 const quality = session.connectionQuality || unknown';
 
-      console.log(`${session.color} ${sessionName}:`);
-      console.log(`   Status: ${status}`);
-      console.log(`   Reconnection attempts: ${attempts}`);
-      console.log(`   Connection quality: ${quality}`);
-      console.log('');
+      logger.info(`${session.color} ${sessionName}:`);
+      logger.info(`   Status: ${status}`);
+      logger.info(`   Reconnection attempts: ${attempts}`);
+      logger.info(`   Connection quality: ${quality}`);
+      logger.info('');
 
       if (session.socket.connected) connectedCount++;
     }
 
-    console.log(
+    logger.info(
       `📊 Overall: ${connectedCount}/${this.sessions.size} sessions connected`,
     );
 
     if (connectedCount === this.sessions.size) {
-      console.log('🎉 SUCCESS: All chat sessions automatically reconnected!');
+      logger.info('🎉 SUCCESS: All chat sessions automatically reconnected!');
     } else {
-      console.log('⚠️  Some sessions failed to reconnect automatically.');
+      logger.info('⚠️  Some sessions failed to reconnect automatically.');
     }
 
-    console.log('\n🔧 The automatic reconnection system is working correctly!');
-    console.log(
+    logger.info('\n🔧 The automatic reconnection system is working correctly!');
+    logger.info(
       💡 This ensures seamless chat experience even during network interruptions.\n',
     );
   }
@@ -207,14 +229,14 @@ const session = {
       };
 
       socket.on('connect', () => {
-        console.log(
+        logger.info(
           `${sessionConfig.color} ✅ ${sessionConfig.name} connected`,
         );
 
         // Join room
         socket.emit('join-room', sessionConfig.roomId, (response) => {
           if (response && response.success) {
-            console.log(
+            logger.info(
               `${sessionConfig.color} 🎯 ${sessionConfig.name} joined room: ${sessionConfig.roomId}`,
             );
           }
@@ -225,14 +247,14 @@ const session = {
 
       socket.on('reconnect', (attemptNumber) => {
         session.reconnectionAttempts = attemptNumber;
-        console.log(
+        logger.info(
           `${sessionConfig.color} 🔄 ${sessionConfig.name} reconnected after ${attemptNumber} attempts`,
         );
 
         // Rejoin room
         socket.emit('join-room', sessionConfig.roomId, (response) => {
           if (response && response.success) {
-            console.log(
+            logger.info(
               `${sessionConfig.color} 🎯 ${sessionConfig.name} rejoined room: ${sessionConfig.roomId}`,
             );
           }
@@ -241,13 +263,13 @@ const session = {
 
       socket.on('reconnect_attempt', (attemptNumber) => {
         session.reconnectionAttempts = attemptNumber;
-        console.log(
+        logger.info(
           `${sessionConfig.color} 🔄 ${sessionConfig.name} reconnection attempt ${attemptNumber}`,
         );
       });
 
       socket.on('disconnect', (reason) => {
-        console.log(
+        logger.info(
           `${sessionConfig.color} 🔌 ${sessionConfig.name} disconnected: ${reason}`,
         );
       });
@@ -263,12 +285,12 @@ const session = {
         {
           roomId: session.roomId,
           message: message,
-          sender: demo-user',
+          sender: 'demo-user',
           type: text
         },
         (response) => {
           if (response && response.success) {
-            console.log(
+            logger.info(
               `${session.color} 💬 ${session.name}: Message sent successfully`,
             );
           }
@@ -279,30 +301,171 @@ const session = {
   }
 
   delay(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
+    return new Promise((resolve) => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                                                ms);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
   }
 
   stop() {
-    console.log('\n🛑 Stopping demonstration...');
+    logger.info('\n🛑 Stopping demonstration...');
     this.isRunning = false;
 
     for (const [sessionName, session] of this.sessions) {
       session.socket.disconnect();
     }
 
-    console.log('✅ Demonstration stopped. All connections closed.');
+    logger.info('✅ Demonstration stopped. All connections closed.');
   }
 }
 
 // Handle graceful shutdown
 process.on('SIGINT', () => {
-  console.log('\n🛑 Demonstration interrupted by user');
+  logger.info('\n🛑 Demonstration interrupted by user');
   if (demo) demo.stop();
   process.exit(0);
 });
 
 process.on('SIGTERM', () => {
-  console.log('\n🛑 Demonstration terminated');
+  logger.info('\n🛑 Demonstration terminated');
   if (demo) demo.stop();
   process.exit(0);
 });
@@ -310,6 +473,6 @@ process.on('SIGTERM', () => {
 // Start the demonstration
 const demo = new LiveReconnectionDemo();
 demo.start().catch((error) => {
-  console.error('❌ Demonstration failed:', error);
+  logger.error('❌ Demonstration failed:', error);
   process.exit(1);
 });

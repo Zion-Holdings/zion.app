@@ -1,16 +1,46 @@
-#!/usr/bin/env node
 
-/**
- * Large Chunk Analyzer - Phase 2 Advanced Optimization
- *
- * Analyzes specific large chunks and provides targeted optimization strategies
- */
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
+
+
 
 const fs = require('fs')
 const path = require('path');
 
-// console.warn('🔍 LARGE CHUNK ANALYZER');
-// console.warn('=======================\n')
+// logger.warn('🔍 LARGE CHUNK ANALYZER');
+// logger.warn('=======================\n')
 const TARGET_SIZE = 244000; // 244KB target
 const buildStatsPath = path.join(process.cwd(), '.next');
 
@@ -181,23 +211,23 @@ const strategy = getOptimizationStrategy(category, _size);
 function generateDetailedReport() {
   const analysis = analyzeLargeChunks();
 
-  // console.warn(`📊 LARGE CHUNK ANALYSIS RESULTS:`);
-  // console.warn(`===============================`);
-  // console.warn(`Total chunks analyzed: ${analysis.totalAnalyzed}`);
-  // console.warn(`Total size: ${formatBytes(analysis.totalSize)}`);
-  // console.warn(`Large chunks (>${formatBytes(TARGET_SIZE)}): ${analysis.largeChunks.length}`);
-  // console.warn();
+  // logger.warn(`📊 LARGE CHUNK ANALYSIS RESULTS:`);
+  // logger.warn(`===============================`);
+  // logger.warn(`Total chunks analyzed: ${analysis.totalAnalyzed}`);
+  // logger.warn(`Total size: ${formatBytes(analysis.totalSize)}`);
+  // logger.warn(`Large chunks (>${formatBytes(TARGET_SIZE)}): ${analysis.largeChunks.length}`);
+  // logger.warn();
 
   if (analysis.largeChunks.length === 0) {
-    // console.warn('🎉 No chunks exceed the target size!');
+    // logger.warn('🎉 No chunks exceed the target size!');
     return { success: true, analysis };
   }
 
   // Sort by size (largest first)
   analysis.largeChunks.sort((a, b) => b.size - a.size);
 
-  // console.warn(`🔍 LARGE CHUNKS BREAKDOWN:`);
-  // console.warn(`=========================`);
+  // logger.warn(`🔍 LARGE CHUNKS BREAKDOWN:`);
+  // logger.warn(`=========================`);
 
   analysis.largeChunks.forEach((chunk, _index) => {
     const _urgency =
@@ -209,15 +239,15 @@ function generateDetailedReport() {
             ? '📊'
             : '📝';
 
-    // console.warn(`${_index + 1}. ${_urgency} ${chunk.name}`);
-    // console.warn(`   Size: ${chunk.sizeFormatted} (+${chunk.overTargetFormatted} over target)`);
-    // console.warn(`   Category: ${chunk.category}`);
-    // console.warn(`   Priority: ${chunk.strategy.priority}`);
+    // logger.warn(`${_index + 1}. ${_urgency} ${chunk.name}`);
+    // logger.warn(`   Size: ${chunk.sizeFormatted} (+${chunk.overTargetFormatted} over target)`);
+    // logger.warn(`   Category: ${chunk.category}`);
+    // logger.warn(`   Priority: ${chunk.strategy.priority}`);
 
     chunk.strategy.actions.forEach((_action) => {
-      // console.warn(`   • ${_action}`);
+      // logger.warn(`   • ${_action}`);
     });
-    // console.warn();
+    // logger.warn();
   });
 
   // Generate category-based recommendations
@@ -235,26 +265,26 @@ function generateDetailedReport() {
     categoryStats[chunk.category].chunks.push(chunk.name);
   });
 
-  // console.warn(`📋 OPTIMIZATION PRIORITIES BY CATEGORY:`);
-  // console.warn(`======================================`);
+  // logger.warn(`📋 OPTIMIZATION PRIORITIES BY CATEGORY:`);
+  // logger.warn(`======================================`);
 
   Object.entries(categoryStats)
     .sort(([, a], [, b]) => b.totalSize - a.totalSize)
     .forEach(([category, stats]) => {
-      // console.warn(`🔧 ${category.toUpperCase()}: ${stats.count} chunks, ${formatBytes(stats.totalSize)}`);
-      // console.warn(`   Chunks: ${stats.chunks.join(', ')}`)
+      // logger.warn(`🔧 ${category.toUpperCase()}: ${stats.count} chunks, ${formatBytes(stats.totalSize)}`);
+      // logger.warn(`   Chunks: ${stats.chunks.join(', ')}`)
 const _strategy = getOptimizationStrategy(category, stats.totalSize);
-      // console.warn(`   Priority: ${_strategy.priority}`);
-      // console.warn(`   Actions:`);
+      // logger.warn(`   Priority: ${_strategy.priority}`);
+      // logger.warn(`   Actions:`);
       // _strategy.actions.forEach(action => {
-      //   console.warn(`     • ${action}`);
+      //   logger.warn(`     • ${action}`);
       // });
-      // console.warn();
+      // logger.warn();
     });
 
   // Implementation guidance
-  // console.warn(`🚀 IMPLEMENTATION GUIDANCE:`);
-  // console.warn(`==========================`)
+  // logger.warn(`🚀 IMPLEMENTATION GUIDANCE:`);
+  // logger.warn(`==========================`)
 const criticalChunks = analysis.largeChunks.filter(
     (c) => c.strategy.priority === 'critical',
   )
@@ -263,28 +293,28 @@ const highPriorityChunks = analysis.largeChunks.filter(
   );
 
   if (criticalChunks.length > 0) {
-    // console.warn(`🚨 CRITICAL ISSUES (Fix Immediately):`);
+    // logger.warn(`🚨 CRITICAL ISSUES (Fix Immediately):`);
     // criticalChunks.forEach(chunk => {
-    //   console.warn(`   • ${chunk.name} (${chunk.category})`);
+    //   logger.warn(`   • ${chunk.name} (${chunk.category})`);
     // });
-    // console.warn();
+    // logger.warn();
   }
 
   if (highPriorityChunks.length > 0) {
-    // console.warn(`⚠️  HIGH PRIORITY (Next Sprint):`);
+    // logger.warn(`⚠️  HIGH PRIORITY (Next Sprint):`);
     // highPriorityChunks.forEach(chunk => {
-    //   console.warn(`   • ${chunk.name} (${chunk.category})`);
+    //   logger.warn(`   • ${chunk.name} (${chunk.category})`);
     // });
-    // console.warn();
+    // logger.warn();
   }
 
-  // console.warn(`📝 SUGGESTED NEXT STEPS:`);
-  // console.warn(`1. Address critical P2P library chunks immediately`);
-  // console.warn(`2. Implement dynamic imports for UI/chart libraries`);
-  // console.warn(`3. Review and optimize vendor bundling strategy`);
-  // console.warn(`4. Consider alternative lighter libraries`);
-  // console.warn(`5. Implement component-level code splitting`);
-  // console.warn();
+  // logger.warn(`📝 SUGGESTED NEXT STEPS:`);
+  // logger.warn(`1. Address critical P2P library chunks immediately`);
+  // logger.warn(`2. Implement dynamic imports for UI/chart libraries`);
+  // logger.warn(`3. Review and optimize vendor bundling strategy`);
+  // logger.warn(`4. Consider alternative lighter libraries`);
+  // logger.warn(`5. Implement component-level code splitting`);
+  // logger.warn();
 
   return { success: analysis.largeChunks.length <= 3, analysis };
 }
@@ -313,13 +343,13 @@ const report = {
   };
 
   fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-  // console.warn(`📄 Detailed analysis saved to: ${reportPath}`);
+  // logger.warn(`📄 Detailed analysis saved to: ${reportPath}`);
 }
 
 // Main execution
 try {
   if (!fs.existsSync(buildStatsPath)) {
-    // console.warn('❌ No build output found. Run `npm run build` first.');
+    // logger.warn('❌ No build output found. Run `npm run build` first.');
     process.exit(1);
   }
 
@@ -327,13 +357,49 @@ try {
   saveAnalysis(analysis);
 
   if (success) {
-    // console.warn('\n🎉 Chunk optimization target achieved!');
+    // logger.warn('\n🎉 Chunk optimization target achieved!');
   } else {
-    // console.warn('\n⚡ Continue chunk optimization efforts.');
+    // logger.warn('\n⚡ Continue chunk optimization efforts.');
   }
 
   process.exit(success ? 0 : 1);
 } catch (_error) {
-  // console.error('❌ Error during large chunk analysis:', _error.message);
+  // logger.error('❌ Error during large chunk analysis:', _error.message);
   process.exit(1);
 }
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+    } catch (error) {
+      logger.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    logger.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

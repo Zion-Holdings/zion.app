@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 const fs = require('fs');
 const path = require('path');
@@ -12,41 +34,41 @@ class AutonomousOrchestrator {
     this.restartDelay = 10000; // 10 seconds
     this.scripts = [
       {
-        name: efficient-improvement-system',
-        path: automation/efficient-improvement-system.js',
+        name: 'efficient-improvement-system',
+        path: 'automation/efficient-improvement-system.js',
         args: [],
         autoRestart: true,
         memoryLimit: 512
       },
       {
-        name: syntax-fixer',
-        path: automation/syntax-fixer.js',
+        name: 'syntax-fixer',
+        path: 'automation/syntax-fixer.js',
         args: [],
         autoRestart: true,
         memoryLimit: 256
       },
       {
-        name: monitor-system',
-        path: automation/monitor-improvement-system.js',
+        name: 'monitor-system',
+        path: 'automation/monitor-improvement-system.js',
         args: ['monitor'],
         autoRestart: true,
         memoryLimit: 128
       }
     ];
     this.projectRoot = process.cwd();
-    this.logDir = path.join(this.projectRoot, logs');
+    this.logDir = path.join(this.projectRoot, 'logs');
     this.pidFile = path.join(this.projectRoot, automation', .orchestrator.pid');
   }
 
   async start() {
-    console.log('🚀 [Orchestrator] Entering start());
+    logger.info('🚀 [Orchestrator] Entering start());
     this.isRunning = true;
     await this.setup();
     fs.writeFileSync(this.pidFile, process.pid.toString());
     await this.startAllScripts();
     this.startMonitoring();
     this.setupGracefulShutdown();
-    console.log('✅ [Orchestrator] All automation scripts launched');
+    logger.info('✅ [Orchestrator] All automation scripts launched');
     setInterval(() => this.checkProcessHealth(), 30000);
   }
 
@@ -54,7 +76,7 @@ class AutonomousOrchestrator {
     if (!fs.existsSync(this.logDir)) {
       fs.mkdirSync(this.logDir, { recursive: true });
     }
-    const automationDir = path.join(this.projectRoot, automation');
+    const automationDir = path.join(this.projectRoot, 'automation');
     if (!fs.existsSync(automationDir)) {
       fs.mkdirSync(automationDir, { recursive: true });
     }
@@ -62,16 +84,16 @@ class AutonomousOrchestrator {
 
   async startAllScripts() {
     for (const script of this.scripts) {
-      console.log(`[Orchestrator] Launching script: ${script.name}`);
+      logger.info(`[Orchestrator] Launching script: ${script.name}`);
       await this.startScript(script);
-      console.log(`[Orchestrator] Launched script: ${script.name}`);
+      logger.info(`[Orchestrator] Launched script: ${script.name}`);
     }
   }
 
   async startScript(script) {
     try {
       if (!fs.existsSync(script.path)) {
-        console.log(`⚠️ Script ${script.path} not found.`);
+        logger.info(`⚠️ Script ${script.path} not found.`);
         return;
       }
       const proc = spawn('node', [script.path, ...script.args], {
@@ -83,11 +105,11 @@ class AutonomousOrchestrator {
         }
       });
       proc.on('exit', (code, signal) => {
-        console.log(`❌ ${script.name} exited with code ${code}, signal ${signal}`);
+        logger.info(`❌ ${script.name} exited with code ${code}, signal ${signal}`);
         this.handleProcessExit(script);
       });
       proc.on('error', (error) => {
-        console.error(`❌ ${script.name} error:`, error.message);
+        logger.error(`❌ ${script.name} error:`, error.message);
         this.handleProcessExit(script);
       });
       this.processes.set(script.name, {
@@ -95,9 +117,9 @@ class AutonomousOrchestrator {
         script,
         restartCount: 0
       });
-      console.log(`✅ ${script.name} started (PID: ${proc.pid})`);
+      logger.info(`✅ ${script.name} started (PID: ${proc.pid})`);
     } catch (error) {
-      console.error(`❌ Failed to start ${script.name}:`, error.message);
+      logger.error(`❌ Failed to start ${script.name}:`, error.message);
     }
   }
 
@@ -105,8 +127,154 @@ class AutonomousOrchestrator {
     const procInfo = this.processes.get(script.name);
     if (!procInfo) return;
     if (script.autoRestart && procInfo.restartCount < this.maxRestartAttempts) {
+<<<<<<< HEAD
+      procInfo.restartCount++;
+      
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => this.startScript(script),                                                this.restartDelay);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+=======
       procInfo.restartCount++
       setTimeout(() => this.startScript(script), this.restartDelay);
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
     } else {
       this.processes.delete(script.name);
     }
@@ -145,7 +313,7 @@ class AutonomousOrchestrator {
     if (fs.existsSync(this.pidFile)) {
       fs.unlinkSync(this.pidFile);
     }
-    console.log('✅ Orchestrator stopped');
+    logger.info('✅ Orchestrator stopped');
   }
 
   getStatus() {
@@ -169,23 +337,23 @@ if (require.main === module) {
   const orchestrator = new AutonomousOrchestrator();
   const args = process.argv.slice(2);
   const command = args[0];
-  if (command === start') {
+  if (command === 'start') {
     orchestrator.start().catch(error => {
-      console.error('❌ Failed to start orchestrator:', error);
+      logger.error('❌ Failed to start orchestrator:', error);
       process.exit(1);
     });
-  } else if (command === stop') {
+  } else if (command === 'stop') {
     orchestrator.stop().catch(error => {
-      console.error('❌ Failed to stop orchestrator:', error);
+      logger.error('❌ Failed to stop orchestrator:', error);
       process.exit(1);
     });
-  } else if (command === status') {
+  } else if (command === 'status') {
     const status = orchestrator.getStatus();
-    console.log('📊 Orchestrator Status:', JSON.stringify(status, null, 2));
+    logger.info('📊 Orchestrator Status:', JSON.stringify(status, null, 2));
   } else {
-    console.log('Usage:');
-    console.log('  node automation/autonomous-orchestrator.js start   - Start all automation scripts');
-    console.log('  node automation/autonomous-orchestrator.js stop    - Stop all automation scripts');
-    console.log('  node automation/autonomous-orchestrator.js status  - Show status of all scripts');
+    logger.info('Usage:');
+    logger.info('  node automation/autonomous-orchestrator.js start   - Start all automation scripts');
+    logger.info('  node automation/autonomous-orchestrator.js stop    - Stop all automation scripts');
+    logger.info('  node automation/autonomous-orchestrator.js status  - Show status of all scripts');
   }
 } 

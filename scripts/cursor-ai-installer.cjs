@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json(),
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
 
 /**
  * Cursor AI Installer
@@ -7,10 +29,10 @@
  * with Cursor installed for distributed continuous improvement.
  */
 
-const fs = require('fs')
-const path = require('path')
-const { execSync, spawn } = require('child_process')
-const os = require('os')
+const fs = require('fs');
+const path = require('path');
+const { execSync, spawn } = require('child_process');
+const os = require('os');
 const crypto = require('crypto');
 
 // Configuration
@@ -100,7 +122,7 @@ const INSTALL_CONFIG = {
     communicationPort: 3002,
     heartbeatInterval: 30000,
   },
-}
+};
 class CursorAIInstaller {
   constructor() {
     this.installedAssistants = new Map();
@@ -109,7 +131,7 @@ class CursorAIInstaller {
   }
 
   async installOnLocalComputer() {
-    console.log('Installing AI assistants on local computer...');
+    logger.info('Installing AI assistants on local computer...');
 
     try {
       // Check if Cursor is installed
@@ -128,28 +150,28 @@ class CursorAIInstaller {
       // Start AI services
       await this.startAIServices();
 
-      console.log('✅ AI assistants installed successfully on local computer');
+      logger.info('✅ AI assistants installed successfully on local computer');
     } catch (error) {
-      console.error('❌ Failed to install AI assistants:', error.message);
+      logger.error('❌ Failed to install AI assistants:', error.message);
       throw error;
     }
   }
 
   async installOnRemoteComputers(computerList) {
-    console.log(
+    logger.info(
       `Installing AI assistants on ${computerList.length} remote computers...`,
-    )
-const results = [];
+    );
+    const results = [];
 
     for (const computer of computerList) {
       try {
-        console.log(`Installing on ${computer.hostname} (${computer.ip})...`)
-const result = await this.installOnRemoteComputer(computer);
+        logger.info(`Installing on ${computer.hostname} (${computer.ip})...`);
+        const result = await this.installOnRemoteComputer(computer);
         results.push({ computer, success: true, result });
 
-        console.log(`✅ Installed on ${computer.hostname}`);
+        logger.info(`✅ Installed on ${computer.hostname}`);
       } catch (error) {
-        console.error(
+        logger.error(
           `❌ Failed to install on ${computer.hostname}:`,
           error.message,
         );
@@ -162,8 +184,8 @@ const result = await this.installOnRemoteComputer(computer);
 
   async installOnRemoteComputer(computer) {
     // Create installation script
-    const installScript = this.generateInstallScript()
-const scriptPath = `/tmp/cursor_ai_install_${Date.now()}.sh`;
+    const installScript = this.generateInstallScript();
+    const scriptPath = `/tmp/cursor_ai_install_${Date.now()}.sh`;
 
     try {
       // Upload installation script
@@ -237,12 +259,12 @@ echo "Installation completed successfully!"
   }
 
   async installAssistant(assistant) {
-    console.log(`Installing ${assistant.name}...`);
+    logger.info(`Installing ${assistant.name}...`);
 
     try {
       // Execute installation commands
       for (const command of assistant.commands) {
-        console.log(`  Executing: ${command}`);
+        logger.info(`  Executing: ${command}`);
         execSync(command, { stdio: 'inherit' });
       }
 
@@ -255,9 +277,9 @@ echo "Installation completed successfully!"
         status: 'active',
       });
 
-      console.log(`  ✅ ${assistant.name} installed successfully`);
+      logger.info(`  ✅ ${assistant.name} installed successfully`);
     } catch (error) {
-      console.error(`  ❌ Failed to install ${assistant.name}:`, error.message);
+      logger.error(`  ❌ Failed to install ${assistant.name}:`, error.message);
       throw error;
     }
   }
@@ -275,8 +297,8 @@ echo "Installation completed successfully!"
       fs.mkdirSync(configDir, { recursive: true });
     }
 
-    const configPath = path.join(configDir, `${assistant.name}.json`)
-const config = {
+    const configPath = path.join(configDir, `${assistant.name}.json`);
+    const config = {
       name: assistant.name,
       description: assistant.description,
       config: assistant.config,
@@ -288,8 +310,8 @@ const config = {
   }
 
   async configureCursor() {
-    console.log('Configuring Cursor...')
-const configDir = path.join(os.homedir(), '.cursor', 'config');
+    logger.info('Configuring Cursor...');
+    const configDir = path.join(os.homedir(), '.cursor', 'config');
 
     // Ensure config directory exists
     if (!fs.existsSync(configDir)) {
@@ -297,8 +319,8 @@ const configDir = path.join(os.homedir(), '.cursor', 'config');
     }
 
     // Create main configuration
-    const mainConfigPath = path.join(configDir, 'cursor-config.json')
-const mainConfig = {
+    const mainConfigPath = path.join(configDir, 'cursor-config.json');
+    const mainConfig = {
       ...INSTALL_CONFIG.cursorConfig,
       aiAssistants: Array.from(this.installedAssistants.keys()),
       networkConfig: INSTALL_CONFIG.networkConfig,
@@ -308,8 +330,8 @@ const mainConfig = {
     fs.writeFileSync(mainConfigPath, JSON.stringify(mainConfig, null, 2));
 
     // Create AI service configuration
-    const aiServiceConfigPath = path.join(configDir, 'ai-service.json')
-const aiServiceConfig = {
+    const aiServiceConfigPath = path.join(configDir, 'ai-service.json');
+    const aiServiceConfig = {
       enabled: true,
       assistants: Array.from(this.installedAssistants.values()).map(
         (assistant) => ({
@@ -330,11 +352,11 @@ const aiServiceConfig = {
       JSON.stringify(aiServiceConfig, null, 2),
     );
 
-    console.log('  ✅ Cursor configured successfully');
+    logger.info('  ✅ Cursor configured successfully');
   }
 
   async startAIServices() {
-    console.log('Starting AI services...');
+    logger.info('Starting AI services...');
 
     try {
       // Start Cursor AI service
@@ -353,9 +375,9 @@ const aiServiceConfig = {
 
       discoveryProcess.unref();
 
-      console.log('  ✅ AI services started successfully');
+      logger.info('  ✅ AI services started successfully');
     } catch (error) {
-      console.error('  ❌ Failed to start AI services:', error.message);
+      logger.error('  ❌ Failed to start AI services:', error.message);
       throw error;
     }
   }
@@ -432,9 +454,9 @@ const aiServiceConfig = {
   }
 
   async discoverComputers() {
-    console.log('Discovering computers with Cursor installed...')
-const networkRange = this.getNetworkRange()
-const discoveredComputers = [];
+    logger.info('Discovering computers with Cursor installed...');
+    const networkRange = this.getNetworkRange();
+    const discoveredComputers = [];
 
     for (const ip of networkRange) {
       try {
@@ -442,7 +464,7 @@ const discoveredComputers = [];
         if (isCursorInstalled) {
           const computerInfo = await this.getComputerInfo(ip);
           discoveredComputers.push(computerInfo);
-          console.log(`  Found: ${computerInfo.hostname} (${ip})`);
+          logger.info(`  Found: ${computerInfo.hostname} (${ip})`);
         }
       } catch (error) {
         // Silently continue - not all IPs will have Cursor
@@ -453,8 +475,8 @@ const discoveredComputers = [];
   }
 
   getNetworkRange() {
-    const interfaces = os.networkInterfaces()
-const ips = [];
+    const interfaces = os.networkInterfaces();
+    const ips = [];
 
     for (const [name, nets] of Object.entries(interfaces)) {
       for (const net of nets) {
@@ -499,10 +521,10 @@ const ips = [];
 
   async getComputerInfo(ip) {
     try {
-      const hostname = await this.executeRemoteCommand(ip, 'hostname')
-const osInfo = await this.executeRemoteCommand(ip, 'uname -a')
-const cpuInfo = await this.executeRemoteCommand(ip, 'nproc')
-const memoryInfo = await this.executeRemoteCommand(ip, 'free -h');
+      const hostname = await this.executeRemoteCommand(ip, 'hostname');
+      const osInfo = await this.executeRemoteCommand(ip, 'uname -a');
+      const cpuInfo = await this.executeRemoteCommand(ip, 'nproc');
+      const memoryInfo = await this.executeRemoteCommand(ip, 'free -h');
 
       return {
         ip,
@@ -525,8 +547,8 @@ const memoryInfo = await this.executeRemoteCommand(ip, 'free -h');
   }
 
   async verifyInstallation() {
-    console.log('Verifying installation...')
-const verificationResults = [];
+    logger.info('Verifying installation...');
+    const verificationResults = [];
 
     for (const [name, assistant] of this.installedAssistants) {
       try {
@@ -537,7 +559,7 @@ const verificationResults = [];
           verifiedAt: Date.now(),
         });
 
-        console.log(
+        logger.info(
           `  ${isWorking ? '✅' : '❌'} ${name}: ${isWorking ? 'Working' : 'Not working'}`,
         );
       } catch (error) {
@@ -548,7 +570,7 @@ const verificationResults = [];
           verifiedAt: Date.now(),
         });
 
-        console.log(`  ❌ ${name}: Error - ${error.message}`);
+        logger.info(`  ❌ ${name}: Error - ${error.message}`);
       }
     }
 
@@ -586,8 +608,8 @@ const verificationResults = [];
         networkDiscovery: 'active',
         continuousImprovement: 'enabled',
       },
-    }
-const reportPath = path.join(
+    };
+    const reportPath = path.join(
       process.cwd(),
       'logs',
       'cursor-ai-installation-report.json',
@@ -601,7 +623,7 @@ const reportPath = path.join(
 
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
-    console.log(`📊 Installation report saved to: ${reportPath}`);
+    logger.info(`📊 Installation report saved to: ${reportPath}`);
 
     return report;
   }
@@ -609,9 +631,9 @@ const reportPath = path.join(
 
 // CLI interface
 if (require.main === module) {
-  const installer = new CursorAIInstaller()
-const args = process.argv.slice(2)
-const command = args[0];
+  const installer = new CursorAIInstaller();
+  const args = process.argv.slice(2);
+  const command = args[0];
 
   async function main() {
     try {
@@ -622,7 +644,7 @@ const command = args[0];
 
         case 'discover':
           const computers = await installer.discoverComputers();
-          console.log(
+          logger.info(
             `Found ${computers.length} computers with Cursor installed`,
           );
           break;
@@ -630,10 +652,10 @@ const command = args[0];
         case 'install-remote':
           const computerList = args
             .slice(1)
-            .map((ip) => ({ ip, hostname: ip }))
-const results =
+            .map((ip) => ({ ip, hostname: ip }));
+          const results =
             await installer.installOnRemoteComputers(computerList);
-          console.log(
+          logger.info(
             `Installation completed: ${results.filter((r) => r.success).length}/${results.length} successful`,
           );
           break;
@@ -647,7 +669,7 @@ const results =
           break;
 
         default:
-          console.log(`
+          logger.info(`
 Cursor AI Installer
 
 Usage:
@@ -664,7 +686,7 @@ Examples:
           `);
       }
     } catch (error) {
-      console.error('Error:', error.message);
+      logger.error('Error:', error.message);
       process.exit(1);
     }
   }
@@ -673,3 +695,16 @@ Examples:
 }
 
 module.exports = { CursorAIInstaller, INSTALL_CONFIG };
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});

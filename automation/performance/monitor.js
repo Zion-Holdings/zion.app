@@ -1,3 +1,26 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 const fs = require('fs').promises;
 const path = require('path');
 const { execSync } = require('child_process');
@@ -23,12 +46,12 @@ class PerformanceMonitor {
 
   async start() {
     if (this.isMonitoring) {
-      console.log('⚠️ Performance monitor is already running');
+      logger.info('⚠️ Performance monitor is already running');
       return;
     }
 
     this.isMonitoring = true;
-    console.log('📊 Performance monitor started');
+    logger.info('📊 Performance monitor started');
 
     // Start monitoring loop
     this.interval = setInterval(() => {
@@ -38,13 +61,13 @@ class PerformanceMonitor {
 
   async stop() {
     if (!this.isMonitoring) {
-      console.log('⚠️ Performance monitor is not running');
+      logger.info('⚠️ Performance monitor is not running');
       return;
     }
 
     this.isMonitoring = false;
     clearInterval(this.interval);
-    console.log('🛑 Performance monitor stopped');
+    logger.info('🛑 Performance monitor stopped');
   }
 
   async collectMetrics() {
@@ -74,7 +97,7 @@ class PerformanceMonitor {
       await this.logMetrics(metrics);
 
     } catch (error) {
-      console.error('❌ Error collecting metrics:', error);
+      logger.error('❌ Error collecting metrics:', error);
     }
   }
 
@@ -144,7 +167,11 @@ class PerformanceMonitor {
 
   async getBundleMetrics() {
     try {
+<<<<<<< HEAD
+      const output = execSync('npm run bundle: 'analyze', { stdio: 'pipe' });
+=======
       const output = execSync('npm run bundle:analyze', { stdio: 'pipe' });
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       return this.parseBundleAnalysis(output);
     } catch (error) {
       return { error: error.message };
@@ -250,8 +277,13 @@ class PerformanceMonitor {
       recommendations.push({
         type: 'performance',
         priority: 'high',
+<<<<<<< HEAD
+        message: High memory usage detected. Consider optimizing memory usage.',
+        action: Review memory-intensive operations and implement memory optimization strategies.
+=======
         message: 'High memory usage detected. Consider optimizing memory usage.',
         action: 'Review memory-intensive operations and implement memory optimization strategies.'
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       });
     }
 
@@ -259,8 +291,13 @@ class PerformanceMonitor {
       recommendations.push({
         type: 'reliability',
         priority: 'high',
+<<<<<<< HEAD
+        message: High alert rate detected. Review system performance.',
+        action: Investigate performance bottlenecks and optimize critical paths.
+=======
         message: 'High alert rate detected. Review system performance.',
         action: 'Investigate performance bottlenecks and optimize critical paths.'
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       });
     }
 

@@ -1,6 +1,4 @@
-#!/usr/bin/env node
-
-const fs = require('fs')
+const fs = require('fs');
 const path = require('path');
 
 console.log('🔧 Fixing unterminated string literals...');

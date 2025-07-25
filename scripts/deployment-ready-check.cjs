@@ -1,18 +1,16 @@
-#!/usr/bin/env node
-
 /**
  * Deployment Readiness Checker
  * Validates if the application is ready for production deployment
  */
 
-const fs = require('fs')
+const fs = require('fs');
 const path = require('path');
 
 // Load environment variables from .env.local if it exists
 function loadEnvFile(envPath) {
   if (fs.existsSync(envPath)) {
-    const envContent = fs.readFileSync(envPath, 'utf8')
-const lines = envContent.split('\n');
+    const envContent = fs.readFileSync(envPath, 'utf8');
+    const lines = envContent.split('\n');
 
     for (const line of lines) {
       const trimmed = line.trim();
@@ -28,7 +26,7 @@ const lines = envContent.split('\n');
 }
 
 // Load from .env.local for development
-loadEnvFile('.env.local')
+loadEnvFile('.env.local');
 class DeploymentChecker {
   constructor() {
     this.results = {
@@ -43,8 +41,8 @@ class DeploymentChecker {
 
   checkProductionBuild() {
     // console.warn('🔍 Checking production build capability...')
-const packageJsonExists = fs.existsSync('package.json')
-const nextConfigExists = fs.existsSync('next.config.js');
+    const packageJsonExists = fs.existsSync('package.json');
+    const nextConfigExists = fs.existsSync('next.config.js');
 
     if (packageJsonExists && nextConfigExists) {
       this.results.checks.push({
@@ -66,11 +64,11 @@ const nextConfigExists = fs.existsSync('next.config.js');
 
   checkEnvironmentVariables() {
     // console.warn('🔍 Checking environment variables...')
-const required = [
+    const required = [
       'NEXT_PUBLIC_SUPABASE_URL',
       'NEXT_PUBLIC_SUPABASE_ANON_KEY',
-    ]
-const missing = required.filter((v) => !process.env[v]);
+    ];
+    const missing = required.filter((v) => !process.env[v]);
 
     if (missing.length === 0) {
       this.results.checks.push({
@@ -136,14 +134,14 @@ const missing = required.filter((v) => !process.env[v]);
   }
 
   calculateReadiness() {
-    const totalChecks = this.results.checks.length
-const passedChecks = this.results.checks.filter(
+    const totalChecks = this.results.checks.length;
+    const passedChecks = this.results.checks.filter(
       (check) => check.status === 'pass',
-    ).length
-const warnChecks = this.results.checks.filter(
+    ).length;
+    const warnChecks = this.results.checks.filter(
       (check) => check.status === 'warn',
-    ).length
-const score = (passedChecks * 100 + warnChecks * 50) / totalChecks;
+    ).length;
+    const score = (passedChecks * 100 + warnChecks * 50) / totalChecks;
     this.results.readiness = Math.round(score);
 
     if (this.results.blockers.length > 0) {
@@ -160,7 +158,7 @@ const score = (passedChecks * 100 + warnChecks * 50) / totalChecks;
   printResults() {
     // console.warn('\n🚀 Deployment Readiness Report');
     // console.warn('================================')
-const statusEmojis = {
+    const statusEmojis = {
       ready: '🟢',
       'mostly-ready': '🟡',
       'not-ready': '🟠',
@@ -192,7 +190,7 @@ const statusEmojis = {
     }
 
     // console.warn('\n📋 Deployment Checklist:')
-const checklist = [
+    const checklist = [
       '☐ Run npm run build successfully',
       '☐ Configure production environment variables',
       '☐ Set up domain and SSL certificate',

@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 /**
  * Netlify Self-Healing System
@@ -61,7 +83,7 @@ class NetlifySelfHealing {
     const timestamp = new Date().toISOString()
 const logEntry = `[${timestamp}] [${level}] ${message}`;
 
-    console.log(logEntry);
+    logger.info(logEntry);
 
     // Write to log file
     fs.appendFileSync(CONFIG.logFile, logEntry + '\n');
@@ -603,7 +625,7 @@ const cacheDirs = ['.next', 'node_modules/.cache', '.cache', 'dist', 'out'];
     this.log('Auto-fixing linting issues...');
 
     try {
-      execSync('npm run lint:fix', { stdio: 'inherit' });
+      execSync('npm run lint: 'fix', { stdio: 'inherit' });
     } catch (error) {
       this.log('Lint auto-fix failed, trying alternative...');
       execSync('npx eslint --fix .', { stdio: 'inherit' });
@@ -868,7 +890,7 @@ const command = process.argv[2];
       break;
 
     case 'status':
-      console.log(JSON.stringify(healing.getStatus(), null, 2));
+      logger.info(JSON.stringify(healing.getStatus(), null, 2));
       break;
 
     case 'health-check':
@@ -880,14 +902,14 @@ const command = process.argv[2];
       if (issues.length > 0) {
         healing.triggerSelfHealing(issues);
       } else {
-        console.log(
+        logger.info(
           'Usage: node netlify-self-healing.cjs fix <issue1> <issue2> ...',
         );
       }
       break;
 
     default:
-      console.log(`
+      logger.info(`
 Netlify Self-Healing System
 
 Usage:

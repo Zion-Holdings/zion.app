@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 /**
  * Pre-test dependency check. Allows running tests gracefully in offline
  * environments by exiting early when Jest/Vitest are not installed.
@@ -14,8 +13,8 @@ function check(deps) {
   });
 }
 
-const { _spawnSync } = require('child_process')
-const deps = ['jest', 'vitest']
+const { _spawnSync } = require('child_process');
+const deps = ['jest', 'vitest'];
 const missing = check(deps);
 
 if (missing.length === deps.length) {

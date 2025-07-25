@@ -1,11 +1,10 @@
-#!/usr/bin/env node
-const fs = require('fs')
-const os = require('os')
-const path = require('path')
-const { _spawnSync } = require('child_process')
+const fs = require('fs');
+const os = require('os');
+const path = require('path');
+const { _spawnSync } = require('child_process');
 const browsersPath =
   process.env.PLAYWRIGHT_BROWSERS_PATH ||
-  path.join(os.homedir(), '.cache', 'ms-playwright')
+  path.join(os.homedir(), '.cache', 'ms-playwright');
 function browsersInstalled() {
   try {
     return (
@@ -21,7 +20,7 @@ if (browsersInstalled()) {
 }
 
 console.error('\u274c Playwright browsers not found at', browsersPath);
-console.error('Attempting to install browsers via `npx playwright install`...')
+console.error('Attempting to install browsers via `npx playwright install`...');
 const result = spawnSync('npx', ['playwright', 'install'], {
   stdio: 'inherit',
 });

@@ -9,10 +9,10 @@ const glob = require('glob');
 // === CONFIGURATION ===
 // Directories to watch
 const WATCH_DIRS = [
-  path.join(__dirname, components'),
-  path.join(__dirname, automation'),
-  path.join(__dirname, backend'),
-  path.join(__dirname, scripts')
+  path.join(__dirname, 'components'),
+  path.join(__dirname, 'automation'),
+  path.join(__dirname, 'backend'),
+  path.join(__dirname, 'scripts')
 ];
 // File types and their interpreters
 const FILE_TYPES = {

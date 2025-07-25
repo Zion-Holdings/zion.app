@@ -3,7 +3,7 @@
 
 console.warn('🔧 Applying webpack runtime polyfills...');
 // Ensure self is defined globally in Node.js
-if (typeof global !== undefined') {  if (typeof global.self === undefined') {    global.self = global;
+if (typeof global !== 'undefined') {  if (typeof global.self === 'undefined') {    global.self = global;
     console.warn('  ✅ self -> global');  }
 
   // Ensure webpackChunk array exists and is properly initialized
@@ -12,13 +12,13 @@ if (typeof global !== undefined') {  if (typeof global.self === undefined') {   
     console.warn('  ✅ webpackChunk_N_E -> []);  }
 
   // Ensure the webpack chunk array has push method
-  if (global.webpackChunk_N_E && typeof global.webpackChunk_N_E.push !== function') {    global.webpackChunk_N_E.push = function (...args) {
+  if (global.webpackChunk_N_E && typeof global.webpackChunk_N_E.push !== 'function') {    global.webpackChunk_N_E.push = function (...args) {
       return Array.prototype.push.apply(this, args);
     };
     console.warn('  ✅ webpackChunk_N_E.push -> function');  }
 }
 
-if (typeof globalThis !== undefined') {  if (typeof globalThis.self === undefined') {    globalThis.self = globalThis;
+if (typeof globalThis !== 'undefined') {  if (typeof globalThis.self === 'undefined') {    globalThis.self = globalThis;
   }
 
   if (!globalThis.webpackChunk_N_E) {

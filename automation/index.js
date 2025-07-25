@@ -1,27 +1,63 @@
-#!/usr/bin/env node
 
-/**
- * Intelligent Automation System - Main Entry Point
- *
- * This is the main entry point for the autonomous automation system.
- * It initializes and starts the IntelligentAutomationOrchestrator which
- * coordinates all automation components.
- */
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+
 
 const path = require('path');
 const fs = require('fs');
 
 // Load configuration
+<<<<<<< HEAD
+function loadConfiguration() {
+  const configPath = path.join(__dirname, 'config.json');
+=======
 function loadConfiguration()  {
   const configPath = path.join(__dirname, 'automation-config.json');
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
 
   if (fs.existsSync(configPath)) {
     try {
       const configData = fs.readFileSync(configPath, 'utf8');
       return JSON.parse(configData);
     } catch (error) {
+<<<<<<< HEAD
+      logger.warn(
+        ⚠️ Failed to load config.json, using defaults:',
+=======
       console.warn(
         '⚠️ Failed to load automation-config.json, using defaults:',
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
         error.message,
       );
     }
@@ -83,18 +119,43 @@ function loadConfiguration()  {
 
 // Main function
 async function main() {
-  console.log('🚀 Starting Intelligent Automation System...');
-  console.log('='.repeat(60));
+  logger.info('🚀 Starting Intelligent Automation System...');
+  logger.info('='.repeat(60));
 
   try {
     // Load configuration
     const config = loadConfiguration();
-    console.log('📋 Configuration loaded');
+    logger.info('📋 Configuration loaded');
 
     // Start the unified automation launcher
     const { UnifiedAutomationLauncher } = require('./unified-automation-launcher');
     const launcher = new UnifiedAutomationLauncher();
 
+<<<<<<< HEAD
+    // Setup event listeners
+    orchestrator.on('initialized', () => {
+      logger.info('✅ System initialized successfully');
+    });
+
+    orchestrator.on('started', () => {
+      logger.info('🎉 Intelligent Automation System is now running!');
+      logger.info('='.repeat(60));
+      logger.info('📊 Dashboard: http://localhost:' + config.dashboard.port);
+      logger.info('🔧 Press Ctrl+C to stop the system');
+      logger.info('='.repeat(60));
+    });
+
+    orchestrator.on('stopped', () => {
+      logger.info('🛑 System stopped gracefully');
+    });
+
+    orchestrator.on('error', (error) => {
+      logger.error('❌ System error:', error);
+    });
+
+    // Start the orchestrator
+    await orchestrator.start();
+=======
     // Start all automation components
     await launcher.startAll();
 
@@ -111,8 +172,9 @@ async function main() {
       process.exit(0);
     });
 
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
   } catch (error) {
-    console.error('❌ Failed to start automation system:', error);
+    logger.error('❌ Failed to start automation system:', error);
     process.exit(1);
   }
 }
@@ -159,7 +221,7 @@ function parseArguments()  {
         break;
 
       default:
-        console.warn('⚠️ Unknown argument:', arg);
+        logger.warn('⚠️ Unknown argument:', arg);
         break;
     }
   }
@@ -167,8 +229,13 @@ function parseArguments()  {
   return options
 }
 
+<<<<<<< HEAD
+function showHelp() {
+  logger.info(`
+=======
 function showHelp()  {
   console.log(`
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
 Intelligent Automation System
 
 Usage: node automation/index.js [options]
@@ -196,18 +263,32 @@ Examples:
   `);
 }
 
+<<<<<<< HEAD
+function showVersion() {
+  const packagePath = path.join(__dirname, ..', 'package.json');
+=======
 function showVersion()  {
   const packagePath = path.join(__dirname, '..', 'package.json');
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
 
   if (fs.existsSync(packagePath)) {
     try {
       const packageData = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
+<<<<<<< HEAD
+      logger.info(`Intelligent Automation System v${packageData.version}`);
+    } catch (error) {
+      logger.info('Intelligent Automation System v1.0.0');
+    }
+  } else {
+    logger.info('Intelligent Automation System v1.0.0');
+=======
       console.log(`Intelligent Automation System v${packageData.version}`);
     } catch (error) {
       console.log('Intelligent Automation System v2.0.0');
     }
   } else {
     console.log('Intelligent Automation System v2.0.0');
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
   }
 }
 
@@ -231,7 +312,7 @@ if (require.main === module) {
 
   // Start the system
   main().catch((error) => {
-    console.error('❌ Fatal error:', error);
+    logger.error('❌ Fatal error:', error);
     process.exit(1);
   });
 }
@@ -240,3 +321,25 @@ module.exports = {
   main,
   loadConfiguration
 };
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;

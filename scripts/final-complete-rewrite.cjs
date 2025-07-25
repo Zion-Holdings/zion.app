@@ -1,14 +1,45 @@
-#!/usr/bin/env node
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting ...');
+    
+    try {
+      const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 const fs = require('fs')
 const path = require('path')
 const glob = require('glob');
 
-console.log('🔧 Final complete rewrite of all corrupted files...');
+logger.info('🔧 Final complete rewrite of all corrupted files...');
 
 // Find all TypeScript and JavaScript files
-const files = glob.sync('src/**/*.{ts,tsx,js,jsx}', {
-  ignore: ['**/node_modules/**', '**/dist/**', '**/build/**', '**/.next/**'],
+const files = glob.sync('srcnode_modulesdistbuild.next/**'],
 });
 
 let fixedFiles = 0;
@@ -98,7 +129,7 @@ export const ${moduleName}Routes = {
 };`;
         } else if (dir.includes('scripts')) {
           content = `// Script for ${moduleName}
-console.log('${moduleName} script placeholder');`;
+logger.info('${moduleName} script placeholder');`;
         } else if (dir.includes('stories')) {
           content = `// Story for ${moduleName}
 export default {
@@ -131,12 +162,49 @@ export const ${moduleName} = {
       fixedFiles++;
       totalIssues += fileIssues;
       if (fileIssues > 0) {
-        console.log(`✅ Rewrote ${file}`);
+        logger.info(`✅ Rewrote ${file}`);
       }
     }
   } catch (error) {
-    console.error(`❌ Error processing ${file}:`, error.message);
+    logger.error(`❌ Error processing ${file}:`, error.message);
   }
 });
 
-console.log(`\n🎉 Rewrote ${fixedFiles} corrupted files`);
+logger.info(`\n🎉 Rewrote ${fixedFiles} corrupted files`);
+    } catch (error) {
+      console.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    console.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

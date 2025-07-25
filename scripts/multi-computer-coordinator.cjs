@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 const fs = require('fs')
 const path = require('path')
@@ -124,11 +146,11 @@ const { result, error } = req.body;
 
   async start() {
     if (this.isRunning) {
-      console.log('Coordinator is already running');
+      logger.info('Coordinator is already running');
       return;
     }
 
-    console.log(
+    logger.info(
       `🚀 Starting Multi-Computer Coordinator (${this.isMaster ? 'Master' : 'Worker'})...`,
     );
     this.isRunning = true;
@@ -141,7 +163,7 @@ const { result, error } = req.body;
 
     // Start Express server
     this.server = this.app.listen(this.port, () => {
-      console.log(`⚡ Coordinator API running on port ${this.port}`);
+      logger.info(`⚡ Coordinator API running on port ${this.port}`);
     });
 
     // If master, start discovery
@@ -151,7 +173,7 @@ const { result, error } = req.body;
   }
 
   stop() {
-    console.log('🛑 Stopping Multi-Computer Coordinator...');
+    logger.info('🛑 Stopping Multi-Computer Coordinator...');
     this.isRunning = false;
 
     if (this.server) {
@@ -172,7 +194,7 @@ const { result, error } = req.body;
     };
 
     this.nodes.set(nodeId, node);
-    console.log(`📡 Node registered: ${nodeId} (${hostname}:${port})`);
+    logger.info(`📡 Node registered: ${nodeId} (${hostname}:${port})`);
   }
 
   updateNodeStatus(nodeId, status, currentTask, load) {
@@ -209,7 +231,7 @@ const taskObj = {
       return priorityOrder[b.priority] - priorityOrder[a.priority];
     });
 
-    console.log(`📝 Task submitted: ${taskId} (${priority})`);
+    logger.info(`📝 Task submitted: ${taskId} (${priority})`);
     return taskId;
   }
 
@@ -233,7 +255,7 @@ const taskObj = {
         }
       }
 
-      console.log(`✅ Task completed: ${taskId}`);
+      logger.info(`✅ Task completed: ${taskId}`);
     }
   }
 
@@ -286,9 +308,9 @@ const selectedNode = this.selectBestNode(availableNodes, task);
       // Send task to node
       await this.sendTaskToNode(task, node);
 
-      console.log(`📤 Task ${task.id} assigned to node ${node.id}`);
+      logger.info(`📤 Task ${task.id} assigned to node ${node.id}`);
     } catch (error) {
-      console.error(
+      logger.error(
         `Failed to assign task ${task.id} to node ${node.id}:`,
         error,
       );
@@ -305,12 +327,153 @@ const selectedNode = this.selectBestNode(availableNodes, task);
   async sendTaskToNode(task, node) {
     // In a real implementation, this would send the task to the node
     // For now, we'll simulate this by executing the task locally
-    console.log(`Sending task to node ${node.id}: ${task.task}`);
+    logger.info(`Sending task to node ${node.id}: ${task.task}`);
 
     // Simulate task execution
-    setTimeout(
+    
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(
       () => {
-        this.completeTask(task.id, { success: true, nodeId: node.id }, null);
+        this.completeTask(task.id,                                                { success: true, nodeId: node.id }, null);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
       },
       Math.random() * 10000 + 5000,
     ); // Random delay between 5-15 seconds
@@ -325,7 +488,7 @@ const timeout = 60 * 1000; // 60 seconds
 
       for (const [nodeId, node] of this.nodes) {
         if (now - node.lastSeen > timeout) {
-          console.log(`⚠️ Node ${nodeId} appears to be offline`);
+          logger.info(`⚠️ Node ${nodeId} appears to be offline`);
           node.status = 'offline';
 
           // Reassign any tasks from offline nodes
@@ -345,7 +508,7 @@ const timeout = 60 * 1000; // 60 seconds
   }
 
   async startNodeDiscovery() {
-    console.log('🔍 Starting node discovery...');
+    logger.info('🔍 Starting node discovery...');
 
     // In a real implementation, this would discover nodes on the network
     // For now, we'll simulate by adding some local nodes
@@ -358,8 +521,149 @@ const timeout = 60 * 1000; // 60 seconds
     ]);
 
     // Simulate discovering other nodes
-    setTimeout(() => {
-      this.registerNode('node-1', '192.168.1.100', 3003, ['build', 'test']);
+    
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(() => {
+      this.registerNode('node-1',                                                '192.168.1.100', 3003, ['build', 'test']);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
       this.registerNode('node-2', '192.168.1.101', 3004, ['lint', 'optimize']);
     }, 5000);
   }
@@ -367,14 +671,14 @@ const timeout = 60 * 1000; // 60 seconds
   async distributeWorkload() {
     if (!this.isMaster) return;
 
-    console.log('📊 Distributing workload...');
+    logger.info('📊 Distributing workload...');
 
     // Analyze current workload
     const totalNodes = this.nodes.size
 const activeTasks = this.currentTasks.size
 const queuedTasks = this.taskQueue.length;
 
-    console.log(
+    logger.info(
       `Nodes: ${totalNodes}, Active: ${activeTasks}, Queued: ${queuedTasks}`,
     );
 
@@ -408,13 +712,13 @@ const command = process.argv[2];
       coordinator.stop();
       break;
     case 'status':
-      console.log(coordinator.isRunning ? 'Running' : 'Stopped');
+      logger.info(coordinator.isRunning ? 'Running' : 'Stopped');
       break;
     case 'distribute':
       coordinator.distributeWorkload();
       break;
     default:
-      console.log(
+      logger.info(
         'Usage: node multi-computer-coordinator.cjs [start|stop|status|distribute]',
       );
   }

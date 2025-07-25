@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 /**
  * Chat Reconnection System Optimizer
@@ -14,7 +36,7 @@ const http = require('http');
 // Configuration
 const CONFIG = {
   CHAT_SERVER: http://localhost:3009',
-  LOG_DIR: logs',
+  LOG_DIR: 'logs',
   MAX_LOG_SIZE: 50 * 1024 * 1024, // 50MB
   MAX_LOG_AGE: 7 * 24 * 60 * 60 * 1000, // 7 days
   OPTIMIZATION_INTERVAL: 300000, // 5 minutes
@@ -27,18 +49,18 @@ class ChatReconnectionOptimizer {
   }
 
   async start() {
-    console.log('⚡ Starting Chat Reconnection System Optimizer...');
-    console.log(
+    logger.info('⚡ Starting Chat Reconnection System Optimizer...');
+    logger.info(
       🔧 Optimization interval:',
       CONFIG.OPTIMIZATION_INTERVAL / 1000,
       seconds',
     );
-    console.log(
+    logger.info(
       🧹 Cleanup interval:',
       CONFIG.CLEANUP_INTERVAL / 1000,
       seconds',
     );
-    console.log('');
+    logger.info('');
 
     this.isRunning = true;
 
@@ -55,14 +77,14 @@ class ChatReconnectionOptimizer {
       await this.performCleanup();
     }, CONFIG.CLEANUP_INTERVAL);
 
-    console.log('✅ Optimizer started successfully');
-    console.log('🔧 Continuous optimization active');
-    console.log('🧹 Automatic cleanup enabled');
-    console.log('');
+    logger.info('✅ Optimizer started successfully');
+    logger.info('🔧 Continuous optimization active');
+    logger.info('🧹 Automatic cleanup enabled');
+    logger.info('');
   }
 
   async stop() {
-    console.log('🛑 Stopping Chat Reconnection System Optimizer...');
+    logger.info('🛑 Stopping Chat Reconnection System Optimizer...');
 
     this.isRunning = false;
 
@@ -74,11 +96,11 @@ class ChatReconnectionOptimizer {
       clearInterval(this.cleanupInterval);
     }
 
-    console.log('✅ Optimizer stopped');
+    logger.info('✅ Optimizer stopped');
   }
 
   async performOptimization() {
-    console.log('🔧 Performing system optimization...')
+    logger.info('🔧 Performing system optimization...')
 const optimizations = [
       this.optimizeLogFiles,
       this.optimizeMemoryUsage,
@@ -91,19 +113,19 @@ const optimizations = [
       try {
         await optimization.call(this);
       } catch (error) {
-        console.error(
+        logger.error(
           `❌ Optimization failed: ${optimization.name}`,
           error.message,
         );
       }
     }
 
-    console.log('✅ Optimization cycle completed');
-    console.log('');
+    logger.info('✅ Optimization cycle completed');
+    logger.info('');
   }
 
   async optimizeLogFiles() {
-    console.log('📋 Optimizing log files...')
+    logger.info('📋 Optimizing log files...')
 const logFiles = [
       logs/chat-reconnection.log',
       logs/chat-reconnection.err',
@@ -119,13 +141,13 @@ const age = Date.now() - stats.mtime.getTime();
         // Rotate if too large
         if (size > CONFIG.MAX_LOG_SIZE) {
           await this.rotateLogFile(logFile);
-          console.log(`🔄 Rotated large log file: ${logFile}`);
+          logger.info(`🔄 Rotated large log file: ${logFile}`);
         }
 
         // Remove if too old
         if (age > CONFIG.MAX_LOG_AGE) {
           fs.unlinkSync(logFile);
-          console.log(`🗑️ Removed old log file: ${logFile}`);
+          logger.info(`🗑️ Removed old log file: ${logFile}`);
         }
       }
     }
@@ -136,7 +158,7 @@ const age = Date.now() - stats.mtime.getTime();
 const backupFile = `${logFile}.${timestamp}`;
 
     // Read current log
-    const content = fs.readFileSync(logFile, utf8');
+    const content = fs.readFileSync(logFile, 'utf8');
 
     // Keep only last 1000 lines
     const lines = content.split('\n')
@@ -150,12 +172,12 @@ const recentLines = lines.slice(-1000).join('\n');
   }
 
   async optimizeMemoryUsage() {
-    console.log('🧠 Optimizing memory usage...');
+    logger.info('🧠 Optimizing memory usage...');
 
     // Force garbage collection if available
     if (global.gc) {
       global.gc();
-      console.log('♻️ Forced garbage collection');
+      logger.info('♻️ Forced garbage collection');
     }
 
     // Check memory usage
@@ -163,36 +185,36 @@ const recentLines = lines.slice(-1000).join('\n');
 const heapUsedMB = Math.round(memUsage.heapUsed / 1024 / 1024);
 
     if (heapUsedMB > 100) {
-      console.log(`⚠️ High memory usage: ${heapUsedMB}MB`);
+      logger.info(`⚠️ High memory usage: ${heapUsedMB}MB`);
       this.optimizations.push({
-        type: MEMORY_HIGH',
+        type: 'MEMORY_HIGH',
         timestamp: Date.now(),
         value: heapUsedMB
       });
     } else {
-      console.log(`✅ Memory usage normal: ${heapUsedMB}MB`);
+      logger.info(`✅ Memory usage normal: ${heapUsedMB}MB`);
     }
   }
 
   async optimizeNetworkConnections() {
-    console.log('🌐 Optimizing network connections...');
+    logger.info('🌐 Optimizing network connections...');
 
     try {
       // Check system status
       const status = await this.getSystemStatus();
 
       if (status.isMaster && status.discoveredComputers === 0) {
-        console.log('🔍 No worker computers discovered, checking network...');
+        logger.info('🔍 No worker computers discovered, checking network...');
 
         // Try to discover computers
         await this.discoverComputers();
       }
 
       if (status.activeConnections === 0) {
-        console.log('🔌 No active connections, attempting reconnection...');
+        logger.info('🔌 No active connections, attempting reconnection...');
 
         // Trigger reconnection
         await this.triggerReconnection();
       }
     } catch (error) {
-      console.error('❌ Network optimization failed:', error.message);
+      logger.error('❌ Network optimization failed:', error.message);

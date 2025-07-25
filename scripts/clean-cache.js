@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 /*
  * Simple cache cleanup utility
  * Removes common build and temp directories to reclaim space.

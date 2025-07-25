@@ -1,8 +1,6 @@
-#!/usr/bin/env node
-
-const fs = require('fs')
-const _path = require('path')
-const { _execSync } = require('child_process')
+const fs = require('fs');
+const _path = require('path');
+const { _execSync } = require('child_process');
 class LucideOptimizer {
   constructor() {
     this.optimizedCount = 0;
@@ -63,9 +61,9 @@ class LucideOptimizer {
     optimizedContent = optimizedContent.replace(
       namedImportPattern,
       (match, icons) => {
-        hasChanges = true
-const iconList = icons.split(',').map((icon) => icon.trim())
-const optimizedImports = iconList.map((icon) => {
+        hasChanges = true;
+        const iconList = icons.split(',').map((icon) => icon.trim());
+        const optimizedImports = iconList.map((icon) => {
           const kebabCase = this.toKebabCase(icon);
           return `import { ${icon} } from 'lucide-react/dist/esm/icons/${kebabCase}';`;
         });

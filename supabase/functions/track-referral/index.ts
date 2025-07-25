@@ -27,7 +27,7 @@ serve(async (req) => {
 
     if (existingReferral) {
       return new Response(
-        JSON.stringify({ message: 'User already has a referral' }),        { headers: { ...corsHeaders, Content-Type': application/json' }, status: 200 }      );
+        JSON.stringify({ message:' 'User already has a referral' }),        { headers: { ...corsHeaders, Content-Type': application/json' }, status: 200 }      );
     }
 
     // Create the referral record

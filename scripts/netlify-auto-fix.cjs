@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 /**
  * Netlify Auto-Fix Script
@@ -19,7 +41,7 @@ class NetlifyAutoFix {
     const timestamp = new Date().toISOString()
 const logEntry = `[${timestamp}] [${level}] ${message}`;
 
-    console.log(logEntry);
+    logger.info(logEntry);
     fs.appendFileSync(this.logFile, logEntry + '\n');
   }
 
@@ -421,25 +443,25 @@ if (typeof globalThis === 'undefined') {
 }`,
 
       'scripts/pre-build-check.cjs': `#!/usr/bin/env node
-console.log('Pre-build check completed');
+logger.info('Pre-build check completed');
 process.exit(0);`,
 
       'scripts/install-build-deps.cjs': `#!/usr/bin/env node
 const { execSync } = require('child_process');
 
-console.log('Installing build dependencies...');
+logger.info('Installing build dependencies...');
 try {
-  execSync('npm install --production=false', { stdio: 'inherit' });
-  console.log('Build dependencies installed successfully');
+  execSync('npm install --production='false', { stdio: 'inherit' });
+  logger.info('Build dependencies installed successfully');
 } catch (error) {
-  console.error('Failed to install build dependencies:', error.message);
+  logger.error('Failed to install build dependencies:', error.message);
   process.exit(1);
 }`,
 
       'scripts/optimized-build.cjs': `#!/usr/bin/env node
 const { execSync } = require('child_process');
 
-console.log('Starting optimized build...')
+logger.info('Starting optimized build...')
 const buildCommand = process.env.NODE_ENV === 'production' 
   ? 'NODE_OPTIONS=\\"--max-old-space-size=6144\\" npx next build --no-lint'
   : 'npx next build --no-lint';
@@ -454,9 +476,9 @@ try {
       NEXT_TELEMETRY_DISABLED: '1'
     }
   });
-  console.log('Build completed successfully');
+  logger.info('Build completed successfully');
 } catch (error) {
-  console.error('Build failed:', error.message);
+  logger.error('Build failed:', error.message);
   process.exit(1);
 }`,
     };
@@ -566,7 +588,7 @@ const cacheDirs = [
     this.log('Testing build after fixes...');
 
     try {
-      execSync('npm run build:netlify:prepare', {
+      execSync('npm run build:netlify: 'prepare', {
         stdio: 'inherit',
         timeout: 300000, // 5 minutes
       });
@@ -596,7 +618,7 @@ const command = process.argv[2];
   switch (command) {
     case 'all':
       autoFix.applyAllFixes().then(() => {
-        console.log(
+        logger.info(
           '\\nFix Report:',
           JSON.stringify(autoFix.getFixReport(), null, 2),
         );
@@ -608,11 +630,11 @@ const command = process.argv[2];
       break;
 
     case 'report':
-      console.log(JSON.stringify(autoFix.getFixReport(), null, 2));
+      logger.info(JSON.stringify(autoFix.getFixReport(), null, 2));
       break;
 
     default:
-      console.log(`
+      logger.info(`
 Netlify Auto-Fix Script
 
 Usage:
@@ -631,3 +653,18 @@ Examples:
 }
 
 module.exports = NetlifyAutoFix;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

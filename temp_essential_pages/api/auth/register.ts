@@ -59,7 +59,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         Set-Cookie',        `authToken=${data.session.access_token}; HttpOnly; Path=/; Secure; SameSite=Strict`
       );
       return res.status(201).json({ 
-        message: 'Registration successful',        user: data.user, 
+        message:' 'Registration successful',        user: data.user, 
         session: data.session 
       });
     }

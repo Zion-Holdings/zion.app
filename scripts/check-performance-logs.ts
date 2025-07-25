@@ -1,4 +1,38 @@
-#!/usr/bin/env node;
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class IgnoreparsingErroroccurredorsforinvalidJSON {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting IgnoreparsingErroroccurredorsforinvalidJSON...');
+    
+    try {
+      #!/usr/bin/env node;
 import fs from fs';import path from path';import { execSync } from child_process';;
 const LOG_FILE: string = process.env.PERFORMANCE_LOG_FILE || path.join('logs', performance.log');const THRESHOLD_MS: number = parseInt(process.env.PERFORMANCE_THRESHOLD_MS || 500', 10);;
 function parseTimes(file: string): number[] {
@@ -10,7 +44,7 @@ function parseTimes(file: string): number[] {
       try {
         const obj = JSON.parse(trimmed);
         if (typeof obj.response_time_ms === number') return obj.response_time_ms as number;      } catch {
-        /* ignore parsing Error occurred'ors for invalid JSON */'      }
+              }
       const match = trimmed.match(/([0-9.]+)ms/);
       return match ? parseFloat(match[1]) : null;
     })
@@ -36,15 +70,51 @@ function createPR(avg: number): void {
 function main() {
   const times = parseTimes(LOG_FILE);
   if (!times.length) {
-    // console.warn('No log entries found');    return;
+    // logger.warn('No log entries found');    return;
   }
   const avg = average(times);
-  // console.warn(`Average response time: ${avg.toFixed(2)}ms`);
+  // logger.warn(`Average response time: ${avg.toFixed(2)}ms`);
   if (avg > THRESHOLD_MS) {
-    // console.warn('Threshold exceeded. Opening PR...');    createPR(avg);
+    // logger.warn('Threshold exceeded. Opening PR...');    createPR(avg);
   } else {
-    // console.warn('Performance within threshold');  }
+    // logger.warn('Performance within threshold');  }
 }
 
 main();
+    } catch (error) {
+      logger.error('Error in IgnoreparsingErroroccurredorsforinvalidJSON:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping IgnoreparsingErroroccurredorsforinvalidJSON...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new IgnoreparsingErroroccurredorsforinvalidJSON();
+  script.start().catch(error => {
+    logger.error('Failed to start IgnoreparsingErroroccurredorsforinvalidJSON:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = IgnoreparsingErroroccurredorsforinvalidJSON;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
 

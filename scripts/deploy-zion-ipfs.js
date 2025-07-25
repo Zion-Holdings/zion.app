@@ -1,10 +1,44 @@
-#!/usr/bin/env node;
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting Script...');
+    
+    try {
+      #!/usr/bin/env node;
 import fs from fs';import path from path';import { createHelia } from helia';import { unixfs } from @helia/unixfs';import { MemoryBlockstore } from blockstore-memory';import { MemoryDatastore } from datastore-memory';// Libp2p stack is needed for Helia to operate, even for local-only operations,
 // though it can be minimal if not connecting to the broader network.;
 import { createLibp2p } from libp2p';import { identify } from @libp2p/identify';import { tcp } from @libp2p/tcp'; // Or another transport if more appropriate'import { noise } from @chainsafe/libp2p-noise';import { yamux } from @chainsafe/libp2p-yamux';
 const buildDir = process.argv[2] || dist'; // Default to dist
 async function deploy() {
-  // console.warn('Initializing minimal Libp2p for Helia...')
+  // logger.warn('Initializing minimal Libp2p for Helia...')
 const libp2p = await createLibp2p({
     transports: [tcp()], // TCP transport for local operations
     connectionEncryption: [noise()],
@@ -15,14 +49,14 @@ const libp2p = await createLibp2p({
     datastore: new MemoryDatastore(), // Ephemeral
   });
 
-  // console.warn('Initializing Helia...')
+  // logger.warn('Initializing Helia...')
 const helia = await createHelia({
     libp2p: libp2p,
     blockstore: new MemoryBlockstore(), // Ephemeral
     datastore: new MemoryDatastore(),   // Ephemeral
   })
 const fsHelia = unixfs(helia);
-  // console.warn(`Gathering files from directory: ${buildDir}`);
+  // logger.warn(`Gathering files from directory: ${buildDir}`);
 
   async function* streamFiles(dir, relativePathBase = ) {'    const entries = fs.readdirSync(dir, { withFileTypes: true });
     for (const entry of entries) {
@@ -39,7 +73,7 @@ const relativeEntryPath = path.join(relativePathBase, entry.name);
     }
   }
 
-  // console.warn('Adding files to Helia (UnixFS)...');  // The addAll method expects an iterable of objects with `path` and `content`.
+  // logger.warn('Adding files to Helia (UnixFS)...');  // The addAll method expects an iterable of objects with `path` and `content`.
   // If `wrapWithDirectory` behavior is desired, we add the top buildDir itself.
   // Helia's addDirectory or addBytes under a path might be more direct.'  // Let's try adding files individually and then creating a directory for them if `addAll` isn't direct.
   // Simpler approach: add the directory itself.
@@ -51,7 +85,7 @@ const relativeEntryPath = path.join(relativePathBase, entry.name);
   }
 
   if (filesToAdd.length === 0) {
-    // console.warn('No files found to deploy.');    await helia.stop();
+    // logger.warn('No files found to deploy.');    await helia.stop();
     await libp2p.stop();
     return;
   }
@@ -92,11 +126,47 @@ const relativeEntryPath = path.join(relativePathBase, entry.name);
 
   if (!rootCid) {
     throw new Error('Failed to deploy: No root CID obtained.');  }
-  // console.warn('IPFS CID:', rootCid.toString());  // console.warn('Note: This CID is local to the Helia node run by this script.');  // console.warn('For persistence, this content needs to be pinned on a public IPFS node or pinning service.');
+  // logger.warn('IPFS CID:', rootCid.toString());  // logger.warn('Note: This CID is local to the Helia node run by this script.');  // logger.warn('For persistence, this content needs to be pinned on a public IPFS node or pinning service.');
   await helia.stop();
   await libp2p.stop();
-  // console.warn('Helia and Libp2p stopped.');}
+  // logger.warn('Helia and Libp2p stopped.');}
 
 deploy().catch(err => {
-  console.error('Deployment failed:', err);  process.exit(1);
+  logger.error('Deployment failed:', err);  process.exit(1);
 });
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+    } catch (error) {
+      logger.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    logger.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;

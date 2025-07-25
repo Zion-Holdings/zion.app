@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 const fs = require('fs').promises;
 const path = require('path');
@@ -11,7 +33,7 @@ class ComprehensiveAutomationTester {
 
   log(message, level = 'info') {
     const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
+    logger.info(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
   }
 
   addTestResult(testName, passed, message, details = null) {
@@ -25,9 +47,9 @@ class ComprehensiveAutomationTester {
   }
 
   async runAllTests() {
-    console.log('🧪 Comprehensive Automation System Test Suite');
-    console.log('='.repeat(60));
-    console.log('Testing all automation systems in the project...\n');
+    logger.info('🧪 Comprehensive Automation System Test Suite');
+    logger.info('='.repeat(60));
+    logger.info('Testing all automation systems in the project...\n');
 
     try {
       await this.testCoreAutomationSystem();
@@ -210,33 +232,33 @@ class ComprehensiveAutomationTester {
     const endTime = Date.now();
     const duration = endTime - this.startTime;
     
-    console.log('\n📊 Test Results Summary');
-    console.log('='.repeat(60));
+    logger.info('\n📊 Test Results Summary');
+    logger.info('='.repeat(60));
     
     const passed = this.testResults.filter(r => r.passed).length;
     const failed = this.testResults.filter(r => !r.passed).length;
     const total = this.testResults.length;
     
-    console.log(`Total Tests: ${total}`);
-    console.log(`Passed: ${passed} ✅`);
-    console.log(`Failed: ${failed} ❌`);
-    console.log(`Success Rate: ${((passed / total) * 100).toFixed(1)}%`);
-    console.log(`Duration: ${duration}ms`);
+    logger.info(`Total Tests: ${total}`);
+    logger.info(`Passed: ${passed} ✅`);
+    logger.info(`Failed: ${failed} ❌`);
+    logger.info(`Success Rate: ${((passed / total) * 100).toFixed(1)}%`);
+    logger.info(`Duration: ${duration}ms`);
     
     if (failed > 0) {
-      console.log('\n❌ Failed Tests:');
+      logger.info('\n❌ Failed Tests:');
       this.testResults
         .filter(r => !r.passed)
         .forEach(r => {
-          console.log(`  - ${r.testName}: ${r.message}`);
+          logger.info(`  - ${r.testName}: ${r.message}`);
         });
     }
     
-    console.log('\n✅ Passed Tests:');
+    logger.info('\n✅ Passed Tests:');
     this.testResults
       .filter(r => r.passed)
       .forEach(r => {
-        console.log(`  - ${r.testName}: ${r.message}`);
+        logger.info(`  - ${r.testName}: ${r.message}`);
       });
     
     const report = {
@@ -255,9 +277,23 @@ class ComprehensiveAutomationTester {
 if (require.main === module) {
   const tester = new ComprehensiveAutomationTester();
   tester.runAllTests().catch(error => {
-    console.error('Test suite failed:', error);
+    logger.error('Test suite failed:', error);
     process.exit(1);
   });
 }
 
 module.exports = ComprehensiveAutomationTester; 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

@@ -1,3 +1,36 @@
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    console.log('Starting Script...');
+    
+    try {
+      const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 const { execSync, spawn } = require('child_process')
 const chokidar = require('chokidar')
 const path = require('path')
@@ -23,26 +56,26 @@ let running = false
 function runFixers() {
   if (running) return;
   running = true;
-  console.log(`[auto-fix-daemon] Running all fixers at ${new Date().toISOString()}`);
+  logger.info(`[auto-fix-daemon] Running all fixers at ${new Date().toISOString()}`);
   let changes = false;
   try {
     for (const cmd of FIXER_COMMANDS) {
-      console.log(`[auto-fix-daemon] Executing: ${cmd}`);
-      execSync(cmd, { stdio: inherit' });
+      logger.info(`[auto-fix-daemon] Executing: ${cmd}`);
+      execSync(cmd, { stdio: 'inherit' });
     }
     // Check for changes
     const status = execSync('git status --porcelain').toString();
     if (status.trim()) {
       changes = true;
-      execSync('git add .', { stdio: inherit' });
-      execSync('git commit -m "chore(auto-fix): automated fixes [auto-fix-daemon]"', { stdio: inherit' });
-      execSync('git push', { stdio: inherit' });
-      console.log('[auto-fix-daemon] Changes committed and pushed.');
+      execSync('git add .', { stdio: 'inherit' });
+      execSync('git commit -m "chore(auto-fix): automated fixes [auto-fix-daemon]"', { stdio: 'inherit' });
+      execSync('git push', { stdio: 'inherit' });
+      logger.info('[auto-fix-daemon] Changes committed and pushed.');
     } else {
-      console.log('[auto-fix-daemon] No changes to commit.');
+      logger.info('[auto-fix-daemon] No changes to commit.');
     }
   } catch (err) {
-    console.error('[auto-fix-daemon] Error running fixers:', err.message);
+    logger.error('[auto-fix-daemon] Error running fixers:', err.message);
   }
   running = false;
 }
@@ -58,8 +91,45 @@ const watcher = chokidar.watch(WATCH_PATHS, {
 });
 
 watcher.on('all', (event, filePath) => {
-  console.log(`[auto-fix-daemon] Detected change (${event}) in ${filePath}`);
+  logger.info(`[auto-fix-daemon] Detected change (${event}) in ${filePath}`);
   runFixers();
 });
 
-console.log('[auto-fix-daemon] Daemon started. Watching for changes and running on timer.'); 
+logger.info('[auto-fix-daemon] Daemon started. Watching for changes and running on timer.');
+    } catch (error) {
+      console.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    console.log('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    console.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

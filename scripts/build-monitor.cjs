@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 /**
  * Zion App Build Monitor
@@ -26,12 +48,12 @@ class BuildMonitor {
 
   async startMonitoring() {
     if (this.isMonitoring) {
-      console.log('Build monitor is already running');
+      logger.info('Build monitor is already running');
       return;
     }
 
     this.isMonitoring = true;
-    console.log('Starting build monitoring...');
+    logger.info('Starting build monitoring...');
 
     // Watch for build-related files
     this.watchBuildFiles();
@@ -61,20 +83,161 @@ const watcher = chokidar.watch(buildFiles, {
     });
 
     watcher.on('change', (filePath) => {
-      console.log(`Build file changed: ${filePath}`);
+      logger.info(`Build file changed: ${filePath}`);
       this.onBuildFileChange(filePath);
     });
 
     watcher.on('error', (error) => {
-      console.error('Build file watcher error:', error);
+      logger.error('Build file watcher error:', error);
     });
   }
 
   async onBuildFileChange(filePath) {
-    console.log(`Build file changed: ${filePath}`);
+    logger.info(`Build file changed: ${filePath}`);
 
     // Wait a bit for the file to be fully written
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                                                1000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
 
     // Check if the change might cause build issues
     if (this.shouldTriggerBuildCheck(filePath)) {
@@ -94,20 +257,20 @@ const watcher = chokidar.watch(buildFiles, {
   }
 
   async triggerBuildCheck() {
-    console.log('Triggering build check due to file change...');
+    logger.info('Triggering build check due to file change...');
 
     try {
       // Run a quick build check
       await this.runBuildCheck();
     } catch (error) {
-      console.error('Build check failed:', error.message);
+      logger.error('Build check failed:', error.message);
       await this.triggerHealing('build_check_failed', { error: error.message });
     }
   }
 
   async runBuildCheck() {
     return new Promise((resolve, reject) => {
-      console.log('Running build check...')
+      logger.info('Running build check...')
 const buildProcess = spawn('npm', ['run', 'build'], {
         stdio: ['pipe', 'pipe', 'pipe'],
         cwd: process.cwd(),
@@ -145,24 +308,24 @@ const buildProcess = spawn('npm', ['run', 'build'], {
         }
 
         if (code === 0) {
-          console.log('Build check completed successfully');
+          logger.info('Build check completed successfully');
           resolve(buildResult);
         } else {
-          console.error(`Build check failed with code ${code}`);
+          logger.error(`Build check failed with code ${code}`);
           this.analyzeBuildFailure(buildResult);
           reject(new Error(`Build failed with code ${code}`));
         }
       });
 
       buildProcess.on('error', (error) => {
-        console.error('Build process error:', error);
+        logger.error('Build process error:', error);
         reject(error);
       });
     });
   }
 
   analyzeBuildFailure(buildResult) {
-    console.log('Analyzing build failure...')
+    logger.info('Analyzing build failure...')
 const errorPatterns = {
       'Module not found': 'dependency',
       'Cannot resolve module': 'import',
@@ -183,13 +346,13 @@ const detectedIssues = [];
     }
 
     if (detectedIssues.length > 0) {
-      console.log(`Detected issues: ${detectedIssues.join(', ')}`);
+      logger.info(`Detected issues: ${detectedIssues.join(', ')}`);
       this.triggerHealing('build_failure', {
         issues: detectedIssues,
         buildResult,
       });
     } else {
-      console.log('No specific issues detected, triggering generic healing');
+      logger.info('No specific issues detected, triggering generic healing');
       this.triggerHealing('build_failure', {
         issues: ['unknown'],
         buildResult,
@@ -198,7 +361,7 @@ const detectedIssues = [];
   }
 
   async triggerHealing(issueType, data) {
-    console.log(`Triggering healing for ${issueType}...`);
+    logger.info(`Triggering healing for ${issueType}...`);
 
     try {
       // Run self-healing script
@@ -207,13 +370,154 @@ const detectedIssues = [];
         cwd: process.cwd(),
       });
 
-      console.log('Healing process completed');
+      logger.info('Healing process completed');
 
       // Wait a bit and try building again
-      await new Promise((resolve) => setTimeout(resolve, 5000));
+      await new Promise((resolve) => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                                                5000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
       await this.runBuildCheck();
     } catch (error) {
-      console.error('Healing process failed:', error.message);
+      logger.error('Healing process failed:', error.message);
     }
   }
 
@@ -250,7 +554,7 @@ const lines = logContent.split('\n');
         );
 
       if (recentErrors.length > 0) {
-        console.log(`Found ${recentErrors.length} recent build errors`);
+        logger.info(`Found ${recentErrors.length} recent build errors`);
         this.analyzeBuildFailure({
           timestamp: new Date(),
           success: false,
@@ -258,7 +562,7 @@ const lines = logContent.split('\n');
         });
       }
     } catch (error) {
-      console.error('Error analyzing build log:', error.message);
+      logger.error('Error analyzing build log:', error.message);
     }
   }
 
@@ -267,11 +571,11 @@ const lines = logContent.split('\n');
     setInterval(
       async () => {
         if (this.isMonitoring) {
-          console.log('Running periodic build health check...');
+          logger.info('Running periodic build health check...');
           try {
             await this.runBuildCheck();
           } catch (error) {
-            console.error('Periodic build check failed:', error.message);
+            logger.error('Periodic build check failed:', error.message);
           }
         }
       },
@@ -315,7 +619,7 @@ const failedBuilds = totalBuilds - successfulBuilds;
 
   stopMonitoring() {
     this.isMonitoring = false;
-    console.log('Build monitoring stopped');
+    logger.info('Build monitoring stopped');
   }
 }
 
@@ -336,7 +640,7 @@ if (require.main === module) {
 
   // Start monitoring
   monitor.startMonitoring().catch((error) => {
-    console.error('Failed to start build monitor:', error);
+    logger.error('Failed to start build monitor:', error);
     process.exit(1);
   });
 }

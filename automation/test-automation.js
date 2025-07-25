@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 const NetlifyBuildMonitor = require('./netlify-monitor')
 const NetlifyErrorFixer = require('./netlify-error-fixer')
@@ -10,9 +32,9 @@ class AutomationTester {
     this.testResults = [];
   }
 
-  log(message, level = info') {
+  log(message, level = 'info') {
     const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
+    logger.info(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
   }
 
   async runAllTests() {
@@ -203,7 +225,7 @@ const missingFiles = requiredFiles.filter((file) => !fs.existsSync(file));
 
       // Test error analysis with mock data
       const mockBuild = {
-        state: error',
+        state: 'error',
         error_message: Build failed due to memory constraints',
         logs: Error: JavaScript heap out of memory
       }
@@ -217,7 +239,7 @@ const errors = monitor.analyzeBuildError(mockBuild);
         throw new Error('Error analysis should detect errors in mock data');
       }
 
-      const memoryError = errors.find((error) => error.type === memory_error');
+      const memoryError = errors.find((error) => error.type === 'memory_error');
       if (!memoryError) {
         throw new Error('Memory error not detected in mock data');
       }
@@ -242,7 +264,7 @@ const errors = monitor.analyzeBuildError(mockBuild);
       for (const [strategyName, strategy] of Object.entries(
         fixer.fixStrategies,
       )) {
-        if (typeof strategy !== function') {
+        if (typeof strategy !== 'function') {
           throw new Error(`Fix strategy ${strategyName} is not a function`);
         }
       }
@@ -267,14 +289,14 @@ const errors = monitor.analyzeBuildError(mockBuild);
     this.log('Testing file operations...');
 
     try {
-      const testFile = path.join(__dirname, test-file.json')
+      const testFile = path.join(__dirname, 'test-file.json')
 const testData = { test: true, timestamp: new Date().toISOString() };
 
       // Test file writing
       fs.writeFileSync(testFile, JSON.stringify(testData, null, 2));
 
       // Test file reading
-      const readData = JSON.parse(fs.readFileSync(testFile, utf8'));
+      const readData = JSON.parse(fs.readFileSync(testFile, 'utf8'));
 
       if (readData.test !== testData.test) {
         throw new Error('File read/write data mismatch');
@@ -324,26 +346,26 @@ const report = {
 
     // Save report
     fs.writeFileSync(
-      path.join(__dirname, test-report.json'),
+      path.join(__dirname, 'test-report.json'),
       JSON.stringify(report, null, 2),
     );
 
     // Display summary
-    console.log('\n' + ='.repeat(50));
-    console.log('TEST SUMMARY');
-    console.log('='.repeat(50));
-    console.log(`Total Tests: ${report.summary.total}`);
-    console.log(`Passed: ${report.summary.passed}`);
-    console.log(`Failed: ${report.summary.failed}`);
-    console.log(`Success Rate: ${report.summary.successRate}`);
-    console.log('='.repeat(50));
+    logger.info('\n' + ='.repeat(50));
+    logger.info('TEST SUMMARY');
+    logger.info('='.repeat(50));
+    logger.info(`Total Tests: ${report.summary.total}`);
+    logger.info(`Passed: ${report.summary.passed}`);
+    logger.info(`Failed: ${report.summary.failed}`);
+    logger.info(`Success Rate: ${report.summary.successRate}`);
+    logger.info('='.repeat(50));
 
     // Display failed tests
     const failedTests = this.testResults.filter((r) => !r.passed);
     if (failedTests.length > 0) {
-      console.log('\nFAILED TESTS:');
+      logger.info('\nFAILED TESTS:');
       failedTests.forEach((test) => {
-        console.log(`- ${test.test}: ${test.message}`);
+        logger.info(`- ${test.test}: ${test.message}`);
       });
     }
 
@@ -362,13 +384,28 @@ const command = process.argv[2];
       break;
     case report':
       const report = JSON.parse(
-        fs.readFileSync(path.join(__dirname, test-report.json'), utf8'),
+        fs.readFileSync(path.join(__dirname, 'test-report.json'), utf8'),
       );
-      console.log(JSON.stringify(report, null, 2));
+      logger.info(JSON.stringify(report, null, 2));
       break;
     default:
-      console.log('Usage: node test-automation.js [test|report]);
+      logger.info('Usage: node test-automation.js [test|report]);
   }
 }
 
 module.exports = AutomationTester;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

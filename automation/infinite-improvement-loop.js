@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 /**
  * Zion App - Infinite Improvement Loop System
@@ -46,20 +68,20 @@ const AI_CONFIG = {
 
   // Local AI Models
   LOCAL_AI: {
-    ENABLED: process.env.LOCAL_AI_ENABLED === true',
+    ENABLED: process.env.LOCAL_AI_ENABLED === 'true',
     ENDPOINT: process.env.LOCAL_AI_ENDPOINT || http://localhost:11434',
     MODEL: process.env.LOCAL_AI_MODEL || codellama:7b
   },
 
   // GitHub Copilot
   COPILOT: {
-    ENABLED: process.env.COPILOT_ENABLED === true',
+    ENABLED: process.env.COPILOT_ENABLED === 'true',
     API_KEY: process.env.COPILOT_API_KEY
   },
 
   // Custom AI Agents
   CUSTOM_AGENTS: {
-    ENABLED: process.env.CUSTOM_AGENTS_ENABLED === true',
+    ENABLED: process.env.CUSTOM_AGENTS_ENABLED === 'true',
     ENDPOINTS: {
       codeReview: process.env.CODE_REVIEW_AGENT_URL,
       security: process.env.SECURITY_AGENT_URL,
@@ -145,7 +167,7 @@ class InfiniteImprovementLoop extends EventEmitter {
     // Claude
     if (AI_CONFIG.CLAUDE.API_KEY) {
       this.aiProviders.set('claude', {
-        name: Claude',
+        name: 'Claude',
         analyze: (data) => this.analyzeWithClaude(data),
         suggest: (problem) => this.suggestWithClaude(problem),
         implement: (suggestion) => this.implementWithClaude(suggestion)
@@ -189,7 +211,7 @@ class InfiniteImprovementLoop extends EventEmitter {
   setupExpress() {
     this.app = express();
     this.app.use(express.json());
-    this.app.use(express.static(path.join(__dirname, dashboard')));
+    this.app.use(express.static(path.join(__dirname, 'dashboard')));
 
     // API Routes
     this.app.get('/api/status', (req, res) => {
@@ -231,7 +253,7 @@ class InfiniteImprovementLoop extends EventEmitter {
     this.io = socketIo(this.server);
 
     this.io.on('connection', (socket) => {
-      console.log('Client connected to infinite improvement loop');
+      logger.info('Client connected to infinite improvement loop');
 
       socket.emit('status', {
         isRunning: this.isRunning,
@@ -240,7 +262,7 @@ class InfiniteImprovementLoop extends EventEmitter {
       });
 
       socket.on('disconnect', () => {
-        console.log('Client disconnected from infinite improvement loop');
+        logger.info('Client disconnected from infinite improvement loop');
       });
     });
   }
@@ -250,18 +272,18 @@ class InfiniteImprovementLoop extends EventEmitter {
    */
   async start() {
     if (this.isRunning) {
-      console.log('Infinite improvement loop is already running');
+      logger.info('Infinite improvement loop is already running');
       return;
     }
 
-    console.log('🚀 Starting Infinite Improvement Loop...');
+    logger.info('🚀 Starting Infinite Improvement Loop...');
     this.isRunning = true;
     this.improvementCycle = 0;
 
     // Start the server
     const port = process.env.IMPROVEMENT_PORT || 3007;
     this.server.listen(port, () => {
-      console.log(
+      logger.info(
         `📊 Infinite Improvement Dashboard running on http://localhost:${port}`,
       );
     });
@@ -280,11 +302,11 @@ class InfiniteImprovementLoop extends EventEmitter {
    */
   async stop() {
     if (!this.isRunning) {
-      console.log('Infinite improvement loop is not running');
+      logger.info('Infinite improvement loop is not running');
       return;
     }
 
-    console.log('🛑 Stopping Infinite Improvement Loop...');
+    logger.info('🛑 Stopping Infinite Improvement Loop...');
     this.isRunning = false;
 
     // Stop the server
@@ -299,12 +321,12 @@ class InfiniteImprovementLoop extends EventEmitter {
    * Start the main improvement loop
    */
   async startImprovementLoop() {
-    console.log('🔄 Starting infinite improvement loop...');
+    logger.info('🔄 Starting infinite improvement loop...');
 
     while (this.isRunning) {
       try {
         this.improvementCycle++;
-        console.log(`\n🔄 Improvement Cycle ${this.improvementCycle}`);
+        logger.info(`\n🔄 Improvement Cycle ${this.improvementCycle}`);
 
         // Step 1: Analyze current state
         const analysis = await this.analyzeCodebase();
@@ -343,7 +365,7 @@ class InfiniteImprovementLoop extends EventEmitter {
         // Wait before next cycle
         await this.sleep(AI_CONFIG.INTERVALS.QUICK_SCAN);
       } catch (error) {
-        console.error('❌ Error in improvement loop:', error);
+        logger.error('❌ Error in improvement loop:', error);
         await this.sleep(5000); // Wait 5 seconds before retrying
       }
     }
@@ -356,7 +378,7 @@ class InfiniteImprovementLoop extends EventEmitter {
     // Deep analysis every 15 minutes
     cron.schedule('*/15 * * * *', async () => {
       if (this.isRunning) {
-        console.log('🔍 Running scheduled deep analysis...');
+        logger.info('🔍 Running scheduled deep analysis...');
         await this.performDeepAnalysis();
       }
     });
@@ -364,7 +386,7 @@ class InfiniteImprovementLoop extends EventEmitter {
     // Full audit every hour
     cron.schedule('0 * * * *', async () => {
       if (this.isRunning) {
-        console.log('📋 Running scheduled full audit...');
+        logger.info('📋 Running scheduled full audit...');
         await this.performFullAudit();
       }
     });
@@ -372,7 +394,7 @@ class InfiniteImprovementLoop extends EventEmitter {
     // Security scan every 45 minutes
     cron.schedule('*/45 * * * *', async () => {
       if (this.isRunning) {
-        console.log('🔒 Running scheduled security scan...');
+        logger.info('🔒 Running scheduled security scan...');
         await this.performSecurityScan();
       }
     });
@@ -380,7 +402,7 @@ class InfiniteImprovementLoop extends EventEmitter {
     // Performance check every 10 minutes
     cron.schedule('*/10 * * * *', async () => {
       if (this.isRunning) {
-        console.log('⚡ Running scheduled performance check...');
+        logger.info('⚡ Running scheduled performance check...');
         await this.performPerformanceCheck();
       }
     });
@@ -390,7 +412,7 @@ class InfiniteImprovementLoop extends EventEmitter {
    * Analyze the current codebase state
    */
   async analyzeCodebase() {
-    console.log('🔍 Analyzing codebase...');
+    logger.info('🔍 Analyzing codebase...');
 
     const analysis = {
       timestamp: new Date().toISOString(),
@@ -413,15 +435,15 @@ class InfiniteImprovementLoop extends EventEmitter {
    * Identify improvement opportunities
    */
   async identifyImprovements(analysis) {
-    console.log('🎯 Identifying improvement opportunities...');
+    logger.info('🎯 Identifying improvement opportunities...');
 
     const opportunities = [];
 
     // Performance improvements
     if (analysis.performance.score < AI_CONFIG.THRESHOLDS.PERFORMANCE_SCORE) {
       opportunities.push({
-        type: performance',
-        priority: high',
+        type: 'performance',
+        priority: 'high',
         data: {
           currentScore: analysis.performance.score,
           targetScore: AI_CONFIG.THRESHOLDS.PERFORMANCE_SCORE
@@ -432,8 +454,8 @@ class InfiniteImprovementLoop extends EventEmitter {
     // Security improvements
     if (analysis.security.score < AI_CONFIG.THRESHOLDS.SECURITY_SCORE) {
       opportunities.push({
-        type: security',
-        priority: critical',
+        type: 'security',
+        priority: 'critical',
         data: {
           currentScore: analysis.security.score,
           targetScore: AI_CONFIG.THRESHOLDS.SECURITY_SCORE
@@ -444,8 +466,8 @@ class InfiniteImprovementLoop extends EventEmitter {
     // Code quality improvements
     if (analysis.codeQuality.score < AI_CONFIG.THRESHOLDS.CODE_QUALITY_SCORE) {
       opportunities.push({
-        type: codeQuality',
-        priority: medium',
+        type: 'codeQuality',
+        priority: 'medium',
         data: {
           currentScore: analysis.codeQuality.score,
           targetScore: AI_CONFIG.THRESHOLDS.CODE_QUALITY_SCORE
@@ -458,8 +480,8 @@ class InfiniteImprovementLoop extends EventEmitter {
       analysis.accessibility.score < AI_CONFIG.THRESHOLDS.ACCESSIBILITY_SCORE
     ) {
       opportunities.push({
-        type: accessibility',
-        priority: medium',
+        type: 'accessibility',
+        priority: 'medium',
         data: {
           currentScore: analysis.accessibility.score,
           targetScore: AI_CONFIG.THRESHOLDS.ACCESSIBILITY_SCORE
@@ -470,8 +492,8 @@ class InfiniteImprovementLoop extends EventEmitter {
     // SEO improvements
     if (analysis.seo.score < AI_CONFIG.THRESHOLDS.SEO_SCORE) {
       opportunities.push({
-        type: seo',
-        priority: low',
+        type: 'seo',
+        priority: 'low',
         data: {
           currentScore: analysis.seo.score,
           targetScore: AI_CONFIG.THRESHOLDS.SEO_SCORE
@@ -482,8 +504,8 @@ class InfiniteImprovementLoop extends EventEmitter {
     // Test coverage improvements
     if (analysis.testCoverage < AI_CONFIG.THRESHOLDS.TEST_COVERAGE) {
       opportunities.push({
-        type: testCoverage',
-        priority: medium',
+        type: 'testCoverage',
+        priority: 'medium',
         data: {
           currentCoverage: analysis.testCoverage,
           targetCoverage: AI_CONFIG.THRESHOLDS.TEST_COVERAGE
@@ -497,7 +519,7 @@ class InfiniteImprovementLoop extends EventEmitter {
   /**
    * Queue an improvement
    */
-  async queueImprovement(type, priority = normal', data = {}) {
+  async queueImprovement(type, priority = 'normal', data = {}) {
     const improvement = {
       id: Date.now() + Math.random(),
       type,
@@ -508,7 +530,7 @@ class InfiniteImprovementLoop extends EventEmitter {
     };
 
     this.improvementQueue.push(improvement);
-    console.log(`📝 Queued improvement: ${type} (${priority})`);
+    logger.info(`📝 Queued improvement: ${type} (${priority})`);
 
     this.emit('improvement-queued', improvement);
   }
@@ -517,7 +539,7 @@ class InfiniteImprovementLoop extends EventEmitter {
    * Process the improvement queue
    */
   async processImprovementQueue() {
-    console.log(
+    logger.info(
       `🔄 Processing ${this.improvementQueue.length} improvements...`,
     )
 
@@ -531,7 +553,7 @@ class InfiniteImprovementLoop extends EventEmitter {
       if (!this.isRunning) break;
 
       try {
-        console.log(`🔧 Implementing improvement: ${improvement.type}`);
+        logger.info(`🔧 Implementing improvement: ${improvement.type}`);
         improvement.status = processing';
 
         const result = await this.implementImprovement(improvement);
@@ -540,9 +562,9 @@ class InfiniteImprovementLoop extends EventEmitter {
         improvement.result = result;
         this.totalImprovements++;
 
-        console.log(`✅ Improvement completed: ${improvement.type}`);
+        logger.info(`✅ Improvement completed: ${improvement.type}`);
       } catch (error) {
-        console.error(`❌ Improvement failed: ${improvement.type}`, error);
+        logger.error(`❌ Improvement failed: ${improvement.type}`, error);
         improvement.status = failed';
         improvement.error = error.message;
       }
@@ -588,10 +610,10 @@ class InfiniteImprovementLoop extends EventEmitter {
    * Evaluate improvements
    */
   async evaluateImprovements() {
-    console.log('📊 Evaluating improvements...');
+    logger.info('📊 Evaluating improvements...');
 
     const recentImprovements = this.improvementHistory
-      .filter((h) => h.status === completed')
+      .filter((h) => h.status === 'completed')
       .slice(-10); // Last 10 improvements
 
     for (const improvement of recentImprovements) {
@@ -612,14 +634,14 @@ class InfiniteImprovementLoop extends EventEmitter {
    * Learn from results
    */
   async learnFromResults() {
-    console.log('🧠 Learning from results...');
+    logger.info('🧠 Learning from results...');
 
     const successfulImprovements = this.improvementHistory.filter(
       (h) => h.status === completed' && h.impact && h.impact.score > 0,
     );
 
     const failedImprovements = this.improvementHistory.filter(
-      (h) => h.status === failed',
+      (h) => h.status === 'failed',
     );
 
     // Analyze patterns
@@ -656,44 +678,44 @@ class InfiniteImprovementLoop extends EventEmitter {
   // AI Provider Methods
   async analyzeWithCursor(data) {
     // Implementation for Cursor AI analysis
-    console.log('🤖 Analyzing with Cursor AI...');
+    logger.info('🤖 Analyzing with Cursor AI...');
     // Add actual Cursor AI API calls here
-    return { provider: cursor', suggestions: [] };
+    return { provider: 'cursor', suggestions: [] };
   }
 
   async analyzeWithOpenAI(data) {
     // Implementation for OpenAI analysis
-    console.log('🤖 Analyzing with OpenAI...');
+    logger.info('🤖 Analyzing with OpenAI...');
     // Add actual OpenAI API calls here
-    return { provider: openai', suggestions: [] };
+    return { provider: 'openai', suggestions: [] };
   }
 
   async analyzeWithClaude(data) {
     // Implementation for Claude analysis
-    console.log('🤖 Analyzing with Claude...');
+    logger.info('🤖 Analyzing with Claude...');
     // Add actual Claude API calls here
-    return { provider: claude', suggestions: [] };
+    return { provider: 'claude', suggestions: [] };
   }
 
   async analyzeWithLocalAI(data) {
     // Implementation for Local AI analysis
-    console.log('🤖 Analyzing with Local AI...');
+    logger.info('🤖 Analyzing with Local AI...');
     // Add actual Local AI API calls here
-    return { provider: local', suggestions: [] };
+    return { provider: 'local', suggestions: [] };
   }
 
   async analyzeWithCopilot(data) {
     // Implementation for GitHub Copilot analysis
-    console.log('🤖 Analyzing with GitHub Copilot...');
+    logger.info('🤖 Analyzing with GitHub Copilot...');
     // Add actual Copilot API calls here
-    return { provider: copilot', suggestions: [] };
+    return { provider: 'copilot', suggestions: [] };
   }
 
   async analyzeWithCustomAgents(data) {
     // Implementation for Custom AI Agents analysis
-    console.log('🤖 Analyzing with Custom AI Agents...');
+    logger.info('🤖 Analyzing with Custom AI Agents...');
     // Add actual Custom AI Agents API calls here
-    return { provider: custom', suggestions: [] };
+    return { provider: 'custom', suggestions: [] };
   }
 
   // Analysis Methods
@@ -775,22 +797,22 @@ class InfiniteImprovementLoop extends EventEmitter {
 
   // Scheduled Task Methods
   async performDeepAnalysis() {
-    console.log('🔍 Performing deep analysis...');
+    logger.info('🔍 Performing deep analysis...');
     // Implementation for deep analysis
   }
 
   async performFullAudit() {
-    console.log('📋 Performing full audit...');
+    logger.info('📋 Performing full audit...');
     // Implementation for full audit
   }
 
   async performSecurityScan() {
-    console.log('🔒 Performing security scan...');
+    logger.info('🔒 Performing security scan...');
     // Implementation for security scan
   }
 
   async performPerformanceCheck() {
-    console.log('⚡ Performing performance check...');
+    logger.info('⚡ Performing performance check...');
     // Implementation for performance check
   }
 
@@ -807,11 +829,152 @@ class InfiniteImprovementLoop extends EventEmitter {
 
   async updateAIModels(patterns) {
     // Implementation for updating AI models
-    console.log('🧠 Updating AI models with learned patterns...');
+    logger.info('🧠 Updating AI models with learned patterns...');
   }
 
   sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
+    return new Promise((resolve) => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                                                ms);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+);
   }
 }
 
@@ -823,13 +986,13 @@ if (require.main === module) {
   const loop = new InfiniteImprovementLoop();
 
   process.on('SIGINT', async () => {
-    console.log('\n🛑 Shutting down infinite improvement loop...');
+    logger.info('\n🛑 Shutting down infinite improvement loop...');
     await loop.stop();
     process.exit(0);
   });
 
   process.on('SIGTERM', async () => {
-    console.log('\n🛑 Shutting down infinite improvement loop...');
+    logger.info('\n🛑 Shutting down infinite improvement loop...');
     await loop.stop();
     process.exit(0);
   });

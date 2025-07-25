@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 /**
  * Staging Verification Script
@@ -60,7 +82,7 @@ const req = client.request(requestOptions, (res) => {
 
   async testRoute(route) {
     const url = `${STAGING_URL}${route}`;
-    // console.warn(`Testing ${route}...`); // Removed
+    // logger.warn(`Testing ${route}...`); // Removed
 
     try {
       const response = await this.makeRequest(url);
@@ -76,12 +98,12 @@ const req = client.request(requestOptions, (res) => {
           throw new Error(`Found error pattern: "${pattern}"`);"        }"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
       }
 
-      // console.warn(`  ✅ ${route} - OK`); // Removed
+      // logger.warn(`  ✅ ${route} - OK`); // Removed
       this.results.passed++;
       return true;
 
     } catch {
-      // console.warn(`  ❌ ${route} - FAILED: ${error.message}`); // Removed
+      // logger.warn(`  ❌ ${route} - FAILED: ${error.message}`); // Removed
       this.results.failed++;
       this.results.errors.push({
         route,
@@ -93,24 +115,24 @@ const req = client.request(requestOptions, (res) => {
   }
 
   async run() {
-    // console.warn(`🚀 Starting staging verification for: ${STAGING_URL}\n`); // Removed
+    // logger.warn(`🚀 Starting staging verification for: ${STAGING_URL}\n`); // Removed
     
     // Test all critical routes
-    // console.warn('Testing critical routes...'); // Removed'    for (const route of CRITICAL_ROUTES) {
+    // logger.warn('Testing critical routes...'); // Removed'    for (const route of CRITICAL_ROUTES) {
       await this.testRoute(route);
     }
 
     // Print summary
-    // console.warn('\n' + ='.repeat(50)); // Removed'    // console.warn('STAGING VERIFICATION SUMMARY'); // Removed'    // console.warn('='.repeat(50)); // Removed'    // console.warn(`✅ Passed: ${this.results.passed}`); // Removed
-    // console.warn(`❌ Failed: ${this.results.failed}`); // Removed
+    // logger.warn('\n' + ='.repeat(50)); // Removed'    // logger.warn('STAGING VERIFICATION SUMMARY'); // Removed'    // logger.warn('='.repeat(50)); // Removed'    // logger.warn(`✅ Passed: ${this.results.passed}`); // Removed
+    // logger.warn(`❌ Failed: ${this.results.failed}`); // Removed
     
     if (this.results.errors.length > 0) {
-      // console.warn('\nErrors:'); // Removed'      this.results.errors.forEach(error => {
-        // console.warn(`  • ${error.route}: ${error.error}`); // Removed
+      // logger.warn('\nErrors:'); // Removed'      this.results.errors.forEach(error => {
+        // logger.warn(`  • ${error.route}: ${error.error}`); // Removed
       });
     }
 
-    const status = this.results.failed === 0 ? PASSED' : FAILED';    const _emoji = status === PASSED' ? 🎉' : 💥';    // console.warn(`\n${_emoji} Overall Status: ${status}\n`); // Removed
+    const status = this.results.failed === 0 ? PASSED' : FAILED';    const _emoji = status === PASSED' ? 🎉' : 💥';    // logger.warn(`\n${_emoji} Overall Status: ${status}\n`); // Removed
 
     // Exit with appropriate code
     process.exit(this.results.failed > 0 ? 1 : 0);
@@ -121,8 +143,22 @@ const req = client.request(requestOptions, (res) => {
 if (require.main === module) {
   const verifier = new StagingVerifier();
   verifier.run().catch(error => {
-    // console.error('Verification script failed:', error); // Removed'    process.exit(1);
+    // logger.error('Verification script failed:', error); // Removed'    process.exit(1);
   });
 }
 
 module.exports = StagingVerifier; 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

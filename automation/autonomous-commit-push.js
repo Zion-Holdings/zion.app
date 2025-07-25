@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 const fs = require('fs');
 const path = require('path');
@@ -9,7 +31,11 @@ class AutonomousCommitPush {
     constructor() {
         this.projectRoot = process.cwd();
         this.config = this.loadConfig();
+<<<<<<< HEAD
+        this.logFile = path.join(__dirname, logs', 'autonomous-commit-push.log');
+=======
         this.logFile = path.join(__dirname, 'logs', 'autonomous-commit-push.log');
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
         this.ensureLogDirectory();
     }
 
@@ -20,7 +46,11 @@ class AutonomousCommitPush {
         }
         return {
             maxCommitSize: 50,
+<<<<<<< HEAD
+            commitMessageTemplate: fix: {description},
+=======
             commitMessageTemplate: 'fix: {description}',
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
             branch: 'main',
             autoPush: true,
             enableLogging: true,
@@ -44,15 +74,21 @@ class AutonomousCommitPush {
         try {
             fs.appendFileSync(this.logFile, logEntry);
         } catch (error) {
-            console.error('Failed to write to log file:', error.message);
+            logger.error('Failed to write to log file:', error.message);
         }
         
         if (level === 'error') {
+<<<<<<< HEAD
+            logger.error(message);
+        } else if (level === 'warn') {
+            logger.warn(message);
+=======
             console.error(message);
         } else if (level === 'warn') {
             console.warn(message);
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
         } else {
-            console.log(message);
+            logger.info(message);
         }
     }
 
@@ -80,7 +116,11 @@ class AutonomousCommitPush {
         try {
             if (files.length === 0) return true;
             
+<<<<<<< HEAD
+            const fileList = files.join(' ;
+=======
             const fileList = files.join(' ');
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
             execSync(`git add ${fileList}`, { stdio: 'pipe' });
             this.log(`Staged ${files.length} files`);
             return true;
@@ -136,9 +176,14 @@ class AutonomousCommitPush {
 
     async push() {
         try {
+<<<<<<< HEAD
+            execSync(`git push origin ${this.config.branch}`, { stdio: 'pipe' });
+            this.log(`Pushed to ${this.config.branch}`);
+=======
             const branch = this.config.branch;
             execSync(`git push origin ${branch}`, { stdio: 'pipe' });
             this.log(`Pushed to ${branch}`);
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
             return true;
         } catch (error) {
             this.log(`Error pushing: ${error.message}`, 'error');
@@ -241,6 +286,40 @@ class AutonomousCommitPush {
 const autonomousCommit = new AutonomousCommitPush();
 const command = process.argv[2] || 'commit';
 
+<<<<<<< HEAD
+// Run if called directly
+if (require.main === module) {
+    const autoCommitPush = new AutonomousCommitPush();
+    autoCommitPush.run()
+        .then(result => {
+            if (result.success) {
+                logger.info('✅ Success:', result.message);
+                process.exit(0);
+            } else {
+                logger.error('❌ Error:', result.error);
+                process.exit(1);
+            }
+        })
+        .catch(error => {
+            logger.error('❌ Unexpected error:', error);
+            process.exit(1);
+        });
+} 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+=======
 switch (command) {
     case 'commit':
         autonomousCommit.execute().catch(error => {
@@ -285,3 +364,4 @@ Examples:
         `);
         break;
 } 
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858

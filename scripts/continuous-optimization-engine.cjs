@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 /**
  * Zion App - Continuous Optimization Engine
@@ -51,8 +73,8 @@ class ContinuousOptimizationEngine {
    * Start the continuous optimization engine
    */
   async start() {
-    console.log('⚡ Starting Continuous Optimization Engine...');
-    console.log('='.repeat(60));
+    logger.info('⚡ Starting Continuous Optimization Engine...');
+    logger.info('='.repeat(60));
 
     this.isRunning = true;
 
@@ -72,18 +94,18 @@ class ContinuousOptimizationEngine {
       // Start monitoring
       this.startMonitoring();
 
-      console.log('✅ Continuous Optimization Engine started successfully!');
-      console.log('🔄 Continuous optimization active');
-      console.log('📊 Performance monitoring enabled');
-      console.log('🔒 Security scanning enabled');
-      console.log('📦 Bundle optimization enabled');
-      console.log('🎯 Code quality optimization enabled');
-      console.log('📦 Dependency management enabled');
-      console.log('🖼️ Image optimization enabled');
-      console.log('🧪 Test automation enabled');
-      console.log('='.repeat(60));
+      logger.info('✅ Continuous Optimization Engine started successfully!');
+      logger.info('🔄 Continuous optimization active');
+      logger.info('📊 Performance monitoring enabled');
+      logger.info('🔒 Security scanning enabled');
+      logger.info('📦 Bundle optimization enabled');
+      logger.info('🎯 Code quality optimization enabled');
+      logger.info('📦 Dependency management enabled');
+      logger.info('🖼️ Image optimization enabled');
+      logger.info('🧪 Test automation enabled');
+      logger.info('='.repeat(60));
     } catch (error) {
-      console.error('❌ Failed to start optimization engine:', error);
+      logger.error('❌ Failed to start optimization engine:', error);
       throw error;
     }
   }
@@ -92,7 +114,7 @@ class ContinuousOptimizationEngine {
    * Perform initial optimization
    */
   async performInitialOptimization() {
-    console.log('🔧 Performing initial optimization...')
+    logger.info('🔧 Performing initial optimization...')
 const optimizations = [
       this.optimizePerformance(),
       this.optimizeSecurity(),
@@ -111,7 +133,7 @@ const results = await Promise.allSettled(optimizations);
       }
     }
 
-    console.log(
+    logger.info(
       `✅ Initial optimization completed: ${this.optimizations.length} optimizations applied`,
     );
   }
@@ -125,7 +147,7 @@ const performanceLoop = async () => {
       if (!this.isRunning) return;
 
       try {
-        console.log('⚡ Running performance optimization...')
+        logger.info('⚡ Running performance optimization...')
 const optimization = await this.optimizePerformance();
 
         if (optimization) {
@@ -133,10 +155,151 @@ const optimization = await this.optimizePerformance();
           this.updateMetrics(optimization);
         }
       } catch (error) {
-        console.error('❌ Performance optimization error:', error);
+        logger.error('❌ Performance optimization error:', error);
       }
 
-      setTimeout(performanceLoop, this.config.performanceCheckInterval);
+      
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(performanceLoop,                                                this.config.performanceCheckInterval);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
     };
 
     performanceLoop();
@@ -151,7 +314,7 @@ const securityLoop = async () => {
       if (!this.isRunning) return;
 
       try {
-        console.log('🔒 Running security optimization...')
+        logger.info('🔒 Running security optimization...')
 const optimization = await this.optimizeSecurity();
 
         if (optimization) {
@@ -159,10 +322,151 @@ const optimization = await this.optimizeSecurity();
           this.updateMetrics(optimization);
         }
       } catch (error) {
-        console.error('❌ Security optimization error:', error);
+        logger.error('❌ Security optimization error:', error);
       }
 
-      setTimeout(securityLoop, this.config.securityCheckInterval);
+      
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(securityLoop,                                                this.config.securityCheckInterval);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
     };
 
     securityLoop();
@@ -177,7 +481,7 @@ const bundleLoop = async () => {
       if (!this.isRunning) return;
 
       try {
-        console.log('📦 Running bundle optimization...')
+        logger.info('📦 Running bundle optimization...')
 const optimization = await this.optimizeBundle();
 
         if (optimization) {
@@ -185,10 +489,151 @@ const optimization = await this.optimizeBundle();
           this.updateMetrics(optimization);
         }
       } catch (error) {
-        console.error('❌ Bundle optimization error:', error);
+        logger.error('❌ Bundle optimization error:', error);
       }
 
-      setTimeout(bundleLoop, this.config.bundleAnalysisInterval);
+      
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(bundleLoop,                                                this.config.bundleAnalysisInterval);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
     };
 
     bundleLoop();
@@ -203,7 +648,7 @@ const qualityLoop = async () => {
       if (!this.isRunning) return;
 
       try {
-        console.log('🎯 Running code quality optimization...')
+        logger.info('🎯 Running code quality optimization...')
 const optimization = await this.optimizeCodeQuality();
 
         if (optimization) {
@@ -211,10 +656,151 @@ const optimization = await this.optimizeCodeQuality();
           this.updateMetrics(optimization);
         }
       } catch (error) {
-        console.error('❌ Code quality optimization error:', error);
+        logger.error('❌ Code quality optimization error:', error);
       }
 
-      setTimeout(qualityLoop, this.config.optimizationInterval);
+      
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(qualityLoop,                                                this.config.optimizationInterval);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
     };
 
     qualityLoop();
@@ -229,7 +815,7 @@ const dependencyLoop = async () => {
       if (!this.isRunning) return;
 
       try {
-        console.log('📦 Running dependency optimization...')
+        logger.info('📦 Running dependency optimization...')
 const optimization = await this.optimizeDependencies();
 
         if (optimization) {
@@ -237,10 +823,151 @@ const optimization = await this.optimizeDependencies();
           this.updateMetrics(optimization);
         }
       } catch (error) {
-        console.error('❌ Dependency optimization error:', error);
+        logger.error('❌ Dependency optimization error:', error);
       }
 
-      setTimeout(dependencyLoop, this.config.optimizationInterval * 2);
+      
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(dependencyLoop,                                                this.config.optimizationInterval * 2);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
     };
 
     dependencyLoop();
@@ -255,7 +982,7 @@ const imageLoop = async () => {
       if (!this.isRunning) return;
 
       try {
-        console.log('🖼️ Running image optimization...')
+        logger.info('🖼️ Running image optimization...')
 const optimization = await this.optimizeImages();
 
         if (optimization) {
@@ -263,10 +990,151 @@ const optimization = await this.optimizeImages();
           this.updateMetrics(optimization);
         }
       } catch (error) {
-        console.error('❌ Image optimization error:', error);
+        logger.error('❌ Image optimization error:', error);
       }
 
-      setTimeout(imageLoop, this.config.optimizationInterval * 3);
+      
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(imageLoop,                                                this.config.optimizationInterval * 3);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
     };
 
     imageLoop();
@@ -281,7 +1149,7 @@ const testLoop = async () => {
       if (!this.isRunning) return;
 
       try {
-        console.log('🧪 Running test automation...')
+        logger.info('🧪 Running test automation...')
 const optimization = await this.runTests();
 
         if (optimization) {
@@ -289,10 +1157,151 @@ const optimization = await this.runTests();
           this.updateMetrics(optimization);
         }
       } catch (error) {
-        console.error('❌ Test automation error:', error);
+        logger.error('❌ Test automation error:', error);
       }
 
-      setTimeout(testLoop, this.config.optimizationInterval * 2);
+      
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(testLoop,                                                this.config.optimizationInterval * 2);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
     };
 
     testLoop();
@@ -306,7 +1315,7 @@ const optimization = await this.runTests();
       if (!this.isRunning) return;
 
       // Log metrics
-      console.log(
+      logger.info(
         `📊 Optimization Metrics: ${this.metrics.totalOptimizations} total, ${this.metrics.performanceImprovements} performance, ${this.metrics.securityFixes} security, ${this.metrics.codeQualityImprovements} code quality`,
       );
 
@@ -315,7 +1324,148 @@ const optimization = await this.runTests();
         this.autoCommitOptimizations();
       }
 
-      setTimeout(monitoringLoop, 60 * 1000); // Every minute
+      
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(monitoringLoop,                                                60 * 1000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+; // Every minute
     };
 
     monitoringLoop();
@@ -327,10 +1477,10 @@ const optimization = await this.runTests();
   async optimizePerformance() {
     try {
       // Run performance audit
-      execSync('npm run perf:audit', { stdio: 'pipe' });
+      execSync('npm run perf: 'audit', { stdio: 'pipe' });
 
       // Optimize bundle
-      execSync('npm run bundle:optimize', { stdio: 'pipe' });
+      execSync('npm run bundle: 'optimize', { stdio: 'pipe' });
 
       // Check performance metrics
       const metrics = this.getPerformanceMetrics();
@@ -343,7 +1493,7 @@ const optimization = await this.runTests();
         timestamp: new Date().toISOString(),
       };
     } catch (error) {
-      console.warn('⚠️ Performance optimization failed:', error.message);
+      logger.warn('⚠️ Performance optimization failed:', error.message);
       return null;
     }
   }
@@ -364,7 +1514,7 @@ const optimization = await this.runTests();
         timestamp: new Date().toISOString(),
       };
     } catch (error) {
-      console.warn('⚠️ Security optimization failed:', error.message);
+      logger.warn('⚠️ Security optimization failed:', error.message);
       return null;
     }
   }
@@ -372,10 +1522,10 @@ const optimization = await this.runTests();
   async optimizeBundle() {
     try {
       // Analyze bundle
-      execSync('npm run bundle:analyze', { stdio: 'pipe' });
+      execSync('npm run bundle: 'analyze', { stdio: 'pipe' });
 
       // Optimize bundle size
-      execSync('npm run bundle:optimize', { stdio: 'pipe' })
+      execSync('npm run bundle: 'optimize', { stdio: 'pipe' })
 const bundleMetrics = this.getBundleMetrics();
 
       return {
@@ -386,7 +1536,7 @@ const bundleMetrics = this.getBundleMetrics();
         timestamp: new Date().toISOString(),
       };
     } catch (error) {
-      console.warn('⚠️ Bundle optimization failed:', error.message);
+      logger.warn('⚠️ Bundle optimization failed:', error.message);
       return null;
     }
   }
@@ -410,7 +1560,7 @@ const bundleMetrics = this.getBundleMetrics();
         timestamp: new Date().toISOString(),
       };
     } catch (error) {
-      console.warn('⚠️ Code quality optimization failed:', error.message);
+      logger.warn('⚠️ Code quality optimization failed:', error.message);
       return null;
     }
   }
@@ -443,7 +1593,7 @@ const outdated = JSON.parse(outdatedOutput || '{}');
         timestamp: new Date().toISOString(),
       };
     } catch (error) {
-      console.warn('⚠️ Dependency optimization failed:', error.message);
+      logger.warn('⚠️ Dependency optimization failed:', error.message);
       return null;
     }
   }
@@ -455,7 +1605,7 @@ const outdated = JSON.parse(outdatedOutput || '{}');
 
       if (imageFiles.length > 0) {
         // Optimize images (simulated)
-        console.log(`🖼️ Found ${imageFiles.length} images for optimization`);
+        logger.info(`🖼️ Found ${imageFiles.length} images for optimization`);
 
         return {
           type: 'image_optimization',
@@ -468,7 +1618,7 @@ const outdated = JSON.parse(outdatedOutput || '{}');
 
       return null;
     } catch (error) {
-      console.warn('⚠️ Image optimization failed:', error.message);
+      logger.warn('⚠️ Image optimization failed:', error.message);
       return null;
     }
   }
@@ -485,7 +1635,7 @@ const outdated = JSON.parse(outdatedOutput || '{}');
         timestamp: new Date().toISOString(),
       };
     } catch (error) {
-      console.warn('⚠️ Test automation failed:', error.message);
+      logger.warn('⚠️ Test automation failed:', error.message);
       return null;
     }
   }
@@ -600,10 +1750,10 @@ const publicDir = path.join(this.projectRoot, 'public');
           { stdio: 'pipe' },
         );
 
-        console.log('💾 Auto-committed optimizations');
+        logger.info('💾 Auto-committed optimizations');
       }
     } catch (error) {
-      console.warn('⚠️ Auto-commit failed:', error.message);
+      logger.warn('⚠️ Auto-commit failed:', error.message);
     }
   }
 
@@ -611,9 +1761,9 @@ const publicDir = path.join(this.projectRoot, 'public');
    * Stop the engine
    */
   stop() {
-    console.log('🛑 Stopping Continuous Optimization Engine...');
+    logger.info('🛑 Stopping Continuous Optimization Engine...');
     this.isRunning = false;
-    console.log('✅ Continuous Optimization Engine stopped');
+    logger.info('✅ Continuous Optimization Engine stopped');
   }
 
   /**
@@ -639,20 +1789,20 @@ if (require.main === module) {
 
   // Handle graceful shutdown
   process.on('SIGINT', async () => {
-    console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
     engine.stop();
     process.exit(0);
   });
 
   process.on('SIGTERM', async () => {
-    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+    logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
     engine.stop();
     process.exit(0);
   });
 
   // Start the engine
   engine.start().catch((error) => {
-    console.error('❌ Failed to start optimization engine:', error);
+    logger.error('❌ Failed to start optimization engine:', error);
     process.exit(1);
   });
 }

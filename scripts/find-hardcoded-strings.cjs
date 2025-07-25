@@ -1,10 +1,8 @@
-#!/usr/bin/env node
-
-const fs = require('fs')
+const fs = require('fs');
 const path = require('path');
 
 // Configuration
-const _SEARCH_PATTERNS = ['**/*.tsx', '**/*.ts', '**/*.jsx', '**/*.js']
+const _SEARCH_PATTERNS = ['**/*.tsx', '**/*.ts', '**/*.jsx', '**/*.js'];
 const EXCLUDED_DIRS = [
   'node_modules',
   'dist',
@@ -14,7 +12,7 @@ const EXCLUDED_DIRS = [
   '__tests__',
   '*.test.*',
   '*.spec.*',
-]
+];
 const OUTPUT_FILE = path.join(__dirname, '../hardcoded-strings-report.md');
 
 // Patterns to identify hardcoded strings that should likely be translated
@@ -148,7 +146,7 @@ const EXCEPTIONS = [
   'window',
   'navigator',
   'location',
-]
+];
 function isExcluded(text) {
   // Check if it's a technical term or code
   if (
@@ -196,8 +194,8 @@ function shouldBeTranslated(text) {
 
 function analyzeFile(filePath) {
   try {
-    const content = fs.readFileSync(filePath, 'utf8')
-const hardcodedStrings = new Set();
+    const content = fs.readFileSync(filePath, 'utf8');
+    const hardcodedStrings = new Set();
 
     // Skip files that are already using translation hooks
     const hasTranslation = /useTranslation|import.*useTranslation/.test(
@@ -225,12 +223,12 @@ const hardcodedStrings = new Set();
         const beforeMatch = content.substring(
           Math.max(0, match.index - 50),
           match.index,
-        )
-const afterMatch = content.substring(
+        );
+        const afterMatch = content.substring(
           match.index + match[0].length,
           match.index + match[0].length + 50,
-        )
-const context = beforeMatch + match[0] + afterMatch;
+        );
+        const context = beforeMatch + match[0] + afterMatch;
 
         if (
           /(?:return|jsx|tsx|<|>|className|placeholder|title|alt|aria-label)/.test(
@@ -255,11 +253,11 @@ const context = beforeMatch + match[0] + afterMatch;
 
 function generateReport(results) {
   let report = `# Hardcoded Strings Report\n\n`;
-  report += `Generated on: ${new Date().toISOString()}\n\n`
-const filesWithHardcodedStrings = results.filter(
+  report += `Generated on: ${new Date().toISOString()}\n\n`;
+  const filesWithHardcodedStrings = results.filter(
     (r) => r && r.hardcodedStrings.length > 0,
-  )
-const filesWithTranslation = results.filter((r) => r && r.hasTranslation);
+  );
+  const filesWithTranslation = results.filter((r) => r && r.hasTranslation);
 
   report += `## Summary\n\n`;
   report += `- **Total Files Analyzed**: ${results.filter((r) => r).length}\n`;
@@ -275,8 +273,8 @@ const filesWithTranslation = results.filter((r) => r && r.hasTranslation);
   // Group by priority
   const highPriority = filesWithHardcodedStrings.filter(
     (f) => !f.hasTranslation,
-  )
-const mediumPriority = filesWithHardcodedStrings.filter(
+  );
+  const mediumPriority = filesWithHardcodedStrings.filter(
     (f) => f.hasTranslation,
   );
 
@@ -339,14 +337,14 @@ const mediumPriority = filesWithHardcodedStrings.filter(
 
 // Recursive file finder function
 function findFiles(dir, extensions, excludedDirs = []) {
-  const files = []
-function searchDir(currentDir) {
+  const files = [];
+  function searchDir(currentDir) {
     try {
       const items = fs.readdirSync(currentDir);
 
       for (const item of items) {
-        const fullPath = path.join(currentDir, item)
-const stat = fs.statSync(fullPath);
+        const fullPath = path.join(currentDir, item);
+        const stat = fs.statSync(fullPath);
 
         if (stat.isDirectory()) {
           // Skip excluded directories
@@ -372,13 +370,13 @@ const stat = fs.statSync(fullPath);
 
 function main() {
   // console.warn('🔍 Scanning for hardcoded strings...')
-const extensions = ['.tsx', '.ts', '.jsx', '.js']
-const files = findFiles('.', extensions, EXCLUDED_DIRS);
+  const extensions = ['.tsx', '.ts', '.jsx', '.js'];
+  const files = findFiles('.', extensions, EXCLUDED_DIRS);
 
   // console.warn(`📁 Found ${files.length} files to analyze`)
-const results = files.map(analyzeFile).filter(Boolean);
+  const results = files.map(analyzeFile).filter(Boolean);
   // console.warn(`✅ Analyzed ${results.length} files`)
-const report = generateReport(results);
+  const report = generateReport(results);
   fs.writeFileSync(OUTPUT_FILE, report);
 
   // console.warn(`📝 Report saved to: ${OUTPUT_FILE}`);
@@ -386,8 +384,8 @@ const report = generateReport(results);
   // Console summary
   const filesWithHardcoded = results.filter(
     (r) => r.hardcodedStrings.length > 0,
-  )
-const filesWithTranslation = results.filter((r) => r.hasTranslation);
+  );
+  const filesWithTranslation = results.filter((r) => r.hasTranslation);
 
   // console.warn(`\n📊 Summary:`);
   // console.warn(`   Files with translation: ${filesWithTranslation.length}`);

@@ -1,13 +1,35 @@
-#!/usr/bin/env node
+const winston = require('winston');
 
-const fs = require('fs')
-const path = require('path')
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json(),
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
+
+const fs = require('fs');
+const path = require('path');
 const { execSync } = require('child_process');
 
-console.log('🔧 Final Comprehensive Fix - Addressing All Remaining Issues...');
+logger.info('🔧 Final Comprehensive Fix - Addressing All Remaining Issues...');
 
 // 1. Fix package.json merge conflicts and clean up
-console.log('\n1. Fixing package.json...');
+logger.info('\n1. Fixing package.json...');
 try {
   const packageJsonPath = 'package.json';
   if (fs.existsSync(packageJsonPath)) {
@@ -39,14 +61,14 @@ try {
 
     packageJson.scripts = cleanScripts;
     fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
-    console.log('✅ Fixed package.json');
+    logger.info('✅ Fixed package.json');
   }
 } catch (error) {
-  console.log('❌ Error fixing package.json:', error.message);
+  logger.info('❌ Error fixing package.json:', error.message);
 }
 
 // 2. Clean up problematic automation scripts
-console.log('\n2. Cleaning up problematic automation scripts...')
+logger.info('\n2. Cleaning up problematic automation scripts...');
 const problematicScripts = [
   'scripts/ai-continuous-improvement.cjs',
   'scripts/cursor-ai-delegator.cjs',
@@ -59,15 +81,15 @@ problematicScripts.forEach((script) => {
   if (fs.existsSync(script)) {
     try {
       fs.unlinkSync(script);
-      console.log(`✅ Removed: ${script}`);
+      logger.info(`✅ Removed: ${script}`);
     } catch (error) {
-      console.log(`⚠️  Could not remove: ${script}`);
+      logger.info(`⚠️  Could not remove: ${script}`);
     }
   }
 });
 
 // 3. Clean up problematic directories
-console.log('\n3. Cleaning up problematic directories...')
+logger.info('\n3. Cleaning up problematic directories...');
 const problematicDirs = [
   'ai-improvement-data',
   'automation-data',
@@ -80,15 +102,15 @@ problematicDirs.forEach((dir) => {
   if (fs.existsSync(dir)) {
     try {
       execSync(`rm -rf ${dir}`, { stdio: 'inherit' });
-      console.log(`✅ Removed: ${dir}`);
+      logger.info(`✅ Removed: ${dir}`);
     } catch (error) {
-      console.log(`⚠️  Could not remove: ${dir}`);
+      logger.info(`⚠️  Could not remove: ${dir}`);
     }
   }
 });
 
 // 4. Fix Next.js configuration
-console.log('\n4. Fixing Next.js configuration...')
+logger.info('\n4. Fixing Next.js configuration...');
 const nextConfig = `module.exports = {
   reactStrictMode: true,
   swcMinify: false,
@@ -108,10 +130,10 @@ const nextConfig = `module.exports = {
 };`;
 
 fs.writeFileSync('next.config.js', nextConfig);
-console.log('✅ Fixed Next.js configuration');
+logger.info('✅ Fixed Next.js configuration');
 
 // 5. Create a simple working Next.js app structure
-console.log('\n5. Creating simple working app structure...');
+logger.info('\n5. Creating simple working app structure...');
 
 // Create a simple _app.js
 const appContent = `import React from 'react';
@@ -122,7 +144,7 @@ export default function App({ Component, pageProps }) {
 }`;
 
 fs.writeFileSync('pages/_app.js', appContent);
-console.log('✅ Created simple _app.js');
+logger.info('✅ Created simple _app.js');
 
 // Create a simple index page
 const indexContent = `import React from 'react';
@@ -151,7 +173,7 @@ export default function Home() {
 }`;
 
 fs.writeFileSync('pages/index.js', indexContent);
-console.log('✅ Created simple index page');
+logger.info('✅ Created simple index page');
 
 // 6. Create a simple health API
 const healthContent = `export default function handler(req, res) {
@@ -169,7 +191,7 @@ if (!fs.existsSync('pages/api')) {
   fs.mkdirSync('pages/api', { recursive: true });
 }
 fs.writeFileSync('pages/api/health.js', healthContent);
-console.log('✅ Created health API endpoint');
+logger.info('✅ Created health API endpoint');
 
 // 7. Create a simple dev server script
 const devServerContent = `#!/usr/bin/env node
@@ -199,12 +221,12 @@ app.get('*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(\`🚀 Zion App running on http://localhost:\${PORT}\`);
-  console.log(\`📊 Health check: http://localhost:\${PORT}/api/health\`);
+  logger.info(\`🚀 Zion App running on http://localhost:\${PORT}\`);
+  logger.info(\`📊 Health check: http://localhost:\${PORT}/api/health\`);
 });`;
 
 fs.writeFileSync('scripts/simple-dev-server.cjs', devServerContent);
-console.log('✅ Created simple dev server script');
+logger.info('✅ Created simple dev server script');
 
 // 8. Create a simple HTML file
 const htmlContent = `<!DOCTYPE html>
@@ -262,10 +284,10 @@ if (!fs.existsSync('public')) {
   fs.mkdirSync('public', { recursive: true });
 }
 fs.writeFileSync('public/index.html', htmlContent);
-console.log('✅ Created simple HTML file');
+logger.info('✅ Created simple HTML file');
 
 // 9. Final status report
-console.log('\n9. Generating final status report...')
+logger.info('\n9. Generating final status report...');
 const finalStatus = {
   timestamp: new Date().toISOString(),
   status: 'SUCCESS',
@@ -293,10 +315,10 @@ fs.writeFileSync(
   'automation/final-status.json',
   JSON.stringify(finalStatus, null, 2),
 );
-console.log('✅ Generated final status report');
+logger.info('✅ Generated final status report');
 
-console.log('\n🎉 Final Comprehensive Fix Complete!');
-console.log(
+logger.info('\n🎉 Final Comprehensive Fix Complete!');
+logger.info(
   '🚀 The app should now be running smoothly on http://localhost:3006',
 );
-console.log('📊 Health check: http://localhost:3006/api/health');
+logger.info('📊 Health check: http://localhost:3006/api/health');

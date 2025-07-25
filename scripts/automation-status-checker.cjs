@@ -1,8 +1,30 @@
-#!/usr/bin/env node
+const winston = require('winston');
 
-const fs = require('fs')
-const path = require('path')
-const { execSync } = require('child_process')
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json(),
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
+
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
 class AutomationStatusChecker {
   constructor() {
     this.processes = [
@@ -28,7 +50,7 @@ class AutomationStatusChecker {
       warning: '\x1b[33m',
       reset: '\x1b[0m',
     };
-    console.log(`${colors[type]}${message}${colors.reset}`);
+    logger.info(`${colors[type]}${message}${colors.reset}`);
   }
 
   checkProcessStatus(processName) {
@@ -43,16 +65,16 @@ class AutomationStatusChecker {
   }
 
   async checkAllProcesses() {
-    console.log('\n🤖 AUTOMATION STATUS CHECKER');
-    console.log('================================\n');
+    logger.info('\n🤖 AUTOMATION STATUS CHECKER');
+    logger.info('================================\n');
 
     let totalRunning = 0;
     let totalProcesses = this.processes.length;
 
     for (const process of this.processes) {
-      const count = this.checkProcessStatus(process)
-const status = count > 0 ? '✅ RUNNING' : '❌ STOPPED'
-const instances = count > 0 ? ` (${count} instances)` : '';
+      const count = this.checkProcessStatus(process);
+      const status = count > 0 ? '✅ RUNNING' : '❌ STOPPED';
+      const instances = count > 0 ? ` (${count} instances)` : '';
 
       this.log(
         `${status} ${process}${instances}`,
@@ -61,8 +83,8 @@ const instances = count > 0 ? ` (${count} instances)` : '';
       totalRunning += count;
     }
 
-    console.log('\n📊 SUMMARY');
-    console.log('==========');
+    logger.info('\n📊 SUMMARY');
+    logger.info('==========');
     this.log(`Total Processes: ${totalProcesses}`, 'info');
     this.log(
       `Running Instances: ${totalRunning}`,
@@ -84,9 +106,9 @@ const instances = count > 0 ? ` (${count} instances)` : '';
   }
 
   checkAutomationReports() {
-    console.log('\n📈 AUTOMATION REPORTS');
-    console.log('====================')
-const reportFiles = [
+    logger.info('\n📈 AUTOMATION REPORTS');
+    logger.info('====================');
+    const reportFiles = [
       'automation/ai-improvement-report.json',
       'automation/health-report.json',
       'automation/optimization-report.json',
@@ -96,8 +118,8 @@ const reportFiles = [
     for (const file of reportFiles) {
       try {
         if (fs.existsSync(file)) {
-          const data = JSON.parse(fs.readFileSync(file, 'utf8'))
-const timestamp = new Date(
+          const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+          const timestamp = new Date(
             data.timestamp || Date.now(),
           ).toLocaleString();
           this.log(`✅ ${file} - Last updated: ${timestamp}`, 'success');
@@ -111,7 +133,7 @@ const timestamp = new Date(
   }
 
   async startContinuousMonitoring() {
-    console.log('\n🔄 Starting continuous monitoring...\n');
+    logger.info('\n🔄 Starting continuous monitoring...\n');
 
     setInterval(async () => {
       console.clear();

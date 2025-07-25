@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
 
 const fs = require('fs');
 const path = require('path');
@@ -7,6 +29,19 @@ const { execSync } = require('child_process');
 class SecurityChecker {
     constructor() {
         this.projectRoot = process.cwd();
+<<<<<<< HEAD
+        this.reportsDir = path.join(this.projectRoot, automation', 'reports');
+        this.ensureDirectory(this.reportsDir);
+        
+        // Patterns to detect sensitive data
+        this.sensitivePatterns = {
+            apiKeys: [
+                /api[_-]?key\s*[:=]\s*['"`][^'"`]{20}['"`]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+                /api[_-]?token\s*[:=]\s*['"`][^'"`]{20}['"`]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+                /access[_-]?token\s*[:=]\s*['"`][^'"`]{20}['"`]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+                /secret[_-]?key\s*[:=]\s*['"`][^'"`]{20}['"`]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+                /private[_-]?key\s*[:=]\s*['"`][^'"`]{20}['"`]/gi"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+=======
         this.config = this.loadConfig();
         this.logFile = path.join(__dirname, '..', 'logs', 'security-check.log');
         this.ensureLogDirectory();
@@ -26,6 +61,7 @@ class SecurityChecker {
                 'token',
                 'api_key',
                 'private_key'
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
             ],
             allowedDomains: [
                 'localhost',
@@ -43,10 +79,32 @@ class SecurityChecker {
         }
     }
 
+<<<<<<< HEAD
+    log(message) {
+        logger.info(`[Security Check] ${message}`);
+    }
+
+    shouldExcludeFile(filePath) {
+        return this.excludePatterns.some(pattern => pattern.test(filePath));
+    }
+
+    async scanForSensitiveData() {
+        this.log('🔒 Starting sensitive data scan...');
+
+        const results = {
+            timestamp: new Date().toISOString(),
+            filesScanned: 0,
+            issuesFound: 0,
+            vulnerabilities: [],
+            summary: {}
+        };
+
+=======
     log(message, level = 'info') {
         const timestamp = new Date().toISOString();
         const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}\n`;
         
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
         try {
             fs.appendFileSync(this.logFile, logEntry);
         } catch (error) {
@@ -93,6 +151,10 @@ class SecurityChecker {
         }
     }
 
+<<<<<<< HEAD
+            const content = fs.readFileSync(filePath, 'utf8');
+            const relativePath = path.relative(this.projectRoot, filePath);
+=======
     async checkSensitiveData() {
         try {
             this.log('Checking for sensitive data...');
@@ -100,6 +162,7 @@ class SecurityChecker {
             const sensitivePatterns = this.config.sensitivePatterns;
             const excludedDirs = ['node_modules', '.git', '.next', 'dist', 'build', 'coverage'];
             const foundSensitive = [];
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
 
             // Walk through project files
             const walkDir = (dir) => {
@@ -327,11 +390,176 @@ class SecurityChecker {
             return false;
         }
     }
+<<<<<<< HEAD
+
+    checkForHardcodedSecrets(content, filePath) {
+        const secrets = [];
+        
+        // Check for common secret patterns
+        const secretPatterns = [
+            {
+                pattern: /['"`](sk_live_|pk_live_|sk_test_|pk_test_)[a-zA-Z0-9]{24}['"`]/g,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+                category: 'stripe_keys',
+                severity: 'high',
+                recommendation: Use environment variables for Stripe keys
+            },
+            {
+                pattern: /['"`](ghp_|gho_|ghu_|ghs_|ghr_)[a-zA-Z0-9]{36}['"`]/g,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+                category: 'github_tokens',
+                severity: 'high',
+                recommendation: Use environment variables for GitHub tokens
+            },
+            {
+                pattern: /['"`](xoxb-|xoxp-|xoxa-|xoxr-)[a-zA-Z0-9-]+['"`]/g,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+                category: 'slack_tokens',
+                severity: 'high',
+                recommendation: Use environment variables for Slack tokens
+            },
+            {
+                pattern: /['"`]AIza[0-9A-Za-z-_]{35}['"`]/g,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+                category: 'google_api_keys',
+                severity: 'high',
+                recommendation: Use environment variables for Google API keys
+            }
+        ];
+
+        for (const secretPattern of secretPatterns) {
+            const matches = content.match(secretPattern.pattern);
+            if (matches) {
+                secrets.push({
+                    file: filePath,
+                    category: secretPattern.category,
+                    pattern: secretPattern.pattern.source,
+                    matches: matches.length,
+                    severity: secretPattern.severity,
+                    recommendation: secretPattern.recommendation
+                });
+            }
+        }
+
+        return secrets;
+    }
+
+    getSeverity(category) {
+        const severityMap = {
+            apiKeys: 'high',
+            passwords: 'high',
+            database: 'high',
+            aws: 'critical',
+            stripe: 'critical',
+            github: 'high',
+            slack: 'high',
+            email: 'medium',
+            phone: 'medium',
+            ssn: 'critical',
+            creditCard: critical
+        };
+        
+        return severityMap[category] || medium';
+    }
+
+    getRecommendation(category) {
+        const recommendations = {
+            apiKeys: Use environment variables for API keys',
+            passwords: Use environment variables for passwords',
+            database: Use environment variables for database connections',
+            aws: Use AWS IAM roles or environment variables for AWS credentials',
+            stripe: Use environment variables for Stripe keys',
+            github: Use environment variables for GitHub tokens',
+            slack: Use environment variables for Slack tokens',
+            email: Consider using environment variables for email addresses',
+            phone: Consider using environment variables for phone numbers',
+            ssn: Never hardcode SSNs. Use secure storage solutions',
+            creditCard: Never hardcode credit card numbers. Use secure payment processors
+        };
+        
+        return recommendations[category] || Review and secure this sensitive data';
+    }
+
+    generateSummary(vulnerabilities) {
+        const summary = {
+            totalIssues: vulnerabilities.length,
+            bySeverity: {},
+            byCategory: {},
+            criticalIssues: 0,
+            highIssues: 0,
+            mediumIssues: 0,
+            lowIssues: 0
+        };
+
+        for (const vuln of vulnerabilities) {
+            // Count by severity
+            summary.bySeverity[vuln.severity] = (summary.bySeverity[vuln.severity] || 0) + 1;
+            
+            // Count by category
+            summary.byCategory[vuln.category] = (summary.byCategory[vuln.category] || 0) + 1;
+            
+            // Count severity levels
+            switch (vuln.severity) {
+                case critical':
+                    summary.criticalIssues++;
+                    break;
+                case high':
+                    summary.highIssues++;
+                    break;
+                case medium':
+                    summary.mediumIssues++;
+                    break;
+                case low':
+                    summary.lowIssues++;
+                    break;
+            }
+        }
+
+        return summary;
+    }
+}
+
+// Main execution
+async function main() {
+    const checker = new SecurityChecker();
+    
+    try {
+        const results = await checker.scanForSensitiveData();
+        
+        // Log summary
+        logger.info('\n🔒 Security Scan Summary:');
+        logger.info(`Files Scanned: ${results.filesScanned}`);
+        logger.info(`Issues Found: ${results.issuesFound}`);
+        logger.info(`Critical Issues: ${results.summary.criticalIssues}`);
+        logger.info(`High Issues: ${results.summary.highIssues}`);
+        logger.info(`Medium Issues: ${results.summary.mediumIssues}`);
+        logger.info(`Low Issues: ${results.summary.lowIssues}`);
+        
+        if (results.vulnerabilities.length > 0) {
+            logger.info('\n🚨 Vulnerabilities Found:');
+            results.vulnerabilities.forEach(vuln => {
+                logger.info(`- ${vuln.file}: ${vuln.category} (${vuln.severity})`);
+                logger.info(`  Recommendation: ${vuln.recommendation}`);
+            });
+            
+            // Exit with error if critical or high issues found
+            if (results.summary.criticalIssues > 0 || results.summary.highIssues > 0) {
+                logger.info('\n❌ Critical or high severity issues found. Please fix before proceeding.');
+                process.exit(1);
+            }
+        } else {
+            logger.info('\n✅ No sensitive data issues found.');
+        }
+        
+        process.exit(0);
+    } catch (error) {
+        logger.error('❌ Security check failed:', error.message);
+        process.exit(1);
+    }
+}
+=======
 }
 
 // Main execution
 const securityChecker = new SecurityChecker();
 const command = process.argv[2] || 'execute';
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
 
 switch (command) {
     case 'execute':
@@ -350,6 +578,23 @@ switch (command) {
         console.log(`
 🔒 Security Check System
 
+<<<<<<< HEAD
+module.exports = SecurityChecker; 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+=======
 Usage:
   node automation/security/check-sensitive-data.js [command]
 
@@ -370,3 +615,4 @@ Examples:
         `);
         break;
 } 
+>>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858

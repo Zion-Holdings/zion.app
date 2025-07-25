@@ -53,7 +53,7 @@ describe('apiErrorHandler', () => {'  beforeEach(() => {
       const parsed = parseApiError(error);
       expect(parsed.message).toBe('The server is taking too long to respond. Please check your internet connection or try again later.');    });
 
-    it('should return specific message for generic Network Error', () => {'      const error = { message: 'Network Error' }; // No status'      const parsed = parseApiError(error);
+    it('should return specific message for generic Network Error', () => {'      const error = { message:' 'Network Error' }; // No status'      const parsed = parseApiError(error);
       expect(parsed.message).toBe('A network error occurred. Please check your internet connection and try again.');    });
 
     it('should prioritize backend message even if a status code match exists', () => {'      const backendMessage = This is a very specific 400 error.';      const error = { response: { status: 400, data: { message: backendMessage } } };

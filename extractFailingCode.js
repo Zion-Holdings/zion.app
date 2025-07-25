@@ -9,7 +9,7 @@ if (process.argv.length < 3) {
 const reportPath = process.argv[2];
 
 try {
-  const reportContent = fs.readFileSync(reportPath, utf8');
+  const reportContent = fs.readFileSync(reportPath, 'utf8');
   const report = JSON.parse(reportContent);
 
   // Extract the first error message or a default message

@@ -1,7 +1,41 @@
-#!/usr/bin/env node
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting Script...');
+    
+    try {
+      #!/usr/bin/env node
 ;
 import fs from fs';import path from path';import { fileURLToPath as _fileURLToPath } from url';
-console.warn('🔧 Fixing API TypeScript errors...');
+logger.warn('🔧 Fixing API TypeScript errors...');
 // Common patterns to fix
 const fixes = [
   // Fix req.query destructuring
@@ -31,10 +65,10 @@ const fixes = [
 // Function to process a file
 function processFile(filePath) {
   try {
-    let content = fs.readFileSync(filePath, utf8');    let modified = false;
+    let content = fs.readFileSync(filePath, 'utf8');    let modified = false;
 
     fixes.forEach(fix => {
-      if (typeof fix.replacement === function') {        const newContent = content.replace(fix.pattern, fix.replacement);
+      if (typeof fix.replacement === 'function') {        const newContent = content.replace(fix.pattern, fix.replacement);
         if (newContent !== content) {
           content = newContent;
           modified = true;
@@ -50,7 +84,7 @@ function processFile(filePath) {
 
     if (modified) {
       fs.writeFileSync(filePath, content);
-      console.warn(`✅ Fixed: ${path.relative(process.cwd(), filePath)}`);
+      logger.warn(`✅ Fixed: ${path.relative(process.cwd(), filePath)}`);
       return true;
     }
     return false;
@@ -88,7 +122,7 @@ let totalFixed = 0;
 
 apiDirs.forEach(apiDir => {
   if (fs.existsSync(apiDir)) {
-    console.warn(`\n🔍 Processing ${apiDir}...`)
+    logger.warn(`\n🔍 Processing ${apiDir}...`)
 const apiFiles = findApiFiles(apiDir);
     
     apiFiles.forEach(file => {
@@ -99,7 +133,7 @@ const apiFiles = findApiFiles(apiDir);
   }
 });
 
-console.warn(`\n🎯 Summary: Fixed ${totalFixed} API files`);
+logger.warn(`\n🎯 Summary: Fixed ${totalFixed} API files`);
 
 // Also create a types import helper
 const helperContent = `// Auto-generated API type helpers;
@@ -117,5 +151,42 @@ function safeHeader(headers: NextApiRequest['headers'], key: string): string | s
 }
 `;
 
-fs.writeFileSync(path.join(process.cwd(), src/utils/api-helpers.ts'), helperContent);console.warn('✅ Created API helper utilities');
-default {}; 
+fs.writeFileSync(path.join(process.cwd(), src/utils/api-helpers.ts'), helperContent);logger.warn('✅ Created API helper utilities');
+default {};
+    } catch (error) {
+      logger.error('Error in Script:', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    logger.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
