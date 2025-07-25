@@ -41,12 +41,12 @@ class CursorChatAutomation extends EventEmitter {
   constructor(config = {}) {
     super();
     this.config = {
-      dataDir: config.dataDir || ./data/cursor-chats',
-      todoFile: config.todoFile || ./data/todos.json',
-      queueFile: config.queueFile || ./data/queue.json',
+      dataDir: config.dataDir || './data/cursor-chats',
+      todoFile: config.todoFile || './data/todos.json',
+      queueFile: config.queueFile || './data/queue.json',
       autoCreateTodos: config.autoCreateTodos !== false,
       autoQueueTasks: config.autoQueueTasks !== false,
-      priorityLevels: config.priorityLevels || ['low', medium', high', critical'],
+      priorityLevels: config.priorityLevels || ['low', 'medium', 'high', 'critical'],
       maxQueueSize: config.maxQueueSize || 100,
       ...config
     };
@@ -94,7 +94,7 @@ class CursorChatAutomation extends EventEmitter {
     try {
       // Load todos
       try {
-        const todoData = await fs.readFile(this.config.todoFile, utf8');
+        const todoData = await fs.readFile(this.config.todoFile, 'utf8');
         const todos = JSON.parse(todoData);
         this.todos = new Map(Object.entries(todos));
       } catch (error) {
@@ -103,7 +103,7 @@ class CursorChatAutomation extends EventEmitter {
 
       // Load queue
       try {
-        const queueData = await fs.readFile(this.config.queueFile, utf8');
+        const queueData = await fs.readFile(this.config.queueFile, 'utf8');
         this.queue = JSON.parse(queueData);
       } catch (error) {
         logger.info('No existing queue found, starting fresh');
@@ -114,7 +114,7 @@ class CursorChatAutomation extends EventEmitter {
         const chatFiles = await fs.readdir(this.config.dataDir);
         for (const file of chatFiles) {
           if (file.endsWith('.json')) {
-            const chatData = await fs.readFile(path.join(this.config.dataDir, file), utf8');
+            const chatData = await fs.readFile(path.join(this.config.dataDir, file), 'utf8');
             const chat = JSON.parse(chatData);
             this.chatHistory.push(chat);
           }
