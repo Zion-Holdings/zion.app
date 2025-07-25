@@ -277,15 +277,15 @@ class SecurityScanner {
         secretPatterns.forEach((pattern) => {
           const matches = content.match(pattern);
           if (matches) {
-            secrets.push({
-              type: 'secret',
-              file: filePath,
-              pattern: pattern.source,
-              count: matches.length,
-              severity: 'critical',
-              description: 'Secret found in code',
-              recommendation: 'Remove secrets from code and use environment variables'
-            });
+                    secrets.push({
+          type: 'secret',
+          file: file,
+          pattern: pattern.source,
+          count: matches.length,
+          severity: 'critical',
+          description: 'Secret found in code',
+          recommendation: 'Remove secrets from code and use environment variables'
+        });
           }
         });
       } catch (error) {

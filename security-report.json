@@ -1,0 +1,42 @@
+{
+  "timestamp": "2025-07-25T07:00:40.648Z",
+  "issues": [
+    {
+      "type": "hardcoded_secret",
+      "file": "/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/backend/authentication/tests.py",
+      "line": 14,
+      "severity": "high",
+      "description": "Hardcoded secret found",
+      "recommendation": "Move secrets to environment variables"
+    },
+    {
+      "type": "hardcoded_secret",
+      "file": "/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/backend/authentication/tests.py",
+      "line": 160,
+      "severity": "high",
+      "description": "Hardcoded secret found",
+      "recommendation": "Move secrets to environment variables"
+    },
+    {
+      "type": "hardcoded_secret",
+      "file": "/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/backend/public_api/tests.py",
+      "line": 17,
+      "severity": "high",
+      "description": "Hardcoded secret found",
+      "recommendation": "Move secrets to environment variables"
+    },
+    {
+      "type": "hardcoded_secret",
+      "file": "/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/tests/page-crashes-fix.test.tsx",
+      "line": 12,
+      "severity": "high",
+      "description": "Hardcoded secret found",
+      "recommendation": "Move secrets to environment variables"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "critical": 0,
+    "high": 4
+  }
+}

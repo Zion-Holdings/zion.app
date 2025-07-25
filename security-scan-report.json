@@ -1,0 +1,589 @@
+{
+  "timestamp": "2025-07-25T06:59:16.219Z",
+  "summary": {
+    "totalIssues": 61,
+    "severityCounts": {
+      "critical": 0,
+      "high": 4,
+      "medium": 57,
+      "low": 0
+    },
+    "scanTypes": [
+      "npm",
+      "code",
+      "secrets",
+      "dependencies"
+    ],
+    "timestamp": "2025-07-25T06:59:16.219Z"
+  },
+  "details": {
+    "timestamp": "2025-07-25T06:59:16.219Z",
+    "npmVulnerabilities": [],
+    "codeIssues": [
+      {
+        "type": "hardcoded_secret",
+        "file": "/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/backend/authentication/tests.py",
+        "line": 14,
+        "severity": "high",
+        "description": "Hardcoded secret found",
+        "recommendation": "Move secrets to environment variables"
+      },
+      {
+        "type": "hardcoded_secret",
+        "file": "/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/backend/authentication/tests.py",
+        "line": 160,
+        "severity": "high",
+        "description": "Hardcoded secret found",
+        "recommendation": "Move secrets to environment variables"
+      },
+      {
+        "type": "hardcoded_secret",
+        "file": "/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/backend/public_api/tests.py",
+        "line": 17,
+        "severity": "high",
+        "description": "Hardcoded secret found",
+        "recommendation": "Move secrets to environment variables"
+      },
+      {
+        "type": "hardcoded_secret",
+        "file": "/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/tests/page-crashes-fix.test.tsx",
+        "line": 12,
+        "severity": "high",
+        "description": "Hardcoded secret found",
+        "recommendation": "Move secrets to environment variables"
+      }
+    ],
+    "secretsFound": [],
+    "dependencyIssues": [
+      {
+        "type": "old_package",
+        "package": "@chakra-ui/react",
+        "version": "^3.22.0",
+        "created": "2020-11-13T10:21:49.471Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@emotion/react",
+        "version": "^11.14.0",
+        "created": "2020-01-05T19:22:12.649Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@emotion/styled",
+        "version": "^11.14.1",
+        "created": "2018-02-09T14:09:39.194Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@opentelemetry/context-async-hooks",
+        "version": "^2.0.1",
+        "created": "2020-03-16T22:02:32.881Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@opentelemetry/core",
+        "version": "^2.0.1",
+        "created": "2019-10-08T22:45:09.283Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@opentelemetry/instrumentation",
+        "version": "^0.203.0",
+        "created": "2020-09-30T12:22:05.179Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@opentelemetry/sdk-trace-base",
+        "version": "^2.0.1",
+        "created": "2021-08-05T19:28:20.129Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@sentry/nextjs",
+        "version": "^9.40.0",
+        "created": "2021-03-03T09:18:08.541Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@slack/bolt",
+        "version": "^4.4.0",
+        "created": "2019-04-23T23:42:40.355Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@supabase/supabase-js",
+        "version": "^2.52.0",
+        "created": "2020-01-17T04:37:38.575Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@swc/helpers",
+        "version": "^0.5.17",
+        "created": "2019-02-16T13:34:40.003Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@types/react",
+        "version": "^19.1.8",
+        "created": "2016-05-17T18:43:22.882Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@types/react-dom",
+        "version": "^19.1.6",
+        "created": "2016-05-17T18:44:31.682Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@types/socket.io",
+        "version": "^3.0.1",
+        "created": "2016-05-17T18:57:33.634Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@types/socket.io-client",
+        "version": "^1.4.36",
+        "created": "2016-05-17T18:57:39.890Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "cors",
+        "version": "^2.8.5",
+        "created": "2013-01-31T04:13:40.565Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "ethers",
+        "version": "^6.15.0",
+        "created": "2017-04-05T21:07:32.134Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "express",
+        "version": "^5.1.0",
+        "created": "2010-12-29T19:38:25.450Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "framer-motion",
+        "version": "^12.23.6",
+        "created": "2019-01-14T13:04:29.347Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "i18next",
+        "version": "^25.3.2",
+        "created": "2012-01-03T13:06:10.733Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "lucide-react",
+        "version": "^0.525.0",
+        "created": "2020-10-19T19:44:16.461Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "next",
+        "version": "^15.4.1",
+        "created": "2011-07-11T11:00:45.416Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "next-auth",
+        "version": "^4.24.11",
+        "created": "2018-01-22T18:25:54.864Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "node-cron",
+        "version": "^4.2.1",
+        "created": "2016-02-04T00:54:43.842Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "node-fetch",
+        "version": "^3.3.2",
+        "created": "2015-01-27T13:17:06.232Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "react",
+        "version": "^19.1.0",
+        "created": "2011-10-26T17:46:21.942Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "react-dom",
+        "version": "^19.1.0",
+        "created": "2014-05-06T18:59:36.160Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "react-i18next",
+        "version": "^15.6.0",
+        "created": "2015-12-12T14:04:00.442Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "socket.io",
+        "version": "^4.8.1",
+        "created": "2010-12-24T04:53:35.445Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "socket.io-client",
+        "version": "^4.8.1",
+        "created": "2011-06-21T12:39:55.813Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "styled-jsx",
+        "version": "^5.1.7",
+        "created": "2016-12-05T14:36:11.653Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "winston",
+        "version": "^3.17.0",
+        "created": "2011-01-18T20:45:37.131Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "ws",
+        "version": "^8.18.3",
+        "created": "2011-12-04T10:32:12.839Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "zod",
+        "version": "^4.0.5",
+        "created": "2020-03-07T21:19:15.387Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@testing-library/jest-dom",
+        "version": "^6.6.3",
+        "created": "2019-07-08T15:45:53.843Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@testing-library/react",
+        "version": "^16.3.0",
+        "created": "2019-05-30T17:36:28.974Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@testing-library/user-event",
+        "version": "^14.6.1",
+        "created": "2019-06-06T08:10:44.978Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@types/jest",
+        "version": "^30.0.0",
+        "created": "2016-05-17T05:15:55.334Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@types/node",
+        "version": "20.19.8",
+        "created": "2016-05-17T18:26:38.670Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@typescript-eslint/eslint-plugin",
+        "version": "^8.37.0",
+        "created": "2019-01-19T17:13:21.414Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@typescript-eslint/parser",
+        "version": "^8.37.0",
+        "created": "2019-01-19T17:13:21.526Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "@vitest/ui",
+        "version": "^3.2.4",
+        "created": "2021-12-29T06:41:03.867Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "chokidar",
+        "version": "^4.0.3",
+        "created": "2012-04-26T01:32:10.158Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "eslint",
+        "version": "^9.31.0",
+        "created": "2013-07-04T17:01:29.347Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "eslint-config-next",
+        "version": "^15.4.3",
+        "created": "2015-09-21T01:48:01.953Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "eslint-plugin-jsx-a11y",
+        "version": "^6.10.2",
+        "created": "2016-02-29T23:26:53.790Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "eslint-plugin-react",
+        "version": "^7.37.5",
+        "created": "2014-12-16T01:30:32.410Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "eslint-plugin-react-hooks",
+        "version": "^5.2.0",
+        "created": "2018-10-25T16:13:37.192Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "husky",
+        "version": "^9.1.7",
+        "created": "2014-06-09T01:32:44.741Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "jest",
+        "version": "^30.0.4",
+        "created": "2012-02-22T15:25:44.365Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "jest-environment-jsdom",
+        "version": "^30.0.4",
+        "created": "2016-03-28T07:11:29.919Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "jsdom",
+        "version": "^26.1.0",
+        "created": "2011-11-21T03:09:04.421Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "lint-staged",
+        "version": "^16.1.2",
+        "created": "2016-01-15T11:00:29.432Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "pm2",
+        "version": "^6.0.8",
+        "created": "2013-06-08T10:40:16.902Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "prettier",
+        "version": "^3.6.2",
+        "created": "2017-01-10T03:45:38.963Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "typescript",
+        "version": "5.8.3",
+        "created": "2012-10-01T15:35:39.553Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      },
+      {
+        "type": "old_package",
+        "package": "vitest",
+        "version": "^3.2.4",
+        "created": "2021-12-03T13:34:59.705Z",
+        "severity": "medium",
+        "description": "Package is older than 2 years",
+        "recommendation": "Consider updating to a newer version"
+      }
+    ],
+    "summary": {
+      "totalIssues": 61,
+      "severityCounts": {
+        "critical": 0,
+        "high": 4,
+        "medium": 57,
+        "low": 0
+      },
+      "scanTypes": [
+        "npm",
+        "code",
+        "secrets",
+        "dependencies"
+      ],
+      "timestamp": "2025-07-25T06:59:16.219Z"
+    }
+  }
+}
