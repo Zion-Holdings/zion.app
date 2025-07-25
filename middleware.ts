@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-// Auto-generated basic file for middleware.ts
-// Please configure this file according to your needs
-=======
 import { NextRequest } from 'next/server';
 import { updateSession } from '@/utils/supabase/middleware';
 
@@ -22,4 +18,3 @@ export const config = {
   ],
   runtime: 'nodejs',
 };
->>>>>>> origin/codex/reactivate-features-gradually
