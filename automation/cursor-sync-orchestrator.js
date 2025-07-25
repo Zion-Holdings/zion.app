@@ -213,7 +213,8 @@ class CursorSyncOrchestrator {
     const timestamp = new Date().toLocaleString();
     const computerId = this.config.computerId;
     
-    return `🔄 Auto-sync: ${description} (${files.length} files) - ${computerId} - ${timestamp}`;
+    // Use conventional commit format to pass husky validation
+    return `chore(sync): auto-sync ${description} (${files.length} files) - ${computerId} - ${timestamp}`;
   }
 
   analyzeFileTypes(files) {

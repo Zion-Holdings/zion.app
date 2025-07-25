@@ -186,10 +186,8 @@ class CursorSyncAutomation {
     const description = this.generateDescription(fileTypes);
     const timestamp = new Date().toLocaleString();
     
-    return this.config.commitMessageTemplate
-      .replace('{description}', description)
-      .replace('{timestamp}', timestamp)
-      .replace('{count}', files.length);
+    // Use conventional commit format to pass husky validation
+    return `chore(sync): auto-sync ${description} (${files.length} files) - ${timestamp}`;
   }
 
   analyzeFileTypes(files) {
