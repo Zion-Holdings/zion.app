@@ -39,7 +39,7 @@ const axios = require('axios');
 class CursorAutomatedCommunication {
   constructor(config = {}) {
     this.config = {
-      apiEndpoint: config.apiEndpoint || https://api.cursor.sh',
+      apiEndpoint: config.apiEndpoint || 'https://api.cursor.sh',
       apiKey: config.apiKey || process.env.CURSOR_API_KEY,
       projectPath: config.projectPath || process.cwd(),
       autoCommit: config.autoCommit !== false,
@@ -76,7 +76,7 @@ class CursorAutomatedCommunication {
     if (this.config.apiKey) {
       try {
         const response = await axios.get(`${this.config.apiEndpoint}/health`, {
-          headers: { Authorization': `Bearer ${this.config.apiKey}` }
+          headers: { 'Authorization': `Bearer ${this.config.apiKey}` }
         });
         logger.info('✅ Cursor API connection established');
       } catch (error) {

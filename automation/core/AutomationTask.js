@@ -2,7 +2,7 @@ class AutomationTask {
   constructor(config = {}) {
     this.config = config;
     this.lastRun = null;
-    this.lastStatus = pending';
+    this.lastStatus = 'pending';
     this.lastError = null;
   }
 

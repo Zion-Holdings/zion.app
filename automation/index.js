@@ -27,6 +27,19 @@ function loadConfiguration() {
     }
   }
 
+  // Load infinite improvement configuration
+  const infiniteConfigPath = path.join(__dirname, 'infinite-improvement-config.json');
+  let infiniteConfig = {};
+  
+  if (fs.existsSync(infiniteConfigPath)) {
+    try {
+      const infiniteConfigData = fs.readFileSync(infiniteConfigPath, 'utf8');
+      infiniteConfig = JSON.parse(infiniteConfigData);
+    } catch (error) {
+      console.warn('⚠️ Failed to load infinite-improvement-config.json:', error.message);
+    }
+  }
+
   // Default configuration
   return {
     autonomous: {
@@ -78,6 +91,8 @@ function loadConfiguration() {
         enabled: false,
       },
     },
+    // Merge infinite improvement configuration
+    ...infiniteConfig
   };
 }
 
