@@ -94,7 +94,34 @@ async function main() {
       IntelligentAutomationOrchestrator,
     } = require('./intelligent-automation-orchestrator');
 
+    // Import infinite improvement loop
+    const { InfiniteImprovementLoop } = require('./infinite-improvement-loop');
+    const { InfiniteImprovementLauncher } = require('./infinite-improvement-launcher');
+
     const orchestrator = new IntelligentAutomationOrchestrator(config);
+    
+    // Initialize infinite improvement loop if enabled
+    let improvementLoop = null;
+    let improvementLauncher = null;
+    
+    if (config.infiniteImprovement?.enabled) {
+      console.log('🔄 Initializing Infinite Improvement Loop...');
+      
+      try {
+        improvementLauncher = new InfiniteImprovementLauncher({
+          enableInfiniteLoop: true,
+          enableOrchestrator: false, // We already have the orchestrator
+          enableIntegration: true,
+          dashboardPort: config.infiniteImprovement.dashboardPort || 3002,
+          logLevel: config.infiniteImprovement.logLevel || 'info'
+        });
+        
+        await improvementLauncher.initialize();
+        console.log('✅ Infinite Improvement Loop initialized');
+      } catch (error) {
+        console.warn('⚠️ Failed to initialize Infinite Improvement Loop:', error.message);
+      }
+    }
 
     // Parse command line arguments
     const args = parseArguments();
@@ -107,11 +134,33 @@ async function main() {
     // Start the automation system
     await orchestrator.start();
 
+    // Start infinite improvement loop if available
+    if (improvementLauncher) {
+      try {
+        await improvementLauncher.start();
+        console.log('✅ Infinite Improvement Loop started successfully');
+      } catch (error) {
+        console.warn('⚠️ Failed to start Infinite Improvement Loop:', error.message);
+      }
+    }
+
     console.log('✅ Intelligent Automation System started successfully');
 
     // Keep the process running
     process.on('SIGINT', async () => {
       console.log('\n🛑 Shutting down automation system...');
+      
+      // Stop infinite improvement loop first
+      if (improvementLauncher) {
+        try {
+          await improvementLauncher.stop();
+          console.log('✅ Infinite Improvement Loop stopped');
+        } catch (error) {
+          console.warn('⚠️ Error stopping Infinite Improvement Loop:', error.message);
+        }
+      }
+      
+      // Stop orchestrator
       await orchestrator.stop();
       process.exit(0);
     });
