@@ -1,26 +1,40 @@
 #!/bin/bash
 
-echo "🤖 Starting Zion App Automation Systems..."
+# Zion App Automation Starter Script
+# This script starts all working automation systems
 
-# Create log directories
-mkdir -p logs automation/logs scripts/logs
+set -e
 
-# Start Cursor Chat Automation
-echo "📱 Starting Cursor Chat Automation..."
-node scripts/cursor-chat-automation.js start &
+echo "🚀 Starting Zion App Automation Systems..."
+echo "=========================================="
 
-# Start Main Automation System
-echo "⚙️ Starting Main Automation System..."
-node automation/index.js &
+# Change to project directory
+cd "$(dirname "$0")"
 
-# Start Continuous Improvement
-echo "🔄 Starting Continuous Improvement..."
-node automation/continuous-improvement/start.js &
+# Check if Node.js is available
+if ! command -v node &> /dev/null; then
+    echo "❌ Node.js is not installed or not in PATH"
+    exit 1
+fi
 
-# Start Watchdog
-echo "🐕 Starting Watchdog..."
-node scripts/watchdog.js &
+# Check if npm dependencies are installed
+if [ ! -d "node_modules" ]; then
+    echo "📦 Installing dependencies..."
+    npm install
+fi
 
-echo "✅ All automation systems started!"
-echo "📊 Monitor logs in the logs/ directory"
-echo "🔗 Dashboard: http://localhost:3001/dashboard"
+# Create logs directory if it doesn't exist
+mkdir -p automation/logs
+mkdir -p automation/data
+
+# Start the working automation systems
+echo "🤖 Starting automation systems..."
+node automation/start-working-automations.js &
+
+# Store the PID
+echo $! > automation/automation.pid
+
+echo "✅ Automation systems started successfully!"
+echo "📊 Dashboard: http://localhost:3001"
+echo "📋 Health check: http://localhost:3001/health"
+echo "🛑 To stop: kill \$(cat automation/automation.pid)"
