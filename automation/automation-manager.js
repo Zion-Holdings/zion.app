@@ -1,960 +1,267 @@
 
 const winston = require('winston');
+const fs = require('fs').promises;
+const path = require('path');
+const { execSync } = require('child_process');
 
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
-  defaultMeta: { service: 'automation-script' },
+  defaultMeta: { service: 'automation-manager' },
   transports: [
-    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/automation-manager.log' }),
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  ],
 });
 
-if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
-}
-
-
 /**
- * Zion App - Unified Automation Manager
+ * Comprehensive Automation Manager
  * 
- * A command-line interface for managing the enhanced automation system.
- * Provides easy access to all automation features and monitoring capabilities.
+ * This script provides a unified interface for:
+ * - Testing all automation systems
+ * - Fixing common issues
+ * - Starting working systems
+ * - Monitoring system health
+ * - Generating reports
  */
-
-const fs = require('fs').promises;
-const path = require('path');
-const { spawn, execSync } = require('child_process');
-const readline = require('readline');
 
 class AutomationManager {
   constructor() {
-    // Determine the correct paths based on current working directory
-    const currentDir = process.cwd();
-    const isInAutomationDir = currentDir.endsWith('automation');
+    this.systems = new Map();
+    this.testResults = new Map();
+    this.fixes = [];
+    this.startTime = Date.now();
+  }
+
+  async runFullAutomationCycle() {
+    logger.info('🚀 Starting Full Automation Cycle');
+    logger.info('='.repeat(50));
+
+    try {
+      // Step 1: Test all systems
+      await this.testAllSystems();
+
+      // Step 2: Fix issues
+      await this.fixIssues();
+
+      // Step 3: Start working systems
+      await this.startWorkingSystems();
+
+      // Step 4: Monitor and report
+      await this.monitorAndReport();
+
+      logger.info('✅ Full automation cycle completed successfully!');
+    } catch (error) {
+      logger.error('❌ Automation cycle failed:', error);
+      throw error;
+    }
+  }
+
+  async testAllSystems() {
+    logger.info('🧪 Testing all automation systems...');
+
+    try {
+      // Run the test script
+      const testScript = require('./test-all-automations.js');
+      const tester = new testScript();
+      await tester.runAllTests();
+
+      // Parse test results
+      const testReportPath = path.join(__dirname, 'test-report.json');
+      if (await this.fileExists(testReportPath)) {
+        const testData = JSON.parse(await fs.readFile(testReportPath, 'utf8'));
+        this.testResults = new Map(
+          testData.results.map(result => [result.testName, result])
+        );
+      }
+
+      logger.info(`📊 Test completed: ${this.testResults.size} systems tested`);
+    } catch (error) {
+      logger.error('❌ Testing failed:', error.message);
+    }
+  }
+
+  async fixIssues() {
+    logger.info('🔧 Fixing automation system issues...');
+
+    const fixes = [];
+
+    // Fix common syntax errors
+    fixes.push(await this.fixSyntaxErrors());
     
-    this.config = {
-      automationDir: isInAutomationDir ? currentDir : path.join(currentDir, 'automation'),
-      scriptsDir: isInAutomationDir ? path.join(currentDir, ..', 'scripts') : path.join(currentDir, 'scripts'),
-      logsDir: isInAutomationDir ? path.join(currentDir, ..', 'logs') : path.join(currentDir, 'logs'),
-      port: process.env.AUTOMATION_PORT || 3001
-    };
+    // Fix missing dependencies
+    fixes.push(await this.fixDependencies());
     
-    this.processes = new Map();
-    this.isRunning = false;
+    // Fix configuration issues
+    fixes.push(await this.fixConfigurations());
+
+    this.fixes = fixes.flat();
+    logger.info(`🔧 Applied ${this.fixes.length} fixes`);
   }
 
-  /**
-   * Main CLI interface
-   */
-  async run() {
-    const args = process.argv.slice(2);
-    const command = args[0];
+  async fixSyntaxErrors() {
+    const fixes = [];
 
-    logger.info('🤖 Zion App - Unified Automation Manager\n');
-
-    switch (command) {
-      case start':
-        await this.startSystem();
-        break;
-      case stop':
-        await this.stopSystem();
-        break;
-      case restart':
-        await this.restartSystem();
-        break;
-      case status':
-        await this.showStatus();
-        break;
-      case logs':
-        await this.showLogs();
-        break;
-      case dashboard':
-        await this.openDashboard();
-        break;
-      case test':
-        await this.runTests();
-        break;
-      case setup':
-        await this.setupSystem();
-        break;
-      case clean':
-        await this.cleanup();
-        break;
-      case help':
-        this.showHelp();
-        break;
-      default:
-        this.showHelp();
-        break;
-    }
-  }
-
-  /**
-   * Start the automation system
-   */
-  async startSystem() {
-    logger.info('🚀 Starting Zion App Automation System...\n');
-
-    try {
-      // Check if system is already running
-      if (await this.isSystemRunning()) {
-        logger.info('⚠️  Automation system is already running');
-        return;
+    // Fix common syntax patterns
+    const syntaxFixes = [
+      {
+        file: 'automation/cursor-automated-communication.js',
+        pattern: /apiEndpoint: config\.apiEndpoint \|\| https:\/\/api\.cursor\.sh'/g,
+        replacement: "apiEndpoint: config.apiEndpoint || 'https://api.cursor.sh'"
+      },
+      {
+        file: 'automation/core/AutomationTask.js',
+        pattern: /this\.lastStatus = pending';/g,
+        replacement: "this.lastStatus = 'pending';"
       }
+    ];
 
-      // Start the enhanced automation system
-      const automationProcess = spawn('node', [
-        path.join(this.config.automationDir, 'autonomous-system.js')
-      ], {
-        stdio: 'pipe',
-        detached: false
-      });
-
-      this.processes.set('automation', automationProcess);
-
-      automationProcess.stdout.on('data', (data) => {
-        logger.info(`[AUTOMATION] ${data.toString().trim()}`);
-      });
-
-      automationProcess.stderr.on('data', (data) => {
-        logger.error(`[AUTOMATION ERROR] ${data.toString().trim()}`);
-      });
-
-      automationProcess.on('close', (code) => {
-        logger.info(`[AUTOMATION] Process exited with code ${code}`);
-        this.processes.delete('automation');
-      });
-
-      // Wait for system to start
-      await this.waitForSystemStart();
-
-      logger.info('✅ Automation system started successfully');
-      logger.info(`📊 Dashboard available at: http://localhost:${this.config.port}`);
-      logger.info(`🔗 API available at: http://localhost:${this.config.port}/api`);
-
-    } catch (error) {
-      logger.error('❌ Failed to start automation system:', error.message);
-      process.exit(1);
-    }
-  }
-
-  /**
-   * Stop the automation system
-   */
-  async stopSystem() {
-    logger.info('🛑 Stopping Zion App Automation System...\n');
-
-    try {
-      // Stop automation process
-      const automationProcess = this.processes.get('automation');
-      if (automationProcess) {
-        automationProcess.kill('SIGTERM');
-        this.processes.delete('automation');
-      }
-
-      // Kill any remaining processes
-      await this.killRemainingProcesses();
-
-      logger.info('✅ Automation system stopped successfully');
-
-    } catch (error) {
-      logger.error('❌ Failed to stop automation system:', error.message);
-    }
-  }
-
-  /**
-   * Restart the automation system
-   */
-  async restartSystem() {
-    logger.info('🔄 Restarting Zion App Automation System...\n');
-    
-    await this.stopSystem();
-    await new Promise(resolve => 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = setTimeout(resolve,                                                2000);
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-); // Wait 2 seconds
-    await this.startSystem();
-  }
-
-  /**
-   * Show system status
-   */
-  async showStatus() {
-    logger.info('📊 Zion App Automation System Status\n');
-
-    try {
-      // Check if system is running
-      const isRunning = await this.isSystemRunning();
-      logger.info(`System Status: ${isRunning ? 🟢 Running' : 🔴 Stopped'}`);
-
-      if (isRunning) {
-        // Get system status from API
-        const response = await fetch(`http://localhost:${this.config.port}/api/status`)
-        const data = await response.json();
-
-        logger.info('\n📈 System Metrics:');
-        logger.info(`  Total Tasks: ${data.system.totalTasks}`);
-        logger.info(`  Successful Tasks: ${data.system.successfulTasks}`);
-        logger.info(`  Failed Tasks: ${data.system.failedTasks}`);
-        logger.info(`  Queue Length: ${data.queueLength}`);
-        logger.info(`  Active Tasks: ${data.currentTasks.length}`);
-
-        if (data.system.uptime) {
-          const hours = Math.floor(data.system.uptime / 3600000)
-          const minutes = Math.floor((data.system.uptime % 3600000) / 60000);
-          logger.info(`  Uptime: ${hours}h ${minutes}m`);
-        }
-
-        logger.info('\n🔄 Current Tasks:');
-        if (data.currentTasks.length === 0) {
-          logger.info('  No active tasks');
-        } else {
-          data.currentTasks.forEach(task => {
-            logger.info(`  • ${task.type} (${task.priority} priority)`);
-          });
-        }
-
-        logger.info('\n📋 Recent Activity:')
-        const recentTasks = [...data.completedTasks, ...data.failedTasks]
-          .sort((a, b) => b.completedAt - a.completedAt)
-          .slice(0, 5);
-
-        recentTasks.forEach(task => {
-          const status = task.status === completed' ? ✅' : ❌';
-          const time = new Date(task.completedAt).toLocaleTimeString();
-          logger.info(`  ${status} ${task.type} - ${time}`);
-        });
-
-      } else {
-        logger.info('\n💡 To start the system, run: npm run automation:start');
-      }
-
-    } catch (error) {
-      logger.error('❌ Failed to get system status:', error.message);
-    }
-  }
-
-  /**
-   * Show system logs
-   */
-  async showLogs() {
-    logger.info('📝 Zion App Automation System Logs\n');
-
-    try {
-      const logFile = path.join(this.config.logsDir, 'automation.log');
-      
-      if (await this.fileExists(logFile)) {
-        const logs = await fs.readFile(logFile, utf8')
-        const lines = logs.split('\n').filter(line => line.trim());
-        
-        // Show last 50 lines
-        const recentLogs = lines.slice(-50);
-        
-        recentLogs.forEach(line => {
-          logger.info(line);
-        });
-        
-        logger.info(`\n📄 Showing last ${recentLogs.length} log entries`);
-        logger.info(`📁 Full log file: ${logFile}`);
-      } else {
-        logger.info('📄 No log file found');
-      }
-
-    } catch (error) {
-      logger.error('❌ Failed to read logs:', error.message);
-    }
-  }
-
-  /**
-   * Open the dashboard
-   */
-  async openDashboard() {
-    logger.info('🌐 Opening Automation Dashboard...\n')
-    const dashboardUrl = `http://localhost:${this.config.port}`;
-    
-    try {
-      // Check if system is running
-      if (!(await this.isSystemRunning())) {
-        logger.info('⚠️  Automation system is not running. Starting...');
-        await this.startSystem();
-        await new Promise(resolve => 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = setTimeout(resolve,                                                3000);
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-); // Wait for startup
-      }
-
-      // Open dashboard in default browser
-      const { platform } = require('os');
-      let command;
-
-      switch (platform()) {
-        case darwin':
-          command = open';
-          break;
-        case win32':
-          command = start';
-          break;
-        default:
-          command = xdg-open';
-      }
-
-      execSync(`${command} ${dashboardUrl}`);
-      logger.info(`✅ Dashboard opened: ${dashboardUrl}`);
-
-    } catch (error) {
-      logger.error('❌ Failed to open dashboard:', error.message);
-      logger.info(`📊 Manual access: ${dashboardUrl}`);
-    }
-  }
-
-  /**
-   * Run automation tests
-   */
-  async runTests() {
-    logger.info('🧪 Running Automation System Tests...\n');
-
-    try {
-      // Run test suite
-      const testProcess = spawn('npm', ['test'], {
-        stdio: 'inherit',
-        cwd: this.config.automationDir
-      });
-
-      testProcess.on('close', (code) => {
-        if (code === 0) {
-          logger.info('\n✅ All tests passed');
-        } else {
-          logger.info('\n❌ Some tests failed');
-          process.exit(code);
-        }
-      });
-
-    } catch (error) {
-      logger.error('❌ Failed to run tests:', error.message);
-    }
-  }
-
-  /**
-   * Setup the automation system
-   */
-  async setupSystem() {
-    logger.info('🔧 Setting up Zion App Automation System...\n');
-
-    try {
-      // Create required directories
-      const dirs = [
-        this.config.logsDir,
-        path.join(this.config.automationDir, 'logs'),
-        path.join(this.config.automationDir, 'reports'),
-        path.join(this.config.automationDir, 'temp'),
-        path.join(this.config.automationDir, 'backups')
-      ];
-
-      for (const dir of dirs) {
-        await fs.mkdir(dir, { recursive: true });
-        logger.info(`✅ Created directory: ${dir}`);
-      }
-
-      // Install dependencies
-      logger.info('\n📦 Installing dependencies...');
-      execSync('npm install', { 
-        stdio: 'inherit', 
-        cwd: this.config.automationDir 
-      });
-
-      // Create environment file if it doesn't exist
-      const envFile = path.join(this.config.automationDir, .env');
-      if (!(await this.fileExists(envFile))) {
-        const envTemplate = `# Zion App Automation System Configuration
-
-# System Configuration
-AUTOMATION_PORT=3001
-LOG_LEVEL=info
-ENABLE_DASHBOARD=true
-ENABLE_WEBSOCKET=true
-
-# AI Configuration
-CURSOR_AI_ENABLED=false
-CURSOR_API_KEY=your_cursor_api_key_here
-CURSOR_WORKSPACE_ID=your_workspace_id_here
-
-OPENAI_ENABLED=false
-OPENAI_API_KEY=your_openai_api_key_here
-OPENAI_MODEL=gpt-4-turbo-preview
-
-CLAUDE_ENABLED=false
-CLAUDE_API_KEY=your_claude_api_key_here
-CLAUDE_MODEL=claude-3-sonnet-20240229
-
-# Optional: Local AI
-LOCAL_AI_ENABLED=false
-LOCAL_AI_ENDPOINT=http://localhost:11434
-LOCAL_AI_MODEL=codellama:7b
-
-# Optional: Slack Integration
-SLACK_BOT_TOKEN=your_slack_bot_token_here
-SLACK_SIGNING_SECRET=your_slack_signing_secret_here
-`;
-
-        await fs.writeFile(envFile, envTemplate);
-        logger.info('✅ Created environment file');
-      }
-
-      logger.info('\n🎉 Setup completed successfully!');
-      logger.info('\n📝 Next steps:');
-      logger.info('  1. Edit the environment file with your API keys');
-      logger.info('  2. Run: npm run automation:start');
-      logger.info('  3. Open dashboard: npm run automation:dashboard');
-
-    } catch (error) {
-      logger.error('❌ Setup failed:', error.message);
-    }
-  }
-
-  /**
-   * Cleanup system
-   */
-  async cleanup() {
-    logger.info('🧹 Cleaning up Zion App Automation System...\n');
-
-    try {
-      // Stop all processes
-      await this.stopSystem();
-
-      // Clean log files
-      const logFiles = await fs.readdir(this.config.logsDir);
-      for (const file of logFiles) {
-        if (file.endsWith('.log')) {
-          await fs.unlink(path.join(this.config.logsDir, file));
-          logger.info(`🗑️  Deleted log file: ${file}`);
-        }
-      }
-
-      // Clean temporary files
-      const tempDir = path.join(this.config.automationDir, 'temp');
-      if (await this.fileExists(tempDir)) {
-        const tempFiles = await fs.readdir(tempDir);
-        for (const file of tempFiles) {
-          await fs.unlink(path.join(tempDir, file));
-          logger.info(`🗑️  Deleted temp file: ${file}`);
-        }
-      }
-
-      logger.info('✅ Cleanup completed successfully');
-
-    } catch (error) {
-      logger.error('❌ Cleanup failed:', error.message);
-    }
-  }
-
-  /**
-   * Show help information
-   */
-  showHelp() {
-    logger.info('🤖 Zion App - Unified Automation Manager\n');
-    logger.info('Usage: npm run automation <command>\n');
-    logger.info('Commands:');
-    logger.info('  start      Start the automation system');
-    logger.info('  stop       Stop the automation system');
-    logger.info('  restart    Restart the automation system');
-    logger.info('  status     Show system status and metrics');
-    logger.info('  logs       Show system logs');
-    logger.info('  dashboard  Open the web dashboard');
-    logger.info('  test       Run automation tests');
-    logger.info('  setup      Setup the automation system');
-    logger.info('  clean      Cleanup logs and temporary files');
-    logger.info('  help       Show this help message\n');
-    logger.info('Examples:');
-    logger.info('  npm run automation:start');
-    logger.info('  npm run automation:status');
-    logger.info('  npm run automation:dashboard\n');
-    logger.info('📊 Dashboard: http://localhost:3001');
-    logger.info('📚 Documentation: See automation/README.md');
-  }
-
-  /**
-   * Check if system is running
-   */
-  async isSystemRunning() {
-    try {
-      // Check if the automation process is still running
-      const automationProcess = this.processes.get('automation');
-      if (automationProcess && !automationProcess.killed) {
-        return true;
-      }
-      
-      // Also try to check if there's a web server (optional)
+    for (const fix of syntaxFixes) {
       try {
-        const response = await fetch(`http://localhost:${this.config.port}/health`);
-        return response.ok;
-      } catch {
-        // Web server not available, but process might still be running
-        return automationProcess && !automationProcess.killed;
+        if (await this.fileExists(fix.file)) {
+          let content = await fs.readFile(fix.file, 'utf8');
+          const originalContent = content;
+          
+          content = content.replace(fix.pattern, fix.replacement);
+          
+          if (content !== originalContent) {
+            await fs.writeFile(fix.file, content, 'utf8');
+            fixes.push(`Fixed syntax in ${fix.file}`);
+          }
+        }
+      } catch (error) {
+        logger.error(`Error fixing ${fix.file}:`, error.message);
       }
-    } catch {
-      return false;
-    }
-  }
-
-  /**
-   * Wait for system to start
-   */
-  async waitForSystemStart() {
-    const maxAttempts = 60; // Increase timeout to 60 seconds
-    let attempts = 0;
-
-    while (attempts < maxAttempts) {
-      if (await this.isSystemRunning()) {
-        return true
-      }
-      
-      await new Promise(resolve => 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = setTimeout(resolve,                                                1000);
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-);
-      attempts++;
     }
 
-    throw new Error('System failed to start within 60 seconds');
+    return fixes;
   }
 
-  /**
-   * Kill remaining processes
-   */
-  async killRemainingProcesses() {
+  async fixDependencies() {
+    const fixes = [];
+
     try {
-      // Kill processes on the automation port
-      execSync(`lsof -ti:${this.config.port} | xargs kill -9`, { stdio: 'ignore' });
-    } catch {
-      // Ignore errors if no processes found
+      // Check if async package is installed
+      const packageJsonPath = path.join(process.cwd(), 'package.json');
+      const packageJson = JSON.parse(await fs.readFile(packageJsonPath, 'utf8'));
+      
+      if (!packageJson.dependencies.async) {
+        // Add async dependency
+        packageJson.dependencies.async = "^3.2.5";
+        await fs.writeFile(packageJsonPath, JSON.stringify(packageJson, null, 2));
+        fixes.push('Added async dependency to package.json');
+      }
+    } catch (error) {
+      logger.error('Error fixing dependencies:', error.message);
+    }
+
+    return fixes;
+  }
+
+  async fixConfigurations() {
+    const fixes = [];
+
+    try {
+      // Ensure logs directory exists
+      const logsDir = path.join(__dirname, 'logs');
+      if (!await this.fileExists(logsDir)) {
+        await fs.mkdir(logsDir, { recursive: true });
+        fixes.push('Created logs directory');
+      }
+
+      // Ensure data directory exists
+      const dataDir = path.join(__dirname, 'data');
+      if (!await this.fileExists(dataDir)) {
+        await fs.mkdir(dataDir, { recursive: true });
+        fixes.push('Created data directory');
+      }
+    } catch (error) {
+      logger.error('Error fixing configurations:', error.message);
+    }
+
+    return fixes;
+  }
+
+  async startWorkingSystems() {
+    logger.info('🚀 Starting working automation systems...');
+
+    try {
+      const WorkingAutomationStarter = require('./start-working-automations.js');
+      const starter = new WorkingAutomationStarter();
+      
+      // Start systems in background
+      starter.startAllWorkingSystems().catch(error => {
+        logger.error('Error in automation starter:', error);
+      });
+
+      this.systems.set('automationStarter', starter);
+      logger.info('✅ Working systems started');
+    } catch (error) {
+      logger.error('❌ Failed to start working systems:', error.message);
     }
   }
 
-  /**
-   * Check if file exists
-   */
+  async monitorAndReport() {
+    logger.info('📊 Monitoring automation systems...');
+
+    // Start monitoring loop
+    setInterval(async () => {
+      await this.generateHealthReport();
+    }, 300000); // Every 5 minutes
+
+    // Generate initial report
+    await this.generateHealthReport();
+  }
+
+  async generateHealthReport() {
+    const report = {
+      timestamp: new Date().toISOString(),
+      uptime: Date.now() - this.startTime,
+      systems: {
+        total: this.systems.size,
+        running: Array.from(this.systems.values()).filter(s => s.isRunning).length
+      },
+      testResults: {
+        total: this.testResults.size,
+        passed: Array.from(this.testResults.values()).filter(r => r.passed).length,
+        failed: Array.from(this.testResults.values()).filter(r => !r.passed).length
+      },
+      fixes: this.fixes,
+      health: await this.getSystemHealth()
+    };
+
+    // Save report
+    const reportPath = path.join(__dirname, 'automation-health-report.json');
+    await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
+
+    logger.info(`📊 Health report generated: ${report.systems.running}/${report.systems.total} systems running`);
+  }
+
+  async getSystemHealth() {
+    const health = {};
+
+    // Check if main automation system is running
+    try {
+      const response = await fetch('http://localhost:3001/health');
+      if (response.ok) {
+        const data = await response.json();
+        health.mainSystem = data.status;
+      } else {
+        health.mainSystem = 'unhealthy';
+      }
+    } catch (error) {
+      health.mainSystem = 'unreachable';
+    }
+
+    return health;
+  }
+
   async fileExists(filePath) {
     try {
       await fs.access(filePath);
@@ -963,13 +270,83 @@ const timeoutId = setTimeout(resolve,                                           
       return false;
     }
   }
+
+  async createAutomationScripts() {
+    logger.info('📝 Creating automation scripts for future use...');
+
+    const scripts = [
+      {
+        name: 'start-automation.sh',
+        content: `#!/bin/bash
+cd "$(dirname "$0")"
+node automation-manager.js run
+`
+      },
+      {
+        name: 'test-automation.sh',
+        content: `#!/bin/bash
+cd "$(dirname "$0")"
+node automation/test-all-automations.js
+`
+      },
+      {
+        name: 'fix-automation.sh',
+        content: `#!/bin/bash
+cd "$(dirname "$0")"
+node automation-manager.js fix
+`
+      },
+      {
+        name: 'monitor-automation.sh',
+        content: `#!/bin/bash
+cd "$(dirname "$0")"
+node automation-manager.js monitor
+`
+      }
+    ];
+
+    for (const script of scripts) {
+      const scriptPath = path.join(process.cwd(), script.name);
+      await fs.writeFile(scriptPath, script.content);
+      await fs.chmod(scriptPath, 0o755); // Make executable
+      logger.info(`✅ Created ${script.name}`);
+    }
+  }
+
+  async runCommand(command) {
+    switch (command) {
+      case 'run':
+        await this.runFullAutomationCycle();
+        break;
+      case 'test':
+        await this.testAllSystems();
+        break;
+      case 'fix':
+        await this.fixIssues();
+        break;
+      case 'start':
+        await this.startWorkingSystems();
+        break;
+      case 'monitor':
+        await this.monitorAndReport();
+        break;
+      case 'create-scripts':
+        await this.createAutomationScripts();
+        break;
+      default:
+        logger.info('Available commands: run, test, fix, start, monitor, create-scripts');
+    }
+  }
 }
 
-// Run the manager
+// Main execution
 if (require.main === module) {
   const manager = new AutomationManager();
-  manager.run().catch(error => {
-    logger.error('❌ Automation manager failed:', error.message);
+  
+  const command = process.argv[2] || 'run';
+  
+  manager.runCommand(command).catch(error => {
+    logger.error('Automation manager failed:', error);
     process.exit(1);
   });
 }
