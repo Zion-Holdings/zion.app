@@ -73,5 +73,17 @@
     "confidence": 0.8,
     "appliedAt": "2025-07-25T13:55:45.588Z",
     "iteration": 1
+  },
+  {
+    "type": "resource_optimization",
+    "target": "network",
+    "optimizations": [
+      "resource_allocation",
+      "load_balancing"
+    ],
+    "priority": "high",
+    "confidence": 0.8,
+    "appliedAt": "2025-07-25T14:00:40.087Z",
+    "iteration": 1
   }
 ]
