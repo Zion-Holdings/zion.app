@@ -21,8 +21,13 @@
       "failedSyncs": 1,
       "totalFiles": 0,
       "totalDuration": 2159,
-      "errors": null
+      "errors": 0
     }
   },
-  "successRate": "0.00"
+  "successRate": "0.00",
+  "performanceStats": {
+    "fastestSync": null,
+    "slowestSync": null,
+    "averageFilesPerSync": 0
+  }
 }

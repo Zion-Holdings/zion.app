@@ -10,7 +10,6 @@ AUTOMATION_DIR="$PROJECT_DIR/automation"
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 RED='\033[0;31m'
-BLUE='\033[0;34m'
 NC='\033[0m'
 
 # Load config
@@ -77,83 +76,16 @@ limit_backup_count() {
     fi
 }
 
-# Clean up old log files
-cleanup_old_logs() {
-    local log_dir="$AUTOMATION_DIR/logs"
-    if [ ! -d "$log_dir" ]; then
-        return 0
-    fi
-    
-    # Remove log files older than 30 days
-    local removed_logs=0
-    find "$log_dir" -name "*.log" -mtime +30 | while read -r log_file; do
-        echo "Removing old log: $(basename "$log_file")"
-        rm -f "$log_file"
-        ((removed_logs++))
-    done
-    
-    if [ $removed_logs -gt 0 ]; then
-        echo -e "${GREEN}✅ Removed $removed_logs old log files${NC}"
-    else
-        echo -e "${GREEN}✅ No old log files to remove${NC}"
-    fi
-}
-
-# Clean up old metrics files
-cleanup_old_metrics() {
-    local metrics_dir="$AUTOMATION_DIR/metrics"
-    if [ ! -d "$metrics_dir" ]; then
-        return 0
-    fi
-    
-    # Remove metrics files older than 60 days
-    local removed_metrics=0
-    find "$metrics_dir" -name "*.json" -mtime +60 | while read -r metric_file; do
-        echo "Removing old metric: $(basename "$metric_file")"
-        rm -f "$metric_file"
-        ((removed_metrics++))
-    done
-    
-    if [ $removed_metrics -gt 0 ]; then
-        echo -e "${GREEN}✅ Removed $removed_metrics old metric files${NC}"
-    else
-        echo -e "${GREEN}✅ No old metric files to remove${NC}"
-    fi
-}
-
 # Main cleanup function
 main() {
-    echo "Starting enhanced cursor sync cleanup..."
-    echo ""
+    echo "Starting backup cleanup..."
     
     cleanup_old_backups
     echo ""
     limit_backup_count
-    echo ""
-    cleanup_old_logs
-    echo ""
-    cleanup_old_metrics
     
     echo ""
-    echo -e "${GREEN}✅ Enhanced cursor sync cleanup completed${NC}"
-    
-    # Show current disk usage
-    echo ""
-    echo "📊 Current disk usage:"
-    if [ -d "$AUTOMATION_DIR/logs" ]; then
-        local log_size=$(du -sh "$AUTOMATION_DIR/logs" 2>/dev/null | cut -f1)
-        echo "  Logs: $log_size"
-    fi
-    
-    if [ -d "$AUTOMATION_DIR/backups" ]; then
-        local backup_size=$(du -sh "$AUTOMATION_DIR/backups" 2>/dev/null | cut -f1)
-        echo "  Backups: $backup_size"
-    fi
-    
-    if [ -d "$AUTOMATION_DIR/metrics" ]; then
-        local metrics_size=$(du -sh "$AUTOMATION_DIR/metrics" 2>/dev/null | cut -f1)
-        echo "  Metrics: $metrics_size"
-    fi
+    echo -e "${GREEN}✅ Backup cleanup completed${NC}"
 }
 
-main "$@" 
+main "$@"

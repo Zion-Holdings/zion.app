@@ -97,44 +97,7 @@ else
 fi
 
 echo ""
-
-# Check running processes
-echo -e "${BLUE}🔄 Running Processes:${NC}"
-local running_processes=$(ps aux | grep "enhanced-cursor-sync-automation" | grep -v grep | wc -l)
-if [ "$running_processes" -gt 0 ]; then
-    echo -e "${GREEN}✅ $running_processes enhanced cursor sync processes running${NC}"
-    ps aux | grep "enhanced-cursor-sync-automation" | grep -v grep | while read -r line; do
-        echo "  $line"
-    done
-else
-    echo -e "${YELLOW}⚠️ No enhanced cursor sync processes running${NC}"
-fi
-
-echo ""
-
-# Check configuration
-echo -e "${BLUE}⚙️ Configuration:${NC}"
-local config_file="$AUTOMATION_DIR/enhanced-cursor-sync-config.json"
-if [ -f "$config_file" ]; then
-    local enabled=$(jq -r '.enabled' "$config_file" 2>/dev/null || echo "unknown")
-    local sync_interval=$(jq -r '.syncInterval' "$config_file" 2>/dev/null || echo "unknown")
-    local branch=$(jq -r '.branch' "$config_file" 2>/dev/null || echo "unknown")
-    
-    echo -e "${GREEN}✅ Enabled: $enabled${NC}"
-    echo -e "${GREEN}✅ Sync interval: ${sync_interval}ms${NC}"
-    echo -e "${GREEN}✅ Branch: $branch${NC}"
-else
-    echo -e "${RED}❌ Configuration file not found${NC}"
-fi
-
-echo ""
 echo "📁 Log Directory: $AUTOMATION_DIR/logs"
 echo "📊 Metrics Directory: $AUTOMATION_DIR/metrics"
 echo "💾 Backup Directory: $AUTOMATION_DIR/backups"
 echo "⚙️ Config File: $AUTOMATION_DIR/enhanced-cursor-sync-config.json"
-echo ""
-echo "🛠️ Management Commands:"
-echo "  • Start: bash automation/start-enhanced-cursor-sync.sh"
-echo "  • Stop: bash automation/stop-enhanced-cursor-sync.sh"
-echo "  • Health Check: bash automation/enhanced-cursor-sync-health-check.sh"
-echo "  • Backup Cleanup: bash automation/enhanced-cursor-sync-backup-cleanup.sh" 

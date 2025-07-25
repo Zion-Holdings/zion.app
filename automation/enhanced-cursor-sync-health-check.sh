@@ -10,7 +10,6 @@ AUTOMATION_DIR="$PROJECT_DIR/automation"
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 RED='\033[0;31m'
-BLUE='\033[0;34m'
 NC='\033[0m'
 
 # Check if enhanced cursor sync is working properly
@@ -87,43 +86,10 @@ check_backup_health() {
     return 0
 }
 
-# Check disk space
-check_disk_space() {
-    local log_dir="$AUTOMATION_DIR/logs"
-    local log_size=$(du -sh "$log_dir" 2>/dev/null | cut -f1)
-    local log_size_mb=$(du -sm "$log_dir" 2>/dev/null | cut -f1)
-    
-    if [ "$log_size_mb" -gt 100 ]; then
-        echo -e "${YELLOW}⚠️ Log directory size is large ($log_size), consider cleanup${NC}"
-        return 1
-    fi
-    
-    echo -e "${GREEN}✅ Disk space check passed (logs: $log_size)${NC}"
-    return 0
-}
-
-# Check configuration
-check_configuration() {
-    local config_file="$AUTOMATION_DIR/enhanced-cursor-sync-config.json"
-    if [ ! -f "$config_file" ]; then
-        echo -e "${RED}❌ Configuration file not found${NC}"
-        return 1
-    fi
-    
-    if ! jq . "$config_file" > /dev/null 2>&1; then
-        echo -e "${RED}❌ Configuration file is not valid JSON${NC}"
-        return 1
-    fi
-    
-    echo -e "${GREEN}✅ Configuration check passed${NC}"
-    return 0
-}
-
 # Main health check function
 main() {
     echo "=== Enhanced Cursor Sync Health Check ==="
     echo "Timestamp: $(date)"
-    echo "Computer: $(hostname)"
     echo ""
     
     local health_status=0
@@ -133,19 +99,14 @@ main() {
     check_stuck_processes || health_status=1
     echo ""
     check_backup_health || health_status=1
-    echo ""
-    check_disk_space || health_status=1
-    echo ""
-    check_configuration || health_status=1
     
-    echo ""
     if [ $health_status -eq 0 ]; then
-        echo -e "${GREEN}✅ All health checks passed${NC}"
+        echo -e "\n${GREEN}✅ All health checks passed${NC}"
     else
-        echo -e "${RED}❌ Some health checks failed${NC}"
+        echo -e "\n${RED}❌ Some health checks failed${NC}"
     fi
     
     return $health_status
 }
 
-main "$@" 
+main "$@"

@@ -109,6 +109,15 @@ class EnhancedCursorSyncMetrics {
     const logAnalysis = this.analyzeLogFile();
     const today = new Date().toISOString().split('T')[0];
 
+    // Ensure performanceStats exists
+    if (!metrics.performanceStats) {
+      metrics.performanceStats = {
+        fastestSync: null,
+        slowestSync: null,
+        averageFilesPerSync: 0
+      };
+    }
+
     // Update basic metrics
     metrics.totalSyncs += logAnalysis.syncs;
     metrics.successfulSyncs += logAnalysis.syncs;
@@ -141,7 +150,7 @@ class EnhancedCursorSyncMetrics {
     if (logAnalysis.fileCounts.length > 0) {
       const totalFiles = logAnalysis.fileCounts.reduce((sum, count) => sum + count, 0);
       metrics.totalFiles += totalFiles;
-      metrics.performanceStats.averageFilesPerSync = metrics.totalFiles / metrics.totalSyncs;
+      metrics.performanceStats.averageFilesPerSync = metrics.totalSyncs > 0 ? metrics.totalFiles / metrics.totalSyncs : 0;
     }
 
     // Update daily stats
