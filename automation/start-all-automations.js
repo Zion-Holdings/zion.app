@@ -83,7 +83,7 @@ class AutomationStarter {
     logger.info('🔧 Starting Core Automation Orchestrator...');
 
     try {
-      const IntelligentAutomationOrchestrator = require('./core/IntelligentAutomationOrchestrator.js');
+      const IntelligentAutomationOrchestrator = require('./intelligent-automation-orchestrator.js');
       const orchestrator = new IntelligentAutomationOrchestrator({
         autonomous: {
           enabled: true,
