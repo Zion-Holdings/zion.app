@@ -1,0 +1,16 @@
+{
+  "totalSyncs": 0,
+  "successfulSyncs": 0,
+  "failedSyncs": 0,
+  "lastSync": null,
+  "averageSyncTime": 0,
+  "errors": [],
+  "dailyStats": {
+    "2025-07-25": {
+      "syncs": 0,
+      "errors": 0,
+      "timestamp": "2025-07-25T08:03:12.920Z"
+    }
+  },
+  "successRate": 0
+}
