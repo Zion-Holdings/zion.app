@@ -30,11 +30,11 @@ class SecurityScanner extends AutomationTask {
   constructor(config = {}) {
     super({
       name: 'SecurityScanner',
-      schedule: 0 */6 * * *', // Every 6 hours
+      schedule: '0 */6 * * *', // Every 6 hours
       enabled: true,
       autoFix: false, // Don't auto-fix by default
       severityThreshold: 'medium',
-      scanTypes: ['npm', code', secrets', dependencies'],
+      scanTypes: ['npm', 'code', 'secrets', 'dependencies'],
       ...config
     });
     
@@ -80,7 +80,7 @@ class SecurityScanner extends AutomationTask {
       this.vulnerabilities = this.extractVulnerabilities(scanResults);
       
       // Check if any high-severity issues found
-      const highSeverityIssues = this.vulnerabilities.filter(v => v.severity === high' || v.severity === 'critical');
+      const highSeverityIssues = this.vulnerabilities.filter(v => v.severity === 'high' || v.severity === 'critical');
       
       if (highSeverityIssues.length > 0) {
         logger.warn(`⚠️ Found ${highSeverityIssues.length} high-severity security issues`);
@@ -95,7 +95,7 @@ class SecurityScanner extends AutomationTask {
       // Generate report
       await this.generateSecurityReport(scanResults);
       
-      this.lastStatus = success';
+      this.lastStatus = 'success';
       this.lastRun = new Date();
       
       return scanResults;
