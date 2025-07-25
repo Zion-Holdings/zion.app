@@ -85,5 +85,33 @@
     "confidence": 0.8,
     "appliedAt": "2025-07-25T14:00:40.087Z",
     "iteration": 1
+  },
+  {
+    "type": "error_fix",
+    "target": "system",
+    "fix": {
+      "type": "generic_fix",
+      "target": "system",
+      "fix": "Apply generic error resolution",
+      "code": "// Generic error handling"
+    },
+    "priority": "critical",
+    "confidence": 0.95,
+    "appliedAt": "2025-07-25T14:05:49.544Z",
+    "iteration": 2
+  },
+  {
+    "type": "error_fix",
+    "target": "system",
+    "fix": {
+      "type": "generic_fix",
+      "target": "system",
+      "fix": "Apply generic error resolution",
+      "code": "// Generic error handling"
+    },
+    "priority": "critical",
+    "confidence": 0.95,
+    "appliedAt": "2025-07-25T14:10:43.969Z",
+    "iteration": 3
   }
 ]
