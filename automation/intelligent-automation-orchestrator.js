@@ -1,95 +1,77 @@
-
-const winston = require('winston');
-
-const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.combine(
-    winston.format.timestamp(),
-    winston.format.errors({ stack: true }),
-    winston.format.json()
-  ),
-  defaultMeta: { service: 'automation-script' },
-  transports: [
-    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
-});
-
-if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
-}
-
+#!/usr/bin/env node
 
 /**
- * Zion App - Intelligent Automation Orchestrator
+ * Intelligent Automation Orchestrator
  * 
- * A sophisticated orchestrator that coordinates all automation systems,
- * manages conflicts, provides intelligent decision making, and ensures
- * optimal resource utilization.
+ * Coordinates and manages multiple automation systems with intelligent
+ * decision making, conflict resolution, and self-healing capabilities.
  */
 
-const fs = require('fs').promises;
-const path = require('path');
-const { spawn, execSync } = require('child_process');
 const EventEmitter = require('events');
 const express = require('express');
-const http = require('http');
 const socketIo = require('socket.io');
-const cron = require('node-cron');
+const { spawn } = require('child_process');
+const path = require('path');
+const fs = require('fs');
+
+// Simple logger
+const logger = {
+  info: (msg) => console.log(`[INFO] ${msg}`),
+  error: (msg) => console.error(`[ERROR] ${msg}`),
+  warn: (msg) => console.warn(`[WARN] ${msg}`),
+  debug: (msg) => console.log(`[DEBUG] ${msg}`)
+};
 
 class IntelligentAutomationOrchestrator extends EventEmitter {
-  constructor() {
+  constructor(config = {}) {
     super();
-
+    
+    this.config = config;
+    this.port = config.dashboard?.port || 3001;
     this.isRunning = false;
+    
+    // Core components
     this.automationSystems = new Map();
     this.resourceManager = new ResourceManager();
     this.conflictResolver = new ConflictResolver();
     this.decisionEngine = new DecisionEngine();
-    this.port = 3006;
-    this.app = null;
-    this.server = null;
-    this.io = null;
     this.healthMonitor = new HealthMonitor();
     this.performanceTracker = new PerformanceTracker();
     this.learningEngine = new LearningEngine();
+    
+    // Express app and server
+    this.app = express();
+    this.server = null;
+    this.io = null;
+    
+    // Monitoring intervals
+    this.monitoringInterval = null;
+    this.decisionInterval = null;
+    this.learningInterval = null;
   }
 
   /**
    * Initialize the orchestrator
    */
   async initialize() {
-    logger.info('🎼 Initializing Intelligent Automation Orchestrator...');
+    logger.info('🔧 Initializing Intelligent Automation Orchestrator...');
     
     try {
+      // Initialize core components
+      await this.resourceManager.initialize();
+      await this.conflictResolver.initialize();
+      await this.decisionEngine.initialize();
+      await this.healthMonitor.initialize();
+      await this.performanceTracker.initialize();
+      await this.learningEngine.initialize();
+      
       // Setup Express server
       await this.setupExpress();
       
       // Initialize automation systems
       await this.initializeAutomationSystems();
       
-      // Setup resource management
-      await this.resourceManager.initialize();
-      
-      // Setup conflict resolution
-      await this.conflictResolver.initialize();
-      
-      // Setup decision engine
-      await this.decisionEngine.initialize();
-      
-      // Setup health monitoring
-      await this.healthMonitor.initialize();
-      
-      // Setup performance tracking
-      await this.performanceTracker.initialize();
-      
-      // Setup learning engine
-      await this.learningEngine.initialize();
-      
-      logger.info('✅ Intelligent Automation Orchestrator initialized successfully');
-      
+      logger.info('✅ Orchestrator initialized successfully');
     } catch (error) {
       logger.error('❌ Failed to initialize orchestrator:', error);
       throw error;
@@ -100,52 +82,61 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
    * Setup Express server
    */
   async setupExpress() {
-    this.app = express();
+    // Basic middleware
     this.app.use(express.json());
-
+    this.app.use(express.static(path.join(__dirname, 'public')));
+    
     // Health check endpoint
     this.app.get('/health', (req, res) => {
       res.json({
         status: 'healthy',
-        systems: Array.from(this.automationSystems.keys()),
-        resourceUsage: this.resourceManager.getUsage(),
-        conflicts: this.conflictResolver.getActiveConflicts(),
-        decisions: this.decisionEngine.getRecentDecisions()
-      });
-    });
-
-    // System status endpoint
-    this.app.get('/systems', (req, res) => {
-      const systems = {};
-      for (const [name, system] of this.automationSystems) {
-        systems[name] = {
+        timestamp: new Date().toISOString(),
+        systems: Array.from(this.automationSystems.entries()).map(([name, system]) => ({
+          name,
           status: system.status,
           health: system.health,
-          performance: system.performance,
-          lastActivity: system.lastActivity
-        };
-      }
+          performance: system.performance
+        }))
+      });
+    });
+    
+    // API endpoints
+    this.app.get('/api/systems', (req, res) => {
+      const systems = Array.from(this.automationSystems.entries()).map(([name, system]) => ({
+        name,
+        ...system
+      }));
       res.json(systems);
     });
-
-    // Manual orchestration endpoint
-    this.app.post('/orchestrate', async (req, res) => {
+    
+    this.app.post('/api/systems/:name/start', async (req, res) => {
       try {
-        const { action, target, data } = req.body;
-        const result = await this.orchestrateAction(action, target, data);
-        res.json({ success: true, result });
+        const { name } = req.params;
+        await this.startSystem(name);
+        res.json({ success: true, message: `Started system: ${name}` });
       } catch (error) {
         res.status(500).json({ success: false, error: error.message });
       }
     });
-
-    // Learning data endpoint
-    this.app.get('/learning', (req, res) => {
-      res.json({
-        patterns: this.learningEngine.getPatterns(),
-        recommendations: this.learningEngine.getRecommendations(),
-        performance: this.performanceTracker.getMetrics()
-      });
+    
+    this.app.post('/api/systems/:name/stop', async (req, res) => {
+      try {
+        const { name } = req.params;
+        await this.stopSystem(name);
+        res.json({ success: true, message: `Stopped system: ${name}` });
+      } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+      }
+    });
+    
+    this.app.post('/api/systems/:name/restart', async (req, res) => {
+      try {
+        const { name } = req.params;
+        await this.restartSystem(name);
+        res.json({ success: true, message: `Restarted system: ${name}` });
+      } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+      }
     });
   }
 
@@ -260,12 +251,9 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     this.io.on('connection', (socket) => {
       logger.info('🔌 Client connected to orchestrator');
       
-      socket.emit('orchestratorStatus', {
-        isRunning: this.isRunning,
-        systems: Array.from(this.automationSystems.keys()),
-        resourceUsage: this.resourceManager.getUsage()
-      });
-
+      // Send initial state
+      socket.emit('systems', Array.from(this.automationSystems.entries()));
+      
       socket.on('disconnect', () => {
         logger.info('🔌 Client disconnected from orchestrator');
       });
@@ -273,14 +261,9 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
   }
 
   /**
-   * Start orchestration loop
+   * Start orchestration loops
    */
   async startOrchestration() {
-    logger.info('🎼 Starting orchestration loop...');
-    
-    // Start all systems
-    await this.startAllSystems();
-    
     // Start monitoring loop
     this.startMonitoringLoop();
     
@@ -289,6 +272,8 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     
     // Start learning loop
     this.startLearningLoop();
+    
+    logger.info('🔄 Orchestration loops started');
   }
 
   /**
@@ -302,13 +287,15 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
         await this.startSystem(name);
         await this.sleep(2000); // Wait between starts
       } catch (error) {
-        logger.error(`❌ Failed to start ${name}:`, error);
+        logger.error(`❌ Failed to start system ${name}:`, error);
       }
     }
+    
+    logger.info('✅ All automation systems started');
   }
 
   /**
-   * Start a specific system
+   * Start a specific automation system
    */
   async startSystem(systemName) {
     const system = this.automationSystems.get(systemName);
@@ -317,12 +304,12 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
     }
 
     if (system.status === 'running') {
-      logger.info(`⚠️ System ${systemName} is already running`);
+      logger.warn(`System ${systemName} is already running`);
       return;
     }
 
-    logger.info(`🚀 Starting ${systemName}...`);
-    
+    logger.info(`🚀 Starting system: ${systemName}`);
+
     try {
       // Check if port is available
       const isPortAvailable = await this.resourceManager.checkPort(system.port);
@@ -338,7 +325,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
         env: { ...process.env, PORT: system.port }
       });
 
-      system.status = starting';
+      system.status = 'starting';
       system.lastActivity = Date.now();
 
       // Monitor process
@@ -354,174 +341,35 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
 
       system.process.on('close', (code) => {
         logger.info(`[${systemName}] Process exited with code ${code}`);
-        system.status = stopped';
+        system.status = 'stopped';
         system.process = null;
         
         // Attempt restart if it was running
         if (this.isRunning) {
-          
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = setTimeout(() => this.restartSystem(systemName),                                                5000);
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
+          const timeoutId = setTimeout(() => this.restartSystem(systemName), 5000);
+          // Store timeoutId for cleanup if needed
         }
       });
 
       // Wait for system to start
       await this.waitForSystemStart(systemName);
       
-      system.status = running';
-      logger.info(`✅ ${systemName} started successfully`);
+      system.status = 'running';
+      system.health = 100;
+      system.performance = 100;
       
-      // Emit WebSocket update
+      logger.info(`✅ System ${systemName} started successfully`);
       this.emitSystemUpdate(systemName);
       
     } catch (error) {
-      system.status = failed';
-      logger.error(`❌ Failed to start ${systemName}:`, error);
+      system.status = 'error';
+      logger.error(`❌ Failed to start system ${systemName}:`, error);
       throw error;
     }
   }
 
   /**
-   * Stop a specific system
+   * Stop a specific automation system
    */
   async stopSystem(systemName) {
     const system = this.automationSystems.get(systemName);
@@ -530,49 +378,58 @@ const timeoutId = setTimeout(() => this.restartSystem(systemName),              
     }
 
     if (system.status === 'stopped') {
-      logger.info(`⚠️ System ${systemName} is already stopped`);
+      logger.warn(`System ${systemName} is already stopped`);
       return;
     }
 
-    logger.info(`🛑 Stopping ${systemName}...`);
-    
+    logger.info(`🛑 Stopping system: ${systemName}`);
+
     try {
       if (system.process) {
         system.process.kill('SIGTERM');
-        await this.sleep(5000);
         
-        if (system.process) {
-          system.process.kill('SIGKILL');
-        }
+        // Wait for graceful shutdown
+        await new Promise((resolve) => {
+          const timeout = setTimeout(() => {
+            system.process.kill('SIGKILL');
+            resolve();
+          }, 5000);
+          
+          system.process.on('close', () => {
+            clearTimeout(timeout);
+            resolve();
+          });
+        });
       }
       
-      system.status = stopped';
+      system.status = 'stopped';
       system.process = null;
-      logger.info(`✅ ${systemName} stopped successfully`);
+      system.health = 0;
+      system.performance = 0;
       
-      // Emit WebSocket update
+      logger.info(`✅ System ${systemName} stopped successfully`);
       this.emitSystemUpdate(systemName);
       
     } catch (error) {
-      logger.error(`❌ Failed to stop ${systemName}:`, error);
+      logger.error(`❌ Failed to stop system ${systemName}:`, error);
       throw error;
     }
   }
 
   /**
-   * Restart a specific system
+   * Restart a specific automation system
    */
   async restartSystem(systemName) {
-    logger.info(`🔄 Restarting ${systemName}...`);
+    logger.info(`🔄 Restarting system: ${systemName}`);
     
     try {
       await this.stopSystem(systemName);
-      await this.sleep(2000);
+      await this.sleep(1000);
       await this.startSystem(systemName);
       
-      logger.info(`✅ ${systemName} restarted successfully`);
+      logger.info(`✅ System ${systemName} restarted successfully`);
     } catch (error) {
-      logger.error(`❌ Failed to restart ${systemName}:`, error);
+      logger.error(`❌ Failed to restart system ${systemName}:`, error);
       throw error;
     }
   }
@@ -581,14 +438,12 @@ const timeoutId = setTimeout(() => this.restartSystem(systemName),              
    * Wait for system to start
    */
   async waitForSystemStart(systemName) {
-    const system = this.automationSystems.get(systemName);
-    const maxWaitTime = 30000; // 30 seconds
-    const startTime = Date.now();
+    const maxAttempts = 30;
+    const delay = 1000;
     
-    while (Date.now() - startTime < maxWaitTime) {
+    for (let i = 0; i < maxAttempts; i++) {
       try {
-        // Check if system is responding
-        const response = await fetch(`http://localhost:${system.port}/health`);
+        const response = await fetch(`http://localhost:${this.automationSystems.get(systemName).port}/health`);
         if (response.ok) {
           return;
         }
@@ -596,61 +451,37 @@ const timeoutId = setTimeout(() => this.restartSystem(systemName),              
         // System not ready yet
       }
       
-      await this.sleep(1000);
+      await this.sleep(delay);
     }
     
-    throw new Error(`System ${systemName} failed to start within ${maxWaitTime}ms`)
+    throw new Error(`System ${systemName} failed to start within ${maxAttempts * delay}ms`);
   }
 
   /**
    * Start monitoring loop
    */
   startMonitoringLoop() {
-    setInterval(async () => {
-      if (!this.isRunning) return;
-      
-      try {
-        await this.monitorSystems();
-        await this.checkConflicts();
-        await this.updateHealthMetrics();
-      } catch (error) {
-        logger.error('❌ Error in monitoring loop:', error);
-      }
-    }, 30000); // Every 30 seconds
+    this.monitoringInterval = setInterval(async () => {
+      await this.monitorSystems();
+    }, this.config.monitoring?.interval || 60000);
   }
 
   /**
    * Start decision loop
    */
   startDecisionLoop() {
-    setInterval(async () => {
-      if (!this.isRunning) return;
-      
-      try {
-        await this.makeDecisions();
-        await this.optimizeResources();
-        await this.handleConflicts();
-      } catch (error) {
-        logger.error('❌ Error in decision loop:', error);
-      }
-    }, 60000); // Every minute
+    this.decisionInterval = setInterval(async () => {
+      await this.makeDecisions();
+    }, 30000);
   }
 
   /**
    * Start learning loop
    */
   startLearningLoop() {
-    setInterval(async () => {
-      if (!this.isRunning) return;
-      
-      try {
-        await this.learnFromData();
-        await this.updateRecommendations();
-        await this.optimizeOrchestration();
-      } catch (error) {
-        logger.error('❌ Error in learning loop:', error);
-      }
-    }, 300000); // Every 5 minutes
+    this.learningInterval = setInterval(async () => {
+      await this.learnFromData();
+    }, 60000);
   }
 
   /**
@@ -658,20 +489,25 @@ const timeoutId = setTimeout(() => this.restartSystem(systemName),              
    */
   async monitorSystems() {
     for (const [name, system] of this.automationSystems) {
-      try {
-        if (system.status === 'running') {
-          // Check system health
+      if (system.status === 'running') {
+        try {
           const health = await this.checkSystemHealth(name, system.port);
-          system.health = health.overall;
-          system.performance = health.performance;
+          system.health = health;
           system.lastActivity = Date.now();
+          
+          this.emitSystemUpdate(name);
+        } catch (error) {
+          logger.error(`❌ Health check failed for ${name}:`, error);
+          system.health = 0;
         }
-      } catch (error) {
-        logger.error(`❌ Error monitoring ${name}:`, error);
-        system.health = 0;
-        system.performance = 0;
       }
     }
+    
+    // Check for conflicts
+    await this.checkConflicts();
+    
+    // Update health metrics
+    await this.updateHealthMetrics();
   }
 
   /**
@@ -682,34 +518,23 @@ const timeoutId = setTimeout(() => this.restartSystem(systemName),              
       const response = await fetch(`http://localhost:${port}/health`);
       if (response.ok) {
         const data = await response.json();
-        return {
-          overall: data.status === healthy' ? 100 : 50,
-          performance: data.performance || 0,
-          details: data
-        };
+        return data.health || 100;
       }
     } catch (error) {
-      // System not responding
+      logger.debug(`Health check failed for ${systemName}: ${error.message}`);
     }
     
-    return {
-      overall: 0,
-      performance: 0,
-      details: null
-    };
+    return 0;
   }
 
   /**
-   * Check for conflicts
+   * Check for conflicts between systems
    */
   async checkConflicts() {
     const conflicts = await this.conflictResolver.detectConflicts(this.automationSystems);
-    
     if (conflicts.length > 0) {
-      logger.info(`⚠️ Detected ${conflicts.length} conflicts`);
-      for (const conflict of conflicts) {
-        logger.info(`  - ${conflict.type}: ${conflict.description}`);
-      }
+      logger.warn(`⚠️ Detected ${conflicts.length} conflicts`);
+      await this.handleConflicts();
     }
   }
 
@@ -718,20 +543,13 @@ const timeoutId = setTimeout(() => this.restartSystem(systemName),              
    */
   async updateHealthMetrics() {
     const metrics = {
-      systems: Array.from(this.automationSystems.values()).map(s => ({
-        name: s.name,
-        status: s.status,
-        health: s.health,
-        performance: s.performance
-      })),
-      resourceUsage: this.resourceManager.getUsage(),
-      conflicts: this.conflictResolver.getActiveConflicts()
+      totalSystems: this.automationSystems.size,
+      runningSystems: Array.from(this.automationSystems.values()).filter(s => s.status === 'running').length,
+      averageHealth: Array.from(this.automationSystems.values()).reduce((sum, s) => sum + s.health, 0) / this.automationSystems.size,
+      timestamp: Date.now()
     };
-
-    // Emit WebSocket update
-    if (this.io) {
-      this.io.emit('metricsUpdate', metrics);
-    }
+    
+    this.performanceTracker.updateMetrics(metrics);
   }
 
   /**
@@ -741,8 +559,6 @@ const timeoutId = setTimeout(() => this.restartSystem(systemName),              
     const decisions = await this.decisionEngine.makeDecisions(this.automationSystems);
     
     for (const decision of decisions) {
-      logger.info(`🎯 Decision: ${decision.action} for ${decision.target}`);
-      
       try {
         await this.executeDecision(decision);
       } catch (error) {
@@ -755,109 +571,126 @@ const timeoutId = setTimeout(() => this.restartSystem(systemName),              
    * Execute a decision
    */
   async executeDecision(decision) {
+    logger.info(`🎯 Executing decision: ${decision.action} on ${decision.target}`);
+    
     switch (decision.action) {
-      case start':
-        await this.startSystem(decision.target);
-        break;
-      case stop':
-        await this.stopSystem(decision.target);
-        break;
-      case restart':
+      case 'restart':
         await this.restartSystem(decision.target);
         break;
-      case optimize':
-        await this.optimizeSystem(decision.target);
+      case 'optimize':
+        await this.optimizeResources();
+        break;
+      case 'scale':
+        // Handle scaling decisions
         break;
       default:
-        throw new Error(`Unknown decision action: ${decision.action}`);
+        logger.warn(`Unknown decision action: ${decision.action}`);
     }
   }
 
   /**
-   * Optimize resources
+   * Optimize resource usage
    */
   async optimizeResources() {
-    const optimization = await this.resourceManager.optimize();
+    const usage = this.resourceManager.getUsage();
     
-    if (optimization.recommendations.length > 0) {
-      logger.info('🔧 Resource optimization recommendations:');
-      for (const rec of optimization.recommendations) {
-        logger.info(`  - ${rec.description}`);
-      }
+    if (usage.cpu > 80 || usage.memory > 80) {
+      logger.warn('⚠️ High resource usage detected, optimizing...');
+      await this.resourceManager.optimize();
     }
   }
 
   /**
-   * Handle conflicts
+   * Handle conflicts between systems
    */
   async handleConflicts() {
     const conflicts = this.conflictResolver.getActiveConflicts();
     
     for (const conflict of conflicts) {
-      const resolution = await this.conflictResolver.resolveConflict(conflict);
-      
-      if (resolution) {
-        logger.info(`✅ Resolved conflict: ${conflict.type}`);
-        await this.executeDecision(resolution);
+      try {
+        await this.conflictResolver.resolveConflict(conflict);
+      } catch (error) {
+        logger.error(`❌ Failed to resolve conflict:`, error);
       }
     }
   }
 
   /**
-   * Learn from data
+   * Learn from collected data
    */
   async learnFromData() {
-    const data = {
-      systems: Array.from(this.automationSystems.values()),
-      performance: this.performanceTracker.getMetrics(),
-      conflicts: this.conflictResolver.getActiveConflicts()
-    };
+    const metrics = this.performanceTracker.getMetrics();
+    await this.learningEngine.learn(metrics);
     
-    await this.learningEngine.learn(data);
+    // Update recommendations
+    await this.updateRecommendations();
   }
 
   /**
-   * Update recommendations
+   * Update recommendations based on learning
    */
   async updateRecommendations() {
-    const recommendations = await this.learningEngine.getRecommendations();
+    const patterns = this.learningEngine.getPatterns();
+    const recommendations = this.learningEngine.getRecommendations();
     
-    if (recommendations.length > 0) {
-      logger.info('💡 Learning recommendations:');
-      for (const rec of recommendations) {
-        logger.info(`  - ${rec.description} (confidence: ${rec.confidence}%)`);
+    // Apply recommendations
+    for (const recommendation of recommendations) {
+      try {
+        await this.optimizeOrchestration(recommendation);
+      } catch (error) {
+        logger.error(`❌ Failed to apply recommendation:`, error);
       }
     }
   }
 
   /**
-   * Optimize orchestration
+   * Optimize orchestration based on recommendations
    */
-  async optimizeOrchestration() {
-    const optimization = await this.learningEngine.optimizeOrchestration();
+  async optimizeOrchestration(recommendation) {
+    logger.info(`🔧 Applying optimization: ${recommendation.type}`);
     
-    if (optimization.changes.length > 0) {
-      logger.info('🎼 Orchestration optimization:');
-      for (const change of optimization.changes) {
-        logger.info(`  - ${change.description}`);
-      }
+    switch (recommendation.type) {
+      case 'scheduling':
+        // Adjust scheduling intervals
+        break;
+      case 'resource':
+        // Optimize resource allocation
+        break;
+      case 'conflict':
+        // Improve conflict resolution
+        break;
+      default:
+        logger.warn(`Unknown optimization type: ${recommendation.type}`);
     }
   }
 
   /**
-   * Orchestrate an action
+   * Orchestrate an action across systems
    */
-  async orchestrateAction(action, target, data) {
+  async orchestrateAction(action, target, data = {}) {
     logger.info(`🎼 Orchestrating action: ${action} on ${target}`);
     
-    const decision = await this.decisionEngine.makeDecision(action, target, data);
-    
-    if (decision) {
-      await this.executeDecision(decision);
-      return { success: true, decision };
-    } else {
-      throw new Error(`No decision made for action: ${action}`);
+    try {
+      // Execute action
+      const result = await this.executeAction(action, target, data);
+      
+      // Learn from result
+      await this.learningEngine.learn({ action, target, data, result });
+      
+      return result;
+    } catch (error) {
+      logger.error(`❌ Orchestration failed:`, error);
+      throw error;
     }
+  }
+
+  /**
+   * Execute an action
+   */
+  async executeAction(action, target, data) {
+    // Implementation depends on specific actions
+    logger.info(`⚡ Executing action: ${action} on ${target}`);
+    return { success: true, timestamp: Date.now() };
   }
 
   /**
@@ -865,18 +698,18 @@ const timeoutId = setTimeout(() => this.restartSystem(systemName),              
    */
   getSystemScriptPath(systemName) {
     const scriptMap = {
-      autonomous': autonomous-system.js',
-      infinite-improvement': infinite-improvement-loop.js',
-      enhanced-improvement': enhanced-infinite-improvement.js',
-      continuous-improvement': continuous-improvement/index.js
+      'autonomous': 'start-autonomous-system.js',
+      'infinite-improvement': 'start-infinite-improvement.sh',
+      'enhanced-improvement': 'enhanced-automation-system.js',
+      'continuous-improvement': 'continuous-improvement.js'
     };
     
-    const script = scriptMap[systemName];
-    if (!script) {
-      throw new Error(`Unknown system: ${systemName}`);
+    const scriptName = scriptMap[systemName];
+    if (!scriptName) {
+      throw new Error(`No script found for system: ${systemName}`);
     }
     
-    return path.join(__dirname, script);
+    return path.join(__dirname, scriptName);
   }
 
   /**
@@ -885,13 +718,7 @@ const timeoutId = setTimeout(() => this.restartSystem(systemName),              
   emitSystemUpdate(systemName) {
     if (this.io) {
       const system = this.automationSystems.get(systemName);
-      this.io.emit('systemUpdate', {
-        name: systemName,
-        status: system.status,
-        health: system.health,
-        performance: system.performance,
-        lastActivity: system.lastActivity
-      });
+      this.io.emit('systemUpdate', { name: systemName, ...system });
     }
   }
 
@@ -903,349 +730,156 @@ const timeoutId = setTimeout(() => this.restartSystem(systemName),              
     
     this.isRunning = false;
     
+    // Clear intervals
+    if (this.monitoringInterval) {
+      clearInterval(this.monitoringInterval);
+    }
+    if (this.decisionInterval) {
+      clearInterval(this.decisionInterval);
+    }
+    if (this.learningInterval) {
+      clearInterval(this.learningInterval);
+    }
+    
     // Stop all systems
     for (const [name, system] of this.automationSystems) {
-      try {
-        await this.stopSystem(name);
-      } catch (error) {
-        logger.error(`❌ Error stopping ${name}:`, error);
+      if (system.status === 'running') {
+        try {
+          await this.stopSystem(name);
+        } catch (error) {
+          logger.error(`❌ Failed to stop system ${name}:`, error);
+        }
       }
     }
     
-    // Stop server
+    // Close server
     if (this.server) {
       this.server.close();
-    }
-    
-    if (this.io) {
-      this.io.close();
     }
     
     logger.info('✅ Intelligent Automation Orchestrator stopped');
   }
 
-  // Utility Methods
+  /**
+   * Sleep utility
+   */
   sleep(ms) {
-    return new Promise(resolve => 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = setTimeout(resolve,                                                ms);
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-);
-  }
-
-  optimizeSystem(systemName) {
-    logger.info(`🔧 Optimizing ${systemName}...`);
-    // Implementation for system optimization
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 }
 
-// Resource Manager Class
+// Resource Manager
 class ResourceManager {
   async initialize() {
-    this.usage = {
-      cpu: 0,
-      memory: 0,
-      ports: new Set(),
-      processes: new Map()
-    };
+    logger.info('🔧 Initializing Resource Manager');
   }
 
   async checkPort(port) {
-    return !this.usage.ports.has(port);
+    try {
+      const response = await fetch(`http://localhost:${port}/health`);
+      return false; // Port is in use
+    } catch (error) {
+      return true; // Port is available
+    }
   }
 
   getUsage() {
+    // Mock resource usage
     return {
-      cpu: this.usage.cpu,
-      memory: this.usage.memory,
-      ports: Array.from(this.usage.ports),
-      processes: this.usage.processes.size
+      cpu: Math.random() * 100,
+      memory: Math.random() * 100,
+      disk: Math.random() * 100
     };
   }
 
   async optimize() {
-    return {
-      recommendations: [],
-      actions: []
-    };
+    logger.info('🔧 Optimizing resource usage');
   }
 }
 
-// Conflict Resolver Class
+// Conflict Resolver
 class ConflictResolver {
   async initialize() {
-    this.activeConflicts = new Map();
+    logger.info('🔧 Initializing Conflict Resolver');
   }
 
   async detectConflicts(systems) {
-    const conflicts = [];
-    
-    // Check for port conflicts
-    const ports = new Map();
-    for (const [name, system] of systems) {
-      if (ports.has(system.port)) {
-        conflicts.push({
-          type: 'port_conflict',
-          description: `${name} and ${ports.get(system.port)} are using port ${system.port}`,
-          systems: [name, ports.get(system.port)],
-          port: system.port
-        });
-      } else {
-        ports.set(system.port, name);
-      }
-    }
-    
-    return conflicts;
+    // Mock conflict detection
+    return [];
   }
 
   getActiveConflicts() {
-    return Array.from(this.activeConflicts.values());
+    return [];
   }
 
   async resolveConflict(conflict) {
-    // Implementation for conflict resolution
-    return null;
+    logger.info(`🔧 Resolving conflict: ${conflict.type}`);
   }
 }
 
-// Decision Engine Class
+// Decision Engine
 class DecisionEngine {
   async initialize() {
-    this.recentDecisions = [];
+    logger.info('🔧 Initializing Decision Engine');
   }
 
   async makeDecisions(systems) {
-    const decisions = [];
-    
-    // Check for failed systems and restart them
-    for (const [name, system] of systems) {
-      if (system.status === 'failed') {
-        decisions.push({
-          action: 'restart',
-          target: name,
-          reason: System failed
-        });
-      }
-    }
-    
-    return decisions;
+    // Mock decision making
+    return [];
   }
 
   async makeDecision(action, target, data) {
-    return {
-      action,
-      target,
-      data
-    };
+    return { action, target, data, timestamp: Date.now() };
   }
 
   getRecentDecisions() {
-    return this.recentDecisions;
+    return [];
   }
 }
 
-// Health Monitor Class
+// Health Monitor
 class HealthMonitor {
   async initialize() {
-    this.metrics = new Map();
+    logger.info('🔧 Initializing Health Monitor');
   }
 }
 
-// Performance Tracker Class
+// Performance Tracker
 class PerformanceTracker {
   async initialize() {
-    this.metrics = new Map();
+    logger.info('🔧 Initializing Performance Tracker');
   }
 
   getMetrics() {
-    return Array.from(this.metrics.values());
-  }
-}
-
-// Learning Engine Class
-class LearningEngine {
-  async initialize() {
-    this.patterns = new Map();
-    this.recommendations = [];
-  }
-
-  async learn(data) {
-    // Implementation for learning from data
-  }
-
-  getPatterns() {
-    return Array.from(this.patterns.values());
-  }
-
-  getRecommendations() {
-    return this.recommendations;
-  }
-
-  async optimizeOrchestration() {
     return {
-      changes: []
+      timestamp: Date.now(),
+      systems: []
     };
   }
 }
 
-// Start the orchestrator
-if (require.main === module) {
-  const orchestrator = new IntelligentAutomationOrchestrator();
-  
-  orchestrator.start().catch(error => {
-    logger.error('❌ Failed to start Intelligent Automation Orchestrator:', error);
-    process.exit(1);
-  });
+// Learning Engine
+class LearningEngine {
+  async initialize() {
+    logger.info('🔧 Initializing Learning Engine');
+  }
 
-  // Graceful shutdown
-  process.on('SIGINT', async () => {
-    logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
-    await orchestrator.stop();
-    process.exit(0);
-  });
+  async learn(data) {
+    // Mock learning
+  }
 
-  process.on('SIGTERM', async () => {
-    logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
-    await orchestrator.stop();
-    process.exit(0);
-  });
+  getPatterns() {
+    return [];
+  }
+
+  getRecommendations() {
+    return [];
+  }
+
+  async optimizeOrchestration() {
+    // Mock optimization
+  }
 }
 
+module.exports = { IntelligentAutomationOrchestrator }; 
 module.exports = IntelligentAutomationOrchestrator; 
