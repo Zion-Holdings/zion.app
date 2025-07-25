@@ -102,7 +102,7 @@ class SecurityScanner extends AutomationTask {
       
     } catch (error) {
       logger.error('❌ Security scan failed:', error);
-      this.lastStatus = failed';
+      this.lastStatus = 'failed';
       this.lastError = error.message;
       this.lastRun = new Date();
       
