@@ -1,41 +1,7 @@
+#!/bin/bash
 
-const winston = require('winston');
-
-const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.combine(
-    winston.format.timestamp(),
-    winston.format.errors({ stack: true }),
-    winston.format.json()
-  ),
-  defaultMeta: { service: 'automation-script' },
-  transports: [
-    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
-});
-
-if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
-}
-
-
-class Script {
-  constructor() {
-    this.isRunning = false;
-  }
-
-  async start() {
-    this.isRunning = true;
-    logger.info('Starting Script...');
-    
-    try {
-      #!/bin/bash
-
-# Zion App - Infinite Improvement Loop Startup Script
-# This script starts the infinite improvement loop system with all AI agents
+# Infinite Improvement Loop Startup Script
+# This script starts the infinite improvement loop system with proper configuration
 
 set -e
 
@@ -44,378 +10,291 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
-PURPLE='\033[0;35m'
-CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
-# Configuration
+# Script configuration
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
-AUTOMATION_DIR="$SCRIPT_DIR"
-LOG_DIR="$PROJECT_ROOT/logs"
-PID_FILE="$AUTOMATION_DIR/.infinite-improvement.pid"
+LOG_DIR="$SCRIPT_DIR/logs"
+PID_FILE="$SCRIPT_DIR/infinite-improvement.pid"
+CONFIG_FILE="$SCRIPT_DIR/infinite-improvement-config.json"
 
-# Environment variables
-export NODE_ENV=production
-export IMPROVEMENT_PORT=3002
-export LOG_LEVEL=info
+# Create logs directory if it doesn't exist
+mkdir -p "$LOG_DIR"
 
-# AI Configuration
-export CURSOR_AI_ENABLED=true
-export OPENAI_ENABLED=true
-export CLAUDE_ENABLED=true
-export LOCAL_AI_ENABLED=true
-export COPILOT_ENABLED=true
-export CUSTOM_AGENTS_ENABLED=true
-
-# Load environment variables from .env if it exists
-if [ -f "$PROJECT_ROOT/.env" ]; then
-    echo -e "${BLUE}📄 Loading environment variables from .env${NC}"
-    source "$PROJECT_ROOT/.env"
-fi
-
-# Function to print colored output
-print_status() {
-    echo -e "${GREEN}✅ $1${NC}"
-}
-
-print_warning() {
-    echo -e "${YELLOW}⚠️  $1${NC}"
-}
-
-print_error() {
-    echo -e "${RED}❌ $1${NC}"
-}
-
-print_info() {
-    echo -e "${BLUE}ℹ️  $1${NC}"
-}
-
-print_success() {
-    echo -e "${GREEN}🎉 $1${NC}"
-}
-
-# Function to check if a command exists
-command_exists() {
-    command -v "$1" >/dev/null 2>&1
-}
-
-# Function to check if a port is in use
-port_in_use() {
-    lsof -i :$1 >/dev/null 2>&1
-}
-
-# Function to create directories
-create_directories() {
-    print_info "Creating necessary directories..."
+# Logging function
+log() {
+    local level=$1
+    shift
+    local message="$*"
+    local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
     
-    mkdir -p "$LOG_DIR"
-    mkdir -p "$AUTOMATION_DIR/logs"
-    mkdir -p "$AUTOMATION_DIR/reports"
-    mkdir -p "$AUTOMATION_DIR/temp"
-    mkdir -p "$AUTOMATION_DIR/backups"
+    case $level in
+        "INFO")
+            echo -e "${GREEN}[$timestamp] [INFO]${NC} $message"
+            ;;
+        "WARN")
+            echo -e "${YELLOW}[$timestamp] [WARN]${NC} $message"
+            ;;
+        "ERROR")
+            echo -e "${RED}[$timestamp] [ERROR]${NC} $message"
+            ;;
+        "DEBUG")
+            echo -e "${BLUE}[$timestamp] [DEBUG]${NC} $message"
+            ;;
+    esac
     
-    print_status "Directories created successfully"
+    # Also write to log file
+    echo "[$timestamp] [$level] $message" >> "$LOG_DIR/infinite-improvement.log"
 }
 
-# Function to check dependencies
+# Check if Node.js is installed
+check_node() {
+    if ! command -v node &> /dev/null; then
+        log "ERROR" "Node.js is not installed. Please install Node.js to run the infinite improvement loop."
+        exit 1
+    fi
+    
+    local node_version=$(node --version)
+    log "INFO" "Node.js version: $node_version"
+}
+
+# Check if npm is installed
+check_npm() {
+    if ! command -v npm &> /dev/null; then
+        log "ERROR" "npm is not installed. Please install npm to run the infinite improvement loop."
+        exit 1
+    fi
+    
+    local npm_version=$(npm --version)
+    log "INFO" "npm version: $npm_version"
+}
+
+# Check if required dependencies are installed
 check_dependencies() {
-    print_info "Checking dependencies..."
+    log "INFO" "Checking dependencies..."
     
-    # Check Node.js
-    if ! command_exists node; then
-        print_error "Node.js is not installed. Please install Node.js 16 or higher."
+    if [ ! -f "$PROJECT_ROOT/package.json" ]; then
+        log "ERROR" "package.json not found in project root"
         exit 1
     fi
     
-    # Check npm
-    if ! command_exists npm; then
-        print_error "npm is not installed. Please install npm."
-        exit 1
+    # Check if node_modules exists
+    if [ ! -d "$PROJECT_ROOT/node_modules" ]; then
+        log "WARN" "node_modules not found. Installing dependencies..."
+        cd "$PROJECT_ROOT"
+        npm install
     fi
     
-    # Check Node.js version
-    NODE_VERSION=$(node -v | cut -d'v' -f2 | cut -d'.' -f1)
-    if [ "$NODE_VERSION" -lt 16 ]; then
-        print_error "Node.js version 16 or higher is required. Current version: $(node -v)"
-        exit 1
-    fi
-    
-    print_status "Dependencies check passed"
+    log "INFO" "Dependencies check completed"
 }
 
-# Function to install npm dependencies
-install_dependencies() {
-    print_info "Installing npm dependencies..."
-    
-    cd "$AUTOMATION_DIR"
-    
-    if [ ! -f "package.json" ]; then
-        print_error "package.json not found in automation directory"
-        exit 1
-    fi
-    
-    npm install --production
-    
-    print_status "Dependencies installed successfully"
-}
-
-# Function to check if the system is already running
+# Check if the system is already running
 check_running() {
     if [ -f "$PID_FILE" ]; then
-        PID=$(cat "$PID_FILE")
-        if ps -p "$PID" > /dev/null 2>&1; then
-            print_warning "Infinite improvement loop is already running (PID: $PID)"
+        local pid=$(cat "$PID_FILE")
+        if ps -p "$pid" > /dev/null 2>&1; then
+            log "WARN" "Infinite improvement loop is already running (PID: $pid)"
             return 0
         else
-            print_warning "Stale PID file found. Removing..."
+            log "WARN" "Stale PID file found. Removing..."
             rm -f "$PID_FILE"
         fi
     fi
     return 1
 }
 
-# Function to check AI API keys
-check_ai_config() {
-    print_info "Checking AI configuration..."
+# Start the infinite improvement loop
+start_system() {
+    log "INFO" "Starting Infinite Improvement Loop System..."
     
-    local missing_keys=()
+    # Change to script directory
+    cd "$SCRIPT_DIR"
     
-    # Check Cursor AI
-    if [ "$CURSOR_AI_ENABLED" = "true" ] && [ -z "$CURSOR_API_KEY" ]; then
-        missing_keys+=("CURSOR_API_KEY")
-    fi
-    
-    # Check OpenAI
-    if [ "$OPENAI_ENABLED" = "true" ] && [ -z "$OPENAI_API_KEY" ]; then
-        missing_keys+=("OPENAI_API_KEY")
-    fi
-    
-    # Check Claude
-    if [ "$CLAUDE_ENABLED" = "true" ] && [ -z "$CLAUDE_API_KEY" ]; then
-        missing_keys+=("CLAUDE_API_KEY")
-    fi
-    
-    # Check GitHub Copilot
-    if [ "$COPILOT_ENABLED" = "true" ] && [ -z "$COPILOT_API_KEY" ]; then
-        missing_keys+=("COPILOT_API_KEY")
-    fi
-    
-    if [ ${#missing_keys[@]} -gt 0 ]; then
-        print_warning "Some AI API keys are missing: ${missing_keys[*]}"
-        print_info "The system will run with available AI providers only"
+    # Check if configuration file exists
+    if [ ! -f "$CONFIG_FILE" ]; then
+        log "WARN" "Configuration file not found. Using default configuration."
     else
-        print_status "All configured AI providers are ready"
+        log "INFO" "Using configuration file: $CONFIG_FILE"
     fi
-}
-
-# Function to start the infinite improvement loop
-start_improvement_loop() {
-    print_info "Starting infinite improvement loop..."
     
-    cd "$AUTOMATION_DIR"
-    
-    # Start the main process
-    nohup node infinite-improvement-loop.js > "$LOG_DIR/infinite-improvement.log" 2>&1 &
-    PID=$!
+    # Start the system
+    nohup node infinite-improvement-launcher.js --start > "$LOG_DIR/infinite-improvement.out" 2>&1 &
+    local pid=$!
     
     # Save PID
-    echo $PID > "$PID_FILE"
+    echo $pid > "$PID_FILE"
     
-    print_status "Infinite improvement loop started (PID: $PID)"
-    print_info "Logs are being written to: $LOG_DIR/infinite-improvement.log"
+    log "INFO" "Infinite improvement loop started with PID: $pid"
+    log "INFO" "Logs are being written to: $LOG_DIR/infinite-improvement.log"
+    log "INFO" "Output is being written to: $LOG_DIR/infinite-improvement.out"
     
     # Wait a moment and check if it started successfully
     sleep 3
-    
-    if ps -p "$PID" > /dev/null 2>&1; then
-        print_success "Infinite improvement loop is running successfully!"
-        print_info "Dashboard available at: http://localhost:$IMPROVEMENT_PORT"
-        print_info "API available at: http://localhost:$IMPROVEMENT_PORT/api"
+    if ps -p "$pid" > /dev/null 2>&1; then
+        log "INFO" "System started successfully!"
+        log "INFO" "Dashboard available at: http://localhost:3001"
+        log "INFO" "Improvement monitor available at: http://localhost:3002"
     else
-        print_error "Failed to start infinite improvement loop"
-        print_info "Check logs at: $LOG_DIR/infinite-improvement.log"
+        log "ERROR" "Failed to start system. Check logs for details."
+        rm -f "$PID_FILE"
         exit 1
     fi
 }
 
-# Function to show status
-show_status() {
-    print_info "Infinite Improvement Loop Status"
-    echo "=================================="
+# Stop the infinite improvement loop
+stop_system() {
+    log "INFO" "Stopping Infinite Improvement Loop System..."
     
     if [ -f "$PID_FILE" ]; then
-        PID=$(cat "$PID_FILE")
-        if ps -p "$PID" > /dev/null 2>&1; then
-            print_status "Status: Running (PID: $PID)"
-            print_info "Dashboard: http://localhost:$IMPROVEMENT_PORT"
-            print_info "Logs: $LOG_DIR/infinite-improvement.log"
-        else
-            print_error "Status: Not running (stale PID file)"
-        fi
-    else
-        print_error "Status: Not running"
-    fi
-    
-    echo ""
-    print_info "Configuration:"
-    echo "  - Cursor AI: $CURSOR_AI_ENABLED"
-    echo "  - OpenAI: $OPENAI_ENABLED"
-    echo "  - Claude: $CLAUDE_ENABLED"
-    echo "  - Local AI: $LOCAL_AI_ENABLED"
-    echo "  - GitHub Copilot: $COPILOT_ENABLED"
-    echo "  - Custom Agents: $CUSTOM_AGENTS_ENABLED"
-}
-
-# Function to stop the system
-stop_improvement_loop() {
-    print_info "Stopping infinite improvement loop..."
-    
-    if [ -f "$PID_FILE" ]; then
-        PID=$(cat "$PID_FILE")
-        if ps -p "$PID" > /dev/null 2>&1; then
-            kill "$PID"
-            print_status "Sent stop signal to process $PID"
+        local pid=$(cat "$PID_FILE")
+        if ps -p "$pid" > /dev/null 2>&1; then
+            log "INFO" "Stopping process with PID: $pid"
+            kill "$pid"
             
             # Wait for process to stop
-            for i in {1..10}; do
-                if ! ps -p "$PID" > /dev/null 2>&1; then
-                    break
-                fi
+            local count=0
+            while ps -p "$pid" > /dev/null 2>&1 && [ $count -lt 30 ]; do
                 sleep 1
+                count=$((count + 1))
             done
             
-            if ps -p "$PID" > /dev/null 2>&1; then
-                print_warning "Process did not stop gracefully, forcing termination..."
-                kill -9 "$PID"
+            if ps -p "$pid" > /dev/null 2>&1; then
+                log "WARN" "Process did not stop gracefully. Force killing..."
+                kill -9 "$pid"
             fi
             
-            rm -f "$PID_FILE"
-            print_success "Infinite improvement loop stopped"
+            log "INFO" "System stopped successfully"
         else
-            print_warning "Process $PID is not running"
+            log "WARN" "Process with PID $pid is not running"
+        fi
+        
+        rm -f "$PID_FILE"
+    else
+        log "WARN" "PID file not found. System may not be running."
+    fi
+}
+
+# Restart the infinite improvement loop
+restart_system() {
+    log "INFO" "Restarting Infinite Improvement Loop System..."
+    stop_system
+    sleep 2
+    start_system
+}
+
+# Show system status
+show_status() {
+    log "INFO" "Checking Infinite Improvement Loop System status..."
+    
+    if [ -f "$PID_FILE" ]; then
+        local pid=$(cat "$PID_FILE")
+        if ps -p "$pid" > /dev/null 2>&1; then
+            log "INFO" "System is running (PID: $pid)"
+            
+            # Show process info
+            local process_info=$(ps -p "$pid" -o pid,ppid,cmd --no-headers)
+            log "INFO" "Process info: $process_info"
+            
+            # Show port usage
+            log "INFO" "Checking port usage..."
+            if netstat -tuln 2>/dev/null | grep -q ":3001 "; then
+                log "INFO" "Dashboard port 3001 is in use"
+            fi
+            if netstat -tuln 2>/dev/null | grep -q ":3002 "; then
+                log "INFO" "Improvement monitor port 3002 is in use"
+            fi
+            
+            return 0
+        else
+            log "WARN" "PID file exists but process is not running"
             rm -f "$PID_FILE"
+            return 1
         fi
     else
-        print_warning "No PID file found"
+        log "INFO" "System is not running (no PID file found)"
+        return 1
     fi
 }
 
-# Function to restart the system
-restart_improvement_loop() {
-    print_info "Restarting infinite improvement loop..."
-    stop_improvement_loop
-    sleep 2
-    start_improvement_loop
-}
-
-# Function to show logs
+# Show logs
 show_logs() {
-    if [ -f "$LOG_DIR/infinite-improvement.log" ]; then
-        print_info "Showing recent logs (last 50 lines):"
-        echo "=========================================="
-        tail -n 50 "$LOG_DIR/infinite-improvement.log"
-    else
-        print_error "Log file not found: $LOG_DIR/infinite-improvement.log"
-    fi
+    local lines=${1:-50}
+    log "INFO" "Showing last $lines lines of logs..."
+    echo "=== Infinite Improvement Loop Logs ==="
+    tail -n "$lines" "$LOG_DIR/infinite-improvement.log"
 }
 
-# Function to show help
+# Show help
 show_help() {
-    echo "Zion App - Infinite Improvement Loop"
-    echo "===================================="
+    echo "Infinite Improvement Loop Management Script"
     echo ""
     echo "Usage: $0 [COMMAND]"
     echo ""
     echo "Commands:"
-    echo "  start     Start the infinite improvement loop"
-    echo "  stop      Stop the infinite improvement loop"
-    echo "  restart   Restart the infinite improvement loop"
-    echo "  status    Show current status"
-    echo "  logs      Show recent logs"
+    echo "  start     Start the infinite improvement loop system"
+    echo "  stop      Stop the infinite improvement loop system"
+    echo "  restart   Restart the infinite improvement loop system"
+    echo "  status    Show system status"
+    echo "  logs      Show recent logs (default: 50 lines)"
+    echo "  logs N    Show last N lines of logs"
     echo "  help      Show this help message"
     echo ""
-    echo "Environment Variables:"
-    echo "  CURSOR_API_KEY      Cursor AI API key"
-    echo "  OPENAI_API_KEY      OpenAI API key"
-    echo "  CLAUDE_API_KEY      Claude API key"
-    echo "  COPILOT_API_KEY     GitHub Copilot API key"
-    echo "  IMPROVEMENT_PORT    Port for dashboard (default: 3002)"
-    echo ""
     echo "Examples:"
-    echo "  $0 start           # Start the system"
-    echo "  $0 status          # Check status"
-    echo "  $0 logs            # View logs"
-    echo "  $0 stop            # Stop the system"
+    echo "  $0 start"
+    echo "  $0 status"
+    echo "  $0 logs 100"
+    echo ""
+    echo "Configuration:"
+    echo "  Config file: $CONFIG_FILE"
+    echo "  Log directory: $LOG_DIR"
+    echo "  PID file: $PID_FILE"
 }
 
 # Main script logic
 main() {
-    # Parse command line arguments
-    case "${1:-start}" in
-        start)
-            echo -e "${PURPLE}🚀 Starting Zion App Infinite Improvement Loop${NC}"
-            echo "=================================================="
-            
+    local command=${1:-help}
+    
+    case $command in
+        "start")
+            check_node
+            check_npm
             check_dependencies
-            create_directories
-            install_dependencies
-            check_ai_config
-            
             if check_running; then
-                print_warning "System is already running. Use 'restart' to restart it."
+                log "INFO" "System is already running"
                 exit 0
             fi
-            
-            start_improvement_loop
+            start_system
             ;;
-        stop)
-            echo -e "${RED}🛑 Stopping Infinite Improvement Loop${NC}"
-            stop_improvement_loop
+        "stop")
+            stop_system
             ;;
-        restart)
-            echo -e "${YELLOW}🔄 Restarting Infinite Improvement Loop${NC}"
-            restart_improvement_loop
+        "restart")
+            check_node
+            check_npm
+            check_dependencies
+            restart_system
             ;;
-        status)
+        "status")
             show_status
             ;;
-        logs)
-            show_logs
+        "logs")
+            local lines=${2:-50}
+            show_logs "$lines"
             ;;
-        help|--help|-h)
+        "help"|"--help"|"-h")
             show_help
             ;;
         *)
-            print_error "Unknown command: $1"
-            echo ""
+            log "ERROR" "Unknown command: $command"
             show_help
             exit 1
             ;;
     esac
 }
 
+# Handle script interruption
+trap 'log "INFO" "Script interrupted"; exit 1' INT TERM
+
 # Run main function with all arguments
 main "$@"
-    } catch (error) {
-      logger.error('Error in Script:', error);
-      throw error;
-    }
-  }
-
-  stop() {
-    this.isRunning = false;
-    logger.info('Stopping Script...');
-  }
-}
-
-// Start the script
-if (require.main === module) {
-  const script = new Script();
-  script.start().catch(error => {
-    logger.error('Failed to start Script:', error);
-    process.exit(1);
-  });
-}
-
-module.exports = Script;
