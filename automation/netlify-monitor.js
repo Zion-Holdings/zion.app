@@ -126,6 +126,7 @@ class NetlifyBuildMonitor {
   }
 
   
+  
   async getSiteBuilds() {
     try {
       const builds = await this.makeNetlifyRequest(`/sites/${this.config.netlifySiteId}/builds`);
@@ -354,6 +355,7 @@ module.exports = {
     }
   }
 
+  
   
   async checkBuilds() {
     try {

@@ -116,13 +116,14 @@ class PerformanceMonitor {
     }
   }
 
+  
   async getBundleMetrics() {
     try {
       // Add proper error handling for bundle analysis
       const bundleStats = await this.analyzeBundle();
       
       if (!bundleStats) {
-        logger.warn('Warning: Could not analyze bundle, returning default metrics');
+        this.log('Warning: Could not analyze bundle, returning default metrics', 'warn');
         return {
           totalSize: 0,
           chunkCount: 0,
@@ -133,7 +134,7 @@ class PerformanceMonitor {
       
       return bundleStats;
     } catch (error) {
-      logger.error(`Error getting bundle metrics: ${error.message}`);
+      this.log(`Error getting bundle metrics: ${error.message}`, 'error');
       return {
         totalSize: 0,
         chunkCount: 0,

@@ -116,6 +116,7 @@ class DependencyUpdater extends AutomationTask {
   }
 
   
+  
   async checkOutdatedPackages() {
     try {
       const output = execSync('npm outdated --json', {
