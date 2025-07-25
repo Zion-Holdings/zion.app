@@ -157,7 +157,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
 
     // Autonomous System
     this.automationSystems.set('autonomous', {
-      name: Autonomous System',
+      name: 'Autonomous System',
       process: null,
       status: 'stopped',
       health: 0,
@@ -171,7 +171,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
 
     // Infinite Improvement Loop
     this.automationSystems.set('infinite-improvement', {
-      name: Infinite Improvement Loop',
+      name: 'Infinite Improvement Loop',
       process: null,
       status: 'stopped',
       health: 0,
@@ -185,7 +185,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
 
     // Enhanced Infinite Improvement Loop
     this.automationSystems.set('enhanced-improvement', {
-      name: Enhanced Infinite Improvement Loop',
+      name: 'Enhanced Infinite Improvement Loop',
       process: null,
       status: 'stopped',
       health: 0,
@@ -199,7 +199,7 @@ class IntelligentAutomationOrchestrator extends EventEmitter {
 
     // Continuous Improvement System
     this.automationSystems.set('continuous-improvement', {
-      name: Continuous Improvement System',
+      name: 'Continuous Improvement System',
       process: null,
       status: 'stopped',
       health: 0,
