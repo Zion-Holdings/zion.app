@@ -37,10 +37,10 @@ if [ -f "automation/test-report.json" ]; then
     echo "======================="
     
     # Extract summary from test report
-    TOTAL=$(node -e "const report = require('./automation/test-report.json'); console.log(report.summary.total);")
-    PASSED=$(node -e "const report = require('./automation/test-report.json'); console.log(report.summary.passed);")
-    FAILED=$(node -e "const report = require('./automation/test-report.json'); console.log(report.summary.failed);")
-    SUCCESS_RATE=$(node -e "const report = require('./automation/test-report.json'); console.log(report.summary.successRate.toFixed(1));")
+    TOTAL=$(node -e "const report = require('./automation/test-report.json'); console.log(report.tests || 0);")
+    PASSED=$(node -e "const report = require('./automation/test-report.json'); console.log(report.passed || 0);")
+    FAILED=$(node -e "const report = require('./automation/test-report.json'); console.log(report.failed || 0);")
+    SUCCESS_RATE=$(node -e "const report = require('./automation/test-report.json'); const total = report.tests || 0; const passed = report.passed || 0; console.log(total > 0 ? ((passed / total) * 100).toFixed(1) : '0.0');")
     
     echo "Total Tests: $TOTAL"
     echo "Passed: $PASSED ✅"
