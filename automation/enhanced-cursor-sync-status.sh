@@ -52,9 +52,9 @@ echo ""
 echo -e "${BLUE}📄 Log Files:${NC}"
 for log_file in "$AUTOMATION_DIR/logs"/enhanced-cursor-sync*.log; do
     if [ -f "$log_file" ]; then
-        local filename=$(basename "$log_file")
-        local last_modified=$(stat -f "%Sm" "$log_file" 2>/dev/null || stat -c "%y" "$log_file" 2>/dev/null)
-        local size=$(du -h "$log_file" | cut -f1)
+        filename=$(basename "$log_file")
+        last_modified=$(stat -f "%Sm" "$log_file" 2>/dev/null || stat -c "%y" "$log_file" 2>/dev/null)
+        size=$(du -h "$log_file" | cut -f1)
         echo "  $filename: $size, updated $last_modified"
     fi
 done
@@ -63,15 +63,15 @@ echo ""
 
 # Check metrics
 echo -e "${BLUE}📊 Metrics:${NC}"
-local metrics_file="$AUTOMATION_DIR/metrics/enhanced-sync-metrics.json"
+metrics_file="$AUTOMATION_DIR/metrics/enhanced-sync-metrics.json"
 if [ -f "$metrics_file" ]; then
-    local total_syncs=$(jq -r '.totalSyncs' "$metrics_file" 2>/dev/null || echo "0")
-    local successful_syncs=$(jq -r '.successfulSyncs' "$metrics_file" 2>/dev/null || echo "0")
-    local failed_syncs=$(jq -r '.failedSyncs' "$metrics_file" 2>/dev/null || echo "0")
-    local avg_duration=$(jq -r '.averageDuration' "$metrics_file" 2>/dev/null || echo "0")
+    total_syncs=$(jq -r '.totalSyncs' "$metrics_file" 2>/dev/null || echo "0")
+    successful_syncs=$(jq -r '.successfulSyncs' "$metrics_file" 2>/dev/null || echo "0")
+    failed_syncs=$(jq -r '.failedSyncs' "$metrics_file" 2>/dev/null || echo "0")
+    avg_duration=$(jq -r '.averageDuration' "$metrics_file" 2>/dev/null || echo "0")
     
     if [ "$total_syncs" -gt 0 ]; then
-        local success_rate=$(echo "scale=2; $successful_syncs * 100 / $total_syncs" | bc 2>/dev/null || echo "0")
+        success_rate=$(echo "scale=2; $successful_syncs * 100 / $total_syncs" | bc 2>/dev/null || echo "0")
         echo -e "${GREEN}✅ Total syncs: $total_syncs${NC}"
         echo -e "${GREEN}✅ Successful: $successful_syncs${NC}"
         echo -e "${GREEN}✅ Failed: $failed_syncs${NC}"
