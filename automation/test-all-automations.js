@@ -279,7 +279,9 @@ class ComprehensiveAutomationTester {
 
   async checkFileExists(filePath) {
     try {
-      await fs.access(filePath);
+      // Handle both relative and absolute paths
+      const fullPath = filePath.startsWith('/') ? filePath : path.join(__dirname, filePath);
+      await fs.access(fullPath);
       return true;
     } catch {
       return false;
