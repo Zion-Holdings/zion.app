@@ -22,8 +22,8 @@
     "confidence": 0.8,
     "appliedAt": "2025-07-25T13:46:23.052Z",
     "iteration": 0
-  }
-]  {
+  },
+  {
     "type": "performance_tuning",
     "target": "system",
     "tuning": {
@@ -32,6 +32,20 @@
       "priority": "high"
     },
     "appliedAt": "2025-07-25T13:46:23.053Z",
+    "iteration": 0
+  },
+  {
+    "type": "error_fix",
+    "target": "system",
+    "fix": {
+      "type": "generic_fix",
+      "target": "system",
+      "fix": "Apply generic error resolution",
+      "code": "// Generic error handling"
+    },
+    "priority": "critical",
+    "confidence": 0.95,
+    "appliedAt": "2025-07-25T13:48:23.058Z",
     "iteration": 0
   }
 ]
