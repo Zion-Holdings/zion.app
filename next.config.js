@@ -105,3 +105,4 @@ const nextConfig = {
 }
 
 module.exports = nextConfig;
+// Security headers added
