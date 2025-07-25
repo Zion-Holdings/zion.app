@@ -32,10 +32,10 @@ echo ""
 
 # Check last sync time
 echo -e "${BLUE}⏰ Last Sync:${NC}"
-local last_sync_file="$AUTOMATION_DIR/logs/last-sync-time.json"
+last_sync_file="$AUTOMATION_DIR/logs/last-sync-time.json"
 if [ -f "$last_sync_file" ]; then
-    local last_sync=$(jq -r '.lastSync' "$last_sync_file" 2>/dev/null)
-    local computer_id=$(jq -r '.computerId' "$last_sync_file" 2>/dev/null)
+    last_sync=$(jq -r '.lastSync' "$last_sync_file" 2>/dev/null)
+    computer_id=$(jq -r '.computerId' "$last_sync_file" 2>/dev/null)
     if [ "$last_sync" != "null" ] && [ -n "$last_sync" ]; then
         echo -e "${GREEN}✅ Last sync: $last_sync${NC}"
         echo -e "${GREEN}✅ Computer: $computer_id${NC}"
