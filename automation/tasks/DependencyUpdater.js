@@ -115,6 +115,7 @@ class DependencyUpdater extends AutomationTask {
     }
   }
 
+  
   async checkOutdatedPackages() {
     try {
       const output = execSync('npm outdated --json', {
@@ -131,6 +132,23 @@ class DependencyUpdater extends AutomationTask {
         location: outdated[packageName].location,
       }));
     } catch (error) {
+      // npm outdated returns non-zero exit code when packages are outdated (expected behavior)
+      if (error.status === 1 && error.stdout) {
+        try {
+          const outdated = JSON.parse(error.stdout);
+          return Object.keys(outdated).map((packageName) => ({
+            name: packageName,
+            current: outdated[packageName].current,
+            wanted: outdated[packageName].wanted,
+            latest: outdated[packageName].latest,
+            location: outdated[packageName].location,
+          }));
+        } catch (parseError) {
+          logger.error('Error parsing npm outdated output:', parseError);
+          return [];
+        }
+      }
+      
       logger.error('Error checking outdated packages:', error);
       return [];
     }

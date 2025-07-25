@@ -922,4 +922,44 @@ class LearningEngine {
   }
 }
 
-module.exports = { IntelligentAutomationOrchestrator };
+module.exports = { IntelligentAutomationOrchestrator 
+  async healthCheck() {
+    try {
+      const health = {
+        timestamp: new Date().toISOString(),
+        status: 'healthy',
+        systems: {},
+        errors: []
+      };
+
+      // Check each system
+      for (const [name, system] of this.systems) {
+        try {
+          if (system && typeof system.healthCheck === 'function') {
+            const systemHealth = await system.healthCheck();
+            health.systems[name] = systemHealth;
+          } else {
+            health.systems[name] = { status: 'unknown' };
+          }
+        } catch (error) {
+          health.systems[name] = { status: 'error', error: error.message };
+          health.errors.push({ system: name, error: error.message });
+        }
+      }
+
+      // Update overall status
+      const hasErrors = health.errors.length > 0;
+      health.status = hasErrors ? 'degraded' : 'healthy';
+
+      return health;
+    } catch (error) {
+      return {
+        timestamp: new Date().toISOString(),
+        status: 'error',
+        error: error.message,
+        systems: {},
+        errors: [{ system: 'orchestrator', error: error.message }]
+      };
+    }
+  }
+};

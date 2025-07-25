@@ -850,8 +850,8 @@ module.exports = PerformanceMonitor;`;
       
       for (const processName of processes) {
         try {
-          const output = execSync(\`ps aux | grep "\${processName}" | grep -v grep\`, { encoding: 'utf8' });
-          const lines = output.split('\\n').filter(line => line.trim());
+          const output = execSync(`ps aux | grep "${processName}" | grep -v grep`, { encoding: 'utf8' });
+          const lines = output.split('\n').filter(line => line.trim());
           
           for (const line of lines) {
             const hasAutomationKeyword = automationKeywords.some(keyword => 
@@ -859,13 +859,13 @@ module.exports = PerformanceMonitor;`;
             );
             
             if (hasAutomationKeyword) {
-              const pid = line.split('\\s+')[1];
+              const pid = line.split(/\s+/)[1];
               if (pid && !isNaN(pid)) {
                 try {
-                  execSync(\`kill \${pid}\`);
-                  logger.info(\`Stopped process \${pid}\`);
+                  execSync(`kill ${pid}`);
+                  logger.info(`Stopped process ${pid}`);
                 } catch (killError) {
-                  logger.warn(\`Could not stop process \${pid}: \${killError.message}\`);
+                  logger.warn(`Could not stop process ${pid}: ${killError.message}`);
                 }
               }
             }

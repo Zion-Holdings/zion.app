@@ -125,9 +125,17 @@ class NetlifyBuildMonitor {
     });
   }
 
+  
   async getSiteBuilds() {
     try {
       const builds = await this.makeNetlifyRequest(`/sites/${this.config.netlifySiteId}/builds`);
+      
+      // Ensure we always return an array
+      if (!Array.isArray(builds)) {
+        this.log('Warning: Netlify API returned non-array builds, returning empty array', 'warn');
+        return [];
+      }
+      
       return builds;
     } catch (error) {
       this.log(`Error getting site builds: ${error.message}`, 'error');
@@ -346,10 +354,18 @@ module.exports = {
     }
   }
 
+  
   async checkBuilds() {
     try {
       const builds = await this.getSiteBuilds();
       this.status.lastCheck = new Date().toISOString();
+
+      // Ensure builds is an array before using slice
+      if (!Array.isArray(builds)) {
+        this.log('Warning: builds is not an array, skipping build check', 'warn');
+        this.saveStatus();
+        return;
+      }
 
       for (const build of builds.slice(0, 5)) { // Check last 5 builds
         if (build.error_message && build.state === 'error') {
