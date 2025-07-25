@@ -2,7 +2,7 @@
 
 /**
  * Simple Automation Runner
- * 
+ *
  * Easy-to-use automation runner that provides access to all automation features:
  * - Git automation (commit, push, watch)
  * - Performance monitoring
@@ -12,307 +12,252 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const { execSync, spawn } = require('child_process');
 
 class AutomationRunner {
-    constructor() {
-        this.projectRoot = process.cwd();
-        this.config = this.loadConfig();
+  constructor() {
+    this.projectRoot = process.cwd();
+    this.config = this.loadConfig();
+  }
+
+  loadConfig() {
+    const configPath = path.join(__dirname, 'automation-config.json');
+    if (fs.existsSync(configPath)) {
+      return JSON.parse(fs.readFileSync(configPath, 'utf8'));
+    }
+    return { gitManager: { enabled: true } };
+  }
+
+  log(message, level = 'info') {
+    const timestamp = new Date().toISOString();
+    const prefix =
+      level === 'error'
+        ? '❌'
+        : level === 'success'
+          ? '✅'
+          : level === 'warn'
+            ? '⚠️'
+            : 'ℹ️';
+    console.log(`${prefix} [${timestamp}] ${message}`);
+  }
+
+  async executeCommand(command, options = {}) {
+    try {
+      const result = execSync(command, {
+        cwd: this.projectRoot,
+        encoding: 'utf8',
+        maxBuffer: 1024 * 1024 * 10, // 10MB buffer
+        ...options,
+      });
+      return { success: true, output: result };
+    } catch (error) {
+      return {
+        success: false,
+        error: error.message,
+        output: error.stdout || '',
+      };
+    }
+  }
+
+  async getGitStatus() {
+    this.log('📊 Checking git status...');
+
+    const result = await this.executeCommand('git status --porcelain');
+    if (!result.success) {
+      this.log(`Failed to get git status: ${result.error}`, 'error');
+      return null;
     }
 
-    loadConfig() {
-        const configPath = path.join(__dirname, 'automation-config.json');
-        if (fs.existsSync(configPath)) {
-            return JSON.parse(fs.readFileSync(configPath, 'utf8'));
-        }
-        return { gitManager: { enabled: true } };
+    const lines = result.output
+      .trim()
+      .split('\n')
+      .filter((line) => line.length > 0);
+    const staged = [];
+    const unstaged = [];
+    const untracked = [];
+
+    lines.forEach((line) => {
+      const status = line.substring(0, 2);
+      const file = line.substring(3);
+
+      if (status === '??') {
+        untracked.push(file);
+      } else if (status[0] === ' ') {
+        unstaged.push(file);
+      } else {
+        staged.push(file);
+      }
+    });
+
+    return { staged, unstaged, untracked };
+  }
+
+  async commit(message) {
+    this.log('📝 Committing changes...');
+
+    const result = await this.executeCommand(`git commit -m "${message}"`);
+    if (result.success) {
+      this.log('✅ Changes committed successfully', 'success');
+      return true;
+    } else {
+      this.log(`❌ Failed to commit: ${result.error}`, 'error');
+      return false;
+    }
+  }
+
+  async push() {
+    this.log('🚀 Pushing to remote...');
+
+    const result = await this.executeCommand('git push');
+    if (result.success) {
+      this.log('✅ Changes pushed successfully', 'success');
+      return true;
+    } else {
+      this.log(`❌ Failed to push: ${result.error}`, 'error');
+      return false;
+    }
+  }
+
+  async stageFiles(files) {
+    if (files.length === 0) return true;
+
+    this.log(`📦 Staging ${files.length} files...`);
+
+    const result = await this.executeCommand(`git add ${files.join(' ')}`);
+    if (result.success) {
+      this.log('✅ Files staged successfully', 'success');
+      return true;
+    } else {
+      this.log(`❌ Failed to stage files: ${result.error}`, 'error');
+      return false;
+    }
+  }
+
+  async runLintFix() {
+    this.log('🔧 Running lint fixes...');
+
+    const result = await this.executeCommand('npm run lint -- --fix');
+    if (result.success) {
+      this.log('✅ Lint fixes applied', 'success');
+      return true;
+    } else {
+      this.log(
+        `⚠️ Lint fixes completed with warnings: ${result.output}`,
+        'warn',
+      );
+      return true; // Still consider it successful
+    }
+  }
+
+  async runFormat() {
+    this.log('🎨 Running code formatting...');
+
+    const result = await this.executeCommand('npm run format');
+    if (result.success) {
+      this.log('✅ Code formatted successfully', 'success');
+      return true;
+    } else {
+      this.log(
+        `⚠️ Formatting completed with warnings: ${result.output}`,
+        'warn',
+      );
+      return true; // Still consider it successful
+    }
+  }
+
+  async quickCommit() {
+    this.log('⚡ Performing quick commit...');
+
+    const status = await this.getGitStatus();
+    if (!status) return false;
+
+    const allFiles = [
+      ...status.staged,
+      ...status.unstaged,
+      ...status.untracked,
+    ];
+    if (allFiles.length === 0) {
+      this.log('📭 No changes to commit', 'warn');
+      return true;
     }
 
-    log(message, level = 'info') {
-        const timestamp = new Date().toISOString();
-        const prefix = level === 'error' ? '❌' : level === 'success' ? '✅' : level === 'warn' ? '⚠️' : 'ℹ️';
-        console.log(`${prefix} [${timestamp}] ${message}`);
+    // Stage all files
+    if (!(await this.stageFiles(allFiles))) return false;
+
+    // Run fixes
+    await this.runLintFix();
+    await this.runFormat();
+
+    // Generate commit message
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const message = `Auto-commit: ${allFiles.length} files updated at ${timestamp}`;
+
+    // Commit and push
+    if (await this.commit(message)) {
+      return await this.push();
     }
 
-    async executeCommand(command, options = {}) {
-        try {
-            const result = execSync(command, {
-                encoding: 'utf8',
-                stdio: options.stdio || 'pipe',
-                cwd: this.projectRoot,
-                ...options
-            });
-            return { success: true, output: result };
-        } catch (error) {
-            return { success: false, error: error.message, output: error.stdout || '' };
-        }
+    return false;
+  }
+
+  async showStatus() {
+    const status = await this.getGitStatus();
+    if (!status) return;
+
+    console.log('\n📊 Git Status Summary:');
+    console.log('=====================');
+
+    if (status.staged.length > 0) {
+      console.log(`\n📦 Staged files (${status.staged.length}):`);
+      status.staged.forEach((file) => console.log(`  ✅ ${file}`));
     }
 
-    async gitCommit() {
-        this.log('🚀 Executing autonomous git commit...');
-        
-        const scriptPath = path.join(__dirname, 'autonomous-git-manager.js');
-        const result = await this.executeCommand(`node "${scriptPath}" execute`);
-        
-        if (result.success) {
-            this.log('Git commit completed successfully', 'success');
-        } else {
-            this.log(`Git commit failed: ${result.error}`, 'error');
-        }
-        
-        return result.success;
+    if (status.unstaged.length > 0) {
+      console.log(`\n📝 Modified files (${status.unstaged.length}):`);
+      status.unstaged.forEach((file) => console.log(`  📝 ${file}`));
     }
 
-    async gitWatch() {
-        this.log('👀 Starting git automation in watch mode...');
-        
-        const scriptPath = path.join(__dirname, 'autonomous-git-manager.js');
-        const result = await this.executeCommand(`node "${scriptPath}" watch`, { stdio: 'inherit' });
-        
-        return result.success;
+    if (status.untracked.length > 0) {
+      console.log(`\n🆕 Untracked files (${status.untracked.length}):`);
+      status.untracked.forEach((file) => console.log(`  🆕 ${file}`));
     }
 
-    async gitPush() {
-        this.log('📤 Executing git push...');
-        
-        const result = await this.executeCommand('git push origin main');
-        
-        if (result.success) {
-            this.log('Git push completed successfully', 'success');
-        } else {
-            this.log(`Git push failed: ${result.error}`, 'error');
-        }
-        
-        return result.success;
+    if (
+      status.staged.length === 0 &&
+      status.unstaged.length === 0 &&
+      status.untracked.length === 0
+    ) {
+      console.log('\n✅ Working directory is clean');
+    }
+  }
+
+  async runAll() {
+    this.log('🚀 Running complete automation sequence...');
+
+    // Show current status
+    await this.showStatus();
+
+    // Run fixes
+    await this.runLintFix();
+    await this.runFormat();
+
+    // Quick commit
+    const success = await this.quickCommit();
+
+    if (success) {
+      this.log(
+        '🎉 Complete automation sequence finished successfully!',
+        'success',
+      );
+    } else {
+      this.log('❌ Automation sequence encountered errors', 'error');
     }
 
-    async gitStatus() {
-        this.log('📊 Checking git status...');
-        
-        const result = await this.executeCommand('git status --porcelain');
-        
-        if (result.success) {
-            const changes = result.output.trim().split('\n').filter(line => line.length > 0);
-            if (changes.length > 0) {
-                this.log(`Found ${changes.length} changes:`, 'info');
-                changes.forEach(change => {
-                    console.log(`  ${change}`);
-                });
-            } else {
-                this.log('No changes detected', 'success');
-            }
-        } else {
-            this.log(`Failed to get git status: ${result.error}`, 'error');
-        }
-        
-        return result.success;
-    }
+    return success;
+  }
 
-    async autoFix() {
-        this.log('🔧 Running automatic fixes...');
-        
-        const fixes = [
-            { command: 'npm run lint -- --fix', name: 'ESLint fixes' },
-            { command: 'npm run format', name: 'Code formatting' },
-            { command: 'npm run type-check', name: 'TypeScript check' }
-        ];
-        
-        let successCount = 0;
-        
-        for (const fix of fixes) {
-            try {
-                const result = await this.executeCommand(fix.command);
-                if (result.success) {
-                    this.log(`${fix.name} completed successfully`);
-                    successCount++;
-                } else {
-                    this.log(`${fix.name} failed: ${result.error}`, 'warn');
-                }
-            } catch (error) {
-                this.log(`${fix.name} failed: ${error.message}`, 'warn');
-            }
-        }
-        
-        this.log(`Auto-fix completed: ${successCount}/${fixes.length} successful`, successCount === fixes.length ? 'success' : 'warn');
-        return successCount;
-    }
-
-    async checkPerformance() {
-        this.log('📈 Checking performance metrics...');
-        
-        const metrics = [
-            { command: 'npm run build', name: 'Build time' },
-            { command: 'npm run lint', name: 'Lint check' },
-            { command: 'npm run test', name: 'Test execution' }
-        ];
-        
-        for (const metric of metrics) {
-            const startTime = Date.now();
-            const result = await this.executeCommand(metric.command);
-            const duration = Date.now() - startTime;
-            
-            if (result.success) {
-                this.log(`${metric.name}: ${duration}ms`, 'success');
-            } else {
-                this.log(`${metric.name}: Failed (${duration}ms)`, 'error');
-            }
-        }
-    }
-
-    async showStatus() {
-        this.log('📋 Showing automation status...');
-        
-        const statusFiles = [
-            { path: path.join(__dirname, '.git-manager-status.json'), name: 'Git Manager' },
-            { path: path.join(__dirname, '.unified-automation-status.json'), name: 'Unified Automation' },
-            { path: path.join(__dirname, 'logs', 'git-analytics.json'), name: 'Git Analytics' }
-        ];
-        
-        for (const statusFile of statusFiles) {
-            if (fs.existsSync(statusFile.path)) {
-                try {
-                    const status = JSON.parse(fs.readFileSync(statusFile.path, 'utf8'));
-                    console.log(`\n${statusFile.name} Status:`);
-                    console.log(JSON.stringify(status, null, 2));
-                } catch (error) {
-                    this.log(`Failed to read ${statusFile.name} status: ${error.message}`, 'warn');
-                }
-            } else {
-                this.log(`${statusFile.name} status file not found`, 'warn');
-            }
-        }
-    }
-
-    async quickCommit() {
-        this.log('⚡ Quick commit operation...');
-        
-        // Check git status
-        const statusResult = await this.executeCommand('git status --porcelain');
-        if (!statusResult.success) {
-            this.log('Failed to get git status', 'error');
-            return false;
-        }
-        
-        const changes = statusResult.output.trim().split('\n').filter(line => line.length > 0);
-        if (changes.length === 0) {
-            this.log('No changes to commit', 'info');
-            return true;
-        }
-        
-        // Stage all changes
-        const stageResult = await this.executeCommand('git add .');
-        if (!stageResult.success) {
-            this.log('Failed to stage changes', 'error');
-            return false;
-        }
-        
-        // Commit with timestamp
-        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-        const commitMessage = `feat: auto-commit ${timestamp}`;
-        const commitResult = await this.executeCommand(`git commit -m "${commitMessage}"`);
-        
-        if (commitResult.success) {
-            this.log('Quick commit completed successfully', 'success');
-            
-            // Push if auto-push is enabled
-            if (this.config.gitManager?.autoPush) {
-                await this.gitPush();
-            }
-            
-            return true;
-        } else {
-            this.log(`Quick commit failed: ${commitResult.error}`, 'error');
-            return false;
-        }
-    }
-
-    async runAll() {
-        this.log('🚀 Running complete automation sequence...');
-        
-        const steps = [
-            { name: 'Auto-fix', func: () => this.autoFix() },
-            { name: 'Git status check', func: () => this.gitStatus() },
-            { name: 'Git commit', func: () => this.gitCommit() },
-            { name: 'Performance check', func: () => this.checkPerformance() }
-        ];
-        
-        let successCount = 0;
-        
-        for (const step of steps) {
-            this.log(`Executing: ${step.name}`);
-            const success = await step.func();
-            if (success) successCount++;
-        }
-        
-        this.log(`Automation sequence completed: ${successCount}/${steps.length} successful`, 
-                successCount === steps.length ? 'success' : 'warn');
-        
-        return successCount === steps.length;
-    }
-}
-
-// Main execution
-const runner = new AutomationRunner();
-const command = process.argv[2] || 'help';
-
-switch (command) {
-    case 'commit':
-        runner.gitCommit().catch(error => {
-            console.error('Commit failed:', error.message);
-            process.exit(1);
-        });
-        break;
-    case 'push':
-        runner.gitPush().catch(error => {
-            console.error('Push failed:', error.message);
-            process.exit(1);
-        });
-        break;
-    case 'watch':
-        runner.gitWatch().catch(error => {
-            console.error('Watch failed:', error.message);
-            process.exit(1);
-        });
-        break;
-    case 'status':
-        runner.gitStatus().catch(error => {
-            console.error('Status check failed:', error.message);
-            process.exit(1);
-        });
-        break;
-    case 'fix':
-        runner.autoFix().catch(error => {
-            console.error('Auto-fix failed:', error.message);
-            process.exit(1);
-        });
-        break;
-    case 'performance':
-        runner.checkPerformance().catch(error => {
-            console.error('Performance check failed:', error.message);
-            process.exit(1);
-        });
-        break;
-    case 'system-status':
-        runner.showStatus().catch(error => {
-            console.error('Status check failed:', error.message);
-            process.exit(1);
-        });
-        break;
-    case 'quick':
-        runner.quickCommit().catch(error => {
-            console.error('Quick commit failed:', error.message);
-            process.exit(1);
-        });
-        break;
-    case 'all':
-        runner.runAll().catch(error => {
-            console.error('Automation sequence failed:', error.message);
-            process.exit(1);
-        });
-        break;
-    case 'help':
-    default:
-        console.log(`
+  showHelp() {
+    console.log(`
 🚀 Automation Runner
 
 Usage:
@@ -341,7 +286,65 @@ Features:
   ✅ Status checking
   ✅ Quick operations
         `);
-        break;
+  }
 }
 
-module.exports = AutomationRunner; 
+// Main execution
+async function main() {
+  const runner = new AutomationRunner();
+  const command = process.argv[2] || 'help';
+
+  try {
+    switch (command) {
+      case 'help':
+      case '--help':
+      case '-h':
+        runner.showHelp();
+        break;
+      case 'status':
+        await runner.showStatus();
+        break;
+      case 'quick':
+        await runner.quickCommit();
+        break;
+      case 'all':
+        await runner.runAll();
+        break;
+      case 'fix':
+        await runner.runLintFix();
+        await runner.runFormat();
+        break;
+      case 'commit':
+        const status = await runner.getGitStatus();
+        if (status) {
+          const allFiles = [
+            ...status.staged,
+            ...status.unstaged,
+            ...status.untracked,
+          ];
+          if (allFiles.length > 0) {
+            await runner.stageFiles(allFiles);
+            const message = `Auto-commit: ${allFiles.length} files updated`;
+            await runner.commit(message);
+          }
+        }
+        break;
+      case 'push':
+        await runner.push();
+        break;
+      default:
+        console.log(`❌ Unknown command: ${command}`);
+        runner.showHelp();
+        process.exit(1);
+    }
+  } catch (error) {
+    console.error('❌ Automation error:', error.message);
+    process.exit(1);
+  }
+}
+
+if (require.main === module) {
+  main();
+}
+
+module.exports = AutomationRunner;

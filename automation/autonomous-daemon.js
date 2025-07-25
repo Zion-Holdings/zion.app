@@ -221,13 +221,6 @@ class AutonomousDaemon extends EventEmitter {
     logger.info(`[${timestamp}] 🔄 Process exited with code ${code} and signal ${signal}`);
     
     if (this.isRunning && this.config.autoRestart && this.restartCount < this.maxRestarts) {
-<<<<<<< HEAD
-      logger.info(`🔄 Restarting process (attempt ${this.restartCount + 1}/${this.maxRestarts})...`);
-      this.restartCount++;
-=======
-      console.log(`🔄 Restarting process (attempt ${this.restartCount + 1}/${this.maxRestarts})...`);
-      this.restartCount++
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       
       
 const timeoutId = 

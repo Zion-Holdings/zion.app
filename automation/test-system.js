@@ -51,15 +51,6 @@ const SecurityScanner = require('./tasks/SecurityScanner');
 const CodeQualityEnforcer = require('./tasks/CodeQualityEnforcer');
 const StaleCleaner = require('./tasks/StaleCleaner');
 
-<<<<<<< HEAD
-async function testComponents() {
-  logger.info('🧪 Testing Intelligent Automation System Components...');
-  logger.info('=' .repeat(60));
-=======
-async function testComponents()  {
-  console.log('🧪 Testing Intelligent Automation System Components...');
-  console.log('=' .repeat(60));
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
   
   const results = {
     passed: 0,

@@ -68,13 +68,6 @@ class ReportGenerator extends EventEmitter {
     this.lastReportTime = null;
   }
 
-<<<<<<< HEAD
-  async generateReport(type = daily';;;, data = {}) {
-    logger.info(`📊 Generating ${type} report...`);
-=======
-  async generateReport(type = daily';, data = {}) {
-    console.log(`📊 Generating ${type} report...`);
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
     
     try {
       const startTime = Date';.now();

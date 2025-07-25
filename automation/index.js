@@ -1,63 +1,27 @@
+#!/usr/bin/env node
 
-class  {
-  constructor() {
-    this.isRunning = false;
-  }
-
-  async start() {
-    this.isRunning = true;
-    console.log('Starting ...');
-    
-    try {
-      const winston = require('winston');
-
-const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.combine(
-    winston.format.timestamp(),
-    winston.format.errors({ stack: true }),
-    winston.format.json()
-  ),
-  defaultMeta: { service: 'automation-script' },
-  transports: [
-    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
-});
-
-if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
-}
-
-
-
+/**
+ * Intelligent Automation System - Main Entry Point
+ *
+ * This is the main entry point for the autonomous automation system.
+ * It initializes and starts the IntelligentAutomationOrchestrator which
+ * coordinates all automation components.
+ */
 
 const path = require('path');
 const fs = require('fs');
 
 // Load configuration
-<<<<<<< HEAD
 function loadConfiguration() {
-  const configPath = path.join(__dirname, 'config.json');
-=======
-function loadConfiguration()  {
   const configPath = path.join(__dirname, 'automation-config.json');
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
 
   if (fs.existsSync(configPath)) {
     try {
       const configData = fs.readFileSync(configPath, 'utf8');
       return JSON.parse(configData);
     } catch (error) {
-<<<<<<< HEAD
-      logger.warn(
-        ⚠️ Failed to load config.json, using defaults:',
-=======
       console.warn(
         '⚠️ Failed to load automation-config.json, using defaults:',
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
         error.message,
       );
     }
@@ -69,120 +33,102 @@ function loadConfiguration()  {
       enabled: true,
       selfHealing: true,
       learning: true,
-      adaptiveScheduling: true
+      adaptiveScheduling: true,
     },
     monitoring: {
       enabled: true,
       interval: 60000,
-      healthCheckInterval: 300000
+      healthCheckInterval: 300000,
     },
     reporting: {
       enabled: true,
       daily: true,
       weekly: true,
-      monthly: false
+      monthly: false,
     },
     dashboard: {
       enabled: true,
-      port: process.env.DASHBOARD_PORT || 3001
+      port: process.env.DASHBOARD_PORT || 3001,
     },
     tasks: {
       dependencyUpdater: {
         enabled: true,
-        interval: 24 * 60 * 60 * 1000
+        interval: 24 * 60 * 60 * 1000,
       },
       securityScanner: {
         enabled: true,
-        interval: 6 * 60 * 60 * 1000
+        interval: 6 * 60 * 60 * 1000,
       },
       codeQualityEnforcer: {
         enabled: true,
-        interval: 2 * 60 * 60 * 1000
+        interval: 2 * 60 * 60 * 1000,
       },
       staleCleaner: {
         enabled: true,
-        interval: 12 * 60 * 60 * 1000
-      }
+        interval: 12 * 60 * 60 * 1000,
+      },
     },
     notifications: {
       slack: {
         enabled: !!process.env.SLACK_WEBHOOK_URL,
         webhookUrl: process.env.SLACK_WEBHOOK_URL,
-        channel: process.env.SLACK_CHANNEL || '#automation'
+        channel: process.env.SLACK_CHANNEL || '#automation',
       },
       email: {
-        enabled: false
-      }
-    }
+        enabled: false,
+      },
+    },
   };
 }
 
-// Main function
+// Initialize the automation system
 async function main() {
-  logger.info('🚀 Starting Intelligent Automation System...');
-  logger.info('='.repeat(60));
-
   try {
-    // Load configuration
     const config = loadConfiguration();
-    logger.info('📋 Configuration loaded');
 
-    // Start the unified automation launcher
-    const { UnifiedAutomationLauncher } = require('./unified-automation-launcher');
-    const launcher = new UnifiedAutomationLauncher();
+    console.log('🚀 Starting Intelligent Automation System...');
+    console.log('📋 Configuration loaded successfully');
 
-<<<<<<< HEAD
-    // Setup event listeners
-    orchestrator.on('initialized', () => {
-      logger.info('✅ System initialized successfully');
-    });
+    // Import and initialize the orchestrator
+    const {
+      IntelligentAutomationOrchestrator,
+    } = require('./intelligent-automation-orchestrator');
 
-    orchestrator.on('started', () => {
-      logger.info('🎉 Intelligent Automation System is now running!');
-      logger.info('='.repeat(60));
-      logger.info('📊 Dashboard: http://localhost:' + config.dashboard.port);
-      logger.info('🔧 Press Ctrl+C to stop the system');
-      logger.info('='.repeat(60));
-    });
+    const orchestrator = new IntelligentAutomationOrchestrator(config);
 
-    orchestrator.on('stopped', () => {
-      logger.info('🛑 System stopped gracefully');
-    });
+    // Parse command line arguments
+    const args = parseArguments();
 
-    orchestrator.on('error', (error) => {
-      logger.error('❌ System error:', error);
-    });
+    if (args.help) {
+      showHelp();
+      return;
+    }
 
-    // Start the orchestrator
+    // Start the automation system
     await orchestrator.start();
-=======
-    // Start all automation components
-    await launcher.startAll();
 
-    console.log('🎉 Intelligent Automation System is now running!');
-    console.log('='.repeat(60));
-    console.log('📊 Dashboard: http://localhost:' + config.dashboard.port);
-    console.log('🔧 Press Ctrl+C to stop the system');
-    console.log('='.repeat(60));
+    console.log('✅ Intelligent Automation System started successfully');
 
     // Keep the process running
     process.on('SIGINT', async () => {
       console.log('\n🛑 Shutting down automation system...');
-      await launcher.stopAll();
+      await orchestrator.stop();
       process.exit(0);
     });
-
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
   } catch (error) {
-    logger.error('❌ Failed to start automation system:', error);
+    console.error('❌ Failed to start automation system:', error);
     process.exit(1);
   }
 }
 
-// Handle command line arguments
-function parseArguments()  {
+function parseArguments() {
   const args = process.argv.slice(2);
-  const options = {};
+  const parsed = {
+    help: false,
+    watch: false,
+    daemon: false,
+    config: null,
+  };
 
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
@@ -190,156 +136,62 @@ function parseArguments()  {
     switch (arg) {
       case '--help':
       case '-h':
-        showHelp();
-        process.exit(0);
+        parsed.help = true;
         break;
-
-      case '--version':
-      case '-v':
-        showVersion();
-        process.exit(0);
+      case '--watch':
+      case '-w':
+        parsed.watch = true;
         break;
-
+      case '--daemon':
+      case '-d':
+        parsed.daemon = true;
+        break;
       case '--config':
-        if (i + 1 < args.length) {
-          options.configFile = args[++i];
-        }
+      case '-c':
+        parsed.config = args[++i];
         break;
-
-      case '--dry-run':
-        options.dryRun = true;
-        break;
-
-      case '--no-dashboard':
-        options.noDashboard = true;
-        break;
-
-      case '--port':
-        if (i + 1 < args.length) {
-          options.port = parseInt(args[++i]);
-        }
-        break;
-
       default:
-        logger.warn('⚠️ Unknown argument:', arg);
-        break;
+        console.warn(`⚠️ Unknown argument: ${arg}`);
     }
   }
 
-  return options
+  return parsed;
 }
 
-<<<<<<< HEAD
 function showHelp() {
-  logger.info(`
-=======
-function showHelp()  {
   console.log(`
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
-Intelligent Automation System
+🤖 Intelligent Automation System
 
 Usage: node automation/index.js [options]
 
 Options:
-  -h, --help              Show this help message
-  -v, --version           Show version information
-  --config <file>         Specify configuration file
-  --dry-run               Run in dry-run mode (no actual changes)
-  --no-dashboard          Disable web dashboard
-  --port <number>         Set dashboard port (default: 3001)
-
-Environment Variables:
-  SLACK_WEBHOOK_URL       Slack webhook URL for notifications
-  SLACK_CHANNEL           Slack channel for notifications
-  DASHBOARD_PORT          Dashboard port number
-  DASHBOARD_USERNAME      Dashboard username (for basic auth)
-  DASHBOARD_PASSWORD      Dashboard password (for basic auth)
+  -h, --help     Show this help message
+  -w, --watch    Enable file watching mode
+  -d, --daemon   Run as daemon process
+  -c, --config   Specify custom config file
 
 Examples:
   node automation/index.js
-  node automation/index.js --dry-run
-  node automation/index.js --port 3002
-  node automation/index.js --no-dashboard
+  node automation/index.js --watch
+  node automation/index.js --daemon
+
+Features:
+  • Autonomous Git operations (commit, push, conflict resolution)
+  • Performance monitoring and optimization
+  • Security scanning and vulnerability detection
+  • Code quality enforcement
+  • Intelligent decision making
+  • Self-healing and error recovery
+  • Real-time reporting and notifications
   `);
 }
 
-<<<<<<< HEAD
-function showVersion() {
-  const packagePath = path.join(__dirname, ..', 'package.json');
-=======
-function showVersion()  {
-  const packagePath = path.join(__dirname, '..', 'package.json');
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
-
-  if (fs.existsSync(packagePath)) {
-    try {
-      const packageData = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
-<<<<<<< HEAD
-      logger.info(`Intelligent Automation System v${packageData.version}`);
-    } catch (error) {
-      logger.info('Intelligent Automation System v1.0.0');
-    }
-  } else {
-    logger.info('Intelligent Automation System v1.0.0');
-=======
-      console.log(`Intelligent Automation System v${packageData.version}`);
-    } catch (error) {
-      console.log('Intelligent Automation System v2.0.0');
-    }
-  } else {
-    console.log('Intelligent Automation System v2.0.0');
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
-  }
-}
-
-// Check if this is the main module
+// Run the main function
 if (require.main === module) {
-  // Parse command line arguments
-  const options = parseArguments();
-
-  // Apply options to environment
-  if (options.port) {
-    process.env.DASHBOARD_PORT = options.port.toString();
-  }
-
-  if (options.noDashboard) {
-    process.env.DISABLE_DASHBOARD = 'true';
-  }
-
-  if (options.dryRun) {
-    process.env.DRY_RUN = true;
-  }
-
-  // Start the system
   main().catch((error) => {
-    logger.error('❌ Fatal error:', error);
+    console.error('❌ Fatal error:', error);
     process.exit(1);
   });
 }
 
-module.exports = {
-  main,
-  loadConfiguration
-};
-    } catch (error) {
-      console.error('Error in :', error);
-      throw error;
-    }
-  }
-
-  stop() {
-    this.isRunning = false;
-    console.log('Stopping ...');
-  }
-}
-
-// Start the script
-if (require.main === module) {
-  const script = new ();
-  script.start().catch(error => {
-    console.error('Failed to start :', error);
-    process.exit(1);
-  });
-}
-
-module.exports = ;
+module.exports = { main, loadConfiguration };

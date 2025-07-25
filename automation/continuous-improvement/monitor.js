@@ -1,7 +1,8 @@
+#!/usr/bin/env node
 
 /**
  * Zion App - Monitoring Module
- * 
+ *
  * Dedicated monitoring system that collects metrics and triggers improvements
  */
 
@@ -11,136 +12,130 @@ const { execSync } = require('child_process');
 const axios = require('axios');
 const cron = require('node-cron');
 const winston = require('winston');
-// Import autonomous commit and push system
+
+// Import automation modules
 const AutonomousCommitPush = require('../autonomous-commit-push.js');
+
 // Configure logging
-<<<<<<< HEAD
-const logger = winston';;.createLogger({
-=======
 const logger = winston.createLogger({
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
   level: 'info',
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
-  defaultMeta: { service: 'zion-monitor' },
+  defaultMeta: { service: 'automation-script' },
   transports: [
-    new winston.transports.File({ filename: 'logs/monitor-error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/monitor-combined.log' }),
-    new winston.transports.Console({
-      format: winston.format.combine(
-        winston.format.colorize(),
-        winston.format.simple()
-      )
-    })
-  ]
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
-class ZionMonitor {
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
+
+class ContinuousImprovementMonitor {
   constructor() {
-    this.metrics = new Map();
-    this.alerts = [];
-    this.isRunning = false;
+    this.metrics = {};
+    this.history = [];
+    this.isMonitoring = false;
+    this.interval = null;
   }
 
-  /**
-   * Start monitoring
-   */
-  start() {
-    logger.info('🚀 Starting Zion App monitoring...');    this.isRunning = true;
+  async start() {
+    if (this.isMonitoring) {
+      logger.info('⚠️ Monitor is already running');
+      return;
+    }
 
-    // Schedule monitoring tasks
-    this.scheduleTasks();
-    
-    // Start real-time monitoring
-    this.startRealTimeMonitoring();
-    
-    logger.info('✅ Monitoring started successfully');  }
+    this.isMonitoring = true;
+    logger.info('🚀 Starting continuous improvement monitor...');
 
-  /**
-   * Schedule periodic monitoring tasks
-   */
-  scheduleTasks() {
-    // Code quality monitoring - every 30 minutes
-    cron.schedule('*/30 * * * *', () => {
-      this.monitorCodeQuality();
-    });
+    // Start monitoring loop
+    this.interval = setInterval(async () => {
+      await this.collectMetrics();
+    }, 300000); // Every 5 minutes
 
-    // Performance monitoring - every 15 minutes
-    cron.schedule('*/15 * * * *', () => {
-      this.monitorPerformance();
-    });
+    // Initial collection
+    await this.collectMetrics();
 
-    // Security monitoring - every hour
-    cron.schedule('0 * * * *', () => {
-      this.monitorSecurity();
-    });
-
-    // User experience monitoring - every 45 minutes
-    cron.schedule('*/45 * * * *', () => {
-      this.monitorUserExperience();
-    });
-
-    // Dependencies monitoring - daily at 2 AM
+    // Schedule daily improvements
     cron.schedule('0 2 * * *', () => {
-      this.monitorDependencies();
+      this.triggerImprovements();
     });
 
-    // System health check - every 5 minutes
-    cron.schedule('*/5 * * * *', () => {
-      this.checkSystemHealth();
-    });
+    logger.info('✅ Continuous improvement monitor started');
   }
 
-  /**
-   * Start real-time monitoring
-   */
-  startRealTimeMonitoring() {
-    // Monitor file changes
-    this.watchFileChanges();
-    
-    // Monitor build process
-    this.monitorBuildProcess();
-    
-    // Monitor deployment status
-    this.monitorDeployment();
+  async stop() {
+    if (!this.isMonitoring) {
+      logger.info('⚠️ Monitor is not running');
+      return;
+    }
+
+    this.isMonitoring = false;
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+    logger.info('🛑 Continuous improvement monitor stopped');
   }
 
-  /**
-   * Monitor code quality
-   */
-  async monitorCodeQuality() {
-    logger.info('🔍 Monitoring code quality...');
+  async collectMetrics() {
     try {
       const metrics = {
         timestamp: new Date().toISOString(),
-        type: 'codeQuality',
-        lintErrors: 0,
-        lintWarnings: 0,
-        testCoverage: 0,
-        bundleSize: 0,
-        complexity: 0
+        codeQuality: await this.getCodeQualityMetrics(),
+        performance: await this.getPerformanceMetrics(),
+        security: await this.getSecurityMetrics(),
+        dependencies: await this.getDependencyMetrics(),
+        build: await this.getBuildMetrics(),
+        alerts: [],
       };
 
+      // Check for issues and generate alerts
+      this.checkForIssues(metrics);
+
+      this.metrics = metrics;
+      this.history.push(metrics);
+
+      // Keep only last 100 entries
+      if (this.history.length > 100) {
+        this.history = this.history.slice(-100);
+      }
+
+      // Save metrics
+      await this.saveMetrics(metrics);
+
+      logger.info('📊 Metrics collected successfully');
+    } catch (error) {
+      logger.error('❌ Error collecting metrics:', error);
+    }
+  }
+
+  async getCodeQualityMetrics() {
+    const metrics = {
+      lintErrors: 0,
+      lintWarnings: 0,
+      testCoverage: 0,
+      complexity: 0,
+    };
+
+    try {
       // Run ESLint
       try {
-<<<<<<< HEAD
-        const lintResult = execSync';;('npm run lint', { encoding: 'utf8' });
-        const errorMatches = lintResult';;.match(/error/g)
-        const warningMatches = lintResult';;.match(/warning/g);
-        metrics.lintErrors = errorMatches';; ? errorMatches.length : 0;
-        metrics.lintWarnings = warningMatches';; ? warningMatches.length : 0;
-=======
         const lintResult = execSync('npm run lint', { encoding: 'utf8' });
-        const errorMatches = lintResult.match(/error/g)
+        const errorMatches = lintResult.match(/error/g);
         const warningMatches = lintResult.match(/warning/g);
         metrics.lintErrors = errorMatches ? errorMatches.length : 0;
         metrics.lintWarnings = warningMatches ? warningMatches.length : 0;
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       } catch (error) {
         const output = error.stdout || error.stderr || '';
-        const errorMatches = output.match(/error/g)
+        const errorMatches = output.match(/error/g);
         const warningMatches = output.match(/warning/g);
         metrics.lintErrors = errorMatches ? errorMatches.length : 0;
         metrics.lintWarnings = warningMatches ? warningMatches.length : 0;
@@ -148,26 +143,32 @@ class ZionMonitor {
 
       // Run test coverage
       try {
-<<<<<<< HEAD
-        const coverageResult = execSync';;('npm run test: 'coverage', { encoding: 'utf8' });
-        const coverageMatch = coverageResult';;.match(/(\d+)%/);
-        metrics.testCoverage = coverageMatch';; ? parseInt(coverageMatch[1]) : 0;
-=======
-        const coverageResult = execSync('npm run test:coverage', { encoding: 'utf8' });
+        const coverageResult = execSync('npm run test:coverage', {
+          encoding: 'utf8',
+        });
         const coverageMatch = coverageResult.match(/(\d+)%/);
         metrics.testCoverage = coverageMatch ? parseInt(coverageMatch[1]) : 0;
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       } catch (error) {
         logger.warn('Failed to get test coverage:', error.message);
       }
+    } catch (error) {
+      logger.error('Error getting code quality metrics:', error);
+    }
 
+    return metrics;
+  }
+
+  async getPerformanceMetrics() {
+    const metrics = {
+      bundleSize: 0,
+      loadTime: 0,
+      lighthouseScore: 0,
+    };
+
+    try {
       // Analyze bundle size
       try {
-<<<<<<< HEAD
-        const buildResult = execSync';;('npm run build', { encoding: 'utf8' });
-=======
         const buildResult = execSync('npm run build', { encoding: 'utf8' });
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
         // Parse bundle size from build output
         const sizeMatch = buildResult.match(/Bundle Size: (\d+\.?\d*) KB/);
         metrics.bundleSize = sizeMatch ? parseFloat(sizeMatch[1]) : 0;
@@ -175,677 +176,286 @@ class ZionMonitor {
         logger.warn('Failed to analyze bundle size:', error.message);
       }
 
-      // Calculate code complexity
-      metrics.complexity = this.calculateCodeComplexity();
-
-      this.metrics.set('codeQuality', metrics);
-      try {
-        // Check for issues
-        if (metrics.lintErrors > 0 || metrics.testCoverage < 70) {
-          this.createAlert('codeQuality', 'Code quality issues detected', metrics);
-        }
-        logger.info('Code quality metrics collected', metrics);
-      } catch (error) {
-        logger.error('Error monitoring code quality:', error);
-      }
-    } catch (error) {
-      logger.error('Error in monitorCodeQuality:', error);
-    }
-  }
-
-  /**
-   * Monitor performance
-   */
-  async monitorPerformance() {
-    logger.info('⚡ Monitoring performance...');
-    try {
-      const metrics = {
-        timestamp: new Date().toISOString(),
-        type: 'performance',
-        lighthouseScore: 0,
-        loadTime: 0,
-        apiResponseTime: 0,
-        memoryUsage: 0,
-        cpuUsage: 0
-      };
-
       // Run Lighthouse audit
       try {
-<<<<<<< HEAD
-        const lighthouseResult = execSync';;('npx lighthouse http://localhost:3000 --output=json --chrome-flags="--headless"', { encoding: 'utf8' });
-        const data = JSON';;.parse(lighthouseResult);
-        metrics.lighthouseScore = Math';;.round(data.lhr.categories.performance.score * 100);
-        metrics.loadTime = data';;.lhr.audits['first-contentful-paint'].numericValue;
-=======
-        const lighthouseResult = execSync('npx lighthouse http://localhost:3000 --output=json --chrome-flags="--headless"', { encoding: 'utf8' });
+        const lighthouseResult = execSync(
+          'npx lighthouse http://localhost:3000 --output=json --chrome-flags="--headless"',
+          { encoding: 'utf8' },
+        );
         const data = JSON.parse(lighthouseResult);
-        metrics.lighthouseScore = Math.round(data.lhr.categories.performance.score * 100);
-        metrics.loadTime = data.lhr.audits['first-contentful-paint'].numericValue;
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
+        metrics.lighthouseScore = Math.round(
+          data.lhr.categories.performance.score * 100,
+        );
+        metrics.loadTime =
+          data.lhr.audits['first-contentful-paint'].numericValue;
       } catch (error) {
         logger.warn('Failed to run Lighthouse audit:', error.message);
       }
-
-      // Monitor API response times
-      try {
-        const startTime = Date.now();
-        await axios.get('http://localhost:3000/api/health');
-        metrics.apiResponseTime = Date.now() - startTime;
-      } catch (error) {
-        logger.warn('Failed to check API response time:', error.message);
-      }
-
-      // Monitor system resources
-      const memUsage = process.memoryUsage();
-      metrics.memoryUsage = Math.round(memUsage.heapUsed / 1024 / 1024); // MB
-
-      this.metrics.set('performance', metrics)
-      try {
-        // Check for performance issues
-        if (metrics.lighthouseScore < 80 || metrics.apiResponseTime > 1000) {
-          this.createAlert('performance', 'Performance issues detected', metrics);
-        }
-
-        logger.info('Performance metrics collected', metrics);
-      } catch (error) {
-        logger.error('Error monitoring performance:', error);
-      }
     } catch (error) {
-      logger.error('Error in monitorPerformance:', error);
+      logger.error('Error getting performance metrics:', error);
     }
+
+    return metrics;
   }
 
-  /**
-   * Monitor security
-   */
-  async monitorSecurity() {
-    logger.info('🔒 Monitoring security...');
-    try {
-      const metrics = {
-        timestamp: new Date().toISOString(),
-        type: 'security',
-        vulnerabilities: 0,
-        outdatedPackages: 0,
-        securityScore: 100
-      };
+  async getSecurityMetrics() {
+    const metrics = {
+      vulnerabilities: 0,
+      outdatedPackages: 0,
+    };
 
+    try {
       // Run security audit
       try {
-<<<<<<< HEAD
-        const auditResult = execSync';;('npm audit --json', { encoding: 'utf8' });
-        const data = JSON';;.parse(auditResult);
-        metrics.vulnerabilities = Object';;.keys(data.vulnerabilities || {}).length;
-=======
         const auditResult = execSync('npm audit --json', { encoding: 'utf8' });
         const data = JSON.parse(auditResult);
-        metrics.vulnerabilities = Object.keys(data.vulnerabilities || {}).length;
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
+        metrics.vulnerabilities = Object.keys(
+          data.vulnerabilities || {},
+        ).length;
       } catch (error) {
         logger.warn('Failed to run security audit:', error.message);
       }
 
       // Check for outdated packages
       try {
-<<<<<<< HEAD
-        const outdatedResult = execSync';;('npm outdated --json', { encoding: 'utf8' });
-        const data = JSON';;.parse(outdatedResult);
-        metrics.outdatedPackages = Object';;.keys(data).length;
-=======
-        const outdatedResult = execSync('npm outdated --json', { encoding: 'utf8' });
+        const outdatedResult = execSync('npm outdated --json', {
+          encoding: 'utf8',
+        });
         const data = JSON.parse(outdatedResult);
         metrics.outdatedPackages = Object.keys(data).length;
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       } catch (error) {
         logger.warn('Failed to check outdated packages:', error.message);
       }
-
-      // Calculate security score
-      metrics.securityScore = Math.max(0, 100 - (metrics.vulnerabilities * 10) - (metrics.outdatedPackages * 2));
-
-      this.metrics.set('security', metrics);
-      try {
-        // Check for security issues
-        if (metrics.vulnerabilities > 0 || metrics.securityScore < 80) {
-          this.createAlert('security', 'Security issues detected', metrics);
-        }
-        logger.info('Security metrics collected', metrics);
-      } catch (error) {
-        logger.error('Error monitoring security:', error);
-      }
     } catch (error) {
-      logger.error('Error in monitorSecurity:', error);
+      logger.error('Error getting security metrics:', error);
     }
+
+    return metrics;
   }
 
-  /**
-   * Monitor user experience
-   */
-  async monitorUserExperience() {
-    logger.info('👥 Monitoring user experience...');
+  async getDependencyMetrics() {
+    const metrics = {
+      totalPackages: 0,
+      outdatedPackages: 0,
+      vulnerablePackages: 0,
+    };
+
     try {
-      const metrics = {
-        timestamp: new Date().toISOString(),
-        type: 'userExperience',
-        errorRate: 0,
-        userSatisfaction: 0,
-        accessibilityScore: 100,
-        conversionRate: 0
-      };
-
-      // Check error rates from logs
-      metrics.errorRate = this.calculateErrorRate();
-
-      // Simulate user satisfaction (in real app, this would come from analytics)
-      metrics.userSatisfaction = Math.random() * 0.4 + 0.6; // 60-100%
-
-      // Check accessibility
-      metrics.accessibilityScore = this.checkAccessibility();
-
-      // Simulate conversion rate (in real app, this would come from analytics)
-      metrics.conversionRate = Math.random() * 0.3 + 0.1; // 10-40%
-
-      this.metrics.set('userExperience', metrics)
-      try {
-        // Check for UX issues
-        if (metrics.errorRate > 0.01 || metrics.userSatisfaction < 0.7) {
-          this.createAlert('userExperience', 'User experience issues detected', metrics);
-        }
-        logger.info('User experience metrics collected', metrics);
-      } catch (error) {
-        logger.error('Error monitoring user experience:', error);
-      }
-    } catch (error) {
-      logger.error('Error in monitorUserExperience:', error);
-    }
-  }
-
-  /**
-   * Monitor dependencies
-   */
-  async monitorDependencies() {
-    logger.info('📦 Monitoring dependencies...');
-    try {
-      const metrics = {
-        timestamp: new Date().toISOString(),
-        type: 'dependencies',
-        totalPackages: 0,
-        outdatedPackages: 0,
-        vulnerablePackages: 0,
-        unusedPackages: 0
-      };
-
       // Count total packages
-<<<<<<< HEAD
-      const packageJson = JSON';;.parse(fs.readFileSync('package.json', 'utf8'));
-=======
       const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       const allDeps = {
         ...packageJson.dependencies,
-        ...packageJson.devDependencies
+        ...packageJson.devDependencies,
       };
       metrics.totalPackages = Object.keys(allDeps).length;
 
       // Check outdated packages
       try {
-<<<<<<< HEAD
-        const outdatedResult = execSync';;('npm outdated --json', { encoding: 'utf8' });
-        const data = JSON';;.parse(outdatedResult);
-        metrics.outdatedPackages = Object';;.keys(data).length;
-=======
-        const outdatedResult = execSync('npm outdated --json', { encoding: 'utf8' });
+        const outdatedResult = execSync('npm outdated --json', {
+          encoding: 'utf8',
+        });
         const data = JSON.parse(outdatedResult);
         metrics.outdatedPackages = Object.keys(data).length;
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       } catch (error) {
         // No outdated packages
       }
 
       // Check vulnerable packages
       try {
-<<<<<<< HEAD
-        const auditResult = execSync';;('npm audit --json', { encoding: 'utf8' });
-        const data = JSON';;.parse(auditResult);
-        metrics.vulnerablePackages = Object';;.keys(data.vulnerabilities || {}).length;
-=======
         const auditResult = execSync('npm audit --json', { encoding: 'utf8' });
         const data = JSON.parse(auditResult);
-        metrics.vulnerablePackages = Object.keys(data.vulnerabilities || {}).length;
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
+        metrics.vulnerablePackages = Object.keys(
+          data.vulnerabilities || {},
+        ).length;
       } catch (error) {
         // No vulnerabilities
       }
-
-      // Find unused packages (simplified)
-      metrics.unusedPackages = this.findUnusedPackages();
-
-      this.metrics.set('dependencies', metrics)
-      try {
-        // Check for dependency issues
-        if (metrics.outdatedPackages > 5 || metrics.vulnerablePackages > 0) {
-          this.createAlert('dependencies', 'Dependency issues detected', metrics);
-        }
-        logger.info('Dependency metrics collected', metrics);
-      } catch (error) {
-        logger.error('Error monitoring dependencies:', error);
-      }
     } catch (error) {
-      logger.error('Error in monitorDependencies:', error);
+      logger.error('Error getting dependency metrics:', error);
     }
+
+    return metrics;
   }
 
-  /**
-   * Check system health
-   */
-  async checkSystemHealth() {
-    logger.info('🏥 Checking system health...');
-    try {
-      const metrics = {
-        timestamp: new Date().toISOString(),
-        type: 'systemHealth',
-        uptime: process.uptime(),
-        memoryUsage: process.memoryUsage(),
-        cpuUsage: process.cpuUsage(),
-        activeConnections: 0
-      };
-
-      this.metrics.set('systemHealth', metrics);
-      try {
-        // Check for system issues
-        const memUsage = process.memoryUsage();
-        if (memUsage.heapUsed / memUsage.heapTotal > 0.9) {
-          this.createAlert('systemHealth', 'High memory usage detected', metrics);
-        }
-        logger.debug('System health metrics collected', metrics);
-      } catch (error) {
-        logger.error('Error checking system health:', error);
-      }
-    } catch (error) {
-      logger.error('Error in checkSystemHealth:', error);
-    }
-  }
-
-  /**
-   * Watch for file changes
-   */
-  watchFileChanges() {
-    const watchPaths = [
-      'src/',
-      'pages/',
-      'components/',
-      'utils/',
-      'styles/'
-    ];
-
-    watchPaths.forEach(watchPath => {
-      if (fs.existsSync(watchPath)) {
-        fs.watch(watchPath, { recursive: true }, (eventType, filename) => {
-          if (filename && !filename.includes('node_modules') && !filename.includes('.git')) {
-            logger.info(`File change detected: ${eventType} ${filename}`);
-            this.onFileChange(eventType, filename);
-          }
-        });
-      }
-    });
-  }
-
-  /**
-   * Handle file changes
-   */
-  onFileChange(eventType, filename) {
-    // Trigger immediate code quality check for changed files
-    if (filename.endsWith('.tsx') || filename.endsWith('.ts') || filename.endsWith('.js')) {
-      
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = setTimeout(() => {
-        this.monitorCodeQuality();
-      },                                                5000);
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-; // Wait 5 seconds for file to be saved
-    }
-  }
-
-  /**
-   * Monitor build process
-   */
-  monitorBuildProcess() {
-    // This would integrate with your CI/CD pipeline
-    logger.info('🔨 Build process monitoring enabled');  }
-
-  /**
-   * Monitor deployment
-   */
-  monitorDeployment() {
-    // This would check deployment status
-    logger.info('🚀 Deployment monitoring enabled');  }
-
-  /**
-   * Create an alert
-   */
-  async createAlert(type, message, data) {
-    const alert = {
-      id: `${type}_${Date.now()}`,
-      type,
-      message,
-      data,
-      timestamp: new Date().toISOString(),
-      severity: this.calculateSeverity(type, data),
-      status: 'open'
+  async getBuildMetrics() {
+    const metrics = {
+      buildTime: 0,
+      buildSuccess: false,
+      lastBuild: null,
     };
 
-    this.alerts.push(alert);
-    logger.warn(`Alert created: ${message}`, alert);
-    
-    // Trigger improvement system
-    await this.triggerImprovement(alert);
-
-    // After improvement, automatically commit and push changes
     try {
-      logger.info('Attempting automatic commit and push after improvement...');
-      const autoCommitPush = new AutonomousCommitPush();
-      const result = await autoCommitPush.autonomousCommitAndPush();
-      if (result.success) {
-        logger.info('Automatic commit and push completed successfully.');
-      } else {
-        logger.error('Automatic commit and push failed:', result.error || result.message);
+      const startTime = Date.now();
+      execSync('npm run build', { stdio: 'pipe' });
+      metrics.buildTime = Date.now() - startTime;
+      metrics.buildSuccess = true;
+      metrics.lastBuild = new Date().toISOString();
+    } catch (error) {
+      metrics.buildSuccess = false;
+      logger.warn('Build failed:', error.message);
+    }
+
+    return metrics;
+  }
+
+  checkForIssues(metrics) {
+    // Code quality issues
+    if (metrics.codeQuality.lintErrors > 10) {
+      metrics.alerts.push({
+        type: 'code_quality',
+        severity: 'high',
+        message: `High number of lint errors: ${metrics.codeQuality.lintErrors}`,
+        action: 'Run lint fixes and review code quality',
+      });
+    }
+
+    if (metrics.codeQuality.testCoverage < 80) {
+      metrics.alerts.push({
+        type: 'code_quality',
+        severity: 'medium',
+        message: `Low test coverage: ${metrics.codeQuality.testCoverage}%`,
+        action: 'Add more tests to improve coverage',
+      });
+    }
+
+    // Performance issues
+    if (metrics.performance.bundleSize > 1000) {
+      metrics.alerts.push({
+        type: 'performance',
+        severity: 'medium',
+        message: `Large bundle size: ${metrics.performance.bundleSize} KB`,
+        action: 'Optimize bundle size and implement code splitting',
+      });
+    }
+
+    if (metrics.performance.lighthouseScore < 80) {
+      metrics.alerts.push({
+        type: 'performance',
+        severity: 'high',
+        message: `Low Lighthouse score: ${metrics.performance.lighthouseScore}`,
+        action: 'Optimize performance and accessibility',
+      });
+    }
+
+    // Security issues
+    if (metrics.security.vulnerabilities > 0) {
+      metrics.alerts.push({
+        type: 'security',
+        severity: 'high',
+        message: `Security vulnerabilities detected: ${metrics.security.vulnerabilities}`,
+        action: 'Run npm audit fix and review dependencies',
+      });
+    }
+
+    if (metrics.security.outdatedPackages > 10) {
+      metrics.alerts.push({
+        type: 'security',
+        severity: 'medium',
+        message: `Many outdated packages: ${metrics.security.outdatedPackages}`,
+        action: 'Update dependencies to latest versions',
+      });
+    }
+  }
+
+  async saveMetrics(metrics) {
+    try {
+      const reportPath = path.join(__dirname, 'monitor-report.json');
+      await fs.promises.writeFile(reportPath, JSON.stringify(metrics, null, 2));
+    } catch (error) {
+      logger.error('Failed to save metrics:', error);
+    }
+  }
+
+  async triggerImprovements() {
+    logger.info('🔄 Triggering automated improvements...');
+
+    try {
+      // Trigger autonomous commit and push
+      const commitPush = new AutonomousCommitPush();
+      await commitPush.execute();
+
+      logger.info('✅ Automated improvements completed');
+    } catch (error) {
+      logger.error('❌ Failed to trigger improvements:', error);
+    }
+  }
+
+  async monitorCodeQuality() {
+    logger.info('🔍 Monitoring code quality...');
+
+    try {
+      const metrics = await this.getCodeQualityMetrics();
+
+      if (metrics.lintErrors > 0) {
+        logger.warn(`Found ${metrics.lintErrors} lint errors`);
+        // Could trigger automatic fixes here
       }
-    } catch (err) {
-      logger.error('Error during automatic commit and push:', err);
+
+      if (metrics.testCoverage < 80) {
+        logger.warn(`Test coverage is ${metrics.testCoverage}%`);
+        // Could trigger test generation here
+      }
+    } catch (error) {
+      logger.error('Error monitoring code quality:', error);
     }
   }
 
-  /**
-   * Calculate alert severity
-   */
-  calculateSeverity(type, data) {
-    switch (type) {
-      case 'security':
-        return data.vulnerabilities > 0 ? 'critical' : 'medium';
-      case 'performance':
-        return data.lighthouseScore < 60 ? 'high' : 'medium'
-      case 'codeQuality':
-        return data.lintErrors > 10 ? 'high' : 'medium';
-      case 'userExperience':
-        return data.errorRate > 0.05 ? 'high' : 'medium';
-      default:
-        return 'medium';
-    }
-  }
+  // File watcher for immediate feedback
+  watchFiles() {
+    const chokidar = require('chokidar');
 
-  /**
-   * Trigger improvement system
-   */
-  async triggerImprovement(alert) {
-    try {
-      // Send alert to improvement system
-      const improvementSystem = require('./index');
-      const system = new improvementSystem();
-      
-      await system.queueImprovement(alert.type, {
-        type: alert.type,
-        severity: alert.severity,
-        data: alert.data,
-        alertId: alert.id
-      });
-      
-      logger.info(`Improvement triggered for alert: ${alert.id}`);
-    } catch (error) {
-      logger.error('Error triggering improvement:', error);    }
-  }
+    const watcher = chokidar.watch(
+      [
+        'src/**/*.{ts,tsx,js,jsx}',
+        'pages/**/*.{ts,tsx,js,jsx}',
+        'components/**/*.{ts,tsx,js,jsx}',
+      ],
+      {
+        ignored: /node_modules/,
+        persistent: true,
+      },
+    );
 
-  /**
-   * Calculate code complexity
-   */
-  calculateCodeComplexity() {
-    // Simplified complexity calculation
-    let complexity = 0;
-    
-    try {
-      const srcFiles = this.findFiles('src/', ['.ts', '.tsx', '.js', '.jsx']);
-      srcFiles.forEach(file => {
-        const content = fs.readFileSync(file, 'utf8');        // Count cyclomatic complexity indicators
-        const ifStatements = (content.match(/if\s*\(/g) || []).length
-        const forLoops = (content.match(/for\s*\(/g) || []).length
-        const whileLoops = (content.match(/while\s*\(/g) || []).length
-        const switchStatements = (content.match(/switch\s*\(/g) || []).length;
-        
-        complexity += ifStatements + forLoops + whileLoops + switchStatements;
-      });
-    } catch (error) {
-      logger.warn('Error calculating code complexity:', error.message);    }
-    
-    return complexity;
-  }
+    watcher.on('change', (filename) => {
+      logger.info(`File changed: ${filename}`);
 
-  /**
-   * Calculate error rate
-   */
-  calculateErrorRate() {
-    // Simplified error rate calculation
-    // In a real app, this would analyze logs or error tracking
-    return Math.random() * 0.02; // 0-2% error rate
-  }
-
-  /**
-   * Check accessibility
-   */
-  checkAccessibility() {
-    // Simplified accessibility check
-    // In a real app, this would run automated accessibility tests
-    return Math.random() * 20 + 80; // 80-100% accessibility score
-  }
-
-  /**
-   * Find unused packages
-   */
-  findUnusedPackages() {
-    // Simplified unused package detection
-    // In a real app, this would use tools like depcheck
-    return Math.floor(Math.random() * 3); // 0-2 unused packages
-  }
-
-  /**
-   * Find files recursively
-   */
-  findFiles(dir, extensions) {
-    const files = [];
-    
-    if (!fs.existsSync(dir)) return files
-    const items = fs.readdirSync(dir);
-    
-    items.forEach(item => {
-      const fullPath = path.join(dir, item)
-      const stat = fs.statSync(fullPath);
-      
-      if (stat.isDirectory()) {
-        files.push(...this.findFiles(fullPath, extensions));
-      } else if (extensions.some(ext => item.endsWith(ext))) {
-        files.push(fullPath);
+      // Trigger immediate code quality check for changed files
+      if (
+        filename.endsWith('.tsx') ||
+        filename.endsWith('.ts') ||
+        filename.endsWith('.js')
+      ) {
+        const timeoutId = setTimeout(() => {
+          this.monitorCodeQuality();
+        }, 5000); // Wait 5 seconds for file to be saved
       }
     });
-    
-    return files;
-  }
 
-  /**
-   * Get metrics
-   */
-  getMetrics() {
-    return Object.fromEntries(this.metrics);
-  }
-
-  /**
-   * Get alerts
-   */
-  getAlerts() {
-    return this.alerts;
-  }
-
-  /**
-   * Stop monitoring
-   */
-  stop() {
-    logger.info('🛑 Stopping monitoring...');    this.isRunning = false;
+    logger.info('👀 File watcher started');
   }
 }
 
-// Export the monitor
-module.exports = ZionMonitor;
-
-// Run the monitor if this file is executed directly
+// CLI interface
 if (require.main === module) {
-  const monitor = new ZionMonitor();
-  
-  // Handle graceful shutdown
-  process.on('SIGINT', () => {
-    console.log('\n🛑 Received SIGINT, shutting down gracefully...');
-    monitor.stop();
-    process.exit(0);
-  });
+  const monitor = new ContinuousImprovementMonitor();
+  const command = process.argv[2];
 
-  process.on('SIGTERM', () => {
-    console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
-    monitor.stop();
-    process.exit(0);
-  });
+  switch (command) {
+    case 'start':
+      monitor.start();
+      break;
+    case 'stop':
+      monitor.stop();
+      break;
+    case 'watch':
+      monitor.watchFiles();
+      break;
+    case 'improve':
+      monitor.triggerImprovements();
+      break;
+    default:
+      logger.info('Usage: node monitor.js [start|stop|watch|improve]');
+  }
+}
 
-  // Start the monitor
-  monitor.start();
-} 
+module.exports = ContinuousImprovementMonitor;

@@ -177,13 +177,6 @@ class AutonomousAutomationManager extends EventEmitter {
       // Start the main loop
       this.mainLoop();
     } catch (error) {
-<<<<<<< HEAD
-      logger.error('❌ Failed to start manager:', error);
-      this.isRunning = false';;
-=======
-      console.error('❌ Failed to start manager:', error);
-      this.isRunning = false;
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       throw error;
     }
   }
@@ -298,13 +291,6 @@ class AutonomousAutomationManager extends EventEmitter {
         // Wait before next iteration
         await this.sleep(1000); // 1 second
       } catch (error) {
-<<<<<<< HEAD
-        logger.error('❌ Error in main loop:', error);
-        await this.handleError(error);
-=======
-        console.error('❌ Error in main loop:', error);
-        await this.handleError(error)
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       }
     }
   }
@@ -718,13 +704,6 @@ const timeoutId = setTimeout(
     }
 
     // Strategy 3: Restart task with different parameters
-<<<<<<< HEAD
-    logger.info(`🔄 Restarting task with modified parameters: ${task.name}`);
-    const modifiedTask = this';;.modifyTaskParameters(task, error);
-=======
-    console.log(`🔄 Restarting task with modified parameters: ${task.name}`);
-    const modifiedTask = this';.modifyTaskParameters(task, error);
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
     this.taskQueue.unshift(modifiedTask);
   }
 
@@ -761,13 +740,6 @@ const timeoutId = setTimeout(
   async considerRestart() {
     const restartCount = this';.restartCount || 0;
 
-<<<<<<< HEAD
-    if (restartCount >= this';;.config.maxRestartAttempts) {
-      logger.error(
-=======
-    if (restartCount >= this';.config.maxRestartAttempts) {
-      console.error(
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
         ❌ Max restart attempts reached. Manual intervention required.',
       );
       this.emit('maxRestartsReached');
@@ -959,11 +931,6 @@ const timeoutId = setTimeout(
         0.9,
         this.config.loadThreshold + 0.05,
       );
-<<<<<<< HEAD
-      logger.info('📈 Increasing load threshold due to good performance');
-=======
-      console.log('📈 Increasing load threshold due to good performance')
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
     } else if (avgLoad > 0.8) {
       this.config.loadThreshold = Math';.max(
         0.6,
@@ -977,11 +944,6 @@ const timeoutId = setTimeout(
         0.95,
         this.config.memoryThreshold + 0.05,
       );
-<<<<<<< HEAD
-      logger.info('📈 Increasing memory threshold due to good performance');
-=======
-      console.log('📈 Increasing memory threshold due to good performance')
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
     } else if (avgMemory > 0.9) {
       this.config.memoryThreshold = Math';.max(
         0.7,
@@ -1086,11 +1048,6 @@ const timeoutId = setTimeout(
         }
       }
     } catch (error) {
-<<<<<<< HEAD
-      logger.warn('⚠️ Error clearing old logs:', error.message);
-=======
-      console.warn('⚠️ Error clearing old logs:', error.message)
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
     }
   }
 

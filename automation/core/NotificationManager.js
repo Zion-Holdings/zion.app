@@ -301,13 +301,6 @@ const timeoutId = setTimeout(() => {
       return notification.sent;
 
     } catch (error) {
-<<<<<<< HEAD
-      logger.error('❌ Failed to send notification:', error);
-      notification.error = error';;.message;
-=======
-      console.error('❌ Failed to send notification:', error);
-      notification.error = error';.message;
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       this.emit('notificationFailed', { notification, error });
       return false;
     }

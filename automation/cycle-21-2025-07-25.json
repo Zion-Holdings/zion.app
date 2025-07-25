@@ -1,0 +1,76 @@
+{
+  "timestamp": "2025-07-25T03:43:15.772Z",
+  "cycle": 21,
+  "automations": [
+    {
+      "name": "Zion App Maintainer",
+      "success": false,
+      "duration": 3924,
+      "output": "",
+      "error": "Command failed: npm run maintain\nnpm error code EJSONPARSE\nnpm error JSON.parse Invalid package.json: JSONParseError: Expected double-quoted property name in JSON at position 128 (line 7 column 1) while parsing near \"...le-dev-server.cjs\\\",\\n<<<<<<< HEAD\\n    \\\"bu...\"\nnpm error JSON.parse Failed to parse JSON data.\nnpm error JSON.parse Note: package.json must be actual JSON, not just JavaScript.\nnpm error A complete log of this run can be found in: /Users/klebergarciaalcatrao/.npm/_logs/2025-07-25T03_43_18_157Z-debug-0.log\n",
+      "command": "npm run maintain"
+    },
+    {
+      "name": "Complete Zion Automation",
+      "success": false,
+      "duration": 2763,
+      "output": "",
+      "error": "Command failed: npm run automate\nnpm error code EJSONPARSE\nnpm error JSON.parse Invalid package.json: JSONParseError: Expected double-quoted property name in JSON at position 128 (line 7 column 1) while parsing near \"...le-dev-server.cjs\\\",\\n<<<<<<< HEAD\\n    \\\"bu...\"\nnpm error JSON.parse Failed to parse JSON data.\nnpm error JSON.parse Note: package.json must be actual JSON, not just JavaScript.\nnpm error A complete log of this run can be found in: /Users/klebergarciaalcatrao/.npm/_logs/2025-07-25T03_43_21_460Z-debug-0.log\n",
+      "command": "npm run automate"
+    },
+    {
+      "name": "TypeScript Check",
+      "success": false,
+      "duration": 3189,
+      "output": "",
+      "error": "Command failed: npm run typecheck\nnpm error code EJSONPARSE\nnpm error JSON.parse Invalid package.json: JSONParseError: Expected double-quoted property name in JSON at position 128 (line 7 column 1) while parsing near \"...le-dev-server.cjs\\\",\\n<<<<<<< HEAD\\n    \\\"bu...\"\nnpm error JSON.parse Failed to parse JSON data.\nnpm error JSON.parse Note: package.json must be actual JSON, not just JavaScript.\nnpm error A complete log of this run can be found in: /Users/klebergarciaalcatrao/.npm/_logs/2025-07-25T03_43_24_566Z-debug-0.log\n",
+      "command": "npm run typecheck"
+    },
+    {
+      "name": "Linting Fix",
+      "success": false,
+      "duration": 2631,
+      "output": "",
+      "error": "Command failed: npm run lint:fix\nnpm error code EJSONPARSE\nnpm error JSON.parse Invalid package.json: JSONParseError: Expected double-quoted property name in JSON at position 128 (line 7 column 1) while parsing near \"...le-dev-server.cjs\\\",\\n<<<<<<< HEAD\\n    \\\"bu...\"\nnpm error JSON.parse Failed to parse JSON data.\nnpm error JSON.parse Note: package.json must be actual JSON, not just JavaScript.\nnpm error A complete log of this run can be found in: /Users/klebergarciaalcatrao/.npm/_logs/2025-07-25T03_43_27_092Z-debug-0.log\n",
+      "command": "npm run lint:fix"
+    },
+    {
+      "name": "Code Formatting",
+      "success": false,
+      "duration": 3146,
+      "output": "",
+      "error": "Command failed: npm run format\nnpm error code EJSONPARSE\nnpm error JSON.parse Invalid package.json: JSONParseError: Expected double-quoted property name in JSON at position 128 (line 7 column 1) while parsing near \"...le-dev-server.cjs\\\",\\n<<<<<<< HEAD\\n    \\\"bu...\"\nnpm error JSON.parse Failed to parse JSON data.\nnpm error JSON.parse Note: package.json must be actual JSON, not just JavaScript.\nnpm error A complete log of this run can be found in: /Users/klebergarciaalcatrao/.npm/_logs/2025-07-25T03_43_30_048Z-debug-0.log\n",
+      "command": "npm run format"
+    },
+    {
+      "name": "Security Audit",
+      "success": true,
+      "duration": 19974,
+      "output": "# npm audit report\n\npm2  *\npm2 Regular Expression Denial of Service vulnerability - https://github.com/advisories/GHSA-x5gf-qvw8-r2rm\nNo fix available\nnode_modules/pm2\n\n1 low severity vulnerability\n\nSome issues need review, and may require choosing\na different dependency.\n",
+      "error": "",
+      "command": "npm audit --audit-level moderate"
+    },
+    {
+      "name": "Dependency Check",
+      "success": false,
+      "duration": 14433,
+      "output": "",
+      "error": "Command failed: npm ls --depth=0\nnpm error code EJSONPARSE\nnpm error JSON.parse Failed to parse root package.json\nnpm error JSON.parse Failed to parse JSON data.\nnpm error JSON.parse Note: package.json must be actual JSON, not just JavaScript.\nnpm error A complete log of this run can be found in: /Users/klebergarciaalcatrao/.npm/_logs/2025-07-25T03_43_52_723Z-debug-0.log\n",
+      "command": "npm ls --depth=0"
+    },
+    {
+      "name": "Build Test",
+      "success": false,
+      "duration": 1719,
+      "output": "",
+      "error": "Command failed: npm run build\nnpm error code EJSONPARSE\nnpm error JSON.parse Invalid package.json: JSONParseError: Expected double-quoted property name in JSON at position 128 (line 7 column 1) while parsing near \"...le-dev-server.cjs\\\",\\n<<<<<<< HEAD\\n    \\\"bu...\"\nnpm error JSON.parse Failed to parse JSON data.\nnpm error JSON.parse Note: package.json must be actual JSON, not just JavaScript.\nnpm error A complete log of this run can be found in: /Users/klebergarciaalcatrao/.npm/_logs/2025-07-25T03_44_06_900Z-debug-0.log\n",
+      "command": "npm run build"
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "successful": 1,
+    "failed": 7,
+    "duration": 51781
+  }
+}

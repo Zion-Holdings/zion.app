@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 
 const winston = require('winston');
 
@@ -6,19 +7,21 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
 
 const fs = require('fs').promises;
@@ -34,14 +37,13 @@ class PerformanceMonitor {
       thresholds: {
         memory: 100 * 1024 * 1024, // 100MB
         cpu: 80, // 80%
-        responseTime: 2000 // 2 seconds
+        responseTime: 2000, // 2 seconds
       },
-      ...config
+      ...config,
     };
 
     this.isMonitoring = false;
     this.history = [];
-    this.alerts = [];
   }
 
   async start() {
@@ -54,9 +56,12 @@ class PerformanceMonitor {
     logger.info('📊 Performance monitor started');
 
     // Start monitoring loop
-    this.interval = setInterval(() => {
-      this.collectMetrics();
-    }, 60000); // Collect metrics every minute
+    this.interval = setInterval(async () => {
+      await this.collectMetrics();
+    }, this.config.interval);
+
+    // Initial collection
+    await this.collectMetrics();
   }
 
   async stop() {
@@ -74,234 +79,193 @@ class PerformanceMonitor {
     try {
       const metrics = {
         timestamp: new Date().toISOString(),
-        memory: this.getMemoryUsage(),
-        cpu: this.getCPUUsage(),
-        disk: await this.getDiskUsage(),
-        network: await this.getNetworkUsage(),
-        build: await this.getBuildMetrics(),
-        bundle: await this.getBundleMetrics()
+        memory: await this.getMemoryUsage(),
+        cpu: await this.getCPUUsage(),
+        responseTime: await this.getResponseTime(),
+        bundleSize: await this.getBundleMetrics(),
+        alerts: [],
       };
 
-      this.metrics = metrics;
-      this.history.push(metrics);
-
-      // Keep only last 1000 entries
-      if (this.history.length > 1000) {
-        this.history = this.history.slice(-1000);
+      // Check thresholds and generate alerts
+      if (metrics.memory > this.config.thresholds.memory) {
+        metrics.alerts.push({
+          type: 'performance',
+          priority: 'high',
+          message:
+            'High memory usage detected. Consider optimizing memory usage.',
+          action:
+            'Review memory-intensive operations and implement memory optimization strategies.',
+        });
       }
 
-      // Check thresholds and generate alerts
-      this.checkThresholds(metrics);
+      if (metrics.cpu > this.config.thresholds.cpu) {
+        metrics.alerts.push({
+          type: 'performance',
+          priority: 'medium',
+          message: 'High CPU usage detected.',
+          action: 'Review CPU-intensive operations and consider optimization.',
+        });
+      }
 
-      // Log metrics
-      await this.logMetrics(metrics);
+      if (metrics.responseTime > this.config.thresholds.responseTime) {
+        metrics.alerts.push({
+          type: 'performance',
+          priority: 'high',
+          message: 'Slow response time detected.',
+          action:
+            'Investigate performance bottlenecks and optimize critical paths.',
+        });
+      }
 
+      this.history.push(metrics);
+
+      // Keep only last 100 entries
+      if (this.history.length > 100) {
+        this.history = this.history.slice(-100);
+      }
+
+      // Save to file
+      await this.saveMetrics(metrics);
+
+      // Log alerts
+      if (metrics.alerts.length > 0) {
+        logger.warn(
+          `Performance alerts: ${metrics.alerts.length} issues detected`,
+        );
+        metrics.alerts.forEach((alert) => {
+          logger.warn(`${alert.type.toUpperCase()}: ${alert.message}`);
+        });
+      }
     } catch (error) {
       logger.error('❌ Error collecting metrics:', error);
     }
   }
 
-  getMemoryUsage() {
-    const usage = process.memoryUsage();
-    return {
-      heapUsed: usage.heapUsed,
-      heapTotal: usage.heapTotal,
-      external: usage.external,
-      rss: usage.rss
-    };
-  }
-
-  getCPUUsage() {
-    const usage = process.cpuUsage();
-    return {
-      user: usage.user,
-      system: usage.system
-    };
-  }
-
-  async getDiskUsage() {
+  async getMemoryUsage() {
     try {
-      const output = execSync('df -h .', { encoding: 'utf8' });
-      const lines = output.split('\n');
-      const data = lines[1].split(/\s+/);
-      
-      return {
-        total: data[1],
-        used: data[2],
-        available: data[3],
-        usagePercent: data[4]
-      };
+      const usage = process.memoryUsage();
+      return usage.heapUsed;
     } catch (error) {
-      return { error: error.message };
+      logger.error('Failed to get memory usage:', error.message);
+      return 0;
     }
   }
 
-  async getNetworkUsage() {
-    // This would require more complex monitoring
-    return {
-      connections: 0,
-      bytesIn: 0,
-      bytesOut: 0
-    };
+  async getCPUUsage() {
+    try {
+      const startUsage = process.cpuUsage();
+      await new Promise((resolve) => setTimeout(resolve, 100));
+      const endUsage = process.cpuUsage(startUsage);
+      return (endUsage.user + endUsage.system) / 1000000; // Convert to seconds
+    } catch (error) {
+      logger.error('Failed to get CPU usage:', error.message);
+      return 0;
+    }
   }
 
-  async getBuildMetrics() {
+  async getResponseTime() {
     try {
-      const startTime = Date.now();
-      execSync('npm run build', { stdio: 'pipe' });
-      const buildTime = Date.now() - startTime;
-      
-      return {
-        status: 'success',
-        buildTime,
-        timestamp: new Date().toISOString()
-      };
+      const start = Date.now();
+      // Simulate a request
+      await new Promise((resolve) => setTimeout(resolve, 100));
+      return Date.now() - start;
     } catch (error) {
-      return {
-        status: 'failed',
-        error: error.message,
-        timestamp: new Date().toISOString()
-      };
+      logger.error('Failed to get response time:', error.message);
+      return 0;
     }
   }
 
   async getBundleMetrics() {
     try {
-<<<<<<< HEAD
-      const output = execSync('npm run bundle: 'analyze', { stdio: 'pipe' });
-=======
       const output = execSync('npm run bundle:analyze', { stdio: 'pipe' });
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       return this.parseBundleAnalysis(output);
     } catch (error) {
-      return { error: error.message };
+      logger.error('Failed to get bundle metrics:', error.message);
+      return null;
     }
   }
 
   parseBundleAnalysis(output) {
     try {
-      const lines = output.split('\n');
-      const bundleInfo = {};
-      
-      for (const line of lines) {
-        if (line.includes('Bundle size:')) {
-          bundleInfo.size = line.split(':')[1].trim();
-        } else if (line.includes('Chunks:')) {
-          bundleInfo.chunks = parseInt(line.split(':')[1].trim());
-        }
+      // Parse bundle analysis output
+      const lines = output.toString().split('\n');
+      const sizeMatch = lines.find((line) => line.includes('Bundle Size:'));
+      if (sizeMatch) {
+        const size = sizeMatch.match(/Bundle Size: (\d+\.?\d*) KB/);
+        return size ? parseFloat(size[1]) : 0;
       }
-      
-      return bundleInfo;
+      return 0;
     } catch (error) {
-      return { error: error.message };
+      logger.error('Failed to parse bundle analysis:', error.message);
+      return 0;
     }
   }
 
-  checkThresholds(metrics) {
-    const alerts = [];
-
-    // Memory threshold
-    if (metrics.memory.heapUsed > this.config.thresholds.memory) {
-      alerts.push({
-        type: 'memory',
-        severity: 'warning',
-        message: `High memory usage: ${Math.round(metrics.memory.heapUsed / 1024 / 1024)}MB`,
-        timestamp: metrics.timestamp
-      });
+  async saveMetrics(metrics) {
+    try {
+      await fs.writeFile(
+        this.config.logFile,
+        JSON.stringify(metrics, null, 2) + '\n',
+        { flag: 'a' },
+      );
+    } catch (error) {
+      logger.error('Failed to save metrics:', error.message);
     }
-
-    // Build time threshold
-    if (metrics.build.status === 'success' && metrics.build.buildTime > this.config.thresholds.responseTime) {
-      alerts.push({
-        type: 'build',
-        severity: 'warning',
-        message: `Slow build time: ${metrics.build.buildTime}ms`,
-        timestamp: metrics.timestamp
-      });
-    }
-
-    // Add alerts to history
-    this.alerts.push(...alerts);
-
-    // Keep only last 100 alerts
-    if (this.alerts.length > 100) {
-      this.alerts = this.alerts.slice(-100);
-    }
-
-    return alerts;
-  }
-
-  async logMetrics(metrics) {
-    const logEntry = JSON.stringify(metrics);
-    await fs.appendFile(this.config.logFile, logEntry + '\n');
   }
 
   async generateReport() {
-    const report = {
-      timestamp: new Date().toISOString(),
-      summary: {
-        totalMetrics: this.history.length,
-        totalAlerts: this.alerts.length,
-        averageMemory: this.calculateAverageMemory(),
-        averageCPU: this.calculateAverageCPU()
-      },
-      recentMetrics: this.history.slice(-10),
-      recentAlerts: this.alerts.slice(-10),
-      recommendations: this.generateRecommendations()
-    };
+    try {
+      const report = {
+        generated: new Date().toISOString(),
+        summary: {
+          totalAlerts: this.history.reduce(
+            (sum, m) => sum + m.alerts.length,
+            0,
+          ),
+          averageMemory:
+            this.history.reduce((sum, m) => sum + m.memory, 0) /
+            this.history.length,
+          averageCPU:
+            this.history.reduce((sum, m) => sum + m.cpu, 0) /
+            this.history.length,
+          averageResponseTime:
+            this.history.reduce((sum, m) => sum + m.responseTime, 0) /
+            this.history.length,
+        },
+        history: this.history,
+      };
 
-    await fs.writeFile(this.config.reportFile, JSON.stringify(report, null, 2));
-    return report;
-  }
+      await fs.writeFile(
+        this.config.reportFile,
+        JSON.stringify(report, null, 2),
+      );
 
-  calculateAverageMemory() {
-    if (this.history.length === 0) return 0;
-    const totalMemory = this.history.reduce((sum, entry) => {
-      return sum + entry.memory.heapUsed;
-    }, 0);
-    return totalMemory / this.history.length;
-  }
-
-  calculateAverageCPU() {
-    if (this.history.length === 0) return 0;
-    const totalCPU = this.history.reduce((sum, entry) => {
-      return sum + entry.cpu.user + entry.cpu.system;
-    }, 0);
-    return totalCPU / this.history.length;
-  }
-
-  generateRecommendations() {
-    const recommendations = [];
-
-    if (this.calculateAverageMemory() > 100 * 1024 * 1024) { // 100MB
-      recommendations.push({
-        type: 'performance',
-        priority: 'high',
-<<<<<<< HEAD
-        message: High memory usage detected. Consider optimizing memory usage.',
-        action: Review memory-intensive operations and implement memory optimization strategies.
-=======
-        message: 'High memory usage detected. Consider optimizing memory usage.',
-        action: 'Review memory-intensive operations and implement memory optimization strategies.'
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
-      });
+      logger.info('📊 Performance report generated');
+      return report;
+    } catch (error) {
+      logger.error('Failed to generate report:', error.message);
+      return null;
     }
+  }
+}
 
-    if (this.alerts.length > 10) {
-      recommendations.push({
-        type: 'reliability',
-        priority: 'high',
-<<<<<<< HEAD
-        message: High alert rate detected. Review system performance.',
-        action: Investigate performance bottlenecks and optimize critical paths.
-=======
-        message: 'High alert rate detected. Review system performance.',
-        action: 'Investigate performance bottlenecks and optimize critical paths.'
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
-      });
-    }
+// CLI interface
+if (require.main === module) {
+  const monitor = new PerformanceMonitor();
+  const command = process.argv[2];
 
-    return recommendations;
+  switch (command) {
+    case 'start':
+      monitor.start();
+      break;
+    case 'stop':
+      monitor.stop();
+      break;
+    case 'report':
+      monitor.generateReport();
+      break;
+    default:
+      logger.info('Usage: node monitor.js [start|stop|report]');
   }
 }
 

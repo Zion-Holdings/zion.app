@@ -320,23 +320,3 @@ const command = process.argv[2];
   }
 }
 
-<<<<<<< HEAD
-module.exports = AutomationSetup;
-
-
-// Graceful shutdown handling
-process.on('SIGINT', () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
-  // Add cleanup logic here
-  process.exit(0);
-});
-
-process.on('SIGTERM', () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
-  // Add cleanup logic here
-  process.exit(0);
-});
-
-=======
-module.exports = AutomationSetup
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858

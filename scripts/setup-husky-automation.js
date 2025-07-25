@@ -29,11 +29,6 @@ const { execSync, spawn } = require('child_process');
 class HuskyAutomationSetup {
     constructor() {
         this.projectRoot = process.cwd();
-<<<<<<< HEAD
-        this.huskyDir = path.join(this.projectRoot, .husky');
-=======
-        this.huskyDir = path.join(this.projectRoot, '.husky');
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
         this.automationDir = path.join(this.projectRoot, 'automation');
     }
 
@@ -684,23 +679,3 @@ switch (command) {
         console.error('Unknown command:', command);
         setup.usage();
         process.exit(1);
-<<<<<<< HEAD
-    });
-}
-
-// Graceful shutdown handling
-process.on('SIGINT', () => {
-  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
-  // Add cleanup logic here
-  process.exit(0);
-});
-
-process.on('SIGTERM', () => {
-  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
-  // Add cleanup logic here
-  process.exit(0);
-});
-
-=======
-}
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858

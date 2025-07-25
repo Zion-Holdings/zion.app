@@ -39,7 +39,7 @@ const runBuildAndTest = async () => {
 const watcher = chokidar.watch('.', {
   ignored:
     /node_modules|\.git|coverage|dist|build|\.next|out|logs|\.DS_Store|\.log$/,
-  persistent: true
+  persistent: true,
 });
 
 let running = false;

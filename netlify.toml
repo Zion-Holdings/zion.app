@@ -1,13 +1,4 @@
 [build]
-<<<<<<< HEAD
-  command = "npm run build:check"
-=======
-  # Use standard Next.js build command
-  command = "npm run build:optimized"
-  # Netlify UI sets `publish` to `out` which causes the Next.js plugin to fail
-  # because no exported directory exists. Explicitly publish the `.next`
-  # directory so the plugin can run correctly.
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
   publish = ".next"
   functions = "netlify/functions"
 

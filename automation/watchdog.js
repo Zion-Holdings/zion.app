@@ -73,13 +73,6 @@ function isProcessRunning(cmd)  {
   }
 }
 
-<<<<<<< HEAD
-function startProcess(cmd, cwd = process.cwd(), onExit) {
-  logger.info(`[Watchdog] Starting: ${cmd}`)
-=======
-function startProcess(cmd, cwd = process.cwd(), onExit)  {
-  console.log(`[Watchdog] Starting: ${cmd}`)
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
 const proc = spawn(cmd, {
     shell: true,
     cwd,

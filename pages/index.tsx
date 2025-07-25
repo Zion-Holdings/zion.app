@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import Head from 'next/head';
-
-export default function index() {
-=======
-export export default function Home()      {;
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
   return (
     <div style={{ ;
       padding: '2rem', 
@@ -26,8 +18,3 @@ export export default function Home()      {;
         borderRadius: '8px' 
       }}><h3>🔧 Available Automation Scripts:</h3><ul><li><code>node scripts/comprehensive-app-automation.cjs</code> - Full automation</li><li><code>node scripts/continuous-improvement-automation.cjs</code> - Continuous improvement</li><li><code>node scripts/nodejs-compatibility-fix.cjs</code> - Node.js fixes</li><li><code>node scripts/advanced-file-fixer.cjs</code> - File corruption fixes</li></ul></div></div>;
   );
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858

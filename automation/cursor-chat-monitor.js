@@ -1,4 +1,3 @@
-
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -6,25 +5,26 @@ const logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.timestamp(),
     winston.format.errors({ stack: true }),
-    winston.format.json()
+    winston.format.json(),
   ),
   defaultMeta: { service: 'automation-script' },
   transports: [
     new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'logs/combined.log' })
-  ]
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
 });
 
 if (process.env.NODE_ENV !== 'production') {
-  logger.add(new winston.transports.Console({
-    format: winston.format.simple()
-  }));
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
 }
-
 
 /**
  * Cursor Chat Monitor
- * 
+ *
  * Monitors and captures Cursor chat interactions:
  * - File system monitoring for chat logs
  * - Real-time chat capture
@@ -41,14 +41,17 @@ class CursorChatMonitor extends EventEmitter {
   constructor(config = {}) {
     super();
     this.config = {
-      cursorDataDir: config.cursorDataDir || path.join(process.env.HOME, '.cursor'),
-      chatLogDir: config.chatLogDir || path.join(process.env.HOME, '.cursor', 'chat-logs'),
+      cursorDataDir:
+        config.cursorDataDir || path.join(process.env.HOME, '.cursor'),
+      chatLogDir:
+        config.chatLogDir ||
+        path.join(process.env.HOME, '.cursor', 'chat-logs'),
       outputDir: config.outputDir || './data/cursor-chats',
       watchInterval: config.watchInterval || 5000,
       maxHistorySize: config.maxHistorySize || 1000,
-      ...config
+      ...config,
     };
-    
+
     this.isRunning = false;
     this.watcher = null;
     this.chatHistory = [];
@@ -57,20 +60,19 @@ class CursorChatMonitor extends EventEmitter {
 
   async initialize() {
     logger.info('👀 Initializing Cursor Chat Monitor...');
-    
+
     try {
       // Ensure output directory exists
       await this.ensureOutputDirectory();
-      
+
       // Load existing chat history
       await this.loadChatHistory();
-      
+
       // Start monitoring
       await this.startMonitoring();
-      
+
       this.isRunning = true;
       logger.info('✅ Cursor Chat Monitor initialized');
-      
     } catch (error) {
       logger.error('❌ Failed to initialize Cursor Chat Monitor:', error);
       throw error;
@@ -99,12 +101,12 @@ class CursorChatMonitor extends EventEmitter {
 
   async startMonitoring() {
     logger.info('🔍 Starting Cursor chat monitoring...');
-    
+
     // Monitor Cursor data directory for new chat files
     this.watcher = chokidar.watch(this.config.cursorDataDir, {
       ignored: /(^|[\/\\])\../, // ignore dotfiles
       persistent: true,
-      depth: 3
+      depth: 3,
     });
 
     this.watcher
@@ -121,7 +123,7 @@ class CursorChatMonitor extends EventEmitter {
     try {
       const files = await this.findChatFiles(this.config.cursorDataDir);
       logger.info(`🔍 Found ${files.length} existing chat files`);
-      
+
       for (const file of files) {
         await this.processChatFile(file);
       }
@@ -132,13 +134,13 @@ class CursorChatMonitor extends EventEmitter {
 
   async findChatFiles(dir) {
     const chatFiles = [];
-    
+
     try {
       const entries = await fs.readdir(dir, { withFileTypes: true });
-      
+
       for (const entry of entries) {
         const fullPath = path.join(dir, entry.name);
-        
+
         if (entry.isDirectory()) {
           const subFiles = await this.findChatFiles(fullPath);
           chatFiles.push(...subFiles);
@@ -149,7 +151,7 @@ class CursorChatMonitor extends EventEmitter {
     } catch (error) {
       // Directory doesn't exist or can't be read
     }
-    
+
     return chatFiles;
   }
 
@@ -161,10 +163,10 @@ class CursorChatMonitor extends EventEmitter {
       /log/i,
       /history/i,
       /\.json$/i,
-      /\.txt$/i
+      /\.txt$/i,
     ];
-    
-    return chatPatterns.some(pattern => pattern.test(filename));
+
+    return chatPatterns.some((pattern) => pattern.test(filename));
   }
 
   async handleNewFile(filePath) {
@@ -196,11 +198,11 @@ class CursorChatMonitor extends EventEmitter {
     try {
       const content = await fs.readFile(filePath, 'utf8');
       const chatData = this.parseChatContent(content, filePath);
-      
+
       if (chatData) {
         await this.saveChatData(chatData);
         this.processedFiles.add(filePath);
-        
+
         logger.info(`✅ Processed chat file: ${path.basename(filePath)}`);
         this.emit('chatProcessed', chatData);
       }
@@ -228,7 +230,7 @@ class CursorChatMonitor extends EventEmitter {
       timestamp: new Date().toISOString(),
       content: '',
       messages: [],
-      metadata: {}
+      metadata: {},
     };
 
     // Extract chat content from various JSON structures
@@ -271,8 +273,8 @@ class CursorChatMonitor extends EventEmitter {
       messages: [],
       metadata: {
         contentType: 'text',
-        fileSize: content.length
-      }
+        fileSize: content.length,
+      },
     };
   }
 
@@ -282,7 +284,7 @@ class CursorChatMonitor extends EventEmitter {
     }
 
     return messages
-      .map(msg => {
+      .map((msg) => {
         if (typeof msg === 'string') {
           return msg;
         } else if (msg.content) {
@@ -301,16 +303,16 @@ class CursorChatMonitor extends EventEmitter {
   async saveChatData(chatData) {
     // Add to history
     this.chatHistory.push(chatData);
-    
+
     // Limit history size
     if (this.chatHistory.length > this.config.maxHistorySize) {
       this.chatHistory = this.chatHistory.slice(-this.config.maxHistorySize);
     }
-    
+
     // Save individual chat file
     const chatFile = path.join(this.config.outputDir, `${chatData.id}.json`);
     await fs.writeFile(chatFile, JSON.stringify(chatData, null, 2));
-    
+
     // Update history file
     await this.saveChatHistory();
   }
@@ -331,21 +333,22 @@ class CursorChatMonitor extends EventEmitter {
   }
 
   getChatsByDate(startDate, endDate) {
-    return this.chatHistory.filter(chat => {
+    return this.chatHistory.filter((chat) => {
       const chatDate = new Date(chat.timestamp);
       return chatDate >= startDate && chatDate <= endDate;
     });
   }
 
   getChatsBySource(source) {
-    return this.chatHistory.filter(chat => chat.source === source);
+    return this.chatHistory.filter((chat) => chat.source === source);
   }
 
   searchChats(query) {
     const lowerQuery = query.toLowerCase();
-    return this.chatHistory.filter(chat => 
-      chat.content.toLowerCase().includes(lowerQuery) ||
-      chat.filePath.toLowerCase().includes(lowerQuery)
+    return this.chatHistory.filter(
+      (chat) =>
+        chat.content.toLowerCase().includes(lowerQuery) ||
+        chat.filePath.toLowerCase().includes(lowerQuery),
     );
   }
 
@@ -354,17 +357,18 @@ class CursorChatMonitor extends EventEmitter {
       isRunning: this.isRunning,
       chatHistoryLength: this.chatHistory.length,
       processedFilesCount: this.processedFiles.size,
-      lastActivity: this.chatHistory.length > 0 
-        ? this.chatHistory[this.chatHistory.length - 1].timestamp 
-        : null,
-      watcherActive: this.watcher !== null
+      lastActivity:
+        this.chatHistory.length > 0
+          ? this.chatHistory[this.chatHistory.length - 1].timestamp
+          : null,
+      watcherActive: this.watcher !== null,
     };
   }
 
   stop() {
     logger.info('🛑 Stopping Cursor Chat Monitor...');
     this.isRunning = false;
-    
+
     if (this.watcher) {
       this.watcher.close();
       this.watcher = null;
@@ -378,16 +382,16 @@ module.exports = CursorChatMonitor;
 // Run if called directly
 if (require.main === module) {
   const monitor = new CursorChatMonitor();
-  
-  monitor.initialize().catch(error => {
+
+  monitor.initialize().catch((error) => {
     logger.error('Failed to initialize Cursor Chat Monitor:', error);
     process.exit(1);
   });
-  
+
   // Handle graceful shutdown
   process.on('SIGINT', () => {
     logger.info('\n🛑 Shutting down Cursor Chat Monitor...');
     monitor.stop();
     process.exit(0);
   });
-} 
+}

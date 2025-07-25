@@ -194,24 +194,10 @@ class SecurityScanner extends AutomationTask {
           description: Direct innerHTML assignment can lead to XSS attacks
         },
         {
-<<<<<<< HEAD
-          pattern: /password.*=.*['"][^'"]*['"]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-          severity: 'critical',
-=======
-          pattern: /password.*=.*['"][^'"]*['"]/gi,
-          severity: critical',
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
           title: Hardcoded password',
           description: Password found in code
         },
         {
-<<<<<<< HEAD
-          pattern: /api[_-]?key.*=.*['"][^'"]*['"]/gi,"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-          severity: 'critical',
-=======
-          pattern: /api[_-]?key.*=.*['"][^'"]*['"]/gi,
-          severity: critical',
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
           title: Hardcoded API key',
           description: API key found in code
         },

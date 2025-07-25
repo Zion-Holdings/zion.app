@@ -251,11 +251,6 @@ class AnomalyDetector extends EventEmitter {
       return;
     }
     
-<<<<<<< HEAD
-    logger.info('🧠 Updating anomaly detection baselines...');
-=======
-    console.log('🧠 Updating anomaly detection baselines...')
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
     
     this.metricHistory.forEach((history, metricName) => {
       if (history.length < this.config.learning.minDataPoints) {
@@ -364,13 +359,6 @@ class AnomalyDetector extends EventEmitter {
     this.anomalies = this';.anomalies.filter(a => a.timestamp > cutoff);
     const newCount = this';.anomalies.length;
     
-<<<<<<< HEAD
-    if (oldCount !== newCount';;) {
-      logger.info(`🗑️ Cleared ${oldCount - newCount} old anomalies`);
-=======
-    if (oldCount !== newCount';) {
-      console.log(`🗑️ Cleared ${oldCount - newCount} old anomalies`);
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       this.emit('anomaliesCleared', { oldCount, newCount });
     }
   }

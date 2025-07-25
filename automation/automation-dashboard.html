@@ -1,588 +1,604 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zion App - Automation Scripts Manager Dashboard</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            color: #333;
-        }
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        color: #333;
+      }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px;
+      }
 
-        .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
+      .header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
 
-        .header h1 {
-            color: #2c3e50;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+      .header h1 {
+        color: #2c3e50;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
 
-        .header .status {
-            display: inline-block;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
+      .header .status {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+      }
 
-        .status.running {
-            background: #d4edda;
-            color: #155724;
-        }
+      .status.running {
+        background: #d4edda;
+        color: #155724;
+      }
 
-        .status.stopped {
-            background: #f8d7da;
-            color: #721c24;
+      .status.stopped {
+        background: #f8d7da;
+        color: #721c24;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .stat-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .stat-card .number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #667eea;
+        margin-bottom: 10px;
+      }
+
+      .stat-card .label {
+        color: #666;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .main-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 30px;
+      }
+
+      .scripts-section {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      .scripts-section h2 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .scripts-list {
+        max-height: 600px;
+        overflow-y: auto;
+      }
+
+      .script-item {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 15px;
+        border-left: 4px solid #667eea;
+        transition: all 0.3s ease;
+      }
+
+      .script-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .script-item.running {
+        border-left-color: #28a745;
+        background: #d4edda;
+      }
+
+      .script-item.failed {
+        border-left-color: #dc3545;
+        background: #f8d7da;
+      }
+
+      .script-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .script-name {
+        font-weight: bold;
+        color: #2c3e50;
+      }
+
+      .script-status {
+        padding: 4px 12px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .script-status.running {
+        background: #28a745;
+        color: white;
+      }
+
+      .script-status.stopped {
+        background: #6c757d;
+        color: white;
+      }
+
+      .script-status.failed {
+        background: #dc3545;
+        color: white;
+      }
+
+      .script-details {
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      .script-actions {
+        margin-top: 15px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .btn {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn-primary {
+        background: #667eea;
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: #5a6fd8;
+        transform: translateY(-2px);
+      }
+
+      .btn-success {
+        background: #28a745;
+        color: white;
+      }
+
+      .btn-success:hover {
+        background: #218838;
+        transform: translateY(-2px);
+      }
+
+      .btn-danger {
+        background: #dc3545;
+        color: white;
+      }
+
+      .btn-danger:hover {
+        background: #c82333;
+        transform: translateY(-2px);
+      }
+
+      .btn-warning {
+        background: #ffc107;
+        color: #212529;
+      }
+
+      .btn-warning:hover {
+        background: #e0a800;
+        transform: translateY(-2px);
+      }
+
+      .sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .control-panel {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      .control-panel h3 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .control-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .control-buttons .btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+      }
+
+      .logs-panel {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        flex: 1;
+      }
+
+      .logs-panel h3 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logs-content {
+        background: #1e1e1e;
+        color: #00ff00;
+        font-family: 'Courier New', monospace;
+        padding: 15px;
+        border-radius: 8px;
+        height: 300px;
+        overflow-y: auto;
+        font-size: 0.85rem;
+        line-height: 1.4;
+      }
+
+      .log-entry {
+        margin-bottom: 5px;
+        padding: 2px 0;
+      }
+
+      .log-entry.info {
+        color: #00ff00;
+      }
+
+      .log-entry.warn {
+        color: #ffff00;
+      }
+
+      .log-entry.error {
+        color: #ff0000;
+      }
+
+      .log-entry.debug {
+        color: #888888;
+      }
+
+      .improvements-panel {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      .improvements-panel h3 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .improvement-item {
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-left: 3px solid #28a745;
+      }
+
+      .improvement-script {
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 5px;
+      }
+
+      .improvement-details {
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      .improvement-time {
+        font-size: 0.8rem;
+        color: #999;
+        margin-top: 5px;
+      }
+
+      .loading {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #667eea;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .refresh-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2rem;
+        color: #667eea;
+        transition: transform 0.3s ease;
+      }
+
+      .refresh-btn:hover {
+        transform: rotate(180deg);
+      }
+
+      @media (max-width: 768px) {
+        .main-content {
+          grid-template-columns: 1fr;
         }
 
         .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
+          grid-template-columns: repeat(2, 1fr);
         }
-
-        .stat-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-card .number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-
-        .stat-card .label {
-            color: #666;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .main-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-        }
-
-        .scripts-section {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        .scripts-section h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .scripts-list {
-            max-height: 600px;
-            overflow-y: auto;
-        }
-
-        .script-item {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-left: 4px solid #667eea;
-            transition: all 0.3s ease;
-        }
-
-        .script-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .script-item.running {
-            border-left-color: #28a745;
-            background: #d4edda;
-        }
-
-        .script-item.failed {
-            border-left-color: #dc3545;
-            background: #f8d7da;
-        }
-
-        .script-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .script-name {
-            font-weight: bold;
-            color: #2c3e50;
-        }
-
-        .script-status {
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .script-status.running {
-            background: #28a745;
-            color: white;
-        }
-
-        .script-status.stopped {
-            background: #6c757d;
-            color: white;
-        }
-
-        .script-status.failed {
-            background: #dc3545;
-            color: white;
-        }
-
-        .script-details {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .script-actions {
-            margin-top: 15px;
-            display: flex;
-            gap: 10px;
-        }
-
-        .btn {
-            padding: 8px 16px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: #667eea;
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #5a6fd8;
-            transform: translateY(-2px);
-        }
-
-        .btn-success {
-            background: #28a745;
-            color: white;
-        }
-
-        .btn-success:hover {
-            background: #218838;
-            transform: translateY(-2px);
-        }
-
-        .btn-danger {
-            background: #dc3545;
-            color: white;
-        }
-
-        .btn-danger:hover {
-            background: #c82333;
-            transform: translateY(-2px);
-        }
-
-        .btn-warning {
-            background: #ffc107;
-            color: #212529;
-        }
-
-        .btn-warning:hover {
-            background: #e0a800;
-            transform: translateY(-2px);
-        }
-
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .control-panel {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        .control-panel h3 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .control-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .control-buttons .btn {
-            width: 100%;
-            padding: 12px;
-            font-size: 1rem;
-        }
-
-        .logs-panel {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            flex: 1;
-        }
-
-        .logs-panel h3 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logs-content {
-            background: #1e1e1e;
-            color: #00ff00;
-            font-family: 'Courier New', monospace;
-            padding: 15px;
-            border-radius: 8px;
-            height: 300px;
-            overflow-y: auto;
-            font-size: 0.85rem;
-            line-height: 1.4;
-        }
-
-        .log-entry {
-            margin-bottom: 5px;
-            padding: 2px 0;
-        }
-
-        .log-entry.info {
-            color: #00ff00;
-        }
-
-        .log-entry.warn {
-            color: #ffff00;
-        }
-
-        .log-entry.error {
-            color: #ff0000;
-        }
-
-        .log-entry.debug {
-            color: #888888;
-        }
-
-        .improvements-panel {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        .improvements-panel h3 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .improvement-item {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-left: 3px solid #28a745;
-        }
-
-        .improvement-script {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-
-        .improvement-details {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .improvement-time {
-            font-size: 0.8rem;
-            color: #999;
-            margin-top: 5px;
-        }
-
-        .loading {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #667eea;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .refresh-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-            color: #667eea;
-            transition: transform 0.3s ease;
-        }
-
-        .refresh-btn:hover {
-            transform: rotate(180deg);
-        }
-
-        @media (max-width: 768px) {
-            .main-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="header">
-            <h1>
-                🤖 Zion App Automation Scripts Manager
-                <span id="status" class="status stopped">Stopped</span>
-            </h1>
-            <p>Comprehensive automation scripts discovery, monitoring, and improvement system</p>
+      <div class="header">
+        <h1>
+          🤖 Zion App Automation Scripts Manager
+          <span id="status" class="status stopped">Stopped</span>
+        </h1>
+        <p>
+          Comprehensive automation scripts discovery, monitoring, and
+          improvement system
+        </p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="number" id="totalScripts">0</div>
+          <div class="label">Total Scripts</div>
+        </div>
+        <div class="stat-card">
+          <div class="number" id="runningScripts">0</div>
+          <div class="label">Running Scripts</div>
+        </div>
+        <div class="stat-card">
+          <div class="number" id="successfulScripts">0</div>
+          <div class="label">Successful</div>
+        </div>
+        <div class="stat-card">
+          <div class="number" id="failedScripts">0</div>
+          <div class="label">Failed</div>
+        </div>
+        <div class="stat-card">
+          <div class="number" id="improvements">0</div>
+          <div class="label">Improvements</div>
+        </div>
+        <div class="stat-card">
+          <div class="number" id="uptime">0s</div>
+          <div class="label">Uptime</div>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="scripts-section">
+          <h2>
+            📜 Automation Scripts
+            <button class="refresh-btn" onclick="refreshScripts()">🔄</button>
+          </h2>
+          <div class="scripts-list" id="scriptsList">
+            <div style="text-align: center; padding: 40px; color: #666">
+              <div class="loading"></div>
+              <p>Loading scripts...</p>
+            </div>
+          </div>
         </div>
 
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="number" id="totalScripts">0</div>
-                <div class="label">Total Scripts</div>
+        <div class="sidebar">
+          <div class="control-panel">
+            <h3>🎮 Control Panel</h3>
+            <div class="control-buttons">
+              <button class="btn btn-success" onclick="startManager()">
+                🚀 Start Manager
+              </button>
+              <button class="btn btn-danger" onclick="stopManager()">
+                🛑 Stop Manager
+              </button>
+              <button class="btn btn-primary" onclick="discoverScripts()">
+                🔍 Discover Scripts
+              </button>
+              <button class="btn btn-warning" onclick="improveScripts()">
+                🔧 Improve Scripts
+              </button>
+              <button class="btn btn-primary" onclick="generateReport()">
+                📊 Generate Report
+              </button>
             </div>
-            <div class="stat-card">
-                <div class="number" id="runningScripts">0</div>
-                <div class="label">Running Scripts</div>
+          </div>
+
+          <div class="logs-panel">
+            <h3>
+              📝 Live Logs
+              <button class="refresh-btn" onclick="refreshLogs()">🔄</button>
+            </h3>
+            <div class="logs-content" id="logsContent">
+              <div class="log-entry info">[INFO] Dashboard initialized</div>
+              <div class="log-entry info">
+                [INFO] Waiting for automation manager...
+              </div>
             </div>
-            <div class="stat-card">
-                <div class="number" id="successfulScripts">0</div>
-                <div class="label">Successful</div>
+          </div>
+
+          <div class="improvements-panel">
+            <h3>🔧 Recent Improvements</h3>
+            <div id="improvementsList">
+              <div style="text-align: center; padding: 20px; color: #666">
+                No improvements yet
+              </div>
             </div>
-            <div class="stat-card">
-                <div class="number" id="failedScripts">0</div>
-                <div class="label">Failed</div>
-            </div>
-            <div class="stat-card">
-                <div class="number" id="improvements">0</div>
-                <div class="label">Improvements</div>
-            </div>
-            <div class="stat-card">
-                <div class="number" id="uptime">0s</div>
-                <div class="label">Uptime</div>
-            </div>
+          </div>
         </div>
-
-        <div class="main-content">
-            <div class="scripts-section">
-                <h2>
-                    📜 Automation Scripts
-                    <button class="refresh-btn" onclick="refreshScripts()">🔄</button>
-                </h2>
-                <div class="scripts-list" id="scriptsList">
-                    <div style="text-align: center; padding: 40px; color: #666;">
-                        <div class="loading"></div>
-                        <p>Loading scripts...</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="sidebar">
-                <div class="control-panel">
-                    <h3>🎮 Control Panel</h3>
-                    <div class="control-buttons">
-                        <button class="btn btn-success" onclick="startManager()">
-                            🚀 Start Manager
-                        </button>
-                        <button class="btn btn-danger" onclick="stopManager()">
-                            🛑 Stop Manager
-                        </button>
-                        <button class="btn btn-primary" onclick="discoverScripts()">
-                            🔍 Discover Scripts
-                        </button>
-                        <button class="btn btn-warning" onclick="improveScripts()">
-                            🔧 Improve Scripts
-                        </button>
-                        <button class="btn btn-primary" onclick="generateReport()">
-                            📊 Generate Report
-                        </button>
-                    </div>
-                </div>
-
-                <div class="logs-panel">
-                    <h3>
-                        📝 Live Logs
-                        <button class="refresh-btn" onclick="refreshLogs()">🔄</button>
-                    </h3>
-                    <div class="logs-content" id="logsContent">
-                        <div class="log-entry info">[INFO] Dashboard initialized</div>
-                        <div class="log-entry info">[INFO] Waiting for automation manager...</div>
-                    </div>
-                </div>
-
-                <div class="improvements-panel">
-                    <h3>🔧 Recent Improvements</h3>
-                    <div id="improvementsList">
-                        <div style="text-align: center; padding: 20px; color: #666;">
-                            No improvements yet
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
 
     <script>
-        let managerStatus = 'stopped';
-        let refreshInterval;
-        let logsInterval;
+      let managerStatus = 'stopped';
+      let refreshInterval;
+      let logsInterval;
 
-        // Initialize dashboard
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeDashboard();
-        });
+      // Initialize dashboard
+      document.addEventListener('DOMContentLoaded', function () {
+        initializeDashboard();
+      });
 
-        async function initializeDashboard() {
-            await updateStatus();
-            await loadScripts();
-            await loadImprovements();
-            
-            // Start auto-refresh
-            refreshInterval = setInterval(updateStatus, 5000);
-            logsInterval = setInterval(updateLogs, 2000);
+      async function initializeDashboard() {
+        await updateStatus();
+        await loadScripts();
+        await loadImprovements();
+
+        // Start auto-refresh
+        refreshInterval = setInterval(updateStatus, 5000);
+        logsInterval = setInterval(updateLogs, 2000);
+      }
+
+      async function updateStatus() {
+        try {
+          const response = await fetch('/api/automation/status');
+          const status = await response.json();
+
+          managerStatus = status.isRunning ? 'running' : 'stopped';
+
+          // Update status indicator
+          const statusElement = document.getElementById('status');
+          statusElement.textContent =
+            managerStatus === 'running' ? 'Running' : 'Stopped';
+          statusElement.className = `status ${managerStatus}`;
+
+          // Update stats
+          document.getElementById('totalScripts').textContent =
+            status.stats.totalScripts;
+          document.getElementById('runningScripts').textContent =
+            status.stats.runningScripts.length;
+          document.getElementById('successfulScripts').textContent =
+            status.stats.successfulScripts;
+          document.getElementById('failedScripts').textContent =
+            status.stats.failedScripts;
+          document.getElementById('improvements').textContent =
+            status.stats.improvements;
+          document.getElementById('uptime').textContent = formatUptime(
+            status.uptime,
+          );
+        } catch (error) {
+          console.error('Failed to update status:', error);
+          addLogEntry('Failed to update status: ' + error.message, 'error');
         }
+      }
 
-        async function updateStatus() {
-            try {
-                const response = await fetch('/api/automation/status');
-                const status = await response.json();
-                
-                managerStatus = status.isRunning ? 'running' : 'stopped';
-                
-                // Update status indicator
-                const statusElement = document.getElementById('status');
-                statusElement.textContent = managerStatus === 'running' ? 'Running' : 'Stopped';
-                statusElement.className = `status ${managerStatus}`;
-                
-                // Update stats
-                document.getElementById('totalScripts').textContent = status.stats.totalScripts;
-                document.getElementById('runningScripts').textContent = status.stats.runningScripts.length;
-                document.getElementById('successfulScripts').textContent = status.stats.successfulScripts;
-                document.getElementById('failedScripts').textContent = status.stats.failedScripts;
-                document.getElementById('improvements').textContent = status.stats.improvements;
-                document.getElementById('uptime').textContent = formatUptime(status.uptime);
-                
-            } catch (error) {
-                console.error('Failed to update status:', error);
-                addLogEntry('Failed to update status: ' + error.message, 'error');
-            }
+      async function loadScripts() {
+        try {
+          const response = await fetch('/api/automation/scripts');
+          const scripts = await response.json();
+
+          const scriptsList = document.getElementById('scriptsList');
+          scriptsList.innerHTML = '';
+
+          if (scripts.length === 0) {
+            scriptsList.innerHTML =
+              '<div style="text-align: center; padding: 40px; color: #666;">No scripts discovered</div>';
+            return;
+          }
+
+          scripts.forEach((script) => {
+            const scriptElement = createScriptElement(script);
+            scriptsList.appendChild(scriptElement);
+          });
+        } catch (error) {
+          console.error('Failed to load scripts:', error);
+          addLogEntry('Failed to load scripts: ' + error.message, 'error');
         }
+      }
 
-        async function loadScripts() {
-            try {
-                const response = await fetch('/api/automation/scripts');
-                const scripts = await response.json();
-                
-                const scriptsList = document.getElementById('scriptsList');
-                scriptsList.innerHTML = '';
-                
-                if (scripts.length === 0) {
-                    scriptsList.innerHTML = '<div style="text-align: center; padding: 40px; color: #666;">No scripts discovered</div>';
-                    return;
-                }
-                
-                scripts.forEach(script => {
-                    const scriptElement = createScriptElement(script);
-                    scriptsList.appendChild(scriptElement);
-                });
-                
-            } catch (error) {
-                console.error('Failed to load scripts:', error);
-                addLogEntry('Failed to load scripts: ' + error.message, 'error');
-            }
-        }
+      function createScriptElement(script) {
+        const div = document.createElement('div');
+        div.className = `script-item ${script.status || 'stopped'}`;
 
-        function createScriptElement(script) {
-            const div = document.createElement('div');
-            div.className = `script-item ${script.status || 'stopped'}`;
-            
-            const statusClass = script.status || 'stopped';
-            const statusText = script.status || 'Stopped';
-            
-            div.innerHTML = `
+        const statusClass = script.status || 'stopped';
+        const statusText = script.status || 'Stopped';
+
+        div.innerHTML = `
                 <div class="script-header">
                     <div class="script-name">${script.name}</div>
                     <div class="script-status ${statusClass}">${statusText}</div>
@@ -600,309 +616,322 @@
                     <button class="btn btn-warning" onclick="improveScript('${script.path}')">Improve</button>
                 </div>
             `;
-            
-            return div;
-        }
 
-        async function loadImprovements() {
-            try {
-                const response = await fetch('/api/automation/improvements');
-                const improvements = await response.json();
-                
-                const improvementsList = document.getElementById('improvementsList');
-                improvementsList.innerHTML = '';
-                
-                if (improvements.length === 0) {
-                    improvementsList.innerHTML = '<div style="text-align: center; padding: 20px; color: #666;">No improvements yet</div>';
-                    return;
-                }
-                
-                improvements.slice(-5).forEach(improvement => {
-                    const improvementElement = createImprovementElement(improvement);
-                    improvementsList.appendChild(improvementElement);
-                });
-                
-            } catch (error) {
-                console.error('Failed to load improvements:', error);
-                addLogEntry('Failed to load improvements: ' + error.message, 'error');
-            }
-        }
+        return div;
+      }
 
-        function createImprovementElement(improvement) {
-            const div = document.createElement('div');
-            div.className = 'improvement-item';
-            
-            const time = new Date(improvement.timestamp).toLocaleString();
-            
-            div.innerHTML = `
+      async function loadImprovements() {
+        try {
+          const response = await fetch('/api/automation/improvements');
+          const improvements = await response.json();
+
+          const improvementsList = document.getElementById('improvementsList');
+          improvementsList.innerHTML = '';
+
+          if (improvements.length === 0) {
+            improvementsList.innerHTML =
+              '<div style="text-align: center; padding: 20px; color: #666;">No improvements yet</div>';
+            return;
+          }
+
+          improvements.slice(-5).forEach((improvement) => {
+            const improvementElement = createImprovementElement(improvement);
+            improvementsList.appendChild(improvementElement);
+          });
+        } catch (error) {
+          console.error('Failed to load improvements:', error);
+          addLogEntry('Failed to load improvements: ' + error.message, 'error');
+        }
+      }
+
+      function createImprovementElement(improvement) {
+        const div = document.createElement('div');
+        div.className = 'improvement-item';
+
+        const time = new Date(improvement.timestamp).toLocaleString();
+
+        div.innerHTML = `
                 <div class="improvement-script">${improvement.scriptName}</div>
                 <div class="improvement-details">${improvement.improvements.join(', ')}</div>
                 <div class="improvement-time">${time}</div>
             `;
-            
-            return div;
-        }
 
-        async function startManager() {
-            try {
-                addLogEntry('Starting automation manager...', 'info');
-                
-                const response = await fetch('/api/automation/start', { method: 'POST' });
-                const result = await response.json();
-                
-                if (result.success) {
-                    addLogEntry('Automation manager started successfully', 'info');
-                    await updateStatus();
-                } else {
-                    addLogEntry('Failed to start automation manager: ' + result.error, 'error');
-                }
-                
-            } catch (error) {
-                console.error('Failed to start manager:', error);
-                addLogEntry('Failed to start manager: ' + error.message, 'error');
+        return div;
+      }
+
+      async function startManager() {
+        try {
+          addLogEntry('Starting automation manager...', 'info');
+
+          const response = await fetch('/api/automation/start', {
+            method: 'POST',
+          });
+          const result = await response.json();
+
+          if (result.success) {
+            addLogEntry('Automation manager started successfully', 'info');
+            await updateStatus();
+          } else {
+            addLogEntry(
+              'Failed to start automation manager: ' + result.error,
+              'error',
+            );
+          }
+        } catch (error) {
+          console.error('Failed to start manager:', error);
+          addLogEntry('Failed to start manager: ' + error.message, 'error');
+        }
+      }
+
+      async function stopManager() {
+        try {
+          addLogEntry('Stopping automation manager...', 'info');
+
+          const response = await fetch('/api/automation/stop', {
+            method: 'POST',
+          });
+          const result = await response.json();
+
+          if (result.success) {
+            addLogEntry('Automation manager stopped successfully', 'info');
+            await updateStatus();
+          } else {
+            addLogEntry(
+              'Failed to stop automation manager: ' + result.error,
+              'error',
+            );
+          }
+        } catch (error) {
+          console.error('Failed to stop manager:', error);
+          addLogEntry('Failed to stop manager: ' + error.message, 'error');
+        }
+      }
+
+      async function discoverScripts() {
+        try {
+          addLogEntry('Discovering automation scripts...', 'info');
+
+          const response = await fetch('/api/automation/discover', {
+            method: 'POST',
+          });
+          const result = await response.json();
+
+          if (result.success) {
+            addLogEntry(
+              `Discovered ${result.scripts.length} automation scripts`,
+              'info',
+            );
+            await loadScripts();
+            await updateStatus();
+          } else {
+            addLogEntry('Failed to discover scripts: ' + result.error, 'error');
+          }
+        } catch (error) {
+          console.error('Failed to discover scripts:', error);
+          addLogEntry('Failed to discover scripts: ' + error.message, 'error');
+        }
+      }
+
+      async function improveScripts() {
+        try {
+          addLogEntry('Starting script improvement cycle...', 'info');
+
+          const response = await fetch('/api/automation/improve', {
+            method: 'POST',
+          });
+          const result = await response.json();
+
+          if (result.success) {
+            addLogEntry(
+              `Improved ${result.improvements.length} scripts`,
+              'info',
+            );
+            await loadImprovements();
+            await updateStatus();
+          } else {
+            addLogEntry('Failed to improve scripts: ' + result.error, 'error');
+          }
+        } catch (error) {
+          console.error('Failed to improve scripts:', error);
+          addLogEntry('Failed to improve scripts: ' + error.message, 'error');
+        }
+      }
+
+      async function startScript(scriptPath) {
+        try {
+          addLogEntry(`Starting script: ${scriptPath}`, 'info');
+
+          const response = await fetch('/api/automation/script/start', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ scriptPath }),
+          });
+          const result = await response.json();
+
+          if (result.success) {
+            addLogEntry(`Script started: ${scriptPath}`, 'info');
+            await loadScripts();
+          } else {
+            addLogEntry(`Failed to start script: ${result.error}`, 'error');
+          }
+        } catch (error) {
+          console.error('Failed to start script:', error);
+          addLogEntry('Failed to start script: ' + error.message, 'error');
+        }
+      }
+
+      async function stopScript(scriptPath) {
+        try {
+          addLogEntry(`Stopping script: ${scriptPath}`, 'info');
+
+          const response = await fetch('/api/automation/script/stop', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ scriptPath }),
+          });
+          const result = await response.json();
+
+          if (result.success) {
+            addLogEntry(`Script stopped: ${scriptPath}`, 'info');
+            await loadScripts();
+          } else {
+            addLogEntry(`Failed to stop script: ${result.error}`, 'error');
+          }
+        } catch (error) {
+          console.error('Failed to stop script:', error);
+          addLogEntry('Failed to stop script: ' + error.message, 'error');
+        }
+      }
+
+      async function improveScript(scriptPath) {
+        try {
+          addLogEntry(`Improving script: ${scriptPath}`, 'info');
+
+          const response = await fetch('/api/automation/script/improve', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ scriptPath }),
+          });
+          const result = await response.json();
+
+          if (result.success) {
+            addLogEntry(`Script improved: ${scriptPath}`, 'info');
+            await loadScripts();
+            await loadImprovements();
+          } else {
+            addLogEntry(`Failed to improve script: ${result.error}`, 'error');
+          }
+        } catch (error) {
+          console.error('Failed to improve script:', error);
+          addLogEntry('Failed to improve script: ' + error.message, 'error');
+        }
+      }
+
+      async function generateReport() {
+        try {
+          addLogEntry('Generating automation report...', 'info');
+
+          const response = await fetch('/api/automation/report');
+          const report = await response.json();
+
+          // Create downloadable report
+          const blob = new Blob([JSON.stringify(report, null, 2)], {
+            type: 'application/json',
+          });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `automation-report-${new Date().toISOString().split('T')[0]}.json`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+
+          addLogEntry('Automation report generated and downloaded', 'info');
+        } catch (error) {
+          console.error('Failed to generate report:', error);
+          addLogEntry('Failed to generate report: ' + error.message, 'error');
+        }
+      }
+
+      function refreshScripts() {
+        loadScripts();
+      }
+
+      function refreshLogs() {
+        updateLogs();
+      }
+
+      async function updateLogs() {
+        try {
+          const response = await fetch('/api/automation/logs');
+          const logs = await response.json();
+
+          const logsContent = document.getElementById('logsContent');
+
+          // Add new log entries
+          logs.slice(-20).forEach((log) => {
+            if (!document.querySelector(`[data-log-id="${log.id}"]`)) {
+              const logElement = createLogElement(log);
+              logsContent.appendChild(logElement);
             }
-        }
+          });
 
-        async function stopManager() {
-            try {
-                addLogEntry('Stopping automation manager...', 'info');
-                
-                const response = await fetch('/api/automation/stop', { method: 'POST' });
-                const result = await response.json();
-                
-                if (result.success) {
-                    addLogEntry('Automation manager stopped successfully', 'info');
-                    await updateStatus();
-                } else {
-                    addLogEntry('Failed to stop automation manager: ' + result.error, 'error');
-                }
-                
-            } catch (error) {
-                console.error('Failed to stop manager:', error);
-                addLogEntry('Failed to stop manager: ' + error.message, 'error');
+          // Keep only last 50 entries
+          const logEntries = logsContent.querySelectorAll('.log-entry');
+          if (logEntries.length > 50) {
+            for (let i = 0; i < logEntries.length - 50; i++) {
+              logEntries[i].remove();
             }
-        }
+          }
 
-        async function discoverScripts() {
-            try {
-                addLogEntry('Discovering automation scripts...', 'info');
-                
-                const response = await fetch('/api/automation/discover', { method: 'POST' });
-                const result = await response.json();
-                
-                if (result.success) {
-                    addLogEntry(`Discovered ${result.scripts.length} automation scripts`, 'info');
-                    await loadScripts();
-                    await updateStatus();
-                } else {
-                    addLogEntry('Failed to discover scripts: ' + result.error, 'error');
-                }
-                
-            } catch (error) {
-                console.error('Failed to discover scripts:', error);
-                addLogEntry('Failed to discover scripts: ' + error.message, 'error');
-            }
+          // Auto-scroll to bottom
+          logsContent.scrollTop = logsContent.scrollHeight;
+        } catch (error) {
+          console.error('Failed to update logs:', error);
         }
+      }
 
-        async function improveScripts() {
-            try {
-                addLogEntry('Starting script improvement cycle...', 'info');
-                
-                const response = await fetch('/api/automation/improve', { method: 'POST' });
-                const result = await response.json();
-                
-                if (result.success) {
-                    addLogEntry(`Improved ${result.improvements.length} scripts`, 'info');
-                    await loadImprovements();
-                    await updateStatus();
-                } else {
-                    addLogEntry('Failed to improve scripts: ' + result.error, 'error');
-                }
-                
-            } catch (error) {
-                console.error('Failed to improve scripts:', error);
-                addLogEntry('Failed to improve scripts: ' + error.message, 'error');
-            }
-        }
+      function createLogElement(log) {
+        const div = document.createElement('div');
+        div.className = `log-entry ${log.level}`;
+        div.setAttribute('data-log-id', log.id);
 
-        async function startScript(scriptPath) {
-            try {
-                addLogEntry(`Starting script: ${scriptPath}`, 'info');
-                
-                const response = await fetch('/api/automation/script/start', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ scriptPath })
-                });
-                const result = await response.json();
-                
-                if (result.success) {
-                    addLogEntry(`Script started: ${scriptPath}`, 'info');
-                    await loadScripts();
-                } else {
-                    addLogEntry(`Failed to start script: ${result.error}`, 'error');
-                }
-                
-            } catch (error) {
-                console.error('Failed to start script:', error);
-                addLogEntry('Failed to start script: ' + error.message, 'error');
-            }
-        }
+        const time = new Date(log.timestamp).toLocaleTimeString();
+        div.textContent = `[${time}] [${log.level.toUpperCase()}] ${log.message}`;
 
-        async function stopScript(scriptPath) {
-            try {
-                addLogEntry(`Stopping script: ${scriptPath}`, 'info');
-                
-                const response = await fetch('/api/automation/script/stop', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ scriptPath })
-                });
-                const result = await response.json();
-                
-                if (result.success) {
-                    addLogEntry(`Script stopped: ${scriptPath}`, 'info');
-                    await loadScripts();
-                } else {
-                    addLogEntry(`Failed to stop script: ${result.error}`, 'error');
-                }
-                
-            } catch (error) {
-                console.error('Failed to stop script:', error);
-                addLogEntry('Failed to stop script: ' + error.message, 'error');
-            }
-        }
+        return div;
+      }
 
-        async function improveScript(scriptPath) {
-            try {
-                addLogEntry(`Improving script: ${scriptPath}`, 'info');
-                
-                const response = await fetch('/api/automation/script/improve', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ scriptPath })
-                });
-                const result = await response.json();
-                
-                if (result.success) {
-                    addLogEntry(`Script improved: ${scriptPath}`, 'info');
-                    await loadScripts();
-                    await loadImprovements();
-                } else {
-                    addLogEntry(`Failed to improve script: ${result.error}`, 'error');
-                }
-                
-            } catch (error) {
-                console.error('Failed to improve script:', error);
-                addLogEntry('Failed to improve script: ' + error.message, 'error');
-            }
-        }
+      function addLogEntry(message, level = 'info') {
+        const logsContent = document.getElementById('logsContent');
+        const div = document.createElement('div');
+        div.className = `log-entry ${level}`;
 
-        async function generateReport() {
-            try {
-                addLogEntry('Generating automation report...', 'info');
-                
-                const response = await fetch('/api/automation/report');
-                const report = await response.json();
-                
-                // Create downloadable report
-                const blob = new Blob([JSON.stringify(report, null, 2)], { type: 'application/json' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `automation-report-${new Date().toISOString().split('T')[0]}.json`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-                
-                addLogEntry('Automation report generated and downloaded', 'info');
-                
-            } catch (error) {
-                console.error('Failed to generate report:', error);
-                addLogEntry('Failed to generate report: ' + error.message, 'error');
-            }
-        }
+        const time = new Date().toLocaleTimeString();
+        div.textContent = `[${time}] [${level.toUpperCase()}] ${message}`;
 
-        function refreshScripts() {
-            loadScripts();
-        }
+        logsContent.appendChild(div);
+        logsContent.scrollTop = logsContent.scrollHeight;
+      }
 
-        function refreshLogs() {
-            updateLogs();
-        }
+      function formatUptime(ms) {
+        const seconds = Math.floor(ms / 1000);
+        const minutes = Math.floor(seconds / 60);
+        const hours = Math.floor(minutes / 60);
+        const days = Math.floor(hours / 24);
 
-        async function updateLogs() {
-            try {
-                const response = await fetch('/api/automation/logs');
-                const logs = await response.json();
-                
-                const logsContent = document.getElementById('logsContent');
-                
-                // Add new log entries
-                logs.slice(-20).forEach(log => {
-                    if (!document.querySelector(`[data-log-id="${log.id}"]`)) {
-                        const logElement = createLogElement(log);
-                        logsContent.appendChild(logElement);
-                    }
-                });
-                
-                // Keep only last 50 entries
-                const logEntries = logsContent.querySelectorAll('.log-entry');
-                if (logEntries.length > 50) {
-                    for (let i = 0; i < logEntries.length - 50; i++) {
-                        logEntries[i].remove();
-                    }
-                }
-                
-                // Auto-scroll to bottom
-                logsContent.scrollTop = logsContent.scrollHeight;
-                
-            } catch (error) {
-                console.error('Failed to update logs:', error);
-            }
-        }
+        if (days > 0) return `${days}d ${hours % 24}h`;
+        if (hours > 0) return `${hours}h ${minutes % 60}m`;
+        if (minutes > 0) return `${minutes}m ${seconds % 60}s`;
+        return `${seconds}s`;
+      }
 
-        function createLogElement(log) {
-            const div = document.createElement('div');
-            div.className = `log-entry ${log.level}`;
-            div.setAttribute('data-log-id', log.id);
-            
-            const time = new Date(log.timestamp).toLocaleTimeString();
-            div.textContent = `[${time}] [${log.level.toUpperCase()}] ${log.message}`;
-            
-            return div;
-        }
-
-        function addLogEntry(message, level = 'info') {
-            const logsContent = document.getElementById('logsContent');
-            const div = document.createElement('div');
-            div.className = `log-entry ${level}`;
-            
-            const time = new Date().toLocaleTimeString();
-            div.textContent = `[${time}] [${level.toUpperCase()}] ${message}`;
-            
-            logsContent.appendChild(div);
-            logsContent.scrollTop = logsContent.scrollHeight;
-        }
-
-        function formatUptime(ms) {
-            const seconds = Math.floor(ms / 1000);
-            const minutes = Math.floor(seconds / 60);
-            const hours = Math.floor(minutes / 60);
-            const days = Math.floor(hours / 24);
-            
-            if (days > 0) return `${days}d ${hours % 24}h`;
-            if (hours > 0) return `${hours}h ${minutes % 60}m`;
-            if (minutes > 0) return `${minutes}m ${seconds % 60}s`;
-            return `${seconds}s`;
-        }
-
-        // Cleanup on page unload
-        window.addEventListener('beforeunload', function() {
-            if (refreshInterval) clearInterval(refreshInterval);
-            if (logsInterval) clearInterval(logsInterval);
-        });
+      // Cleanup on page unload
+      window.addEventListener('beforeunload', function () {
+        if (refreshInterval) clearInterval(refreshInterval);
+        if (logsInterval) clearInterval(logsInterval);
+      });
     </script>
-</body>
-</html> 
+  </body>
+</html>

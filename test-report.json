@@ -1,73 +1,73 @@
 {
-  "timestamp": "2025-07-24T17:16:13.874Z",
-  "duration": 195,
+  "timestamp": "2025-07-25T03:49:19.304Z",
+  "duration": 31,
   "summary": {
-    "total": 22,
-    "passed": 3,
-    "failed": 19,
-    "successRate": 13.636363636363635
+    "total": 26,
+    "passed": 1,
+    "failed": 25,
+    "successRate": 3.8461538461538463
   },
   "results": [
     {
-      "testName": "Core File: core/IntelligentAutomationOrchestrator.js",
+      "testName": "Core File: intelligent-automation-orchestrator.js",
       "passed": false,
       "message": "File missing",
       "details": {
-        "file": "core/IntelligentAutomationOrchestrator.js"
+        "file": "intelligent-automation-orchestrator.js"
       },
-      "timestamp": "2025-07-24T17:16:13.839Z"
+      "timestamp": "2025-07-25T03:49:19.068Z"
     },
     {
-      "testName": "Core File: core/AutonomousAutomationManager.js",
+      "testName": "Core File: autonomous-system.js",
       "passed": false,
       "message": "File missing",
       "details": {
-        "file": "core/AutonomousAutomationManager.js"
+        "file": "autonomous-system.js"
       },
-      "timestamp": "2025-07-24T17:16:13.840Z"
+      "timestamp": "2025-07-25T03:49:19.069Z"
     },
     {
-      "testName": "Core File: core/TaskScheduler.js",
+      "testName": "Core File: autonomous-orchestrator.js",
       "passed": false,
       "message": "File missing",
       "details": {
-        "file": "core/TaskScheduler.js"
+        "file": "autonomous-orchestrator.js"
       },
-      "timestamp": "2025-07-24T17:16:13.840Z"
+      "timestamp": "2025-07-25T03:49:19.069Z"
     },
     {
-      "testName": "Core File: core/NotificationManager.js",
+      "testName": "Core File: autonomous-daemon.js",
       "passed": false,
       "message": "File missing",
       "details": {
-        "file": "core/NotificationManager.js"
+        "file": "autonomous-daemon.js"
       },
-      "timestamp": "2025-07-24T17:16:13.840Z"
+      "timestamp": "2025-07-25T03:49:19.069Z"
     },
     {
-      "testName": "Core File: core/AnomalyDetector.js",
+      "testName": "Core File: automation-manager.js",
       "passed": false,
       "message": "File missing",
       "details": {
-        "file": "core/AnomalyDetector.js"
+        "file": "automation-manager.js"
       },
-      "timestamp": "2025-07-24T17:16:13.840Z"
+      "timestamp": "2025-07-25T03:49:19.070Z"
     },
     {
-      "testName": "Core File: core/ReportGenerator.js",
+      "testName": "Core File: improved-automation-orchestrator.js",
       "passed": false,
       "message": "File missing",
       "details": {
-        "file": "core/ReportGenerator.js"
+        "file": "improved-automation-orchestrator.js"
       },
-      "timestamp": "2025-07-24T17:16:13.840Z"
+      "timestamp": "2025-07-25T03:49:19.070Z"
     },
     {
       "testName": "Core System Import",
-      "passed": true,
-      "message": "Core system imported successfully",
+      "passed": false,
+      "message": "Import failed: Unexpected identifier 'System'",
       "details": null,
-      "timestamp": "2025-07-24T17:16:13.843Z"
+      "timestamp": "2025-07-25T03:49:19.072Z"
     },
     {
       "testName": "Netlify File: netlify-monitor.js",
@@ -76,7 +76,7 @@
       "details": {
         "file": "netlify-monitor.js"
       },
-      "timestamp": "2025-07-24T17:16:13.843Z"
+      "timestamp": "2025-07-25T03:49:19.074Z"
     },
     {
       "testName": "Netlify File: netlify-error-fixer.js",
@@ -85,7 +85,7 @@
       "details": {
         "file": "netlify-error-fixer.js"
       },
-      "timestamp": "2025-07-24T17:16:13.843Z"
+      "timestamp": "2025-07-25T03:49:19.074Z"
     },
     {
       "testName": "Netlify File: netlify-build-automation.js",
@@ -94,14 +94,23 @@
       "details": {
         "file": "netlify-build-automation.js"
       },
-      "timestamp": "2025-07-24T17:16:13.844Z"
+      "timestamp": "2025-07-25T03:49:19.075Z"
+    },
+    {
+      "testName": "Netlify File: netlify-build-monitor.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "netlify-build-monitor.js"
+      },
+      "timestamp": "2025-07-25T03:49:19.075Z"
     },
     {
       "testName": "Netlify Monitor Import",
-      "passed": true,
-      "message": "Netlify monitor imported successfully",
+      "passed": false,
+      "message": "Import failed: Unexpected token '<<'",
       "details": null,
-      "timestamp": "2025-07-24T17:16:13.856Z"
+      "timestamp": "2025-07-25T03:49:19.076Z"
     },
     {
       "testName": "Performance File: performance/monitor.js",
@@ -110,7 +119,7 @@
       "details": {
         "file": "performance/monitor.js"
       },
-      "timestamp": "2025-07-24T17:16:13.859Z"
+      "timestamp": "2025-07-25T03:49:19.077Z"
     },
     {
       "testName": "Performance File: performance/frontend-fix.js",
@@ -119,14 +128,14 @@
       "details": {
         "file": "performance/frontend-fix.js"
       },
-      "timestamp": "2025-07-24T17:16:13.859Z"
+      "timestamp": "2025-07-25T03:49:19.077Z"
     },
     {
       "testName": "Performance Monitor Import",
-      "passed": false,
-      "message": "Import failed: missing ) after argument list",
+      "passed": true,
+      "message": "Performance monitor imported successfully",
       "details": null,
-      "timestamp": "2025-07-24T17:16:13.861Z"
+      "timestamp": "2025-07-25T03:49:19.081Z"
     },
     {
       "testName": "CI File: continuous-improvement/enhanced-automation.js",
@@ -135,7 +144,7 @@
       "details": {
         "file": "continuous-improvement/enhanced-automation.js"
       },
-      "timestamp": "2025-07-24T17:16:13.861Z"
+      "timestamp": "2025-07-25T03:49:19.082Z"
     },
     {
       "testName": "CI File: continuous-improvement/monitor.js",
@@ -144,7 +153,7 @@
       "details": {
         "file": "continuous-improvement/monitor.js"
       },
-      "timestamp": "2025-07-24T17:16:13.862Z"
+      "timestamp": "2025-07-25T03:49:19.083Z"
     },
     {
       "testName": "CI File: continuous-improvement/improve.js",
@@ -153,14 +162,14 @@
       "details": {
         "file": "continuous-improvement/improve.js"
       },
-      "timestamp": "2025-07-24T17:16:13.862Z"
+      "timestamp": "2025-07-25T03:49:19.083Z"
     },
     {
       "testName": "CI System Import",
-      "passed": true,
-      "message": "CI system imported successfully",
+      "passed": false,
+      "message": "Import failed: Invalid package config /Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/automation/continuous-improvement/package.json.",
       "details": null,
-      "timestamp": "2025-07-24T17:16:13.864Z"
+      "timestamp": "2025-07-25T03:49:19.083Z"
     },
     {
       "testName": "Task File: tasks/DependencyUpdater.js",
@@ -169,14 +178,32 @@
       "details": {
         "file": "tasks/DependencyUpdater.js"
       },
-      "timestamp": "2025-07-24T17:16:13.865Z"
+      "timestamp": "2025-07-25T03:49:19.084Z"
+    },
+    {
+      "testName": "Task File: tasks/SecurityScanner.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "tasks/SecurityScanner.js"
+      },
+      "timestamp": "2025-07-25T03:49:19.084Z"
+    },
+    {
+      "testName": "Task File: tasks/CodeQualityEnforcer.js",
+      "passed": false,
+      "message": "File missing",
+      "details": {
+        "file": "tasks/CodeQualityEnforcer.js"
+      },
+      "timestamp": "2025-07-25T03:49:19.084Z"
     },
     {
       "testName": "Task System Import",
       "passed": false,
-      "message": "Import failed: Unexpected token '?'",
+      "message": "Import failed: Unexpected token '<<'",
       "details": null,
-      "timestamp": "2025-07-24T17:16:13.867Z"
+      "timestamp": "2025-07-25T03:49:19.086Z"
     },
     {
       "testName": "Cursor File: cursor-automated-communication.js",
@@ -185,7 +212,7 @@
       "details": {
         "file": "cursor-automated-communication.js"
       },
-      "timestamp": "2025-07-24T17:16:13.871Z"
+      "timestamp": "2025-07-25T03:49:19.087Z"
     },
     {
       "testName": "Cursor File: cursor-automated-extension/background.js",
@@ -194,7 +221,14 @@
       "details": {
         "file": "cursor-automated-extension/background.js"
       },
-      "timestamp": "2025-07-24T17:16:13.872Z"
+      "timestamp": "2025-07-25T03:49:19.087Z"
+    },
+    {
+      "testName": "Cursor System Import",
+      "passed": false,
+      "message": "Import failed: Unexpected token ':'",
+      "details": null,
+      "timestamp": "2025-07-25T03:49:19.088Z"
     }
   ]
 }

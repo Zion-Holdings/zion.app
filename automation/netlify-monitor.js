@@ -56,13 +56,6 @@ class NetlifyBuildMonitor {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
 
-<<<<<<< HEAD
-    logger.info(logEntry);
-    fs.appendFileSync(this.config.logFile, logEntry + \n');
-=======
-    console.log(logEntry);
-    fs.appendFileSync(this.config.logFile, logEntry + '\n');
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
   }
 
   loadStatus() {
@@ -188,13 +181,6 @@ class NetlifyBuildMonitor {
     if (build.deploy_ssl_url && build.state === 'error') {
       errors.push({
         type: 'deploy_error',
-<<<<<<< HEAD
-        message: Build failed to deploy',
-        severity: high
-=======
-        message: 'Build failed to deploy',
-        severity: 'high'
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       });
     }
 
@@ -205,39 +191,18 @@ class NetlifyBuildMonitor {
       if (logText.includes('out of memory')) {
         errors.push({
           type: 'memory_error',
-<<<<<<< HEAD
-          message: Build failed due to memory constraints',
-          severity: high
-=======
-          message: 'Build failed due to memory constraints',
-          severity: 'high'
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
         });
       }
 
       if (logText.includes('timeout')) {
         errors.push({
           type: 'timeout_error',
-<<<<<<< HEAD
-          message: Build timed out',
-          severity: medium
-=======
-          message: 'Build timed out',
-          severity: 'medium'
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
         });
       }
 
       if (logText.includes('dependency') && logText.includes('error')) {
         errors.push({
           type: 'dependency_error',
-<<<<<<< HEAD
-          message: Dependency installation failed',
-          severity: medium
-=======
-          message: 'Dependency installation failed',
-          severity: 'medium'
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
         });
       }
     }
@@ -341,11 +306,6 @@ class NetlifyBuildMonitor {
     }
 
     try {
-<<<<<<< HEAD
-      execSync('npm run lint: 'fix', { stdio: 'inherit' });
-=======
-      execSync('npm run lint:fix', { stdio: 'inherit' });
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
     } catch (error) {
       this.log(`ESLint fix failed: ${error.message}`, 'error');
     }
@@ -614,199 +574,6 @@ const timeoutId = setTimeout(resolve,                                           
 // Store timeoutId for cleanup if needed
 );
       } catch (error) {
-<<<<<<< HEAD
-        this.log(`Monitoring error: ${error.message}`, error');
-        await new Promise((resolve) => 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = 
-const timeoutId = setTimeout(resolve,                                                               60000);
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-;
-// Store timeoutId for cleanup if needed
-); // Wait 1 minute on error
-=======
-        this.log(`Monitoring error: ${error.message}`, 'error');
-        await new Promise((resolve) => setTimeout(resolve, 60000)); // Wait 1 minute on error
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       }
     }
   }
@@ -960,19 +727,6 @@ if (require.main === module) {
         logger.info(JSON.stringify(report, null, 2));
       });
       break;
-<<<<<<< HEAD
-    case status':
-      logger.info(JSON.stringify(monitor.status, null, 2));
-      break;
-    default:
-      logger.info('Usage: node netlify-monitor.js [start|check|report|status]);
-=======
-    case 'status':
-      console.log(JSON.stringify(monitor.status, null, 2));
-      break;
-    default:
-      console.log('Usage: node netlify-monitor.js [start|check|report|status]');
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
   }
 }
 

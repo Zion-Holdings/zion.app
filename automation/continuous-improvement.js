@@ -24,17 +24,21 @@ class ContinuousImprovementSystem {
         cwd: this.projectRoot,
         encoding: 'utf8',
         stdio: 'pipe',
-        ...options
+        ...options,
       });
       return { success: true, output: result };
     } catch (error) {
-      return { success: false, error: error.message, output: error.stdout || error.stderr };
+      return {
+        success: false,
+        error: error.message,
+        output: error.stdout || error.stderr,
+      };
     }
   }
 
   async checkForErrors() {
     this.log('Checking for errors...');
-    
+
     // Check for TypeScript errors
     const tsResult = await this.runCommand('npx tsc --noEmit');
     if (!tsResult.success) {
@@ -86,7 +90,7 @@ class ContinuousImprovementSystem {
 
   async fixTypeScriptErrors() {
     this.log('Fixing TypeScript errors...');
-    
+
     // Try to auto-fix common TypeScript issues
     const fixResult = await this.runCommand('npx tsc --noEmit --pretty');
     if (fixResult.success) {
@@ -96,7 +100,7 @@ class ContinuousImprovementSystem {
 
   async fixLintingErrors() {
     this.log('Fixing linting errors...');
-    
+
     // Try to auto-fix linting issues
     const fixResult = await this.runCommand('npm run lint -- --fix');
     if (fixResult.success) {
@@ -106,7 +110,7 @@ class ContinuousImprovementSystem {
 
   async fixTestErrors() {
     this.log('Analyzing test failures...');
-    
+
     // For now, just log the test errors
     // In a real implementation, you might want to analyze and fix specific test issues
     this.log('Test errors require manual review', 'error');
@@ -114,7 +118,7 @@ class ContinuousImprovementSystem {
 
   async checkForImprovements() {
     this.log('Checking for potential improvements...');
-    
+
     // Check for outdated dependencies
     const outdatedResult = await this.runCommand('npm outdated --json');
     if (outdatedResult.success) {
@@ -123,7 +127,7 @@ class ContinuousImprovementSystem {
         if (Object.keys(outdated).length > 0) {
           this.improvements.push({
             type: 'dependencies',
-            details: `Found ${Object.keys(outdated).length} outdated packages`
+            details: `Found ${Object.keys(outdated).length} outdated packages`,
           });
         }
       } catch (e) {
@@ -136,10 +140,13 @@ class ContinuousImprovementSystem {
     if (auditResult.success) {
       try {
         const audit = JSON.parse(auditResult.output);
-        if (audit.vulnerabilities && Object.keys(audit.vulnerabilities).length > 0) {
+        if (
+          audit.vulnerabilities &&
+          Object.keys(audit.vulnerabilities).length > 0
+        ) {
           this.improvements.push({
             type: 'security',
-            details: `Found ${Object.keys(audit.vulnerabilities).length} security vulnerabilities`
+            details: `Found ${Object.keys(audit.vulnerabilities).length} security vulnerabilities`,
           });
         }
       } catch (e) {
@@ -174,7 +181,7 @@ class ContinuousImprovementSystem {
 
   async updateDependencies() {
     this.log('Updating dependencies...');
-    
+
     // Update dependencies safely
     const updateResult = await this.runCommand('npm update');
     if (updateResult.success) {
@@ -184,7 +191,7 @@ class ContinuousImprovementSystem {
 
   async fixSecurityVulnerabilities() {
     this.log('Fixing security vulnerabilities...');
-    
+
     // Try to fix security issues
     const fixResult = await this.runCommand('npm audit fix');
     if (fixResult.success) {
@@ -194,7 +201,7 @@ class ContinuousImprovementSystem {
 
   async commitAndPush() {
     this.log('Committing and pushing changes...');
-    
+
     // Check if there are any changes to commit
     const statusResult = await this.runCommand('git status --porcelain');
     if (!statusResult.success || !statusResult.output.trim()) {
@@ -211,7 +218,9 @@ class ContinuousImprovementSystem {
 
     // Commit changes
     const commitMessage = `🤖 Automated improvements: ${new Date().toISOString()}`;
-    const commitResult = await this.runCommand(`git commit -m "${commitMessage}"`);
+    const commitResult = await this.runCommand(
+      `git commit -m "${commitMessage}"`,
+    );
     if (!commitResult.success) {
       this.log('Failed to commit changes', 'error');
       return false;
@@ -230,30 +239,30 @@ class ContinuousImprovementSystem {
 
   async runCycle() {
     this.log('🔄 Starting improvement cycle...');
-    
+
     // Reset state
     this.errors = [];
     this.improvements = [];
-    
+
     // Check for errors
     const hasErrors = !(await this.checkForErrors());
-    
+
     // Fix errors if any
     if (hasErrors) {
       await this.fixErrors();
     }
-    
+
     // Check for improvements
     const hasImprovements = await this.checkForImprovements();
-    
+
     // Apply improvements if any
     if (hasImprovements) {
       await this.applyImprovements();
     }
-    
+
     // Commit and push changes
     await this.commitAndPush();
-    
+
     this.log('✅ Improvement cycle completed');
     this.lastRun = new Date();
   }
@@ -261,15 +270,15 @@ class ContinuousImprovementSystem {
   async start() {
     this.log('🚀 Starting Continuous Improvement System...');
     this.log('This system will run every minute to improve the project');
-    
+
     // Run initial cycle
     await this.runCycle();
-    
+
     // Set up interval for continuous improvement
     setInterval(async () => {
       await this.runCycle();
     }, 60000); // Run every minute
-    
+
     this.log('⏰ Continuous improvement system is now running every minute');
   }
 }
@@ -277,10 +286,10 @@ class ContinuousImprovementSystem {
 // Start the system
 if (require.main === module) {
   const system = new ContinuousImprovementSystem();
-  system.start().catch(error => {
+  system.start().catch((error) => {
     console.error('❌ Fatal error in continuous improvement system:', error);
     process.exit(1);
   });
 }
 
-module.exports = ContinuousImprovementSystem; 
+module.exports = ContinuousImprovementSystem;

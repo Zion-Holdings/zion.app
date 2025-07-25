@@ -37,13 +37,6 @@ if (process.env.NODE_ENV !== 'production') {
 const fs = require('fs').promises;
 const path = require('path');
 
-<<<<<<< HEAD
-async function fixSyntaxErrors() {
-  logger.info('🔧 Fixing syntax errors in automation files...');
-=======
-async function fixSyntaxErrors()  {
-  console.log('🔧 Fixing syntax errors in automation files...');
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
   
   const automationDir = __dirname;
   const files = [
@@ -91,13 +84,6 @@ async function fixSyntaxErrors()  {
         .replace(/anomalyDetector',/g, "'anomalyDetector'");
 
       if (content !== fixedContent) {
-<<<<<<< HEAD
-        await fs.writeFile(filePath, fixedContent, utf8');
-        logger.info(`✅ Fixed: ${file}`);
-=======
-        await fs.writeFile(filePath, fixedContent, 'utf8');
-        console.log(`✅ Fixed: ${file}`);
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
       } else {
         logger.info(`✅ No changes needed: ${file}`);
       }

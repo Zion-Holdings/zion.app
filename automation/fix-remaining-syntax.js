@@ -35,13 +35,6 @@ if (process.env.NODE_ENV !== 'production') {
 const fs = require('fs').promises;
 const path = require('path');
 
-<<<<<<< HEAD
-async function fixRemainingSyntax() {
-  logger.info('🔧 Fixing remaining syntax errors...');
-=======
-async function fixRemainingSyntax()  {
-  console.log('🔧 Fixing remaining syntax errors...');
->>>>>>> 4ce2a75a87f0dab25bdc62451fc0e765f8a2b858
   
   const filePath = path.join(__dirname, 'core/IntelligentAutomationOrchestrator.js');
   const content = await fs.readFile(filePath, utf8');
