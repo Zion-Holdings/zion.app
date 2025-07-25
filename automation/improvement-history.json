@@ -1,0 +1,14 @@
+[
+  {
+    "type": "resource_optimization",
+    "target": "system",
+    "optimizations": [
+      "resource_allocation",
+      "load_balancing"
+    ],
+    "priority": "high",
+    "confidence": 0.8,
+    "appliedAt": "2025-07-25T13:44:23.035Z",
+    "iteration": 0
+  }
+]

@@ -1,12 +1,12 @@
 {
   "isRunning": true,
   "startTime": "2025-07-25T13:40:26.726Z",
-  "lastHealthCheck": null,
+  "lastHealthCheck": "2025-07-25T13:44:23.034Z",
   "restartAttempts": 0,
-  "health": "unknown",
+  "health": "healthy",
   "performance": {
     "cpu": 0,
-    "memory": 0,
-    "uptime": 0
+    "memory": 85.65654177398584,
+    "uptime": 236309
   }
 }
