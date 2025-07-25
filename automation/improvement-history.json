@@ -10,5 +10,28 @@
     "confidence": 0.8,
     "appliedAt": "2025-07-25T13:44:23.035Z",
     "iteration": 0
+  },
+  {
+    "type": "resource_optimization",
+    "target": "network",
+    "optimizations": [
+      "resource_allocation",
+      "load_balancing"
+    ],
+    "priority": "high",
+    "confidence": 0.8,
+    "appliedAt": "2025-07-25T13:46:23.052Z",
+    "iteration": 0
+  }
+]  {
+    "type": "performance_tuning",
+    "target": "system",
+    "tuning": {
+      "type": "cpu_optimization",
+      "action": "Reduce CPU usage through code optimization",
+      "priority": "high"
+    },
+    "appliedAt": "2025-07-25T13:46:23.053Z",
+    "iteration": 0
   }
 ]
