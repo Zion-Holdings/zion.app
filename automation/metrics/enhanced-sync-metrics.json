@@ -1,0 +1,28 @@
+{
+  "totalSyncs": 1,
+  "successfulSyncs": 0,
+  "failedSyncs": 1,
+  "totalDuration": 2159,
+  "averageDuration": 2159,
+  "totalFiles": 0,
+  "lastSync": "2025-07-25T11:33:32.175Z",
+  "computerStats": {
+    "darwin-MacBook-Pro-de-Kleber.local": {
+      "totalSyncs": 1,
+      "successfulSyncs": 0,
+      "failedSyncs": 1,
+      "lastSync": "2025-07-25T11:33:32.176Z"
+    }
+  },
+  "dailyStats": {
+    "2025-07-25": {
+      "syncs": 1,
+      "successfulSyncs": 0,
+      "failedSyncs": 1,
+      "totalFiles": 0,
+      "totalDuration": 2159,
+      "errors": null
+    }
+  },
+  "successRate": "0.00"
+}

@@ -193,7 +193,7 @@ class EnhancedCursorSyncMetrics {
         lastSync: metrics.lastSync,
         averageDuration: metrics.averageDuration.toFixed(2) + 'ms',
         totalFiles: metrics.totalFiles,
-        averageFilesPerSync: metrics.performanceStats.averageFilesPerSync.toFixed(2)
+        averageFilesPerSync: (metrics.performanceStats.averageFilesPerSync || 0).toFixed(2)
       },
       performance: {
         fastestSync: metrics.performanceStats.fastestSync ? metrics.performanceStats.fastestSync + 'ms' : 'N/A',

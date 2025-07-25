@@ -236,7 +236,7 @@ class EnhancedCursorSyncAutomation {
 
   matchesPattern(filePath, pattern) {
     const minimatch = require('minimatch');
-    return minimatch(filePath, pattern);
+    return minimatch.minimatch(filePath, pattern);
   }
 
   async stageChanges(files) {
