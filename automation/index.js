@@ -90,9 +90,7 @@ async function main() {
     console.log('📋 Configuration loaded successfully');
 
     // Import and initialize the orchestrator
-    const {
-      IntelligentAutomationOrchestrator,
-    } = require('./intelligent-automation-orchestrator');
+    const { IntelligentAutomationOrchestrator } = require('./intelligent-automation-orchestrator');
 
     const orchestrator = new IntelligentAutomationOrchestrator(config);
 

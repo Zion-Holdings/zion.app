@@ -882,4 +882,3 @@ class LearningEngine {
 }
 
 module.exports = { IntelligentAutomationOrchestrator }; 
-module.exports = IntelligentAutomationOrchestrator; 
