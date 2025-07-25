@@ -1,16 +1,16 @@
 {
-  "timestamp": 1753413769444,
+  "timestamp": 1753413961142,
   "memory": {
-    "rss": 293638144,
-    "heapTotal": 363671552,
-    "heapUsed": 339894984,
-    "external": 2141825,
-    "arrayBuffers": 172984
+    "rss": 1276989440,
+    "heapTotal": 794656768,
+    "heapUsed": 762381048,
+    "external": 2141257,
+    "arrayBuffers": 172416
   },
   "cpu": {
-    "user": 406626556,
-    "system": 1481218344
+    "user": 413169286,
+    "system": 1503206588
   },
-  "uptime": 41611.212199473,
+  "uptime": 41802.909819145,
   "activeConnections": 1
 }
