@@ -1,6 +1,6 @@
 {
-  "timestamp": "2025-07-25T07:06:12.029Z",
-  "duration": -1753427088686,
+  "timestamp": "2025-07-25T07:14:20.080Z",
+  "duration": -1753427589075,
   "summary": {
     "totalTasks": 1,
     "successfulTasks": 1,
@@ -13,7 +13,7 @@
       "stdout": "[INFO] 🔒 Starting security scan...\n[INFO] 📦 Scanning npm vulnerabilities...\n[INFO] 📦 Found 0 npm vulnerabilities\n[INFO] 🔍 Scanning code for security issues...\n[INFO] 🔍 Found 4 code security issues\n[INFO] 🔐 Scanning for secrets in files...\n[INFO] 🔐 Found 5 potential secrets\n[INFO] 📋 Scanning dependencies...\n[INFO] 📋 Found 57 dependency issues\n[INFO] 📄 Security report saved to /Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/security-report.json\n[INFO] 📋 Security recommendations:\n[INFO] 📄 Security scan report saved to /Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/security-scan-report.json\n✅ Security scan completed\n",
       "stderr": "[WARN] ⚠️ Found 9 high-severity security issues\n[WARN] 🚨 Handling 9 high-severity issues\n[WARN] 🚨 Security alert would be sent here\n",
       "exitCode": 0,
-      "duration": 83341
+      "duration": 71003
     }
   },
   "recommendations": []
