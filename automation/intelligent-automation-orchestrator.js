@@ -870,14 +870,31 @@ class HealthMonitor {
 
 // Performance Tracker
 class PerformanceTracker {
+  constructor() {
+    this.metrics = [];
+  }
+
   async initialize() {
     logger.info('🔧 Initializing Performance Tracker');
+  }
+
+  updateMetrics(metrics) {
+    this.metrics.push({
+      ...metrics,
+      timestamp: Date.now()
+    });
+    
+    // Keep only last 100 metrics
+    if (this.metrics.length > 100) {
+      this.metrics = this.metrics.slice(-100);
+    }
   }
 
   getMetrics() {
     return {
       timestamp: Date.now(),
       systems: [],
+      recentMetrics: this.metrics.slice(-10)
     };
   }
 }
