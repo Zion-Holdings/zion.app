@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-07-25T07:00:40.648Z",
+  "timestamp": "2025-07-25T07:06:11.738Z",
   "issues": [
     {
       "type": "hardcoded_secret",
@@ -32,11 +32,56 @@
       "severity": "high",
       "description": "Hardcoded secret found",
       "recommendation": "Move secrets to environment variables"
+    },
+    {
+      "type": "secret",
+      "file": "/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/__tests__/context/WalletContext.test.tsx",
+      "pattern": "[a-zA-Z0-9]{40}",
+      "count": 3,
+      "severity": "critical",
+      "description": "Secret found in code",
+      "recommendation": "Remove secrets from code and use environment variables"
+    },
+    {
+      "type": "secret",
+      "file": "/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/cypress.config.ts",
+      "pattern": "[a-zA-Z0-9]{40}",
+      "count": 1,
+      "severity": "critical",
+      "description": "Secret found in code",
+      "recommendation": "Remove secrets from code and use environment variables"
+    },
+    {
+      "type": "secret",
+      "file": "/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/scripts/check-performance-logs.ts",
+      "pattern": "[a-zA-Z0-9]{40}",
+      "count": 7,
+      "severity": "critical",
+      "description": "Secret found in code",
+      "recommendation": "Remove secrets from code and use environment variables"
+    },
+    {
+      "type": "secret",
+      "file": "/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/tests/auth0-signup-fix.test.js",
+      "pattern": "[a-zA-Z0-9]{40}",
+      "count": 2,
+      "severity": "critical",
+      "description": "Secret found in code",
+      "recommendation": "Remove secrets from code and use environment variables"
+    },
+    {
+      "type": "secret",
+      "file": "/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/tests/page-crashes-fix.test.tsx",
+      "pattern": "[a-zA-Z0-9]{40}",
+      "count": 3,
+      "severity": "critical",
+      "description": "Secret found in code",
+      "recommendation": "Remove secrets from code and use environment variables"
     }
   ],
   "summary": {
-    "total": 4,
-    "critical": 0,
+    "total": 9,
+    "critical": 5,
     "high": 4
   }
 }

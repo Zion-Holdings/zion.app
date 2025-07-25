@@ -1,9 +1,9 @@
 {
-  "timestamp": "2025-07-25T06:59:16.219Z",
+  "timestamp": "2025-07-25T07:04:52.296Z",
   "summary": {
-    "totalIssues": 61,
+    "totalIssues": 66,
     "severityCounts": {
-      "critical": 0,
+      "critical": 5,
       "high": 4,
       "medium": 57,
       "low": 0
@@ -14,10 +14,10 @@
       "secrets",
       "dependencies"
     ],
-    "timestamp": "2025-07-25T06:59:16.219Z"
+    "timestamp": "2025-07-25T07:04:52.296Z"
   },
   "details": {
-    "timestamp": "2025-07-25T06:59:16.219Z",
+    "timestamp": "2025-07-25T07:04:52.296Z",
     "npmVulnerabilities": [],
     "codeIssues": [
       {
@@ -53,7 +53,53 @@
         "recommendation": "Move secrets to environment variables"
       }
     ],
-    "secretsFound": [],
+    "secretsFound": [
+      {
+        "type": "secret",
+        "file": "/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/__tests__/context/WalletContext.test.tsx",
+        "pattern": "[a-zA-Z0-9]{40}",
+        "count": 3,
+        "severity": "critical",
+        "description": "Secret found in code",
+        "recommendation": "Remove secrets from code and use environment variables"
+      },
+      {
+        "type": "secret",
+        "file": "/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/cypress.config.ts",
+        "pattern": "[a-zA-Z0-9]{40}",
+        "count": 1,
+        "severity": "critical",
+        "description": "Secret found in code",
+        "recommendation": "Remove secrets from code and use environment variables"
+      },
+      {
+        "type": "secret",
+        "file": "/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/scripts/check-performance-logs.ts",
+        "pattern": "[a-zA-Z0-9]{40}",
+        "count": 7,
+        "severity": "critical",
+        "description": "Secret found in code",
+        "recommendation": "Remove secrets from code and use environment variables"
+      },
+      {
+        "type": "secret",
+        "file": "/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/tests/auth0-signup-fix.test.js",
+        "pattern": "[a-zA-Z0-9]{40}",
+        "count": 2,
+        "severity": "critical",
+        "description": "Secret found in code",
+        "recommendation": "Remove secrets from code and use environment variables"
+      },
+      {
+        "type": "secret",
+        "file": "/Users/klebergarciaalcatrao/Documents/GitHub/Zion.App.Clone/tests/page-crashes-fix.test.tsx",
+        "pattern": "[a-zA-Z0-9]{40}",
+        "count": 3,
+        "severity": "critical",
+        "description": "Secret found in code",
+        "recommendation": "Remove secrets from code and use environment variables"
+      }
+    ],
     "dependencyIssues": [
       {
         "type": "old_package",
@@ -570,9 +616,9 @@
       }
     ],
     "summary": {
-      "totalIssues": 61,
+      "totalIssues": 66,
       "severityCounts": {
-        "critical": 0,
+        "critical": 5,
         "high": 4,
         "medium": 57,
         "low": 0
@@ -583,7 +629,7 @@
         "secrets",
         "dependencies"
       ],
-      "timestamp": "2025-07-25T06:59:16.219Z"
+      "timestamp": "2025-07-25T07:04:52.296Z"
     }
   }
 }
