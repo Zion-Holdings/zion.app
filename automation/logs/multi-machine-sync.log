@@ -1,0 +1,12 @@
+[2025-07-30T13:32:00.705Z] [INFO] [Miami2-2.local-miami2] Starting coordinated sync...
+[2025-07-30T13:32:00.727Z] [INFO] [Miami2-2.local-miami2] Waiting 179s for sync time
+[2025-07-30T13:34:59.994Z] [INFO] [Miami2-2.local-miami2] Coordinator: Miami2-2.local-miami2, This machine is coordinator: true
+[2025-07-30T13:35:09.993Z] [INFO] [Miami2-2.local-miami2] Fetching latest changes
+[2025-07-30T13:35:11.311Z] [INFO] [Miami2-2.local-miami2] Pulling latest changes
+[2025-07-30T13:35:11.378Z] [ERROR] [Miami2-2.local-miami2] Git pull failed: Command failed: git pull origin main --rebase
+[2025-07-30T13:38:18.195Z] [INFO] [Miami2-2.local-miami2] Starting coordinated sync...
+[2025-07-30T13:38:18.215Z] [INFO] [Miami2-2.local-miami2] Waiting 102s for sync time
+[2025-07-30T13:39:59.998Z] [INFO] [Miami2-2.local-miami2] Coordinator: Miami2-2.local-miami2, This machine is coordinator: true
+[2025-07-30T13:40:10.000Z] [INFO] [Miami2-2.local-miami2] Fetching latest changes
+[2025-07-30T13:40:11.549Z] [INFO] [Miami2-2.local-miami2] Pulling latest changes
+[2025-07-30T13:40:11.619Z] [ERROR] [Miami2-2.local-miami2] Git pull failed: Command failed: git pull origin main --rebase

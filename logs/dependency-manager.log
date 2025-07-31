@@ -1,0 +1,171 @@
+[2025-07-30T03:06:36.632Z] Initializing Dependency Manager Extension...
+[2025-07-30T03:06:36.682Z] Cron jobs started
+[2025-07-30T03:06:36.683Z] Running initial dependency check...
+[2025-07-30T03:06:36.685Z] Initializing Dependency Manager Extension...
+[2025-07-30T03:06:36.699Z] Cron jobs started
+[2025-07-30T03:06:36.699Z] Running initial dependency check...
+[2025-07-30T03:06:41.078Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T03:06:41.078Z] Running security audit...
+[2025-07-30T03:06:41.081Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T03:06:41.081Z] Running security audit...
+[2025-07-30T03:06:43.495Z] No security vulnerabilities found
+[2025-07-30T03:06:43.499Z] No security vulnerabilities found
+[2025-07-30T03:40:06.067Z] Dependency Manager Extension stopped
+[2025-07-30T03:45:08.719Z] Initializing Dependency Manager Extension...
+[2025-07-30T03:45:08.768Z] Cron jobs started
+[2025-07-30T03:45:08.769Z] Running initial dependency check...
+[2025-07-30T03:45:08.771Z] Initializing Dependency Manager Extension...
+[2025-07-30T03:45:08.785Z] Cron jobs started
+[2025-07-30T03:45:08.786Z] Running initial dependency check...
+[2025-07-30T03:45:11.560Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T03:45:11.561Z] Running security audit...
+[2025-07-30T03:45:11.871Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T03:45:11.872Z] Running security audit...
+[2025-07-30T03:45:13.734Z] No security vulnerabilities found
+[2025-07-30T03:45:13.786Z] No security vulnerabilities found
+[2025-07-30T04:00:02.885Z] Error checking outdated dependencies: Command failed: npm outdated --json
+npm error code ENOENT
+npm error syscall stat
+npm error path /Users/miami2/.npm/_cacache/content-v2/sha512/1e/d6/904f6b4e4eb71fdfedbd5c9558b11268911a29f8d382bec3adf4d212faba81a9c1606bd232ba9117503cfbacf5a95516aa17ddf9298b2f4816aec4668e47
+npm error errno ENOENT
+npm error enoent Invalid response body while trying to fetch https://registry.npmjs.org/eslint-plugin-unused-imports: ENOENT: no such file or directory, stat '/Users/miami2/.npm/_cacache/content-v2/sha512/1e/d6/904f6b4e4eb71fdfedbd5c9558b11268911a29f8d382bec3adf4d212faba81a9c1606bd232ba9117503cfbacf5a95516aa17ddf9298b2f4816aec4668e47'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T04_00_00_279Z-debug-0.log
+
+[2025-07-30T04:00:03.036Z] Error checking outdated dependencies: Command failed: npm outdated --json
+npm error code ENOENT
+npm error syscall open
+npm error path /Users/miami2/.npm/_cacache/content-v2/sha512/1e/d6/904f6b4e4eb71fdfedbd5c9558b11268911a29f8d382bec3adf4d212faba81a9c1606bd232ba9117503cfbacf5a95516aa17ddf9298b2f4816aec4668e47
+npm error errno ENOENT
+npm error enoent Invalid response body while trying to fetch https://registry.npmjs.org/eslint-plugin-unused-imports: ENOENT: no such file or directory, open '/Users/miami2/.npm/_cacache/content-v2/sha512/1e/d6/904f6b4e4eb71fdfedbd5c9558b11268911a29f8d382bec3adf4d212faba81a9c1606bd232ba9117503cfbacf5a95516aa17ddf9298b2f4816aec4668e47'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T04_00_00_278Z-debug-0.log
+
+[2025-07-30T05:00:00.043Z] Updating dependencies...
+[2025-07-30T05:00:00.044Z] Updating dependencies...
+[2025-07-30T05:00:05.818Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T05:00:05.834Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T05:00:51.812Z] Dependencies updated successfully
+[2025-07-30T05:00:51.813Z] Dependencies updated successfully
+[2025-07-30T06:00:04.887Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T06:00:04.985Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T07:00:03.964Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T07:00:03.972Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T08:00:01.451Z] Error checking outdated dependencies: Command failed: npm outdated --json
+npm error code ENOENT
+npm error syscall stat
+npm error path /Users/miami2/.npm/_cacache/content-v2/sha512/11/4c/bd22b96f6015dc9565f5aafa7ad08e8edb97768f004b22f7b8d8132dc38a78d956df661c8a9fa7763bce953d84dbd1a1405e9510a6fbe0c896a6d58f9404
+npm error errno ENOENT
+npm error enoent Invalid response body while trying to fetch https://registry.npmjs.org/glob: ENOENT: no such file or directory, stat '/Users/miami2/.npm/_cacache/content-v2/sha512/11/4c/bd22b96f6015dc9565f5aafa7ad08e8edb97768f004b22f7b8d8132dc38a78d956df661c8a9fa7763bce953d84dbd1a1405e9510a6fbe0c896a6d58f9404'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T08_00_00_180Z-debug-0.log
+
+[2025-07-30T08:00:01.452Z] Error checking outdated dependencies: Command failed: npm outdated --json
+npm error code ENOENT
+npm error syscall stat
+npm error path /Users/miami2/.npm/_cacache/content-v2/sha512/be/7e/c8ab91fa88b394b91fdacca58176c22e5b64d89e4430ba8cf0ed138fa505375c34d329d8c6baf57bf68e313bbc21a4531a875ef739560dc1deb31fd722e6
+npm error errno ENOENT
+npm error enoent Invalid response body while trying to fetch https://registry.npmjs.org/axios: ENOENT: no such file or directory, stat '/Users/miami2/.npm/_cacache/content-v2/sha512/be/7e/c8ab91fa88b394b91fdacca58176c22e5b64d89e4430ba8cf0ed138fa505375c34d329d8c6baf57bf68e313bbc21a4531a875ef739560dc1deb31fd722e6'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T08_00_00_181Z-debug-0.log
+
+[2025-07-30T09:00:00.035Z] Running security audit...
+[2025-07-30T09:00:00.037Z] Running security audit...
+[2025-07-30T09:00:01.679Z] No security vulnerabilities found
+[2025-07-30T09:00:01.719Z] No security vulnerabilities found
+[2025-07-30T09:00:04.666Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T09:00:04.713Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T10:00:04.459Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T10:00:04.468Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T11:00:04.202Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T11:00:04.309Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T12:00:04.431Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T12:00:04.484Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T12:18:37.510Z] Dependency Manager Extension stopped
+[2025-07-30T12:20:20.546Z] Initializing Dependency Manager Extension...
+[2025-07-30T12:20:20.601Z] Cron jobs started
+[2025-07-30T12:20:20.602Z] Running initial dependency check...
+[2025-07-30T12:20:20.607Z] Initializing Dependency Manager Extension...
+[2025-07-30T12:20:20.632Z] Cron jobs started
+[2025-07-30T12:20:20.632Z] Running initial dependency check...
+[2025-07-30T12:20:35.277Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T12:20:35.278Z] Running security audit...
+[2025-07-30T12:20:35.648Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T12:20:35.648Z] Running security audit...
+[2025-07-30T12:20:42.934Z] No security vulnerabilities found
+[2025-07-30T12:20:43.013Z] No security vulnerabilities found
+[2025-07-30T12:32:46.384Z] Dependency Manager Extension stopped
+[2025-07-30T12:40:08.911Z] Initializing Dependency Manager Extension...
+[2025-07-30T12:40:08.964Z] Cron jobs started
+[2025-07-30T12:40:08.964Z] Running initial dependency check...
+[2025-07-30T12:40:08.967Z] Initializing Dependency Manager Extension...
+[2025-07-30T12:40:08.985Z] Cron jobs started
+[2025-07-30T12:40:08.985Z] Running initial dependency check...
+[2025-07-30T12:40:30.307Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T12:40:30.308Z] Running security audit...
+[2025-07-30T12:40:30.311Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T12:40:30.311Z] Running security audit...
+[2025-07-30T12:40:37.856Z] No security vulnerabilities found
+[2025-07-30T12:40:37.856Z] No security vulnerabilities found
+[2025-07-30T13:00:04.990Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T13:00:05.011Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T13:18:56.583Z] Dependency Manager Extension stopped
+[2025-07-30T13:20:08.060Z] Initializing Dependency Manager Extension...
+[2025-07-30T13:20:08.116Z] Cron jobs started
+[2025-07-30T13:20:08.117Z] Running initial dependency check...
+[2025-07-30T13:20:08.119Z] Initializing Dependency Manager Extension...
+[2025-07-30T13:20:08.134Z] Cron jobs started
+[2025-07-30T13:20:08.134Z] Running initial dependency check...
+[2025-07-30T13:20:11.017Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T13:20:11.017Z] Running security audit...
+[2025-07-30T13:20:11.034Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T13:20:11.034Z] Running security audit...
+[2025-07-30T13:20:12.987Z] No security vulnerabilities found
+[2025-07-30T13:20:13.002Z] No security vulnerabilities found
+[2025-07-30T14:00:12.269Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T14:00:12.519Z] Error checking outdated dependencies: Command failed: npm outdated --json
+
+[2025-07-30T14:08:40.627Z] Dependency Manager Extension stopped
+[2025-07-30T14:10:09.503Z] Initializing Dependency Manager Extension...
+[2025-07-30T14:10:09.552Z] Cron jobs started
+[2025-07-30T14:10:09.552Z] Running initial dependency check...
+[2025-07-30T14:10:09.555Z] Initializing Dependency Manager Extension...
+[2025-07-30T14:10:09.569Z] Cron jobs started
+[2025-07-30T14:10:09.569Z] Running initial dependency check...
+[2025-07-30T14:10:11.976Z] All dependencies are up to date
+[2025-07-30T14:10:11.977Z] Running security audit...
+[2025-07-30T14:10:12.006Z] All dependencies are up to date
+[2025-07-30T14:10:12.006Z] Running security audit...
+[2025-07-30T14:10:13.432Z] No security vulnerabilities found
+[2025-07-30T14:10:13.499Z] No security vulnerabilities found

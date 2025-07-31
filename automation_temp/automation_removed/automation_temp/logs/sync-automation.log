@@ -1,0 +1,20 @@
+[2025-07-29T22:36:11.415Z] INFO: Starting continuous multi-machine coordination...
+[2025-07-29T22:36:11.580Z] ERROR: Error updating machine status: Unexpected non-whitespace character after JSON at position 415 (line 21 column 1)
+[2025-07-29T22:36:11.668Z] ERROR: Error updating machine status: Unexpected non-whitespace character after JSON at position 415 (line 21 column 1)
+[2025-07-29T22:36:11.751Z] INFO: Starting coordinated sync...
+[2025-07-29T22:36:11.752Z] ERROR: Error updating machine status: Unexpected non-whitespace character after JSON at position 415 (line 21 column 1)
+[2025-07-29T22:36:11.753Z] INFO: Released sync lock
+[2025-07-29T22:36:11.754Z] INFO: Acquired sync lock
+[2025-07-29T22:36:11.754Z] ERROR: Error reading machines: Unexpected non-whitespace character after JSON at position 415 (line 21 column 1)
+[2025-07-29T22:36:11.755Z] ERROR: Error reading machines: Unexpected non-whitespace character after JSON at position 415 (line 21 column 1)
+[2025-07-29T22:36:11.756Z] INFO: Coordinator: Miami2-2.local-miami2, This machine is coordinator: true
+[2025-07-29T22:36:11.756Z] ERROR: Error updating machine status: Unexpected non-whitespace character after JSON at position 415 (line 21 column 1)
+[2025-07-29T22:36:11.757Z] INFO: Starting coordinated sync...
+[2025-07-29T22:36:11.757Z] ERROR: Error updating machine status: Unexpected non-whitespace character after JSON at position 415 (line 21 column 1)
+[2025-07-29T22:36:11.757Z] INFO: Acquired sync lock
+[2025-07-29T22:36:11.758Z] ERROR: Error reading machines: Unexpected non-whitespace character after JSON at position 415 (line 21 column 1)
+[2025-07-29T22:36:11.759Z] ERROR: Error reading machines: Unexpected non-whitespace character after JSON at position 415 (line 21 column 1)
+[2025-07-29T22:36:11.846Z] INFO: Coordinator: Miami2-2.local-miami2, This machine is coordinator: true
+[2025-07-29T22:36:11.931Z] INFO: Received SIGTERM, stopping coordination...
+[2025-07-29T22:36:11.932Z] INFO: Released sync lock
+[2025-07-29T22:36:11.932Z] ERROR: Error updating machine status: Unexpected non-whitespace character after JSON at position 415 (line 21 column 1)

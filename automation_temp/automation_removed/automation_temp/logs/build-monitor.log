@@ -1,0 +1,6 @@
+[2025-07-29T22:36:10.190Z] [INFO] Build monitor started
+[2025-07-29T22:36:10.195Z] [INFO] Check interval: 300 seconds
+[2025-07-29T22:36:10.195Z] [INFO] Starting full build check...
+[2025-07-29T22:36:10.196Z] [INFO] Running local build check...
+/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/startup-automation.sh: line 21: node: command not found
+/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/startup-automation.sh: line 21: node: command not found

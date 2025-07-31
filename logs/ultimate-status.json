@@ -1,0 +1,32 @@
+{
+  "checks": 151,
+  "issues": 0,
+  "fixes": 0,
+  "lastCheck": "2025-07-29T14:09:46.881Z",
+  "uptime": 1753797250350,
+  "systems": {
+    "husky": {
+      "status": "warning",
+      "lastCheck": "2025-07-29T14:09:45.717Z"
+    },
+    "cron": {
+      "status": "warning",
+      "jobCount": 1,
+      "lastCheck": "2025-07-29T14:09:45.737Z"
+    },
+    "systemService": {
+      "status": "healthy",
+      "lastCheck": "2025-07-29T14:09:45.760Z"
+    },
+    "watchdog": {
+      "status": "error",
+      "error": "Process not found",
+      "lastCheck": "2025-07-29T14:09:46.165Z"
+    },
+    "comprehensiveMonitor": {
+      "status": "error",
+      "error": "Process not found",
+      "lastCheck": "2025-07-29T14:09:46.553Z"
+    }
+  }
+}

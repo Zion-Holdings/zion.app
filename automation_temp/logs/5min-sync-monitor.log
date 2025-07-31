@@ -1,0 +1,14 @@
+[2025-07-30T02:54:00.704Z] [INFO] [Miami2-2.local] [5MIN-MONITOR] Starting 5-minute sync health check
+[2025-07-30T02:54:00.707Z] [INFO] [Miami2-2.local] [5MIN-MONITOR] Checking sync manager status
+[2025-07-30T02:54:00.722Z] [INFO] [Miami2-2.local] [5MIN-MONITOR] Sync manager is running
+[2025-07-30T02:54:00.722Z] [INFO] [Miami2-2.local] [5MIN-MONITOR] No sync needed at this time
+[2025-07-30T02:54:00.723Z] [INFO] [Miami2-2.local] [5MIN-MONITOR] Checking git status
+[2025-07-30T02:54:00.768Z] [INFO] [Miami2-2.local] [5MIN-MONITOR] Git status: 66 files modified
+[2025-07-30T02:54:00.768Z] [INFO] [Miami2-2.local] [5MIN-MONITOR] Checking for sync errors
+[2025-07-30T02:54:00.769Z] [INFO] [Miami2-2.local] [5MIN-MONITOR] No sync errors file found
+[2025-07-30T02:54:00.769Z] [INFO] [Miami2-2.local] [5MIN-MONITOR] Checking if sync is needed
+[2025-07-30T02:54:00.770Z] [INFO] [Miami2-2.local] [5MIN-MONITOR] Checking git status
+[2025-07-30T02:54:00.813Z] [INFO] [Miami2-2.local] [5MIN-MONITOR] Git status: 66 files modified
+[2025-07-30T02:54:00.813Z] [INFO] [Miami2-2.local] [5MIN-MONITOR] Changes detected, running sync
+[2025-07-30T02:54:02.184Z] [INFO] [Miami2-2.local] [5MIN-MONITOR] Sync completed successfully
+[2025-07-30T02:54:02.185Z] [INFO] [Miami2-2.local] [5MIN-MONITOR] 5-minute sync health check completed successfully

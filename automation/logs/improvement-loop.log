@@ -1,0 +1,1031 @@
+[2025-07-30T12:35:52.613Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T12:35:52.694Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T12:35:53.066Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T12:35:53.219Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T12:35:53.300Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T12:35:53.301Z] [INFO] [Miami2-2.local-miami2] Generating 1 improvements...
+[2025-07-30T12:35:53.301Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: Optimize CPU usage
+[2025-07-30T12:35:53.301Z] [INFO] [Miami2-2.local-miami2] Updating configuration: sync_interval
+[2025-07-30T12:35:53.301Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: Optimize CPU usage
+[2025-07-30T12:36:03.304Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T12:36:03.751Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T12:36:03.752Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: Optimize CPU usage
+[2025-07-30T12:36:03.760Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T12:36:03.760Z] [ERROR] [Miami2-2.local-miami2] Error updating learning data: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/data/learning-data.json'
+[2025-07-30T12:36:03.760Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: Optimize CPU usage - FAILED
+[2025-07-30T12:40:52.695Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T12:40:52.736Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T12:40:53.298Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T12:40:53.341Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T12:40:53.462Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T12:40:53.463Z] [INFO] [Miami2-2.local-miami2] Generating 1 improvements...
+[2025-07-30T12:40:53.463Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: Optimize CPU usage
+[2025-07-30T12:40:53.463Z] [INFO] [Miami2-2.local-miami2] Updating configuration: sync_interval
+[2025-07-30T12:40:53.464Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: Optimize CPU usage
+[2025-07-30T12:41:03.486Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T12:41:03.994Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T12:41:04.111Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: Optimize CPU usage
+[2025-07-30T12:41:04.112Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T12:41:04.114Z] [ERROR] [Miami2-2.local-miami2] Error updating learning data: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/data/learning-data.json'
+[2025-07-30T12:41:04.114Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: Optimize CPU usage - SUCCESS
+[2025-07-30T12:45:52.760Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T12:45:52.815Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T12:45:52.940Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T12:45:52.981Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T12:45:53.021Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T12:45:53.035Z] [INFO] [Miami2-2.local-miami2] No improvement opportunities identified
+[2025-07-30T12:50:52.843Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T12:50:52.884Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T12:50:52.958Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T12:50:52.998Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T12:50:52.999Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T12:50:53.001Z] [INFO] [Miami2-2.local-miami2] No improvement opportunities identified
+[2025-07-30T12:55:52.852Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T12:55:52.852Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T12:55:52.968Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T12:55:52.969Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T12:55:52.970Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T12:55:52.970Z] [INFO] [Miami2-2.local-miami2] No improvement opportunities identified
+[2025-07-30T13:00:52.558Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T13:00:52.558Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:00:52.647Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:00:52.648Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T13:00:52.648Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T13:00:52.649Z] [INFO] [Miami2-2.local-miami2] No improvement opportunities identified
+[2025-07-30T13:05:52.547Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T13:05:52.548Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:05:52.583Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:05:52.584Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T13:05:52.584Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T13:05:52.584Z] [INFO] [Miami2-2.local-miami2] No improvement opportunities identified
+[2025-07-30T13:10:52.535Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T13:10:52.575Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:10:52.634Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:10:52.635Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T13:10:52.636Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T13:10:52.636Z] [INFO] [Miami2-2.local-miami2] Generating 1 improvements...
+[2025-07-30T13:10:52.636Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: Optimize CPU usage
+[2025-07-30T13:10:52.636Z] [INFO] [Miami2-2.local-miami2] Updating configuration: sync_interval
+[2025-07-30T13:10:52.636Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: Optimize CPU usage
+[2025-07-30T13:11:02.636Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:11:02.733Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:11:02.773Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: Optimize CPU usage
+[2025-07-30T13:11:02.773Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:11:02.774Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: Optimize CPU usage - SUCCESS
+[2025-07-30T13:15:52.523Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T13:15:52.524Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:15:52.575Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:15:52.576Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T13:15:52.577Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T13:15:52.577Z] [INFO] [Miami2-2.local-miami2] Generating 1 improvements...
+[2025-07-30T13:15:52.577Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T13:15:52.577Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T13:15:52.577Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T13:15:52.577Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T13:16:02.578Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:16:02.634Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:16:02.635Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T13:16:02.635Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:16:02.636Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - FAILED
+[2025-07-30T13:20:52.549Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T13:20:52.550Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:20:52.881Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:20:52.881Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T13:20:52.882Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T13:20:52.882Z] [INFO] [Miami2-2.local-miami2] Generating 1 improvements...
+[2025-07-30T13:20:52.882Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T13:20:52.883Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T13:20:52.883Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T13:20:52.883Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T13:21:02.924Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:21:02.987Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:21:02.987Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T13:21:02.988Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:21:02.989Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T13:25:52.537Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T13:25:52.538Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:25:52.593Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:25:52.594Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T13:25:52.594Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T13:25:52.595Z] [INFO] [Miami2-2.local-miami2] Generating 2 improvements...
+[2025-07-30T13:25:52.595Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T13:25:52.595Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T13:25:52.595Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T13:25:52.595Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T13:26:02.595Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:26:02.689Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:26:02.729Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T13:26:02.770Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:26:02.851Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T13:26:02.932Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T13:26:02.974Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T13:26:03.015Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T13:26:03.056Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T13:26:13.177Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:26:13.391Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:26:13.391Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T13:26:13.392Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:26:13.393Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T13:30:52.727Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T13:30:52.769Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:30:53.223Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+
+[2025-07-30T13:30:53.224Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T13:30:53.224Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T13:30:53.224Z] [INFO] [Miami2-2.local-miami2] Generating 5 improvements...
+[2025-07-30T13:30:53.225Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: Optimize CPU usage
+[2025-07-30T13:30:53.225Z] [INFO] [Miami2-2.local-miami2] Updating configuration: sync_interval
+[2025-07-30T13:30:53.225Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: Optimize CPU usage
+[2025-07-30T13:31:03.226Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:31:03.363Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:31:03.403Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: Optimize CPU usage
+[2025-07-30T13:31:03.444Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:31:03.607Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: Optimize CPU usage - SUCCESS
+[2025-07-30T13:31:03.647Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T13:31:03.647Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T13:31:03.648Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T13:31:03.648Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T13:31:13.648Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:31:13.746Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:31:13.746Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T13:31:13.746Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:31:13.747Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T13:31:13.747Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T13:31:13.747Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T13:31:13.747Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T13:31:13.748Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T13:31:23.747Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:31:23.806Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:31:23.806Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T13:31:23.807Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:31:23.808Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T13:35:52.716Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T13:35:52.716Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:35:52.811Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:35:52.851Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T13:35:52.851Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T13:35:52.852Z] [INFO] [Miami2-2.local-miami2] Generating 8 improvements...
+[2025-07-30T13:35:52.853Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: Optimize CPU usage
+[2025-07-30T13:35:52.853Z] [INFO] [Miami2-2.local-miami2] Updating configuration: sync_interval
+[2025-07-30T13:35:52.853Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: Optimize CPU usage
+[2025-07-30T13:36:02.854Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:36:03.031Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:36:03.031Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: Optimize CPU usage
+[2025-07-30T13:36:03.032Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:36:03.033Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: Optimize CPU usage - FAILED
+[2025-07-30T13:36:03.033Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T13:36:03.033Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T13:36:03.033Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T13:36:03.034Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T13:36:13.033Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:36:13.090Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:36:13.091Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T13:36:13.092Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:36:13.093Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - FAILED
+[2025-07-30T13:36:13.093Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T13:36:13.093Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T13:36:13.093Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T13:36:13.093Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T13:36:23.095Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:36:23.192Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:36:23.232Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T13:36:23.273Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:36:23.354Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - FAILED
+[2025-07-30T13:40:52.764Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T13:40:52.772Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:40:52.865Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:40:52.866Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T13:40:52.867Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T13:40:52.867Z] [INFO] [Miami2-2.local-miami2] Generating 9 improvements...
+[2025-07-30T13:40:52.867Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: Optimize CPU usage
+[2025-07-30T13:40:52.867Z] [INFO] [Miami2-2.local-miami2] Updating configuration: sync_interval
+[2025-07-30T13:40:52.867Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: Optimize CPU usage
+[2025-07-30T13:41:02.873Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:41:03.118Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:41:03.118Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: Optimize CPU usage
+[2025-07-30T13:41:03.119Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:41:03.120Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: Optimize CPU usage - FAILED
+[2025-07-30T13:41:03.121Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: Optimize memory usage
+[2025-07-30T13:41:03.121Z] [INFO] [Miami2-2.local-miami2] Managing resources: cleanup_memory
+[2025-07-30T13:41:03.122Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: Optimize memory usage
+[2025-07-30T13:41:13.122Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:41:13.180Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:41:13.180Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: Optimize memory usage
+[2025-07-30T13:41:13.181Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:41:13.182Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: Optimize memory usage - FAILED
+[2025-07-30T13:41:13.182Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T13:41:13.182Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T13:41:13.183Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T13:41:13.183Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T13:41:23.209Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:41:23.307Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:41:23.307Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T13:41:23.308Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:41:23.309Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T13:45:52.752Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T13:45:52.792Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:45:53.004Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:45:53.044Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T13:45:53.166Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T13:45:53.207Z] [INFO] [Miami2-2.local-miami2] Generating 9 improvements...
+[2025-07-30T13:45:53.248Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: Optimize CPU usage
+[2025-07-30T13:45:53.288Z] [INFO] [Miami2-2.local-miami2] Updating configuration: sync_interval
+[2025-07-30T13:45:53.369Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: Optimize CPU usage
+[2025-07-30T13:46:03.409Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:46:03.463Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:46:03.503Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: Optimize CPU usage
+[2025-07-30T13:46:03.503Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:46:03.505Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: Optimize CPU usage - SUCCESS
+[2025-07-30T13:46:03.505Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T13:46:03.505Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T13:46:03.506Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T13:46:03.506Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T13:46:13.506Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:46:13.604Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:46:13.645Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T13:46:13.685Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:46:13.766Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T13:46:13.807Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T13:46:13.848Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T13:46:13.893Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T13:46:13.933Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T13:46:23.973Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:46:24.025Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:46:24.025Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T13:46:24.026Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:46:24.027Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T13:50:52.739Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T13:50:52.740Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:50:52.853Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:50:52.853Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T13:50:52.854Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T13:50:52.854Z] [INFO] [Miami2-2.local-miami2] Generating 12 improvements...
+[2025-07-30T13:50:52.854Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: Optimize CPU usage
+[2025-07-30T13:50:52.855Z] [INFO] [Miami2-2.local-miami2] Updating configuration: sync_interval
+[2025-07-30T13:50:52.855Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: Optimize CPU usage
+[2025-07-30T13:51:02.856Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:51:02.979Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:51:02.979Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: Optimize CPU usage
+[2025-07-30T13:51:02.980Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:51:02.981Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: Optimize CPU usage - SUCCESS
+[2025-07-30T13:51:02.981Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T13:51:02.982Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T13:51:02.982Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T13:51:02.982Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T13:51:13.020Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:51:13.969Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:51:13.969Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T13:51:13.970Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:51:13.971Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T13:51:13.971Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T13:51:13.971Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T13:51:13.971Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T13:51:13.972Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T13:51:23.995Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:51:24.149Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:51:24.264Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T13:51:24.510Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:51:24.651Z] [ERROR] [Miami2-2.local-miami2] Error loading learning data: Unexpected end of JSON input
+[2025-07-30T13:51:25.832Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - FAILED
+[2025-07-30T13:55:52.719Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T13:55:52.720Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:55:52.777Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:55:52.777Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T13:55:52.778Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T13:55:52.778Z] [INFO] [Miami2-2.local-miami2] Generating 1 improvements...
+[2025-07-30T13:55:52.778Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: Optimize CPU usage
+[2025-07-30T13:55:52.779Z] [INFO] [Miami2-2.local-miami2] Updating configuration: sync_interval
+[2025-07-30T13:55:52.779Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: Optimize CPU usage
+[2025-07-30T13:56:02.779Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T13:56:02.823Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T13:56:02.823Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: Optimize CPU usage
+[2025-07-30T13:56:02.824Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T13:56:02.824Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: Optimize CPU usage - SUCCESS
+[2025-07-30T14:00:52.709Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T14:00:52.713Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:00:52.863Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:00:52.868Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T14:00:52.869Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T14:00:52.870Z] [INFO] [Miami2-2.local-miami2] Generating 2 improvements...
+[2025-07-30T14:00:52.871Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: Optimize CPU usage
+[2025-07-30T14:00:52.872Z] [INFO] [Miami2-2.local-miami2] Updating configuration: sync_interval
+[2025-07-30T14:00:52.873Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: Optimize CPU usage
+[2025-07-30T14:01:02.926Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:01:03.307Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:01:03.352Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: Optimize CPU usage
+[2025-07-30T14:01:03.396Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:01:03.670Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: Optimize CPU usage - SUCCESS
+[2025-07-30T14:01:03.803Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:01:03.872Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:01:03.929Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:01:04.009Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:01:14.050Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:01:14.212Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:01:14.213Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:01:14.214Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:01:14.217Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T14:05:52.696Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T14:05:52.736Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:05:52.867Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:05:52.908Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T14:05:52.948Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T14:05:52.989Z] [INFO] [Miami2-2.local-miami2] Generating 4 improvements...
+[2025-07-30T14:05:53.030Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: Optimize CPU usage
+[2025-07-30T14:05:53.071Z] [INFO] [Miami2-2.local-miami2] Updating configuration: sync_interval
+[2025-07-30T14:05:53.112Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: Optimize CPU usage
+[2025-07-30T14:06:03.154Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:06:03.277Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:06:03.316Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: Optimize CPU usage
+[2025-07-30T14:06:03.317Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:06:03.317Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: Optimize CPU usage - SUCCESS
+[2025-07-30T14:06:03.318Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:06:03.318Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:06:03.318Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:06:03.318Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:06:13.319Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:06:13.378Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:06:13.378Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:06:13.379Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:06:13.380Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T14:06:13.380Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:06:13.380Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:06:13.380Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:06:13.380Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:06:23.381Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:06:23.435Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:06:23.436Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:06:23.436Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:06:23.437Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T14:10:52.684Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T14:10:52.693Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:10:52.962Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:10:52.963Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T14:10:52.964Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T14:10:52.964Z] [INFO] [Miami2-2.local-miami2] Generating 6 improvements...
+[2025-07-30T14:10:52.964Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:10:52.965Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:10:52.965Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:10:52.966Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:11:02.966Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:11:03.074Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:11:03.074Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:11:03.075Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:11:03.077Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - FAILED
+[2025-07-30T14:11:03.077Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:11:03.078Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:11:03.078Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:11:03.079Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:11:13.079Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:11:13.139Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:11:13.140Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:11:13.140Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:11:13.141Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - FAILED
+[2025-07-30T14:11:13.141Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:11:13.141Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:11:13.142Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:11:13.142Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:11:23.143Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:11:23.219Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:11:23.220Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:11:23.221Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:11:23.222Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - FAILED
+[2025-07-30T14:15:52.670Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T14:15:52.670Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:15:52.700Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:15:52.701Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T14:15:52.701Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T14:15:52.701Z] [INFO] [Miami2-2.local-miami2] Generating 6 improvements...
+[2025-07-30T14:15:52.702Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:15:52.702Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:15:52.702Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:15:52.702Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:16:02.702Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:16:02.879Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:16:02.880Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:16:02.883Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:16:02.894Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T14:16:02.895Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:16:02.898Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:16:02.903Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:16:02.904Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:16:12.907Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:16:12.984Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:16:12.985Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:16:12.986Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:16:12.986Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T14:16:12.986Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:16:12.987Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:16:12.987Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:16:12.987Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:16:22.987Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:16:23.062Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:16:23.102Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:16:23.143Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:16:23.224Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T14:20:52.658Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T14:20:52.659Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:20:52.693Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:20:52.694Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T14:20:52.694Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T14:20:52.694Z] [INFO] [Miami2-2.local-miami2] Generating 9 improvements...
+[2025-07-30T14:20:52.694Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:20:52.694Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:20:52.695Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:20:52.695Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:21:02.733Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:21:02.911Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:21:02.912Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:21:02.913Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:21:02.913Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T14:21:02.914Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:21:02.914Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:21:02.914Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:21:02.914Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:21:12.914Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:21:12.950Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:21:12.950Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:21:12.951Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:21:12.952Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T14:21:12.952Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:21:12.952Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:21:12.953Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:21:12.953Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:21:22.953Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:21:22.986Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:21:22.987Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:21:22.987Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:21:22.993Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T14:25:52.645Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T14:25:52.646Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:25:52.700Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:25:52.701Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T14:25:52.701Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T14:25:52.701Z] [INFO] [Miami2-2.local-miami2] Generating 12 improvements...
+[2025-07-30T14:25:52.702Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:25:52.702Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:25:52.702Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:25:52.702Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:26:02.703Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:26:02.919Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:26:03.003Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:26:03.006Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:26:03.066Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - FAILED
+[2025-07-30T14:26:03.067Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:26:03.344Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:26:03.344Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:26:03.344Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:26:13.504Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:26:13.911Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:26:14.322Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:26:14.370Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:26:14.622Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - FAILED
+[2025-07-30T14:26:14.663Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:26:14.813Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:26:14.863Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:26:14.945Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:26:25.017Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:26:25.343Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:26:25.349Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:26:25.354Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:26:25.413Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - FAILED
+[2025-07-30T14:30:52.635Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T14:30:52.676Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:30:52.837Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:30:52.878Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T14:30:52.919Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T14:30:52.960Z] [INFO] [Miami2-2.local-miami2] Generating 14 improvements...
+[2025-07-30T14:30:53.000Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: Optimize CPU usage
+[2025-07-30T14:30:53.001Z] [INFO] [Miami2-2.local-miami2] Updating configuration: sync_interval
+[2025-07-30T14:30:53.001Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: Optimize CPU usage
+[2025-07-30T14:31:03.001Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:31:03.181Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:31:03.239Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: Optimize CPU usage
+[2025-07-30T14:31:03.240Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:31:03.309Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: Optimize CPU usage - SUCCESS
+[2025-07-30T14:31:03.387Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: Optimize memory usage
+[2025-07-30T14:31:03.428Z] [INFO] [Miami2-2.local-miami2] Managing resources: cleanup_memory
+[2025-07-30T14:31:03.509Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: Optimize memory usage
+[2025-07-30T14:31:13.550Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:31:13.679Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:31:13.679Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: Optimize memory usage
+[2025-07-30T14:31:13.680Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:31:13.680Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: Optimize memory usage - SUCCESS
+[2025-07-30T14:31:13.681Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:31:13.681Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:31:13.681Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:31:13.681Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:31:23.680Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:31:23.815Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:31:23.892Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:31:23.892Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:31:23.893Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T14:35:53.979Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T14:35:56.119Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:36:05.854Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:36:08.526Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T14:36:08.798Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T14:36:08.848Z] [INFO] [Miami2-2.local-miami2] Generating 17 improvements...
+[2025-07-30T14:36:08.884Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: Optimize CPU usage
+[2025-07-30T14:36:08.985Z] [INFO] [Miami2-2.local-miami2] Updating configuration: sync_interval
+[2025-07-30T14:36:08.999Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: Optimize CPU usage
+[2025-07-30T14:36:19.438Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:36:28.448Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:36:28.883Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: Optimize CPU usage
+[2025-07-30T14:36:29.186Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:36:36.334Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: Optimize CPU usage - SUCCESS
+[2025-07-30T14:36:39.030Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: Optimize memory usage
+[2025-07-30T14:36:39.702Z] [INFO] [Miami2-2.local-miami2] Managing resources: cleanup_memory
+[2025-07-30T14:36:42.371Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: Optimize memory usage
+[2025-07-30T14:36:52.984Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:36:59.168Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:37:00.136Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: Optimize memory usage
+[2025-07-30T14:37:00.309Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:37:01.607Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: Optimize memory usage - SUCCESS
+[2025-07-30T14:37:01.655Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:37:01.784Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:37:02.100Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:37:02.359Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:37:12.588Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:37:17.053Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:37:18.198Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:37:18.808Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:37:26.343Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T14:40:52.960Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T14:40:56.202Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:41:29.899Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:41:35.567Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T14:41:36.646Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T14:41:37.105Z] [INFO] [Miami2-2.local-miami2] Generating 19 improvements...
+[2025-07-30T14:41:38.011Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: Optimize memory usage
+[2025-07-30T14:41:38.497Z] [INFO] [Miami2-2.local-miami2] Managing resources: cleanup_memory
+[2025-07-30T14:41:40.272Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: Optimize memory usage
+[2025-07-30T14:41:52.941Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:41:57.031Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:41:57.519Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: Optimize memory usage
+[2025-07-30T14:41:57.913Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:42:00.318Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: Optimize memory usage - SUCCESS
+[2025-07-30T14:42:00.801Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:42:01.643Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:42:02.243Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:42:02.844Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:42:13.537Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:42:14.031Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:42:14.502Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:42:14.942Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:42:16.747Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T14:42:17.125Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:42:17.552Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:42:17.914Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:42:18.233Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:42:28.717Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:42:29.704Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:42:29.995Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:42:30.279Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:42:31.011Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T14:45:52.610Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T14:45:52.845Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:45:53.127Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:45:53.211Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T14:45:53.310Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T14:45:53.417Z] [INFO] [Miami2-2.local-miami2] Generating 22 improvements...
+[2025-07-30T14:45:53.663Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: Optimize memory usage
+[2025-07-30T14:45:53.758Z] [INFO] [Miami2-2.local-miami2] Managing resources: cleanup_memory
+[2025-07-30T14:45:53.864Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: Optimize memory usage
+[2025-07-30T14:46:03.968Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:46:04.280Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:46:04.339Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: Optimize memory usage
+[2025-07-30T14:46:04.447Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:46:04.725Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: Optimize memory usage - SUCCESS
+[2025-07-30T14:46:04.885Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:46:05.005Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:46:05.122Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:46:05.233Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:46:15.351Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:46:15.777Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:46:15.830Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:46:15.916Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:46:16.127Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T14:46:16.223Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:46:16.318Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:46:16.424Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:46:16.524Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:46:26.614Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:46:26.793Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:46:26.860Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:46:26.954Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:46:27.360Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T14:50:52.599Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T14:50:52.690Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:50:52.784Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:50:52.913Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T14:50:52.998Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T14:50:53.089Z] [INFO] [Miami2-2.local-miami2] Generating 25 improvements...
+[2025-07-30T14:50:53.184Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: Optimize memory usage
+[2025-07-30T14:50:53.225Z] [INFO] [Miami2-2.local-miami2] Managing resources: cleanup_memory
+[2025-07-30T14:50:53.313Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: Optimize memory usage
+[2025-07-30T14:51:05.466Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:51:05.867Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:51:06.093Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: Optimize memory usage
+[2025-07-30T14:51:06.138Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:51:06.545Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: Optimize memory usage - SUCCESS
+[2025-07-30T14:51:06.663Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:51:06.785Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:51:06.896Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:51:06.975Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:51:17.204Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:51:17.501Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:51:17.603Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:51:17.643Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:51:18.026Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T14:51:18.129Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:51:18.225Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:51:18.426Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:51:18.667Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:51:28.776Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:51:29.034Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:51:29.147Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:51:29.268Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:51:29.718Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T14:55:52.588Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T14:55:52.590Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:55:52.621Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:55:52.621Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T14:55:52.621Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T14:55:52.622Z] [INFO] [Miami2-2.local-miami2] Generating 27 improvements...
+[2025-07-30T14:55:52.622Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:55:52.622Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:55:52.622Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:55:52.622Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:56:02.624Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:56:02.649Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:56:02.649Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:56:02.649Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:56:02.651Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T14:56:02.651Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:56:02.651Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:56:02.651Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:56:02.651Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:56:12.653Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:56:12.679Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:56:12.679Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:56:12.679Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:56:12.681Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T14:56:12.681Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T14:56:12.682Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T14:56:12.683Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T14:56:12.683Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T14:56:22.684Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T14:56:22.709Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T14:56:22.710Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T14:56:22.710Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T14:56:22.711Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T15:00:52.576Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T15:00:52.576Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T15:00:52.621Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T15:00:52.622Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T15:00:52.622Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T15:00:52.622Z] [INFO] [Miami2-2.local-miami2] Generating 30 improvements...
+[2025-07-30T15:00:52.622Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T15:00:52.623Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T15:00:52.623Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T15:00:52.623Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T15:01:02.624Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T15:01:02.649Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T15:01:02.650Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T15:01:02.650Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T15:01:02.651Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T15:01:02.651Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T15:01:02.651Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T15:01:02.651Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T15:01:02.652Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T15:01:12.652Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T15:01:12.678Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T15:01:12.678Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T15:01:12.678Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T15:01:12.679Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T15:01:12.680Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T15:01:12.680Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T15:01:12.680Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T15:01:12.680Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T15:01:22.683Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T15:01:22.708Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T15:01:22.709Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T15:01:22.709Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T15:01:22.710Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T15:05:52.564Z] [INFO] [Miami2-2.local-miami2] Starting improvement cycle...
+[2025-07-30T15:05:52.564Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T15:05:52.591Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T15:05:52.592Z] [INFO] [Miami2-2.local-miami2] Analyzing patterns in system data...
+[2025-07-30T15:05:52.592Z] [INFO] [Miami2-2.local-miami2] Identifying improvement opportunities...
+[2025-07-30T15:05:52.592Z] [INFO] [Miami2-2.local-miami2] Generating 33 improvements...
+[2025-07-30T15:05:52.593Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T15:05:52.593Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T15:05:52.593Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T15:05:52.593Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T15:06:02.594Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T15:06:02.622Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T15:06:02.622Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T15:06:02.622Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T15:06:02.623Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T15:06:02.624Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T15:06:02.624Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T15:06:02.624Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T15:06:02.624Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T15:06:12.624Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T15:06:12.652Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T15:06:12.652Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T15:06:12.653Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T15:06:12.654Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T15:06:12.654Z] [INFO] [Miami2-2.local-miami2] Implementing improvement: [object Object]
+[2025-07-30T15:06:12.654Z] [INFO] [Miami2-2.local-miami2] Implementing generic improvement: apply_improvement
+[2025-07-30T15:06:12.654Z] [INFO] [Miami2-2.local-miami2] Applied improvement: Apply learned improvement
+[2025-07-30T15:06:12.654Z] [INFO] [Miami2-2.local-miami2] Successfully implemented: [object Object]
+[2025-07-30T15:06:22.655Z] [INFO] [Miami2-2.local-miami2] Collecting system data for analysis...
+[2025-07-30T15:06:22.723Z] [ERROR] [Miami2-2.local-miami2] Error collecting system data: Command failed: git status --porcelain
+shell-init: error retrieving current directory: getcwd: cannot access parent directories: Operation not permitted
+fatal: Unable to read current working directory: Operation not permitted
+
+[2025-07-30T15:06:22.805Z] [INFO] [Miami2-2.local-miami2] Evaluating improvement: [object Object]
+[2025-07-30T15:06:22.887Z] [INFO] [Miami2-2.local-miami2] Updating learning data...
+[2025-07-30T15:06:22.888Z] [INFO] [Miami2-2.local-miami2] Improvement cycle completed: [object Object] - SUCCESS
+[2025-07-30T15:06:48.601Z] [INFO] [Miami2-2.local-miami2] Received SIGTERM, stopping improvement loop...

@@ -1,0 +1,16 @@
+{
+  "name": "cursor-master-launcher",
+  "version": "1.0.0",
+  "description": "Master launcher that coordinates all automation extensions",
+  "main": "extension.js",
+  "dependencies": {
+    "node-cron": "^3.0.3"
+  },
+  "keywords": [
+    "cursor",
+    "launcher",
+    "automation",
+    "coordination"
+  ],
+  "license": "MIT"
+}

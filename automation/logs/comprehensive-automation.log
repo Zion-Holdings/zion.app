@@ -1,0 +1,60 @@
+[2025-07-31T11:17:21.159Z] [INFO] Starting comprehensive build automation...
+[2025-07-31T11:17:21.167Z] [INFO] Starting comprehensive build check...
+[2025-07-31T11:17:26.182Z] [INFO] TypeScript errors found: 0
+[2025-07-31T11:17:26.182Z] [INFO] Comprehensive build automation started
+[2025-07-31T11:17:28.700Z] [INFO] ESLint errors found: 16
+[2025-07-31T11:17:32.879Z] [INFO] Prettier formatting issues found
+[2025-07-31T11:17:35.748Z] [INFO] No outdated dependencies found
+[2025-07-31T11:17:35.749Z] [INFO] Testing build...
+[2025-07-31T11:18:08.938Z] [INFO] Build test passed
+[2025-07-31T11:18:08.938Z] [WARN] Found 17 errors, triggering automatic fixes
+[2025-07-31T11:18:08.939Z] [INFO] Starting comprehensive fix process...
+[2025-07-31T11:18:08.939Z] [INFO] Fixing TypeScript errors...
+[2025-07-31T11:18:12.233Z] [INFO] Fixing ESLint errors...
+[2025-07-31T11:18:15.542Z] [INFO] Fixing Prettier formatting...
+[2025-07-31T11:18:19.286Z] [INFO] Fixing dependency issues...
+[2025-07-31T11:18:49.344Z] [INFO] Committing and pushing changes...
+[2025-07-31T11:18:51.362Z] [ERROR] Error committing and pushing changes: Command failed: git add .
+[2025-07-31T11:18:51.362Z] [INFO] Comprehensive fix process completed
+[2025-07-31T11:20:00.493Z] [INFO] Starting comprehensive build check...
+[2025-07-31T11:20:04.251Z] [INFO] TypeScript errors found: 0
+[2025-07-31T11:20:08.554Z] [INFO] ESLint errors found: 16
+[2025-07-31T11:20:12.765Z] [INFO] Prettier formatting issues found
+[2025-07-31T11:20:15.755Z] [INFO] No outdated dependencies found
+[2025-07-31T11:20:15.756Z] [INFO] Testing build...
+[2025-07-31T11:20:43.381Z] [ERROR] Build test failed: Command failed: npm run build
+(node:31860) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/next.config.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:31928) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/next.config.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:32015) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/next.config.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:32404) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/next.config.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+> Build error occurred
+[Error: ENOENT: no such file or directory, rename '/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/export/team.html' -> '/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/pages/team.html'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'rename',
+  path: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/export/team.html',
+  dest: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/pages/team.html'
+}
+
+[2025-07-31T11:20:43.382Z] [WARN] Found 17 errors, triggering automatic fixes
+[2025-07-31T11:20:43.382Z] [INFO] Starting comprehensive fix process...
+[2025-07-31T11:20:43.383Z] [INFO] Fixing TypeScript errors...
+[2025-07-31T11:20:48.248Z] [INFO] Fixing ESLint errors...
+[2025-07-31T11:20:52.454Z] [INFO] Fixing Prettier formatting...
+[2025-07-31T11:20:58.924Z] [INFO] Fixing dependency issues...
+[2025-07-31T11:21:17.360Z] [INFO] Committing and pushing changes...
+[2025-07-31T11:21:17.789Z] [ERROR] Error committing and pushing changes: Command failed: git commit -m "Auto-fix: Comprehensive build issues resolved at 2025-07-31T11:21:17.678Z"
+[2025-07-31T11:21:17.789Z] [INFO] Comprehensive fix process completed

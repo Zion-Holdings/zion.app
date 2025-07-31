@@ -1,0 +1,28 @@
+[
+  {
+    "timestamp": "2025-07-30T11:00:00.839Z",
+    "extensions": [
+      {
+        "name": "auto-improver",
+        "status": "running"
+      },
+      {
+        "name": "file-watcher",
+        "status": "running"
+      },
+      {
+        "name": "dependency-manager",
+        "status": "running"
+      },
+      {
+        "name": "build-monitor",
+        "status": "running"
+      }
+    ],
+    "buildStatus": "failed",
+    "dependencies": "unknown",
+    "errors": [
+      "Build failed: Command failed: npm run build\nFailed to compile.\n\n./pages/_app.tsx:3:20\nType error: Cannot find module '@/components/layout/layout' or its corresponding type declarations.\n\n\u001b[0m \u001b[90m 1 |\u001b[39m \u001b[36mimport\u001b[39m type { \u001b[33mAppProps\u001b[39m } \u001b[36mfrom\u001b[39m \u001b[32m\"next/app\"\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 2 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m\"@/styles/globals.css\"\u001b[39m\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 3 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[33mLayout\u001b[39m \u001b[36mfrom\u001b[39m \u001b[32m\"@/components/layout/layout\"\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 4 |\u001b[39m\n \u001b[90m 5 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m \u001b[36mfunction\u001b[39m \u001b[33mApp\u001b[39m({ \u001b[33mComponent\u001b[39m\u001b[33m,\u001b[39m pageProps }\u001b[33m:\u001b[39m \u001b[33mAppProps\u001b[39m) {\n \u001b[90m 6 |\u001b[39m   \u001b[36mreturn\u001b[39m (\u001b[0m\nNext.js build worker exited with code: 1 and signal: null\n"
+    ]
+  }
+]

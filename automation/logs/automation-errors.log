@@ -1,0 +1,29 @@
+[2025-07-31T11:18:51.362Z] [ERROR] Error committing and pushing changes: Command failed: git add .
+[2025-07-31T11:20:43.381Z] [ERROR] Build test failed: Command failed: npm run build
+(node:31860) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/next.config.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:31928) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/next.config.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:32015) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/next.config.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:32404) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/next.config.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+> Build error occurred
+[Error: ENOENT: no such file or directory, rename '/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/export/team.html' -> '/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/pages/team.html'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'rename',
+  path: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/export/team.html',
+  dest: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/pages/team.html'
+}
+
+[2025-07-31T11:21:17.789Z] [ERROR] Error committing and pushing changes: Command failed: git commit -m "Auto-fix: Comprehensive build issues resolved at 2025-07-31T11:21:17.678Z"

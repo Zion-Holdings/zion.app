@@ -1,0 +1,25 @@
+{
+  "lastCheck": "2025-07-30T12:40:30.659Z",
+  "jobs": {
+    "healthCheck": {
+      "lastRun": "2025-07-30T12:30:00.080Z",
+      "duration": 0,
+      "success": false,
+      "error": "ComprehensiveLoggingSystem is not a constructor"
+    },
+    "gitSync": {
+      "lastRun": "2025-07-30T12:30:08.338Z",
+      "duration": 8255,
+      "success": true,
+      "error": null
+    },
+    "errorRecovery": {
+      "lastRun": "2025-07-30T12:40:30.658Z",
+      "duration": 622317,
+      "success": true,
+      "error": null
+    }
+  },
+  "errors": 2,
+  "fixes": 0
+}

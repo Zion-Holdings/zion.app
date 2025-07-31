@@ -1,0 +1,34 @@
+[2025-07-30T13:51:35.766Z] [INFO] [Miami2-2.local-miami2] Starting comprehensive sync automation check
+[2025-07-30T13:52:00.496Z] [WARN] [Miami2-2.local-miami2] multi-machine-sync-monitor is not healthy, attempting restart
+[2025-07-30T13:52:00.576Z] [ERROR] [Miami2-2.local-miami2] Failed to stop multi-machine-sync-monitor: Command failed: pkill -f "multi-machine-sync-monitor"
+[2025-07-30T13:52:22.262Z] [INFO] [Miami2-2.local-miami2] Started multi-machine-sync-monitor with PID 23662
+[2025-07-30T13:52:42.047Z] [WARN] [Miami2-2.local-miami2] simple-multi-sync is not healthy, attempting restart
+[2025-07-30T13:52:42.119Z] [ERROR] [Miami2-2.local-miami2] Failed to stop simple-multi-sync: Command failed: pkill -f "simple-multi-sync"
+[2025-07-30T13:52:55.409Z] [INFO] [Miami2-2.local-miami2] Started simple-multi-sync with PID 25567
+[2025-07-30T13:52:55.690Z] [INFO] [Miami2-2.local-miami2] Check completed in 79923ms
+[2025-07-30T13:52:55.690Z] [INFO] [Miami2-2.local-miami2] Processes checked: 2
+[2025-07-30T13:52:55.691Z] [INFO] [Miami2-2.local-miami2] Stale locks cleaned: 0
+[2025-07-30T13:52:55.691Z] [INFO] [Miami2-2.local-miami2] Conflicts resolved: 0
+[2025-07-30T13:57:29.861Z] [INFO] [Miami2-2.local-miami2] Starting continuous sync automation monitoring
+[2025-07-30T13:57:29.866Z] [INFO] [Miami2-2.local-miami2] Starting all sync automation processes
+[2025-07-30T13:57:38.933Z] [INFO] [Miami2-2.local-miami2] multi-machine-sync-monitor is already running
+[2025-07-30T13:57:47.439Z] [INFO] [Miami2-2.local-miami2] simple-multi-sync is already running
+[2025-07-30T13:57:48.440Z] [INFO] [Miami2-2.local-miami2] Starting comprehensive sync automation check
+[2025-07-30T13:58:00.873Z] [WARN] [Miami2-2.local-miami2] simple-multi-sync is not healthy, attempting restart
+[2025-07-30T13:58:00.883Z] [ERROR] [Miami2-2.local-miami2] Failed to stop simple-multi-sync: Command failed: kill 41336
+[2025-07-30T13:58:08.190Z] [INFO] [Miami2-2.local-miami2] Started simple-multi-sync with PID 43972
+[2025-07-30T13:58:08.351Z] [INFO] [Miami2-2.local-miami2] Check completed in 19910ms
+[2025-07-30T13:58:08.352Z] [INFO] [Miami2-2.local-miami2] Processes checked: 2
+[2025-07-30T13:58:08.352Z] [INFO] [Miami2-2.local-miami2] Stale locks cleaned: 0
+[2025-07-30T13:58:08.352Z] [INFO] [Miami2-2.local-miami2] Conflicts resolved: 0
+[2025-07-30T13:58:08.353Z] [INFO] [Miami2-2.local-miami2] Starting comprehensive sync automation check
+[2025-07-30T13:58:13.689Z] [WARN] [Miami2-2.local-miami2] multi-machine-sync-monitor is not healthy, attempting restart
+[2025-07-30T13:58:13.698Z] [ERROR] [Miami2-2.local-miami2] Failed to stop multi-machine-sync-monitor: Command failed: kill 41310
+[2025-07-30T13:58:21.819Z] [INFO] [Miami2-2.local-miami2] Started multi-machine-sync-monitor with PID 44485
+[2025-07-30T13:58:28.818Z] [WARN] [Miami2-2.local-miami2] simple-multi-sync is not healthy, attempting restart
+[2025-07-30T13:58:28.828Z] [ERROR] [Miami2-2.local-miami2] Failed to stop simple-multi-sync: Command failed: kill 43972
+[2025-07-30T13:58:37.139Z] [INFO] [Miami2-2.local-miami2] Started simple-multi-sync with PID 45152
+[2025-07-30T13:58:37.297Z] [INFO] [Miami2-2.local-miami2] Check completed in 28943ms
+[2025-07-30T13:58:37.297Z] [INFO] [Miami2-2.local-miami2] Processes checked: 2
+[2025-07-30T13:58:37.297Z] [INFO] [Miami2-2.local-miami2] Stale locks cleaned: 0
+[2025-07-30T13:58:37.297Z] [INFO] [Miami2-2.local-miami2] Conflicts resolved: 0

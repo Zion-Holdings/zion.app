@@ -1,0 +1,14 @@
+nohup: node /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/error-monitor.cjs: No such file or directory
+[2025-07-30T12:50:30.039Z] Starting error monitor...
+[2025-07-30T12:50:30.215Z] Process cleanup completed
+[2025-07-30T12:50:30.216Z] Error detected in comprehensive-errors.log: [2025-07-30T12:45:00.823Z] [ERROR] Failed to restart cron jobs: Command failed: pkill -f "node.*cron"
+[2025-07-30T12:50:30.313Z] Process cleanup completed
+[2025-07-30T12:50:30.313Z] Error detected in comprehensive-errors.log: [2025-07-30T12:50:00.197Z] [ERROR] Failed to restart cron jobs: Command failed: pkill -f "node.*cron"
+[2025-07-30T12:50:30.425Z] Process cleanup completed
+[2025-07-30T12:50:30.495Z] Error monitor completed
+Error detected in /Users/miami2/Documents/GitHub/bolt.new.zion.app/logs/comprehensive-errors.log
+Error detected in /Users/miami2/Documents/GitHub/bolt.new.zion.app/logs/auto-improver.log
+Error detected in /Users/miami2/Documents/GitHub/bolt.new.zion.app/logs/build-monitor.log
+Error detected in /Users/miami2/Documents/GitHub/bolt.new.zion.app/logs/comprehensive-errors.log
+Error detected in /Users/miami2/Documents/GitHub/bolt.new.zion.app/logs/auto-improver.log
+Error detected in /Users/miami2/Documents/GitHub/bolt.new.zion.app/logs/build-monitor.log

@@ -1,0 +1,13 @@
+[2025-07-30T03:04:12.170Z] [INFO] Merge Conflict Manager initialized
+[2025-07-30T03:04:12.173Z] [INFO] Starting merge conflict monitoring...
+[2025-07-30T03:04:12.212Z] [INFO] Starting merge conflict check...
+.git
+main
+[2025-07-30T03:04:12.272Z] [ERROR] Error getting current branch: Cannot read properties of null (reading 'trim')
+[2025-07-30T03:04:12.272Z] [INFO] Current branch: unknown
+[2025-07-30T03:04:12.272Z] [INFO] Fetching latest changes from remote...
+[2025-07-30T03:04:13.408Z] [INFO] Merge conflict monitoring started
+[2025-07-30T03:04:13.409Z] [INFO] No merge conflicts detected
+main
+[2025-07-30T03:04:13.438Z] [ERROR] Error getting current branch: Cannot read properties of null (reading 'trim')
+[2025-07-30T03:04:13.469Z] [INFO] No changes to push

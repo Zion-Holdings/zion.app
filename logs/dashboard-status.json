@@ -1,0 +1,362 @@
+{
+  "timestamp": "2025-07-30T12:58:36.076Z",
+  "processes": {
+    "error": "Failed to check processes"
+  },
+  "logs": {
+    "advanced-error-fixer.log": {
+      "size": 50836,
+      "lastModified": "2025-07-29T22:36:11.303Z",
+      "hasErrors": true
+    },
+    "ai-communication-error.log": {
+      "size": 4269512,
+      "lastModified": "2025-07-30T12:58:29.642Z",
+      "hasErrors": false
+    },
+    "ai-communication.log": {
+      "size": 0,
+      "lastModified": "2025-07-29T22:29:55.358Z",
+      "hasErrors": false
+    },
+    "auto-fix.log": {
+      "size": 119,
+      "lastModified": "2025-07-30T12:50:27.609Z",
+      "hasErrors": false
+    },
+    "auto-improver.log": {
+      "size": 1029453,
+      "lastModified": "2025-07-30T12:56:13.579Z",
+      "hasErrors": false
+    },
+    "automation-launch.log": {
+      "size": 671,
+      "lastModified": "2025-07-30T12:50:30.526Z",
+      "hasErrors": true
+    },
+    "automation-manager.log": {
+      "size": 23451,
+      "lastModified": "2025-07-30T03:09:34.610Z",
+      "hasErrors": false
+    },
+    "automation.log": {
+      "size": 183,
+      "lastModified": "2025-07-30T12:58:32.570Z",
+      "hasErrors": false
+    },
+    "build-automation.log": {
+      "size": 6155,
+      "lastModified": "2025-07-29T22:29:55.368Z",
+      "hasErrors": false
+    },
+    "build-monitor.log": {
+      "size": 8036731,
+      "lastModified": "2025-07-30T12:58:30.818Z",
+      "hasErrors": false
+    },
+    "comprehensive-error-monitor.log": {
+      "size": 2687,
+      "lastModified": "2025-07-30T12:28:34.553Z",
+      "hasErrors": true
+    },
+    "comprehensive-errors.log": {
+      "size": 35123,
+      "lastModified": "2025-07-30T12:55:00.688Z",
+      "hasErrors": true
+    },
+    "comprehensive-fixes.log": {
+      "size": 79571,
+      "lastModified": "2025-07-30T12:55:01.748Z",
+      "hasErrors": false
+    },
+    "cron-manager.log": {
+      "size": 1075238,
+      "lastModified": "2025-07-30T12:40:30.660Z",
+      "hasErrors": false
+    },
+    "cron-sync.log": {
+      "size": 327,
+      "lastModified": "2025-07-30T02:58:30.998Z",
+      "hasErrors": false
+    },
+    "cursor-extensions.log": {
+      "size": 30831,
+      "lastModified": "2025-07-30T12:55:00.025Z",
+      "hasErrors": false
+    },
+    "dashboard.log": {
+      "size": 265,
+      "lastModified": "2025-07-30T12:58:36.076Z",
+      "hasErrors": false
+    },
+    "dependency-manager.log": {
+      "size": 8807,
+      "lastModified": "2025-07-30T12:40:37.857Z",
+      "hasErrors": false
+    },
+    "enhanced-husky-automation.log": {
+      "size": 208,
+      "lastModified": "2025-07-29T22:29:55.375Z",
+      "hasErrors": false
+    },
+    "error-monitor.log": {
+      "size": 726,
+      "lastModified": "2025-07-30T12:50:30.496Z",
+      "hasErrors": true
+    },
+    "file-watcher.log": {
+      "size": 2625003,
+      "lastModified": "2025-07-30T12:58:34.142Z",
+      "hasErrors": false
+    },
+    "husky-auto-fixer.log": {
+      "size": 148,
+      "lastModified": "2025-07-29T22:29:55.441Z",
+      "hasErrors": false
+    },
+    "husky-automation-start.log": {
+      "size": 860,
+      "lastModified": "2025-07-30T02:51:48.172Z",
+      "hasErrors": false
+    },
+    "husky-automation.log": {
+      "size": 1085,
+      "lastModified": "2025-07-30T02:51:48.217Z",
+      "hasErrors": false
+    },
+    "husky-cron-execution.log": {
+      "size": 432,
+      "lastModified": "2025-07-29T22:29:55.442Z",
+      "hasErrors": true
+    },
+    "husky-cron-manager.log": {
+      "size": 680,
+      "lastModified": "2025-07-29T22:29:55.443Z",
+      "hasErrors": false
+    },
+    "husky-cron.log": {
+      "size": 1010,
+      "lastModified": "2025-07-29T22:29:55.444Z",
+      "hasErrors": false
+    },
+    "husky-error-fixer.log": {
+      "size": 3048,
+      "lastModified": "2025-07-30T02:51:46.345Z",
+      "hasErrors": false
+    },
+    "husky-monitor.log": {
+      "size": 3096,
+      "lastModified": "2025-07-30T02:51:48.113Z",
+      "hasErrors": false
+    },
+    "independent-automation.log": {
+      "size": 690,
+      "lastModified": "2025-07-30T03:13:08.933Z",
+      "hasErrors": false
+    },
+    "infinite-improvement-loop.log": {
+      "size": 2495,
+      "lastModified": "2025-07-29T22:29:55.444Z",
+      "hasErrors": false
+    },
+    "launchd-error.log": {
+      "size": 4303875,
+      "lastModified": "2025-07-30T12:58:29.344Z",
+      "hasErrors": false
+    },
+    "launchd.log": {
+      "size": 0,
+      "lastModified": "2025-07-29T22:29:55.448Z",
+      "hasErrors": false
+    },
+    "master-launcher.log": {
+      "size": 116465,
+      "lastModified": "2025-07-30T12:58:09.143Z",
+      "hasErrors": false
+    },
+    "system-service-error.log": {
+      "size": 4237076,
+      "lastModified": "2025-07-30T12:58:30.367Z",
+      "hasErrors": false
+    },
+    "system-service.log": {
+      "size": 3846,
+      "lastModified": "2025-07-30T12:55:28.330Z",
+      "hasErrors": false
+    },
+    "ultimate-automation-manager.log": {
+      "size": 255292,
+      "lastModified": "2025-07-29T22:29:55.462Z",
+      "hasErrors": false
+    }
+  },
+  "errors": [
+    {
+      "file": "advanced-error-fixer.log",
+      "error": "[2025-07-29T22:36:11.270Z] ✗ Failed to fix TypeScript config: Expected ',' or '}' after property value in JSON at position 52 (line 4 column 5)",
+      "timestamp": "2025-07-30T12:58:36.214Z"
+    },
+    {
+      "file": "automation-launch.log",
+      "error": "[2025-07-30T12:50:27.3NZ] Failed to start error-monitor",
+      "timestamp": "2025-07-30T12:58:36.251Z"
+    },
+    {
+      "file": "automation-launch.log",
+      "error": "[2025-07-30T12:50:29.3NZ] Failed to start auto-fix",
+      "timestamp": "2025-07-30T12:58:36.251Z"
+    },
+    {
+      "file": "comprehensive-error-monitor.log",
+      "error": "[2025-07-30T12:28:34.553Z] [ERROR] Failed to fix MODULE_NOT_FOUND error: Command failed: yarn install",
+      "timestamp": "2025-07-30T12:58:36.275Z"
+    },
+    {
+      "file": "comprehensive-errors.log",
+      "error": "[2025-07-30T12:45:00.823Z] [ERROR] Failed to restart cron jobs: Command failed: pkill -f \"node.*cron\"",
+      "timestamp": "2025-07-30T12:58:36.276Z"
+    },
+    {
+      "file": "comprehensive-errors.log",
+      "error": "[2025-07-30T12:50:00.197Z] [ERROR] Failed to restart cron jobs: Command failed: pkill -f \"node.*cron\"",
+      "timestamp": "2025-07-30T12:58:36.276Z"
+    },
+    {
+      "file": "comprehensive-errors.log",
+      "error": "[2025-07-30T12:55:00.688Z] [ERROR] Failed to restart cron jobs: Command failed: pkill -f \"node.*cron\"",
+      "timestamp": "2025-07-30T12:58:36.276Z"
+    },
+    {
+      "file": "error-monitor.log",
+      "error": "[2025-07-30T12:50:30.216Z] Error detected in comprehensive-errors.log: [2025-07-30T12:45:00.823Z] [ERROR] Failed to restart cron jobs: Command failed: pkill -f \"node.*cron\"",
+      "timestamp": "2025-07-30T12:58:36.281Z"
+    },
+    {
+      "file": "error-monitor.log",
+      "error": "[2025-07-30T12:50:30.313Z] Error detected in comprehensive-errors.log: [2025-07-30T12:50:00.197Z] [ERROR] Failed to restart cron jobs: Command failed: pkill -f \"node.*cron\"",
+      "timestamp": "2025-07-30T12:58:36.281Z"
+    },
+    {
+      "file": "husky-cron-execution.log",
+      "error": "[2025-07-29 10:10:00] ERROR: Node.js is not available",
+      "timestamp": "2025-07-30T12:58:36.290Z"
+    },
+    {
+      "file": "husky-cron-execution.log",
+      "error": "[2025-07-29 10:20:00] ERROR: Node.js is not available",
+      "timestamp": "2025-07-30T12:58:36.290Z"
+    },
+    {
+      "file": "husky-cron-execution.log",
+      "error": "[2025-07-29 11:00:00] ERROR: Node.js is not available",
+      "timestamp": "2025-07-30T12:58:36.290Z"
+    },
+    {
+      "file": "husky-cron-execution.log",
+      "error": "[2025-07-29 11:05:00] ERROR: Node.js is not available",
+      "timestamp": "2025-07-30T12:58:36.290Z"
+    },
+    {
+      "file": "husky-cron-execution.log",
+      "error": "[2025-07-29 11:10:00] ERROR: Node.js is not available",
+      "timestamp": "2025-07-30T12:58:36.290Z"
+    },
+    {
+      "file": "husky-cron-execution.log",
+      "error": "[2025-07-29 12:40:00] ERROR: Node.js is not available",
+      "timestamp": "2025-07-30T12:58:36.290Z"
+    },
+    {
+      "file": "husky-cron-execution.log",
+      "error": "[2025-07-29 16:50:00] ERROR: Node.js is not available",
+      "timestamp": "2025-07-30T12:58:36.290Z"
+    },
+    {
+      "file": "husky-cron-execution.log",
+      "error": "[2025-07-29 17:00:00] ERROR: Node.js is not available",
+      "timestamp": "2025-07-30T12:58:36.290Z"
+    }
+  ],
+  "fixes": [],
+  "git": {
+    "hasChanges": true,
+    "changes": [
+      "M .cursor/extensions/extension-manager/src/ExtensionManager.ts",
+      " M automation/auto-fix-script.js",
+      " M automation/chrome-automation.js",
+      " M automation/launch-automation.sh",
+      " M automation/logs/cron-build.log",
+      " M automation/logs/cron-error.log",
+      " M automation/logs/cron-sync.log",
+      " M automation/logs/git-cron.log",
+      " M automation/logs/improvement-loop.log",
+      " M automation/logs/launchd-error.log",
+      " M logs/ai-communication-error.log",
+      " M logs/auto-improver.log",
+      " M logs/build-monitor.log",
+      " M logs/comprehensive-fixes.log",
+      " M logs/comprehensive-status.json",
+      " M logs/dashboard.log",
+      " M logs/file-watcher.log",
+      " M logs/launchd-error.log",
+      " M logs/master-launcher.log",
+      " M logs/system-service-error.log",
+      " M logs/system-service.log",
+      " M package-lock.json",
+      " M package.json",
+      " M src/utils/supabase/server.ts",
+      " M tsconfig.tsbuildinfo",
+      "?? .cursor/extensions/performance-optimizer/extension.js",
+      "?? .cursor/rules/",
+      "?? automation/automation-monitor.js",
+      "?? automation/automation-monitor.sh",
+      "?? automation/automation-system.js",
+      "?? automation/check-automation-status.sh",
+      "?? automation/code-optimization-runner.sh",
+      "?? automation/content-generation-runner.sh",
+      "?? automation/cron-monitor-and-fixer.js",
+      "?? automation/feature-generation-runner.sh",
+      "?? automation/independent-automation-launcher.sh",
+      "?? automation/netlify-monitor.js",
+      "?? automation/simple-automation.js",
+      "?? automation/start-automation.sh",
+      "?? automation/stop-automation.sh",
+      "?? components/ui/dropdown-menu.tsx",
+      "?? logs/automation.log"
+    ]
+  },
+  "cron": {
+    "jobs": [
+      "#!/bin/bash",
+      "# Enhanced Autonomous System Cron Jobs",
+      "# Generated automatically",
+      "# Minute sync job",
+      "* * * * * cd /Users/miami2/Documents/GitHub/bolt.new.zion.app && node automation/enhanced-autonomous-system.js sync >> /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/logs/cron-sync.log 2>&1",
+      "# Build monitor job (every 5 minutes)",
+      "*/5 * * * * cd /Users/miami2/Documents/GitHub/bolt.new.zion.app && node automation/enhanced-autonomous-system.js build >> /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/logs/cron-build.log 2>&1",
+      "# Error monitor job (every 2 minutes)",
+      "*/2 * * * * cd /Users/miami2/Documents/GitHub/bolt.new.zion.app && node automation/enhanced-autonomous-system.js error >> /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/logs/cron-error.log 2>&1",
+      "# Performance monitor job (every 10 minutes)",
+      "*/10 * * * * cd /Users/miami2/Documents/GitHub/bolt.new.zion.app && node automation/enhanced-autonomous-system.js performance >> /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/logs/cron-performance.log 2>&1",
+      "*/5 * * * * cd $(pwd) && node automation/comprehensive-error-monitor.js",
+      "*/10 * * * * cd $(pwd) && node automation/auto-fix-script.js",
+      "0 2 * * * cd $(pwd) && find logs -name \"*.log\" -mtime +7 -delete",
+      "0 3 * * * cd $(pwd) && git add . && git commit -m \"Daily auto-commit\"",
+      "*/30 * * * * cd $(pwd) && npm run build 2>/dev/null || echo \"Build check\"*/5 * * * * /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/git-cron-monitor.sh >> /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/logs/git-cron.log 2>&1",
+      "*/5 * * * * /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/git-cron-monitor.sh >> /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/logs/git-cron.log 2>&1",
+      "*/5 * * * * cd $(pwd) && node automation/comprehensive-error-monitor.js",
+      "*/10 * * * * cd $(pwd) && node automation/auto-fix-script.js",
+      "0 2 * * * cd $(pwd) && find logs -name \"*.log\" -mtime +7 -delete",
+      "0 3 * * * cd $(pwd) && git add . && git commit -m \"Daily auto-commit\"",
+      "*/30 * * * * cd $(pwd) && npm run build 2>/dev/null || echo \"Build check\"*/5 * * * * cd /Users/miami2/Documents/GitHub/bolt.new.zion.app && node /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/auto-fix-script.js >> /Users/miami2/Documents/GitHub/bolt.new.zion.app/logs/cron-auto-fix.log 2>&1",
+      "*/10 * * * * cd /Users/miami2/Documents/GitHub/bolt.new.zion.app && find /Users/miami2/Documents/GitHub/bolt.new.zion.app/logs -name '*.log' -mmin -5 -exec grep -l 'ERROR\\|Failed' {} \\; | head -5 | xargs -I {} echo 'Error detected in {}' >> /Users/miami2/Documents/GitHub/bolt.new.zion.app/logs/error-monitor.log",
+      "*/30 * * * * cd /Users/miami2/Documents/GitHub/bolt.new.zion.app && git add . && git commit -m 'Auto-fix: System maintenance' && git push >> /Users/miami2/Documents/GitHub/bolt.new.zion.app/logs/cron-git.log 2>&1",
+      "0 2 * * * find /Users/miami2/Documents/GitHub/bolt.new.zion.app/logs -name '*.log' -mtime +7 -delete",
+      "*/5 * * * * /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/automation-monitor.sh # Monitor automation system",
+      "0 * * * * /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/content-generation-runner.sh # Generate new content",
+      "0 */2 * * * * /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/feature-generation-runner.sh # Generate new features",
+      "0 */4 * * * /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/code-optimization-runner.sh # Optimize code",
+      "@reboot /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/independent-automation-launcher.sh # Start automation on boot"
+    ]
+  }
+}

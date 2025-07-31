@@ -1,0 +1,691 @@
+[2025-07-30T19:10:41.100Z] [INFO] All autonomous agents initialized
+[2025-07-30T19:10:41.114Z] [INFO] Enhanced autonomous system monitoring started
+[2025-07-30T19:10:41.114Z] [INFO] 🚀 Starting Enhanced Autonomous System...
+[2025-07-30T19:10:41.116Z] [INFO] Enhanced Autonomous System started successfully
+[2025-07-30T19:11:00.125Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T19:11:03.196Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T19:11:03.197Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T19:11:03.197Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T19:12:00.120Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T19:14:10.825Z] [WARN] 🔧 Error Fixer Agent: Found 7455 errors
+[2025-07-30T19:14:10.826Z] [INFO] 🔧 Error Fixer Agent: Attempting to fix 7455 errors
+[2025-07-30T19:16:00.478Z] [INFO] 🔨 Build Optimizer Agent: Starting build optimization...
+[2025-07-30T19:16:00.480Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T19:16:00.480Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T19:16:05.452Z] [INFO] 🔍 Health Monitor Agent: System health: 69%
+[2025-07-30T19:16:05.454Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 69%
+[2025-07-30T19:16:05.465Z] [WARN] 🔧 Health Monitor Agent: Standard fix applied
+[2025-07-30T19:17:00.634Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T19:17:13.036Z] [WARN] 🔧 Error Fixer Agent: Found 3132 errors
+[2025-07-30T19:17:13.036Z] [INFO] 🔧 Error Fixer Agent: Attempting to fix 3132 errors
+[2025-07-30T19:18:00.389Z] [INFO] 🔨 Build Optimizer Agent: Starting build optimization...
+[2025-07-30T19:18:00.389Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T19:18:00.389Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T19:18:03.994Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T19:18:03.995Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T19:18:03.995Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T19:19:00.896Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T19:21:44.251Z] [WARN] 🔧 Error Fixer Agent: Found 6194 errors
+[2025-07-30T19:21:44.252Z] [INFO] 🔧 Error Fixer Agent: Attempting to fix 6194 errors
+[2025-07-30T19:24:00.830Z] [INFO] 🔨 Build Optimizer Agent: Starting build optimization...
+[2025-07-30T19:24:00.831Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T19:24:00.831Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T19:24:04.434Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T19:24:04.434Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T19:24:04.435Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T19:25:00.227Z] [INFO] ⚡ Performance Optimizer Agent: Starting performance analysis...
+[2025-07-30T19:25:27.849Z] [INFO] ⚡ Performance Optimizer Agent: Found 25 optimization opportunities
+[2025-07-30T19:25:27.850Z] [INFO] ⚡ Performance Optimizer Agent: Applying 25 optimizations
+[2025-07-30T19:25:27.850Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/minute-sync-orchestrator.jsx (348 lines)
+[2025-07-30T19:25:27.850Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/multi-machine-sync-manager.jsx (534 lines)
+[2025-07-30T19:25:27.850Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/sync-health-monitor.jsx (417 lines)
+[2025-07-30T19:25:27.850Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/automation-git-helper.jsx (229 lines)
+[2025-07-30T19:25:27.851Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/core/AutonomousAutomationManager.jsx (941 lines)
+[2025-07-30T19:25:27.851Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/IntelligentDashboard.tsx (300 lines)
+[2025-07-30T19:25:27.851Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDashboard.tsx (225 lines)
+[2025-07-30T19:25:27.851Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDisplay.tsx (303 lines)
+[2025-07-30T19:25:27.852Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/layout/Navigation.tsx (284 lines)
+[2025-07-30T19:25:27.852Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/IntegrationShowcase.tsx (241 lines)
+[2025-07-30T19:25:27.852Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/SmartSearch.tsx (273 lines)
+[2025-07-30T19:25:27.852Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/InteractiveDemo.tsx (285 lines)
+[2025-07-30T19:25:27.852Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/PerformanceMetrics.tsx (240 lines)
+[2025-07-30T19:25:27.853Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/settings.tsx (684 lines)
+[2025-07-30T19:25:27.853Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/index.tsx (564 lines)
+[2025-07-30T19:25:27.853Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/pricing.tsx (210 lines)
+[2025-07-30T19:25:27.853Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/team.tsx (627 lines)
+[2025-07-30T19:25:27.853Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/contact.tsx (287 lines)
+[2025-07-30T19:25:27.854Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/tasks.tsx (618 lines)
+[2025-07-30T19:25:27.854Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/notifications.tsx (407 lines)
+[2025-07-30T19:25:27.854Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/analytics.tsx (333 lines)
+[2025-07-30T19:25:27.854Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/help.tsx (525 lines)
+[2025-07-30T19:25:27.854Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./src/components/IntelligentDashboard.tsx (300 lines)
+[2025-07-30T19:25:27.855Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./src/components/SmartSearch.tsx (273 lines)
+[2025-07-30T19:25:27.874Z] [INFO] ⚡ Performance Optimizer Agent: Applied optimization: Missing cache configuration
+[2025-07-30T19:25:34.755Z] [INFO] Changes committed and pushed: ⚡ Performance: Applied 1 optimizations
+[2025-07-30T19:25:34.756Z] [INFO] ⚡ Performance Optimizer Agent: Committed and pushed 1 optimizations
+[2025-07-30T19:26:00.779Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T19:26:06.920Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T19:27:00.953Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T19:27:00.955Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T19:27:04.639Z] [INFO] 🔍 Health Monitor Agent: System health: 69%
+[2025-07-30T19:27:04.641Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 69%
+[2025-07-30T19:27:04.679Z] [WARN] 🔧 Health Monitor Agent: Standard fix applied
+[2025-07-30T19:29:00.339Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T19:32:47.312Z] [WARN] 🔧 Error Fixer Agent: Found 7828 errors
+[2025-07-30T19:32:47.313Z] [INFO] 🔧 Error Fixer Agent: Attempting to fix 7828 errors
+[2025-07-30T19:35:00.549Z] [INFO] 🚀 Deployment Manager Agent: Starting deployment check...
+[2025-07-30T19:35:00.549Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T19:35:00.549Z] [INFO] 🧠 Decision Maker Agent: Starting decision analysis...
+[2025-07-30T19:35:00.550Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T19:35:04.064Z] [INFO] 🔍 Health Monitor Agent: System health: 69%
+[2025-07-30T19:35:04.064Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 69%
+[2025-07-30T19:35:04.065Z] [WARN] 🔧 Health Monitor Agent: Standard fix applied
+[2025-07-30T19:36:00.039Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T19:36:03.305Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T19:37:00.332Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T19:37:00.332Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T19:37:04.467Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T19:37:04.467Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T19:37:04.468Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T19:38:00.685Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T19:40:38.370Z] [WARN] 🔧 Error Fixer Agent: Found 3278 errors
+[2025-07-30T19:40:38.371Z] [INFO] 🔧 Error Fixer Agent: Attempting to fix 3278 errors
+[2025-07-30T19:42:00.469Z] [INFO] 🔨 Build Optimizer Agent: Starting build optimization...
+[2025-07-30T19:42:00.469Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T19:42:00.469Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T19:42:04.771Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T19:42:04.772Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T19:42:04.772Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T19:43:00.940Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T19:43:05.706Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T19:44:00.748Z] [INFO] 🔨 Build Optimizer Agent: Starting build optimization...
+[2025-07-30T19:44:00.749Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T19:44:00.749Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T19:44:06.683Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T19:44:06.694Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T19:44:06.694Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T19:45:00.366Z] [INFO] ⚡ Performance Optimizer Agent: Starting performance analysis...
+[2025-07-30T19:45:34.389Z] [INFO] ⚡ Performance Optimizer Agent: Found 24 optimization opportunities
+[2025-07-30T19:45:34.390Z] [INFO] ⚡ Performance Optimizer Agent: Applying 24 optimizations
+[2025-07-30T19:45:34.390Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/minute-sync-orchestrator.jsx (348 lines)
+[2025-07-30T19:45:34.390Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/multi-machine-sync-manager.jsx (534 lines)
+[2025-07-30T19:45:34.390Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/sync-health-monitor.jsx (417 lines)
+[2025-07-30T19:45:34.390Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/automation-git-helper.jsx (229 lines)
+[2025-07-30T19:45:34.391Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/core/AutonomousAutomationManager.jsx (941 lines)
+[2025-07-30T19:45:34.391Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDashboard.tsx (225 lines)
+[2025-07-30T19:45:34.391Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDisplay.tsx (303 lines)
+[2025-07-30T19:45:34.391Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/layout/Navigation.tsx (336 lines)
+[2025-07-30T19:45:34.391Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/IntegrationShowcase.tsx (241 lines)
+[2025-07-30T19:45:34.391Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/InteractiveDemo.tsx (285 lines)
+[2025-07-30T19:45:34.392Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/PerformanceMetrics.tsx (278 lines)
+[2025-07-30T19:45:34.392Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/settings.tsx (684 lines)
+[2025-07-30T19:45:34.392Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/index.tsx (664 lines)
+[2025-07-30T19:45:34.392Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/pricing.tsx (210 lines)
+[2025-07-30T19:45:34.392Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/team.tsx (627 lines)
+[2025-07-30T19:45:34.392Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/demo.tsx (315 lines)
+[2025-07-30T19:45:34.393Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/contact.tsx (287 lines)
+[2025-07-30T19:45:34.393Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/tasks.tsx (618 lines)
+[2025-07-30T19:45:34.393Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/notifications.tsx (407 lines)
+[2025-07-30T19:45:34.393Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/analytics.tsx (333 lines)
+[2025-07-30T19:45:34.393Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/help.tsx (525 lines)
+[2025-07-30T19:45:34.393Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./src/components/IntelligentDashboard.tsx (300 lines)
+[2025-07-30T19:45:34.393Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./src/components/SmartSearch.tsx (273 lines)
+[2025-07-30T19:45:34.422Z] [INFO] ⚡ Performance Optimizer Agent: Applied optimization: Missing cache configuration
+[2025-07-30T19:45:46.550Z] [INFO] Changes committed and pushed: ⚡ Performance: Applied 2 optimizations
+[2025-07-30T19:45:46.550Z] [INFO] ⚡ Performance Optimizer Agent: Committed and pushed 2 optimizations
+[2025-07-30T19:46:00.556Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T19:46:05.990Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T19:47:00.018Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T19:47:00.019Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T19:47:07.107Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T19:47:07.107Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T19:47:07.107Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T19:48:00.223Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T19:48:07.424Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T19:49:00.461Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T19:49:00.462Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T19:49:06.007Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T19:49:06.008Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T19:49:06.019Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T19:50:00.192Z] [INFO] ⚡ Performance Optimizer Agent: Starting performance analysis...
+[2025-07-30T19:50:28.726Z] [INFO] ⚡ Performance Optimizer Agent: Found 22 optimization opportunities
+[2025-07-30T19:50:28.726Z] [INFO] ⚡ Performance Optimizer Agent: Applying 22 optimizations
+[2025-07-30T19:50:28.727Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/minute-sync-orchestrator.jsx (348 lines)
+[2025-07-30T19:50:28.727Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/multi-machine-sync-manager.jsx (534 lines)
+[2025-07-30T19:50:28.727Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/sync-health-monitor.jsx (417 lines)
+[2025-07-30T19:50:28.727Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/automation-git-helper.jsx (229 lines)
+[2025-07-30T19:50:28.727Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/core/AutonomousAutomationManager.jsx (941 lines)
+[2025-07-30T19:50:28.728Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDashboard.tsx (225 lines)
+[2025-07-30T19:50:28.728Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDisplay.tsx (303 lines)
+[2025-07-30T19:50:28.728Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/layout/Navigation.tsx (336 lines)
+[2025-07-30T19:50:28.729Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/IntegrationShowcase.tsx (241 lines)
+[2025-07-30T19:50:28.729Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/InteractiveDemo.tsx (285 lines)
+[2025-07-30T19:50:28.729Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/PerformanceMetrics.tsx (278 lines)
+[2025-07-30T19:50:28.729Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/settings.tsx (684 lines)
+[2025-07-30T19:50:28.729Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/index.tsx (664 lines)
+[2025-07-30T19:50:28.729Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/pricing.tsx (210 lines)
+[2025-07-30T19:50:28.730Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/team.tsx (627 lines)
+[2025-07-30T19:50:28.730Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/demo.tsx (441 lines)
+[2025-07-30T19:50:28.730Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/contact.tsx (287 lines)
+[2025-07-30T19:50:28.730Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/tasks.tsx (618 lines)
+[2025-07-30T19:50:28.730Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/notifications.tsx (407 lines)
+[2025-07-30T19:50:28.730Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/analytics.tsx (333 lines)
+[2025-07-30T19:50:28.731Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/help.tsx (525 lines)
+[2025-07-30T19:50:28.752Z] [INFO] ⚡ Performance Optimizer Agent: Applied optimization: Missing cache configuration
+[2025-07-30T19:50:37.435Z] [INFO] Changes committed and pushed: ⚡ Performance: Applied 3 optimizations
+[2025-07-30T19:50:37.435Z] [INFO] ⚡ Performance Optimizer Agent: Committed and pushed 3 optimizations
+[2025-07-30T19:51:00.507Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T19:51:08.049Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T19:52:00.078Z] [INFO] 🔨 Build Optimizer Agent: Starting build optimization...
+[2025-07-30T19:52:00.078Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T19:52:00.079Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T19:52:06.135Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T19:52:06.135Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T19:52:06.135Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T19:53:00.242Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T19:53:04.568Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T19:54:00.594Z] [INFO] 🔨 Build Optimizer Agent: Starting build optimization...
+[2025-07-30T19:54:00.596Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T19:54:00.596Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T19:54:05.448Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T19:54:05.448Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T19:54:05.448Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T19:55:00.393Z] [INFO] ⚡ Performance Optimizer Agent: Starting performance analysis...
+[2025-07-30T19:55:29.344Z] [INFO] ⚡ Performance Optimizer Agent: Found 38 optimization opportunities
+[2025-07-30T19:55:29.344Z] [INFO] ⚡ Performance Optimizer Agent: Applying 38 optimizations
+[2025-07-30T19:55:29.344Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/minute-sync-orchestrator.jsx (348 lines)
+[2025-07-30T19:55:29.344Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/multi-machine-sync-manager.jsx (534 lines)
+[2025-07-30T19:55:29.345Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/sync-health-monitor.jsx (417 lines)
+[2025-07-30T19:55:29.345Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/automation-git-helper.jsx (229 lines)
+[2025-07-30T19:55:29.345Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/core/AutonomousAutomationManager.jsx (941 lines)
+[2025-07-30T19:55:29.345Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDashboard.tsx (225 lines)
+[2025-07-30T19:55:29.345Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDisplay.tsx (303 lines)
+[2025-07-30T19:55:29.345Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/layout/Navigation.tsx (336 lines)
+[2025-07-30T19:55:29.346Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/IntegrationShowcase.tsx (241 lines)
+[2025-07-30T19:55:29.346Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/InteractiveDemo.tsx (285 lines)
+[2025-07-30T19:55:29.346Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/PerformanceMetrics.tsx (278 lines)
+[2025-07-30T19:55:29.346Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/settings.tsx (684 lines)
+[2025-07-30T19:55:29.346Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/index.tsx (664 lines)
+[2025-07-30T19:55:29.346Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/pricing.tsx (210 lines)
+[2025-07-30T19:55:29.347Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/team.tsx (627 lines)
+[2025-07-30T19:55:29.347Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/demo.tsx (441 lines)
+[2025-07-30T19:55:29.347Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/contact.tsx (287 lines)
+[2025-07-30T19:55:29.347Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/tasks.tsx (618 lines)
+[2025-07-30T19:55:29.347Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/notifications.tsx (407 lines)
+[2025-07-30T19:55:29.347Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/analytics.tsx (333 lines)
+[2025-07-30T19:55:29.348Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/help.tsx (525 lines)
+[2025-07-30T19:55:29.348Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/AIFeatureDashboard.tsx (225 lines)
+[2025-07-30T19:55:29.348Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/AIFeatureDisplay.tsx (303 lines)
+[2025-07-30T19:55:29.348Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/layout/Navigation.tsx (336 lines)
+[2025-07-30T19:55:29.348Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/IntegrationShowcase.tsx (241 lines)
+[2025-07-30T19:55:29.348Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/InteractiveDemo.tsx (285 lines)
+[2025-07-30T19:55:29.348Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/PerformanceMetrics.tsx (278 lines)
+[2025-07-30T19:55:29.349Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/settings.tsx (684 lines)
+[2025-07-30T19:55:29.349Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/index.tsx (664 lines)
+[2025-07-30T19:55:29.349Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/pricing.tsx (210 lines)
+[2025-07-30T19:55:29.349Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/team.tsx (627 lines)
+[2025-07-30T19:55:29.349Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/demo.tsx (441 lines)
+[2025-07-30T19:55:29.349Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/contact.tsx (287 lines)
+[2025-07-30T19:55:29.350Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/tasks.tsx (618 lines)
+[2025-07-30T19:55:29.350Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/notifications.tsx (407 lines)
+[2025-07-30T19:55:29.350Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/analytics.tsx (333 lines)
+[2025-07-30T19:55:29.350Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/help.tsx (525 lines)
+[2025-07-30T19:55:29.377Z] [INFO] ⚡ Performance Optimizer Agent: Applied optimization: Missing cache configuration
+[2025-07-30T19:55:41.091Z] [INFO] Changes committed and pushed: ⚡ Performance: Applied 4 optimizations
+[2025-07-30T19:55:41.092Z] [INFO] ⚡ Performance Optimizer Agent: Committed and pushed 4 optimizations
+[2025-07-30T19:56:00.101Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T19:56:04.887Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T19:57:00.908Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T19:57:00.909Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T19:57:03.917Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T19:57:03.917Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T19:57:03.918Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T19:58:00.832Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T19:58:04.932Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T19:59:00.012Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T19:59:00.013Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T19:59:05.614Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T19:59:05.614Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T19:59:05.615Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T20:00:00.900Z] [INFO] ⚡ Performance Optimizer Agent: Starting performance analysis...
+[2025-07-30T20:00:37.068Z] [INFO] ⚡ Performance Optimizer Agent: Found 38 optimization opportunities
+[2025-07-30T20:00:37.068Z] [INFO] ⚡ Performance Optimizer Agent: Applying 38 optimizations
+[2025-07-30T20:00:37.068Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/minute-sync-orchestrator.jsx (348 lines)
+[2025-07-30T20:00:37.069Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/multi-machine-sync-manager.jsx (534 lines)
+[2025-07-30T20:00:37.069Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/sync-health-monitor.jsx (417 lines)
+[2025-07-30T20:00:37.069Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/automation-git-helper.jsx (229 lines)
+[2025-07-30T20:00:37.069Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/core/AutonomousAutomationManager.jsx (941 lines)
+[2025-07-30T20:00:37.069Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDashboard.tsx (225 lines)
+[2025-07-30T20:00:37.070Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDisplay.tsx (303 lines)
+[2025-07-30T20:00:37.070Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/layout/Navigation.tsx (336 lines)
+[2025-07-30T20:00:37.070Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/IntegrationShowcase.tsx (241 lines)
+[2025-07-30T20:00:37.070Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/InteractiveDemo.tsx (285 lines)
+[2025-07-30T20:00:37.070Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/PerformanceMetrics.tsx (278 lines)
+[2025-07-30T20:00:37.070Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/settings.tsx (684 lines)
+[2025-07-30T20:00:37.071Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/index.tsx (664 lines)
+[2025-07-30T20:00:37.071Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/pricing.tsx (210 lines)
+[2025-07-30T20:00:37.071Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/team.tsx (627 lines)
+[2025-07-30T20:00:37.071Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/demo.tsx (441 lines)
+[2025-07-30T20:00:37.071Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/contact.tsx (287 lines)
+[2025-07-30T20:00:37.071Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/tasks.tsx (618 lines)
+[2025-07-30T20:00:37.072Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/notifications.tsx (407 lines)
+[2025-07-30T20:00:37.072Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/analytics.tsx (333 lines)
+[2025-07-30T20:00:37.072Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/help.tsx (525 lines)
+[2025-07-30T20:00:37.072Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/AIFeatureDashboard.tsx (225 lines)
+[2025-07-30T20:00:37.072Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/AIFeatureDisplay.tsx (303 lines)
+[2025-07-30T20:00:37.072Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/layout/Navigation.tsx (336 lines)
+[2025-07-30T20:00:37.073Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/IntegrationShowcase.tsx (241 lines)
+[2025-07-30T20:00:37.073Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/InteractiveDemo.tsx (285 lines)
+[2025-07-30T20:00:37.073Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/PerformanceMetrics.tsx (278 lines)
+[2025-07-30T20:00:37.073Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/settings.tsx (684 lines)
+[2025-07-30T20:00:37.073Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/index.tsx (664 lines)
+[2025-07-30T20:00:37.073Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/pricing.tsx (210 lines)
+[2025-07-30T20:00:37.074Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/team.tsx (627 lines)
+[2025-07-30T20:00:37.074Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/demo.tsx (441 lines)
+[2025-07-30T20:00:37.074Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/contact.tsx (287 lines)
+[2025-07-30T20:00:37.074Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/tasks.tsx (618 lines)
+[2025-07-30T20:00:37.074Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/notifications.tsx (407 lines)
+[2025-07-30T20:00:37.074Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/analytics.tsx (333 lines)
+[2025-07-30T20:00:37.075Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/help.tsx (525 lines)
+[2025-07-30T20:00:37.103Z] [INFO] ⚡ Performance Optimizer Agent: Applied optimization: Missing cache configuration
+[2025-07-30T20:00:48.917Z] [INFO] Changes committed and pushed: ⚡ Performance: Applied 5 optimizations
+[2025-07-30T20:00:48.917Z] [INFO] ⚡ Performance Optimizer Agent: Committed and pushed 5 optimizations
+[2025-07-30T20:01:00.921Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:01:06.389Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T20:02:00.420Z] [INFO] 🔨 Build Optimizer Agent: Starting build optimization...
+[2025-07-30T20:02:00.420Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T20:02:00.420Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T20:02:05.261Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T20:02:05.261Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T20:02:05.262Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T20:03:00.737Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:03:04.980Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T20:04:00.001Z] [INFO] 🔨 Build Optimizer Agent: Starting build optimization...
+[2025-07-30T20:04:00.008Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T20:04:00.009Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T20:04:05.094Z] [INFO] 🔍 Health Monitor Agent: System health: 69%
+[2025-07-30T20:04:05.095Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 69%
+[2025-07-30T20:04:05.095Z] [WARN] 🔧 Health Monitor Agent: Standard fix applied
+[2025-07-30T20:05:00.208Z] [INFO] ⚡ Performance Optimizer Agent: Starting performance analysis...
+[2025-07-30T20:05:21.491Z] [INFO] ⚡ Performance Optimizer Agent: Found 38 optimization opportunities
+[2025-07-30T20:05:21.492Z] [INFO] ⚡ Performance Optimizer Agent: Applying 38 optimizations
+[2025-07-30T20:05:21.501Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/minute-sync-orchestrator.jsx (348 lines)
+[2025-07-30T20:05:21.501Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/multi-machine-sync-manager.jsx (534 lines)
+[2025-07-30T20:05:21.501Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/sync-health-monitor.jsx (417 lines)
+[2025-07-30T20:05:21.501Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/automation-git-helper.jsx (229 lines)
+[2025-07-30T20:05:21.502Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/core/AutonomousAutomationManager.jsx (941 lines)
+[2025-07-30T20:05:21.502Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDashboard.tsx (225 lines)
+[2025-07-30T20:05:21.502Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDisplay.tsx (303 lines)
+[2025-07-30T20:05:21.502Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/layout/Navigation.tsx (336 lines)
+[2025-07-30T20:05:21.502Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/IntegrationShowcase.tsx (241 lines)
+[2025-07-30T20:05:21.502Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/InteractiveDemo.tsx (285 lines)
+[2025-07-30T20:05:21.503Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/PerformanceMetrics.tsx (278 lines)
+[2025-07-30T20:05:21.503Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/settings.tsx (684 lines)
+[2025-07-30T20:05:21.503Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/index.tsx (664 lines)
+[2025-07-30T20:05:21.503Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/pricing.tsx (210 lines)
+[2025-07-30T20:05:21.503Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/team.tsx (627 lines)
+[2025-07-30T20:05:21.504Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/demo.tsx (441 lines)
+[2025-07-30T20:05:21.504Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/contact.tsx (287 lines)
+[2025-07-30T20:05:21.504Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/tasks.tsx (618 lines)
+[2025-07-30T20:05:21.504Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/notifications.tsx (407 lines)
+[2025-07-30T20:05:21.505Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/analytics.tsx (333 lines)
+[2025-07-30T20:05:21.505Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/help.tsx (525 lines)
+[2025-07-30T20:05:21.505Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/AIFeatureDashboard.tsx (225 lines)
+[2025-07-30T20:05:21.505Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/AIFeatureDisplay.tsx (303 lines)
+[2025-07-30T20:05:21.505Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/layout/Navigation.tsx (336 lines)
+[2025-07-30T20:05:21.506Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/IntegrationShowcase.tsx (241 lines)
+[2025-07-30T20:05:21.506Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/InteractiveDemo.tsx (285 lines)
+[2025-07-30T20:05:21.506Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/PerformanceMetrics.tsx (278 lines)
+[2025-07-30T20:05:21.506Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/settings.tsx (684 lines)
+[2025-07-30T20:05:21.506Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/index.tsx (664 lines)
+[2025-07-30T20:05:21.506Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/pricing.tsx (210 lines)
+[2025-07-30T20:05:21.507Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/team.tsx (627 lines)
+[2025-07-30T20:05:21.507Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/demo.tsx (441 lines)
+[2025-07-30T20:05:21.507Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/contact.tsx (287 lines)
+[2025-07-30T20:05:21.508Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/tasks.tsx (618 lines)
+[2025-07-30T20:05:21.508Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/notifications.tsx (407 lines)
+[2025-07-30T20:05:21.508Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/analytics.tsx (333 lines)
+[2025-07-30T20:05:21.508Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/help.tsx (525 lines)
+[2025-07-30T20:05:21.535Z] [INFO] ⚡ Performance Optimizer Agent: Applied optimization: Missing cache configuration
+[2025-07-30T20:05:32.749Z] [INFO] Changes committed and pushed: ⚡ Performance: Applied 6 optimizations
+[2025-07-30T20:05:32.750Z] [INFO] ⚡ Performance Optimizer Agent: Committed and pushed 6 optimizations
+[2025-07-30T20:06:00.840Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:06:05.886Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T20:07:00.908Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T20:07:00.912Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T20:07:07.413Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T20:07:07.414Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T20:07:07.414Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T20:08:00.170Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:08:06.097Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T20:09:00.129Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T20:09:00.129Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T20:09:05.346Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T20:09:05.347Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T20:09:05.347Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T20:10:00.400Z] [INFO] ⚡ Performance Optimizer Agent: Starting performance analysis...
+[2025-07-30T20:10:21.872Z] [INFO] ⚡ Performance Optimizer Agent: Found 38 optimization opportunities
+[2025-07-30T20:10:21.872Z] [INFO] ⚡ Performance Optimizer Agent: Applying 38 optimizations
+[2025-07-30T20:10:21.873Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/minute-sync-orchestrator.jsx (348 lines)
+[2025-07-30T20:10:21.873Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/multi-machine-sync-manager.jsx (534 lines)
+[2025-07-30T20:10:21.873Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/sync-health-monitor.jsx (417 lines)
+[2025-07-30T20:10:21.873Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/automation-git-helper.jsx (229 lines)
+[2025-07-30T20:10:21.873Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/core/AutonomousAutomationManager.jsx (941 lines)
+[2025-07-30T20:10:21.873Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDashboard.tsx (225 lines)
+[2025-07-30T20:10:21.874Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDisplay.tsx (303 lines)
+[2025-07-30T20:10:21.874Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/layout/Navigation.tsx (336 lines)
+[2025-07-30T20:10:21.874Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/IntegrationShowcase.tsx (241 lines)
+[2025-07-30T20:10:21.874Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/InteractiveDemo.tsx (285 lines)
+[2025-07-30T20:10:21.874Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/PerformanceMetrics.tsx (278 lines)
+[2025-07-30T20:10:21.874Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/settings.tsx (684 lines)
+[2025-07-30T20:10:21.875Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/index.tsx (664 lines)
+[2025-07-30T20:10:21.875Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/pricing.tsx (210 lines)
+[2025-07-30T20:10:21.875Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/team.tsx (627 lines)
+[2025-07-30T20:10:21.875Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/demo.tsx (441 lines)
+[2025-07-30T20:10:21.875Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/contact.tsx (287 lines)
+[2025-07-30T20:10:21.875Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/tasks.tsx (618 lines)
+[2025-07-30T20:10:21.875Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/notifications.tsx (407 lines)
+[2025-07-30T20:10:21.876Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/analytics.tsx (333 lines)
+[2025-07-30T20:10:21.876Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/help.tsx (525 lines)
+[2025-07-30T20:10:21.876Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/AIFeatureDashboard.tsx (225 lines)
+[2025-07-30T20:10:21.876Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/AIFeatureDisplay.tsx (303 lines)
+[2025-07-30T20:10:21.876Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/layout/Navigation.tsx (336 lines)
+[2025-07-30T20:10:21.877Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/IntegrationShowcase.tsx (241 lines)
+[2025-07-30T20:10:21.877Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/InteractiveDemo.tsx (285 lines)
+[2025-07-30T20:10:21.877Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/PerformanceMetrics.tsx (278 lines)
+[2025-07-30T20:10:21.877Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/settings.tsx (684 lines)
+[2025-07-30T20:10:21.878Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/index.tsx (664 lines)
+[2025-07-30T20:10:21.878Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/pricing.tsx (210 lines)
+[2025-07-30T20:10:21.878Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/team.tsx (627 lines)
+[2025-07-30T20:10:21.878Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/demo.tsx (441 lines)
+[2025-07-30T20:10:21.878Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/contact.tsx (287 lines)
+[2025-07-30T20:10:21.879Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/tasks.tsx (618 lines)
+[2025-07-30T20:10:21.879Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/notifications.tsx (407 lines)
+[2025-07-30T20:10:21.879Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/analytics.tsx (333 lines)
+[2025-07-30T20:10:21.879Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/help.tsx (525 lines)
+[2025-07-30T20:10:21.907Z] [INFO] ⚡ Performance Optimizer Agent: Applied optimization: Missing cache configuration
+[2025-07-30T20:10:37.749Z] [INFO] Changes committed and pushed: ⚡ Performance: Applied 7 optimizations
+[2025-07-30T20:10:37.749Z] [INFO] ⚡ Performance Optimizer Agent: Committed and pushed 7 optimizations
+[2025-07-30T20:11:00.757Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:11:03.826Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T20:12:00.878Z] [INFO] 🔨 Build Optimizer Agent: Starting build optimization...
+[2025-07-30T20:12:00.878Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T20:12:00.878Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T20:12:06.353Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T20:12:06.361Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T20:12:06.361Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T20:13:00.172Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:13:06.791Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T20:14:00.918Z] [INFO] 🔨 Build Optimizer Agent: Starting build optimization...
+[2025-07-30T20:14:00.918Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T20:14:00.919Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T20:14:05.752Z] [INFO] 🔍 Health Monitor Agent: System health: 69%
+[2025-07-30T20:14:05.752Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 69%
+[2025-07-30T20:14:05.752Z] [WARN] 🔧 Health Monitor Agent: Standard fix applied
+[2025-07-30T20:15:00.630Z] [INFO] ⚡ Performance Optimizer Agent: Starting performance analysis...
+[2025-07-30T20:15:34.348Z] [INFO] ⚡ Performance Optimizer Agent: Found 38 optimization opportunities
+[2025-07-30T20:15:34.348Z] [INFO] ⚡ Performance Optimizer Agent: Applying 38 optimizations
+[2025-07-30T20:15:34.355Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/minute-sync-orchestrator.jsx (348 lines)
+[2025-07-30T20:15:34.355Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/multi-machine-sync-manager.jsx (534 lines)
+[2025-07-30T20:15:34.364Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/sync-health-monitor.jsx (417 lines)
+[2025-07-30T20:15:34.366Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/automation-git-helper.jsx (229 lines)
+[2025-07-30T20:15:34.376Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/core/AutonomousAutomationManager.jsx (941 lines)
+[2025-07-30T20:15:34.377Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDashboard.tsx (225 lines)
+[2025-07-30T20:15:34.377Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDisplay.tsx (303 lines)
+[2025-07-30T20:15:34.383Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/layout/Navigation.tsx (336 lines)
+[2025-07-30T20:15:34.384Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/IntegrationShowcase.tsx (241 lines)
+[2025-07-30T20:15:34.384Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/InteractiveDemo.tsx (285 lines)
+[2025-07-30T20:15:34.384Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/PerformanceMetrics.tsx (278 lines)
+[2025-07-30T20:15:34.384Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/settings.tsx (684 lines)
+[2025-07-30T20:15:34.385Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/index.tsx (664 lines)
+[2025-07-30T20:15:34.385Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/pricing.tsx (210 lines)
+[2025-07-30T20:15:34.385Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/team.tsx (627 lines)
+[2025-07-30T20:15:34.385Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/demo.tsx (441 lines)
+[2025-07-30T20:15:34.385Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/contact.tsx (287 lines)
+[2025-07-30T20:15:34.386Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/tasks.tsx (618 lines)
+[2025-07-30T20:15:34.386Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/notifications.tsx (407 lines)
+[2025-07-30T20:15:34.386Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/analytics.tsx (333 lines)
+[2025-07-30T20:15:34.386Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/help.tsx (525 lines)
+[2025-07-30T20:15:34.386Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/AIFeatureDashboard.tsx (225 lines)
+[2025-07-30T20:15:34.386Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/AIFeatureDisplay.tsx (303 lines)
+[2025-07-30T20:15:34.387Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/layout/Navigation.tsx (336 lines)
+[2025-07-30T20:15:34.387Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/IntegrationShowcase.tsx (241 lines)
+[2025-07-30T20:15:34.387Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/InteractiveDemo.tsx (285 lines)
+[2025-07-30T20:15:34.387Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/PerformanceMetrics.tsx (278 lines)
+[2025-07-30T20:15:34.387Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/settings.tsx (684 lines)
+[2025-07-30T20:15:34.388Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/index.tsx (664 lines)
+[2025-07-30T20:15:34.388Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/pricing.tsx (210 lines)
+[2025-07-30T20:15:34.388Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/team.tsx (627 lines)
+[2025-07-30T20:15:34.388Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/demo.tsx (441 lines)
+[2025-07-30T20:15:34.388Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/contact.tsx (287 lines)
+[2025-07-30T20:15:34.388Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/tasks.tsx (618 lines)
+[2025-07-30T20:15:34.389Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/notifications.tsx (407 lines)
+[2025-07-30T20:15:34.389Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/analytics.tsx (333 lines)
+[2025-07-30T20:15:34.389Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/help.tsx (525 lines)
+[2025-07-30T20:15:34.415Z] [INFO] ⚡ Performance Optimizer Agent: Applied optimization: Missing cache configuration
+[2025-07-30T20:15:39.451Z] [INFO] Changes committed and pushed: ⚡ Performance: Applied 8 optimizations
+[2025-07-30T20:15:39.451Z] [INFO] ⚡ Performance Optimizer Agent: Committed and pushed 8 optimizations
+[2025-07-30T20:16:00.461Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:16:06.042Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T20:17:00.065Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T20:17:00.066Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T20:17:05.598Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T20:17:05.598Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T20:17:05.598Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T20:18:00.715Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:18:05.566Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T20:19:00.594Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T20:19:00.612Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T20:19:07.022Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T20:19:07.023Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T20:19:07.023Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T20:20:00.899Z] [INFO] ⚡ Performance Optimizer Agent: Starting performance analysis...
+[2025-07-30T20:20:29.452Z] [INFO] ⚡ Performance Optimizer Agent: Found 1 optimization opportunities
+[2025-07-30T20:20:29.453Z] [INFO] ⚡ Performance Optimizer Agent: Applying 1 optimizations
+[2025-07-30T20:20:29.480Z] [INFO] ⚡ Performance Optimizer Agent: Applied optimization: Missing cache configuration
+[2025-07-30T20:20:39.395Z] [INFO] Changes committed and pushed: ⚡ Performance: Applied 9 optimizations
+[2025-07-30T20:20:39.396Z] [INFO] ⚡ Performance Optimizer Agent: Committed and pushed 9 optimizations
+[2025-07-30T20:21:00.442Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:21:05.504Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T20:22:00.529Z] [INFO] 🔨 Build Optimizer Agent: Starting build optimization...
+[2025-07-30T20:22:00.530Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T20:22:00.530Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T20:22:05.612Z] [INFO] 🔍 Health Monitor Agent: System health: 69%
+[2025-07-30T20:22:05.613Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 69%
+[2025-07-30T20:22:05.613Z] [WARN] 🔧 Health Monitor Agent: Standard fix applied
+[2025-07-30T20:24:00.280Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:24:04.466Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T20:25:00.488Z] [INFO] 🚀 Deployment Manager Agent: Starting deployment check...
+[2025-07-30T20:25:00.488Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T20:25:00.488Z] [INFO] 🧠 Decision Maker Agent: Starting decision analysis...
+[2025-07-30T20:25:00.489Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T20:25:06.308Z] [INFO] 🔍 Health Monitor Agent: System health: 69%
+[2025-07-30T20:25:06.309Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 69%
+[2025-07-30T20:25:06.309Z] [WARN] 🔧 Health Monitor Agent: Standard fix applied
+[2025-07-30T20:26:00.523Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:26:06.276Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T20:27:00.300Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T20:27:00.300Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T20:27:05.912Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T20:27:05.913Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T20:27:05.913Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T20:28:00.875Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:28:05.938Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T20:29:00.965Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T20:29:00.965Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T20:29:06.737Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T20:29:06.738Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T20:29:06.738Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T20:30:00.709Z] [INFO] ⚡ Performance Optimizer Agent: Starting performance analysis...
+[2025-07-30T20:30:37.079Z] [INFO] ⚡ Performance Optimizer Agent: Found 38 optimization opportunities
+[2025-07-30T20:30:37.080Z] [INFO] ⚡ Performance Optimizer Agent: Applying 38 optimizations
+[2025-07-30T20:30:37.080Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/minute-sync-orchestrator.jsx (348 lines)
+[2025-07-30T20:30:37.080Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/multi-machine-sync-manager.jsx (534 lines)
+[2025-07-30T20:30:37.080Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/sync-health-monitor.jsx (417 lines)
+[2025-07-30T20:30:37.081Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/automation-git-helper.jsx (229 lines)
+[2025-07-30T20:30:37.081Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/core/AutonomousAutomationManager.jsx (941 lines)
+[2025-07-30T20:30:37.081Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDashboard.tsx (225 lines)
+[2025-07-30T20:30:37.081Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDisplay.tsx (303 lines)
+[2025-07-30T20:30:37.081Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/layout/Navigation.tsx (336 lines)
+[2025-07-30T20:30:37.082Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/IntegrationShowcase.tsx (241 lines)
+[2025-07-30T20:30:37.082Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/InteractiveDemo.tsx (285 lines)
+[2025-07-30T20:30:37.082Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/PerformanceMetrics.tsx (278 lines)
+[2025-07-30T20:30:37.082Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/settings.tsx (684 lines)
+[2025-07-30T20:30:37.083Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/index.tsx (664 lines)
+[2025-07-30T20:30:37.083Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/pricing.tsx (210 lines)
+[2025-07-30T20:30:37.083Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/team.tsx (627 lines)
+[2025-07-30T20:30:37.083Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/demo.tsx (441 lines)
+[2025-07-30T20:30:37.083Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/contact.tsx (287 lines)
+[2025-07-30T20:30:37.084Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/tasks.tsx (618 lines)
+[2025-07-30T20:30:37.084Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/notifications.tsx (407 lines)
+[2025-07-30T20:30:37.084Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/analytics.tsx (333 lines)
+[2025-07-30T20:30:37.084Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/help.tsx (525 lines)
+[2025-07-30T20:30:37.084Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/AIFeatureDashboard.tsx (225 lines)
+[2025-07-30T20:30:37.085Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/AIFeatureDisplay.tsx (303 lines)
+[2025-07-30T20:30:37.085Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/layout/Navigation.tsx (336 lines)
+[2025-07-30T20:30:37.085Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/IntegrationShowcase.tsx (241 lines)
+[2025-07-30T20:30:37.085Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/InteractiveDemo.tsx (285 lines)
+[2025-07-30T20:30:37.085Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/PerformanceMetrics.tsx (278 lines)
+[2025-07-30T20:30:37.086Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/settings.tsx (684 lines)
+[2025-07-30T20:30:37.086Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/index.tsx (664 lines)
+[2025-07-30T20:30:37.086Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/pricing.tsx (210 lines)
+[2025-07-30T20:30:37.086Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/team.tsx (627 lines)
+[2025-07-30T20:30:37.086Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/demo.tsx (441 lines)
+[2025-07-30T20:30:37.087Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/contact.tsx (287 lines)
+[2025-07-30T20:30:37.087Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/tasks.tsx (618 lines)
+[2025-07-30T20:30:37.087Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/notifications.tsx (407 lines)
+[2025-07-30T20:30:37.087Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/analytics.tsx (333 lines)
+[2025-07-30T20:30:37.087Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/help.tsx (525 lines)
+[2025-07-30T20:30:37.114Z] [INFO] ⚡ Performance Optimizer Agent: Applied optimization: Missing cache configuration
+[2025-07-30T20:30:47.695Z] [INFO] Changes committed and pushed: ⚡ Performance: Applied 10 optimizations
+[2025-07-30T20:30:47.696Z] [INFO] ⚡ Performance Optimizer Agent: Committed and pushed 10 optimizations
+[2025-07-30T20:31:00.767Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:31:05.503Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T20:32:00.577Z] [INFO] 🔨 Build Optimizer Agent: Starting build optimization...
+[2025-07-30T20:32:00.577Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T20:32:00.578Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T20:32:05.214Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T20:32:05.214Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T20:32:05.214Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T20:33:00.451Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:33:04.919Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T20:34:00.933Z] [INFO] 🔨 Build Optimizer Agent: Starting build optimization...
+[2025-07-30T20:34:00.934Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T20:34:00.934Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T20:34:05.487Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T20:34:05.487Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T20:34:05.487Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T20:35:00.460Z] [INFO] ⚡ Performance Optimizer Agent: Starting performance analysis...
+[2025-07-30T20:35:29.829Z] [INFO] ⚡ Performance Optimizer Agent: Found 38 optimization opportunities
+[2025-07-30T20:35:29.829Z] [INFO] ⚡ Performance Optimizer Agent: Applying 38 optimizations
+[2025-07-30T20:35:29.829Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/minute-sync-orchestrator.jsx (348 lines)
+[2025-07-30T20:35:29.829Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/multi-machine-sync-manager.jsx (534 lines)
+[2025-07-30T20:35:29.830Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/sync-health-monitor.jsx (417 lines)
+[2025-07-30T20:35:29.830Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/automation-git-helper.jsx (229 lines)
+[2025-07-30T20:35:29.830Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/core/AutonomousAutomationManager.jsx (941 lines)
+[2025-07-30T20:35:29.830Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDashboard.tsx (225 lines)
+[2025-07-30T20:35:29.830Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDisplay.tsx (303 lines)
+[2025-07-30T20:35:29.830Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/layout/Navigation.tsx (336 lines)
+[2025-07-30T20:35:29.831Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/IntegrationShowcase.tsx (241 lines)
+[2025-07-30T20:35:29.831Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/InteractiveDemo.tsx (285 lines)
+[2025-07-30T20:35:29.831Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/PerformanceMetrics.tsx (278 lines)
+[2025-07-30T20:35:29.831Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/settings.tsx (684 lines)
+[2025-07-30T20:35:29.831Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/index.tsx (664 lines)
+[2025-07-30T20:35:29.832Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/pricing.tsx (210 lines)
+[2025-07-30T20:35:29.832Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/team.tsx (627 lines)
+[2025-07-30T20:35:29.832Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/demo.tsx (441 lines)
+[2025-07-30T20:35:29.832Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/contact.tsx (287 lines)
+[2025-07-30T20:35:29.833Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/tasks.tsx (618 lines)
+[2025-07-30T20:35:29.833Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/notifications.tsx (407 lines)
+[2025-07-30T20:35:29.833Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/analytics.tsx (333 lines)
+[2025-07-30T20:35:29.833Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/help.tsx (525 lines)
+[2025-07-30T20:35:29.834Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/AIFeatureDashboard.tsx (225 lines)
+[2025-07-30T20:35:29.834Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/AIFeatureDisplay.tsx (303 lines)
+[2025-07-30T20:35:29.834Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/layout/Navigation.tsx (336 lines)
+[2025-07-30T20:35:29.834Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/IntegrationShowcase.tsx (241 lines)
+[2025-07-30T20:35:29.834Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/InteractiveDemo.tsx (285 lines)
+[2025-07-30T20:35:29.835Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/components/PerformanceMetrics.tsx (278 lines)
+[2025-07-30T20:35:29.835Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/settings.tsx (684 lines)
+[2025-07-30T20:35:29.835Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/index.tsx (664 lines)
+[2025-07-30T20:35:29.835Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/pricing.tsx (210 lines)
+[2025-07-30T20:35:29.835Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/team.tsx (627 lines)
+[2025-07-30T20:35:29.835Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/demo.tsx (441 lines)
+[2025-07-30T20:35:29.836Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/contact.tsx (287 lines)
+[2025-07-30T20:35:29.836Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/tasks.tsx (618 lines)
+[2025-07-30T20:35:29.836Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/notifications.tsx (407 lines)
+[2025-07-30T20:35:29.836Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/analytics.tsx (333 lines)
+[2025-07-30T20:35:29.837Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./temp_install/pages/help.tsx (525 lines)
+[2025-07-30T20:35:29.863Z] [INFO] ⚡ Performance Optimizer Agent: Applied optimization: Missing cache configuration
+[2025-07-30T20:36:50.142Z] [INFO] Changes committed and pushed: ⚡ Performance: Applied 11 optimizations
+[2025-07-30T20:36:50.142Z] [INFO] ⚡ Performance Optimizer Agent: Committed and pushed 11 optimizations
+[2025-07-30T20:37:00.146Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:37:05.808Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T20:38:00.844Z] [INFO] 🔨 Build Optimizer Agent: Starting build optimization...
+[2025-07-30T20:38:00.844Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T20:38:00.845Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T20:38:05.858Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T20:38:05.859Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T20:38:05.859Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T20:39:00.886Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:39:06.752Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T20:40:00.784Z] [INFO] 🔨 Build Optimizer Agent: Starting build optimization...
+[2025-07-30T20:40:00.785Z] [INFO] 🚀 Deployment Manager Agent: Starting deployment check...
+[2025-07-30T20:40:00.785Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T20:40:00.785Z] [INFO] 🧠 Decision Maker Agent: Starting decision analysis...
+[2025-07-30T20:40:00.786Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T20:40:07.281Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T20:40:07.281Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T20:40:07.282Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T20:41:00.693Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:41:07.702Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T20:42:00.727Z] [INFO] 🔨 Build Optimizer Agent: Starting build optimization...
+[2025-07-30T20:42:00.728Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T20:42:00.728Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T20:42:06.476Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T20:42:06.477Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T20:42:06.477Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T20:43:00.867Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:43:05.488Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T20:44:00.521Z] [INFO] 🔨 Build Optimizer Agent: Starting build optimization...
+[2025-07-30T20:44:00.570Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T20:44:00.571Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T20:44:04.266Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T20:44:04.266Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T20:44:04.266Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T20:45:00.230Z] [INFO] ⚡ Performance Optimizer Agent: Starting performance analysis...
+[2025-07-30T20:45:18.934Z] [INFO] ⚡ Performance Optimizer Agent: Found 22 optimization opportunities
+[2025-07-30T20:45:18.934Z] [INFO] ⚡ Performance Optimizer Agent: Applying 22 optimizations
+[2025-07-30T20:45:18.934Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/minute-sync-orchestrator.jsx (348 lines)
+[2025-07-30T20:45:18.934Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/multi-machine-sync-manager.jsx (534 lines)
+[2025-07-30T20:45:18.934Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/sync-health-monitor.jsx (417 lines)
+[2025-07-30T20:45:18.935Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/automation-git-helper.jsx (229 lines)
+[2025-07-30T20:45:18.935Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./automation_temp/automation_removed/automation_temp/core/AutonomousAutomationManager.jsx (941 lines)
+[2025-07-30T20:45:18.935Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDashboard.tsx (225 lines)
+[2025-07-30T20:45:18.935Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/AIFeatureDisplay.tsx (303 lines)
+[2025-07-30T20:45:18.935Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/layout/Navigation.tsx (336 lines)
+[2025-07-30T20:45:18.936Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/IntegrationShowcase.tsx (241 lines)
+[2025-07-30T20:45:18.936Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/InteractiveDemo.tsx (285 lines)
+[2025-07-30T20:45:18.936Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./components/PerformanceMetrics.tsx (278 lines)
+[2025-07-30T20:45:18.936Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/settings.tsx (684 lines)
+[2025-07-30T20:45:18.936Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/index.tsx (664 lines)
+[2025-07-30T20:45:18.936Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/pricing.tsx (210 lines)
+[2025-07-30T20:45:18.937Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/team.tsx (627 lines)
+[2025-07-30T20:45:18.937Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/demo.tsx (441 lines)
+[2025-07-30T20:45:18.937Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/contact.tsx (287 lines)
+[2025-07-30T20:45:18.937Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/tasks.tsx (618 lines)
+[2025-07-30T20:45:18.937Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/notifications.tsx (407 lines)
+[2025-07-30T20:45:18.937Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/analytics.tsx (333 lines)
+[2025-07-30T20:45:18.938Z] [INFO] ⚡ Performance Optimizer Agent: Manual optimization needed: Large component: ./pages/help.tsx (525 lines)
+[2025-07-30T20:45:18.962Z] [INFO] ⚡ Performance Optimizer Agent: Applied optimization: Missing cache configuration
+[2025-07-30T20:45:32.576Z] [INFO] Changes committed and pushed: ⚡ Performance: Applied 12 optimizations
+[2025-07-30T20:45:32.576Z] [INFO] ⚡ Performance Optimizer Agent: Committed and pushed 12 optimizations
+[2025-07-30T20:46:00.588Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:46:03.348Z] [INFO] 🔧 Error Fixer Agent: No errors detected
+[2025-07-30T20:47:00.374Z] [INFO] 💾 Resource Manager Agent: Starting resource check...
+[2025-07-30T20:47:00.374Z] [INFO] 🔍 Health Monitor Agent: Starting health check...
+[2025-07-30T20:47:04.528Z] [INFO] 🔍 Health Monitor Agent: System health: 71%
+[2025-07-30T20:47:04.528Z] [WARN] 🔧 Health Monitor Agent: Taking corrective action for health 71%
+[2025-07-30T20:47:04.528Z] [INFO] 🔧 Health Monitor Agent: Preventive fix applied
+[2025-07-30T20:48:00.444Z] [INFO] 🔧 Error Fixer Agent: Starting error detection...
+[2025-07-30T20:49:25.573Z] [WARN] 🔧 Error Fixer Agent: Found 3270 errors
+[2025-07-30T20:49:25.573Z] [INFO] 🔧 Error Fixer Agent: Attempting to fix 3270 errors

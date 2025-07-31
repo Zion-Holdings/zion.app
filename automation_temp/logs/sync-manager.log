@@ -1,0 +1,31 @@
+[2025-07-30T02:53:58.680Z] [INFO] [Miami2-2.local] Starting multi-machine sync process
+[2025-07-30T02:53:58.683Z] [INFO] [Miami2-2.local] Checking git status
+[2025-07-30T02:53:58.732Z] [INFO] [Miami2-2.local] Found changes: 61 files modified
+[2025-07-30T02:53:58.732Z] [INFO] [Miami2-2.local] Pulling latest changes from remote
+[2025-07-30T02:53:59.884Z] [INFO] [Miami2-2.local] Successfully pulled latest changes
+[2025-07-30T02:53:59.884Z] [INFO] [Miami2-2.local] Staging and committing local changes
+[2025-07-30T02:54:00.812Z] [ERROR] [Miami2-2.local] Sync error: Commit failed: Command failed: git commit -m "Auto-sync: 2025-07-30T02:54:00.746Z - Miami2-2.local"
+sh: --version/_/pre-commit: invalid option
+Usage:	sh [GNU long option] [option] ...
+	sh [GNU long option] [option] script-file ...
+GNU long options:
+	--debug
+	--debugger
+	--dump-po-strings
+	--dump-strings
+	--help
+	--init-file
+	--login
+	--noediting
+	--noprofile
+	--norc
+	--posix
+	--protected
+	--rcfile
+	--restricted
+	--verbose
+	--version
+	--wordexp
+Shell options:
+	-irsD or -c command or -O shopt_option		(invocation only)
+	-abefhkmnptuvxBCHP or -o option

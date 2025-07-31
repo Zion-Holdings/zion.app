@@ -1,0 +1,6 @@
+[2025-07-31T02:07:00.776Z] ❌ Job errorFixer failed: spawnSync /bin/sh ETIMEDOUT
+[2025-07-31T02:07:00.779Z] 🏥 Running health check
+[2025-07-31T02:07:01.147Z] ⚠️ No automation processes running
+[2025-07-31T02:07:01.148Z] 🔄 Restarting automation system
+[2025-07-31T02:07:01.217Z] ❌ Failed to restart automation system: Command failed: pkill -f "autonomous-system"
+[2025-07-31T02:07:01.221Z] ✅ Health check completed

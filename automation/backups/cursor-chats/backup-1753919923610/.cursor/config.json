@@ -1,0 +1,71 @@
+{
+  "memories": [
+    {
+      "id": "framework-1753919875020",
+      "content": "Project uses Next.js. Follow Next.js best practices and conventions.",
+      "tags": [
+        "nextjs",
+        "framework"
+      ],
+      "priority": "high"
+    }
+  ],
+  "rules": [
+    {
+      "id": "rule-nextjs-1753919834870",
+      "category": "framework",
+      "rule": "Always use Next.js best practices: use Image component for images, Link for navigation, and follow the routing conventions.",
+      "priority": "high",
+      "appliesTo": [
+        "components",
+        "pages",
+        "routing"
+      ],
+      "timestamp": "2025-07-30T23:57:14.870Z"
+    },
+    {
+      "id": "rule-quality-1753919834870",
+      "category": "quality",
+      "rule": "Follow TypeScript best practices. Use proper typing, avoid any types, and maintain clean, readable code.",
+      "priority": "high",
+      "appliesTo": [
+        "typescript",
+        "code-quality",
+        "typing"
+      ],
+      "timestamp": "2025-07-30T23:57:14.870Z"
+    },
+    {
+      "id": "rule-performance-1753919834870",
+      "category": "performance",
+      "rule": "Optimize for performance: use proper image optimization, implement lazy loading, and minimize bundle size.",
+      "priority": "medium",
+      "appliesTo": [
+        "performance",
+        "optimization",
+        "images"
+      ],
+      "timestamp": "2025-07-30T23:57:14.870Z"
+    },
+    {
+      "id": "rule-security-1753919834870",
+      "category": "security",
+      "rule": "Never commit sensitive data. Use environment variables for configuration and ensure .env files are in .gitignore.",
+      "priority": "high",
+      "appliesTo": [
+        "security",
+        "environment",
+        "git"
+      ],
+      "timestamp": "2025-07-30T23:57:14.870Z"
+    }
+  ],
+  "autoUpdate": true,
+  "lastUpdated": "2025-07-30T23:57:55.115Z",
+  "automation": {
+    "enabled": true,
+    "continuousLoop": true,
+    "interval": "5 minutes",
+    "autoCommit": true
+  }
+}

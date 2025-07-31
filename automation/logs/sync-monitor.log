@@ -1,0 +1,59 @@
+[2025-07-30T13:31:31.555Z] [INFO] [Miami2-2.local-miami2] Starting comprehensive multi-machine sync check
+[2025-07-30T13:31:53.142Z] [INFO] [Miami2-2.local-miami2] Check completed in 21586ms
+[2025-07-30T13:31:53.142Z] [INFO] [Miami2-2.local-miami2] Active machines: 1
+[2025-07-30T13:31:53.142Z] [INFO] [Miami2-2.local-miami2] Sync processes: 9
+[2025-07-30T13:31:53.142Z] [INFO] [Miami2-2.local-miami2] Stale locks fixed: 0
+[2025-07-30T13:31:53.143Z] [INFO] [Miami2-2.local-miami2] Processes restarted: 0
+[2025-07-30T13:31:53.143Z] [INFO] [Miami2-2.local-miami2] Conflicts resolved: 0
+[2025-07-30T13:31:53.143Z] [INFO] [Miami2-2.local-miami2] Recent errors: 85
+[2025-07-30T13:52:23.079Z] [INFO] [Miami2-2.local-miami2] Starting continuous multi-machine sync monitoring
+[2025-07-30T13:52:23.083Z] [INFO] [Miami2-2.local-miami2] Starting comprehensive multi-machine sync check
+[2025-07-30T13:52:54.335Z] [INFO] [Miami2-2.local-miami2] Check completed in 31251ms
+[2025-07-30T13:52:54.335Z] [INFO] [Miami2-2.local-miami2] Active machines: 2
+[2025-07-30T13:52:54.336Z] [INFO] [Miami2-2.local-miami2] Sync processes: 10
+[2025-07-30T13:52:54.336Z] [INFO] [Miami2-2.local-miami2] Stale locks fixed: 0
+[2025-07-30T13:52:54.336Z] [INFO] [Miami2-2.local-miami2] Processes restarted: 0
+[2025-07-30T13:52:54.336Z] [INFO] [Miami2-2.local-miami2] Conflicts resolved: 0
+[2025-07-30T13:52:54.337Z] [INFO] [Miami2-2.local-miami2] Recent errors: 107
+[2025-07-30T13:52:54.338Z] [INFO] [Miami2-2.local-miami2] Starting comprehensive multi-machine sync check
+[2025-07-30T13:53:23.884Z] [INFO] [Miami2-2.local-miami2] Check completed in 29545ms
+[2025-07-30T13:53:23.884Z] [INFO] [Miami2-2.local-miami2] Active machines: 2
+[2025-07-30T13:53:23.884Z] [INFO] [Miami2-2.local-miami2] Sync processes: 6
+[2025-07-30T13:53:23.884Z] [INFO] [Miami2-2.local-miami2] Stale locks fixed: 0
+[2025-07-30T13:53:23.885Z] [INFO] [Miami2-2.local-miami2] Processes restarted: 0
+[2025-07-30T13:53:23.885Z] [INFO] [Miami2-2.local-miami2] Conflicts resolved: 0
+[2025-07-30T13:53:23.885Z] [INFO] [Miami2-2.local-miami2] Recent errors: 108
+[2025-07-30T13:57:25.494Z] [INFO] [Miami2-2.local-miami2] Starting continuous multi-machine sync monitoring
+[2025-07-30T13:57:25.498Z] [INFO] [Miami2-2.local-miami2] Starting comprehensive multi-machine sync check
+[2025-07-30T13:57:42.143Z] [INFO] [Miami2-2.local-miami2] Check completed in 16644ms
+[2025-07-30T13:57:42.143Z] [INFO] [Miami2-2.local-miami2] Active machines: 2
+[2025-07-30T13:57:42.144Z] [INFO] [Miami2-2.local-miami2] Sync processes: 10
+[2025-07-30T13:57:42.144Z] [INFO] [Miami2-2.local-miami2] Stale locks fixed: 0
+[2025-07-30T13:57:42.144Z] [INFO] [Miami2-2.local-miami2] Processes restarted: 0
+[2025-07-30T13:57:42.145Z] [INFO] [Miami2-2.local-miami2] Conflicts resolved: 0
+[2025-07-30T13:57:42.145Z] [INFO] [Miami2-2.local-miami2] Recent errors: 109
+[2025-07-30T13:57:42.146Z] [INFO] [Miami2-2.local-miami2] Starting comprehensive multi-machine sync check
+[2025-07-30T13:57:56.262Z] [INFO] [Miami2-2.local-miami2] Check completed in 14116ms
+[2025-07-30T13:57:56.262Z] [INFO] [Miami2-2.local-miami2] Active machines: 2
+[2025-07-30T13:57:56.263Z] [INFO] [Miami2-2.local-miami2] Sync processes: 10
+[2025-07-30T13:57:56.263Z] [INFO] [Miami2-2.local-miami2] Stale locks fixed: 0
+[2025-07-30T13:57:56.263Z] [INFO] [Miami2-2.local-miami2] Processes restarted: 0
+[2025-07-30T13:57:56.264Z] [INFO] [Miami2-2.local-miami2] Conflicts resolved: 0
+[2025-07-30T13:57:56.264Z] [INFO] [Miami2-2.local-miami2] Recent errors: 111
+[2025-07-30T13:58:21.940Z] [INFO] [Miami2-2.local-miami2] Starting continuous multi-machine sync monitoring
+[2025-07-30T13:58:21.943Z] [INFO] [Miami2-2.local-miami2] Starting comprehensive multi-machine sync check
+[2025-07-30T13:58:36.623Z] [INFO] [Miami2-2.local-miami2] Check completed in 14679ms
+[2025-07-30T13:58:36.623Z] [INFO] [Miami2-2.local-miami2] Active machines: 2
+[2025-07-30T13:58:36.624Z] [INFO] [Miami2-2.local-miami2] Sync processes: 10
+[2025-07-30T13:58:36.624Z] [INFO] [Miami2-2.local-miami2] Stale locks fixed: 0
+[2025-07-30T13:58:36.624Z] [INFO] [Miami2-2.local-miami2] Processes restarted: 0
+[2025-07-30T13:58:36.625Z] [INFO] [Miami2-2.local-miami2] Conflicts resolved: 0
+[2025-07-30T13:58:36.625Z] [INFO] [Miami2-2.local-miami2] Recent errors: 119
+[2025-07-30T13:58:36.626Z] [INFO] [Miami2-2.local-miami2] Starting comprehensive multi-machine sync check
+[2025-07-30T13:58:50.500Z] [INFO] [Miami2-2.local-miami2] Check completed in 13874ms
+[2025-07-30T13:58:50.501Z] [INFO] [Miami2-2.local-miami2] Active machines: 2
+[2025-07-30T13:58:50.501Z] [INFO] [Miami2-2.local-miami2] Sync processes: 11
+[2025-07-30T13:58:50.501Z] [INFO] [Miami2-2.local-miami2] Stale locks fixed: 0
+[2025-07-30T13:58:50.501Z] [INFO] [Miami2-2.local-miami2] Processes restarted: 0
+[2025-07-30T13:58:50.501Z] [INFO] [Miami2-2.local-miami2] Conflicts resolved: 0
+[2025-07-30T13:58:50.502Z] [INFO] [Miami2-2.local-miami2] Recent errors: 120

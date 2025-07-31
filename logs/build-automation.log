@@ -1,0 +1,60 @@
+[2025-07-29T13:10:00.889Z] 🔄 Running scheduled build check...
+[2025-07-29T13:10:00.889Z] 🔧 Starting comprehensive build issue fixes...
+[2025-07-29T13:10:00.890Z] 🧹 Cleaning up corrupted files...
+[2025-07-29T13:10:00.893Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/ProductsList.tsx
+[2025-07-29T13:10:00.894Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/about.tsx
+[2025-07-29T13:10:00.894Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/academy/founder-course.tsx
+[2025-07-29T13:10:00.895Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/academy/futurescape.tsx
+[2025-07-29T13:10:00.895Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/categories/[categoryId].tsx
+[2025-07-29T13:10:00.896Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/categories.tsx
+[2025-07-29T13:10:00.896Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/company/[companySlug].tsx
+[2025-07-29T13:10:00.897Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/countries/[country].tsx
+[2025-07-29T13:10:00.897Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/dashboard.tsx
+[2025-07-29T13:10:00.897Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/equipment.tsx
+[2025-07-29T13:10:00.898Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/generic/id/[id].tsx
+[2025-07-29T13:10:00.899Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/generic/slug/[slug].tsx
+[2025-07-29T13:10:00.899Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/index.tsx
+[2025-07-29T13:10:00.900Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/logs.tsx
+[2025-07-29T13:10:00.900Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/messages.tsx
+[2025-07-29T13:10:00.901Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/orders/[orderId].tsx
+[2025-07-29T13:10:00.901Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/products.tsx
+[2025-07-29T13:10:00.902Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/projects/[projectId].tsx
+[2025-07-29T13:10:00.902Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/proposals/[proposalId].tsx
+[2025-07-29T13:10:00.903Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/register.tsx
+[2025-07-29T13:10:00.903Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/rooms/[roomId].tsx
+[2025-07-29T13:10:00.904Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/services.tsx
+[2025-07-29T13:10:00.904Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/status.tsx
+[2025-07-29T13:10:00.905Z] 🧹 Cleaned 23 corrupted files
+[2025-07-29T13:10:00.905Z] ⚙️ Fixing configuration files...
+[2025-07-29T13:10:00.905Z] ✅ Fixed PostCSS config
+[2025-07-29T13:10:00.906Z] ✅ Fixed _app.tsx
+[2025-07-29T13:10:00.906Z] 📦 Fixing dependency issues...
+[2025-07-29T13:10:00.906Z] 🗑️ Removing node_modules...
+[2025-07-29T13:10:00.954Z] 🧹 Clearing npm cache...
+[2025-07-29T13:10:01.572Z] 📦 Reinstalling dependencies...
+[2025-07-29T13:10:02.293Z] ❌ Error fixing dependencies: Command failed: npm install
+[2025-07-29T13:10:02.293Z] 🔍 Fixing syntax errors...
+[2025-07-29T13:10:02.296Z] 🔧 Applied fix in /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/categories/[categoryId].tsx: Fix function name syntax
+[2025-07-29T13:10:02.297Z] 🔧 Applied fix in /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/company/[companySlug].tsx: Fix function name syntax
+[2025-07-29T13:10:02.297Z] 🔧 Applied fix in /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/countries/[country].tsx: Fix function name syntax
+[2025-07-29T13:10:02.298Z] 🔧 Applied fix in /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/generic/id/[id].tsx: Fix function name syntax
+[2025-07-29T13:10:02.298Z] 🔧 Applied fix in /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/generic/slug/[slug].tsx: Fix function name syntax
+[2025-07-29T13:10:02.299Z] 🔧 Applied fix in /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/orders/[orderId].tsx: Fix function name syntax
+[2025-07-29T13:10:02.299Z] 🔧 Applied fix in /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/projects/[projectId].tsx: Fix function name syntax
+[2025-07-29T13:10:02.300Z] 🔧 Applied fix in /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/proposals/[proposalId].tsx: Fix function name syntax
+[2025-07-29T13:10:02.300Z] 🔧 Applied fix in /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/rooms/[roomId].tsx: Fix function name syntax
+[2025-07-29T13:10:02.301Z] 🏗️ Attempting build...
+[2025-07-29T13:10:02.301Z] 🏗️ Running build command...
+[2025-07-29T13:10:02.630Z] ❌ Build failed: Command failed: npm run build
+[2025-07-29T13:10:02.630Z] ❌ Build failed, but issues have been addressed
+[2025-07-29T13:20:00.455Z] 🔄 Running scheduled build check...
+[2025-07-29T13:20:00.456Z] 🔧 Starting comprehensive build issue fixes...
+[2025-07-29T13:20:00.456Z] 🧹 Cleaning up corrupted files...
+[2025-07-29T13:20:00.460Z] 🧹 Cleaning corrupted file: /Users/miami2/Documents/GitHub/bolt.new.zion.app/pages/ProductsList.tsx
+[2025-07-29T13:20:00.461Z] 🧹 Cleaned 1 corrupted files
+[2025-07-29T13:20:00.462Z] ⚙️ Fixing configuration files...
+[2025-07-29T13:20:00.462Z] ✅ Fixed PostCSS config
+[2025-07-29T13:20:00.463Z] ✅ Fixed _app.tsx
+[2025-07-29T13:20:00.463Z] 📦 Fixing dependency issues...
+[2025-07-29T13:20:00.463Z] 🧹 Clearing npm cache...
+[2025-07-29T13:20:01.115Z] 📦 Reinstalling dependencies...

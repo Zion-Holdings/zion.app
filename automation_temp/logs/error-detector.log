@@ -1,0 +1,4 @@
+[2025-07-30T02:54:02.749Z] [INFO] [Miami2-2.local] [ERROR-DETECTOR] Starting sync error detection and recovery
+[2025-07-30T02:54:02.909Z] [INFO] [Miami2-2.local] [ERROR-DETECTOR] Found 1 sync errors, attempting recovery
+[2025-07-30T02:54:02.910Z] [INFO] [Miami2-2.local] [ERROR-DETECTOR] Attempting to recover from 1 errors
+[2025-07-30T02:54:02.910Z] [INFO] [Miami2-2.local] [ERROR-DETECTOR] Attempting to fix sync errors

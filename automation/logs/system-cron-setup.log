@@ -1,0 +1,13 @@
+[2025-07-30 11:23:57] Setting up comprehensive system cron jobs for Netlify build automation...
+[2025-07-30 11:23:57] Setting up system cron jobs...
+[2025-07-30 11:24:00] System cron jobs installed successfully
+[2025-07-30 11:24:00] System cron setup completed successfully!
+[2025-07-30 11:24:00] Automation scripts created:
+[2025-07-30 11:24:00]   - system-build-monitor.sh (runs every 5 minutes)
+[2025-07-30 11:24:00]   - system-health-check.sh (runs every hour)
+[2025-07-30 11:24:00]   - system-dependency-updater.sh (runs daily at 2 AM)
+[2025-07-30 11:24:00]   - system-cleanup.sh (runs weekly on Sunday at 3 AM)
+[2025-07-30 11:24:00]   - system-dashboard.sh (manual dashboard)
+[2025-07-30 11:24:00]   - restart-automation.sh (restart all systems)
+[2025-07-30 11:24:00] To view the dashboard, run: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/system-dashboard.sh
+[2025-07-30 11:24:00] To restart all automation, run: /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/restart-automation.sh

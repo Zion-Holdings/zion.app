@@ -1,0 +1,1345 @@
+[2025-07-30T21:06:52.506Z] [INFO] 🚀 Starting Infinite Improvement Loop System
+[2025-07-30T21:06:52.508Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:07:10.228Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_07_08_357Z-debug-0.log
+
+[2025-07-30T21:07:24.646Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error: Cannot find package '/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/@typescript-eslint/eslint-plugin/index.js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:72644) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753909580037 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:07:24.646Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:07:24.647Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:07:24.647Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:07:25.556Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:07:25.559Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:07:37.692Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_07_36_481Z-debug-0.log
+
+[2025-07-30T21:07:44.760Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error: Cannot find package '/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/@typescript-eslint/eslint-plugin/index.js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:74710) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753909580037 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:07:44.761Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:07:44.761Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:07:44.761Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:07:45.732Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:07:45.734Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:07:50.736Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:07:55.776Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:08:11.805Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_08_09_613Z-debug-0.log
+
+[2025-07-30T21:08:21.597Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error: Cannot find package '/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/@eslint/js/index.js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:76864) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753909580037 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:08:21.627Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:08:21.921Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:08:21.921Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:08:22.960Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:08:25.967Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:08:42.193Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_08_40_561Z-debug-0.log
+
+[2025-07-30T21:08:51.875Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error: Cannot find package '/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/@eslint/js/index.js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:78898) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753909580037 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:08:52.181Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:08:52.193Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:08:52.194Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:08:53.233Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:08:55.240Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:09:00.244Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:09:15.542Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_09_13_888Z-debug-0.log
+
+[2025-07-30T21:09:27.706Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@eslint/js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:81169) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753909580037 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:09:27.776Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:09:27.776Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:09:27.776Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:09:29.791Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:09:30.801Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:09:48.998Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_09_46_956Z-debug-0.log
+
+[2025-07-30T21:09:57.019Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@eslint/js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:82933) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753909580037 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:09:57.019Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:09:57.020Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:09:57.020Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:09:57.722Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:10:00.725Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:10:05.727Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:10:21.378Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_10_19_886Z-debug-0.log
+
+[2025-07-30T21:10:30.206Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@eslint/js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:85639) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753909580037 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:10:30.246Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:10:30.286Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:10:30.286Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:10:31.342Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:10:35.354Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:10:40.358Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:10:54.264Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_10_52_864Z-debug-0.log
+
+[2025-07-30T21:11:02.038Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/@typescript-eslint/eslint-plugin/dist/index.js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+    at moduleResolve (node:internal/modules/esm/resolve:860:10)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:87372) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753909580037 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:11:02.038Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:11:02.038Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:11:02.038Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:11:03.109Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:11:05.388Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:11:10.589Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:11:26.430Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_11_24_176Z-debug-0.log
+
+[2025-07-30T21:11:44.403Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@eslint/js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:89181) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753909580037 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:11:44.565Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:11:44.685Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:11:44.726Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:11:46.245Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:11:50.400Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:12:06.198Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_12_04_137Z-debug-0.log
+
+[2025-07-30T21:12:15.337Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@eslint/js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:92673) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753909910392 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:12:15.340Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:12:15.341Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:12:15.341Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:12:16.342Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:12:20.352Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:12:25.360Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:12:39.285Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_12_37_395Z-debug-0.log
+
+[2025-07-30T21:12:48.944Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error: Cannot find package '/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/@eslint/js/index.js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:94572) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753909910392 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:12:48.944Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:12:48.945Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:12:48.945Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:12:50.234Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:12:50.244Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:12:55.296Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:13:00.368Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:13:16.790Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_13_15_184Z-debug-0.log
+
+[2025-07-30T21:13:25.588Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@eslint/js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:96644) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753909910392 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:13:25.588Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:13:25.589Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:13:25.589Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:13:26.382Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:13:30.390Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:13:35.397Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:13:48.449Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_13_46_805Z-debug-0.log
+
+[2025-07-30T21:13:55.071Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@eslint/js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:98093) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753909910392 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:13:55.071Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:13:55.071Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:13:55.071Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:13:55.722Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:13:55.723Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:14:00.726Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:14:05.735Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:14:16.876Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_14_15_878Z-debug-0.log
+
+[2025-07-30T21:14:25.213Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@eslint/js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:881) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753909910392 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:14:25.213Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:14:25.213Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:14:25.214Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:14:25.732Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:14:25.733Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:14:30.750Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:14:35.779Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:14:40.783Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:14:55.557Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_14_53_233Z-debug-0.log
+
+[2025-07-30T21:15:06.886Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error: Cannot find package '/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/@eslint/js/index.js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:3739) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753909910392 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:15:06.886Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:15:06.886Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:15:06.886Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:15:07.807Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:15:10.810Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:15:22.885Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_15_21_357Z-debug-0.log
+
+[2025-07-30T21:15:30.386Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@eslint/js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:4638) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753909910392 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:15:30.426Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:15:30.426Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:15:30.426Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:15:30.986Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:15:35.050Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:15:40.056Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:15:45.062Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:15:54.213Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_15_52_919Z-debug-0.log
+
+[2025-07-30T21:16:00.589Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@eslint/js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:5801) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753910137297 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:16:00.839Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:16:01.276Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:16:01.277Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:16:02.129Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:16:05.131Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:16:10.173Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:16:15.178Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:16:27.710Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_16_26_327Z-debug-0.log
+
+[2025-07-30T21:16:34.588Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@eslint/js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:6986) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753910137297 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:16:34.589Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:16:34.589Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:16:34.589Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:16:35.679Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:16:40.155Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:16:45.163Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:17:04.882Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_17_03_484Z-debug-0.log
+
+[2025-07-30T21:17:14.118Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error: Cannot find package '/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/@eslint/js/index.js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:9155) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753910137297 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:17:14.119Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:17:14.119Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:17:14.119Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:17:15.136Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:17:15.137Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:17:20.142Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:17:35.577Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_17_33_497Z-debug-0.log
+
+[2025-07-30T21:17:42.760Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@eslint/js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:10145) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753910137297 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:17:42.760Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:17:42.760Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:17:42.760Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:17:43.587Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:17:45.597Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:17:50.604Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:18:02.497Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_18_00_705Z-debug-0.log
+
+[2025-07-30T21:18:10.381Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@eslint/js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:11349) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753910137297 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:18:10.427Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:18:10.427Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:18:10.429Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:18:11.150Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:18:15.161Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:18:20.555Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:18:25.568Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:18:38.332Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_18_36_643Z-debug-0.log
+
+[2025-07-30T21:18:48.099Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@eslint/js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:12567) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753910137297 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:18:48.099Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:18:48.100Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:18:48.100Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:18:48.862Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:18:50.866Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:18:55.869Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:19:12.959Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_19_11_297Z-debug-0.log
+
+[2025-07-30T21:19:20.550Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@eslint/js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:14430) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753910137297 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:19:20.551Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:19:20.551Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:19:20.551Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:19:21.409Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:19:25.413Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:19:30.888Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:19:45.202Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_19_43_497Z-debug-0.log
+
+[2025-07-30T21:19:52.780Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@eslint/js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:15074) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753910137297 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:19:52.780Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:19:52.780Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:19:52.780Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:19:53.518Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:19:55.523Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:20:00.525Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:20:05.657Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:20:12.309Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_20_10_379Z-debug-0.log
+
+[2025-07-30T21:20:22.051Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@eslint/js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:16310) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753910137297 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:20:22.052Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:20:22.052Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:20:22.052Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:20:22.748Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:20:25.750Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:20:30.754Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:20:35.758Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:20:40.781Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:20:49.324Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_20_48_358Z-debug-0.log
+
+[2025-07-30T21:20:53.995Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@eslint/js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:17240) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753910137297 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:20:53.996Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:20:53.996Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:20:53.996Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:20:54.583Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:20:55.585Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:21:00.598Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:21:05.636Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:21:10.639Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:21:20.146Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_21_19_279Z-debug-0.log
+
+[2025-07-30T21:21:25.784Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error: Cannot find module 'fast-deep-equal'
+Require stack:
+- /Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/ajv/lib/compile/resolve.js
+- /Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/ajv/lib/compile/index.js
+- /Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/ajv/lib/ajv.js
+- /Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/@eslint/eslintrc/dist/eslintrc-universal.cjs
+- /Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/eslint/lib/linter/linter.js
+- /Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/eslint/lib/linter/index.js
+- /Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/eslint/lib/eslint/eslint.js
+- /Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/eslint/lib/eslint/index.js
+- /Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/eslint/lib/cli.js
+- /Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/eslint/bin/eslint.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)
+    at Function._load (node:internal/modules/cjs/loader:1211:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1487:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/ajv/lib/compile/resolve.js:4:13)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+
+[2025-07-30T21:21:25.785Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:21:25.785Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:21:25.785Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:21:26.753Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:21:30.765Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:21:35.767Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:21:40.776Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:21:45.816Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:21:57.309Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_21_55_994Z-debug-0.log
+
+[2025-07-30T21:22:35.593Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+(node:21432) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753910137297 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+There was a problem loading formatter: /Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/eslint/lib/cli-engine/formatters/json.js
+Error: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/eslint/lib/cli-engine/formatters/json.js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/eslint/lib/eslint/eslint.js
+
+[2025-07-30T21:22:35.595Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:22:35.596Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:22:35.596Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:22:36.464Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:22:40.469Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:22:52.381Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_22_51_406Z-debug-0.log
+
+[2025-07-30T21:22:58.098Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@eslint/js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:256:9)
+    at packageResolve (node:internal/modules/esm/resolve:768:81)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:23857) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753910137297 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:22:58.098Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:22:58.099Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:22:58.099Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:22:59.009Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:23:00.011Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:23:05.018Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:23:10.030Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:23:15.035Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:23:26.387Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_23_25_155Z-debug-0.log
+
+[2025-07-30T21:23:33.864Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error: Cannot find package '/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/@eslint/js/index.js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:25710) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753910137297 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:23:33.864Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:23:33.864Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:23:33.865Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:23:34.490Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:23:35.493Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:23:40.824Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:23:45.832Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:23:57.628Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_23_56_563Z-debug-0.log
+
+[2025-07-30T21:24:06.301Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+Error: Cannot find package '/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/@eslint/js/index.js' imported from /Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js
+    at legacyMainResolve (node:internal/modules/esm/resolve:204:26)
+    at packageResolve (node:internal/modules/esm/resolve:778:12)
+    at moduleResolve (node:internal/modules/esm/resolve:854:18)
+    at defaultResolve (node:internal/modules/esm/resolve:984:11)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:780:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:704:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:687:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:305:38)
+    at ModuleJob._link (node:internal/modules/esm/module_job:137:49)
+(node:26864) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/eslint.config.js?mtime=1753910137297 is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[2025-07-30T21:24:06.302Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:24:06.302Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:24:06.302Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:24:07.359Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:24:10.362Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:24:15.368Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:24:20.386Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:24:36.390Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_24_34_393Z-debug-0.log
+
+[2025-07-30T21:24:49.242Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+A config object is using the "extends" key, which is not supported in flat config system.
+
+Instead of "extends", you can include config objects that you'd like to extend from directly in the flat config array.
+
+If you're using "extends" in your config file, please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#predefined-and-shareable-configs
+
+If you're not using "extends" directly (it may be coming from a plugin), please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#using-eslintrc-configs-in-flat-config
+
+[2025-07-30T21:24:49.386Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:24:49.709Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:24:49.870Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:24:51.272Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:24:55.390Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:25:15.633Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_25_13_294Z-debug-0.log
+
+[2025-07-30T21:25:23.132Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+A config object is using the "extends" key, which is not supported in flat config system.
+
+Instead of "extends", you can include config objects that you'd like to extend from directly in the flat config array.
+
+If you're using "extends" in your config file, please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#predefined-and-shareable-configs
+
+If you're not using "extends" directly (it may be coming from a plugin), please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#using-eslintrc-configs-in-flat-config
+
+[2025-07-30T21:25:23.132Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:25:23.132Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:25:23.132Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:25:24.369Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:25:25.374Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:25:30.377Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:25:47.739Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_25_46_007Z-debug-0.log
+
+[2025-07-30T21:25:57.417Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+A config object is using the "extends" key, which is not supported in flat config system.
+
+Instead of "extends", you can include config objects that you'd like to extend from directly in the flat config array.
+
+If you're using "extends" in your config file, please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#predefined-and-shareable-configs
+
+If you're not using "extends" directly (it may be coming from a plugin), please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#using-eslintrc-configs-in-flat-config
+
+[2025-07-30T21:25:57.418Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:25:57.418Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:25:57.418Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:25:58.639Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:26:00.760Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:26:17.211Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_26_14_734Z-debug-0.log
+
+[2025-07-30T21:26:27.599Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+A config object is using the "extends" key, which is not supported in flat config system.
+
+Instead of "extends", you can include config objects that you'd like to extend from directly in the flat config array.
+
+If you're using "extends" in your config file, please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#predefined-and-shareable-configs
+
+If you're not using "extends" directly (it may be coming from a plugin), please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#using-eslintrc-configs-in-flat-config
+
+[2025-07-30T21:26:27.680Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:26:27.801Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:26:27.801Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:26:28.501Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:26:30.554Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:26:35.556Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:26:58.713Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_26_55_672Z-debug-0.log
+
+[2025-07-30T21:27:09.709Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+A config object is using the "extends" key, which is not supported in flat config system.
+
+Instead of "extends", you can include config objects that you'd like to extend from directly in the flat config array.
+
+If you're using "extends" in your config file, please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#predefined-and-shareable-configs
+
+If you're not using "extends" directly (it may be coming from a plugin), please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#using-eslintrc-configs-in-flat-config
+
+[2025-07-30T21:27:09.782Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:27:09.782Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:27:09.782Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:27:10.846Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:27:15.061Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:27:37.537Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_27_34_661Z-debug-0.log
+
+[2025-07-30T21:27:49.694Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+A config object is using the "extends" key, which is not supported in flat config system.
+
+Instead of "extends", you can include config objects that you'd like to extend from directly in the flat config array.
+
+If you're using "extends" in your config file, please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#predefined-and-shareable-configs
+
+If you're not using "extends" directly (it may be coming from a plugin), please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#using-eslintrc-configs-in-flat-config
+
+[2025-07-30T21:27:49.694Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:27:49.694Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:27:49.694Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:27:50.708Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:27:50.710Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:28:09.756Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_28_07_652Z-debug-0.log
+
+[2025-07-30T21:28:20.868Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+A config object is using the "extends" key, which is not supported in flat config system.
+
+Instead of "extends", you can include config objects that you'd like to extend from directly in the flat config array.
+
+If you're using "extends" in your config file, please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#predefined-and-shareable-configs
+
+If you're not using "extends" directly (it may be coming from a plugin), please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#using-eslintrc-configs-in-flat-config
+
+[2025-07-30T21:28:20.869Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:28:20.870Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:28:20.870Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:28:21.953Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:28:25.957Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:28:43.205Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_28_41_147Z-debug-0.log
+
+[2025-07-30T21:28:52.531Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+A config object is using the "extends" key, which is not supported in flat config system.
+
+Instead of "extends", you can include config objects that you'd like to extend from directly in the flat config array.
+
+If you're using "extends" in your config file, please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#predefined-and-shareable-configs
+
+If you're not using "extends" directly (it may be coming from a plugin), please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#using-eslintrc-configs-in-flat-config
+
+[2025-07-30T21:28:53.229Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:28:53.715Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:28:54.371Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:28:56.451Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:29:00.456Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:29:22.227Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_29_20_725Z-debug-0.log
+
+[2025-07-30T21:29:36.128Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+A config object is using the "extends" key, which is not supported in flat config system.
+
+Instead of "extends", you can include config objects that you'd like to extend from directly in the flat config array.
+
+If you're using "extends" in your config file, please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#predefined-and-shareable-configs
+
+If you're not using "extends" directly (it may be coming from a plugin), please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#using-eslintrc-configs-in-flat-config
+
+[2025-07-30T21:29:36.129Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:29:36.129Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:29:36.129Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:29:37.018Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:29:40.027Z] [INFO] 🔄 Starting improvement cycle...
+[2025-07-30T21:29:59.388Z] [WARN] Security audit failed: Command failed: npm audit --json
+npm error code ENOLOCK
+npm error audit This command requires an existing lockfile.
+npm error audit Try creating one first with: npm i --package-lock-only
+npm error audit Original error: loadVirtual requires existing shrinkwrap file
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T21_29_57_676Z-debug-0.log
+
+[2025-07-30T21:30:10.456Z] [WARN] ESLint check failed: Command failed: npx eslint . --ext .js,.jsx,.ts,.tsx --format json
+
+Oops! Something went wrong! :(
+
+ESLint: 9.32.0
+
+A config object is using the "extends" key, which is not supported in flat config system.
+
+Instead of "extends", you can include config objects that you'd like to extend from directly in the flat config array.
+
+If you're using "extends" in your config file, please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#predefined-and-shareable-configs
+
+If you're not using "extends" directly (it may be coming from a plugin), please see the following:
+https://eslint.org/docs/latest/use/configure/migration-guide#using-eslintrc-configs-in-flat-config
+
+[2025-07-30T21:30:10.456Z] [INFO] 📈 Found 1 potential improvements
+[2025-07-30T21:30:10.456Z] [INFO] 🔧 Implementing improvement: Build failed
+[2025-07-30T21:30:10.456Z] [INFO] 🔧 Fixing build errors...
+[2025-07-30T21:30:11.286Z] [ERROR] ❌ Failed to implement improvement: Command failed: npm run build
+[2025-07-30T21:30:11.287Z] [INFO] 🛑 Stopping Infinite Improvement Loop

@@ -1,0 +1,20 @@
+{
+  "name": "cursor-file-watcher",
+  "version": "1.0.0",
+  "description": "Watches files and automatically formats and lints them",
+  "main": "extension.js",
+  "scripts": {
+    "start": "node extension.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "chokidar": "^3.0.0",
+    "prettier": "^3.0.0"
+  },
+  "keywords": [
+    "cursor",
+    "automation",
+    "extension"
+  ],
+  "license": "MIT"
+}

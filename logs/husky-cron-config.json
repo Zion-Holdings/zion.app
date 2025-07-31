@@ -1,0 +1,11 @@
+{
+  "monitoringInterval": "*/5 * * * *",
+  "deepCheckInterval": "0 * * * *",
+  "cleanupInterval": "0 2 * * *",
+  "statusReportInterval": "0 */6 * * *",
+  "maxLogSize": 10,
+  "autoFix": true,
+  "killStuckProcesses": true,
+  "healthCheck": true,
+  "lastUpdated": "2025-07-29T13:04:41.163Z"
+}

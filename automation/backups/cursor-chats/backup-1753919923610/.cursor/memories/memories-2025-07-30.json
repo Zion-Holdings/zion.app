@@ -1,0 +1,46 @@
+[
+  {
+    "id": "framework-1753919889184",
+    "content": "Project uses Next.js. Follow Next.js best practices: use Image component for images, Link for navigation, and follow routing conventions.",
+    "tags": [
+      "nextjs",
+      "framework",
+      "react"
+    ],
+    "priority": "high",
+    "timestamp": "2025-07-30T23:58:09.184Z"
+  },
+  {
+    "id": "styling-1753919889184",
+    "content": "Project uses Tailwind CSS. Use utility classes for consistent design and follow mobile-first responsive design.",
+    "tags": [
+      "tailwind",
+      "css",
+      "styling"
+    ],
+    "priority": "medium",
+    "timestamp": "2025-07-30T23:58:09.184Z"
+  },
+  {
+    "id": "typescript-1753919889184",
+    "content": "Project uses TypeScript. Follow TypeScript best practices: use proper typing, avoid any types, and maintain clean code.",
+    "tags": [
+      "typescript",
+      "code-quality",
+      "typing"
+    ],
+    "priority": "high",
+    "timestamp": "2025-07-30T23:58:09.184Z"
+  },
+  {
+    "id": "issue-1753919889184-0.2961200174540084",
+    "content": "Issue detected: 15 large files detected. Recommendation: Consider optimizing or splitting large files",
+    "tags": [
+      "performance",
+      "issue",
+      "improvement"
+    ],
+    "priority": "medium",
+    "timestamp": "2025-07-30T23:58:09.184Z"
+  }
+]

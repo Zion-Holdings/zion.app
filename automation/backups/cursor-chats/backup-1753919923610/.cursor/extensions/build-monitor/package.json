@@ -1,0 +1,20 @@
+{
+  "name": "cursor-build-monitor",
+  "version": "1.0.0",
+  "description": "Monitors build status and fixes errors automatically",
+  "main": "extension.js",
+  "scripts": {
+    "start": "node extension.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "node-cron": "^3.0.0",
+    "chokidar": "^3.0.0"
+  },
+  "keywords": [
+    "cursor",
+    "automation",
+    "extension"
+  ],
+  "license": "MIT"
+}

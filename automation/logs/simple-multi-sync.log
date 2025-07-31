@@ -1,0 +1,31 @@
+[2025-07-30T13:57:27.708Z] [INFO] [Miami2-2.local-miami2] Starting simple multi-machine sync
+[2025-07-30T13:57:27.788Z] [INFO] [Miami2-2.local-miami2] Found 17 changes to sync
+[2025-07-30T13:57:29.569Z] [INFO] [Miami2-2.local-miami2] Added all changes
+[2025-07-30T13:57:31.690Z] [INFO] [Miami2-2.local-miami2] Committed changes
+[2025-07-30T13:57:44.120Z] [INFO] [Miami2-2.local-miami2] Pushed changes to remote
+[2025-07-30T13:57:45.389Z] [INFO] [Miami2-2.local-miami2] Fetched latest changes
+[2025-07-30T13:57:46.532Z] [INFO] [Miami2-2.local-miami2] Pulled latest changes
+[2025-07-30T13:57:46.532Z] [INFO] [Miami2-2.local-miami2] Sync completed successfully
+hanges
+[2025-07-30T13:57:46.532Z] [INFO] [Miami2-2.local-miami2] Sync completed successfully
+[2025-07-30T13:58:08.275Z] [INFO] [Miami2-2.local-miami2] Starting simple multi-machine sync
+[2025-07-30T13:58:08.351Z] [INFO] [Miami2-2.local-miami2] Found 10 changes to sync
+[2025-07-30T13:58:08.417Z] [INFO] [Miami2-2.local-miami2] Added all changes
+[2025-07-30T13:58:08.526Z] [INFO] [Miami2-2.local-miami2] Committed changes
+[2025-07-30T13:58:11.535Z] [INFO] [Miami2-2.local-miami2] Pushed changes to remote
+[2025-07-30T13:58:12.986Z] [INFO] [Miami2-2.local-miami2] Fetched latest changes
+[2025-07-30T13:58:14.120Z] [INFO] [Miami2-2.local-miami2] Pulled latest changes
+[2025-07-30T13:58:14.120Z] [INFO] [Miami2-2.local-miami2] Sync completed successfully
+[2025-07-30T13:58:34.683Z] [INFO] [Miami2-2.local-miami2] Starting simple multi-machine sync
+[2025-07-30T13:58:34.799Z] [INFO] [Miami2-2.local-miami2] Found 18 changes to sync
+[2025-07-30T13:58:36.439Z] [INFO] [Miami2-2.local-miami2] Added all changes
+[2025-07-30T13:58:37.267Z] [INFO] [Miami2-2.local-miami2] Starting simple multi-machine sync
+[2025-07-30T13:58:37.352Z] [INFO] [Miami2-2.local-miami2] Found 8 changes to sync
+[2025-07-30T13:58:37.419Z] [INFO] [Miami2-2.local-miami2] Added all changes
+[2025-07-30T13:58:37.532Z] [INFO] [Miami2-2.local-miami2] Committed changes
+[2025-07-30T13:58:37.988Z] [INFO] [Miami2-2.local-miami2] Committed changes
+[2025-07-30T13:58:45.237Z] [INFO] [Miami2-2.local-miami2] Pushed changes to remote
+[2025-07-30T13:58:45.610Z] [ERROR] [Miami2-2.local-miami2] Sync failed: Command failed: git push origin main
+[2025-07-30T13:58:46.688Z] [INFO] [Miami2-2.local-miami2] Fetched latest changes
+[2025-07-30T13:58:47.868Z] [INFO] [Miami2-2.local-miami2] Pulled latest changes
+[2025-07-30T13:58:47.868Z] [INFO] [Miami2-2.local-miami2] Sync completed successfully

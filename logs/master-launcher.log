@@ -1,0 +1,2234 @@
+[2025-07-30T03:06:31.516Z] Initializing Master Launcher Extension...
+[2025-07-30T03:06:31.522Z] Installing extension dependencies...
+[2025-07-30T03:06:33.570Z] Error installing dependencies for auto-improver: Command failed: cd "/Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/auto-improver" && npm install
+npm error code ETARGET
+npm error notarget No matching version found for axios@^3.0.0.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T03_06_31_710Z-debug-0.log
+
+[2025-07-30T03:06:34.675Z] Dependencies installed for file-watcher
+[2025-07-30T03:06:35.433Z] Error installing dependencies for dependency-manager: Command failed: cd "/Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/dependency-manager" && npm install
+npm error code ETARGET
+npm error notarget No matching version found for axios@^3.0.0.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T03_06_34_847Z-debug-0.log
+
+[2025-07-30T03:06:36.545Z] Dependencies installed for build-monitor
+[2025-07-30T03:06:36.546Z] Starting all extensions...
+[2025-07-30T03:06:36.549Z] Started auto-improver extension
+[2025-07-30T03:06:36.616Z] Started file-watcher extension
+[2025-07-30T03:06:36.701Z] Started dependency-manager extension
+[2025-07-30T03:06:36.804Z] Started build-monitor extension
+[2025-07-30T03:06:36.814Z] Coordination jobs started
+[2025-07-30T03:06:36.815Z] Master Launcher Extension initialized successfully
+[2025-07-30T03:08:36.826Z] Disk usage: /dev/disk1s1  932Gi  388Gi  526Gi    43% 4913802 5512668080    0%   /System/Volumes/Data
+[2025-07-30T03:08:36.839Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:10:00.294Z] Checking extension health...
+[2025-07-30T03:10:00.295Z] auto-improver extension is healthy
+[2025-07-30T03:10:00.295Z] file-watcher extension is healthy
+[2025-07-30T03:10:00.295Z] dependency-manager extension is healthy
+[2025-07-30T03:10:00.295Z] build-monitor extension is healthy
+[2025-07-30T03:14:37.540Z] Disk usage: /dev/disk1s1  932Gi  388Gi  526Gi    43% 4892153 5510806080    0%   /System/Volumes/Data
+[2025-07-30T03:14:37.546Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:15:00.113Z] Checking extension health...
+[2025-07-30T03:15:00.113Z] auto-improver extension is healthy
+[2025-07-30T03:15:00.113Z] file-watcher extension is healthy
+[2025-07-30T03:15:00.113Z] dependency-manager extension is healthy
+[2025-07-30T03:15:00.113Z] build-monitor extension is healthy
+[2025-07-30T03:16:37.536Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4892227 5509461440    0%   /System/Volumes/Data
+[2025-07-30T03:16:37.542Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:18:37.527Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4882216 5509965880    0%   /System/Volumes/Data
+[2025-07-30T03:18:37.533Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:20:00.630Z] Checking extension health...
+[2025-07-30T03:20:00.630Z] auto-improver extension is healthy
+[2025-07-30T03:20:00.630Z] file-watcher extension is healthy
+[2025-07-30T03:20:00.630Z] dependency-manager extension is healthy
+[2025-07-30T03:20:00.630Z] build-monitor extension is healthy
+[2025-07-30T03:20:37.522Z] Disk usage: /dev/disk1s1  932Gi  389Gi  525Gi    43% 4915346 5504124880    0%   /System/Volumes/Data
+[2025-07-30T03:20:37.528Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:22:37.532Z] Disk usage: /dev/disk1s1  932Gi  389Gi  525Gi    43% 4915383 5503372920    0%   /System/Volumes/Data
+[2025-07-30T03:22:37.539Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:24:37.524Z] Disk usage: /dev/disk1s1  932Gi  389Gi  525Gi    43% 4915415 5502468240    0%   /System/Volumes/Data
+[2025-07-30T03:24:37.530Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:25:00.792Z] Checking extension health...
+[2025-07-30T03:25:00.793Z] auto-improver extension is healthy
+[2025-07-30T03:25:00.793Z] file-watcher extension is healthy
+[2025-07-30T03:25:00.793Z] dependency-manager extension is healthy
+[2025-07-30T03:25:00.793Z] build-monitor extension is healthy
+[2025-07-30T03:26:37.521Z] Disk usage: /dev/disk1s1  932Gi  389Gi  525Gi    43% 4915473 5501521040    0%   /System/Volumes/Data
+[2025-07-30T03:26:37.528Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:28:37.513Z] Disk usage: /dev/disk1s1  932Gi  389Gi  525Gi    43% 4915506 5500506120    0%   /System/Volumes/Data
+[2025-07-30T03:28:37.519Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:30:00.982Z] Checking extension health...
+[2025-07-30T03:30:00.982Z] auto-improver extension is healthy
+[2025-07-30T03:30:00.983Z] file-watcher extension is healthy
+[2025-07-30T03:30:00.983Z] dependency-manager extension is healthy
+[2025-07-30T03:30:00.983Z] build-monitor extension is healthy
+[2025-07-30T03:30:37.511Z] Disk usage: /dev/disk1s1  932Gi  389Gi  525Gi    43% 4915572 5499903120    0%   /System/Volumes/Data
+[2025-07-30T03:30:37.516Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:32:37.502Z] Disk usage: /dev/disk1s1  932Gi  389Gi  524Gi    43% 4915610 5499149520    0%   /System/Volumes/Data
+[2025-07-30T03:32:37.508Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:34:37.510Z] Disk usage: /dev/disk1s1  932Gi  389Gi  524Gi    43% 4915641 5498070760    0%   /System/Volumes/Data
+[2025-07-30T03:34:37.517Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:35:00.194Z] Checking extension health...
+[2025-07-30T03:35:00.194Z] auto-improver extension is healthy
+[2025-07-30T03:35:00.194Z] file-watcher extension is healthy
+[2025-07-30T03:35:00.194Z] dependency-manager extension is healthy
+[2025-07-30T03:35:00.194Z] build-monitor extension is healthy
+[2025-07-30T03:36:37.493Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4915695 5504884680    0%   /System/Volumes/Data
+[2025-07-30T03:36:37.498Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:38:37.487Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4915725 5504913880    0%   /System/Volumes/Data
+[2025-07-30T03:38:37.493Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:40:00.489Z] Checking extension health...
+[2025-07-30T03:40:00.490Z] auto-improver extension is healthy
+[2025-07-30T03:40:00.490Z] file-watcher extension is healthy
+[2025-07-30T03:40:00.490Z] dependency-manager extension is healthy
+[2025-07-30T03:40:00.490Z] build-monitor extension is healthy
+[2025-07-30T03:40:06.056Z] Stopping Master Launcher Extension...
+[2025-07-30T03:40:06.075Z] Master Launcher Extension stopped
+[2025-07-30T03:45:00.110Z] Initializing Master Launcher Extension...
+[2025-07-30T03:45:00.115Z] Installing extension dependencies...
+[2025-07-30T03:45:05.764Z] Error installing dependencies for auto-improver: Command failed: cd "/Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/auto-improver" && npm install
+npm error code ETARGET
+npm error notarget No matching version found for axios@^3.0.0.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T03_45_00_286Z-debug-0.log
+
+[2025-07-30T03:45:06.839Z] Dependencies installed for file-watcher
+[2025-07-30T03:45:07.563Z] Error installing dependencies for dependency-manager: Command failed: cd "/Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/dependency-manager" && npm install
+npm error code ETARGET
+npm error notarget No matching version found for axios@^3.0.0.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T03_45_07_001Z-debug-0.log
+
+[2025-07-30T03:45:08.648Z] Dependencies installed for build-monitor
+[2025-07-30T03:45:08.648Z] Starting all extensions...
+[2025-07-30T03:45:08.651Z] Started auto-improver extension
+[2025-07-30T03:45:08.698Z] Started file-watcher extension
+[2025-07-30T03:45:08.787Z] Started dependency-manager extension
+[2025-07-30T03:45:08.861Z] Started build-monitor extension
+[2025-07-30T03:45:08.867Z] Coordination jobs started
+[2025-07-30T03:45:08.867Z] Master Launcher Extension initialized successfully
+[2025-07-30T03:47:08.870Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4915951 5507254680    0%   /System/Volumes/Data
+[2025-07-30T03:47:08.876Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:49:08.867Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4915981 5507244360    0%   /System/Volumes/Data
+[2025-07-30T03:49:08.872Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:50:00.098Z] Checking extension health...
+[2025-07-30T03:50:00.098Z] auto-improver extension is healthy
+[2025-07-30T03:50:00.099Z] file-watcher extension is healthy
+[2025-07-30T03:50:00.099Z] dependency-manager extension is healthy
+[2025-07-30T03:50:00.099Z] build-monitor extension is healthy
+[2025-07-30T03:51:08.861Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4916062 5507202760    0%   /System/Volumes/Data
+[2025-07-30T03:51:08.867Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:53:08.974Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4916112 5507090800    0%   /System/Volumes/Data
+[2025-07-30T03:53:08.980Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:55:00.436Z] Checking extension health...
+[2025-07-30T03:55:00.436Z] auto-improver extension is healthy
+[2025-07-30T03:55:00.436Z] file-watcher extension is healthy
+[2025-07-30T03:55:00.436Z] dependency-manager extension is healthy
+[2025-07-30T03:55:00.437Z] build-monitor extension is healthy
+[2025-07-30T03:55:08.975Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4916168 5506879320    0%   /System/Volumes/Data
+[2025-07-30T03:55:08.980Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:57:08.975Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4916203 5506831360    0%   /System/Volumes/Data
+[2025-07-30T03:57:08.981Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T03:59:08.976Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4916229 5506858320    0%   /System/Volumes/Data
+[2025-07-30T03:59:08.982Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:00:00.680Z] Checking extension health...
+[2025-07-30T04:00:00.681Z] auto-improver extension is healthy
+[2025-07-30T04:00:00.681Z] file-watcher extension is healthy
+[2025-07-30T04:00:00.681Z] dependency-manager extension is healthy
+[2025-07-30T04:00:00.681Z] build-monitor extension is healthy
+[2025-07-30T04:00:00.682Z] Running performance optimization...
+[2025-07-30T04:00:03.063Z] Error during performance optimization: Command failed: npm cache clean --force
+npm warn using --force Recommended protections disabled.
+npm error code ENOTEMPTY
+npm error syscall rmdir
+npm error path /Users/miami2/.npm/_cacache/index-v5/01/85
+npm error errno -66
+npm error ENOTEMPTY: directory not empty, rmdir '/Users/miami2/.npm/_cacache/index-v5/01/85'
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T04_00_00_889Z-debug-0.log
+
+[2025-07-30T04:01:08.980Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905940 5506813800    0%   /System/Volumes/Data
+[2025-07-30T04:01:08.986Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:03:08.978Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905965 5506750280    0%   /System/Volumes/Data
+[2025-07-30T04:03:08.984Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:05:00.937Z] Checking extension health...
+[2025-07-30T04:05:00.937Z] auto-improver extension is healthy
+[2025-07-30T04:05:00.938Z] file-watcher extension is healthy
+[2025-07-30T04:05:00.938Z] dependency-manager extension is healthy
+[2025-07-30T04:05:00.939Z] build-monitor extension is healthy
+[2025-07-30T04:05:08.980Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906031 5506716840    0%   /System/Volumes/Data
+[2025-07-30T04:05:08.985Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:07:08.981Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906069 5506706640    0%   /System/Volumes/Data
+[2025-07-30T04:07:08.987Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:09:08.984Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906099 5506690440    0%   /System/Volumes/Data
+[2025-07-30T04:09:08.989Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:10:00.229Z] Checking extension health...
+[2025-07-30T04:10:00.229Z] auto-improver extension is healthy
+[2025-07-30T04:10:00.229Z] file-watcher extension is healthy
+[2025-07-30T04:10:00.230Z] dependency-manager extension is healthy
+[2025-07-30T04:10:00.230Z] build-monitor extension is healthy
+[2025-07-30T04:11:08.984Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906185 5506688440    0%   /System/Volumes/Data
+[2025-07-30T04:11:08.990Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:13:08.986Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906222 5506657520    0%   /System/Volumes/Data
+[2025-07-30T04:13:08.991Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:15:00.452Z] Checking extension health...
+[2025-07-30T04:15:00.452Z] auto-improver extension is healthy
+[2025-07-30T04:15:00.453Z] file-watcher extension is healthy
+[2025-07-30T04:15:00.453Z] dependency-manager extension is healthy
+[2025-07-30T04:15:00.453Z] build-monitor extension is healthy
+[2025-07-30T04:15:08.989Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906286 5506643960    0%   /System/Volumes/Data
+[2025-07-30T04:15:08.995Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:17:08.991Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906322 5506613280    0%   /System/Volumes/Data
+[2025-07-30T04:17:08.996Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:19:08.992Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906353 5506466280    0%   /System/Volumes/Data
+[2025-07-30T04:19:08.997Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:20:00.677Z] Checking extension health...
+[2025-07-30T04:20:00.678Z] auto-improver extension is healthy
+[2025-07-30T04:20:00.678Z] file-watcher extension is healthy
+[2025-07-30T04:20:00.678Z] dependency-manager extension is healthy
+[2025-07-30T04:20:00.678Z] build-monitor extension is healthy
+[2025-07-30T04:21:08.994Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906437 5506476400    0%   /System/Volumes/Data
+[2025-07-30T04:21:09.000Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:23:08.994Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906474 5506497280    0%   /System/Volumes/Data
+[2025-07-30T04:23:08.999Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:25:00.909Z] Checking extension health...
+[2025-07-30T04:25:00.909Z] auto-improver extension is healthy
+[2025-07-30T04:25:00.910Z] file-watcher extension is healthy
+[2025-07-30T04:25:00.910Z] dependency-manager extension is healthy
+[2025-07-30T04:25:00.910Z] build-monitor extension is healthy
+[2025-07-30T04:25:08.995Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906543 5506488960    0%   /System/Volumes/Data
+[2025-07-30T04:25:09.001Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:27:08.995Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906579 5505406960    0%   /System/Volumes/Data
+[2025-07-30T04:27:09.001Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:29:08.997Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906606 5505993320    0%   /System/Volumes/Data
+[2025-07-30T04:29:09.002Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:30:00.119Z] Checking extension health...
+[2025-07-30T04:30:00.119Z] auto-improver extension is healthy
+[2025-07-30T04:30:00.119Z] file-watcher extension is healthy
+[2025-07-30T04:30:00.119Z] dependency-manager extension is healthy
+[2025-07-30T04:30:00.120Z] build-monitor extension is healthy
+[2025-07-30T04:31:08.998Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906677 5505966560    0%   /System/Volumes/Data
+[2025-07-30T04:31:09.003Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:33:08.999Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906716 5505956240    0%   /System/Volumes/Data
+[2025-07-30T04:33:09.005Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:35:00.356Z] Checking extension health...
+[2025-07-30T04:35:00.357Z] auto-improver extension is healthy
+[2025-07-30T04:35:00.358Z] file-watcher extension is healthy
+[2025-07-30T04:35:00.358Z] dependency-manager extension is healthy
+[2025-07-30T04:35:00.358Z] build-monitor extension is healthy
+[2025-07-30T04:35:08.999Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906790 5505937720    0%   /System/Volumes/Data
+[2025-07-30T04:35:09.005Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:37:09.001Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906821 5505899200    0%   /System/Volumes/Data
+[2025-07-30T04:37:09.007Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:39:09.002Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906850 5505887360    0%   /System/Volumes/Data
+[2025-07-30T04:39:09.008Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:40:00.577Z] Checking extension health...
+[2025-07-30T04:40:00.577Z] auto-improver extension is healthy
+[2025-07-30T04:40:00.577Z] file-watcher extension is healthy
+[2025-07-30T04:40:00.577Z] dependency-manager extension is healthy
+[2025-07-30T04:40:00.578Z] build-monitor extension is healthy
+[2025-07-30T04:41:09.004Z] Disk usage: /dev/disk1s1  932Gi  388Gi  526Gi    43% 4906933 5510345240    0%   /System/Volumes/Data
+[2025-07-30T04:41:09.009Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:43:08.904Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906965 5509871840    0%   /System/Volumes/Data
+[2025-07-30T04:43:08.910Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:45:00.705Z] Checking extension health...
+[2025-07-30T04:45:00.705Z] auto-improver extension is healthy
+[2025-07-30T04:45:00.706Z] file-watcher extension is healthy
+[2025-07-30T04:45:00.706Z] dependency-manager extension is healthy
+[2025-07-30T04:45:00.706Z] build-monitor extension is healthy
+[2025-07-30T04:45:08.903Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4907028 5509708560    0%   /System/Volumes/Data
+[2025-07-30T04:45:08.909Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:47:08.899Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4907063 5509718840    0%   /System/Volumes/Data
+[2025-07-30T04:47:08.905Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:49:08.897Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4907099 5509690480    0%   /System/Volumes/Data
+[2025-07-30T04:49:08.902Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:50:00.951Z] Checking extension health...
+[2025-07-30T04:50:00.953Z] auto-improver extension is healthy
+[2025-07-30T04:50:00.953Z] file-watcher extension is healthy
+[2025-07-30T04:50:00.954Z] dependency-manager extension is healthy
+[2025-07-30T04:50:00.954Z] build-monitor extension is healthy
+[2025-07-30T04:51:08.894Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4907163 5509637960    0%   /System/Volumes/Data
+[2025-07-30T04:51:08.899Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:53:08.891Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4907219 5509557800    0%   /System/Volumes/Data
+[2025-07-30T04:53:08.897Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:55:00.224Z] Checking extension health...
+[2025-07-30T04:55:00.224Z] auto-improver extension is healthy
+[2025-07-30T04:55:00.225Z] file-watcher extension is healthy
+[2025-07-30T04:55:00.225Z] dependency-manager extension is healthy
+[2025-07-30T04:55:00.225Z] build-monitor extension is healthy
+[2025-07-30T04:55:08.889Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4907279 5509576800    0%   /System/Volumes/Data
+[2025-07-30T04:55:08.895Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:57:08.886Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4907313 5509378320    0%   /System/Volumes/Data
+[2025-07-30T04:57:08.891Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T04:59:08.884Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4907321 5509348400    0%   /System/Volumes/Data
+[2025-07-30T04:59:08.889Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:00:00.459Z] Checking extension health...
+[2025-07-30T05:00:00.460Z] auto-improver extension is healthy
+[2025-07-30T05:00:00.460Z] file-watcher extension is healthy
+[2025-07-30T05:00:00.460Z] dependency-manager extension is healthy
+[2025-07-30T05:00:00.460Z] build-monitor extension is healthy
+[2025-07-30T05:00:00.460Z] Running performance optimization...
+[2025-07-30T05:00:07.320Z] Performance optimization completed
+[2025-07-30T05:01:08.882Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4910773 5504956920    0%   /System/Volumes/Data
+[2025-07-30T05:01:08.890Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:03:08.877Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4910810 5504877040    0%   /System/Volumes/Data
+[2025-07-30T05:03:08.883Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:05:00.779Z] Checking extension health...
+[2025-07-30T05:05:00.779Z] auto-improver extension is healthy
+[2025-07-30T05:05:00.780Z] file-watcher extension is healthy
+[2025-07-30T05:05:00.780Z] dependency-manager extension is healthy
+[2025-07-30T05:05:00.780Z] build-monitor extension is healthy
+[2025-07-30T05:05:08.874Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4910868 5504905360    0%   /System/Volumes/Data
+[2025-07-30T05:05:08.879Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:07:08.872Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4910901 5504888880    0%   /System/Volumes/Data
+[2025-07-30T05:07:08.877Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:09:08.870Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4910929 5504858320    0%   /System/Volumes/Data
+[2025-07-30T05:09:08.875Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:10:00.020Z] Checking extension health...
+[2025-07-30T05:10:00.020Z] auto-improver extension is healthy
+[2025-07-30T05:10:00.020Z] file-watcher extension is healthy
+[2025-07-30T05:10:00.020Z] dependency-manager extension is healthy
+[2025-07-30T05:10:00.020Z] build-monitor extension is healthy
+[2025-07-30T05:11:08.867Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4911013 5504821600    0%   /System/Volumes/Data
+[2025-07-30T05:11:08.872Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:13:08.865Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4911050 5504781360    0%   /System/Volumes/Data
+[2025-07-30T05:13:08.870Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:15:00.253Z] Checking extension health...
+[2025-07-30T05:15:00.253Z] auto-improver extension is healthy
+[2025-07-30T05:15:00.254Z] file-watcher extension is healthy
+[2025-07-30T05:15:00.254Z] dependency-manager extension is healthy
+[2025-07-30T05:15:00.255Z] build-monitor extension is healthy
+[2025-07-30T05:15:08.863Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4911119 5504767640    0%   /System/Volumes/Data
+[2025-07-30T05:15:08.868Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:17:08.860Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4911150 5504777000    0%   /System/Volumes/Data
+[2025-07-30T05:17:08.865Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:19:08.857Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4911182 5504724920    0%   /System/Volumes/Data
+[2025-07-30T05:19:08.863Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:20:00.468Z] Checking extension health...
+[2025-07-30T05:20:00.468Z] auto-improver extension is healthy
+[2025-07-30T05:20:00.468Z] file-watcher extension is healthy
+[2025-07-30T05:20:00.469Z] dependency-manager extension is healthy
+[2025-07-30T05:20:00.469Z] build-monitor extension is healthy
+[2025-07-30T05:21:08.856Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4911254 5504695040    0%   /System/Volumes/Data
+[2025-07-30T05:21:08.861Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:23:08.855Z] Disk usage: /dev/disk1s1  932Gi  389Gi  525Gi    43% 4911293 5504666200    0%   /System/Volumes/Data
+[2025-07-30T05:23:08.869Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:25:00.709Z] Checking extension health...
+[2025-07-30T05:25:00.709Z] auto-improver extension is healthy
+[2025-07-30T05:25:00.710Z] file-watcher extension is healthy
+[2025-07-30T05:25:00.710Z] dependency-manager extension is healthy
+[2025-07-30T05:25:00.711Z] build-monitor extension is healthy
+[2025-07-30T05:25:08.848Z] Disk usage: /dev/disk1s1  932Gi  389Gi  525Gi    43% 4911360 5504659120    0%   /System/Volumes/Data
+[2025-07-30T05:25:08.854Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:27:08.846Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4911397 5504672960    0%   /System/Volumes/Data
+[2025-07-30T05:27:08.851Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:29:08.843Z] Disk usage: /dev/disk1s1  932Gi  389Gi  525Gi    43% 4911426 5504654000    0%   /System/Volumes/Data
+[2025-07-30T05:29:08.848Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:30:00.904Z] Checking extension health...
+[2025-07-30T05:30:00.904Z] auto-improver extension is healthy
+[2025-07-30T05:30:00.904Z] file-watcher extension is healthy
+[2025-07-30T05:30:00.905Z] dependency-manager extension is healthy
+[2025-07-30T05:30:00.905Z] build-monitor extension is healthy
+[2025-07-30T05:31:08.841Z] Disk usage: /dev/disk1s1  932Gi  389Gi  525Gi    43% 4906615 5504543440    0%   /System/Volumes/Data
+[2025-07-30T05:31:08.847Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:33:08.838Z] Disk usage: /dev/disk1s1  932Gi  389Gi  525Gi    43% 4906657 5504513000    0%   /System/Volumes/Data
+[2025-07-30T05:33:08.844Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:35:00.130Z] Checking extension health...
+[2025-07-30T05:35:00.130Z] auto-improver extension is healthy
+[2025-07-30T05:35:00.131Z] file-watcher extension is healthy
+[2025-07-30T05:35:00.131Z] dependency-manager extension is healthy
+[2025-07-30T05:35:00.131Z] build-monitor extension is healthy
+[2025-07-30T05:35:08.837Z] Disk usage: /dev/disk1s1  932Gi  389Gi  525Gi    43% 4906725 5504478160    0%   /System/Volumes/Data
+[2025-07-30T05:35:08.843Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:37:08.835Z] Disk usage: /dev/disk1s1  932Gi  389Gi  525Gi    43% 4906761 5504457120    0%   /System/Volumes/Data
+[2025-07-30T05:37:08.840Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:39:08.831Z] Disk usage: /dev/disk1s1  932Gi  389Gi  525Gi    43% 4906798 5504387640    0%   /System/Volumes/Data
+[2025-07-30T05:39:08.837Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:40:00.371Z] Checking extension health...
+[2025-07-30T05:40:00.372Z] auto-improver extension is healthy
+[2025-07-30T05:40:00.372Z] file-watcher extension is healthy
+[2025-07-30T05:40:00.372Z] dependency-manager extension is healthy
+[2025-07-30T05:40:00.372Z] build-monitor extension is healthy
+[2025-07-30T05:41:08.831Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906923 5508527440    0%   /System/Volumes/Data
+[2025-07-30T05:41:08.837Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:43:08.827Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906965 5508032640    0%   /System/Volumes/Data
+[2025-07-30T05:43:08.833Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:45:00.514Z] Checking extension health...
+[2025-07-30T05:45:00.514Z] auto-improver extension is healthy
+[2025-07-30T05:45:00.515Z] file-watcher extension is healthy
+[2025-07-30T05:45:00.515Z] dependency-manager extension is healthy
+[2025-07-30T05:45:00.515Z] build-monitor extension is healthy
+[2025-07-30T05:45:08.725Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4907045 5507981640    0%   /System/Volumes/Data
+[2025-07-30T05:45:08.731Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:47:08.719Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4907078 5507750680    0%   /System/Volumes/Data
+[2025-07-30T05:47:08.724Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:49:08.712Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4907113 5507749400    0%   /System/Volumes/Data
+[2025-07-30T05:49:08.718Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:50:00.725Z] Checking extension health...
+[2025-07-30T05:50:00.725Z] auto-improver extension is healthy
+[2025-07-30T05:50:00.725Z] file-watcher extension is healthy
+[2025-07-30T05:50:00.725Z] dependency-manager extension is healthy
+[2025-07-30T05:50:00.726Z] build-monitor extension is healthy
+[2025-07-30T05:51:08.706Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4907205 5507679440    0%   /System/Volumes/Data
+[2025-07-30T05:51:08.712Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:53:08.701Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4907277 5507627840    0%   /System/Volumes/Data
+[2025-07-30T05:53:08.706Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:55:00.948Z] Checking extension health...
+[2025-07-30T05:55:00.948Z] auto-improver extension is healthy
+[2025-07-30T05:55:00.949Z] file-watcher extension is healthy
+[2025-07-30T05:55:00.949Z] dependency-manager extension is healthy
+[2025-07-30T05:55:00.949Z] build-monitor extension is healthy
+[2025-07-30T05:55:08.695Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4907341 5507598720    0%   /System/Volumes/Data
+[2025-07-30T05:55:08.700Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:57:08.730Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4907390 5507574960    0%   /System/Volumes/Data
+[2025-07-30T05:57:08.752Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T05:59:08.684Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4907429 5507406600    0%   /System/Volumes/Data
+[2025-07-30T05:59:08.689Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:00:00.175Z] Checking extension health...
+[2025-07-30T06:00:00.176Z] auto-improver extension is healthy
+[2025-07-30T06:00:00.176Z] file-watcher extension is healthy
+[2025-07-30T06:00:00.176Z] dependency-manager extension is healthy
+[2025-07-30T06:00:00.176Z] build-monitor extension is healthy
+[2025-07-30T06:00:00.176Z] Running performance optimization...
+[2025-07-30T06:00:06.408Z] Performance optimization completed
+[2025-07-30T06:01:08.682Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904288 5506819120    0%   /System/Volumes/Data
+[2025-07-30T06:01:08.690Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:03:08.674Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4903996 5506739320    0%   /System/Volumes/Data
+[2025-07-30T06:03:08.679Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:05:00.430Z] Checking extension health...
+[2025-07-30T06:05:00.430Z] auto-improver extension is healthy
+[2025-07-30T06:05:00.430Z] file-watcher extension is healthy
+[2025-07-30T06:05:00.431Z] dependency-manager extension is healthy
+[2025-07-30T06:05:00.431Z] build-monitor extension is healthy
+[2025-07-30T06:05:08.668Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904070 5506709120    0%   /System/Volumes/Data
+[2025-07-30T06:05:08.674Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:07:08.664Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904107 5506677680    0%   /System/Volumes/Data
+[2025-07-30T06:07:08.670Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:09:08.658Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904141 5506691520    0%   /System/Volumes/Data
+[2025-07-30T06:09:08.663Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:10:00.635Z] Checking extension health...
+[2025-07-30T06:10:00.635Z] auto-improver extension is healthy
+[2025-07-30T06:10:00.635Z] file-watcher extension is healthy
+[2025-07-30T06:10:00.636Z] dependency-manager extension is healthy
+[2025-07-30T06:10:00.636Z] build-monitor extension is healthy
+[2025-07-30T06:11:08.652Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904210 5506679280    0%   /System/Volumes/Data
+[2025-07-30T06:11:08.658Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:13:08.647Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904248 5506638080    0%   /System/Volumes/Data
+[2025-07-30T06:13:08.652Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:15:00.850Z] Checking extension health...
+[2025-07-30T06:15:00.850Z] auto-improver extension is healthy
+[2025-07-30T06:15:00.850Z] file-watcher extension is healthy
+[2025-07-30T06:15:00.850Z] dependency-manager extension is healthy
+[2025-07-30T06:15:00.850Z] build-monitor extension is healthy
+[2025-07-30T06:15:08.642Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904318 5506608280    0%   /System/Volumes/Data
+[2025-07-30T06:15:08.647Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:17:08.636Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904355 5506577320    0%   /System/Volumes/Data
+[2025-07-30T06:17:08.641Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:19:08.630Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904394 5506579320    0%   /System/Volumes/Data
+[2025-07-30T06:19:08.636Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:20:00.080Z] Checking extension health...
+[2025-07-30T06:20:00.080Z] auto-improver extension is healthy
+[2025-07-30T06:20:00.081Z] file-watcher extension is healthy
+[2025-07-30T06:20:00.081Z] dependency-manager extension is healthy
+[2025-07-30T06:20:00.081Z] build-monitor extension is healthy
+[2025-07-30T06:21:08.660Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904481 5506536760    0%   /System/Volumes/Data
+[2025-07-30T06:21:08.675Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:23:08.646Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904518 5506535400    0%   /System/Volumes/Data
+[2025-07-30T06:23:08.652Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:25:00.326Z] Checking extension health...
+[2025-07-30T06:25:00.326Z] auto-improver extension is healthy
+[2025-07-30T06:25:00.327Z] file-watcher extension is healthy
+[2025-07-30T06:25:00.327Z] dependency-manager extension is healthy
+[2025-07-30T06:25:00.327Z] build-monitor extension is healthy
+[2025-07-30T06:25:08.642Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904586 5506504920    0%   /System/Volumes/Data
+[2025-07-30T06:25:08.647Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:27:08.637Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904622 5506482880    0%   /System/Volumes/Data
+[2025-07-30T06:27:08.642Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:29:08.633Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904656 5506452560    0%   /System/Volumes/Data
+[2025-07-30T06:29:08.638Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:30:00.554Z] Checking extension health...
+[2025-07-30T06:30:00.554Z] auto-improver extension is healthy
+[2025-07-30T06:30:00.554Z] file-watcher extension is healthy
+[2025-07-30T06:30:00.554Z] dependency-manager extension is healthy
+[2025-07-30T06:30:00.554Z] build-monitor extension is healthy
+[2025-07-30T06:31:08.630Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904735 5506454280    0%   /System/Volumes/Data
+[2025-07-30T06:31:08.635Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:33:08.625Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904773 5506425800    0%   /System/Volumes/Data
+[2025-07-30T06:33:08.630Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:35:00.761Z] Checking extension health...
+[2025-07-30T06:35:00.762Z] auto-improver extension is healthy
+[2025-07-30T06:35:00.762Z] file-watcher extension is healthy
+[2025-07-30T06:35:00.762Z] dependency-manager extension is healthy
+[2025-07-30T06:35:00.762Z] build-monitor extension is healthy
+[2025-07-30T06:35:08.621Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904667 5506378960    0%   /System/Volumes/Data
+[2025-07-30T06:35:08.626Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:37:08.615Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904704 5506366920    0%   /System/Volumes/Data
+[2025-07-30T06:37:08.621Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:39:08.610Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904781 5506242400    0%   /System/Volumes/Data
+[2025-07-30T06:39:08.616Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:40:00.987Z] Checking extension health...
+[2025-07-30T06:40:00.987Z] auto-improver extension is healthy
+[2025-07-30T06:40:00.987Z] file-watcher extension is healthy
+[2025-07-30T06:40:00.988Z] dependency-manager extension is healthy
+[2025-07-30T06:40:00.988Z] build-monitor extension is healthy
+[2025-07-30T06:41:08.606Z] Disk usage: /dev/disk1s1  932Gi  388Gi  526Gi    43% 4904861 5510496840    0%   /System/Volumes/Data
+[2025-07-30T06:41:08.615Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:43:08.602Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904897 5510113120    0%   /System/Volumes/Data
+[2025-07-30T06:43:08.607Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:45:00.256Z] Checking extension health...
+[2025-07-30T06:45:00.256Z] auto-improver extension is healthy
+[2025-07-30T06:45:00.256Z] file-watcher extension is healthy
+[2025-07-30T06:45:00.256Z] dependency-manager extension is healthy
+[2025-07-30T06:45:00.257Z] build-monitor extension is healthy
+[2025-07-30T06:45:08.597Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4904966 5510046920    0%   /System/Volumes/Data
+[2025-07-30T06:45:08.602Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:47:08.592Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905003 5509824360    0%   /System/Volumes/Data
+[2025-07-30T06:47:08.597Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:49:08.589Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905035 5509756160    0%   /System/Volumes/Data
+[2025-07-30T06:49:08.594Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:50:00.481Z] Checking extension health...
+[2025-07-30T06:50:00.481Z] auto-improver extension is healthy
+[2025-07-30T06:50:00.481Z] file-watcher extension is healthy
+[2025-07-30T06:50:00.481Z] dependency-manager extension is healthy
+[2025-07-30T06:50:00.481Z] build-monitor extension is healthy
+[2025-07-30T06:51:08.582Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905120 5509650600    0%   /System/Volumes/Data
+[2025-07-30T06:51:08.588Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:53:08.580Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905160 5509439240    0%   /System/Volumes/Data
+[2025-07-30T06:53:08.586Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:55:00.692Z] Checking extension health...
+[2025-07-30T06:55:00.693Z] auto-improver extension is healthy
+[2025-07-30T06:55:00.693Z] file-watcher extension is healthy
+[2025-07-30T06:55:00.694Z] dependency-manager extension is healthy
+[2025-07-30T06:55:00.694Z] build-monitor extension is healthy
+[2025-07-30T06:55:08.576Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905230 5509397520    0%   /System/Volumes/Data
+[2025-07-30T06:55:08.582Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:57:08.571Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905263 5509362160    0%   /System/Volumes/Data
+[2025-07-30T06:57:08.577Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T06:59:08.569Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905294 5509134760    0%   /System/Volumes/Data
+[2025-07-30T06:59:08.575Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:00:00.905Z] Checking extension health...
+[2025-07-30T07:00:00.905Z] auto-improver extension is healthy
+[2025-07-30T07:00:00.905Z] file-watcher extension is healthy
+[2025-07-30T07:00:00.905Z] dependency-manager extension is healthy
+[2025-07-30T07:00:00.905Z] build-monitor extension is healthy
+[2025-07-30T07:00:00.906Z] Running performance optimization...
+[2025-07-30T07:00:06.703Z] Performance optimization completed
+[2025-07-30T07:01:08.566Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905363 5508596760    0%   /System/Volumes/Data
+[2025-07-30T07:01:08.574Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:03:08.559Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905402 5508307280    0%   /System/Volumes/Data
+[2025-07-30T07:03:08.565Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:05:00.171Z] Checking extension health...
+[2025-07-30T07:05:00.172Z] auto-improver extension is healthy
+[2025-07-30T07:05:00.173Z] file-watcher extension is healthy
+[2025-07-30T07:05:00.173Z] dependency-manager extension is healthy
+[2025-07-30T07:05:00.173Z] build-monitor extension is healthy
+[2025-07-30T07:05:08.555Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905474 5508159560    0%   /System/Volumes/Data
+[2025-07-30T07:05:08.561Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:07:08.551Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905510 5508121160    0%   /System/Volumes/Data
+[2025-07-30T07:07:08.556Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:09:08.546Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905535 5508463200    0%   /System/Volumes/Data
+[2025-07-30T07:09:08.551Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:10:00.397Z] Checking extension health...
+[2025-07-30T07:10:00.397Z] auto-improver extension is healthy
+[2025-07-30T07:10:00.397Z] file-watcher extension is healthy
+[2025-07-30T07:10:00.397Z] dependency-manager extension is healthy
+[2025-07-30T07:10:00.397Z] build-monitor extension is healthy
+[2025-07-30T07:11:08.541Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905616 5508414920    0%   /System/Volumes/Data
+[2025-07-30T07:11:08.549Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:13:08.537Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905653 5508442800    0%   /System/Volumes/Data
+[2025-07-30T07:13:08.543Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:15:00.612Z] Checking extension health...
+[2025-07-30T07:15:00.612Z] auto-improver extension is healthy
+[2025-07-30T07:15:00.613Z] file-watcher extension is healthy
+[2025-07-30T07:15:00.613Z] dependency-manager extension is healthy
+[2025-07-30T07:15:00.613Z] build-monitor extension is healthy
+[2025-07-30T07:15:08.533Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905716 5508388000    0%   /System/Volumes/Data
+[2025-07-30T07:15:08.539Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:17:08.531Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905748 5508367400    0%   /System/Volumes/Data
+[2025-07-30T07:17:08.537Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:19:08.526Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905784 5508353120    0%   /System/Volumes/Data
+[2025-07-30T07:19:08.531Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:20:00.834Z] Checking extension health...
+[2025-07-30T07:20:00.835Z] auto-improver extension is healthy
+[2025-07-30T07:20:00.835Z] file-watcher extension is healthy
+[2025-07-30T07:20:00.835Z] dependency-manager extension is healthy
+[2025-07-30T07:20:00.835Z] build-monitor extension is healthy
+[2025-07-30T07:21:08.527Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905869 5508321600    0%   /System/Volumes/Data
+[2025-07-30T07:21:08.537Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:23:08.518Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905907 5508342800    0%   /System/Volumes/Data
+[2025-07-30T07:23:08.523Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:25:00.068Z] Checking extension health...
+[2025-07-30T07:25:00.068Z] auto-improver extension is healthy
+[2025-07-30T07:25:00.069Z] file-watcher extension is healthy
+[2025-07-30T07:25:00.069Z] dependency-manager extension is healthy
+[2025-07-30T07:25:00.069Z] build-monitor extension is healthy
+[2025-07-30T07:25:08.513Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4905977 5508309160    0%   /System/Volumes/Data
+[2025-07-30T07:25:08.520Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:27:08.495Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906020 5508179920    0%   /System/Volumes/Data
+[2025-07-30T07:27:08.500Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:29:08.490Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906054 5508148320    0%   /System/Volumes/Data
+[2025-07-30T07:29:08.496Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:30:00.266Z] Checking extension health...
+[2025-07-30T07:30:00.266Z] auto-improver extension is healthy
+[2025-07-30T07:30:00.266Z] file-watcher extension is healthy
+[2025-07-30T07:30:00.266Z] dependency-manager extension is healthy
+[2025-07-30T07:30:00.266Z] build-monitor extension is healthy
+[2025-07-30T07:31:08.489Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906125 5508103280    0%   /System/Volumes/Data
+[2025-07-30T07:31:08.494Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:33:08.480Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906167 5507874240    0%   /System/Volumes/Data
+[2025-07-30T07:33:08.485Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:35:00.484Z] Checking extension health...
+[2025-07-30T07:35:00.485Z] auto-improver extension is healthy
+[2025-07-30T07:35:00.486Z] file-watcher extension is healthy
+[2025-07-30T07:35:00.486Z] dependency-manager extension is healthy
+[2025-07-30T07:35:00.486Z] build-monitor extension is healthy
+[2025-07-30T07:35:08.475Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906230 5508084960    0%   /System/Volumes/Data
+[2025-07-30T07:35:08.480Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:37:08.470Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906275 5507828520    0%   /System/Volumes/Data
+[2025-07-30T07:37:08.475Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:39:08.464Z] Disk usage: /dev/disk1s1  932Gi  388Gi  525Gi    43% 4906311 5507809840    0%   /System/Volumes/Data
+[2025-07-30T07:39:08.470Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:40:00.699Z] Checking extension health...
+[2025-07-30T07:40:00.700Z] auto-improver extension is healthy
+[2025-07-30T07:40:00.700Z] file-watcher extension is healthy
+[2025-07-30T07:40:00.700Z] dependency-manager extension is healthy
+[2025-07-30T07:40:00.700Z] build-monitor extension is healthy
+[2025-07-30T07:41:08.461Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4906389 5527951800    0%   /System/Volumes/Data
+[2025-07-30T07:41:08.468Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:43:08.455Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4906422 5527419520    0%   /System/Volumes/Data
+[2025-07-30T07:43:08.461Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:45:00.901Z] Checking extension health...
+[2025-07-30T07:45:00.902Z] auto-improver extension is healthy
+[2025-07-30T07:45:00.902Z] file-watcher extension is healthy
+[2025-07-30T07:45:00.902Z] dependency-manager extension is healthy
+[2025-07-30T07:45:00.902Z] build-monitor extension is healthy
+[2025-07-30T07:45:08.450Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4906486 5527363680    0%   /System/Volumes/Data
+[2025-07-30T07:45:08.455Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:47:08.445Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4906520 5527158160    0%   /System/Volumes/Data
+[2025-07-30T07:47:08.450Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:49:08.440Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4906563 5527126720    0%   /System/Volumes/Data
+[2025-07-30T07:49:08.445Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:50:00.121Z] Checking extension health...
+[2025-07-30T07:50:00.121Z] auto-improver extension is healthy
+[2025-07-30T07:50:00.122Z] file-watcher extension is healthy
+[2025-07-30T07:50:00.122Z] dependency-manager extension is healthy
+[2025-07-30T07:50:00.122Z] build-monitor extension is healthy
+[2025-07-30T07:51:08.438Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4906640 5527069240    0%   /System/Volumes/Data
+[2025-07-30T07:51:08.446Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:53:08.430Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4906688 5526738120    0%   /System/Volumes/Data
+[2025-07-30T07:53:08.435Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:55:00.341Z] Checking extension health...
+[2025-07-30T07:55:00.341Z] auto-improver extension is healthy
+[2025-07-30T07:55:00.341Z] file-watcher extension is healthy
+[2025-07-30T07:55:00.342Z] dependency-manager extension is healthy
+[2025-07-30T07:55:00.342Z] build-monitor extension is healthy
+[2025-07-30T07:55:08.426Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4906752 5526689680    0%   /System/Volumes/Data
+[2025-07-30T07:55:08.431Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:57:08.456Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4906787 5526415000    0%   /System/Volumes/Data
+[2025-07-30T07:57:08.479Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T07:59:08.433Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4906817 5526402760    0%   /System/Volumes/Data
+[2025-07-30T07:59:08.439Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:00:00.572Z] Checking extension health...
+[2025-07-30T08:00:00.572Z] auto-improver extension is healthy
+[2025-07-30T08:00:00.572Z] file-watcher extension is healthy
+[2025-07-30T08:00:00.573Z] dependency-manager extension is healthy
+[2025-07-30T08:00:00.573Z] build-monitor extension is healthy
+[2025-07-30T08:00:00.573Z] Running performance optimization...
+[2025-07-30T08:00:05.000Z] Performance optimization completed
+[2025-07-30T08:01:08.431Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4906714 5526173120    0%   /System/Volumes/Data
+[2025-07-30T08:01:08.439Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:03:08.434Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4906767 5526163120    0%   /System/Volumes/Data
+[2025-07-30T08:03:08.440Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:05:00.829Z] Checking extension health...
+[2025-07-30T08:05:00.829Z] auto-improver extension is healthy
+[2025-07-30T08:05:00.829Z] file-watcher extension is healthy
+[2025-07-30T08:05:00.829Z] dependency-manager extension is healthy
+[2025-07-30T08:05:00.830Z] build-monitor extension is healthy
+[2025-07-30T08:05:08.431Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4906821 5526180960    0%   /System/Volumes/Data
+[2025-07-30T08:05:08.437Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:07:08.425Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4906854 5526380240    0%   /System/Volumes/Data
+[2025-07-30T08:07:08.431Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:09:08.421Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4906886 5526351520    0%   /System/Volumes/Data
+[2025-07-30T08:09:08.426Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:10:00.048Z] Checking extension health...
+[2025-07-30T08:10:00.048Z] auto-improver extension is healthy
+[2025-07-30T08:10:00.048Z] file-watcher extension is healthy
+[2025-07-30T08:10:00.048Z] dependency-manager extension is healthy
+[2025-07-30T08:10:00.048Z] build-monitor extension is healthy
+[2025-07-30T08:11:08.419Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4906973 5526278680    0%   /System/Volumes/Data
+[2025-07-30T08:11:08.426Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:13:08.414Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907014 5526254680    0%   /System/Volumes/Data
+[2025-07-30T08:13:08.420Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:15:00.351Z] Checking extension health...
+[2025-07-30T08:15:00.351Z] auto-improver extension is healthy
+[2025-07-30T08:15:00.352Z] file-watcher extension is healthy
+[2025-07-30T08:15:00.352Z] dependency-manager extension is healthy
+[2025-07-30T08:15:00.352Z] build-monitor extension is healthy
+[2025-07-30T08:15:08.410Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907090 5526268760    0%   /System/Volumes/Data
+[2025-07-30T08:15:08.415Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:17:08.404Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907124 5526246680    0%   /System/Volumes/Data
+[2025-07-30T08:17:08.410Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:19:08.400Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907164 5526227080    0%   /System/Volumes/Data
+[2025-07-30T08:19:08.405Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:20:00.536Z] Checking extension health...
+[2025-07-30T08:20:00.536Z] auto-improver extension is healthy
+[2025-07-30T08:20:00.536Z] file-watcher extension is healthy
+[2025-07-30T08:20:00.536Z] dependency-manager extension is healthy
+[2025-07-30T08:20:00.536Z] build-monitor extension is healthy
+[2025-07-30T08:21:08.396Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907241 5526218800    0%   /System/Volumes/Data
+[2025-07-30T08:21:08.403Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:23:08.391Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907284 5526132960    0%   /System/Volumes/Data
+[2025-07-30T08:23:08.396Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:25:00.751Z] Checking extension health...
+[2025-07-30T08:25:00.752Z] auto-improver extension is healthy
+[2025-07-30T08:25:00.752Z] file-watcher extension is healthy
+[2025-07-30T08:25:00.752Z] dependency-manager extension is healthy
+[2025-07-30T08:25:00.752Z] build-monitor extension is healthy
+[2025-07-30T08:25:08.387Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907354 5526150760    0%   /System/Volumes/Data
+[2025-07-30T08:25:08.393Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:27:08.383Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907388 5526131240    0%   /System/Volumes/Data
+[2025-07-30T08:27:08.389Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:29:08.377Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907420 5526101560    0%   /System/Volumes/Data
+[2025-07-30T08:29:08.383Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:30:00.971Z] Checking extension health...
+[2025-07-30T08:30:00.971Z] auto-improver extension is healthy
+[2025-07-30T08:30:00.971Z] file-watcher extension is healthy
+[2025-07-30T08:30:00.971Z] dependency-manager extension is healthy
+[2025-07-30T08:30:00.971Z] build-monitor extension is healthy
+[2025-07-30T08:31:08.373Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907497 5526061920    0%   /System/Volumes/Data
+[2025-07-30T08:31:08.379Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:33:08.367Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907536 5526034360    0%   /System/Volumes/Data
+[2025-07-30T08:33:08.373Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:35:00.141Z] Checking extension health...
+[2025-07-30T08:35:00.141Z] auto-improver extension is healthy
+[2025-07-30T08:35:00.141Z] file-watcher extension is healthy
+[2025-07-30T08:35:00.141Z] dependency-manager extension is healthy
+[2025-07-30T08:35:00.141Z] build-monitor extension is healthy
+[2025-07-30T08:35:08.263Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907606 5526034040    0%   /System/Volumes/Data
+[2025-07-30T08:35:08.269Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:37:08.257Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907641 5526020720    0%   /System/Volumes/Data
+[2025-07-30T08:37:08.262Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:39:08.250Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907674 5525995760    0%   /System/Volumes/Data
+[2025-07-30T08:39:08.255Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:40:00.361Z] Checking extension health...
+[2025-07-30T08:40:00.362Z] auto-improver extension is healthy
+[2025-07-30T08:40:00.362Z] file-watcher extension is healthy
+[2025-07-30T08:40:00.362Z] dependency-manager extension is healthy
+[2025-07-30T08:40:00.362Z] build-monitor extension is healthy
+[2025-07-30T08:41:08.248Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907753 5529404040    0%   /System/Volumes/Data
+[2025-07-30T08:41:08.254Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:43:08.239Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907791 5528903920    0%   /System/Volumes/Data
+[2025-07-30T08:43:08.245Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:45:00.569Z] Checking extension health...
+[2025-07-30T08:45:00.570Z] auto-improver extension is healthy
+[2025-07-30T08:45:00.570Z] file-watcher extension is healthy
+[2025-07-30T08:45:00.570Z] dependency-manager extension is healthy
+[2025-07-30T08:45:00.570Z] build-monitor extension is healthy
+[2025-07-30T08:45:08.233Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907865 5528864760    0%   /System/Volumes/Data
+[2025-07-30T08:45:08.239Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:47:08.225Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907577 5528668200    0%   /System/Volumes/Data
+[2025-07-30T08:47:08.231Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:49:08.329Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907608 5528606480    0%   /System/Volumes/Data
+[2025-07-30T08:49:08.335Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:50:00.956Z] Checking extension health...
+[2025-07-30T08:50:00.956Z] auto-improver extension is healthy
+[2025-07-30T08:50:00.956Z] file-watcher extension is healthy
+[2025-07-30T08:50:00.956Z] dependency-manager extension is healthy
+[2025-07-30T08:50:00.957Z] build-monitor extension is healthy
+[2025-07-30T08:51:08.333Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907691 5528528600    0%   /System/Volumes/Data
+[2025-07-30T08:51:08.338Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:53:08.337Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907731 5528449440    0%   /System/Volumes/Data
+[2025-07-30T08:53:08.343Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:55:00.195Z] Checking extension health...
+[2025-07-30T08:55:00.195Z] auto-improver extension is healthy
+[2025-07-30T08:55:00.195Z] file-watcher extension is healthy
+[2025-07-30T08:55:00.196Z] dependency-manager extension is healthy
+[2025-07-30T08:55:00.196Z] build-monitor extension is healthy
+[2025-07-30T08:55:08.342Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907806 5528400880    0%   /System/Volumes/Data
+[2025-07-30T08:55:08.347Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:57:08.346Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907839 5528425880    0%   /System/Volumes/Data
+[2025-07-30T08:57:08.351Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T08:59:08.350Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4907873 5528389600    0%   /System/Volumes/Data
+[2025-07-30T08:59:08.355Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:00:00.449Z] Checking extension health...
+[2025-07-30T09:00:00.449Z] auto-improver extension is healthy
+[2025-07-30T09:00:00.450Z] file-watcher extension is healthy
+[2025-07-30T09:00:00.450Z] dependency-manager extension is healthy
+[2025-07-30T09:00:00.450Z] build-monitor extension is healthy
+[2025-07-30T09:00:00.450Z] Running performance optimization...
+[2025-07-30T09:00:06.932Z] Performance optimization completed
+[2025-07-30T09:01:08.357Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4908133 5527812320    0%   /System/Volumes/Data
+[2025-07-30T09:01:08.363Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:03:08.359Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4908170 5527569160    0%   /System/Volumes/Data
+[2025-07-30T09:03:08.364Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:05:00.712Z] Checking extension health...
+[2025-07-30T09:05:00.713Z] auto-improver extension is healthy
+[2025-07-30T09:05:00.713Z] file-watcher extension is healthy
+[2025-07-30T09:05:00.714Z] dependency-manager extension is healthy
+[2025-07-30T09:05:00.714Z] build-monitor extension is healthy
+[2025-07-30T09:05:08.363Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4908237 5527534040    0%   /System/Volumes/Data
+[2025-07-30T09:05:08.368Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:07:08.271Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4908348 5527428280    0%   /System/Volumes/Data
+[2025-07-30T09:07:08.276Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:09:08.267Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4908276 5527389600    0%   /System/Volumes/Data
+[2025-07-30T09:09:08.272Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:10:00.855Z] Checking extension health...
+[2025-07-30T09:10:00.855Z] auto-improver extension is healthy
+[2025-07-30T09:10:00.856Z] file-watcher extension is healthy
+[2025-07-30T09:10:00.856Z] dependency-manager extension is healthy
+[2025-07-30T09:10:00.856Z] build-monitor extension is healthy
+[2025-07-30T09:11:08.262Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4908364 5527377800    0%   /System/Volumes/Data
+[2025-07-30T09:11:08.267Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:13:08.256Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4908404 5527356600    0%   /System/Volumes/Data
+[2025-07-30T09:13:08.262Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:15:00.107Z] Checking extension health...
+[2025-07-30T09:15:00.108Z] auto-improver extension is healthy
+[2025-07-30T09:15:00.108Z] file-watcher extension is healthy
+[2025-07-30T09:15:00.108Z] dependency-manager extension is healthy
+[2025-07-30T09:15:00.108Z] build-monitor extension is healthy
+[2025-07-30T09:15:08.251Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4908472 5527312080    0%   /System/Volumes/Data
+[2025-07-30T09:15:08.257Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:17:08.246Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4908499 5527325560    0%   /System/Volumes/Data
+[2025-07-30T09:17:08.251Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:19:08.242Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4908531 5527268480    0%   /System/Volumes/Data
+[2025-07-30T09:19:08.247Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:20:00.381Z] Checking extension health...
+[2025-07-30T09:20:00.382Z] auto-improver extension is healthy
+[2025-07-30T09:20:00.382Z] file-watcher extension is healthy
+[2025-07-30T09:20:00.382Z] dependency-manager extension is healthy
+[2025-07-30T09:20:00.382Z] build-monitor extension is healthy
+[2025-07-30T09:21:08.237Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4908613 5527229800    0%   /System/Volumes/Data
+[2025-07-30T09:21:08.242Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:23:08.232Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4908732 5527101600    0%   /System/Volumes/Data
+[2025-07-30T09:23:08.237Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:25:00.588Z] Checking extension health...
+[2025-07-30T09:25:00.588Z] auto-improver extension is healthy
+[2025-07-30T09:25:00.589Z] file-watcher extension is healthy
+[2025-07-30T09:25:00.589Z] dependency-manager extension is healthy
+[2025-07-30T09:25:00.589Z] build-monitor extension is healthy
+[2025-07-30T09:25:08.227Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4908729 5527164480    0%   /System/Volumes/Data
+[2025-07-30T09:25:08.232Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:27:08.224Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4908761 5527152800    0%   /System/Volumes/Data
+[2025-07-30T09:27:08.229Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:29:08.218Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4908794 5527158040    0%   /System/Volumes/Data
+[2025-07-30T09:29:08.223Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:30:00.801Z] Checking extension health...
+[2025-07-30T09:30:00.801Z] auto-improver extension is healthy
+[2025-07-30T09:30:00.802Z] file-watcher extension is healthy
+[2025-07-30T09:30:00.802Z] dependency-manager extension is healthy
+[2025-07-30T09:30:00.802Z] build-monitor extension is healthy
+[2025-07-30T09:31:08.213Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4908874 5527127720    0%   /System/Volumes/Data
+[2025-07-30T09:31:08.219Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:33:08.208Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4908911 5527087720    0%   /System/Volumes/Data
+[2025-07-30T09:33:08.214Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:35:00.038Z] Checking extension health...
+[2025-07-30T09:35:00.038Z] auto-improver extension is healthy
+[2025-07-30T09:35:00.038Z] file-watcher extension is healthy
+[2025-07-30T09:35:00.039Z] dependency-manager extension is healthy
+[2025-07-30T09:35:00.039Z] build-monitor extension is healthy
+[2025-07-30T09:35:08.204Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909058 5526983760    0%   /System/Volumes/Data
+[2025-07-30T09:35:08.209Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:37:08.199Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909016 5527052920    0%   /System/Volumes/Data
+[2025-07-30T09:37:08.205Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:39:08.194Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909050 5527097480    0%   /System/Volumes/Data
+[2025-07-30T09:39:08.200Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:40:00.260Z] Checking extension health...
+[2025-07-30T09:40:00.261Z] auto-improver extension is healthy
+[2025-07-30T09:40:00.261Z] file-watcher extension is healthy
+[2025-07-30T09:40:00.261Z] dependency-manager extension is healthy
+[2025-07-30T09:40:00.261Z] build-monitor extension is healthy
+[2025-07-30T09:41:08.191Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909133 5529681320    0%   /System/Volumes/Data
+[2025-07-30T09:41:08.197Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:43:08.186Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909171 5529282320    0%   /System/Volumes/Data
+[2025-07-30T09:43:08.192Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:45:00.471Z] Checking extension health...
+[2025-07-30T09:45:00.471Z] auto-improver extension is healthy
+[2025-07-30T09:45:00.472Z] file-watcher extension is healthy
+[2025-07-30T09:45:00.472Z] dependency-manager extension is healthy
+[2025-07-30T09:45:00.472Z] build-monitor extension is healthy
+[2025-07-30T09:45:08.182Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909241 5529225480    0%   /System/Volumes/Data
+[2025-07-30T09:45:08.187Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:47:08.177Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909278 5529010720    0%   /System/Volumes/Data
+[2025-07-30T09:47:08.183Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:49:08.172Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909311 5529013760    0%   /System/Volumes/Data
+[2025-07-30T09:49:08.178Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:50:00.678Z] Checking extension health...
+[2025-07-30T09:50:00.678Z] auto-improver extension is healthy
+[2025-07-30T09:50:00.678Z] file-watcher extension is healthy
+[2025-07-30T09:50:00.678Z] dependency-manager extension is healthy
+[2025-07-30T09:50:00.678Z] build-monitor extension is healthy
+[2025-07-30T09:51:08.167Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909392 5528976480    0%   /System/Volumes/Data
+[2025-07-30T09:51:08.173Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:53:08.163Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909432 5528926960    0%   /System/Volumes/Data
+[2025-07-30T09:53:08.169Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:55:00.904Z] Checking extension health...
+[2025-07-30T09:55:00.905Z] auto-improver extension is healthy
+[2025-07-30T09:55:00.905Z] file-watcher extension is healthy
+[2025-07-30T09:55:00.905Z] dependency-manager extension is healthy
+[2025-07-30T09:55:00.906Z] build-monitor extension is healthy
+[2025-07-30T09:55:08.159Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909492 5528863400    0%   /System/Volumes/Data
+[2025-07-30T09:55:08.165Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:57:08.156Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909526 5528836720    0%   /System/Volumes/Data
+[2025-07-30T09:57:08.161Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T09:59:08.151Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909558 5528801600    0%   /System/Volumes/Data
+[2025-07-30T09:59:08.157Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:00:00.135Z] Checking extension health...
+[2025-07-30T10:00:00.135Z] auto-improver extension is healthy
+[2025-07-30T10:00:00.135Z] file-watcher extension is healthy
+[2025-07-30T10:00:00.135Z] dependency-manager extension is healthy
+[2025-07-30T10:00:00.135Z] build-monitor extension is healthy
+[2025-07-30T10:00:00.135Z] Running performance optimization...
+[2025-07-30T10:00:05.738Z] Performance optimization completed
+[2025-07-30T10:01:08.153Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909639 5528279080    0%   /System/Volumes/Data
+[2025-07-30T10:01:08.160Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:03:08.141Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909684 5528107040    0%   /System/Volumes/Data
+[2025-07-30T10:03:08.147Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:05:00.349Z] Checking extension health...
+[2025-07-30T10:05:00.349Z] auto-improver extension is healthy
+[2025-07-30T10:05:00.349Z] file-watcher extension is healthy
+[2025-07-30T10:05:00.349Z] dependency-manager extension is healthy
+[2025-07-30T10:05:00.349Z] build-monitor extension is healthy
+[2025-07-30T10:05:08.137Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909765 5527900800    0%   /System/Volumes/Data
+[2025-07-30T10:05:08.142Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:07:08.133Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909801 5527845880    0%   /System/Volumes/Data
+[2025-07-30T10:07:08.138Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:09:08.127Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909829 5527815800    0%   /System/Volumes/Data
+[2025-07-30T10:09:08.132Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:10:00.543Z] Checking extension health...
+[2025-07-30T10:10:00.543Z] auto-improver extension is healthy
+[2025-07-30T10:10:00.543Z] file-watcher extension is healthy
+[2025-07-30T10:10:00.543Z] dependency-manager extension is healthy
+[2025-07-30T10:10:00.544Z] build-monitor extension is healthy
+[2025-07-30T10:11:08.121Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909912 5527813520    0%   /System/Volumes/Data
+[2025-07-30T10:11:08.127Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:13:08.117Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4909955 5527763040    0%   /System/Volumes/Data
+[2025-07-30T10:13:08.122Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:15:00.775Z] Checking extension health...
+[2025-07-30T10:15:00.775Z] auto-improver extension is healthy
+[2025-07-30T10:15:00.776Z] file-watcher extension is healthy
+[2025-07-30T10:15:00.776Z] dependency-manager extension is healthy
+[2025-07-30T10:15:00.776Z] build-monitor extension is healthy
+[2025-07-30T10:15:08.112Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910026 5527743000    0%   /System/Volumes/Data
+[2025-07-30T10:15:08.117Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:17:08.107Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910065 5527712840    0%   /System/Volumes/Data
+[2025-07-30T10:17:08.112Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:19:08.104Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910101 5527695280    0%   /System/Volumes/Data
+[2025-07-30T10:19:08.109Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:20:00.006Z] Checking extension health...
+[2025-07-30T10:20:00.006Z] auto-improver extension is healthy
+[2025-07-30T10:20:00.006Z] file-watcher extension is healthy
+[2025-07-30T10:20:00.006Z] dependency-manager extension is healthy
+[2025-07-30T10:20:00.006Z] build-monitor extension is healthy
+[2025-07-30T10:21:08.103Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910182 5527670120    0%   /System/Volumes/Data
+[2025-07-30T10:21:08.110Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:23:08.095Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910224 5527664440    0%   /System/Volumes/Data
+[2025-07-30T10:23:08.100Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:25:00.210Z] Checking extension health...
+[2025-07-30T10:25:00.210Z] auto-improver extension is healthy
+[2025-07-30T10:25:00.210Z] file-watcher extension is healthy
+[2025-07-30T10:25:00.210Z] dependency-manager extension is healthy
+[2025-07-30T10:25:00.210Z] build-monitor extension is healthy
+[2025-07-30T10:25:08.090Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910290 5527562160    0%   /System/Volumes/Data
+[2025-07-30T10:25:08.096Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:27:08.085Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910324 5527532000    0%   /System/Volumes/Data
+[2025-07-30T10:27:08.090Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:29:08.079Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910360 5527512240    0%   /System/Volumes/Data
+[2025-07-30T10:29:08.084Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:30:00.422Z] Checking extension health...
+[2025-07-30T10:30:00.422Z] auto-improver extension is healthy
+[2025-07-30T10:30:00.423Z] file-watcher extension is healthy
+[2025-07-30T10:30:00.423Z] dependency-manager extension is healthy
+[2025-07-30T10:30:00.423Z] build-monitor extension is healthy
+[2025-07-30T10:31:08.075Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910442 5527497920    0%   /System/Volumes/Data
+[2025-07-30T10:31:08.080Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:33:08.071Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910483 5527518720    0%   /System/Volumes/Data
+[2025-07-30T10:33:08.076Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:35:00.676Z] Checking extension health...
+[2025-07-30T10:35:00.676Z] auto-improver extension is healthy
+[2025-07-30T10:35:00.676Z] file-watcher extension is healthy
+[2025-07-30T10:35:00.676Z] dependency-manager extension is healthy
+[2025-07-30T10:35:00.676Z] build-monitor extension is healthy
+[2025-07-30T10:35:08.066Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910556 5527489080    0%   /System/Volumes/Data
+[2025-07-30T10:35:08.071Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:37:08.061Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910592 5527469160    0%   /System/Volumes/Data
+[2025-07-30T10:37:08.067Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:39:08.056Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910626 5527454080    0%   /System/Volumes/Data
+[2025-07-30T10:39:08.062Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:40:00.887Z] Checking extension health...
+[2025-07-30T10:40:00.887Z] auto-improver extension is healthy
+[2025-07-30T10:40:00.887Z] file-watcher extension is healthy
+[2025-07-30T10:40:00.887Z] dependency-manager extension is healthy
+[2025-07-30T10:40:00.888Z] build-monitor extension is healthy
+[2025-07-30T10:41:08.055Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910704 5530374840    0%   /System/Volumes/Data
+[2025-07-30T10:41:08.063Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:43:08.046Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910744 5529888080    0%   /System/Volumes/Data
+[2025-07-30T10:43:08.052Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:45:00.097Z] Checking extension health...
+[2025-07-30T10:45:00.098Z] auto-improver extension is healthy
+[2025-07-30T10:45:00.098Z] file-watcher extension is healthy
+[2025-07-30T10:45:00.098Z] dependency-manager extension is healthy
+[2025-07-30T10:45:00.098Z] build-monitor extension is healthy
+[2025-07-30T10:45:08.041Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910814 5529815440    0%   /System/Volumes/Data
+[2025-07-30T10:45:08.046Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:47:08.055Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910854 5529593760    0%   /System/Volumes/Data
+[2025-07-30T10:47:08.060Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:49:08.051Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910889 5529529080    0%   /System/Volumes/Data
+[2025-07-30T10:49:08.056Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:50:00.330Z] Checking extension health...
+[2025-07-30T10:50:00.330Z] auto-improver extension is healthy
+[2025-07-30T10:50:00.330Z] file-watcher extension is healthy
+[2025-07-30T10:50:00.331Z] dependency-manager extension is healthy
+[2025-07-30T10:50:00.331Z] build-monitor extension is healthy
+[2025-07-30T10:51:08.047Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910968 5529463320    0%   /System/Volumes/Data
+[2025-07-30T10:51:08.052Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:53:08.042Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911014 5529435320    0%   /System/Volumes/Data
+[2025-07-30T10:53:08.048Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:55:00.563Z] Checking extension health...
+[2025-07-30T10:55:00.563Z] auto-improver extension is healthy
+[2025-07-30T10:55:00.564Z] file-watcher extension is healthy
+[2025-07-30T10:55:00.564Z] dependency-manager extension is healthy
+[2025-07-30T10:55:00.564Z] build-monitor extension is healthy
+[2025-07-30T10:55:08.038Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911078 5529369160    0%   /System/Volumes/Data
+[2025-07-30T10:55:08.044Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:57:08.034Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911124 5529335320    0%   /System/Volumes/Data
+[2025-07-30T10:57:08.039Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T10:59:08.029Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910781 5529288600    0%   /System/Volumes/Data
+[2025-07-30T10:59:08.035Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:00:00.800Z] Checking extension health...
+[2025-07-30T11:00:00.801Z] auto-improver extension is healthy
+[2025-07-30T11:00:00.801Z] file-watcher extension is healthy
+[2025-07-30T11:00:00.801Z] dependency-manager extension is healthy
+[2025-07-30T11:00:00.801Z] build-monitor extension is healthy
+[2025-07-30T11:00:00.801Z] Running performance optimization...
+[2025-07-30T11:00:00.839Z] Generating daily summary...
+[2025-07-30T11:00:07.849Z] Performance optimization completed
+[2025-07-30T11:00:15.541Z] Daily summary generated
+[2025-07-30T11:01:08.029Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910855 5528699600    0%   /System/Volumes/Data
+[2025-07-30T11:01:08.039Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:03:08.023Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910895 5528646120    0%   /System/Volumes/Data
+[2025-07-30T11:03:08.028Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:05:00.015Z] Checking extension health...
+[2025-07-30T11:05:00.015Z] auto-improver extension is healthy
+[2025-07-30T11:05:00.016Z] file-watcher extension is healthy
+[2025-07-30T11:05:00.016Z] dependency-manager extension is healthy
+[2025-07-30T11:05:00.016Z] build-monitor extension is healthy
+[2025-07-30T11:05:08.019Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4910969 5528479760    0%   /System/Volumes/Data
+[2025-07-30T11:05:08.024Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:07:08.014Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911014 5528452880    0%   /System/Volumes/Data
+[2025-07-30T11:07:08.020Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:09:08.010Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911050 5528380000    0%   /System/Volumes/Data
+[2025-07-30T11:09:08.016Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:10:00.236Z] Checking extension health...
+[2025-07-30T11:10:00.236Z] auto-improver extension is healthy
+[2025-07-30T11:10:00.236Z] file-watcher extension is healthy
+[2025-07-30T11:10:00.236Z] dependency-manager extension is healthy
+[2025-07-30T11:10:00.236Z] build-monitor extension is healthy
+[2025-07-30T11:11:08.007Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911133 5528361560    0%   /System/Volumes/Data
+[2025-07-30T11:11:08.013Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:13:08.003Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911175 5528343160    0%   /System/Volumes/Data
+[2025-07-30T11:13:08.009Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:15:00.460Z] Checking extension health...
+[2025-07-30T11:15:00.461Z] auto-improver extension is healthy
+[2025-07-30T11:15:00.461Z] file-watcher extension is healthy
+[2025-07-30T11:15:00.462Z] dependency-manager extension is healthy
+[2025-07-30T11:15:00.462Z] build-monitor extension is healthy
+[2025-07-30T11:15:08.001Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911209 5528348760    0%   /System/Volumes/Data
+[2025-07-30T11:15:08.006Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:17:07.998Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911243 5528302800    0%   /System/Volumes/Data
+[2025-07-30T11:17:08.003Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:19:07.995Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911278 5528307560    0%   /System/Volumes/Data
+[2025-07-30T11:19:08.000Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:20:00.713Z] Checking extension health...
+[2025-07-30T11:20:00.713Z] auto-improver extension is healthy
+[2025-07-30T11:20:00.713Z] file-watcher extension is healthy
+[2025-07-30T11:20:00.714Z] dependency-manager extension is healthy
+[2025-07-30T11:20:00.714Z] build-monitor extension is healthy
+[2025-07-30T11:21:07.990Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911358 5528263920    0%   /System/Volumes/Data
+[2025-07-30T11:21:07.996Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:23:07.986Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911396 5528226040    0%   /System/Volumes/Data
+[2025-07-30T11:23:07.991Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:25:00.923Z] Checking extension health...
+[2025-07-30T11:25:00.923Z] auto-improver extension is healthy
+[2025-07-30T11:25:00.924Z] file-watcher extension is healthy
+[2025-07-30T11:25:00.924Z] dependency-manager extension is healthy
+[2025-07-30T11:25:00.924Z] build-monitor extension is healthy
+[2025-07-30T11:25:07.982Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911462 5528233760    0%   /System/Volumes/Data
+[2025-07-30T11:25:07.988Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:27:07.979Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911497 5528214920    0%   /System/Volumes/Data
+[2025-07-30T11:27:07.985Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:29:07.975Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911533 5528172160    0%   /System/Volumes/Data
+[2025-07-30T11:29:07.980Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:30:00.152Z] Checking extension health...
+[2025-07-30T11:30:00.153Z] auto-improver extension is healthy
+[2025-07-30T11:30:00.153Z] file-watcher extension is healthy
+[2025-07-30T11:30:00.153Z] dependency-manager extension is healthy
+[2025-07-30T11:30:00.153Z] build-monitor extension is healthy
+[2025-07-30T11:31:07.975Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911617 5528136640    0%   /System/Volumes/Data
+[2025-07-30T11:31:07.984Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:33:07.966Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911659 5528117800    0%   /System/Volumes/Data
+[2025-07-30T11:33:07.972Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:35:00.416Z] Checking extension health...
+[2025-07-30T11:35:00.416Z] auto-improver extension is healthy
+[2025-07-30T11:35:00.417Z] file-watcher extension is healthy
+[2025-07-30T11:35:00.417Z] dependency-manager extension is healthy
+[2025-07-30T11:35:00.417Z] build-monitor extension is healthy
+[2025-07-30T11:35:07.962Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911730 5528136840    0%   /System/Volumes/Data
+[2025-07-30T11:35:07.968Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:37:07.837Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911766 5528114400    0%   /System/Volumes/Data
+[2025-07-30T11:37:07.842Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:39:07.830Z] Disk usage: /dev/disk1s1  932Gi  386Gi  527Gi    43% 4911802 5528109040    0%   /System/Volumes/Data
+[2025-07-30T11:39:07.835Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:40:00.538Z] Checking extension health...
+[2025-07-30T11:40:00.538Z] auto-improver extension is healthy
+[2025-07-30T11:40:00.538Z] file-watcher extension is healthy
+[2025-07-30T11:40:00.539Z] dependency-manager extension is healthy
+[2025-07-30T11:40:00.539Z] build-monitor extension is healthy
+[2025-07-30T11:41:07.823Z] Disk usage: /dev/disk1s1  932Gi  384Gi  529Gi    43% 4911877 5547729320    0%   /System/Volumes/Data
+[2025-07-30T11:41:07.828Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:43:07.816Z] Disk usage: /dev/disk1s1  932Gi  384Gi  529Gi    43% 4911933 5547233400    0%   /System/Volumes/Data
+[2025-07-30T11:43:07.822Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:45:00.748Z] Checking extension health...
+[2025-07-30T11:45:00.749Z] auto-improver extension is healthy
+[2025-07-30T11:45:00.749Z] file-watcher extension is healthy
+[2025-07-30T11:45:00.749Z] dependency-manager extension is healthy
+[2025-07-30T11:45:00.749Z] build-monitor extension is healthy
+[2025-07-30T11:45:07.810Z] Disk usage: /dev/disk1s1  932Gi  384Gi  529Gi    43% 4912004 5547159080    0%   /System/Volumes/Data
+[2025-07-30T11:45:07.815Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:47:07.804Z] Disk usage: /dev/disk1s1  932Gi  384Gi  529Gi    43% 4912036 5546956440    0%   /System/Volumes/Data
+[2025-07-30T11:47:07.809Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:49:07.797Z] Disk usage: /dev/disk1s1  932Gi  384Gi  529Gi    43% 4912081 5546879160    0%   /System/Volumes/Data
+[2025-07-30T11:49:07.802Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:50:00.974Z] Checking extension health...
+[2025-07-30T11:50:00.975Z] auto-improver extension is healthy
+[2025-07-30T11:50:00.975Z] file-watcher extension is healthy
+[2025-07-30T11:50:00.975Z] dependency-manager extension is healthy
+[2025-07-30T11:50:00.975Z] build-monitor extension is healthy
+[2025-07-30T11:51:07.792Z] Disk usage: /dev/disk1s1  932Gi  384Gi  529Gi    43% 4912165 5546816000    0%   /System/Volumes/Data
+[2025-07-30T11:51:07.798Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:53:07.908Z] Disk usage: /dev/disk1s1  932Gi  384Gi  529Gi    43% 4912201 5546779640    0%   /System/Volumes/Data
+[2025-07-30T11:53:07.913Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:55:00.328Z] Checking extension health...
+[2025-07-30T11:55:00.328Z] auto-improver extension is healthy
+[2025-07-30T11:55:00.328Z] file-watcher extension is healthy
+[2025-07-30T11:55:00.329Z] dependency-manager extension is healthy
+[2025-07-30T11:55:00.329Z] build-monitor extension is healthy
+[2025-07-30T11:55:07.912Z] Disk usage: /dev/disk1s1  932Gi  384Gi  529Gi    43% 4912262 5546749800    0%   /System/Volumes/Data
+[2025-07-30T11:55:07.918Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:57:07.916Z] Disk usage: /dev/disk1s1  932Gi  384Gi  529Gi    43% 4912306 5546751320    0%   /System/Volumes/Data
+[2025-07-30T11:57:07.922Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T11:59:07.920Z] Disk usage: /dev/disk1s1  932Gi  384Gi  529Gi    43% 4912342 5546722960    0%   /System/Volumes/Data
+[2025-07-30T11:59:07.926Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:00:00.592Z] Checking extension health...
+[2025-07-30T12:00:00.592Z] auto-improver extension is healthy
+[2025-07-30T12:00:00.592Z] file-watcher extension is healthy
+[2025-07-30T12:00:00.592Z] dependency-manager extension is healthy
+[2025-07-30T12:00:00.592Z] build-monitor extension is healthy
+[2025-07-30T12:00:00.593Z] Running performance optimization...
+[2025-07-30T12:00:06.581Z] Performance optimization completed
+[2025-07-30T12:01:07.931Z] Disk usage: /dev/disk1s1  932Gi  385Gi  529Gi    43% 4912421 5546185480    0%   /System/Volumes/Data
+[2025-07-30T12:01:07.941Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:03:07.928Z] Disk usage: /dev/disk1s1  932Gi  385Gi  529Gi    43% 4912457 5546098840    0%   /System/Volumes/Data
+[2025-07-30T12:03:07.933Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:05:00.835Z] Checking extension health...
+[2025-07-30T12:05:00.835Z] auto-improver extension is healthy
+[2025-07-30T12:05:00.835Z] file-watcher extension is healthy
+[2025-07-30T12:05:00.836Z] dependency-manager extension is healthy
+[2025-07-30T12:05:00.836Z] build-monitor extension is healthy
+[2025-07-30T12:05:07.932Z] Disk usage: /dev/disk1s1  932Gi  385Gi  529Gi    43% 4912533 5546055720    0%   /System/Volumes/Data
+[2025-07-30T12:05:07.937Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:07:07.936Z] Disk usage: /dev/disk1s1  932Gi  385Gi  529Gi    43% 4912565 5545893000    0%   /System/Volumes/Data
+[2025-07-30T12:07:07.941Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:09:07.940Z] Disk usage: /dev/disk1s1  932Gi  385Gi  529Gi    43% 4912603 5545847520    0%   /System/Volumes/Data
+[2025-07-30T12:09:07.945Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:10:00.095Z] Checking extension health...
+[2025-07-30T12:10:00.095Z] auto-improver extension is healthy
+[2025-07-30T12:10:00.095Z] file-watcher extension is healthy
+[2025-07-30T12:10:00.095Z] dependency-manager extension is healthy
+[2025-07-30T12:10:00.095Z] build-monitor extension is healthy
+[2025-07-30T12:11:07.946Z] Disk usage: /dev/disk1s1  932Gi  385Gi  529Gi    43% 4912693 5545799000    0%   /System/Volumes/Data
+[2025-07-30T12:11:07.951Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:13:07.948Z] Disk usage: /dev/disk1s1  932Gi  385Gi  529Gi    43% 4912734 5545759040    0%   /System/Volumes/Data
+[2025-07-30T12:13:07.953Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:15:00.336Z] Checking extension health...
+[2025-07-30T12:15:00.336Z] auto-improver extension is healthy
+[2025-07-30T12:15:00.336Z] file-watcher extension is healthy
+[2025-07-30T12:15:00.337Z] dependency-manager extension is healthy
+[2025-07-30T12:15:00.337Z] build-monitor extension is healthy
+[2025-07-30T12:15:07.952Z] Disk usage: /dev/disk1s1  932Gi  385Gi  529Gi    43% 4912811 5545733040    0%   /System/Volumes/Data
+[2025-07-30T12:15:07.957Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:17:07.956Z] Disk usage: /dev/disk1s1  932Gi  385Gi  529Gi    43% 4912883 5545720320    0%   /System/Volumes/Data
+[2025-07-30T12:17:07.961Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:18:37.506Z] Stopping Master Launcher Extension...
+[2025-07-30T12:18:37.511Z] Master Launcher Extension stopped
+[2025-07-30T12:20:00.213Z] Initializing Master Launcher Extension...
+[2025-07-30T12:20:00.219Z] Installing extension dependencies...
+[2025-07-30T12:20:12.933Z] Error installing dependencies for auto-improver: Command failed: cd "/Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/auto-improver" && npm install
+npm error code ETARGET
+npm error notarget No matching version found for axios@^3.0.0.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T12_20_00_825Z-debug-0.log
+
+[2025-07-30T12:20:15.876Z] Dependencies installed for file-watcher
+[2025-07-30T12:20:17.963Z] Error installing dependencies for dependency-manager: Command failed: cd "/Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/dependency-manager" && npm install
+npm error code ETARGET
+npm error notarget No matching version found for axios@^3.0.0.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T12_20_16_187Z-debug-0.log
+
+[2025-07-30T12:20:20.485Z] Dependencies installed for build-monitor
+[2025-07-30T12:20:20.486Z] Starting all extensions...
+[2025-07-30T12:20:20.490Z] Started auto-improver extension
+[2025-07-30T12:20:20.529Z] Started file-watcher extension
+[2025-07-30T12:20:20.635Z] Started dependency-manager extension
+[2025-07-30T12:20:20.809Z] Started build-monitor extension
+[2025-07-30T12:20:20.818Z] Coordination jobs started
+[2025-07-30T12:20:20.819Z] Master Launcher Extension initialized successfully
+[2025-07-30T12:22:20.837Z] Disk usage: /dev/disk1s1  932Gi  385Gi  529Gi    43% 4914016 5545278720    0%   /System/Volumes/Data
+[2025-07-30T12:22:20.846Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:24:20.950Z] Disk usage: /dev/disk1s1  932Gi  385Gi  529Gi    43% 4914233 5545209760    0%   /System/Volumes/Data
+[2025-07-30T12:24:20.961Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:25:00.145Z] Checking extension health...
+[2025-07-30T12:25:00.145Z] auto-improver extension is healthy
+[2025-07-30T12:25:00.146Z] file-watcher extension is healthy
+[2025-07-30T12:25:00.146Z] dependency-manager extension is healthy
+[2025-07-30T12:25:00.155Z] build-monitor extension is healthy
+[2025-07-30T12:26:20.954Z] Disk usage: /dev/disk1s1  932Gi  385Gi  529Gi    43% 4914406 5545103480    0%   /System/Volumes/Data
+[2025-07-30T12:26:20.965Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:28:20.957Z] Disk usage: /dev/disk1s1  932Gi  385Gi  529Gi    43% 4916496 5544887320    0%   /System/Volumes/Data
+[2025-07-30T12:28:20.967Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:30:00.233Z] Checking extension health...
+[2025-07-30T12:30:00.233Z] auto-improver extension is healthy
+[2025-07-30T12:30:00.234Z] file-watcher extension is healthy
+[2025-07-30T12:30:00.234Z] dependency-manager extension is healthy
+[2025-07-30T12:30:00.234Z] build-monitor extension is healthy
+[2025-07-30T12:31:11.064Z] Disk usage: /dev/disk1s1  932Gi  385Gi  529Gi    43% 4895307 5543376800    0%   /System/Volumes/Data
+[2025-07-30T12:32:01.862Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:32:30.201Z] Disk usage: /dev/disk1s1  932Gi  385Gi  528Gi    43% 4902794 5537576080    0%   /System/Volumes/Data
+[2025-07-30T12:32:30.212Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:32:46.312Z] Stopping Master Launcher Extension...
+[2025-07-30T12:32:46.419Z] Master Launcher Extension stopped
+[2025-07-30T12:35:01.116Z] Initializing Master Launcher Extension...
+[2025-07-30T12:35:01.123Z] Installing extension dependencies...
+[2025-07-30T12:35:33.415Z] Error installing dependencies for auto-improver: Command failed: cd "/Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/auto-improver" && npm install
+npm error code ETARGET
+npm error notarget No matching version found for axios@^3.0.0.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T12_35_02_501Z-debug-0.log
+
+[2025-07-30T12:35:40.853Z] Dependencies installed for file-watcher
+[2025-07-30T12:35:47.512Z] Error installing dependencies for dependency-manager: Command failed: cd "/Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/dependency-manager" && npm install
+npm error code ETARGET
+npm error notarget No matching version found for axios@^3.0.0.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T12_35_41_661Z-debug-0.log
+
+[2025-07-30T12:35:52.867Z] Dependencies installed for build-monitor
+[2025-07-30T12:35:52.868Z] Starting all extensions...
+[2025-07-30T12:35:52.871Z] Started auto-improver extension
+[2025-07-30T12:35:52.925Z] Started file-watcher extension
+[2025-07-30T12:35:52.927Z] Error starting dependency-manager extension: Cannot find module 'node-cron'
+Require stack:
+- /Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/dependency-manager/extension.js
+- /Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/master-launcher/extension.js
+[2025-07-30T12:35:53.251Z] Started build-monitor extension
+[2025-07-30T12:35:53.267Z] Coordination jobs started
+[2025-07-30T12:35:53.267Z] Master Launcher Extension initialized successfully
+[2025-07-30T12:38:37.266Z] Disk usage: /dev/disk1s1  932Gi  385Gi  528Gi    43% 4890515 5539041360    0%   /System/Volumes/Data
+[2025-07-30T12:38:49.459Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:38:53.407Z] Stopping Master Launcher Extension...
+[2025-07-30T12:38:53.442Z] Master Launcher Extension stopped
+[2025-07-30T12:40:00.262Z] Initializing Master Launcher Extension...
+[2025-07-30T12:40:00.269Z] Installing extension dependencies...
+[2025-07-30T12:40:04.191Z] Error installing dependencies for auto-improver: Command failed: cd "/Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/auto-improver" && npm install
+npm error code ETARGET
+npm error notarget No matching version found for axios@^3.0.0.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T12_40_00_615Z-debug-0.log
+
+[2025-07-30T12:40:06.008Z] Dependencies installed for file-watcher
+[2025-07-30T12:40:07.014Z] Error installing dependencies for dependency-manager: Command failed: cd "/Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/dependency-manager" && npm install
+npm error code ETARGET
+npm error notarget No matching version found for axios@^3.0.0.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T12_40_06_274Z-debug-0.log
+
+[2025-07-30T12:40:08.852Z] Dependencies installed for build-monitor
+[2025-07-30T12:40:08.852Z] Starting all extensions...
+[2025-07-30T12:40:08.856Z] Started auto-improver extension
+[2025-07-30T12:40:08.893Z] Started file-watcher extension
+[2025-07-30T12:40:08.986Z] Started dependency-manager extension
+[2025-07-30T12:40:09.061Z] Started build-monitor extension
+[2025-07-30T12:40:09.072Z] Coordination jobs started
+[2025-07-30T12:40:09.072Z] Master Launcher Extension initialized successfully
+[2025-07-30T12:42:09.091Z] Disk usage: /dev/disk1s1  932Gi  383Gi  531Gi    42% 4887979 5563676560    0%   /System/Volumes/Data
+[2025-07-30T12:42:09.101Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:44:09.123Z] Disk usage: /dev/disk1s1  932Gi  383Gi  530Gi    42% 4904654 5560579960    0%   /System/Volumes/Data
+[2025-07-30T12:44:09.133Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:45:00.183Z] Checking extension health...
+[2025-07-30T12:45:00.183Z] auto-improver extension is healthy
+[2025-07-30T12:45:00.184Z] file-watcher extension is healthy
+[2025-07-30T12:45:00.184Z] dependency-manager extension is healthy
+[2025-07-30T12:45:00.185Z] build-monitor extension is healthy
+[2025-07-30T12:46:09.100Z] Disk usage: /dev/disk1s1  932Gi  383Gi  530Gi    42% 4921410 5557735840    0%   /System/Volumes/Data
+[2025-07-30T12:46:09.108Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:48:09.099Z] Disk usage: /dev/disk1s1  932Gi  383Gi  530Gi    42% 4921417 5557504400    0%   /System/Volumes/Data
+[2025-07-30T12:48:09.105Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:50:00.528Z] Checking extension health...
+[2025-07-30T12:50:00.528Z] auto-improver extension is healthy
+[2025-07-30T12:50:00.530Z] file-watcher extension is healthy
+[2025-07-30T12:50:00.530Z] dependency-manager extension is healthy
+[2025-07-30T12:50:00.530Z] build-monitor extension is healthy
+[2025-07-30T12:50:09.105Z] Disk usage: /dev/disk1s1  932Gi  383Gi  530Gi    42% 4921539 5557432320    0%   /System/Volumes/Data
+[2025-07-30T12:50:09.115Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:52:09.113Z] Disk usage: /dev/disk1s1  932Gi  383Gi  530Gi    42% 4921581 5557374440    0%   /System/Volumes/Data
+[2025-07-30T12:52:09.123Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:54:09.118Z] Disk usage: /dev/disk1s1  932Gi  383Gi  530Gi    42% 4921603 5557322000    0%   /System/Volumes/Data
+[2025-07-30T12:54:09.129Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:55:00.807Z] Checking extension health...
+[2025-07-30T12:55:00.807Z] auto-improver extension is healthy
+[2025-07-30T12:55:00.808Z] file-watcher extension is healthy
+[2025-07-30T12:55:00.808Z] dependency-manager extension is healthy
+[2025-07-30T12:55:00.808Z] build-monitor extension is healthy
+[2025-07-30T12:56:09.115Z] Disk usage: /dev/disk1s1  932Gi  383Gi  530Gi    42% 4921637 5557141200    0%   /System/Volumes/Data
+[2025-07-30T12:56:09.121Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T12:58:09.128Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    42% 4925918 5556442000    0%   /System/Volumes/Data
+[2025-07-30T12:58:09.142Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:00:00.093Z] Checking extension health...
+[2025-07-30T13:00:00.093Z] auto-improver extension is healthy
+[2025-07-30T13:00:00.093Z] file-watcher extension is healthy
+[2025-07-30T13:00:00.093Z] dependency-manager extension is healthy
+[2025-07-30T13:00:00.094Z] build-monitor extension is healthy
+[2025-07-30T13:00:00.095Z] Running performance optimization...
+[2025-07-30T13:00:07.412Z] Performance optimization completed
+[2025-07-30T13:00:09.130Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    42% 4918545 5556131360    0%   /System/Volumes/Data
+[2025-07-30T13:00:09.142Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:02:08.841Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    42% 4918613 5556073640    0%   /System/Volumes/Data
+[2025-07-30T13:02:08.852Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:04:08.825Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    42% 4918629 5555893480    0%   /System/Volumes/Data
+[2025-07-30T13:04:08.836Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:05:00.047Z] Checking extension health...
+[2025-07-30T13:05:00.047Z] auto-improver extension is healthy
+[2025-07-30T13:05:00.047Z] file-watcher extension is healthy
+[2025-07-30T13:05:00.047Z] dependency-manager extension is healthy
+[2025-07-30T13:05:00.048Z] build-monitor extension is healthy
+[2025-07-30T13:06:08.814Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    43% 4918777 5555359640    0%   /System/Volumes/Data
+[2025-07-30T13:06:08.822Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:08:08.933Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    43% 4918770 5555340520    0%   /System/Volumes/Data
+[2025-07-30T13:08:08.958Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:10:00.248Z] Checking extension health...
+[2025-07-30T13:10:00.249Z] auto-improver extension is healthy
+[2025-07-30T13:10:00.249Z] file-watcher extension is healthy
+[2025-07-30T13:10:00.249Z] dependency-manager extension is healthy
+[2025-07-30T13:10:00.249Z] build-monitor extension is healthy
+[2025-07-30T13:10:08.828Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    43% 4918813 5555350000    0%   /System/Volumes/Data
+[2025-07-30T13:10:08.838Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:12:08.826Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    43% 4918880 5555306440    0%   /System/Volumes/Data
+[2025-07-30T13:12:08.837Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:14:08.816Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    43% 4920215 5554341400    0%   /System/Volumes/Data
+[2025-07-30T13:14:08.823Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:15:00.573Z] Checking extension health...
+[2025-07-30T13:15:00.574Z] auto-improver extension is healthy
+[2025-07-30T13:15:00.575Z] file-watcher extension is healthy
+[2025-07-30T13:15:00.575Z] dependency-manager extension is healthy
+[2025-07-30T13:15:00.575Z] build-monitor extension is healthy
+[2025-07-30T13:16:08.829Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    43% 4920166 5554327440    0%   /System/Volumes/Data
+[2025-07-30T13:16:08.853Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:18:08.814Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    43% 4920187 5554789040    0%   /System/Volumes/Data
+[2025-07-30T13:18:08.826Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:18:56.569Z] Stopping Master Launcher Extension...
+[2025-07-30T13:18:56.592Z] Master Launcher Extension stopped
+[2025-07-30T13:20:00.117Z] Initializing Master Launcher Extension...
+[2025-07-30T13:20:00.123Z] Installing extension dependencies...
+[2025-07-30T13:20:04.789Z] Error installing dependencies for auto-improver: Command failed: cd "/Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/auto-improver" && npm install
+npm error code ETARGET
+npm error notarget No matching version found for axios@^3.0.0.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T13_20_00_292Z-debug-0.log
+
+[2025-07-30T13:20:06.106Z] Dependencies installed for file-watcher
+[2025-07-30T13:20:06.860Z] Error installing dependencies for dependency-manager: Command failed: cd "/Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/dependency-manager" && npm install
+npm error code ETARGET
+npm error notarget No matching version found for axios@^3.0.0.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T13_20_06_280Z-debug-0.log
+
+[2025-07-30T13:20:07.974Z] Dependencies installed for build-monitor
+[2025-07-30T13:20:07.974Z] Starting all extensions...
+[2025-07-30T13:20:07.977Z] Started auto-improver extension
+[2025-07-30T13:20:08.042Z] Started file-watcher extension
+[2025-07-30T13:20:08.135Z] Started dependency-manager extension
+[2025-07-30T13:20:08.201Z] Started build-monitor extension
+[2025-07-30T13:20:08.207Z] Coordination jobs started
+[2025-07-30T13:20:08.207Z] Master Launcher Extension initialized successfully
+[2025-07-30T13:22:08.216Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    43% 4920400 5554171200    0%   /System/Volumes/Data
+[2025-07-30T13:22:08.225Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:24:08.206Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    43% 4920476 5554133280    0%   /System/Volumes/Data
+[2025-07-30T13:24:08.212Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:25:00.767Z] Checking extension health...
+[2025-07-30T13:25:00.768Z] auto-improver extension is healthy
+[2025-07-30T13:25:00.768Z] file-watcher extension is healthy
+[2025-07-30T13:25:00.768Z] dependency-manager extension is healthy
+[2025-07-30T13:25:00.769Z] build-monitor extension is healthy
+[2025-07-30T13:26:08.209Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    43% 4920438 5554584200    0%   /System/Volumes/Data
+[2025-07-30T13:26:08.222Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:28:08.201Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    43% 4920606 5554011480    0%   /System/Volumes/Data
+[2025-07-30T13:28:08.211Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:30:00.734Z] Checking extension health...
+[2025-07-30T13:30:00.734Z] auto-improver extension is healthy
+[2025-07-30T13:30:00.734Z] file-watcher extension is healthy
+[2025-07-30T13:30:00.735Z] dependency-manager extension is healthy
+[2025-07-30T13:30:00.735Z] build-monitor extension is healthy
+[2025-07-30T13:30:08.197Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    43% 4920598 5554104960    0%   /System/Volumes/Data
+[2025-07-30T13:30:08.208Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:32:08.194Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    43% 4920675 5554088680    0%   /System/Volumes/Data
+[2025-07-30T13:32:08.205Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:34:08.188Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    43% 4920657 5554389240    0%   /System/Volumes/Data
+[2025-07-30T13:34:08.198Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:35:00.920Z] Checking extension health...
+[2025-07-30T13:35:00.921Z] auto-improver extension is healthy
+[2025-07-30T13:35:00.921Z] file-watcher extension is healthy
+[2025-07-30T13:35:00.921Z] dependency-manager extension is healthy
+[2025-07-30T13:35:00.921Z] build-monitor extension is healthy
+[2025-07-30T13:36:08.185Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    43% 4920706 5554364080    0%   /System/Volumes/Data
+[2025-07-30T13:36:08.197Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:38:08.184Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    43% 4920810 5554060640    0%   /System/Volumes/Data
+[2025-07-30T13:38:08.194Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:40:00.109Z] Checking extension health...
+[2025-07-30T13:40:00.109Z] auto-improver extension is healthy
+[2025-07-30T13:40:00.109Z] file-watcher extension is healthy
+[2025-07-30T13:40:00.110Z] dependency-manager extension is healthy
+[2025-07-30T13:40:00.110Z] build-monitor extension is healthy
+[2025-07-30T13:40:08.178Z] Disk usage: /dev/disk1s1  932Gi  384Gi  530Gi    43% 4920896 5553822000    0%   /System/Volumes/Data
+[2025-07-30T13:40:08.190Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:42:08.168Z] Disk usage: /dev/disk1s1  932Gi  383Gi  531Gi    42% 4921057 5563181600    0%   /System/Volumes/Data
+[2025-07-30T13:42:08.173Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:44:08.168Z] Disk usage: /dev/disk1s1  932Gi  383Gi  530Gi    42% 4921058 5562457920    0%   /System/Volumes/Data
+[2025-07-30T13:44:08.179Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:45:00.343Z] Checking extension health...
+[2025-07-30T13:45:00.345Z] auto-improver extension is healthy
+[2025-07-30T13:45:00.345Z] file-watcher extension is healthy
+[2025-07-30T13:45:00.345Z] dependency-manager extension is healthy
+[2025-07-30T13:45:00.345Z] build-monitor extension is healthy
+[2025-07-30T13:46:08.165Z] Disk usage: /dev/disk1s1  932Gi  383Gi  528Gi    43% 4921069 5531352600    0%   /System/Volumes/Data
+[2025-07-30T13:46:08.176Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:48:08.160Z] Disk usage: /dev/disk1s1  932Gi  383Gi  527Gi    43% 4921195 5530957440    0%   /System/Volumes/Data
+[2025-07-30T13:48:08.169Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:50:00.728Z] Checking extension health...
+[2025-07-30T13:50:00.728Z] auto-improver extension is healthy
+[2025-07-30T13:50:00.728Z] file-watcher extension is healthy
+[2025-07-30T13:50:00.728Z] dependency-manager extension is healthy
+[2025-07-30T13:50:00.728Z] build-monitor extension is healthy
+[2025-07-30T13:50:08.339Z] Disk usage: /dev/disk1s1  932Gi  383Gi  527Gi    43% 4921337 5530765480    0%   /System/Volumes/Data
+[2025-07-30T13:50:08.351Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:52:08.150Z] Disk usage: /dev/disk1s1  932Gi  383Gi  528Gi    43% 4921304 5531361560    0%   /System/Volumes/Data
+[2025-07-30T13:52:08.158Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:54:08.147Z] Disk usage: /dev/disk1s1  932Gi  383Gi  527Gi    43% 4921358 5531199400    0%   /System/Volumes/Data
+[2025-07-30T13:54:08.156Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:55:00.631Z] Checking extension health...
+[2025-07-30T13:55:00.631Z] auto-improver extension is healthy
+[2025-07-30T13:55:00.632Z] file-watcher extension is healthy
+[2025-07-30T13:55:00.632Z] dependency-manager extension is healthy
+[2025-07-30T13:55:00.632Z] build-monitor extension is healthy
+[2025-07-30T13:56:08.134Z] Disk usage: /dev/disk1s1  932Gi  383Gi  528Gi    43% 4921412 5541454400    0%   /System/Volumes/Data
+[2025-07-30T13:56:08.143Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T13:58:08.130Z] Disk usage: /dev/disk1s1  932Gi  383Gi  528Gi    43% 4921488 5541267080    0%   /System/Volumes/Data
+[2025-07-30T13:58:08.139Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:00:00.817Z] Checking extension health...
+[2025-07-30T14:00:00.818Z] auto-improver extension is healthy
+[2025-07-30T14:00:00.818Z] file-watcher extension is healthy
+[2025-07-30T14:00:00.818Z] dependency-manager extension is healthy
+[2025-07-30T14:00:00.818Z] build-monitor extension is healthy
+[2025-07-30T14:00:00.819Z] Running performance optimization...
+[2025-07-30T14:00:08.125Z] Disk usage: /dev/disk1s1  932Gi  383Gi  528Gi    43% 4920171 5541189280    0%   /System/Volumes/Data
+[2025-07-30T14:00:08.135Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:00:14.323Z] Performance optimization completed
+[2025-07-30T14:02:08.127Z] Disk usage: /dev/disk1s1  932Gi  383Gi  528Gi    43% 4920376 5540411040    0%   /System/Volumes/Data
+[2025-07-30T14:02:08.143Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:04:08.118Z] Disk usage: /dev/disk1s1  932Gi  383Gi  528Gi    43% 4920428 5540449080    0%   /System/Volumes/Data
+[2025-07-30T14:04:08.128Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:05:00.986Z] Checking extension health...
+[2025-07-30T14:05:00.987Z] auto-improver extension is healthy
+[2025-07-30T14:05:00.987Z] file-watcher extension is healthy
+[2025-07-30T14:05:00.987Z] dependency-manager extension is healthy
+[2025-07-30T14:05:00.987Z] build-monitor extension is healthy
+[2025-07-30T14:06:08.111Z] Disk usage: /dev/disk1s1  932Gi  383Gi  528Gi    43% 4920538 5540762400    0%   /System/Volumes/Data
+[2025-07-30T14:06:08.122Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:08:08.108Z] Disk usage: /dev/disk1s1  932Gi  383Gi  528Gi    43% 4920525 5540766800    0%   /System/Volumes/Data
+[2025-07-30T14:08:08.117Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:08:40.622Z] Stopping Master Launcher Extension...
+[2025-07-30T14:08:40.628Z] Master Launcher Extension stopped
+[2025-07-30T14:10:00.133Z] Initializing Master Launcher Extension...
+[2025-07-30T14:10:00.139Z] Installing extension dependencies...
+[2025-07-30T14:10:06.316Z] Error installing dependencies for auto-improver: Command failed: cd "/Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/auto-improver" && npm install
+npm error code ETARGET
+npm error notarget No matching version found for axios@^3.0.0.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T14_10_00_324Z-debug-0.log
+
+[2025-07-30T14:10:07.489Z] Dependencies installed for file-watcher
+[2025-07-30T14:10:08.293Z] Error installing dependencies for dependency-manager: Command failed: cd "/Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/dependency-manager" && npm install
+npm error code ETARGET
+npm error notarget No matching version found for axios@^3.0.0.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T14_10_07_687Z-debug-0.log
+
+[2025-07-30T14:10:09.438Z] Dependencies installed for build-monitor
+[2025-07-30T14:10:09.439Z] Starting all extensions...
+[2025-07-30T14:10:09.443Z] Started auto-improver extension
+[2025-07-30T14:10:09.488Z] Started file-watcher extension
+[2025-07-30T14:10:09.571Z] Started dependency-manager extension
+[2025-07-30T14:10:09.642Z] Started build-monitor extension
+[2025-07-30T14:10:09.648Z] Coordination jobs started
+[2025-07-30T14:10:09.648Z] Master Launcher Extension initialized successfully
+[2025-07-30T14:12:09.658Z] Disk usage: /dev/disk1s1  932Gi  383Gi  528Gi    43% 4913445 5540171840    0%   /System/Volumes/Data
+[2025-07-30T14:12:09.670Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:14:09.654Z] Disk usage: /dev/disk1s1  932Gi  383Gi  528Gi    43% 4913490 5540109800    0%   /System/Volumes/Data
+[2025-07-30T14:14:09.664Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:15:00.819Z] Checking extension health...
+[2025-07-30T14:15:00.820Z] auto-improver extension is healthy
+[2025-07-30T14:15:00.820Z] file-watcher extension is healthy
+[2025-07-30T14:15:00.820Z] dependency-manager extension is healthy
+[2025-07-30T14:15:00.820Z] build-monitor extension is healthy
+[2025-07-30T14:16:09.689Z] Disk usage: /dev/disk1s1  932Gi  383Gi  528Gi    43% 4913537 5540038680    0%   /System/Volumes/Data
+[2025-07-30T14:16:09.718Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:18:09.639Z] Disk usage: /dev/disk1s1  932Gi  383Gi  528Gi    43% 4913581 5540014240    0%   /System/Volumes/Data
+[2025-07-30T14:18:09.644Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:20:00.932Z] Checking extension health...
+[2025-07-30T14:20:00.933Z] auto-improver extension is healthy
+[2025-07-30T14:20:00.933Z] file-watcher extension is healthy
+[2025-07-30T14:20:00.933Z] dependency-manager extension is healthy
+[2025-07-30T14:20:00.933Z] build-monitor extension is healthy
+[2025-07-30T14:20:09.633Z] Disk usage: /dev/disk1s1  932Gi  383Gi  528Gi    43% 4913624 5539969120    0%   /System/Volumes/Data
+[2025-07-30T14:20:09.640Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:22:09.627Z] Disk usage: /dev/disk1s1  932Gi  383Gi  528Gi    43% 4913677 5539942040    0%   /System/Volumes/Data
+[2025-07-30T14:22:09.633Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:24:09.630Z] Disk usage: /dev/disk1s1  932Gi  383Gi  528Gi    43% 4913728 5539916840    0%   /System/Volumes/Data
+[2025-07-30T14:24:09.639Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:25:00.112Z] Checking extension health...
+[2025-07-30T14:25:00.112Z] auto-improver extension is healthy
+[2025-07-30T14:25:00.113Z] file-watcher extension is healthy
+[2025-07-30T14:25:00.113Z] dependency-manager extension is healthy
+[2025-07-30T14:25:00.114Z] build-monitor extension is healthy
+[2025-07-30T14:26:09.718Z] Disk usage: /dev/disk1s1  932Gi  383Gi  528Gi    43% 4890980 5539799640    0%   /System/Volumes/Data
+[2025-07-30T14:26:09.730Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:28:09.655Z] Disk usage: /dev/disk1s1  932Gi  384Gi  527Gi    43% 4914388 5530394600    0%   /System/Volumes/Data
+[2025-07-30T14:28:09.665Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:31:08.252Z] Disk usage: /dev/disk1s1  932Gi  384Gi  528Gi    43% 4898853 5531667400    0%   /System/Volumes/Data
+[2025-07-30T14:31:09.452Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:32:26.024Z] Disk usage: /dev/disk1s1  932Gi  384Gi  528Gi    43% 4883957 5534422280    0%   /System/Volumes/Data
+[2025-07-30T14:32:26.042Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:34:27.586Z] Disk usage: /dev/disk1s1  932Gi  384Gi  525Gi    43% 4885021 5502552920    0%   /System/Volumes/Data
+[2025-07-30T14:34:27.610Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:35:01.708Z] Checking extension health...
+[2025-07-30T14:35:01.906Z] auto-improver extension is healthy
+[2025-07-30T14:35:01.961Z] file-watcher extension is healthy
+[2025-07-30T14:35:01.962Z] dependency-manager extension is healthy
+[2025-07-30T14:35:01.962Z] build-monitor extension is healthy
+[2025-07-30T14:36:28.819Z] Disk usage: /dev/disk1s1  932Gi  384Gi  522Gi    43% 4884975 5470514240    0%   /System/Volumes/Data
+[2025-07-30T14:36:30.326Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:40:40.352Z] Disk usage: /dev/disk1s1  932Gi  384Gi  519Gi    43% 4895225 5444905320    0%   /System/Volumes/Data
+[2025-07-30T14:41:58.579Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:42:17.401Z] Disk usage: /dev/disk1s1  932Gi  385Gi  519Gi    43% 4900874 5440748280    0%   /System/Volumes/Data
+[2025-07-30T14:42:18.940Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:43:58.630Z] Disk usage: /dev/disk1s1  932Gi  385Gi  518Gi    43% 4903795 5434527040    0%   /System/Volumes/Data
+[2025-07-30T14:43:58.657Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:45:00.455Z] Checking extension health...
+[2025-07-30T14:45:00.484Z] auto-improver extension is healthy
+[2025-07-30T14:45:00.507Z] file-watcher extension is healthy
+[2025-07-30T14:45:00.531Z] dependency-manager extension is healthy
+[2025-07-30T14:45:00.559Z] build-monitor extension is healthy
+[2025-07-30T14:45:58.619Z] Disk usage: /dev/disk1s1  932Gi  387Gi  517Gi    43% 4907176 5419317320    0%   /System/Volumes/Data
+[2025-07-30T14:45:58.658Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+
+[2025-07-30T14:47:58.619Z] Disk usage: /dev/disk1s1  932Gi  388Gi  516Gi    43% 4911331 5406588040    0%   /System/Volumes/Data
+[2025-07-30T14:47:58.641Z] Error monitoring system health: Command failed: free -h
+/bin/sh: free: command not found
+

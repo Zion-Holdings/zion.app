@@ -1,0 +1,3 @@
+[2025-07-30T12:28:36.557Z] [INFO] [Miami2-2.local-miami2] Starting comprehensive sync automation check
+[2025-07-30T12:28:58.326Z] [WARN] [Miami2-2.local-miami2] multi-machine-sync-monitor is not healthy, attempting restart
+[2025-07-30T12:28:58.407Z] [ERROR] [Miami2-2.local-miami2] Failed to stop multi-machine-sync-monitor: Command failed: pkill -f "multi-machine-sync-monitor"

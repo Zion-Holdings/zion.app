@@ -1,0 +1,17 @@
+/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/netlify-cron-manager.js:89
+    fs.appendFileSync(logFile, logMessage + '\n');
+                      ^
+
+ReferenceError: logFile is not defined
+    at NetlifyCronManager.log (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/netlify-cron-manager.js:89:23)
+    at NetlifyCronManager.initializeCronJobs (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/netlify-cron-manager.js:93:10)
+    at new NetlifyCronManager (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/netlify-cron-manager.js:24:10)
+    at Object.<anonymous> (/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/netlify-cron-manager.js:478:19)
+    at Module._compile (node:internal/modules/cjs/loader:1730:14)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+
+Node.js v22.16.0

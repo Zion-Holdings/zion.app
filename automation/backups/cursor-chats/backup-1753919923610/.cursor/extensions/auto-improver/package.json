@@ -1,0 +1,25 @@
+{
+  "name": "cursor-auto-improver",
+  "version": "1.0.0",
+  "description": "Automatically improves code quality and fixes issues",
+  "main": "extension.js",
+  "scripts": {
+    "start": "node extension.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "chokidar": "^3.0.0",
+    "node-cron": "^3.0.0",
+    "axios": "^3.0.0",
+    "glob": "^3.0.0",
+    "eslint": "^3.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^3.0.0"
+  },
+  "keywords": [
+    "cursor",
+    "automation",
+    "extension"
+  ],
+  "license": "MIT"
+}

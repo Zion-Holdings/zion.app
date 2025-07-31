@@ -1,0 +1,645 @@
+[2025-07-30T03:05:20.079Z] Initializing Cursor Extensions Manager...
+[2025-07-30T03:05:20.096Z] Created extension: auto-improver
+[2025-07-30T03:05:20.097Z] Created extension: file-watcher
+[2025-07-30T03:05:20.097Z] Created extension: dependency-manager
+[2025-07-30T03:05:20.098Z] Created extension: build-monitor
+[2025-07-30T03:05:49.544Z] Error installing/starting ai-assistant: Command failed: cd "/Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/ai-assistant" && npm install
+npm error code ERESOLVE
+npm error ERESOLVE could not resolve
+npm error
+npm error While resolving: langchain@0.0.200
+npm error Found: puppeteer@21.11.0
+npm error node_modules/puppeteer
+npm error   puppeteer@"^21.5.0" from the root project
+npm error
+npm error Could not resolve dependency:
+npm error peerOptional puppeteer@"^19.7.2" from langchain@0.0.200
+npm error node_modules/langchain
+npm error   langchain@"^0.0.200" from the root project
+npm error
+npm error Conflicting peer dependency: puppeteer@19.11.1
+npm error node_modules/puppeteer
+npm error   peerOptional puppeteer@"^19.7.2" from langchain@0.0.200
+npm error   node_modules/langchain
+npm error     langchain@"^0.0.200" from the root project
+npm error
+npm error Fix the upstream dependency conflict, or retry
+npm error this command with --force or --legacy-peer-deps
+npm error to accept an incorrect (and potentially broken) dependency resolution.
+npm error
+npm error
+npm error For a full report see:
+npm error /Users/miami2/.npm/_logs/2025-07-30T03_05_20_270Z-eresolve-report.txt
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T03_05_20_270Z-debug-0.log
+
+[2025-07-30T03:05:54.350Z] Error installing/starting auto-improver: Command failed: cd "/Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/auto-improver" && npm install
+npm error code ETARGET
+npm error notarget No matching version found for axios@^3.0.0.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T03_05_49_710Z-debug-0.log
+
+[2025-07-30T03:05:56.230Z] Dependencies installed for build-monitor
+[2025-07-30T03:05:56.232Z] Started extension: build-monitor
+[2025-07-30T03:06:11.041Z] Dependencies installed for code-quality-enforcer
+[2025-07-30T03:06:11.042Z] Extension file not found: /Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/code-quality-enforcer/extension.js
+[2025-07-30T03:06:11.778Z] Error installing/starting dependency-manager: Command failed: cd "/Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/dependency-manager" && npm install
+npm error code ETARGET
+npm error notarget No matching version found for axios@^3.0.0.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T03_06_11_208Z-debug-0.log
+
+[2025-07-30T03:06:27.825Z] Dependencies installed for extension-manager
+[2025-07-30T03:06:27.826Z] Extension file not found: /Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/extension-manager/extension.js
+[2025-07-30T03:06:30.258Z] Dependencies installed for file-watcher
+[2025-07-30T03:06:30.260Z] Started extension: file-watcher
+[2025-07-30T03:06:31.421Z] Dependencies installed for master-launcher
+[2025-07-30T03:06:31.423Z] Started extension: master-launcher
+[2025-07-30T03:06:37.533Z] Error installing/starting performance-monitor: Command failed: cd "/Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/performance-monitor" && npm install
+npm error code ETARGET
+npm error notarget No matching version found for pidusage@^3.1.0.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T03_06_31_590Z-debug-0.log
+
+[2025-07-30T03:06:39.860Z] Dependencies installed for project-automation
+[2025-07-30T03:06:39.861Z] Extension file not found: /Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/project-automation/extension.js
+[2025-07-30T03:06:46.566Z] Error installing/starting security-scanner: Command failed: cd "/Users/miami2/Documents/GitHub/bolt.new.zion.app/.cursor/extensions/security-scanner" && npm install
+npm error code ETARGET
+npm error notarget No matching version found for npm-audit-resolver@^4.0.0.
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-30T03_06_40_106Z-debug-0.log
+
+[2025-07-30T03:06:46.637Z] Monitoring started
+[2025-07-30T03:06:46.637Z] Cursor Extensions Manager initialized successfully
+[2025-07-30T03:10:00.010Z] Checking extensions health...
+[2025-07-30T03:10:00.011Z] build-monitor is healthy
+[2025-07-30T03:10:00.011Z] file-watcher is healthy
+[2025-07-30T03:10:00.011Z] master-launcher is healthy
+[2025-07-30T03:15:00.011Z] Checking extensions health...
+[2025-07-30T03:15:00.011Z] Restarting build-monitor...
+[2025-07-30T03:15:00.013Z] Started extension: build-monitor
+[2025-07-30T03:15:00.013Z] file-watcher is healthy
+[2025-07-30T03:15:00.013Z] master-launcher is healthy
+[2025-07-30T03:20:00.010Z] Checking extensions health...
+[2025-07-30T03:20:00.011Z] build-monitor is healthy
+[2025-07-30T03:20:00.011Z] file-watcher is healthy
+[2025-07-30T03:20:00.011Z] master-launcher is healthy
+[2025-07-30T03:25:00.016Z] Checking extensions health...
+[2025-07-30T03:25:00.017Z] build-monitor is healthy
+[2025-07-30T03:25:00.017Z] file-watcher is healthy
+[2025-07-30T03:25:00.017Z] master-launcher is healthy
+[2025-07-30T03:30:00.010Z] Checking extensions health...
+[2025-07-30T03:30:00.010Z] build-monitor is healthy
+[2025-07-30T03:30:00.010Z] file-watcher is healthy
+[2025-07-30T03:30:00.010Z] master-launcher is healthy
+[2025-07-30T03:35:00.008Z] Checking extensions health...
+[2025-07-30T03:35:00.010Z] build-monitor is healthy
+[2025-07-30T03:35:00.010Z] file-watcher is healthy
+[2025-07-30T03:35:00.010Z] master-launcher is healthy
+[2025-07-30T03:40:00.010Z] Checking extensions health...
+[2025-07-30T03:40:00.010Z] build-monitor is healthy
+[2025-07-30T03:40:00.010Z] file-watcher is healthy
+[2025-07-30T03:40:00.010Z] master-launcher is healthy
+[2025-07-30T03:45:00.011Z] Checking extensions health...
+[2025-07-30T03:45:00.011Z] build-monitor is healthy
+[2025-07-30T03:45:00.011Z] file-watcher is healthy
+[2025-07-30T03:45:00.012Z] Restarting master-launcher...
+[2025-07-30T03:45:00.013Z] Started extension: master-launcher
+[2025-07-30T03:50:00.009Z] Checking extensions health...
+[2025-07-30T03:50:00.010Z] build-monitor is healthy
+[2025-07-30T03:50:00.010Z] file-watcher is healthy
+[2025-07-30T03:50:00.010Z] master-launcher is healthy
+[2025-07-30T03:55:00.121Z] Checking extensions health...
+[2025-07-30T03:55:00.121Z] build-monitor is healthy
+[2025-07-30T03:55:00.121Z] file-watcher is healthy
+[2025-07-30T03:55:00.122Z] master-launcher is healthy
+[2025-07-30T04:00:00.011Z] Checking extensions health...
+[2025-07-30T04:00:00.011Z] build-monitor is healthy
+[2025-07-30T04:00:00.011Z] file-watcher is healthy
+[2025-07-30T04:00:00.012Z] master-launcher is healthy
+[2025-07-30T04:05:00.011Z] Checking extensions health...
+[2025-07-30T04:05:00.011Z] build-monitor is healthy
+[2025-07-30T04:05:00.011Z] file-watcher is healthy
+[2025-07-30T04:05:00.011Z] master-launcher is healthy
+[2025-07-30T04:10:00.010Z] Checking extensions health...
+[2025-07-30T04:10:00.010Z] build-monitor is healthy
+[2025-07-30T04:10:00.010Z] file-watcher is healthy
+[2025-07-30T04:10:00.011Z] master-launcher is healthy
+[2025-07-30T04:15:00.012Z] Checking extensions health...
+[2025-07-30T04:15:00.012Z] build-monitor is healthy
+[2025-07-30T04:15:00.012Z] file-watcher is healthy
+[2025-07-30T04:15:00.013Z] master-launcher is healthy
+[2025-07-30T04:20:00.010Z] Checking extensions health...
+[2025-07-30T04:20:00.011Z] build-monitor is healthy
+[2025-07-30T04:20:00.011Z] file-watcher is healthy
+[2025-07-30T04:20:00.011Z] master-launcher is healthy
+[2025-07-30T04:25:00.014Z] Checking extensions health...
+[2025-07-30T04:25:00.015Z] build-monitor is healthy
+[2025-07-30T04:25:00.015Z] file-watcher is healthy
+[2025-07-30T04:25:00.015Z] master-launcher is healthy
+[2025-07-30T04:30:00.010Z] Checking extensions health...
+[2025-07-30T04:30:00.010Z] build-monitor is healthy
+[2025-07-30T04:30:00.010Z] file-watcher is healthy
+[2025-07-30T04:30:00.010Z] master-launcher is healthy
+[2025-07-30T04:35:00.011Z] Checking extensions health...
+[2025-07-30T04:35:00.012Z] build-monitor is healthy
+[2025-07-30T04:35:00.012Z] file-watcher is healthy
+[2025-07-30T04:35:00.012Z] master-launcher is healthy
+[2025-07-30T04:40:00.010Z] Checking extensions health...
+[2025-07-30T04:40:00.010Z] build-monitor is healthy
+[2025-07-30T04:40:00.010Z] file-watcher is healthy
+[2025-07-30T04:40:00.011Z] master-launcher is healthy
+[2025-07-30T04:45:00.012Z] Checking extensions health...
+[2025-07-30T04:45:00.012Z] build-monitor is healthy
+[2025-07-30T04:45:00.013Z] file-watcher is healthy
+[2025-07-30T04:45:00.013Z] master-launcher is healthy
+[2025-07-30T04:50:00.008Z] Checking extensions health...
+[2025-07-30T04:50:00.008Z] build-monitor is healthy
+[2025-07-30T04:50:00.009Z] file-watcher is healthy
+[2025-07-30T04:50:00.009Z] master-launcher is healthy
+[2025-07-30T04:55:00.011Z] Checking extensions health...
+[2025-07-30T04:55:00.011Z] build-monitor is healthy
+[2025-07-30T04:55:00.011Z] file-watcher is healthy
+[2025-07-30T04:55:00.011Z] master-launcher is healthy
+[2025-07-30T05:00:00.023Z] Updating extensions...
+[2025-07-30T05:00:00.025Z] Checking extensions health...
+[2025-07-30T05:00:00.025Z] build-monitor is healthy
+[2025-07-30T05:00:00.025Z] file-watcher is healthy
+[2025-07-30T05:00:00.025Z] master-launcher is healthy
+[2025-07-30T05:00:02.572Z] Updated build-monitor
+[2025-07-30T05:00:04.683Z] Updated file-watcher
+[2025-07-30T05:00:06.969Z] Updated master-launcher
+[2025-07-30T05:05:00.009Z] Checking extensions health...
+[2025-07-30T05:05:00.010Z] build-monitor is healthy
+[2025-07-30T05:05:00.011Z] file-watcher is healthy
+[2025-07-30T05:05:00.011Z] master-launcher is healthy
+[2025-07-30T05:10:00.009Z] Checking extensions health...
+[2025-07-30T05:10:00.009Z] build-monitor is healthy
+[2025-07-30T05:10:00.009Z] file-watcher is healthy
+[2025-07-30T05:10:00.009Z] master-launcher is healthy
+[2025-07-30T05:15:00.008Z] Checking extensions health...
+[2025-07-30T05:15:00.009Z] build-monitor is healthy
+[2025-07-30T05:15:00.009Z] file-watcher is healthy
+[2025-07-30T05:15:00.009Z] master-launcher is healthy
+[2025-07-30T05:20:00.011Z] Checking extensions health...
+[2025-07-30T05:20:00.011Z] build-monitor is healthy
+[2025-07-30T05:20:00.012Z] file-watcher is healthy
+[2025-07-30T05:20:00.012Z] master-launcher is healthy
+[2025-07-30T05:25:00.008Z] Checking extensions health...
+[2025-07-30T05:25:00.009Z] build-monitor is healthy
+[2025-07-30T05:25:00.010Z] file-watcher is healthy
+[2025-07-30T05:25:00.010Z] master-launcher is healthy
+[2025-07-30T05:30:00.009Z] Checking extensions health...
+[2025-07-30T05:30:00.010Z] build-monitor is healthy
+[2025-07-30T05:30:00.010Z] file-watcher is healthy
+[2025-07-30T05:30:00.010Z] master-launcher is healthy
+[2025-07-30T05:35:00.012Z] Checking extensions health...
+[2025-07-30T05:35:00.012Z] build-monitor is healthy
+[2025-07-30T05:35:00.013Z] file-watcher is healthy
+[2025-07-30T05:35:00.013Z] master-launcher is healthy
+[2025-07-30T05:40:00.009Z] Checking extensions health...
+[2025-07-30T05:40:00.009Z] build-monitor is healthy
+[2025-07-30T05:40:00.009Z] file-watcher is healthy
+[2025-07-30T05:40:00.010Z] master-launcher is healthy
+[2025-07-30T05:45:00.009Z] Checking extensions health...
+[2025-07-30T05:45:00.010Z] build-monitor is healthy
+[2025-07-30T05:45:00.011Z] file-watcher is healthy
+[2025-07-30T05:45:00.011Z] master-launcher is healthy
+[2025-07-30T05:50:00.013Z] Checking extensions health...
+[2025-07-30T05:50:00.013Z] build-monitor is healthy
+[2025-07-30T05:50:00.014Z] file-watcher is healthy
+[2025-07-30T05:50:00.014Z] master-launcher is healthy
+[2025-07-30T05:55:00.009Z] Checking extensions health...
+[2025-07-30T05:55:00.009Z] build-monitor is healthy
+[2025-07-30T05:55:00.010Z] file-watcher is healthy
+[2025-07-30T05:55:00.010Z] master-launcher is healthy
+[2025-07-30T06:00:00.009Z] Checking extensions health...
+[2025-07-30T06:00:00.010Z] build-monitor is healthy
+[2025-07-30T06:00:00.011Z] file-watcher is healthy
+[2025-07-30T06:00:00.011Z] master-launcher is healthy
+[2025-07-30T06:05:00.009Z] Checking extensions health...
+[2025-07-30T06:05:00.010Z] build-monitor is healthy
+[2025-07-30T06:05:00.010Z] file-watcher is healthy
+[2025-07-30T06:05:00.011Z] master-launcher is healthy
+[2025-07-30T06:10:00.009Z] Checking extensions health...
+[2025-07-30T06:10:00.009Z] build-monitor is healthy
+[2025-07-30T06:10:00.010Z] file-watcher is healthy
+[2025-07-30T06:10:00.010Z] master-launcher is healthy
+[2025-07-30T06:15:00.010Z] Checking extensions health...
+[2025-07-30T06:15:00.011Z] build-monitor is healthy
+[2025-07-30T06:15:00.011Z] file-watcher is healthy
+[2025-07-30T06:15:00.012Z] master-launcher is healthy
+[2025-07-30T06:20:00.014Z] Checking extensions health...
+[2025-07-30T06:20:00.014Z] build-monitor is healthy
+[2025-07-30T06:20:00.015Z] file-watcher is healthy
+[2025-07-30T06:20:00.015Z] master-launcher is healthy
+[2025-07-30T06:25:00.010Z] Checking extensions health...
+[2025-07-30T06:25:00.010Z] build-monitor is healthy
+[2025-07-30T06:25:00.011Z] file-watcher is healthy
+[2025-07-30T06:25:00.011Z] master-launcher is healthy
+[2025-07-30T06:30:00.008Z] Checking extensions health...
+[2025-07-30T06:30:00.009Z] build-monitor is healthy
+[2025-07-30T06:30:00.009Z] file-watcher is healthy
+[2025-07-30T06:30:00.009Z] master-launcher is healthy
+[2025-07-30T06:35:00.008Z] Checking extensions health...
+[2025-07-30T06:35:00.008Z] build-monitor is healthy
+[2025-07-30T06:35:00.008Z] file-watcher is healthy
+[2025-07-30T06:35:00.008Z] master-launcher is healthy
+[2025-07-30T06:40:00.010Z] Checking extensions health...
+[2025-07-30T06:40:00.010Z] build-monitor is healthy
+[2025-07-30T06:40:00.011Z] file-watcher is healthy
+[2025-07-30T06:40:00.011Z] master-launcher is healthy
+[2025-07-30T06:45:00.009Z] Checking extensions health...
+[2025-07-30T06:45:00.009Z] build-monitor is healthy
+[2025-07-30T06:45:00.010Z] file-watcher is healthy
+[2025-07-30T06:45:00.010Z] master-launcher is healthy
+[2025-07-30T06:50:00.009Z] Checking extensions health...
+[2025-07-30T06:50:00.010Z] build-monitor is healthy
+[2025-07-30T06:50:00.010Z] file-watcher is healthy
+[2025-07-30T06:50:00.011Z] master-launcher is healthy
+[2025-07-30T06:55:00.011Z] Checking extensions health...
+[2025-07-30T06:55:00.011Z] build-monitor is healthy
+[2025-07-30T06:55:00.012Z] file-watcher is healthy
+[2025-07-30T06:55:00.012Z] master-launcher is healthy
+[2025-07-30T07:00:00.008Z] Checking extensions health...
+[2025-07-30T07:00:00.009Z] build-monitor is healthy
+[2025-07-30T07:00:00.009Z] file-watcher is healthy
+[2025-07-30T07:00:00.009Z] master-launcher is healthy
+[2025-07-30T07:05:00.009Z] Checking extensions health...
+[2025-07-30T07:05:00.009Z] build-monitor is healthy
+[2025-07-30T07:05:00.009Z] file-watcher is healthy
+[2025-07-30T07:05:00.009Z] master-launcher is healthy
+[2025-07-30T07:10:00.009Z] Checking extensions health...
+[2025-07-30T07:10:00.009Z] build-monitor is healthy
+[2025-07-30T07:10:00.009Z] file-watcher is healthy
+[2025-07-30T07:10:00.009Z] master-launcher is healthy
+[2025-07-30T07:15:00.008Z] Checking extensions health...
+[2025-07-30T07:15:00.009Z] build-monitor is healthy
+[2025-07-30T07:15:00.009Z] file-watcher is healthy
+[2025-07-30T07:15:00.009Z] master-launcher is healthy
+[2025-07-30T07:20:00.008Z] Checking extensions health...
+[2025-07-30T07:20:00.008Z] build-monitor is healthy
+[2025-07-30T07:20:00.009Z] file-watcher is healthy
+[2025-07-30T07:20:00.009Z] master-launcher is healthy
+[2025-07-30T07:25:00.009Z] Checking extensions health...
+[2025-07-30T07:25:00.010Z] build-monitor is healthy
+[2025-07-30T07:25:00.010Z] file-watcher is healthy
+[2025-07-30T07:25:00.011Z] master-launcher is healthy
+[2025-07-30T07:30:00.009Z] Checking extensions health...
+[2025-07-30T07:30:00.009Z] build-monitor is healthy
+[2025-07-30T07:30:00.009Z] file-watcher is healthy
+[2025-07-30T07:30:00.010Z] master-launcher is healthy
+[2025-07-30T07:35:00.010Z] Checking extensions health...
+[2025-07-30T07:35:00.010Z] build-monitor is healthy
+[2025-07-30T07:35:00.010Z] file-watcher is healthy
+[2025-07-30T07:35:00.010Z] master-launcher is healthy
+[2025-07-30T07:40:00.009Z] Checking extensions health...
+[2025-07-30T07:40:00.009Z] build-monitor is healthy
+[2025-07-30T07:40:00.010Z] file-watcher is healthy
+[2025-07-30T07:40:00.010Z] master-launcher is healthy
+[2025-07-30T07:45:00.009Z] Checking extensions health...
+[2025-07-30T07:45:00.009Z] build-monitor is healthy
+[2025-07-30T07:45:00.009Z] file-watcher is healthy
+[2025-07-30T07:45:00.009Z] master-launcher is healthy
+[2025-07-30T07:50:00.008Z] Checking extensions health...
+[2025-07-30T07:50:00.009Z] build-monitor is healthy
+[2025-07-30T07:50:00.009Z] file-watcher is healthy
+[2025-07-30T07:50:00.009Z] master-launcher is healthy
+[2025-07-30T07:55:00.010Z] Checking extensions health...
+[2025-07-30T07:55:00.011Z] build-monitor is healthy
+[2025-07-30T07:55:00.011Z] file-watcher is healthy
+[2025-07-30T07:55:00.011Z] master-launcher is healthy
+[2025-07-30T08:00:00.009Z] Checking extensions health...
+[2025-07-30T08:00:00.009Z] build-monitor is healthy
+[2025-07-30T08:00:00.009Z] file-watcher is healthy
+[2025-07-30T08:00:00.009Z] master-launcher is healthy
+[2025-07-30T08:05:00.013Z] Checking extensions health...
+[2025-07-30T08:05:00.014Z] build-monitor is healthy
+[2025-07-30T08:05:00.014Z] file-watcher is healthy
+[2025-07-30T08:05:00.014Z] master-launcher is healthy
+[2025-07-30T08:10:00.009Z] Checking extensions health...
+[2025-07-30T08:10:00.010Z] build-monitor is healthy
+[2025-07-30T08:10:00.010Z] file-watcher is healthy
+[2025-07-30T08:10:00.010Z] master-launcher is healthy
+[2025-07-30T08:15:00.008Z] Checking extensions health...
+[2025-07-30T08:15:00.008Z] build-monitor is healthy
+[2025-07-30T08:15:00.008Z] file-watcher is healthy
+[2025-07-30T08:15:00.008Z] master-launcher is healthy
+[2025-07-30T08:20:00.010Z] Checking extensions health...
+[2025-07-30T08:20:00.010Z] build-monitor is healthy
+[2025-07-30T08:20:00.010Z] file-watcher is healthy
+[2025-07-30T08:20:00.010Z] master-launcher is healthy
+[2025-07-30T08:25:00.009Z] Checking extensions health...
+[2025-07-30T08:25:00.009Z] build-monitor is healthy
+[2025-07-30T08:25:00.010Z] file-watcher is healthy
+[2025-07-30T08:25:00.010Z] master-launcher is healthy
+[2025-07-30T08:30:00.012Z] Checking extensions health...
+[2025-07-30T08:30:00.012Z] build-monitor is healthy
+[2025-07-30T08:30:00.012Z] file-watcher is healthy
+[2025-07-30T08:30:00.012Z] master-launcher is healthy
+[2025-07-30T08:35:00.008Z] Checking extensions health...
+[2025-07-30T08:35:00.009Z] build-monitor is healthy
+[2025-07-30T08:35:00.009Z] file-watcher is healthy
+[2025-07-30T08:35:00.009Z] master-launcher is healthy
+[2025-07-30T08:40:00.009Z] Checking extensions health...
+[2025-07-30T08:40:00.009Z] build-monitor is healthy
+[2025-07-30T08:40:00.009Z] file-watcher is healthy
+[2025-07-30T08:40:00.010Z] master-launcher is healthy
+[2025-07-30T08:45:00.008Z] Checking extensions health...
+[2025-07-30T08:45:00.009Z] build-monitor is healthy
+[2025-07-30T08:45:00.009Z] file-watcher is healthy
+[2025-07-30T08:45:00.009Z] master-launcher is healthy
+[2025-07-30T08:50:00.105Z] Checking extensions health...
+[2025-07-30T08:50:00.106Z] build-monitor is healthy
+[2025-07-30T08:50:00.106Z] file-watcher is healthy
+[2025-07-30T08:50:00.106Z] master-launcher is healthy
+[2025-07-30T08:55:00.021Z] Checking extensions health...
+[2025-07-30T08:55:00.021Z] build-monitor is healthy
+[2025-07-30T08:55:00.021Z] file-watcher is healthy
+[2025-07-30T08:55:00.021Z] master-launcher is healthy
+[2025-07-30T09:00:00.018Z] Checking extensions health...
+[2025-07-30T09:00:00.019Z] build-monitor is healthy
+[2025-07-30T09:00:00.019Z] file-watcher is healthy
+[2025-07-30T09:00:00.019Z] master-launcher is healthy
+[2025-07-30T09:05:00.019Z] Checking extensions health...
+[2025-07-30T09:05:00.019Z] build-monitor is healthy
+[2025-07-30T09:05:00.019Z] file-watcher is healthy
+[2025-07-30T09:05:00.019Z] master-launcher is healthy
+[2025-07-30T09:10:00.009Z] Checking extensions health...
+[2025-07-30T09:10:00.010Z] build-monitor is healthy
+[2025-07-30T09:10:00.010Z] file-watcher is healthy
+[2025-07-30T09:10:00.010Z] master-launcher is healthy
+[2025-07-30T09:15:00.009Z] Checking extensions health...
+[2025-07-30T09:15:00.009Z] build-monitor is healthy
+[2025-07-30T09:15:00.010Z] file-watcher is healthy
+[2025-07-30T09:15:00.010Z] master-launcher is healthy
+[2025-07-30T09:20:00.007Z] Checking extensions health...
+[2025-07-30T09:20:00.008Z] build-monitor is healthy
+[2025-07-30T09:20:00.008Z] file-watcher is healthy
+[2025-07-30T09:20:00.008Z] master-launcher is healthy
+[2025-07-30T09:25:00.009Z] Checking extensions health...
+[2025-07-30T09:25:00.009Z] build-monitor is healthy
+[2025-07-30T09:25:00.010Z] file-watcher is healthy
+[2025-07-30T09:25:00.010Z] master-launcher is healthy
+[2025-07-30T09:30:00.010Z] Checking extensions health...
+[2025-07-30T09:30:00.011Z] build-monitor is healthy
+[2025-07-30T09:30:00.011Z] file-watcher is healthy
+[2025-07-30T09:30:00.011Z] master-launcher is healthy
+[2025-07-30T09:35:00.008Z] Checking extensions health...
+[2025-07-30T09:35:00.008Z] build-monitor is healthy
+[2025-07-30T09:35:00.009Z] file-watcher is healthy
+[2025-07-30T09:35:00.009Z] master-launcher is healthy
+[2025-07-30T09:40:00.011Z] Checking extensions health...
+[2025-07-30T09:40:00.011Z] build-monitor is healthy
+[2025-07-30T09:40:00.012Z] file-watcher is healthy
+[2025-07-30T09:40:00.012Z] master-launcher is healthy
+[2025-07-30T09:45:00.009Z] Checking extensions health...
+[2025-07-30T09:45:00.009Z] build-monitor is healthy
+[2025-07-30T09:45:00.009Z] file-watcher is healthy
+[2025-07-30T09:45:00.009Z] master-launcher is healthy
+[2025-07-30T09:50:00.012Z] Checking extensions health...
+[2025-07-30T09:50:00.012Z] build-monitor is healthy
+[2025-07-30T09:50:00.012Z] file-watcher is healthy
+[2025-07-30T09:50:00.012Z] master-launcher is healthy
+[2025-07-30T09:55:00.011Z] Checking extensions health...
+[2025-07-30T09:55:00.011Z] build-monitor is healthy
+[2025-07-30T09:55:00.011Z] file-watcher is healthy
+[2025-07-30T09:55:00.012Z] master-launcher is healthy
+[2025-07-30T10:00:00.009Z] Checking extensions health...
+[2025-07-30T10:00:00.009Z] build-monitor is healthy
+[2025-07-30T10:00:00.010Z] file-watcher is healthy
+[2025-07-30T10:00:00.010Z] master-launcher is healthy
+[2025-07-30T10:05:00.009Z] Checking extensions health...
+[2025-07-30T10:05:00.009Z] build-monitor is healthy
+[2025-07-30T10:05:00.010Z] file-watcher is healthy
+[2025-07-30T10:05:00.010Z] master-launcher is healthy
+[2025-07-30T10:10:00.011Z] Checking extensions health...
+[2025-07-30T10:10:00.011Z] build-monitor is healthy
+[2025-07-30T10:10:00.011Z] file-watcher is healthy
+[2025-07-30T10:10:00.011Z] master-launcher is healthy
+[2025-07-30T10:15:00.009Z] Checking extensions health...
+[2025-07-30T10:15:00.009Z] build-monitor is healthy
+[2025-07-30T10:15:00.009Z] file-watcher is healthy
+[2025-07-30T10:15:00.010Z] master-launcher is healthy
+[2025-07-30T10:20:00.010Z] Checking extensions health...
+[2025-07-30T10:20:00.010Z] build-monitor is healthy
+[2025-07-30T10:20:00.010Z] file-watcher is healthy
+[2025-07-30T10:20:00.010Z] master-launcher is healthy
+[2025-07-30T10:25:00.009Z] Checking extensions health...
+[2025-07-30T10:25:00.009Z] build-monitor is healthy
+[2025-07-30T10:25:00.009Z] file-watcher is healthy
+[2025-07-30T10:25:00.009Z] master-launcher is healthy
+[2025-07-30T10:30:00.010Z] Checking extensions health...
+[2025-07-30T10:30:00.010Z] build-monitor is healthy
+[2025-07-30T10:30:00.010Z] file-watcher is healthy
+[2025-07-30T10:30:00.011Z] master-launcher is healthy
+[2025-07-30T10:35:00.010Z] Checking extensions health...
+[2025-07-30T10:35:00.010Z] build-monitor is healthy
+[2025-07-30T10:35:00.010Z] file-watcher is healthy
+[2025-07-30T10:35:00.011Z] master-launcher is healthy
+[2025-07-30T10:40:00.008Z] Checking extensions health...
+[2025-07-30T10:40:00.009Z] build-monitor is healthy
+[2025-07-30T10:40:00.009Z] file-watcher is healthy
+[2025-07-30T10:40:00.009Z] master-launcher is healthy
+[2025-07-30T10:45:00.009Z] Checking extensions health...
+[2025-07-30T10:45:00.010Z] build-monitor is healthy
+[2025-07-30T10:45:00.011Z] file-watcher is healthy
+[2025-07-30T10:45:00.011Z] master-launcher is healthy
+[2025-07-30T10:50:00.015Z] Checking extensions health...
+[2025-07-30T10:50:00.016Z] build-monitor is healthy
+[2025-07-30T10:50:00.016Z] file-watcher is healthy
+[2025-07-30T10:50:00.016Z] master-launcher is healthy
+[2025-07-30T10:55:00.011Z] Checking extensions health...
+[2025-07-30T10:55:00.011Z] build-monitor is healthy
+[2025-07-30T10:55:00.011Z] file-watcher is healthy
+[2025-07-30T10:55:00.012Z] master-launcher is healthy
+[2025-07-30T11:00:00.008Z] Checking extensions health...
+[2025-07-30T11:00:00.009Z] build-monitor is healthy
+[2025-07-30T11:00:00.009Z] file-watcher is healthy
+[2025-07-30T11:00:00.009Z] master-launcher is healthy
+[2025-07-30T11:05:00.009Z] Checking extensions health...
+[2025-07-30T11:05:00.009Z] build-monitor is healthy
+[2025-07-30T11:05:00.010Z] file-watcher is healthy
+[2025-07-30T11:05:00.010Z] master-launcher is healthy
+[2025-07-30T11:10:00.009Z] Checking extensions health...
+[2025-07-30T11:10:00.009Z] build-monitor is healthy
+[2025-07-30T11:10:00.010Z] file-watcher is healthy
+[2025-07-30T11:10:00.010Z] master-launcher is healthy
+[2025-07-30T11:15:00.009Z] Checking extensions health...
+[2025-07-30T11:15:00.010Z] build-monitor is healthy
+[2025-07-30T11:15:00.010Z] file-watcher is healthy
+[2025-07-30T11:15:00.011Z] master-launcher is healthy
+[2025-07-30T11:20:00.009Z] Checking extensions health...
+[2025-07-30T11:20:00.009Z] build-monitor is healthy
+[2025-07-30T11:20:00.010Z] file-watcher is healthy
+[2025-07-30T11:20:00.010Z] master-launcher is healthy
+[2025-07-30T11:25:00.009Z] Checking extensions health...
+[2025-07-30T11:25:00.010Z] build-monitor is healthy
+[2025-07-30T11:25:00.010Z] file-watcher is healthy
+[2025-07-30T11:25:00.010Z] master-launcher is healthy
+[2025-07-30T11:30:00.010Z] Checking extensions health...
+[2025-07-30T11:30:00.010Z] build-monitor is healthy
+[2025-07-30T11:30:00.010Z] file-watcher is healthy
+[2025-07-30T11:30:00.010Z] master-launcher is healthy
+[2025-07-30T11:35:00.009Z] Checking extensions health...
+[2025-07-30T11:35:00.009Z] build-monitor is healthy
+[2025-07-30T11:35:00.010Z] file-watcher is healthy
+[2025-07-30T11:35:00.010Z] master-launcher is healthy
+[2025-07-30T11:40:00.011Z] Checking extensions health...
+[2025-07-30T11:40:00.011Z] build-monitor is healthy
+[2025-07-30T11:40:00.012Z] file-watcher is healthy
+[2025-07-30T11:40:00.012Z] master-launcher is healthy
+[2025-07-30T11:45:00.009Z] Checking extensions health...
+[2025-07-30T11:45:00.009Z] build-monitor is healthy
+[2025-07-30T11:45:00.010Z] file-watcher is healthy
+[2025-07-30T11:45:00.011Z] master-launcher is healthy
+[2025-07-30T11:50:00.009Z] Checking extensions health...
+[2025-07-30T11:50:00.009Z] build-monitor is healthy
+[2025-07-30T11:50:00.010Z] file-watcher is healthy
+[2025-07-30T11:50:00.010Z] master-launcher is healthy
+[2025-07-30T11:55:00.128Z] Checking extensions health...
+[2025-07-30T11:55:00.128Z] build-monitor is healthy
+[2025-07-30T11:55:00.129Z] file-watcher is healthy
+[2025-07-30T11:55:00.129Z] master-launcher is healthy
+[2025-07-30T12:00:00.018Z] Checking extensions health...
+[2025-07-30T12:00:00.018Z] build-monitor is healthy
+[2025-07-30T12:00:00.019Z] file-watcher is healthy
+[2025-07-30T12:00:00.019Z] master-launcher is healthy
+[2025-07-30T12:05:00.017Z] Checking extensions health...
+[2025-07-30T12:05:00.017Z] build-monitor is healthy
+[2025-07-30T12:05:00.018Z] file-watcher is healthy
+[2025-07-30T12:05:00.018Z] master-launcher is healthy
+[2025-07-30T12:10:00.021Z] Checking extensions health...
+[2025-07-30T12:10:00.021Z] build-monitor is healthy
+[2025-07-30T12:10:00.021Z] file-watcher is healthy
+[2025-07-30T12:10:00.022Z] master-launcher is healthy
+[2025-07-30T12:15:00.018Z] Checking extensions health...
+[2025-07-30T12:15:00.018Z] build-monitor is healthy
+[2025-07-30T12:15:00.019Z] file-watcher is healthy
+[2025-07-30T12:15:00.019Z] master-launcher is healthy
+[2025-07-30T12:20:00.018Z] Checking extensions health...
+[2025-07-30T12:20:00.018Z] build-monitor is healthy
+[2025-07-30T12:20:00.019Z] file-watcher is healthy
+[2025-07-30T12:20:00.019Z] Restarting master-launcher...
+[2025-07-30T12:20:00.021Z] Started extension: master-launcher
+[2025-07-30T12:25:00.019Z] Checking extensions health...
+[2025-07-30T12:25:00.019Z] build-monitor is healthy
+[2025-07-30T12:25:00.020Z] file-watcher is healthy
+[2025-07-30T12:25:00.020Z] master-launcher is healthy
+[2025-07-30T12:30:00.020Z] Checking extensions health...
+[2025-07-30T12:30:00.020Z] build-monitor is healthy
+[2025-07-30T12:30:00.020Z] file-watcher is healthy
+[2025-07-30T12:30:00.021Z] master-launcher is healthy
+[2025-07-30T12:35:00.017Z] Checking extensions health...
+[2025-07-30T12:35:00.017Z] build-monitor is healthy
+[2025-07-30T12:35:00.018Z] file-watcher is healthy
+[2025-07-30T12:35:00.019Z] Restarting master-launcher...
+[2025-07-30T12:35:00.021Z] Started extension: master-launcher
+[2025-07-30T12:40:00.020Z] Checking extensions health...
+[2025-07-30T12:40:00.021Z] Restarting build-monitor...
+[2025-07-30T12:40:00.024Z] Started extension: build-monitor
+[2025-07-30T12:40:00.025Z] file-watcher is healthy
+[2025-07-30T12:40:00.025Z] Restarting master-launcher...
+[2025-07-30T12:40:00.028Z] Started extension: master-launcher
+[2025-07-30T12:45:00.026Z] Checking extensions health...
+[2025-07-30T12:45:00.027Z] build-monitor is healthy
+[2025-07-30T12:45:00.028Z] file-watcher is healthy
+[2025-07-30T12:45:00.028Z] master-launcher is healthy
+[2025-07-30T12:50:00.018Z] Checking extensions health...
+[2025-07-30T12:50:00.018Z] build-monitor is healthy
+[2025-07-30T12:50:00.019Z] file-watcher is healthy
+[2025-07-30T12:50:00.019Z] master-launcher is healthy
+[2025-07-30T12:55:00.023Z] Checking extensions health...
+[2025-07-30T12:55:00.023Z] build-monitor is healthy
+[2025-07-30T12:55:00.024Z] file-watcher is healthy
+[2025-07-30T12:55:00.024Z] master-launcher is healthy
+[2025-07-30T13:00:00.019Z] Checking extensions health...
+[2025-07-30T13:00:00.019Z] build-monitor is healthy
+[2025-07-30T13:00:00.019Z] file-watcher is healthy
+[2025-07-30T13:00:00.020Z] master-launcher is healthy
+[2025-07-30T13:05:00.015Z] Checking extensions health...
+[2025-07-30T13:05:00.018Z] build-monitor is healthy
+[2025-07-30T13:05:00.018Z] Restarting file-watcher...
+[2025-07-30T13:05:00.022Z] Started extension: file-watcher
+[2025-07-30T13:05:00.022Z] master-launcher is healthy
+[2025-07-30T13:10:00.009Z] Checking extensions health...
+[2025-07-30T13:10:00.012Z] build-monitor is healthy
+[2025-07-30T13:10:00.012Z] file-watcher is healthy
+[2025-07-30T13:10:00.012Z] master-launcher is healthy
+[2025-07-30T13:15:00.009Z] Checking extensions health...
+[2025-07-30T13:15:00.010Z] build-monitor is healthy
+[2025-07-30T13:15:00.011Z] file-watcher is healthy
+[2025-07-30T13:15:00.011Z] master-launcher is healthy
+[2025-07-30T13:20:00.009Z] Checking extensions health...
+[2025-07-30T13:20:00.010Z] build-monitor is healthy
+[2025-07-30T13:20:00.010Z] file-watcher is healthy
+[2025-07-30T13:20:00.011Z] Restarting master-launcher...
+[2025-07-30T13:20:00.012Z] Started extension: master-launcher
+[2025-07-30T13:25:00.015Z] Checking extensions health...
+[2025-07-30T13:25:00.015Z] build-monitor is healthy
+[2025-07-30T13:25:00.016Z] file-watcher is healthy
+[2025-07-30T13:25:00.016Z] master-launcher is healthy
+[2025-07-30T13:30:00.010Z] Checking extensions health...
+[2025-07-30T13:30:00.011Z] build-monitor is healthy
+[2025-07-30T13:30:00.011Z] file-watcher is healthy
+[2025-07-30T13:30:00.011Z] master-launcher is healthy
+[2025-07-30T13:35:00.010Z] Checking extensions health...
+[2025-07-30T13:35:00.010Z] build-monitor is healthy
+[2025-07-30T13:35:00.010Z] file-watcher is healthy
+[2025-07-30T13:35:00.011Z] master-launcher is healthy
+[2025-07-30T13:40:00.009Z] Checking extensions health...
+[2025-07-30T13:40:00.009Z] build-monitor is healthy
+[2025-07-30T13:40:00.009Z] file-watcher is healthy
+[2025-07-30T13:40:00.010Z] master-launcher is healthy
+[2025-07-30T13:45:00.009Z] Checking extensions health...
+[2025-07-30T13:45:00.010Z] build-monitor is healthy
+[2025-07-30T13:45:00.010Z] file-watcher is healthy
+[2025-07-30T13:45:00.011Z] master-launcher is healthy
+[2025-07-30T13:50:00.008Z] Checking extensions health...
+[2025-07-30T13:50:00.009Z] build-monitor is healthy
+[2025-07-30T13:50:00.009Z] file-watcher is healthy
+[2025-07-30T13:50:00.010Z] master-launcher is healthy
+[2025-07-30T13:55:00.011Z] Checking extensions health...
+[2025-07-30T13:55:00.011Z] build-monitor is healthy
+[2025-07-30T13:55:00.011Z] file-watcher is healthy
+[2025-07-30T13:55:00.012Z] master-launcher is healthy
+[2025-07-30T14:00:00.009Z] Checking extensions health...
+[2025-07-30T14:00:00.009Z] build-monitor is healthy
+[2025-07-30T14:00:00.009Z] file-watcher is healthy
+[2025-07-30T14:00:00.009Z] master-launcher is healthy
+[2025-07-30T14:05:00.010Z] Checking extensions health...
+[2025-07-30T14:05:00.010Z] build-monitor is healthy
+[2025-07-30T14:05:00.010Z] file-watcher is healthy
+[2025-07-30T14:05:00.010Z] master-launcher is healthy
+[2025-07-30T14:10:00.012Z] Checking extensions health...
+[2025-07-30T14:10:00.012Z] build-monitor is healthy
+[2025-07-30T14:10:00.013Z] file-watcher is healthy
+[2025-07-30T14:10:00.013Z] Restarting master-launcher...
+[2025-07-30T14:10:00.015Z] Started extension: master-launcher
+[2025-07-30T14:15:00.008Z] Checking extensions health...
+[2025-07-30T14:15:00.009Z] build-monitor is healthy
+[2025-07-30T14:15:00.010Z] file-watcher is healthy
+[2025-07-30T14:15:00.010Z] master-launcher is healthy
+[2025-07-30T14:20:00.007Z] Checking extensions health...
+[2025-07-30T14:20:00.008Z] build-monitor is healthy
+[2025-07-30T14:20:00.008Z] file-watcher is healthy
+[2025-07-30T14:20:00.009Z] master-launcher is healthy
+[2025-07-30T14:25:00.009Z] Checking extensions health...
+[2025-07-30T14:25:00.009Z] build-monitor is healthy
+[2025-07-30T14:25:00.010Z] file-watcher is healthy
+[2025-07-30T14:25:00.010Z] master-launcher is healthy
+[2025-07-30T14:30:00.009Z] Checking extensions health...
+[2025-07-30T14:30:00.009Z] build-monitor is healthy
+[2025-07-30T14:30:00.010Z] file-watcher is healthy
+[2025-07-30T14:30:00.010Z] master-launcher is healthy
+[2025-07-30T14:40:00.485Z] Checking extensions health...
+[2025-07-30T14:40:00.676Z] build-monitor is healthy
+[2025-07-30T14:40:00.725Z] file-watcher is healthy
+[2025-07-30T14:40:00.731Z] master-launcher is healthy
+[2025-07-30T14:45:00.084Z] Checking extensions health...
+[2025-07-30T14:45:00.144Z] build-monitor is healthy
+[2025-07-30T14:45:00.190Z] file-watcher is healthy
+[2025-07-30T14:45:00.223Z] master-launcher is healthy

@@ -1,0 +1,3 @@
+[2025-07-30 10:25:01] 🔍 Starting pre-commit checks
+[2025-07-30 10:25:01] 🔍 Running ESLint on staged files...
+[2025-07-30 10:25:03] ❌ Linting failed

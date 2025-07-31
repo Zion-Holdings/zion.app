@@ -1,0 +1,52 @@
+{
+  "lastCheck": "2025-07-31T11:46:01.183Z",
+  "jobs": {
+    "gitSync": {
+      "lastRun": "2025-07-31T11:46:01.183Z",
+      "duration": 0,
+      "success": false,
+      "error": "Command failed: git commit -m \"Auto-sync: Continuous improvement - $(date)\"\nhusky - DEPRECATED\n\nPlease remove the following two lines from .husky/pre-commit:\n\n#!/usr/bin/env sh\n. \"$(dirname -- \"$0\")/_/husky.sh\"\n\nThey WILL FAIL in v10.0.0\n\n🔍 Running pre-commit checks...\n📝 Running ESLint...\n\n> bolt.new.zion.app@0.1.0 lint\n> next lint\n\n? How would you like to configure ESLint? https://nextjs.org/docs/app/api-reference/config/eslint\n\u001b[?25l❯  Strict (recommended)\n   Base\n   Cancel ⚠ If you set up ESLint yourself, we recommend adding the Next.js ESLint plugin. See https://nextjs.org/docs/app/api-reference/config/eslint#migrating-existing-config\n❌ ESLint failed. Please fix the issues before committing.\nhusky - pre-commit script failed (code 1)\n"
+    },
+    "buildCheck": {
+      "lastRun": "2025-07-31T11:25:00.748Z",
+      "duration": 0,
+      "success": false,
+      "error": "ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json'"
+    },
+    "errorRecovery": {
+      "lastRun": "2025-07-31T00:12:57.645Z",
+      "duration": 896996,
+      "success": true,
+      "error": null
+    },
+    "continuousImprovement": {
+      "lastRun": "2025-07-30T18:06:56.780Z",
+      "duration": 15026,
+      "success": true,
+      "error": null
+    },
+    "dependencyCheck": {
+      "lastRun": "2025-07-30T18:06:41.752Z",
+      "duration": 2613,
+      "success": true,
+      "error": null
+    },
+    "securityCheck": {
+      "lastRun": "2025-07-30T18:06:57.935Z",
+      "duration": 1153,
+      "success": true,
+      "error": null
+    },
+    "performanceCheck": {
+      "lastRun": "2025-07-30T18:15:06.754Z",
+      "duration": 8,
+      "success": true,
+      "error": null
+    }
+  },
+  "errors": 116,
+  "fixes": 542,
+  "syncs": 50,
+  "builds": 5,
+  "commits": 92
+}

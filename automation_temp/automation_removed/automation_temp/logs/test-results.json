@@ -1,0 +1,43 @@
+{
+  "passed": 8,
+  "failed": 1,
+  "tests": [
+    {
+      "name": "Project Structure",
+      "status": "PASSED"
+    },
+    {
+      "name": "Node Modules Check",
+      "status": "PASSED"
+    },
+    {
+      "name": "Automation Configuration",
+      "status": "PASSED"
+    },
+    {
+      "name": "Git Repository Status",
+      "status": "PASSED"
+    },
+    {
+      "name": "Log Files Check",
+      "status": "PASSED"
+    },
+    {
+      "name": "Cron Jobs Check",
+      "status": "PASSED"
+    },
+    {
+      "name": "Sync Monitor Dashboard",
+      "status": "PASSED"
+    },
+    {
+      "name": "Sync Monitor Dashboard",
+      "status": "PASSED"
+    },
+    {
+      "name": "Automation Processes",
+      "status": "FAILED",
+      "error": "No automation processes are running"
+    }
+  ]
+}

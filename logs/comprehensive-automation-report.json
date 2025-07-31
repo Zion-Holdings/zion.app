@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-07-30T22:26:25.692Z",
+  "duration": "203568ms",
+  "issues": [
+    "Dependency installation failed",
+    "Build failed: Command failed: npm run build"
+  ],
+  "fixes": [
+    "package.json updated with required dependencies",
+    "Next.js configuration updated",
+    "ESLint configuration updated"
+  ],
+  "summary": {
+    "totalIssues": 2,
+    "totalFixes": 3,
+    "success": false
+  }
+}

@@ -1,0 +1,249 @@
+[2025-07-29T14:06:56.536Z] [AUTOMATION-MANAGER] Starting automation manager... 
+[2025-07-29T14:06:56.549Z] [AUTOMATION-MANAGER] Running health check... 
+[2025-07-29T14:07:07.483Z] [AUTOMATION-MANAGER] Health check failed: Command failed: npm run build
+Failed to compile.
+
+./pages/index.tsx:6:8
+Type error: Property 'children' is missing in type '{}' but required in type '{ children: ReactNode; }'.
+
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+[0m [90m 5 |[39m     [33m<[39m[33m>[39m[0m
+[0m[31m[1m>[22m[39m[90m 6 |[39m       [33m<[39m[33mHead[39m [33m/[39m[33m>[39m[0m
+[0m [90m   |[39m        [31m[1m^[22m[39m[0m
+[0m [90m 7 |[39m         [33m<[39m[33mtitle[39m [33m/[39m[33m>[39m[33mZion[39m [33mApp[39m[33m<[39m[33m/[39m[33mtitle[39m[33m>[39m[0m
+[0m [90m 8 |[39m         [33m<[39m[33mmeta[39m name[33m=[39m[32m"description"[39m content[33m=[39m[32m"Zion App Homepage"[39m [33m/[39m[33m>[39m[0m
+[0m [90m 9 |[39m       [33m<[39m[33m/[39m[33mHead[39m[33m>[39m[0m
+Next.js build worker exited with code: 1 and signal: null
+
+[2025-07-29T14:07:07.484Z] [AUTOMATION-MANAGER] Initial health check failed, exiting 
+[2025-07-29T14:07:50.282Z] [AUTOMATION-MANAGER] Starting automation manager... 
+[2025-07-29T14:07:50.294Z] [AUTOMATION-MANAGER] Running health check... 
+[2025-07-29T14:08:02.341Z] [AUTOMATION-MANAGER] Health check failed: Command failed: npm run build
+Failed to compile.
+
+./pages/index.tsx:6:8
+Type error: Property 'children' is missing in type '{}' but required in type '{ children: ReactNode; }'.
+
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+[0m [90m 5 |[39m     [33m<[39m[33m>[39m[0m
+[0m[31m[1m>[22m[39m[90m 6 |[39m       [33m<[39m[33mHead[39m [33m/[39m[33m>[39m[0m
+[0m [90m   |[39m        [31m[1m^[22m[39m[0m
+[0m [90m 7 |[39m         [33m<[39m[33mtitle[39m [33m/[39m[33m>[39m[33mZion[39m [33mApp[39m[33m<[39m[33m/[39m[33mtitle[39m[33m>[39m[0m
+[0m [90m 8 |[39m         [33m<[39m[33mmeta[39m name[33m=[39m[32m"description"[39m content[33m=[39m[32m"Zion App Homepage"[39m [33m/[39m[33m>[39m[0m
+[0m [90m 9 |[39m       [33m<[39m[33m/[39m[33mHead[39m[33m>[39m[0m
+Next.js build worker exited with code: 1 and signal: null
+
+[2025-07-29T14:08:02.342Z] [AUTOMATION-MANAGER] Initial health check failed, exiting 
+[2025-07-29T14:09:25.142Z] [AUTOMATION-MANAGER] Starting automation manager... 
+[2025-07-29T14:09:25.154Z] [AUTOMATION-MANAGER] Running health check... 
+[2025-07-29T14:09:36.673Z] [AUTOMATION-MANAGER] Health check failed: Command failed: npm run build
+Failed to compile.
+
+./pages/index.tsx:6:8
+Type error: Property 'children' is missing in type '{}' but required in type '{ children: ReactNode; }'.
+
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+[0m [90m 5 |[39m     [33m<[39m[33m>[39m[0m
+[0m[31m[1m>[22m[39m[90m 6 |[39m       [33m<[39m[33mHead[39m [33m/[39m[33m>[39m[0m
+[0m [90m   |[39m        [31m[1m^[22m[39m[0m
+[0m [90m 7 |[39m         [33m<[39m[33mtitle[39m [33m/[39m[33m>[39m[33mZion[39m [33mApp[39m[33m<[39m[33m/[39m[33mtitle[39m[33m>[39m[0m
+[0m [90m 8 |[39m         [33m<[39m[33mmeta[39m name[33m=[39m[32m"description"[39m content[33m=[39m[32m"Zion App Homepage"[39m [33m/[39m[33m>[39m[0m
+[0m [90m 9 |[39m       [33m<[39m[33m/[39m[33mHead[39m[33m>[39m[0m
+Next.js build worker exited with code: 1 and signal: null
+
+[2025-07-29T14:09:36.674Z] [AUTOMATION-MANAGER] Initial health check failed, exiting 
+[2025-07-29T14:12:09.666Z] [AUTOMATION-MANAGER] Starting automation manager... 
+[2025-07-29T14:12:09.678Z] [AUTOMATION-MANAGER] Running health check... 
+[2025-07-29T14:12:20.076Z] [AUTOMATION-MANAGER] Health check failed: Command failed: npm run build
+Failed to compile.
+
+./pages/index.tsx:6:8
+Type error: Property 'children' is missing in type '{}' but required in type '{ children: ReactNode; }'.
+
+[0m [90m 4 |[39m   [36mreturn[39m ([0m
+[0m [90m 5 |[39m     [33m<[39m[33m>[39m[0m
+[0m[31m[1m>[22m[39m[90m 6 |[39m       [33m<[39m[33mHead[39m [33m/[39m[33m>[39m[0m
+[0m [90m   |[39m        [31m[1m^[22m[39m[0m
+[0m [90m 7 |[39m         [33m<[39m[33mtitle[39m [33m/[39m[33m>[39m[33mZion[39m [33mApp[39m[33m<[39m[33m/[39m[33mtitle[39m[33m>[39m[0m
+[0m [90m 8 |[39m         [33m<[39m[33mmeta[39m name[33m=[39m[32m"description"[39m content[33m=[39m[32m"Zion App Homepage"[39m [33m/[39m[33m>[39m[0m
+[0m [90m 9 |[39m       [33m<[39m[33m/[39m[33mHead[39m[33m>[39m[0m
+Next.js build worker exited with code: 1 and signal: null
+
+[2025-07-29T14:12:20.077Z] [AUTOMATION-MANAGER] Initial health check failed, exiting 
+[2025-07-29T14:52:07.696Z] [AUTOMATION-MANAGER] Starting automation manager... 
+[2025-07-29T14:52:07.707Z] [AUTOMATION-MANAGER] Running health check... 
+[2025-07-29T14:52:07.994Z] [AUTOMATION-MANAGER] Health check passed 
+[2025-07-29T14:52:08.002Z] [AUTOMATION-MANAGER] Automation manager started 
+[2025-07-29T15:20:49.763Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T15:35:49.724Z] [AUTOMATION-MANAGER] Running health check... 
+[2025-07-29T15:35:50.178Z] [AUTOMATION-MANAGER] Health check passed 
+[2025-07-29T15:35:50.178Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T15:50:50.140Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T16:05:49.649Z] [AUTOMATION-MANAGER] Running health check... 
+[2025-07-29T16:05:49.957Z] [AUTOMATION-MANAGER] Health check passed 
+[2025-07-29T16:05:50.103Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T16:05:50.210Z] [AUTOMATION-MANAGER] Commit and push failed: Command failed: git add .
+fatal: Unable to create '/Users/miami2/Documents/GitHub/bolt.new.zion.app/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+[2025-07-29T16:10:22.361Z] [AUTOMATION-MANAGER] Starting agent: Performance Agent 
+[2025-07-29T16:10:22.363Z] [AUTOMATION-MANAGER] Starting agent: Monitoring Agent 
+[2025-07-29T16:10:22.423Z] [AUTOMATION-MANAGER] Agent Performance Agent failed with code 1 
+[2025-07-29T16:10:22.423Z] [AUTOMATION-MANAGER] Agent Monitoring Agent failed with code 1 
+[2025-07-29T16:20:50.066Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T16:35:49.570Z] [AUTOMATION-MANAGER] Running health check... 
+[2025-07-29T16:35:49.864Z] [AUTOMATION-MANAGER] Health check passed 
+[2025-07-29T16:35:50.026Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T16:50:49.987Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T17:05:49.494Z] [AUTOMATION-MANAGER] Running health check... 
+[2025-07-29T17:05:49.806Z] [AUTOMATION-MANAGER] Health check passed 
+[2025-07-29T17:05:49.950Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T17:20:49.912Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T17:35:49.415Z] [AUTOMATION-MANAGER] Running health check... 
+[2025-07-29T17:35:49.715Z] [AUTOMATION-MANAGER] Health check passed 
+[2025-07-29T17:35:49.872Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T17:50:49.834Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T18:05:49.339Z] [AUTOMATION-MANAGER] Running health check... 
+[2025-07-29T18:05:49.657Z] [AUTOMATION-MANAGER] Health check passed 
+[2025-07-29T18:05:49.797Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T18:20:49.636Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T18:50:49.529Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T19:05:49.192Z] [AUTOMATION-MANAGER] Running health check... 
+[2025-07-29T19:05:49.529Z] [AUTOMATION-MANAGER] Health check passed 
+[2025-07-29T19:05:49.649Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T19:20:49.650Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T19:35:49.192Z] [AUTOMATION-MANAGER] Running health check... 
+[2025-07-29T19:35:49.542Z] [AUTOMATION-MANAGER] Health check passed 
+[2025-07-29T19:35:49.650Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T19:50:21.905Z] [AUTOMATION-MANAGER] Agent Monitoring Agent timed out and was killed 
+[2025-07-29T19:50:21.905Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T19:50:21.908Z] [AUTOMATION-MANAGER] Starting agent: Monitoring Agent 
+[2025-07-29T19:50:22.025Z] [AUTOMATION-MANAGER] Agent Monitoring Agent failed with code 1 
+[2025-07-29T19:50:22.026Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T19:50:49.551Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T19:51:21.407Z] [AUTOMATION-MANAGER] Commit and push failed: Command failed: git push
+remote: error: Trace: 6a0fbc4ee06585c3adeb5bdd1471c7e781a4ef7347f36ee1a7ea0fdada5aa6ce        
+remote: error: See https://gh.io/lfs for more information.        
+remote: error: File node_modules/@next/swc-darwin-x64/next-swc.darwin-x64.node is 111.53 MB; this exceeds GitHub's file size limit of 100.00 MB        
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.        
+To https://github.com/Zion-Holdings/zion.app.git
+ ! [remote rejected]       main -> main (pre-receive hook declined)
+error: failed to push some refs to 'https://github.com/Zion-Holdings/zion.app.git'
+
+[2025-07-29T19:54:21.899Z] [AUTOMATION-MANAGER] Agent Monitoring Agent timed out and was killed 
+[2025-07-29T19:54:21.900Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T19:54:21.904Z] [AUTOMATION-MANAGER] Starting agent: Code Quality Agent 
+[2025-07-29T19:54:21.905Z] [AUTOMATION-MANAGER] Starting agent: Performance Agent 
+[2025-07-29T19:54:21.906Z] [AUTOMATION-MANAGER] Starting agent: Monitoring Agent 
+[2025-07-29T19:54:21.959Z] [AUTOMATION-MANAGER] Agent Code Quality Agent completed successfully 
+[2025-07-29T19:54:21.963Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T19:54:21.965Z] [AUTOMATION-MANAGER] Agent Monitoring Agent failed with code 1 
+[2025-07-29T19:54:21.965Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T19:54:21.966Z] [AUTOMATION-MANAGER] Agent Performance Agent failed with code 1 
+[2025-07-29T19:54:21.966Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T19:56:21.898Z] [AUTOMATION-MANAGER] Agent Monitoring Agent timed out and was killed 
+[2025-07-29T19:56:21.899Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T19:56:21.900Z] [AUTOMATION-MANAGER] Starting agent: Monitoring Agent 
+[2025-07-29T19:56:21.964Z] [AUTOMATION-MANAGER] Agent Monitoring Agent failed with code 1 
+[2025-07-29T19:56:21.965Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:00:00.888Z] [AUTOMATION-MANAGER] Running hourly comprehensive analysis... 
+[2025-07-29T20:00:00.888Z] [AUTOMATION-MANAGER] Starting agent: Code Quality Agent 
+[2025-07-29T20:00:00.890Z] [AUTOMATION-MANAGER] Starting agent: Performance Agent 
+[2025-07-29T20:00:00.891Z] [AUTOMATION-MANAGER] Starting agent: Security Agent 
+[2025-07-29T20:00:00.892Z] [AUTOMATION-MANAGER] Starting agent: Testing Agent 
+[2025-07-29T20:00:00.893Z] [AUTOMATION-MANAGER] Starting agent: Dependencies Agent 
+[2025-07-29T20:00:00.894Z] [AUTOMATION-MANAGER] Starting agent: Monitoring Agent 
+[2025-07-29T20:00:00.947Z] [AUTOMATION-MANAGER] Agent Code Quality Agent completed successfully 
+[2025-07-29T20:00:00.947Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:00:00.953Z] [AUTOMATION-MANAGER] Agent Performance Agent failed with code 1 
+[2025-07-29T20:00:00.954Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:00:00.954Z] [AUTOMATION-MANAGER] Agent Security Agent failed with code 1 
+[2025-07-29T20:00:00.955Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:00:00.955Z] [AUTOMATION-MANAGER] Agent Dependencies Agent failed with code 1 
+[2025-07-29T20:00:00.955Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:00:00.956Z] [AUTOMATION-MANAGER] Agent Monitoring Agent failed with code 1 
+[2025-07-29T20:00:00.956Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:00:00.956Z] [AUTOMATION-MANAGER] Agent Testing Agent failed with code 1 
+[2025-07-29T20:00:00.957Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:00:21.895Z] [AUTOMATION-MANAGER] Agent Monitoring Agent timed out and was killed 
+[2025-07-29T20:00:21.895Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:04:21.888Z] [AUTOMATION-MANAGER] Agent Code Quality Agent timed out and was killed 
+[2025-07-29T20:04:21.889Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:04:21.890Z] [AUTOMATION-MANAGER] Agent Performance Agent timed out and was killed 
+[2025-07-29T20:04:21.890Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:04:21.890Z] [AUTOMATION-MANAGER] Agent Monitoring Agent timed out and was killed 
+[2025-07-29T20:04:21.891Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:04:21.892Z] [AUTOMATION-MANAGER] Starting agent: Monitoring Agent 
+[2025-07-29T20:04:21.954Z] [AUTOMATION-MANAGER] Agent Monitoring Agent failed with code 1 
+[2025-07-29T20:04:21.955Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:05:49.068Z] [AUTOMATION-MANAGER] Running health check... 
+[2025-07-29T20:05:49.332Z] [AUTOMATION-MANAGER] Health check passed 
+[2025-07-29T20:05:49.527Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T20:05:50.931Z] [AUTOMATION-MANAGER] Changes committed and pushed 
+[2025-07-29T20:06:21.886Z] [AUTOMATION-MANAGER] Agent Monitoring Agent timed out and was killed 
+[2025-07-29T20:06:21.886Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:06:21.890Z] [AUTOMATION-MANAGER] Starting agent: Code Quality Agent 
+[2025-07-29T20:06:21.891Z] [AUTOMATION-MANAGER] Starting agent: Monitoring Agent 
+[2025-07-29T20:06:21.965Z] [AUTOMATION-MANAGER] Agent Code Quality Agent completed successfully 
+[2025-07-29T20:06:21.965Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:06:21.975Z] [AUTOMATION-MANAGER] Agent Monitoring Agent failed with code 1 
+[2025-07-29T20:06:21.976Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:08:21.883Z] [AUTOMATION-MANAGER] Agent Monitoring Agent timed out and was killed 
+[2025-07-29T20:08:21.883Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:08:21.887Z] [AUTOMATION-MANAGER] Starting agent: Testing Agent 
+[2025-07-29T20:08:21.888Z] [AUTOMATION-MANAGER] Starting agent: Monitoring Agent 
+[2025-07-29T20:08:21.969Z] [AUTOMATION-MANAGER] Agent Monitoring Agent failed with code 1 
+[2025-07-29T20:08:21.970Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:08:21.971Z] [AUTOMATION-MANAGER] Agent Testing Agent failed with code 1 
+[2025-07-29T20:08:21.971Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:10:21.832Z] [AUTOMATION-MANAGER] Starting agent: Performance Agent 
+[2025-07-29T20:10:21.833Z] [AUTOMATION-MANAGER] Starting agent: Monitoring Agent 
+[2025-07-29T20:10:21.897Z] [AUTOMATION-MANAGER] Agent Performance Agent failed with code 1 
+[2025-07-29T20:10:21.898Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:10:21.899Z] [AUTOMATION-MANAGER] Agent Monitoring Agent failed with code 1 
+[2025-07-29T20:10:21.899Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:18:21.810Z] [AUTOMATION-MANAGER] Agent Testing Agent timed out and was killed 
+[2025-07-29T20:18:21.811Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:18:21.812Z] [AUTOMATION-MANAGER] Agent Monitoring Agent timed out and was killed 
+[2025-07-29T20:18:21.812Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:18:21.812Z] [AUTOMATION-MANAGER] Starting agent: Code Quality Agent 
+[2025-07-29T20:18:21.813Z] [AUTOMATION-MANAGER] Starting agent: Testing Agent 
+[2025-07-29T20:18:21.814Z] [AUTOMATION-MANAGER] Starting agent: Monitoring Agent 
+[2025-07-29T20:18:21.867Z] [AUTOMATION-MANAGER] Agent Code Quality Agent completed successfully 
+[2025-07-29T20:18:21.867Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:18:21.872Z] [AUTOMATION-MANAGER] Agent Testing Agent failed with code 1 
+[2025-07-29T20:18:21.873Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:18:21.873Z] [AUTOMATION-MANAGER] Agent Monitoring Agent failed with code 1 
+[2025-07-29T20:18:21.874Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:20:21.805Z] [AUTOMATION-MANAGER] Agent Performance Agent timed out and was killed 
+[2025-07-29T20:20:21.806Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:20:21.807Z] [AUTOMATION-MANAGER] Starting agent: Monitoring Agent 
+[2025-07-29T20:20:21.808Z] [AUTOMATION-MANAGER] Agent Monitoring Agent timed out and was killed 
+[2025-07-29T20:20:21.808Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:20:21.868Z] [AUTOMATION-MANAGER] Agent Monitoring Agent failed with code 1 
+[2025-07-29T20:20:21.869Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:20:49.439Z] [AUTOMATION-MANAGER] Committing and pushing changes... 
+[2025-07-29T20:20:50.955Z] [AUTOMATION-MANAGER] Changes committed and pushed 
+[2025-07-29T20:22:21.800Z] [AUTOMATION-MANAGER] Agent Code Quality Agent timed out and was killed 
+[2025-07-29T20:22:21.800Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:22:21.801Z] [AUTOMATION-MANAGER] Agent Monitoring Agent timed out and was killed 
+[2025-07-29T20:22:21.801Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:22:21.801Z] [AUTOMATION-MANAGER] Starting agent: Performance Agent 
+[2025-07-29T20:22:21.802Z] [AUTOMATION-MANAGER] Starting agent: Monitoring Agent 
+[2025-07-29T20:22:21.864Z] [AUTOMATION-MANAGER] Agent Performance Agent failed with code 1 
+[2025-07-29T20:22:21.865Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-29T20:22:21.866Z] [AUTOMATION-MANAGER] Agent Monitoring Agent failed with code 1 
+[2025-07-29T20:22:21.866Z] [AUTOMATION-MANAGER] Error saving state: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/data/automation-manager-state.json'
+[2025-07-30T03:09:31.590Z] Starting Automation Manager...
+[2025-07-30T03:09:31.591Z] Build task started
+[2025-07-30T03:09:33.485Z] Error detection task started
+[2025-07-30T03:09:33.493Z] Git task started
+[2025-07-30T03:09:34.101Z] Quality task started
+[2025-07-30T03:09:34.104Z] Monitoring task started
+[2025-07-30T03:09:34.608Z] Scheduled tasks configured
+[2025-07-30T03:09:34.609Z] Automation Manager started successfully

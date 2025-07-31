@@ -1,0 +1,160 @@
+[2025-07-31T11:17:11.519Z] [INFO] 🚀 Starting Enhanced Improvement Engine...
+[2025-07-31T11:17:11.527Z] [INFO] ✅ Enhanced Improvement Engine started successfully
+[2025-07-31T11:18:00.563Z] [INFO] 🔍 Starting enhanced analysis cycle...
+[2025-07-31T11:18:04.869Z] [INFO] 📊 Found 1 improvement opportunities
+[2025-07-31T11:18:11.529Z] [INFO] 📊 Enhanced System Status - Queue: 1, Total Improvements: 0, Code Quality Fixes: 0, Dependency Updates: 0
+[2025-07-31T11:19:11.531Z] [INFO] 📊 Enhanced System Status - Queue: 1, Total Improvements: 0, Code Quality Fixes: 0, Dependency Updates: 0
+[2025-07-31T11:20:00.947Z] [INFO] 🔄 Starting enhanced improvement cycle...
+[2025-07-31T11:20:00.948Z] [INFO] 🔧 Implementing enhanced improvement: code_quality (fix_code_issues)
+[2025-07-31T11:20:00.949Z] [INFO] Fixed console.log in automation/agents/ai-improvement-agent.js
+[2025-07-31T11:20:00.950Z] [INFO] Fixed console.log in automation/ai-orchestrator.js
+[2025-07-31T11:20:00.950Z] [INFO] Fixed console.log in automation/auto-improver.js
+[2025-07-31T11:20:00.951Z] [INFO] Fixed console.log in automation/automation-dashboard.js
+[2025-07-31T11:20:00.952Z] [INFO] Fixed console.log in automation/comprehensive-automation-orchestrator.js
+[2025-07-31T11:20:00.952Z] [INFO] Fixed console.log in automation/cursor-fixes/final-fixer.js
+[2025-07-31T11:20:00.953Z] [INFO] Fixed console.log in automation/enhanced-autonomous-improvement.js
+[2025-07-31T11:20:00.953Z] [INFO] Fixed console.log in automation/enhanced-improvement-engine.js
+[2025-07-31T11:20:00.954Z] [INFO] Fixed todo in automation/enhanced-improvement-engine.js
+[2025-07-31T11:20:00.954Z] [INFO] Fixed debugger in automation/enhanced-improvement-engine.js
+[2025-07-31T11:20:00.955Z] [INFO] Fixed console.log in automation/enhanced-optimization-system.js
+[2025-07-31T11:20:00.955Z] [INFO] Fixed todo in automation/improvement-engine.js
+[2025-07-31T11:20:00.956Z] [INFO] Fixed todo in automation/infinite-improvement-core.js
+[2025-07-31T11:20:00.956Z] [INFO] Fixed console.log in automation/infinite-improvement-loop-simple.js
+[2025-07-31T11:20:00.957Z] [INFO] Fixed console.log in automation/memory-generator.js
+[2025-07-31T11:20:00.957Z] [INFO] Fixed console.log in automation/rule-generator.js
+[2025-07-31T11:20:00.958Z] [INFO] Fixed console.log in automation/simple-content-generator.js
+[2025-07-31T11:20:00.958Z] [INFO] Fixed todo in automation_temp/automation_removed/automation_temp/continuous-improvement/ContinuousImprovement.js
+[2025-07-31T11:20:00.958Z] [INFO] Fixed todo in automation_temp/automation_removed/automation_temp/cursor-automated-communication.js
+[2025-07-31T11:20:00.959Z] [INFO] Fixed todo in automation_temp/automation_removed/automation_temp/cursor-automated-extension/background.js
+[2025-07-31T11:20:00.959Z] [INFO] Fixed todo in automation_temp/automation_removed/automation_temp/cursor-chat-agents.js
+[2025-07-31T11:20:00.960Z] [INFO] Fixed todo in automation_temp/automation_removed/automation_temp/cursor-chat-automation.js
+[2025-07-31T11:20:00.960Z] [INFO] Fixed todo in automation_temp/automation_removed/automation_temp/total-control-improvement-system.js
+[2025-07-31T11:20:00.961Z] [INFO] Fixed todo in automation_temp/tasks/codeQuality.js
+[2025-07-31T11:20:00.961Z] [INFO] Fixed debugger in automation_temp/tasks/codeQuality.js
+[2025-07-31T11:20:00.962Z] [INFO] 🧪 Testing enhanced improvement: code_quality
+[2025-07-31T11:20:01.280Z] [INFO] ✅ Tests passed
+[2025-07-31T11:20:19.958Z] [WARN] ⚠️ Build failed but continuing: Command failed: npm run build
+(node:29853) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/next.config.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:30686) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/next.config.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:31619) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/next.config.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:31698) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/miami2/Documents/GitHub/bolt.new.zion.app/next.config.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+> Could not find a production build in the '/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next' directory. Try building your app with 'next build' before starting the static export. https://nextjs.org/docs/messages/next-export-no-build-id
+
+[2025-07-31T11:20:22.454Z] [ERROR] ❌ Failed to commit/push: Command failed: git add .
+fatal: Unable to write new index file
+
+[2025-07-31T11:20:22.454Z] [INFO] ✅ Enhanced improvement implemented successfully: code_quality
+[2025-07-31T11:20:22.455Z] [INFO] ✅ Improvement cycle completed. Processed 1 improvements
+[2025-07-31T11:20:22.457Z] [INFO] 📊 Enhanced System Status - Queue: 0, Total Improvements: 1, Code Quality Fixes: 1, Dependency Updates: 0
+[2025-07-31T11:21:22.459Z] [INFO] 📊 Enhanced System Status - Queue: 0, Total Improvements: 1, Code Quality Fixes: 1, Dependency Updates: 0
+[2025-07-31T11:22:00.621Z] [INFO] 🔍 Starting enhanced analysis cycle...
+[2025-07-31T11:22:05.616Z] [INFO] 📊 Found 1 improvement opportunities
+[2025-07-31T11:22:22.462Z] [INFO] 📊 Enhanced System Status - Queue: 1, Total Improvements: 1, Code Quality Fixes: 1, Dependency Updates: 0
+[2025-07-31T11:23:22.465Z] [INFO] 📊 Enhanced System Status - Queue: 1, Total Improvements: 1, Code Quality Fixes: 1, Dependency Updates: 0
+[2025-07-31T11:24:00.794Z] [INFO] 🔍 Starting enhanced analysis cycle...
+[2025-07-31T11:24:05.074Z] [INFO] 📊 Found 1 improvement opportunities
+[2025-07-31T11:24:22.466Z] [INFO] 📊 Enhanced System Status - Queue: 2, Total Improvements: 1, Code Quality Fixes: 1, Dependency Updates: 0
+[2025-07-31T11:25:00.110Z] [INFO] 🔄 Starting enhanced improvement cycle...
+[2025-07-31T11:25:00.110Z] [INFO] 🔧 Implementing enhanced improvement: code_quality (fix_code_issues)
+[2025-07-31T11:25:00.110Z] [ERROR] Error fixing issue in automation/agents/ai-improvement-agent.js: ENOENT: no such file or directory, open 'automation/agents/ai-improvement-agent.js'
+[2025-07-31T11:25:00.111Z] [ERROR] Error fixing issue in automation/ai-orchestrator.js: ENOENT: no such file or directory, open 'automation/ai-orchestrator.js'
+[2025-07-31T11:25:00.111Z] [ERROR] Error fixing issue in automation/auto-improver.js: ENOENT: no such file or directory, open 'automation/auto-improver.js'
+[2025-07-31T11:25:00.111Z] [ERROR] Error fixing issue in automation/automation-dashboard.js: ENOENT: no such file or directory, open 'automation/automation-dashboard.js'
+[2025-07-31T11:25:00.111Z] [ERROR] Error fixing issue in automation/comprehensive-automation-orchestrator.js: ENOENT: no such file or directory, open 'automation/comprehensive-automation-orchestrator.js'
+[2025-07-31T11:25:00.111Z] [ERROR] Error fixing issue in automation/cursor-fixes/final-fixer.js: ENOENT: no such file or directory, open 'automation/cursor-fixes/final-fixer.js'
+[2025-07-31T11:25:00.111Z] [ERROR] Error fixing issue in automation/enhanced-autonomous-improvement.js: ENOENT: no such file or directory, open 'automation/enhanced-autonomous-improvement.js'
+[2025-07-31T11:25:00.112Z] [ERROR] Error fixing issue in automation/enhanced-improvement-engine.js: ENOENT: no such file or directory, open 'automation/enhanced-improvement-engine.js'
+[2025-07-31T11:25:00.112Z] [ERROR] Error fixing issue in automation/enhanced-improvement-engine.js: ENOENT: no such file or directory, open 'automation/enhanced-improvement-engine.js'
+[2025-07-31T11:25:00.112Z] [ERROR] Error fixing issue in automation/enhanced-improvement-engine.js: ENOENT: no such file or directory, open 'automation/enhanced-improvement-engine.js'
+[2025-07-31T11:25:00.112Z] [ERROR] Error fixing issue in automation/enhanced-optimization-system.js: ENOENT: no such file or directory, open 'automation/enhanced-optimization-system.js'
+[2025-07-31T11:25:00.112Z] [ERROR] Error fixing issue in automation/improvement-engine.js: ENOENT: no such file or directory, open 'automation/improvement-engine.js'
+[2025-07-31T11:25:00.112Z] [ERROR] Error fixing issue in automation/infinite-improvement-core.js: ENOENT: no such file or directory, open 'automation/infinite-improvement-core.js'
+[2025-07-31T11:25:00.112Z] [ERROR] Error fixing issue in automation/infinite-improvement-loop-simple.js: ENOENT: no such file or directory, open 'automation/infinite-improvement-loop-simple.js'
+[2025-07-31T11:25:00.113Z] [ERROR] Error fixing issue in automation/memory-generator.js: ENOENT: no such file or directory, open 'automation/memory-generator.js'
+[2025-07-31T11:25:00.113Z] [ERROR] Error fixing issue in automation/rule-generator.js: ENOENT: no such file or directory, open 'automation/rule-generator.js'
+[2025-07-31T11:25:00.113Z] [ERROR] Error fixing issue in automation/simple-content-generator.js: ENOENT: no such file or directory, open 'automation/simple-content-generator.js'
+[2025-07-31T11:25:00.113Z] [ERROR] Error fixing issue in automation_temp/automation_removed/automation_temp/continuous-improvement/ContinuousImprovement.js: ENOENT: no such file or directory, open 'automation_temp/automation_removed/automation_temp/continuous-improvement/ContinuousImprovement.js'
+[2025-07-31T11:25:00.113Z] [ERROR] Error fixing issue in automation_temp/automation_removed/automation_temp/cursor-automated-communication.js: ENOENT: no such file or directory, open 'automation_temp/automation_removed/automation_temp/cursor-automated-communication.js'
+[2025-07-31T11:25:00.113Z] [ERROR] Error fixing issue in automation_temp/automation_removed/automation_temp/cursor-automated-extension/background.js: ENOENT: no such file or directory, open 'automation_temp/automation_removed/automation_temp/cursor-automated-extension/background.js'
+[2025-07-31T11:25:00.113Z] [ERROR] Error fixing issue in automation_temp/automation_removed/automation_temp/cursor-chat-agents.js: ENOENT: no such file or directory, open 'automation_temp/automation_removed/automation_temp/cursor-chat-agents.js'
+[2025-07-31T11:25:00.114Z] [ERROR] Error fixing issue in automation_temp/automation_removed/automation_temp/cursor-chat-automation.js: ENOENT: no such file or directory, open 'automation_temp/automation_removed/automation_temp/cursor-chat-automation.js'
+[2025-07-31T11:25:00.114Z] [ERROR] Error fixing issue in automation_temp/automation_removed/automation_temp/total-control-improvement-system.js: ENOENT: no such file or directory, open 'automation_temp/automation_removed/automation_temp/total-control-improvement-system.js'
+[2025-07-31T11:25:00.114Z] [ERROR] Error fixing issue in automation_temp/tasks/codeQuality.js: ENOENT: no such file or directory, open 'automation_temp/tasks/codeQuality.js'
+[2025-07-31T11:25:00.114Z] [ERROR] Error fixing issue in automation_temp/tasks/codeQuality.js: ENOENT: no such file or directory, open 'automation_temp/tasks/codeQuality.js'
+[2025-07-31T11:25:00.114Z] [INFO] 🧪 Testing enhanced improvement: code_quality
+[2025-07-31T11:25:00.404Z] [WARN] ⚠️ Build failed but continuing: Command failed: npm run build
+npm error code ENOENT
+npm error syscall open
+npm error path /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json
+npm error errno -2
+npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-31T11_25_00_274Z-debug-0.log
+
+[2025-07-31T11:26:02.758Z] [ERROR] ❌ Failed to commit/push: spawnSync /bin/sh ENOBUFS
+[2025-07-31T11:26:02.759Z] [INFO] ✅ Enhanced improvement implemented successfully: code_quality
+[2025-07-31T11:26:02.759Z] [INFO] 🔧 Implementing enhanced improvement: code_quality (fix_code_issues)
+[2025-07-31T11:26:02.759Z] [ERROR] Error fixing issue in automation/agents/ai-improvement-agent.js: ENOENT: no such file or directory, open 'automation/agents/ai-improvement-agent.js'
+[2025-07-31T11:26:02.759Z] [ERROR] Error fixing issue in automation/ai-orchestrator.js: ENOENT: no such file or directory, open 'automation/ai-orchestrator.js'
+[2025-07-31T11:26:02.759Z] [INFO] Fixed console.log in automation/auto-improver.js
+[2025-07-31T11:26:02.760Z] [ERROR] Error fixing issue in automation/automation/continuous-loop.js: ENOENT: no such file or directory, open 'automation/automation/continuous-loop.js'
+[2025-07-31T11:26:02.760Z] [ERROR] Error fixing issue in automation/automation-dashboard.js: ENOENT: no such file or directory, open 'automation/automation-dashboard.js'
+[2025-07-31T11:26:02.760Z] [ERROR] Error fixing issue in automation/comprehensive-automation-orchestrator.js: ENOENT: no such file or directory, open 'automation/comprehensive-automation-orchestrator.js'
+[2025-07-31T11:26:02.760Z] [ERROR] Error fixing issue in automation/cursor-fixes/final-fixer.js: ENOENT: no such file or directory, open 'automation/cursor-fixes/final-fixer.js'
+[2025-07-31T11:26:02.760Z] [ERROR] Error fixing issue in automation/enhanced-autonomous-improvement.js: ENOENT: no such file or directory, open 'automation/enhanced-autonomous-improvement.js'
+[2025-07-31T11:26:02.760Z] [ERROR] Error fixing issue in automation/enhanced-improvement-engine.js: ENOENT: no such file or directory, open 'automation/enhanced-improvement-engine.js'
+[2025-07-31T11:26:02.760Z] [ERROR] Error fixing issue in automation/enhanced-improvement-engine.js: ENOENT: no such file or directory, open 'automation/enhanced-improvement-engine.js'
+[2025-07-31T11:26:02.761Z] [ERROR] Error fixing issue in automation/enhanced-improvement-engine.js: ENOENT: no such file or directory, open 'automation/enhanced-improvement-engine.js'
+[2025-07-31T11:26:02.761Z] [ERROR] Error fixing issue in automation/enhanced-optimization-system.js: ENOENT: no such file or directory, open 'automation/enhanced-optimization-system.js'
+[2025-07-31T11:26:02.761Z] [ERROR] Error fixing issue in automation/improvement-engine.js: ENOENT: no such file or directory, open 'automation/improvement-engine.js'
+[2025-07-31T11:26:02.761Z] [ERROR] Error fixing issue in automation/infinite-improvement-core.js: ENOENT: no such file or directory, open 'automation/infinite-improvement-core.js'
+[2025-07-31T11:26:02.761Z] [ERROR] Error fixing issue in automation/infinite-improvement-loop-simple.js: ENOENT: no such file or directory, open 'automation/infinite-improvement-loop-simple.js'
+[2025-07-31T11:26:02.761Z] [ERROR] Error fixing issue in automation/memory-generator.js: ENOENT: no such file or directory, open 'automation/memory-generator.js'
+[2025-07-31T11:26:02.761Z] [ERROR] Error fixing issue in automation/rule-generator.js: ENOENT: no such file or directory, open 'automation/rule-generator.js'
+[2025-07-31T11:26:02.762Z] [ERROR] Error fixing issue in automation/simple-content-generator.js: ENOENT: no such file or directory, open 'automation/simple-content-generator.js'
+[2025-07-31T11:26:02.762Z] [ERROR] Error fixing issue in automation_temp/automation_removed/automation_temp/continuous-improvement/ContinuousImprovement.js: ENOENT: no such file or directory, open 'automation_temp/automation_removed/automation_temp/continuous-improvement/ContinuousImprovement.js'
+[2025-07-31T11:26:02.762Z] [ERROR] Error fixing issue in automation_temp/automation_removed/automation_temp/cursor-automated-communication.js: ENOENT: no such file or directory, open 'automation_temp/automation_removed/automation_temp/cursor-automated-communication.js'
+[2025-07-31T11:26:02.762Z] [ERROR] Error fixing issue in automation_temp/automation_removed/automation_temp/cursor-automated-extension/background.js: ENOENT: no such file or directory, open 'automation_temp/automation_removed/automation_temp/cursor-automated-extension/background.js'
+[2025-07-31T11:26:02.763Z] [ERROR] Error fixing issue in automation_temp/automation_removed/automation_temp/cursor-chat-agents.js: ENOENT: no such file or directory, open 'automation_temp/automation_removed/automation_temp/cursor-chat-agents.js'
+[2025-07-31T11:26:02.763Z] [ERROR] Error fixing issue in automation_temp/automation_removed/automation_temp/cursor-chat-automation.js: ENOENT: no such file or directory, open 'automation_temp/automation_removed/automation_temp/cursor-chat-automation.js'
+[2025-07-31T11:26:02.763Z] [ERROR] Error fixing issue in automation_temp/automation_removed/automation_temp/total-control-improvement-system.js: ENOENT: no such file or directory, open 'automation_temp/automation_removed/automation_temp/total-control-improvement-system.js'
+[2025-07-31T11:26:02.763Z] [ERROR] Error fixing issue in automation_temp/tasks/codeQuality.js: ENOENT: no such file or directory, open 'automation_temp/tasks/codeQuality.js'
+[2025-07-31T11:26:02.763Z] [ERROR] Error fixing issue in automation_temp/tasks/codeQuality.js: ENOENT: no such file or directory, open 'automation_temp/tasks/codeQuality.js'
+[2025-07-31T11:26:02.763Z] [INFO] 🧪 Testing enhanced improvement: code_quality
+[2025-07-31T11:26:03.067Z] [WARN] ⚠️ Build failed but continuing: Command failed: npm run build
+npm error code ENOENT
+npm error syscall open
+npm error path /Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json
+npm error errno -2
+npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/package.json'
+npm error enoent This is related to npm not being able to find a file.
+npm error enoent
+npm error A complete log of this run can be found in: /Users/miami2/.npm/_logs/2025-07-31T11_26_02_926Z-debug-0.log
+
+[2025-07-31T11:26:03.103Z] [ERROR] ❌ Failed to commit/push: Command failed: git add .
+fatal: Unable to create '/Users/miami2/Documents/GitHub/bolt.new.zion.app/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+[2025-07-31T11:26:03.104Z] [INFO] ✅ Enhanced improvement implemented successfully: code_quality
+[2025-07-31T11:26:03.104Z] [INFO] ✅ Improvement cycle completed. Processed 2 improvements
+[2025-07-31T11:26:03.105Z] [INFO] 📊 Enhanced System Status - Queue: 0, Total Improvements: 3, Code Quality Fixes: 3, Dependency Updates: 0
+[2025-07-31T11:27:03.108Z] [INFO] 📊 Enhanced System Status - Queue: 0, Total Improvements: 3, Code Quality Fixes: 3, Dependency Updates: 0
