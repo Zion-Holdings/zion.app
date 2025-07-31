@@ -1,8 +1,8 @@
 {
-  "lastCheck": "2025-07-31T11:48:02.409Z",
+  "lastCheck": "2025-07-31T11:49:01.891Z",
   "jobs": {
     "gitSync": {
-      "lastRun": "2025-07-31T11:48:02.409Z",
+      "lastRun": "2025-07-31T11:49:01.890Z",
       "duration": 0,
       "success": false,
       "error": "Command failed: git commit -m \"Auto-sync: Continuous improvement - $(date)\"\n🔍 Running pre-commit checks...\n📝 Running ESLint...\n\n> bolt.new.zion.app@0.1.0 lint\n> next lint\n\n? How would you like to configure ESLint? https://nextjs.org/docs/app/api-reference/config/eslint\n\u001b[?25l❯  Strict (recommended)\n   Base\n   Cancel ⚠ If you set up ESLint yourself, we recommend adding the Next.js ESLint plugin. See https://nextjs.org/docs/app/api-reference/config/eslint#migrating-existing-config\n❌ ESLint failed. Please fix the issues before committing.\nhusky - pre-commit script failed (code 1)\n"
@@ -44,7 +44,7 @@
       "error": null
     }
   },
-  "errors": 118,
+  "errors": 119,
   "fixes": 542,
   "syncs": 50,
   "builds": 5,
