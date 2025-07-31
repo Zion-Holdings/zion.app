@@ -1,11 +1,11 @@
 {
-  "lastCheck": "2025-07-31T22:05:18.950Z",
+  "lastCheck": "2025-07-31T22:06:07.003Z",
   "jobs": {
     "gitSync": {
-      "lastRun": "2025-07-31T22:05:18.950Z",
-      "duration": 18346,
-      "success": true,
-      "error": null
+      "lastRun": "2025-07-31T22:06:07.002Z",
+      "duration": 0,
+      "success": false,
+      "error": "Command failed: git commit -m \"Auto-sync: Continuous improvement - $(date)\"\n🔍 Running pre-commit checks...\n📝 Running ESLint...\n\n> bolt.new.zion.app@0.1.0 lint\n> next lint\n\n✔ No ESLint warnings or errors\n🔍 Running TypeScript type check...\n\n> bolt.new.zion.app@0.1.0 type-check\n> tsc --noEmit\n\n✅ Pre-commit checks passed\n"
     },
     "buildCheck": {
       "lastRun": "2025-07-31T16:15:05.474Z",
@@ -44,7 +44,7 @@
       "error": null
     }
   },
-  "errors": 652,
+  "errors": 653,
   "fixes": 575,
   "syncs": 115,
   "builds": 5,
