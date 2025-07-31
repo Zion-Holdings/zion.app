@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const { exec } = require('child_process');
 
 class AutomationOrchestrator {
   constructor() {
@@ -10,6 +10,7 @@ class AutomationOrchestrator {
     }
     this.automationPath = path.join(this.projectRoot, 'automation');
     this.logPath = path.join(this.automationPath, 'logs');
+    this.cycleId = new Date().toISOString().replace(/:/g, '-');
     this.ensureDirectories();
   }
 
@@ -22,30 +23,43 @@ class AutomationOrchestrator {
     });
   }
 
-  log(message, type = 'info') {
+  log(message, type = 'info', error = null) {
     const timestamp = new Date().toISOString();
+    const cycleId = this.cycleId || 'setup';
+    const logFile = path.join(this.logPath, `automation-cycle-${cycleId}.log`);
+    const jsonLogFile = path.join(this.logPath, `automation-cycle-${cycleId}.json`);
+
+    // Plain text log
+    const logMessage = `[${timestamp}] ${type.toUpperCase()}: ${message}\n`;
+    fs.appendFileSync(logFile, logMessage);
+    if (error && error.stack) {
+      fs.appendFileSync(logFile, `${error.stack}\n`);
+    }
+
+    // JSON log
     const logEntry = {
       timestamp,
       type,
       message,
-      automation: 'orchestrator'
+      automation: 'orchestrator',
+      error: error ? { message: error.message, stack: error.stack } : null
     };
-    
-    const logFile = path.join(this.logPath, `automation-${new Date().toISOString().split('T')[0]}.json`);
+
     let logs = [];
-    
-    if (fs.existsSync(logFile)) {
+    if (fs.existsSync(jsonLogFile)) {
       try {
-        logs = JSON.parse(fs.readFileSync(logFile, 'utf8'));
-      } catch (error) {
-        console.log('Could not parse existing log file, starting fresh');
+        logs = JSON.parse(fs.readFileSync(jsonLogFile, 'utf8'));
+      } catch (e) {
+        console.log('Could not parse existing JSON log file, starting fresh');
       }
     }
-    
     logs.push(logEntry);
-    fs.writeFileSync(logFile, JSON.stringify(logs, null, 2));
-    
-    console.log(`[${timestamp}] ${type.toUpperCase()}: ${message}`);
+    fs.writeFileSync(jsonLogFile, JSON.stringify(logs, null, 2));
+
+    console.log(logMessage.trim());
+    if (error) {
+      console.error(error);
+    }
   }
 
   async runContentGeneration() {
@@ -61,7 +75,7 @@ class AutomationOrchestrator {
       this.log('Content generation completed successfully', 'success');
       return true;
     } catch (error) {
-      this.log(`Content generation failed: ${error.message}`, 'error');
+      this.log('Content generation failed.', 'error', error);
       return false;
     }
   }
@@ -83,7 +97,7 @@ class AutomationOrchestrator {
       
       return true;
     } catch (error) {
-      this.log(`Code improvement failed: ${error.message}`, 'error');
+      this.log('Code improvement failed.', 'error', error);
       return false;
     }
   }
@@ -97,51 +111,61 @@ class AutomationOrchestrator {
       
       // Track automation events
       await analytics.trackAutonomousEvent('automation_cycle_started', {
-        cycle_id: new Date().toISOString(),
+        cycle_id: this.cycleId,
         features: ['content_generation', 'code_improvement', 'analytics']
       });
       
       this.log('Analytics collection completed', 'success');
       return true;
     } catch (error) {
-      this.log(`Analytics failed: ${error.message}`, 'error');
+      this.log('Analytics failed.', 'error', error);
       return false;
     }
   }
 
-  async runBuildAndDeploy() {
-    try {
+  runBuildAndDeploy() {
+    return new Promise((resolve, reject) => {
       this.log('Starting build and deploy process...', 'info');
       
-      // Run build
-      execSync('npm run build', { 
-        cwd: this.projectRoot, 
-        stdio: 'pipe' 
-      });
-      this.log('Build completed successfully', 'success');
-      
-      // Run type check
-      execSync('npm run type-check', { 
-        cwd: this.projectRoot, 
-        stdio: 'pipe' 
-      });
-      this.log('Type check completed successfully', 'success');
-      
-      // Run linting
-      execSync('npm run lint', { 
-        cwd: this.projectRoot, 
-        stdio: 'pipe' 
-      });
-      this.log('Linting completed successfully', 'success');
-      
-      return true;
-    } catch (error) {
-      this.log(`Build/deploy failed: ${error.message}`, 'error');
-      return false;
-    }
+      const commands = [
+        { cmd: 'npm run build', label: 'Build' },
+        { cmd: 'npm run type-check', label: 'Type check' },
+        { cmd: 'npm run lint', label: 'Linting' }
+      ];
+
+      const runCommand = (index) => {
+        if (index >= commands.length) {
+          this.log('Build and deploy process completed successfully', 'success');
+          resolve(true);
+          return;
+        }
+
+        const { cmd, label } = commands[index];
+        this.log(`Running ${label}...`, 'info');
+
+        exec(cmd, { cwd: this.projectRoot }, (error, stdout, stderr) => {
+          if (error) {
+            this.log(`${label} failed.`, 'error', error);
+            this.log(`stdout: ${stdout}`, 'info');
+            this.log(`stderr: ${stderr}`, 'info');
+            reject(error);
+            return;
+          }
+          this.log(`${label} completed successfully.`, 'success');
+          this.log(`stdout: ${stdout}`, 'info');
+          if(stderr) {
+            this.log(`stderr: ${stderr}`, 'info');
+          }
+          runCommand(index + 1);
+        });
+      };
+
+      runCommand(0);
+    });
   }
 
   async runFullAutomationCycle() {
+    this.cycleId = new Date().toISOString().replace(/:/g, '-');
     this.log('🚀 Starting full automation cycle...', 'info');
     
     const startTime = Date.now();
@@ -186,7 +210,7 @@ class AutomationOrchestrator {
       return results;
       
     } catch (error) {
-      this.log(`Automation cycle failed: ${error.message}`, 'error');
+      this.log('Automation cycle failed.', 'error', error);
       return results;
     }
   }

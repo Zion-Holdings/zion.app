@@ -8,53 +8,55 @@ interface ServiceCardProps {
   onRequestQuote: (service: Service) => void;
 }
 
+const MAX_SPECIALTIES_TO_SHOW = 3;
+
+const renderStars = (rating: number) => {
+  const stars = [];
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 !== 0;
+
+  for (let i = 0; i < fullStars; i++) {
+    stars.push(
+      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+    );
+  }
+
+  if (hasHalfStar) {
+    stars.push(
+      <Star key="half" className="w-4 h-4 text-yellow-400 fill-current" style={{ clipPath: 'inset(0 50% 0 0)' }} />
+    );
+  }
+
+  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+  for (let i = 0; i < emptyStars; i++) {
+    stars.push(
+      <Star key={`empty-${i}`} className="w-4 h-4 text-gray-300" />
+    );
+  }
+
+  return stars;
+};
+
+const formatPrice = (price: Service['price']) => {
+  const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: price.currency,
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  });
+
+  const formattedPrice = formatter.format(price.from);
+
+  if (price.type === 'hourly') {
+    return `From ${formattedPrice}/hr`;
+  } else if (price.type === 'monthly') {
+    return `From ${formattedPrice}/mo`;
+  } else {
+    return `From ${formattedPrice}`;
+  }
+};
+
 const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) => {
-  const renderStars = (rating: number) => {
-    const stars = [];
-    const fullStars = Math.floor(rating);
-    const hasHalfStar = rating % 1 !== 0;
-
-    for (let i = 0; i < fullStars; i++) {
-      stars.push(
-        <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-      );
-    }
-
-    if (hasHalfStar) {
-      stars.push(
-        <Star key="half" className="w-4 h-4 text-yellow-400 fill-current" style={{ clipPath: 'inset(0 50% 0 0)' }} />
-      );
-    }
-
-    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-    for (let i = 0; i < emptyStars; i++) {
-      stars.push(
-        <Star key={`empty-${i}`} className="w-4 h-4 text-gray-300" />
-      );
-    }
-
-    return stars;
-  };
-
-  const formatPrice = (price: Service['price']) => {
-    const formatter = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: price.currency,
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    });
-
-    const formattedPrice = formatter.format(price.from);
-    
-    if (price.type === 'hourly') {
-      return `From ${formattedPrice}/hr`;
-    } else if (price.type === 'monthly') {
-      return `From ${formattedPrice}/mo`;
-    } else {
-      return `From ${formattedPrice}`;
-    }
-  };
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -139,7 +141,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
         {/* Specialties */}
         <div className="mb-4">
           <div className="flex flex-wrap gap-1">
-            {service.specialties.slice(0, 3).map((specialty, index) => (
+            {service.specialties.slice(0, MAX_SPECIALTIES_TO_SHOW).map((specialty, index) => (
               <span
                 key={index}
                 className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full font-medium"
@@ -147,9 +149,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
                 {specialty}
               </span>
             ))}
-            {service.specialties.length > 3 && (
+            {service.specialties.length > MAX_SPECIALTIES_TO_SHOW && (
               <span className="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full">
-                +{service.specialties.length - 3} more
+                +{service.specialties.length - MAX_SPECIALTIES_TO_SHOW} more
               </span>
             )}
           </div>

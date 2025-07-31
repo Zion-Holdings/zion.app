@@ -1,11 +1,17 @@
 import React from 'react';
 
-const ContactInfo = () => {
-  const contactData = {
-  "email": "support@zion.marketplace",
-  "phone": "+1 (555) 123-4567",
-  "address": "123 Innovation Drive, Tech City, TC 12345"
-};
+interface ContactData {
+  email: string;
+  phone: string;
+  address: string;
+}
+
+const ContactInfo: React.FC = () => {
+  const contactData: ContactData = {
+    "email": "support@zion.marketplace",
+    "phone": "+1 (555) 123-4567",
+    "address": "123 Innovation Drive, Tech City, TC 12345"
+  };
 
   return (
     <section className="py-16 bg-gray-50">
