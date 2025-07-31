@@ -1,0 +1,21 @@
+{
+  "type": "trending-services",
+  "content": {
+    "services": [
+      "AI Integration",
+      "Cloud Migration",
+      "Cybersecurity",
+      "Data Analytics"
+    ],
+    "trends": [
+      "Increasing demand for AI services",
+      "Growing cloud adoption",
+      "Rising security concerns"
+    ],
+    "growth": "Market growing at 25% annually"
+  },
+  "generatedAt": "2025-07-31T21:39:02.338Z",
+  "source": "ChatGPT instructions + Template System",
+  "dynamic": true,
+  "version": "1.0"
+}

@@ -1,0 +1,25 @@
+{
+  "type": "personalized-recommendations",
+  "content": {
+    "algorithm": "AI-powered recommendation engine",
+    "factors": [
+      "User preferences",
+      "Historical behavior",
+      "Industry trends",
+      "Success patterns"
+    ],
+    "benefits": [
+      "Saves time",
+      "Improves quality",
+      "Increases success rate"
+    ],
+    "examples": [
+      "Based on your profile, we recommend these AI developers",
+      "Similar companies chose these IT services"
+    ]
+  },
+  "generatedAt": "2025-07-31T21:39:02.337Z",
+  "source": "ChatGPT instructions + Template System",
+  "dynamic": true,
+  "version": "1.0"
+}

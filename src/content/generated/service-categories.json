@@ -1,0 +1,54 @@
+{
+  "type": "service-categories",
+  "content": {
+    "categories": [
+      {
+        "name": "IT Services",
+        "description": "Comprehensive IT development, consulting, and support services",
+        "services": [
+          "Web Development",
+          "Mobile Apps",
+          "Cloud Solutions",
+          "IT Consulting"
+        ],
+        "pricing": "Competitive rates starting from $50/hour"
+      },
+      {
+        "name": "AI Talent",
+        "description": "Expert AI developers, consultants, and specialists",
+        "services": [
+          "Machine Learning",
+          "Data Science",
+          "AI Integration",
+          "Neural Networks"
+        ],
+        "pricing": "Premium rates starting from $100/hour"
+      },
+      {
+        "name": "Equipment",
+        "description": "Cutting-edge hardware, software, and development tools",
+        "services": [
+          "Hardware",
+          "Software Licenses",
+          "Development Tools",
+          "Cloud Credits"
+        ],
+        "pricing": "Flexible pricing based on requirements"
+      },
+      {
+        "name": "Innovation Solutions",
+        "description": "Custom development and AI integration services",
+        "services": [
+          "Custom AI",
+          "Integration",
+          "Optimization",
+          "Consulting"
+        ],
+        "pricing": "Project-based pricing"
+      }
+    ]
+  },
+  "generatedAt": "2025-07-31T21:39:02.334Z",
+  "source": "ChatGPT instructions + Template System",
+  "version": "1.0"
+}

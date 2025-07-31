@@ -1,0 +1,23 @@
+{
+  "type": "market-insights",
+  "content": {
+    "trends": [
+      "AI adoption increasing",
+      "Remote work driving IT demand",
+      "Cybersecurity becoming critical"
+    ],
+    "opportunities": [
+      "AI consulting",
+      "Cloud services",
+      "Security solutions"
+    ],
+    "predictions": [
+      "AI market to grow 30%",
+      "Cloud spending to increase 25%"
+    ]
+  },
+  "generatedAt": "2025-07-31T21:39:02.338Z",
+  "source": "ChatGPT instructions + Template System",
+  "dynamic": true,
+  "version": "1.0"
+}

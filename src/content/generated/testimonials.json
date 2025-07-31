@@ -1,0 +1,31 @@
+{
+  "type": "testimonials",
+  "content": {
+    "testimonials": [
+      {
+        "name": "TechCorp Solutions",
+        "role": "CTO",
+        "testimonial": "Zion's AI matching found us the perfect AI developer in just 2 days. The quality and speed exceeded our expectations.",
+        "rating": 5,
+        "success": "Reduced hiring time by 70%"
+      },
+      {
+        "name": "InnovateStart",
+        "role": "Founder",
+        "testimonial": "The secure blockchain transactions gave us confidence to scale our IT operations globally.",
+        "rating": 5,
+        "success": "Expanded to 3 new markets"
+      },
+      {
+        "name": "DataFlow Inc",
+        "role": "Head of Engineering",
+        "testimonial": "Found exceptional AI talent through Zion's marketplace. The matching algorithm is incredibly accurate.",
+        "rating": 5,
+        "success": "Improved AI model performance by 40%"
+      }
+    ]
+  },
+  "generatedAt": "2025-07-31T21:39:02.334Z",
+  "source": "ChatGPT instructions + Template System",
+  "version": "1.0"
+}

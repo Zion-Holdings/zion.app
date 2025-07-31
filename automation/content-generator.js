@@ -4,6 +4,10 @@ const path = require('path');
 class ContentGenerator {
   constructor() {
     this.projectRoot = process.cwd();
+    // Check if we're in the automation directory and adjust path accordingly
+    if (this.projectRoot.endsWith('automation')) {
+      this.projectRoot = path.join(this.projectRoot, '..');
+    }
     this.contentPath = path.join(this.projectRoot, 'pages');
     this.chatgptMemory = this.loadChatGPTMemory();
     this.marketplaceFeatures = this.extractMarketplaceFeatures();

@@ -1,0 +1,16 @@
+{
+  "language": "fr",
+  "content": {
+    "headline": "Place de Marché Alimentée par l'IA pour les Services IT et les Talents IA",
+    "subheadline": "Connectez-vous avec les meilleurs services IT, talents IA et équipements de pointe",
+    "ctaButtons": [
+      "Commencer",
+      "Parcourir les Services",
+      "Trouver des Talents"
+    ]
+  },
+  "generatedAt": "2025-07-31T21:39:02.342Z",
+  "source": "ChatGPT instructions + Template System",
+  "multilingual": true,
+  "version": "1.0"
+}

@@ -1,0 +1,19 @@
+{
+  "type": "about-us",
+  "content": {
+    "mission": "Empowering businesses with AI-powered marketplace solutions that connect them with the best IT services and AI talent worldwide.",
+    "vision": "To become the leading AI-powered marketplace platform, revolutionizing how businesses find and engage with IT services and AI talent.",
+    "values": [
+      "Innovation",
+      "Trust",
+      "Excellence",
+      "Growth",
+      "Transparency"
+    ],
+    "team": "Our team consists of AI experts, blockchain specialists, and marketplace veterans with decades of combined experience.",
+    "experience": "We've successfully facilitated thousands of transactions and helped hundreds of businesses scale their operations."
+  },
+  "generatedAt": "2025-07-31T21:39:02.336Z",
+  "source": "ChatGPT instructions + Template System",
+  "version": "1.0"
+}

@@ -1,0 +1,46 @@
+{
+  "type": "feature-highlights",
+  "content": {
+    "features": [
+      {
+        "title": "AI-Powered Matching",
+        "description": "Intelligent algorithms match you with the perfect IT services and AI talent",
+        "benefits": [
+          "Saves time",
+          "Improves quality",
+          "Reduces costs"
+        ]
+      },
+      {
+        "title": "Secure Blockchain Transactions",
+        "description": "All transactions are secured with blockchain technology for maximum safety",
+        "benefits": [
+          "Transparent",
+          "Immutable",
+          "Trusted"
+        ]
+      },
+      {
+        "title": "Global Network Connectivity",
+        "description": "Access to a worldwide network of IT professionals and services",
+        "benefits": [
+          "24/7 availability",
+          "Diverse expertise",
+          "Scalable solutions"
+        ]
+      },
+      {
+        "title": "99.9% Transaction Success Rate",
+        "description": "Proven track record of successful marketplace transactions",
+        "benefits": [
+          "Reliable",
+          "Trusted",
+          "Proven"
+        ]
+      }
+    ]
+  },
+  "generatedAt": "2025-07-31T21:39:02.334Z",
+  "source": "ChatGPT instructions + Template System",
+  "version": "1.0"
+}

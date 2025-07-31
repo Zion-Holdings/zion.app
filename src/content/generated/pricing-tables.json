@@ -1,0 +1,40 @@
+{
+  "type": "pricing-tables",
+  "content": {
+    "pricing": [
+      {
+        "tier": "Basic",
+        "price": "Free",
+        "features": [
+          "Browse services",
+          "Basic matching",
+          "Standard support"
+        ],
+        "commission": "5% on transactions"
+      },
+      {
+        "tier": "Professional",
+        "price": "$99/month",
+        "features": [
+          "Advanced matching",
+          "Priority support",
+          "Analytics dashboard"
+        ],
+        "commission": "3% on transactions"
+      },
+      {
+        "tier": "Enterprise",
+        "price": "Custom",
+        "features": [
+          "Custom AI matching",
+          "Dedicated support",
+          "White-label options"
+        ],
+        "commission": "1% on transactions"
+      }
+    ]
+  },
+  "generatedAt": "2025-07-31T21:39:02.335Z",
+  "source": "ChatGPT instructions + Template System",
+  "version": "1.0"
+}

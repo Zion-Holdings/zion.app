@@ -5,6 +5,10 @@ const path = require('path');
 class AutonomousContentGenerator {
   constructor() {
     this.projectRoot = process.cwd();
+    // Check if we're in the automation directory and adjust path accordingly
+    if (this.projectRoot.endsWith('automation')) {
+      this.projectRoot = path.join(this.projectRoot, '..');
+    }
     this.contentGenerator = new ContentGenerator();
     this.lastGenerationTime = this.getLastGenerationTime();
     this.generationInterval = 24 * 60 * 60 * 1000; // 24 hours

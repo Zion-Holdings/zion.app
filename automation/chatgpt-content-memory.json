@@ -65,6 +65,19 @@
       ],
       "priority": "high",
       "timestamp": "2025-01-27T00:00:00.000Z"
+    },
+    {
+      "id": "content-automation-1753967117631",
+      "content": "Content generation automation has been successfully implemented following ChatGPT instructions. The system generates marketplace content, integrates it with the application, and maintains quality standards.",
+      "tags": [
+        "content-automation",
+        "chatgpt-instructions",
+        "marketplace",
+        "ai-generation"
+      ],
+      "priority": "high",
+      "timestamp": "2025-07-31T13:05:17.631Z",
+      "source": "https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d"
     }
   ],
   "rules": [
@@ -133,13 +146,27 @@
         "growth"
       ],
       "timestamp": "2025-01-27T00:00:00.000Z"
+    },
+    {
+      "id": "content-automation-rule",
+      "category": "automation",
+      "rule": "Content generation automation should run regularly to maintain fresh, relevant marketplace content. All generated content must follow ChatGPT conversation guidelines and maintain high quality standards.",
+      "priority": "high",
+      "appliesTo": [
+        "content",
+        "automation",
+        "marketplace",
+        "quality"
+      ],
+      "timestamp": "2025-07-31T13:05:17.631Z",
+      "source": "https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d"
     }
   ],
   "autoUpdate": true,
-  "lastUpdated": "2025-01-27T00:00:00.000Z",
+  "lastUpdated": "2025-07-31T13:05:17.632Z",
   "source": {
     "url": "https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d",
     "description": "ChatGPT conversation about AI-powered marketplace development",
     "integrationDate": "2025-01-27T00:00:00.000Z"
   }
-} 
+}

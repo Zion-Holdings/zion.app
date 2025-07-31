@@ -1,0 +1,24 @@
+{
+  "type": "keyword-content",
+  "content": {
+    "primary": [
+      "AI marketplace",
+      "IT services",
+      "AI talent"
+    ],
+    "secondary": [
+      "blockchain transactions",
+      "secure payments",
+      "verified providers"
+    ],
+    "longTail": [
+      "AI-powered business solutions",
+      "IT consulting services",
+      "AI developer marketplace"
+    ]
+  },
+  "generatedAt": "2025-07-31T21:39:02.340Z",
+  "source": "ChatGPT instructions + Template System",
+  "seo": true,
+  "version": "1.0"
+}

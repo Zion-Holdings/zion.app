@@ -1,0 +1,31 @@
+{
+  "type": "featured-providers",
+  "content": {
+    "providers": [
+      {
+        "name": "AI Solutions Pro",
+        "rating": 4.9,
+        "specialties": [
+          "Machine Learning",
+          "Deep Learning",
+          "AI Integration"
+        ],
+        "successRate": "98%"
+      },
+      {
+        "name": "CloudTech Experts",
+        "rating": 4.8,
+        "specialties": [
+          "AWS",
+          "Azure",
+          "Google Cloud"
+        ],
+        "successRate": "97%"
+      }
+    ]
+  },
+  "generatedAt": "2025-07-31T21:39:02.338Z",
+  "source": "ChatGPT instructions + Template System",
+  "dynamic": true,
+  "version": "1.0"
+}

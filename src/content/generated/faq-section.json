@@ -1,0 +1,26 @@
+{
+  "type": "faq-section",
+  "content": {
+    "faqs": [
+      {
+        "question": "How does AI matching work?",
+        "answer": "Our AI analyzes your requirements, provider profiles, and historical success data to find the best matches. The algorithm learns from each interaction to improve accuracy."
+      },
+      {
+        "question": "What security measures are in place?",
+        "answer": "We use blockchain technology for all transactions, implement end-to-end encryption, and maintain strict verification processes for all providers."
+      },
+      {
+        "question": "How are transactions processed?",
+        "answer": "Transactions are processed through secure blockchain technology, ensuring transparency, immutability, and trust. Funds are held in escrow until service completion."
+      },
+      {
+        "question": "What if I'm not satisfied with a service?",
+        "answer": "We offer a 100% satisfaction guarantee. If you're not satisfied, we'll work to resolve the issue or provide a full refund."
+      }
+    ]
+  },
+  "generatedAt": "2025-07-31T21:39:02.335Z",
+  "source": "ChatGPT instructions + Template System",
+  "version": "1.0"
+}

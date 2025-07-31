@@ -1,0 +1,261 @@
+{
+  "hero-section": {
+    "type": "hero-section",
+    "content": {
+      "headline": "AI-Powered Marketplace for IT Services & AI Talent",
+      "subheadline": "Connect with top IT services, AI talent, and cutting-edge equipment through intelligent matching",
+      "ctaButtons": [
+        "Get Started",
+        "Browse Services",
+        "Find Talent"
+      ],
+      "trustIndicators": [
+        "99.9% Success Rate",
+        "Secure Transactions",
+        "Verified Providers"
+      ],
+      "visualElements": [
+        "AI matching visualization",
+        "Success metrics display",
+        "Provider verification badges"
+      ]
+    },
+    "generatedAt": "2025-07-31T21:39:02.332Z",
+    "source": "ChatGPT instructions + Template System",
+    "version": "1.0"
+  },
+  "feature-highlights": {
+    "type": "feature-highlights",
+    "content": {
+      "features": [
+        {
+          "title": "AI-Powered Matching",
+          "description": "Intelligent algorithms match you with the perfect IT services and AI talent",
+          "benefits": [
+            "Saves time",
+            "Improves quality",
+            "Reduces costs"
+          ]
+        },
+        {
+          "title": "Secure Blockchain Transactions",
+          "description": "All transactions are secured with blockchain technology for maximum safety",
+          "benefits": [
+            "Transparent",
+            "Immutable",
+            "Trusted"
+          ]
+        },
+        {
+          "title": "Global Network Connectivity",
+          "description": "Access to a worldwide network of IT professionals and services",
+          "benefits": [
+            "24/7 availability",
+            "Diverse expertise",
+            "Scalable solutions"
+          ]
+        },
+        {
+          "title": "99.9% Transaction Success Rate",
+          "description": "Proven track record of successful marketplace transactions",
+          "benefits": [
+            "Reliable",
+            "Trusted",
+            "Proven"
+          ]
+        }
+      ]
+    },
+    "generatedAt": "2025-07-31T21:39:02.334Z",
+    "source": "ChatGPT instructions + Template System",
+    "version": "1.0"
+  },
+  "service-categories": {
+    "type": "service-categories",
+    "content": {
+      "categories": [
+        {
+          "name": "IT Services",
+          "description": "Comprehensive IT development, consulting, and support services",
+          "services": [
+            "Web Development",
+            "Mobile Apps",
+            "Cloud Solutions",
+            "IT Consulting"
+          ],
+          "pricing": "Competitive rates starting from $50/hour"
+        },
+        {
+          "name": "AI Talent",
+          "description": "Expert AI developers, consultants, and specialists",
+          "services": [
+            "Machine Learning",
+            "Data Science",
+            "AI Integration",
+            "Neural Networks"
+          ],
+          "pricing": "Premium rates starting from $100/hour"
+        },
+        {
+          "name": "Equipment",
+          "description": "Cutting-edge hardware, software, and development tools",
+          "services": [
+            "Hardware",
+            "Software Licenses",
+            "Development Tools",
+            "Cloud Credits"
+          ],
+          "pricing": "Flexible pricing based on requirements"
+        },
+        {
+          "name": "Innovation Solutions",
+          "description": "Custom development and AI integration services",
+          "services": [
+            "Custom AI",
+            "Integration",
+            "Optimization",
+            "Consulting"
+          ],
+          "pricing": "Project-based pricing"
+        }
+      ]
+    },
+    "generatedAt": "2025-07-31T21:39:02.334Z",
+    "source": "ChatGPT instructions + Template System",
+    "version": "1.0"
+  },
+  "testimonials": {
+    "type": "testimonials",
+    "content": {
+      "testimonials": [
+        {
+          "name": "TechCorp Solutions",
+          "role": "CTO",
+          "testimonial": "Zion's AI matching found us the perfect AI developer in just 2 days. The quality and speed exceeded our expectations.",
+          "rating": 5,
+          "success": "Reduced hiring time by 70%"
+        },
+        {
+          "name": "InnovateStart",
+          "role": "Founder",
+          "testimonial": "The secure blockchain transactions gave us confidence to scale our IT operations globally.",
+          "rating": 5,
+          "success": "Expanded to 3 new markets"
+        },
+        {
+          "name": "DataFlow Inc",
+          "role": "Head of Engineering",
+          "testimonial": "Found exceptional AI talent through Zion's marketplace. The matching algorithm is incredibly accurate.",
+          "rating": 5,
+          "success": "Improved AI model performance by 40%"
+        }
+      ]
+    },
+    "generatedAt": "2025-07-31T21:39:02.334Z",
+    "source": "ChatGPT instructions + Template System",
+    "version": "1.0"
+  },
+  "pricing-tables": {
+    "type": "pricing-tables",
+    "content": {
+      "pricing": [
+        {
+          "tier": "Basic",
+          "price": "Free",
+          "features": [
+            "Browse services",
+            "Basic matching",
+            "Standard support"
+          ],
+          "commission": "5% on transactions"
+        },
+        {
+          "tier": "Professional",
+          "price": "$99/month",
+          "features": [
+            "Advanced matching",
+            "Priority support",
+            "Analytics dashboard"
+          ],
+          "commission": "3% on transactions"
+        },
+        {
+          "tier": "Enterprise",
+          "price": "Custom",
+          "features": [
+            "Custom AI matching",
+            "Dedicated support",
+            "White-label options"
+          ],
+          "commission": "1% on transactions"
+        }
+      ]
+    },
+    "generatedAt": "2025-07-31T21:39:02.335Z",
+    "source": "ChatGPT instructions + Template System",
+    "version": "1.0"
+  },
+  "faq-section": {
+    "type": "faq-section",
+    "content": {
+      "faqs": [
+        {
+          "question": "How does AI matching work?",
+          "answer": "Our AI analyzes your requirements, provider profiles, and historical success data to find the best matches. The algorithm learns from each interaction to improve accuracy."
+        },
+        {
+          "question": "What security measures are in place?",
+          "answer": "We use blockchain technology for all transactions, implement end-to-end encryption, and maintain strict verification processes for all providers."
+        },
+        {
+          "question": "How are transactions processed?",
+          "answer": "Transactions are processed through secure blockchain technology, ensuring transparency, immutability, and trust. Funds are held in escrow until service completion."
+        },
+        {
+          "question": "What if I'm not satisfied with a service?",
+          "answer": "We offer a 100% satisfaction guarantee. If you're not satisfied, we'll work to resolve the issue or provide a full refund."
+        }
+      ]
+    },
+    "generatedAt": "2025-07-31T21:39:02.335Z",
+    "source": "ChatGPT instructions + Template System",
+    "version": "1.0"
+  },
+  "about-us": {
+    "type": "about-us",
+    "content": {
+      "mission": "Empowering businesses with AI-powered marketplace solutions that connect them with the best IT services and AI talent worldwide.",
+      "vision": "To become the leading AI-powered marketplace platform, revolutionizing how businesses find and engage with IT services and AI talent.",
+      "values": [
+        "Innovation",
+        "Trust",
+        "Excellence",
+        "Growth",
+        "Transparency"
+      ],
+      "team": "Our team consists of AI experts, blockchain specialists, and marketplace veterans with decades of combined experience.",
+      "experience": "We've successfully facilitated thousands of transactions and helped hundreds of businesses scale their operations."
+    },
+    "generatedAt": "2025-07-31T21:39:02.336Z",
+    "source": "ChatGPT instructions + Template System",
+    "version": "1.0"
+  },
+  "contact-info": {
+    "type": "contact-info",
+    "content": {
+      "email": "support@zion.marketplace",
+      "phone": "+1 (555) 123-4567",
+      "address": "123 Innovation Drive, Tech City, TC 12345",
+      "businessHours": "Monday - Friday: 9 AM - 6 PM EST",
+      "socialMedia": {
+        "twitter": "@zionmarketplace",
+        "linkedin": "linkedin.com/company/zion-marketplace",
+        "facebook": "facebook.com/zionmarketplace"
+      },
+      "responseTime": "We respond to all inquiries within 2 hours during business hours."
+    },
+    "generatedAt": "2025-07-31T21:39:02.336Z",
+    "source": "ChatGPT instructions + Template System",
+    "version": "1.0"
+  }
+}

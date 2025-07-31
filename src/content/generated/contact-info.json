@@ -1,0 +1,18 @@
+{
+  "type": "contact-info",
+  "content": {
+    "email": "support@zion.marketplace",
+    "phone": "+1 (555) 123-4567",
+    "address": "123 Innovation Drive, Tech City, TC 12345",
+    "businessHours": "Monday - Friday: 9 AM - 6 PM EST",
+    "socialMedia": {
+      "twitter": "@zionmarketplace",
+      "linkedin": "linkedin.com/company/zion-marketplace",
+      "facebook": "facebook.com/zionmarketplace"
+    },
+    "responseTime": "We respond to all inquiries within 2 hours during business hours."
+  },
+  "generatedAt": "2025-07-31T21:39:02.336Z",
+  "source": "ChatGPT instructions + Template System",
+  "version": "1.0"
+}
