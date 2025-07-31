@@ -1,11 +1,11 @@
 {
-  "lastCheck": "2025-07-31T21:38:10.615Z",
+  "lastCheck": "2025-07-31T21:39:32.956Z",
   "jobs": {
     "gitSync": {
-      "lastRun": "2025-07-31T21:38:10.614Z",
-      "duration": 0,
-      "success": false,
-      "error": "Command failed: git commit -m \"Auto-sync: Continuous improvement - $(date)\"\n🔍 Running pre-commit checks...\n📝 Running ESLint...\n\n> bolt.new.zion.app@0.1.0 lint\n> next lint\n\n✔ No ESLint warnings or errors\n🔍 Running TypeScript type check...\n\n> bolt.new.zion.app@0.1.0 type-check\n> tsc --noEmit\n\ncomponents/service-listing/ServiceFilters.tsx(4,10): error TS2865: Import 'ServiceFilters' conflicts with local value, so must be declared with a type-only import when 'isolatedModules' is enabled.\npages/api/generate-service-description.ts(79,57): error TS18046: 'error' is of type 'unknown'.\n❌ TypeScript type check failed. Please fix the issues before committing.\nhusky - pre-commit script failed (code 1)\n"
+      "lastRun": "2025-07-31T21:39:32.956Z",
+      "duration": 32261,
+      "success": true,
+      "error": null
     },
     "buildCheck": {
       "lastRun": "2025-07-31T16:15:05.474Z",
@@ -46,7 +46,7 @@
   },
   "errors": 648,
   "fixes": 575,
-  "syncs": 95,
+  "syncs": 96,
   "builds": 5,
-  "commits": 141
+  "commits": 142
 }
