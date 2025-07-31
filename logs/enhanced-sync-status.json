@@ -1,17 +1,17 @@
 {
-  "lastCheck": "2025-07-31T22:39:18.747Z",
+  "lastCheck": "2025-07-31T22:40:06.123Z",
   "jobs": {
     "gitSync": {
-      "lastRun": "2025-07-31T22:39:18.747Z",
-      "duration": 18638,
-      "success": true,
-      "error": null
-    },
-    "buildCheck": {
-      "lastRun": "2025-07-31T16:15:05.474Z",
+      "lastRun": "2025-07-31T22:40:00.853Z",
       "duration": 0,
       "success": false,
-      "error": "Command failed: npm run build\n ⚠ Duplicate page detected. pages/services.tsx and pages/services/index.tsx both resolve to /services.\nError: supabaseUrl is required.\n    at new SupabaseClient (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/@supabase/supabase-js/dist/main/SupabaseClient.js:44:19)\n    at createClient (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/@supabase/supabase-js/dist/main/index.js:38:12)\n    at 5856 (/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/pages/talent.js:1:577)\n    at t (/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/webpack-runtime.js:1:127)\n    at s (/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/pages/talent.js:1:16977)\n    at /Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/pages/talent.js:1:17012\n    at t.X (/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/webpack-runtime.js:1:749)\n    at /Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/pages/talent.js:1:16990\n    at Object.<anonymous> (/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/pages/talent.js:1:17039)\n    at Module._compile (node:internal/modules/cjs/loader:1730:14)\nError: supabaseUrl is required.\n    at new SupabaseClient (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/@supabase/supabase-js/dist/main/SupabaseClient.js:44:19)\n    at createClient (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/@supabase/supabase-js/dist/main/index.js:38:12)\n    at 1623 (/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/pages/talent/create.js:1:585)\n    at t (/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/webpack-runtime.js:1:127)\n    at r (/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/pages/talent/create.js:17:19113)\n    at /Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/pages/talent/create.js:17:19152\n    at t.X (/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/webpack-runtime.js:1:749)\n    at /Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/pages/talent/create.js:17:19126\n    at Object.<anonymous> (/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/pages/talent/create.js:17:19179)\n    at Module._compile (node:internal/modules/cjs/loader:1730:14)\n\n> Build error occurred\nError: Failed to collect page data for /talent\n    at /Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/next/dist/build/utils.js:1220:15\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {\n  type: 'Error'\n}\n"
+      "error": "Command failed: git add .\nfatal: Unable to create '/Users/miami2/Documents/GitHub/bolt.new.zion.app/.git/index.lock': File exists.\n\nAnother git process seems to be running in this repository, e.g.\nan editor opened by 'git commit'. Please make sure all processes\nare terminated then try again. If it still fails, a git process\nmay have crashed in this repository earlier:\nremove the file manually to continue.\n"
+    },
+    "buildCheck": {
+      "lastRun": "2025-07-31T22:40:06.122Z",
+      "duration": 0,
+      "success": false,
+      "error": "Command failed: npm run build\n ⚠ Duplicate page detected. pages/services.tsx and pages/services/index.tsx both resolve to /services.\n\n> Build error occurred\nError: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/pages-manifest.json'\n    at async open (node:internal/fs/promises:633:25)\n    at async Object.readFile (node:internal/fs/promises:1237:14)\n    at async /Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/next/dist/build/index.js:730:46\n    at async Span.traceAsyncFn (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/next/dist/trace/trace.js:147:20)\n    at async build (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/next/dist/build/index.js:187:29)\n    at async main (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/next/dist/bin/next:157:5) {\n  errno: -2,\n  code: 'ENOENT',\n  syscall: 'open',\n  path: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/pages-manifest.json'\n}\n"
     },
     "errorRecovery": {
       "lastRun": "2025-07-31T16:21:21.668Z",
@@ -44,7 +44,7 @@
       "error": null
     }
   },
-  "errors": 656,
+  "errors": 658,
   "fixes": 575,
   "syncs": 143,
   "builds": 5,
