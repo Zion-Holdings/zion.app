@@ -4,17 +4,17 @@
     "env": {},
     "webpack": null,
     "eslint": {
-      "ignoreDuringBuilds": true
+      "ignoreDuringBuilds": false
     },
     "typescript": {
-      "ignoreBuildErrors": true,
+      "ignoreBuildErrors": false,
       "tsconfigPath": "tsconfig.json"
     },
     "distDir": ".next",
     "cleanDistDir": true,
     "assetPrefix": "",
     "cacheMaxMemorySize": 52428800,
-    "configOrigin": "next.config.js",
+    "configOrigin": "default",
     "useFileSystemPublicRoutes": true,
     "generateEtags": true,
     "pageExtensions": [
@@ -97,7 +97,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/Users/miami2/Documents/GitHub/bolt.new.zion.app",
+    "outputFileTracingRoot": "",
     "experimental": {
       "useSkewCookie": false,
       "nodeMiddleware": false,
@@ -286,10 +286,7 @@
     },
     "htmlLimitedBots": "Mediapartners-Google|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti",
     "bundlePagesRouterDependencies": false,
-    "configFileName": "next.config.js",
-    "turbopack": {
-      "root": "/Users/miami2/Documents/GitHub/bolt.new.zion.app"
-    }
+    "configFileName": "next.config.js"
   },
   "appDir": "/Users/miami2/Documents/GitHub/bolt.new.zion.app",
   "relativeAppDir": "",
