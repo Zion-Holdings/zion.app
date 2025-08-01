@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
@@ -50,21 +50,23 @@ const AdminDashboard: React.FC = () => {
     role: 'admin'
   };
 
-  useEffect(() => {
-    checkAuthentication();
-  }, []);
-
-  const checkAuthentication = () => {
+  const checkAuthentication = useCallback(() => {
     // In a real implementation, this would check against a secure authentication system
     // For now, we'll simulate authentication
     const storedAuth = localStorage.getItem('adminAuth');
-    if (storedAuth === 'true') {
-      setIsAuthenticated(true);
-      loadAdminData();
-    } else {
-      setIsLoading(false);
+    if (storedAuth) {
+      const authData = JSON.parse(storedAuth);
+      if (authData.role === 'admin' && authData.expires > Date.now()) {
+        setIsAuthenticated(true);
+        return;
+      }
     }
-  };
+    setIsAuthenticated(false);
+  }, []);
+
+  useEffect(() => {
+    checkAuthentication();
+  }, [checkAuthentication]);
 
   const handleLogin = (username: string, password: string) => {
     if (username === adminUser.username && password === adminUser.password) {
