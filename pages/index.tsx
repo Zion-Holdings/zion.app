@@ -219,7 +219,7 @@ const Home: NextPage = () => {
     setNextSectionId(prev => prev + newSections.length)
     
     setIsLoading(false)
-  }, [isLoading, nextSectionId])
+  }, [isLoading, nextSectionId, generateAdditionalSections])
 
   // Intersection Observer for infinite scroll
   useEffect(() => {
