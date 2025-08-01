@@ -1,632 +1,618 @@
 const fs = require('fs');
 const path = require('path');
-const { EventEmitter } = require('events');
-const https = require('https');
-const http = require('http');
+const { exec } = require('child_process');
+const cron = require('node-cron');
 
-class EnhancedAutonomousSystem extends EventEmitter {
+class EnhancedAutonomousSystem {
   constructor() {
-    super();
     this.agents = new Map();
     this.orchestrators = new Map();
-    this.researchAgents = new Map();
-    this.systemStatus = {
-      overallHealth: 100,
+    this.systemMetrics = {
       totalAgents: 0,
       activeAgents: 0,
-      totalOrchestrators: 0,
-      activeOrchestrators: 0,
-      systemUptime: Date.now(),
-      lastResearchUpdate: null,
-      aiTrends: [],
-      newCapabilities: []
+      totalTasks: 0,
+      completedTasks: 0,
+      systemHealth: 'good',
+      avgResponseTime: 0,
+      errorRate: 0
     };
-    
-    this.config = {
-      maxAgents: 50,
-      maxOrchestrators: 10,
-      researchInterval: 3600000, // 1 hour
-      healthCheckInterval: 30000, // 30 seconds
-      autoImprovementInterval: 1800000, // 30 minutes
-      webResearchSources: [
-        'https://arxiv.org/list/cs.AI/recent',
-        'https://github.com/trending',
-        'https://www.reddit.com/r/MachineLearning/hot.json',
-        'https://api.openai.com/v1/models',
-        'https://huggingface.co/api/models'
-      ]
-    };
-    
-    this.initializeSystem();
+    this.logs = [];
+    this.config = this.loadConfig();
   }
 
-  async initializeSystem() {
-    console.log('[EnhancedAutonomousSystem] Initializing enhanced autonomous system...');
-    
+  loadConfig() {
     try {
-      // Initialize core components
-      await this.initializeCoreAgents();
-      await this.initializeOrchestrators();
-      await this.initializeResearchAgents();
-      
-      // Start monitoring and improvement loops
-      this.startHealthMonitoring();
-      this.startContinuousResearch();
-      this.startAutoImprovement();
-      
-      console.log('[EnhancedAutonomousSystem] System initialization completed');
-      this.emit('systemReady');
-      
+      const configPath = path.join(__dirname, 'config.json');
+      if (fs.existsSync(configPath)) {
+        return JSON.parse(fs.readFileSync(configPath, 'utf8'));
+      }
     } catch (error) {
-      console.error('[EnhancedAutonomousSystem] Initialization error:', error);
-      this.emit('systemError', error);
+      console.error('Error loading config:', error);
+    }
+    return {
+      maxAgents: 50,
+      maxConcurrentTasks: 10,
+      healthCheckInterval: 30000,
+      backupInterval: 3600000,
+      logRetention: 7,
+      autoScaling: true,
+      performanceThreshold: 0.8
+    };
+  }
+
+  async initialize() {
+    console.log('🚀 Initializing Enhanced Autonomous System...');
+    
+    // Create necessary directories
+    this.ensureDirectories();
+    
+    // Initialize database tables
+    await this.initializeDatabase();
+    
+    // Start system monitoring
+    this.startSystemMonitoring();
+    
+    // Start cron jobs
+    this.startCronJobs();
+    
+    // Create initial agents
+    await this.createInitialAgents();
+    
+    console.log('✅ Enhanced Autonomous System initialized successfully');
+  }
+
+  ensureDirectories() {
+    const directories = [
+      'logs',
+      'agents',
+      'orchestrators',
+      'backups',
+      'analytics',
+      'reports',
+      'templates',
+      'market-research',
+      'content-generation',
+      'marketing-agents',
+      'sales-agents',
+      'analytics-agents'
+    ];
+
+    directories.forEach(dir => {
+      const dirPath = path.join(__dirname, dir);
+      if (!fs.existsSync(dirPath)) {
+        fs.mkdirSync(dirPath, { recursive: true });
+      }
+    });
+  }
+
+  async initializeDatabase() {
+    const { createClient } = require('@supabase/supabase-js');
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    );
+
+    try {
+      // Create autonomous_agents table
+      await supabase.rpc('create_autonomous_agents_table', {});
+      
+      // Create system_metrics table
+      await supabase.rpc('create_system_metrics_table', {});
+      
+      // Create agent_logs table
+      await supabase.rpc('create_agent_logs_table', {});
+      
+      console.log('✅ Database tables initialized');
+    } catch (error) {
+      console.error('Error initializing database:', error);
     }
   }
 
-  async initializeCoreAgents() {
-    const coreAgents = [
+  startSystemMonitoring() {
+    setInterval(() => {
+      this.updateSystemMetrics();
+      this.checkSystemHealth();
+      this.performAutoScaling();
+    }, this.config.healthCheckInterval);
+  }
+
+  startCronJobs() {
+    // Daily backup at 2 AM
+    cron.schedule('0 2 * * *', () => {
+      this.performBackup();
+    });
+
+    // Hourly analytics collection
+    cron.schedule('0 * * * *', () => {
+      this.collectAnalytics();
+    });
+
+    // Every 5 minutes - agent health check
+    cron.schedule('*/5 * * * *', () => {
+      this.checkAgentHealth();
+    });
+
+    // Every 10 minutes - performance optimization
+    cron.schedule('*/10 * * * *', () => {
+      this.optimizePerformance();
+    });
+
+    // Every 30 minutes - market research
+    cron.schedule('*/30 * * * *', () => {
+      this.performMarketResearch();
+    });
+
+    console.log('✅ Cron jobs scheduled');
+  }
+
+  async createInitialAgents() {
+    const initialAgents = [
       {
-        id: 'master-controller',
-        name: 'Master Controller Agent',
-        type: 'controller',
-        capabilities: ['system_management', 'agent_orchestration', 'health_monitoring'],
-        autoImprove: true
-      },
-      {
-        id: 'agent-factory',
-        name: 'Agent Factory',
-        type: 'factory',
-        capabilities: ['agent_creation', 'template_management', 'workload_distribution'],
-        autoImprove: true
-      },
-      {
-        id: 'research-agent',
-        name: 'AI Research Agent',
-        type: 'research',
-        capabilities: ['web_research', 'trend_analysis', 'capability_discovery'],
-        autoImprove: true
-      },
-      {
-        id: 'content-generator',
         name: 'Content Generation Agent',
-        type: 'generator',
-        capabilities: ['content_creation', 'optimization', 'multimodal_generation'],
-        autoImprove: true
+        type: 'content-generation',
+        capabilities: ['AI writing', 'SEO optimization', 'Content planning'],
+        services: ['Blog posts', 'Product descriptions', 'Social media content']
       },
       {
-        id: 'monitor-agent',
-        name: 'System Monitor Agent',
-        type: 'monitor',
-        capabilities: ['health_monitoring', 'performance_tracking', 'alert_management'],
-        autoImprove: true
+        name: 'Marketing Automation Agent',
+        type: 'marketing',
+        capabilities: ['Campaign management', 'Email marketing', 'Social media'],
+        services: ['Email campaigns', 'Social media posts', 'Lead generation']
       },
       {
-        id: 'orchestrator-agent',
-        name: 'Workload Orchestrator',
+        name: 'Sales Intelligence Agent',
+        type: 'sales',
+        capabilities: ['Lead scoring', 'CRM integration', 'Sales analytics'],
+        services: ['Lead qualification', 'Sales reporting', 'Pipeline management']
+      },
+      {
+        name: 'Analytics Agent',
+        type: 'analytics',
+        capabilities: ['Data analysis', 'Performance tracking', 'Reporting'],
+        services: ['Performance reports', 'Trend analysis', 'KPI monitoring']
+      },
+      {
+        name: 'Automation Orchestrator',
         type: 'orchestrator',
-        capabilities: ['workload_distribution', 'load_balancing', 'resource_optimization'],
-        autoImprove: true
+        capabilities: ['Workflow management', 'Task scheduling', 'System coordination'],
+        services: ['Process automation', 'Task distribution', 'System optimization']
       }
     ];
 
-    for (const agentConfig of coreAgents) {
+    for (const agentConfig of initialAgents) {
       await this.createAgent(agentConfig);
     }
   }
 
-  async initializeOrchestrators() {
-    const orchestrators = [
-      {
-        id: 'main-orchestrator',
-        name: 'Main System Orchestrator',
-        type: 'system',
-        managedAgents: ['master-controller', 'agent-factory', 'monitor-agent'],
-        capabilities: ['system_coordination', 'resource_management', 'scaling']
-      },
-      {
-        id: 'content-orchestrator',
-        name: 'Content Generation Orchestrator',
-        type: 'content',
-        managedAgents: ['content-generator', 'research-agent'],
-        capabilities: ['content_pipeline', 'quality_assurance', 'optimization']
-      },
-      {
-        id: 'research-orchestrator',
-        name: 'Research and Development Orchestrator',
-        type: 'research',
-        managedAgents: ['research-agent'],
-        capabilities: ['trend_research', 'capability_analysis', 'improvement_planning']
-      }
-    ];
-
-    for (const orchestratorConfig of orchestrators) {
-      await this.createOrchestrator(orchestratorConfig);
-    }
-  }
-
-  async initializeResearchAgents() {
-    const researchAgents = [
-      {
-        id: 'ai-trend-researcher',
-        name: 'AI Trend Researcher',
-        focus: 'artificial_intelligence',
-        sources: ['arxiv', 'github', 'reddit', 'research_papers'],
-        capabilities: ['trend_analysis', 'capability_assessment', 'improvement_suggestions']
-      },
-      {
-        id: 'automation-researcher',
-        name: 'Automation Technology Researcher',
-        focus: 'automation_tools',
-        sources: ['github', 'npm', 'pypi', 'tech_news'],
-        capabilities: ['tool_discovery', 'integration_analysis', 'performance_evaluation']
-      },
-      {
-        id: 'web-scraper',
-        name: 'Web Research Agent',
-        focus: 'web_research',
-        sources: ['news_sites', 'tech_blogs', 'social_media'],
-        capabilities: ['content_scraping', 'sentiment_analysis', 'trend_detection']
-      }
-    ];
-
-    for (const researchAgentConfig of researchAgents) {
-      await this.createResearchAgent(researchAgentConfig);
-    }
-  }
-
   async createAgent(config) {
+    const agentId = `agent_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    
     const agent = {
-      id: config.id,
+      id: agentId,
       name: config.name,
       type: config.type,
+      status: 'idle',
+      workload: 0,
+      currentTask: 'Initializing...',
+      nextSteps: [],
+      services: config.services,
       capabilities: config.capabilities,
-      status: 'initializing',
-      health: 100,
-      performance: 0,
-      uptime: Date.now(),
-      tasksCompleted: 0,
-      errors: 0,
-      autoImprove: config.autoImprove || false,
-      lastActivity: Date.now(),
-      config: config
+      dependencies: [],
+      performance: {
+        tasksCompleted: 0,
+        successRate: 100,
+        avgResponseTime: 0
+      },
+      createdAt: new Date().toISOString(),
+      lastActive: new Date().toISOString(),
+      config: {
+        autoRestart: true,
+        maxRetries: 3,
+        timeout: 300000,
+        priority: 'normal'
+      }
     };
 
-    this.agents.set(config.id, agent);
-    this.systemStatus.totalAgents++;
+    this.agents.set(agentId, agent);
     
-    // Simulate agent initialization
-    setTimeout(() => {
-      agent.status = 'running';
-      agent.performance = Math.floor(Math.random() * 30) + 70; // 70-100%
-      this.systemStatus.activeAgents++;
-      this.emit('agentStarted', agent);
-    }, 1000 + Math.random() * 2000);
-
-    return agent;
-  }
-
-  async createOrchestrator(config) {
-    const orchestrator = {
-      id: config.id,
-      name: config.name,
-      type: config.type,
-      managedAgents: config.managedAgents,
-      capabilities: config.capabilities,
-      status: 'initializing',
-      health: 100,
-      performance: 0,
-      uptime: Date.now(),
-      tasksCompleted: 0,
-      errors: 0,
-      lastActivity: Date.now(),
-      config: config
-    };
-
-    this.orchestrators.set(config.id, orchestrator);
-    this.systemStatus.totalOrchestrators++;
+    // Save to database
+    await this.saveAgentToDatabase(agent);
     
-    // Simulate orchestrator initialization
-    setTimeout(() => {
-      orchestrator.status = 'running';
-      orchestrator.performance = Math.floor(Math.random() * 20) + 80; // 80-100%
-      this.systemStatus.activeOrchestrators++;
-      this.emit('orchestratorStarted', orchestrator);
-    }, 2000 + Math.random() * 3000);
-
-    return orchestrator;
-  }
-
-  async createResearchAgent(config) {
-    const researchAgent = {
-      id: config.id,
-      name: config.name,
-      focus: config.focus,
-      sources: config.sources,
-      capabilities: config.capabilities,
-      status: 'initializing',
-      health: 100,
-      performance: 0,
-      uptime: Date.now(),
-      researchCompleted: 0,
-      discoveries: [],
-      lastResearch: null,
-      config: config
-    };
-
-    this.researchAgents.set(config.id, researchAgent);
+    // Create agent script
+    await this.createAgentScript(agent);
     
-    // Simulate research agent initialization
-    setTimeout(() => {
-      researchAgent.status = 'running';
-      researchAgent.performance = Math.floor(Math.random() * 25) + 75; // 75-100%
-      this.emit('researchAgentStarted', researchAgent);
-    }, 1500 + Math.random() * 2500);
-
-    return researchAgent;
-  }
-
-  startHealthMonitoring() {
-    setInterval(() => {
-      this.monitorSystemHealth();
-    }, this.config.healthCheckInterval);
-  }
-
-  async monitorSystemHealth() {
-    let totalHealth = 0;
-    let activeCount = 0;
-
-    // Monitor agents
-    for (const [id, agent] of this.agents) {
-      if (agent.status === 'running') {
-        activeCount++;
-        // Simulate health fluctuations
-        agent.health = Math.max(70, Math.min(100, agent.health + (Math.random() - 0.5) * 10));
-        totalHealth += agent.health;
-        
-        // Simulate performance improvements
-        if (agent.autoImprove && Math.random() < 0.1) {
-          agent.performance = Math.min(100, agent.performance + Math.random() * 5);
-          this.emit('agentImproved', agent);
-        }
-      }
-    }
-
-    // Monitor orchestrators
-    for (const [id, orchestrator] of this.orchestrators) {
-      if (orchestrator.status === 'running') {
-        activeCount++;
-        orchestrator.health = Math.max(80, Math.min(100, orchestrator.health + (Math.random() - 0.5) * 5));
-        totalHealth += orchestrator.health;
-      }
-    }
-
-    // Monitor research agents
-    for (const [id, researchAgent] of this.researchAgents) {
-      if (researchAgent.status === 'running') {
-        activeCount++;
-        researchAgent.health = Math.max(75, Math.min(100, researchAgent.health + (Math.random() - 0.5) * 8));
-        totalHealth += researchAgent.health;
-      }
-    }
-
-    this.systemStatus.overallHealth = activeCount > 0 ? Math.round(totalHealth / activeCount) : 100;
-    this.systemStatus.activeAgents = this.agents.size;
-    this.systemStatus.activeOrchestrators = this.orchestrators.size;
-
-    this.emit('healthUpdate', this.systemStatus);
-  }
-
-  startContinuousResearch() {
-    setInterval(() => {
-      this.performWebResearch();
-    }, this.config.researchInterval);
-  }
-
-  async performWebResearch() {
-    console.log('[EnhancedAutonomousSystem] Starting web research cycle...');
+    // Start agent
+    await this.startAgent(agentId);
     
-    try {
-      const researchPromises = [];
-      
-      // Research AI trends
-      researchPromises.push(this.researchAITrends());
-      
-      // Research automation tools
-      researchPromises.push(this.researchAutomationTools());
-      
-      // Research new capabilities
-      researchPromises.push(this.researchNewCapabilities());
-      
-      const results = await Promise.allSettled(researchPromises);
-      
-      // Process research results
-      for (const result of results) {
-        if (result.status === 'fulfilled' && result.value) {
-          this.systemStatus.aiTrends.push(...result.value.trends || []);
-          this.systemStatus.newCapabilities.push(...result.value.capabilities || []);
-        }
-      }
-      
-      this.systemStatus.lastResearchUpdate = new Date().toISOString();
-      this.emit('researchCompleted', this.systemStatus);
-      
-      // Trigger improvements based on research
-      this.triggerImprovements();
-      
-    } catch (error) {
-      console.error('[EnhancedAutonomousSystem] Research error:', error);
-    }
+    console.log(`✅ Created agent: ${agent.name} (${agentId})`);
+    return agentId;
   }
 
-  async researchAITrends() {
-    // Simulate AI trend research
-    const trends = [
-      {
-        title: 'Multi-modal AI Agents',
-        description: 'Agents that can process text, images, audio, and video simultaneously',
-        impact: 'high',
-        source: 'arxiv',
-        timestamp: new Date().toISOString()
-      },
-      {
-        title: 'Autonomous Agent Swarms',
-        description: 'Coordinated groups of specialized agents working together',
-        impact: 'medium',
-        source: 'github',
-        timestamp: new Date().toISOString()
-      },
-      {
-        title: 'Self-Improving AI Systems',
-        description: 'AI systems that can modify and improve their own capabilities',
-        impact: 'high',
-        source: 'research_papers',
-        timestamp: new Date().toISOString()
-      }
-    ];
-
-    return { trends, capabilities: [] };
-  }
-
-  async researchAutomationTools() {
-    // Simulate automation tool research
-    const capabilities = [
-      {
-        name: 'Advanced Workflow Orchestration',
-        description: 'Enhanced workflow management with dynamic task distribution',
-        implementation: 'orchestrator_enhancement',
-        priority: 'high'
-      },
-      {
-        name: 'Intelligent Resource Allocation',
-        description: 'AI-powered resource management and optimization',
-        implementation: 'resource_manager',
-        priority: 'medium'
-      },
-      {
-        name: 'Real-time Performance Analytics',
-        description: 'Advanced analytics and performance monitoring',
-        implementation: 'analytics_engine',
-        priority: 'medium'
-      }
-    ];
-
-    return { trends: [], capabilities };
-  }
-
-  async researchNewCapabilities() {
-    // Simulate capability research
-    const capabilities = [
-      {
-        name: 'Natural Language Processing Enhancement',
-        description: 'Improved NLP capabilities for better content generation',
-        implementation: 'nlp_upgrade',
-        priority: 'high'
-      },
-      {
-        name: 'Computer Vision Integration',
-        description: 'Add image and video processing capabilities',
-        implementation: 'vision_agent',
-        priority: 'medium'
-      },
-      {
-        name: 'Predictive Analytics',
-        description: 'Predictive capabilities for proactive system management',
-        implementation: 'predictive_engine',
-        priority: 'low'
-      }
-    ];
-
-    return { trends: [], capabilities };
-  }
-
-  startAutoImprovement() {
-    setInterval(() => {
-      this.performAutoImprovement();
-    }, this.config.autoImprovementInterval);
-  }
-
-  async performAutoImprovement() {
-    console.log('[EnhancedAutonomousSystem] Starting auto-improvement cycle...');
-    
-    try {
-      // Analyze system performance
-      const performanceAnalysis = this.analyzeSystemPerformance();
-      
-      // Generate improvement suggestions
-      const improvements = this.generateImprovements(performanceAnalysis);
-      
-      // Apply improvements
-      for (const improvement of improvements) {
-        await this.applyImprovement(improvement);
-      }
-      
-      this.emit('improvementsApplied', improvements);
-      
-    } catch (error) {
-      console.error('[EnhancedAutonomousSystem] Auto-improvement error:', error);
-    }
-  }
-
-  analyzeSystemPerformance() {
-    const analysis = {
-      overallHealth: this.systemStatus.overallHealth,
-      agentPerformance: {},
-      orchestratorPerformance: {},
-      bottlenecks: [],
-      opportunities: []
-    };
-
-    // Analyze agent performance
-    for (const [id, agent] of this.agents) {
-      analysis.agentPerformance[id] = {
-        health: agent.health,
-        performance: agent.performance,
-        efficiency: agent.tasksCompleted / (agent.errors + 1)
-      };
-    }
-
-    // Analyze orchestrator performance
-    for (const [id, orchestrator] of this.orchestrators) {
-      analysis.orchestratorPerformance[id] = {
-        health: orchestrator.health,
-        performance: orchestrator.performance,
-        efficiency: orchestrator.tasksCompleted / (orchestrator.errors + 1)
-      };
-    }
-
-    return analysis;
-  }
-
-  generateImprovements(analysis) {
-    const improvements = [];
-
-    // Generate improvements based on performance analysis
-    if (analysis.overallHealth < 90) {
-      improvements.push({
-        type: 'health_optimization',
-        target: 'system',
-        description: 'Optimize system health and performance',
-        priority: 'high'
-      });
-    }
-
-    // Generate improvements based on research findings
-    for (const capability of this.systemStatus.newCapabilities) {
-      if (capability.priority === 'high') {
-        improvements.push({
-          type: 'capability_addition',
-          target: capability.implementation,
-          description: `Add ${capability.name} capability`,
-          priority: capability.priority
-        });
-      }
-    }
-
-    return improvements;
-  }
-
-  async applyImprovement(improvement) {
-    console.log(`[EnhancedAutonomousSystem] Applying improvement: ${improvement.description}`);
-    
-    // Simulate improvement application
-    setTimeout(() => {
-      this.emit('improvementApplied', improvement);
-      
-      // Update system status
-      if (improvement.type === 'health_optimization') {
-        this.systemStatus.overallHealth = Math.min(100, this.systemStatus.overallHealth + 5);
-      }
-      
-    }, 2000 + Math.random() * 3000);
-  }
-
-  triggerImprovements() {
-    // Trigger improvements based on research findings
-    const highPriorityCapabilities = this.systemStatus.newCapabilities.filter(
-      cap => cap.priority === 'high'
+  async saveAgentToDatabase(agent) {
+    const { createClient } = require('@supabase/supabase-js');
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
     );
 
-    for (const capability of highPriorityCapabilities) {
-      this.applyImprovement({
-        type: 'capability_addition',
-        target: capability.implementation,
-        description: `Add ${capability.name} capability`,
-        priority: capability.priority
-      });
+    try {
+      const { error } = await supabase
+        .from('autonomous_agents')
+        .upsert([{
+          id: agent.id,
+          name: agent.name,
+          type: agent.type,
+          status: agent.status,
+          workload: agent.workload,
+          current_task: agent.currentTask,
+          next_steps: agent.nextSteps,
+          services: agent.services,
+          capabilities: agent.capabilities,
+          dependencies: agent.dependencies,
+          performance: agent.performance,
+          created_at: agent.createdAt,
+          last_active: agent.lastActive,
+          config: agent.config
+        }]);
+
+      if (error) throw error;
+    } catch (error) {
+      console.error('Error saving agent to database:', error);
     }
   }
 
-  getSystemStatus() {
-    return {
-      ...this.systemStatus,
-      agents: Array.from(this.agents.values()),
-      orchestrators: Array.from(this.orchestrators.values()),
-      researchAgents: Array.from(this.researchAgents.values())
+  async createAgentScript(agent) {
+    const scriptTemplate = this.getAgentScriptTemplate(agent);
+    const scriptPath = path.join(__dirname, 'agents', `${agent.id}.js`);
+    
+    fs.writeFileSync(scriptPath, scriptTemplate);
+    
+    // Make script executable
+    fs.chmodSync(scriptPath, '755');
+  }
+
+  getAgentScriptTemplate(agent) {
+    return `
+const fs = require('fs');
+const path = require('path');
+
+class ${agent.name.replace(/\s+/g, '')}Agent {
+  constructor() {
+    this.id = '${agent.id}';
+    this.name = '${agent.name}';
+    this.type = '${agent.type}';
+    this.capabilities = ${JSON.stringify(agent.capabilities)};
+    this.services = ${JSON.stringify(agent.services)};
+    this.status = 'idle';
+    this.workload = 0;
+    this.currentTask = 'Initializing...';
+    this.performance = {
+      tasksCompleted: 0,
+      successRate: 100,
+      avgResponseTime: 0
     };
+  }
+
+  async initialize() {
+    console.log(\`🚀 Initializing \${this.name}...\`);
+    this.status = 'active';
+    this.updateStatus();
+    
+    // Start continuous operation
+    this.startContinuousOperation();
+  }
+
+  async startContinuousOperation() {
+    setInterval(async () => {
+      if (this.status === 'active' && this.workload < 100) {
+        await this.performTask();
+      }
+    }, 5000);
+  }
+
+  async performTask() {
+    try {
+      this.currentTask = 'Performing task...';
+      this.workload = Math.min(100, this.workload + Math.random() * 20);
+      this.updateStatus();
+
+      // Simulate task execution
+      await this.simulateTaskExecution();
+
+      this.performance.tasksCompleted++;
+      this.performance.successRate = Math.max(80, this.performance.successRate - Math.random() * 5);
+      this.workload = Math.max(0, this.workload - Math.random() * 30);
+      
+      this.currentTask = 'Task completed, waiting for next task...';
+      this.updateStatus();
+    } catch (error) {
+      console.error(\`Error in \${this.name}:\`, error);
+      this.status = 'error';
+      this.updateStatus();
+    }
+  }
+
+  async simulateTaskExecution() {
+    const taskTypes = this.services;
+    const randomTask = taskTypes[Math.floor(Math.random() * taskTypes.length)];
+    
+    console.log(\`\${this.name} performing: \${randomTask}\`);
+    
+    // Simulate processing time
+    await new Promise(resolve => setTimeout(resolve, 2000 + Math.random() * 3000));
+  }
+
+  updateStatus() {
+    const statusData = {
+      id: this.id,
+      status: this.status,
+      workload: this.workload,
+      currentTask: this.currentTask,
+      performance: this.performance,
+      lastActive: new Date().toISOString()
+    };
+
+    // Save status to file
+    const statusPath = path.join(__dirname, '..', 'logs', \`\${this.id}_status.json\`);
+    fs.writeFileSync(statusPath, JSON.stringify(statusData, null, 2));
+  }
+
+  async stop() {
+    this.status = 'stopped';
+    this.updateStatus();
+    console.log(\`\${this.name} stopped\`);
+  }
+}
+
+// Start the agent
+const agent = new ${agent.name.replace(/\s+/g, '')}Agent();
+agent.initialize().catch(console.error);
+
+module.exports = agent;
+`;
   }
 
   async startAgent(agentId) {
     const agent = this.agents.get(agentId);
-    if (agent) {
-      agent.status = 'starting';
-      setTimeout(() => {
-        agent.status = 'running';
-        this.systemStatus.activeAgents++;
-        this.emit('agentStarted', agent);
-      }, 1000);
+    if (!agent) return;
+
+    try {
+      const scriptPath = path.join(__dirname, 'agents', `${agentId}.js`);
+      
+      exec(`node "${scriptPath}"`, (error, stdout, stderr) => {
+        if (error) {
+          console.error(`Error starting agent ${agentId}:`, error);
+          agent.status = 'error';
+        } else {
+          agent.status = 'active';
+        }
+        this.saveAgentToDatabase(agent);
+      });
+
+      console.log(`✅ Started agent: ${agent.name}`);
+    } catch (error) {
+      console.error(`Error starting agent ${agentId}:`, error);
+      agent.status = 'error';
+      this.saveAgentToDatabase(agent);
     }
   }
 
-  async stopAgent(agentId) {
-    const agent = this.agents.get(agentId);
-    if (agent && agent.status === 'running') {
-      agent.status = 'stopping';
-      setTimeout(() => {
-        agent.status = 'stopped';
-        this.systemStatus.activeAgents--;
-        this.emit('agentStopped', agent);
-      }, 1000);
+  async updateSystemMetrics() {
+    const activeAgents = Array.from(this.agents.values()).filter(a => a.status === 'active');
+    const totalTasks = Array.from(this.agents.values()).reduce((sum, a) => sum + a.performance.tasksCompleted, 0);
+    const avgResponseTime = Array.from(this.agents.values()).reduce((sum, a) => sum + a.performance.avgResponseTime, 0) / this.agents.size || 0;
+    const errorRate = Array.from(this.agents.values()).filter(a => a.status === 'error').length / this.agents.size * 100 || 0;
+
+    this.systemMetrics = {
+      totalAgents: this.agents.size,
+      activeAgents: activeAgents.length,
+      totalTasks,
+      completedTasks: totalTasks,
+      systemHealth: errorRate > 20 ? 'critical' : errorRate > 10 ? 'warning' : 'good',
+      avgResponseTime,
+      errorRate
+    };
+
+    // Save metrics to database
+    await this.saveSystemMetrics();
+  }
+
+  async saveSystemMetrics() {
+    const { createClient } = require('@supabase/supabase-js');
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    );
+
+    try {
+      const { error } = await supabase
+        .from('system_metrics')
+        .upsert([{
+          id: 'current',
+          ...this.systemMetrics,
+          updated_at: new Date().toISOString()
+        }]);
+
+      if (error) throw error;
+    } catch (error) {
+      console.error('Error saving system metrics:', error);
+    }
+  }
+
+  checkSystemHealth() {
+    const errorAgents = Array.from(this.agents.values()).filter(a => a.status === 'error');
+    
+    if (errorAgents.length > 0) {
+      console.log(`⚠️  Found ${errorAgents.length} agents with errors`);
+      
+      errorAgents.forEach(agent => {
+        if (agent.config.autoRestart) {
+          console.log(`🔄 Restarting agent: ${agent.name}`);
+          this.restartAgent(agent.id);
+        }
+      });
     }
   }
 
   async restartAgent(agentId) {
-    await this.stopAgent(agentId);
-    setTimeout(() => {
-      this.startAgent(agentId);
-    }, 2000);
+    const agent = this.agents.get(agentId);
+    if (!agent) return;
+
+    console.log(`🔄 Restarting agent: ${agent.name}`);
+    
+    // Stop current process
+    // This would require process management in a real implementation
+    
+    // Reset agent status
+    agent.status = 'idle';
+    agent.workload = 0;
+    agent.currentTask = 'Restarting...';
+    
+    // Start agent again
+    await this.startAgent(agentId);
   }
 
-  async createNewAgent(template) {
-    const newAgentConfig = {
-      id: `agent-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-      name: `Auto-Generated ${template.type} Agent`,
-      type: template.type,
-      capabilities: template.capabilities || ['auto_generated'],
-      autoImprove: true
+  performAutoScaling() {
+    if (!this.config.autoScaling) return;
+
+    const activeAgents = Array.from(this.agents.values()).filter(a => a.status === 'active');
+    const avgWorkload = activeAgents.reduce((sum, a) => sum + a.workload, 0) / activeAgents.length || 0;
+
+    if (avgWorkload > 80 && this.agents.size < this.config.maxAgents) {
+      console.log('📈 High workload detected, creating new agent...');
+      this.createAgent({
+        name: `Auto-Scaled Agent ${Date.now()}`,
+        type: 'auto-scaled',
+        capabilities: ['General automation'],
+        services: ['Task processing']
+      });
+    } else if (avgWorkload < 20 && this.agents.size > 5) {
+      console.log('📉 Low workload detected, stopping idle agents...');
+      const idleAgents = Array.from(this.agents.values())
+        .filter(a => a.status === 'active' && a.workload < 10)
+        .slice(0, 1);
+      
+      idleAgents.forEach(agent => {
+        console.log(`🛑 Stopping idle agent: ${agent.name}`);
+        agent.status = 'stopped';
+        this.saveAgentToDatabase(agent);
+      });
+    }
+  }
+
+  async performBackup() {
+    console.log('💾 Performing system backup...');
+    
+    const backupData = {
+      agents: Array.from(this.agents.values()),
+      systemMetrics: this.systemMetrics,
+      config: this.config,
+      timestamp: new Date().toISOString()
     };
 
-    return await this.createAgent(newAgentConfig);
+    const backupPath = path.join(__dirname, 'backups', `backup_${Date.now()}.json`);
+    fs.writeFileSync(backupPath, JSON.stringify(backupData, null, 2));
+    
+    console.log(`✅ Backup saved to: ${backupPath}`);
   }
 
-  async shutdown() {
-    console.log('[EnhancedAutonomousSystem] Shutting down enhanced autonomous system...');
+  async collectAnalytics() {
+    console.log('📊 Collecting analytics...');
     
-    // Stop all agents
-    for (const [id, agent] of this.agents) {
-      if (agent.status === 'running') {
-        agent.status = 'stopping';
+    const analytics = {
+      timestamp: new Date().toISOString(),
+      agentCount: this.agents.size,
+      activeAgents: Array.from(this.agents.values()).filter(a => a.status === 'active').length,
+      totalTasks: Array.from(this.agents.values()).reduce((sum, a) => sum + a.performance.tasksCompleted, 0),
+      avgWorkload: Array.from(this.agents.values()).reduce((sum, a) => sum + a.workload, 0) / this.agents.size || 0,
+      errorRate: Array.from(this.agents.values()).filter(a => a.status === 'error').length / this.agents.size * 100 || 0
+    };
+
+    const analyticsPath = path.join(__dirname, 'analytics', `analytics_${Date.now()}.json`);
+    fs.writeFileSync(analyticsPath, JSON.stringify(analytics, null, 2));
+  }
+
+  checkAgentHealth() {
+    Array.from(this.agents.values()).forEach(agent => {
+      const statusPath = path.join(__dirname, 'logs', `${agent.id}_status.json`);
+      
+      if (fs.existsSync(statusPath)) {
+        try {
+          const statusData = JSON.parse(fs.readFileSync(statusPath, 'utf8'));
+          Object.assign(agent, statusData);
+          this.saveAgentToDatabase(agent);
+        } catch (error) {
+          console.error(`Error reading status for agent ${agent.id}:`, error);
+        }
       }
+    });
+  }
+
+  optimizePerformance() {
+    console.log('⚡ Optimizing system performance...');
+    
+    // Analyze agent performance and optimize
+    Array.from(this.agents.values()).forEach(agent => {
+      if (agent.performance.successRate < 80) {
+        console.log(`🔧 Optimizing agent: ${agent.name}`);
+        // Implement optimization logic
+      }
+    });
+  }
+
+  async performMarketResearch() {
+    console.log('🔍 Performing market research...');
+    
+    // This would integrate with external APIs for market research
+    const researchData = {
+      timestamp: new Date().toISOString(),
+      trends: ['AI automation', 'Content marketing', 'Digital transformation'],
+      opportunities: ['New market segments', 'Emerging technologies', 'Competitive gaps'],
+      recommendations: ['Expand AI capabilities', 'Enhance content generation', 'Improve analytics']
+    };
+
+    const researchPath = path.join(__dirname, 'market-research', `research_${Date.now()}.json`);
+    fs.writeFileSync(researchPath, JSON.stringify(researchData, null, 2));
+  }
+
+  log(message, level = 'info') {
+    const logEntry = {
+      timestamp: new Date().toISOString(),
+      level,
+      message,
+      systemMetrics: this.systemMetrics
+    };
+
+    this.logs.push(logEntry);
+    
+    // Keep only recent logs
+    if (this.logs.length > 1000) {
+      this.logs = this.logs.slice(-1000);
     }
 
-    // Stop all orchestrators
-    for (const [id, orchestrator] of this.orchestrators) {
-      if (orchestrator.status === 'running') {
-        orchestrator.status = 'stopping';
-      }
-    }
+    // Save to file
+    const logPath = path.join(__dirname, 'logs', `system_${new Date().toISOString().split('T')[0]}.log`);
+    fs.appendFileSync(logPath, JSON.stringify(logEntry) + '\n');
 
-    this.emit('systemShutdown');
+    console.log(`[${level.toUpperCase()}] ${message}`);
+  }
+
+  getStatus() {
+    return {
+      agents: Array.from(this.agents.values()),
+      systemMetrics: this.systemMetrics,
+      config: this.config,
+      uptime: process.uptime(),
+      logs: this.logs.slice(-10)
+    };
   }
 }
 
-module.exports = EnhancedAutonomousSystem; 
+// Export the system
+module.exports = EnhancedAutonomousSystem;
+
+// If run directly, start the system
+if (require.main === module) {
+  const system = new EnhancedAutonomousSystem();
+  system.initialize().catch(console.error);
+} 
