@@ -2,7 +2,7 @@
 import React from 'react';
 import { NextPage } from 'next';
 
-const AI-PoweredbusinessopportunitySolutionPage: NextPage = () => {
+const opportunity_solution_1754023778312_0Page: NextPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -197,5 +197,5 @@ const AI-PoweredbusinessopportunitySolutionPage: NextPage = () => {
   );
 };
 
-export default AI-PoweredbusinessopportunitySolutionPage;
+export default opportunity_solution_1754023778312_0Page;
         

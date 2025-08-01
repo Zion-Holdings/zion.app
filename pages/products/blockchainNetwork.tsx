@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-const BlockchainNetworkPage: NextPage = () => {
+const blockchainNetworkPage: NextPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
@@ -238,4 +238,4 @@ const BlockchainNetworkPage: NextPage = () => {
   )
 }
 
-export default BlockchainNetworkPage
+export default blockchainNetworkPage

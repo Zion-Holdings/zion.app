@@ -487,18 +487,9 @@ export default ${topicTitle.replace(/\s+/g, '')}Page`;
   }
 
   generateProductPageContent(product, content) {
-    // Convert product name to valid JavaScript identifier
-    const productTitle = product
-      .split(/[-_\s]+/) // Split on hyphens, underscores, and spaces
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-      .join(' ');
-    
-    // Create valid component name by replacing spaces and hyphens with underscores
-    const componentName = product
-      .replace(/[-_\s]+/g, '_') // Replace hyphens, underscores, and spaces with underscores
-      .replace(/^_+|_+$/g, '') // Remove leading/trailing underscores
-      .replace(/^[0-9]/, '_$&') // Add underscore prefix if starts with number
-      + 'Page';
+    // Use utility functions for consistent component naming
+    const productTitle = createDisplayTitle(product);
+    const componentName = createValidComponentName(product);
     
     return `import type { NextPage } from 'next'
 import Head from 'next/head'

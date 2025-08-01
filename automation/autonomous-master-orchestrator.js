@@ -3,6 +3,7 @@ const path = require('path');
 const { exec } = require('child_process');
 const util = require('util');
 const cron = require('node-cron');
+const { createValidComponentName, createDisplayTitle } = require('./utils/component-name-helper');
 
 const execAsync = util.promisify(exec);
 
@@ -496,12 +497,8 @@ class AutonomousMasterOrchestrator {
     }
 
     async generateProductPage(solution) {
-        // Create valid component name by replacing spaces and hyphens with underscores
-        const componentName = solution.name
-          .replace(/[-_\s]+/g, '_') // Replace hyphens, underscores, and spaces with underscores
-          .replace(/^_+|_+$/g, '') // Remove leading/trailing underscores
-          .replace(/^[0-9]/, '_$&') // Add underscore prefix if starts with number
-          + 'Page';
+        // Use utility function for consistent component naming
+        const componentName = createValidComponentName(solution.name);
         
         const pageContent = `
 import React from 'react';
@@ -513,7 +510,7 @@ const ${componentName}: NextPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            ${solution.name}
+            ${createDisplayTitle(solution.name)}
           </h1>
           <p className="text-xl text-gray-600 mb-8">
             ${solution.description}
@@ -625,7 +622,7 @@ export default ${componentName};
         const solutionsSection = solutions.map(solution => `
           <div key="${solution.id}" className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-xl font-semibold text-gray-900 mb-2">
-              ${solution.name}
+              ${createDisplayTitle(solution.name)}
             </h3>
             <p className="text-gray-600 mb-4">
               ${solution.description}
@@ -684,7 +681,7 @@ export default ${componentName};
         const pricingSection = solutions.map(solution => `
           <div key="${solution.id}" className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              ${solution.name}
+              ${createDisplayTitle(solution.name)}
             </h3>
             <div className="space-y-4">
               ${Object.entries(solution.pricing).map(([tier, price]) => `

@@ -2,6 +2,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const { exec } = require('child_process');
 const util = require('util');
+const { createValidComponentName, createDisplayTitle } = require('./utils/component-name-helper');
 
 const execAsync = util.promisify(exec);
 
@@ -364,11 +365,14 @@ class AutonomousAgentOrchestrator {
     }
 
     async generateProductPage(solution) {
+        // Use utility function for consistent component naming
+        const componentName = createValidComponentName(solution.name);
+        
         const pageContent = `
 import React from 'react';
 import { NextPage } from 'next';
 
-const ${solution.name.replace(/\s+/g, '')}Page: NextPage = () => {
+const ${componentName}: NextPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -419,7 +423,7 @@ const ${solution.name.replace(/\s+/g, '')}Page: NextPage = () => {
   );
 };
 
-export default ${solution.name.replace(/\s+/g, '')}Page;
+export default ${componentName};
         `;
         
         const pagePath = path.join(__dirname, '..', 'pages', 'products', `${solution.id}.tsx`);

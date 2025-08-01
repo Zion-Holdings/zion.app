@@ -19,18 +19,35 @@ function fixComponentName(filePath) {
     const fileName = path.basename(filePath, '.tsx');
     const validComponentName = createValidComponentName(fileName);
     
-    // Replace the old component name with the new one
-    const fixedContent = content.replace(
-      /const\s+[A-Za-z0-9_]+Page:\s*NextPage\s*=/g,
+    // Replace all possible invalid component name patterns
+    let fixedContent = content;
+    
+    // Fix const declarations
+    fixedContent = fixedContent.replace(
+      /const\s+[A-Za-z0-9_-]+Page:\s*NextPage\s*=/g,
       `const ${validComponentName}: NextPage =`
-    ).replace(
-      /export\s+default\s+[A-Za-z0-9_]+Page/g,
+    );
+    
+    // Fix export statements
+    fixedContent = fixedContent.replace(
+      /export\s+default\s+[A-Za-z0-9_-]+Page/g,
       `export default ${validComponentName}`
     );
     
-    fs.writeFileSync(filePath, fixedContent);
-    console.log(`✅ Fixed: ${filePath}`);
-    return true;
+    // Also fix any remaining invalid patterns
+    fixedContent = fixedContent.replace(
+      /const\s+[A-Za-z0-9_-]+:\s*NextPage\s*=/g,
+      `const ${validComponentName}: NextPage =`
+    );
+    
+    if (content !== fixedContent) {
+      fs.writeFileSync(filePath, fixedContent);
+      console.log(`✅ Fixed: ${filePath}`);
+      return true;
+    } else {
+      console.log(`ℹ️  No changes needed: ${filePath}`);
+      return false;
+    }
   } catch (error) {
     console.error(`❌ Error fixing ${filePath}:`, error.message);
     return false;
@@ -47,9 +64,9 @@ function fixAllProductPages() {
   }
   
   const files = fs.readdirSync(productsDir)
-    .filter(file => file.endsWith('.tsx') && file.includes('-'));
+    .filter(file => file.endsWith('.tsx'));
   
-  console.log(`🔧 Found ${files.length} files to fix...`);
+  console.log(`🔧 Found ${files.length} files to check...`);
   
   let fixedCount = 0;
   for (const file of files) {

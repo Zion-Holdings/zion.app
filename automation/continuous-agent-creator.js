@@ -1,5 +1,6 @@
 const fs = require('fs-extra');
 const path = require('path');
+const { createValidComponentName, createDisplayTitle } = require('./utils/component-name-helper');
 
 class ContinuousAgentCreator {
     constructor() {
@@ -324,11 +325,14 @@ class ContinuousAgentCreator {
     }
 
     generateAgentCode(agent) {
+        // Use utility function for consistent class naming
+        const agentClassName = createValidComponentName(agent.name).replace('Page', 'Agent');
+        
         return `
 const fs = require('fs-extra');
 const path = require('path');
 
-class ${agent.name.replace(/\s+/g, '')}Agent {
+class ${agentClassName} {
     constructor() {
         this.agentId = '${agent.id}';
         this.name = '${agent.name}';
@@ -474,11 +478,11 @@ class ${agent.name.replace(/\s+/g, '')}Agent {
     }
 }
 
-module.exports = ${agent.name.replace(/\s+/g, '')}Agent;
+module.exports = ${agentClassName};
 
 // Auto-run if called directly
 if (require.main === module) {
-    const agent = new ${agent.name.replace(/\s+/g, '')}Agent();
+    const agent = new ${agentClassName}();
     agent.startAgent()
         .then(() => {
             console.log(\`✅ \${agent.name} completed successfully\`);
@@ -611,11 +615,13 @@ if (require.main === module) {
     }
 
     generateSpecializedAgentCode(agent) {
+        const agentClassName = createValidComponentName(agent.name).replace('Page', 'Agent');
+        
         return `
 const fs = require('fs-extra');
 const path = require('path');
 
-class ${agent.name.replace(/\s+/g, '')}Agent {
+class ${agentClassName} {
     constructor() {
         this.agentId = '${agent.id}';
         this.name = '${agent.name}';
@@ -786,11 +792,11 @@ class ${agent.name.replace(/\s+/g, '')}Agent {
     }
 }
 
-module.exports = ${agent.name.replace(/\s+/g, '')}Agent;
+module.exports = ${agentClassName};
 
 // Auto-run if called directly
 if (require.main === module) {
-    const agent = new ${agent.name.replace(/\s+/g, '')}Agent();
+    const agent = new ${agentClassName}();
     agent.startAgent()
         .then(() => {
             console.log(\`✅ \${agent.name} completed successfully\`);
