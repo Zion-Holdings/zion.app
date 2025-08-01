@@ -96,6 +96,22 @@ const Home: NextPage = () => {
     },
     {
       id: 6,
+      type: 'ai-service-matcher',
+      title: 'AI Service Matcher',
+      subtitle: 'Find the Perfect Services with AI',
+      description: 'Tell us what you need, and our AI will find the perfect services and talents for your project. Get personalized recommendations in seconds.',
+      features: [
+        'AI-Powered Matching',
+        'Instant Results',
+        'Precision Matching',
+        'Budget Optimization'
+      ],
+      cta: 'Try AI Matcher',
+      ctaLink: '/ai-service-matcher',
+      bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-slate-900'
+    },
+    {
+      id: 7,
       type: 'chat-services',
       title: 'AI Chat Services',
       items: [
@@ -535,6 +551,44 @@ const Home: NextPage = () => {
                       <p className="text-gray-300 text-sm">{item.excerpt}</p>
                     </div>
                   </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        )
+
+      case 'ai-service-matcher':
+        return (
+          <div className="py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  {section.title}
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-4">
+                  {section.subtitle}
+                </p>
+                <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+                  {section.description}
+                </p>
+                
+                <Link href={section.ctaLink} className="inline-flex items-center bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  <span className="mr-2">🤖</span>
+                  {section.cta}
+                </Link>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {section.features.map((feature: string, index: number) => (
+                  <div key={index} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="text-2xl mb-3">
+                      {index === 0 && '🤖'}
+                      {index === 1 && '⚡'}
+                      {index === 2 && '🎯'}
+                      {index === 3 && '💰'}
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">{feature}</h3>
+                  </div>
                 ))}
               </div>
             </div>
