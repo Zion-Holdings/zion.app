@@ -351,7 +351,7 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        {/* Testimonials */}
+        {/* Testimonials Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -374,9 +374,9 @@ const Home: NextPage = () => {
                   <div className="text-gray-400 text-sm">CTO, TechFlow Inc.</div>
                 </div>
               </div>
-                             <p className="text-gray-300 mb-4">
-                 &ldquo;Zion revolutionized our AI talent acquisition. The matching algorithm found us the perfect machine learning specialist in just 48 hours. Incredible platform!&rdquo;
-               </p>
+              <p className="text-gray-300 mb-4">
+                "Zion revolutionized our AI talent acquisition. The matching algorithm found us the perfect machine learning specialist in just 48 hours. Incredible platform!"
+              </p>
               <div className="flex text-yellow-400">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -397,9 +397,9 @@ const Home: NextPage = () => {
                   <div className="text-gray-400 text-sm">AI Consultant</div>
                 </div>
               </div>
-                             <p className="text-gray-300 mb-4">
-                 &ldquo;As an independent AI consultant, Zion has been a game-changer. The platform connects me with high-quality clients and handles all the logistics seamlessly.&rdquo;
-               </p>
+              <p className="text-gray-300 mb-4">
+                "As an independent AI consultant, Zion has been a game-changer. The platform connects me with high-quality clients and handles all the logistics seamlessly."
+              </p>
               <div className="flex text-yellow-400">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -420,9 +420,9 @@ const Home: NextPage = () => {
                   <div className="text-gray-400 text-sm">VP Innovation, DataCorp</div>
                 </div>
               </div>
-                             <p className="text-gray-300 mb-4">
-                 &ldquo;The equipment marketplace on Zion is unmatched. We found cutting-edge AI infrastructure at competitive prices, and the verification process gave us complete confidence.&rdquo;
-               </p>
+              <p className="text-gray-300 mb-4">
+                "The equipment marketplace on Zion is unmatched. We found cutting-edge AI infrastructure at competitive prices, and the verification process gave us complete confidence."
+              </p>
               <div className="flex text-yellow-400">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
