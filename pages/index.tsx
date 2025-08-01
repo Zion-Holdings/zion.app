@@ -132,7 +132,7 @@ const Home: NextPage = () => {
   }, [baseSections])
 
   // Generate additional sections for infinite scroll
-  const generateAdditionalSections = () => {
+  const generateAdditionalSections = useCallback(() => {
     const additionalSections = []
     const sectionTypes = [
       {
@@ -203,7 +203,7 @@ const Home: NextPage = () => {
     }
 
     return additionalSections
-  }
+  }, [nextSectionId])
 
   // Load more sections when reaching the end
   const loadMoreSections = useCallback(async () => {
@@ -219,7 +219,7 @@ const Home: NextPage = () => {
     setNextSectionId(prev => prev + newSections.length)
     
     setIsLoading(false)
-  }, [isLoading, nextSectionId, generateAdditionalSections])
+  }, [isLoading, generateAdditionalSections])
 
   // Intersection Observer for infinite scroll
   useEffect(() => {
