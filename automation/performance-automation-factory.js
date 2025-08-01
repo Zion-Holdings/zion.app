@@ -33,55 +33,55 @@ class PerformanceAutomationFactory {
 
   getAgentTypes() {
     return {
-      'speed-optimization': {
-        name: 'Speed Optimization Agent',
-        description: 'Optimizes application speed and response times',
-        capabilities: ['performance monitoring', 'speed analysis', 'optimization recommendations']
+      'performance-monitoring': {
+        name: 'Performance Monitoring Agent',
+        description: 'Application and system performance monitoring',
+        capabilities: ['performance monitoring', 'metrics collection', 'alerting']
       },
-      'memory-optimization': {
-        name: 'Memory Optimization Agent',
-        description: 'Optimizes memory usage and prevents memory leaks',
-        capabilities: ['memory monitoring', 'leak detection', 'memory optimization']
+      'optimization-automation': {
+        name: 'Optimization Automation Agent',
+        description: 'Automated performance optimization and tuning',
+        capabilities: ['optimization', 'tuning', 'performance improvement']
       },
-      'cpu-optimization': {
-        name: 'CPU Optimization Agent',
-        description: 'Optimizes CPU usage and processing efficiency',
-        capabilities: ['cpu monitoring', 'processing analysis', 'cpu optimization']
+      'load-testing': {
+        name: 'Load Testing Agent',
+        description: 'Automated load testing and stress testing',
+        capabilities: ['load testing', 'stress testing', 'capacity planning']
       },
-      'network-optimization': {
-        name: 'Network Optimization Agent',
-        description: 'Optimizes network performance and connectivity',
-        capabilities: ['network monitoring', 'latency analysis', 'bandwidth optimization']
-      },
-      'database-optimization': {
-        name: 'Database Optimization Agent',
-        description: 'Optimizes database performance and queries',
-        capabilities: ['query optimization', 'index analysis', 'database monitoring']
-      },
-      'cache-optimization': {
-        name: 'Cache Optimization Agent',
-        description: 'Optimizes caching strategies and performance',
-        capabilities: ['cache analysis', 'hit rate monitoring', 'cache optimization']
-      },
-      'load-balancing': {
-        name: 'Load Balancing Agent',
-        description: 'Manages load balancing and distribution',
-        capabilities: ['load monitoring', 'distribution analysis', 'balancing optimization']
-      },
-      'scaling-optimization': {
-        name: 'Scaling Optimization Agent',
-        description: 'Optimizes scaling strategies and resource allocation',
-        capabilities: ['scaling analysis', 'resource monitoring', 'scaling optimization']
+      'resource-monitoring': {
+        name: 'Resource Monitoring Agent',
+        description: 'Resource utilization and capacity monitoring',
+        capabilities: ['resource monitoring', 'capacity planning', 'utilization']
       },
       'bottleneck-detection': {
         name: 'Bottleneck Detection Agent',
-        description: 'Detects and resolves performance bottlenecks',
-        capabilities: ['bottleneck analysis', 'issue detection', 'resolution recommendations']
+        description: 'Performance bottleneck identification and analysis',
+        capabilities: ['bottleneck detection', 'performance analysis', 'optimization']
       },
-      'performance-testing': {
-        name: 'Performance Testing Agent',
-        description: 'Conducts comprehensive performance testing',
-        capabilities: ['load testing', 'stress testing', 'performance validation']
+      'scalability-testing': {
+        name: 'Scalability Testing Agent',
+        description: 'Scalability testing and horizontal scaling analysis',
+        capabilities: ['scalability testing', 'horizontal scaling', 'capacity testing']
+      },
+      'performance-analytics': {
+        name: 'Performance Analytics Agent',
+        description: 'Performance analytics and trend analysis',
+        capabilities: ['performance analytics', 'trend analysis', 'insights']
+      },
+      'caching-optimization': {
+        name: 'Caching Optimization Agent',
+        description: 'Caching strategy optimization and management',
+        capabilities: ['caching optimization', 'cache management', 'performance']
+      },
+      'database-optimization': {
+        name: 'Database Optimization Agent',
+        description: 'Database performance optimization and tuning',
+        capabilities: ['database optimization', 'query optimization', 'indexing']
+      },
+      'frontend-optimization': {
+        name: 'Frontend Optimization Agent',
+        description: 'Frontend performance optimization and optimization',
+        capabilities: ['frontend optimization', 'bundle optimization', 'rendering']
       }
     };
   }
@@ -219,7 +219,7 @@ class ${this.getClassName(agentType)} {
       {
         type: 'performance',
         priority: 'medium',
-        message: 'Performance optimization opportunity detected',
+        message: 'Performance improvement opportunity detected',
         suggestion: 'Implement performance enhancement measures'
       }
     ];
