@@ -487,6 +487,112 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
+
+        {/* How It Works Section */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              How It Works
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Get started in minutes with our simple 4-step process
+            </p>
+          </div>
+
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-to-b from-purple-500 to-pink-500"></div>
+            
+            <div className="space-y-12">
+              {/* Step 1: Post */}
+              <div className="relative flex items-center">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center border-4 border-slate-900">
+                  <span className="text-white font-bold text-lg">1</span>
+                </div>
+                <div className="w-5/12 pr-8 text-right">
+                  <h3 className="text-2xl font-bold text-white mb-2">Post</h3>
+                  <p className="text-gray-300">
+                    List your services, talents, equipment, or innovation needs on our AI-powered platform.
+                  </p>
+                </div>
+              </div>
+
+              {/* Step 2: Match */}
+              <div className="relative flex items-center">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center border-4 border-slate-900">
+                  <span className="text-white font-bold text-lg">2</span>
+                </div>
+                <div className="w-5/12 pl-8">
+                  <h3 className="text-2xl font-bold text-white mb-2">Match</h3>
+                  <p className="text-gray-300">
+                    Our AI algorithms automatically match you with the perfect buyers or sellers based on your requirements.
+                  </p>
+                </div>
+              </div>
+
+              {/* Step 3: Hire/Buy */}
+              <div className="relative flex items-center">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center border-4 border-slate-900">
+                  <span className="text-white font-bold text-lg">3</span>
+                </div>
+                <div className="w-5/12 pr-8 text-right">
+                  <h3 className="text-2xl font-bold text-white mb-2">Hire/Buy</h3>
+                  <p className="text-gray-300">
+                    Connect directly with matched parties and complete transactions securely through our platform.
+                  </p>
+                </div>
+              </div>
+
+              {/* Step 4: Done */}
+              <div className="relative flex items-center">
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-br from-pink-500 to-red-600 rounded-full flex items-center justify-center border-4 border-slate-900">
+                  <span className="text-white font-bold text-lg">4</span>
+                </div>
+                <div className="w-5/12 pl-8">
+                  <h3 className="text-2xl font-bold text-white mb-2">Done</h3>
+                  <p className="text-gray-300">
+                    Complete your transaction and leave reviews. Our AI learns from each interaction to improve future matches.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Waitlist Section */}
+        <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 py-24 border-t border-white/10">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Join the Waitlist
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              Be among the first to experience the future of AI-powered marketplace. Sign up for early access and exclusive benefits.
+            </p>
+            
+            <form onSubmit={handleWaitlistSubmit} className="max-w-md mx-auto">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email address"
+                  className="flex-1 px-6 py-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+                  required
+                />
+                <button
+                  type="submit"
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
+                >
+                  Join Waitlist
+                </button>
+              </div>
+            </form>
+            
+            <p className="text-sm text-gray-400 mt-4">
+              No spam, ever. Unsubscribe at any time.
+            </p>
+          </div>
+        </div>
       </main>
 
       {/* Footer */}
@@ -498,22 +604,22 @@ const Home: NextPage = () => {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
               </h3>
               <p className="text-gray-400">
-                The premier AI-powered marketplace connecting businesses with top-tier services, talents, and innovative solutions.
+                The first free AI-powered marketplace for high-tech products, on-demand IT services, AI talents, innovation, and equipment.
               </p>
             </div>
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Services</h4>
+              <h4 className="text-lg font-semibold text-white mb-4">Marketplace</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><Link href="/it-services" className="hover:text-white transition-colors">IT Services</Link></li>
-                <li><Link href="/category/ai-talents" className="hover:text-white transition-colors">AI Talents</Link></li>
-                <li><Link href="/category/equipment" className="hover:text-white transition-colors">Equipment</Link></li>
-                <li><Link href="/category/innovation" className="hover:text-white transition-colors">Innovation</Link></li>
+                <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
+                <li><Link href="/talents" className="hover:text-white transition-colors">Talents</Link></li>
+                <li><Link href="/equipment" className="hover:text-white transition-colors">Equipment</Link></li>
+                <li><Link href="/innovation" className="hover:text-white transition-colors">Innovation</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-lg font-semibold text-white mb-4">Company</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><Link href="/service-description-generator" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Service Generator</Link><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
+                <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
                 <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
                 <li><Link href="/careers" className="hover:text-white transition-colors">Careers</Link></li>
                 <li><Link href="/press" className="hover:text-white transition-colors">Press</Link></li>
@@ -530,11 +636,12 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="border-t border-white/10 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Zion. All rights reserved. | AI-Powered Services</p>
+            <p>&copy; 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</p>
           </div>
         </div>
       </footer>
     </div>
   )
 }
+
 export default Home
