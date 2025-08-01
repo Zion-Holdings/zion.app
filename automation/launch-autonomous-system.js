@@ -5,7 +5,7 @@ const path = require('path');
 const { spawn } = require('child_process');
 const chalk = require('chalk');
 const { default: ora } = require('ora');
-const inquirer = require('inquirer');
+const { default: inquirer } = require('inquirer');
 
 class AutonomousSystemLauncher {
   constructor() {
