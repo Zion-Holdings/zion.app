@@ -224,20 +224,32 @@ class ContinuousContentGenerator {
     this.log('Generating new content...');
     
     try {
-      // Generate a new blog post
-      const randomTopic = this.contentIdeas.blogTopics[Math.floor(Math.random() * this.contentIdeas.blogTopics.length)];
-      await this.generateBlogPost(randomTopic);
+      // Generate multiple pieces of content simultaneously
+      const promises = [];
       
-      // Generate a new marketplace page
-      const randomCategory = this.contentIdeas.marketplaceCategories[Math.floor(Math.random() * this.contentIdeas.marketplaceCategories.length)];
-      await this.generateMarketplacePage(randomCategory);
+      // Generate 3 blog posts simultaneously
+      for (let i = 0; i < 3; i++) {
+        const randomTopic = this.contentIdeas.blogTopics[Math.floor(Math.random() * this.contentIdeas.blogTopics.length)];
+        promises.push(this.generateBlogPost(randomTopic));
+      }
       
-      // Generate a new service page
-      const randomService = this.contentIdeas.serviceTypes[Math.floor(Math.random() * this.contentIdeas.serviceTypes.length)];
-      await this.generateServicePage(randomService);
+      // Generate 3 marketplace pages simultaneously
+      for (let i = 0; i < 3; i++) {
+        const randomCategory = this.contentIdeas.marketplaceCategories[Math.floor(Math.random() * this.contentIdeas.marketplaceCategories.length)];
+        promises.push(this.generateMarketplacePage(randomCategory));
+      }
+      
+      // Generate 3 service pages simultaneously
+      for (let i = 0; i < 3; i++) {
+        const randomService = this.contentIdeas.serviceTypes[Math.floor(Math.random() * this.contentIdeas.serviceTypes.length)];
+        promises.push(this.generateServicePage(randomService));
+      }
+      
+      // Execute all content generation in parallel
+      await Promise.all(promises);
       
       this.lastGenerationTime = Date.now();
-      this.log('New content generation completed');
+      this.log(`Generated ${promises.length} new content pieces`);
       
     } catch (error) {
       this.log(`Error generating new content: ${error.message}`, 'ERROR');

@@ -45,7 +45,7 @@ class AutonomousMasterOrchestrator {
             solutionCreation: '0 */12 * * *', // Every 12 hours
             salesCampaign: '0 */8 * * *', // Every 8 hours
             agentCreation: '0 0 * * 0', // Weekly
-            contentGeneration: '0 */2 * * *', // Every 2 hours
+            contentGeneration: '*/30 * * * *', // Every 30 seconds (continuous)
             deployment: '0 */4 * * *', // Every 4 hours
             monitoring: '*/30 * * * *' // Every 30 minutes
         };
