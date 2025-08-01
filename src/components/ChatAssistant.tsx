@@ -1,13 +1,19 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { createClient } from '@supabase/supabase-js';
+import Link from 'next/link';
 
 interface Message {
   id: string;
   content: string;
   role: 'user' | 'assistant';
   timestamp: Date;
+  type?: 'text' | 'quick-actions' | 'recommendation';
+  actions?: Array<{
+    label: string;
+    action: string;
+    link?: string;
+  }>;
 }
 
 interface ChatAssistantProps {
@@ -19,9 +25,16 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      content: "Hello! I'm your Zion AI Marketplace assistant. I can help you explore our AI tools, answer questions about features, and guide you through the platform. How can I assist you today?",
+      content: "Hello! I'm your Zion AI Marketplace assistant. I can help you explore our AI tools, find the perfect services, and guide you through our marketplace. What can I help you with today?",
       role: 'assistant',
-      timestamp: new Date()
+      timestamp: new Date(),
+      type: 'text',
+      actions: [
+        { label: 'Find IT Services', action: 'Show me IT services', link: '/services' },
+        { label: 'Browse AI Talent', action: 'Show me AI experts', link: '/talents' },
+        { label: 'Get a Quote', action: 'I need a quote for a project', link: '/quote-request' },
+        { label: 'Explore Equipment', action: 'Show me computing equipment', link: '/equipment' }
+      ]
     }
   ]);
   const [inputValue, setInputValue] = useState('');
@@ -43,6 +56,64 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
     }
   }, [isOpen]);
 
+  const handleQuickAction = async (action: string) => {
+    const userMessage: Message = {
+      id: Date.now().toString(),
+      content: action,
+      role: 'user',
+      timestamp: new Date(),
+      type: 'text'
+    };
+
+    setMessages(prev => [...prev, userMessage]);
+    setInputValue('');
+    setIsLoading(true);
+
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: action,
+          conversationHistory: messages.map(msg => ({
+            role: msg.role,
+            content: msg.content
+          }))
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to get response');
+      }
+
+      const data = await response.json();
+      
+      const assistantMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        content: data.response,
+        role: 'assistant',
+        timestamp: new Date(),
+        type: 'text'
+      };
+
+      setMessages(prev => [...prev, assistantMessage]);
+    } catch (error) {
+      console.error('Error sending message:', error);
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        content: "I'm sorry, I'm having trouble connecting right now. Please try again in a moment.",
+        role: 'assistant',
+        timestamp: new Date(),
+        type: 'text'
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const handleSendMessage = async () => {
     if (!inputValue.trim() || isLoading) return;
 
@@ -50,7 +121,8 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
       id: Date.now().toString(),
       content: inputValue.trim(),
       role: 'user',
-      timestamp: new Date()
+      timestamp: new Date(),
+      type: 'text'
     };
 
     setMessages(prev => [...prev, userMessage]);
@@ -82,7 +154,8 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
         id: (Date.now() + 1).toString(),
         content: data.response,
         role: 'assistant',
-        timestamp: new Date()
+        timestamp: new Date(),
+        type: 'text'
       };
 
       setMessages(prev => [...prev, assistantMessage]);
@@ -92,7 +165,8 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
         id: (Date.now() + 1).toString(),
         content: "I'm sorry, I'm having trouble connecting right now. Please try again in a moment.",
         role: 'assistant',
-        timestamp: new Date()
+        timestamp: new Date(),
+        type: 'text'
       };
       setMessages(prev => [...prev, errorMessage]);
     } finally {
@@ -111,12 +185,51 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   };
 
+  const renderMessage = (message: Message) => {
+    return (
+      <div
+        key={message.id}
+        className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+      >
+        <div
+          className={`max-w-[85%] md:max-w-xs lg:max-w-md px-3 py-2 rounded-lg ${
+            message.role === 'user'
+              ? 'bg-blue-600 text-white'
+              : 'bg-white text-gray-800 border border-gray-200'
+          }`}
+        >
+          <p className="text-sm leading-relaxed">{message.content}</p>
+          
+          {message.actions && message.role === 'assistant' && (
+            <div className="mt-3 space-y-2">
+              {message.actions.map((action, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleQuickAction(action.action)}
+                  className="block w-full text-left px-3 py-2 text-xs bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-md transition-colors"
+                >
+                  {action.label}
+                </button>
+              ))}
+            </div>
+          )}
+          
+          <p className={`text-xs mt-1 ${
+            message.role === 'user' ? 'text-blue-100' : 'text-gray-500'
+          }`}>
+            {formatTime(message.timestamp)}
+          </p>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <>
       {/* Chat Toggle Button */}
       <button
         onClick={onToggle}
-        className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-3 md:p-4 shadow-lg transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full p-3 md:p-4 shadow-lg transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         aria-label="Toggle chat assistant"
       >
         {isOpen ? (
@@ -134,9 +247,9 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
       {isOpen && (
         <div className="fixed bottom-20 right-4 md:bottom-24 md:right-6 z-40 w-[calc(100vw-2rem)] md:w-96 h-[calc(100vh-8rem)] md:h-[500px] bg-white rounded-lg shadow-xl border border-gray-200 flex flex-col">
           {/* Header */}
-          <div className="bg-blue-600 text-white px-4 py-3 rounded-t-lg flex items-center justify-between">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-3 rounded-t-lg flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <div className="w-6 h-6 md:w-8 md:h-8 bg-blue-500 rounded-full flex items-center justify-center">
+              <div className="w-6 h-6 md:w-8 md:h-8 bg-white/20 rounded-full flex items-center justify-center">
                 <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
@@ -159,27 +272,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
 
           {/* Messages Container */}
           <div className="flex-1 overflow-y-auto p-3 md:p-4 space-y-3 md:space-y-4 bg-gray-50">
-            {messages.map((message) => (
-              <div
-                key={message.id}
-                className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
-              >
-                <div
-                  className={`max-w-[85%] md:max-w-xs lg:max-w-md px-3 py-2 rounded-lg ${
-                    message.role === 'user'
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-white text-gray-800 border border-gray-200'
-                  }`}
-                >
-                  <p className="text-sm leading-relaxed">{message.content}</p>
-                  <p className={`text-xs mt-1 ${
-                    message.role === 'user' ? 'text-blue-100' : 'text-gray-500'
-                  }`}>
-                    {formatTime(message.timestamp)}
-                  </p>
-                </div>
-              </div>
-            ))}
+            {messages.map(renderMessage)}
             
             {isLoading && (
               <div className="flex justify-start">
@@ -205,14 +298,14 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Type your message..."
+                placeholder="Ask me about services, talents, or equipment..."
                 className="flex-1 px-3 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 disabled={isLoading}
               />
               <button
                 onClick={handleSendMessage}
                 disabled={!inputValue.trim() || isLoading}
-                className="px-3 py-2 md:px-4 md:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+                className="px-3 py-2 md:px-4 md:py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
                 aria-label="Send message"
               >
                 <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
