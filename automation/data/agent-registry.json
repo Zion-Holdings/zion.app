@@ -24,7 +24,7 @@
       "plagiarismCheck": true
     },
     "createdAt": "2025-08-01T11:58:53.987Z",
-    "lastActive": "2025-08-01T13:30:30.506Z",
+    "lastActive": "2025-08-01T13:30:58.266Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -2853,21 +2853,6 @@
     },
     "logs": [
       {
-        "timestamp": "2025-08-01T13:26:50.413Z",
-        "type": "stderr",
-        "message": "Failed to analyze competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T13:26:50.413Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 147ms\nPerformance: SUCCESS in 147ms"
-      },
-      {
-        "timestamp": "2025-08-01T13:26:57.177Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 16914ms\nPerformance: SUCCESS in 16914ms"
-      },
-      {
         "timestamp": "2025-08-01T13:27:00.265Z",
         "type": "stdout",
         "message": "🔍 Processing trend-detection task..."
@@ -3351,6 +3336,21 @@
         "timestamp": "2025-08-01T13:30:40.549Z",
         "type": "stdout",
         "message": "✅ Task completed in 263ms\nPerformance: SUCCESS in 263ms"
+      },
+      {
+        "timestamp": "2025-08-01T13:30:43.042Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 12763ms"
+      },
+      {
+        "timestamp": "2025-08-01T13:30:43.042Z",
+        "type": "stdout",
+        "message": "Performance: SUCCESS in 12763ms"
+      },
+      {
+        "timestamp": "2025-08-01T13:30:50.278Z",
+        "type": "stdout",
+        "message": "🔍 Processing market-research task...\n📊 Performing market research: artificial intelligence trends 2024"
       }
     ],
     "health": {
@@ -11124,7 +11124,7 @@
       "_events": {},
       "_eventsCount": 2,
       "_closesNeeded": 3,
-      "_closesGot": 2,
+      "_closesGot": 3,
       "connected": false,
       "signalCode": null,
       "exitCode": 1,
