@@ -2,7 +2,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useAuth } from '../../src/contexts/AuthContext'
 
@@ -10,9 +10,21 @@ const Login: NextPage = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
   const { signIn, user } = useAuth()
   const router = useRouter()
+
+  // Handle URL parameters for messages
+  useEffect(() => {
+    const { message: urlMessage, error: urlError } = router.query
+    if (urlMessage) {
+      setMessage(urlMessage as string)
+    }
+    if (urlError) {
+      setError(urlError as string)
+    }
+  }, [router.query])
 
   // Redirect if already logged in
   if (user) {
@@ -24,6 +36,7 @@ const Login: NextPage = () => {
     e.preventDefault()
     setLoading(true)
     setError('')
+    setMessage('')
 
     try {
       const { error } = await signIn(email, password)
@@ -60,6 +73,12 @@ const Login: NextPage = () => {
           {error && (
             <div className="mb-4 p-3 bg-red-500/10 border border-red-500/20 rounded-lg">
               <p className="text-red-400 text-sm">{error}</p>
+            </div>
+          )}
+
+          {message && (
+            <div className="mb-4 p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
+              <p className="text-green-400 text-sm">{message}</p>
             </div>
           )}
 
@@ -107,7 +126,7 @@ const Login: NextPage = () => {
 
           <div className="mt-6 text-center">
             <p className="text-gray-300">
-              Don&apos;t have an account?{' '}
+              Don't have an account?{' '}
               <Link href="/auth/signup" className="text-purple-400 hover:text-purple-300">
                 Sign up
               </Link>
