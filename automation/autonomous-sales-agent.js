@@ -485,7 +485,7 @@ The AI Solutions Team`
 
     generatePostingSchedule(campaign) {
         const schedule = [];
-        const posts = campaign.content.socialMedia.posts;
+        const posts = campaign.content?.socialMedia?.posts || [];
         
         posts.forEach((post, index) => {
             const day = Math.floor(index / 2) + 1;
