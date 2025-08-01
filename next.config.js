@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Configure for Netlify deployment
-  output: 'standalone',
   trailingSlash: true,
   images: {
     unoptimized: true
