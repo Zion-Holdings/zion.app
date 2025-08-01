@@ -422,7 +422,9 @@ class ContentGeneratorAgent {
       fs.mkdirSync(contentDir, { recursive: true });
     }
     
-    const filePath = path.join(contentDir, `${name}.json`);
+    // Sanitize the filename to avoid path issues
+    const sanitizedName = name.replace(/[^a-zA-Z0-9-]/g, '-').toLowerCase();
+    const filePath = path.join(contentDir, `${sanitizedName}.json`);
     fs.writeFileSync(filePath, JSON.stringify(content, null, 2));
     
     this.generatedContent.push({
