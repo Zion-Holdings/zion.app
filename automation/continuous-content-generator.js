@@ -27,6 +27,7 @@ class ContinuousContentGenerator {
     
     this.contentIdeas = this.loadContentIdeas();
     this.lastGenerationTime = Date.now();
+    this.isRunning = false; // Flag to control continuous generation
   }
 
   ensureLogDirectory() {
@@ -133,12 +134,30 @@ class ContinuousContentGenerator {
     // Generate initial content
     await this.generateInitialContent();
     
-    // Set up continuous generation loop
-    setInterval(async () => {
-      await this.generateNewContent();
-    }, 300000); // Generate new content every 5 minutes
+    // Start continuous generation loop - run as fast as possible
+    this.continuousGenerationLoop();
     
     this.log('Continuous content generation started');
+  }
+
+  async continuousGenerationLoop() {
+    this.log('Starting continuous generation loop...');
+    
+    while (this.isRunning) {
+      try {
+        await this.generateNewContent();
+        
+        // Minimal delay to prevent overwhelming the system
+        await new Promise(resolve => setTimeout(resolve, 1000)); // 1 second delay
+        
+      } catch (error) {
+        this.log(`Error in continuous generation loop: ${error.message}`, 'ERROR');
+        this.analytics.errors++;
+        
+        // Wait a bit longer on error before retrying
+        await new Promise(resolve => setTimeout(resolve, 5000)); // 5 second delay on error
+      }
+    }
   }
 
   async startContentGeneration() {
@@ -148,6 +167,10 @@ class ContinuousContentGenerator {
       // Generate initial content
       await this.generateInitialContent();
       
+      // Start continuous generation in background
+      this.isRunning = true;
+      this.continuousGenerationLoop();
+      
       // Return the generated content results
       const results = {
         blogPosts: this.analytics.blogPostsCreated,
@@ -156,7 +179,8 @@ class ContinuousContentGenerator {
         components: this.analytics.componentsCreated,
         errors: this.analytics.errors,
         startTime: this.analytics.startTime,
-        lastGenerationTime: this.lastGenerationTime
+        lastGenerationTime: this.lastGenerationTime,
+        isContinuous: true
       };
       
       // Save analytics
