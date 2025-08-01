@@ -24,7 +24,7 @@
       "plagiarismCheck": true
     },
     "createdAt": "2025-08-01T11:58:53.987Z",
-    "lastActive": "2025-08-01T20:56:59.923Z",
+    "lastActive": "2025-08-01T20:57:27.760Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -8200,7 +8200,7 @@
       "retryAttempts": 3
     },
     "createdAt": "2025-08-01T12:24:28.334Z",
-    "lastActive": "2025-08-01T20:56:27.293Z",
+    "lastActive": "2025-08-01T20:57:27.286Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -8208,51 +8208,6 @@
       "uptime": 0
     },
     "logs": [
-      {
-        "timestamp": "2025-08-01T20:52:11.510Z",
-        "type": "stderr",
-        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T20:52:11.510Z",
-        "type": "stderr",
-        "message": "Failed to analyze competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T20:52:11.856Z",
-        "type": "stderr",
-        "message": "Failed to scrape competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T20:52:11.856Z",
-        "type": "stderr",
-        "message": "Failed to analyze competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T20:52:11.856Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 610ms\nPerformance: SUCCESS in 610ms"
-      },
-      {
-        "timestamp": "2025-08-01T20:52:13.506Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 22275ms\nPerformance: SUCCESS in 22275ms"
-      },
-      {
-        "timestamp": "2025-08-01T20:52:21.245Z",
-        "type": "stdout",
-        "message": "🔍 Processing competitive-analysis task..."
-      },
-      {
-        "timestamp": "2025-08-01T20:52:21.245Z",
-        "type": "stdout",
-        "message": "🏢 Performing competitive analysis for 2 competitors"
-      },
-      {
-        "timestamp": "2025-08-01T20:52:22.007Z",
-        "type": "stderr",
-        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL\nFailed to analyze competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
       {
         "timestamp": "2025-08-01T20:52:23.088Z",
         "type": "stderr",
@@ -8707,12 +8662,57 @@
         "timestamp": "2025-08-01T20:57:01.997Z",
         "type": "stdout",
         "message": "✅ Task completed in 656ms\nPerformance: SUCCESS in 656ms"
+      },
+      {
+        "timestamp": "2025-08-01T20:57:10.524Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 19249ms\nPerformance: SUCCESS in 19249ms"
+      },
+      {
+        "timestamp": "2025-08-01T20:57:11.275Z",
+        "type": "stdout",
+        "message": "🔍 Processing competitive-analysis task...\n🏢 Performing competitive analysis for 2 competitors"
+      },
+      {
+        "timestamp": "2025-08-01T20:57:11.619Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL\nFailed to analyze competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T20:57:11.865Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL\nFailed to analyze competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T20:57:11.866Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 591ms\nPerformance: SUCCESS in 591ms"
+      },
+      {
+        "timestamp": "2025-08-01T20:57:21.274Z",
+        "type": "stdout",
+        "message": "🔍 Processing trend-detection task..."
+      },
+      {
+        "timestamp": "2025-08-01T20:57:21.274Z",
+        "type": "stdout",
+        "message": "📈 Detecting trends for keywords: AI, machine learning, automation"
+      },
+      {
+        "timestamp": "2025-08-01T20:57:21.274Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 0ms"
+      },
+      {
+        "timestamp": "2025-08-01T20:57:21.274Z",
+        "type": "stdout",
+        "message": "Performance: SUCCESS in 0ms"
       }
     ],
     "health": {
       "status": "healthy",
-      "lastCheck": "2025-08-01T20:56:27.293Z",
-      "uptime": 60036,
+      "lastCheck": "2025-08-01T20:57:27.286Z",
+      "uptime": 59993,
       "memoryUsage": 0,
       "cpuUsage": 0,
       "errors": []
@@ -43260,7 +43260,7 @@
       "_events": {},
       "_eventsCount": 2,
       "_closesNeeded": 3,
-      "_closesGot": 2,
+      "_closesGot": 3,
       "connected": false,
       "signalCode": null,
       "exitCode": 1,
