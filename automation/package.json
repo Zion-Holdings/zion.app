@@ -1,77 +1,56 @@
 {
-  "name": "autonomous-agents-system",
+  "name": "autonomous-agent-system",
   "version": "1.0.0",
-  "description": "Comprehensive autonomous agent system for continuous website improvement and content generation",
-  "main": "autonomous-master-orchestrator.js",
+  "description": "Autonomous agent system with distributed workload capabilities",
+  "main": "start-autonomous-system.js",
   "scripts": {
-    "start": "node autonomous-master-orchestrator.js",
-    "start:agents": "bash comprehensive-cron-system.sh",
-    "start:analyzer": "node enhanced-website-analyzer-agent.js",
-    "start:generator": "node enhanced-content-generator-agent.js",
-    "start:fixer": "node error-fixer-agent.js",
-    "start:improvement": "node autonomous-improvement-agent.js",
-    "start:integrator": "node content-integration-agent.js",
+    "start": "node start-autonomous-system.js",
+    "start:dev": "node start-autonomous-system.js --dev",
+    "status": "node start-autonomous-system.js --status",
     "test": "node test-automation.js",
-    "health": "node health-check.js",
-    "backup": "node backup-system.js",
     "monitor": "node monitor-automation.js",
-    "install:all": "npm install && npm install -g pm2",
-    "setup:cron": "bash setup-cron-jobs.sh",
-    "logs": "tail -f logs/*.log",
-    "status": "ps aux | grep -E 'node.*agent' | grep -v grep",
-    "clean": "rm -rf logs/*.log pids/*.pid generated-content/* analysis-results/*",
-    "restart": "bash comprehensive-cron-system.sh restart"
+    "health": "node health-check.js",
+    "setup": "bash setup-cron-jobs.sh",
+    "backup": "node backup-system.js",
+    "cleanup": "node cleanup-system.js"
+  },
+  "dependencies": {
+    "node-cron": "^3.0.3",
+    "fs-extra": "^11.2.0",
+    "chalk": "^4.1.2",
+    "commander": "^11.1.0",
+    "winston": "^3.11.0",
+    "moment": "^2.29.4",
+    "lodash": "^4.17.21",
+    "uuid": "^9.0.1",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "jest": "^29.7.0",
+    "eslint": "^8.55.0"
   },
   "keywords": [
     "autonomous",
     "agents",
     "automation",
-    "ai",
-    "content-generation",
-    "website-analysis",
-    "continuous-improvement"
+    "distributed",
+    "workload",
+    "orchestration",
+    "cron",
+    "monitoring"
   ],
-  "author": "Zion Tech Group",
+  "author": "Autonomous System",
   "license": "MIT",
-  "dependencies": {
-    "axios": "^1.6.0",
-    "puppeteer": "^21.5.0",
-    "cheerio": "^1.0.0-rc.12",
-    "@google/generative-ai": "^0.24.1",
-    "openai": "^5.11.0",
-    "fs-extra": "^11.1.1",
-    "node-cron": "^3.0.3",
-    "winston": "^3.11.0",
-    "commander": "^11.1.0",
-    "chalk": "^5.3.0",
-    "ora": "^7.0.1",
-    "inquirer": "^9.2.12",
-    "yaml": "^2.3.4",
-    "js-yaml": "^4.1.0",
-    "glob": "^10.3.10",
-    "minimist": "^1.2.8",
-    "dotenv": "^16.3.1",
-    "cross-env": "^7.0.3",
-    "nodemon": "^3.0.2",
-    "pm2": "^5.3.0"
-  },
-  "devDependencies": {
-    "@types/node": "^20.10.0",
-    "eslint": "^8.55.0",
-    "prettier": "^3.1.0",
-    "jest": "^29.7.0",
-    "supertest": "^6.3.3"
-  },
   "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=8.0.0"
+    "node": ">=16.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ziontechgroup/autonomous-agents"
+    "url": "https://github.com/your-repo/autonomous-agent-system.git"
   },
   "bugs": {
-    "url": "https://github.com/ziontechgroup/autonomous-agents/issues"
+    "url": "https://github.com/your-repo/autonomous-agent-system/issues"
   },
-  "homepage": "https://github.com/ziontechgroup/autonomous-agents#readme"
+  "homepage": "https://github.com/your-repo/autonomous-agent-system#readme"
 } 
