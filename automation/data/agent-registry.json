@@ -24,7 +24,7 @@
       "plagiarismCheck": true
     },
     "createdAt": "2025-08-01T11:58:53.987Z",
-    "lastActive": "2025-08-01T14:29:30.462Z",
+    "lastActive": "2025-08-01T14:29:58.303Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -3561,56 +3561,6 @@
     },
     "logs": [
       {
-        "timestamp": "2025-08-01T14:25:40.414Z",
-        "type": "stdout",
-        "message": "🔍 Processing market-research task..."
-      },
-      {
-        "timestamp": "2025-08-01T14:25:40.414Z",
-        "type": "stdout",
-        "message": "📊 Performing market research: artificial intelligence trends 2024"
-      },
-      {
-        "timestamp": "2025-08-01T14:25:46.250Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 15835ms"
-      },
-      {
-        "timestamp": "2025-08-01T14:25:46.250Z",
-        "type": "stdout",
-        "message": "Performance: SUCCESS in 15835ms"
-      },
-      {
-        "timestamp": "2025-08-01T14:25:50.413Z",
-        "type": "stdout",
-        "message": "🔍 Processing market-research task..."
-      },
-      {
-        "timestamp": "2025-08-01T14:25:50.413Z",
-        "type": "stdout",
-        "message": "📊 Performing market research: artificial intelligence trends 2024"
-      },
-      {
-        "timestamp": "2025-08-01T14:25:55.876Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 15462ms"
-      },
-      {
-        "timestamp": "2025-08-01T14:25:55.876Z",
-        "type": "stdout",
-        "message": "Performance: SUCCESS in 15462ms"
-      },
-      {
-        "timestamp": "2025-08-01T14:26:00.413Z",
-        "type": "stdout",
-        "message": "🔍 Processing trend-detection task..."
-      },
-      {
-        "timestamp": "2025-08-01T14:26:00.413Z",
-        "type": "stdout",
-        "message": "📈 Detecting trends for keywords: AI, machine learning, automation"
-      },
-      {
         "timestamp": "2025-08-01T14:26:00.413Z",
         "type": "stdout",
         "message": "✅ Task completed in 0ms"
@@ -4059,6 +4009,56 @@
         "timestamp": "2025-08-01T14:29:40.414Z",
         "type": "stdout",
         "message": "📊 Performing market research: artificial intelligence trends 2024"
+      },
+      {
+        "timestamp": "2025-08-01T14:29:46.942Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 16527ms\nPerformance: SUCCESS in 16527ms"
+      },
+      {
+        "timestamp": "2025-08-01T14:29:50.414Z",
+        "type": "stdout",
+        "message": "🔍 Processing competitive-analysis task..."
+      },
+      {
+        "timestamp": "2025-08-01T14:29:50.414Z",
+        "type": "stdout",
+        "message": "🏢 Performing competitive analysis for 2 competitors"
+      },
+      {
+        "timestamp": "2025-08-01T14:29:50.560Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T14:29:50.560Z",
+        "type": "stderr",
+        "message": "Failed to analyze competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T14:29:50.660Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T14:29:50.660Z",
+        "type": "stderr",
+        "message": "Failed to analyze competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T14:29:50.660Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 246ms\nPerformance: SUCCESS in 246ms"
+      },
+      {
+        "timestamp": "2025-08-01T14:29:57.042Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 16628ms"
+      },
+      {
+        "timestamp": "2025-08-01T14:29:57.042Z",
+        "type": "stdout",
+        "message": "Performance: SUCCESS in 16628ms"
       }
     ],
     "health": {
@@ -15372,7 +15372,7 @@
       "_events": {},
       "_eventsCount": 2,
       "_closesNeeded": 3,
-      "_closesGot": 2,
+      "_closesGot": 3,
       "connected": false,
       "signalCode": null,
       "exitCode": 1,
