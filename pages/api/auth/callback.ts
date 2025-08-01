@@ -7,19 +7,36 @@ const supabase = createClient(
 )
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { code } = req.query
+  const { code, error, error_description } = req.query
+
+  // Handle errors from Supabase
+  if (error) {
+    console.error('Auth callback error:', error, error_description)
+    return res.redirect(`/auth/login?error=${encodeURIComponent(error_description as string || 'Authentication failed')}`)
+  }
 
   if (code) {
-    const { data, error } = await supabase.auth.exchangeCodeForSession(code as string)
-    
-    if (error) {
-      return res.redirect('/auth/login?error=Could not authenticate user')
-    }
+    try {
+      const { data, error } = await supabase.auth.exchangeCodeForSession(code as string)
+      
+      if (error) {
+        console.error('Session exchange error:', error)
+        return res.redirect('/auth/login?error=Could not authenticate user')
+      }
 
-    if (data.session) {
-      return res.redirect('/dashboard')
+      if (data.session) {
+        // Successful authentication - redirect to dashboard
+        return res.redirect('/dashboard')
+      } else {
+        // No session but no error - might be email confirmation
+        return res.redirect('/auth/callback?message=Email verified successfully')
+      }
+    } catch (err) {
+      console.error('Unexpected error in auth callback:', err)
+      return res.redirect('/auth/login?error=Unexpected error occurred')
     }
   }
 
-  return res.redirect('/auth/login')
+  // No code provided
+  return res.redirect('/auth/login?error=Invalid authentication request')
 } 

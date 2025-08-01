@@ -60,7 +60,7 @@ const Signup: NextPage = () => {
       if (error) {
         setError(error.message)
       } else {
-        setMessage('Account created successfully! Please check your email to verify your account.')
+        setMessage('Account created successfully! Please check your email to verify your account. You will be redirected to the login page after verification.')
         // Clear form
         setFormData({
           firstName: '',
@@ -70,6 +70,11 @@ const Signup: NextPage = () => {
           confirmPassword: '',
           userType: 'business'
         })
+        
+        // Redirect to login page after a delay
+        setTimeout(() => {
+          router.push('/auth/login?message=Please check your email to verify your account')
+        }, 5000)
       }
     } catch (err) {
       setError('An unexpected error occurred. Please try again.')
