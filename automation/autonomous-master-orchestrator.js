@@ -14,7 +14,7 @@ class AutonomousMasterOrchestrator {
             solutionCreator: require('./autonomous-solution-creator-agent.js'),
             salesAgent: require('./autonomous-sales-agent.js'),
             agentCreator: require('./continuous-agent-creator.js'),
-            contentGenerator: require('./continuous-content-generator.js')
+            contentGenerator: require('./high-speed-content-generator.js')
         };
         
         this.workflow = {
@@ -186,15 +186,27 @@ class AutonomousMasterOrchestrator {
     }
 
     async executeContentGeneration() {
-        console.log('🎨 Executing Content Generation Phase...');
+        console.log('⚡ Executing High-Speed Content Generation Phase...');
         this.systemStatus.currentPhase = this.workflow.contentGeneration;
         
         try {
             const contentGenerator = new this.agents.contentGenerator();
-            const contentResults = await contentGenerator.startContentGeneration();
+            await contentGenerator.start();
+            
+            // Let it run for a short time to generate initial content
+            await new Promise(resolve => setTimeout(resolve, 10000)); // 10 seconds
+            
+            const contentResults = {
+                blogPosts: contentGenerator.analytics.blogPostsCreated,
+                marketplacePages: contentGenerator.analytics.marketplacePagesCreated,
+                servicePages: contentGenerator.analytics.servicePagesCreated,
+                errors: contentGenerator.analytics.errors,
+                isContinuous: true,
+                generatorType: 'high-speed'
+            };
             
             await this.savePhaseData('content-generation', contentResults);
-            await this.logSystemEvent('Content generation completed', { contentGenerated: contentResults.length });
+            await this.logSystemEvent('High-speed content generation started', { contentGenerated: contentResults.blogPosts + contentResults.marketplacePages + contentResults.servicePages });
             
             return contentResults;
         } catch (error) {

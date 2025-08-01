@@ -199,11 +199,14 @@ class HighSpeedContentGenerator {
       word.charAt(0).toUpperCase() + word.slice(1)
     ).join('');
     
+    // Ensure component name doesn't start with a number
+    const safePageName = pageName.match(/^\d/) ? `Page${pageName}` : pageName;
+    
     return `import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-const ${pageName}Page: NextPage = () => {
+const ${safePageName}Page: NextPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
@@ -246,7 +249,7 @@ const ${pageName}Page: NextPage = () => {
   )
 }
 
-export default ${pageName}Page`
+export default ${safePageName}Page`
   }
 
   generateFallbackBlogContent(topic) {
@@ -302,11 +305,14 @@ In conclusion, ${topic.toLowerCase()} represents not just a technological advanc
     
     const pageName = categoryTitle.replace(/\s+/g, '');
     
+    // Ensure component name doesn't start with a number
+    const safePageName = pageName.match(/^\d/) ? `Page${pageName}` : pageName;
+    
     return `import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-const ${pageName}Page: NextPage = () => {
+const ${safePageName}Page: NextPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
@@ -358,7 +364,7 @@ const ${pageName}Page: NextPage = () => {
   )
 }
 
-export default ${pageName}Page`
+export default ${safePageName}Page`
   }
 
   generateFallbackMarketplaceContent(category) {
@@ -412,13 +418,16 @@ Join thousands of satisfied clients who have found their ideal ${category} solut
 
   generateServicePageContent(service, content) {
     const filename = this.sanitizeFilename(service);
-    const pageName = service.replace(/\s+/g, '');
+    const pageName = service.replace(/[^a-zA-Z0-9]/g, '');
+    
+    // Ensure component name doesn't start with a number
+    const safePageName = pageName.match(/^\d/) ? `Page${pageName}` : pageName;
     
     return `import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-const ${pageName}Page: NextPage = () => {
+const ${safePageName}Page: NextPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
@@ -470,7 +479,7 @@ const ${pageName}Page: NextPage = () => {
   )
 }
 
-export default ${pageName}Page`
+export default ${safePageName}Page`
   }
 
   generateFallbackServiceContent(service) {
