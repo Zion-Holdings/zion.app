@@ -137,7 +137,7 @@ const TalentPage: React.FC = () => {
 
   useEffect(() => {
     filterTalents();
-  }, [talents, searchTerm, selectedSkills, sortBy]);
+  }, [filterTalents]);
 
   const handleSkillToggle = (skill: string) => {
     setSelectedSkills(prev =>

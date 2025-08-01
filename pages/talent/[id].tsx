@@ -55,45 +55,34 @@ export default function TalentProfile() {
     timeline: ''
   });
 
-  useEffect(() => {
-    if (id) {
-      fetchTalent();
-      fetchReviews();
-    }
-  }, [id, fetchTalent, fetchReviews]);
-
   const fetchTalent = async () => {
     try {
-      const { data, error } = await supabase
-        .from('talents')
-        .select('*')
-        .eq('id', id)
-        .single();
-
-      if (error) throw error;
-      setTalent(data);
+      const response = await fetch(`/api/talents/${id}`);
+      if (response.ok) {
+        const data = await response.json();
+        setTalent(data);
+      }
     } catch (error) {
       console.error('Error fetching talent:', error);
-      router.push('/talent');
-    } finally {
-      setLoading(false);
     }
   };
 
   const fetchReviews = async () => {
     try {
-      const { data, error } = await supabase
-        .from('talent_reviews')
-        .select('*')
-        .eq('talent_id', id)
-        .order('created_at', { ascending: false });
-
-      if (error) throw error;
-      setReviews(data || []);
+      const response = await fetch(`/api/talents/${id}/reviews`);
+      if (response.ok) {
+        const data = await response.json();
+        setReviews(data);
+      }
     } catch (error) {
       console.error('Error fetching reviews:', error);
     }
   };
+
+  useEffect(() => {
+    fetchTalent();
+    fetchReviews();
+  }, [id]);
 
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
