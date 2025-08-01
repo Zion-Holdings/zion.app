@@ -205,6 +205,292 @@ FROM talents t
 LEFT JOIN talent_reviews r ON t.id = r.talent_id
 GROUP BY t.id, t.full_name, t.title, t.rating;
 
--- Grant necessary permissions (adjust based on your Supabase setup)
--- GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO authenticated;
--- GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO authenticated; 
+-- Autonomous Agents System Database Schema
+
+-- Create autonomous_agents table
+CREATE TABLE IF NOT EXISTS autonomous_agents (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name VARCHAR(255) NOT NULL,
+    type VARCHAR(100) NOT NULL,
+    status VARCHAR(50) DEFAULT 'idle',
+    workload INTEGER DEFAULT 0,
+    current_task TEXT DEFAULT 'Initializing...',
+    next_steps JSONB DEFAULT '[]',
+    services JSONB DEFAULT '[]',
+    capabilities JSONB DEFAULT '[]',
+    dependencies JSONB DEFAULT '[]',
+    performance JSONB DEFAULT '{"tasksCompleted": 0, "successRate": 100, "avgResponseTime": 0}',
+    config JSONB DEFAULT '{}',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    last_active TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Create system_metrics table
+CREATE TABLE IF NOT EXISTS system_metrics (
+    id VARCHAR(50) PRIMARY KEY DEFAULT 'current',
+    total_agents INTEGER DEFAULT 0,
+    active_agents INTEGER DEFAULT 0,
+    total_tasks INTEGER DEFAULT 0,
+    completed_tasks INTEGER DEFAULT 0,
+    system_health VARCHAR(50) DEFAULT 'good',
+    avg_response_time INTEGER DEFAULT 0,
+    error_rate DECIMAL(5,2) DEFAULT 0.0,
+    efficiency DECIMAL(5,2) DEFAULT 0.0,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Create agent_logs table
+CREATE TABLE IF NOT EXISTS agent_logs (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    agent_id UUID REFERENCES autonomous_agents(id) ON DELETE CASCADE,
+    level VARCHAR(20) NOT NULL,
+    message TEXT NOT NULL,
+    metadata JSONB DEFAULT '{}',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Create orchestrator_tasks table
+CREATE TABLE IF NOT EXISTS orchestrator_tasks (
+    id VARCHAR(100) PRIMARY KEY,
+    type VARCHAR(100) NOT NULL,
+    priority VARCHAR(20) DEFAULT 'normal',
+    requirements JSONB DEFAULT '{}',
+    status VARCHAR(50) DEFAULT 'pending',
+    assigned_agent UUID REFERENCES autonomous_agents(id) ON DELETE SET NULL,
+    result JSONB DEFAULT NULL,
+    error TEXT DEFAULT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    started_at TIMESTAMP WITH TIME ZONE DEFAULT NULL,
+    completed_at TIMESTAMP WITH TIME ZONE DEFAULT NULL,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Create orchestrator_reports table
+CREATE TABLE IF NOT EXISTS orchestrator_reports (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    timestamp TIMESTAMP WITH TIME ZONE NOT NULL,
+    system_metrics JSONB NOT NULL,
+    agent_summary JSONB NOT NULL,
+    task_summary JSONB NOT NULL,
+    performance_analysis JSONB NOT NULL,
+    recommendations JSONB DEFAULT '[]',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Create cron_schedules table
+CREATE TABLE IF NOT EXISTS cron_schedules (
+    id VARCHAR(100) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    cron_expression VARCHAR(100) NOT NULL,
+    command TEXT NOT NULL,
+    enabled BOOLEAN DEFAULT true,
+    priority VARCHAR(20) DEFAULT 'normal',
+    last_run TIMESTAMP WITH TIME ZONE DEFAULT NULL,
+    next_run TIMESTAMP WITH TIME ZONE DEFAULT NULL,
+    run_count INTEGER DEFAULT 0,
+    success_count INTEGER DEFAULT 0,
+    failure_count INTEGER DEFAULT 0,
+    avg_duration INTEGER DEFAULT 0,
+    last_error TEXT DEFAULT NULL,
+    config JSONB DEFAULT '{}',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Create cron_job_logs table
+CREATE TABLE IF NOT EXISTS cron_job_logs (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    schedule_id VARCHAR(100) REFERENCES cron_schedules(id) ON DELETE CASCADE,
+    level VARCHAR(20) NOT NULL,
+    message TEXT NOT NULL,
+    duration INTEGER DEFAULT 0,
+    success BOOLEAN DEFAULT true,
+    error TEXT DEFAULT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Create system_backups table
+CREATE TABLE IF NOT EXISTS system_backups (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    backup_type VARCHAR(50) NOT NULL,
+    file_path TEXT,
+    file_size BIGINT DEFAULT 0,
+    status VARCHAR(50) DEFAULT 'pending',
+    metadata JSONB DEFAULT '{}',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    completed_at TIMESTAMP WITH TIME ZONE DEFAULT NULL
+);
+
+-- Create performance_metrics table
+CREATE TABLE IF NOT EXISTS performance_metrics (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    agent_id UUID REFERENCES autonomous_agents(id) ON DELETE CASCADE,
+    metric_type VARCHAR(50) NOT NULL,
+    metric_value DECIMAL(10,2) NOT NULL,
+    metadata JSONB DEFAULT '{}',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Create workload_distribution table
+CREATE TABLE IF NOT EXISTS workload_distribution (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    timestamp TIMESTAMP WITH TIME ZONE NOT NULL,
+    low_workload_count INTEGER DEFAULT 0,
+    medium_workload_count INTEGER DEFAULT 0,
+    high_workload_count INTEGER DEFAULT 0,
+    total_agents INTEGER DEFAULT 0,
+    avg_workload DECIMAL(5,2) DEFAULT 0.0,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Create error_logs table
+CREATE TABLE IF NOT EXISTS error_logs (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    source VARCHAR(100) NOT NULL,
+    error_type VARCHAR(100) NOT NULL,
+    error_message TEXT NOT NULL,
+    stack_trace TEXT,
+    metadata JSONB DEFAULT '{}',
+    resolved BOOLEAN DEFAULT false,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    resolved_at TIMESTAMP WITH TIME ZONE DEFAULT NULL
+);
+
+-- Create indexes for better performance
+CREATE INDEX IF NOT EXISTS idx_autonomous_agents_status ON autonomous_agents(status);
+CREATE INDEX IF NOT EXISTS idx_autonomous_agents_type ON autonomous_agents(type);
+CREATE INDEX IF NOT EXISTS idx_autonomous_agents_created_at ON autonomous_agents(created_at);
+CREATE INDEX IF NOT EXISTS idx_agent_logs_agent_id ON agent_logs(agent_id);
+CREATE INDEX IF NOT EXISTS idx_agent_logs_created_at ON agent_logs(created_at);
+CREATE INDEX IF NOT EXISTS idx_orchestrator_tasks_status ON orchestrator_tasks(status);
+CREATE INDEX IF NOT EXISTS idx_orchestrator_tasks_assigned_agent ON orchestrator_tasks(assigned_agent);
+CREATE INDEX IF NOT EXISTS idx_cron_schedules_enabled ON cron_schedules(enabled);
+CREATE INDEX IF NOT EXISTS idx_cron_schedules_next_run ON cron_schedules(next_run);
+CREATE INDEX IF NOT EXISTS idx_performance_metrics_agent_id ON performance_metrics(agent_id);
+CREATE INDEX IF NOT EXISTS idx_performance_metrics_created_at ON performance_metrics(created_at);
+CREATE INDEX IF NOT EXISTS idx_error_logs_source ON error_logs(source);
+CREATE INDEX IF NOT EXISTS idx_error_logs_resolved ON error_logs(resolved);
+
+-- Create functions for automatic timestamp updates
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = NOW();
+    RETURN NEW;
+END;
+$$ language 'plpgsql';
+
+-- Create triggers for automatic timestamp updates
+CREATE TRIGGER update_autonomous_agents_updated_at 
+    BEFORE UPDATE ON autonomous_agents 
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER update_system_metrics_updated_at 
+    BEFORE UPDATE ON system_metrics 
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER update_orchestrator_tasks_updated_at 
+    BEFORE UPDATE ON orchestrator_tasks 
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER update_cron_schedules_updated_at 
+    BEFORE UPDATE ON cron_schedules 
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+-- Create function to calculate agent performance
+CREATE OR REPLACE FUNCTION calculate_agent_performance(agent_uuid UUID)
+RETURNS JSONB AS $$
+DECLARE
+    result JSONB;
+BEGIN
+    SELECT jsonb_build_object(
+        'tasksCompleted', COALESCE(SUM(CASE WHEN status = 'completed' THEN 1 ELSE 0 END), 0),
+        'successRate', CASE 
+            WHEN COUNT(*) > 0 THEN 
+                ROUND((COUNT(CASE WHEN status = 'completed' THEN 1 END)::DECIMAL / COUNT(*)) * 100, 2)
+            ELSE 100 
+        END,
+        'avgResponseTime', COALESCE(AVG(
+            EXTRACT(EPOCH FROM (completed_at - started_at)) * 1000
+        ), 0)
+    ) INTO result
+    FROM orchestrator_tasks 
+    WHERE assigned_agent = agent_uuid;
+    
+    RETURN result;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Create function to get system health status
+CREATE OR REPLACE FUNCTION get_system_health()
+RETURNS VARCHAR(50) AS $$
+DECLARE
+    error_rate DECIMAL;
+    health_status VARCHAR(50);
+BEGIN
+    SELECT 
+        CASE 
+            WHEN COUNT(*) > 0 THEN 
+                (COUNT(CASE WHEN status = 'error' THEN 1 END)::DECIMAL / COUNT(*)) * 100
+            ELSE 0 
+        END INTO error_rate
+    FROM autonomous_agents;
+    
+    health_status := CASE 
+        WHEN error_rate > 20 THEN 'critical'
+        WHEN error_rate > 10 THEN 'warning'
+        ELSE 'good'
+    END;
+    
+    RETURN health_status;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Insert initial system metrics
+INSERT INTO system_metrics (id, total_agents, active_agents, system_health)
+VALUES ('current', 0, 0, 'good')
+ON CONFLICT (id) DO NOTHING;
+
+-- Create views for easier querying
+CREATE OR REPLACE VIEW agent_summary AS
+SELECT 
+    id,
+    name,
+    type,
+    status,
+    workload,
+    current_task,
+    performance->>'tasksCompleted' as tasks_completed,
+    performance->>'successRate' as success_rate,
+    performance->>'avgResponseTime' as avg_response_time,
+    created_at,
+    last_active
+FROM autonomous_agents;
+
+CREATE OR REPLACE VIEW system_overview AS
+SELECT 
+    COUNT(*) as total_agents,
+    COUNT(CASE WHEN status = 'active' THEN 1 END) as active_agents,
+    COUNT(CASE WHEN status = 'idle' THEN 1 END) as idle_agents,
+    COUNT(CASE WHEN status = 'error' THEN 1 END) as error_agents,
+    AVG(workload) as avg_workload,
+    get_system_health() as system_health
+FROM autonomous_agents;
+
+CREATE OR REPLACE VIEW task_summary AS
+SELECT 
+    COUNT(*) as total_tasks,
+    COUNT(CASE WHEN status = 'pending' THEN 1 END) as pending_tasks,
+    COUNT(CASE WHEN status = 'assigned' THEN 1 END) as assigned_tasks,
+    COUNT(CASE WHEN status = 'completed' THEN 1 END) as completed_tasks,
+    AVG(EXTRACT(EPOCH FROM (completed_at - started_at)) * 1000 as avg_completion_time
+FROM orchestrator_tasks;
+
+-- Grant necessary permissions (adjust as needed for your setup)
+-- GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO your_user;
+-- GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO your_user; 

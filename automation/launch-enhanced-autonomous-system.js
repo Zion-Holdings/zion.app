@@ -2,327 +2,451 @@
 
 const fs = require('fs');
 const path = require('path');
-const { EventEmitter } = require('events');
-const EnhancedAutonomousSystem = require('./enhanced-autonomous-system');
-const EnhancedCronSystem = require('./enhanced-cron-system');
+const { exec } = require('child_process');
 
-class EnhancedAutonomousSystemLauncher extends EventEmitter {
+class EnhancedAutonomousSystemLauncher {
   constructor() {
-    super();
-    this.autonomousSystem = null;
-    this.cronSystem = null;
-    this.isRunning = false;
-    this.startTime = null;
-    
-    this.config = {
-      logLevel: 'info',
-      autoRestart: true,
-      healthCheckInterval: 30000,
-      maxRestartAttempts: 5,
-      restartDelay: 60000
-    };
-    
-    this.restartAttempts = 0;
-    this.setupProcessHandlers();
+    this.processes = new Map();
+    this.config = this.loadConfig();
+    this.logs = [];
   }
 
-  setupProcessHandlers() {
-    // Handle graceful shutdown
-    process.on('SIGINT', () => {
-      console.log('\n[Launcher] Received SIGINT, shutting down gracefully...');
-      this.shutdown();
-    });
-
-    process.on('SIGTERM', () => {
-      console.log('\n[Launcher] Received SIGTERM, shutting down gracefully...');
-      this.shutdown();
-    });
-
-    // Handle uncaught exceptions
-    process.on('uncaughtException', (error) => {
-      console.error('[Launcher] Uncaught Exception:', error);
-      this.handleSystemError(error);
-    });
-
-    process.on('unhandledRejection', (reason, promise) => {
-      console.error('[Launcher] Unhandled Rejection at:', promise, 'reason:', reason);
-      this.handleSystemError(reason);
-    });
+  loadConfig() {
+    try {
+      const configPath = path.join(__dirname, 'launcher-config.json');
+      if (fs.existsSync(configPath)) {
+        return JSON.parse(fs.readFileSync(configPath, 'utf8'));
+      }
+    } catch (error) {
+      console.error('Error loading launcher config:', error);
+    }
+    return {
+      autoStart: true,
+      monitoring: true,
+      logLevel: 'info',
+      maxRetries: 3,
+      healthCheckInterval: 30000,
+      backupInterval: 3600000
+    };
   }
 
   async launch() {
-    console.log('🚀 [Enhanced Autonomous System Launcher] Starting enhanced autonomous system...');
-    console.log('=' * 80);
+    console.log('🚀 Launching Enhanced Autonomous System...');
     
     try {
-      this.startTime = Date.now();
-      this.isRunning = true;
+      // Create necessary directories
+      this.ensureDirectories();
       
-      // Initialize and start the enhanced autonomous system
-      console.log('[Launcher] Initializing Enhanced Autonomous System...');
-      this.autonomousSystem = new EnhancedAutonomousSystem();
+      // Initialize database tables
+      await this.initializeDatabase();
       
-      // Wait for autonomous system to be ready
-      await this.waitForSystemReady(this.autonomousSystem);
+      // Start core components
+      await this.startCoreComponents();
       
-      // Initialize and start the enhanced cron system
-      console.log('[Launcher] Initializing Enhanced Cron System...');
-      this.cronSystem = new EnhancedCronSystem();
+      // Start autonomous agents
+      await this.startAutonomousAgents();
       
-      // Wait for cron system to be ready
-      await this.waitForSystemReady(this.cronSystem);
+      // Start orchestrator
+      await this.startOrchestrator();
       
-      // Set up event listeners
-      this.setupEventListeners();
+      // Start cron system
+      await this.startCronSystem();
       
-      // Start health monitoring
-      this.startHealthMonitoring();
+      // Start monitoring
+      this.startMonitoring();
       
-      console.log('✅ [Launcher] Enhanced autonomous system successfully launched!');
-      console.log('=' * 80);
-      console.log('📊 System Status:');
-      console.log(`   - Autonomous System: ${this.autonomousSystem ? 'Running' : 'Stopped'}`);
-      console.log(`   - Cron System: ${this.cronSystem ? 'Running' : 'Stopped'}`);
-      console.log(`   - Uptime: ${this.getUptime()}`);
-      console.log('=' * 80);
+      // Start health checks
+      this.startHealthChecks();
       
-      this.emit('systemLaunched');
+      console.log('✅ Enhanced Autonomous System launched successfully');
+      
+      // Keep the process running
+      this.keepAlive();
       
     } catch (error) {
-      console.error('[Launcher] Failed to launch system:', error);
-      this.handleSystemError(error);
+      console.error('❌ Error launching system:', error);
+      process.exit(1);
     }
   }
 
-  async waitForSystemReady(system) {
-    return new Promise((resolve, reject) => {
-      const timeout = setTimeout(() => {
-        reject(new Error('System initialization timeout'));
-      }, 30000); // 30 second timeout
-      
-      system.once('systemReady', () => {
-        clearTimeout(timeout);
-        resolve();
-      });
-      
-      system.once('systemError', (error) => {
-        clearTimeout(timeout);
-        reject(error);
-      });
+  ensureDirectories() {
+    const directories = [
+      'logs',
+      'agents',
+      'orchestrators',
+      'backups',
+      'analytics',
+      'reports',
+      'templates',
+      'market-research',
+      'content-generation',
+      'marketing-agents',
+      'sales-agents',
+      'analytics-agents',
+      'pids'
+    ];
+
+    directories.forEach(dir => {
+      const dirPath = path.join(__dirname, dir);
+      if (!fs.existsSync(dirPath)) {
+        fs.mkdirSync(dirPath, { recursive: true });
+      }
     });
   }
 
-  setupEventListeners() {
-    if (this.autonomousSystem) {
-      this.autonomousSystem.on('agentStarted', (agent) => {
-        console.log(`[Launcher] Agent started: ${agent.name}`);
-      });
+  async initializeDatabase() {
+    console.log('🗄️ Initializing database...');
+    
+    const { createClient } = require('@supabase/supabase-js');
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    );
 
-      this.autonomousSystem.on('agentStopped', (agent) => {
-        console.log(`[Launcher] Agent stopped: ${agent.name}`);
-      });
-
-      this.autonomousSystem.on('researchCompleted', (status) => {
-        console.log(`[Launcher] Research completed - ${status.aiTrends.length} trends, ${status.newCapabilities.length} capabilities`);
-      });
-
-      this.autonomousSystem.on('improvementsApplied', (improvements) => {
-        console.log(`[Launcher] ${improvements.length} improvements applied to system`);
-      });
-
-      this.autonomousSystem.on('systemError', (error) => {
-        console.error('[Launcher] Autonomous system error:', error);
-        this.handleSystemError(error);
-      });
-    }
-
-    if (this.cronSystem) {
-      this.cronSystem.on('agentCreated', (agent) => {
-        console.log(`[Launcher] New agent created via cron: ${agent.name}`);
-      });
-
-      this.cronSystem.on('orchestratorCreated', (orchestrator) => {
-        console.log(`[Launcher] New orchestrator created via cron: ${orchestrator.name}`);
-      });
-
-      this.cronSystem.on('healthWarning', (status) => {
-        console.warn(`[Launcher] Health warning - System health: ${status.overallHealth}%`);
-      });
-
-      this.cronSystem.on('jobFailed', ({ job, error }) => {
-        console.error(`[Launcher] Cron job failed: ${job.name}`, error);
-      });
-
-      this.cronSystem.on('cronSystemError', (error) => {
-        console.error('[Launcher] Cron system error:', error);
-        this.handleSystemError(error);
-      });
+    try {
+      // Create autonomous_agents table
+      await supabase.rpc('create_autonomous_agents_table', {});
+      
+      // Create system_metrics table
+      await supabase.rpc('create_system_metrics_table', {});
+      
+      // Create agent_logs table
+      await supabase.rpc('create_agent_logs_table', {});
+      
+      console.log('✅ Database initialized');
+    } catch (error) {
+      console.error('Error initializing database:', error);
     }
   }
 
-  startHealthMonitoring() {
+  async startCoreComponents() {
+    console.log('🔧 Starting core components...');
+    
+    // Start enhanced autonomous system
+    await this.startProcess('enhanced-autonomous-system', 'node enhanced-autonomous-system.js');
+    
+    // Start agent factory
+    await this.startProcess('agent-factory', 'node autonomous-agent-factory.js');
+    
+    console.log('✅ Core components started');
+  }
+
+  async startAutonomousAgents() {
+    console.log('🤖 Starting autonomous agents...');
+    
+    const agentTypes = [
+      'content-generation',
+      'marketing',
+      'sales',
+      'analytics',
+      'research',
+      'social-media',
+      'seo',
+      'support',
+      'data-processing',
+      'qa'
+    ];
+
+    for (const agentType of agentTypes) {
+      await this.createAndStartAgent(agentType);
+    }
+
+    console.log('✅ Autonomous agents started');
+  }
+
+  async createAndStartAgent(agentType) {
+    try {
+      const AgentFactory = require('./autonomous-agent-factory');
+      const factory = new AgentFactory();
+      
+      const agentId = await factory.createAgent(agentType, {
+        name: `${agentType.charAt(0).toUpperCase() + agentType.slice(1)} Agent`,
+        autoStart: true,
+        monitoring: true
+      });
+
+      console.log(`✅ Created and started ${agentType} agent: ${agentId}`);
+    } catch (error) {
+      console.error(`❌ Error creating ${agentType} agent:`, error);
+    }
+  }
+
+  async startOrchestrator() {
+    console.log('🎼 Starting orchestrator...');
+    
+    await this.startProcess('orchestrator', 'node autonomous-agent-orchestrator.js');
+    
+    console.log('✅ Orchestrator started');
+  }
+
+  async startCronSystem() {
+    console.log('⏰ Starting cron system...');
+    
+    await this.startProcess('cron-system', 'node enhanced-cron-system.js');
+    
+    console.log('✅ Cron system started');
+  }
+
+  async startProcess(name, command) {
+    return new Promise((resolve, reject) => {
+      const process = exec(command, { cwd: __dirname }, (error, stdout, stderr) => {
+        if (error) {
+          console.error(`❌ Error in ${name}:`, error);
+          this.log(`Process ${name} failed: ${error.message}`, 'error');
+        } else {
+          console.log(`✅ ${name} completed successfully`);
+        }
+      });
+
+      // Store process reference
+      this.processes.set(name, process);
+      
+      // Save PID
+      const pidPath = path.join(__dirname, 'pids', `${name}.pid`);
+      fs.writeFileSync(pidPath, process.pid.toString());
+
+      // Handle process events
+      process.on('error', (error) => {
+        console.error(`❌ Process ${name} error:`, error);
+        this.log(`Process ${name} error: ${error.message}`, 'error');
+      });
+
+      process.on('exit', (code) => {
+        console.log(`Process ${name} exited with code ${code}`);
+        this.processes.delete(name);
+        
+        // Remove PID file
+        const pidPath = path.join(__dirname, 'pids', `${name}.pid`);
+        if (fs.existsSync(pidPath)) {
+          fs.unlinkSync(pidPath);
+        }
+      });
+
+      // Wait a bit for process to start
+      setTimeout(() => {
+        if (process.pid) {
+          console.log(`✅ Started ${name} (PID: ${process.pid})`);
+          resolve();
+        } else {
+          reject(new Error(`Failed to start ${name}`));
+        }
+      }, 2000);
+    });
+  }
+
+  startMonitoring() {
+    if (!this.config.monitoring) return;
+
+    console.log('📊 Starting monitoring...');
+    
+    setInterval(() => {
+      this.monitorProcesses();
+    }, 30000); // Check every 30 seconds
+
+    setInterval(() => {
+      this.generateSystemReport();
+    }, 300000); // Generate report every 5 minutes
+  }
+
+  monitorProcesses() {
+    const activeProcesses = Array.from(this.processes.keys());
+    console.log(`📈 Active processes: ${activeProcesses.length}`);
+    
+    activeProcesses.forEach(processName => {
+      const process = this.processes.get(processName);
+      if (process && process.pid) {
+        // Check if process is still running
+        try {
+          process.kill(0); // Send signal 0 to check if process exists
+        } catch (error) {
+          console.log(`⚠️ Process ${processName} is not responding`);
+          this.restartProcess(processName);
+        }
+      }
+    });
+  }
+
+  async restartProcess(processName) {
+    console.log(`🔄 Restarting process: ${processName}`);
+    
+    const process = this.processes.get(processName);
+    if (process) {
+      process.kill('SIGTERM');
+      this.processes.delete(processName);
+    }
+
+    // Wait a bit before restarting
+    await new Promise(resolve => setTimeout(resolve, 5000));
+    
+    // Restart the process
+    try {
+      switch (processName) {
+        case 'enhanced-autonomous-system':
+          await this.startProcess(processName, 'node enhanced-autonomous-system.js');
+          break;
+        case 'orchestrator':
+          await this.startProcess(processName, 'node autonomous-agent-orchestrator.js');
+          break;
+        case 'cron-system':
+          await this.startProcess(processName, 'node enhanced-cron-system.js');
+          break;
+        default:
+          console.log(`Unknown process: ${processName}`);
+      }
+    } catch (error) {
+      console.error(`❌ Failed to restart ${processName}:`, error);
+    }
+  }
+
+  startHealthChecks() {
     setInterval(() => {
       this.performHealthCheck();
     }, this.config.healthCheckInterval);
   }
 
   async performHealthCheck() {
-    try {
-      if (this.autonomousSystem) {
-        const systemStatus = this.autonomousSystem.getSystemStatus();
-        
-        if (systemStatus.overallHealth < 70) {
-          console.warn(`[Launcher] System health is low: ${systemStatus.overallHealth}%`);
-          
-          if (this.config.autoRestart && this.restartAttempts < this.config.maxRestartAttempts) {
-            console.log('[Launcher] Attempting system restart...');
-            await this.restartSystem();
-          }
-        }
-      }
-      
-      if (this.cronSystem) {
-        const cronStatus = this.cronSystem.getCronStatus();
-        
-        if (cronStatus.failedJobs > 3) {
-          console.warn(`[Launcher] Cron system has ${cronStatus.failedJobs} failed jobs`);
-        }
-      }
-      
-    } catch (error) {
-      console.error('[Launcher] Health check error:', error);
-    }
-  }
-
-  async restartSystem() {
-    console.log('[Launcher] Restarting enhanced autonomous system...');
+    console.log('🏥 Performing health check...');
     
-    try {
-      this.restartAttempts++;
-      
-      // Shutdown current systems
-      if (this.autonomousSystem) {
-        await this.autonomousSystem.shutdown();
-      }
-      
-      if (this.cronSystem) {
-        await this.cronSystem.shutdown();
-      }
-      
-      // Wait before restart
-      await this.sleep(this.config.restartDelay);
-      
-      // Relaunch systems
-      await this.launch();
-      
-      console.log('[Launcher] System restart completed successfully');
-      
-    } catch (error) {
-      console.error('[Launcher] System restart failed:', error);
-      this.handleSystemError(error);
-    }
-  }
+    const healthStatus = {
+      timestamp: new Date().toISOString(),
+      processes: Array.from(this.processes.keys()),
+      activeProcesses: this.processes.size,
+      systemHealth: 'good',
+      issues: []
+    };
 
-  handleSystemError(error) {
-    console.error('[Launcher] System error occurred:', error);
-    
-    if (this.config.autoRestart && this.restartAttempts < this.config.maxRestartAttempts) {
-      console.log(`[Launcher] Attempting automatic restart (attempt ${this.restartAttempts + 1}/${this.config.maxRestartAttempts})`);
-      setTimeout(() => {
-        this.restartSystem();
-      }, this.config.restartDelay);
+    // Check each process
+    for (const [name, process] of this.processes) {
+      try {
+        process.kill(0);
+      } catch (error) {
+        healthStatus.issues.push(`${name} is not responding`);
+        healthStatus.systemHealth = 'warning';
+      }
+    }
+
+    // Save health status
+    const healthPath = path.join(__dirname, 'logs', `health_${Date.now()}.json`);
+    fs.writeFileSync(healthPath, JSON.stringify(healthStatus, null, 2));
+
+    if (healthStatus.issues.length > 0) {
+      console.log(`⚠️ Health check issues: ${healthStatus.issues.join(', ')}`);
     } else {
-      console.error('[Launcher] Maximum restart attempts reached, shutting down');
-      this.shutdown();
+      console.log('✅ Health check passed');
     }
+  }
+
+  async generateSystemReport() {
+    console.log('📋 Generating system report...');
+    
+    const report = {
+      timestamp: new Date().toISOString(),
+      processes: Array.from(this.processes.keys()),
+      activeProcesses: this.processes.size,
+      uptime: process.uptime(),
+      memoryUsage: process.memoryUsage(),
+      systemHealth: 'good',
+      recommendations: []
+    };
+
+    // Add recommendations based on system state
+    if (this.processes.size < 3) {
+      report.recommendations.push('Consider starting additional processes for redundancy');
+    }
+
+    if (process.memoryUsage().heapUsed > 100 * 1024 * 1024) { // 100MB
+      report.recommendations.push('High memory usage detected, consider optimization');
+    }
+
+    // Save report
+    const reportPath = path.join(__dirname, 'reports', `system_report_${Date.now()}.json`);
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+
+    console.log('✅ System report generated');
+  }
+
+  log(message, level = 'info') {
+    const logEntry = {
+      timestamp: new Date().toISOString(),
+      level,
+      message,
+      processCount: this.processes.size
+    };
+
+    this.logs.push(logEntry);
+    
+    // Keep only recent logs
+    if (this.logs.length > 1000) {
+      this.logs = this.logs.slice(-1000);
+    }
+
+    // Save to file
+    const logPath = path.join(__dirname, 'logs', `launcher_${new Date().toISOString().split('T')[0]}.log`);
+    fs.appendFileSync(logPath, JSON.stringify(logEntry) + '\n');
+
+    console.log(`[LAUNCHER] [${level.toUpperCase()}] ${message}`);
+  }
+
+  keepAlive() {
+    console.log('🔄 System is running. Press Ctrl+C to stop.');
+    
+    // Handle graceful shutdown
+    process.on('SIGINT', () => {
+      console.log('\n🛑 Shutting down Enhanced Autonomous System...');
+      this.shutdown();
+    });
+
+    process.on('SIGTERM', () => {
+      console.log('\n🛑 Received SIGTERM, shutting down...');
+      this.shutdown();
+    });
   }
 
   async shutdown() {
-    console.log('[Launcher] Shutting down enhanced autonomous system...');
+    console.log('🔄 Stopping all processes...');
     
-    this.isRunning = false;
-    
-    try {
-      if (this.cronSystem) {
-        await this.cronSystem.shutdown();
+    // Stop all processes
+    for (const [name, process] of this.processes) {
+      console.log(`🛑 Stopping ${name}...`);
+      try {
+        process.kill('SIGTERM');
+      } catch (error) {
+        console.error(`❌ Error stopping ${name}:`, error);
       }
-      
-      if (this.autonomousSystem) {
-        await this.autonomousSystem.shutdown();
-      }
-      
-      console.log('[Launcher] Enhanced autonomous system shutdown completed');
-      process.exit(0);
-      
-    } catch (error) {
-      console.error('[Launcher] Error during shutdown:', error);
-      process.exit(1);
     }
+
+    // Wait for processes to stop
+    await new Promise(resolve => setTimeout(resolve, 5000));
+    
+    // Force kill remaining processes
+    for (const [name, process] of this.processes) {
+      try {
+        process.kill('SIGKILL');
+      } catch (error) {
+        console.error(`❌ Error force killing ${name}:`, error);
+      }
+    }
+
+    console.log('✅ Enhanced Autonomous System stopped');
+    process.exit(0);
   }
 
-  getUptime() {
-    if (!this.startTime) return '0s';
-    
-    const uptime = Date.now() - this.startTime;
-    const seconds = Math.floor(uptime / 1000);
-    const minutes = Math.floor(seconds / 60);
-    const hours = Math.floor(minutes / 60);
-    const days = Math.floor(hours / 24);
-    
-    if (days > 0) {
-      return `${days}d ${hours % 24}h ${minutes % 60}m`;
-    } else if (hours > 0) {
-      return `${hours}h ${minutes % 60}m`;
-    } else if (minutes > 0) {
-      return `${minutes}m ${seconds % 60}s`;
-    } else {
-      return `${seconds}s`;
-    }
-  }
-
-  getSystemStatus() {
+  getStatus() {
     return {
-      isRunning: this.isRunning,
-      uptime: this.getUptime(),
-      restartAttempts: this.restartAttempts,
-      autonomousSystem: this.autonomousSystem ? this.autonomousSystem.getSystemStatus() : null,
-      cronSystem: this.cronSystem ? this.cronSystem.getCronStatus() : null
+      processes: Array.from(this.processes.keys()),
+      activeProcesses: this.processes.size,
+      uptime: process.uptime(),
+      config: this.config,
+      logs: this.logs.slice(-10)
     };
   }
-
-  async sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
 }
 
-// Main execution
-async function main() {
-  const launcher = new EnhancedAutonomousSystemLauncher();
-  
-  try {
-    await launcher.launch();
-    
-    // Keep the process running
-    process.stdin.resume();
-    
-    // Log system status periodically
-    setInterval(() => {
-      const status = launcher.getSystemStatus();
-      console.log(`[Launcher] System Status - Running: ${status.isRunning}, Uptime: ${status.uptime}`);
-    }, 300000); // Every 5 minutes
-    
-  } catch (error) {
-    console.error('[Launcher] Failed to start system:', error);
-    process.exit(1);
-  }
-}
+// Export the launcher
+module.exports = EnhancedAutonomousSystemLauncher;
 
-// Run the launcher if this file is executed directly
+// If run directly, launch the system
 if (require.main === module) {
-  main().catch(error => {
-    console.error('[Launcher] Fatal error:', error);
-    process.exit(1);
-  });
-}
-
-module.exports = EnhancedAutonomousSystemLauncher; 
+  const launcher = new EnhancedAutonomousSystemLauncher();
+  launcher.launch().catch(console.error);
+} 

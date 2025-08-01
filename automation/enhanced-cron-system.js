@@ -1,504 +1,607 @@
+const cron = require('node-cron');
 const fs = require('fs');
 const path = require('path');
-const { EventEmitter } = require('events');
-const EnhancedAutonomousSystem = require('./enhanced-autonomous-system');
+const { exec } = require('child_process');
 
-class EnhancedCronSystem extends EventEmitter {
+class EnhancedCronSystem {
   constructor() {
-    super();
-    this.autonomousSystem = new EnhancedAutonomousSystem();
-    this.cronJobs = new Map();
-    this.scheduledTasks = new Map();
-    this.systemStatus = {
+    this.jobs = new Map();
+    this.schedules = new Map();
+    this.metrics = {
       totalJobs: 0,
       activeJobs: 0,
       failedJobs: 0,
-      lastExecution: null,
-      nextExecution: null,
-      systemUptime: Date.now()
+      lastRun: null,
+      uptime: Date.now()
     };
-    
-    this.config = {
-      agentCreationInterval: 1800000, // 30 minutes
-      orchestratorCreationInterval: 3600000, // 1 hour
-      healthCheckInterval: 60000, // 1 minute
-      researchInterval: 7200000, // 2 hours
-      improvementInterval: 5400000, // 1.5 hours
-      backupInterval: 86400000, // 24 hours
-      maxConcurrentJobs: 20,
-      retryAttempts: 3,
-      retryDelay: 300000 // 5 minutes
-    };
-    
-    this.initializeCronSystem();
+    this.config = this.loadConfig();
+    this.logs = [];
   }
 
-  async initializeCronSystem() {
-    console.log('[EnhancedCronSystem] Initializing enhanced cron system...');
-    
+  loadConfig() {
     try {
-      // Set up event listeners
-      this.setupEventListeners();
-      
-      // Initialize scheduled jobs
-      await this.initializeScheduledJobs();
-      
-      // Start the cron system
-      this.startCronSystem();
-      
-      console.log('[EnhancedCronSystem] Cron system initialization completed');
-      this.emit('cronSystemReady');
-      
-    } catch (error) {
-      console.error('[EnhancedCronSystem] Initialization error:', error);
-      this.emit('cronSystemError', error);
-    }
-  }
-
-  setupEventListeners() {
-    // Listen to autonomous system events
-    this.autonomousSystem.on('systemReady', () => {
-      console.log('[EnhancedCronSystem] Autonomous system ready');
-    });
-
-    this.autonomousSystem.on('agentStarted', (agent) => {
-      console.log(`[EnhancedCronSystem] Agent started: ${agent.name}`);
-      this.updateSystemStatus();
-    });
-
-    this.autonomousSystem.on('agentStopped', (agent) => {
-      console.log(`[EnhancedCronSystem] Agent stopped: ${agent.name}`);
-      this.updateSystemStatus();
-    });
-
-    this.autonomousSystem.on('researchCompleted', (status) => {
-      console.log('[EnhancedCronSystem] Research completed, triggering improvements');
-      this.triggerImprovements();
-    });
-
-    this.autonomousSystem.on('improvementsApplied', (improvements) => {
-      console.log(`[EnhancedCronSystem] ${improvements.length} improvements applied`);
-      this.updateSystemStatus();
-    });
-  }
-
-  async initializeScheduledJobs() {
-    const scheduledJobs = [
-      {
-        id: 'agent-creation',
-        name: 'Autonomous Agent Creation',
-        schedule: this.config.agentCreationInterval,
-        task: () => this.createNewAgents(),
-        enabled: true,
-        lastRun: null,
-        nextRun: Date.now() + this.config.agentCreationInterval
-      },
-      {
-        id: 'orchestrator-creation',
-        name: 'Orchestrator Creation',
-        schedule: this.config.orchestratorCreationInterval,
-        task: () => this.createNewOrchestrators(),
-        enabled: true,
-        lastRun: null,
-        nextRun: Date.now() + this.config.orchestratorCreationInterval
-      },
-      {
-        id: 'health-check',
-        name: 'System Health Check',
-        schedule: this.config.healthCheckInterval,
-        task: () => this.performHealthCheck(),
-        enabled: true,
-        lastRun: null,
-        nextRun: Date.now() + this.config.healthCheckInterval
-      },
-      {
-        id: 'research-cycle',
-        name: 'Research and Discovery',
-        schedule: this.config.researchInterval,
-        task: () => this.performResearchCycle(),
-        enabled: true,
-        lastRun: null,
-        nextRun: Date.now() + this.config.researchInterval
-      },
-      {
-        id: 'improvement-cycle',
-        name: 'System Improvement',
-        schedule: this.config.improvementInterval,
-        task: () => this.performImprovementCycle(),
-        enabled: true,
-        lastRun: null,
-        nextRun: Date.now() + this.config.improvementInterval
-      },
-      {
-        id: 'backup-cycle',
-        name: 'System Backup',
-        schedule: this.config.backupInterval,
-        task: () => this.performSystemBackup(),
-        enabled: true,
-        lastRun: null,
-        nextRun: Date.now() + this.config.backupInterval
+      const configPath = path.join(__dirname, 'cron-config.json');
+      if (fs.existsSync(configPath)) {
+        return JSON.parse(fs.readFileSync(configPath, 'utf8'));
       }
-    ];
-
-    for (const job of scheduledJobs) {
-      this.scheduledTasks.set(job.id, job);
+    } catch (error) {
+      console.error('Error loading cron config:', error);
     }
-
-    this.systemStatus.totalJobs = scheduledJobs.length;
-    this.systemStatus.activeJobs = scheduledJobs.filter(job => job.enabled).length;
+    return {
+      maxConcurrentJobs: 10,
+      jobTimeout: 300000,
+      retryAttempts: 3,
+      logRetention: 30,
+      monitoring: true,
+      autoRestart: true,
+      performanceTracking: true
+    };
   }
 
-  startCronSystem() {
-    console.log('[EnhancedCronSystem] Starting cron system...');
+  async initialize() {
+    console.log('⏰ Initializing Enhanced Cron System...');
     
-    // Start the main cron loop
-    this.cronLoop();
+    // Create necessary directories
+    this.ensureDirectories();
+    
+    // Load existing schedules
+    await this.loadSchedules();
     
     // Start monitoring
     this.startMonitoring();
+    
+    // Initialize default schedules
+    this.initializeDefaultSchedules();
+    
+    console.log('✅ Enhanced Cron System initialized successfully');
   }
 
-  async cronLoop() {
-    while (true) {
-      const now = Date.now();
-      
-      // Check for jobs that need to run
-      for (const [jobId, job] of this.scheduledTasks) {
-        if (job.enabled && job.nextRun <= now) {
-          await this.executeJob(job);
-        }
+  ensureDirectories() {
+    const directories = [
+      'cron-jobs',
+      'schedules',
+      'logs',
+      'backups',
+      'reports'
+    ];
+
+    directories.forEach(dir => {
+      const dirPath = path.join(__dirname, dir);
+      if (!fs.existsSync(dirPath)) {
+        fs.mkdirSync(dirPath, { recursive: true });
       }
-      
-      // Wait before next check
-      await this.sleep(1000); // Check every second
+    });
+  }
+
+  async loadSchedules() {
+    const schedulesPath = path.join(__dirname, 'schedules');
+    if (fs.existsSync(schedulesPath)) {
+      const files = fs.readdirSync(schedulesPath);
+      files.forEach(file => {
+        if (file.endsWith('.json')) {
+          try {
+            const schedule = JSON.parse(fs.readFileSync(path.join(schedulesPath, file), 'utf8'));
+            this.schedules.set(schedule.id, schedule);
+          } catch (error) {
+            console.error(`Error loading schedule ${file}:`, error);
+          }
+        }
+      });
     }
   }
 
-  async executeJob(job) {
+  initializeDefaultSchedules() {
+    // System maintenance schedules
+    this.createSchedule({
+      id: 'system-backup',
+      name: 'System Backup',
+      description: 'Daily system backup',
+      cron: '0 2 * * *',
+      command: 'node automation/backup-system.js',
+      enabled: true,
+      priority: 'high'
+    });
+
+    this.createSchedule({
+      id: 'health-check',
+      name: 'System Health Check',
+      description: 'Check system health every 5 minutes',
+      cron: '*/5 * * * *',
+      command: 'node automation/health-check.js',
+      enabled: true,
+      priority: 'high'
+    });
+
+    this.createSchedule({
+      id: 'performance-optimization',
+      name: 'Performance Optimization',
+      description: 'Optimize system performance every 30 minutes',
+      cron: '*/30 * * * *',
+      command: 'node automation/optimize-performance.js',
+      enabled: true,
+      priority: 'medium'
+    });
+
+    this.createSchedule({
+      id: 'analytics-collection',
+      name: 'Analytics Collection',
+      description: 'Collect analytics data every hour',
+      cron: '0 * * * *',
+      command: 'node automation/collect-analytics.js',
+      enabled: true,
+      priority: 'medium'
+    });
+
+    this.createSchedule({
+      id: 'market-research',
+      name: 'Market Research',
+      description: 'Perform market research every 6 hours',
+      cron: '0 */6 * * *',
+      command: 'node automation/market-research.js',
+      enabled: true,
+      priority: 'low'
+    });
+
+    this.createSchedule({
+      id: 'content-generation',
+      name: 'Content Generation',
+      description: 'Generate content every 2 hours',
+      cron: '0 */2 * * *',
+      command: 'node automation/content-generation.js',
+      enabled: true,
+      priority: 'medium'
+    });
+
+    this.createSchedule({
+      id: 'social-media',
+      name: 'Social Media Management',
+      description: 'Manage social media every hour',
+      cron: '0 * * * *',
+      command: 'node automation/social-media-management.js',
+      enabled: true,
+      priority: 'medium'
+    });
+
+    this.createSchedule({
+      id: 'seo-optimization',
+      name: 'SEO Optimization',
+      description: 'Optimize SEO every 4 hours',
+      cron: '0 */4 * * *',
+      command: 'node automation/seo-optimization.js',
+      enabled: true,
+      priority: 'medium'
+    });
+
+    this.createSchedule({
+      id: 'lead-generation',
+      name: 'Lead Generation',
+      description: 'Generate leads every 3 hours',
+      cron: '0 */3 * * *',
+      command: 'node automation/lead-generation.js',
+      enabled: true,
+      priority: 'high'
+    });
+
+    this.createSchedule({
+      id: 'email-campaigns',
+      name: 'Email Campaigns',
+      description: 'Send email campaigns every 6 hours',
+      cron: '0 */6 * * *',
+      command: 'node automation/email-campaigns.js',
+      enabled: true,
+      priority: 'medium'
+    });
+
+    this.createSchedule({
+      id: 'data-cleanup',
+      name: 'Data Cleanup',
+      description: 'Clean up old data daily',
+      cron: '0 3 * * *',
+      command: 'node automation/data-cleanup.js',
+      enabled: true,
+      priority: 'low'
+    });
+
+    this.createSchedule({
+      id: 'report-generation',
+      name: 'Report Generation',
+      description: 'Generate reports daily',
+      cron: '0 6 * * *',
+      command: 'node automation/generate-reports.js',
+      enabled: true,
+      priority: 'medium'
+    });
+
+    this.createSchedule({
+      id: 'agent-monitoring',
+      name: 'Agent Monitoring',
+      description: 'Monitor agent performance every 10 minutes',
+      cron: '*/10 * * * *',
+      command: 'node automation/monitor-agents.js',
+      enabled: true,
+      priority: 'high'
+    });
+
+    this.createSchedule({
+      id: 'workload-balancing',
+      name: 'Workload Balancing',
+      description: 'Balance workload every 5 minutes',
+      cron: '*/5 * * * *',
+      command: 'node automation/balance-workload.js',
+      enabled: true,
+      priority: 'high'
+    });
+
+    this.createSchedule({
+      id: 'error-recovery',
+      name: 'Error Recovery',
+      description: 'Recover from errors every 2 minutes',
+      cron: '*/2 * * * *',
+      command: 'node automation/error-recovery.js',
+      enabled: true,
+      priority: 'high'
+    });
+
+    this.createSchedule({
+      id: 'performance-analysis',
+      name: 'Performance Analysis',
+      description: 'Analyze performance every 15 minutes',
+      cron: '*/15 * * * *',
+      command: 'node automation/analyze-performance.js',
+      enabled: true,
+      priority: 'medium'
+    });
+  }
+
+  createSchedule(scheduleConfig) {
+    const schedule = {
+      id: scheduleConfig.id,
+      name: scheduleConfig.name,
+      description: scheduleConfig.description,
+      cron: scheduleConfig.cron,
+      command: scheduleConfig.command,
+      enabled: scheduleConfig.enabled,
+      priority: scheduleConfig.priority,
+      lastRun: null,
+      nextRun: null,
+      runCount: 0,
+      successCount: 0,
+      failureCount: 0,
+      avgDuration: 0,
+      lastError: null,
+      createdAt: new Date().toISOString()
+    };
+
+    this.schedules.set(schedule.id, schedule);
+    this.saveSchedule(schedule);
+
+    if (schedule.enabled) {
+      this.startSchedule(schedule);
+    }
+
+    console.log(`✅ Created schedule: ${schedule.name}`);
+    return schedule.id;
+  }
+
+  startSchedule(schedule) {
+    if (this.jobs.has(schedule.id)) {
+      this.jobs.get(schedule.id).stop();
+    }
+
+    const job = cron.schedule(schedule.cron, async () => {
+      await this.executeJob(schedule);
+    }, {
+      scheduled: false
+    });
+
+    job.start();
+    this.jobs.set(schedule.id, job);
+
+    // Calculate next run time
+    schedule.nextRun = this.calculateNextRun(schedule.cron);
+    this.saveSchedule(schedule);
+
+    console.log(`🚀 Started schedule: ${schedule.name} (${schedule.cron})`);
+  }
+
+  async executeJob(schedule) {
+    const startTime = Date.now();
+    schedule.lastRun = new Date().toISOString();
+    schedule.runCount++;
+
     try {
-      console.log(`[EnhancedCronSystem] Executing job: ${job.name}`);
+      console.log(`🔄 Executing job: ${schedule.name}`);
       
-      job.lastRun = Date.now();
-      job.nextRun = Date.now() + job.schedule;
+      // Execute the command
+      await this.executeCommand(schedule.command);
       
-      this.systemStatus.lastExecution = new Date().toISOString();
-      this.systemStatus.activeJobs++;
-      
-      // Execute the job
-      await job.task();
-      
-      console.log(`[EnhancedCronSystem] Job completed: ${job.name}`);
-      
+      // Update success metrics
+      schedule.successCount++;
+      const duration = Date.now() - startTime;
+      schedule.avgDuration = (schedule.avgDuration * (schedule.runCount - 1) + duration) / schedule.runCount;
+      schedule.lastError = null;
+
+      this.log(`✅ Job completed: ${schedule.name} (${duration}ms)`, 'success');
     } catch (error) {
-      console.error(`[EnhancedCronSystem] Job failed: ${job.name}`, error);
-      this.systemStatus.failedJobs++;
+      console.error(`❌ Job failed: ${schedule.name}`, error);
       
+      // Update failure metrics
+      schedule.failureCount++;
+      schedule.lastError = error.message;
+
+      this.log(`❌ Job failed: ${schedule.name} - ${error.message}`, 'error');
+
       // Retry logic
-      await this.handleJobFailure(job, error);
-    } finally {
-      this.systemStatus.activeJobs--;
-      this.updateSystemStatus();
-    }
-  }
-
-  async handleJobFailure(job, error) {
-    const retryCount = job.retryCount || 0;
-    
-    if (retryCount < this.config.retryAttempts) {
-      job.retryCount = retryCount + 1;
-      console.log(`[EnhancedCronSystem] Retrying job ${job.name} (attempt ${retryCount + 1})`);
-      
-      setTimeout(async () => {
-        await this.executeJob(job);
-      }, this.config.retryDelay);
-    } else {
-      console.error(`[EnhancedCronSystem] Job ${job.name} failed permanently after ${this.config.retryAttempts} attempts`);
-      job.enabled = false;
-      this.emit('jobFailed', { job, error });
-    }
-  }
-
-  async createNewAgents() {
-    console.log('[EnhancedCronSystem] Creating new autonomous agents...');
-    
-    try {
-      const agentTemplates = [
-        {
-          type: 'content',
-          capabilities: ['content_generation', 'seo_optimization', 'multimodal_creation']
-        },
-        {
-          type: 'research',
-          capabilities: ['web_research', 'trend_analysis', 'data_collection']
-        },
-        {
-          type: 'optimization',
-          capabilities: ['performance_optimization', 'resource_management', 'efficiency_improvement']
-        },
-        {
-          type: 'monitoring',
-          capabilities: ['health_monitoring', 'alert_management', 'performance_tracking']
-        }
-      ];
-
-      const selectedTemplate = agentTemplates[Math.floor(Math.random() * agentTemplates.length)];
-      const newAgent = await this.autonomousSystem.createNewAgent(selectedTemplate);
-      
-      console.log(`[EnhancedCronSystem] Created new agent: ${newAgent.name}`);
-      this.emit('agentCreated', newAgent);
-      
-    } catch (error) {
-      console.error('[EnhancedCronSystem] Error creating new agents:', error);
-      throw error;
-    }
-  }
-
-  async createNewOrchestrators() {
-    console.log('[EnhancedCronSystem] Creating new orchestrators...');
-    
-    try {
-      const orchestratorTemplates = [
-        {
-          type: 'workflow',
-          managedAgents: ['content-generator', 'research-agent'],
-          capabilities: ['workflow_management', 'task_distribution', 'quality_assurance']
-        },
-        {
-          type: 'monitoring',
-          managedAgents: ['monitor-agent'],
-          capabilities: ['system_monitoring', 'alert_management', 'performance_tracking']
-        },
-        {
-          type: 'optimization',
-          managedAgents: ['optimization-agent'],
-          capabilities: ['resource_optimization', 'performance_improvement', 'efficiency_management']
-        }
-      ];
-
-      const selectedTemplate = orchestratorTemplates[Math.floor(Math.random() * orchestratorTemplates.length)];
-      const newOrchestrator = await this.autonomousSystem.createOrchestrator(selectedTemplate);
-      
-      console.log(`[EnhancedCronSystem] Created new orchestrator: ${newOrchestrator.name}`);
-      this.emit('orchestratorCreated', newOrchestrator);
-      
-    } catch (error) {
-      console.error('[EnhancedCronSystem] Error creating new orchestrators:', error);
-      throw error;
-    }
-  }
-
-  async performHealthCheck() {
-    console.log('[EnhancedCronSystem] Performing system health check...');
-    
-    try {
-      const systemStatus = this.autonomousSystem.getSystemStatus();
-      
-      // Check overall system health
-      if (systemStatus.overallHealth < 80) {
-        console.warn(`[EnhancedCronSystem] System health is low: ${systemStatus.overallHealth}%`);
-        this.emit('healthWarning', systemStatus);
+      if (this.config.retryAttempts > 0) {
+        await this.retryJob(schedule);
       }
-      
-      // Check individual agent health
-      for (const agent of systemStatus.agents) {
-        if (agent.health < 70) {
-          console.warn(`[EnhancedCronSystem] Agent ${agent.name} health is low: ${agent.health}%`);
-          await this.autonomousSystem.restartAgent(agent.id);
-        }
-      }
-      
-      // Check orchestrator health
-      for (const orchestrator of systemStatus.orchestrators) {
-        if (orchestrator.health < 75) {
-          console.warn(`[EnhancedCronSystem] Orchestrator ${orchestrator.name} health is low: ${orchestrator.health}%`);
-        }
-      }
-      
-      console.log('[EnhancedCronSystem] Health check completed');
-      
-    } catch (error) {
-      console.error('[EnhancedCronSystem] Health check error:', error);
-      throw error;
     }
+
+    // Update next run time
+    schedule.nextRun = this.calculateNextRun(schedule.cron);
+    this.saveSchedule(schedule);
+    this.updateMetrics();
   }
 
-  async performResearchCycle() {
-    console.log('[EnhancedCronSystem] Performing research cycle...');
-    
-    try {
-      // Trigger research in the autonomous system
-      await this.autonomousSystem.performWebResearch();
-      
-      // Analyze research results and plan improvements
-      const systemStatus = this.autonomousSystem.getSystemStatus();
-      
-      if (systemStatus.aiTrends.length > 0) {
-        console.log(`[EnhancedCronSystem] Discovered ${systemStatus.aiTrends.length} new AI trends`);
-      }
-      
-      if (systemStatus.newCapabilities.length > 0) {
-        console.log(`[EnhancedCronSystem] Discovered ${systemStatus.newCapabilities.length} new capabilities`);
-      }
-      
-      console.log('[EnhancedCronSystem] Research cycle completed');
-      
-    } catch (error) {
-      console.error('[EnhancedCronSystem] Research cycle error:', error);
-      throw error;
-    }
-  }
+  async executeCommand(command) {
+    return new Promise((resolve, reject) => {
+      const timeout = setTimeout(() => {
+        reject(new Error('Job timeout'));
+      }, this.config.jobTimeout);
 
-  async performImprovementCycle() {
-    console.log('[EnhancedCronSystem] Performing improvement cycle...');
-    
-    try {
-      // Trigger auto-improvement in the autonomous system
-      await this.autonomousSystem.performAutoImprovement();
-      
-      // Apply discovered improvements
-      const systemStatus = this.autonomousSystem.getSystemStatus();
-      
-      // Create new agents based on discovered capabilities
-      if (systemStatus.newCapabilities.length > 0) {
-        const highPriorityCapabilities = systemStatus.newCapabilities.filter(
-          cap => cap.priority === 'high'
-        );
+      exec(command, { cwd: __dirname }, (error, stdout, stderr) => {
+        clearTimeout(timeout);
         
-        for (const capability of highPriorityCapabilities.slice(0, 2)) {
-          await this.createNewAgents();
+        if (error) {
+          reject(error);
+        } else {
+          resolve({ stdout, stderr });
         }
-      }
-      
-      console.log('[EnhancedCronSystem] Improvement cycle completed');
-      
-    } catch (error) {
-      console.error('[EnhancedCronSystem] Improvement cycle error:', error);
-      throw error;
-    }
+      });
+    });
   }
 
-  async performSystemBackup() {
-    console.log('[EnhancedCronSystem] Performing system backup...');
+  async retryJob(schedule) {
+    console.log(`🔄 Retrying job: ${schedule.name}`);
     
-    try {
-      const backupData = {
-        timestamp: new Date().toISOString(),
-        systemStatus: this.autonomousSystem.getSystemStatus(),
-        cronStatus: this.getCronStatus(),
-        config: this.config
-      };
-      
-      const backupPath = path.join(__dirname, 'backups', `backup-${Date.now()}.json`);
-      
-      // Ensure backup directory exists
-      const backupDir = path.dirname(backupPath);
-      if (!fs.existsSync(backupDir)) {
-        fs.mkdirSync(backupDir, { recursive: true });
+    for (let attempt = 1; attempt <= this.config.retryAttempts; attempt++) {
+      try {
+        await new Promise(resolve => setTimeout(resolve, 5000 * attempt)); // Exponential backoff
+        await this.executeCommand(schedule.command);
+        console.log(`✅ Job retry successful: ${schedule.name} (attempt ${attempt})`);
+        return;
+      } catch (error) {
+        console.error(`❌ Job retry failed: ${schedule.name} (attempt ${attempt})`, error);
+        if (attempt === this.config.retryAttempts) {
+          this.log(`❌ Job retry failed after ${attempt} attempts: ${schedule.name}`, 'error');
+        }
       }
-      
-      fs.writeFileSync(backupPath, JSON.stringify(backupData, null, 2));
-      
-      console.log(`[EnhancedCronSystem] Backup completed: ${backupPath}`);
-      
-      // Clean up old backups (keep last 10)
-      this.cleanupOldBackups();
-      
-    } catch (error) {
-      console.error('[EnhancedCronSystem] Backup error:', error);
-      throw error;
     }
   }
 
-  cleanupOldBackups() {
-    try {
-      const backupDir = path.join(__dirname, 'backups');
-      if (!fs.existsSync(backupDir)) return;
-      
-      const backupFiles = fs.readdirSync(backupDir)
-        .filter(file => file.startsWith('backup-') && file.endsWith('.json'))
-        .map(file => ({
-          name: file,
-          path: path.join(backupDir, file),
-          time: fs.statSync(path.join(backupDir, file)).mtime.getTime()
-        }))
-        .sort((a, b) => b.time - a.time);
-      
-      // Keep only the last 10 backups
-      if (backupFiles.length > 10) {
-        const filesToDelete = backupFiles.slice(10);
-        for (const file of filesToDelete) {
-          fs.unlinkSync(file.path);
-          console.log(`[EnhancedCronSystem] Deleted old backup: ${file.name}`);
-        }
-      }
-    } catch (error) {
-      console.error('[EnhancedCronSystem] Backup cleanup error:', error);
-    }
+  calculateNextRun(cronExpression) {
+    // This is a simplified calculation
+    // In a real implementation, you'd use a proper cron parser
+    const now = new Date();
+    const nextRun = new Date(now.getTime() + 60000); // Add 1 minute as approximation
+    return nextRun.toISOString();
+  }
+
+  saveSchedule(schedule) {
+    const schedulePath = path.join(__dirname, 'schedules', `${schedule.id}.json`);
+    fs.writeFileSync(schedulePath, JSON.stringify(schedule, null, 2));
   }
 
   startMonitoring() {
+    if (!this.config.monitoring) return;
+
     setInterval(() => {
-      this.updateSystemStatus();
-    }, 30000); // Update every 30 seconds
+      this.monitorJobs();
+    }, 60000); // Check every minute
+
+    setInterval(() => {
+      this.generateMonitoringReport();
+    }, 300000); // Generate report every 5 minutes
   }
 
-  updateSystemStatus() {
-    const systemStatus = this.autonomousSystem.getSystemStatus();
-    
-    this.systemStatus.totalJobs = this.scheduledTasks.size;
-    this.systemStatus.activeJobs = Array.from(this.scheduledTasks.values())
-      .filter(job => job.enabled).length;
-    
-    // Find next execution time
-    const enabledJobs = Array.from(this.scheduledTasks.values()).filter(job => job.enabled);
-    if (enabledJobs.length > 0) {
-      const nextJob = enabledJobs.reduce((earliest, job) => 
-        job.nextRun < earliest.nextRun ? job : earliest
-      );
-      this.systemStatus.nextExecution = new Date(nextJob.nextRun).toISOString();
+  monitorJobs() {
+    const activeJobs = Array.from(this.jobs.values()).filter(job => job.running);
+    const failedJobs = Array.from(this.schedules.values()).filter(s => s.failureCount > 0);
+
+    this.metrics.activeJobs = activeJobs.length;
+    this.metrics.failedJobs = failedJobs.length;
+
+    // Alert on failures
+    if (failedJobs.length > 0) {
+      console.log(`⚠️ Found ${failedJobs.length} failed jobs`);
+      failedJobs.forEach(job => {
+        if (job.lastError) {
+          console.log(`❌ ${job.name}: ${job.lastError}`);
+        }
+      });
     }
   }
 
-  getCronStatus() {
+  generateMonitoringReport() {
+    const report = {
+      timestamp: new Date().toISOString(),
+      metrics: this.metrics,
+      schedules: Array.from(this.schedules.values()).map(s => ({
+        id: s.id,
+        name: s.name,
+        enabled: s.enabled,
+        lastRun: s.lastRun,
+        nextRun: s.nextRun,
+        runCount: s.runCount,
+        successCount: s.successCount,
+        failureCount: s.failureCount,
+        avgDuration: s.avgDuration,
+        lastError: s.lastError
+      })),
+      recommendations: this.generateRecommendations()
+    };
+
+    const reportPath = path.join(__dirname, 'reports', `cron_report_${Date.now()}.json`);
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+
+    console.log('📊 Generated cron monitoring report');
+  }
+
+  generateRecommendations() {
+    const recommendations = [];
+    const schedules = Array.from(this.schedules.values());
+
+    // Check for high failure rates
+    const highFailureJobs = schedules.filter(s => s.failureCount > 0 && s.runCount > 0 && (s.failureCount / s.runCount) > 0.3);
+    if (highFailureJobs.length > 0) {
+      recommendations.push('Review and fix jobs with high failure rates');
+    }
+
+    // Check for long-running jobs
+    const longRunningJobs = schedules.filter(s => s.avgDuration > 300000); // 5 minutes
+    if (longRunningJobs.length > 0) {
+      recommendations.push('Optimize long-running jobs for better performance');
+    }
+
+    // Check for disabled jobs
+    const disabledJobs = schedules.filter(s => !s.enabled);
+    if (disabledJobs.length > 0) {
+      recommendations.push('Review disabled jobs and consider re-enabling if needed');
+    }
+
+    return recommendations;
+  }
+
+  enableSchedule(scheduleId) {
+    const schedule = this.schedules.get(scheduleId);
+    if (!schedule) return;
+
+    schedule.enabled = true;
+    this.startSchedule(schedule);
+    this.saveSchedule(schedule);
+
+    console.log(`✅ Enabled schedule: ${schedule.name}`);
+  }
+
+  disableSchedule(scheduleId) {
+    const schedule = this.schedules.get(scheduleId);
+    if (!schedule) return;
+
+    schedule.enabled = false;
+    
+    if (this.jobs.has(scheduleId)) {
+      this.jobs.get(scheduleId).stop();
+      this.jobs.delete(scheduleId);
+    }
+
+    this.saveSchedule(schedule);
+
+    console.log(`⏸️ Disabled schedule: ${schedule.name}`);
+  }
+
+  updateSchedule(scheduleId, updates) {
+    const schedule = this.schedules.get(scheduleId);
+    if (!schedule) return;
+
+    Object.assign(schedule, updates);
+    this.saveSchedule(schedule);
+
+    if (schedule.enabled) {
+      this.startSchedule(schedule);
+    }
+
+    console.log(`🔄 Updated schedule: ${schedule.name}`);
+  }
+
+  deleteSchedule(scheduleId) {
+    const schedule = this.schedules.get(scheduleId);
+    if (!schedule) return;
+
+    if (this.jobs.has(scheduleId)) {
+      this.jobs.get(scheduleId).stop();
+      this.jobs.delete(scheduleId);
+    }
+
+    this.schedules.delete(scheduleId);
+    
+    const schedulePath = path.join(__dirname, 'schedules', `${scheduleId}.json`);
+    if (fs.existsSync(schedulePath)) {
+      fs.unlinkSync(schedulePath);
+    }
+
+    console.log(`🗑️ Deleted schedule: ${schedule.name}`);
+  }
+
+  getSchedule(scheduleId) {
+    return this.schedules.get(scheduleId);
+  }
+
+  getAllSchedules() {
+    return Array.from(this.schedules.values());
+  }
+
+  getActiveSchedules() {
+    return Array.from(this.schedules.values()).filter(s => s.enabled);
+  }
+
+  getFailedSchedules() {
+    return Array.from(this.schedules.values()).filter(s => s.failureCount > 0);
+  }
+
+  updateMetrics() {
+    this.metrics.totalJobs = Array.from(this.schedules.values()).reduce((sum, s) => sum + s.runCount, 0);
+    this.metrics.lastRun = new Date().toISOString();
+  }
+
+  log(message, level = 'info') {
+    const logEntry = {
+      timestamp: new Date().toISOString(),
+      level,
+      message,
+      metrics: this.metrics
+    };
+
+    this.logs.push(logEntry);
+    
+    // Keep only recent logs
+    if (this.logs.length > 1000) {
+      this.logs = this.logs.slice(-1000);
+    }
+
+    // Save to file
+    const logPath = path.join(__dirname, 'logs', `cron_${new Date().toISOString().split('T')[0]}.log`);
+    fs.appendFileSync(logPath, JSON.stringify(logEntry) + '\n');
+
+    console.log(`[CRON] [${level.toUpperCase()}] ${message}`);
+  }
+
+  getStatus() {
     return {
-      ...this.systemStatus,
-      scheduledTasks: Array.from(this.scheduledTasks.values()),
-      autonomousSystemStatus: this.autonomousSystem.getSystemStatus()
+      schedules: Array.from(this.schedules.values()),
+      metrics: this.metrics,
+      config: this.config,
+      uptime: Date.now() - this.metrics.uptime
     };
   }
 
-  async triggerImprovements() {
-    console.log('[EnhancedCronSystem] Triggering improvements based on research...');
+  async stop() {
+    console.log('🛑 Stopping Enhanced Cron System...');
     
-    try {
-      // Create new specialized agents based on research findings
-      await this.createNewAgents();
-      
-      // Trigger improvement cycle
-      await this.performImprovementCycle();
-      
-    } catch (error) {
-      console.error('[EnhancedCronSystem] Error triggering improvements:', error);
-    }
-  }
-
-  async sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
-  async shutdown() {
-    console.log('[EnhancedCronSystem] Shutting down enhanced cron system...');
+    // Stop all jobs
+    Array.from(this.jobs.values()).forEach(job => {
+      job.stop();
+    });
     
-    // Stop all scheduled tasks
-    for (const [jobId, job] of this.scheduledTasks) {
-      job.enabled = false;
-    }
+    this.jobs.clear();
     
-    // Shutdown autonomous system
-    await this.autonomousSystem.shutdown();
-    
-    this.emit('cronSystemShutdown');
+    console.log('✅ Enhanced Cron System stopped');
   }
 }
 
-module.exports = EnhancedCronSystem; 
+module.exports = EnhancedCronSystem;
+
+// If run directly, start the system
+if (require.main === module) {
+  const cronSystem = new EnhancedCronSystem();
+  cronSystem.initialize().catch(console.error);
+} 

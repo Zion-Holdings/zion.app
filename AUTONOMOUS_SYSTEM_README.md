@@ -1,33 +1,89 @@
-# Enhanced Autonomous System
+# Autonomous Agent System
 
-A comprehensive autonomous agent system with continuous improvement, web research capabilities, and self-evolving features for Zion Tech Group.
+A comprehensive autonomous AI agent system with real-time monitoring, self-improvement capabilities, and intelligent orchestration.
 
 ## 🚀 Features
 
 ### Core Components
-- **Enhanced Autonomous System**: Main orchestration and control system
-- **Enhanced Cron System**: Automated job scheduling and execution
-- **Agent Factory**: Creates and manages autonomous agents
-- **Research Agents**: Continuously research latest AI trends and capabilities
-- **Content Generation**: Automated content creation and optimization
-- **System Monitoring**: Real-time health monitoring and performance tracking
 
-### Advanced Capabilities
-- **Continuous Research**: Web scraping and trend analysis
-- **Self-Improvement**: Automatic capability enhancement based on research
-- **Agent Creation**: Dynamic creation of new specialized agents
-- **Orchestrator Management**: Intelligent workload distribution
-- **Health Monitoring**: Proactive system health management
-- **Backup System**: Automated system backups and recovery
+- **Enhanced Autonomous System**: Central management system for all agents
+- **Agent Factory**: Dynamic creation and deployment of AI agents
+- **Agent Orchestrator**: Intelligent task distribution and workload balancing
+- **Enhanced Cron System**: Automated scheduling and monitoring
+- **Admin Dashboard**: Real-time monitoring and management interface
 
-## 🛠️ Installation & Setup
+### Agent Types
+
+1. **Content Generation Agent**
+   - AI writing capabilities
+   - SEO optimization
+   - Content planning and research
+   - Blog posts, product descriptions, social media content
+
+2. **Marketing Automation Agent**
+   - Campaign management
+   - Email marketing automation
+   - Social media management
+   - Lead generation and scoring
+
+3. **Sales Intelligence Agent**
+   - Lead scoring and qualification
+   - CRM integration
+   - Sales analytics and reporting
+   - Pipeline management
+
+4. **Analytics Agent**
+   - Data collection and analysis
+   - Performance tracking
+   - KPI monitoring
+   - Trend analysis and reporting
+
+5. **Web Research Agent**
+   - Web scraping and data collection
+   - Market research
+   - Competitive analysis
+   - Trend identification
+
+6. **Social Media Manager Agent**
+   - Content scheduling
+   - Engagement monitoring
+   - Hashtag optimization
+   - Audience analysis
+
+7. **SEO Optimizer Agent**
+   - Keyword research
+   - On-page optimization
+   - Technical SEO audits
+   - Ranking tracking
+
+8. **Customer Support Agent**
+   - Ticket management
+   - Auto-responses
+   - Knowledge base management
+   - Satisfaction tracking
+
+9. **Data Processor Agent**
+   - Data cleaning and validation
+   - ETL processes
+   - Report generation
+   - Data quality assurance
+
+10. **Quality Assurance Agent**
+    - Content review
+    - Error detection
+    - Quality scoring
+    - Improvement suggestions
+
+## 🛠️ Installation
 
 ### Prerequisites
+
 - Node.js 16+ 
-- npm or yarn
+- PostgreSQL database
+- Supabase account
 - Git
 
-### Quick Start
+### Setup
 
 1. **Clone the repository**
    ```bash
@@ -38,263 +94,320 @@ A comprehensive autonomous agent system with continuous improvement, web researc
 2. **Install dependencies**
    ```bash
    npm install
+   cd automation
+   npm install
    ```
 
-3. **Start the autonomous system**
-   ```bash
-   npm run autonomous
+3. **Environment Configuration**
+   Create a `.env.local` file in the root directory:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
    ```
 
-4. **Check system status**
+4. **Database Setup**
+   Run the database schema:
    ```bash
-   npm run autonomous:status
+   psql -d your_database -f database-schema.sql
+   ```
+
+5. **Initialize the System**
+   ```bash
+   cd automation
+   node launch-enhanced-autonomous-system.js
    ```
 
 ## 📊 Admin Dashboard
 
-### Access
-- **URL**: `/admin-dashboard`
-- **Username**: `kleber@ziontechgroup.com`
-- **Password**: `Tw2.R5u&2!sDfeW`
+Access the admin dashboard at `/admin-dashboard` with credentials:
+- **Username**: kleber@ziontechgroup.com
+- **Password**: Tw2.R5u&2!sDfeW
 
-### Features
-- Real-time automation status monitoring
-- System health metrics
-- Agent and orchestrator management
-- Research findings display
-- Performance analytics
-- Action controls (start/stop/restart)
+### Dashboard Features
 
-## 🤖 Autonomous Agents
-
-### Core Agents
-1. **Master Controller Agent**
-   - System orchestration and control
-   - Health monitoring and management
-   - Agent coordination
-
-2. **Agent Factory**
-   - Dynamic agent creation
-   - Template management
-   - Workload distribution
-
-3. **AI Research Agent**
-   - Web research and trend analysis
-   - Capability discovery
-   - Improvement suggestions
-
-4. **Content Generation Agent**
-   - Automated content creation
-   - SEO optimization
-   - Multimodal generation
-
-5. **System Monitor Agent**
-   - Health monitoring
-   - Performance tracking
-   - Alert management
-
-6. **Workload Orchestrator**
-   - Task distribution
-   - Load balancing
-   - Resource optimization
-
-### Research Agents
-1. **AI Trend Researcher**
-   - Focus: Artificial Intelligence
-   - Sources: ArXiv, GitHub, Reddit, Research Papers
-   - Capabilities: Trend analysis, capability assessment
-
-2. **Automation Technology Researcher**
-   - Focus: Automation Tools
-   - Sources: GitHub, npm, PyPI, Tech News
-   - Capabilities: Tool discovery, integration analysis
-
-3. **Web Research Agent**
-   - Focus: Web Research
-   - Sources: News sites, tech blogs, social media
-   - Capabilities: Content scraping, sentiment analysis
-
-## ⏰ Cron Jobs
-
-### Scheduled Tasks
-1. **Agent Creation** (30 minutes)
-   - Creates new autonomous agents
-   - Distributes workload across agents
-
-2. **Orchestrator Creation** (1 hour)
-   - Creates new orchestrators
-   - Manages workflow coordination
-
-3. **Health Check** (1 minute)
-   - Monitors system health
-   - Restarts unhealthy components
-
-4. **Research Cycle** (2 hours)
-   - Performs web research
-   - Discovers new capabilities
-
-5. **Improvement Cycle** (1.5 hours)
-   - Applies system improvements
-   - Implements new capabilities
-
-6. **System Backup** (24 hours)
-   - Creates system backups
-   - Maintains data integrity
+- **Real-time Monitoring**: Live status of all agents
+- **System Metrics**: Performance indicators and health status
+- **Agent Management**: Create, start, stop, and configure agents
+- **Task Distribution**: Monitor task assignment and completion
+- **Performance Analytics**: Detailed performance reports
+- **Workload Balancing**: Automatic workload distribution
+- **Error Recovery**: Automatic error detection and recovery
 
 ## 🔧 Configuration
 
 ### System Configuration
-```javascript
+
+Edit `automation/config.json`:
+```json
 {
-  maxAgents: 50,
-  maxOrchestrators: 10,
-  researchInterval: 3600000, // 1 hour
-  healthCheckInterval: 30000, // 30 seconds
-  autoImprovementInterval: 1800000, // 30 minutes
-  webResearchSources: [
-    'https://arxiv.org/list/cs.AI/recent',
-    'https://github.com/trending',
-    'https://www.reddit.com/r/MachineLearning/hot.json',
-    'https://api.openai.com/v1/models',
-    'https://huggingface.co/api/models'
-  ]
+  "maxAgents": 50,
+  "maxConcurrentTasks": 10,
+  "healthCheckInterval": 30000,
+  "backupInterval": 3600000,
+  "logRetention": 7,
+  "autoScaling": true,
+  "performanceThreshold": 0.8
 }
 ```
 
 ### Cron Configuration
-```javascript
+
+Edit `automation/cron-config.json`:
+```json
 {
-  agentCreationInterval: 1800000, // 30 minutes
-  orchestratorCreationInterval: 3600000, // 1 hour
-  healthCheckInterval: 60000, // 1 minute
-  researchInterval: 7200000, // 2 hours
-  improvementInterval: 5400000, // 1.5 hours
-  backupInterval: 86400000, // 24 hours
-  maxConcurrentJobs: 20,
-  retryAttempts: 3,
-  retryDelay: 300000 // 5 minutes
+  "maxConcurrentJobs": 10,
+  "jobTimeout": 300000,
+  "retryAttempts": 3,
+  "logRetention": 30,
+  "monitoring": true,
+  "autoRestart": true,
+  "performanceTracking": true
 }
 ```
+
+## 🤖 Agent Management
+
+### Creating New Agents
+
+```javascript
+const AgentFactory = require('./automation/autonomous-agent-factory');
+const factory = new AgentFactory();
+
+const agentId = await factory.createAgent('content-generation', {
+  name: 'Custom Content Agent',
+  capabilities: ['AI writing', 'SEO optimization'],
+  services: ['Blog posts', 'Product descriptions'],
+  config: {
+    maxContentLength: 2000,
+    seoOptimization: true
+  }
+});
+```
+
+### Agent Types Available
+
+- `content-generation`
+- `marketing`
+- `sales`
+- `analytics`
+- `research`
+- `social-media`
+- `seo`
+- `support`
+- `data-processing`
+- `qa`
+
+### Agent Configuration
+
+Each agent can be configured with:
+- **Capabilities**: Array of agent abilities
+- **Services**: Array of services the agent provides
+- **Dependencies**: Required external services
+- **Performance Settings**: Timeouts, retry logic, etc.
+- **Auto-scaling**: Automatic scaling based on workload
 
 ## 📈 Monitoring & Analytics
 
 ### System Metrics
-- Overall system health
-- Active agents count
-- Task completion rates
-- Error rates and recovery
-- Performance metrics
-- Resource utilization
 
-### Research Analytics
-- AI trend discoveries
-- New capability identification
-- Improvement implementation tracking
-- Research source effectiveness
+- **Total Agents**: Number of agents in the system
+- **Active Agents**: Currently running agents
+- **System Health**: Overall system status (good/warning/critical)
+- **Average Response Time**: Mean response time across all agents
+- **Error Rate**: Percentage of failed operations
+- **Efficiency**: System utilization percentage
 
-## 🔄 Continuous Improvement
+### Performance Tracking
 
-### Self-Improvement Features
-1. **Automatic Capability Discovery**
-   - Web research for new AI capabilities
-   - Trend analysis and impact assessment
-   - Priority-based implementation
+- **Task Completion Rate**: Success rate of task execution
+- **Agent Performance**: Individual agent metrics
+- **Workload Distribution**: Load balancing across agents
+- **Error Analysis**: Detailed error reporting and recovery
 
-2. **Performance Optimization**
-   - Health-based agent replacement
-   - Workload redistribution
-   - Resource optimization
+### Real-time Monitoring
 
-3. **Research-Driven Enhancements**
-   - Implementation of discovered capabilities
-   - Trend-based agent creation
-   - Continuous learning and adaptation
+- **Live Status Updates**: Real-time agent status
+- **Performance Dashboards**: Visual performance indicators
+- **Alert System**: Automatic alerts for issues
+- **Log Management**: Centralized logging and analysis
 
-## 🛡️ Security & Authentication
+## 🔄 Automation Features
 
-### Admin Access
-- Secure login system
-- Role-based access control
-- Session management
-- Audit logging
+### Scheduled Tasks
 
-### System Security
-- Process isolation
-- Error handling and recovery
-- Graceful shutdown procedures
-- Backup and restore capabilities
+- **Content Generation**: Automated content creation
+- **Market Research**: Regular market analysis
+- **SEO Optimization**: Periodic SEO updates
+- **Social Media**: Automated social media management
+- **Email Campaigns**: Scheduled email marketing
+- **Data Backup**: Regular system backups
+- **Performance Analysis**: Automated performance reviews
+
+### Intelligent Orchestration
+
+- **Task Distribution**: Smart task assignment
+- **Workload Balancing**: Automatic load distribution
+- **Error Recovery**: Automatic error handling
+- **Auto-scaling**: Dynamic resource allocation
+- **Performance Optimization**: Continuous improvement
+
+## 🛡️ Security & Access Control
+
+### Authentication
+
+- **Admin Access**: Restricted to authorized users
+- **Agent Isolation**: Secure agent execution
+- **API Protection**: Protected API endpoints
+- **Data Encryption**: Encrypted data storage
+
+### Access Levels
+
+- **Admin**: Full system access
+- **Agent**: Limited to agent operations
+- **Monitor**: Read-only access for monitoring
 
 ## 📝 API Endpoints
 
-### Admin Dashboard API
-- `GET /api/admin/automation-status` - Get system status
-- `POST /api/admin/automation-status` - Control automations
+### Agent Management
 
-### Authentication
-- Bearer token authentication
-- Admin-only access
-- Secure communication
+- `GET /api/admin/agents` - List all agents
+- `POST /api/admin/agents` - Create new agent
+- `PUT /api/admin/agents` - Update agent
+- `DELETE /api/admin/agents` - Delete agent
 
-## 🚨 Troubleshooting
+### System Metrics
 
-### Common Issues
+- `GET /api/admin/metrics` - Get system metrics
+- `POST /api/admin/metrics` - Update metrics
 
-1. **System Not Starting**
+### Monitoring
+
+- `GET /api/admin/status` - System status
+- `GET /api/admin/logs` - System logs
+- `POST /api/admin/restart` - Restart system
+
+## 🔧 Maintenance
+
+### Regular Maintenance
+
+1. **Database Cleanup**
    ```bash
-   npm run autonomous:status --mock
-   # Check for process conflicts
-   ps aux | grep node
+   node automation/data-cleanup.js
    ```
 
-2. **Low System Health**
-   - Check agent status
-   - Review error logs
-   - Restart unhealthy components
+2. **Log Rotation**
+   ```bash
+   node automation/log-rotation.js
+   ```
 
-3. **Research Not Working**
-   - Verify internet connectivity
-   - Check research source availability
-   - Review API rate limits
+3. **Performance Optimization**
+   ```bash
+   node automation/optimize-performance.js
+   ```
 
-### Logs and Debugging
-- System logs: `automation/logs/`
-- Status files: `automation/status/`
-- Backup files: `automation/backups/`
+4. **System Backup**
+   ```bash
+   node automation/backup-system.js
+   ```
 
-## 🔮 Future Enhancements
+### Troubleshooting
 
-### Planned Features
-1. **Advanced AI Integration**
-   - GPT-4 integration for content generation
-   - Claude integration for research
-   - Multimodal AI capabilities
+1. **Check Agent Status**
+   ```bash
+   node automation/check-autonomous-status.js
+   ```
 
-2. **Enhanced Research**
-   - Real-time web scraping
-   - Social media trend analysis
-   - Academic paper analysis
+2. **View System Logs**
+   ```bash
+   tail -f automation/logs/system_*.log
+   ```
 
-3. **Improved Orchestration**
-   - Kubernetes integration
-   - Cloud-native deployment
-   - Auto-scaling capabilities
+3. **Restart System**
+   ```bash
+   node automation/restart-autonomous-system.js
+   ```
 
-4. **Advanced Analytics**
-   - Machine learning for optimization
-   - Predictive analytics
-   - Performance forecasting
+## 📊 Reporting
+
+### Available Reports
+
+- **System Performance Report**: Overall system metrics
+- **Agent Performance Report**: Individual agent analysis
+- **Task Completion Report**: Task execution statistics
+- **Error Analysis Report**: Error patterns and solutions
+- **Workload Distribution Report**: Load balancing analysis
+
+### Report Generation
+
+```bash
+# Generate comprehensive report
+node automation/generate-reports.js
+
+# Generate specific report
+node automation/generate-performance-report.js
+```
+
+## 🚀 Deployment
+
+### Production Deployment
+
+1. **Environment Setup**
+   ```bash
+   npm run build
+   npm start
+   ```
+
+2. **Process Management**
+   ```bash
+   pm2 start ecosystem.config.js
+   ```
+
+3. **Monitoring**
+   ```bash
+   pm2 monit
+   ```
+
+### Docker Deployment
+
+```dockerfile
+FROM node:16-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+EXPOSE 3000
+CMD ["npm", "start"]
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests
+5. Submit a pull request
 
 ## 📄 License
 
-This project is proprietary to Zion Tech Group. All rights reserved.
+This project is licensed under the MIT License.
 
-## 🤝 Support
+## 🆘 Support
 
-For technical support or questions about the autonomous system:
-- Email: kleber@ziontechgroup.com
-- System Status: Run `npm run autonomous:status`
-- Documentation: See this README and inline code comments
+For support and questions:
+- Create an issue in the repository
+- Contact the development team
+- Check the documentation
+
+## 🔮 Future Enhancements
+
+- **Machine Learning Integration**: Advanced AI capabilities
+- **Multi-language Support**: Internationalization
+- **Mobile App**: Mobile management interface
+- **Advanced Analytics**: Predictive analytics
+- **Cloud Integration**: Multi-cloud deployment
+- **API Marketplace**: Third-party integrations
 
 ---
 
-**Note**: This system is designed to run continuously and autonomously. It will continuously improve itself based on research findings and performance metrics. Monitor the system regularly through the admin dashboard to ensure optimal performance. 
+**Note**: This system is designed for continuous operation and self-improvement. Monitor the system regularly and adjust configurations as needed for optimal performance. 

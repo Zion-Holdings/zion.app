@@ -3,6 +3,8 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
+import { useAuth } from '../../src/contexts/AuthContext'
 
 const Signup: NextPage = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +15,17 @@ const Signup: NextPage = () => {
     confirmPassword: '',
     userType: 'business'
   })
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [message, setMessage] = useState('')
+  const { signUp, user } = useAuth()
+  const router = useRouter()
+
+  // Redirect if already logged in
+  if (user) {
+    router.push('/dashboard')
+    return null
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
@@ -21,10 +34,48 @@ const Signup: NextPage = () => {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle signup logic
-    console.log('Signup attempt:', formData)
+    setLoading(true)
+    setError('')
+    setMessage('')
+
+    // Validate passwords match
+    if (formData.password !== formData.confirmPassword) {
+      setError('Passwords do not match')
+      setLoading(false)
+      return
+    }
+
+    // Validate password strength
+    if (formData.password.length < 6) {
+      setError('Password must be at least 6 characters long')
+      setLoading(false)
+      return
+    }
+
+    try {
+      const { error } = await signUp(formData.email, formData.password)
+      
+      if (error) {
+        setError(error.message)
+      } else {
+        setMessage('Account created successfully! Please check your email to verify your account.')
+        // Clear form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          password: '',
+          confirmPassword: '',
+          userType: 'business'
+        })
+      }
+    } catch (err) {
+      setError('An unexpected error occurred. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -40,9 +91,21 @@ const Signup: NextPage = () => {
             <Link href="/" className="text-3xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
-            <h2 className="text-2xl font-bold text-white mt-4">Join Zion</h2>
-            <p className="text-gray-300 mt-2">Create your account to get started</p>
+            <h2 className="text-2xl font-bold text-white mt-4">Create Account</h2>
+            <p className="text-gray-300 mt-2">Join the Zion community</p>
           </div>
+
+          {error && (
+            <div className="mb-4 p-3 bg-red-500/10 border border-red-500/20 rounded-lg">
+              <p className="text-red-400 text-sm">{error}</p>
+            </div>
+          )}
+
+          {message && (
+            <div className="mb-4 p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
+              <p className="text-green-400 text-sm">{message}</p>
+            </div>
+          )}
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
@@ -59,6 +122,7 @@ const Signup: NextPage = () => {
                   className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
                   placeholder="First name"
                   required
+                  disabled={loading}
                 />
               </div>
               <div>
@@ -74,6 +138,7 @@ const Signup: NextPage = () => {
                   className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
                   placeholder="Last name"
                   required
+                  disabled={loading}
                 />
               </div>
             </div>
@@ -91,12 +156,13 @@ const Signup: NextPage = () => {
                 className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
                 placeholder="Enter your email"
                 required
+                disabled={loading}
               />
             </div>
 
             <div>
               <label htmlFor="userType" className="block text-sm font-medium text-gray-300 mb-2">
-                I am a
+                Account Type
               </label>
               <select
                 id="userType"
@@ -104,10 +170,11 @@ const Signup: NextPage = () => {
                 value={formData.userType}
                 onChange={handleChange}
                 className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                disabled={loading}
               >
-                <option value="business">Business Owner</option>
-                <option value="provider">Service Provider</option>
+                <option value="business">Business</option>
                 <option value="individual">Individual</option>
+                <option value="developer">Developer</option>
               </select>
             </div>
 
@@ -124,6 +191,7 @@ const Signup: NextPage = () => {
                 className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
                 placeholder="Create a password"
                 required
+                disabled={loading}
               />
             </div>
 
@@ -140,14 +208,16 @@ const Signup: NextPage = () => {
                 className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
                 placeholder="Confirm your password"
                 required
+                disabled={loading}
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3 rounded-lg font-medium transition-all duration-300"
+              disabled={loading}
+              className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed text-white py-3 rounded-lg font-medium transition-all duration-300"
             >
-              Create Account
+              {loading ? 'Creating Account...' : 'Create Account'}
             </button>
           </form>
 

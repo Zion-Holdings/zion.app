@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { createClient } from '@supabase/supabase-js';
 
@@ -33,12 +33,7 @@ export default function AdminDashboard() {
   const [agents, setAgents] = useState<Agent[]>([]);
   const [activeTab, setActiveTab] = useState('overview');
 
-  useEffect(() => {
-    checkAuth();
-    loadAgents();
-  }, []);
-
-  const checkAuth = async () => {
+  const checkAuth = useCallback(async () => {
     const { data: { session } } = await supabase.auth.getSession();
     if (!session) {
       router.push('/login');
@@ -52,7 +47,12 @@ export default function AdminDashboard() {
     }
     
     setUser(user);
-  };
+  }, [router]);
+
+  useEffect(() => {
+    checkAuth();
+    loadAgents();
+  }, [checkAuth]);
 
   const loadAgents = async () => {
     try {
