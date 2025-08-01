@@ -2,9 +2,11 @@ const cron = require('node-cron');
 const fs = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
+const EventEmitter = require('events');
 
-class EnhancedCronSystem {
+class EnhancedCronSystem extends EventEmitter {
   constructor(orchestrator) {
+    super();
     this.orchestrator = orchestrator;
     this.jobs = new Map();
     this.jobHistory = [];
