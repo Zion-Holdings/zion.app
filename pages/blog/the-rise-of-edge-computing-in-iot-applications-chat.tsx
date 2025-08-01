@@ -43,17 +43,17 @@ const TheRiseOfEdgeComputingInIotApplicationsChatPage: NextPage = () => {
           <div className="prose prose-invert prose-lg max-w-none">
             <div className="text-gray-300 leading-relaxed">
               
-<p className="mb-6">In this expert discussion about The Rise of Edge Computing in IoT Applications, we explore the latest developments and their implications for modern businesses.</p>
+              <p className="mb-6">In this expert discussion about The Rise of Edge Computing in IoT Applications, we explore the latest developments and their implications for modern businesses.</p>
 
-<p className="mb-6">The conversation begins with a deep dive into the current state of the rise of edge computing in iot applications, examining how organizations are adapting to new challenges and opportunities. Our experts share insights from their extensive experience in the field.</p>
+              <p className="mb-6">The conversation begins with a deep dive into the current state of the rise of edge computing in iot applications, examining how organizations are adapting to new challenges and opportunities. Our experts share insights from their extensive experience in the field.</p>
 
-<p className="mb-6">Key points of discussion include the practical applications of the rise of edge computing in iot applications in real-world scenarios, the challenges that organizations face when implementing these solutions, and the strategies that lead to successful outcomes.</p>
+              <p className="mb-6">Key points of discussion include the practical applications of the rise of edge computing in iot applications in real-world scenarios, the challenges that organizations face when implementing these solutions, and the strategies that lead to successful outcomes.</p>
 
-<p className="mb-6">The discussion also covers emerging trends and future developments in the rise of edge computing in iot applications, providing valuable insights for decision-makers looking to stay ahead of the curve.</p>
+              <p className="mb-6">The discussion also covers emerging trends and future developments in the rise of edge computing in iot applications, providing valuable insights for decision-makers looking to stay ahead of the curve.</p>
 
-<p className="mb-6">Throughout the conversation, our experts emphasize the importance of taking a strategic approach to the rise of edge computing in iot applications, ensuring that implementations align with broader business objectives and deliver measurable value.</p>
+              <p className="mb-6">Throughout the conversation, our experts emphasize the importance of taking a strategic approach to the rise of edge computing in iot applications, ensuring that implementations align with broader business objectives and deliver measurable value.</p>
 
-<p className="mb-6">The conversation concludes with actionable recommendations for organizations looking to leverage the rise of edge computing in iot applications effectively, including best practices, common pitfalls to avoid, and success factors that contribute to positive outcomes.</p>
+              <p className="mb-6">The conversation concludes with actionable recommendations for organizations looking to leverage the rise of edge computing in iot applications effectively, including best practices, common pitfalls to avoid, and success factors that contribute to positive outcomes.</p>
 
             </div>
           </div>
