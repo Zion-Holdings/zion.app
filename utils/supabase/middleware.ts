@@ -26,7 +26,7 @@ export async function updateSession(request: NextRequest) {
           supabaseResponse = NextResponse.next({
             request,
           })
-          supabaseResponse.cookies.set(name, '', { ...options, maxAge: 0 })
+          supabaseResponse.cookies.set(name, '', options)
         },
       },
     }
