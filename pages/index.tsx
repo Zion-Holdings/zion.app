@@ -109,16 +109,16 @@ const Home: NextPage = () => {
       id: 7,
       type: 'ai-virtual-assistant',
       title: 'AI Virtual Assistant',
-      subtitle: 'Your Intelligent Marketplace Guide',
-      description: 'Experience the future of marketplace interaction with our AI-powered virtual assistant. Get personalized recommendations, expert guidance, and seamless navigation.',
-      features: [
-        { title: 'Intelligent Recommendations', description: 'Get personalized suggestions for services, talents, and equipment', icon: '🤖' },
-        { title: 'Expert Guidance', description: 'Receive technical advice and implementation guidance', icon: '💡' },
-        { title: 'Seamless Navigation', description: 'Navigate our marketplace effortlessly with AI assistance', icon: '🚀' },
-        { title: '24/7 Support', description: 'Get instant help and support anytime, anywhere', icon: '⏰' }
-      ],
+      description: 'Experience the future of marketplace interaction with our intelligent AI assistant. Get personalized recommendations, expert guidance, and seamless navigation.',
       cta: 'Try AI Assistant',
       ctaLink: '/ai-virtual-assistant',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/ai-virtual-assistant',
+      features: [
+        { icon: '🤖', title: 'Intelligent Recommendations', description: 'Get personalized suggestions for services, talents, and equipment' },
+        { icon: '💡', title: 'Expert Guidance', description: 'Receive technical advice and implementation guidance' },
+        { icon: '🚀', title: 'Seamless Navigation', description: 'Navigate our marketplace effortlessly with AI-powered routing' }
+      ],
       bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900'
     },
     {
@@ -537,6 +537,41 @@ const Home: NextPage = () => {
                     </div>
                   </Link>
                 ))}
+              </div>
+            </div>
+          </div>
+        )
+
+      case 'ai-virtual-assistant':
+        return (
+          <div className="py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  {section.title}
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  {section.description}
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {section.features.map((feature: any, index: number) => (
+                  <div key={index} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="text-4xl mb-4">{feature.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                    <p className="text-gray-300">{feature.description}</p>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center mt-16">
+                <Link href={section.ctaLink} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  {section.cta}
+                </Link>
+                <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                  {section.secondaryCta}
+                </Link>
               </div>
             </div>
           </div>
