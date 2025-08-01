@@ -1,704 +1,562 @@
 const fs = require('fs');
 const path = require('path');
-const { exec } = require('child_process');
+const { spawn } = require('child_process');
+const { v4: uuidv4 } = require('uuid');
 
 class AutonomousAgentFactory {
   constructor() {
-    this.agentTemplates = new Map();
-    this.agentRegistry = new Map();
-    this.loadAgentTemplates();
+    this.agents = new Map();
+    this.agentTypes = {
+      'deep-search': {
+        capabilities: ['web-scraping', 'data-analysis', 'pattern-recognition'],
+        services: ['market-research', 'competitive-analysis', 'trend-detection'],
+        dependencies: ['puppeteer', 'cheerio', 'axios'],
+        config: {
+          maxConcurrentSearches: 5,
+          searchDepth: 3,
+          timeout: 30000,
+          retryAttempts: 3
+        }
+      },
+      'content-generation': {
+        capabilities: ['ai-writing', 'seo-optimization', 'content-planning'],
+        services: ['blog-posts', 'product-descriptions', 'social-media-content'],
+        dependencies: ['openai', 'markdown'],
+        config: {
+          maxContentLength: 2000,
+          seoOptimization: true,
+          plagiarismCheck: true
+        }
+      },
+      'marketing-automation': {
+        capabilities: ['campaign-management', 'email-automation', 'lead-scoring'],
+        services: ['email-campaigns', 'social-media-management', 'lead-generation'],
+        dependencies: ['nodemailer', 'mailchimp-api'],
+        config: {
+          maxEmailsPerHour: 100,
+          autoFollowUp: true,
+          leadScoring: true
+        }
+      },
+      'sales-intelligence': {
+        capabilities: ['lead-qualification', 'crm-integration', 'sales-analytics'],
+        services: ['lead-scoring', 'pipeline-management', 'sales-reporting'],
+        dependencies: ['hubspot-api', 'salesforce-api'],
+        config: {
+          leadScoringThreshold: 0.7,
+          autoQualification: true,
+          crmSync: true
+        }
+      },
+      'analytics-agent': {
+        capabilities: ['data-collection', 'performance-tracking', 'kpi-monitoring'],
+        services: ['performance-analytics', 'trend-analysis', 'reporting'],
+        dependencies: ['google-analytics', 'mixpanel'],
+        config: {
+          dataRetentionDays: 90,
+          realTimeTracking: true,
+          automatedReporting: true
+        }
+      },
+      'web-research': {
+        capabilities: ['web-scraping', 'data-collection', 'market-research'],
+        services: ['competitive-analysis', 'trend-identification', 'data-mining'],
+        dependencies: ['puppeteer', 'cheerio', 'axios'],
+        config: {
+          maxConcurrentScrapes: 3,
+          respectRobotsTxt: true,
+          rateLimiting: true
+        }
+      },
+      'social-media-manager': {
+        capabilities: ['content-scheduling', 'engagement-monitoring', 'audience-analysis'],
+        services: ['post-scheduling', 'hashtag-optimization', 'engagement-tracking'],
+        dependencies: ['twitter-api', 'facebook-api', 'instagram-api'],
+        config: {
+          maxPostsPerDay: 10,
+          autoEngagement: true,
+          hashtagOptimization: true
+        }
+      },
+      'seo-optimizer': {
+        capabilities: ['keyword-research', 'on-page-optimization', 'technical-seo'],
+        services: ['keyword-analysis', 'seo-audits', 'ranking-tracking'],
+        dependencies: ['google-search-console', 'semrush-api'],
+        config: {
+          keywordTrackingLimit: 100,
+          autoOptimization: true,
+          technicalAudits: true
+        }
+      },
+      'customer-support': {
+        capabilities: ['ticket-management', 'auto-responses', 'knowledge-base'],
+        services: ['ticket-handling', 'faq-management', 'satisfaction-tracking'],
+        dependencies: ['zendesk-api', 'intercom-api'],
+        config: {
+          autoResponseThreshold: 0.8,
+          escalationRules: true,
+          satisfactionTracking: true
+        }
+      },
+      'data-processor': {
+        capabilities: ['data-cleaning', 'etl-processes', 'report-generation'],
+        services: ['data-validation', 'quality-assurance', 'automated-reports'],
+        dependencies: ['pandas', 'numpy', 'csv-parser'],
+        config: {
+          dataValidationRules: true,
+          autoBackup: true,
+          qualityThreshold: 0.95
+        }
+      },
+      'quality-assurance': {
+        capabilities: ['content-review', 'error-detection', 'quality-scoring'],
+        services: ['content-audits', 'error-prevention', 'improvement-suggestions'],
+        dependencies: ['spell-check', 'grammar-check', 'plagiarism-detector'],
+        config: {
+          qualityThreshold: 0.9,
+          autoCorrection: true,
+          reviewWorkflow: true
+        }
+      },
+      'orchestrator': {
+        capabilities: ['task-distribution', 'workload-balancing', 'performance-monitoring'],
+        services: ['agent-coordination', 'resource-management', 'system-optimization'],
+        dependencies: ['redis', 'message-queue'],
+        config: {
+          maxConcurrentTasks: 20,
+          loadBalancing: true,
+          autoScaling: true
+        }
+      },
+      'monitor': {
+        capabilities: ['system-monitoring', 'health-checks', 'alert-management'],
+        services: ['performance-tracking', 'error-detection', 'system-recovery'],
+        dependencies: ['prometheus', 'grafana'],
+        config: {
+          healthCheckInterval: 30000,
+          alertThresholds: true,
+          autoRecovery: true
+        }
+      }
+    };
+    this.loadAgentRegistry();
   }
 
-  loadAgentTemplates() {
-    const templatesDir = path.join(__dirname, 'templates');
-    if (!fs.existsSync(templatesDir)) {
-      fs.mkdirSync(templatesDir, { recursive: true });
+  async createAgent(type, config = {}) {
+    if (!this.agentTypes[type]) {
+      throw new Error(`Unknown agent type: ${type}`);
     }
 
-    // Define default agent templates
-    this.agentTemplates.set('content-generator', {
-      name: 'Content Generator Agent',
-      type: 'content-generation',
-      capabilities: ['AI writing', 'SEO optimization', 'Content planning', 'Topic research'],
-      services: ['Blog posts', 'Product descriptions', 'Social media content', 'Email newsletters'],
-      dependencies: ['openai', 'seo-tools'],
-      config: {
-        maxContentLength: 2000,
-        seoOptimization: true,
-        plagiarismCheck: true,
-        toneAdjustment: true
-      }
-    });
-
-    this.agentTemplates.set('marketing-automation', {
-      name: 'Marketing Automation Agent',
-      type: 'marketing',
-      capabilities: ['Campaign management', 'Email marketing', 'Social media automation', 'Lead scoring'],
-      services: ['Email campaigns', 'Social media posts', 'Lead generation', 'A/B testing'],
-      dependencies: ['email-service', 'social-media-api', 'analytics'],
-      config: {
-        maxCampaigns: 10,
-        autoOptimization: true,
-        personalization: true,
-        tracking: true
-      }
-    });
-
-    this.agentTemplates.set('sales-intelligence', {
-      name: 'Sales Intelligence Agent',
-      type: 'sales',
-      capabilities: ['Lead scoring', 'CRM integration', 'Sales analytics', 'Pipeline management'],
-      services: ['Lead qualification', 'Sales reporting', 'Pipeline analysis', 'Forecasting'],
-      dependencies: ['crm-api', 'analytics', 'email-service'],
-      config: {
-        leadScoring: true,
-        autoFollowUp: true,
-        pipelineTracking: true,
-        forecasting: true
-      }
-    });
-
-    this.agentTemplates.set('analytics-collector', {
-      name: 'Analytics Collector Agent',
-      type: 'analytics',
-      capabilities: ['Data collection', 'Performance tracking', 'Reporting', 'Trend analysis'],
-      services: ['Performance reports', 'Trend analysis', 'KPI monitoring', 'Data visualization'],
-      dependencies: ['analytics-api', 'database', 'visualization-tools'],
-      config: {
-        realTimeTracking: true,
-        automatedReports: true,
-        alerting: true,
-        dataRetention: 90
-      }
-    });
-
-    this.agentTemplates.set('web-researcher', {
-      name: 'Web Research Agent',
-      type: 'research',
-      capabilities: ['Web scraping', 'Data analysis', 'Trend identification', 'Competitive analysis'],
-      services: ['Market research', 'Competitive analysis', 'Trend reports', 'Data collection'],
-      dependencies: ['scraping-tools', 'data-processing', 'analytics'],
-      config: {
-        maxSitesPerDay: 100,
-        dataValidation: true,
-        automatedAnalysis: true,
-        reportGeneration: true
-      }
-    });
-
-    this.agentTemplates.set('social-media-manager', {
-      name: 'Social Media Manager Agent',
-      type: 'social-media',
-      capabilities: ['Content scheduling', 'Engagement monitoring', 'Hashtag optimization', 'Audience analysis'],
-      services: ['Post scheduling', 'Engagement tracking', 'Hashtag research', 'Audience insights'],
-      dependencies: ['social-media-apis', 'analytics', 'content-tools'],
-      config: {
-        autoPosting: true,
-        engagementTracking: true,
-        hashtagOptimization: true,
-        audienceAnalysis: true
-      }
-    });
-
-    this.agentTemplates.set('seo-optimizer', {
-      name: 'SEO Optimizer Agent',
-      type: 'seo',
-      capabilities: ['Keyword research', 'On-page optimization', 'Technical SEO', 'Ranking tracking'],
-      services: ['Keyword analysis', 'Content optimization', 'Technical audits', 'Ranking reports'],
-      dependencies: ['seo-tools', 'analytics', 'search-apis'],
-      config: {
-        keywordTracking: true,
-        contentOptimization: true,
-        technicalAudits: true,
-        rankingMonitoring: true
-      }
-    });
-
-    this.agentTemplates.set('customer-support', {
-      name: 'Customer Support Agent',
-      type: 'support',
-      capabilities: ['Ticket management', 'Auto-responses', 'Knowledge base', 'Satisfaction tracking'],
-      services: ['Ticket routing', 'Auto-responses', 'FAQ management', 'Satisfaction surveys'],
-      dependencies: ['support-platform', 'knowledge-base', 'analytics'],
-      config: {
-        autoResponses: true,
-        ticketRouting: true,
-        satisfactionTracking: true,
-        knowledgeBase: true
-      }
-    });
-
-    this.agentTemplates.set('data-processor', {
-      name: 'Data Processor Agent',
-      type: 'data-processing',
-      capabilities: ['Data cleaning', 'ETL processes', 'Data validation', 'Report generation'],
-      services: ['Data cleaning', 'ETL pipelines', 'Data validation', 'Automated reports'],
-      dependencies: ['database', 'etl-tools', 'validation-libraries'],
-      config: {
-        dataCleaning: true,
-        etlAutomation: true,
-        validationRules: true,
-        reportGeneration: true
-      }
-    });
-
-    this.agentTemplates.set('quality-assurance', {
-      name: 'Quality Assurance Agent',
-      type: 'qa',
-      capabilities: ['Content review', 'Error detection', 'Quality scoring', 'Improvement suggestions'],
-      services: ['Content review', 'Error detection', 'Quality reports', 'Improvement recommendations'],
-      dependencies: ['quality-tools', 'analytics', 'review-system'],
-      config: {
-        autoReview: true,
-        errorDetection: true,
-        qualityScoring: true,
-        improvementSuggestions: true
-      }
-    });
-  }
-
-  async createAgent(agentType, customConfig = {}) {
-    const template = this.agentTemplates.get(agentType);
-    if (!template) {
-      throw new Error(`Unknown agent type: ${agentType}`);
-    }
-
-    const agentId = `agent_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    const agentId = uuidv4();
+    const agentType = this.agentTypes[type];
     
-    // Merge template with custom config
-    const agentConfig = {
-      ...template,
-      ...customConfig,
+    const agent = {
       id: agentId,
-      status: 'creating',
-      workload: 0,
-      currentTask: 'Initializing...',
-      nextSteps: [],
+      type: type,
+      name: config.name || `${type}-agent-${agentId.slice(0, 8)}`,
+      status: 'created',
+      capabilities: [...agentType.capabilities, ...(config.capabilities || [])],
+      services: [...agentType.services, ...(config.services || [])],
+      dependencies: agentType.dependencies,
+      config: { ...agentType.config, ...config.config },
+      createdAt: new Date(),
+      lastActive: new Date(),
       performance: {
         tasksCompleted: 0,
-        successRate: 100,
-        avgResponseTime: 0
+        tasksFailed: 0,
+        averageResponseTime: 0,
+        uptime: 0
       },
-      createdAt: new Date().toISOString(),
-      lastActive: new Date().toISOString()
+      logs: [],
+      health: {
+        status: 'healthy',
+        lastCheck: new Date(),
+        errors: []
+      }
     };
 
-    // Create agent directory
-    const agentDir = path.join(__dirname, 'agents', agentId);
-    fs.mkdirSync(agentDir, { recursive: true });
-
-    // Generate agent script
-    await this.generateAgentScript(agentConfig, agentDir);
-
-    // Generate configuration file
-    await this.generateAgentConfig(agentConfig, agentDir);
-
-    // Generate package.json for dependencies
-    await this.generatePackageJson(agentConfig, agentDir);
-
-    // Install dependencies
-    await this.installDependencies(agentDir);
-
-    // Register agent
-    this.agentRegistry.set(agentId, agentConfig);
-
-    // Save to database
-    await this.saveAgentToDatabase(agentConfig);
-
-    console.log(`✅ Created agent: ${agentConfig.name} (${agentId})`);
+    this.agents.set(agentId, agent);
+    await this.saveAgentRegistry();
+    
+    console.log(`Created agent: ${agent.name} (${agentId})`);
     return agentId;
   }
 
-  async generateAgentScript(agentConfig, agentDir) {
-    const scriptTemplate = this.getAgentScriptTemplate(agentConfig);
-    const scriptPath = path.join(agentDir, 'index.js');
-    
-    fs.writeFileSync(scriptPath, scriptTemplate);
-    fs.chmodSync(scriptPath, '755');
-  }
+  async startAgent(agentId) {
+    const agent = this.agents.get(agentId);
+    if (!agent) {
+      throw new Error(`Agent not found: ${agentId}`);
+    }
 
-  getAgentScriptTemplate(agentConfig) {
-    const className = agentConfig.name.replace(/\s+/g, '') + 'Agent';
-    
-    return `
-const fs = require('fs');
-const path = require('path');
-
-class ${className} {
-  constructor() {
-    this.id = '${agentConfig.id}';
-    this.name = '${agentConfig.name}';
-    this.type = '${agentConfig.type}';
-    this.capabilities = ${JSON.stringify(agentConfig.capabilities)};
-    this.services = ${JSON.stringify(agentConfig.services)};
-    this.config = ${JSON.stringify(agentConfig.config)};
-    this.status = 'idle';
-    this.workload = 0;
-    this.currentTask = 'Initializing...';
-    this.performance = {
-      tasksCompleted: 0,
-      successRate: 100,
-      avgResponseTime: 0
-    };
-    this.logs = [];
-  }
-
-  async initialize() {
-    console.log(\`🚀 Initializing \${this.name}...\`);
-    this.status = 'active';
-    this.updateStatus();
-    
-    // Load configuration
-    await this.loadConfiguration();
-    
-    // Initialize capabilities
-    await this.initializeCapabilities();
-    
-    // Start continuous operation
-    this.startContinuousOperation();
-    
-    console.log(\`✅ \${this.name} initialized successfully\`);
-  }
-
-  async loadConfiguration() {
     try {
-      const configPath = path.join(__dirname, 'config.json');
-      if (fs.existsSync(configPath)) {
-        const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-        this.config = { ...this.config, ...config };
-      }
-    } catch (error) {
-      console.error('Error loading configuration:', error);
-    }
-  }
-
-  async initializeCapabilities() {
-    console.log(\`🔧 Initializing capabilities: \${this.capabilities.join(', ')}\`);
-    
-    // Initialize each capability
-    for (const capability of this.capabilities) {
-      await this.initializeCapability(capability);
-    }
-  }
-
-  async initializeCapability(capability) {
-    switch (capability) {
-      case 'AI writing':
-        await this.initializeAIWriting();
-        break;
-      case 'SEO optimization':
-        await this.initializeSEO();
-        break;
-      case 'Campaign management':
-        await this.initializeCampaignManagement();
-        break;
-      case 'Lead scoring':
-        await this.initializeLeadScoring();
-        break;
-      case 'Data collection':
-        await this.initializeDataCollection();
-        break;
-      case 'Web scraping':
-        await this.initializeWebScraping();
-        break;
-      case 'Content scheduling':
-        await this.initializeContentScheduling();
-        break;
-      case 'Keyword research':
-        await this.initializeKeywordResearch();
-        break;
-      case 'Ticket management':
-        await this.initializeTicketManagement();
-        break;
-      case 'Data cleaning':
-        await this.initializeDataCleaning();
-        break;
-      case 'Content review':
-        await this.initializeContentReview();
-        break;
-      default:
-        console.log(\`Capability \${capability} initialized\`);
-    }
-  }
-
-  async initializeAIWriting() {
-    // Initialize AI writing capabilities
-    console.log('🤖 Initializing AI writing capabilities...');
-  }
-
-  async initializeSEO() {
-    // Initialize SEO capabilities
-    console.log('🔍 Initializing SEO capabilities...');
-  }
-
-  async initializeCampaignManagement() {
-    // Initialize campaign management capabilities
-    console.log('📢 Initializing campaign management capabilities...');
-  }
-
-  async initializeLeadScoring() {
-    // Initialize lead scoring capabilities
-    console.log('🎯 Initializing lead scoring capabilities...');
-  }
-
-  async initializeDataCollection() {
-    // Initialize data collection capabilities
-    console.log('📊 Initializing data collection capabilities...');
-  }
-
-  async initializeWebScraping() {
-    // Initialize web scraping capabilities
-    console.log('🕷️ Initializing web scraping capabilities...');
-  }
-
-  async initializeContentScheduling() {
-    // Initialize content scheduling capabilities
-    console.log('📅 Initializing content scheduling capabilities...');
-  }
-
-  async initializeKeywordResearch() {
-    // Initialize keyword research capabilities
-    console.log('🔎 Initializing keyword research capabilities...');
-  }
-
-  async initializeTicketManagement() {
-    // Initialize ticket management capabilities
-    console.log('🎫 Initializing ticket management capabilities...');
-  }
-
-  async initializeDataCleaning() {
-    // Initialize data cleaning capabilities
-    console.log('🧹 Initializing data cleaning capabilities...');
-  }
-
-  async initializeContentReview() {
-    // Initialize content review capabilities
-    console.log('📝 Initializing content review capabilities...');
-  }
-
-  startContinuousOperation() {
-    setInterval(async () => {
-      if (this.status === 'active' && this.workload < 100) {
-        await this.performTask();
-      }
-    }, 5000);
-  }
-
-  async performTask() {
-    try {
-      this.currentTask = 'Performing task...';
-      this.workload = Math.min(100, this.workload + Math.random() * 20);
-      this.updateStatus();
-
-      // Select a service to perform
-      const service = this.services[Math.floor(Math.random() * this.services.length)];
-      await this.performService(service);
-
-      this.performance.tasksCompleted++;
-      this.performance.successRate = Math.max(80, this.performance.successRate - Math.random() * 5);
-      this.workload = Math.max(0, this.workload - Math.random() * 30);
+      agent.status = 'starting';
+      agent.lastActive = new Date();
       
-      this.currentTask = 'Task completed, waiting for next task...';
-      this.updateStatus();
-    } catch (error) {
-      console.error(\`Error in \${this.name}:\`, error);
-      this.status = 'error';
-      this.updateStatus();
-    }
-  }
-
-  async performService(service) {
-    console.log(\`\${this.name} performing: \${service}\`);
-    
-    // Simulate service execution based on agent type
-    switch (this.type) {
-      case 'content-generation':
-        await this.performContentGeneration(service);
-        break;
-      case 'marketing':
-        await this.performMarketingTask(service);
-        break;
-      case 'sales':
-        await this.performSalesTask(service);
-        break;
-      case 'analytics':
-        await this.performAnalyticsTask(service);
-        break;
-      case 'research':
-        await this.performResearchTask(service);
-        break;
-      case 'social-media':
-        await this.performSocialMediaTask(service);
-        break;
-      case 'seo':
-        await this.performSEOTask(service);
-        break;
-      case 'support':
-        await this.performSupportTask(service);
-        break;
-      case 'data-processing':
-        await this.performDataProcessingTask(service);
-        break;
-      case 'qa':
-        await this.performQATask(service);
-        break;
-      default:
-        await this.performGenericTask(service);
-    }
-  }
-
-  async performContentGeneration(service) {
-    console.log(\`📝 Generating content: \${service}\`);
-    await new Promise(resolve => setTimeout(resolve, 3000 + Math.random() * 2000));
-  }
-
-  async performMarketingTask(service) {
-    console.log(\`📢 Marketing task: \${service}\`);
-    await new Promise(resolve => setTimeout(resolve, 2000 + Math.random() * 3000));
-  }
-
-  async performSalesTask(service) {
-    console.log(\`💰 Sales task: \${service}\`);
-    await new Promise(resolve => setTimeout(resolve, 2500 + Math.random() * 2500));
-  }
-
-  async performAnalyticsTask(service) {
-    console.log(\`📊 Analytics task: \${service}\`);
-    await new Promise(resolve => setTimeout(resolve, 1500 + Math.random() * 1500));
-  }
-
-  async performResearchTask(service) {
-    console.log(\`🔍 Research task: \${service}\`);
-    await new Promise(resolve => setTimeout(resolve, 4000 + Math.random() * 3000));
-  }
-
-  async performSocialMediaTask(service) {
-    console.log(\`📱 Social media task: \${service}\`);
-    await new Promise(resolve => setTimeout(resolve, 2000 + Math.random() * 2000));
-  }
-
-  async performSEOTask(service) {
-    console.log(\`🔍 SEO task: \${service}\`);
-    await new Promise(resolve => setTimeout(resolve, 3000 + Math.random() * 2000));
-  }
-
-  async performSupportTask(service) {
-    console.log(\`🎫 Support task: \${service}\`);
-    await new Promise(resolve => setTimeout(resolve, 1500 + Math.random() * 1500));
-  }
-
-  async performDataProcessingTask(service) {
-    console.log(\`🔄 Data processing task: \${service}\`);
-    await new Promise(resolve => setTimeout(resolve, 2500 + Math.random() * 2000));
-  }
-
-  async performQATask(service) {
-    console.log(\`✅ QA task: \${service}\`);
-    await new Promise(resolve => setTimeout(resolve, 2000 + Math.random() * 2000));
-  }
-
-  async performGenericTask(service) {
-    console.log(\`⚙️ Generic task: \${service}\`);
-    await new Promise(resolve => setTimeout(resolve, 2000 + Math.random() * 2000));
-  }
-
-  updateStatus() {
-    const statusData = {
-      id: this.id,
-      status: this.status,
-      workload: this.workload,
-      currentTask: this.currentTask,
-      performance: this.performance,
-      lastActive: new Date().toISOString()
-    };
-
-    // Save status to file
-    const statusPath = path.join(__dirname, '..', 'logs', \`\${this.id}_status.json\`);
-    fs.writeFileSync(statusPath, JSON.stringify(statusData, null, 2));
-
-    // Log activity
-    this.log(\`Status updated: \${this.status}, Workload: \${this.workload}%\`);
-  }
-
-  log(message, level = 'info') {
-    const logEntry = {
-      timestamp: new Date().toISOString(),
-      agentId: this.id,
-      agentName: this.name,
-      level,
-      message
-    };
-
-    this.logs.push(logEntry);
-    
-    // Keep only recent logs
-    if (this.logs.length > 100) {
-      this.logs = this.logs.slice(-100);
-    }
-
-    // Save to file
-    const logPath = path.join(__dirname, '..', 'logs', \`\${this.id}_logs.json\`);
-    fs.writeFileSync(logPath, JSON.stringify(this.logs, null, 2));
-
-    console.log(\`[\${this.name}] [\${level.toUpperCase()}] \${message}\`);
-  }
-
-  async stop() {
-    this.status = 'stopped';
-    this.updateStatus();
-    console.log(\`\${this.name} stopped\`);
-  }
-}
-
-// Start the agent
-const agent = new ${className}();
-agent.initialize().catch(console.error);
-
-module.exports = agent;
-`;
-  }
-
-  async generateAgentConfig(agentConfig, agentDir) {
-    const configPath = path.join(agentDir, 'config.json');
-    fs.writeFileSync(configPath, JSON.stringify(agentConfig.config, null, 2));
-  }
-
-  async generatePackageJson(agentConfig, agentDir) {
-    const packageJson = {
-      name: agentConfig.id,
-      version: '1.0.0',
-      description: agentConfig.name,
-      main: 'index.js',
-      scripts: {
-        start: 'node index.js',
-        test: 'echo "No tests specified" && exit 0'
-      },
-      dependencies: this.getDependencies(agentConfig.dependencies),
-      keywords: ['autonomous-agent', agentConfig.type],
-      author: 'Autonomous Agent Factory',
-      license: 'MIT'
-    };
-
-    const packagePath = path.join(agentDir, 'package.json');
-    fs.writeFileSync(packagePath, JSON.stringify(packageJson, null, 2));
-  }
-
-  getDependencies(agentDependencies) {
-    const dependencyMap = {
-      'openai': 'openai@^4.0.0',
-      'seo-tools': 'seo-tools@^1.0.0',
-      'email-service': 'nodemailer@^6.0.0',
-      'social-media-api': 'twitter-api-v2@^1.0.0',
-      'analytics': 'google-analytics@^1.0.0',
-      'crm-api': 'hubspot-api@^1.0.0',
-      'database': 'pg@^8.0.0',
-      'visualization-tools': 'chart.js@^3.0.0',
-      'scraping-tools': 'puppeteer@^19.0.0',
-      'data-processing': 'lodash@^4.17.21',
-      'social-media-apis': 'instagram-api@^1.0.0',
-      'content-tools': 'content-tools@^1.0.0',
-      'search-apis': 'google-search-api@^1.0.0',
-      'support-platform': 'zendesk-api@^1.0.0',
-      'knowledge-base': 'knowledge-base@^1.0.0',
-      'etl-tools': 'etl-tools@^1.0.0',
-      'validation-libraries': 'joi@^17.0.0',
-      'quality-tools': 'quality-tools@^1.0.0',
-      'review-system': 'review-system@^1.0.0'
-    };
-
-    const dependencies = {};
-    agentDependencies.forEach(dep => {
-      if (dependencyMap[dep]) {
-        dependencies[dep] = dependencyMap[dep];
-      }
-    });
-
-    return dependencies;
-  }
-
-  async installDependencies(agentDir) {
-    return new Promise((resolve, reject) => {
-      exec('npm install', { cwd: agentDir }, (error, stdout, stderr) => {
-        if (error) {
-          console.error(`Error installing dependencies: ${error}`);
-          reject(error);
-        } else {
-          console.log(`✅ Dependencies installed for agent in ${agentDir}`);
-          resolve();
+      // Create agent process
+      const agentScript = this.getAgentScript(agent.type);
+      const agentProcess = spawn('node', [agentScript], {
+        stdio: ['pipe', 'pipe', 'pipe'],
+        env: {
+          ...process.env,
+          AGENT_ID: agentId,
+          AGENT_TYPE: agent.type,
+          AGENT_CONFIG: JSON.stringify(agent.config)
         }
       });
-    });
+
+      agent.process = agentProcess;
+      agent.status = 'running';
+      agent.pid = agentProcess.pid;
+
+      // Handle process events
+      agentProcess.on('exit', (code) => {
+        this.handleAgentExit(agentId, code);
+      });
+
+      agentProcess.on('error', (error) => {
+        this.handleAgentError(agentId, error);
+      });
+
+      // Log agent output
+      agentProcess.stdout.on('data', (data) => {
+        this.logAgentOutput(agentId, 'stdout', data.toString());
+      });
+
+      agentProcess.stderr.on('data', (data) => {
+        this.logAgentOutput(agentId, 'stderr', data.toString());
+      });
+
+      await this.saveAgentRegistry();
+      console.log(`Started agent: ${agent.name} (PID: ${agentProcess.pid})`);
+      
+      return true;
+    } catch (error) {
+      agent.status = 'error';
+      agent.health.errors.push({
+        timestamp: new Date(),
+        error: error.message
+      });
+      await this.saveAgentRegistry();
+      throw error;
+    }
   }
 
-  async saveAgentToDatabase(agentConfig) {
-    const { createClient } = require('@supabase/supabase-js');
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  async stopAgent(agentId) {
+    const agent = this.agents.get(agentId);
+    if (!agent) {
+      throw new Error(`Agent not found: ${agentId}`);
+    }
+
+    if (agent.process) {
+      agent.process.kill('SIGTERM');
+      agent.status = 'stopping';
+      
+      // Wait for graceful shutdown
+      setTimeout(() => {
+        if (agent.process && !agent.process.killed) {
+          agent.process.kill('SIGKILL');
+        }
+      }, 5000);
+    }
+
+    agent.status = 'stopped';
+    agent.lastActive = new Date();
+    await this.saveAgentRegistry();
+    
+    console.log(`Stopped agent: ${agent.name}`);
+    return true;
+  }
+
+  async restartAgent(agentId) {
+    await this.stopAgent(agentId);
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    return await this.startAgent(agentId);
+  }
+
+  async deleteAgent(agentId) {
+    const agent = this.agents.get(agentId);
+    if (!agent) {
+      throw new Error(`Agent not found: ${agentId}`);
+    }
+
+    if (agent.status === 'running') {
+      await this.stopAgent(agentId);
+    }
+
+    this.agents.delete(agentId);
+    await this.saveAgentRegistry();
+    
+    console.log(`Deleted agent: ${agent.name}`);
+    return true;
+  }
+
+  getAgent(agentId) {
+    return this.agents.get(agentId);
+  }
+
+  getAllAgents() {
+    return Array.from(this.agents.values());
+  }
+
+  getAgentsByType(type) {
+    return Array.from(this.agents.values()).filter(agent => agent.type === type);
+  }
+
+  getRunningAgents() {
+    return Array.from(this.agents.values()).filter(agent => agent.status === 'running');
+  }
+
+  async updateAgentConfig(agentId, newConfig) {
+    const agent = this.agents.get(agentId);
+    if (!agent) {
+      throw new Error(`Agent not found: ${agentId}`);
+    }
+
+    agent.config = { ...agent.config, ...newConfig };
+    await this.saveAgentRegistry();
+    
+    console.log(`Updated config for agent: ${agent.name}`);
+    return true;
+  }
+
+  async getAgentPerformance(agentId) {
+    const agent = this.agents.get(agentId);
+    if (!agent) {
+      throw new Error(`Agent not found: ${agentId}`);
+    }
+
+    return {
+      id: agentId,
+      name: agent.name,
+      type: agent.type,
+      status: agent.status,
+      performance: agent.performance,
+      health: agent.health,
+      uptime: agent.status === 'running' ? Date.now() - agent.lastActive.getTime() : 0
+    };
+  }
+
+  async getSystemMetrics() {
+    const agents = this.getAllAgents();
+    const runningAgents = this.getRunningAgents();
+    
+    const totalTasks = agents.reduce((sum, agent) => sum + agent.performance.tasksCompleted, 0);
+    const failedTasks = agents.reduce((sum, agent) => sum + agent.performance.tasksFailed, 0);
+    const avgResponseTime = agents.length > 0 
+      ? agents.reduce((sum, agent) => sum + agent.performance.averageResponseTime, 0) / agents.length 
+      : 0;
+
+    return {
+      totalAgents: agents.length,
+      runningAgents: runningAgents.length,
+      systemHealth: this.calculateSystemHealth(),
+      totalTasksCompleted: totalTasks,
+      totalTasksFailed: failedTasks,
+      averageResponseTime: avgResponseTime,
+      efficiency: runningAgents.length / Math.max(agents.length, 1),
+      errorRate: totalTasks > 0 ? (failedTasks / totalTasks) * 100 : 0
+    };
+  }
+
+  calculateSystemHealth() {
+    const agents = this.getAllAgents();
+    const errorCount = agents.filter(agent => agent.health.status === 'error').length;
+    const warningCount = agents.filter(agent => agent.health.status === 'warning').length;
+    
+    if (errorCount > agents.length * 0.2) return 'critical';
+    if (errorCount > 0 || warningCount > agents.length * 0.3) return 'warning';
+    return 'good';
+  }
+
+  getAgentScript(type) {
+    const scriptMap = {
+      'deep-search': 'agents/deep-search-agent.js',
+      'content-generation': 'agents/content-generation-agent.js',
+      'marketing-automation': 'agents/marketing-automation-agent.js',
+      'sales-intelligence': 'agents/sales-intelligence-agent.js',
+      'analytics-agent': 'agents/analytics-agent.js',
+      'web-research': 'agents/web-research-agent.js',
+      'social-media-manager': 'agents/social-media-manager-agent.js',
+      'seo-optimizer': 'agents/seo-optimizer-agent.js',
+      'customer-support': 'agents/customer-support-agent.js',
+      'data-processor': 'agents/data-processor-agent.js',
+      'quality-assurance': 'agents/quality-assurance-agent.js',
+      'orchestrator': 'agents/orchestrator-agent.js',
+      'monitor': 'agents/monitor-agent.js'
+    };
+
+    return path.join(__dirname, scriptMap[type] || 'agents/generic-agent.js');
+  }
+
+  handleAgentExit(agentId, code) {
+    const agent = this.agents.get(agentId);
+    if (agent) {
+      agent.status = 'stopped';
+      agent.lastActive = new Date();
+      agent.health.status = code === 0 ? 'healthy' : 'error';
+      agent.health.errors.push({
+        timestamp: new Date(),
+        error: `Process exited with code ${code}`
+      });
+      this.saveAgentRegistry();
+    }
+  }
+
+  handleAgentError(agentId, error) {
+    const agent = this.agents.get(agentId);
+    if (agent) {
+      agent.status = 'error';
+      agent.health.status = 'error';
+      agent.health.errors.push({
+        timestamp: new Date(),
+        error: error.message
+      });
+      this.saveAgentRegistry();
+    }
+  }
+
+  logAgentOutput(agentId, type, data) {
+    const agent = this.agents.get(agentId);
+    if (agent) {
+      agent.logs.push({
+        timestamp: new Date(),
+        type: type,
+        message: data.trim()
+      });
+
+      // Keep only last 100 logs
+      if (agent.logs.length > 100) {
+        agent.logs = agent.logs.slice(-100);
+      }
+    }
+  }
+
+  async loadAgentRegistry() {
+    try {
+      const registryPath = path.join(__dirname, 'data', 'agent-registry.json');
+      if (fs.existsSync(registryPath)) {
+        const data = fs.readFileSync(registryPath, 'utf8');
+        const registry = JSON.parse(data);
+        this.agents = new Map(registry.map(agent => [agent.id, agent]));
+      }
+    } catch (error) {
+      console.error('Error loading agent registry:', error);
+    }
+  }
+
+  async saveAgentRegistry() {
+    try {
+      const registryPath = path.join(__dirname, 'data');
+      if (!fs.existsSync(registryPath)) {
+        fs.mkdirSync(registryPath, { recursive: true });
+      }
+
+      const registry = Array.from(this.agents.values());
+      fs.writeFileSync(
+        path.join(registryPath, 'agent-registry.json'),
+        JSON.stringify(registry, null, 2)
+      );
+    } catch (error) {
+      console.error('Error saving agent registry:', error);
+    }
+  }
+
+  async createAgentTemplate(type, templateConfig) {
+    const template = {
+      type: type,
+      config: templateConfig,
+      createdAt: new Date(),
+      version: '1.0.0'
+    };
+
+    const templatesPath = path.join(__dirname, 'templates');
+    if (!fs.existsSync(templatesPath)) {
+      fs.mkdirSync(templatesPath, { recursive: true });
+    }
+
+    fs.writeFileSync(
+      path.join(templatesPath, `${type}-template.json`),
+      JSON.stringify(template, null, 2)
     );
 
-    try {
-      const { error } = await supabase
-        .from('autonomous_agents')
-        .upsert([{
-          id: agentConfig.id,
-          name: agentConfig.name,
-          type: agentConfig.type,
-          status: agentConfig.status,
-          workload: agentConfig.workload,
-          current_task: agentConfig.currentTask,
-          next_steps: agentConfig.nextSteps,
-          services: agentConfig.services,
-          capabilities: agentConfig.capabilities,
-          dependencies: agentConfig.dependencies,
-          performance: agentConfig.performance,
-          created_at: agentConfig.createdAt,
-          last_active: agentConfig.lastActive,
-          config: agentConfig.config
-        }]);
-
-      if (error) throw error;
-    } catch (error) {
-      console.error('Error saving agent to database:', error);
-    }
+    return template;
   }
 
-  async startAgent(agentId) {
-    const agentConfig = this.agentRegistry.get(agentId);
-    if (!agentConfig) return;
+  async createAgentFromTemplate(templateName, config = {}) {
+    const templatePath = path.join(__dirname, 'templates', `${templateName}-template.json`);
+    if (!fs.existsSync(templatePath)) {
+      throw new Error(`Template not found: ${templateName}`);
+    }
 
-    const agentDir = path.join(__dirname, 'agents', agentId);
-    const scriptPath = path.join(agentDir, 'index.js');
+    const template = JSON.parse(fs.readFileSync(templatePath, 'utf8'));
+    const mergedConfig = { ...template.config, ...config };
+    
+    return await this.createAgent(template.type, mergedConfig);
+  }
 
-    try {
-      exec(`node "${scriptPath}"`, (error, stdout, stderr) => {
-        if (error) {
-          console.error(`Error starting agent ${agentId}:`, error);
-          agentConfig.status = 'error';
-        } else {
-          agentConfig.status = 'active';
+  async batchCreateAgents(agentSpecs) {
+    const results = [];
+    for (const spec of agentSpecs) {
+      try {
+        const agentId = await this.createAgent(spec.type, spec.config);
+        if (spec.autoStart) {
+          await this.startAgent(agentId);
         }
-        this.saveAgentToDatabase(agentConfig);
-      });
-
-      console.log(`✅ Started agent: ${agentConfig.name}`);
-    } catch (error) {
-      console.error(`Error starting agent ${agentId}:`, error);
-      agentConfig.status = 'error';
-      this.saveAgentToDatabase(agentConfig);
+        results.push({ success: true, agentId, spec });
+      } catch (error) {
+        results.push({ success: false, error: error.message, spec });
+      }
     }
+    return results;
   }
 
-  getAvailableAgentTypes() {
-    return Array.from(this.agentTemplates.keys());
+  async healthCheck() {
+    const results = [];
+    for (const [agentId, agent] of this.agents) {
+      try {
+        const health = await this.checkAgentHealth(agentId);
+        results.push({ agentId, health });
+      } catch (error) {
+        results.push({ agentId, health: { status: 'error', error: error.message } });
+      }
+    }
+    return results;
   }
 
-  getAgentTemplate(agentType) {
-    return this.agentTemplates.get(agentType);
-  }
+  async checkAgentHealth(agentId) {
+    const agent = this.agents.get(agentId);
+    if (!agent) {
+      throw new Error(`Agent not found: ${agentId}`);
+    }
 
-  getAgentRegistry() {
-    return Array.from(this.agentRegistry.values());
+    const health = {
+      status: 'unknown',
+      lastCheck: new Date(),
+      uptime: 0,
+      memoryUsage: 0,
+      cpuUsage: 0,
+      errors: []
+    };
+
+    if (agent.status === 'running' && agent.process) {
+      try {
+        // Check if process is still alive
+        const isAlive = !agent.process.killed;
+        health.status = isAlive ? 'healthy' : 'dead';
+        health.uptime = Date.now() - agent.lastActive.getTime();
+        
+        // Update agent health
+        agent.health = health;
+        agent.lastActive = new Date();
+      } catch (error) {
+        health.status = 'error';
+        health.errors.push(error.message);
+      }
+    } else {
+      health.status = agent.status;
+    }
+
+    return health;
   }
 }
 
