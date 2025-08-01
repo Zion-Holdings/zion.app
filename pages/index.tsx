@@ -29,6 +29,9 @@ const Home: NextPage = () => {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
+              <Link href="/products" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Products
+              </Link>
               <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
