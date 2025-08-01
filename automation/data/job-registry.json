@@ -218,17 +218,24 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-01T12:24:28.483Z",
-    "lastRun": null,
-    "nextRun": "2025-08-01T12:30:00.000Z",
-    "status": "scheduled",
+    "lastRun": "2025-08-01T12:30:00.035Z",
+    "nextRun": "2025-08-01T12:45:00.000Z",
+    "status": "failed",
     "performance": {
-      "totalRuns": 0,
+      "totalRuns": 1,
       "successfulRuns": 0,
-      "failedRuns": 0,
+      "failedRuns": 1,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 0
+      "lastExecutionTime": 300484
     },
-    "logs": []
+    "logs": [
+      {
+        "timestamp": "2025-08-01T12:35:00.519Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      }
+    ]
   },
   {
     "id": "bc010b4f-c3e8-4c14-806e-5700731a8b80",
