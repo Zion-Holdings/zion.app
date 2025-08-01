@@ -24,7 +24,7 @@
       "plagiarismCheck": true
     },
     "createdAt": "2025-08-01T11:58:53.987Z",
-    "lastActive": "2025-08-01T18:14:30.490Z",
+    "lastActive": "2025-08-01T18:15:00.455Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -32,11 +32,6 @@
       "uptime": 0
     },
     "logs": [
-      {
-        "timestamp": "2025-08-01T17:41:30.353Z",
-        "type": "stderr",
-        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
-      },
       {
         "timestamp": "2025-08-01T17:42:00.406Z",
         "type": "stderr",
@@ -529,6 +524,11 @@
       },
       {
         "timestamp": "2025-08-01T18:14:30.484Z",
+        "type": "stderr",
+        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
+      },
+      {
+        "timestamp": "2025-08-01T18:15:00.450Z",
         "type": "stderr",
         "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
       }
@@ -4728,6 +4728,10 @@
         {
           "timestamp": "2025-08-01T18:14:30.490Z",
           "error": "Process exited with code 1"
+        },
+        {
+          "timestamp": "2025-08-01T18:15:00.455Z",
+          "error": "Process exited with code 1"
         }
       ]
     },
@@ -4735,7 +4739,7 @@
       "_events": {},
       "_eventsCount": 2,
       "_closesNeeded": 3,
-      "_closesGot": 3,
+      "_closesGot": 1,
       "connected": false,
       "signalCode": null,
       "exitCode": 1,
@@ -4746,7 +4750,7 @@
         "node",
         "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js"
       ],
-      "pid": 19000,
+      "pid": 19745,
       "stdin": {
         "connecting": false,
         "_hadError": false,
@@ -4800,7 +4804,7 @@
           "corked": 0,
           "writelen": 0,
           "bufferedIndex": 0,
-          "pendingcb": 0
+          "pendingcb": 1
         },
         "allowHalfOpen": false,
         "_eventsCount": 3,
@@ -4895,7 +4899,7 @@
             "corked": 0,
             "writelen": 0,
             "bufferedIndex": 0,
-            "pendingcb": 0
+            "pendingcb": 1
           },
           "allowHalfOpen": false,
           "_eventsCount": 3,
@@ -4938,7 +4942,7 @@
         }
       ]
     },
-    "pid": 19000
+    "pid": 19745
   },
   {
     "id": "a8e97b64-bd2c-4373-b90e-418853a33dcc",
@@ -6261,56 +6265,6 @@
     },
     "logs": [
       {
-        "timestamp": "2025-08-01T18:11:01.060Z",
-        "type": "stdout",
-        "message": "🔍 Processing competitive-analysis task..."
-      },
-      {
-        "timestamp": "2025-08-01T18:11:01.060Z",
-        "type": "stdout",
-        "message": "🏢 Performing competitive analysis for 2 competitors"
-      },
-      {
-        "timestamp": "2025-08-01T18:11:01.219Z",
-        "type": "stderr",
-        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T18:11:01.219Z",
-        "type": "stderr",
-        "message": "Failed to analyze competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T18:11:01.351Z",
-        "type": "stderr",
-        "message": "Failed to scrape competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T18:11:01.351Z",
-        "type": "stderr",
-        "message": "Failed to analyze competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T18:11:01.351Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 292ms\nPerformance: SUCCESS in 292ms"
-      },
-      {
-        "timestamp": "2025-08-01T18:11:11.059Z",
-        "type": "stdout",
-        "message": "🔍 Processing competitive-analysis task..."
-      },
-      {
-        "timestamp": "2025-08-01T18:11:11.060Z",
-        "type": "stdout",
-        "message": "🏢 Performing competitive analysis for 2 competitors"
-      },
-      {
-        "timestamp": "2025-08-01T18:11:11.207Z",
-        "type": "stderr",
-        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
         "timestamp": "2025-08-01T18:11:11.207Z",
         "type": "stderr",
         "message": "Failed to analyze competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
@@ -6759,6 +6713,56 @@
         "timestamp": "2025-08-01T18:14:31.509Z",
         "type": "stdout",
         "message": "✅ Task completed in 447ms\nPerformance: SUCCESS in 447ms"
+      },
+      {
+        "timestamp": "2025-08-01T18:14:41.063Z",
+        "type": "stdout",
+        "message": "🔍 Processing competitive-analysis task...\n🏢 Performing competitive analysis for 2 competitors"
+      },
+      {
+        "timestamp": "2025-08-01T18:14:41.233Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T18:14:41.233Z",
+        "type": "stderr",
+        "message": "Failed to analyze competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T18:14:41.366Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T18:14:41.366Z",
+        "type": "stderr",
+        "message": "Failed to analyze competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T18:14:41.366Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 303ms\nPerformance: SUCCESS in 303ms"
+      },
+      {
+        "timestamp": "2025-08-01T18:14:51.063Z",
+        "type": "stdout",
+        "message": "🔍 Processing trend-detection task..."
+      },
+      {
+        "timestamp": "2025-08-01T18:14:51.063Z",
+        "type": "stdout",
+        "message": "📈 Detecting trends for keywords: AI, machine learning, automation"
+      },
+      {
+        "timestamp": "2025-08-01T18:14:51.063Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 0ms"
+      },
+      {
+        "timestamp": "2025-08-01T18:14:51.063Z",
+        "type": "stdout",
+        "message": "Performance: SUCCESS in 0ms"
       }
     ],
     "health": {
@@ -7011,7 +7015,7 @@
       "plagiarismCheck": true
     },
     "createdAt": "2025-08-01T12:24:28.344Z",
-    "lastActive": "2025-08-01T18:14:32.520Z",
+    "lastActive": "2025-08-01T18:15:00.405Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -31572,7 +31576,7 @@
       "_events": {},
       "_eventsCount": 2,
       "_closesNeeded": 3,
-      "_closesGot": 2,
+      "_closesGot": 3,
       "connected": false,
       "signalCode": null,
       "exitCode": 1,
@@ -31776,307 +31780,5 @@
       ]
     },
     "pid": 19300
-  },
-  {
-    "id": "67f56c90-af8a-4b1b-ba6f-76de19aaf3aa",
-    "type": "deep-search",
-    "name": "Primary Deep Search Agent",
-    "status": "running",
-    "capabilities": [
-      "web-scraping",
-      "data-analysis",
-      "pattern-recognition",
-      "web-scraping",
-      "data-analysis",
-      "pattern-recognition"
-    ],
-    "services": [
-      "market-research",
-      "competitive-analysis",
-      "trend-detection",
-      "market-research",
-      "competitive-analysis",
-      "trend-detection"
-    ],
-    "dependencies": [
-      "puppeteer",
-      "cheerio",
-      "axios"
-    ],
-    "config": {
-      "maxConcurrentSearches": 5,
-      "searchDepth": 3,
-      "timeout": 30000,
-      "retryAttempts": 3
-    },
-    "createdAt": "2025-08-01T18:14:40.945Z",
-    "lastActive": "2025-08-01T18:14:41.123Z",
-    "performance": {
-      "tasksCompleted": 0,
-      "tasksFailed": 0,
-      "averageResponseTime": 0,
-      "uptime": 0
-    },
-    "logs": [],
-    "health": {
-      "status": "healthy",
-      "lastCheck": "2025-08-01T18:14:40.945Z",
-      "errors": []
-    },
-    "process": {
-      "_events": {},
-      "_eventsCount": 2,
-      "_closesNeeded": 3,
-      "_closesGot": 0,
-      "connected": false,
-      "signalCode": null,
-      "exitCode": null,
-      "killed": false,
-      "spawnfile": "node",
-      "_handle": {
-        "pid": 19332
-      },
-      "spawnargs": [
-        "node",
-        "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/deep-search-agent.js"
-      ],
-      "pid": 19332,
-      "stdin": {
-        "connecting": false,
-        "_hadError": false,
-        "_parent": null,
-        "_host": null,
-        "_closeAfterHandlingError": false,
-        "_events": {},
-        "_readableState": {
-          "highWaterMark": 65536,
-          "buffer": [],
-          "bufferIndex": 0,
-          "length": 0,
-          "pipes": [],
-          "awaitDrainWriters": null,
-          "readable": false
-        },
-        "_writableState": {
-          "highWaterMark": 65536,
-          "length": 0,
-          "corked": 0,
-          "writelen": 0,
-          "bufferedIndex": 0,
-          "pendingcb": 0
-        },
-        "allowHalfOpen": false,
-        "_eventsCount": 1,
-        "_sockname": null,
-        "_pendingData": null,
-        "_pendingEncoding": "",
-        "server": null,
-        "_server": null
-      },
-      "stdout": {
-        "connecting": false,
-        "_hadError": false,
-        "_parent": null,
-        "_host": null,
-        "_closeAfterHandlingError": false,
-        "_events": {},
-        "_readableState": {
-          "highWaterMark": 65536,
-          "buffer": [],
-          "bufferIndex": 0,
-          "length": 0,
-          "pipes": [],
-          "awaitDrainWriters": null
-        },
-        "_writableState": {
-          "highWaterMark": 65536,
-          "length": 0,
-          "corked": 0,
-          "writelen": 0,
-          "bufferedIndex": 0,
-          "pendingcb": 0
-        },
-        "allowHalfOpen": false,
-        "_eventsCount": 3,
-        "_sockname": null,
-        "_pendingData": null,
-        "_pendingEncoding": "",
-        "server": null,
-        "_server": null
-      },
-      "stderr": {
-        "connecting": false,
-        "_hadError": false,
-        "_parent": null,
-        "_host": null,
-        "_closeAfterHandlingError": false,
-        "_events": {},
-        "_readableState": {
-          "highWaterMark": 65536,
-          "buffer": [],
-          "bufferIndex": 0,
-          "length": 0,
-          "pipes": [],
-          "awaitDrainWriters": null
-        },
-        "_writableState": {
-          "highWaterMark": 65536,
-          "length": 0,
-          "corked": 0,
-          "writelen": 0,
-          "bufferedIndex": 0,
-          "pendingcb": 0
-        },
-        "allowHalfOpen": false,
-        "_eventsCount": 3,
-        "_sockname": null,
-        "_pendingData": null,
-        "_pendingEncoding": "",
-        "server": null,
-        "_server": null
-      },
-      "stdio": [
-        {
-          "connecting": false,
-          "_hadError": false,
-          "_parent": null,
-          "_host": null,
-          "_closeAfterHandlingError": false,
-          "_events": {},
-          "_readableState": {
-            "highWaterMark": 65536,
-            "buffer": [],
-            "bufferIndex": 0,
-            "length": 0,
-            "pipes": [],
-            "awaitDrainWriters": null,
-            "readable": false
-          },
-          "_writableState": {
-            "highWaterMark": 65536,
-            "length": 0,
-            "corked": 0,
-            "writelen": 0,
-            "bufferedIndex": 0,
-            "pendingcb": 0
-          },
-          "allowHalfOpen": false,
-          "_eventsCount": 1,
-          "_sockname": null,
-          "_pendingData": null,
-          "_pendingEncoding": "",
-          "server": null,
-          "_server": null
-        },
-        {
-          "connecting": false,
-          "_hadError": false,
-          "_parent": null,
-          "_host": null,
-          "_closeAfterHandlingError": false,
-          "_events": {},
-          "_readableState": {
-            "highWaterMark": 65536,
-            "buffer": [],
-            "bufferIndex": 0,
-            "length": 0,
-            "pipes": [],
-            "awaitDrainWriters": null
-          },
-          "_writableState": {
-            "highWaterMark": 65536,
-            "length": 0,
-            "corked": 0,
-            "writelen": 0,
-            "bufferedIndex": 0,
-            "pendingcb": 0
-          },
-          "allowHalfOpen": false,
-          "_eventsCount": 3,
-          "_sockname": null,
-          "_pendingData": null,
-          "_pendingEncoding": "",
-          "server": null,
-          "_server": null
-        },
-        {
-          "connecting": false,
-          "_hadError": false,
-          "_parent": null,
-          "_host": null,
-          "_closeAfterHandlingError": false,
-          "_events": {},
-          "_readableState": {
-            "highWaterMark": 65536,
-            "buffer": [],
-            "bufferIndex": 0,
-            "length": 0,
-            "pipes": [],
-            "awaitDrainWriters": null
-          },
-          "_writableState": {
-            "highWaterMark": 65536,
-            "length": 0,
-            "corked": 0,
-            "writelen": 0,
-            "bufferedIndex": 0,
-            "pendingcb": 0
-          },
-          "allowHalfOpen": false,
-          "_eventsCount": 3,
-          "_sockname": null,
-          "_pendingData": null,
-          "_pendingEncoding": "",
-          "server": null,
-          "_server": null
-        }
-      ]
-    },
-    "pid": 19332
-  },
-  {
-    "id": "10584169-56f7-4e42-bd87-72e8d1899a1b",
-    "type": "content-generation",
-    "name": "Primary Content Generator",
-    "status": "created",
-    "capabilities": [
-      "ai-writing",
-      "seo-optimization",
-      "content-planning",
-      "ai-writing",
-      "seo-optimization",
-      "content-planning"
-    ],
-    "services": [
-      "blog-posts",
-      "product-descriptions",
-      "social-media-content",
-      "blog-posts",
-      "product-descriptions",
-      "social-media-content"
-    ],
-    "dependencies": [
-      "openai",
-      "markdown"
-    ],
-    "config": {
-      "maxContentLength": 2000,
-      "seoOptimization": true,
-      "plagiarismCheck": true
-    },
-    "createdAt": "2025-08-01T18:14:41.465Z",
-    "lastActive": "2025-08-01T18:14:41.465Z",
-    "performance": {
-      "tasksCompleted": 0,
-      "tasksFailed": 0,
-      "averageResponseTime": 0,
-      "uptime": 0
-    },
-    "logs": [],
-    "health": {
-      "status": "healthy",
-      "lastCheck": "2025-08-01T18:14:41.465Z",
-      "errors": []
-    }
   }
 ]
