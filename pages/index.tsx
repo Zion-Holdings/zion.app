@@ -107,6 +107,22 @@ const Home: NextPage = () => {
     },
     {
       id: 7,
+      type: 'ai-virtual-assistant',
+      title: 'AI Virtual Assistant',
+      subtitle: 'Your Intelligent Marketplace Guide',
+      description: 'Experience the future of marketplace interaction with our AI-powered virtual assistant. Get personalized recommendations, expert guidance, and seamless navigation.',
+      features: [
+        { title: 'Intelligent Recommendations', description: 'Get personalized suggestions for services, talents, and equipment', icon: '🤖' },
+        { title: 'Expert Guidance', description: 'Receive technical advice and implementation guidance', icon: '💡' },
+        { title: 'Seamless Navigation', description: 'Navigate our marketplace effortlessly with AI assistance', icon: '🚀' },
+        { title: '24/7 Support', description: 'Get instant help and support anytime, anywhere', icon: '⏰' }
+      ],
+      cta: 'Try AI Assistant',
+      ctaLink: '/ai-virtual-assistant',
+      bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900'
+    },
+    {
+      id: 8,
       type: 'company-info',
       title: 'About Zion',
       items: [
@@ -118,7 +134,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-slate-900 to-purple-900'
     },
     {
-      id: 8,
+      id: 9,
       type: 'waitlist',
       title: 'Join the Waitlist',
       description: 'Be among the first to experience the future of AI-powered marketplace. Sign up for early access and exclusive benefits.',
