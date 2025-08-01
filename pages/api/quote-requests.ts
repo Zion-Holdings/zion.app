@@ -1,15 +1,27 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { createClient } from '@supabase/supabase-js';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co',
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key'
-);
+// Only create Supabase client if environment variables are available
+const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  ? createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    )
+  : null;
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     try {
       const quoteRequest = req.body;
+
+      // For local development without Supabase, return mock response
+      if (!supabase) {
+        return res.status(201).json({
+          success: true,
+          id: `qr_${Date.now()}`,
+          message: 'Quote request saved successfully (mock)'
+        });
+      }
 
       // Insert quote request into database
       const { data, error } = await supabase
@@ -49,6 +61,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   } else if (req.method === 'GET') {
     try {
       const { email } = req.query;
+
+      // For local development without Supabase, return mock data
+      if (!supabase) {
+        return res.status(200).json([]);
+      }
 
       let query = supabase
         .from('quote_requests')

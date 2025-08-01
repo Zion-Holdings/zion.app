@@ -95,7 +95,7 @@ const Home: NextPage = () => {
                 <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white block px-3 py-2 rounded-md text-base font-medium">
                   Join Zion Now
                 </Link>
-                <Link href="/request-quote" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                <Link href="/quote-request" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   Request Quote
                 </Link>
               </div>
