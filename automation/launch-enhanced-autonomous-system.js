@@ -1,460 +1,452 @@
 #!/usr/bin/env node
 
+const AutonomousAgentFactory = require('./autonomous-agent-factory');
+const AgentOrchestrator = require('./agent-orchestrator');
+const EnhancedCronSystem = require('./enhanced-cron-system');
 const fs = require('fs');
 const path = require('path');
-const { exec } = require('child_process');
 
-class EnhancedAutonomousSystemLauncher {
+class EnhancedAutonomousSystem {
   constructor() {
-    this.processes = new Map();
-    this.config = this.loadConfig();
-    this.logs = [];
-  }
-
-  loadConfig() {
-    try {
-      const configPath = path.join(__dirname, 'launcher-config.json');
-      if (fs.existsSync(configPath)) {
-        return JSON.parse(fs.readFileSync(configPath, 'utf8'));
-      }
-    } catch (error) {
-      console.error('Error loading launcher config:', error);
-    }
-    return {
-      autoStart: true,
-      monitoring: true,
-      logLevel: 'info',
-      maxRetries: 3,
-      healthCheckInterval: 30000,
-      backupInterval: 3600000
+    this.agentFactory = null;
+    this.orchestrator = null;
+    this.cronSystem = null;
+    this.isRunning = false;
+    this.startTime = null;
+    this.systemMetrics = {
+      uptime: 0,
+      totalAgents: 0,
+      activeAgents: 0,
+      totalTasks: 0,
+      completedTasks: 0,
+      systemHealth: 'unknown'
     };
   }
 
-  async launch() {
-    console.log('🚀 Launching Enhanced Autonomous System...');
+  async initialize() {
+    console.log('🚀 Initializing Enhanced Autonomous System...');
     
     try {
-      // Create necessary directories
+      // Create data directories
       this.ensureDirectories();
       
-      // Initialize database tables
-      await this.initializeDatabase();
+      // Initialize agent factory
+      this.agentFactory = new AutonomousAgentFactory();
+      console.log('✅ Agent Factory initialized');
       
-      // Start core components
-      await this.startCoreComponents();
+      // Initialize orchestrator
+      this.orchestrator = new AgentOrchestrator(this.agentFactory);
+      console.log('✅ Agent Orchestrator initialized');
       
-      // Start autonomous agents
-      await this.startAutonomousAgents();
+      // Initialize cron system
+      this.cronSystem = new EnhancedCronSystem(this.orchestrator);
+      console.log('✅ Enhanced Cron System initialized');
       
-      // Start orchestrator
-      await this.startOrchestrator();
+      // Set up event listeners
+      this.setupEventListeners();
       
-      // Start cron system
-      await this.startCronSystem();
+      // Create initial agents
+      await this.createInitialAgents();
       
-      // Start monitoring
-      this.startMonitoring();
+      // Set up scheduled tasks
+      await this.setupScheduledTasks();
       
-      // Start health checks
-      this.startHealthChecks();
-      
-      console.log('✅ Enhanced Autonomous System launched successfully');
-      
-      // Keep the process running
-      this.keepAlive();
+      console.log('✅ Enhanced Autonomous System initialized successfully');
+      return true;
       
     } catch (error) {
-      console.error('❌ Error launching system:', error);
-      process.exit(1);
+      console.error('❌ Failed to initialize system:', error);
+      throw error;
     }
   }
 
   ensureDirectories() {
     const directories = [
+      'data',
       'logs',
       'agents',
-      'orchestrators',
-      'backups',
-      'analytics',
-      'reports',
       'templates',
-      'market-research',
-      'content-generation',
-      'marketing-agents',
-      'sales-agents',
-      'analytics-agents',
-      'pids'
+      'backups'
     ];
-
-    directories.forEach(dir => {
+    
+    for (const dir of directories) {
       const dirPath = path.join(__dirname, dir);
       if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
       }
+    }
+  }
+
+  setupEventListeners() {
+    // Orchestrator events
+    this.orchestrator.on('taskSubmitted', (task) => {
+      console.log(`📋 Task submitted: ${task.id} - ${task.type}`);
+    });
+
+    this.orchestrator.on('taskCompleted', (task) => {
+      console.log(`✅ Task completed: ${task.id} - ${task.type}`);
+    });
+
+    this.orchestrator.on('taskFailed', (task) => {
+      console.log(`❌ Task failed: ${task.id} - ${task.type}`);
+    });
+
+    // Cron system events
+    this.cronSystem.on('jobCompleted', (data) => {
+      console.log(`⏰ Job completed: ${data.job.name} (${data.executionTime}ms)`);
+    });
+
+    this.cronSystem.on('jobFailed', (data) => {
+      console.log(`⏰ Job failed: ${data.job.name} - ${data.error.message}`);
     });
   }
 
-  async initializeDatabase() {
-    console.log('🗄️ Initializing database...');
+  async createInitialAgents() {
+    console.log('🤖 Creating initial agents...');
     
-    // Check if Supabase environment variables are available
-    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
-      console.log('⚠️ Supabase environment variables not found. Continuing without database initialization.');
-      console.log('💡 Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY for full functionality.');
-      return;
-    }
-    
-    try {
-      const { createClient } = require('@supabase/supabase-js');
-      const supabase = createClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-      );
-
-      // Create autonomous_agents table
-      await supabase.rpc('create_autonomous_agents_table', {});
-      
-      // Create system_metrics table
-      await supabase.rpc('create_system_metrics_table', {});
-      
-      // Create agent_logs table
-      await supabase.rpc('create_agent_logs_table', {});
-      
-      console.log('✅ Database initialized');
-    } catch (error) {
-      console.error('Error initializing database:', error);
-      console.log('⚠️ Continuing without database initialization.');
-    }
-  }
-
-  async startCoreComponents() {
-    console.log('🔧 Starting core components...');
-    
-    // Start enhanced autonomous system
-    await this.startProcess('enhanced-autonomous-system', 'node enhanced-autonomous-system.js');
-    
-    // Start agent factory
-    await this.startProcess('agent-factory', 'node autonomous-agent-factory.js');
-    
-    console.log('✅ Core components started');
-  }
-
-  async startAutonomousAgents() {
-    console.log('🤖 Starting autonomous agents...');
-    
-    const agentTypes = [
-      'content-generation',
-      'marketing',
-      'sales',
-      'analytics',
-      'research',
-      'social-media',
-      'seo',
-      'support',
-      'data-processing',
-      'qa'
+    const initialAgents = [
+      {
+        type: 'deep-search',
+        config: {
+          name: 'Primary Deep Search Agent',
+          capabilities: ['web-scraping', 'data-analysis', 'pattern-recognition'],
+          services: ['market-research', 'competitive-analysis', 'trend-detection'],
+          config: {
+            maxConcurrentSearches: 5,
+            searchDepth: 3,
+            timeout: 30000,
+            retryAttempts: 3
+          }
+        }
+      },
+      {
+        type: 'content-generation',
+        config: {
+          name: 'Primary Content Generator',
+          capabilities: ['ai-writing', 'seo-optimization', 'content-planning'],
+          services: ['blog-posts', 'product-descriptions', 'social-media-content'],
+          config: {
+            maxContentLength: 2000,
+            seoOptimization: true,
+            plagiarismCheck: true
+          }
+        }
+      },
+      {
+        type: 'orchestrator',
+        config: {
+          name: 'Primary Orchestrator',
+          capabilities: ['task-distribution', 'workload-balancing', 'performance-monitoring'],
+          services: ['agent-coordination', 'resource-management', 'system-optimization'],
+          config: {
+            maxConcurrentTasks: 20,
+            loadBalancing: true,
+            autoScaling: true
+          }
+        }
+      },
+      {
+        type: 'monitor',
+        config: {
+          name: 'System Monitor',
+          capabilities: ['system-monitoring', 'health-checks', 'alert-management'],
+          services: ['performance-tracking', 'error-detection', 'system-recovery'],
+          config: {
+            healthCheckInterval: 30000,
+            alertThresholds: true,
+            autoRecovery: true
+          }
+        }
+      },
+      {
+        type: 'data-processor',
+        config: {
+          name: 'Data Processor',
+          capabilities: ['data-cleaning', 'etl-processes', 'report-generation'],
+          services: ['data-validation', 'quality-assurance', 'automated-reports'],
+          config: {
+            dataValidationRules: true,
+            autoBackup: true,
+            qualityThreshold: 0.95
+          }
+        }
+      },
+      {
+        type: 'quality-assurance',
+        config: {
+          name: 'Quality Assurance Agent',
+          capabilities: ['content-review', 'error-detection', 'quality-scoring'],
+          services: ['content-audits', 'error-prevention', 'improvement-suggestions'],
+          config: {
+            qualityThreshold: 0.9,
+            autoCorrection: true,
+            reviewWorkflow: true
+          }
+        }
+      }
     ];
 
-    for (const agentType of agentTypes) {
-      await this.createAndStartAgent(agentType);
-    }
-
-    console.log('✅ Autonomous agents started');
-  }
-
-  async createAndStartAgent(agentType) {
-    try {
-      const AgentFactory = require('./autonomous-agent-factory');
-      const factory = new AgentFactory();
-      
-      const agentId = await factory.createAgent(agentType, {
-        name: `${agentType.charAt(0).toUpperCase() + agentType.slice(1)} Agent`,
-        autoStart: true,
-        monitoring: true
-      });
-
-      console.log(`✅ Created and started ${agentType} agent: ${agentId}`);
-    } catch (error) {
-      console.error(`❌ Error creating ${agentType} agent:`, error);
-    }
-  }
-
-  async startOrchestrator() {
-    console.log('🎼 Starting orchestrator...');
-    
-    await this.startProcess('orchestrator', 'node autonomous-agent-orchestrator.js');
-    
-    console.log('✅ Orchestrator started');
-  }
-
-  async startCronSystem() {
-    console.log('⏰ Starting cron system...');
-    
-    await this.startProcess('cron-system', 'node enhanced-cron-system.js');
-    
-    console.log('✅ Cron system started');
-  }
-
-  async startProcess(name, command) {
-    return new Promise((resolve, reject) => {
-      const process = exec(command, { cwd: __dirname }, (error, stdout, stderr) => {
-        if (error) {
-          console.error(`❌ Error in ${name}:`, error);
-          this.log(`Process ${name} failed: ${error.message}`, 'error');
-        } else {
-          console.log(`✅ ${name} completed successfully`);
-        }
-      });
-
-      // Store process reference
-      this.processes.set(name, process);
-      
-      // Save PID
-      const pidPath = path.join(__dirname, 'pids', `${name}.pid`);
-      fs.writeFileSync(pidPath, process.pid.toString());
-
-      // Handle process events
-      process.on('error', (error) => {
-        console.error(`❌ Process ${name} error:`, error);
-        this.log(`Process ${name} error: ${error.message}`, 'error');
-      });
-
-      process.on('exit', (code) => {
-        console.log(`Process ${name} exited with code ${code}`);
-        this.processes.delete(name);
-        
-        // Remove PID file
-        const pidPath = path.join(__dirname, 'pids', `${name}.pid`);
-        if (fs.existsSync(pidPath)) {
-          fs.unlinkSync(pidPath);
-        }
-      });
-
-      // Wait a bit for process to start
-      setTimeout(() => {
-        if (process.pid) {
-          console.log(`✅ Started ${name} (PID: ${process.pid})`);
-          resolve();
-        } else {
-          reject(new Error(`Failed to start ${name}`));
-        }
-      }, 2000);
-    });
-  }
-
-  startMonitoring() {
-    if (!this.config.monitoring) return;
-
-    console.log('📊 Starting monitoring...');
-    
-    setInterval(() => {
-      this.monitorProcesses();
-    }, 30000); // Check every 30 seconds
-
-    setInterval(() => {
-      this.generateSystemReport();
-    }, 300000); // Generate report every 5 minutes
-  }
-
-  monitorProcesses() {
-    const activeProcesses = Array.from(this.processes.keys());
-    console.log(`📈 Active processes: ${activeProcesses.length}`);
-    
-    activeProcesses.forEach(processName => {
-      const process = this.processes.get(processName);
-      if (process && process.pid) {
-        // Check if process is still running
-        try {
-          process.kill(0); // Send signal 0 to check if process exists
-        } catch (error) {
-          console.log(`⚠️ Process ${processName} is not responding`);
-          this.restartProcess(processName);
-        }
+    const results = [];
+    for (const agentSpec of initialAgents) {
+      try {
+        const agentId = await this.agentFactory.createAgent(agentSpec.type, agentSpec.config);
+        await this.agentFactory.startAgent(agentId);
+        results.push({ success: true, agentId, type: agentSpec.type, name: agentSpec.config.name });
+        console.log(`✅ Created and started agent: ${agentSpec.config.name}`);
+      } catch (error) {
+        results.push({ success: false, type: agentSpec.type, error: error.message });
+        console.error(`❌ Failed to create agent ${agentSpec.type}:`, error.message);
       }
-    });
-  }
-
-  async restartProcess(processName) {
-    console.log(`🔄 Restarting process: ${processName}`);
-    
-    const process = this.processes.get(processName);
-    if (process) {
-      process.kill('SIGTERM');
-      this.processes.delete(processName);
     }
 
-    // Wait a bit before restarting
-    await new Promise(resolve => setTimeout(resolve, 5000));
+    console.log(`🤖 Created ${results.filter(r => r.success).length}/${results.length} initial agents`);
+    return results;
+  }
+
+  async setupScheduledTasks() {
+    console.log('⏰ Setting up scheduled tasks...');
     
-    // Restart the process
     try {
-      switch (processName) {
-        case 'enhanced-autonomous-system':
-          await this.startProcess(processName, 'node enhanced-autonomous-system.js');
-          break;
-        case 'orchestrator':
-          await this.startProcess(processName, 'node autonomous-agent-orchestrator.js');
-          break;
-        case 'cron-system':
-          await this.startProcess(processName, 'node enhanced-cron-system.js');
-          break;
-        default:
-          console.log(`Unknown process: ${processName}`);
-      }
+      const results = await this.cronSystem.createScheduledTasks();
+      const successful = results.filter(r => r.success).length;
+      console.log(`⏰ Created ${successful}/${results.length} scheduled tasks`);
+      
+      return results;
     } catch (error) {
-      console.error(`❌ Failed to restart ${processName}:`, error);
+      console.error('❌ Failed to setup scheduled tasks:', error);
+      throw error;
     }
   }
 
-  startHealthChecks() {
+  async start() {
+    if (this.isRunning) {
+      console.log('⚠️ System is already running');
+      return;
+    }
+
+    try {
+      await this.initialize();
+      
+      this.isRunning = true;
+      this.startTime = new Date();
+      
+      console.log('🚀 Enhanced Autonomous System started successfully!');
+      console.log('📊 System is now running continuously...');
+      
+      // Start monitoring
+      this.startSystemMonitoring();
+      
+      // Handle graceful shutdown
+      this.setupGracefulShutdown();
+      
+    } catch (error) {
+      console.error('❌ Failed to start system:', error);
+      throw error;
+    }
+  }
+
+  startSystemMonitoring() {
+    // Update system metrics every 30 seconds
     setInterval(() => {
-      this.performHealthCheck();
-    }, this.config.healthCheckInterval);
+      this.updateSystemMetrics();
+    }, 30000);
+
+    // Log system status every 5 minutes
+    setInterval(() => {
+      this.logSystemStatus();
+    }, 5 * 60 * 1000);
+
+    // Health check every minute
+    setInterval(async () => {
+      await this.performHealthCheck();
+    }, 60000);
+  }
+
+  updateSystemMetrics() {
+    if (!this.isRunning) return;
+
+    const now = new Date();
+    this.systemMetrics.uptime = now - this.startTime;
+    this.systemMetrics.totalAgents = this.agentFactory.getAllAgents().length;
+    this.systemMetrics.activeAgents = this.agentFactory.getRunningAgents().length;
+    
+    const orchestratorMetrics = this.orchestrator.getSystemMetrics();
+    this.systemMetrics.totalTasks = orchestratorMetrics.totalTasks;
+    this.systemMetrics.completedTasks = orchestratorMetrics.completedTasks;
+    this.systemMetrics.systemHealth = this.calculateSystemHealth();
+  }
+
+  calculateSystemHealth() {
+    const agents = this.agentFactory.getAllAgents();
+    const errorCount = agents.filter(agent => agent.health.status === 'error').length;
+    const warningCount = agents.filter(agent => agent.health.status === 'warning').length;
+    
+    if (errorCount > agents.length * 0.2) return 'critical';
+    if (errorCount > 0 || warningCount > agents.length * 0.3) return 'warning';
+    return 'good';
+  }
+
+  logSystemStatus() {
+    const uptimeMinutes = Math.floor(this.systemMetrics.uptime / 1000 / 60);
+    const uptimeHours = Math.floor(uptimeMinutes / 60);
+    const uptimeDays = Math.floor(uptimeHours / 24);
+    
+    console.log('📊 System Status:', {
+      uptime: `${uptimeDays}d ${uptimeHours % 24}h ${uptimeMinutes % 60}m`,
+      totalAgents: this.systemMetrics.totalAgents,
+      activeAgents: this.systemMetrics.activeAgents,
+      totalTasks: this.systemMetrics.totalTasks,
+      completedTasks: this.systemMetrics.completedTasks,
+      health: this.systemMetrics.systemHealth
+    });
   }
 
   async performHealthCheck() {
-    console.log('🏥 Performing health check...');
-    
-    const healthStatus = {
-      timestamp: new Date().toISOString(),
-      processes: Array.from(this.processes.keys()),
-      activeProcesses: this.processes.size,
-      systemHealth: 'good',
-      issues: []
+    try {
+      const healthResults = await this.agentFactory.healthCheck();
+      const unhealthyAgents = healthResults.filter(r => r.health.status !== 'healthy');
+      
+      if (unhealthyAgents.length > 0) {
+        console.log(`⚠️ Found ${unhealthyAgents.length} unhealthy agents`);
+        
+        for (const result of unhealthyAgents) {
+          console.log(`🔄 Restarting unhealthy agent: ${result.agentId}`);
+          try {
+            await this.agentFactory.restartAgent(result.agentId);
+          } catch (error) {
+            console.error(`❌ Failed to restart agent ${result.agentId}:`, error.message);
+          }
+        }
+      }
+    } catch (error) {
+      console.error('❌ Health check failed:', error);
+    }
+  }
+
+  setupGracefulShutdown() {
+    const shutdown = async (signal) => {
+      console.log(`\n🛑 Received ${signal}, shutting down gracefully...`);
+      
+      this.isRunning = false;
+      
+      try {
+        // Stop cron system
+        if (this.cronSystem) {
+          await this.cronSystem.shutdown();
+        }
+        
+        // Stop orchestrator
+        if (this.orchestrator) {
+          await this.orchestrator.shutdown();
+        }
+        
+        // Stop all agents
+        if (this.agentFactory) {
+          const agents = this.agentFactory.getAllAgents();
+          for (const agent of agents) {
+            if (agent.status === 'running') {
+              try {
+                await this.agentFactory.stopAgent(agent.id);
+              } catch (error) {
+                console.error(`Failed to stop agent ${agent.name}:`, error.message);
+              }
+            }
+          }
+        }
+        
+        console.log('✅ System shutdown complete');
+        process.exit(0);
+        
+      } catch (error) {
+        console.error('❌ Error during shutdown:', error);
+        process.exit(1);
+      }
     };
 
-    // Check each process
-    for (const [name, process] of this.processes) {
-      try {
-        process.kill(0);
-      } catch (error) {
-        healthStatus.issues.push(`${name} is not responding`);
-        healthStatus.systemHealth = 'warning';
-      }
-    }
-
-    // Save health status
-    const healthPath = path.join(__dirname, 'logs', `health_${Date.now()}.json`);
-    fs.writeFileSync(healthPath, JSON.stringify(healthStatus, null, 2));
-
-    if (healthStatus.issues.length > 0) {
-      console.log(`⚠️ Health check issues: ${healthStatus.issues.join(', ')}`);
-    } else {
-      console.log('✅ Health check passed');
-    }
+    process.on('SIGINT', () => shutdown('SIGINT'));
+    process.on('SIGTERM', () => shutdown('SIGTERM'));
   }
 
-  async generateSystemReport() {
-    console.log('📋 Generating system report...');
-    
-    const report = {
-      timestamp: new Date().toISOString(),
-      processes: Array.from(this.processes.keys()),
-      activeProcesses: this.processes.size,
-      uptime: process.uptime(),
-      memoryUsage: process.memoryUsage(),
-      systemHealth: 'good',
-      recommendations: []
-    };
-
-    // Add recommendations based on system state
-    if (this.processes.size < 3) {
-      report.recommendations.push('Consider starting additional processes for redundancy');
+  async getSystemStatus() {
+    if (!this.isRunning) {
+      return { status: 'stopped' };
     }
 
-    if (process.memoryUsage().heapUsed > 100 * 1024 * 1024) { // 100MB
-      report.recommendations.push('High memory usage detected, consider optimization');
-    }
+    const agentMetrics = await this.agentFactory.getSystemMetrics();
+    const orchestratorMetrics = this.orchestrator.getSystemMetrics();
+    const cronMetrics = this.cronSystem.getSystemMetrics();
 
-    // Save report
-    const reportPath = path.join(__dirname, 'reports', `system_report_${Date.now()}.json`);
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-
-    console.log('✅ System report generated');
-  }
-
-  log(message, level = 'info') {
-    const logEntry = {
-      timestamp: new Date().toISOString(),
-      level,
-      message,
-      processCount: this.processes.size
-    };
-
-    this.logs.push(logEntry);
-    
-    // Keep only recent logs
-    if (this.logs.length > 1000) {
-      this.logs = this.logs.slice(-1000);
-    }
-
-    // Save to file
-    const logPath = path.join(__dirname, 'logs', `launcher_${new Date().toISOString().split('T')[0]}.log`);
-    fs.appendFileSync(logPath, JSON.stringify(logEntry) + '\n');
-
-    console.log(`[LAUNCHER] [${level.toUpperCase()}] ${message}`);
-  }
-
-  keepAlive() {
-    console.log('🔄 System is running. Press Ctrl+C to stop.');
-    
-    // Handle graceful shutdown
-    process.on('SIGINT', () => {
-      console.log('\n🛑 Shutting down Enhanced Autonomous System...');
-      this.shutdown();
-    });
-
-    process.on('SIGTERM', () => {
-      console.log('\n🛑 Received SIGTERM, shutting down...');
-      this.shutdown();
-    });
-  }
-
-  async shutdown() {
-    console.log('🔄 Stopping all processes...');
-    
-    // Stop all processes
-    for (const [name, process] of this.processes) {
-      console.log(`🛑 Stopping ${name}...`);
-      try {
-        process.kill('SIGTERM');
-      } catch (error) {
-        console.error(`❌ Error stopping ${name}:`, error);
-      }
-    }
-
-    // Wait for processes to stop
-    await new Promise(resolve => setTimeout(resolve, 5000));
-    
-    // Force kill remaining processes
-    for (const [name, process] of this.processes) {
-      try {
-        process.kill('SIGKILL');
-      } catch (error) {
-        console.error(`❌ Error force killing ${name}:`, error);
-      }
-    }
-
-    console.log('✅ Enhanced Autonomous System stopped');
-    process.exit(0);
-  }
-
-  getStatus() {
     return {
-      processes: Array.from(this.processes.keys()),
-      activeProcesses: this.processes.size,
-      uptime: process.uptime(),
-      config: this.config,
-      logs: this.logs.slice(-10)
+      status: 'running',
+      uptime: this.systemMetrics.uptime,
+      agents: agentMetrics,
+      orchestrator: orchestratorMetrics,
+      cron: cronMetrics,
+      systemHealth: this.systemMetrics.systemHealth
     };
+  }
+
+  async submitTask(task) {
+    if (!this.isRunning) {
+      throw new Error('System is not running');
+    }
+    
+    return await this.orchestrator.submitTask(task);
+  }
+
+  async getTaskStatus(taskId) {
+    return this.orchestrator.getTaskStatus(taskId);
+  }
+
+  async createAgent(type, config) {
+    if (!this.isRunning) {
+      throw new Error('System is not running');
+    }
+    
+    const agentId = await this.agentFactory.createAgent(type, config);
+    await this.agentFactory.startAgent(agentId);
+    return agentId;
+  }
+
+  async stop() {
+    if (!this.isRunning) {
+      console.log('⚠️ System is not running');
+      return;
+    }
+
+    console.log('🛑 Stopping Enhanced Autonomous System...');
+    this.isRunning = false;
+    
+    // Trigger graceful shutdown
+    await this.setupGracefulShutdown()();
   }
 }
 
-// Export the launcher
-module.exports = EnhancedAutonomousSystemLauncher;
+// Main execution
+async function main() {
+  const system = new EnhancedAutonomousSystem();
+  
+  try {
+    await system.start();
+    
+    // Keep the process running
+    process.on('uncaughtException', (error) => {
+      console.error('Uncaught Exception:', error);
+    });
+    
+    process.on('unhandledRejection', (reason, promise) => {
+      console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+    });
+    
+  } catch (error) {
+    console.error('Failed to start system:', error);
+    process.exit(1);
+  }
+}
 
-// If run directly, launch the system
+// Export for use as module
 if (require.main === module) {
-  const launcher = new EnhancedAutonomousSystemLauncher();
-  launcher.launch().catch(console.error);
+  main();
+} else {
+  module.exports = EnhancedAutonomousSystem;
 } 
