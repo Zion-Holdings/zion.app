@@ -1,11 +1,11 @@
 {
-  "lastCheck": "2025-08-01T01:45:04.817Z",
+  "lastCheck": "2025-08-01T01:57:19.718Z",
   "jobs": {
     "gitSync": {
-      "lastRun": "2025-08-01T01:45:04.817Z",
-      "duration": 0,
-      "success": false,
-      "error": "Command failed: git commit -m \"Auto-sync: Continuous improvement - $(date)\"\n🔍 Running pre-commit checks...\n📝 Running ESLint...\n\n> bolt.new.zion.app@0.1.0 lint\n> next lint\n\n\n./pages/category/ai-talents.tsx\n7:19  Error: Parsing error: '{' or JSX element expected.\n\n./pages/category/equipment.tsx\n7:19  Error: Parsing error: '{' or JSX element expected.\n\n./pages/category/innovation.tsx\n7:19  Error: Parsing error: '{' or JSX element expected.\n\n./pages/category/it-services.tsx\n7:19  Error: Parsing error: '{' or JSX element expected.\n\ninfo  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules\n❌ ESLint failed. Please fix the issues before committing.\nhusky - pre-commit script failed (code 1)\n"
+      "lastRun": "2025-08-01T01:57:19.718Z",
+      "duration": 19663,
+      "success": true,
+      "error": null
     },
     "buildCheck": {
       "lastRun": "2025-07-31T22:40:06.122Z",
@@ -44,9 +44,9 @@
       "error": null
     }
   },
-  "errors": 680,
+  "errors": 687,
   "fixes": 575,
-  "syncs": 303,
+  "syncs": 305,
   "builds": 5,
-  "commits": 356
+  "commits": 361
 }
