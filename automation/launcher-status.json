@@ -15,9 +15,10 @@
       "lastActivity": "2025-08-01T03:24:00.860Z"
     },
     "analytics": {
-      "isRunning": true,
-      "startTime": "2025-08-01T03:24:36.347Z",
-      "pid": 26667
+      "isRunning": false,
+      "lastExit": "2025-08-01T03:24:36.418Z",
+      "exitCode": 1,
+      "signal": null
     },
     "health": {
       "isRunning": true,
