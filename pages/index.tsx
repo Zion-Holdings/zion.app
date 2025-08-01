@@ -124,17 +124,17 @@ const Home: NextPage = () => {
     },
     {
       id: 7,
-      type: 'ai-virtual-assistant',
-      title: 'AI Virtual Assistant',
-      description: 'Experience the future of marketplace interaction with our intelligent AI assistant. Get personalized recommendations, expert guidance, and seamless navigation.',
-      cta: 'Try AI Assistant',
-      ctaLink: '/ai-virtual-assistant',
+      type: 'real-time-chat',
+      title: 'Real-Time Chat System',
+      description: 'Connect with users, service providers, and AI assistants in real-time. Get instant support, discuss projects, and build your professional network.',
+      cta: 'Start Chatting',
+      ctaLink: '/real-time-chat',
       secondaryCta: 'Learn More',
-      secondaryCtaLink: '/ai-virtual-assistant',
+      secondaryCtaLink: '/real-time-chat',
       features: [
-        { icon: '🤖', title: 'Intelligent Recommendations', description: 'Get personalized suggestions for services, talents, and equipment' },
-        { icon: '💡', title: 'Expert Guidance', description: 'Receive technical advice and implementation guidance' },
-        { icon: '🚀', title: 'Seamless Navigation', description: 'Navigate our marketplace effortlessly with AI-powered routing' }
+        { icon: '💬', title: 'Live Communication', description: 'Chat with users and service providers in real-time' },
+        { icon: '🤖', title: 'AI Assistant Chat', description: 'Get instant help from our intelligent AI assistant' },
+        { icon: '👥', title: 'Community Building', description: 'Build your professional network and share experiences' }
       ],
       bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900'
     },
@@ -623,7 +623,7 @@ const Home: NextPage = () => {
           </div>
         )
 
-      case 'ai-virtual-assistant':
+      case 'real-time-chat':
         return (
           <div className="py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -765,6 +765,9 @@ const Home: NextPage = () => {
               <Link href="/products" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Products
               </Link>
+              <Link href="/real-time-chat" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Live Chat
+              </Link>
               <Link href="/blog" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Blog
               </Link>
@@ -813,6 +816,9 @@ const Home: NextPage = () => {
                 </Link>
                 <Link href="/products" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   Products
+                </Link>
+                <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  Live Chat
                 </Link>
                 <Link href="/ai-virtual-assistant" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   AI Assistant
