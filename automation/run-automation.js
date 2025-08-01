@@ -1,78 +1,69 @@
 #!/usr/bin/env node
 
-const AutomationOrchestrator = require('./automation-orchestrator');
+const WebsiteAutomationOrchestrator = require('./website-automation-orchestrator');
+const fs = require('fs').promises;
+const path = require('path');
 
 async function main() {
-  console.log('🤖 Zion Automation System Starting...');
-  console.log('=' .repeat(50));
-  
-  const orchestrator = new AutomationOrchestrator();
-  
-  // Parse command line arguments
-  const args = process.argv.slice(2);
-  const mode = args[0] || 'cycle';
+  console.log('🚀 Starting Zion Tech Group Website Automation System');
+  console.log('=' .repeat(60));
   
   try {
-    switch (mode) {
-      case 'cycle':
-        console.log('🔄 Running single automation cycle...');
-        await orchestrator.runFullAutomationCycle();
-        break;
-        
-      case 'continuous':
-        console.log('🔄 Starting continuous automation...');
-        await orchestrator.runContinuousAutomation();
-        break;
-        
-      case 'content':
-        console.log('📝 Running content generation only...');
-        await orchestrator.runContentGeneration();
-        break;
-        
-      case 'improve':
-        console.log('🔧 Running code improvement only...');
-        await orchestrator.runCodeImprovement();
-        break;
-        
-      case 'analytics':
-        console.log('📊 Running analytics only...');
-        await orchestrator.runAnalytics();
-        break;
-        
-      case 'build':
-        console.log('🏗️ Running build and deploy only...');
-        await orchestrator.runBuildAndDeploy();
-        break;
-        
-      default:
-        console.log('❌ Unknown mode. Available modes:');
-        console.log('  cycle      - Run full automation cycle');
-        console.log('  continuous - Run continuous automation');
-        console.log('  content    - Content generation only');
-        console.log('  improve    - Code improvement only');
-        console.log('  analytics  - Analytics only');
-        console.log('  build      - Build and deploy only');
-        process.exit(1);
-    }
+    // Create necessary directories
+    await createDirectories();
     
-    console.log('✅ Automation completed successfully!');
+    // Initialize the orchestrator
+    const orchestrator = new WebsiteAutomationOrchestrator();
+    
+    // Handle graceful shutdown
+    process.on('SIGINT', async () => {
+      console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+      orchestrator.stop();
+      process.exit(0);
+    });
+    
+    process.on('SIGTERM', async () => {
+      console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+      orchestrator.stop();
+      process.exit(0);
+    });
+    
+    // Start continuous monitoring
+    await orchestrator.startContinuousMonitoring();
     
   } catch (error) {
-    console.error('❌ Automation failed:', error.message);
+    console.error('❌ Fatal error in automation system:', error);
     process.exit(1);
   }
 }
 
-// Handle graceful shutdown
-process.on('SIGINT', () => {
-  console.log('\n🛑 Shutting down automation gracefully...');
-  process.exit(0);
-});
+async function createDirectories() {
+  const directories = [
+    'automation/reports',
+    'automation/generated-content',
+    'automation/fixes',
+    'automation/fixes/meta-descriptions',
+    'automation/fixes/seo',
+    'automation/fixes/performance',
+    'automation/logs'
+  ];
+  
+  for (const dir of directories) {
+    try {
+      await fs.mkdir(path.join(__dirname, '..', dir), { recursive: true });
+      console.log(`✅ Created directory: ${dir}`);
+    } catch (error) {
+      console.log(`ℹ️  Directory already exists: ${dir}`);
+    }
+  }
+}
 
-process.on('SIGTERM', () => {
-  console.log('\n🛑 Shutting down automation gracefully...');
-  process.exit(0);
-});
+// Run the automation system
+if (require.main === module) {
+  main().catch(error => {
+    console.error('❌ Unhandled error:', error);
+    process.exit(1);
+  });
+}
 
-// Run the main function
-main(); 
+module.exports = { main }; 
