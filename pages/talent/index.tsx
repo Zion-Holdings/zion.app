@@ -352,4 +352,4 @@ function TalentCard({ talent }: { talent: Talent }) {
       </div>
     </Link>
   );
-} 
+} export default TalentPage;

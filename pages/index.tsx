@@ -5,12 +5,20 @@ import Link from 'next/link'
 
 const Home: NextPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [email, setEmail] = useState('')
+
+  const handleWaitlistSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Handle waitlist submission
+    console.log('Waitlist signup:', email)
+    setEmail('')
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
-        <title>Zion - AI-Powered Services</title>
-        <meta name="description" content="Zion - The premier AI-powered marketplace connecting businesses with top-tier IT services, AI talents, cutting-edge equipment, and innovative solutions." />
+        <title>Zion - The First Free AI-Powered Marketplace</title>
+        <meta name="description" content="Zion - The first free AI-powered marketplace for high-tech products, on-demand IT services, AI talents, innovation, and equipment." />
         <meta name="keywords" content="AI marketplace, IT services, AI talents, equipment, innovation, Zion" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -29,26 +37,23 @@ const Home: NextPage = () => {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/products" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Products
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</Link><Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Talents</Link><Link href="/equipment" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Services
               </Link>
-              <Link href="/it-services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                IT Services
+              <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Talents
               </Link>
-              <Link href="/quote-request" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Request Quote
-              </Link>
-              <Link href="/service-description-generator" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Service Generator</Link><Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                About
+              <Link href="/equipment" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Equipment
               </Link>
               <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
               <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
-                Join Zion
+                Join Zion Now
               </Link>
             </div>
 
@@ -69,23 +74,23 @@ const Home: NextPage = () => {
           {isMenuOpen && (
             <div className="md:hidden bg-black/90 backdrop-blur-md border-t border-white/10">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <Link href="/products" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  Products
+                <Link href="/marketplace" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  Marketplace
                 </Link>
-                <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</Link><Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Talents</Link><Link href="/equipment" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                <Link href="/services" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   Services
                 </Link>
-                <Link href="/it-services" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  IT Services
+                <Link href="/talents" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  Talents
                 </Link>
-                <Link href="/service-description-generator" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Service Generator</Link><Link href="/service-description-generator" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Service Generator</Link><Link href="/about" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  About
+                <Link href="/equipment" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  Equipment
                 </Link>
                 <Link href="/auth/login" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   Login
                 </Link>
                 <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white block px-3 py-2 rounded-md text-base font-medium">
-                  Join Zion
+                  Join Zion Now
                 </Link>
               </div>
             </div>
@@ -93,7 +98,6 @@ const Home: NextPage = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <main className="flex-1">
         <div className="relative overflow-hidden">
           {/* Background Effects */}
