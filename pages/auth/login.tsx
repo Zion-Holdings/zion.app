@@ -13,7 +13,7 @@ const Login: NextPage = () => {
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
   const [socialLoading, setSocialLoading] = useState<string | null>(null)
-  const { signIn, signInWithProvider, user } = useAuth()
+  const { signIn, signInWithProvider, user, loading: authLoading } = useAuth()
   const router = useRouter()
 
   // Handle URL parameters for messages
@@ -28,9 +28,33 @@ const Login: NextPage = () => {
   }, [router.query])
 
   // Redirect if already logged in
+  useEffect(() => {
+    if (!authLoading && user) {
+      router.push('/dashboard')
+    }
+  }, [user, authLoading, router])
+
+  // Show loading state while checking authentication
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 mx-auto"></div>
+          <div className="text-white text-xl mt-4">Loading...</div>
+        </div>
+      </div>
+    )
+  }
+
+  // Don't render login form if user is already authenticated
   if (user) {
-    router.push('/dashboard')
-    return null
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-white text-xl">Redirecting to dashboard...</div>
+        </div>
+      </div>
+    )
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -75,8 +99,8 @@ const Login: NextPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
       <Head>
-        <title>Login - Zion</title>
-        <meta name="description" content="Login to your Zion account" />
+        <title>Sign In - Zion</title>
+        <meta name="description" content="Sign in to your Zion account" />
       </Head>
 
       <div className="max-w-md w-full mx-4">
@@ -89,15 +113,15 @@ const Login: NextPage = () => {
             <p className="text-gray-300 mt-2">Sign in to your account</p>
           </div>
 
-          {error && (
-            <div className="mb-4 p-3 bg-red-500/10 border border-red-500/20 rounded-lg">
-              <p className="text-red-400 text-sm">{error}</p>
+          {message && (
+            <div className="mb-4 p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
+              <p className="text-green-400 text-sm">{message}</p>
             </div>
           )}
 
-          {message && (
-            <div className="mb-4 p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
-              <p className="text-green-400 text-sm">{message}</p>
+          {error && (
+            <div className="mb-4 p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
+              <p className="text-red-400 text-sm">{error}</p>
             </div>
           )}
 
@@ -105,8 +129,8 @@ const Login: NextPage = () => {
           <div className="space-y-3 mb-6">
             <button
               onClick={() => handleSocialLogin('google')}
-              disabled={socialLoading !== null}
-              className="w-full flex items-center justify-center px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={socialLoading === 'google'}
+              className="w-full flex items-center justify-center px-4 py-3 border border-gray-600 rounded-lg text-white hover:bg-white/5 transition-colors disabled:opacity-50"
             >
               {socialLoading === 'google' ? (
                 <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
@@ -125,8 +149,8 @@ const Login: NextPage = () => {
 
             <button
               onClick={() => handleSocialLogin('github')}
-              disabled={socialLoading !== null}
-              className="w-full flex items-center justify-center px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={socialLoading === 'github'}
+              className="w-full flex items-center justify-center px-4 py-3 border border-gray-600 rounded-lg text-white hover:bg-white/5 transition-colors disabled:opacity-50"
             >
               {socialLoading === 'github' ? (
                 <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
@@ -142,8 +166,8 @@ const Login: NextPage = () => {
 
             <button
               onClick={() => handleSocialLogin('linkedin')}
-              disabled={socialLoading !== null}
-              className="w-full flex items-center justify-center px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={socialLoading === 'linkedin'}
+              className="w-full flex items-center justify-center px-4 py-3 border border-gray-600 rounded-lg text-white hover:bg-white/5 transition-colors disabled:opacity-50"
             >
               {socialLoading === 'linkedin' ? (
                 <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
@@ -159,8 +183,8 @@ const Login: NextPage = () => {
 
             <button
               onClick={() => handleSocialLogin('twitter')}
-              disabled={socialLoading !== null}
-              className="w-full flex items-center justify-center px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={socialLoading === 'twitter'}
+              className="w-full flex items-center justify-center px-4 py-3 border border-gray-600 rounded-lg text-white hover:bg-white/5 transition-colors disabled:opacity-50"
             >
               {socialLoading === 'twitter' ? (
                 <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
@@ -177,69 +201,64 @@ const Login: NextPage = () => {
 
           <div className="relative mb-6">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-white/20"></div>
+              <div className="w-full border-t border-gray-600"></div>
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-transparent text-gray-300">Or continue with email</span>
+              <span className="px-2 bg-slate-900 text-gray-300">Or continue with email</span>
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
                 Email Address
               </label>
               <input
-                type="email"
                 id="email"
+                type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                placeholder="Enter your email"
                 required
-                disabled={loading}
+                className="w-full px-3 py-2 bg-white/5 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                placeholder="Enter your email"
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-1">
                 Password
               </label>
               <input
-                type="password"
                 id="password"
+                type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                placeholder="Enter your password"
                 required
-                disabled={loading}
+                className="w-full px-3 py-2 bg-white/5 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                placeholder="Enter your password"
               />
             </div>
 
             <div className="flex items-center justify-between">
-              <div className="flex items-center">
+              <label className="flex items-center">
                 <input
-                  id="remember-me"
-                  name="remember-me"
                   type="checkbox"
-                  className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
+                  className="rounded border-gray-600 text-purple-600 focus:ring-purple-500 bg-white/5"
                 />
-                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-300">
-                  Remember me
-                </label>
-              </div>
-              <div className="text-sm">
-                <Link href="/auth/forgot-password" className="text-purple-400 hover:text-purple-300">
-                  Forgot your password?
-                </Link>
-              </div>
+                <span className="ml-2 text-sm text-gray-300">Remember me</span>
+              </label>
+              <Link
+                href="/auth/forgot-password"
+                className="text-sm text-purple-400 hover:text-purple-300"
+              >
+                Forgot your password?
+              </Link>
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed text-white py-3 rounded-lg font-medium transition-all duration-300"
+              className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-purple-800 text-white font-medium py-2 px-4 rounded-lg transition-colors disabled:opacity-50"
             >
               {loading ? 'Signing In...' : 'Sign In'}
             </button>
