@@ -97,13 +97,20 @@ class EnhancedAutonomousSystemLauncher {
   async initializeDatabase() {
     console.log('🗄️ Initializing database...');
     
-    const { createClient } = require('@supabase/supabase-js');
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-    );
-
+    // Check if Supabase environment variables are available
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+      console.log('⚠️ Supabase environment variables not found. Continuing without database initialization.');
+      console.log('💡 Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY for full functionality.');
+      return;
+    }
+    
     try {
+      const { createClient } = require('@supabase/supabase-js');
+      const supabase = createClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+      );
+
       // Create autonomous_agents table
       await supabase.rpc('create_autonomous_agents_table', {});
       
@@ -116,6 +123,7 @@ class EnhancedAutonomousSystemLauncher {
       console.log('✅ Database initialized');
     } catch (error) {
       console.error('Error initializing database:', error);
+      console.log('⚠️ Continuing without database initialization.');
     }
   }
 
