@@ -413,7 +413,7 @@ The AI Solutions Team`
             await this.generateSocialMediaContent(campaign, contentDir);
             
             // Generate email content
-            await this.generateEmailContent(campaign, contentDir);
+            await this.generateEmailContentFile(campaign, contentDir);
             
             // Generate content marketing materials
             await this.generateContentMarketingMaterials(campaign, contentDir);
@@ -461,7 +461,7 @@ The AI Solutions Team`
         await fs.writeJson(path.join(contentDir, 'social-media-content.json'), socialContent, { spaces: 2 });
     }
 
-    async generateEmailContent(campaign, contentDir) {
+    async generateEmailContentFile(campaign, contentDir) {
         const emailContent = {
             subject: campaign.content?.emailMarketing?.subject || `Learn about ${campaign.solutionName}`,
             body: campaign.content?.emailMarketing?.body || this.generateEmailBody(campaign),
