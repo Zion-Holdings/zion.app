@@ -48,11 +48,13 @@ export async function updateSession(request: NextRequest) {
     '/auth/callback',
     '/auth/forgot-password',
     '/auth/reset-password',
+    '/auth/verify',
     '/about',
     '/blog',
     '/products',
     '/category',
-    '/talent'
+    '/talent',
+    '/debug-auth'
   ]
 
   const isPublicPath = publicPaths.some(path => 
@@ -67,6 +69,17 @@ export async function updateSession(request: NextRequest) {
   // Allow static files and API routes
   if (isStaticPath || isApiPath) {
     return supabaseResponse
+  }
+
+  // Debug logging (only in development)
+  if (process.env.NODE_ENV === 'development') {
+    console.log('Middleware Debug:', {
+      pathname: request.nextUrl.pathname,
+      user: user ? 'exists' : 'null',
+      isPublicPath,
+      isApiPath,
+      isStaticPath
+    })
   }
 
   // If user is not authenticated and trying to access protected route
