@@ -1,11 +1,11 @@
 {
-  "lastCheck": "2025-08-01T02:17:08.196Z",
+  "lastCheck": "2025-08-01T02:18:20.431Z",
   "jobs": {
     "gitSync": {
-      "lastRun": "2025-08-01T02:17:08.196Z",
-      "duration": 0,
-      "success": false,
-      "error": "Command failed: git commit -m \"Auto-sync: Continuous improvement - $(date)\"\n🔍 Running pre-commit checks...\n📝 Running ESLint...\n\n> bolt.new.zion.app@0.1.0 lint\n> next lint\n\n\n./pages/talent/[id].tsx\n52:6  Warning: React Hook useEffect has missing dependencies: 'fetchReviews' and 'fetchTalent'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps\n\n./pages/talent/index.tsx\n117:6  Warning: React Hook useEffect has a missing dependency: 'filterTalents'. Either include it or remove the dependency array. Outer scope values like 'selectedAvailability' aren't valid dependencies because mutating them doesn't re-render the component.  react-hooks/exhaustive-deps\n\ninfo  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules\n🔍 Running TypeScript type check...\n\n> bolt.new.zion.app@0.1.0 type-check\n> tsc --noEmit\n\npages/talent/index.tsx(106,35): error TS2304: Cannot find name 'selectedAvailability'.\npages/talent/index.tsx(106,93): error TS2304: Cannot find name 'selectedAvailability'.\npages/talent/index.tsx(107,35): error TS2551: Property 'hourlyRate' does not exist on type 'Talent'. Did you mean 'hourly_rate'?\npages/talent/index.tsx(107,49): error TS2304: Cannot find name 'priceRange'.\npages/talent/index.tsx(107,73): error TS2551: Property 'hourlyRate' does not exist on type 'Talent'. Did you mean 'hourly_rate'?\npages/talent/index.tsx(107,87): error TS2304: Cannot find name 'priceRange'.\npages/talent/index.tsx(108,29): error TS2304: Cannot find name 'selectedRegion'.\npages/talent/index.tsx(108,64): error TS2339: Property 'region' does not exist on type 'Talent'.\npages/talent/index.tsx(108,75): error TS2304: Cannot find name 'selectedRegion'.\npages/talent/index.tsx(117,44): error TS2304: Cannot find name 'selectedAvailability'.\npages/talent/index.tsx(117,66): error TS2304: Cannot find name 'priceRange'.\npages/talent/index.tsx(117,78): error TS2304: Cannot find name 'selectedRegion'.\n❌ TypeScript type check failed. Please fix the issues before committing.\nhusky - pre-commit script failed (code 1)\n"
+      "lastRun": "2025-08-01T02:18:20.431Z",
+      "duration": 20209,
+      "success": true,
+      "error": null
     },
     "buildCheck": {
       "lastRun": "2025-07-31T22:40:06.122Z",
@@ -46,7 +46,7 @@
   },
   "errors": 699,
   "fixes": 575,
-  "syncs": 313,
+  "syncs": 314,
   "builds": 5,
-  "commits": 369
+  "commits": 370
 }
