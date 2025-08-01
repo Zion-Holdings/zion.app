@@ -9,11 +9,11 @@ import { useAuth } from '../../src/contexts/AuthContext'
 const Login: NextPage = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
+  const [localError, setLocalError] = useState('')
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
   const [socialLoading, setSocialLoading] = useState<string | null>(null)
-  const { signIn, signInWithProvider, user, loading: authLoading } = useAuth()
+  const { signIn, signInWithProvider, user, loading: authLoading, error: authError, clearError } = useAuth()
   const router = useRouter()
 
   // Handle URL parameters for messages
@@ -23,9 +23,14 @@ const Login: NextPage = () => {
       setMessage(urlMessage as string)
     }
     if (urlError) {
-      setError(urlError as string)
+      setLocalError(urlError as string)
     }
   }, [router.query])
+
+  // Clear errors when component mounts
+  useEffect(() => {
+    clearError()
+  }, [clearError])
 
   // Redirect if already logged in
   useEffect(() => {
@@ -60,19 +65,20 @@ const Login: NextPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    setError('')
+    setLocalError('')
     setMessage('')
+    clearError()
 
     try {
       const { error } = await signIn(email, password)
       
       if (error) {
-        setError(error.message)
+        setLocalError(error.message)
       } else {
         router.push('/dashboard')
       }
     } catch (err) {
-      setError('An unexpected error occurred. Please try again.')
+      setLocalError('An unexpected error occurred. Please try again.')
     } finally {
       setLoading(false)
     }
@@ -80,21 +86,25 @@ const Login: NextPage = () => {
 
   const handleSocialLogin = async (provider: 'google' | 'github' | 'linkedin' | 'twitter') => {
     setSocialLoading(provider)
-    setError('')
+    setLocalError('')
     setMessage('')
+    clearError()
 
     try {
       const { error } = await signInWithProvider(provider)
       
       if (error) {
-        setError(error.message)
+        setLocalError(error.message)
       }
     } catch (err) {
-      setError('An unexpected error occurred. Please try again.')
+      setLocalError('An unexpected error occurred. Please try again.')
     } finally {
       setSocialLoading(null)
     }
   }
+
+  // Use either local error or auth context error
+  const displayError = localError || authError
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
@@ -119,9 +129,9 @@ const Login: NextPage = () => {
             </div>
           )}
 
-          {error && (
+          {displayError && (
             <div className="mb-4 p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
-              <p className="text-red-400 text-sm">{error}</p>
+              <p className="text-red-400 text-sm">{displayError}</p>
             </div>
           )}
 
