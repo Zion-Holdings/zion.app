@@ -819,9 +819,9 @@ The AI Solutions Team`
 I noticed you were interested in ${campaign.solutionName} but haven't taken the next step yet.
 
 Here's what you might be missing:
-• ${campaign.content.website.roi.roi} ROI potential
-• ${campaign.content.website.roi.paybackPeriod} payback period
-• ${campaign.content.website.features.length} powerful features
+• High ROI potential
+• Fast payback period
+• Powerful features
 
 Ready to get started? Click here to learn more.
 
