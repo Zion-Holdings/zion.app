@@ -16,7 +16,7 @@
   },
   "errors": [
     {
-      "timestamp": "2025-08-01T11:57:08.474Z",
+      "timestamp": "2025-08-01T11:59:36.148Z",
       "error": "Cannot find module './marketing-agents/email-campaign-agent.js'\nRequire stack:\n- /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/launch-marketing-automation.js",
       "phase": "launch"
     }
