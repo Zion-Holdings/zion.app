@@ -1,0 +1,12 @@
+[build]
+  command = "npm ci && npm install react@18.3.1 react-dom@18.3.1 && npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[[plugins]]
+  package = "netlify-plugin-cloudinary" 

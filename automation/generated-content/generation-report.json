@@ -98,11 +98,11 @@
             "secondaryCTA": "Explore Marketplace"
           }
         },
-        "generatedAt": "2025-08-01T01:25:54.910Z",
+        "generatedAt": "2025-08-01T02:01:54.560Z",
         "version": "1.0.0"
       },
       "savedPath": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/generated-content/marketplace-it-services.json",
-      "generatedAt": "2025-08-01T01:25:54.911Z"
+      "generatedAt": "2025-08-01T02:01:54.561Z"
     },
     "ai-talents": {
       "content": {
@@ -202,11 +202,11 @@
             "secondaryCTA": "Explore Marketplace"
           }
         },
-        "generatedAt": "2025-08-01T01:25:54.911Z",
+        "generatedAt": "2025-08-01T02:01:54.561Z",
         "version": "1.0.0"
       },
       "savedPath": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/generated-content/marketplace-ai-talents.json",
-      "generatedAt": "2025-08-01T01:25:54.912Z"
+      "generatedAt": "2025-08-01T02:01:54.561Z"
     },
     "equipment": {
       "content": {
@@ -306,11 +306,11 @@
             "secondaryCTA": "Explore Marketplace"
           }
         },
-        "generatedAt": "2025-08-01T01:25:54.912Z",
+        "generatedAt": "2025-08-01T02:01:54.562Z",
         "version": "1.0.0"
       },
       "savedPath": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/generated-content/marketplace-equipment.json",
-      "generatedAt": "2025-08-01T01:25:54.913Z"
+      "generatedAt": "2025-08-01T02:01:54.562Z"
     },
     "innovation": {
       "content": {
@@ -410,11 +410,11 @@
             "secondaryCTA": "Explore Marketplace"
           }
         },
-        "generatedAt": "2025-08-01T01:25:54.913Z",
+        "generatedAt": "2025-08-01T02:01:54.563Z",
         "version": "1.0.0"
       },
       "savedPath": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/generated-content/marketplace-innovation.json",
-      "generatedAt": "2025-08-01T01:25:54.913Z"
+      "generatedAt": "2025-08-01T02:01:54.564Z"
     }
   },
   "blog": {
@@ -468,7 +468,7 @@
           },
           "metadata": {
             "author": "Zion AI Team",
-            "publishDate": "2025-08-01T01:25:54.914Z",
+            "publishDate": "2025-08-01T02:01:54.565Z",
             "readTime": "1 min read",
             "category": "AI Marketplace",
             "tags": [
@@ -484,12 +484,12 @@
             "topic": "aiMarketplace"
           }
         },
-        "generatedAt": "2025-08-01T01:25:54.915Z",
+        "generatedAt": "2025-08-01T02:01:54.566Z",
         "version": "1.0.0",
         "wordCount": 145
       },
       "savedPath": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/generated-content/blog/aiMarketplace-business-leaders.json",
-      "generatedAt": "2025-08-01T01:25:54.916Z"
+      "generatedAt": "2025-08-01T02:01:54.566Z"
     },
     "aiMarketplace-it-professionals.json": {
       "content": {
@@ -541,7 +541,7 @@
           },
           "metadata": {
             "author": "Zion AI Team",
-            "publishDate": "2025-08-01T01:25:54.916Z",
+            "publishDate": "2025-08-01T02:01:54.566Z",
             "readTime": "1 min read",
             "category": "AI Marketplace",
             "tags": [
@@ -557,12 +557,12 @@
             "topic": "aiMarketplace"
           }
         },
-        "generatedAt": "2025-08-01T01:25:54.916Z",
+        "generatedAt": "2025-08-01T02:01:54.566Z",
         "version": "1.0.0",
         "wordCount": 145
       },
       "savedPath": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/generated-content/blog/aiMarketplace-it-professionals.json",
-      "generatedAt": "2025-08-01T01:25:54.916Z"
+      "generatedAt": "2025-08-01T02:01:54.567Z"
     },
     "aiMarketplace-entrepreneurs.json": {
       "content": {
@@ -614,7 +614,7 @@
           },
           "metadata": {
             "author": "Zion AI Team",
-            "publishDate": "2025-08-01T01:25:54.916Z",
+            "publishDate": "2025-08-01T02:01:54.567Z",
             "readTime": "1 min read",
             "category": "AI Marketplace",
             "tags": [
@@ -630,12 +630,12 @@
             "topic": "aiMarketplace"
           }
         },
-        "generatedAt": "2025-08-01T01:25:54.916Z",
+        "generatedAt": "2025-08-01T02:01:54.567Z",
         "version": "1.0.0",
         "wordCount": 142
       },
       "savedPath": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/generated-content/blog/aiMarketplace-entrepreneurs.json",
-      "generatedAt": "2025-08-01T01:25:54.917Z"
+      "generatedAt": "2025-08-01T02:01:54.568Z"
     },
     "blockchainSecurity-business-leaders.json": {
       "content": {
@@ -684,7 +684,7 @@
           },
           "metadata": {
             "author": "Zion AI Team",
-            "publishDate": "2025-08-01T01:25:54.917Z",
+            "publishDate": "2025-08-01T02:01:54.568Z",
             "readTime": "1 min read",
             "category": "AI Marketplace",
             "tags": [
@@ -700,12 +700,12 @@
             "topic": "blockchainSecurity"
           }
         },
-        "generatedAt": "2025-08-01T01:25:54.917Z",
+        "generatedAt": "2025-08-01T02:01:54.568Z",
         "version": "1.0.0",
         "wordCount": 136
       },
       "savedPath": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/generated-content/blog/blockchainSecurity-business-leaders.json",
-      "generatedAt": "2025-08-01T01:25:54.919Z"
+      "generatedAt": "2025-08-01T02:01:54.569Z"
     },
     "blockchainSecurity-it-professionals.json": {
       "content": {
@@ -754,7 +754,7 @@
           },
           "metadata": {
             "author": "Zion AI Team",
-            "publishDate": "2025-08-01T01:25:54.919Z",
+            "publishDate": "2025-08-01T02:01:54.569Z",
             "readTime": "1 min read",
             "category": "AI Marketplace",
             "tags": [
@@ -770,12 +770,12 @@
             "topic": "blockchainSecurity"
           }
         },
-        "generatedAt": "2025-08-01T01:25:54.919Z",
+        "generatedAt": "2025-08-01T02:01:54.569Z",
         "version": "1.0.0",
         "wordCount": 136
       },
       "savedPath": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/generated-content/blog/blockchainSecurity-it-professionals.json",
-      "generatedAt": "2025-08-01T01:25:54.919Z"
+      "generatedAt": "2025-08-01T02:01:54.569Z"
     },
     "blockchainSecurity-entrepreneurs.json": {
       "content": {
@@ -824,7 +824,7 @@
           },
           "metadata": {
             "author": "Zion AI Team",
-            "publishDate": "2025-08-01T01:25:54.919Z",
+            "publishDate": "2025-08-01T02:01:54.569Z",
             "readTime": "1 min read",
             "category": "AI Marketplace",
             "tags": [
@@ -840,12 +840,12 @@
             "topic": "blockchainSecurity"
           }
         },
-        "generatedAt": "2025-08-01T01:25:54.919Z",
+        "generatedAt": "2025-08-01T02:01:54.569Z",
         "version": "1.0.0",
         "wordCount": 135
       },
       "savedPath": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/generated-content/blog/blockchainSecurity-entrepreneurs.json",
-      "generatedAt": "2025-08-01T01:25:54.920Z"
+      "generatedAt": "2025-08-01T02:01:54.570Z"
     },
     "digitalTransformation-business-leaders.json": {
       "content": {
@@ -897,7 +897,7 @@
           },
           "metadata": {
             "author": "Zion AI Team",
-            "publishDate": "2025-08-01T01:25:54.920Z",
+            "publishDate": "2025-08-01T02:01:54.570Z",
             "readTime": "1 min read",
             "category": "AI Marketplace",
             "tags": [
@@ -913,12 +913,12 @@
             "topic": "digitalTransformation"
           }
         },
-        "generatedAt": "2025-08-01T01:25:54.920Z",
+        "generatedAt": "2025-08-01T02:01:54.570Z",
         "version": "1.0.0",
         "wordCount": 148
       },
       "savedPath": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/generated-content/blog/digitalTransformation-business-leaders.json",
-      "generatedAt": "2025-08-01T01:25:54.920Z"
+      "generatedAt": "2025-08-01T02:01:54.570Z"
     },
     "digitalTransformation-it-professionals.json": {
       "content": {
@@ -970,7 +970,7 @@
           },
           "metadata": {
             "author": "Zion AI Team",
-            "publishDate": "2025-08-01T01:25:54.920Z",
+            "publishDate": "2025-08-01T02:01:54.571Z",
             "readTime": "1 min read",
             "category": "AI Marketplace",
             "tags": [
@@ -986,12 +986,12 @@
             "topic": "digitalTransformation"
           }
         },
-        "generatedAt": "2025-08-01T01:25:54.921Z",
+        "generatedAt": "2025-08-01T02:01:54.571Z",
         "version": "1.0.0",
         "wordCount": 148
       },
       "savedPath": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/generated-content/blog/digitalTransformation-it-professionals.json",
-      "generatedAt": "2025-08-01T01:25:54.921Z"
+      "generatedAt": "2025-08-01T02:01:54.571Z"
     },
     "digitalTransformation-entrepreneurs.json": {
       "content": {
@@ -1043,7 +1043,7 @@
           },
           "metadata": {
             "author": "Zion AI Team",
-            "publishDate": "2025-08-01T01:25:54.921Z",
+            "publishDate": "2025-08-01T02:01:54.571Z",
             "readTime": "1 min read",
             "category": "AI Marketplace",
             "tags": [
@@ -1059,12 +1059,12 @@
             "topic": "digitalTransformation"
           }
         },
-        "generatedAt": "2025-08-01T01:25:54.921Z",
+        "generatedAt": "2025-08-01T02:01:54.571Z",
         "version": "1.0.0",
         "wordCount": 144
       },
       "savedPath": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/generated-content/blog/digitalTransformation-entrepreneurs.json",
-      "generatedAt": "2025-08-01T01:25:54.921Z"
+      "generatedAt": "2025-08-01T02:01:54.573Z"
     }
   },
   "product": {
@@ -1306,7 +1306,7 @@
             "ogType": "product"
           }
         },
-        "generatedAt": "2025-08-01T01:25:54.923Z",
+        "generatedAt": "2025-08-01T02:01:54.575Z",
         "version": "1.0.0",
         "metadata": {
           "contentType": "product",
@@ -1315,7 +1315,7 @@
         }
       },
       "savedPath": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/generated-content/products/aiPlatform-content.json",
-      "generatedAt": "2025-08-01T01:25:54.924Z"
+      "generatedAt": "2025-08-01T02:01:54.575Z"
     },
     "blockchainNetwork": {
       "content": {
@@ -1537,7 +1537,7 @@
             "ogType": "product"
           }
         },
-        "generatedAt": "2025-08-01T01:25:54.924Z",
+        "generatedAt": "2025-08-01T02:01:54.575Z",
         "version": "1.0.0",
         "metadata": {
           "contentType": "product",
@@ -1546,7 +1546,7 @@
         }
       },
       "savedPath": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/generated-content/products/blockchainNetwork-content.json",
-      "generatedAt": "2025-08-01T01:25:54.925Z"
+      "generatedAt": "2025-08-01T02:01:54.576Z"
     },
     "aiMatchingEngine": {
       "content": {
@@ -1768,7 +1768,7 @@
             "ogType": "product"
           }
         },
-        "generatedAt": "2025-08-01T01:25:54.925Z",
+        "generatedAt": "2025-08-01T02:01:54.576Z",
         "version": "1.0.0",
         "metadata": {
           "contentType": "product",
@@ -1777,7 +1777,7 @@
         }
       },
       "savedPath": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/generated-content/products/aiMatchingEngine-content.json",
-      "generatedAt": "2025-08-01T01:25:54.925Z"
+      "generatedAt": "2025-08-01T02:01:54.576Z"
     }
   },
   "summary": {
@@ -1786,6 +1786,6 @@
     "blogCount": 9,
     "productCount": 3,
     "errors": [],
-    "timestamp": "2025-08-01T01:25:54.910Z"
+    "timestamp": "2025-08-01T02:01:54.558Z"
   }
 }

@@ -41,7 +41,7 @@ const Home: NextPage = () => {
               <Link href="/quote-request" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Request Quote
               </Link>
-              <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/service-description-generator" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Service Generator</Link><Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 About
               </Link>
               <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
@@ -78,7 +78,7 @@ const Home: NextPage = () => {
                 <Link href="/it-services" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   IT Services
                 </Link>
-                <Link href="/about" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                <Link href="/service-description-generator" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Service Generator</Link><Link href="/service-description-generator" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Service Generator</Link><Link href="/about" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   About
                 </Link>
                 <Link href="/auth/login" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
@@ -469,7 +469,7 @@ const Home: NextPage = () => {
             <div>
               <h4 className="text-lg font-semibold text-white mb-4">Company</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
+                <li><Link href="/service-description-generator" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Service Generator</Link><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
                 <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
                 <li><Link href="/careers" className="hover:text-white transition-colors">Careers</Link></li>
                 <li><Link href="/press" className="hover:text-white transition-colors">Press</Link></li>
