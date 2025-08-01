@@ -9,6 +9,7 @@ const Dashboard: NextPage = () => {
   const router = useRouter()
 
   useEffect(() => {
+    // Only redirect if we're not loading and there's no user
     if (!loading && !user) {
       router.push('/auth/login')
     }
@@ -19,16 +20,27 @@ const Dashboard: NextPage = () => {
     router.push('/')
   }
 
+  // Show loading state while checking authentication
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
-        <div className="text-white text-xl">Loading...</div>
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 mx-auto"></div>
+          <div className="text-white text-xl mt-4">Loading...</div>
+        </div>
       </div>
     )
   }
 
+  // Don't render anything if user is not authenticated (will redirect)
   if (!user) {
-    return null
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-white text-xl">Redirecting to login...</div>
+        </div>
+      </div>
+    )
   }
 
   return (
