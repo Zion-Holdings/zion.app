@@ -1,21 +1,21 @@
 {
-  "lastCheck": "2025-08-01T08:14:20.283Z",
+  "lastCheck": "2025-08-01T08:21:21.717Z",
   "jobs": {
     "gitSync": {
-      "lastRun": "2025-08-01T08:14:20.283Z",
-      "duration": 19995,
+      "lastRun": "2025-08-01T08:15:00.575Z",
+      "duration": 0,
+      "success": false,
+      "error": "Command failed: git add .\nfatal: Unable to create '/Users/miami2/Documents/GitHub/bolt.new.zion.app/.git/index.lock': File exists.\n\nAnother git process seems to be running in this repository, e.g.\nan editor opened by 'git commit'. Please make sure all processes\nare terminated then try again. If it still fails, a git process\nmay have crashed in this repository earlier:\nremove the file manually to continue.\n"
+    },
+    "buildCheck": {
+      "lastRun": "2025-08-01T08:15:27.636Z",
+      "duration": 27060,
       "success": true,
       "error": null
     },
-    "buildCheck": {
-      "lastRun": "2025-07-31T22:40:06.122Z",
-      "duration": 0,
-      "success": false,
-      "error": "Command failed: npm run build\n ⚠ Duplicate page detected. pages/services.tsx and pages/services/index.tsx both resolve to /services.\n\n> Build error occurred\nError: ENOENT: no such file or directory, open '/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/pages-manifest.json'\n    at async open (node:internal/fs/promises:633:25)\n    at async Object.readFile (node:internal/fs/promises:1237:14)\n    at async /Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/next/dist/build/index.js:730:46\n    at async Span.traceAsyncFn (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/next/dist/trace/trace.js:147:20)\n    at async build (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/next/dist/build/index.js:187:29)\n    at async main (/Users/miami2/Documents/GitHub/bolt.new.zion.app/node_modules/next/dist/bin/next:157:5) {\n  errno: -2,\n  code: 'ENOENT',\n  syscall: 'open',\n  path: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/.next/server/pages-manifest.json'\n}\n"
-    },
     "errorRecovery": {
-      "lastRun": "2025-08-01T05:01:17.720Z",
-      "duration": 557408,
+      "lastRun": "2025-08-01T08:21:21.717Z",
+      "duration": 321041,
       "success": true,
       "error": null
     },
@@ -44,9 +44,9 @@
       "error": null
     }
   },
-  "errors": 750,
-  "fixes": 586,
+  "errors": 751,
+  "fixes": 603,
   "syncs": 605,
-  "builds": 5,
+  "builds": 6,
   "commits": 666
 }
