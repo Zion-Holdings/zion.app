@@ -97,19 +97,38 @@ class AdminAutonomousOrchestrator {
         
         fs.writeFileSync(agentPath, agentCode);
         
-        // Execute the agent
-        const agent = require(agentPath);
+        // Execute the agent as a separate process
+        const agentProcess = exec(`node "${agentPath}"`, {
+            cwd: this.adminConfig.adminPath,
+            detached: true,
+            stdio: 'pipe'
+        });
+        
+        // Store process information
         this.agents.set(agentId, {
             type: agentType,
             id: agentId,
             path: agentPath,
-            instance: agent,
+            process: agentProcess,
+            pid: agentProcess.pid,
             status: 'active',
             createdAt: new Date().toISOString(),
             lastActivity: new Date().toISOString()
         });
         
-        console.log(`🤖 Created and started agent: ${agentType} (${agentId})`);
+        // Handle process events
+        agentProcess.on('exit', (code) => {
+            console.log(`🤖 Agent ${agentType} (${agentId}) exited with code ${code}`);
+            this.agents.get(agentId).status = 'stopped';
+            this.status.activeAgents--;
+        });
+        
+        agentProcess.on('error', (error) => {
+            console.error(`🤖 Agent ${agentType} (${agentId}) error:`, error);
+            this.agents.get(agentId).status = 'error';
+        });
+        
+        console.log(`🤖 Created and started agent: ${agentType} (${agentId}) with PID ${agentProcess.pid}`);
         this.status.activeAgents++;
         this.status.totalAgents++;
         
