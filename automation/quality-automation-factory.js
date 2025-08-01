@@ -33,55 +33,55 @@ class QualityAutomationFactory {
 
   getAgentTypes() {
     return {
-      'code-quality': {
-        name: 'Code Quality Agent',
-        description: 'Ensures code quality standards and best practices',
-        capabilities: ['code analysis', 'quality standards', 'best practices enforcement']
+      'test-automation': {
+        name: 'Test Automation Agent',
+        description: 'Automated test execution and test suite management',
+        capabilities: ['test execution', 'test generation', 'coverage analysis']
       },
-      'testing-automation': {
-        name: 'Testing Automation Agent',
-        description: 'Automates comprehensive testing processes',
-        capabilities: ['test generation', 'test execution', 'coverage analysis']
+      'quality-metrics': {
+        name: 'Quality Metrics Agent',
+        description: 'Quality metrics collection and analysis',
+        capabilities: ['metrics collection', 'quality analysis', 'benchmarking']
       },
-      'bug-detection': {
-        name: 'Bug Detection Agent',
-        description: 'Detects and reports bugs and issues',
-        capabilities: ['bug detection', 'issue reporting', 'error analysis']
-      },
-      'security-audit': {
-        name: 'Security Audit Agent',
-        description: 'Performs security audits and vulnerability assessments',
-        capabilities: ['security scanning', 'vulnerability assessment', 'security compliance']
+      'defect-tracking': {
+        name: 'Defect Tracking Agent',
+        description: 'Automated defect detection and tracking',
+        capabilities: ['defect detection', 'issue tracking', 'resolution']
       },
       'performance-testing': {
         name: 'Performance Testing Agent',
-        description: 'Conducts performance testing and analysis',
-        capabilities: ['load testing', 'stress testing', 'performance analysis']
+        description: 'Performance testing and load testing automation',
+        capabilities: ['performance testing', 'load testing', 'stress testing']
       },
       'accessibility-testing': {
         name: 'Accessibility Testing Agent',
-        description: 'Ensures accessibility compliance and testing',
-        capabilities: ['accessibility testing', 'compliance checking', 'usability analysis']
+        description: 'Automated accessibility testing and compliance',
+        capabilities: ['accessibility testing', 'compliance checking', 'wcag validation']
+      },
+      'security-testing': {
+        name: 'Security Testing Agent',
+        description: 'Automated security testing and vulnerability assessment',
+        capabilities: ['security testing', 'vulnerability assessment', 'penetration testing']
       },
       'compatibility-testing': {
         name: 'Compatibility Testing Agent',
-        description: 'Tests cross-platform and cross-browser compatibility',
-        capabilities: ['cross-platform testing', 'browser compatibility', 'device testing']
+        description: 'Cross-browser and device compatibility testing',
+        capabilities: ['browser testing', 'device testing', 'compatibility validation']
+      },
+      'usability-testing': {
+        name: 'Usability Testing Agent',
+        description: 'Automated usability testing and user experience analysis',
+        capabilities: ['usability testing', 'ux analysis', 'user feedback']
       },
       'regression-testing': {
         name: 'Regression Testing Agent',
-        description: 'Performs regression testing and validation',
-        capabilities: ['regression testing', 'change validation', 'stability testing']
+        description: 'Automated regression testing and change impact analysis',
+        capabilities: ['regression testing', 'impact analysis', 'change validation']
       },
-      'integration-testing': {
-        name: 'Integration Testing Agent',
-        description: 'Conducts integration testing and validation',
-        capabilities: ['integration testing', 'api testing', 'system testing']
-      },
-      'user-experience': {
-        name: 'User Experience Agent',
-        description: 'Analyzes and improves user experience',
-        capabilities: ['ux analysis', 'usability testing', 'user feedback analysis']
+      'test-data-management': {
+        name: 'Test Data Management Agent',
+        description: 'Test data generation and management automation',
+        capabilities: ['data generation', 'data management', 'test environment']
       }
     };
   }
