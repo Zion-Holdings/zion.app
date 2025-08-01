@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { createClient } from '@supabase/supabase-js';
@@ -50,7 +50,7 @@ export default function TalentDirectory() {
 
   useEffect(() => {
     filterTalents();
-  }, [talents, searchTerm, selectedSkills, selectedAvailability, priceRange, selectedRegion]);
+  }, [talents, searchTerm, selectedSkills, selectedAvailability, priceRange, selectedRegion, filterTalents]);
 
   const fetchTalents = async () => {
     try {

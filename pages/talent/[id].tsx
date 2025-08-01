@@ -60,7 +60,7 @@ export default function TalentProfile() {
       fetchTalent();
       fetchReviews();
     }
-  }, [id]);
+  }, [id, fetchTalent, fetchReviews]);
 
   const fetchTalent = async () => {
     try {

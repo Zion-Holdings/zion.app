@@ -1,9 +1,12 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import OpenAI from 'openai';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Only create OpenAI client if API key is available
+const openai = process.env.OPENAI_API_KEY
+  ? new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    })
+  : null;
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -12,6 +15,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   try {
     const { serviceTitle, projectDescription, budgetRange, additionalRequirements } = req.body;
+
+    // For local development without OpenAI, return mock analysis
+    if (!openai) {
+      return res.status(200).json({
+        summary: `Project request for ${serviceTitle}: ${projectDescription.substring(0, 100)}...`,
+        tags: ['it-services', 'project-request'],
+        priority: 'medium',
+        estimatedComplexity: 'moderate'
+      });
+    }
 
     const prompt = `
 Analyze the following IT service quote request and provide insights:
