@@ -97,7 +97,7 @@ const TalentPage: React.FC = () => {
     }
   };
 
-  const filterTalents = () => {
+  const filterTalents = useCallback(() => {
     const filtered = talents.filter(talent => {
       const matchesSearch = talent.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            talent.skills.some(skill => skill.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -107,7 +107,7 @@ const TalentPage: React.FC = () => {
       return matchesSearch && matchesSkills;
     });
     setFilteredTalents(filtered);
-  };
+  }, [talents, searchTerm, selectedSkills]);
 
   useEffect(() => {
     filterTalents();
