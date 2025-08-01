@@ -24,7 +24,7 @@
       "plagiarismCheck": true
     },
     "createdAt": "2025-08-01T11:58:53.987Z",
-    "lastActive": "2025-08-01T19:52:00.656Z",
+    "lastActive": "2025-08-01T19:52:28.533Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -7420,7 +7420,7 @@
       "retryAttempts": 3
     },
     "createdAt": "2025-08-01T12:24:28.334Z",
-    "lastActive": "2025-08-01T19:51:28.131Z",
+    "lastActive": "2025-08-01T19:52:28.133Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -7428,66 +7428,6 @@
       "uptime": 0
     },
     "logs": [
-      {
-        "timestamp": "2025-08-01T19:47:02.315Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 651ms\nPerformance: SUCCESS in 651ms"
-      },
-      {
-        "timestamp": "2025-08-01T19:47:11.686Z",
-        "type": "stdout",
-        "message": "🔍 Processing market-research task...\n📊 Performing market research: artificial intelligence trends 2024"
-      },
-      {
-        "timestamp": "2025-08-01T19:47:21.666Z",
-        "type": "stdout",
-        "message": "🔍 Processing trend-detection task..."
-      },
-      {
-        "timestamp": "2025-08-01T19:47:21.666Z",
-        "type": "stdout",
-        "message": "📈 Detecting trends for keywords: AI, machine learning, automation\n✅ Task completed in 0ms\nPerformance: SUCCESS in 0ms"
-      },
-      {
-        "timestamp": "2025-08-01T19:47:31.679Z",
-        "type": "stdout",
-        "message": "🔍 Processing market-research task...\n📊 Performing market research: artificial intelligence trends 2024"
-      },
-      {
-        "timestamp": "2025-08-01T19:47:35.684Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 24010ms\nPerformance: SUCCESS in 24010ms"
-      },
-      {
-        "timestamp": "2025-08-01T19:47:41.678Z",
-        "type": "stdout",
-        "message": "🔍 Processing market-research task...\n📊 Performing market research: artificial intelligence trends 2024"
-      },
-      {
-        "timestamp": "2025-08-01T19:47:50.927Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 19252ms"
-      },
-      {
-        "timestamp": "2025-08-01T19:47:50.927Z",
-        "type": "stdout",
-        "message": "Performance: SUCCESS in 19252ms"
-      },
-      {
-        "timestamp": "2025-08-01T19:47:51.679Z",
-        "type": "stdout",
-        "message": "🔍 Processing competitive-analysis task..."
-      },
-      {
-        "timestamp": "2025-08-01T19:47:51.679Z",
-        "type": "stdout",
-        "message": "🏢 Performing competitive analysis for 2 competitors"
-      },
-      {
-        "timestamp": "2025-08-01T19:47:52.127Z",
-        "type": "stderr",
-        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
       {
         "timestamp": "2025-08-01T19:47:52.127Z",
         "type": "stderr",
@@ -7927,12 +7867,72 @@
         "timestamp": "2025-08-01T19:52:01.786Z",
         "type": "stdout",
         "message": "🔍 Processing market-research task...\n📊 Performing market research: artificial intelligence trends 2024"
+      },
+      {
+        "timestamp": "2025-08-01T19:52:11.786Z",
+        "type": "stdout",
+        "message": "🔍 Processing competitive-analysis task..."
+      },
+      {
+        "timestamp": "2025-08-01T19:52:11.786Z",
+        "type": "stdout",
+        "message": "🏢 Performing competitive analysis for 2 competitors"
+      },
+      {
+        "timestamp": "2025-08-01T19:52:12.028Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T19:52:12.028Z",
+        "type": "stderr",
+        "message": "Failed to analyze competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T19:52:12.401Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T19:52:12.401Z",
+        "type": "stderr",
+        "message": "Failed to analyze competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T19:52:12.402Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 617ms\nPerformance: SUCCESS in 617ms"
+      },
+      {
+        "timestamp": "2025-08-01T19:52:13.205Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 21419ms\nPerformance: SUCCESS in 21419ms"
+      },
+      {
+        "timestamp": "2025-08-01T19:52:21.788Z",
+        "type": "stdout",
+        "message": "🔍 Processing trend-detection task...\n📈 Detecting trends for keywords: AI, machine learning, automation"
+      },
+      {
+        "timestamp": "2025-08-01T19:52:21.790Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 0ms\nPerformance: SUCCESS in 0ms"
+      },
+      {
+        "timestamp": "2025-08-01T19:52:24.203Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 22418ms"
+      },
+      {
+        "timestamp": "2025-08-01T19:52:24.203Z",
+        "type": "stdout",
+        "message": "Performance: SUCCESS in 22418ms"
       }
     ],
     "health": {
       "status": "healthy",
-      "lastCheck": "2025-08-01T19:51:28.131Z",
-      "uptime": 60022,
+      "lastCheck": "2025-08-01T19:52:28.133Z",
+      "uptime": 60002,
       "memoryUsage": 0,
       "cpuUsage": 0,
       "errors": []
@@ -38580,7 +38580,7 @@
       "_events": {},
       "_eventsCount": 2,
       "_closesNeeded": 3,
-      "_closesGot": 2,
+      "_closesGot": 3,
       "connected": false,
       "signalCode": null,
       "exitCode": 1,
