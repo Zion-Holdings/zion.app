@@ -24,7 +24,7 @@
       "plagiarismCheck": true
     },
     "createdAt": "2025-08-01T11:58:53.987Z",
-    "lastActive": "2025-08-01T19:30:00.624Z",
+    "lastActive": "2025-08-01T19:30:28.503Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -7156,7 +7156,7 @@
       "retryAttempts": 3
     },
     "createdAt": "2025-08-01T12:24:28.334Z",
-    "lastActive": "2025-08-01T19:29:28.071Z",
+    "lastActive": "2025-08-01T19:30:28.072Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -7164,26 +7164,6 @@
       "uptime": 0
     },
     "logs": [
-      {
-        "timestamp": "2025-08-01T19:26:10.292Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 18780ms\nPerformance: SUCCESS in 18780ms"
-      },
-      {
-        "timestamp": "2025-08-01T19:26:11.514Z",
-        "type": "stdout",
-        "message": "🔍 Processing competitive-analysis task..."
-      },
-      {
-        "timestamp": "2025-08-01T19:26:11.514Z",
-        "type": "stdout",
-        "message": "🏢 Performing competitive analysis for 2 competitors"
-      },
-      {
-        "timestamp": "2025-08-01T19:26:11.779Z",
-        "type": "stderr",
-        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
       {
         "timestamp": "2025-08-01T19:26:11.779Z",
         "type": "stderr",
@@ -7663,12 +7643,32 @@
         "timestamp": "2025-08-01T19:30:10.844Z",
         "type": "stdout",
         "message": "Performance: SUCCESS in 19316ms"
+      },
+      {
+        "timestamp": "2025-08-01T19:30:11.527Z",
+        "type": "stdout",
+        "message": "🔍 Processing trend-detection task..."
+      },
+      {
+        "timestamp": "2025-08-01T19:30:11.527Z",
+        "type": "stdout",
+        "message": "📈 Detecting trends for keywords: AI, machine learning, automation\n✅ Task completed in 0ms\nPerformance: SUCCESS in 0ms"
+      },
+      {
+        "timestamp": "2025-08-01T19:30:21.526Z",
+        "type": "stdout",
+        "message": "🔍 Processing market-research task..."
+      },
+      {
+        "timestamp": "2025-08-01T19:30:21.526Z",
+        "type": "stdout",
+        "message": "📊 Performing market research: artificial intelligence trends 2024"
       }
     ],
     "health": {
       "status": "healthy",
-      "lastCheck": "2025-08-01T19:29:28.071Z",
-      "uptime": 59999,
+      "lastCheck": "2025-08-01T19:30:28.072Z",
+      "uptime": 60001,
       "memoryUsage": 0,
       "cpuUsage": 0,
       "errors": []
@@ -36996,7 +36996,7 @@
       "_events": {},
       "_eventsCount": 2,
       "_closesNeeded": 3,
-      "_closesGot": 2,
+      "_closesGot": 3,
       "connected": false,
       "signalCode": null,
       "exitCode": 1,
