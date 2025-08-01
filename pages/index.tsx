@@ -733,6 +733,9 @@ const Home: NextPage = () => {
                 <Link href="/products" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   Products
                 </Link>
+                <Link href="/ai-virtual-assistant" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  AI Assistant
+                </Link>
                 <Link href="/blog" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   Blog
                 </Link>
