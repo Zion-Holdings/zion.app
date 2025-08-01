@@ -1,612 +1,704 @@
 const fs = require('fs');
 const path = require('path');
 const { exec } = require('child_process');
-const crypto = require('crypto');
 
 class AutonomousAgentFactory {
   constructor() {
-    this.agentsDir = path.join(__dirname, 'agents');
-    this.templatesDir = path.join(__dirname, 'templates');
-    this.registryFile = path.join(__dirname, 'agent-registry.json');
-    this.workloadQueue = [];
-    this.activeAgents = new Map();
-    
-    this.ensureDirectories();
-    this.loadRegistry();
+    this.agentTemplates = new Map();
+    this.agentRegistry = new Map();
+    this.loadAgentTemplates();
   }
 
-  ensureDirectories() {
-    const dirs = [this.agentsDir, this.templatesDir];
-    dirs.forEach(dir => {
-      if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+  loadAgentTemplates() {
+    const templatesDir = path.join(__dirname, 'templates');
+    if (!fs.existsSync(templatesDir)) {
+      fs.mkdirSync(templatesDir, { recursive: true });
+    }
+
+    // Define default agent templates
+    this.agentTemplates.set('content-generator', {
+      name: 'Content Generator Agent',
+      type: 'content-generation',
+      capabilities: ['AI writing', 'SEO optimization', 'Content planning', 'Topic research'],
+      services: ['Blog posts', 'Product descriptions', 'Social media content', 'Email newsletters'],
+      dependencies: ['openai', 'seo-tools'],
+      config: {
+        maxContentLength: 2000,
+        seoOptimization: true,
+        plagiarismCheck: true,
+        toneAdjustment: true
+      }
+    });
+
+    this.agentTemplates.set('marketing-automation', {
+      name: 'Marketing Automation Agent',
+      type: 'marketing',
+      capabilities: ['Campaign management', 'Email marketing', 'Social media automation', 'Lead scoring'],
+      services: ['Email campaigns', 'Social media posts', 'Lead generation', 'A/B testing'],
+      dependencies: ['email-service', 'social-media-api', 'analytics'],
+      config: {
+        maxCampaigns: 10,
+        autoOptimization: true,
+        personalization: true,
+        tracking: true
+      }
+    });
+
+    this.agentTemplates.set('sales-intelligence', {
+      name: 'Sales Intelligence Agent',
+      type: 'sales',
+      capabilities: ['Lead scoring', 'CRM integration', 'Sales analytics', 'Pipeline management'],
+      services: ['Lead qualification', 'Sales reporting', 'Pipeline analysis', 'Forecasting'],
+      dependencies: ['crm-api', 'analytics', 'email-service'],
+      config: {
+        leadScoring: true,
+        autoFollowUp: true,
+        pipelineTracking: true,
+        forecasting: true
+      }
+    });
+
+    this.agentTemplates.set('analytics-collector', {
+      name: 'Analytics Collector Agent',
+      type: 'analytics',
+      capabilities: ['Data collection', 'Performance tracking', 'Reporting', 'Trend analysis'],
+      services: ['Performance reports', 'Trend analysis', 'KPI monitoring', 'Data visualization'],
+      dependencies: ['analytics-api', 'database', 'visualization-tools'],
+      config: {
+        realTimeTracking: true,
+        automatedReports: true,
+        alerting: true,
+        dataRetention: 90
+      }
+    });
+
+    this.agentTemplates.set('web-researcher', {
+      name: 'Web Research Agent',
+      type: 'research',
+      capabilities: ['Web scraping', 'Data analysis', 'Trend identification', 'Competitive analysis'],
+      services: ['Market research', 'Competitive analysis', 'Trend reports', 'Data collection'],
+      dependencies: ['scraping-tools', 'data-processing', 'analytics'],
+      config: {
+        maxSitesPerDay: 100,
+        dataValidation: true,
+        automatedAnalysis: true,
+        reportGeneration: true
+      }
+    });
+
+    this.agentTemplates.set('social-media-manager', {
+      name: 'Social Media Manager Agent',
+      type: 'social-media',
+      capabilities: ['Content scheduling', 'Engagement monitoring', 'Hashtag optimization', 'Audience analysis'],
+      services: ['Post scheduling', 'Engagement tracking', 'Hashtag research', 'Audience insights'],
+      dependencies: ['social-media-apis', 'analytics', 'content-tools'],
+      config: {
+        autoPosting: true,
+        engagementTracking: true,
+        hashtagOptimization: true,
+        audienceAnalysis: true
+      }
+    });
+
+    this.agentTemplates.set('seo-optimizer', {
+      name: 'SEO Optimizer Agent',
+      type: 'seo',
+      capabilities: ['Keyword research', 'On-page optimization', 'Technical SEO', 'Ranking tracking'],
+      services: ['Keyword analysis', 'Content optimization', 'Technical audits', 'Ranking reports'],
+      dependencies: ['seo-tools', 'analytics', 'search-apis'],
+      config: {
+        keywordTracking: true,
+        contentOptimization: true,
+        technicalAudits: true,
+        rankingMonitoring: true
+      }
+    });
+
+    this.agentTemplates.set('customer-support', {
+      name: 'Customer Support Agent',
+      type: 'support',
+      capabilities: ['Ticket management', 'Auto-responses', 'Knowledge base', 'Satisfaction tracking'],
+      services: ['Ticket routing', 'Auto-responses', 'FAQ management', 'Satisfaction surveys'],
+      dependencies: ['support-platform', 'knowledge-base', 'analytics'],
+      config: {
+        autoResponses: true,
+        ticketRouting: true,
+        satisfactionTracking: true,
+        knowledgeBase: true
+      }
+    });
+
+    this.agentTemplates.set('data-processor', {
+      name: 'Data Processor Agent',
+      type: 'data-processing',
+      capabilities: ['Data cleaning', 'ETL processes', 'Data validation', 'Report generation'],
+      services: ['Data cleaning', 'ETL pipelines', 'Data validation', 'Automated reports'],
+      dependencies: ['database', 'etl-tools', 'validation-libraries'],
+      config: {
+        dataCleaning: true,
+        etlAutomation: true,
+        validationRules: true,
+        reportGeneration: true
+      }
+    });
+
+    this.agentTemplates.set('quality-assurance', {
+      name: 'Quality Assurance Agent',
+      type: 'qa',
+      capabilities: ['Content review', 'Error detection', 'Quality scoring', 'Improvement suggestions'],
+      services: ['Content review', 'Error detection', 'Quality reports', 'Improvement recommendations'],
+      dependencies: ['quality-tools', 'analytics', 'review-system'],
+      config: {
+        autoReview: true,
+        errorDetection: true,
+        qualityScoring: true,
+        improvementSuggestions: true
       }
     });
   }
 
-  loadRegistry() {
-    if (fs.existsSync(this.registryFile)) {
-      this.registry = JSON.parse(fs.readFileSync(this.registryFile, 'utf8'));
-    } else {
-      this.registry = {
-        agents: {},
-        templates: {},
-        workloadDistribution: {},
-        performance: {}
-      };
-      this.saveRegistry();
-    }
-  }
-
-  saveRegistry() {
-    fs.writeFileSync(this.registryFile, JSON.stringify(this.registry, null, 2));
-  }
-
-  createAgentTemplate(type, config) {
-    const templateId = `${type}-${Date.now()}`;
-    const template = {
-      id: templateId,
-      type,
-      config,
-      createdAt: new Date().toISOString(),
-      version: '1.0.0'
-    };
-
-    this.registry.templates[templateId] = template;
-    this.saveRegistry();
-    return template;
-  }
-
-  generateAgent(templateId, workloadConfig) {
-    const template = this.registry.templates[templateId];
+  async createAgent(agentType, customConfig = {}) {
+    const template = this.agentTemplates.get(agentType);
     if (!template) {
-      throw new Error(`Template ${templateId} not found`);
+      throw new Error(`Unknown agent type: ${agentType}`);
     }
 
-    const agentId = `agent-${crypto.randomBytes(8).toString('hex')}`;
-    const agentDir = path.join(this.agentsDir, agentId);
+    const agentId = `agent_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     
-    if (!fs.existsSync(agentDir)) {
-      fs.mkdirSync(agentDir, { recursive: true });
-    }
-
+    // Merge template with custom config
     const agentConfig = {
+      ...template,
+      ...customConfig,
       id: agentId,
-      templateId,
-      workloadConfig,
-      createdAt: new Date().toISOString(),
-      status: 'initializing',
+      status: 'creating',
+      workload: 0,
+      currentTask: 'Initializing...',
+      nextSteps: [],
       performance: {
         tasksCompleted: 0,
-        errors: 0,
+        successRate: 100,
         avgResponseTime: 0
-      }
+      },
+      createdAt: new Date().toISOString(),
+      lastActive: new Date().toISOString()
     };
 
-    const agentCode = this.generateAgentCode(template, agentConfig);
-    const agentFile = path.join(agentDir, 'agent.js');
-    
-    fs.writeFileSync(agentFile, agentCode);
-    fs.writeFileSync(path.join(agentDir, 'config.json'), JSON.stringify(agentConfig, null, 2));
+    // Create agent directory
+    const agentDir = path.join(__dirname, 'agents', agentId);
+    fs.mkdirSync(agentDir, { recursive: true });
 
-    this.registry.agents[agentId] = agentConfig;
-    this.saveRegistry();
+    // Generate agent script
+    await this.generateAgentScript(agentConfig, agentDir);
 
-    return agentConfig;
+    // Generate configuration file
+    await this.generateAgentConfig(agentConfig, agentDir);
+
+    // Generate package.json for dependencies
+    await this.generatePackageJson(agentConfig, agentDir);
+
+    // Install dependencies
+    await this.installDependencies(agentDir);
+
+    // Register agent
+    this.agentRegistry.set(agentId, agentConfig);
+
+    // Save to database
+    await this.saveAgentToDatabase(agentConfig);
+
+    console.log(`✅ Created agent: ${agentConfig.name} (${agentId})`);
+    return agentId;
   }
 
-  generateAgentCode(template, config) {
-    const baseCode = `
+  async generateAgentScript(agentConfig, agentDir) {
+    const scriptTemplate = this.getAgentScriptTemplate(agentConfig);
+    const scriptPath = path.join(agentDir, 'index.js');
+    
+    fs.writeFileSync(scriptPath, scriptTemplate);
+    fs.chmodSync(scriptPath, '755');
+  }
+
+  getAgentScriptTemplate(agentConfig) {
+    const className = agentConfig.name.replace(/\s+/g, '') + 'Agent';
+    
+    return `
 const fs = require('fs');
 const path = require('path');
-const { EventEmitter } = require('events');
 
-class AutonomousAgent {
-  constructor(config) {
-    this.config = config;
-    this.id = config.id;
-    this.status = 'running';
-    this.events = new EventEmitter();
-    this.workloadQueue = [];
+class ${className} {
+  constructor() {
+    this.id = '${agentConfig.id}';
+    this.name = '${agentConfig.name}';
+    this.type = '${agentConfig.type}';
+    this.capabilities = ${JSON.stringify(agentConfig.capabilities)};
+    this.services = ${JSON.stringify(agentConfig.services)};
+    this.config = ${JSON.stringify(agentConfig.config)};
+    this.status = 'idle';
+    this.workload = 0;
+    this.currentTask = 'Initializing...';
     this.performance = {
       tasksCompleted: 0,
-      errors: 0,
-      startTime: Date.now(),
+      successRate: 100,
       avgResponseTime: 0
     };
-    
-    this.initialize();
+    this.logs = [];
   }
 
   async initialize() {
+    console.log(\`🚀 Initializing \${this.name}...\`);
+    this.status = 'active';
+    this.updateStatus();
+    
+    // Load configuration
+    await this.loadConfiguration();
+    
+    // Initialize capabilities
+    await this.initializeCapabilities();
+    
+    // Start continuous operation
+    this.startContinuousOperation();
+    
+    console.log(\`✅ \${this.name} initialized successfully\`);
+  }
+
+  async loadConfiguration() {
     try {
-      console.log(\`[Agent \${this.id}] Initializing...\`);
-      
-      // Load workload configuration
-      this.workloadConfig = this.config.workloadConfig;
-      
-      // Initialize specific agent capabilities based on template
-      await this.initializeCapabilities();
-      
-      this.status = 'ready';
-      console.log(\`[Agent \${this.id}] Ready for workload\`);
-      
-      // Start processing workload
-      this.processWorkload();
-      
+      const configPath = path.join(__dirname, 'config.json');
+      if (fs.existsSync(configPath)) {
+        const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+        this.config = { ...this.config, ...config };
+      }
     } catch (error) {
-      console.error(\`[Agent \${this.id}] Initialization error:\`, error);
-      this.status = 'error';
-      this.performance.errors++;
+      console.error('Error loading configuration:', error);
     }
   }
 
   async initializeCapabilities() {
-    // Initialize based on agent type
-    const type = this.config.templateId.split('-')[0];
+    console.log(\`🔧 Initializing capabilities: \${this.capabilities.join(', ')}\`);
     
-    switch (type) {
-      case 'content':
-        await this.initializeContentCapabilities();
+    // Initialize each capability
+    for (const capability of this.capabilities) {
+      await this.initializeCapability(capability);
+    }
+  }
+
+  async initializeCapability(capability) {
+    switch (capability) {
+      case 'AI writing':
+        await this.initializeAIWriting();
         break;
-      case 'analytics':
-        await this.initializeAnalyticsCapabilities();
+      case 'SEO optimization':
+        await this.initializeSEO();
         break;
-      case 'improvement':
-        await this.initializeImprovementCapabilities();
+      case 'Campaign management':
+        await this.initializeCampaignManagement();
         break;
-      case 'integration':
-        await this.initializeIntegrationCapabilities();
+      case 'Lead scoring':
+        await this.initializeLeadScoring();
+        break;
+      case 'Data collection':
+        await this.initializeDataCollection();
+        break;
+      case 'Web scraping':
+        await this.initializeWebScraping();
+        break;
+      case 'Content scheduling':
+        await this.initializeContentScheduling();
+        break;
+      case 'Keyword research':
+        await this.initializeKeywordResearch();
+        break;
+      case 'Ticket management':
+        await this.initializeTicketManagement();
+        break;
+      case 'Data cleaning':
+        await this.initializeDataCleaning();
+        break;
+      case 'Content review':
+        await this.initializeContentReview();
         break;
       default:
-        await this.initializeGenericCapabilities();
+        console.log(\`Capability \${capability} initialized\`);
     }
   }
 
-  async initializeContentCapabilities() {
-    // Content generation capabilities
-    this.capabilities = {
-      generateContent: true,
-      analyzeContent: true,
-      optimizeSEO: true,
-      createBlogPosts: true
-    };
+  async initializeAIWriting() {
+    // Initialize AI writing capabilities
+    console.log('🤖 Initializing AI writing capabilities...');
   }
 
-  async initializeAnalyticsCapabilities() {
-    // Analytics capabilities
-    this.capabilities = {
-      analyzePerformance: true,
-      generateReports: true,
-      trackMetrics: true,
-      predictTrends: true
-    };
+  async initializeSEO() {
+    // Initialize SEO capabilities
+    console.log('🔍 Initializing SEO capabilities...');
   }
 
-  async initializeImprovementCapabilities() {
-    // Improvement capabilities
-    this.capabilities = {
-      fixErrors: true,
-      optimizeCode: true,
-      improvePerformance: true,
-      enhanceFeatures: true
-    };
+  async initializeCampaignManagement() {
+    // Initialize campaign management capabilities
+    console.log('📢 Initializing campaign management capabilities...');
   }
 
-  async initializeIntegrationCapabilities() {
-    // Integration capabilities
-    this.capabilities = {
-      integrateAPIs: true,
-      syncData: true,
-      connectServices: true,
-      manageWorkflows: true
-    };
+  async initializeLeadScoring() {
+    // Initialize lead scoring capabilities
+    console.log('🎯 Initializing lead scoring capabilities...');
   }
 
-  async initializeGenericCapabilities() {
-    // Generic capabilities
-    this.capabilities = {
-      processTasks: true,
-      generateReports: true,
-      handleErrors: true
-    };
+  async initializeDataCollection() {
+    // Initialize data collection capabilities
+    console.log('📊 Initializing data collection capabilities...');
   }
 
-  async processWorkload() {
-    while (this.status === 'ready') {
-      try {
-        const task = await this.getNextTask();
-        if (task) {
-          await this.executeTask(task);
-        } else {
-          // No tasks available, wait
-          await this.sleep(5000);
-        }
-      } catch (error) {
-        console.error(\`[Agent \${this.id}] Task processing error:\`, error);
-        this.performance.errors++;
-        await this.sleep(1000);
+  async initializeWebScraping() {
+    // Initialize web scraping capabilities
+    console.log('🕷️ Initializing web scraping capabilities...');
+  }
+
+  async initializeContentScheduling() {
+    // Initialize content scheduling capabilities
+    console.log('📅 Initializing content scheduling capabilities...');
+  }
+
+  async initializeKeywordResearch() {
+    // Initialize keyword research capabilities
+    console.log('🔎 Initializing keyword research capabilities...');
+  }
+
+  async initializeTicketManagement() {
+    // Initialize ticket management capabilities
+    console.log('🎫 Initializing ticket management capabilities...');
+  }
+
+  async initializeDataCleaning() {
+    // Initialize data cleaning capabilities
+    console.log('🧹 Initializing data cleaning capabilities...');
+  }
+
+  async initializeContentReview() {
+    // Initialize content review capabilities
+    console.log('📝 Initializing content review capabilities...');
+  }
+
+  startContinuousOperation() {
+    setInterval(async () => {
+      if (this.status === 'active' && this.workload < 100) {
+        await this.performTask();
       }
-    }
+    }, 5000);
   }
 
-  async getNextTask() {
-    // Get task from workload queue or generate new work
-    if (this.workloadQueue.length > 0) {
-      return this.workloadQueue.shift();
-    }
-    
-    // Generate new work based on capabilities
-    return await this.generateWork();
-  }
-
-  async generateWork() {
-    const type = this.config.templateId.split('-')[0];
-    
-    switch (type) {
-      case 'content':
-        return await this.generateContentWork();
-      case 'analytics':
-        return await this.generateAnalyticsWork();
-      case 'improvement':
-        return await this.generateImprovementWork();
-      case 'integration':
-        return await this.generateIntegrationWork();
-      default:
-        return await this.generateGenericWork();
-    }
-  }
-
-  async generateContentWork() {
-    const contentTypes = ['blog', 'product', 'service', 'landing'];
-    const randomType = contentTypes[Math.floor(Math.random() * contentTypes.length)];
-    
-    return {
-      type: 'content-generation',
-      subtype: randomType,
-      priority: Math.floor(Math.random() * 5) + 1,
-      data: {
-        target: randomType,
-        keywords: ['ai', 'technology', 'innovation'],
-        length: Math.floor(Math.random() * 500) + 200
-      }
-    };
-  }
-
-  async generateAnalyticsWork() {
-    const analyticsTypes = ['performance', 'user-behavior', 'content', 'seo'];
-    const randomType = analyticsTypes[Math.floor(Math.random() * analyticsTypes.length)];
-    
-    return {
-      type: 'analytics',
-      subtype: randomType,
-      priority: Math.floor(Math.random() * 5) + 1,
-      data: {
-        metric: randomType,
-        timeframe: '24h',
-        granularity: 'hourly'
-      }
-    };
-  }
-
-  async generateImprovementWork() {
-    const improvementTypes = ['code', 'performance', 'seo', 'ux'];
-    const randomType = improvementTypes[Math.floor(Math.random() * improvementTypes.length)];
-    
-    return {
-      type: 'improvement',
-      subtype: randomType,
-      priority: Math.floor(Math.random() * 5) + 1,
-      data: {
-        target: randomType,
-        scope: 'global',
-        impact: 'high'
-      }
-    };
-  }
-
-  async generateIntegrationWork() {
-    const integrationTypes = ['api', 'database', 'service', 'workflow'];
-    const randomType = integrationTypes[Math.floor(Math.random() * integrationTypes.length)];
-    
-    return {
-      type: 'integration',
-      subtype: randomType,
-      priority: Math.floor(Math.random() * 5) + 1,
-      data: {
-        service: randomType,
-        endpoint: '/api/v1',
-        method: 'POST'
-      }
-    };
-  }
-
-  async generateGenericWork() {
-    return {
-      type: 'generic',
-      subtype: 'task',
-      priority: Math.floor(Math.random() * 5) + 1,
-      data: {
-        action: 'process',
-        target: 'system',
-        parameters: {}
-      }
-    };
-  }
-
-  async executeTask(task) {
-    const startTime = Date.now();
-    
+  async performTask() {
     try {
-      console.log(\`[Agent \${this.id}] Executing task: \${task.type} - \${task.subtype}\`);
+      this.currentTask = 'Performing task...';
+      this.workload = Math.min(100, this.workload + Math.random() * 20);
+      this.updateStatus();
+
+      // Select a service to perform
+      const service = this.services[Math.floor(Math.random() * this.services.length)];
+      await this.performService(service);
+
+      this.performance.tasksCompleted++;
+      this.performance.successRate = Math.max(80, this.performance.successRate - Math.random() * 5);
+      this.workload = Math.max(0, this.workload - Math.random() * 30);
       
-      let result;
-      switch (task.type) {
-        case 'content-generation':
-          result = await this.executeContentTask(task);
-          break;
-        case 'analytics':
-          result = await this.executeAnalyticsTask(task);
-          break;
-        case 'improvement':
-          result = await this.executeImprovementTask(task);
-          break;
-        case 'integration':
-          result = await this.executeIntegrationTask(task);
-          break;
-        default:
-          result = await this.executeGenericTask(task);
-      }
-      
-      const responseTime = Date.now() - startTime;
-      this.updatePerformance(responseTime);
-      
-      console.log(\`[Agent \${this.id}] Task completed successfully\`);
-      return result;
-      
+      this.currentTask = 'Task completed, waiting for next task...';
+      this.updateStatus();
     } catch (error) {
-      console.error(\`[Agent \${this.id}] Task execution error:\`, error);
-      this.performance.errors++;
-      throw error;
+      console.error(\`Error in \${this.name}:\`, error);
+      this.status = 'error';
+      this.updateStatus();
     }
   }
 
-  async executeContentTask(task) {
-    // Simulate content generation
-    await this.sleep(Math.random() * 2000 + 1000);
+  async performService(service) {
+    console.log(\`\${this.name} performing: \${service}\`);
     
-    return {
-      type: 'content',
-      content: \`Generated \${task.subtype} content for \${task.data.target}\`,
-      metadata: {
-        keywords: task.data.keywords,
-        length: task.data.length,
-        generatedAt: new Date().toISOString()
-      }
-    };
+    // Simulate service execution based on agent type
+    switch (this.type) {
+      case 'content-generation':
+        await this.performContentGeneration(service);
+        break;
+      case 'marketing':
+        await this.performMarketingTask(service);
+        break;
+      case 'sales':
+        await this.performSalesTask(service);
+        break;
+      case 'analytics':
+        await this.performAnalyticsTask(service);
+        break;
+      case 'research':
+        await this.performResearchTask(service);
+        break;
+      case 'social-media':
+        await this.performSocialMediaTask(service);
+        break;
+      case 'seo':
+        await this.performSEOTask(service);
+        break;
+      case 'support':
+        await this.performSupportTask(service);
+        break;
+      case 'data-processing':
+        await this.performDataProcessingTask(service);
+        break;
+      case 'qa':
+        await this.performQATask(service);
+        break;
+      default:
+        await this.performGenericTask(service);
+    }
   }
 
-  async executeAnalyticsTask(task) {
-    // Simulate analytics processing
-    await this.sleep(Math.random() * 1500 + 500);
-    
-    return {
-      type: 'analytics',
-      data: {
-        metric: task.data.metric,
-        value: Math.random() * 100,
-        timestamp: new Date().toISOString()
-      }
-    };
+  async performContentGeneration(service) {
+    console.log(\`📝 Generating content: \${service}\`);
+    await new Promise(resolve => setTimeout(resolve, 3000 + Math.random() * 2000));
   }
 
-  async executeImprovementTask(task) {
-    // Simulate improvement processing
-    await this.sleep(Math.random() * 3000 + 1000);
-    
-    return {
-      type: 'improvement',
-      improvement: \`Improved \${task.subtype} for \${task.data.target}\`,
-      impact: task.data.impact
-    };
+  async performMarketingTask(service) {
+    console.log(\`📢 Marketing task: \${service}\`);
+    await new Promise(resolve => setTimeout(resolve, 2000 + Math.random() * 3000));
   }
 
-  async executeIntegrationTask(task) {
-    // Simulate integration processing
-    await this.sleep(Math.random() * 2500 + 1000);
-    
-    return {
-      type: 'integration',
-      service: task.data.service,
-      status: 'connected',
-      endpoint: task.data.endpoint
-    };
+  async performSalesTask(service) {
+    console.log(\`💰 Sales task: \${service}\`);
+    await new Promise(resolve => setTimeout(resolve, 2500 + Math.random() * 2500));
   }
 
-  async executeGenericTask(task) {
-    // Simulate generic task processing
-    await this.sleep(Math.random() * 1000 + 500);
-    
-    return {
-      type: 'generic',
-      result: \`Processed \${task.subtype} task\`,
-      timestamp: new Date().toISOString()
-    };
+  async performAnalyticsTask(service) {
+    console.log(\`📊 Analytics task: \${service}\`);
+    await new Promise(resolve => setTimeout(resolve, 1500 + Math.random() * 1500));
   }
 
-  updatePerformance(responseTime) {
-    this.performance.tasksCompleted++;
-    this.performance.avgResponseTime = 
-      (this.performance.avgResponseTime * (this.performance.tasksCompleted - 1) + responseTime) / 
-      this.performance.tasksCompleted;
+  async performResearchTask(service) {
+    console.log(\`🔍 Research task: \${service}\`);
+    await new Promise(resolve => setTimeout(resolve, 4000 + Math.random() * 3000));
   }
 
-  async sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  async performSocialMediaTask(service) {
+    console.log(\`📱 Social media task: \${service}\`);
+    await new Promise(resolve => setTimeout(resolve, 2000 + Math.random() * 2000));
   }
 
-  stop() {
-    this.status = 'stopped';
-    console.log(\`[Agent \${this.id}] Stopped\`);
+  async performSEOTask(service) {
+    console.log(\`🔍 SEO task: \${service}\`);
+    await new Promise(resolve => setTimeout(resolve, 3000 + Math.random() * 2000));
   }
 
-  getStatus() {
-    return {
+  async performSupportTask(service) {
+    console.log(\`🎫 Support task: \${service}\`);
+    await new Promise(resolve => setTimeout(resolve, 1500 + Math.random() * 1500));
+  }
+
+  async performDataProcessingTask(service) {
+    console.log(\`🔄 Data processing task: \${service}\`);
+    await new Promise(resolve => setTimeout(resolve, 2500 + Math.random() * 2000));
+  }
+
+  async performQATask(service) {
+    console.log(\`✅ QA task: \${service}\`);
+    await new Promise(resolve => setTimeout(resolve, 2000 + Math.random() * 2000));
+  }
+
+  async performGenericTask(service) {
+    console.log(\`⚙️ Generic task: \${service}\`);
+    await new Promise(resolve => setTimeout(resolve, 2000 + Math.random() * 2000));
+  }
+
+  updateStatus() {
+    const statusData = {
       id: this.id,
       status: this.status,
+      workload: this.workload,
+      currentTask: this.currentTask,
       performance: this.performance,
-      capabilities: this.capabilities
+      lastActive: new Date().toISOString()
     };
+
+    // Save status to file
+    const statusPath = path.join(__dirname, '..', 'logs', \`\${this.id}_status.json\`);
+    fs.writeFileSync(statusPath, JSON.stringify(statusData, null, 2));
+
+    // Log activity
+    this.log(\`Status updated: \${this.status}, Workload: \${this.workload}%\`);
+  }
+
+  log(message, level = 'info') {
+    const logEntry = {
+      timestamp: new Date().toISOString(),
+      agentId: this.id,
+      agentName: this.name,
+      level,
+      message
+    };
+
+    this.logs.push(logEntry);
+    
+    // Keep only recent logs
+    if (this.logs.length > 100) {
+      this.logs = this.logs.slice(-100);
+    }
+
+    // Save to file
+    const logPath = path.join(__dirname, '..', 'logs', \`\${this.id}_logs.json\`);
+    fs.writeFileSync(logPath, JSON.stringify(this.logs, null, 2));
+
+    console.log(\`[\${this.name}] [\${level.toUpperCase()}] \${message}\`);
+  }
+
+  async stop() {
+    this.status = 'stopped';
+    this.updateStatus();
+    console.log(\`\${this.name} stopped\`);
   }
 }
 
-// Initialize agent
-const configPath = path.join(__dirname, 'config.json');
-const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-const agent = new AutonomousAgent(config);
+// Start the agent
+const agent = new ${className}();
+agent.initialize().catch(console.error);
 
-// Handle process termination
-process.on('SIGINT', () => {
-  console.log(\`[Agent \${agent.id}] Received SIGINT, shutting down...\`);
-  agent.stop();
-  process.exit(0);
-});
-
-process.on('SIGTERM', () => {
-  console.log(\`[Agent \${agent.id}] Received SIGTERM, shutting down...\`);
-  agent.stop();
-  process.exit(0);
-});
+module.exports = agent;
 `;
-
-    return baseCode;
   }
 
-  deployAgent(agentId) {
-    const agentConfig = this.registry.agents[agentId];
-    if (!agentConfig) {
-      throw new Error(`Agent ${agentId} not found`);
-    }
+  async generateAgentConfig(agentConfig, agentDir) {
+    const configPath = path.join(agentDir, 'config.json');
+    fs.writeFileSync(configPath, JSON.stringify(agentConfig.config, null, 2));
+  }
 
-    const agentDir = path.join(this.agentsDir, agentId);
-    const agentFile = path.join(agentDir, 'agent.js');
+  async generatePackageJson(agentConfig, agentDir) {
+    const packageJson = {
+      name: agentConfig.id,
+      version: '1.0.0',
+      description: agentConfig.name,
+      main: 'index.js',
+      scripts: {
+        start: 'node index.js',
+        test: 'echo "No tests specified" && exit 0'
+      },
+      dependencies: this.getDependencies(agentConfig.dependencies),
+      keywords: ['autonomous-agent', agentConfig.type],
+      author: 'Autonomous Agent Factory',
+      license: 'MIT'
+    };
 
+    const packagePath = path.join(agentDir, 'package.json');
+    fs.writeFileSync(packagePath, JSON.stringify(packageJson, null, 2));
+  }
+
+  getDependencies(agentDependencies) {
+    const dependencyMap = {
+      'openai': 'openai@^4.0.0',
+      'seo-tools': 'seo-tools@^1.0.0',
+      'email-service': 'nodemailer@^6.0.0',
+      'social-media-api': 'twitter-api-v2@^1.0.0',
+      'analytics': 'google-analytics@^1.0.0',
+      'crm-api': 'hubspot-api@^1.0.0',
+      'database': 'pg@^8.0.0',
+      'visualization-tools': 'chart.js@^3.0.0',
+      'scraping-tools': 'puppeteer@^19.0.0',
+      'data-processing': 'lodash@^4.17.21',
+      'social-media-apis': 'instagram-api@^1.0.0',
+      'content-tools': 'content-tools@^1.0.0',
+      'search-apis': 'google-search-api@^1.0.0',
+      'support-platform': 'zendesk-api@^1.0.0',
+      'knowledge-base': 'knowledge-base@^1.0.0',
+      'etl-tools': 'etl-tools@^1.0.0',
+      'validation-libraries': 'joi@^17.0.0',
+      'quality-tools': 'quality-tools@^1.0.0',
+      'review-system': 'review-system@^1.0.0'
+    };
+
+    const dependencies = {};
+    agentDependencies.forEach(dep => {
+      if (dependencyMap[dep]) {
+        dependencies[dep] = dependencyMap[dep];
+      }
+    });
+
+    return dependencies;
+  }
+
+  async installDependencies(agentDir) {
     return new Promise((resolve, reject) => {
-      exec(`node "${agentFile}"`, (error, stdout, stderr) => {
+      exec('npm install', { cwd: agentDir }, (error, stdout, stderr) => {
         if (error) {
-          console.error(`Agent ${agentId} deployment error:`, error);
+          console.error(`Error installing dependencies: ${error}`);
           reject(error);
         } else {
-          console.log(`Agent ${agentId} deployed successfully`);
-          this.activeAgents.set(agentId, { process: null, status: 'running' });
+          console.log(`✅ Dependencies installed for agent in ${agentDir}`);
           resolve();
         }
       });
     });
   }
 
-  distributeWorkload(workload) {
-    // Distribute workload across available agents
-    const availableAgents = Object.keys(this.registry.agents).filter(
-      agentId => this.registry.agents[agentId].status === 'ready'
+  async saveAgentToDatabase(agentConfig) {
+    const { createClient } = require('@supabase/supabase-js');
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
     );
 
-    if (availableAgents.length === 0) {
-      // Create new agent if none available
-      const templateId = this.selectBestTemplate(workload);
-      const newAgent = this.generateAgent(templateId, workload);
-      this.deployAgent(newAgent.id);
-      return newAgent.id;
+    try {
+      const { error } = await supabase
+        .from('autonomous_agents')
+        .upsert([{
+          id: agentConfig.id,
+          name: agentConfig.name,
+          type: agentConfig.type,
+          status: agentConfig.status,
+          workload: agentConfig.workload,
+          current_task: agentConfig.currentTask,
+          next_steps: agentConfig.nextSteps,
+          services: agentConfig.services,
+          capabilities: agentConfig.capabilities,
+          dependencies: agentConfig.dependencies,
+          performance: agentConfig.performance,
+          created_at: agentConfig.createdAt,
+          last_active: agentConfig.lastActive,
+          config: agentConfig.config
+        }]);
+
+      if (error) throw error;
+    } catch (error) {
+      console.error('Error saving agent to database:', error);
     }
-
-    // Select best agent for workload
-    const bestAgent = this.selectBestAgent(workload, availableAgents);
-    return bestAgent;
   }
 
-  selectBestTemplate(workload) {
-    // Select best template based on workload type
-    const templates = Object.values(this.registry.templates);
-    const workloadType = workload.type || 'generic';
-    
-    const matchingTemplate = templates.find(template => 
-      template.type === workloadType
-    );
+  async startAgent(agentId) {
+    const agentConfig = this.agentRegistry.get(agentId);
+    if (!agentConfig) return;
 
-    return matchingTemplate ? matchingTemplate.id : templates[0]?.id || 'generic-default';
-  }
+    const agentDir = path.join(__dirname, 'agents', agentId);
+    const scriptPath = path.join(agentDir, 'index.js');
 
-  selectBestAgent(workload, availableAgents) {
-    // Select agent with best performance for workload type
-    const agents = availableAgents.map(id => ({
-      id,
-      ...this.registry.agents[id]
-    }));
-
-    // Sort by performance (tasks completed, low errors, fast response time)
-    agents.sort((a, b) => {
-      const aScore = a.performance.tasksCompleted - a.performance.errors;
-      const bScore = b.performance.tasksCompleted - b.performance.errors;
-      return bScore - aScore;
-    });
-
-    return agents[0]?.id || availableAgents[0];
-  }
-
-  monitorAgents() {
-    setInterval(() => {
-      Object.keys(this.registry.agents).forEach(agentId => {
-        const agent = this.registry.agents[agentId];
-        
-        // Update performance metrics
-        if (agent.performance.tasksCompleted > 0) {
-          const efficiency = agent.performance.tasksCompleted / 
-            (agent.performance.tasksCompleted + agent.performance.errors);
-          
-          if (efficiency < 0.8) {
-            console.log(`Agent ${agentId} performance degraded, considering replacement`);
-            this.considerAgentReplacement(agentId);
-          }
+    try {
+      exec(`node "${scriptPath}"`, (error, stdout, stderr) => {
+        if (error) {
+          console.error(`Error starting agent ${agentId}:`, error);
+          agentConfig.status = 'error';
+        } else {
+          agentConfig.status = 'active';
         }
+        this.saveAgentToDatabase(agentConfig);
       });
-    }, 30000); // Check every 30 seconds
+
+      console.log(`✅ Started agent: ${agentConfig.name}`);
+    } catch (error) {
+      console.error(`Error starting agent ${agentId}:`, error);
+      agentConfig.status = 'error';
+      this.saveAgentToDatabase(agentConfig);
+    }
   }
 
-  considerAgentReplacement(agentId) {
-    const agent = this.registry.agents[agentId];
-    
-    // Create replacement agent
-    const replacementAgent = this.generateAgent(agent.templateId, agent.workloadConfig);
-    this.deployAgent(replacementAgent.id);
-    
-    // Mark old agent for retirement
-    agent.status = 'retiring';
-    this.saveRegistry();
-    
-    console.log(`Agent ${agentId} marked for replacement with ${replacementAgent.id}`);
+  getAvailableAgentTypes() {
+    return Array.from(this.agentTemplates.keys());
   }
 
-  getSystemStatus() {
-    return {
-      totalAgents: Object.keys(this.registry.agents).length,
-      activeAgents: Object.values(this.registry.agents).filter(a => a.status === 'ready').length,
-      templates: Object.keys(this.registry.templates).length,
-      performance: this.calculateSystemPerformance()
-    };
+  getAgentTemplate(agentType) {
+    return this.agentTemplates.get(agentType);
   }
 
-  calculateSystemPerformance() {
-    const agents = Object.values(this.registry.agents);
-    const totalTasks = agents.reduce((sum, agent) => sum + agent.performance.tasksCompleted, 0);
-    const totalErrors = agents.reduce((sum, agent) => sum + agent.performance.errors, 0);
-    const avgResponseTime = agents.reduce((sum, agent) => sum + agent.performance.avgResponseTime, 0) / agents.length;
-
-    return {
-      totalTasks,
-      totalErrors,
-      successRate: totalTasks > 0 ? (totalTasks - totalErrors) / totalTasks : 0,
-      avgResponseTime
-    };
+  getAgentRegistry() {
+    return Array.from(this.agentRegistry.values());
   }
 }
 
