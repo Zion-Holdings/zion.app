@@ -98,46 +98,23 @@ const TalentPage: React.FC = () => {
   };
 
   const filterTalents = () => {
-    let filtered = talents;
-
-    // Filter by search term
-    if (searchTerm) {
-      filtered = filtered.filter(talent =>
-        talent.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        talent.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        talent.skills.some(skill => 
-          skill.toLowerCase().includes(searchTerm.toLowerCase())
-        )
-      );
-    }
-
-    // Filter by selected skills
-    if (selectedSkills.length > 0) {
-      filtered = filtered.filter(talent =>
-        selectedSkills.every(skill => talent.skills.includes(skill))
-      );
-    }
-
-    // Sort by selected criteria
-    filtered.sort((a, b) => {
-      switch (sortBy) {
-        case 'rating':
-          return b.rating - a.rating;
-        case 'rate':
-          return a.hourly_rate - b.hourly_rate;
-        case 'experience':
-          return parseInt(b.experience) - parseInt(a.experience);
-        default:
-          return 0;
-      }
+    const filtered = talents.filter(talent => {
+      const matchesSearch = talent.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           talent.skills.some(skill => skill.toLowerCase().includes(searchTerm.toLowerCase()));
+      const matchesSkills = selectedSkills.length === 0 || 
+                           selectedSkills.some(skill => talent.skills.includes(skill));
+      const matchesAvailability = selectedAvailability === 'all' || talent.availability === selectedAvailability;
+      const matchesPrice = talent.hourlyRate >= priceRange[0] && talent.hourlyRate <= priceRange[1];
+      const matchesRegion = selectedRegion === 'all' || talent.region === selectedRegion;
+      
+      return matchesSearch && matchesSkills && matchesAvailability && matchesPrice && matchesRegion;
     });
-
     setFilteredTalents(filtered);
   };
 
   useEffect(() => {
     filterTalents();
-  }, [filterTalents]);
+  }, [talents, searchTerm, selectedSkills, selectedAvailability, priceRange, selectedRegion]);
 
   const handleSkillToggle = (skill: string) => {
     setSelectedSkills(prev =>

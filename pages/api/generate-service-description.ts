@@ -1,9 +1,12 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import OpenAI from 'openai';
 
-const openai = new OpenAI({
+// Check if OpenAI API key is available
+const hasOpenAIKey = process.env.OPENAI_API_KEY && process.env.OPENAI_API_KEY.trim() !== '';
+
+const openai = hasOpenAIKey ? new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
-});
+}) : null;
 
 export default async function handler(
   req: NextApiRequest,
@@ -25,6 +28,22 @@ export default async function handler(
 
     if (!title || !keyFeatures) {
       return res.status(400).json({ error: 'Title and key features are required' });
+    }
+
+    // If OpenAI API key is not available, return a mock response for development
+    if (!hasOpenAIKey) {
+      const mockDescription = `Looking for professional ${title}? We specialize in delivering exceptional ${keyFeatures.toLowerCase()} to help your business thrive. 
+
+Our team of experienced professionals understands the unique challenges faced by ${targetAudience || 'businesses'} in the ${industry || 'modern'} industry. We offer ${pricing || 'competitive'} pricing models to ensure you get the best value for your investment.
+
+Whether you're looking for ${location || 'comprehensive'} solutions or need ongoing support, we're here to help you achieve your goals. Our commitment to quality, reliability, and customer satisfaction sets us apart from the competition.
+
+Ready to take your business to the next level? Contact us today to discuss how our ${title.toLowerCase()} can benefit your organization.`;
+
+      return res.status(200).json({ 
+        description: mockDescription,
+        note: 'This is a mock response. Set OPENAI_API_KEY environment variable for AI-generated descriptions.'
+      });
     }
 
     const prompt = `Create a professional, compelling service description for the following service:
@@ -76,7 +95,7 @@ Format the description as a single paragraph that flows naturally and is ready t
     console.error('Error generating service description:', error);
     res.status(500).json({ 
       error: 'Failed to generate service description',
-      details: process.env.NODE_ENV === 'development' ? (error as Error).message : undefined
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 } 

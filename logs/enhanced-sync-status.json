@@ -1,11 +1,11 @@
 {
-  "lastCheck": "2025-08-01T02:14:08.489Z",
+  "lastCheck": "2025-08-01T02:16:07.976Z",
   "jobs": {
     "gitSync": {
-      "lastRun": "2025-08-01T02:14:08.489Z",
+      "lastRun": "2025-08-01T02:16:07.975Z",
       "duration": 0,
       "success": false,
-      "error": "Command failed: git commit -m \"Auto-sync: Continuous improvement - $(date)\"\n🔍 Running pre-commit checks...\n📝 Running ESLint...\n\n> bolt.new.zion.app@0.1.0 lint\n> next lint\n\n\n./pages/talent/[id].tsx\n65:9  Warning: The 'fetchTalent' function makes the dependencies of useEffect Hook (at line 63) change on every render. Move it inside the useEffect callback. Alternatively, wrap the definition of 'fetchTalent' in its own useCallback() Hook.  react-hooks/exhaustive-deps\n83:9  Warning: The 'fetchReviews' function makes the dependencies of useEffect Hook (at line 63) change on every render. Move it inside the useEffect callback. Alternatively, wrap the definition of 'fetchReviews' in its own useCallback() Hook.  react-hooks/exhaustive-deps\n\n./pages/talent/index.tsx\n140:6  Warning: React Hook useEffect has a missing dependency: 'filterTalents'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps\n\ninfo  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules\n🔍 Running TypeScript type check...\n\n> bolt.new.zion.app@0.1.0 type-check\n> tsc --noEmit\n\npages/talent/[id].tsx(63,11): error TS2448: Block-scoped variable 'fetchTalent' used before its declaration.\npages/talent/[id].tsx(63,11): error TS2454: Variable 'fetchTalent' is used before being assigned.\npages/talent/[id].tsx(63,24): error TS2448: Block-scoped variable 'fetchReviews' used before its declaration.\npages/talent/[id].tsx(63,24): error TS2454: Variable 'fetchReviews' is used before being assigned.\n❌ TypeScript type check failed. Please fix the issues before committing.\nhusky - pre-commit script failed (code 1)\n"
+      "error": "Command failed: git commit -m \"Auto-sync: Continuous improvement - $(date)\"\n🔍 Running pre-commit checks...\n📝 Running ESLint...\n\n> bolt.new.zion.app@0.1.0 lint\n> next lint\n\n\n./pages/talent/[id].tsx\n85:6  Warning: React Hook useEffect has missing dependencies: 'fetchReviews' and 'fetchTalent'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps\n\n./pages/talent/index.tsx\n100:9  Warning: The 'filterTalents' function makes the dependencies of useEffect Hook (at line 140) change on every render. Move it inside the useEffect callback. Alternatively, wrap the definition of 'filterTalents' in its own useCallback() Hook.  react-hooks/exhaustive-deps\n\ninfo  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules\n🔍 Running TypeScript type check...\n\n> bolt.new.zion.app@0.1.0 type-check\n> tsc --noEmit\n\npages/api/generate-service-description.ts(71,30): error TS18047: 'openai' is possibly 'null'.\npages/api/generate-service-description.ts(98,57): error TS18046: 'error' is of type 'unknown'.\n❌ TypeScript type check failed. Please fix the issues before committing.\nhusky - pre-commit script failed (code 1)\n"
     },
     "buildCheck": {
       "lastRun": "2025-07-31T22:40:06.122Z",
@@ -44,9 +44,9 @@
       "error": null
     }
   },
-  "errors": 697,
+  "errors": 698,
   "fixes": 575,
-  "syncs": 312,
+  "syncs": 313,
   "builds": 5,
-  "commits": 368
+  "commits": 369
 }
