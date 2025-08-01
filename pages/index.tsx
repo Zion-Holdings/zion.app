@@ -10,6 +10,8 @@ const Home: NextPage = () => {
   const [isLoading, setIsLoading] = useState(false)
   const observerRef = useRef<IntersectionObserver | null>(null)
   const [visibleSections, setVisibleSections] = useState<Set<number>>(new Set())
+  const [displayedSections, setDisplayedSections] = useState<any[]>([])
+  const [nextSectionId, setNextSectionId] = useState(9)
 
   const handleWaitlistSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -17,8 +19,8 @@ const Home: NextPage = () => {
     setEmail('')
   }
 
-  // Infinite scroll sections data
-  const sections = [
+  // Base sections data
+  const baseSections = [
     {
       id: 0,
       type: 'hero',
@@ -124,6 +126,101 @@ const Home: NextPage = () => {
     }
   ]
 
+  // Initialize displayed sections with base sections
+  useEffect(() => {
+    setDisplayedSections(baseSections)
+  }, [])
+
+  // Generate additional sections for infinite scroll
+  const generateAdditionalSections = () => {
+    const additionalSections = []
+    const sectionTypes = [
+      {
+        type: 'featured-services',
+        title: 'Advanced IT Solutions',
+        items: [
+          { title: 'Blockchain Development', description: 'Decentralized applications and smart contracts', link: '/services/blockchain-development', price: '$200-600/hr', rating: 4.8 },
+          { title: 'IoT Integration', description: 'Internet of Things implementation', link: '/services/iot-integration', price: '$150-400/hr', rating: 4.7 },
+          { title: 'Data Analytics', description: 'Big data processing and insights', link: '/services/data-analytics', price: '$180-450/hr', rating: 4.9 },
+          { title: 'DevOps Automation', description: 'CI/CD pipeline optimization', link: '/services/devops-automation', price: '$120-350/hr', rating: 4.6 }
+        ],
+        bgClass: 'bg-gradient-to-br from-cyan-900 to-slate-900'
+      },
+      {
+        type: 'featured-talents',
+        title: 'Expert Consultants',
+        items: [
+          { name: 'Dr. Lisa Wang', specialization: 'Quantum Computing Expert', experience: '12+ years', rating: 4.9, link: '/talents' },
+          { name: 'James Wilson', specialization: 'Blockchain Architect', experience: '7+ years', rating: 4.8, link: '/talents' },
+          { name: 'Dr. Elena Petrova', specialization: 'Data Scientist', experience: '9+ years', rating: 4.9, link: '/talents' },
+          { name: 'David Park', specialization: 'Cloud Solutions Architect', experience: '8+ years', rating: 4.7, link: '/talents' }
+        ],
+        bgClass: 'bg-gradient-to-br from-emerald-900 to-slate-900'
+      },
+      {
+        type: 'featured-equipment',
+        title: 'Advanced Hardware',
+        items: [
+          { name: 'AI Training Rigs', description: 'Specialized hardware for machine learning', price: '$8000-75000', link: '/equipment' },
+          { name: 'Network Infrastructure', description: 'High-speed networking equipment', price: '$3000-20000', link: '/equipment' },
+          { name: 'Security Appliances', description: 'Enterprise security solutions', price: '$5000-30000', link: '/equipment' },
+          { name: 'Monitoring Systems', description: 'Real-time monitoring and alerting', price: '$2000-15000', link: '/equipment' }
+        ],
+        bgClass: 'bg-gradient-to-br from-orange-900 to-slate-900'
+      },
+      {
+        type: 'blog-highlights',
+        title: 'Industry Trends',
+        items: [
+          { title: 'AI Ethics and Governance', excerpt: 'Building responsible AI systems', link: '/blog/ai-ethics-and-governance', category: 'Ethics' },
+          { title: 'Edge Computing Revolution', excerpt: 'Processing data closer to the source', link: '/blog/edge-computing-revolution', category: 'Technology' },
+          { title: 'Sustainable Tech Solutions', excerpt: 'Green technology for the future', link: '/blog/sustainable-tech-solutions', category: 'Sustainability' },
+          { title: 'Digital Twin Technology', excerpt: 'Virtual replicas of physical systems', link: '/blog/digital-twin-technology', category: 'Innovation' }
+        ],
+        bgClass: 'bg-gradient-to-br from-teal-900 to-slate-900'
+      },
+      {
+        type: 'chat-services',
+        title: 'Specialized AI Chat',
+        items: [
+          { title: 'Financial Analysis Chat', description: 'AI-powered financial insights', link: '/services/financial-analysis-chat', icon: '💰' },
+          { title: 'Legal Tech Chat', description: 'Legal technology consultation', link: '/services/legal-tech-chat', icon: '⚖️' },
+          { title: 'Healthcare AI Chat', description: 'Medical technology advice', link: '/services/healthcare-ai-chat', icon: '🏥' },
+          { title: 'Education Tech Chat', description: 'Educational technology solutions', link: '/services/education-tech-chat', icon: '🎓' }
+        ],
+        bgClass: 'bg-gradient-to-br from-violet-900 to-slate-900'
+      }
+    ]
+
+    // Generate 3-5 additional sections
+    const numSections = Math.floor(Math.random() * 3) + 3
+    for (let i = 0; i < numSections; i++) {
+      const sectionType = sectionTypes[i % sectionTypes.length]
+      additionalSections.push({
+        id: nextSectionId + i,
+        ...sectionType
+      })
+    }
+
+    return additionalSections
+  }
+
+  // Load more sections when reaching the end
+  const loadMoreSections = useCallback(async () => {
+    if (isLoading) return
+
+    setIsLoading(true)
+    
+    // Simulate API call delay
+    await new Promise(resolve => setTimeout(resolve, 800))
+    
+    const newSections = generateAdditionalSections()
+    setDisplayedSections(prev => [...prev, ...newSections])
+    setNextSectionId(prev => prev + newSections.length)
+    
+    setIsLoading(false)
+  }, [isLoading, nextSectionId])
+
   // Intersection Observer for infinite scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -149,20 +246,14 @@ const Home: NextPage = () => {
         observerRef.current.disconnect()
       }
     }
-  }, [])
+  }, [displayedSections])
 
-  // Load more sections when reaching the end
+  // Scroll handler for infinite scroll
   const handleScroll = useCallback(() => {
     if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 1000) {
-      if (!isLoading) {
-        setIsLoading(true)
-        // Simulate loading more content
-        setTimeout(() => {
-          setIsLoading(false)
-        }, 1000)
-      }
+      loadMoreSections()
     }
-  }, [isLoading])
+  }, [loadMoreSections])
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -593,7 +684,7 @@ const Home: NextPage = () => {
 
       <main className="flex-1">
         {/* Infinite Scroll Sections */}
-        {sections.map((section) => (
+        {displayedSections.map((section) => (
           <section
             key={section.id}
             data-section-id={section.id}
