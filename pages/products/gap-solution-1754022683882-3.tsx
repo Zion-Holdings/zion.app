@@ -2,7 +2,7 @@
 import React from 'react';
 import { NextPage } from 'next';
 
-const AIOptimizationSolutionPage: NextPage = () => {
+const gap_solution_1754022683882_3Page: NextPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -197,5 +197,5 @@ const AIOptimizationSolutionPage: NextPage = () => {
   );
 };
 
-export default AIOptimizationSolutionPage;
+export default gap_solution_1754022683882_3Page;
         

@@ -496,11 +496,18 @@ class AutonomousMasterOrchestrator {
     }
 
     async generateProductPage(solution) {
+        // Create valid component name by replacing spaces and hyphens with underscores
+        const componentName = solution.name
+          .replace(/[-_\s]+/g, '_') // Replace hyphens, underscores, and spaces with underscores
+          .replace(/^_+|_+$/g, '') // Remove leading/trailing underscores
+          .replace(/^[0-9]/, '_$&') // Add underscore prefix if starts with number
+          + 'Page';
+        
         const pageContent = `
 import React from 'react';
 import { NextPage } from 'next';
 
-const ${solution.name.replace(/\s+/g, '')}Page: NextPage = () => {
+const ${componentName}: NextPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -551,7 +558,7 @@ const ${solution.name.replace(/\s+/g, '')}Page: NextPage = () => {
   );
 };
 
-export default ${solution.name.replace(/\s+/g, '')}Page;
+export default ${componentName};
         `;
         
         const pagePath = path.join(__dirname, '..', 'pages', 'products', `${solution.id}.tsx`);

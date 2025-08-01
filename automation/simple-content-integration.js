@@ -374,15 +374,24 @@ export default ${topicTitle.replace(/\s+/g, '')}Page`;
   }
 
   async createProductPage(product, content) {
-    const productTitle = product.split(/(?=[A-Z])/).map(word => 
-      word.charAt(0).toUpperCase() + word.slice(1)
-    ).join(' ');
+    // Convert product name to valid JavaScript identifier
+    const productTitle = product
+      .split(/[-_\s]+/) // Split on hyphens, underscores, and spaces
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(' ');
+    
+    // Create valid component name by replacing spaces and hyphens with underscores
+    const componentName = product
+      .replace(/[-_\s]+/g, '_') // Replace hyphens, underscores, and spaces with underscores
+      .replace(/^_+|_+$/g, '') // Remove leading/trailing underscores
+      .replace(/^[0-9]/, '_$&') // Add underscore prefix if starts with number
+      + 'Page';
     
     const pageContent = `import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-const ${productTitle.replace(/\s+/g, '')}Page: NextPage = () => {
+const ${componentName}: NextPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
@@ -486,7 +495,7 @@ const ${productTitle.replace(/\s+/g, '')}Page: NextPage = () => {
   )
 }
 
-export default ${productTitle.replace(/\s+/g, '')}Page`;
+export default ${componentName}`;
     
     const pagePath = path.join(this.pagesDir, 'products', `${product}.tsx`);
     const pageDir = path.dirname(pagePath);

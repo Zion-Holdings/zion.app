@@ -2,7 +2,7 @@
 import React from 'react';
 import { NextPage } from 'next';
 
-const AIPoweredMarketGapSolutionPage: NextPage = () => {
+const opportunity_solution_1754022651945_2Page: NextPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -197,5 +197,5 @@ const AIPoweredMarketGapSolutionPage: NextPage = () => {
   );
 };
 
-export default AIPoweredMarketGapSolutionPage;
+export default opportunity_solution_1754022651945_2Page;
         
