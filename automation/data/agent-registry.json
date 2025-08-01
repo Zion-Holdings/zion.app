@@ -24,7 +24,7 @@
       "plagiarismCheck": true
     },
     "createdAt": "2025-08-01T11:58:53.987Z",
-    "lastActive": "2025-08-01T19:28:00.627Z",
+    "lastActive": "2025-08-01T19:28:28.500Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -7132,7 +7132,7 @@
       "retryAttempts": 3
     },
     "createdAt": "2025-08-01T12:24:28.334Z",
-    "lastActive": "2025-08-01T19:27:28.072Z",
+    "lastActive": "2025-08-01T19:28:28.072Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -7140,76 +7140,6 @@
       "uptime": 0
     },
     "logs": [
-      {
-        "timestamp": "2025-08-01T19:24:12.076Z",
-        "type": "stderr",
-        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T19:24:12.077Z",
-        "type": "stderr",
-        "message": "Failed to analyze competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T19:24:12.775Z",
-        "type": "stderr",
-        "message": "Failed to scrape competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL\nFailed to analyze competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T19:24:12.775Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 1269ms\nPerformance: SUCCESS in 1269ms"
-      },
-      {
-        "timestamp": "2025-08-01T19:24:21.511Z",
-        "type": "stdout",
-        "message": "🔍 Processing competitive-analysis task..."
-      },
-      {
-        "timestamp": "2025-08-01T19:24:21.511Z",
-        "type": "stdout",
-        "message": "🏢 Performing competitive analysis for 2 competitors"
-      },
-      {
-        "timestamp": "2025-08-01T19:24:21.727Z",
-        "type": "stderr",
-        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T19:24:21.727Z",
-        "type": "stderr",
-        "message": "Failed to analyze competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T19:24:21.943Z",
-        "type": "stderr",
-        "message": "Failed to scrape competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T19:24:21.943Z",
-        "type": "stderr",
-        "message": "Failed to analyze competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T19:24:21.943Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 437ms\nPerformance: SUCCESS in 437ms"
-      },
-      {
-        "timestamp": "2025-08-01T19:24:24.688Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 23183ms"
-      },
-      {
-        "timestamp": "2025-08-01T19:24:24.688Z",
-        "type": "stdout",
-        "message": "Performance: SUCCESS in 23183ms"
-      },
-      {
-        "timestamp": "2025-08-01T19:24:31.507Z",
-        "type": "stdout",
-        "message": "🔍 Processing competitive-analysis task..."
-      },
       {
         "timestamp": "2025-08-01T19:24:31.507Z",
         "type": "stdout",
@@ -7639,11 +7569,81 @@
         "timestamp": "2025-08-01T19:28:02.936Z",
         "type": "stdout",
         "message": "✅ Task completed in 21419ms\nPerformance: SUCCESS in 21419ms"
+      },
+      {
+        "timestamp": "2025-08-01T19:28:11.517Z",
+        "type": "stdout",
+        "message": "🔍 Processing competitive-analysis task..."
+      },
+      {
+        "timestamp": "2025-08-01T19:28:11.517Z",
+        "type": "stdout",
+        "message": "🏢 Performing competitive analysis for 2 competitors"
+      },
+      {
+        "timestamp": "2025-08-01T19:28:11.804Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL\nFailed to analyze competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T19:28:12.319Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL\nFailed to analyze competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T19:28:12.319Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 800ms\nPerformance: SUCCESS in 800ms"
+      },
+      {
+        "timestamp": "2025-08-01T19:28:20.527Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 19010ms"
+      },
+      {
+        "timestamp": "2025-08-01T19:28:20.527Z",
+        "type": "stdout",
+        "message": "Performance: SUCCESS in 19010ms"
+      },
+      {
+        "timestamp": "2025-08-01T19:28:21.518Z",
+        "type": "stdout",
+        "message": "🔍 Processing competitive-analysis task..."
+      },
+      {
+        "timestamp": "2025-08-01T19:28:21.518Z",
+        "type": "stdout",
+        "message": "🏢 Performing competitive analysis for 2 competitors"
+      },
+      {
+        "timestamp": "2025-08-01T19:28:21.719Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T19:28:21.719Z",
+        "type": "stderr",
+        "message": "Failed to analyze competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T19:28:21.892Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T19:28:21.892Z",
+        "type": "stderr",
+        "message": "Failed to analyze competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T19:28:21.892Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 373ms\nPerformance: SUCCESS in 373ms"
       }
     ],
     "health": {
       "status": "healthy",
-      "lastCheck": "2025-08-01T19:27:28.072Z",
+      "lastCheck": "2025-08-01T19:28:28.072Z",
       "uptime": 60000,
       "memoryUsage": 0,
       "cpuUsage": 0,
@@ -36852,7 +36852,7 @@
       "_events": {},
       "_eventsCount": 2,
       "_closesNeeded": 3,
-      "_closesGot": 1,
+      "_closesGot": 3,
       "connected": false,
       "signalCode": null,
       "exitCode": 1,
@@ -36917,7 +36917,7 @@
           "corked": 0,
           "writelen": 0,
           "bufferedIndex": 0,
-          "pendingcb": 1
+          "pendingcb": 0
         },
         "allowHalfOpen": false,
         "_eventsCount": 3,
@@ -37012,7 +37012,7 @@
             "corked": 0,
             "writelen": 0,
             "bufferedIndex": 0,
-            "pendingcb": 1
+            "pendingcb": 0
           },
           "allowHalfOpen": false,
           "_eventsCount": 3,
