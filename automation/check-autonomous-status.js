@@ -5,230 +5,258 @@ const path = require('path');
 
 class AutonomousStatusChecker {
   constructor() {
-    this.statusFile = path.join(__dirname, 'status', 'autonomous-status.json');
-    this.ensureStatusDirectory();
+    this.dataPath = path.join(__dirname, 'data');
   }
 
-  ensureStatusDirectory() {
-    const statusDir = path.dirname(this.statusFile);
-    if (!fs.existsSync(statusDir)) {
-      fs.mkdirSync(statusDir, { recursive: true });
-    }
-  }
-
-  async checkSystemStatus() {
-    console.log('🔍 [Autonomous Status Checker] Checking system status...');
-    console.log('=' * 60);
-
-    try {
-      // Check if status file exists
-      if (fs.existsSync(this.statusFile)) {
-        const statusData = JSON.parse(fs.readFileSync(this.statusFile, 'utf8'));
-        this.displayStatus(statusData);
-      } else {
-        console.log('❌ No status file found. System may not be running.');
-        console.log('💡 Run "npm run autonomous" to start the system.');
-      }
-
-      // Check for running processes
-      await this.checkRunningProcesses();
-
-      // Check for recent logs
-      await this.checkRecentLogs();
-
-    } catch (error) {
-      console.error('❌ Error checking system status:', error);
-    }
-  }
-
-  displayStatus(statusData) {
-    console.log('📊 System Status:');
-    console.log(`   Overall Health: ${statusData.systemHealth || 'Unknown'}%`);
-    console.log(`   Total Agents: ${statusData.totalAgents || 0}`);
-    console.log(`   Active Agents: ${statusData.activeAgents || 0}`);
-    console.log(`   Total Orchestrators: ${statusData.totalOrchestrators || 0}`);
-    console.log(`   Active Orchestrators: ${statusData.activeOrchestrators || 0}`);
-    console.log(`   System Uptime: ${statusData.systemUptime || 'Unknown'}`);
-    console.log(`   Last Update: ${statusData.lastUpdate || 'Unknown'}`);
-    console.log('');
-
-    if (statusData.automations && statusData.automations.length > 0) {
-      console.log('🤖 Active Automations:');
-      statusData.automations.forEach(automation => {
-        const statusIcon = automation.status === 'running' ? '🟢' : '🔴';
-        console.log(`   ${statusIcon} ${automation.name} (${automation.status}) - Health: ${automation.health}%`);
-      });
-      console.log('');
-    }
-
-    if (statusData.cronJobs && statusData.cronJobs.length > 0) {
-      console.log('⏰ Cron Jobs:');
-      statusData.cronJobs.forEach(job => {
-        const statusIcon = job.enabled ? '🟢' : '🔴';
-        console.log(`   ${statusIcon} ${job.name} - ${job.status} (Next: ${job.nextRun})`);
-      });
-      console.log('');
-    }
-
-    if (statusData.researchFindings && statusData.researchFindings.length > 0) {
-      console.log('🔬 Recent Research Findings:');
-      statusData.researchFindings.slice(0, 3).forEach(finding => {
-        console.log(`   📄 ${finding.title} (${finding.impact} impact)`);
-      });
-      console.log('');
-    }
-  }
-
-  async checkRunningProcesses() {
-    console.log('🔍 Checking for running processes...');
+  checkSystemStatus() {
+    console.log('🔍 Checking Autonomous System Status...\n');
     
-    try {
-      const { exec } = require('child_process');
-      
-      // Check for Node.js processes running our automation scripts
-      exec('ps aux | grep -E "(launch-enhanced-autonomous-system|enhanced-autonomous-system|enhanced-cron-system)" | grep -v grep', (error, stdout, stderr) => {
-        if (stdout) {
-          console.log('✅ Found running automation processes:');
-          console.log(stdout);
-        } else {
-          console.log('❌ No running automation processes found.');
-        }
-      });
-    } catch (error) {
-      console.log('⚠️  Could not check running processes.');
-    }
-  }
-
-  async checkRecentLogs() {
-    console.log('📋 Checking recent logs...');
-    
-    try {
-      const logDir = path.join(__dirname, 'logs');
-      if (fs.existsSync(logDir)) {
-        const logFiles = fs.readdirSync(logDir)
-          .filter(file => file.endsWith('.log'))
-          .sort((a, b) => {
-            const statA = fs.statSync(path.join(logDir, a));
-            const statB = fs.statSync(path.join(logDir, b));
-            return statB.mtime.getTime() - statA.mtime.getTime();
-          });
-
-        if (logFiles.length > 0) {
-          console.log('📄 Recent log files:');
-          logFiles.slice(0, 5).forEach(file => {
-            const stat = fs.statSync(path.join(logDir, file));
-            console.log(`   📄 ${file} (${stat.mtime.toLocaleString()})`);
-          });
-        } else {
-          console.log('📄 No log files found.');
-        }
-      } else {
-        console.log('📄 No logs directory found.');
-      }
-    } catch (error) {
-      console.log('⚠️  Could not check recent logs.');
-    }
-  }
-
-  async generateMockStatus() {
-    console.log('🎭 Generating mock status for demonstration...');
-    
-    const mockStatus = {
-      systemHealth: 94,
-      totalAgents: 12,
-      activeAgents: 10,
-      totalOrchestrators: 3,
-      activeOrchestrators: 3,
-      systemUptime: '5d 2h 15m',
-      lastUpdate: new Date().toISOString(),
-      automations: [
-        {
-          name: 'Master Automation Controller',
-          status: 'running',
-          health: 95
-        },
-        {
-          name: 'Autonomous Agent Factory',
-          status: 'running',
-          health: 92
-        },
-        {
-          name: 'Content Generation Agent',
-          status: 'running',
-          health: 88
-        },
-        {
-          name: 'AI Research Agent',
-          status: 'running',
-          health: 90
-        },
-        {
-          name: 'Enhanced Autonomous System',
-          status: 'running',
-          health: 93
-        }
-      ],
-      cronJobs: [
-        {
-          name: 'Autonomous Agent Creation',
-          status: 'active',
-          enabled: true,
-          nextRun: '5 minutes'
-        },
-        {
-          name: 'System Health Check',
-          status: 'active',
-          enabled: true,
-          nextRun: '30 seconds'
-        },
-        {
-          name: 'Research and Discovery',
-          status: 'active',
-          enabled: true,
-          nextRun: '1 hour'
-        }
-      ],
-      researchFindings: [
-        {
-          title: 'Multi-modal AI Agents',
-          impact: 'high'
-        },
-        {
-          title: 'Autonomous Agent Swarms',
-          impact: 'medium'
-        },
-        {
-          title: 'Self-Improving AI Systems',
-          impact: 'high'
-        }
-      ]
+    const status = {
+      agents: this.checkAgents(),
+      jobs: this.checkJobs(),
+      system: this.checkSystemHealth(),
+      logs: this.checkLogs()
     };
-
-    fs.writeFileSync(this.statusFile, JSON.stringify(mockStatus, null, 2));
-    console.log('✅ Mock status generated successfully!');
     
-    return mockStatus;
+    this.displayStatus(status);
+    return status;
+  }
+
+  checkAgents() {
+    try {
+      const registryPath = path.join(this.dataPath, 'agent-registry.json');
+      if (!fs.existsSync(registryPath)) {
+        return { status: 'no-registry', agents: [] };
+      }
+
+      const data = fs.readFileSync(registryPath, 'utf8');
+      const agents = JSON.parse(data);
+      
+      const running = agents.filter(a => a.status === 'running').length;
+      const stopped = agents.filter(a => a.status === 'stopped').length;
+      const error = agents.filter(a => a.status === 'error').length;
+      
+      return {
+        status: 'ok',
+        total: agents.length,
+        running,
+        stopped,
+        error,
+        agents: agents.map(a => ({
+          id: a.id,
+          name: a.name,
+          type: a.type,
+          status: a.status,
+          lastActive: a.lastActive
+        }))
+      };
+    } catch (error) {
+      return { status: 'error', error: error.message };
+    }
+  }
+
+  checkJobs() {
+    try {
+      const registryPath = path.join(this.dataPath, 'job-registry.json');
+      if (!fs.existsSync(registryPath)) {
+        return { status: 'no-registry', jobs: [] };
+      }
+
+      const data = fs.readFileSync(registryPath, 'utf8');
+      const jobs = JSON.parse(data);
+      
+      const enabled = jobs.filter(j => j.enabled).length;
+      const disabled = jobs.filter(j => !j.enabled).length;
+      
+      return {
+        status: 'ok',
+        total: jobs.length,
+        enabled,
+        disabled,
+        jobs: jobs.map(j => ({
+          id: j.id,
+          name: j.name,
+          schedule: j.schedule,
+          enabled: j.enabled,
+          lastRun: j.lastRun,
+          nextRun: j.nextRun
+        }))
+      };
+    } catch (error) {
+      return { status: 'error', error: error.message };
+    }
+  }
+
+  checkSystemHealth() {
+    const health = {
+      dataDirectory: fs.existsSync(this.dataPath),
+      logDirectory: fs.existsSync(path.join(__dirname, 'logs')),
+      agentsDirectory: fs.existsSync(path.join(__dirname, 'agents')),
+      templatesDirectory: fs.existsSync(path.join(__dirname, 'templates'))
+    };
+    
+    const allHealthy = Object.values(health).every(h => h);
+    
+    return {
+      status: allHealthy ? 'healthy' : 'warning',
+      checks: health
+    };
+  }
+
+  checkLogs() {
+    try {
+      const logsPath = path.join(__dirname, 'logs');
+      if (!fs.existsSync(logsPath)) {
+        return { status: 'no-logs', files: [] };
+      }
+
+      const files = fs.readdirSync(logsPath);
+      const logFiles = files.filter(f => f.endsWith('.log'));
+      
+      return {
+        status: 'ok',
+        totalFiles: logFiles.length,
+        files: logFiles.map(f => ({
+          name: f,
+          size: fs.statSync(path.join(logsPath, f)).size,
+          modified: fs.statSync(path.join(logsPath, f)).mtime
+        }))
+      };
+    } catch (error) {
+      return { status: 'error', error: error.message };
+    }
+  }
+
+  displayStatus(status) {
+    console.log('📊 SYSTEM STATUS SUMMARY');
+    console.log('========================\n');
+
+    // Agents Status
+    console.log('🤖 AGENTS:');
+    if (status.agents.status === 'ok') {
+      console.log(`   Total: ${status.agents.total}`);
+      console.log(`   Running: ${status.agents.running} ✅`);
+      console.log(`   Stopped: ${status.agents.stopped} ⏸️`);
+      console.log(`   Errors: ${status.agents.error} ❌`);
+      
+      if (status.agents.agents.length > 0) {
+        console.log('\n   Agent Details:');
+        status.agents.agents.forEach(agent => {
+          const statusIcon = agent.status === 'running' ? '✅' : 
+                           agent.status === 'stopped' ? '⏸️' : '❌';
+          console.log(`     ${statusIcon} ${agent.name} (${agent.type})`);
+        });
+      }
+    } else {
+      console.log(`   Status: ${status.agents.status}`);
+      if (status.agents.error) {
+        console.log(`   Error: ${status.agents.error}`);
+      }
+    }
+
+    console.log('\n⏰ JOBS:');
+    if (status.jobs.status === 'ok') {
+      console.log(`   Total: ${status.jobs.total}`);
+      console.log(`   Enabled: ${status.jobs.enabled} ✅`);
+      console.log(`   Disabled: ${status.jobs.disabled} ⏸️`);
+      
+      if (status.jobs.jobs.length > 0) {
+        console.log('\n   Job Details:');
+        status.jobs.jobs.forEach(job => {
+          const statusIcon = job.enabled ? '✅' : '⏸️';
+          console.log(`     ${statusIcon} ${job.name} (${job.schedule})`);
+        });
+      }
+    } else {
+      console.log(`   Status: ${status.jobs.status}`);
+      if (status.jobs.error) {
+        console.log(`   Error: ${status.jobs.error}`);
+      }
+    }
+
+    console.log('\n🏥 SYSTEM HEALTH:');
+    const healthIcon = status.system.status === 'healthy' ? '✅' : '⚠️';
+    console.log(`   Overall: ${status.system.status} ${healthIcon}`);
+    
+    Object.entries(status.system.checks).forEach(([check, healthy]) => {
+      const icon = healthy ? '✅' : '❌';
+      console.log(`     ${icon} ${check}`);
+    });
+
+    console.log('\n📝 LOGS:');
+    if (status.logs.status === 'ok') {
+      console.log(`   Total Files: ${status.logs.totalFiles}`);
+      if (status.logs.files.length > 0) {
+        console.log('\n   Log Files:');
+        status.logs.files.forEach(file => {
+          const sizeKB = Math.round(file.size / 1024);
+          console.log(`     📄 ${file.name} (${sizeKB}KB)`);
+        });
+      }
+    } else {
+      console.log(`   Status: ${status.logs.status}`);
+    }
+
+    console.log('\n' + '='.repeat(50));
+  }
+
+  getDetailedStatus() {
+    const status = this.checkSystemStatus();
+    
+    // Additional detailed information
+    const details = {
+      ...status,
+      recommendations: this.generateRecommendations(status),
+      actions: this.generateActions(status)
+    };
+    
+    return details;
+  }
+
+  generateRecommendations(status) {
+    const recommendations = [];
+    
+    if (status.agents.status === 'ok') {
+      if (status.agents.error > 0) {
+        recommendations.push('Restart agents with error status');
+      }
+      if (status.agents.running === 0) {
+        recommendations.push('Start agents to begin processing');
+      }
+    }
+    
+    if (status.jobs.status === 'ok') {
+      if (status.jobs.enabled === 0) {
+        recommendations.push('Enable scheduled jobs for automation');
+      }
+    }
+    
+    if (status.system.status !== 'healthy') {
+      recommendations.push('Check system directories and permissions');
+    }
+    
+    return recommendations;
+  }
+
+  generateActions(status) {
+    const actions = [];
+    
+    if (status.agents.status === 'ok' && status.agents.error > 0) {
+      actions.push('Run: node automation/restart-autonomous-system.js');
+    }
+    
+    if (status.system.status !== 'healthy') {
+      actions.push('Run: node automation/initialize-system.js');
+    }
+    
+    return actions;
   }
 }
 
 // Main execution
-async function main() {
-  const checker = new AutonomousStatusChecker();
-  
-  // Check if --mock flag is provided
-  if (process.argv.includes('--mock')) {
-    await checker.generateMockStatus();
-  }
-  
-  await checker.checkSystemStatus();
-}
-
-// Run the checker if this file is executed directly
 if (require.main === module) {
-  main().catch(error => {
-    console.error('❌ Error:', error);
-    process.exit(1);
-  });
+  const checker = new AutonomousStatusChecker();
+  checker.checkSystemStatus();
 }
 
 module.exports = AutonomousStatusChecker; 
