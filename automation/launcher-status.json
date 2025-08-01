@@ -1,0 +1,36 @@
+{
+  "isRunning": true,
+  "startTime": "2025-08-01T02:50:00.968Z",
+  "agents": {
+    "improvement": {
+      "isRunning": false,
+      "lastExit": "2025-08-01T02:50:31.115Z",
+      "exitCode": 1,
+      "signal": null
+    },
+    "content": {
+      "isRunning": true,
+      "startTime": "2025-08-01T02:50:35.140Z",
+      "pid": 88355
+    },
+    "analytics": {
+      "isRunning": false,
+      "lastExit": "2025-08-01T02:50:31.120Z",
+      "exitCode": 1,
+      "signal": null
+    },
+    "health": {
+      "isRunning": true,
+      "startTime": "2025-08-01T02:50:00.981Z",
+      "pid": 86685
+    },
+    "backup": {
+      "isRunning": false,
+      "lastExit": "2025-08-01T02:50:01.070Z",
+      "exitCode": 0,
+      "signal": null
+    }
+  },
+  "totalUptime": 0,
+  "restarts": 1
+}

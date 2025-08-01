@@ -1,0 +1,40 @@
+{
+  "lastCheck": "2025-08-01T02:50:05.038Z",
+  "systemHealth": "critical",
+  "agentStatus": {
+    "improvement": {
+      "isRunning": false,
+      "lastActivity": null,
+      "errors": [
+        "Status file not found"
+      ],
+      "cyclesCompleted": 0
+    },
+    "content": {
+      "isRunning": false,
+      "lastActivity": null,
+      "errors": [
+        "Status file not found"
+      ],
+      "cyclesCompleted": 0
+    },
+    "analytics": {
+      "isRunning": false,
+      "lastActivity": null,
+      "errors": [
+        "Status file not found"
+      ],
+      "cyclesCompleted": 0
+    }
+  },
+  "issues": [
+    "improvement agent is not running",
+    "content agent is not running",
+    "analytics agent is not running"
+  ],
+  "performance": {
+    "cpu": 0,
+    "memory": null,
+    "disk": 0
+  }
+}
