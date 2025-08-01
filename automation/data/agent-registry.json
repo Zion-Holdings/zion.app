@@ -1,0 +1,41 @@
+[
+  {
+    "id": "23f0f087-b4c8-419d-ba21-b81a59324583",
+    "type": "content-generation",
+    "name": "Content-generation Agent",
+    "status": "created",
+    "capabilities": [
+      "ai-writing",
+      "seo-optimization",
+      "content-planning"
+    ],
+    "services": [
+      "blog-posts",
+      "product-descriptions",
+      "social-media-content"
+    ],
+    "dependencies": [
+      "openai",
+      "markdown"
+    ],
+    "config": {
+      "maxContentLength": 2000,
+      "seoOptimization": true,
+      "plagiarismCheck": true
+    },
+    "createdAt": "2025-08-01T11:58:53.987Z",
+    "lastActive": "2025-08-01T11:58:53.987Z",
+    "performance": {
+      "tasksCompleted": 0,
+      "tasksFailed": 0,
+      "averageResponseTime": 0,
+      "uptime": 0
+    },
+    "logs": [],
+    "health": {
+      "status": "healthy",
+      "lastCheck": "2025-08-01T11:58:53.987Z",
+      "errors": []
+    }
+  }
+]
