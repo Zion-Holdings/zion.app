@@ -103,18 +103,15 @@ const TalentPage: React.FC = () => {
                            talent.skills.some(skill => skill.toLowerCase().includes(searchTerm.toLowerCase()));
       const matchesSkills = selectedSkills.length === 0 || 
                            selectedSkills.some(skill => talent.skills.includes(skill));
-      const matchesAvailability = selectedAvailability === 'all' || talent.availability === selectedAvailability;
-      const matchesPrice = talent.hourlyRate >= priceRange[0] && talent.hourlyRate <= priceRange[1];
-      const matchesRegion = selectedRegion === 'all' || talent.region === selectedRegion;
       
-      return matchesSearch && matchesSkills && matchesAvailability && matchesPrice && matchesRegion;
+      return matchesSearch && matchesSkills;
     });
     setFilteredTalents(filtered);
   };
 
   useEffect(() => {
     filterTalents();
-  }, [talents, searchTerm, selectedSkills, selectedAvailability, priceRange, selectedRegion]);
+  }, [talents, searchTerm, selectedSkills]);
 
   const handleSkillToggle = (skill: string) => {
     setSelectedSkills(prev =>
