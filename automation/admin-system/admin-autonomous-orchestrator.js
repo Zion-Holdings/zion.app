@@ -163,6 +163,19 @@ class ${agentType} {
         // Agent-specific implementation will be added by evolution
         this.logActivity('Agent started');
         this.scheduleTasks();
+        
+        // Keep the process alive
+        process.on('SIGINT', () => {
+            console.log(\`🤖 \${this.type} agent shutting down...\`);
+            this.logActivity('Agent stopped');
+            process.exit(0);
+        });
+        
+        process.on('SIGTERM', () => {
+            console.log(\`🤖 \${this.type} agent terminating...\`);
+            this.logActivity('Agent terminated');
+            process.exit(0);
+        });
     }
 
     logActivity(message) {
@@ -194,13 +207,31 @@ class ${agentType} {
     async performTasks() {
         // Agent-specific tasks
         this.logActivity('Performing scheduled tasks');
+        
+        // Update status
+        this.updateStatus();
+    }
+    
+    updateStatus() {
+        const statusPath = path.join(this.adminConfig.statusPath, \`\${this.type}-status.json\`);
+        const status = {
+            agentId: this.agentId,
+            type: this.type,
+            status: 'active',
+            lastActivity: new Date().toISOString(),
+            pid: process.pid
+        };
+        
+        fs.writeFileSync(statusPath, JSON.stringify(status, null, 2));
     }
 }
 
-// Start the agent
-new ${agentType}();
+// Start the agent if this file is executed directly
+if (require.main === module) {
+    const agent = new ${agentType}();
+}
 `;
-
+        
         return baseCode;
     }
 
