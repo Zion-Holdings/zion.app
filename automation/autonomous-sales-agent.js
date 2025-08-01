@@ -895,6 +895,22 @@ Payback Period: ${solution.roi.paybackPeriod}
 Ready to learn more?`;
     }
 
+    generateEmailBody(campaign) {
+        return `Dear Business Professional,
+
+${campaign.solutionName} can transform your business operations.
+
+Key Benefits:
+• Advanced AI capabilities
+• Competitive pricing
+• Proven ROI
+
+Ready to learn more?
+
+Best regards,
+The ${campaign.solutionName} Team`;
+    }
+
     generateImageSuggestions(solution) {
         return [
             'Product screenshot',

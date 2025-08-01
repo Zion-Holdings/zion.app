@@ -1,53 +1,70 @@
 #!/bin/bash
 
-# Autonomous Agent System Startup Script
+# Simple startup script for the autonomous agent system
 
 set -e
 
-echo "🚀 Starting Autonomous Agent System..."
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+LOG_DIR="$SCRIPT_DIR/logs"
+PID_DIR="$SCRIPT_DIR/pids"
 
-# Colors for output
-GREEN='\033[0;32m'
-BLUE='\033[0;34m'
-NC='\033[0m'
+# Create necessary directories
+mkdir -p "$LOG_DIR" "$PID_DIR"
 
-# Function to print colored output
-print_status() {
-    echo -e "${BLUE}[INFO]${NC} $1"
+# Logging function
+log() {
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1"
 }
 
-print_success() {
-    echo -e "${GREEN}[SUCCESS]${NC} $1"
-}
+log "Starting Autonomous Agent System..."
 
-# Navigate to the automation directory
-cd "$(dirname "$0")"
+# Start master orchestrator
+log "Starting Master Orchestrator..."
+nohup node autonomous-master-orchestrator.js > "$LOG_DIR/master-orchestrator.log" 2>&1 &
+echo $! > "$PID_DIR/master-orchestrator.pid"
+log "Master Orchestrator started (PID: $(cat $PID_DIR/master-orchestrator.pid))"
 
-# Check if Node.js is available
-if ! command -v node &> /dev/null; then
-    echo "❌ Node.js is not installed. Please install Node.js first."
-    exit 1
-fi
+# Start website analyzer
+log "Starting Website Analyzer..."
+nohup node enhanced-website-analyzer-agent.js > "$LOG_DIR/website-analyzer.log" 2>&1 &
+echo $! > "$PID_DIR/website-analyzer.pid"
+log "Website Analyzer started (PID: $(cat $PID_DIR/website-analyzer.pid))"
 
-# Check if dependencies are installed
-if [ ! -d "node_modules" ]; then
-    echo "📦 Installing dependencies..."
-    npm install
-fi
+# Start content generator
+log "Starting Content Generator..."
+nohup node enhanced-content-generator-agent.js > "$LOG_DIR/content-generator.log" 2>&1 &
+echo $! > "$PID_DIR/content-generator.pid"
+log "Content Generator started (PID: $(cat $PID_DIR/content-generator.pid))"
 
-# Create PID directory
-mkdir -p pids
+# Start error fixer
+log "Starting Error Fixer..."
+nohup node error-fixer-agent.js > "$LOG_DIR/error-fixer.log" 2>&1 &
+echo $! > "$PID_DIR/error-fixer.pid"
+log "Error Fixer started (PID: $(cat $PID_DIR/error-fixer.pid))"
 
-# Start the master orchestrator
-print_status "Starting master orchestrator..."
-nohup node autonomous-master-orchestrator.js > logs/master-orchestrator.log 2>&1 &
-echo $! > pids/master-orchestrator.pid
+# Start improvement agent
+log "Starting Improvement Agent..."
+nohup node autonomous-improvement-agent.js > "$LOG_DIR/improvement-agent.log" 2>&1 &
+echo $! > "$PID_DIR/improvement-agent.pid"
+log "Improvement Agent started (PID: $(cat $PID_DIR/improvement-agent.pid))"
 
-# Start monitoring
-print_status "Starting monitoring..."
-nohup node monitor-automation.js > logs/monitor.log 2>&1 &
-echo $! > pids/monitor.pid
+# Start content integrator
+log "Starting Content Integrator..."
+nohup node content-integration-agent.js > "$LOG_DIR/content-integrator.log" 2>&1 &
+echo $! > "$PID_DIR/content-integrator.pid"
+log "Content Integrator started (PID: $(cat $PID_DIR/content-integrator.pid))"
 
-print_success "Autonomous Agent System started successfully"
-print_status "Check logs/ directory for detailed logs"
-print_status "Use stop-autonomous-system.sh to stop the system"
+log "All agents started successfully!"
+log "Check logs in $LOG_DIR for detailed output"
+log "Check PIDs in $PID_DIR for process management"
+
+# Show status
+echo ""
+echo "=== System Status ==="
+ps aux | grep -E "node.*agent|node.*orchestrator" | grep -v grep
+echo ""
+echo "=== Active PIDs ==="
+ls -la "$PID_DIR"/*.pid 2>/dev/null || echo "No PID files found"
+echo ""
+echo "=== Recent Logs ==="
+tail -n 5 "$LOG_DIR"/*.log 2>/dev/null || echo "No log files found"
