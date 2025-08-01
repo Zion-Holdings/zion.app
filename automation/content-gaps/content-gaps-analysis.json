@@ -1,0 +1,132 @@
+[
+  {
+    "url": "https://ziontechgroup.netlify.app",
+    "gaps": [
+      {
+        "type": "missing-images",
+        "severity": "low",
+        "description": "Page could benefit from visual content"
+      }
+    ]
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/marketplace/",
+    "gaps": [
+      {
+        "type": "missing-images",
+        "severity": "low",
+        "description": "Page could benefit from visual content"
+      }
+    ]
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/services/",
+    "gaps": [
+      {
+        "type": "missing-images",
+        "severity": "low",
+        "description": "Page could benefit from visual content"
+      }
+    ]
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/talents/",
+    "gaps": [
+      {
+        "type": "missing-images",
+        "severity": "low",
+        "description": "Page could benefit from visual content"
+      }
+    ]
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/equipment/",
+    "gaps": [
+      {
+        "type": "missing-images",
+        "severity": "low",
+        "description": "Page could benefit from visual content"
+      }
+    ]
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/auth/login/",
+    "gaps": [
+      {
+        "type": "missing-images",
+        "severity": "low",
+        "description": "Page could benefit from visual content"
+      },
+      {
+        "type": "insufficient-content",
+        "severity": "medium",
+        "description": "Page has insufficient content for SEO"
+      }
+    ]
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/auth/signup/",
+    "gaps": [
+      {
+        "type": "missing-images",
+        "severity": "low",
+        "description": "Page could benefit from visual content"
+      },
+      {
+        "type": "insufficient-content",
+        "severity": "medium",
+        "description": "Page has insufficient content for SEO"
+      }
+    ]
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/quote-request/",
+    "gaps": [
+      {
+        "type": "missing-meta-description",
+        "severity": "medium",
+        "description": "Page lacks meta description for SEO"
+      },
+      {
+        "type": "missing-images",
+        "severity": "low",
+        "description": "Page could benefit from visual content"
+      }
+    ]
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/about/",
+    "gaps": [
+      {
+        "type": "missing-images",
+        "severity": "low",
+        "description": "Page could benefit from visual content"
+      },
+      {
+        "type": "missing-contact-form",
+        "severity": "medium",
+        "description": "Contact page lacks contact form"
+      }
+    ]
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/contact/",
+    "gaps": [
+      {
+        "type": "missing-images",
+        "severity": "low",
+        "description": "Page could benefit from visual content"
+      },
+      {
+        "type": "missing-contact-form",
+        "severity": "medium",
+        "description": "Contact page lacks contact form"
+      },
+      {
+        "type": "insufficient-content",
+        "severity": "medium",
+        "description": "Page has insufficient content for SEO"
+      }
+    ]
+  }
+]

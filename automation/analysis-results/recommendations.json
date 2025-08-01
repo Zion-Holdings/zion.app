@@ -1,0 +1,495 @@
+{
+  "timestamp": "2025-08-01T05:16:51.147Z",
+  "summary": {
+    "totalPages": 10,
+    "missingPages": 26,
+    "contentGaps": 10,
+    "errors": 0
+  },
+  "priorities": {
+    "high": [
+      {
+        "url": "https://ziontechgroup.netlify.app/about",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /about"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/contact",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /contact"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/services",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /services"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/products",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /products"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/blog",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /blog"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/privacy-policy",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /privacy-policy"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/terms-of-service",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /terms-of-service"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/sitemap",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /sitemap"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/robots.txt",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /robots.txt"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/404",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /404"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/login",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /login"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/signup",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /signup"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/dashboard",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /dashboard"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/profile",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /profile"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/admin",
+        "type": "expected-page",
+        "priority": "high",
+        "description": "Missing expected page: /admin"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/innovation/",
+        "type": "broken-link",
+        "priority": "high",
+        "description": "Broken link: Request failed with status code 404",
+        "error": "Request failed with status code 404"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/blog/",
+        "type": "broken-link",
+        "priority": "high",
+        "description": "Broken link: Request failed with status code 404",
+        "error": "Request failed with status code 404"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/careers/",
+        "type": "broken-link",
+        "priority": "high",
+        "description": "Broken link: Request failed with status code 404",
+        "error": "Request failed with status code 404"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/press/",
+        "type": "broken-link",
+        "priority": "high",
+        "description": "Broken link: Request failed with status code 404",
+        "error": "Request failed with status code 404"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/help/",
+        "type": "broken-link",
+        "priority": "high",
+        "description": "Broken link: Request failed with status code 404",
+        "error": "Request failed with status code 404"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/status/",
+        "type": "broken-link",
+        "priority": "high",
+        "description": "Broken link: Request failed with status code 404",
+        "error": "Request failed with status code 404"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/security/",
+        "type": "broken-link",
+        "priority": "high",
+        "description": "Broken link: Request failed with status code 404",
+        "error": "Request failed with status code 404"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/services/ai-development/",
+        "type": "broken-link",
+        "priority": "high",
+        "description": "Broken link: Request failed with status code 404",
+        "error": "Request failed with status code 404"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/services/cloud-services/",
+        "type": "broken-link",
+        "priority": "high",
+        "description": "Broken link: Request failed with status code 404",
+        "error": "Request failed with status code 404"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/services/blockchain/",
+        "type": "broken-link",
+        "priority": "high",
+        "description": "Broken link: Request failed with status code 404",
+        "error": "Request failed with status code 404"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/services/data-analytics/",
+        "type": "broken-link",
+        "priority": "high",
+        "description": "Broken link: Request failed with status code 404",
+        "error": "Request failed with status code 404"
+      }
+    ],
+    "medium": [],
+    "low": []
+  },
+  "actionItems": [
+    {
+      "type": "create-missing-pages",
+      "priority": "high",
+      "description": "Create missing high-priority pages",
+      "pages": [
+        {
+          "url": "https://ziontechgroup.netlify.app/about",
+          "type": "expected-page",
+          "priority": "high",
+          "description": "Missing expected page: /about"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/contact",
+          "type": "expected-page",
+          "priority": "high",
+          "description": "Missing expected page: /contact"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/services",
+          "type": "expected-page",
+          "priority": "high",
+          "description": "Missing expected page: /services"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/products",
+          "type": "expected-page",
+          "priority": "high",
+          "description": "Missing expected page: /products"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/blog",
+          "type": "expected-page",
+          "priority": "high",
+          "description": "Missing expected page: /blog"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/privacy-policy",
+          "type": "expected-page",
+          "priority": "high",
+          "description": "Missing expected page: /privacy-policy"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/terms-of-service",
+          "type": "expected-page",
+          "priority": "high",
+          "description": "Missing expected page: /terms-of-service"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/sitemap",
+          "type": "expected-page",
+          "priority": "high",
+          "description": "Missing expected page: /sitemap"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/robots.txt",
+          "type": "expected-page",
+          "priority": "high",
+          "description": "Missing expected page: /robots.txt"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/404",
+          "type": "expected-page",
+          "priority": "high",
+          "description": "Missing expected page: /404"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/login",
+          "type": "expected-page",
+          "priority": "high",
+          "description": "Missing expected page: /login"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/signup",
+          "type": "expected-page",
+          "priority": "high",
+          "description": "Missing expected page: /signup"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/dashboard",
+          "type": "expected-page",
+          "priority": "high",
+          "description": "Missing expected page: /dashboard"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/profile",
+          "type": "expected-page",
+          "priority": "high",
+          "description": "Missing expected page: /profile"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/admin",
+          "type": "expected-page",
+          "priority": "high",
+          "description": "Missing expected page: /admin"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/innovation/",
+          "type": "broken-link",
+          "priority": "high",
+          "description": "Broken link: Request failed with status code 404",
+          "error": "Request failed with status code 404"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/blog/",
+          "type": "broken-link",
+          "priority": "high",
+          "description": "Broken link: Request failed with status code 404",
+          "error": "Request failed with status code 404"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/careers/",
+          "type": "broken-link",
+          "priority": "high",
+          "description": "Broken link: Request failed with status code 404",
+          "error": "Request failed with status code 404"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/press/",
+          "type": "broken-link",
+          "priority": "high",
+          "description": "Broken link: Request failed with status code 404",
+          "error": "Request failed with status code 404"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/help/",
+          "type": "broken-link",
+          "priority": "high",
+          "description": "Broken link: Request failed with status code 404",
+          "error": "Request failed with status code 404"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/status/",
+          "type": "broken-link",
+          "priority": "high",
+          "description": "Broken link: Request failed with status code 404",
+          "error": "Request failed with status code 404"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/security/",
+          "type": "broken-link",
+          "priority": "high",
+          "description": "Broken link: Request failed with status code 404",
+          "error": "Request failed with status code 404"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/services/ai-development/",
+          "type": "broken-link",
+          "priority": "high",
+          "description": "Broken link: Request failed with status code 404",
+          "error": "Request failed with status code 404"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/services/cloud-services/",
+          "type": "broken-link",
+          "priority": "high",
+          "description": "Broken link: Request failed with status code 404",
+          "error": "Request failed with status code 404"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/services/blockchain/",
+          "type": "broken-link",
+          "priority": "high",
+          "description": "Broken link: Request failed with status code 404",
+          "error": "Request failed with status code 404"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/services/data-analytics/",
+          "type": "broken-link",
+          "priority": "high",
+          "description": "Broken link: Request failed with status code 404",
+          "error": "Request failed with status code 404"
+        }
+      ]
+    },
+    {
+      "type": "improve-content",
+      "priority": "medium",
+      "description": "Improve content quality and SEO",
+      "gaps": [
+        {
+          "url": "https://ziontechgroup.netlify.app",
+          "gaps": [
+            {
+              "type": "missing-images",
+              "severity": "low",
+              "description": "Page could benefit from visual content"
+            }
+          ]
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/marketplace/",
+          "gaps": [
+            {
+              "type": "missing-images",
+              "severity": "low",
+              "description": "Page could benefit from visual content"
+            }
+          ]
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/services/",
+          "gaps": [
+            {
+              "type": "missing-images",
+              "severity": "low",
+              "description": "Page could benefit from visual content"
+            }
+          ]
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/talents/",
+          "gaps": [
+            {
+              "type": "missing-images",
+              "severity": "low",
+              "description": "Page could benefit from visual content"
+            }
+          ]
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/equipment/",
+          "gaps": [
+            {
+              "type": "missing-images",
+              "severity": "low",
+              "description": "Page could benefit from visual content"
+            }
+          ]
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/auth/login/",
+          "gaps": [
+            {
+              "type": "missing-images",
+              "severity": "low",
+              "description": "Page could benefit from visual content"
+            },
+            {
+              "type": "insufficient-content",
+              "severity": "medium",
+              "description": "Page has insufficient content for SEO"
+            }
+          ]
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/auth/signup/",
+          "gaps": [
+            {
+              "type": "missing-images",
+              "severity": "low",
+              "description": "Page could benefit from visual content"
+            },
+            {
+              "type": "insufficient-content",
+              "severity": "medium",
+              "description": "Page has insufficient content for SEO"
+            }
+          ]
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/quote-request/",
+          "gaps": [
+            {
+              "type": "missing-meta-description",
+              "severity": "medium",
+              "description": "Page lacks meta description for SEO"
+            },
+            {
+              "type": "missing-images",
+              "severity": "low",
+              "description": "Page could benefit from visual content"
+            }
+          ]
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/about/",
+          "gaps": [
+            {
+              "type": "missing-images",
+              "severity": "low",
+              "description": "Page could benefit from visual content"
+            },
+            {
+              "type": "missing-contact-form",
+              "severity": "medium",
+              "description": "Contact page lacks contact form"
+            }
+          ]
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/contact/",
+          "gaps": [
+            {
+              "type": "missing-images",
+              "severity": "low",
+              "description": "Page could benefit from visual content"
+            },
+            {
+              "type": "missing-contact-form",
+              "severity": "medium",
+              "description": "Contact page lacks contact form"
+            },
+            {
+              "type": "insufficient-content",
+              "severity": "medium",
+              "description": "Page has insufficient content for SEO"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

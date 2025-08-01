@@ -1,0 +1,114 @@
+{
+  "url": "https://ziontechgroup.netlify.app/about/",
+  "timestamp": "2025-08-01T05:16:38.970Z",
+  "pageInfo": {
+    "title": "About - Zion",
+    "description": "Learn about Zion's mission to revolutionize the marketplace with AI-powered solutions",
+    "keywords": "",
+    "headings": [
+      {
+        "level": "h1",
+        "text": "Revolutionizing the Marketplace"
+      },
+      {
+        "level": "h2",
+        "text": "Our Mission"
+      },
+      {
+        "level": "h3",
+        "text": "Key Features"
+      },
+      {
+        "level": "h2",
+        "text": "Powered by Advanced Technology"
+      },
+      {
+        "level": "h3",
+        "text": "Machine Learning"
+      },
+      {
+        "level": "h3",
+        "text": "Blockchain"
+      },
+      {
+        "level": "h3",
+        "text": "Cloud Native"
+      }
+    ],
+    "content": "ZionMarketplaceAboutLoginRevolutionizing the MarketplaceZion is the premier AI-powered marketplace connecting businesses with top-tier IT services, AI talents, cutting-edge equipment, and innovative solutions.Our MissionWe believe that every business deserves access to the best technology solutions, regardless of their size or location. Zion bridges the gap between innovative service providers and businesses seeking cutting-edge solutions.Through our advanced AI matching algorithms and secure blockchain technology, we ensure that every connection is meaningful, every transaction is transparent, and every partnership drives real business growth.Explore MarketplaceJoin ZionKey Features🤖AI-Powered Matching Algorithms🔒Secure Blockchain Transactions🌐Global Network Connectivity⚡99.9% Transaction Success Rate10K+Active Users500+Service Providers99.9%Success Rate24/7SupportPowered by Advanced TechnologyOur platform leverages cutting-edge technologies to deliver exceptional user experiences🧠Machine LearningAdvanced algorithms that learn and improve with every interaction🔗BlockchainSecure and transparent transaction processing☁️Cloud NativeScalable infrastructure built for global reach{\"props\":{\"pageProps\":{}},\"page\":\"/about\",\"query\":{},\"buildId\":\"zVUwnJXgu1RvJi918S1Nz\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "images": [],
+    "forms": [],
+    "scripts": [
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-cefddfb7403e4fd5.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-1594f84e519182f7.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-6c7b577d93bc49de.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-cc39fd0a0daab8c4.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/3996-e453775e721acca3.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/about-cea741e245ff3eea.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/zVUwnJXgu1RvJi918S1Nz/_buildManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/zVUwnJXgu1RvJi918S1Nz/_ssgManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "",
+        "type": "application/json"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-8189f5f9fa1100da.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-1b16adbab6ffd7db.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8484b74dc5c8a75e.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-e2754f9f704e5488.js",
+        "type": "text/javascript"
+      }
+    ],
+    "stylesheets": [
+      {
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/360aa9a8dc4df9b7.css",
+        "media": "all"
+      }
+    ]
+  },
+  "analytics": {
+    "contentLength": 1359,
+    "headingCount": 7,
+    "imageCount": 0,
+    "formCount": 0,
+    "scriptCount": 14,
+    "stylesheetCount": 1
+  }
+}

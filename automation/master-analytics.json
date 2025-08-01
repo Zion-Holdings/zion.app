@@ -5,5 +5,13 @@
     "pagesCreated": 0,
     "contentGenerated": 16,
     "errors": 0
+  },
+  "lastWebsiteAnalysis": {
+    "timestamp": "2025-08-01T05:16:51.148Z",
+    "agentId": "analyzer-1754025378896",
+    "pagesAnalyzed": 10,
+    "missingPages": 26,
+    "contentGaps": 10,
+    "errors": 0
   }
 }
