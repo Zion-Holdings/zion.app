@@ -464,7 +464,7 @@ The AI Solutions Team`
     async generateEmailContent(campaign, contentDir) {
         const emailContent = {
             subject: campaign.content?.emailMarketing?.subject || `Learn about ${campaign.solutionName}`,
-            body: campaign.content?.emailMarketing?.body || this.generateEmailContent(campaign),
+            body: campaign.content?.emailMarketing?.body || this.generateEmailBody(campaign),
             segments: campaign.content?.emailMarketing?.segments || [],
             automation: this.generateEmailAutomation(campaign)
         };
@@ -508,7 +508,7 @@ The AI Solutions Team`
                 trigger: 'Sign up',
                 delay: 'Immediate',
                 subject: `Welcome to ${campaign.solutionName}`,
-                content: campaign.content?.emailMarketing?.body || this.generateEmailContent(campaign)
+                content: campaign.content?.emailMarketing?.body || this.generateEmailBody(campaign)
             },
             nurture: {
                 trigger: 'No purchase after 3 days',
@@ -527,9 +527,9 @@ The AI Solutions Team`
 
     generateContentCalendar(campaign) {
         const calendar = [];
-        const blogPosts = campaign.content.contentMarketing.blogPosts;
-        const whitepapers = campaign.content.contentMarketing.whitepapers;
-        const caseStudies = campaign.content.contentMarketing.caseStudies;
+        const blogPosts = campaign.content?.contentMarketing?.blogPosts || [];
+        const whitepapers = campaign.content?.contentMarketing?.whitepapers || [];
+        const caseStudies = campaign.content?.contentMarketing?.caseStudies || [];
         
         // Schedule blog posts
         blogPosts.forEach((post, index) => {
