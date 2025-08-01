@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // Remove static export to support API routes
   trailingSlash: true,
   images: {
     unoptimized: true
   },
-  // Disable server-side rendering features for static export
+  // Enable server-side features for API routes
   typescript: {
     ignoreBuildErrors: true
   },

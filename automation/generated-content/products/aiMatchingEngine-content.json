@@ -1,0 +1,227 @@
+{
+  "type": "product",
+  "productType": "aiMatchingEngine",
+  "content": {
+    "overview": {
+      "title": "Zion AI Matching Engine",
+      "subtitle": "An intelligent matching engine that uses advanced AI algorithms to connect enterprises with the perfect AI services and talent.",
+      "category": "AI & Machine Learning",
+      "targetAudience": "enterprises",
+      "industry": "technology"
+    },
+    "features": [
+      {
+        "name": "Machine learning algorithms",
+        "description": "Advanced machine learning algorithms capabilities designed for enterprise use.",
+        "category": "AI/ML",
+        "priority": "medium"
+      },
+      {
+        "name": "Natural language processing",
+        "description": "Advanced natural language processing capabilities designed for enterprise use.",
+        "category": "Platform",
+        "priority": "medium"
+      },
+      {
+        "name": "Behavioral analysis",
+        "description": "Advanced behavioral analysis capabilities designed for enterprise use.",
+        "category": "Platform",
+        "priority": "medium"
+      },
+      {
+        "name": "Predictive modeling",
+        "description": "Advanced predictive modeling capabilities designed for enterprise use.",
+        "category": "Platform",
+        "priority": "medium"
+      },
+      {
+        "name": "Real-time matching",
+        "description": "Advanced real-time matching capabilities designed for enterprise use.",
+        "category": "Platform",
+        "priority": "medium"
+      },
+      {
+        "name": "Continuous learning",
+        "description": "Advanced continuous learning capabilities designed for enterprise use.",
+        "category": "Platform",
+        "priority": "medium"
+      }
+    ],
+    "benefits": [
+      {
+        "metric": "95%",
+        "description": "95% match accuracy rate",
+        "impact": "high"
+      },
+      {
+        "metric": "80%",
+        "description": "Reduce search time by 80%",
+        "impact": "medium"
+      },
+      {
+        "metric": "90%",
+        "description": "Increase satisfaction by 90%",
+        "impact": "medium"
+      },
+      {
+        "metric": null,
+        "description": "Automated quality scoring",
+        "impact": "low"
+      }
+    ],
+    "specifications": {
+      "technical": {
+        "platform": "AI-powered SaaS",
+        "scalability": "Millions of matches per day",
+        "security": "Data encryption at rest and in transit",
+        "uptime": "99.95%"
+      },
+      "support": {
+        "support": "AI specialist support",
+        "integration": "API-first architecture"
+      },
+      "compliance": {
+        "gdpr": "Compliant",
+        "soc2": "Certified",
+        "iso27001": "Certified"
+      }
+    },
+    "pricing": {
+      "currency": "USD",
+      "billing": "Monthly",
+      "plans": [
+        {
+          "name": "Starter",
+          "price": "$79/month",
+          "features": [
+            {
+              "name": "Up to 1,000 matches",
+              "included": true
+            },
+            {
+              "name": "Basic AI algorithms",
+              "included": true
+            },
+            {
+              "name": "Email support",
+              "included": true
+            }
+          ],
+          "recommended": false
+        },
+        {
+          "name": "Professional",
+          "price": "$249/month",
+          "features": [
+            {
+              "name": "Up to 10,000 matches",
+              "included": true
+            },
+            {
+              "name": "Advanced AI algorithms",
+              "included": true
+            },
+            {
+              "name": "Priority support",
+              "included": true
+            },
+            {
+              "name": "Custom models",
+              "included": true
+            }
+          ],
+          "recommended": true
+        },
+        {
+          "name": "Enterprise",
+          "price": "Custom",
+          "features": [
+            {
+              "name": "Unlimited matches",
+              "included": true
+            },
+            {
+              "name": "Custom AI models",
+              "included": true
+            },
+            {
+              "name": "Dedicated support",
+              "included": true
+            },
+            {
+              "name": "White-label solution",
+              "included": true
+            }
+          ],
+          "recommended": false
+        }
+      ],
+      "customPricing": "Available for enterprise customers"
+    },
+    "useCases": [
+      {
+        "title": "Intelligent Matching",
+        "description": "Connect businesses with the perfect AI services using advanced ML algorithms.",
+        "industry": "All Industries",
+        "complexity": "Low"
+      },
+      {
+        "title": "Quality Assurance",
+        "description": "Ensure service quality through automated scoring and verification systems.",
+        "industry": "All Industries",
+        "complexity": "Medium"
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Dr. Sarah Chen",
+        "role": "CTO, TechFlow Inc.",
+        "company": "Technology",
+        "content": "The AI matching engine revolutionized our hiring process. We found our lead AI engineer in just 48 hours with a perfect skill match.",
+        "rating": 5,
+        "product": "aiMatchingEngine"
+      },
+      {
+        "name": "Michael Rodriguez",
+        "role": "AI Consultant",
+        "company": "Independent",
+        "content": "The blockchain network provides complete transparency and security. I've never felt more confident in marketplace transactions.",
+        "rating": 5,
+        "product": "aiMatchingEngine"
+      },
+      {
+        "name": "Emma Thompson",
+        "role": "VP Innovation, DataCorp",
+        "company": "Enterprise",
+        "content": "The platform's analytics dashboard gives us incredible insights into our AI service procurement. Highly recommended for enterprise use.",
+        "rating": 5,
+        "product": "aiMatchingEngine"
+      }
+    ],
+    "seo": {
+      "title": "Zion AI Matching Engine - AI & Machine Learning",
+      "description": "An intelligent matching engine that uses advanced AI algorithms to connect businesses with the perfect AI services and talent.",
+      "keywords": [
+        "AI marketplace",
+        "blockchain",
+        "security",
+        "automation",
+        "AI matching",
+        "machine learning",
+        "algorithms",
+        "intelligent matching"
+      ],
+      "canonical": "/products/aiMatchingEngine",
+      "ogTitle": "Zion AI Matching Engine",
+      "ogDescription": "An intelligent matching engine that uses advanced AI algorithms to connect businesses with the perfect AI services and talent.",
+      "ogType": "product"
+    }
+  },
+  "generatedAt": "2025-08-01T01:24:54.151Z",
+  "version": "1.0.0",
+  "metadata": {
+    "contentType": "product",
+    "targetAudience": "enterprises",
+    "industry": "technology"
+  }
+}

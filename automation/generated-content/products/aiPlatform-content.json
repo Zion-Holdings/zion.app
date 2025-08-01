@@ -1,0 +1,245 @@
+{
+  "type": "product",
+  "productType": "aiPlatform",
+  "content": {
+    "overview": {
+      "title": "Zion AI Platform",
+      "subtitle": "A comprehensive AI-powered marketplace platform that connects enterprises with top-tier AI services, talents, and innovative solutions.",
+      "category": "AI Marketplace Platform",
+      "targetAudience": "enterprises",
+      "industry": "technology"
+    },
+    "features": [
+      {
+        "name": "Advanced AI matching algorithms",
+        "description": "Sophisticated machine learning algorithms that analyze requirements, capabilities, and past performance to create optimal matches between buyers and sellers.",
+        "category": "AI/ML",
+        "priority": "high"
+      },
+      {
+        "name": "Secure blockchain transactions",
+        "description": "All transactions are secured with enterprise-grade blockchain technology, ensuring transparency and immutability of all marketplace activities.",
+        "category": "AI/ML",
+        "priority": "high"
+      },
+      {
+        "name": "Real-time analytics dashboard",
+        "description": "Comprehensive analytics and reporting tools that provide real-time insights into marketplace performance, user behavior, and transaction metrics.",
+        "category": "Analytics",
+        "priority": "high"
+      },
+      {
+        "name": "Global talent network",
+        "description": "Access to a worldwide network of verified AI professionals, ensuring businesses can find the right talent regardless of geographical location.",
+        "category": "Platform",
+        "priority": "medium"
+      },
+      {
+        "name": "Smart contract automation",
+        "description": "Automated execution of agreements using blockchain smart contracts, reducing manual intervention and ensuring compliance.",
+        "category": "Platform",
+        "priority": "medium"
+      },
+      {
+        "name": "Multi-language support",
+        "description": "Platform available in multiple languages to serve a global user base and facilitate international transactions.",
+        "category": "Platform",
+        "priority": "medium"
+      }
+    ],
+    "benefits": [
+      {
+        "metric": "70%",
+        "description": "Reduce time-to-hire by 70%",
+        "impact": "low"
+      },
+      {
+        "metric": "99",
+        "description": "Increase transaction success rate to 99.9%",
+        "impact": "low"
+      },
+      {
+        "metric": "40%",
+        "description": "Lower operational costs by 40%",
+        "impact": "low"
+      },
+      {
+        "metric": null,
+        "description": "Access to global AI talent pool",
+        "impact": "low"
+      }
+    ],
+    "specifications": {
+      "technical": {
+        "platform": "Cloud-based SaaS",
+        "scalability": "Unlimited users and transactions",
+        "security": "Enterprise-grade encryption",
+        "uptime": "99.9% SLA"
+      },
+      "support": {
+        "support": "24/7 technical support",
+        "integration": "REST API and webhooks"
+      },
+      "compliance": {
+        "gdpr": "Compliant",
+        "soc2": "Certified",
+        "iso27001": "Certified"
+      }
+    },
+    "pricing": {
+      "currency": "USD",
+      "billing": "Monthly",
+      "plans": [
+        {
+          "name": "Starter",
+          "price": "$99/month",
+          "features": [
+            {
+              "name": "Up to 10 users",
+              "included": true
+            },
+            {
+              "name": "Basic AI matching",
+              "included": true
+            },
+            {
+              "name": "Email support",
+              "included": true
+            },
+            {
+              "name": "5GB storage",
+              "included": true
+            }
+          ],
+          "recommended": false
+        },
+        {
+          "name": "Professional",
+          "price": "$299/month",
+          "features": [
+            {
+              "name": "Up to 100 users",
+              "included": true
+            },
+            {
+              "name": "Advanced AI matching",
+              "included": true
+            },
+            {
+              "name": "Priority support",
+              "included": true
+            },
+            {
+              "name": "50GB storage",
+              "included": true
+            },
+            {
+              "name": "API access",
+              "included": true
+            }
+          ],
+          "recommended": true
+        },
+        {
+          "name": "Enterprise",
+          "price": "Custom",
+          "features": [
+            {
+              "name": "Unlimited users",
+              "included": true
+            },
+            {
+              "name": "Custom AI algorithms",
+              "included": true
+            },
+            {
+              "name": "Dedicated support",
+              "included": true
+            },
+            {
+              "name": "Unlimited storage",
+              "included": true
+            },
+            {
+              "name": "Custom integrations",
+              "included": true
+            }
+          ],
+          "recommended": false
+        }
+      ],
+      "customPricing": "Available for enterprise customers"
+    },
+    "useCases": [
+      {
+        "title": "AI Talent Acquisition",
+        "description": "Find and hire top AI professionals for your projects with intelligent matching algorithms.",
+        "industry": "Technology",
+        "complexity": "Medium"
+      },
+      {
+        "title": "AI Service Procurement",
+        "description": "Source AI services and solutions from verified providers with quality assurance.",
+        "industry": "All Industries",
+        "complexity": "Low"
+      },
+      {
+        "title": "Equipment Marketplace",
+        "description": "Buy and sell AI infrastructure and equipment with secure blockchain transactions.",
+        "industry": "Technology",
+        "complexity": "Medium"
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Dr. Sarah Chen",
+        "role": "CTO, TechFlow Inc.",
+        "company": "Technology",
+        "content": "The AI matching engine revolutionized our hiring process. We found our lead AI engineer in just 48 hours with a perfect skill match.",
+        "rating": 5,
+        "product": "aiPlatform"
+      },
+      {
+        "name": "Michael Rodriguez",
+        "role": "AI Consultant",
+        "company": "Independent",
+        "content": "The blockchain network provides complete transparency and security. I've never felt more confident in marketplace transactions.",
+        "rating": 5,
+        "product": "aiPlatform"
+      },
+      {
+        "name": "Emma Thompson",
+        "role": "VP Innovation, DataCorp",
+        "company": "Enterprise",
+        "content": "The platform's analytics dashboard gives us incredible insights into our AI service procurement. Highly recommended for enterprise use.",
+        "rating": 5,
+        "product": "aiPlatform"
+      }
+    ],
+    "seo": {
+      "title": "Zion AI Platform - AI Marketplace Platform",
+      "description": "A comprehensive AI-powered marketplace platform that connects businesses with top-tier AI services, talents, and innovative solutions.",
+      "keywords": [
+        "AI marketplace",
+        "blockchain",
+        "security",
+        "automation",
+        "AI platform",
+        "marketplace",
+        "talent acquisition",
+        "AI services"
+      ],
+      "canonical": "/products/aiPlatform",
+      "ogTitle": "Zion AI Platform",
+      "ogDescription": "A comprehensive AI-powered marketplace platform that connects businesses with top-tier AI services, talents, and innovative solutions.",
+      "ogType": "product"
+    }
+  },
+  "generatedAt": "2025-08-01T01:24:54.148Z",
+  "version": "1.0.0",
+  "metadata": {
+    "contentType": "product",
+    "targetAudience": "enterprises",
+    "industry": "technology"
+  }
+}
