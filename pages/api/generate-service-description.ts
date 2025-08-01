@@ -46,6 +46,11 @@ Ready to take your business to the next level? Contact us today to discuss how o
       });
     }
 
+    // At this point, openai is guaranteed to be non-null
+    if (!openai) {
+      throw new Error('OpenAI client not initialized');
+    }
+
     const prompt = `Create a professional, compelling service description for the following service:
 
 Service Title: ${title}
@@ -95,7 +100,7 @@ Format the description as a single paragraph that flows naturally and is ready t
     console.error('Error generating service description:', error);
     res.status(500).json({ 
       error: 'Failed to generate service description',
-      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+      details: process.env.NODE_ENV === 'development' ? (error as Error).message : undefined
     });
   }
 } 
