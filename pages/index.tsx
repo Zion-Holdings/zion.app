@@ -275,17 +275,43 @@ const Home: NextPage = () => {
     }
   }, [displayedSections])
 
-  // Scroll handler for infinite scroll
+  // Scroll handler for infinite scroll and footer persistence
   const handleScroll = useCallback(() => {
     const scrollPosition = window.innerHeight + window.scrollY
     const documentHeight = document.documentElement.scrollHeight
     const threshold = 1000
     
+    // Check for infinite scroll
     if (scrollPosition >= documentHeight - threshold) {
       console.log('Infinite scroll: Near bottom, triggering load more...')
       loadMoreSections()
     }
-  }, [loadMoreSections])
+    
+    // Check for footer persistence after 10 sections
+    const sectionElements = document.querySelectorAll('[data-section-id]')
+    let visibleSectionCount = 0
+    
+    sectionElements.forEach((element) => {
+      const rect = element.getBoundingClientRect()
+      const sectionHeight = rect.height
+      const sectionTop = rect.top
+      const sectionBottom = rect.bottom
+      
+      // Consider a section visible if it's partially in view
+      if (sectionTop < window.innerHeight && sectionBottom > 0) {
+        visibleSectionCount++
+      }
+    })
+    
+    // Make footer persistent after 10 sections are visible
+    if (visibleSectionCount >= 10 && !isFooterPersistent) {
+      setIsFooterPersistent(true)
+      console.log('Footer persistence: Activated after 10 sections')
+    } else if (visibleSectionCount < 10 && isFooterPersistent) {
+      setIsFooterPersistent(false)
+      console.log('Footer persistence: Deactivated - less than 10 sections visible')
+    }
+  }, [loadMoreSections, isFooterPersistent])
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
