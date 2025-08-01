@@ -1,348 +1,148 @@
 # Autonomous Agent System
 
-A comprehensive autonomous agent system with distributed workload capabilities, continuous agent creation, and intelligent orchestration.
+A comprehensive autonomous agent system that continuously researches, creates, and sells intelligent solutions in the marketplace.
 
 ## Features
 
-- **Autonomous Agent Factory**: Dynamically creates and manages agents based on workload demands
-- **Workload Orchestrator**: Distributes tasks across multiple agents and scales automatically
-- **Continuous Agent Creator**: Spawns new agents and orchestrators to handle increased workload
-- **Cron Automation System**: Scheduled jobs for system maintenance and workload generation
-- **Master Controller**: Coordinates all system components with health monitoring and auto-scaling
-- **Distributed Architecture**: Handles multiple concurrent processes with load balancing
-
-## System Architecture
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                 Master Automation Controller                │
-├─────────────────────────────────────────────────────────────┤
-│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────┐ │
-│  │ Cron Automation │  │ Workload        │  │ Agent       │ │
-│  │ System          │  │ Orchestrator    │  │ Factory     │ │
-│  └─────────────────┘  └─────────────────┘  └─────────────┘ │
-├─────────────────────────────────────────────────────────────┤
-│              Continuous Agent Creator                      │
-├─────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐       │
-│  │ Content     │  │ Analytics   │  │ Improvement │       │
-│  │ Agents      │  │ Agents      │  │ Agents      │       │
-│  └─────────────┘  └─────────────┘  └─────────────┘       │
-└─────────────────────────────────────────────────────────────┘
-```
+- **Market Research Agent**: Continuously researches AI trends and market opportunities
+- **Solution Creator Agent**: Generates intelligent solutions based on market research
+- **Sales Agent**: Creates and manages sales campaigns for solutions
+- **Agent Creator**: Continuously creates new specialized agents
+- **Master Orchestrator**: Coordinates all agents and manages the complete workflow
+- **Monitoring**: Real-time system monitoring and performance tracking
 
 ## Quick Start
 
-### Prerequisites
+1. **Setup the system**:
+   ```bash
+   ./setup-autonomous-system.sh
+   ```
 
-- Node.js >= 16.0.0
-- npm or yarn
+2. **Start the system**:
+   ```bash
+   ./start-autonomous-system.sh
+   ```
 
-### Installation
+3. **Check status**:
+   ```bash
+   ./status-autonomous-system.sh
+   ```
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd autonomous-agent-system
-```
+4. **Stop the system**:
+   ```bash
+   ./stop-autonomous-system.sh
+   ```
 
-2. Install dependencies:
-```bash
-npm install
-```
+## Scripts
 
-3. Start the system:
-```bash
-npm start
-```
+- `setup-autonomous-system.sh` - Initial setup and installation
+- `start-autonomous-system.sh` - Start the autonomous system
+- `stop-autonomous-system.sh` - Stop the autonomous system
+- `status-autonomous-system.sh` - Check system status
+- `backup-autonomous-system.sh` - Create system backup
+- `restore-autonomous-system.sh` - Restore from backup
+- `setup-cron-jobs.sh` - Setup cron jobs for automation
+- `uninstall-autonomous-system.sh` - Uninstall the system
 
-### Configuration
+## Agents
 
-The system uses JSON configuration files that are automatically created:
+### Market Research Agent
+- Researches AI trends and market opportunities
+- Runs every 6 hours
+- Outputs market insights and trends
 
-- `master-controller-config.json` - Master controller settings
-- `orchestrator-config.json` - Workload orchestrator settings
-- `creator-config.json` - Agent creator settings
-- `cron-config.json` - Cron job settings
+### Solution Creator Agent
+- Creates intelligent solutions based on research
+- Runs every 12 hours
+- Generates solution specifications and pricing
 
-## Usage
+### Sales Agent
+- Creates sales campaigns for solutions
+- Runs every 8 hours
+- Manages marketing content and campaigns
 
-### Starting the System
+### Agent Creator
+- Creates new specialized agents
+- Runs weekly
+- Identifies gaps and creates new agents
 
-```bash
-# Start the autonomous system
-npm start
+### Master Orchestrator
+- Coordinates all agents
+- Runs every 4 hours
+- Manages complete workflow
 
-# Start in development mode
-npm run start:dev
+## Monitoring
 
-# Check system status
-npm run status
-```
-
-### Monitoring
-
-```bash
-# Monitor system health
-npm run monitor
-
-# Check system health
-npm run health
-```
-
-### Management
-
-```bash
-# Setup cron jobs
-npm run setup
-
-# Backup system
-npm run backup
-
-# Cleanup system
-npm run cleanup
-```
-
-## System Components
-
-### 1. Autonomous Agent Factory (`autonomous-agent-factory.js`)
-
-Creates and manages different types of agents:
-
-- **Content Agents**: Generate blog posts, product descriptions, landing pages
-- **Analytics Agents**: Process performance data, generate reports, track metrics
-- **Improvement Agents**: Fix errors, optimize code, enhance features
-- **Integration Agents**: Connect APIs, sync data, manage workflows
-
-### 2. Workload Orchestrator (`workload-orchestrator.js`)
-
-Distributes tasks across agents and manages workload:
-
-- Automatic task assignment based on agent capabilities
-- Load balancing and performance monitoring
-- Auto-scaling based on demand
-- Task timeout and retry mechanisms
-
-### 3. Continuous Agent Creator (`continuous-agent-creator.js`)
-
-Dynamically spawns new agents and orchestrators:
-
-- Monitors system utilization
-- Creates new agents when needed
-- Manages process lifecycle
-- Handles agent replacement and recovery
-
-### 4. Cron Automation System (`cron-automation-system.js`)
-
-Scheduled jobs for system maintenance:
-
-- **Agent Creation**: Every 5 minutes
-- **Orchestrator Creation**: Every 10 minutes
-- **Content Workload**: Every 3 minutes
-- **Analytics Workload**: Every 7 minutes
-- **Improvement Workload**: Every 15 minutes
-- **Integration Workload**: Every 20 minutes
-- **System Cleanup**: Every hour
-- **Health Checks**: Every 5 minutes
-
-### 5. Master Automation Controller (`master-automation-controller.js`)
-
-Coordinates all system components:
-
-- Health monitoring and component management
-- Emergency shutdown procedures
-- Auto-scaling decisions
-- Performance metrics collection
-- System-wide event handling
-
-## Agent Types
-
-### Content Agents
-- Generate blog posts and articles
-- Create product descriptions
-- Optimize SEO content
-- Generate landing page copy
-
-### Analytics Agents
-- Process performance metrics
-- Generate analytical reports
-- Track user behavior
-- Monitor system health
-
-### Improvement Agents
-- Fix code errors
-- Optimize performance
-- Enhance features
-- Improve user experience
-
-### Integration Agents
-- Connect external APIs
-- Sync data between services
-- Manage workflow automation
-- Handle service integration
+The system includes comprehensive monitoring:
+- System performance metrics
+- Agent performance tracking
+- Solution performance analysis
+- Sales campaign metrics
 
 ## Configuration
 
-### Master Controller Configuration
+Edit `config.json` to customize:
+- Agent schedules
+- Timeouts
+- Deployment settings
+- Monitoring preferences
 
-```json
-{
-  "maxTotalProcesses": 100,
-  "healthCheckInterval": 30000,
-  "metricsSaveInterval": 60000,
-  "autoScaleThreshold": 0.8,
-  "emergencyShutdownThreshold": 0.95
-}
+## Logs
+
+All system activity is logged in the `logs/` directory:
+- `master-orchestrator.log` - Master orchestrator logs
+- `monitor.log` - Monitoring logs
+- `market-research.log` - Market research logs
+- `solution-creation.log` - Solution creation logs
+- `sales-campaign.log` - Sales campaign logs
+- `agent-creation.log` - Agent creation logs
+
+## Backup and Restore
+
+Create backups:
+```bash
+./backup-autonomous-system.sh
 ```
 
-### Orchestrator Configuration
-
-```json
-{
-  "maxConcurrentTasks": 10,
-  "maxAgents": 20,
-  "taskTimeout": 300000,
-  "autoScaleThreshold": 0.8,
-  "performanceCheckInterval": 30000
-}
+Restore from backup:
+```bash
+./restore-autonomous-system.sh <backup-directory>
 ```
 
-### Agent Creator Configuration
+## Cron Jobs
 
-```json
-{
-  "maxProcesses": 50,
-  "spawnInterval": 10000,
-  "healthCheckInterval": 30000,
-  "autoSpawnThreshold": 0.7,
-  "processTimeout": 300000
-}
-```
-
-## Monitoring and Metrics
-
-The system provides comprehensive monitoring:
-
-- **Real-time Health Monitoring**: Component health status
-- **Performance Metrics**: Task completion rates, response times
-- **System Utilization**: Process counts, memory usage
-- **Error Tracking**: Failed tasks, error rates
-- **Auto-scaling Metrics**: Scaling decisions and outcomes
-
-### Metrics Files
-
-- `master-controller-metrics.json` - Master controller metrics
-- `orchestrator-metrics.json` - Workload orchestrator metrics
-- `creator-metrics.json` - Agent creator metrics
-- `cron-metrics.json` - Cron system metrics
-
-## Logging
-
-Logs are stored in the `logs/` directory:
-
-- `error.log` - Error messages and stack traces
-- `system.log` - System events and status updates
-- `performance.log` - Performance metrics and timing data
-
-## Error Handling
-
-The system includes comprehensive error handling:
-
-- **Graceful Degradation**: Components continue operating when others fail
-- **Auto-restart**: Failed components are automatically restarted
-- **Emergency Shutdown**: System shuts down gracefully under critical conditions
-- **Error Recovery**: Automatic recovery from common error conditions
-
-## Scaling
-
-### Auto-scaling Features
-
-- **Horizontal Scaling**: Creates new agents to handle increased load
-- **Vertical Scaling**: Optimizes existing agents for better performance
-- **Load Balancing**: Distributes tasks across available agents
-- **Resource Management**: Monitors and manages system resources
-
-### Scaling Triggers
-
-- High task queue length
-- Low agent availability
-- Poor performance metrics
-- High error rates
-
-## Security
-
-- **Process Isolation**: Each agent runs in its own process
-- **Resource Limits**: Prevents resource exhaustion
-- **Error Containment**: Errors in one component don't affect others
-- **Graceful Shutdown**: Proper cleanup of resources
-
-## Development
-
-### Adding New Agent Types
-
-1. Create a new agent template in `autonomous-agent-factory.js`
-2. Add agent capabilities and workload types
-3. Update the continuous agent creator to handle the new type
-4. Add appropriate cron jobs for workload generation
-
-### Customizing Workload Types
-
-1. Define new workload types in the orchestrator
-2. Create corresponding task execution logic
-3. Add monitoring and metrics collection
-4. Update configuration files
+The system automatically sets up cron jobs for:
+- Market research (every 6 hours)
+- Solution creation (every 12 hours)
+- Sales campaigns (every 8 hours)
+- Agent creation (weekly)
+- Master orchestration (every 4 hours)
+- Monitoring (every 30 minutes)
+- Backup (daily at 2 AM)
 
 ## Troubleshooting
 
-### Common Issues
+1. **Check system status**:
+   ```bash
+   ./status-autonomous-system.sh
+   ```
 
-1. **High Memory Usage**: Check for memory leaks in agents
-2. **Slow Performance**: Monitor task distribution and agent health
-3. **Agent Failures**: Check logs for error messages
-4. **System Overload**: Review auto-scaling configuration
+2. **View logs**:
+   ```bash
+   tail -f logs/master-orchestrator.log
+   ```
 
-### Debug Mode
+3. **Restart the system**:
+   ```bash
+   ./stop-autonomous-system.sh
+   ./start-autonomous-system.sh
+   ```
 
-Run the system in debug mode for detailed logging:
-
-```bash
-npm run start:dev
-```
-
-### Health Checks
-
-Regular health checks help identify issues:
-
-```bash
-npm run health
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests for new functionality
-5. Submit a pull request
-
-## License
-
-MIT License - see LICENSE file for details
+4. **Check cron jobs**:
+   ```bash
+   crontab -l
+   ```
 
 ## Support
 
-For issues and questions:
-
-- Create an issue in the GitHub repository
-- Check the logs for error messages
-- Review the configuration files
-- Monitor system metrics
-
-## Roadmap
-
-- [ ] Machine learning for workload prediction
-- [ ] Advanced agent communication protocols
-- [ ] Distributed deployment across multiple servers
-- [ ] Web-based monitoring dashboard
-- [ ] Integration with cloud platforms
-- [ ] Advanced security features 
+For issues or questions, check the logs in the `logs/` directory or run the status script for system information.
