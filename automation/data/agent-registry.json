@@ -24,7 +24,7 @@
       "plagiarismCheck": true
     },
     "createdAt": "2025-08-01T11:58:53.987Z",
-    "lastActive": "2025-08-01T20:26:59.827Z",
+    "lastActive": "2025-08-01T20:27:27.675Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -7840,7 +7840,7 @@
       "retryAttempts": 3
     },
     "createdAt": "2025-08-01T12:24:28.334Z",
-    "lastActive": "2025-08-01T20:26:27.238Z",
+    "lastActive": "2025-08-01T20:27:27.239Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -7848,41 +7848,6 @@
       "uptime": 0
     },
     "logs": [
-      {
-        "timestamp": "2025-08-01T20:22:41.082Z",
-        "type": "stdout",
-        "message": "📈 Detecting trends for keywords: AI, machine learning, automation"
-      },
-      {
-        "timestamp": "2025-08-01T20:22:41.082Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 0ms"
-      },
-      {
-        "timestamp": "2025-08-01T20:22:41.082Z",
-        "type": "stdout",
-        "message": "Performance: SUCCESS in 0ms"
-      },
-      {
-        "timestamp": "2025-08-01T20:22:43.606Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 22523ms"
-      },
-      {
-        "timestamp": "2025-08-01T20:22:43.606Z",
-        "type": "stdout",
-        "message": "Performance: SUCCESS in 22523ms"
-      },
-      {
-        "timestamp": "2025-08-01T20:22:51.084Z",
-        "type": "stdout",
-        "message": "🔍 Processing trend-detection task..."
-      },
-      {
-        "timestamp": "2025-08-01T20:22:51.084Z",
-        "type": "stdout",
-        "message": "📈 Detecting trends for keywords: AI, machine learning, automation\n✅ Task completed in 0ms\nPerformance: SUCCESS in 0ms"
-      },
       {
         "timestamp": "2025-08-01T20:22:54.741Z",
         "type": "stdout",
@@ -8347,12 +8312,47 @@
         "timestamp": "2025-08-01T20:27:03.441Z",
         "type": "stdout",
         "message": "✅ Task completed in 22343ms\nPerformance: SUCCESS in 22343ms"
+      },
+      {
+        "timestamp": "2025-08-01T20:27:11.097Z",
+        "type": "stdout",
+        "message": "🔍 Processing competitive-analysis task...\n🏢 Performing competitive analysis for 2 competitors"
+      },
+      {
+        "timestamp": "2025-08-01T20:27:11.359Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T20:27:11.359Z",
+        "type": "stderr",
+        "message": "Failed to analyze competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T20:27:11.574Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T20:27:11.574Z",
+        "type": "stderr",
+        "message": "Failed to analyze competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T20:27:11.574Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 477ms\nPerformance: SUCCESS in 477ms"
+      },
+      {
+        "timestamp": "2025-08-01T20:27:21.099Z",
+        "type": "stdout",
+        "message": "🔍 Processing market-research task...\n📊 Performing market research: artificial intelligence trends 2024"
       }
     ],
     "health": {
       "status": "healthy",
-      "lastCheck": "2025-08-01T20:26:27.238Z",
-      "uptime": 59996,
+      "lastCheck": "2025-08-01T20:27:27.239Z",
+      "uptime": 60001,
       "memoryUsage": 0,
       "cpuUsage": 0,
       "errors": []
@@ -41100,7 +41100,7 @@
       "_events": {},
       "_eventsCount": 2,
       "_closesNeeded": 3,
-      "_closesGot": 1,
+      "_closesGot": 3,
       "connected": false,
       "signalCode": null,
       "exitCode": 1,
@@ -41165,7 +41165,7 @@
           "corked": 0,
           "writelen": 0,
           "bufferedIndex": 0,
-          "pendingcb": 1
+          "pendingcb": 0
         },
         "allowHalfOpen": false,
         "_eventsCount": 3,
@@ -41260,7 +41260,7 @@
             "corked": 0,
             "writelen": 0,
             "bufferedIndex": 0,
-            "pendingcb": 1
+            "pendingcb": 0
           },
           "allowHalfOpen": false,
           "_eventsCount": 3,
