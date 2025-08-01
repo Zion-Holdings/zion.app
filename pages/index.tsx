@@ -207,18 +207,28 @@ const Home: NextPage = () => {
 
   // Load more sections when reaching the end
   const loadMoreSections = useCallback(async () => {
-    if (isLoading) return
+    if (isLoading) {
+      console.log('Infinite scroll: Already loading, skipping...')
+      return
+    }
 
+    console.log('Infinite scroll: Loading more sections...')
     setIsLoading(true)
     
     // Simulate API call delay
     await new Promise(resolve => setTimeout(resolve, 800))
     
     const newSections = generateAdditionalSections()
-    setDisplayedSections(prev => [...prev, ...newSections])
+    console.log('Infinite scroll: Generated', newSections.length, 'new sections')
+    setDisplayedSections(prev => {
+      const updated = [...prev, ...newSections]
+      console.log('Infinite scroll: Total sections now:', updated.length)
+      return updated
+    })
     setNextSectionId(prev => prev + newSections.length)
     
     setIsLoading(false)
+    console.log('Infinite scroll: Loading complete')
   }, [isLoading, generateAdditionalSections])
 
   // Intersection Observer for infinite scroll
@@ -250,7 +260,12 @@ const Home: NextPage = () => {
 
   // Scroll handler for infinite scroll
   const handleScroll = useCallback(() => {
-    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 1000) {
+    const scrollPosition = window.innerHeight + window.scrollY
+    const documentHeight = document.documentElement.scrollHeight
+    const threshold = 1000
+    
+    if (scrollPosition >= documentHeight - threshold) {
+      console.log('Infinite scroll: Near bottom, triggering load more...')
       loadMoreSections()
     }
   }, [loadMoreSections])

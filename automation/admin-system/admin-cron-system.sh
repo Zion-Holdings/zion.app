@@ -200,13 +200,18 @@ generate_status_report() {
     
     local report_file="$ADMIN_SYSTEM_PATH/reports/system-status-$(date +%Y%m%d-%H%M%S).json"
     
+    # Get memory usage (macOS compatible)
+    local memory_usage=$(vm_stat | grep "Pages active" | awk '{print $3}' | sed 's/\.//')
+    local total_memory=$(vm_stat | grep "Pages total" | awk '{print $3}' | sed 's/\.//')
+    local memory_percent=$(echo "scale=1; $memory_usage * 100 / $total_memory" | bc -l 2>/dev/null || echo "0")
+    
     cat > "$report_file" << EOF
 {
     "timestamp": "$(date -Iseconds)",
     "system": {
         "admin_system_path": "$ADMIN_SYSTEM_PATH",
         "uptime": "$(uptime)",
-        "memory_usage": "$(free | grep Mem | awk '{printf "%.1f", $3/$2 * 100.0}')%",
+        "memory_usage": "${memory_percent}%",
         "disk_usage": "$(df / | tail -1 | awk '{print $5}')"
     },
     "agents": {
