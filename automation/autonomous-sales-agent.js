@@ -462,9 +462,10 @@ The AI Solutions Team`
     }
 
     async generateEmailContentFile(campaign, contentDir) {
+        const emailBody = this.generateEmailBody(campaign);
         const emailContent = {
             subject: campaign.content?.emailMarketing?.subject || `Learn about ${campaign.solutionName}`,
-            body: campaign.content?.emailMarketing?.body || this.generateEmailBody(campaign),
+            body: campaign.content?.emailMarketing?.body || emailBody,
             segments: campaign.content?.emailMarketing?.segments || [],
             automation: this.generateEmailAutomation(campaign)
         };
