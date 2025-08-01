@@ -1,0 +1,11 @@
+{
+  "title": "Service descriptions",
+  "description": "Content for service-descriptions",
+  "content": "This is the content body for service-descriptions.",
+  "metadata": {
+    "keywords": ["service, descriptions"],
+    "category": "general",
+    "author": "System",
+    "createdAt": "2025-08-01T02:36:45.419Z"
+  }
+}

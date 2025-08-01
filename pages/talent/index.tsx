@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Head from 'next/head';
 import { createClient } from '@supabase/supabase-js';
 
@@ -111,7 +111,7 @@ const TalentPage: React.FC = () => {
 
   useEffect(() => {
     filterTalents();
-  }, [talents, searchTerm, selectedSkills]);
+  }, [talents, searchTerm, selectedSkills, filterTalents]);
 
   const handleSkillToggle = (skill: string) => {
     setSelectedSkills(prev =>

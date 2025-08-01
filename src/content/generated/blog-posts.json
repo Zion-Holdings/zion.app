@@ -1,0 +1,11 @@
+{
+  "title": "Blog posts",
+  "description": "Content for blog-posts",
+  "content": "This is the content body for blog-posts.",
+  "metadata": {
+    "keywords": ["blog, posts"],
+    "category": "general",
+    "author": "System",
+    "createdAt": "2025-08-01T02:36:45.420Z"
+  }
+}

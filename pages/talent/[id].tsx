@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { createClient } from '@supabase/supabase-js';
@@ -44,14 +44,7 @@ const TalentDetailPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    if (id) {
-      fetchTalent();
-      fetchReviews();
-    }
-  }, [id]);
-
-  const fetchTalent = async () => {
+  const fetchTalent = useCallback(async () => {
     try {
       if (!supabase) {
         // Mock data for local development
@@ -93,9 +86,9 @@ const TalentDetailPage: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [id]);
 
-  const fetchReviews = async () => {
+  const fetchReviews = useCallback(async () => {
     try {
       if (!supabase) {
         // Mock reviews for local development
@@ -135,7 +128,14 @@ const TalentDetailPage: React.FC = () => {
     } catch (error) {
       console.error('Error fetching reviews:', error);
     }
-  };
+  }, [id]);
+
+  useEffect(() => {
+    if (id) {
+      fetchTalent();
+      fetchReviews();
+    }
+  }, [id, fetchTalent, fetchReviews]);
 
   const renderStars = (rating: number) => {
     return (

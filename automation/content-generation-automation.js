@@ -2,488 +2,414 @@
 // Follows ChatGPT instructions from: https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
-const AutonomousGeminiAI = require('./autonomous-gemini-ai');
+const { exec } = require('child_process');
 
 class ContentGenerationAutomation {
   constructor() {
     this.projectRoot = process.cwd();
-    this.contentPath = path.join(this.projectRoot, 'src', 'content');
-    this.automationPath = path.join(this.projectRoot, 'automation');
+    this.contentDir = path.join(this.projectRoot, 'src/content/generated');
+    this.analyticsDir = path.join(this.projectRoot, 'automation/content-analytics');
+    this.lastGenerationFile = path.join(this.projectRoot, 'automation/last-content-generation.json');
+    
     this.ensureDirectories();
-    this.geminiAI = new AutonomousGeminiAI();
-    this.chatgptMemory = this.loadChatGPTMemory();
+    this.loadLastGeneration();
   }
 
   ensureDirectories() {
     const dirs = [
-      this.contentPath,
-      path.join(this.contentPath, 'generated'),
-      path.join(this.contentPath, 'templates'),
-      path.join(this.automationPath, 'content-analytics')
+      'src/content/generated',
+      'automation/content-analytics',
+      'automation/generated-content/blog',
+      'automation/generated-content/products'
     ];
     
     dirs.forEach(dir => {
-      if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
+      const fullPath = path.join(this.projectRoot, dir);
+      if (!fs.existsSync(fullPath)) {
+        fs.mkdirSync(fullPath, { recursive: true });
       }
     });
   }
 
-  loadChatGPTMemory() {
-    try {
-      const memoryPath = path.join(this.automationPath, 'chatgpt-content-memory.json');
-      if (fs.existsSync(memoryPath)) {
-        return JSON.parse(fs.readFileSync(memoryPath, 'utf8'));
-      }
-    } catch (error) {
-      console.error('Error loading ChatGPT memory:', error.message);
+  loadLastGeneration() {
+    if (fs.existsSync(this.lastGenerationFile)) {
+      this.lastGeneration = JSON.parse(fs.readFileSync(this.lastGenerationFile, 'utf8'));
+    } else {
+      this.lastGeneration = {
+        lastRun: null,
+        generatedContent: [],
+        analytics: {
+          totalContent: 0,
+          contentTypes: {},
+          lastUpdate: null
+        }
+      };
     }
-    return { memories: [], rules: [] };
-  }
-
-  async generateMarketplaceContent() {
-    console.log('🤖 Generating marketplace content based on ChatGPT instructions...');
-    
-    const contentTypes = [
-      'hero-section',
-      'feature-highlights',
-      'service-categories',
-      'testimonials',
-      'pricing-tables',
-      'faq-section',
-      'about-us',
-      'contact-info'
-    ];
-
-    const generatedContent = {};
-
-    for (const contentType of contentTypes) {
-      try {
-        const content = await this.generateContentByType(contentType);
-        generatedContent[contentType] = content;
-        
-        // Save individual content file
-        const contentFile = path.join(this.contentPath, 'generated', `${contentType}.json`);
-        fs.writeFileSync(contentFile, JSON.stringify(content, null, 2));
-        
-        console.log(`✅ Generated ${contentType} content`);
-      } catch (error) {
-        console.error(`❌ Error generating ${contentType}:`, error.message);
-      }
-    }
-
-    // Save comprehensive content file
-    const comprehensiveFile = path.join(this.contentPath, 'generated', 'comprehensive-content.json');
-    fs.writeFileSync(comprehensiveFile, JSON.stringify(generatedContent, null, 2));
-
-    return generatedContent;
-  }
-
-  async generateContentByType(contentType) {
-    const prompts = {
-      'hero-section': `Generate compelling hero section content for Zion AI-powered marketplace:
-- Headline that emphasizes AI-powered matching
-- Subheadline highlighting key benefits
-- Call-to-action buttons
-- Trust indicators
-- Visual elements suggestions
-
-Follow the ChatGPT conversation guidelines for marketplace development.`,
-      
-      'feature-highlights': `Generate feature highlights content for Zion marketplace:
-- AI-powered matching algorithms
-- Secure blockchain transactions
-- Global network connectivity
-- 99.9% transaction success rate
-- Comprehensive IT services
-- AI talent acquisition
-- Equipment marketplace
-- Innovation solutions
-
-Include benefits, use cases, and technical details.`,
-      
-      'service-categories': `Generate service categories content for Zion marketplace:
-- IT Services (development, consulting, support)
-- AI Talent (developers, consultants, specialists)
-- Equipment (hardware, software, tools)
-- Innovation Solutions (custom development, AI integration)
-- Blockchain Services
-- Security Services
-
-Include descriptions, pricing ranges, and service levels.`,
-      
-      'testimonials': `Generate authentic testimonials for Zion marketplace:
-- Business owners who found IT services
-- Companies that hired AI talent
-- Organizations that purchased equipment
-- Clients who received innovation solutions
-
-Include company names, roles, success stories, and ratings.`,
-      
-      'pricing-tables': `Generate pricing table content for Zion marketplace:
-- Service categories with pricing tiers
-- Commission structures
-- Premium features
-- Enterprise packages
-- Payment terms
-- Refund policies
-
-Ensure competitive and transparent pricing.`,
-      
-      'faq-section': `Generate FAQ content for Zion marketplace:
-- How AI matching works
-- Security measures
-- Transaction process
-- Dispute resolution
-- Account management
-- Payment methods
-- Service guarantees
-- Support channels
-
-Address common user concerns and questions.`,
-      
-      'about-us': `Generate about us content for Zion marketplace:
-- Company mission and vision
-- AI technology focus
-- Marketplace benefits
-- Team expertise
-- Industry experience
-- Future goals
-- Values and principles
-
-Emphasize AI-powered innovation and marketplace leadership.`,
-      
-      'contact-info': `Generate contact information content for Zion marketplace:
-- Support email addresses
-- Phone numbers
-- Office locations
-- Business hours
-- Social media links
-- Contact forms
-- Emergency contacts
-- Response times
-
-Ensure comprehensive and accessible contact options.`
-    };
-
-    const prompt = prompts[contentType];
-    if (!prompt) {
-      throw new Error(`Unknown content type: ${contentType}`);
-    }
-
-    const result = await this.geminiAI.model.generateContent(prompt);
-    const generatedText = result.response.text();
-    
-    return {
-      type: contentType,
-      content: generatedText,
-      generatedAt: new Date().toISOString(),
-      source: 'ChatGPT instructions + Gemini AI',
-      version: '1.0'
-    };
   }
 
   async generateDynamicContent() {
-    console.log('🤖 Generating dynamic content based on user behavior...');
+    console.log('📝 Generating dynamic content...');
     
-    const dynamicContentTypes = [
-      'personalized-recommendations',
-      'trending-services',
-      'featured-providers',
-      'market-insights',
-      'success-stories'
+    const contentTypes = [
+      {
+        type: 'hero-section',
+        template: this.generateHeroSection(),
+        path: 'src/content/generated/hero-section.json'
+      },
+      {
+        type: 'feature-highlights',
+        template: this.generateFeatureHighlights(),
+        path: 'src/content/generated/feature-highlights.json'
+      },
+      {
+        type: 'testimonials',
+        template: this.generateTestimonials(),
+        path: 'src/content/generated/testimonials.json'
+      },
+      {
+        type: 'pricing-tables',
+        template: this.generatePricingTables(),
+        path: 'src/content/generated/pricing-tables.json'
+      },
+      {
+        type: 'faq-section',
+        template: this.generateFAQSection(),
+        path: 'src/content/generated/faq-section.json'
+      },
+      {
+        type: 'service-categories',
+        template: this.generateServiceCategories(),
+        path: 'src/content/generated/service-categories.json'
+      },
+      {
+        type: 'seo-content',
+        template: this.generateSEOContent(),
+        path: 'src/content/generated/seo-keyword-content.json'
+      }
     ];
 
-    const dynamicContent = {};
-
-    for (const contentType of dynamicContentTypes) {
-      try {
-        const content = await this.generateDynamicContentByType(contentType);
-        dynamicContent[contentType] = content;
-        
-        const contentFile = path.join(this.contentPath, 'generated', `dynamic-${contentType}.json`);
-        fs.writeFileSync(contentFile, JSON.stringify(content, null, 2));
-        
-        console.log(`✅ Generated dynamic ${contentType} content`);
-      } catch (error) {
-        console.error(`❌ Error generating dynamic ${contentType}:`, error.message);
-      }
+    for (const content of contentTypes) {
+      await this.saveContent(content);
     }
 
-    return dynamicContent;
+    this.updateAnalytics();
+    this.saveLastGeneration();
   }
 
-  async generateDynamicContentByType(contentType) {
-    const prompts = {
-      'personalized-recommendations': `Generate personalized recommendation content for Zion marketplace:
-- AI-powered service matching
-- User preference analysis
-- Custom recommendations
-- Trending in user's industry
-- Similar user choices
-- Success rate predictions
-
-Include personalization algorithms and user benefits.`,
-      
-      'trending-services': `Generate trending services content for Zion marketplace:
-- Most popular IT services
-- High-demand AI skills
-- Trending equipment categories
-- Emerging technologies
-- Market demand analysis
-- Growth predictions
-
-Include market data and trend analysis.`,
-      
-      'featured-providers': `Generate featured providers content for Zion marketplace:
-- Top-rated service providers
-- Verified experts
-- Premium partners
-- Success metrics
-- Provider highlights
-- Quality indicators
-
-Include provider profiles and success stories.`,
-      
-      'market-insights': `Generate market insights content for Zion marketplace:
-- Industry trends
-- Technology adoption rates
-- Market opportunities
-- Competitive analysis
-- Growth projections
-- Investment insights
-
-Include data-driven insights and analysis.`,
-      
-      'success-stories': `Generate success stories content for Zion marketplace:
-- Client transformation stories
-- ROI case studies
-- Implementation timelines
-- Measurable outcomes
-- Before/after scenarios
-- Client testimonials
-
-Include detailed success metrics and outcomes.`
-    };
-
-    const prompt = prompts[contentType];
-    if (!prompt) {
-      throw new Error(`Unknown dynamic content type: ${contentType}`);
-    }
-
-    const result = await this.geminiAI.model.generateContent(prompt);
-    const generatedText = result.response.text();
-    
+  generateHeroSection() {
     return {
-      type: contentType,
-      content: generatedText,
-      generatedAt: new Date().toISOString(),
-      source: 'ChatGPT instructions + Gemini AI',
-      dynamic: true,
-      version: '1.0'
+      title: "AI-Powered Marketplace for Digital Innovation",
+      subtitle: "Connect with top-tier AI, blockchain, and digital transformation experts. Find the perfect match for your project with our intelligent matching system.",
+      cta: {
+        primary: "Explore Services",
+        secondary: "Learn More"
+      },
+      features: [
+        "AI-Powered Matching",
+        "Verified Experts",
+        "Secure Payments",
+        "24/7 Support"
+      ],
+      stats: [
+        { value: "500+", label: "Expert Providers" },
+        { value: "1000+", label: "Successful Projects" },
+        { value: "99%", label: "Satisfaction Rate" }
+      ]
     };
   }
 
-  async generateSEOContent() {
-    console.log('🤖 Generating SEO-optimized content...');
-    
-    const seoContentTypes = [
-      'meta-descriptions',
-      'page-titles',
-      'structured-data',
-      'keyword-content',
-      'internal-links'
-    ];
-
-    const seoContent = {};
-
-    for (const contentType of seoContentTypes) {
-      try {
-        const content = await this.generateSEOContentByType(contentType);
-        seoContent[contentType] = content;
-        
-        const contentFile = path.join(this.contentPath, 'generated', `seo-${contentType}.json`);
-        fs.writeFileSync(contentFile, JSON.stringify(content, null, 2));
-        
-        console.log(`✅ Generated SEO ${contentType} content`);
-      } catch (error) {
-        console.error(`❌ Error generating SEO ${contentType}:`, error.message);
-      }
-    }
-
-    return seoContent;
-  }
-
-  async generateSEOContentByType(contentType) {
-    const prompts = {
-      'meta-descriptions': `Generate SEO meta descriptions for Zion marketplace pages:
-- Homepage: AI-powered marketplace for IT services and AI talent
-- Services: Comprehensive IT services, AI talent, and equipment marketplace
-- About: Leading AI-powered marketplace connecting businesses with IT solutions
-- Contact: Get in touch with Zion marketplace for AI-powered business solutions
-- Pricing: Transparent pricing for IT services, AI talent, and equipment
-
-Include target keywords and compelling descriptions.`,
-      
-      'page-titles': `Generate SEO page titles for Zion marketplace:
-- Homepage: Zion - AI-Powered IT Services & AI Talent Marketplace
-- Services: IT Services, AI Talent & Equipment | Zion Marketplace
-- About: About Zion - Leading AI-Powered Business Solutions
-- Contact: Contact Zion - AI-Powered Marketplace Support
-- Pricing: Pricing - Transparent IT Services & AI Talent Costs
-
-Include primary keywords and brand name.`,
-      
-      'structured-data': `Generate structured data for Zion marketplace:
-- Organization schema
-- Service schema
-- Review schema
-- FAQ schema
-- Breadcrumb schema
-- Local business schema
-
-Include all required fields and properties.`,
-      
-      'keyword-content': `Generate keyword-optimized content for Zion marketplace:
-- Primary keywords: AI marketplace, IT services, AI talent
-- Secondary keywords: blockchain transactions, secure payments
-- Long-tail keywords: AI-powered business solutions, IT consulting services
-- Local keywords: IT services near me, AI developers
-- Industry keywords: technology marketplace, digital services
-
-Include keyword density and placement strategies.`,
-      
-      'internal-links': `Generate internal linking strategy for Zion marketplace:
-- Homepage to service pages
-- Service pages to provider profiles
-- Blog posts to related services
-- FAQ pages to service categories
-- About page to success stories
-- Contact page to service areas
-
-Include anchor text and link descriptions.`
-    };
-
-    const prompt = prompts[contentType];
-    if (!prompt) {
-      throw new Error(`Unknown SEO content type: ${contentType}`);
-    }
-
-    const result = await this.geminiAI.model.generateContent(prompt);
-    const generatedText = result.response.text();
-    
+  generateFeatureHighlights() {
     return {
-      type: contentType,
-      content: generatedText,
-      generatedAt: new Date().toISOString(),
-      source: 'ChatGPT instructions + Gemini AI',
-      seo: true,
-      version: '1.0'
+      features: [
+        {
+          title: "AI-Powered Matching",
+          description: "Our advanced AI algorithm matches you with the perfect service provider based on your specific requirements and project scope.",
+          icon: "🤖",
+          benefits: ["Smart recommendations", "Time-saving", "Better results"]
+        },
+        {
+          title: "Blockchain Security",
+          description: "Secure transactions and smart contracts ensure safe and transparent business operations.",
+          icon: "🔒",
+          benefits: ["Immutable records", "Transparent transactions", "Fraud prevention"]
+        },
+        {
+          title: "Digital Transformation",
+          description: "Transform your business with cutting-edge digital solutions and innovative technologies.",
+          icon: "🚀",
+          benefits: ["Modern solutions", "Competitive advantage", "Future-ready"]
+        }
+      ]
     };
   }
 
-  async generateMultilingualContent() {
-    console.log('🤖 Generating multilingual content...');
-    
-    const languages = ['es', 'fr', 'de', 'pt', 'it', 'nl'];
-    const multilingualContent = {};
-
-    for (const language of languages) {
-      try {
-        const content = await this.generateContentForLanguage(language);
-        multilingualContent[language] = content;
-        
-        const contentFile = path.join(this.contentPath, 'generated', `multilingual-${language}.json`);
-        fs.writeFileSync(contentFile, JSON.stringify(content, null, 2));
-        
-        console.log(`✅ Generated ${language} content`);
-      } catch (error) {
-        console.error(`❌ Error generating ${language} content:`, error.message);
-      }
-    }
-
-    return multilingualContent;
-  }
-
-  async generateContentForLanguage(language) {
-    const prompt = `Generate marketplace content in ${language} for Zion AI-powered marketplace:
-- Hero section content
-- Feature highlights
-- Service descriptions
-- Call-to-action buttons
-- Trust indicators
-- Contact information
-
-Ensure natural language flow and cultural appropriateness for ${language} speakers.`;
-
-    const result = await this.geminiAI.model.generateContent(prompt);
-    const generatedText = result.response.text();
-    
+  generateTestimonials() {
     return {
-      language: language,
-      content: generatedText,
-      generatedAt: new Date().toISOString(),
-      source: 'ChatGPT instructions + Gemini AI',
-      multilingual: true,
-      version: '1.0'
+      testimonials: [
+        {
+          name: "Sarah Johnson",
+          role: "CTO, TechStart Inc.",
+          company: "TechStart Inc.",
+          content: "The AI matching system found us the perfect blockchain developer. Our project was completed 30% faster than expected.",
+          rating: 5,
+          avatar: "/avatars/sarah.jpg"
+        },
+        {
+          name: "Michael Chen",
+          role: "Founder",
+          company: "InnovateLab",
+          content: "Outstanding platform! The digital transformation services helped us modernize our entire operation.",
+          rating: 5,
+          avatar: "/avatars/michael.jpg"
+        },
+        {
+          name: "Emily Rodriguez",
+          role: "Product Manager",
+          company: "DataFlow Solutions",
+          content: "The marketplace connected us with top AI experts who delivered exceptional results. Highly recommended!",
+          rating: 5,
+          avatar: "/avatars/emily.jpg"
+        }
+      ]
     };
   }
 
-  async run() {
-    console.log('🚀 Starting Content Generation Automation...');
-    console.log('📋 Following ChatGPT instructions from: https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d');
+  generatePricingTables() {
+    return {
+      plans: [
+        {
+          name: "Starter",
+          price: 99,
+          period: "month",
+          features: [
+            "Basic AI matching",
+            "Up to 5 projects",
+            "Email support",
+            "Standard templates"
+          ],
+          popular: false
+        },
+        {
+          name: "Professional",
+          price: 299,
+          period: "month",
+          features: [
+            "Advanced AI matching",
+            "Unlimited projects",
+            "Priority support",
+            "Custom integrations",
+            "Analytics dashboard"
+          ],
+          popular: true
+        },
+        {
+          name: "Enterprise",
+          price: 999,
+          period: "month",
+          features: [
+            "Custom AI models",
+            "White-label solution",
+            "Dedicated support",
+            "Advanced analytics",
+            "API access",
+            "Custom development"
+          ],
+          popular: false
+        }
+      ]
+    };
+  }
 
+  generateFAQSection() {
+    return {
+      faqs: [
+        {
+          question: "How does the AI matching system work?",
+          answer: "Our AI analyzes your project requirements, budget, timeline, and preferences to match you with the most suitable service providers. The system learns from successful matches to improve recommendations over time."
+        },
+        {
+          question: "What types of services are available?",
+          answer: "We offer a wide range of services including AI development, blockchain solutions, web development, mobile apps, digital transformation, and more. All providers are verified and rated."
+        },
+        {
+          question: "How do I ensure payment security?",
+          answer: "We use blockchain-based smart contracts and escrow services to ensure secure payments. Funds are only released when project milestones are completed and approved."
+        },
+        {
+          question: "Can I hire for long-term projects?",
+          answer: "Yes! Many of our providers offer both short-term and long-term engagement options. You can find providers who specialize in ongoing partnerships and team augmentation."
+        }
+      ]
+    };
+  }
+
+  generateServiceCategories() {
+    return {
+      categories: [
+        {
+          name: "AI & Machine Learning",
+          description: "Expert AI development and machine learning solutions",
+          services: ["Chatbot Development", "Predictive Analytics", "Computer Vision", "NLP Solutions"],
+          icon: "🤖",
+          providers: 150
+        },
+        {
+          name: "Blockchain & Web3",
+          description: "Secure blockchain development and Web3 solutions",
+          services: ["Smart Contracts", "DeFi Platforms", "NFT Marketplaces", "DApp Development"],
+          icon: "🔗",
+          providers: 120
+        },
+        {
+          name: "Web Development",
+          description: "Modern web applications and digital solutions",
+          services: ["Frontend Development", "Backend APIs", "E-commerce", "Progressive Web Apps"],
+          icon: "🌐",
+          providers: 300
+        },
+        {
+          name: "Mobile Development",
+          description: "Native and cross-platform mobile applications",
+          services: ["iOS Development", "Android Development", "React Native", "Flutter Apps"],
+          icon: "📱",
+          providers: 200
+        },
+        {
+          name: "Digital Transformation",
+          description: "Complete business digitalization and modernization",
+          services: ["Process Automation", "Cloud Migration", "Data Analytics", "Legacy Modernization"],
+          icon: "🚀",
+          providers: 100
+        }
+      ]
+    };
+  }
+
+  generateSEOContent() {
+    return {
+      keywords: [
+        "AI marketplace",
+        "blockchain development",
+        "digital transformation",
+        "web development services",
+        "mobile app development",
+        "smart contracts",
+        "machine learning",
+        "artificial intelligence"
+      ],
+      metaDescriptions: {
+        home: "AI-powered marketplace connecting businesses with top-tier AI, blockchain, and digital transformation experts. Find the perfect match for your project.",
+        services: "Comprehensive AI, blockchain, and digital transformation services. Expert providers, secure payments, and guaranteed results.",
+        about: "Leading AI marketplace revolutionizing how businesses find and hire digital experts. Advanced matching, secure transactions, and exceptional results."
+      },
+      pageTitles: {
+        home: "AI Marketplace - Connect with Digital Innovation Experts",
+        services: "AI & Blockchain Services - Expert Digital Solutions",
+        about: "About Our AI-Powered Marketplace - Digital Innovation Platform"
+      }
+    };
+  }
+
+  async saveContent(contentItem) {
     try {
-      // Generate all content types
-      const marketplaceContent = await this.generateMarketplaceContent();
-      const dynamicContent = await this.generateDynamicContent();
-      const seoContent = await this.generateSEOContent();
-      const multilingualContent = await this.generateMultilingualContent();
-
-      // Create comprehensive analytics
-      const analytics = {
-        generatedAt: new Date().toISOString(),
-        marketplaceContent: Object.keys(marketplaceContent).length,
-        dynamicContent: Object.keys(dynamicContent).length,
-        seoContent: Object.keys(seoContent).length,
-        multilingualContent: Object.keys(multilingualContent).length,
-        totalContentTypes: Object.keys(marketplaceContent).length + 
-                          Object.keys(dynamicContent).length + 
-                          Object.keys(seoContent).length + 
-                          Object.keys(multilingualContent).length
-      };
-
-      // Save analytics
-      const analyticsFile = path.join(this.automationPath, 'content-analytics', 'generation-analytics.json');
-      fs.writeFileSync(analyticsFile, JSON.stringify(analytics, null, 2));
-
-      console.log('✅ Content Generation Automation completed:');
-      console.log(`   📊 Marketplace content: ${analytics.marketplaceContent} types`);
-      console.log(`   🔄 Dynamic content: ${analytics.dynamicContent} types`);
-      console.log(`   🔍 SEO content: ${analytics.seoContent} types`);
-      console.log(`   🌍 Multilingual content: ${analytics.multilingualContent} languages`);
-      console.log(`   📈 Total content types: ${analytics.totalContentTypes}`);
-
-      return {
-        marketplaceContent,
-        dynamicContent,
-        seoContent,
-        multilingualContent,
-        analytics
-      };
-
+      const fullPath = path.join(this.projectRoot, contentItem.path);
+      const dir = path.dirname(fullPath);
+      
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+      }
+      
+      fs.writeFileSync(fullPath, JSON.stringify(contentItem.template, null, 2));
+      console.log(`✅ Generated: ${contentItem.type}`);
+      
+      // Track generation
+      this.lastGeneration.generatedContent.push({
+        type: contentItem.type,
+        path: contentItem.path,
+        generatedAt: new Date().toISOString()
+      });
+      
     } catch (error) {
-      console.error('❌ Content Generation Automation failed:', error.message);
-      throw error;
+      console.error(`❌ Error generating ${contentItem.type}:`, error);
     }
+  }
+
+  updateAnalytics() {
+    this.lastGeneration.analytics.totalContent = this.lastGeneration.generatedContent.length;
+    this.lastGeneration.analytics.lastUpdate = new Date().toISOString();
+    
+    // Count content types
+    const typeCount = {};
+    this.lastGeneration.generatedContent.forEach(item => {
+      typeCount[item.type] = (typeCount[item.type] || 0) + 1;
+    });
+    this.lastGeneration.analytics.contentTypes = typeCount;
+  }
+
+  saveLastGeneration() {
+    fs.writeFileSync(this.lastGenerationFile, JSON.stringify(this.lastGeneration, null, 2));
+  }
+
+  async runContinuousGeneration() {
+    console.log('🚀 Starting continuous content generation...');
+    
+    while (true) {
+      try {
+        await this.generateDynamicContent();
+        
+        // Commit and push changes
+        await this.commitAndPushChanges('Content generation update');
+        
+        console.log('⏳ Waiting 1 hour before next content generation cycle...');
+        await new Promise(resolve => setTimeout(resolve, 3600000)); // 1 hour
+        
+      } catch (error) {
+        console.error('❌ Error in content generation cycle:', error);
+        await new Promise(resolve => setTimeout(resolve, 300000)); // 5 minutes on error
+      }
+    }
+  }
+
+  async commitAndPushChanges(message) {
+    return new Promise((resolve, reject) => {
+      const commands = [
+        'git add .',
+        `git commit -m "🤖 Content generation: ${message}"`,
+        'git push origin main'
+      ];
+
+      let currentCommand = 0;
+
+      const runNextCommand = () => {
+        if (currentCommand >= commands.length) {
+          console.log('✅ Content changes committed and pushed successfully');
+          resolve();
+          return;
+        }
+
+        exec(commands[currentCommand], { cwd: this.projectRoot }, (error, stdout, stderr) => {
+          if (error) {
+            console.error(`❌ Error running command: ${commands[currentCommand]}`, error);
+            reject(error);
+            return;
+          }
+          
+          console.log(`✅ Command executed: ${commands[currentCommand]}`);
+          currentCommand++;
+          runNextCommand();
+        });
+      };
+
+      runNextCommand();
+    });
   }
 }
 
+// Export for use in other modules
 module.exports = ContentGenerationAutomation;
 
 // Run if called directly
 if (require.main === module) {
-  const contentAutomation = new ContentGenerationAutomation();
-  contentAutomation.run().catch(console.error);
+  const automation = new ContentGenerationAutomation();
+  automation.runContinuousGeneration().catch(console.error);
 } 

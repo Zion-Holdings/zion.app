@@ -1,0 +1,11 @@
+{
+  "title": "About content",
+  "description": "Content for about-content",
+  "content": "This is the content body for about-content.",
+  "metadata": {
+    "keywords": ["about, content"],
+    "category": "general",
+    "author": "System",
+    "createdAt": "2025-08-01T02:36:45.421Z"
+  }
+}
