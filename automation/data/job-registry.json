@@ -224,9 +224,9 @@
     "performance": {
       "totalRuns": 4,
       "successfulRuns": 0,
-      "failedRuns": 3,
+      "failedRuns": 4,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300362
+      "lastExecutionTime": 300529
     },
     "logs": [
       {
@@ -249,6 +249,17 @@
       },
       {
         "timestamp": "2025-08-01T12:47:01.288Z",
+        "level": "info",
+        "message": "Job restarted"
+      },
+      {
+        "timestamp": "2025-08-01T12:50:00.739Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-01T12:50:00.739Z",
         "level": "info",
         "message": "Job restarted"
       }

@@ -267,7 +267,9 @@ Make it informative, engaging, and valuable for technology professionals and bus
 
   generateBlogPageContent(topic, content) {
     const filename = this.sanitizeFilename(topic);
-    const pageName = filename.charAt(0).toUpperCase() + filename.slice(1);
+    const pageName = filename.split('-').map(word => 
+      word.charAt(0).toUpperCase() + word.slice(1)
+    ).join('');
     
     return `import type { NextPage } from 'next'
 import Head from 'next/head'

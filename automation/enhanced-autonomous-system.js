@@ -146,41 +146,63 @@ class EnhancedAutonomousSystem {
   }
 
   async createInitialAgents() {
+    console.log('🤖 Creating initial agents...');
+    
     const initialAgents = [
       {
-        name: 'Content Generation Agent',
-        type: 'content-generation',
-        capabilities: ['AI writing', 'SEO optimization', 'Content planning'],
-        services: ['Blog posts', 'Product descriptions', 'Social media content']
+        id: 'market-research-agent',
+        name: 'Market Research Agent',
+        type: 'research',
+        script: 'autonomous-market-research-agent.js',
+        status: 'active',
+        schedule: '0 */6 * * *',
+        priority: 'high'
       },
       {
-        name: 'Marketing Automation Agent',
-        type: 'marketing',
-        capabilities: ['Campaign management', 'Email marketing', 'Social media'],
-        services: ['Email campaigns', 'Social media posts', 'Lead generation']
+        id: 'content-generator-agent',
+        name: 'Content Generator Agent',
+        type: 'content',
+        script: 'continuous-content-generator.js',
+        status: 'active',
+        schedule: '0 */2 * * *',
+        priority: 'high'
       },
       {
-        name: 'Sales Intelligence Agent',
+        id: 'solution-creator-agent',
+        name: 'Solution Creator Agent',
+        type: 'creation',
+        script: 'autonomous-solution-creator-agent.js',
+        status: 'active',
+        schedule: '0 */12 * * *',
+        priority: 'medium'
+      },
+      {
+        id: 'sales-agent',
+        name: 'Sales Agent',
         type: 'sales',
-        capabilities: ['Lead scoring', 'CRM integration', 'Sales analytics'],
-        services: ['Lead qualification', 'Sales reporting', 'Pipeline management']
+        script: 'autonomous-sales-agent.js',
+        status: 'active',
+        schedule: '0 */8 * * *',
+        priority: 'medium'
       },
       {
-        name: 'Analytics Agent',
-        type: 'analytics',
-        capabilities: ['Data analysis', 'Performance tracking', 'Reporting'],
-        services: ['Performance reports', 'Trend analysis', 'KPI monitoring']
-      },
-      {
-        name: 'Automation Orchestrator',
-        type: 'orchestrator',
-        capabilities: ['Workflow management', 'Task scheduling', 'System coordination'],
-        services: ['Process automation', 'Task distribution', 'System optimization']
+        id: 'agent-creator',
+        name: 'Agent Creator',
+        type: 'orchestration',
+        script: 'continuous-agent-creator.js',
+        status: 'active',
+        schedule: '0 0 * * 0',
+        priority: 'low'
       }
     ];
 
     for (const agentConfig of initialAgents) {
-      await this.createAgent(agentConfig);
+      try {
+        await this.createAgent(agentConfig);
+        console.log(`✅ Created agent: ${agentConfig.name}`);
+      } catch (error) {
+        console.error(`❌ Failed to create agent ${agentConfig.name}:`, error.message);
+      }
     }
   }
 
