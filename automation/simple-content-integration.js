@@ -349,7 +349,7 @@ const ${topicTitle.replace(/\s+/g, '')}Page: NextPage = () => {
               </p>
               <div className="mt-8">
                 <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
-                  ${content.content.cta.text}
+                  Explore AI Marketplace
                 </Link>
               </div>
             </footer>
