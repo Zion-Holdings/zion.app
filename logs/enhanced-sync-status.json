@@ -1,11 +1,11 @@
 {
-  "lastCheck": "2025-08-01T02:43:05.057Z",
+  "lastCheck": "2025-08-01T02:44:21.090Z",
   "jobs": {
     "gitSync": {
-      "lastRun": "2025-08-01T02:43:05.057Z",
-      "duration": 0,
-      "success": false,
-      "error": "Command failed: git commit -m \"Auto-sync: Continuous improvement - $(date)\"\n🔍 Running pre-commit checks...\n📝 Running ESLint...\n\n> bolt.new.zion.app@0.1.0 lint\n> next lint\n\n\n./pages/talent/[id].tsx\n89:3  Error: Parsing error: ')' expected.\n\n./pages/talent/index.tsx\n100:9  Warning: The 'filterTalents' function makes the dependencies of useEffect Hook (at line 114) change on every render. Move it inside the useEffect callback. Alternatively, wrap the definition of 'filterTalents' in its own useCallback() Hook.  react-hooks/exhaustive-deps\n\ninfo  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules\n❌ ESLint failed. Please fix the issues before committing.\nhusky - pre-commit script failed (code 1)\n"
+      "lastRun": "2025-08-01T02:44:21.090Z",
+      "duration": 21002,
+      "success": true,
+      "error": null
     },
     "buildCheck": {
       "lastRun": "2025-07-31T22:40:06.122Z",
@@ -46,7 +46,7 @@
   },
   "errors": 706,
   "fixes": 575,
-  "syncs": 332,
+  "syncs": 333,
   "builds": 5,
-  "commits": 388
+  "commits": 389
 }
