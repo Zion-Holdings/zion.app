@@ -2,27 +2,27 @@
   "systemStatus": {
     "status": "running",
     "startTime": "2025-08-01T13:58:32.671Z",
-    "uptime": 14753001,
-    "lastUpdate": "2025-08-01T18:04:25.672Z"
+    "uptime": 14852805,
+    "lastUpdate": "2025-08-01T18:06:05.476Z"
   },
   "orchestratorStatus": {
     "isRunning": true,
     "queueLength": 0,
     "activeSyncs": 0,
     "metrics": {
-      "totalSyncs": 460,
-      "successfulSyncs": 102,
+      "totalSyncs": 462,
+      "successfulSyncs": 104,
       "failedSyncs": 0,
-      "lastSyncTime": "2025-08-01T18:04:25.670Z",
+      "lastSyncTime": "2025-08-01T18:06:05.471Z",
       "averageSyncTime": 0
     },
     "agentMetrics": {
       "totalAgents": 8,
       "runningAgents": 3,
-      "totalSyncs": 245,
+      "totalSyncs": 251,
       "totalErrors": 0,
       "errorRate": 0,
-      "lastUpdate": "2025-08-01T18:04:25.671Z",
+      "lastUpdate": "2025-08-01T18:06:05.476Z",
       "systemHealth": "poor"
     },
     "health": {
@@ -30,8 +30,8 @@
       "agents": 8,
       "running": 3,
       "errors": 0,
-      "lastUpdate": "2025-08-01T18:04:25.672Z"
+      "lastUpdate": "2025-08-01T18:06:05.476Z"
     }
   },
-  "timestamp": "2025-08-01T18:04:25.672Z"
+  "timestamp": "2025-08-01T18:06:05.476Z"
 }
