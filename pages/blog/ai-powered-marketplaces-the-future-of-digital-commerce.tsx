@@ -68,11 +68,11 @@ const AiPoweredMarketplacesTheFutureOfDigitalCommercePage: NextPage = () => {
           <div className="prose prose-invert prose-lg max-w-none">
             <div className="text-gray-300 leading-relaxed">
               
-<p className="mb-6">AI-Powered Marketplaces: The Future of Digital Commerce represents a significant advancement in modern technology that is reshaping how businesses operate and compete in the digital landscape.</p>
+              <p className="mb-6">AI-Powered Marketplaces: The Future of Digital Commerce represents a significant advancement in modern technology that is reshaping how businesses operate and compete in the digital landscape.</p>
 
-<p className="mb-6">The integration of ai-powered marketplaces: the future of digital commerce into enterprise environments has become increasingly important as organizations seek to optimize their operations and gain competitive advantages. This technology offers numerous benefits including improved efficiency, enhanced security, and better scalability.</p>
+              <p className="mb-6">The integration of ai-powered marketplaces: the future of digital commerce into enterprise environments has become increasingly important as organizations seek to optimize their operations and gain competitive advantages. This technology offers numerous benefits including improved efficiency, enhanced security, and better scalability.</p>
 
-<p className="mb-6">Real-world applications of ai-powered marketplaces: the future of digital commerce can be found across various industries, from healthcare to finance, manufacturing to retail. Companies that successfully implement these solutions often see dramatic improvements in their operational metrics and customer satisfaction scores.</p>
+              <p className="mb-6">Real-world applications of ai-powered marketplaces: the future of digital commerce can be found across various industries, from healthcare to finance, manufacturing to retail. Companies that successfully implement these solutions often see dramatic improvements in their operational metrics and customer satisfaction scores.</p>
 
 <p className="mb-6">As we look toward the future, ai-powered marketplaces: the future of digital commerce will continue to evolve and become even more sophisticated. Organizations that stay ahead of these trends will be well-positioned to thrive in the increasingly competitive digital marketplace.</p>
 
