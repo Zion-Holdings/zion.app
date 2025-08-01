@@ -252,18 +252,18 @@ class BlogContentAgent {
   calculateWordCount(blogPost) {
     let totalWords = 0;
     
-    if (blogPost.content.introduction) {
-      totalWords += blogPost.content.introduction.split(' ').length;
+    if (blogPost.introduction) {
+      totalWords += blogPost.introduction.split(' ').length;
     }
     
-    if (blogPost.content.sections) {
-      blogPost.content.sections.forEach(section => {
+    if (blogPost.sections) {
+      blogPost.sections.forEach(section => {
         totalWords += section.content.split(' ').length;
       });
     }
     
-    if (blogPost.content.conclusion) {
-      totalWords += blogPost.content.conclusion.split(' ').length;
+    if (blogPost.conclusion) {
+      totalWords += blogPost.conclusion.split(' ').length;
     }
     
     return totalWords;
