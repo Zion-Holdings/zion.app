@@ -1,289 +1,181 @@
 import React, { useState, useEffect } from 'react';
-import Head from 'next/head';
-import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
-interface AutomationStatus {
+interface AdminUser {
+  username: string;
+  password: string;
+  role: string;
+}
+
+interface AgentStatus {
   id: string;
-  name: string;
-  status: 'running' | 'stopped' | 'error' | 'starting' | 'stopping';
-  health: number;
-  uptime: string;
-  lastActivity: string;
-  tasksCompleted: number;
-  errors: number;
-  performance: number;
   type: string;
-  description: string;
+  status: string;
+  lastActivity: string;
 }
 
-interface SystemMetrics {
-  totalAgents: number;
+interface SystemHealth {
+  timestamp: string;
   activeAgents: number;
-  totalOrchestrators: number;
-  activeOrchestrators: number;
-  systemHealth: number;
-  totalTasks: number;
-  completedTasks: number;
-  failedTasks: number;
-  systemUptime: string;
-  memoryUsage: number;
-  cpuUsage: number;
+  totalAgents: number;
+  systemHealth: string;
+  memoryUsage: any;
+  uptime: number;
 }
 
-export default function AdminDashboard() {
-  const [authenticated, setAuthenticated] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [automations, setAutomations] = useState<AutomationStatus[]>([]);
-  const [systemMetrics, setSystemMetrics] = useState<SystemMetrics | null>(null);
-  const [selectedAutomation, setSelectedAutomation] = useState<string | null>(null);
-  const [logs, setLogs] = useState<string[]>([]);
+interface AdminTool {
+  name: string;
+  description: string;
+  status: string;
+  lastExecuted: string;
+}
+
+const AdminDashboard: React.FC = () => {
   const router = useRouter();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [adminData, setAdminData] = useState({
+    agents: [] as AgentStatus[],
+    systemHealth: {} as SystemHealth,
+    adminTools: [] as AdminTool[],
+    webResearch: [] as any[],
+    evolutionStatus: '',
+    lastUpdate: ''
+  });
+
+  const adminUser: AdminUser = {
+    username: 'kleber@ziontechgroup.com',
+    password: 'Tw2.R5u&2!sDfeW',
+    role: 'admin'
+  };
 
   useEffect(() => {
     checkAuthentication();
   }, []);
 
-  useEffect(() => {
-    if (authenticated) {
-      loadAutomationStatus();
-      loadSystemMetrics();
-      startRealTimeUpdates();
-    }
-  }, [authenticated]);
-
   const checkAuthentication = () => {
-    const isAuthenticated = localStorage.getItem('adminAuthenticated') === 'true';
-    const adminUser = localStorage.getItem('adminUser');
-    
-    if (!isAuthenticated || adminUser !== 'kleber@ziontechgroup.com') {
-      router.push('/login');
-      return;
-    }
-    
-    setAuthenticated(true);
-    setLoading(false);
-  };
-
-  const loadAutomationStatus = async () => {
-    try {
-      // Simulate API call to get automation status
-      const mockAutomations: AutomationStatus[] = [
-        {
-          id: 'master-controller',
-          name: 'Master Automation Controller',
-          status: 'running',
-          health: 95,
-          uptime: '2d 14h 32m',
-          lastActivity: '2 minutes ago',
-          tasksCompleted: 1247,
-          errors: 3,
-          performance: 98,
-          type: 'Controller',
-          description: 'Main orchestration and control system'
-        },
-        {
-          id: 'agent-factory',
-          name: 'Autonomous Agent Factory',
-          status: 'running',
-          health: 92,
-          uptime: '1d 8h 15m',
-          lastActivity: '5 minutes ago',
-          tasksCompleted: 892,
-          errors: 1,
-          performance: 96,
-          type: 'Factory',
-          description: 'Creates and manages autonomous agents'
-        },
-        {
-          id: 'content-generator',
-          name: 'Content Generation Agent',
-          status: 'running',
-          health: 88,
-          uptime: '3d 2h 45m',
-          lastActivity: '1 minute ago',
-          tasksCompleted: 2156,
-          errors: 7,
-          performance: 94,
-          type: 'Agent',
-          description: 'Generates and optimizes content automatically'
-        },
-        {
-          id: 'research-agent',
-          name: 'AI Research Agent',
-          status: 'running',
-          health: 90,
-          uptime: '1d 12h 30m',
-          lastActivity: '3 minutes ago',
-          tasksCompleted: 567,
-          errors: 2,
-          performance: 93,
-          type: 'Agent',
-          description: 'Researches latest AI trends and capabilities'
-        },
-        {
-          id: 'orchestrator',
-          name: 'Workload Orchestrator',
-          status: 'running',
-          health: 94,
-          uptime: '4d 6h 20m',
-          lastActivity: '30 seconds ago',
-          tasksCompleted: 3421,
-          errors: 5,
-          performance: 97,
-          type: 'Orchestrator',
-          description: 'Distributes and manages workload across agents'
-        },
-        {
-          id: 'monitor-agent',
-          name: 'System Monitor Agent',
-          status: 'running',
-          health: 96,
-          uptime: '5d 1h 10m',
-          lastActivity: '10 seconds ago',
-          tasksCompleted: 1890,
-          errors: 0,
-          performance: 99,
-          type: 'Monitor',
-          description: 'Monitors system health and performance'
-        }
-      ];
-      
-      setAutomations(mockAutomations);
-    } catch (error) {
-      console.error('Error loading automation status:', error);
+    // In a real implementation, this would check against a secure authentication system
+    // For now, we'll simulate authentication
+    const storedAuth = localStorage.getItem('adminAuth');
+    if (storedAuth === 'true') {
+      setIsAuthenticated(true);
+      loadAdminData();
+    } else {
+      setIsLoading(false);
     }
   };
 
-  const loadSystemMetrics = async () => {
+  const handleLogin = (username: string, password: string) => {
+    if (username === adminUser.username && password === adminUser.password) {
+      localStorage.setItem('adminAuth', 'true');
+      setIsAuthenticated(true);
+      loadAdminData();
+    } else {
+      alert('Invalid credentials');
+    }
+  };
+
+  const loadAdminData = async () => {
     try {
-      const mockMetrics: SystemMetrics = {
-        totalAgents: 12,
-        activeAgents: 10,
-        totalOrchestrators: 3,
-        activeOrchestrators: 3,
-        systemHealth: 94,
-        totalTasks: 8567,
-        completedTasks: 8421,
-        failedTasks: 146,
-        systemUptime: '5d 2h 15m',
-        memoryUsage: 67,
-        cpuUsage: 45
+      // Simulate loading admin data
+      const mockData = {
+        agents: [
+          { id: 'agent-1', type: 'AdminAgentCreator', status: 'active', lastActivity: new Date().toISOString() },
+          { id: 'agent-2', type: 'AdminToolGenerator', status: 'active', lastActivity: new Date().toISOString() },
+          { id: 'agent-3', type: 'AdminStatusMonitor', status: 'active', lastActivity: new Date().toISOString() },
+          { id: 'agent-4', type: 'AdminWebResearcher', status: 'active', lastActivity: new Date().toISOString() },
+          { id: 'agent-5', type: 'AdminEvolutionAgent', status: 'active', lastActivity: new Date().toISOString() }
+        ],
+        systemHealth: {
+          timestamp: new Date().toISOString(),
+          activeAgents: 5,
+          totalAgents: 5,
+          systemHealth: 'healthy',
+          memoryUsage: { heapUsed: '45MB', heapTotal: '60MB' },
+          uptime: 3600
+        },
+        adminTools: [
+          { name: 'ProjectStatusDashboard', description: 'Real-time project status monitoring', status: 'active', lastExecuted: new Date().toISOString() },
+          { name: 'AgentPerformanceMonitor', description: 'Monitor agent performance and efficiency', status: 'active', lastExecuted: new Date().toISOString() },
+          { name: 'SystemHealthChecker', description: 'Comprehensive system health analysis', status: 'active', lastExecuted: new Date().toISOString() },
+          { name: 'AutomationAnalyzer', description: 'Analyze automation patterns and efficiency', status: 'active', lastExecuted: new Date().toISOString() },
+          { name: 'TrendPredictor', description: 'Predict future trends and requirements', status: 'active', lastExecuted: new Date().toISOString() },
+          { name: 'SecurityAuditor', description: 'Security analysis and threat detection', status: 'active', lastExecuted: new Date().toISOString() },
+          { name: 'BackupManager', description: 'Automated backup and recovery management', status: 'active', lastExecuted: new Date().toISOString() },
+          { name: 'AnalyticsVisualizer', description: 'Advanced analytics and visualization tools', status: 'active', lastExecuted: new Date().toISOString() }
+        ],
+        webResearch: [
+          { topic: 'AI admin tools 2024', findings: ['Latest developments', 'New tools', 'Best practices'], timestamp: new Date().toISOString() },
+          { topic: 'autonomous agent systems', findings: ['System architectures', 'Performance optimization', 'Scalability patterns'], timestamp: new Date().toISOString() },
+          { topic: 'project management automation', findings: ['Automation frameworks', 'Integration patterns', 'Efficiency metrics'], timestamp: new Date().toISOString() }
+        ],
+        evolutionStatus: 'continuous',
+        lastUpdate: new Date().toISOString()
       };
-      
-      setSystemMetrics(mockMetrics);
+
+      setAdminData(mockData);
+      setIsLoading(false);
     } catch (error) {
-      console.error('Error loading system metrics:', error);
+      console.error('Error loading admin data:', error);
+      setIsLoading(false);
     }
   };
 
-  const startRealTimeUpdates = () => {
-    // Simulate real-time updates every 30 seconds
-    const interval = setInterval(() => {
-      loadAutomationStatus();
-      loadSystemMetrics();
-    }, 30000);
-
-    return () => clearInterval(interval);
+  const executeTool = async (toolName: string) => {
+    console.log(`Executing tool: ${toolName}`);
+    // In a real implementation, this would call the actual tool
+    alert(`${toolName} executed successfully`);
   };
 
-  const handleAutomationAction = async (automationId: string, action: 'start' | 'stop' | 'restart') => {
-    try {
-      // Simulate API call
-      console.log(`Performing ${action} on automation ${automationId}`);
-      
-      // Update local state
-      setAutomations(prev => prev.map(automation => {
-        if (automation.id === automationId) {
-          return {
-            ...automation,
-            status: action === 'start' ? 'starting' : action === 'stop' ? 'stopping' : 'starting'
-          };
-        }
-        return automation;
-      }));
-      
-      // Simulate action completion
-      setTimeout(() => {
-        setAutomations(prev => prev.map(automation => {
-          if (automation.id === automationId) {
-            return {
-              ...automation,
-              status: action === 'stop' ? 'stopped' : 'running'
-            };
-          }
-          return automation;
-        }));
-      }, 2000);
-      
-    } catch (error) {
-      console.error(`Error performing ${action} on automation:`, error);
-    }
+  const createNewAgent = async () => {
+    console.log('Creating new agent...');
+    // In a real implementation, this would trigger agent creation
+    alert('New agent creation initiated');
   };
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'running': return 'text-green-600 bg-green-100';
-      case 'stopped': return 'text-red-600 bg-red-100';
-      case 'error': return 'text-red-600 bg-red-100';
-      case 'starting': return 'text-yellow-600 bg-yellow-100';
-      case 'stopping': return 'text-yellow-600 bg-yellow-100';
-      default: return 'text-gray-600 bg-gray-100';
-    }
+  const evolveSystem = async () => {
+    console.log('Evolving system...');
+    // In a real implementation, this would trigger system evolution
+    alert('System evolution initiated');
   };
 
-  const getHealthColor = (health: number) => {
-    if (health >= 90) return 'text-green-600';
-    if (health >= 70) return 'text-yellow-600';
-    return 'text-red-600';
-  };
-
-  if (loading) {
+  if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading admin dashboard...</p>
-        </div>
+      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+        <div className="text-white text-xl">Loading Admin Dashboard...</div>
       </div>
     );
   }
 
-  if (!authenticated) {
-    return null;
+  if (!isAuthenticated) {
+    return <LoginForm onLogin={handleLogin} />;
   }
 
   return (
     <>
       <Head>
         <title>Admin Dashboard - Zion Tech Group</title>
-        <meta name="description" content="Admin dashboard for Zion Tech Group automation system" />
+        <meta name="description" content="Admin dashboard for autonomous agents and system management" />
       </Head>
-      
-      <div className="min-h-screen bg-gray-100">
+
+      <div className="min-h-screen bg-gray-900 text-white">
         {/* Header */}
-        <header className="bg-white shadow-sm border-b">
+        <header className="bg-gray-800 border-b border-gray-700">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center py-4">
+            <div className="flex justify-between items-center py-6">
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">
-                  Zion Tech Group - Admin Dashboard
-                </h1>
-                <p className="text-sm text-gray-600">
-                  Autonomous Agent Management System
-                </p>
+                <h1 className="text-3xl font-bold">Admin Dashboard</h1>
+                <p className="text-gray-400">Autonomous System Management</p>
               </div>
               <div className="flex items-center space-x-4">
-                <span className="text-sm text-gray-600">
-                  Logged in as: kleber@ziontechgroup.com
-                </span>
+                <span className="text-sm text-gray-400">Admin: {adminUser.username}</span>
                 <button
                   onClick={() => {
-                    localStorage.removeItem('adminAuthenticated');
-                    localStorage.removeItem('adminUser');
-                    router.push('/login');
+                    localStorage.removeItem('adminAuth');
+                    setIsAuthenticated(false);
                   }}
-                  className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition-colors"
+                  className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-md text-sm font-medium"
                 >
                   Logout
                 </button>
@@ -292,241 +184,186 @@ export default function AdminDashboard() {
           </div>
         </header>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Main Content */}
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* System Overview */}
-          {systemMetrics && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
-            >
-              <div className="bg-white rounded-lg shadow p-6">
-                <div className="flex items-center">
-                  <div className="flex-shrink-0">
-                    <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                      <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <p className="text-sm font-medium text-gray-500">System Health</p>
-                    <p className={`text-2xl font-bold ${getHealthColor(systemMetrics.systemHealth)}`}>
-                      {systemMetrics.systemHealth}%
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-lg shadow p-6">
-                <div className="flex items-center">
-                  <div className="flex-shrink-0">
-                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                      <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <p className="text-sm font-medium text-gray-500">Active Agents</p>
-                    <p className="text-2xl font-bold text-gray-900">
-                      {systemMetrics.activeAgents}/{systemMetrics.totalAgents}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-lg shadow p-6">
-                <div className="flex items-center">
-                  <div className="flex-shrink-0">
-                    <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                      <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <p className="text-sm font-medium text-gray-500">Tasks Completed</p>
-                    <p className="text-2xl font-bold text-gray-900">
-                      {systemMetrics.completedTasks.toLocaleString()}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-lg shadow p-6">
-                <div className="flex items-center">
-                  <div className="flex-shrink-0">
-                    <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                      <svg className="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <p className="text-sm font-medium text-gray-500">System Uptime</p>
-                    <p className="text-2xl font-bold text-gray-900">
-                      {systemMetrics.systemUptime}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          )}
-
-          {/* Automation Status */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="bg-white rounded-lg shadow"
-          >
-            <div className="px-6 py-4 border-b border-gray-200">
-              <h2 className="text-lg font-medium text-gray-900">Automation Status</h2>
-              <p className="text-sm text-gray-600">Real-time status of all autonomous agents and orchestrators</p>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div className="bg-gray-800 p-6 rounded-lg">
+              <h3 className="text-lg font-semibold mb-2">Active Agents</h3>
+              <p className="text-3xl font-bold text-green-400">{adminData.systemHealth.activeAgents}</p>
             </div>
-            
-            <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-gray-200">
-                <thead className="bg-gray-50">
-                  <tr>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Automation
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Status
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Health
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Performance
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Tasks
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Uptime
-                    </th>
-                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Actions
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
-                  {automations.map((automation) => (
-                    <tr key={automation.id} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div>
-                          <div className="text-sm font-medium text-gray-900">{automation.name}</div>
-                          <div className="text-sm text-gray-500">{automation.description}</div>
-                          <div className="text-xs text-gray-400">{automation.type}</div>
-                        </div>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(automation.status)}`}>
-                          {automation.status}
-                        </span>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="flex items-center">
-                          <div className="w-16 bg-gray-200 rounded-full h-2 mr-2">
-                            <div 
-                              className={`h-2 rounded-full ${automation.health >= 90 ? 'bg-green-500' : automation.health >= 70 ? 'bg-yellow-500' : 'bg-red-500'}`}
-                              style={{ width: `${automation.health}%` }}
-                            ></div>
-                          </div>
-                          <span className={`text-sm font-medium ${getHealthColor(automation.health)}`}>
-                            {automation.health}%
-                          </span>
-                        </div>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="flex items-center">
-                          <div className="w-16 bg-gray-200 rounded-full h-2 mr-2">
-                            <div 
-                              className={`h-2 rounded-full ${automation.performance >= 90 ? 'bg-green-500' : automation.performance >= 70 ? 'bg-yellow-500' : 'bg-red-500'}`}
-                              style={{ width: `${automation.performance}%` }}
-                            ></div>
-                          </div>
-                          <span className="text-sm font-medium text-gray-900">
-                            {automation.performance}%
-                          </span>
-                        </div>
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {automation.tasksCompleted.toLocaleString()}
-                        {automation.errors > 0 && (
-                          <span className="ml-2 text-red-600">({automation.errors} errors)</span>
-                        )}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {automation.uptime}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                        <div className="flex space-x-2">
-                          {automation.status === 'running' ? (
-                            <>
-                              <button
-                                onClick={() => handleAutomationAction(automation.id, 'stop')}
-                                className="text-red-600 hover:text-red-900 bg-red-50 hover:bg-red-100 px-2 py-1 rounded text-xs"
-                              >
-                                Stop
-                              </button>
-                              <button
-                                onClick={() => handleAutomationAction(automation.id, 'restart')}
-                                className="text-yellow-600 hover:text-yellow-900 bg-yellow-50 hover:bg-yellow-100 px-2 py-1 rounded text-xs"
-                              >
-                                Restart
-                              </button>
-                            </>
-                          ) : (
-                            <button
-                              onClick={() => handleAutomationAction(automation.id, 'start')}
-                              className="text-green-600 hover:text-green-900 bg-green-50 hover:bg-green-100 px-2 py-1 rounded text-xs"
-                            >
-                              Start
-                            </button>
-                          )}
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="bg-gray-800 p-6 rounded-lg">
+              <h3 className="text-lg font-semibold mb-2">Total Agents</h3>
+              <p className="text-3xl font-bold text-blue-400">{adminData.systemHealth.totalAgents}</p>
             </div>
-          </motion.div>
+            <div className="bg-gray-800 p-6 rounded-lg">
+              <h3 className="text-lg font-semibold mb-2">System Health</h3>
+              <p className={`text-3xl font-bold ${adminData.systemHealth.systemHealth === 'healthy' ? 'text-green-400' : 'text-yellow-400'}`}>
+                {adminData.systemHealth.systemHealth}
+              </p>
+            </div>
+            <div className="bg-gray-800 p-6 rounded-lg">
+              <h3 className="text-lg font-semibold mb-2">Uptime</h3>
+              <p className="text-3xl font-bold text-purple-400">{Math.floor(adminData.systemHealth.uptime / 3600)}h</p>
+            </div>
+          </div>
 
-          {/* System Logs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="mt-8 bg-white rounded-lg shadow"
-          >
-            <div className="px-6 py-4 border-b border-gray-200">
-              <h2 className="text-lg font-medium text-gray-900">System Logs</h2>
-              <p className="text-sm text-gray-600">Real-time system activity and automation logs</p>
+          {/* Quick Actions */}
+          <div className="bg-gray-800 p-6 rounded-lg mb-8">
+            <h2 className="text-xl font-semibold mb-4">Quick Actions</h2>
+            <div className="flex space-x-4">
+              <button
+                onClick={createNewAgent}
+                className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md"
+              >
+                Create New Agent
+              </button>
+              <button
+                onClick={evolveSystem}
+                className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-md"
+              >
+                Evolve System
+              </button>
+              <button
+                onClick={() => loadAdminData()}
+                className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-md"
+              >
+                Refresh Data
+              </button>
             </div>
-            <div className="px-6 py-4">
-              <div className="bg-gray-900 text-green-400 p-4 rounded-lg font-mono text-sm h-64 overflow-y-auto">
-                <div className="space-y-1">
-                  <div>[2024-01-15 14:32:15] INFO: Master Controller initialized successfully</div>
-                  <div>[2024-01-15 14:32:18] INFO: Agent Factory started - 12 agents available</div>
-                  <div>[2024-01-15 14:32:20] INFO: Content Generator Agent processing batch #2156</div>
-                  <div>[2024-01-15 14:32:25] INFO: Research Agent discovered new AI trend: "Multi-modal AI agents"</div>
-                  <div>[2024-01-15 14:32:30] INFO: System Monitor Agent - Health check passed (94% overall)</div>
-                  <div>[2024-01-15 14:32:35] INFO: Workload Orchestrator distributed 15 new tasks</div>
-                  <div>[2024-01-15 14:32:40] WARN: Content Generator Agent - Minor performance degradation detected</div>
-                  <div>[2024-01-15 14:32:45] INFO: Autonomous Agent Factory created new research agent</div>
-                  <div>[2024-01-15 14:32:50] INFO: System backup completed successfully</div>
-                  <div>[2024-01-15 14:32:55] INFO: All automations running normally</div>
-                </div>
+          </div>
+
+          {/* Agents Status */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="bg-gray-800 p-6 rounded-lg">
+              <h2 className="text-xl font-semibold mb-4">Active Agents</h2>
+              <div className="space-y-3">
+                {adminData.agents.map((agent) => (
+                  <div key={agent.id} className="flex justify-between items-center p-3 bg-gray-700 rounded">
+                    <div>
+                      <p className="font-medium">{agent.type}</p>
+                      <p className="text-sm text-gray-400">Last activity: {new Date(agent.lastActivity).toLocaleString()}</p>
+                    </div>
+                    <span className={`px-2 py-1 rounded text-xs ${agent.status === 'active' ? 'bg-green-600' : 'bg-yellow-600'}`}>
+                      {agent.status}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
-          </motion.div>
-        </div>
+
+            {/* Admin Tools */}
+            <div className="bg-gray-800 p-6 rounded-lg">
+              <h2 className="text-xl font-semibold mb-4">Admin Tools</h2>
+              <div className="space-y-3">
+                {adminData.adminTools.map((tool) => (
+                  <div key={tool.name} className="flex justify-between items-center p-3 bg-gray-700 rounded">
+                    <div>
+                      <p className="font-medium">{tool.name}</p>
+                      <p className="text-sm text-gray-400">{tool.description}</p>
+                    </div>
+                    <button
+                      onClick={() => executeTool(tool.name)}
+                      className="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-xs"
+                    >
+                      Execute
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Web Research */}
+          <div className="bg-gray-800 p-6 rounded-lg mt-8">
+            <h2 className="text-xl font-semibold mb-4">Web Research Findings</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {adminData.webResearch.map((research, index) => (
+                <div key={index} className="bg-gray-700 p-4 rounded">
+                  <h3 className="font-medium mb-2">{research.topic}</h3>
+                  <ul className="text-sm text-gray-400 space-y-1">
+                    {research.findings.map((finding: any, idx: number) => (
+                      <li key={idx}>• {finding}</li>
+                    ))}
+                  </ul>
+                  <p className="text-xs text-gray-500 mt-2">
+                    {new Date(research.timestamp).toLocaleString()}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* System Status */}
+          <div className="bg-gray-800 p-6 rounded-lg mt-8">
+            <h2 className="text-xl font-semibold mb-4">System Status</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-medium mb-2">Evolution Status</h3>
+                <p className="text-green-400">{adminData.evolutionStatus}</p>
+              </div>
+              <div>
+                <h3 className="font-medium mb-2">Last Update</h3>
+                <p className="text-gray-400">{new Date(adminData.lastUpdate).toLocaleString()}</p>
+              </div>
+            </div>
+          </div>
+        </main>
       </div>
     </>
   );
-} 
+};
+
+const LoginForm: React.FC<{ onLogin: (username: string, password: string) => void }> = ({ onLogin }) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onLogin(username, password);
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+      <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 className="text-2xl font-bold text-white mb-6 text-center">Admin Login</h1>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-300 mb-2">
+              Username
+            </label>
+            <input
+              type="email"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter username"
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-300 mb-2">
+              Password
+            </label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter password"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-200"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default AdminDashboard; 

@@ -8,7 +8,10 @@
     "export": "next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "autonomous": "node automation/launch-enhanced-autonomous-system.js",
+    "autonomous:dev": "nodemon automation/launch-enhanced-autonomous-system.js",
+    "autonomous:status": "node automation/check-autonomous-status.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
