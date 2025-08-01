@@ -3,7 +3,7 @@
     "id": "23f0f087-b4c8-419d-ba21-b81a59324583",
     "type": "content-generation",
     "name": "Content-generation Agent",
-    "status": "stopped",
+    "status": "running",
     "capabilities": [
       "ai-writing",
       "seo-optimization",
@@ -24,7 +24,7 @@
       "plagiarismCheck": true
     },
     "createdAt": "2025-08-01T11:58:53.987Z",
-    "lastActive": "2025-08-01T12:25:30.577Z",
+    "lastActive": "2025-08-01T12:26:00.335Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -52,18 +52,20 @@
       "_events": {},
       "_eventsCount": 2,
       "_closesNeeded": 3,
-      "_closesGot": 3,
+      "_closesGot": 0,
       "connected": false,
       "signalCode": null,
-      "exitCode": 1,
+      "exitCode": null,
       "killed": false,
       "spawnfile": "node",
-      "_handle": null,
+      "_handle": {
+        "pid": 181
+      },
       "spawnargs": [
         "node",
         "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js"
       ],
-      "pid": 98702,
+      "pid": 181,
       "stdin": {
         "connecting": false,
         "_hadError": false,
@@ -255,7 +257,7 @@
         }
       ]
     },
-    "pid": 98702
+    "pid": 181
   },
   {
     "id": "a8e97b64-bd2c-4373-b90e-418853a33dcc",
@@ -1736,6 +1738,66 @@
         "timestamp": "2025-08-01T12:25:39.918Z",
         "type": "stdout",
         "message": "Performance: SUCCESS in 1ms"
+      },
+      {
+        "timestamp": "2025-08-01T12:25:49.918Z",
+        "type": "stdout",
+        "message": "🔍 Processing competitive-analysis task..."
+      },
+      {
+        "timestamp": "2025-08-01T12:25:49.918Z",
+        "type": "stdout",
+        "message": "🏢 Performing competitive analysis for 2 competitors"
+      },
+      {
+        "timestamp": "2025-08-01T12:25:49.984Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T12:25:49.984Z",
+        "type": "stderr",
+        "message": "Failed to analyze competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T12:25:50.064Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL\nFailed to analyze competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T12:25:50.064Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 146ms\nPerformance: SUCCESS in 146ms"
+      },
+      {
+        "timestamp": "2025-08-01T12:25:59.919Z",
+        "type": "stdout",
+        "message": "🔍 Processing competitive-analysis task...\n🏢 Performing competitive analysis for 2 competitors"
+      },
+      {
+        "timestamp": "2025-08-01T12:25:59.986Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T12:25:59.986Z",
+        "type": "stderr",
+        "message": "Failed to analyze competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T12:26:00.070Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T12:26:00.070Z",
+        "type": "stderr",
+        "message": "Failed to analyze competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T12:26:00.070Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 151ms\nPerformance: SUCCESS in 151ms"
       }
     ],
     "health": {
@@ -1988,7 +2050,7 @@
       "plagiarismCheck": true
     },
     "createdAt": "2025-08-01T12:24:28.344Z",
-    "lastActive": "2025-08-01T12:25:32.613Z",
+    "lastActive": "2025-08-01T12:26:00.339Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -3204,7 +3266,7 @@
       "_events": {},
       "_eventsCount": 2,
       "_closesNeeded": 3,
-      "_closesGot": 0,
+      "_closesGot": 3,
       "connected": false,
       "signalCode": null,
       "exitCode": 1,
@@ -3269,7 +3331,7 @@
           "corked": 0,
           "writelen": 0,
           "bufferedIndex": 0,
-          "pendingcb": 1
+          "pendingcb": 0
         },
         "allowHalfOpen": false,
         "_eventsCount": 3,
@@ -3300,7 +3362,7 @@
           "corked": 0,
           "writelen": 0,
           "bufferedIndex": 0,
-          "pendingcb": 1
+          "pendingcb": 0
         },
         "allowHalfOpen": false,
         "_eventsCount": 3,
@@ -3364,7 +3426,7 @@
             "corked": 0,
             "writelen": 0,
             "bufferedIndex": 0,
-            "pendingcb": 1
+            "pendingcb": 0
           },
           "allowHalfOpen": false,
           "_eventsCount": 3,
@@ -3395,7 +3457,7 @@
             "corked": 0,
             "writelen": 0,
             "bufferedIndex": 0,
-            "pendingcb": 1
+            "pendingcb": 0
           },
           "allowHalfOpen": false,
           "_eventsCount": 3,
