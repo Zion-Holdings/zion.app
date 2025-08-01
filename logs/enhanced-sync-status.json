@@ -1,11 +1,11 @@
 {
-  "lastCheck": "2025-08-01T05:26:17.715Z",
+  "lastCheck": "2025-08-01T05:27:07.449Z",
   "jobs": {
     "gitSync": {
-      "lastRun": "2025-08-01T05:26:17.715Z",
-      "duration": 17622,
-      "success": true,
-      "error": null
+      "lastRun": "2025-08-01T05:27:07.448Z",
+      "duration": 0,
+      "success": false,
+      "error": "Command failed: git commit -m \"Auto-sync: Continuous improvement - $(date)\"\n🔍 Running pre-commit checks...\n📝 Running ESLint...\n\n> bolt.new.zion.app@0.1.0 lint\n> next lint\n\n✔ No ESLint warnings or errors\n🔍 Running TypeScript type check...\n\n> bolt.new.zion.app@0.1.0 type-check\n> tsc --noEmit\n\n✅ Pre-commit checks passed\n⚠️  Warning: Consider using conventional commit format (e.g., feat: add new feature)\n   Examples: feat:, fix:, docs:, style:, refactor:, test:, chore:\n✅ Commit message validation passed\nfatal: cannot lock ref 'HEAD': is at d9703352ca6c40d7beee55799879a431d625997f but expected 58f3b5eb9a9272849fbf123c7700de4c547f4672\n"
     },
     "buildCheck": {
       "lastRun": "2025-07-31T22:40:06.122Z",
@@ -44,7 +44,7 @@
       "error": null
     }
   },
-  "errors": 737,
+  "errors": 738,
   "fixes": 586,
   "syncs": 452,
   "builds": 5,
