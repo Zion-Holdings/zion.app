@@ -209,15 +209,15 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-01T12:24:28.481Z",
-    "lastRun": "2025-08-01T16:12:00.999Z",
-    "nextRun": "2025-08-01T19:00:00.000Z",
+    "lastRun": "2025-08-01T20:00:00.267Z",
+    "nextRun": "2025-08-01T23:00:00.000Z",
     "status": "scheduled",
     "performance": {
-      "totalRuns": 3,
+      "totalRuns": 4,
       "successfulRuns": 0,
-      "failedRuns": 3,
+      "failedRuns": 4,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300631
+      "lastExecutionTime": 300961
     },
     "logs": [
       {
@@ -240,6 +240,17 @@
       },
       {
         "timestamp": "2025-08-01T16:17:01.630Z",
+        "level": "info",
+        "message": "Job restarted"
+      },
+      {
+        "timestamp": "2025-08-01T20:05:01.228Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-01T20:05:01.228Z",
         "level": "info",
         "message": "Job restarted"
       }
@@ -266,15 +277,15 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-01T12:24:28.483Z",
-    "lastRun": "2025-08-01T19:45:00.214Z",
-    "nextRun": "2025-08-01T20:00:00.000Z",
+    "lastRun": "2025-08-01T20:00:00.269Z",
+    "nextRun": "2025-08-01T20:15:00.000Z",
     "status": "scheduled",
     "performance": {
-      "totalRuns": 32,
+      "totalRuns": 33,
       "successfulRuns": 0,
-      "failedRuns": 32,
+      "failedRuns": 33,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300033
+      "lastExecutionTime": 300965
     },
     "logs": [
       {
@@ -616,6 +627,17 @@
       },
       {
         "timestamp": "2025-08-01T19:50:00.247Z",
+        "level": "info",
+        "message": "Job restarted"
+      },
+      {
+        "timestamp": "2025-08-01T20:05:01.234Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-01T20:05:01.234Z",
         "level": "info",
         "message": "Job restarted"
       }
