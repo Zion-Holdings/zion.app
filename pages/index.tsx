@@ -645,6 +645,9 @@ const Home: NextPage = () => {
               <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
                 Join Zion Now
               </Link>
+              <div className="text-xs text-purple-400 bg-purple-500/10 px-2 py-1 rounded-full border border-purple-500/20">
+                {displayedSections.length} sections
+              </div>
             </div>
 
             {/* Mobile menu button */}
