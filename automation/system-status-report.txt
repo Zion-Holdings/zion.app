@@ -1,0 +1,67 @@
+=== AUTONOMOUS SYSTEM STATUS REPORT ===
+Generated: Fri Aug  1 09:03:03 -03 2025
+
+RUNNING PROCESSES:
+miami2           61045   3.8  0.1 36191396  49628   ??  Us    9:03AM   0:00.31 node /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation kill_retry_time=100
+miami2           60940   1.8  0.0 34133656   2000   ??  U     9:02AM   0:00.04 /bin/bash /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/admin-cron-system.sh start
+miami2           82713   0.6  0.1 36337048  65516   ??  Ss   10:04AM   3:12.65 node /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation kill_retry_time=100
+miami2           81477   0.6  0.1 37123224  74364   ??  Ss   10:04AM   3:07.82 node /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation kill_retry_time=100
+miami2           81772   0.4  0.1 36993176  77744   ??  Ss   10:04AM   3:14.31 node /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation kill_retry_time=100
+miami2           97322   0.0  0.1 46799856  75284 s213  S+   11:53PM   0:01.56 node automation/run-automation.js
+miami2           64286   0.0  0.2 36879744 166232   ??  S    Thu08AM   0:26.60 node /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/enhanced-sync-manager.cjs
+miami2           28555   0.0  0.1 36174360  85932   ??  S    Wed10PM   0:22.74 /usr/local/bin/node /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/infinite-improvement-loop-simple.js
+miami2           21303   0.0  0.1 35994668  46892   ??  S    Wed10PM   0:02.89 /usr/local/bin/node /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/ai-orchestrator.js
+miami2           50988   0.0  0.1 35562796  37896 s313  S+    8:58AM   0:00.17 node automation/launch-enhanced-autonomous-system.js
+miami2           50865   0.0  0.1 36272280  49400 s313  S+    8:58AM   0:00.34 npm run autonomous   
+miami2           43526   0.0  0.1 36067884  47592 s299  S     8:57AM   0:00.54 node automation/enhanced-cron-system.js
+
+CRON JOBS:
+@reboot /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/setup-system-cron.sh > /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/logs/cron-manager.log 2>&1
+
+# Netlify Build Automation Cron Jobs
+# Check build status every 5 minutes
+*/5 * * * * "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/system-build-monitor.sh"
+
+# Health check every hour
+0 * * * * "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/system-health-check.sh"
+
+# Daily dependency update at 2 AM
+0 2 * * * "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/system-dependency-updater.sh"
+
+# Weekly cleanup on Sunday at 3 AM
+0 3 * * 0 "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/system-cleanup.sh"
+
+0 */6 * * * /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/cron-automation.sh
+# Autonomous Agent System Cron Jobs
+# Market Research - Every 6 hours
+0 */6 * * * cd /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation && node autonomous-market-research-agent.js >> logs/market-research.log 2>&1
+
+# Solution Creation - Every 12 hours
+0 */12 * * * cd /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation && node autonomous-solution-creator-agent.js >> logs/solution-creation.log 2>&1
+
+# Sales Campaign - Every 8 hours
+0 */8 * * * cd /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation && node autonomous-sales-agent.js >> logs/sales-campaign.log 2>&1
+
+# Agent Creation - Weekly
+0 0 * * 0 cd /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation && node continuous-agent-creator.js >> logs/agent-creation.log 2>&1
+
+# Master Orchestrator - Every 4 hours
+0 */4 * * * cd /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation && node autonomous-master-orchestrator.js >> logs/master-orchestrator.log 2>&1
+
+# Monitoring - Every 30 minutes
+*/30 * * * * cd /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation && node monitor-automation.js >> logs/monitoring.log 2>&1
+
+# Backup - Daily at 2 AM
+0 2 * * * cd /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation && ./backup-autonomous-system.sh >> logs/backup.log 2>&1
+
+RECENT LOGS:
+-rwxr-xr-x  1 miami2  staff       1873 Jul 31 08:21 automation/logs/startup.log
+-rwxr-xr-x  1 miami2  staff       2274 Jul 31 08:21 automation/logs/sync-automation-orchestrator.log
+-rwxr-xr-x  1 miami2  staff       9394 Jul 31 08:45 automation/logs/sync-manager.log
+-rwxr-xr-x  1 miami2  staff       4955 Jul 31 08:21 automation/logs/sync-monitor.log
+-rwxr-xr-x  1 miami2  staff       1018 Jul 31 08:21 automation/logs/system-cron-setup.log
+-rwxr-xr-x  1 miami2  staff        531 Jul 31 08:21 automation/logs/system-health-checker.log
+-rwxr-xr-x  1 miami2  staff      11988 Jul 31 08:21 automation/logs/system-monitor.log
+-rwxr-xr-x  1 miami2  staff       3712 Jul 31 08:24 automation/logs/universal-launcher.log
+-rwxr-xr-x  1 miami2  staff       3941 Aug  1 02:16 automation/logs/website-analyzer-analyzer-1754025378896.log
+-rwxr-xr-x  1 miami2  staff       1105 Aug  1 01:49 automation/logs/website-analyzer.log
