@@ -24,7 +24,7 @@
       "plagiarismCheck": true
     },
     "createdAt": "2025-08-01T11:58:53.987Z",
-    "lastActive": "2025-08-01T19:15:00.523Z",
+    "lastActive": "2025-08-01T19:15:30.655Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -32,16 +32,6 @@
       "uptime": 0
     },
     "logs": [
-      {
-        "timestamp": "2025-08-01T18:42:30.072Z",
-        "type": "stderr",
-        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
-      },
-      {
-        "timestamp": "2025-08-01T18:42:30.420Z",
-        "type": "stderr",
-        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
-      },
       {
         "timestamp": "2025-08-01T18:43:00.358Z",
         "type": "stderr",
@@ -529,6 +519,16 @@
       },
       {
         "timestamp": "2025-08-01T19:15:00.520Z",
+        "type": "stderr",
+        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:30.268Z",
+        "type": "stderr",
+        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:30.650Z",
         "type": "stderr",
         "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
       }
@@ -5452,6 +5452,14 @@
         {
           "timestamp": "2025-08-01T19:15:00.523Z",
           "error": "Process exited with code 1"
+        },
+        {
+          "timestamp": "2025-08-01T19:15:30.275Z",
+          "error": "Process exited with code 1"
+        },
+        {
+          "timestamp": "2025-08-01T19:15:30.655Z",
+          "error": "Process exited with code 1"
         }
       ]
     },
@@ -5470,7 +5478,7 @@
         "node",
         "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js"
       ],
-      "pid": 17436,
+      "pid": 18412,
       "stdin": {
         "connecting": false,
         "_hadError": false,
@@ -5662,7 +5670,7 @@
         }
       ]
     },
-    "pid": 17436
+    "pid": 18412
   },
   {
     "id": "a8e97b64-bd2c-4373-b90e-418853a33dcc",
@@ -6976,7 +6984,7 @@
       "retryAttempts": 3
     },
     "createdAt": "2025-08-01T12:24:28.334Z",
-    "lastActive": "2025-08-01T19:14:28.064Z",
+    "lastActive": "2025-08-01T19:15:28.063Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -6984,71 +6992,6 @@
       "uptime": 0
     },
     "logs": [
-      {
-        "timestamp": "2025-08-01T19:11:13.315Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 21918ms\nPerformance: SUCCESS in 21918ms"
-      },
-      {
-        "timestamp": "2025-08-01T19:11:21.404Z",
-        "type": "stdout",
-        "message": "🔍 Processing trend-detection task...\n📈 Detecting trends for keywords: AI, machine learning, automation\n✅ Task completed in 0ms\nPerformance: SUCCESS in 0ms"
-      },
-      {
-        "timestamp": "2025-08-01T19:11:31.403Z",
-        "type": "stdout",
-        "message": "🔍 Processing competitive-analysis task..."
-      },
-      {
-        "timestamp": "2025-08-01T19:11:31.403Z",
-        "type": "stdout",
-        "message": "🏢 Performing competitive analysis for 2 competitors"
-      },
-      {
-        "timestamp": "2025-08-01T19:11:31.617Z",
-        "type": "stderr",
-        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T19:11:31.617Z",
-        "type": "stderr",
-        "message": "Failed to analyze competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T19:11:31.798Z",
-        "type": "stderr",
-        "message": "Failed to scrape competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T19:11:31.798Z",
-        "type": "stderr",
-        "message": "Failed to analyze competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T19:11:31.798Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 395ms\nPerformance: SUCCESS in 395ms"
-      },
-      {
-        "timestamp": "2025-08-01T19:11:41.404Z",
-        "type": "stdout",
-        "message": "🔍 Processing competitive-analysis task..."
-      },
-      {
-        "timestamp": "2025-08-01T19:11:41.404Z",
-        "type": "stdout",
-        "message": "🏢 Performing competitive analysis for 2 competitors"
-      },
-      {
-        "timestamp": "2025-08-01T19:11:41.584Z",
-        "type": "stderr",
-        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
-      {
-        "timestamp": "2025-08-01T19:11:41.584Z",
-        "type": "stderr",
-        "message": "Failed to analyze competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
-      },
       {
         "timestamp": "2025-08-01T19:11:41.742Z",
         "type": "stderr",
@@ -7483,12 +7426,77 @@
         "timestamp": "2025-08-01T19:15:01.429Z",
         "type": "stdout",
         "message": "📈 Detecting trends for keywords: AI, machine learning, automation\n✅ Task completed in 0ms\nPerformance: SUCCESS in 0ms"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:11.428Z",
+        "type": "stdout",
+        "message": "🔍 Processing competitive-analysis task..."
+      },
+      {
+        "timestamp": "2025-08-01T19:15:11.428Z",
+        "type": "stdout",
+        "message": "🏢 Performing competitive analysis for 2 competitors"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:11.693Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:11.693Z",
+        "type": "stderr",
+        "message": "Failed to analyze competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:11.862Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:11.862Z",
+        "type": "stderr",
+        "message": "Failed to analyze competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:11.862Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 435ms"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:11.862Z",
+        "type": "stdout",
+        "message": "Performance: SUCCESS in 435ms"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:21.445Z",
+        "type": "stdout",
+        "message": "🔍 Processing market-research task..."
+      },
+      {
+        "timestamp": "2025-08-01T19:15:21.445Z",
+        "type": "stdout",
+        "message": "📊 Performing market research: artificial intelligence trends 2024"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:31.427Z",
+        "type": "stdout",
+        "message": "🔍 Processing trend-detection task..."
+      },
+      {
+        "timestamp": "2025-08-01T19:15:31.427Z",
+        "type": "stdout",
+        "message": "📈 Detecting trends for keywords: AI, machine learning, automation"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:31.428Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 0ms\nPerformance: SUCCESS in 0ms"
       }
     ],
     "health": {
       "status": "healthy",
-      "lastCheck": "2025-08-01T19:14:28.064Z",
-      "uptime": 60002,
+      "lastCheck": "2025-08-01T19:15:28.063Z",
+      "uptime": 59999,
       "memoryUsage": 0,
       "cpuUsage": 0,
       "errors": []
@@ -7735,7 +7743,7 @@
       "plagiarismCheck": true
     },
     "createdAt": "2025-08-01T12:24:28.344Z",
-    "lastActive": "2025-08-01T19:15:02.593Z",
+    "lastActive": "2025-08-01T19:15:32.768Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -7743,16 +7751,6 @@
       "uptime": 0
     },
     "logs": [
-      {
-        "timestamp": "2025-08-01T18:42:02.417Z",
-        "type": "stderr",
-        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
-      },
-      {
-        "timestamp": "2025-08-01T18:42:32.267Z",
-        "type": "stderr",
-        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
-      },
       {
         "timestamp": "2025-08-01T18:42:32.504Z",
         "type": "stderr",
@@ -8240,6 +8238,16 @@
       },
       {
         "timestamp": "2025-08-01T19:15:02.590Z",
+        "type": "stderr",
+        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:32.368Z",
+        "type": "stderr",
+        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:32.764Z",
         "type": "stderr",
         "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
       }
@@ -13175,6 +13183,14 @@
         {
           "timestamp": "2025-08-01T19:15:02.593Z",
           "error": "Process exited with code 1"
+        },
+        {
+          "timestamp": "2025-08-01T19:15:32.376Z",
+          "error": "Process exited with code 1"
+        },
+        {
+          "timestamp": "2025-08-01T19:15:32.768Z",
+          "error": "Process exited with code 1"
         }
       ]
     },
@@ -13193,7 +13209,7 @@
         "node",
         "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js"
       ],
-      "pid": 17492,
+      "pid": 18514,
       "stdin": {
         "connecting": false,
         "_hadError": false,
@@ -13385,7 +13401,7 @@
         }
       ]
     },
-    "pid": 17492
+    "pid": 18514
   },
   {
     "id": "d6a1e6fb-6982-4d16-9d40-b7d195e87572",
@@ -13418,7 +13434,7 @@
       "autoScaling": true
     },
     "createdAt": "2025-08-01T12:24:28.349Z",
-    "lastActive": "2025-08-01T19:15:04.663Z",
+    "lastActive": "2025-08-01T19:15:34.876Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -13426,16 +13442,6 @@
       "uptime": 0
     },
     "logs": [
-      {
-        "timestamp": "2025-08-01T18:42:34.291Z",
-        "type": "stderr",
-        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/orchestrator-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
-      },
-      {
-        "timestamp": "2025-08-01T18:42:34.559Z",
-        "type": "stderr",
-        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/orchestrator-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
-      },
       {
         "timestamp": "2025-08-01T18:43:04.481Z",
         "type": "stderr",
@@ -13923,6 +13929,16 @@
       },
       {
         "timestamp": "2025-08-01T19:15:04.658Z",
+        "type": "stderr",
+        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/orchestrator-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:34.467Z",
+        "type": "stderr",
+        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/orchestrator-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:34.872Z",
         "type": "stderr",
         "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/orchestrator-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
       }
@@ -18858,6 +18874,14 @@
         {
           "timestamp": "2025-08-01T19:15:04.663Z",
           "error": "Process exited with code 1"
+        },
+        {
+          "timestamp": "2025-08-01T19:15:34.471Z",
+          "error": "Process exited with code 1"
+        },
+        {
+          "timestamp": "2025-08-01T19:15:34.876Z",
+          "error": "Process exited with code 1"
         }
       ]
     },
@@ -18876,7 +18900,7 @@
         "node",
         "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/orchestrator-agent.js"
       ],
-      "pid": 17555,
+      "pid": 18537,
       "stdin": {
         "connecting": false,
         "_hadError": false,
@@ -19068,7 +19092,7 @@
         }
       ]
     },
-    "pid": 17555
+    "pid": 18537
   },
   {
     "id": "36146875-b608-4bdb-acc3-9a60f56048f7",
@@ -19101,7 +19125,7 @@
       "autoRecovery": true
     },
     "createdAt": "2025-08-01T12:24:28.353Z",
-    "lastActive": "2025-08-01T19:15:06.730Z",
+    "lastActive": "2025-08-01T19:15:36.908Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -19109,16 +19133,6 @@
       "uptime": 0
     },
     "logs": [
-      {
-        "timestamp": "2025-08-01T18:42:36.357Z",
-        "type": "stderr",
-        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/monitor-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
-      },
-      {
-        "timestamp": "2025-08-01T18:42:36.721Z",
-        "type": "stderr",
-        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/monitor-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
-      },
       {
         "timestamp": "2025-08-01T18:43:06.548Z",
         "type": "stderr",
@@ -19606,6 +19620,16 @@
       },
       {
         "timestamp": "2025-08-01T19:15:06.726Z",
+        "type": "stderr",
+        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/monitor-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:36.516Z",
+        "type": "stderr",
+        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/monitor-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:36.908Z",
         "type": "stderr",
         "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/monitor-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
       }
@@ -24541,6 +24565,14 @@
         {
           "timestamp": "2025-08-01T19:15:06.730Z",
           "error": "Process exited with code 1"
+        },
+        {
+          "timestamp": "2025-08-01T19:15:36.520Z",
+          "error": "Process exited with code 1"
+        },
+        {
+          "timestamp": "2025-08-01T19:15:36.908Z",
+          "error": "Process exited with code 1"
         }
       ]
     },
@@ -24559,7 +24591,7 @@
         "node",
         "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/monitor-agent.js"
       ],
-      "pid": 17576,
+      "pid": 18649,
       "stdin": {
         "connecting": false,
         "_hadError": false,
@@ -24751,7 +24783,7 @@
         }
       ]
     },
-    "pid": 17576
+    "pid": 18649
   },
   {
     "id": "6bee24f5-758e-4335-b749-a2d2fb5e6c09",
@@ -24785,7 +24817,7 @@
       "qualityThreshold": 0.95
     },
     "createdAt": "2025-08-01T12:24:28.358Z",
-    "lastActive": "2025-08-01T19:15:08.794Z",
+    "lastActive": "2025-08-01T19:15:39.049Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -24793,16 +24825,6 @@
       "uptime": 0
     },
     "logs": [
-      {
-        "timestamp": "2025-08-01T18:42:38.399Z",
-        "type": "stderr",
-        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/data-processor-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
-      },
-      {
-        "timestamp": "2025-08-01T18:42:38.771Z",
-        "type": "stderr",
-        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/data-processor-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
-      },
       {
         "timestamp": "2025-08-01T18:43:08.610Z",
         "type": "stderr",
@@ -25290,6 +25312,16 @@
       },
       {
         "timestamp": "2025-08-01T19:15:08.793Z",
+        "type": "stderr",
+        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/data-processor-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:38.624Z",
+        "type": "stderr",
+        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/data-processor-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:39.043Z",
         "type": "stderr",
         "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/data-processor-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
       }
@@ -30225,6 +30257,14 @@
         {
           "timestamp": "2025-08-01T19:15:08.794Z",
           "error": "Process exited with code 1"
+        },
+        {
+          "timestamp": "2025-08-01T19:15:38.632Z",
+          "error": "Process exited with code 1"
+        },
+        {
+          "timestamp": "2025-08-01T19:15:39.049Z",
+          "error": "Process exited with code 1"
         }
       ]
     },
@@ -30243,7 +30283,7 @@
         "node",
         "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/data-processor-agent.js"
       ],
-      "pid": 17661,
+      "pid": 18690,
       "stdin": {
         "connecting": false,
         "_hadError": false,
@@ -30435,7 +30475,7 @@
         }
       ]
     },
-    "pid": 17661
+    "pid": 18690
   },
   {
     "id": "5a9394d0-e671-4c46-ad80-8660121aa946",
@@ -30469,7 +30509,7 @@
       "reviewWorkflow": true
     },
     "createdAt": "2025-08-01T12:24:28.363Z",
-    "lastActive": "2025-08-01T19:15:10.874Z",
+    "lastActive": "2025-08-01T19:15:41.080Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -30477,16 +30517,6 @@
       "uptime": 0
     },
     "logs": [
-      {
-        "timestamp": "2025-08-01T18:42:10.677Z",
-        "type": "stderr",
-        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/quality-assurance-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
-      },
-      {
-        "timestamp": "2025-08-01T18:42:40.507Z",
-        "type": "stderr",
-        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/quality-assurance-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
-      },
       {
         "timestamp": "2025-08-01T18:42:40.867Z",
         "type": "stderr",
@@ -30974,6 +31004,16 @@
       },
       {
         "timestamp": "2025-08-01T19:15:10.869Z",
+        "type": "stderr",
+        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/quality-assurance-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:40.678Z",
+        "type": "stderr",
+        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/quality-assurance-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
+      },
+      {
+        "timestamp": "2025-08-01T19:15:41.076Z",
         "type": "stderr",
         "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/quality-assurance-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
       }
@@ -35909,6 +35949,14 @@
         {
           "timestamp": "2025-08-01T19:15:10.874Z",
           "error": "Process exited with code 1"
+        },
+        {
+          "timestamp": "2025-08-01T19:15:40.683Z",
+          "error": "Process exited with code 1"
+        },
+        {
+          "timestamp": "2025-08-01T19:15:41.080Z",
+          "error": "Process exited with code 1"
         }
       ]
     },
@@ -35916,7 +35964,7 @@
       "_events": {},
       "_eventsCount": 2,
       "_closesNeeded": 3,
-      "_closesGot": 2,
+      "_closesGot": 0,
       "connected": false,
       "signalCode": null,
       "exitCode": 1,
@@ -35927,7 +35975,7 @@
         "node",
         "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/quality-assurance-agent.js"
       ],
-      "pid": 17790,
+      "pid": 18739,
       "stdin": {
         "connecting": false,
         "_hadError": false,
@@ -35981,7 +36029,7 @@
           "corked": 0,
           "writelen": 0,
           "bufferedIndex": 0,
-          "pendingcb": 0
+          "pendingcb": 1
         },
         "allowHalfOpen": false,
         "_eventsCount": 3,
@@ -36012,7 +36060,7 @@
           "corked": 0,
           "writelen": 0,
           "bufferedIndex": 0,
-          "pendingcb": 0
+          "pendingcb": 1
         },
         "allowHalfOpen": false,
         "_eventsCount": 3,
@@ -36076,7 +36124,7 @@
             "corked": 0,
             "writelen": 0,
             "bufferedIndex": 0,
-            "pendingcb": 0
+            "pendingcb": 1
           },
           "allowHalfOpen": false,
           "_eventsCount": 3,
@@ -36107,7 +36155,7 @@
             "corked": 0,
             "writelen": 0,
             "bufferedIndex": 0,
-            "pendingcb": 0
+            "pendingcb": 1
           },
           "allowHalfOpen": false,
           "_eventsCount": 3,
@@ -36119,6 +36167,6 @@
         }
       ]
     },
-    "pid": 17790
+    "pid": 18739
   }
 ]
