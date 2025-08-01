@@ -12,6 +12,7 @@ const Home: NextPage = () => {
   const [visibleSections, setVisibleSections] = useState<Set<number>>(new Set())
   const [displayedSections, setDisplayedSections] = useState<any[]>([])
   const [nextSectionId, setNextSectionId] = useState(9)
+  const [isFooterPersistent, setIsFooterPersistent] = useState(false)
 
   const handleWaitlistSubmit = (e: React.FormEvent) => {
     e.preventDefault()
