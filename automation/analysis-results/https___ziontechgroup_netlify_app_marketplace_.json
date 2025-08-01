@@ -1,0 +1,118 @@
+{
+  "url": "https://ziontechgroup.netlify.app/marketplace/",
+  "timestamp": "2025-08-01T05:16:28.497Z",
+  "pageInfo": {
+    "title": "Marketplace - Zion",
+    "description": "Discover AI-powered services, IT solutions, and innovative technologies on Zion marketplace",
+    "keywords": "",
+    "headings": [
+      {
+        "level": "h1",
+        "text": "AI-Powered Marketplace"
+      },
+      {
+        "level": "h3",
+        "text": "AI Development Services"
+      },
+      {
+        "level": "h3",
+        "text": "Cloud Infrastructure Setup"
+      },
+      {
+        "level": "h3",
+        "text": "High-Performance Computing Equipment"
+      },
+      {
+        "level": "h3",
+        "text": "Blockchain Integration"
+      },
+      {
+        "level": "h2",
+        "text": "Why Choose Zion?"
+      },
+      {
+        "level": "h3",
+        "text": "AI-Powered Matching"
+      },
+      {
+        "level": "h3",
+        "text": "Secure Transactions"
+      },
+      {
+        "level": "h3",
+        "text": "Lightning Fast"
+      }
+    ],
+    "content": "ZionLoginAI-Powered MarketplaceConnect with top-tier IT services, AI talents, cutting-edge equipment, and innovative solutions. Powered by advanced AI matching algorithms and secure blockchain technology.Start ExploringLearn More🌟All Services💻IT Services🤖AI Talent⚙️Equipment🚀Innovation🛠️AI Development Services★4.9Expert AI developers for machine learning, deep learning, and AI integration$150-500/hrAI Solutions ProView Details🛠️Cloud Infrastructure Setup★4.8Complete cloud infrastructure design and implementation$2000-15000CloudTech ExpertsView Details🛠️High-Performance Computing Equipment★4.7Latest GPU clusters and computing hardware for AI workloads$5000-50000TechHardware PlusView Details🛠️Blockchain Integration★4.9Secure blockchain solutions for transparent transactions$3000-25000BlockChain SolutionsView DetailsWhy Choose Zion?Our AI-powered platform ensures the perfect match between your needs and available services🤖AI-Powered MatchingAdvanced algorithms connect you with the perfect service providers🔒Secure TransactionsBlockchain technology ensures transparent and secure payments⚡Lightning Fast99.9% transaction success rate with instant processing{\"props\":{\"pageProps\":{}},\"page\":\"/marketplace\",\"query\":{},\"buildId\":\"zVUwnJXgu1RvJi918S1Nz\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "images": [],
+    "forms": [],
+    "scripts": [
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-cefddfb7403e4fd5.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-1594f84e519182f7.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-6c7b577d93bc49de.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-cc39fd0a0daab8c4.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/3996-e453775e721acca3.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-1b16adbab6ffd7db.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/zVUwnJXgu1RvJi918S1Nz/_buildManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/zVUwnJXgu1RvJi918S1Nz/_ssgManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "",
+        "type": "application/json"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-8189f5f9fa1100da.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8484b74dc5c8a75e.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-e2754f9f704e5488.js",
+        "type": "text/javascript"
+      }
+    ],
+    "stylesheets": [
+      {
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/360aa9a8dc4df9b7.css",
+        "media": "all"
+      }
+    ]
+  },
+  "analytics": {
+    "contentLength": 1344,
+    "headingCount": 9,
+    "imageCount": 0,
+    "formCount": 0,
+    "scriptCount": 13,
+    "stylesheetCount": 1
+  }
+}

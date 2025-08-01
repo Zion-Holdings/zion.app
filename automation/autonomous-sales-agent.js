@@ -504,12 +504,13 @@ The AI Solutions Team`
     }
 
     generateEmailAutomation(campaign) {
+        const emailBody = this.generateEmailBody(campaign);
         return {
             welcome: {
                 trigger: 'Sign up',
                 delay: 'Immediate',
                 subject: `Welcome to ${campaign.solutionName}`,
-                content: campaign.content?.emailMarketing?.body || this.generateEmailBody(campaign)
+                content: campaign.content?.emailMarketing?.body || emailBody
             },
             nurture: {
                 trigger: 'No purchase after 3 days',
