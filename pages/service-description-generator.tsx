@@ -32,6 +32,7 @@ export default function ServiceDescriptionGenerator() {
 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -45,6 +46,7 @@ export default function ServiceDescriptionGenerator() {
     e.preventDefault();
     setIsLoading(true);
     setError('');
+    setSuccess('');
 
     try {
       const response = await fetch('/api/generate-service-description', {
@@ -64,6 +66,10 @@ export default function ServiceDescriptionGenerator() {
         content: data.description,
         isEditing: false
       });
+      
+      if (data.note) {
+        setSuccess(data.note);
+      }
     } catch (err) {
       setError('Failed to generate description. Please try again.');
       console.error('Error generating description:', err);
@@ -87,7 +93,16 @@ export default function ServiceDescriptionGenerator() {
   };
 
   const handleAccept = () => {
-    alert('Description accepted! You can now copy and use it.');
+    setSuccess('Description accepted! You can now copy and use it.');
+  };
+
+  const handleCopyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(generatedDescription.content);
+      setSuccess('Description copied to clipboard!');
+    } catch (err) {
+      setError('Failed to copy to clipboard. Please copy manually.');
+    }
   };
 
   return (
@@ -107,6 +122,21 @@ export default function ServiceDescriptionGenerator() {
               Input your service details and let AI generate a professional description
             </p>
           </div>
+
+          {success && (
+            <div className="mb-6 bg-green-50 border border-green-200 rounded-md p-4">
+              <div className="flex">
+                <div className="flex-shrink-0">
+                  <svg className="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div className="ml-3">
+                  <p className="text-sm text-green-800">{success}</p>
+                </div>
+              </div>
+            </div>
+          )}
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Form Section */}
@@ -213,7 +243,17 @@ export default function ServiceDescriptionGenerator() {
                   disabled={isLoading}
                   className="w-full bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
-                  {isLoading ? 'Generating...' : 'Generate Description'}
+                  {isLoading ? (
+                    <div className="flex items-center justify-center">
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Generating...
+                    </div>
+                  ) : (
+                    'Generate Description'
+                  )}
                 </button>
 
                 {error && (
@@ -269,7 +309,7 @@ export default function ServiceDescriptionGenerator() {
 
                   <div className="flex justify-between items-center pt-4 border-t border-gray-200">
                     <button
-                      onClick={() => navigator.clipboard.writeText(generatedDescription.content)}
+                      onClick={handleCopyToClipboard}
                       className="text-blue-600 hover:text-blue-700 text-sm font-medium"
                     >
                       Copy to Clipboard
