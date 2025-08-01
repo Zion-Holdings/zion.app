@@ -24,7 +24,7 @@
       "plagiarismCheck": true
     },
     "createdAt": "2025-08-01T11:58:53.987Z",
-    "lastActive": "2025-08-01T19:34:30.656Z",
+    "lastActive": "2025-08-01T19:34:58.511Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -7221,31 +7221,6 @@
     },
     "logs": [
       {
-        "timestamp": "2025-08-01T19:30:51.909Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 379ms\nPerformance: SUCCESS in 379ms"
-      },
-      {
-        "timestamp": "2025-08-01T19:31:01.531Z",
-        "type": "stdout",
-        "message": "🔍 Processing market-research task..."
-      },
-      {
-        "timestamp": "2025-08-01T19:31:01.532Z",
-        "type": "stdout",
-        "message": "📊 Performing market research: artificial intelligence trends 2024"
-      },
-      {
-        "timestamp": "2025-08-01T19:31:11.533Z",
-        "type": "stdout",
-        "message": "🔍 Processing competitive-analysis task..."
-      },
-      {
-        "timestamp": "2025-08-01T19:31:11.533Z",
-        "type": "stdout",
-        "message": "🏢 Performing competitive analysis for 2 competitors"
-      },
-      {
         "timestamp": "2025-08-01T19:31:11.947Z",
         "type": "stderr",
         "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
@@ -7719,6 +7694,31 @@
         "timestamp": "2025-08-01T19:34:31.996Z",
         "type": "stdout",
         "message": "✅ Task completed in 397ms\nPerformance: SUCCESS in 397ms"
+      },
+      {
+        "timestamp": "2025-08-01T19:34:41.601Z",
+        "type": "stdout",
+        "message": "🔍 Processing trend-detection task..."
+      },
+      {
+        "timestamp": "2025-08-01T19:34:41.601Z",
+        "type": "stdout",
+        "message": "📈 Detecting trends for keywords: AI, machine learning, automation\n✅ Task completed in 0ms\nPerformance: SUCCESS in 0ms"
+      },
+      {
+        "timestamp": "2025-08-01T19:34:51.600Z",
+        "type": "stdout",
+        "message": "🔍 Processing trend-detection task..."
+      },
+      {
+        "timestamp": "2025-08-01T19:34:51.600Z",
+        "type": "stdout",
+        "message": "📈 Detecting trends for keywords: AI, machine learning, automation"
+      },
+      {
+        "timestamp": "2025-08-01T19:34:51.600Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 0ms\nPerformance: SUCCESS in 0ms"
       }
     ],
     "health": {
@@ -37332,7 +37332,7 @@
       "_events": {},
       "_eventsCount": 2,
       "_closesNeeded": 3,
-      "_closesGot": 2,
+      "_closesGot": 3,
       "connected": false,
       "signalCode": null,
       "exitCode": 1,
