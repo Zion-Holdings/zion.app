@@ -55,6 +55,9 @@ const Home: NextPage = () => {
               <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
                 Join Zion Now
               </Link>
+              <Link href="/request-quote" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Request Quote
+              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -92,6 +95,9 @@ const Home: NextPage = () => {
                 <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white block px-3 py-2 rounded-md text-base font-medium">
                   Join Zion Now
                 </Link>
+                <Link href="/request-quote" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  Request Quote
+                </Link>
               </div>
             </div>
           )}
@@ -99,6 +105,7 @@ const Home: NextPage = () => {
       </nav>
 
       <main className="flex-1">
+        {/* Hero Section */}
         <div className="relative overflow-hidden">
           {/* Background Effects */}
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
@@ -116,28 +123,27 @@ const Home: NextPage = () => {
                   <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  AI-Powered Services
+                  The First Free AI-Powered Marketplace
                 </div>
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-                The First Free AI-Powered
+                Zion
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400">
-                  Marketplace
+                  High-Tech Marketplace
                 </span>
               </h1>
               
               <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-                Connect with the world&apos;s premier IT services, AI talents, cutting-edge equipment, and innovative solutions. 
-                Powered by advanced AI matching and secure blockchain technology.
+                The first free AI-powered marketplace for high-tech products, on-demand IT services, AI talents, innovation, and equipment.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
                 <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
                   Start Trading Now
                 </Link>
-                <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</Link><Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Talents</Link><Link href="/equipment" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
-                  Explore Services
+                <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                  Explore Marketplace
                 </Link>
               </div>
               
@@ -164,19 +170,19 @@ const Home: NextPage = () => {
           </div>
         </div>
 
-        {/* Featured Categories */}
+        {/* Categories Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Featured Categories
+              Discover Our Categories
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover the most sought-after services and solutions in our AI-powered marketplace
+              Everything you need for your high-tech business in one place
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* IT Services */}
+            {/* Services */}
             <div className="group relative bg-gradient-to-br from-blue-500/10 to-purple-500/10 p-8 rounded-2xl border border-white/10 hover:border-purple-500/30 transition-all duration-300 hover:transform hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative">
@@ -185,17 +191,17 @@ const Home: NextPage = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">IT Services</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Services</h3>
                 <p className="text-gray-300 mb-6">
-                  Comprehensive IT solutions including cloud infrastructure, cybersecurity, and digital transformation services.
+                  On-demand IT services, cloud infrastructure, cybersecurity, and digital transformation solutions.
                 </p>
-                <Link href="/category/it-services" className="text-purple-400 hover:text-purple-300 font-semibold transition-colors">
+                <Link href="/services" className="text-purple-400 hover:text-purple-300 font-semibold transition-colors">
                   Explore Services →
                 </Link>
               </div>
             </div>
 
-            {/* AI Talents */}
+            {/* Talents */}
             <div className="group relative bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10 hover:border-pink-500/30 transition-all duration-300 hover:transform hover:scale-105">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="relative">
@@ -204,11 +210,11 @@ const Home: NextPage = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">AI Talents</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Talents</h3>
                 <p className="text-gray-300 mb-6">
                   Expert AI engineers, data scientists, and machine learning specialists for your next breakthrough project.
                 </p>
-                <Link href="/category/ai-talents" className="text-pink-400 hover:text-pink-300 font-semibold transition-colors">
+                <Link href="/talents" className="text-pink-400 hover:text-pink-300 font-semibold transition-colors">
                   Find Talent →
                 </Link>
               </div>
@@ -227,7 +233,7 @@ const Home: NextPage = () => {
                 <p className="text-gray-300 mb-6">
                   High-performance computing hardware, specialized AI equipment, and cutting-edge technology infrastructure.
                 </p>
-                <Link href="/category/equipment" className="text-green-400 hover:text-green-300 font-semibold transition-colors">
+                <Link href="/equipment" className="text-green-400 hover:text-green-300 font-semibold transition-colors">
                   Browse Equipment →
                 </Link>
               </div>
@@ -246,7 +252,7 @@ const Home: NextPage = () => {
                 <p className="text-gray-300 mb-6">
                   Revolutionary AI solutions, breakthrough technologies, and next-generation digital transformation services.
                 </p>
-                <Link href="/category/innovation" className="text-orange-400 hover:text-orange-300 font-semibold transition-colors">
+                <Link href="/innovation" className="text-orange-400 hover:text-orange-300 font-semibold transition-colors">
                   Discover Innovation →
                 </Link>
               </div>
