@@ -164,7 +164,7 @@ class EnhancedAutonomousSystem {
         type: 'content',
         script: 'continuous-content-generator.js',
         status: 'active',
-        schedule: '0 */2 * * *',
+        schedule: '*/30 * * * *', // Every 30 seconds (continuous)
         priority: 'high'
       },
       {
