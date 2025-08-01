@@ -126,11 +126,13 @@ manage_backup_agent() {
 monitor_system_health() {
     log_cron_activity "Performing system health check"
     
-    # Check memory usage
-    local memory_usage=$(free | grep Mem | awk '{printf "%.1f", $3/$2 * 100.0}')
-    log_cron_activity "Memory usage: ${memory_usage}%"
+    # Check memory usage (macOS compatible)
+    local memory_usage=$(vm_stat | grep "Pages active" | awk '{print $3}' | sed 's/\.//')
+    local total_memory=$(vm_stat | grep "Pages total" | awk '{print $3}' | sed 's/\.//')
+    local memory_percent=$(echo "scale=1; $memory_usage * 100 / $total_memory" | bc -l 2>/dev/null || echo "0")
+    log_cron_activity "Memory usage: ${memory_percent}%"
     
-    # Check disk usage
+    # Check disk usage (macOS compatible)
     local disk_usage=$(df / | tail -1 | awk '{print $5}' | sed 's/%//')
     log_cron_activity "Disk usage: ${disk_usage}%"
     
@@ -144,7 +146,7 @@ monitor_system_health() {
     log_cron_activity "Active agents: $active_agents"
     
     # Alert if system resources are high
-    if (( $(echo "$memory_usage > 80" | bc -l) )); then
+    if (( $(echo "$memory_percent > 80" | bc -l 2>/dev/null || echo "0") )); then
         log_cron_activity "WARNING: High memory usage detected"
     fi
     
