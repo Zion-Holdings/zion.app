@@ -4,7 +4,7 @@
   "agents": {
     "improvement": {
       "isRunning": false,
-      "lastExit": "2025-08-01T04:07:12.322Z",
+      "lastExit": "2025-08-01T04:07:42.527Z",
       "exitCode": 1,
       "signal": null
     },
@@ -16,7 +16,7 @@
     },
     "analytics": {
       "isRunning": false,
-      "lastExit": "2025-08-01T04:07:12.359Z",
+      "lastExit": "2025-08-01T04:07:42.547Z",
       "exitCode": 1,
       "signal": null
     },
