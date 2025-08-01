@@ -246,7 +246,7 @@ EOF
     },
     "backups": {
         "total_backups": "$(find "$BACKUP_PATH" -name "backup-*" -type d | wc -l)",
-        "latest_backup": "$(find "$BACKUP_PATH" -name "backup-*" -type d -printf '%T@ %p\n' | sort -n | tail -1 | cut -d' ' -f2-)"
+        "latest_backup": "$(find "$BACKUP_PATH" -name "backup-*" -type d -exec ls -ld {} + | sort -k6,7 | tail -1 | awk '{print $9}' 2>/dev/null || echo "none")"
     }
 }
 EOF
