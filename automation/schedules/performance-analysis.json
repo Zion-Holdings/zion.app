@@ -1,0 +1,17 @@
+{
+  "id": "performance-analysis",
+  "name": "Performance Analysis",
+  "description": "Analyze performance every 15 minutes",
+  "cron": "*/15 * * * *",
+  "command": "node automation/analyze-performance.js",
+  "enabled": true,
+  "priority": "medium",
+  "lastRun": null,
+  "nextRun": "2025-08-01T11:58:03.316Z",
+  "runCount": 0,
+  "successCount": 0,
+  "failureCount": 0,
+  "avgDuration": 0,
+  "lastError": null,
+  "createdAt": "2025-08-01T11:57:03.316Z"
+}

@@ -1,0 +1,63 @@
+{
+  "marketing": {
+    "enabled": true,
+    "agents": {
+      "trendResearch": true,
+      "contentCreation": true,
+      "socialMedia": true,
+      "emailCampaigns": true,
+      "seoOptimization": true,
+      "influencerOutreach": true,
+      "adCampaigns": true,
+      "analyticsTracking": true
+    },
+    "schedules": {
+      "trendResearch": "0 */2 * * *",
+      "contentCreation": "0 */4 * * *",
+      "socialMedia": "0 */1 * * *",
+      "emailCampaigns": "0 */6 * * *",
+      "seoOptimization": "0 */8 * * *",
+      "influencerOutreach": "0 9 * * 0",
+      "adCampaigns": "0 */12 * * *",
+      "analyticsTracking": "*/15 * * * *"
+    },
+    "platforms": {
+      "social": [
+        "twitter",
+        "linkedin",
+        "facebook",
+        "instagram",
+        "tiktok"
+      ],
+      "email": [
+        "newsletter",
+        "drip",
+        "announcement"
+      ],
+      "content": [
+        "blog",
+        "landing",
+        "product",
+        "feature"
+      ],
+      "advertising": [
+        "google",
+        "facebook",
+        "linkedin",
+        "twitter"
+      ],
+      "seo": [
+        "onpage",
+        "technical",
+        "content",
+        "local"
+      ],
+      "influencer": [
+        "micro",
+        "macro",
+        "nano",
+        "celebrity"
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "isRunning": false,
+  "startTime": null,
+  "components": {
+    "orchestrator": "running",
+    "agentFactory": "running"
+  },
+  "performance": {
+    "totalAgents": 0,
+    "activeAgents": 0,
+    "totalCampaigns": 0,
+    "totalReach": 0,
+    "totalEngagement": 0,
+    "totalConversions": 0,
+    "totalROI": 0
+  },
+  "errors": [
+    {
+      "timestamp": "2025-08-01T11:57:08.474Z",
+      "error": "Cannot find module './marketing-agents/email-campaign-agent.js'\nRequire stack:\n- /Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/launch-marketing-automation.js",
+      "phase": "launch"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "performance-optimization",
+  "name": "Performance Optimization",
+  "description": "Optimize system performance every 30 minutes",
+  "cron": "*/30 * * * *",
+  "command": "node automation/optimize-performance.js",
+  "enabled": true,
+  "priority": "medium",
+  "lastRun": null,
+  "nextRun": "2025-08-01T11:58:03.300Z",
+  "runCount": 0,
+  "successCount": 0,
+  "failureCount": 0,
+  "avgDuration": 0,
+  "lastError": null,
+  "createdAt": "2025-08-01T11:57:03.299Z"
+}

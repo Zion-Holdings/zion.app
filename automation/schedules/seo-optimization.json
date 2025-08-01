@@ -1,0 +1,17 @@
+{
+  "id": "seo-optimization",
+  "name": "SEO Optimization",
+  "description": "Optimize SEO every 4 hours",
+  "cron": "0 */4 * * *",
+  "command": "node automation/seo-optimization.js",
+  "enabled": true,
+  "priority": "medium",
+  "lastRun": null,
+  "nextRun": "2025-08-01T11:58:03.308Z",
+  "runCount": 0,
+  "successCount": 0,
+  "failureCount": 0,
+  "avgDuration": 0,
+  "lastError": null,
+  "createdAt": "2025-08-01T11:57:03.306Z"
+}

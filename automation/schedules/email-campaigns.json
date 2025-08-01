@@ -1,0 +1,17 @@
+{
+  "id": "email-campaigns",
+  "name": "Email Campaigns",
+  "description": "Send email campaigns every 6 hours",
+  "cron": "0 */6 * * *",
+  "command": "node automation/email-campaigns.js",
+  "enabled": true,
+  "priority": "medium",
+  "lastRun": null,
+  "nextRun": "2025-08-01T11:58:03.310Z",
+  "runCount": 0,
+  "successCount": 0,
+  "failureCount": 0,
+  "avgDuration": 0,
+  "lastError": null,
+  "createdAt": "2025-08-01T11:57:03.310Z"
+}

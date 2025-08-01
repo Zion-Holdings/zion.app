@@ -1,0 +1,17 @@
+{
+  "id": "lead-generation",
+  "name": "Lead Generation",
+  "description": "Generate leads every 3 hours",
+  "cron": "0 */3 * * *",
+  "command": "node automation/lead-generation.js",
+  "enabled": true,
+  "priority": "high",
+  "lastRun": null,
+  "nextRun": "2025-08-01T11:58:03.309Z",
+  "runCount": 0,
+  "successCount": 0,
+  "failureCount": 0,
+  "avgDuration": 0,
+  "lastError": null,
+  "createdAt": "2025-08-01T11:57:03.308Z"
+}

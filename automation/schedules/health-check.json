@@ -1,0 +1,17 @@
+{
+  "id": "health-check",
+  "name": "System Health Check",
+  "description": "Check system health every 5 minutes",
+  "cron": "*/5 * * * *",
+  "command": "node automation/health-check.js",
+  "enabled": true,
+  "priority": "high",
+  "lastRun": null,
+  "nextRun": "2025-08-01T11:58:03.299Z",
+  "runCount": 0,
+  "successCount": 0,
+  "failureCount": 0,
+  "avgDuration": 0,
+  "lastError": null,
+  "createdAt": "2025-08-01T11:57:03.298Z"
+}
