@@ -3,11 +3,10 @@
   "startTime": "2025-08-01T02:50:00.968Z",
   "agents": {
     "improvement": {
-      "isRunning": true,
-      "lastExit": "2025-08-01T04:01:41.487Z",
+      "isRunning": false,
+      "lastExit": "2025-08-01T04:02:41.624Z",
       "exitCode": 1,
-      "signal": null,
-      "lastActivity": "2025-08-01T04:02:00.807Z"
+      "signal": null
     },
     "content": {
       "isRunning": true,
@@ -16,11 +15,10 @@
       "lastActivity": "2025-08-01T04:02:00.806Z"
     },
     "analytics": {
-      "isRunning": true,
-      "lastExit": "2025-08-01T04:01:41.503Z",
+      "isRunning": false,
+      "lastExit": "2025-08-01T04:02:41.645Z",
       "exitCode": 1,
-      "signal": null,
-      "lastActivity": "2025-08-01T04:02:00.807Z"
+      "signal": null
     },
     "health": {
       "isRunning": true,
