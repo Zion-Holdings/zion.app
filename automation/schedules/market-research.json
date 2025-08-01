@@ -6,12 +6,12 @@
   "command": "node automation/market-research.js",
   "enabled": true,
   "priority": "low",
-  "lastRun": null,
-  "nextRun": "2025-08-01T11:58:03.303Z",
-  "runCount": 0,
+  "lastRun": "2025-08-01T15:00:00.910Z",
+  "nextRun": "2025-08-01T15:01:00.954Z",
+  "runCount": 1,
   "successCount": 0,
-  "failureCount": 0,
+  "failureCount": 1,
   "avgDuration": 0,
-  "lastError": null,
+  "lastError": "Job timeout",
   "createdAt": "2025-08-01T11:57:03.302Z"
 }
