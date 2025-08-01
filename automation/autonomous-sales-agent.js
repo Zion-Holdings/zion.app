@@ -463,9 +463,9 @@ The AI Solutions Team`
 
     async generateEmailContent(campaign, contentDir) {
         const emailContent = {
-            subject: campaign.content.emailMarketing.subject,
-            body: campaign.content.emailMarketing.body,
-            segments: campaign.content.emailMarketing.segments,
+            subject: campaign.content?.emailMarketing?.subject || `Learn about ${campaign.solutionName}`,
+            body: campaign.content?.emailMarketing?.body || this.generateEmailContent(campaign),
+            segments: campaign.content?.emailMarketing?.segments || [],
             automation: this.generateEmailAutomation(campaign)
         };
         
@@ -474,9 +474,9 @@ The AI Solutions Team`
 
     async generateContentMarketingMaterials(campaign, contentDir) {
         const contentMaterials = {
-            blogPosts: campaign.content.contentMarketing.blogPosts,
-            whitepapers: campaign.content.contentMarketing.whitepapers,
-            caseStudies: campaign.content.contentMarketing.caseStudies,
+            blogPosts: campaign.content?.contentMarketing?.blogPosts || [],
+            whitepapers: campaign.content?.contentMarketing?.whitepapers || [],
+            caseStudies: campaign.content?.contentMarketing?.caseStudies || [],
             calendar: this.generateContentCalendar(campaign)
         };
         
