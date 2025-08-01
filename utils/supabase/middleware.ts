@@ -40,15 +40,48 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  if (
-    !user &&
-    !request.nextUrl.pathname.startsWith('/auth') &&
-    !request.nextUrl.pathname.startsWith('/api') &&
-    request.nextUrl.pathname !== '/'
-  ) {
-    // no user, potentially respond by redirecting the user to the login page
+  // Define public paths that don't require authentication
+  const publicPaths = [
+    '/',
+    '/auth/login',
+    '/auth/signup',
+    '/auth/callback',
+    '/auth/forgot-password',
+    '/auth/reset-password',
+    '/about',
+    '/blog',
+    '/products',
+    '/category',
+    '/talent'
+  ]
+
+  const isPublicPath = publicPaths.some(path => 
+    request.nextUrl.pathname.startsWith(path) || 
+    request.nextUrl.pathname === path
+  )
+
+  const isApiPath = request.nextUrl.pathname.startsWith('/api')
+  const isStaticPath = request.nextUrl.pathname.startsWith('/_next') || 
+                      request.nextUrl.pathname.startsWith('/favicon.ico')
+
+  // Allow static files and API routes
+  if (isStaticPath || isApiPath) {
+    return supabaseResponse
+  }
+
+  // If user is not authenticated and trying to access protected route
+  if (!user && !isPublicPath) {
+    // Redirect to login page
     const url = request.nextUrl.clone()
     url.pathname = '/auth/login'
+    return NextResponse.redirect(url)
+  }
+
+  // If user is authenticated and trying to access auth pages, redirect to dashboard
+  if (user && (request.nextUrl.pathname.startsWith('/auth/login') || 
+               request.nextUrl.pathname.startsWith('/auth/signup'))) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/dashboard'
     return NextResponse.redirect(url)
   }
 
