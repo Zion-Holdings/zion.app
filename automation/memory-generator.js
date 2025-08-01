@@ -1,0 +1,1 @@
+class MemoryGenerator { constructor() { this.memories = []; } generateMemory(content, tags = [], priority = "medium") { const memory = { id: `memory-${Date.now()}`, content, tags, priority, timestamp: new Date().toISOString() }; this.memories.push(memory); return memory; } getMemories() { return this.memories; } } module.exports = MemoryGenerator;

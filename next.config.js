@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Remove static export to support API routes
+  // Configure for Netlify deployment
+  output: 'standalone',
   trailingSlash: true,
   images: {
     unoptimized: true

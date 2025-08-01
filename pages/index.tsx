@@ -9,7 +9,7 @@ const Home: NextPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
-        <title>Zion - AI-Powered Marketplace</title>
+        <title>Zion - AI-Powered Services</title>
         <meta name="description" content="Zion - The premier AI-powered marketplace connecting businesses with top-tier IT services, AI talents, cutting-edge equipment, and innovative solutions." />
         <meta name="keywords" content="AI marketplace, IT services, AI talents, equipment, innovation, Zion" />
         <link rel="icon" href="/favicon.ico" />
@@ -32,11 +32,14 @@ const Home: NextPage = () => {
               <Link href="/products" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Products
               </Link>
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Marketplace
+              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</Link><Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Talents</Link><Link href="/equipment" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Services
               </Link>
               <Link href="/it-services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 IT Services
+              </Link>
+              <Link href="/quote-request" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Request Quote
               </Link>
               <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 About
@@ -66,8 +69,14 @@ const Home: NextPage = () => {
           {isMenuOpen && (
             <div className="md:hidden bg-black/90 backdrop-blur-md border-t border-white/10">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <Link href="/marketplace" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  Marketplace
+                <Link href="/products" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  Products
+                </Link>
+                <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</Link><Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Talents</Link><Link href="/equipment" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  Services
+                </Link>
+                <Link href="/it-services" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  IT Services
                 </Link>
                 <Link href="/about" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   About
@@ -103,14 +112,14 @@ const Home: NextPage = () => {
                   <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  AI-Powered Marketplace
+                  AI-Powered Services
                 </div>
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-                The Future of
+                The First Free AI-Powered
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400">
-                  Business Exchange
+                  Marketplace
                 </span>
               </h1>
               
@@ -123,8 +132,8 @@ const Home: NextPage = () => {
                 <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
                   Start Trading Now
                 </Link>
-                <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
-                  Explore Marketplace
+                <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</Link><Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Talents</Link><Link href="/equipment" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                  Explore Services
                 </Link>
               </div>
               
@@ -428,8 +437,8 @@ const Home: NextPage = () => {
               <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
                 Get Started Free
               </Link>
-              <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
-                Explore Marketplace
+              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</Link><Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Talents</Link><Link href="/equipment" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                Explore Services
               </Link>
             </div>
           </div>
@@ -449,9 +458,9 @@ const Home: NextPage = () => {
               </p>
             </div>
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Marketplace</h4>
+              <h4 className="text-lg font-semibold text-white mb-4">Services</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><Link href="/category/it-services" className="hover:text-white transition-colors">IT Services</Link></li>
+                <li><Link href="/it-services" className="hover:text-white transition-colors">IT Services</Link></li>
                 <li><Link href="/category/ai-talents" className="hover:text-white transition-colors">AI Talents</Link></li>
                 <li><Link href="/category/equipment" className="hover:text-white transition-colors">Equipment</Link></li>
                 <li><Link href="/category/innovation" className="hover:text-white transition-colors">Innovation</Link></li>
@@ -477,12 +486,11 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="border-t border-white/10 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Zion. All rights reserved. | AI-Powered Marketplace</p>
+            <p>&copy; 2024 Zion. All rights reserved. | AI-Powered Services</p>
           </div>
         </div>
       </footer>
     </div>
   )
 }
-
-export default Home 
+export default Home

@@ -1,0 +1,1 @@
+class RuleGenerator { constructor() { this.rules = []; } generateRule(category, rule, appliesTo = [], priority = "medium") { const ruleObj = { id: `rule-${Date.now()}`, category, rule, appliesTo, priority, timestamp: new Date().toISOString() }; this.rules.push(ruleObj); return ruleObj; } getRules() { return this.rules; } } module.exports = RuleGenerator;
