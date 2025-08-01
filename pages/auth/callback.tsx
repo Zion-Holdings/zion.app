@@ -9,6 +9,7 @@ const AuthCallback: NextPage = () => {
   const router = useRouter()
   const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading')
   const [message, setMessage] = useState('')
+  const [isPasswordReset, setIsPasswordReset] = useState(false)
 
   useEffect(() => {
     const handleAuthCallback = async () => {
@@ -17,6 +18,21 @@ const AuthCallback: NextPage = () => {
       if (error) {
         setStatus('error')
         setMessage('Authentication failed. Please try again.')
+        return
+      }
+
+      // Check if this is a password reset flow
+      const urlParams = new URLSearchParams(window.location.search)
+      const type = urlParams.get('type')
+      
+      if (type === 'recovery') {
+        setIsPasswordReset(true)
+        setStatus('success')
+        setMessage('Password reset link is valid. You can now set your new password.')
+        // Redirect to reset password page
+        setTimeout(() => {
+          router.push('/auth/reset-password')
+        }, 2000)
         return
       }
 
@@ -50,13 +66,17 @@ const AuthCallback: NextPage = () => {
             <Link href="/" className="text-3xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
-            <h2 className="text-2xl font-bold text-white mt-4">Email Verification</h2>
+            <h2 className="text-2xl font-bold text-white mt-4">
+              {isPasswordReset ? 'Password Reset' : 'Email Verification'}
+            </h2>
           </div>
 
           {status === 'loading' && (
             <div className="text-center">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 mx-auto"></div>
-              <p className="text-gray-300 mt-4">Verifying your email...</p>
+              <p className="text-gray-300 mt-4">
+                {isPasswordReset ? 'Processing password reset...' : 'Verifying your email...'}
+              </p>
             </div>
           )}
 
