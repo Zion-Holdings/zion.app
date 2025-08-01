@@ -3,7 +3,7 @@
     "id": "23f0f087-b4c8-419d-ba21-b81a59324583",
     "type": "content-generation",
     "name": "Content-generation Agent",
-    "status": "stopped",
+    "status": "running",
     "capabilities": [
       "ai-writing",
       "seo-optimization",
@@ -24,7 +24,7 @@
       "plagiarismCheck": true
     },
     "createdAt": "2025-08-01T11:58:53.987Z",
-    "lastActive": "2025-08-01T12:54:30.498Z",
+    "lastActive": "2025-08-01T12:55:00.327Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -835,18 +835,20 @@
       "_events": {},
       "_eventsCount": 2,
       "_closesNeeded": 3,
-      "_closesGot": 3,
+      "_closesGot": 0,
       "connected": false,
       "signalCode": null,
-      "exitCode": 1,
+      "exitCode": null,
       "killed": false,
       "spawnfile": "node",
-      "_handle": null,
+      "_handle": {
+        "pid": 53085
+      },
       "spawnargs": [
         "node",
         "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js"
       ],
-      "pid": 51383,
+      "pid": 53085,
       "stdin": {
         "connecting": false,
         "_hadError": false,
@@ -1038,7 +1040,7 @@
         }
       ]
     },
-    "pid": 51383
+    "pid": 53085
   },
   {
     "id": "a8e97b64-bd2c-4373-b90e-418853a33dcc",
@@ -2361,26 +2363,6 @@
     },
     "logs": [
       {
-        "timestamp": "2025-08-01T12:49:50.206Z",
-        "type": "stdout",
-        "message": "📊 Performing market research: artificial intelligence trends 2024"
-      },
-      {
-        "timestamp": "2025-08-01T12:49:55.715Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 15507ms"
-      },
-      {
-        "timestamp": "2025-08-01T12:49:55.715Z",
-        "type": "stdout",
-        "message": "Performance: SUCCESS in 15507ms"
-      },
-      {
-        "timestamp": "2025-08-01T12:50:00.207Z",
-        "type": "stdout",
-        "message": "🔍 Processing market-research task...\n📊 Performing market research: artificial intelligence trends 2024"
-      },
-      {
         "timestamp": "2025-08-01T12:50:05.343Z",
         "type": "stdout",
         "message": "✅ Task completed in 15137ms"
@@ -2859,6 +2841,26 @@
         "timestamp": "2025-08-01T12:54:40.161Z",
         "type": "stdout",
         "message": "📈 Detecting trends for keywords: AI, machine learning, automation\n✅ Task completed in 1ms\nPerformance: SUCCESS in 1ms"
+      },
+      {
+        "timestamp": "2025-08-01T12:54:50.161Z",
+        "type": "stdout",
+        "message": "🔍 Processing market-research task..."
+      },
+      {
+        "timestamp": "2025-08-01T12:54:50.161Z",
+        "type": "stdout",
+        "message": "📊 Performing market research: artificial intelligence trends 2024"
+      },
+      {
+        "timestamp": "2025-08-01T12:55:00.160Z",
+        "type": "stdout",
+        "message": "🔍 Processing market-research task..."
+      },
+      {
+        "timestamp": "2025-08-01T12:55:00.160Z",
+        "type": "stdout",
+        "message": "📊 Performing market research: artificial intelligence trends 2024"
       }
     ],
     "health": {
@@ -3111,7 +3113,7 @@
       "plagiarismCheck": true
     },
     "createdAt": "2025-08-01T12:24:28.344Z",
-    "lastActive": "2025-08-01T12:54:32.517Z",
+    "lastActive": "2025-08-01T12:55:00.353Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -8242,7 +8244,7 @@
       "_events": {},
       "_eventsCount": 2,
       "_closesNeeded": 3,
-      "_closesGot": 2,
+      "_closesGot": 3,
       "connected": false,
       "signalCode": null,
       "exitCode": 1,
