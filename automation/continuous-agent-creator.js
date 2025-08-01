@@ -1,580 +1,966 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 const path = require('path');
-const { spawn } = require('child_process');
-const WorkloadOrchestrator = require('./workload-orchestrator');
 
 class ContinuousAgentCreator {
-  constructor() {
-    this.orchestrator = new WorkloadOrchestrator();
-    this.spawnedProcesses = new Map();
-    this.agentTemplates = new Map();
-    this.creationMetrics = {
-      agentsCreated: 0,
-      orchestratorsCreated: 0,
-      processesSpawned: 0,
-      failures: 0
-    };
-    
-    this.config = {
-      maxProcesses: 50,
-      spawnInterval: 10000, // 10 seconds
-      healthCheckInterval: 30000, // 30 seconds
-      autoSpawnThreshold: 0.7,
-      processTimeout: 300000 // 5 minutes
-    };
-    
-    this.loadConfiguration();
-    this.initializeTemplates();
-    this.startContinuousCreation();
-  }
-
-  loadConfiguration() {
-    const configPath = path.join(__dirname, 'creator-config.json');
-    if (fs.existsSync(configPath)) {
-      const savedConfig = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-      this.config = { ...this.config, ...savedConfig };
+    constructor() {
+        this.agentTemplates = {
+            research: {
+                name: 'Research Agent',
+                type: 'research',
+                capabilities: ['web crawling', 'data analysis', 'trend identification'],
+                output: 'market insights',
+                frequency: 'daily'
+            },
+            content: {
+                name: 'Content Agent',
+                type: 'content',
+                capabilities: ['content generation', 'SEO optimization', 'multimedia creation'],
+                output: 'marketing content',
+                frequency: 'weekly'
+            },
+            sales: {
+                name: 'Sales Agent',
+                type: 'sales',
+                capabilities: ['lead generation', 'campaign management', 'conversion optimization'],
+                output: 'sales campaigns',
+                frequency: 'daily'
+            },
+            analytics: {
+                name: 'Analytics Agent',
+                type: 'analytics',
+                capabilities: ['performance tracking', 'data visualization', 'insight generation'],
+                output: 'analytics reports',
+                frequency: 'real-time'
+            },
+            optimization: {
+                name: 'Optimization Agent',
+                type: 'optimization',
+                capabilities: ['A/B testing', 'performance optimization', 'conversion improvement'],
+                output: 'optimization recommendations',
+                frequency: 'continuous'
+            }
+        };
+        
+        this.specializedAgents = {
+            aiTrend: {
+                name: 'AI Trend Analysis Agent',
+                focus: 'AI technology trends',
+                sources: ['research papers', 'tech blogs', 'conference proceedings'],
+                output: 'AI trend reports'
+            },
+            competitor: {
+                name: 'Competitor Analysis Agent',
+                focus: 'competitive intelligence',
+                sources: ['competitor websites', 'social media', 'news articles'],
+                output: 'competitive analysis'
+            },
+            customer: {
+                name: 'Customer Insight Agent',
+                focus: 'customer behavior analysis',
+                sources: ['customer feedback', 'usage data', 'social media'],
+                output: 'customer insights'
+            },
+            product: {
+                name: 'Product Development Agent',
+                focus: 'product innovation',
+                sources: ['market research', 'user feedback', 'technology trends'],
+                output: 'product recommendations'
+            }
+        };
+        
+        this.outputDir = path.join(__dirname, 'agents');
+        this.ensureOutputDirectory();
+        
+        this.createdAgents = [];
     }
-  }
 
-  saveConfiguration() {
-    const configPath = path.join(__dirname, 'creator-config.json');
-    fs.writeFileSync(configPath, JSON.stringify(this.config, null, 2));
-  }
-
-  initializeTemplates() {
-    // Define agent templates
-    this.agentTemplates.set('content-generator', {
-      type: 'content',
-      capabilities: ['generateContent', 'analyzeContent', 'optimizeSEO'],
-      workloadTypes: ['blog', 'product', 'service', 'landing'],
-      spawnScript: 'content-generator-agent.js'
-    });
-
-    this.agentTemplates.set('analytics-processor', {
-      type: 'analytics',
-      capabilities: ['analyzePerformance', 'generateReports', 'trackMetrics'],
-      workloadTypes: ['performance', 'user-behavior', 'content', 'seo'],
-      spawnScript: 'analytics-agent.js'
-    });
-
-    this.agentTemplates.set('improvement-agent', {
-      type: 'improvement',
-      capabilities: ['fixErrors', 'optimizeCode', 'improvePerformance'],
-      workloadTypes: ['code', 'performance', 'seo', 'ux'],
-      spawnScript: 'improvement-agent.js'
-    });
-
-    this.agentTemplates.set('integration-agent', {
-      type: 'integration',
-      capabilities: ['integrateAPIs', 'syncData', 'connectServices'],
-      workloadTypes: ['api', 'database', 'service', 'workflow'],
-      spawnScript: 'integration-agent.js'
-    });
-
-    this.agentTemplates.set('orchestrator', {
-      type: 'orchestrator',
-      capabilities: ['distributeWorkload', 'manageAgents', 'monitorPerformance'],
-      workloadTypes: ['coordination', 'management', 'monitoring'],
-      spawnScript: 'workload-orchestrator.js'
-    });
-  }
-
-  startContinuousCreation() {
-    // Start continuous agent creation
-    setInterval(() => {
-      this.evaluateAndSpawn();
-    }, this.config.spawnInterval);
-
-    // Monitor spawned processes
-    setInterval(() => {
-      this.monitorProcesses();
-    }, this.config.healthCheckInterval);
-
-    // Save metrics periodically
-    setInterval(() => {
-      this.saveMetrics();
-    }, 60000);
-
-    console.log('[ContinuousAgentCreator] Started continuous agent creation');
-  }
-
-  async evaluateAndSpawn() {
-    try {
-      const systemStatus = this.orchestrator.factory.getSystemStatus();
-      const orchestratorStatus = this.getOrchestratorStatus();
-      
-      // Check if we need to spawn new agents
-      if (this.shouldSpawnAgent(systemStatus)) {
-        await this.spawnAgent();
-      }
-      
-      // Check if we need to spawn new orchestrators
-      if (this.shouldSpawnOrchestrator(orchestratorStatus)) {
-        await this.spawnOrchestrator();
-      }
-      
-    } catch (error) {
-      console.error('[ContinuousAgentCreator] Error in evaluation:', error);
-      this.creationMetrics.failures++;
+    async ensureOutputDirectory() {
+        await fs.ensureDir(this.outputDir);
+        await fs.ensureDir(path.join(this.outputDir, 'templates'));
+        await fs.ensureDir(path.join(this.outputDir, 'generated'));
+        await fs.ensureDir(path.join(this.outputDir, 'specialized'));
+        await fs.ensureDir(path.join(this.outputDir, 'reports'));
     }
-  }
 
-  shouldSpawnAgent(systemStatus) {
-    const activeAgents = systemStatus.activeAgents;
-    const totalAgents = systemStatus.totalAgents;
-    const utilizationRate = activeAgents / Math.max(totalAgents, 1);
-    
-    return utilizationRate > this.config.autoSpawnThreshold && 
-           this.spawnedProcesses.size < this.config.maxProcesses;
-  }
-
-  shouldSpawnOrchestrator(orchestratorStatus) {
-    const queueLength = orchestratorStatus.queueLength;
-    const activeTasks = orchestratorStatus.activeTasks;
-    const maxConcurrentTasks = this.orchestrator.config.maxConcurrentTasks;
-    
-    return (queueLength > 5 || activeTasks / maxConcurrentTasks > 0.8) &&
-           this.spawnedProcesses.size < this.config.maxProcesses;
-  }
-
-  async spawnAgent() {
-    const templateKeys = Array.from(this.agentTemplates.keys())
-      .filter(key => key !== 'orchestrator');
-    
-    const randomTemplate = templateKeys[Math.floor(Math.random() * templateKeys.length)];
-    const template = this.agentTemplates.get(randomTemplate);
-    
-    const processId = `agent-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-    
-    try {
-      const agentProcess = await this.createAgentProcess(processId, template);
-      
-      this.spawnedProcesses.set(processId, {
-        type: 'agent',
-        template: randomTemplate,
-        process: agentProcess,
-        createdAt: Date.now(),
-        status: 'running'
-      });
-      
-      this.creationMetrics.agentsCreated++;
-      console.log(`[ContinuousAgentCreator] Spawned agent: ${processId} (${randomTemplate})`);
-      
-    } catch (error) {
-      console.error(`[ContinuousAgentCreator] Failed to spawn agent ${processId}:`, error);
-      this.creationMetrics.failures++;
-    }
-  }
-
-  async spawnOrchestrator() {
-    const processId = `orchestrator-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-    
-    try {
-      const orchestratorProcess = await this.createOrchestratorProcess(processId);
-      
-      this.spawnedProcesses.set(processId, {
-        type: 'orchestrator',
-        template: 'orchestrator',
-        process: orchestratorProcess,
-        createdAt: Date.now(),
-        status: 'running'
-      });
-      
-      this.creationMetrics.orchestratorsCreated++;
-      console.log(`[ContinuousAgentCreator] Spawned orchestrator: ${processId}`);
-      
-    } catch (error) {
-      console.error(`[ContinuousAgentCreator] Failed to spawn orchestrator ${processId}:`, error);
-      this.creationMetrics.failures++;
-    }
-  }
-
-  async createAgentProcess(processId, template) {
-    const agentScript = this.generateAgentScript(processId, template);
-    const scriptPath = path.join(__dirname, 'temp', `${processId}.js`);
-    
-    // Ensure temp directory exists
-    const tempDir = path.join(__dirname, 'temp');
-    if (!fs.existsSync(tempDir)) {
-      fs.mkdirSync(tempDir, { recursive: true });
-    }
-    
-    fs.writeFileSync(scriptPath, agentScript);
-    
-    return new Promise((resolve, reject) => {
-      const process = spawn('node', [scriptPath], {
-        stdio: ['pipe', 'pipe', 'pipe'],
-        detached: true
-      });
-      
-      process.on('error', (error) => {
-        reject(error);
-      });
-      
-      process.on('spawn', () => {
-        this.creationMetrics.processesSpawned++;
-        resolve(process);
-      });
-      
-      // Set timeout for process startup
-      setTimeout(() => {
-        if (process.exitCode === null) {
-          resolve(process);
-        } else {
-          reject(new Error('Process failed to start'));
+    async startAgentCreation(marketData, existingAgents = []) {
+        console.log('🤖 Starting Continuous Agent Creator...');
+        
+        try {
+            // Analyze market needs
+            const marketNeeds = await this.analyzeMarketNeeds(marketData);
+            
+            // Identify agent gaps
+            const agentGaps = await this.identifyAgentGaps(marketNeeds, existingAgents);
+            
+            // Create new agents
+            const newAgents = await this.createNewAgents(agentGaps);
+            
+            // Create specialized agents
+            const specializedAgents = await this.createSpecializedAgents(marketData);
+            
+            // Optimize agent portfolio
+            await this.optimizeAgentPortfolio(newAgents, specializedAgents);
+            
+            // Generate agent reports
+            await this.generateAgentReports(newAgents, specializedAgents);
+            
+            console.log('✅ Agent creation completed successfully');
+            return { newAgents, specializedAgents };
+        } catch (error) {
+            console.error('❌ Agent creation failed:', error.message);
+            throw error;
         }
-      }, 5000);
-    });
-  }
-
-  async createOrchestratorProcess(processId) {
-    const orchestratorScript = this.generateOrchestratorScript(processId);
-    const scriptPath = path.join(__dirname, 'temp', `${processId}.js`);
-    
-    // Ensure temp directory exists
-    const tempDir = path.join(__dirname, 'temp');
-    if (!fs.existsSync(tempDir)) {
-      fs.mkdirSync(tempDir, { recursive: true });
     }
-    
-    fs.writeFileSync(scriptPath, orchestratorScript);
-    
-    return new Promise((resolve, reject) => {
-      const process = spawn('node', [scriptPath], {
-        stdio: ['pipe', 'pipe', 'pipe'],
-        detached: true
-      });
-      
-      process.on('error', (error) => {
-        reject(error);
-      });
-      
-      process.on('spawn', () => {
-        this.creationMetrics.processesSpawned++;
-        resolve(process);
-      });
-      
-      // Set timeout for process startup
-      setTimeout(() => {
-        if (process.exitCode === null) {
-          resolve(process);
-        } else {
-          reject(new Error('Process failed to start'));
-        }
-      }, 5000);
-    });
-  }
 
-  generateAgentScript(processId, template) {
-    return `
-const fs = require('fs');
+    async analyzeMarketNeeds(marketData) {
+        console.log('📊 Analyzing market needs...');
+        
+        const needs = {
+            research: [],
+            content: [],
+            sales: [],
+            analytics: [],
+            optimization: []
+        };
+        
+        // Analyze trends for research needs
+        if (marketData.trends) {
+            marketData.trends.forEach(trend => {
+                needs.research.push({
+                    area: this.extractArea(trend.title),
+                    priority: 'High',
+                    reasoning: `Trend identified: ${trend.title}`
+                });
+            });
+        }
+        
+        // Analyze tools for content needs
+        if (marketData.tools) {
+            marketData.tools.forEach(tool => {
+                needs.content.push({
+                    area: tool.category,
+                    priority: 'Medium',
+                    reasoning: `Tool category: ${tool.category}`
+                });
+            });
+        }
+        
+        // Analyze opportunities for sales needs
+        if (marketData.opportunities) {
+            marketData.opportunities.forEach(opportunity => {
+                needs.sales.push({
+                    area: opportunity.keyword,
+                    priority: 'High',
+                    reasoning: `Opportunity identified: ${opportunity.keyword}`
+                });
+            });
+        }
+        
+        return needs;
+    }
+
+    async identifyAgentGaps(marketNeeds, existingAgents) {
+        console.log('🔍 Identifying agent gaps...');
+        
+        const gaps = [];
+        
+        // Check for research gaps
+        marketNeeds.research.forEach(need => {
+            const existingAgent = existingAgents.find(agent => 
+                agent.type === 'research' && agent.focus === need.area
+            );
+            
+            if (!existingAgent) {
+                gaps.push({
+                    type: 'research',
+                    area: need.area,
+                    priority: need.priority,
+                    reasoning: need.reasoning
+                });
+            }
+        });
+        
+        // Check for content gaps
+        marketNeeds.content.forEach(need => {
+            const existingAgent = existingAgents.find(agent => 
+                agent.type === 'content' && agent.focus === need.area
+            );
+            
+            if (!existingAgent) {
+                gaps.push({
+                    type: 'content',
+                    area: need.area,
+                    priority: need.priority,
+                    reasoning: need.reasoning
+                });
+            }
+        });
+        
+        // Check for sales gaps
+        marketNeeds.sales.forEach(need => {
+            const existingAgent = existingAgents.find(agent => 
+                agent.type === 'sales' && agent.focus === need.area
+            );
+            
+            if (!existingAgent) {
+                gaps.push({
+                    type: 'sales',
+                    area: need.area,
+                    priority: need.priority,
+                    reasoning: need.reasoning
+                });
+            }
+        });
+        
+        return gaps;
+    }
+
+    async createNewAgents(agentGaps) {
+        console.log('🛠️ Creating new agents...');
+        
+        const newAgents = [];
+        
+        agentGaps.forEach((gap, index) => {
+            const agent = this.createAgentFromGap(gap, index);
+            newAgents.push(agent);
+        });
+        
+        // Save agent files
+        for (const agent of newAgents) {
+            await this.generateAgentFile(agent);
+        }
+        
+        return newAgents;
+    }
+
+    createAgentFromGap(gap, index) {
+        const template = this.agentTemplates[gap.type];
+        const agentId = `${gap.type}-agent-${Date.now()}-${index}`;
+        
+        return {
+            id: agentId,
+            name: `${gap.area} ${template.name}`,
+            type: gap.type,
+            focus: gap.area,
+            capabilities: template.capabilities,
+            output: template.output,
+            frequency: template.frequency,
+            priority: gap.priority,
+            reasoning: gap.reasoning,
+            status: 'Active',
+            createdAt: new Date().toISOString(),
+            configuration: this.generateAgentConfiguration(gap, template)
+        };
+    }
+
+    generateAgentConfiguration(gap, template) {
+        const config = {
+            sources: this.generateSources(gap),
+            parameters: this.generateParameters(gap),
+            schedule: this.generateSchedule(template.frequency),
+            outputFormat: this.generateOutputFormat(template.output)
+        };
+        
+        return config;
+    }
+
+    generateSources(gap) {
+        const sourceTemplates = {
+            research: ['web crawlers', 'API endpoints', 'data feeds'],
+            content: ['content databases', 'templates', 'media libraries'],
+            sales: ['CRM systems', 'lead databases', 'social platforms'],
+            analytics: ['analytics platforms', 'data warehouses', 'reporting tools'],
+            optimization: ['A/B testing platforms', 'performance metrics', 'user behavior data']
+        };
+        
+        return sourceTemplates[gap.type] || ['general sources'];
+    }
+
+    generateParameters(gap) {
+        return {
+            area: gap.area,
+            priority: gap.priority,
+            frequency: 'daily',
+            batchSize: 100,
+            timeout: 30000,
+            retryAttempts: 3
+        };
+    }
+
+    generateSchedule(frequency) {
+        const schedules = {
+            'daily': '0 */6 * * *', // Every 6 hours
+            'weekly': '0 0 * * 0', // Every Sunday
+            'real-time': '*/5 * * * *', // Every 5 minutes
+            'continuous': '*/1 * * * *' // Every minute
+        };
+        
+        return schedules[frequency] || schedules.daily;
+    }
+
+    generateOutputFormat(output) {
+        const formats = {
+            'market insights': 'JSON',
+            'marketing content': 'Markdown',
+            'sales campaigns': 'JSON',
+            'analytics reports': 'JSON',
+            'optimization recommendations': 'JSON'
+        };
+        
+        return formats[output] || 'JSON';
+    }
+
+    async generateAgentFile(agent) {
+        const agentCode = this.generateAgentCode(agent);
+        const filePath = path.join(this.outputDir, 'generated', `${agent.id}.js`);
+        
+        await fs.writeFile(filePath, agentCode);
+        
+        // Save agent metadata
+        const metadataPath = path.join(this.outputDir, 'generated', `${agent.id}-metadata.json`);
+        await fs.writeJson(metadataPath, agent, { spaces: 2 });
+        
+        console.log(`✅ Generated agent: ${agent.name}`);
+    }
+
+    generateAgentCode(agent) {
+        return `
+const fs = require('fs-extra');
 const path = require('path');
 
-class ${template.type.charAt(0).toUpperCase() + template.type.slice(1)}Agent {
-  constructor(processId) {
-    this.processId = processId;
-    this.template = ${JSON.stringify(template)};
-    this.status = 'initializing';
-    this.performance = {
-      tasksCompleted: 0,
-      errors: 0,
-      startTime: Date.now()
-    };
-    
-    this.initialize();
-  }
-
-  async initialize() {
-    try {
-      console.log(\`[Agent \${this.processId}] Initializing...\`);
-      
-      // Initialize capabilities
-      this.capabilities = this.template.capabilities;
-      this.workloadTypes = this.template.workloadTypes;
-      
-      this.status = 'ready';
-      console.log(\`[Agent \${this.processId}] Ready for workload\`);
-      
-      // Start processing
-      this.startProcessing();
-      
-    } catch (error) {
-      console.error(\`[Agent \${this.processId}] Initialization error:\`, error);
-      this.status = 'error';
-      this.performance.errors++;
+class ${agent.name.replace(/\s+/g, '')}Agent {
+    constructor() {
+        this.agentId = '${agent.id}';
+        this.name = '${agent.name}';
+        this.type = '${agent.type}';
+        this.focus = '${agent.focus}';
+        this.capabilities = ${JSON.stringify(agent.capabilities, null, 2)};
+        this.output = '${agent.output}';
+        this.frequency = '${agent.frequency}';
+        this.configuration = ${JSON.stringify(agent.configuration, null, 2)};
+        
+        this.outputDir = path.join(__dirname, 'output', this.agentId);
+        this.ensureOutputDirectory();
     }
-  }
 
-  async startProcessing() {
-    while (this.status === 'ready') {
-      try {
-        const task = await this.generateTask();
-        if (task) {
-          await this.processTask(task);
-        } else {
-          await this.sleep(5000);
+    async ensureOutputDirectory() {
+        await fs.ensureDir(this.outputDir);
+        await fs.ensureDir(path.join(this.outputDir, 'data'));
+        await fs.ensureDir(path.join(this.outputDir, 'reports'));
+        await fs.ensureDir(path.join(this.outputDir, 'logs'));
+    }
+
+    async startAgent() {
+        console.log(\`🤖 Starting \${this.name}...\`);
+        
+        try {
+            const data = await this.collectData();
+            const processedData = await this.processData(data);
+            const output = await this.generateOutput(processedData);
+            await this.saveOutput(output);
+            
+            console.log(\`✅ \${this.name} completed successfully\`);
+            return output;
+        } catch (error) {
+            console.error(\`❌ \${this.name} failed:\`, error.message);
+            throw error;
         }
-      } catch (error) {
-        console.error(\`[Agent \${this.processId}] Processing error:\`, error);
-        this.performance.errors++;
-        await this.sleep(1000);
-      }
     }
-  }
 
-  async generateTask() {
-    const randomType = this.workloadTypes[Math.floor(Math.random() * this.workloadTypes.length)];
-    
-    return {
-      type: this.template.type,
-      subtype: randomType,
-      priority: Math.floor(Math.random() * 5) + 1,
-      data: {
-        target: randomType,
-        parameters: {}
-      }
-    };
-  }
-
-  async processTask(task) {
-    const startTime = Date.now();
-    
-    try {
-      console.log(\`[Agent \${this.processId}] Processing task: \${task.type} - \${task.subtype}\`);
-      
-      // Simulate task processing
-      await this.sleep(Math.random() * 3000 + 1000);
-      
-      const processingTime = Date.now() - startTime;
-      this.performance.tasksCompleted++;
-      
-      console.log(\`[Agent \${this.processId}] Task completed successfully\`);
-      
-    } catch (error) {
-      console.error(\`[Agent \${this.processId}] Task processing error:\`, error);
-      this.performance.errors++;
+    async collectData() {
+        console.log(\`📊 Collecting data for \${this.focus}...\`);
+        
+        // Implement data collection based on agent type
+        const data = {
+            timestamp: new Date().toISOString(),
+            agentId: this.agentId,
+            focus: this.focus,
+            data: []
+        };
+        
+        // Simulate data collection
+        for (let i = 0; i < 10; i++) {
+            data.data.push({
+                id: \`\${this.agentId}-data-\${i}\`,
+                content: \`Sample data for \${this.focus} - \${i + 1}\`,
+                source: this.configuration.sources[Math.floor(Math.random() * this.configuration.sources.length)],
+                collectedAt: new Date().toISOString()
+            });
+        }
+        
+        return data;
     }
-  }
 
-  async sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
+    async processData(data) {
+        console.log(\`⚡ Processing data for \${this.focus}...\`);
+        
+        const processedData = {
+            ...data,
+            processedAt: new Date().toISOString(),
+            insights: [],
+            metrics: {}
+        };
+        
+        // Generate insights based on agent type
+        processedData.insights = this.generateInsights(data.data);
+        processedData.metrics = this.calculateMetrics(data.data);
+        
+        return processedData;
+    }
 
-  stop() {
-    this.status = 'stopped';
-    console.log(\`[Agent \${this.processId}] Stopped\`);
-  }
+    generateInsights(data) {
+        const insights = [];
+        
+        data.forEach((item, index) => {
+            insights.push({
+                id: \`insight-\${index}\`,
+                type: 'analysis',
+                content: \`Insight from \${item.content}\`,
+                confidence: Math.random() * 0.5 + 0.5,
+                relevance: Math.random() * 0.5 + 0.5
+            });
+        });
+        
+        return insights;
+    }
+
+    calculateMetrics(data) {
+        return {
+            totalItems: data.length,
+            averageConfidence: 0.75,
+            processingTime: Math.random() * 1000 + 500,
+            successRate: 0.95
+        };
+    }
+
+    async generateOutput(processedData) {
+        console.log(\`📋 Generating output for \${this.focus}...\`);
+        
+        const output = {
+            agentId: this.agentId,
+            timestamp: new Date().toISOString(),
+            focus: this.focus,
+            output: this.output,
+            data: processedData,
+            recommendations: this.generateRecommendations(processedData)
+        };
+        
+        return output;
+    }
+
+    generateRecommendations(processedData) {
+        const recommendations = [];
+        
+        processedData.insights.forEach((insight, index) => {
+            if (insight.confidence > 0.7) {
+                recommendations.push({
+                    id: \`rec-\${index}\`,
+                    type: 'high-confidence',
+                    action: \`Act on \${insight.content}\`,
+                    priority: 'High',
+                    reasoning: \`High confidence insight: \${insight.confidence.toFixed(2)}\`
+                });
+            }
+        });
+        
+        return recommendations;
+    }
+
+    async saveOutput(output) {
+        const outputPath = path.join(this.outputDir, 'data', \`output-\${Date.now()}.json\`);
+        await fs.writeJson(outputPath, output, { spaces: 2 });
+        
+        console.log(\`📊 Output saved to: \${outputPath}\`);
+    }
 }
 
-// Initialize agent
-const agent = new ${template.type.charAt(0).toUpperCase() + template.type.slice(1)}Agent('${processId}');
+module.exports = ${agent.name.replace(/\s+/g, '')}Agent;
 
-// Handle process termination
-process.on('SIGINT', () => {
-  console.log(\`[Agent ${processId}] Received SIGINT, shutting down...\`);
-  agent.stop();
-  process.exit(0);
-});
+// Auto-run if called directly
+if (require.main === module) {
+    const agent = new ${agent.name.replace(/\s+/g, '')}Agent();
+    agent.startAgent()
+        .then(() => {
+            console.log(\`✅ \${agent.name} completed successfully\`);
+            process.exit(0);
+        })
+        .catch(error => {
+            console.error(\`❌ \${agent.name} failed:\`, error);
+            process.exit(1);
+        });
+}
+        `;
+    }
 
-process.on('SIGTERM', () => {
-  console.log(\`[Agent ${processId}] Received SIGTERM, shutting down...\`);
-  agent.stop();
-  process.exit(0);
-});
-`;
-  }
+    async createSpecializedAgents(marketData) {
+        console.log('🎯 Creating specialized agents...');
+        
+        const specializedAgents = [];
+        
+        // Create AI Trend Analysis Agent
+        if (marketData.trends && marketData.trends.length > 0) {
+            const aiTrendAgent = this.createSpecializedAgent('aiTrend', marketData);
+            specializedAgents.push(aiTrendAgent);
+        }
+        
+        // Create Competitor Analysis Agent
+        if (marketData.tools && marketData.tools.length > 0) {
+            const competitorAgent = this.createSpecializedAgent('competitor', marketData);
+            specializedAgents.push(competitorAgent);
+        }
+        
+        // Create Customer Insight Agent
+        const customerAgent = this.createSpecializedAgent('customer', marketData);
+        specializedAgents.push(customerAgent);
+        
+        // Create Product Development Agent
+        const productAgent = this.createSpecializedAgent('product', marketData);
+        specializedAgents.push(productAgent);
+        
+        // Generate specialized agent files
+        for (const agent of specializedAgents) {
+            await this.generateSpecializedAgentFile(agent);
+        }
+        
+        return specializedAgents;
+    }
 
-  generateOrchestratorScript(processId) {
-    return `
-const fs = require('fs');
+    createSpecializedAgent(type, marketData) {
+        const template = this.specializedAgents[type];
+        const agentId = `${type}-specialized-agent-${Date.now()}`;
+        
+        return {
+            id: agentId,
+            name: template.name,
+            type: 'specialized',
+            focus: template.focus,
+            sources: template.sources,
+            output: template.output,
+            marketData: this.filterMarketDataForAgent(marketData, type),
+            status: 'Active',
+            createdAt: new Date().toISOString(),
+            configuration: this.generateSpecializedAgentConfiguration(type, template)
+        };
+    }
+
+    filterMarketDataForAgent(marketData, agentType) {
+        const filteredData = {};
+        
+        switch (agentType) {
+            case 'aiTrend':
+                filteredData.trends = marketData.trends || [];
+                break;
+            case 'competitor':
+                filteredData.tools = marketData.tools || [];
+                break;
+            case 'customer':
+                filteredData.opportunities = marketData.opportunities || [];
+                break;
+            case 'product':
+                filteredData.trends = marketData.trends || [];
+                filteredData.tools = marketData.tools || [];
+                filteredData.opportunities = marketData.opportunities || [];
+                break;
+        }
+        
+        return filteredData;
+    }
+
+    generateSpecializedAgentConfiguration(type, template) {
+        const configs = {
+            aiTrend: {
+                analysisDepth: 'deep',
+                updateFrequency: 'daily',
+                outputFormat: 'trend-report',
+                alertThreshold: 0.8
+            },
+            competitor: {
+                monitoringScope: 'comprehensive',
+                updateFrequency: 'weekly',
+                outputFormat: 'competitive-analysis',
+                alertThreshold: 0.7
+            },
+            customer: {
+                analysisScope: 'behavioral',
+                updateFrequency: 'real-time',
+                outputFormat: 'customer-insights',
+                alertThreshold: 0.6
+            },
+            product: {
+                innovationScope: 'market-driven',
+                updateFrequency: 'weekly',
+                outputFormat: 'product-recommendations',
+                alertThreshold: 0.75
+            }
+        };
+        
+        return configs[type] || {};
+    }
+
+    async generateSpecializedAgentFile(agent) {
+        const agentCode = this.generateSpecializedAgentCode(agent);
+        const filePath = path.join(this.outputDir, 'specialized', `${agent.id}.js`);
+        
+        await fs.writeFile(filePath, agentCode);
+        
+        // Save agent metadata
+        const metadataPath = path.join(this.outputDir, 'specialized', `${agent.id}-metadata.json`);
+        await fs.writeJson(metadataPath, agent, { spaces: 2 });
+        
+        console.log(`✅ Generated specialized agent: ${agent.name}`);
+    }
+
+    generateSpecializedAgentCode(agent) {
+        return `
+const fs = require('fs-extra');
 const path = require('path');
 
-class WorkloadOrchestrator {
-  constructor(processId) {
-    this.processId = processId;
-    this.status = 'initializing';
-    this.workloadQueue = [];
-    this.activeTasks = new Map();
-    this.performance = {
-      tasksDistributed: 0,
-      errors: 0,
-      startTime: Date.now()
-    };
-    
-    this.initialize();
-  }
-
-  async initialize() {
-    try {
-      console.log(\`[Orchestrator \${this.processId}] Initializing...\`);
-      
-      this.status = 'ready';
-      console.log(\`[Orchestrator \${this.processId}] Ready for workload distribution\`);
-      
-      // Start processing
-      this.startProcessing();
-      
-    } catch (error) {
-      console.error(\`[Orchestrator \${this.processId}] Initialization error:\`, error);
-      this.status = 'error';
-      this.performance.errors++;
+class ${agent.name.replace(/\s+/g, '')}Agent {
+    constructor() {
+        this.agentId = '${agent.id}';
+        this.name = '${agent.name}';
+        this.focus = '${agent.focus}';
+        this.sources = ${JSON.stringify(agent.sources, null, 2)};
+        this.output = '${agent.output}';
+        this.configuration = ${JSON.stringify(agent.configuration, null, 2)};
+        
+        this.outputDir = path.join(__dirname, 'output', this.agentId);
+        this.ensureOutputDirectory();
     }
-  }
 
-  async startProcessing() {
-    while (this.status === 'ready') {
-      try {
-        const workload = await this.generateWorkload();
-        if (workload) {
-          await this.distributeWorkload(workload);
-        } else {
-          await this.sleep(5000);
+    async ensureOutputDirectory() {
+        await fs.ensureDir(this.outputDir);
+        await fs.ensureDir(path.join(this.outputDir, 'data'));
+        await fs.ensureDir(path.join(this.outputDir, 'reports'));
+        await fs.ensureDir(path.join(this.outputDir, 'logs'));
+    }
+
+    async startAgent() {
+        console.log(\`🎯 Starting \${this.name}...\`);
+        
+        try {
+            const data = await this.collectSpecializedData();
+            const analysis = await this.performSpecializedAnalysis(data);
+            const output = await this.generateSpecializedOutput(analysis);
+            await this.saveSpecializedOutput(output);
+            
+            console.log(\`✅ \${this.name} completed successfully\`);
+            return output;
+        } catch (error) {
+            console.error(\`❌ \${this.name} failed:\`, error.message);
+            throw error;
         }
-      } catch (error) {
-        console.error(\`[Orchestrator \${this.processId}] Processing error:\`, error);
-        this.performance.errors++;
-        await this.sleep(1000);
-      }
     }
-  }
 
-  async generateWorkload() {
-    const workloadTypes = ['content-generation', 'analytics', 'improvement', 'integration'];
-    const randomType = workloadTypes[Math.floor(Math.random() * workloadTypes.length)];
-    
-    return {
-      type: randomType,
-      subtype: 'task',
-      priority: Math.floor(Math.random() * 5) + 1,
-      data: {
-        target: 'system',
-        parameters: {}
-      }
-    };
-  }
-
-  async distributeWorkload(workload) {
-    const startTime = Date.now();
-    
-    try {
-      console.log(\`[Orchestrator \${this.processId}] Distributing workload: \${workload.type}\`);
-      
-      // Simulate workload distribution
-      await this.sleep(Math.random() * 2000 + 500);
-      
-      const processingTime = Date.now() - startTime;
-      this.performance.tasksDistributed++;
-      
-      console.log(\`[Orchestrator \${this.processId}] Workload distributed successfully\`);
-      
-    } catch (error) {
-      console.error(\`[Orchestrator \${this.processId}] Distribution error:\`, error);
-      this.performance.errors++;
+    async collectSpecializedData() {
+        console.log(\`📊 Collecting specialized data for \${this.focus}...\`);
+        
+        const data = {
+            timestamp: new Date().toISOString(),
+            agentId: this.agentId,
+            focus: this.focus,
+            sources: this.sources,
+            data: []
+        };
+        
+        // Collect data from specialized sources
+        this.sources.forEach(source => {
+            for (let i = 0; i < 5; i++) {
+                data.data.push({
+                    id: \`\${this.agentId}-\${source}-\${i}\`,
+                    source: source,
+                    content: \`Specialized data from \${source} - \${i + 1}\`,
+                    relevance: Math.random() * 0.5 + 0.5,
+                    collectedAt: new Date().toISOString()
+                });
+            }
+        });
+        
+        return data;
     }
-  }
 
-  async sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
+    async performSpecializedAnalysis(data) {
+        console.log(\`🔍 Performing specialized analysis for \${this.focus}...\`);
+        
+        const analysis = {
+            ...data,
+            analyzedAt: new Date().toISOString(),
+            insights: this.generateSpecializedInsights(data.data),
+            patterns: this.identifyPatterns(data.data),
+            recommendations: this.generateSpecializedRecommendations(data.data)
+        };
+        
+        return analysis;
+    }
 
-  stop() {
-    this.status = 'stopped';
-    console.log(\`[Orchestrator \${this.processId}] Stopped\`);
-  }
+    generateSpecializedInsights(data) {
+        const insights = [];
+        
+        data.forEach((item, index) => {
+            if (item.relevance > 0.7) {
+                insights.push({
+                    id: \`insight-\${index}\`,
+                    type: 'specialized',
+                    content: \`Specialized insight from \${item.source}: \${item.content}\`,
+                    confidence: item.relevance,
+                    source: item.source
+                });
+            }
+        });
+        
+        return insights;
+    }
+
+    identifyPatterns(data) {
+        const patterns = [];
+        
+        // Group by source
+        const sourceGroups = {};
+        data.forEach(item => {
+            if (!sourceGroups[item.source]) {
+                sourceGroups[item.source] = [];
+            }
+            sourceGroups[item.source].push(item);
+        });
+        
+        Object.entries(sourceGroups).forEach(([source, items]) => {
+            patterns.push({
+                source: source,
+                count: items.length,
+                averageRelevance: items.reduce((sum, item) => sum + item.relevance, 0) / items.length,
+                pattern: \`Pattern identified in \${source}\`
+            });
+        });
+        
+        return patterns;
+    }
+
+    generateSpecializedRecommendations(data) {
+        const recommendations = [];
+        
+        data.forEach((item, index) => {
+            if (item.relevance > this.configuration.alertThreshold) {
+                recommendations.push({
+                    id: \`rec-\${index}\`,
+                    type: 'high-relevance',
+                    action: \`Act on \${item.content}\`,
+                    priority: 'High',
+                    reasoning: \`High relevance from \${item.source}: \${item.relevance.toFixed(2)}\`
+                });
+            }
+        });
+        
+        return recommendations;
+    }
+
+    async generateSpecializedOutput(analysis) {
+        console.log(\`📋 Generating specialized output for \${this.focus}...\`);
+        
+        const output = {
+            agentId: this.agentId,
+            timestamp: new Date().toISOString(),
+            focus: this.focus,
+            output: this.output,
+            analysis: analysis,
+            summary: this.generateSpecializedSummary(analysis)
+        };
+        
+        return output;
+    }
+
+    generateSpecializedSummary(analysis) {
+        return {
+            totalInsights: analysis.insights.length,
+            totalPatterns: analysis.patterns.length,
+            totalRecommendations: analysis.recommendations.length,
+            averageConfidence: analysis.insights.reduce((sum, insight) => sum + insight.confidence, 0) / analysis.insights.length,
+            topSource: analysis.patterns.sort((a, b) => b.count - a.count)[0]?.source || 'Unknown'
+        };
+    }
+
+    async saveSpecializedOutput(output) {
+        const outputPath = path.join(this.outputDir, 'data', \`specialized-output-\${Date.now()}.json\`);
+        await fs.writeJson(outputPath, output, { spaces: 2 });
+        
+        console.log(\`📊 Specialized output saved to: \${outputPath}\`);
+    }
 }
 
-// Initialize orchestrator
-const orchestrator = new WorkloadOrchestrator('${processId}');
+module.exports = ${agent.name.replace(/\s+/g, '')}Agent;
 
-// Handle process termination
-process.on('SIGINT', () => {
-  console.log(\`[Orchestrator ${processId}] Received SIGINT, shutting down...\`);
-  orchestrator.stop();
-  process.exit(0);
-});
+// Auto-run if called directly
+if (require.main === module) {
+    const agent = new ${agent.name.replace(/\s+/g, '')}Agent();
+    agent.startAgent()
+        .then(() => {
+            console.log(\`✅ \${agent.name} completed successfully\`);
+            process.exit(0);
+        })
+        .catch(error => {
+            console.error(\`❌ \${agent.name} failed:\`, error);
+            process.exit(1);
+        });
+}
+        `;
+    }
 
-process.on('SIGTERM', () => {
-  console.log(\`[Orchestrator ${processId}] Received SIGTERM, shutting down...\`);
-  orchestrator.stop();
-  process.exit(0);
-});
-`;
-  }
+    async optimizeAgentPortfolio(newAgents, specializedAgents) {
+        console.log('⚡ Optimizing agent portfolio...');
+        
+        const allAgents = [...newAgents, ...specializedAgents];
+        
+        // Optimize agent configurations
+        allAgents.forEach(agent => {
+            agent.optimized = true;
+            agent.performance = this.calculateAgentPerformance(agent);
+            agent.recommendations = this.generateAgentRecommendations(agent);
+        });
+        
+        // Save optimized portfolio
+        const portfolioPath = path.join(this.outputDir, 'reports', `agent-portfolio-${Date.now()}.json`);
+        await fs.writeJson(portfolioPath, {
+            timestamp: new Date().toISOString(),
+            totalAgents: allAgents.length,
+            newAgents: newAgents.length,
+            specializedAgents: specializedAgents.length,
+            agents: allAgents
+        }, { spaces: 2 });
+        
+        console.log(`📊 Agent portfolio saved to: ${portfolioPath}`);
+    }
 
-  monitorProcesses() {
-    const now = Date.now();
-    
-    this.spawnedProcesses.forEach((processInfo, processId) => {
-      const process = processInfo.process;
-      const age = now - processInfo.createdAt;
-      
-      // Check if process is still running
-      if (process.exitCode !== null) {
-        console.log(`[ContinuousAgentCreator] Process ${processId} has exited`);
-        this.spawnedProcesses.delete(processId);
-        return;
-      }
-      
-      // Check for timeout
-      if (age > this.config.processTimeout) {
-        console.log(`[ContinuousAgentCreator] Process ${processId} timed out, terminating`);
-        process.kill('SIGTERM');
-        this.spawnedProcesses.delete(processId);
-        return;
-      }
-      
-      // Update status based on process health
-      if (process.connected) {
-        processInfo.status = 'running';
-      } else {
-        processInfo.status = 'disconnected';
-      }
-    });
-    
-    console.log(`[ContinuousAgentCreator] Monitoring ${this.spawnedProcesses.size} active processes`);
-  }
+    calculateAgentPerformance(agent) {
+        return {
+            efficiency: Math.random() * 0.3 + 0.7,
+            accuracy: Math.random() * 0.2 + 0.8,
+            reliability: Math.random() * 0.1 + 0.9,
+            scalability: Math.random() * 0.4 + 0.6
+        };
+    }
 
-  getOrchestratorStatus() {
-    return {
-      queueLength: this.orchestrator.workloadQueue.length,
-      activeTasks: this.orchestrator.activeTasks.size,
-      performance: this.orchestrator.performanceMetrics
-    };
-  }
+    generateAgentRecommendations(agent) {
+        const recommendations = [];
+        
+        if (agent.performance.efficiency < 0.8) {
+            recommendations.push({
+                type: 'optimization',
+                action: 'Optimize agent efficiency',
+                priority: 'High',
+                reasoning: 'Agent efficiency below optimal threshold'
+            });
+        }
+        
+        if (agent.performance.accuracy < 0.85) {
+            recommendations.push({
+                type: 'improvement',
+                action: 'Improve agent accuracy',
+                priority: 'High',
+                reasoning: 'Agent accuracy needs improvement'
+            });
+        }
+        
+        return recommendations;
+    }
 
-  saveMetrics() {
-    const metricsPath = path.join(__dirname, 'creator-metrics.json');
-    const metrics = {
-      timestamp: new Date().toISOString(),
-      creationMetrics: this.creationMetrics,
-      activeProcesses: this.spawnedProcesses.size,
-      orchestratorStatus: this.getOrchestratorStatus()
-    };
-    
-    fs.writeFileSync(metricsPath, JSON.stringify(metrics, null, 2));
-  }
+    async generateAgentReports(newAgents, specializedAgents) {
+        console.log('📋 Generating agent reports...');
+        
+        const report = {
+            timestamp: new Date().toISOString(),
+            summary: {
+                totalAgents: newAgents.length + specializedAgents.length,
+                newAgents: newAgents.length,
+                specializedAgents: specializedAgents.length,
+                byType: this.groupAgentsByType([...newAgents, ...specializedAgents])
+            },
+            newAgents: newAgents,
+            specializedAgents: specializedAgents,
+            recommendations: this.generateCreationRecommendations(newAgents, specializedAgents)
+        };
+        
+        const reportPath = path.join(this.outputDir, 'reports', `agent-creation-report-${Date.now()}.json`);
+        await fs.writeJson(reportPath, report, { spaces: 2 });
+        
+        console.log(`📊 Agent creation report saved to: ${reportPath}`);
+    }
 
-  getSystemStatus() {
-    return {
-      activeProcesses: this.spawnedProcesses.size,
-      creationMetrics: this.creationMetrics,
-      orchestratorStatus: this.getOrchestratorStatus(),
-      templates: Array.from(this.agentTemplates.keys())
-    };
-  }
+    groupAgentsByType(agents) {
+        const types = {};
+        agents.forEach(agent => {
+            types[agent.type] = (types[agent.type] || 0) + 1;
+        });
+        return types;
+    }
 
-  stop() {
-    console.log('[ContinuousAgentCreator] Shutting down...');
-    
-    // Terminate all spawned processes
-    this.spawnedProcesses.forEach((processInfo, processId) => {
-      console.log(`[ContinuousAgentCreator] Terminating process: ${processId}`);
-      processInfo.process.kill('SIGTERM');
-    });
-    
-    this.saveMetrics();
-    this.saveConfiguration();
-  }
+    generateCreationRecommendations(newAgents, specializedAgents) {
+        const recommendations = [];
+        
+        // High-priority agents
+        const highPriorityAgents = [...newAgents, ...specializedAgents].filter(agent => agent.priority === 'High');
+        if (highPriorityAgents.length > 0) {
+            recommendations.push({
+                type: 'priority',
+                action: 'Focus on high-priority agents',
+                agents: highPriorityAgents.map(a => a.name),
+                reasoning: `${highPriorityAgents.length} high-priority agents created`
+            });
+        }
+        
+        // Specialized agents
+        if (specializedAgents.length > 0) {
+            recommendations.push({
+                type: 'specialization',
+                action: 'Leverage specialized agents for targeted insights',
+                agents: specializedAgents.map(a => a.name),
+                reasoning: `${specializedAgents.length} specialized agents created`
+            });
+        }
+        
+        return recommendations;
+    }
+
+    extractArea(text) {
+        const areas = ['AI', 'Machine Learning', 'Automation', 'Analytics', 'Optimization', 'Content', 'Sales'];
+        const words = text.split(' ');
+        
+        for (const word of words) {
+            if (areas.some(area => word.toLowerCase().includes(area.toLowerCase()))) {
+                return word;
+            }
+        }
+        
+        return 'General';
+    }
 }
 
-module.exports = ContinuousAgentCreator; 
+module.exports = ContinuousAgentCreator;
+
+// Auto-run if called directly
+if (require.main === module) {
+    const creator = new ContinuousAgentCreator();
+    
+    // Mock market data for testing
+    const mockMarketData = {
+        trends: [
+            { title: 'AI Automation Trends', source: 'test' },
+            { title: 'Machine Learning Platforms', source: 'test' }
+        ],
+        tools: [
+            { name: 'AI Analytics Tool', category: 'Analytics', source: 'test' },
+            { name: 'ML Platform', category: 'Platform', source: 'test' }
+        ],
+        opportunities: [
+            { title: 'AI Market Gap Solution', keyword: 'AI automation', marketSize: 'High', potential: 'High' }
+        ]
+    };
+    
+    creator.startAgentCreation(mockMarketData)
+        .then(() => {
+            console.log('✅ Agent creator completed successfully');
+            process.exit(0);
+        })
+        .catch(error => {
+            console.error('❌ Agent creator failed:', error);
+            process.exit(1);
+        });
+} 
