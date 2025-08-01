@@ -24,7 +24,7 @@
       "plagiarismCheck": true
     },
     "createdAt": "2025-08-01T11:58:53.987Z",
-    "lastActive": "2025-08-01T21:00:29.894Z",
+    "lastActive": "2025-08-01T21:00:59.922Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -32,11 +32,6 @@
       "uptime": 0
     },
     "logs": [
-      {
-        "timestamp": "2025-08-01T20:27:29.821Z",
-        "type": "stderr",
-        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
-      },
       {
         "timestamp": "2025-08-01T20:27:59.821Z",
         "type": "stderr",
@@ -529,6 +524,11 @@
       },
       {
         "timestamp": "2025-08-01T21:00:29.894Z",
+        "type": "stderr",
+        "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
+      },
+      {
+        "timestamp": "2025-08-01T21:00:59.917Z",
         "type": "stderr",
         "message": "node:internal/modules/cjs/loader:1404\n  throw err;\n  ^\n\nError: Cannot find module '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js'\n    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n    at defaultResolveImpl (node:internal/modules/cjs/loader:1057:19)\n    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1062:22)\n    at Function._load (node:internal/modules/cjs/loader:1211:37)\n    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)\n    at node:internal/main/run_main_module:36:49 {\n  code: 'MODULE_NOT_FOUND',\n  requireStack: []\n}\n\nNode.js v22.16.0"
       }
@@ -6720,6 +6720,10 @@
         {
           "timestamp": "2025-08-01T21:00:29.894Z",
           "error": "Process exited with code 1"
+        },
+        {
+          "timestamp": "2025-08-01T21:00:59.922Z",
+          "error": "Process exited with code 1"
         }
       ]
     },
@@ -6727,7 +6731,7 @@
       "_events": {},
       "_eventsCount": 2,
       "_closesNeeded": 3,
-      "_closesGot": 3,
+      "_closesGot": 2,
       "connected": false,
       "signalCode": null,
       "exitCode": 1,
@@ -6738,7 +6742,7 @@
         "node",
         "/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/agents/content-generation-agent.js"
       ],
-      "pid": 99068,
+      "pid": 805,
       "stdin": {
         "connecting": false,
         "_hadError": false,
@@ -6930,7 +6934,7 @@
         }
       ]
     },
-    "pid": 99068
+    "pid": 805
   },
   {
     "id": "a8e97b64-bd2c-4373-b90e-418853a33dcc",
@@ -8253,46 +8257,6 @@
     },
     "logs": [
       {
-        "timestamp": "2025-08-01T20:56:00.730Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 19460ms\nPerformance: SUCCESS in 19460ms"
-      },
-      {
-        "timestamp": "2025-08-01T20:56:01.271Z",
-        "type": "stdout",
-        "message": "🔍 Processing market-research task...\n📊 Performing market research: artificial intelligence trends 2024"
-      },
-      {
-        "timestamp": "2025-08-01T20:56:11.271Z",
-        "type": "stdout",
-        "message": "🔍 Processing trend-detection task..."
-      },
-      {
-        "timestamp": "2025-08-01T20:56:11.271Z",
-        "type": "stdout",
-        "message": "📈 Detecting trends for keywords: AI, machine learning, automation\n✅ Task completed in 0ms\nPerformance: SUCCESS in 0ms"
-      },
-      {
-        "timestamp": "2025-08-01T20:56:21.271Z",
-        "type": "stdout",
-        "message": "🔍 Processing trend-detection task...\n📈 Detecting trends for keywords: AI, machine learning, automation"
-      },
-      {
-        "timestamp": "2025-08-01T20:56:21.271Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 0ms"
-      },
-      {
-        "timestamp": "2025-08-01T20:56:21.271Z",
-        "type": "stdout",
-        "message": "Performance: SUCCESS in 0ms"
-      },
-      {
-        "timestamp": "2025-08-01T20:56:22.505Z",
-        "type": "stdout",
-        "message": "✅ Task completed in 21234ms\nPerformance: SUCCESS in 21234ms"
-      },
-      {
         "timestamp": "2025-08-01T20:56:31.271Z",
         "type": "stdout",
         "message": "🔍 Processing competitive-analysis task...\n🏢 Performing competitive analysis for 2 competitors"
@@ -8751,6 +8715,46 @@
         "timestamp": "2025-08-01T21:00:31.288Z",
         "type": "stdout",
         "message": "📊 Performing market research: artificial intelligence trends 2024"
+      },
+      {
+        "timestamp": "2025-08-01T21:00:41.289Z",
+        "type": "stdout",
+        "message": "🔍 Processing market-research task...\n📊 Performing market research: artificial intelligence trends 2024"
+      },
+      {
+        "timestamp": "2025-08-01T21:00:51.287Z",
+        "type": "stdout",
+        "message": "🔍 Processing competitive-analysis task..."
+      },
+      {
+        "timestamp": "2025-08-01T21:00:51.290Z",
+        "type": "stdout",
+        "message": "🏢 Performing competitive analysis for 2 competitors"
+      },
+      {
+        "timestamp": "2025-08-01T21:00:52.345Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T21:00:52.345Z",
+        "type": "stderr",
+        "message": "Failed to analyze competitor1.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T21:00:52.904Z",
+        "type": "stderr",
+        "message": "Failed to scrape competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL\nFailed to analyze competitor2.com: Protocol error (Page.navigate): Cannot navigate to invalid URL"
+      },
+      {
+        "timestamp": "2025-08-01T21:00:52.904Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 1617ms\nPerformance: SUCCESS in 1617ms"
+      },
+      {
+        "timestamp": "2025-08-01T21:00:54.782Z",
+        "type": "stdout",
+        "message": "✅ Task completed in 23494ms\nPerformance: SUCCESS in 23494ms"
       }
     ],
     "health": {
@@ -9003,7 +9007,7 @@
       "plagiarismCheck": true
     },
     "createdAt": "2025-08-01T12:24:28.344Z",
-    "lastActive": "2025-08-01T21:00:32.028Z",
+    "lastActive": "2025-08-01T21:00:59.856Z",
     "performance": {
       "tasksCompleted": 0,
       "tasksFailed": 0,
@@ -43524,7 +43528,7 @@
       "_events": {},
       "_eventsCount": 2,
       "_closesNeeded": 3,
-      "_closesGot": 0,
+      "_closesGot": 3,
       "connected": false,
       "signalCode": null,
       "exitCode": 1,
@@ -43589,7 +43593,7 @@
           "corked": 0,
           "writelen": 0,
           "bufferedIndex": 0,
-          "pendingcb": 1
+          "pendingcb": 0
         },
         "allowHalfOpen": false,
         "_eventsCount": 3,
@@ -43620,7 +43624,7 @@
           "corked": 0,
           "writelen": 0,
           "bufferedIndex": 0,
-          "pendingcb": 1
+          "pendingcb": 0
         },
         "allowHalfOpen": false,
         "_eventsCount": 3,
@@ -43684,7 +43688,7 @@
             "corked": 0,
             "writelen": 0,
             "bufferedIndex": 0,
-            "pendingcb": 1
+            "pendingcb": 0
           },
           "allowHalfOpen": false,
           "_eventsCount": 3,
@@ -43715,7 +43719,7 @@
             "corked": 0,
             "writelen": 0,
             "bufferedIndex": 0,
-            "pendingcb": 1
+            "pendingcb": 0
           },
           "allowHalfOpen": false,
           "_eventsCount": 3,
@@ -43728,52 +43732,5 @@
       ]
     },
     "pid": 99669
-  },
-  {
-    "id": "85602c8f-3098-4b0f-af77-eb2592a189f4",
-    "type": "deep-search",
-    "name": "Primary Deep Search Agent",
-    "status": "created",
-    "capabilities": [
-      "web-scraping",
-      "data-analysis",
-      "pattern-recognition",
-      "web-scraping",
-      "data-analysis",
-      "pattern-recognition"
-    ],
-    "services": [
-      "market-research",
-      "competitive-analysis",
-      "trend-detection",
-      "market-research",
-      "competitive-analysis",
-      "trend-detection"
-    ],
-    "dependencies": [
-      "puppeteer",
-      "cheerio",
-      "axios"
-    ],
-    "config": {
-      "maxConcurrentSearches": 5,
-      "searchDepth": 3,
-      "timeout": 30000,
-      "retryAttempts": 3
-    },
-    "createdAt": "2025-08-01T21:00:42.985Z",
-    "lastActive": "2025-08-01T21:00:42.985Z",
-    "performance": {
-      "tasksCompleted": 0,
-      "tasksFailed": 0,
-      "averageResponseTime": 0,
-      "uptime": 0
-    },
-    "logs": [],
-    "health": {
-      "status": "healthy",
-      "lastCheck": "2025-08-01T21:00:42.985Z",
-      "errors": []
-    }
   }
 ]
