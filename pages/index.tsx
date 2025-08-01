@@ -129,7 +129,7 @@ const Home: NextPage = () => {
   // Initialize displayed sections with base sections
   useEffect(() => {
     setDisplayedSections(baseSections)
-  }, [])
+  }, [baseSections])
 
   // Generate additional sections for infinite scroll
   const generateAdditionalSections = () => {
