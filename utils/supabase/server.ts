@@ -23,9 +23,9 @@ export function createClient() {
         },
         remove(name: string, options: any) {
           try {
-            cookieStore.set(name, '', { ...options, maxAge: 0 })
+            cookieStore.set(name, '', options)
           } catch {
-            // The `delete` method was called from a Server Component.
+            // The `remove` method was called from a Server Component.
             // This can be ignored if you have middleware refreshing
             // user sessions.
           }
