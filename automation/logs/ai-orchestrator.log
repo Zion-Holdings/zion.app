@@ -4631,3 +4631,5 @@
 [2025-08-01T00:24:59.246Z] [INFO] [AIOrchestrator] System health monitored
 [2025-08-01T00:24:59.475Z] [INFO] [AIOrchestrator] Resolving conflicts
 [2025-08-01T00:25:00.678Z] [INFO] [AIOrchestrator] Coordinating agents
+[2025-08-01T00:25:59.323Z] [INFO] [AIOrchestrator] Managing resources
+[2025-08-01T00:26:00.675Z] [INFO] [AIOrchestrator] Coordinating agents
