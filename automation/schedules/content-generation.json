@@ -6,12 +6,12 @@
   "command": "node automation/content-generation.js",
   "enabled": true,
   "priority": "medium",
-  "lastRun": null,
-  "nextRun": "2025-08-01T11:58:03.305Z",
-  "runCount": 0,
+  "lastRun": "2025-08-01T13:00:00.479Z",
+  "nextRun": "2025-08-01T13:01:00.486Z",
+  "runCount": 1,
   "successCount": 0,
-  "failureCount": 0,
+  "failureCount": 1,
   "avgDuration": 0,
-  "lastError": null,
+  "lastError": "Job timeout",
   "createdAt": "2025-08-01T11:57:03.304Z"
 }
