@@ -141,6 +141,37 @@ class ContinuousContentGenerator {
     this.log('Continuous content generation started');
   }
 
+  async startContentGeneration() {
+    this.log('Starting content generation for master orchestrator...');
+    
+    try {
+      // Generate initial content
+      await this.generateInitialContent();
+      
+      // Return the generated content results
+      const results = {
+        blogPosts: this.analytics.blogPostsCreated,
+        marketplacePages: this.analytics.marketplacePagesCreated,
+        servicePages: this.analytics.pagesCreated,
+        components: this.analytics.componentsCreated,
+        errors: this.analytics.errors,
+        startTime: this.analytics.startTime,
+        lastGenerationTime: this.lastGenerationTime
+      };
+      
+      // Save analytics
+      await this.saveAnalytics();
+      
+      this.log('Content generation completed for master orchestrator');
+      return results;
+      
+    } catch (error) {
+      this.log(`Error in startContentGeneration: ${error.message}`, 'ERROR');
+      this.analytics.errors++;
+      throw error;
+    }
+  }
+
   async generateInitialContent() {
     this.log('Generating initial content...');
     
