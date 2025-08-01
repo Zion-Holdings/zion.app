@@ -1252,6 +1252,9 @@ const Home: NextPage = () => {
               <Link href="/seo-optimization" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 SEO
               </Link>
+              <Link href="/mobile-responsive" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Mobile
+              </Link>
               <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
