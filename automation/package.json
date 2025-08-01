@@ -1,0 +1,31 @@
+{
+  "name": "zion-tech-group-automation",
+  "version": "1.0.0",
+  "description": "Autonomous website analysis and improvement system for Zion Tech Group",
+  "main": "run-automation.js",
+  "scripts": {
+    "start": "node run-automation.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup-cron": "bash setup-cron.sh"
+  },
+  "dependencies": {
+    "puppeteer": "^21.0.0",
+    "axios": "^1.6.0",
+    "fs-extra": "^11.1.0",
+    "cheerio": "^1.0.0-rc.12",
+    "node-cron": "^3.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  },
+  "keywords": [
+    "automation",
+    "website",
+    "analysis",
+    "content-generation",
+    "seo",
+    "performance"
+  ],
+  "author": "Zion Tech Group",
+  "license": "MIT"
+} 
