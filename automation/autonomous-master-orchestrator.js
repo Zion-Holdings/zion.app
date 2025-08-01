@@ -82,14 +82,17 @@ class AutonomousMasterOrchestrator {
             // Phase 4: Sales Campaign
             const campaigns = await this.executeSalesCampaign(solutions);
             
-            // Phase 5: Deployment
-            await this.executeDeployment(solutions, campaigns);
+            // Phase 5: Content Generation
+            const contentResults = await this.executeContentGeneration();
             
-            // Phase 6: Monitoring
+            // Phase 6: Deployment
+            await this.executeDeployment(solutions, campaigns, contentResults);
+            
+            // Phase 7: Monitoring
             await this.executeMonitoring();
             
             // Generate comprehensive report
-            await this.generateMasterReport(researchData, newAgents, solutions, campaigns);
+            await this.generateMasterReport(researchData, newAgents, solutions, campaigns, contentResults);
             
             this.systemStatus.isRunning = false;
             console.log('✅ Master orchestration completed successfully');
@@ -182,7 +185,25 @@ class AutonomousMasterOrchestrator {
         }
     }
 
-    async executeDeployment(solutions, campaigns) {
+    async executeContentGeneration() {
+        console.log('🎨 Executing Content Generation Phase...');
+        this.systemStatus.currentPhase = this.workflow.contentGeneration;
+        
+        try {
+            const contentGenerator = new this.agents.contentGenerator();
+            const contentResults = await contentGenerator.startContentGeneration();
+            
+            await this.savePhaseData('content-generation', contentResults);
+            await this.logSystemEvent('Content generation completed', { contentGenerated: contentResults.length });
+            
+            return contentResults;
+        } catch (error) {
+            await this.logSystemEvent('Content generation failed', { error: error.message });
+            throw error;
+        }
+    }
+
+    async executeDeployment(solutions, campaigns, contentResults) {
         console.log('🚀 Executing Deployment Phase...');
         this.systemStatus.currentPhase = this.workflow.deployment;
         
@@ -458,7 +479,7 @@ class AutonomousMasterOrchestrator {
         console.log(`📊 Performance report saved to: ${reportPath}`);
     }
 
-    async generateMasterReport(researchData, newAgents, solutions, campaigns) {
+    async generateMasterReport(researchData, newAgents, solutions, campaigns, contentResults) {
         console.log('📋 Generating master report...');
         
         const report = {
@@ -468,10 +489,11 @@ class AutonomousMasterOrchestrator {
                 marketResearch: researchData,
                 agentCreation: newAgents,
                 solutionCreation: solutions,
-                salesCampaign: campaigns
+                salesCampaign: campaigns,
+                contentGeneration: contentResults
             },
             performance: await this.loadMonitoringData('performance-report'),
-            recommendations: this.generateMasterRecommendations(researchData, newAgents, solutions, campaigns)
+            recommendations: this.generateMasterRecommendations(researchData, newAgents, solutions, campaigns, contentResults)
         };
         
         const reportPath = path.join(this.outputDir, 'reports', `master-report-${Date.now()}.json`);
@@ -823,7 +845,7 @@ export default ${componentName};
         };
     }
 
-    generateMasterRecommendations(researchData, newAgents, solutions, campaigns) {
+    generateMasterRecommendations(researchData, newAgents, solutions, campaigns, contentResults) {
         const recommendations = [];
         
         // High-priority recommendations
