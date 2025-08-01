@@ -31,6 +31,12 @@ interface AdminTool {
   lastExecuted: string;
 }
 
+interface WebResearch {
+  topic: string;
+  findings: string[];
+  timestamp: string;
+}
+
 const AdminDashboard: React.FC = () => {
   const router = useRouter();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -39,7 +45,7 @@ const AdminDashboard: React.FC = () => {
     agents: [] as AgentStatus[],
     systemHealth: {} as SystemHealth,
     adminTools: [] as AdminTool[],
-    webResearch: [] as any[],
+    webResearch: [] as WebResearch[],
     evolutionStatus: '',
     lastUpdate: ''
   });
@@ -54,14 +60,12 @@ const AdminDashboard: React.FC = () => {
     // In a real implementation, this would check against a secure authentication system
     // For now, we'll simulate authentication
     const storedAuth = localStorage.getItem('adminAuth');
-    if (storedAuth) {
-      const authData = JSON.parse(storedAuth);
-      if (authData.role === 'admin' && authData.expires > Date.now()) {
-        setIsAuthenticated(true);
-        return;
-      }
+    if (storedAuth === 'true') {
+      setIsAuthenticated(true);
+      loadAdminData();
+    } else {
+      setIsLoading(false);
     }
-    setIsAuthenticated(false);
   }, []);
 
   useEffect(() => {
@@ -284,7 +288,7 @@ const AdminDashboard: React.FC = () => {
                 <div key={index} className="bg-gray-700 p-4 rounded">
                   <h3 className="font-medium mb-2">{research.topic}</h3>
                   <ul className="text-sm text-gray-400 space-y-1">
-                    {research.findings.map((finding: any, idx: number) => (
+                    {research.findings.map((finding: string, idx: number) => (
                       <li key={idx}>• {finding}</li>
                     ))}
                   </ul>
