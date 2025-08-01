@@ -1,6 +1,6 @@
 [
   {
-    "id": "34bdd946-eed3-4bdd-b870-df659f03cd38",
+    "id": "5d2ef695-85ab-4566-b072-5880b2471274",
     "name": "Deep Search - Market Research",
     "schedule": "0 */6 * * *",
     "task": {
@@ -20,45 +20,21 @@
     "priority": "high",
     "retryAttempts": 3,
     "timeout": 300000,
-    "createdAt": "2025-08-01T12:24:28.368Z",
-    "lastRun": "2025-08-01T18:12:02.133Z",
-    "nextRun": "2025-08-01T21:00:00.000Z",
+    "createdAt": "2025-08-01T23:00:21.520Z",
+    "lastRun": null,
+    "nextRun": "2025-08-02T03:00:00.000Z",
     "status": "scheduled",
     "performance": {
-      "totalRuns": 3,
+      "totalRuns": 0,
       "successfulRuns": 0,
-      "failedRuns": 3,
+      "failedRuns": 0,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300928
+      "lastExecutionTime": 0
     },
-    "logs": [
-      {
-        "timestamp": "2025-08-01T18:05:01.696Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T18:11:02.134Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T18:17:03.061Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T18:17:03.061Z",
-        "level": "info",
-        "message": "Job restarted"
-      }
-    ]
+    "logs": []
   },
   {
-    "id": "f8f81850-fcb1-48e0-944e-43213d85a06b",
+    "id": "c333970c-ce20-4cde-b270-9fea5fdfd3eb",
     "name": "Content Generation - Blog Posts",
     "schedule": "0 9 * * *",
     "task": {
@@ -74,7 +50,7 @@
     "priority": "normal",
     "retryAttempts": 3,
     "timeout": 300000,
-    "createdAt": "2025-08-01T12:24:28.456Z",
+    "createdAt": "2025-08-01T23:00:21.967Z",
     "lastRun": null,
     "nextRun": "2025-08-02T12:00:00.000Z",
     "status": "scheduled",
@@ -88,7 +64,7 @@
     "logs": []
   },
   {
-    "id": "7f3187f4-e45c-45cc-9a3e-905a7362c17d",
+    "id": "56907d8b-870f-45c5-aaf4-cc37b0e89784",
     "name": "Data Analysis - Performance Review",
     "schedule": "0 2 * * *",
     "task": {
@@ -104,7 +80,7 @@
     "priority": "normal",
     "retryAttempts": 3,
     "timeout": 300000,
-    "createdAt": "2025-08-01T12:24:28.471Z",
+    "createdAt": "2025-08-01T23:00:21.976Z",
     "lastRun": null,
     "nextRun": "2025-08-02T05:00:00.000Z",
     "status": "scheduled",
@@ -118,7 +94,7 @@
     "logs": []
   },
   {
-    "id": "a765bc7b-5d38-4bea-bcf8-5b3b6c25f3d8",
+    "id": "a8ab0bb5-1075-4c08-b2fe-c5d4b5620b9d",
     "name": "Web Research - Competitive Analysis",
     "schedule": "0 */12 * * *",
     "task": {
@@ -141,9 +117,9 @@
     "priority": "normal",
     "retryAttempts": 3,
     "timeout": 300000,
-    "createdAt": "2025-08-01T12:24:28.475Z",
+    "createdAt": "2025-08-01T23:00:21.980Z",
     "lastRun": null,
-    "nextRun": "2025-08-01T15:00:00.000Z",
+    "nextRun": "2025-08-02T03:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -155,7 +131,7 @@
     "logs": []
   },
   {
-    "id": "492a1eb9-c24d-482e-89a3-52e4aac34e79",
+    "id": "5608fc57-0deb-4686-a4d7-dcf01213b4e0",
     "name": "SEO Optimization - Keyword Research",
     "schedule": "0 6 * * 1",
     "task": {
@@ -174,7 +150,7 @@
     "priority": "normal",
     "retryAttempts": 3,
     "timeout": 300000,
-    "createdAt": "2025-08-01T12:24:28.478Z",
+    "createdAt": "2025-08-01T23:00:21.982Z",
     "lastRun": null,
     "nextRun": "2025-08-04T09:00:00.000Z",
     "status": "scheduled",
@@ -188,7 +164,7 @@
     "logs": []
   },
   {
-    "id": "311d449d-a983-4a19-8f90-8b5f007ea0fd",
+    "id": "67437b90-7296-46e0-9abe-afa4a652e247",
     "name": "Social Media - Content Scheduling",
     "schedule": "0 */4 * * *",
     "task": {
@@ -208,56 +184,21 @@
     "priority": "normal",
     "retryAttempts": 3,
     "timeout": 300000,
-    "createdAt": "2025-08-01T12:24:28.481Z",
-    "lastRun": "2025-08-01T20:00:00.267Z",
-    "nextRun": "2025-08-01T23:00:00.000Z",
+    "createdAt": "2025-08-01T23:00:22.191Z",
+    "lastRun": null,
+    "nextRun": "2025-08-02T03:00:00.000Z",
     "status": "scheduled",
     "performance": {
-      "totalRuns": 4,
+      "totalRuns": 0,
       "successfulRuns": 0,
-      "failedRuns": 4,
+      "failedRuns": 0,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300961
+      "lastExecutionTime": 0
     },
-    "logs": [
-      {
-        "timestamp": "2025-08-01T16:05:00.741Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T16:11:01.000Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T16:17:01.630Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T16:17:01.630Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T20:05:01.228Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T20:05:01.228Z",
-        "level": "info",
-        "message": "Job restarted"
-      }
-    ]
+    "logs": []
   },
   {
-    "id": "53449c7c-ab4e-4753-934b-149aee279585",
+    "id": "3866731a-cdd7-4a53-98b1-6e3df009b839",
     "name": "System Health Check",
     "schedule": "*/15 * * * *",
     "task": {
@@ -276,463 +217,21 @@
     "priority": "normal",
     "retryAttempts": 3,
     "timeout": 300000,
-    "createdAt": "2025-08-01T12:24:28.483Z",
-    "lastRun": "2025-08-01T22:00:00.931Z",
-    "nextRun": "2025-08-01T22:15:00.000Z",
+    "createdAt": "2025-08-01T23:00:22.542Z",
+    "lastRun": null,
+    "nextRun": "2025-08-01T23:15:00.000Z",
     "status": "scheduled",
     "performance": {
-      "totalRuns": 41,
+      "totalRuns": 0,
       "successfulRuns": 0,
-      "failedRuns": 41,
+      "failedRuns": 0,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300658
+      "lastExecutionTime": 0
     },
-    "logs": [
-      {
-        "timestamp": "2025-08-01T12:35:00.519Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T12:41:00.925Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T12:47:01.287Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T12:47:01.288Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T12:50:00.739Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T12:50:00.739Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T13:05:00.854Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T13:05:00.854Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T13:20:01.189Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T13:20:01.190Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T13:35:01.151Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T13:35:01.152Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T13:50:00.610Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T13:50:00.610Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T14:05:00.604Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T14:05:00.605Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T14:20:01.067Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T14:20:01.068Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T14:35:00.346Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T14:35:00.346Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T14:50:00.625Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T14:50:00.626Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T15:05:00.834Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T15:05:00.834Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T15:20:01.234Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T15:20:01.234Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T15:35:00.831Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T15:35:00.831Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T15:50:01.138Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T15:50:01.138Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T16:05:00.743Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T16:05:00.743Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T16:20:01.149Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T16:20:01.150Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T16:35:00.743Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T16:35:00.744Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T16:50:00.924Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T16:50:00.925Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T17:05:01.023Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T17:05:01.023Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T17:20:00.786Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T17:20:00.786Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T17:35:01.056Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T17:35:01.056Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T17:50:01.125Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T17:50:01.126Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T18:05:00.689Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T18:05:00.690Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T18:20:00.541Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T18:20:00.541Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T18:35:01.937Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T18:35:01.937Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T18:50:01.646Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T18:50:01.647Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T19:05:01.790Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T19:05:01.790Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T19:20:00.698Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T19:20:00.699Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T19:35:00.699Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T19:35:00.699Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T19:50:00.247Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T19:50:00.247Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T20:05:01.234Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T20:05:01.234Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T20:20:00.400Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T20:20:00.401Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T20:35:01.006Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T20:35:01.007Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T20:50:00.948Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T20:50:00.948Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T21:05:00.938Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T21:05:00.939Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T21:20:00.770Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T21:20:00.770Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T21:35:01.569Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T21:35:01.570Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T21:50:01.642Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T21:50:01.642Z",
-        "level": "info",
-        "message": "Job restarted"
-      },
-      {
-        "timestamp": "2025-08-01T22:05:01.589Z",
-        "level": "error",
-        "message": "Job failed: Task timeout",
-        "error": "Task timeout"
-      },
-      {
-        "timestamp": "2025-08-01T22:05:01.590Z",
-        "level": "info",
-        "message": "Job restarted"
-      }
-    ]
+    "logs": []
   },
   {
-    "id": "bc010b4f-c3e8-4c14-806e-5700731a8b80",
+    "id": "1c37b2ab-7a72-4b43-9134-31e0d152f6eb",
     "name": "Data Backup",
     "schedule": "0 1 * * *",
     "task": {
@@ -748,7 +247,7 @@
     "priority": "normal",
     "retryAttempts": 3,
     "timeout": 300000,
-    "createdAt": "2025-08-01T12:24:28.486Z",
+    "createdAt": "2025-08-01T23:00:22.548Z",
     "lastRun": null,
     "nextRun": "2025-08-02T04:00:00.000Z",
     "status": "scheduled",
@@ -762,7 +261,7 @@
     "logs": []
   },
   {
-    "id": "172f5ae0-9740-41fa-b965-f5235eb639d6",
+    "id": "4a97d619-e4c3-437c-a9d0-10e8e16c711c",
     "name": "Quality Assurance - Content Review",
     "schedule": "0 10 * * *",
     "task": {
@@ -778,9 +277,9 @@
     "priority": "normal",
     "retryAttempts": 3,
     "timeout": 300000,
-    "createdAt": "2025-08-01T12:24:28.490Z",
+    "createdAt": "2025-08-01T23:00:22.550Z",
     "lastRun": null,
-    "nextRun": "2025-08-01T13:00:00.000Z",
+    "nextRun": "2025-08-02T13:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -792,7 +291,7 @@
     "logs": []
   },
   {
-    "id": "3d5bc0e6-fc3a-44ea-8a24-d7b4843e2141",
+    "id": "53330554-7766-4b40-919c-f49b1fe41c28",
     "name": "Performance Optimization",
     "schedule": "0 3 * * *",
     "task": {
@@ -808,7 +307,7 @@
     "priority": "normal",
     "retryAttempts": 3,
     "timeout": 300000,
-    "createdAt": "2025-08-01T12:24:28.492Z",
+    "createdAt": "2025-08-01T23:00:22.723Z",
     "lastRun": null,
     "nextRun": "2025-08-02T06:00:00.000Z",
     "status": "scheduled",
