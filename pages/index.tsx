@@ -152,7 +152,7 @@ const Home: NextPage = () => {
   }, [])
 
   // Load more sections when reaching the end
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 1000) {
       if (!isLoading) {
         setIsLoading(true)
@@ -162,12 +162,12 @@ const Home: NextPage = () => {
         }, 1000)
       }
     }
-  }
+  }, [isLoading])
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [isLoading, handleScroll])
+  }, [handleScroll])
 
   const renderSection = (section: any) => {
     switch (section.type) {
