@@ -274,8 +274,8 @@ const ${topicTitle.replace(/\s+/g, '')}Page: NextPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>${content.content.title} - Zion AI Blog</title>
-        <meta name="description" content="${content.content.seo.description}" />
-        <meta name="keywords" content="${content.content.seo.keywords}" />
+        <meta name="description" content="${content.content.introduction}" />
+        <meta name="keywords" content="${content.content.metadata.tags.join(', ')}" />
       </Head>
 
       {/* Navigation */}
