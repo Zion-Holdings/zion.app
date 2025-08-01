@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import Link from 'next/link'
 
 const Home: NextPage = () => {
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
   }
 
   // Base sections data
-  const baseSections = [
+  const baseSections = useMemo(() => [
     {
       id: 0,
       type: 'hero',
@@ -124,7 +124,7 @@ const Home: NextPage = () => {
       description: 'Be among the first to experience the future of AI-powered marketplace. Sign up for early access and exclusive benefits.',
       bgClass: 'bg-gradient-to-br from-purple-600/20 to-pink-600/20'
     }
-  ]
+  ], [])
 
   // Initialize displayed sections with base sections
   useEffect(() => {
