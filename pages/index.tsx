@@ -781,7 +781,9 @@ const Home: NextPage = () => {
         </div>
       </nav>
 
-      <main className="flex-1">
+      <main className={`flex-1 transition-all duration-500 ${
+        isFooterPersistent ? 'pb-64' : ''
+      }`}>
         {/* Infinite Scroll Sections */}
         {displayedSections.map((section) => (
           <section
