@@ -6,12 +6,12 @@
   "command": "node automation/health-check.js",
   "enabled": true,
   "priority": "high",
-  "lastRun": null,
-  "nextRun": "2025-08-01T11:58:03.299Z",
-  "runCount": 0,
+  "lastRun": "2025-08-01T12:00:00.507Z",
+  "nextRun": "2025-08-01T12:01:00.514Z",
+  "runCount": 1,
   "successCount": 0,
-  "failureCount": 0,
+  "failureCount": 1,
   "avgDuration": 0,
-  "lastError": null,
+  "lastError": "Job timeout",
   "createdAt": "2025-08-01T11:57:03.298Z"
 }

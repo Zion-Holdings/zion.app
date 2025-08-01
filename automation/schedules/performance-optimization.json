@@ -6,12 +6,12 @@
   "command": "node automation/optimize-performance.js",
   "enabled": true,
   "priority": "medium",
-  "lastRun": null,
-  "nextRun": "2025-08-01T11:58:03.300Z",
-  "runCount": 0,
+  "lastRun": "2025-08-01T12:00:00.510Z",
+  "nextRun": "2025-08-01T12:01:00.515Z",
+  "runCount": 1,
   "successCount": 0,
-  "failureCount": 0,
+  "failureCount": 1,
   "avgDuration": 0,
-  "lastError": null,
+  "lastError": "Job timeout",
   "createdAt": "2025-08-01T11:57:03.299Z"
 }
