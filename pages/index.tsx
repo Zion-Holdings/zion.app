@@ -167,7 +167,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [isLoading])
+  }, [isLoading, handleScroll])
 
   const renderSection = (section: any) => {
     switch (section.type) {
