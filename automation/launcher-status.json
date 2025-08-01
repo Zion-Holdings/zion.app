@@ -3,37 +3,39 @@
   "startTime": "2025-08-01T02:50:00.968Z",
   "agents": {
     "improvement": {
-      "isRunning": false,
-      "lastExit": "2025-08-01T03:09:33.961Z",
+      "isRunning": true,
+      "lastExit": "2025-08-01T03:10:34.095Z",
       "exitCode": 1,
-      "signal": null
+      "signal": null,
+      "lastActivity": "2025-08-01T03:11:00.891Z"
     },
     "content": {
       "isRunning": true,
       "startTime": "2025-08-01T02:50:35.140Z",
       "pid": 88355,
-      "lastActivity": "2025-08-01T03:09:00.895Z"
+      "lastActivity": "2025-08-01T03:11:00.891Z"
     },
     "analytics": {
-      "isRunning": false,
-      "lastExit": "2025-08-01T03:09:34.179Z",
+      "isRunning": true,
+      "lastExit": "2025-08-01T03:10:34.316Z",
       "exitCode": 1,
-      "signal": null
+      "signal": null,
+      "lastActivity": "2025-08-01T03:11:00.891Z"
     },
     "health": {
       "isRunning": true,
       "startTime": "2025-08-01T02:50:00.981Z",
       "pid": 86685,
-      "lastActivity": "2025-08-01T03:09:00.895Z"
+      "lastActivity": "2025-08-01T03:11:00.891Z"
     },
     "backup": {
       "isRunning": true,
       "lastExit": "2025-08-01T02:50:01.070Z",
       "exitCode": 0,
       "signal": null,
-      "lastActivity": "2025-08-01T03:09:00.895Z"
+      "lastActivity": "2025-08-01T03:11:00.891Z"
     }
   },
-  "totalUptime": 1139.927,
+  "totalUptime": 1259.923,
   "restarts": 1
 }
