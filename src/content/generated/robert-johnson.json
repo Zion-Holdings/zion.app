@@ -1,0 +1,13 @@
+{
+  "name": "Robert Johnson",
+  "company": "DataFlow Solutions",
+  "role": "CEO",
+  "content": "Outstanding expertise in cloud infrastructure. They helped us scale our operations efficiently.",
+  "rating": "5",
+  "project": "Cloud Migration",
+  "metadata": {
+    "verified": true,
+    "projectValue": "$25,000 - $50,000",
+    "duration": "3-6 months"
+  }
+}

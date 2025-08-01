@@ -1,0 +1,19 @@
+{
+  "title": "Building Scalable Web Applications with Modern Frameworks",
+  "excerpt": "Learn the best practices for creating scalable web applications using modern frameworks and tools.",
+  "content": "Modern web development requires careful consideration of scalability...",
+  "author": "Development Team",
+  "category": "Development",
+  "tags": [
+    "Web Development",
+    "Scalability",
+    "Frameworks",
+    "Best Practices"
+  ],
+  "publishedAt": "2024-01-10",
+  "metadata": {
+    "readTime": "5-7 minutes",
+    "difficulty": "Intermediate",
+    "views": 1099
+  }
+}

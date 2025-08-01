@@ -1,0 +1,19 @@
+{
+  "title": "DevOps Best Practices for Enterprise Teams",
+  "excerpt": "Essential DevOps practices that every enterprise team should implement for better efficiency.",
+  "content": "DevOps has become essential for modern software development...",
+  "author": "DevOps Specialist",
+  "category": "DevOps",
+  "tags": [
+    "DevOps",
+    "Enterprise",
+    "Automation",
+    "CI/CD"
+  ],
+  "publishedAt": "2024-01-05",
+  "metadata": {
+    "readTime": "5-7 minutes",
+    "difficulty": "Intermediate",
+    "views": 407
+  }
+}
