@@ -508,7 +508,7 @@ The AI Solutions Team`
                 trigger: 'Sign up',
                 delay: 'Immediate',
                 subject: `Welcome to ${campaign.solutionName}`,
-                content: campaign.content.emailMarketing.body
+                content: campaign.content?.emailMarketing?.body || this.generateEmailContent(campaign)
             },
             nurture: {
                 trigger: 'No purchase after 3 days',
