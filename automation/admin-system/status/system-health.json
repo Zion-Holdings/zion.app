@@ -1,14 +1,14 @@
 {
-  "timestamp": "2025-08-01T17:25:00.370Z",
-  "activeAgents": 32,
-  "totalAgents": 32,
+  "timestamp": "2025-08-02T04:50:00.543Z",
+  "activeAgents": 40,
+  "totalAgents": 40,
   "systemHealth": "healthy",
   "memoryUsage": {
-    "rss": 45735936,
-    "heapTotal": 7147520,
-    "heapUsed": 5093088,
-    "external": 1747738,
+    "rss": 41164800,
+    "heapTotal": 7671808,
+    "heapUsed": 5787720,
+    "external": 1758139,
     "arrayBuffers": 16931
   },
-  "uptime": 589.923990493
+  "uptime": 155.2315004
 }
