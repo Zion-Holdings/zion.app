@@ -317,6 +317,22 @@ const Home: NextPage = () => {
     },
     {
       id: 19,
+      type: 'talent-directory',
+      title: 'Talent Directory',
+      description: 'Connect with verified professionals and experts in AI, web development, mobile apps, and more.',
+      cta: 'Browse Talents',
+      ctaLink: '/talent-directory',
+      secondaryCta: 'Join as Talent',
+      secondaryCtaLink: '/join-talent',
+      features: [
+        { icon: '👨‍💻', title: 'Verified Professionals', description: 'Pre-screened and verified talent profiles' },
+        { icon: '⭐', title: 'Expert Ratings', description: 'Detailed ratings and review system' },
+        { icon: '📋', title: 'Portfolio Showcase', description: 'Professional portfolios and work samples' }
+      ],
+      bgClass: 'bg-gradient-to-br from-indigo-900 via-blue-900 to-indigo-900'
+    },
+    {
+      id: 20,
       type: 'company-info',
       title: 'About Zion',
       items: [
@@ -328,7 +344,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-slate-900 to-purple-900'
     },
     {
-      id: 20,
+      id: 21,
       type: 'waitlist',
       title: 'Join the Waitlist',
       description: 'Be among the first to experience the future of AI-powered marketplace. Sign up for early access and exclusive benefits.',
@@ -1186,6 +1202,41 @@ const Home: NextPage = () => {
         )
 
       case 'service-marketplace':
+        return (
+          <div className="py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  {section.title}
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                  {section.description}
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                  <Link href={section.ctaLink} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                    {section.cta}
+                  </Link>
+                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                    {section.secondaryCta}
+                  </Link>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {section.features.map((feature: any, index: number) => (
+                  <div key={index} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="text-4xl mb-4">{feature.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                    <p className="text-gray-300">{feature.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )
+
+      case 'talent-directory':
         return (
           <div className="py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
