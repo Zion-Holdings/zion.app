@@ -727,7 +727,7 @@ export const GlassmorphismCard: React.FC<GlassmorphismCardProps> = ({
     return new Promise((resolve, reject) => {
       const commands = [
         'git add .',
-        \`git commit -m "🤖 Autonomous improvement: \${message}"\`,
+        `git commit -m "🤖 Autonomous improvement: ${message}"`,
         'git push origin main'
       ];
 
