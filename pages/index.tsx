@@ -3252,6 +3252,37 @@ const Home: NextPage = () => {
           </div>
         )
 
+      case 'ai-backup-recovery':
+        return (
+          <div className={`${section.bgClass} py-20`}>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  {section.title}
+                </h2>
+                <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                  {section.description}
+                </p>
+                <div className="flex flex-wrap justify-center gap-4 mb-8">
+                  {section.features?.map((feature: string, index: number) => (
+                    <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
+                      <span className="text-white font-semibold">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link href={section.ctaLink} className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-violet-500/25 transform hover:scale-105">
+                    {section.cta}
+                  </Link>
+                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                    {section.secondaryCta}
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+
       default:
         return null
     }
