@@ -1048,6 +1048,23 @@ const Home: NextPage = () => {
     },
     {
       id: 64,
+      type: 'ai-biometric-authentication',
+      title: 'AI-Powered Biometric Authentication & Facial Recognition System',
+      description: 'Biometric authentication, facial recognition, fingerprint scanning, voice recognition, iris scanning, and automated biometric security management powered by AI.',
+      features: [
+        '🔐 Biometric Authentication',
+        '👤 Facial Recognition',
+        '👆 Fingerprint Scanning',
+        '🤖 AI Security'
+      ],
+      cta: 'Start Securing',
+      ctaLink: '/ai-powered-biometric-authentication',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/ai-powered-biometric-authentication',
+      bgClass: 'bg-gradient-to-br from-green-900 via-emerald-900 to-slate-900'
+    },
+    {
+      id: 65,
       type: 'waitlist',
       title: 'Join the Waitlist',
       description: 'Be among the first to experience the future of AI-powered marketplace. Sign up for early access and exclusive benefits.',
