@@ -87,6 +87,7 @@ const ProjectManagementPage: NextPage = () => {
   const [sortBy, setSortBy] = useState<'recent' | 'priority' | 'progress' | 'deadline'>('recent');
   const [projectStats, setProjectStats] = useState<ProjectStats | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     // Simulate loading project management data
