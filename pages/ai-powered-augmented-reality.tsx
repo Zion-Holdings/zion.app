@@ -27,52 +27,6 @@ interface ARExperience {
   }[];
 }
 
-interface ARSession {
-  id: string;
-  experienceId: string;
-  sessionType: 'visualization' | 'interaction' | 'navigation' | 'training' | 'collaboration' | 'entertainment';
-  status: 'active' | 'completed' | 'failed' | 'paused' | 'queued';
-  priority: 'low' | 'medium' | 'high' | 'urgent';
-  startTime: Date;
-  endTime?: Date;
-  duration: number;
-  aiAssisted: boolean;
-  parameters: {
-    target: string;
-    quality: number;
-    responsiveness: number;
-    immersion: boolean;
-  };
-  metrics: {
-    completionRate: number;
-    accuracy: number;
-    engagement: number;
-    satisfactionScore: number;
-  };
-}
-
-interface ARAutomation {
-  id: string;
-  name: string;
-  description: string;
-  status: 'active' | 'inactive' | 'testing' | 'error';
-  experienceId: string;
-  triggers: {
-    condition: string;
-    threshold: number;
-    sensor: string;
-  }[];
-  actions: {
-    experience: string;
-    action: string;
-    parameters: any;
-  }[];
-  lastExecuted: Date;
-  executionCount: number;
-  successRate: number;
-  aiOptimized: boolean;
-}
-
 interface ARAnalytics {
   id: string;
   metric: string;
@@ -85,10 +39,8 @@ interface ARAnalytics {
 
 const AIPoweredAugmentedRealityPage: NextPage = () => {
   const [experiences, setExperiences] = useState<ARExperience[]>([]);
-  const [sessions, setSessions] = useState<ARSession[]>([]);
-  const [automations, setAutomations] = useState<ARAutomation[]>([]);
   const [analytics, setAnalytics] = useState<ARAnalytics[]>([]);
-  const [selectedView, setSelectedView] = useState<'overview' | 'experiences' | 'sessions' | 'automations' | 'analytics'>('overview');
+  const [selectedView, setSelectedView] = useState<'overview' | 'experiences' | 'analytics'>('overview');
   const [filterType, setFilterType] = useState<string>('all');
   const [filterStatus, setFilterStatus] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState('');
@@ -96,7 +48,6 @@ const AIPoweredAugmentedRealityPage: NextPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading AI-powered AR data
     setTimeout(() => {
       const mockExperiences: ARExperience[] = [
         {
@@ -203,244 +154,6 @@ const AIPoweredAugmentedRealityPage: NextPage = () => {
               data: { algorithm: 'A*', optimization: 'AI' }
             }
           ]
-        },
-        {
-          id: '4',
-          name: 'Zion Training Simulator',
-          type: 'interactive-training',
-          status: 'active',
-          location: 'Corporate Training',
-          lastUpdated: new Date('2024-01-20T15:15:00'),
-          userCount: 234,
-          aiEnabled: false,
-          autoOptimize: true,
-          version: '1.2.0',
-          performance: {
-            frameRate: 90,
-            latency: 8,
-            accuracy: 89.4,
-            userSatisfaction: 85.6
-          },
-          features: [
-            {
-              type: 'haptic_feedback',
-              status: 'error',
-              data: { force: '0-10N', precision: '0.1N' }
-            },
-            {
-              type: 'voice_recognition',
-              status: 'inactive',
-              data: { languages: 5, accuracy: 87.3 }
-            }
-          ]
-        },
-        {
-          id: '5',
-          name: 'Zion Virtual Meeting',
-          type: 'virtual-meeting',
-          status: 'error',
-          location: 'Remote Collaboration',
-          lastUpdated: new Date('2024-01-20T14:45:00'),
-          userCount: 0,
-          aiEnabled: false,
-          autoOptimize: false,
-          version: '0.9.1',
-          performance: {
-            frameRate: 0,
-            latency: 0,
-            accuracy: 0,
-            userSatisfaction: 0
-          },
-          features: [
-            {
-              type: 'avatar_system',
-              status: 'error',
-              data: { quality: 'low', customization: 10 }
-            },
-            {
-              type: 'spatial_audio',
-              status: 'error',
-              data: { channels: 2, quality: 'stereo' }
-            }
-          ]
-        }
-      ];
-
-      const mockSessions: ARSession[] = [
-        {
-          id: '1',
-          experienceId: '1',
-          sessionType: 'visualization',
-          status: 'active',
-          priority: 'high',
-          startTime: new Date('2024-01-20T14:00:00'),
-          duration: 45,
-          aiAssisted: true,
-          parameters: {
-            target: 'Product Visualization',
-            quality: 95,
-            responsiveness: 90,
-            immersion: true
-          },
-          metrics: {
-            completionRate: 67,
-            accuracy: 98.5,
-            engagement: 94.2,
-            satisfactionScore: 92.8
-          }
-        },
-        {
-          id: '2',
-          experienceId: '2',
-          sessionType: 'interaction',
-          status: 'completed',
-          priority: 'medium',
-          startTime: new Date('2024-01-20T13:00:00'),
-          endTime: new Date('2024-01-20T13:30:00'),
-          duration: 30,
-          aiAssisted: true,
-          parameters: {
-            target: 'Virtual Try-On',
-            quality: 88,
-            responsiveness: 85,
-            immersion: true
-          },
-          metrics: {
-            completionRate: 100,
-            accuracy: 96.7,
-            engagement: 91.5,
-            satisfactionScore: 89.3
-          }
-        },
-        {
-          id: '3',
-          experienceId: '3',
-          sessionType: 'navigation',
-          status: 'queued',
-          priority: 'low',
-          startTime: new Date('2024-01-20T16:00:00'),
-          duration: 0,
-          aiAssisted: true,
-          parameters: {
-            target: 'Spatial Navigation',
-            quality: 92,
-            responsiveness: 88,
-            immersion: false
-          },
-          metrics: {
-            completionRate: 0,
-            accuracy: 0,
-            engagement: 0,
-            satisfactionScore: 0
-          }
-        }
-      ];
-
-      const mockAutomations: ARAutomation[] = [
-        {
-          id: '1',
-          name: 'Smart Product Visualization',
-          description: 'AI-powered product visualization with real-time optimization and user interaction',
-          status: 'active',
-          experienceId: '1',
-          triggers: [
-            {
-              condition: 'user_interaction',
-              threshold: 1,
-              sensor: 'gesture_sensor'
-            },
-            {
-              condition: 'performance_drop',
-              threshold: 30,
-              sensor: 'fps_monitor'
-            }
-          ],
-          actions: [
-            {
-              experience: 'Zion Product Visualizer',
-              action: 'optimize_rendering',
-              parameters: { quality: 'adaptive', fps: 60 }
-            },
-            {
-              experience: 'Zion Product Visualizer',
-              action: 'adjust_lighting',
-              parameters: { intensity: 'auto', shadows: 'dynamic' }
-            }
-          ],
-          lastExecuted: new Date('2024-01-20T15:30:00'),
-          executionCount: 1542,
-          successRate: 94.5,
-          aiOptimized: true
-        },
-        {
-          id: '2',
-          name: 'Virtual Try-On Optimization',
-          description: 'Intelligent virtual try-on with AI-powered body tracking and fabric simulation',
-          status: 'active',
-          experienceId: '2',
-          triggers: [
-            {
-              condition: 'body_detected',
-              threshold: 1,
-              sensor: 'camera_system'
-            },
-            {
-              condition: 'fabric_selected',
-              threshold: 1,
-              sensor: 'touch_sensor'
-            }
-          ],
-          actions: [
-            {
-              experience: 'Zion Virtual Try-On',
-              action: 'track_body',
-              parameters: { precision: 'high', joints: 32 }
-            },
-            {
-              experience: 'Zion Virtual Try-On',
-              action: 'simulate_fabric',
-              parameters: { physics: 'realistic', materials: 50 }
-            }
-          ],
-          lastExecuted: new Date('2024-01-20T15:25:00'),
-          executionCount: 892,
-          successRate: 97.2,
-          aiOptimized: true
-        },
-        {
-          id: '3',
-          name: 'Spatial Navigation Assistant',
-          description: 'AI-powered spatial navigation with intelligent path planning and obstacle detection',
-          status: 'testing',
-          experienceId: '3',
-          triggers: [
-            {
-              condition: 'location_requested',
-              threshold: 1,
-              sensor: 'gps_system'
-            },
-            {
-              condition: 'obstacle_detected',
-              threshold: 1,
-              sensor: 'lidar_sensor'
-            }
-          ],
-          actions: [
-            {
-              experience: 'Zion Spatial Navigator',
-              action: 'calculate_route',
-              parameters: { algorithm: 'A*', optimization: 'AI' }
-            },
-            {
-              experience: 'Zion Spatial Navigator',
-              action: 'update_navigation',
-              parameters: { real_time: true, accuracy: 'high' }
-            }
-          ],
-          lastExecuted: new Date('2024-01-20T15:20:00'),
-          executionCount: 234,
-          successRate: 89.1,
-          aiOptimized: true
         }
       ];
 
@@ -502,8 +215,6 @@ const AIPoweredAugmentedRealityPage: NextPage = () => {
       ];
 
       setExperiences(mockExperiences);
-      setSessions(mockSessions);
-      setAutomations(mockAutomations);
       setAnalytics(mockAnalytics);
       setLoading(false);
     }, 1000);
@@ -556,39 +267,6 @@ const AIPoweredAugmentedRealityPage: NextPage = () => {
       case 'virtual-meeting': return '💻';
       case 'gaming': return '🎮';
       default: return '🥽';
-    }
-  };
-
-  const getSessionStatusColor = (status: string) => {
-    switch (status) {
-      case 'active': return 'text-blue-400 bg-blue-500/20';
-      case 'completed': return 'text-green-400 bg-green-500/20';
-      case 'failed': return 'text-red-400 bg-red-500/20';
-      case 'queued': return 'text-yellow-400 bg-yellow-500/20';
-      case 'paused': return 'text-orange-400 bg-orange-500/20';
-      default: return 'text-gray-400 bg-gray-500/20';
-    }
-  };
-
-  const getSessionTypeIcon = (type: string) => {
-    switch (type) {
-      case 'visualization': return '👁️';
-      case 'interaction': return '👆';
-      case 'navigation': return '🧭';
-      case 'training': return '📚';
-      case 'collaboration': return '🤝';
-      case 'entertainment': return '🎪';
-      default: return '🥽';
-    }
-  };
-
-  const getAutomationStatusColor = (status: string) => {
-    switch (status) {
-      case 'active': return 'text-green-400 bg-green-500/20';
-      case 'inactive': return 'text-gray-400 bg-gray-500/20';
-      case 'testing': return 'text-blue-400 bg-blue-500/20';
-      case 'error': return 'text-red-400 bg-red-500/20';
-      default: return 'text-gray-400 bg-gray-500/20';
     }
   };
 
@@ -678,8 +356,6 @@ const AIPoweredAugmentedRealityPage: NextPage = () => {
             {[
               { id: 'overview', name: 'Overview', icon: '📊' },
               { id: 'experiences', name: 'Experiences', icon: '🥽' },
-              { id: 'sessions', name: 'Sessions', icon: '🎮' },
-              { id: 'automations', name: 'Automations', icon: '🔗' },
               { id: 'analytics', name: 'Analytics', icon: '📈' }
             ].map((tab) => (
               <button
@@ -814,175 +490,6 @@ const AIPoweredAugmentedRealityPage: NextPage = () => {
                   </button>
                   <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
                     Configure
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* AR Sessions */}
-        {selectedView === 'sessions' && (
-          <div className="space-y-6">
-            {sessions.map((session) => (
-              <div key={session.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="text-3xl">{getSessionTypeIcon(session.sessionType)}</div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-white mb-1">{session.sessionType.toUpperCase()}</h3>
-                      <p className="text-gray-300 text-sm">Experience ID: {session.experienceId}</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${getSessionStatusColor(session.status)}`}>
-                      {session.status.toUpperCase()}
-                    </span>
-                    <div className="mt-2">
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${session.aiAssisted ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
-                        {session.aiAssisted ? 'AI ASSISTED' : 'MANUAL'}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-                  <div>
-                    <p className="text-sm text-gray-400">Target</p>
-                    <p className="text-lg font-semibold text-white">{session.parameters.target}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400">Quality</p>
-                    <p className="text-lg font-semibold text-green-400">{session.parameters.quality}%</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400">Responsiveness</p>
-                    <p className="text-lg font-semibold text-blue-400">{session.parameters.responsiveness}%</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400">Immersion</p>
-                    <p className="text-lg font-semibold text-orange-400">{session.parameters.immersion ? '✅' : '❌'}</p>
-                  </div>
-                </div>
-
-                {session.status === 'active' || session.status === 'completed' ? (
-                  <div className="mb-4">
-                    <p className="text-sm text-gray-400 mb-2">Session Metrics:</p>
-                    <div className="grid grid-cols-4 gap-4 text-sm">
-                      <div>
-                        <p className="text-gray-400">Completion</p>
-                        <p className="text-green-400 font-semibold">{session.metrics.completionRate}%</p>
-                      </div>
-                      <div>
-                        <p className="text-gray-400">Accuracy</p>
-                        <p className="text-blue-400 font-semibold">{session.metrics.accuracy}%</p>
-                      </div>
-                      <div>
-                        <p className="text-gray-400">Engagement</p>
-                        <p className="text-orange-400 font-semibold">{session.metrics.engagement}%</p>
-                      </div>
-                      <div>
-                        <p className="text-gray-400">Satisfaction</p>
-                        <p className="text-purple-400 font-semibold">{session.metrics.satisfactionScore}%</p>
-                      </div>
-                    </div>
-                  </div>
-                ) : null}
-
-                <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
-                  <span>Started: {session.startTime.toLocaleString()}</span>
-                  {session.endTime && (
-                    <span>Completed: {session.endTime.toLocaleString()}</span>
-                  )}
-                </div>
-
-                <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
-                    View Details
-                  </button>
-                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
-                    {session.status === 'active' ? 'Pause' : 'Start'}
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* AR Automations */}
-        {selectedView === 'automations' && (
-          <div className="space-y-6">
-            {automations.map((automation) => (
-              <div key={automation.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">{automation.name}</h3>
-                    <p className="text-gray-300 text-sm">{automation.description}</p>
-                  </div>
-                  <div className="text-right">
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${getAutomationStatusColor(automation.status)}`}>
-                      {automation.status.toUpperCase()}
-                    </span>
-                    <div className="mt-2">
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${automation.aiOptimized ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
-                        {automation.aiOptimized ? 'AI OPTIMIZED' : 'MANUAL'}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <p className="text-sm text-gray-400">Executions</p>
-                    <p className="text-lg font-semibold text-white">{automation.executionCount.toLocaleString()}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400">Success Rate</p>
-                    <p className="text-lg font-semibold text-green-400">{automation.successRate}%</p>
-                  </div>
-                </div>
-
-                <div className="mb-4">
-                  <p className="text-sm text-gray-400 mb-2">Triggers:</p>
-                  <div className="space-y-2">
-                    {automation.triggers.map((trigger, index) => (
-                      <div key={index} className="bg-white/5 rounded p-2">
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm text-white">{trigger.condition}</span>
-                          <span className="text-xs text-gray-400">Sensor: {trigger.sensor}</span>
-                        </div>
-                        <p className="text-xs text-gray-400">Threshold: {trigger.threshold}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mb-4">
-                  <p className="text-sm text-gray-400 mb-2">Actions:</p>
-                  <div className="space-y-2">
-                    {automation.actions.map((action, index) => (
-                      <div key={index} className="bg-white/5 rounded p-2">
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm text-white">{action.experience}</span>
-                          <span className="text-xs text-gray-400">{action.action}</span>
-                        </div>
-                        <p className="text-xs text-gray-400">Parameters: {JSON.stringify(action.parameters)}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
-                  <span>Last Executed: {automation.lastExecuted.toLocaleString()}</span>
-                  <span>Experience ID: {automation.experienceId}</span>
-                </div>
-
-                <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
-                    View Logs
-                  </button>
-                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
-                    Edit Automation
                   </button>
                 </div>
               </div>
