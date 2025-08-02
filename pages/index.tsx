@@ -1031,6 +1031,23 @@ const Home: NextPage = () => {
     },
     {
       id: 63,
+      type: 'ai-neuromorphic-computing',
+      title: 'AI-Powered Neuromorphic Computing & Brain-Inspired System',
+      description: 'Neuromorphic computing, spiking neural networks, brain-inspired algorithms, neuromorphic chips, cognitive computing, and automated neuromorphic computing management powered by AI.',
+      features: [
+        '🧠 Neuromorphic Computing',
+        '⚡ Spiking Neural Networks',
+        '🔬 Brain-Inspired Algorithms',
+        '🤖 AI Optimization'
+      ],
+      cta: 'Start Computing',
+      ctaLink: '/ai-powered-neuromorphic-computing',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/ai-powered-neuromorphic-computing',
+      bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-slate-900'
+    },
+    {
+      id: 64,
       type: 'waitlist',
       title: 'Join the Waitlist',
       description: 'Be among the first to experience the future of AI-powered marketplace. Sign up for early access and exclusive benefits.',
