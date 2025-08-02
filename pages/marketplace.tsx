@@ -84,6 +84,9 @@ const Marketplace: NextPage = () => {
               <Link href="/escrow-services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Escrow
               </Link>
+              <Link href="/warranty-protection" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                Protection
+              </Link>
               <input
                 type="text"
                 placeholder="Search services..."
@@ -186,6 +189,29 @@ const Marketplace: NextPage = () => {
               </Link>
               <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 Start Trading
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Warranty Protection CTA */}
+      <div className="bg-gradient-to-r from-blue-900/50 to-cyan-900/50 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Protect Your Investments
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Don't let unexpected issues derail your projects. Get comprehensive warranty protection 
+              for all your marketplace purchases with extended coverage and easy claim processing.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/warranty-protection" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+                Get Protected
+              </Link>
+              <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                Shop Securely
               </Link>
             </div>
           </div>
