@@ -42,6 +42,9 @@ const Header: React.FC<HeaderProps> = ({
             <Link href="/equipment" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Equipment
             </Link>
+            <Link href="/escrow-services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              Escrow
+            </Link>
             <Link href="/products" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Products
             </Link>
@@ -72,6 +75,9 @@ const Header: React.FC<HeaderProps> = ({
             </Link>
             <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Services
+            </Link>
+            <Link href="/escrow-services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              Escrow
             </Link>
             <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Talents
@@ -128,6 +134,9 @@ const Header: React.FC<HeaderProps> = ({
               {/* Tools & Features */}
               <div className="mb-4">
                 <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Tools</h3>
+                <Link href="/escrow-services" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  Escrow Services
+                </Link>
                 <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   Live Chat
                 </Link>
