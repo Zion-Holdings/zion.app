@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-02T14:30:23.470Z",
+  "timestamp": "2025-08-02T14:32:01.402Z",
   "projectStructure": {
     "pages": {
       "_app.tsx": {
@@ -20,7 +20,7 @@
       "admin.tsx": {
         "type": "file",
         "size": 684,
-        "modified": "2025-08-02T14:30:20.340Z"
+        "modified": "2025-08-02T14:31:58.279Z"
       },
       "advanced-search.tsx": {
         "type": "file",
@@ -81,6 +81,11 @@
         "type": "file",
         "size": 39116,
         "modified": "2025-08-02T02:51:27.324Z"
+      },
+      "ai-powered-event-calendar.tsx": {
+        "type": "file",
+        "size": 37911,
+        "modified": "2025-08-02T14:31:26.782Z"
       },
       "ai-powered-governance-compliance.tsx": {
         "type": "file",
@@ -200,7 +205,7 @@
       "analytics.tsx": {
         "type": "file",
         "size": 661,
-        "modified": "2025-08-02T14:30:20.341Z"
+        "modified": "2025-08-02T14:31:58.280Z"
       },
       "api": {
         "admin": {
@@ -240,7 +245,7 @@
         "chat.ts": {
           "type": "file",
           "size": 446,
-          "modified": "2025-08-02T14:30:20.337Z"
+          "modified": "2025-08-02T14:31:58.275Z"
         },
         "generate-service-description.ts": {
           "type": "file",
@@ -260,12 +265,12 @@
         "notifications.ts": {
           "type": "file",
           "size": 456,
-          "modified": "2025-08-02T14:30:20.341Z"
+          "modified": "2025-08-02T14:31:58.280Z"
         },
         "payment.ts": {
           "type": "file",
           "size": 450,
-          "modified": "2025-08-02T14:30:20.337Z"
+          "modified": "2025-08-02T14:31:58.276Z"
         },
         "quote-request.ts": {
           "type": "file",
@@ -280,12 +285,12 @@
         "reviews.ts": {
           "type": "file",
           "size": 447,
-          "modified": "2025-08-02T14:30:20.339Z"
+          "modified": "2025-08-02T14:31:58.277Z"
         },
         "search.ts": {
           "type": "file",
           "size": 446,
-          "modified": "2025-08-02T14:30:20.339Z"
+          "modified": "2025-08-02T14:31:58.278Z"
         },
         "test-auth.ts": {
           "type": "file",
@@ -568,8 +573,8 @@
       },
       "index.tsx": {
         "type": "file",
-        "size": 171705,
-        "modified": "2025-08-02T14:24:09.851Z"
+        "size": 174086,
+        "modified": "2025-08-02T14:31:55.795Z"
       },
       "it-services.tsx": {
         "type": "file",
@@ -1237,12 +1242,12 @@
       "NotificationSystem.tsx": {
         "type": "file",
         "size": 248,
-        "modified": "2025-08-02T14:30:20.341Z"
+        "modified": "2025-08-02T14:31:58.280Z"
       },
       "SearchFilter.tsx": {
         "type": "file",
         "size": 519,
-        "modified": "2025-08-02T14:30:20.339Z"
+        "modified": "2025-08-02T14:31:58.278Z"
       },
       "auth": {
         "ProtectedRoute.tsx": {
@@ -1260,17 +1265,17 @@
         "ChatInput.tsx": {
           "type": "file",
           "size": 228,
-          "modified": "2025-08-02T14:30:20.336Z"
+          "modified": "2025-08-02T14:31:58.275Z"
         },
         "ChatMessage.tsx": {
           "type": "file",
           "size": 232,
-          "modified": "2025-08-02T14:30:20.336Z"
+          "modified": "2025-08-02T14:31:58.275Z"
         },
         "ChatWindow.tsx": {
           "type": "file",
           "size": 230,
-          "modified": "2025-08-02T14:30:20.336Z"
+          "modified": "2025-08-02T14:31:58.275Z"
         }
       },
       "content": {},
@@ -1278,17 +1283,17 @@
         "ReviewCard.tsx": {
           "type": "file",
           "size": 232,
-          "modified": "2025-08-02T14:30:20.338Z"
+          "modified": "2025-08-02T14:31:58.277Z"
         },
         "ReviewForm.tsx": {
           "type": "file",
           "size": 232,
-          "modified": "2025-08-02T14:30:20.338Z"
+          "modified": "2025-08-02T14:31:58.277Z"
         },
         "ReviewList.tsx": {
           "type": "file",
           "size": 232,
-          "modified": "2025-08-02T14:30:20.338Z"
+          "modified": "2025-08-02T14:31:58.277Z"
         }
       },
       "service-listing": {
@@ -1771,7 +1776,7 @@
           "ai-ml-solutions.json": {
             "type": "file",
             "size": 783,
-            "modified": "2025-08-02T14:30:20.345Z"
+            "modified": "2025-08-02T14:31:58.284Z"
           },
           "blog-posts.json": {
             "type": "file",
@@ -1781,12 +1786,12 @@
           "building-scalable-web-applications-with-modern-frameworks.json": {
             "type": "file",
             "size": 570,
-            "modified": "2025-08-02T14:30:20.348Z"
+            "modified": "2025-08-02T14:31:58.287Z"
           },
           "cloud-infrastructure.json": {
             "type": "file",
             "size": 802,
-            "modified": "2025-08-02T14:30:20.345Z"
+            "modified": "2025-08-02T14:31:58.283Z"
           },
           "comprehensive-content.json": {
             "type": "file",
@@ -1801,22 +1806,22 @@
           "data-analytics.json": {
             "type": "file",
             "size": 809,
-            "modified": "2025-08-02T14:30:20.345Z"
+            "modified": "2025-08-02T14:31:58.284Z"
           },
           "david-kim.json": {
             "type": "file",
             "size": 617,
-            "modified": "2025-08-02T14:30:20.347Z"
+            "modified": "2025-08-02T14:31:58.286Z"
           },
           "devops-best-practices-for-enterprise-teams.json": {
             "type": "file",
             "size": 518,
-            "modified": "2025-08-02T14:30:20.348Z"
+            "modified": "2025-08-02T14:31:58.287Z"
           },
           "do-you-provide-ongoing-support.json": {
             "type": "file",
             "size": 256,
-            "modified": "2025-08-02T14:30:20.351Z"
+            "modified": "2025-08-02T14:31:58.289Z"
           },
           "dynamic-featured-providers.json": {
             "type": "file",
@@ -1846,7 +1851,7 @@
           "emily-rodriguez.json": {
             "type": "file",
             "size": 625,
-            "modified": "2025-08-02T14:30:20.347Z"
+            "modified": "2025-08-02T14:31:58.286Z"
           },
           "equipment-catalog.json": {
             "type": "file",
@@ -1871,27 +1876,27 @@
           "how-long-does-a-typical-projec.json": {
             "type": "file",
             "size": 297,
-            "modified": "2025-08-02T14:30:20.350Z"
+            "modified": "2025-08-02T14:31:58.289Z"
           },
           "jennifer-smith.json": {
             "type": "file",
             "size": 351,
-            "modified": "2025-08-02T14:30:20.349Z"
+            "modified": "2025-08-02T14:31:58.288Z"
           },
           "maria-garcia.json": {
             "type": "file",
             "size": 368,
-            "modified": "2025-08-02T14:30:20.350Z"
+            "modified": "2025-08-02T14:31:58.288Z"
           },
           "michael-chen.json": {
             "type": "file",
             "size": 622,
-            "modified": "2025-08-02T14:30:20.346Z"
+            "modified": "2025-08-02T14:31:58.285Z"
           },
           "mobile-app-development.json": {
             "type": "file",
             "size": 826,
-            "modified": "2025-08-02T14:30:20.344Z"
+            "modified": "2025-08-02T14:31:58.283Z"
           },
           "multilingual-de.json": {
             "type": "file",
@@ -1936,12 +1941,12 @@
           "robert-johnson.json": {
             "type": "file",
             "size": 356,
-            "modified": "2025-08-02T14:30:20.349Z"
+            "modified": "2025-08-02T14:31:58.288Z"
           },
           "sarah-johnson.json": {
             "type": "file",
             "size": 640,
-            "modified": "2025-08-02T14:30:20.346Z"
+            "modified": "2025-08-02T14:31:58.285Z"
           },
           "seo-internal-links.json": {
             "type": "file",
@@ -1996,22 +2001,22 @@
           "the-future-of-ai-in-business--2024-trends.json": {
             "type": "file",
             "size": 540,
-            "modified": "2025-08-02T14:30:20.348Z"
+            "modified": "2025-08-02T14:31:58.286Z"
           },
           "web-development.json": {
             "type": "file",
             "size": 818,
-            "modified": "2025-08-02T14:30:20.344Z"
+            "modified": "2025-08-02T14:31:58.283Z"
           },
           "what-is-your-pricing-structure.json": {
             "type": "file",
-            "size": 276,
-            "modified": "2025-08-02T14:30:20.351Z"
+            "size": 277,
+            "modified": "2025-08-02T14:31:58.290Z"
           },
           "what-services-do-you-offer-.json": {
             "type": "file",
             "size": 289,
-            "modified": "2025-08-02T14:30:20.350Z"
+            "modified": "2025-08-02T14:31:58.289Z"
           }
         },
         "integrated": {},
@@ -2096,7 +2101,7 @@
       "chat.ts": {
         "type": "file",
         "size": 446,
-        "modified": "2025-08-02T14:30:20.337Z"
+        "modified": "2025-08-02T14:31:58.275Z"
       },
       "generate-service-description.ts": {
         "type": "file",
@@ -2116,12 +2121,12 @@
       "notifications.ts": {
         "type": "file",
         "size": 456,
-        "modified": "2025-08-02T14:30:20.341Z"
+        "modified": "2025-08-02T14:31:58.280Z"
       },
       "payment.ts": {
         "type": "file",
         "size": 450,
-        "modified": "2025-08-02T14:30:20.337Z"
+        "modified": "2025-08-02T14:31:58.276Z"
       },
       "quote-request.ts": {
         "type": "file",
@@ -2136,12 +2141,12 @@
       "reviews.ts": {
         "type": "file",
         "size": 447,
-        "modified": "2025-08-02T14:30:20.339Z"
+        "modified": "2025-08-02T14:31:58.277Z"
       },
       "search.ts": {
         "type": "file",
         "size": 446,
-        "modified": "2025-08-02T14:30:20.339Z"
+        "modified": "2025-08-02T14:31:58.278Z"
       },
       "test-auth.ts": {
         "type": "file",
