@@ -582,6 +582,74 @@ const ProjectManagementPage: NextPage = () => {
               </button>
             </div>
           </div>
+
+          {/* Mobile menu */}
+          {isMenuOpen && (
+            <div className="md:hidden bg-black/90 backdrop-blur-md border-t border-white/10">
+              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                {/* Main Navigation */}
+                <div className="mb-4">
+                  <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Main</h3>
+                  <Link href="/marketplace" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Marketplace
+                  </Link>
+                  <Link href="/services" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Services
+                  </Link>
+                  <Link href="/talents" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Talents
+                  </Link>
+                  <Link href="/equipment" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Equipment
+                  </Link>
+                  <Link href="/products" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Products
+                  </Link>
+                </div>
+
+                {/* Tools & Features */}
+                <div className="mb-4">
+                  <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Tools</h3>
+                  <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Live Chat
+                  </Link>
+                  <Link href="/ai-virtual-assistant" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    AI Assistant
+                  </Link>
+                  <Link href="/advanced-search" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Search
+                  </Link>
+                  <Link href="/analytics-dashboard" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Analytics
+                  </Link>
+                </div>
+
+                {/* Resources */}
+                <div className="mb-4">
+                  <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Resources</h3>
+                  <Link href="/blog" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Blog
+                  </Link>
+                  <Link href="/about" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    About
+                  </Link>
+                  <Link href="/notifications" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Notifications
+                  </Link>
+                </div>
+
+                {/* Authentication */}
+                <div className="border-t border-white/10 pt-4">
+                  <Link href="/auth/login" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Login
+                  </Link>
+                  <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Join Zion Now
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 

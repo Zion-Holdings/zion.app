@@ -82,6 +82,7 @@ const TalentDirectoryPage: NextPage = () => {
   const [filterAvailable, setFilterAvailable] = useState(false);
   const [selectedTalent, setSelectedTalent] = useState<Talent | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     // Simulate loading talent directory data
@@ -617,21 +618,134 @@ const TalentDirectoryPage: NextPage = () => {
               </Link>
             </div>
             
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/service-marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+            {/* Desktop Navigation - Main Links */}
+            <div className="hidden lg:flex items-center space-x-6">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Marketplace
+              </Link>
+              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Services
               </Link>
-              <Link href="/mobile-responsive" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Mobile
+              <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Talents
               </Link>
-              <Link href="/seo-optimization" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                SEO
+              <Link href="/equipment" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Equipment
+              </Link>
+              <Link href="/products" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Products
+              </Link>
+            </div>
+
+            {/* Desktop Navigation - Auth & Actions */}
+            <div className="hidden lg:flex items-center space-x-4">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Login
+              </Link>
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+                Join Zion Now
+              </Link>
+            </div>
+
+            {/* Tablet Navigation - Reduced Links */}
+            <div className="hidden md:flex lg:hidden items-center space-x-4">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Marketplace
+              </Link>
+              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Services
+              </Link>
+              <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Talents
               </Link>
               <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+                Join
+              </Link>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden flex items-center">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-gray-300 hover:text-white focus:outline-none focus:text-white"
+              >
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
             </div>
           </div>
+
+          {/* Mobile menu */}
+          {isMenuOpen && (
+            <div className="md:hidden bg-black/90 backdrop-blur-md border-t border-white/10">
+              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                {/* Main Navigation */}
+                <div className="mb-4">
+                  <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Main</h3>
+                  <Link href="/marketplace" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Marketplace
+                  </Link>
+                  <Link href="/services" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Services
+                  </Link>
+                  <Link href="/talents" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Talents
+                  </Link>
+                  <Link href="/equipment" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Equipment
+                  </Link>
+                  <Link href="/products" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Products
+                  </Link>
+                </div>
+
+                {/* Tools & Features */}
+                <div className="mb-4">
+                  <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Tools</h3>
+                  <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Live Chat
+                  </Link>
+                  <Link href="/ai-virtual-assistant" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    AI Assistant
+                  </Link>
+                  <Link href="/advanced-search" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Search
+                  </Link>
+                  <Link href="/analytics-dashboard" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Analytics
+                  </Link>
+                </div>
+
+                {/* Resources */}
+                <div className="mb-4">
+                  <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Resources</h3>
+                  <Link href="/blog" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Blog
+                  </Link>
+                  <Link href="/about" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    About
+                  </Link>
+                  <Link href="/notifications" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Notifications
+                  </Link>
+                </div>
+
+                {/* Authentication */}
+                <div className="border-t border-white/10 pt-4">
+                  <Link href="/auth/login" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Login
+                  </Link>
+                  <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Join Zion Now
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
