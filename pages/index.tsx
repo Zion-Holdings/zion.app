@@ -2011,6 +2011,9 @@ const Home: NextPage = () => {
               <Link href="/ai-powered-security" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Security
               </Link>
+              <Link href="/ai-powered-testing" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Testing
+              </Link>
               <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
