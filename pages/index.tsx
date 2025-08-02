@@ -2302,7 +2302,8 @@ const Home: NextPage = () => {
               </div>
             </div>
             
-            <div className="hidden md:flex items-center space-x-8">
+            {/* Desktop Navigation - Main Links */}
+            <div className="hidden lg:flex items-center space-x-6">
               <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
@@ -2315,117 +2316,44 @@ const Home: NextPage = () => {
               <Link href="/equipment" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Equipment
               </Link>
-              <Link href="/equipment-rental" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Rent Equipment
-              </Link>
               <Link href="/products" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Products
               </Link>
-              <Link href="/real-time-chat" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Live Chat
+              <Link href="/blog" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Blog
               </Link>
-              <Link href="/payment-processing" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Payments
+              <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                About
               </Link>
-              <Link href="/advanced-search" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Search
-              </Link>
-              <Link href="/review-system" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Reviews
-              </Link>
-              <Link href="/analytics-dashboard" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Analytics
-              </Link>
-              <Link href="/user-profiles" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Profiles
-              </Link>
-              <Link href="/multi-language" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Languages
-              </Link>
-              <Link href="/seo-optimization" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                SEO
-              </Link>
-              <Link href="/mobile-responsive" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Mobile
-              </Link>
-              <Link href="/service-marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Services
-              </Link>
-              <Link href="/talent-directory" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Talents
-              </Link>
-              <Link href="/quote-requests" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Quotes
-              </Link>
-              <Link href="/service-categories" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Categories
-              </Link>
-              <Link href="/project-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Projects
-              </Link>
-              <Link href="/smart-notifications" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Notifications
-              </Link>
-              <Link href="/ai-powered-analytics" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Analytics
-              </Link>
-              <Link href="/ai-powered-automation" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Automation
-              </Link>
-              <Link href="/ai-powered-seo" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                SEO
-              </Link>
-              <Link href="/ai-powered-multi-language" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Languages
-              </Link>
-              <Link href="/ai-powered-mobile-responsive" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Mobile
-              </Link>
-              <Link href="/ai-powered-content-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Content
-              </Link>
-              <Link href="/ai-powered-security" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Security
-              </Link>
-              <Link href="/ai-powered-testing" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Testing
-              </Link>
-              <Link href="/ai-powered-customer-support" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Support
-              </Link>
-              <Link href="/ai-powered-data-analytics" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Analytics
-              </Link>
-              <Link href="/ai-powered-machine-learning" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                ML
-              </Link>
-              <Link href="/ai-powered-blockchain" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Blockchain
-              </Link>
-              <Link href="/ai-powered-iot" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                IoT
-              </Link>
-              <Link href="/ai-powered-robotics" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Robotics
-              </Link>
-              <Link href="/ai-powered-augmented-reality" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                AR
-              </Link>
-              <Link href="/ai-powered-virtual-reality" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                VR
-              </Link>
+            </div>
+
+            {/* Desktop Navigation - Auth & Actions */}
+            <div className="hidden lg:flex items-center space-x-4">
               <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
               <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
                 Join Zion Now
               </Link>
-              <Link href="/notifications" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Notifications
+            </div>
+
+            {/* Tablet Navigation - Reduced Links */}
+            <div className="hidden md:flex lg:hidden items-center space-x-4">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Marketplace
               </Link>
-              <div className="text-xs text-purple-400 bg-purple-500/10 px-2 py-1 rounded-full border border-purple-500/20">
-                {displayedSections.length} sections
-              </div>
+              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Services
+              </Link>
+              <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Talents
+              </Link>
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Login
+              </Link>
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+                Join
+              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -2445,42 +2373,66 @@ const Home: NextPage = () => {
           {isMenuOpen && (
             <div className="md:hidden bg-black/90 backdrop-blur-md border-t border-white/10">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <Link href="/marketplace" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  Marketplace
-                </Link>
-                <Link href="/services" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  Services
-                </Link>
-                <Link href="/talents" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  Talents
-                </Link>
-                <Link href="/equipment" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  Equipment
-                </Link>
-                <Link href="/equipment-rental" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  Rent Equipment
-                </Link>
-                <Link href="/products" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  Products
-                </Link>
-                <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  Live Chat
-                </Link>
-                <Link href="/ai-virtual-assistant" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  AI Assistant
-                </Link>
-                <Link href="/blog" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  Blog
-                </Link>
-                <Link href="/about" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  About
-                </Link>
-                <Link href="/auth/login" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                  Login
-                </Link>
-                <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white block px-3 py-2 rounded-md text-base font-medium">
-                  Join Zion Now
-                </Link>
+                {/* Main Navigation */}
+                <div className="mb-4">
+                  <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Main</h3>
+                  <Link href="/marketplace" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Marketplace
+                  </Link>
+                  <Link href="/services" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Services
+                  </Link>
+                  <Link href="/talents" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Talents
+                  </Link>
+                  <Link href="/equipment" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Equipment
+                  </Link>
+                  <Link href="/products" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Products
+                  </Link>
+                </div>
+
+                {/* Tools & Features */}
+                <div className="mb-4">
+                  <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Tools</h3>
+                  <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Live Chat
+                  </Link>
+                  <Link href="/ai-virtual-assistant" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    AI Assistant
+                  </Link>
+                  <Link href="/advanced-search" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Search
+                  </Link>
+                  <Link href="/analytics-dashboard" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Analytics
+                  </Link>
+                </div>
+
+                {/* Resources */}
+                <div className="mb-4">
+                  <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Resources</h3>
+                  <Link href="/blog" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Blog
+                  </Link>
+                  <Link href="/about" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    About
+                  </Link>
+                  <Link href="/notifications" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Notifications
+                  </Link>
+                </div>
+
+                {/* Authentication */}
+                <div className="border-t border-white/10 pt-4">
+                  <Link href="/auth/login" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Login
+                  </Link>
+                  <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Join Zion Now
+                  </Link>
+                </div>
               </div>
             </div>
           )}
