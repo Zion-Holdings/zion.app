@@ -725,6 +725,23 @@ const Home: NextPage = () => {
     },
     {
       id: 45,
+      type: 'ai-quality-assurance',
+      title: 'AI-Powered Quality Assurance & Testing System',
+      description: 'Automated testing, quality monitoring, compliance validation, and performance optimization powered by advanced AI for marketplace reliability.',
+      features: [
+        '🤖 AI Testing',
+        '📊 Quality Monitoring',
+        '✅ Compliance Validation',
+        '⚡ Performance Optimization'
+      ],
+      cta: 'Start Testing',
+      ctaLink: '/ai-powered-quality-assurance',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/ai-powered-quality-assurance',
+      bgClass: 'bg-gradient-to-br from-emerald-900 via-teal-900 to-slate-900'
+    },
+    {
+      id: 46,
       type: 'waitlist',
       title: 'Join the Waitlist',
       description: 'Be among the first to experience the future of AI-powered marketplace. Sign up for early access and exclusive benefits.',
@@ -2629,6 +2646,37 @@ const Home: NextPage = () => {
         )
 
       case 'ai-bidding-auction':
+        return (
+          <div className={`${section.bgClass} py-20`}>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  {section.title}
+                </h2>
+                <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                  {section.description}
+                </p>
+                <div className="flex flex-wrap justify-center gap-4 mb-8">
+                  {section.features?.map((feature: string, index: number) => (
+                    <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
+                      <span className="text-white font-semibold">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link href={section.ctaLink} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                    {section.cta}
+                  </Link>
+                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                    {section.secondaryCta}
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+
+      case 'ai-quality-assurance':
         return (
           <div className={`${section.bgClass} py-20`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
