@@ -285,6 +285,22 @@ const Home: NextPage = () => {
     },
     {
       id: 17,
+      type: 'escrow-services',
+      title: 'Escrow Services',
+      description: 'Secure transaction protection with advanced escrow system, dispute resolution, and complete transaction security.',
+      cta: 'Start Trading Securely',
+      ctaLink: '/escrow-services',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/escrow-services',
+      features: [
+        { icon: '🔒', title: 'Secure Escrow', description: 'Funds held securely until transaction completion' },
+        { icon: '🤝', title: 'Dispute Resolution', description: 'AI-powered dispute resolution with human oversight' },
+        { icon: '📊', title: 'Transparent Tracking', description: 'Real-time transaction tracking and status updates' }
+      ],
+      bgClass: 'bg-gradient-to-br from-green-900 via-emerald-900 to-green-900'
+    },
+    {
+      id: 18,
       type: 'mobile-responsive',
       title: 'Mobile Responsive Design',
       description: 'Comprehensive mobile optimization with touch-friendly interfaces and responsive layouts.',
@@ -1916,6 +1932,41 @@ const Home: NextPage = () => {
                 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
                   <Link href={section.ctaLink} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                    {section.cta}
+                  </Link>
+                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                    {section.secondaryCta}
+                  </Link>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {section.features.map((feature: any, index: number) => (
+                  <div key={index} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="text-4xl mb-4">{feature.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                    <p className="text-gray-300">{feature.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )
+
+      case 'escrow-services':
+        return (
+          <div className="py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  {section.title}
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                  {section.description}
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                  <Link href={section.ctaLink} className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-green-500/25 transform hover:scale-105">
                     {section.cta}
                   </Link>
                   <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
