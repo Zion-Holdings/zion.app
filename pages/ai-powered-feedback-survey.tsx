@@ -10,27 +10,10 @@ interface Feedback {
   type: 'general' | 'product' | 'service' | 'support' | 'feature' | 'bug';
   status: 'active' | 'closed' | 'analyzing' | 'completed';
   priority: 'low' | 'medium' | 'high' | 'critical';
-  responses: FeedbackResponse[];
-  analytics: FeedbackAnalytics;
-  aiAnalysis: AIFeedbackAnalysis;
-}
-
-interface FeedbackResponse {
-  id: string;
-  userId: string;
-  content: string;
-  rating: number;
-  category: string;
-  sentiment: 'positive' | 'negative' | 'neutral';
-  timestamp: Date;
-}
-
-interface FeedbackAnalytics {
-  totalResponses: number;
+  responses: number;
   averageRating: number;
   satisfactionScore: number;
-  responseRate: number;
-  lastUpdated: Date;
+  aiAnalysis: AIFeedbackAnalysis;
 }
 
 interface AIFeedbackAnalysis {
@@ -38,7 +21,6 @@ interface AIFeedbackAnalysis {
   sentimentScore: number;
   trendAnalysis: number;
   recommendations: string[];
-  insights: string[];
 }
 
 interface Survey {
@@ -47,41 +29,10 @@ interface Survey {
   description: string;
   type: 'market-research' | 'user-satisfaction' | 'product-feedback' | 'service-evaluation' | 'custom';
   status: 'draft' | 'active' | 'closed' | 'analyzing';
-  questions: SurveyQuestion[];
-  responses: SurveyResponse[];
-  analytics: SurveyAnalytics;
-  aiOptimization: AISurveyOptimization;
-}
-
-interface SurveyQuestion {
-  id: string;
-  text: string;
-  type: 'multiple-choice' | 'rating' | 'text' | 'yes-no' | 'scale';
-  options?: string[];
-  required: boolean;
-  order: number;
-}
-
-interface SurveyResponse {
-  id: string;
-  userId: string;
-  answers: SurveyAnswer[];
-  completionTime: number;
-  timestamp: Date;
-}
-
-interface SurveyAnswer {
-  questionId: string;
-  answer: string | number;
-  rating?: number;
-}
-
-interface SurveyAnalytics {
   totalResponses: number;
   completionRate: number;
-  averageCompletionTime: number;
   questionEffectiveness: number;
-  lastUpdated: Date;
+  aiOptimization: AISurveyOptimization;
 }
 
 interface AISurveyOptimization {
@@ -97,31 +48,10 @@ interface Poll {
   description: string;
   type: 'single-choice' | 'multiple-choice' | 'ranking' | 'rating';
   status: 'active' | 'closed' | 'scheduled';
-  options: PollOption[];
-  votes: PollVote[];
-  analytics: PollAnalytics;
-  aiAnalysis: AIPollAnalysis;
-}
-
-interface PollOption {
-  id: string;
-  text: string;
-  votes: number;
-  percentage: number;
-}
-
-interface PollVote {
-  id: string;
-  userId: string;
-  optionId: string;
-  timestamp: Date;
-}
-
-interface PollAnalytics {
   totalVotes: number;
   participationRate: number;
   averageRating: number;
-  lastUpdated: Date;
+  aiAnalysis: AIPollAnalysis;
 }
 
 interface AIPollAnalysis {
@@ -138,7 +68,6 @@ interface Testimonial {
   company: string;
   content: string;
   rating: number;
-  category: string;
   status: 'pending' | 'approved' | 'featured' | 'rejected';
   aiAnalysis: AITestimonialAnalysis;
 }
@@ -189,39 +118,14 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
       type: 'general',
       status: 'active',
       priority: 'high',
-      responses: [
-        {
-          id: '1',
-          userId: 'user1',
-          content: 'The platform is intuitive and easy to navigate. Great job!',
-          rating: 5,
-          category: 'usability',
-          sentiment: 'positive',
-          timestamp: new Date('2024-01-20T10:00:00')
-        },
-        {
-          id: '2',
-          userId: 'user2',
-          content: 'Some features could be more accessible on mobile devices',
-          rating: 4,
-          category: 'mobile',
-          sentiment: 'neutral',
-          timestamp: new Date('2024-01-20T11:00:00')
-        }
-      ],
-      analytics: {
-        totalResponses: 156,
-        averageRating: 4.2,
-        satisfactionScore: 84,
-        responseRate: 78,
-        lastUpdated: new Date('2024-01-20T12:00:00')
-      },
+      responses: 156,
+      averageRating: 4.2,
+      satisfactionScore: 84,
       aiAnalysis: {
         id: '1',
         sentimentScore: 82,
         trendAnalysis: 15,
-        recommendations: ['Improve mobile responsiveness', 'Add more interactive elements'],
-        insights: ['Users appreciate intuitive design', 'Mobile experience needs enhancement']
+        recommendations: ['Improve mobile responsiveness', 'Add more interactive elements']
       }
     },
     {
@@ -231,30 +135,14 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
       type: 'feature',
       status: 'analyzing',
       priority: 'critical',
-      responses: [
-        {
-          id: '3',
-          userId: 'user3',
-          content: 'The AI recommendations are incredibly accurate and helpful',
-          rating: 5,
-          category: 'ai-features',
-          sentiment: 'positive',
-          timestamp: new Date('2024-01-19T14:00:00')
-        }
-      ],
-      analytics: {
-        totalResponses: 89,
-        averageRating: 4.6,
-        satisfactionScore: 92,
-        responseRate: 85,
-        lastUpdated: new Date('2024-01-20T12:00:00')
-      },
+      responses: 89,
+      averageRating: 4.6,
+      satisfactionScore: 92,
       aiAnalysis: {
         id: '2',
         sentimentScore: 91,
         trendAnalysis: 25,
-        recommendations: ['Expand AI capabilities', 'Enhance personalization'],
-        insights: ['AI features highly valued', 'Strong positive sentiment']
+        recommendations: ['Expand AI capabilities', 'Enhance personalization']
       }
     }
   ]
@@ -266,42 +154,9 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
       description: 'Comprehensive survey to understand user satisfaction and identify improvement areas',
       type: 'user-satisfaction',
       status: 'active',
-      questions: [
-        {
-          id: '1',
-          text: 'How satisfied are you with the overall marketplace experience?',
-          type: 'rating',
-          required: true,
-          order: 1
-        },
-        {
-          id: '2',
-          text: 'Which features do you find most valuable?',
-          type: 'multiple-choice',
-          options: ['AI Recommendations', 'Pricing Tools', 'Learning Platform', 'Support System'],
-          required: true,
-          order: 2
-        }
-      ],
-      responses: [
-        {
-          id: '1',
-          userId: 'user1',
-          answers: [
-            { questionId: '1', answer: 5, rating: 5 },
-            { questionId: '2', answer: 'AI Recommendations' }
-          ],
-          completionTime: 120,
-          timestamp: new Date('2024-01-20T09:00:00')
-        }
-      ],
-      analytics: {
-        totalResponses: 234,
-        completionRate: 89,
-        averageCompletionTime: 180,
-        questionEffectiveness: 87,
-        lastUpdated: new Date('2024-01-20T12:00:00')
-      },
+      totalResponses: 234,
+      completionRate: 89,
+      questionEffectiveness: 87,
       aiOptimization: {
         id: '1',
         optimizationScore: 91,
@@ -318,22 +173,9 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
       description: 'Vote for your favorite AI-powered marketplace feature',
       type: 'single-choice',
       status: 'active',
-      options: [
-        { id: '1', text: 'AI-Powered Recommendations', votes: 156, percentage: 45 },
-        { id: '2', text: 'Smart Pricing Tools', votes: 98, percentage: 28 },
-        { id: '3', text: 'Learning Platform', votes: 67, percentage: 19 },
-        { id: '4', text: 'Quality Assurance', votes: 28, percentage: 8 }
-      ],
-      votes: [
-        { id: '1', userId: 'user1', optionId: '1', timestamp: new Date('2024-01-20T10:00:00') },
-        { id: '2', userId: 'user2', optionId: '2', timestamp: new Date('2024-01-20T11:00:00') }
-      ],
-      analytics: {
-        totalVotes: 349,
-        participationRate: 76,
-        averageRating: 4.3,
-        lastUpdated: new Date('2024-01-20T12:00:00')
-      },
+      totalVotes: 349,
+      participationRate: 76,
+      averageRating: 4.3,
       aiAnalysis: {
         id: '1',
         engagementScore: 89,
@@ -351,7 +193,6 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
       company: 'TechCorp Solutions',
       content: 'The AI-powered marketplace has revolutionized how we discover and connect with service providers. The recommendations are spot-on!',
       rating: 5,
-      category: 'enterprise',
       status: 'featured',
       aiAnalysis: {
         id: '1',
@@ -368,7 +209,6 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
       company: 'InnovateStartup',
       content: 'Outstanding platform with excellent AI features. The pricing tools and quality assurance systems are game-changers.',
       rating: 5,
-      category: 'startup',
       status: 'approved',
       aiAnalysis: {
         id: '2',
@@ -604,11 +444,11 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
                       <div className="grid grid-cols-2 gap-4 mb-4">
                         <div className="bg-white/5 rounded-lg p-4">
                           <div className="text-sm text-gray-400 mb-1">Total Responses</div>
-                          <div className="text-2xl font-bold text-white">{item.analytics.totalResponses}</div>
+                          <div className="text-2xl font-bold text-white">{item.responses}</div>
                         </div>
                         <div className="bg-white/5 rounded-lg p-4">
                           <div className="text-sm text-gray-400 mb-1">Satisfaction Score</div>
-                          <div className="text-2xl font-bold text-white">{item.analytics.satisfactionScore}%</div>
+                          <div className="text-2xl font-bold text-white">{item.satisfactionScore}%</div>
                         </div>
                       </div>
 
@@ -667,19 +507,19 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
                       <div className="bg-white/5 rounded-lg p-4">
                         <div className="text-sm text-gray-400 mb-1">Total Responses</div>
-                        <div className="text-2xl font-bold text-white">{survey.analytics.totalResponses}</div>
+                        <div className="text-2xl font-bold text-white">{survey.totalResponses}</div>
                       </div>
                       <div className="bg-white/5 rounded-lg p-4">
                         <div className="text-sm text-gray-400 mb-1">Completion Rate</div>
-                        <div className="text-2xl font-bold text-white">{survey.analytics.completionRate}%</div>
-                      </div>
-                      <div className="bg-white/5 rounded-lg p-4">
-                        <div className="text-sm text-gray-400 mb-1">Avg Completion Time</div>
-                        <div className="text-2xl font-bold text-white">{survey.analytics.averageCompletionTime}s</div>
+                        <div className="text-2xl font-bold text-white">{survey.completionRate}%</div>
                       </div>
                       <div className="bg-white/5 rounded-lg p-4">
                         <div className="text-sm text-gray-400 mb-1">Question Effectiveness</div>
-                        <div className="text-2xl font-bold text-white">{survey.analytics.questionEffectiveness}%</div>
+                        <div className="text-2xl font-bold text-white">{survey.questionEffectiveness}%</div>
+                      </div>
+                      <div className="bg-white/5 rounded-lg p-4">
+                        <div className="text-sm text-gray-400 mb-1">AI Optimization</div>
+                        <div className="text-2xl font-bold text-white">{survey.aiOptimization.optimizationScore}%</div>
                       </div>
                     </div>
 
@@ -697,8 +537,8 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
                             <div className="text-white font-semibold">{survey.aiOptimization.questionQuality}%</div>
                           </div>
                           <div>
-                            <div className="text-gray-400 mb-1">Questions</div>
-                            <div className="text-white font-semibold">{survey.questions.length}</div>
+                            <div className="text-gray-400 mb-1">Recommendations</div>
+                            <div className="text-white font-semibold">{survey.aiOptimization.recommendations.length}</div>
                           </div>
                         </div>
                         <div className="mt-3">
@@ -732,19 +572,19 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
                       <div className="bg-white/5 rounded-lg p-4">
                         <div className="text-sm text-gray-400 mb-1">Total Votes</div>
-                        <div className="text-2xl font-bold text-white">{poll.analytics.totalVotes}</div>
+                        <div className="text-2xl font-bold text-white">{poll.totalVotes}</div>
                       </div>
                       <div className="bg-white/5 rounded-lg p-4">
                         <div className="text-sm text-gray-400 mb-1">Participation Rate</div>
-                        <div className="text-2xl font-bold text-white">{poll.analytics.participationRate}%</div>
+                        <div className="text-2xl font-bold text-white">{poll.participationRate}%</div>
                       </div>
                       <div className="bg-white/5 rounded-lg p-4">
                         <div className="text-sm text-gray-400 mb-1">Avg Rating</div>
-                        <div className="text-2xl font-bold text-white">{poll.analytics.averageRating}</div>
+                        <div className="text-2xl font-bold text-white">{poll.averageRating}</div>
                       </div>
                       <div className="bg-white/5 rounded-lg p-4">
-                        <div className="text-sm text-gray-400 mb-1">Options</div>
-                        <div className="text-2xl font-bold text-white">{poll.options.length}</div>
+                        <div className="text-sm text-gray-400 mb-1">Engagement Score</div>
+                        <div className="text-2xl font-bold text-white">{poll.aiAnalysis.engagementScore}%</div>
                       </div>
                     </div>
 
@@ -762,8 +602,8 @@ const AIPoweredFeedbackSurveyPage: NextPage = () => {
                             <div className="text-white font-semibold">{poll.aiAnalysis.trendPrediction}%</div>
                           </div>
                           <div>
-                            <div className="text-gray-400 mb-1">Leading Option</div>
-                            <div className="text-white font-semibold">{poll.options[0]?.text}</div>
+                            <div className="text-gray-400 mb-1">Recommendations</div>
+                            <div className="text-white font-semibold">{poll.aiAnalysis.recommendations.length}</div>
                           </div>
                         </div>
                         <div className="mt-3">
