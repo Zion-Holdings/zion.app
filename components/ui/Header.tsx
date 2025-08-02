@@ -48,6 +48,9 @@ const Header: React.FC<HeaderProps> = ({
             <Link href="/warranty-protection" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Protection
             </Link>
+            <Link href="/invoice-billing" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              Billing
+            </Link>
             <Link href="/products" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Products
             </Link>
@@ -84,6 +87,9 @@ const Header: React.FC<HeaderProps> = ({
             </Link>
             <Link href="/warranty-protection" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Protection
+            </Link>
+            <Link href="/invoice-billing" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              Billing
             </Link>
             <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Talents
@@ -145,6 +151,9 @@ const Header: React.FC<HeaderProps> = ({
                 </Link>
                 <Link href="/warranty-protection" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   Warranty Protection
+                </Link>
+                <Link href="/invoice-billing" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  Invoice & Billing
                 </Link>
                 <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   Live Chat
