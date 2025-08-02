@@ -878,6 +878,23 @@ const Home: NextPage = () => {
     },
     {
       id: 54,
+      type: 'ai-broadcast-communication',
+      title: 'AI-Powered Broadcast & Communication System',
+      description: 'Broadcast messaging, announcement management, communication campaigns, marketing automation, promotional messaging, and advertising coordination powered by AI.',
+      features: [
+        '📢 Broadcast Messaging',
+        '📢 Announcements',
+        '📧 Communication Campaigns',
+        '🤖 AI Optimization'
+      ],
+      cta: 'Start Broadcasting',
+      ctaLink: '/ai-powered-broadcast-communication',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/ai-powered-broadcast-communication',
+      bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-slate-900'
+    },
+    {
+      id: 55,
       type: 'waitlist',
       title: 'Join the Waitlist',
       description: 'Be among the first to experience the future of AI-powered marketplace. Sign up for early access and exclusive benefits.',
