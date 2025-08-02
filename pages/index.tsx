@@ -929,6 +929,23 @@ const Home: NextPage = () => {
     },
     {
       id: 57,
+      type: 'ai-backup-recovery',
+      title: 'AI-Powered Backup & Recovery System',
+      description: 'Data backup, disaster recovery, system restoration, backup management, recovery planning, and automated backup scheduling powered by AI.',
+      features: [
+        '💾 Data Backup',
+        '🔄 Disaster Recovery',
+        '🛠️ System Restoration',
+        '🤖 AI Optimization'
+      ],
+      cta: 'Start Backing Up',
+      ctaLink: '/ai-powered-backup-recovery',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/ai-powered-backup-recovery',
+      bgClass: 'bg-gradient-to-br from-violet-900 via-purple-900 to-slate-900'
+    },
+    {
+      id: 58,
       type: 'waitlist',
       title: 'Join the Waitlist',
       description: 'Be among the first to experience the future of AI-powered marketplace. Sign up for early access and exclusive benefits.',
