@@ -2173,6 +2173,9 @@ const Home: NextPage = () => {
               <Link href="/ai-powered-data-analytics" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Analytics
               </Link>
+              <Link href="/ai-powered-machine-learning" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                ML
+              </Link>
               <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
