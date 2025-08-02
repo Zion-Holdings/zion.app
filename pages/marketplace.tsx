@@ -87,6 +87,9 @@ const Marketplace: NextPage = () => {
               <Link href="/warranty-protection" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Protection
               </Link>
+              <Link href="/invoice-billing" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                Billing
+              </Link>
               <input
                 type="text"
                 placeholder="Search services..."
@@ -212,6 +215,29 @@ const Marketplace: NextPage = () => {
               </Link>
               <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 Shop Securely
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Invoice Billing CTA */}
+      <div className="bg-gradient-to-r from-green-900/50 to-emerald-900/50 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Streamline Your Billing
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Professional invoice generation, automated payment tracking, and comprehensive financial reporting 
+              to help you manage your marketplace transactions efficiently.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/invoice-billing" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+                Manage Billing
+              </Link>
+              <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                Create Invoice
               </Link>
             </div>
           </div>
