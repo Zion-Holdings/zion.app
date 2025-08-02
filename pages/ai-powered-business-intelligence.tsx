@@ -145,7 +145,7 @@ const AIPoweredBusinessIntelligencePage: NextPage = () => {
           change: -7,
           changePercent: -13.5,
           target: 50,
-          status: 'excellent',
+          status: 'above-target',
           trend: 'up',
           unit: 'USD'
         }
@@ -199,7 +199,7 @@ const AIPoweredBusinessIntelligencePage: NextPage = () => {
           change: 0.2,
           changePercent: 4.3,
           target: 4.5,
-          status: 'excellent',
+          status: 'above-target',
           trend: 'up',
           unit: 'Score'
         },
