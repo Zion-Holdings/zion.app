@@ -512,6 +512,22 @@ const Home: NextPage = () => {
     },
     {
       id: 32,
+      type: 'ai-powered-testing',
+      title: 'AI-Powered Testing',
+      description: 'Intelligent test automation, quality assurance, performance testing, and AI-driven testing analytics.',
+      cta: 'View Testing',
+      ctaLink: '/ai-powered-testing',
+      secondaryCta: 'Create Tests',
+      secondaryCtaLink: '/ai-powered-testing',
+      features: [
+        { icon: '🧪', title: 'Test Automation', description: 'AI-powered test automation and generation' },
+        { icon: '📋', title: 'Quality Assurance', description: 'Intelligent quality assurance and testing' },
+        { icon: '⚡', title: 'Performance Testing', description: 'Advanced performance testing and analytics' }
+      ],
+      bgClass: 'bg-gradient-to-br from-emerald-900 via-teal-900 to-emerald-900'
+    },
+    {
+      id: 33,
       type: 'company-info',
       title: 'About Zion',
       items: [
@@ -523,7 +539,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-slate-900 to-purple-900'
     },
     {
-      id: 33,
+      id: 34,
       type: 'waitlist',
       title: 'Join the Waitlist',
       description: 'Be among the first to experience the future of AI-powered marketplace. Sign up for early access and exclusive benefits.',
@@ -1865,6 +1881,41 @@ const Home: NextPage = () => {
         )
 
       case 'ai-powered-security':
+        return (
+          <div className="py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  {section.title}
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                  {section.description}
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                  <Link href={section.ctaLink} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                    {section.cta}
+                  </Link>
+                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                    {section.secondaryCta}
+                  </Link>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {section.features.map((feature: any, index: number) => (
+                  <div key={index} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="text-4xl mb-4">{feature.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                    <p className="text-gray-300">{feature.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )
+
+      case 'ai-powered-testing':
         return (
           <div className="py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
