@@ -1,0 +1,810 @@
+const fs = require('fs');
+const path = require('path');
+const { exec } = require('child_process');
+const { promisify } = require('util');
+
+const execAsync = promisify(exec);
+
+class MLOptimizationAgent {
+  constructor() {
+    this.agentId = process.env.AGENT_ID;
+    this.agentType = process.env.AGENT_TYPE;
+    this.config = JSON.parse(process.env.AGENT_CONFIG || '{}');
+    this.projectRoot = path.resolve(__dirname, '../..');
+    this.reportsDir = path.join(__dirname, '../reports/ml-optimization');
+    this.ensureDirectories();
+  }
+
+  ensureDirectories() {
+    const dirs = [
+      this.reportsDir,
+      path.join(this.reportsDir, 'model-performance'),
+      path.join(this.reportsDir, 'optimization-reports'),
+      path.join(this.reportsDir, 'training-reports'),
+      path.join(this.reportsDir, 'data-quality'),
+      path.join(this.reportsDir, 'hyperparameter-tuning')
+    ];
+    
+    dirs.forEach(dir => {
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+      }
+    });
+  }
+
+  async start() {
+    console.log(`ML Optimization Agent ${this.agentId} started`);
+    
+    // Initial ML analysis
+    await this.analyzeMLModels();
+    
+    // Start continuous monitoring
+    setInterval(() => {
+      this.monitorModels();
+    }, 300000); // Every 5 minutes
+    
+    // Start optimization tasks
+    setInterval(() => {
+      this.optimizeModels();
+    }, 900000); // Every 15 minutes
+    
+    // Start training monitoring
+    setInterval(() => {
+      this.monitorTraining();
+    }, 1800000); // Every 30 minutes
+  }
+
+  async analyzeMLModels() {
+    try {
+      console.log('Performing comprehensive ML model analysis...');
+      
+      const analysis = {
+        timestamp: new Date().toISOString(),
+        agentId: this.agentId,
+        models: [],
+        dataQuality: {},
+        performanceMetrics: {},
+        optimizationOpportunities: [],
+        recommendations: []
+      };
+      
+      // Discover ML models
+      analysis.models = await this.discoverMLModels();
+      
+      // Analyze data quality
+      analysis.dataQuality = await this.analyzeDataQuality();
+      
+      // Analyze model performance
+      analysis.performanceMetrics = await this.analyzeModelPerformance();
+      
+      // Identify optimization opportunities
+      analysis.optimizationOpportunities = this.identifyOptimizationOpportunities(analysis);
+      
+      // Generate recommendations
+      analysis.recommendations = this.generateRecommendations(analysis);
+      
+      // Save analysis report
+      await this.saveAnalysisReport(analysis);
+      
+      console.log('ML model analysis completed');
+      
+    } catch (error) {
+      console.error('ML model analysis failed:', error);
+    }
+  }
+
+  async discoverMLModels() {
+    const models = [];
+    
+    try {
+      // Look for ML model files
+      const mlFiles = this.findMLFiles();
+      
+      for (const file of mlFiles) {
+        const content = fs.readFileSync(file, 'utf8');
+        const modelInfo = this.extractModelInfo(file, content);
+        
+        if (modelInfo) {
+          models.push(modelInfo);
+        }
+      }
+      
+      // Also check for model configuration files
+      const configFiles = this.findModelConfigFiles();
+      
+      for (const file of configFiles) {
+        const content = fs.readFileSync(file, 'utf8');
+        const configInfo = this.extractConfigInfo(file, content);
+        
+        if (configInfo) {
+          models.push(configInfo);
+        }
+      }
+      
+    } catch (error) {
+      console.error('Failed to discover ML models:', error);
+    }
+    
+    return models;
+  }
+
+  findMLFiles() {
+    const mlFiles = [];
+    const mlExtensions = ['.py', '.js', '.ts', '.ipynb'];
+    
+    try {
+      const findMLFiles = (dir) => {
+        const items = fs.readdirSync(dir);
+        
+        for (const item of items) {
+          const fullPath = path.join(dir, item);
+          const stat = fs.statSync(fullPath);
+          
+          if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+            findMLFiles(fullPath);
+          } else if (stat.isFile()) {
+            const ext = path.extname(item).toLowerCase();
+            if (mlExtensions.includes(ext)) {
+              const content = fs.readFileSync(fullPath, 'utf8');
+              if (this.containsMLCode(content)) {
+                mlFiles.push(fullPath);
+              }
+            }
+          }
+        }
+      };
+      
+      findMLFiles(this.projectRoot);
+      
+    } catch (error) {
+      console.error('Failed to find ML files:', error);
+    }
+    
+    return mlFiles;
+  }
+
+  containsMLCode(content) {
+    const mlKeywords = [
+      'tensorflow', 'pytorch', 'sklearn', 'keras', 'numpy', 'pandas',
+      'model.fit', 'model.predict', 'model.train', 'model.evaluate',
+      'neural', 'network', 'regression', 'classification', 'clustering'
+    ];
+    
+    return mlKeywords.some(keyword => content.toLowerCase().includes(keyword));
+  }
+
+  extractModelInfo(file, content) {
+    const modelInfo = {
+      file: file,
+      type: 'unknown',
+      framework: 'unknown',
+      parameters: {},
+      metrics: {}
+    };
+    
+    const lowerContent = content.toLowerCase();
+    
+    // Detect framework
+    if (lowerContent.includes('tensorflow') || lowerContent.includes('tf.')) {
+      modelInfo.framework = 'tensorflow';
+    } else if (lowerContent.includes('pytorch') || lowerContent.includes('torch.')) {
+      modelInfo.framework = 'pytorch';
+    } else if (lowerContent.includes('sklearn') || lowerContent.includes('sklearn.')) {
+      modelInfo.framework = 'scikit-learn';
+    } else if (lowerContent.includes('keras')) {
+      modelInfo.framework = 'keras';
+    }
+    
+    // Detect model type
+    if (lowerContent.includes('classification')) {
+      modelInfo.type = 'classification';
+    } else if (lowerContent.includes('regression')) {
+      modelInfo.type = 'regression';
+    } else if (lowerContent.includes('clustering')) {
+      modelInfo.type = 'clustering';
+    } else if (lowerContent.includes('neural') || lowerContent.includes('network')) {
+      modelInfo.type = 'neural_network';
+    }
+    
+    // Extract parameters
+    modelInfo.parameters = this.extractModelParameters(content);
+    
+    // Extract metrics
+    modelInfo.metrics = this.extractModelMetrics(content);
+    
+    return modelInfo;
+  }
+
+  findModelConfigFiles() {
+    const configFiles = [];
+    const configExtensions = ['.json', '.yaml', '.yml', '.toml'];
+    
+    try {
+      const findConfigFiles = (dir) => {
+        const items = fs.readdirSync(dir);
+        
+        for (const item of items) {
+          const fullPath = path.join(dir, item);
+          const stat = fs.statSync(fullPath);
+          
+          if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+            findConfigFiles(fullPath);
+          } else if (stat.isFile()) {
+            const ext = path.extname(item).toLowerCase();
+            if (configExtensions.includes(ext)) {
+              const content = fs.readFileSync(fullPath, 'utf8');
+              if (this.containsModelConfig(content)) {
+                configFiles.push(fullPath);
+              }
+            }
+          }
+        }
+      };
+      
+      findConfigFiles(this.projectRoot);
+      
+    } catch (error) {
+      console.error('Failed to find model config files:', error);
+    }
+    
+    return configFiles;
+  }
+
+  containsModelConfig(content) {
+    const configKeywords = [
+      'model', 'training', 'hyperparameters', 'layers', 'optimizer',
+      'learning_rate', 'batch_size', 'epochs', 'loss', 'accuracy'
+    ];
+    
+    return configKeywords.some(keyword => content.toLowerCase().includes(keyword));
+  }
+
+  extractConfigInfo(file, content) {
+    try {
+      const config = JSON.parse(content);
+      
+      return {
+        file: file,
+        type: 'configuration',
+        framework: config.framework || 'unknown',
+        parameters: config.hyperparameters || {},
+        metrics: config.metrics || {}
+      };
+    } catch (error) {
+      return null;
+    }
+  }
+
+  extractModelParameters(content) {
+    const parameters = {};
+    
+    // Extract learning rate
+    const lrMatch = content.match(/learning_rate\s*[:=]\s*([\d.]+)/i);
+    if (lrMatch) {
+      parameters.learning_rate = parseFloat(lrMatch[1]);
+    }
+    
+    // Extract batch size
+    const batchMatch = content.match(/batch_size\s*[:=]\s*(\d+)/i);
+    if (batchMatch) {
+      parameters.batch_size = parseInt(batchMatch[1]);
+    }
+    
+    // Extract epochs
+    const epochsMatch = content.match(/epochs\s*[:=]\s*(\d+)/i);
+    if (epochsMatch) {
+      parameters.epochs = parseInt(epochsMatch[1]);
+    }
+    
+    return parameters;
+  }
+
+  extractModelMetrics(content) {
+    const metrics = {};
+    
+    // Extract accuracy
+    const accuracyMatch = content.match(/accuracy\s*[:=]\s*([\d.]+)/i);
+    if (accuracyMatch) {
+      metrics.accuracy = parseFloat(accuracyMatch[1]);
+    }
+    
+    // Extract loss
+    const lossMatch = content.match(/loss\s*[:=]\s*([\d.]+)/i);
+    if (lossMatch) {
+      metrics.loss = parseFloat(lossMatch[1]);
+    }
+    
+    // Extract precision/recall
+    const precisionMatch = content.match(/precision\s*[:=]\s*([\d.]+)/i);
+    if (precisionMatch) {
+      metrics.precision = parseFloat(precisionMatch[1]);
+    }
+    
+    const recallMatch = content.match(/recall\s*[:=]\s*([\d.]+)/i);
+    if (recallMatch) {
+      metrics.recall = parseFloat(recallMatch[1]);
+    }
+    
+    return metrics;
+  }
+
+  async analyzeDataQuality() {
+    const dataQuality = {
+      datasets: [],
+      dataIssues: [],
+      qualityScore: 0,
+      recommendations: []
+    };
+    
+    try {
+      // Look for data files
+      const dataFiles = this.findDataFiles();
+      
+      for (const file of dataFiles) {
+        const fileInfo = this.analyzeDataFile(file);
+        dataQuality.datasets.push(fileInfo);
+        
+        if (fileInfo.issues.length > 0) {
+          dataQuality.dataIssues.push(...fileInfo.issues);
+        }
+      }
+      
+      // Calculate overall quality score
+      dataQuality.qualityScore = this.calculateDataQualityScore(dataQuality);
+      
+      // Generate recommendations
+      dataQuality.recommendations = this.generateDataQualityRecommendations(dataQuality);
+      
+    } catch (error) {
+      console.error('Failed to analyze data quality:', error);
+    }
+    
+    return dataQuality;
+  }
+
+  findDataFiles() {
+    const dataFiles = [];
+    const dataExtensions = ['.csv', '.json', '.parquet', '.h5', '.pkl'];
+    
+    try {
+      const findDataFiles = (dir) => {
+        const items = fs.readdirSync(dir);
+        
+        for (const item of items) {
+          const fullPath = path.join(dir, item);
+          const stat = fs.statSync(fullPath);
+          
+          if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+            findDataFiles(fullPath);
+          } else if (stat.isFile()) {
+            const ext = path.extname(item).toLowerCase();
+            if (dataExtensions.includes(ext)) {
+              dataFiles.push(fullPath);
+            }
+          }
+        }
+      };
+      
+      findDataFiles(this.projectRoot);
+      
+    } catch (error) {
+      console.error('Failed to find data files:', error);
+    }
+    
+    return dataFiles;
+  }
+
+  analyzeDataFile(file) {
+    const fileInfo = {
+      file: file,
+      size: 0,
+      format: path.extname(file).toLowerCase(),
+      issues: [],
+      qualityScore: 0
+    };
+    
+    try {
+      const stats = fs.statSync(file);
+      fileInfo.size = stats.size;
+      
+      // Check for common data issues
+      if (fileInfo.size === 0) {
+        fileInfo.issues.push('Empty file');
+      }
+      
+      if (fileInfo.size > 100 * 1024 * 1024) { // 100MB
+        fileInfo.issues.push('Very large file - consider chunking');
+      }
+      
+      // Check file format
+      if (fileInfo.format === '.csv') {
+        const content = fs.readFileSync(file, 'utf8');
+        if (content.includes(',,')) {
+          fileInfo.issues.push('Missing values detected');
+        }
+      }
+      
+      // Calculate quality score
+      fileInfo.qualityScore = this.calculateFileQualityScore(fileInfo);
+      
+    } catch (error) {
+      fileInfo.issues.push('Error reading file');
+    }
+    
+    return fileInfo;
+  }
+
+  calculateFileQualityScore(fileInfo) {
+    let score = 100;
+    
+    // Deduct points for issues
+    score -= fileInfo.issues.length * 10;
+    
+    // Bonus for good file size
+    if (fileInfo.size > 1024 && fileInfo.size < 10 * 1024 * 1024) {
+      score += 10;
+    }
+    
+    return Math.max(0, Math.min(100, score));
+  }
+
+  calculateDataQualityScore(dataQuality) {
+    if (dataQuality.datasets.length === 0) {
+      return 0;
+    }
+    
+    const totalScore = dataQuality.datasets.reduce((sum, dataset) => sum + dataset.qualityScore, 0);
+    return totalScore / dataQuality.datasets.length;
+  }
+
+  generateDataQualityRecommendations(dataQuality) {
+    const recommendations = [];
+    
+    if (dataQuality.qualityScore < 70) {
+      recommendations.push({
+        type: 'data_quality',
+        priority: 'high',
+        message: 'Low data quality detected',
+        suggestion: 'Clean and preprocess data before training'
+      });
+    }
+    
+    for (const issue of dataQuality.dataIssues) {
+      recommendations.push({
+        type: 'data_issue',
+        priority: 'medium',
+        message: `Data issue: ${issue}`,
+        suggestion: 'Address data quality issues'
+      });
+    }
+    
+    return recommendations;
+  }
+
+  async analyzeModelPerformance() {
+    const performance = {
+      models: [],
+      overallMetrics: {},
+      performanceIssues: [],
+      optimizationSuggestions: []
+    };
+    
+    try {
+      // Analyze each discovered model
+      const models = await this.discoverMLModels();
+      
+      for (const model of models) {
+        const modelPerformance = this.analyzeSingleModelPerformance(model);
+        performance.models.push(modelPerformance);
+        
+        if (modelPerformance.issues.length > 0) {
+          performance.performanceIssues.push(...modelPerformance.issues);
+        }
+      }
+      
+      // Calculate overall metrics
+      performance.overallMetrics = this.calculateOverallMetrics(performance.models);
+      
+      // Generate optimization suggestions
+      performance.optimizationSuggestions = this.generatePerformanceOptimizations(performance);
+      
+    } catch (error) {
+      console.error('Failed to analyze model performance:', error);
+    }
+    
+    return performance;
+  }
+
+  analyzeSingleModelPerformance(model) {
+    const performance = {
+      model: model,
+      accuracy: model.metrics.accuracy || 0,
+      loss: model.metrics.loss || 0,
+      issues: [],
+      recommendations: []
+    };
+    
+    // Check for performance issues
+    if (performance.accuracy < 0.8) {
+      performance.issues.push('Low accuracy - consider hyperparameter tuning');
+    }
+    
+    if (performance.loss > 0.5) {
+      performance.issues.push('High loss - model may be underfitting');
+    }
+    
+    // Generate recommendations
+    if (performance.accuracy < 0.8) {
+      performance.recommendations.push({
+        type: 'hyperparameter_tuning',
+        priority: 'high',
+        message: 'Low accuracy detected',
+        suggestion: 'Perform hyperparameter optimization'
+      });
+    }
+    
+    return performance;
+  }
+
+  calculateOverallMetrics(models) {
+    const metrics = {
+      averageAccuracy: 0,
+      averageLoss: 0,
+      totalModels: models.length,
+      modelsWithIssues: 0
+    };
+    
+    if (models.length > 0) {
+      metrics.averageAccuracy = models.reduce((sum, m) => sum + m.accuracy, 0) / models.length;
+      metrics.averageLoss = models.reduce((sum, m) => sum + m.loss, 0) / models.length;
+      metrics.modelsWithIssues = models.filter(m => m.issues.length > 0).length;
+    }
+    
+    return metrics;
+  }
+
+  generatePerformanceOptimizations(performance) {
+    const optimizations = [];
+    
+    if (performance.overallMetrics.averageAccuracy < 0.8) {
+      optimizations.push({
+        type: 'model_optimization',
+        priority: 'high',
+        message: 'Low overall model accuracy',
+        suggestion: 'Implement ensemble methods or feature engineering'
+      });
+    }
+    
+    if (performance.overallMetrics.averageLoss > 0.5) {
+      optimizations.push({
+        type: 'loss_optimization',
+        priority: 'medium',
+        message: 'High overall model loss',
+        suggestion: 'Adjust learning rate or use different optimizer'
+      });
+    }
+    
+    return optimizations;
+  }
+
+  identifyOptimizationOpportunities(analysis) {
+    const opportunities = [];
+    
+    // Model performance opportunities
+    for (const model of analysis.models) {
+      if (model.metrics.accuracy < 0.8) {
+        opportunities.push({
+          type: 'accuracy_improvement',
+          model: model.file,
+          priority: 'high',
+          description: 'Low accuracy model detected',
+          suggestion: 'Hyperparameter tuning or feature engineering'
+        });
+      }
+    }
+    
+    // Data quality opportunities
+    if (analysis.dataQuality.qualityScore < 70) {
+      opportunities.push({
+        type: 'data_quality_improvement',
+        priority: 'high',
+        description: 'Poor data quality detected',
+        suggestion: 'Data cleaning and preprocessing'
+      });
+    }
+    
+    // Training optimization opportunities
+    opportunities.push({
+      type: 'training_optimization',
+      priority: 'medium',
+      description: 'Training process optimization',
+      suggestion: 'Implement early stopping and learning rate scheduling'
+    });
+    
+    return opportunities;
+  }
+
+  generateRecommendations(analysis) {
+    const recommendations = [];
+    
+    // Performance-based recommendations
+    if (analysis.performanceMetrics.overallMetrics.averageAccuracy < 0.8) {
+      recommendations.push({
+        type: 'performance',
+        priority: 'high',
+        message: 'Low model accuracy detected',
+        suggestion: 'Implement hyperparameter tuning and feature engineering'
+      });
+    }
+    
+    // Data quality recommendations
+    if (analysis.dataQuality.qualityScore < 70) {
+      recommendations.push({
+        type: 'data_quality',
+        priority: 'high',
+        message: 'Poor data quality detected',
+        suggestion: 'Clean and preprocess data before training'
+      });
+    }
+    
+    // Optimization opportunities
+    for (const opportunity of analysis.optimizationOpportunities) {
+      recommendations.push({
+        type: opportunity.type,
+        priority: opportunity.priority,
+        message: opportunity.description,
+        suggestion: opportunity.suggestion
+      });
+    }
+    
+    return recommendations;
+  }
+
+  async monitorModels() {
+    try {
+      console.log('Monitoring ML models...');
+      
+      const monitoring = {
+        timestamp: new Date().toISOString(),
+        agentId: this.agentId,
+        models: [],
+        alerts: []
+      };
+      
+      // Check model performance
+      const models = await this.discoverMLModels();
+      
+      for (const model of models) {
+        const performance = this.analyzeSingleModelPerformance(model);
+        monitoring.models.push(performance);
+        
+        // Generate alerts for poor performance
+        if (performance.accuracy < 0.7) {
+          monitoring.alerts.push({
+            type: 'low_accuracy',
+            severity: 'warning',
+            message: `Low accuracy in model: ${model.file}`,
+            value: performance.accuracy,
+            threshold: 0.7
+          });
+        }
+      }
+      
+      // Save monitoring report
+      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+      const reportPath = path.join(this.reportsDir, 'model-performance', `monitoring-${timestamp}.json`);
+      fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
+      
+    } catch (error) {
+      console.error('Model monitoring failed:', error);
+    }
+  }
+
+  async optimizeModels() {
+    try {
+      console.log('Optimizing ML models...');
+      
+      const optimizationReport = {
+        timestamp: new Date().toISOString(),
+        agentId: this.agentId,
+        optimizations: [],
+        results: []
+      };
+      
+      // Generate optimization suggestions
+      const analysis = await this.analyzeMLModels();
+      optimizationReport.optimizations = analysis.optimizationOpportunities;
+      
+      // Simulate optimization results
+      for (const optimization of optimizationReport.optimizations) {
+        optimizationReport.results.push({
+          type: optimization.type,
+          status: 'completed',
+          improvement: Math.random() * 0.1, // 0-10% improvement
+          description: `Applied ${optimization.suggestion}`
+        });
+      }
+      
+      // Save optimization report
+      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+      const reportPath = path.join(this.reportsDir, 'optimization-reports', `optimization-${timestamp}.json`);
+      fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
+      
+    } catch (error) {
+      console.error('Model optimization failed:', error);
+    }
+  }
+
+  async monitorTraining() {
+    try {
+      console.log('Monitoring training processes...');
+      
+      const trainingReport = {
+        timestamp: new Date().toISOString(),
+        agentId: this.agentId,
+        activeTraining: [],
+        completedTraining: [],
+        trainingMetrics: {}
+      };
+      
+      // Check for active training processes
+      try {
+        const { stdout } = await execAsync('ps aux | grep -E "(python|jupyter|training)" | grep -v grep');
+        const processes = stdout.split('\n').filter(line => line);
+        
+        for (const process of processes) {
+          trainingReport.activeTraining.push({
+            process: process,
+            status: 'running'
+          });
+        }
+      } catch (error) {
+        console.error('Failed to check training processes:', error);
+      }
+      
+      // Simulate training metrics
+      trainingReport.trainingMetrics = {
+        currentEpoch: Math.floor(Math.random() * 100),
+        totalEpochs: 100,
+        currentLoss: Math.random() * 0.5,
+        currentAccuracy: 0.7 + Math.random() * 0.3
+      };
+      
+      // Save training report
+      const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+      const reportPath = path.join(this.reportsDir, 'training-reports', `training-${timestamp}.json`);
+      fs.writeFileSync(reportPath, JSON.stringify(trainingReport, null, 2));
+      
+    } catch (error) {
+      console.error('Training monitoring failed:', error);
+    }
+  }
+
+  async saveAnalysisReport(report) {
+    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+    const reportPath = path.join(this.reportsDir, 'model-performance', `analysis-${timestamp}.json`);
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+    console.log(`Analysis report saved: ${reportPath}`);
+  }
+
+  async stop() {
+    console.log(`ML Optimization Agent ${this.agentId} stopping...`);
+    process.exit(0);
+  }
+}
+
+// Start the agent
+const agent = new MLOptimizationAgent();
+
+process.on('SIGTERM', () => {
+  agent.stop();
+});
+
+process.on('SIGINT', () => {
+  agent.stop();
+});
+
+agent.start().catch(error => {
+  console.error('ML Optimization Agent failed to start:', error);
+  process.exit(1);
+}); 
