@@ -3,6 +3,10 @@
 # Development Automation System Cron Jobs
 # This script contains various cron jobs for continuous development automation
 
+# Set environment variables for cron jobs
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export HOME="/Users/miami2"
+
 # Set the project directory
 PROJECT_DIR="/Users/miami2/Documents/GitHub/bolt.new.zion.app"
 AUTOMATION_DIR="$PROJECT_DIR/automation"

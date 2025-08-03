@@ -3,6 +3,10 @@
 # ChatGPT Analysis Cron Job
 # Runs every 4 hours
 
+# Set environment variables for cron jobs
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export HOME="/Users/miami2"
+
 # Set the working directory
 cd "$(dirname "$0")"
 
@@ -23,6 +27,7 @@ log_message "Starting ChatGPT Analysis Cron Job"
 # Check if Node.js is available
 if ! command -v node &> /dev/null; then
     log_message "ERROR: Node.js is not installed or not in PATH"
+    log_message "PATH: $PATH"
     exit 1
 fi
 
