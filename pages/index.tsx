@@ -637,6 +637,23 @@ const Home: NextPage = () => {
     },
     {
       id: 32,
+      type: 'ai-powered-retail-ecommerce',
+      title: 'AI-Powered Retail & E-commerce',
+      description: 'Advanced AI-powered retail and e-commerce platform with smart retail operations, customer analytics, and intelligent retail optimization.',
+      cta: 'Manage Retail',
+      ctaLink: '/ai-powered-retail-ecommerce',
+      secondaryCta: 'Optimize Sales',
+      secondaryCtaLink: '/ai-powered-retail-ecommerce',
+      features: [
+        { icon: '🏪', title: 'Smart Retail', description: 'AI-powered inventory management, POS systems, and customer service automation' },
+        { icon: '🛒', title: 'E-commerce Management', description: 'Online stores, marketplaces, mobile commerce, and digital payments' },
+        { icon: '📊', title: 'Customer Analytics', description: 'Customer segmentation, behavior analysis, and preference tracking' },
+        { icon: '📈', title: 'Retail Optimization', description: 'Dynamic pricing, inventory optimization, and marketing automation' }
+      ],
+      bgClass: 'bg-gradient-to-br from-blue-900 via-cyan-900 to-blue-900'
+    },
+    {
+      id: 33,
       type: 'skill-verification',
       title: 'Skill Verification & Certification',
       description: 'Comprehensive skill verification and certification system for marketplace users. Validate expertise, earn certifications, and build credibility.',
@@ -652,7 +669,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-blue-900 via-cyan-900 to-blue-900'
     },
     {
-      id: 35,
+      id: 36,
       type: 'marketplace-pricing',
       title: 'Marketplace Pricing & Commission',
       description: 'Transparent pricing structure and commission system for marketplace participants. Choose the right tier and maximize your revenue potential.',
@@ -668,7 +685,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900'
     },
                   {
-                id: 36,
+                id: 37,
                 type: 'referral-affiliate',
                 title: 'Referral & Affiliate System',
                 description: 'Grow your network and earn rewards by referring others to the marketplace. Join our affiliate program and build sustainable income.',
