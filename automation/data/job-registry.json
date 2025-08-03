@@ -1421,15 +1421,15 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-03T13:14:46.291Z",
-    "lastRun": "2025-08-03T14:45:00.811Z",
-    "nextRun": "2025-08-03T15:00:00.000Z",
+    "lastRun": "2025-08-03T15:00:00.912Z",
+    "nextRun": "2025-08-03T15:15:00.000Z",
     "status": "scheduled",
     "performance": {
-      "totalRuns": 9,
+      "totalRuns": 10,
       "successfulRuns": 0,
-      "failedRuns": 9,
+      "failedRuns": 10,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300069
+      "lastExecutionTime": 300011
     },
     "logs": [
       {
@@ -1518,6 +1518,17 @@
       },
       {
         "timestamp": "2025-08-03T14:50:00.880Z",
+        "level": "info",
+        "message": "Job restarted"
+      },
+      {
+        "timestamp": "2025-08-03T15:05:00.923Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-03T15:05:00.924Z",
         "level": "info",
         "message": "Job restarted"
       }
