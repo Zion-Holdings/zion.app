@@ -1871,6 +1871,23 @@ const Home: NextPage = () => {
     },
     {
       id: 72,
+      type: 'ai-powered-synthetic-biology-genetic-engineering',
+      title: 'AI-Powered Synthetic Biology & Genetic Engineering',
+      description: 'Advanced synthetic biology and genetic engineering with AI-powered DNA editing, protein design, and biological system engineering.',
+      cta: 'Design DNA',
+      ctaLink: '/ai-powered-synthetic-biology-genetic-engineering',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/ai-powered-synthetic-biology-genetic-engineering',
+      features: [
+        { icon: '🧬', title: 'DNA Design', description: 'AI-powered DNA sequence design and optimization with CRISPR editing' },
+        { icon: '🔬', title: 'Protein Engineering', description: 'Advanced protein structure design and stability optimization' },
+        { icon: '⚡', title: 'Genetic Circuits', description: 'Synthetic genetic circuits and biological system engineering' },
+        { icon: '🦠', title: 'Synthetic Organisms', description: 'Design and engineer synthetic organisms with custom phenotypes' }
+      ],
+      bgClass: 'bg-gradient-to-br from-green-900 via-blue-900 to-green-900'
+    },
+    {
+      id: 73,
       type: 'waitlist',
       title: 'Join the Waitlist',
       description: 'Be among the first to experience the future of AI-powered marketplace. Sign up for early access and exclusive benefits.',
@@ -3449,6 +3466,41 @@ const Home: NextPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {section.features.map((feature: any, index: number) => (
                   <div key={index} className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-6 rounded-lg border border-white/10 hover:border-indigo-500/50 transition-all duration-300">
+                    <div className="text-3xl mb-4">{feature.icon}</div>
+                    <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+                    <p className="text-gray-300 text-sm">{feature.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )
+
+      case 'ai-powered-synthetic-biology-genetic-engineering':
+        return (
+          <div className="py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  {section.title}
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                  {section.description}
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                  <Link href={section.ctaLink} className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-green-500/25 transform hover:scale-105">
+                    {section.cta}
+                  </Link>
+                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                    {section.secondaryCta}
+                  </Link>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {section.features.map((feature: any, index: number) => (
+                  <div key={index} className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-6 rounded-lg border border-white/10 hover:border-green-500/50 transition-all duration-300">
                     <div className="text-3xl mb-4">{feature.icon}</div>
                     <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
                     <p className="text-gray-300 text-sm">{feature.description}</p>
