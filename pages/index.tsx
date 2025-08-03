@@ -1107,6 +1107,23 @@ const Home: NextPage = () => {
     },
     {
       id: 59,
+      type: 'inbox-messaging',
+      title: 'Unified Inbox & Messaging Center',
+      description: 'Centralized communication hub for all marketplace interactions. Manage messages, quotes, payments, and project updates in one place with advanced filtering and organization.',
+      features: [
+        '📧 Unified Messaging',
+        '🔍 Advanced Filtering',
+        '⭐ Priority Management',
+        '📊 Communication Analytics'
+      ],
+      cta: 'Open Inbox',
+      ctaLink: '/inbox',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/inbox',
+      bgClass: 'bg-gradient-to-br from-emerald-900 via-green-900 to-slate-900'
+    },
+    {
+      id: 59,
       type: 'ai-api-integration',
       title: 'AI-Powered API Integration & Webhook System',
       description: 'API management, webhook orchestration, integration connectors, API documentation, endpoint monitoring, and automated API testing powered by AI.',
@@ -4266,6 +4283,9 @@ const Home: NextPage = () => {
               <Link href="/products" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Products
               </Link>
+              <Link href="/inbox" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Inbox
+              </Link>
               <Link href="/blog" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Blog
               </Link>
@@ -4343,6 +4363,9 @@ const Home: NextPage = () => {
                 {/* Tools & Features */}
                 <div className="mb-4">
                   <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Tools</h3>
+                  <Link href="/inbox" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Inbox
+                  </Link>
                   <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                     Live Chat
                   </Link>
@@ -4460,6 +4483,7 @@ const Home: NextPage = () => {
               <ul className="space-y-2 text-gray-400">
                 <li><Link href="/auth/login" className="hover:text-white transition-colors">Login</Link></li>
                 <li><Link href="/auth/signup" className="hover:text-white transition-colors">Sign Up</Link></li>
+                <li><Link href="/inbox" className="hover:text-white transition-colors">Inbox</Link></li>
                 <li><Link href="/dashboard" className="hover:text-white transition-colors">Dashboard</Link></li>
                 <li><Link href="/analytics" className="hover:text-white transition-colors">Analytics</Link></li>
                 <li><Link href="/ai-virtual-assistant" className="hover:text-white transition-colors">AI Assistant</Link></li>
