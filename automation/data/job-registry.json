@@ -243,14 +243,14 @@
     "timeout": 300000,
     "createdAt": "2025-08-03T01:24:46.023Z",
     "lastRun": "2025-08-03T18:15:00.549Z",
-    "nextRun": "2025-08-03T18:15:00.000Z",
-    "status": "running",
+    "nextRun": "2025-08-03T18:30:00.000Z",
+    "status": "scheduled",
     "performance": {
       "totalRuns": 20,
       "successfulRuns": 0,
-      "failedRuns": 19,
+      "failedRuns": 20,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300101
+      "lastExecutionTime": 300907
     },
     "logs": [
       {
@@ -449,6 +449,17 @@
       },
       {
         "timestamp": "2025-08-03T18:05:00.437Z",
+        "level": "info",
+        "message": "Job restarted"
+      },
+      {
+        "timestamp": "2025-08-03T18:20:01.456Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-03T18:20:01.456Z",
         "level": "info",
         "message": "Job restarted"
       }
@@ -758,14 +769,14 @@
     "timeout": 300000,
     "createdAt": "2025-08-03T13:13:14.744Z",
     "lastRun": "2025-08-03T18:15:00.550Z",
-    "nextRun": "2025-08-03T18:15:00.000Z",
-    "status": "running",
+    "nextRun": "2025-08-03T18:30:00.000Z",
+    "status": "scheduled",
     "performance": {
       "totalRuns": 20,
       "successfulRuns": 0,
-      "failedRuns": 19,
+      "failedRuns": 20,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300108
+      "lastExecutionTime": 300911
     },
     "logs": [
       {
@@ -964,6 +975,17 @@
       },
       {
         "timestamp": "2025-08-03T18:05:00.445Z",
+        "level": "info",
+        "message": "Job restarted"
+      },
+      {
+        "timestamp": "2025-08-03T18:20:01.461Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-03T18:20:01.461Z",
         "level": "info",
         "message": "Job restarted"
       }
@@ -1303,14 +1325,14 @@
     "timeout": 300000,
     "createdAt": "2025-08-03T13:13:35.982Z",
     "lastRun": "2025-08-03T18:15:00.550Z",
-    "nextRun": "2025-08-03T18:15:00.000Z",
-    "status": "running",
+    "nextRun": "2025-08-03T18:30:00.000Z",
+    "status": "scheduled",
     "performance": {
       "totalRuns": 20,
       "successfulRuns": 0,
-      "failedRuns": 19,
+      "failedRuns": 20,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300114
+      "lastExecutionTime": 300917
     },
     "logs": [
       {
@@ -1509,6 +1531,17 @@
       },
       {
         "timestamp": "2025-08-03T18:05:00.453Z",
+        "level": "info",
+        "message": "Job restarted"
+      },
+      {
+        "timestamp": "2025-08-03T18:20:01.467Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-03T18:20:01.467Z",
         "level": "info",
         "message": "Job restarted"
       }
@@ -1848,14 +1881,14 @@
     "timeout": 300000,
     "createdAt": "2025-08-03T13:14:46.291Z",
     "lastRun": "2025-08-03T18:15:00.551Z",
-    "nextRun": "2025-08-03T18:15:00.000Z",
-    "status": "running",
+    "nextRun": "2025-08-03T18:30:00.000Z",
+    "status": "scheduled",
     "performance": {
       "totalRuns": 21,
       "successfulRuns": 0,
-      "failedRuns": 20,
+      "failedRuns": 21,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300121
+      "lastExecutionTime": 300921
     },
     "logs": [
       {
@@ -2065,6 +2098,17 @@
       },
       {
         "timestamp": "2025-08-03T18:05:00.460Z",
+        "level": "info",
+        "message": "Job restarted"
+      },
+      {
+        "timestamp": "2025-08-03T18:20:01.472Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-03T18:20:01.472Z",
         "level": "info",
         "message": "Job restarted"
       }
