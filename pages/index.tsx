@@ -701,7 +701,7 @@ const Home: NextPage = () => {
                 bgClass: 'bg-gradient-to-br from-green-900 via-emerald-900 to-green-900'
               },
               {
-                id: 37,
+                id: 38,
                 type: 'equipment-rental',
                 title: 'Equipment Rental & Management',
                 description: 'Rent professional equipment for your projects. Track availability, manage maintenance, and access high-quality tools and machinery.',
@@ -717,7 +717,7 @@ const Home: NextPage = () => {
                 bgClass: 'bg-gradient-to-br from-orange-900 via-red-900 to-orange-900'
               },
               {
-                id: 38,
+                id: 39,
                 type: 'service-categories',
                 title: 'Service Categories & Specialization',
                 description: 'Discover specialized services across diverse categories. Find expert providers, explore detailed subcategories, and access category-specific features.',
