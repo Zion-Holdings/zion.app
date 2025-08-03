@@ -2041,6 +2041,23 @@ const Home: NextPage = () => {
     },
     {
       id: 82,
+      type: 'ai-powered-quantum-development-platform',
+      title: 'AI-Powered Quantum Development Platform',
+      description: 'Advanced quantum development platform with AI-powered quantum IDE, quantum tools, quantum testing, and quantum deployment capabilities.',
+      cta: 'Start Development',
+      ctaLink: '/ai-powered-quantum-development-platform',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/ai-powered-quantum-development-platform',
+      features: [
+        { icon: '💻', title: 'Quantum IDEs', description: 'Quantum editor, compiler, debugger, simulator, and visualizer' },
+        { icon: '🛠️', title: 'Development Tools', description: 'Quantum SDK, framework, library, API, and CLI tools' },
+        { icon: '🧪', title: 'Quantum Testing', description: 'Quantum unit, integration, performance, security, and regression testing' },
+        { icon: '🚀', title: 'Quantum Deployment', description: 'Quantum cloud, on-premise, hybrid, edge, and distributed deployment' }
+      ],
+      bgClass: 'bg-gradient-to-br from-violet-900 via-purple-900 to-violet-900'
+    },
+    {
+      id: 83,
       type: 'waitlist',
       title: 'Join the Waitlist',
       description: 'Be among the first to experience the future of AI-powered marketplace. Sign up for early access and exclusive benefits.',
@@ -3969,6 +3986,41 @@ const Home: NextPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {section.features.map((feature: any, index: number) => (
                   <div key={index} className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-6 rounded-lg border border-white/10 hover:border-indigo-500/50 transition-all duration-300">
+                    <div className="text-3xl mb-4">{feature.icon}</div>
+                    <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+                    <p className="text-gray-300 text-sm">{feature.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )
+
+      case 'ai-powered-quantum-development-platform':
+        return (
+          <div className="py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  {section.title}
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                  {section.description}
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                  <Link href={section.ctaLink} className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-violet-500/25 transform hover:scale-105">
+                    {section.cta}
+                  </Link>
+                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                    {section.secondaryCta}
+                  </Link>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {section.features.map((feature: any, index: number) => (
+                  <div key={index} className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-6 rounded-lg border border-white/10 hover:border-violet-500/50 transition-all duration-300">
                     <div className="text-3xl mb-4">{feature.icon}</div>
                     <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
                     <p className="text-gray-300 text-sm">{feature.description}</p>
