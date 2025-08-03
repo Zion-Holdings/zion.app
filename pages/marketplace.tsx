@@ -290,6 +290,29 @@ const Marketplace: NextPage = () => {
         </div>
       </div>
 
+      {/* Marketplace Pricing CTA */}
+      <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Transparent Pricing & Commissions
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Choose the perfect pricing tier for your business needs and maximize your revenue 
+              with our transparent commission structure and competitive rates.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/marketplace-pricing" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+                View Pricing
+              </Link>
+              <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                Calculate Fees
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Features Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
