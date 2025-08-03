@@ -502,6 +502,23 @@ const Home: NextPage = () => {
     },
     {
       id: 25,
+      type: 'ai-powered-underwater-exploration-marine-research',
+      title: 'AI-Powered Underwater Exploration & Marine Research',
+      description: 'Advanced AI-powered underwater exploration and marine research platform with robotics, ocean monitoring, and intelligent marine analytics.',
+      cta: 'Deploy Robot',
+      ctaLink: '/ai-powered-underwater-exploration-marine-research',
+      secondaryCta: 'Start Research',
+      secondaryCtaLink: '/ai-powered-underwater-exploration-marine-research',
+      features: [
+        { icon: '🤖', title: 'Underwater Robotics', description: 'AI-powered ROVs, AUVs, and underwater drones for deep sea exploration' },
+        { icon: '🔬', title: 'Marine Research', description: 'Comprehensive marine research projects and biodiversity studies' },
+        { icon: '📡', title: 'Ocean Monitoring', description: 'Real-time ocean monitoring and environmental data collection' },
+        { icon: '🔍', title: 'Underwater Exploration', description: 'Shipwreck exploration and deep sea discovery missions' }
+      ],
+      bgClass: 'bg-gradient-to-br from-blue-900 via-teal-900 to-blue-900'
+    },
+    {
+      id: 26,
       type: 'dispute-resolution',
       title: 'Dispute Resolution Center',
       description: 'Professional dispute resolution services for marketplace conflicts with mediation, arbitration, and fair resolution processes.',
