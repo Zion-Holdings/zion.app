@@ -688,6 +688,23 @@ const Home: NextPage = () => {
     },
     {
       id: 35,
+      type: 'ai-powered-entertainment-gaming',
+      title: 'AI-Powered Entertainment & Gaming',
+      description: 'Advanced AI-powered entertainment and gaming platform with gaming platforms, entertainment analytics, and intelligent entertainment optimization.',
+      cta: 'Start Gaming',
+      ctaLink: '/ai-powered-entertainment-gaming',
+      secondaryCta: 'View Analytics',
+      secondaryCtaLink: '/ai-powered-entertainment-gaming',
+      features: [
+        { icon: '🎮', title: 'Gaming Platforms', description: 'AI-powered mobile gaming, PC gaming, VR gaming, and esports platforms' },
+        { icon: '📊', title: 'Entertainment Analytics', description: 'Content analytics, user behavior analysis, and engagement metrics' },
+        { icon: '🎬', title: 'Content Creation', description: 'AI content generation, video production, and audio creation' },
+        { icon: '📈', title: 'Entertainment Optimization', description: 'Content optimization, user experience, and revenue optimization' }
+      ],
+      bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900'
+    },
+    {
+      id: 36,
       type: 'skill-verification',
       title: 'Skill Verification & Certification',
       description: 'Comprehensive skill verification and certification system for marketplace users. Validate expertise, earn certifications, and build credibility.',
@@ -703,7 +720,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-blue-900 via-cyan-900 to-blue-900'
     },
     {
-      id: 38,
+      id: 39,
       type: 'marketplace-pricing',
       title: 'Marketplace Pricing & Commission',
       description: 'Transparent pricing structure and commission system for marketplace participants. Choose the right tier and maximize your revenue potential.',
@@ -719,7 +736,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900'
     },
                   {
-                id: 39,
+                id: 40,
                 type: 'referral-affiliate',
                 title: 'Referral & Affiliate System',
                 description: 'Grow your network and earn rewards by referring others to the marketplace. Join our affiliate program and build sustainable income.',
@@ -735,7 +752,7 @@ const Home: NextPage = () => {
                 bgClass: 'bg-gradient-to-br from-green-900 via-emerald-900 to-green-900'
               },
               {
-                id: 40,
+                id: 41,
                 type: 'equipment-rental',
                 title: 'Equipment Rental & Management',
                 description: 'Rent professional equipment for your projects. Track availability, manage maintenance, and access high-quality tools and machinery.',
@@ -751,7 +768,7 @@ const Home: NextPage = () => {
                 bgClass: 'bg-gradient-to-br from-orange-900 via-red-900 to-orange-900'
               },
               {
-                id: 41,
+                id: 42,
                 type: 'service-categories',
                 title: 'Service Categories & Specialization',
                 description: 'Discover specialized services across diverse categories. Find expert providers, explore detailed subcategories, and access category-specific features.',
