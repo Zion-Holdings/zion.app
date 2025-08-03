@@ -335,6 +335,23 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-blue-900 via-cyan-900 to-blue-900'
     },
     {
+      id: 19,
+      type: 'ai-smart-city-management',
+      title: 'AI Smart City Management',
+      description: 'Revolutionizing urban development with AI-powered infrastructure management, intelligent planning, and sustainable city services.',
+      cta: 'Explore Smart City',
+      ctaLink: '/ai-smart-city-management',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/ai-smart-city-management',
+      features: [
+        { icon: '🏗️', title: 'Infrastructure Management', description: 'AI-powered smart city infrastructure optimization' },
+        { icon: '🗺️', title: 'Urban Planning', description: 'Intelligent urban development and planning systems' },
+        { icon: '🏛️', title: 'City Services', description: 'AI-driven municipal services and citizen engagement' },
+        { icon: '🌍', title: 'Environmental Monitoring', description: 'Real-time environmental monitoring and sustainability' }
+      ],
+      bgClass: 'bg-gradient-to-br from-green-900 via-cyan-900 to-green-900'
+    },
+    {
       id: 16,
       type: 'seo-optimization',
       title: 'SEO Optimization',
@@ -1940,6 +1957,42 @@ const Home: NextPage = () => {
                 <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
                   <Link href={section.ctaLink} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
                     <span className="mr-2">🤖</span>
+                    {section.cta}
+                  </Link>
+                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                    {section.secondaryCta}
+                  </Link>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {section.features.map((feature: any, index: number) => (
+                  <div key={index} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="text-4xl mb-4">{feature.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                    <p className="text-gray-300">{feature.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )
+
+      case 'ai-smart-city-management':
+        return (
+          <div className="py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  {section.title}
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                  {section.description}
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                  <Link href={section.ctaLink} className="bg-gradient-to-r from-green-600 to-cyan-600 hover:from-green-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-green-500/25 transform hover:scale-105">
+                    <span className="mr-2">🏗️</span>
                     {section.cta}
                   </Link>
                   <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
@@ -4631,6 +4684,9 @@ const Home: NextPage = () => {
               </Link>
               <Link href="/ai-autonomous-vehicle-transportation" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Transport
+              </Link>
+              <Link href="/ai-smart-city-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Smart City
               </Link>
               <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 About
