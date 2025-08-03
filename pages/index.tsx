@@ -1157,6 +1157,23 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-emerald-900 via-teal-900 to-slate-900'
     },
     {
+      id: 62,
+      type: 'workflow-designer',
+      title: 'Workflow Designer & Process Builder',
+      description: 'Visual workflow designer and process builder for creating complex business automation workflows with drag-and-drop interface.',
+      features: [
+        '🎨 Visual Designer',
+        '🔗 Process Builder',
+        '📊 Execution Analytics',
+        '📋 Template Library'
+      ],
+      cta: 'Design Workflow',
+      ctaLink: '/workflow-designer',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/workflow-designer',
+      bgClass: 'bg-gradient-to-br from-violet-900 via-purple-900 to-slate-900'
+    },
+    {
       id: 59,
       type: 'inbox-messaging',
       title: 'Unified Inbox & Messaging Center',
@@ -4346,6 +4363,9 @@ const Home: NextPage = () => {
               <Link href="/compliance-governance" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Compliance
               </Link>
+              <Link href="/workflow-designer" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Workflows
+              </Link>
               <Link href="/blog" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Blog
               </Link>
@@ -4434,6 +4454,9 @@ const Home: NextPage = () => {
                   </Link>
                   <Link href="/compliance-governance" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                     Compliance
+                  </Link>
+                  <Link href="/workflow-designer" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Workflows
                   </Link>
                   <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                     Live Chat
@@ -4556,6 +4579,7 @@ const Home: NextPage = () => {
                 <li><Link href="/webhook-management" className="hover:text-white transition-colors">Webhooks</Link></li>
                 <li><Link href="/executive-dashboard" className="hover:text-white transition-colors">Executive</Link></li>
                 <li><Link href="/compliance-governance" className="hover:text-white transition-colors">Compliance</Link></li>
+                <li><Link href="/workflow-designer" className="hover:text-white transition-colors">Workflows</Link></li>
                 <li><Link href="/dashboard" className="hover:text-white transition-colors">Dashboard</Link></li>
                 <li><Link href="/analytics" className="hover:text-white transition-colors">Analytics</Link></li>
                 <li><Link href="/ai-virtual-assistant" className="hover:text-white transition-colors">AI Assistant</Link></li>
