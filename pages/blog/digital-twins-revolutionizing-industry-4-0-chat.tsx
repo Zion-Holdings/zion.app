@@ -36,24 +36,24 @@ const DigitalTwinsRevolutionizingIndustry40ChatPage: NextPage = () => {
               </span>
             </h1>
             <div className="flex items-center text-gray-400 text-sm mb-8">
-              <span>Expert Discussion • trend-analysis • future-predictions</span>
+              <span>Expert Discussion • innovative-futuristic • expert-interview</span>
             </div>
           </div>
           
           <div className="prose prose-invert prose-lg max-w-none">
             <div className="text-gray-300 leading-relaxed">
               
-              <p className="mb-6">In this expert discussion about Digital Twins: Revolutionizing Industry 4.0, we explore the latest developments and their implications for modern businesses.</p>
+<p className="mb-6">In this expert discussion about Digital Twins: Revolutionizing Industry 4.0, we explore the latest developments and their implications for modern businesses.</p>
 
-              <p className="mb-6">The conversation begins with a deep dive into the current state of digital twins: revolutionizing industry 4.0, examining how organizations are adapting to new challenges and opportunities. Our experts share insights from their extensive experience in the field.</p>
+<p className="mb-6">The conversation begins with a deep dive into the current state of digital twins: revolutionizing industry 4.0, examining how organizations are adapting to new challenges and opportunities. Our experts share insights from their extensive experience in the field.</p>
 
-              <p className="mb-6">Key points of discussion include the practical applications of digital twins: revolutionizing industry 4.0 in real-world scenarios, the challenges that organizations face when implementing these solutions, and the strategies that lead to successful outcomes.</p>
+<p className="mb-6">Key points of discussion include the practical applications of digital twins: revolutionizing industry 4.0 in real-world scenarios, the challenges that organizations face when implementing these solutions, and the strategies that lead to successful outcomes.</p>
 
-              <p className="mb-6">The discussion also covers emerging trends and future developments in digital twins: revolutionizing industry 4.0, providing valuable insights for decision-makers looking to stay ahead of the curve.</p>
+<p className="mb-6">The discussion also covers emerging trends and future developments in digital twins: revolutionizing industry 4.0, providing valuable insights for decision-makers looking to stay ahead of the curve.</p>
 
-              <p className="mb-6">Throughout the conversation, our experts emphasize the importance of taking a strategic approach to digital twins: revolutionizing industry 4.0, ensuring that implementations align with broader business objectives and deliver measurable value.</p>
+<p className="mb-6">Throughout the conversation, our experts emphasize the importance of taking a strategic approach to digital twins: revolutionizing industry 4.0, ensuring that implementations align with broader business objectives and deliver measurable value.</p>
 
-              <p className="mb-6">The conversation concludes with actionable recommendations for organizations looking to leverage digital twins: revolutionizing industry 4.0 effectively, including best practices, common pitfalls to avoid, and success factors that contribute to positive outcomes.</p>
+<p className="mb-6">The conversation concludes with actionable recommendations for organizations looking to leverage digital twins: revolutionizing industry 4.0 effectively, including best practices, common pitfalls to avoid, and success factors that contribute to positive outcomes.</p>
 
             </div>
           </div>

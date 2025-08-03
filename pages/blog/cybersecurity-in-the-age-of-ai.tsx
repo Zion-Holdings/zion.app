@@ -35,17 +35,17 @@ const CybersecurityInTheAgeOfAiPage: NextPage = () => {
           <div className="prose prose-invert prose-lg max-w-none">
             <div className="text-gray-300 leading-relaxed">
               
-              <p className="mb-6">Cybersecurity in the Age of AI represents a significant advancement in modern technology that is reshaping how businesses operate and compete in the digital landscape.</p>
+<p className="mb-6">Cybersecurity in the Age of AI represents a significant advancement in modern technology that is reshaping how businesses operate and compete in the digital landscape.</p>
 
-              <p className="mb-6">The integration of cybersecurity in the age of ai into enterprise environments has become increasingly important as organizations seek to optimize their operations and gain competitive advantages. This technology offers numerous benefits including improved efficiency, enhanced security, and better scalability.</p>
+<p className="mb-6">The integration of cybersecurity in the age of ai into enterprise environments has become increasingly important as organizations seek to optimize their operations and gain competitive advantages. This technology offers numerous benefits including improved efficiency, enhanced security, and better scalability.</p>
 
-              <p className="mb-6">Real-world applications of cybersecurity in the age of ai can be found across various industries, from healthcare to finance, manufacturing to retail. Companies that successfully implement these solutions often see dramatic improvements in their operational metrics and customer satisfaction scores.</p>
+<p className="mb-6">Real-world applications of cybersecurity in the age of ai can be found across various industries, from healthcare to finance, manufacturing to retail. Companies that successfully implement these solutions often see dramatic improvements in their operational metrics and customer satisfaction scores.</p>
 
-              <p className="mb-6">As we look toward the future, cybersecurity in the age of ai will continue to evolve and become even more sophisticated. Organizations that stay ahead of these trends will be well-positioned to thrive in the increasingly competitive digital marketplace.</p>
+<p className="mb-6">As we look toward the future, cybersecurity in the age of ai will continue to evolve and become even more sophisticated. Organizations that stay ahead of these trends will be well-positioned to thrive in the increasingly competitive digital marketplace.</p>
 
-              <p className="mb-6">The key to successful implementation lies in understanding both the technical requirements and the business objectives. By aligning technology solutions with strategic goals, companies can maximize the value they derive from these innovations.</p>
+<p className="mb-6">The key to successful implementation lies in understanding both the technical requirements and the business objectives. By aligning technology solutions with strategic goals, companies can maximize the value they derive from these innovations.</p>
 
-              <p className="mb-6">In conclusion, cybersecurity in the age of ai represents not just a technological advancement, but a fundamental shift in how we approach business challenges and opportunities. The organizations that embrace these changes today will be the leaders of tomorrow.</p>
+<p className="mb-6">In conclusion, cybersecurity in the age of ai represents not just a technological advancement, but a fundamental shift in how we approach business challenges and opportunities. The organizations that embrace these changes today will be the leaders of tomorrow.</p>
 
             </div>
           </div>
