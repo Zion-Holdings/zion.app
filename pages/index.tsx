@@ -587,6 +587,23 @@ const Home: NextPage = () => {
     },
     {
       id: 30,
+      type: 'ai-powered-manufacturing-industrial-automation',
+      title: 'AI-Powered Manufacturing & Industrial Automation',
+      description: 'Advanced AI-powered manufacturing and industrial automation platform with smart manufacturing, quality control, and intelligent production optimization.',
+      cta: 'Monitor Production',
+      ctaLink: '/ai-powered-manufacturing-industrial-automation',
+      secondaryCta: 'Optimize Quality',
+      secondaryCtaLink: '/ai-powered-manufacturing-industrial-automation',
+      features: [
+        { icon: '🏭', title: 'Smart Manufacturing', description: 'AI-powered manufacturing systems with real-time optimization and analytics' },
+        { icon: '🤖', title: 'Industrial Automation', description: 'Robotics, PLC, SCADA, and motion control systems with AI optimization' },
+        { icon: '🔍', title: 'Quality Control', description: 'Advanced quality control systems with defect detection and measurement' },
+        { icon: '📈', title: 'Production Optimization', description: 'AI-powered production optimization and predictive maintenance' }
+      ],
+      bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900'
+    },
+    {
+      id: 31,
       type: 'dispute-resolution',
       title: 'Dispute Resolution Center',
       description: 'Professional dispute resolution services for marketplace conflicts with mediation, arbitration, and fair resolution processes.',
@@ -618,7 +635,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-blue-900 via-cyan-900 to-blue-900'
     },
     {
-      id: 32,
+      id: 34,
       type: 'marketplace-pricing',
       title: 'Marketplace Pricing & Commission',
       description: 'Transparent pricing structure and commission system for marketplace participants. Choose the right tier and maximize your revenue potential.',
