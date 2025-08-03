@@ -417,6 +417,23 @@ const Home: NextPage = () => {
     },
     {
       id: 20,
+      type: 'ai-powered-live-streaming-broadcasting',
+      title: 'AI-Powered Live Streaming & Broadcasting',
+      description: 'Advanced AI-powered live streaming and broadcasting platform with real-time analytics, content analysis, and intelligent engagement tracking.',
+      cta: 'Start Streaming',
+      ctaLink: '/ai-powered-live-streaming-broadcasting',
+      secondaryCta: 'Create Channel',
+      secondaryCtaLink: '/ai-powered-live-streaming-broadcasting',
+      features: [
+        { icon: '📺', title: 'Live Streaming', description: 'High-quality live streaming with AI-powered optimization' },
+        { icon: '📊', title: 'Real-Time Analytics', description: 'AI-driven content analysis and engagement tracking' },
+        { icon: '💬', title: 'Live Chat', description: 'Intelligent chat moderation and sentiment analysis' },
+        { icon: '📡', title: 'Broadcasting', description: 'Multi-channel broadcasting with AI optimization' }
+      ],
+      bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900'
+    },
+    {
+      id: 21,
       type: 'dispute-resolution',
       title: 'Dispute Resolution Center',
       description: 'Professional dispute resolution services for marketplace conflicts with mediation, arbitration, and fair resolution processes.',
@@ -432,7 +449,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-orange-900 via-red-900 to-orange-900'
     },
     {
-      id: 21,
+      id: 22,
       type: 'skill-verification',
       title: 'Skill Verification & Certification',
       description: 'Comprehensive skill verification and certification system for marketplace users. Validate expertise, earn certifications, and build credibility.',
