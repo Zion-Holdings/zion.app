@@ -175,7 +175,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
         learningAccuracy: 9.5,
         optimizationLevel: 9.3,
         improvementOpportunities: ['Enhance feature selection', 'Optimize algorithm parameters', 'Expand training datasets'],
-        improvementStrategies: ['Implement advanced feature engineering', 'Optimize hyperparameters', 'Expand data collection']
+        enhancementStrategies: ['Implement advanced feature engineering', 'Optimize hyperparameters', 'Expand data collection']
       }
     },
     {
@@ -191,7 +191,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
         learningAccuracy: 9.3,
         optimizationLevel: 9.1,
         improvementOpportunities: ['Improve clustering algorithms', 'Enhance dimensionality reduction', 'Optimize similarity metrics'],
-        improvementStrategies: ['Implement advanced clustering', 'Enhance dimensionality reduction', 'Optimize similarity measures']
+        enhancementStrategies: ['Implement advanced clustering', 'Enhance dimensionality reduction', 'Optimize similarity measures']
       }
     },
     {
@@ -207,7 +207,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
         learningAccuracy: 8.8,
         optimizationLevel: 8.6,
         improvementOpportunities: ['Enhance reward function', 'Optimize exploration strategy', 'Improve policy learning'],
-        improvementStrategies: ['Implement advanced reward functions', 'Optimize exploration algorithms', 'Enhance policy networks']
+        enhancementStrategies: ['Implement advanced reward functions', 'Optimize exploration algorithms', 'Enhance policy networks']
       }
     }
   ]
