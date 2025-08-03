@@ -553,6 +553,23 @@ const Home: NextPage = () => {
     },
     {
       id: 28,
+      type: 'ai-powered-healthcare-medical-diagnostics',
+      title: 'AI-Powered Healthcare & Medical Diagnostics',
+      description: 'Advanced AI-powered healthcare platform with medical diagnostics, patient monitoring, healthcare analytics, and intelligent medical insights for improved patient outcomes.',
+      cta: 'Run Diagnostics',
+      ctaLink: '/ai-powered-healthcare-medical-diagnostics',
+      secondaryCta: 'Monitor Patients',
+      secondaryCtaLink: '/ai-powered-healthcare-medical-diagnostics',
+      features: [
+        { icon: '🔬', title: 'Medical Diagnostics', description: 'AI-powered medical diagnostics with high accuracy and confidence scoring' },
+        { icon: '📊', title: 'Patient Monitoring', description: 'Real-time patient monitoring with vital signs and trend analysis' },
+        { icon: '📈', title: 'Healthcare Analytics', description: 'Comprehensive healthcare analytics and outcome tracking' },
+        { icon: '💡', title: 'Medical Insights', description: 'AI-generated medical insights and treatment recommendations' }
+      ],
+      bgClass: 'bg-gradient-to-br from-blue-900 via-cyan-900 to-blue-900'
+    },
+    {
+      id: 29,
       type: 'dispute-resolution',
       title: 'Dispute Resolution Center',
       description: 'Professional dispute resolution services for marketplace conflicts with mediation, arbitration, and fair resolution processes.',
@@ -568,7 +585,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-orange-900 via-red-900 to-orange-900'
     },
     {
-      id: 29,
+      id: 30,
       type: 'skill-verification',
       title: 'Skill Verification & Certification',
       description: 'Comprehensive skill verification and certification system for marketplace users. Validate expertise, earn certifications, and build credibility.',
@@ -584,7 +601,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-blue-900 via-cyan-900 to-blue-900'
     },
     {
-      id: 30,
+      id: 31,
       type: 'marketplace-pricing',
       title: 'Marketplace Pricing & Commission',
       description: 'Transparent pricing structure and commission system for marketplace participants. Choose the right tier and maximize your revenue potential.',
