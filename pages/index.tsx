@@ -536,6 +536,23 @@ const Home: NextPage = () => {
     },
     {
       id: 27,
+      type: 'ai-powered-precision-agriculture-smart-farming',
+      title: 'AI-Powered Precision Agriculture & Smart Farming',
+      description: 'Advanced AI-powered precision agriculture and smart farming platform with crop monitoring, soil analysis, irrigation management, and intelligent agricultural optimization.',
+      cta: 'Monitor Crops',
+      ctaLink: '/ai-powered-precision-agriculture-smart-farming',
+      secondaryCta: 'Analyze Soil',
+      secondaryCtaLink: '/ai-powered-precision-agriculture-smart-farming',
+      features: [
+        { icon: '🌱', title: 'Crop Monitoring', description: 'Real-time crop health monitoring and yield prediction with AI analysis' },
+        { icon: '🌍', title: 'Soil Analysis', description: 'Comprehensive soil analysis and fertility assessment with AI recommendations' },
+        { icon: '💧', title: 'Smart Irrigation', description: 'AI-powered irrigation optimization and water conservation management' },
+        { icon: '🤖', title: 'Smart Farming', description: 'Automated farming systems and agricultural robotics for efficiency' }
+      ],
+      bgClass: 'bg-gradient-to-br from-green-900 via-emerald-900 to-green-900'
+    },
+    {
+      id: 28,
       type: 'dispute-resolution',
       title: 'Dispute Resolution Center',
       description: 'Professional dispute resolution services for marketplace conflicts with mediation, arbitration, and fair resolution processes.',
@@ -551,7 +568,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-orange-900 via-red-900 to-orange-900'
     },
     {
-      id: 28,
+      id: 29,
       type: 'skill-verification',
       title: 'Skill Verification & Certification',
       description: 'Comprehensive skill verification and certification system for marketplace users. Validate expertise, earn certifications, and build credibility.',
@@ -567,7 +584,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-blue-900 via-cyan-900 to-blue-900'
     },
     {
-      id: 29,
+      id: 30,
       type: 'marketplace-pricing',
       title: 'Marketplace Pricing & Commission',
       description: 'Transparent pricing structure and commission system for marketplace participants. Choose the right tier and maximize your revenue potential.',
@@ -583,7 +600,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900'
     },
                   {
-                id: 30,
+                id: 31,
                 type: 'referral-affiliate',
                 title: 'Referral & Affiliate System',
                 description: 'Grow your network and earn rewards by referring others to the marketplace. Join our affiliate program and build sustainable income.',
@@ -599,7 +616,7 @@ const Home: NextPage = () => {
                 bgClass: 'bg-gradient-to-br from-green-900 via-emerald-900 to-green-900'
               },
               {
-                id: 31,
+                id: 32,
                 type: 'equipment-rental',
                 title: 'Equipment Rental & Management',
                 description: 'Rent professional equipment for your projects. Track availability, manage maintenance, and access high-quality tools and machinery.',
@@ -615,7 +632,7 @@ const Home: NextPage = () => {
                 bgClass: 'bg-gradient-to-br from-orange-900 via-red-900 to-orange-900'
               },
               {
-                id: 32,
+                id: 33,
                 type: 'service-categories',
                 title: 'Service Categories & Specialization',
                 description: 'Discover specialized services across diverse categories. Find expert providers, explore detailed subcategories, and access category-specific features.',
