@@ -451,6 +451,23 @@ const Home: NextPage = () => {
     },
     {
       id: 22,
+      type: 'ai-powered-autonomous-vehicle-transportation',
+      title: 'AI-Powered Autonomous Vehicle & Transportation',
+      description: 'Advanced AI-powered autonomous vehicle and transportation system with traffic optimization, route planning, and intelligent logistics management.',
+      cta: 'Deploy Vehicle',
+      ctaLink: '/ai-powered-autonomous-vehicle-transportation',
+      secondaryCta: 'Optimize Traffic',
+      secondaryCtaLink: '/ai-powered-autonomous-vehicle-transportation',
+      features: [
+        { icon: '🚗', title: 'Autonomous Vehicles', description: 'AI-powered self-driving vehicles with real-time monitoring' },
+        { icon: '🚦', title: 'Traffic Optimization', description: 'Intelligent traffic flow optimization and congestion management' },
+        { icon: '🗺️', title: 'Route Planning', description: 'Advanced route planning with AI-powered optimization' },
+        { icon: '📦', title: 'Logistics Management', description: 'Intelligent logistics and delivery management systems' }
+      ],
+      bgClass: 'bg-gradient-to-br from-green-900 via-emerald-900 to-green-900'
+    },
+    {
+      id: 23,
       type: 'dispute-resolution',
       title: 'Dispute Resolution Center',
       description: 'Professional dispute resolution services for marketplace conflicts with mediation, arbitration, and fair resolution processes.',
@@ -466,7 +483,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-orange-900 via-red-900 to-orange-900'
     },
     {
-      id: 23,
+      id: 24,
       type: 'skill-verification',
       title: 'Skill Verification & Certification',
       description: 'Comprehensive skill verification and certification system for marketplace users. Validate expertise, earn certifications, and build credibility.',
@@ -482,7 +499,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-blue-900 via-cyan-900 to-blue-900'
     },
     {
-      id: 24,
+      id: 25,
       type: 'marketplace-pricing',
       title: 'Marketplace Pricing & Commission',
       description: 'Transparent pricing structure and commission system for marketplace participants. Choose the right tier and maximize your revenue potential.',
@@ -498,7 +515,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900'
     },
                   {
-                id: 25,
+                id: 26,
                 type: 'referral-affiliate',
                 title: 'Referral & Affiliate System',
                 description: 'Grow your network and earn rewards by referring others to the marketplace. Join our affiliate program and build sustainable income.',
@@ -514,7 +531,7 @@ const Home: NextPage = () => {
                 bgClass: 'bg-gradient-to-br from-green-900 via-emerald-900 to-green-900'
               },
               {
-                id: 26,
+                id: 27,
                 type: 'equipment-rental',
                 title: 'Equipment Rental & Management',
                 description: 'Rent professional equipment for your projects. Track availability, manage maintenance, and access high-quality tools and machinery.',
@@ -530,7 +547,7 @@ const Home: NextPage = () => {
                 bgClass: 'bg-gradient-to-br from-orange-900 via-red-900 to-orange-900'
               },
               {
-                id: 27,
+                id: 28,
                 type: 'service-categories',
                 title: 'Service Categories & Specialization',
                 description: 'Discover specialized services across diverse categories. Find expert providers, explore detailed subcategories, and access category-specific features.',
