@@ -209,19 +209,25 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-03T01:24:46.021Z",
-    "lastRun": "2025-08-03T20:00:00.346Z",
+    "lastRun": "2025-08-03T20:06:00.868Z",
     "nextRun": "2025-08-03T23:00:00.000Z",
     "status": "failed",
     "performance": {
-      "totalRuns": 1,
+      "totalRuns": 2,
       "successfulRuns": 0,
-      "failedRuns": 1,
+      "failedRuns": 2,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300232
+      "lastExecutionTime": 300646
     },
     "logs": [
       {
         "timestamp": "2025-08-03T20:05:00.578Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-03T20:11:01.514Z",
         "level": "error",
         "message": "Job failed: Task timeout",
         "error": "Task timeout"
@@ -819,19 +825,25 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-03T13:13:14.743Z",
-    "lastRun": "2025-08-03T20:00:00.347Z",
+    "lastRun": "2025-08-03T20:06:00.869Z",
     "nextRun": "2025-08-03T23:00:00.000Z",
     "status": "failed",
     "performance": {
-      "totalRuns": 1,
+      "totalRuns": 2,
       "successfulRuns": 0,
-      "failedRuns": 1,
+      "failedRuns": 2,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300244
+      "lastExecutionTime": 300649
     },
     "logs": [
       {
         "timestamp": "2025-08-03T20:05:00.591Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-03T20:11:01.518Z",
         "level": "error",
         "message": "Job failed: Task timeout",
         "error": "Task timeout"
@@ -1459,19 +1471,25 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-03T13:13:35.981Z",
-    "lastRun": "2025-08-03T20:00:00.348Z",
+    "lastRun": "2025-08-03T20:06:00.869Z",
     "nextRun": "2025-08-03T23:00:00.000Z",
     "status": "failed",
     "performance": {
-      "totalRuns": 1,
+      "totalRuns": 2,
       "successfulRuns": 0,
-      "failedRuns": 1,
+      "failedRuns": 2,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300253
+      "lastExecutionTime": 300651
     },
     "logs": [
       {
         "timestamp": "2025-08-03T20:05:00.601Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-03T20:11:01.520Z",
         "level": "error",
         "message": "Job failed: Task timeout",
         "error": "Task timeout"
@@ -2099,19 +2117,25 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-03T13:14:46.290Z",
-    "lastRun": "2025-08-03T20:00:00.349Z",
+    "lastRun": "2025-08-03T20:06:00.869Z",
     "nextRun": "2025-08-03T23:00:00.000Z",
     "status": "failed",
     "performance": {
-      "totalRuns": 1,
+      "totalRuns": 2,
       "successfulRuns": 0,
-      "failedRuns": 1,
+      "failedRuns": 2,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300261
+      "lastExecutionTime": 300653
     },
     "logs": [
       {
         "timestamp": "2025-08-03T20:05:00.610Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-03T20:11:01.522Z",
         "level": "error",
         "message": "Job failed: Task timeout",
         "error": "Task timeout"
