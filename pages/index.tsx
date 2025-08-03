@@ -1803,6 +1803,23 @@ const Home: NextPage = () => {
     },
     {
       id: 68,
+      type: 'ai-powered-virtual-reality-marketplace',
+      title: 'AI-Powered Virtual Reality Marketplace',
+      description: 'Experience the future of shopping with immersive AI-powered virtual reality. Explore products in stunning 3D environments and interact with AI assistants.',
+      cta: 'Enter Virtual Reality',
+      ctaLink: '/ai-powered-virtual-reality-marketplace',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/ai-powered-virtual-reality-marketplace',
+      features: [
+        { icon: '🥽', title: 'Immersive Experience', description: 'Explore products in stunning 3D environments with realistic lighting and physics' },
+        { icon: '🤖', title: 'AI Assistant', description: 'Interact with AI-powered virtual assistants for personalized recommendations' },
+        { icon: '🎯', title: 'Smart Navigation', description: 'Intelligent navigation and product discovery powered by AI algorithms' },
+        { icon: '🛒', title: 'VR Shopping', description: 'Purchase products directly within the virtual reality environment' }
+      ],
+      bgClass: 'bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-900'
+    },
+    {
+      id: 69,
       type: 'waitlist',
       title: 'Join the Waitlist',
       description: 'Be among the first to experience the future of AI-powered marketplace. Sign up for early access and exclusive benefits.',
@@ -3245,6 +3262,41 @@ const Home: NextPage = () => {
                       <p className="text-gray-300">{item.description}</p>
                     </div>
                   </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        )
+
+      case 'ai-powered-virtual-reality-marketplace':
+        return (
+          <div className="py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  {section.title}
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                  {section.description}
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                  <Link href={section.ctaLink} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                    {section.cta}
+                  </Link>
+                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                    {section.secondaryCta}
+                  </Link>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {section.features.map((feature: any, index: number) => (
+                  <div key={index} className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-6 rounded-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300">
+                    <div className="text-3xl mb-4">{feature.icon}</div>
+                    <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+                    <p className="text-gray-300 text-sm">{feature.description}</p>
+                  </div>
                 ))}
               </div>
             </div>

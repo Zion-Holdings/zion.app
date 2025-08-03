@@ -194,6 +194,10 @@ class AutonomousAgentFactory {
       
       // Create agent process
       const agentScript = this.getAgentScript(agent.type);
+      if (!agentScript) {
+        throw new Error(`No script found for agent type: ${agent.type}`);
+      }
+
       const agentProcess = spawn('node', [agentScript], {
         stdio: ['pipe', 'pipe', 'pipe'],
         env: {
@@ -203,6 +207,11 @@ class AutonomousAgentFactory {
           AGENT_CONFIG: JSON.stringify(agent.config)
         }
       });
+
+      // Ensure process is properly initialized
+      if (!agentProcess || typeof agentProcess.kill !== 'function') {
+        throw new Error('Failed to create valid agent process');
+      }
 
       agent.process = agentProcess;
       agent.status = 'running';
@@ -236,7 +245,9 @@ class AutonomousAgentFactory {
         timestamp: new Date(),
         error: error.message
       });
+      agent.process = null; // Clear any invalid process reference
       await this.saveAgentRegistry();
+      console.error(`Failed to start agent ${agent.name}:`, error.message);
       throw error;
     }
   }
@@ -247,30 +258,49 @@ class AutonomousAgentFactory {
       throw new Error(`Agent not found: ${agentId}`);
     }
 
-    if (agent.process) {
-      agent.process.kill('SIGTERM');
-      agent.status = 'stopping';
-      
-      // Wait for graceful shutdown
-      setTimeout(() => {
-        if (agent.process && !agent.process.killed) {
-          agent.process.kill('SIGKILL');
-        }
-      }, 5000);
-    }
+    try {
+      if (agent.process && typeof agent.process.kill === 'function') {
+        agent.process.kill('SIGTERM');
+        agent.status = 'stopping';
+        
+        // Wait for graceful shutdown
+        setTimeout(() => {
+          if (agent.process && !agent.process.killed && typeof agent.process.kill === 'function') {
+            agent.process.kill('SIGKILL');
+          }
+        }, 5000);
+      } else {
+        console.log(`⚠️ Agent ${agent.name} has no process to stop`);
+      }
 
-    agent.status = 'stopped';
-    agent.lastActive = new Date();
-    await this.saveAgentRegistry();
-    
-    console.log(`Stopped agent: ${agent.name}`);
-    return true;
+      agent.status = 'stopped';
+      agent.lastActive = new Date();
+      agent.process = null; // Clear the process reference
+      await this.saveAgentRegistry();
+      
+      console.log(`Stopped agent: ${agent.name}`);
+      return true;
+    } catch (error) {
+      console.error(`Error stopping agent ${agent.name}:`, error.message);
+      agent.status = 'error';
+      agent.health.errors.push({
+        timestamp: new Date(),
+        error: error.message
+      });
+      await this.saveAgentRegistry();
+      return false;
+    }
   }
 
   async restartAgent(agentId) {
-    await this.stopAgent(agentId);
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    return await this.startAgent(agentId);
+    try {
+      await this.stopAgent(agentId);
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      return await this.startAgent(agentId);
+    } catch (error) {
+      console.error(`Error restarting agent ${agentId}:`, error.message);
+      throw error;
+    }
   }
 
   async deleteAgent(agentId) {
