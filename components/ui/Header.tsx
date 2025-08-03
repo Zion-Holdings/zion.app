@@ -54,6 +54,9 @@ const Header: React.FC<HeaderProps> = ({
             <Link href="/dispute-resolution" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Disputes
             </Link>
+            <Link href="/skill-verification" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              Skills
+            </Link>
             <Link href="/products" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Products
             </Link>
@@ -96,6 +99,9 @@ const Header: React.FC<HeaderProps> = ({
             </Link>
             <Link href="/dispute-resolution" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Disputes
+            </Link>
+            <Link href="/skill-verification" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              Skills
             </Link>
             <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Talents
@@ -163,6 +169,9 @@ const Header: React.FC<HeaderProps> = ({
                 </Link>
                 <Link href="/dispute-resolution" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   Dispute Resolution
+                </Link>
+                <Link href="/skill-verification" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  Skill Verification
                 </Link>
                 <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   Live Chat
