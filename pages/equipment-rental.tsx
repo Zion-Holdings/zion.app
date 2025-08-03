@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 interface Equipment {
@@ -8,646 +8,775 @@ interface Equipment {
   name: string;
   category: string;
   description: string;
-  specifications: string[];
   dailyRate: number;
   weeklyRate: number;
   monthlyRate: number;
-  availability: 'available' | 'rented' | 'maintenance';
+  availability: 'available' | 'rented' | 'maintenance' | 'reserved';
   location: string;
+  condition: 'excellent' | 'good' | 'fair' | 'poor';
   images: string[];
-  rating: number;
-  reviewCount: number;
-  features: string[];
-  included: string[];
-  requirements: string[];
-  provider: {
-    name: string;
-    rating: number;
-    verified: boolean;
-  };
+  specifications: EquipmentSpecs;
+  owner: string;
+  totalRentals: number;
+  averageRating: number;
+  lastMaintenance: Date;
+  nextMaintenance: Date;
+  insurance: boolean;
+  warranty: boolean;
 }
 
-interface RentalPeriod {
-  startDate: string;
-  endDate: string;
-  days: number;
+interface EquipmentSpecs {
+  brand: string;
+  model: string;
+  year: number;
+  weight: number;
+  dimensions: string;
+  power: string;
+  features: string[];
+}
+
+interface Rental {
+  id: string;
+  equipmentId: string;
+  renterId: string;
+  startDate: Date;
+  endDate: Date;
+  totalDays: number;
+  totalCost: number;
+  status: 'pending' | 'active' | 'completed' | 'cancelled';
+  paymentStatus: 'pending' | 'paid' | 'refunded';
+  insurance: boolean;
+  deposit: number;
+  notes?: string;
+  createdAt: Date;
+}
+
+interface MaintenanceRecord {
+  id: string;
+  equipmentId: string;
+  type: 'routine' | 'repair' | 'inspection' | 'emergency';
+  description: string;
+  cost: number;
+  technician: string;
+  startDate: Date;
+  endDate: Date;
+  status: 'scheduled' | 'in_progress' | 'completed';
+  parts: string[];
+  notes?: string;
+}
+
+interface RentalAnalytics {
+  totalRevenue: number;
+  totalRentals: number;
+  averageRentalDuration: number;
+  topPerformingEquipment: Equipment[];
+  monthlyRevenue: MonthlyRevenue[];
+  categoryPerformance: CategoryPerformance[];
+}
+
+interface MonthlyRevenue {
+  month: string;
+  revenue: number;
+  rentals: number;
+}
+
+interface CategoryPerformance {
+  category: string;
+  revenue: number;
+  rentals: number;
+  averageRating: number;
 }
 
 const EquipmentRentalPage: NextPage = () => {
-  const [equipment, setEquipment] = useState<Equipment[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [searchTerm, setSearchTerm] = useState('');
-  const [sortBy, setSortBy] = useState<'price' | 'rating' | 'availability'>('availability');
-  const [selectedEquipment, setSelectedEquipment] = useState<Equipment | null>(null);
-  const [rentalPeriod, setRentalPeriod] = useState<RentalPeriod>({
-    startDate: '',
-    endDate: '',
-    days: 0
-  });
-  const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState('equipment')
+  const [selectedCategory, setSelectedCategory] = useState<string>('all')
+  const [filterAvailability, setFilterAvailability] = useState<string>('all')
+  
+  const [equipment, setEquipment] = useState<Equipment[]>([
+    {
+      id: 'EQ-001',
+      name: 'Professional Camera Kit',
+      category: 'Photography',
+      description: 'Complete professional camera kit including DSLR, lenses, tripod, and lighting equipment.',
+      dailyRate: 150,
+      weeklyRate: 900,
+      monthlyRate: 3000,
+      availability: 'available',
+      location: 'New York, NY',
+      condition: 'excellent',
+      images: ['https://via.placeholder.com/300x200/1F2937/FFFFFF?text=Camera+Kit'],
+      specifications: {
+        brand: 'Canon',
+        model: 'EOS R5',
+        year: 2023,
+        weight: 2.5,
+        dimensions: '15" x 12" x 8"',
+        power: 'Battery powered',
+        features: ['4K Video', '45MP Sensor', 'Dual Card Slots', 'WiFi Connectivity']
+      },
+      owner: 'PhotoPro Studios',
+      totalRentals: 45,
+      averageRating: 4.8,
+      lastMaintenance: new Date('2024-01-10'),
+      nextMaintenance: new Date('2024-02-10'),
+      insurance: true,
+      warranty: true
+    },
+    {
+      id: 'EQ-002',
+      name: 'DJ Equipment Set',
+      category: 'Audio',
+      description: 'Professional DJ setup with turntables, mixer, speakers, and lighting system.',
+      dailyRate: 200,
+      weeklyRate: 1200,
+      monthlyRate: 4000,
+      availability: 'rented',
+      location: 'Los Angeles, CA',
+      condition: 'good',
+      images: ['https://via.placeholder.com/300x200/1F2937/FFFFFF?text=DJ+Equipment'],
+      specifications: {
+        brand: 'Pioneer',
+        model: 'CDJ-3000',
+        year: 2022,
+        weight: 15.0,
+        dimensions: '24" x 18" x 12"',
+        power: 'AC powered',
+        features: ['USB Support', 'Beat Sync', 'Hot Cues', 'Performance Pads']
+      },
+      owner: 'SoundWave Productions',
+      totalRentals: 32,
+      averageRating: 4.6,
+      lastMaintenance: new Date('2024-01-05'),
+      nextMaintenance: new Date('2024-02-05'),
+      insurance: true,
+      warranty: false
+    },
+    {
+      id: 'EQ-003',
+      name: 'Construction Tools Set',
+      category: 'Construction',
+      description: 'Complete set of professional construction tools including power tools and safety equipment.',
+      dailyRate: 100,
+      weeklyRate: 600,
+      monthlyRate: 2000,
+      availability: 'maintenance',
+      location: 'Chicago, IL',
+      condition: 'fair',
+      images: ['https://via.placeholder.com/300x200/1F2937/FFFFFF?text=Construction+Tools'],
+      specifications: {
+        brand: 'DeWalt',
+        model: 'Professional Series',
+        year: 2021,
+        weight: 25.0,
+        dimensions: '36" x 24" x 18"',
+        power: 'Battery/AC',
+        features: ['Cordless Drills', 'Circular Saws', 'Safety Gear', 'Tool Storage']
+      },
+      owner: 'BuildRight Tools',
+      totalRentals: 28,
+      averageRating: 4.4,
+      lastMaintenance: new Date('2024-01-15'),
+      nextMaintenance: new Date('2024-01-20'),
+      insurance: true,
+      warranty: true
+    }
+  ])
 
-  const categories = [
-    { id: 'all', name: 'All Equipment', icon: '⚙️' },
-    { id: 'computing', name: 'Computing', icon: '💻' },
-    { id: 'networking', name: 'Networking', icon: '🌐' },
-    { id: 'storage', name: 'Storage', icon: '💾' },
-    { id: 'security', name: 'Security', icon: '🔒' },
-    { id: 'monitoring', name: 'Monitoring', icon: '📊' },
-    { id: 'ai-training', name: 'AI Training', icon: '🤖' },
-    { id: 'quantum', name: 'Quantum', icon: '⚛️' }
-  ];
+  const [rentals, setRentals] = useState<Rental[]>([
+    {
+      id: 'RENTAL-001',
+      equipmentId: 'EQ-001',
+      renterId: 'USER-001',
+      startDate: new Date('2024-01-20'),
+      endDate: new Date('2024-01-25'),
+      totalDays: 5,
+      totalCost: 750,
+      status: 'completed',
+      paymentStatus: 'paid',
+      insurance: true,
+      deposit: 300,
+      notes: 'Event photography for corporate conference',
+      createdAt: new Date('2024-01-18')
+    },
+    {
+      id: 'RENTAL-002',
+      equipmentId: 'EQ-002',
+      renterId: 'USER-002',
+      startDate: new Date('2024-01-22'),
+      endDate: new Date('2024-01-24'),
+      totalDays: 2,
+      totalCost: 400,
+      status: 'active',
+      paymentStatus: 'paid',
+      insurance: false,
+      deposit: 200,
+      notes: 'Wedding reception DJ services',
+      createdAt: new Date('2024-01-20')
+    }
+  ])
 
-  useEffect(() => {
-    // Simulate loading equipment data
-    setTimeout(() => {
-      const mockEquipment: Equipment[] = [
-        {
-          id: '1',
-          name: 'NVIDIA DGX A100 System',
-          category: 'ai-training',
-          description: 'High-performance AI training system with 8x A100 GPUs, perfect for deep learning and machine learning workloads.',
-          specifications: [
-            '8x NVIDIA A100 80GB GPUs',
-            '2x AMD EPYC 7742 CPUs',
-            '1TB DDR4 Memory',
-            '15TB NVMe Storage',
-            'Mellanox HDR InfiniBand'
-          ],
-          dailyRate: 2500,
-          weeklyRate: 15000,
-          monthlyRate: 50000,
-          availability: 'available',
-          location: 'San Francisco, CA',
-          images: ['/images/dgx-a100.jpg'],
-          rating: 4.9,
-          reviewCount: 127,
-          features: [
-            'Multi-GPU Training',
-            'Distributed Computing',
-            'High-Speed Interconnects',
-            'Enterprise Support'
-          ],
-          included: [
-            'Setup & Configuration',
-            'Technical Support',
-            'Documentation',
-            'Training Materials'
-          ],
-          requirements: [
-            'Valid Business License',
-            'Security Clearance',
-            'Insurance Coverage',
-            'Technical Expertise'
-          ],
-          provider: {
-            name: 'AI Compute Solutions',
-            rating: 4.8,
-            verified: true
-          }
-        },
-        {
-          id: '2',
-          name: 'Quantum Computer - IBM Q System',
-          category: 'quantum',
-          description: 'State-of-the-art quantum computing system for research and development in quantum algorithms.',
-          specifications: [
-            '50+ Qubit Processor',
-            'Quantum Error Correction',
-            'Cryogenic Cooling System',
-            'Quantum-Classical Interface',
-            'Advanced Control Systems'
-          ],
-          dailyRate: 10000,
-          weeklyRate: 60000,
-          monthlyRate: 200000,
-          availability: 'available',
-          location: 'New York, NY',
-          images: ['/images/quantum-system.jpg'],
-          rating: 4.8,
-          reviewCount: 89,
-          features: [
-            'Quantum Algorithm Development',
-            'Research Collaboration',
-            'Academic Partnerships',
-            'Industry Applications'
-          ],
-          included: [
-            'Quantum Programming Support',
-            'Research Consultation',
-            'Algorithm Optimization',
-            'Results Analysis'
-          ],
-          requirements: [
-            'Research Institution',
-            'Quantum Computing Knowledge',
-            'Project Proposal',
-            'Security Clearance'
-          ],
-          provider: {
-            name: 'Quantum Research Labs',
-            rating: 4.9,
-            verified: true
-          }
-        },
-        {
-          id: '3',
-          name: 'Cisco Nexus 9000 Series',
-          category: 'networking',
-          description: 'Enterprise-grade networking equipment for high-performance data center operations.',
-          specifications: [
-            '48-Port 100Gbps',
-            'Layer 2/3 Switching',
-            'Advanced QoS',
-            'Network Virtualization',
-            'Automated Provisioning'
-          ],
-          dailyRate: 800,
-          weeklyRate: 4500,
-          monthlyRate: 15000,
-          availability: 'available',
-          location: 'Austin, TX',
-          images: ['/images/nexus-9000.jpg'],
-          rating: 4.7,
-          reviewCount: 156,
-          features: [
-            'High-Speed Connectivity',
-            'Network Automation',
-            'Security Features',
-            'Monitoring Tools'
-          ],
-          included: [
-            'Network Design',
-            'Configuration Setup',
-            '24/7 Support',
-            'Performance Monitoring'
-          ],
-          requirements: [
-            'Network Engineering Team',
-            'Data Center Access',
-            'Security Protocols',
-            'Backup Systems'
-          ],
-          provider: {
-            name: 'Network Solutions Pro',
-            rating: 4.6,
-            verified: true
-          }
-        },
-        {
-          id: '4',
-          name: 'Pure Storage FlashArray',
-          category: 'storage',
-          description: 'All-flash storage array with enterprise-grade performance and reliability.',
-          specifications: [
-            '500TB Raw Capacity',
-            'NVMe Flash Storage',
-            '99.9999% Availability',
-            'Data Deduplication',
-            'Encryption at Rest'
-          ],
-          dailyRate: 1200,
-          weeklyRate: 7000,
-          monthlyRate: 25000,
-          availability: 'rented',
-          location: 'Seattle, WA',
-          images: ['/images/flasharray.jpg'],
-          rating: 4.8,
-          reviewCount: 203,
-          features: [
-            'High-Performance Storage',
-            'Data Protection',
-            'Automated Management',
-            'Cloud Integration'
-          ],
-          included: [
-            'Storage Migration',
-            'Data Backup',
-            'Performance Tuning',
-            'Disaster Recovery'
-          ],
-          requirements: [
-            'Storage Infrastructure',
-            'Data Management',
-            'Backup Systems',
-            'Security Compliance'
-          ],
-          provider: {
-            name: 'Storage Solutions Inc',
-            rating: 4.7,
-            verified: true
-          }
-        },
-        {
-          id: '5',
-          name: 'Palo Alto Networks Firewall',
-          category: 'security',
-          description: 'Next-generation firewall with advanced threat protection and security features.',
-          specifications: [
-            '20Gbps Throughput',
-            'Advanced Threat Prevention',
-            'URL Filtering',
-            'SSL Inspection',
-            'WildFire Analysis'
-          ],
-          dailyRate: 600,
-          weeklyRate: 3500,
-          monthlyRate: 12000,
-          availability: 'available',
-          location: 'Chicago, IL',
-          images: ['/images/palo-alto.jpg'],
-          rating: 4.9,
-          reviewCount: 178,
-          features: [
-            'Advanced Security',
-            'Threat Intelligence',
-            'Compliance Reporting',
-            'Automated Response'
-          ],
-          included: [
-            'Security Assessment',
-            'Policy Configuration',
-            'Threat Monitoring',
-            'Incident Response'
-          ],
-          requirements: [
-            'Security Team',
-            'Network Access',
-            'Compliance Requirements',
-            'Incident Procedures'
-          ],
-          provider: {
-            name: 'Cyber Security Pro',
-            rating: 4.8,
-            verified: true
-          }
-        },
-        {
-          id: '6',
-          name: 'Splunk Enterprise Monitoring',
-          category: 'monitoring',
-          description: 'Comprehensive monitoring and analytics platform for IT infrastructure and applications.',
-          specifications: [
-            'Real-time Monitoring',
-            'Machine Learning Analytics',
-            'Custom Dashboards',
-            'Alert Management',
-            'Performance Metrics'
-          ],
-          dailyRate: 400,
-          weeklyRate: 2200,
-          monthlyRate: 8000,
-          availability: 'available',
-          location: 'Boston, MA',
-          images: ['/images/splunk.jpg'],
-          rating: 4.6,
-          reviewCount: 94,
-          features: [
-            'Real-time Analytics',
-            'Predictive Monitoring',
-            'Custom Dashboards',
-            'Automated Alerts'
-          ],
-          included: [
-            'System Integration',
-            'Dashboard Creation',
-            'Alert Configuration',
-            'Performance Analysis'
-          ],
-          requirements: [
-            'Monitoring Infrastructure',
-            'Data Sources',
-            'Analytics Team',
-            'Alert Procedures'
-          ],
-          provider: {
-            name: 'Monitoring Experts',
-            rating: 4.5,
-            verified: true
-          }
-        }
-      ];
+  const [maintenanceRecords, setMaintenanceRecords] = useState<MaintenanceRecord[]>([
+    {
+      id: 'MAINT-001',
+      equipmentId: 'EQ-003',
+      type: 'routine',
+      description: 'Regular maintenance and cleaning of power tools',
+      cost: 150,
+      technician: 'Mike Johnson',
+      startDate: new Date('2024-01-15'),
+      endDate: new Date('2024-01-17'),
+      status: 'completed',
+      parts: ['Replacement batteries', 'Cleaning supplies'],
+      notes: 'All tools inspected and cleaned. Batteries replaced.'
+    },
+    {
+      id: 'MAINT-002',
+      equipmentId: 'EQ-001',
+      type: 'inspection',
+      description: 'Camera sensor cleaning and lens calibration',
+      cost: 75,
+      technician: 'Sarah Chen',
+      startDate: new Date('2024-01-10'),
+      endDate: new Date('2024-01-10'),
+      status: 'completed',
+      parts: ['Sensor cleaning kit'],
+      notes: 'Camera in excellent condition. No issues found.'
+    }
+  ])
 
-      setEquipment(mockEquipment);
-      setLoading(false);
-    }, 1000);
-  }, []);
+  const [analytics, setAnalytics] = useState<RentalAnalytics>({
+    totalRevenue: 12500,
+    totalRentals: 105,
+    averageRentalDuration: 3.2,
+    topPerformingEquipment: [],
+    monthlyRevenue: [
+      { month: 'January 2024', revenue: 4200, rentals: 15 },
+      { month: 'December 2023', revenue: 3800, rentals: 12 },
+      { month: 'November 2023', revenue: 4500, rentals: 18 }
+    ],
+    categoryPerformance: [
+      { category: 'Photography', revenue: 6000, rentals: 25, averageRating: 4.7 },
+      { category: 'Audio', revenue: 4000, rentals: 20, averageRating: 4.5 },
+      { category: 'Construction', revenue: 2500, rentals: 15, averageRating: 4.3 }
+    ]
+  })
 
-  const filteredEquipment = useMemo(() => {
-    let filtered = equipment.filter(item => {
-      const matchesCategory = selectedCategory === 'all' || item.category === selectedCategory;
-      const matchesSearch = searchTerm === '' || 
-        item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        item.description.toLowerCase().includes(searchTerm.toLowerCase());
-      return matchesCategory && matchesSearch;
-    });
-
-    // Sort equipment
-    filtered.sort((a, b) => {
-      switch (sortBy) {
-        case 'price':
-          return a.dailyRate - b.dailyRate;
-        case 'rating':
-          return b.rating - a.rating;
-        case 'availability':
-          return a.availability === 'available' ? -1 : 1;
-        default:
-          return 0;
-      }
-    });
-
-    return filtered;
-  }, [equipment, selectedCategory, searchTerm, sortBy]);
-
-  const calculateRentalCost = (equipment: Equipment, days: number) => {
-    if (days >= 30) return equipment.monthlyRate;
-    if (days >= 7) return equipment.weeklyRate;
-    return equipment.dailyRate * days;
-  };
-
-  const handleRentalPeriodChange = (field: keyof RentalPeriod, value: string | number) => {
-    setRentalPeriod(prev => {
-      const updated = { ...prev, [field]: value };
-      
-      if (updated.startDate && updated.endDate) {
-        const start = new Date(updated.startDate);
-        const end = new Date(updated.endDate);
-        const days = Math.ceil((end.getTime() - start.getTime()) / (1000 * 60 * 60 * 24));
-        updated.days = Math.max(1, days);
-      }
-      
-      return updated;
-    });
-  };
-
-  const handleRentEquipment = (equipment: Equipment) => {
-    setSelectedEquipment(equipment);
-    // In a real app, this would open a modal or navigate to rental form
-    console.log('Renting equipment:', equipment.name);
-  };
+  const formatCurrency = (amount: number) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD'
+    }).format(amount)
+  }
 
   const getAvailabilityColor = (availability: string) => {
     switch (availability) {
-      case 'available': return 'text-green-400 bg-green-500/20';
-      case 'rented': return 'text-red-400 bg-red-500/20';
-      case 'maintenance': return 'text-yellow-400 bg-yellow-500/20';
-      default: return 'text-gray-400 bg-gray-500/20';
+      case 'available': return 'text-green-400 bg-green-500/20 border-green-500/30'
+      case 'rented': return 'text-blue-400 bg-blue-500/20 border-blue-500/30'
+      case 'maintenance': return 'text-yellow-400 bg-yellow-500/20 border-yellow-500/30'
+      case 'reserved': return 'text-purple-400 bg-purple-500/20 border-purple-500/30'
+      default: return 'text-gray-400 bg-gray-500/20 border-gray-500/30'
     }
-  };
+  }
 
-  const getAvailabilityText = (availability: string) => {
-    switch (availability) {
-      case 'available': return 'Available';
-      case 'rented': return 'Currently Rented';
-      case 'maintenance': return 'Under Maintenance';
-      default: return 'Unknown';
+  const getConditionColor = (condition: string) => {
+    switch (condition) {
+      case 'excellent': return 'text-green-400 bg-green-500/20 border-green-500/30'
+      case 'good': return 'text-blue-400 bg-blue-500/20 border-blue-500/30'
+      case 'fair': return 'text-yellow-400 bg-yellow-500/20 border-yellow-500/30'
+      case 'poor': return 'text-red-400 bg-red-500/20 border-red-500/30'
+      default: return 'text-gray-400 bg-gray-500/20 border-gray-500/30'
     }
-  };
+  }
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'pending': return 'text-yellow-400 bg-yellow-500/20 border-yellow-500/30'
+      case 'active': return 'text-blue-400 bg-blue-500/20 border-blue-500/30'
+      case 'completed': return 'text-green-400 bg-green-500/20 border-green-500/30'
+      case 'cancelled': return 'text-red-400 bg-red-500/20 border-red-500/30'
+      default: return 'text-gray-400 bg-gray-500/20 border-gray-500/30'
+    }
+  }
+
+  const filteredEquipment = equipment.filter(item => {
+    const categoryMatch = selectedCategory === 'all' || item.category === selectedCategory
+    const availabilityMatch = filterAvailability === 'all' || item.availability === filterAvailability
+    return categoryMatch && availabilityMatch
+  })
+
+  const getStats = () => {
+    const totalEquipment = equipment.length
+    const availableEquipment = equipment.filter(e => e.availability === 'available').length
+    const totalRevenue = analytics.totalRevenue
+    const averageRating = equipment.reduce((sum, e) => sum + e.averageRating, 0) / equipment.length
+    
+    return { totalEquipment, availableEquipment, totalRevenue, averageRating }
+  }
+
+  const stats = getStats()
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
-        <title>Equipment Rental - Zion Marketplace</title>
-        <meta name="description" content="Rent high-performance computing equipment, networking gear, and specialized hardware for your projects" />
-        <meta name="keywords" content="equipment rental, computing hardware, networking equipment, AI training, quantum computing, Zion" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Equipment Rental & Management - Zion Marketplace</title>
+        <meta name="description" content="Comprehensive equipment rental and management system. Rent professional equipment, track availability, and manage maintenance schedules." />
+        <meta name="keywords" content="equipment rental, professional equipment, availability tracking, maintenance management, marketplace rentals" />
       </Head>
 
-      {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <Link href="/" className="flex-shrink-0">
-                <h1 className="text-2xl font-bold text-white">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
-                </h1>
-              </Link>
-            </div>
-            
-            <div className="hidden md:flex items-center space-x-8">
+      {/* Header */}
+      <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex justify-between items-center">
+            <Link href="/" className="text-2xl font-bold text-white">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
+            </Link>
+            <nav className="flex items-center space-x-6">
               <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Services
+              <Link href="/project-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Projects
               </Link>
-              <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Talents
-              </Link>
-              <Link href="/equipment" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Equipment
-              </Link>
-              <Link href="/real-time-chat" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Live Chat
-              </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Login
               </Link>
-            </div>
+            </nav>
           </div>
         </div>
-      </nav>
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Equipment Rental
+      {/* Hero Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400">
+              Equipment Rental & Management
+            </span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Rent high-performance computing equipment, networking gear, and specialized hardware for your projects. 
-            Access cutting-edge technology without the capital investment.
+          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            Rent professional equipment for your projects. Track availability, manage maintenance, 
+            and access high-quality tools and machinery through our comprehensive rental system.
           </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="#equipment" className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+              Browse Equipment
+            </Link>
+            <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              List Equipment
+            </Link>
+          </div>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
-            <div className="text-3xl font-bold text-white mb-2">{equipment.length}</div>
-            <div className="text-gray-300">Total Equipment</div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">
+            <div className="text-3xl font-bold text-white mb-2">{stats.totalEquipment}</div>
+            <p className="text-gray-300 text-sm">Total Equipment</p>
           </div>
-          <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
-            <div className="text-3xl font-bold text-green-400 mb-2">
-              {equipment.filter(e => e.availability === 'available').length}
-            </div>
-            <div className="text-gray-300">Available Now</div>
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">
+            <div className="text-3xl font-bold text-white mb-2">{stats.availableEquipment}</div>
+            <p className="text-gray-300 text-sm">Available Now</p>
           </div>
-          <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
-            <div className="text-3xl font-bold text-blue-400 mb-2">
-              {equipment.filter(e => e.rating >= 4.5).length}
-            </div>
-            <div className="text-gray-300">Top Rated</div>
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">
+            <div className="text-3xl font-bold text-white mb-2">{formatCurrency(stats.totalRevenue)}</div>
+            <p className="text-gray-300 text-sm">Total Revenue</p>
           </div>
-          <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
-            <div className="text-3xl font-bold text-purple-400 mb-2">6</div>
-            <div className="text-gray-300">Categories</div>
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">
+            <div className="text-3xl font-bold text-white mb-2">{stats.averageRating.toFixed(1)}</div>
+            <p className="text-gray-300 text-sm">Avg Rating</p>
           </div>
         </div>
+      </div>
 
-        {/* Filters and Search */}
-        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            {/* Search */}
-            <div className="md:col-span-2">
-              <input
-                type="text"
-                placeholder="Search equipment..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
-              />
-            </div>
-
-            {/* Category Filter */}
-            <div>
-              <select
-                value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
-              >
-                {categories.map(category => (
-                  <option key={category.id} value={category.id}>
-                    {category.icon} {category.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Sort */}
-            <div>
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value as 'price' | 'rating' | 'availability')}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
-              >
-                <option value="availability">Sort by Availability</option>
-                <option value="price">Sort by Price</option>
-                <option value="rating">Sort by Rating</option>
-              </select>
-            </div>
-          </div>
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        {/* Tabs */}
+        <div className="flex flex-wrap gap-2 mb-8">
+          {[
+            { id: 'equipment', label: 'Equipment' },
+            { id: 'rentals', label: 'Rentals' },
+            { id: 'maintenance', label: 'Maintenance' },
+            { id: 'analytics', label: 'Analytics' }
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                activeTab === tab.id
+                  ? 'bg-gradient-to-r from-orange-600 to-red-600 text-white'
+                  : 'bg-white/5 text-gray-300 hover:bg-white/10'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
 
-        {/* Equipment Grid */}
-        {loading ? (
-          <div className="text-center py-12">
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg">
-              <svg className="animate-spin -ml-1 mr-3 h-6 w-6 text-purple-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-              </svg>
-              <span className="text-lg font-medium">Loading equipment...</span>
-            </div>
+        {/* Filters */}
+        {activeTab === 'equipment' && (
+          <div className="flex flex-wrap gap-4 mb-8">
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500"
+            >
+              <option value="all">All Categories</option>
+              <option value="Photography">Photography</option>
+              <option value="Audio">Audio</option>
+              <option value="Construction">Construction</option>
+              <option value="Video">Video</option>
+              <option value="Lighting">Lighting</option>
+            </select>
+            <select
+              value={filterAvailability}
+              onChange={(e) => setFilterAvailability(e.target.value)}
+              className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500"
+            >
+              <option value="all">All Availability</option>
+              <option value="available">Available</option>
+              <option value="rented">Rented</option>
+              <option value="maintenance">Maintenance</option>
+              <option value="reserved">Reserved</option>
+            </select>
           </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredEquipment.map((item) => (
-              <div key={item.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
-                {/* Equipment Image */}
-                <div className="h-48 bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
-                  <div className="text-6xl">{item.category === 'ai-training' ? '🤖' : item.category === 'quantum' ? '⚛️' : item.category === 'networking' ? '🌐' : item.category === 'storage' ? '💾' : item.category === 'security' ? '🔒' : '📊'}</div>
-                </div>
+        )}
 
-                {/* Equipment Info */}
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-4">
-                    <h3 className="text-xl font-bold text-white">{item.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${getAvailabilityColor(item.availability)}`}>
-                      {getAvailabilityText(item.availability)}
-                    </span>
-                  </div>
-
-                  <p className="text-gray-300 text-sm mb-4 line-clamp-2">
-                    {item.description}
-                  </p>
-
-                  {/* Provider Info */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-2">
-                      <span className="text-sm text-gray-400">{item.provider.name}</span>
-                      {item.provider.verified && (
-                        <span className="text-blue-400">✓</span>
-                      )}
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <span className="text-yellow-400">★</span>
-                      <span className="text-white text-sm">{item.rating}</span>
-                      <span className="text-gray-400 text-sm">({item.reviewCount})</span>
-                    </div>
-                  </div>
-
-                  {/* Pricing */}
-                  <div className="space-y-2 mb-4">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Daily Rate:</span>
-                      <span className="text-white font-semibold">${item.dailyRate.toLocaleString()}</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Weekly Rate:</span>
-                      <span className="text-white font-semibold">${item.weeklyRate.toLocaleString()}</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Monthly Rate:</span>
-                      <span className="text-white font-semibold">${item.monthlyRate.toLocaleString()}</span>
-                    </div>
-                  </div>
-
-                  {/* Location */}
-                  <div className="text-sm text-gray-400 mb-4">
-                    📍 {item.location}
-                  </div>
-
-                  {/* Features */}
+        {/* Tab Content */}
+        {activeTab === 'equipment' && (
+          <div className="space-y-6">
+            <div className="flex justify-between items-center">
+              <h2 className="text-2xl font-bold text-white">Available Equipment</h2>
+              <Link href="/marketplace" className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+                List Equipment
+              </Link>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredEquipment.map((item) => (
+                <div key={item.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all duration-300">
                   <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-white mb-2">Key Features:</h4>
-                    <div className="flex flex-wrap gap-1">
-                      {item.features.slice(0, 3).map((feature, index) => (
-                        <span key={index} className="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">
+                    <img 
+                      src={item.images[0]} 
+                      alt={item.name}
+                      className="w-full h-48 object-cover rounded-lg mb-4"
+                    />
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <h3 className="text-lg font-semibold text-white">{item.name}</h3>
+                        <p className="text-gray-300 text-sm">{item.category}</p>
+                      </div>
+                      <div className="text-right">
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getAvailabilityColor(item.availability)}`}>
+                          {item.availability.toUpperCase()}
+                        </span>
+                        <div className="mt-2">
+                          <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getConditionColor(item.condition)}`}>
+                            {item.condition.toUpperCase()}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3 mb-4">
+                    <p className="text-gray-300 text-sm line-clamp-2">{item.description}</p>
+                    <div className="flex justify-between">
+                      <span className="text-gray-300">Daily Rate:</span>
+                      <span className="text-white font-semibold">{formatCurrency(item.dailyRate)}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-300">Weekly Rate:</span>
+                      <span className="text-white">{formatCurrency(item.weeklyRate)}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-300">Location:</span>
+                      <span className="text-white">{item.location}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-300">Owner:</span>
+                      <span className="text-white">{item.owner}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-300">Rating:</span>
+                      <span className="text-white">⭐ {item.averageRating}</span>
+                    </div>
+                  </div>
+                  
+                  <div className="mb-4">
+                    <span className="text-gray-300 text-sm">Features:</span>
+                    <div className="flex flex-wrap gap-1 mt-1">
+                      {item.specifications.features.slice(0, 3).map((feature, index) => (
+                        <span key={index} className="px-2 py-1 bg-white/10 rounded text-xs text-white">
                           {feature}
                         </span>
                       ))}
                     </div>
                   </div>
-
-                  {/* Action Buttons */}
-                  <div className="flex space-x-3">
-                    <button
-                      onClick={() => handleRentEquipment(item)}
-                      disabled={item.availability !== 'available'}
-                      className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
-                    >
-                      {item.availability === 'available' ? 'Rent Now' : 'Currently Rented'}
-                    </button>
-                    <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-2 rounded-lg font-semibold transition-all duration-300 backdrop-blur-sm">
-                      Details
+                  
+                  <div className="flex gap-2">
+                    {item.availability === 'available' && (
+                      <button className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-3 py-2 rounded text-sm transition-colors">
+                        Rent Now
+                      </button>
+                    )}
+                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-2 rounded text-sm transition-colors">
+                      View Details
                     </button>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         )}
 
-        {/* Call to Action */}
-        <div className="mt-12 text-center">
-          <div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8">
+        {activeTab === 'rentals' && (
+          <div className="space-y-6">
+            <h2 className="text-2xl font-bold text-white">Rental History</h2>
+            
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead className="bg-white/10">
+                    <tr>
+                      <th className="text-left text-gray-300 py-3 px-6">Rental ID</th>
+                      <th className="text-left text-gray-300 py-3 px-6">Equipment</th>
+                      <th className="text-left text-gray-300 py-3 px-6">Duration</th>
+                      <th className="text-left text-gray-300 py-3 px-6">Total Cost</th>
+                      <th className="text-left text-gray-300 py-3 px-6">Status</th>
+                      <th className="text-left text-gray-300 py-3 px-6">Payment</th>
+                      <th className="text-left text-gray-300 py-3 px-6">Dates</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-white/10">
+                    {rentals.map((rental) => (
+                      <tr key={rental.id} className="hover:bg-white/5">
+                        <td className="text-white py-3 px-6">{rental.id}</td>
+                        <td className="text-white py-3 px-6">
+                          {equipment.find(e => e.id === rental.equipmentId)?.name}
+                        </td>
+                        <td className="text-white py-3 px-6">{rental.totalDays} days</td>
+                        <td className="text-white py-3 px-6">{formatCurrency(rental.totalCost)}</td>
+                        <td className="py-3 px-6">
+                          <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor(rental.status)}`}>
+                            {rental.status.toUpperCase()}
+                          </span>
+                        </td>
+                        <td className="py-3 px-6">
+                          <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor(rental.paymentStatus)}`}>
+                            {rental.paymentStatus.toUpperCase()}
+                          </span>
+                        </td>
+                        <td className="text-white py-3 px-6">
+                          {rental.startDate.toLocaleDateString()} - {rental.endDate.toLocaleDateString()}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'maintenance' && (
+          <div className="space-y-6">
+            <h2 className="text-2xl font-bold text-white">Maintenance Records</h2>
+            
+            <div className="space-y-6">
+              {maintenanceRecords.map((record) => (
+                <div key={record.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">
+                        {equipment.find(e => e.id === record.equipmentId)?.name}
+                      </h3>
+                      <p className="text-gray-300 text-sm">{record.description}</p>
+                    </div>
+                    <div className="text-right">
+                      <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor(record.status)}`}>
+                        {record.status.toUpperCase()}
+                      </span>
+                      <div className="mt-2">
+                        <span className="text-white font-semibold">{formatCurrency(record.cost)}</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <span className="text-gray-300 text-sm">Type:</span>
+                      <div className="text-white capitalize">{record.type}</div>
+                    </div>
+                    <div>
+                      <span className="text-gray-300 text-sm">Technician:</span>
+                      <div className="text-white">{record.technician}</div>
+                    </div>
+                    <div>
+                      <span className="text-gray-300 text-sm">Start Date:</span>
+                      <div className="text-white">{record.startDate.toLocaleDateString()}</div>
+                    </div>
+                    <div>
+                      <span className="text-gray-300 text-sm">End Date:</span>
+                      <div className="text-white">{record.endDate.toLocaleDateString()}</div>
+                    </div>
+                  </div>
+                  
+                  {record.parts.length > 0 && (
+                    <div className="mb-4">
+                      <span className="text-gray-300 text-sm">Parts Used:</span>
+                      <div className="flex flex-wrap gap-1 mt-1">
+                        {record.parts.map((part, index) => (
+                          <span key={index} className="px-2 py-1 bg-white/10 rounded text-xs text-white">
+                            {part}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  
+                  {record.notes && (
+                    <div className="mb-4">
+                      <span className="text-gray-300 text-sm">Notes:</span>
+                      <p className="text-white text-sm mt-1">{record.notes}</p>
+                    </div>
+                  )}
+                  
+                  <div className="flex gap-2">
+                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-2 rounded text-sm transition-colors">
+                      View Details
+                    </button>
+                    <button className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-3 py-2 rounded text-sm transition-colors">
+                      Schedule Maintenance
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'analytics' && (
+          <div className="space-y-6">
+            <h2 className="text-2xl font-bold text-white">Rental Analytics</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">
+                <div className="text-3xl font-bold text-white mb-2">{formatCurrency(analytics.totalRevenue)}</div>
+                <p className="text-gray-300 text-sm">Total Revenue</p>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">
+                <div className="text-3xl font-bold text-white mb-2">{analytics.totalRentals}</div>
+                <p className="text-gray-300 text-sm">Total Rentals</p>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">
+                <div className="text-3xl font-bold text-white mb-2">{analytics.averageRentalDuration}</div>
+                <p className="text-gray-300 text-sm">Avg Duration (days)</p>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-white mb-4">Monthly Revenue</h3>
+                <div className="space-y-3">
+                  {analytics.monthlyRevenue.map((month, index) => (
+                    <div key={index} className="flex justify-between items-center">
+                      <span className="text-gray-300">{month.month}</span>
+                      <div className="text-right">
+                        <div className="text-white font-semibold">{formatCurrency(month.revenue)}</div>
+                        <div className="text-gray-300 text-sm">{month.rentals} rentals</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-white mb-4">Category Performance</h3>
+                <div className="space-y-3">
+                  {analytics.categoryPerformance.map((category, index) => (
+                    <div key={index} className="flex justify-between items-center">
+                      <span className="text-gray-300">{category.category}</span>
+                      <div className="text-right">
+                        <div className="text-white font-semibold">{formatCurrency(category.revenue)}</div>
+                        <div className="text-gray-300 text-sm">⭐ {category.averageRating}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* CTA Section */}
+      <div className="bg-gradient-to-r from-orange-900/50 to-red-900/50 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
-              Need Custom Equipment?
+              Rent Professional Equipment Today
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Can't find what you're looking for? Contact us for custom equipment solutions and specialized hardware configurations.
+            <p className="text-xl text-gray-300 mb-8">
+              Access high-quality equipment for your projects. From photography gear to construction tools, 
+              we have everything you need to get the job done professionally.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/quote-request" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
-                Request Custom Quote
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="#equipment" className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+                Browse Equipment
               </Link>
-              <Link href="/real-time-chat" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
-                Chat with Expert
+              <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                List Your Equipment
               </Link>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="bg-black/20 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4">Zion Marketplace</h3>
+              <p className="text-gray-300 text-sm">
+                The first free AI-powered marketplace for high-tech products, services, and innovation.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Equipment Rental</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/equipment-rental" className="text-gray-400 hover:text-white transition-colors">Browse Equipment</Link></li>
+                <li><Link href="/project-management" className="text-gray-400 hover:text-white transition-colors">Project Management</Link></li>
+                <li><Link href="/marketplace-pricing" className="text-gray-400 hover:text-white transition-colors">Pricing & Commissions</Link></li>
+                <li><Link href="/referral-affiliate" className="text-gray-400 hover:text-white transition-colors">Referral System</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Support</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact Us</Link></li>
+                <li><Link href="/real-time-chat" className="text-gray-400 hover:text-white transition-colors">Live Chat</Link></li>
+                <li><Link href="/notifications" className="text-gray-400 hover:text-white transition-colors">Notifications</Link></li>
+                <li><Link href="/ai-powered-contract-legal" className="text-gray-400 hover:text-white transition-colors">Legal Support</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Connect</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
+                <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
+                <li><Link href="/auth/signup" className="text-gray-400 hover:text-white transition-colors">Sign Up</Link></li>
+                <li><Link href="/auth/login" className="text-gray-400 hover:text-white transition-colors">Login</Link></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-white/10 mt-8 pt-8 text-center">
+            <p className="text-gray-400 text-sm">
+              © 2024 Zion Tech Group. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }

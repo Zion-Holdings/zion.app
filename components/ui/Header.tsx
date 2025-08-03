@@ -115,6 +115,9 @@ const Header: React.FC<HeaderProps> = ({
             <Link href="/referral-affiliate" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Referrals
             </Link>
+            <Link href="/equipment-rental" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              Equipment
+            </Link>
             <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Talents
             </Link>
@@ -190,6 +193,9 @@ const Header: React.FC<HeaderProps> = ({
                 </Link>
                 <Link href="/referral-affiliate" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   Referral System
+                </Link>
+                <Link href="/equipment-rental" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  Equipment Rental
                 </Link>
                 <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                   Live Chat

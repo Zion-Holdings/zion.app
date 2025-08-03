@@ -336,6 +336,29 @@ const Marketplace: NextPage = () => {
         </div>
       </div>
 
+      {/* Equipment Rental CTA */}
+      <div className="bg-gradient-to-r from-orange-900/50 to-red-900/50 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Rent Professional Equipment
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Access high-quality equipment for your projects. From photography gear to construction tools, 
+              we have everything you need to get the job done professionally.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/equipment-rental" className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+                Browse Equipment
+              </Link>
+              <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                List Your Equipment
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Features Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
