@@ -1107,6 +1107,23 @@ const Home: NextPage = () => {
     },
     {
       id: 59,
+      type: 'webhook-management',
+      title: 'Webhook Management Center',
+      description: 'Centralized webhook management, monitoring, and orchestration. Track events, configure endpoints, manage templates, and ensure reliable integrations.',
+      features: [
+        '🪝 Webhook Monitoring',
+        '📊 Event Analytics',
+        '📋 Template Library',
+        '🔧 Configuration Management'
+      ],
+      cta: 'Manage Webhooks',
+      ctaLink: '/webhook-management',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/webhook-management',
+      bgClass: 'bg-gradient-to-br from-emerald-900 via-teal-900 to-slate-900'
+    },
+    {
+      id: 59,
       type: 'inbox-messaging',
       title: 'Unified Inbox & Messaging Center',
       description: 'Centralized communication hub for all marketplace interactions. Manage messages, quotes, payments, and project updates in one place with advanced filtering and organization.',
@@ -4286,6 +4303,9 @@ const Home: NextPage = () => {
               <Link href="/inbox" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Inbox
               </Link>
+              <Link href="/webhook-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Webhooks
+              </Link>
               <Link href="/blog" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Blog
               </Link>
@@ -4365,6 +4385,9 @@ const Home: NextPage = () => {
                   <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Tools</h3>
                   <Link href="/inbox" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                     Inbox
+                  </Link>
+                  <Link href="/webhook-management" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Webhooks
                   </Link>
                   <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                     Live Chat
@@ -4484,6 +4507,7 @@ const Home: NextPage = () => {
                 <li><Link href="/auth/login" className="hover:text-white transition-colors">Login</Link></li>
                 <li><Link href="/auth/signup" className="hover:text-white transition-colors">Sign Up</Link></li>
                 <li><Link href="/inbox" className="hover:text-white transition-colors">Inbox</Link></li>
+                <li><Link href="/webhook-management" className="hover:text-white transition-colors">Webhooks</Link></li>
                 <li><Link href="/dashboard" className="hover:text-white transition-colors">Dashboard</Link></li>
                 <li><Link href="/analytics" className="hover:text-white transition-colors">Analytics</Link></li>
                 <li><Link href="/ai-virtual-assistant" className="hover:text-white transition-colors">AI Assistant</Link></li>
