@@ -1174,6 +1174,23 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-violet-900 via-purple-900 to-slate-900'
     },
     {
+      id: 63,
+      type: 'data-warehouse-etl',
+      title: 'Data Warehouse & ETL Platform',
+      description: 'Comprehensive data integration, transformation, and warehousing platform for enterprise analytics. Connect multiple data sources, build ETL pipelines, and maintain data quality.',
+      features: [
+        '🔗 Data Integration',
+        '⚙️ ETL Pipelines',
+        '🏢 Data Warehousing',
+        '✅ Quality Monitoring'
+      ],
+      cta: 'Manage Data',
+      ctaLink: '/data-warehouse-etl',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/data-warehouse-etl',
+      bgClass: 'bg-gradient-to-br from-cyan-900 via-blue-900 to-slate-900'
+    },
+    {
       id: 59,
       type: 'inbox-messaging',
       title: 'Unified Inbox & Messaging Center',
@@ -4366,6 +4383,9 @@ const Home: NextPage = () => {
               <Link href="/workflow-designer" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Workflows
               </Link>
+              <Link href="/data-warehouse-etl" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Data Warehouse
+              </Link>
               <Link href="/blog" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Blog
               </Link>
@@ -4457,6 +4477,9 @@ const Home: NextPage = () => {
                   </Link>
                   <Link href="/workflow-designer" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                     Workflows
+                  </Link>
+                  <Link href="/data-warehouse-etl" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Data Warehouse
                   </Link>
                   <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                     Live Chat
@@ -4580,6 +4603,7 @@ const Home: NextPage = () => {
                 <li><Link href="/executive-dashboard" className="hover:text-white transition-colors">Executive</Link></li>
                 <li><Link href="/compliance-governance" className="hover:text-white transition-colors">Compliance</Link></li>
                 <li><Link href="/workflow-designer" className="hover:text-white transition-colors">Workflows</Link></li>
+                <li><Link href="/data-warehouse-etl" className="hover:text-white transition-colors">Data Warehouse</Link></li>
                 <li><Link href="/dashboard" className="hover:text-white transition-colors">Dashboard</Link></li>
                 <li><Link href="/analytics" className="hover:text-white transition-colors">Analytics</Link></li>
                 <li><Link href="/ai-virtual-assistant" className="hover:text-white transition-colors">AI Assistant</Link></li>
