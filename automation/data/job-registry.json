@@ -22,7 +22,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-03T01:24:45.565Z",
     "lastRun": "2025-08-03T18:12:01.455Z",
-    "nextRun": "2025-08-03T21:00:00.000Z",
+    "nextRun": "2025-08-04T03:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 3,
@@ -143,7 +143,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-03T01:24:45.932Z",
     "lastRun": null,
-    "nextRun": "2025-08-03T15:00:00.000Z",
+    "nextRun": "2025-08-04T03:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -266,15 +266,15 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-03T01:24:46.023Z",
-    "lastRun": "2025-08-03T21:00:00.587Z",
-    "nextRun": "2025-08-03T21:15:00.000Z",
+    "lastRun": "2025-08-03T21:15:00.779Z",
+    "nextRun": "2025-08-03T21:30:00.000Z",
     "status": "scheduled",
     "performance": {
-      "totalRuns": 31,
+      "totalRuns": 32,
       "successfulRuns": 0,
-      "failedRuns": 31,
+      "failedRuns": 32,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300289
+      "lastExecutionTime": 300210
     },
     "logs": [
       {
@@ -607,6 +607,17 @@
         "timestamp": "2025-08-03T21:05:00.877Z",
         "level": "info",
         "message": "Job restarted"
+      },
+      {
+        "timestamp": "2025-08-03T21:20:00.989Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-03T21:20:00.989Z",
+        "level": "info",
+        "message": "Job restarted"
       }
     ]
   },
@@ -693,7 +704,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-03T13:13:14.732Z",
     "lastRun": "2025-08-03T18:12:01.457Z",
-    "nextRun": "2025-08-03T21:00:00.000Z",
+    "nextRun": "2025-08-04T03:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 3,
@@ -814,7 +825,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-03T13:13:14.739Z",
     "lastRun": null,
-    "nextRun": "2025-08-03T15:00:00.000Z",
+    "nextRun": "2025-08-04T03:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -937,15 +948,15 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-03T13:13:14.744Z",
-    "lastRun": "2025-08-03T21:00:00.588Z",
-    "nextRun": "2025-08-03T21:15:00.000Z",
+    "lastRun": "2025-08-03T21:15:00.779Z",
+    "nextRun": "2025-08-03T21:30:00.000Z",
     "status": "scheduled",
     "performance": {
-      "totalRuns": 31,
+      "totalRuns": 32,
       "successfulRuns": 0,
-      "failedRuns": 31,
+      "failedRuns": 32,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300296
+      "lastExecutionTime": 300220
     },
     "logs": [
       {
@@ -1278,6 +1289,17 @@
         "timestamp": "2025-08-03T21:05:00.885Z",
         "level": "info",
         "message": "Job restarted"
+      },
+      {
+        "timestamp": "2025-08-03T21:20:00.999Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-03T21:20:00.999Z",
+        "level": "info",
+        "message": "Job restarted"
       }
     ]
   },
@@ -1394,7 +1416,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-03T13:13:35.928Z",
     "lastRun": "2025-08-03T18:12:01.460Z",
-    "nextRun": "2025-08-03T21:00:00.000Z",
+    "nextRun": "2025-08-04T03:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 3,
@@ -1515,7 +1537,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-03T13:13:35.977Z",
     "lastRun": null,
-    "nextRun": "2025-08-03T15:00:00.000Z",
+    "nextRun": "2025-08-04T03:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -1638,15 +1660,15 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-03T13:13:35.982Z",
-    "lastRun": "2025-08-03T21:00:00.588Z",
-    "nextRun": "2025-08-03T21:15:00.000Z",
+    "lastRun": "2025-08-03T21:15:00.781Z",
+    "nextRun": "2025-08-03T21:30:00.000Z",
     "status": "scheduled",
     "performance": {
-      "totalRuns": 31,
+      "totalRuns": 32,
       "successfulRuns": 0,
-      "failedRuns": 31,
+      "failedRuns": 32,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300304
+      "lastExecutionTime": 300260
     },
     "logs": [
       {
@@ -1979,6 +2001,17 @@
         "timestamp": "2025-08-03T21:05:00.892Z",
         "level": "info",
         "message": "Job restarted"
+      },
+      {
+        "timestamp": "2025-08-03T21:20:01.041Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-03T21:20:01.041Z",
+        "level": "info",
+        "message": "Job restarted"
       }
     ]
   },
@@ -2095,7 +2128,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-03T13:14:46.279Z",
     "lastRun": "2025-08-03T18:12:01.461Z",
-    "nextRun": "2025-08-03T21:00:00.000Z",
+    "nextRun": "2025-08-04T03:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 3,
@@ -2216,7 +2249,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-03T13:14:46.286Z",
     "lastRun": null,
-    "nextRun": "2025-08-03T15:00:00.000Z",
+    "nextRun": "2025-08-04T03:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -2339,15 +2372,15 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-03T13:14:46.291Z",
-    "lastRun": "2025-08-03T21:00:00.589Z",
-    "nextRun": "2025-08-03T21:15:00.000Z",
+    "lastRun": "2025-08-03T21:15:00.778Z",
+    "nextRun": "2025-08-03T21:30:00.000Z",
     "status": "scheduled",
     "performance": {
-      "totalRuns": 32,
+      "totalRuns": 33,
       "successfulRuns": 0,
-      "failedRuns": 32,
+      "failedRuns": 33,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300310
+      "lastExecutionTime": 300271
     },
     "logs": [
       {
@@ -2691,6 +2724,17 @@
         "timestamp": "2025-08-03T21:05:00.899Z",
         "level": "info",
         "message": "Job restarted"
+      },
+      {
+        "timestamp": "2025-08-03T21:20:01.049Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-03T21:20:01.049Z",
+        "level": "info",
+        "message": "Job restarted"
       }
     ]
   },
@@ -2772,6 +2816,327 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-03T13:14:46.301Z",
+    "lastRun": null,
+    "nextRun": "2025-08-04T06:00:00.000Z",
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "5823a9d2-c3a7-4457-ae27-2a61ecb1c5a4",
+    "name": "Deep Search - Market Research",
+    "schedule": "0 */6 * * *",
+    "task": {
+      "type": "deep-search",
+      "service": "market-research",
+      "data": {
+        "query": "latest market trends technology 2024",
+        "depth": 3,
+        "sources": [
+          "news",
+          "blogs",
+          "social-media"
+        ]
+      }
+    },
+    "enabled": true,
+    "priority": "high",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-03T21:22:30.200Z",
+    "lastRun": null,
+    "nextRun": "2025-08-04T03:00:00.000Z",
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "5714d191-9d1c-4ea4-9b45-330293a85b7f",
+    "name": "Content Generation - Blog Posts",
+    "schedule": "0 9 * * *",
+    "task": {
+      "type": "content-generation",
+      "service": "blog-posts",
+      "data": {
+        "topic": "technology trends",
+        "wordCount": 1000,
+        "seoOptimization": true
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-03T21:22:30.206Z",
+    "lastRun": null,
+    "nextRun": "2025-08-04T12:00:00.000Z",
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "b6540934-f32c-4b34-83bc-285b2c6d67b4",
+    "name": "Data Analysis - Performance Review",
+    "schedule": "0 2 * * *",
+    "task": {
+      "type": "data-analysis",
+      "service": "performance-review",
+      "data": {
+        "dataset": "system_metrics",
+        "analysisType": "trend",
+        "timeRange": "7d"
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-03T21:22:30.210Z",
+    "lastRun": null,
+    "nextRun": "2025-08-04T05:00:00.000Z",
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "cbcb4480-8b44-45c1-b280-ff304982eca7",
+    "name": "Web Research - Competitive Analysis",
+    "schedule": "0 */12 * * *",
+    "task": {
+      "type": "web-scraping",
+      "service": "competitive-analysis",
+      "data": {
+        "urls": [
+          "competitor1.com",
+          "competitor2.com",
+          "competitor3.com"
+        ],
+        "extractData": [
+          "pricing",
+          "features",
+          "content"
+        ]
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-03T21:22:30.212Z",
+    "lastRun": null,
+    "nextRun": "2025-08-04T03:00:00.000Z",
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "c1b56215-3cb0-498e-8f90-be16ac1cf09f",
+    "name": "SEO Optimization - Keyword Research",
+    "schedule": "0 6 * * 1",
+    "task": {
+      "type": "seo-optimizer",
+      "service": "keyword-research",
+      "data": {
+        "keywords": [
+          "technology",
+          "innovation",
+          "digital transformation"
+        ],
+        "analysisDepth": "comprehensive"
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-03T21:22:30.214Z",
+    "lastRun": null,
+    "nextRun": "2025-08-04T09:00:00.000Z",
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "0ea03566-f982-46bb-88d5-454195d207cd",
+    "name": "Social Media - Content Scheduling",
+    "schedule": "0 */4 * * *",
+    "task": {
+      "type": "social-media-manager",
+      "service": "post-scheduling",
+      "data": {
+        "platforms": [
+          "twitter",
+          "linkedin",
+          "facebook"
+        ],
+        "contentType": "automated",
+        "engagementOptimization": true
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-03T21:22:30.216Z",
+    "lastRun": null,
+    "nextRun": "2025-08-03T23:00:00.000Z",
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "6056acd7-3194-4f29-b511-7d905a206a18",
+    "name": "System Health Check",
+    "schedule": "*/15 * * * *",
+    "task": {
+      "type": "monitor",
+      "service": "health-check",
+      "data": {
+        "checkTypes": [
+          "performance",
+          "errors",
+          "resources"
+        ],
+        "alertThreshold": 0.8
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-03T21:22:30.218Z",
+    "lastRun": null,
+    "nextRun": "2025-08-03T21:30:00.000Z",
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "2c98f0f6-d2c6-464e-8ad4-5126e8d7127e",
+    "name": "Data Backup",
+    "schedule": "0 1 * * *",
+    "task": {
+      "type": "data-processor",
+      "service": "backup",
+      "data": {
+        "backupType": "full",
+        "retention": "30d",
+        "compression": true
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-03T21:22:30.220Z",
+    "lastRun": null,
+    "nextRun": "2025-08-04T04:00:00.000Z",
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "2cb7dc1c-ae52-42f3-b8ed-ea1e27f07ca8",
+    "name": "Quality Assurance - Content Review",
+    "schedule": "0 10 * * *",
+    "task": {
+      "type": "quality-assurance",
+      "service": "content-review",
+      "data": {
+        "reviewType": "automated",
+        "qualityThreshold": 0.9,
+        "autoCorrection": true
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-03T21:22:30.222Z",
+    "lastRun": null,
+    "nextRun": "2025-08-04T13:00:00.000Z",
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "894f2b49-6e5d-4bfb-8aa4-e7d1a538a56c",
+    "name": "Performance Optimization",
+    "schedule": "0 3 * * *",
+    "task": {
+      "type": "orchestrator",
+      "service": "system-optimization",
+      "data": {
+        "optimizationType": "comprehensive",
+        "includeAgents": true,
+        "includeTasks": true
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-03T21:22:30.225Z",
     "lastRun": null,
     "nextRun": "2025-08-04T06:00:00.000Z",
     "status": "scheduled",

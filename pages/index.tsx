@@ -1820,6 +1820,23 @@ const Home: NextPage = () => {
     },
     {
       id: 69,
+      type: 'ai-powered-autonomous-drone-delivery-logistics',
+      title: 'AI-Powered Autonomous Drone Delivery & Logistics',
+      description: 'Revolutionize your logistics with AI-powered autonomous drone delivery. Real-time tracking, intelligent route optimization, and seamless marketplace integration.',
+      cta: 'Deploy Drones',
+      ctaLink: '/ai-powered-autonomous-drone-delivery-logistics',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/ai-powered-autonomous-drone-delivery-logistics',
+      features: [
+        { icon: '🚁', title: 'Autonomous Fleet', description: 'AI-powered drone fleet management with real-time monitoring and control' },
+        { icon: '🗺️', title: 'Smart Routing', description: 'Intelligent route optimization considering weather, airspace, and traffic' },
+        { icon: '📦', title: 'Express Delivery', description: 'Lightning-fast delivery with 98.4% success rate and 12-minute average' },
+        { icon: '🏢', title: 'Logistics Hubs', description: 'Strategic distribution centers with charging and maintenance facilities' }
+      ],
+      bgClass: 'bg-gradient-to-br from-blue-900 via-cyan-900 to-slate-900'
+    },
+    {
+      id: 70,
       type: 'waitlist',
       title: 'Join the Waitlist',
       description: 'Be among the first to experience the future of AI-powered marketplace. Sign up for early access and exclusive benefits.',
