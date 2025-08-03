@@ -485,6 +485,23 @@ const Home: NextPage = () => {
     },
     {
       id: 24,
+      type: 'ai-powered-space-exploration-satellite-management',
+      title: 'AI-Powered Space Exploration & Satellite Management',
+      description: 'Advanced AI-powered space exploration and satellite management platform with orbital tracking, mission planning, and intelligent space analytics.',
+      cta: 'Track Satellites',
+      ctaLink: '/ai-powered-space-exploration-satellite-management',
+      secondaryCta: 'Plan Mission',
+      secondaryCtaLink: '/ai-powered-space-exploration-satellite-management',
+      features: [
+        { icon: '🛰️', title: 'Satellite Tracking', description: 'Real-time satellite tracking and orbital monitoring' },
+        { icon: '🚀', title: 'Mission Planning', description: 'AI-powered space mission planning and optimization' },
+        { icon: '🛤️', title: 'Orbital Analysis', description: 'Advanced orbital trajectory analysis and optimization' },
+        { icon: '🏗️', title: 'Space Stations', description: 'Space station management and crew coordination' }
+      ],
+      bgClass: 'bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-900'
+    },
+    {
+      id: 25,
       type: 'dispute-resolution',
       title: 'Dispute Resolution Center',
       description: 'Professional dispute resolution services for marketplace conflicts with mediation, arbitration, and fair resolution processes.',
@@ -500,7 +517,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-orange-900 via-red-900 to-orange-900'
     },
     {
-      id: 25,
+      id: 26,
       type: 'skill-verification',
       title: 'Skill Verification & Certification',
       description: 'Comprehensive skill verification and certification system for marketplace users. Validate expertise, earn certifications, and build credibility.',
@@ -516,7 +533,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-blue-900 via-cyan-900 to-blue-900'
     },
     {
-      id: 26,
+      id: 27,
       type: 'marketplace-pricing',
       title: 'Marketplace Pricing & Commission',
       description: 'Transparent pricing structure and commission system for marketplace participants. Choose the right tier and maximize your revenue potential.',
@@ -532,7 +549,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900'
     },
                   {
-                id: 27,
+                id: 28,
                 type: 'referral-affiliate',
                 title: 'Referral & Affiliate System',
                 description: 'Grow your network and earn rewards by referring others to the marketplace. Join our affiliate program and build sustainable income.',
@@ -548,7 +565,7 @@ const Home: NextPage = () => {
                 bgClass: 'bg-gradient-to-br from-green-900 via-emerald-900 to-green-900'
               },
               {
-                id: 28,
+                id: 29,
                 type: 'equipment-rental',
                 title: 'Equipment Rental & Management',
                 description: 'Rent professional equipment for your projects. Track availability, manage maintenance, and access high-quality tools and machinery.',
@@ -564,7 +581,7 @@ const Home: NextPage = () => {
                 bgClass: 'bg-gradient-to-br from-orange-900 via-red-900 to-orange-900'
               },
               {
-                id: 29,
+                id: 30,
                 type: 'service-categories',
                 title: 'Service Categories & Specialization',
                 description: 'Discover specialized services across diverse categories. Find expert providers, explore detailed subcategories, and access category-specific features.',
