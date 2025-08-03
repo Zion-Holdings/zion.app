@@ -705,6 +705,23 @@ const Home: NextPage = () => {
     },
     {
       id: 36,
+      type: 'ai-powered-social-media-community',
+      title: 'AI-Powered Social Media & Community',
+      description: 'Advanced AI-powered social media and community platform with social networking, community management, and intelligent social analytics.',
+      cta: 'Join Community',
+      ctaLink: '/ai-powered-social-media-community',
+      secondaryCta: 'View Analytics',
+      secondaryCtaLink: '/ai-powered-social-media-community',
+      features: [
+        { icon: '👥', title: 'Social Networking', description: 'AI-powered social platforms, professional networks, and interest-based communities' },
+        { icon: '🏘️', title: 'Community Management', description: 'Community moderation, user management, and content curation' },
+        { icon: '🛡️', title: 'Content Moderation', description: 'Automated moderation, content filtering, and spam detection' },
+        { icon: '📊', title: 'Social Analytics', description: 'Engagement analytics, trend analysis, and sentiment analysis' }
+      ],
+      bgClass: 'bg-gradient-to-br from-teal-900 via-cyan-900 to-teal-900'
+    },
+    {
+      id: 37,
       type: 'skill-verification',
       title: 'Skill Verification & Certification',
       description: 'Comprehensive skill verification and certification system for marketplace users. Validate expertise, earn certifications, and build credibility.',
@@ -720,7 +737,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-blue-900 via-cyan-900 to-blue-900'
     },
     {
-      id: 39,
+      id: 40,
       type: 'marketplace-pricing',
       title: 'Marketplace Pricing & Commission',
       description: 'Transparent pricing structure and commission system for marketplace participants. Choose the right tier and maximize your revenue potential.',
@@ -736,7 +753,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900'
     },
                   {
-                id: 40,
+                id: 41,
                 type: 'referral-affiliate',
                 title: 'Referral & Affiliate System',
                 description: 'Grow your network and earn rewards by referring others to the marketplace. Join our affiliate program and build sustainable income.',
@@ -752,7 +769,7 @@ const Home: NextPage = () => {
                 bgClass: 'bg-gradient-to-br from-green-900 via-emerald-900 to-green-900'
               },
               {
-                id: 41,
+                id: 42,
                 type: 'equipment-rental',
                 title: 'Equipment Rental & Management',
                 description: 'Rent professional equipment for your projects. Track availability, manage maintenance, and access high-quality tools and machinery.',
@@ -768,7 +785,7 @@ const Home: NextPage = () => {
                 bgClass: 'bg-gradient-to-br from-orange-900 via-red-900 to-orange-900'
               },
               {
-                id: 42,
+                id: 43,
                 type: 'service-categories',
                 title: 'Service Categories & Specialization',
                 description: 'Discover specialized services across diverse categories. Find expert providers, explore detailed subcategories, and access category-specific features.',
