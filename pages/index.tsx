@@ -534,7 +534,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-orange-900 via-red-900 to-orange-900'
     },
     {
-      id: 26,
+      id: 27,
       type: 'skill-verification',
       title: 'Skill Verification & Certification',
       description: 'Comprehensive skill verification and certification system for marketplace users. Validate expertise, earn certifications, and build credibility.',
