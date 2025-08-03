@@ -570,6 +570,23 @@ const Home: NextPage = () => {
     },
     {
       id: 29,
+      type: 'ai-powered-energy-management-renewable-energy',
+      title: 'AI-Powered Energy Management & Renewable Energy',
+      description: 'Advanced AI-powered energy management and renewable energy platform with smart grid optimization, energy analytics, and intelligent energy insights.',
+      cta: 'Monitor Energy',
+      ctaLink: '/ai-powered-energy-management-renewable-energy',
+      secondaryCta: 'Optimize Grid',
+      secondaryCtaLink: '/ai-powered-energy-management-renewable-energy',
+      features: [
+        { icon: '⚡', title: 'Energy Monitoring', description: 'Real-time energy monitoring with AI-powered optimization and analytics' },
+        { icon: '🌱', title: 'Renewable Energy', description: 'Solar, wind, hydro, and other renewable energy system management' },
+        { icon: '🔌', title: 'Smart Grid', description: 'Intelligent grid management with load balancing and stability optimization' },
+        { icon: '📊', title: 'Energy Analytics', description: 'Comprehensive energy analytics and cost optimization insights' }
+      ],
+      bgClass: 'bg-gradient-to-br from-yellow-900 via-orange-900 to-yellow-900'
+    },
+    {
+      id: 30,
       type: 'dispute-resolution',
       title: 'Dispute Resolution Center',
       description: 'Professional dispute resolution services for marketplace conflicts with mediation, arbitration, and fair resolution processes.',
@@ -585,7 +602,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-orange-900 via-red-900 to-orange-900'
     },
     {
-      id: 30,
+      id: 31,
       type: 'skill-verification',
       title: 'Skill Verification & Certification',
       description: 'Comprehensive skill verification and certification system for marketplace users. Validate expertise, earn certifications, and build credibility.',
@@ -601,7 +618,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-blue-900 via-cyan-900 to-blue-900'
     },
     {
-      id: 31,
+      id: 32,
       type: 'marketplace-pricing',
       title: 'Marketplace Pricing & Commission',
       description: 'Transparent pricing structure and commission system for marketplace participants. Choose the right tier and maximize your revenue potential.',
@@ -617,7 +634,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900'
     },
                   {
-                id: 32,
+                id: 33,
                 type: 'referral-affiliate',
                 title: 'Referral & Affiliate System',
                 description: 'Grow your network and earn rewards by referring others to the marketplace. Join our affiliate program and build sustainable income.',
@@ -633,7 +650,7 @@ const Home: NextPage = () => {
                 bgClass: 'bg-gradient-to-br from-green-900 via-emerald-900 to-green-900'
               },
               {
-                id: 33,
+                id: 34,
                 type: 'equipment-rental',
                 title: 'Equipment Rental & Management',
                 description: 'Rent professional equipment for your projects. Track availability, manage maintenance, and access high-quality tools and machinery.',
@@ -649,7 +666,7 @@ const Home: NextPage = () => {
                 bgClass: 'bg-gradient-to-br from-orange-900 via-red-900 to-orange-900'
               },
               {
-                id: 34,
+                id: 35,
                 type: 'service-categories',
                 title: 'Service Categories & Specialization',
                 description: 'Discover specialized services across diverse categories. Find expert providers, explore detailed subcategories, and access category-specific features.',
