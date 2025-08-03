@@ -654,6 +654,23 @@ const Home: NextPage = () => {
     },
     {
       id: 33,
+      type: 'ai-powered-education-training',
+      title: 'AI-Powered Education & Training',
+      description: 'Advanced AI-powered education and training platform with smart learning, educational analytics, and intelligent educational optimization.',
+      cta: 'Start Learning',
+      ctaLink: '/ai-powered-education-training',
+      secondaryCta: 'View Analytics',
+      secondaryCtaLink: '/ai-powered-education-training',
+      features: [
+        { icon: '📚', title: 'Smart Learning', description: 'AI-powered online courses, virtual classrooms, and adaptive learning systems' },
+        { icon: '📊', title: 'Educational Analytics', description: 'Student performance analytics, learning patterns, and content effectiveness' },
+        { icon: '🏋️', title: 'Personalized Training', description: 'Adaptive curriculum, personalized pathways, and skill gap analysis' },
+        { icon: '📈', title: 'Educational Optimization', description: 'Content optimization, curriculum design, and assessment improvement' }
+      ],
+      bgClass: 'bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-900'
+    },
+    {
+      id: 34,
       type: 'skill-verification',
       title: 'Skill Verification & Certification',
       description: 'Comprehensive skill verification and certification system for marketplace users. Validate expertise, earn certifications, and build credibility.',
