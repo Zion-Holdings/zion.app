@@ -739,6 +739,23 @@ const Home: NextPage = () => {
     },
     {
       id: 38,
+      type: 'ai-powered-mixed-reality-spatial-computing',
+      title: 'AI-Powered Mixed Reality & Spatial Computing',
+      description: 'Advanced AI-powered mixed reality and spatial computing platform with immersive experiences, spatial computing, and intelligent mixed reality optimization.',
+      cta: 'Enter Reality',
+      ctaLink: '/ai-powered-mixed-reality-spatial-computing',
+      secondaryCta: 'View Analytics',
+      secondaryCtaLink: '/ai-powered-mixed-reality-spatial-computing',
+      features: [
+        { icon: '🥽', title: 'Mixed Reality Experiences', description: 'AI-powered AR overlays, VR immersion, and MR blending experiences' },
+        { icon: '🗺️', title: 'Spatial Computing', description: 'Spatial mapping, environment understanding, and object recognition' },
+        { icon: '🔄', title: 'Digital Twins', description: 'Physical twins, virtual twins, and predictive twin analytics' },
+        { icon: '⚡', title: 'Immersive Technology', description: 'Experience optimization, content creation, and interaction design' }
+      ],
+      bgClass: 'bg-gradient-to-br from-violet-900 via-purple-900 to-violet-900'
+    },
+    {
+      id: 39,
       type: 'skill-verification',
       title: 'Skill Verification & Certification',
       description: 'Comprehensive skill verification and certification system for marketplace users. Validate expertise, earn certifications, and build credibility.',
@@ -769,22 +786,22 @@ const Home: NextPage = () => {
       ],
       bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900'
     },
-                  {
-                id: 42,
-                type: 'referral-affiliate',
-                title: 'Referral & Affiliate System',
-                description: 'Grow your network and earn rewards by referring others to the marketplace. Join our affiliate program and build sustainable income.',
-                cta: 'Start Referring',
-                ctaLink: '/referral-affiliate',
-                secondaryCta: 'Join Affiliate Program',
-                secondaryCtaLink: '/referral-affiliate',
-                features: [
-                  { icon: '🤝', title: 'Referral Tracking', description: 'Track referrals and earn bonuses for successful conversions' },
-                  { icon: '💼', title: 'Affiliate Partnerships', description: 'Build partnerships and earn commissions from referrals' },
-                  { icon: '💰', title: 'Bonus System', description: 'Earn rewards and bonuses for successful referrals' }
-                ],
-                bgClass: 'bg-gradient-to-br from-green-900 via-emerald-900 to-green-900'
-              },
+                      {
+      id: 43,
+      type: 'referral-affiliate',
+      title: 'Referral & Affiliate System',
+      description: 'Grow your network and earn rewards by referring others to the marketplace. Join our affiliate program and build sustainable income.',
+      cta: 'Start Referring',
+      ctaLink: '/referral-affiliate',
+      secondaryCta: 'Join Affiliate Program',
+      secondaryCtaLink: '/referral-affiliate',
+      features: [
+        { icon: '🤝', title: 'Referral Tracking', description: 'Track referrals and earn bonuses for successful conversions' },
+        { icon: '💼', title: 'Affiliate Partnerships', description: 'Build partnerships and earn commissions from referrals' },
+        { icon: '💰', title: 'Bonus System', description: 'Earn rewards and bonuses for successful referrals' }
+      ],
+      bgClass: 'bg-gradient-to-br from-green-900 via-emerald-900 to-green-900'
+    },
               {
                 id: 43,
                 type: 'equipment-rental',
