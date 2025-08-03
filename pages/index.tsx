@@ -1854,6 +1854,23 @@ const Home: NextPage = () => {
     },
     {
       id: 71,
+      type: 'ai-powered-neural-interface-bci-system',
+      title: 'AI-Powered Neural Interface & BCI System',
+      description: 'Experience direct brain-computer interface with AI-powered neural interface system. Cognitive enhancement, thought control, and brain-computer communication.',
+      cta: 'Connect Brain',
+      ctaLink: '/ai-powered-neural-interface-bci-system',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/ai-powered-neural-interface-bci-system',
+      features: [
+        { icon: '🧠', title: 'Brain-Computer Interface', description: 'Direct neural signal processing and brain-computer communication' },
+        { icon: '⚡', title: 'Real-time Signals', description: 'Live monitoring of alpha, beta, theta, delta, and gamma brain waves' },
+        { icon: '🎯', title: 'Cognitive Enhancement', description: 'Memory, attention, creativity, and problem-solving training programs' },
+        { icon: '💻', title: 'Thought Control', description: 'Control computers and applications through neural signals' }
+      ],
+      bgClass: 'bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900'
+    },
+    {
+      id: 72,
       type: 'waitlist',
       title: 'Join the Waitlist',
       description: 'Be among the first to experience the future of AI-powered marketplace. Sign up for early access and exclusive benefits.',
@@ -3397,6 +3414,41 @@ const Home: NextPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {section.features.map((feature: any, index: number) => (
                   <div key={index} className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-6 rounded-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300">
+                    <div className="text-3xl mb-4">{feature.icon}</div>
+                    <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+                    <p className="text-gray-300 text-sm">{feature.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )
+
+      case 'ai-powered-neural-interface-bci-system':
+        return (
+          <div className="py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  {section.title}
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                  {section.description}
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                  <Link href={section.ctaLink} className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-indigo-500/25 transform hover:scale-105">
+                    {section.cta}
+                  </Link>
+                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                    {section.secondaryCta}
+                  </Link>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {section.features.map((feature: any, index: number) => (
+                  <div key={index} className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-6 rounded-lg border border-white/10 hover:border-indigo-500/50 transition-all duration-300">
                     <div className="text-3xl mb-4">{feature.icon}</div>
                     <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
                     <p className="text-gray-300 text-sm">{feature.description}</p>
