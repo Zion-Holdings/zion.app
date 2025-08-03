@@ -1905,6 +1905,23 @@ const Home: NextPage = () => {
     },
     {
       id: 74,
+      type: 'ai-powered-quantum-annealing-optimization',
+      title: 'AI-Powered Quantum Annealing & Optimization',
+      description: 'Advanced quantum annealing and optimization with AI-powered quantum algorithms, machine learning, and error correction.',
+      cta: 'Start Annealing',
+      ctaLink: '/ai-powered-quantum-annealing-optimization',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/ai-powered-quantum-annealing-optimization',
+      features: [
+        { icon: '🔥', title: 'Quantum Annealing', description: 'Advanced quantum annealing with energy optimization and problem solving' },
+        { icon: '📈', title: 'Optimization', description: 'Quantum optimization algorithms for complex combinatorial problems' },
+        { icon: '🧠', title: 'Quantum ML', description: 'Quantum machine learning with neural networks and feature maps' },
+        { icon: '🔬', title: 'Algorithms', description: 'Grover, Shor, and quantum Fourier transform algorithms' }
+      ],
+      bgClass: 'bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-900'
+    },
+    {
+      id: 75,
       type: 'waitlist',
       title: 'Join the Waitlist',
       description: 'Be among the first to experience the future of AI-powered marketplace. Sign up for early access and exclusive benefits.',
@@ -3553,6 +3570,41 @@ const Home: NextPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {section.features.map((feature: any, index: number) => (
                   <div key={index} className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-6 rounded-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300">
+                    <div className="text-3xl mb-4">{feature.icon}</div>
+                    <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+                    <p className="text-gray-300 text-sm">{feature.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )
+
+      case 'ai-powered-quantum-annealing-optimization':
+        return (
+          <div className="py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  {section.title}
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                  {section.description}
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                  <Link href={section.ctaLink} className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-indigo-500/25 transform hover:scale-105">
+                    {section.cta}
+                  </Link>
+                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                    {section.secondaryCta}
+                  </Link>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {section.features.map((feature: any, index: number) => (
+                  <div key={index} className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-6 rounded-lg border border-white/10 hover:border-indigo-500/50 transition-all duration-300">
                     <div className="text-3xl mb-4">{feature.icon}</div>
                     <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
                     <p className="text-gray-300 text-sm">{feature.description}</p>
