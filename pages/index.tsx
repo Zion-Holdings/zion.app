@@ -285,6 +285,23 @@ const Home: NextPage = () => {
     },
     {
       id: 16,
+      type: 'ai-project-management',
+      title: 'AI-Powered Project Management',
+      description: 'Intelligent project management with AI-powered automation, workflow orchestration, and predictive insights for optimal project delivery.',
+      cta: 'Manage Projects',
+      ctaLink: '/ai-project-management',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/ai-project-management',
+      features: [
+        { icon: '🤖', title: 'AI Insights', description: 'Predictive analytics and intelligent recommendations' },
+        { icon: '⚙️', title: 'Workflow Automation', description: 'Automated workflows and process optimization' },
+        { icon: '📊', title: 'Smart Analytics', description: 'Real-time project analytics and performance tracking' },
+        { icon: '🎯', title: 'Resource Optimization', description: 'AI-powered resource allocation and team management' }
+      ],
+      bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900'
+    },
+    {
+      id: 16,
       type: 'seo-optimization',
       title: 'SEO Optimization',
       description: 'Comprehensive SEO tools for marketplace visibility, keyword research, and search engine performance.',
@@ -1853,6 +1870,42 @@ const Home: NextPage = () => {
                 <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
                   <Link href={section.ctaLink} className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 transform hover:scale-105">
                     <span className="mr-2">🎯</span>
+                    {section.cta}
+                  </Link>
+                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                    {section.secondaryCta}
+                  </Link>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {section.features.map((feature: any, index: number) => (
+                  <div key={index} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="text-4xl mb-4">{feature.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                    <p className="text-gray-300">{feature.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )
+
+      case 'ai-project-management':
+        return (
+          <div className="py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  {section.title}
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                  {section.description}
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                  <Link href={section.ctaLink} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                    <span className="mr-2">🤖</span>
                     {section.cta}
                   </Link>
                   <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
@@ -4463,6 +4516,9 @@ const Home: NextPage = () => {
               </Link>
               <Link href="/investor-matchmaking" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Investors
+              </Link>
+              <Link href="/ai-project-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Projects
               </Link>
               <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 About
