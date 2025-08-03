@@ -1123,6 +1123,23 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-emerald-900 via-teal-900 to-slate-900'
     },
     {
+      id: 60,
+      type: 'executive-dashboard',
+      title: 'Executive Dashboard',
+      description: 'High-level strategic insights and executive reporting for C-level executives and board members. Comprehensive KPI tracking, financial analysis, and strategic initiatives monitoring.',
+      features: [
+        '📈 Strategic KPIs',
+        '💰 Financial Analysis',
+        '🎯 Initiative Tracking',
+        '📊 Market Insights'
+      ],
+      cta: 'View Dashboard',
+      ctaLink: '/executive-dashboard',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/executive-dashboard',
+      bgClass: 'bg-gradient-to-br from-indigo-900 via-blue-900 to-slate-900'
+    },
+    {
       id: 59,
       type: 'inbox-messaging',
       title: 'Unified Inbox & Messaging Center',
@@ -4306,6 +4323,9 @@ const Home: NextPage = () => {
               <Link href="/webhook-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Webhooks
               </Link>
+              <Link href="/executive-dashboard" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Executive
+              </Link>
               <Link href="/blog" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Blog
               </Link>
@@ -4388,6 +4408,9 @@ const Home: NextPage = () => {
                   </Link>
                   <Link href="/webhook-management" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                     Webhooks
+                  </Link>
+                  <Link href="/executive-dashboard" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Executive
                   </Link>
                   <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                     Live Chat
@@ -4508,6 +4531,7 @@ const Home: NextPage = () => {
                 <li><Link href="/auth/signup" className="hover:text-white transition-colors">Sign Up</Link></li>
                 <li><Link href="/inbox" className="hover:text-white transition-colors">Inbox</Link></li>
                 <li><Link href="/webhook-management" className="hover:text-white transition-colors">Webhooks</Link></li>
+                <li><Link href="/executive-dashboard" className="hover:text-white transition-colors">Executive</Link></li>
                 <li><Link href="/dashboard" className="hover:text-white transition-colors">Dashboard</Link></li>
                 <li><Link href="/analytics" className="hover:text-white transition-colors">Analytics</Link></li>
                 <li><Link href="/ai-virtual-assistant" className="hover:text-white transition-colors">AI Assistant</Link></li>
