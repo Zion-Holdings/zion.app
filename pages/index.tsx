@@ -468,6 +468,23 @@ const Home: NextPage = () => {
     },
     {
       id: 23,
+      type: 'ai-powered-cryptocurrency-digital-asset-management',
+      title: 'AI-Powered Cryptocurrency & Digital Asset Management',
+      description: 'Advanced AI-powered cryptocurrency and digital asset management platform with trading strategies, portfolio optimization, and intelligent investment insights.',
+      cta: 'Start Trading',
+      ctaLink: '/ai-powered-cryptocurrency-digital-asset-management',
+      secondaryCta: 'Manage Portfolio',
+      secondaryCtaLink: '/ai-powered-cryptocurrency-digital-asset-management',
+      features: [
+        { icon: '₿', title: 'Cryptocurrency Trading', description: 'AI-powered cryptocurrency trading with real-time analysis' },
+        { icon: '💎', title: 'Digital Asset Management', description: 'Comprehensive digital asset portfolio management' },
+        { icon: '📈', title: 'Portfolio Optimization', description: 'AI-driven portfolio optimization and rebalancing' },
+        { icon: '🤖', title: 'Trading Strategies', description: 'Intelligent trading strategies and investment insights' }
+      ],
+      bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900'
+    },
+    {
+      id: 24,
       type: 'dispute-resolution',
       title: 'Dispute Resolution Center',
       description: 'Professional dispute resolution services for marketplace conflicts with mediation, arbitration, and fair resolution processes.',
@@ -483,7 +500,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-orange-900 via-red-900 to-orange-900'
     },
     {
-      id: 24,
+      id: 25,
       type: 'skill-verification',
       title: 'Skill Verification & Certification',
       description: 'Comprehensive skill verification and certification system for marketplace users. Validate expertise, earn certifications, and build credibility.',
@@ -499,7 +516,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-blue-900 via-cyan-900 to-blue-900'
     },
     {
-      id: 25,
+      id: 26,
       type: 'marketplace-pricing',
       title: 'Marketplace Pricing & Commission',
       description: 'Transparent pricing structure and commission system for marketplace participants. Choose the right tier and maximize your revenue potential.',
@@ -515,7 +532,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900'
     },
                   {
-                id: 26,
+                id: 27,
                 type: 'referral-affiliate',
                 title: 'Referral & Affiliate System',
                 description: 'Grow your network and earn rewards by referring others to the marketplace. Join our affiliate program and build sustainable income.',
@@ -531,7 +548,7 @@ const Home: NextPage = () => {
                 bgClass: 'bg-gradient-to-br from-green-900 via-emerald-900 to-green-900'
               },
               {
-                id: 27,
+                id: 28,
                 type: 'equipment-rental',
                 title: 'Equipment Rental & Management',
                 description: 'Rent professional equipment for your projects. Track availability, manage maintenance, and access high-quality tools and machinery.',
