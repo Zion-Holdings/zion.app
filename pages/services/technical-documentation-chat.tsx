@@ -37,7 +37,7 @@ const TechnicalDocumentationChatPage: NextPage = () => {
                 Expert discussion about technical documentation implementation and best practices
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>trend-analysis • how-to-guide • real-world-examples</span>
+                <span>professional-technical • trend-analysis • solution-showcase</span>
               </div>
             </div>
           </div>
