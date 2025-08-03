@@ -756,6 +756,23 @@ const Home: NextPage = () => {
     },
     {
       id: 39,
+      type: 'ai-powered-predictive-analytics-machine-learning',
+      title: 'AI-Powered Predictive Analytics & Machine Learning',
+      description: 'Advanced AI-powered predictive analytics and machine learning platform with predictive modeling, machine learning algorithms, and intelligent analytics optimization.',
+      cta: 'Build Models',
+      ctaLink: '/ai-powered-predictive-analytics-machine-learning',
+      secondaryCta: 'View Analytics',
+      secondaryCtaLink: '/ai-powered-predictive-analytics-machine-learning',
+      features: [
+        { icon: '🧠', title: 'Predictive Models', description: 'Regression, classification, clustering, time-series, and anomaly detection models' },
+        { icon: '⚡', title: 'Machine Learning Algorithms', description: 'Supervised, unsupervised, reinforcement learning, and neural networks' },
+        { icon: '🕸️', title: 'Deep Learning', description: 'CNN, RNN, LSTM, transformer, GAN, and autoencoder models' },
+        { icon: '🎯', title: 'Analytics Optimization', description: 'Performance optimization, feature engineering, and hyperparameter tuning' }
+      ],
+      bgClass: 'bg-gradient-to-br from-emerald-900 via-green-900 to-emerald-900'
+    },
+    {
+      id: 40,
       type: 'skill-verification',
       title: 'Skill Verification & Certification',
       description: 'Comprehensive skill verification and certification system for marketplace users. Validate expertise, earn certifications, and build credibility.',
@@ -803,7 +820,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-green-900 via-emerald-900 to-green-900'
     },
               {
-                id: 44,
+                id: 45,
                 type: 'equipment-rental',
                 title: 'Equipment Rental & Management',
                 description: 'Rent professional equipment for your projects. Track availability, manage maintenance, and access high-quality tools and machinery.',
@@ -819,7 +836,7 @@ const Home: NextPage = () => {
                 bgClass: 'bg-gradient-to-br from-orange-900 via-red-900 to-orange-900'
               },
               {
-                id: 45,
+                id: 46,
                 type: 'service-categories',
                 title: 'Service Categories & Specialization',
                 description: 'Discover specialized services across diverse categories. Find expert providers, explore detailed subcategories, and access category-specific features.',
