@@ -218,15 +218,15 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-03T01:24:46.023Z",
-    "lastRun": "2025-08-03T17:15:00.540Z",
-    "nextRun": "2025-08-03T17:30:00.000Z",
+    "lastRun": "2025-08-03T17:30:00.874Z",
+    "nextRun": "2025-08-03T17:45:00.000Z",
     "status": "scheduled",
     "performance": {
-      "totalRuns": 16,
+      "totalRuns": 17,
       "successfulRuns": 0,
-      "failedRuns": 16,
+      "failedRuns": 17,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300978
+      "lastExecutionTime": 300036
     },
     "logs": [
       {
@@ -392,6 +392,17 @@
       },
       {
         "timestamp": "2025-08-03T17:20:01.518Z",
+        "level": "info",
+        "message": "Job restarted"
+      },
+      {
+        "timestamp": "2025-08-03T17:35:00.910Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-03T17:35:00.910Z",
         "level": "info",
         "message": "Job restarted"
       }
@@ -676,15 +687,15 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-03T13:13:14.744Z",
-    "lastRun": "2025-08-03T17:15:00.541Z",
-    "nextRun": "2025-08-03T17:30:00.000Z",
+    "lastRun": "2025-08-03T17:30:00.875Z",
+    "nextRun": "2025-08-03T17:45:00.000Z",
     "status": "scheduled",
     "performance": {
-      "totalRuns": 16,
+      "totalRuns": 17,
       "successfulRuns": 0,
-      "failedRuns": 16,
+      "failedRuns": 17,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300983
+      "lastExecutionTime": 300044
     },
     "logs": [
       {
@@ -850,6 +861,17 @@
       },
       {
         "timestamp": "2025-08-03T17:20:01.524Z",
+        "level": "info",
+        "message": "Job restarted"
+      },
+      {
+        "timestamp": "2025-08-03T17:35:00.919Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-03T17:35:00.919Z",
         "level": "info",
         "message": "Job restarted"
       }
@@ -1164,15 +1186,15 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-03T13:13:35.982Z",
-    "lastRun": "2025-08-03T17:15:00.537Z",
-    "nextRun": "2025-08-03T17:30:00.000Z",
+    "lastRun": "2025-08-03T17:30:00.877Z",
+    "nextRun": "2025-08-03T17:45:00.000Z",
     "status": "scheduled",
     "performance": {
-      "totalRuns": 16,
+      "totalRuns": 17,
       "successfulRuns": 0,
-      "failedRuns": 16,
+      "failedRuns": 17,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300698
+      "lastExecutionTime": 300048
     },
     "logs": [
       {
@@ -1338,6 +1360,17 @@
       },
       {
         "timestamp": "2025-08-03T17:20:01.239Z",
+        "level": "info",
+        "message": "Job restarted"
+      },
+      {
+        "timestamp": "2025-08-03T17:35:00.925Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-03T17:35:00.925Z",
         "level": "info",
         "message": "Job restarted"
       }
@@ -1652,15 +1685,15 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-03T13:14:46.291Z",
-    "lastRun": "2025-08-03T17:15:00.539Z",
-    "nextRun": "2025-08-03T17:30:00.000Z",
+    "lastRun": "2025-08-03T17:30:00.877Z",
+    "nextRun": "2025-08-03T17:45:00.000Z",
     "status": "scheduled",
     "performance": {
-      "totalRuns": 17,
+      "totalRuns": 18,
       "successfulRuns": 0,
-      "failedRuns": 17,
+      "failedRuns": 18,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 300715
+      "lastExecutionTime": 300053
     },
     "logs": [
       {
@@ -1837,6 +1870,17 @@
       },
       {
         "timestamp": "2025-08-03T17:20:01.255Z",
+        "level": "info",
+        "message": "Job restarted"
+      },
+      {
+        "timestamp": "2025-08-03T17:35:00.930Z",
+        "level": "error",
+        "message": "Job failed: Task timeout",
+        "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-03T17:35:00.930Z",
         "level": "info",
         "message": "Job restarted"
       }
