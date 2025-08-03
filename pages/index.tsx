@@ -550,7 +550,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-blue-900 via-cyan-900 to-blue-900'
     },
     {
-      id: 27,
+      id: 28,
       type: 'marketplace-pricing',
       title: 'Marketplace Pricing & Commission',
       description: 'Transparent pricing structure and commission system for marketplace participants. Choose the right tier and maximize your revenue potential.',
@@ -566,7 +566,7 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900'
     },
                   {
-                id: 28,
+                id: 29,
                 type: 'referral-affiliate',
                 title: 'Referral & Affiliate System',
                 description: 'Grow your network and earn rewards by referring others to the marketplace. Join our affiliate program and build sustainable income.',
@@ -582,7 +582,7 @@ const Home: NextPage = () => {
                 bgClass: 'bg-gradient-to-br from-green-900 via-emerald-900 to-green-900'
               },
               {
-                id: 29,
+                id: 30,
                 type: 'equipment-rental',
                 title: 'Equipment Rental & Management',
                 description: 'Rent professional equipment for your projects. Track availability, manage maintenance, and access high-quality tools and machinery.',
