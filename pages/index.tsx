@@ -1191,6 +1191,23 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-cyan-900 via-blue-900 to-slate-900'
     },
     {
+      id: 64,
+      type: 'help-desk-support',
+      title: 'Help Desk & Support Ticket System',
+      description: 'Comprehensive customer support management with ticket tracking, priority management, and support team coordination. Manage customer inquiries efficiently.',
+      features: [
+        '🎫 Ticket Management',
+        '👥 Agent Coordination',
+        '📊 Support Analytics',
+        '⚡ Priority Handling'
+      ],
+      cta: 'Manage Support',
+      ctaLink: '/help-desk-support',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/help-desk-support',
+      bgClass: 'bg-gradient-to-br from-orange-900 via-red-900 to-slate-900'
+    },
+    {
       id: 59,
       type: 'inbox-messaging',
       title: 'Unified Inbox & Messaging Center',
@@ -4386,6 +4403,9 @@ const Home: NextPage = () => {
               <Link href="/data-warehouse-etl" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Data Warehouse
               </Link>
+              <Link href="/help-desk-support" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Help Desk
+              </Link>
               <Link href="/blog" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Blog
               </Link>
@@ -4480,6 +4500,9 @@ const Home: NextPage = () => {
                   </Link>
                   <Link href="/data-warehouse-etl" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                     Data Warehouse
+                  </Link>
+                  <Link href="/help-desk-support" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                    Help Desk
                   </Link>
                   <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                     Live Chat
@@ -4604,6 +4627,7 @@ const Home: NextPage = () => {
                 <li><Link href="/compliance-governance" className="hover:text-white transition-colors">Compliance</Link></li>
                 <li><Link href="/workflow-designer" className="hover:text-white transition-colors">Workflows</Link></li>
                 <li><Link href="/data-warehouse-etl" className="hover:text-white transition-colors">Data Warehouse</Link></li>
+                <li><Link href="/help-desk-support" className="hover:text-white transition-colors">Help Desk</Link></li>
                 <li><Link href="/dashboard" className="hover:text-white transition-colors">Dashboard</Link></li>
                 <li><Link href="/analytics" className="hover:text-white transition-colors">Analytics</Link></li>
                 <li><Link href="/ai-virtual-assistant" className="hover:text-white transition-colors">AI Assistant</Link></li>
