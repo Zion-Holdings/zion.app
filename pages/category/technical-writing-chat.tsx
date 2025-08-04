@@ -37,7 +37,7 @@ const TechnicalWritingChatPage: NextPage = () => {
                 Expert discussion about technical writing services and opportunities
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>practical-implementation • best-practices • trend-discussion</span>
+                <span>collaborative-team • case-study • innovation-spotlight</span>
               </div>
             </div>
           </div>
