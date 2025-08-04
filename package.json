@@ -2,6 +2,10 @@
   "name": "bolt.new.zion.app",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.18.1",
+    "npm": ">=10.0.0"
+  },
   "scripts": {
     "sitemap": "node scripts/generate-sitemap.mjs",
     "dev": "next dev",
@@ -37,9 +41,9 @@
     "openai": "^5.11.0",
     "postcss": "^8.5.6",
     "puppeteer": "^24.15.0",
-    "react": "^18",
+    "react": "^18.3.1",
     "react-datepicker": "^8.4.0",
-    "react-dom": "^18",
+    "react-dom": "^18.3.1",
     "tailwindcss": "^4.1.11",
     "uuid": "^11.1.0"
   },

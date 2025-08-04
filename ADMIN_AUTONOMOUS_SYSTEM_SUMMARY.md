@@ -236,7 +236,7 @@ automation/admin-system/
 ## Technical Specifications
 
 ### Dependencies
-- Node.js 18+
+- Node.js 20+
 - npm packages: node-cron, axios, fs-extra, chalk, moment, lodash, commander, winston, node-fetch, cheerio, puppeteer
 
 ### Configuration

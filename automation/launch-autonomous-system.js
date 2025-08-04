@@ -48,8 +48,8 @@ class AutonomousSystemLauncher {
       const nodeVersion = process.version;
       const majorVersion = parseInt(nodeVersion.slice(1).split('.')[0]);
       
-      if (majorVersion < 18) {
-        throw new Error(`Node.js version ${nodeVersion} is too old. Please upgrade to Node.js 18 or higher.`);
+      if (majorVersion < 20) {
+        throw new Error(`Node.js version ${nodeVersion} is too old. Please upgrade to Node.js 20 or higher.`);
       }
       
       // Check if package.json exists
