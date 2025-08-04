@@ -37,7 +37,7 @@ const APIDevelopmentChatPage: NextPage = () => {
                 Expert discussion about api development implementation and best practices
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>innovative-futuristic • industry-insights • real-world-examples</span>
+                <span>collaborative-team • comparison-review • technical-tutorial</span>
               </div>
             </div>
           </div>
