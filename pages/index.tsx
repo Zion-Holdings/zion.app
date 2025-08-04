@@ -5847,6 +5847,7 @@ const Home: NextPage = () => {
                 <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
                 <li><Link href="/careers" className="hover:text-white transition-colors">Careers</Link></li>
                 <li><Link href="/help-center" className="hover:text-white transition-colors">Help Center</Link></li>
+                <li><Link href="/press" className="hover:text-white transition-colors">Press</Link></li>
                 <li><Link href="/quote-request" className="hover:text-white transition-colors">Request Quote</Link></li>
                 <li><Link href="/admin-dashboard" className="hover:text-white transition-colors">Admin</Link></li>
               </ul>
