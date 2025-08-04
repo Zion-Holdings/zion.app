@@ -5638,6 +5638,9 @@ const Home: NextPage = () => {
         <meta name="description" content="Zion - The first free AI-powered marketplace for high-tech products, on-demand IT services, AI talents, innovation, and equipment." />
         <meta name="keywords" content="AI marketplace, IT services, AI talents, equipment, innovation, Zion" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
+        <link rel="manifest" href="/site.webmanifest" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
@@ -5910,6 +5913,7 @@ const Home: NextPage = () => {
                 <li><Link href="/help-center" className="hover:text-white transition-colors">Help Center</Link></li>
                 <li><Link href="/press" className="hover:text-white transition-colors">Press</Link></li>
                 <li><Link href="/partners" className="hover:text-white transition-colors">Partners</Link></li>
+                <li><Link href="/security" className="hover:text-white transition-colors">Security</Link></li>
                 <li><Link href="/quote-request" className="hover:text-white transition-colors">Request Quote</Link></li>
                 <li><Link href="/admin-dashboard" className="hover:text-white transition-colors">Admin</Link></li>
               </ul>
