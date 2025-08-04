@@ -1,14 +1,26 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown, ChevronUp, Bell, User } from 'lucide-react'
+import SearchNavigation from './SearchNavigation'
+import { useHeader } from '../../src/contexts/HeaderContext'
 
-interface HeaderProps {
-  transparent?: boolean
+interface DropdownItem {
+  label: string
+  href: string
+  description?: string
 }
 
-const Header: React.FC<HeaderProps> = ({ transparent = false }) => {
+interface DropdownMenu {
+  label: string
+  items: DropdownItem[]
+}
+
+const Header: React.FC = () => {
+  const { isTransparent } = useHeader()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const dropdownRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({})
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,7 +52,72 @@ const Header: React.FC<HeaderProps> = ({ transparent = false }) => {
     }
   }, [isMenuOpen])
 
-  const bgClass = transparent && !isScrolled ? 'bg-transparent' : 'bg-black/20 backdrop-blur-md'
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element
+      if (activeDropdown && !target.closest('.dropdown-container')) {
+        setActiveDropdown(null)
+      }
+    }
+
+    if (activeDropdown) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [activeDropdown])
+
+  const bgClass = isTransparent && !isScrolled ? 'bg-transparent' : 'bg-black/20 backdrop-blur-md'
+
+  // Define dropdown menus
+  const dropdownMenus: DropdownMenu[] = [
+    {
+      label: 'Marketplace',
+      items: [
+        { label: 'Browse All', href: '/marketplace', description: 'Explore all marketplace items' },
+        { label: 'Services', href: '/services', description: 'IT and professional services' },
+        { label: 'Products', href: '/products', description: 'High-tech products and solutions' },
+        { label: 'Equipment', href: '/equipment', description: 'Computing and hardware' },
+        { label: 'Talents', href: '/talents', description: 'AI and tech professionals' }
+      ]
+    },
+    {
+      label: 'Tools',
+      items: [
+        { label: 'AI Service Matcher', href: '/ai-service-matcher', description: 'Find perfect services with AI' },
+        { label: 'Project Management', href: '/project-management', description: 'Manage your projects' },
+        { label: 'Analytics Dashboard', href: '/analytics-dashboard', description: 'Business intelligence tools' },
+        { label: 'Executive Dashboard', href: '/executive-dashboard', description: 'Executive overview and insights' },
+        { label: 'Inbox', href: '/inbox', description: 'Manage communications' }
+      ]
+    },
+    {
+      label: 'Business',
+      items: [
+        { label: 'Payment Processing', href: '/payment-processing', description: 'Secure payment solutions' },
+        { label: 'Escrow Services', href: '/escrow-services', description: 'Protected transactions' },
+        { label: 'Warranty Protection', href: '/warranty-protection', description: 'Product protection plans' },
+        { label: 'Invoice & Billing', href: '/invoice-billing', description: 'Financial management' },
+        { label: 'Dispute Resolution', href: '/dispute-resolution', description: 'Conflict resolution services' }
+      ]
+    },
+    {
+      label: 'Support',
+      items: [
+        { label: 'Help Desk', href: '/help-desk-support', description: 'Customer support portal' },
+        { label: 'Real-time Chat', href: '/real-time-chat', description: 'Live communication' },
+        { label: 'Notifications', href: '/notifications', description: 'Stay updated' },
+        { label: 'AI Customer Support', href: '/ai-powered-customer-support', description: 'AI-powered assistance' }
+      ]
+    }
+  ]
+
+  const toggleDropdown = (dropdownName: string) => {
+    setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName)
+  }
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${bgClass} border-b border-white/10 safe-area-top`}>
@@ -55,23 +132,48 @@ const Header: React.FC<HeaderProps> = ({ transparent = false }) => {
             </Link>
           </div>
 
-          {/* Desktop Navigation - Main Links */}
-          <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
-            <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              Marketplace
-            </Link>
-            <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              Services
-            </Link>
-            <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              Talents
-            </Link>
-            <Link href="/equipment" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              Equipment
-            </Link>
-            <Link href="/products" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              Products
-            </Link>
+          {/* Desktop Navigation - Dropdown Menus */}
+          <nav className="hidden lg:flex items-center space-x-2 xl:space-x-4">
+            {dropdownMenus.map((menu) => (
+              <div key={menu.label} className="relative dropdown-container">
+                <button
+                  onClick={() => toggleDropdown(menu.label)}
+                  className="flex items-center text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target"
+                  ref={(el) => {
+                    dropdownRefs.current[menu.label] = el
+                  }}
+                >
+                  {menu.label}
+                  {activeDropdown === menu.label ? (
+                    <ChevronUp className="ml-1 h-4 w-4" />
+                  ) : (
+                    <ChevronDown className="ml-1 h-4 w-4" />
+                  )}
+                </button>
+                
+                {activeDropdown === menu.label && (
+                  <div className="absolute top-full left-0 mt-1 w-64 bg-black/95 backdrop-blur-md border border-white/10 rounded-lg shadow-xl z-50">
+                    <div className="py-2">
+                      {menu.items.map((item) => (
+                        <Link
+                          key={item.label}
+                          href={item.href}
+                          className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
+                          onClick={() => setActiveDropdown(null)}
+                        >
+                          <div className="font-medium text-responsive-sm">{item.label}</div>
+                          {item.description && (
+                            <div className="text-xs text-gray-400 mt-1">{item.description}</div>
+                          )}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+
+            {/* Direct Links */}
             <Link href="/blog" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               Blog
             </Link>
@@ -83,52 +185,24 @@ const Header: React.FC<HeaderProps> = ({ transparent = false }) => {
             </Link>
           </nav>
 
-          {/* Desktop Navigation - Tools & Features */}
-          <nav className="hidden xl:flex items-center space-x-4">
-            <Link href="/inbox" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              Inbox
-            </Link>
-            <Link href="/executive-dashboard" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              Executive
-            </Link>
-            <Link href="/analytics-dashboard" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              Analytics
-            </Link>
-            <Link href="/project-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              Projects
-            </Link>
-            <Link href="/ai-service-matcher" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              AI Matcher
-            </Link>
-            <Link href="/help-desk-support" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              Support
-            </Link>
-          </nav>
-
-          {/* Desktop Navigation - Security & Payments */}
-          <nav className="hidden 2xl:flex items-center space-x-4">
-            <Link href="/escrow-services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              Escrow
-            </Link>
-            <Link href="/warranty-protection" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              Protection
-            </Link>
-            <Link href="/payment-processing" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              Payments
-            </Link>
-            <Link href="/invoice-billing" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              Billing
-            </Link>
-            <Link href="/dispute-resolution" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              Disputes
-            </Link>
-            <Link href="/compliance-governance" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              Compliance
-            </Link>
-          </nav>
-
-          {/* Auth Buttons */}
+          {/* Search and Auth Buttons */}
           <div className="flex items-center space-x-2 sm:space-x-4">
+            {/* Search */}
+            <SearchNavigation className="hidden md:block" />
+            
+            {/* Notifications */}
+            <Link href="/notifications" className="relative p-2 text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors touch-target">
+              <Bell className="h-5 w-5" />
+              <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full"></span>
+            </Link>
+            
+            {/* User Menu */}
+            <Link href="/profile" className="hidden sm:flex items-center space-x-2 p-2 text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors touch-target">
+              <User className="h-5 w-5" />
+              <span className="text-responsive-sm font-medium">Profile</span>
+            </Link>
+            
+            {/* Auth Buttons */}
             <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target hidden sm:block">
               Login
             </Link>

@@ -3,13 +3,16 @@ import Head from 'next/head'
 import { useState, useEffect, useCallback, useMemo } from 'react'
 import Link from 'next/link'
 import NotificationSystem from '../components/NotificationSystem'
-import Footer from '../components/ui/Footer'
+import { useHeaderTransparency } from '../src/hooks/useHeaderTransparency'
 
 const Home: NextPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [email, setEmail] = useState('')
   const [currentSection, setCurrentSection] = useState(0)
   const [isFooterPersistent, setIsFooterPersistent] = useState(false)
+  
+  // Set header to transparent for the home page
+  useHeaderTransparency(true)
 
 
 
@@ -5935,9 +5938,6 @@ const Home: NextPage = () => {
           </section>
         ))}
       </main>
-
-      {/* Footer */}
-      <Footer />
       
       {/* Notification System */}
       <NotificationSystem />
