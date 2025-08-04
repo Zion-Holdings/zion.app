@@ -347,11 +347,11 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-04T09:45:41.077Z",
-    "lastRun": null,
+    "lastRun": "2025-08-04T20:00:00.150Z",
     "nextRun": null,
-    "status": "scheduled",
+    "status": "running",
     "performance": {
-      "totalRuns": 0,
+      "totalRuns": 1,
       "successfulRuns": 0,
       "failedRuns": 0,
       "averageExecutionTime": 0,
@@ -380,11 +380,11 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-04T09:45:41.079Z",
-    "lastRun": "2025-08-04T16:15:00.412Z",
+    "lastRun": "2025-08-04T20:00:00.151Z",
     "nextRun": null,
-    "status": "scheduled",
+    "status": "running",
     "performance": {
-      "totalRuns": 1,
+      "totalRuns": 2,
       "successfulRuns": 0,
       "failedRuns": 1,
       "averageExecutionTime": 0,
@@ -709,11 +709,11 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-04T09:56:53.570Z",
-    "lastRun": null,
+    "lastRun": "2025-08-04T20:00:00.154Z",
     "nextRun": null,
-    "status": "scheduled",
+    "status": "running",
     "performance": {
-      "totalRuns": 0,
+      "totalRuns": 1,
       "successfulRuns": 0,
       "failedRuns": 0,
       "averageExecutionTime": 0,
@@ -907,11 +907,11 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-04T14:11:55.991Z",
-    "lastRun": null,
+    "lastRun": "2025-08-04T20:00:00.156Z",
     "nextRun": null,
-    "status": "scheduled",
+    "status": "running",
     "performance": {
-      "totalRuns": 0,
+      "totalRuns": 1,
       "successfulRuns": 0,
       "failedRuns": 0,
       "averageExecutionTime": 0,
@@ -940,11 +940,11 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-04T14:11:55.992Z",
-    "lastRun": "2025-08-04T16:15:00.417Z",
+    "lastRun": "2025-08-04T20:00:00.157Z",
     "nextRun": null,
-    "status": "scheduled",
+    "status": "running",
     "performance": {
-      "totalRuns": 1,
+      "totalRuns": 2,
       "successfulRuns": 0,
       "failedRuns": 1,
       "averageExecutionTime": 0,
@@ -1269,11 +1269,11 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-04T15:07:53.788Z",
-    "lastRun": null,
+    "lastRun": "2025-08-04T20:00:00.159Z",
     "nextRun": null,
-    "status": "scheduled",
+    "status": "running",
     "performance": {
-      "totalRuns": 0,
+      "totalRuns": 1,
       "successfulRuns": 0,
       "failedRuns": 0,
       "averageExecutionTime": 0,
@@ -1302,11 +1302,11 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-04T15:07:54.268Z",
-    "lastRun": "2025-08-04T16:15:00.419Z",
+    "lastRun": "2025-08-04T20:00:00.160Z",
     "nextRun": null,
-    "status": "scheduled",
+    "status": "running",
     "performance": {
-      "totalRuns": 1,
+      "totalRuns": 2,
       "successfulRuns": 0,
       "failedRuns": 1,
       "averageExecutionTime": 0,
@@ -1601,17 +1601,24 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-04T16:13:59.558Z",
-    "lastRun": null,
+    "lastRun": "2025-08-04T20:00:00.162Z",
     "nextRun": null,
-    "status": "scheduled",
+    "status": "failed",
     "performance": {
-      "totalRuns": 0,
+      "totalRuns": 1,
       "successfulRuns": 0,
-      "failedRuns": 0,
+      "failedRuns": 1,
       "averageExecutionTime": 0,
       "lastExecutionTime": 0
     },
-    "logs": []
+    "logs": [
+      {
+        "timestamp": "2025-08-04T20:00:00.162Z",
+        "level": "error",
+        "message": "Job failed: System at capacity, job queued for later execution",
+        "error": "System at capacity, job queued for later execution"
+      }
+    ]
   },
   {
     "id": "11fd6a4f-f0a8-4a2c-84fc-51e628b70faa",
@@ -1634,15 +1641,15 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-04T16:13:59.560Z",
-    "lastRun": "2025-08-04T16:15:00.608Z",
+    "lastRun": "2025-08-04T20:00:00.165Z",
     "nextRun": null,
-    "status": "scheduled",
+    "status": "failed",
     "performance": {
-      "totalRuns": 1,
+      "totalRuns": 2,
       "successfulRuns": 0,
-      "failedRuns": 1,
+      "failedRuns": 2,
       "averageExecutionTime": 0,
-      "lastExecutionTime": 302508
+      "lastExecutionTime": 0
     },
     "logs": [
       {
@@ -1650,6 +1657,12 @@
         "level": "error",
         "message": "Job failed: Task timeout",
         "error": "Task timeout"
+      },
+      {
+        "timestamp": "2025-08-04T20:00:00.165Z",
+        "level": "error",
+        "message": "Job failed: System at capacity, job queued for later execution",
+        "error": "System at capacity, job queued for later execution"
       }
     ]
   },
@@ -1929,11 +1942,11 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-04T19:59:49.126Z",
-    "lastRun": null,
+    "lastRun": "2025-08-04T20:00:00.135Z",
     "nextRun": null,
-    "status": "scheduled",
+    "status": "running",
     "performance": {
-      "totalRuns": 0,
+      "totalRuns": 1,
       "successfulRuns": 0,
       "failedRuns": 0,
       "averageExecutionTime": 0,
@@ -1962,11 +1975,11 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-04T19:59:49.129Z",
-    "lastRun": null,
+    "lastRun": "2025-08-04T20:00:00.138Z",
     "nextRun": null,
-    "status": "scheduled",
+    "status": "running",
     "performance": {
-      "totalRuns": 0,
+      "totalRuns": 1,
       "successfulRuns": 0,
       "failedRuns": 0,
       "averageExecutionTime": 0,
