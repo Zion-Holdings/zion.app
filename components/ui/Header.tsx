@@ -49,7 +49,7 @@ const Header: React.FC<HeaderProps> = ({ transparent = false }) => {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 touch-target">
-              <h1 className="text-xl sm:text-2xl font-bold text-white">
+              <h1 className="text-responsive-xl font-bold text-white">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
               </h1>
             </Link>
@@ -57,82 +57,82 @@ const Header: React.FC<HeaderProps> = ({ transparent = false }) => {
 
           {/* Desktop Navigation - Main Links */}
           <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
-            <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               Marketplace
             </Link>
-            <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               Services
             </Link>
-            <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               Talents
             </Link>
-            <Link href="/equipment" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/equipment" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               Equipment
             </Link>
-            <Link href="/products" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/products" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               Products
             </Link>
-            <Link href="/blog" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/blog" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               Blog
             </Link>
-            <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               About
             </Link>
-            <Link href="/contact" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/contact" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               Contact
             </Link>
           </nav>
 
           {/* Desktop Navigation - Tools & Features */}
           <nav className="hidden xl:flex items-center space-x-4">
-            <Link href="/inbox" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/inbox" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               Inbox
             </Link>
-            <Link href="/executive-dashboard" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/executive-dashboard" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               Executive
             </Link>
-            <Link href="/analytics-dashboard" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/analytics-dashboard" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               Analytics
             </Link>
-            <Link href="/project-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/project-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               Projects
             </Link>
-            <Link href="/ai-service-matcher" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/ai-service-matcher" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               AI Matcher
             </Link>
-            <Link href="/help-desk-support" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/help-desk-support" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               Support
             </Link>
           </nav>
 
           {/* Desktop Navigation - Security & Payments */}
           <nav className="hidden 2xl:flex items-center space-x-4">
-            <Link href="/escrow-services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/escrow-services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               Escrow
             </Link>
-            <Link href="/warranty-protection" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/warranty-protection" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               Protection
             </Link>
-            <Link href="/payment-processing" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/payment-processing" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               Payments
             </Link>
-            <Link href="/invoice-billing" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/invoice-billing" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               Billing
             </Link>
-            <Link href="/dispute-resolution" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/dispute-resolution" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               Disputes
             </Link>
-            <Link href="/compliance-governance" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target">
+            <Link href="/compliance-governance" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
               Compliance
             </Link>
           </nav>
 
           {/* Auth Buttons */}
           <div className="flex items-center space-x-2 sm:space-x-4">
-            <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors touch-target hidden sm:block">
+            <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target hidden sm:block">
               Login
             </Link>
-            <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 sm:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 touch-target">
+            <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 sm:px-4 py-2 rounded-lg text-responsive-sm font-medium transition-all duration-300 touch-target">
               Sign Up
             </Link>
             
@@ -153,24 +153,24 @@ const Header: React.FC<HeaderProps> = ({ transparent = false }) => {
             <div className="content-padding py-4 max-h-[calc(100vh-4rem)] overflow-y-auto safe-area-bottom">
               {/* Main Navigation */}
               <div className="mb-6">
-                <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Main</h3>
+                <h3 className="text-responsive-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Main</h3>
                 <div className="grid-responsive-2 gap-2">
-                  <Link href="/marketplace" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/marketplace" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Marketplace
                   </Link>
-                  <Link href="/services" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/services" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Services
                   </Link>
-                  <Link href="/talents" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/talents" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Talents
                   </Link>
-                  <Link href="/equipment" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/equipment" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Equipment
                   </Link>
-                  <Link href="/products" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/products" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Products
                   </Link>
-                  <Link href="/blog" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/blog" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Blog
                   </Link>
                 </div>
@@ -178,24 +178,24 @@ const Header: React.FC<HeaderProps> = ({ transparent = false }) => {
 
               {/* Tools & Features */}
               <div className="mb-6">
-                <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Tools & Features</h3>
+                <h3 className="text-responsive-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Tools & Features</h3>
                 <div className="grid-responsive-2 gap-2">
-                  <Link href="/inbox" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/inbox" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Inbox
                   </Link>
-                  <Link href="/executive-dashboard" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/executive-dashboard" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Executive Dashboard
                   </Link>
-                  <Link href="/analytics-dashboard" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/analytics-dashboard" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Analytics
                   </Link>
-                  <Link href="/project-management" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/project-management" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Project Management
                   </Link>
-                  <Link href="/ai-service-matcher" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/ai-service-matcher" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     AI Service Matcher
                   </Link>
-                  <Link href="/talent-directory" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/talent-directory" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Talent Directory
                   </Link>
                 </div>
@@ -203,18 +203,18 @@ const Header: React.FC<HeaderProps> = ({ transparent = false }) => {
 
               {/* AI-Powered Services */}
               <div className="mb-6">
-                <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">AI Services</h3>
+                <h3 className="text-responsive-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">AI Services</h3>
                 <div className="grid-responsive-2 gap-2">
-                  <Link href="/ai-powered-analytics" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/ai-powered-analytics" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     AI Analytics
                   </Link>
-                  <Link href="/ai-powered-automation" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/ai-powered-automation" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     AI Automation
                   </Link>
-                  <Link href="/ai-powered-data-analytics" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/ai-powered-data-analytics" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Data Analytics
                   </Link>
-                  <Link href="/ai-powered-security-cybersecurity" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/ai-powered-security-cybersecurity" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Cybersecurity
                   </Link>
                 </div>
@@ -222,18 +222,18 @@ const Header: React.FC<HeaderProps> = ({ transparent = false }) => {
 
               {/* Business Tools */}
               <div className="mb-6">
-                <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Business Tools</h3>
+                <h3 className="text-responsive-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Business Tools</h3>
                 <div className="grid-responsive-2 gap-2">
-                  <Link href="/webhook-management" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/webhook-management" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Webhook Management
                   </Link>
-                  <Link href="/workflow-designer" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/workflow-designer" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Workflow Designer
                   </Link>
-                  <Link href="/data-warehouse-etl" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/data-warehouse-etl" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Data Warehouse ETL
                   </Link>
-                  <Link href="/help-desk-support" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/help-desk-support" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Help Desk Support
                   </Link>
                 </div>
@@ -241,18 +241,18 @@ const Header: React.FC<HeaderProps> = ({ transparent = false }) => {
 
               {/* Security & Payments */}
               <div className="mb-6">
-                <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Security & Payments</h3>
+                <h3 className="text-responsive-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Security & Payments</h3>
                 <div className="grid-responsive-2 gap-2">
-                  <Link href="/escrow-services" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/escrow-services" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Escrow Services
                   </Link>
-                  <Link href="/warranty-protection" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/warranty-protection" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Warranty Protection
                   </Link>
-                  <Link href="/payment-processing" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/payment-processing" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Payment Processing
                   </Link>
-                  <Link href="/invoice-billing" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/invoice-billing" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Invoice & Billing
                   </Link>
                 </div>
@@ -260,15 +260,15 @@ const Header: React.FC<HeaderProps> = ({ transparent = false }) => {
 
               {/* Communication */}
               <div className="mb-6">
-                <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Communication</h3>
+                <h3 className="text-responsive-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Communication</h3>
                 <div className="grid-responsive-2 gap-2">
-                  <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Real-time Chat
                   </Link>
-                  <Link href="/notifications" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/notifications" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Notifications
                   </Link>
-                  <Link href="/ai-powered-customer-support" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/ai-powered-customer-support" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Customer Support
                   </Link>
                 </div>
@@ -276,18 +276,18 @@ const Header: React.FC<HeaderProps> = ({ transparent = false }) => {
 
               {/* Company */}
               <div className="mb-6">
-                <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Company</h3>
+                <h3 className="text-responsive-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Company</h3>
                 <div className="grid-responsive-2 gap-2">
-                  <Link href="/about" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/about" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     About Us
                   </Link>
-                  <Link href="/contact" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/contact" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Contact
                   </Link>
-                  <Link href="/sitemap" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/sitemap" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Sitemap
                   </Link>
-                  <Link href="/privacy-policy" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/privacy-policy" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Privacy Policy
                   </Link>
                 </div>
@@ -295,15 +295,15 @@ const Header: React.FC<HeaderProps> = ({ transparent = false }) => {
 
               {/* Auth */}
               <div className="mb-6">
-                <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Account</h3>
+                <h3 className="text-responsive-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Account</h3>
                 <div className="grid-responsive-2 gap-2">
-                  <Link href="/auth/login" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/auth/login" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Login
                   </Link>
-                  <Link href="/auth/signup" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/auth/signup" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Sign Up
                   </Link>
-                  <Link href="/auth/forgot-password" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-base font-medium touch-target">
+                  <Link href="/auth/forgot-password" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
                     Forgot Password
                   </Link>
                 </div>
