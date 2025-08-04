@@ -1,33 +1,29 @@
 {
   "url": "https://ziontechgroup.netlify.app/services/",
-  "timestamp": "2025-08-01T05:16:30.081Z",
+  "timestamp": "2025-08-04T15:34:11.256Z",
   "pageInfo": {
     "title": "Services - Zion",
-    "description": "Comprehensive IT services, AI development, cloud solutions, and blockchain technology",
+    "description": "Browse AI and technology services on Zion's marketplace.",
     "keywords": "",
     "headings": [
       {
         "level": "h1",
-        "text": "Our Services"
+        "text": "AI & Technology Services"
       },
       {
         "level": "h3",
-        "text": "AI Development"
+        "text": "AI Analytics"
       },
       {
         "level": "h3",
-        "text": "Cloud Services"
+        "text": "AI Automation"
       },
       {
         "level": "h3",
-        "text": "Blockchain Solutions"
-      },
-      {
-        "level": "h3",
-        "text": "Data Analytics"
+        "text": "Cybersecurity"
       }
     ],
-    "content": "ZionMarketplaceServicesLoginOur ServicesComprehensive IT solutions powered by cutting-edge technology and expert teamsAI DevelopmentCustom AI solutions and machine learning applicationsMachine Learning ModelsDeep Learning SystemsNatural Language ProcessingComputer VisionAI IntegrationCustom AI SolutionsLearn More →Cloud ServicesCloud infrastructure and platform solutionsAWS Setup & ConfigurationAzure Cloud ServicesGoogle Cloud PlatformCloud MigrationDevOps AutomationServerless ArchitectureLearn More →Blockchain SolutionsDecentralized applications and smart contractsSmart Contract DevelopmentDApp DevelopmentDeFi IntegrationNFT MarketplacesBlockchain ConsultingSecurity AuditsLearn More →Data AnalyticsData processing and business intelligenceData Pipeline DevelopmentBusiness IntelligencePredictive AnalyticsData VisualizationETL ProcessesBig Data SolutionsLearn More →{\"props\":{\"pageProps\":{}},\"page\":\"/services\",\"query\":{},\"buildId\":\"zVUwnJXgu1RvJi918S1Nz\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "AI & Technology ServicesDiscover cutting-edge AI and technology services from verified experts and professionals.AI AnalyticsAdvanced analytics and insightsAI AutomationIntelligent automation solutionsCybersecurityAI-powered security solutions{\"props\":{\"pageProps\":{}},\"page\":\"/services\",\"query\":{},\"buildId\":\"TbJ0uJ2zYH8UprOuf8P8l\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -40,31 +36,31 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-1594f84e519182f7.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-6c8598519c693321.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-6c7b577d93bc49de.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-ccd59d5a878b2566.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-cc39fd0a0daab8c4.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-afe9803330064d0e.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/3996-e453775e721acca3.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/3996-2fc1d2069cd01dca.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-2f0086e1b901925f.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-b669f99c1cc2ed5b.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/zVUwnJXgu1RvJi918S1Nz/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/zVUwnJXgu1RvJi918S1Nz/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -72,28 +68,28 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-8189f5f9fa1100da.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-analytics-c5044ac80414166e.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-1b16adbab6ffd7db.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-automation-162ca3e02f4e32fe.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8484b74dc5c8a75e.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-security-cybersecurity-2a2f1f647f2b21a0.js",
         "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/360aa9a8dc4df9b7.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/5949587f2ef62039.css",
         "media": "all"
       }
     ]
   },
   "analytics": {
-    "contentLength": 1039,
-    "headingCount": 5,
+    "contentLength": 406,
+    "headingCount": 4,
     "imageCount": 0,
     "formCount": 0,
     "scriptCount": 13,

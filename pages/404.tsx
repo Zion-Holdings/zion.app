@@ -2,107 +2,122 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
-const Custom404: NextPage = () => {
+const Https___ziontechgroup_netlify_app_404Page: NextPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
-        <title>Page Not Found - Zion</title>
-        <meta name="description" content="The page you're looking for doesn't exist. Explore Zion's marketplace for AI services, IT solutions, and innovative technologies." />
+        <title>Page Not Found - Zion Tech Group</title>
+        <meta name="description" content="The page you are looking for does not exist" />
+        <meta name="keywords" content="https://ziontechgroup.netlify.app/404, Zion, AI marketplace" />
       </Head>
 
       {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10">
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <Link href="/" className="text-2xl font-bold text-white">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
-              </Link>
+              <div className="flex-shrink-0">
+                <h1 className="text-2xl font-bold text-white">
+                  <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                    Zion
+                  </Link>
+                </h1>
+              </div>
             </div>
-            <div className="flex items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+            
+            <div className="hidden md:flex items-center space-x-8">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                Services
+              <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                About
               </Link>
-              <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                Talents
-              </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Login
+              </Link>
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+                Join Zion
               </Link>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* 404 Content */}
-      <div className="flex items-center justify-center min-h-[calc(100vh-4rem)]">
-        <div className="text-center max-w-2xl mx-auto px-4">
-          <div className="mb-8">
-            <h1 className="text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-4">
-              404
-            </h1>
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Page Not Found
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              The page you're looking for doesn't exist. But don't worry, we have plenty of amazing services and solutions waiting for you.
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300 block">
-              <div className="text-2xl mb-2">🌟</div>
-              <div className="text-lg font-semibold">Explore Marketplace</div>
-              <div className="text-sm opacity-90">Discover AI services & solutions</div>
-            </Link>
-            
-            <Link href="/services" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300 block">
-              <div className="text-2xl mb-2">💻</div>
-              <div className="text-lg font-semibold">IT Services</div>
-              <div className="text-sm opacity-90">Professional IT consulting</div>
-            </Link>
-            
-            <Link href="/talents" className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300 block">
-              <div className="text-2xl mb-2">🤖</div>
-              <div className="text-lg font-semibold">AI Talents</div>
-              <div className="text-sm opacity-90">Expert AI developers</div>
-            </Link>
-            
-            <Link href="/equipment" className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300 block">
-              <div className="text-2xl mb-2">⚙️</div>
-              <div className="text-lg font-semibold">Equipment</div>
-              <div className="text-sm opacity-90">High-performance hardware</div>
-            </Link>
-          </div>
-
-          {/* Search Suggestion */}
-          <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 mb-8">
-            <h3 className="text-xl font-semibold text-white mb-4">Can't find what you're looking for?</h3>
-            <p className="text-gray-300 mb-4">
-              Try searching our marketplace or contact our support team for assistance.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300">
-                AI Service Matcher
-              </Link>
-              <Link href="/contact" className="border border-white/20 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-all duration-300">
-                Contact Support
-              </Link>
+      {/* Main Content */}
+      <main className="flex-1">
+        <div className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+            <div className="text-center">
+              <div className="mb-8">
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                    Page Not Found - Zion Tech Group
+                  </span>
+                </h1>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                  The page you are looking for does not exist
+                </p>
+              </div>
+              
+              <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  Explore Marketplace
+                </Link>
+                <Link href="/auth/signup" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
+                  Get Started
+                </Link>
+              </div>
             </div>
           </div>
-
-          {/* Back to Home */}
-          <Link href="/" className="text-purple-400 hover:text-purple-300 font-medium transition-colors duration-300">
-            ← Back to Home
-          </Link>
         </div>
-      </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-black/20 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-white font-semibold mb-4">Zion</h3>
+              <p className="text-gray-400 text-sm">
+                The future of AI-powered marketplace technology.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Marketplace</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/marketplace" className="text-gray-400 hover:text-white transition-colors">Browse Services</Link></li>
+                <li><Link href="/talents" className="text-gray-400 hover:text-white transition-colors">AI Talents</Link></li>
+                <li><Link href="/equipment" className="text-gray-400 hover:text-white transition-colors">Equipment</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Company</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li>
+                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
+                <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-semibold mb-4">Support</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/help" className="text-gray-400 hover:text-white transition-colors">Help Center</Link></li>
+                <li><Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy</Link></li>
+                <li><Link href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link></li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-white/10 text-center">
+            <p className="text-gray-400 text-sm">
+              © 2024 Zion. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
 
-export default Custom404 
+export default Https___ziontechgroup_netlify_app_404Page

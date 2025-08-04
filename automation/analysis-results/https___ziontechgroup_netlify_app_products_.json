@@ -1,0 +1,98 @@
+{
+  "url": "https://ziontechgroup.netlify.app/products/",
+  "timestamp": "2025-08-04T15:34:16.423Z",
+  "pageInfo": {
+    "title": "Products - Zion",
+    "description": "Innovation and technology products on Zion's marketplace.",
+    "keywords": "",
+    "headings": [
+      {
+        "level": "h1",
+        "text": "Innovation Products"
+      },
+      {
+        "level": "h3",
+        "text": "AI Products"
+      },
+      {
+        "level": "h3",
+        "text": "Software Products"
+      },
+      {
+        "level": "h3",
+        "text": "Security Products"
+      }
+    ],
+    "content": "Innovation ProductsDiscover cutting-edge technology products and innovative solutions for your business needs.AI ProductsAI-powered solutionsSoftware ProductsEnterprise software solutionsSecurity ProductsCybersecurity solutions{\"props\":{\"pageProps\":{}},\"page\":\"/products\",\"query\":{},\"buildId\":\"TbJ0uJ2zYH8UprOuf8P8l\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "images": [],
+    "forms": [],
+    "scripts": [
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-cefddfb7403e4fd5.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-6c8598519c693321.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-ccd59d5a878b2566.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-afe9803330064d0e.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/3996-2fc1d2069cd01dca.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/products-f68c95f021134073.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_buildManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_ssgManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "",
+        "type": "application/json"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-analytics-c5044ac80414166e.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-automation-162ca3e02f4e32fe.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-security-cybersecurity-2a2f1f647f2b21a0.js",
+        "type": "text/javascript"
+      }
+    ],
+    "stylesheets": [
+      {
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/5949587f2ef62039.css",
+        "media": "all"
+      }
+    ]
+  },
+  "analytics": {
+    "contentLength": 390,
+    "headingCount": 4,
+    "imageCount": 0,
+    "formCount": 0,
+    "scriptCount": 13,
+    "stylesheetCount": 1
+  }
+}

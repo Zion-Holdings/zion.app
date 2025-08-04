@@ -1,0 +1,90 @@
+{
+  "url": "https://ziontechgroup.netlify.app/ai-service-matcher/",
+  "timestamp": "2025-08-04T15:34:52.366Z",
+  "pageInfo": {
+    "title": "AI Service Matcher - Zion",
+    "description": "Find the perfect services for your needs with our AI-powered matching system",
+    "keywords": "",
+    "headings": [
+      {
+        "level": "h1",
+        "text": "AI Service Matcher"
+      },
+      {
+        "level": "h2",
+        "text": "Describe Your Needs"
+      },
+      {
+        "level": "h3",
+        "text": "AI-Powered Matching"
+      },
+      {
+        "level": "h3",
+        "text": "Instant Results"
+      },
+      {
+        "level": "h3",
+        "text": "Precision Matching"
+      }
+    ],
+    "content": "AI Service MatcherTell us what you need, and our AI will find the perfect services and talents for your projectDescribe Your NeedsWhat do you need help with? *IndustrySelect IndustryTechnologyHealthcareFinanceEducationManufacturingRetailReal EstateEntertainmentTransportationOtherBudget RangeSelect BudgetUnder $1,000$1,000 - $5,000$5,000 - $15,000$15,000 - $50,000$50,000+TimelineSelect TimelineImmediate (1-2 weeks)Short-term (1-3 months)Medium-term (3-6 months)Long-term (6+ months)Find Perfect Matches🤖AI-Powered MatchingOur advanced AI analyzes your requirements and finds the perfect matches from our extensive network⚡Instant ResultsGet personalized recommendations in seconds, not days. Save time and find the right services quickly🎯Precision MatchingOur algorithm considers budget, timeline, industry, and technical requirements for optimal matches{\"props\":{\"pageProps\":{}},\"page\":\"/ai-service-matcher\",\"query\":{},\"buildId\":\"TbJ0uJ2zYH8UprOuf8P8l\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "images": [],
+    "forms": [],
+    "scripts": [
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-cefddfb7403e4fd5.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-6c8598519c693321.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-ccd59d5a878b2566.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-afe9803330064d0e.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/3996-2fc1d2069cd01dca.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-service-matcher-d2f81b8b0b5a61f6.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_buildManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_ssgManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "",
+        "type": "application/json"
+      }
+    ],
+    "stylesheets": [
+      {
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/5949587f2ef62039.css",
+        "media": "all"
+      }
+    ]
+  },
+  "analytics": {
+    "contentLength": 1032,
+    "headingCount": 5,
+    "imageCount": 0,
+    "formCount": 0,
+    "scriptCount": 10,
+    "stylesheetCount": 1
+  }
+}

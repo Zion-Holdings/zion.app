@@ -1,0 +1,153 @@
+{
+  "url": "https://ziontechgroup.netlify.app/investor-matchmaking/",
+  "timestamp": "2025-08-04T15:34:29.347Z",
+  "pageInfo": {
+    "title": "Investor Matchmaking - Zion",
+    "description": "Connect with the right investors for your startup using AI-powered matchmaking",
+    "keywords": "",
+    "headings": [
+      {
+        "level": "h1",
+        "text": "AI-Powered Investor Matchmaking"
+      },
+      {
+        "level": "h2",
+        "text": "Tell Us About Your Startup"
+      }
+    ],
+    "content": "ZionMarketplaceServicesLoginAI-Powered Investor MatchmakingConnect with the perfect investors for your startup using our intelligent matching algorithmTell Us About Your StartupStartup Name *Industry *Select IndustryAI/MLFintechHealthcareE-commerceSaaSEdTechCleanTechBiotechCybersecurityIoTBlockchainOtherDevelopment Stage *Select StageIdea StageMVPEarly RevenueGrowth StageScale UpLocationTeam SizeSelect Team Size1-5 people6-10 people11-25 people26-50 people50+ peopleFunding Needed *Select Funding Range$10K-$50K$50K-$200K$200K-$1M$1M-$5M$5M+WebsitePitch Summary *Find Investors{\"props\":{\"pageProps\":{}},\"page\":\"/investor-matchmaking\",\"query\":{},\"buildId\":\"TbJ0uJ2zYH8UprOuf8P8l\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "images": [],
+    "forms": [
+      {
+        "action": "https://ziontechgroup.netlify.app/investor-matchmaking/",
+        "method": "get",
+        "inputs": [
+          {
+            "type": "text",
+            "name": "",
+            "placeholder": "Enter your startup name"
+          },
+          {
+            "type": "select-one",
+            "name": "",
+            "placeholder": ""
+          },
+          {
+            "type": "select-one",
+            "name": "",
+            "placeholder": ""
+          },
+          {
+            "type": "text",
+            "name": "",
+            "placeholder": "City, State/Country"
+          },
+          {
+            "type": "select-one",
+            "name": "",
+            "placeholder": ""
+          },
+          {
+            "type": "select-one",
+            "name": "",
+            "placeholder": ""
+          },
+          {
+            "type": "url",
+            "name": "",
+            "placeholder": "https://yourstartup.com"
+          },
+          {
+            "type": "textarea",
+            "name": "",
+            "placeholder": "Briefly describe your startup, problem you're solving, and your unique value proposition..."
+          }
+        ]
+      }
+    ],
+    "scripts": [
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-cefddfb7403e4fd5.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-6c8598519c693321.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-ccd59d5a878b2566.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-afe9803330064d0e.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/3996-2fc1d2069cd01dca.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/investor-matchmaking-eecf8547ed5d8953.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_buildManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_ssgManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "",
+        "type": "application/json"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-b669f99c1cc2ed5b.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/1991-f9550ced9b636618.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-87b08602b3fcc2f0.js",
+        "type": "text/javascript"
+      }
+    ],
+    "stylesheets": [
+      {
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/5949587f2ef62039.css",
+        "media": "all"
+      }
+    ]
+  },
+  "analytics": {
+    "contentLength": 756,
+    "headingCount": 2,
+    "imageCount": 0,
+    "formCount": 1,
+    "scriptCount": 17,
+    "stylesheetCount": 1
+  }
+}

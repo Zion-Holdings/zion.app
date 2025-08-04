@@ -1,33 +1,29 @@
 {
   "url": "https://ziontechgroup.netlify.app/equipment/",
-  "timestamp": "2025-08-01T05:16:32.736Z",
+  "timestamp": "2025-08-04T15:34:15.141Z",
   "pageInfo": {
-    "title": "Services - Zion",
-    "description": "Comprehensive IT services, AI development, cloud solutions, and blockchain technology",
+    "title": "Equipment - Zion",
+    "description": "High-performance computing equipment and technology hardware on Zion's marketplace.",
     "keywords": "",
     "headings": [
       {
         "level": "h1",
-        "text": "Our Services"
+        "text": "High-Performance Equipment"
       },
       {
         "level": "h3",
-        "text": "AI Development"
+        "text": "Computing Hardware"
       },
       {
         "level": "h3",
-        "text": "Cloud Services"
+        "text": "AI Hardware"
       },
       {
         "level": "h3",
-        "text": "Blockchain Solutions"
-      },
-      {
-        "level": "h3",
-        "text": "Data Analytics"
+        "text": "Network Equipment"
       }
     ],
-    "content": "ZionMarketplaceServicesLoginOur ServicesComprehensive IT solutions powered by cutting-edge technology and expert teamsAI DevelopmentCustom AI solutions and machine learning applicationsMachine Learning ModelsDeep Learning SystemsNatural Language ProcessingComputer VisionAI IntegrationCustom AI SolutionsLearn More →Cloud ServicesCloud infrastructure and platform solutionsAWS Setup & ConfigurationAzure Cloud ServicesGoogle Cloud PlatformCloud MigrationDevOps AutomationServerless ArchitectureLearn More →Blockchain SolutionsDecentralized applications and smart contractsSmart Contract DevelopmentDApp DevelopmentDeFi IntegrationNFT MarketplacesBlockchain ConsultingSecurity AuditsLearn More →Data AnalyticsData processing and business intelligenceData Pipeline DevelopmentBusiness IntelligencePredictive AnalyticsData VisualizationETL ProcessesBig Data SolutionsLearn More →{\"props\":{\"pageProps\":{}},\"page\":\"/equipment\",\"query\":{},\"buildId\":\"zVUwnJXgu1RvJi918S1Nz\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "High-Performance EquipmentAccess cutting-edge computing equipment and technology hardware for your AI and development projects.Computing HardwareGPU clusters and serversAI HardwareSpecialized AI equipmentNetwork EquipmentHigh-speed networking{\"props\":{\"pageProps\":{}},\"page\":\"/equipment\",\"query\":{},\"buildId\":\"TbJ0uJ2zYH8UprOuf8P8l\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -40,31 +36,31 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-1594f84e519182f7.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-6c8598519c693321.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-6c7b577d93bc49de.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-ccd59d5a878b2566.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-cc39fd0a0daab8c4.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-afe9803330064d0e.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/3996-e453775e721acca3.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/3996-2fc1d2069cd01dca.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/equipment-77bb93df4ad0f424.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/equipment-d36744d30b297dc3.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/zVUwnJXgu1RvJi918S1Nz/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/zVUwnJXgu1RvJi918S1Nz/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -72,35 +68,31 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-8189f5f9fa1100da.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-inventory-supply-chain-d513f8b210c139d3.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-1b16adbab6ffd7db.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-autonomous-drone-delivery-logistics-40ff804ecf08120f.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-2f0086e1b901925f.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8484b74dc5c8a75e.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-autonomous-vehicle-transportation-116314faa6429bfa.js",
         "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/360aa9a8dc4df9b7.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/5949587f2ef62039.css",
         "media": "all"
       }
     ]
   },
   "analytics": {
-    "contentLength": 1040,
-    "headingCount": 5,
+    "contentLength": 406,
+    "headingCount": 4,
     "imageCount": 0,
     "formCount": 0,
-    "scriptCount": 14,
+    "scriptCount": 13,
     "stylesheetCount": 1
   }
 }

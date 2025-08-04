@@ -10,6 +10,7 @@ export interface LinkedInTask {
 }
 
 export interface LinkedInConfig {
+  apiKey: string;
   credentials: {
     email: string;
     password: string;

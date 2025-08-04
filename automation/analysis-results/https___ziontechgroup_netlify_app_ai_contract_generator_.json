@@ -1,0 +1,82 @@
+{
+  "url": "https://ziontechgroup.netlify.app/ai-contract-generator/",
+  "timestamp": "2025-08-04T15:34:57.965Z",
+  "pageInfo": {
+    "title": "AI Contract Generator - Zion Marketplace",
+    "description": "Generate professional contracts and legal documents with AI assistance",
+    "keywords": "",
+    "headings": [
+      {
+        "level": "h1",
+        "text": "AI Contract Generator"
+      },
+      {
+        "level": "h2",
+        "text": "Contract Details"
+      },
+      {
+        "level": "h2",
+        "text": "Contract Preview"
+      },
+      {
+        "level": "h3",
+        "text": "AI Contract Generator Features"
+      }
+    ],
+    "content": "AI Contract GeneratorCreate professional contracts, agreements, and legal documents with AI assistance. Generate legally sound documents in minutes.Contract DetailsContract Type *Select contract typeService AgreementNon-Disclosure AgreementEmployment ContractPartnership AgreementConsulting AgreementProject ContractLicense AgreementPurchase AgreementRental AgreementCustom ContractParty 1 Name *Party 1 Email *Party 2 Name *Party 2 Email *Project Title *Project Description *Start Date *End Date *Payment Amount *Payment Terms *Deliverables *Terms & ConditionsSpecial ConditionsGenerate ContractContract Preview📄Your contract will appear hereFill out the form and click \"Generate Contract\"AI Contract Generator FeaturesProfessional legal document templatesAI-powered contract generationMultiple contract types supportedDownload and share capabilitiesLegally sound document structure{\"props\":{\"pageProps\":{}},\"page\":\"/ai-contract-generator\",\"query\":{},\"buildId\":\"TbJ0uJ2zYH8UprOuf8P8l\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "images": [],
+    "forms": [],
+    "scripts": [
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-cefddfb7403e4fd5.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-6c8598519c693321.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-ccd59d5a878b2566.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-afe9803330064d0e.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-contract-generator-f560e8a3cc7d5198.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_buildManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_ssgManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "",
+        "type": "application/json"
+      }
+    ],
+    "stylesheets": [
+      {
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/5949587f2ef62039.css",
+        "media": "all"
+      }
+    ]
+  },
+  "analytics": {
+    "contentLength": 1060,
+    "headingCount": 4,
+    "imageCount": 0,
+    "formCount": 0,
+    "scriptCount": 9,
+    "stylesheetCount": 1
+  }
+}

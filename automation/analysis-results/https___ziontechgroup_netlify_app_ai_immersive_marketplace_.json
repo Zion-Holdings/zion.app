@@ -1,0 +1,102 @@
+{
+  "url": "https://ziontechgroup.netlify.app/ai-immersive-marketplace/",
+  "timestamp": "2025-08-04T15:34:31.859Z",
+  "pageInfo": {
+    "title": "AI Immersive Marketplace - Zion",
+    "description": "Experience the future of shopping with AI-powered immersive marketplace featuring VR/AR experiences",
+    "keywords": "",
+    "headings": [
+      {
+        "level": "h1",
+        "text": "AI Immersive Marketplace"
+      }
+    ],
+    "content": "ZionMarketplaceProjectsLoginAI Immersive MarketplaceExperience the future of shopping with AI-powered virtual reality and augmented reality experiences🥽 VR Mode📱 AR Mode🏠Overview🛍️Products🏪Showrooms🌟Experiences🤖AI InsightsLoading immersive experiences...{\"props\":{\"pageProps\":{}},\"page\":\"/ai-immersive-marketplace\",\"query\":{},\"buildId\":\"TbJ0uJ2zYH8UprOuf8P8l\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "images": [],
+    "forms": [],
+    "scripts": [
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-cefddfb7403e4fd5.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-6c8598519c693321.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-ccd59d5a878b2566.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-afe9803330064d0e.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/3996-2fc1d2069cd01dca.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-immersive-marketplace-82657fb24db08892.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_buildManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_ssgManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "",
+        "type": "application/json"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-project-management-3270f72ed761130f.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-87b08602b3fcc2f0.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/1991-f9550ced9b636618.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
+        "type": "text/javascript"
+      }
+    ],
+    "stylesheets": [
+      {
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/5949587f2ef62039.css",
+        "media": "all"
+      }
+    ]
+  },
+  "analytics": {
+    "contentLength": 440,
+    "headingCount": 1,
+    "imageCount": 0,
+    "formCount": 0,
+    "scriptCount": 17,
+    "stylesheetCount": 1
+  }
+}
