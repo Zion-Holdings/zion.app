@@ -379,7 +379,118 @@
         "createdAt": "2025-08-04T16:13:26.247Z",
         "updatedAt": "2025-08-04T16:13:26.247Z"
       }
+    ],
+    [
+      "807ab614-4ea8-4b51-95e3-025f3410786a",
+      {
+        "id": "807ab614-4ea8-4b51-95e3-025f3410786a",
+        "type": "digital-marketer",
+        "serviceId": "25db50ac-854b-4cfd-9865-4a1e44d4c4b0",
+        "name": "NextGen E-commerce Platform Digital Marketer",
+        "capabilities": [
+          "seo",
+          "ppc",
+          "social-media",
+          "content-marketing"
+        ],
+        "platforms": [
+          "google-ads",
+          "facebook-ads",
+          "linkedin",
+          "twitter"
+        ],
+        "expertise": [],
+        "commission": 0.15,
+        "baseSalary": 3000,
+        "performanceMetrics": [
+          "leads-generated",
+          "conversion-rate",
+          "roi"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 0,
+          "dealsClosed": 0,
+          "revenueGenerated": 0,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-04T19:56:16.685Z",
+        "updatedAt": "2025-08-04T19:56:16.685Z"
+      }
+    ],
+    [
+      "fb839084-dd79-4723-8844-aeac1f6b1d35",
+      {
+        "id": "fb839084-dd79-4723-8844-aeac1f6b1d35",
+        "type": "sales-representative",
+        "serviceId": "25db50ac-854b-4cfd-9865-4a1e44d4c4b0",
+        "name": "NextGen E-commerce Platform Sales Representative",
+        "capabilities": [
+          "lead-qualification",
+          "presentation",
+          "negotiation",
+          "closing"
+        ],
+        "platforms": [
+          "crm",
+          "email-automation",
+          "video-calls",
+          "proposal-tools"
+        ],
+        "expertise": [],
+        "commission": 0.2,
+        "baseSalary": 2500,
+        "performanceMetrics": [
+          "deals-closed",
+          "revenue-generated",
+          "average-deal-size"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 0,
+          "dealsClosed": 0,
+          "revenueGenerated": 0,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-04T19:56:16.686Z",
+        "updatedAt": "2025-08-04T19:56:16.686Z"
+      }
+    ],
+    [
+      "458313a7-e7bd-48b0-9420-bb10fc5474c2",
+      {
+        "id": "458313a7-e7bd-48b0-9420-bb10fc5474c2",
+        "type": "technical-sales",
+        "serviceId": "25db50ac-854b-4cfd-9865-4a1e44d4c4b0",
+        "name": "NextGen E-commerce Platform Technical Sales",
+        "capabilities": [
+          "technical-demos",
+          "solution-architecture",
+          "integration-support"
+        ],
+        "expertise": [
+          "api-integration",
+          "customization",
+          "technical-support"
+        ],
+        "commission": 0.18,
+        "baseSalary": 4000,
+        "performanceMetrics": [
+          "technical-deals",
+          "implementation-success",
+          "customer-satisfaction"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 0,
+          "dealsClosed": 0,
+          "revenueGenerated": 0,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-04T19:56:16.687Z",
+        "updatedAt": "2025-08-04T19:56:16.687Z"
+      }
     ]
   ],
-  "lastUpdated": "2025-08-04T16:13:26.247Z"
+  "lastUpdated": "2025-08-04T19:56:16.687Z"
 }
