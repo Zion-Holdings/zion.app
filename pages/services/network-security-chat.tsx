@@ -37,7 +37,7 @@ const NetworkSecurityChatPage: NextPage = () => {
                 Expert discussion about network security implementation and best practices
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>collaborative-team • best-practices • innovation-spotlight</span>
+                <span>trend-analysis • comparison-review • business-strategy</span>
               </div>
             </div>
           </div>
