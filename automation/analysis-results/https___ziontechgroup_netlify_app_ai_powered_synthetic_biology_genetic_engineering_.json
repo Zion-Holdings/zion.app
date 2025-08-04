@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-synthetic-biology-genetic-engineering/",
-  "timestamp": "2025-08-04T16:00:32.555Z",
+  "timestamp": "2025-08-04T16:09:28.391Z",
   "pageInfo": {
     "title": "AI-Powered Synthetic Biology & Genetic Engineering | Zion Tech",
     "description": "Advanced synthetic biology and genetic engineering with AI-powered DNA editing, protein design, and biological system engineering.",
@@ -19,7 +19,7 @@
         "text": "Quick Actions"
       }
     ],
-    "content": "🧬Synthetic Biology & Genetic EngineeringAI-Powered BiotechnologyStart Simulation🧬Bio Dashboard🧪DNA Sequences🔬Protein Design⚡Genetic Circuits✂️CRISPR Editing🦠Synthetic Organisms🧬System StatusSynthetic Biology LabStatusActiveDNA Sequences1Proteins1Circuits1Quick Actions🧪Design DNA🔬Design Protein⚡Build Circuit✂️CRISPR EditAI-Powered Synthetic Biology & Genetic Engineering | Zion Tech GroupAdvanced biotechnology, DNA editing, protein design, and genetic engineering{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-synthetic-biology-genetic-engineering\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "🧬Synthetic Biology & Genetic EngineeringAI-Powered BiotechnologyStart Simulation🧬Bio Dashboard🧪DNA Sequences🔬Protein Design⚡Genetic Circuits✂️CRISPR Editing🦠Synthetic Organisms🧬System StatusSynthetic Biology LabStatusActiveDNA Sequences1Proteins1Circuits1Quick Actions🧪Design DNA🔬Design Protein⚡Build Circuit✂️CRISPR EditAI-Powered Synthetic Biology & Genetic Engineering | Zion Tech GroupAdvanced biotechnology, DNA editing, protein design, and genetic engineering{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-synthetic-biology-genetic-engineering\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -48,11 +48,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -62,7 +62,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

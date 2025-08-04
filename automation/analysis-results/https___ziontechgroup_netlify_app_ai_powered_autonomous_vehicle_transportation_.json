@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-autonomous-vehicle-transportation/",
-  "timestamp": "2025-08-04T16:01:00.741Z",
+  "timestamp": "2025-08-04T16:09:57.902Z",
   "pageInfo": {
     "title": "AI-Powered Autonomous Vehicle & Transportation - Zion",
     "description": "Advanced AI-powered autonomous vehicle and transportation system with traffic optimization, route planning, and intelligent logistics management",
@@ -55,7 +55,7 @@
         "text": "Support"
       }
     ],
-    "content": "ZionStreamingVoice AssistantHolographicLoginGet StartedAI-Powered Autonomous Vehicle & TransportationExperience the future of transportation with AI-powered autonomous vehicles, intelligent traffic optimization, and advanced route planning. Revolutionize mobility with cutting-edge technology.Deploy VehicleOptimize Traffic📊Overview🚗Autonomous Vehicles🚦Traffic Optimization🗺️Route Planning📦Logistics📈AnalyticsAutonomous VehiclesAV-001activepassenger • New York, NY85% battery35 mphAV-002activecargo • Los Angeles, CA72% battery28 mphAV-003activeemergency • Chicago, IL95% battery45 mphTraffic OptimizationManhattan Downtownhighsignal optimization50% improvement1800 vehicles/hrLos Angeles Freewaymediumroute optimization40% improvement1200 vehicles/hrZionThe first free AI-powered marketplace for high-tech products, IT services, AI talents, and innovation.FeaturesLive StreamingVoice AssistantHolographic DisplayAutonomous VehiclesServicesMarketplaceIT ServicesAI TalentsEquipmentSupportHelp DeskContactDocumentationStatus© 2025 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-autonomous-vehicle-transportation\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionStreamingVoice AssistantHolographicLoginGet StartedAI-Powered Autonomous Vehicle & TransportationExperience the future of transportation with AI-powered autonomous vehicles, intelligent traffic optimization, and advanced route planning. Revolutionize mobility with cutting-edge technology.Deploy VehicleOptimize Traffic📊Overview🚗Autonomous Vehicles🚦Traffic Optimization🗺️Route Planning📦Logistics📈AnalyticsAutonomous VehiclesAV-001activepassenger • New York, NY85% battery35 mphAV-002activecargo • Los Angeles, CA72% battery28 mphAV-003activeemergency • Chicago, IL95% battery45 mphTraffic OptimizationManhattan Downtownhighsignal optimization50% improvement1800 vehicles/hrLos Angeles Freewaymediumroute optimization40% improvement1200 vehicles/hrZionThe first free AI-powered marketplace for high-tech products, IT services, AI talents, and innovation.FeaturesLive StreamingVoice AssistantHolographic DisplayAutonomous VehiclesServicesMarketplaceIT ServicesAI TalentsEquipmentSupportHelp DeskContactDocumentationStatus© 2025 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-autonomous-vehicle-transportation\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -88,11 +88,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -116,19 +116,19 @@
         "type": "text/javascript"
       },
       {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
+        "type": "text/javascript"
+      },
+      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-voice-assistant-speech-recognition-d186a75d74ef1128.js",
         "type": "text/javascript"
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-live-streaming-broadcasting-fd9c8570d611cf46.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
         "type": "text/javascript"
       },
       {
@@ -138,7 +138,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-quantum-sensing-metrology/",
-  "timestamp": "2025-08-04T16:00:40.413Z",
+  "timestamp": "2025-08-04T16:09:37.358Z",
   "pageInfo": {
     "title": "AI-Powered Quantum Sensing & Metrology | Zion Tech",
     "description": "Advanced quantum sensing and metrology with AI-powered quantum imaging, quantum detection, and quantum interferometry.",
@@ -19,7 +19,7 @@
         "text": "Quick Actions"
       }
     ],
-    "content": "🔬Quantum Sensing & MetrologyAI-Powered Quantum MeasurementStart Sensing🔬Sensing Dashboard📡Quantum Sensing📷Quantum Imaging⚖️Quantum Metrology🎯Quantum Detection🌊Interferometry🌈Spectroscopy🔬Sensing StatusQuantum Measurement LabStatusActiveSensors1Imaging Systems1Detectors1Quick Actions📡Start Sensing📷Quantum Imaging⚖️Metrology🎯DetectionAI-Powered Quantum Sensing & Metrology | Zion Tech GroupAdvanced quantum sensing, imaging, metrology, and detection capabilities{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-quantum-sensing-metrology\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "🔬Quantum Sensing & MetrologyAI-Powered Quantum MeasurementStart Sensing🔬Sensing Dashboard📡Quantum Sensing📷Quantum Imaging⚖️Quantum Metrology🎯Quantum Detection🌊Interferometry🌈Spectroscopy🔬Sensing StatusQuantum Measurement LabStatusActiveSensors1Imaging Systems1Detectors1Quick Actions📡Start Sensing📷Quantum Imaging⚖️Metrology🎯DetectionAI-Powered Quantum Sensing & Metrology | Zion Tech GroupAdvanced quantum sensing, imaging, metrology, and detection capabilities{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-quantum-sensing-metrology\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -48,11 +48,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -62,7 +62,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

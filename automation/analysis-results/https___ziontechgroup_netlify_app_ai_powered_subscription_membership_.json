@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-subscription-membership/",
-  "timestamp": "2025-08-04T16:00:15.399Z",
+  "timestamp": "2025-08-04T16:09:09.300Z",
   "pageInfo": {
     "title": "AI-Powered Subscription & Membership | Zion Tech Group",
     "description": "Choose from tiered memberships with AI-powered benefits, automated billing, and intelligent upgrade recommendations.",
@@ -15,7 +15,7 @@
         "text": "Ready to Unlock Premium Benefits?"
       }
     ],
-    "content": "AI-Powered Subscription & MembershipChoose from tiered memberships with AI-powered benefits, automated billing, and intelligent upgrade recommendations designed to maximize your marketplace success.🎯 Tiered Plans🤖 AI Benefits💰 Smart BillingReady to Unlock Premium Benefits?Upgrade your membership to access advanced AI features, priority support, and exclusive marketplace benefits.View PlansContact Sales{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-subscription-membership\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "AI-Powered Subscription & MembershipChoose from tiered memberships with AI-powered benefits, automated billing, and intelligent upgrade recommendations designed to maximize your marketplace success.🎯 Tiered Plans🤖 AI Benefits💰 Smart BillingReady to Unlock Premium Benefits?Upgrade your membership to access advanced AI features, priority support, and exclusive marketplace benefits.View PlansContact Sales{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-subscription-membership\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -48,11 +48,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -62,7 +62,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

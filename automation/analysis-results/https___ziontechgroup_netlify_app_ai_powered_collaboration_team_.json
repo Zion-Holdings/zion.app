@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-collaboration-team/",
-  "timestamp": "2025-08-04T16:00:24.469Z",
+  "timestamp": "2025-08-04T16:09:19.790Z",
   "pageInfo": {
     "title": "AI-Powered Collaboration & Team Management System | Zion Tech Group",
     "description": "Team coordination, workspace management, partnership building, and alliance management powered by AI.",
@@ -15,7 +15,7 @@
         "text": "Ready to Enhance Your Collaboration?"
       }
     ],
-    "content": "AI-Powered Collaboration & Team Management SystemTeam coordination, workspace management, partnership building, and alliance management powered by AI for seamless collaboration.👥 Team Coordination🏢 Workspace Management🤝 Partnership BuildingReady to Enhance Your Collaboration?Start your collaboration journey with our AI-powered team management system and build stronger partnerships and alliances.Start CollaborationLearn More{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-collaboration-team\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "AI-Powered Collaboration & Team Management SystemTeam coordination, workspace management, partnership building, and alliance management powered by AI for seamless collaboration.👥 Team Coordination🏢 Workspace Management🤝 Partnership BuildingReady to Enhance Your Collaboration?Start your collaboration journey with our AI-powered team management system and build stronger partnerships and alliances.Start CollaborationLearn More{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-collaboration-team\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -48,11 +48,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -62,7 +62,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

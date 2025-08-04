@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-inventory-supply-chain/",
-  "timestamp": "2025-08-04T16:00:20.038Z",
+  "timestamp": "2025-08-04T16:09:14.221Z",
   "pageInfo": {
     "title": "AI-Powered Inventory & Supply Chain Management | Zion Tech Group",
     "description": "Inventory tracking, supply chain optimization, logistics management, and fulfillment automation powered by AI.",
@@ -15,7 +15,7 @@
         "text": "Ready to Optimize Your Supply Chain?"
       }
     ],
-    "content": "AI-Powered Inventory & Supply Chain ManagementInventory tracking, supply chain optimization, logistics management, and fulfillment automation powered by advanced AI for marketplace efficiency.📦 Inventory Tracking🔗 Supply Chain🚚 LogisticsReady to Optimize Your Supply Chain?Start your inventory and supply chain optimization journey with our AI-powered management system for maximum efficiency and cost savings.Start OptimizationLearn More{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-inventory-supply-chain\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "AI-Powered Inventory & Supply Chain ManagementInventory tracking, supply chain optimization, logistics management, and fulfillment automation powered by advanced AI for marketplace efficiency.📦 Inventory Tracking🔗 Supply Chain🚚 LogisticsReady to Optimize Your Supply Chain?Start your inventory and supply chain optimization journey with our AI-powered management system for maximum efficiency and cost savings.Start OptimizationLearn More{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-inventory-supply-chain\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -48,11 +48,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -62,7 +62,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

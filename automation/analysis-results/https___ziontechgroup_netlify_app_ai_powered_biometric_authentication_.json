@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-biometric-authentication/",
-  "timestamp": "2025-08-04T16:01:02.424Z",
+  "timestamp": "2025-08-04T16:09:59.416Z",
   "pageInfo": {
     "title": "AI-Powered Biometric Authentication & Facial Recognition System | Zion Tech Group",
     "description": "Biometric authentication, facial recognition, fingerprint scanning, voice recognition, iris scanning, and automated biometric security management powered by AI.",
@@ -23,7 +23,7 @@
         "text": "Ready to Secure with Biometric Authentication?"
       }
     ],
-    "content": "AI-Powered Biometric Authentication & Facial Recognition SystemBiometric authentication, facial recognition, fingerprint scanning, voice recognition, iris scanning, and automated biometric security management powered by AI.🔐 Biometric Authentication👤 Facial Recognition👆 Fingerprint ScanningBiometric Authentication (1)Facial Recognition (1)Fingerprint Scanning (1)Voice Recognition (1)Iris Scanning (1)Management (1)OverviewAll TypesFacial RecognitionFingerprint ScanningVoice RecognitionIris ScanningGait AnalysisBehavioral BiometricsCreate Biometric DeviceMulti-Modal Biometric Systemfacial recognition Deviceactive98.5% accuracyComprehensive biometric authentication system with multiple modalitiesAccuracy98.5%False Positive0.1%Processing0.8sAI AnalysisSecurity96%Accuracy98%Reliability97%Recommendations:Enhance anti-spoofing measures, Optimize processing algorithmsView DetailsConfigureReady to Secure with Biometric Authentication?Start your biometric authentication journey with our AI-powered system and ensure comprehensive biometric security management.Start SecuringLearn More{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-biometric-authentication\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "AI-Powered Biometric Authentication & Facial Recognition SystemBiometric authentication, facial recognition, fingerprint scanning, voice recognition, iris scanning, and automated biometric security management powered by AI.🔐 Biometric Authentication👤 Facial Recognition👆 Fingerprint ScanningBiometric Authentication (1)Facial Recognition (1)Fingerprint Scanning (1)Voice Recognition (1)Iris Scanning (1)Management (1)OverviewAll TypesFacial RecognitionFingerprint ScanningVoice RecognitionIris ScanningGait AnalysisBehavioral BiometricsCreate Biometric DeviceMulti-Modal Biometric Systemfacial recognition Deviceactive98.5% accuracyComprehensive biometric authentication system with multiple modalitiesAccuracy98.5%False Positive0.1%Processing0.8sAI AnalysisSecurity96%Accuracy98%Reliability97%Recommendations:Enhance anti-spoofing measures, Optimize processing algorithmsView DetailsConfigureReady to Secure with Biometric Authentication?Start your biometric authentication journey with our AI-powered system and ensure comprehensive biometric security management.Start SecuringLearn More{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-biometric-authentication\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -56,11 +56,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -70,7 +70,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-business-intelligence/",
-  "timestamp": "2025-08-04T16:00:21.146Z",
+  "timestamp": "2025-08-04T16:09:15.487Z",
   "pageInfo": {
     "title": "AI-Powered Business Intelligence & Reporting System | Zion Tech Group",
     "description": "Advanced business intelligence, custom reporting, KPI tracking, and predictive analytics powered by AI.",
@@ -15,7 +15,7 @@
         "text": "Ready to Make Data-Driven Decisions?"
       }
     ],
-    "content": "AI-Powered Business Intelligence & Reporting SystemAdvanced business intelligence, custom reporting, KPI tracking, and predictive analytics powered by AI for data-driven decisions.📊 Business Intelligence📈 Custom Reporting🎯 KPI TrackingReady to Make Data-Driven Decisions?Start your business intelligence journey with our AI-powered reporting system and unlock insights that drive growth and success.Start ReportingLearn More{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-business-intelligence\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "AI-Powered Business Intelligence & Reporting SystemAdvanced business intelligence, custom reporting, KPI tracking, and predictive analytics powered by AI for data-driven decisions.📊 Business Intelligence📈 Custom Reporting🎯 KPI TrackingReady to Make Data-Driven Decisions?Start your business intelligence journey with our AI-powered reporting system and unlock insights that drive growth and success.Start ReportingLearn More{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-business-intelligence\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -48,11 +48,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -62,7 +62,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

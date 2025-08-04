@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-autonomous-drone-delivery-logistics/",
-  "timestamp": "2025-08-04T16:00:28.526Z",
+  "timestamp": "2025-08-04T16:09:23.960Z",
   "pageInfo": {
     "title": "AI-Powered Autonomous Drone Delivery & Logistics | Zion Tech",
     "description": "Experience the future of logistics with AI-powered autonomous drone delivery. Real-time tracking, intelligent route optimization, and seamless marketplace integration.",
@@ -23,7 +23,7 @@
         "text": "Quick Actions"
       }
     ],
-    "content": "🚁AI-Powered Drone DeliveryAutonomous Logistics & Fleet ManagementInitialize SystemStart Tracking📊System Overview🚁Drone Fleet🗺️Delivery Routes🏢Logistics Hubs🌤️Weather & Airspace📈Analytics✅System StatusAll Systems OperationalActive Drones2In Transit1Pending Deliveries1Success Rate98.4%Live Fleet TrackingLive🗺️Interactive Drone Fleet MapReal-time GPS tracking and route visualizationQuick Actions📦Schedule Delivery🚁Deploy Drone📊View Analytics⚙️System SettingsAI-Powered Autonomous Drone Delivery & Logistics System | Zion Tech GroupAdvanced fleet management, real-time tracking, and intelligent route optimization{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-autonomous-drone-delivery-logistics\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "🚁AI-Powered Drone DeliveryAutonomous Logistics & Fleet ManagementInitialize SystemStart Tracking📊System Overview🚁Drone Fleet🗺️Delivery Routes🏢Logistics Hubs🌤️Weather & Airspace📈Analytics✅System StatusAll Systems OperationalActive Drones2In Transit1Pending Deliveries1Success Rate98.4%Live Fleet TrackingLive🗺️Interactive Drone Fleet MapReal-time GPS tracking and route visualizationQuick Actions📦Schedule Delivery🚁Deploy Drone📊View Analytics⚙️System SettingsAI-Powered Autonomous Drone Delivery & Logistics System | Zion Tech GroupAdvanced fleet management, real-time tracking, and intelligent route optimization{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-autonomous-drone-delivery-logistics\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -52,11 +52,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -66,7 +66,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

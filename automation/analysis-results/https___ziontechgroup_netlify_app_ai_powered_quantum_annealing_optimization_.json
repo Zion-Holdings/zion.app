@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-quantum-annealing-optimization/",
-  "timestamp": "2025-08-04T16:00:33.766Z",
+  "timestamp": "2025-08-04T16:09:29.823Z",
   "pageInfo": {
     "title": "AI-Powered Quantum Annealing & Optimization | Zion Tech",
     "description": "Advanced quantum annealing and optimization with AI-powered quantum algorithms, machine learning, and error correction.",
@@ -19,7 +19,7 @@
         "text": "Quick Actions"
       }
     ],
-    "content": "⚛️Quantum Annealing & OptimizationAI-Powered Quantum ComputingStart Annealing⚛️Quantum Dashboard🔥Annealing Problems📈Optimization🧠Quantum ML🔬Algorithms🧪Simulation🛡️Error Correction⚛️Quantum System StatusAnnealing LabStatusActiveAnnealing Problems1Optimizations1ML Models1Quick Actions🔥Start Annealing📈Optimize Problem🧠Train Model🧪Run SimulationAI-Powered Quantum Annealing & Optimization | Zion Tech GroupAdvanced quantum annealing, optimization, machine learning, and error correction{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-quantum-annealing-optimization\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "⚛️Quantum Annealing & OptimizationAI-Powered Quantum ComputingStart Annealing⚛️Quantum Dashboard🔥Annealing Problems📈Optimization🧠Quantum ML🔬Algorithms🧪Simulation🛡️Error Correction⚛️Quantum System StatusAnnealing LabStatusActiveAnnealing Problems1Optimizations1ML Models1Quick Actions🔥Start Annealing📈Optimize Problem🧠Train Model🧪Run SimulationAI-Powered Quantum Annealing & Optimization | Zion Tech GroupAdvanced quantum annealing, optimization, machine learning, and error correction{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-quantum-annealing-optimization\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -48,11 +48,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -62,7 +62,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-collaboration-workspace/",
-  "timestamp": "2025-08-04T16:00:26.156Z",
+  "timestamp": "2025-08-04T16:09:21.333Z",
   "pageInfo": {
     "title": "AI-Powered Collaboration Workspace - Zion",
     "description": "Real-time collaboration workspace with AI assistance for project management, document collaboration, and team coordination.",
@@ -59,7 +59,7 @@
         "text": "Recent Activity"
       }
     ],
-    "content": "Zion|Collaboration Workspace🤖 AI AssistantProjects+ New ProjectAI-Powered Marketplace DevelopmentBuilding the next-generation AI-powered marketplac...Progress75%Team Members+ Invite MembersSSarah ChenownerAAlex RodriguezadminEEmma ThompsonmemberOverviewTasksDocumentsTimelineAnalyticsProject OverviewProgress75%Team Members3Active collaboratorsTasks3Total tasks🤖 AI SuggestionsSchedule Code ReviewBased on recent commits, schedule a code review session for the AI integration module.Schedule ReviewTeam Standup ReminderDaily standup meeting is due in 15 minutes. Prepare updates on current sprint progress.Join MeetingProject Milestone ApproachingPhase 1 completion deadline is in 3 days. Review remaining tasks and allocate resources.Review TasksRecent ActivitySSarah Chen completed task \"Design System Implementation\"2 hours agoAAlex Rodriguez started working on \"AI Integration Testing\"4 hours agoEEmma Thompson uploaded \"UI/UX Mockups\"1 day ago{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-collaboration-workspace\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "Zion|Collaboration Workspace🤖 AI AssistantProjects+ New ProjectAI-Powered Marketplace DevelopmentBuilding the next-generation AI-powered marketplac...Progress75%Team Members+ Invite MembersSSarah ChenownerAAlex RodriguezadminEEmma ThompsonmemberOverviewTasksDocumentsTimelineAnalyticsProject OverviewProgress75%Team Members3Active collaboratorsTasks3Total tasks🤖 AI SuggestionsSchedule Code ReviewBased on recent commits, schedule a code review session for the AI integration module.Schedule ReviewTeam Standup ReminderDaily standup meeting is due in 15 minutes. Prepare updates on current sprint progress.Join MeetingProject Milestone ApproachingPhase 1 completion deadline is in 3 days. Review remaining tasks and allocate resources.Review TasksRecent ActivitySSarah Chen completed task \"Design System Implementation\"2 hours agoAAlex Rodriguez started working on \"AI Integration Testing\"4 hours agoEEmma Thompson uploaded \"UI/UX Mockups\"1 day ago{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-collaboration-workspace\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -92,11 +92,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -112,13 +112,13 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
         "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

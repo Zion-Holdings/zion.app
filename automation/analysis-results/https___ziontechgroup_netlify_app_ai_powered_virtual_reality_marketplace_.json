@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-virtual-reality-marketplace/",
-  "timestamp": "2025-08-04T16:00:27.439Z",
+  "timestamp": "2025-08-04T16:09:22.892Z",
   "pageInfo": {
     "title": "AI-Powered Virtual Reality Marketplace - Zion",
     "description": "Experience the future of shopping with AI-powered virtual reality marketplace. Explore products in immersive 3D environments.",
@@ -55,7 +55,7 @@
         "text": "Software"
       }
     ],
-    "content": "ZionEnter VRAI-Powered Virtual Reality MarketplaceExperience the future of shopping with immersive AI-powered virtual reality. Explore products in stunning 3D environments and interact with AI assistants.Enter Virtual RealityBrowse Traditional Marketplace🥽Immersive ExperienceExplore products in stunning 3D environments with realistic lighting and physics.🤖AI AssistantInteract with AI-powered virtual assistants for personalized recommendations.🎯Smart NavigationIntelligent navigation and product discovery powered by AI algorithms.Available VR ExperiencesAI Tech ShowroomExplore cutting-edge AI products in a futuristic showroomEnvironment: futuristic-showroom2 productsSmart Home ExperienceExperience AI-powered smart home devices in a realistic environmentEnvironment: modern-home1 productsIndustrial AI HubExplore industrial AI solutions and automation systemsEnvironment: industrial-facility1 productsVR RequirementsHardware• VR Headset (Oculus Quest, HTC Vive, etc.)• Motion Controllers• High-performance computer (for PC VR)• Stable internet connectionSoftware• WebVR-compatible browser• VR runtime (SteamVR, Oculus)• WebGL 2.0 support• Latest graphics drivers© 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-virtual-reality-marketplace\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionEnter VRAI-Powered Virtual Reality MarketplaceExperience the future of shopping with immersive AI-powered virtual reality. Explore products in stunning 3D environments and interact with AI assistants.Enter Virtual RealityBrowse Traditional Marketplace🥽Immersive ExperienceExplore products in stunning 3D environments with realistic lighting and physics.🤖AI AssistantInteract with AI-powered virtual assistants for personalized recommendations.🎯Smart NavigationIntelligent navigation and product discovery powered by AI algorithms.Available VR ExperiencesAI Tech ShowroomExplore cutting-edge AI products in a futuristic showroomEnvironment: futuristic-showroom2 productsSmart Home ExperienceExperience AI-powered smart home devices in a realistic environmentEnvironment: modern-home1 productsIndustrial AI HubExplore industrial AI solutions and automation systemsEnvironment: industrial-facility1 productsVR RequirementsHardware• VR Headset (Oculus Quest, HTC Vive, etc.)• Motion Controllers• High-performance computer (for PC VR)• Stable internet connectionSoftware• WebVR-compatible browser• VR runtime (SteamVR, Oculus)• WebGL 2.0 support• Latest graphics drivers© 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-virtual-reality-marketplace\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -88,11 +88,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -112,13 +112,13 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
         "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

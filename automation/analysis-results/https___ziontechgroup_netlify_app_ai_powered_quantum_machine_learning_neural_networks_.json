@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-quantum-machine-learning-neural-networks/",
-  "timestamp": "2025-08-04T16:00:36.497Z",
+  "timestamp": "2025-08-04T16:09:32.981Z",
   "pageInfo": {
     "title": "AI-Powered Quantum Machine Learning & Neural Networks | Zion Tech",
     "description": "Advanced quantum machine learning and neural networks with AI-powered quantum classification, regression, and feature maps.",
@@ -19,7 +19,7 @@
         "text": "Quick Actions"
       }
     ],
-    "content": "🧠Quantum Machine Learning & Neural NetworksAI-Powered Quantum IntelligenceStart Training🧠ML Dashboard⚛️Neural Networks📊Classification📈Regression🗺️Feature Maps🎯Optimization🔍Unsupervised🧠Quantum ML StatusMachine Learning LabStatusActiveNeural Networks1Models2Feature Maps1Quick Actions⚛️Train Network📊Classify Data📈Predict Values🎯Optimize ModelAI-Powered Quantum Machine Learning & Neural Networks | Zion Tech GroupAdvanced quantum machine learning, neural networks, classification, and regression{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-quantum-machine-learning-neural-networks\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "🧠Quantum Machine Learning & Neural NetworksAI-Powered Quantum IntelligenceStart Training🧠ML Dashboard⚛️Neural Networks📊Classification📈Regression🗺️Feature Maps🎯Optimization🔍Unsupervised🧠Quantum ML StatusMachine Learning LabStatusActiveNeural Networks1Models2Feature Maps1Quick Actions⚛️Train Network📊Classify Data📈Predict Values🎯Optimize ModelAI-Powered Quantum Machine Learning & Neural Networks | Zion Tech GroupAdvanced quantum machine learning, neural networks, classification, and regression{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-quantum-machine-learning-neural-networks\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -48,11 +48,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -62,7 +62,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

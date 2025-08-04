@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-dao-governance-system/",
-  "timestamp": "2025-08-04T16:00:29.819Z",
+  "timestamp": "2025-08-04T16:09:25.441Z",
   "pageInfo": {
     "title": "AI-Powered DAO Governance System | Zion Tech",
     "description": "Experience decentralized governance with AI-powered DAO system. Community-driven decision making, transparent voting, and automated execution.",
@@ -23,7 +23,7 @@
         "text": "Quick Actions"
       }
     ],
-    "content": "🏛️DAO Governance SystemDecentralized Autonomous OrganizationConnecting...📊DAO Overview🗳️Proposals💰Treasury👥Members⚖️Governance📈Analytics🪙ZION TokenZion Governance TokenPrice$2.45Market Cap$18,375,000Holders1,250Treasury2,500,000 ZIONGovernance Statistics45Total Proposals3Active32Passed850VotersQuick Actions📝Create Proposal🗳️Vote💰Treasury👥MembersAI-Powered DAO Governance System | Zion Tech GroupDecentralized decision-making, transparent voting, and community-driven governance{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-dao-governance-system\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "🏛️DAO Governance SystemDecentralized Autonomous OrganizationConnecting...📊DAO Overview🗳️Proposals💰Treasury👥Members⚖️Governance📈Analytics🪙ZION TokenZion Governance TokenPrice$2.45Market Cap$18,375,000Holders1,250Treasury2,500,000 ZIONGovernance Statistics45Total Proposals3Active32Passed850VotersQuick Actions📝Create Proposal🗳️Vote💰Treasury👥MembersAI-Powered DAO Governance System | Zion Tech GroupDecentralized decision-making, transparent voting, and community-driven governance{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-dao-governance-system\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -52,11 +52,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -66,7 +66,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-contract-legal/",
-  "timestamp": "2025-08-04T16:00:14.198Z",
+  "timestamp": "2025-08-04T16:09:07.713Z",
   "pageInfo": {
     "title": "AI-Powered Contract & Legal Management | Zion Tech Group",
     "description": "Generate contracts, ensure legal compliance, resolve disputes, and manage legal aspects with AI-powered assistance.",
@@ -15,7 +15,7 @@
         "text": "Ready to Manage Your Legal Affairs?"
       }
     ],
-    "content": "AI-Powered Contract & Legal ManagementGenerate contracts, ensure legal compliance, resolve disputes, and manage all legal aspects of your marketplace transactions with intelligent AI assistance.📄 Generate Contracts⚖️ Legal Compliance🤝 Dispute ResolutionReady to Manage Your Legal Affairs?Start creating contracts, ensuring compliance, and resolving disputes with our AI-powered legal management system.Create ContractLegal Templates{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-contract-legal\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "AI-Powered Contract & Legal ManagementGenerate contracts, ensure legal compliance, resolve disputes, and manage all legal aspects of your marketplace transactions with intelligent AI assistance.📄 Generate Contracts⚖️ Legal Compliance🤝 Dispute ResolutionReady to Manage Your Legal Affairs?Start creating contracts, ensuring compliance, and resolving disputes with our AI-powered legal management system.Create ContractLegal Templates{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-contract-legal\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -48,11 +48,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -62,7 +62,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

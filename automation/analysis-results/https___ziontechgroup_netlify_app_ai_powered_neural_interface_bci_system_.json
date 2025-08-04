@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-neural-interface-bci-system/",
-  "timestamp": "2025-08-04T16:00:31.015Z",
+  "timestamp": "2025-08-04T16:09:26.847Z",
   "pageInfo": {
     "title": "AI-Powered Neural Interface & BCI System | Zion Tech",
     "description": "Experience direct brain-computer interface with AI-powered neural interface system. Cognitive enhancement, thought control, and brain-computer communication.",
@@ -23,7 +23,7 @@
         "text": "Quick Actions"
       }
     ],
-    "content": "🧠Neural Interface & BCI SystemBrain-Computer Interface TechnologyCalibrating...📊Neural Dashboard⚡Brain Signals🧠Brain Activity🎯Cognitive Tasks🔌Neural Devices💻BCI Applications🏋️Neural Training🔗Connection StatusNeural InterfaceStatusDisconnectedSignal Quality94%Latency150msActive Channels64Real-time Neural SignalsRecordQuick Actions🎯Start Task🔌Calibrate📊Analytics🏋️TrainingAI-Powered Neural Interface & BCI System | Zion Tech GroupDirect brain-computer interface, cognitive enhancement, and neural technology{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-neural-interface-bci-system\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "🧠Neural Interface & BCI SystemBrain-Computer Interface TechnologyCalibrating...📊Neural Dashboard⚡Brain Signals🧠Brain Activity🎯Cognitive Tasks🔌Neural Devices💻BCI Applications🏋️Neural Training🔗Connection StatusNeural InterfaceStatusDisconnectedSignal Quality94%Latency150msActive Channels64Real-time Neural SignalsRecordQuick Actions🎯Start Task🔌Calibrate📊Analytics🏋️TrainingAI-Powered Neural Interface & BCI System | Zion Tech GroupDirect brain-computer interface, cognitive enhancement, and neural technology{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-neural-interface-bci-system\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -52,11 +52,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -66,7 +66,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-quantum-simulation-algorithm-development/",
-  "timestamp": "2025-08-04T16:00:38.909Z",
+  "timestamp": "2025-08-04T16:09:35.838Z",
   "pageInfo": {
     "title": "AI-Powered Quantum Simulation & Algorithm Development | Zion Tech",
     "description": "Advanced quantum simulation and algorithm development with AI-powered circuit simulation, gate operations, and quantum state analysis.",
@@ -19,7 +19,7 @@
         "text": "Quick Actions"
       }
     ],
-    "content": "⚛️Quantum Simulation & Algorithm DevelopmentAI-Powered Quantum ComputingStart Simulation⚛️Simulation Dashboard🔄Simulations🧮Algorithms🔧Quantum Gates🌊Quantum States⚡Circuits📊Measurements⚛️Simulation StatusQuantum Computing LabStatusActiveSimulations1Algorithms1Circuits1Quick Actions🔄Run Simulation🧮Develop Algorithm🔧Design Circuit📊Measure StateAI-Powered Quantum Simulation & Algorithm Development | Zion Tech GroupAdvanced quantum simulation, algorithm development, and circuit design{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-quantum-simulation-algorithm-development\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "⚛️Quantum Simulation & Algorithm DevelopmentAI-Powered Quantum ComputingStart Simulation⚛️Simulation Dashboard🔄Simulations🧮Algorithms🔧Quantum Gates🌊Quantum States⚡Circuits📊Measurements⚛️Simulation StatusQuantum Computing LabStatusActiveSimulations1Algorithms1Circuits1Quick Actions🔄Run Simulation🧮Develop Algorithm🔧Design Circuit📊Measure StateAI-Powered Quantum Simulation & Algorithm Development | Zion Tech GroupAdvanced quantum simulation, algorithm development, and circuit design{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-quantum-simulation-algorithm-development\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -48,11 +48,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -62,7 +62,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]
