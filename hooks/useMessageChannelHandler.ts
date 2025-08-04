@@ -17,8 +17,8 @@ interface UseMessageChannelHandlerReturn {
     extensions: Array<{
       name: string;
       id: string;
-      type: 'unknown';
-      detected: boolean;
+      version: string;
+      permissions: string[];
     }>;
   };
 }
@@ -26,7 +26,16 @@ interface UseMessageChannelHandlerReturn {
 export const useMessageChannelHandler = (): UseMessageChannelHandlerReturn => {
   const [errorCount, setErrorCount] = useState(0);
   const [hasRecentErrors, setHasRecentErrors] = useState(false);
-  const [extensionInfo, setExtensionInfo] = useState({
+  const [extensionInfo, setExtensionInfo] = useState<{
+    hasExtensions: boolean;
+    extensionCount: number;
+    extensions: Array<{
+      name: string;
+      id: string;
+      version: string;
+      permissions: string[];
+    }>;
+  }>({
     hasExtensions: false,
     extensionCount: 0,
     extensions: []
@@ -39,7 +48,19 @@ export const useMessageChannelHandler = (): UseMessageChannelHandlerReturn => {
     const interval = setInterval(() => {
       setErrorCount(handler.getErrorCount());
       setHasRecentErrors(handler.hasRecentErrors(5)); // Check last 5 minutes
-      setExtensionInfo(handler.getExtensionInfo());
+      const detectedExtensionInfo = handler.getExtensionInfo();
+      if (detectedExtensionInfo) {
+        setExtensionInfo({
+          hasExtensions: detectedExtensionInfo.hasExtensions,
+          extensionCount: detectedExtensionInfo.extensionCount,
+          extensions: detectedExtensionInfo.extensions.map(ext => ({
+            name: ext.name,
+            id: ext.id,
+            version: 'unknown',
+            permissions: []
+          }))
+        });
+      }
     }, 1000);
 
     return () => clearInterval(interval);
