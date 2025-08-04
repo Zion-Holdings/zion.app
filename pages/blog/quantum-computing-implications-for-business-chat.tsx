@@ -36,7 +36,7 @@ const QuantumComputingImplicationsForBusinessChatPage: NextPage = () => {
               </span>
             </h1>
             <div className="flex items-center text-gray-400 text-sm mb-8">
-              <span>Expert Discussion • professional-technical • technology-deep-dive</span>
+              <span>Expert Discussion • solution-oriented • comparison-review</span>
             </div>
           </div>
           
