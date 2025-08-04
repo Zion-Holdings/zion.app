@@ -2,10 +2,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import PageLayout from '../../components/layout/PageLayout'
 
 const Signup: NextPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <PageLayout>
       <Head>
         <title>Sign Up - Zion</title>
         <meta name="description" content="Create your Zion account to access the AI-powered marketplace." />
@@ -58,7 +59,7 @@ const Signup: NextPage = () => {
                 id="password"
                 name="password"
                 className="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                placeholder="Create a password"
+                placeholder="Create a strong password"
               />
             </div>
             
@@ -80,7 +81,7 @@ const Signup: NextPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </PageLayout>
   )
 }
 
