@@ -37,7 +37,7 @@ const UiUxDesignChatPage: NextPage = () => {
                 Expert discussion about ui ux design services and opportunities
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>customer-focused • industry-insights • innovation-spotlight</span>
+                <span>business-strategic • technology-deep-dive • step-by-step-guide</span>
               </div>
             </div>
           </div>
