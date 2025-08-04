@@ -39,8 +39,12 @@ interface APIEndpoint {
   description: string;
   endpoint: string;
   method: string;
+  path: string;
   status: 'active' | 'inactive' | 'deprecated';
   responseTime: number;
+  successRate: number;
+  rateLimit: number;
+  lastUpdated: string;
   aiAnalysis: APIAnalysis;
 }
 
