@@ -2,16 +2,17 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import PageLayout from '../components/layout/PageLayout'
 
 const Marketplace: NextPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <PageLayout>
       <Head>
         <title>Marketplace - Zion</title>
         <meta name="description" content="Explore Zion's AI-powered marketplace for services, talents, equipment, and products." />
       </Head>
 
-      <div className="container-responsive section-padding">
+      <div className="section-padding">
         <div className="text-center mb-16">
           <h1 className="text-responsive-4xl font-bold text-white mb-6">
             Zion <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Marketplace</span>
@@ -55,7 +56,7 @@ const Marketplace: NextPage = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </PageLayout>
   )
 }
 
