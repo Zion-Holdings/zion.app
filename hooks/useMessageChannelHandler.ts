@@ -32,43 +32,48 @@ export const useMessageChannelHandler = (): UseMessageChannelHandlerReturn => {
   });
 
   useEffect(() => {
-    const handler = MessageChannelHandler.getInstance();
+    const handler = new MessageChannelHandler();
     
-    // Update state every second to reflect current error status
-    const interval = setInterval(() => {
-      setErrorCount(handler.getErrorCount());
-      setHasRecentErrors(handler.hasRecentErrors(5)); // Check last 5 minutes
-      
-      // Get extension info and handle it safely
-      try {
-        const detectedExtensionInfo = handler.getExtensionInfo();
-        if (detectedExtensionInfo && typeof detectedExtensionInfo === 'object') {
-          // Use the hasExtensions property directly from the handler
-          const hasExtensions = detectedExtensionInfo.hasExtensions || false;
-          setExtensionInfo({
-            hasExtensions,
-            extensionCount: detectedExtensionInfo.extensionCount || 0,
-            extensions: []
-          });
-        }
-      } catch (error) {
-        // If there's an error getting extension info, just keep the default state
-        console.warn('Error getting extension info:', error);
-      }
-    }, 1000);
+    // Set up error tracking
+    const updateErrorCount = () => {
+      const errorLog = handler.getErrorLog();
+      setErrorCount(errorLog.length);
+      setHasRecentErrors(errorLog.some(error => 
+        Date.now() - error.timestamp < 60000 // Last minute
+      ));
+    };
 
-    return () => clearInterval(interval);
+    // Get extension info
+    const detectedExtensionInfo = handler.getExtensionInfo();
+    const hasExtensions = detectedExtensionInfo.hasExtensions || false;
+    const extensionCount = detectedExtensionInfo.extensionCount || 0;
+
+    setExtensionInfo({
+      hasExtensions,
+      extensionCount,
+      extensions: []
+    });
+
+    // Initial error count
+    updateErrorCount();
+
+    // Set up periodic error checking
+    const interval = setInterval(updateErrorCount, 5000);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   const clearErrors = () => {
-    const handler = MessageChannelHandler.getInstance();
+    const handler = new MessageChannelHandler();
     handler.clearErrorLog();
     setErrorCount(0);
     setHasRecentErrors(false);
   };
 
   const getErrorLog = () => {
-    const handler = MessageChannelHandler.getInstance();
+    const handler = new MessageChannelHandler();
     return handler.getErrorLog();
   };
 
