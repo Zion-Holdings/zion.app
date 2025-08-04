@@ -25,6 +25,7 @@ const Sitemap: NextPage = () => {
       { name: 'AI Recommendation Engine', href: '/ai-recommendation-engine', description: 'Intelligent AI-powered recommendations' },
       { name: 'AI Portfolio Builder', href: '/ai-portfolio-builder', description: 'AI-powered portfolio generation' },
       { name: 'AI Contract Generator', href: '/ai-contract-generator', description: 'AI-powered contract generation' },
+      { name: 'AI Invoice Generator', href: '/ai-invoice-generator', description: 'AI-powered invoice generation' },
       { name: 'AI Virtual Assistant', href: '/ai-virtual-assistant', description: 'AI assistant and chatbot' },
       { name: 'AI Project Management', href: '/ai-project-management', description: 'AI-powered project management' },
       { name: 'AI Analytics Dashboard', href: '/analytics-dashboard', description: 'Business intelligence and analytics' },

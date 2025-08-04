@@ -8,11 +8,6 @@ const Home: NextPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [email, setEmail] = useState('')
   const [currentSection, setCurrentSection] = useState(0)
-  const [isLoading, setIsLoading] = useState(false)
-  const observerRef = useRef<IntersectionObserver | null>(null)
-  const [visibleSections, setVisibleSections] = useState<Set<number>>(new Set())
-  const [displayedSections, setDisplayedSections] = useState<any[]>([])
-  const [nextSectionId, setNextSectionId] = useState(9)
   const [isFooterPersistent, setIsFooterPersistent] = useState(false)
 
 
@@ -166,6 +161,24 @@ const Home: NextPage = () => {
       secondaryCta: 'Learn More',
       secondaryCtaLink: '/ai-contract-generator',
       bgClass: 'bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900'
+    },
+    {
+      id: 10,
+      type: 'ai-invoice-generator',
+      title: 'AI Invoice Generator',
+      subtitle: 'Create Professional Invoices with AI',
+      description: 'Generate professional invoices, manage billing, and track payments with AI assistance. Perfect for freelancers, businesses, and service providers.',
+      features: [
+        'AI-Generated Invoices',
+        'Professional Templates',
+        'Automatic Calculations',
+        'Download & Share'
+      ],
+      cta: 'Generate Invoice',
+      ctaLink: '/ai-invoice-generator',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/ai-invoice-generator',
+      bgClass: 'bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900'
     },
     {
       id: 7,
@@ -2206,173 +2219,7 @@ const Home: NextPage = () => {
     }
   ], [])
 
-  // Initialize displayed sections with base sections
-  useEffect(() => {
-    setDisplayedSections(baseSections)
-  }, [baseSections])
 
-  // Generate additional sections for infinite scroll
-  const generateAdditionalSections = useCallback(() => {
-    const additionalSections = []
-    const sectionTypes = [
-      {
-        type: 'featured-services',
-        title: 'Advanced IT Solutions',
-        items: [
-          { title: 'Blockchain Development', description: 'Decentralized applications and smart contracts', link: '/services/blockchain-development', price: '$200-600/hr', rating: 4.8 },
-          { title: 'IoT Integration', description: 'Internet of Things implementation', link: '/services/iot-integration', price: '$150-400/hr', rating: 4.7 },
-          { title: 'Data Analytics', description: 'Big data processing and insights', link: '/services/data-analytics', price: '$180-450/hr', rating: 4.9 },
-          { title: 'DevOps Automation', description: 'CI/CD pipeline optimization', link: '/services/devops-automation', price: '$120-350/hr', rating: 4.6 }
-        ],
-        bgClass: 'bg-gradient-to-br from-cyan-900 to-slate-900'
-      },
-      {
-        type: 'featured-talents',
-        title: 'Expert Consultants',
-        items: [
-          { name: 'Dr. Lisa Wang', specialization: 'Quantum Computing Expert', experience: '12+ years', rating: 4.9, link: '/talents' },
-          { name: 'James Wilson', specialization: 'Blockchain Architect', experience: '7+ years', rating: 4.8, link: '/talents' },
-          { name: 'Dr. Elena Petrova', specialization: 'Data Scientist', experience: '9+ years', rating: 4.9, link: '/talents' },
-          { name: 'David Park', specialization: 'Cloud Solutions Architect', experience: '8+ years', rating: 4.7, link: '/talents' }
-        ],
-        bgClass: 'bg-gradient-to-br from-emerald-900 to-slate-900'
-      },
-      {
-        type: 'featured-equipment',
-        title: 'Advanced Hardware',
-        items: [
-          { name: 'AI Training Rigs', description: 'Specialized hardware for machine learning', price: '$8000-75000', link: '/equipment' },
-          { name: 'Network Infrastructure', description: 'High-speed networking equipment', price: '$3000-20000', link: '/equipment' },
-          { name: 'Security Appliances', description: 'Enterprise security solutions', price: '$5000-30000', link: '/equipment' },
-          { name: 'Monitoring Systems', description: 'Real-time monitoring and alerting', price: '$2000-15000', link: '/equipment' }
-        ],
-        bgClass: 'bg-gradient-to-br from-orange-900 to-slate-900'
-      },
-      {
-        type: 'blog-highlights',
-        title: 'Industry Trends',
-        items: [
-          { title: 'AI Ethics and Governance', excerpt: 'Building responsible AI systems', link: '/blog/ai-ethics-and-governance', category: 'Ethics' },
-          { title: 'Edge Computing Revolution', excerpt: 'Processing data closer to the source', link: '/blog/edge-computing-revolution', category: 'Technology' },
-          { title: 'Sustainable Tech Solutions', excerpt: 'Green technology for the future', link: '/blog/sustainable-tech-solutions', category: 'Sustainability' },
-          { title: 'Digital Twin Technology', excerpt: 'Virtual replicas of physical systems', link: '/blog/digital-twin-technology', category: 'Innovation' }
-        ],
-        bgClass: 'bg-gradient-to-br from-teal-900 to-slate-900'
-      },
-      {
-        type: 'chat-services',
-        title: 'Specialized AI Chat',
-        items: [
-          { title: 'Financial Analysis Chat', description: 'AI-powered financial insights', link: '/services/financial-analysis-chat', icon: '💰' },
-          { title: 'Legal Tech Chat', description: 'Legal technology consultation', link: '/services/legal-tech-chat', icon: '⚖️' },
-          { title: 'Healthcare AI Chat', description: 'Medical technology advice', link: '/services/healthcare-ai-chat', icon: '🏥' },
-          { title: 'Education Tech Chat', description: 'Educational technology solutions', link: '/services/education-tech-chat', icon: '🎓' }
-        ],
-        bgClass: 'bg-gradient-to-br from-violet-900 to-slate-900'
-      }
-    ]
-
-    // Generate 3-5 additional sections
-    const numSections = Math.floor(Math.random() * 3) + 3
-    for (let i = 0; i < numSections; i++) {
-      const sectionType = sectionTypes[i % sectionTypes.length]
-      additionalSections.push({
-        id: nextSectionId + i,
-        ...sectionType
-      })
-    }
-
-    return additionalSections
-  }, [nextSectionId])
-
-  // Load more sections when reaching the end
-  const loadMoreSections = useCallback(async () => {
-    if (isLoading) {
-      console.log('Infinite scroll: Already loading, skipping...')
-      return
-    }
-
-    console.log('Infinite scroll: Loading more sections...')
-    setIsLoading(true)
-    
-    // Simulate API call delay
-    await new Promise(resolve => setTimeout(resolve, 800))
-    
-    const newSections = generateAdditionalSections()
-    console.log('Infinite scroll: Generated', newSections.length, 'new sections')
-    setDisplayedSections(prev => {
-      const updated = [...prev, ...newSections]
-      console.log('Infinite scroll: Total sections now:', updated.length)
-      return updated
-    })
-    setNextSectionId(prev => prev + newSections.length)
-    
-    setIsLoading(false)
-    console.log('Infinite scroll: Loading complete')
-  }, [isLoading, generateAdditionalSections])
-
-  // Intersection Observer for infinite scroll
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const sectionId = parseInt(entry.target.getAttribute('data-section-id') || '0')
-            setVisibleSections(prev => new Set(Array.from(prev).concat([sectionId])))
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-
-    observerRef.current = observer
-
-    // Observe all sections
-    const sectionElements = document.querySelectorAll('[data-section-id]')
-    sectionElements.forEach((el) => observer.observe(el))
-
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect()
-      }
-    }
-  }, [displayedSections])
-
-  // Scroll handler for infinite scroll
-  const handleScroll = useCallback(() => {
-    const scrollPosition = window.innerHeight + window.scrollY
-    const documentHeight = document.documentElement.scrollHeight
-    const threshold = 1000
-    
-    // Check for infinite scroll
-    if (scrollPosition >= documentHeight - threshold) {
-      console.log('Infinite scroll: Near bottom, triggering load more...')
-      loadMoreSections()
-    }
-    
-
-    const sectionElements = document.querySelectorAll('[data-section-id]')
-    let visibleSectionCount = 0
-    
-    sectionElements.forEach((element) => {
-      const rect = element.getBoundingClientRect()
-      const sectionHeight = rect.height
-      const sectionTop = rect.top
-      const sectionBottom = rect.bottom
-      
-      // Consider a section visible if it's partially in view
-      if (sectionTop < window.innerHeight && sectionBottom > 0) {
-        visibleSectionCount++
-      }
-    })
-    
-
-      }, [loadMoreSections])
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [handleScroll])
 
   const renderSection = (section: any) => {
     switch (section.type) {
@@ -2759,6 +2606,45 @@ const Home: NextPage = () => {
                     <h3 className="text-lg font-bold text-white mb-2">{feature}</h3>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        )
+
+      case 'ai-invoice-generator':
+        return (
+          <div className="py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  {section.title}
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-4">
+                  {section.subtitle}
+                </p>
+                <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+                  {section.description}
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                  <Link href={section.ctaLink} className="inline-flex items-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 transform hover:scale-105">
+                    {section.cta}
+                  </Link>
+                  <Link href={section.secondaryCtaLink} className="inline-flex items-center bg-transparent border-2 border-white/20 text-white font-semibold py-4 px-8 rounded-lg hover:bg-white/10 transition-all duration-200">
+                    {section.secondaryCta}
+                  </Link>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {section.features.map((feature: string, index: number) => (
+                    <div key={index} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-200">
+                      <div className="text-center">
+                        <div className="text-2xl mb-3">📄</div>
+                        <h3 className="text-white font-semibold mb-2">{feature}</h3>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -5851,34 +5737,15 @@ const Home: NextPage = () => {
       </nav>
 
       <main className="flex-1 transition-all duration-500">
-        {/* Infinite Scroll Sections */}
-        {displayedSections.map((section) => (
+        {/* Main Page Sections */}
+        {baseSections.map((section) => (
           <section
             key={section.id}
-            data-section-id={section.id}
-            className={`${section.bgClass} transition-opacity duration-500 ${
-              visibleSections.has(section.id) ? 'opacity-100' : 'opacity-50'
-            }`}
+            className={`${section.bgClass} transition-opacity duration-500 opacity-100`}
           >
             {renderSection(section)}
           </section>
         ))}
-
-        {/* Loading indicator */}
-        {isLoading && (
-          <div className="py-12 text-center">
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg">
-              <svg className="animate-spin -ml-1 mr-3 h-6 w-6 text-purple-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-              </svg>
-              <span className="text-lg font-medium">Loading more amazing content...</span>
-            </div>
-            <div className="mt-4 text-sm text-purple-400">
-              Currently showing {displayedSections.length} sections
-            </div>
-          </div>
-        )}
       </main>
 
                                        {/* Footer */}
