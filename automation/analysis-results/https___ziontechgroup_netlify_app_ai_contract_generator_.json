@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-contract-generator/",
-  "timestamp": "2025-08-04T15:34:57.965Z",
+  "timestamp": "2025-08-04T15:59:10.501Z",
   "pageInfo": {
     "title": "AI Contract Generator - Zion Marketplace",
     "description": "Generate professional contracts and legal documents with AI assistance",
@@ -23,7 +23,7 @@
         "text": "AI Contract Generator Features"
       }
     ],
-    "content": "AI Contract GeneratorCreate professional contracts, agreements, and legal documents with AI assistance. Generate legally sound documents in minutes.Contract DetailsContract Type *Select contract typeService AgreementNon-Disclosure AgreementEmployment ContractPartnership AgreementConsulting AgreementProject ContractLicense AgreementPurchase AgreementRental AgreementCustom ContractParty 1 Name *Party 1 Email *Party 2 Name *Party 2 Email *Project Title *Project Description *Start Date *End Date *Payment Amount *Payment Terms *Deliverables *Terms & ConditionsSpecial ConditionsGenerate ContractContract Preview📄Your contract will appear hereFill out the form and click \"Generate Contract\"AI Contract Generator FeaturesProfessional legal document templatesAI-powered contract generationMultiple contract types supportedDownload and share capabilitiesLegally sound document structure{\"props\":{\"pageProps\":{}},\"page\":\"/ai-contract-generator\",\"query\":{},\"buildId\":\"TbJ0uJ2zYH8UprOuf8P8l\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "AI Contract GeneratorCreate professional contracts, agreements, and legal documents with AI assistance. Generate legally sound documents in minutes.Contract DetailsContract Type *Select contract typeService AgreementNon-Disclosure AgreementEmployment ContractPartnership AgreementConsulting AgreementProject ContractLicense AgreementPurchase AgreementRental AgreementCustom ContractParty 1 Name *Party 1 Email *Party 2 Name *Party 2 Email *Project Title *Project Description *Start Date *End Date *Payment Amount *Payment Terms *Deliverables *Terms & ConditionsSpecial ConditionsGenerate ContractContract Preview📄Your contract will appear hereFill out the form and click \"Generate Contract\"AI Contract Generator FeaturesProfessional legal document templatesAI-powered contract generationMultiple contract types supportedDownload and share capabilitiesLegally sound document structure{\"props\":{\"pageProps\":{}},\"page\":\"/ai-contract-generator\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -44,7 +44,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-afe9803330064d0e.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-8d2391de9e862b04.js",
         "type": "text/javascript"
       },
       {
@@ -52,11 +52,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -66,7 +66,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/5949587f2ef62039.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
         "media": "all"
       }
     ]

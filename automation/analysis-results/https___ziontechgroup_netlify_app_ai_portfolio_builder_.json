@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-portfolio-builder/",
-  "timestamp": "2025-08-04T15:34:56.373Z",
+  "timestamp": "2025-08-04T15:59:09.218Z",
   "pageInfo": {
     "title": "AI Portfolio Builder | Zion",
     "description": "Create a professional portfolio with AI. Input your skills, experience, and projects, and let AI generate a stunning portfolio for you.",
@@ -11,7 +11,7 @@
         "text": "AI-powered Portfolio Builder"
       }
     ],
-    "content": "AI-powered Portfolio BuilderGenerate Portfolio{\"props\":{\"pageProps\":{}},\"page\":\"/ai-portfolio-builder\",\"query\":{},\"buildId\":\"TbJ0uJ2zYH8UprOuf8P8l\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "AI-powered Portfolio BuilderGenerate Portfolio{\"props\":{\"pageProps\":{}},\"page\":\"/ai-portfolio-builder\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [
       {
@@ -84,7 +84,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-afe9803330064d0e.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-8d2391de9e862b04.js",
         "type": "text/javascript"
       },
       {
@@ -92,11 +92,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -106,7 +106,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/5949587f2ef62039.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
         "media": "all"
       }
     ]

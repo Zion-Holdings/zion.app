@@ -1,0 +1,53 @@
+{
+  "timestamp": "2025-08-04T16:00:07.191Z",
+  "summary": {
+    "totalServices": 3,
+    "totalAgents": 6,
+    "totalRevenue": 0,
+    "marketAnalyses": 6
+  },
+  "topServices": [
+    {
+      "name": "AI-Powered DATA ANALYTICS Platform",
+      "type": "data-analytics",
+      "price": 28000
+    },
+    {
+      "name": "NextGen DATA ANALYTICS System",
+      "type": "data-analytics",
+      "price": 28000
+    },
+    {
+      "name": "Pro IOT PLATFORM Application",
+      "type": "iot-platform",
+      "price": 24000
+    }
+  ],
+  "topAgents": [
+    {
+      "name": "Pro IOT PLATFORM Application Digital Marketer",
+      "revenue": 0,
+      "conversionRate": 0
+    },
+    {
+      "name": "Pro IOT PLATFORM Application Sales Representative",
+      "revenue": 0,
+      "conversionRate": 0
+    },
+    {
+      "name": "AI-Powered DATA ANALYTICS Platform Digital Marketer",
+      "revenue": 0,
+      "conversionRate": 0
+    },
+    {
+      "name": "AI-Powered DATA ANALYTICS Platform Sales Representative",
+      "revenue": 0,
+      "conversionRate": 0
+    },
+    {
+      "name": "NextGen DATA ANALYTICS System Digital Marketer",
+      "revenue": 0,
+      "conversionRate": 0
+    }
+  ]
+}

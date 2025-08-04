@@ -90,77 +90,28 @@
     "description": "Missing expected page: /admin"
   },
   {
-    "url": "https://ziontechgroup.netlify.app/innovation/",
+    "url": "https://ziontechgroup.netlify.app/post-request/",
     "type": "broken-link",
     "priority": "high",
     "description": "Broken link: Request failed with status code 404",
     "error": "Request failed with status code 404"
   },
   {
-    "url": "https://ziontechgroup.netlify.app/blog/",
+    "url": "https://ziontechgroup.netlify.app/join-talent/",
     "type": "broken-link",
     "priority": "high",
     "description": "Broken link: Request failed with status code 404",
     "error": "Request failed with status code 404"
   },
   {
-    "url": "https://ziontechgroup.netlify.app/careers/",
+    "url": "https://ziontechgroup.netlify.app/privacy/",
     "type": "broken-link",
     "priority": "high",
     "description": "Broken link: Request failed with status code 404",
     "error": "Request failed with status code 404"
   },
   {
-    "url": "https://ziontechgroup.netlify.app/press/",
-    "type": "broken-link",
-    "priority": "high",
-    "description": "Broken link: Request failed with status code 404",
-    "error": "Request failed with status code 404"
-  },
-  {
-    "url": "https://ziontechgroup.netlify.app/help/",
-    "type": "broken-link",
-    "priority": "high",
-    "description": "Broken link: Request failed with status code 404",
-    "error": "Request failed with status code 404"
-  },
-  {
-    "url": "https://ziontechgroup.netlify.app/status/",
-    "type": "broken-link",
-    "priority": "high",
-    "description": "Broken link: Request failed with status code 404",
-    "error": "Request failed with status code 404"
-  },
-  {
-    "url": "https://ziontechgroup.netlify.app/security/",
-    "type": "broken-link",
-    "priority": "high",
-    "description": "Broken link: Request failed with status code 404",
-    "error": "Request failed with status code 404"
-  },
-  {
-    "url": "https://ziontechgroup.netlify.app/services/ai-development/",
-    "type": "broken-link",
-    "priority": "high",
-    "description": "Broken link: Request failed with status code 404",
-    "error": "Request failed with status code 404"
-  },
-  {
-    "url": "https://ziontechgroup.netlify.app/services/cloud-services/",
-    "type": "broken-link",
-    "priority": "high",
-    "description": "Broken link: Request failed with status code 404",
-    "error": "Request failed with status code 404"
-  },
-  {
-    "url": "https://ziontechgroup.netlify.app/services/blockchain/",
-    "type": "broken-link",
-    "priority": "high",
-    "description": "Broken link: Request failed with status code 404",
-    "error": "Request failed with status code 404"
-  },
-  {
-    "url": "https://ziontechgroup.netlify.app/services/data-analytics/",
+    "url": "https://ziontechgroup.netlify.app/terms/",
     "type": "broken-link",
     "priority": "high",
     "description": "Broken link: Request failed with status code 404",

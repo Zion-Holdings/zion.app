@@ -1,0 +1,150 @@
+{
+  "url": "https://ziontechgroup.netlify.app/marketplace-pricing/",
+  "timestamp": "2025-08-04T15:59:41.529Z",
+  "pageInfo": {
+    "title": "Marketplace Pricing & Commission System - Zion Marketplace",
+    "description": "Comprehensive marketplace pricing and commission system. Transparent fee structure, revenue sharing, and tiered pricing for marketplace participants.",
+    "keywords": "marketplace pricing, commission system, revenue sharing, tiered pricing, marketplace fees",
+    "headings": [
+      {
+        "level": "h1",
+        "text": "Marketplace Pricing & Commission"
+      },
+      {
+        "level": "h2",
+        "text": "Choose Your Plan"
+      },
+      {
+        "level": "h3",
+        "text": "Basic"
+      },
+      {
+        "level": "h4",
+        "text": "Features:"
+      },
+      {
+        "level": "h3",
+        "text": "Premium"
+      },
+      {
+        "level": "h4",
+        "text": "Features:"
+      },
+      {
+        "level": "h3",
+        "text": "Enterprise"
+      },
+      {
+        "level": "h4",
+        "text": "Features:"
+      },
+      {
+        "level": "h2",
+        "text": "Start Earning Today"
+      },
+      {
+        "level": "h3",
+        "text": "Zion Marketplace"
+      },
+      {
+        "level": "h4",
+        "text": "Pricing & Commissions"
+      },
+      {
+        "level": "h4",
+        "text": "Support"
+      },
+      {
+        "level": "h4",
+        "text": "Connect"
+      }
+    ],
+    "content": "ZionMarketplaceBillingLoginMarketplace Pricing & CommissionTransparent pricing structure and commission system for marketplace participants. Choose the right tier for your business needs and maximize your revenue potential.View PricingCalculate Fees$4,800.00Total Revenue$172.00Commission Revenue3Active Tiers15.2%Growth RatePricing TiersCommission StructureTransactionsRevenue ReportsMonthlyYearlyChoose Your PlanBasic$0.00/monthTransaction Fee:5%Commission Rate:3.5%Monthly Transactions:50Storage:5 GBAPI Calls:1,000Support:EmailFeatures:✓Basic marketplace access✓Standard listing tools✓Email support✓Basic analytics✓Mobile app accessGet Started FreeMost PopularPremium$29.00/monthTransaction Fee:3.5%Commission Rate:2.5%Monthly Transactions:500Storage:50 GBAPI Calls:10,000Support:PriorityFeatures:✓All Basic features✓Advanced listing tools✓Priority support✓Advanced analytics✓API access✓Custom branding✓Bulk operationsChoose PlanEnterprise$99.00/monthTransaction Fee:2%Commission Rate:1.5%Monthly Transactions:5,000Storage:500 GBAPI Calls:100,000Support:DedicatedFeatures:✓All Premium features✓White-label solution✓Dedicated support✓Custom integrations✓Advanced security✓SLA guarantees✓Onboarding assistanceChoose PlanStart Earning TodayChoose the perfect pricing tier for your business needs and start maximizing your revenue with our transparent commission structure and competitive rates.View PlansStart SellingZion MarketplaceThe first free AI-powered marketplace for high-tech products, services, and innovation.Pricing & CommissionsPricing TiersBilling SystemDispute ResolutionSkill VerificationSupportContact UsLive ChatNotificationsLegal SupportConnectAbout UsBlogSign UpLogin© 2024 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/marketplace-pricing\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "images": [],
+    "forms": [],
+    "scripts": [
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-cefddfb7403e4fd5.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-6c8598519c693321.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-ccd59d5a878b2566.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-8d2391de9e862b04.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/3996-2fc1d2069cd01dca.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-pricing-254e52227cabefcf.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "",
+        "type": "application/json"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/1991-f9550ced9b636618.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/invoice-billing-88f97cdb64d1c109.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
+        "type": "text/javascript"
+      }
+    ],
+    "stylesheets": [
+      {
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "media": "all"
+      }
+    ]
+  },
+  "analytics": {
+    "contentLength": 1906,
+    "headingCount": 13,
+    "imageCount": 0,
+    "formCount": 0,
+    "scriptCount": 17,
+    "stylesheetCount": 1
+  }
+}

@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-resume-builder/",
-  "timestamp": "2025-08-04T15:35:01.034Z",
+  "timestamp": "2025-08-04T15:59:13.155Z",
   "pageInfo": {
     "title": "AI Resume Builder - Zion Marketplace",
     "description": "Create professional resumes and get AI-powered career advice",
@@ -23,7 +23,7 @@
         "text": "AI Resume Builder Features"
       }
     ],
-    "content": "AI Resume BuilderCreate professional resumes, track career progress, and get AI-powered career advice. Build stunning resumes in minutes with intelligent suggestions.👤Personal Info💼Experience🎓Education⚡Skills➕AdditionalPersonal InformationFirst Name *Last Name *Email *PhoneLocationLinkedInWebsiteProfessional Summary *Generate ResumeResume Preview📄Your resume will appear hereFill out the form and click \"Generate Resume\"AI Resume Builder FeaturesAI-powered resume generationProfessional templatesCareer advice and suggestionsDownload and share capabilitiesATS-friendly formatting{\"props\":{\"pageProps\":{}},\"page\":\"/ai-resume-builder\",\"query\":{},\"buildId\":\"TbJ0uJ2zYH8UprOuf8P8l\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "AI Resume BuilderCreate professional resumes, track career progress, and get AI-powered career advice. Build stunning resumes in minutes with intelligent suggestions.👤Personal Info💼Experience🎓Education⚡Skills➕AdditionalPersonal InformationFirst Name *Last Name *Email *PhoneLocationLinkedInWebsiteProfessional Summary *Generate ResumeResume Preview📄Your resume will appear hereFill out the form and click \"Generate Resume\"AI Resume Builder FeaturesAI-powered resume generationProfessional templatesCareer advice and suggestionsDownload and share capabilitiesATS-friendly formatting{\"props\":{\"pageProps\":{}},\"page\":\"/ai-resume-builder\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -44,7 +44,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-afe9803330064d0e.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-8d2391de9e862b04.js",
         "type": "text/javascript"
       },
       {
@@ -52,11 +52,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -66,7 +66,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/5949587f2ef62039.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
         "media": "all"
       }
     ]
