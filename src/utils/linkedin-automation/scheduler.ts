@@ -1,0 +1,1 @@
+import { LinkedInBot } from "./linkedin-bot"; export class LinkedInScheduler { private bot: LinkedInBot; constructor(bot: LinkedInBot) { this.bot = bot; } async schedulePost(content: string, time: Date): Promise<void> { console.log("Scheduling post for:", time); } } export default LinkedInScheduler;
