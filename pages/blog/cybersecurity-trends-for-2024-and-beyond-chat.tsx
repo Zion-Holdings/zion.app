@@ -36,7 +36,7 @@ const CybersecurityTrendsFor2024AndBeyondChatPage: NextPage = () => {
               </span>
             </h1>
             <div className="flex items-center text-gray-400 text-sm mb-8">
-              <span>Expert Discussion • trend-analysis • trend-analysis</span>
+              <span>Expert Discussion • solution-oriented • expert-interview</span>
             </div>
           </div>
           
