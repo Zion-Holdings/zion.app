@@ -17,8 +17,15 @@ const NavigationAnalytics: React.FC<NavigationAnalyticsProps> = ({ className = '
   const { state } = useNavigation()
   const [metrics, setMetrics] = useState<NavigationMetric[]>([])
   const [isVisible, setIsVisible] = useState(false)
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isClient) return
+
     // Load navigation analytics from localStorage
     const savedMetrics = localStorage.getItem('navigation-analytics')
     if (savedMetrics) {
@@ -32,12 +39,14 @@ const NavigationAnalytics: React.FC<NavigationAnalyticsProps> = ({ className = '
         console.error('Error loading navigation analytics:', error)
       }
     }
-  }, [])
+  }, [isClient])
 
   useEffect(() => {
+    if (!isClient) return
+
     // Save analytics to localStorage
     localStorage.setItem('navigation-analytics', JSON.stringify(metrics))
-  }, [metrics])
+  }, [metrics, isClient])
 
   const trackPageVisit = (path: string) => {
     const now = new Date()
@@ -85,6 +94,9 @@ const NavigationAnalytics: React.FC<NavigationAnalyticsProps> = ({ className = '
   const getUniquePages = () => {
     return metrics.length
   }
+
+  // Don't render anything during SSR
+  if (!isClient) return null
 
   if (!isVisible) return null
 

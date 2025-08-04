@@ -8,9 +8,16 @@ interface NavigationShortcutsProps {
 
 const NavigationShortcuts: React.FC<NavigationShortcutsProps> = ({ className = '' }) => {
   const [isVisible, setIsVisible] = useState(false)
+  const [isClient, setIsClient] = useState(false)
   const { state, navigateTo, goBack, goForward, addToFavorites, removeFromFavorites } = useNavigation()
 
   useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isClient) return
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === '?' && (event.metaKey || event.ctrlKey)) {
         event.preventDefault()
@@ -20,7 +27,10 @@ const NavigationShortcuts: React.FC<NavigationShortcutsProps> = ({ className = '
 
     document.addEventListener('keydown', handleKeyDown)
     return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [isVisible])
+  }, [isVisible, isClient])
+
+  // Don't render anything during SSR
+  if (!isClient) return null
 
   const shortcuts = [
     {
