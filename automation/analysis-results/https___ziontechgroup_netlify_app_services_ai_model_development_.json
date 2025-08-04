@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/services/ai-model-development/",
-  "timestamp": "2025-08-04T16:07:45.674Z",
+  "timestamp": "2025-08-04T16:14:38.408Z",
   "pageInfo": {
     "title": "AI Model Development - Zion Tech Group",
     "description": "Professional ai model development services from Zion Tech Group. Expert solutions for your business needs.",
@@ -76,7 +76,7 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
         "type": "text/javascript"
       },
       {
@@ -88,15 +88,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/about-eb5b18337a95c673.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-1354445288fae5cd.js",
         "type": "text/javascript"
       },
       {
@@ -104,7 +96,15 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-1354445288fae5cd.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/about-eb5b18337a95c673.js",
         "type": "text/javascript"
       },
       {

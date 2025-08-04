@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-healthcare-medical-diagnostics/",
-  "timestamp": "2025-08-04T16:01:10.847Z",
+  "timestamp": "2025-08-04T16:10:08.410Z",
   "pageInfo": {
     "title": "AI-Powered Healthcare & Medical Diagnostics - Zion",
     "description": "Advanced AI-powered healthcare and medical diagnostics platform with patient monitoring, healthcare analytics, and intelligent medical insights",
@@ -55,7 +55,7 @@
         "text": "Support"
       }
     ],
-    "content": "ZionStreamingVoice AssistantAutonomous VehiclesCryptocurrencySpace ExplorationUnderwater ExplorationClimate ChangePrecision AgricultureLoginGet StartedAI-Powered Healthcare & Medical DiagnosticsAdvanced AI-powered healthcare platform with medical diagnostics, patient monitoring, healthcare analytics, and intelligent medical insights for improved patient outcomes and healthcare efficiency.Run DiagnosticsMonitor Patients🏥Overview🔬Diagnostics📊Monitoring📈Analytics💡InsightsActive Medical DiagnosticsChest X-Ray AnalysiscompletedJohn Smith • imagingConfidence: 95%low riskBlood Test PanelreviewedSarah Johnson • lab-testConfidence: 92%medium riskECG Analysisin-progressMichael Brown • cardiologyConfidence: 88%high riskPatient MonitoringJohn Smithstablevital-signs monitoringHR: 72 bpmBP: 120/80Sarah Johnsonwarningcardiac monitoringHR: 95 bpmBP: 140/90ZionThe first free AI-powered marketplace for high-tech products, IT services, AI talents, and innovation.FeaturesLive StreamingVoice AssistantAutonomous VehiclesCryptocurrencySpace ExplorationUnderwater ExplorationClimate ChangePrecision AgricultureHealthcareServicesMarketplaceIT ServicesAI TalentsEquipmentSupportHelp DeskContactDocumentationStatus© 2025 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-healthcare-medical-diagnostics\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionStreamingVoice AssistantAutonomous VehiclesCryptocurrencySpace ExplorationUnderwater ExplorationClimate ChangePrecision AgricultureLoginGet StartedAI-Powered Healthcare & Medical DiagnosticsAdvanced AI-powered healthcare platform with medical diagnostics, patient monitoring, healthcare analytics, and intelligent medical insights for improved patient outcomes and healthcare efficiency.Run DiagnosticsMonitor Patients🏥Overview🔬Diagnostics📊Monitoring📈Analytics💡InsightsActive Medical DiagnosticsChest X-Ray AnalysiscompletedJohn Smith • imagingConfidence: 95%low riskBlood Test PanelreviewedSarah Johnson • lab-testConfidence: 92%medium riskECG Analysisin-progressMichael Brown • cardiologyConfidence: 88%high riskPatient MonitoringJohn Smithstablevital-signs monitoringHR: 72 bpmBP: 120/80Sarah Johnsonwarningcardiac monitoringHR: 95 bpmBP: 140/90ZionThe first free AI-powered marketplace for high-tech products, IT services, AI talents, and innovation.FeaturesLive StreamingVoice AssistantAutonomous VehiclesCryptocurrencySpace ExplorationUnderwater ExplorationClimate ChangePrecision AgricultureHealthcareServicesMarketplaceIT ServicesAI TalentsEquipmentSupportHelp DeskContactDocumentationStatus© 2025 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-healthcare-medical-diagnostics\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -88,16 +88,32 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
         "src": "",
         "type": "application/json"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-precision-agriculture-smart-farming-b877fc0c2b544033.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-climate-change-environmental-sustainability-b1742923a876a04f.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-underwater-exploration-marine-research-b5ff51b0bea8e291.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-autonomous-vehicle-transportation-116314faa6429bfa.js",
+        "type": "text/javascript"
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
@@ -116,35 +132,19 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-underwater-exploration-marine-research-b5ff51b0bea8e291.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-autonomous-vehicle-transportation-116314faa6429bfa.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-precision-agriculture-smart-farming-b877fc0c2b544033.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-climate-change-environmental-sustainability-b1742923a876a04f.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-voice-assistant-speech-recognition-d186a75d74ef1128.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
         "type": "text/javascript"
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-live-streaming-broadcasting-fd9c8570d611cf46.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-voice-assistant-speech-recognition-d186a75d74ef1128.js",
         "type": "text/javascript"
       },
       {
@@ -154,7 +154,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-climate-change-environmental-sustainability/",
-  "timestamp": "2025-08-04T16:01:08.703Z",
+  "timestamp": "2025-08-04T16:10:05.921Z",
   "pageInfo": {
     "title": "AI-Powered Climate Change & Environmental Sustainability - Zion",
     "description": "Advanced AI-powered climate change monitoring and environmental sustainability platform with carbon tracking, impact analysis, and intelligent environmental insights",
@@ -55,7 +55,7 @@
         "text": "Support"
       }
     ],
-    "content": "ZionStreamingVoice AssistantAutonomous VehiclesCryptocurrencySpace ExplorationUnderwater ExplorationLoginGet StartedAI-Powered Climate Change & Environmental SustainabilityMonitor climate change, track environmental sustainability, analyze carbon footprints, and drive positive environmental impact with AI-powered insights and recommendations.Monitor ClimateTrack Carbon🌍Overview🌡️Climate🌱Sustainability📊Carbon⚠️Impacts📈AnalyticsActive Climate MonitoringGlobal Temperature MonitoractiveGlobal1.2 °C above pre-industrialincreasing trendCO2 Concentration StationactiveMauna Loa Observatory420 ppmincreasing trendArctic Ice Melt MonitoractiveArctic Circle3.8 million km²decreasing trendActive Sustainability ProjectsSolar Farm ExpansionactiveCaliforniaSuccess: 88%Budget: $50,000,000Carbon Capture FacilityplanningNorwaySuccess: 75%Budget: $150,000,000ZionThe first free AI-powered marketplace for high-tech products, IT services, AI talents, and innovation.FeaturesLive StreamingVoice AssistantAutonomous VehiclesCryptocurrencySpace ExplorationUnderwater ExplorationClimate ChangeServicesMarketplaceIT ServicesAI TalentsEquipmentSupportHelp DeskContactDocumentationStatus© 2025 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-climate-change-environmental-sustainability\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionStreamingVoice AssistantAutonomous VehiclesCryptocurrencySpace ExplorationUnderwater ExplorationLoginGet StartedAI-Powered Climate Change & Environmental SustainabilityMonitor climate change, track environmental sustainability, analyze carbon footprints, and drive positive environmental impact with AI-powered insights and recommendations.Monitor ClimateTrack Carbon🌍Overview🌡️Climate🌱Sustainability📊Carbon⚠️Impacts📈AnalyticsActive Climate MonitoringGlobal Temperature MonitoractiveGlobal1.2 °C above pre-industrialincreasing trendCO2 Concentration StationactiveMauna Loa Observatory420 ppmincreasing trendArctic Ice Melt MonitoractiveArctic Circle3.8 million km²decreasing trendActive Sustainability ProjectsSolar Farm ExpansionactiveCaliforniaSuccess: 88%Budget: $50,000,000Carbon Capture FacilityplanningNorwaySuccess: 75%Budget: $150,000,000ZionThe first free AI-powered marketplace for high-tech products, IT services, AI talents, and innovation.FeaturesLive StreamingVoice AssistantAutonomous VehiclesCryptocurrencySpace ExplorationUnderwater ExplorationClimate ChangeServicesMarketplaceIT ServicesAI TalentsEquipmentSupportHelp DeskContactDocumentationStatus© 2025 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-climate-change-environmental-sustainability\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -88,16 +88,20 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
         "src": "",
         "type": "application/json"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-underwater-exploration-marine-research-b5ff51b0bea8e291.js",
+        "type": "text/javascript"
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
@@ -112,11 +116,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-autonomous-vehicle-transportation-116314faa6429bfa.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-1354445288fae5cd.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-underwater-exploration-marine-research-b5ff51b0bea8e291.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-autonomous-vehicle-transportation-116314faa6429bfa.js",
         "type": "text/javascript"
       },
       {
@@ -124,7 +128,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-1354445288fae5cd.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
         "type": "text/javascript"
       },
       {
@@ -132,25 +140,17 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-voice-assistant-speech-recognition-d186a75d74ef1128.js",
         "type": "text/javascript"
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-cryptocurrency-digital-asset-management-d76c0461cb42debd.js",
         "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-voice-assistant-speech-recognition-d186a75d74ef1128.js",
-        "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

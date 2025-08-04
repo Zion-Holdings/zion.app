@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/help-desk-support/",
-  "timestamp": "2025-08-04T16:07:32.761Z",
+  "timestamp": "2025-08-04T16:14:26.676Z",
   "pageInfo": {
     "title": "Help Desk & Support Ticket System - Zion Tech Group",
     "description": "Comprehensive help desk and support ticket system for customer support management",
@@ -19,7 +19,7 @@
         "text": "Feature Request: Dark Mode"
       }
     ],
-    "content": "Zion Tech GroupHomeDashboardHelp Desk & Support Ticket SystemComprehensive customer support management with ticket tracking, priority management, and support team coordination. Manage customer inquiries efficiently and provide excellent service.Total Tickets2🎫Open Tickets1🔓Support Agents2👥Avg Response Time2.8h⏱️🎫Support Tickets👥Support Agents📊Analytics📂CategoriesAll StatusOpenIn ProgressResolvedClosedAll PrioritiesUrgentHighMediumLowAll CategoriesTechnicalBillingAccountFeature RequestBug ReportPayment Processing Issuein-progresshighUnable to complete payment transaction. Getting error code 500.Customer: John SmithPlan: premiumCreated: 8/4/2025, 12:07:31 PMAssigned: agent-1paymenterror-500📎 2 attachments2 responsesView DetailsFeature Request: Dark ModeopenmediumWould like to request dark mode theme for the mobile app.Customer: Alice BrownPlan: basicCreated: 8/4/2025, 11:07:31 AMfeature-requestdark-modemobile1 responsesView Details{\"props\":{\"pageProps\":{}},\"page\":\"/help-desk-support\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "Zion Tech GroupHomeDashboardHelp Desk & Support Ticket SystemComprehensive customer support management with ticket tracking, priority management, and support team coordination. Manage customer inquiries efficiently and provide excellent service.Total Tickets2🎫Open Tickets1🔓Support Agents2👥Avg Response Time2.8h⏱️🎫Support Tickets👥Support Agents📊Analytics📂CategoriesAll StatusOpenIn ProgressResolvedClosedAll PrioritiesUrgentHighMediumLowAll CategoriesTechnicalBillingAccountFeature RequestBug ReportPayment Processing Issuein-progresshighUnable to complete payment transaction. Getting error code 500.Customer: John SmithPlan: premiumCreated: 8/4/2025, 12:14:25 PMAssigned: agent-1paymenterror-500📎 2 attachments2 responsesView DetailsFeature Request: Dark ModeopenmediumWould like to request dark mode theme for the mobile app.Customer: Alice BrownPlan: basicCreated: 8/4/2025, 11:14:25 AMfeature-requestdark-modemobile1 responsesView Details{\"props\":{\"pageProps\":{}},\"page\":\"/help-desk-support\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [

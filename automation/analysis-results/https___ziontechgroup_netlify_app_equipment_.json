@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/equipment/",
-  "timestamp": "2025-08-04T16:07:22.763Z",
+  "timestamp": "2025-08-04T16:14:17.847Z",
   "pageInfo": {
     "title": "Equipment - Zion",
     "description": "High-performance computing equipment and technology hardware on Zion's marketplace.",
@@ -68,7 +68,7 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-autonomous-vehicle-transportation-116314faa6429bfa.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-autonomous-drone-delivery-logistics-40ff804ecf08120f.js",
         "type": "text/javascript"
       },
       {
@@ -76,7 +76,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-autonomous-drone-delivery-logistics-40ff804ecf08120f.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-autonomous-vehicle-transportation-116314faa6429bfa.js",
         "type": "text/javascript"
       }
     ],

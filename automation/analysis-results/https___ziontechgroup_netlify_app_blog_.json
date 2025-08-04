@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/blog/",
-  "timestamp": "2025-08-04T16:07:34.381Z",
+  "timestamp": "2025-08-04T16:14:28.025Z",
   "pageInfo": {
     "title": "Blog - Zion",
     "description": "Latest insights on AI-powered marketplaces, blockchain technology, and digital innovation",
@@ -136,11 +136,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-640552c5d7a08a3b.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/blog/blockchain-technology-in-modern-business-solutions-8330931b2d5adbbb.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/blog/blockchain-technology-in-modern-business-solutions-8330931b2d5adbbb.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-640552c5d7a08a3b.js",
         "type": "text/javascript"
       }
     ],

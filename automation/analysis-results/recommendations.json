@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-08-04T16:01:58.931Z",
+  "timestamp": "2025-08-04T16:10:55.954Z",
   "summary": {
     "totalPages": 138,
-    "missingPages": 19,
+    "missingPages": 20,
     "contentGaps": 137,
     "errors": 0
   },
@@ -121,6 +121,13 @@
       },
       {
         "url": "https://ziontechgroup.netlify.app/terms/",
+        "type": "broken-link",
+        "priority": "high",
+        "description": "Broken link: Request failed with status code 404",
+        "error": "Request failed with status code 404"
+      },
+      {
+        "url": "https://ziontechgroup.netlify.app/ai-powered-vendor-management/",
         "type": "broken-link",
         "priority": "high",
         "description": "Broken link: Request failed with status code 404",
@@ -249,6 +256,13 @@
         },
         {
           "url": "https://ziontechgroup.netlify.app/terms/",
+          "type": "broken-link",
+          "priority": "high",
+          "description": "Broken link: Request failed with status code 404",
+          "error": "Request failed with status code 404"
+        },
+        {
+          "url": "https://ziontechgroup.netlify.app/ai-powered-vendor-management/",
           "type": "broken-link",
           "priority": "high",
           "description": "Broken link: Request failed with status code 404",
@@ -1813,16 +1827,6 @@
               "type": "missing-images",
               "severity": "low",
               "description": "Page could benefit from visual content"
-            },
-            {
-              "type": "missing-contact-form",
-              "severity": "medium",
-              "description": "Contact page lacks contact form"
-            },
-            {
-              "type": "insufficient-content",
-              "severity": "medium",
-              "description": "Page has insufficient content for SEO"
             }
           ]
         },

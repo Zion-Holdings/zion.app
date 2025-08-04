@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-precision-agriculture-smart-farming/",
-  "timestamp": "2025-08-04T16:01:09.728Z",
+  "timestamp": "2025-08-04T16:10:07.232Z",
   "pageInfo": {
     "title": "AI-Powered Precision Agriculture & Smart Farming - Zion",
     "description": "Advanced AI-powered precision agriculture and smart farming platform with crop monitoring, soil analysis, irrigation management, and intelligent agricultural optimization",
@@ -55,7 +55,7 @@
         "text": "Support"
       }
     ],
-    "content": "ZionStreamingVoice AssistantAutonomous VehiclesCryptocurrencySpace ExplorationUnderwater ExplorationClimate ChangeLoginGet StartedAI-Powered Precision Agriculture & Smart FarmingOptimize agricultural operations with AI-powered precision farming, smart irrigation, crop monitoring, and intelligent agricultural analytics for maximum yield and sustainability.Monitor CropsAnalyze Soil🌾Overview🌱Crops🌍Soil💧Irrigation🤖Smart Farming📊AnalyticsActive Crop MonitoringWheat Field AgrowingKansas • wheatHealth: 8.5/10Yield: 85%Corn Field BgrowingIowa • cornHealth: 9.2/10Yield: 92%Soybean Field CharvestingIllinois • soybeansHealth: 7.8/10Yield: 78%Smart Farming SystemsAutomated Planting RobotactiveField AEfficiency: 95%Savings: $25,000Drone Monitoring SystemactiveAll FieldsEfficiency: 88%Savings: $15,000ZionThe first free AI-powered marketplace for high-tech products, IT services, AI talents, and innovation.FeaturesLive StreamingVoice AssistantAutonomous VehiclesCryptocurrencySpace ExplorationUnderwater ExplorationClimate ChangePrecision AgricultureServicesMarketplaceIT ServicesAI TalentsEquipmentSupportHelp DeskContactDocumentationStatus© 2025 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-precision-agriculture-smart-farming\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionStreamingVoice AssistantAutonomous VehiclesCryptocurrencySpace ExplorationUnderwater ExplorationClimate ChangeLoginGet StartedAI-Powered Precision Agriculture & Smart FarmingOptimize agricultural operations with AI-powered precision farming, smart irrigation, crop monitoring, and intelligent agricultural analytics for maximum yield and sustainability.Monitor CropsAnalyze Soil🌾Overview🌱Crops🌍Soil💧Irrigation🤖Smart Farming📊AnalyticsActive Crop MonitoringWheat Field AgrowingKansas • wheatHealth: 8.5/10Yield: 85%Corn Field BgrowingIowa • cornHealth: 9.2/10Yield: 92%Soybean Field CharvestingIllinois • soybeansHealth: 7.8/10Yield: 78%Smart Farming SystemsAutomated Planting RobotactiveField AEfficiency: 95%Savings: $25,000Drone Monitoring SystemactiveAll FieldsEfficiency: 88%Savings: $15,000ZionThe first free AI-powered marketplace for high-tech products, IT services, AI talents, and innovation.FeaturesLive StreamingVoice AssistantAutonomous VehiclesCryptocurrencySpace ExplorationUnderwater ExplorationClimate ChangePrecision AgricultureServicesMarketplaceIT ServicesAI TalentsEquipmentSupportHelp DeskContactDocumentationStatus© 2025 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-precision-agriculture-smart-farming\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -88,11 +88,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -104,6 +104,14 @@
         "type": "text/javascript"
       },
       {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-space-exploration-satellite-management-0642806a4070b8be.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-autonomous-vehicle-transportation-116314faa6429bfa.js",
+        "type": "text/javascript"
+      },
+      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
         "type": "text/javascript"
       },
@@ -112,19 +120,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-space-exploration-satellite-management-0642806a4070b8be.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-1354445288fae5cd.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-autonomous-vehicle-transportation-116314faa6429bfa.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
         "type": "text/javascript"
       },
       {
@@ -132,15 +132,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-live-streaming-broadcasting-fd9c8570d611cf46.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
         "type": "text/javascript"
       },
       {
@@ -150,11 +146,15 @@
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-voice-assistant-speech-recognition-d186a75d74ef1128.js",
         "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-live-streaming-broadcasting-fd9c8570d611cf46.js",
+        "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

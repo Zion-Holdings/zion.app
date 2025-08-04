@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-immersive-marketplace/",
-  "timestamp": "2025-08-04T16:07:38.270Z",
+  "timestamp": "2025-08-04T16:14:31.494Z",
   "pageInfo": {
     "title": "AI Immersive Marketplace - Zion",
     "description": "Experience the future of shopping with AI-powered immersive marketplace featuring VR/AR experiences",
@@ -60,6 +60,10 @@
         "type": "text/javascript"
       },
       {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
+        "type": "text/javascript"
+      },
+      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
         "type": "text/javascript"
       },
@@ -69,10 +73,6 @@
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
         "type": "text/javascript"
       },
       {

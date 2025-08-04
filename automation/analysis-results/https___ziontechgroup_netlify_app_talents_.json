@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/talents/",
-  "timestamp": "2025-08-04T16:07:20.673Z",
+  "timestamp": "2025-08-04T16:14:16.789Z",
   "pageInfo": {
     "title": "AI Talents - Zion",
     "description": "Find AI experts and technology professionals on Zion's marketplace.",
@@ -68,15 +68,15 @@
         "type": "application/json"
       },
       {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/talent-directory-ca814bcbc4a8f90e.js",
+        "type": "text/javascript"
+      },
+      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-service-matcher-d2f81b8b0b5a61f6.js",
         "type": "text/javascript"
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/skill-verification-eec3fd971629392f.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/talent-directory-ca814bcbc4a8f90e.js",
         "type": "text/javascript"
       }
     ],

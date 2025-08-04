@@ -1551,16 +1551,6 @@
         "type": "missing-images",
         "severity": "low",
         "description": "Page could benefit from visual content"
-      },
-      {
-        "type": "missing-contact-form",
-        "severity": "medium",
-        "description": "Contact page lacks contact form"
-      },
-      {
-        "type": "insufficient-content",
-        "severity": "medium",
-        "description": "Page has insufficient content for SEO"
       }
     ]
   },

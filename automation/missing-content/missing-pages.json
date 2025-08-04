@@ -116,5 +116,12 @@
     "priority": "high",
     "description": "Broken link: Request failed with status code 404",
     "error": "Request failed with status code 404"
+  },
+  {
+    "url": "https://ziontechgroup.netlify.app/ai-powered-vendor-management/",
+    "type": "broken-link",
+    "priority": "high",
+    "description": "Broken link: Request failed with status code 404",
+    "error": "Request failed with status code 404"
   }
 ]

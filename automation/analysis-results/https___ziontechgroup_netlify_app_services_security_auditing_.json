@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/services/security-auditing/",
-  "timestamp": "2025-08-04T16:07:48.558Z",
+  "timestamp": "2025-08-04T16:14:41.100Z",
   "pageInfo": {
     "title": "Security Auditing - Zion Tech Group",
     "description": "Professional security auditing services from Zion Tech Group. Expert solutions for your business needs.",
@@ -84,6 +84,10 @@
         "type": "text/javascript"
       },
       {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/about-eb5b18337a95c673.js",
+        "type": "text/javascript"
+      },
+      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
         "type": "text/javascript"
       },
@@ -96,15 +100,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/contact-f6764772b2c11b1e.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-1354445288fae5cd.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/about-eb5b18337a95c673.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/contact-f6764772b2c11b1e.js",
         "type": "text/javascript"
       },
       {

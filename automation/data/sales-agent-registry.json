@@ -29,13 +29,13 @@
         ],
         "status": "active",
         "performance": {
-          "leadsGenerated": 0,
+          "leadsGenerated": 9,
           "dealsClosed": 0,
-          "revenueGenerated": 0,
+          "revenueGenerated": 3597,
           "conversionRate": 0
         },
         "createdAt": "2025-08-04T15:39:37.226Z",
-        "updatedAt": "2025-08-04T15:39:37.226Z"
+        "updatedAt": "2025-08-04T16:13:26.236Z"
       }
     ],
     [
@@ -67,13 +67,13 @@
         ],
         "status": "active",
         "performance": {
-          "leadsGenerated": 0,
+          "leadsGenerated": 1,
           "dealsClosed": 0,
-          "revenueGenerated": 0,
+          "revenueGenerated": 661,
           "conversionRate": 0
         },
         "createdAt": "2025-08-04T15:39:37.227Z",
-        "updatedAt": "2025-08-04T15:39:37.227Z"
+        "updatedAt": "2025-08-04T16:13:26.242Z"
       }
     ],
     [
@@ -105,13 +105,13 @@
         ],
         "status": "active",
         "performance": {
-          "leadsGenerated": 0,
-          "dealsClosed": 0,
-          "revenueGenerated": 0,
+          "leadsGenerated": 2,
+          "dealsClosed": 1,
+          "revenueGenerated": 3157,
           "conversionRate": 0
         },
         "createdAt": "2025-08-04T15:39:37.232Z",
-        "updatedAt": "2025-08-04T15:39:37.232Z"
+        "updatedAt": "2025-08-04T16:13:26.243Z"
       }
     ],
     [
@@ -143,13 +143,13 @@
         ],
         "status": "active",
         "performance": {
-          "leadsGenerated": 0,
-          "dealsClosed": 0,
-          "revenueGenerated": 0,
+          "leadsGenerated": 3,
+          "dealsClosed": 1,
+          "revenueGenerated": 3755,
           "conversionRate": 0
         },
         "createdAt": "2025-08-04T15:39:37.233Z",
-        "updatedAt": "2025-08-04T15:39:37.233Z"
+        "updatedAt": "2025-08-04T16:13:26.244Z"
       }
     ],
     [
@@ -182,12 +182,12 @@
         "status": "active",
         "performance": {
           "leadsGenerated": 0,
-          "dealsClosed": 0,
-          "revenueGenerated": 0,
+          "dealsClosed": 1,
+          "revenueGenerated": 977,
           "conversionRate": 0
         },
         "createdAt": "2025-08-04T15:39:37.235Z",
-        "updatedAt": "2025-08-04T15:39:37.235Z"
+        "updatedAt": "2025-08-04T16:13:26.246Z"
       }
     ],
     [
@@ -219,15 +219,167 @@
         ],
         "status": "active",
         "performance": {
+          "leadsGenerated": 7,
+          "dealsClosed": 1,
+          "revenueGenerated": 1049,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-04T15:39:37.237Z",
+        "updatedAt": "2025-08-04T16:13:26.247Z"
+      }
+    ],
+    [
+      "4056d8a3-b6e6-4f08-923e-c48af3a256a2",
+      {
+        "id": "4056d8a3-b6e6-4f08-923e-c48af3a256a2",
+        "type": "digital-marketer",
+        "serviceId": "0ec269b8-710c-4e2d-9dae-8fba59ea3371",
+        "name": "Enterprise BLOCKCHAIN SERVICE Application Digital Marketer",
+        "capabilities": [
+          "seo",
+          "ppc",
+          "social-media",
+          "content-marketing"
+        ],
+        "platforms": [
+          "google-ads",
+          "facebook-ads",
+          "linkedin",
+          "twitter"
+        ],
+        "expertise": [],
+        "commission": 0.15,
+        "baseSalary": 3000,
+        "performanceMetrics": [
+          "leads-generated",
+          "conversion-rate",
+          "roi"
+        ],
+        "status": "active",
+        "performance": {
           "leadsGenerated": 0,
           "dealsClosed": 0,
           "revenueGenerated": 0,
           "conversionRate": 0
         },
-        "createdAt": "2025-08-04T15:39:37.237Z",
-        "updatedAt": "2025-08-04T15:39:37.237Z"
+        "createdAt": "2025-08-04T16:13:26.243Z",
+        "updatedAt": "2025-08-04T16:13:26.243Z"
+      }
+    ],
+    [
+      "8f9b5cea-1d79-4d21-8600-00c9016acb2f",
+      {
+        "id": "8f9b5cea-1d79-4d21-8600-00c9016acb2f",
+        "type": "sales-representative",
+        "serviceId": "0ec269b8-710c-4e2d-9dae-8fba59ea3371",
+        "name": "Enterprise BLOCKCHAIN SERVICE Application Sales Representative",
+        "capabilities": [
+          "lead-qualification",
+          "presentation",
+          "negotiation",
+          "closing"
+        ],
+        "platforms": [
+          "crm",
+          "email-automation",
+          "video-calls",
+          "proposal-tools"
+        ],
+        "expertise": [],
+        "commission": 0.2,
+        "baseSalary": 2500,
+        "performanceMetrics": [
+          "deals-closed",
+          "revenue-generated",
+          "average-deal-size"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 0,
+          "dealsClosed": 0,
+          "revenueGenerated": 0,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-04T16:13:26.244Z",
+        "updatedAt": "2025-08-04T16:13:26.244Z"
+      }
+    ],
+    [
+      "f445d290-6609-4556-84dd-383cd8e12ff5",
+      {
+        "id": "f445d290-6609-4556-84dd-383cd8e12ff5",
+        "type": "digital-marketer",
+        "serviceId": "31db072d-9e9c-4bfb-87ef-84703108f536",
+        "name": "Enterprise IOT PLATFORM Solution Digital Marketer",
+        "capabilities": [
+          "seo",
+          "ppc",
+          "social-media",
+          "content-marketing"
+        ],
+        "platforms": [
+          "google-ads",
+          "facebook-ads",
+          "linkedin",
+          "twitter"
+        ],
+        "expertise": [],
+        "commission": 0.15,
+        "baseSalary": 3000,
+        "performanceMetrics": [
+          "leads-generated",
+          "conversion-rate",
+          "roi"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 0,
+          "dealsClosed": 0,
+          "revenueGenerated": 0,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-04T16:13:26.247Z",
+        "updatedAt": "2025-08-04T16:13:26.247Z"
+      }
+    ],
+    [
+      "2f0f045c-2f83-4484-9102-38420b403bec",
+      {
+        "id": "2f0f045c-2f83-4484-9102-38420b403bec",
+        "type": "sales-representative",
+        "serviceId": "31db072d-9e9c-4bfb-87ef-84703108f536",
+        "name": "Enterprise IOT PLATFORM Solution Sales Representative",
+        "capabilities": [
+          "lead-qualification",
+          "presentation",
+          "negotiation",
+          "closing"
+        ],
+        "platforms": [
+          "crm",
+          "email-automation",
+          "video-calls",
+          "proposal-tools"
+        ],
+        "expertise": [],
+        "commission": 0.2,
+        "baseSalary": 2500,
+        "performanceMetrics": [
+          "deals-closed",
+          "revenue-generated",
+          "average-deal-size"
+        ],
+        "status": "active",
+        "performance": {
+          "leadsGenerated": 0,
+          "dealsClosed": 0,
+          "revenueGenerated": 0,
+          "conversionRate": 0
+        },
+        "createdAt": "2025-08-04T16:13:26.247Z",
+        "updatedAt": "2025-08-04T16:13:26.247Z"
       }
     ]
   ],
-  "lastUpdated": "2025-08-04T15:39:37.237Z"
+  "lastUpdated": "2025-08-04T16:13:26.247Z"
 }

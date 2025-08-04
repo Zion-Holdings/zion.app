@@ -827,7 +827,559 @@
         },
         "updatedAt": "2025-08-04T15:39:37.234Z"
       }
+    ],
+    [
+      "0ec269b8-710c-4e2d-9dae-8fba59ea3371",
+      {
+        "id": "0ec269b8-710c-4e2d-9dae-8fba59ea3371",
+        "type": "blockchain-service",
+        "name": "Enterprise BLOCKCHAIN SERVICE Application",
+        "description": "A secure and transparent blockchain-based solution that ensures trust and reliability in digital transactions.",
+        "capabilities": [
+          "smart-contracts",
+          "defi",
+          "nft",
+          "web3"
+        ],
+        "technologies": [
+          "ethereum",
+          "solidity",
+          "web3.js",
+          "ipfs",
+          "polygon"
+        ],
+        "marketSegments": [
+          "defi",
+          "gaming",
+          "art",
+          "finance"
+        ],
+        "pricing": {
+          "basePrice": 40000,
+          "finalPrice": 48000,
+          "priceRange": {
+            "min": 25000,
+            "max": 70000
+          },
+          "complexityMultiplier": 1,
+          "timelineMultiplier": 1.2,
+          "paymentTerms": {
+            "upfront": 0.3,
+            "milestone1": 0.3,
+            "milestone2": 0.3,
+            "final": 0.1
+          }
+        },
+        "developmentTime": "10-20 weeks",
+        "features": [
+          "smart-contract-development",
+          "wallet-integration",
+          "token-economics",
+          "dapp-frontend"
+        ],
+        "status": "created",
+        "createdAt": "2025-08-04T16:13:26.240Z",
+        "marketAnalysis": {
+          "marketSize": "$30B",
+          "growthRate": "20%",
+          "competition": "High",
+          "demand": "High",
+          "pricingTrends": {
+            "current": "Stable",
+            "forecast": "Increasing",
+            "factors": [
+              "Technology advancement",
+              "Market demand",
+              "Competition"
+            ]
+          },
+          "targetAudience": [
+            "Financial institutions",
+            "Gaming companies",
+            "Art marketplaces"
+          ]
+        },
+        "competitiveAnalysis": {
+          "competitors": [
+            {
+              "name": "Competitor A - blockchain-service",
+              "strengths": [
+                "Established brand",
+                "Large customer base",
+                "Advanced features"
+              ],
+              "weaknesses": [
+                "High pricing",
+                "Complex onboarding",
+                "Limited customization"
+              ],
+              "marketShare": 0.25,
+              "pricing": "Premium"
+            },
+            {
+              "name": "Competitor B - blockchain-service",
+              "strengths": [
+                "Affordable pricing",
+                "Easy to use",
+                "Good support"
+              ],
+              "weaknesses": [
+                "Limited features",
+                "Basic functionality",
+                "No advanced options"
+              ],
+              "marketShare": 0.15,
+              "pricing": "Budget"
+            }
+          ],
+          "competitiveAdvantage": "Cost-effective pricing",
+          "differentiationStrategy": {
+            "primary": "Technology innovation",
+            "secondary": "Customer service excellence",
+            "tertiary": "Pricing flexibility"
+          },
+          "marketPositioning": {
+            "positioning": "Premium value provider",
+            "messaging": "Delivering innovative solutions with exceptional support",
+            "targetSegment": "Growth-focused businesses"
+          }
+        },
+        "salesStrategy": {
+          "targetMarket": {
+            "primary": "Small to medium businesses",
+            "secondary": "Enterprise clients",
+            "verticals": [
+              "Technology",
+              "Healthcare",
+              "Finance",
+              "Education"
+            ]
+          },
+          "valueProposition": {
+            "primary": "Increase efficiency and reduce costs",
+            "secondary": "Accelerate time to market",
+            "tertiary": "Enhance customer satisfaction"
+          },
+          "salesChannels": [
+            "Direct sales",
+            "Online marketing",
+            "Partnerships",
+            "Referrals"
+          ],
+          "pricingStrategy": "Value-based pricing with tiered options",
+          "leadGeneration": [
+            "Content marketing",
+            "SEO",
+            "Social media",
+            "Email campaigns"
+          ],
+          "conversionTactics": [
+            "Free trials",
+            "Demos",
+            "Case studies",
+            "Testimonials"
+          ]
+        },
+        "marketingMaterials": {
+          "website": {
+            "landingPage": "/blockchain-service-services",
+            "features": [
+              "smart-contract-development",
+              "wallet-integration",
+              "token-economics",
+              "dapp-frontend"
+            ],
+            "pricing": {
+              "basePrice": 40000,
+              "finalPrice": 48000,
+              "priceRange": {
+                "min": 25000,
+                "max": 70000
+              },
+              "complexityMultiplier": 1,
+              "timelineMultiplier": 1.2,
+              "paymentTerms": {
+                "upfront": 0.3,
+                "milestone1": 0.3,
+                "milestone2": 0.3,
+                "final": 0.1
+              }
+            },
+            "testimonials": [
+              {
+                "name": "John Smith",
+                "company": "TechCorp Inc.",
+                "text": "This solution transformed our business operations completely.",
+                "rating": 5
+              },
+              {
+                "name": "Sarah Johnson",
+                "company": "Innovation Labs",
+                "text": "Exceptional quality and outstanding support team.",
+                "rating": 5
+              }
+            ],
+            "caseStudies": [
+              {
+                "title": "How Company X Increased Efficiency by 300%",
+                "description": "A detailed case study showing the implementation and results.",
+                "metrics": [
+                  "300% efficiency increase",
+                  "50% cost reduction",
+                  "90% user satisfaction"
+                ]
+              }
+            ]
+          },
+          "content": {
+            "blogPosts": [
+              {
+                "title": "Top 10 Benefits of BLOCKCHAIN SERVICE",
+                "summary": "Comprehensive guide to understanding the advantages.",
+                "keywords": [
+                  "blockchain-service",
+                  "benefits",
+                  "advantages",
+                  "features"
+                ]
+              }
+            ],
+            "whitepapers": [
+              {
+                "title": "The Future of BLOCKCHAIN SERVICE",
+                "summary": "In-depth analysis of market trends and opportunities.",
+                "downloadUrl": "/whitepapers/blockchain-service-future"
+              }
+            ],
+            "videos": [
+              {
+                "title": "BLOCKCHAIN SERVICE Demo",
+                "description": "Comprehensive product demonstration.",
+                "duration": "5 minutes",
+                "url": "/videos/blockchain-service-demo"
+              }
+            ],
+            "socialMedia": [
+              {
+                "platform": "LinkedIn",
+                "content": "Discover how our blockchain-service solution can transform your business.",
+                "hashtags": [
+                  "#innovation",
+                  "#technology",
+                  "#business"
+                ]
+              }
+            ]
+          },
+          "advertising": {
+            "googleAds": {
+              "keywords": [
+                "blockchain-service services",
+                "blockchain-service development",
+                "blockchain-service solutions"
+              ],
+              "adCopy": "Professional blockchain-service development services. Get your free consultation today.",
+              "landingPage": "/blockchain-service-services"
+            },
+            "socialAds": {
+              "platforms": [
+                "Facebook",
+                "LinkedIn",
+                "Twitter"
+              ],
+              "adCopy": "Transform your business with our blockchain-service solutions.",
+              "targeting": [
+                "Business owners",
+                "IT professionals",
+                "Decision makers"
+              ]
+            },
+            "retargeting": {
+              "audience": "Website visitors who didn't convert",
+              "message": "Don't miss out on our exclusive ${serviceType} offer.",
+              "offer": "20% discount for first-time customers"
+            }
+          }
+        },
+        "updatedAt": "2025-08-04T16:13:26.240Z"
+      }
+    ],
+    [
+      "31db072d-9e9c-4bfb-87ef-84703108f536",
+      {
+        "id": "31db072d-9e9c-4bfb-87ef-84703108f536",
+        "type": "iot-platform",
+        "name": "Enterprise IOT PLATFORM Solution",
+        "description": "A comprehensive IoT platform that enables real-time monitoring, data collection, and intelligent device management.",
+        "capabilities": [
+          "device-management",
+          "data-collection",
+          "real-time-monitoring",
+          "analytics"
+        ],
+        "technologies": [
+          "mqtt",
+          "node.js",
+          "mongodb",
+          "redis",
+          "docker"
+        ],
+        "marketSegments": [
+          "industrial",
+          "smart-home",
+          "healthcare",
+          "agriculture"
+        ],
+        "pricing": {
+          "basePrice": 30000,
+          "finalPrice": 39000,
+          "priceRange": {
+            "min": 18000,
+            "max": 50000
+          },
+          "complexityMultiplier": 1.3,
+          "timelineMultiplier": 1,
+          "paymentTerms": {
+            "upfront": 0.3,
+            "milestone1": 0.3,
+            "milestone2": 0.3,
+            "final": 0.1
+          }
+        },
+        "developmentTime": "6-12 weeks",
+        "features": [
+          "device-registration",
+          "data-visualization",
+          "alert-system",
+          "api-gateway"
+        ],
+        "status": "created",
+        "createdAt": "2025-08-04T16:13:26.245Z",
+        "marketAnalysis": {
+          "marketSize": "$150B",
+          "growthRate": "18%",
+          "competition": "Medium",
+          "demand": "Growing",
+          "pricingTrends": {
+            "current": "Stable",
+            "forecast": "Increasing",
+            "factors": [
+              "Technology advancement",
+              "Market demand",
+              "Competition"
+            ]
+          },
+          "targetAudience": [
+            "Manufacturing",
+            "Healthcare",
+            "Smart cities"
+          ]
+        },
+        "competitiveAnalysis": {
+          "competitors": [
+            {
+              "name": "Competitor A - iot-platform",
+              "strengths": [
+                "Established brand",
+                "Large customer base",
+                "Advanced features"
+              ],
+              "weaknesses": [
+                "High pricing",
+                "Complex onboarding",
+                "Limited customization"
+              ],
+              "marketShare": 0.25,
+              "pricing": "Premium"
+            },
+            {
+              "name": "Competitor B - iot-platform",
+              "strengths": [
+                "Affordable pricing",
+                "Easy to use",
+                "Good support"
+              ],
+              "weaknesses": [
+                "Limited features",
+                "Basic functionality",
+                "No advanced options"
+              ],
+              "marketShare": 0.15,
+              "pricing": "Budget"
+            }
+          ],
+          "competitiveAdvantage": "24/7 support",
+          "differentiationStrategy": {
+            "primary": "Technology innovation",
+            "secondary": "Customer service excellence",
+            "tertiary": "Pricing flexibility"
+          },
+          "marketPositioning": {
+            "positioning": "Premium value provider",
+            "messaging": "Delivering innovative solutions with exceptional support",
+            "targetSegment": "Growth-focused businesses"
+          }
+        },
+        "salesStrategy": {
+          "targetMarket": {
+            "primary": "Small to medium businesses",
+            "secondary": "Enterprise clients",
+            "verticals": [
+              "Technology",
+              "Healthcare",
+              "Finance",
+              "Education"
+            ]
+          },
+          "valueProposition": {
+            "primary": "Increase efficiency and reduce costs",
+            "secondary": "Accelerate time to market",
+            "tertiary": "Enhance customer satisfaction"
+          },
+          "salesChannels": [
+            "Direct sales",
+            "Online marketing",
+            "Partnerships",
+            "Referrals"
+          ],
+          "pricingStrategy": "Value-based pricing with tiered options",
+          "leadGeneration": [
+            "Content marketing",
+            "SEO",
+            "Social media",
+            "Email campaigns"
+          ],
+          "conversionTactics": [
+            "Free trials",
+            "Demos",
+            "Case studies",
+            "Testimonials"
+          ]
+        },
+        "marketingMaterials": {
+          "website": {
+            "landingPage": "/iot-platform-services",
+            "features": [
+              "device-registration",
+              "data-visualization",
+              "alert-system",
+              "api-gateway"
+            ],
+            "pricing": {
+              "basePrice": 30000,
+              "finalPrice": 39000,
+              "priceRange": {
+                "min": 18000,
+                "max": 50000
+              },
+              "complexityMultiplier": 1.3,
+              "timelineMultiplier": 1,
+              "paymentTerms": {
+                "upfront": 0.3,
+                "milestone1": 0.3,
+                "milestone2": 0.3,
+                "final": 0.1
+              }
+            },
+            "testimonials": [
+              {
+                "name": "John Smith",
+                "company": "TechCorp Inc.",
+                "text": "This solution transformed our business operations completely.",
+                "rating": 5
+              },
+              {
+                "name": "Sarah Johnson",
+                "company": "Innovation Labs",
+                "text": "Exceptional quality and outstanding support team.",
+                "rating": 5
+              }
+            ],
+            "caseStudies": [
+              {
+                "title": "How Company X Increased Efficiency by 300%",
+                "description": "A detailed case study showing the implementation and results.",
+                "metrics": [
+                  "300% efficiency increase",
+                  "50% cost reduction",
+                  "90% user satisfaction"
+                ]
+              }
+            ]
+          },
+          "content": {
+            "blogPosts": [
+              {
+                "title": "Top 10 Benefits of IOT PLATFORM",
+                "summary": "Comprehensive guide to understanding the advantages.",
+                "keywords": [
+                  "iot-platform",
+                  "benefits",
+                  "advantages",
+                  "features"
+                ]
+              }
+            ],
+            "whitepapers": [
+              {
+                "title": "The Future of IOT PLATFORM",
+                "summary": "In-depth analysis of market trends and opportunities.",
+                "downloadUrl": "/whitepapers/iot-platform-future"
+              }
+            ],
+            "videos": [
+              {
+                "title": "IOT PLATFORM Demo",
+                "description": "Comprehensive product demonstration.",
+                "duration": "5 minutes",
+                "url": "/videos/iot-platform-demo"
+              }
+            ],
+            "socialMedia": [
+              {
+                "platform": "LinkedIn",
+                "content": "Discover how our iot-platform solution can transform your business.",
+                "hashtags": [
+                  "#innovation",
+                  "#technology",
+                  "#business"
+                ]
+              }
+            ]
+          },
+          "advertising": {
+            "googleAds": {
+              "keywords": [
+                "iot-platform services",
+                "iot-platform development",
+                "iot-platform solutions"
+              ],
+              "adCopy": "Professional iot-platform development services. Get your free consultation today.",
+              "landingPage": "/iot-platform-services"
+            },
+            "socialAds": {
+              "platforms": [
+                "Facebook",
+                "LinkedIn",
+                "Twitter"
+              ],
+              "adCopy": "Transform your business with our iot-platform solutions.",
+              "targeting": [
+                "Business owners",
+                "IT professionals",
+                "Decision makers"
+              ]
+            },
+            "retargeting": {
+              "audience": "Website visitors who didn't convert",
+              "message": "Don't miss out on our exclusive ${serviceType} offer.",
+              "offer": "20% discount for first-time customers"
+            }
+          }
+        },
+        "updatedAt": "2025-08-04T16:13:26.245Z"
+      }
     ]
   ],
-  "lastUpdated": "2025-08-04T15:39:37.234Z"
+  "lastUpdated": "2025-08-04T16:13:26.245Z"
 }
