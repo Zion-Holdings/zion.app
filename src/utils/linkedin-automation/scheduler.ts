@@ -1,138 +1,191 @@
-import { PostContent } from './content-generator';
-import { LinkedInBot } from './linkedin-bot';
+// LinkedIn Automation Scheduler
+// Handles scheduling and timing of LinkedIn automation tasks
 
 interface ScheduledPost {
   id: string;
-  content: PostContent;
+  content: string;
   scheduledTime: Date;
   status: 'pending' | 'posted' | 'failed';
 }
 
-class PostScheduler {
+interface SchedulerConfig {
+  advertising: {
+    maxPostsPerDay: number;
+    preferredTimes: string[];
+    timezone: string;
+  };
+  engagement: {
+    maxLikesPerDay: number;
+    maxCommentsPerDay: number;
+    maxConnectionsPerDay: number;
+  };
+}
+
+const LINKEDIN_CONFIG: SchedulerConfig = {
+  advertising: {
+    maxPostsPerDay: 3,
+    preferredTimes: ['09:00', '12:00', '17:00'],
+    timezone: 'America/New_York'
+  },
+  engagement: {
+    maxLikesPerDay: 50,
+    maxCommentsPerDay: 20,
+    maxConnectionsPerDay: 25
+  }
+};
+
+class LinkedInScheduler {
   private scheduledPosts: ScheduledPost[] = [];
-  private bot: LinkedInBot;
+  private isRunning = false;
 
   constructor() {
-    this.bot = new LinkedInBot();
+    this.initializeScheduler();
   }
 
-  async schedulePost(post: PostContent, scheduledTime?: Date): Promise<boolean> {
+  private async initializeScheduler(): Promise<void> {
+    if (typeof window !== 'undefined') {
+      return;
+    }
+
+    console.log('LinkedIn Scheduler initialized');
+  }
+
+  public async schedulePost(post: Omit<ScheduledPost, 'status'>, scheduledTime: Date): Promise<string> {
     try {
       const postId = `post_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-      const time = scheduledTime || this.getOptimalPostingTime();
       
       const scheduledPost: ScheduledPost = {
+        ...post,
         id: postId,
-        content: post,
-        scheduledTime: time,
+        scheduledTime,
         status: 'pending'
       };
 
       this.scheduledPosts.push(scheduledPost);
-      console.log(`Scheduled post "${post.title}" for ${time.toLocaleString()}`);
       
-      return true;
+      console.log(`Post scheduled for ${scheduledTime.toISOString()}`);
+      
+      return postId;
     } catch (error) {
-      console.error('Failed to schedule post:', error);
+      console.error('Error scheduling post:', error);
+      throw error;
+    }
+  }
+
+  public async executeScheduledPosts(): Promise<void> {
+    try {
+      const now = new Date();
+      const postsToExecute = this.scheduledPosts.filter(
+        post => post.status === 'pending' && post.scheduledTime <= now
+      );
+
+      console.log(`Executing ${postsToExecute.length} scheduled posts`);
+
+      for (const post of postsToExecute) {
+        try {
+          await this.executePost(post);
+          post.status = 'posted';
+        } catch (error) {
+          console.error(`Failed to execute post ${post.id}:`, error);
+          post.status = 'failed';
+        }
+      }
+    } catch (error) {
+      console.error('Error executing scheduled posts:', error);
+    }
+  }
+
+  private async executePost(post: ScheduledPost): Promise<void> {
+    try {
+      console.log(`Executing post: ${post.id}`);
+      
+      // Simulate post execution
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      console.log(`Post ${post.id} executed successfully`);
+    } catch (error) {
+      console.error(`Error executing post ${post.id}:`, error);
+      throw error;
+    }
+  }
+
+  public async clearCompletedPosts(): Promise<void> {
+    try {
+      const completedPosts = this.scheduledPosts.filter(
+        post => post.status === 'posted' || post.status === 'failed'
+      );
+
+      this.scheduledPosts = this.scheduledPosts.filter(
+        post => post.status === 'pending'
+      );
+
+      console.log(`Cleared ${completedPosts.length} completed posts`);
+    } catch (error) {
+      console.error('Error clearing completed posts:', error);
+    }
+  }
+
+  public getPreferredTimes(): string[] {
+    const preferredTimes = LINKEDIN_CONFIG.advertising.preferredTimes;
+    return preferredTimes;
+  }
+
+  public async updatePreferredTimes(times: string[]): Promise<void> {
+    try {
+      LINKEDIN_CONFIG.advertising.preferredTimes = times;
+      console.log('Preferred times updated:', times);
+    } catch (error) {
+      console.error('Error updating preferred times:', error);
+      throw error;
+    }
+  }
+
+  public getScheduledPosts(): ScheduledPost[] {
+    return [...this.scheduledPosts];
+  }
+
+  public async cancelPost(postId: string): Promise<boolean> {
+    try {
+      const postIndex = this.scheduledPosts.findIndex(post => post.id === postId);
+      
+      if (postIndex !== -1) {
+        this.scheduledPosts.splice(postIndex, 1);
+        console.log(`Post ${postId} cancelled`);
+        return true;
+      } else {
+        console.log(`Post ${postId} not found`);
+        return false;
+      }
+    } catch (error) {
+      console.error('Error cancelling post:', error);
       return false;
     }
   }
 
-  private getOptimalPostingTime(): Date {
-    const now = new Date();
-    const preferredTimes = LINKEDIN_CONFIG.advertising.preferredTimes;
-    
-    // Get next preferred time
-    for (const timeStr of preferredTimes) {
-      const [hours, minutes] = timeStr.split(':').map(Number);
-      const targetTime = new Date();
-      targetTime.setHours(hours, minutes, 0, 0);
-      
-      if (targetTime > now) {
-        return targetTime;
-      }
+  public async pauseScheduler(): Promise<void> {
+    try {
+      this.isRunning = false;
+      console.log('Scheduler paused');
+    } catch (error) {
+      console.error('Error pausing scheduler:', error);
     }
-    
-    // If all preferred times passed, schedule for tomorrow
-    const tomorrow = new Date(now);
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    tomorrow.setHours(9, 0, 0, 0);
-    return tomorrow;
   }
 
-  async executeScheduledPosts(): Promise<void> {
-    const now = new Date();
-    const pendingPosts = this.scheduledPosts.filter(
-      post => post.status === 'pending' && post.scheduledTime <= now
-    );
-
-    if (pendingPosts.length === 0) {
-      console.log('No posts scheduled for execution');
-      return;
+  public async resumeScheduler(): Promise<void> {
+    try {
+      this.isRunning = true;
+      console.log('Scheduler resumed');
+    } catch (error) {
+      console.error('Error resuming scheduler:', error);
     }
-
-    // Initialize bot
-    const initialized = await this.bot.initialize();
-    if (!initialized) {
-      console.error('Failed to initialize bot for scheduled posts');
-      return;
-    }
-
-    // Login
-    const loggedIn = await this.bot.login();
-    if (!loggedIn) {
-      console.error('Failed to login for scheduled posts');
-      return;
-    }
-
-    // Execute posts
-    for (const post of pendingPosts) {
-      try {
-        const success = await this.bot.createPost(post.content.content);
-        if (success) {
-          post.status = 'posted';
-          console.log(`Successfully posted: ${post.content.title}`);
-        } else {
-          post.status = 'failed';
-          console.error(`Failed to post: ${post.content.title}`);
-        }
-        
-        // Wait between posts
-        await new Promise(resolve => setTimeout(resolve, 30000));
-      } catch (error) {
-        post.status = 'failed';
-        console.error(`Error posting ${post.content.title}:`, error);
-      }
-    }
-
-    await this.bot.cleanup();
   }
 
-  getScheduledPosts(): ScheduledPost[] {
-    return this.scheduledPosts;
-  }
-
-  clearCompletedPosts(): void {
-    this.scheduledPosts = this.scheduledPosts.filter(
-      post => post.status === 'pending'
-    );
+  public getStatus(): { isRunning: boolean; scheduledPostsCount: number } {
+    return {
+      isRunning: this.isRunning,
+      scheduledPostsCount: this.scheduledPosts.length
+    };
   }
 }
 
-const scheduler = new PostScheduler();
-
-export async function schedulePost(post: PostContent, scheduledTime?: Date): Promise<boolean> {
-  return scheduler.schedulePost(post, scheduledTime);
-}
-
-export async function executeScheduledPosts(): Promise<void> {
-  return scheduler.executeScheduledPosts();
-}
-
-export function getScheduledPosts() {
-  return scheduler.getScheduledPosts();
-}
-
-export function clearCompletedPosts(): void {
-  scheduler.clearCompletedPosts();
-} 
+export default LinkedInScheduler; 

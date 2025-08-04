@@ -27,7 +27,7 @@ const getExistingPages = () => {
         url = url.replace(/\\/g, '/')
         url = url.replace(/\[([^\]]+)\]/g, ':$1')
         
-        if (url) pages.add(url)
+        if (url) pages.add("/" + url)
       }
     }
   }

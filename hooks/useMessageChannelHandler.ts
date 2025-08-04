@@ -14,12 +14,7 @@ interface UseMessageChannelHandlerReturn {
   extensionInfo: {
     hasExtensions: boolean;
     extensionCount: number;
-    extensions: Array<{
-      name: string;
-      id: string;
-      type: string;
-      detected: boolean;
-    }>;
+    extensions: any[];
   };
 }
 
@@ -29,12 +24,7 @@ export const useMessageChannelHandler = (): UseMessageChannelHandlerReturn => {
   const [extensionInfo, setExtensionInfo] = useState<{
     hasExtensions: boolean;
     extensionCount: number;
-    extensions: Array<{
-      name: string;
-      id: string;
-      type: string;
-      detected: boolean;
-    }>;
+    extensions: any[];
   }>({
     hasExtensions: false,
     extensionCount: 0,

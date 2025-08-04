@@ -12,7 +12,11 @@
     "type-check": "tsc --noEmit",
     "autonomous": "node automation/launch-enhanced-autonomous-system.js",
     "autonomous:dev": "nodemon automation/launch-enhanced-autonomous-system.js",
-    "autonomous:status": "node automation/check-autonomous-status.js"
+    "autonomous:status": "node automation/check-autonomous-status.js",
+    "linkedin:run": "ts-node scripts/linkedin-automation.ts run",
+    "linkedin:cron": "ts-node scripts/linkedin-automation.ts cron",
+    "linkedin:generate": "ts-node scripts/linkedin-automation.ts generate",
+    "linkedin:start": "npm run linkedin:cron"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
@@ -28,12 +32,13 @@
     "next": "14.0.4",
     "openai": "^5.11.0",
     "postcss": "^8.5.6",
-    "puppeteer": "^24.15.0",
+    "puppeteer": "^21.0.0",
     "react": "^18",
     "react-datepicker": "^8.4.0",
     "react-dom": "^18",
     "tailwindcss": "^4.1.11",
-    "uuid": "^11.1.0"
+    "uuid": "^11.1.0",
+    "node-cron": "^3.0.3"
   },
   "devDependencies": {
     "@types/node": "^20.19.9",
@@ -44,6 +49,7 @@
     "eslint-config-next": "14.0.4",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.6",
-    "typescript": "^5"
+    "typescript": "^5",
+    "@types/node-cron": "^3.0.11"
   }
 }
