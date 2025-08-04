@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { Menu, X, ChevronDown, ChevronUp, Bell, User } from 'lucide-react'
 import SearchNavigation from './SearchNavigation'
+import EnhancedMobileNavigation from './EnhancedMobileNavigation'
 import { useHeader } from '../../src/contexts/HeaderContext'
 
 interface DropdownItem {
@@ -210,181 +211,12 @@ const Header: React.FC = () => {
               Sign Up
             </Link>
             
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white touch-target"
-              aria-label="Toggle mobile menu"
-            >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+            {/* Mobile Navigation */}
+            <EnhancedMobileNavigation />
           </div>
         </div>
 
-        {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="lg:hidden bg-black/95 backdrop-blur-md border-t border-white/10 mobile-menu-container">
-            <div className="content-padding py-4 max-h-[calc(100vh-4rem)] overflow-y-auto safe-area-bottom">
-              {/* Main Navigation */}
-              <div className="mb-6">
-                <h3 className="text-responsive-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Main</h3>
-                <div className="grid-responsive-2 gap-2">
-                  <Link href="/marketplace" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Marketplace
-                  </Link>
-                  <Link href="/services" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Services
-                  </Link>
-                  <Link href="/talents" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Talents
-                  </Link>
-                  <Link href="/equipment" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Equipment
-                  </Link>
-                  <Link href="/products" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Products
-                  </Link>
-                  <Link href="/blog" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Blog
-                  </Link>
-                </div>
-              </div>
 
-              {/* Tools & Features */}
-              <div className="mb-6">
-                <h3 className="text-responsive-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Tools & Features</h3>
-                <div className="grid-responsive-2 gap-2">
-                  <Link href="/inbox" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Inbox
-                  </Link>
-                  <Link href="/executive-dashboard" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Executive Dashboard
-                  </Link>
-                  <Link href="/analytics-dashboard" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Analytics
-                  </Link>
-                  <Link href="/project-management" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Project Management
-                  </Link>
-                  <Link href="/ai-service-matcher" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    AI Service Matcher
-                  </Link>
-                  <Link href="/talent-directory" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Talent Directory
-                  </Link>
-                </div>
-              </div>
-
-              {/* AI-Powered Services */}
-              <div className="mb-6">
-                <h3 className="text-responsive-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">AI Services</h3>
-                <div className="grid-responsive-2 gap-2">
-                  <Link href="/ai-powered-analytics" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    AI Analytics
-                  </Link>
-                  <Link href="/ai-powered-automation" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    AI Automation
-                  </Link>
-                  <Link href="/ai-powered-data-analytics" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Data Analytics
-                  </Link>
-                  <Link href="/ai-powered-security-cybersecurity" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Cybersecurity
-                  </Link>
-                </div>
-              </div>
-
-              {/* Business Tools */}
-              <div className="mb-6">
-                <h3 className="text-responsive-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Business Tools</h3>
-                <div className="grid-responsive-2 gap-2">
-                  <Link href="/webhook-management" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Webhook Management
-                  </Link>
-                  <Link href="/workflow-designer" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Workflow Designer
-                  </Link>
-                  <Link href="/data-warehouse-etl" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Data Warehouse ETL
-                  </Link>
-                  <Link href="/help-desk-support" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Help Desk Support
-                  </Link>
-                </div>
-              </div>
-
-              {/* Security & Payments */}
-              <div className="mb-6">
-                <h3 className="text-responsive-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Security & Payments</h3>
-                <div className="grid-responsive-2 gap-2">
-                  <Link href="/escrow-services" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Escrow Services
-                  </Link>
-                  <Link href="/warranty-protection" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Warranty Protection
-                  </Link>
-                  <Link href="/payment-processing" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Payment Processing
-                  </Link>
-                  <Link href="/invoice-billing" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Invoice & Billing
-                  </Link>
-                </div>
-              </div>
-
-              {/* Communication */}
-              <div className="mb-6">
-                <h3 className="text-responsive-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Communication</h3>
-                <div className="grid-responsive-2 gap-2">
-                  <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Real-time Chat
-                  </Link>
-                  <Link href="/notifications" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Notifications
-                  </Link>
-                  <Link href="/ai-powered-customer-support" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Customer Support
-                  </Link>
-                </div>
-              </div>
-
-              {/* Company */}
-              <div className="mb-6">
-                <h3 className="text-responsive-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Company</h3>
-                <div className="grid-responsive-2 gap-2">
-                  <Link href="/about" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    About Us
-                  </Link>
-                  <Link href="/contact" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Contact
-                  </Link>
-                  <Link href="/sitemap" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Sitemap
-                  </Link>
-                  <Link href="/privacy-policy" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Privacy Policy
-                  </Link>
-                </div>
-              </div>
-
-              {/* Auth */}
-              <div className="mb-6">
-                <h3 className="text-responsive-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Account</h3>
-                <div className="grid-responsive-2 gap-2">
-                  <Link href="/auth/login" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Login
-                  </Link>
-                  <Link href="/auth/signup" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Sign Up
-                  </Link>
-                  <Link href="/auth/forgot-password" className="text-gray-300 hover:text-white block px-3 py-3 rounded-md text-responsive-base font-medium touch-target">
-                    Forgot Password
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </header>
   )

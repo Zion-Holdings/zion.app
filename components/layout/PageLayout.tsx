@@ -1,9 +1,6 @@
 import React from 'react'
 import Footer from '../ui/Footer'
-import Header from '../ui/Header'
-import BreadcrumbNavigation from '../ui/BreadcrumbNavigation'
-import NavigationProgress from '../ui/NavigationProgress'
-import QuickNavigation from '../ui/QuickNavigation'
+import { useHeaderTransparency } from '../../src/hooks/useHeaderTransparency'
 
 interface PageLayoutProps {
   children: React.ReactNode
@@ -18,6 +15,9 @@ const PageLayout: React.FC<PageLayoutProps> = ({
   containerClass = 'container-responsive',
   mainClass = ''
 }) => {
+  // Set header transparency based on prop
+  useHeaderTransparency(transparent)
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <main className={`pt-16 ${mainClass}`}>
