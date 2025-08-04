@@ -200,6 +200,24 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900'
     },
     {
+      id: 12,
+      type: 'ai-business-intelligence-dashboard',
+      title: 'AI Business Intelligence Dashboard',
+      subtitle: 'Real-time Analytics & Predictive Insights',
+      description: 'Get real-time business intelligence, predictive analytics, and AI-powered insights. Make data-driven decisions with automated reporting and smart alerts.',
+      features: [
+        'Real-time KPI Tracking',
+        'Predictive Analytics',
+        'AI-Powered Insights',
+        'Automated Reporting'
+      ],
+      cta: 'View Dashboard',
+      ctaLink: '/ai-business-intelligence-dashboard',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/ai-business-intelligence-dashboard',
+      bgClass: 'bg-gradient-to-br from-indigo-900 via-blue-900 to-purple-900'
+    },
+    {
       id: 7,
       type: 'chat-services',
       title: 'AI Chat Services',
