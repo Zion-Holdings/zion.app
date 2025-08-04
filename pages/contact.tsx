@@ -140,6 +140,8 @@ export default function Contact() {
                       </label>
                       <input
                         type="email"
+                        id="contact-email"
+                        name="contact-email"
                         required
                         value={formData.email}
                         onChange={(e) => handleInputChange('email', e.target.value)}

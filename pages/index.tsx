@@ -2687,44 +2687,82 @@ const Home: NextPage = () => {
           </div>
         )
 
-      case 'ai-resume-builder':
-        return (
-          <div className="py-24">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                  {section.title}
-                </h2>
-                <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-4">
-                  {section.subtitle}
-                </p>
-                <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
-                  {section.description}
-                </p>
-                
-                <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-                  <Link href={section.ctaLink} className="inline-flex items-center bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-200 transform hover:scale-105">
-                    {section.cta}
-                  </Link>
-                  <Link href={section.secondaryCtaLink} className="inline-flex items-center bg-transparent border-2 border-white/20 text-white font-semibold py-4 px-8 rounded-lg hover:bg-white/10 transition-all duration-200">
-                    {section.secondaryCta}
-                  </Link>
-                </div>
+                  case 'ai-resume-builder':
+              return (
+                <div className="py-24">
+                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                      <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                        {section.title}
+                      </h2>
+                      <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-4">
+                        {section.subtitle}
+                      </p>
+                      <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+                        {section.description}
+                      </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {section.features.map((feature: string, index: number) => (
-                    <div key={index} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-200">
-                      <div className="text-center">
-                        <div className="text-2xl mb-3">📄</div>
-                        <h3 className="text-white font-semibold mb-2">{feature}</h3>
+                      <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                        <Link href={section.ctaLink} className="inline-flex items-center bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-200 transform hover:scale-105">
+                          {section.cta}
+                        </Link>
+                        <Link href={section.secondaryCtaLink} className="inline-flex items-center bg-transparent border-2 border-white/20 text-white font-semibold py-4 px-8 rounded-lg hover:bg-white/10 transition-all duration-200">
+                          {section.secondaryCta}
+                        </Link>
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {section.features.map((feature: string, index: number) => (
+                          <div key={index} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-200">
+                            <div className="text-center">
+                              <div className="text-2xl mb-3">📄</div>
+                              <h3 className="text-white font-semibold mb-2">{feature}</h3>
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
-                  ))}
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        )
+              )
+            case 'ai-business-intelligence-dashboard':
+              return (
+                <div className="py-24">
+                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                      <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                        {section.title}
+                      </h2>
+                      <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-4">
+                        {section.subtitle}
+                      </p>
+                      <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+                        {section.description}
+                      </p>
+
+                      <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                        <Link href={section.ctaLink} className="inline-flex items-center bg-gradient-to-r from-indigo-600 to-blue-600 text-white font-semibold py-4 px-8 rounded-lg hover:from-indigo-700 hover:to-blue-700 transition-all duration-200 transform hover:scale-105">
+                          {section.cta}
+                        </Link>
+                        <Link href={section.secondaryCtaLink} className="inline-flex items-center bg-transparent border-2 border-white/20 text-white font-semibold py-4 px-8 rounded-lg hover:bg-white/10 transition-all duration-200">
+                          {section.secondaryCta}
+                        </Link>
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {section.features.map((feature: string, index: number) => (
+                          <div key={index} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-200">
+                            <div className="text-center">
+                              <div className="text-2xl mb-3">📊</div>
+                              <h3 className="text-white font-semibold mb-2">{feature}</h3>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )
 
       case 'investor-matchmaking':
         return (
@@ -4408,6 +4446,8 @@ const Home: NextPage = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <input
                     type="email"
+                    id="waitlist-email"
+                    name="waitlist-email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email address"

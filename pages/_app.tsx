@@ -4,6 +4,8 @@ import { ChatProvider } from '../src/contexts/ChatContext'
 import { AuthProvider } from '../src/contexts/AuthContext'
 import ChatAssistant from '../src/components/ChatAssistant'
 import { useChat } from '../src/contexts/ChatContext'
+import MessageChannelDebugger from '../components/MessageChannelDebugger'
+import '../utils/messageChannelHandler' // Initialize the handler
 
 function ChatWrapper() {
   const { isChatOpen, toggleChat } = useChat();
@@ -16,6 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <ChatProvider>
         <Component {...pageProps} />
         <ChatWrapper />
+        <MessageChannelDebugger />
       </ChatProvider>
     </AuthProvider>
   )

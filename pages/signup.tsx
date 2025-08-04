@@ -202,6 +202,8 @@ export default function Signup() {
                       </label>
                       <input
                         type="text"
+                        id="firstName"
+                        name="firstName"
                         required
                         value={formData.firstName}
                         onChange={(e) => handleInputChange('firstName', e.target.value)}
@@ -221,10 +223,12 @@ export default function Signup() {
                       </label>
                       <input
                         type="text"
+                        id="lastName"
+                        name="lastName"
                         required
                         value={formData.lastName}
                         onChange={(e) => handleInputChange('lastName', e.target.value)}
-                        className={`w-full px-4 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent ${
+                        className={`w-full px-3 py-3 bg-white/10 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent ${
                           errors.lastName ? 'border-red-500' : 'border-white/20'
                         }`}
                         placeholder="Enter your last name"
@@ -241,6 +245,8 @@ export default function Signup() {
                     </label>
                     <input
                       type="email"
+                      id="email"
+                      name="email"
                       required
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
@@ -261,6 +267,8 @@ export default function Signup() {
                       </label>
                       <input
                         type="password"
+                        id="password"
+                        name="password"
                         required
                         value={formData.password}
                         onChange={(e) => handleInputChange('password', e.target.value)}
@@ -280,6 +288,8 @@ export default function Signup() {
                       </label>
                       <input
                         type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
                         required
                         value={formData.confirmPassword}
                         onChange={(e) => handleInputChange('confirmPassword', e.target.value)}

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import { sanitizeHtml } from '../utils/sanitizeHtml';
 
 interface PortfolioInput {
   name: string;
@@ -48,7 +49,8 @@ const PortfolioBuilder = () => {
       });
       if (!res.ok) throw new Error('Failed to generate portfolio');
       const data = await res.json();
-      setPortfolio(data.portfolio);
+      // Sanitize the HTML before setting it
+      setPortfolio(sanitizeHtml(data.portfolio));
     } catch (err: any) {
       setError(err.message || 'Unknown error');
     } finally {
