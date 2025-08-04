@@ -235,6 +235,24 @@ const Home: NextPage = () => {
               secondaryCtaLink: '/ai-powered-hr-management',
               bgClass: 'bg-gradient-to-br from-emerald-900 via-teal-900 to-cyan-900'
             },
+            {
+              id: 14,
+              type: 'ai-vendor-management',
+              title: 'AI Vendor Management System',
+              subtitle: 'Intelligent Vendor Relationship Management',
+              description: 'Streamline vendor relationships with AI-powered performance tracking, contract management, and vendor analytics.',
+              features: [
+                'Vendor Performance Analytics',
+                'Contract Management',
+                'Risk Assessment',
+                'Automated Vendor Insights'
+              ],
+              cta: 'Manage Vendors',
+              ctaLink: '/ai-powered-vendor-management',
+              secondaryCta: 'Learn More',
+              secondaryCtaLink: '/ai-powered-vendor-management',
+              bgClass: 'bg-gradient-to-br from-orange-900 via-amber-900 to-yellow-900'
+            },
     {
       id: 7,
       type: 'chat-services',
