@@ -61,6 +61,35 @@ const Https___ziontechgroup_netlify_app_contactPage: NextPage = () => {
                 </p>
               </div>
               
+              {/* Contact Information Section */}
+              <div className="mt-12 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 text-center">
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                      <span className="text-purple-600 text-xl">📧</span>
+                    </div>
+                    <h3 className="font-semibold mb-2 text-white">Email</h3>
+                    <p className="text-gray-300">kleber@ziontechgroup.com</p>
+                  </div>
+                  
+                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 text-center">
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                      <span className="text-purple-600 text-xl">📞</span>
+                    </div>
+                    <h3 className="font-semibold mb-2 text-white">Phone</h3>
+                    <p className="text-gray-300">+1 302 464 0950</p>
+                  </div>
+                  
+                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-6 text-center">
+                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                      <span className="text-purple-600 text-xl">📍</span>
+                    </div>
+                    <h3 className="font-semibold mb-2 text-white">Address</h3>
+                    <p className="text-gray-300">364 E Main St STE 1008<br />Middletown DE 19709</p>
+                  </div>
+                </div>
+              </div>
+              
               <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
                   Explore Marketplace

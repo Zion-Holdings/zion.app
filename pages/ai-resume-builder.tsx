@@ -375,7 +375,7 @@ const ResumeBuilder = () => {
                             personalInfo: { ...input.personalInfo, phone: e.target.value }
                           })}
                           className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                          placeholder="+1 (555) 123-4567"
+                          placeholder="+1 302 464 0950"
                         />
                       </div>
                     </div>
