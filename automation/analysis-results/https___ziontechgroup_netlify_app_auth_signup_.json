@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/auth/signup/",
-  "timestamp": "2025-08-04T15:34:39.597Z",
+  "timestamp": "2025-08-04T15:58:54.972Z",
   "pageInfo": {
     "title": "Sign Up - Zion",
     "description": "Create your Zion account to access the AI-powered marketplace.",
@@ -67,7 +67,7 @@
         "text": "Account"
       }
     ],
-    "content": "ZionMarketplaceServicesTalentsEquipmentProductsBlogAboutContactInboxExecutiveAnalyticsProjectsAI MatcherSupportEscrowProtectionPaymentsBillingDisputesComplianceLoginSign UpJoin ZionCreate your account and start exploring our AI-powered marketplace.Full NameEmail AddressPasswordCreate AccountAlready have an account? LoginZionThe First Free AI-Powered Marketplace connecting businesses with cutting-edge technology solutions, talent, and equipment.About UsContactSitemapMarketplaceMain MarketplaceIT ServicesAI TalentsEquipmentProductsService CategoriesTalent DirectoryAI Service MatcherAI ServicesAI AnalyticsAI AutomationData AnalyticsCybersecurityEducation & TrainingLegal & ContractsCustomer SupportIdentity VerificationBusiness ToolsExecutive DashboardAnalytics DashboardProject ManagementAI Project ManagementWebhook ManagementWorkflow DesignerData Warehouse ETLHelp Desk SupportSecurity & PaymentsEscrow ServicesWarranty ProtectionPayment ProcessingInvoice & BillingDispute ResolutionCompliance & GovernanceSkill VerificationMarketplace PricingCommunicationInboxReal-time ChatNotificationsAdvanced SearchReferral SystemAI TestingMulti-languageImmersive & VRImmersive MarketplaceMixed RealityAugmented RealityTeam CollaborationTransportationAutonomous VehiclesDrone DeliverySupply ChainPricing EstimationLegal & ContractsContract GeneratorInvoice GeneratorBiometric AuthQuantum CryptographySpecialized AIQuantum ComputingQuantum MLQuantum TeleportationSpace ExplorationUnderwater ExplorationClimate ChangePrecision AgricultureHealthcareIndustry SolutionsEnergy ManagementManufacturingFinance & BankingRetail & E-commerceEntertainment & GamingSocial MediaSmart InfrastructureResourcesBlogPrivacy PolicyTerms of ServiceAccessibilityInvestor MatchmakingAccountLoginSign UpForgot PasswordUser ProfilesReview System© 2024 Zion. All rights reserved. | The First Free AI-Powered MarketplaceSitemapAccessibilityBack to Top{\"props\":{\"pageProps\":{}},\"page\":\"/auth/signup\",\"query\":{},\"buildId\":\"TbJ0uJ2zYH8UprOuf8P8l\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionMarketplaceServicesTalentsEquipmentProductsBlogAboutContactInboxExecutiveAnalyticsProjectsAI MatcherSupportEscrowProtectionPaymentsBillingDisputesComplianceLoginSign UpJoin ZionCreate your account and start exploring our AI-powered marketplace.Full NameEmail AddressPasswordCreate AccountAlready have an account? LoginZionThe First Free AI-Powered Marketplace connecting businesses with cutting-edge technology solutions, talent, and equipment.About UsContactSitemapMarketplaceMain MarketplaceIT ServicesAI TalentsEquipmentProductsService CategoriesTalent DirectoryAI Service MatcherAI ServicesAI AnalyticsAI AutomationData AnalyticsCybersecurityEducation & TrainingLegal & ContractsCustomer SupportIdentity VerificationBusiness ToolsExecutive DashboardAnalytics DashboardProject ManagementAI Project ManagementWebhook ManagementWorkflow DesignerData Warehouse ETLHelp Desk SupportSecurity & PaymentsEscrow ServicesWarranty ProtectionPayment ProcessingInvoice & BillingDispute ResolutionCompliance & GovernanceSkill VerificationMarketplace PricingCommunicationInboxReal-time ChatNotificationsAdvanced SearchReferral SystemAI TestingMulti-languageImmersive & VRImmersive MarketplaceMixed RealityAugmented RealityTeam CollaborationTransportationAutonomous VehiclesDrone DeliverySupply ChainPricing EstimationLegal & ContractsContract GeneratorInvoice GeneratorBiometric AuthQuantum CryptographySpecialized AIQuantum ComputingQuantum MLQuantum TeleportationSpace ExplorationUnderwater ExplorationClimate ChangePrecision AgricultureHealthcareIndustry SolutionsEnergy ManagementManufacturingFinance & BankingRetail & E-commerceEntertainment & GamingSocial MediaSmart InfrastructureResourcesBlogPrivacy PolicyTerms of ServiceAccessibilityInvestor MatchmakingAccountLoginSign UpForgot PasswordUser ProfilesReview System© 2024 Zion. All rights reserved. | The First Free AI-Powered MarketplaceSitemapAccessibilityBack to Top{\"props\":{\"pageProps\":{}},\"page\":\"/auth/signup\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [
       {
@@ -110,7 +110,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-afe9803330064d0e.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-8d2391de9e862b04.js",
         "type": "text/javascript"
       },
       {
@@ -130,11 +130,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -150,13 +150,13 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-87b08602b3fcc2f0.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
         "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/5949587f2ef62039.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
         "media": "all"
       }
     ]

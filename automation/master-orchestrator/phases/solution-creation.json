@@ -1,6 +1,45 @@
 [
   {
-    "id": "trend-solution-1754321664316-0",
+    "id": "trend-solution-1754323126115-0",
+    "name": "AI-Powered AI Solution",
+    "category": "Trend-Based",
+    "description": "Innovative solution leveraging the latest trend: Perplexity accused of scraping websites that explicitly blocked AI scraping",
+    "inspiration": "Perplexity accused of scraping websites that explicitly blocked AI scraping",
+    "features": [
+      "Advanced AI Algorithms",
+      "Real-time Processing",
+      "Scalable Architecture",
+      "API Integration",
+      "Analytics Dashboard",
+      "Custom Workflows",
+      "Trend-based AI",
+      "Market Intelligence",
+      "Predictive Analytics",
+      "Automated Insights"
+    ],
+    "pricing": {
+      "basic": "$79/month",
+      "professional": "$199/month",
+      "enterprise": "$599/month",
+      "custom": "Contact sales"
+    },
+    "targetMarket": "Mixed",
+    "competitiveAdvantage": "First-mover advantage in AI",
+    "marketPotential": "High",
+    "developmentTime": "3-6 months",
+    "estimatedRevenue": "$500K - $2M annually",
+    "createdAt": "2025-08-04T15:58:46.116Z",
+    "trendSource": "https://techcrunch.com/tag/artificial-intelligence/",
+    "roi": {
+      "developmentCost": 500000,
+      "annualRevenue": 2000000,
+      "roi": "300.0%",
+      "paybackPeriod": "3.0 months"
+    },
+    "marketSize": "$30M - $150M"
+  },
+  {
+    "id": "trend-solution-1754323126116-1",
     "name": "AI-Powered AI Solution",
     "category": "Trend-Based",
     "description": "Innovative solution leveraging the latest trend: Obvio’s stop sign cameras use AI to root out unsafe drivers",
@@ -28,7 +67,7 @@
     "marketPotential": "High",
     "developmentTime": "3-6 months",
     "estimatedRevenue": "$500K - $2M annually",
-    "createdAt": "2025-08-04T15:34:24.316Z",
+    "createdAt": "2025-08-04T15:58:46.116Z",
     "trendSource": "https://techcrunch.com/tag/artificial-intelligence/",
     "roi": {
       "developmentCost": 500000,
@@ -39,7 +78,7 @@
     "marketSize": "$30M - $150M"
   },
   {
-    "id": "trend-solution-1754321664316-1",
+    "id": "trend-solution-1754323126116-2",
     "name": "AI-Powered sustainability Solution",
     "category": "Trend-Based",
     "description": "Innovative solution leveraging the latest trend: Breakneck data center growth challenges Microsoft’s sustainability goals",
@@ -67,7 +106,7 @@
     "marketPotential": "High",
     "developmentTime": "3-6 months",
     "estimatedRevenue": "$500K - $2M annually",
-    "createdAt": "2025-08-04T15:34:24.316Z",
+    "createdAt": "2025-08-04T15:58:46.116Z",
     "trendSource": "https://techcrunch.com/tag/artificial-intelligence/",
     "roi": {
       "developmentCost": 500000,
@@ -78,7 +117,7 @@
     "marketSize": "$30M - $150M"
   },
   {
-    "id": "trend-solution-1754321664316-2",
+    "id": "trend-solution-1754323126116-3",
     "name": "AI-Powered AI Solution",
     "category": "Trend-Based",
     "description": "Innovative solution leveraging the latest trend: Meta adds another 650 MW of solar power to its AI push",
@@ -106,7 +145,7 @@
     "marketPotential": "High",
     "developmentTime": "3-6 months",
     "estimatedRevenue": "$500K - $2M annually",
-    "createdAt": "2025-08-04T15:34:24.316Z",
+    "createdAt": "2025-08-04T15:58:46.116Z",
     "trendSource": "https://techcrunch.com/tag/artificial-intelligence/",
     "roi": {
       "developmentCost": 500000,
@@ -117,7 +156,7 @@
     "marketSize": "$30M - $150M"
   },
   {
-    "id": "trend-solution-1754321664316-3",
+    "id": "trend-solution-1754323126116-4",
     "name": "AI-Powered AI Solution",
     "category": "Trend-Based",
     "description": "Innovative solution leveraging the latest trend: Nvidia thinks AI can solve electrical grid problems caused by AI",
@@ -145,7 +184,7 @@
     "marketPotential": "High",
     "developmentTime": "3-6 months",
     "estimatedRevenue": "$500K - $2M annually",
-    "createdAt": "2025-08-04T15:34:24.316Z",
+    "createdAt": "2025-08-04T15:58:46.116Z",
     "trendSource": "https://techcrunch.com/tag/artificial-intelligence/",
     "roi": {
       "developmentCost": 500000,
@@ -156,46 +195,7 @@
     "marketSize": "$30M - $150M"
   },
   {
-    "id": "trend-solution-1754321664316-4",
-    "name": "AI-Powered AI Solution",
-    "category": "Trend-Based",
-    "description": "Innovative solution leveraging the latest trend: Solar notches another win as Microsoft adds 475 MW to power its AI data centers",
-    "inspiration": "Solar notches another win as Microsoft adds 475 MW to power its AI data centers",
-    "features": [
-      "Advanced AI Algorithms",
-      "Real-time Processing",
-      "Scalable Architecture",
-      "API Integration",
-      "Analytics Dashboard",
-      "Custom Workflows",
-      "Trend-based AI",
-      "Market Intelligence",
-      "Predictive Analytics",
-      "Automated Insights"
-    ],
-    "pricing": {
-      "basic": "$79/month",
-      "professional": "$199/month",
-      "enterprise": "$599/month",
-      "custom": "Contact sales"
-    },
-    "targetMarket": "Mixed",
-    "competitiveAdvantage": "First-mover advantage in AI",
-    "marketPotential": "High",
-    "developmentTime": "3-6 months",
-    "estimatedRevenue": "$500K - $2M annually",
-    "createdAt": "2025-08-04T15:34:24.316Z",
-    "trendSource": "https://techcrunch.com/tag/artificial-intelligence/",
-    "roi": {
-      "developmentCost": 500000,
-      "annualRevenue": 2000000,
-      "roi": "300.0%",
-      "paybackPeriod": "3.0 months"
-    },
-    "marketSize": "$30M - $150M"
-  },
-  {
-    "id": "opportunity-solution-1754321664317-0",
+    "id": "opportunity-solution-1754323126116-0",
     "name": "AI-Powered business opportunity Solution",
     "category": "Opportunity-Based",
     "description": "Automated solution for AI business opportunity using advanced AI algorithms",
@@ -226,7 +226,7 @@
     "marketPotential": "High",
     "developmentTime": "4-8 months",
     "estimatedRevenue": "$1M - $3M annually",
-    "createdAt": "2025-08-04T15:34:24.317Z",
+    "createdAt": "2025-08-04T15:58:46.117Z",
     "opportunitySource": {
       "title": "AI-Powered business opportunity Solution",
       "description": "Automated solution for AI business opportunity using advanced AI algorithms",
@@ -235,7 +235,7 @@
       "entryBarrier": "Low",
       "potential": "High",
       "keyword": "AI business opportunity",
-      "discoveredAt": "2025-08-04T15:34:20.217Z"
+      "discoveredAt": "2025-08-04T15:58:42.018Z"
     },
     "roi": {
       "developmentCost": 250000,
@@ -246,7 +246,7 @@
     "marketSize": "$50M - $200M"
   },
   {
-    "id": "opportunity-solution-1754321664317-1",
+    "id": "opportunity-solution-1754323126117-1",
     "name": "Intelligent business opportunity Platform",
     "category": "Opportunity-Based",
     "description": "Comprehensive platform addressing AI business opportunity with machine learning",
@@ -277,7 +277,7 @@
     "marketPotential": "High",
     "developmentTime": "4-8 months",
     "estimatedRevenue": "$1M - $3M annually",
-    "createdAt": "2025-08-04T15:34:24.317Z",
+    "createdAt": "2025-08-04T15:58:46.117Z",
     "opportunitySource": {
       "title": "Intelligent business opportunity Platform",
       "description": "Comprehensive platform addressing AI business opportunity with machine learning",
@@ -286,7 +286,7 @@
       "entryBarrier": "Medium",
       "potential": "High",
       "keyword": "AI business opportunity",
-      "discoveredAt": "2025-08-04T15:34:20.217Z"
+      "discoveredAt": "2025-08-04T15:58:42.018Z"
     },
     "roi": {
       "developmentCost": 250000,
@@ -297,7 +297,7 @@
     "marketSize": "$20M - $100M"
   },
   {
-    "id": "opportunity-solution-1754321664317-2",
+    "id": "opportunity-solution-1754323126117-2",
     "name": "AI-Powered market gap Solution",
     "category": "Opportunity-Based",
     "description": "Automated solution for AI market gap using advanced AI algorithms",
@@ -328,7 +328,7 @@
     "marketPotential": "High",
     "developmentTime": "4-8 months",
     "estimatedRevenue": "$1M - $3M annually",
-    "createdAt": "2025-08-04T15:34:24.317Z",
+    "createdAt": "2025-08-04T15:58:46.117Z",
     "opportunitySource": {
       "title": "AI-Powered market gap Solution",
       "description": "Automated solution for AI market gap using advanced AI algorithms",
@@ -337,7 +337,7 @@
       "entryBarrier": "Low",
       "potential": "High",
       "keyword": "AI market gap",
-      "discoveredAt": "2025-08-04T15:34:20.717Z"
+      "discoveredAt": "2025-08-04T15:58:42.523Z"
     },
     "roi": {
       "developmentCost": 250000,
@@ -348,7 +348,7 @@
     "marketSize": "$50M - $200M"
   },
   {
-    "id": "opportunity-solution-1754321664317-3",
+    "id": "opportunity-solution-1754323126117-3",
     "name": "Intelligent market gap Platform",
     "category": "Opportunity-Based",
     "description": "Comprehensive platform addressing AI market gap with machine learning",
@@ -379,7 +379,7 @@
     "marketPotential": "High",
     "developmentTime": "4-8 months",
     "estimatedRevenue": "$1M - $3M annually",
-    "createdAt": "2025-08-04T15:34:24.317Z",
+    "createdAt": "2025-08-04T15:58:46.117Z",
     "opportunitySource": {
       "title": "Intelligent market gap Platform",
       "description": "Comprehensive platform addressing AI market gap with machine learning",
@@ -388,7 +388,7 @@
       "entryBarrier": "Medium",
       "potential": "High",
       "keyword": "AI market gap",
-      "discoveredAt": "2025-08-04T15:34:20.717Z"
+      "discoveredAt": "2025-08-04T15:58:42.523Z"
     },
     "roi": {
       "developmentCost": 250000,
@@ -399,7 +399,7 @@
     "marketSize": "$20M - $100M"
   },
   {
-    "id": "opportunity-solution-1754321664317-4",
+    "id": "opportunity-solution-1754323126117-4",
     "name": "AI-Powered startup opportunity Solution",
     "category": "Opportunity-Based",
     "description": "Automated solution for AI startup opportunity using advanced AI algorithms",
@@ -430,7 +430,7 @@
     "marketPotential": "High",
     "developmentTime": "4-8 months",
     "estimatedRevenue": "$1M - $3M annually",
-    "createdAt": "2025-08-04T15:34:24.317Z",
+    "createdAt": "2025-08-04T15:58:46.117Z",
     "opportunitySource": {
       "title": "AI-Powered startup opportunity Solution",
       "description": "Automated solution for AI startup opportunity using advanced AI algorithms",
@@ -439,7 +439,7 @@
       "entryBarrier": "Low",
       "potential": "High",
       "keyword": "AI startup opportunity",
-      "discoveredAt": "2025-08-04T15:34:21.218Z"
+      "discoveredAt": "2025-08-04T15:58:43.024Z"
     },
     "roi": {
       "developmentCost": 250000,
@@ -450,7 +450,7 @@
     "marketSize": "$50M - $200M"
   },
   {
-    "id": "gap-solution-1754321664318-0",
+    "id": "gap-solution-1754323126118-0",
     "name": "AI analytics Solution",
     "category": "Gap-Based",
     "description": "Fills the market gap in analytics with intelligent automation",
@@ -481,7 +481,7 @@
     "marketPotential": "High",
     "developmentTime": "6-12 months",
     "estimatedRevenue": "$1M - $5M annually",
-    "createdAt": "2025-08-04T15:34:24.318Z",
+    "createdAt": "2025-08-04T15:58:46.118Z",
     "gapAnalysis": {
       "area": "analytics",
       "type": "trend-gap",
@@ -497,7 +497,7 @@
     "marketSize": "$50M - $200M"
   },
   {
-    "id": "gap-solution-1754321664318-1",
+    "id": "gap-solution-1754323126118-1",
     "name": "AI automation Solution",
     "category": "Gap-Based",
     "description": "Fills the market gap in automation with intelligent automation",
@@ -528,7 +528,7 @@
     "marketPotential": "High",
     "developmentTime": "6-12 months",
     "estimatedRevenue": "$1M - $5M annually",
-    "createdAt": "2025-08-04T15:34:24.318Z",
+    "createdAt": "2025-08-04T15:58:46.118Z",
     "gapAnalysis": {
       "area": "automation",
       "type": "trend-gap",
@@ -544,7 +544,7 @@
     "marketSize": "$50M - $200M"
   },
   {
-    "id": "gap-solution-1754321664318-2",
+    "id": "gap-solution-1754323126118-2",
     "name": "AI prediction Solution",
     "category": "Gap-Based",
     "description": "Fills the market gap in prediction with intelligent automation",
@@ -575,7 +575,7 @@
     "marketPotential": "High",
     "developmentTime": "6-12 months",
     "estimatedRevenue": "$1M - $5M annually",
-    "createdAt": "2025-08-04T15:34:24.318Z",
+    "createdAt": "2025-08-04T15:58:46.118Z",
     "gapAnalysis": {
       "area": "prediction",
       "type": "trend-gap",
@@ -591,7 +591,7 @@
     "marketSize": "$50M - $200M"
   },
   {
-    "id": "gap-solution-1754321664318-3",
+    "id": "gap-solution-1754323126118-3",
     "name": "AI optimization Solution",
     "category": "Gap-Based",
     "description": "Fills the market gap in optimization with intelligent automation",
@@ -622,7 +622,7 @@
     "marketPotential": "High",
     "developmentTime": "6-12 months",
     "estimatedRevenue": "$1M - $5M annually",
-    "createdAt": "2025-08-04T15:34:24.318Z",
+    "createdAt": "2025-08-04T15:58:46.118Z",
     "gapAnalysis": {
       "area": "optimization",
       "type": "trend-gap",

@@ -1,7 +1,410 @@
 [
   {
-    "id": "campaign-1754321664327-0",
-    "solutionId": "trend-solution-1754321664316-0",
+    "id": "campaign-1754323126129-0",
+    "solutionId": "trend-solution-1754323126115-0",
+    "solutionName": "AI-Powered AI Solution",
+    "targetMarket": "Mixed",
+    "channels": [
+      {
+        "name": "Website Marketplace",
+        "priority": "High",
+        "reach": "Global",
+        "cost": "Low",
+        "budget": 2250
+      },
+      {
+        "name": "Social Media Marketing",
+        "priority": "Medium",
+        "reach": "Global",
+        "cost": "Medium",
+        "budget": 1875
+      },
+      {
+        "name": "Email Marketing Campaigns",
+        "priority": "Medium",
+        "reach": "Targeted",
+        "cost": "Low",
+        "budget": 1500
+      },
+      {
+        "name": "Content Marketing",
+        "priority": "Medium",
+        "reach": "SEO-driven",
+        "cost": "Low",
+        "budget": 1125
+      },
+      {
+        "name": "Strategic Partnerships",
+        "priority": "Medium",
+        "reach": "Network-based",
+        "cost": "Medium",
+        "budget": 750
+      }
+    ],
+    "content": {
+      "website": {
+        "title": "AI-Powered AI-Powered AI Solution",
+        "subtitle": "Transform your business with intelligent automation",
+        "description": "Innovative solution leveraging the latest trend: Perplexity accused of scraping websites that explicitly blocked AI scraping",
+        "features": [
+          {
+            "name": "Advanced AI Algorithms",
+            "description": "Advanced advanced ai algorithms capabilities",
+            "icon": "✨"
+          },
+          {
+            "name": "Real-time Processing",
+            "description": "Advanced real-time processing capabilities",
+            "icon": "✨"
+          },
+          {
+            "name": "Scalable Architecture",
+            "description": "Advanced scalable architecture capabilities",
+            "icon": "✨"
+          },
+          {
+            "name": "API Integration",
+            "description": "Advanced api integration capabilities",
+            "icon": "✨"
+          },
+          {
+            "name": "Analytics Dashboard",
+            "description": "Advanced analytics dashboard capabilities",
+            "icon": "✨"
+          },
+          {
+            "name": "Custom Workflows",
+            "description": "Advanced custom workflows capabilities",
+            "icon": "✨"
+          },
+          {
+            "name": "Trend-based AI",
+            "description": "Advanced trend-based ai capabilities",
+            "icon": "✨"
+          },
+          {
+            "name": "Market Intelligence",
+            "description": "Advanced market intelligence capabilities",
+            "icon": "✨"
+          },
+          {
+            "name": "Predictive Analytics",
+            "description": "Advanced predictive analytics capabilities",
+            "icon": "✨"
+          },
+          {
+            "name": "Automated Insights",
+            "description": "Advanced automated insights capabilities",
+            "icon": "✨"
+          }
+        ],
+        "pricing": [
+          {
+            "tier": "Basic",
+            "price": "$79/month",
+            "features": [
+              "Core features",
+              "Email support",
+              "Basic analytics"
+            ]
+          },
+          {
+            "tier": "Professional",
+            "price": "$199/month",
+            "features": [
+              "All basic features",
+              "Priority support",
+              "Advanced analytics",
+              "API access"
+            ]
+          },
+          {
+            "tier": "Enterprise",
+            "price": "$599/month",
+            "features": [
+              "All professional features",
+              "24/7 support",
+              "Custom integrations",
+              "Dedicated account manager"
+            ]
+          },
+          {
+            "tier": "Custom",
+            "price": "Contact sales",
+            "features": [
+              "Core features",
+              "Email support",
+              "Basic analytics"
+            ]
+          }
+        ],
+        "cta": "Get Started Today",
+        "competitiveAdvantage": "First-mover advantage in AI",
+        "roi": {
+          "developmentCost": 500000,
+          "annualRevenue": 2000000,
+          "roi": "300.0%",
+          "paybackPeriod": "3.0 months"
+        }
+      },
+      "socialMedia": {
+        "posts": [
+          {
+            "type": "announcement",
+            "content": "🚀 Introducing AI-Powered AI Solution! Transform your business with intelligent automation. Innovative solution leveraging the latest trend: Perplexity accused of scraping websites that explicitly blocked AI scraping #AI #Innovation #Business",
+            "platform": "all",
+            "priority": "High"
+          },
+          {
+            "type": "feature",
+            "content": "✨ Advanced AI Algorithms - Just one of the powerful features in AI-Powered AI Solution. See how it can benefit your business! #AI #Technology",
+            "platform": "all",
+            "priority": "Medium"
+          },
+          {
+            "type": "feature",
+            "content": "✨ Real-time Processing - Just one of the powerful features in AI-Powered AI Solution. See how it can benefit your business! #AI #Technology",
+            "platform": "all",
+            "priority": "Medium"
+          },
+          {
+            "type": "feature",
+            "content": "✨ Scalable Architecture - Just one of the powerful features in AI-Powered AI Solution. See how it can benefit your business! #AI #Technology",
+            "platform": "all",
+            "priority": "Medium"
+          },
+          {
+            "type": "roi",
+            "content": "💰 AI-Powered AI Solution delivers 300.0% ROI with a payback period of 3.0 months. Smart investment for smart businesses! #ROI #Business",
+            "platform": "all",
+            "priority": "High"
+          }
+        ],
+        "hashtags": "#AI #MachineLearning #Innovation #Business #Technology #Automation",
+        "images": [
+          "Product screenshot",
+          "Dashboard mockup",
+          "ROI infographic",
+          "Feature comparison chart",
+          "Customer testimonial graphic"
+        ]
+      },
+      "emailMarketing": {
+        "subject": "Transform Your Business with AI-Powered AI Solution",
+        "body": "Dear {customer_name},\n\nWe're excited to introduce AI-Powered AI Solution - a revolutionary AI-powered solution designed to transform your business.\n\nKey Benefits:\n• Advanced AI Algorithms\n• Real-time Processing\n• Scalable Architecture\n• API Integration\n• Analytics Dashboard\n• Custom Workflows\n• Trend-based AI\n• Market Intelligence\n• Predictive Analytics\n• Automated Insights\n\nPricing: Basic: $79/month\nProfessional: $199/month\nEnterprise: $599/month\nCustom: Contact sales\n\nReady to get started? Click here to learn more.\n\nBest regards,\nThe AI Solutions Team",
+        "segments": [
+          {
+            "name": "General Business",
+            "criteria": "Business professionals, managers, decision makers",
+            "content": "Dear Business Professional,\n\nAI-Powered AI Solution can transform your business operations.\n\nKey Benefits:\n• Advanced AI Algorithms, Real-time Processing, Scalable Architecture\n• Competitive pricing\n• Proven ROI\n\nROI: 300.0%\nPayback Period: 3.0 months\n\nReady to learn more?"
+          }
+        ]
+      },
+      "contentMarketing": {
+        "blogPosts": [
+          {
+            "title": "How AI-Powered AI Solution is Revolutionizing Business Automation",
+            "estimatedReadTime": "5-7 minutes",
+            "targetKeywords": [
+              "ai-powered",
+              "solution",
+              "innovative",
+              "solution",
+              "leveraging"
+            ],
+            "callToAction": "Learn more about AI-Powered AI Solution"
+          },
+          {
+            "title": "5 Ways AI-Powered AI Solution Can Transform Your Business",
+            "estimatedReadTime": "5-7 minutes",
+            "targetKeywords": [
+              "ai-powered",
+              "solution",
+              "innovative",
+              "solution",
+              "leveraging"
+            ],
+            "callToAction": "Learn more about AI-Powered AI Solution"
+          },
+          {
+            "title": "The ROI of Implementing AI-Powered AI Solution in Your Organization",
+            "estimatedReadTime": "5-7 minutes",
+            "targetKeywords": [
+              "ai-powered",
+              "solution",
+              "innovative",
+              "solution",
+              "leveraging"
+            ],
+            "callToAction": "Learn more about AI-Powered AI Solution"
+          },
+          {
+            "title": "Case Study: Success Stories with AI-Powered AI Solution",
+            "estimatedReadTime": "5-7 minutes",
+            "targetKeywords": [
+              "ai-powered",
+              "solution",
+              "innovative",
+              "solution",
+              "leveraging"
+            ],
+            "callToAction": "Learn more about AI-Powered AI Solution"
+          },
+          {
+            "title": "Future of AI: What AI-Powered AI Solution Means for Your Industry",
+            "estimatedReadTime": "5-7 minutes",
+            "targetKeywords": [
+              "ai-powered",
+              "solution",
+              "innovative",
+              "solution",
+              "leveraging"
+            ],
+            "callToAction": "Learn more about AI-Powered AI Solution"
+          }
+        ],
+        "whitepapers": [
+          {
+            "title": "The Complete Guide to AI-Powered AI Solution Implementation",
+            "estimatedPages": "10-15 pages",
+            "targetAudience": "Mixed",
+            "leadMagnet": true
+          },
+          {
+            "title": "AI-Powered AI Solution: A Comprehensive ROI Analysis",
+            "estimatedPages": "10-15 pages",
+            "targetAudience": "Mixed",
+            "leadMagnet": true
+          },
+          {
+            "title": "Industry Trends and AI-Powered AI Solution: What You Need to Know",
+            "estimatedPages": "10-15 pages",
+            "targetAudience": "Mixed",
+            "leadMagnet": true
+          },
+          {
+            "title": "Security and Compliance in AI-Powered AI Solution Solutions",
+            "estimatedPages": "10-15 pages",
+            "targetAudience": "Mixed",
+            "leadMagnet": true
+          }
+        ],
+        "caseStudies": [
+          {
+            "title": "How Company X Increased Efficiency by 300% with AI-Powered AI Solution",
+            "industry": "Finance",
+            "metrics": [
+              "Efficiency",
+              "Cost Savings",
+              "ROI",
+              "Time to Value"
+            ],
+            "testimonial": true
+          },
+          {
+            "title": "AI-Powered AI Solution Success Story: From Startup to Enterprise",
+            "industry": "Healthcare",
+            "metrics": [
+              "Efficiency",
+              "Cost Savings",
+              "ROI",
+              "Time to Value"
+            ],
+            "testimonial": true
+          },
+          {
+            "title": "ROI Case Study: AI-Powered AI Solution in the Manufacturing Industry",
+            "industry": "Finance",
+            "metrics": [
+              "Efficiency",
+              "Cost Savings",
+              "ROI",
+              "Time to Value"
+            ],
+            "testimonial": true
+          },
+          {
+            "title": "Customer Spotlight: AI-Powered AI Solution in Healthcare",
+            "industry": "Finance",
+            "metrics": [
+              "Efficiency",
+              "Cost Savings",
+              "ROI",
+              "Time to Value"
+            ],
+            "testimonial": true
+          }
+        ]
+      }
+    },
+    "budget": {
+      "total": 9751,
+      "breakdown": {
+        "website": 2925,
+        "socialMedia": 2438,
+        "emailMarketing": 1950,
+        "contentMarketing": 1463,
+        "partnerships": 975
+      }
+    },
+    "timeline": {
+      "preparation": "1-2 weeks",
+      "launch": "1 week",
+      "optimization": "2-4 weeks",
+      "scaling": "1-2 months",
+      "total": "2-3 months"
+    },
+    "metrics": {
+      "primary": {
+        "leads": "Number of qualified leads generated",
+        "conversions": "Conversion rate from lead to customer",
+        "revenue": "Revenue generated from campaign",
+        "roi": "Return on investment for campaign"
+      },
+      "secondary": {
+        "reach": "Number of people reached",
+        "engagement": "Engagement rate on social media",
+        "openRate": "Email open rate",
+        "clickRate": "Email click-through rate"
+      },
+      "targets": {
+        "leads": 200,
+        "conversions": "5-10%",
+        "revenue": "$500K - $2M annually",
+        "roi": "300-500%"
+      }
+    },
+    "status": "Active",
+    "createdAt": "2025-08-04T15:58:46.131Z",
+    "expectedROI": {
+      "percentage": 300,
+      "expectedRevenue": 195020,
+      "paybackPeriod": 1
+    },
+    "abTests": [
+      {
+        "name": "Headline Test",
+        "variantA": "AI-Powered AI-Powered AI Solution",
+        "variantB": "AI-Powered AI-Powered AI Solution - Transform Your Business Today",
+        "metric": "Click-through rate"
+      },
+      {
+        "name": "CTA Test",
+        "variantA": "Get Started Today",
+        "variantB": "Start Free Trial",
+        "metric": "Conversion rate"
+      },
+      {
+        "name": "Pricing Test",
+        "variantA": "Show monthly pricing",
+        "variantB": "Show annual pricing with discount",
+        "metric": "Revenue per visitor"
+      }
+    ]
+  },
+  {
+    "id": "campaign-1754323126131-1",
+    "solutionId": "trend-solution-1754323126116-1",
     "solutionName": "AI-Powered AI Solution",
     "targetMarket": "Mixed",
     "channels": [
@@ -292,7 +695,7 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI-Powered AI Solution",
-            "industry": "Technology",
+            "industry": "Education",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -314,7 +717,7 @@
           },
           {
             "title": "ROI Case Study: AI-Powered AI Solution in the Manufacturing Industry",
-            "industry": "Technology",
+            "industry": "Finance",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -325,7 +728,7 @@
           },
           {
             "title": "Customer Spotlight: AI-Powered AI Solution in Healthcare",
-            "industry": "Retail",
+            "industry": "Finance",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -375,7 +778,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-04T15:34:24.329Z",
+    "createdAt": "2025-08-04T15:58:46.131Z",
     "expectedROI": {
       "percentage": 300,
       "expectedRevenue": 195020,
@@ -403,8 +806,8 @@
     ]
   },
   {
-    "id": "campaign-1754321664329-1",
-    "solutionId": "trend-solution-1754321664316-1",
+    "id": "campaign-1754323126131-2",
+    "solutionId": "trend-solution-1754323126116-2",
     "solutionName": "AI-Powered sustainability Solution",
     "targetMarket": "Mixed",
     "channels": [
@@ -695,28 +1098,6 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI-Powered sustainability Solution",
-            "industry": "Education",
-            "metrics": [
-              "Efficiency",
-              "Cost Savings",
-              "ROI",
-              "Time to Value"
-            ],
-            "testimonial": true
-          },
-          {
-            "title": "AI-Powered sustainability Solution Success Story: From Startup to Enterprise",
-            "industry": "Retail",
-            "metrics": [
-              "Efficiency",
-              "Cost Savings",
-              "ROI",
-              "Time to Value"
-            ],
-            "testimonial": true
-          },
-          {
-            "title": "ROI Case Study: AI-Powered sustainability Solution in the Manufacturing Industry",
             "industry": "Technology",
             "metrics": [
               "Efficiency",
@@ -727,8 +1108,30 @@
             "testimonial": true
           },
           {
+            "title": "AI-Powered sustainability Solution Success Story: From Startup to Enterprise",
+            "industry": "Finance",
+            "metrics": [
+              "Efficiency",
+              "Cost Savings",
+              "ROI",
+              "Time to Value"
+            ],
+            "testimonial": true
+          },
+          {
+            "title": "ROI Case Study: AI-Powered sustainability Solution in the Manufacturing Industry",
+            "industry": "Healthcare",
+            "metrics": [
+              "Efficiency",
+              "Cost Savings",
+              "ROI",
+              "Time to Value"
+            ],
+            "testimonial": true
+          },
+          {
             "title": "Customer Spotlight: AI-Powered sustainability Solution in Healthcare",
-            "industry": "Manufacturing",
+            "industry": "Healthcare",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -778,7 +1181,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-04T15:34:24.329Z",
+    "createdAt": "2025-08-04T15:58:46.132Z",
     "expectedROI": {
       "percentage": 300,
       "expectedRevenue": 195020,
@@ -806,8 +1209,8 @@
     ]
   },
   {
-    "id": "campaign-1754321664329-2",
-    "solutionId": "trend-solution-1754321664316-2",
+    "id": "campaign-1754323126132-3",
+    "solutionId": "trend-solution-1754323126116-3",
     "solutionName": "AI-Powered AI Solution",
     "targetMarket": "Mixed",
     "channels": [
@@ -1098,7 +1501,7 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI-Powered AI Solution",
-            "industry": "Finance",
+            "industry": "Education",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -1109,7 +1512,7 @@
           },
           {
             "title": "AI-Powered AI Solution Success Story: From Startup to Enterprise",
-            "industry": "Manufacturing",
+            "industry": "Technology",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -1181,7 +1584,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-04T15:34:24.330Z",
+    "createdAt": "2025-08-04T15:58:46.132Z",
     "expectedROI": {
       "percentage": 300,
       "expectedRevenue": 195020,
@@ -1209,8 +1612,8 @@
     ]
   },
   {
-    "id": "campaign-1754321664330-3",
-    "solutionId": "trend-solution-1754321664316-3",
+    "id": "campaign-1754323126132-4",
+    "solutionId": "trend-solution-1754323126116-4",
     "solutionName": "AI-Powered AI Solution",
     "targetMarket": "Mixed",
     "channels": [
@@ -1501,17 +1904,6 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI-Powered AI Solution",
-            "industry": "Education",
-            "metrics": [
-              "Efficiency",
-              "Cost Savings",
-              "ROI",
-              "Time to Value"
-            ],
-            "testimonial": true
-          },
-          {
-            "title": "AI-Powered AI Solution Success Story: From Startup to Enterprise",
             "industry": "Finance",
             "metrics": [
               "Efficiency",
@@ -1522,400 +1914,8 @@
             "testimonial": true
           },
           {
-            "title": "ROI Case Study: AI-Powered AI Solution in the Manufacturing Industry",
-            "industry": "Finance",
-            "metrics": [
-              "Efficiency",
-              "Cost Savings",
-              "ROI",
-              "Time to Value"
-            ],
-            "testimonial": true
-          },
-          {
-            "title": "Customer Spotlight: AI-Powered AI Solution in Healthcare",
-            "industry": "Education",
-            "metrics": [
-              "Efficiency",
-              "Cost Savings",
-              "ROI",
-              "Time to Value"
-            ],
-            "testimonial": true
-          }
-        ]
-      }
-    },
-    "budget": {
-      "total": 9751,
-      "breakdown": {
-        "website": 2925,
-        "socialMedia": 2438,
-        "emailMarketing": 1950,
-        "contentMarketing": 1463,
-        "partnerships": 975
-      }
-    },
-    "timeline": {
-      "preparation": "1-2 weeks",
-      "launch": "1 week",
-      "optimization": "2-4 weeks",
-      "scaling": "1-2 months",
-      "total": "2-3 months"
-    },
-    "metrics": {
-      "primary": {
-        "leads": "Number of qualified leads generated",
-        "conversions": "Conversion rate from lead to customer",
-        "revenue": "Revenue generated from campaign",
-        "roi": "Return on investment for campaign"
-      },
-      "secondary": {
-        "reach": "Number of people reached",
-        "engagement": "Engagement rate on social media",
-        "openRate": "Email open rate",
-        "clickRate": "Email click-through rate"
-      },
-      "targets": {
-        "leads": 200,
-        "conversions": "5-10%",
-        "revenue": "$500K - $2M annually",
-        "roi": "300-500%"
-      }
-    },
-    "status": "Active",
-    "createdAt": "2025-08-04T15:34:24.330Z",
-    "expectedROI": {
-      "percentage": 300,
-      "expectedRevenue": 195020,
-      "paybackPeriod": 1
-    },
-    "abTests": [
-      {
-        "name": "Headline Test",
-        "variantA": "AI-Powered AI-Powered AI Solution",
-        "variantB": "AI-Powered AI-Powered AI Solution - Transform Your Business Today",
-        "metric": "Click-through rate"
-      },
-      {
-        "name": "CTA Test",
-        "variantA": "Get Started Today",
-        "variantB": "Start Free Trial",
-        "metric": "Conversion rate"
-      },
-      {
-        "name": "Pricing Test",
-        "variantA": "Show monthly pricing",
-        "variantB": "Show annual pricing with discount",
-        "metric": "Revenue per visitor"
-      }
-    ]
-  },
-  {
-    "id": "campaign-1754321664330-4",
-    "solutionId": "trend-solution-1754321664316-4",
-    "solutionName": "AI-Powered AI Solution",
-    "targetMarket": "Mixed",
-    "channels": [
-      {
-        "name": "Website Marketplace",
-        "priority": "High",
-        "reach": "Global",
-        "cost": "Low",
-        "budget": 2250
-      },
-      {
-        "name": "Social Media Marketing",
-        "priority": "Medium",
-        "reach": "Global",
-        "cost": "Medium",
-        "budget": 1875
-      },
-      {
-        "name": "Email Marketing Campaigns",
-        "priority": "Medium",
-        "reach": "Targeted",
-        "cost": "Low",
-        "budget": 1500
-      },
-      {
-        "name": "Content Marketing",
-        "priority": "Medium",
-        "reach": "SEO-driven",
-        "cost": "Low",
-        "budget": 1125
-      },
-      {
-        "name": "Strategic Partnerships",
-        "priority": "Medium",
-        "reach": "Network-based",
-        "cost": "Medium",
-        "budget": 750
-      }
-    ],
-    "content": {
-      "website": {
-        "title": "AI-Powered AI-Powered AI Solution",
-        "subtitle": "Transform your business with intelligent automation",
-        "description": "Innovative solution leveraging the latest trend: Solar notches another win as Microsoft adds 475 MW to power its AI data centers",
-        "features": [
-          {
-            "name": "Advanced AI Algorithms",
-            "description": "Advanced advanced ai algorithms capabilities",
-            "icon": "✨"
-          },
-          {
-            "name": "Real-time Processing",
-            "description": "Advanced real-time processing capabilities",
-            "icon": "✨"
-          },
-          {
-            "name": "Scalable Architecture",
-            "description": "Advanced scalable architecture capabilities",
-            "icon": "✨"
-          },
-          {
-            "name": "API Integration",
-            "description": "Advanced api integration capabilities",
-            "icon": "✨"
-          },
-          {
-            "name": "Analytics Dashboard",
-            "description": "Advanced analytics dashboard capabilities",
-            "icon": "✨"
-          },
-          {
-            "name": "Custom Workflows",
-            "description": "Advanced custom workflows capabilities",
-            "icon": "✨"
-          },
-          {
-            "name": "Trend-based AI",
-            "description": "Advanced trend-based ai capabilities",
-            "icon": "✨"
-          },
-          {
-            "name": "Market Intelligence",
-            "description": "Advanced market intelligence capabilities",
-            "icon": "✨"
-          },
-          {
-            "name": "Predictive Analytics",
-            "description": "Advanced predictive analytics capabilities",
-            "icon": "✨"
-          },
-          {
-            "name": "Automated Insights",
-            "description": "Advanced automated insights capabilities",
-            "icon": "✨"
-          }
-        ],
-        "pricing": [
-          {
-            "tier": "Basic",
-            "price": "$79/month",
-            "features": [
-              "Core features",
-              "Email support",
-              "Basic analytics"
-            ]
-          },
-          {
-            "tier": "Professional",
-            "price": "$199/month",
-            "features": [
-              "All basic features",
-              "Priority support",
-              "Advanced analytics",
-              "API access"
-            ]
-          },
-          {
-            "tier": "Enterprise",
-            "price": "$599/month",
-            "features": [
-              "All professional features",
-              "24/7 support",
-              "Custom integrations",
-              "Dedicated account manager"
-            ]
-          },
-          {
-            "tier": "Custom",
-            "price": "Contact sales",
-            "features": [
-              "Core features",
-              "Email support",
-              "Basic analytics"
-            ]
-          }
-        ],
-        "cta": "Get Started Today",
-        "competitiveAdvantage": "First-mover advantage in AI",
-        "roi": {
-          "developmentCost": 500000,
-          "annualRevenue": 2000000,
-          "roi": "300.0%",
-          "paybackPeriod": "3.0 months"
-        }
-      },
-      "socialMedia": {
-        "posts": [
-          {
-            "type": "announcement",
-            "content": "🚀 Introducing AI-Powered AI Solution! Transform your business with intelligent automation. Innovative solution leveraging the latest trend: Solar notches another win as Microsoft adds 475 MW to power its AI data centers #AI #Innovation #Business",
-            "platform": "all",
-            "priority": "High"
-          },
-          {
-            "type": "feature",
-            "content": "✨ Advanced AI Algorithms - Just one of the powerful features in AI-Powered AI Solution. See how it can benefit your business! #AI #Technology",
-            "platform": "all",
-            "priority": "Medium"
-          },
-          {
-            "type": "feature",
-            "content": "✨ Real-time Processing - Just one of the powerful features in AI-Powered AI Solution. See how it can benefit your business! #AI #Technology",
-            "platform": "all",
-            "priority": "Medium"
-          },
-          {
-            "type": "feature",
-            "content": "✨ Scalable Architecture - Just one of the powerful features in AI-Powered AI Solution. See how it can benefit your business! #AI #Technology",
-            "platform": "all",
-            "priority": "Medium"
-          },
-          {
-            "type": "roi",
-            "content": "💰 AI-Powered AI Solution delivers 300.0% ROI with a payback period of 3.0 months. Smart investment for smart businesses! #ROI #Business",
-            "platform": "all",
-            "priority": "High"
-          }
-        ],
-        "hashtags": "#AI #MachineLearning #Innovation #Business #Technology #Automation",
-        "images": [
-          "Product screenshot",
-          "Dashboard mockup",
-          "ROI infographic",
-          "Feature comparison chart",
-          "Customer testimonial graphic"
-        ]
-      },
-      "emailMarketing": {
-        "subject": "Transform Your Business with AI-Powered AI Solution",
-        "body": "Dear {customer_name},\n\nWe're excited to introduce AI-Powered AI Solution - a revolutionary AI-powered solution designed to transform your business.\n\nKey Benefits:\n• Advanced AI Algorithms\n• Real-time Processing\n• Scalable Architecture\n• API Integration\n• Analytics Dashboard\n• Custom Workflows\n• Trend-based AI\n• Market Intelligence\n• Predictive Analytics\n• Automated Insights\n\nPricing: Basic: $79/month\nProfessional: $199/month\nEnterprise: $599/month\nCustom: Contact sales\n\nReady to get started? Click here to learn more.\n\nBest regards,\nThe AI Solutions Team",
-        "segments": [
-          {
-            "name": "General Business",
-            "criteria": "Business professionals, managers, decision makers",
-            "content": "Dear Business Professional,\n\nAI-Powered AI Solution can transform your business operations.\n\nKey Benefits:\n• Advanced AI Algorithms, Real-time Processing, Scalable Architecture\n• Competitive pricing\n• Proven ROI\n\nROI: 300.0%\nPayback Period: 3.0 months\n\nReady to learn more?"
-          }
-        ]
-      },
-      "contentMarketing": {
-        "blogPosts": [
-          {
-            "title": "How AI-Powered AI Solution is Revolutionizing Business Automation",
-            "estimatedReadTime": "5-7 minutes",
-            "targetKeywords": [
-              "ai-powered",
-              "solution",
-              "innovative",
-              "solution",
-              "leveraging"
-            ],
-            "callToAction": "Learn more about AI-Powered AI Solution"
-          },
-          {
-            "title": "5 Ways AI-Powered AI Solution Can Transform Your Business",
-            "estimatedReadTime": "5-7 minutes",
-            "targetKeywords": [
-              "ai-powered",
-              "solution",
-              "innovative",
-              "solution",
-              "leveraging"
-            ],
-            "callToAction": "Learn more about AI-Powered AI Solution"
-          },
-          {
-            "title": "The ROI of Implementing AI-Powered AI Solution in Your Organization",
-            "estimatedReadTime": "5-7 minutes",
-            "targetKeywords": [
-              "ai-powered",
-              "solution",
-              "innovative",
-              "solution",
-              "leveraging"
-            ],
-            "callToAction": "Learn more about AI-Powered AI Solution"
-          },
-          {
-            "title": "Case Study: Success Stories with AI-Powered AI Solution",
-            "estimatedReadTime": "5-7 minutes",
-            "targetKeywords": [
-              "ai-powered",
-              "solution",
-              "innovative",
-              "solution",
-              "leveraging"
-            ],
-            "callToAction": "Learn more about AI-Powered AI Solution"
-          },
-          {
-            "title": "Future of AI: What AI-Powered AI Solution Means for Your Industry",
-            "estimatedReadTime": "5-7 minutes",
-            "targetKeywords": [
-              "ai-powered",
-              "solution",
-              "innovative",
-              "solution",
-              "leveraging"
-            ],
-            "callToAction": "Learn more about AI-Powered AI Solution"
-          }
-        ],
-        "whitepapers": [
-          {
-            "title": "The Complete Guide to AI-Powered AI Solution Implementation",
-            "estimatedPages": "10-15 pages",
-            "targetAudience": "Mixed",
-            "leadMagnet": true
-          },
-          {
-            "title": "AI-Powered AI Solution: A Comprehensive ROI Analysis",
-            "estimatedPages": "10-15 pages",
-            "targetAudience": "Mixed",
-            "leadMagnet": true
-          },
-          {
-            "title": "Industry Trends and AI-Powered AI Solution: What You Need to Know",
-            "estimatedPages": "10-15 pages",
-            "targetAudience": "Mixed",
-            "leadMagnet": true
-          },
-          {
-            "title": "Security and Compliance in AI-Powered AI Solution Solutions",
-            "estimatedPages": "10-15 pages",
-            "targetAudience": "Mixed",
-            "leadMagnet": true
-          }
-        ],
-        "caseStudies": [
-          {
-            "title": "How Company X Increased Efficiency by 300% with AI-Powered AI Solution",
-            "industry": "Education",
-            "metrics": [
-              "Efficiency",
-              "Cost Savings",
-              "ROI",
-              "Time to Value"
-            ],
-            "testimonial": true
-          },
-          {
             "title": "AI-Powered AI Solution Success Story: From Startup to Enterprise",
-            "industry": "Education",
+            "industry": "Healthcare",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -1937,7 +1937,7 @@
           },
           {
             "title": "Customer Spotlight: AI-Powered AI Solution in Healthcare",
-            "industry": "Education",
+            "industry": "Healthcare",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -1987,7 +1987,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-04T15:34:24.330Z",
+    "createdAt": "2025-08-04T15:58:46.132Z",
     "expectedROI": {
       "percentage": 300,
       "expectedRevenue": 195020,
@@ -2015,8 +2015,8 @@
     ]
   },
   {
-    "id": "campaign-1754321664330-5",
-    "solutionId": "opportunity-solution-1754321664317-0",
+    "id": "campaign-1754323126132-5",
+    "solutionId": "opportunity-solution-1754323126116-0",
     "solutionName": "AI-Powered business opportunity Solution",
     "targetMarket": "Enterprise",
     "channels": [
@@ -2314,7 +2314,7 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI-Powered business opportunity Solution",
-            "industry": "Manufacturing",
+            "industry": "Finance",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -2336,7 +2336,7 @@
           },
           {
             "title": "ROI Case Study: AI-Powered business opportunity Solution in the Manufacturing Industry",
-            "industry": "Healthcare",
+            "industry": "Finance",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -2347,7 +2347,7 @@
           },
           {
             "title": "Customer Spotlight: AI-Powered business opportunity Solution in Healthcare",
-            "industry": "Healthcare",
+            "industry": "Manufacturing",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -2397,7 +2397,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-04T15:34:24.330Z",
+    "createdAt": "2025-08-04T15:58:46.132Z",
     "expectedROI": {
       "percentage": 396,
       "expectedRevenue": 1067625,
@@ -2425,8 +2425,8 @@
     ]
   },
   {
-    "id": "campaign-1754321664330-6",
-    "solutionId": "opportunity-solution-1754321664317-1",
+    "id": "campaign-1754323126132-6",
+    "solutionId": "opportunity-solution-1754323126117-1",
     "solutionName": "Intelligent business opportunity Platform",
     "targetMarket": "SMB",
     "channels": [
@@ -2735,7 +2735,7 @@
           },
           {
             "title": "Intelligent business opportunity Platform Success Story: From Startup to Enterprise",
-            "industry": "Retail",
+            "industry": "Finance",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -2757,7 +2757,7 @@
           },
           {
             "title": "Customer Spotlight: Intelligent business opportunity Platform in Healthcare",
-            "industry": "Manufacturing",
+            "industry": "Retail",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -2807,7 +2807,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-04T15:34:24.330Z",
+    "createdAt": "2025-08-04T15:58:46.132Z",
     "expectedROI": {
       "percentage": 330,
       "expectedRevenue": 222324,
@@ -2835,8 +2835,8 @@
     ]
   },
   {
-    "id": "campaign-1754321664330-7",
-    "solutionId": "opportunity-solution-1754321664317-2",
+    "id": "campaign-1754323126132-7",
+    "solutionId": "opportunity-solution-1754323126117-2",
     "solutionName": "AI-Powered market gap Solution",
     "targetMarket": "Enterprise",
     "channels": [
@@ -3134,7 +3134,7 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI-Powered market gap Solution",
-            "industry": "Manufacturing",
+            "industry": "Technology",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -3145,7 +3145,7 @@
           },
           {
             "title": "AI-Powered market gap Solution Success Story: From Startup to Enterprise",
-            "industry": "Manufacturing",
+            "industry": "Education",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -3167,7 +3167,7 @@
           },
           {
             "title": "Customer Spotlight: AI-Powered market gap Solution in Healthcare",
-            "industry": "Manufacturing",
+            "industry": "Finance",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -3217,7 +3217,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-04T15:34:24.331Z",
+    "createdAt": "2025-08-04T15:58:46.133Z",
     "expectedROI": {
       "percentage": 396,
       "expectedRevenue": 1067625,
@@ -3245,8 +3245,8 @@
     ]
   },
   {
-    "id": "campaign-1754321664331-8",
-    "solutionId": "opportunity-solution-1754321664317-3",
+    "id": "campaign-1754323126133-8",
+    "solutionId": "opportunity-solution-1754323126117-3",
     "solutionName": "Intelligent market gap Platform",
     "targetMarket": "SMB",
     "channels": [
@@ -3544,7 +3544,7 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with Intelligent market gap Platform",
-            "industry": "Healthcare",
+            "industry": "Retail",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -3555,7 +3555,7 @@
           },
           {
             "title": "Intelligent market gap Platform Success Story: From Startup to Enterprise",
-            "industry": "Manufacturing",
+            "industry": "Technology",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -3566,7 +3566,7 @@
           },
           {
             "title": "ROI Case Study: Intelligent market gap Platform in the Manufacturing Industry",
-            "industry": "Manufacturing",
+            "industry": "Technology",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -3577,7 +3577,7 @@
           },
           {
             "title": "Customer Spotlight: Intelligent market gap Platform in Healthcare",
-            "industry": "Manufacturing",
+            "industry": "Technology",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -3627,7 +3627,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-04T15:34:24.331Z",
+    "createdAt": "2025-08-04T15:58:46.133Z",
     "expectedROI": {
       "percentage": 330,
       "expectedRevenue": 222324,
@@ -3655,8 +3655,8 @@
     ]
   },
   {
-    "id": "campaign-1754321664331-9",
-    "solutionId": "opportunity-solution-1754321664317-4",
+    "id": "campaign-1754323126133-9",
+    "solutionId": "opportunity-solution-1754323126117-4",
     "solutionName": "AI-Powered startup opportunity Solution",
     "targetMarket": "Enterprise",
     "channels": [
@@ -3954,17 +3954,6 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI-Powered startup opportunity Solution",
-            "industry": "Technology",
-            "metrics": [
-              "Efficiency",
-              "Cost Savings",
-              "ROI",
-              "Time to Value"
-            ],
-            "testimonial": true
-          },
-          {
-            "title": "AI-Powered startup opportunity Solution Success Story: From Startup to Enterprise",
             "industry": "Retail",
             "metrics": [
               "Efficiency",
@@ -3975,7 +3964,7 @@
             "testimonial": true
           },
           {
-            "title": "ROI Case Study: AI-Powered startup opportunity Solution in the Manufacturing Industry",
+            "title": "AI-Powered startup opportunity Solution Success Story: From Startup to Enterprise",
             "industry": "Manufacturing",
             "metrics": [
               "Efficiency",
@@ -3986,8 +3975,19 @@
             "testimonial": true
           },
           {
+            "title": "ROI Case Study: AI-Powered startup opportunity Solution in the Manufacturing Industry",
+            "industry": "Technology",
+            "metrics": [
+              "Efficiency",
+              "Cost Savings",
+              "ROI",
+              "Time to Value"
+            ],
+            "testimonial": true
+          },
+          {
             "title": "Customer Spotlight: AI-Powered startup opportunity Solution in Healthcare",
-            "industry": "Education",
+            "industry": "Retail",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -4037,7 +4037,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-04T15:34:24.331Z",
+    "createdAt": "2025-08-04T15:58:46.133Z",
     "expectedROI": {
       "percentage": 396,
       "expectedRevenue": 1067625,
@@ -4065,8 +4065,8 @@
     ]
   },
   {
-    "id": "campaign-1754321664331-10",
-    "solutionId": "gap-solution-1754321664318-0",
+    "id": "campaign-1754323126133-10",
+    "solutionId": "gap-solution-1754323126118-0",
     "solutionName": "AI analytics Solution",
     "targetMarket": "Enterprise",
     "channels": [
@@ -4364,7 +4364,7 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI analytics Solution",
-            "industry": "Finance",
+            "industry": "Manufacturing",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -4375,7 +4375,7 @@
           },
           {
             "title": "AI analytics Solution Success Story: From Startup to Enterprise",
-            "industry": "Finance",
+            "industry": "Healthcare",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -4386,7 +4386,7 @@
           },
           {
             "title": "ROI Case Study: AI analytics Solution in the Manufacturing Industry",
-            "industry": "Technology",
+            "industry": "Manufacturing",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -4397,7 +4397,7 @@
           },
           {
             "title": "Customer Spotlight: AI analytics Solution in Healthcare",
-            "industry": "Manufacturing",
+            "industry": "Finance",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -4447,7 +4447,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-04T15:34:24.332Z",
+    "createdAt": "2025-08-04T15:58:46.133Z",
     "expectedROI": {
       "percentage": 396,
       "expectedRevenue": 821250,
@@ -4475,8 +4475,8 @@
     ]
   },
   {
-    "id": "campaign-1754321664332-11",
-    "solutionId": "gap-solution-1754321664318-1",
+    "id": "campaign-1754323126133-11",
+    "solutionId": "gap-solution-1754323126118-1",
     "solutionName": "AI automation Solution",
     "targetMarket": "Enterprise",
     "channels": [
@@ -4774,7 +4774,7 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI automation Solution",
-            "industry": "Retail",
+            "industry": "Finance",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -4785,7 +4785,7 @@
           },
           {
             "title": "AI automation Solution Success Story: From Startup to Enterprise",
-            "industry": "Technology",
+            "industry": "Manufacturing",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -4796,7 +4796,7 @@
           },
           {
             "title": "ROI Case Study: AI automation Solution in the Manufacturing Industry",
-            "industry": "Education",
+            "industry": "Technology",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -4807,7 +4807,7 @@
           },
           {
             "title": "Customer Spotlight: AI automation Solution in Healthcare",
-            "industry": "Finance",
+            "industry": "Technology",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -4857,7 +4857,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-04T15:34:24.332Z",
+    "createdAt": "2025-08-04T15:58:46.133Z",
     "expectedROI": {
       "percentage": 396,
       "expectedRevenue": 821250,
@@ -4885,8 +4885,8 @@
     ]
   },
   {
-    "id": "campaign-1754321664332-12",
-    "solutionId": "gap-solution-1754321664318-2",
+    "id": "campaign-1754323126134-12",
+    "solutionId": "gap-solution-1754323126118-2",
     "solutionName": "AI prediction Solution",
     "targetMarket": "Enterprise",
     "channels": [
@@ -5184,17 +5184,6 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI prediction Solution",
-            "industry": "Manufacturing",
-            "metrics": [
-              "Efficiency",
-              "Cost Savings",
-              "ROI",
-              "Time to Value"
-            ],
-            "testimonial": true
-          },
-          {
-            "title": "AI prediction Solution Success Story: From Startup to Enterprise",
             "industry": "Finance",
             "metrics": [
               "Efficiency",
@@ -5205,8 +5194,19 @@
             "testimonial": true
           },
           {
+            "title": "AI prediction Solution Success Story: From Startup to Enterprise",
+            "industry": "Healthcare",
+            "metrics": [
+              "Efficiency",
+              "Cost Savings",
+              "ROI",
+              "Time to Value"
+            ],
+            "testimonial": true
+          },
+          {
             "title": "ROI Case Study: AI prediction Solution in the Manufacturing Industry",
-            "industry": "Manufacturing",
+            "industry": "Technology",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -5217,7 +5217,7 @@
           },
           {
             "title": "Customer Spotlight: AI prediction Solution in Healthcare",
-            "industry": "Retail",
+            "industry": "Technology",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -5267,7 +5267,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-04T15:34:24.332Z",
+    "createdAt": "2025-08-04T15:58:46.134Z",
     "expectedROI": {
       "percentage": 396,
       "expectedRevenue": 821250,
@@ -5295,8 +5295,8 @@
     ]
   },
   {
-    "id": "campaign-1754321664332-13",
-    "solutionId": "gap-solution-1754321664318-3",
+    "id": "campaign-1754323126134-13",
+    "solutionId": "gap-solution-1754323126118-3",
     "solutionName": "AI optimization Solution",
     "targetMarket": "Enterprise",
     "channels": [
@@ -5594,28 +5594,6 @@
         "caseStudies": [
           {
             "title": "How Company X Increased Efficiency by 300% with AI optimization Solution",
-            "industry": "Education",
-            "metrics": [
-              "Efficiency",
-              "Cost Savings",
-              "ROI",
-              "Time to Value"
-            ],
-            "testimonial": true
-          },
-          {
-            "title": "AI optimization Solution Success Story: From Startup to Enterprise",
-            "industry": "Manufacturing",
-            "metrics": [
-              "Efficiency",
-              "Cost Savings",
-              "ROI",
-              "Time to Value"
-            ],
-            "testimonial": true
-          },
-          {
-            "title": "ROI Case Study: AI optimization Solution in the Manufacturing Industry",
             "industry": "Healthcare",
             "metrics": [
               "Efficiency",
@@ -5626,8 +5604,30 @@
             "testimonial": true
           },
           {
+            "title": "AI optimization Solution Success Story: From Startup to Enterprise",
+            "industry": "Retail",
+            "metrics": [
+              "Efficiency",
+              "Cost Savings",
+              "ROI",
+              "Time to Value"
+            ],
+            "testimonial": true
+          },
+          {
+            "title": "ROI Case Study: AI optimization Solution in the Manufacturing Industry",
+            "industry": "Retail",
+            "metrics": [
+              "Efficiency",
+              "Cost Savings",
+              "ROI",
+              "Time to Value"
+            ],
+            "testimonial": true
+          },
+          {
             "title": "Customer Spotlight: AI optimization Solution in Healthcare",
-            "industry": "Education",
+            "industry": "Healthcare",
             "metrics": [
               "Efficiency",
               "Cost Savings",
@@ -5677,7 +5677,7 @@
       }
     },
     "status": "Active",
-    "createdAt": "2025-08-04T15:34:24.332Z",
+    "createdAt": "2025-08-04T15:58:46.134Z",
     "expectedROI": {
       "percentage": 396,
       "expectedRevenue": 821250,

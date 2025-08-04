@@ -37,7 +37,7 @@ const WebDevelopmentChatPage: NextPage = () => {
                 Expert discussion about web development services and opportunities
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>solution-oriented • best-practices • question-answer</span>
+                <span>innovative-futuristic • trend-analysis • interactive-demo</span>
               </div>
             </div>
           </div>
@@ -67,4 +67,4 @@ const WebDevelopmentChatPage: NextPage = () => {
   )
 }
 
-export default WebDevelopmentChatPageage
+export default WebDevelopmentChatPage

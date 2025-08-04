@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/data-warehouse-etl/",
-  "timestamp": "2025-08-04T15:34:24.924Z",
+  "timestamp": "2025-08-04T15:58:42.418Z",
   "pageInfo": {
     "title": "Data Warehouse & ETL Platform - Zion Tech Group",
     "description": "Comprehensive data warehouse and ETL platform for enterprise data integration",
@@ -15,7 +15,7 @@
         "text": "Recent Activity"
       }
     ],
-    "content": "Zion Tech GroupHomeDashboardData Warehouse & ETL PlatformComprehensive data integration, transformation, and warehousing platform for enterprise analytics. Connect multiple data sources, build ETL pipelines, and maintain data quality across your organization.Data Sources2🔗ETL Pipelines1⚙️Data Warehouses1🏢Total Data Size2.33 GB💾📊Overview🔗Data Sources⚙️ETL Pipelines🏢Data WarehouseRecent ActivityUser Data PipelineLast run: 8/4/2025, 12:04:23 PM125,000 records45s{\"props\":{\"pageProps\":{}},\"page\":\"/data-warehouse-etl\",\"query\":{},\"buildId\":\"TbJ0uJ2zYH8UprOuf8P8l\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "Zion Tech GroupHomeDashboardData Warehouse & ETL PlatformComprehensive data integration, transformation, and warehousing platform for enterprise analytics. Connect multiple data sources, build ETL pipelines, and maintain data quality across your organization.Data Sources2🔗ETL Pipelines1⚙️Data Warehouses1🏢Total Data Size2.33 GB💾📊Overview🔗Data Sources⚙️ETL Pipelines🏢Data WarehouseRecent ActivityUser Data PipelineLast run: 8/4/2025, 12:28:40 PM125,000 records45s{\"props\":{\"pageProps\":{}},\"page\":\"/data-warehouse-etl\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -36,7 +36,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-afe9803330064d0e.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-8d2391de9e862b04.js",
         "type": "text/javascript"
       },
       {
@@ -52,11 +52,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -68,17 +68,17 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-87b08602b3fcc2f0.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/dashboard-ff3245f0efc398f3.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/dashboard-0f86657c9d6630b2.js",
         "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/5949587f2ef62039.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
         "media": "all"
       }
     ]

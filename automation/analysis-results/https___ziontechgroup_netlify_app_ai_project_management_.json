@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-project-management/",
-  "timestamp": "2025-08-04T15:34:30.559Z",
+  "timestamp": "2025-08-04T15:58:48.281Z",
   "pageInfo": {
     "title": "AI Project Management - Zion",
     "description": "Intelligent project management with AI-powered automation and workflow orchestration",
@@ -11,7 +11,7 @@
         "text": "AI-Powered Project Management"
       }
     ],
-    "content": "ZionMarketplaceInvestorsLoginAI-Powered Project ManagementIntelligent project management with AI-powered automation, workflow orchestration, and predictive insights📊Overview📁Projects✅Tasks⚙️Workflows🤖AI InsightsLoading AI insights...{\"props\":{\"pageProps\":{}},\"page\":\"/ai-project-management\",\"query\":{},\"buildId\":\"TbJ0uJ2zYH8UprOuf8P8l\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionMarketplaceInvestorsLoginAI-Powered Project ManagementIntelligent project management with AI-powered automation, workflow orchestration, and predictive insights📊Overview📁Projects✅Tasks⚙️Workflows🤖AI InsightsLoading AI insights...{\"props\":{\"pageProps\":{}},\"page\":\"/ai-project-management\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -32,7 +32,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-afe9803330064d0e.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-8d2391de9e862b04.js",
         "type": "text/javascript"
       },
       {
@@ -44,11 +44,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -72,7 +72,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-87b08602b3fcc2f0.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
         "type": "text/javascript"
       },
       {
@@ -86,7 +86,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/5949587f2ef62039.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
         "media": "all"
       }
     ]

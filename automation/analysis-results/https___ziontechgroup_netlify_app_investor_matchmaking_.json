@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/investor-matchmaking/",
-  "timestamp": "2025-08-04T15:34:29.347Z",
+  "timestamp": "2025-08-04T15:58:47.081Z",
   "pageInfo": {
     "title": "Investor Matchmaking - Zion",
     "description": "Connect with the right investors for your startup using AI-powered matchmaking",
@@ -15,7 +15,7 @@
         "text": "Tell Us About Your Startup"
       }
     ],
-    "content": "ZionMarketplaceServicesLoginAI-Powered Investor MatchmakingConnect with the perfect investors for your startup using our intelligent matching algorithmTell Us About Your StartupStartup Name *Industry *Select IndustryAI/MLFintechHealthcareE-commerceSaaSEdTechCleanTechBiotechCybersecurityIoTBlockchainOtherDevelopment Stage *Select StageIdea StageMVPEarly RevenueGrowth StageScale UpLocationTeam SizeSelect Team Size1-5 people6-10 people11-25 people26-50 people50+ peopleFunding Needed *Select Funding Range$10K-$50K$50K-$200K$200K-$1M$1M-$5M$5M+WebsitePitch Summary *Find Investors{\"props\":{\"pageProps\":{}},\"page\":\"/investor-matchmaking\",\"query\":{},\"buildId\":\"TbJ0uJ2zYH8UprOuf8P8l\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionMarketplaceServicesLoginAI-Powered Investor MatchmakingConnect with the perfect investors for your startup using our intelligent matching algorithmTell Us About Your StartupStartup Name *Industry *Select IndustryAI/MLFintechHealthcareE-commerceSaaSEdTechCleanTechBiotechCybersecurityIoTBlockchainOtherDevelopment Stage *Select StageIdea StageMVPEarly RevenueGrowth StageScale UpLocationTeam SizeSelect Team Size1-5 people6-10 people11-25 people26-50 people50+ peopleFunding Needed *Select Funding Range$10K-$50K$50K-$200K$200K-$1M$1M-$5M$5M+WebsitePitch Summary *Find Investors{\"props\":{\"pageProps\":{}},\"page\":\"/investor-matchmaking\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [
       {
@@ -83,7 +83,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-afe9803330064d0e.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-8d2391de9e862b04.js",
         "type": "text/javascript"
       },
       {
@@ -95,11 +95,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -111,11 +111,19 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-b669f99c1cc2ed5b.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
         "type": "text/javascript"
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
         "type": "text/javascript"
       },
       {
@@ -125,19 +133,11 @@
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
         "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-87b08602b3fcc2f0.js",
-        "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/5949587f2ef62039.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
         "media": "all"
       }
     ]

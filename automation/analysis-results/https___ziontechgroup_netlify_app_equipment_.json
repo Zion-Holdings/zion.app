@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/equipment/",
-  "timestamp": "2025-08-04T15:34:15.141Z",
+  "timestamp": "2025-08-04T15:58:33.522Z",
   "pageInfo": {
     "title": "Equipment - Zion",
     "description": "High-performance computing equipment and technology hardware on Zion's marketplace.",
@@ -23,7 +23,7 @@
         "text": "Network Equipment"
       }
     ],
-    "content": "High-Performance EquipmentAccess cutting-edge computing equipment and technology hardware for your AI and development projects.Computing HardwareGPU clusters and serversAI HardwareSpecialized AI equipmentNetwork EquipmentHigh-speed networking{\"props\":{\"pageProps\":{}},\"page\":\"/equipment\",\"query\":{},\"buildId\":\"TbJ0uJ2zYH8UprOuf8P8l\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "High-Performance EquipmentAccess cutting-edge computing equipment and technology hardware for your AI and development projects.Computing HardwareGPU clusters and serversAI HardwareSpecialized AI equipmentNetwork EquipmentHigh-speed networking{\"props\":{\"pageProps\":{}},\"page\":\"/equipment\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -44,7 +44,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-afe9803330064d0e.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-8d2391de9e862b04.js",
         "type": "text/javascript"
       },
       {
@@ -56,11 +56,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/TbJ0uJ2zYH8UprOuf8P8l/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -68,11 +68,11 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-inventory-supply-chain-d513f8b210c139d3.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-autonomous-drone-delivery-logistics-40ff804ecf08120f.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-autonomous-drone-delivery-logistics-40ff804ecf08120f.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-inventory-supply-chain-d513f8b210c139d3.js",
         "type": "text/javascript"
       },
       {
@@ -82,7 +82,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/5949587f2ef62039.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
         "media": "all"
       }
     ]
