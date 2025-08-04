@@ -37,7 +37,7 @@ const ProductManagementChatPage: NextPage = () => {
                 Expert discussion about product management services and opportunities
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>practical-implementation • industry-insights • trend-discussion</span>
+                <span>solution-oriented • industry-insights • business-strategy</span>
               </div>
             </div>
           </div>
