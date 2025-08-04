@@ -39,21 +39,21 @@ const getExistingPages = () => {
 // Check for missing essential pages
 const checkEssentialPages = () => {
   const essentialPages = [
-    'about',
-    'contact',
-    'privacy-policy',
-    'terms-of-service',
-    'sitemap',
-    'accessibility',
-    'marketplace',
-    'services',
-    'talents',
-    'equipment',
-    'products',
-    'blog',
-    'auth/login',
-    'auth/signup',
-    'auth/forgot-password'
+    '/about',
+    '/contact',
+    '/privacy-policy',
+    '/terms-of-service',
+    '/sitemap',
+    '/accessibility',
+    '/marketplace',
+    '/services',
+    '/talents',
+    '/equipment',
+    '/products',
+    '/blog',
+    '/auth/login',
+    '/auth/signup',
+    '/auth/forgot-password'
   ]
   
   const existingPages = getExistingPages()

@@ -16,8 +16,8 @@ class LinkedInContentCreatorAgent {
             'content-generation',
             'ad-copy-writing',
             'visual-design',
-            'creative-optimization',
-            'a-b-testing'
+            'a-b-testing',
+            'creative-optimization'
         ];
         
         this.contentTemplates = {
@@ -28,17 +28,22 @@ class LinkedInContentCreatorAgent {
                 'AI-Driven Business Intelligence at Your Fingertips',
                 'Revolutionize Your Operations with Smart Technology',
                 'Accelerate Growth with Intelligent Automation',
-                'Empower Your Team with Cutting-Edge Technology',
-                'Navigate Digital Transformation with Confidence',
-                'Build Tomorrow\'s Solutions Today',
-                'Innovation Meets Implementation'
+                'Empower Your Business with Cutting-Edge Technology',
+                'Drive Digital Excellence with ZionTech Solutions',
+                'Innovate Faster with AI-Powered Development',
+                'Scale Your Business with Intelligent Solutions'
             ],
             descriptions: [
-                'Discover how ZionTech\'s cutting-edge AI solutions can streamline your operations, boost productivity, and drive growth. Our comprehensive suite of digital transformation services includes AI consulting, custom software development, and strategic technology implementation. Visit ziontechgroup.com to explore our solutions.',
-                'Ready to take your business to the next level? ZionTech offers innovative AI consulting, custom software development, and digital transformation services. Our expert team helps organizations leverage technology to achieve competitive advantage. Learn more at ziontechgroup.com',
-                'Join the digital revolution with ZionTech. Our expert team delivers AI-powered solutions, cloud infrastructure, and strategic consulting to help your business thrive in the digital age. From concept to implementation, we\'re your trusted technology partner.',
-                'Experience the power of intelligent automation and data-driven insights. ZionTech provides comprehensive AI solutions, cybersecurity services, and digital transformation consulting. Transform your business operations with our innovative technology solutions.',
-                'Stay ahead of the competition with ZionTech\'s innovative technology solutions. From AI development to cloud infrastructure, we help businesses achieve digital excellence through strategic technology implementation and expert consulting.'
+                'Discover how ZionTech\'s cutting-edge AI solutions can streamline your operations, boost productivity, and drive growth. Visit ziontechgroup.com to explore our comprehensive suite of digital transformation services.',
+                'Ready to take your business to the next level? ZionTech offers innovative AI consulting, custom software development, and digital transformation services. Learn more at ziontechgroup.com',
+                'Join the digital revolution with ZionTech. Our expert team delivers AI-powered solutions, cloud infrastructure, and strategic consulting to help your business thrive in the digital age.',
+                'Experience the power of intelligent automation and data-driven insights. ZionTech provides comprehensive AI solutions, cybersecurity services, and digital transformation consulting.',
+                'Stay ahead of the competition with ZionTech\'s innovative technology solutions. From AI development to cloud infrastructure, we help businesses achieve digital excellence.',
+                'Transform your business operations with ZionTech\'s intelligent solutions. Our AI-powered platform delivers real-time insights, automated workflows, and scalable growth strategies.',
+                'Accelerate your digital transformation journey with ZionTech. Our comprehensive suite of AI tools, cloud services, and strategic consulting empowers businesses to innovate faster.',
+                'Unlock unprecedented growth potential with ZionTech\'s intelligent automation solutions. From predictive analytics to smart workflows, we help businesses scale efficiently.',
+                'Drive innovation and efficiency with ZionTech\'s AI-powered development platform. Custom solutions, rapid deployment, and continuous optimization for modern businesses.',
+                'Scale your operations intelligently with ZionTech\'s comprehensive technology solutions. AI consulting, custom development, and strategic implementation for sustainable growth.'
             ],
             callToActions: [
                 'Learn More',
@@ -46,9 +51,11 @@ class LinkedInContentCreatorAgent {
                 'Explore Solutions',
                 'Contact Us',
                 'Discover More',
-                'Schedule Demo',
-                'Request Quote',
-                'View Case Studies'
+                'Start Free Trial',
+                'Request Demo',
+                'View Case Studies',
+                'Schedule Consultation',
+                'Download Guide'
             ]
         };
     }
@@ -57,17 +64,20 @@ class LinkedInContentCreatorAgent {
         console.log('✍️ LinkedIn Content Creator Agent executing...');
         
         try {
-            // Phase 1: Generate New Ad Content
-            await this.generateAdContent();
+            // Phase 1: Generate Ad Copy
+            const adCopy = await this.generateAdCopy();
             
             // Phase 2: Create Visual Assets
-            await this.createVisualAssets();
+            const visualAssets = await this.createVisualAssets();
             
-            // Phase 3: Optimize Content Performance
-            await this.optimizeContentPerformance();
+            // Phase 3: A/B Test Variations
+            const testVariations = await this.createABTestVariations(adCopy);
             
-            // Phase 4: A/B Test Variations
-            await this.createABTestVariations();
+            // Phase 4: Optimize Content
+            await this.optimizeContent(adCopy, visualAssets);
+            
+            // Phase 5: Save Content
+            await this.saveContent(adCopy, visualAssets, testVariations);
             
             console.log('✅ LinkedIn Content Creator Agent completed successfully');
             
@@ -77,12 +87,16 @@ class LinkedInContentCreatorAgent {
         }
     }
 
-    async generateAdContent() {
-        console.log('📝 Generating new LinkedIn ad content...');
+    async generateAdCopy() {
+        console.log('📝 Generating LinkedIn ad copy...');
         
-        const contentVariations = [];
+        const adCopy = {
+            id: uuidv4(),
+            createdAt: moment().toISOString(),
+            variations: []
+        };
         
-        // Generate multiple content variations
+        // Generate multiple variations
         for (let i = 0; i < 5; i++) {
             const variation = {
                 id: uuidv4(),
@@ -90,102 +104,125 @@ class LinkedInContentCreatorAgent {
                 description: this.getRandomDescription(),
                 cta: this.getRandomCTA(),
                 targetAudience: this.getTargetAudience(),
-                contentType: 'sponsored-content',
-                status: 'active',
-                createdAt: moment().toISOString()
+                budget: this.getRandomBudget(),
+                priority: i + 1
             };
             
-            contentVariations.push(variation);
-            await this.saveContentVariation(variation);
+            adCopy.variations.push(variation);
         }
         
-        return contentVariations;
+        return adCopy;
     }
 
     async createVisualAssets() {
-        console.log('🎨 Creating visual assets for LinkedIn ads...');
+        console.log('🎨 Creating visual assets...');
         
-        const visualAssets = [
-            {
-                type: 'banner',
-                dimensions: '1200x628',
-                theme: 'professional',
-                colors: ['#1a365d', '#3182ce', '#ffffff'],
-                elements: ['logo', 'headline', 'cta-button']
-            },
-            {
-                type: 'carousel',
-                dimensions: '1200x628',
-                theme: 'modern',
-                colors: ['#2d3748', '#4a5568', '#e2e8f0'],
-                elements: ['product-showcase', 'benefits-list', 'social-proof']
-            },
-            {
-                type: 'video-thumbnail',
-                dimensions: '1200x628',
-                theme: 'dynamic',
-                colors: ['#805ad5', '#d53f8c', '#f7fafc'],
-                elements: ['animated-elements', 'data-visualization', 'brand-identity']
-            }
+        const assets = {
+            id: uuidv4(),
+            createdAt: moment().toISOString(),
+            images: [],
+            videos: [],
+            carousel: []
+        };
+        
+        // Generate asset descriptions for LinkedIn
+        const imageDescriptions = [
+            'AI-powered business solutions dashboard',
+            'Digital transformation process flow',
+            'Cloud infrastructure architecture',
+            'AI consulting team collaboration',
+            'Innovation technology showcase'
         ];
         
-        for (const asset of visualAssets) {
-            await this.saveVisualAsset(asset);
+        for (const description of imageDescriptions) {
+            assets.images.push({
+                id: uuidv4(),
+                description: description,
+                format: '1200x627',
+                type: 'sponsored-content'
+            });
         }
+        
+        return assets;
     }
 
-    async optimizeContentPerformance() {
-        console.log('📊 Optimizing content performance...');
+    async createABTestVariations(adCopy) {
+        console.log('🧪 Creating A/B test variations...');
+        
+        const testVariations = {
+            id: uuidv4(),
+            testName: 'ZionTech LinkedIn Ad Optimization',
+            variations: []
+        };
+        
+        // Create A/B test variations
+        for (const variation of adCopy.variations) {
+            const testVariation = {
+                ...variation,
+                testId: uuidv4(),
+                trafficSplit: 20, // 20% traffic each
+                metrics: {
+                    impressions: 0,
+                    clicks: 0,
+                    ctr: 0,
+                    conversions: 0
+                }
+            };
+            
+            testVariations.variations.push(testVariation);
+        }
+        
+        return testVariations;
+    }
+
+    async optimizeContent(adCopy, visualAssets) {
+        console.log('⚡ Optimizing content performance...');
         
         // Implement content optimization logic
         return true;
     }
 
-    async createABTestVariations() {
-        console.log('🧪 Creating A/B test variations...');
+    async saveContent(adCopy, visualAssets, testVariations) {
+        const contentDir = path.join(__dirname, '../data/linkedin-content');
+        await fs.ensureDir(contentDir);
         
-        const testVariations = [
-            {
-                testName: 'Headline Performance Test',
-                variations: [
-                    'Transform Your Business with AI-Powered Solutions',
-                    'Unlock the Future of Digital Innovation',
-                    'ZionTech: Your Partner in Digital Transformation'
-                ]
-            },
-            {
-                testName: 'CTA Performance Test',
-                variations: [
-                    'Learn More',
-                    'Get Started',
-                    'Explore Solutions'
-                ]
-            },
-            {
-                testName: 'Description Length Test',
-                variations: [
-                    'Short description focusing on key benefits',
-                    'Medium description with detailed value proposition',
-                    'Long description with comprehensive feature list'
-                ]
-            }
-        ];
+        const timestamp = moment().format('YYYY-MM-DD-HH-mm');
         
-        for (const test of testVariations) {
-            await this.saveABTest(test);
-        }
+        // Save ad copy
+        await fs.writeJson(
+            path.join(contentDir, `ad-copy-${timestamp}.json`),
+            adCopy
+        );
+        
+        // Save visual assets
+        await fs.writeJson(
+            path.join(contentDir, `visual-assets-${timestamp}.json`),
+            visualAssets
+        );
+        
+        // Save A/B test variations
+        await fs.writeJson(
+            path.join(contentDir, `ab-test-${timestamp}.json`),
+            testVariations
+        );
     }
 
     getRandomHeadline() {
-        return this.contentTemplates.headlines[Math.floor(Math.random() * this.contentTemplates.headlines.length)];
+        return this.contentTemplates.headlines[
+            Math.floor(Math.random() * this.contentTemplates.headlines.length)
+        ];
     }
 
     getRandomDescription() {
-        return this.contentTemplates.descriptions[Math.floor(Math.random() * this.contentTemplates.descriptions.length)];
+        return this.contentTemplates.descriptions[
+            Math.floor(Math.random() * this.contentTemplates.descriptions.length)
+        ];
     }
 
     getRandomCTA() {
-        return this.contentTemplates.callToActions[Math.floor(Math.random() * this.contentTemplates.callToActions.length)];
+        return this.contentTemplates.callToActions[
+            Math.floor(Math.random() * this.contentTemplates.callToActions.length)
+        ];
     }
 
     getTargetAudience() {
@@ -194,33 +231,15 @@ class LinkedInContentCreatorAgent {
             'business-decision-makers',
             'innovation-leaders',
             'digital-transformation-managers',
-            'cto-ciso-executives'
+            'ai-enthusiasts'
         ];
+        
         return audiences[Math.floor(Math.random() * audiences.length)];
     }
 
-    async saveContentVariation(variation) {
-        const contentDir = path.join(__dirname, '../data/linkedin-content');
-        await fs.ensureDir(contentDir);
-        
-        const filePath = path.join(contentDir, `${variation.id}.json`);
-        await fs.writeJson(filePath, variation);
-    }
-
-    async saveVisualAsset(asset) {
-        const assetsDir = path.join(__dirname, '../data/linkedin-assets');
-        await fs.ensureDir(assetsDir);
-        
-        const filePath = path.join(assetsDir, `${asset.type}-${Date.now()}.json`);
-        await fs.writeJson(filePath, asset);
-    }
-
-    async saveABTest(test) {
-        const testsDir = path.join(__dirname, '../data/linkedin-ab-tests');
-        await fs.ensureDir(testsDir);
-        
-        const filePath = path.join(testsDir, `${test.testName.replace(/\s+/g, '-')}.json`);
-        await fs.writeJson(filePath, test);
+    getRandomBudget() {
+        const budgets = [100, 150, 200, 250, 300];
+        return budgets[Math.floor(Math.random() * budgets.length)];
     }
 
     startContinuousOperation() {

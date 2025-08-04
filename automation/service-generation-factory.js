@@ -9,173 +9,150 @@ class ServiceGenerationFactory {
     this.services = new Map();
     this.salesAgents = new Map();
     this.marketData = new Map();
-    this.serviceTemplates = new Map();
-    this.analytics = {
-      servicesCreated: 0,
-      revenueGenerated: 0,
-      salesAgentsActive: 0,
-      marketTrends: []
-    };
-    
     this.serviceTypes = {
       'web-application': {
-        capabilities: ['frontend-development', 'backend-api', 'database-design'],
-        marketRange: { min: 5000, max: 50000, avg: 15000 },
-        technologies: ['react', 'node.js', 'postgresql', 'aws'],
-        features: ['user-authentication', 'payment-processing', 'admin-dashboard'],
-        developmentTime: { min: 2, max: 8, avg: 4 }, // weeks
-        complexity: 'medium'
+        capabilities: ['frontend', 'backend', 'database', 'api'],
+        technologies: ['react', 'next.js', 'node.js', 'postgresql', 'mongodb'],
+        marketSegments: ['saas', 'ecommerce', 'crm', 'analytics'],
+        averagePrice: 15000,
+        priceRange: { min: 8000, max: 25000 },
+        developmentTime: '4-8 weeks',
+        features: ['user-authentication', 'responsive-design', 'admin-panel', 'api-integration']
       },
       'mobile-app': {
-        capabilities: ['ios-development', 'android-development', 'cross-platform'],
-        marketRange: { min: 8000, max: 75000, avg: 25000 },
+        capabilities: ['ios', 'android', 'cross-platform', 'native'],
         technologies: ['react-native', 'flutter', 'swift', 'kotlin'],
-        features: ['push-notifications', 'offline-support', 'biometric-auth'],
-        developmentTime: { min: 3, max: 12, avg: 6 },
-        complexity: 'high'
+        marketSegments: ['consumer', 'enterprise', 'healthcare', 'education'],
+        averagePrice: 25000,
+        priceRange: { min: 15000, max: 40000 },
+        developmentTime: '6-12 weeks',
+        features: ['push-notifications', 'offline-support', 'biometric-auth', 'in-app-purchases']
       },
-      'e-commerce-platform': {
-        capabilities: ['product-catalog', 'shopping-cart', 'payment-gateway'],
-        marketRange: { min: 10000, max: 100000, avg: 35000 },
-        technologies: ['shopify', 'woocommerce', 'magento', 'custom'],
-        features: ['inventory-management', 'order-tracking', 'customer-reviews'],
-        developmentTime: { min: 4, max: 16, avg: 8 },
-        complexity: 'high'
+      'ai-service': {
+        capabilities: ['machine-learning', 'nlp', 'computer-vision', 'predictive-analytics'],
+        technologies: ['python', 'tensorflow', 'pytorch', 'openai-api', 'huggingface'],
+        marketSegments: ['automation', 'analytics', 'healthcare', 'finance'],
+        averagePrice: 35000,
+        priceRange: { min: 20000, max: 60000 },
+        developmentTime: '8-16 weeks',
+        features: ['model-training', 'api-endpoints', 'data-processing', 'real-time-inference']
       },
-      'saas-platform': {
-        capabilities: ['subscription-management', 'multi-tenancy', 'analytics'],
-        marketRange: { min: 15000, max: 150000, avg: 50000 },
-        technologies: ['microservices', 'kubernetes', 'redis', 'elasticsearch'],
-        features: ['user-roles', 'billing-system', 'api-gateway'],
-        developmentTime: { min: 6, max: 24, avg: 12 },
-        complexity: 'very-high'
+      'blockchain-service': {
+        capabilities: ['smart-contracts', 'defi', 'nft', 'web3'],
+        technologies: ['ethereum', 'solidity', 'web3.js', 'ipfs', 'polygon'],
+        marketSegments: ['defi', 'gaming', 'art', 'finance'],
+        averagePrice: 40000,
+        priceRange: { min: 25000, max: 70000 },
+        developmentTime: '10-20 weeks',
+        features: ['smart-contract-development', 'wallet-integration', 'token-economics', 'dapp-frontend']
       },
-      'ai-chatbot': {
-        capabilities: ['nlp-processing', 'conversation-flow', 'integration'],
-        marketRange: { min: 3000, max: 25000, avg: 8000 },
-        technologies: ['openai', 'dialogflow', 'rasa', 'custom-nlp'],
-        features: ['multi-language', 'sentiment-analysis', 'api-integration'],
-        developmentTime: { min: 2, max: 6, avg: 3 },
-        complexity: 'medium'
+      'iot-platform': {
+        capabilities: ['device-management', 'data-collection', 'real-time-monitoring', 'analytics'],
+        technologies: ['mqtt', 'node.js', 'mongodb', 'redis', 'docker'],
+        marketSegments: ['industrial', 'smart-home', 'healthcare', 'agriculture'],
+        averagePrice: 30000,
+        priceRange: { min: 18000, max: 50000 },
+        developmentTime: '6-12 weeks',
+        features: ['device-registration', 'data-visualization', 'alert-system', 'api-gateway']
       },
-      'data-analytics-dashboard': {
-        capabilities: ['data-visualization', 'real-time-processing', 'reporting'],
-        marketRange: { min: 5000, max: 40000, avg: 15000 },
-        technologies: ['tableau', 'power-bi', 'd3.js', 'apache-kafka'],
-        features: ['interactive-charts', 'data-export', 'scheduled-reports'],
-        developmentTime: { min: 3, max: 10, avg: 5 },
-        complexity: 'medium'
-      },
-      'automation-script': {
-        capabilities: ['process-automation', 'api-integration', 'scheduling'],
-        marketRange: { min: 1000, max: 15000, avg: 5000 },
-        technologies: ['python', 'node.js', 'bash', 'powershell'],
-        features: ['error-handling', 'logging', 'email-notifications'],
-        developmentTime: { min: 1, max: 4, avg: 2 },
-        complexity: 'low'
-      },
-      'blockchain-dapp': {
-        capabilities: ['smart-contracts', 'web3-integration', 'decentralized-storage'],
-        marketRange: { min: 20000, max: 200000, avg: 75000 },
-        technologies: ['ethereum', 'polygon', 'ipfs', 'web3.js'],
-        features: ['token-economics', 'governance', 'staking-mechanisms'],
-        developmentTime: { min: 8, max: 32, avg: 16 },
-        complexity: 'very-high'
+      'data-analytics': {
+        capabilities: ['data-processing', 'visualization', 'reporting', 'predictive-analytics'],
+        technologies: ['python', 'pandas', 'numpy', 'matplotlib', 'tableau'],
+        marketSegments: ['business-intelligence', 'marketing', 'finance', 'healthcare'],
+        averagePrice: 28000,
+        priceRange: { min: 15000, max: 45000 },
+        developmentTime: '4-10 weeks',
+        features: ['data-pipeline', 'dashboard', 'automated-reports', 'ml-integration']
       }
     };
-
+    
     this.salesAgentTypes = {
       'digital-marketer': {
-        capabilities: ['seo-optimization', 'social-media-marketing', 'content-creation'],
+        capabilities: ['seo', 'ppc', 'social-media', 'content-marketing'],
+        platforms: ['google-ads', 'facebook-ads', 'linkedin', 'twitter'],
         commission: 0.15,
-        targetMarkets: ['startups', 'small-businesses', 'e-commerce'],
-        channels: ['linkedin', 'facebook', 'google-ads', 'email']
+        baseSalary: 3000,
+        performanceMetrics: ['leads-generated', 'conversion-rate', 'roi']
       },
-      'enterprise-sales': {
-        capabilities: ['b2b-sales', 'contract-negotiation', 'relationship-building'],
+      'sales-representative': {
+        capabilities: ['lead-qualification', 'presentation', 'negotiation', 'closing'],
+        tools: ['crm', 'email-automation', 'video-calls', 'proposal-tools'],
         commission: 0.20,
-        targetMarkets: ['enterprises', 'government', 'large-corporations'],
-        channels: ['linkedin', 'cold-calling', 'trade-shows', 'referrals']
+        baseSalary: 2500,
+        performanceMetrics: ['deals-closed', 'revenue-generated', 'average-deal-size']
       },
-      'startup-specialist': {
-        capabilities: ['pitch-deck-creation', 'fundraising-support', 'mvp-development'],
-        commission: 0.25,
-        targetMarkets: ['startups', 'investors', 'accelerators'],
-        channels: ['angel-list', 'crunchbase', 'startup-events', 'networking']
-      },
-      'freelance-connector': {
-        capabilities: ['project-matching', 'client-communication', 'quality-assurance'],
-        commission: 0.10,
-        targetMarkets: ['freelancers', 'small-projects', 'quick-deliveries'],
-        channels: ['upwork', 'fiverr', 'freelancer', 'local-networks']
+      'technical-sales': {
+        capabilities: ['technical-demos', 'solution-architecture', 'integration-support'],
+        expertise: ['api-integration', 'customization', 'technical-support'],
+        commission: 0.18,
+        baseSalary: 4000,
+        performanceMetrics: ['technical-deals', 'implementation-success', 'customer-satisfaction']
       }
     };
-
-    this.init();
   }
 
-  async init() {
-    await this.loadServiceRegistry();
-    await this.loadSalesAgentRegistry();
-    await this.updateMarketData();
-    this.startAutomatedProcesses();
-  }
-
-  async createService(type, config = {}) {
-    const serviceType = this.serviceTypes[type];
-    if (!serviceType) {
-      throw new Error(`Unknown service type: ${type}`);
-    }
-
+  async createService(serviceType, config = {}) {
     const serviceId = uuidv4();
-    const marketPrice = this.calculateMarketPrice(serviceType.marketRange);
-    const developmentTime = this.calculateDevelopmentTime(serviceType.developmentTime);
+    const serviceConfig = this.serviceTypes[serviceType];
+    
+    if (!serviceConfig) {
+      throw new Error(`Unknown service type: ${serviceType}`);
+    }
 
     const service = {
       id: serviceId,
-      type: type,
-      name: this.generateServiceName(type),
-      description: this.generateServiceDescription(type, config),
-      price: marketPrice,
-      developmentTime: developmentTime,
-      technologies: serviceType.technologies,
-      features: serviceType.features,
-      capabilities: serviceType.capabilities,
-      complexity: serviceType.complexity,
+      type: serviceType,
+      name: config.name || this.generateServiceName(serviceType),
+      description: config.description || this.generateServiceDescription(serviceType),
+      capabilities: serviceConfig.capabilities,
+      technologies: serviceConfig.technologies,
+      marketSegments: serviceConfig.marketSegments,
+      pricing: this.calculatePricing(serviceConfig, config),
+      developmentTime: serviceConfig.developmentTime,
+      features: serviceConfig.features,
       status: 'created',
       createdAt: new Date(),
-      config: config,
-      marketData: {
-        demand: this.analyzeMarketDemand(type),
-        competition: this.analyzeCompetition(type),
-        trends: this.analyzeMarketTrends(type)
-      }
+      marketAnalysis: await this.performMarketAnalysis(serviceType),
+      competitiveAnalysis: await this.performCompetitiveAnalysis(serviceType),
+      salesStrategy: this.generateSalesStrategy(serviceType),
+      marketingMaterials: this.generateMarketingMaterials(serviceType, config),
+      createdAt: new Date(),
+      updatedAt: new Date()
     };
 
     this.services.set(serviceId, service);
     await this.saveServiceRegistry();
-    await this.createSalesAgentForService(serviceId);
     
-    this.analytics.servicesCreated++;
+    // Create sales agents for this service
+    await this.createSalesAgentsForService(serviceId);
+    
     return service;
   }
 
-  async createSalesAgentForService(serviceId) {
-    const service = this.services.get(serviceId);
-    if (!service) return;
-
-    const agentType = this.selectBestSalesAgentType(service);
+  async createSalesAgent(agentType, serviceId, config = {}) {
     const agentId = uuidv4();
+    const agentConfig = this.salesAgentTypes[agentType];
+    
+    if (!agentConfig) {
+      throw new Error(`Unknown agent type: ${agentType}`);
+    }
 
-    const salesAgent = {
+    const service = this.services.get(serviceId);
+    if (!service) {
+      throw new Error(`Service not found: ${serviceId}`);
+    }
+
+    const agent = {
       id: agentId,
-      serviceId: serviceId,
       type: agentType,
-      name: this.generateAgentName(agentType),
-      capabilities: this.salesAgentTypes[agentType].capabilities,
-      commission: this.salesAgentTypes[agentType].commission,
-      targetMarkets: this.salesAgentTypes[agentType].targetMarkets,
-      channels: this.salesAgentTypes[agentType].channels,
+      serviceId: serviceId,
+      name: config.name || this.generateAgentName(agentType),
+      capabilities: agentConfig.capabilities,
+      platforms: agentConfig.platforms || agentConfig.tools,
+      expertise: agentConfig.expertise || [],
+      commission: agentConfig.commission,
+      baseSalary: agentConfig.baseSalary,
+      performanceMetrics: agentConfig.performanceMetrics,
       status: 'active',
       performance: {
         leadsGenerated: 0,
@@ -183,444 +160,424 @@ class ServiceGenerationFactory {
         revenueGenerated: 0,
         conversionRate: 0
       },
-      createdAt: new Date()
+      createdAt: new Date(),
+      updatedAt: new Date()
     };
 
-    this.salesAgents.set(agentId, salesAgent);
+    this.salesAgents.set(agentId, agent);
     await this.saveSalesAgentRegistry();
-    this.analytics.salesAgentsActive++;
     
-    // Start the sales agent
-    this.startSalesAgent(agentId);
+    return agent;
   }
 
-  calculateMarketPrice(range) {
-    const { min, max, avg } = range;
-    // Add some randomness to the average price
-    const variation = (Math.random() - 0.5) * 0.3; // ±15% variation
-    return Math.round(avg * (1 + variation));
-  }
-
-  calculateDevelopmentTime(timeRange) {
-    const { min, max, avg } = timeRange;
-    const variation = (Math.random() - 0.5) * 0.4; // ±20% variation
-    return Math.round(avg * (1 + variation));
-  }
-
-  generateServiceName(type) {
-    const prefixes = {
-      'web-application': ['Smart', 'Pro', 'Elite', 'Advanced'],
-      'mobile-app': ['Mobile', 'App', 'Go', 'Quick'],
-      'e-commerce-platform': ['Shop', 'Store', 'Market', 'Trade'],
-      'saas-platform': ['Cloud', 'SaaS', 'Enterprise', 'Business'],
-      'ai-chatbot': ['AI', 'Smart', 'Intelligent', 'Auto'],
-      'data-analytics-dashboard': ['Analytics', 'Insights', 'Data', 'Metrics'],
-      'automation-script': ['Auto', 'Script', 'Bot', 'Process'],
-      'blockchain-dapp': ['DeFi', 'Crypto', 'Chain', 'Token']
-    };
-
-    const suffixes = {
-      'web-application': ['Platform', 'System', 'Solution', 'Hub'],
-      'mobile-app': ['App', 'Mobile', 'Go', 'Pro'],
-      'e-commerce-platform': ['Store', 'Marketplace', 'Shop', 'Platform'],
-      'saas-platform': ['Suite', 'Platform', 'System', 'Hub'],
-      'ai-chatbot': ['Assistant', 'Bot', 'Helper', 'Agent'],
-      'data-analytics-dashboard': ['Dashboard', 'Analytics', 'Insights', 'Reports'],
-      'automation-script': ['Automation', 'Script', 'Bot', 'Process'],
-      'blockchain-dapp': ['DApp', 'Protocol', 'Platform', 'Network']
-    };
-
-    const prefix = prefixes[type][Math.floor(Math.random() * prefixes[type].length)];
-    const suffix = suffixes[type][Math.floor(Math.random() * suffixes[type].length)];
-    
-    return `${prefix} ${suffix}`;
-  }
-
-  generateServiceDescription(type, config) {
-    const descriptions = {
-      'web-application': 'A modern, responsive web application built with cutting-edge technologies, featuring user authentication, payment processing, and an intuitive admin dashboard.',
-      'mobile-app': 'A cross-platform mobile application with offline capabilities, push notifications, and seamless user experience across iOS and Android platforms.',
-      'e-commerce-platform': 'A comprehensive e-commerce solution with product catalog management, secure payment processing, and advanced inventory tracking.',
-      'saas-platform': 'A scalable SaaS platform with multi-tenant architecture, subscription management, and advanced analytics capabilities.',
-      'ai-chatbot': 'An intelligent chatbot powered by advanced NLP, capable of handling complex conversations and integrating with multiple platforms.',
-      'data-analytics-dashboard': 'A powerful analytics dashboard with real-time data visualization, interactive charts, and comprehensive reporting capabilities.',
-      'automation-script': 'An efficient automation script that streamlines business processes, reduces manual work, and improves operational efficiency.',
-      'blockchain-dapp': 'A decentralized application built on blockchain technology, featuring smart contracts, token economics, and secure transactions.'
-    };
-
-    return descriptions[type] || 'A custom solution tailored to your specific requirements.';
-  }
-
-  generateAgentName(type) {
-    const names = {
-      'digital-marketer': ['Alex', 'Jordan', 'Casey', 'Taylor', 'Morgan'],
-      'enterprise-sales': ['Sarah', 'Michael', 'Jennifer', 'David', 'Emily'],
-      'startup-specialist': ['Chris', 'Ashley', 'Ryan', 'Jessica', 'Brandon'],
-      'freelance-connector': ['Sam', 'Alex', 'Jordan', 'Taylor', 'Morgan']
-    };
-
-    const surnames = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis'];
-    const name = names[type][Math.floor(Math.random() * names[type].length)];
-    const surname = surnames[Math.floor(Math.random() * surnames.length)];
-    
-    return `${name} ${surname}`;
-  }
-
-  selectBestSalesAgentType(service) {
-    const { type, price, complexity } = service;
-    
-    // Enterprise sales for high-value, complex services
-    if (price > 50000 || complexity === 'very-high') {
-      return 'enterprise-sales';
-    }
-    
-    // Startup specialist for innovative, high-potential services
-    if (type === 'blockchain-dapp' || type === 'saas-platform') {
-      return 'startup-specialist';
-    }
-    
-    // Freelance connector for simple, quick services
-    if (price < 10000 || complexity === 'low') {
-      return 'freelance-connector';
-    }
-    
-    // Digital marketer for everything else
-    return 'digital-marketer';
-  }
-
-  async updateMarketData() {
-    try {
-      // Simulate market data updates
-      const marketTrends = [
-        { trend: 'AI/ML Services', growth: 0.25, demand: 'high' },
-        { trend: 'Blockchain Solutions', growth: 0.15, demand: 'medium' },
-        { trend: 'E-commerce Platforms', growth: 0.20, demand: 'high' },
-        { trend: 'Mobile Applications', growth: 0.18, demand: 'high' },
-        { trend: 'SaaS Platforms', growth: 0.22, demand: 'high' },
-        { trend: 'Automation Scripts', growth: 0.12, demand: 'medium' },
-        { trend: 'Data Analytics', growth: 0.30, demand: 'very-high' }
-      ];
-
-      this.marketData.set('trends', marketTrends);
-      this.marketData.set('lastUpdate', new Date());
-    } catch (error) {
-      console.error('Error updating market data:', error);
-    }
-  }
-
-  analyzeMarketDemand(type) {
-    const trends = this.marketData.get('trends') || [];
-    const relevantTrend = trends.find(t => 
-      t.trend.toLowerCase().includes(type.replace('-', ' '))
-    );
-    
-    return relevantTrend ? relevantTrend.demand : 'medium';
-  }
-
-  analyzeCompetition(type) {
-    const competitionLevels = {
-      'web-application': 'high',
-      'mobile-app': 'high',
-      'e-commerce-platform': 'medium',
-      'saas-platform': 'medium',
-      'ai-chatbot': 'low',
-      'data-analytics-dashboard': 'medium',
-      'automation-script': 'high',
-      'blockchain-dapp': 'low'
-    };
-    
-    return competitionLevels[type] || 'medium';
-  }
-
-  analyzeMarketTrends(type) {
-    const trends = this.marketData.get('trends') || [];
-    return trends.filter(t => 
-      t.trend.toLowerCase().includes(type.replace('-', ' '))
-    );
-  }
-
-  async startSalesAgent(agentId) {
-    const agent = this.salesAgents.get(agentId);
-    if (!agent) return;
-
-    // Simulate sales agent activities
-    setInterval(async () => {
-      await this.simulateSalesActivity(agentId);
-    }, 300000); // Every 5 minutes
-  }
-
-  async simulateSalesActivity(agentId) {
-    const agent = this.salesAgents.get(agentId);
-    if (!agent) return;
-
-    const service = this.services.get(agent.serviceId);
-    if (!service) return;
-
-    // Simulate lead generation
-    const leadChance = Math.random();
-    if (leadChance > 0.7) {
-      agent.performance.leadsGenerated++;
-      
-      // Simulate deal closing
-      const dealChance = Math.random();
-      if (dealChance > 0.8) {
-        agent.performance.dealsClosed++;
-        const revenue = service.price * agent.commission;
-        agent.performance.revenueGenerated += revenue;
-        this.analytics.revenueGenerated += revenue;
-      }
-    }
-
-    // Update conversion rate
-    if (agent.performance.leadsGenerated > 0) {
-      agent.performance.conversionRate = 
-        agent.performance.dealsClosed / agent.performance.leadsGenerated;
-    }
-
-    await this.saveSalesAgentRegistry();
-  }
-
-  async generateAdvertisement(serviceId) {
+  async createSalesAgentsForService(serviceId) {
     const service = this.services.get(serviceId);
-    if (!service) return null;
+    const agents = [];
 
-    const adTemplates = {
-      'web-application': {
-        headline: `Transform Your Business with Our ${service.name}`,
-        subheadline: `Professional web application with ${service.features.join(', ')}`,
-        cta: 'Get Started Today',
-        benefits: ['24/7 Support', 'Scalable Architecture', 'Modern UI/UX']
-      },
-      'mobile-app': {
-        headline: `Go Mobile with ${service.name}`,
-        subheadline: `Cross-platform mobile app with ${service.features.join(', ')}`,
-        cta: 'Download Now',
-        benefits: ['iOS & Android', 'Offline Support', 'Push Notifications']
-      },
-      'e-commerce-platform': {
-        headline: `Launch Your Online Store with ${service.name}`,
-        subheadline: `Complete e-commerce solution with ${service.features.join(', ')}`,
-        cta: 'Start Selling',
-        benefits: ['Secure Payments', 'Inventory Management', 'Analytics Dashboard']
-      },
-      'saas-platform': {
-        headline: `Scale Your Business with ${service.name}`,
-        subheadline: `Enterprise SaaS platform with ${service.features.join(', ')}`,
-        cta: 'Start Free Trial',
-        benefits: ['Multi-tenant', 'API Access', 'Advanced Analytics']
-      },
-      'ai-chatbot': {
-        headline: `Automate Customer Support with ${service.name}`,
-        subheadline: `AI-powered chatbot with ${service.features.join(', ')}`,
-        cta: 'Deploy Now',
-        benefits: ['24/7 Availability', 'Multi-language', 'Smart Responses']
-      },
-      'data-analytics-dashboard': {
-        headline: `Get Insights with ${service.name}`,
-        subheadline: `Advanced analytics dashboard with ${service.features.join(', ')}`,
-        cta: 'View Demo',
-        benefits: ['Real-time Data', 'Interactive Charts', 'Custom Reports']
-      },
-      'automation-script': {
-        headline: `Automate Everything with ${service.name}`,
-        subheadline: `Efficient automation script with ${service.features.join(', ')}`,
-        cta: 'Automate Now',
-        benefits: ['Time Saving', 'Error Reduction', 'Cost Effective']
-      },
-      'blockchain-dapp': {
-        headline: `Join the Future with ${service.name}`,
-        subheadline: `Decentralized application with ${service.features.join(', ')}`,
-        cta: 'Launch DApp',
-        benefits: ['Smart Contracts', 'Token Economics', 'Secure Transactions']
-      }
-    };
+    // Create digital marketer
+    const marketer = await this.createSalesAgent('digital-marketer', serviceId, {
+      name: `${service.name} Digital Marketer`
+    });
+    agents.push(marketer);
 
-    const template = adTemplates[service.type];
-    if (!template) return null;
+    // Create sales representative
+    const salesRep = await this.createSalesAgent('sales-representative', serviceId, {
+      name: `${service.name} Sales Representative`
+    });
+    agents.push(salesRep);
 
-    return {
-      serviceId: serviceId,
-      serviceName: service.name,
-      headline: template.headline,
-      subheadline: template.subheadline,
-      cta: template.cta,
-      benefits: template.benefits,
-      price: service.price,
-      developmentTime: service.developmentTime,
-      technologies: service.technologies.slice(0, 3), // Show top 3 technologies
-      marketData: service.marketData
-    };
+    // Create technical sales if applicable
+    if (service.capabilities.includes('api') || service.capabilities.includes('integration')) {
+      const technicalSales = await this.createSalesAgent('technical-sales', serviceId, {
+        name: `${service.name} Technical Sales`
+      });
+      agents.push(technicalSales);
+    }
+
+    return agents;
   }
 
-  async batchCreateServices(serviceSpecs) {
-    const createdServices = [];
+  calculatePricing(serviceConfig, config = {}) {
+    const basePrice = serviceConfig.averagePrice;
+    const priceRange = serviceConfig.priceRange;
     
-    for (const spec of serviceSpecs) {
-      try {
-        const service = await this.createService(spec.type, spec.config);
-        createdServices.push(service);
-      } catch (error) {
-        console.error(`Error creating service ${spec.type}:`, error);
-      }
-    }
+    // Adjust based on complexity
+    let complexityMultiplier = 1.0;
+    if (config.complexity === 'high') complexityMultiplier = 1.3;
+    if (config.complexity === 'low') complexityMultiplier = 0.8;
     
-    return createdServices;
-  }
-
-  async getServiceAnalytics() {
-    const servicesByType = {};
-    const revenueByType = {};
+    // Adjust based on timeline
+    let timelineMultiplier = 1.0;
+    if (config.rushDelivery) timelineMultiplier = 1.2;
+    if (config.flexibleTimeline) timelineMultiplier = 0.9;
     
-    for (const service of this.services.values()) {
-      if (!servicesByType[service.type]) {
-        servicesByType[service.type] = 0;
-        revenueByType[service.type] = 0;
-      }
-      servicesByType[service.type]++;
-      revenueByType[service.type] += service.price;
-    }
+    const finalPrice = Math.round(basePrice * complexityMultiplier * timelineMultiplier);
     
     return {
-      totalServices: this.services.size,
-      servicesByType,
-      revenueByType,
-      averagePrice: this.calculateAveragePrice(),
-      marketTrends: this.marketData.get('trends') || [],
-      salesAgentPerformance: this.getSalesAgentPerformance()
-    };
-  }
-
-  calculateAveragePrice() {
-    if (this.services.size === 0) return 0;
-    const totalPrice = Array.from(this.services.values())
-      .reduce((sum, service) => sum + service.price, 0);
-    return Math.round(totalPrice / this.services.size);
-  }
-
-  getSalesAgentPerformance() {
-    const performance = {
-      totalAgents: this.salesAgents.size,
-      activeAgents: 0,
-      totalRevenue: 0,
-      averageConversionRate: 0
-    };
-    
-    let totalConversionRate = 0;
-    let activeCount = 0;
-    
-    for (const agent of this.salesAgents.values()) {
-      if (agent.status === 'active') {
-        performance.activeAgents++;
-        activeCount++;
+      basePrice: basePrice,
+      finalPrice: finalPrice,
+      priceRange: priceRange,
+      complexityMultiplier: complexityMultiplier,
+      timelineMultiplier: timelineMultiplier,
+      paymentTerms: {
+        upfront: 0.3,
+        milestone1: 0.3,
+        milestone2: 0.3,
+        final: 0.1
       }
-      performance.totalRevenue += agent.performance.revenueGenerated;
-      totalConversionRate += agent.performance.conversionRate;
-    }
+    };
+  }
+
+  async performMarketAnalysis(serviceType) {
+    // Simulate market analysis
+    const marketData = {
+      marketSize: this.generateMarketSize(serviceType),
+      growthRate: this.generateGrowthRate(serviceType),
+      competition: this.generateCompetitionLevel(serviceType),
+      demand: this.generateDemandLevel(serviceType),
+      pricingTrends: this.generatePricingTrends(serviceType),
+      targetAudience: this.generateTargetAudience(serviceType)
+    };
+
+    this.marketData.set(serviceType, marketData);
+    return marketData;
+  }
+
+  async performCompetitiveAnalysis(serviceType) {
+    const competitors = [
+      {
+        name: `Competitor A - ${serviceType}`,
+        strengths: ['Established brand', 'Large customer base', 'Advanced features'],
+        weaknesses: ['High pricing', 'Complex onboarding', 'Limited customization'],
+        marketShare: 0.25,
+        pricing: 'Premium'
+      },
+      {
+        name: `Competitor B - ${serviceType}`,
+        strengths: ['Affordable pricing', 'Easy to use', 'Good support'],
+        weaknesses: ['Limited features', 'Basic functionality', 'No advanced options'],
+        marketShare: 0.15,
+        pricing: 'Budget'
+      }
+    ];
+
+    return {
+      competitors: competitors,
+      competitiveAdvantage: this.generateCompetitiveAdvantage(serviceType),
+      differentiationStrategy: this.generateDifferentiationStrategy(serviceType),
+      marketPositioning: this.generateMarketPositioning(serviceType)
+    };
+  }
+
+  generateSalesStrategy(serviceType) {
+    return {
+      targetMarket: this.generateTargetMarket(serviceType),
+      valueProposition: this.generateValueProposition(serviceType),
+      salesChannels: ['Direct sales', 'Online marketing', 'Partnerships', 'Referrals'],
+      pricingStrategy: 'Value-based pricing with tiered options',
+      leadGeneration: ['Content marketing', 'SEO', 'Social media', 'Email campaigns'],
+      conversionTactics: ['Free trials', 'Demos', 'Case studies', 'Testimonials']
+    };
+  }
+
+  generateMarketingMaterials(serviceType, config) {
+    const serviceConfig = this.serviceTypes[serviceType];
     
-    if (activeCount > 0) {
-      performance.averageConversionRate = totalConversionRate / activeCount;
-    }
+    return {
+      website: {
+        landingPage: `/${serviceType}-services`,
+        features: serviceConfig.features,
+        pricing: this.calculatePricing(serviceConfig, config),
+        testimonials: this.generateTestimonials(serviceType),
+        caseStudies: this.generateCaseStudies(serviceType)
+      },
+      content: {
+        blogPosts: this.generateBlogPosts(serviceType),
+        whitepapers: this.generateWhitepapers(serviceType),
+        videos: this.generateVideoContent(serviceType),
+        socialMedia: this.generateSocialMediaContent(serviceType)
+      },
+      advertising: {
+        googleAds: this.generateGoogleAds(serviceType),
+        socialAds: this.generateSocialAds(serviceType),
+        retargeting: this.generateRetargetingCampaigns(serviceType)
+      }
+    };
+  }
+
+  // Helper methods for generating content
+  generateServiceName(serviceType) {
+    const prefixes = ['Advanced', 'Smart', 'Pro', 'Enterprise', 'Cloud', 'AI-Powered'];
+    const suffixes = ['Solution', 'Platform', 'System', 'Service', 'Application'];
+    const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+    const suffix = suffixes[Math.floor(Math.random() * suffixes.length)];
+    return `${prefix} ${serviceType.replace('-', ' ').toUpperCase()} ${suffix}`;
+  }
+
+  generateServiceDescription(serviceType) {
+    const descriptions = {
+      'web-application': 'A comprehensive web application solution designed to streamline business operations and enhance user experience.',
+      'mobile-app': 'A cutting-edge mobile application that delivers seamless user experience across iOS and Android platforms.',
+      'ai-service': 'An intelligent AI-powered service that leverages machine learning to automate complex business processes.',
+      'blockchain-service': 'A secure blockchain-based solution that provides transparency and trust in digital transactions.',
+      'iot-platform': 'A robust IoT platform that enables real-time monitoring and data collection from connected devices.',
+      'data-analytics': 'A powerful data analytics solution that transforms raw data into actionable business insights.'
+    };
+    return descriptions[serviceType] || 'A professional service solution designed to meet your business needs.';
+  }
+
+  generateMarketSize(serviceType) {
+    const sizes = {
+      'web-application': '$50B',
+      'mobile-app': '$100B',
+      'ai-service': '$200B',
+      'blockchain-service': '$30B',
+      'iot-platform': '$150B',
+      'data-analytics': '$80B'
+    };
+    return sizes[serviceType] || '$50B';
+  }
+
+  generateGrowthRate(serviceType) {
+    const rates = {
+      'web-application': '12%',
+      'mobile-app': '15%',
+      'ai-service': '25%',
+      'blockchain-service': '20%',
+      'iot-platform': '18%',
+      'data-analytics': '14%'
+    };
+    return rates[serviceType] || '12%';
+  }
+
+  generateCompetitionLevel(serviceType) {
+    const levels = ['Low', 'Medium', 'High'];
+    return levels[Math.floor(Math.random() * levels.length)];
+  }
+
+  generateDemandLevel(serviceType) {
+    const levels = ['Growing', 'Stable', 'High'];
+    return levels[Math.floor(Math.random() * levels.length)];
+  }
+
+  generatePricingTrends(serviceType) {
+    return {
+      current: 'Stable',
+      forecast: 'Increasing',
+      factors: ['Technology advancement', 'Market demand', 'Competition']
+    };
+  }
+
+  generateTargetAudience(serviceType) {
+    const audiences = {
+      'web-application': ['Small businesses', 'Startups', 'Enterprises'],
+      'mobile-app': ['Consumers', 'Businesses', 'Developers'],
+      'ai-service': ['Enterprises', 'Tech companies', 'Research institutions'],
+      'blockchain-service': ['Financial institutions', 'Gaming companies', 'Art marketplaces'],
+      'iot-platform': ['Manufacturing', 'Healthcare', 'Smart cities'],
+      'data-analytics': ['Businesses', 'Marketing agencies', 'Consulting firms']
+    };
+    return audiences[serviceType] || ['Businesses', 'Enterprises'];
+  }
+
+  generateCompetitiveAdvantage(serviceType) {
+    const advantages = [
+      'Advanced AI integration',
+      'Superior user experience',
+      'Cost-effective pricing',
+      'Rapid deployment',
+      'Customizable solutions',
+      '24/7 support'
+    ];
+    return advantages[Math.floor(Math.random() * advantages.length)];
+  }
+
+  generateDifferentiationStrategy(serviceType) {
+    return {
+      primary: 'Technology innovation',
+      secondary: 'Customer service excellence',
+      tertiary: 'Pricing flexibility'
+    };
+  }
+
+  generateMarketPositioning(serviceType) {
+    return {
+      positioning: 'Premium value provider',
+      messaging: 'Delivering innovative solutions with exceptional support',
+      targetSegment: 'Growth-focused businesses'
+    };
+  }
+
+  generateTargetMarket(serviceType) {
+    return {
+      primary: 'Small to medium businesses',
+      secondary: 'Enterprise clients',
+      verticals: ['Technology', 'Healthcare', 'Finance', 'Education']
+    };
+  }
+
+  generateValueProposition(serviceType) {
+    return {
+      primary: 'Increase efficiency and reduce costs',
+      secondary: 'Accelerate time to market',
+      tertiary: 'Enhance customer satisfaction'
+    };
+  }
+
+  generateTestimonials(serviceType) {
+    return [
+      {
+        name: 'John Smith',
+        company: 'TechCorp Inc.',
+        text: 'This solution transformed our business operations completely.',
+        rating: 5
+      },
+      {
+        name: 'Sarah Johnson',
+        company: 'Innovation Labs',
+        text: 'Exceptional quality and outstanding support team.',
+        rating: 5
+      }
+    ];
+  }
+
+  generateCaseStudies(serviceType) {
+    return [
+      {
+        title: 'How Company X Increased Efficiency by 300%',
+        description: 'A detailed case study showing the implementation and results.',
+        metrics: ['300% efficiency increase', '50% cost reduction', '90% user satisfaction']
+      }
+    ];
+  }
+
+  generateBlogPosts(serviceType) {
+    return [
+      {
+        title: `Top 10 Benefits of ${serviceType.replace('-', ' ').toUpperCase()}`,
+        summary: 'Comprehensive guide to understanding the advantages.',
+        keywords: [serviceType, 'benefits', 'advantages', 'features']
+      }
+    ];
+  }
+
+  generateWhitepapers(serviceType) {
+    return [
+      {
+        title: `The Future of ${serviceType.replace('-', ' ').toUpperCase()}`,
+        summary: 'In-depth analysis of market trends and opportunities.',
+        downloadUrl: `/whitepapers/${serviceType}-future`
+      }
+    ];
+  }
+
+  generateVideoContent(serviceType) {
+    return [
+      {
+        title: `${serviceType.replace('-', ' ').toUpperCase()} Demo`,
+        description: 'Comprehensive product demonstration.',
+        duration: '5 minutes',
+        url: `/videos/${serviceType}-demo`
+      }
+    ];
+  }
+
+  generateSocialMediaContent(serviceType) {
+    return [
+      {
+        platform: 'LinkedIn',
+        content: `Discover how our ${serviceType} solution can transform your business.`,
+        hashtags: ['#innovation', '#technology', '#business']
+      }
+    ];
+  }
+
+  generateGoogleAds(serviceType) {
+    return {
+      keywords: [`${serviceType} services`, `${serviceType} development`, `${serviceType} solutions`],
+      adCopy: `Professional ${serviceType} development services. Get your free consultation today.`,
+      landingPage: `/${serviceType}-services`
+    };
+  }
+
+  generateSocialAds(serviceType) {
+    return {
+      platforms: ['Facebook', 'LinkedIn', 'Twitter'],
+      adCopy: `Transform your business with our ${serviceType} solutions.`,
+      targeting: ['Business owners', 'IT professionals', 'Decision makers']
+    };
+  }
+
+  generateRetargetingCampaigns(serviceType) {
+    return {
+      audience: 'Website visitors who didn\'t convert',
+      message: 'Don\'t miss out on our exclusive ${serviceType} offer.',
+      offer: '20% discount for first-time customers'
+    };
+  }
+
+  generateAgentName(agentType) {
+    const names = ['Alex', 'Jordan', 'Casey', 'Taylor', 'Morgan', 'Riley'];
+    const name = names[Math.floor(Math.random() * names.length)];
+    return `${name} - ${agentType.replace('-', ' ').toUpperCase()}`;
+  }
+
+  // Registry management
+  async saveServiceRegistry() {
+    const registry = {
+      services: Array.from(this.services.entries()),
+      lastUpdated: new Date()
+    };
     
-    return performance;
+    await fs.promises.writeFile(
+      path.join(__dirname, 'data', 'service-registry.json'),
+      JSON.stringify(registry, null, 2)
+    );
+  }
+
+  async saveSalesAgentRegistry() {
+    const registry = {
+      agents: Array.from(this.salesAgents.entries()),
+      lastUpdated: new Date()
+    };
+    
+    await fs.promises.writeFile(
+      path.join(__dirname, 'data', 'sales-agent-registry.json'),
+      JSON.stringify(registry, null, 2)
+    );
   }
 
   async loadServiceRegistry() {
     try {
-      const registryPath = path.join(__dirname, 'data', 'service-registry.json');
-      if (fs.existsSync(registryPath)) {
-        const data = fs.readFileSync(registryPath, 'utf8');
-        const registry = JSON.parse(data);
-        this.services = new Map(Object.entries(registry));
-      }
-    } catch (error) {
-      console.error('Error loading service registry:', error);
-    }
-  }
-
-  async saveServiceRegistry() {
-    try {
-      const registryPath = path.join(__dirname, 'data', 'service-registry.json');
-      const dataDir = path.dirname(registryPath);
-      if (!fs.existsSync(dataDir)) {
-        fs.mkdirSync(dataDir, { recursive: true });
-      }
+      const data = await fs.promises.readFile(
+        path.join(__dirname, 'data', 'service-registry.json'),
+        'utf8'
+      );
+      const registry = JSON.parse(data);
       
-      const registry = Object.fromEntries(this.services);
-      fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2));
+      this.services = new Map(registry.services);
     } catch (error) {
-      console.error('Error saving service registry:', error);
+      console.log('No existing service registry found, starting fresh');
     }
   }
 
   async loadSalesAgentRegistry() {
     try {
-      const registryPath = path.join(__dirname, 'data', 'sales-agent-registry.json');
-      if (fs.existsSync(registryPath)) {
-        const data = fs.readFileSync(registryPath, 'utf8');
-        const registry = JSON.parse(data);
-        this.salesAgents = new Map(Object.entries(registry));
-      }
-    } catch (error) {
-      console.error('Error loading sales agent registry:', error);
-    }
-  }
-
-  async saveSalesAgentRegistry() {
-    try {
-      const registryPath = path.join(__dirname, 'data', 'sales-agent-registry.json');
-      const dataDir = path.dirname(registryPath);
-      if (!fs.existsSync(dataDir)) {
-        fs.mkdirSync(dataDir, { recursive: true });
-      }
+      const data = await fs.promises.readFile(
+        path.join(__dirname, 'data', 'sales-agent-registry.json'),
+        'utf8'
+      );
+      const registry = JSON.parse(data);
       
-      const registry = Object.fromEntries(this.salesAgents);
-      fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2));
+      this.salesAgents = new Map(registry.agents);
     } catch (error) {
-      console.error('Error saving sales agent registry:', error);
+      console.log('No existing sales agent registry found, starting fresh');
     }
   }
 
-  startAutomatedProcesses() {
-    // Update market data every hour
-    setInterval(async () => {
-      await this.updateMarketData();
-    }, 3600000);
-
-    // Generate new services every 2 hours
-    setInterval(async () => {
-      await this.generateRandomService();
-    }, 7200000);
-
-    // Generate advertisements every 30 minutes
-    setInterval(async () => {
-      await this.generateAdvertisementsForAllServices();
-    }, 1800000);
-  }
-
-  async generateRandomService() {
-    const serviceTypes = Object.keys(this.serviceTypes);
-    const randomType = serviceTypes[Math.floor(Math.random() * serviceTypes.length)];
-    
-    try {
-      await this.createService(randomType, {});
-      console.log(`Generated new service: ${randomType}`);
-    } catch (error) {
-      console.error('Error generating random service:', error);
-    }
-  }
-
-  async generateAdvertisementsForAllServices() {
-    for (const service of this.services.values()) {
-      const advertisement = await this.generateAdvertisement(service.id);
-      if (advertisement) {
-        // Store advertisement or send to marketing channels
-        console.log(`Generated advertisement for ${service.name}`);
-      }
-    }
-  }
-
-  getService(id) {
-    return this.services.get(id);
+  // Getter methods
+  getService(serviceId) {
+    return this.services.get(serviceId);
   }
 
   getAllServices() {
@@ -628,21 +585,54 @@ class ServiceGenerationFactory {
   }
 
   getServicesByType(type) {
-    return Array.from(this.services.values())
-      .filter(service => service.type === type);
+    return Array.from(this.services.values()).filter(service => service.type === type);
   }
 
-  getSalesAgent(id) {
-    return this.salesAgents.get(id);
+  getSalesAgent(agentId) {
+    return this.salesAgents.get(agentId);
   }
 
   getAllSalesAgents() {
     return Array.from(this.salesAgents.values());
   }
 
-  getSalesAgentsByType(type) {
-    return Array.from(this.salesAgents.values())
-      .filter(agent => agent.type === type);
+  getSalesAgentsByService(serviceId) {
+    return Array.from(this.salesAgents.values()).filter(agent => agent.serviceId === serviceId);
+  }
+
+  getMarketData(serviceType) {
+    return this.marketData.get(serviceType);
+  }
+
+  // Performance tracking
+  async updateAgentPerformance(agentId, metrics) {
+    const agent = this.salesAgents.get(agentId);
+    if (agent) {
+      agent.performance = { ...agent.performance, ...metrics };
+      agent.updatedAt = new Date();
+      await this.saveSalesAgentRegistry();
+    }
+  }
+
+  async updateServiceStatus(serviceId, status) {
+    const service = this.services.get(serviceId);
+    if (service) {
+      service.status = status;
+      service.updatedAt = new Date();
+      await this.saveServiceRegistry();
+    }
+  }
+
+  // System health
+  async healthCheck() {
+    const health = {
+      services: this.services.size,
+      salesAgents: this.salesAgents.size,
+      marketData: this.marketData.size,
+      lastUpdated: new Date()
+    };
+    
+    return health;
   }
 }
 

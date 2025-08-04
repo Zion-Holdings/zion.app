@@ -16,7 +16,8 @@
     "linkedin:run": "ts-node scripts/linkedin-automation.ts run",
     "linkedin:cron": "ts-node scripts/linkedin-automation.ts cron",
     "linkedin:generate": "ts-node scripts/linkedin-automation.ts generate",
-    "linkedin:start": "npm run linkedin:cron"
+    "linkedin:start": "npm run linkedin:cron",
+    "linkedin:test": "ts-node scripts/test-linkedin-automation.ts"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
