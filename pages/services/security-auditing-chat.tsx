@@ -37,7 +37,7 @@ const SecurityAuditingChatPage: NextPage = () => {
                 Expert discussion about security auditing implementation and best practices
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>innovative-futuristic • best-practices • real-world-examples</span>
+                <span>trend-analysis • future-predictions • expert-advice</span>
               </div>
             </div>
           </div>
