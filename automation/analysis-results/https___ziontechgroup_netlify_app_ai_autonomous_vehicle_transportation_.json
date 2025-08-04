@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-autonomous-vehicle-transportation/",
-  "timestamp": "2025-08-04T15:58:50.631Z",
+  "timestamp": "2025-08-04T16:05:56.361Z",
   "pageInfo": {
     "title": "AI Autonomous Vehicle & Transportation - Zion",
     "description": "AI-powered autonomous vehicle management, intelligent transportation systems, and logistics optimization",
@@ -11,7 +11,7 @@
         "text": "AI Autonomous Vehicle & Transportation"
       }
     ],
-    "content": "ZionMarketplaceImmersiveLoginAI Autonomous Vehicle & TransportationRevolutionizing transportation with AI-powered autonomous vehicles, intelligent routing, and logistics optimization🏠Overview🚗Vehicles🗺️Routes📦Logistics🚦Traffic🤖AI InsightsLoading autonomous vehicle data...{\"props\":{\"pageProps\":{}},\"page\":\"/ai-autonomous-vehicle-transportation\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionMarketplaceImmersiveLoginAI Autonomous Vehicle & TransportationRevolutionizing transportation with AI-powered autonomous vehicles, intelligent routing, and logistics optimization🏠Overview🚗Vehicles🗺️Routes📦Logistics🚦Traffic🤖AI InsightsLoading autonomous vehicle data...{\"props\":{\"pageProps\":{}},\"page\":\"/ai-autonomous-vehicle-transportation\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -44,11 +44,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -64,7 +64,15 @@
         "type": "text/javascript"
       },
       {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
+        "type": "text/javascript"
+      },
+      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
         "type": "text/javascript"
       },
       {
@@ -74,19 +82,11 @@
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
         "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
-        "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

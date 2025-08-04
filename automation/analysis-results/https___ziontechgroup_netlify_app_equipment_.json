@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/equipment/",
-  "timestamp": "2025-08-04T15:58:33.522Z",
+  "timestamp": "2025-08-04T16:05:38.940Z",
   "pageInfo": {
     "title": "Equipment - Zion",
     "description": "High-performance computing equipment and technology hardware on Zion's marketplace.",
@@ -23,7 +23,7 @@
         "text": "Network Equipment"
       }
     ],
-    "content": "High-Performance EquipmentAccess cutting-edge computing equipment and technology hardware for your AI and development projects.Computing HardwareGPU clusters and serversAI HardwareSpecialized AI equipmentNetwork EquipmentHigh-speed networking{\"props\":{\"pageProps\":{}},\"page\":\"/equipment\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "High-Performance EquipmentAccess cutting-edge computing equipment and technology hardware for your AI and development projects.Computing HardwareGPU clusters and serversAI HardwareSpecialized AI equipmentNetwork EquipmentHigh-speed networking{\"props\":{\"pageProps\":{}},\"page\":\"/equipment\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -56,11 +56,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -82,7 +82,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

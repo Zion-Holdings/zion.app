@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/talents/",
-  "timestamp": "2025-08-04T15:58:31.376Z",
+  "timestamp": "2025-08-04T16:05:37.699Z",
   "pageInfo": {
     "title": "AI Talents - Zion",
     "description": "Find AI experts and technology professionals on Zion's marketplace.",
@@ -23,7 +23,7 @@
         "text": "AI Matcher"
       }
     ],
-    "content": "AI TalentsConnect with verified AI experts, developers, and technology professionals from around the world.Talent DirectoryBrowse verified professionalsSkill VerificationVerified skills and certificationsAI MatcherFind the perfect match{\"props\":{\"pageProps\":{}},\"page\":\"/talents\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "AI TalentsConnect with verified AI experts, developers, and technology professionals from around the world.Talent DirectoryBrowse verified professionalsSkill VerificationVerified skills and certificationsAI MatcherFind the perfect match{\"props\":{\"pageProps\":{}},\"page\":\"/talents\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -56,11 +56,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -72,17 +72,17 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-service-matcher-d2f81b8b0b5a61f6.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/skill-verification-eec3fd971629392f.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/skill-verification-eec3fd971629392f.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-service-matcher-d2f81b8b0b5a61f6.js",
         "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

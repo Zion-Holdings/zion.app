@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/help-desk-support/",
-  "timestamp": "2025-08-04T15:58:43.934Z",
+  "timestamp": "2025-08-04T16:05:49.008Z",
   "pageInfo": {
     "title": "Help Desk & Support Ticket System - Zion Tech Group",
     "description": "Comprehensive help desk and support ticket system for customer support management",
@@ -19,7 +19,7 @@
         "text": "Feature Request: Dark Mode"
       }
     ],
-    "content": "Zion Tech GroupHomeDashboardHelp Desk & Support Ticket SystemComprehensive customer support management with ticket tracking, priority management, and support team coordination. Manage customer inquiries efficiently and provide excellent service.Total Tickets2🎫Open Tickets1🔓Support Agents2👥Avg Response Time2.8h⏱️🎫Support Tickets👥Support Agents📊Analytics📂CategoriesAll StatusOpenIn ProgressResolvedClosedAll PrioritiesUrgentHighMediumLowAll CategoriesTechnicalBillingAccountFeature RequestBug ReportPayment Processing Issuein-progresshighUnable to complete payment transaction. Getting error code 500.Customer: John SmithPlan: premiumCreated: 8/4/2025, 11:58:42 AMAssigned: agent-1paymenterror-500📎 2 attachments2 responsesView DetailsFeature Request: Dark ModeopenmediumWould like to request dark mode theme for the mobile app.Customer: Alice BrownPlan: basicCreated: 8/4/2025, 10:58:42 AMfeature-requestdark-modemobile1 responsesView Details{\"props\":{\"pageProps\":{}},\"page\":\"/help-desk-support\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "Zion Tech GroupHomeDashboardHelp Desk & Support Ticket SystemComprehensive customer support management with ticket tracking, priority management, and support team coordination. Manage customer inquiries efficiently and provide excellent service.Total Tickets2🎫Open Tickets1🔓Support Agents2👥Avg Response Time2.8h⏱️🎫Support Tickets👥Support Agents📊Analytics📂CategoriesAll StatusOpenIn ProgressResolvedClosedAll PrioritiesUrgentHighMediumLowAll CategoriesTechnicalBillingAccountFeature RequestBug ReportPayment Processing Issuein-progresshighUnable to complete payment transaction. Getting error code 500.Customer: John SmithPlan: premiumCreated: 8/4/2025, 12:05:47 PMAssigned: agent-1paymenterror-500📎 2 attachments2 responsesView DetailsFeature Request: Dark ModeopenmediumWould like to request dark mode theme for the mobile app.Customer: Alice BrownPlan: basicCreated: 8/4/2025, 11:05:47 AMfeature-requestdark-modemobile1 responsesView Details{\"props\":{\"pageProps\":{}},\"page\":\"/help-desk-support\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -56,11 +56,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -72,7 +72,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
         "type": "text/javascript"
       },
       {
@@ -82,7 +82,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]
