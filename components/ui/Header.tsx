@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { Menu, X, ChevronDown, ChevronUp, Bell, User } from 'lucide-react'
+import { useRouter } from 'next/router'
 import SearchNavigation from './SearchNavigation'
 import EnhancedMobileNavigation from './EnhancedMobileNavigation'
 import { useHeader } from '../../src/contexts/HeaderContext'
@@ -22,6 +23,7 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const dropdownRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({})
+  const router = useRouter()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,7 +73,9 @@ const Header: React.FC = () => {
     }
   }, [activeDropdown])
 
-  const bgClass = isTransparent && !isScrolled ? 'bg-transparent' : 'bg-black/20 backdrop-blur-md'
+  const bgClass = isTransparent && !isScrolled 
+    ? 'bg-transparent' 
+    : 'glass-dark backdrop-blur-lg border-b border-neon-blue/20'
 
   // Define dropdown menus
   const dropdownMenus: DropdownMenu[] = [
@@ -121,104 +125,125 @@ const Header: React.FC = () => {
   }
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${bgClass} border-b border-white/10 safe-area-top`}>
-      <div className="container-responsive">
-        <div className="flex justify-between items-center h-16 lg:h-20">
-          {/* Logo */}
-          <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0 touch-target">
-              <h1 className="text-responsive-xl font-bold text-white">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
-              </h1>
-            </Link>
-          </div>
+    <>
+      {/* Background Effects */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
+        <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-20"></div>
+      </div>
 
-          {/* Desktop Navigation - Dropdown Menus */}
-          <nav className="hidden lg:flex items-center space-x-2 xl:space-x-4">
-            {dropdownMenus.map((menu) => (
-              <div key={menu.label} className="relative dropdown-container">
-                <button
-                  onClick={() => toggleDropdown(menu.label)}
-                  className="flex items-center text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target"
-                  ref={(el) => {
-                    dropdownRefs.current[menu.label] = el
-                  }}
-                >
-                  {menu.label}
-                  {activeDropdown === menu.label ? (
-                    <ChevronUp className="ml-1 h-4 w-4" />
-                  ) : (
-                    <ChevronDown className="ml-1 h-4 w-4" />
-                  )}
-                </button>
-                
-                {activeDropdown === menu.label && (
-                  <div className="absolute top-full left-0 mt-1 w-64 bg-black/95 backdrop-blur-md border border-white/10 rounded-lg shadow-xl z-50">
-                    <div className="py-2">
-                      {menu.items.map((item) => (
-                        <Link
-                          key={item.label}
-                          href={item.href}
-                          className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
-                          onClick={() => setActiveDropdown(null)}
-                        >
-                          <div className="font-medium text-responsive-sm">{item.label}</div>
-                          {item.description && (
-                            <div className="text-xs text-gray-400 mt-1">{item.description}</div>
-                          )}
-                        </Link>
-                      ))}
-                    </div>
+      {/* Header */}
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${bgClass} safe-area-top`}>
+        <div className="container-responsive">
+          <div className="flex justify-between items-center h-16 lg:h-20">
+            {/* Logo */}
+            <div className="flex items-center">
+              <Link href="/" className="flex items-center space-x-3 group">
+                <div className="relative">
+                  <div className="w-10 h-10 bg-gradient-to-br from-neon-blue to-neon-purple rounded-lg flex items-center justify-center neon-glow">
+                    <span className="text-white font-bold text-xl">Z</span>
                   </div>
-                )}
-              </div>
-            ))}
+                  <div className="absolute inset-0 bg-gradient-to-br from-neon-blue to-neon-purple rounded-lg blur-sm opacity-50 animate-pulse-neon"></div>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-white font-bold text-xl lg:text-2xl neon-text">Zion</span>
+                  <span className="text-neon-blue text-xs lg:text-sm font-mono">AI Marketplace</span>
+                </div>
+              </Link>
+            </div>
 
-            {/* Direct Links */}
-            <Link href="/blog" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              Blog
-            </Link>
-            <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              About
-            </Link>
-            <Link href="/contact" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target">
-              Contact
-            </Link>
-          </nav>
+            {/* Desktop Navigation - Dropdown Menus */}
+            <nav className="hidden lg:flex items-center space-x-2 xl:space-x-4">
+              {dropdownMenus.map((menu) => (
+                <div key={menu.label} className="relative dropdown-container">
+                  <button
+                    onClick={() => toggleDropdown(menu.label)}
+                    className="flex items-center text-gray-300 hover:text-neon-blue px-3 py-2 rounded-md text-responsive-sm font-medium transition-all duration-300 touch-target group"
+                    ref={(el) => {
+                      dropdownRefs.current[menu.label] = el
+                    }}
+                  >
+                    {menu.label}
+                    {activeDropdown === menu.label ? (
+                      <ChevronUp className="ml-1 h-4 w-4 transition-transform duration-300" />
+                    ) : (
+                      <ChevronDown className="ml-1 h-4 w-4 transition-transform duration-300" />
+                    )}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-neon-blue to-neon-purple transition-all duration-300 group-hover:w-full"></span>
+                  </button>
+                  
+                  {activeDropdown === menu.label && (
+                    <div className="absolute top-full left-0 mt-1 w-64 glass-dark backdrop-blur-lg border border-neon-blue/20 rounded-lg shadow-xl z-50">
+                      <div className="py-2">
+                        {menu.items.map((item) => (
+                          <Link
+                            key={item.label}
+                            href={item.href}
+                            className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-neon-blue/10 transition-all duration-300"
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            <div className="font-medium text-responsive-sm">{item.label}</div>
+                            {item.description && (
+                              <div className="text-xs text-gray-400 mt-1">{item.description}</div>
+                            )}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
 
-          {/* Search and Auth Buttons */}
-          <div className="flex items-center space-x-2 sm:space-x-4">
-            {/* Search */}
-            <SearchNavigation className="hidden md:block" />
-            
-            {/* Notifications */}
-            <Link href="/notifications" className="relative p-2 text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors touch-target">
-              <Bell className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full"></span>
-            </Link>
-            
-            {/* User Menu */}
-            <Link href="/profile" className="hidden sm:flex items-center space-x-2 p-2 text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors touch-target">
-              <User className="h-5 w-5" />
-              <span className="text-responsive-sm font-medium">Profile</span>
-            </Link>
-            
-            {/* Auth Buttons */}
-            <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium transition-colors touch-target hidden sm:block">
-              Login
-            </Link>
-            <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 sm:px-4 py-2 rounded-lg text-responsive-sm font-medium transition-all duration-300 touch-target">
-              Sign Up
-            </Link>
-            
-            {/* Mobile Navigation */}
-            <EnhancedMobileNavigation />
+              {/* Direct Links */}
+              <Link href="/blog" className="relative text-gray-300 hover:text-neon-blue px-3 py-2 rounded-md text-responsive-sm font-medium transition-all duration-300 touch-target group">
+                Blog
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-neon-blue to-neon-purple transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+              <Link href="/about" className="relative text-gray-300 hover:text-neon-blue px-3 py-2 rounded-md text-responsive-sm font-medium transition-all duration-300 touch-target group">
+                About
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-neon-blue to-neon-purple transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+              <Link href="/contact" className="relative text-gray-300 hover:text-neon-blue px-3 py-2 rounded-md text-responsive-sm font-medium transition-all duration-300 touch-target group">
+                Contact
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-neon-blue to-neon-purple transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            </nav>
+
+            {/* Search and Auth Buttons */}
+            <div className="flex items-center space-x-2 sm:space-x-4">
+              {/* Search */}
+              <SearchNavigation className="hidden md:block" />
+              
+              {/* Notifications */}
+              <Link href="/notifications" className="relative p-2 text-gray-300 hover:text-neon-blue hover:bg-neon-blue/10 rounded-md transition-all duration-300 touch-target">
+                <Bell className="h-5 w-5" />
+                <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full neon-glow"></span>
+              </Link>
+              
+              {/* User Menu */}
+              <Link href="/profile" className="hidden sm:flex items-center space-x-2 p-2 text-gray-300 hover:text-neon-blue hover:bg-neon-blue/10 rounded-md transition-all duration-300 touch-target">
+                <User className="h-5 w-5" />
+                <span className="text-responsive-sm font-medium">Profile</span>
+              </Link>
+              
+              {/* Auth Buttons */}
+              <Link href="/auth/login" className="text-gray-300 hover:text-neon-blue px-3 py-2 rounded-md text-responsive-sm font-medium transition-all duration-300 touch-target hidden sm:block">
+                Login
+              </Link>
+              <Link href="/auth/signup" className="text-white bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg px-3 sm:px-4 py-2 text-responsive-sm font-medium transition-all duration-300 touch-target neon-glow hover:shadow-neon-blue">
+                Get Started
+              </Link>
+              
+              {/* Mobile Navigation */}
+              <EnhancedMobileNavigation />
+            </div>
           </div>
         </div>
+      </header>
 
-
-      </div>
-    </header>
+      {/* Spacer */}
+      <div className="h-16 lg:h-20"></div>
+    </>
   )
 }
 

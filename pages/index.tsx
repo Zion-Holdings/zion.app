@@ -1,101 +1,164 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useState, useEffect, useCallback, useMemo } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import FuturisticHero from '../components/ui/FuturisticHero'
+import FuturisticCard from '../components/ui/FuturisticCard'
 import NotificationSystem from '../components/NotificationSystem'
-import { useHeaderTransparency } from '../src/hooks/useHeaderTransparency'
 
 const Home: NextPage = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [email, setEmail] = useState('')
-  const [currentSection, setCurrentSection] = useState(0)
-  const [isFooterPersistent, setIsFooterPersistent] = useState(false)
-  
-  // Set header to transparent for the home page
-  useHeaderTransparency(true)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
 
 
 
-  const handleWaitlistSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Waitlist signup:', email)
-    setEmail('')
-  }
+  const marketplaceCategories = [
+    {
+      title: 'IT Services',
+      description: 'Professional IT consulting and development services',
+      icon: '💻',
+      link: '/services',
+      color: 'blue' as const,
+      category: 'Services'
+    },
+    {
+      title: 'AI Talents',
+      description: 'Expert AI developers and consultants',
+      icon: '🤖',
+      link: '/talents',
+      color: 'purple' as const,
+      category: 'Talent'
+    },
+    {
+      title: 'Equipment',
+      description: 'High-performance computing hardware',
+      icon: '⚙️',
+      link: '/equipment',
+      color: 'green' as const,
+      category: 'Hardware'
+    },
+    {
+      title: 'Innovation',
+      description: 'Cutting-edge technology solutions',
+      icon: '🚀',
+      link: '/products',
+      color: 'pink' as const,
+      category: 'Products'
+    }
+  ]
 
-  // Base sections data
-  const baseSections = useMemo(() => [
+  const featuredServices = [
     {
-      id: 0,
-      type: 'hero',
-      title: 'Zion - The First Free AI-Powered Marketplace',
-      subtitle: 'High-Tech Products • IT Services • AI Talents • Innovation • Equipment',
-      description: 'The first free AI-powered marketplace for high-tech products, on-demand IT services, AI talents, innovation, and equipment.',
-      cta: 'Start Trading Now',
-      ctaLink: '/auth/signup',
-      secondaryCta: 'Explore Marketplace',
-      secondaryCtaLink: '/marketplace',
-      bgClass: 'bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900'
+      title: 'AI Development',
+      description: 'Custom AI solutions and machine learning models for your business needs',
+      price: '$150-500/hr',
+      rating: 4.9,
+      link: '/services/ai-model-development',
+      color: 'blue' as const,
+      featured: true
     },
     {
-      id: 1,
-      type: 'marketplace-overview',
-      title: 'Marketplace Categories',
-      items: [
-        { title: 'IT Services', description: 'Professional IT consulting and development', link: '/services', icon: '💻', color: 'from-blue-500 to-cyan-500' },
-        { title: 'AI Talents', description: 'Expert AI developers and consultants', link: '/talents', icon: '🤖', color: 'from-purple-500 to-pink-500' },
-        { title: 'Equipment', description: 'High-performance computing hardware', link: '/equipment', icon: '⚙️', color: 'from-green-500 to-emerald-500' },
-        { title: 'Innovation', description: 'Cutting-edge technology solutions', link: '/products', icon: '🚀', color: 'from-orange-500 to-red-500' }
-      ],
-      bgClass: 'bg-gradient-to-br from-slate-800 to-slate-900'
+      title: 'Cloud Migration',
+      description: 'Seamless cloud infrastructure setup and migration services',
+      price: '$2000-15000',
+      rating: 4.8,
+      link: '/services/cloud-migration-services',
+      color: 'purple' as const
     },
     {
-      id: 2,
-      type: 'featured-services',
-      title: 'Featured IT Services',
-      items: [
-        { title: 'AI Development', description: 'Custom AI solutions and machine learning', link: '/services/ai-model-development', price: '$150-500/hr', rating: 4.9 },
-        { title: 'Cloud Migration', description: 'Seamless cloud infrastructure setup', link: '/services/cloud-migration-services', price: '$2000-15000', rating: 4.8 },
-        { title: 'Security Auditing', description: 'Comprehensive security assessments', link: '/services/security-auditing', price: '$1000-8000', rating: 4.9 },
-        { title: 'Performance Optimization', description: 'System and application optimization', link: '/services/performance-optimization', price: '$800-3000', rating: 4.7 }
-      ],
-      bgClass: 'bg-gradient-to-br from-purple-900 to-slate-900'
+      title: 'Security Auditing',
+      description: 'Comprehensive security assessments and penetration testing',
+      price: '$1000-8000',
+      rating: 4.9,
+      link: '/services/security-auditing',
+      color: 'green' as const
     },
     {
-      id: 3,
-      type: 'featured-talents',
-      title: 'Top AI Talents',
-      items: [
-        { name: 'Dr. Sarah Chen', specialization: 'Machine Learning Expert', experience: '8+ years', rating: 4.9, link: '/talents' },
-        { name: 'Alex Rodriguez', specialization: 'Deep Learning Specialist', experience: '6+ years', rating: 4.8, link: '/talents' },
-        { name: 'Dr. Michael Kim', specialization: 'AI Research Scientist', experience: '10+ years', rating: 4.9, link: '/talents' },
-        { name: 'Emma Thompson', specialization: 'Computer Vision Engineer', experience: '5+ years', rating: 4.7, link: '/talents' }
-      ],
-      bgClass: 'bg-gradient-to-br from-slate-900 to-purple-900'
+      title: 'Performance Optimization',
+      description: 'System and application optimization for maximum efficiency',
+      price: '$800-3000',
+      rating: 4.7,
+      link: '/services/performance-optimization',
+      color: 'pink' as const
+    }
+  ]
+
+  const topTalents = [
+    {
+      title: 'Dr. Sarah Chen',
+      description: 'Machine Learning Expert with 8+ years of experience in AI research',
+      price: '$200/hr',
+      rating: 4.9,
+      link: '/talents',
+      color: 'blue' as const,
+      featured: true
     },
     {
-      id: 4,
-      type: 'featured-equipment',
-      title: 'Premium Equipment',
-      items: [
-        { name: 'GPU Clusters', description: 'High-performance computing for AI workloads', price: '$5000-50000', link: '/equipment' },
-        { name: 'Quantum Computers', description: 'Next-generation quantum processing', price: '$100000+', link: '/equipment' },
-        { name: 'Edge Computing Devices', description: 'IoT and edge processing solutions', price: '$1000-10000', link: '/equipment' },
-        { name: 'Data Storage Systems', description: 'Enterprise-grade storage solutions', price: '$2000-25000', link: '/equipment' }
-      ],
-      bgClass: 'bg-gradient-to-br from-green-900 to-slate-900'
+      title: 'Alex Rodriguez',
+      description: 'Deep Learning Specialist specializing in neural networks and computer vision',
+      price: '$180/hr',
+      rating: 4.8,
+      link: '/talents',
+      color: 'purple' as const
     },
     {
-      id: 5,
-      type: 'blog-highlights',
-      title: 'Latest Insights',
-      items: [
-        { title: 'Digital Transformation Strategies', excerpt: 'How AI is revolutionizing enterprise operations', link: '/blog/digital-transformation-strategies', category: 'Strategy' },
-        { title: 'Cybersecurity in the Age of AI', excerpt: 'Protecting your business with AI-powered security', link: '/blog/cybersecurity-in-the-age-of-ai', category: 'Security' },
-        { title: 'Machine Learning in Healthcare', excerpt: 'AI applications transforming healthcare delivery', link: '/blog/machine-learning-in-healthcare', category: 'Healthcare' },
-        { title: 'Blockchain for Supply Chain', excerpt: 'Transparent and secure supply chain management', link: '/blog/blockchain-for-supply-chain-management', category: 'Blockchain' }
-      ],
-      bgClass: 'bg-gradient-to-br from-blue-900 to-slate-900'
+      title: 'Dr. Michael Kim',
+      description: 'AI Research Scientist with 10+ years in quantum computing and AI',
+      price: '$250/hr',
+      rating: 4.9,
+      link: '/talents',
+      color: 'green' as const
     },
+    {
+      title: 'Emma Thompson',
+      description: 'Computer Vision Engineer with expertise in autonomous systems',
+      price: '$160/hr',
+      rating: 4.7,
+      link: '/talents',
+      color: 'pink' as const
+    }
+  ]
+
+  const premiumEquipment = [
+    {
+      title: 'GPU Clusters',
+      description: 'High-performance computing clusters for AI and machine learning workloads',
+      price: '$5000-50000',
+      rating: 4.9,
+      link: '/equipment',
+      color: 'blue' as const,
+      featured: true
+    },
+    {
+      title: 'Quantum Computers',
+      description: 'Next-generation quantum processing units for advanced computations',
+      price: '$100000+',
+      rating: 4.8,
+      link: '/equipment',
+      color: 'purple' as const
+    },
+    {
+      title: 'Edge Computing Devices',
+      description: 'IoT and edge processing solutions for real-time applications',
+      price: '$1000-10000',
+      rating: 4.7,
+      link: '/equipment',
+      color: 'green' as const
+    },
+    {
+      title: 'Data Storage Systems',
+      description: 'Enterprise-grade storage solutions with high availability',
+      price: '$2000-25000',
+      rating: 4.8,
+      link: '/equipment',
+      color: 'pink' as const
+    }
+  ]
+
+  const baseSections = [
     {
       id: 6,
       type: 'ai-service-matcher',

@@ -1,7 +1,22 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useState, useEffect, useMemo } from 'react'
-import Link from 'next/link'
+import React, { useState, useEffect } from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
+import PageLayout from '../components/layout/PageLayout';
+import { 
+  Code, 
+  Database, 
+  Settings, 
+  AlertTriangle, 
+  Activity,
+  Calendar,
+  CheckCircle,
+  Clock,
+  Target,
+  TrendingUp,
+  Zap,
+  Shield
+} from 'lucide-react';
 
 interface APIManagement {
   id: string;
@@ -12,7 +27,52 @@ interface APIManagement {
   version: string;
   baseUrl: string;
   rateLimit: number;
+  provider: string;
+  lastUpdated: string;
+  authentication: string;
   aiAnalysis: APIAnalysis;
+}
+
+interface APIEndpoint {
+  id: string;
+  name: string;
+  description: string;
+  endpoint: string;
+  method: string;
+  status: 'active' | 'inactive' | 'deprecated';
+  responseTime: number;
+  aiAnalysis: APIAnalysis;
+}
+
+interface APIMonitoring {
+  id: string;
+  name: string;
+  description: string;
+  endpoint: string;
+  status: 'healthy' | 'warning' | 'error' | 'down';
+  responseTime: number;
+  uptime: number;
+  lastCheck: Date;
+  aiAnalysis: MonitoringAnalysis;
+}
+
+interface APISecurity {
+  id: string;
+  name: string;
+  description: string;
+  type: 'authentication' | 'authorization' | 'encryption' | 'rate_limiting' | 'threat_protection';
+  status: 'active' | 'inactive' | 'warning' | 'error';
+  securityLevel: string;
+  lastAudit: Date;
+  aiAnalysis: SecurityAnalysis;
+}
+
+interface SecurityAnalysis {
+  id: string;
+  securityScore: number;
+  threatScore: number;
+  complianceScore: number;
+  recommendations: string[];
 }
 
 interface APIAnalysis {
@@ -142,509 +202,414 @@ interface APIIntegrationInsight {
 }
 
 const AIPoweredAPIIntegrationPage: NextPage = () => {
-  const [apiManagement, setApiManagement] = useState<APIManagement[]>([])
-  const [webhookOrchestrations, setWebhookOrchestrations] = useState<WebhookOrchestration[]>([])
-  const [integrationConnectors, setIntegrationConnectors] = useState<IntegrationConnector[]>([])
-  const [apiDocumentation, setApiDocumentation] = useState<APIDocumentation[]>([])
-  const [endpointMonitoring, setEndpointMonitoring] = useState<EndpointMonitoring[]>([])
-  const [apiTesting, setApiTesting] = useState<APITesting[]>([])
-  const [analytics, setAnalytics] = useState<APIIntegrationAnalytics | null>(null)
-  const [activeTab, setActiveTab] = useState<'apis' | 'webhooks' | 'connectors' | 'documentation' | 'monitoring' | 'testing' | 'analytics'>('apis')
-  const [selectedType, setSelectedType] = useState<string>('all')
-  const [isLoading, setIsLoading] = useState(true)
-
-  // Mock data
-  const mockApiManagement: APIManagement[] = [
-    {
-      id: '1',
-      name: 'User Management API',
-      description: 'Comprehensive user management and authentication API',
-      type: 'rest',
-      status: 'active',
-      version: 'v2.1.0',
-      baseUrl: 'https://api.ziontechgroup.com/v2',
-      rateLimit: 1000,
-      aiAnalysis: {
-        id: '1',
-        performanceScore: 94,
-        reliabilityScore: 96,
-        securityScore: 92,
-        recommendations: ['Optimize response time', 'Implement caching']
-      }
-    }
-  ]
-
-  const mockWebhookOrchestrations: WebhookOrchestration[] = [
-    {
-      id: '1',
-      name: 'Payment Notification Webhook',
-      description: 'Automated payment notification system',
-      trigger: 'event',
-      status: 'active',
-      endpoint: 'https://webhooks.ziontechgroup.com/payment',
-      method: 'POST',
-      aiOptimization: {
-        id: '1',
-        optimizationScore: 91,
-        efficiencyScore: 88,
-        reliabilityScore: 94,
-        recommendations: ['Improve error handling', 'Add retry logic']
-      }
-    }
-  ]
-
-  const mockIntegrationConnectors: IntegrationConnector[] = [
-    {
-      id: '1',
-      name: 'Stripe Payment Connector',
-      description: 'Integration with Stripe payment processing',
-      type: 'third_party',
-      status: 'connected',
-      provider: 'Stripe',
-      lastSync: new Date('2024-01-20T15:30:00'),
-      aiAnalysis: {
-        id: '1',
-        connectionScore: 95,
-        syncScore: 92,
-        reliabilityScore: 94,
-        recommendations: ['Monitor sync frequency', 'Optimize data transfer']
-      }
-    }
-  ]
-
-  const mockApiDocumentation: APIDocumentation[] = [
-    {
-      id: '1',
-      title: 'Create User Endpoint',
-      description: 'Create a new user account',
-      endpoint: '/users',
-      method: 'POST',
-      parameters: ['name', 'email', 'password'],
-      responses: ['201 Created', '400 Bad Request', '409 Conflict'],
-      examples: ['curl -X POST /users', 'JavaScript example', 'Python example'],
-      aiAnalysis: {
-        id: '1',
-        completenessScore: 88,
-        clarityScore: 92,
-        accuracyScore: 95,
-        recommendations: ['Add more examples', 'Include error responses']
-      }
-    }
-  ]
-
-  const mockEndpointMonitoring: EndpointMonitoring[] = [
-    {
-      id: '1',
-      name: 'User API Health Check',
-      description: 'Monitor user API endpoint health',
-      endpoint: '/api/users/health',
-      status: 'healthy',
-      responseTime: 45,
-      uptime: 99.8,
-      lastCheck: new Date('2024-01-20T16:00:00'),
-      aiAnalysis: {
-        id: '1',
-        healthScore: 98,
-        performanceScore: 94,
-        reliabilityScore: 96,
-        recommendations: ['Monitor response times', 'Set up alerts']
-      }
-    }
-  ]
-
-  const mockApiTesting: APITesting[] = [
-    {
-      id: '1',
-      name: 'User API Test Suite',
-      description: 'Comprehensive testing for user management API',
-      type: 'integration',
-      status: 'passed',
-      coverage: 92,
-      duration: 5,
-      aiAnalysis: {
-        id: '1',
-        successRate: 98,
-        coverageScore: 92,
-        reliabilityScore: 95,
-        recommendations: ['Increase test coverage', 'Add edge case tests']
-      }
-    }
-  ]
-
-  const mockAnalytics: APIIntegrationAnalytics = {
-    totalAPIs: 24,
-    activeWebhooks: 12,
-    connectedIntegrations: 18,
-    documentedEndpoints: 156,
-    monitoredEndpoints: 89,
-    testSuites: 32,
-    averagePerformance: 94.5,
-    aiOptimizationScore: 92,
-    aiInsights: [
-      {
-        id: '1',
-        title: 'High API Performance',
-        description: 'AI-powered API system shows 94% performance score with optimized endpoints',
-        impact: 'positive',
-        confidence: 0.93,
-        recommendations: ['Continue AI monitoring', 'Expand API coverage']
-      }
-    ]
-  }
+  const [activeTab, setActiveTab] = useState('overview');
+  const [integrations, setIntegrations] = useState<APIManagement[]>([]);
+  const [endpoints, setEndpoints] = useState<APIEndpoint[]>([]);
+  const [monitoring, setMonitoring] = useState<APIMonitoring[]>([]);
+  const [security, setSecurity] = useState<APISecurity[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [selectedTimeframe, setSelectedTimeframe] = useState('30d');
 
   useEffect(() => {
-    setTimeout(() => {
-      setApiManagement(mockApiManagement)
-      setWebhookOrchestrations(mockWebhookOrchestrations)
-      setIntegrationConnectors(mockIntegrationConnectors)
-      setApiDocumentation(mockApiDocumentation)
-      setEndpointMonitoring(mockEndpointMonitoring)
-      setApiTesting(mockApiTesting)
-      setAnalytics(mockAnalytics)
-      setIsLoading(false)
-    }, 1000)
-  }, [mockApiManagement, mockWebhookOrchestrations, mockIntegrationConnectors, mockApiDocumentation, mockEndpointMonitoring, mockApiTesting, mockAnalytics])
+    loadAPIData();
+  }, [selectedTimeframe]);
 
-  const filteredAPIs = useMemo(() => {
-    let filtered = apiManagement
-    if (selectedType !== 'all') {
-      filtered = filtered.filter(api => api.type === selectedType)
+  const loadAPIData = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch('/api/ai-api-integration', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          timeframe: selectedTimeframe,
+          action: 'getData'
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setIntegrations(data.integrations || []);
+        setEndpoints(data.endpoints || []);
+        setMonitoring(data.monitoring || []);
+        setSecurity(data.security || []);
+      }
+    } catch (error) {
+      console.error('Error loading API data:', error);
+    } finally {
+      setLoading(false);
     }
-    return filtered
-  }, [apiManagement, selectedType])
+  };
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'active': return 'bg-green-500/20 text-green-300'
-      case 'inactive': return 'bg-gray-500/20 text-gray-300'
-      case 'maintenance': return 'bg-yellow-500/20 text-yellow-300'
-      case 'deprecated': return 'bg-red-500/20 text-red-300'
-      case 'beta': return 'bg-blue-500/20 text-blue-300'
-      default: return 'bg-gray-500/20 text-gray-300'
+      case 'active': return 'bg-green-500';
+      case 'pending': return 'bg-yellow-500';
+      case 'error': return 'bg-red-500';
+      case 'inactive': return 'bg-gray-500';
+      default: return 'bg-gray-500';
     }
-  }
+  };
 
-  const getMethodColor = (method: string) => {
-    switch (method) {
-      case 'GET': return 'bg-green-500/20 text-green-300'
-      case 'POST': return 'bg-blue-500/20 text-blue-300'
-      case 'PUT': return 'bg-yellow-500/20 text-yellow-300'
-      case 'DELETE': return 'bg-red-500/20 text-red-300'
-      case 'PATCH': return 'bg-purple-500/20 text-purple-300'
-      default: return 'bg-gray-500/20 text-gray-300'
+  const getPriorityColor = (priority: string) => {
+    switch (priority) {
+      case 'low': return 'bg-green-500';
+      case 'medium': return 'bg-yellow-500';
+      case 'high': return 'bg-orange-500';
+      case 'critical': return 'bg-red-500';
+      default: return 'bg-gray-500';
     }
-  }
+  };
 
-  const getHealthColor = (status: string) => {
-    switch (status) {
-      case 'healthy': return 'bg-green-500/20 text-green-300'
-      case 'warning': return 'bg-yellow-500/20 text-yellow-300'
-      case 'error': return 'bg-red-500/20 text-red-300'
-      case 'down': return 'bg-red-500/20 text-red-300'
-      case 'maintenance': return 'bg-blue-500/20 text-blue-300'
-      default: return 'bg-gray-500/20 text-gray-300'
-    }
-  }
+  const tabs = [
+    { id: 'overview', name: 'Overview', icon: Activity },
+    { id: 'integrations', name: 'Integrations', icon: Code },
+    { id: 'endpoints', name: 'Endpoints', icon: Database },
+    { id: 'monitoring', name: 'Monitoring', icon: TrendingUp },
+    { id: 'security', name: 'Security', icon: Shield }
+  ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-orange-900 to-slate-900">
+    <PageLayout>
       <Head>
-        <title>AI-Powered API Integration & Webhook System | Zion Tech Group</title>
-        <meta name="description" content="API management, webhook orchestration, integration connectors, API documentation, endpoint monitoring, and automated API testing powered by AI." />
-        <meta name="keywords" content="api, integration, webhook, connector, documentation, monitoring, AI api" />
+        <title>AI-Powered API Integration System | Zion Tech Group</title>
+        <meta name="description" content="Intelligent API integration with AI-powered monitoring, security, and endpoint management." />
+        <meta name="keywords" content="API integration, endpoint management, API monitoring, API security, AI automation, Zion" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Header */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-red-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              AI-Powered API Integration & Webhook System
-            </h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              API management, webhook orchestration, integration connectors, 
-              API documentation, endpoint monitoring, and automated API testing powered by AI.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
-                <span className="text-white font-semibold">🔌 API Management</span>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
-                <span className="text-white font-semibold">🪝 Webhook Orchestration</span>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
-                <span className="text-white font-semibold">🔗 Integration Connectors</span>
-              </div>
+      {/* Page Header */}
+      <div className="mb-8">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-4">
+            <Code className="h-8 w-8 text-blue-400" />
+            <div>
+              <h1 className="text-3xl font-bold text-white">AI-Powered API Integration</h1>
+              <p className="text-gray-300">Intelligent API management and integration automation</p>
             </div>
+          </div>
+          <div className="flex items-center space-x-4">
+            <select
+              value={selectedTimeframe}
+              onChange={(e) => setSelectedTimeframe(e.target.value)}
+              className="bg-white/10 text-white border border-white/20 rounded-lg px-3 py-2 text-sm"
+            >
+              <option value="7d">Last 7 days</option>
+              <option value="30d">Last 30 days</option>
+              <option value="90d">Last 90 days</option>
+              <option value="1y">Last year</option>
+            </select>
           </div>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {isLoading ? (
-          <div className="flex justify-center items-center py-20">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
-          </div>
-        ) : (
-          <>
-            {/* Tabs */}
-            <div className="flex flex-wrap justify-center mb-8">
+      {/* Navigation Tabs */}
+      <nav className="mb-8">
+        <div className="flex space-x-8 border-b border-white/10">
+          {tabs.map((tab) => {
+            const Icon = tab.icon;
+            return (
               <button
-                onClick={() => setActiveTab('apis')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === 'apis'
-                    ? 'bg-gradient-to-r from-orange-600 to-red-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex items-center space-x-2 py-4 px-1 border-b-2 font-medium text-sm transition-colors ${
+                  activeTab === tab.id
+                    ? 'border-blue-500 text-blue-400'
+                    : 'border-transparent text-gray-300 hover:text-white hover:border-gray-300'
                 }`}
               >
-                APIs ({apiManagement.length})
+                <Icon className="h-5 w-5" />
+                <span>{tab.name}</span>
               </button>
-              <button
-                onClick={() => setActiveTab('webhooks')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === 'webhooks'
-                    ? 'bg-gradient-to-r from-orange-600 to-red-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
-                }`}
-              >
-                Webhooks ({webhookOrchestrations.length})
-              </button>
-              <button
-                onClick={() => setActiveTab('connectors')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === 'connectors'
-                    ? 'bg-gradient-to-r from-orange-600 to-red-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
-                }`}
-              >
-                Connectors ({integrationConnectors.length})
-              </button>
-              <button
-                onClick={() => setActiveTab('documentation')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === 'documentation'
-                    ? 'bg-gradient-to-r from-orange-600 to-red-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
-                }`}
-              >
-                Documentation ({apiDocumentation.length})
-              </button>
-              <button
-                onClick={() => setActiveTab('monitoring')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === 'monitoring'
-                    ? 'bg-gradient-to-r from-orange-600 to-red-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
-                }`}
-              >
-                Monitoring ({endpointMonitoring.length})
-              </button>
-              <button
-                onClick={() => setActiveTab('testing')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === 'testing'
-                    ? 'bg-gradient-to-r from-orange-600 to-red-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
-                }`}
-              >
-                Testing ({apiTesting.length})
-              </button>
-              <button
-                onClick={() => setActiveTab('analytics')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === 'analytics'
-                    ? 'bg-gradient-to-r from-orange-600 to-red-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
-                }`}
-              >
-                Analytics
-              </button>
-            </div>
+            );
+          })}
+        </div>
+      </nav>
 
-            {/* APIs Tab */}
-            {activeTab === 'apis' && (
-              <div className="space-y-8">
-                {/* Controls */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                    <div className="flex items-center space-x-4">
-                      <select
-                        value={selectedType}
-                        onChange={(e) => setSelectedType(e.target.value)}
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-orange-500"
-                      >
-                        <option value="all" className="bg-slate-800">All Types</option>
-                        <option value="rest" className="bg-slate-800">REST</option>
-                        <option value="graphql" className="bg-slate-800">GraphQL</option>
-                        <option value="soap" className="bg-slate-800">SOAP</option>
-                        <option value="grpc" className="bg-slate-800">gRPC</option>
-                        <option value="websocket" className="bg-slate-800">WebSocket</option>
-                        <option value="webhook" className="bg-slate-800">Webhook</option>
-                      </select>
+      {/* Main Content */}
+      {loading ? (
+        <div className="flex justify-center items-center h-64">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+        </div>
+      ) : (
+        <div className="space-y-8">
+          {/* Overview Tab */}
+          {activeTab === 'overview' && (
+            <div className="space-y-6">
+              {/* KPI Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-gray-300 text-sm">Active Integrations</p>
+                      <p className="text-2xl font-bold text-white">{integrations.filter(i => i.status === 'active').length}</p>
                     </div>
-                    <button className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300">
-                      Create API
-                    </button>
+                    <Code className="h-8 w-8 text-blue-400" />
                   </div>
                 </div>
+                
+                <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-gray-300 text-sm">API Endpoints</p>
+                      <p className="text-2xl font-bold text-white">{endpoints.length}</p>
+                    </div>
+                    <Database className="h-8 w-8 text-green-400" />
+                  </div>
+                </div>
+                
+                <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-gray-300 text-sm">Success Rate</p>
+                      <p className="text-2xl font-bold text-white">94%</p>
+                    </div>
+                    <CheckCircle className="h-8 w-8 text-purple-400" />
+                  </div>
+                </div>
+                
+                <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-gray-300 text-sm">Security Score</p>
+                      <p className="text-2xl font-bold text-white">98%</p>
+                    </div>
+                    <Shield className="h-8 w-8 text-green-400" />
+                  </div>
+                </div>
+              </div>
 
-                {/* APIs Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                  {filteredAPIs.map((api) => (
-                    <div key={api.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                      <div className="flex items-start justify-between mb-4">
+              {/* Recent Activity */}
+              <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+                <h3 className="text-xl font-semibold text-white mb-4">Recent Activity</h3>
+                <div className="space-y-4">
+                  {integrations.slice(0, 5).map((integration) => (
+                    <div key={integration.id} className="flex items-center justify-between p-4 bg-white/5 rounded-lg">
+                      <div className="flex items-center space-x-3">
+                        <div className={`w-3 h-3 rounded-full ${getStatusColor(integration.status)}`}></div>
                         <div>
-                          <h3 className="text-xl font-semibold text-white mb-2">{api.name}</h3>
-                          <p className="text-gray-300 text-sm capitalize">{api.type.toUpperCase()} API</p>
-                        </div>
-                        <div className="text-right">
-                          <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(api.status)}`}>
-                            {api.status}
-                          </span>
-                          <div className="mt-2">
-                            <span className="px-2 py-1 rounded-full text-xs font-medium bg-orange-500/20 text-orange-300">
-                              {api.version}
-                            </span>
-                          </div>
+                          <p className="text-white font-medium">{integration.name}</p>
+                          <p className="text-gray-400 text-sm">{integration.type} • {integration.status}</p>
                         </div>
                       </div>
-
-                      <div className="mb-4">
-                        <p className="text-gray-300 text-sm">{api.description}</p>
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-4 mb-4">
-                        <div className="bg-white/5 rounded-lg p-4">
-                          <div className="text-sm text-gray-400 mb-1">Base URL</div>
-                          <div className="text-sm font-bold text-white truncate">{api.baseUrl}</div>
-                        </div>
-                        <div className="bg-white/5 rounded-lg p-4">
-                          <div className="text-sm text-gray-400 mb-1">Rate Limit</div>
-                          <div className="text-2xl font-bold text-white">{api.rateLimit}/min</div>
-                        </div>
-                      </div>
-
-                      {/* AI Analysis */}
-                      <div className="mb-4">
-                        <h4 className="text-lg font-semibold text-white mb-3">AI Analysis</h4>
-                        <div className="bg-gradient-to-r from-orange-600/20 to-red-600/20 rounded-lg p-4">
-                          <div className="grid grid-cols-3 gap-4 text-sm">
-                            <div>
-                              <div className="text-gray-400 mb-1">Performance</div>
-                              <div className="text-white font-semibold">{api.aiAnalysis.performanceScore}%</div>
-                            </div>
-                            <div>
-                              <div className="text-gray-400 mb-1">Reliability</div>
-                              <div className="text-white font-semibold">{api.aiAnalysis.reliabilityScore}%</div>
-                            </div>
-                            <div>
-                              <div className="text-gray-400 mb-1">Security</div>
-                              <div className="text-white font-semibold">{api.aiAnalysis.securityScore}%</div>
-                            </div>
-                          </div>
-                          <div className="mt-3">
-                            <div className="text-sm font-medium text-gray-400 mb-1">Recommendations:</div>
-                            <div className="text-xs text-gray-300">
-                              {api.aiAnalysis.recommendations.join(', ')}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="flex space-x-2">
-                        <button className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300">
-                          View Details
-                        </button>
-                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-2 px-4 rounded-lg font-medium transition-all duration-300">
-                          Configure
-                        </button>
+                      <div className="text-right">
+                        <p className="text-white text-sm">{integration.provider}</p>
+                        <p className="text-gray-400 text-xs">{integration.lastUpdated}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-            )}
+            </div>
+          )}
 
-            {/* Analytics Tab */}
-            {activeTab === 'analytics' && analytics && (
-              <div className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                    <div className="text-3xl font-bold text-white mb-2">{analytics.totalAPIs.toLocaleString()}</div>
-                    <div className="text-gray-400 text-sm">Total APIs</div>
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                    <div className="text-3xl font-bold text-white mb-2">{analytics.activeWebhooks.toLocaleString()}</div>
-                    <div className="text-gray-400 text-sm">Active Webhooks</div>
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                    <div className="text-3xl font-bold text-white mb-2">{analytics.averagePerformance}%</div>
-                    <div className="text-gray-400 text-sm">Performance</div>
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                    <div className="text-3xl font-bold text-white mb-2">{analytics.aiOptimizationScore}%</div>
-                    <div className="text-gray-400 text-sm">AI Optimization Score</div>
-                  </div>
-                </div>
-
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                  <h3 className="text-xl font-semibold text-white mb-6">AI Insights</h3>
-                  <div className="space-y-4">
-                    {analytics.aiInsights.map((insight) => (
-                      <div key={insight.id} className="bg-gradient-to-r from-orange-600/20 to-red-600/20 rounded-lg p-4">
-                        <div className="flex items-start justify-between mb-2">
-                          <h4 className="text-white font-semibold">{insight.title}</h4>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                            insight.impact === 'positive' ? 'bg-green-500/20 text-green-300' :
-                            insight.impact === 'negative' ? 'bg-red-500/20 text-red-300' :
-                            'bg-yellow-500/20 text-yellow-300'
-                          }`}>
-                            {insight.impact}
-                          </span>
+          {/* Integrations Tab */}
+          {activeTab === 'integrations' && (
+            <div className="space-y-6">
+              <div className="flex justify-between items-center">
+                <h2 className="text-2xl font-bold text-white">API Integrations</h2>
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+                  + Add Integration
+                </button>
+              </div>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {integrations.map((integration) => (
+                  <div key={integration.id} className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <h3 className="text-lg font-semibold text-white">{integration.name}</h3>
+                        <p className="text-gray-400 text-sm">{integration.type} • {integration.provider}</p>
+                      </div>
+                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(integration.status)}`}>
+                        {integration.status}
+                      </span>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <p className="text-gray-400">Base URL</p>
+                          <p className="text-white">{integration.baseUrl}</p>
                         </div>
-                        <p className="text-gray-300 text-sm mb-3">{insight.description}</p>
-                        <div className="text-xs text-gray-400 mb-2">
-                          Confidence: {Math.round(insight.confidence * 100)}%
-                        </div>
-                        <div className="text-xs text-gray-400">
-                          <strong>Recommendations:</strong> {insight.recommendations.join(', ')}
+                        <div>
+                          <p className="text-gray-400">Version</p>
+                          <p className="text-white">{integration.version}</p>
                         </div>
                       </div>
-                    ))}
+                      
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <p className="text-gray-400">Authentication</p>
+                          <p className="text-white">{integration.authentication}</p>
+                        </div>
+                        <div>
+                          <p className="text-gray-400">Last Updated</p>
+                          <p className="text-white">{integration.lastUpdated}</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
-            )}
-          </>
-        )}
-      </div>
-
-      {/* CTA Section */}
-      <div className="bg-gradient-to-r from-orange-600/20 to-red-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Ready to Integrate Your APIs?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Start your API integration journey with our AI-powered system 
-              and ensure seamless API management and webhook orchestration.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-orange-500/25 transform hover:scale-105">
-                Start Integrating
-              </Link>
-              <Link href="/talent-directory" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
-                Learn More
-              </Link>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
+          )}
 
-export default AIPoweredAPIIntegrationPage 
+          {/* Endpoints Tab */}
+          {activeTab === 'endpoints' && (
+            <div className="space-y-6">
+              <div className="flex justify-between items-center">
+                <h2 className="text-2xl font-bold text-white">API Endpoints</h2>
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+                  + Add Endpoint
+                </button>
+              </div>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {endpoints.map((endpoint) => (
+                  <div key={endpoint.id} className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <h3 className="text-lg font-semibold text-white">{endpoint.name}</h3>
+                        <p className="text-gray-400 text-sm">{endpoint.method} • {endpoint.path}</p>
+                      </div>
+                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(endpoint.status)}`}>
+                        {endpoint.status}
+                      </span>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <p className="text-white/60 text-sm">{endpoint.description}</p>
+                      
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <p className="text-gray-400">Response Time</p>
+                          <p className="text-white">{endpoint.responseTime}ms</p>
+                        </div>
+                        <div>
+                          <p className="text-gray-400">Success Rate</p>
+                          <p className="text-white">{endpoint.successRate}%</p>
+                        </div>
+                      </div>
+                      
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <p className="text-gray-400">Rate Limit</p>
+                          <p className="text-white">{endpoint.rateLimit}/min</p>
+                        </div>
+                        <div>
+                          <p className="text-gray-400">Last Updated</p>
+                          <p className="text-white">{endpoint.lastUpdated}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Monitoring Tab */}
+          {activeTab === 'monitoring' && (
+            <div className="space-y-6">
+              <h2 className="text-2xl font-bold text-white">API Monitoring</h2>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {monitoring.map((monitor) => (
+                  <div key={monitor.id} className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <h3 className="text-lg font-semibold text-white">{monitor.name}</h3>
+                        <p className="text-gray-400 text-sm">{monitor.type} • {monitor.endpoint}</p>
+                      </div>
+                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getPriorityColor(monitor.priority)}`}>
+                        {monitor.priority}
+                      </span>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <p className="text-white/60 text-sm">{monitor.description}</p>
+                      
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <p className="text-gray-400">Status</p>
+                          <p className="text-white capitalize">{monitor.status}</p>
+                        </div>
+                        <div>
+                          <p className="text-gray-400">Last Check</p>
+                          <p className="text-white">{monitor.lastCheck}</p>
+                        </div>
+                      </div>
+                      
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <p className="text-gray-400">Response Time</p>
+                          <p className="text-white">{monitor.responseTime}ms</p>
+                        </div>
+                        <div>
+                          <p className="text-gray-400">Uptime</p>
+                          <p className="text-white">{monitor.uptime}%</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Security Tab */}
+          {activeTab === 'security' && (
+            <div className="space-y-6">
+              <h2 className="text-2xl font-bold text-white">API Security</h2>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {security.map((securityItem) => (
+                  <div key={securityItem.id} className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <h3 className="text-lg font-semibold text-white">{securityItem.name}</h3>
+                        <p className="text-gray-400 text-sm">{securityItem.type} • {securityItem.endpoint}</p>
+                      </div>
+                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        securityItem.severity === 'low' ? 'bg-green-500' :
+                        securityItem.severity === 'medium' ? 'bg-yellow-500' :
+                        securityItem.severity === 'high' ? 'bg-orange-500' : 'bg-red-500'
+                      }`}>
+                        {securityItem.severity}
+                      </span>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <p className="text-white/60 text-sm">{securityItem.description}</p>
+                      
+                      <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <p className="text-gray-400">Status</p>
+                          <p className="text-white capitalize">{securityItem.status}</p>
+                        </div>
+                        <div>
+                          <p className="text-gray-400">Detected</p>
+                          <p className="text-white">{securityItem.detected}</p>
+                        </div>
+                      </div>
+                      
+                      <div className="text-sm">
+                        <p className="text-gray-400">Recommendation</p>
+                        <p className="text-white">{securityItem.recommendation}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+    </PageLayout>
+  );
+};
+
+export default AIPoweredAPIIntegrationPage; 

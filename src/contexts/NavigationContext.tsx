@@ -39,26 +39,32 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children
     favorites: []
   })
 
-  // Load favorites from localStorage
+  // Load favorites from localStorage (SSR-safe)
   useEffect(() => {
-    const savedFavorites = localStorage.getItem('navigation-favorites')
-    if (savedFavorites) {
-      try {
-        const favorites = JSON.parse(savedFavorites)
-        setState(prev => ({ ...prev, favorites }))
-      } catch (error) {
-        console.error('Error loading navigation favorites:', error)
+    if (typeof window !== 'undefined') {
+      const savedFavorites = localStorage.getItem('navigation-favorites')
+      if (savedFavorites) {
+        try {
+          const favorites = JSON.parse(savedFavorites)
+          setState(prev => ({ ...prev, favorites }))
+        } catch (error) {
+          console.error('Error loading navigation favorites:', error)
+        }
       }
     }
   }, [])
 
-  // Save favorites to localStorage
+  // Save favorites to localStorage (SSR-safe)
   useEffect(() => {
-    localStorage.setItem('navigation-favorites', JSON.stringify(state.favorites))
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('navigation-favorites', JSON.stringify(state.favorites))
+    }
   }, [state.favorites])
 
-  // Keyboard shortcuts
+  // Keyboard shortcuts (SSR-safe)
   useEffect(() => {
+    if (typeof window === 'undefined') return
+
     const handleKeyDown = (event: KeyboardEvent) => {
       // Cmd/Ctrl + K: Open search
       if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {

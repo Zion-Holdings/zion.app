@@ -1,0 +1,130 @@
+import React from 'react';
+import Link from 'next/link';
+
+interface FuturisticCardProps {
+  title: string;
+  description: string;
+  icon?: string;
+  price?: string;
+  rating?: number;
+  link: string;
+  category?: string;
+  color?: 'blue' | 'purple' | 'pink' | 'green';
+  featured?: boolean;
+}
+
+const FuturisticCard: React.FC<FuturisticCardProps> = ({
+  title,
+  description,
+  icon,
+  price,
+  rating,
+  link,
+  category,
+  color = 'blue',
+  featured = false
+}) => {
+  const colorClasses = {
+    blue: {
+      border: 'border-neon-blue/30',
+      hoverBorder: 'hover:border-neon-blue/60',
+      glow: 'hover:shadow-neon-blue',
+      text: 'text-neon-blue',
+      bg: 'from-neon-blue/20 to-transparent'
+    },
+    purple: {
+      border: 'border-neon-purple/30',
+      hoverBorder: 'hover:border-neon-purple/60',
+      glow: 'hover:shadow-neon-purple',
+      text: 'text-neon-purple',
+      bg: 'from-neon-purple/20 to-transparent'
+    },
+    pink: {
+      border: 'border-neon-pink/30',
+      hoverBorder: 'hover:border-neon-pink/60',
+      glow: 'hover:shadow-neon-pink',
+      text: 'text-neon-pink',
+      bg: 'from-neon-pink/20 to-transparent'
+    },
+    green: {
+      border: 'border-neon-green/30',
+      hoverBorder: 'hover:border-neon-green/60',
+      glow: 'hover:shadow-neon-green',
+      text: 'text-neon-green',
+      bg: 'from-neon-green/20 to-transparent'
+    }
+  };
+
+  const currentColor = colorClasses[color];
+
+  return (
+    <Link href={link} className="group block">
+      <div className={`relative glass-dark border ${currentColor.border} ${currentColor.hoverBorder} rounded-xl p-6 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 ${currentColor.glow}`}>
+        {/* Featured Badge */}
+        {featured && (
+          <div className="absolute -top-3 -right-3 bg-gradient-to-r from-neon-pink to-neon-purple text-white text-xs font-bold px-3 py-1 rounded-full neon-glow">
+            FEATURED
+          </div>
+        )}
+
+        {/* Category Badge */}
+        {category && (
+          <div className={`absolute top-4 right-4 ${currentColor.text} text-xs font-mono bg-gradient-to-r ${currentColor.bg} px-2 py-1 rounded`}>
+            {category}
+          </div>
+        )}
+
+        {/* Icon */}
+        {icon && (
+          <div className="text-4xl mb-4 animate-cyber-float">
+            {icon}
+          </div>
+        )}
+
+        {/* Title */}
+        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-neon-blue group-hover:to-neon-purple transition-all duration-300">
+          {title}
+        </h3>
+
+        {/* Description */}
+        <p className="text-gray-400 text-sm mb-4 line-clamp-3">
+          {description}
+        </p>
+
+        {/* Price and Rating */}
+        <div className="flex items-center justify-between">
+          {price && (
+            <div className={`${currentColor.text} font-bold text-lg`}>
+              {price}
+            </div>
+          )}
+          {rating && (
+            <div className="flex items-center space-x-1">
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <svg
+                    key={i}
+                    className={`w-4 h-4 ${i < Math.floor(rating) ? 'text-yellow-400' : 'text-gray-600'}`}
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <span className="text-gray-400 text-sm">{rating}</span>
+            </div>
+          )}
+        </div>
+
+        {/* Hover Effect Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+
+        {/* Corner Accent */}
+        <div className={`absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 ${currentColor.border} rounded-bl-xl opacity-50 group-hover:opacity-100 transition-opacity duration-300`}></div>
+      </div>
+    </Link>
+  );
+};
+
+export default FuturisticCard; 

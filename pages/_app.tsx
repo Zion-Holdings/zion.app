@@ -8,6 +8,7 @@ import { useChat } from '../src/contexts/ChatContext'
 import MessageChannelDebugger from '../components/MessageChannelDebugger'
 import MessageChannelErrorBoundary from '../components/MessageChannelErrorBoundary'
 import Header from '../components/ui/Header'
+import ParticleEffect from '../components/ParticleEffect'
 import '../utils/messageChannelHandler' // Initialize the handler
 
 function ChatWrapper() {
@@ -21,10 +22,13 @@ export default function App({ Component, pageProps }: AppProps) {
       <AuthProvider>
         <HeaderProvider>
           <ChatProvider>
-            <Header />
-            <Component {...pageProps} />
-            <ChatWrapper />
-            <MessageChannelDebugger />
+            <div className="relative min-h-screen cyber-bg">
+              <ParticleEffect />
+              <Header />
+              <Component {...pageProps} />
+              <ChatWrapper />
+              <MessageChannelDebugger />
+            </div>
           </ChatProvider>
         </HeaderProvider>
       </AuthProvider>
