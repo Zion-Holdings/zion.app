@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { useState, useEffect, useCallback, useMemo } from 'react'
 import Link from 'next/link'
 import NotificationSystem from '../components/NotificationSystem'
+import Footer from '../components/ui/Footer'
 
 const Home: NextPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
