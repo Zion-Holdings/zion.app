@@ -36,7 +36,7 @@ const ApiFirstDevelopmentBuildingScalableSystemsChatPage: NextPage = () => {
               </span>
             </h1>
             <div className="flex items-center text-gray-400 text-sm mb-8">
-              <span>Expert Discussion • expert-consultation • trend-analysis</span>
+              <span>Expert Discussion • collaborative-team • trend-analysis</span>
             </div>
           </div>
           

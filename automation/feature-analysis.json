@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-04T11:16:26.062Z",
+  "timestamp": "2025-08-04T11:16:38.701Z",
   "projectStructure": {
     "pages": {
       "404.tsx": {
@@ -25,7 +25,7 @@
       "admin.tsx": {
         "type": "file",
         "size": 684,
-        "modified": "2025-08-04T11:16:22.918Z"
+        "modified": "2025-08-04T11:16:35.559Z"
       },
       "advanced-search.tsx": {
         "type": "file",
@@ -510,7 +510,7 @@
       "analytics.tsx": {
         "type": "file",
         "size": 661,
-        "modified": "2025-08-04T11:16:22.919Z"
+        "modified": "2025-08-04T11:16:35.560Z"
       },
       "api": {
         "admin": {
@@ -560,7 +560,7 @@
         "chat.ts": {
           "type": "file",
           "size": 446,
-          "modified": "2025-08-04T11:16:22.914Z"
+          "modified": "2025-08-04T11:16:35.556Z"
         },
         "collaboration-workspace.ts": {
           "type": "file",
@@ -585,12 +585,12 @@
         "notifications.ts": {
           "type": "file",
           "size": 456,
-          "modified": "2025-08-04T11:16:22.920Z"
+          "modified": "2025-08-04T11:16:35.561Z"
         },
         "payment.ts": {
           "type": "file",
           "size": 450,
-          "modified": "2025-08-04T11:16:22.915Z"
+          "modified": "2025-08-04T11:16:35.556Z"
         },
         "quote-request.ts": {
           "type": "file",
@@ -605,12 +605,12 @@
         "reviews.ts": {
           "type": "file",
           "size": 447,
-          "modified": "2025-08-04T11:16:22.917Z"
+          "modified": "2025-08-04T11:16:35.558Z"
         },
         "search.ts": {
           "type": "file",
           "size": 446,
-          "modified": "2025-08-04T11:16:22.917Z"
+          "modified": "2025-08-04T11:16:35.558Z"
         },
         "service-requests.ts": {
           "type": "file",
@@ -668,13 +668,13 @@
         },
         "5g-technology-and-its-impact-on-iot-chat.tsx": {
           "type": "file",
-          "size": 4405,
-          "modified": "2025-08-04T11:16:25.854Z"
+          "size": 4411,
+          "modified": "2025-08-04T11:16:38.428Z"
         },
         "ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx": {
           "type": "file",
-          "size": 4610,
-          "modified": "2025-08-04T11:16:25.743Z"
+          "size": 4608,
+          "modified": "2025-08-04T11:16:37.386Z"
         },
         "ai-powered-marketplaces-the-future-of-digital-commerce.tsx": {
           "type": "file",
@@ -683,8 +683,8 @@
         },
         "api-first-development-building-scalable-systems-chat.tsx": {
           "type": "file",
-          "size": 4533,
-          "modified": "2025-08-04T11:16:25.454Z"
+          "size": 4537,
+          "modified": "2025-08-04T11:16:37.362Z"
         },
         "api-security-and-authentication.tsx": {
           "type": "file",
@@ -693,8 +693,8 @@
         },
         "augmented-reality-in-enterprise-applications-chat.tsx": {
           "type": "file",
-          "size": 4490,
-          "modified": "2025-08-04T11:16:25.861Z"
+          "size": 4492,
+          "modified": "2025-08-04T11:16:38.374Z"
         },
         "augmented-reality-in-enterprise.tsx": {
           "type": "file",
@@ -708,8 +708,8 @@
         },
         "blockchain-technology-in-modern-business-solutions-chat.tsx": {
           "type": "file",
-          "size": 4554,
-          "modified": "2025-08-04T11:16:25.852Z"
+          "size": 4562,
+          "modified": "2025-08-04T11:16:38.487Z"
         },
         "blockchain-technology-in-modern-business-solutions.tsx": {
           "type": "file",
@@ -718,8 +718,8 @@
         },
         "cloud-native-architecture-best-practices-chat.tsx": {
           "type": "file",
-          "size": 4456,
-          "modified": "2025-08-04T11:16:25.802Z"
+          "size": 4458,
+          "modified": "2025-08-04T11:16:37.392Z"
         },
         "cloud-native-architecture-patterns.tsx": {
           "type": "file",
@@ -733,8 +733,8 @@
         },
         "cybersecurity-trends-for-2024-and-beyond-chat.tsx": {
           "type": "file",
-          "size": 4440,
-          "modified": "2025-08-04T11:16:25.051Z"
+          "size": 4454,
+          "modified": "2025-08-04T11:16:38.483Z"
         },
         "cybersecurity-trends-for-2024-and-beyond.tsx": {
           "type": "file",
@@ -743,8 +743,8 @@
         },
         "data-analytics-in-digital-transformation-chat.tsx": {
           "type": "file",
-          "size": 4445,
-          "modified": "2025-08-04T11:16:25.781Z"
+          "size": 4442,
+          "modified": "2025-08-04T11:16:38.026Z"
         },
         "data-privacy-and-gdpr-compliance.tsx": {
           "type": "file",
@@ -753,8 +753,8 @@
         },
         "devops-automation-strategies-for-modern-teams-chat.tsx": {
           "type": "file",
-          "size": 4509,
-          "modified": "2025-08-04T11:16:25.174Z"
+          "size": 4506,
+          "modified": "2025-08-04T11:16:38.080Z"
         },
         "devops-automation-tools.tsx": {
           "type": "file",
@@ -768,8 +768,8 @@
         },
         "digital-twins-revolutionizing-industry-4-0-chat.tsx": {
           "type": "file",
-          "size": 4473,
-          "modified": "2025-08-04T11:16:25.806Z"
+          "size": 4475,
+          "modified": "2025-08-04T11:16:38.431Z"
         },
         "edge-ai-the-future-of-distributed-computing.tsx": {
           "type": "file",
@@ -783,8 +783,8 @@
         },
         "machine-learning-applications-in-enterprise-software-chat.tsx": {
           "type": "file",
-          "size": 4579,
-          "modified": "2025-08-04T11:16:25.775Z"
+          "size": 4583,
+          "modified": "2025-08-04T11:16:37.767Z"
         },
         "machine-learning-applications-in-enterprise-software.tsx": {
           "type": "file",
@@ -798,8 +798,8 @@
         },
         "microservices-architecture-benefits-and-challenges-chat.tsx": {
           "type": "file",
-          "size": 4566,
-          "modified": "2025-08-04T11:16:25.460Z"
+          "size": 4571,
+          "modified": "2025-08-04T11:16:38.432Z"
         },
         "microservices-best-practices.tsx": {
           "type": "file",
@@ -813,8 +813,8 @@
         },
         "quantum-computing-implications-for-business-chat.tsx": {
           "type": "file",
-          "size": 4491,
-          "modified": "2025-08-04T11:16:25.139Z"
+          "size": 4494,
+          "modified": "2025-08-04T11:16:38.088Z"
         },
         "serverless-computing-benefits.tsx": {
           "type": "file",
@@ -823,8 +823,8 @@
         },
         "sustainable-technology-green-computing-solutions-chat.tsx": {
           "type": "file",
-          "size": 4553,
-          "modified": "2025-08-04T11:16:25.459Z"
+          "size": 4550,
+          "modified": "2025-08-04T11:16:38.487Z"
         },
         "sustainable-technology-solutions.tsx": {
           "type": "file",
@@ -833,8 +833,8 @@
         },
         "the-rise-of-edge-computing-in-iot-applications-chat.tsx": {
           "type": "file",
-          "size": 4506,
-          "modified": "2025-08-04T11:16:25.085Z"
+          "size": 4514,
+          "modified": "2025-08-04T11:16:37.380Z"
         },
         "the-rise-of-edge-computing-in-iot-applications.tsx": {
           "type": "file",
@@ -850,8 +850,8 @@
         },
         "ai-consulting-chat.tsx": {
           "type": "file",
-          "size": 3690,
-          "modified": "2025-08-04T11:16:25.178Z"
+          "size": 3682,
+          "modified": "2025-08-04T11:16:38.485Z"
         },
         "ai-consulting.tsx": {
           "type": "file",
@@ -875,13 +875,13 @@
         },
         "business-intelligence-chat.tsx": {
           "type": "file",
-          "size": 3768,
-          "modified": "2025-08-04T11:16:25.867Z"
+          "size": 3777,
+          "modified": "2025-08-04T11:16:38.365Z"
         },
         "cloud-architecture-chat.tsx": {
           "type": "file",
-          "size": 3737,
-          "modified": "2025-08-04T11:16:25.743Z"
+          "size": 3743,
+          "modified": "2025-08-04T11:16:38.481Z"
         },
         "cloud-architecture.tsx": {
           "type": "file",
@@ -900,8 +900,8 @@
         },
         "cybersecurity-chat.tsx": {
           "type": "file",
-          "size": 3681,
-          "modified": "2025-08-04T11:16:25.784Z"
+          "size": 3684,
+          "modified": "2025-08-04T11:16:37.749Z"
         },
         "cybersecurity.tsx": {
           "type": "file",
@@ -915,8 +915,8 @@
         },
         "data-science-chat.tsx": {
           "type": "file",
-          "size": 3676,
-          "modified": "2025-08-04T11:16:25.734Z"
+          "size": 3669,
+          "modified": "2025-08-04T11:16:36.734Z"
         },
         "data-science.tsx": {
           "type": "file",
@@ -925,13 +925,13 @@
         },
         "database-administration-chat.tsx": {
           "type": "file",
-          "size": 3789,
-          "modified": "2025-08-04T11:16:25.836Z"
+          "size": 3788,
+          "modified": "2025-08-04T11:16:37.391Z"
         },
         "devops-automation-chat.tsx": {
           "type": "file",
-          "size": 3726,
-          "modified": "2025-08-04T11:16:25.783Z"
+          "size": 3733,
+          "modified": "2025-08-04T11:16:38.437Z"
         },
         "devops-automation.tsx": {
           "type": "file",
@@ -965,23 +965,23 @@
         },
         "mobile-development-chat.tsx": {
           "type": "file",
-          "size": 3739,
-          "modified": "2025-08-04T11:16:25.457Z"
+          "size": 3737,
+          "modified": "2025-08-04T11:16:38.486Z"
         },
         "network-engineering-chat.tsx": {
           "type": "file",
-          "size": 3749,
-          "modified": "2025-08-04T11:16:25.840Z"
+          "size": 3756,
+          "modified": "2025-08-04T11:16:38.376Z"
         },
         "product-management-chat.tsx": {
           "type": "file",
-          "size": 3734,
-          "modified": "2025-08-04T11:16:24.009Z"
+          "size": 3735,
+          "modified": "2025-08-04T11:16:38.075Z"
         },
         "quality-assurance-chat.tsx": {
           "type": "file",
-          "size": 3724,
-          "modified": "2025-08-04T11:16:24.487Z"
+          "size": 3733,
+          "modified": "2025-08-04T11:16:37.768Z"
         },
         "quantum-computing.tsx": {
           "type": "file",
@@ -1000,75 +1000,75 @@
         },
         "system-administration-chat.tsx": {
           "type": "file",
-          "size": 3767,
-          "modified": "2025-08-04T11:16:25.088Z"
+          "size": 3772,
+          "modified": "2025-08-04T11:16:38.374Z"
         },
         "technical-writing-chat.tsx": {
           "type": "file",
-          "size": 3719,
-          "modified": "2025-08-04T11:16:25.459Z"
+          "size": 3726,
+          "modified": "2025-08-04T11:16:38.434Z"
         },
         "ui-ux-design-chat.tsx": {
           "type": "file",
           "size": 3665,
-          "modified": "2025-08-04T11:16:25.808Z"
+          "modified": "2025-08-04T11:16:38.061Z"
         },
         "web-development-chat.tsx": {
           "type": "file",
-          "size": 3702,
-          "modified": "2025-08-04T11:16:25.780Z"
+          "size": 3699,
+          "modified": "2025-08-04T11:16:38.062Z"
         }
       },
       "chat-content": {
         "ai-powered-business-solutions-discussion.tsx": {
           "type": "file",
           "size": 4620,
-          "modified": "2025-08-04T11:16:25.861Z"
+          "modified": "2025-08-04T11:16:38.476Z"
         },
         "cloud-computing-strategies.tsx": {
           "type": "file",
           "size": 4484,
-          "modified": "2025-08-04T11:16:25.784Z"
+          "modified": "2025-08-04T11:16:38.376Z"
         },
         "cybersecurity-best-practices.tsx": {
           "type": "file",
           "size": 4504,
-          "modified": "2025-08-04T11:16:25.742Z"
+          "modified": "2025-08-04T11:16:37.096Z"
         },
         "data-analytics-implementation.tsx": {
           "type": "file",
           "size": 4514,
-          "modified": "2025-08-04T11:16:24.498Z"
+          "modified": "2025-08-04T11:16:38.436Z"
         },
         "digital-transformation-insights.tsx": {
           "type": "file",
           "size": 4534,
-          "modified": "2025-08-04T11:16:25.810Z"
+          "modified": "2025-08-04T11:16:38.065Z"
         },
         "emerging-technology-trends.tsx": {
           "type": "file",
           "size": 4484,
-          "modified": "2025-08-04T11:16:25.855Z"
+          "modified": "2025-08-04T11:16:38.484Z"
         },
         "future-of-work-and-automation.tsx": {
           "type": "file",
           "size": 4510,
-          "modified": "2025-08-04T11:16:25.113Z"
+          "modified": "2025-08-04T11:16:38.373Z"
         },
         "innovation-in-enterprise-technology.tsx": {
           "type": "file",
           "size": 4572,
-          "modified": "2025-08-04T11:16:25.135Z"
+          "modified": "2025-08-04T11:16:38.370Z"
         },
         "sustainable-technology-practices.tsx": {
           "type": "file",
           "size": 4544,
-          "modified": "2025-08-04T11:16:26.016Z"
+          "modified": "2025-08-04T11:16:38.482Z"
         },
         "technology-implementation-strategies.tsx": {
           "type": "file",
           "size": 4584,
-          "modified": "2025-08-04T11:16:25.856Z"
+          "modified": "2025-08-04T11:16:38.479Z"
         }
       },
       "compliance-governance.tsx": {
@@ -2006,8 +2006,8 @@
         },
         "ai-model-development-chat.tsx": {
           "type": "file",
-          "size": 3801,
-          "modified": "2025-08-04T11:16:25.805Z"
+          "size": 3789,
+          "modified": "2025-08-04T11:16:37.765Z"
         },
         "ai-model-development.tsx": {
           "type": "file",
@@ -2021,8 +2021,8 @@
         },
         "api-development-chat.tsx": {
           "type": "file",
-          "size": 3746,
-          "modified": "2025-08-04T11:16:25.804Z"
+          "size": 3736,
+          "modified": "2025-08-04T11:16:38.483Z"
         },
         "api-security-services.tsx": {
           "type": "file",
@@ -2041,13 +2041,13 @@
         },
         "business-intelligence-chat.tsx": {
           "type": "file",
-          "size": 3812,
-          "modified": "2025-08-04T11:16:25.751Z"
+          "size": 3815,
+          "modified": "2025-08-04T11:16:37.051Z"
         },
         "cloud-migration-services-chat.tsx": {
           "type": "file",
-          "size": 3841,
-          "modified": "2025-08-04T11:16:26.007Z"
+          "size": 3849,
+          "modified": "2025-08-04T11:16:37.764Z"
         },
         "cloud-migration-services.tsx": {
           "type": "file",
@@ -2061,8 +2061,8 @@
         },
         "data-pipeline-engineering-chat.tsx": {
           "type": "file",
-          "size": 3862,
-          "modified": "2025-08-04T11:16:25.177Z"
+          "size": 3865,
+          "modified": "2025-08-04T11:16:38.065Z"
         },
         "data-pipeline-engineering.tsx": {
           "type": "file",
@@ -2076,8 +2076,8 @@
         },
         "database-design-chat.tsx": {
           "type": "file",
-          "size": 3743,
-          "modified": "2025-08-04T11:16:25.741Z"
+          "size": 3744,
+          "modified": "2025-08-04T11:16:38.478Z"
         },
         "devops-automation.tsx": {
           "type": "file",
@@ -2106,18 +2106,18 @@
         },
         "mobile-app-development-chat.tsx": {
           "type": "file",
-          "size": 3824,
-          "modified": "2025-08-04T11:16:25.455Z"
+          "size": 3821,
+          "modified": "2025-08-04T11:16:37.404Z"
         },
         "network-security-chat.tsx": {
           "type": "file",
-          "size": 3761,
-          "modified": "2025-08-04T11:16:23.684Z"
+          "size": 3749,
+          "modified": "2025-08-04T11:16:38.480Z"
         },
         "performance-optimization-chat.tsx": {
           "type": "file",
-          "size": 3851,
-          "modified": "2025-08-04T11:16:26.017Z"
+          "size": 3848,
+          "modified": "2025-08-04T11:16:38.486Z"
         },
         "performance-optimization.tsx": {
           "type": "file",
@@ -2126,8 +2126,8 @@
         },
         "quality-assurance-testing-chat.tsx": {
           "type": "file",
-          "size": 3867,
-          "modified": "2025-08-04T11:16:25.175Z"
+          "size": 3854,
+          "modified": "2025-08-04T11:16:38.084Z"
         },
         "quantum-computing-solutions.tsx": {
           "type": "file",
@@ -2136,8 +2136,8 @@
         },
         "security-auditing-chat.tsx": {
           "type": "file",
-          "size": 3762,
-          "modified": "2025-08-04T11:16:25.801Z"
+          "size": 3772,
+          "modified": "2025-08-04T11:16:37.098Z"
         },
         "security-auditing.tsx": {
           "type": "file",
@@ -2156,23 +2156,23 @@
         },
         "system-administration-chat.tsx": {
           "type": "file",
-          "size": 3807,
-          "modified": "2025-08-04T11:16:25.863Z"
+          "size": 3811,
+          "modified": "2025-08-04T11:16:37.767Z"
         },
         "technical-documentation-chat.tsx": {
           "type": "file",
-          "size": 3839,
-          "modified": "2025-08-04T11:16:23.102Z"
+          "size": 3835,
+          "modified": "2025-08-04T11:16:37.751Z"
         },
         "ui-ux-design-chat.tsx": {
           "type": "file",
-          "size": 3702,
-          "modified": "2025-08-04T11:16:25.865Z"
+          "size": 3701,
+          "modified": "2025-08-04T11:16:38.477Z"
         },
         "web-application-development-chat.tsx": {
           "type": "file",
-          "size": 3890,
-          "modified": "2025-08-04T11:16:25.782Z"
+          "size": 3874,
+          "modified": "2025-08-04T11:16:36.646Z"
         }
       },
       "services.tsx": {
@@ -2184,6 +2184,11 @@
         "type": "file",
         "size": 24531,
         "modified": "2025-08-04T10:55:00.062Z"
+      },
+      "sitemap.tsx": {
+        "type": "file",
+        "size": 1,
+        "modified": "2025-08-04T11:16:37.665Z"
       },
       "skill-verification.tsx": {
         "type": "file",
@@ -2257,12 +2262,12 @@
       "NotificationSystem.tsx": {
         "type": "file",
         "size": 248,
-        "modified": "2025-08-04T11:16:22.919Z"
+        "modified": "2025-08-04T11:16:35.560Z"
       },
       "SearchFilter.tsx": {
         "type": "file",
         "size": 519,
-        "modified": "2025-08-04T11:16:22.917Z"
+        "modified": "2025-08-04T11:16:35.558Z"
       },
       "auth": {
         "ProtectedRoute.tsx": {
@@ -2280,17 +2285,17 @@
         "ChatInput.tsx": {
           "type": "file",
           "size": 228,
-          "modified": "2025-08-04T11:16:22.914Z"
+          "modified": "2025-08-04T11:16:35.555Z"
         },
         "ChatMessage.tsx": {
           "type": "file",
           "size": 232,
-          "modified": "2025-08-04T11:16:22.914Z"
+          "modified": "2025-08-04T11:16:35.555Z"
         },
         "ChatWindow.tsx": {
           "type": "file",
           "size": 230,
-          "modified": "2025-08-04T11:16:22.913Z"
+          "modified": "2025-08-04T11:16:35.555Z"
         }
       },
       "content": {},
@@ -2298,17 +2303,17 @@
         "ReviewCard.tsx": {
           "type": "file",
           "size": 232,
-          "modified": "2025-08-04T11:16:22.916Z"
+          "modified": "2025-08-04T11:16:35.557Z"
         },
         "ReviewForm.tsx": {
           "type": "file",
           "size": 232,
-          "modified": "2025-08-04T11:16:22.915Z"
+          "modified": "2025-08-04T11:16:35.557Z"
         },
         "ReviewList.tsx": {
           "type": "file",
           "size": 232,
-          "modified": "2025-08-04T11:16:22.916Z"
+          "modified": "2025-08-04T11:16:35.557Z"
         }
       },
       "service-listing": {
@@ -3071,7 +3076,7 @@
           "ai-ml-solutions.json": {
             "type": "file",
             "size": 783,
-            "modified": "2025-08-04T11:16:22.924Z"
+            "modified": "2025-08-04T11:16:35.564Z"
           },
           "blog-posts.json": {
             "type": "file",
@@ -3081,12 +3086,12 @@
           "building-scalable-web-applications-with-modern-frameworks.json": {
             "type": "file",
             "size": 570,
-            "modified": "2025-08-04T11:16:22.926Z"
+            "modified": "2025-08-04T11:16:35.567Z"
           },
           "cloud-infrastructure.json": {
             "type": "file",
             "size": 802,
-            "modified": "2025-08-04T11:16:22.923Z"
+            "modified": "2025-08-04T11:16:35.564Z"
           },
           "comprehensive-content.json": {
             "type": "file",
@@ -3101,22 +3106,22 @@
           "data-analytics.json": {
             "type": "file",
             "size": 809,
-            "modified": "2025-08-04T11:16:22.923Z"
+            "modified": "2025-08-04T11:16:35.564Z"
           },
           "david-kim.json": {
             "type": "file",
             "size": 617,
-            "modified": "2025-08-04T11:16:22.925Z"
+            "modified": "2025-08-04T11:16:35.566Z"
           },
           "devops-best-practices-for-enterprise-teams.json": {
             "type": "file",
             "size": 518,
-            "modified": "2025-08-04T11:16:22.927Z"
+            "modified": "2025-08-04T11:16:35.567Z"
           },
           "do-you-provide-ongoing-support.json": {
             "type": "file",
             "size": 256,
-            "modified": "2025-08-04T11:16:22.929Z"
+            "modified": "2025-08-04T11:16:35.570Z"
           },
           "dynamic-featured-providers.json": {
             "type": "file",
@@ -3146,7 +3151,7 @@
           "emily-rodriguez.json": {
             "type": "file",
             "size": 625,
-            "modified": "2025-08-04T11:16:22.925Z"
+            "modified": "2025-08-04T11:16:35.566Z"
           },
           "equipment-catalog.json": {
             "type": "file",
@@ -3171,27 +3176,27 @@
           "how-long-does-a-typical-projec.json": {
             "type": "file",
             "size": 297,
-            "modified": "2025-08-04T11:16:22.929Z"
+            "modified": "2025-08-04T11:16:35.569Z"
           },
           "jennifer-smith.json": {
             "type": "file",
             "size": 351,
-            "modified": "2025-08-04T11:16:22.927Z"
+            "modified": "2025-08-04T11:16:35.568Z"
           },
           "maria-garcia.json": {
             "type": "file",
             "size": 368,
-            "modified": "2025-08-04T11:16:22.928Z"
+            "modified": "2025-08-04T11:16:35.568Z"
           },
           "michael-chen.json": {
             "type": "file",
             "size": 622,
-            "modified": "2025-08-04T11:16:22.925Z"
+            "modified": "2025-08-04T11:16:35.565Z"
           },
           "mobile-app-development.json": {
             "type": "file",
             "size": 826,
-            "modified": "2025-08-04T11:16:22.923Z"
+            "modified": "2025-08-04T11:16:35.563Z"
           },
           "multilingual-de.json": {
             "type": "file",
@@ -3236,12 +3241,12 @@
           "robert-johnson.json": {
             "type": "file",
             "size": 356,
-            "modified": "2025-08-04T11:16:22.928Z"
+            "modified": "2025-08-04T11:16:35.568Z"
           },
           "sarah-johnson.json": {
             "type": "file",
             "size": 640,
-            "modified": "2025-08-04T11:16:22.924Z"
+            "modified": "2025-08-04T11:16:35.565Z"
           },
           "seo-internal-links.json": {
             "type": "file",
@@ -3296,22 +3301,22 @@
           "the-future-of-ai-in-business--2024-trends.json": {
             "type": "file",
             "size": 540,
-            "modified": "2025-08-04T11:16:22.926Z"
+            "modified": "2025-08-04T11:16:35.567Z"
           },
           "web-development.json": {
             "type": "file",
             "size": 818,
-            "modified": "2025-08-04T11:16:22.922Z"
+            "modified": "2025-08-04T11:16:35.563Z"
           },
           "what-is-your-pricing-structure.json": {
             "type": "file",
-            "size": 277,
-            "modified": "2025-08-04T11:16:22.930Z"
+            "size": 276,
+            "modified": "2025-08-04T11:16:35.570Z"
           },
           "what-services-do-you-offer-.json": {
             "type": "file",
-            "size": 288,
-            "modified": "2025-08-04T11:16:22.929Z"
+            "size": 289,
+            "modified": "2025-08-04T11:16:35.569Z"
           }
         },
         "integrated": {},
@@ -3406,7 +3411,7 @@
       "chat.ts": {
         "type": "file",
         "size": 446,
-        "modified": "2025-08-04T11:16:22.914Z"
+        "modified": "2025-08-04T11:16:35.556Z"
       },
       "collaboration-workspace.ts": {
         "type": "file",
@@ -3431,12 +3436,12 @@
       "notifications.ts": {
         "type": "file",
         "size": 456,
-        "modified": "2025-08-04T11:16:22.920Z"
+        "modified": "2025-08-04T11:16:35.561Z"
       },
       "payment.ts": {
         "type": "file",
         "size": 450,
-        "modified": "2025-08-04T11:16:22.915Z"
+        "modified": "2025-08-04T11:16:35.556Z"
       },
       "quote-request.ts": {
         "type": "file",
@@ -3451,12 +3456,12 @@
       "reviews.ts": {
         "type": "file",
         "size": 447,
-        "modified": "2025-08-04T11:16:22.917Z"
+        "modified": "2025-08-04T11:16:35.558Z"
       },
       "search.ts": {
         "type": "file",
         "size": 446,
-        "modified": "2025-08-04T11:16:22.917Z"
+        "modified": "2025-08-04T11:16:35.558Z"
       },
       "service-requests.ts": {
         "type": "file",
