@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/warranty-protection/",
-  "timestamp": "2025-08-04T15:59:36.498Z",
+  "timestamp": "2025-08-04T16:06:47.164Z",
   "pageInfo": {
     "title": "Warranty & Protection Services - Zion Marketplace",
     "description": "Comprehensive warranty and protection services for marketplace purchases. Extended coverage, claim processing, and peace of mind for every transaction.",
@@ -87,7 +87,7 @@
         "text": "Connect"
       }
     ],
-    "content": "ZionMarketplaceEscrowLoginWarranty & ProtectionProtect your marketplace purchases with comprehensive warranty coverage. Extended protection plans, easy claim processing, and peace of mind for every transaction.View PlansShop Securely98%Claim Approval Rate24hrsAverage Response Time$2.1MTotal Claims Paid50K+Protected PurchasesProtection PlansClaimsAccountCoverage GuideChoose Your Protection PlanSelect the perfect protection plan for your marketplace purchases. All plans include 24/7 support and hassle-free claim processing.Basic Protection$29.991 YearCoverage Includes:✓Hardware defects✓Manufacturing faults✓Basic repairsFeatures:•Free shipping•24/7 support•Quick turnaroundSelect PlanMost PopularExtended Protection$79.993 YearsCoverage Includes:✓Hardware defects✓Manufacturing faults✓Accidental damage✓Performance issuesFeatures:•Free shipping•24/7 support•Priority service•Replacement guaranteeDeductible: $25 per claimSelect PlanPremium Protection$149.995 YearsCoverage Includes:✓Hardware defects✓Manufacturing faults✓Accidental damage✓Performance issues✓Software problems✓Data recoveryFeatures:•Free shipping•24/7 support•Priority service•Replacement guarantee•Data protection•Concierge serviceSelect PlanLifetime Protection$299.99LifetimeCoverage Includes:✓Hardware defects✓Manufacturing faults✓Accidental damage✓Performance issues✓Software problems✓Data recovery✓UpgradesFeatures:•Free shipping•24/7 support•Priority service•Replacement guarantee•Data protection•Concierge service•Lifetime coverageSelect PlanPlan ComparisonFeatureBasicExtendedPremiumLifetimeDuration1 Year3 Years5 YearsLifetimeAccidental Damage✗✓✓✓Data Recovery✗✗✓✓Concierge Service✗✗✓✓Protect Your InvestmentsDon't let unexpected issues derail your projects. Get comprehensive protection for all your marketplace purchases.Get ProtectedShop SecurelyZion MarketplaceThe first free AI-powered marketplace for high-tech products, services, and innovation.ProtectionWarranty PlansEscrow ServicesMarketplaceAI AssistantSupportContact UsLive ChatNotificationsLegal SupportConnectAbout UsBlogSign UpLogin© 2024 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/warranty-protection\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionMarketplaceEscrowLoginWarranty & ProtectionProtect your marketplace purchases with comprehensive warranty coverage. Extended protection plans, easy claim processing, and peace of mind for every transaction.View PlansShop Securely98%Claim Approval Rate24hrsAverage Response Time$2.1MTotal Claims Paid50K+Protected PurchasesProtection PlansClaimsAccountCoverage GuideChoose Your Protection PlanSelect the perfect protection plan for your marketplace purchases. All plans include 24/7 support and hassle-free claim processing.Basic Protection$29.991 YearCoverage Includes:✓Hardware defects✓Manufacturing faults✓Basic repairsFeatures:•Free shipping•24/7 support•Quick turnaroundSelect PlanMost PopularExtended Protection$79.993 YearsCoverage Includes:✓Hardware defects✓Manufacturing faults✓Accidental damage✓Performance issuesFeatures:•Free shipping•24/7 support•Priority service•Replacement guaranteeDeductible: $25 per claimSelect PlanPremium Protection$149.995 YearsCoverage Includes:✓Hardware defects✓Manufacturing faults✓Accidental damage✓Performance issues✓Software problems✓Data recoveryFeatures:•Free shipping•24/7 support•Priority service•Replacement guarantee•Data protection•Concierge serviceSelect PlanLifetime Protection$299.99LifetimeCoverage Includes:✓Hardware defects✓Manufacturing faults✓Accidental damage✓Performance issues✓Software problems✓Data recovery✓UpgradesFeatures:•Free shipping•24/7 support•Priority service•Replacement guarantee•Data protection•Concierge service•Lifetime coverageSelect PlanPlan ComparisonFeatureBasicExtendedPremiumLifetimeDuration1 Year3 Years5 YearsLifetimeAccidental Damage✗✓✓✓Data Recovery✗✗✓✓Concierge Service✗✗✓✓Protect Your InvestmentsDon't let unexpected issues derail your projects. Get comprehensive protection for all your marketplace purchases.Get ProtectedShop SecurelyZion MarketplaceThe first free AI-powered marketplace for high-tech products, services, and innovation.ProtectionWarranty PlansEscrow ServicesMarketplaceAI AssistantSupportContact UsLive ChatNotificationsLegal SupportConnectAbout UsBlogSign UpLogin© 2024 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/warranty-protection\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -120,16 +120,20 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
         "src": "",
         "type": "application/json"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/escrow-services-717a7c35a6181e00.js",
+        "type": "text/javascript"
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
@@ -144,10 +148,6 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/escrow-services-717a7c35a6181e00.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
         "type": "text/javascript"
       },
@@ -156,13 +156,13 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
         "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

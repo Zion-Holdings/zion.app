@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/dispute-resolution/",
-  "timestamp": "2025-08-04T15:59:39.076Z",
+  "timestamp": "2025-08-04T16:06:49.912Z",
   "pageInfo": {
     "title": "Dispute Resolution Center - Zion Marketplace",
     "description": "Comprehensive dispute resolution center for marketplace conflicts. Professional mediation, arbitration, and fair resolution services.",
@@ -47,7 +47,7 @@
         "text": "Connect"
       }
     ],
-    "content": "ZionMarketplaceEscrowLoginDispute Resolution CenterProfessional dispute resolution services for marketplace conflicts. Fair mediation, arbitration, and conflict resolution to ensure all parties reach satisfactory outcomes.View DisputesFile Dispute3Total Disputes1Open Cases1In Progress1Resolved$28,000.00Total ValueDisputesMediatorsResolutionsResourcesAll StatusOpenMediationArbitrationResolvedClosedAll TypesPaymentServiceQualityDeliveryCommunicationDisputesFile New Dispute⚙️Service Quality DisputeDISP-001MEDIATIONHIGHClient claims the delivered AI solution does not meet the agreed specifications and performance benchmarks.Amount:$15,000.00Parties:TechCorp Solutions vs AI Development ProCreated:1/14/2024Mediator:Sarah JohnsonView DetailsUpdate Status💰Payment DisputeDISP-002OPENURGENTSeller claims payment was not received for completed work.Amount:$5,000.00Parties:Freelance Developer vs Startup IncCreated:1/17/2024View DetailsUpdate Status📦Delivery Timeline DisputeDISP-003RESOLVEDMEDIUMClient claims project was delivered late and requests compensation.Amount:$8,000.00Parties:Marketing Agency vs Web Development StudioCreated:1/9/2024Mediator:Michael ChenView DetailsUpdate StatusFair Resolution for AllProfessional dispute resolution services ensure fair outcomes for all marketplace participants. Our experienced mediators and comprehensive processes help resolve conflicts efficiently and fairly.Get StartedLearn MoreZion MarketplaceThe first free AI-powered marketplace for high-tech products, services, and innovation.Dispute ResolutionDispute CenterEscrow ServicesWarranty ProtectionInvoice & BillingSupportContact UsLive ChatNotificationsLegal SupportConnectAbout UsBlogSign UpLogin© 2024 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/dispute-resolution\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionMarketplaceEscrowLoginDispute Resolution CenterProfessional dispute resolution services for marketplace conflicts. Fair mediation, arbitration, and conflict resolution to ensure all parties reach satisfactory outcomes.View DisputesFile Dispute3Total Disputes1Open Cases1In Progress1Resolved$28,000.00Total ValueDisputesMediatorsResolutionsResourcesAll StatusOpenMediationArbitrationResolvedClosedAll TypesPaymentServiceQualityDeliveryCommunicationDisputesFile New Dispute⚙️Service Quality DisputeDISP-001MEDIATIONHIGHClient claims the delivered AI solution does not meet the agreed specifications and performance benchmarks.Amount:$15,000.00Parties:TechCorp Solutions vs AI Development ProCreated:1/14/2024Mediator:Sarah JohnsonView DetailsUpdate Status💰Payment DisputeDISP-002OPENURGENTSeller claims payment was not received for completed work.Amount:$5,000.00Parties:Freelance Developer vs Startup IncCreated:1/17/2024View DetailsUpdate Status📦Delivery Timeline DisputeDISP-003RESOLVEDMEDIUMClient claims project was delivered late and requests compensation.Amount:$8,000.00Parties:Marketing Agency vs Web Development StudioCreated:1/9/2024Mediator:Michael ChenView DetailsUpdate StatusFair Resolution for AllProfessional dispute resolution services ensure fair outcomes for all marketplace participants. Our experienced mediators and comprehensive processes help resolve conflicts efficiently and fairly.Get StartedLearn MoreZion MarketplaceThe first free AI-powered marketplace for high-tech products, services, and innovation.Dispute ResolutionDispute CenterEscrow ServicesWarranty ProtectionInvoice & BillingSupportContact UsLive ChatNotificationsLegal SupportConnectAbout UsBlogSign UpLogin© 2024 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/dispute-resolution\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -80,11 +80,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -116,13 +116,13 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
         "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

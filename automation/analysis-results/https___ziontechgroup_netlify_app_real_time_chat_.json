@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/real-time-chat/",
-  "timestamp": "2025-08-04T15:59:21.930Z",
+  "timestamp": "2025-08-04T16:06:30.804Z",
   "pageInfo": {
     "title": "Real-Time Chat - Zion Marketplace",
     "description": "Connect with users, service providers, and AI assistants in real-time on Zion Marketplace",
@@ -39,7 +39,7 @@
         "text": "Ready to Connect?"
       }
     ],
-    "content": "ZionMarketplaceServicesTalentsProductsAI AssistantLoginReal-Time ChatConnect with users, service providers, and AI assistants in real-time. Get instant support, discuss projects, and build your network.Chat RoomsGeneral ChatAll UsersWelcome to Zion Marketplace!AI SupportAI AssistantHow can I help you today?Service ProvidersIT Consultants, AI ExpertsProfessional services available2Marketplace DiscussionBuyers, SellersLatest marketplace updates5General ChatAll UsersOnline💬Start a conversation!Messages will appear hereSend🤖AI AssistantGet instant help from our AI assistant. Ask questions, get recommendations, and find the perfect services.👥CommunityConnect with other users, share experiences, and build your professional network in real-time.💼Service ProvidersChat directly with service providers, discuss projects, and get instant quotes for your needs.Ready to Connect?Join thousands of users already connecting, collaborating, and building amazing projects together.Join Zion NowExplore Marketplace{\"props\":{\"pageProps\":{}},\"page\":\"/real-time-chat\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionMarketplaceServicesTalentsProductsAI AssistantLoginReal-Time ChatConnect with users, service providers, and AI assistants in real-time. Get instant support, discuss projects, and build your network.Chat RoomsGeneral ChatAll UsersWelcome to Zion Marketplace!AI SupportAI AssistantHow can I help you today?Service ProvidersIT Consultants, AI ExpertsProfessional services available2Marketplace DiscussionBuyers, SellersLatest marketplace updates5General ChatAll UsersOnline💬Start a conversation!Messages will appear hereSend🤖AI AssistantGet instant help from our AI assistant. Ask questions, get recommendations, and find the perfect services.👥CommunityConnect with other users, share experiences, and build your professional network in real-time.💼Service ProvidersChat directly with service providers, discuss projects, and get instant quotes for your needs.Ready to Connect?Join thousands of users already connecting, collaborating, and building amazing projects together.Join Zion NowExplore Marketplace{\"props\":{\"pageProps\":{}},\"page\":\"/real-time-chat\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -72,11 +72,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -88,11 +88,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/talents-80d6035db4291558.js",
         "type": "text/javascript"
       },
       {
@@ -108,7 +104,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/talents-80d6035db4291558.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
         "type": "text/javascript"
       },
       {
@@ -116,7 +116,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
         "type": "text/javascript"
       },
       {
@@ -130,7 +130,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

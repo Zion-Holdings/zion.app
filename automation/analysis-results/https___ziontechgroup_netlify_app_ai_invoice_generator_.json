@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-invoice-generator/",
-  "timestamp": "2025-08-04T15:59:11.846Z",
+  "timestamp": "2025-08-04T16:06:20.615Z",
   "pageInfo": {
     "title": "AI Invoice Generator - Zion Marketplace",
     "description": "Generate professional invoices and manage billing with AI assistance",
@@ -43,7 +43,7 @@
         "text": "AI Invoice Generator Features"
       }
     ],
-    "content": "AI Invoice GeneratorCreate professional invoices, manage billing, and track payments with AI assistance. Generate beautiful invoices in minutes.Invoice DetailsInvoice Number *Issue Date *Due Date *Your Company DetailsCompany Name *Company Email *Company Address *Client DetailsClient Name *Client Email *Client Address *Invoice ItemsAdd ItemItem 1Description *QuantityUnit PriceAmount: $0.00TotalsTax Rate (%)Payment TermsSubtotal:$0.00Tax (0%):$0.00Total:$0.00NotesGenerate InvoiceInvoice Preview📄Your invoice will appear hereFill out the form and click \"Generate Invoice\"AI Invoice Generator FeaturesProfessional invoice templatesAI-powered invoice generationAutomatic calculations and totalsDownload and share capabilitiesProfessional formatting and layout{\"props\":{\"pageProps\":{}},\"page\":\"/ai-invoice-generator\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "AI Invoice GeneratorCreate professional invoices, manage billing, and track payments with AI assistance. Generate beautiful invoices in minutes.Invoice DetailsInvoice Number *Issue Date *Due Date *Your Company DetailsCompany Name *Company Email *Company Address *Client DetailsClient Name *Client Email *Client Address *Invoice ItemsAdd ItemItem 1Description *QuantityUnit PriceAmount: $0.00TotalsTax Rate (%)Payment TermsSubtotal:$0.00Tax (0%):$0.00Total:$0.00NotesGenerate InvoiceInvoice Preview📄Your invoice will appear hereFill out the form and click \"Generate Invoice\"AI Invoice Generator FeaturesProfessional invoice templatesAI-powered invoice generationAutomatic calculations and totalsDownload and share capabilitiesProfessional formatting and layout{\"props\":{\"pageProps\":{}},\"page\":\"/ai-invoice-generator\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -72,11 +72,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -86,7 +86,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

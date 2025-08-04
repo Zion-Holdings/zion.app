@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-business-intelligence-dashboard/",
-  "timestamp": "2025-08-04T15:59:14.751Z",
+  "timestamp": "2025-08-04T16:06:23.354Z",
   "pageInfo": {
     "title": "AI Business Intelligence Dashboard - Zion Marketplace",
     "description": "Real-time business intelligence, predictive analytics, and AI-powered insights",
@@ -43,7 +43,7 @@
         "text": "Customer Growth"
       }
     ],
-    "content": "AI Business Intelligence DashboardReal-time insights, predictive analytics, and AI-powered decision making7 Days30 Days90 Days1 YearExport📊Overview📈Analytics🤖AI Insights📋Reports🔔AlertsRevenue↗12.5%$1,250,000Target: $1,500,000Customer Acquisition↘2.3%1,250Target: 1,500Conversion Rate↗0.8%%3.2Target: %4Customer Satisfaction↗0.2%/54.6Target: /54.8Churn Rate↘0.5%%2.1Target: %1.5Average Order Value↗5.2%$85.5Target: $100Revenue Trend📈Interactive Revenue ChartReal-time data visualizationCustomer Growth👥Interactive Customer ChartNew vs Returning customers{\"props\":{\"pageProps\":{}},\"page\":\"/ai-business-intelligence-dashboard\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "AI Business Intelligence DashboardReal-time insights, predictive analytics, and AI-powered decision making7 Days30 Days90 Days1 YearExport📊Overview📈Analytics🤖AI Insights📋Reports🔔AlertsRevenue↗12.5%$1,250,000Target: $1,500,000Customer Acquisition↘2.3%1,250Target: 1,500Conversion Rate↗0.8%%3.2Target: %4Customer Satisfaction↗0.2%/54.6Target: /54.8Churn Rate↘0.5%%2.1Target: %1.5Average Order Value↗5.2%$85.5Target: $100Revenue Trend📈Interactive Revenue ChartReal-time data visualizationCustomer Growth👥Interactive Customer ChartNew vs Returning customers{\"props\":{\"pageProps\":{}},\"page\":\"/ai-business-intelligence-dashboard\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -72,11 +72,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -86,7 +86,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/equipment-rental/",
-  "timestamp": "2025-08-04T15:59:24.410Z",
+  "timestamp": "2025-08-04T16:06:33.566Z",
   "pageInfo": {
     "title": "Equipment Rental & Management - Zion Marketplace",
     "description": "Comprehensive equipment rental and management system. Rent professional equipment, track availability, and manage maintenance schedules.",
@@ -47,7 +47,7 @@
         "text": "Connect"
       }
     ],
-    "content": "ZionMarketplaceProjectsLoginEquipment Rental & ManagementRent professional equipment for your projects. Track availability, manage maintenance, and access high-quality tools and machinery through our comprehensive rental system.Browse EquipmentList Equipment3Total Equipment1Available Now$12,500.00Total Revenue4.6Avg RatingEquipmentRentalsMaintenanceAnalyticsAll CategoriesPhotographyAudioConstructionVideoLightingAll AvailabilityAvailableRentedMaintenanceReservedAvailable EquipmentList EquipmentProfessional Camera KitPhotographyAVAILABLEEXCELLENTComplete professional camera kit including DSLR, lenses, tripod, and lighting equipment.Daily Rate:$150.00Weekly Rate:$900.00Location:New York, NYOwner:PhotoPro StudiosRating:⭐ 4.8Features:4K Video45MP SensorDual Card SlotsRent NowView DetailsDJ Equipment SetAudioRENTEDGOODProfessional DJ setup with turntables, mixer, speakers, and lighting system.Daily Rate:$200.00Weekly Rate:$1,200.00Location:Los Angeles, CAOwner:SoundWave ProductionsRating:⭐ 4.6Features:USB SupportBeat SyncHot CuesView DetailsConstruction Tools SetConstructionMAINTENANCEFAIRComplete set of professional construction tools including power tools and safety equipment.Daily Rate:$100.00Weekly Rate:$600.00Location:Chicago, ILOwner:BuildRight ToolsRating:⭐ 4.4Features:Cordless DrillsCircular SawsSafety GearView DetailsRent Professional Equipment TodayAccess high-quality equipment for your projects. From photography gear to construction tools, we have everything you need to get the job done professionally.Browse EquipmentList Your EquipmentZion MarketplaceThe first free AI-powered marketplace for high-tech products, services, and innovation.Equipment RentalBrowse EquipmentProject ManagementPricing & CommissionsReferral SystemSupportContact UsLive ChatNotificationsLegal SupportConnectAbout UsBlogSign UpLogin© 2024 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/equipment-rental\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionMarketplaceProjectsLoginEquipment Rental & ManagementRent professional equipment for your projects. Track availability, manage maintenance, and access high-quality tools and machinery through our comprehensive rental system.Browse EquipmentList Equipment3Total Equipment1Available Now$12,500.00Total Revenue4.6Avg RatingEquipmentRentalsMaintenanceAnalyticsAll CategoriesPhotographyAudioConstructionVideoLightingAll AvailabilityAvailableRentedMaintenanceReservedAvailable EquipmentList EquipmentProfessional Camera KitPhotographyAVAILABLEEXCELLENTComplete professional camera kit including DSLR, lenses, tripod, and lighting equipment.Daily Rate:$150.00Weekly Rate:$900.00Location:New York, NYOwner:PhotoPro StudiosRating:⭐ 4.8Features:4K Video45MP SensorDual Card SlotsRent NowView DetailsDJ Equipment SetAudioRENTEDGOODProfessional DJ setup with turntables, mixer, speakers, and lighting system.Daily Rate:$200.00Weekly Rate:$1,200.00Location:Los Angeles, CAOwner:SoundWave ProductionsRating:⭐ 4.6Features:USB SupportBeat SyncHot CuesView DetailsConstruction Tools SetConstructionMAINTENANCEFAIRComplete set of professional construction tools including power tools and safety equipment.Daily Rate:$100.00Weekly Rate:$600.00Location:Chicago, ILOwner:BuildRight ToolsRating:⭐ 4.4Features:Cordless DrillsCircular SawsSafety GearView DetailsRent Professional Equipment TodayAccess high-quality equipment for your projects. From photography gear to construction tools, we have everything you need to get the job done professionally.Browse EquipmentList Your EquipmentZion MarketplaceThe first free AI-powered marketplace for high-tech products, services, and innovation.Equipment RentalBrowse EquipmentProject ManagementPricing & CommissionsReferral SystemSupportContact UsLive ChatNotificationsLegal SupportConnectAbout UsBlogSign UpLogin© 2024 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/equipment-rental\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [
       {
         "src": "https://via.placeholder.com/300x200/1F2937/FFFFFF?text=Camera+Kit",
@@ -96,11 +96,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -128,7 +128,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
         "type": "text/javascript"
       },
       {
@@ -138,7 +138,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/data-warehouse-etl/",
-  "timestamp": "2025-08-04T16:05:47.587Z",
+  "timestamp": "2025-08-04T16:07:31.394Z",
   "pageInfo": {
     "title": "Data Warehouse & ETL Platform - Zion Tech Group",
     "description": "Comprehensive data warehouse and ETL platform for enterprise data integration",
@@ -15,7 +15,7 @@
         "text": "Recent Activity"
       }
     ],
-    "content": "Zion Tech GroupHomeDashboardData Warehouse & ETL PlatformComprehensive data integration, transformation, and warehousing platform for enterprise analytics. Connect multiple data sources, build ETL pipelines, and maintain data quality across your organization.Data Sources2🔗ETL Pipelines1⚙️Data Warehouses1🏢Total Data Size2.33 GB💾📊Overview🔗Data Sources⚙️ETL Pipelines🏢Data WarehouseRecent ActivityUser Data PipelineLast run: 8/4/2025, 12:35:46 PM125,000 records45s{\"props\":{\"pageProps\":{}},\"page\":\"/data-warehouse-etl\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "Zion Tech GroupHomeDashboardData Warehouse & ETL PlatformComprehensive data integration, transformation, and warehousing platform for enterprise analytics. Connect multiple data sources, build ETL pipelines, and maintain data quality across your organization.Data Sources2🔗ETL Pipelines1⚙️Data Warehouses1🏢Total Data Size2.33 GB💾📊Overview🔗Data Sources⚙️ETL Pipelines🏢Data WarehouseRecent ActivityUser Data PipelineLast run: 8/4/2025, 12:37:29 PM125,000 records45s{\"props\":{\"pageProps\":{}},\"page\":\"/data-warehouse-etl\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [

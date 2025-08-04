@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/invoice-billing/",
-  "timestamp": "2025-08-04T15:59:37.930Z",
+  "timestamp": "2025-08-04T16:06:48.653Z",
   "pageInfo": {
     "title": "Invoice & Billing Management - Zion Marketplace",
     "description": "Comprehensive invoice and billing management system for marketplace transactions. Generate invoices, track payments, and manage billing cycles.",
@@ -47,7 +47,7 @@
         "text": "Connect"
       }
     ],
-    "content": "ZionMarketplacePaymentsLoginInvoice & BillingComprehensive invoice and billing management system for marketplace transactions. Generate professional invoices, track payments, and manage billing cycles with ease.View InvoicesCreate Invoice3Total Invoices$5,500.00Outstanding Amount$2,750.00Total Paid1Overdue InvoicesInvoicesBilling CyclesPaymentsReportsInvoicesCreate New InvoiceINV-2024-001TechCorp SolutionsPAIDAmount:$2,750.00Issue Date:12/31/2023Due Date:1/14/2024Payment Method:Credit CardView DetailsDownload PDFINV-2024-002InnovateLabsOVERDUEAmount:$1,980.00Issue Date:1/4/2024Due Date:1/19/2024View DetailsDownload PDFINV-2024-003DataFlow SystemsSENTAmount:$3,520.00Issue Date:1/14/2024Due Date:1/31/2024View DetailsDownload PDFStreamline Your BillingProfessional invoice generation, automated payment tracking, and comprehensive financial reporting to help you manage your marketplace transactions efficiently.Get StartedExplore MarketplaceZion MarketplaceThe first free AI-powered marketplace for high-tech products, services, and innovation.FinancialInvoice & BillingPayment ProcessingEscrow ServicesWarranty ProtectionSupportContact UsLive ChatNotificationsLegal SupportConnectAbout UsBlogSign UpLogin© 2024 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/invoice-billing\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionMarketplacePaymentsLoginInvoice & BillingComprehensive invoice and billing management system for marketplace transactions. Generate professional invoices, track payments, and manage billing cycles with ease.View InvoicesCreate Invoice3Total Invoices$5,500.00Outstanding Amount$2,750.00Total Paid1Overdue InvoicesInvoicesBilling CyclesPaymentsReportsInvoicesCreate New InvoiceINV-2024-001TechCorp SolutionsPAIDAmount:$2,750.00Issue Date:12/31/2023Due Date:1/14/2024Payment Method:Credit CardView DetailsDownload PDFINV-2024-002InnovateLabsOVERDUEAmount:$1,980.00Issue Date:1/4/2024Due Date:1/19/2024View DetailsDownload PDFINV-2024-003DataFlow SystemsSENTAmount:$3,520.00Issue Date:1/14/2024Due Date:1/31/2024View DetailsDownload PDFStreamline Your BillingProfessional invoice generation, automated payment tracking, and comprehensive financial reporting to help you manage your marketplace transactions efficiently.Get StartedExplore MarketplaceZion MarketplaceThe first free AI-powered marketplace for high-tech products, services, and innovation.FinancialInvoice & BillingPayment ProcessingEscrow ServicesWarranty ProtectionSupportContact UsLive ChatNotificationsLegal SupportConnectAbout UsBlogSign UpLogin© 2024 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/invoice-billing\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -80,16 +80,20 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
         "src": "",
         "type": "application/json"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
+        "type": "text/javascript"
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
@@ -108,21 +112,17 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
         "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

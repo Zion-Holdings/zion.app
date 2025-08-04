@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/payment-processing/",
-  "timestamp": "2025-08-04T15:59:25.801Z",
+  "timestamp": "2025-08-04T16:06:34.832Z",
   "pageInfo": {
     "title": "Payment Processing - Zion Marketplace",
     "description": "Secure payment processing for marketplace transactions, multiple payment methods, and financial management",
@@ -47,7 +47,7 @@
         "text": "Ready to Start Processing Payments?"
       }
     ],
-    "content": "ZionMarketplaceServicesRent EquipmentLive ChatLoginPayment ProcessingSecure, fast, and reliable payment processing for all your marketplace transactions. Multiple payment methods, real-time processing, and comprehensive financial management.Available Balance$16,975💰Pending Amount$-3,000⏳Payment Methods5💳💸Make Payment📊Transaction History💳Payment Methods📈AnalyticsMake a PaymentSend secure payments to service providers, talents, and equipment rentals.💸 Send Payment👨‍💻Service ProvidersPay for IT services, AI development, and consultingPay for Services⚙️Equipment RentalPay for hardware rentals and computing equipmentPay for Equipment🎯Talent PaymentsPay for AI talents and expert consultantsPay for Talents🔒Bank-Level SecurityEnd-to-end encryption, fraud protection, and secure payment processing with industry-leading security standards.⚡Instant ProcessingReal-time payment processing with instant confirmations and immediate fund availability for verified accounts.🌍Global PaymentsSupport for multiple currencies, international payments, and cross-border transactions with competitive rates.Ready to Start Processing Payments?Join thousands of users already using our secure payment processing system for marketplace transactions.Get StartedExplore Marketplace{\"props\":{\"pageProps\":{}},\"page\":\"/payment-processing\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionMarketplaceServicesRent EquipmentLive ChatLoginPayment ProcessingSecure, fast, and reliable payment processing for all your marketplace transactions. Multiple payment methods, real-time processing, and comprehensive financial management.Available Balance$0💰Pending Amount$0⏳Payment Methods0💳💸Make Payment📊Transaction History💳Payment Methods📈AnalyticsMake a PaymentSend secure payments to service providers, talents, and equipment rentals.💸 Send Payment👨‍💻Service ProvidersPay for IT services, AI development, and consultingPay for Services⚙️Equipment RentalPay for hardware rentals and computing equipmentPay for Equipment🎯Talent PaymentsPay for AI talents and expert consultantsPay for Talents🔒Bank-Level SecurityEnd-to-end encryption, fraud protection, and secure payment processing with industry-leading security standards.⚡Instant ProcessingReal-time payment processing with instant confirmations and immediate fund availability for verified accounts.🌍Global PaymentsSupport for multiple currencies, international payments, and cross-border transactions with competitive rates.Ready to Start Processing Payments?Join thousands of users already using our secure payment processing system for marketplace transactions.Get StartedExplore Marketplace{\"props\":{\"pageProps\":{}},\"page\":\"/payment-processing\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -80,11 +80,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -92,11 +92,11 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/equipment-rental-466cc2e15aac4ca2.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
         "type": "text/javascript"
       },
       {
@@ -104,7 +104,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/equipment-rental-466cc2e15aac4ca2.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
         "type": "text/javascript"
       },
       {
@@ -124,19 +124,19 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
         "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]
   },
   "analytics": {
-    "contentLength": 1449,
+    "contentLength": 1439,
     "headingCount": 10,
     "imageCount": 0,
     "formCount": 0,

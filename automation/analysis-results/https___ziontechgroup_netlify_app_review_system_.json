@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/review-system/",
-  "timestamp": "2025-08-04T15:59:29.425Z",
+  "timestamp": "2025-08-04T16:06:39.196Z",
   "pageInfo": {
     "title": "Review System - Zion Marketplace",
     "description": "Comprehensive review and rating system for marketplace services, talents, equipment, and products",
@@ -23,7 +23,7 @@
         "text": "Help Build Trust in Our Community"
       }
     ],
-    "content": "ZionMarketplaceSearchPaymentsLoginReview SystemShare your experiences and help others make informed decisions. Write reviews, browse feedback, and contribute to our trusted community.Total Reviews0📝Average Rating0.0⭐Recent Reviews0🆕Verified Reviews0✓✍️Write Review📋My Reviews🔍Browse Reviews📊AnalyticsWrite a ReviewShare your experience and help others make informed decisions.Item TypeServiceTalentEquipmentProductItem TitleProvider/NameRating★★★★★5/5Review TitleDetailed ReviewPros (What you liked)Cons (What could be improved)Submit ReviewHelp Build Trust in Our CommunityYour reviews help others make informed decisions and build a trusted marketplace community.Explore MarketplaceFind Items to Review{\"props\":{\"pageProps\":{}},\"page\":\"/review-system\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionMarketplaceSearchPaymentsLoginReview SystemShare your experiences and help others make informed decisions. Write reviews, browse feedback, and contribute to our trusted community.Total Reviews5📝Average Rating4.4⭐Recent Reviews4🆕Verified Reviews5✓✍️Write Review📋My Reviews🔍Browse Reviews📊AnalyticsWrite a ReviewShare your experience and help others make informed decisions.Item TypeServiceTalentEquipmentProductItem TitleProvider/NameRating★★★★★5/5Review TitleDetailed ReviewPros (What you liked)Cons (What could be improved)Submit ReviewHelp Build Trust in Our CommunityYour reviews help others make informed decisions and build a trusted marketplace community.Explore MarketplaceFind Items to Review{\"props\":{\"pageProps\":{}},\"page\":\"/review-system\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -56,11 +56,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -68,7 +68,15 @@
         "type": "application/json"
       },
       {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/advanced-search-ee617b38607f5f1a.js",
+        "type": "text/javascript"
+      },
+      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/payment-processing-101dce871299da16.js",
         "type": "text/javascript"
       },
       {
@@ -84,25 +92,17 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/payment-processing-101dce871299da16.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/advanced-search-ee617b38607f5f1a.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
         "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

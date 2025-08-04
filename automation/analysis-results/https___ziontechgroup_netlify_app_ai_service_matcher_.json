@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-service-matcher/",
-  "timestamp": "2025-08-04T15:59:06.537Z",
+  "timestamp": "2025-08-04T16:06:14.534Z",
   "pageInfo": {
     "title": "AI Service Matcher - Zion",
     "description": "Find the perfect services for your needs with our AI-powered matching system",
@@ -27,7 +27,7 @@
         "text": "Precision Matching"
       }
     ],
-    "content": "AI Service MatcherTell us what you need, and our AI will find the perfect services and talents for your projectDescribe Your NeedsWhat do you need help with? *IndustrySelect IndustryTechnologyHealthcareFinanceEducationManufacturingRetailReal EstateEntertainmentTransportationOtherBudget RangeSelect BudgetUnder $1,000$1,000 - $5,000$5,000 - $15,000$15,000 - $50,000$50,000+TimelineSelect TimelineImmediate (1-2 weeks)Short-term (1-3 months)Medium-term (3-6 months)Long-term (6+ months)Find Perfect Matches🤖AI-Powered MatchingOur advanced AI analyzes your requirements and finds the perfect matches from our extensive network⚡Instant ResultsGet personalized recommendations in seconds, not days. Save time and find the right services quickly🎯Precision MatchingOur algorithm considers budget, timeline, industry, and technical requirements for optimal matches{\"props\":{\"pageProps\":{}},\"page\":\"/ai-service-matcher\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "AI Service MatcherTell us what you need, and our AI will find the perfect services and talents for your projectDescribe Your NeedsWhat do you need help with? *IndustrySelect IndustryTechnologyHealthcareFinanceEducationManufacturingRetailReal EstateEntertainmentTransportationOtherBudget RangeSelect BudgetUnder $1,000$1,000 - $5,000$5,000 - $15,000$15,000 - $50,000$50,000+TimelineSelect TimelineImmediate (1-2 weeks)Short-term (1-3 months)Medium-term (3-6 months)Long-term (6+ months)Find Perfect Matches🤖AI-Powered MatchingOur advanced AI analyzes your requirements and finds the perfect matches from our extensive network⚡Instant ResultsGet personalized recommendations in seconds, not days. Save time and find the right services quickly🎯Precision MatchingOur algorithm considers budget, timeline, industry, and technical requirements for optimal matches{\"props\":{\"pageProps\":{}},\"page\":\"/ai-service-matcher\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -60,11 +60,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -74,7 +74,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

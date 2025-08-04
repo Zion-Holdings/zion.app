@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/referral-affiliate/",
-  "timestamp": "2025-08-04T15:59:43.028Z",
+  "timestamp": "2025-08-04T16:06:54.250Z",
   "pageInfo": {
     "title": "Referral & Affiliate System - Zion Marketplace",
     "description": "Comprehensive referral and affiliate system for marketplace growth. Track referrals, manage partnerships, and earn bonuses.",
@@ -47,7 +47,7 @@
         "text": "Connect"
       }
     ],
-    "content": "ZionMarketplaceRewardsLoginReferral & Affiliate SystemGrow your network and earn rewards by referring others to the marketplace. Join our affiliate program and build a sustainable income through partnerships.Start ReferringJoin Affiliate Program3Total Referrals1Completed Referrals$25.00Total Earnings33%Conversion RateMy ReferralsAffiliate PartnersReferral BonusesCampaignsAll StatusPendingRegisteredActiveCompletedMy ReferralsInvite Friends📧john.doe@example.comCode: JOHN2024COMPLETEDBonus Amount:$25.00Commission Rate:5%Source:emailCreated:1/9/2024Completed:1/14/2024Notes:Referred through email campaignView DetailsTrack Progress📱jane.smith@example.comCode: JANE2024ACTIVEBonus Amount:$25.00Commission Rate:5%Source:socialCreated:1/11/2024Notes:Shared on LinkedInView DetailsTrack Progress🔗mike.wilson@example.comCode: MIKE2024PENDINGBonus Amount:$25.00Commission Rate:5%Source:linkCreated:1/17/2024View DetailsTrack ProgressStart Earning TodayRefer friends and colleagues to earn bonuses and build your network. Join our affiliate program to create sustainable income through partnerships.Start ReferringJoin Affiliate ProgramZion MarketplaceThe first free AI-powered marketplace for high-tech products, services, and innovation.Referral & AffiliateReferral SystemLoyalty RewardsPricing & CommissionsSkill VerificationSupportContact UsLive ChatNotificationsLegal SupportConnectAbout UsBlogSign UpLogin© 2024 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/referral-affiliate\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionMarketplaceRewardsLoginReferral & Affiliate SystemGrow your network and earn rewards by referring others to the marketplace. Join our affiliate program and build a sustainable income through partnerships.Start ReferringJoin Affiliate Program3Total Referrals1Completed Referrals$25.00Total Earnings33%Conversion RateMy ReferralsAffiliate PartnersReferral BonusesCampaignsAll StatusPendingRegisteredActiveCompletedMy ReferralsInvite Friends📧john.doe@example.comCode: JOHN2024COMPLETEDBonus Amount:$25.00Commission Rate:5%Source:emailCreated:1/9/2024Completed:1/14/2024Notes:Referred through email campaignView DetailsTrack Progress📱jane.smith@example.comCode: JANE2024ACTIVEBonus Amount:$25.00Commission Rate:5%Source:socialCreated:1/11/2024Notes:Shared on LinkedInView DetailsTrack Progress🔗mike.wilson@example.comCode: MIKE2024PENDINGBonus Amount:$25.00Commission Rate:5%Source:linkCreated:1/17/2024View DetailsTrack ProgressStart Earning TodayRefer friends and colleagues to earn bonuses and build your network. Join our affiliate program to create sustainable income through partnerships.Start ReferringJoin Affiliate ProgramZion MarketplaceThe first free AI-powered marketplace for high-tech products, services, and innovation.Referral & AffiliateReferral SystemLoyalty RewardsPricing & CommissionsSkill VerificationSupportContact UsLive ChatNotificationsLegal SupportConnectAbout UsBlogSign UpLogin© 2024 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/referral-affiliate\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -80,16 +80,20 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
         "src": "",
         "type": "application/json"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
+        "type": "text/javascript"
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
@@ -104,15 +108,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
         "type": "text/javascript"
       },
       {
@@ -122,7 +122,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

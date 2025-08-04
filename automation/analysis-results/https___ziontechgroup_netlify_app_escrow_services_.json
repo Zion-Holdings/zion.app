@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/escrow-services/",
-  "timestamp": "2025-08-04T15:59:35.393Z",
+  "timestamp": "2025-08-04T16:06:45.690Z",
   "pageInfo": {
     "title": "Escrow Services - Zion Marketplace",
     "description": "Secure escrow services for marketplace transactions. Protected payments, dispute resolution, and transaction security.",
@@ -75,7 +75,7 @@
         "text": "Connect"
       }
     ],
-    "content": "ZionMarketplacePaymentsLoginEscrow ServicesSecure your marketplace transactions with our advanced escrow system. Protected payments, automated dispute resolution, and complete transaction security.Learn MoreStart Trading$2.5M+Protected Transactions99.8%Success Rate24/7Support Available48hrsDispute ResolutionOverviewTransactionsDisputesAccount🔒Secure EscrowFunds are held securely in escrow until both parties are satisfied with the transaction.⚡Instant ProtectionAutomatic protection for all marketplace transactions with instant escrow activation.🤝Dispute ResolutionAI-powered dispute resolution with human oversight for fair outcomes.📊Transparent TrackingReal-time transaction tracking with detailed status updates and notifications.🌍Global SupportMulti-currency support with international transaction protection.🔐Bank-Level SecurityEnterprise-grade security with encryption and fraud protection.How Escrow Works1AgreementBuyer and seller agree on terms and payment amount2PaymentBuyer pays into secure escrow account3DeliverySeller delivers service or product as agreed4ReleaseFunds are released to seller upon completionReady to Trade Securely?Start using our escrow services for protected marketplace transactions.Start TradingLearn About PaymentsZion MarketplaceThe first free AI-powered marketplace for high-tech products, services, and innovation.ServicesMarketplaceEscrow ServicesPayment ProcessingAI AssistantSupportContact UsLegal SupportLive ChatNotificationsConnectAbout UsBlogSign UpLogin© 2024 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/escrow-services\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionMarketplacePaymentsLoginEscrow ServicesSecure your marketplace transactions with our advanced escrow system. Protected payments, automated dispute resolution, and complete transaction security.Learn MoreStart Trading$2.5M+Protected Transactions99.8%Success Rate24/7Support Available48hrsDispute ResolutionOverviewTransactionsDisputesAccount🔒Secure EscrowFunds are held securely in escrow until both parties are satisfied with the transaction.⚡Instant ProtectionAutomatic protection for all marketplace transactions with instant escrow activation.🤝Dispute ResolutionAI-powered dispute resolution with human oversight for fair outcomes.📊Transparent TrackingReal-time transaction tracking with detailed status updates and notifications.🌍Global SupportMulti-currency support with international transaction protection.🔐Bank-Level SecurityEnterprise-grade security with encryption and fraud protection.How Escrow Works1AgreementBuyer and seller agree on terms and payment amount2PaymentBuyer pays into secure escrow account3DeliverySeller delivers service or product as agreed4ReleaseFunds are released to seller upon completionReady to Trade Securely?Start using our escrow services for protected marketplace transactions.Start TradingLearn About PaymentsZion MarketplaceThe first free AI-powered marketplace for high-tech products, services, and innovation.ServicesMarketplaceEscrow ServicesPayment ProcessingAI AssistantSupportContact UsLegal SupportLive ChatNotificationsConnectAbout UsBlogSign UpLogin© 2024 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/escrow-services\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -108,16 +108,20 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
         "src": "",
         "type": "application/json"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/payment-processing-101dce871299da16.js",
+        "type": "text/javascript"
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
@@ -136,21 +140,17 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/payment-processing-101dce871299da16.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
         "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

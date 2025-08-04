@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/service-categories/",
-  "timestamp": "2025-08-04T15:59:44.381Z",
+  "timestamp": "2025-08-04T16:06:55.557Z",
   "pageInfo": {
     "title": "Service Categories & Specialization - Zion Marketplace",
     "description": "Comprehensive service categories and specialization system. Find expert providers, specialized services, and category-specific features.",
@@ -47,7 +47,7 @@
         "text": "Connect"
       }
     ],
-    "content": "ZionMarketplaceProjectsLoginService Categories & SpecializationDiscover specialized services across diverse categories. Find expert providers, explore detailed subcategories, and access category-specific features and requirements.Browse CategoriesFind Providers3Service Categories3Expert Providers2584Available Services4.7Avg RatingCategoriesProvidersAnalyticsAll CategoriesTechnology DevelopmentDesign & CreativeBusiness & ConsultingService CategoriesView All Services💻FeaturedTechnology DevelopmentComprehensive technology development services including web development, mobile apps, AI/ML, and blockchain solutions.Providers:590Services:1247Avg Rating:⭐ 4.7Avg Price:$100.00/hrSubcategories:Web DevelopmentMobile DevelopmentAI & Machine LearningRequirements:Technical expertisePortfolio reviewView DetailsBrowse Providers🎨FeaturedDesign & CreativeProfessional design services including UI/UX, graphic design, branding, and creative content.Providers:501Services:892Avg Rating:⭐ 4.6Avg Price:$77.00/hrSubcategories:UI/UX DesignGraphic DesignVideo & AnimationRequirements:Portfolio reviewDesign samplesView DetailsBrowse Providers📊Business & ConsultingStrategic business consulting, market research, and business development services.Providers:279Services:445Avg Rating:⭐ 4.7Avg Price:$123.00/hrSubcategories:Strategy ConsultingMarketing ConsultingFinancial ConsultingRequirements:Business experienceClient referencesView DetailsBrowse ProvidersFind Your Perfect Service MatchExplore specialized categories and connect with expert providers. From technology development to creative design, we have the right expertise for your project.Browse CategoriesFind ProvidersZion MarketplaceThe first free AI-powered marketplace for high-tech products, services, and innovation.Service CategoriesBrowse CategoriesProject ManagementPricing & CommissionsReferral SystemSupportContact UsLive ChatNotificationsLegal SupportConnectAbout UsBlogSign UpLogin© 2024 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/service-categories\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionMarketplaceProjectsLoginService Categories & SpecializationDiscover specialized services across diverse categories. Find expert providers, explore detailed subcategories, and access category-specific features and requirements.Browse CategoriesFind Providers3Service Categories3Expert Providers2584Available Services4.7Avg RatingCategoriesProvidersAnalyticsAll CategoriesTechnology DevelopmentDesign & CreativeBusiness & ConsultingService CategoriesView All Services💻FeaturedTechnology DevelopmentComprehensive technology development services including web development, mobile apps, AI/ML, and blockchain solutions.Providers:590Services:1247Avg Rating:⭐ 4.7Avg Price:$100.00/hrSubcategories:Web DevelopmentMobile DevelopmentAI & Machine LearningRequirements:Technical expertisePortfolio reviewView DetailsBrowse Providers🎨FeaturedDesign & CreativeProfessional design services including UI/UX, graphic design, branding, and creative content.Providers:501Services:892Avg Rating:⭐ 4.6Avg Price:$77.00/hrSubcategories:UI/UX DesignGraphic DesignVideo & AnimationRequirements:Portfolio reviewDesign samplesView DetailsBrowse Providers📊Business & ConsultingStrategic business consulting, market research, and business development services.Providers:279Services:445Avg Rating:⭐ 4.7Avg Price:$123.00/hrSubcategories:Strategy ConsultingMarketing ConsultingFinancial ConsultingRequirements:Business experienceClient referencesView DetailsBrowse ProvidersFind Your Perfect Service MatchExplore specialized categories and connect with expert providers. From technology development to creative design, we have the right expertise for your project.Browse CategoriesFind ProvidersZion MarketplaceThe first free AI-powered marketplace for high-tech products, services, and innovation.Service CategoriesBrowse CategoriesProject ManagementPricing & CommissionsReferral SystemSupportContact UsLive ChatNotificationsLegal SupportConnectAbout UsBlogSign UpLogin© 2024 Zion Tech Group. All rights reserved.{\"props\":{\"pageProps\":{}},\"page\":\"/service-categories\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -80,11 +80,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -112,7 +112,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-0d1b622b3549b83c.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
         "type": "text/javascript"
       },
       {
@@ -122,7 +122,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]
