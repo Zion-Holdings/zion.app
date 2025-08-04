@@ -37,7 +37,7 @@ const DatabaseAdministrationChatPage: NextPage = () => {
                 Expert discussion about database administration services and opportunities
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>collaborative-team • technology-deep-dive • innovation-spotlight</span>
+                <span>professional-technical • future-predictions • expert-advice</span>
               </div>
             </div>
           </div>
