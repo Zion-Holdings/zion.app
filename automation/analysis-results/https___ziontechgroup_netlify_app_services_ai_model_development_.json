@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/services/ai-model-development/",
-  "timestamp": "2025-08-04T16:06:03.163Z",
+  "timestamp": "2025-08-04T16:07:45.674Z",
   "pageInfo": {
     "title": "AI Model Development - Zion Tech Group",
     "description": "Professional ai model development services from Zion Tech Group. Expert solutions for your business needs.",
@@ -80,10 +80,6 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
         "type": "text/javascript"
       },
@@ -96,7 +92,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-1354445288fae5cd.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
         "type": "text/javascript"
       },
       {
@@ -105,6 +101,10 @@
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/contact-f6764772b2c11b1e.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-1354445288fae5cd.js",
         "type": "text/javascript"
       },
       {

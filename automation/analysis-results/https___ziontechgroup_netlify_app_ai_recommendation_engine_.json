@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-recommendation-engine/",
-  "timestamp": "2025-08-04T16:06:16.560Z",
+  "timestamp": "2025-08-04T16:07:58.096Z",
   "pageInfo": {
     "title": "AI Recommendation Engine - Zion",
     "description": "Intelligent AI-powered recommendation engine that matches you with the perfect services, talents, and equipment based on your specific needs and preferences.",
@@ -76,10 +76,6 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
         "type": "text/javascript"
       },
@@ -89,6 +85,10 @@
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
         "type": "text/javascript"
       },
       {

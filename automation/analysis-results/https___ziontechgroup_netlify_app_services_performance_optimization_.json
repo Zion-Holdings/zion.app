@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/services/performance-optimization/",
-  "timestamp": "2025-08-04T16:06:07.557Z",
+  "timestamp": "2025-08-04T16:07:49.805Z",
   "pageInfo": {
     "title": "Performance Optimization - Zion Tech Group",
     "description": "Professional performance optimization services from Zion Tech Group. Expert solutions for your business needs.",
@@ -76,11 +76,15 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/contact-f6764772b2c11b1e.js",
         "type": "text/javascript"
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/about-eb5b18337a95c673.js",
         "type": "text/javascript"
       },
       {
@@ -96,15 +100,11 @@
         "type": "text/javascript"
       },
       {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
+        "type": "text/javascript"
+      },
+      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-1354445288fae5cd.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/about-eb5b18337a95c673.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/contact-f6764772b2c11b1e.js",
         "type": "text/javascript"
       },
       {

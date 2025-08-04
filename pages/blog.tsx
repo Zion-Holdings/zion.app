@@ -8,7 +8,7 @@ const Https___ziontechgroup_netlify_app_blogPage: NextPage = () => {
       <Head>
         <title>Blog - Zion Tech Group</title>
         <meta name="description" content="Latest insights and industry news" />
-        <meta name="keywords" content="https://ziontechgroup.netlify.app/blog/, Zion, AI marketplace" />
+        <meta name="keywords" content="https://ziontechgroup.netlify.app/blog, Zion, AI marketplace" />
       </Head>
 
       {/* Navigation */}
