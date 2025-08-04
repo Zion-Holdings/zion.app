@@ -271,6 +271,24 @@ const Home: NextPage = () => {
               secondaryCtaLink: '/ai-powered-facility-management',
               bgClass: 'bg-gradient-to-br from-teal-900 via-cyan-900 to-blue-900'
             },
+            {
+              id: 16,
+              type: 'ai-change-management',
+              title: 'AI Change Management System',
+              subtitle: 'Intelligent Organizational Change & Transformation',
+              description: 'Streamline organizational changes with AI-powered stakeholder analysis, training programs, and change analytics.',
+              features: [
+                'Stakeholder Analysis',
+                'Training Program Management',
+                'Change Readiness Assessment',
+                'Automated Change Insights'
+              ],
+              cta: 'Manage Change',
+              ctaLink: '/ai-powered-change-management',
+              secondaryCta: 'Learn More',
+              secondaryCtaLink: '/ai-powered-change-management',
+              bgClass: 'bg-gradient-to-br from-purple-900 via-violet-900 to-indigo-900'
+            },
     {
       id: 7,
       type: 'chat-services',
