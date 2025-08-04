@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/dispute-resolution/",
-  "timestamp": "2025-08-04T16:08:30.661Z",
+  "timestamp": "2025-08-04T16:17:32.783Z",
   "pageInfo": {
     "title": "Dispute Resolution Center - Zion Marketplace",
     "description": "Comprehensive dispute resolution center for marketplace conflicts. Professional mediation, arbitration, and fair resolution services.",
@@ -90,34 +90,6 @@
       {
         "src": "",
         "type": "application/json"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/escrow-services-717a7c35a6181e00.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/1991-f9550ced9b636618.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
-        "type": "text/javascript"
       }
     ],
     "stylesheets": [
@@ -132,7 +104,7 @@
     "headingCount": 10,
     "imageCount": 0,
     "formCount": 0,
-    "scriptCount": 17,
+    "scriptCount": 10,
     "stylesheetCount": 1
   }
 }

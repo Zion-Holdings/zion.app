@@ -1,12 +1,25 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-automation/",
-  "timestamp": "2025-08-04T16:08:50.132Z",
+  "timestamp": "2025-08-04T16:21:00.280Z",
   "pageInfo": {
-    "title": "",
-    "description": "",
-    "keywords": "",
-    "headings": [],
-    "content": "Loading AI-Powered Automation...{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-automation\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "title": "AI-Powered Automation - Zion",
+    "description": "Intelligent workflow automation with AI-driven process optimization, automated decision making, and intelligent task management",
+    "keywords": "AI automation, workflow automation, process optimization, intelligent automation, Zion",
+    "headings": [
+      {
+        "level": "h1",
+        "text": "Zion"
+      },
+      {
+        "level": "h1",
+        "text": "AI-Powered Automation"
+      },
+      {
+        "level": "h2",
+        "text": "Automate Your Workflows with AI"
+      }
+    ],
+    "content": "ZionAnalyticsNotificationsProjectsLoginAI-Powered AutomationIntelligent workflow automation with AI-driven process optimization, automated decision making, and intelligent task management for enhanced efficiency.📊Overview⚙️Workflows🤖AI Tasks📋Templates📈Analytics24Total Workflows1127Total Executions97.3%Success Rate$45,230Cost SavingsAutomate Your Workflows with AILeverage intelligent automation to streamline processes, reduce manual work, and enhance efficiency with AI-powered workflow optimization.Create WorkflowView Projects{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-automation\",\"query\":{},\"buildId\":\"WBEk7_QgDpSqxmpoiDIX-\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -15,19 +28,19 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-cefddfb7403e4fd5.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-16ca7aacbf7ee910.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-6c8598519c693321.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-d0f0817f61dd4c28.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-ccd59d5a878b2566.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-8f26d4b2fecd2188.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-8d2391de9e862b04.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-0a2a032a1205008f.js",
         "type": "text/javascript"
       },
       {
@@ -35,15 +48,15 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-automation-162ca3e02f4e32fe.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-automation-e0f0a440f58f396c.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/WBEk7_QgDpSqxmpoiDIX-/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/WBEk7_QgDpSqxmpoiDIX-/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -53,14 +66,14 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
         "media": "all"
       }
     ]
   },
   "analytics": {
-    "contentLength": 208,
-    "headingCount": 0,
+    "contentLength": 711,
+    "headingCount": 3,
     "imageCount": 0,
     "formCount": 0,
     "scriptCount": 10,

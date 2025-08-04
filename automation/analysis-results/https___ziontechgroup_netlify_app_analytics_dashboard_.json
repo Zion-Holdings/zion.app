@@ -1,12 +1,29 @@
 {
   "url": "https://ziontechgroup.netlify.app/analytics-dashboard/",
-  "timestamp": "2025-08-04T16:08:21.544Z",
+  "timestamp": "2025-08-04T16:17:02.062Z",
   "pageInfo": {
-    "title": "",
-    "description": "",
-    "keywords": "",
-    "headings": [],
-    "content": "Loading Analytics...{\"props\":{\"pageProps\":{}},\"page\":\"/analytics-dashboard\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "title": "Analytics Dashboard - Zion Marketplace",
+    "description": "Comprehensive analytics dashboard for marketplace performance, revenue tracking, and business intelligence",
+    "keywords": "analytics, dashboard, marketplace analytics, business intelligence, Zion",
+    "headings": [
+      {
+        "level": "h1",
+        "text": "Zion"
+      },
+      {
+        "level": "h1",
+        "text": "Analytics Dashboard"
+      },
+      {
+        "level": "h3",
+        "text": "Revenue Trend"
+      },
+      {
+        "level": "h2",
+        "text": "Get Deeper Insights"
+      }
+    ],
+    "content": "ZionMarketplaceReviewsPaymentsLoginAnalytics DashboardComprehensive insights into your marketplace performance, revenue tracking, and business intelligence.7 Days30 Days90 Days1 Year📊Overview💰Revenue📈Performance👥User Behavior🔍Market InsightsTotal Revenue$284,750↗ 15.4%💰Total Orders1,247+12.5% from last period📦Active Users8,920+8.3% from last period👥Avg Order Value$229+5.2% from last period📊Conversion Rate3.2%+0.8% from last period🎯Growth Rate15.4%+2.1% from last period📈Revenue Trend01-0101-0201-0301-0401-0501-0601-07Get Deeper InsightsAccess advanced analytics, custom reports, and real-time monitoring to optimize your marketplace performance.Explore MarketplaceAdvanced Search{\"props\":{\"pageProps\":{}},\"page\":\"/analytics-dashboard\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -59,8 +76,8 @@
     ]
   },
   "analytics": {
-    "contentLength": 194,
-    "headingCount": 0,
+    "contentLength": 869,
+    "headingCount": 4,
     "imageCount": 0,
     "formCount": 0,
     "scriptCount": 10,

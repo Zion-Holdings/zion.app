@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/investor-matchmaking/",
-  "timestamp": "2025-08-04T16:14:29.369Z",
+  "timestamp": "2025-08-04T16:16:05.571Z",
   "pageInfo": {
     "title": "Investor Matchmaking - Zion",
     "description": "Connect with the right investors for your startup using AI-powered matchmaking",
@@ -111,10 +111,6 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
         "type": "text/javascript"
       },
@@ -124,6 +120,10 @@
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
         "type": "text/javascript"
       },
       {

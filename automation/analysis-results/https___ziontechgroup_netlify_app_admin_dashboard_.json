@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/admin-dashboard/",
-  "timestamp": "2025-08-04T16:08:48.987Z",
+  "timestamp": "2025-08-04T16:20:37.697Z",
   "pageInfo": {
     "title": "Login - Zion",
     "description": "Login to your Zion account to access the AI-powered marketplace.",
@@ -67,7 +67,7 @@
         "text": "Account"
       }
     ],
-    "content": "ZionMarketplaceServicesTalentsEquipmentProductsBlogAboutContactInboxExecutiveAnalyticsProjectsAI MatcherSupportEscrowProtectionPaymentsBillingDisputesComplianceLoginSign UpWelcome Back to ZionLogin to access your account and explore our AI-powered marketplace.Email AddressPasswordLoginForgot your password?Don't have an account? Sign upZionThe First Free AI-Powered Marketplace connecting businesses with cutting-edge technology solutions, talent, and equipment.About UsContactSitemapMarketplaceMain MarketplaceIT ServicesAI TalentsEquipmentProductsService CategoriesTalent DirectoryAI Service MatcherAI ServicesAI AnalyticsAI AutomationData AnalyticsCybersecurityEducation & TrainingLegal & ContractsCustomer SupportIdentity VerificationBusiness ToolsExecutive DashboardAnalytics DashboardProject ManagementAI Project ManagementWebhook ManagementWorkflow DesignerData Warehouse ETLHelp Desk SupportSecurity & PaymentsEscrow ServicesWarranty ProtectionPayment ProcessingInvoice & BillingDispute ResolutionCompliance & GovernanceSkill VerificationMarketplace PricingCommunicationInboxReal-time ChatNotificationsAdvanced SearchReferral SystemAI TestingMulti-languageImmersive & VRImmersive MarketplaceMixed RealityAugmented RealityTeam CollaborationTransportationAutonomous VehiclesDrone DeliverySupply ChainPricing EstimationLegal & ContractsContract GeneratorInvoice GeneratorBiometric AuthQuantum CryptographySpecialized AIQuantum ComputingQuantum MLQuantum TeleportationSpace ExplorationUnderwater ExplorationClimate ChangePrecision AgricultureHealthcareIndustry SolutionsEnergy ManagementManufacturingFinance & BankingRetail & E-commerceEntertainment & GamingSocial MediaSmart InfrastructureResourcesBlogPrivacy PolicyTerms of ServiceAccessibilityInvestor MatchmakingAccountLoginSign UpForgot PasswordUser ProfilesReview System© 2024 Zion. All rights reserved. | The First Free AI-Powered MarketplaceSitemapAccessibilityBack to Top{\"props\":{\"pageProps\":{}},\"page\":\"/admin-dashboard\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}Login - Zion",
+    "content": "ZionMarketplaceServicesTalentsEquipmentProductsBlogAboutContactInboxExecutiveAnalyticsProjectsAI MatcherSupportEscrowProtectionPaymentsBillingDisputesComplianceLoginSign UpWelcome Back to ZionLogin to access your account and explore our AI-powered marketplace.Email AddressPasswordLoginForgot your password?Don't have an account? Sign upZionThe First Free AI-Powered Marketplace connecting businesses with cutting-edge technology solutions, talent, and equipment.About UsContactSitemapMarketplaceMain MarketplaceIT ServicesAI TalentsEquipmentProductsService CategoriesTalent DirectoryAI Service MatcherAI ServicesAI AnalyticsAI AutomationData AnalyticsCybersecurityEducation & TrainingLegal & ContractsCustomer SupportIdentity VerificationBusiness ToolsExecutive DashboardAnalytics DashboardProject ManagementAI Project ManagementWebhook ManagementWorkflow DesignerData Warehouse ETLHelp Desk SupportSecurity & PaymentsEscrow ServicesWarranty ProtectionPayment ProcessingInvoice & BillingDispute ResolutionCompliance & GovernanceSkill VerificationMarketplace PricingCommunicationInboxReal-time ChatNotificationsAdvanced SearchReferral SystemAI TestingMulti-languageImmersive & VRImmersive MarketplaceMixed RealityAugmented RealityTeam CollaborationTransportationAutonomous VehiclesDrone DeliverySupply ChainPricing EstimationLegal & ContractsContract GeneratorInvoice GeneratorBiometric AuthQuantum CryptographySpecialized AIQuantum ComputingQuantum MLQuantum TeleportationSpace ExplorationUnderwater ExplorationClimate ChangePrecision AgricultureHealthcareIndustry SolutionsEnergy ManagementManufacturingFinance & BankingRetail & E-commerceEntertainment & GamingSocial MediaSmart InfrastructureResourcesBlogPrivacy PolicyTerms of ServiceAccessibilityInvestor MatchmakingAccountLoginSign UpForgot PasswordUser ProfilesReview System© 2024 Zion. All rights reserved. | The First Free AI-Powered MarketplaceSitemapAccessibilityBack to Top{\"props\":{\"pageProps\":{}},\"page\":\"/admin-dashboard\",\"query\":{},\"buildId\":\"WBEk7_QgDpSqxmpoiDIX-\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}Login - Zion",
     "images": [],
     "forms": [
       {
@@ -93,31 +93,31 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-cefddfb7403e4fd5.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-16ca7aacbf7ee910.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-6c8598519c693321.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-d0f0817f61dd4c28.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-ccd59d5a878b2566.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-8f26d4b2fecd2188.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-8d2391de9e862b04.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-0a2a032a1205008f.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/admin-dashboard-9688a1af0f8bf395.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/admin-dashboard-f566fde973b6073b.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/WBEk7_QgDpSqxmpoiDIX-/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/WBEk7_QgDpSqxmpoiDIX-/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -129,37 +129,21 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/35718-b74b0b38da21951b.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/1991-f9550ced9b636618.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/91991-dc31c076fc703b3c.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-1354445288fae5cd.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/forgot-password-63fc0d2ffec7440e.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-afe620139db3a600.js",
         "type": "text/javascript"
       }
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
         "media": "all"
       }
     ]
@@ -169,7 +153,7 @@
     "headingCount": 15,
     "imageCount": 0,
     "formCount": 1,
-    "scriptCount": 17,
+    "scriptCount": 13,
     "stylesheetCount": 1
   }
 }

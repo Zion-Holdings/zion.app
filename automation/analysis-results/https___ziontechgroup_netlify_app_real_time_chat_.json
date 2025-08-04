@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/real-time-chat/",
-  "timestamp": "2025-08-04T16:08:11.956Z",
+  "timestamp": "2025-08-04T16:16:43.838Z",
   "pageInfo": {
     "title": "Real-Time Chat - Zion Marketplace",
     "description": "Connect with users, service providers, and AI assistants in real-time on Zion Marketplace",
@@ -84,11 +84,15 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
         "type": "text/javascript"
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/talents-80d6035db4291558.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/products-39197958017890b7.js",
         "type": "text/javascript"
       },
       {
@@ -104,11 +108,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/products-39197958017890b7.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
         "type": "text/javascript"
       },
       {

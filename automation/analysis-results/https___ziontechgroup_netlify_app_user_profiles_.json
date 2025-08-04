@@ -1,13 +1,66 @@
 {
   "url": "https://ziontechgroup.netlify.app/user-profiles/",
-  "timestamp": "2025-08-04T16:08:22.678Z",
+  "timestamp": "2025-08-04T16:17:04.306Z",
   "pageInfo": {
     "title": "",
     "description": "",
     "keywords": "",
-    "headings": [],
-    "content": "Loading Profiles...{\"props\":{\"pageProps\":{}},\"page\":\"/user-profiles\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
-    "images": [],
+    "headings": [
+      {
+        "level": "h1",
+        "text": "Zion"
+      },
+      {
+        "level": "h1",
+        "text": "User Profiles"
+      },
+      {
+        "level": "h3",
+        "text": "Dr. Sarah Chen"
+      },
+      {
+        "level": "h4",
+        "text": "Skills"
+      },
+      {
+        "level": "h3",
+        "text": "Alex Rodriguez"
+      },
+      {
+        "level": "h4",
+        "text": "Skills"
+      },
+      {
+        "level": "h3",
+        "text": "Emma Thompson"
+      },
+      {
+        "level": "h4",
+        "text": "Skills"
+      },
+      {
+        "level": "h2",
+        "text": "Create Your Profile"
+      }
+    ],
+    "content": "ZionMarketplaceAnalyticsReviewsLoginUser ProfilesDiscover talented professionals, service providers, and experts. View detailed profiles with skills, experience, portfolio, and social connections.All TypesService ProvidersTalentsBuyersSort by RatingSort by ExperienceSort by RecentSort by NameDr. Sarah Chen@sarah-chen(127)Talent🟢availableSenior AI Engineer with 8+ years of experience in machine learning and deep learning. Specialized in computer vision, natural language processing, and AI model development.SkillsPythonTensorFlowPyTorchComputer VisionNLP+2 more8+Years2Projects2Certs📍San Francisco, CA$150/hrView ProfileContactAlex Rodriguez@alex-rodriguez(89)Service Provider🟢availableBlockchain Architect and DeFi expert with 6+ years of experience. Specialized in smart contract development, DeFi protocols, and blockchain infrastructure.SkillsSolidityEthereumDeFiSmart ContractsWeb3+2 more6+Years1Projects1Certs📍Miami, FL$120/hrView ProfileContactEmma Thompson@emma-thompson(156)Talent🟡busyData Scientist and Analytics Expert with 5+ years of experience. Specialized in big data analytics, predictive modeling, and business intelligence.SkillsPythonRSQLMachine LearningData Visualization+2 more5+Years1Projects1Certs📍Denver, CO$100/hrView ProfileContactCreate Your ProfileShowcase your skills, experience, and portfolio to connect with clients and opportunities.Create ProfileExplore Marketplace{\"props\":{\"pageProps\":{}},\"page\":\"/user-profiles\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "images": [
+      {
+        "src": "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+        "alt": "Dr. Sarah Chen",
+        "title": ""
+      },
+      {
+        "src": "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex",
+        "alt": "Alex Rodriguez",
+        "title": ""
+      },
+      {
+        "src": "https://api.dicebear.com/7.x/avataaars/svg?seed=Emma",
+        "alt": "Emma Thompson",
+        "title": ""
+      }
+    ],
     "forms": [],
     "scripts": [
       {
@@ -59,9 +112,9 @@
     ]
   },
   "analytics": {
-    "contentLength": 187,
-    "headingCount": 0,
-    "imageCount": 0,
+    "contentLength": 1577,
+    "headingCount": 9,
+    "imageCount": 3,
     "formCount": 0,
     "scriptCount": 10,
     "stylesheetCount": 1

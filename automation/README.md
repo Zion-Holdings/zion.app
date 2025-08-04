@@ -1,375 +1,148 @@
-# Autonomous Agents Automation System
+# Autonomous Agent System
 
-A comprehensive autonomous AI agent system with real-time monitoring, self-improvement capabilities, and intelligent orchestration for continuous deep searches and project automation.
+A comprehensive autonomous agent system that continuously researches, creates, and sells intelligent solutions in the marketplace.
 
-## 🚀 Features
+## Features
 
-### Core Components
+- **Market Research Agent**: Continuously researches AI trends and market opportunities
+- **Solution Creator Agent**: Generates intelligent solutions based on market research
+- **Sales Agent**: Creates and manages sales campaigns for solutions
+- **Agent Creator**: Continuously creates new specialized agents
+- **Master Orchestrator**: Coordinates all agents and manages the complete workflow
+- **Monitoring**: Real-time system monitoring and performance tracking
 
-- **Enhanced Autonomous System**: Central management system for all agents
-- **Agent Factory**: Dynamic creation and deployment of AI agents
-- **Agent Orchestrator**: Intelligent task distribution and workload balancing
-- **Enhanced Cron System**: Automated scheduling and monitoring
-- **Continuous Monitor**: Real-time system monitoring and auto-recovery
+## Quick Start
 
-### Agent Types
-
-1. **Deep Search Agent** - Web scraping, data analysis, pattern recognition
-2. **Content Generation Agent** - AI writing, SEO optimization, content planning
-3. **Marketing Automation Agent** - Campaign management, email automation
-4. **Sales Intelligence Agent** - Lead scoring, CRM integration, analytics
-5. **Analytics Agent** - Data collection, performance tracking, KPI monitoring
-6. **Web Research Agent** - Web scraping, market research, competitive analysis
-7. **Social Media Manager Agent** - Content scheduling, engagement monitoring
-8. **SEO Optimizer Agent** - Keyword research, on-page optimization
-9. **Customer Support Agent** - Ticket management, auto-responses
-10. **Data Processor Agent** - Data cleaning, ETL processes, reports
-11. **Quality Assurance Agent** - Content review, error detection
-12. **Orchestrator Agent** - Task distribution, workload balancing
-13. **Monitor Agent** - System monitoring, health checks
-
-## 🛠️ Installation
-
-### Prerequisites
-
-- Node.js 16+
-- Git
-
-### Setup
-
-1. **Navigate to automation directory**
+1. **Setup the system**:
    ```bash
-   cd automation
+   ./setup-autonomous-system.sh
    ```
 
-2. **Install dependencies**
+2. **Start the system**:
    ```bash
-   npm install
+   ./start-autonomous-system.sh
    ```
 
-3. **Start the system**
+3. **Check status**:
    ```bash
-   npm start
+   ./status-autonomous-system.sh
    ```
 
-## 📊 System Management
-
-### Starting the System
-
-```bash
-# Start the enhanced autonomous system
-npm start
-
-# Start in development mode with auto-restart
-npm run dev
-
-# Check system status
-npm run status
-```
-
-### Monitoring and Control
-
-```bash
-# Check system status
-node check-autonomous-status.js
-
-# Restart the system
-node restart-autonomous-system.js restart
-
-# Health check and restart if needed
-node restart-autonomous-system.js health-check
-
-# Start continuous monitoring
-node continuous-monitor.js start
-
-# Stop continuous monitoring
-node continuous-monitor.js stop
-
-# View monitoring stats
-node continuous-monitor.js stats
-```
-
-## 🤖 Agent Management
-
-### Creating Agents
-
-```javascript
-const AgentFactory = require('./autonomous-agent-factory');
-const factory = new AgentFactory();
-
-// Create a deep search agent
-const agentId = await factory.createAgent('deep-search', {
-  name: 'Custom Deep Search Agent',
-  capabilities: ['web-scraping', 'data-analysis'],
-  config: {
-    maxConcurrentSearches: 5,
-    searchDepth: 3
-  }
-});
-
-// Start the agent
-await factory.startAgent(agentId);
-```
-
-### Available Agent Types
-
-- `deep-search` - Web scraping and data analysis
-- `content-generation` - AI content creation
-- `marketing-automation` - Marketing campaign management
-- `sales-intelligence` - Sales analytics and CRM
-- `analytics-agent` - Data analysis and reporting
-- `web-research` - Web research and scraping
-- `social-media-manager` - Social media management
-- `seo-optimizer` - SEO optimization
-- `customer-support` - Customer support automation
-- `data-processor` - Data processing and ETL
-- `quality-assurance` - Quality control and testing
-- `orchestrator` - Task orchestration
-- `monitor` - System monitoring
-
-## ⏰ Scheduled Tasks
-
-### Default Scheduled Tasks
-
-The system automatically creates the following scheduled tasks:
-
-1. **Deep Search - Market Research** (Every 6 hours)
-2. **Content Generation - Blog Posts** (Daily at 9 AM)
-3. **Data Analysis - Performance Review** (Daily at 2 AM)
-4. **Web Research - Competitive Analysis** (Every 12 hours)
-5. **SEO Optimization - Keyword Research** (Weekly on Monday)
-6. **Social Media - Content Scheduling** (Every 4 hours)
-7. **System Health Check** (Every 15 minutes)
-8. **Data Backup** (Daily at 1 AM)
-9. **Quality Assurance - Content Review** (Daily at 10 AM)
-10. **Performance Optimization** (Daily at 3 AM)
-
-### Creating Custom Scheduled Tasks
-
-```javascript
-const EnhancedCronSystem = require('./enhanced-cron-system');
-
-const cronSystem = new EnhancedCronSystem(orchestrator);
-
-// Schedule a custom task
-const jobId = cronSystem.scheduleJob({
-  name: 'Custom Task',
-  schedule: '0 */2 * * *', // Every 2 hours
-  task: {
-    type: 'deep-search',
-    data: {
-      query: 'custom search query',
-      depth: 2
-    }
-  },
-  enabled: true,
-  priority: 'high'
-});
-```
-
-## 📈 Monitoring and Analytics
-
-### System Metrics
-
-- **Total Agents**: Number of agents in the system
-- **Active Agents**: Currently running agents
-- **System Health**: Overall system status
-- **Task Completion Rate**: Success rate of task execution
-- **Average Response Time**: Mean response time across all agents
-- **Error Rate**: Percentage of failed operations
-- **System Efficiency**: System utilization percentage
-
-### Performance Tracking
-
-- Real-time performance monitoring
-- Automatic error detection and recovery
-- Load balancing across agents
-- Auto-scaling based on workload
-- Performance optimization
-
-## 🔧 Configuration
-
-### System Configuration
-
-Edit configuration in the respective files:
-
-- `autonomous-agent-factory.js` - Agent factory settings
-- `agent-orchestrator.js` - Orchestration settings
-- `enhanced-cron-system.js` - Cron system settings
-- `continuous-monitor.js` - Monitoring settings
-
-### Environment Variables
-
-```bash
-# Agent configuration
-AGENT_ID=agent-uuid
-AGENT_TYPE=agent-type
-AGENT_CONFIG={"key":"value"}
-
-# System configuration
-NODE_ENV=production
-LOG_LEVEL=info
-```
-
-## 🛡️ Security and Access Control
-
-### Authentication
-
-- Agent isolation and secure execution
-- Protected API endpoints
-- Encrypted data storage
-- Secure communication between components
-
-### Access Levels
-
-- **Admin**: Full system access
-- **Agent**: Limited to agent operations
-- **Monitor**: Read-only access for monitoring
-
-## 📝 API Endpoints
-
-### Agent Management
-
-- `GET /api/admin/agents` - List all agents
-- `POST /api/admin/agents` - Create new agent
-- `PUT /api/admin/agents` - Update agent
-- `DELETE /api/admin/agents` - Delete agent
-
-### System Metrics
-
-- `GET /api/admin/metrics` - Get system metrics
-- `POST /api/admin/metrics` - Update metrics
-
-### Monitoring
-
-- `GET /api/admin/status` - System status
-- `GET /api/admin/logs` - System logs
-- `POST /api/admin/restart` - Restart system
-
-## 🔄 Automation Features
-
-### Continuous Operation
-
-- 24/7 autonomous operation
-- Automatic error recovery
-- Self-healing capabilities
-- Performance optimization
-- Load balancing
-
-### Intelligent Orchestration
-
-- Smart task distribution
-- Workload balancing
-- Error recovery
-- Auto-scaling
-- Performance optimization
-
-## 🚨 Troubleshooting
-
-### Common Issues
-
-1. **Agent not starting**
+4. **Stop the system**:
    ```bash
-   node check-autonomous-status.js
-   node restart-autonomous-system.js health-check
+   ./stop-autonomous-system.sh
    ```
 
-2. **System performance issues**
+## Scripts
+
+- `setup-autonomous-system.sh` - Initial setup and installation
+- `start-autonomous-system.sh` - Start the autonomous system
+- `stop-autonomous-system.sh` - Stop the autonomous system
+- `status-autonomous-system.sh` - Check system status
+- `backup-autonomous-system.sh` - Create system backup
+- `restore-autonomous-system.sh` - Restore from backup
+- `setup-cron-jobs.sh` - Setup cron jobs for automation
+- `uninstall-autonomous-system.sh` - Uninstall the system
+
+## Agents
+
+### Market Research Agent
+- Researches AI trends and market opportunities
+- Runs every 6 hours
+- Outputs market insights and trends
+
+### Solution Creator Agent
+- Creates intelligent solutions based on research
+- Runs every 12 hours
+- Generates solution specifications and pricing
+
+### Sales Agent
+- Creates sales campaigns for solutions
+- Runs every 8 hours
+- Manages marketing content and campaigns
+
+### Agent Creator
+- Creates new specialized agents
+- Runs weekly
+- Identifies gaps and creates new agents
+
+### Master Orchestrator
+- Coordinates all agents
+- Runs every 4 hours
+- Manages complete workflow
+
+## Monitoring
+
+The system includes comprehensive monitoring:
+- System performance metrics
+- Agent performance tracking
+- Solution performance analysis
+- Sales campaign metrics
+
+## Configuration
+
+Edit `config.json` to customize:
+- Agent schedules
+- Timeouts
+- Deployment settings
+- Monitoring preferences
+
+## Logs
+
+All system activity is logged in the `logs/` directory:
+- `master-orchestrator.log` - Master orchestrator logs
+- `monitor.log` - Monitoring logs
+- `market-research.log` - Market research logs
+- `solution-creation.log` - Solution creation logs
+- `sales-campaign.log` - Sales campaign logs
+- `agent-creation.log` - Agent creation logs
+
+## Backup and Restore
+
+Create backups:
+```bash
+./backup-autonomous-system.sh
+```
+
+Restore from backup:
+```bash
+./restore-autonomous-system.sh <backup-directory>
+```
+
+## Cron Jobs
+
+The system automatically sets up cron jobs for:
+- Market research (every 6 hours)
+- Solution creation (every 12 hours)
+- Sales campaigns (every 8 hours)
+- Agent creation (weekly)
+- Master orchestration (every 4 hours)
+- Monitoring (every 30 minutes)
+- Backup (daily at 2 AM)
+
+## Troubleshooting
+
+1. **Check system status**:
    ```bash
-   node continuous-monitor.js stats
+   ./status-autonomous-system.sh
    ```
 
-3. **Task failures**
+2. **View logs**:
    ```bash
-   # Check logs
-   tail -f logs/system_*.log
+   tail -f logs/master-orchestrator.log
    ```
 
-### Maintenance
+3. **Restart the system**:
+   ```bash
+   ./stop-autonomous-system.sh
+   ./start-autonomous-system.sh
+   ```
 
-```bash
-# Regular maintenance tasks
-node data-cleanup.js
-node log-rotation.js
-node optimize-performance.js
-node backup-system.js
-```
+4. **Check cron jobs**:
+   ```bash
+   crontab -l
+   ```
 
-## 📊 Reporting
+## Support
 
-### Available Reports
-
-- System Performance Report
-- Agent Performance Report
-- Task Completion Report
-- Error Analysis Report
-- Workload Distribution Report
-
-### Report Generation
-
-```bash
-# Generate comprehensive report
-node generate-reports.js
-
-# Generate specific report
-node generate-performance-report.js
-```
-
-## 🚀 Deployment
-
-### Production Deployment
-
-```bash
-# Build and start
-npm run build
-npm start
-
-# Process management
-pm2 start ecosystem.config.js
-pm2 monit
-```
-
-### Docker Deployment
-
-```dockerfile
-FROM node:16-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npm run build
-EXPOSE 3000
-CMD ["npm", "start"]
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 🆘 Support
-
-For support and questions:
-- Create an issue in the repository
-- Contact the development team
-- Check the documentation
-
-## 🔮 Future Enhancements
-
-- Machine Learning Integration
-- Multi-language Support
-- Mobile App
-- Advanced Analytics
-- Cloud Integration
-- API Marketplace
-
----
-
-**Note**: This system is designed for continuous operation and self-improvement. Monitor the system regularly and adjust configurations as needed for optimal performance.
+For issues or questions, check the logs in the `logs/` directory or run the status script for system information.

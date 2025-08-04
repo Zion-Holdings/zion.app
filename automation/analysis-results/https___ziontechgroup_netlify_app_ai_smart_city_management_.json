@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-smart-city-management/",
-  "timestamp": "2025-08-04T16:14:33.880Z",
+  "timestamp": "2025-08-04T16:16:10.459Z",
   "pageInfo": {
     "title": "AI Smart City Management - Zion",
     "description": "AI-powered smart city management, urban planning, and infrastructure optimization",
@@ -56,10 +56,6 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-autonomous-vehicle-transportation-8231280fa647ffb2.js",
         "type": "text/javascript"
       },
@@ -73,6 +69,10 @@
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
         "type": "text/javascript"
       },
       {

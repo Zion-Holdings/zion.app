@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/skill-verification/",
-  "timestamp": "2025-08-04T16:08:31.888Z",
+  "timestamp": "2025-08-04T16:17:38.699Z",
   "pageInfo": {
     "title": "Skill Verification & Certification - Zion Marketplace",
     "description": "Comprehensive skill verification and certification system for marketplace users. Validate expertise, earn certifications, and build credibility.",
@@ -96,10 +96,6 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
         "type": "text/javascript"
       },
@@ -109,6 +105,10 @@
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
         "type": "text/javascript"
       },
       {

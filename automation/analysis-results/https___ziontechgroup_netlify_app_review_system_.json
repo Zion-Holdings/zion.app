@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/review-system/",
-  "timestamp": "2025-08-04T16:08:20.301Z",
+  "timestamp": "2025-08-04T16:17:00.525Z",
   "pageInfo": {
     "title": "Review System - Zion Marketplace",
     "description": "Comprehensive review and rating system for marketplace services, talents, equipment, and products",
@@ -68,15 +68,7 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/advanced-search-ee617b38607f5f1a.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/payment-processing-101dce871299da16.js",
         "type": "text/javascript"
       },
       {
@@ -89,6 +81,14 @@
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/payment-processing-101dce871299da16.js",
         "type": "text/javascript"
       },
       {

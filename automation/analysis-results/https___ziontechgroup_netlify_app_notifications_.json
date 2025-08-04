@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/notifications/",
-  "timestamp": "2025-08-04T16:08:13.171Z",
+  "timestamp": "2025-08-04T16:16:46.780Z",
   "pageInfo": {
     "title": "Notifications - Zion Marketplace",
     "description": "Manage your notifications and stay updated with marketplace activities",
@@ -15,11 +15,51 @@
         "text": "Notifications"
       },
       {
+        "level": "h3",
+        "text": "New Service Available"
+      },
+      {
+        "level": "h3",
+        "text": "Talent Match Found"
+      },
+      {
+        "level": "h3",
+        "text": "Payment Successful"
+      },
+      {
+        "level": "h3",
+        "text": "Quote Request Accepted"
+      },
+      {
+        "level": "h3",
+        "text": "System Update"
+      },
+      {
+        "level": "h3",
+        "text": "New Equipment Available"
+      },
+      {
+        "level": "h3",
+        "text": "Service Provider Online"
+      },
+      {
+        "level": "h3",
+        "text": "New Talent Joined"
+      },
+      {
+        "level": "h3",
+        "text": "Payment Reminder"
+      },
+      {
+        "level": "h3",
+        "text": "Security Alert"
+      },
+      {
         "level": "h2",
         "text": "Stay Connected"
       }
     ],
-    "content": "ZionMarketplaceServicesTalentsProductsLive ChatLoginNotificationsStay updated with marketplace activities, service updates, and important announcements0Total0Unread0Read0MarketplaceAll NotificationsUnread OnlyRead OnlyAll TypesMarketplaceServiceTalentPaymentInfoWarningSuccessErrorMark all as read0 of 0 notificationsLoading notifications...Stay ConnectedNever miss important updates about services, talents, and marketplace activities.Explore MarketplaceStart Chatting{\"props\":{\"pageProps\":{}},\"page\":\"/notifications\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionMarketplaceServicesTalentsProductsLive ChatLoginNotificationsStay updated with marketplace activities, service updates, and important announcements10Total5Unread5Read2MarketplaceAll NotificationsUnread OnlyRead OnlyAll TypesMarketplaceServiceTalentPaymentInfoWarningSuccessErrorMark all as read10 of 10 notifications🤖New Service Available5m ago×AI Development service is now available in your area. This service includes custom AI model development, machine learning implementation, and data science consulting.MarketplaceNewView Service👨‍💻Talent Match Found15m ago×Dr. Sarah Chen matches your project requirements for quantum computing expertise. Review their profile and connect directly.TalentNewView Profile💰Payment Successful30m ago×Your payment of $2,500 for Cloud Migration Services has been processed successfully. You will receive a receipt via email.PaymentView Receipt📋Quote Request Accepted2h ago×Your quote request for Cloud Migration has been accepted by Alex Rodriguez. They will contact you within 24 hours.ServiceNewView Details🔔System Update4h ago×New features have been added to the marketplace including real-time chat, enhanced search, and improved AI matching.InfoLearn More⚙️New Equipment Available6h ago×High-performance GPU clusters are now available for AI training and machine learning workloads.MarketplaceNewView Equipment👨‍💼Service Provider Online8h ago×Emma Thompson is now available for blockchain development consultations and smart contract audits.ServiceChat Now🎯New Talent Joined12h ago×Dr. Michael Kim has joined the marketplace as a quantum computing expert with 10+ years of experience.TalentNewView Profile💳Payment Reminder1d ago×Your premium subscription will renew in 3 days. Update your payment method if needed.PaymentManage Billing🔒Security Alert2d ago×We detected a login attempt from a new device. If this was you, no action is needed.WarningReview ActivityStay ConnectedNever miss important updates about services, talents, and marketplace activities.Explore MarketplaceStart Chatting{\"props\":{\"pageProps\":{}},\"page\":\"/notifications\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -68,6 +108,26 @@
         "type": "application/json"
       },
       {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/real-time-chat-afbb004c2ac90580.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/products-39197958017890b7.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/talents-80d6035db4291558.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
+        "type": "text/javascript"
+      },
+      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
         "type": "text/javascript"
       },
@@ -80,27 +140,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/products-39197958017890b7.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/talents-80d6035db4291558.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/real-time-chat-afbb004c2ac90580.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/index-da444c2285b66824.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services/ai-model-development-746034831501b4a7.js",
         "type": "text/javascript"
       }
     ],
@@ -112,11 +156,11 @@
     ]
   },
   "analytics": {
-    "contentLength": 637,
-    "headingCount": 3,
+    "contentLength": 2215,
+    "headingCount": 13,
     "imageCount": 0,
     "formCount": 0,
-    "scriptCount": 20,
+    "scriptCount": 21,
     "stylesheetCount": 1
   }
 }

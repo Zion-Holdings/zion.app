@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/warranty-protection/",
-  "timestamp": "2025-08-04T16:08:27.927Z",
+  "timestamp": "2025-08-04T16:17:19.873Z",
   "pageInfo": {
     "title": "Warranty & Protection Services - Zion Marketplace",
     "description": "Comprehensive warranty and protection services for marketplace purchases. Extended coverage, claim processing, and peace of mind for every transaction.",
@@ -132,10 +132,6 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
         "type": "text/javascript"
       },
@@ -145,6 +141,10 @@
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
         "type": "text/javascript"
       },
       {
