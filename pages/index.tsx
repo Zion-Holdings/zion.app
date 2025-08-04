@@ -189,6 +189,23 @@ const Home: NextPage = () => {
     },
     {
       id: 11,
+      type: 'service-request-system',
+      title: 'AI-Powered Service Request System',
+      description: 'Submit detailed service requests and get AI-powered analysis, provider matching, and competitive quotes from top experts. Our intelligent system analyzes your requirements and connects you with the perfect service providers.',
+      cta: 'Submit Request',
+      ctaLink: '/service-request-system',
+      secondaryCta: 'Browse Requests',
+      secondaryCtaLink: '/service-request-system',
+      features: [
+        { icon: '🤖', title: 'AI Analysis', description: 'Intelligent analysis of project complexity and requirements' },
+        { icon: '🎯', title: 'Provider Matching', description: 'AI matches you with the best service providers' },
+        { icon: '💰', title: 'Competitive Quotes', description: 'Get multiple quotes from qualified experts' },
+        { icon: '⚡', title: 'Fast Processing', description: 'Quick analysis and provider matching in minutes' }
+      ],
+      bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-purple-900'
+    },
+    {
+      id: 12,
       type: 'investor-matchmaking',
       title: 'AI-Powered Investor Matchmaking',
       description: 'Connect with the perfect investors for your startup using our intelligent matching algorithm. Find investors based on industry, stage, and funding needs.',
@@ -2818,6 +2835,41 @@ const Home: NextPage = () => {
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {section.features.map((feature: any, index: number) => (
+                  <div key={index} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="text-4xl mb-4">{feature.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                    <p className="text-gray-300">{feature.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )
+
+      case 'service-request-system':
+        return (
+          <div className="py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  {section.title}
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                  {section.description}
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                  <Link href={section.ctaLink} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                    {section.cta}
+                  </Link>
+                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                    {section.secondaryCta}
+                  </Link>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {section.features.map((feature: any, index: number) => (
                   <div key={index} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
                     <div className="text-4xl mb-4">{feature.icon}</div>
