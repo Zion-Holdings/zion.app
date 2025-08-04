@@ -3,6 +3,7 @@ import '../styles/globals.css'
 import { ChatProvider } from '../src/contexts/ChatContext'
 import { AuthProvider } from '../src/contexts/AuthContext'
 import { HeaderProvider } from '../src/contexts/HeaderContext'
+import { NavigationProvider } from '../src/contexts/NavigationContext'
 import ChatAssistant from '../src/components/ChatAssistant'
 import { useChat } from '../src/contexts/ChatContext'
 import MessageChannelDebugger from '../components/MessageChannelDebugger'
@@ -21,15 +22,17 @@ export default function App({ Component, pageProps }: AppProps) {
     <MessageChannelErrorBoundary>
       <AuthProvider>
         <HeaderProvider>
-          <ChatProvider>
-            <div className="relative min-h-screen cyber-bg">
-              <ParticleEffect />
-              <Header />
-              <Component {...pageProps} />
-              <ChatWrapper />
-              <MessageChannelDebugger />
-            </div>
-          </ChatProvider>
+          <NavigationProvider>
+            <ChatProvider>
+              <div className="relative min-h-screen cyber-bg">
+                <ParticleEffect />
+                <Header />
+                <Component {...pageProps} />
+                <ChatWrapper />
+                <MessageChannelDebugger />
+              </div>
+            </ChatProvider>
+          </NavigationProvider>
         </HeaderProvider>
       </AuthProvider>
     </MessageChannelErrorBoundary>
