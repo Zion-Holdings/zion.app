@@ -16,7 +16,7 @@
   },
   "errors": [
     {
-      "timestamp": "2025-08-01T12:01:25.567Z",
+      "timestamp": "2025-08-04T19:08:08.586Z",
       "error": "emailCampaignAgent.execute is not a function",
       "phase": "launch"
     }
