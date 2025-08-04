@@ -37,7 +37,7 @@ const SystemAdministrationChatPage: NextPage = () => {
                 Expert discussion about system administration implementation and best practices
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>professional-technical • best-practices • trend-discussion</span>
+                <span>innovative-futuristic • future-predictions • step-by-step-guide</span>
               </div>
             </div>
           </div>

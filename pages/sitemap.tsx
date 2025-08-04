@@ -34,7 +34,8 @@ const Sitemap: NextPage = () => {
       { name: 'Identity Verification', href: '/ai-powered-identity-verification', description: 'Biometric authentication' },
       { name: 'AI Testing', href: '/ai-powered-testing', description: 'Automated testing solutions' },
       { name: 'AI HR Management', href: '/ai-powered-hr-management', description: 'Talent acquisition and employee management' },
-      { name: 'AI Vendor Management', href: '/ai-powered-vendor-management', description: 'Vendor relationship and performance management' }
+      { name: 'AI Vendor Management', href: '/ai-powered-vendor-management', description: 'Vendor relationship and performance management' },
+      { name: 'AI Facility Management', href: '/ai-powered-facility-management', description: 'Facility operations and maintenance management' }
     ],
     businessTools: [
       { name: 'Executive Dashboard', href: '/executive-dashboard', description: 'C-level executive insights' },
