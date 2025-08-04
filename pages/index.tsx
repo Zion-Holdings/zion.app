@@ -5806,75 +5806,8 @@ const Home: NextPage = () => {
         ))}
       </main>
 
-                                       {/* Footer */}
-       <footer className="bg-black/40 backdrop-blur-md border-t border-white/10 transition-all duration-500 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
-              </h3>
-              <p className="text-gray-400">
-                The first free AI-powered marketplace for high-tech products, on-demand IT services, AI talents, innovation, and equipment.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Marketplace</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
-                <li><Link href="/talents" className="hover:text-white transition-colors">Talents</Link></li>
-                <li><Link href="/equipment" className="hover:text-white transition-colors">Equipment</Link></li>
-                <li><Link href="/products" className="hover:text-white transition-colors">Products</Link></li>
-                <li><Link href="/marketplace" className="hover:text-white transition-colors">Marketplace</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Company</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
-                <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
-                <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
-                <li><Link href="/careers" className="hover:text-white transition-colors">Careers</Link></li>
-                <li><Link href="/help-center" className="hover:text-white transition-colors">Help Center</Link></li>
-                <li><Link href="/press" className="hover:text-white transition-colors">Press</Link></li>
-                <li><Link href="/partners" className="hover:text-white transition-colors">Partners</Link></li>
-                <li><Link href="/security" className="hover:text-white transition-colors">Security</Link></li>
-                <li><Link href="/quote-request" className="hover:text-white transition-colors">Request Quote</Link></li>
-                <li><Link href="/admin-dashboard" className="hover:text-white transition-colors">Admin</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Support</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/auth/login" className="hover:text-white transition-colors">Login</Link></li>
-                <li><Link href="/auth/signup" className="hover:text-white transition-colors">Sign Up</Link></li>
-                <li><Link href="/inbox" className="hover:text-white transition-colors">Inbox</Link></li>
-                <li><Link href="/webhook-management" className="hover:text-white transition-colors">Webhooks</Link></li>
-                <li><Link href="/executive-dashboard" className="hover:text-white transition-colors">Executive</Link></li>
-                <li><Link href="/compliance-governance" className="hover:text-white transition-colors">Compliance</Link></li>
-                <li><Link href="/workflow-designer" className="hover:text-white transition-colors">Workflows</Link></li>
-                <li><Link href="/data-warehouse-etl" className="hover:text-white transition-colors">Data Warehouse</Link></li>
-                <li><Link href="/help-desk-support" className="hover:text-white transition-colors">Help Desk</Link></li>
-                <li><Link href="/dashboard" className="hover:text-white transition-colors">Dashboard</Link></li>
-                <li><Link href="/analytics" className="hover:text-white transition-colors">Analytics</Link></li>
-                <li><Link href="/ai-virtual-assistant" className="hover:text-white transition-colors">AI Assistant</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Legal</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-                <li><Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link></li>
-                <li><Link href="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
-                <li><Link href="/sitemap" className="hover:text-white transition-colors">Sitemap</Link></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-white/10 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</p>
-          </div>
-        </div>
-      </footer>
+      {/* Footer */}
+      <Footer />
       
       {/* Notification System */}
       <NotificationSystem />
