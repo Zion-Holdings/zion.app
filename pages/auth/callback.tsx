@@ -2,16 +2,23 @@ import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { createClient } from '@supabase/supabase-js'
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-)
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co'
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key'
+
+const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 export default function AuthCallback() {
   const router = useRouter()
 
   useEffect(() => {
     const handleAuthCallback = async () => {
+      // Only proceed if we have valid environment variables
+      if (supabaseUrl === 'https://placeholder.supabase.co' || supabaseAnonKey === 'placeholder-key') {
+        console.warn('Supabase environment variables not configured')
+        router.push('/auth/login?error=configuration_missing')
+        return
+      }
+
       const { data, error } = await supabase.auth.getSession()
       
       if (error) {
