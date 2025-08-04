@@ -190,8 +190,8 @@ Format each suggestion as a JSON object with:
     // Try to parse JSON from response
     try {
       // Extract JSON array from response
-      const jsonMatchRaw = response?.match(/\[[\s\S]*\]/);
-      if (!jsonMatchRaw || !Array.isArray(jsonMatchRaw) || jsonMatchRaw.length === 0 || typeof jsonMatchRaw[0] !== 'string') {
+      const jsonMatchRaw = response?.match(/\[[\s\S]*\]/)
+      if (!jsonMatchRaw) {
         // If no JSON found, create a structured response
         const suggestions = [
           {
@@ -202,13 +202,26 @@ Format each suggestion as a JSON object with:
             action: 'Review suggestions',
             impact: 'Improved project management'
           }
-        ];
-        return res.status(200).json({ suggestions });
+        ]
+        return res.status(200).json({ suggestions })
       }
-      // At this point, jsonMatchRaw is a non-empty array of strings
-      const jsonString = jsonMatchRaw[0] as string;
-      const suggestions = JSON.parse(jsonString);
-      return res.status(200).json({ suggestions });
+      const arr = jsonMatchRaw as string[];
+      if (!Array.isArray(arr) || arr.length === 0 || typeof (arr[0] as string) !== 'string') {
+        const suggestions = [
+          {
+            type: 'general',
+            title: 'AI Analysis Complete',
+            description: response || 'No analysis available',
+            priority: 'medium',
+            action: 'Review suggestions',
+            impact: 'Improved project management'
+          }
+        ]
+        return res.status(200).json({ suggestions })
+      }
+      const jsonString = arr[0] as string;
+      const suggestions = JSON.parse(jsonString)
+      return res.status(200).json({ suggestions })
     } catch (parseError) {
       // If JSON parsing fails, return the raw response
       const suggestions = [

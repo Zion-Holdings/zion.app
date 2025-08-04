@@ -18,6 +18,20 @@ interface SignupFormData {
   agreeToMarketing: boolean;
 }
 
+interface SignupFormErrors {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  password?: string;
+  confirmPassword?: string;
+  userType?: string;
+  company?: string;
+  phone?: string;
+  location?: string;
+  agreeToTerms?: string;
+  agreeToMarketing?: string;
+}
+
 export default function Signup() {
   const [formData, setFormData] = useState<SignupFormData>({
     firstName: '',
@@ -33,7 +47,7 @@ export default function Signup() {
     agreeToMarketing: false
   });
 
-  const [errors, setErrors] = useState<Partial<SignupFormData>>({});
+  const [errors, setErrors] = useState<SignupFormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const router = useRouter();
@@ -59,7 +73,7 @@ export default function Signup() {
   };
 
   const validateForm = (): boolean => {
-    const newErrors: Partial<SignupFormData> = {};
+    const newErrors: SignupFormErrors = {};
 
     if (!formData.firstName.trim()) {
       newErrors.firstName = 'First name is required';
