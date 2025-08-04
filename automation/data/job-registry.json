@@ -22,7 +22,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-04T04:44:19.148Z",
     "lastRun": null,
-    "nextRun": "2025-08-04T15:00:00.000Z",
+    "nextRun": "2025-08-04T21:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -116,7 +116,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-04T06:38:39.941Z",
     "lastRun": null,
-    "nextRun": "2025-08-04T15:00:00.000Z",
+    "nextRun": "2025-08-04T21:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -150,7 +150,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-04T07:15:52.424Z",
     "lastRun": null,
-    "nextRun": "2025-08-04T15:00:00.000Z",
+    "nextRun": "2025-08-04T21:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -184,7 +184,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-04T09:45:41.062Z",
     "lastRun": null,
-    "nextRun": "2025-08-04T15:00:00.000Z",
+    "nextRun": "2025-08-04T21:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -281,7 +281,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-04T09:45:41.069Z",
     "lastRun": null,
-    "nextRun": "2025-08-04T15:00:00.000Z",
+    "nextRun": "2025-08-05T03:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -348,7 +348,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-04T09:45:41.077Z",
     "lastRun": null,
-    "nextRun": "2025-08-04T15:00:00.000Z",
+    "nextRun": "2025-08-04T19:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -381,7 +381,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-04T09:45:41.079Z",
     "lastRun": null,
-    "nextRun": "2025-08-04T14:30:00.000Z",
+    "nextRun": "2025-08-04T15:15:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -505,7 +505,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-04T09:48:14.219Z",
     "lastRun": null,
-    "nextRun": "2025-08-04T15:00:00.000Z",
+    "nextRun": "2025-08-04T21:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -539,7 +539,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-04T09:56:53.378Z",
     "lastRun": null,
-    "nextRun": "2025-08-04T15:00:00.000Z",
+    "nextRun": "2025-08-04T21:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -636,7 +636,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-04T09:56:53.564Z",
     "lastRun": null,
-    "nextRun": "2025-08-04T15:00:00.000Z",
+    "nextRun": "2025-08-05T03:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -703,7 +703,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-04T09:56:53.570Z",
     "lastRun": null,
-    "nextRun": "2025-08-04T15:00:00.000Z",
+    "nextRun": "2025-08-04T19:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -737,7 +737,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-04T14:11:55.972Z",
     "lastRun": null,
-    "nextRun": "2025-08-04T15:00:00.000Z",
+    "nextRun": "2025-08-04T21:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -834,7 +834,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-04T14:11:55.987Z",
     "lastRun": null,
-    "nextRun": "2025-08-04T15:00:00.000Z",
+    "nextRun": "2025-08-05T03:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -901,7 +901,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-04T14:11:55.991Z",
     "lastRun": null,
-    "nextRun": "2025-08-04T15:00:00.000Z",
+    "nextRun": "2025-08-04T19:00:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -934,7 +934,7 @@
     "timeout": 300000,
     "createdAt": "2025-08-04T14:11:55.992Z",
     "lastRun": null,
-    "nextRun": "2025-08-04T14:30:00.000Z",
+    "nextRun": "2025-08-04T15:15:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,
@@ -1058,7 +1058,238 @@
     "timeout": 300000,
     "createdAt": "2025-08-04T14:19:32.830Z",
     "lastRun": null,
-    "nextRun": "2025-08-04T15:00:00.000Z",
+    "nextRun": "2025-08-04T21:00:00.000Z",
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "35f2e3f7-29bc-44d5-9188-8c1f70a5e80e",
+    "name": "Deep Search - Market Research",
+    "schedule": "0 */6 * * *",
+    "task": {
+      "type": "deep-search",
+      "service": "market-research",
+      "data": {
+        "query": "latest market trends technology 2024",
+        "depth": 3,
+        "sources": [
+          "news",
+          "blogs",
+          "social-media"
+        ]
+      }
+    },
+    "enabled": true,
+    "priority": "high",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-04T15:07:53.087Z",
+    "lastRun": null,
+    "nextRun": "2025-08-04T21:00:00.000Z",
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "6231964e-9d1b-43e7-8555-db542a146a04",
+    "name": "Content Generation - Blog Posts",
+    "schedule": "0 9 * * *",
+    "task": {
+      "type": "content-generation",
+      "service": "blog-posts",
+      "data": {
+        "topic": "technology trends",
+        "wordCount": 1000,
+        "seoOptimization": true
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-04T15:07:53.093Z",
+    "lastRun": null,
+    "nextRun": "2025-08-05T12:00:00.000Z",
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "bdcf5840-9348-4542-ab41-0c03a73a7b80",
+    "name": "Data Analysis - Performance Review",
+    "schedule": "0 2 * * *",
+    "task": {
+      "type": "data-analysis",
+      "service": "performance-review",
+      "data": {
+        "dataset": "system_metrics",
+        "analysisType": "trend",
+        "timeRange": "7d"
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-04T15:07:53.099Z",
+    "lastRun": null,
+    "nextRun": "2025-08-05T05:00:00.000Z",
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "b22cb8c1-d076-4ea8-b251-f27b3213b5c4",
+    "name": "Web Research - Competitive Analysis",
+    "schedule": "0 */12 * * *",
+    "task": {
+      "type": "web-scraping",
+      "service": "competitive-analysis",
+      "data": {
+        "urls": [
+          "competitor1.com",
+          "competitor2.com",
+          "competitor3.com"
+        ],
+        "extractData": [
+          "pricing",
+          "features",
+          "content"
+        ]
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-04T15:07:53.102Z",
+    "lastRun": null,
+    "nextRun": "2025-08-05T03:00:00.000Z",
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "e351d202-5e51-4b69-b592-0726eb1172fa",
+    "name": "SEO Optimization - Keyword Research",
+    "schedule": "0 6 * * 1",
+    "task": {
+      "type": "seo-optimizer",
+      "service": "keyword-research",
+      "data": {
+        "keywords": [
+          "technology",
+          "innovation",
+          "digital transformation"
+        ],
+        "analysisDepth": "comprehensive"
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-04T15:07:53.569Z",
+    "lastRun": null,
+    "nextRun": "2025-08-11T09:00:00.000Z",
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "dc3e2fe7-dd28-4352-9d69-1d9dff48791a",
+    "name": "Social Media - Content Scheduling",
+    "schedule": "0 */4 * * *",
+    "task": {
+      "type": "social-media-manager",
+      "service": "post-scheduling",
+      "data": {
+        "platforms": [
+          "twitter",
+          "linkedin",
+          "facebook"
+        ],
+        "contentType": "automated",
+        "engagementOptimization": true
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-04T15:07:53.788Z",
+    "lastRun": null,
+    "nextRun": "2025-08-04T19:00:00.000Z",
+    "status": "scheduled",
+    "performance": {
+      "totalRuns": 0,
+      "successfulRuns": 0,
+      "failedRuns": 0,
+      "averageExecutionTime": 0,
+      "lastExecutionTime": 0
+    },
+    "logs": []
+  },
+  {
+    "id": "fc5e656e-d5ad-4def-8beb-636439b810ac",
+    "name": "System Health Check",
+    "schedule": "*/15 * * * *",
+    "task": {
+      "type": "monitor",
+      "service": "health-check",
+      "data": {
+        "checkTypes": [
+          "performance",
+          "errors",
+          "resources"
+        ],
+        "alertThreshold": 0.8
+      }
+    },
+    "enabled": true,
+    "priority": "normal",
+    "retryAttempts": 3,
+    "timeout": 300000,
+    "createdAt": "2025-08-04T15:07:54.268Z",
+    "lastRun": null,
+    "nextRun": "2025-08-04T15:15:00.000Z",
     "status": "scheduled",
     "performance": {
       "totalRuns": 0,

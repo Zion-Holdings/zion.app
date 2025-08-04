@@ -1,10 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import PageLayout from '../../components/layout/PageLayout'
 
 const ForgotPassword: NextPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <PageLayout>
       <Head>
         <title>Forgot Password - Zion</title>
         <meta name="description" content="Reset your Zion account password." />
@@ -50,7 +51,7 @@ const ForgotPassword: NextPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </PageLayout>
   )
 }
 
