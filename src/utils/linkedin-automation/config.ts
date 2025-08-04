@@ -1,26 +1,8 @@
 import { LinkedInConfig } from './types';
 
 export const LINKEDIN_CONFIG: LinkedInConfig = {
-  apiKey: process.env.LINKEDIN_API_KEY || '',
-  apiSecret: process.env.LINKEDIN_API_SECRET || '',
-  accessToken: process.env.LINKEDIN_ACCESS_TOKEN || '',
-  refreshToken: process.env.LINKEDIN_REFRESH_TOKEN || '',
-  redirectUri: process.env.LINKEDIN_REDIRECT_URI || 'http://localhost:3000/auth/linkedin/callback',
-  scopes: [
-    'r_liteprofile',
-    'r_emailaddress',
-    'w_member_social',
-    'rw_organization_admin',
-    'w_organization_social'
-  ],
-  rateLimit: {
-    requestsPerHour: 100,
-    requestsPerMinute: 5
-  },
-  retryConfig: {
-    maxRetries: 3,
-    retryDelay: 5000,
-    backoffMultiplier: 2
+  advertising: {
+    preferredTimes: ['09:00', '12:00', '17:00']
   }
 };
 
