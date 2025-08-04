@@ -542,7 +542,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
                       <div className="flex items-center justify-between mb-4">
                         <div>
                           <h3 className="text-lg font-semibold text-white">{connection.name}</h3>
-                          <p className="text-gray-400 text-sm capitalize">{connection.connection}</p>
+                                                     <p className="text-gray-400 text-sm capitalize">{connection.connectionType}</p>
                         </div>
                         <div className="text-right">
                           <div className="text-2xl font-bold text-white">{connection.connection}%</div>
