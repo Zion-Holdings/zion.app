@@ -37,7 +37,7 @@ const WebApplicationDevelopmentChatPage: NextPage = () => {
                 Expert discussion about web application development implementation and best practices
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>practical-implementation • problem-solution • trend-discussion</span>
+                <span>analytical-research • case-study • interactive-demo</span>
               </div>
             </div>
           </div>
