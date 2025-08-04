@@ -185,9 +185,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           return res.status(201).json({ member })
 
         case 'upload_document':
-          const { projectId: docProjectId, name, type, size, createdBy } = data
+          const { projectId: docProjectId, name: docName, type, size, createdBy } = data
           
-          if (!docProjectId || !name || !type) {
+          if (!docProjectId || !docName || !type) {
             return res.status(400).json({ error: 'Project ID, name, and type are required' })
           }
 
@@ -195,7 +195,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             .from('workspace_documents')
             .insert([{
               project_id: docProjectId,
-              name,
+              name: docName,
               type,
               size: size || 0,
               created_by: createdBy || userId,
