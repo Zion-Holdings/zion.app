@@ -8,14 +8,158 @@
     "memoryUpdate": "completed"
   },
   "performance": {
-    "totalTime": 1753967117632,
-    "contentTypes": 8,
-    "componentsGenerated": 8,
-    "pagesGenerated": 1
+    "pageLoadTimes": {
+      "home": {
+        "average": 1.2,
+        "p95": 2.1,
+        "trend": "improving"
+      },
+      "marketplace": {
+        "average": 1.8,
+        "p95": 3.2,
+        "trend": "stable"
+      },
+      "services": {
+        "average": 1.5,
+        "p95": 2.8,
+        "trend": "improving"
+      }
+    },
+    "errorRates": {
+      "total": 0.02,
+      "byPage": {
+        "home": 0.01,
+        "marketplace": 0.03,
+        "services": 0.015
+      }
+    },
+    "userSatisfaction": {
+      "overall": 4.6,
+      "byFeature": {
+        "search": 4.4,
+        "matching": 4.7,
+        "payment": 4.5
+      }
+    }
   },
   "quality": {
     "contentFiles": 25,
     "componentFiles": 3,
     "validationPassed": true
-  }
+  },
+  "userBehavior": {
+    "popularPages": [
+      {
+        "page": "/marketplace",
+        "visits": 15420,
+        "conversion": 0.12
+      },
+      {
+        "page": "/services",
+        "visits": 12850,
+        "conversion": 0.15
+      },
+      {
+        "page": "/about",
+        "visits": 8900,
+        "conversion": 0.08
+      },
+      {
+        "page": "/contact",
+        "visits": 6700,
+        "conversion": 0.22
+      }
+    ],
+    "conversionRates": {
+      "overall": 0.14,
+      "bySource": {
+        "organic": 0.18,
+        "direct": 0.12,
+        "social": 0.09,
+        "paid": 0.11
+      }
+    },
+    "userJourneys": [
+      {
+        "path": "home → marketplace → service-detail → contact",
+        "frequency": 0.35,
+        "conversion": 0.25
+      },
+      {
+        "path": "home → services → category → provider",
+        "frequency": 0.28,
+        "conversion": 0.18
+      }
+    ]
+  },
+  "contentPerformance": {
+    "topContent": [
+      {
+        "title": "AI-Powered Marketplace Guide",
+        "views": 8900,
+        "engagement": 0.67,
+        "conversion": 0.23
+      },
+      {
+        "title": "Blockchain Development Services",
+        "views": 7200,
+        "engagement": 0.58,
+        "conversion": 0.19
+      },
+      {
+        "title": "Digital Transformation Solutions",
+        "views": 6500,
+        "engagement": 0.62,
+        "conversion": 0.21
+      }
+    ],
+    "engagementMetrics": {
+      "averageTimeOnPage": 2.4,
+      "bounceRate": 0.32,
+      "pagesPerSession": 3.2
+    },
+    "seoPerformance": {
+      "organicTraffic": 45000,
+      "keywordRankings": {
+        "AI marketplace": 3,
+        "blockchain development": 5,
+        "digital transformation": 8
+      }
+    }
+  },
+  "insights": [
+    {
+      "type": "conversion",
+      "priority": "medium",
+      "title": "Low Conversion Pages Identified",
+      "description": "1 pages have conversion rates below 10%.",
+      "action": "Optimize page content and user experience"
+    },
+    {
+      "type": "content",
+      "priority": "low",
+      "title": "High-Performing Content",
+      "description": "AI-Powered Marketplace Guide is performing exceptionally well.",
+      "action": "Create similar content and promote this piece"
+    }
+  ],
+  "recommendations": [
+    {
+      "category": "ux",
+      "priority": "medium",
+      "title": "Improve /about Conversion",
+      "description": "Add clear CTAs, improve page layout, and optimize for conversions.",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "category": "content",
+      "priority": "low",
+      "title": "Expand on Successful Content",
+      "description": "Create more content similar to \"AI-Powered Marketplace Guide\" as it's performing well.",
+      "impact": "medium",
+      "effort": "low"
+    }
+  ],
+  "lastUpdate": "2025-08-04T15:31:51.088Z"
 }

@@ -1,6 +1,7 @@
 import { LinkedInConfig } from './types';
 
 export const LINKEDIN_CONFIG: LinkedInConfig = {
+  apiKey: process.env.LINKEDIN_API_KEY || '',
   advertising: {
     preferredTimes: ['09:00', '12:00', '17:00']
   }
