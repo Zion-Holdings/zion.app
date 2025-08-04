@@ -23,6 +23,7 @@ const Sitemap: NextPage = () => {
     aiServices: [
       { name: 'AI Service Matcher', href: '/ai-service-matcher', description: 'AI-powered service matching' },
       { name: 'AI Recommendation Engine', href: '/ai-recommendation-engine', description: 'Intelligent AI-powered recommendations' },
+      { name: 'AI Portfolio Builder', href: '/ai-portfolio-builder', description: 'AI-powered portfolio generation' },
       { name: 'AI Virtual Assistant', href: '/ai-virtual-assistant', description: 'AI assistant and chatbot' },
       { name: 'AI Project Management', href: '/ai-project-management', description: 'AI-powered project management' },
       { name: 'AI Analytics Dashboard', href: '/analytics-dashboard', description: 'Business intelligence and analytics' },
