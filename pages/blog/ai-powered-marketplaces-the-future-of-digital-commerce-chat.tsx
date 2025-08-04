@@ -36,7 +36,7 @@ const AiPoweredMarketplacesTheFutureOfDigitalCommerceChatPage: NextPage = () => 
               </span>
             </h1>
             <div className="flex items-center text-gray-400 text-sm mb-8">
-              <span>Expert Discussion • professional-technical • how-to-guide</span>
+              <span>Expert Discussion • innovative-futuristic • case-study</span>
             </div>
           </div>
           
