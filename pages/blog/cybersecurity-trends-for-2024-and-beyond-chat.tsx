@@ -36,7 +36,7 @@ const CybersecurityTrendsFor2024AndBeyondChatPage: NextPage = () => {
               </span>
             </h1>
             <div className="flex items-center text-gray-400 text-sm mb-8">
-              <span>Expert Discussion • analytical-research • comparison-review</span>
+              <span>Expert Discussion • solution-oriented • future-predictions</span>
             </div>
           </div>
           
@@ -74,4 +74,4 @@ const CybersecurityTrendsFor2024AndBeyondChatPage: NextPage = () => {
   )
 }
 
-export default CybersecurityTrendsFor2024AndBeyondChatPage
+export default CybersecurityTrendsFor2024AndBeyondChatPageage
