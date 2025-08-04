@@ -1,32 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+
+const mockResults = [
+  { id: 1, title: 'AI Development Services', description: 'Custom AI solutions for your business', link: '/services/ai-development' },
+  { id: 2, title: 'Cloud Infrastructure', description: 'Scalable cloud solutions', link: '/services/cloud-infrastructure' },
+  { id: 3, title: 'Data Analytics', description: 'Advanced analytics and insights', link: '/services/data-analytics' },
+  { id: 4, title: 'Marketplace', description: 'Browse all products and services', link: '/marketplace' },
+];
 
 export default function SearchResults() {
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState(mockResults);
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Simulate search filtering
+    setResults(
+      mockResults.filter(
+        (item) =>
+          item.title.toLowerCase().includes(query.toLowerCase()) ||
+          item.description.toLowerCase().includes(query.toLowerCase())
+      )
+    );
+  };
+
   return (
     <>
       <Head>
-        <title>Search-results</title>
-        <meta name="description" content="Page for search-results functionality" />
+        <title>Search Results - Zion Marketplace</title>
+        <meta name="description" content="Search results for Zion Marketplace" />
       </Head>
-      
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="container mx-auto px-4 py-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto"
-          >
-            <h1 className="text-4xl font-bold text-gray-900 mb-8">
-              Search-results
-            </h1>
-            
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <p>Content for search-results page will be implemented here.</p>
-            </div>
-          </motion.div>
-        </div>
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+        <section className="py-20 px-4 max-w-3xl mx-auto">
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-4xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text text-center">
+            Search Results
+          </motion.h1>
+          <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-4 mb-8">
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search for services, products, or talent..."
+              className="flex-1 px-4 py-3 rounded-lg bg-black/30 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+            />
+            <button type="submit" className="px-8 py-3 rounded-lg bg-purple-600 hover:bg-purple-700 font-semibold transition">Search</button>
+          </form>
+          <div className="space-y-6">
+            {results.length === 0 ? (
+              <div className="text-center text-gray-400">No results found.</div>
+            ) : (
+              results.map((item) => (
+                <motion.div key={item.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="bg-black/30 rounded-xl p-6 shadow-lg border border-white/10 flex flex-col sm:flex-row items-center justify-between">
+                  <div>
+                    <h2 className="text-2xl font-bold mb-2 text-purple-300">{item.title}</h2>
+                    <p className="text-gray-200 mb-2">{item.description}</p>
+                  </div>
+                  <Link href={item.link} className="px-6 py-2 rounded-lg bg-purple-700 hover:bg-purple-800 font-semibold transition mt-4 sm:mt-0">View</Link>
+                </motion.div>
+              ))
+            )}
+          </div>
+        </section>
       </div>
     </>
   );

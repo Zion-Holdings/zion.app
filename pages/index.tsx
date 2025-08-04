@@ -1412,6 +1412,23 @@ const Home: NextPage = () => {
     },
     {
       id: 51,
+      type: 'ai-collaboration-workspace',
+      title: 'AI-Powered Collaboration Workspace',
+      description: 'Real-time collaboration workspace with AI assistance for project management, document collaboration, team coordination, and intelligent task optimization.',
+      features: [
+        '🤖 AI Project Assistant',
+        '📊 Real-time Analytics',
+        '📝 Document Collaboration',
+        '⚡ Task Optimization'
+      ],
+      cta: 'Start Collaborating',
+      ctaLink: '/ai-powered-collaboration-workspace',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/ai-powered-collaboration-workspace',
+      bgClass: 'bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900'
+    },
+    {
+      id: 53,
       type: 'ai-event-calendar',
       title: 'AI-Powered Event Management & Calendar System',
       description: 'Event planning, calendar management, scheduling, timeline tracking, milestone management, and deadline reminders powered by AI.',
@@ -5406,6 +5423,37 @@ const Home: NextPage = () => {
           </div>
         )
 
+      case 'ai-collaboration-workspace':
+        return (
+          <div className={`${section.bgClass} py-20`}>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  {section.title}
+                </h2>
+                <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                  {section.description}
+                </p>
+                <div className="flex flex-wrap justify-center gap-4 mb-8">
+                  {section.features?.map((feature: string, index: number) => (
+                    <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
+                      <span className="text-white font-semibold">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link href={section.ctaLink} className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-indigo-500/25 transform hover:scale-105">
+                    {section.cta}
+                  </Link>
+                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                    {section.secondaryCta}
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+
       case 'ai-event-calendar':
         return (
           <div className={`${section.bgClass} py-20`}>
@@ -5716,7 +5764,7 @@ const Home: NextPage = () => {
           </div>
         )
 
-      case 'ai-quantum-computing':
+      case 'ai-collaboration-team':
         return (
           <div className={`${section.bgClass} py-20`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -5735,7 +5783,7 @@ const Home: NextPage = () => {
                   ))}
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href={section.ctaLink} className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  <Link href={section.ctaLink} className="bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-teal-500/25 transform hover:scale-105">
                     {section.cta}
                   </Link>
                   <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
@@ -5747,162 +5795,7 @@ const Home: NextPage = () => {
           </div>
         )
 
-      case 'ai-edge-computing':
-        return (
-          <div className={`${section.bgClass} py-20`}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                  {section.title}
-                </h2>
-                <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                  {section.description}
-                </p>
-                <div className="flex flex-wrap justify-center gap-4 mb-8">
-                  {section.features?.map((feature: string, index: number) => (
-                    <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
-                      <span className="text-white font-semibold">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href={section.ctaLink} className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-blue-500/25 transform hover:scale-105">
-                    {section.cta}
-                  </Link>
-                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
-                    {section.secondaryCta}
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        )
-
-      case 'ai-neuromorphic-computing':
-        return (
-          <div className={`${section.bgClass} py-20`}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                  {section.title}
-                </h2>
-                <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                  {section.description}
-                </p>
-                <div className="flex flex-wrap justify-center gap-4 mb-8">
-                  {section.features?.map((feature: string, index: number) => (
-                    <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
-                      <span className="text-white font-semibold">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href={section.ctaLink} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
-                    {section.cta}
-                  </Link>
-                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
-                    {section.secondaryCta}
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        )
-
-      case 'ai-biometric-authentication':
-        return (
-          <div className={`${section.bgClass} py-20`}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                  {section.title}
-                </h2>
-                <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                  {section.description}
-                </p>
-                <div className="flex flex-wrap justify-center gap-4 mb-8">
-                  {section.features?.map((feature: string, index: number) => (
-                    <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
-                      <span className="text-white font-semibold">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href={section.ctaLink} className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-green-500/25 transform hover:scale-105">
-                    {section.cta}
-                  </Link>
-                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
-                    {section.secondaryCta}
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        )
-
-      case 'ai-distributed-ledger':
-        return (
-          <div className={`${section.bgClass} py-20`}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                  {section.title}
-                </h2>
-                <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                  {section.description}
-                </p>
-                <div className="flex flex-wrap justify-center gap-4 mb-8">
-                  {section.features?.map((feature: string, index: number) => (
-                    <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
-                      <span className="text-white font-semibold">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href={section.ctaLink} className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-indigo-500/25 transform hover:scale-105">
-                    {section.cta}
-                  </Link>
-                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
-                    {section.secondaryCta}
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        )
-
-      case 'ai-holographic-display':
-        return (
-          <div className={`${section.bgClass} py-20`}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                  {section.title}
-                </h2>
-                <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                  {section.description}
-                </p>
-                <div className="flex flex-wrap justify-center gap-4 mb-8">
-                  {section.features?.map((feature: string, index: number) => (
-                    <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
-                      <span className="text-white font-semibold">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href={section.ctaLink} className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-cyan-500/25 transform hover:scale-105">
-                    {section.cta}
-                  </Link>
-                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
-                    {section.secondaryCta}
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        )
-
-      case 'ai-nanotechnology':
+      case 'ai-collaboration-workspace':
         return (
           <div className={`${section.bgClass} py-20`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
