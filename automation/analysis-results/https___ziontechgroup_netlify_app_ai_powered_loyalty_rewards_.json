@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-loyalty-rewards/",
-  "timestamp": "2025-08-04T16:00:11.829Z",
+  "timestamp": "2025-08-04T16:09:05.044Z",
   "pageInfo": {
     "title": "AI-Powered Loyalty & Rewards | Zion Tech Group",
     "description": "Earn points, unlock badges, achieve milestones, and redeem rewards with our AI-powered loyalty and gamification system.",
@@ -15,7 +15,7 @@
         "text": "Ready to Start Earning Rewards?"
       }
     ],
-    "content": "AI-Powered Loyalty & RewardsEarn points, unlock badges, achieve milestones, and redeem exclusive rewards with our intelligent gamification system designed to enhance your marketplace experience.🎯 Earn Points🏆 Unlock Badges🎁 Redeem RewardsReady to Start Earning Rewards?Join our AI-powered loyalty program and start earning points, unlocking badges, and redeeming exclusive rewards for your marketplace activities.Join NowExplore Services{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-loyalty-rewards\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "AI-Powered Loyalty & RewardsEarn points, unlock badges, achieve milestones, and redeem exclusive rewards with our intelligent gamification system designed to enhance your marketplace experience.🎯 Earn Points🏆 Unlock Badges🎁 Redeem RewardsReady to Start Earning Rewards?Join our AI-powered loyalty program and start earning points, unlocking badges, and redeeming exclusive rewards for your marketplace activities.Join NowExplore Services{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-loyalty-rewards\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -48,11 +48,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -62,7 +62,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

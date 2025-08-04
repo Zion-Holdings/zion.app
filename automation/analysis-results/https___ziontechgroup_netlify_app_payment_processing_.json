@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/payment-processing/",
-  "timestamp": "2025-08-04T16:06:34.832Z",
+  "timestamp": "2025-08-04T16:08:16.194Z",
   "pageInfo": {
     "title": "Payment Processing - Zion Marketplace",
     "description": "Secure payment processing for marketplace transactions, multiple payment methods, and financial management",
@@ -92,19 +92,11 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/equipment-rental-466cc2e15aac4ca2.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
         "type": "text/javascript"
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/real-time-chat-afbb004c2ac90580.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
         "type": "text/javascript"
       },
       {
@@ -117,6 +109,14 @@
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/equipment-rental-466cc2e15aac4ca2.js",
         "type": "text/javascript"
       },
       {

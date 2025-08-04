@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/dispute-resolution/",
-  "timestamp": "2025-08-04T16:06:49.912Z",
+  "timestamp": "2025-08-04T16:08:30.661Z",
   "pageInfo": {
     "title": "Dispute Resolution Center - Zion Marketplace",
     "description": "Comprehensive dispute resolution center for marketplace conflicts. Professional mediation, arbitration, and fair resolution services.",
@@ -92,6 +92,10 @@
         "type": "application/json"
       },
       {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/escrow-services-717a7c35a6181e00.js",
+        "type": "text/javascript"
+      },
+      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
         "type": "text/javascript"
       },
@@ -101,10 +105,6 @@
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/escrow-services-717a7c35a6181e00.js",
         "type": "text/javascript"
       },
       {

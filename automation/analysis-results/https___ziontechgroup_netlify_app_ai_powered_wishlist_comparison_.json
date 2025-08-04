@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/ai-powered-wishlist-comparison/",
-  "timestamp": "2025-08-04T16:00:12.966Z",
+  "timestamp": "2025-08-04T16:09:06.314Z",
   "pageInfo": {
     "title": "AI-Powered Wishlist & Comparison | Zion Tech Group",
     "description": "Save items to your wishlist, compare them with AI analysis, and get intelligent recommendations for the best choices.",
@@ -15,7 +15,7 @@
         "text": "Ready to Make Smart Decisions?"
       }
     ],
-    "content": "AI-Powered Wishlist & ComparisonSave items to your wishlist, compare them with intelligent AI analysis, and get personalized recommendations to make the best decisions for your projects.💾 Save Items🔍 Compare🤖 AI AnalysisReady to Make Smart Decisions?Start building your wishlist, compare items with AI analysis, and get intelligent recommendations to make the best choices for your projects.Explore ServicesFind Talent{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-wishlist-comparison\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "AI-Powered Wishlist & ComparisonSave items to your wishlist, compare them with intelligent AI analysis, and get personalized recommendations to make the best decisions for your projects.💾 Save Items🔍 Compare🤖 AI AnalysisReady to Make Smart Decisions?Start building your wishlist, compare items with AI analysis, and get intelligent recommendations to make the best choices for your projects.Explore ServicesFind Talent{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-wishlist-comparison\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -48,11 +48,11 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_buildManifest.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/HQJY8pjMqReRiqbgPPLT5/_ssgManifest.js",
         "type": "text/javascript"
       },
       {
@@ -62,7 +62,7 @@
     ],
     "stylesheets": [
       {
-        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/dc183a6ba40bcff9.css",
         "media": "all"
       }
     ]

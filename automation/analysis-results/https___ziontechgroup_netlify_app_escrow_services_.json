@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/escrow-services/",
-  "timestamp": "2025-08-04T16:06:45.690Z",
+  "timestamp": "2025-08-04T16:08:26.772Z",
   "pageInfo": {
     "title": "Escrow Services - Zion Marketplace",
     "description": "Secure escrow services for marketplace transactions. Protected payments, dispute resolution, and transaction security.",
@@ -120,7 +120,7 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/payment-processing-101dce871299da16.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
         "type": "text/javascript"
       },
       {
@@ -136,7 +136,7 @@
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/payment-processing-101dce871299da16.js",
         "type": "text/javascript"
       },
       {

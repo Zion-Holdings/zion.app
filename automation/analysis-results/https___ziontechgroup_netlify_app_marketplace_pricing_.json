@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/marketplace-pricing/",
-  "timestamp": "2025-08-04T16:06:52.847Z",
+  "timestamp": "2025-08-04T16:08:33.272Z",
   "pageInfo": {
     "title": "Marketplace Pricing & Commission System - Zion Marketplace",
     "description": "Comprehensive marketplace pricing and commission system. Transparent fee structure, revenue sharing, and tiered pricing for marketplace participants.",
@@ -104,14 +104,6 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/invoice-billing-88f97cdb64d1c109.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/6127-7a028e4d2b976873.js",
         "type": "text/javascript"
       },
@@ -121,6 +113,14 @@
       },
       {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/login-8271f16c9add6a04.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-ba7d49f922ba778d.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/invoice-billing-88f97cdb64d1c109.js",
         "type": "text/javascript"
       },
       {

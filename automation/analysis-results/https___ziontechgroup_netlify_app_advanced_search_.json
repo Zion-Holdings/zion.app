@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/advanced-search/",
-  "timestamp": "2025-08-04T16:06:37.647Z",
+  "timestamp": "2025-08-04T16:08:18.782Z",
   "pageInfo": {
     "title": "Advanced Search - Zion Marketplace",
     "description": "Advanced search and filter system for finding services, talents, equipment, and products on Zion marketplace",
@@ -40,46 +40,18 @@
       },
       {
         "level": "h3",
-        "text": "8 Results"
+        "text": "0 Results"
       },
       {
         "level": "h3",
-        "text": "AI Model Development"
-      },
-      {
-        "level": "h3",
-        "text": "NVIDIA DGX A100 System"
-      },
-      {
-        "level": "h3",
-        "text": "Cybersecurity Audit"
-      },
-      {
-        "level": "h3",
-        "text": "Dr. Sarah Chen"
-      },
-      {
-        "level": "h3",
-        "text": "Quantum Computer - IBM Q System"
-      },
-      {
-        "level": "h3",
-        "text": "Alex Rodriguez"
-      },
-      {
-        "level": "h3",
-        "text": "Cloud Migration Services"
-      },
-      {
-        "level": "h3",
-        "text": "Emma Thompson"
+        "text": "No results found"
       },
       {
         "level": "h2",
         "text": "Can't Find What You're Looking For?"
       }
     ],
-    "content": "ZionMarketplaceServicesRent EquipmentPaymentsLoginAdvanced SearchFind exactly what you need with our powerful search and filter system. Search across services, talents, equipment, and products with precision.All TypesServicesTalentsEquipmentProductsSort by RelevanceSort by PriceSort by RatingSort by DateFiltersClear AllCategoryPrice Range$0$100,000Minimum Rating★0+LocationSan Francisco, CANew York, NYAustin, TXSeattle, WABoston, MAChicago, ILLos Angeles, CADenver, COAtlanta, GAMiami, FLRemoteWorldwideTagsAIMachine LearningDeep LearningCloud ComputingCybersecurityData ScienceBlockchainIoTQuantum ComputingDevOpsMicroservicesServerlessBig DataAnalyticsAutomationDigital TransformationEdge Computing5GVerified OnlyFeatured Only8 Results🔧AI Model DevelopmentServiceFeatured✓Custom AI model development and machine learning implementation for enterprise applications.$250/hr★4.9📍 San Francisco, CAAIMachine LearningDeep LearningView DetailsContact⚙️NVIDIA DGX A100 SystemEquipmentFeatured✓High-performance AI training system with 8x A100 GPUs for deep learning workloads.$2,500★4.9📍 Austin, TXAIGPUDeep LearningView DetailsContact🔧Cybersecurity AuditServiceFeatured✓Comprehensive security assessment and penetration testing for enterprise systems.$300/hr★4.9📍 Chicago, ILCybersecuritySecurityPenetration TestingView DetailsContact👨‍💻Dr. Sarah ChenTalentFeatured✓Senior AI Engineer with 8+ years experience in machine learning and deep learning.$150/hr★4.8📍 New York, NYAIMachine LearningPythonView DetailsContact⚙️Quantum Computer - IBM Q SystemEquipmentFeatured✓State-of-the-art quantum computing system for research and development.$10,000★4.8📍 Boston, MAQuantum ComputingResearchIBMView DetailsContact👨‍💻Alex RodriguezTalent✓Blockchain Architect specializing in DeFi protocols and smart contract development.$180/hr★4.8📍 Miami, FLBlockchainDeFiSmart ContractsView DetailsContact🔧Cloud Migration ServicesService✓Comprehensive cloud migration and infrastructure optimization for enterprise applications.$200/hr★4.7📍 Seattle, WACloud ComputingAWSAzureView DetailsContact👨‍💻Emma ThompsonTalent✓Data Scientist with expertise in big data analytics and predictive modeling.$120/hr★4.7📍 Denver, COData ScienceAnalyticsPythonView DetailsContactCan't Find What You're Looking For?Try our AI-powered recommendation system or contact our experts for personalized assistance.AI RecommendationsChat with Expert{\"props\":{\"pageProps\":{}},\"page\":\"/advanced-search\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "content": "ZionMarketplaceServicesRent EquipmentPaymentsLoginAdvanced SearchFind exactly what you need with our powerful search and filter system. Search across services, talents, equipment, and products with precision.All TypesServicesTalentsEquipmentProductsSort by RelevanceSort by PriceSort by RatingSort by DateFiltersClear AllCategoryPrice Range$0$100,000Minimum Rating★0+LocationSan Francisco, CANew York, NYAustin, TXSeattle, WABoston, MAChicago, ILLos Angeles, CADenver, COAtlanta, GAMiami, FLRemoteWorldwideTagsAIMachine LearningDeep LearningCloud ComputingCybersecurityData ScienceBlockchainIoTQuantum ComputingDevOpsMicroservicesServerlessBig DataAnalyticsAutomationDigital TransformationEdge Computing5GVerified OnlyFeatured Only0 Results🔍No results foundTry adjusting your search terms or filtersCan't Find What You're Looking For?Try our AI-powered recommendation system or contact our experts for personalized assistance.AI RecommendationsChat with Expert{\"props\":{\"pageProps\":{}},\"page\":\"/advanced-search\",\"query\":{},\"buildId\":\"HQJY8pjMqReRiqbgPPLT5\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
     "images": [],
     "forms": [],
     "scripts": [
@@ -124,15 +96,7 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/payment-processing-101dce871299da16.js",
-        "type": "text/javascript"
-      },
-      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-58f6bc64c5512da3.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/equipment-rental-466cc2e15aac4ca2.js",
         "type": "text/javascript"
       },
       {
@@ -152,6 +116,14 @@
         "type": "text/javascript"
       },
       {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/payment-processing-101dce871299da16.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/equipment-rental-466cc2e15aac4ca2.js",
+        "type": "text/javascript"
+      },
+      {
         "src": "https://ziontechgroup.netlify.app/_next/static/chunks/9681-889031542e59242c.js",
         "type": "text/javascript"
       },
@@ -168,8 +140,8 @@
     ]
   },
   "analytics": {
-    "contentLength": 2588,
-    "headingCount": 18,
+    "contentLength": 1131,
+    "headingCount": 11,
     "imageCount": 0,
     "formCount": 0,
     "scriptCount": 19,
