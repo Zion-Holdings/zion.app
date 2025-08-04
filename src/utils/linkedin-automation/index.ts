@@ -29,6 +29,7 @@ export interface LinkedInPost {
 
 // Export constants
 export const LINKEDIN_CONFIG: LinkedInConfig = {
+  apiKey: process.env.LINKEDIN_API_KEY || '',
   credentials: {
     email: '',
     password: ''
