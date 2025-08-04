@@ -253,6 +253,24 @@ const Home: NextPage = () => {
               secondaryCtaLink: '/ai-powered-vendor-management',
               bgClass: 'bg-gradient-to-br from-orange-900 via-amber-900 to-yellow-900'
             },
+            {
+              id: 15,
+              type: 'ai-facility-management',
+              title: 'AI Facility Management System',
+              subtitle: 'Intelligent Facility Operations & Maintenance',
+              description: 'Streamline facility operations with AI-powered maintenance scheduling, equipment tracking, and facility analytics.',
+              features: [
+                'Facility Performance Analytics',
+                'Equipment Tracking',
+                'Predictive Maintenance',
+                'Automated Facility Insights'
+              ],
+              cta: 'Manage Facilities',
+              ctaLink: '/ai-powered-facility-management',
+              secondaryCta: 'Learn More',
+              secondaryCtaLink: '/ai-powered-facility-management',
+              bgClass: 'bg-gradient-to-br from-teal-900 via-cyan-900 to-blue-900'
+            },
     {
       id: 7,
       type: 'chat-services',

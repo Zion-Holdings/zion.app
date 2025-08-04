@@ -20,6 +20,12 @@ export interface LinkedInConfig {
   };
 }
 
+export interface LinkedInPost {
+  title: string;
+  content: string;
+  hashtags: string[];
+}
+
 // Export constants
 export const LINKEDIN_CONFIG: LinkedInConfig = {
   credentials: {
@@ -31,6 +37,29 @@ export const LINKEDIN_CONFIG: LinkedInConfig = {
     delayBetweenActions: 2000
   }
 };
+
+// Content generator function
+export async function generatePostContent(): Promise<LinkedInPost[]> {
+  const posts: LinkedInPost[] = [
+    {
+      title: 'AI-Powered Innovation',
+      content: 'Exploring the latest developments in AI technology and its impact on business transformation.',
+      hashtags: ['#AI', '#Innovation', '#Technology', '#Business']
+    },
+    {
+      title: 'Digital Transformation',
+      content: 'How companies are leveraging technology to stay competitive in the digital age.',
+      hashtags: ['#DigitalTransformation', '#Technology', '#Business', '#Innovation']
+    },
+    {
+      title: 'Future of Work',
+      content: 'The evolving workplace and how technology is reshaping how we work and collaborate.',
+      hashtags: ['#FutureOfWork', '#Technology', '#Workplace', '#Collaboration']
+    }
+  ];
+  
+  return posts;
+}
 
 // Main LinkedIn Automation class
 export class LinkedInAutomation {

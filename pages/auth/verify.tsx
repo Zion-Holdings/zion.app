@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import PageLayout from '../../components/layout/PageLayout'
 
 const Verify: NextPage = () => {
   const router = useRouter()
@@ -10,73 +11,73 @@ const Verify: NextPage = () => {
   const [message, setMessage] = useState('')
 
   useEffect(() => {
-    const { token_hash, type } = router.query
-
-    if (token_hash && type === 'email') {
-      // Handle email verification
-      setStatus('success')
-      setMessage('Email verified successfully! You can now sign in to your account.')
-    } else if (type === 'recovery') {
-      // Handle password recovery
-      setStatus('success')
-      setMessage('Password reset link sent! Please check your email.')
+    const { token } = router.query
+    
+    if (token) {
+      // Simulate verification process
+      setTimeout(() => {
+        setStatus('success')
+        setMessage('Email verified successfully! You can now login to your account.')
+      }, 2000)
     } else {
       setStatus('error')
-      setMessage('Invalid verification link.')
+      setMessage('Invalid verification link. Please check your email for the correct link.')
     }
   }, [router.query])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
+    <PageLayout>
       <Head>
         <title>Email Verification - Zion</title>
-        <meta name="description" content="Verify your email address" />
+        <meta name="description" content="Verify your email address to complete your Zion account setup." />
       </Head>
 
-      <div className="max-w-md w-full mx-4">
-        <div className="bg-white/5 backdrop-blur-md rounded-xl p-8 border border-white/10">
-          <div className="text-center mb-8">
-            <Link href="/" className="text-3xl font-bold text-white">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
-            </Link>
-            <h2 className="text-2xl font-bold text-white mt-4">Email Verification</h2>
-          </div>
+      <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-white mb-4">
+            Email <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Verification</span>
+          </h1>
+          <p className="text-gray-300">
+            Verifying your email address...
+          </p>
+        </div>
 
+        <div className="bg-black/20 backdrop-blur-md rounded-lg p-8 border border-white/10">
           {status === 'loading' && (
             <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 mx-auto"></div>
-              <p className="text-gray-300 mt-4">Verifying your email...</p>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 mx-auto mb-4"></div>
+              <p className="text-gray-300">Verifying your email address...</p>
             </div>
           )}
-
+          
           {status === 'success' && (
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <p className="text-green-400 mb-6">{message}</p>
-              <Link
-                href="/auth/login"
-                className="inline-block bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              <p className="text-green-300 mb-4">{message}</p>
+              <Link 
+                href="/auth/login" 
+                className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
               >
-                Sign In
+                Continue to Login
               </Link>
             </div>
           )}
-
+          
           {status === 'error' && (
             <div className="text-center">
-              <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </div>
-              <p className="text-red-400 mb-6">{message}</p>
-              <Link
-                href="/auth/login"
-                className="inline-block bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              <p className="text-red-300 mb-4">{message}</p>
+              <Link 
+                href="/auth/login" 
+                className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
               >
                 Back to Login
               </Link>
@@ -84,7 +85,7 @@ const Verify: NextPage = () => {
           )}
         </div>
       </div>
-    </div>
+    </PageLayout>
   )
 }
 
