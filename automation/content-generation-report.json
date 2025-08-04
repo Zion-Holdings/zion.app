@@ -1,119 +1,119 @@
 {
-  "timestamp": "2025-08-04T00:43:43.532Z",
+  "timestamp": "2025-08-04T00:49:20.706Z",
   "generatedContent": [
     {
       "type": "service-descriptions",
       "name": "web-development",
       "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/content/generated/web-development.json",
-      "timestamp": "2025-08-04T00:43:41.269Z"
+      "timestamp": "2025-08-04T00:49:17.928Z"
     },
     {
       "type": "service-descriptions",
       "name": "mobile-app-development",
       "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/content/generated/mobile-app-development.json",
-      "timestamp": "2025-08-04T00:43:41.390Z"
+      "timestamp": "2025-08-04T00:49:18.008Z"
     },
     {
       "type": "service-descriptions",
       "name": "cloud-infrastructure",
       "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/content/generated/cloud-infrastructure.json",
-      "timestamp": "2025-08-04T00:43:41.512Z"
+      "timestamp": "2025-08-04T00:49:18.172Z"
     },
     {
       "type": "service-descriptions",
       "name": "data-analytics",
       "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/content/generated/data-analytics.json",
-      "timestamp": "2025-08-04T00:43:41.713Z"
+      "timestamp": "2025-08-04T00:49:18.293Z"
     },
     {
       "type": "service-descriptions",
       "name": "ai/ml-solutions",
       "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/content/generated/ai-ml-solutions.json",
-      "timestamp": "2025-08-04T00:43:41.876Z"
+      "timestamp": "2025-08-04T00:49:18.495Z"
     },
     {
       "type": "talent-profiles",
       "name": "sarah-johnson",
       "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/content/generated/sarah-johnson.json",
-      "timestamp": "2025-08-04T00:43:41.957Z"
+      "timestamp": "2025-08-04T00:49:18.695Z"
     },
     {
       "type": "talent-profiles",
       "name": "michael-chen",
       "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/content/generated/michael-chen.json",
-      "timestamp": "2025-08-04T00:43:42.117Z"
+      "timestamp": "2025-08-04T00:49:18.815Z"
     },
     {
       "type": "talent-profiles",
       "name": "emily-rodriguez",
       "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/content/generated/emily-rodriguez.json",
-      "timestamp": "2025-08-04T00:43:42.238Z"
+      "timestamp": "2025-08-04T00:49:18.976Z"
     },
     {
       "type": "talent-profiles",
       "name": "david-kim",
       "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/content/generated/david-kim.json",
-      "timestamp": "2025-08-04T00:43:42.441Z"
+      "timestamp": "2025-08-04T00:49:19.137Z"
     },
     {
       "type": "blog-posts",
       "name": "the-future-of-ai-in-business:-2024-trends",
       "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/content/generated/the-future-of-ai-in-business--2024-trends.json",
-      "timestamp": "2025-08-04T00:43:42.643Z"
+      "timestamp": "2025-08-04T00:49:19.217Z"
     },
     {
       "type": "blog-posts",
       "name": "building-scalable-web-applications-with-modern-frameworks",
       "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/content/generated/building-scalable-web-applications-with-modern-frameworks.json",
-      "timestamp": "2025-08-04T00:43:42.764Z"
+      "timestamp": "2025-08-04T00:49:19.378Z"
     },
     {
       "type": "blog-posts",
       "name": "devops-best-practices-for-enterprise-teams",
       "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/content/generated/devops-best-practices-for-enterprise-teams.json",
-      "timestamp": "2025-08-04T00:43:42.925Z"
+      "timestamp": "2025-08-04T00:49:19.458Z"
     },
     {
       "type": "testimonials",
       "name": "jennifer-smith",
       "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/content/generated/jennifer-smith.json",
-      "timestamp": "2025-08-04T00:43:43.087Z"
+      "timestamp": "2025-08-04T00:49:19.661Z"
     },
     {
       "type": "testimonials",
       "name": "robert-johnson",
       "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/content/generated/robert-johnson.json",
-      "timestamp": "2025-08-04T00:43:43.167Z"
+      "timestamp": "2025-08-04T00:49:19.782Z"
     },
     {
       "type": "testimonials",
       "name": "maria-garcia",
       "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/content/generated/maria-garcia.json",
-      "timestamp": "2025-08-04T00:43:43.288Z"
+      "timestamp": "2025-08-04T00:49:19.984Z"
     },
     {
       "type": "faqs",
       "name": "what-services-do-you-offer?",
       "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/content/generated/what-services-do-you-offer-.json",
-      "timestamp": "2025-08-04T00:43:43.329Z"
+      "timestamp": "2025-08-04T00:49:20.184Z"
     },
     {
       "type": "faqs",
       "name": "how-long-does-a-typical-projec",
       "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/content/generated/how-long-does-a-typical-projec.json",
-      "timestamp": "2025-08-04T00:43:43.370Z"
+      "timestamp": "2025-08-04T00:49:20.385Z"
     },
     {
       "type": "faqs",
       "name": "do-you-provide-ongoing-support",
       "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/content/generated/do-you-provide-ongoing-support.json",
-      "timestamp": "2025-08-04T00:43:43.411Z"
+      "timestamp": "2025-08-04T00:49:20.505Z"
     },
     {
       "type": "faqs",
       "name": "what-is-your-pricing-structure",
       "path": "/Users/miami2/Documents/GitHub/bolt.new.zion.app/src/content/generated/what-is-your-pricing-structure.json",
-      "timestamp": "2025-08-04T00:43:43.532Z"
+      "timestamp": "2025-08-04T00:49:20.706Z"
     }
   ],
   "summary": {
