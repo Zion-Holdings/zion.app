@@ -45,8 +45,8 @@ export const useMessageChannelHandler = (): UseMessageChannelHandlerReturn => {
 
     // Get extension info
     const detectedExtensionInfo = handler.getExtensionInfo();
-    const hasExtensions = detectedExtensionInfo.hasExtensions || false;
-    const extensionCount = detectedExtensionInfo.extensionCount || 0;
+    const hasExtensions = detectedExtensionInfo?.hasExtensions || false;
+    const extensionCount = detectedExtensionInfo?.extensionCount || 0;
 
     setExtensionInfo({
       hasExtensions,
