@@ -33,7 +33,8 @@ const Sitemap: NextPage = () => {
       { name: 'Customer Support', href: '/ai-powered-customer-support', description: 'AI customer service' },
       { name: 'Identity Verification', href: '/ai-powered-identity-verification', description: 'Biometric authentication' },
       { name: 'AI Testing', href: '/ai-powered-testing', description: 'Automated testing solutions' },
-      { name: 'AI HR Management', href: '/ai-powered-hr-management', description: 'Talent acquisition and employee management' }
+      { name: 'AI HR Management', href: '/ai-powered-hr-management', description: 'Talent acquisition and employee management' },
+      { name: 'AI Vendor Management', href: '/ai-powered-vendor-management', description: 'Vendor relationship and performance management' }
     ],
     businessTools: [
       { name: 'Executive Dashboard', href: '/executive-dashboard', description: 'C-level executive insights' },

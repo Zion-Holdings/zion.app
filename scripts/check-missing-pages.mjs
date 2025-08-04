@@ -9,6 +9,8 @@ const getExistingPages = () => {
   const pages = new Set()
   
   const scanPages = (dir, basePath = '') => {
+    if (!fs.existsSync(dir)) return
+    
     const items = fs.readdirSync(dir)
     
     for (const item of items) {
@@ -37,24 +39,32 @@ const getExistingPages = () => {
 // Check for missing essential pages
 const checkEssentialPages = () => {
   const essentialPages = [
-    '/about',
-    '/contact',
-    '/privacy-policy',
-    '/terms-of-service',
-    '/sitemap',
-    '/accessibility',
-    '/marketplace',
-    '/services',
-    '/talents',
-    '/equipment',
-    '/products',
-    '/blog',
-    '/auth/login',
-    '/auth/signup',
-    '/auth/forgot-password'
+    'about',
+    'contact',
+    'privacy-policy',
+    'terms-of-service',
+    'sitemap',
+    'accessibility',
+    'marketplace',
+    'services',
+    'talents',
+    'equipment',
+    'products',
+    'blog',
+    'auth/login',
+    'auth/signup',
+    'auth/forgot-password'
   ]
   
   const existingPages = getExistingPages()
+  
+  // Debug: Show what pages were found
+  console.log('📁 Found pages:')
+  Array.from(existingPages).sort().forEach(page => {
+    console.log(`   ✓ ${page}`)
+  })
+  console.log()
+  
   const missingPages = []
   
   for (const page of essentialPages) {

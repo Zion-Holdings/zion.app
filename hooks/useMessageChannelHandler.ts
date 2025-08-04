@@ -14,7 +14,12 @@ interface UseMessageChannelHandlerReturn {
   extensionInfo: {
     hasExtensions: boolean;
     extensionCount: number;
-    extensions: never[];
+    extensions: Array<{
+      name: string;
+      id: string;
+      type: string;
+      detected: boolean;
+    }>;
   };
 }
 
@@ -24,7 +29,12 @@ export const useMessageChannelHandler = (): UseMessageChannelHandlerReturn => {
   const [extensionInfo, setExtensionInfo] = useState<{
     hasExtensions: boolean;
     extensionCount: number;
-    extensions: never[];
+    extensions: Array<{
+      name: string;
+      id: string;
+      type: string;
+      detected: boolean;
+    }>;
   }>({
     hasExtensions: false,
     extensionCount: 0,
@@ -32,48 +42,49 @@ export const useMessageChannelHandler = (): UseMessageChannelHandlerReturn => {
   });
 
   useEffect(() => {
-    const handler = new MessageChannelHandler();
+    const handler = MessageChannelHandler.getInstance();
     
-    // Set up error tracking
-    const updateErrorCount = () => {
+    // Update error count and recent errors status
+    const updateErrorStatus = () => {
       const errorLog = handler.getErrorLog();
       setErrorCount(errorLog.length);
-      setHasRecentErrors(errorLog.some(error => 
-        Date.now() - error.timestamp < 60000 // Last minute
+      setHasRecentErrors(errorLog.some((error: any) =>
+        Date.now() - error.timestamp < 5 * 60 * 1000 // 5 minutes
       ));
     };
 
-    // Get extension info
-    const detectedExtensionInfo = handler.getExtensionInfo();
-    const hasExtensions = detectedExtensionInfo?.hasExtensions || false;
-    const extensionCount = detectedExtensionInfo?.extensionCount || 0;
-
-    setExtensionInfo({
-      hasExtensions,
-      extensionCount,
-      extensions: []
-    });
-
-    // Initial error count
-    updateErrorCount();
-
-    // Set up periodic error checking
-    const interval = setInterval(updateErrorCount, 5000);
-
-    return () => {
-      clearInterval(interval);
+    // Update extension info
+    const updateExtensionInfo = () => {
+      const detectedExtensionInfo = handler.getExtensionInfo();
+      setExtensionInfo({
+        hasExtensions: detectedExtensionInfo.hasExtensions,
+        extensionCount: detectedExtensionInfo.extensionCount,
+        extensions: detectedExtensionInfo.extensions || []
+      });
     };
+
+    // Initial update
+    updateErrorStatus();
+    updateExtensionInfo();
+
+    // Set up interval to check for new errors
+    const interval = setInterval(() => {
+      updateErrorStatus();
+      updateExtensionInfo();
+    }, 1000); // Check every second
+
+    return () => clearInterval(interval);
   }, []);
 
   const clearErrors = () => {
-    const handler = new MessageChannelHandler();
+    const handler = MessageChannelHandler.getInstance();
     handler.clearErrorLog();
     setErrorCount(0);
     setHasRecentErrors(false);
   };
 
   const getErrorLog = () => {
-    const handler = new MessageChannelHandler();
+    const handler = MessageChannelHandler.getInstance();
     return handler.getErrorLog();
   };
 
