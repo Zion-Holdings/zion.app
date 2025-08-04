@@ -228,5 +228,4 @@ Format each suggestion as a JSON object with:
     console.error('Error generating AI suggestions:', error)
     return res.status(500).json({ error: 'Failed to generate suggestions' })
   }
-} 
-} 
+}
