@@ -6134,8 +6134,12 @@ const Home: NextPage = () => {
         )}
       </main>
 
-             {/* Footer */}
-       <footer className="bg-black/40 backdrop-blur-md border-t border-white/10 transition-all duration-500 relative">
+                   {/* Footer */}
+      <footer className={`bg-black/40 backdrop-blur-md border-t border-white/10 transition-all duration-500 ${
+        isFooterPersistent 
+          ? 'fixed bottom-0 left-0 right-0 z-50 shadow-2xl' 
+          : 'relative'
+      }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             <div>
