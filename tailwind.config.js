@@ -7,6 +7,24 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '475px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+        '3xl': '1920px',
+      },
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+        '128': '32rem',
+      },
+      maxWidth: {
+        '8xl': '88rem',
+        '9xl': '96rem',
+      },
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'gradient-x': 'gradient-x 3s ease infinite',
@@ -46,6 +64,17 @@ module.exports = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+      fontSize: {
+        'responsive-xs': ['0.75rem', { lineHeight: '1rem' }],
+        'responsive-sm': ['0.875rem', { lineHeight: '1.25rem' }],
+        'responsive-base': ['1rem', { lineHeight: '1.5rem' }],
+        'responsive-lg': ['1.125rem', { lineHeight: '1.75rem' }],
+        'responsive-xl': ['1.25rem', { lineHeight: '1.75rem' }],
+        'responsive-2xl': ['1.5rem', { lineHeight: '2rem' }],
+        'responsive-3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+        'responsive-4xl': ['2.25rem', { lineHeight: '2.5rem' }],
+        'responsive-5xl': ['3rem', { lineHeight: '1' }],
       },
     },
   },

@@ -2343,10 +2343,10 @@ const Home: NextPage = () => {
               }}></div>
             </div>
             
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+            <div className="container-responsive section-padding-lg">
               <div className="text-center">
                 <div className="mb-8">
-                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-sm font-medium mb-6">
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-responsive-sm font-medium mb-6">
                     <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
@@ -2354,43 +2354,43 @@ const Home: NextPage = () => {
                   </div>
                 </div>
                 
-                <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                <h1 className="text-responsive-5xl font-bold text-white mb-6 leading-tight">
                   Zion
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400">
                     High-Tech Marketplace
                   </span>
                 </h1>
                 
-                <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+                <p className="text-responsive-xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
                   {section.description}
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-                  <Link href={section.ctaLink} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-16">
+                  <Link href={section.ctaLink} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-responsive-base font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 hover-responsive touch-target">
                     {section.cta}
                   </Link>
-                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-responsive-base font-semibold transition-all duration-300 backdrop-blur-sm hover-responsive touch-target">
                     {section.secondaryCta}
                   </Link>
                 </div>
                 
                 {/* Stats */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <div className="grid-responsive-4 gap-6 sm:gap-8 max-w-4xl mx-auto">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-white mb-2">500+</div>
-                    <div className="text-gray-400">AI Talents</div>
+                    <div className="text-responsive-2xl font-bold text-white mb-2">500+</div>
+                    <div className="text-gray-400 text-responsive-sm">AI Talents</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-white mb-2">1000+</div>
-                    <div className="text-gray-400">IT Services</div>
+                    <div className="text-responsive-2xl font-bold text-white mb-2">1000+</div>
+                    <div className="text-gray-400 text-responsive-sm">IT Services</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-white mb-2">200+</div>
-                    <div className="text-gray-400">Equipment Items</div>
+                    <div className="text-responsive-2xl font-bold text-white mb-2">200+</div>
+                    <div className="text-gray-400 text-responsive-sm">Equipment Items</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-white mb-2">50K+</div>
-                    <div className="text-gray-400">Users</div>
+                    <div className="text-responsive-2xl font-bold text-white mb-2">50K+</div>
+                    <div className="text-gray-400 text-responsive-sm">Users</div>
                   </div>
                 </div>
               </div>
@@ -2400,26 +2400,26 @@ const Home: NextPage = () => {
 
       case 'marketplace-overview':
         return (
-          <div className="py-24">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="section-padding">
+            <div className="container-responsive">
               <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <h2 className="text-responsive-4xl font-bold text-white mb-6">
                   {section.title}
                 </h2>
-                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                <p className="text-responsive-lg text-gray-300 max-w-3xl mx-auto">
                   Explore our comprehensive marketplace with cutting-edge technology solutions
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid-responsive-4 gap-6 lg:gap-8">
                 {section.items.map((item: any, index: number) => (
                   <Link key={index} href={item.link} className="group">
-                    <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 lg:p-8 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 hover-responsive">
                       <div className={`text-4xl mb-4 bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
                         {item.icon}
                       </div>
-                      <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                      <p className="text-gray-300">{item.description}</p>
+                      <h3 className="text-responsive-lg font-bold text-white mb-3">{item.title}</h3>
+                      <p className="text-gray-300 text-responsive-sm">{item.description}</p>
                     </div>
                   </Link>
                 ))}
