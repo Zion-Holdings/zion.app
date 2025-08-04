@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import { sanitizeHtml } from '../utils/sanitizeHtml';
 
 interface InvoiceItem {
   id: string;
@@ -114,7 +115,8 @@ const InvoiceGenerator = () => {
       }
 
       const data = await response.json();
-      setInvoice(data.invoice);
+      // Sanitize the HTML before setting it
+      setInvoice(sanitizeHtml(data.invoice));
       setGenerated(true);
     } catch (error) {
       console.error('Error generating invoice:', error);

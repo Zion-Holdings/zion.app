@@ -126,6 +126,8 @@ export default function Contact() {
                       </label>
                       <input
                         type="text"
+                        id="contact-name"
+                        name="contact-name"
                         required
                         value={formData.name}
                         onChange={(e) => handleInputChange('name', e.target.value)}
@@ -158,6 +160,8 @@ export default function Contact() {
                       </label>
                       <input
                         type="text"
+                        id="contact-company"
+                        name="contact-company"
                         value={formData.company}
                         onChange={(e) => handleInputChange('company', e.target.value)}
                         className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
@@ -171,6 +175,8 @@ export default function Contact() {
                       </label>
                       <input
                         type="tel"
+                        id="contact-phone"
+                        name="contact-phone"
                         value={formData.phone}
                         onChange={(e) => handleInputChange('phone', e.target.value)}
                         className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
@@ -201,6 +207,8 @@ export default function Contact() {
                     </label>
                     <input
                       type="text"
+                      id="contact-subject"
+                      name="contact-subject"
                       required
                       value={formData.subject}
                       onChange={(e) => handleInputChange('subject', e.target.value)}
@@ -214,6 +222,8 @@ export default function Contact() {
                       Message *
                     </label>
                     <textarea
+                      id="contact-message"
+                      name="contact-message"
                       required
                       rows={6}
                       value={formData.message}

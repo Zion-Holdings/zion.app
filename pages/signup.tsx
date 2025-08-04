@@ -342,6 +342,8 @@ export default function Signup() {
                       </label>
                       <input
                         type="text"
+                        id="company"
+                        name="company"
                         value={formData.company}
                         onChange={(e) => handleInputChange('company', e.target.value)}
                         className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
@@ -356,6 +358,8 @@ export default function Signup() {
                     </label>
                     <input
                       type="tel"
+                      id="phone"
+                      name="phone"
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
                       className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"

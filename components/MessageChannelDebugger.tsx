@@ -17,6 +17,8 @@ const MessageChannelDebugger: React.FC<MessageChannelDebuggerProps> = ({
   }
 
   const errorLog = getErrorLog();
+  const extensionErrors = errorLog.filter(error => error.likelyExtensionError);
+  const otherErrors = errorLog.filter(error => !error.likelyExtensionError);
 
   return (
     <div className={`fixed bottom-4 right-4 bg-black/80 backdrop-blur-sm border border-white/20 rounded-lg p-4 text-white text-sm z-50 max-w-md ${className}`}>
@@ -32,9 +34,23 @@ const MessageChannelDebugger: React.FC<MessageChannelDebuggerProps> = ({
       
       <div className="space-y-2">
         <div className="flex justify-between">
-          <span>Error Count:</span>
+          <span>Total Errors:</span>
           <span className={errorCount > 0 ? 'text-red-400' : 'text-green-400'}>
             {errorCount}
+          </span>
+        </div>
+        
+        <div className="flex justify-between">
+          <span>Extension Errors:</span>
+          <span className={extensionErrors.length > 0 ? 'text-red-400' : 'text-green-400'}>
+            {extensionErrors.length}
+          </span>
+        </div>
+        
+        <div className="flex justify-between">
+          <span>Other Errors:</span>
+          <span className={otherErrors.length > 0 ? 'text-orange-400' : 'text-green-400'}>
+            {otherErrors.length}
           </span>
         </div>
         
@@ -50,9 +66,14 @@ const MessageChannelDebugger: React.FC<MessageChannelDebuggerProps> = ({
             <h4 className="font-medium text-yellow-400 mb-2">Recent Errors:</h4>
             <div className="max-h-32 overflow-y-auto space-y-1">
               {errorLog.slice(-3).map((error, index) => (
-                <div key={index} className="text-xs bg-white/10 p-2 rounded">
-                  <div className="text-gray-400">
-                    {new Date(error.timestamp).toLocaleTimeString()}
+                <div key={index} className={`text-xs p-2 rounded ${error.likelyExtensionError ? 'bg-red-500/20 border border-red-500/30' : 'bg-white/10'}`}>
+                  <div className="flex justify-between items-center mb-1">
+                    <span className="text-gray-400">
+                      {new Date(error.timestamp).toLocaleTimeString()}
+                    </span>
+                    {error.likelyExtensionError && (
+                      <span className="text-red-300 text-xs">Extension</span>
+                    )}
                   </div>
                   <div className="text-red-300 truncate">
                     {error.message}

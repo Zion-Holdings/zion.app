@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import { sanitizeHtml } from '../utils/sanitizeHtml';
 
 interface Experience {
   id: string;
@@ -230,7 +231,8 @@ const ResumeBuilder = () => {
       }
 
       const data = await response.json();
-      setResume(data.resume);
+      // Sanitize the HTML before setting it
+      setResume(sanitizeHtml(data.resume));
       setGenerated(true);
     } catch (error) {
       console.error('Error generating resume:', error);

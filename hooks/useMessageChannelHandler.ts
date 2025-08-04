@@ -9,12 +9,37 @@ interface UseMessageChannelHandlerReturn {
     type: 'message_channel_closed';
     message: string;
     timestamp: number;
+    likelyExtensionError: boolean;
   }>;
+  extensionInfo: {
+    hasExtensions: boolean;
+    extensionCount: number;
+    extensions: Array<{
+      name: string;
+      id: string;
+      version: string;
+      permissions: string[];
+    }>;
+  };
 }
 
 export const useMessageChannelHandler = (): UseMessageChannelHandlerReturn => {
   const [errorCount, setErrorCount] = useState(0);
   const [hasRecentErrors, setHasRecentErrors] = useState(false);
+  const [extensionInfo, setExtensionInfo] = useState<{
+    hasExtensions: boolean;
+    extensionCount: number;
+    extensions: Array<{
+      name: string;
+      id: string;
+      version: string;
+      permissions: string[];
+    }>;
+  }>({
+    hasExtensions: false,
+    extensionCount: 0,
+    extensions: []
+  });
 
   useEffect(() => {
     const handler = MessageChannelHandler.getInstance();
@@ -23,6 +48,14 @@ export const useMessageChannelHandler = (): UseMessageChannelHandlerReturn => {
     const interval = setInterval(() => {
       setErrorCount(handler.getErrorCount());
       setHasRecentErrors(handler.hasRecentErrors(5)); // Check last 5 minutes
+      const detectedExtensionInfo = handler.getExtensionInfo();
+      if (detectedExtensionInfo) {
+        setExtensionInfo({
+          hasExtensions: detectedExtensionInfo.hasExtensions,
+          extensionCount: detectedExtensionInfo.extensionCount,
+          extensions: detectedExtensionInfo.extensions
+        });
+      }
     }, 1000);
 
     return () => clearInterval(interval);
@@ -44,6 +77,7 @@ export const useMessageChannelHandler = (): UseMessageChannelHandlerReturn => {
     errorCount,
     hasRecentErrors,
     clearErrors,
-    getErrorLog
+    getErrorLog,
+    extensionInfo
   };
 }; 

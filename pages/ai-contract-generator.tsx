@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import { sanitizeHtml } from '../utils/sanitizeHtml';
 
 interface ContractInput {
   contractType: string;
@@ -70,7 +71,8 @@ const ContractGenerator = () => {
       }
 
       const data = await response.json();
-      setContract(data.contract);
+      // Sanitize the HTML before setting it
+      setContract(sanitizeHtml(data.contract));
       setGenerated(true);
     } catch (error) {
       console.error('Error generating contract:', error);
