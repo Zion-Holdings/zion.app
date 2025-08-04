@@ -5,6 +5,7 @@ import { AuthProvider } from '../src/contexts/AuthContext'
 import ChatAssistant from '../src/components/ChatAssistant'
 import { useChat } from '../src/contexts/ChatContext'
 import MessageChannelDebugger from '../components/MessageChannelDebugger'
+import MessageChannelErrorBoundary from '../components/MessageChannelErrorBoundary'
 import '../utils/messageChannelHandler' // Initialize the handler
 
 function ChatWrapper() {
@@ -14,12 +15,14 @@ function ChatWrapper() {
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <AuthProvider>
-      <ChatProvider>
-        <Component {...pageProps} />
-        <ChatWrapper />
-        <MessageChannelDebugger />
-      </ChatProvider>
-    </AuthProvider>
+    <MessageChannelErrorBoundary>
+      <AuthProvider>
+        <ChatProvider>
+          <Component {...pageProps} />
+          <ChatWrapper />
+          <MessageChannelDebugger />
+        </ChatProvider>
+      </AuthProvider>
+    </MessageChannelErrorBoundary>
   )
 } 
