@@ -37,7 +37,7 @@ const NetworkEngineeringChatPage: NextPage = () => {
                 Expert discussion about network engineering services and opportunities
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>analytical-research • technology-deep-dive • expert-advice</span>
+                <span>innovative-futuristic • future-predictions • trend-discussion</span>
               </div>
             </div>
           </div>
