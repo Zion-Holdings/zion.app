@@ -37,7 +37,7 @@ const DevopsAutomationChatPage: NextPage = () => {
                 Expert discussion about devops automation services and opportunities
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>practical-implementation • how-to-guide • step-by-step-guide</span>
+                <span>trend-analysis • case-study • step-by-step-guide</span>
               </div>
             </div>
           </div>
