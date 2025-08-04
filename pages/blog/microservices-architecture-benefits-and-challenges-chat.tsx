@@ -36,7 +36,7 @@ const MicroservicesArchitectureBenefitsAndChallengesChatPage: NextPage = () => {
               </span>
             </h1>
             <div className="flex items-center text-gray-400 text-sm mb-8">
-              <span>Expert Discussion • customer-focused • future-predictions</span>
+              <span>Expert Discussion • practical-implementation • future-predictions</span>
             </div>
           </div>
           
