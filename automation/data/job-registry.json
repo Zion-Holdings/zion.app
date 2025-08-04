@@ -81,17 +81,48 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-04T01:59:06.134Z",
-    "lastRun": null,
+    "lastRun": "2025-08-04T02:00:00.163Z",
     "nextRun": "2025-08-04T05:00:00.000Z",
-    "status": "scheduled",
+    "status": "completed",
     "performance": {
-      "totalRuns": 0,
-      "successfulRuns": 0,
+      "totalRuns": 1,
+      "successfulRuns": 1,
       "failedRuns": 0,
-      "averageExecutionTime": 0,
-      "lastExecutionTime": 0
+      "averageExecutionTime": 2287,
+      "lastExecutionTime": 2287
     },
-    "logs": []
+    "logs": [
+      {
+        "timestamp": "2025-08-04T02:00:02.450Z",
+        "level": "info",
+        "message": "Job completed successfully in 2287ms",
+        "result": {
+          "dataset": "system_metrics",
+          "insights": [
+            {
+              "type": "trend",
+              "description": "Upward trend detected",
+              "confidence": 0.85
+            },
+            {
+              "type": "anomaly",
+              "description": "Unusual pattern found",
+              "confidence": 0.72
+            },
+            {
+              "type": "correlation",
+              "description": "Strong correlation identified",
+              "confidence": 0.91
+            }
+          ],
+          "recommendations": [
+            "Consider increasing investment in trending areas",
+            "Monitor anomalies for potential issues",
+            "Leverage correlations for optimization"
+          ]
+        }
+      }
+    ]
   },
   {
     "id": "6333c462-efe8-4943-ad39-f59f4e3fe863",
@@ -218,11 +249,11 @@
     "retryAttempts": 3,
     "timeout": 300000,
     "createdAt": "2025-08-04T01:59:06.174Z",
-    "lastRun": null,
+    "lastRun": "2025-08-04T02:00:00.204Z",
     "nextRun": "2025-08-04T02:00:00.000Z",
-    "status": "scheduled",
+    "status": "running",
     "performance": {
-      "totalRuns": 0,
+      "totalRuns": 1,
       "successfulRuns": 0,
       "failedRuns": 0,
       "averageExecutionTime": 0,
