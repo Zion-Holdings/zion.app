@@ -37,7 +37,7 @@ const QualityAssuranceChatPage: NextPage = () => {
                 Expert discussion about quality assurance services and opportunities
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>customer-focused • technology-deep-dive • question-answer</span>
+                <span>collaborative-team • future-predictions • trend-discussion</span>
               </div>
             </div>
           </div>
