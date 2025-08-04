@@ -403,7 +403,7 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {
                         </div>
                         <div>
                           <p className="text-gray-400">Blood Type</p>
-                          <p className="text-white">{patient.bloodType}</p>
+                          <p className="text-white">{patient.gender}</p>
                         </div>
                       </div>
                       

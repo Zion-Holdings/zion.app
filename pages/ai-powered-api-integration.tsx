@@ -64,6 +64,8 @@ interface APIMonitoring {
 
 interface APISecurity {
   id: string;
+  name: string;
+  description: string;
   type: string;
   endpoint: string;
   severity: 'low' | 'medium' | 'high' | 'critical';
