@@ -75,7 +75,11 @@ dist
 
 # Gatsby files
 .cache/
-public
+# Allow favicon files in public directory
+public/*
+!public/favicon.ico
+!public/favicon.svg
+!public/site.webmanifest
 
 # Storybook build outputs
 .out
