@@ -7,7 +7,7 @@ const TermsOfService: NextPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Terms of Service - Zion</title>
-        <meta name="description" content="Zion's terms of service - Learn about the rules and guidelines for using our AI-powered marketplace platform." />
+        <meta name="description" content="Zion's terms of service - Learn about the rules and conditions for using our AI-powered marketplace." />
       </Head>
 
       {/* Navigation */}
@@ -35,14 +35,14 @@ const TermsOfService: NextPage = () => {
       </nav>
 
       {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="bg-white/5 backdrop-blur-md rounded-xl p-8 border border-white/10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="bg-black/20 backdrop-blur-md rounded-lg p-8 border border-white/10">
           <h1 className="text-4xl font-bold text-white mb-8">Terms of Service</h1>
-          <p className="text-gray-300 mb-8">Last updated: {new Date().toLocaleDateString()}</p>
+          <p className="text-gray-300 mb-8">Last updated: January 15, 2025</p>
 
           <div className="space-y-8 text-gray-300">
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">1. Acceptance of Terms</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">1. Acceptance of Terms</h2>
               <p className="mb-4">
                 By accessing and using Zion's AI-powered marketplace platform, you accept and agree to be bound by the terms and provision of this agreement.
               </p>
@@ -52,190 +52,206 @@ const TermsOfService: NextPage = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">2. Description of Service</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">2. Description of Service</h2>
               <p className="mb-4">
                 Zion provides an AI-powered marketplace platform that connects businesses with:
               </p>
               <ul className="list-disc list-inside space-y-2">
-                <li>IT service providers and consultants</li>
-                <li>AI talent and developers</li>
-                <li>Equipment and hardware suppliers</li>
-                <li>Innovation and technology solutions</li>
-                <li>AI-powered matching and recommendations</li>
+                <li>Technology services and solutions</li>
+                <li>AI talent and professionals</li>
+                <li>Equipment and hardware</li>
+                <li>Project management tools</li>
+                <li>Payment and escrow services</li>
+                <li>Communication and collaboration features</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">3. User Accounts</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">3. User Accounts</h2>
               <h3 className="text-xl font-semibold text-white mb-3">3.1 Account Creation</h3>
-              <p className="mb-4">
-                To access certain features of the platform, you must create an account. You agree to provide accurate, current, and complete information during registration.
-              </p>
-              
-              <h3 className="text-xl font-semibold text-white mb-3">3.2 Account Security</h3>
-              <p className="mb-4">
-                You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.
-              </p>
-              
-              <h3 className="text-xl font-semibold text-white mb-3">3.3 Account Termination</h3>
-              <p>
-                We reserve the right to terminate or suspend your account at any time for violations of these terms.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">4. User Conduct</h2>
-              <p className="mb-4">You agree not to:</p>
-              <ul className="list-disc list-inside space-y-2">
-                <li>Violate any applicable laws or regulations</li>
-                <li>Infringe on intellectual property rights</li>
-                <li>Post false, misleading, or fraudulent information</li>
-                <li>Harass, abuse, or harm other users</li>
-                <li>Attempt to gain unauthorized access to our systems</li>
-                <li>Use the platform for illegal or unauthorized purposes</li>
-                <li>Interfere with the proper functioning of the platform</li>
-                <li>Attempt to reverse engineer our AI algorithms</li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">5. Marketplace Rules</h2>
-              
-              <h3 className="text-xl font-semibold text-white mb-3">5.1 Service Providers</h3>
               <ul className="list-disc list-inside space-y-2 mb-4">
-                <li>Provide accurate service descriptions and pricing</li>
-                <li>Maintain professional standards and quality</li>
-                <li>Respond to inquiries in a timely manner</li>
-                <li>Honor agreed-upon terms and deadlines</li>
-                <li>Maintain appropriate licenses and certifications</li>
+                <li>You must provide accurate and complete information</li>
+                <li>You are responsible for maintaining account security</li>
+                <li>You must be at least 18 years old to create an account</li>
+                <li>One account per person is allowed</li>
               </ul>
               
-              <h3 className="text-xl font-semibold text-white mb-3">5.2 Service Buyers</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">3.2 Account Responsibilities</h3>
               <ul className="list-disc list-inside space-y-2">
-                <li>Provide clear project requirements</li>
-                <li>Pay agreed-upon amounts in a timely manner</li>
-                <li>Provide honest feedback and reviews</li>
-                <li>Respect intellectual property rights</li>
+                <li>Keep your login credentials secure</li>
+                <li>Notify us immediately of any unauthorized access</li>
+                <li>You are responsible for all activities under your account</li>
+                <li>Maintain accurate and up-to-date profile information</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-white mb-4">4. User Conduct</h2>
+              <h3 className="text-xl font-semibold text-white mb-3">4.1 Prohibited Activities</h3>
+              <ul className="list-disc list-inside space-y-2 mb-4">
+                <li>Violating any applicable laws or regulations</li>
+                <li>Infringing on intellectual property rights</li>
+                <li>Posting false or misleading information</li>
+                <li>Harassing or discriminating against other users</li>
+                <li>Attempting to circumvent security measures</li>
+                <li>Using the platform for illegal activities</li>
+              </ul>
+              
+              <h3 className="text-xl font-semibold text-white mb-3">4.2 Professional Standards</h3>
+              <ul className="list-disc list-inside space-y-2">
                 <li>Maintain professional communication</li>
+                <li>Deliver services as promised</li>
+                <li>Respect deadlines and commitments</li>
+                <li>Provide accurate skill assessments</li>
+                <li>Maintain quality standards</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">6. Payment and Transactions</h2>
-              <p className="mb-4">All transactions on Zion are subject to the following terms:</p>
+              <h2 className="text-2xl font-bold text-white mb-4">5. Service Providers</h2>
+              <h3 className="text-xl font-semibold text-white mb-3">5.1 Service Listings</h3>
+              <ul className="list-disc list-inside space-y-2 mb-4">
+                <li>Provide accurate service descriptions</li>
+                <li>Set fair and competitive pricing</li>
+                <li>Maintain availability information</li>
+                <li>Update service status regularly</li>
+              </ul>
+              
+              <h3 className="text-xl font-semibold text-white mb-3">5.2 Service Delivery</h3>
               <ul className="list-disc list-inside space-y-2">
-                <li>Payments are processed through secure third-party providers</li>
-                <li>Service fees and commissions apply as disclosed</li>
-                <li>Refunds are subject to our refund policy</li>
-                <li>Disputes are handled through our resolution system</li>
-                <li>Tax obligations are the responsibility of users</li>
+                <li>Deliver services as described</li>
+                <li>Meet agreed-upon deadlines</li>
+                <li>Maintain professional communication</li>
+                <li>Address issues promptly</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">7. Intellectual Property</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">6. Payment and Transactions</h2>
+              <h3 className="text-xl font-semibold text-white mb-3">6.1 Payment Processing</h3>
+              <ul className="list-disc list-inside space-y-2 mb-4">
+                <li>All payments are processed securely</li>
+                <li>Escrow services protect both parties</li>
+                <li>Fees are clearly disclosed upfront</li>
+                <li>Refunds follow our refund policy</li>
+              </ul>
+              
+              <h3 className="text-xl font-semibold text-white mb-3">6.2 Dispute Resolution</h3>
+              <ul className="list-disc list-inside space-y-2">
+                <li>Disputes are handled through our platform</li>
+                <li>Evidence and communication are reviewed</li>
+                <li>Fair resolution is provided</li>
+                <li>Appeals process is available</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-white mb-4">7. Intellectual Property</h2>
+              <h3 className="text-xl font-semibold text-white mb-3">7.1 Platform Rights</h3>
+              <ul className="list-disc list-inside space-y-2 mb-4">
+                <li>Zion retains rights to the platform</li>
+                <li>Users retain rights to their content</li>
+                <li>License to use platform features is granted</li>
+                <li>No ownership transfer of platform</li>
+              </ul>
+              
+              <h3 className="text-xl font-semibold text-white mb-3">7.2 User Content</h3>
+              <ul className="list-disc list-inside space-y-2">
+                <li>You own your uploaded content</li>
+                <li>You grant license for platform use</li>
+                <li>You are responsible for content rights</li>
+                <li>Content must not infringe on others' rights</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-white mb-4">8. Privacy and Data</h2>
               <p className="mb-4">
-                Zion retains all rights to the platform, including but not limited to:
+                Your privacy is important to us. Please review our Privacy Policy, which also governs your use of the service, to understand our practices.
               </p>
-              <ul className="list-disc list-inside space-y-2">
-                <li>Platform design and functionality</li>
-                <li>AI algorithms and matching systems</li>
-                <li>Branding and trademarks</li>
-                <li>User-generated content (with user permission)</li>
-                <li>Analytics and usage data</li>
-              </ul>
+              <Link href="/privacy-policy" className="text-purple-400 hover:text-purple-300 transition-colors">
+                View Privacy Policy
+              </Link>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">8. Privacy and Data</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">9. Limitation of Liability</h2>
               <p className="mb-4">
-                Your privacy is important to us. Please review our Privacy Policy, which also governs your use of the platform.
+                Zion shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses.
               </p>
               <p>
-                By using Zion, you consent to the collection and use of your information as described in our Privacy Policy.
+                Our total liability shall not exceed the amount paid by you for the specific service in question.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">9. Disclaimers</h2>
-              <p className="mb-4">Zion provides the platform "as is" and makes no warranties regarding:</p>
+              <h2 className="text-2xl font-bold text-white mb-4">10. Disclaimers</h2>
               <ul className="list-disc list-inside space-y-2">
-                <li>Accuracy of AI recommendations</li>
-                <li>Quality of third-party services</li>
-                <li>Platform availability or uptime</li>
-                <li>Compatibility with all devices or browsers</li>
-                <li>Results of marketplace transactions</li>
+                <li>Services are provided "as is" without warranties</li>
+                <li>We do not guarantee service availability</li>
+                <li>We are not responsible for third-party services</li>
+                <li>AI recommendations are not guaranteed</li>
+                <li>We disclaim all implied warranties</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">10. Limitation of Liability</h2>
-              <p className="mb-4">
-                Zion shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to:
-              </p>
+              <h2 className="text-2xl font-bold text-white mb-4">11. Termination</h2>
+              <h3 className="text-xl font-semibold text-white mb-3">11.1 Account Termination</h3>
+              <ul className="list-disc list-inside space-y-2 mb-4">
+                <li>You may terminate your account at any time</li>
+                <li>We may terminate accounts for violations</li>
+                <li>Outstanding obligations must be fulfilled</li>
+                <li>Data retention follows our privacy policy</li>
+              </ul>
+              
+              <h3 className="text-xl font-semibold text-white mb-3">11.2 Effect of Termination</h3>
               <ul className="list-disc list-inside space-y-2">
-                <li>Loss of profits or data</li>
-                <li>Business interruption</li>
-                <li>Service provider disputes</li>
-                <li>AI recommendation errors</li>
-                <li>Platform downtime or technical issues</li>
+                <li>Access to platform features will cease</li>
+                <li>Active projects may be affected</li>
+                <li>Payment obligations remain</li>
+                <li>Data may be retained as required by law</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">11. Indemnification</h2>
-              <p className="mb-4">
-                You agree to indemnify and hold harmless Zion from any claims, damages, or expenses arising from:
+              <h2 className="text-2xl font-bold text-white mb-4">12. Governing Law</h2>
+              <p>
+                These terms shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law provisions.
               </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-white mb-4">13. Changes to Terms</h2>
+              <p>
+                We reserve the right to modify these terms at any time. We will notify users of any material changes via email or platform notification.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-white mb-4">14. Contact Information</h2>
+              <p className="mb-4">For questions about these Terms of Service, please contact us:</p>
               <ul className="list-disc list-inside space-y-2">
-                <li>Your use of the platform</li>
-                <li>Violation of these terms</li>
-                <li>Infringement of third-party rights</li>
-                <li>Your marketplace activities</li>
-                <li>Any content you post or share</li>
+                <li>Email: legal@ziontechgroup.com</li>
+                <li>Phone: +1 (555) 123-4567</li>
+                <li>Address: [Your Business Address]</li>
               </ul>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">12. Dispute Resolution</h2>
-              <p className="mb-4">
-                Disputes between users are encouraged to be resolved through our internal dispute resolution system. For platform-related disputes, we prefer mediation before legal action.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">13. Governing Law</h2>
-              <p className="mb-4">
-                These terms are governed by the laws of [Your Jurisdiction]. Any disputes shall be resolved in the courts of [Your Jurisdiction].
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">14. Changes to Terms</h2>
-              <p className="mb-4">
-                We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting. Your continued use of the platform constitutes acceptance of the modified terms.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold text-white mb-4">15. Contact Information</h2>
-              <p className="mb-4">
-                For questions about these Terms of Service, please contact us:
-              </p>
-              <div className="bg-white/5 rounded-lg p-4">
-                <p className="text-white font-semibold">Zion Legal Team</p>
-                <p>Email: legal@ziontechgroup.com</p>
-                <p>Address: [Your Business Address]</p>
-                <p>Phone: [Your Contact Number]</p>
-              </div>
             </section>
           </div>
 
-          {/* Back to Home */}
+          {/* Navigation Links */}
           <div className="mt-12 pt-8 border-t border-white/10">
-            <Link href="/" className="text-purple-400 hover:text-purple-300 font-medium transition-colors duration-300">
-              ← Back to Home
-            </Link>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/privacy-policy" className="text-purple-400 hover:text-purple-300 transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/contact" className="text-purple-400 hover:text-purple-300 transition-colors">
+                Contact Us
+              </Link>
+              <Link href="/sitemap" className="text-purple-400 hover:text-purple-300 transition-colors">
+                Sitemap
+              </Link>
+            </div>
           </div>
         </div>
       </div>

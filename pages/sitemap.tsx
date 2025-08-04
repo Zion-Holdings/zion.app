@@ -32,7 +32,8 @@ const Sitemap: NextPage = () => {
       { name: 'Legal & Contracts', href: '/ai-powered-contract-legal', description: 'AI contract generation' },
       { name: 'Customer Support', href: '/ai-powered-customer-support', description: 'AI customer service' },
       { name: 'Identity Verification', href: '/ai-powered-identity-verification', description: 'Biometric authentication' },
-      { name: 'AI Testing', href: '/ai-powered-testing', description: 'Automated testing solutions' }
+      { name: 'AI Testing', href: '/ai-powered-testing', description: 'Automated testing solutions' },
+      { name: 'AI HR Management', href: '/ai-powered-hr-management', description: 'Talent acquisition and employee management' }
     ],
     businessTools: [
       { name: 'Executive Dashboard', href: '/executive-dashboard', description: 'C-level executive insights' },

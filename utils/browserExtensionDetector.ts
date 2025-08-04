@@ -2,26 +2,22 @@
 declare global {
   interface Window {
     chrome?: {
-      runtime?: {
-        id?: string;
-        getManifest?(): {
+      runtime: {
+        id: string;
+        getManifest(): {
           version?: string;
           permissions?: string[];
         };
       };
-      webstore?: any;
     };
     browser?: {
-      runtime?: {
-        id?: string;
-        getManifest?(): {
+      runtime: {
+        id: string;
+        getManifest(): {
           version?: string;
           permissions?: string[];
         };
       };
-    };
-    safari?: {
-      extension?: any;
     };
   }
 }
@@ -36,22 +32,24 @@ export function detectBrowserExtension(): BrowserExtensionInfo | null {
   try {
     // Check for Chrome extension
     if (typeof window !== 'undefined' && window.chrome?.runtime?.id) {
+      const manifest = window.chrome.runtime.getManifest();
       return {
         id: window.chrome.runtime.id,
-        version: window.chrome.runtime.getManifest?.()?.version || 'unknown',
-        permissions: window.chrome.runtime.getManifest?.()?.permissions || []
+        version: manifest.version || 'unknown',
+        permissions: manifest.permissions || []
       };
     }
-
+    
     // Check for Firefox extension
     if (typeof window !== 'undefined' && window.browser?.runtime?.id) {
+      const manifest = window.browser.runtime.getManifest();
       return {
         id: window.browser.runtime.id,
-        version: window.browser.runtime.getManifest?.()?.version || 'unknown',
-        permissions: window.browser.runtime.getManifest?.()?.permissions || []
+        version: manifest.version || 'unknown',
+        permissions: manifest.permissions || []
       };
     }
-
+    
     return null;
   } catch (error) {
     console.warn('Error detecting browser extension:', error);
@@ -60,7 +58,30 @@ export function detectBrowserExtension(): BrowserExtensionInfo | null {
 }
 
 export function isBrowserExtension(): boolean {
-  return detectBrowserExtension() !== null;
+  try {
+    if (typeof window === 'undefined') return false;
+    
+    // Check for Chrome extension
+    if (window.chrome?.runtime?.id) {
+      return true;
+    }
+    
+    // Check for Firefox extension
+    if (window.browser?.runtime?.id) {
+      return true;
+    }
+    
+    // Check for extension-related URLs
+    if (window.location.protocol === 'chrome-extension:' || 
+        window.location.protocol === 'moz-extension:') {
+      return true;
+    }
+    
+    return false;
+  } catch (error) {
+    console.warn('Error checking browser extension:', error);
+    return false;
+  }
 }
 
 export function hasExtensionInterference(): boolean {

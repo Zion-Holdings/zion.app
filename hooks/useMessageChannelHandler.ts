@@ -14,12 +14,7 @@ interface UseMessageChannelHandlerReturn {
   extensionInfo: {
     hasExtensions: boolean;
     extensionCount: number;
-    extensions: Array<{
-      name: string;
-      id: string;
-      type: 'unknown';
-      detected: boolean;
-    }>;
+    extensions: never[];
   };
 }
 
@@ -29,12 +24,7 @@ export const useMessageChannelHandler = (): UseMessageChannelHandlerReturn => {
   const [extensionInfo, setExtensionInfo] = useState<{
     hasExtensions: boolean;
     extensionCount: number;
-    extensions: Array<{
-      name: string;
-      id: string;
-      type: 'unknown';
-      detected: boolean;
-    }>;
+    extensions: never[];
   }>({
     hasExtensions: false,
     extensionCount: 0,
@@ -48,7 +38,23 @@ export const useMessageChannelHandler = (): UseMessageChannelHandlerReturn => {
     const interval = setInterval(() => {
       setErrorCount(handler.getErrorCount());
       setHasRecentErrors(handler.hasRecentErrors(5)); // Check last 5 minutes
-      setExtensionInfo(handler.getExtensionInfo());
+      
+      // Get extension info and handle it safely
+      try {
+        const detectedExtensionInfo = handler.getExtensionInfo();
+        if (detectedExtensionInfo && typeof detectedExtensionInfo === 'object') {
+          // Use the hasExtensions property directly from the handler
+          const hasExtensions = detectedExtensionInfo.hasExtensions || false;
+          setExtensionInfo({
+            hasExtensions,
+            extensionCount: detectedExtensionInfo.extensionCount || 0,
+            extensions: []
+          });
+        }
+      } catch (error) {
+        // If there's an error getting extension info, just keep the default state
+        console.warn('Error getting extension info:', error);
+      }
     }, 1000);
 
     return () => clearInterval(interval);
