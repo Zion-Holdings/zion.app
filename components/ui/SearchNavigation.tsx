@@ -27,14 +27,14 @@ const SearchNavigation: React.FC<SearchNavigationProps> = ({
   const inputRef = useRef<HTMLInputElement>(null)
 
   // Mock search results - in a real app, this would be an API call
-  const mockSearchResults: SearchResult[] = [
+  const mockSearchResults: SearchResult[] = React.useMemo(() => [
     { title: 'AI Service Matcher', description: 'Find perfect services with AI', href: '/ai-service-matcher', category: 'Tools' },
     { title: 'Web Development', description: 'Professional web development services', href: '/services/web-development', category: 'Services' },
     { title: 'Data Analytics Expert', description: 'AI and data analytics professional', href: '/talents/data-analytics-expert', category: 'Talents' },
     { title: 'Cloud Infrastructure', description: 'Scalable cloud solutions', href: '/services/cloud-infrastructure', category: 'Services' },
     { title: 'Project Management', description: 'Manage your projects efficiently', href: '/project-management', category: 'Tools' },
     { title: 'Cybersecurity Services', description: 'Protect your digital assets', href: '/services/cybersecurity', category: 'Services' }
-  ]
+  ], [])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -78,7 +78,7 @@ const SearchNavigation: React.FC<SearchNavigationProps> = ({
       setResults([])
     }
     setSelectedIndex(-1)
-  }, [query])
+  }, [query, mockSearchResults])
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === 'ArrowDown') {
