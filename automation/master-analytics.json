@@ -7,11 +7,11 @@
     "errors": 0
   },
   "lastWebsiteAnalysis": {
-    "timestamp": "2025-08-04T15:59:09.357Z",
-    "agentId": "analyzer-1754321642581",
-    "pagesAnalyzed": 39,
+    "timestamp": "2025-08-04T16:01:58.933Z",
+    "agentId": "analyzer-1754323103344",
+    "pagesAnalyzed": 138,
     "missingPages": 19,
-    "contentGaps": 39,
-    "errors": 101
+    "contentGaps": 137,
+    "errors": 0
   }
 }

@@ -1,0 +1,82 @@
+{
+  "url": "https://ziontechgroup.netlify.app/ai-powered-neural-interface-bci-system/",
+  "timestamp": "2025-08-04T16:00:31.015Z",
+  "pageInfo": {
+    "title": "AI-Powered Neural Interface & BCI System | Zion Tech",
+    "description": "Experience direct brain-computer interface with AI-powered neural interface system. Cognitive enhancement, thought control, and brain-computer communication.",
+    "keywords": "neural interface, brain-computer interface, BCI, cognitive enhancement, brain signals, EEG, neural technology, mind control",
+    "headings": [
+      {
+        "level": "h1",
+        "text": "Neural Interface & BCI System"
+      },
+      {
+        "level": "h3",
+        "text": "Connection Status"
+      },
+      {
+        "level": "h3",
+        "text": "Real-time Neural Signals"
+      },
+      {
+        "level": "h3",
+        "text": "Quick Actions"
+      }
+    ],
+    "content": "🧠Neural Interface & BCI SystemBrain-Computer Interface TechnologyCalibrating...📊Neural Dashboard⚡Brain Signals🧠Brain Activity🎯Cognitive Tasks🔌Neural Devices💻BCI Applications🏋️Neural Training🔗Connection StatusNeural InterfaceStatusDisconnectedSignal Quality94%Latency150msActive Channels64Real-time Neural SignalsRecordQuick Actions🎯Start Task🔌Calibrate📊Analytics🏋️TrainingAI-Powered Neural Interface & BCI System | Zion Tech GroupDirect brain-computer interface, cognitive enhancement, and neural technology{\"props\":{\"pageProps\":{}},\"page\":\"/ai-powered-neural-interface-bci-system\",\"query\":{},\"buildId\":\"CMuQSZ0xLDNyjBVOYzmhL\",\"nextExport\":true,\"autoExport\":true,\"isFallback\":false,\"scriptLoader\":[]}",
+    "images": [],
+    "forms": [],
+    "scripts": [
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/webpack-cefddfb7403e4fd5.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/framework-6c8598519c693321.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/main-ccd59d5a878b2566.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/_app-8d2391de9e862b04.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/ai-powered-neural-interface-bci-system-05454110a3e02fb7.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_buildManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "https://ziontechgroup.netlify.app/_next/static/CMuQSZ0xLDNyjBVOYzmhL/_ssgManifest.js",
+        "type": "text/javascript"
+      },
+      {
+        "src": "",
+        "type": "application/json"
+      }
+    ],
+    "stylesheets": [
+      {
+        "href": "https://ziontechgroup.netlify.app/_next/static/css/a17817344c0df42b.css",
+        "media": "all"
+      }
+    ]
+  },
+  "analytics": {
+    "contentLength": 712,
+    "headingCount": 4,
+    "imageCount": 0,
+    "formCount": 0,
+    "scriptCount": 9,
+    "stylesheetCount": 1
+  }
+}
