@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
-import { Search, X, ArrowRight, Command } from 'lucide-react'
+import { Search, X, ArrowRight, Command, Star } from 'lucide-react'
+import { useNavigation } from '../../src/contexts/NavigationContext'
 
 interface SearchResult {
   title: string
@@ -18,7 +19,7 @@ const SearchNavigation: React.FC<SearchNavigationProps> = ({
   className = '',
   placeholder = 'Search services, products, talents...'
 }) => {
-  const [isOpen, setIsOpen] = useState(false)
+  const { state, openSearch, closeSearch, addToFavorites, removeFromFavorites, navigateTo } = useNavigation()
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<SearchResult[]>([])
   const [selectedIndex, setSelectedIndex] = useState(-1)
@@ -38,7 +39,7 @@ const SearchNavigation: React.FC<SearchNavigationProps> = ({
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
-        setIsOpen(false)
+        closeSearch()
         setQuery('')
         setSelectedIndex(-1)
       }
@@ -46,12 +47,12 @@ const SearchNavigation: React.FC<SearchNavigationProps> = ({
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        setIsOpen(false)
+        closeSearch()
         setQuery('')
         setSelectedIndex(-1)
       } else if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
         event.preventDefault()
-        setIsOpen(true)
+        openSearch()
         inputRef.current?.focus()
       }
     }
@@ -63,7 +64,7 @@ const SearchNavigation: React.FC<SearchNavigationProps> = ({
       document.removeEventListener('mousedown', handleClickOutside)
       document.removeEventListener('keydown', handleKeyDown)
     }
-  }, [])
+  }, [openSearch, closeSearch])
 
   useEffect(() => {
     if (query.trim()) {
@@ -95,8 +96,8 @@ const SearchNavigation: React.FC<SearchNavigationProps> = ({
   }
 
   const handleResultClick = (href: string) => {
-    window.location.href = href
-    setIsOpen(false)
+    navigateTo(href)
+    closeSearch()
     setQuery('')
   }
 
@@ -104,7 +105,7 @@ const SearchNavigation: React.FC<SearchNavigationProps> = ({
     <div className={`relative ${className}`} ref={searchRef}>
       {/* Search Button */}
       <button
-        onClick={() => setIsOpen(true)}
+        onClick={() => openSearch()}
         className="flex items-center space-x-2 px-3 py-2 text-gray-300 hover:text-white bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-200 touch-target"
         aria-label="Open search"
       >
@@ -117,13 +118,13 @@ const SearchNavigation: React.FC<SearchNavigationProps> = ({
       </button>
 
       {/* Search Modal */}
-      {isOpen && (
+      {state.isSearchOpen && (
         <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4">
-          {/* Backdrop */}
-          <div 
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-            onClick={() => setIsOpen(false)}
-          />
+                      {/* Backdrop */}
+            <div 
+              className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+              onClick={() => closeSearch()}
+            />
           
           {/* Search Panel */}
           <div className="relative w-full max-w-2xl bg-black/95 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl">
@@ -141,7 +142,7 @@ const SearchNavigation: React.FC<SearchNavigationProps> = ({
                 autoFocus
               />
               <button
-                onClick={() => setIsOpen(false)}
+                onClick={() => closeSearch()}
                 className="ml-3 p-1 text-gray-400 hover:text-white touch-target"
               >
                 <X className="h-5 w-5" />
@@ -152,26 +153,46 @@ const SearchNavigation: React.FC<SearchNavigationProps> = ({
             {results.length > 0 && (
               <div className="max-h-96 overflow-y-auto">
                 {results.map((result, index) => (
-                  <button
-                    key={result.href}
-                    onClick={() => handleResultClick(result.href)}
-                    className={`w-full text-left p-4 hover:bg-white/10 transition-colors ${
-                      index === selectedIndex ? 'bg-white/10' : ''
-                    } ${index < results.length - 1 ? 'border-b border-white/5' : ''}`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="flex-1">
-                        <div className="flex items-center space-x-2">
-                          <span className="text-white font-medium">{result.title}</span>
-                          <span className="text-xs text-purple-400 bg-purple-400/10 px-2 py-1 rounded">
-                            {result.category}
-                          </span>
-                        </div>
-                        <p className="text-sm text-gray-400 mt-1">{result.description}</p>
-                      </div>
-                      <ArrowRight className="h-4 w-4 text-gray-400" />
-                    </div>
-                  </button>
+                                     <div
+                     key={result.href}
+                     className={`w-full text-left p-4 hover:bg-white/10 transition-colors ${
+                       index === selectedIndex ? 'bg-white/10' : ''
+                     } ${index < results.length - 1 ? 'border-b border-white/5' : ''}`}
+                   >
+                     <div className="flex items-center justify-between">
+                       <div className="flex-1">
+                         <button
+                           onClick={() => handleResultClick(result.href)}
+                           className="w-full text-left"
+                         >
+                           <div className="flex items-center space-x-2">
+                             <span className="text-white font-medium">{result.title}</span>
+                             <span className="text-xs text-purple-400 bg-purple-400/10 px-2 py-1 rounded">
+                               {result.category}
+                             </span>
+                           </div>
+                           <p className="text-sm text-gray-400 mt-1">{result.description}</p>
+                         </button>
+                       </div>
+                       <div className="flex items-center space-x-2">
+                         <button
+                           onClick={(e) => {
+                             e.stopPropagation()
+                             if (state.favorites.includes(result.href)) {
+                               removeFromFavorites(result.href)
+                             } else {
+                               addToFavorites(result.href)
+                             }
+                           }}
+                           className="p-1 text-gray-400 hover:text-yellow-400 transition-colors touch-target"
+                           title={state.favorites.includes(result.href) ? 'Remove from favorites' : 'Add to favorites'}
+                         >
+                           <Star className={`h-4 w-4 ${state.favorites.includes(result.href) ? 'text-yellow-400 fill-current' : ''}`} />
+                         </button>
+                         <ArrowRight className="h-4 w-4 text-gray-400" />
+                       </div>
+                     </div>
+                   </div>
                 ))}
               </div>
             )}
@@ -199,7 +220,7 @@ const SearchNavigation: React.FC<SearchNavigationProps> = ({
                     <Link
                       key={link.href}
                       href={link.href}
-                      onClick={() => setIsOpen(false)}
+                      onClick={() => closeSearch()}
                       className="text-sm text-gray-300 hover:text-white p-2 rounded hover:bg-white/10 transition-colors touch-target"
                     >
                       {link.label}
