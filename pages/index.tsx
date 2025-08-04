@@ -16,6 +16,7 @@ const Home: NextPage = () => {
   const [isFooterPersistent, setIsFooterPersistent] = useState(false)
 
 
+
   const handleWaitlistSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     console.log('Waitlist signup:', email)
@@ -111,6 +112,24 @@ const Home: NextPage = () => {
       cta: 'Try AI Matcher',
       ctaLink: '/ai-service-matcher',
       bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-slate-900'
+    },
+    {
+      id: 7,
+      type: 'ai-recommendation-engine',
+      title: 'AI Recommendation Engine',
+      subtitle: 'Intelligent Matching & Personalized Suggestions',
+      description: 'Our advanced AI analyzes your project requirements, budget, and preferences to find the perfect services, talents, and equipment. Get detailed insights and match scores for every recommendation.',
+      features: [
+        'Intelligent Profile Analysis',
+        'Advanced Matching Algorithms',
+        'Detailed AI Insights',
+        'Real-time Recommendations'
+      ],
+      cta: 'Get AI Recommendations',
+      ctaLink: '/ai-recommendation-engine',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/ai-recommendation-engine',
+      bgClass: 'bg-gradient-to-br from-emerald-900 via-teal-900 to-emerald-900'
     },
     {
       id: 7,
@@ -2283,7 +2302,7 @@ const Home: NextPage = () => {
     }
   }, [displayedSections])
 
-  // Scroll handler for infinite scroll and footer persistence
+  // Scroll handler for infinite scroll
   const handleScroll = useCallback(() => {
     const scrollPosition = window.innerHeight + window.scrollY
     const documentHeight = document.documentElement.scrollHeight
@@ -2295,7 +2314,7 @@ const Home: NextPage = () => {
       loadMoreSections()
     }
     
-    // Check for footer persistence after 10 sections
+
     const sectionElements = document.querySelectorAll('[data-section-id]')
     let visibleSectionCount = 0
     
@@ -2571,6 +2590,49 @@ const Home: NextPage = () => {
                       {index === 1 && '⚡'}
                       {index === 2 && '🎯'}
                       {index === 3 && '💰'}
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2">{feature}</h3>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )
+
+      case 'ai-recommendation-engine':
+        return (
+          <div className="py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  {section.title}
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-4">
+                  {section.subtitle}
+                </p>
+                <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+                  {section.description}
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                  <Link href={section.ctaLink} className="inline-flex items-center bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 transform hover:scale-105">
+                    <span className="mr-2">🧠</span>
+                    {section.cta}
+                  </Link>
+                  <Link href={section.secondaryCtaLink} className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                    {section.secondaryCta}
+                  </Link>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {section.features.map((feature: string, index: number) => (
+                  <div key={index} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
+                    <div className="text-2xl mb-3">
+                      {index === 0 && '🧠'}
+                      {index === 1 && '⚡'}
+                      {index === 2 && '📊'}
+                      {index === 3 && '🎯'}
                     </div>
                     <h3 className="text-lg font-bold text-white mb-2">{feature}</h3>
                   </div>
@@ -6041,9 +6103,7 @@ const Home: NextPage = () => {
         </div>
       </nav>
 
-      <main className={`flex-1 transition-all duration-500 ${
-        isFooterPersistent ? 'pb-64' : ''
-      }`}>
+      <main className="flex-1 transition-all duration-500">
         {/* Infinite Scroll Sections */}
         {displayedSections.map((section) => (
           <section
@@ -6074,6 +6134,73 @@ const Home: NextPage = () => {
         )}
       </main>
 
+             {/* Footer */}
+       <footer className="bg-black/40 backdrop-blur-md border-t border-white/10 transition-all duration-500 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+            <div>
+              <h3 className="text-xl font-bold mb-4">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
+              </h3>
+              <p className="text-gray-400">
+                The first free AI-powered marketplace for high-tech products, on-demand IT services, AI talents, innovation, and equipment.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Marketplace</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
+                <li><Link href="/talents" className="hover:text-white transition-colors">Talents</Link></li>
+                <li><Link href="/equipment" className="hover:text-white transition-colors">Equipment</Link></li>
+                <li><Link href="/products" className="hover:text-white transition-colors">Products</Link></li>
+                <li><Link href="/marketplace" className="hover:text-white transition-colors">Marketplace</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Company</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><Link href="/about" className="hover:text-white transition-colors">About</Link></li>
+                <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
+                <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+                <li><Link href="/careers" className="hover:text-white transition-colors">Careers</Link></li>
+                <li><Link href="/help-center" className="hover:text-white transition-colors">Help Center</Link></li>
+                <li><Link href="/quote-request" className="hover:text-white transition-colors">Request Quote</Link></li>
+                <li><Link href="/admin-dashboard" className="hover:text-white transition-colors">Admin</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Support</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><Link href="/auth/login" className="hover:text-white transition-colors">Login</Link></li>
+                <li><Link href="/auth/signup" className="hover:text-white transition-colors">Sign Up</Link></li>
+                <li><Link href="/inbox" className="hover:text-white transition-colors">Inbox</Link></li>
+                <li><Link href="/webhook-management" className="hover:text-white transition-colors">Webhooks</Link></li>
+                <li><Link href="/executive-dashboard" className="hover:text-white transition-colors">Executive</Link></li>
+                <li><Link href="/compliance-governance" className="hover:text-white transition-colors">Compliance</Link></li>
+                <li><Link href="/workflow-designer" className="hover:text-white transition-colors">Workflows</Link></li>
+                <li><Link href="/data-warehouse-etl" className="hover:text-white transition-colors">Data Warehouse</Link></li>
+                <li><Link href="/help-desk-support" className="hover:text-white transition-colors">Help Desk</Link></li>
+                <li><Link href="/dashboard" className="hover:text-white transition-colors">Dashboard</Link></li>
+                <li><Link href="/analytics" className="hover:text-white transition-colors">Analytics</Link></li>
+                <li><Link href="/ai-virtual-assistant" className="hover:text-white transition-colors">AI Assistant</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Legal</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                <li><Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link></li>
+                <li><Link href="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
+                <li><Link href="/sitemap" className="hover:text-white transition-colors">Sitemap</Link></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-white/10 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</p>
+          </div>
+        </div>
+      </footer>
+      
       {/* Notification System */}
       <NotificationSystem />
     </div>

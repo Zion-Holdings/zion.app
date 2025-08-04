@@ -170,15 +170,44 @@ const AIRecommendationEngine: NextPage = () => {
     // Simulate AI analysis progress
     const progressInterval = setInterval(() => {
       setAnalysisProgress(prev => {
-        if (prev >= 100) {
+        if (prev >= 90) {
           clearInterval(progressInterval);
-          setIsAnalyzing(false);
-          setRecommendations(mockRecommendations);
-          return 100;
+          return 90;
         }
         return prev + 10;
       });
     }, 200);
+
+    try {
+      // Call the AI recommendations API
+      const response = await fetch('/api/ai-recommendations', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userProfile
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to get AI recommendations');
+      }
+
+      const data = await response.json();
+      
+      // Complete the progress
+      setAnalysisProgress(100);
+      
+      // Set the recommendations from the API
+      setRecommendations(data.recommendations);
+    } catch (error) {
+      console.error('Error getting AI recommendations:', error);
+      // Fallback to mock data if API fails
+      setRecommendations(mockRecommendations);
+    } finally {
+      setIsAnalyzing(false);
+    }
   };
 
   const filteredRecommendations = recommendations.filter(rec => 
