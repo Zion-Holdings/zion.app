@@ -1,5 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import Head from 'next/head';
+import Header from '../components/ui/Header';
+import Footer from '../components/ui/Footer';
 
 interface Product {
   id: string;
@@ -76,6 +78,56 @@ const mockProducts: Product[] = [
     brand: 'Apple',
     condition: 'new',
     inStock: true
+  },
+  {
+    id: '4',
+    name: 'Lenovo ThinkPad X1 Carbon',
+    specs: {
+      processor: 'Intel Core i7-1260P',
+      memory: '16GB LPDDR5',
+      storage: '1TB SSD',
+      display: '14" 2.8K OLED',
+      graphics: 'Intel Iris Xe Graphics',
+      connectivity: 'WiFi 6E, 5G'
+    },
+    availability: 'buy',
+    price: { buy: 1899, rent: 119 },
+    category: 'laptops',
+    brand: 'Lenovo',
+    condition: 'new',
+    inStock: true
+  },
+  {
+    id: '5',
+    name: 'Cisco Catalyst 9300',
+    specs: {
+      processor: 'Cisco UADP 2.0',
+      memory: '8GB DDR4',
+      storage: '16GB Flash',
+      connectivity: '48-Port PoE+'
+    },
+    availability: 'rent',
+    price: { buy: 25000, rent: 1500 },
+    category: 'networking',
+    brand: 'Cisco',
+    condition: 'refurbished',
+    inStock: true
+  },
+  {
+    id: '6',
+    name: 'HP LaserJet Pro M404n',
+    specs: {
+      processor: 'ARM Cortex-A9',
+      memory: '256MB',
+      storage: '128MB Flash',
+      connectivity: 'Ethernet, USB 2.0'
+    },
+    availability: 'buy',
+    price: { buy: 299, rent: 25 },
+    category: 'printers',
+    brand: 'HP',
+    condition: 'new',
+    inStock: false
   }
 ];
 
@@ -149,259 +201,270 @@ export default function ProductsPage() {
   };
 
   return (
-    <>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
-        <title>IT Equipment - Products</title>
+        <title>IT Equipment - Products | Zion</title>
         <meta name="description" content="Browse our comprehensive selection of IT equipment for purchase or rental" />
       </Head>
 
-      <div className="min-h-screen bg-gray-50">
-        <div className="bg-white shadow-sm border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="py-6">
-              <h1 className="text-3xl font-bold text-gray-900">IT Equipment</h1>
-              <p className="mt-2 text-gray-600">Browse our comprehensive selection of computers, networking equipment, and accessories</p>
-            </div>
+      <Header />
+
+      {/* Hero Section */}
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-pink-500/10"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              IT Equipment
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400"> Products</span>
+            </h1>
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              Browse our comprehensive selection of computers, networking equipment, and accessories for purchase or rental
+            </p>
           </div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
-              <div className="lg:col-span-2">
-                <label htmlFor="search" className="block text-sm font-medium text-gray-700 mb-1">
-                  Search
-                </label>
-                <input
-                  type="text"
-                  id="search"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  placeholder="Search products..."
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="category" className="block text-sm font-medium text-gray-700 mb-1">
-                  Category
-                </label>
-                <select
-                  id="category"
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                >
-                  {categories.map(category => (
-                    <option key={category} value={category}>
-                      {category === 'all' ? 'All Categories' : category.charAt(0).toUpperCase() + category.slice(1)}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="brand" className="block text-sm font-medium text-gray-700 mb-1">
-                  Brand
-                </label>
-                <select
-                  id="brand"
-                  value={selectedBrand}
-                  onChange={(e) => setSelectedBrand(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                >
-                  {brands.map(brand => (
-                    <option key={brand} value={brand}>
-                      {brand === 'all' ? 'All Brands' : brand}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="condition" className="block text-sm font-medium text-gray-700 mb-1">
-                  Condition
-                </label>
-                <select
-                  id="condition"
-                  value={selectedCondition}
-                  onChange={(e) => setSelectedCondition(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                >
-                  {conditions.map(condition => (
-                    <option key={condition} value={condition}>
-                      {condition === 'all' ? 'All Conditions' : condition.charAt(0).toUpperCase() + condition.slice(1)}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="availability" className="block text-sm font-medium text-gray-700 mb-1">
-                  Availability
-                </label>
-                <select
-                  id="availability"
-                  value={selectedAvailability}
-                  onChange={(e) => setSelectedAvailability(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                >
-                  {availabilityOptions.map(option => (
-                    <option key={option} value={option}>
-                      {option === 'all' ? 'All Options' : option.charAt(0).toUpperCase() + option.slice(1)}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            <div className="mt-4 flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
-                <label htmlFor="sortBy" className="text-sm font-medium text-gray-700">
-                  Sort by:
-                </label>
-                <select
-                  id="sortBy"
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="px-3 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                >
-                  <option value="name">Name</option>
-                  <option value="brand">Brand</option>
-                  <option value="price">Price</option>
-                  <option value="availability">Availability</option>
-                </select>
-              </div>
-
-              <div className="flex items-center space-x-2">
-                <label htmlFor="sortOrder" className="text-sm font-medium text-gray-700">
-                  Order:
-                </label>
-                <select
-                  id="sortOrder"
-                  value={sortOrder}
-                  onChange={(e) => setSortOrder(e.target.value as 'asc' | 'desc')}
-                  className="px-3 py-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                >
-                  <option value="asc">Ascending</option>
-                  <option value="desc">Descending</option>
-                </select>
-              </div>
-
-              <div className="text-sm text-gray-600">
-                {filteredAndSortedProducts.length} products found
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredAndSortedProducts.map(product => (
-              <div key={product.id} className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-200">
-                <div className="w-full h-48 bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
-                  <div className="text-gray-400 text-4xl">🖥️</div>
-                </div>
-
-                <div className="p-4">
-                  <div className="flex items-start justify-between mb-2">
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900">{product.name}</h3>
-                      <p className="text-sm text-gray-600">{product.brand}</p>
-                    </div>
-                    <div className="flex flex-col items-end">
-                      <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-                        product.condition === 'new' ? 'bg-green-100 text-green-800' :
-                        product.condition === 'refurbished' ? 'bg-yellow-100 text-yellow-800' :
-                        'bg-gray-100 text-gray-800'
-                      }`}>
-                        {product.condition}
-                      </span>
-                      {!product.inStock && (
-                        <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800 mt-1">
-                          Out of Stock
-                        </span>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="mb-4">
-                    <div className="text-sm text-gray-600 space-y-1">
-                      {product.specs.processor && (
-                        <div><span className="font-medium">CPU:</span> {product.specs.processor}</div>
-                      )}
-                      {product.specs.memory && (
-                        <div><span className="font-medium">RAM:</span> {product.specs.memory}</div>
-                      )}
-                      {product.specs.storage && (
-                        <div><span className="font-medium">Storage:</span> {product.specs.storage}</div>
-                      )}
-                      {product.specs.display && (
-                        <div><span className="font-medium">Display:</span> {product.specs.display}</div>
-                      )}
-                      {product.specs.graphics && product.specs.graphics !== 'N/A' && (
-                        <div><span className="font-medium">Graphics:</span> {product.specs.graphics}</div>
-                      )}
-                      {product.specs.connectivity && (
-                        <div><span className="font-medium">Connectivity:</span> {product.specs.connectivity}</div>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="border-t pt-4">
-                    <div className="flex items-center justify-between mb-3">
-                      <div>
-                        {product.availability === 'buy' ? (
-                          <div className="text-lg font-bold text-gray-900">
-                            ${product.price.buy?.toLocaleString()}
-                          </div>
-                        ) : (
-                          <div>
-                            <div className="text-lg font-bold text-gray-900">
-                              ${product.price.rent}/month
-                            </div>
-                            <div className="text-sm text-gray-500">
-                              Buy: ${product.price.buy?.toLocaleString()}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                      <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
-                        product.availability === 'buy' ? 'bg-blue-100 text-blue-800' : 'bg-purple-100 text-purple-800'
-                      }`}>
-                        {product.availability === 'buy' ? 'Buy' : 'Rent'}
-                      </span>
-                    </div>
-
-                    <button
-                      onClick={() => handleCTA(product)}
-                      disabled={!product.inStock}
-                      className={`w-full py-2 px-4 rounded-md font-medium transition-colors duration-200 ${
-                        product.inStock
-                          ? product.availability === 'buy'
-                            ? 'bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
-                            : 'bg-purple-600 text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2'
-                          : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                      }`}
-                    >
-                      {product.inStock 
-                        ? (product.availability === 'buy' ? 'Add to Cart' : 'Rent Now')
-                        : 'Out of Stock'
-                      }
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {filteredAndSortedProducts.length === 0 && (
-            <div className="text-center py-12">
-              <div className="text-gray-400 text-6xl mb-4">��</div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">No products found</h3>
-              <p className="text-gray-600">Try adjusting your filters or search terms</p>
-            </div>
-          )}
         </div>
       </div>
-    </>
+
+      {/* Filters Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="bg-white/5 backdrop-blur-md rounded-xl border border-white/10 p-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
+            <div className="lg:col-span-2">
+              <label htmlFor="search" className="block text-sm font-medium text-gray-300 mb-1">
+                Search
+              </label>
+              <input
+                type="text"
+                id="search"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="Search products..."
+                className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="category" className="block text-sm font-medium text-gray-300 mb-1">
+                Category
+              </label>
+              <select
+                id="category"
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+              >
+                {categories.map(category => (
+                  <option key={category} value={category} className="bg-slate-800">
+                    {category === 'all' ? 'All Categories' : category.charAt(0).toUpperCase() + category.slice(1)}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor="brand" className="block text-sm font-medium text-gray-300 mb-1">
+                Brand
+              </label>
+              <select
+                id="brand"
+                value={selectedBrand}
+                onChange={(e) => setSelectedBrand(e.target.value)}
+                className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+              >
+                {brands.map(brand => (
+                  <option key={brand} value={brand} className="bg-slate-800">
+                    {brand === 'all' ? 'All Brands' : brand}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor="condition" className="block text-sm font-medium text-gray-300 mb-1">
+                Condition
+              </label>
+              <select
+                id="condition"
+                value={selectedCondition}
+                onChange={(e) => setSelectedCondition(e.target.value)}
+                className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+              >
+                {conditions.map(condition => (
+                  <option key={condition} value={condition} className="bg-slate-800">
+                    {condition === 'all' ? 'All Conditions' : condition.charAt(0).toUpperCase() + condition.slice(1)}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor="availability" className="block text-sm font-medium text-gray-300 mb-1">
+                Availability
+              </label>
+              <select
+                id="availability"
+                value={selectedAvailability}
+                onChange={(e) => setSelectedAvailability(e.target.value)}
+                className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+              >
+                {availabilityOptions.map(option => (
+                  <option key={option} value={option} className="bg-slate-800">
+                    {option === 'all' ? 'All Options' : option.charAt(0).toUpperCase() + option.slice(1)}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          <div className="mt-4 flex items-center space-x-4">
+            <div className="flex items-center space-x-2">
+              <label htmlFor="sortBy" className="text-sm font-medium text-gray-300">
+                Sort by:
+              </label>
+              <select
+                id="sortBy"
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="px-3 py-1 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+              >
+                <option value="name" className="bg-slate-800">Name</option>
+                <option value="brand" className="bg-slate-800">Brand</option>
+                <option value="price" className="bg-slate-800">Price</option>
+                <option value="availability" className="bg-slate-800">Availability</option>
+              </select>
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <label htmlFor="sortOrder" className="text-sm font-medium text-gray-300">
+                Order:
+              </label>
+              <select
+                id="sortOrder"
+                value={sortOrder}
+                onChange={(e) => setSortOrder(e.target.value as 'asc' | 'desc')}
+                className="px-3 py-1 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+              >
+                <option value="asc" className="bg-slate-800">Ascending</option>
+                <option value="desc" className="bg-slate-800">Descending</option>
+              </select>
+            </div>
+
+            <div className="text-sm text-gray-400">
+              {filteredAndSortedProducts.length} products found
+            </div>
+          </div>
+        </div>
+
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredAndSortedProducts.map(product => (
+            <div key={product.id} className="bg-white/5 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden hover:bg-white/10 transition-all duration-300 hover:scale-105">
+              <div className="w-full h-48 bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
+                <div className="text-4xl">🖥️</div>
+              </div>
+
+              <div className="p-4">
+                <div className="flex items-start justify-between mb-2">
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">{product.name}</h3>
+                    <p className="text-sm text-gray-400">{product.brand}</p>
+                  </div>
+                  <div className="flex flex-col items-end">
+                    <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
+                      product.condition === 'new' ? 'bg-green-500/20 text-green-400' :
+                      product.condition === 'refurbished' ? 'bg-yellow-500/20 text-yellow-400' :
+                      'bg-gray-500/20 text-gray-400'
+                    }`}>
+                      {product.condition}
+                    </span>
+                    {!product.inStock && (
+                      <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-500/20 text-red-400 mt-1">
+                        Out of Stock
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <div className="text-sm text-gray-400 space-y-1">
+                    {product.specs.processor && (
+                      <div><span className="font-medium text-gray-300">CPU:</span> {product.specs.processor}</div>
+                    )}
+                    {product.specs.memory && (
+                      <div><span className="font-medium text-gray-300">RAM:</span> {product.specs.memory}</div>
+                    )}
+                    {product.specs.storage && (
+                      <div><span className="font-medium text-gray-300">Storage:</span> {product.specs.storage}</div>
+                    )}
+                    {product.specs.display && (
+                      <div><span className="font-medium text-gray-300">Display:</span> {product.specs.display}</div>
+                    )}
+                    {product.specs.graphics && product.specs.graphics !== 'N/A' && (
+                      <div><span className="font-medium text-gray-300">Graphics:</span> {product.specs.graphics}</div>
+                    )}
+                    {product.specs.connectivity && (
+                      <div><span className="font-medium text-gray-300">Connectivity:</span> {product.specs.connectivity}</div>
+                    )}
+                  </div>
+                </div>
+
+                <div className="border-t border-white/10 pt-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <div>
+                      {product.availability === 'buy' ? (
+                        <div className="text-lg font-bold text-white">
+                          ${product.price.buy?.toLocaleString()}
+                        </div>
+                      ) : (
+                        <div>
+                          <div className="text-lg font-bold text-white">
+                            ${product.price.rent}/month
+                          </div>
+                          <div className="text-sm text-gray-500">
+                            Buy: ${product.price.buy?.toLocaleString()}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                    <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
+                      product.availability === 'buy' ? 'bg-blue-500/20 text-blue-400' : 'bg-purple-500/20 text-purple-400'
+                    }`}>
+                      {product.availability === 'buy' ? 'Buy' : 'Rent'}
+                    </span>
+                  </div>
+
+                  <button
+                    onClick={() => handleCTA(product)}
+                    disabled={!product.inStock}
+                    className={`w-full py-2 px-4 rounded-md font-medium transition-all duration-300 ${
+                      product.inStock
+                        ? product.availability === 'buy'
+                          ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-900'
+                          : 'bg-gradient-to-r from-purple-600 to-purple-700 text-white hover:from-purple-700 hover:to-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-slate-900'
+                        : 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                    }`}
+                  >
+                    {product.inStock 
+                      ? (product.availability === 'buy' ? 'Add to Cart' : 'Rent Now')
+                      : 'Out of Stock'
+                    }
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {filteredAndSortedProducts.length === 0 && (
+          <div className="text-center py-12">
+            <div className="text-gray-400 text-6xl mb-4">🔍</div>
+            <h3 className="text-lg font-medium text-white mb-2">No products found</h3>
+            <p className="text-gray-400">Try adjusting your filters or search terms</p>
+          </div>
+        )}
+      </div>
+
+      <Footer />
+    </div>
   );
 }
