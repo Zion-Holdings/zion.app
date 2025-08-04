@@ -36,7 +36,7 @@ const DigitalTwinsRevolutionizingIndustry40ChatPage: NextPage = () => {
               </span>
             </h1>
             <div className="flex items-center text-gray-400 text-sm mb-8">
-              <span>Expert Discussion • practical-implementation • trend-analysis</span>
+              <span>Expert Discussion • solution-oriented • best-practices</span>
             </div>
           </div>
           

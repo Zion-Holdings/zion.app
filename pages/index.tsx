@@ -181,6 +181,24 @@ const Home: NextPage = () => {
       bgClass: 'bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900'
     },
     {
+      id: 11,
+      type: 'ai-resume-builder',
+      title: 'AI Resume Builder',
+      subtitle: 'Create Professional Resumes with AI',
+      description: 'Build stunning resumes, track career progress, and get AI-powered career advice. Perfect for job seekers, professionals, and career changers.',
+      features: [
+        'AI-Powered Resume Generation',
+        'Professional Templates',
+        'Career Advice & Suggestions',
+        'ATS-Friendly Formatting'
+      ],
+      cta: 'Build My Resume',
+      ctaLink: '/ai-resume-builder',
+      secondaryCta: 'Learn More',
+      secondaryCtaLink: '/ai-resume-builder',
+      bgClass: 'bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900'
+    },
+    {
       id: 7,
       type: 'chat-services',
       title: 'AI Chat Services',
