@@ -53,22 +53,24 @@ interface APIMonitoring {
   name: string;
   description: string;
   endpoint: string;
+  type: string;
+  priority: string;
   status: 'healthy' | 'warning' | 'error' | 'down';
   responseTime: number;
   uptime: number;
-  lastCheck: Date;
+  lastCheck: string;
   aiAnalysis: MonitoringAnalysis;
 }
 
 interface APISecurity {
   id: string;
-  name: string;
-  description: string;
-  type: 'authentication' | 'authorization' | 'encryption' | 'rate_limiting' | 'threat_protection';
-  status: 'active' | 'inactive' | 'warning' | 'error';
-  securityLevel: string;
-  lastAudit: Date;
-  aiAnalysis: SecurityAnalysis;
+  type: string;
+  endpoint: string;
+  severity: 'low' | 'medium' | 'high' | 'critical';
+  detected: string;
+  recommendation: string;
+  status: 'active' | 'resolved' | 'pending';
+  lastUpdated: string;
 }
 
 interface SecurityAnalysis {
@@ -543,7 +545,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
                         </div>
                         <div>
                           <p className="text-gray-400">Last Check</p>
-                          <p className="text-white">{monitor.lastCheck}</p>
+                          <p className="text-white">{monitor.lastCheck.toString()}</p>
                         </div>
                       </div>
                       

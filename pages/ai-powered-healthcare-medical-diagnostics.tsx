@@ -27,6 +27,10 @@ interface Patient {
   currentConditions: string[];
   lastVisit: Date;
   nextAppointment?: Date;
+  status: 'active' | 'inactive' | 'discharged' | 'pending';
+  patientId: string;
+  patientName: string;
+  bloodType: string;
 }
 
 interface MedicalDiagnostic {
@@ -253,7 +257,7 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-gray-300 text-sm">Active Patients</p>
-                      <p className="text-2xl font-bold text-white">{patients.filter(p => p.status === 'active').length}</p>
+                                             <p className="text-2xl font-bold text-white">{patients.filter(p => p.status === 'active').length}</p>
                     </div>
                     <User className="h-8 w-8 text-blue-400" />
                   </div>
@@ -383,8 +387,8 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {
                   <div key={patient.id} className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
                     <div className="flex justify-between items-start mb-4">
                       <div>
-                        <h3 className="text-lg font-semibold text-white">{patient.patientName}</h3>
-                        <p className="text-gray-400 text-sm">ID: {patient.patientId} • Age: {patient.age}</p>
+                        <h3 className="text-lg font-semibold text-white">{patient.name}</h3>
+                        <p className="text-gray-400 text-sm">ID: {patient.id} • Age: {patient.age}</p>
                       </div>
                       <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(patient.status)}`}>
                         {patient.status}
