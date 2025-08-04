@@ -17,8 +17,8 @@ interface UseMessageChannelHandlerReturn {
     extensions: Array<{
       name: string;
       id: string;
-      version: string;
-      permissions: string[];
+      type: 'unknown';
+      detected: boolean;
     }>;
   };
 }
@@ -32,8 +32,8 @@ export const useMessageChannelHandler = (): UseMessageChannelHandlerReturn => {
     extensions: Array<{
       name: string;
       id: string;
-      version: string;
-      permissions: string[];
+      type: 'unknown';
+      detected: boolean;
     }>;
   }>({
     hasExtensions: false,
@@ -48,19 +48,7 @@ export const useMessageChannelHandler = (): UseMessageChannelHandlerReturn => {
     const interval = setInterval(() => {
       setErrorCount(handler.getErrorCount());
       setHasRecentErrors(handler.hasRecentErrors(5)); // Check last 5 minutes
-      const detectedExtensionInfo = handler.getExtensionInfo();
-      if (detectedExtensionInfo) {
-        setExtensionInfo({
-          hasExtensions: detectedExtensionInfo.hasExtensions,
-          extensionCount: detectedExtensionInfo.extensionCount,
-          extensions: detectedExtensionInfo.extensions.map(ext => ({
-            name: ext.name,
-            id: ext.id,
-            version: 'unknown',
-            permissions: []
-          }))
-        });
-      }
+      setExtensionInfo(handler.getExtensionInfo());
     }, 1000);
 
     return () => clearInterval(interval);

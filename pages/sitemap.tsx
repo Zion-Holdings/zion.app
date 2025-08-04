@@ -9,7 +9,8 @@ const Sitemap: NextPage = () => {
       { name: 'About', href: '/about', description: 'Learn about Zion and our mission' },
       { name: 'Contact', href: '/contact', description: 'Get in touch with our team' },
       { name: 'Privacy Policy', href: '/privacy-policy', description: 'Our privacy policy and data protection' },
-      { name: 'Terms of Service', href: '/terms-of-service', description: 'Platform terms and conditions' }
+      { name: 'Terms of Service', href: '/terms-of-service', description: 'Platform terms and conditions' },
+      { name: 'Accessibility', href: '/accessibility', description: 'Accessibility information and features' }
     ],
     marketplace: [
       { name: 'Marketplace', href: '/marketplace', description: 'Main marketplace hub' },
@@ -18,37 +19,31 @@ const Sitemap: NextPage = () => {
       { name: 'Equipment', href: '/equipment', description: 'High-performance computing equipment' },
       { name: 'Products', href: '/products', description: 'Innovation and technology products' },
       { name: 'Service Categories', href: '/service-categories', description: 'Organized service categories' },
+      { name: 'Talent Directory', href: '/talent-directory', description: 'Comprehensive talent directory' },
       { name: 'Marketplace Pricing', href: '/marketplace-pricing', description: 'Pricing and commission structure' }
     ],
     aiServices: [
       { name: 'AI Service Matcher', href: '/ai-service-matcher', description: 'AI-powered service matching' },
-      { name: 'AI Recommendation Engine', href: '/ai-recommendation-engine', description: 'Intelligent AI-powered recommendations' },
-      { name: 'AI Portfolio Builder', href: '/ai-portfolio-builder', description: 'AI-powered portfolio generation' },
-      { name: 'AI Contract Generator', href: '/ai-contract-generator', description: 'AI-powered contract generation' },
-      { name: 'AI Invoice Generator', href: '/ai-invoice-generator', description: 'AI-powered invoice generation' },
-      { name: 'AI Resume Builder', href: '/ai-resume-builder', description: 'AI-powered resume generation' },
-    { name: 'AI Business Intelligence Dashboard', href: '/ai-business-intelligence-dashboard', description: 'Real-time analytics and predictive insights' },
-      { name: 'AI Virtual Assistant', href: '/ai-virtual-assistant', description: 'AI assistant and chatbot' },
-      { name: 'AI Project Management', href: '/ai-project-management', description: 'AI-powered project management' },
-      { name: 'AI Analytics Dashboard', href: '/analytics-dashboard', description: 'Business intelligence and analytics' },
-      { name: 'AI Data Analytics', href: '/ai-powered-data-analytics', description: 'Advanced data analytics' },
-      { name: 'AI Predictive Analytics', href: '/ai-powered-predictive-analytics-machine-learning', description: 'Predictive analytics and ML' }
-    ],
-    advancedFeatures: [
-      { name: 'Advanced Search', href: '/advanced-search', description: 'Advanced search and filtering' },
-      { name: 'Real-time Chat', href: '/real-time-chat', description: 'Live communication system' },
-      { name: 'Notifications', href: '/notifications', description: 'Smart notification system' },
-      { name: 'Inbox', href: '/inbox', description: 'Unified messaging center' },
-      { name: 'User Profiles', href: '/user-profiles', description: 'User profile management' },
-      { name: 'Review System', href: '/review-system', description: 'Reviews and ratings' }
+      { name: 'AI Analytics', href: '/ai-powered-analytics', description: 'Advanced AI analytics platform' },
+      { name: 'AI Automation', href: '/ai-powered-automation', description: 'Intelligent automation solutions' },
+      { name: 'Data Analytics', href: '/ai-powered-data-analytics', description: 'Predictive analytics and ML' },
+      { name: 'Cybersecurity', href: '/ai-powered-security-cybersecurity', description: 'AI-powered security solutions' },
+      { name: 'Education & Training', href: '/ai-powered-education-training', description: 'AI-enhanced learning' },
+      { name: 'Legal & Contracts', href: '/ai-powered-contract-legal', description: 'AI contract generation' },
+      { name: 'Customer Support', href: '/ai-powered-customer-support', description: 'AI customer service' },
+      { name: 'Identity Verification', href: '/ai-powered-identity-verification', description: 'Biometric authentication' },
+      { name: 'AI Testing', href: '/ai-powered-testing', description: 'Automated testing solutions' }
     ],
     businessTools: [
       { name: 'Executive Dashboard', href: '/executive-dashboard', description: 'C-level executive insights' },
-      { name: 'Analytics', href: '/analytics', description: 'Business analytics and reporting' },
+      { name: 'Analytics Dashboard', href: '/analytics-dashboard', description: 'Business analytics and reporting' },
+      { name: 'Project Management', href: '/project-management', description: 'Project management tools' },
+      { name: 'AI Project Management', href: '/ai-project-management', description: 'AI-enhanced project management' },
       { name: 'Webhook Management', href: '/webhook-management', description: 'API and webhook management' },
       { name: 'Workflow Designer', href: '/workflow-designer', description: 'Visual workflow builder' },
       { name: 'Data Warehouse ETL', href: '/data-warehouse-etl', description: 'Data integration platform' },
-      { name: 'Help Desk Support', href: '/help-desk-support', description: 'Customer support system' }
+      { name: 'Help Desk Support', href: '/help-desk-support', description: 'Customer support system' },
+      { name: 'Advanced Search', href: '/advanced-search', description: 'Advanced search and filtering' }
     ],
     security: [
       { name: 'Compliance & Governance', href: '/compliance-governance', description: 'Regulatory compliance' },
@@ -56,23 +51,52 @@ const Sitemap: NextPage = () => {
       { name: 'Warranty Protection', href: '/warranty-protection', description: 'Extended warranty coverage' },
       { name: 'Dispute Resolution', href: '/dispute-resolution', description: 'Conflict resolution system' },
       { name: 'Payment Processing', href: '/payment-processing', description: 'Secure payment handling' },
-      { name: 'Invoice & Billing', href: '/invoice-billing', description: 'Professional billing system' }
+      { name: 'Invoice & Billing', href: '/invoice-billing', description: 'Professional billing system' },
+      { name: 'Skill Verification', href: '/skill-verification', description: 'Talent skill verification' }
+    ],
+    communication: [
+      { name: 'Inbox', href: '/inbox', description: 'Unified messaging center' },
+      { name: 'Real-time Chat', href: '/real-time-chat', description: 'Live communication system' },
+      { name: 'Notifications', href: '/notifications', description: 'Smart notification system' },
+      { name: 'Referral System', href: '/referral-affiliate', description: 'Referral and affiliate program' },
+      { name: 'Multi-language', href: '/multi-language', description: 'Multi-language support' }
+    ],
+    immersive: [
+      { name: 'Immersive Marketplace', href: '/ai-immersive-marketplace', description: 'VR/AR marketplace experience' },
+      { name: 'Mixed Reality', href: '/ai-powered-mixed-reality-spatial-computing', description: 'Spatial computing solutions' },
+      { name: 'Augmented Reality', href: '/ai-powered-augmented-reality', description: 'AR applications and tools' },
+      { name: 'Team Collaboration', href: '/ai-powered-collaboration-team', description: 'AI-enhanced team collaboration' }
+    ],
+    transportation: [
+      { name: 'Autonomous Vehicles', href: '/ai-powered-autonomous-vehicle-transportation', description: 'Self-driving vehicle solutions' },
+      { name: 'Drone Delivery', href: '/ai-powered-autonomous-drone-delivery-logistics', description: 'Drone logistics and delivery' },
+      { name: 'Supply Chain', href: '/ai-powered-inventory-supply-chain', description: 'Inventory and supply chain management' },
+      { name: 'Pricing Estimation', href: '/ai-powered-pricing-estimation', description: 'AI-powered pricing tools' }
+    ],
+    legal: [
+      { name: 'Contract Generator', href: '/ai-contract-generator', description: 'AI contract generation' },
+      { name: 'Invoice Generator', href: '/ai-invoice-generator', description: 'Automated invoice creation' },
+      { name: 'Biometric Authentication', href: '/ai-powered-biometric-authentication', description: 'Secure biometric systems' },
+      { name: 'Quantum Cryptography', href: '/ai-powered-quantum-cryptography-secure-communication', description: 'Quantum security solutions' }
+    ],
+    quantum: [
+      { name: 'Quantum Computing', href: '/ai-powered-quantum-computing', description: 'Quantum computing solutions' },
+      { name: 'Quantum Machine Learning', href: '/ai-powered-quantum-machine-learning-neural-networks', description: 'Quantum ML algorithms' },
+      { name: 'Quantum Teleportation', href: '/ai-powered-quantum-entanglement-teleportation', description: 'Quantum communication' }
     ],
     specialized: [
-      { name: 'Investor Matchmaking', href: '/investor-matchmaking', description: 'Startup-investor matching' },
-      { name: 'Skill Verification', href: '/skill-verification', description: 'Professional skill assessment' },
-      { name: 'Multi-language Support', href: '/multi-language', description: 'Global language support' },
-      { name: 'Mobile Responsive', href: '/mobile-responsive', description: 'Mobile optimization' },
-      { name: 'SEO Optimization', href: '/seo-optimization', description: 'Search engine optimization' },
-      { name: 'Referral & Affiliate', href: '/referral-affiliate', description: 'Referral program' }
-    ],
-    aiPowered: [
-      { name: 'AI Autonomous Vehicles', href: '/ai-autonomous-vehicle-transportation', description: 'Autonomous transportation' },
-      { name: 'AI Smart City', href: '/ai-smart-city-management', description: 'Smart city solutions' },
-      { name: 'AI Immersive Marketplace', href: '/ai-immersive-marketplace', description: 'VR/AR marketplace' },
-      { name: 'AI Quantum Computing', href: '/ai-powered-quantum-computing', description: 'Quantum computing solutions' },
-      { name: 'AI Blockchain', href: '/ai-powered-blockchain', description: 'Blockchain integration' },
-      { name: 'AI Cybersecurity', href: '/ai-powered-security-cybersecurity', description: 'AI security solutions' }
+      { name: 'Space Exploration', href: '/ai-powered-space-exploration-satellite-management', description: 'Satellite and space tech' },
+      { name: 'Underwater Exploration', href: '/ai-powered-underwater-exploration-marine-research', description: 'Marine research and exploration' },
+      { name: 'Climate Change', href: '/ai-powered-climate-change-environmental-sustainability', description: 'Environmental sustainability' },
+      { name: 'Precision Agriculture', href: '/ai-powered-precision-agriculture-smart-farming', description: 'Smart farming solutions' },
+      { name: 'Healthcare', href: '/ai-powered-healthcare-medical-diagnostics', description: 'Medical AI diagnostics' },
+      { name: 'Energy Management', href: '/ai-powered-energy-management-renewable-energy', description: 'Renewable energy solutions' },
+      { name: 'Manufacturing', href: '/ai-powered-manufacturing-industrial-automation', description: 'Industrial automation' },
+      { name: 'Finance & Banking', href: '/ai-powered-finance-banking', description: 'Financial technology solutions' },
+      { name: 'Retail & E-commerce', href: '/ai-powered-retail-ecommerce', description: 'Retail technology' },
+      { name: 'Entertainment & Gaming', href: '/ai-powered-entertainment-gaming', description: 'Gaming and entertainment' },
+      { name: 'Social Media', href: '/ai-powered-social-media-community', description: 'Social media solutions' },
+      { name: 'Smart Infrastructure', href: '/ai-powered-urban-development-smart-infrastructure', description: 'Urban development tech' }
     ],
     blog: [
       { name: 'Blog', href: '/blog', description: 'Latest insights and articles' },
@@ -86,8 +110,13 @@ const Sitemap: NextPage = () => {
       { name: 'Login', href: '/auth/login', description: 'User login page' },
       { name: 'Sign Up', href: '/auth/signup', description: 'User registration' },
       { name: 'Forgot Password', href: '/auth/forgot-password', description: 'Password recovery' },
-      { name: 'Reset Password', href: '/auth/reset-password', description: 'Password reset' },
-      { name: 'Email Verification', href: '/auth/verify', description: 'Email verification' }
+      { name: 'User Profiles', href: '/user-profiles', description: 'User profile management' },
+      { name: 'Review System', href: '/review-system', description: 'Reviews and ratings' }
+    ],
+    resources: [
+      { name: 'Investor Matchmaking', href: '/investor-matchmaking', description: 'Connect with investors' },
+      { name: 'AI Portfolio Builder', href: '/ai-portfolio-builder', description: 'Build AI portfolios' },
+      { name: 'AI Business Intelligence', href: '/ai-business-intelligence-dashboard', description: 'Business intelligence tools' }
     ]
   }
 
@@ -125,172 +154,70 @@ const Sitemap: NextPage = () => {
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">Sitemap</h1>
+          <h1 className="text-4xl font-bold text-white mb-4">
+            Complete Sitemap
+          </h1>
           <p className="text-xl text-gray-300">
-            Complete overview of all pages and sections on Zion's AI-powered marketplace
+            Find all pages and features of Zion's AI-powered marketplace
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-          {/* Main Pages */}
-          <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-            <h2 className="text-2xl font-semibold text-white mb-4">Main Pages</h2>
-            <div className="space-y-3">
-              {sitemapData.main.map((item, index) => (
-                <Link key={index} href={item.href} className="block p-3 rounded-lg hover:bg-white/10 transition-colors duration-300">
-                  <div className="text-white font-medium">{item.name}</div>
-                  <div className="text-gray-400 text-sm">{item.description}</div>
-                </Link>
-              ))}
+          {Object.entries(sitemapData).map(([category, pages]) => (
+            <div key={category} className="bg-black/20 backdrop-blur-md rounded-lg p-6 border border-white/10">
+              <h2 className="text-xl font-semibold text-purple-400 mb-4 capitalize">
+                {category.replace(/([A-Z])/g, ' $1').trim()}
+              </h2>
+              <ul className="space-y-3">
+                {pages.map((page) => (
+                  <li key={page.href}>
+                    <Link 
+                      href={page.href} 
+                      className="text-gray-300 hover:text-white transition-colors block group"
+                    >
+                      <div className="font-medium group-hover:text-purple-400 transition-colors">
+                        {page.name}
+                      </div>
+                      <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
+                        {page.description}
+                      </div>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-
-          {/* Marketplace */}
-          <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-            <h2 className="text-2xl font-semibold text-white mb-4">Marketplace</h2>
-            <div className="space-y-3">
-              {sitemapData.marketplace.map((item, index) => (
-                <Link key={index} href={item.href} className="block p-3 rounded-lg hover:bg-white/10 transition-colors duration-300">
-                  <div className="text-white font-medium">{item.name}</div>
-                  <div className="text-gray-400 text-sm">{item.description}</div>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* AI Services */}
-          <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-            <h2 className="text-2xl font-semibold text-white mb-4">AI Services</h2>
-            <div className="space-y-3">
-              {sitemapData.aiServices.map((item, index) => (
-                <Link key={index} href={item.href} className="block p-3 rounded-lg hover:bg-white/10 transition-colors duration-300">
-                  <div className="text-white font-medium">{item.name}</div>
-                  <div className="text-gray-400 text-sm">{item.description}</div>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Advanced Features */}
-          <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-            <h2 className="text-2xl font-semibold text-white mb-4">Advanced Features</h2>
-            <div className="space-y-3">
-              {sitemapData.advancedFeatures.map((item, index) => (
-                <Link key={index} href={item.href} className="block p-3 rounded-lg hover:bg-white/10 transition-colors duration-300">
-                  <div className="text-white font-medium">{item.name}</div>
-                  <div className="text-gray-400 text-sm">{item.description}</div>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Business Tools */}
-          <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-            <h2 className="text-2xl font-semibold text-white mb-4">Business Tools</h2>
-            <div className="space-y-3">
-              {sitemapData.businessTools.map((item, index) => (
-                <Link key={index} href={item.href} className="block p-3 rounded-lg hover:bg-white/10 transition-colors duration-300">
-                  <div className="text-white font-medium">{item.name}</div>
-                  <div className="text-gray-400 text-sm">{item.description}</div>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Security & Compliance */}
-          <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-            <h2 className="text-2xl font-semibold text-white mb-4">Security & Compliance</h2>
-            <div className="space-y-3">
-              {sitemapData.security.map((item, index) => (
-                <Link key={index} href={item.href} className="block p-3 rounded-lg hover:bg-white/10 transition-colors duration-300">
-                  <div className="text-white font-medium">{item.name}</div>
-                  <div className="text-gray-400 text-sm">{item.description}</div>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Specialized Services */}
-          <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-            <h2 className="text-2xl font-semibold text-white mb-4">Specialized Services</h2>
-            <div className="space-y-3">
-              {sitemapData.specialized.map((item, index) => (
-                <Link key={index} href={item.href} className="block p-3 rounded-lg hover:bg-white/10 transition-colors duration-300">
-                  <div className="text-white font-medium">{item.name}</div>
-                  <div className="text-gray-400 text-sm">{item.description}</div>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* AI-Powered Solutions */}
-          <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-            <h2 className="text-2xl font-semibold text-white mb-4">AI-Powered Solutions</h2>
-            <div className="space-y-3">
-              {sitemapData.aiPowered.map((item, index) => (
-                <Link key={index} href={item.href} className="block p-3 rounded-lg hover:bg-white/10 transition-colors duration-300">
-                  <div className="text-white font-medium">{item.name}</div>
-                  <div className="text-gray-400 text-sm">{item.description}</div>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Blog & Content */}
-          <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-            <h2 className="text-2xl font-semibold text-white mb-4">Blog & Content</h2>
-            <div className="space-y-3">
-              {sitemapData.blog.map((item, index) => (
-                <Link key={index} href={item.href} className="block p-3 rounded-lg hover:bg-white/10 transition-colors duration-300">
-                  <div className="text-white font-medium">{item.name}</div>
-                  <div className="text-gray-400 text-sm">{item.description}</div>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Authentication */}
-          <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-            <h2 className="text-2xl font-semibold text-white mb-4">Authentication</h2>
-            <div className="space-y-3">
-              {sitemapData.auth.map((item, index) => (
-                <Link key={index} href={item.href} className="block p-3 rounded-lg hover:bg-white/10 transition-colors duration-300">
-                  <div className="text-white font-medium">{item.name}</div>
-                  <div className="text-gray-400 text-sm">{item.description}</div>
-                </Link>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
 
-        {/* Quick Stats */}
-        <div className="mt-12 bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
-          <h2 className="text-2xl font-semibold text-white mb-4">Platform Overview</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-400">50+</div>
-              <div className="text-gray-300">Pages</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-400">20+</div>
-              <div className="text-gray-300">AI Services</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-400">10+</div>
-              <div className="text-gray-300">Categories</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-purple-400">100%</div>
-              <div className="text-gray-300">Secure</div>
-            </div>
+        {/* Quick Links */}
+        <div className="mt-12 bg-black/20 backdrop-blur-md rounded-lg p-6 border border-white/10">
+          <h2 className="text-xl font-semibold text-purple-400 mb-4">Quick Links</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <Link href="/marketplace" className="text-gray-300 hover:text-white transition-colors text-center p-3 bg-black/20 rounded-lg hover:bg-black/40">
+              Marketplace
+            </Link>
+            <Link href="/services" className="text-gray-300 hover:text-white transition-colors text-center p-3 bg-black/20 rounded-lg hover:bg-black/40">
+              Services
+            </Link>
+            <Link href="/talents" className="text-gray-300 hover:text-white transition-colors text-center p-3 bg-black/20 rounded-lg hover:bg-black/40">
+              Talents
+            </Link>
+            <Link href="/equipment" className="text-gray-300 hover:text-white transition-colors text-center p-3 bg-black/20 rounded-lg hover:bg-black/40">
+              Equipment
+            </Link>
+            <Link href="/products" className="text-gray-300 hover:text-white transition-colors text-center p-3 bg-black/20 rounded-lg hover:bg-black/40">
+              Products
+            </Link>
+            <Link href="/blog" className="text-gray-300 hover:text-white transition-colors text-center p-3 bg-black/20 rounded-lg hover:bg-black/40">
+              Blog
+            </Link>
+            <Link href="/auth/login" className="text-gray-300 hover:text-white transition-colors text-center p-3 bg-black/20 rounded-lg hover:bg-black/40">
+              Login
+            </Link>
+            <Link href="/auth/signup" className="text-gray-300 hover:text-white transition-colors text-center p-3 bg-black/20 rounded-lg hover:bg-black/40">
+              Sign Up
+            </Link>
           </div>
-        </div>
-
-        {/* Back to Home */}
-        <div className="mt-12 text-center">
-          <Link href="/" className="text-purple-400 hover:text-purple-300 font-medium transition-colors duration-300">
-            ← Back to Home
-          </Link>
         </div>
       </div>
     </div>
