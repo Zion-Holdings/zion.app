@@ -527,11 +527,11 @@ const QuoteRequestForm = () => {
             </div>
           </div>
         </div>
-      </div>
-            </div>
-            </div>
+                </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default QuoteRequestForm;

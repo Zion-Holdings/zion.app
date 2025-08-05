@@ -289,7 +289,7 @@ const AiPoweredVisualization = () => {
       </div>
     </Layout>
   
-          </div>
+              </div>
     );
 };
 

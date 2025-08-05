@@ -289,7 +289,7 @@ const AiPoweredReporting = () => {
       </div>
     </Layout>
   
-          </div>
+              </div>
     );
 };
 

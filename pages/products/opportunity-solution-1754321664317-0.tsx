@@ -195,11 +195,11 @@ const AI_Powered_business_opportunity_SolutionPage: NextPage = () => {
             
           </div>
         </div>
-      </div>
-            </div>
-            </div>
+                </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default AI_Powered_business_opportunity_SolutionPage;

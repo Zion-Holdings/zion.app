@@ -195,11 +195,11 @@ const gap_solution_1754023778313_0Page: NextPage = () => {
             
           </div>
         </div>
-      </div>
-            </div>
-            </div>
+                </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default gap_solution_1754023778313_0Page;

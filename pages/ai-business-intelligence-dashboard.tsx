@@ -602,7 +602,7 @@ const BusinessIntelligenceDashboard = () => {
       </div>
     </>
   
-          </div>
+              </div>
     );
 };
 

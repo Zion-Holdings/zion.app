@@ -289,7 +289,7 @@ const AiPoweredMonitoring = () => {
       </div>
     </Layout>
   
-          </div>
+              </div>
     );
 };
 

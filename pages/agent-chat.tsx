@@ -355,7 +355,7 @@ const AgentChat: NextPage = () => {
           </div>
         </main>
       </>
-        </div>
+            </div>
     );
 };
 

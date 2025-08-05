@@ -195,11 +195,11 @@ const AI_optimization_SolutionPage: NextPage = () => {
             
           </div>
         </div>
-      </div>
-            </div>
-            </div>
+                </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default AI_optimization_SolutionPage;

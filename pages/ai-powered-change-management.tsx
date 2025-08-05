@@ -507,7 +507,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
         </div>
       )}
     </PageLayout>
-          );
+            );
 };
 
 export default AIPoweredChangeManagementPage;

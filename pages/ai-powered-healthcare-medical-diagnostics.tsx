@@ -524,7 +524,7 @@ const AIPoweredHealthcareMedicalDiagnosticsPage: NextPage = () => {
         </div>
       )}
     </PageLayout>
-          );
+            );
 };
 
 export default AIPoweredHealthcareMedicalDiagnosticsPage;

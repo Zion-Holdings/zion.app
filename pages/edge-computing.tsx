@@ -289,7 +289,7 @@ const EdgeComputing = () => {
       </div>
     </Layout>
   
-          </div>
+              </div>
     );
 };
 

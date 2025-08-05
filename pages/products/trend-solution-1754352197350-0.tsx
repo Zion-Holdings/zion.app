@@ -165,14 +165,11 @@ Get Started
               </button>
             </div>
             
-          </div>
+                    </div>
         </div>
       </div>
     </div>
-      </div>
   );
-};
-
 };
 
 export default AI_Powered_AI_SolutionPage;

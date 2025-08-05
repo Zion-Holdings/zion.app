@@ -166,11 +166,11 @@ Get Started
               </div>
               
             </div>
-          </div>
-                </div>
-            </div>
+                    </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default AI_Powered_sustainability_SolutionPage;

@@ -489,7 +489,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {
         </div>
       )}
     </PageLayout>
-          );
+            );
 };
 
 export default AIPoweredFacilityManagementPage;

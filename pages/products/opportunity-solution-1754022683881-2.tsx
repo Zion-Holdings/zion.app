@@ -195,11 +195,11 @@ const opportunity_solution_1754022683881_2Page: NextPage = () => {
             
           </div>
         </div>
-      </div>
-            </div>
-            </div>
+                </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default opportunity_solution_1754022683881_2Page;

@@ -415,7 +415,7 @@ const ContractGenerator = () => {
       </div>
     </>
   
-          </div>
+              </div>
     );
 };
 

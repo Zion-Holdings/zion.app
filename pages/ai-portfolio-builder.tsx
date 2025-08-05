@@ -105,7 +105,7 @@ const PortfolioBuilder = () => {
       </div>
     </>
   
-          </div>
+              </div>
     );
 };
 
