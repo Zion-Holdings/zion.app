@@ -104,9 +104,20 @@ class AdminAutonomousOrchestrator {
             stdio: 'pipe'
         });
         
-        // Create PID file for cron system tracking
-        const agentName = agentType.toLowerCase().replace('admin', '');
-        const pidPath = path.join(this.adminConfig.adminPath, 'pids', `admin-${agentName}.pid`);
+        // Create PID file for cron system tracking with proper mapping
+        const pidNameMap = {
+            'AdminAgentCreator': 'admin-agent-creator',
+            'AdminWebResearcher': 'admin-web-researcher',
+            'AdminStatusMonitor': 'admin-status-monitor',
+            'AdminEvolutionAgent': 'admin-evolution-agent',
+            'AdminSecurityAgent': 'admin-security-agent',
+            'AdminAnalyticsAgent': 'admin-analytics-agent',
+            'AdminBackupAgent': 'admin-backup-agent',
+            'AdminToolGenerator': 'admin-tool-generator'
+        };
+        
+        const pidName = pidNameMap[agentType] || `admin-${agentType.toLowerCase().replace('admin', '')}`;
+        const pidPath = path.join(this.adminConfig.adminPath, 'pids', `${pidName}.pid`);
         fs.writeFileSync(pidPath, agentProcess.pid.toString());
         
         // Store process information

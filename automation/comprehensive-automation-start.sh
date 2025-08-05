@@ -70,10 +70,11 @@ start_process() {
         local pid=$!
         echo $pid > "pids/$pid_file"
         
-        # Wait a moment to check if process started successfully
-        sleep 2
+        # Wait longer to check if process started successfully
+        sleep 5
         if kill -0 $pid 2>/dev/null; then
             print_success "$description started successfully (PID: $pid)"
+            return 0
         else
             print_error "$description failed to start"
             return 1
@@ -118,7 +119,7 @@ start_process "backup-system.js" "backup-agent.log" "backup-agent.pid" "Backup A
 start_process "error-monitor-daemon.js" "error-monitor.log" "error-monitor.pid" "Error Monitor"
 
 print_status "Waiting for all processes to stabilize..."
-sleep 5
+sleep 10
 
 # Check final status
 print_status "Checking system status..."
