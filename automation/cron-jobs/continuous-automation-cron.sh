@@ -1,64 +1,57 @@
 #!/bin/bash
 
-# Continuous Automation Factory Generator Cron Job
-# This script runs every 5 minutes to generate new automation factories
+# Continuous Automation Cron Job
+# This script runs the master responsive automation orchestrator continuously
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
-LOG_FILE="$PROJECT_ROOT/automation/logs/continuous-automation-cron.log"
+# Set the working directory to the project root
+cd /Users/miami2/Documents/GitHub/bolt.new.zion.app
 
-# Create log directory if it doesn't exist
-mkdir -p "$(dirname "$LOG_FILE")"
+# Log file for the automation
+LOG_FILE="automation/logs/continuous-automation.log"
+ERROR_LOG="automation/logs/continuous-automation-error.log"
 
-# Log function
-log() {
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a "$LOG_FILE"
+# Create logs directory if it doesn't exist
+mkdir -p automation/logs
+
+# Function to log messages
+log_message() {
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> "$LOG_FILE"
 }
 
-log "Starting Continuous Automation Factory Generator Cron Job"
+# Function to log errors
+log_error() {
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - ERROR: $1" >> "$ERROR_LOG"
+}
 
-# Change to project directory
-cd "$PROJECT_ROOT"
+# Start the master orchestrator
+log_message "Starting Master Responsive Automation Orchestrator..."
 
 # Check if Node.js is available
 if ! command -v node &> /dev/null; then
-    log "ERROR: Node.js is not installed or not in PATH"
+    log_error "Node.js is not installed or not in PATH"
     exit 1
 fi
 
-# Check if the automation factory generator exists
-FACTORY_GENERATOR="$PROJECT_ROOT/automation/continuous-automation-factory-generator.js"
-if [ ! -f "$FACTORY_GENERATOR" ]; then
-    log "ERROR: Factory generator not found at $FACTORY_GENERATOR"
+# Check if the orchestrator file exists
+if [ ! -f "automation/launch-master-orchestrator.js" ]; then
+    log_error "Master orchestrator file not found"
     exit 1
 fi
 
-# Run the factory generator
-log "Executing factory generator..."
-node "$FACTORY_GENERATOR" >> "$LOG_FILE" 2>&1
+# Start the orchestrator
+log_message "Launching master orchestrator..."
+node automation/launch-master-orchestrator.js >> "$LOG_FILE" 2>> "$ERROR_LOG" &
 
-if [ $? -eq 0 ]; then
-    log "Factory generator executed successfully"
-else
-    log "ERROR: Factory generator failed with exit code $?"
-fi
+# Store the PID
+ORCHESTRATOR_PID=$!
+echo $ORCHESTRATOR_PID > automation/pids/master-orchestrator.pid
 
-# Generate new content variations
-log "Generating content variations..."
-node "$PROJECT_ROOT/automation/variation-content-agents-factory.js" >> "$LOG_FILE" 2>&1
+log_message "Master orchestrator started with PID: $ORCHESTRATOR_PID"
 
-if [ $? -eq 0 ]; then
-    log "Content variations generated successfully"
-else
-    log "ERROR: Content variations generation failed"
-fi
+# Monitor the orchestrator
+while kill -0 $ORCHESTRATOR_PID 2>/dev/null; do
+    sleep 30
+    log_message "Master orchestrator is running (PID: $ORCHESTRATOR_PID)"
+done
 
-# Clean up old factories (keep only last 50)
-log "Cleaning up old factories..."
-find "$PROJECT_ROOT/automation/factories" -maxdepth 1 -type d -name "automation-factory-*" | sort | head -n -50 | xargs -r rm -rf
-
-# Clean up old variations (keep only last 100)
-log "Cleaning up old variations..."
-find "$PROJECT_ROOT/automation/variations" -maxdepth 1 -type d -name "content-variation-*" | sort | head -n -100 | xargs -r rm -rf
-
-log "Continuous Automation Factory Generator Cron Job completed" 
+log_message "Master orchestrator stopped" 
