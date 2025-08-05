@@ -23,8 +23,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         {
           role: "system",
           content: "You are a professional profile writer and career consultant. You help create compelling professional summaries, titles, and skill lists for IT and AI professionals. Always respond with valid JSON format."
-        }
-        {
+        },
+    {
           role: "user",
           content: prompt
         }

@@ -147,8 +147,8 @@ const ExecutiveDashboardPage: NextPage = () => {
           priority: 'high',
           target: 140,
           status: 'exceeding'
-        }
-        {
+        },
+    {
           id: '3',
           name: 'Market Share',
           value: 23.5,
@@ -173,8 +173,8 @@ const ExecutiveDashboardPage: NextPage = () => {
           priority: 'medium',
           target: 4.5,
           status: 'exceeding'
-        }
-        {
+        },
+    {
           id: '5',
           name: 'Technology Uptime',
           value: 99.8,
@@ -232,8 +232,8 @@ const ExecutiveDashboardPage: NextPage = () => {
           owner: 'CMO',
           priority: 'high',
           kpis: ['Market Penetration', 'Revenue Growth', 'Brand Awareness']
-        }
-        {
+        },
+    {
           id: '3',
           name: 'AI Implementation',
           description: 'Implement AI-powered analytics across all departments',
@@ -280,8 +280,8 @@ const ExecutiveDashboardPage: NextPage = () => {
             'Enhance value proposition',
             'Accelerate innovation pipeline'
           ]
-        }
-        {
+        },
+    {
           id: '3',
           title: 'Remote Work Trend',
           description: 'Continued growth in remote work driving cloud adoption',
@@ -344,8 +344,8 @@ const ExecutiveDashboardPage: NextPage = () => {
             count: 5800,
             revenue: 4200000,
             growth: 12.8
-          }
-          {
+          },
+    {
             name: 'SMB',
             count: 6420,
             revenue: 1800000,
@@ -440,84 +440,80 @@ const ExecutiveDashboardPage: NextPage = () => {
       </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
-        <div className="fixed inset-0 z-0>"
-          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
+        <div className=fixed inset-0 z-0>
+          </div><div className=""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
         </div>
       
-        <div className="flex items-center justify-center min-h-screen>"
-          </div><div className="animate-spin rounded-full h-32 w-32 border-b-2 border-purple-500></div>
+        <div className=flex items-center justify-center min-h-screen>
+          </div><div className=animate-spin rounded-full h-32 w-32 border-b-2 border-purple-500></div>
         </div>
       </div>
     );
   }
 
   return ("
-    <div className=""relative" z-10 container-responsive py-8>
+    <div className=""relative z-10 container-responsive py-8>
       <Head>
         <title>Executive Dashboard - Zion Marketplace</title>
-        <meta name=description" content="High-level strategic insights and executive reporting dashboard for C-level executives and board members." />
-        <meta name="keywords" content="executive dashboard, strategic insights, business intelligence, KPI reporting, Zion" />
-      
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
+        <meta name=description" content="High-level strategic insights and executive reporting dashboard for C-level executives and board members. > </meta name=description" content="High-level strategic insights and executive reporting dashboard for C-level executives and board members." ><meta name="keywords" content="executive dashboard, strategic insights, business intelligence, KPI reporting, Zion > </meta name="keywords" content="executive dashboard, strategic insights, business intelligence, KPI reporting, Zion" ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Header */}
-      <div className="bg-black/20 backdrop-blur-md border-b border-white/10>"
+      <div className=bg-black/20 backdrop-blur-md border-b border-white/10>
         </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>"
-          <div className=""flex" justify-between items-center>
+          <div className=""flex justify-between items-center>
             </div><div>
-              <h1 className="text-3xl font-bold text-white"">Executive Dashboard</h1>
-              <p className="text-gray-300 mt-2>Strategic insights and high-level performance metrics</p>
-            </div>"
+              <h1 className=text-3xl font-bold text-white >Executive Dashboard</h1>
+              <p className=text-gray-300 mt-2>Strategic insights and high-level performance metrics</p>
+            </div>
             <div className="flex items-center space-x-4>
               
                 onChange={(e) => setTimeframe(e.target.value as any)}"
                 className=""px-4" py-4 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500
               >
-                <option value=month">Monthly</option>
-                <option value="quarter">Quarterly</option>
-                <option value="year">Yearly</option>
+                <option value=month>Monthly</option>
+                <option value="quarter>Quarterly</option>
+                <option value="year>Yearly</option>
               </select>
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300>
+              <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300>
                 Export Report
               </button>
             </div>
           </div>
         </div>
       </div>
-"
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
-        {/* Key Metrics Overview */}"
+        {/* Key Metrics Overview */}
         </div><div className=""grid" grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8>
           {metrics.slice(0, 6).map((metric, index) => (
             
               className="bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10 hover border-purple-500/50 transition-all duration-300 >"
               <div className=""flex items-center justify-between mb-2>
-                <span className="text-gray-400 text-sm>{metric.name}</span>"
-                <span className=""{`text-xs" font-medium ${getStatusColor(metric.status)}`}>
+                <span className=text-gray-400 text-sm>{metric.name}</span>
+                <span className=""{`text-xs font-medium ${getStatusColor(metric.status)}`}>
                   {metric.status.replace('-', ' ')}
                 </span>
               </div>
-              <div className="text-2xl font-bold text-white mb-1"">
+              <div className=text-2xl font-bold text-white mb-1 >
                 {metric.unit === 'USD' ? formatCurrency(metric.value) : `${metric.value}${metric.unit}`}
               </div>
-              <div className="flex items-center space-x-1>"
-                <span className="{`text-sm ${getTrendColor(metric.trend)}`}">
+              <div className="flex items-center space-x-1>
+                <span className="{`text-sm ${getTrendColor(metric.trend)}`}>
                   {getTrendIcon(metric.trend)},
 {formatPercent(metric.changePercent)}
                 </span>
-                <span className="text-gray-400 text-xs>vs previous</span>
+                <span className=text-gray-400 text-xs>vs previous</span>
               </div>
             </motion.div>
           ))}
         </div>
 
         {/* Tabs */}"
-        <div className=""bg-white/5" backdrop-blur-md:rounded-xl:border border-white/10 mb-8">
+        <div className=""bg-white/5" backdrop-blur-md:rounded-xl:border border-white/10 mb-8>
           </div><div className="flex border-b border-white/10>
             
               onClick={() => setActiveTab('overview')}"
-              className="{`px-6 py-4 font-medium transition-all duration-200 ${
+              className={`px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'overview'
                   ? 'text-white border-b-2 border-purple-500'
                   : 'text-gray-400 hover text-white'
@@ -527,7 +523,7 @@ const ExecutiveDashboardPage: NextPage = () => {
             </button>
             
               onClick={() => setActiveTab('financial')}"
-              className=""{`px-6" py-4 font-medium transition-all duration-200 ${
+              className=""{`px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'financial'
                   ? 'text-white border-b-2 border-purple-500'
                   : 'text-gray-400 hover:text-white'
@@ -537,7 +533,7 @@ const ExecutiveDashboardPage: NextPage = () => {
             </button>
             
               onClick={() => setActiveTab('strategic')}
-              className={`px-6" py-4 font-medium transition-all duration-200 ${
+              className={`px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'strategic'
                   ? 'text-white border-b-2 border-purple-500'
                   : 'text-gray-400 hover:text-white'
@@ -547,7 +543,7 @@ const ExecutiveDashboardPage: NextPage = () => {
             </button>
             
               onClick={() => setActiveTab('operational')}
-              className="{`px-6 py-4 font-medium transition-all duration-200 ${
+              className={`px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'operational'
                   ? 'text-white border-b-2 border-purple-500'
                   : 'text-gray-400 hover text-white'
@@ -557,7 +553,7 @@ const ExecutiveDashboardPage: NextPage = () => {
             </button>
             
               onClick={() => setActiveTab('market')}"
-              className="{`px-6 py-4 font-medium transition-all duration-200 ${
+              className={`px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'market'
                   ? 'text-white border-b-2 border-purple-500'
                   : 'text-gray-400 hover text-white'
@@ -567,7 +563,7 @@ const ExecutiveDashboardPage: NextPage = () => {
             </button>
             
               onClick={() => setActiveTab('customers')}"
-              className=""{`px-6" py-4 font-medium transition-all duration-200 ${
+              className=""{`px-6 py-4 font-medium transition-all duration-200 ${
                 activeTab === 'customers'
                   ? 'text-white border-b-2 border-purple-500'
                   : 'text-gray-400 hover:text-white'
@@ -577,46 +573,46 @@ const ExecutiveDashboardPage: NextPage = () => {
             </button>
           </div>
 
-          <div className=p-6">
+          <div className=p-6>
             {activeTab === 'overview' && (
               </div><div className="grid grid-cols-1 lg grid-cols-2 gap-8>
                 {/* Financial Summary */}"
-                <div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10>"
-                  <h3 className=""text-lg" font-semibold text-white mb-4>Financial Summary</h3>
+                <div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10>
+                  <h3 className=""text-lg font-semibold text-white mb-4>Financial Summary</h3>
                   {financial && (
-                    <div className=space-y-4">
-                      </div><div className="flex justify-between>"
-                        <span className="text-gray-400">Revenue</span>
-                        <span className="text-white font-semibold>{formatCurrency(financial.revenue.current)}</span>
-                      </div>"
+                    <div className=space-y-4>
+                      </div><div className="flex justify-between>
+                        <span className="text-gray-400>Revenue</span>
+                        <span className=text-white font-semibold>{formatCurrency(financial.revenue.current)}</span>
+                      </div>
                       <div className=""flex" justify-between">
-                        <span className="text-gray-400>Growth</span>"
-                        <span className="text-green-400 font-semibold>+{financial.revenue.growth}%</span>
-                      </div>"
+                        <span className=text-gray-400>Growth</span>
+                        <span className=text-green-400 font-semibold>+{financial.revenue.growth}%</span>
+                      </div>
                       <div className=""flex" justify-between>
-                        <span className=text-gray-400">Profit Margin</span>
-                        <span className="text-blue-400 font-semibold>{financial.profit.margin}%</span>
-                      </div>"
+                        <span className=text-gray-400>Profit Margin</span>
+                        <span className=text-blue-400 font-semibold>{financial.profit.margin}%</span>
+                      </div>
                       <div className="flex justify-between>"
-                        <span className=""text-gray-400">ROI</span>
-                        <span className="text-purple-400 font-semibold"">{financial.keyRatios.roi}%</span>
+                        <span className=""text-gray-400>ROI</span>
+                        <span className=text-purple-400 font-semibold >{financial.keyRatios.roi}%</span>
                       </div>
                     </div>
                   )}
                 </div>
 
                 {/* Strategic Initiatives */}
-                <div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10>"
-                  <h3 className="text-lg font-semibold text-white mb-4>Strategic Initiatives</h3>"
-                  <div className=""space-y-3">
+                <div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10>
+                  <h3 className=text-lg font-semibold text-white mb-4>Strategic Initiatives</h3>
+                  <div className=""space-y-3>
                     {initiatives.slice(0, 3).map((initiative) => (
-                      </div><div key={initiative.id} className="flex items-center justify-between"">
+                      </div><div key={initiative.id} className="flex items-center justify-between >
                         <div>
-                          <p className="text-white font-medium>{initiative.name}</p>"
-                          <p className="text-gray-400 text-sm>{initiative.owner}</p>
-                        </div>"
+                          <p className=text-white font-medium>{initiative.name}</p>
+                          <p className=text-gray-400 text-sm>{initiative.owner}</p>
+                        </div>
                         <div className=""text-right">
-                          <span className={`px-4" py-3 rounded-full text-xs font-medium ${getStatusColor(initiative.status)}`}>
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(initiative.status)}`}>
                             {initiative.progress}%
                           </span>
                         </div>
@@ -629,61 +625,61 @@ const ExecutiveDashboardPage: NextPage = () => {
 
             {activeTab === 'financial' && financial && (
               <div className="grid grid-cols-1 lg grid-cols-2 gap-8>
-                {/* Revenue & Profit */}"
-                </div><div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10>"
-                  <h3 className=""text-lg" font-semibold text-white mb-4>Revenue & Profit</h3>
-                  <div className=space-y-4">
+                {/* Revenue & Profit */}
+                </div><div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10>
+                  <h3 className=""text-lg font-semibold text-white mb-4>Revenue & Profit</h3>
+                  <div className=space-y-4>
                     </div><div>
-                      <div className="flex justify-between mb-2>"
-                        <span className="text-gray-400">Revenue</span>
-                        <span className="text-white font-semibold>{formatCurrency(financial.revenue.current)}</span>
-                      </div>"
-                      <div className=""w-full" bg-gray-700 rounded-full h-2">
+                      <div className="flex justify-between mb-2>
+                        <span className="text-gray-400>Revenue</span>
+                        <span className=text-white font-semibold>{formatCurrency(financial.revenue.current)}</span>
+                      </div>
+                      <div className=""w-full" bg-gray-700 rounded-full h-2>
                         </div>
                         ></div>
-                      </div>"
+                      </div>
                       <div className="flex justify-between text-sm mt-1>"
-                        <span className=""text-gray-400">Target: {formatCurrency(financial.revenue.target)}</span>
-                        <span className=text-green-400">+{financial.revenue.growth}%</span>
+                        <span className=""text-gray-400>Target: {formatCurrency(financial.revenue.target)}</span>
+                        <span className=text-green-400>+{financial.revenue.growth}%</span>
                       </div>
                     </div>
                     <div>
-                      </div><div className="flex justify-between mb-2>"
-                        <span className="text-gray-400">Profit</span>
-                        <span className="text-white font-semibold>{formatCurrency(financial.profit.current)}</span>
-                      </div>"
-                      <div className=""w-full" bg-gray-700 rounded-full h-2">
+                      </div><div className="flex justify-between mb-2>
+                        <span className="text-gray-400>Profit</span>
+                        <span className=text-white font-semibold>{formatCurrency(financial.profit.current)}</span>
+                      </div>
+                      <div className=""w-full" bg-gray-700 rounded-full h-2>
                         </div>
                         ></div>
-                      </div>"
+                      </div>
                       <div className="flex justify-between text-sm mt-1>"
-                        <span className=""text-gray-400">Margin: {financial.profit.target}%</span>
-                        <span className=text-blue-400">{financial.profit.margin}%</span>
+                        <span className=""text-gray-400>Margin: {financial.profit.target}%</span>
+                        <span className=text-blue-400>{financial.profit.margin}%</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Cash Flow */}
-                <div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10>"
-                  <h3 className="text-lg font-semibold text-white mb-4>Cash Flow</h3>"
-                  <div className=""space-y-3">
-                    </div><div className="flex justify-between"">
-                      <span className="text-gray-400>Operating</span>"
-                      <span className="text-green-400 font-semibold>{formatCurrency(financial.cashFlow.operating)}</span>
-                    </div>"
-                    <div className=""flex" justify-between>
-                      <span className=text-gray-400">Investing</span>
-                      <span className="text-red-400 font-semibold>{formatCurrency(financial.cashFlow.investing)}</span>
-                    </div>"
-                    <div className="flex justify-between>"
-                      <span className=""text-gray-400">Financing</span>
-                      <span className="text-red-400 font-semibold"">{formatCurrency(financial.cashFlow.financing)}</span>
+                <div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10>
+                  <h3 className=text-lg font-semibold text-white mb-4>Cash Flow</h3>
+                  <div className=""space-y-3>
+                    </div><div className="flex justify-between >
+                      <span className=text-gray-400>Operating</span>
+                      <span className=text-green-400 font-semibold>{formatCurrency(financial.cashFlow.operating)}</span>
                     </div>
-                    <div className="border-t border-white/10 pt-3>"
+                    <div className=""flex" justify-between>
+                      <span className=text-gray-400>Investing</span>
+                      <span className=text-red-400 font-semibold>{formatCurrency(financial.cashFlow.investing)}</span>
+                    </div>
+                    <div className="flex justify-between>"
+                      <span className=""text-gray-400>Financing</span>
+                      <span className=text-red-400 font-semibold >{formatCurrency(financial.cashFlow.financing)}</span>
+                    </div>
+                    <div className=border-t border-white/10 pt-3>
                       </div><div className="flex justify-between>"
-                        <span className=""text-white" font-semibold>Net Cash Flow</span>
-                        <span className="text-green-400 font-semibold"">{formatCurrency(financial.cashFlow.net)}</span>
+                        <span className=""text-white font-semibold>Net Cash Flow</span>
+                        <span className=text-green-400 font-semibold >{formatCurrency(financial.cashFlow.net)}</span>
                       </div>
                     </div>
                   </div>
@@ -696,50 +692,49 @@ const ExecutiveDashboardPage: NextPage = () => {
                 {initiatives.map((initiative, index) => (
                   
                   >"
-                    <div className=""flex" items-start justify-between mb-4>
+                    <div className=""flex items-start justify-between mb-4>
                       </div><div>
-                        <div className="flex items-center space-x-3 mb-2"">
-                          <h3 className="text-lg font-semibold text-white>{initiative.name}</h3>"
-                          <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(initiative.priority)}`}>
+                        <div className="flex items-center space-x-3 mb-2 >
+                          <h3 className=text-lg font-semibold text-white>{initiative.name}</h3>
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(initiative.priority)}`}>
                             {initiative.priority}
-                          </span>"
-                          <span className=""{`px-4" py-3 rounded-full text-xs font-medium ${getStatusColor(initiative.status)}`}>
+                          </span>
+                          <span className=""{`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(initiative.status)}`}>
                             {initiative.status.replace('-', ' ')}
                           </span>
                         </div>
-                        <p className=text-gray-300">{initiative.description}</p>
+                        <p className=text-gray-300>{initiative.description}</p>
                       </div>
-                      <div className="text-right>"
-                        </div><div className="text-2xl font-bold text-white>{initiative.progress}%</div>"
-                        <div className=""text-gray-400" text-sm>Progress</div>
+                      <div className=text-right>
+                        </div><div className=text-2xl font-bold text-white>{initiative.progress}%</div>
+                        <div className=""text-gray-400 text-sm>Progress</div>
                       </div>
                     </div>
                     
-                    <div className="grid grid-cols-1 md grid-cols-3"" gap-4 mb-4">
+                    <div className="grid grid-cols-1 md grid-cols-3  gap-4 mb-4>
                       </div><div>
-                        <span className="text-gray-400 text-sm>Owner</span>"
-                        <p className="text-white font-medium>{initiative.owner}</p>
-                      </div>
-                      <div>"
-                        <span className=""text-gray-400" text-sm>Budget</span>
-                        <p className="text-white font-medium"">{formatCurrency(initiative.budget)}</p>
+                        <span className=text-gray-400 text-sm>Owner</span>
+                        <p className=text-white font-medium>{initiative.owner}</p>
                       </div>
                       <div>
-                        <span className="text-gray-400 text-sm>Spent</span>"
-                        <p className="text-white font-medium>{formatCurrency(initiative.spent)}</p>
+                        <span className=""text-gray-400 text-sm>Budget</span>
+                        <p className=text-white font-medium >{formatCurrency(initiative.budget)}</p>
+                      </div>
+                      <div>
+                        <span className=text-gray-400 text-sm>Spent</span>
+                        <p className=text-white font-medium>{formatCurrency(initiative.spent)}</p>
                       </div>
                     </div>
-"
-                    <div className=""w-full" bg-gray-700 rounded-full h-3 mb-4>
+                    <div className=""w-full bg-gray-700 rounded-full h-3 mb-4>
                       </div>
                       ></div>
                     </div>
 
                     <div>
-                      <span className="text-gray-400 text-sm>KPIs</span>"
+                      <span className=text-gray-400 text-sm>KPIs</span>
                       <div className="flex flex-wrap gap-2 mt-1>
                         {initiative.kpis.map((kpi, idx) => ("
-                          <span key={idx} className=""px-4" py-3 bg-purple-600 text-white rounded text-xs>
+                          <span key={idx} className=""px-4 py-3 bg-purple-600 text-white rounded text-xs>
                             {kpi}
                           </span>
                         ))}
@@ -751,36 +746,36 @@ const ExecutiveDashboardPage: NextPage = () => {
             )}
 
             {activeTab === 'operational' && operations && (
-              <div className="grid grid-cols-1 lg grid-cols-3 gap-6"">
+              <div className=grid grid-cols-1 lg grid-cols-3 gap-6 >
                 {/* Efficiency Metrics */}
-                </div><div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10>"
-                  <h3 className="text-lg font-semibold text-white mb-4>Efficiency</h3>"
-                  <div className=""space-y-4">
+                </div><div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10>
+                  <h3 className=text-lg font-semibold text-white mb-4>Efficiency</h3>
+                  <div className=""space-y-4>
                     </div><div>
-                      <div className="flex justify-between mb-2"">
-                        <span className="text-gray-400>Productivity</span>"
-                        <span className="text-white font-semibold>{operations.efficiency.productivity}%</span>
-                      </div>"
+                      <div className="flex justify-between mb-2 >
+                        <span className=text-gray-400>Productivity</span>
+                        <span className=text-white font-semibold>{operations.efficiency.productivity}%</span>
+                      </div>
+                      <div className=""w-full bg-gray-700 rounded-full h-2>
+                        </div><div className=bg-green-500 h-2 rounded-full  style={{ width: `${operations.efficiency.productivity}%` }}></div>
+                      </div>
+                    </div>
+                    <div>
+                      </div><div className="flex justify-between mb-2>
+                        <span className="text-gray-400>Utilization</span>
+                        <span className=text-white font-semibold>{operations.efficiency.utilization}%</span>
+                      </div>
                       <div className=""w-full" bg-gray-700 rounded-full h-2>
-                        </div><div className="bg-green-500 h-2 rounded-full"" style={{ width: `${operations.efficiency.productivity}%` }}></div>
+                        </div><div className=bg-blue-500 h-2 rounded-full style={{ width  `${operations.efficiency.utilization}%` }}></div>
                       </div>
                     </div>
                     <div>
                       </div><div className="flex justify-between mb-2>"
-                        <span className="text-gray-400">Utilization</span>
-                        <span className="text-white font-semibold>{operations.efficiency.utilization}%</span>
-                      </div>"
-                      <div className=""w-full" bg-gray-700 rounded-full h-2">
-                        </div><div className="bg-blue-500 h-2 rounded-full style={{ width  `${operations.efficiency.utilization}%` }}></div>
+                        <span className=""text-gray-400>Quality</span>
+                        <span className=text-white font-semibold >{operations.efficiency.quality}%</span>
                       </div>
-                    </div>
-                    <div>"
-                      </div><div className="flex justify-between mb-2>"
-                        <span className=""text-gray-400">Quality</span>
-                        <span className="text-white font-semibold"">{operations.efficiency.quality}%</span>
-                      </div>
-                      <div className="w-full bg-gray-700 rounded-full h-2>"
-                        </div><div className="bg-purple-500 h-2 rounded-full style={{ width  `${operations.efficiency.quality}%` }}></div>
+                      <div className=w-full bg-gray-700 rounded-full h-2>
+                        </div><div className=bg-purple-500 h-2 rounded-full style={{ width  `${operations.efficiency.quality}%` }}></div>
                       </div>
                     </div>
                   </div>
@@ -788,64 +783,64 @@ const ExecutiveDashboardPage: NextPage = () => {
 
                 {/* Technology Metrics */}"
                 <div className=""bg-white/5" backdrop-blur-md:rounded-lg:p-6 border border-white/10>
-                  <h3 className="text-lg font-semibold text-white mb-4"">Technology</h3>
-                  <div className="space-y-4>
-                    </div><div>"
+                  <h3 className=text-lg font-semibold text-white mb-4 >Technology</h3>
+                  <div className=space-y-4>
+                    </div><div>
                       <div className="flex justify-between mb-2>"
-                        <span className=""text-gray-400">Uptime</span>
-                        <span className="text-white font-semibold"">{operations.technology.uptime}%</span>
+                        <span className=""text-gray-400>Uptime</span>
+                        <span className=text-white font-semibold >{operations.technology.uptime}%</span>
                       </div>
-                      <div className="w-full bg-gray-700 rounded-full h-2>"
-                        </div><div className="bg-green-500 h-2 rounded-full style={{ width  `${operations.technology.uptime}%` }}></div>
-                      </div>
-                    </div>
-                    <div>"
-                      </div><div className=""flex" justify-between mb-2>
-                        <span className=text-gray-400">Performance</span>
-                        <span className="text-white font-semibold>{operations.technology.performance}%</span>
-                      </div>"
-                      <div className="w-full bg-gray-700 rounded-full h-2>"
-                        </div><div className=""bg-blue-500" h-2 rounded-full style={{ width: `${operations.technology.performance}%` }}></div>
+                      <div className=w-full bg-gray-700 rounded-full h-2>
+                        </div><div className=bg-green-500 h-2 rounded-full style={{ width  `${operations.technology.uptime}%` }}></div>
                       </div>
                     </div>
                     <div>
-                      </div><div className="flex justify-between mb-2"">
-                        <span className="text-gray-400>Security</span>"
-                        <span className="text-white font-semibold>{operations.technology.security}%</span>
-                      </div>"
-                      <div className=""w-full" bg-gray-700 rounded-full h-2>
-                        </div><div className="bg-purple-500 h-2 rounded-full"" style={{ width: `${operations.technology.security}%` }}></div>
+                      </div><div className=""flex" justify-between mb-2>
+                        <span className=text-gray-400>Performance</span>
+                        <span className=text-white font-semibold>{operations.technology.performance}%</span>
+                      </div>
+                      <div className="w-full bg-gray-700 rounded-full h-2>
+                        </div><div className=""bg-blue-500 h-2 rounded-full style={{ width: `${operations.technology.performance}%` }}></div>
+                      </div>
+                    </div>
+                    <div>
+                      </div><div className="flex justify-between mb-2 >
+                        <span className=text-gray-400>Security</span>
+                        <span className=text-white font-semibold>{operations.technology.security}%</span>
+                      </div>
+                      <div className=""w-full bg-gray-700 rounded-full h-2>
+                        </div><div className=bg-purple-500 h-2 rounded-full  style={{ width: `${operations.technology.security}%` }}></div>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* People Metrics */}
-                <div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10>"
-                  <h3 className="text-lg font-semibold text-white mb-4>People</h3>"
-                  <div className=""space-y-4">
+                <div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10>
+                  <h3 className=text-lg font-semibold text-white mb-4>People</h3>
+                  <div className=""space-y-4>
                     </div><div>
-                      <div className="flex justify-between mb-2"">
-                        <span className="text-gray-400>Headcount</span>"
-                        <span className="text-white font-semibold>{operations.people.headcount}</span>
+                      <div className="flex justify-between mb-2 >
+                        <span className=text-gray-400>Headcount</span>
+                        <span className=text-white font-semibold>{operations.people.headcount}</span>
                       </div>
                     </div>
-                    <div>"
+                    <div>
                       </div><div className=""flex" justify-between mb-2>
-                        <span className=text-gray-400">Turnover</span>
-                        <span className="text-white font-semibold>{operations.people.turnover}%</span>
-                      </div>
-                    </div>
-                    <div>"
-                      </div><div className="flex justify-between mb-2>"
-                        <span className=""text-gray-400">Satisfaction</span>
-                        <span className="text-white font-semibold"">{operations.people.satisfaction}/5</span>
+                        <span className=text-gray-400>Turnover</span>
+                        <span className=text-white font-semibold>{operations.people.turnover}%</span>
                       </div>
                     </div>
                     <div>
                       </div><div className="flex justify-between mb-2>"
-                        <span className="text-gray-400">Productivity</span>
-                        <span className="text-white font-semibold>{operations.people.productivity}%</span>
+                        <span className=""text-gray-400>Satisfaction</span>
+                        <span className=text-white font-semibold >{operations.people.satisfaction}/5</span>
+                      </div>
+                    </div>
+                    <div>
+                      </div><div className="flex justify-between mb-2>
+                        <span className="text-gray-400>Productivity</span>
+                        <span className=text-white font-semibold>{operations.people.productivity}%</span>
                       </div>
                     </div>
                   </div>
@@ -858,21 +853,21 @@ const ExecutiveDashboardPage: NextPage = () => {
                 {insights.map((insight, index) => (
                   
                   >"
-                    <div className="flex items-start justify-between mb-4>
-                      </div><div>"
+                    <div className=flex items-start justify-between mb-4>
+                      </div><div>
                         <div className=""flex" items-center space-x-3 mb-2>
-                          <h3 className="text-lg font-semibold text-white"">{insight.title}</h3>
+                          <h3 className=text-lg font-semibold text-white >{insight.title}</h3>
                           
                           } text-white`}>
                             {insight.category}
-                          </span>"
+                          </span>
                           
                           } text-white`}>
                             {insight.impact} impact
                           </span>
                         </div>"
-                        <p className=""text-gray-300" mb-3>{insight.description}</p>
-                        <div className="flex items-center space-x-4 text-sm text-gray-400"">
+                        <p className=""text-gray-300 mb-3>{insight.description}</p>
+                        <div className=flex items-center space-x-4 text-sm text-gray-400 >
                           <span>Confidence: {insight.confidence}%</span>
                           <span>Source: {insight.source}</span>
                           <span>{insight.date.toLocaleDateString()}</span>
@@ -881,11 +876,11 @@ const ExecutiveDashboardPage: NextPage = () => {
                     </div>
 
                     <div>
-                      <h4 className="text-white font-semibold mb-2>Recommendations</h4>"
+                      <h4 className=text-white font-semibold mb-2>Recommendations</h4>
                       <ul className="space-y-1">
                         {insight.recommendations.map((rec, idx) => (
-                          <li key={idx} className="text-gray-300 text-sm flex items-start>"
-                            <span className=""text-purple-400" mr-2">•</span>
+                          <li key={idx} className="text-gray-300 text-sm flex items-start>
+                            <span className=""text-purple-400" mr-2>•</span>
                             {rec}
                           </li>
                         ))}
@@ -898,50 +893,50 @@ const ExecutiveDashboardPage: NextPage = () => {
 
             {activeTab === 'customers' && customers && (
               <div className="grid grid-cols-1 lg grid-cols-2 gap-8>
-                {/* Customer Metrics */}"
-                </div><div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10>"
-                  <h3 className=""text-lg" font-semibold text-white mb-4>Customer Metrics</h3>
-                  <div className="grid grid-cols-2 gap-4"">
+                {/* Customer Metrics */}
+                </div><div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10>
+                  <h3 className=""text-lg font-semibold text-white mb-4>Customer Metrics</h3>
+                  <div className=grid grid-cols-2 gap-4 >
                     </div><div>
-                      <div className="text-2xl font-bold text-white>{customers.totalCustomers.toLocaleString()}</div>"
-                      <div className="text-gray-400 text-sm>Total Customers</div>
-                    </div>
-                    <div>"
-                      </div><div className=""text-2xl" font-bold text-green-400>+{customers.newCustomers.toLocaleString()}</div>
-                      <div className="text-gray-400 text-sm"">New Customers</div>
+                      <div className=text-2xl font-bold text-white>{customers.totalCustomers.toLocaleString()}</div>
+                      <div className=text-gray-400 text-sm>Total Customers</div>
                     </div>
                     <div>
-                      </div><div className="text-2xl font-bold text-red-400>{customers.churnRate}%</div>"
-                      <div className="text-gray-400 text-sm>Churn Rate</div>
-                    </div>
-                    <div>"
-                      </div><div className=""text-2xl" font-bold text-blue-400>{customers.customerSatisfaction}/5</div>
-                      <div className="text-gray-400 text-sm"">Satisfaction</div>
+                      </div><div className=""text-2xl font-bold text-green-400>+{customers.newCustomers.toLocaleString()}</div>
+                      <div className=text-gray-400 text-sm >New Customers</div>
                     </div>
                     <div>
-                      </div><div className="text-2xl font-bold text-purple-400>{formatCurrency(customers.averageRevenuePerUser)}</div>"
-                      <div className="text-gray-400 text-sm>ARPU</div>
+                      </div><div className=text-2xl font-bold text-red-400>{customers.churnRate}%</div>
+                      <div className=text-gray-400 text-sm>Churn Rate</div>
                     </div>
-                    <div>"
-                      </div><div className=""text-2xl" font-bold text-orange-400>{formatCurrency(customers.customerLifetimeValue)}</div>
-                      <div className="text-gray-400 text-sm"">CLV</div>
+                    <div>
+                      </div><div className=""text-2xl font-bold text-blue-400>{customers.customerSatisfaction}/5</div>
+                      <div className=text-gray-400 text-sm >Satisfaction</div>
+                    </div>
+                    <div>
+                      </div><div className=text-2xl font-bold text-purple-400>{formatCurrency(customers.averageRevenuePerUser)}</div>
+                      <div className=text-gray-400 text-sm>ARPU</div>
+                    </div>
+                    <div>
+                      </div><div className=""text-2xl font-bold text-orange-400>{formatCurrency(customers.customerLifetimeValue)}</div>
+                      <div className=text-gray-400 text-sm >CLV</div>
                     </div>
                   </div>
                 </div>
 
                 {/* Customer Segments */}
-                <div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10>"
-                  <h3 className="text-lg font-semibold text-white mb-4>Top Customer Segments</h3>"
-                  <div className=""space-y-4">
+                <div className="bg-white/5 backdrop-blur-md:rounded-lg p-6 border border-white/10>
+                  <h3 className=text-lg font-semibold text-white mb-4>Top Customer Segments</h3>
+                  <div className=""space-y-4>
                     {customers.topSegments.map((segment, index) => (
-                      </div><div key={index} className="flex items-center justify-between"">
+                      </div><div key={index} className="flex items-center justify-between >
                         <div>
-                          <p className="text-white font-medium>{segment.name}</p>"
-                          <p className="text-gray-400 text-sm>{segment.count.toLocaleString()} customers</p>
-                        </div>"
+                          <p className=text-white font-medium>{segment.name}</p>
+                          <p className=text-gray-400 text-sm>{segment.count.toLocaleString()} customers</p>
+                        </div>
                         <div className=""text-right">
-                          <p className="text-white font-semibold"">{formatCurrency(segment.revenue)}</p>
-                          <p className="text-green-400 text-sm">+{segment.growth}%</p>
+                          <p className=text-white font-semibold >{formatCurrency(segment.revenue)}</p>
+                          <p className="text-green-400 text-sm>+{segment.growth}%</p>
                         </div>
                       </div>
                     ))}

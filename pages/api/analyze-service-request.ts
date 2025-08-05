@@ -65,8 +65,8 @@ Provide realistic and practical insights that would help both the client and pot
         {
           role: "system",
           content: "You are an expert IT project analyst with deep knowledge of software development, AI/ML, cloud computing, and digital transformation. Provide accurate, practical analysis that helps clients and service providers make informed decisions."
-        }
-        {
+        },
+    {
           role: "user",
           content: prompt
         }

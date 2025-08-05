@@ -128,34 +128,34 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
             {/* Logo */}
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-gradient-to-br from-neon-blue to-neon-purple rounded-lg flex items-center justify-center neon-glow">
-                <span className="text-white font-bold text-sm">Z</span>
+                <span className="text-white font-bold text-sm>Z</span>
               </div>
               <div>
-                <span className="text-white font-bold text-lg">Zion</span>
-                <span className="text-neon-blue text-xs block">AI Marketplace</span>
+                <span className="text-white font-bold text-lg>Zion</span>
+                <span className="text-neon-blue text-xs block>AI Marketplace</span>
               </div>
             </div>
 
             {/* Quick Links */}
             <div className="flex flex-wrap gap-6 text-sm">
-              <Link href="/about" className="text-gray-400 hover text-white transition-colors">
+              <Link href="/about" className="text-gray-400 hover text-white transition-colors>
                 About
               </Link>
-              <Link href="/contact" className="text-gray-400 hover text-white transition-colors">
+              <Link href="/contact" className="text-gray-400 hover text-white transition-colors>
                 Contact
               </Link>
-              <Link href="/privacy" className="text-gray-400 hover text-white transition-colors">
+              <Link href="/privacy" className="text-gray-400 hover text-white transition-colors>
                 Privacy
               </Link>
-              <Link href="/terms" className="text-gray-400 hover text-white transition-colors">
+              <Link href="/terms" className="text-gray-400 hover text-white transition-colors>
                 Terms
               </Link>
             </div>
 
             {/* Copyright */}
             <div className="text-gray-400 text-sm">
-              © 2024 Zion. Made with <Heart className="inline w-4 h-4 text-red-500 /> for the future.
-            </div>
+              © 2024 Zion. Made with <Heart className=inline w-4 h-4 text-red-500 >for the future.
+            </Heart className="inline w-4 h-4 text-red-500 ></div>
           </div>
         </div>
       </footer>
@@ -164,14 +164,13 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
 
   return ("
     <footer className=""relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white border-t border-neon-blue/20">
-      {/* Scroll to Top Button */}
-      {isVisible && (
+      {/* Scroll to Top Button */},
+    {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 p-3 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full shadow-lg hover shadow-xl transition-all duration-300 hover scale-110 neon-glow aria-label=""Scroll to top"
+          className="fixed bottom-6 right-6 z-50 p-3 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full shadow-lg hover shadow-xl transition-all duration-300 hover scale-110 neon-glow aria-label= Scroll to top"
         >
-          <ChevronUp className="w-5 h-5 text-white />
-        </button>
+          <ChevronUp className=w-5 h-5 text-white > </ChevronUp className="w-5 h-5 text-white ></button>
       )}
 "
       <div className=""container-responsive section-padding">
@@ -182,16 +181,16 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
           <div className="lg col-span-1">
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 bg-gradient-to-br from-neon-blue to-neon-purple rounded-lg flex items-center justify-center neon-glow mr-4">
-                <span className="text-white font-bold text-xl">Z</span>
+                <span className="text-white font-bold text-xl>Z</span>
               </div>
               <div>
-                <h3 className="text-responsive-xl font-bold text-white">
+                <h3 className="text-responsive-xl font-bold text-white>
                   Zion
                 </h3>
-                <p className="text-neon-blue text-sm font-mono">AI Marketplace</p>
+                <p className="text-neon-blue text-sm font-mono>AI Marketplace</p>
               </div>
             </div>
-            <p className="text-responsive-sm text-gray-300 mb-6 leading-relaxed">
+            <p className="text-responsive-sm text-gray-300 mb-6 leading-relaxed>
               The First Free AI-Powered Marketplace connecting businesses with cutting-edge technology solutions, talent, and equipment.
             </p>
             <div className="flex space-x-4">
@@ -199,32 +198,29 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
                 <Link
                   key={social.label}
                   href={social.href}
-                  className="p-2 bg-white/10 rounded-lg hover bg-white/20 transition-colors group target=""_blank"
+                  className="p-2 bg-white/10 rounded-lg hover bg-white/20 transition-colors group target= _blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-4 h-4 text-gray-400 group-hover text-neon-blue transition-colors />
-                </Link>
+                  <social.icon className=w-4 h-4 text-gray-400 group-hover text-neon-blue transition-colors > </social.icon className="w-4 h-4 text-gray-400 group-hover text-neon-blue transition-colors ></Link>
               ))}
             </div>
           </div>
 
-          {/* Footer Sections */}
-          {footerSections.map((section) => (
-            <div key={section.title}>"
+          {/* Footer Sections */},
+    {footerSections.map((section) => (
+            <div key={section.title}>
               <h4 className=""text-responsive-lg font-semibold mb-4 text-white flex items-center space-x-2">
-                <section.icon className="w-4 h-4 text-neon-blue />
-                <span>{section.title}</span>
-              </h4>"
+                <section.icon className=w-4 h-4 text-neon-blue > </section.icon className="w-4 h-4 text-neon-blue ><span>{section.title}</span>
+              </h4>
               <ul className=""space-y-3">
                 {section.links.map((link) => (
                   <li key={link.href}>
                     <Link 
                       href={link.href} 
-                      className="text-gray-400 hover text-white transition-colors touch-target flex items-center space-x-2 group >
-                      <span>{link.label}</span>"
-                      <ExternalLink className=""w-3 h-3 opacity-0 group-hover opacity-100 transition-opacity" />
-                    </Link>
+                      className=text-gray-400 hover text-white transition-colors touch-target flex items-center space-x-2 group >
+                      <span>{link.label}</span>
+                      <ExternalLink className=""w-3 h-3 opacity-0 group-hover opacity-100 transition-opacity > </ExternalLink className=""w-3 h-3 opacity-0 group-hover opacity-100 transition-opacity" ></Link>
                   </li>
                 ))}
               </ul>
@@ -236,16 +232,16 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
         <div className="border-t border-neon-blue/20 pt-8">
           <div className="flex flex-col lg flex-row justify-between items-center space-y-4 lg space-y-0">
             {/* Copyright and Legal */}
-            <div className="flex flex-col sm:flex-row items-center space-y-2 sm space-y-0 sm space-x-6 text-sm text-gray-400">
+            <div className="flex flex-col sm:flex-row items-center space-y-2 sm space-y-0 sm space-x-6 text-sm text-gray-400>
               <span>© 2024 Zion. All rights reserved.</span>
               <div className="flex space-x-4">
-                <Link href="/privacy" className="hover text-white transition-colors">
+                <Link href="/privacy" className="hover text-white transition-colors>
                   Privacy Policy
                 </Link>
-                <Link href="/terms" className="hover text-white transition-colors">
+                <Link href="/terms" className="hover text-white transition-colors>
                   Terms of Service
                 </Link>
-                <Link href="/cookies" className="hover text-white transition-colors">
+                <Link href="/cookies" className="hover text-white transition-colors>
                   Cookie Policy
                 </Link>
               </div>
@@ -254,16 +250,13 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
             {/* Additional Info */}
             <div className="flex items-center space-x-4 text-sm text-gray-400">
               <div className="flex items-center space-x-2">
-                <Shield className="w-4 h-4 text-neon-green />
-                <span>Secure & Reliable</span>
-              </div>"
+                <Shield className=w-4 h-4 text-neon-green > </Shield className="w-4 h-4 text-neon-green ><span>Secure & Reliable</span>
+              </div>
               <div className=""flex items-center space-x-2">
-                <Zap className="w-4 h-4 text-neon-blue />
-                <span>AI-Powered</span>
-              </div>"
+                <Zap className=w-4 h-4 text-neon-blue > </Zap className="w-4 h-4 text-neon-blue ><span>AI-Powered</span>
+              </div>
               <div className=""flex items-center space-x-2">
-                <Users className="w-4 h-4 text-neon-purple />
-                <span>Community Driven</span>
+                <Users className=w-4 h-4 text-neon-purple > </Users className="w-4 h-4 text-neon-purple ><span>Community Driven</span>
               </div>
             </div>
           </div>

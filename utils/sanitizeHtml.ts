@@ -46,7 +46,7 @@ export function createSafeHtmlWrapper(html: string): string {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.6;
       color: inherit;
-    ">
+    >
       ${sanitized}
     </div>
   `;

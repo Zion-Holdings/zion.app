@@ -167,35 +167,31 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {
       </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
-        <div className="fixed inset-0 z-0>"
-          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
+        <div className=fixed inset-0 z-0>
+          </div><div className=""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
         </div>
       
       <Head>
         <title>AI-Powered Synthetic Biology & Genetic Engineering | Zion Tech</title>
-        <meta name="description" content="Advanced synthetic biology and genetic engineering with AI-powered DNA editing, protein design, and biological system engineering." />
-        <meta name="keywords" content="synthetic biology, genetic engineering, CRISPR, DNA editing, protein design, biotechnology" />
-      
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
+        <meta name="description" content="Advanced synthetic biology and genetic engineering with AI-powered DNA editing, protein design, and biological system engineering. > </meta name="description" content="Advanced synthetic biology and genetic engineering with AI-powered DNA editing, protein design, and biological system engineering." ><meta name="keywords" content="synthetic biology, genetic engineering, CRISPR, DNA editing, protein design, biotechnology > </meta name="keywords" content="synthetic biology, genetic engineering, CRISPR, DNA editing, protein design, biotechnology" ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Header */}
-      <header className="relative z-10>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>"
+      <header className="relative z-10>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>
           </div><div className=""flex" items-center justify-between>
-            <div className="flex items-center space-x-4"">
-              </div><div className="flex items-center space-x-3>"
+            <div className=flex items-center space-x-4 >
+              </div><div className="flex items-center space-x-3>
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center>"
-                  <span className=""text-white" text-xl>🧬</span>
+                  <span className=""text-white text-xl>🧬</span>
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-white"">Synthetic Biology & Genetic Engineering</h1>
-                  <p className="text-gray-300>AI-Powered Biotechnology</p>
+                  <h1 className=text-2xl font-bold text-white >Synthetic Biology & Genetic Engineering</h1>
+                  <p className=text-gray-300>AI-Powered Biotechnology</p>
                 </div>
               </div>
             </div>
-            "
-            <div className="flex items-center space-x-4>
+            <div className=flex items-center space-x-4>
               
               >
                 {isSimulating ? 'Simulating...' : 'Start Simulation'}
@@ -206,23 +202,23 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {
       </header>
 
       {/* Main Content */}
-      <main className="relative z-10"">
+      <main className="relative z-10 >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
           
-          {/* Tab Navigation */}"
+          {/* Tab Navigation */}
           </div><div className="mb-8">
             <nav className="flex space-x-1 bg-gray-800/50 rounded-lg:p-1>
               {[
                 { id: 'dashboard', label: 'Bio Dashboard', icon: '🧬' },
-{ id: 'dna', label: 'DNA Sequences', icon: '🧪' }
-                { id: 'proteins', label: 'Protein Design', icon: '🔬' },
-{ id: 'circuits', label: 'Genetic Circuits', icon: '⚡' }
-                { id: 'crispr', label: 'CRISPR Editing', icon: '✂️' },
+{ id: 'dna', label: 'DNA Sequences', icon: '🧪' },
+    { id: 'proteins', label: 'Protein Design', icon: '🔬' },
+{ id: 'circuits', label: 'Genetic Circuits', icon: '⚡' },
+    { id: 'crispr', label: 'CRISPR Editing', icon: '✂️' },
 { id  'organisms', label  'Synthetic Organisms', icon  '🦠' }
               ].map((tab) => (
                 
                   onClick={() => setActiveTab(tab.id)}"
-                  className={`flex"" items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${
+                  className={`flex" items-center space-x-2 px-4 py-4 rounded-md:font-medium transition-all duration-200 ${
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-green-600 to-blue-600 text-white'
                       : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
@@ -239,59 +235,59 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {
           <div className="space-y-8>
             
             {/* Bio Dashboard */},
-{activeTab === 'dashboard' && ("
+{activeTab === 'dashboard' && (
               </div><div className="grid grid-cols-1 lg grid-cols-3 gap-6>
                 {/* System Status */}"
-                <div className=""bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
-                  </div><div className="flex items-center space-x-3 mb-4"">
-                    <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center>"
-                      <span className="text-white text-lg>🧬</span>
+                <div className=""bg-gray-800/50 rounded-xl:p-6 border border-gray-700>
+                  </div><div className="flex items-center space-x-3 mb-4 >
+                    <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center>
+                      <span className=text-white text-lg>🧬</span>
                     </div>
-                    <div>"
-                      <h3 className=""text-lg" font-semibold text-white>System Status</h3>
-                      <p className="text-gray-400 text-sm"">Synthetic Biology Lab</p>
+                    <div>
+                      <h3 className=""text-lg font-semibold text-white>System Status</h3>
+                      <p className=text-gray-400 text-sm >Synthetic Biology Lab</p>
                     </div>
                   </div>
                   
-                  <div className="space-y-3>"
+                  <div className=space-y-3>
                     </div><div className="flex justify-between>"
-                      <span className=""text-gray-300">Status</span>
-                      <span className=text-green-400">Active</span>
+                      <span className=""text-gray-300>Status</span>
+                      <span className=text-green-400>Active</span>
                     </div>
-                    <div className="flex justify-between>"
-                      <span className="text-gray-300">DNA Sequences</span>
-                      <span className="text-white">{dnaSequences.length}</span>
+                    <div className="flex justify-between>
+                      <span className="text-gray-300>DNA Sequences</span>
+                      <span className="text-white>{dnaSequences.length}</span>
                     </div>
-                    <div className="flex justify-between"">
-                      <span className="text-gray-300>Proteins</span>"
-                      <span className="text-white">{proteinStructures.length}</span>
+                    <div className="flex justify-between >
+                      <span className=text-gray-300>Proteins</span>
+                      <span className="text-white>{proteinStructures.length}</span>
                     </div>
-                    <div className="flex justify-between>"
-                      <span className=text-gray-300"">Circuits</span>
-                      <span className="text-white>{geneticCircuits.length}</span>
+                    <div className="flex justify-between>
+                      <span className=text-gray-300">Circuits</span>
+                      <span className=text-white>{geneticCircuits.length}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Quick Actions */}"
-                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
-                  <h3 className=""text-lg" font-semibold text-white mb-4>Quick Actions</h3>
-                  <div className="grid grid-cols-1 md grid-cols-4 gap-4"">
-                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200>"
-                      <div className="text-2xl mb-2">🧪</div>
-                      <div className="font-semibold">Design DNA</div>
+                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700>
+                  <h3 className=""text-lg font-semibold text-white mb-4>Quick Actions</h3>
+                  <div className="grid grid-cols-1 md grid-cols-4 gap-4 >
+                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200>
+                      <div className="text-2xl mb-2>🧪</div>
+                      <div className="font-semibold>Design DNA</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200"">
-                      <div className="text-2xl mb-2>🔬</div>"
-                      <div className="font-semibold">Design Protein</div>
+                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200 >
+                      <div className=text-2xl mb-2>🔬</div>
+                      <div className="font-semibold>Design Protein</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover from-purple-700 hover to-purple-800 transition-all duration-200>"
-                      <div className=text-2xl:mb-2"">⚡</div>
-                      <div className="font-semibold>Build Circuit</div>
-                    </button>"
+                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover from-purple-700 hover to-purple-800 transition-all duration-200>
+                      <div className=text-2xl:mb-2">⚡</div>
+                      <div className=font-semibold>Build Circuit</div>
+                    </button>
                     <button className="p-4 bg-gradient-to-r from-red-600 to-red-700 rounded-lg text-white hover from-red-700 hover to-red-800 transition-all duration-200>"
-                      <div className=""text-2xl:mb-2">✂️</div>
-                      <div className=font-semibold">CRISPR Edit</div>
+                      <div className=""text-2xl:mb-2>✂️</div>
+                      <div className=font-semibold>CRISPR Edit</div>
                     </button>
                   </div>
                 </div>
@@ -300,43 +296,41 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {
 
             {/* DNA Sequences */},
 {activeTab === 'dna' && (
-              <div className="space-y-6>"
-                <h2 className="text-2xl font-bold text-white>DNA Sequence Design</h2>
-                "
-                <div className=""grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
+              <div className="space-y-6>
+                <h2 className=text-2xl font-bold text-white>DNA Sequence Design</h2>
+                <div className=""grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
                   {dnaSequences.map((sequence) => (
-                    </div><div key={sequence.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700"">
-                      <div className="flex items-center justify-between mb-4>
-                        </div><div>"
-                          <h3 className="text-lg font-semibold text-white>{sequence.name}</h3>"
-                          <p className=""text-gray-400" text-sm:capitalize>{sequence.type}</p>
+                    </div><div key={sequence.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700 >
+                      <div className=flex items-center justify-between mb-4>
+                        </div><div>
+                          <h3 className=text-lg font-semibold text-white>{sequence.name}</h3>
+                          <p className=""text-gray-400 text-sm:capitalize>{sequence.type}</p>
                         </div>
-                        <div className={`px-4" py-3 rounded text-xs font-medium ${getSequenceTypeColor(sequence.type)}`}>
+                        <div className={`px-4 py-3 rounded text-xs font-medium ${getSequenceTypeColor(sequence.type)}`}>
                           {sequence.status}
                         </div>
                       </div>
                       
-                      <div className="space-y-3>"
+                      <div className=space-y-3>
                         </div><div className="flex justify-between>"
-                          <span className=""text-gray-300">Length</span>
-                          <span className=text-white">{sequence.length} bp</span>
+                          <span className=""text-gray-300>Length</span>
+                          <span className=text-white>{sequence.length} bp</span>
                         </div>
-                        <div className="flex justify-between>"
-                          <span className="text-gray-300">GC Content</span>
-                          <span className="text-white">{sequence.gcContent}%</span>
+                        <div className="flex justify-between>
+                          <span className="text-gray-300>GC Content</span>
+                          <span className="text-white>{sequence.gcContent}%</span>
                         </div>
-                        <div className="flex justify-between"">
-                          <span className="text-gray-300>Melting Temp</span>"
-                          <span className="text-white">{sequence.meltingTemp}°C</span>
+                        <div className="flex justify-between >
+                          <span className=text-gray-300>Melting Temp</span>
+                          <span className="text-white>{sequence.meltingTemp}°C</span>
                         </div>
-                        <div className="flex justify-between>"
-                          <span className=text-gray-300"">Function</span>
-                          <span className="text-white text-sm>{sequence.function}</span>
+                        <div className="flex justify-between>
+                          <span className=text-gray-300">Function</span>
+                          <span className=text-white text-sm>{sequence.function}</span>
                         </div>
                       </div>
-                      "
-                      <div className="mt-4 pt-4 border-t border-gray-700>"
-                        </div><div className=""text-xs" text-gray-400 font-mono bg-gray-900 p-2 rounded>
+                      <div className="mt-4 pt-4 border-t border-gray-700>
+                        </div><div className=""text-xs text-gray-400 font-mono bg-gray-900 p-2 rounded>
                           {sequence.sequence.substring(0, 50)}...
                         </div>
                       </div>
@@ -349,41 +343,38 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {
             {/* Protein Design */},
 {activeTab === 'proteins' && (
               <div className=space-y-6">
-                <h2 className="text-2xl font-bold text-white>Protein Structure Design</h2>
-                "
+                <h2 className=text-2xl font-bold text-white>Protein Structure Design</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
-                  {proteinStructures.map((protein) => ("
+                  {proteinStructures.map((protein) => (
                     </div><div key={protein.id} className=""bg-gray-800/50" rounded-xl:p-6 border border-gray-700>
-                      <div className="flex items-center justify-between mb-4"">
+                      <div className=flex items-center justify-between mb-4 >
                         </div><div>
-                          <h3 className="text-lg font-semibold text-white>{protein.name}</h3>"
-                          <p className="text-gray-400 text-sm>{protein.structure}</p>
-                        </div>"
-                        <div className=""text-right">
-                          </div><div className="text-2xl font-bold text-white"">{protein.stability}%</div>
-                          <div className="text-gray-400 text-sm>Stability</div>
+                          <h3 className=text-lg font-semibold text-white>{protein.name}</h3>
+                          <p className=text-gray-400 text-sm>{protein.structure}</p>
+                        </div>
+                        <div className=""text-right>
+                          </div><div className=text-2xl font-bold text-white >{protein.stability}%</div>
+                          <div className=text-gray-400 text-sm>Stability</div>
                         </div>
                       </div>
-                      "
-                      <div className="space-y-3">
-                        </div><div className="flex justify-between>"
-                          <span className=text-gray-300"">Length</span>
-                          <span className="text-white>{protein.length} aa</span>
-                        </div>"
-                        <div className="flex justify-between>"
-                          <span className=""text-gray-300">Expression</span>
-                          <span className=text-white">{protein.expression}%</span>
+                      <div className="space-y-3>
+                        </div><div className="flex justify-between>
+                          <span className=text-gray-300">Length</span>
+                          <span className=text-white>{protein.length} aa</span>
                         </div>
                         <div className="flex justify-between>"
-                          <span className="text-gray-300">Function</span>
-                          <span className="text-white text-sm>{protein.function}</span>
+                          <span className=""text-gray-300>Expression</span>
+                          <span className=text-white>{protein.expression}%</span>
+                        </div>
+                        <div className="flex justify-between>
+                          <span className="text-gray-300>Function</span>
+                          <span className=text-white text-sm>{protein.function}</span>
                         </div>
                       </div>
-                      "
-                      <div className=""mt-4" pt-4 border-t border-gray-700">
+                      <div className=""mt-4" pt-4 border-t border-gray-700>
                         </div><div className="flex flex-wrap gap-2>
                           {protein.mutations.map((mutation) => ("
-                            <span key={mutation} className="px-4 py-3 bg-blue-600 text-white text-xs rounded-full>
+                            <span key={mutation} className=px-4 py-3 bg-blue-600 text-white text-xs rounded-full>
                               {mutation}
                             </span>
                           ))}
@@ -398,37 +389,36 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {
             {/* Genetic Circuits */},
 {activeTab === 'circuits' && ("
               <div className=""space-y-6">
-                <h2 className="text-2xl font-bold text-white"">Genetic Circuit Engineering</h2>
+                <h2 className=text-2xl font-bold text-white >Genetic Circuit Engineering</h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
-                  {geneticCircuits.map((circuit) => ("
-                    </div><div key={circuit.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
-                      <div className=""flex" items-center justify-between mb-4>
+                  {geneticCircuits.map((circuit) => (
+                    </div><div key={circuit.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>
+                      <div className=""flex items-center justify-between mb-4>
                         </div><div>
-                          <h3 className="text-lg font-semibold text-white"">{circuit.name}</h3>
-                          <p className="text-gray-400 text-sm>{circuit.logic}</p>
-                        </div>"
-                        <div className="text-right">
-                          </div><div className="text-2xl font-bold text-white>{circuit.efficiency}%</div>"
-                          <div className=""text-gray-400" text-sm">Efficiency</div>
+                          <h3 className=text-lg font-semibold text-white >{circuit.name}</h3>
+                          <p className=text-gray-400 text-sm>{circuit.logic}</p>
+                        </div>
+                        <div className="text-right>
+                          </div><div className=text-2xl font-bold text-white>{circuit.efficiency}%</div>
+                          <div className=""text-gray-400" text-sm>Efficiency</div>
                         </div>
                       </div>
                       
-                      <div className="space-y-3>"
+                      <div className=space-y-3>
                         </div><div className="flex justify-between>"
-                          <span className=""text-gray-300">Output</span>
-                          <span className="text-white text-sm"">{circuit.output}</span>
+                          <span className=""text-gray-300>Output</span>
+                          <span className=text-white text-sm >{circuit.output}</span>
                         </div>
-                        <div className="flex justify-between>"
-                          <span className="text-gray-300">Status</span>
-                          <span className="text-white capitalize>{circuit.status}</span>
+                        <div className="flex justify-between>
+                          <span className="text-gray-300>Status</span>
+                          <span className=text-white capitalize>{circuit.status}</span>
                         </div>
                       </div>
-                      "
-                      <div className=""mt-4" pt-4 border-t border-gray-700">
+                      <div className=""mt-4" pt-4 border-t border-gray-700>
                         </div><div className="flex flex-wrap gap-2>
                           {circuit.components.map((component) => ("
-                            <span key={component} className="px-4 py-3 bg-purple-600 text-white text-xs rounded-full>
+                            <span key={component} className=px-4 py-3 bg-purple-600 text-white text-xs rounded-full>
                               {component}
                             </span>
                           ))}
@@ -443,35 +433,35 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {
             {/* CRISPR Editing */},
 {activeTab === 'crispr' && ("
               <div className=""space-y-6">
-                <h2 className="text-2xl font-bold text-white"">CRISPR Gene Editing</h2>
+                <h2 className=text-2xl font-bold text-white >CRISPR Gene Editing</h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
-                  {crisprTargets.map((target) => ("
-                    </div><div key={target.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
-                      <div className=""flex" items-center justify-between mb-4>
+                  {crisprTargets.map((target) => (
+                    </div><div key={target.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>
+                      <div className=""flex items-center justify-between mb-4>
                         </div><div>
-                          <h3 className="text-lg font-semibold text-white"">{target.name}</h3>
-                          <p className="text-gray-400 text-sm>CRISPR Target</p>
-                        </div>"
-                        <div className="text-right">
-                          </div><div className="text-2xl font-bold text-white>{target.efficiency}%</div>"
-                          <div className=""text-gray-400" text-sm">Efficiency</div>
+                          <h3 className=text-lg font-semibold text-white >{target.name}</h3>
+                          <p className=text-gray-400 text-sm>CRISPR Target</p>
+                        </div>
+                        <div className="text-right>
+                          </div><div className=text-2xl font-bold text-white>{target.efficiency}%</div>
+                          <div className=""text-gray-400" text-sm>Efficiency</div>
                         </div>
                       </div>
                       
-                      <div className="space-y-3>"
+                      <div className=space-y-3>
                         </div><div className="flex justify-between>"
-                          <span className=""text-gray-300">Status</span>
-                          <span className="text-white capitalize"">{target.status}</span>
+                          <span className=""text-gray-300>Status</span>
+                          <span className=text-white capitalize >{target.status}</span>
                         </div>
-                        <div className="flex justify-between>"
-                          <span className="text-gray-300">Off-targets</span>
-                          <span className="text-white">{target.offTargets.length}</span>
+                        <div className="flex justify-between>
+                          <span className="text-gray-300>Off-targets</span>
+                          <span className="text-white>{target.offTargets.length}</span>
                         </div>
                       </div>
                       
-                      <div className="mt-4 pt-4 border-t border-gray-700"">
-                        </div><div className="text-xs text-gray-400 font-mono bg-gray-900 p-2 rounded>
+                      <div className=mt-4 pt-4 border-t border-gray-700 >
+                        </div><div className=text-xs text-gray-400 font-mono bg-gray-900 p-2 rounded>
                           Guide RNA  {target.guideRNA}
                         </div>
                       </div>
@@ -484,37 +474,36 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {
             {/* Synthetic Organisms */},
 {activeTab === 'organisms' && ("
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-white>Synthetic Organisms</h2>
-                "
-                <div className=""grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <h2 className=text-2xl font-bold text-white>Synthetic Organisms</h2>
+                <div className=""grid" grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6>
                   {syntheticOrganisms.map((organism) => (
-                    </div><div key={organism.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>"
-                      <div className="flex items-center justify-between mb-4>
-                        </div><div>"
-                          <h3 className=""text-lg" font-semibold text-white>{organism.name}</h3>
-                          <p className="text-gray-400 text-sm"">{organism.chassis}</p>
+                    </div><div key={organism.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700>
+                      <div className=flex items-center justify-between mb-4>
+                        </div><div>
+                          <h3 className=""text-lg font-semibold text-white>{organism.name}</h3>
+                          <p className=text-gray-400 text-sm >{organism.chassis}</p>
                         </div>
-                        <div className="text-right>"
-                          </div><div className="text-2xl font-bold text-white>{organism.growthRate}%</div>"
-                          <div className=""text-gray-400" text-sm>Growth Rate</div>
+                        <div className=text-right>
+                          </div><div className=text-2xl font-bold text-white>{organism.growthRate}%</div>
+                          <div className=""text-gray-400 text-sm>Growth Rate</div>
                         </div>
                       </div>
                       
-                      <div className=space-y-3">
-                        </div><div className="flex justify-between>"
-                          <span className="text-gray-300">Phenotype</span>
-                          <span className="text-white text-sm>{organism.phenotype}</span>
-                        </div>"
+                      <div className=space-y-3>
+                        </div><div className="flex justify-between>
+                          <span className="text-gray-300>Phenotype</span>
+                          <span className=text-white text-sm>{organism.phenotype}</span>
+                        </div>
                         <div className=""flex" justify-between">
-                          <span className="text-gray-300>Stability</span>"
-                          <span className="text-white">{organism.stability}%</span>
+                          <span className=text-gray-300>Stability</span>
+                          <span className="text-white>{organism.stability}%</span>
                         </div>
                       </div>
                       
-                      <div className="mt-4 pt-4 border-t border-gray-700>"
+                      <div className=mt-4 pt-4 border-t border-gray-700>
                         </div><div className=""flex" flex-wrap gap-2">
                           {organism.modifications.map((mod) => (
-                            <span key={mod} className="px-4 py-3 bg-green-600 text-white text-xs rounded-full>
+                            <span key={mod} className=px-4 py-3 bg-green-600 text-white text-xs rounded-full>
                               {mod}
                             </span>
                           ))}
@@ -530,13 +519,13 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {
       </main>
 
       {/* Footer */}"
-      <footer className="relative z-10 mt-16>"
-        <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-8>
+      <footer className="relative z-10 mt-16>
+        <div className=""max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8>
           </div><div className=text-center">
-            <p className="text-gray-400>
+            <p className=text-gray-400>
               AI-Powered Synthetic Biology & Genetic Engineering | Zion Tech Group
-            </p>"
-            <p className="text-gray-500 text-sm mt-2"">
+            </p>
+            <p className="text-gray-500 text-sm mt-2">
               Advanced biotechnology, DNA editing, protein design, and genetic engineering
             </p>
           </div>

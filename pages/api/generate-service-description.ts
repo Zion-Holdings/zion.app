@@ -79,8 +79,8 @@ Format the description as a single paragraph that flows naturally and is ready t
         {
           role: "system",
           content: "You are a professional marketing copywriter specializing in service descriptions. You create compelling, professional, and conversion-focused service descriptions that help businesses attract their ideal clients."
-        }
-        {
+        },
+    {
           role: "user",
           content: prompt
         }

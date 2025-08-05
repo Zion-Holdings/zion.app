@@ -37,8 +37,8 @@ const availableItems: Recommendation[] = [
     image: '/api/placeholder/300/200',
     link: '/services/ai-model-development',
     aiInsights: []
-  }
-  {
+  },
+    {
     id: 'data-analytics',
     type: 'service',
     title: 'Data Analytics & BI',
@@ -50,8 +50,8 @@ const availableItems: Recommendation[] = [
     image: '/api/placeholder/300/200',
     link: '/services/data-analytics',
     aiInsights: []
-  }
-  {
+  },
+    {
     id: 'cloud-migration',
     type: 'service',
     title: 'Cloud Migration Services',
@@ -63,8 +63,8 @@ const availableItems: Recommendation[] = [
     image: '/api/placeholder/300/200',
     link: '/services/cloud-migration',
     aiInsights: []
-  }
-  {
+  },
+    {
     id: 'web-development',
     type: 'service',
     title: 'Full-Stack Web Development',
@@ -90,8 +90,8 @@ const availableItems: Recommendation[] = [
     image: '/api/placeholder/300/200',
     link: '/talents/dr-sarah-chen',
     aiInsights: []
-  }
-  {
+  },
+    {
     id: 'alex-rodriguez',
     type: 'talent',
     title: 'Alex Rodriguez - Full-Stack Developer',
@@ -103,8 +103,8 @@ const availableItems: Recommendation[] = [
     image: '/api/placeholder/300/200',
     link: '/talents/alex-rodriguez',
     aiInsights: []
-  }
-  {
+  },
+    {
     id: 'emma-thompson',
     type: 'talent',
     title: 'Emma Thompson - Data Scientist',
@@ -130,8 +130,8 @@ const availableItems: Recommendation[] = [
     image: '/api/placeholder/300/200',
     link: '/equipment/gpu-cluster-rtx4090',
     aiInsights: []
-  }
-  {
+  },
+    {
     id: 'quantum-computer',
     type: 'equipment',
     title: 'Quantum Computing Access',
@@ -143,8 +143,8 @@ const availableItems: Recommendation[] = [
     image: '/api/placeholder/300/200',
     link: '/equipment/quantum-computer',
     aiInsights: []
-  }
-  {
+  },
+    {
     id: 'edge-computing',
     type: 'equipment',
     title: 'Edge Computing Devices',

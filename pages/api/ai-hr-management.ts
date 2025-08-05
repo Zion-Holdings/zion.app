@@ -248,8 +248,8 @@ export default function handler(
         achievements: ['Successfully launched new product feature', 'Improved team productivity by 25%'],
         areasForImprovement: ['Communication with non-technical stakeholders'],
         aiRecommendations: ['Consider leadership training program', 'Schedule regular stakeholder updates']
-      }
-      {
+      },
+    {
         id: '2',
         employeeId: '2',
         employeeName: 'Lisa Wang',
@@ -259,8 +259,8 @@ export default function handler(
         achievements: ['Launched successful social media campaign', 'Increased conversion rates by 30%'],
         areasForImprovement: ['Data-driven decision making'],
         aiRecommendations: ['Enroll in advanced analytics course', 'Implement A/B testing framework']
-      }
-      {
+      },
+    {
         id: '3',
         employeeId: '3',
         employeeName: 'James Wilson',
@@ -308,8 +308,8 @@ export default function handler(
           'Review compensation and benefits packages',
           'Implement employee engagement initiatives'
         ]
-      }
-      {
+      },
+    {
         type: 'skill_gap',
         title: 'Skill Gap Identified',
         description: 'Engineering team needs upskilling in emerging technologies',
@@ -320,8 +320,8 @@ export default function handler(
           'Provide access to online learning platforms',
           'Schedule regular skill assessment reviews'
         ]
-      }
-      {
+      },
+    {
         type: 'diversity',
         title: 'Diversity Improvement',
         description: 'Positive trend in leadership diversity, but room for improvement',
@@ -332,8 +332,8 @@ export default function handler(
           'Implement mentorship programs for underrepresented groups',
           'Review promotion processes for bias'
         ]
-      }
-      {
+      },
+    {
         type: 'performance',
         title: 'Performance Distribution',
         description: 'Strong performance across teams with 35 employees in top 20%',
@@ -344,8 +344,8 @@ export default function handler(
           'Provide career development opportunities',
           'Share best practices across teams'
         ]
-      }
-      {
+      },
+    {
         type: 'recruitment',
         title: 'Recruitment Pipeline Optimization',
         description: 'Job postings need optimization for better candidate quality',

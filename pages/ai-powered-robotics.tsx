@@ -464,8 +464,8 @@ const AIPoweredRoboticsPage: NextPage = () => {
           improvement: -1.6,
           trend: 'down',
           period: 'This Month'
-        }
-        {
+        },
+    {
           id: '3',
           metric: 'Safety Score',
           current: 97.8,
@@ -482,8 +482,8 @@ const AIPoweredRoboticsPage: NextPage = () => {
           improvement: -7.9,
           trend: 'down',
           period: 'This Month'
-        }
-        {
+        },
+    {
           id: '5',
           metric: 'Energy Efficiency',
           current: 91.7,
@@ -616,18 +616,18 @@ const AIPoweredRoboticsPage: NextPage = () => {
       </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
-        <div className="fixed inset-0 z-0>"
-          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
+        <div className=fixed inset-0 z-0>
+          </div><div className=""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
         </div>
       
-        <div className="text-center>"
+        <div className=text-center>
           </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>"
             <svg className=""animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle className="opacity-25 cx=12 cy=12 r=""10" stroke="currentColor" strokeWidth="4"></circle>
-              <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              <circle className="opacity-25 cx=12 cy=12 r= 10" stroke="currentColor" strokeWidth="4></circle>
+              <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path>
             </svg>
-            <span className="text-lg font-medium>Loading AI-Powered Robotics...</span>
+            <span className=text-lg font-medium>Loading AI-Powered Robotics...</span>
           </div>
         </div>
       </div>
@@ -635,67 +635,58 @@ const AIPoweredRoboticsPage: NextPage = () => {
   }
 
   return ("
-    <div className="relative z-10 container-responsive py-8>
+    <div className=relative z-10 container-responsive py-8>
       <Head>
-        <title>AI-Powered Robotics - Zion</title>"
-        <meta name=description"" content="Intelligent robot control, automation, sensor integration, and AI-driven robotics optimization" />
-        <meta name="keywords" content="AI robotics, robot control, automation, sensor integration, Zion" />
-        <link rel="icon" href="/favicon.ico" />
-      
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
+        <title>AI-Powered Robotics - Zion</title>
+        <meta name=description"" content="Intelligent robot control, automation, sensor integration, and AI-driven robotics optimization > </meta name=description"" content="Intelligent robot control, automation, sensor integration, and AI-driven robotics optimization" ><meta name="keywords" content="AI robotics, robot control, automation, sensor integration, Zion > </meta name="keywords" content="AI robotics, robot control, automation, sensor integration, Zion" ><link rel="icon" href="/favicon.ico > </link rel="icon" href="/favicon.ico" ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className=""flex" justify-between h-16>
-            <div className="flex items-center>"
-              <Link href=/ className=""flex-shrink-0 />
-                <h1 className="text-2xl font-bold text-white>"
-                  <span className=""text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
+            <div className="flex items-center>
+              <Link href=/ className="flex-shrink-0 > </Link href=/ className=""flex-shrink-0 ><h1 className="text-2xl font-bold text-white>
+                  <span className=""text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
             
-            <div className="hidden md flex items-center space-x-8"">
-              <Link href="/ai-powered-iot" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
-                IoT
-              </Link>"
-              <Link href=/ai-powered-blockchain className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
-                Blockchain
-              </Link>"
-              <Link href=/auth/login"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
-                Login
-              </Link>
+            <div className="hidden md flex items-center space-x-8 >
+              <Link href="/ai-powered-iot" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >IoT
+              </Link href="/ai-powered-iot" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
+              <Link href=/ai-powered-blockchain className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Blockchain
+              </Link href=/ai-powered-blockchain className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
+              <Link href=/auth/login"" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login
+              </Link href=/auth/login  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
             </div>
           </div>
         </div>
       </nav>
-"
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
-        {/* Header */}"
+        {/* Header */}
         </div><div className=""text-center" mb-8>
-          <h1 className="text-4xl md text-5xl font-bold text-white mb-4"">
+          <h1 className=text-4xl md text-5xl font-bold text-white mb-4 >
             AI-Powered Robotics
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto>
+          <p className=text-xl text-gray-300 max-w-3xl mx-auto>
             Intelligent robot control, automation, sensor integration, 
             and AI-driven robotics optimization with advanced robotics capabilities.
           </p>
         </div>
 
         {/* Tab Selector */}"
-        <div className="flex justify-center mb-8>"
+        <div className=flex justify-center mb-8>
           </div><div className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-1>
             {[
               { id: 'overview', name: 'Overview', icon: '📊' },
-{ id: 'robots', name: 'Robots', icon: '🤖' }
-              { id: 'tasks', name: 'Tasks', icon: '⚙️' },
-{ id: 'automations', name: 'Automations', icon: '🔗' }
-              { id: 'analytics', name: 'Analytics', icon: '📈' }
+{ id: 'robots', name: 'Robots', icon: '🤖' },
+    { id: 'tasks', name: 'Tasks', icon: '⚙️' },
+{ id: 'automations', name: 'Automations', icon: '🔗' },
+    { id: 'analytics', name: 'Analytics', icon: '📈' }
             ].map((tab) => (
               
                 onClick={() => setSelectedView(tab.id as any)}
-                className={`flex" items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${
+                className={`flex items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${
                   selectedView === tab.id
                     ? 'bg-purple-600 text-white'
                     : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -711,24 +702,23 @@ const AIPoweredRoboticsPage: NextPage = () => {
         {/* Analytics Overview */},
 {selectedView === 'overview' && (
           <div className="grid grid-cols-1 md grid-cols-3 gap-6 mb-8>
-            {analytics.map((metric) => ("
-              </div><div key={metric.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
+            {analytics.map((metric) => (
+              </div><div key={metric.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
                 <div className=""flex items-center justify-between mb-4>
-                  <h3 className="text-lg font-semibold text-white"">{metric.metric}</h3>
-                  <span className="text-2xl>{getTrendIcon(metric.trend)}</span>
+                  <h3 className=text-lg font-semibold text-white >{metric.metric}</h3>
+                  <span className=text-2xl>{getTrendIcon(metric.trend)}</span>
                 </div>
-                "
-                <div className="mb-4">
-                  </div><div className="text-3xl font-bold text-white mb-2>{metric.current}</div>"
-                  <p className=text-sm:text-gray-400"">Target: {metric.target}</p>
+                <div className="mb-4>
+                  </div><div className=text-3xl font-bold text-white mb-2>{metric.current}</div>
+                  <p className=text-sm:text-gray-400">Target: {metric.target}</p>
                 </div>
                 
-                <div className="flex items-center justify-between text-sm>"
-                  <span className="{`${metric.improvement > 0 ? 'text-green-400' : 'text-red-400'}`}>
+                <div className="flex items-center justify-between text-sm>
+                  <span className={`${metric.improvement > 0 ? 'text-green-400' : 'text-red-400'}`}>
                     {metric.improvement > 0 ? '+'   ''},
 {metric.improvement.toFixed(1)}%
-                  </span>"
-                  <span className=""text-gray-400">{metric.period}</span>
+                  </span>
+                  <span className=""text-gray-400>{metric.period}</span>
                 </div>
               </div>
             ))}
@@ -737,68 +727,65 @@ const AIPoweredRoboticsPage: NextPage = () => {
 
         {/* Robots */},
 {selectedView === 'robots' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6"">
+          <div className=grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6 >
             {filteredRobots.map((robot) => (
-              </div><div key={robot.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
-                <div className="flex items-start justify-between mb-4>"
+              </div><div key={robot.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
+                <div className="flex items-start justify-between mb-4>
                   </div><div className=""flex" items-center space-x-3>
-                    <div className=text-3xl">{getTypeIcon(robot.type)}</div>
+                    <div className=text-3xl>{getTypeIcon(robot.type)}</div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-1>{robot.name}</h3>"
-                      <p className="text-gray-300 text-sm capitalize>{robot.type}</p>
+                      <h3 className=text-lg font-semibold text-white mb-1>{robot.name}</h3>
+                      <p className=text-gray-300 text-sm capitalize>{robot.type}</p>
                     </div>
-                  </div>"
+                  </div>
                   <div className=""text-right">
-                    <span className={`px-3" py-3 rounded-full text-xs font-medium ${getStatusColor(robot.status)}`}>
+                    <span className={`px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(robot.status)}`}>
                       {robot.status.toUpperCase()}
                     </span>
-                    <div className="mt-2>"
-                      <span className="{`px-4 py-3 rounded text-xs font-medium ${robot.aiEnabled ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
+                    <div className="mt-2>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${robot.aiEnabled ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
                         {robot.aiEnabled ? 'AI ENABLED'   'AI DISABLED'}
                       </span>
                     </div>
                   </div>
                 </div>
-"
-                <div className=""mb-4">
-                  </div><div className="flex items-center justify-between mb-2"">
-                    <span className="text-sm:text-gray-400>Location </span>"
-                    <span className="text-sm text-white">{robot.location}</span>
+                <div className=""mb-4>
+                  </div><div className="flex items-center justify-between mb-2 >
+                    <span className=text-sm:text-gray-400>Location </span>
+                    <span className="text-sm text-white>{robot.location}</span>
                   </div>
-                  <div className="flex items-center justify-between mb-2>"
-                    <span className=text-sm:text-gray-400"">Battery:</span>
-                    <span className="{`text-sm font-semibold ${getBatteryColor(robot.batteryLevel)}`}>
+                  <div className="flex items-center justify-between mb-2>
+                    <span className=text-sm:text-gray-400">Battery:</span>
+                    <span className={`text-sm font-semibold ${getBatteryColor(robot.batteryLevel)}`}>
                       {robot.batteryLevel}%
                     </span>
                   </div>
                 </div>
-"
-                <div className="grid grid-cols-2 gap-4 mb-4>
-                  </div><div>"
-                    <p className=""text-sm:text-gray-400">Accuracy</p>
-                    <p className="text-lg font-semibold text-green-400"">{robot.performance.accuracy}%</p>
+                <div className=grid grid-cols-2 gap-4 mb-4>
+                  </div><div>
+                    <p className=""text-sm:text-gray-400>Accuracy</p>
+                    <p className=text-lg font-semibold text-green-400 >{robot.performance.accuracy}%</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400>Speed</p>"
-                    <p className="text-lg font-semibold text-blue-400>{robot.performance.speed}%</p>
-                  </div>
-                  <div>"
-                    <p className=""text-sm:text-gray-400">Efficiency</p>
-                    <p className="text-lg font-semibold text-orange-400"">{robot.performance.efficiency}%</p>
+                    <p className=text-sm text-gray-400>Speed</p>
+                    <p className=text-lg font-semibold text-blue-400>{robot.performance.speed}%</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400>Safety</p>"
-                    <p className="text-lg font-semibold text-purple-400>{robot.performance.safetyScore}%</p>
+                    <p className=""text-sm:text-gray-400>Efficiency</p>
+                    <p className=text-lg font-semibold text-orange-400 >{robot.performance.efficiency}%</p>
+                  </div>
+                  <div>
+                    <p className=text-sm text-gray-400>Safety</p>
+                    <p className=text-lg font-semibold text-purple-400>{robot.performance.safetyScore}%</p>
                   </div>
                 </div>
-"
                 <div className=""mb-4">
-                  <p className="text-sm text-gray-400 mb-2"">Sensors:</p>
+                  <p className=text-sm text-gray-400 mb-2 >Sensors:</p>
                   <div className="space-y-1>
-                    {robot.sensors.map((sensor, index) => ("
-                      </div><div key={index} className="flex items-center justify-between text-xs>"
-                        <span className=""text-gray-300">{sensor.type}</span>
-                        <span className={`px-4" py-3 rounded text-xs ${sensor.status === 'active' ? 'text-green-400 bg-green-500/20' : sensor.status === 'error' ? 'text-red-400 bg-red-500/20' : 'text-gray-400 bg-gray-500/20'}`}>
+                    {robot.sensors.map((sensor, index) => (
+                      </div><div key={index} className="flex items-center justify-between text-xs>
+                        <span className=""text-gray-300>{sensor.type}</span>
+                        <span className={`px-4 py-3 rounded text-xs ${sensor.status === 'active' ? 'text-green-400 bg-green-500/20' : sensor.status === 'error' ? 'text-red-400 bg-red-500/20' : 'text-gray-400 bg-gray-500/20'}`}>
                           {sensor.status}
                         </span>
                       </div>
@@ -806,16 +793,15 @@ const AIPoweredRoboticsPage: NextPage = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between text-sm:text-gray-400 mb-4>
+                <div className=flex items-center justify-between text-sm:text-gray-400 mb-4>
                   <span>Auto-Update  {robot.autoUpdate ? '✅'   '❌'}</span>
                   <span>Last Seen  {robot.lastSeen.toLocaleString()}</span>
                 </div>
-"
                 <div className="flex space-x-3>"
-                  <button className=""bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
+                  <button className=""bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
                     Control Robot
                   </button>
-                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm"">
+                  <button className=border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm >
                     Monitor
                   </button>
                 </div>
@@ -827,83 +813,82 @@ const AIPoweredRoboticsPage: NextPage = () => {
         {/* Robot Tasks */},
 {selectedView === 'tasks' && (
           <div className="space-y-6>
-            {tasks.map((task) => ("
-              </div><div key={task.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
-                <div className=""flex" items-start justify-between mb-4>
-                  </div><div className="flex items-center space-x-3"">
-                    <div className="text-3xl>{getTaskTypeIcon(task.taskType)}</div>
-                    <div>"
-                      <h3 className="text-lg font-semibold text-white mb-1>{task.taskType.toUpperCase()}</h3>"
-                      <p className=""text-gray-300" text-sm>Robot ID: {task.robotId}</p>
+            {tasks.map((task) => (
+              </div><div key={task.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
+                <div className=""flex items-start justify-between mb-4>
+                  </div><div className="flex items-center space-x-3 >
+                    <div className=text-3xl>{getTaskTypeIcon(task.taskType)}</div>
+                    <div>
+                      <h3 className=text-lg font-semibold text-white mb-1>{task.taskType.toUpperCase()}</h3>
+                      <p className=""text-gray-300 text-sm>Robot ID: {task.robotId}</p>
                     </div>
                   </div>
                   <div className=text-right">
-                    <span className="{`px-3 py-3 rounded-full text-xs font-medium ${getTaskStatusColor(task.status)}`}>
+                    <span className={`px-3 py-3 rounded-full text-xs font-medium ${getTaskStatusColor(task.status)}`}>
                       {task.status.toUpperCase()}
-                    </span>"
+                    </span>
                     <div className="mt-2">
-                      <span className="{`px-4 py-3 rounded text-xs font-medium ${task.aiAssisted ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${task.aiAssisted ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
                         {task.aiAssisted ? 'AI ASSISTED'   'MANUAL'}
                       </span>
                     </div>
                   </div>
                 </div>
-"
-                <div className=""grid" grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                <div className=""grid" grid-cols-2 md:grid-cols-4 gap-4 mb-4>
                   </div><div>
-                    <p className="text-sm text-gray-400>Target</p>"
-                    <p className="text-lg font-semibold text-white>{task.parameters.target}</p>
-                  </div>
-                  <div>"
-                    <p className=""text-sm:text-gray-400">Precision</p>
-                    <p className="text-lg font-semibold text-green-400"">{task.parameters.precision}</p>
+                    <p className=text-sm text-gray-400>Target</p>
+                    <p className=text-lg font-semibold text-white>{task.parameters.target}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400>Speed</p>"
-                    <p className="text-lg font-semibold text-blue-400>{task.parameters.speed}%</p>
+                    <p className=""text-sm:text-gray-400>Precision</p>
+                    <p className=text-lg font-semibold text-green-400 >{task.parameters.precision}</p>
                   </div>
-                  <div>"
-                    <p className=""text-sm:text-gray-400">Safety</p>
-                    <p className="text-lg font-semibold text-orange-400"">{task.parameters.safety ? '✅' : '❌'}</p>
+                  <div>
+                    <p className=text-sm text-gray-400>Speed</p>
+                    <p className=text-lg font-semibold text-blue-400>{task.parameters.speed}%</p>
+                  </div>
+                  <div>
+                    <p className=""text-sm:text-gray-400>Safety</p>
+                    <p className=text-lg font-semibold text-orange-400 >{task.parameters.safety ? '✅' : '❌'}</p>
                   </div>
                 </div>
 
                 {task.status === 'running' || task.status === 'completed' ? (
-                  <div className="mb-4>"
-                    <p className="text-sm:text-gray-400 mb-2>Task Metrics </p>"
-                    <div className=""grid" grid-cols-4 gap-4 text-sm>
+                  <div className="mb-4>
+                    <p className=text-sm:text-gray-400 mb-2>Task Metrics </p>
+                    <div className=""grid grid-cols-4 gap-4 text-sm>
                       </div><div>
-                        <p className=text-gray-400">Completion</p>
-                        <p className="text-green-400 font-semibold>{task.metrics.completionRate}%</p>
+                        <p className=text-gray-400>Completion</p>
+                        <p className=text-green-400 font-semibold>{task.metrics.completionRate}%</p>
                       </div>
-                      <div>"
-                        <p className="text-gray-400">Accuracy</p>
-                        <p className="text-blue-400 font-semibold>{task.metrics.accuracy}%</p>
+                      <div>
+                        <p className="text-gray-400>Accuracy</p>
+                        <p className=text-blue-400 font-semibold>{task.metrics.accuracy}%</p>
                       </div>
-                      <div>"
-                        <p className=text-gray-400"">Efficiency</p>
-                        <p className="text-orange-400 font-semibold>{task.metrics.efficiency}%</p>
+                      <div>
+                        <p className=text-gray-400">Efficiency</p>
+                        <p className=text-orange-400 font-semibold>{task.metrics.efficiency}%</p>
                       </div>
-                      <div>"
-                        <p className="text-gray-400">Safety</p>
-                        <p className="text-purple-400 font-semibold>{task.metrics.safetyScore}%</p>
+                      <div>
+                        <p className="text-gray-400>Safety</p>
+                        <p className=text-purple-400 font-semibold>{task.metrics.safetyScore}%</p>
                       </div>
                     </div>
                   </div>
                 )   null}
 "
-                <div className=""flex" items-center justify-between text-sm:text-gray-400 mb-4">
+                <div className=""flex" items-center justify-between text-sm:text-gray-400 mb-4>
                   <span>Started: {task.startTime.toLocaleString()}</span>
                   {task.endTime && (
                     <span>Completed: {task.endTime.toLocaleString()}</span>
                   )}
                 </div>
 
-                <div className="flex space-x-3>"
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105>
+                <div className="flex space-x-3>
+                  <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105>
                     View Details
-                  </button>"
-                  <button className=""border" border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
+                  </button>
+                  <button className=""border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
                     {task.status === 'running' ? 'Pause' : 'Start'}
                   </button>
                 </div>
@@ -914,77 +899,73 @@ const AIPoweredRoboticsPage: NextPage = () => {
 
         {/* Robot Automations */},
 {selectedView === 'automations' && (
-          <div className=space-y-6">
+          <div className=space-y-6>
             {automations.map((automation) => (
-              </div><div key={automation.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
-                <div className="flex items-start justify-between mb-4>
-                  </div><div>"
-                    <h3 className=""text-lg" font-semibold text-white mb-2>{automation.name}</h3>
-                    <p className="text-gray-300 text-sm"">{automation.description}</p>
+              </div><div key={automation.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
+                <div className=flex items-start justify-between mb-4>
+                  </div><div>
+                    <h3 className=""text-lg font-semibold text-white mb-2>{automation.name}</h3>
+                    <p className=text-gray-300 text-sm >{automation.description}</p>
                   </div>
-                  <div className="text-right>"
-                    <span className="{`px-3 py-3 rounded-full text-xs font-medium ${getAutomationStatusColor(automation.status)}`}>
+                  <div className="text-right>
+                    <span className={`px-3 py-3 rounded-full text-xs font-medium ${getAutomationStatusColor(automation.status)}`}>
                       {automation.status.toUpperCase()}
-                    </span>"
+                    </span>
                     <div className=""mt-2">
-                      <span className={`px-4" py-3 rounded text-xs font-medium ${automation.aiOptimized ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${automation.aiOptimized ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
                         {automation.aiOptimized ? 'AI OPTIMIZED' : 'MANUAL'}
                       </span>
                     </div>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 mb-4>
-                  </div><div>"
-                    <p className="text-sm text-gray-400">Executions</p>
-                    <p className="text-lg font-semibold text-white>{automation.executionCount.toLocaleString()}</p>
+                <div className=grid grid-cols-2 gap-4 mb-4>
+                  </div><div>
+                    <p className="text-sm text-gray-400>Executions</p>
+                    <p className=text-lg font-semibold text-white>{automation.executionCount.toLocaleString()}</p>
                   </div>
-                  <div>"
-                    <p className=text-sm:text-gray-400"">Success Rate</p>
-                    <p className="text-lg font-semibold text-green-400>{automation.successRate}%</p>
+                  <div>
+                    <p className=text-sm:text-gray-400">Success Rate</p>
+                    <p className=text-lg font-semibold text-green-400>{automation.successRate}%</p>
                   </div>
                 </div>
-"
                 <div className="mb-4">
-                  <p className="text-sm:text-gray-400 mb-2>Triggers </p>"
-                  <div className=space-y-2"">
+                  <p className=text-sm:text-gray-400 mb-2>Triggers </p>
+                  <div className=space-y-2">
                     {automation.triggers.map((trigger, index) => (
-                      </div><div key={index} className="bg-white/5 rounded p-2>"
+                      </div><div key={index} className="bg-white/5 rounded p-2>
                         <div className="flex items-center justify-between>"
-                          <span className=""text-sm:text-white">{trigger.condition}</span>
-                          <span className="text-xs text-gray-400"">Sensor: {trigger.sensor}</span>
+                          <span className=""text-sm:text-white>{trigger.condition}</span>
+                          <span className=text-xs text-gray-400 >Sensor: {trigger.sensor}</span>
                         </div>
-                        <p className="text-xs text-gray-400>Threshold  {trigger.threshold}</p>
+                        <p className=text-xs text-gray-400>Threshold  {trigger.threshold}</p>
                       </div>
                     ))}
                   </div>
                 </div>
-"
                 <div className="mb-4">
-                  <p className="text-sm:text-gray-400 mb-2>Actions </p>"
-                  <div className=space-y-2"">
+                  <p className=text-sm:text-gray-400 mb-2>Actions </p>
+                  <div className=space-y-2">
                     {automation.actions.map((action, index) => (
-                      </div><div key={index} className="bg-white/5 rounded p-2>"
+                      </div><div key={index} className="bg-white/5 rounded p-2>
                         <div className="flex items-center justify-between>"
-                          <span className=""text-sm:text-white">{action.robot}</span>
-                          <span className="text-xs text-gray-400"">{action.action}</span>
+                          <span className=""text-sm:text-white>{action.robot}</span>
+                          <span className=text-xs text-gray-400 >{action.action}</span>
                         </div>
-                        <p className="text-xs text-gray-400>Parameters  {JSON.stringify(action.parameters)}</p>
+                        <p className=text-xs text-gray-400>Parameters  {JSON.stringify(action.parameters)}</p>
                       </div>
                     ))}
                   </div>
                 </div>
-"
-                <div className="flex items-center justify-between text-sm text-gray-400 mb-4>
+                <div className=flex items-center justify-between text-sm text-gray-400 mb-4>
                   <span>Last Executed  {automation.lastExecuted.toLocaleString()}</span>
                   <span>Robot ID  {automation.robotId}</span>
                 </div>
-"
                 <div className=""flex" space-x-3>
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"">
+                  <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >
                     View Logs
                   </button>
-                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
+                  <button className=border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
                     Edit Automation
                   </button>
                 </div>
@@ -994,22 +975,21 @@ const AIPoweredRoboticsPage: NextPage = () => {
         )}
 
         {/* Call to Action */}"
-        <div className="mt-12 text-center>"
+        <div className=mt-12 text-center>
           </div><div className=""bg-gradient-to-br" from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8>
-            <h2 className="text-3xl font-bold text-white mb-4"">
+            <h2 className=text-3xl font-bold text-white mb-4 >
               Control with Robotics Intelligence
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
+            <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
               Leverage intelligent robotics technology to control robots, automate tasks, 
               and optimize operations with AI-driven robotics management.
-            </p>"
+            </p>
             <div className="flex flex-col sm flex-row gap-4 justify-center>"
-              <button className=""bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
+              <button className=""bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
                 Deploy Robot
               </button>
-              <Link href=/service-marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
-                View Services
-              </Link>
+              <Link href=/service-marketplace" className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Services
+              </Link href=/service-marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
             </div>
           </div>
         </div>

@@ -144,7 +144,7 @@ const Layout: React.FC<LayoutProps> = ({
     <motion.button
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover to-purple-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm lg text-base shadow-lg >
+      className=bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover to-purple-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm lg text-base shadow-lg >
       Get Started
     </motion.button>
   );
@@ -152,22 +152,21 @@ const Layout: React.FC<LayoutProps> = ({
   return (
     <>
       <Head>
-        <title>{title}</title>"
-        <meta name=""description" content={description} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+        <title>{title}</title>
+        <meta name=""description content={description} > </meta name=""description" content={description} ><meta name="viewport" content="width=device-width, initial-scale=1 > </meta name="viewport" content="width=device-width, initial-scale=1" ><link rel="icon" href="/favicon.ico > </link rel="icon" href="/favicon.ico" ></Head>
       
       <div className="min-h-screen bg-gray-50">
         {/* Header */}
         <ImprovedNavigation 
           items={navigationItems}
           ctaButton={ctaButton}
+          variant="light
+        >{/* Main Content */}
+        </ImprovedNavigation 
+          items={navigationItems}
+          ctaButton={ctaButton}
           variant="light"
-        />
-
-        {/* Main Content */}
-        <main>
+        ><main>
           {children}
         </main>
 
@@ -177,58 +176,58 @@ const Layout: React.FC<LayoutProps> = ({
             <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-5 gap-8">
               {/* Company Info */}
               <div className="lg col-span-2">
-                <h3 className="text-lg font-semibold mb-4">Zion App</h3>
-                <p className="text-gray-400 mb-4">
+                <h3 className="text-lg font-semibold mb-4>Zion App</h3>
+                <p className="text-gray-400 mb-4>
                   Advanced AI-powered solutions for modern businesses. We specialize in cutting-edge technology solutions that drive innovation and growth.
                 </p>
                 <div className="flex space-x-4">
-                  <Link href="/privacy-policy" className="text-gray-400 hover text-white transition-colors">Privacy</Link>
-                  <Link href="/terms-of-service" className="text-gray-400 hover text-white transition-colors">Terms</Link>
-                  <Link href="/help-desk-support" className="text-gray-400 hover text-white transition-colors">Support</Link>
+                  <Link href="/privacy-policy" className="text-gray-400 hover text-white transition-colors>Privacy</Link>
+                  <Link href="/terms-of-service" className="text-gray-400 hover text-white transition-colors>Terms</Link>
+                  <Link href="/help-desk-support" className="text-gray-400 hover text-white transition-colors>Support</Link>
                 </div>
               </div>
               
               {/* AI & ML Services */}
               <div>
-                <h4 className="text-md font-semibold mb-4">AI & Machine Learning</h4>
+                <h4 className="text-md font-semibold mb-4>AI & Machine Learning</h4>
                 <ul className="space-y-2 text-gray-400">
-                  <li><Link href="/services/ai-consulting" className="hover text-white transition-colors">AI Consulting</Link></li>
-                  <li><Link href="/services/ai-model-development" className="hover text-white transition-colors">Model Development</Link></li>
-                  <li><Link href="/services/machine-learning-implementation" className="hover text-white transition-colors">ML Implementation</Link></li>
-                  <li><Link href="/services/ai-powered-automation" className="hover text-white transition-colors">Process Automation</Link></li>
-                  <li><Link href="/services/ai-powered-data-analytics" className="hover text-white transition-colors">Data Analytics</Link></li>
-                  <li><Link href="/services/ai-powered-business-intelligence" className="hover text-white transition-colors">Business Intelligence</Link></li>
+                  <li><Link href="/services/ai-consulting" className="hover text-white transition-colors>AI Consulting</Link></li>
+                  <li><Link href="/services/ai-model-development" className="hover text-white transition-colors>Model Development</Link></li>
+                  <li><Link href="/services/machine-learning-implementation" className="hover text-white transition-colors>ML Implementation</Link></li>
+                  <li><Link href="/services/ai-powered-automation" className="hover text-white transition-colors>Process Automation</Link></li>
+                  <li><Link href="/services/ai-powered-data-analytics" className="hover text-white transition-colors>Data Analytics</Link></li>
+                  <li><Link href="/services/ai-powered-business-intelligence" className="hover text-white transition-colors>Business Intelligence</Link></li>
                 </ul>
               </div>
               
               {/* Cloud & DevOps */}
               <div>
-                <h4 className="text-md font-semibold mb-4">Cloud & DevOps</h4>
+                <h4 className="text-md font-semibold mb-4>Cloud & DevOps</h4>
                 <ul className="space-y-2 text-gray-400">
-                  <li><Link href="/services/cloud-migration-services" className="hover text-white transition-colors">Cloud Migration</Link></li>
-                  <li><Link href="/services/devops-automation" className="hover text-white transition-colors">DevOps Automation</Link></li>
-                  <li><Link href="/services/performance-optimization" className="hover text-white transition-colors">Performance Optimization</Link></li>
-                  <li><Link href="/services/security-auditing" className="hover text-white transition-colors">Security Auditing</Link></li>
-                  <li><Link href="/services/edge-ai-implementation" className="hover text-white transition-colors">Edge AI</Link></li>
-                  <li><Link href="/services/quantum-computing-solutions" className="hover text-white transition-colors">Quantum Computing</Link></li>
+                  <li><Link href="/services/cloud-migration-services" className="hover text-white transition-colors>Cloud Migration</Link></li>
+                  <li><Link href="/services/devops-automation" className="hover text-white transition-colors>DevOps Automation</Link></li>
+                  <li><Link href="/services/performance-optimization" className="hover text-white transition-colors>Performance Optimization</Link></li>
+                  <li><Link href="/services/security-auditing" className="hover text-white transition-colors>Security Auditing</Link></li>
+                  <li><Link href="/services/edge-ai-implementation" className="hover text-white transition-colors>Edge AI</Link></li>
+                  <li><Link href="/services/quantum-computing-solutions" className="hover text-white transition-colors>Quantum Computing</Link></li>
                 </ul>
               </div>
               
               {/* Marketplace */}
               <div>
-                <h4 className="text-md font-semibold mb-4">Marketplace</h4>
+                <h4 className="text-md font-semibold mb-4>Marketplace</h4>
                 <ul className="space-y-2 text-gray-400">
-                  <li><Link href="/marketplace" className="hover text-white transition-colors">Browse Services</Link></li>
-                  <li><Link href="/talent-directory" className="hover text-white transition-colors">Talent Directory</Link></li>
-                  <li><Link href="/join-talent" className="hover text-white transition-colors">Join Talent</Link></li>
-                  <li><Link href="/service-categories" className="hover text-white transition-colors">Service Categories</Link></li>
-                  <li><Link href="/post-request" className="hover text-white transition-colors">Post Request</Link></li>
-                  <li><Link href="/quote-requests" className="hover text-white transition-colors">Quote Requests</Link></li>
+                  <li><Link href="/marketplace" className="hover text-white transition-colors>Browse Services</Link></li>
+                  <li><Link href="/talent-directory" className="hover text-white transition-colors>Talent Directory</Link></li>
+                  <li><Link href="/join-talent" className="hover text-white transition-colors>Join Talent</Link></li>
+                  <li><Link href="/service-categories" className="hover text-white transition-colors>Service Categories</Link></li>
+                  <li><Link href="/post-request" className="hover text-white transition-colors>Post Request</Link></li>
+                  <li><Link href="/quote-requests" className="hover text-white transition-colors>Quote Requests</Link></li>
                 </ul>
               </div>
             </div>
             
-            <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400>
               <p>&copy; 2024 Zion App. All rights reserved.</p>
             </div>
           </div>

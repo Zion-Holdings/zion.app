@@ -24,10 +24,10 @@ const AiVirtualAssistant: NextPage = () => {
       timestamp: new Date(),
       type: 'text',
       actions: [
-}
-        { label: 'Find IT Services', action: 'Show me IT services', link: '/services' },
-{ label: 'Browse AI Talent', action: 'Show me AI experts', link: '/talents' }
-        { label: 'Get a Quote', action: 'I need a quote for a project', link: '/quote-request' },
+},
+    { label: 'Find IT Services', action: 'Show me IT services', link: '/services' },
+{ label: 'Browse AI Talent', action: 'Show me AI experts', link: '/talents' },
+    { label: 'Get a Quote', action: 'I need a quote for a project', link: '/quote-request' },
 { label: 'Explore Equipment', action: 'Show me computing equipment', link: '/equipment' }
       ]
     }
@@ -158,7 +158,7 @@ const AiVirtualAssistant: NextPage = () => {
       console.error('Error sending message:', error);
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: "I'm sorry, I'm having trouble connecting right now. Please try again in a moment.",
+        content: "I'm sorry, I'm having trouble connecting right now. Please try again in a moment.,
         role: 'assistant',
         timestamp: new Date(),
         type: 'text'
@@ -186,22 +186,22 @@ const AiVirtualAssistant: NextPage = () => {
       </div>
       >
         
-        >"
-          </div><div className=""whitespace-pre-wrap" text-sm:leading-relaxed>{message.content}</div>
+        >
+          </div><div className=""whitespace-pre-wrap text-sm:leading-relaxed>{message.content}</div>
           
           {message.actions && message.role === 'assistant' && (
-            <div className="mt-4 grid grid-cols-1 md grid-cols-2 gap-2"">
+            <div className="mt-4 grid grid-cols-1 md grid-cols-2 gap-2 >
               {message.actions.map((action, index) => (
                 
                   onClick={() => handleQuickAction(action.action)}
-                  className="text-left px-4 py-4 text-sm bg-blue-50 hover bg-blue-100 text-blue-700 rounded-md transition-colors border border-blue-200
+                  className=text-left px-4 py-4 text-sm bg-blue-50 hover bg-blue-100 text-blue-700 rounded-md transition-colors border border-blue-200
                 >
                   {action.label}
                 </button>
               ))}
             </div>
           )}
-          "
+          
           
           }`}>
             {formatTime(message.timestamp)}
@@ -212,86 +212,81 @@ const AiVirtualAssistant: NextPage = () => {
   };
 
   return ("
-    <div className=""relative" z-10 container-responsive py-8>
+    <div className=""relative z-10 container-responsive py-8>
         
         {/* Background Effects */}
-        </div><div className="fixed inset-0 z-0"">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>"
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10></div>
+        </div><div className="fixed inset-0 z-0 >
+          <div className=absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10></div>
         </div>
       
       <Head>
-        <title>AI Virtual Assistant - Zion</title>"
-        <meta name=description"" content="Experience Zion's AI-powered virtual assistant. Get intelligent recommendations, expert guidance, and seamless marketplace navigation." />
-      
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
+        <title>AI Virtual Assistant - Zion</title>
+        <meta name=description"" content="Experience Zion's AI-powered virtual assistant. Get intelligent recommendations, expert guidance, and seamless marketplace navigation. > </meta name=description"" content="Experience Zion's AI-powered virtual assistant. Get intelligent recommendations, expert guidance, and seamless marketplace navigation." ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Header */}
-      <div className="bg-black/20 backdrop-blur-md border-b border-white/10>"
+      <div className=bg-black/20 backdrop-blur-md border-b border-white/10>
         </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>"
           <div className=""flex" justify-between items-center>
-            <Link href=/" className="text-2xl font-bold text-white />"
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
-            </Link>"
+            <Link href=/" className=text-2xl font-bold text-white >
+              </Link href=/" className="text-2xl font-bold text-white ><span className=text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
+            </Link>
             <div className=""flex" items-center space-x-4>
-              <Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
-                Marketplace
-              </Link>"
-              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium />
-                Login
-              </Link>
+              <Link href=/marketplace" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Marketplace
+              </Link href=/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link>
+              <Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium >Login
+              </Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium ></Link>
             </div>
           </div>
         </div>
       </div>
 
       {/* Hero Section */}"
-      <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        </div><div className="text-center mb-12>"
+      <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-32>
+        </div><div className="text-center mb-12>
           <h1 className="text-4xl md text-6xlfont-bold text-white mb-6>"
-            <span className=""text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
+            <span className=""text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>
               AI Virtual Assistant
             </span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto"">
+          <p className=text-xl text-gray-300 max-w-3xl mx-auto >
             Experience the future of marketplace interaction with our intelligent AI assistant. 
             Get personalized recommendations, expert guidance, and seamless navigation through our high-tech marketplace.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md grid-cols-3 gap-8 mb-12>"
+        <div className=grid grid-cols-1 md grid-cols-3 gap-8 mb-12>
           </div><div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20>"
-            <div className=""text-3xl:mb-4>🤖</div>
-            <h3 className="text-xl font-semibold text-white mb-2"">Intelligent Recommendations</h3>
-            <p className="text-gray-300>Get personalized suggestions for services, talents, and equipment based on your specific needs.</p>
-          </div>"
-          <div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20>"
-            </div><div className=""text-3xl:mb-4">💡</div>
-            <h3 className="text-xl font-semibold text-white mb-2"">Expert Guidance</h3>
-            <p className="text-gray-300>Receive technical advice and implementation guidance from our AI-powered knowledge base.</p>
-          </div>"
-          <div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20>"
-            </div><div className=""text-3xl:mb-4">🚀</div>
-            <h3 className="text-xl font-semibold text-white mb-2"">Seamless Navigation</h3>
-            <p className="text-gray-300>Navigate our marketplace effortlessly with intelligent routing and quick access to all features.</p>
+            <div className="text-3xl:mb-4>🤖</div>
+            <h3 className=text-xl font-semibold text-white mb-2 >Intelligent Recommendations</h3>
+            <p className=text-gray-300>Get personalized suggestions for services, talents, and equipment based on your specific needs.</p>
+          </div>
+          <div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20>
+            </div><div className=""text-3xl:mb-4>💡</div>
+            <h3 className=text-xl font-semibold text-white mb-2 >Expert Guidance</h3>
+            <p className=text-gray-300>Receive technical advice and implementation guidance from our AI-powered knowledge base.</p>
+          </div>
+          <div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20>
+            </div><div className=""text-3xl:mb-4>🚀</div>
+            <h3 className=text-xl font-semibold text-white mb-2 >Seamless Navigation</h3>
+            <p className=text-gray-300>Navigate our marketplace effortlessly with intelligent routing and quick access to all features.</p>
           </div>
         </div>
 
         {/* Chat Interface */}"
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto>
           </div><div className="bg-white rounded-lg:shadow-xl border border-gray-200 flex flex-col h-[600px]>
             {/* Chat Header */}"
-            <div className=""bg-gradient-to-r" from-blue-600 to-purple-600 text-white px-6 py-4 rounded-t-lg">
-              </div><div className="flex items-center space-x-3>"
+            <div className=""bg-gradient-to-r" from-blue-600 to-purple-600 text-white px-6 py-4 rounded-t-lg>
+              </div><div className="flex items-center space-x-3>
                 <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center>"
                   <svg className=""w-12" h-12 fill=none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z > </path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" ></svg>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold>Zion AI Assistant</h3>"
-                  <p className="text-blue-100">Online • Ready to help you explore our marketplace</p>
+                  <h3 className=text-xl font-semibold>Zion AI Assistant</h3>
+                  <p className="text-blue-100>Online • Ready to help you explore our marketplace</p>
                 </div>
               </div>
             </div>
@@ -299,23 +294,22 @@ const AiVirtualAssistant: NextPage = () => {
             {/* Messages Container */}
             <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-gray-50>
               {messages.map(renderMessage)},
-{isLoading && ("
+{isLoading && (
                 </div><div className=""flex" justify-start">
-                  <div className="bg-white text-gray-800 border border-gray-200 px-4 py-3 rounded-lg shadow-sm>"
+                  <div className=bg-white text-gray-800 border border-gray-200 px-4 py-3 rounded-lg shadow-sm>
                     </div><div className="flex space-x-1>"
-                      <div className=""w-2" h-2 bg-gray-400 rounded-full animate-bounce></div>
-                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"" style={{ animationDelay: '0.1s' }}></div>
-                      <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce style={{ animationDelay  '0.2s' }}></div>
+                      <div className=""w-2 h-2 bg-gray-400 rounded-full animate-bounce></div>
+                      <div className=w-2 h-2 bg-gray-400 rounded-full animate-bounce  style={{ animationDelay: '0.1s' }}></div>
+                      <div className=w-2 h-2 bg-gray-400 rounded-full animate-bounce style={{ animationDelay  '0.2s' }}></div>
                     </div>
                   </div>
                 </div>
               )}
               
-              <div ref={messagesEndRef} />
-            </div>
+              <div ref={messagesEndRef} > </div ref={messagesEndRef} ></div>
 
             {/* Input Area */}"
-            <div className="p-6 border-t border-gray-200 bg-white rounded-b-lg>"
+            <div className=p-6 border-t border-gray-200 bg-white rounded-b-lg>
               </div><div className=""flex" space-x-4>
                 
                   onChange={(e) => setInputValue(e.target.value)}
@@ -326,9 +320,8 @@ const AiVirtualAssistant: NextPage = () => {
                 />
                 
                 >
-                  <svg className="w-5 h-5 fill=none stroke=currentColor viewBox=""0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                  </svg>
+                  <svg className="w-5 h-5 fill=none stroke=currentColor viewBox= 0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8 > </path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" ></svg>
                 </button>
               </div>
             </div>
@@ -336,60 +329,55 @@ const AiVirtualAssistant: NextPage = () => {
         </div>
 
         {/* Additional Features */}
-        <div className="mt-16 grid grid-cols-1 md grid-cols-2 gap-8>"
+        <div className=mt-16 grid grid-cols-1 md grid-cols-2 gap-8>
           </div><div className="bg-white/5 backdrop-blur-md:rounded-lg p-8 border border-white/10>"
-            <h3 className=""text-2xl" font-bold text-white mb-4>Why Choose Our AI Assistant?</h3>
-            <ul className="space-y-3 text-gray-300"">
-              <li className="flex items-center space-x-3>"
-                <div className="w-2 h-2 bg-purple-400 rounded-full></div>
+            <h3 className=""text-2xl font-bold text-white mb-4>Why Choose Our AI Assistant?</h3>
+            <ul className="space-y-3 text-gray-300 >
+              <li className="flex items-center space-x-3>
+                <div className=w-2 h-2 bg-purple-400 rounded-full></div>
                 <span>24/7 availability for instant support</span>
-              </li>"
+              </li>
               <li className=""flex" items-center space-x-3>
-                <div className="w-2 h-2 bg-purple-400 rounded-full""></div>
+                <div className=w-2 h-2 bg-purple-400 rounded-full ></div>
                 <span>Intelligent product matching based on your needs</span>
               </li>
-              <li className="flex items-center space-x-3>"
-                <div className="w-2 h-2 bg-purple-400 rounded-full></div>
+              <li className="flex items-center space-x-3>
+                <div className=w-2 h-2 bg-purple-400 rounded-full></div>
                 <span>Expert technical guidance and implementation advice</span>
-              </li>"
+              </li>
               <li className=""flex" items-center space-x-3>
-                <div className="w-2 h-2 bg-purple-400 rounded-full""></div>
+                <div className=w-2 h-2 bg-purple-400 rounded-full ></div>
                 <span>Seamless integration with our marketplace ecosystem</span>
               </li>
             </ul>
           </div>
           
-          <div className="bg-white/5 backdrop-blur-md:rounded-lg p-8 border border-white/10>"
-            <h3 className="text-2xl font-bold text-white mb-4>Get Started</h3>"
+          <div className="bg-white/5 backdrop-blur-md:rounded-lg p-8 border border-white/10>
+            <h3 className=text-2xl font-bold text-white mb-4>Get Started</h3>
             <div className=""space-y-4">
-              <Link href=/marketplace" className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover from-blue-700 hover to-purple-700 transition-colors />
-                Explore Marketplace
-              </Link>"
-              <Link href=/quote-request className="block w-full text-center bg-white/10 text-white px-6 py-3 rounded-lg:hover bg-white/20 transition-colors border border-white/20 />
-                Request a Quote
-              </Link>"
-              <Link href=/auth/signup"" className="block w-full text-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg hover from-purple-700 hover to-pink-700 transition-colors />
-                Join Zion
-              </Link>
+              <Link href=/marketplace" className=block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover from-blue-700 hover to-purple-700 transition-colors >Explore Marketplace
+              </Link href=/marketplace" className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover from-blue-700 hover to-purple-700 transition-colors ></Link>
+              <Link href=/quote-request className=block w-full text-center bg-white/10 text-white px-6 py-3 rounded-lg:hover bg-white/20 transition-colors border border-white/20 >Request a Quote
+              </Link href=/quote-request className="block w-full text-center bg-white/10 text-white px-6 py-3 rounded-lg:hover bg-white/20 transition-colors border border-white/20 ></Link>
+              <Link href=/auth/signup"" className=block w-full text-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg hover from-purple-700 hover to-pink-700 transition-colors >Join Zion
+              </Link href=/auth/signup  className="block w-full text-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg hover from-purple-700 hover to-pink-700 transition-colors ></Link>
             </div>
           </div>
         </div>
       </div>
     
         {/* Mobile Navigation */}"
-        <div className="lg hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50>"
+        <div className=lg hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50>
           </div><div className=""flex" justify-around items-center py-2>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white"">
-              <Home className="w-5 h-5 />"
-              <span className="text-xs">Home</span>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white >
+              <Home className=w-5 h-5 >
+              </Home className="w-5 h-5 ><span className="text-xs>Home</span>
+            </button>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white>
+              <Search className=""w-5" h-5 > </Search className=""w-5" h-5" ><span className=text-xs>Search</span>
             </button>
             <button className="flex flex-col items-center p-2 text-gray-400 hover text-white>"
-              <Search className=""w-5" h-5" />
-              <span className="text-xs>Search</span>
-            </button>"
-            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white>"
-              <User className=""w-5" h-5 />
-              <span className=text-xs">Profile</span>
+              <User className=""w-5 h-5 > </User className=""w-5" h-5 ><span className=text-xs>Profile</span>
             </button>
           </div>
         </div>

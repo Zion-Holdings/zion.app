@@ -57,90 +57,90 @@ const AnalyticsDashboardPage: NextPage = () => {
         revenue: {
           daily: [
             { date: '2024-01-01', revenue: 8500 },
-{ date: '2024-01-02', revenue: 9200 }
-            { date: '2024-01-03', revenue: 7800 },
-{ date: '2024-01-04', revenue: 10500 }
-            { date: '2024-01-05', revenue: 11200 },
-{ date: '2024-01-06', revenue: 9800 }
-            { date: '2024-01-07', revenue: 8900 }
+{ date: '2024-01-02', revenue: 9200 },
+    { date: '2024-01-03', revenue: 7800 },
+{ date: '2024-01-04', revenue: 10500 },
+    { date: '2024-01-05', revenue: 11200 },
+{ date: '2024-01-06', revenue: 9800 },
+    { date: '2024-01-07', revenue: 8900 }
           ],
           monthly: [
             { month: 'Jan', revenue: 284750 },
-{ month: 'Feb', revenue: 312400 }
-            { month: 'Mar', revenue: 298600 },
-{ month: 'Apr', revenue: 325800 }
-            { month: 'May', revenue: 341200 },
+{ month: 'Feb', revenue: 312400 },
+    { month: 'Mar', revenue: 298600 },
+{ month: 'Apr', revenue: 325800 },
+    { month: 'May', revenue: 341200 },
 { month: 'Jun', revenue: 356400 }
           ],
           byCategory: [
             { category: 'AI Services', revenue: 125000 },
-{ category: 'Cloud Solutions', revenue: 89000 }
-            { category: 'Security Services', revenue: 45600 },
+{ category: 'Cloud Solutions', revenue: 89000 },
+    { category: 'Security Services', revenue: 45600 },
 { category: 'Equipment Rental', revenue: 25150 }
           ]
         }
         performance: {
           topServices: [
             { name: 'AI Model Development', revenue: 45000, orders: 45, rating: 4.9 },
-{ name: 'Cloud Migration', revenue: 32000, orders: 32, rating: 4.8 }
-            { name: 'Cybersecurity Audit', revenue: 28000, orders: 28, rating: 4.9 },
+{ name: 'Cloud Migration', revenue: 32000, orders: 32, rating: 4.8 },
+    { name: 'Cybersecurity Audit', revenue: 28000, orders: 28, rating: 4.9 },
 { name: 'Data Analytics', revenue: 20000, orders: 20, rating: 4.7 }
           ],
           topTalents: [
             { name: 'Dr. Sarah Chen', revenue: 35000, projects: 15, rating: 4.9 },
-{ name: 'Alex Rodriguez', revenue: 28000, projects: 12, rating: 4.8 }
-            { name: 'Emma Thompson', revenue: 22000, projects: 10, rating: 4.7 },
+{ name: 'Alex Rodriguez', revenue: 28000, projects: 12, rating: 4.8 },
+    { name: 'Emma Thompson', revenue: 22000, projects: 10, rating: 4.7 },
 { name: 'Michael Kim', revenue: 18000, projects: 8, rating: 4.8 }
           ],
           topEquipment: [
             { name: 'NVIDIA DGX A100', revenue: 15000, rentals: 6, rating: 4.9 },
-{ name: 'Quantum Computer', revenue: 12000, rentals: 4, rating: 4.8 }
-            { name: 'Network Infrastructure', revenue: 8000, rentals: 8, rating: 4.7 },
+{ name: 'Quantum Computer', revenue: 12000, rentals: 4, rating: 4.8 },
+    { name: 'Network Infrastructure', revenue: 8000, rentals: 8, rating: 4.7 },
 { name: 'Security Appliances', revenue: 6000, rentals: 6, rating: 4.6 }
           ]
         }
         userBehavior: {
           pageViews: [
             { page: 'Marketplace', views: 45000, conversion: 2.8 },
-{ page: 'Services', views: 32000, conversion: 3.5 }
-            { page: 'Talents', views: 28000, conversion: 4.2 },
-{ page: 'Equipment', views: 15000, conversion: 2.1 }
-            { page: 'Advanced Search', views: 12000, conversion: 5.8 }
+{ page: 'Services', views: 32000, conversion: 3.5 },
+    { page: 'Talents', views: 28000, conversion: 4.2 },
+{ page: 'Equipment', views: 15000, conversion: 2.1 },
+    { page: 'Advanced Search', views: 12000, conversion: 5.8 }
           ],
           searchTerms: [
             { term: 'AI Development', searches: 8500, conversions: 425 },
-{ term: 'Cloud Migration', searches: 6200, conversions: 310 }
-            { term: 'Cybersecurity', searches: 4800, conversions: 240 },
-{ term: 'Data Analytics', searches: 3600, conversions: 180 }
-            { term: 'Quantum Computing', searches: 2400, conversions: 120 }
+{ term: 'Cloud Migration', searches: 6200, conversions: 310 },
+    { term: 'Cybersecurity', searches: 4800, conversions: 240 },
+{ term: 'Data Analytics', searches: 3600, conversions: 180 },
+    { term: 'Quantum Computing', searches: 2400, conversions: 120 }
           ],
           userJourney: [
             { step: 'Landing Page', users: 10000, dropoff: 0 },
-{ step: 'Browse Services', users: 8500, dropoff: 15 }
-            { step: 'View Details', users: 6800, dropoff: 20 },
-{ step: 'Contact Provider', users: 5100, dropoff: 25 }
-            { step: 'Make Purchase', users: 3200, dropoff: 37 }
+{ step: 'Browse Services', users: 8500, dropoff: 15 },
+    { step: 'View Details', users: 6800, dropoff: 20 },
+{ step: 'Contact Provider', users: 5100, dropoff: 25 },
+    { step: 'Make Purchase', users: 3200, dropoff: 37 }
           ]
         }
         marketInsights: {
           trendingServices: [
             { name: 'AI Model Development', growth: 45.2, demand: 8.5 },
-{ name: 'Quantum Computing', growth: 38.7, demand: 7.2 }
-            { name: 'Edge Computing', growth: 32.1, demand: 6.8 },
+{ name: 'Quantum Computing', growth: 38.7, demand: 7.2 },
+    { name: 'Edge Computing', growth: 32.1, demand: 6.8 },
 { name: 'Blockchain Solutions', growth: 28.4, demand: 6.1 }
           ],
           marketGaps: [
             { category: 'AI Ethics Consulting', opportunity: 9.2, competition: 2.1 },
-{ category: 'Quantum Security', opportunity: 8.7, competition: 1.8 }
-            { category: 'IoT Analytics', opportunity: 7.9, competition: 3.2 },
+{ category: 'Quantum Security', opportunity: 8.7, competition: 1.8 },
+    { category: 'IoT Analytics', opportunity: 7.9, competition: 3.2 },
 { category: '5G Infrastructure', opportunity: 7.4, competition: 2.9 }
           ],
           seasonalTrends: [
             { month: 'Jan', demand: 85, supply: 78 },
-{ month: 'Feb', demand: 88, supply: 82 }
-            { month: 'Mar', demand: 92, supply: 85 },
-{ month: 'Apr', demand: 89, supply: 87 }
-            { month: 'May', demand: 95, supply: 90 },
+{ month: 'Feb', demand: 88, supply: 82 },
+    { month: 'Mar', demand: 92, supply: 85 },
+{ month: 'Apr', demand: 89, supply: 87 },
+    { month: 'May', demand: 95, supply: 90 },
 { month: 'Jun', demand: 98, supply: 92 }
           ]
         }
@@ -178,18 +178,18 @@ const AnalyticsDashboardPage: NextPage = () => {
       </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
-        <div className="fixed inset-0 z-0>"
-          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
+        <div className=fixed inset-0 z-0>
+          </div><div className=""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
         </div>
       
-        <div className="text-center>"
+        <div className=text-center>
           </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>"
             <svg className=""animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle className="opacity-25 cx=12 cy=12 r=""10" stroke="currentColor" strokeWidth="4"></circle>
-              <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              <circle className="opacity-25 cx=12 cy=12 r= 10" stroke="currentColor" strokeWidth="4></circle>
+              <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path>
             </svg>
-            <span className="text-lg font-medium>Loading Analytics...</span>
+            <span className=text-lg font-medium>Loading Analytics...</span>
           </div>
         </div>
       </div>
@@ -197,68 +197,58 @@ const AnalyticsDashboardPage: NextPage = () => {
   }
 
   return ("
-    <div className="relative z-10 container-responsive py-8>
+    <div className=relative z-10 container-responsive py-8>
       <Head>
-        <title>Analytics Dashboard - Zion Marketplace</title>"
-        <meta name=description"" content="Comprehensive analytics dashboard for marketplace performance, revenue tracking, and business intelligence" />
-        <meta name="keywords" content="analytics, dashboard, marketplace analytics, business intelligence, Zion" />
-        <link rel="icon" href="/favicon.ico" />
-      
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
+        <title>Analytics Dashboard - Zion Marketplace</title>
+        <meta name=description"" content="Comprehensive analytics dashboard for marketplace performance, revenue tracking, and business intelligence > </meta name=description"" content="Comprehensive analytics dashboard for marketplace performance, revenue tracking, and business intelligence" ><meta name="keywords" content="analytics, dashboard, marketplace analytics, business intelligence, Zion > </meta name="keywords" content="analytics, dashboard, marketplace analytics, business intelligence, Zion" ><link rel="icon" href="/favicon.ico > </link rel="icon" href="/favicon.ico" ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className=""flex" justify-between h-16>
-            <div className="flex items-center>"
-              <Link href=/ className=""flex-shrink-0 />
-                <h1 className="text-2xl font-bold text-white>"
-                  <span className=""text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
+            <div className="flex items-center>
+              <Link href=/ className="flex-shrink-0 > </Link href=/ className=""flex-shrink-0 ><h1 className="text-2xl font-bold text-white>
+                  <span className=""text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
             
-            <div className="hidden md flex items-center space-x-8"">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
-                Marketplace
-              </Link>"
-              <Link href=/review-system className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
-                Reviews
-              </Link>"
-              <Link href=/payment-processing"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
-                Payments
-              </Link>"
-              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
-                Login
-              </Link>
+            <div className="hidden md flex items-center space-x-8 >
+              <Link href="/marketplace" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Marketplace
+              </Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
+              <Link href=/review-system className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Reviews
+              </Link href=/review-system className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
+              <Link href=/payment-processing"" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Payments
+              </Link href=/payment-processing  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
+              <Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login
+              </Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
             </div>
           </div>
         </div>
       </nav>
-"
-      <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-8>
         {/* Header */}
-        </div><div className="text-center mb-8>"
-          <h1 className="text-4xl md text-5xl font-bold text-white mb-4>
+        </div><div className="text-center mb-8>
+          <h1 className=text-4xl md text-5xl font-bold text-white mb-4>
             Analytics Dashboard
-          </h1>"
-          <p className=""text-xl" text-gray-300 max-w-3xl mx-auto>
+          </h1>
+          <p className=""text-xl text-gray-300 max-w-3xl mx-auto>
             Comprehensive insights into your marketplace performance, revenue tracking, and business intelligence.
           </p>
         </div>
 
         {/* Period Selector */}
-        <div className="flex justify-center mb-8"">
+        <div className=flex justify-center mb-8 >
           </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-1>
             {[
               { id: '7d', label: '7 Days' },
-{ id: '30d', label: '30 Days' }
-              { id: '90d', label  '90 Days' },
+{ id: '30d', label: '30 Days' },
+    { id: '90d', label  '90 Days' },
 { id  '1y', label  '1 Year' }
             ].map((period) => (
               
                 onClick={() => setSelectedPeriod(period.id as any)}"
-                className="{`px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${
+                className={`px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${
                   selectedPeriod === period.id
                     ? 'bg-purple-600 text-white'
                       'text-gray-300 hover text-white hover bg-white/10'
@@ -271,18 +261,18 @@ const AnalyticsDashboardPage: NextPage = () => {
         </div>
 
         {/* View Selector */}"
-        <div className=""flex" justify-center mb-8>
-          </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-1"">
+        <div className=""flex justify-center mb-8>
+          </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg p-1 >
             {[
               { id: 'overview', name: 'Overview', icon: '📊' },
-{ id: 'revenue', name: 'Revenue', icon: '💰' }
-              { id: 'performance', name: 'Performance', icon: '📈' },
-{ id: 'behavior', name: 'User Behavior', icon: '👥' }
-              { id: 'insights', name: 'Market Insights', icon: '🔍' }
+{ id: 'revenue', name: 'Revenue', icon: '💰' },
+    { id: 'performance', name: 'Performance', icon: '📈' },
+{ id: 'behavior', name: 'User Behavior', icon: '👥' },
+    { id: 'insights', name: 'Market Insights', icon: '🔍' }
             ].map((view) => (
               
                 onClick={() => setSelectedView(view.id as any)}
-                className="{`flex items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${
+                className={`flex items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${
                   selectedView === view.id
                     ? 'bg-purple-600 text-white'
                       'text-gray-300 hover text-white hover bg-white/10'
@@ -297,88 +287,85 @@ const AnalyticsDashboardPage: NextPage = () => {
 
         {/* Analytics Content */},
 {selectedView === 'overview' && analyticsData && ("
-          <div className="space-y-8">
+          <div className="space-y-8>
             {/* Key Metrics */}
-            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>"
-              <div className=""bg-gradient-to-br" from-green-500/20 to-emerald-500/20 backdrop-blur-sm:border border-green-500/30 rounded-xl:p-6">
+            </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
+              <div className=""bg-gradient-to-br" from-green-500/20 to-emerald-500/20 backdrop-blur-sm:border border-green-500/30 rounded-xl:p-6>
                 </div><div className="flex items-center justify-between>
-                  <div>"
-                    <p className="text-green-300 text-sm font-medium>Total Revenue</p>"
-                    <p className=""text-3xl" font-bold text-white>{formatCurrency(analyticsData.overview.totalRevenue)}</p>
-                    <p className={`text-sm:${getGrowthColor(analyticsData.overview.growthRate)}`}">
+                  <div>
+                    <p className=text-green-300 text-sm font-medium>Total Revenue</p>
+                    <p className=""text-3xl font-bold text-white>{formatCurrency(analyticsData.overview.totalRevenue)}</p>
+                    <p className={`text-sm:${getGrowthColor(analyticsData.overview.growthRate)}`}>
                       {getGrowthIcon(analyticsData.overview.growthRate)},
 {formatPercentage(analyticsData.overview.growthRate)}
                     </p>
                   </div>
-                  <div className="text-4xl>💰</div>
+                  <div className=text-4xl>💰</div>
                 </div>
               </div>
-              "
-              <div className="bg-gradient-to-br from-blue-500/20 to-indigo-500/20 backdrop-blur-sm:border border-blue-500/30 rounded-xl p-6>"
+              <div className="bg-gradient-to-br from-blue-500/20 to-indigo-500/20 backdrop-blur-sm:border border-blue-500/30 rounded-xl p-6>
                 </div><div className=""flex" items-center justify-between>
                   <div>
-                    <p className="text-blue-300 text-sm font-medium"">Total Orders</p>
-                    <p className="text-3xl font-bold text-white>{analyticsData.overview.totalOrders.toLocaleString()}</p>"
-                    <p className="text-sm text-blue-400">+12.5% from last period</p>
+                    <p className=text-blue-300 text-sm font-medium >Total Orders</p>
+                    <p className=text-3xl font-bold text-white>{analyticsData.overview.totalOrders.toLocaleString()}</p>
+                    <p className="text-sm text-blue-400>+12.5% from last period</p>
                   </div>
-                  <div className="text-4xl">📦</div>
+                  <div className="text-4xl>📦</div>
                 </div>
               </div>
               
-              <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm:border border-purple-500/30 rounded-xl p-6"">
+              <div className=bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm:border border-purple-500/30 rounded-xl p-6 >
                 </div><div className="flex items-center justify-between>
-                  <div>"
-                    <p className="text-purple-300 text-sm font-medium>Active Users</p>"
-                    <p className=""text-3xl" font-bold text-white>{analyticsData.overview.activeUsers.toLocaleString()}</p>
-                    <p className=text-sm:text-purple-400">+8.3% from last period</p>
+                  <div>
+                    <p className=text-purple-300 text-sm font-medium>Active Users</p>
+                    <p className=""text-3xl font-bold text-white>{analyticsData.overview.activeUsers.toLocaleString()}</p>
+                    <p className=text-sm:text-purple-400>+8.3% from last period</p>
                   </div>
-                  <div className="text-4xl>👥</div>
+                  <div className=text-4xl>👥</div>
                 </div>
               </div>
-              "
-              <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 backdrop-blur-sm:border border-yellow-500/30 rounded-xl p-6>"
+              <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 backdrop-blur-sm:border border-yellow-500/30 rounded-xl p-6>
                 </div><div className=""flex" items-center justify-between>
                   <div>
-                    <p className="text-yellow-300 text-sm font-medium"">Avg Order Value</p>
-                    <p className="text-3xl font-bold text-white>{formatCurrency(analyticsData.overview.averageOrderValue)}</p>"
-                    <p className="text-sm text-yellow-400">+5.2% from last period</p>
+                    <p className=text-yellow-300 text-sm font-medium >Avg Order Value</p>
+                    <p className=text-3xl font-bold text-white>{formatCurrency(analyticsData.overview.averageOrderValue)}</p>
+                    <p className="text-sm text-yellow-400>+5.2% from last period</p>
                   </div>
-                  <div className="text-4xl">📊</div>
+                  <div className="text-4xl>📊</div>
                 </div>
               </div>
               
-              <div className="bg-gradient-to-br from-red-500/20 to-pink-500/20 backdrop-blur-sm:border border-red-500/30 rounded-xl p-6"">
+              <div className=bg-gradient-to-br from-red-500/20 to-pink-500/20 backdrop-blur-sm:border border-red-500/30 rounded-xl p-6 >
                 </div><div className="flex items-center justify-between>
-                  <div>"
-                    <p className="text-red-300 text-sm font-medium>Conversion Rate</p>"
-                    <p className=""text-3xl" font-bold text-white>{formatPercentage(analyticsData.overview.conversionRate)}</p>
-                    <p className=text-sm:text-red-400">+0.8% from last period</p>
+                  <div>
+                    <p className=text-red-300 text-sm font-medium>Conversion Rate</p>
+                    <p className=""text-3xl font-bold text-white>{formatPercentage(analyticsData.overview.conversionRate)}</p>
+                    <p className=text-sm:text-red-400>+0.8% from last period</p>
                   </div>
-                  <div className="text-4xl>🎯</div>
+                  <div className=text-4xl>🎯</div>
                 </div>
               </div>
-              "
-              <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 backdrop-blur-sm:border border-cyan-500/30 rounded-xl p-6>"
+              <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 backdrop-blur-sm:border border-cyan-500/30 rounded-xl p-6>
                 </div><div className=""flex" items-center justify-between>
                   <div>
-                    <p className="text-cyan-300 text-sm font-medium"">Growth Rate</p>
-                    <p className="text-3xl font-bold text-white>{formatPercentage(analyticsData.overview.growthRate)}</p>"
-                    <p className="text-sm text-cyan-400">+2.1% from last period</p>
+                    <p className=text-cyan-300 text-sm font-medium >Growth Rate</p>
+                    <p className=text-3xl font-bold text-white>{formatPercentage(analyticsData.overview.growthRate)}</p>
+                    <p className="text-sm text-cyan-400>+2.1% from last period</p>
                   </div>
-                  <div className="text-4xl">📈</div>
+                  <div className="text-4xl>📈</div>
                 </div>
               </div>
             </div>
 
             {/* Revenue Chart */}
-            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6"">
-              <h3 className="text-xl font-bold text-white mb-4>Revenue Trend</h3>"
+            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6 >
+              <h3 className=text-xl font-bold text-white mb-4>Revenue Trend</h3>
               <div className="h-124 flex items-end justify-between space-x-2>
-                {analyticsData.revenue.daily.map((day, index) => ("
-                  </div><div key={index} className=""flex-1" flex flex-col items-center>
+                {analyticsData.revenue.daily.map((day, index) => (
+                  </div><div key={index} className=""flex-1 flex flex-col items-center>
                     
                     ></div>
-                    <span className="text-xs text-gray-400 mt-2>{day.date.slice(5)}</span>
+                    <span className=text-xs text-gray-400 mt-2>{day.date.slice(5)}</span>
                   </div>
                 ))}
               </div>
@@ -387,23 +374,23 @@ const AnalyticsDashboardPage: NextPage = () => {
         )}
 
         {selectedView === 'revenue' && analyticsData && ("
-          <div className="space-y-8">
+          <div className="space-y-8>
             {/* Revenue by Category */}
-            </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
-              <h3 className=""text-xl:font-bold" text-white mb-6">Revenue by Category</h3>
+            </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
+              <h3 className=""text-xl:font-bold" text-white mb-6>Revenue by Category</h3>
               <div className="space-y-4>
-                {analyticsData.revenue.byCategory.map((category, index) => ("
-                  </div><div key={index} className="flex items-center justify-between>"
-                    <div className=""flex" items-center space-x-3>
-                      </div><div className="w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500""></div>
-                      <span className="text-white font-medium>{category.category}</span>
-                    </div>"
-                    <div className="flex items-center space-x-4>"
-                      </div><div className=""w-32" bg-gray-700 rounded-full h-2>
+                {analyticsData.revenue.byCategory.map((category, index) => (
+                  </div><div key={index} className="flex items-center justify-between>
+                    <div className=""flex items-center space-x-3>
+                      </div><div className=w-4 h-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 ></div>
+                      <span className=text-white font-medium>{category.category}</span>
+                    </div>
+                    <div className="flex items-center space-x-4>
+                      </div><div className=""w-32 bg-gray-700 rounded-full h-2>
                         
                         ></div>
                       </div>
-                      <span className="text-white font-semibold>{formatCurrency(category.revenue)}</span>
+                      <span className=text-white font-semibold>{formatCurrency(category.revenue)}</span>
                     </div>
                   </div>
                 ))}
@@ -411,15 +398,15 @@ const AnalyticsDashboardPage: NextPage = () => {
             </div>
 
             {/* Monthly Revenue */}"
-            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
-              <h3 className=""text-xl:font-bold" text-white mb-6>Monthly Revenue</h3>
-              <div className="h-124 flex items-end justify-between space-x-4"">
+            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
+              <h3 className=""text-xl:font-bold text-white mb-6>Monthly Revenue</h3>
+              <div className=h-124 flex items-end justify-between space-x-4 >
                 {analyticsData.revenue.monthly.map((month, index) => (
-                  </div><div key={index} className="flex-1 flex flex-col items-center>
+                  </div><div key={index} className=flex-1 flex flex-col items-center>
                     
-                    ></div>"
-                    <span className=""text-xs" text-gray-400 mt-2>{month.month}</span>
-                    <span className="text-xs text-white mt-1"">{formatCurrency(month.revenue)}</span>
+                    ></div>
+                    <span className=""text-xs text-gray-400 mt-2>{month.month}</span>
+                    <span className=text-xs text-white mt-1 >{formatCurrency(month.revenue)}</span>
                   </div>
                 ))}
               </div>
@@ -429,25 +416,25 @@ const AnalyticsDashboardPage: NextPage = () => {
 
         {selectedView === 'performance' && analyticsData && (
           <div className="space-y-8>
-            {/* Top Services */}"
-            </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
-              <h3 className=""text-xl:font-bold" text-white mb-6>Top Performing Services</h3>
-              <div className=space-y-4">
+            {/* Top Services */}
+            </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
+              <h3 className=""text-xl:font-bold text-white mb-6>Top Performing Services</h3>
+              <div className=space-y-4>
                 {analyticsData.performance.topServices.map((service, index) => (
-                  </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>"
+                  </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>
                     <div className="flex items-center space-x-3>"
-                      <span className=""text-2xl">🔧</span>
+                      <span className=""text-2xl>🔧</span>
                       <div>
-                        <h4 className="text-white font-semibold"">{service.name}</h4>
-                        <p className="text-sm text-gray-400>{service.orders} orders</p>
+                        <h4 className=text-white font-semibold >{service.name}</h4>
+                        <p className=text-sm text-gray-400>{service.orders} orders</p>
                       </div>
-                    </div>"
-                    <div className="flex items-center space-x-4>"
+                    </div>
+                    <div className="flex items-center space-x-4>
                       </div><div className=""flex" items-center space-x-1>
-                        <span className=text-yellow-400">★</span>
-                        <span className="text-white>{service.rating}</span>
-                      </div>"
-                      <span className="text-green-400 font-semibold>{formatCurrency(service.revenue)}</span>
+                        <span className=text-yellow-400>★</span>
+                        <span className=text-white>{service.rating}</span>
+                      </div>
+                      <span className=text-green-400 font-semibold>{formatCurrency(service.revenue)}</span>
                     </div>
                   </div>
                 ))}
@@ -456,23 +443,23 @@ const AnalyticsDashboardPage: NextPage = () => {
 
             {/* Top Talents */}"
             <div className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-xl:p-6>
-              <h3 className="text-xl font-bold text-white mb-6"">Top Performing Talents</h3>
+              <h3 className=text-xl font-bold text-white mb-6 >Top Performing Talents</h3>
               <div className="space-y-4>
-                {analyticsData.performance.topTalents.map((talent, index) => ("
-                  </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>"
+                {analyticsData.performance.topTalents.map((talent, index) => (
+                  </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>
                     <div className=""flex" items-center space-x-3>
-                      <span className=text-2xl">👨‍💻</span>
+                      <span className=text-2xl>👨‍💻</span>
                       <div>
-                        <h4 className="text-white font-semibold>{talent.name}</h4>"
-                        <p className="text-sm text-gray-400">{talent.projects} projects</p>
+                        <h4 className=text-white font-semibold>{talent.name}</h4>
+                        <p className="text-sm text-gray-400>{talent.projects} projects</p>
                       </div>
                     </div>
-                    <div className="flex items-center space-x-4>"
+                    <div className=flex items-center space-x-4>
                       </div><div className=""flex" items-center space-x-1">
-                        <span className="text-yellow-400>★</span>"
-                        <span className="text-white">{talent.rating}</span>
+                        <span className=text-yellow-400>★</span>
+                        <span className="text-white>{talent.rating}</span>
                       </div>
-                      <span className="text-green-400 font-semibold>{formatCurrency(talent.revenue)}</span>
+                      <span className=text-green-400 font-semibold>{formatCurrency(talent.revenue)}</span>
                     </div>
                   </div>
                 ))}
@@ -482,20 +469,20 @@ const AnalyticsDashboardPage: NextPage = () => {
         )}
 
         {selectedView === 'behavior' && analyticsData && ("
-          <div className=space-y-8"">
+          <div className=space-y-8">
             {/* Page Views */}
-            </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
-              <h3 className="text-xl font-bold text-white mb-6>Page Performance</h3>"
-              <div className=""space-y-4">
+            </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
+              <h3 className=text-xl font-bold text-white mb-6>Page Performance</h3>
+              <div className=""space-y-4>
                 {analyticsData.userBehavior.pageViews.map((page, index) => (
-                  </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg"">
+                  </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg >
                     <div>
-                      <h4 className="text-white font-semibold>{page.page}</h4>"
-                      <p className="text-sm text-gray-400">{page.views.toLocaleString()} views</p>
+                      <h4 className=text-white font-semibold>{page.page}</h4>
+                      <p className="text-sm text-gray-400>{page.views.toLocaleString()} views</p>
                     </div>
                     <div className="text-right">
-                      <span className="text-green-400 font-semibold"">{formatPercentage(page.conversion)}</span>
-                      <p className="text-sm text-gray-400>conversion rate</p>
+                      <span className=text-green-400 font-semibold >{formatPercentage(page.conversion)}</span>
+                      <p className=text-sm text-gray-400>conversion rate</p>
                     </div>
                   </div>
                 ))}
@@ -503,18 +490,18 @@ const AnalyticsDashboardPage: NextPage = () => {
             </div>
 
             {/* User Journey */}"
-            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
-              <h3 className=""text-xl:font-bold" text-white mb-6>User Journey</h3>
-              <div className=space-y-4">
+            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
+              <h3 className=""text-xl:font-bold text-white mb-6>User Journey</h3>
+              <div className=space-y-4>
                 {analyticsData.userBehavior.userJourney.map((step, index) => (
                   </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>
-                    <div>"
-                      <h4 className="text-white font-semibold>{step.step}</h4>"
-                      <p className=""text-sm:text-gray-400">{step.users.toLocaleString()} users</p>
+                    <div>
+                      <h4 className=text-white font-semibold>{step.step}</h4>
+                      <p className=""text-sm:text-gray-400>{step.users.toLocaleString()} users</p>
                     </div>
                     <div className=text-right">
-                      <span className="text-red-400 font-semibold>{formatPercentage(step.dropoff)}</span>"
-                      <p className="text-sm text-gray-400">dropoff rate</p>
+                      <span className=text-red-400 font-semibold>{formatPercentage(step.dropoff)}</span>
+                      <p className="text-sm text-gray-400>dropoff rate</p>
                     </div>
                   </div>
                 ))}
@@ -524,20 +511,20 @@ const AnalyticsDashboardPage: NextPage = () => {
         )}
 
         {selectedView === 'insights' && analyticsData && (
-          <div className="space-y-8">
+          <div className="space-y-8>
             {/* Trending Services */}
-            </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6"">
-              <h3 className="text-xl font-bold text-white mb-6>Trending Services</h3>"
-              <div className="space-y-4">
+            </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6 >
+              <h3 className=text-xl font-bold text-white mb-6>Trending Services</h3>
+              <div className="space-y-4>
                 {analyticsData.marketInsights.trendingServices.map((service, index) => (
                   </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg>
-                    <div>"
-                      <h4 className=""text-white" font-semibold">{service.name}</h4>
-                      <p className="text-sm:text-gray-400>Growth  {formatPercentage(service.growth)}</p>
-                    </div>"
+                    <div>
+                      <h4 className=""text-white" font-semibold>{service.name}</h4>
+                      <p className=text-sm:text-gray-400>Growth  {formatPercentage(service.growth)}</p>
+                    </div>
                     <div className="text-right">
-                      <span className="text-green-400 font-semibold>{service.demand}/10</span>"
-                      <p className=text-sm:text-gray-400"">demand score</p>
+                      <span className=text-green-400 font-semibold>{service.demand}/10</span>
+                      <p className=text-sm:text-gray-400">demand score</p>
                     </div>
                   </div>
                 ))}
@@ -545,18 +532,18 @@ const AnalyticsDashboardPage: NextPage = () => {
             </div>
 
             {/* Market Gaps */}
-            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
-              <h3 className="text-xl font-bold text-white mb-6>Market Opportunities</h3>"
-              <div className=""space-y-4">
+            <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
+              <h3 className=text-xl font-bold text-white mb-6>Market Opportunities</h3>
+              <div className=""space-y-4>
                 {analyticsData.marketInsights.marketGaps.map((gap, index) => (
-                  </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg"">
+                  </div><div key={index} className="flex items-center justify-between p-4 bg-white/5 rounded-lg >
                     <div>
-                      <h4 className="text-white font-semibold>{gap.category}</h4>"
-                      <p className="text-sm text-gray-400">Low competition</p>
+                      <h4 className=text-white font-semibold>{gap.category}</h4>
+                      <p className="text-sm text-gray-400>Low competition</p>
                     </div>
                     <div className="text-right">
-                      <span className="text-yellow-400 font-semibold"">{gap.opportunity}/10</span>
-                      <p className="text-sm text-gray-400>opportunity score</p>
+                      <span className=text-yellow-400 font-semibold >{gap.opportunity}/10</span>
+                      <p className=text-sm text-gray-400>opportunity score</p>
                     </div>
                   </div>
                 ))}
@@ -566,21 +553,19 @@ const AnalyticsDashboardPage: NextPage = () => {
         )}
 
         {/* Call to Action */}"
-        <div className="mt-12 text-center>"
+        <div className=mt-12 text-center>
           </div><div className=""bg-gradient-to-br" from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8>
-            <h2 className="text-3xl font-bold text-white mb-4"">
+            <h2 className=text-3xl font-bold text-white mb-4 >
               Get Deeper Insights
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
+            <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
               Access advanced analytics, custom reports, and real-time monitoring to optimize your marketplace performance.
-            </p>"
+            </p>
             <div className="flex flex-col sm flex-row gap-4 justify-center>"
-              <Link href=/marketplace"" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 />
-                Explore Marketplace
-              </Link>"
-              <Link href=/advanced-search className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm"" />
-                Advanced Search
-              </Link>
+              <Link href=/marketplace"" className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >Explore Marketplace
+              </Link href=/marketplace  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 ></Link>
+              <Link href=/advanced-search className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Advanced Search
+              </Link href=/advanced-search className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm"" ></Link>
             </div>
           </div>
         </div>

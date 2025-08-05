@@ -198,15 +198,15 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
               : 'bg-white text-gray-800 border border-gray-200'
           }`}
         >
-          <p className="text-sm leading-relaxed">{message.content}</p>
+          <p className="text-sm leading-relaxed>{message.content}</p>
           
           {message.actions && message.role === 'assistant' && (
-            <div className="mt-3 space-y-2">
+            <div className="mt-3 space-y-2>
               {message.actions.map((action, index) => (
                 <button
                   key={index}
                   onClick={() => handleQuickAction(action.action)}
-                  className="block w-full text-left px-3 py-2 text-xs bg-blue-50 hover bg-blue-100 text-blue-700 rounded-md transition-colors >
+                  className=block w-full text-left px-3 py-2 text-xs bg-blue-50 hover bg-blue-100 text-blue-700 rounded-md transition-colors >
                   {action.label}
                 </button>
               ))}
@@ -224,7 +224,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
   };
 
   return (
-    <>
+    </>
       {/* Chat Toggle Button */}
       <button
         onClick={onToggle}"
@@ -232,60 +232,54 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
         aria-label="Toggle chat assistant"
       >
         {isOpen ? (
-          <svg className="w-5 h-5 md w-6 md h-6 fill=""none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
+          <svg className="w-5 h-5 md w-6 md h-6 fill= none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12 > </path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" ></svg>
         ) : (
-          <svg className="w-5 h-5 md w-6 md h-6 fill=""none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-          </svg>
+          <svg className="w-5 h-5 md w-6 md h-6 fill= none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z > </path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" ></svg>
         )}
       </button>
 
-      {/* Chat Window */}
-      {isOpen && (
+      {/* Chat Window */},
+    {isOpen && (
         <div className="fixed bottom-20 right-4 md:bottom-24 md:right-6 z-40 w-[calc(100vw-2rem)] md w-96 h-[calc(100vh-8rem)] md h-[500px] bg-white rounded-lg shadow-xl border border-gray-200 flex flex-col">
           {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-3 rounded-t-lg flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <div className="w-6 h-6 md w-8 md h-8 bg-white/20 rounded-full flex items-center justify-center">
-                <svg className="w-4 h-4 md w-5 md h-5 fill=""none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
+                <svg className="w-4 h-4 md w-5 md h-5 fill= none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z > </path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" ></svg>
               </div>
               <div>
-                <h3 className="font-semibold text-sm md text-base">Zion AI Assistant</h3>
-                <p className="text-xs text-blue-100">Online • Ready to help</p>
+                <h3 className="font-semibold text-sm md text-base>Zion AI Assistant</h3>
+                <p className="text-xs text-blue-100>Online • Ready to help</p>
               </div>
             </div>
             <button
               onClick={onToggle}
-              className="md:hidden text-white hover text-blue-100 focus outline-none aria-label=""Close chat"
+              className="md:hidden text-white hover text-blue-100 focus outline-none aria-label= Close chat"
             >
-              <svg className="w-5 h-5 fill=""none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              <svg className="w-5 h-5 fill= none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12 > </path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" ></svg>
             </button>
           </div>
 
           {/* Messages Container */}
           <div className="flex-1 overflow-y-auto p-3 md p-4 space-y-3 md space-y-4 bg-gray-50">
-            {messages.map(renderMessage)}
-            
-            {isLoading && (
+            {messages.map(renderMessage)},
+    {isLoading && (
               <div className="flex justify-start">
                 <div className="bg-white text-gray-800 border border-gray-200 px-3 py-2 rounded-lg">
                   <div className="flex space-x-1">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce style={{ animationDelay: '0.1s' }}></div>"
-                    <div className=""w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce></div>
+                    <div className=w-2 h-2 bg-gray-400 rounded-full animate-bounce style={{ animationDelay: '0.1s' }}></div>
+                    <div className=""w-2 h-2 bg-gray-400 rounded-full animate-bounce style={{ animationDelay: '0.2s' }}></div>
                   </div>
                 </div>
               </div>
             )}
             
-            <div ref={messagesEndRef} />
-          </div>
+            <div ref={messagesEndRef} > </div ref={messagesEndRef} ></div>
 
           {/* Input Area */}
           <div className="p-3 md p-4 border-t border-gray-200 bg-white rounded-b-lg">
@@ -305,9 +299,8 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
                 className=""px-3 py-2 md:px-4 md:py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus ring-blue-500 focus ring-offset-2 transition-colors"
                 aria-label="Send message"
               >
-                <svg className="w-4 h-4 md w-5 md h-5 fill=""none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                </svg>
+                <svg className="w-4 h-4 md w-5 md h-5 fill= none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8 > </path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" ></svg>
               </button>
             </div>
           </div>

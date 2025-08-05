@@ -69,8 +69,8 @@ const mockCapacityPlans: CapacityPlan[] = [
     utilization: 85,
     cost: 500000,
     roi: 25
-  }
-  {
+  },
+    {
     id: 'plan-2',
     name: 'Workforce Expansion',
     type: 'workforce',
@@ -83,8 +83,8 @@ const mockCapacityPlans: CapacityPlan[] = [
     utilization: 92,
     cost: 800000,
     roi: 18
-  }
-  {
+  },
+    {
     id: 'plan-3',
     name: 'Technology Upgrade',
     type: 'technology',
@@ -97,8 +97,8 @@ const mockCapacityPlans: CapacityPlan[] = [
     utilization: 78,
     cost: 300000,
     roi: 15
-  }
-  {
+  },
+    {
     id: 'plan-4',
     name: 'Financial Capacity Planning',
     type: 'financial',
@@ -111,8 +111,8 @@ const mockCapacityPlans: CapacityPlan[] = [
     utilization: 65,
     cost: 200000,
     roi: 12
-  }
-  {
+  },
+    {
     id: 'plan-5',
     name: 'Cloud Infrastructure Optimization',
     type: 'infrastructure',
@@ -139,8 +139,8 @@ const mockDemandForecasts: DemandForecast[] = [
     trend: 'increasing',
     factors: ['Business growth', 'New product launch', 'Seasonal demand'],
     lastUpdated: '2024-01-15'
-  }
-  {
+  },
+    {
     id: 'forecast-2',
     resource: 'Customer Support Staff',
     period: 'Q3 2024',
@@ -150,8 +150,8 @@ const mockDemandForecasts: DemandForecast[] = [
     trend: 'increasing',
     factors: ['Product expansion', 'Customer base growth', 'Service quality improvement'],
     lastUpdated: '2024-01-14'
-  }
-  {
+  },
+    {
     id: 'forecast-3',
     resource: 'Development Team',
     period: 'Q2 2024',
@@ -161,8 +161,8 @@ const mockDemandForecasts: DemandForecast[] = [
     trend: 'increasing',
     factors: ['New project requirements', 'Technical debt reduction', 'Feature development'],
     lastUpdated: '2024-01-13'
-  }
-  {
+  },
+    {
     id: 'forecast-4',
     resource: 'Storage Capacity',
     period: 'Q4 2024',
@@ -172,8 +172,8 @@ const mockDemandForecasts: DemandForecast[] = [
     trend: 'increasing',
     factors: ['Data growth', 'Backup requirements', 'Compliance needs'],
     lastUpdated: '2024-01-12'
-  }
-  {
+  },
+    {
     id: 'forecast-5',
     resource: 'Network Bandwidth',
     period: 'Q3 2024',
@@ -200,8 +200,8 @@ const mockResources: Resource[] = [
     availability: 99.9,
     lastMaintenance: '2024-01-10',
     nextMaintenance: '2024-04-10'
-  }
-  {
+  },
+    {
     id: 'resource-2',
     name: 'Development Team',
     type: 'human',
@@ -214,8 +214,8 @@ const mockResources: Resource[] = [
     availability: 95,
     lastMaintenance: '2024-01-05',
     nextMaintenance: '2024-02-05'
-  }
-  {
+  },
+    {
     id: 'resource-3',
     name: 'Cloud Storage',
     type: 'infrastructure',
@@ -228,8 +228,8 @@ const mockResources: Resource[] = [
     availability: 99.99,
     lastMaintenance: '2024-01-08',
     nextMaintenance: '2024-04-08'
-  }
-  {
+  },
+    {
     id: 'resource-4',
     name: 'Customer Support',
     type: 'human',
@@ -242,8 +242,8 @@ const mockResources: Resource[] = [
     availability: 90,
     lastMaintenance: '2024-01-12',
     nextMaintenance: '2024-02-12'
-  }
-  {
+  },
+    {
     id: 'resource-5',
     name: 'Network Infrastructure',
     type: 'infrastructure',
@@ -271,8 +271,8 @@ const mockOptimizationRecommendations: OptimizationRecommendation[] = [
     expectedROI: 35,
     timeframe: '30 days',
     status: 'pending'
-  }
-  {
+  },
+    {
     id: 'opt-2',
     type: 'efficiency',
     priority: 'high',
@@ -283,8 +283,8 @@ const mockOptimizationRecommendations: OptimizationRecommendation[] = [
     expectedROI: 28,
     timeframe: '60 days',
     status: 'approved'
-  }
-  {
+  },
+    {
     id: 'opt-3',
     type: 'cost',
     priority: 'medium',
@@ -295,8 +295,8 @@ const mockOptimizationRecommendations: OptimizationRecommendation[] = [
     expectedROI: 45,
     timeframe: '45 days',
     status: 'implemented'
-  }
-  {
+  },
+    {
     id: 'opt-4',
     type: 'timing',
     priority: 'low',
@@ -363,8 +363,8 @@ function generateAIInsights(timeframe: string): any {
         resource: 'Server Infrastructure',
         timeframe: '30 days',
         recommendation: 'Immediate scaling required to prevent service disruption'
-      }
-      {
+      },
+    {
         type: 'demand_increase',
         probability: 0.75,
         resource: 'Customer Support',
@@ -379,15 +379,15 @@ function generateAIInsights(timeframe: string): any {
         description: 'Scale server infrastructure by 40% to handle predicted demand',
         impact: 'Prevent service disruption and maintain performance',
         timeframe: '30 days'
-      }
-      {
+      },
+    {
         type: 'workforce_optimization',
         priority: 'high',
         description: 'Implement AI automation to improve team efficiency by 25%',
         impact: 'Reduce manual workload and increase productivity',
         timeframe: '60 days'
-      }
-      {
+      },
+    {
         type: 'cost_optimization',
         priority: 'medium',
         description: 'Optimize cloud resource allocation to reduce costs by 15%',
@@ -401,8 +401,8 @@ function generateAIInsights(timeframe: string): any {
         message: 'Server infrastructure at 95% utilization. Immediate scaling required.',
         resource: 'Server Cluster A',
         impact: 'Service disruption risk'
-      }
-      {
+      },
+    {
         type: 'warning',
         message: 'Predicted 40% increase in customer support demand over next quarter.',
         resource: 'Customer Support',

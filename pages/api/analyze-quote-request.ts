@@ -54,8 +54,8 @@ Respond in JSON format with the following structure:
         {
           role: "system",
           content: "You are an expert IT project analyst. Provide accurate, professional analysis of IT service requests."
-        }
-        {
+        },
+    {
           role: "user",
           content: prompt
         }

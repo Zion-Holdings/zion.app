@@ -19,8 +19,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         target: 1500000,
         unit: '$',
         insight: 'Revenue growth exceeds target by 2.5%. This is primarily driven by increased customer acquisition and higher average order values.'
-      }
-      {
+      },
+    {
         id: '2',
         name: 'Customer Acquisition',
         value: 1250,
@@ -29,8 +29,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         target: 1500,
         unit: '',
         insight: 'Customer acquisition has decreased slightly. Consider reviewing marketing channels and A/B testing new campaigns.'
-      }
-      {
+      },
+    {
         id: '3',
         name: 'Conversion Rate',
         value: 3.2,
@@ -39,8 +39,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         target: 4.0,
         unit: '%',
         insight: 'Conversion rate is improving steadily. Recent UX improvements are having a positive impact.'
-      }
-      {
+      },
+    {
         id: '4',
         name: 'Customer Satisfaction',
         value: 4.6,
@@ -49,8 +49,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         target: 4.8,
         unit: '/5',
         insight: 'Customer satisfaction is stable but below target. Analyze feedback to identify improvement areas.'
-      }
-      {
+      },
+    {
         id: '5',
         name: 'Churn Rate',
         value: 2.1,
@@ -59,8 +59,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         target: 1.5,
         unit: '%',
         insight: 'Churn rate is decreasing, indicating improved customer retention strategies.'
-      }
-      {
+      },
+    {
         id: '6',
         name: 'Average Order Value',
         value: 85.50,
@@ -81,8 +81,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         recommendation: 'Consider expanding marketing campaigns to capitalize on current momentum.',
         confidence: 0.92,
         timestamp: new Date().toISOString(
-      }
-      {
+      },
+    {
         id: '2',
         type: 'warning',
         title: 'Customer Acquisition Declining',
@@ -91,8 +91,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         recommendation: 'Review marketing channels and consider A/B testing new campaigns.',
         confidence: 0.78,
         timestamp: new Date().toISOString(
-      }
-      {
+      },
+    {
         id: '3',
         type: 'positive',
         title: 'Conversion Rate Improving',
@@ -111,16 +111,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         confidence: 0.88,
         timeframe: '30 days',
         factors: ['Seasonal trends', 'Marketing campaigns', 'Customer retention']
-      }
-      {
+      },
+    {
         metric: 'Customer Acquisition',
         currentValue: 1250,
         predictedValue: 1420,
         confidence: 0.75,
         timeframe: '30 days',
         factors: ['Marketing optimization', 'Referral programs', 'Market expansion']
-      }
-      {
+      },
+    {
         metric: 'Conversion Rate',
         currentValue: 3.2,
         predictedValue: 3.8,
@@ -138,8 +138,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         severity: 'high',
         timestamp: new Date().toISOString(),
         action: 'Review marketing channels and consider immediate campaign adjustments.'
-      }
-      {
+      },
+    {
         id: '2',
         type: 'medium',
         title: 'Average Order Value Alert',
@@ -147,8 +147,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         severity: 'medium',
         timestamp: new Date().toISOString(),
         action: 'Analyze product mix and consider upselling strategies.'
-      }
-      {
+      },
+    {
         id: '3',
         type: 'positive',
         title: 'Revenue Growth Alert',
@@ -219,8 +219,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             data: [1200, 1350, 1420, 1380, 1450, 1250],
             backgroundColor: 'rgba(16, 185, 129, 0.1)',
             borderColor: 'rgba(16, 185, 129, 1)'
-          }
-          {
+          },
+    {
             label: 'Returning Customers',
             data: [800, 920, 980, 1050, 1150, 1250],
             backgroundColor: 'rgba(245, 158, 11, 0.1)',

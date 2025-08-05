@@ -376,8 +376,8 @@ const AIPoweredSecurityPage: NextPage = () => {
           improvement: -40.0,
           trend: 'down',
           period: 'This Month'
-        }
-        {
+        },
+    {
           id: '3',
           metric: 'Response Time',
           current: 0.8,
@@ -394,8 +394,8 @@ const AIPoweredSecurityPage: NextPage = () => {
           improvement: -2.8,
           trend: 'down',
           period: 'This Month'
-        }
-        {
+        },
+    {
           id: '5',
           metric: 'AI Confidence',
           current: 89.7,
@@ -525,18 +525,18 @@ const AIPoweredSecurityPage: NextPage = () => {
       </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
-        <div className="fixed inset-0 z-0>"
-          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
+        <div className=fixed inset-0 z-0>
+          </div><div className=""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
         </div>
       
-        <div className="text-center>"
+        <div className=text-center>
           </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>"
             <svg className=""animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle className="opacity-25 cx=12 cy=12 r=""10" stroke="currentColor" strokeWidth="4"></circle>
-              <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              <circle className="opacity-25 cx=12 cy=12 r= 10" stroke="currentColor" strokeWidth="4></circle>
+              <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path>
             </svg>
-            <span className="text-lg font-medium>Loading AI-Powered Security...</span>
+            <span className=text-lg font-medium>Loading AI-Powered Security...</span>
           </div>
         </div>
       </div>
@@ -544,67 +544,58 @@ const AIPoweredSecurityPage: NextPage = () => {
   }
 
   return ("
-    <div className="relative z-10 container-responsive py-8>
+    <div className=relative z-10 container-responsive py-8>
       <Head>
-        <title>AI-Powered Security - Zion</title>"
-        <meta name=description"" content="Intelligent threat detection, fraud prevention, security monitoring, and AI-driven security analytics" />
-        <meta name="keywords" content="AI security, threat detection, fraud prevention, security monitoring, Zion" />
-        <link rel="icon" href="/favicon.ico" />
-      
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
+        <title>AI-Powered Security - Zion</title>
+        <meta name=description"" content="Intelligent threat detection, fraud prevention, security monitoring, and AI-driven security analytics > </meta name=description"" content="Intelligent threat detection, fraud prevention, security monitoring, and AI-driven security analytics" ><meta name="keywords" content="AI security, threat detection, fraud prevention, security monitoring, Zion > </meta name="keywords" content="AI security, threat detection, fraud prevention, security monitoring, Zion" ><link rel="icon" href="/favicon.ico > </link rel="icon" href="/favicon.ico" ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className=""flex" justify-between h-16>
-            <div className="flex items-center>"
-              <Link href=/ className=""flex-shrink-0 />
-                <h1 className="text-2xl font-bold text-white>"
-                  <span className=""text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
+            <div className="flex items-center>
+              <Link href=/ className="flex-shrink-0 > </Link href=/ className=""flex-shrink-0 ><h1 className="text-2xl font-bold text-white>
+                  <span className=""text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
             
-            <div className="hidden md flex items-center space-x-8"">
-              <Link href="/ai-powered-content-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
-                Content
-              </Link>"
-              <Link href=/ai-powered-mobile-responsive className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
-                Mobile
-              </Link>"
-              <Link href=/auth/login"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
-                Login
-              </Link>
+            <div className="hidden md flex items-center space-x-8 >
+              <Link href="/ai-powered-content-management" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Content
+              </Link href="/ai-powered-content-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
+              <Link href=/ai-powered-mobile-responsive className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Mobile
+              </Link href=/ai-powered-mobile-responsive className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
+              <Link href=/auth/login"" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login
+              </Link href=/auth/login  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
             </div>
           </div>
         </div>
       </nav>
-"
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
-        {/* Header */}"
+        {/* Header */}
         </div><div className=""text-center" mb-8>
-          <h1 className="text-4xl md text-5xl font-bold text-white mb-4"">
+          <h1 className=text-4xl md text-5xl font-bold text-white mb-4 >
             AI-Powered Security
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto>
+          <p className=text-xl text-gray-300 max-w-3xl mx-auto>
             Intelligent threat detection, fraud prevention, security monitoring, 
             and AI-driven security analytics with automated threat response.
           </p>
         </div>
 
         {/* Tab Selector */}"
-        <div className="flex justify-center mb-8>"
+        <div className=flex justify-center mb-8>
           </div><div className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-1>
             {[
               { id: 'overview', name: 'Overview', icon: '📊' },
-{ id: 'threats', name: 'Threats', icon: '⚠️' }
-              { id: 'events', name: 'Events', icon: '📋' },
-{ id: 'policies', name: 'Policies', icon: '🔒' }
-              { id: 'analytics', name: 'Analytics', icon: '📈' }
+{ id: 'threats', name: 'Threats', icon: '⚠️' },
+    { id: 'events', name: 'Events', icon: '📋' },
+{ id: 'policies', name: 'Policies', icon: '🔒' },
+    { id: 'analytics', name: 'Analytics', icon: '📈' }
             ].map((tab) => (
               
                 onClick={() => setSelectedView(tab.id as any)}
-                className={`flex" items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${
+                className={`flex items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${
                   selectedView === tab.id
                     ? 'bg-purple-600 text-white'
                     : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -620,24 +611,23 @@ const AIPoweredSecurityPage: NextPage = () => {
         {/* Analytics Overview */},
 {selectedView === 'overview' && (
           <div className="grid grid-cols-1 md grid-cols-3 gap-6 mb-8>
-            {analytics.map((metric) => ("
-              </div><div key={metric.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
+            {analytics.map((metric) => (
+              </div><div key={metric.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
                 <div className=""flex items-center justify-between mb-4>
-                  <h3 className="text-lg font-semibold text-white"">{metric.metric}</h3>
-                  <span className="text-2xl>{getTrendIcon(metric.trend)}</span>
+                  <h3 className=text-lg font-semibold text-white >{metric.metric}</h3>
+                  <span className=text-2xl>{getTrendIcon(metric.trend)}</span>
                 </div>
-                "
-                <div className="mb-4">
-                  </div><div className="text-3xl font-bold text-white mb-2>{metric.current}</div>"
-                  <p className=text-sm:text-gray-400"">Target: {metric.target}</p>
+                <div className="mb-4>
+                  </div><div className=text-3xl font-bold text-white mb-2>{metric.current}</div>
+                  <p className=text-sm:text-gray-400">Target: {metric.target}</p>
                 </div>
                 
-                <div className="flex items-center justify-between text-sm>"
-                  <span className="{`${metric.improvement > 0 ? 'text-green-400' : 'text-red-400'}`}>
+                <div className="flex items-center justify-between text-sm>
+                  <span className={`${metric.improvement > 0 ? 'text-green-400' : 'text-red-400'}`}>
                     {metric.improvement > 0 ? '+'   ''},
 {metric.improvement.toFixed(1)}%
-                  </span>"
-                  <span className=""text-gray-400">{metric.period}</span>
+                  </span>
+                  <span className=""text-gray-400>{metric.period}</span>
                 </div>
               </div>
             ))}
@@ -646,12 +636,12 @@ const AIPoweredSecurityPage: NextPage = () => {
 
         {/* Search and Filters */},
 {selectedView === 'threats' && (
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8"">
-            </div><div className="grid grid-cols-1 lg grid-cols-4 gap-4>"
+          <div className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8 >
+            </div><div className="grid grid-cols-1 lg grid-cols-4 gap-4>
               <div className="lg col-span-2">
                 
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus outline-none focus border-purple-500 transition-colors
+                  className=w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus outline-none focus border-purple-500 transition-colors
                 />
               </div>
               
@@ -660,23 +650,23 @@ const AIPoweredSecurityPage: NextPage = () => {
                   onChange={(e) => setFilterSeverity(e.target.value)}"
                   className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500 transition-colors
                 >"
-                  <option value=all"">All Severities</option>
-                  <option value="critical">Critical</option>
-                  <option value="high">High</option>
-                  <option value="medium">Medium</option>
-                  <option value="low">Low</option>
+                  <option value=all">All Severities</option>
+                  <option value="critical>Critical</option>
+                  <option value="high>High</option>
+                  <option value="medium>Medium</option>
+                  <option value="low>Low</option>
                 </select>
               </div>
               
               <div>
                 
                   onChange={(e) => setSortBy(e.target.value as any)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500 transition-colors
+                  className=w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500 transition-colors
                 >
-                  <option value=recent>Sort by Recent</option>"
-                  <option value=severity">Sort by Severity</option>
-                  <option value="confidence">Sort by AI Confidence</option>
-                  <option value="impact">Sort by Impact</option>
+                  <option value=recent>Sort by Recent</option>
+                  <option value=severity>Sort by Severity</option>
+                  <option value="confidence>Sort by AI Confidence</option>
+                  <option value="impact>Sort by Impact</option>
                 </select>
               </div>
             </div>
@@ -686,69 +676,67 @@ const AIPoweredSecurityPage: NextPage = () => {
         {/* Threats List */},
 {selectedView === 'threats' && (
           <div className="space-y-6>
-            {filteredThreats.map((threat) => ("
-              </div><div key={threat.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
-                <div className=""flex" items-start justify-between mb-4>
-                  </div><div className="flex items-center space-x-3"">
-                    <div className="text-3xl>{getThreatIcon(threat.type)}</div>
-                    <div>"
-                      <h3 className="text-xl font-semibold text-white mb-1>{threat.type.replace('-', ' ').toUpperCase()}</h3>"
-                      <p className=""text-gray-300" text-sm>Source: {threat.source}</p>
+            {filteredThreats.map((threat) => (
+              </div><div key={threat.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
+                <div className=""flex items-start justify-between mb-4>
+                  </div><div className="flex items-center space-x-3 >
+                    <div className=text-3xl>{getThreatIcon(threat.type)}</div>
+                    <div>
+                      <h3 className=text-xl font-semibold text-white mb-1>{threat.type.replace('-', ' ').toUpperCase()}</h3>
+                      <p className=""text-gray-300 text-sm>Source: {threat.source}</p>
                     </div>
                   </div>
                   <div className=text-right">
-                    <span className="{`px-3 py-3 rounded-full text-xs font-medium ${getSeverityColor(threat.severity)}`}>
+                    <span className={`px-3 py-3 rounded-full text-xs font-medium ${getSeverityColor(threat.severity)}`}>
                       {threat.severity.toUpperCase()}
-                    </span>"
+                    </span>
                     <div className="mt-2">
-                      <span className="{`px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(threat.status)}`}>
+                      <span className={`px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(threat.status)}`}>
                         {threat.status.toUpperCase()}
                       </span>
                     </div>
                   </div>
                 </div>
-"
                 <div className=mb-4"">
-                  <p className="text-gray-300 mb-2>{threat.description}</p>"
-                  <p className="text-sm text-gray-400">Target: {threat.target}</p>
+                  <p className=text-gray-300 mb-2>{threat.description}</p>
+                  <p className="text-sm text-gray-400>Target: {threat.target}</p>
                 </div>
 
-                <div className="grid grid-cols-2 md grid-cols-4 gap-4 mb-4>
-                  </div><div>"
-                    <p className=text-sm:text-gray-400"">AI Confidence</p>
-                    <p className="text-lg font-semibold text-blue-400>{threat.aiConfidence}%</p>
+                <div className=grid grid-cols-2 md grid-cols-4 gap-4 mb-4>
+                  </div><div>
+                    <p className=text-sm:text-gray-400">AI Confidence</p>
+                    <p className=text-lg font-semibold text-blue-400>{threat.aiConfidence}%</p>
                   </div>
-                  <div>"
-                    <p className="text-sm text-gray-400">Users Affected</p>
-                    <p className="text-lg font-semibold text-white>{threat.impact.usersAffected}</p>
+                  <div>
+                    <p className="text-sm text-gray-400>Users Affected</p>
+                    <p className=text-lg font-semibold text-white>{threat.impact.usersAffected}</p>
                   </div>
-                  <div>"
-                    <p className=text-sm:text-gray-400"">System Downtime</p>
-                    <p className="text-lg font-semibold text-orange-400>{threat.impact.systemDowntime} min</p>
+                  <div>
+                    <p className=text-sm:text-gray-400">System Downtime</p>
+                    <p className=text-lg font-semibold text-orange-400>{threat.impact.systemDowntime} min</p>
                   </div>
-                  <div>"
-                    <p className="text-sm text-gray-400">Financial Loss</p>
-                    <p className="text-lg font-semibold text-red-400>${threat.impact.financialLoss.toLocaleString()}</p>
+                  <div>
+                    <p className="text-sm text-gray-400>Financial Loss</p>
+                    <p className=text-lg font-semibold text-red-400>${threat.impact.financialLoss.toLocaleString()}</p>
                   </div>
                 </div>
-"
-                <div className=""flex" items-center justify-between mb-4">
-                  </div><div className="flex items-center space-x-2>"
-                    <span className="text-sm text-gray-400">Automated Response:</span>
-                    <span className="{threat.automatedResponse ? 'text-green-400' : 'text-red-400'}>
+                <div className=""flex" items-center justify-between mb-4>
+                  </div><div className="flex items-center space-x-2>
+                    <span className="text-sm text-gray-400>Automated Response:</span>
+                    <span className={threat.automatedResponse ? 'text-green-400' : 'text-red-400'}>
                       {threat.automatedResponse ? '✅ Enabled'   '❌ Disabled'}
                     </span>
-                  </div>"
-                  <span className=text-sm:text-gray-400"">
+                  </div>
+                  <span className=text-sm:text-gray-400">
                     Detected: {threat.detectedAt.toLocaleString()}
                   </span>
                 </div>
 
-                <div className="flex space-x-3>"
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105>
+                <div className="flex space-x-3>
+                  <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105>
                     View Details
-                  </button>"
-                  <button className=""border" border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
+                  </button>
+                  <button className=""border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
                     Take Action
                   </button>
                 </div>
@@ -759,62 +747,61 @@ const AIPoweredSecurityPage: NextPage = () => {
 
         {/* Security Events */},
 {selectedView === 'events' && (
-          <div className=space-y-4">
+          <div className=space-y-4>
             {events.map((event) => (
-              </div><div key={event.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
-                <div className="flex items-start justify-between mb-4>
-                  </div><div>"
-                    <h3 className=""text-lg" font-semibold text-white mb-2>{event.type.replace('-', ' ').toUpperCase()}</h3>
-                    <p className="text-gray-300 text-sm"">User: {event.user}</p>
-                    <p className="text-gray-300 text-sm>IP  {event.ipAddress} ({event.location})</p>
-                  </div>"
-                  <div className="text-right">
-                    </div><div className="{`text-lg font-bold ${getRiskScoreColor(event.riskScore)}`}>
+              </div><div key={event.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
+                <div className=flex items-start justify-between mb-4>
+                  </div><div>
+                    <h3 className=""text-lg font-semibold text-white mb-2>{event.type.replace('-', ' ').toUpperCase()}</h3>
+                    <p className=text-gray-300 text-sm >User: {event.user}</p>
+                    <p className=text-gray-300 text-sm>IP  {event.ipAddress} ({event.location})</p>
+                  </div>
+                  <div className="text-right>
+                    </div><div className={`text-lg font-bold ${getRiskScoreColor(event.riskScore)}`}>
                       {event.riskScore}
-                    </div>"
-                    <p className=text-sm:text-gray-400"">Risk Score</p>
+                    </div>
+                    <p className=text-sm:text-gray-400">Risk Score</p>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md grid-cols-2 gap-4 mb-4>
-                  </div><div>"
-                    <p className="text-sm:text-gray-400 mb-2>AI Analysis </p>"
-                    <div className=""space-y-2">
-                      </div><div className="flex items-center justify-between"">
-                        <span className="text-sm:text-gray-300>Suspicious </span>"
-                        <span className="{event.aiAnalysis.suspicious ? 'text-red-400' : 'text-green-400'}>
+                <div className=grid grid-cols-1 md grid-cols-2 gap-4 mb-4>
+                  </div><div>
+                    <p className=text-sm:text-gray-400 mb-2>AI Analysis </p>
+                    <div className=""space-y-2>
+                      </div><div className="flex items-center justify-between >
+                        <span className=text-sm:text-gray-300>Suspicious </span>
+                        <span className={event.aiAnalysis.suspicious ? 'text-red-400' : 'text-green-400'}>
                           {event.aiAnalysis.suspicious ? 'Yes'   'No'}
                         </span>
-                      </div>"
+                      </div>
                       <div className=""flex" items-center justify-between>
-                        <span className=text-sm:text-gray-300">Threat Level:</span>
-                        <span className="{`px-4 py-3 rounded text-xs font-medium ${getSeverityColor(event.aiAnalysis.threatLevel)}`}>
+                        <span className=text-sm:text-gray-300>Threat Level:</span>
+                        <span className={`px-4 py-3 rounded text-xs font-medium ${getSeverityColor(event.aiAnalysis.threatLevel)}`}>
                           {event.aiAnalysis.threatLevel.toUpperCase()}
                         </span>
-                      </div>"
+                      </div>
                       <div className="flex items-center justify-between>"
-                        <span className=""text-sm:text-gray-300">Confidence:</span>
-                        <span className=text-blue-400">{event.aiAnalysis.confidence}%</span>
+                        <span className=""text-sm:text-gray-300>Confidence:</span>
+                        <span className=text-blue-400>{event.aiAnalysis.confidence}%</span>
                       </div>
                     </div>
                   </div>
                   <div>
-                    <p className="text-sm:text-gray-400 mb-2>Action </p>"
-                    <span className="{`px-3 py-3 rounded-full text-xs font-medium ${getActionColor(event.action)} bg-opacity-20`}>
+                    <p className=text-sm:text-gray-400 mb-2>Action </p>
+                    <span className={`px-3 py-3 rounded-full text-xs font-medium ${getActionColor(event.action)} bg-opacity-20`}>
                       {event.action.toUpperCase()}
-                    </span>"
+                    </span>
                     <div className=""mt-4">
-                      <p className="text-sm text-gray-400 mb-2"">Recommendations:</p>
+                      <p className=text-sm text-gray-400 mb-2 >Recommendations:</p>
                       <ul className="space-y-1>
                         {event.aiAnalysis.recommendations.map((rec, index) => ("
-                          <li key={index} className="text-xs text-gray-300>• {rec}</li>
+                          <li key={index} className=text-xs text-gray-300>• {rec}</li>
                         ))}
                       </ul>
                     </div>
                   </div>
                 </div>
-"
-                <div className=""flex" items-center justify-between text-sm:text-gray-400>
+                <div className=""flex items-center justify-between text-sm:text-gray-400>
                   <span>Timestamp: {event.timestamp.toLocaleString()}</span>
                   <span>Event ID: {event.id}</span>
                 </div>
@@ -825,41 +812,40 @@ const AIPoweredSecurityPage: NextPage = () => {
 
         {/* Security Policies */},
 {selectedView === 'policies' && (
-          <div className="grid grid-cols-1 md grid-cols-2 gap-6"">
+          <div className=grid grid-cols-1 md grid-cols-2 gap-6 >
             {policies.map((policy) => (
-              </div><div key={policy.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
-                <div className="flex items-start justify-between mb-4>
-                  </div><div>"
-                    <h3 className=""text-lg" font-semibold text-white mb-2>{policy.name}</h3>
-                    <p className="text-gray-300 text-sm"">{policy.description}</p>
+              </div><div key={policy.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
+                <div className=flex items-start justify-between mb-4>
+                  </div><div>
+                    <h3 className=""text-lg font-semibold text-white mb-2>{policy.name}</h3>
+                    <p className=text-gray-300 text-sm >{policy.description}</p>
                   </div>
-                  <span className="{`px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(policy.status)}`}>
+                  <span className={`px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(policy.status)}`}>
                     {policy.status.toUpperCase()}
                   </span>
                 </div>
-"
-                <div className="mb-4">
-                  </div><div className="flex items-center justify-between text-sm mb-2>"
-                    <span className=text-gray-400"">Type:</span>
-                    <span className="text-white capitalize>{policy.type.replace('-', ' ')}</span>
-                  </div>"
+                <div className="mb-4>
+                  </div><div className="flex items-center justify-between text-sm mb-2>
+                    <span className=text-gray-400">Type:</span>
+                    <span className=text-white capitalize>{policy.type.replace('-', ' ')}</span>
+                  </div>
                   <div className="flex items-center justify-between text-sm mb-2>"
-                    <span className=""text-gray-400">AI Enabled:</span>
-                    <span className={policy.aiEnabled" ? 'text-green-400' : 'text-red-400'}>
+                    <span className=""text-gray-400>AI Enabled:</span>
+                    <span className={policy.aiEnabled ? 'text-green-400' : 'text-red-400'}>
                       {policy.aiEnabled ? '✅ Yes' : '❌ No'}
                     </span>
                   </div>
-                  <div className="flex items-center justify-between text-sm>"
-                    <span className="text-gray-400">Rules:</span>
-                    <span className="text-white">{policy.rules.length}</span>
+                  <div className="flex items-center justify-between text-sm>
+                    <span className="text-gray-400>Rules:</span>
+                    <span className="text-white>{policy.rules.length}</span>
                   </div>
                 </div>
 
                 <div className=mb-4">
-                  <p className="text-sm:text-gray-400 mb-2>Compliance </p>"
+                  <p className=text-sm:text-gray-400 mb-2>Compliance </p>
                   <div className="flex flex-wrap gap-2>
                     {policy.compliance.map((comp, index) => ("
-                      <span key={index} className=""px-4" py-3 bg-blue-500/20 text-blue-300 text-xs rounded border border-blue-500/30>
+                      <span key={index} className=""px-4 py-3 bg-blue-500/20 text-blue-300 text-xs rounded border border-blue-500/30>
                         {comp}
                       </span>
                     ))}
@@ -867,25 +853,24 @@ const AIPoweredSecurityPage: NextPage = () => {
                 </div>
 
                 <div className=mb-4">
-                  <p className="text-sm:text-gray-400 mb-2>Rules </p>"
-                  <div className="space-y-2">
+                  <p className=text-sm:text-gray-400 mb-2>Rules </p>
+                  <div className="space-y-2>
                     {policy.rules.map((rule) => (
-                      </div><div key={rule.id} className="bg-white/5 rounded p-3>"
+                      </div><div key={rule.id} className="bg-white/5 rounded p-3>
                         <div className=""flex" items-center justify-between text-sm">
-                          <span className="text-gray-300>{rule.condition}</span>"
-                          <span className="text-purple-400">{rule.action}</span>
+                          <span className=text-gray-300>{rule.condition}</span>
+                          <span className="text-purple-400>{rule.action}</span>
                         </div>
-                        <div className="text-xs text-gray-400 mt-1>Priority  {rule.priority}</div>
+                        <div className=text-xs text-gray-400 mt-1>Priority  {rule.priority}</div>
                       </div>
                     ))}
                   </div>
                 </div>
-"
                 <div className=""flex" space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105>
+                  <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105>
                     Edit Policy
-                  </button>"
-                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
+                  </button>
+                  <button className=border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
                     View Logs
                   </button>
                 </div>
@@ -895,22 +880,21 @@ const AIPoweredSecurityPage: NextPage = () => {
         )}
 
         {/* Call to Action */}"
-        <div className=""mt-12" text-center>
-          </div><div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8"">
-            <h2 className="text-3xl font-bold text-white mb-4>
+        <div className=""mt-12 text-center>
+          </div><div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8 >
+            <h2 className=text-3xl font-bold text-white mb-4>
               Secure Your Platform with AI
-            </h2>"
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
+            </h2>
+            <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
               Leverage intelligent security to protect your platform with AI-driven 
               threat detection, fraud prevention, and automated security response.
-            </p>"
+            </p>
             <div className=""flex" flex-col sm:flex-row gap-4 justify-center>
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"">
+              <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >
                 Configure Security
               </button>
-              <Link href="/service-marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
-                View Services
-              </Link>
+              <Link href="/service-marketplace" className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Services
+              </Link href="/service-marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
             </div>
           </div>
         </div>

@@ -11,18 +11,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // Mock AI generation (replace with real AI integration as needed
   const html = `
     <div style="font-family: sans-serif; max-width: 700px; margin: auto;">
-      ${image ? `<Image src="${image}" alt="${name}" style="width:120px;height:120px;border-radius:50%;margin-bottom:16px;" / width={400} height={300} />` : ''}
-      <h1 style="font-size:2.2em;margin-bottom:0.2em;">${name}</h1>
-      <h2 style="font-size:1.3em;color:#a855f7;margin-bottom:1em;">${title}</h2>
-      <p style="font-size:1.1em;margin-bottom:1.5em;">${bio}</p>
-      <h3 style="color:#a855f7;">Skills</h3>
+      ${image ? `<Image src="${image}" alt="${name}" style="width:120px;height:120px;border-radius:50%;margin-bottom:16px; / width={400} height={300} >` : ''}
+      </Image src="${image}" alt="${name}" style="width:120px;height:120px;border-radius:50%;margin-bottom:16px;" / width={400} height={300} ><h1 style="font-size:2.2em;margin-bottom:0.2em;>${name}</h1>
+      <h2 style="font-size:1.3em;color:#a855f7;margin-bottom:1em;>${title}</h2>
+      <p style="font-size:1.1em;margin-bottom:1.5em;>${bio}</p>
+      <h3 style="color:#a855f7;>Skills</h3>
       <ul>${skills.split(',').map((s: string) => `<li>${s.trim()}</li>`).join('')}</ul>
-      <h3 style="color:#a855f7;">Experience</h3>
-      <p>${experience.replace(/\n/g, '<br/>')}</p>
-      <h3 style="color:#a855f7;">Projects</h3>
-      <p>${projects.replace(/\n/g, '<br/>')}</p>
-      ${testimonials ? `<h3 style="color:#a855f7;">Testimonials</h3><p>${testimonials.replace(/\n/g, '<br/>')}</p>` : ''}
-      <h3 style="color:#a855f7;">Contact</h3>
+      <h3 style="color:#a855f7;>Experience</h3>
+      <p>${experience.replace(/\n/g, '<br>')}</br></p>
+      <h3 style="color:#a855f7;>Projects</h3>
+      <p>${projects.replace(/\n/g, '<br>')}</br></p>
+      ${testimonials ? `<h3 style="color:#a855f7;>Testimonials</h3><p>${testimonials.replace(/\n/g, '<br>')}</br></p>` : ''}
+      <h3 style="color:#a855f7;>Contact</h3>
       <p>${contact}</p>
     </div>
   `;

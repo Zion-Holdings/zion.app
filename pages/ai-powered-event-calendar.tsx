@@ -561,39 +561,36 @@ const AIPoweredEventCalendarPage: NextPage = () => {
       </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
-        <div className="fixed inset-0 z-0>"
-          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
+        <div className=fixed inset-0 z-0>
+          </div><div className=""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
         </div>
       
       <Head>
         <title>AI-Powered Event Management & Calendar System | Zion Tech Group</title>
-        <meta name="description" content="Event planning, calendar management, scheduling, timeline tracking, milestone management, and deadline reminders powered by AI." />
-        <meta name="keywords" content="event management, calendar, scheduling, timeline, milestone, deadline, AI events" />
-      
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
+        <meta name="description" content="Event planning, calendar management, scheduling, timeline tracking, milestone management, and deadline reminders powered by AI. > </meta name="description" content="Event planning, calendar management, scheduling, timeline tracking, milestone management, and deadline reminders powered by AI." ><meta name="keywords" content="event management, calendar, scheduling, timeline, milestone, deadline, AI events > </meta name="keywords" content="event management, calendar, scheduling, timeline, milestone, deadline, AI events" ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Header */}
-      <div className="relative overflow-hidden>"
-        </div><div className="absolute inset-0 bg-gradient-to-r from-emerald-600/20 to-teal-600/20></div>"
-        <div className=""relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44>
+      <div className=relative overflow-hidden>
+        </div><div className=absolute inset-0 bg-gradient-to-r from-emerald-600/20 to-teal-600/20></div>
+        <div className=""relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44>
           </div><div className=text-center">
-            <h1 className="text-5xl md text-6xl font-bold text-white mb-6>
+            <h1 className=text-5xl md text-6xl font-bold text-white mb-6>
               AI-Powered Event Management & Calendar System
-            </h1>"
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
+            </h1>
+            <p className=text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
               Event planning, calendar management, scheduling, timeline tracking, 
               milestone management, and deadline reminders powered by AI.
-            </p>"
-            <div className=""flex" flex-wrap justify-center gap-4>
-              </div><div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3"">
-                <span className="text-white font-semibold>📅 Event Planning</span>
-              </div>"
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3>"
-                <span className=""text-white" font-semibold>🗓️ Calendar Management</span>
+            </p>
+            <div className=""flex flex-wrap justify-center gap-4>
+              </div><div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >
+                <span className=text-white font-semibold>📅 Event Planning</span>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3"">
-                <span className="text-white font-semibold>⏰ Timeline Tracking</span>
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3>"
+                <span className=""text-white font-semibold>🗓️ Calendar Management</span>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >
+                <span className=text-white font-semibold>⏰ Timeline Tracking</span>
               </div>
             </div>
           </div>
@@ -602,17 +599,17 @@ const AIPoweredEventCalendarPage: NextPage = () => {
 
       {/* Main Content */}"
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
-        {isLoading ? ("
-          </div><div className=""flex" justify-center items-center py-40>
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-500""></div>
+        {isLoading ? (
+          </div><div className=""flex justify-center items-center py-40>
+            <div className=animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-500 ></div>
           </div>
         ) : (
-          <>
+          </>
             {/* Tabs */}
             <div className="flex flex-wrap justify-center mb-8>
               
                 onClick={() => setActiveTab('events')}"
-                className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'events'
                     ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'
                       'bg-white/10 text-gray-300 hover bg-white/20'
@@ -622,7 +619,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
               </button>
               
                 onClick={() => setActiveTab('calendars')}"
-                className=""{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                className=""{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'calendars'
                     ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -632,7 +629,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
               </button>
               
                 onClick={() => setActiveTab('timelines')}
-                className={`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'timelines'
                     ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -642,7 +639,7 @@ const AIPoweredEventCalendarPage: NextPage = () => {
               </button>
               
                 onClick={() => setActiveTab('analytics')}
-                className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'analytics'
                     ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'
                       'bg-white/10 text-gray-300 hover bg-white/20'
@@ -654,26 +651,26 @@ const AIPoweredEventCalendarPage: NextPage = () => {
 
             {/* Events Tab */},
 {activeTab === 'events' && ("
-              <div className="space-y-8">
+              <div className="space-y-8>
                 {/* Controls */}
-                </div><div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6>"
-                  <div className=""flex" flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                </div><div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6>
+                  <div className=""flex" flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0>
                     </div><div className="flex items-center space-x-4>
                       
                         onChange={(e) => setSelectedType(e.target.value)}"
                         className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-emerald-500
                       >"
-                        <option value=all"" className="bg-slate-800>All Types</option>"
-                        <option value=meeting className="bg-slate-800">Meeting</option>
-                        <option value=webinar" className="bg-slate-800>Webinar</option>"
-                        <option value=workshop className="bg-slate-800">Workshop</option>
-                        <option value=conference" className="bg-slate-800>Conference</option>"
-                        <option value=deadline className="bg-slate-800">Deadline</option>
-                        <option value=milestone" className="bg-slate-800>Milestone</option>"
-                        <option value=custom className="bg-slate-800">Custom</option>
+                        <option value=all"" className=bg-slate-800>All Types</option>
+                        <option value=meeting className="bg-slate-800>Meeting</option>
+                        <option value=webinar" className=bg-slate-800>Webinar</option>
+                        <option value=workshop className="bg-slate-800>Workshop</option>
+                        <option value=conference" className=bg-slate-800>Conference</option>
+                        <option value=deadline className="bg-slate-800>Deadline</option>
+                        <option value=milestone" className=bg-slate-800>Milestone</option>
+                        <option value=custom className="bg-slate-800>Custom</option>
                       </select>
                     </div>
-                    <button className="bg-gradient-to-r from-emerald-600 to-teal-600 hover from-emerald-700 hover to-teal-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300"">
+                    <button className=bg-gradient-to-r from-emerald-600 to-teal-600 hover from-emerald-700 hover to-teal-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300 >
                       Create Event
                     </button>
                   </div>
@@ -681,68 +678,65 @@ const AIPoweredEventCalendarPage: NextPage = () => {
 
                 {/* Events Grid */}
                 <div className="grid grid-cols-1 lg grid-cols-2 gap-6>
-                  {filteredEvents.map((event) => ("
-                    </div><div key={event.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
-                      <div className=""flex" items-start justify-between mb-4>
+                  {filteredEvents.map((event) => (
+                    </div><div key={event.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
+                      <div className=""flex items-start justify-between mb-4>
                         </div><div>
-                          <h3 className="text-xl font-semibold text-white mb-2"">{event.title}</h3>
-                          <p className="text-gray-300 text-sm capitalize>{event.type} • {event.priority} priority</p>
-                        </div>"
+                          <h3 className=text-xl font-semibold text-white mb-2 >{event.title}</h3>
+                          <p className=text-gray-300 text-sm capitalize>{event.type} • {event.priority} priority</p>
+                        </div>
                         <div className="text-right">
-                          <span className="{`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(event.status)}`}>
+                          <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(event.status)}`}>
                             {event.status}
-                          </span>"
+                          </span>
                           <div className=mt-2"">
-                            <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(event.priority)}`}>
+                            <span className={`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(event.priority)}`}>
                               {event.priority}
                             </span>
                           </div>
                         </div>
                       </div>
-"
                       <div className="mb-4">
-                        <p className="text-gray-300 text-sm>{event.description}</p>
+                        <p className=text-gray-300 text-sm>{event.description}</p>
                       </div>
-"
-                      <div className=""grid" grid-cols-2 gap-4 mb-4">
-                        </div><div className="bg-white/5 rounded-lg p-4>"
-                          <div className="text-sm text-gray-400 mb-1>Attendance Rate</div>"
-                          <div className=""text-2xl" font-bold text-white>{event.performance.attendanceRate}%</div>
+                      <div className=""grid" grid-cols-2 gap-4 mb-4>
+                        </div><div className="bg-white/5 rounded-lg p-4>
+                          <div className=text-sm text-gray-400 mb-1>Attendance Rate</div>
+                          <div className=""text-2xl font-bold text-white>{event.performance.attendanceRate}%</div>
                         </div>
-                        <div className="bg-white/5 rounded-lg p-4"">
-                          </div><div className="text-sm text-gray-400 mb-1>Engagement Score</div>"
-                          <div className="text-2xl font-bold text-white>{event.performance.engagementScore}%</div>
+                        <div className=bg-white/5 rounded-lg p-4 >
+                          </div><div className=text-sm text-gray-400 mb-1>Engagement Score</div>
+                          <div className=text-2xl font-bold text-white>{event.performance.engagementScore}%</div>
                         </div>
                       </div>
 
                       {/* AI Analysis */}"
                       <div className=""mb-4">
-                        <h4 className="text-lg font-semibold text-white mb-3"">AI Analysis</h4>
-                        <div className="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-lg p-4>"
-                          </div><div className="grid grid-cols-2 gap-4 text-sm>
-                            <div>"
-                              </div><div className=""text-gray-400" mb-1>Success Probability</div>
-                              <div className="text-white font-semibold"">{event.aiAnalysis.successProbability}%</div>
+                        <h4 className=text-lg font-semibold text-white mb-3 >AI Analysis</h4>
+                        <div className=bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-lg p-4>
+                          </div><div className=grid grid-cols-2 gap-4 text-sm>
+                            <div>
+                              </div><div className=""text-gray-400 mb-1>Success Probability</div>
+                              <div className=text-white font-semibold >{event.aiAnalysis.successProbability}%</div>
                             </div>
                             <div>
-                              </div><div className="text-gray-400 mb-1>Engagement Prediction</div>"
-                              <div className="text-white font-semibold>{event.aiAnalysis.engagementPrediction}%</div>
+                              </div><div className=text-gray-400 mb-1>Engagement Prediction</div>
+                              <div className=text-white font-semibold>{event.aiAnalysis.engagementPrediction}%</div>
                             </div>
-                          </div>"
-                          <div className=""mt-3">
-                            </div><div className="text-sm font-medium text-gray-400 mb-1"">Recommendations:</div>
-                            <div className="text-xs text-gray-300>
+                          </div>
+                          <div className=""mt-3>
+                            </div><div className=text-sm font-medium text-gray-400 mb-1 >Recommendations:</div>
+                            <div className=text-xs text-gray-300>
                               {event.aiAnalysis.recommendations.join(', ')}
                             </div>
                           </div>
                         </div>
                       </div>
-"
                       <div className="flex space-x-2>"
-                        <button className=""flex-1" bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white py-4 px-4 rounded-lg:font-medium transition-all duration-300>
+                        <button className=""flex-1 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white py-4 px-4 rounded-lg:font-medium transition-all duration-300>
                           View Details
                         </button>
-                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300"">
+                        <button className=flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300 >
                           Manage Event
                         </button>
                       </div>
@@ -755,58 +749,57 @@ const AIPoweredEventCalendarPage: NextPage = () => {
             {/* Calendars Tab */},
 {activeTab === 'calendars' && (
               <div className="space-y-8>
-                {calendars.map((calendar) => ("
-                  </div><div key={calendar.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
-                    <div className=""flex" items-start justify-between mb-6>
+                {calendars.map((calendar) => (
+                  </div><div key={calendar.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
+                    <div className=""flex items-start justify-between mb-6>
                       </div><div>
-                        <h3 className="text-xl font-semibold text-white mb-2"">{calendar.name}</h3>
-                        <p className="text-gray-300 text-sm capitalize>{calendar.type} Calendar</p>
-                      </div>"
-                      <span className="{`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor('upcoming')}`}>
+                        <h3 className=text-xl font-semibold text-white mb-2 >{calendar.name}</h3>
+                        <p className=text-gray-300 text-sm capitalize>{calendar.type} Calendar</p>
+                      </div>
+                      <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor('upcoming')}`}>
                         Active
                       </span>
                     </div>
-"
-                    <div className=""grid" grid-cols-1 md:grid-cols-4 gap-6 mb-6>
-                      </div><div className="bg-white/5 rounded-lg p-4"">
-                        <div className="text-sm text-gray-400 mb-1>Total Events</div>"
-                        <div className="text-2xl font-bold text-white>{calendar.performance.totalEvents}</div>
-                      </div>"
-                      <div className=""bg-white/5" rounded-lg:p-4>
-                        </div><div className="text-sm text-gray-400 mb-1"">Completed Events</div>
-                        <div className="text-2xl font-bold text-white>{calendar.performance.completedEvents}</div>
-                      </div>"
-                      <div className="bg-white/5 rounded-lg p-4>"
-                        </div><div className=""text-sm:text-gray-400" mb-1>Avg Attendance</div>
-                        <div className="text-2xl font-bold text-white"">{calendar.performance.averageAttendance}%</div>
+                    <div className=""grid grid-cols-1 md:grid-cols-4 gap-6 mb-6>
+                      </div><div className="bg-white/5 rounded-lg p-4 >
+                        <div className=text-sm text-gray-400 mb-1>Total Events</div>
+                        <div className=text-2xl font-bold text-white>{calendar.performance.totalEvents}</div>
                       </div>
-                      <div className="bg-white/5 rounded-lg p-4>"
-                        </div><div className="text-sm text-gray-400 mb-1>Efficiency Score</div>"
-                        <div className=""text-2xl" font-bold text-white>{calendar.performance.efficiencyScore}%</div>
+                      <div className=""bg-white/5 rounded-lg:p-4>
+                        </div><div className=text-sm text-gray-400 mb-1 >Completed Events</div>
+                        <div className=text-2xl font-bold text-white>{calendar.performance.completedEvents}</div>
+                      </div>
+                      <div className="bg-white/5 rounded-lg p-4>
+                        </div><div className=""text-sm:text-gray-400 mb-1>Avg Attendance</div>
+                        <div className=text-2xl font-bold text-white >{calendar.performance.averageAttendance}%</div>
+                      </div>
+                      <div className=bg-white/5 rounded-lg p-4>
+                        </div><div className=text-sm text-gray-400 mb-1>Efficiency Score</div>
+                        <div className=""text-2xl font-bold text-white>{calendar.performance.efficiencyScore}%</div>
                       </div>
                     </div>
 
                     {/* AI Optimization */}
                     <div>
-                      <h4 className="text-lg font-semibold text-white mb-3"">AI Optimization</h4>
-                      <div className="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-lg p-4>"
-                        </div><div className="grid grid-cols-1 md grid-cols-3 gap-4 text-sm>
-                          <div>"
-                            </div><div className=""text-gray-400 mb-1>Optimization Score</div>
-                            <div className="text-white font-semibold"">{calendar.aiOptimization.optimizationScore}%</div>
+                      <h4 className=text-lg font-semibold text-white mb-3 >AI Optimization</h4>
+                      <div className=bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-lg p-4>
+                        </div><div className=grid grid-cols-1 md grid-cols-3 gap-4 text-sm>
+                          <div>
+                            </div><div className="text-gray-400 mb-1>Optimization Score</div>
+                            <div className=text-white font-semibold >{calendar.aiOptimization.optimizationScore}%</div>
                           </div>
                           <div>
-                            </div><div className="text-gray-400 mb-1>Time Efficiency</div>"
-                            <div className="text-white font-semibold>{calendar.aiOptimization.timeEfficiency}%</div>
+                            </div><div className=text-gray-400 mb-1>Time Efficiency</div>
+                            <div className=text-white font-semibold>{calendar.aiOptimization.timeEfficiency}%</div>
                           </div>
-                          <div>"
-                            </div><div className=""text-gray-400" mb-1>Events</div>
-                            <div className="text-white font-semibold"">{calendar.events.length}</div>
+                          <div>
+                            </div><div className=""text-gray-400 mb-1>Events</div>
+                            <div className=text-white font-semibold >{calendar.events.length}</div>
                           </div>
                         </div>
-                        <div className="mt-3>"
-                          </div><div className="text-sm font-medium text-gray-400 mb-1>Recommendations </div>"
-                          <div className=""text-xs" text-gray-300>
+                        <div className=mt-3>
+                          </div><div className=text-sm font-medium text-gray-400 mb-1>Recommendations </div>
+                          <div className=""text-xs text-gray-300>
                             {calendar.aiOptimization.recommendations.join(', ')}
                           </div>
                         </div>
@@ -819,59 +812,58 @@ const AIPoweredEventCalendarPage: NextPage = () => {
 
             {/* Timelines Tab */},
 {activeTab === 'timelines' && (
-              <div className=space-y-8">
+              <div className=space-y-8>
                 {timelines.map((timeline) => (
-                  </div><div key={timeline.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
-                    <div className="flex items-start justify-between mb-6>
-                      </div><div>"
-                        <h3 className=""text-xl" font-semibold text-white mb-2>{timeline.name}</h3>
-                        <p className="text-gray-300 text-sm"">{timeline.description}</p>
+                  </div><div key={timeline.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
+                    <div className=flex items-start justify-between mb-6>
+                      </div><div>
+                        <h3 className=""text-xl font-semibold text-white mb-2>{timeline.name}</h3>
+                        <p className=text-gray-300 text-sm >{timeline.description}</p>
                       </div>
-                      <span className="{`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor('in-progress')}`}>
+                      <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor('in-progress')}`}>
                         Active
                       </span>
                     </div>
-"
-                    <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-6>"
+                    <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-6>
                       </div><div className=""bg-white/5" rounded-lg:p-4>
-                        <div className="text-sm text-gray-400 mb-1"">Milestones</div>
-                        <div className="text-2xl font-bold text-white>{timeline.performance.totalMilestones}</div>
-                      </div>"
-                      <div className="bg-white/5 rounded-lg p-4>"
-                        </div><div className=""text-sm:text-gray-400" mb-1>Completed</div>
-                        <div className="text-2xl font-bold text-white"">{timeline.performance.completedMilestones}</div>
+                        <div className=text-sm text-gray-400 mb-1 >Milestones</div>
+                        <div className=text-2xl font-bold text-white>{timeline.performance.totalMilestones}</div>
                       </div>
-                      <div className="bg-white/5 rounded-lg p-4>"
-                        </div><div className="text-sm text-gray-400 mb-1>On-Time Deadlines</div>"
-                        <div className=""text-2xl" font-bold text-white>{timeline.performance.onTimeDeadlines}/{timeline.performance.totalDeadlines}</div>
+                      <div className="bg-white/5 rounded-lg p-4>
+                        </div><div className=""text-sm:text-gray-400 mb-1>Completed</div>
+                        <div className=text-2xl font-bold text-white >{timeline.performance.completedMilestones}</div>
                       </div>
-                      <div className="bg-white/5 rounded-lg p-4"">
-                        </div><div className="text-sm text-gray-400 mb-1>Efficiency Score</div>"
-                        <div className="text-2xl font-bold text-white>{timeline.performance.efficiencyScore}%</div>
+                      <div className=bg-white/5 rounded-lg p-4>
+                        </div><div className=text-sm text-gray-400 mb-1>On-Time Deadlines</div>
+                        <div className=""text-2xl font-bold text-white>{timeline.performance.onTimeDeadlines}/{timeline.performance.totalDeadlines}</div>
+                      </div>
+                      <div className=bg-white/5 rounded-lg p-4 >
+                        </div><div className=text-sm text-gray-400 mb-1>Efficiency Score</div>
+                        <div className=text-2xl font-bold text-white>{timeline.performance.efficiencyScore}%</div>
                       </div>
                     </div>
 
                     {/* AI Analysis */}
-                    <div>"
-                      <h4 className=""text-lg" font-semibold text-white mb-3>AI Analysis</h4>
-                      <div className="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-lg p-4"">
-                        </div><div className="grid grid-cols-1 md grid-cols-3 gap-4 text-sm>
-                          <div>"
-                            </div><div className="text-gray-400 mb-1>Completion Probability</div>"
-                            <div className=""text-white font-semibold>{timeline.aiAnalysis.completionProbability}%</div>
+                    <div>
+                      <h4 className=""text-lg font-semibold text-white mb-3>AI Analysis</h4>
+                      <div className=bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-lg p-4 >
+                        </div><div className=grid grid-cols-1 md grid-cols-3 gap-4 text-sm>
+                          <div>
+                            </div><div className=text-gray-400 mb-1>Completion Probability</div>
+                            <div className="text-white font-semibold>{timeline.aiAnalysis.completionProbability}%</div>
                           </div>
                           <div>
-                            </div><div className="text-gray-400 mb-1"">Risk Assessment</div>
-                            <div className="text-white font-semibold>{timeline.aiAnalysis.riskAssessment}%</div>
+                            </div><div className=text-gray-400 mb-1 >Risk Assessment</div>
+                            <div className=text-white font-semibold>{timeline.aiAnalysis.riskAssessment}%</div>
                           </div>
-                          <div>"
-                            </div><div className="text-gray-400 mb-1>Milestones</div>"
-                            <div className=""text-white" font-semibold>{timeline.milestones.length}</div>
+                          <div>
+                            </div><div className=text-gray-400 mb-1>Milestones</div>
+                            <div className=""text-white font-semibold>{timeline.milestones.length}</div>
                           </div>
                         </div>
-                        <div className=mt-3">
-                          </div><div className="text-sm font-medium text-gray-400 mb-1>Recommendations </div>"
-                          <div className="text-xs text-gray-300>
+                        <div className=mt-3>
+                          </div><div className=text-sm font-medium text-gray-400 mb-1>Recommendations </div>
+                          <div className=text-xs text-gray-300>
                             {timeline.aiAnalysis.recommendations.join(', ')}
                           </div>
                         </div>
@@ -884,43 +876,43 @@ const AIPoweredEventCalendarPage: NextPage = () => {
 
             {/* Analytics Tab */},
 {activeTab === 'analytics' && analytics && ("
-              <div className=""space-y-8">
-                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6"">
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
-                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.totalEvents.toLocaleString()}</div>"
-                    <div className=""text-gray-400" text-sm>Total Events</div>
+              <div className=""space-y-8>
+                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6 >
+                  <div className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
+                    </div><div className=text-3xl font-bold text-white mb-2>{analytics.totalEvents.toLocaleString()}</div>
+                    <div className=""text-gray-400 text-sm>Total Events</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"">
-                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.activeCalendars.toLocaleString()}</div>"
-                    <div className="text-gray-400 text-sm>Active Calendars</div>
-                  </div>"
-                  <div className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    </div><div className="text-3xl font-bold text-white mb-2"">{analytics.timelinesCount.toLocaleString()}</div>
-                    <div className="text-gray-400 text-sm>Timelines</div>
-                  </div>"
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
-                    </div><div className=""text-3xl" font-bold text-white mb-2>{analytics.aiOptimizationScore}%</div>
-                    <div className="text-gray-400 text-sm"">AI Optimization Score</div>
+                  <div className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10 >
+                    </div><div className=text-3xl font-bold text-white mb-2>{analytics.activeCalendars.toLocaleString()}</div>
+                    <div className=text-gray-400 text-sm>Active Calendars</div>
+                  </div>
+                  <div className=""bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
+                    </div><div className=text-3xl font-bold text-white mb-2 >{analytics.timelinesCount.toLocaleString()}</div>
+                    <div className=text-gray-400 text-sm>Timelines</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
+                    </div><div className=""text-3xl font-bold text-white mb-2>{analytics.aiOptimizationScore}%</div>
+                    <div className=text-gray-400 text-sm >AI Optimization Score</div>
                   </div>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
-                  <h3 className="text-xl font-semibold text-white mb-6>AI Insights</h3>"
-                  <div className=""space-y-4">
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
+                  <h3 className=text-xl font-semibold text-white mb-6>AI Insights</h3>
+                  <div className=""space-y-4>
                     {analytics.aiInsights.map((insight) => (
-                      </div><div key={insight.id} className="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-lg p-4"">
-                        <div className="flex items-start justify-between mb-2>"
-                          <h4 className="text-white font-semibold>{insight.title}</h4>"
+                      </div><div key={insight.id} className="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 rounded-lg p-4 >
+                        <div className="flex items-start justify-between mb-2>
+                          <h4 className=text-white font-semibold>{insight.title}</h4>
                           
                           }`}>
                             {insight.impact}
                           </span>
                         </div>
-                        <p className="text-gray-300 text-sm mb-3"">{insight.description}</p>
-                        <div className="text-xs text-gray-400 mb-2>
+                        <p className=text-gray-300 text-sm mb-3 >{insight.description}</p>
+                        <div className=text-xs text-gray-400 mb-2>
                           Confidence  {Math.round(insight.confidence * 100)}%
-                        </div>"
-                        <div className="text-xs text-gray-400>
+                        </div>
+                        <div className=text-xs text-gray-400>
                           <strong>Recommendations </strong> {insight.recommendations.join(', ')}
                         </div>
                       </div>
@@ -934,23 +926,21 @@ const AIPoweredEventCalendarPage: NextPage = () => {
       </div>
 
       {/* CTA Section */}"
-      <div className=""bg-gradient-to-r" from-emerald-600/20 to-teal-600/20 mt-16>
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36"">
-          <div className="text-center>"
-            <h2 className="text-3xl font-bold text-white mb-4>
+      <div className=""bg-gradient-to-r from-emerald-600/20 to-teal-600/20 mt-16>
+        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36 >
+          <div className="text-center>
+            <h2 className=text-3xl font-bold text-white mb-4>
               Ready to Optimize Your Events?
-            </h2>"
-            <p className=""text-xl" text-gray-300 mb-8 max-w-2xl:mx-auto>
+            </h2>
+            <p className=""text-xl text-gray-300 mb-8 max-w-2xl:mx-auto>
               Start your event management journey with our AI-powered calendar system 
               and streamline your scheduling and timeline tracking.
             </p>
-            <div className="flex flex-col sm flex-row gap-4 justify-center"">
-              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-emerald-500/25 transform hover scale-105 />
-                Start Planning
-              </Link>"
-              <Link href=/talent-directory className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm"" />
-                Learn More
-              </Link>
+            <div className="flex flex-col sm flex-row gap-4 justify-center >
+              <Link href="/ai-service-matcher" className=bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-emerald-500/25 transform hover scale-105 >Start Planning
+              </Link href="/ai-service-matcher" className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-emerald-500/25 transform hover scale-105 ></Link>
+              <Link href=/talent-directory className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm  >Learn More
+              </Link href=/talent-directory className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm"" ></Link>
             </div>
           </div>
         </div>

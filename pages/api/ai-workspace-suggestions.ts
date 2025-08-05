@@ -174,8 +174,8 @@ Format each suggestion as a JSON object with:
     const completion = await openai.chat.completions.create({
       model: 'gpt-4',
       messages: [
-        { role: 'system', content: systemPrompt }
-        { role: 'user', content: prompt }
+        { role: 'system', content: systemPrompt },
+    { role: 'user', content: prompt }
       ],
       temperature: 0.7,
       max_tokens: 1000

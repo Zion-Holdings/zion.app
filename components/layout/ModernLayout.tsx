@@ -10,10 +10,9 @@ const ModernLayout: React.FC<ModernLayoutProps> = ({ children }) => {
   const router = useRouter()
 
   return (
-    <div className="flex h-screen bg-gray-50">
-      <Sidebar />
-      <main className="flex-1 overflow-auto">
-        <div className="min-h-screen">
+    <div className="flex h-screen bg-gray-50>
+      <Sidebar > </Sidebar ><main className="flex-1 overflow-auto">
+        <div className="min-h-screen>
           {children}
         </div>
       </main>

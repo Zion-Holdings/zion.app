@@ -184,7 +184,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
           id: '5',
           name: 'Google Pixel 8',
           type: 'smartphone',
-          screenSize: '6.2"',
+          screenSize: '6.2',
           resolution: '2400 x 1080',
           pixelDensity: 428,
           userAgent: 'Mozilla/5.0 (Linux; Android 14; Pixel 8)',
@@ -303,8 +303,8 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
           trend: 'down',
           deviceType: 'smartphone',
           lastUpdated: new Date(
-        }
-        {
+        },
+    {
           id: '3',
           metric: 'Battery Efficiency',
           current: 85.2,
@@ -323,8 +323,8 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
           trend: 'down',
           deviceType: 'smartphone',
           lastUpdated: new Date(
-        }
-        {
+        },
+    {
           id: '5',
           metric: 'User Engagement',
           current: 78.3,
@@ -509,18 +509,18 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
       </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
-        <div className="fixed inset-0 z-0>"
-          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
+        <div className=fixed inset-0 z-0>
+          </div><div className=""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
         </div>
       
-        <div className="text-center>"
+        <div className=text-center>
           </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>"
             <svg className=""animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle className="opacity-25 cx=12 cy=12 r=""10" stroke="currentColor" strokeWidth="4"></circle>
-              <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              <circle className="opacity-25 cx=12 cy=12 r= 10" stroke="currentColor" strokeWidth="4></circle>
+              <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path>
             </svg>
-            <span className="text-lg font-medium>Loading AI-Powered Mobile Responsive...</span>
+            <span className=text-lg font-medium>Loading AI-Powered Mobile Responsive...</span>
           </div>
         </div>
       </div>
@@ -528,70 +528,60 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
   }
 
   return ("
-    <div className="relative z-10 container-responsive py-8>
+    <div className=relative z-10 container-responsive py-8>
       <Head>
-        <title>AI-Powered Mobile Responsive - Zion</title>"
-        <meta name=description"" content="Intelligent mobile optimization with AI-driven responsive design, performance monitoring, and adaptive layouts" />
-        <meta name="keywords" content="AI mobile responsive, mobile optimization, responsive design, mobile performance, Zion" />
-        <link rel="icon" href="/favicon.ico" />
-      
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
+        <title>AI-Powered Mobile Responsive - Zion</title>
+        <meta name=description"" content="Intelligent mobile optimization with AI-driven responsive design, performance monitoring, and adaptive layouts > </meta name=description"" content="Intelligent mobile optimization with AI-driven responsive design, performance monitoring, and adaptive layouts" ><meta name="keywords" content="AI mobile responsive, mobile optimization, responsive design, mobile performance, Zion > </meta name="keywords" content="AI mobile responsive, mobile optimization, responsive design, mobile performance, Zion" ><link rel="icon" href="/favicon.ico > </link rel="icon" href="/favicon.ico" ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className=""flex" justify-between h-16>
-            <div className="flex items-center>"
-              <Link href=/ className=""flex-shrink-0 />
-                <h1 className="text-2xl font-bold text-white>"
-                  <span className=""text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
+            <div className="flex items-center>
+              <Link href=/ className="flex-shrink-0 > </Link href=/ className=""flex-shrink-0 ><h1 className="text-2xl font-bold text-white>
+                  <span className=""text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
             
-            <div className="hidden md flex items-center space-x-8"">
-              <Link href="/ai-powered-multi-language" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
-                Languages
-              </Link>"
-              <Link href=/ai-powered-seo className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
-                SEO
-              </Link>"
-              <Link href=/ai-powered-automation"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
-                Automation
-              </Link>"
-              <Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
-                Login
-              </Link>
+            <div className="hidden md flex items-center space-x-8 >
+              <Link href="/ai-powered-multi-language" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Languages
+              </Link href="/ai-powered-multi-language" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
+              <Link href=/ai-powered-seo className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >SEO
+              </Link href=/ai-powered-seo className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
+              <Link href=/ai-powered-automation"" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Automation
+              </Link href=/ai-powered-automation  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
+              <Link href=/auth/login className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login
+              </Link href=/auth/login className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
             </div>
           </div>
         </div>
       </nav>
-"
-      <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-8>
         {/* Header */}
-        </div><div className="text-center mb-8>"
-          <h1 className="text-4xl md text-5xl font-bold text-white mb-4>
+        </div><div className="text-center mb-8>
+          <h1 className=text-4xl md text-5xl font-bold text-white mb-4>
             AI-Powered Mobile Responsive
-          </h1>"
-          <p className=""text-xl" text-gray-300 max-w-3xl mx-auto>
+          </h1>
+          <p className=""text-xl text-gray-300 max-w-3xl mx-auto>
             Intelligent mobile optimization with AI-driven responsive design, 
             performance monitoring, and adaptive layouts for optimal mobile experience.
           </p>
         </div>
 
         {/* Tab Selector */}
-        <div className="flex justify-center mb-8"">
+        <div className=flex justify-center mb-8 >
           </div><div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-lg:p-1>
             {[
               { id: 'overview', name: 'Overview', icon: '📊' },
-{ id: 'devices', name: 'Devices', icon: '📱' }
-              { id: 'breakpoints', name: 'Breakpoints', icon: '📐' },
-{ id: 'performance', name: 'Performance', icon: '⚡' }
-              { id  'optimizations', name  'Optimizations', icon  '🔧' }
+{ id: 'devices', name: 'Devices', icon: '📱' },
+    { id: 'breakpoints', name: 'Breakpoints', icon: '📐' },
+{ id: 'performance', name: 'Performance', icon: '⚡' },
+    { id  'optimizations', name  'Optimizations', icon  '🔧' }
             ].map((tab) => (
               
                 onClick={() => setSelectedView(tab.id as any)}"
-                className="{`flex items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${
+                className={`flex items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${
                   selectedView === tab.id
                     ? 'bg-purple-600 text-white'
                       'text-gray-300 hover text-white hover bg-white/10'
@@ -606,25 +596,25 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
 
         {/* Performance Metrics Overview */},
 {selectedView === 'overview' && ("
-          <div className=""grid" grid-cols-1 md:grid-cols-3 gap-6 mb-8>
+          <div className=""grid grid-cols-1 md:grid-cols-3 gap-6 mb-8>
             {performanceMetrics.map((metric) => (
               </div><div key={metric.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6">
-                <div className="flex items-center justify-between mb-4>"
-                  <h3 className="text-lg font-semibold text-white>{metric.metric}</h3>"
-                  <span className=""text-2xl">{getTrendIcon(metric.trend)}</span>
+                <div className="flex items-center justify-between mb-4>
+                  <h3 className=text-lg font-semibold text-white>{metric.metric}</h3>
+                  <span className=""text-2xl>{getTrendIcon(metric.trend)}</span>
                 </div>
                 
-                <div className=mb-4">
-                  </div><div className="text-3xl font-bold text-white mb-2>{metric.current}</div>"
-                  <p className="text-sm text-gray-400">Target: {metric.target}</p>
+                <div className=mb-4>
+                  </div><div className=text-3xl font-bold text-white mb-2>{metric.current}</div>
+                  <p className="text-sm text-gray-400>Target: {metric.target}</p>
                 </div>
                 
-                <div className="flex items-center justify-between text-sm>"
-                  <span className={`${getPerformanceColor(metric.current " metric.target)}`}>
+                <div className="flex items-center justify-between text-sm>
+                  <span className={`${getPerformanceColor(metric.current  metric.target)}`}>
                     {metric.improvement > 0 ? '+' : ''},
 {metric.improvement.toFixed(1)}%
                   </span>
-                  <span className="text-gray-400>{metric.deviceType}</span>
+                  <span className=text-gray-400>{metric.deviceType}</span>
                 </div>
               </div>
             ))}
@@ -633,12 +623,12 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
 
         {/* Search and Filters */},
 {selectedView === 'devices' && ("
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8>"
+          <div className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8>
             </div><div className=""grid" grid-cols-1 lg:grid-cols-4 gap-4>
               <div className=lg:col-span-2">
                 
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus outline-none focus border-purple-500 transition-colors
+                  className=w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus outline-none focus border-purple-500 transition-colors
                 />
               </div>
               
@@ -647,22 +637,22 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
                   onChange={(e) => setFilterDeviceType(e.target.value)}"
                   className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500 transition-colors
                 >"
-                  <option value=all"">All Devices</option>
-                  <option value="smartphone">Smartphones</option>
-                  <option value="tablet">Tablets</option>
-                  <option value="foldable">Foldables</option>
+                  <option value=all">All Devices</option>
+                  <option value="smartphone>Smartphones</option>
+                  <option value="tablet>Tablets</option>
+                  <option value="foldable>Foldables</option>
                 </select>
               </div>
               
               <div>
                 
                   onChange={(e) => setSortBy(e.target.value as any)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500 transition-colors
+                  className=w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500 transition-colors
                 >
-                  <option value=recent>Sort by Name</option>"
-                  <option value=performance">Sort by Performance</option>
-                  <option value="users">Sort by Users</option>
-                  <option value="market">Sort by Market Share</option>
+                  <option value=recent>Sort by Name</option>
+                  <option value=performance>Sort by Performance</option>
+                  <option value="users>Sort by Users</option>
+                  <option value="market>Sort by Market Share</option>
                 </select>
               </div>
             </div>
@@ -672,74 +662,73 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
         {/* Devices List */},
 {selectedView === 'devices' && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
-            {filteredDevices.map((device) => ("
-              </div><div key={device.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
-                <div className=""flex" items-center justify-between mb-4>
-                  </div><div className="flex items-center space-x-3"">
-                    <div className="text-3xl>{getDeviceTypeIcon(device.type)}</div>
-                    <div>"
-                      <h3 className="text-lg font-semibold text-white>{device.name}</h3>"
-                      <p className=""text-gray-300" text-sm:capitalize>{device.type}</p>
+            {filteredDevices.map((device) => (
+              </div><div key={device.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
+                <div className=""flex items-center justify-between mb-4>
+                  </div><div className="flex items-center space-x-3 >
+                    <div className=text-3xl>{getDeviceTypeIcon(device.type)}</div>
+                    <div>
+                      <h3 className=text-lg font-semibold text-white>{device.name}</h3>
+                      <p className=""text-gray-300 text-sm:capitalize>{device.type}</p>
                     </div>
                   </div>
-                  <span className=text-sm:text-gray-400">{device.marketShare}%</span>
+                  <span className=text-sm:text-gray-400>{device.marketShare}%</span>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 mb-4>
-                  </div><div>"
-                    <p className="text-sm text-gray-400">Screen</p>
-                    <p className="text-lg font-semibold text-blue-400>{device.screenSize}</p>
+                <div className=grid grid-cols-2 gap-4 mb-4>
+                  </div><div>
+                    <p className="text-sm text-gray-400>Screen</p>
+                    <p className=text-lg font-semibold text-blue-400>{device.screenSize}</p>
                   </div>
-                  <div>"
-                    <p className=text-sm:text-gray-400"">Resolution</p>
-                    <p className="text-lg font-semibold text-green-400>{device.resolution}</p>
+                  <div>
+                    <p className=text-sm:text-gray-400">Resolution</p>
+                    <p className=text-lg font-semibold text-green-400>{device.resolution}</p>
                   </div>
                 </div>
-"
-                <div className="space-y-2 text-sm mb-4>"
+                <div className="space-y-2 text-sm mb-4>
                   </div><div className=""flex" justify-between>
-                    <span className=text-gray-400">Load Time</span>
-                    <span className="{`${getPerformanceColor(device.performance.loadTime, 2.0)}`}>
+                    <span className=text-gray-400>Load Time</span>
+                    <span className={`${getPerformanceColor(device.performance.loadTime, 2.0)}`}>
                       {device.performance.loadTime}s
                     </span>
-                  </div>"
-                  <div className="flex justify-between>"
-                    <span className=""text-gray-400">Memory Usage</span>
-                    <span className=text-white">{device.performance.memoryUsage}%</span>
                   </div>
                   <div className="flex justify-between>"
-                    <span className="text-gray-400">Battery Impact</span>
-                    <span className="text-white">{device.performance.batteryImpact}%</span>
+                    <span className=""text-gray-400>Memory Usage</span>
+                    <span className=text-white>{device.performance.memoryUsage}%</span>
+                  </div>
+                  <div className="flex justify-between>
+                    <span className="text-gray-400>Battery Impact</span>
+                    <span className="text-white>{device.performance.batteryImpact}%</span>
                   </div>
                 </div>
 
                 <div className=mb-4">
-                  <p className="text-sm:text-gray-400 mb-2>Optimizations </p>"
-                  <div className="grid grid-cols-2 gap-2 text-xs>"
-                    </div><div className=""flex" items-center space-x-1>
+                  <p className=text-sm:text-gray-400 mb-2>Optimizations </p>
+                  <div className="grid grid-cols-2 gap-2 text-xs>
+                    </div><div className=""flex items-center space-x-1>
                       <span>{getOptimizationIcon(device.optimization.imagesOptimized)}</span>
-                      <span className=text-gray-300">Images</span>
+                      <span className=text-gray-300>Images</span>
                     </div>
-                    <div className="flex items-center space-x-1>
-                      <span>{getOptimizationIcon(device.optimization.lazyLoading)}</span>"
-                      <span className="text-gray-300">Lazy Loading</span>
+                    <div className=flex items-center space-x-1>
+                      <span>{getOptimizationIcon(device.optimization.lazyLoading)}</span>
+                      <span className="text-gray-300>Lazy Loading</span>
                     </div>
-                    <div className="flex items-center space-x-1>
-                      <span>{getOptimizationIcon(device.optimization.codeSplitting)}</span>"
-                      <span className=text-gray-300"">Code Splitting</span>
+                    <div className=flex items-center space-x-1>
+                      <span>{getOptimizationIcon(device.optimization.codeSplitting)}</span>
+                      <span className=text-gray-300">Code Splitting</span>
                     </div>
-                    <div className="flex items-center space-x-1>
-                      <span>{getOptimizationIcon(device.optimization.cachingEnabled)}</span>"
-                      <span className="text-gray-300">Caching</span>
+                    <div className=flex items-center space-x-1>
+                      <span>{getOptimizationIcon(device.optimization.cachingEnabled)}</span>
+                      <span className="text-gray-300>Caching</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex space-x-3>"
-                  <button className=""bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105">
+                <div className="flex space-x-3>
+                  <button className=""bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
                     View Details
                   </button>
-                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
+                  <button className=border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
                     Test Device
                   </button>
                 </div>
@@ -750,54 +739,52 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
 
         {/* Breakpoints */},
 {selectedView === 'breakpoints' && ("
-          <div className="space-y-6">
+          <div className="space-y-6>
             {breakpoints.map((breakpoint) => (
-              </div><div key={breakpoint.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
-                <div className=""flex" items-start justify-between mb-4">
+              </div><div key={breakpoint.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
+                <div className=""flex" items-start justify-between mb-4>
                   </div><div>
-                    <h3 className="text-lg font-semibold text-white mb-2>{breakpoint.name}</h3>"
-                    <p className="text-gray-300 text-sm>
+                    <h3 className=text-lg font-semibold text-white mb-2>{breakpoint.name}</h3>
+                    <p className=text-gray-300 text-sm>
                       {breakpoint.minWidth}px - {breakpoint.maxWidth}px ({breakpoint.deviceType}
                     </p>
-                  </div>"
-                  <div className=""text-right">
-                    </div><div className="text-2xl font-bold text-white"">{breakpoint.activeUsers.toLocaleString()}</div>
-                    <p className="text-sm text-gray-400>Active Users</p>
+                  </div>
+                  <div className=""text-right>
+                    </div><div className=text-2xl font-bold text-white >{breakpoint.activeUsers.toLocaleString()}</div>
+                    <p className=text-sm text-gray-400>Active Users</p>
                   </div>
                 </div>
-"
-                <div className="grid grid-cols-1 md grid-cols-3 gap-4 mb-4>
-                  </div><div>"
-                    <p className=""text-sm:text-gray-400>Load Time</p>
-                    <p className="text-lg font-semibold text-blue-400"">{breakpoint.performance.averageLoadTime}s</p>
+                <div className=grid grid-cols-1 md grid-cols-3 gap-4 mb-4>
+                  </div><div>
+                    <p className="text-sm:text-gray-400>Load Time</p>
+                    <p className=text-lg font-semibold text-blue-400 >{breakpoint.performance.averageLoadTime}s</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400>Success Rate</p>"
-                    <p className="text-lg font-semibold text-green-400>{breakpoint.performance.successRate}%</p>
+                    <p className=text-sm text-gray-400>Success Rate</p>
+                    <p className=text-lg font-semibold text-green-400>{breakpoint.performance.successRate}%</p>
                   </div>
-                  <div>"
-                    <p className=""text-sm:text-gray-400">Error Rate</p>
-                    <p className="text-lg font-semibold text-red-400"">{breakpoint.performance.errorRate}%</p>
+                  <div>
+                    <p className=""text-sm:text-gray-400>Error Rate</p>
+                    <p className=text-lg font-semibold text-red-400 >{breakpoint.performance.errorRate}%</p>
                   </div>
                 </div>
 
-                <div className="mb-4>"
-                  <p className="text-sm:text-gray-400 mb-2>Optimizations </p>"
+                <div className="mb-4>
+                  <p className=text-sm:text-gray-400 mb-2>Optimizations </p>
                   <ul className=""space-y-1">
                     {breakpoint.optimizations.map((opt, index) => (
-                      <li key={index} className="text-sm text-gray-300 flex items-center"">
-                        <span className="text-purple-400 mr-2>•</span>
+                      <li key={index} className="text-sm text-gray-300 flex items-center >
+                        <span className=text-purple-400 mr-2>•</span>
                         {opt}
                       </li>
                     ))}
                   </ul>
                 </div>
-"
                 <div className="flex space-x-3>"
-                  <button className=""bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
+                  <button className=""bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
                     View Details
                   </button>
-                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm"">
+                  <button className=border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm >
                     Test Breakpoint
                   </button>
                 </div>
@@ -809,75 +796,71 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
         {/* Layout Optimizations */},
 {selectedView === 'optimizations' && (
           <div className="space-y-6>
-            {layoutOptimizations.map((optimization) => ("
-              </div><div key={optimization.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
-                <div className=""flex" items-start justify-between mb-4>
+            {layoutOptimizations.map((optimization) => (
+              </div><div key={optimization.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
+                <div className=""flex items-start justify-between mb-4>
                   </div><div>
-                    <h3 className="text-lg font-semibold text-white mb-2"">{optimization.page}</h3>
-                    <p className="text-gray-300 text-sm capitalize>{optimization.deviceType}</p>
-                  </div>"
-                  <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(optimization.status)}`}>
+                    <h3 className=text-lg font-semibold text-white mb-2 >{optimization.page}</h3>
+                    <p className=text-gray-300 text-sm capitalize>{optimization.deviceType}</p>
+                  </div>
+                  <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(optimization.status)}`}>
                     {optimization.status.toUpperCase()}
                   </span>
                 </div>
-"
                 <div className=""mb-4">
-                  <p className="text-sm text-gray-400 mb-2"">Original Layout:</p>
-                  <p className="text-white text-sm>{optimization.originalLayout}</p>
+                  <p className=text-sm text-gray-400 mb-2 >Original Layout:</p>
+                  <p className=text-white text-sm>{optimization.originalLayout}</p>
                 </div>
-"
                 <div className="mb-4">
-                  <p className="text-sm:text-gray-400 mb-2>Optimized Layout </p>"
-                  <p className=""text-white" text-sm">{optimization.optimizedLayout}</p>
+                  <p className=text-sm:text-gray-400 mb-2>Optimized Layout </p>
+                  <p className=""text-white" text-sm>{optimization.optimizedLayout}</p>
                 </div>
 
-                <div className="grid grid-cols-2 md grid-cols-4 gap-4 mb-4>
-                  </div><div>"
-                    <p className="text-sm text-gray-400">Load Time</p>
-                    <p className="text-lg font-semibold text-green-400>+{optimization.improvements.loadTime}%</p>
+                <div className=grid grid-cols-2 md grid-cols-4 gap-4 mb-4>
+                  </div><div>
+                    <p className="text-sm text-gray-400>Load Time</p>
+                    <p className=text-lg font-semibold text-green-400>+{optimization.improvements.loadTime}%</p>
                   </div>
-                  <div>"
-                    <p className=text-sm:text-gray-400"">Render Time</p>
-                    <p className="text-lg font-semibold text-blue-400>+{optimization.improvements.renderTime}%</p>
+                  <div>
+                    <p className=text-sm:text-gray-400">Render Time</p>
+                    <p className=text-lg font-semibold text-blue-400>+{optimization.improvements.renderTime}%</p>
                   </div>
-                  <div>"
-                    <p className="text-sm text-gray-400">User Experience</p>
-                    <p className="text-lg font-semibold text-purple-400>+{optimization.improvements.userExperience}%</p>
+                  <div>
+                    <p className="text-sm text-gray-400>User Experience</p>
+                    <p className=text-lg font-semibold text-purple-400>+{optimization.improvements.userExperience}%</p>
                   </div>
-                  <div>"
-                    <p className=text-sm:text-gray-400"">Accessibility</p>
-                    <p className="text-lg font-semibold text-orange-400>+{optimization.improvements.accessibility}%</p>
+                  <div>
+                    <p className=text-sm:text-gray-400">Accessibility</p>
+                    <p className=text-lg font-semibold text-orange-400>+{optimization.improvements.accessibility}%</p>
                   </div>
                 </div>
-"
                 <div className="flex items-center space-x-4 mb-4>
                   {optimization.aiFeatures.adaptiveLayout && ("
-                    <span className=""text-xs" bg-blue-500/20 text-blue-300 px-4 py-3 rounded border border-blue-500/30>
+                    <span className=""text-xs bg-blue-500/20 text-blue-300 px-4 py-3 rounded border border-blue-500/30>
                       Adaptive Layout
                     </span>
                   )},
 {optimization.aiFeatures.intelligentScaling && (
-                    <span className="text-xs bg-green-500/20 text-green-300 px-4 py-3 rounded border border-green-500/30"">
+                    <span className=text-xs bg-green-500/20 text-green-300 px-4 py-3 rounded border border-green-500/30 >
                       Intelligent Scaling
                     </span>
-                  )}
-                  {optimization.aiFeatures.touchOptimization && (
-                    <span className="text-xs bg-purple-500/20 text-purple-300 px-4 py-3 rounded border border-purple-500/30>
+                  )},
+    {optimization.aiFeatures.touchOptimization && (
+                    <span className=text-xs bg-purple-500/20 text-purple-300 px-4 py-3 rounded border border-purple-500/30>
                       Touch Optimization
                     </span>
                   )},
 {optimization.aiFeatures.gestureRecognition && ("
-                    <span className="text-xs bg-orange-500/20 text-orange-300 px-4 py-3 rounded border border-orange-500/30>
+                    <span className=text-xs bg-orange-500/20 text-orange-300 px-4 py-3 rounded border border-orange-500/30>
                       Gesture Recognition
                     </span>
                   )}
                 </div>
-"
                 <div className=""flex" space-x-3>
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"">
+                  <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105 >
                     Apply Optimization
                   </button>
-                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
+                  <button className=border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
                     Test Layout
                   </button>
                 </div>
@@ -887,41 +870,38 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
         )}
 
         {/* Call to Action */}"
-        <div className="mt-12 text-center>"
+        <div className=mt-12 text-center>
           </div><div className=""bg-gradient-to-br" from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl:p-8>
-            <h2 className="text-3xl font-bold text-white mb-4"">
+            <h2 className=text-3xl font-bold text-white mb-4 >
               Optimize for Mobile with AI
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
+            <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
               Leverage intelligent mobile optimization to enhance user experience, 
               improve performance, and ensure seamless mobile accessibility.
-            </p>"
+            </p>
             <div className="flex flex-col sm flex-row gap-4 justify-center>"
-              <button className=""bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
+              <button className=""bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
                 Start Optimization
               </button>
-              <Link href=/service-marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
-                View Services
-              </Link>
+              <Link href=/service-marketplace" className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Services
+              </Link href=/service-marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
             </div>
           </div>
         </div>
       </div>
     
         {/* Mobile Navigation */}"
-        <div className="lg hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50>"
+        <div className=lg hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50>
           </div><div className=""flex" justify-around items-center py-2>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white"">
-              <Home className="w-5 h-5 />"
-              <span className="text-xs">Home</span>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white >
+              <Home className=w-5 h-5 >
+              </Home className="w-5 h-5 ><span className="text-xs>Home</span>
+            </button>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white>
+              <Search className=""w-5" h-5 > </Search className=""w-5" h-5" ><span className=text-xs>Search</span>
             </button>
             <button className="flex flex-col items-center p-2 text-gray-400 hover text-white>"
-              <Search className=""w-5" h-5" />
-              <span className="text-xs>Search</span>
-            </button>"
-            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white>"
-              <User className=""w-5" h-5 />
-              <span className=text-xs">Profile</span>
+              <User className=""w-5 h-5 > </User className=""w-5" h-5 ><span className=text-xs>Profile</span>
             </button>
           </div>
         </div>

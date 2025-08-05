@@ -297,7 +297,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
     {
       id: '1',
       question: 'How do I reset my password?',
-      answer: 'You can reset your password by clicking the "Forgot Password" link on the login page and following the instructions sent to your email.',
+      answer: 'You can reset your password by clicking the "Forgot Password link on the login page and following the instructions sent to your email.',
       category: 'account',
       status: 'published',
       helpfulVotes: 234,
@@ -433,40 +433,38 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
       </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
-        <div className="fixed inset-0 z-0>"
-          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
+        <div className=fixed inset-0 z-0>
+          </div><div className=""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
         </div>
       
       <Head>
         <title>AI-Powered Knowledge Base & Documentation System | Zion Tech Group</title>
         
               manual creation, help center management, FAQ systems, and wiki functionality powered by AI." />
-        <meta name="keywords" content="knowledge base, documentation, tutorial, FAQ, wiki, AI knowledge" />
-      
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
+        <meta name="keywords" content="knowledge base, documentation, tutorial, FAQ, wiki, AI knowledge > </meta name="keywords" content="knowledge base, documentation, tutorial, FAQ, wiki, AI knowledge" ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Header */}
-      <div className="relative overflow-hidden>"
-        </div><div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-indigo-600/20></div>"
-        <div className=""relative" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44>
+      <div className=relative overflow-hidden>
+        </div><div className=absolute inset-0 bg-gradient-to-r from-blue-600/20 to-indigo-600/20></div>
+        <div className=""relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44>
           </div><div className=text-center">
-            <h1 className="text-5xl md text-6xl font-bold text-white mb-6>
+            <h1 className=text-5xl md text-6xl font-bold text-white mb-6>
               AI-Powered Knowledge Base & Documentation System
-            </h1>"
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
+            </h1>
+            <p className=text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
               Knowledge management, documentation creation, guide development, tutorial management, 
               manual creation, help center management, FAQ systems, and wiki functionality powered by AI.
-            </p>"
-            <div className=""flex" flex-wrap justify-center gap-4>
-              </div><div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3"">
-                <span className="text-white font-semibold>📚 Knowledge Management</span>
-              </div>"
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3>"
-                <span className=""text-white" font-semibold>📖 Documentation</span>
+            </p>
+            <div className=""flex flex-wrap justify-center gap-4>
+              </div><div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >
+                <span className=text-white font-semibold>📚 Knowledge Management</span>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3"">
-                <span className="text-white font-semibold>🎓 Tutorials</span>
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3>"
+                <span className=""text-white font-semibold>📖 Documentation</span>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm:rounded-lg px-6 py-3 >
+                <span className=text-white font-semibold>🎓 Tutorials</span>
               </div>
             </div>
           </div>
@@ -475,17 +473,17 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
 
       {/* Main Content */}"
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
-        {isLoading ? ("
-          </div><div className=""flex" justify-center items-center py-40>
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500""></div>
+        {isLoading ? (
+          </div><div className=""flex justify-center items-center py-40>
+            <div className=animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 ></div>
           </div>
         ) : (
-          <>
+          </>
             {/* Tabs */}
             <div className="flex flex-wrap justify-center mb-8>
               
                 onClick={() => setActiveTab('articles')}"
-                className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'articles'
                     ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'
                       'bg-white/10 text-gray-300 hover bg-white/20'
@@ -495,7 +493,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
               </button>
               
                 onClick={() => setActiveTab('documentation')}"
-                className=""{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                className=""{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'documentation'
                     ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -505,7 +503,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
               </button>
               
                 onClick={() => setActiveTab('tutorials')}
-                className={`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'tutorials'
                     ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -515,7 +513,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
               </button>
               
                 onClick={() => setActiveTab('faqs')}
-                className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'faqs'
                     ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'
                       'bg-white/10 text-gray-300 hover bg-white/20'
@@ -525,7 +523,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
               </button>
               
                 onClick={() => setActiveTab('wikis')}"
-                className="{`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
                   activeTab === 'wikis'
                     ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'
                       'bg-white/10 text-gray-300 hover bg-white/20'
@@ -535,7 +533,7 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
               </button>
               
                 onClick={() => setActiveTab('analytics')}"
-                className=""{`px-6" py-3 rounded-lg:font-semibold transition-all duration-300 ${
+                className=""{`px-6 py-3 rounded-lg:font-semibold transition-all duration-300 ${
                   activeTab === 'analytics'
                     ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -547,94 +545,92 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
 
             {/* Articles Tab */},
 {activeTab === 'articles' && (
-              <div className=space-y-8">
+              <div className=space-y-8>
                 {/* Controls */}
-                </div><div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6>"
-                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md space-y-0>"
+                </div><div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6>
+                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md space-y-0>
                     </div><div className=""flex" items-center space-x-4>
                       
                         onChange={(e) => setSelectedCategory(e.target.value)}
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-blue-500""
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-blue-500 
                       >
-                        <option value="all" className="bg-slate-800>All Categories</option>"
-                        <option value=guide className="bg-slate-800">Guide</option>
-                        <option value=tutorial" className="bg-slate-800>Tutorial</option>"
-                        <option value=manual className="bg-slate-800">Manual</option>
-                        <option value=faq" className="bg-slate-800>FAQ</option>"
-                        <option value=wiki className="bg-slate-800">Wiki</option>
-                        <option value=documentation" className="bg-slate-800>Documentation</option>
+                        <option value="all" className=bg-slate-800>All Categories</option>
+                        <option value=guide className="bg-slate-800>Guide</option>
+                        <option value=tutorial" className=bg-slate-800>Tutorial</option>
+                        <option value=manual className="bg-slate-800>Manual</option>
+                        <option value=faq" className=bg-slate-800>FAQ</option>
+                        <option value=wiki className="bg-slate-800>Wiki</option>
+                        <option value=documentation" className=bg-slate-800>Documentation</option>
                       </select>
-                    </div>"
-                    <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover from-blue-700 hover to-indigo-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300>
+                    </div>
+                    <button className=bg-gradient-to-r from-blue-600 to-indigo-600 hover from-blue-700 hover to-indigo-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300>
                       Create Article
                     </button>
                   </div>
                 </div>
 
                 {/* Articles Grid */}"
-                <div className=""grid" grid-cols-1 lg:grid-cols-2 gap-6>
+                <div className=""grid grid-cols-1 lg:grid-cols-2 gap-6>
                   {filteredArticles.map((article) => (
-                    </div><div key={article.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"">
-                      <div className="flex items-start justify-between mb-4>
-                        </div><div>"
-                          <h3 className="text-xl font-semibold text-white mb-2>{article.title}</h3>"
-                          <p className=""text-gray-300" text-sm:capitalize>{article.category} • {article.priority} priority</p>
+                    </div><div key={article.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10 >
+                      <div className=flex items-start justify-between mb-4>
+                        </div><div>
+                          <h3 className=text-xl font-semibold text-white mb-2>{article.title}</h3>
+                          <p className=""text-gray-300 text-sm:capitalize>{article.category} • {article.priority} priority</p>
                         </div>
                         <div className=text-right">
-                          <span className="{`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(article.status)}`}>
+                          <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(article.status)}`}>
                             {article.status}
-                          </span>"
+                          </span>
                           <div className="mt-2">
-                            <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(article.priority)}`}>
+                            <span className={`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(article.priority)}`}>
                               {article.priority}
                             </span>
                           </div>
                         </div>
                       </div>
-"
                       <div className=mb-4"">
-                        <p className="text-gray-300 text-sm>{article.description}</p>
+                        <p className=text-gray-300 text-sm>{article.description}</p>
                       </div>
-"
-                      <div className="grid grid-cols-2 gap-4 mb-4>"
+                      <div className="grid grid-cols-2 gap-4 mb-4>
                         </div><div className=""bg-white/5" rounded-lg:p-4>
-                          <div className="text-sm text-gray-400 mb-1"">Views</div>
-                          <div className="text-2xl font-bold text-white>{article.views.toLocaleString()}</div>
-                        </div>"
-                        <div className="bg-white/5 rounded-lg p-4>"
-                          </div><div className=""text-sm:text-gray-400" mb-1>Helpful Votes</div>
-                          <div className="text-2xl font-bold text-white"">{article.helpfulVotes}</div>
+                          <div className=text-sm text-gray-400 mb-1 >Views</div>
+                          <div className=text-2xl font-bold text-white>{article.views.toLocaleString()}</div>
+                        </div>
+                        <div className="bg-white/5 rounded-lg p-4>
+                          </div><div className=""text-sm:text-gray-400 mb-1>Helpful Votes</div>
+                          <div className=text-2xl font-bold text-white >{article.helpfulVotes}</div>
                         </div>
                       </div>
 
                       {/* AI Analysis */}
-                      <div className="mb-4>"
-                        <h4 className="text-lg font-semibold text-white mb-3>AI Analysis</h4>"
-                        <div className=""bg-gradient-to-r" from-blue-600/20 to-indigo-600/20 rounded-lg:p-4>
-                          </div><div className="grid grid-cols-2 gap-4 text-sm"">
+                      <div className="mb-4>
+                        <h4 className=text-lg font-semibold text-white mb-3>AI Analysis</h4>
+                        <div className=""bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-lg:p-4>
+                          </div><div className=grid grid-cols-2 gap-4 text-sm >
                             <div>
-                              </div><div className="text-gray-400 mb-1>Readability Score</div>"
-                              <div className="text-white font-semibold>{article.aiAnalysis.readabilityScore}%</div>
+                              </div><div className=text-gray-400 mb-1>Readability Score</div>
+                              <div className=text-white font-semibold>{article.aiAnalysis.readabilityScore}%</div>
                             </div>
-                            <div>"
-                              </div><div className=""text-gray-400" mb-1>Helpfulness Score</div>
-                              <div className="text-white font-semibold"">{article.aiAnalysis.helpfulnessScore}%</div>
+                            <div>
+                              </div><div className=""text-gray-400 mb-1>Helpfulness Score</div>
+                              <div className=text-white font-semibold >{article.aiAnalysis.helpfulnessScore}%</div>
                             </div>
                           </div>
-                          <div className="mt-3>"
-                            </div><div className="text-sm font-medium text-gray-400 mb-1>Recommendations </div>"
-                            <div className=""text-xs" text-gray-300>
+                          <div className=mt-3>
+                            </div><div className=text-sm font-medium text-gray-400 mb-1>Recommendations </div>
+                            <div className=""text-xs text-gray-300>
                               {article.aiAnalysis.recommendations.join(', ')}
                             </div>
                           </div>
                         </div>
                       </div>
 
-                      <div className="flex space-x-2"">
-                        <button className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover from-blue-700 hover to-indigo-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>
+                      <div className="flex space-x-2 >
+                        <button className=flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover from-blue-700 hover to-indigo-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>
                           View Article
-                        </button>"
-                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>
+                        </button>
+                        <button className=flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>
                           Edit Article
                         </button>
                       </div>
@@ -646,59 +642,59 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
 
             {/* Documentation Tab */},
 {activeTab === 'documentation' && ("
-              <div className=""space-y-8">
+              <div className=""space-y-8>
                 {documentation.map((doc) => (
-                  </div><div key={doc.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"">
-                    <div className="flex items-start justify-between mb-6>
-                      </div><div>"
-                        <h3 className="text-xl font-semibold text-white mb-2>{doc.title}</h3>"
-                        <p className=""text-gray-300" text-sm:capitalize>{doc.type} Documentation</p>
+                  </div><div key={doc.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10 >
+                    <div className=flex items-start justify-between mb-6>
+                      </div><div>
+                        <h3 className=text-xl font-semibold text-white mb-2>{doc.title}</h3>
+                        <p className=""text-gray-300 text-sm:capitalize>{doc.type} Documentation</p>
                       </div>
-                      <span className={`px-3" py-3 rounded-full text-sm font-medium ${getStatusColor(doc.status)}`}>
+                      <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(doc.status)}`}>
                         {doc.status}
                       </span>
                     </div>
 
-                    <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-6>"
+                    <div className=grid grid-cols-1 md grid-cols-4 gap-6 mb-6>
                       </div><div className="bg-white/5 rounded-lg p-4>"
-                        <div className=""text-sm:text-gray-400" mb-1>Total Views</div>
-                        <div className="text-2xl font-bold text-white"">{doc.analytics.totalViews.toLocaleString()}</div>
+                        <div className=""text-sm:text-gray-400 mb-1>Total Views</div>
+                        <div className=text-2xl font-bold text-white >{doc.analytics.totalViews.toLocaleString()}</div>
                       </div>
-                      <div className="bg-white/5 rounded-lg p-4>"
-                        </div><div className="text-sm text-gray-400 mb-1>Avg Time Spent</div>"
-                        <div className=""text-2xl" font-bold text-white>{doc.analytics.averageTimeSpent}m</div>
+                      <div className=bg-white/5 rounded-lg p-4>
+                        </div><div className=text-sm text-gray-400 mb-1>Avg Time Spent</div>
+                        <div className=""text-2xl font-bold text-white>{doc.analytics.averageTimeSpent}m</div>
                       </div>
-                      <div className="bg-white/5 rounded-lg p-4"">
-                        </div><div className="text-sm text-gray-400 mb-1>Completion Rate</div>"
-                        <div className="text-2xl font-bold text-white>{doc.analytics.completionRate}%</div>
-                      </div>"
-                      <div className=""bg-white/5" rounded-lg:p-4>
-                        </div><div className="text-sm text-gray-400 mb-1"">Sections</div>
-                        <div className="text-2xl font-bold text-white>{doc.sections.length}</div>
+                      <div className=bg-white/5 rounded-lg p-4 >
+                        </div><div className=text-sm text-gray-400 mb-1>Completion Rate</div>
+                        <div className=text-2xl font-bold text-white>{doc.analytics.completionRate}%</div>
+                      </div>
+                      <div className=""bg-white/5 rounded-lg:p-4>
+                        </div><div className=text-sm text-gray-400 mb-1 >Sections</div>
+                        <div className=text-2xl font-bold text-white>{doc.sections.length}</div>
                       </div>
                     </div>
 
                     {/* AI Optimization */}
-                    <div>"
-                      <h4 className="text-lg font-semibold text-white mb-3>AI Optimization</h4>"
-                      <div className=""bg-gradient-to-r" from-blue-600/20 to-indigo-600/20 rounded-lg:p-4>
-                        </div><div className="grid grid-cols-1 md grid-cols-3"" gap-4 text-sm">
+                    <div>
+                      <h4 className=text-lg font-semibold text-white mb-3>AI Optimization</h4>
+                      <div className=""bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-lg:p-4>
+                        </div><div className="grid grid-cols-1 md grid-cols-3  gap-4 text-sm>
                           <div>
-                            </div><div className="text-gray-400 mb-1>Optimization Score</div>"
-                            <div className="text-white font-semibold>{doc.aiOptimization.optimizationScore}%</div>
-                          </div>
-                          <div>"
-                            </div><div className=""text-gray-400" mb-1>Readability Score</div>
-                            <div className="text-white font-semibold"">{doc.aiOptimization.readabilityScore}%</div>
+                            </div><div className=text-gray-400 mb-1>Optimization Score</div>
+                            <div className=text-white font-semibold>{doc.aiOptimization.optimizationScore}%</div>
                           </div>
                           <div>
-                            </div><div className="text-gray-400 mb-1>Recommendations</div>"
-                            <div className="text-white font-semibold>{doc.aiOptimization.recommendations.length}</div>
+                            </div><div className=""text-gray-400 mb-1>Readability Score</div>
+                            <div className=text-white font-semibold >{doc.aiOptimization.readabilityScore}%</div>
                           </div>
-                        </div>"
-                        <div className=""mt-3">
-                          </div><div className="text-sm font-medium text-gray-400 mb-1"">Recommendations:</div>
-                          <div className="text-xs text-gray-300>
+                          <div>
+                            </div><div className=text-gray-400 mb-1>Recommendations</div>
+                            <div className=text-white font-semibold>{doc.aiOptimization.recommendations.length}</div>
+                          </div>
+                        </div>
+                        <div className=""mt-3>
+                          </div><div className=text-sm font-medium text-gray-400 mb-1 >Recommendations:</div>
+                          <div className=text-xs text-gray-300>
                             {doc.aiOptimization.recommendations.join(', ')}
                           </div>
                         </div>
@@ -711,66 +707,65 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
 
             {/* Tutorials Tab */},
 {activeTab === 'tutorials' && ("
-              <div className="space-y-8">
+              <div className="space-y-8>
                 {tutorials.map((tutorial) => (
-                  </div><div key={tutorial.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
-                    <div className=""flex" items-start justify-between mb-6">
+                  </div><div key={tutorial.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
+                    <div className=""flex" items-start justify-between mb-6>
                       </div><div>
-                        <h3 className="text-xl font-semibold text-white mb-2>{tutorial.title}</h3>"
-                        <p className="text-gray-300 text-sm capitalize>{tutorial.category} • {tutorial.difficulty}</p>
-                      </div>"
+                        <h3 className=text-xl font-semibold text-white mb-2>{tutorial.title}</h3>
+                        <p className=text-gray-300 text-sm capitalize>{tutorial.category} • {tutorial.difficulty}</p>
+                      </div>
                       <div className=""text-right">
-                        <span className={`px-3" py-3 rounded-full text-sm font-medium ${getStatusColor(tutorial.status)}`}>
+                        <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(tutorial.status)}`}>
                           {tutorial.status}
                         </span>
-                        <div className="mt-2>"
-                          <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getDifficultyColor(tutorial.difficulty)}`}>
+                        <div className="mt-2>
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${getDifficultyColor(tutorial.difficulty)}`}>
                             {tutorial.difficulty}
                           </span>
                         </div>
                       </div>
                     </div>
-"
-                    <div className=""grid" grid-cols-1 md:grid-cols-4 gap-6 mb-6>
-                      </div><div className="bg-white/5 rounded-lg p-4"">
-                        <div className="text-sm text-gray-400 mb-1>Completions</div>"
-                        <div className="text-2xl font-bold text-white>{tutorial.analytics.totalCompletions}</div>
-                      </div>"
-                      <div className=""bg-white/5" rounded-lg:p-4>
-                        </div><div className="text-sm text-gray-400 mb-1"">Success Rate</div>
-                        <div className="text-2xl font-bold text-white>{tutorial.analytics.successRate}%</div>
-                      </div>"
-                      <div className="bg-white/5 rounded-lg p-4>"
-                        </div><div className=""text-sm:text-gray-400" mb-1>Avg Time</div>
-                        <div className="text-2xl font-bold text-white"">{tutorial.analytics.averageCompletionTime}m</div>
+                    <div className=""grid grid-cols-1 md:grid-cols-4 gap-6 mb-6>
+                      </div><div className="bg-white/5 rounded-lg p-4 >
+                        <div className=text-sm text-gray-400 mb-1>Completions</div>
+                        <div className=text-2xl font-bold text-white>{tutorial.analytics.totalCompletions}</div>
                       </div>
-                      <div className="bg-white/5 rounded-lg p-4>"
-                        </div><div className="text-sm text-gray-400 mb-1>Steps</div>"
-                        <div className=""text-2xl" font-bold text-white>{tutorial.steps.length}</div>
+                      <div className=""bg-white/5 rounded-lg:p-4>
+                        </div><div className=text-sm text-gray-400 mb-1 >Success Rate</div>
+                        <div className=text-2xl font-bold text-white>{tutorial.analytics.successRate}%</div>
+                      </div>
+                      <div className="bg-white/5 rounded-lg p-4>
+                        </div><div className=""text-sm:text-gray-400 mb-1>Avg Time</div>
+                        <div className=text-2xl font-bold text-white >{tutorial.analytics.averageCompletionTime}m</div>
+                      </div>
+                      <div className=bg-white/5 rounded-lg p-4>
+                        </div><div className=text-sm text-gray-400 mb-1>Steps</div>
+                        <div className=""text-2xl font-bold text-white>{tutorial.steps.length}</div>
                       </div>
                     </div>
 
                     {/* AI Analysis */}
                     <div>
-                      <h4 className="text-lg font-semibold text-white mb-3"">AI Analysis</h4>
-                      <div className="bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-lg p-4>"
-                        </div><div className="grid grid-cols-1 md grid-cols-3 gap-4 text-sm>
-                          <div>"
-                            </div><div className=""text-gray-400 mb-1>Difficulty Assessment</div>
-                            <div className="text-white font-semibold"">{tutorial.aiAnalysis.difficultyAssessment}%</div>
+                      <h4 className=text-lg font-semibold text-white mb-3 >AI Analysis</h4>
+                      <div className=bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-lg p-4>
+                        </div><div className=grid grid-cols-1 md grid-cols-3 gap-4 text-sm>
+                          <div>
+                            </div><div className="text-gray-400 mb-1>Difficulty Assessment</div>
+                            <div className=text-white font-semibold >{tutorial.aiAnalysis.difficultyAssessment}%</div>
                           </div>
                           <div>
-                            </div><div className="text-gray-400 mb-1>Engagement Score</div>"
-                            <div className="text-white font-semibold>{tutorial.aiAnalysis.engagementScore}%</div>
+                            </div><div className=text-gray-400 mb-1>Engagement Score</div>
+                            <div className=text-white font-semibold>{tutorial.aiAnalysis.engagementScore}%</div>
                           </div>
-                          <div>"
-                            </div><div className=""text-gray-400" mb-1>Recommendations</div>
-                            <div className="text-white font-semibold"">{tutorial.aiAnalysis.recommendations.length}</div>
+                          <div>
+                            </div><div className=""text-gray-400 mb-1>Recommendations</div>
+                            <div className=text-white font-semibold >{tutorial.aiAnalysis.recommendations.length}</div>
                           </div>
                         </div>
-                        <div className="mt-3>"
-                          </div><div className="text-sm font-medium text-gray-400 mb-1>Recommendations </div>"
-                          <div className=""text-xs" text-gray-300>
+                        <div className=mt-3>
+                          </div><div className=text-sm font-medium text-gray-400 mb-1>Recommendations </div>
+                          <div className=""text-xs text-gray-300>
                             {tutorial.aiAnalysis.recommendations.join(', ')}
                           </div>
                         </div>
@@ -783,63 +778,61 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
 
             {/* FAQs Tab */},
 {activeTab === 'faqs' && (
-              <div className=space-y-8">
+              <div className=space-y-8>
                 {faqs.map((faq) => (
-                  </div><div key={faq.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
-                    <div className="flex items-start justify-between mb-6>
-                      </div><div>"
-                        <h3 className=""text-xl" font-semibold text-white mb-2>{faq.question}</h3>
-                        <p className="text-gray-300 text-sm capitalize"">{faq.category} FAQ</p>
+                  </div><div key={faq.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
+                    <div className=flex items-start justify-between mb-6>
+                      </div><div>
+                        <h3 className=""text-xl font-semibold text-white mb-2>{faq.question}</h3>
+                        <p className=text-gray-300 text-sm capitalize >{faq.category} FAQ</p>
                       </div>
-                      <span className="{`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(faq.status)}`}>
+                      <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(faq.status)}`}>
                         {faq.status}
                       </span>
                     </div>
-"
                     <div className="mb-6">
-                      <p className="text-gray-300 text-sm>{faq.answer}</p>
+                      <p className=text-gray-300 text-sm>{faq.answer}</p>
                     </div>
-"
-                    <div className=""grid" grid-cols-1 md:grid-cols-4 gap-6 mb-6">
-                      </div><div className="bg-white/5 rounded-lg p-4>"
-                        <div className="text-sm text-gray-400 mb-1>Views</div>"
-                        <div className=""text-2xl" font-bold text-white>{faq.views.toLocaleString()}</div>
+                    <div className=""grid" grid-cols-1 md:grid-cols-4 gap-6 mb-6>
+                      </div><div className="bg-white/5 rounded-lg p-4>
+                        <div className=text-sm text-gray-400 mb-1>Views</div>
+                        <div className=""text-2xl font-bold text-white>{faq.views.toLocaleString()}</div>
                       </div>
-                      <div className="bg-white/5 rounded-lg p-4"">
-                        </div><div className="text-sm text-gray-400 mb-1>Helpful Votes</div>"
-                        <div className="text-2xl font-bold text-white>{faq.helpfulVotes}</div>
-                      </div>"
-                      <div className=""bg-white/5" rounded-lg:p-4>
-                        </div><div className="text-sm text-gray-400 mb-1"">Clarity Score</div>
-                        <div className="text-2xl font-bold text-white>{faq.aiAnalysis.clarityScore}%</div>
-                      </div>"
-                      <div className="bg-white/5 rounded-lg p-4>"
-                        </div><div className=""text-sm:text-gray-400" mb-1>Helpfulness</div>
-                        <div className="text-2xl font-bold text-white"">{faq.aiAnalysis.helpfulnessScore}%</div>
+                      <div className=bg-white/5 rounded-lg p-4 >
+                        </div><div className=text-sm text-gray-400 mb-1>Helpful Votes</div>
+                        <div className=text-2xl font-bold text-white>{faq.helpfulVotes}</div>
+                      </div>
+                      <div className=""bg-white/5 rounded-lg:p-4>
+                        </div><div className=text-sm text-gray-400 mb-1 >Clarity Score</div>
+                        <div className=text-2xl font-bold text-white>{faq.aiAnalysis.clarityScore}%</div>
+                      </div>
+                      <div className="bg-white/5 rounded-lg p-4>
+                        </div><div className=""text-sm:text-gray-400 mb-1>Helpfulness</div>
+                        <div className=text-2xl font-bold text-white >{faq.aiAnalysis.helpfulnessScore}%</div>
                       </div>
                     </div>
 
                     {/* AI Analysis */}
                     <div>
-                      <h4 className="text-lg font-semibold text-white mb-3>AI Analysis</h4>"
-                      <div className="bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-lg p-4>"
-                        </div><div className=""grid" grid-cols-1 md:grid-cols-3 gap-4 text-sm>
+                      <h4 className=text-lg font-semibold text-white mb-3>AI Analysis</h4>
+                      <div className="bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-lg p-4>
+                        </div><div className=""grid grid-cols-1 md:grid-cols-3 gap-4 text-sm>
                           <div>
-                            </div><div className="text-gray-400 mb-1">Clarity Score</div>
-                            <div className="text-white font-semibold>{faq.aiAnalysis.clarityScore}%</div>
-                          </div>
-                          <div>"
-                            </div><div className="text-gray-400 mb-1>Helpfulness Score</div>"
-                            <div className=""text-white" font-semibold>{faq.aiAnalysis.helpfulnessScore}%</div>
+                            </div><div className="text-gray-400 mb-1>Clarity Score</div>
+                            <div className=text-white font-semibold>{faq.aiAnalysis.clarityScore}%</div>
                           </div>
                           <div>
-                            </div><div className="text-gray-400 mb-1"">Search Optimization</div>
-                            <div className="text-white font-semibold>{faq.aiAnalysis.searchOptimization}%</div>
+                            </div><div className=text-gray-400 mb-1>Helpfulness Score</div>
+                            <div className=""text-white font-semibold>{faq.aiAnalysis.helpfulnessScore}%</div>
                           </div>
-                        </div>"
-                        <div className="mt-3">
-                          </div><div className="text-sm font-medium text-gray-400 mb-1>Recommendations </div>"
-                          <div className=""text-xs" text-gray-300">
+                          <div>
+                            </div><div className=text-gray-400 mb-1 >Search Optimization</div>
+                            <div className=text-white font-semibold>{faq.aiAnalysis.searchOptimization}%</div>
+                          </div>
+                        </div>
+                        <div className="mt-3>
+                          </div><div className=text-sm font-medium text-gray-400 mb-1>Recommendations </div>
+                          <div className=""text-xs" text-gray-300>
                             {faq.aiAnalysis.recommendations.join(', ')}
                           </div>
                         </div>
@@ -853,62 +846,61 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
             {/* Wikis Tab */},
 {activeTab === 'wikis' && (
               <div className="space-y-8>
-                {wikis.map((wiki) => ("
-                  </div><div key={wiki.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
-                    <div className=""flex" items-start justify-between mb-6>
+                {wikis.map((wiki) => (
+                  </div><div key={wiki.id} className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
+                    <div className=""flex items-start justify-between mb-6>
                       </div><div>
-                        <h3 className="text-xl font-semibold text-white mb-2"">{wiki.title}</h3>
-                        <p className="text-gray-300 text-sm capitalize>{wiki.category} Wiki</p>
-                      </div>"
-                      <span className="{`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(wiki.status)}`}>
+                        <h3 className=text-xl font-semibold text-white mb-2 >{wiki.title}</h3>
+                        <p className=text-gray-300 text-sm capitalize>{wiki.category} Wiki</p>
+                      </div>
+                      <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(wiki.status)}`}>
                         {wiki.status}
                       </span>
                     </div>
-"
                     <div className=""mb-6">
-                      <p className="text-gray-300 text-sm"">{wiki.description}</p>
+                      <p className=text-gray-300 text-sm >{wiki.description}</p>
                     </div>
 
-                    <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-6>"
+                    <div className=grid grid-cols-1 md grid-cols-4 gap-6 mb-6>
                       </div><div className="bg-white/5 rounded-lg p-4>"
-                        <div className=""text-sm:text-gray-400" mb-1>Total Views</div>
-                        <div className="text-2xl font-bold text-white"">{wiki.analytics.totalViews.toLocaleString()}</div>
+                        <div className=""text-sm:text-gray-400 mb-1>Total Views</div>
+                        <div className=text-2xl font-bold text-white >{wiki.analytics.totalViews.toLocaleString()}</div>
                       </div>
-                      <div className="bg-white/5 rounded-lg p-4>"
-                        </div><div className="text-sm text-gray-400 mb-1>Edit Count</div>"
-                        <div className=""text-2xl" font-bold text-white>{wiki.analytics.editCount}</div>
+                      <div className=bg-white/5 rounded-lg p-4>
+                        </div><div className=text-sm text-gray-400 mb-1>Edit Count</div>
+                        <div className=""text-2xl font-bold text-white>{wiki.analytics.editCount}</div>
                       </div>
-                      <div className="bg-white/5 rounded-lg p-4"">
-                        </div><div className="text-sm text-gray-400 mb-1>Contributors</div>"
-                        <div className="text-2xl font-bold text-white>{wiki.analytics.contributorCount}</div>
-                      </div>"
-                      <div className=""bg-white/5" rounded-lg:p-4>
-                        </div><div className="text-sm text-gray-400 mb-1"">Content Quality</div>
-                        <div className="text-2xl font-bold text-white>{wiki.aiAnalysis.contentQuality}%</div>
+                      <div className=bg-white/5 rounded-lg p-4 >
+                        </div><div className=text-sm text-gray-400 mb-1>Contributors</div>
+                        <div className=text-2xl font-bold text-white>{wiki.analytics.contributorCount}</div>
+                      </div>
+                      <div className=""bg-white/5 rounded-lg:p-4>
+                        </div><div className=text-sm text-gray-400 mb-1 >Content Quality</div>
+                        <div className=text-2xl font-bold text-white>{wiki.aiAnalysis.contentQuality}%</div>
                       </div>
                     </div>
 
                     {/* AI Analysis */}
-                    <div>"
-                      <h4 className="text-lg font-semibold text-white mb-3>AI Analysis</h4>"
-                      <div className=""bg-gradient-to-r" from-blue-600/20 to-indigo-600/20 rounded-lg:p-4>
-                        </div><div className="grid grid-cols-1 md grid-cols-3"" gap-4 text-sm">
+                    <div>
+                      <h4 className=text-lg font-semibold text-white mb-3>AI Analysis</h4>
+                      <div className=""bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-lg:p-4>
+                        </div><div className="grid grid-cols-1 md grid-cols-3  gap-4 text-sm>
                           <div>
-                            </div><div className="text-gray-400 mb-1>Content Quality</div>"
-                            <div className="text-white font-semibold>{wiki.aiAnalysis.contentQuality}%</div>
-                          </div>
-                          <div>"
-                            </div><div className=""text-gray-400" mb-1>Comprehensiveness</div>
-                            <div className="text-white font-semibold"">{wiki.aiAnalysis.comprehensiveness}%</div>
+                            </div><div className=text-gray-400 mb-1>Content Quality</div>
+                            <div className=text-white font-semibold>{wiki.aiAnalysis.contentQuality}%</div>
                           </div>
                           <div>
-                            </div><div className="text-gray-400 mb-1>Recommendations</div>"
-                            <div className="text-white font-semibold>{wiki.aiAnalysis.recommendations.length}</div>
+                            </div><div className=""text-gray-400 mb-1>Comprehensiveness</div>
+                            <div className=text-white font-semibold >{wiki.aiAnalysis.comprehensiveness}%</div>
                           </div>
-                        </div>"
-                        <div className=""mt-3">
-                          </div><div className="text-sm font-medium text-gray-400 mb-1"">Recommendations:</div>
-                          <div className="text-xs text-gray-300>
+                          <div>
+                            </div><div className=text-gray-400 mb-1>Recommendations</div>
+                            <div className=text-white font-semibold>{wiki.aiAnalysis.recommendations.length}</div>
+                          </div>
+                        </div>
+                        <div className=""mt-3>
+                          </div><div className=text-sm font-medium text-gray-400 mb-1 >Recommendations:</div>
+                          <div className=text-xs text-gray-300>
                             {wiki.aiAnalysis.recommendations.join(', ')}
                           </div>
                         </div>
@@ -921,43 +913,43 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
 
             {/* Analytics Tab */},
 {activeTab === 'analytics' && analytics && ("
-              <div className="space-y-8">
-                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6>"
-                  <div className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10">
-                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.totalArticles.toLocaleString()}</div>"
-                    <div className="text-gray-400 text-sm>Total Articles</div>
-                  </div>"
+              <div className="space-y-8>
+                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6>
                   <div className=""bg-white/10" backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
-                    </div><div className="text-3xl font-bold text-white mb-2"">{analytics.activeDocumentation.toLocaleString()}</div>
-                    <div className="text-gray-400 text-sm>Active Documentation</div>
-                  </div>"
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
-                    </div><div className=""text-3xl" font-bold text-white mb-2>{analytics.tutorialsCount.toLocaleString()}</div>
-                    <div className="text-gray-400 text-sm"">Tutorials</div>
+                    </div><div className=text-3xl font-bold text-white mb-2>{analytics.totalArticles.toLocaleString()}</div>
+                    <div className=text-gray-400 text-sm>Total Articles</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>"
-                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.aiOptimizationScore}%</div>"
-                    <div className=""text-gray-400" text-sm>AI Optimization Score</div>
+                  <div className=""bg-white/10 backdrop-blur-sm:rounded-xl:p-6 border border-white/10>
+                    </div><div className=text-3xl font-bold text-white mb-2 >{analytics.activeDocumentation.toLocaleString()}</div>
+                    <div className=text-gray-400 text-sm>Active Documentation</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
+                    </div><div className=""text-3xl font-bold text-white mb-2>{analytics.tutorialsCount.toLocaleString()}</div>
+                    <div className=text-gray-400 text-sm >Tutorials</div>
+                  </div>
+                  <div className=bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10>
+                    </div><div className=text-3xl font-bold text-white mb-2>{analytics.aiOptimizationScore}%</div>
+                    <div className=""text-gray-400 text-sm>AI Optimization Score</div>
                   </div>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10"">
-                  <h3 className="text-xl font-semibold text-white mb-6>AI Insights</h3>"
-                  <div className="space-y-4">
+                <div className="bg-white/10 backdrop-blur-sm:rounded-xl p-6 border border-white/10 >
+                  <h3 className=text-xl font-semibold text-white mb-6>AI Insights</h3>
+                  <div className="space-y-4>
                     {analytics.aiInsights.map((insight) => (
-                      </div><div key={insight.id} className="bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-lg p-4>"
+                      </div><div key={insight.id} className="bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-lg p-4>
                         <div className=""flex" items-start justify-between mb-2">
-                          <h4 className="text-white font-semibold>{insight.title}</h4>"
+                          <h4 className=text-white font-semibold>{insight.title}</h4>
                           
                           }`}>
                             {insight.impact}
                           </span>
                         </div>"
-                        <p className=""text-gray-300" text-sm:mb-3>{insight.description}</p>
-                        <div className="text-xs text-gray-400 mb-2"">
+                        <p className=""text-gray-300 text-sm:mb-3>{insight.description}</p>
+                        <div className=text-xs text-gray-400 mb-2 >
                           Confidence: {Math.round(insight.confidence * 100)}%
                         </div>
-                        <div className="text-xs text-gray-400>
+                        <div className=text-xs text-gray-400>
                           <strong>Recommendations </strong> {insight.recommendations.join(', ')}
                         </div>
                       </div>
@@ -971,42 +963,39 @@ const AIPoweredKnowledgeBasePage: NextPage = () => {
       </div>
 
       {/* CTA Section */}"
-      <div className="bg-gradient-to-r from-blue-600/20 to-indigo-600/20 mt-16>"
+      <div className=bg-gradient-to-r from-blue-600/20 to-indigo-600/20 mt-16>
         </div><div className=""max-w-7xl" mx-auto px-4 sm:px-6 lg:px-8 py-36>
           <div className=text-center">
-            <h2 className="text-3xl font-bold text-white mb-4>
+            <h2 className=text-3xl font-bold text-white mb-4>
               Ready to Build Knowledge?
-            </h2>"
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
+            </h2>
+            <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
               Start your knowledge base journey with our AI-powered documentation system 
               and create comprehensive guides and tutorials.
-            </p>"
+            </p>
             <div className=""flex" flex-col sm:flex-row gap-4 justify-center>
-              <Link href=/ai-service-matcher" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-blue-500/25 transform hover scale-105 />
-                Start Building
-              </Link>"
-              <Link href=/talent-directory className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
-                Learn More
-              </Link>
+              <Link href=/ai-service-matcher" className=bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-blue-500/25 transform hover scale-105 >Start Building
+              </Link href=/ai-service-matcher" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-blue-500/25 transform hover scale-105 ></Link>
+              <Link href=/talent-directory className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >Learn More
+              </Link href=/talent-directory className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
             </div>
           </div>
         </div>
       </div>
     
         {/* Mobile Navigation */}"
-        <div className=""lg:hidden" fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
-          </div><div className="flex justify-around items-center py-2>"
+        <div className=""lg:hidden" fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50>
+          </div><div className="flex justify-around items-center py-2>
             <button className="flex flex-col items-center p-2 text-gray-400 hover text-white>"
-              <Home className=""w-5" h-5 />
-              <span className=text-xs">Home</span>
+              <Home className=""w-5 h-5 > </Home className=""w-5" h-5 ><span className=text-xs>Home</span>
             </button>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white>"
-              <Search className="w-5 h-5 />"
-              <span className=""text-xs">Search</span>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white>
+              <Search className="w-5 h-5 >
+              </Search className="w-5 h-5 ><span className= text-xs>Search</span>
             </button>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white"">
-              <User className="w-5 h-5 />"
-              <span className=text-xs">Profile</span>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white >
+              <User className=w-5 h-5 >
+              </User className="w-5 h-5 ><span className=text-xs>Profile</span>
             </button>
           </div>
         </div>

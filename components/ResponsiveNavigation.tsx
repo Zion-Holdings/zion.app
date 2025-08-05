@@ -38,7 +38,7 @@ const ResponsiveNavigation: React.FC<ResponsiveNavigationProps> = ({
             {logo || (
               <Link href="/" className="flex-shrink-0">
                 <h1 className={`text-xl sm:text-2xl font-bold ${variant === 'dark' ? 'text-white' : 'text-blue-600'} truncate`}>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             )}
@@ -55,7 +55,7 @@ const ResponsiveNavigation: React.FC<ResponsiveNavigationProps> = ({
                   <a
                     href={item.href}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer
                     className={`${textColor} transition-colors text-sm lg:text-base px-3 py-2 rounded-md font-medium`}
                   >
                     {item.label}
@@ -72,9 +72,9 @@ const ResponsiveNavigation: React.FC<ResponsiveNavigationProps> = ({
             ))}
           </div>
           
-          {/* Desktop CTA Button */}
-          {ctaButton && (
-            <div className="hidden md flex items-center space-x-4">
+          {/* Desktop CTA Button */},
+    {ctaButton && (
+            <div className="hidden md flex items-center space-x-4>
               {ctaButton}
             </div>
           )}
@@ -87,22 +87,20 @@ const ResponsiveNavigation: React.FC<ResponsiveNavigationProps> = ({
               aria-label="Toggle mobile menu"
             >
               <svg 
-                className="h-6 w-6 fill=""none" 
+                className="h-6 w-6 fill= none" 
                 viewBox="0 0 24 24" 
                 stroke="currentColor"
               >
                 {isMobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12 >) : (
+                  </path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" ><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16 >)}
+              </path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" ></svg>
             </button>
           </div>
         </div>
 
-        {/* Mobile menu */}
-        {isMobileMenuOpen && (
+        {/* Mobile menu */},
+    {isMobileMenuOpen && (
           <motion.div 
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
@@ -116,7 +114,7 @@ const ResponsiveNavigation: React.FC<ResponsiveNavigationProps> = ({
                     <a
                       href={item.href}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener noreferrer
                       className={`${textColor} block px-3 py-2 rounded-md text-base font-medium transition-colors`}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
@@ -134,7 +132,7 @@ const ResponsiveNavigation: React.FC<ResponsiveNavigationProps> = ({
                 </div>
               ))}
               {ctaButton && (
-                <div className="pt-2">
+                <div className="pt-2>
                   <div onClick={() => setIsMobileMenuOpen(false)}>
                     {ctaButton}
                   </div>

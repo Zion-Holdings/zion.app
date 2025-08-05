@@ -260,8 +260,8 @@ const AIPoweredContentManagementPage: NextPage = () => {
           usageCount: 32,
           lastUsed: new Date('2024-01-19'),
           tags: ['Service', 'Conversion', 'Professional']
-        }
-        {
+        },
+    {
           id: '3',
           name: 'Landing Page Template',
           type: 'landing',
@@ -280,8 +280,8 @@ const AIPoweredContentManagementPage: NextPage = () => {
           usageCount: 67,
           lastUsed: new Date('2024-01-21'),
           tags: ['Social Media', 'Engagement', 'Viral']
-        }
-        {
+        },
+    {
           id: '5',
           name: 'Email Newsletter Template',
           type: 'email',
@@ -312,8 +312,8 @@ const AIPoweredContentManagementPage: NextPage = () => {
               type: 'seo-optimization',
               status: 'completed',
               aiAssisted: true
-            }
-            {
+            },
+    {
               id: '1-3',
               name: 'Human Review',
               type: 'human-review',
@@ -326,8 +326,8 @@ const AIPoweredContentManagementPage: NextPage = () => {
               type: 'publishing',
               status: 'completed',
               aiAssisted: true
-            }
-            {
+            },
+    {
               id: '1-5',
               name: 'Promotion',
               type: 'promotion',
@@ -356,8 +356,8 @@ const AIPoweredContentManagementPage: NextPage = () => {
               type: 'seo-optimization',
               status: 'completed',
               aiAssisted: true
-            }
-            {
+            },
+    {
               id: '2-3',
               name: 'Human Review',
               type: 'human-review',
@@ -393,8 +393,8 @@ const AIPoweredContentManagementPage: NextPage = () => {
               type: 'seo-optimization',
               status: 'completed',
               aiAssisted: true
-            }
-            {
+            },
+    {
               id: '3-3',
               name: 'Scheduling',
               type: 'publishing',
@@ -425,8 +425,8 @@ const AIPoweredContentManagementPage: NextPage = () => {
           improvement: 2.4,
           trend: 'up',
           period: 'This Month'
-        }
-        {
+        },
+    {
           id: '3',
           metric: 'Engagement Rate',
           current: 4.2,
@@ -443,8 +443,8 @@ const AIPoweredContentManagementPage: NextPage = () => {
           improvement: -15.6,
           trend: 'down',
           period: 'This Month'
-        }
-        {
+        },
+    {
           id: '5',
           metric: 'AI Content Quality',
           current: 92,
@@ -561,18 +561,18 @@ const AIPoweredContentManagementPage: NextPage = () => {
       </div><div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}"
-        <div className="fixed inset-0 z-0>"
-          </div><div className=""absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10""></div>
+        <div className=fixed inset-0 z-0>
+          </div><div className=""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
         </div>
       
-        <div className="text-center>"
+        <div className=text-center>
           </div><div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg>"
             <svg className=""animate-spin" -ml-1 mr-3 h-12 w-12 text-purple-300 xmlns=http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle className="opacity-25 cx=12 cy=12 r=""10" stroke="currentColor" strokeWidth="4"></circle>
-              <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              <circle className="opacity-25 cx=12 cy=12 r= 10" stroke="currentColor" strokeWidth="4></circle>
+              <path className="opacity-75 fill=currentColor d=M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z></path>
             </svg>
-            <span className="text-lg font-medium>Loading AI-Powered Content Management...</span>
+            <span className=text-lg font-medium>Loading AI-Powered Content Management...</span>
           </div>
         </div>
       </div>
@@ -580,67 +580,58 @@ const AIPoweredContentManagementPage: NextPage = () => {
   }
 
   return ("
-    <div className="relative z-10 container-responsive py-8>
+    <div className=relative z-10 container-responsive py-8>
       <Head>
-        <title>AI-Powered Content Management - Zion</title>"
-        <meta name=description"" content="Intelligent content creation, optimization, scheduling, and analytics with AI-driven content management" />
-        <meta name="keywords" content="AI content management, content creation, content optimization, content scheduling, Zion" />
-        <link rel="icon" href="/favicon.ico" />
-      
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
+        <title>AI-Powered Content Management - Zion</title>
+        <meta name=description"" content="Intelligent content creation, optimization, scheduling, and analytics with AI-driven content management > </meta name=description"" content="Intelligent content creation, optimization, scheduling, and analytics with AI-driven content management" ><meta name="keywords" content="AI content management, content creation, content optimization, content scheduling, Zion > </meta name="keywords" content="AI content management, content creation, content optimization, content scheduling, Zion" ><link rel="icon" href="/favicon.ico > </link rel="icon" href="/favicon.ico" ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
 
       {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>"
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8>"
+      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className=""flex" justify-between h-16>
-            <div className="flex items-center>"
-              <Link href=/ className=""flex-shrink-0 />
-                <h1 className="text-2xl font-bold text-white>"
-                  <span className=""text-transparent" bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
+            <div className="flex items-center>
+              <Link href=/ className="flex-shrink-0 > </Link href=/ className=""flex-shrink-0 ><h1 className="text-2xl font-bold text-white>
+                  <span className=""text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400>Zion</span>
                 </h1>
               </Link>
             </div>
             
-            <div className="hidden md flex items-center space-x-8"">
-              <Link href="/ai-powered-mobile-responsive" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
-                Mobile
-              </Link>"
-              <Link href=/ai-powered-multi-language className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
-                Languages
-              </Link>"
-              <Link href=/auth/login"" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors />
-                Login
-              </Link>
+            <div className="hidden md flex items-center space-x-8 >
+              <Link href="/ai-powered-mobile-responsive" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Mobile
+              </Link href="/ai-powered-mobile-responsive" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
+              <Link href=/ai-powered-multi-language className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Languages
+              </Link href=/ai-powered-multi-language className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
+              <Link href=/auth/login"" className=text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors >Login
+              </Link href=/auth/login  className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors ></Link>
             </div>
           </div>
         </div>
       </nav>
-"
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
-        {/* Header */}"
+        {/* Header */}
         </div><div className=""text-center" mb-8>
-          <h1 className="text-4xl md text-5xl font-bold text-white mb-4"">
+          <h1 className=text-4xl md text-5xl font-bold text-white mb-4 >
             AI-Powered Content Management
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto>
+          <p className=text-xl text-gray-300 max-w-3xl mx-auto>
             Intelligent content creation, optimization, scheduling, and analytics 
             with AI-driven content management and automated workflows.
           </p>
         </div>
 
         {/* Tab Selector */}"
-        <div className="flex justify-center mb-8>"
+        <div className=flex justify-center mb-8>
           </div><div className=""bg-white/5" backdrop-blur-sm:border border-white/10 rounded-lg:p-1>
             {[
               { id: 'overview', name: 'Overview', icon: '📊' },
-{ id: 'content', name: 'Content', icon: '📝' }
-              { id: 'templates', name: 'Templates', icon: '📋' },
-{ id: 'workflows', name: 'Workflows', icon: '🔄' }
-              { id: 'analytics', name: 'Analytics', icon: '📈' }
+{ id: 'content', name: 'Content', icon: '📝' },
+    { id: 'templates', name: 'Templates', icon: '📋' },
+{ id: 'workflows', name: 'Workflows', icon: '🔄' },
+    { id: 'analytics', name: 'Analytics', icon: '📈' }
             ].map((tab) => (
               
                 onClick={() => setSelectedView(tab.id as any)}
-                className={`flex" items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${
+                className={`flex items-center space-x-2 px-4 py-4 rounded-md:text-sm font-medium transition-all duration-200 ${
                   selectedView === tab.id
                     ? 'bg-purple-600 text-white'
                     : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -656,24 +647,23 @@ const AIPoweredContentManagementPage: NextPage = () => {
         {/* Analytics Overview */},
 {selectedView === 'overview' && (
           <div className="grid grid-cols-1 md grid-cols-3 gap-6 mb-8>
-            {analytics.map((metric) => ("
-              </div><div key={metric.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
+            {analytics.map((metric) => (
+              </div><div key={metric.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
                 <div className=""flex items-center justify-between mb-4>
-                  <h3 className="text-lg font-semibold text-white"">{metric.metric}</h3>
-                  <span className="text-2xl>{getTrendIcon(metric.trend)}</span>
+                  <h3 className=text-lg font-semibold text-white >{metric.metric}</h3>
+                  <span className=text-2xl>{getTrendIcon(metric.trend)}</span>
                 </div>
-                "
-                <div className="mb-4">
-                  </div><div className="text-3xl font-bold text-white mb-2>{metric.current}</div>"
-                  <p className=text-sm:text-gray-400"">Target: {metric.target}</p>
+                <div className="mb-4>
+                  </div><div className=text-3xl font-bold text-white mb-2>{metric.current}</div>
+                  <p className=text-sm:text-gray-400">Target: {metric.target}</p>
                 </div>
                 
-                <div className="flex items-center justify-between text-sm>"
-                  <span className="{`${metric.improvement > 0 ? 'text-green-400' : 'text-red-400'}`}>
+                <div className="flex items-center justify-between text-sm>
+                  <span className={`${metric.improvement > 0 ? 'text-green-400' : 'text-red-400'}`}>
                     {metric.improvement > 0 ? '+'   ''},
 {metric.improvement.toFixed(1)}%
-                  </span>"
-                  <span className=""text-gray-400">{metric.period}</span>
+                  </span>
+                  <span className=""text-gray-400>{metric.period}</span>
                 </div>
               </div>
             ))}
@@ -682,12 +672,12 @@ const AIPoweredContentManagementPage: NextPage = () => {
 
         {/* Search and Filters */},
 {selectedView === 'content' && (
-          <div className="bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8"">
-            </div><div className="grid grid-cols-1 lg grid-cols-4 gap-4>"
+          <div className=bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl p-6 mb-8 >
+            </div><div className="grid grid-cols-1 lg grid-cols-4 gap-4>
               <div className="lg col-span-2">
                 
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus outline-none focus border-purple-500 transition-colors
+                  className=w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus outline-none focus border-purple-500 transition-colors
                 />
               </div>
               
@@ -696,25 +686,25 @@ const AIPoweredContentManagementPage: NextPage = () => {
                   onChange={(e) => setFilterType(e.target.value)}"
                   className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500 transition-colors
                 >"
-                  <option value=all"">All Types</option>
-                  <option value="blog">Blog Posts</option>
-                  <option value="service">Services</option>
-                  <option value="product">Products</option>
-                  <option value="landing">Landing Pages</option>
-                  <option value="social">Social Media</option>
-                  <option value="email">Email</option>
+                  <option value=all">All Types</option>
+                  <option value="blog>Blog Posts</option>
+                  <option value="service>Services</option>
+                  <option value="product>Products</option>
+                  <option value="landing>Landing Pages</option>
+                  <option value="social>Social Media</option>
+                  <option value="email>Email</option>
                 </select>
               </div>
               
               <div>
                 
                   onChange={(e) => setSortBy(e.target.value as any)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500 transition-colors
+                  className=w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500 transition-colors
                 >
-                  <option value=recent>Sort by Recent</option>"
-                  <option value=popular">Sort by Popular</option>
-                  <option value="ai-score">Sort by AI Score</option>
-                  <option value="engagement">Sort by Engagement</option>
+                  <option value=recent>Sort by Recent</option>
+                  <option value=popular>Sort by Popular</option>
+                  <option value="ai-score>Sort by AI Score</option>
+                  <option value="engagement>Sort by Engagement</option>
                 </select>
               </div>
             </div>
@@ -724,82 +714,80 @@ const AIPoweredContentManagementPage: NextPage = () => {
         {/* Content List */},
 {selectedView === 'content' && (
           <div className="space-y-6>
-            {filteredContent.map((item) => ("
-              </div><div key={item.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
-                <div className=""flex" items-start justify-between mb-4>
-                  </div><div className="flex items-center space-x-3"">
-                    <div className="text-3xl>{getTypeIcon(item.type)}</div>
-                    <div>"
-                      <h3 className="text-xl font-semibold text-white mb-1>{item.title}</h3>"
-                      <p className=""text-gray-300" text-sm>by {item.author}</p>
+            {filteredContent.map((item) => (
+              </div><div key={item.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
+                <div className=""flex items-start justify-between mb-4>
+                  </div><div className="flex items-center space-x-3 >
+                    <div className=text-3xl>{getTypeIcon(item.type)}</div>
+                    <div>
+                      <h3 className=text-xl font-semibold text-white mb-1>{item.title}</h3>
+                      <p className=""text-gray-300 text-sm>by {item.author}</p>
                     </div>
                   </div>
-                  <span className={`px-3" py-3 rounded-full text-xs font-medium ${getStatusColor(item.status)}`}>
+                  <span className={`px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(item.status)}`}>
                     {item.status.toUpperCase()}
                   </span>
                 </div>
 
-                <div className="grid grid-cols-2 md grid-cols-4 gap-4 mb-4>
-                  </div><div>"
-                    <p className="text-sm text-gray-400">AI Score</p>
-                    <p className="{`text-lg font-semibold ${getScoreColor(item.aiScore)}`}>{item.aiScore}%</p>
+                <div className=grid grid-cols-2 md grid-cols-4 gap-4 mb-4>
+                  </div><div>
+                    <p className="text-sm text-gray-400>AI Score</p>
+                    <p className={`text-lg font-semibold ${getScoreColor(item.aiScore)}`}>{item.aiScore}%</p>
                   </div>
-                  <div>"
-                    <p className=text-sm:text-gray-400"">SEO Score</p>
-                    <p className="{`text-lg font-semibold ${getScoreColor(item.seoScore)}`}>{item.seoScore}%</p>
+                  <div>
+                    <p className=text-sm:text-gray-400">SEO Score</p>
+                    <p className={`text-lg font-semibold ${getScoreColor(item.seoScore)}`}>{item.seoScore}%</p>
                   </div>
-                  <div>"
-                    <p className="text-sm text-gray-400">Engagement</p>
-                    <p className="{`text-lg font-semibold ${getScoreColor(item.engagementScore)}`}>{item.engagementScore}%</p>
+                  <div>
+                    <p className="text-sm text-gray-400>Engagement</p>
+                    <p className={`text-lg font-semibold ${getScoreColor(item.engagementScore)}`}>{item.engagementScore}%</p>
                   </div>
-                  <div>"
-                    <p className=text-sm:text-gray-400"">Views</p>
-                    <p className="text-lg font-semibold text-white>{item.analytics.views.toLocaleString()}</p>
+                  <div>
+                    <p className=text-sm:text-gray-400">Views</p>
+                    <p className=text-lg font-semibold text-white>{item.analytics.views.toLocaleString()}</p>
                   </div>
                 </div>
-"
                 <div className="mb-4">
-                  <p className="text-sm:text-gray-400 mb-2>Tags </p>"
+                  <p className=text-sm:text-gray-400 mb-2>Tags </p>
                   <div className=""flex" flex-wrap gap-2">
                     {item.tags.map((tag, index) => (
-                      <span key={index} className="px-4 py-3 bg-purple-500/20 text-purple-300 text-xs rounded border border-purple-500/30>
+                      <span key={index} className=px-4 py-3 bg-purple-500/20 text-purple-300 text-xs rounded border border-purple-500/30>
                         {tag}
                       </span>
                     ))}
                   </div>
                 </div>
-"
                 <div className="mb-4">
-                  <p className="text-sm:text-gray-400 mb-2>AI Features </p>"
-                  <div className=""grid" grid-cols-2 md:grid-cols-5 gap-2 text-xs">
-                    </div><div className="flex items-center space-x-1>
-                      <span>{item.aiFeatures.autoGenerated ? '✅'   '❌'}</span>"
-                      <span className="text-gray-300">Auto Generated</span>
+                  <p className=text-sm:text-gray-400 mb-2>AI Features </p>
+                  <div className=""grid" grid-cols-2 md:grid-cols-5 gap-2 text-xs>
+                    </div><div className=flex items-center space-x-1>
+                      <span>{item.aiFeatures.autoGenerated ? '✅'   '❌'}</span>
+                      <span className="text-gray-300>Auto Generated</span>
                     </div>
-                    <div className="flex items-center space-x-1>
-                      <span>{item.aiFeatures.seoOptimized ? '✅'   '❌'}</span>"
-                      <span className=text-gray-300"">SEO Optimized</span>
+                    <div className=flex items-center space-x-1>
+                      <span>{item.aiFeatures.seoOptimized ? '✅'   '❌'}</span>
+                      <span className=text-gray-300">SEO Optimized</span>
                     </div>
-                    <div className="flex items-center space-x-1>
-                      <span>{item.aiFeatures.sentimentAnalyzed ? '✅'   '❌'}</span>"
-                      <span className="text-gray-300">Sentiment Analyzed</span>
+                    <div className=flex items-center space-x-1>
+                      <span>{item.aiFeatures.sentimentAnalyzed ? '✅'   '❌'}</span>
+                      <span className="text-gray-300>Sentiment Analyzed</span>
                     </div>
-                    <div className="flex items-center space-x-1>
-                      <span>{item.aiFeatures.keywordOptimized ? '✅'   '❌'}</span>"
-                      <span className=text-gray-300"">Keyword Optimized</span>
+                    <div className=flex items-center space-x-1>
+                      <span>{item.aiFeatures.keywordOptimized ? '✅'   '❌'}</span>
+                      <span className=text-gray-300">Keyword Optimized</span>
                     </div>
-                    <div className="flex items-center space-x-1>
-                      <span>{item.aiFeatures.readabilityOptimized ? '✅'   '❌'}</span>"
-                      <span className="text-gray-300">Readability Optimized</span>
+                    <div className=flex items-center space-x-1>
+                      <span>{item.aiFeatures.readabilityOptimized ? '✅'   '❌'}</span>
+                      <span className="text-gray-300>Readability Optimized</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex space-x-3>"
-                  <button className=""bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105">
+                <div className="flex space-x-3>
+                  <button className=""bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
                     Edit Content
                   </button>
-                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
+                  <button className=border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm>
                     View Analytics
                   </button>
                 </div>
@@ -811,36 +799,36 @@ const AIPoweredContentManagementPage: NextPage = () => {
         {/* Templates */},
 {selectedView === 'templates' && ("
           <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
-            {templates.map((template) => ("
+            {templates.map((template) => (
               </div><div key={template.id} className=""bg-gradient-to-br" from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl:p-6>
-                <div className="flex items-center justify-between mb-4"">
-                  </div><div className="text-3xl>{getTypeIcon(template.type)}</div>"
-                  <span className="text-sm text-gray-400">{template.usageCount} uses</span>
+                <div className=flex items-center justify-between mb-4 >
+                  </div><div className=text-3xl>{getTypeIcon(template.type)}</div>
+                  <span className="text-sm text-gray-400>{template.usageCount} uses</span>
                 </div>
                 
-                <h3 className="text-lg font-semibold text-white mb-2>{template.name}</h3>"
-                <p className=""text-gray-300" text-sm:mb-4">{template.description}</p>
+                <h3 className=text-lg font-semibold text-white mb-2>{template.name}</h3>
+                <p className=""text-gray-300" text-sm:mb-4>{template.description}</p>
                 
-                <div className="mb-4>"
+                <div className=mb-4>
                   </div><div className="flex flex-wrap gap-2>
                     {template.tags.map((tag, index) => ("
-                      <span key={index} className=""px-4" py-3 bg-blue-500/20 text-blue-300 text-xs rounded border border-blue-500/30>
+                      <span key={index} className=""px-4 py-3 bg-blue-500/20 text-blue-300 text-xs rounded border border-blue-500/30>
                         {tag}
                       </span>
                     ))}
                   </div>
                 </div>
                 
-                <div className="flex items-center justify-between text-sm text-gray-400 mb-4"">
+                <div className=flex items-center justify-between text-sm text-gray-400 mb-4 >
                   <span>Last used: {template.lastUsed.toLocaleDateString()}</span>
                   <span>{template.aiGenerated ? '🤖 AI Generated' : '👤 Manual'}</span>
                 </div>
                 
-                <div className="flex space-x-3>"
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105>
+                <div className="flex space-x-3>
+                  <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105>
                     Use Template
-                  </button>"
-                  <button className=""border" border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
+                  </button>
+                  <button className=""border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 backdrop-blur-sm>
                     Edit Template
                   </button>
                 </div>
@@ -851,43 +839,41 @@ const AIPoweredContentManagementPage: NextPage = () => {
 
         {/* Workflows */},
 {selectedView === 'workflows' && (
-          <div className=space-y-6">
+          <div className=space-y-6>
             {workflows.map((workflow) => (
-              </div><div key={workflow.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>"
-                <div className="flex items-start justify-between mb-4>
-                  </div><div>"
-                    <h3 className=""text-lg" font-semibold text-white mb-2>{workflow.name}</h3>
-                    <p className="text-gray-300 text-sm"">{workflow.description}</p>
+              </div><div key={workflow.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm:border border-white/10 rounded-xl p-6>
+                <div className=flex items-start justify-between mb-4>
+                  </div><div>
+                    <h3 className=""text-lg font-semibold text-white mb-2>{workflow.name}</h3>
+                    <p className=text-gray-300 text-sm >{workflow.description}</p>
                   </div>
-                  <span className="{`px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(workflow.status)}`}>
+                  <span className={`px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(workflow.status)}`}>
                     {workflow.status.toUpperCase()}
                   </span>
                 </div>
-"
                 <div className="mb-4">
-                  <p className="text-sm:text-gray-400 mb-3>Workflow Steps </p>"
-                  <div className=space-y-2"">
+                  <p className=text-sm:text-gray-400 mb-3>Workflow Steps </p>
+                  <div className=space-y-2">
                     {workflow.steps.map((step) => (
-                      </div><div key={step.id} className="flex items-center justify-between p-3 bg-white/5 rounded-lg>"
+                      </div><div key={step.id} className="flex items-center justify-between p-3 bg-white/5 rounded-lg>
                         <div className="flex items-center space-x-3>"
-                          <span className=""{`px-4" py-3 rounded text-xs font-medium ${getWorkflowStepColor(step.status)}`}>
+                          <span className=""{`px-4 py-3 rounded text-xs font-medium ${getWorkflowStepColor(step.status)}`}>
                             {step.status.toUpperCase()}
                           </span>
-                          <span className=text-white">{step.name}</span>
+                          <span className=text-white>{step.name}</span>
                         </div>
-                        <span className="text-sm:text-gray-400>
+                        <span className=text-sm:text-gray-400>
                           {step.aiAssisted ? '🤖 AI Assisted'   '👤 Manual'}
                         </span>
                       </div>
                     ))}
                   </div>
                 </div>
-"
                 <div className="flex space-x-3>"
-                  <button className=""bg-gradient-to-r" from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
+                  <button className=""bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg:text-sm:font-semibold transition-all duration-300 shadow-lg:hover:shadow-purple-500/25 transform hover:scale-105>
                     Run Workflow
                   </button>
-                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm"">
+                  <button className=border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm >
                     Edit Workflow
                   </button>
                 </div>
@@ -897,22 +883,21 @@ const AIPoweredContentManagementPage: NextPage = () => {
         )}
 
         {/* Call to Action */}
-        <div className="mt-12 text-center>"
+        <div className=mt-12 text-center>
           </div><div className="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border border-purple-500/30 rounded-xl p-8>"
-            <h2 className=""text-3xl" font-bold text-white mb-4>
+            <h2 className=""text-3xl font-bold text-white mb-4>
               Manage Content with AI
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto"">
+            <p className=text-xl text-gray-300 mb-8 max-w-2xl mx-auto >
               Leverage intelligent content management to create, optimize, and 
               schedule content with AI-driven automation and analytics.
             </p>
-            <div className="flex flex-col sm flex-row gap-4 justify-center>"
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105>
+            <div className="flex flex-col sm flex-row gap-4 justify-center>
+              <button className=bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg:text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105>
                 Create Content
-              </button>"
-              <Link href=/service-marketplace"" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm />
-                View Services
-              </Link>
+              </button>
+              <Link href=/service-marketplace"" className=border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm >View Services
+              </Link href=/service-marketplace  className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm ></Link>
             </div>
           </div>
         </div>

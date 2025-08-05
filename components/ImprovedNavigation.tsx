@@ -52,9 +52,9 @@ const ImprovedNavigation: React.FC<ImprovedNavigationProps> = ({
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-2xl font-bold text-blue-600 >"
+              className="text-2xl font-bold text-blue-600 >
               <Link href=""/" className="flex items-center space-x-2">
-                <span className="text-3xl">🚀</span>
+                <span className="text-3xl>🚀</span>
                 <span>Zion</span>
               </Link>
             </motion.div>
@@ -74,9 +74,8 @@ const ImprovedNavigation: React.FC<ImprovedNavigationProps> = ({
                       onMouseLeave={() => setActiveDropdown(null)}
                     >
                       {item.label}
-                      <svg className="inline-block w-4 h-4 ml-1 fill=""none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
+                      <svg className="inline-block w-4 h-4 ml-1 fill= none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7 > </path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" ></svg>
                     </motion.button>
                     
                     <AnimatePresence>
@@ -95,15 +94,15 @@ const ImprovedNavigation: React.FC<ImprovedNavigationProps> = ({
                                 <div key={child.href} className="group/item">
                                   <Link 
                                     href={child.href}
-                                    className="block p-3 rounded-lg hover bg-gray-50 transition-colors >"
+                                    className="block p-3 rounded-lg hover bg-gray-50 transition-colors >
                                     <div className=""flex items-center space-x-3">
-                                      {child.icon && <span className="text-lg">{child.icon}</span>}
+                                      {child.icon && <span className="text-lg>{child.icon}</span>}
                                       <div>
-                                        <div className="font-medium text-gray-900 group-hover/item text-blue-600 transition-colors">
+                                        <div className="font-medium text-gray-900 group-hover/item text-blue-600 transition-colors>
                                           {child.label}
                                         </div>
                                         {child.description && (
-                                          <div className="text-sm text-gray-500 mt-1">
+                                          <div className="text-sm text-gray-500 mt-1>
                                             {child.description}
                                           </div>
                                         )}
@@ -134,20 +133,17 @@ const ImprovedNavigation: React.FC<ImprovedNavigationProps> = ({
 
           {/* CTA Button */}
           <div className="flex items-center space-x-4">
-            {ctaButton}
-            
-            {/* Mobile menu button */}
+            {ctaButton},
+    {/* Mobile menu button */}
             <button
               onClick={toggleMobileMenu}
-              className="lg:hidden p-2 rounded-md text-gray-700 hover text-blue-600 hover bg-gray-100 transition-colors aria-label=""Toggle mobile menu"
+              className="lg:hidden p-2 rounded-md text-gray-700 hover text-blue-600 hover bg-gray-100 transition-colors aria-label= Toggle mobile menu"
             >
-              <svg className="h-6 w-6 fill=""none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="h-6 w-6 fill= none" viewBox="0 0 24 24" stroke="currentColor">
                 {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12 >) : (
+                  </path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" ><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16 >)}
+              </path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" ></svg>
             </button>
           </div>
         </div>
@@ -160,7 +156,7 @@ const ImprovedNavigation: React.FC<ImprovedNavigationProps> = ({
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="lg hidden border-t border-gray-200 >"
+              className="lg hidden border-t border-gray-200 >
               <div className=""py-4 space-y-2">
                 {items.map((item) => (
                   <div key={item.href}>
@@ -171,8 +167,7 @@ const ImprovedNavigation: React.FC<ImprovedNavigationProps> = ({
                           className="w-full text-left px-4 py-2 text-gray-700 hover text-blue-600 hover bg-gray-50 transition-colors font-medium >
                           {item.label}"
                           <svg className=""inline-block w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                          </svg>
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7 > </path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" ></svg>
                         </button>
                         <AnimatePresence>
                           {activeDropdown === item.label && (
@@ -186,7 +181,7 @@ const ImprovedNavigation: React.FC<ImprovedNavigationProps> = ({
                                 <Link
                                   key={child.href}
                                   href={child.href}"
-                                  className=""block px-4 py-2 text-gray-600 hover text-blue-600 hover bg-gray-50 transition-colors"
+                                  className=""block px-4 py-2 text-gray-600 hover text-blue-600 hover bg-gray-50 transition-colors
                                   onClick={() => setMobileMenuOpen(false)}
                                 >
                                   {child.label}
@@ -199,7 +194,7 @@ const ImprovedNavigation: React.FC<ImprovedNavigationProps> = ({
                     ) : (
                       <Link
                         href={item.href}
-                        className="block px-4 py-2 text-gray-700 hover text-blue-600 hover bg-gray-50 transition-colors font-medium onClick={() => setMobileMenuOpen(false)}
+                        className=block px-4 py-2 text-gray-700 hover text-blue-600 hover bg-gray-50 transition-colors font-medium onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.label}
                       </Link>
