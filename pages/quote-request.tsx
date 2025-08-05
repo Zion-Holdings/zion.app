@@ -455,9 +455,8 @@ const QuoteRequestForm = () => {
   return (
   <ModernLayout>
     return (
-  <ModernLayout>
-    return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <ModernLayout>
+      <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-4xl mx-auto px-4">
         <div className="bg-white rounded-lg shadow-lg p-8">
           <div className="mb-8">
@@ -535,7 +534,7 @@ const QuoteRequestForm = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default QuoteRequestForm; 

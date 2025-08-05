@@ -6,13 +6,8 @@ import { motion } from 'framer-motion';
 
 const VirtualReality = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <Layout>
+    <ModernLayout>
+      <Layout>
       <Head>
         <title>Virtual Reality - Zion App</title>
         <meta name="description" content="Virtual reality solutions that create immersive digital environments." />
@@ -298,7 +293,7 @@ const VirtualReality = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default VirtualReality;

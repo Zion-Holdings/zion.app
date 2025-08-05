@@ -6,13 +6,8 @@ import { motion } from 'framer-motion';
 
 const QuantumComputing = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <Layout>
+    <ModernLayout>
+      <Layout>
       <Head>
         <title>Quantum Computing - Zion App</title>
         <meta name="description" content="Next-generation quantum computing solutions for complex problem-solving." />
@@ -298,7 +293,7 @@ const QuantumComputing = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default QuantumComputing;

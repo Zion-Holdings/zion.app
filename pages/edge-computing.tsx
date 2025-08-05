@@ -6,13 +6,8 @@ import { motion } from 'framer-motion';
 
 const EdgeComputing = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <Layout>
+    <ModernLayout>
+      <Layout>
       <Head>
         <title>Edge Computing - Zion App</title>
         <meta name="description" content="Edge computing solutions that bring processing power closer to your data sources." />
@@ -298,7 +293,7 @@ const EdgeComputing = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default EdgeComputing;

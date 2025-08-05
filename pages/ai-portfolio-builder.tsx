@@ -60,13 +60,8 @@ const PortfolioBuilder = () => {
   };
 
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <>
+    <ModernLayout>
+      <>
       <Head>
         <title>AI Portfolio Builder | Zion</title>
         <meta name="description" content="Create a professional portfolio with AI. Input your skills, experience, and projects, and let AI generate a stunning portfolio for you." />
@@ -114,7 +109,7 @@ const PortfolioBuilder = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default PortfolioBuilder;

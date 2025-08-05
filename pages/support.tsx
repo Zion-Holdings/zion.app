@@ -5,13 +5,8 @@ import Link from 'next/link';
 
 const SupportPage: NextPage = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <>
+    <ModernLayout>
+      <>
       <Head>
         <title>Support Center - Zion</title>
         <meta name="description" content="Get help and support for all your needs" />

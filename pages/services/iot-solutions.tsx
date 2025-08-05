@@ -41,7 +41,7 @@ const IotSolutions = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default IotSolutions;

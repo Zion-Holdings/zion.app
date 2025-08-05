@@ -7,9 +7,8 @@ const DevopsAutomationPage: NextPage = () => {
   return (
   <ModernLayout>
     return (
-  <ModernLayout>
-    return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <ModernLayout>
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Devops Automation - Zion AI Marketplace</title>
         <meta name="description" content="Find top devops automation services and professionals on Zion AI Marketplace." />

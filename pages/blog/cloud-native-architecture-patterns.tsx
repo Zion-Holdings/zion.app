@@ -7,9 +7,8 @@ const CloudNativeArchitecturePatternsPage: NextPage = () => {
   return (
   <ModernLayout>
     return (
-  <ModernLayout>
-    return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <ModernLayout>
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Cloud-Native Architecture Patterns - Zion Tech Blog</title>
         <meta name="description" content="Learn about cloud-native architecture patterns and its impact on modern business technology." />

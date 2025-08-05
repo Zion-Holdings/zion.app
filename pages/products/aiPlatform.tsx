@@ -7,9 +7,8 @@ const aiPlatformPage: NextPage = () => {
   return (
   <ModernLayout>
     return (
-  <ModernLayout>
-    return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <ModernLayout>
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Zion AI Platform - Zion AI Products</title>
         <meta name="description" content="A comprehensive AI-powered marketplace platform that connects enterprises with top-tier AI services, talents, and innovative solutions." />

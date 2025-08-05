@@ -246,13 +246,8 @@ const BusinessIntelligenceDashboard = () => {
   ];
 
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <>
+    <ModernLayout>
+      <>
       <Head>
         <title>AI Business Intelligence Dashboard - Zion Marketplace</title>
         <meta name="description" content="Real-time business intelligence, predictive analytics, and AI-powered insights" />
@@ -611,7 +606,7 @@ const BusinessIntelligenceDashboard = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default BusinessIntelligenceDashboard; 

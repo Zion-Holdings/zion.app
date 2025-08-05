@@ -6,13 +6,8 @@ import { motion } from 'framer-motion';
 
 const AiPoweredRecommendation = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <Layout>
+    <ModernLayout>
+      <Layout>
       <Head>
         <title>Ai Powered Recommendation - Zion App</title>
         <meta name="description" content="Smart AI recommendation engines that personalize experiences and drive engagement." />
@@ -298,7 +293,7 @@ const AiPoweredRecommendation = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default AiPoweredRecommendation;

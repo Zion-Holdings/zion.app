@@ -5,13 +5,8 @@ import Link from 'next/link';
 
 const ApiPage: NextPage = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <>
+    <ModernLayout>
+      <>
       <Head>
         <title>API Documentation - Zion</title>
         <meta name="description" content="API documentation and integration guides" />

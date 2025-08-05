@@ -6,13 +6,8 @@ import { motion } from 'framer-motion';
 
 const AugmentedReality = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <Layout>
+    <ModernLayout>
+      <Layout>
       <Head>
         <title>Augmented Reality - Zion App</title>
         <meta name="description" content="Immersive AR experiences that enhance user interaction and engagement." />
@@ -298,7 +293,7 @@ const AugmentedReality = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default AugmentedReality;

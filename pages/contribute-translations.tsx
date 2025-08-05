@@ -31,13 +31,8 @@ export default function ContributeTranslations() {
   };
 
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <>
+    <ModernLayout>
+      <>
       <Head>
         <title>Contribute Translations - Zion Marketplace</title>
         <meta name="description" content="Help translate Zion Marketplace and make it accessible to everyone." />

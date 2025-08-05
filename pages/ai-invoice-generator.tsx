@@ -141,13 +141,8 @@ const InvoiceGenerator = () => {
   };
 
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <>
+    <ModernLayout>
+      <>
       <Head>
         <title>AI Invoice Generator - Zion Marketplace</title>
         <meta name="description" content="Generate professional invoices and manage billing with AI assistance" />
@@ -539,7 +534,7 @@ const InvoiceGenerator = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default InvoiceGenerator; 

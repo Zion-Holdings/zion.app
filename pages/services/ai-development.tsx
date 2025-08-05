@@ -7,9 +7,8 @@ const Https___ziontechgroup_netlify_app_services_ai_devePage: NextPage = () => {
   return (
   <ModernLayout>
     return (
-  <ModernLayout>
-    return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <ModernLayout>
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Our Services - Zion Tech Group</title>
         <meta name="description" content="Explore our comprehensive service offerings" />

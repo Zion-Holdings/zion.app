@@ -18,12 +18,8 @@ const AIPoweredBiddingAuction: NextPage = () => {
       setTimeLeft(prev => prev > 0 ? prev - 1 : 0)
     }, 1000)
     return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return () => clearInterval(timer)
+    <ModernLayout>
+      ) => clearInterval(timer)
   }, [])
 
   const formatTime = (seconds: number) => {

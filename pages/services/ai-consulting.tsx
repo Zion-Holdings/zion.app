@@ -41,7 +41,7 @@ const AiConsulting = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default AiConsulting;

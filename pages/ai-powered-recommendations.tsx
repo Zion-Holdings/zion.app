@@ -248,12 +248,8 @@ const AIPoweredRecommendationsPage: NextPage = () => {
           return b.confidence - a.confidence
         case 'rating':
           return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (b.rating || 0) - (a.rating || 0)
+    <ModernLayout>
+      b.rating || 0) - (a.rating || 0)
         case 'price':
           return (a.price || 0) - (b.price || 0)
         case 'aiScore':

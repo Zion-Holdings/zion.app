@@ -6,13 +6,8 @@ import { motion } from 'framer-motion';
 
 const IotPlatforms = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <Layout>
+    <ModernLayout>
+      <Layout>
       <Head>
         <title>Iot Platforms - Zion App</title>
         <meta name="description" content="Comprehensive IoT platforms that connect and manage your smart devices and sensors." />
@@ -298,7 +293,7 @@ const IotPlatforms = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default IotPlatforms;

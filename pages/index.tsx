@@ -157,13 +157,8 @@ const Home: NextPage = () => {
   ]
 
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <>
+    <ModernLayout>
+      <>
       <Head>
         <title>Zion - The First Free AI-Powered Marketplace</title>
         <meta name="description" content="Experience the future of commerce with our cutting-edge AI-powered marketplace. Connect with top-tier IT services, AI talents, and innovative products." />

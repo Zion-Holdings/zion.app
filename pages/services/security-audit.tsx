@@ -41,7 +41,7 @@ const SecurityAudit = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default SecurityAudit;

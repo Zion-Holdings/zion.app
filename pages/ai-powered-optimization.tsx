@@ -6,13 +6,8 @@ import { motion } from 'framer-motion';
 
 const AiPoweredOptimization = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <Layout>
+    <ModernLayout>
+      <Layout>
       <Head>
         <title>Ai Powered Optimization - Zion App</title>
         <meta name="description" content="Advanced AI optimization algorithms that maximize efficiency and performance across all operations." />
@@ -298,7 +293,7 @@ const AiPoweredOptimization = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default AiPoweredOptimization;

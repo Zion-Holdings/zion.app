@@ -284,13 +284,8 @@ const ServiceRequestSystemPage: NextPage = () => {
   }
 
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <>
+    <ModernLayout>
+      <>
       <Head>
         <title>Service Request System - Zion Marketplace</title>
         <meta name="description" content="Submit and manage service requests with AI-powered analysis and provider matching" />

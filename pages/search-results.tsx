@@ -28,13 +28,8 @@ export default function SearchResults() {
   };
 
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <>
+    <ModernLayout>
+      <>
       <Head>
         <title>Search Results - Zion Marketplace</title>
         <meta name="description" content="Search results for Zion Marketplace" />

@@ -41,7 +41,7 @@ const CloudMigration = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default CloudMigration;

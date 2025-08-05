@@ -134,13 +134,8 @@ const Blog: NextPage = () => {
   ];
 
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <ModernLayout>
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Blog - Zion</title>
         <meta name="description" content="Latest insights on AI-powered marketplaces, blockchain technology, and digital innovation" />

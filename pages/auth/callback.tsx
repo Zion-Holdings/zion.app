@@ -41,9 +41,8 @@ export default function AuthCallback() {
   return (
   <ModernLayout>
     return (
-  <ModernLayout>
-    return (
-    <div className="min-h-screen flex items-center justify-center">
+    <ModernLayout>
+      <div className="min-h-screen flex items-center justify-center">
       <div className="text-center text-responsive-lg text-responsive-lg">
         <h1 className="text-2xl font-bold mb-4 text-responsive-lg text-responsive-lg">Processing authentication...</h1>
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>

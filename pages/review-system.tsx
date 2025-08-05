@@ -210,12 +210,8 @@ const ReviewSystemPage: NextPage = () => {
           return b.rating - a.rating;
         case 'helpful':
           return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (b.helpful - b.notHelpful) - (a.helpful - a.notHelpful);
+    <ModernLayout>
+      b.helpful - b.notHelpful) - (a.helpful - a.notHelpful);
         case 'verified':
           return (b.verified ? 1 : 0) - (a.verified ? 1 : 0);
         case 'recent':

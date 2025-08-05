@@ -7,9 +7,8 @@ const aiMatchingEnginePage: NextPage = () => {
   return (
   <ModernLayout>
     return (
-  <ModernLayout>
-    return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <ModernLayout>
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Zion AI Matching Engine - Zion AI Products</title>
         <meta name="description" content="An intelligent matching engine that uses advanced AI algorithms to connect enterprises with the perfect AI services and talent." />

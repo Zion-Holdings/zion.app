@@ -7,9 +7,8 @@ const opportunity_solution_1754022651945_2Page: NextPage = () => {
   return (
   <ModernLayout>
     return (
-  <ModernLayout>
-    return (
-    <div className="min-h-screen bg-gray-50">
+    <ModernLayout>
+      <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -203,7 +202,7 @@ const opportunity_solution_1754022651945_2Page: NextPage = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default opportunity_solution_1754022651945_2Page;

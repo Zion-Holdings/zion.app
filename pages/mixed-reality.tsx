@@ -6,13 +6,8 @@ import { motion } from 'framer-motion';
 
 const MixedReality = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <Layout>
+    <ModernLayout>
+      <Layout>
       <Head>
         <title>Mixed Reality - Zion App</title>
         <meta name="description" content="Mixed reality experiences that blend physical and digital worlds." />
@@ -298,7 +293,7 @@ const MixedReality = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default MixedReality;

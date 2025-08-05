@@ -41,7 +41,7 @@ const QuantumComputingServices = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default QuantumComputingServices;

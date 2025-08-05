@@ -5,13 +5,8 @@ import { motion } from 'framer-motion';
 
 export default function EquipmentDetails() {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <>
+    <ModernLayout>
+      <>
       <Head>
         <title>Equipment-details</title>
         <meta name="description" content="Page for equipment-details functionality" />

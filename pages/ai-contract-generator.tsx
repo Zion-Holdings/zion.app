@@ -97,13 +97,8 @@ const ContractGenerator = () => {
   };
 
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <>
+    <ModernLayout>
+      <>
       <Head>
         <title>AI Contract Generator - Zion Marketplace</title>
         <meta name="description" content="Generate professional contracts and legal documents with AI assistance" />
@@ -424,7 +419,7 @@ const ContractGenerator = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default ContractGenerator; 

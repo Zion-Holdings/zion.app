@@ -6,13 +6,8 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <>
+    <ModernLayout>
+      <>
       <Head>
         <title>Zion Marketplace - Home</title>
         <meta name="description" content="Welcome to Zion Marketplace. Discover AI-powered services, products, and talent for the future of business." />

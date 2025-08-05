@@ -285,7 +285,7 @@ const AiPoweredAnalysis = () => {
         </section>
       </div>
     </ModernLayout>
-  );
+    );
 };
 
 export default AiPoweredAnalysis;

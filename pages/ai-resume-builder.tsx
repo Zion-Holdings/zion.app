@@ -265,13 +265,8 @@ const ResumeBuilder = () => {
   ];
 
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <>
+    <ModernLayout>
+      <>
       <Head>
         <title>AI Resume Builder - Zion Marketplace</title>
         <meta name="description" content="Create professional resumes and get AI-powered career advice" />
@@ -1041,7 +1036,7 @@ const ResumeBuilder = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default ResumeBuilder; 

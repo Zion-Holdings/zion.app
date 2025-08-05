@@ -7,9 +7,8 @@ const BlockchainSupplyChainPage: NextPage = () => {
   return (
   <ModernLayout>
     return (
-  <ModernLayout>
-    return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <ModernLayout>
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Blockchain Supply Chain - Zion AI Marketplace</title>
         <meta name="description" content="Find top blockchain supply chain services and professionals on Zion AI Marketplace." />

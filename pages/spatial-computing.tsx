@@ -6,13 +6,8 @@ import { motion } from 'framer-motion';
 
 const SpatialComputing = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <Layout>
+    <ModernLayout>
+      <Layout>
       <Head>
         <title>Spatial Computing - Zion App</title>
         <meta name="description" content="Spatial computing solutions that understand and interact with 3D space." />
@@ -298,7 +293,7 @@ const SpatialComputing = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default SpatialComputing;

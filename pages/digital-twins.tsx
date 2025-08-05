@@ -6,13 +6,8 @@ import { motion } from 'framer-motion';
 
 const DigitalTwins = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <Layout>
+    <ModernLayout>
+      <Layout>
       <Head>
         <title>Digital Twins - Zion App</title>
         <meta name="description" content="Digital twin technology that creates virtual replicas of physical systems." />
@@ -298,7 +293,7 @@ const DigitalTwins = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default DigitalTwins;

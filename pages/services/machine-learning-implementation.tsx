@@ -41,7 +41,7 @@ const MachineLearningImplementation = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default MachineLearningImplementation;

@@ -214,13 +214,8 @@ const ITServicesPage: React.FC = () => {
   };
 
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <>
+    <ModernLayout>
+      <>
       <Head>
         <title>IT Service Providers - Find the Best IT Solutions</title>
         <meta name="description" content="Discover top-rated IT service providers. Compare AI-matched scores, ratings, and get quotes from the best IT consultants and managed service providers." />
@@ -428,7 +423,7 @@ const ITServicesPage: React.FC = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default ITServicesPage;

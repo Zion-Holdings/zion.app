@@ -184,13 +184,8 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
   }
 
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <div className="relative z-10 container-responsive py-8">
+    <ModernLayout>
+      <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">

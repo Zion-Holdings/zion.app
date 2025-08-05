@@ -4,13 +4,8 @@ import Head from 'next/head';
 
 export default function Docs() {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <>
+    <ModernLayout>
+      <>
       <Head>
         <title>Documentation - Zion</title>
         <meta name="description" content="Documentation for Zion's marketplace platform" />

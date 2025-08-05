@@ -7,9 +7,8 @@ const AIPoweredCybersecurityPage: NextPage = () => {
   return (
   <ModernLayout>
     return (
-  <ModernLayout>
-    return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <ModernLayout>
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>AI-Powered Cybersecurity - Zion Tech Group</title>
         <meta name="description" content="Professional ai-powered cybersecurity services from Zion Tech Group. Expert solutions for your business needs." />

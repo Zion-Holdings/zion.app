@@ -7,9 +7,8 @@ const TheRiseOfEdgeComputingInIotApplicationsPage: NextPage = () => {
   return (
   <ModernLayout>
     return (
-  <ModernLayout>
-    return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <ModernLayout>
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>The Rise of Edge Computing in IoT Applications - Zion Tech Blog</title>
         <meta name="description" content="Learn about the rise of edge computing in iot applications and its impact on modern business technology." />

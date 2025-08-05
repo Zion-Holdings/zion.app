@@ -6,13 +6,8 @@ import { motion } from 'framer-motion';
 
 const AiPoweredIntegration = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <Layout>
+    <ModernLayout>
+      <Layout>
       <Head>
         <title>Ai Powered Integration - Zion App</title>
         <meta name="description" content="Seamless AI integration solutions that connect all your systems and data sources." />
@@ -298,7 +293,7 @@ const AiPoweredIntegration = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default AiPoweredIntegration;

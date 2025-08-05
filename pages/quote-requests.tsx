@@ -502,12 +502,7 @@ const QuoteRequestsPage: NextPage = () => {
 
   if (loading) {
     return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
+    <ModernLayout>
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}

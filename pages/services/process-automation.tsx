@@ -41,7 +41,7 @@ const ProcessAutomation = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default ProcessAutomation;

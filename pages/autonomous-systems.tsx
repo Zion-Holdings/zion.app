@@ -6,13 +6,8 @@ import { motion } from 'framer-motion';
 
 const AutonomousSystems = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <Layout>
+    <ModernLayout>
+      <Layout>
       <Head>
         <title>Autonomous Systems - Zion App</title>
         <meta name="description" content="Autonomous systems that operate independently and make intelligent decisions." />
@@ -298,7 +293,7 @@ const AutonomousSystems = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default AutonomousSystems;

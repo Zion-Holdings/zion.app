@@ -6,13 +6,8 @@ import { motion } from 'framer-motion';
 
 const BlockchainSolutions = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <Layout>
+    <ModernLayout>
+      <Layout>
       <Head>
         <title>Blockchain Solutions - Zion App</title>
         <meta name="description" content="Enterprise-grade blockchain solutions that provide transparency, security, and efficiency." />
@@ -298,7 +293,7 @@ const BlockchainSolutions = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default BlockchainSolutions;

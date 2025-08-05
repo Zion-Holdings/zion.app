@@ -6,13 +6,8 @@ import { motion } from 'framer-motion';
 
 const AiPoweredPrediction = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <Layout>
+    <ModernLayout>
+      <Layout>
       <Head>
         <title>Ai Powered Prediction - Zion App</title>
         <meta name="description" content="Cutting-edge predictive analytics powered by machine learning to forecast trends and opportunities." />
@@ -298,7 +293,7 @@ const AiPoweredPrediction = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default AiPoweredPrediction;

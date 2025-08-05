@@ -116,12 +116,8 @@ const RealTimeChatPage: NextPage = () => {
     }, 5000) // Check every 5 seconds
 
     return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return () => clearInterval(interval)
+    <ModernLayout>
+      ) => clearInterval(interval)
   }, [selectedRoom])
 
   const handleSendMessage = useCallback(async () => {

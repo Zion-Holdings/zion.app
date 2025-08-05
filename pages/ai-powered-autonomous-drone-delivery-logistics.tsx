@@ -265,12 +265,8 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
     }, 5000)
 
     return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return () => clearInterval(trackingInterval)
+    <ModernLayout>
+      ) => clearInterval(trackingInterval)
   }, [realTimeTracking])
 
   const initializeDroneSystem = async () => {

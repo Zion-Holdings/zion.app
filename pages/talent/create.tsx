@@ -284,7 +284,7 @@ const CreateTalentPage: React.FC = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default CreateTalentPage; 

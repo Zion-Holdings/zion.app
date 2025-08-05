@@ -79,13 +79,8 @@ const ChatContentIndex: NextPage = () => {
   ];
 
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <>
+    <ModernLayout>
+      <>
       <Head>
         <title>Chat Content - Zion</title>
         <meta name="description" content="Explore our comprehensive chat content covering AI, cloud computing, cybersecurity, and more" />

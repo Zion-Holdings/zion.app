@@ -126,8 +126,7 @@ const TalentPage: React.FC = () => {
     return (
   <ModernLayout>
     return (
-  <ModernLayout>
-    return (
+    <ModernLayout>
       <div className="flex items-center">
         {[1, 2, 3, 4, 5].map((star) => (
           <svg
@@ -346,7 +345,7 @@ const TalentPage: React.FC = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default TalentPage;

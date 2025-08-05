@@ -6,13 +6,8 @@ import { motion } from 'framer-motion';
 
 const AiPoweredVisualization = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <Layout>
+    <ModernLayout>
+      <Layout>
       <Head>
         <title>Ai Powered Visualization - Zion App</title>
         <meta name="description" content="Advanced AI visualization tools that transform complex data into clear, actionable insights." />
@@ -298,7 +293,7 @@ const AiPoweredVisualization = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default AiPoweredVisualization;

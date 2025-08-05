@@ -41,7 +41,7 @@ const BlockchainDevelopment = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default BlockchainDevelopment;

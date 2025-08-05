@@ -6,13 +6,8 @@ import { motion } from 'framer-motion';
 
 const AiPoweredReporting = () => {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-    <Layout>
+    <ModernLayout>
+      <Layout>
       <Head>
         <title>Ai Powered Reporting - Zion App</title>
         <meta name="description" content="Intelligent AI reporting tools that generate comprehensive insights and analytics." />
@@ -298,7 +293,7 @@ const AiPoweredReporting = () => {
   </ModernLayout>
 
   </ModernLayout>
-);
+  );
 };
 
 export default AiPoweredReporting;

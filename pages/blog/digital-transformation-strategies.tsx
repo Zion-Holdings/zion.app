@@ -7,9 +7,8 @@ const DigitalTransformationStrategiesPage: NextPage = () => {
   return (
   <ModernLayout>
     return (
-  <ModernLayout>
-    return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <ModernLayout>
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Digital Transformation Strategies - Zion Tech Blog</title>
         <meta name="description" content="Learn about digital transformation strategies and its impact on modern business technology." />

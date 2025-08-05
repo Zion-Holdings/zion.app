@@ -428,12 +428,7 @@ const ServiceMarketplacePage: NextPage = () => {
 
   const renderStars = (rating: number) => {
     return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
-    return (
+    <ModernLayout>
       <div className="flex items-center">
         {[1, 2, 3, 4, 5].map((star) => (
           <svg
