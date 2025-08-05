@@ -371,49 +371,177 @@ class ContentGeneratorAgent {
   async generateFAQs() {
     console.log('❓ Generating FAQs...');
     
-    const faqs = [
+    const faqTemplates = [
       {
-        question: "What services do you offer?",
-        answer: "We offer comprehensive IT services including web development, mobile app development, cloud infrastructure, data analytics, and AI/ML solutions.",
-        category: "General"
+        question: "What services does Zion Tech Group offer?",
+        answer: "We offer comprehensive AI-powered solutions including web development, mobile apps, cloud services, data analytics, and blockchain development."
       },
       {
-        question: "How long does a typical project take?",
-        answer: "Project timelines vary based on complexity. Simple projects take 2-4 weeks, while complex enterprise solutions can take 3-6 months.",
-        category: "Project Management"
+        question: "How can I get started with your services?",
+        answer: "Contact us through our website or call us directly. We'll schedule a consultation to discuss your project requirements."
+      },
+      {
+        question: "What is your typical project timeline?",
+        answer: "Project timelines vary based on complexity. Simple websites take 2-4 weeks, while complex applications can take 3-6 months."
       },
       {
         question: "Do you provide ongoing support?",
-        answer: "Yes, we offer 24/7 support and maintenance packages to ensure your solutions continue to perform optimally.",
-        category: "Support"
+        answer: "Yes, we offer comprehensive maintenance and support packages to ensure your systems run smoothly."
       },
       {
-        question: "What is your pricing structure?",
-        answer: "We offer flexible pricing options including hourly rates, project-based pricing, and enterprise packages tailored to your needs.",
-        category: "Pricing"
+        question: "What technologies do you specialize in?",
+        answer: "We specialize in modern technologies including React, Node.js, Python, AI/ML, cloud platforms, and blockchain."
       }
     ];
 
-    for (const faq of faqs) {
-      const content = this.generateFAQContent(faq);
-      await this.saveContent('faqs', faq.question.toLowerCase().replace(/\s+/g, '-').substring(0, 30), content);
+    for (const faq of faqTemplates) {
+      const content = `## ${faq.question}\n\n${faq.answer}`;
+      await this.saveContent('faq', `faq-${Date.now()}`, content);
     }
-    
-    console.log('✅ FAQs generated');
   }
 
-  generateFAQContent(faq) {
-    const template = this.contentTemplates.faq;
+  async generateMissingContent(analysisReport) {
+    console.log('🎨 Generating missing content based on analysis...');
     
-    return {
-      question: template.question.replace('{{FAQ_QUESTION}}', faq.question),
-      answer: template.answer.replace('{{FAQ_ANSWER}}', faq.answer),
-      category: template.category.replace('{{FAQ_CATEGORY}}', faq.category),
-      metadata: {
-        helpful: Math.floor(Math.random() * 50) + 10,
-        views: Math.floor(Math.random() * 200) + 50
+    try {
+      const missingContent = [];
+      
+      if (analysisReport && analysisReport.missingPages) {
+        for (const page of analysisReport.missingPages) {
+          const content = await this.generatePageContent(page);
+          missingContent.push({
+            url: page.url,
+            title: page.title,
+            content: content,
+            type: 'page'
+          });
+        }
       }
+      
+      if (analysisReport && analysisReport.missingContent) {
+        for (const contentItem of analysisReport.missingContent) {
+          const content = await this.generateContentItem(contentItem);
+          missingContent.push({
+            type: contentItem.type,
+            title: contentItem.title,
+            content: content
+          });
+        }
+      }
+      
+      console.log(`✅ Generated ${missingContent.length} missing content pieces`);
+      return missingContent;
+      
+    } catch (error) {
+      console.error('❌ Error generating missing content:', error);
+      return [];
+    }
+  }
+
+  async generatePageContent(page) {
+    const template = `
+# ${page.title}
+
+## Overview
+${page.description || 'Comprehensive information about this service or feature.'}
+
+## Features
+- Advanced functionality
+- User-friendly interface
+- Scalable architecture
+- Secure implementation
+
+## Benefits
+- Improved efficiency
+- Cost savings
+- Enhanced user experience
+- Future-proof technology
+
+## Contact Us
+Get in touch to learn more about our ${page.title} services.
+    `;
+    
+    return template;
+  }
+
+  async generateContentItem(contentItem) {
+    const templates = {
+      'service': `## ${contentItem.title}\n\nProfessional ${contentItem.title.toLowerCase()} services with expert implementation and ongoing support.`,
+      'product': `## ${contentItem.title}\n\nInnovative ${contentItem.title.toLowerCase()} solution designed for modern business needs.`,
+      'blog': `## ${contentItem.title}\n\nInsights and analysis on ${contentItem.title.toLowerCase()} trends and best practices.`
     };
+    
+    return templates[contentItem.type] || `## ${contentItem.title}\n\n${contentItem.description || 'Comprehensive content about this topic.'}`;
+  }
+
+  async createPageFiles(generatedContent) {
+    console.log('📄 Creating page files for generated content...');
+    
+    try {
+      for (const item of generatedContent) {
+        if (item.type === 'page') {
+          await this.createPageFile(item);
+        }
+      }
+    } catch (error) {
+      console.error('❌ Error creating page files:', error);
+    }
+  }
+
+  async createPageFile(pageItem) {
+    try {
+      const fileName = this.generateFileName(pageItem.url);
+      const filePath = path.join(__dirname, '..', 'pages', fileName);
+      
+      const fileContent = this.generatePageFileContent(pageItem);
+      
+      await fs.writeFile(filePath, fileContent, 'utf8');
+      console.log(`✅ Created page file: ${fileName}`);
+      
+    } catch (error) {
+      console.error(`❌ Error creating page file for ${pageItem.url}:`, error);
+    }
+  }
+
+  generateFileName(url) {
+    const path = url.replace(/^https?:\/\/[^\/]+/, '').replace(/\/$/, '');
+    if (path === '') return 'index.tsx';
+    
+    const segments = path.split('/').filter(segment => segment);
+    const fileName = segments[segments.length - 1] || 'index';
+    return `${fileName}.tsx`;
+  }
+
+  generatePageFileContent(pageItem) {
+    return `import React from 'react';
+import Head from 'next/head';
+import Layout from '../components/Layout';
+
+export default function ${this.generateComponentName(pageItem.title)}() {
+  return (
+    <Layout>
+      <Head>
+        <title>${pageItem.title} - Zion Tech Group</title>
+        <meta name="description" content="${pageItem.title} services and solutions" />
+      </Head>
+      
+      <div className="container mx-auto px-4 py-8">
+        <div className="prose max-w-none">
+          ${pageItem.content.replace(/\n/g, '\n          ')}
+        </div>
+      </div>
+    </Layout>
+  );
+}
+    `;
+  }
+
+  generateComponentName(title) {
+    return title
+      .replace(/[^a-zA-Z0-9\s]/g, '')
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join('') + 'Page';
   }
 
   async saveContent(type, name, content) {

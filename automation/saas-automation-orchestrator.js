@@ -52,9 +52,6 @@ class SaaSAutomationOrchestrator {
   async start() {
     console.log('SaaS Automation Orchestrator starting...');
     
-    // Initialize the factory
-    await this.factory.initialize();
-    
     // Start all orchestration processes
     this.startServiceCreationLoop();
     this.startDevelopmentOrchestration();
