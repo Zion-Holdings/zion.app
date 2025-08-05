@@ -37,7 +37,7 @@ const DatabaseDesignChatPage: NextPage = () => {
                 Expert discussion about database design implementation and best practices
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>analytical-research • problem-solution • business-strategy</span>
+                <span>innovative-futuristic • case-study • interactive-demo</span>
               </div>
             </div>
           </div>
