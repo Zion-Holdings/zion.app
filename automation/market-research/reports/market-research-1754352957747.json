@@ -1,4 +1,107 @@
 {
+  "timestamp": "2025-08-05T00:15:57.747Z",
+  "summary": {
+    "trendsDiscovered": 14,
+    "toolsDiscovered": 0,
+    "opportunitiesIdentified": 16,
+    "marketInsights": {
+      "trendAnalysis": {
+        "totalTrends": 14,
+        "topKeywords": [
+          {
+            "keyword": "scraping",
+            "count": 2
+          },
+          {
+            "keyword": "data",
+            "count": 2
+          },
+          {
+            "keyword": "adds",
+            "count": 2
+          },
+          {
+            "keyword": "another",
+            "count": 2
+          },
+          {
+            "keyword": "solar",
+            "count": 2
+          },
+          {
+            "keyword": "power",
+            "count": 2
+          },
+          {
+            "keyword": "google",
+            "count": 2
+          },
+          {
+            "keyword": "perplexity",
+            "count": 1
+          },
+          {
+            "keyword": "accused",
+            "count": 1
+          },
+          {
+            "keyword": "websites",
+            "count": 1
+          }
+        ],
+        "categories": {}
+      },
+      "toolAnalysis": {
+        "totalTools": 0,
+        "categories": {},
+        "popularKeywords": []
+      },
+      "opportunityAnalysis": {
+        "totalOpportunities": 16,
+        "marketSizeDistribution": {
+          "High": 8,
+          "Medium": 8
+        },
+        "competitionDistribution": {
+          "Medium": 8,
+          "Low": 8
+        },
+        "highPotentialCount": 16
+      },
+      "summary": {
+        "totalInsights": 30,
+        "marketActivity": "Medium",
+        "keyTrends": [
+          "Perplexity accused of scraping websites that explicitly blocked AI scraping",
+          "Obvio’s stop sign cameras use AI to root out unsafe drivers",
+          "Breakneck data center growth challenges Microsoft’s sustainability goals",
+          "Meta adds another 650 MW of solar power to its AI push",
+          "Nvidia thinks AI can solve electrical grid problems caused by AI"
+        ],
+        "emergingTools": [],
+        "topOpportunities": [
+          "AI-Powered business opportunity Solution",
+          "Intelligent business opportunity Platform",
+          "AI-Powered market gap Solution"
+        ]
+      },
+      "recommendations": [
+        {
+          "type": "trend",
+          "action": "Monitor emerging AI trends for market opportunities",
+          "priority": "High",
+          "reasoning": "14 new trends identified"
+        },
+        {
+          "type": "opportunity",
+          "action": "Focus on high-potential market opportunities",
+          "priority": "High",
+          "reasoning": "16 high-potential opportunities identified"
+        }
+      ],
+      "analyzedAt": "2025-08-05T00:15:57.747Z"
+    }
+  },
   "trends": [
     {
       "title": "Perplexity accused of scraping websites that explicitly blocked AI scraping",
@@ -262,7 +365,7 @@
       "discoveredAt": "2025-08-05T00:15:57.245Z"
     }
   ],
-  "marketInsights": {
+  "insights": {
     "trendAnalysis": {
       "totalTrends": 14,
       "topKeywords": [
@@ -358,7 +461,5 @@
       }
     ],
     "analyzedAt": "2025-08-05T00:15:57.747Z"
-  },
-  "competitors": [],
-  "lastUpdated": "2025-08-05T00:15:31.960Z"
+  }
 }
