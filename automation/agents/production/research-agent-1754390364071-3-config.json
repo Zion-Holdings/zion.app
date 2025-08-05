@@ -1,0 +1,49 @@
+{
+  "id": "research-agent-1754390364071-3",
+  "name": "AI Research Agent",
+  "type": "research",
+  "focus": "AI",
+  "capabilities": [
+    "web crawling",
+    "data analysis",
+    "trend identification"
+  ],
+  "output": "market insights",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Trend identified: Meta adds another 650 MW of solar power to its AI push",
+  "status": "Active",
+  "createdAt": "2025-08-05T10:39:24.071Z",
+  "configuration": {
+    "sources": [
+      "web crawlers",
+      "API endpoints",
+      "data feeds"
+    ],
+    "parameters": {
+      "area": "AI",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.9630938216914049,
+    "accuracy": 0.8094896788946117,
+    "reliability": 0.9129112339421886,
+    "scalability": 0.8349190584275888
+  },
+  "recommendations": [
+    {
+      "type": "improvement",
+      "action": "Improve agent accuracy",
+      "priority": "High",
+      "reasoning": "Agent accuracy needs improvement"
+    }
+  ]
+}
