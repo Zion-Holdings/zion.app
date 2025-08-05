@@ -21,7 +21,18 @@
     "linkedin:cron": "ts-node scripts/linkedin-automation.ts cron",
     "linkedin:generate": "ts-node scripts/linkedin-automation.ts generate",
     "linkedin:start": "npm run linkedin:cron",
-    "linkedin:test": "ts-node scripts/test-linkedin-automation.ts"
+    "linkedin:test": "ts-node scripts/test-linkedin-automation.ts",
+    "mcp:start": "node mcp-automation-system.js",
+    "mcp:client": "node mcp-client-integration.js",
+    "mcp:orchestrator": "node automation/mcp-integration-orchestrator.js",
+    "mcp:enhance": "node automation/mcp-integration-orchestrator.js enhance",
+    "mcp:workflow": "node automation/mcp-integration-orchestrator.js workflow",
+    "mcp:report": "node automation/mcp-integration-orchestrator.js report",
+    "mcp:setup-cron": "node automation/mcp-integration-orchestrator.js setup-cron",
+    "mcp:daily": "node automation/mcp-integration-orchestrator.js daily-workflow",
+    "mcp:weekly": "node automation/mcp-integration-orchestrator.js weekly-audit",
+    "mcp:monitor": "node automation/mcp-integration-orchestrator.js performance-monitor",
+    "mcp:status": "node automation/mcp-integration-orchestrator.js status"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
