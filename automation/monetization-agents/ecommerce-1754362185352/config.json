@@ -1,0 +1,12 @@
+{
+  "id": "ecommerce-1754362185352",
+  "type": "ecommerce",
+  "created": "2025-08-05T02:49:45.352Z",
+  "status": "active",
+  "config": {},
+  "performance": {
+    "revenueGenerated": 0,
+    "conversions": 0,
+    "efficiency": 0
+  }
+}

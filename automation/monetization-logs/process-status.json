@@ -1,60 +1,60 @@
 {
-  "timestamp": "2025-08-05T02:08:57.432Z",
+  "timestamp": "2025-08-05T02:49:40.218Z",
   "totalProcesses": 9,
   "processes": [
     {
       "name": "orchestrator",
-      "pid": 83548,
+      "pid": 59001,
       "displayName": "Monetization Orchestrator",
-      "startTime": "2025-08-05T02:08:57.399Z"
+      "startTime": "2025-08-05T02:49:40.171Z"
     },
     {
       "name": "revenue-optimization",
-      "pid": 83551,
+      "pid": 59003,
       "displayName": "Revenue Optimization",
-      "startTime": "2025-08-05T02:08:57.404Z"
+      "startTime": "2025-08-05T02:49:40.176Z"
     },
     {
       "name": "ad-revenue-optimization",
-      "pid": 83552,
+      "pid": 59005,
       "displayName": "Ad Revenue Optimization",
-      "startTime": "2025-08-05T02:08:57.408Z"
+      "startTime": "2025-08-05T02:49:40.179Z"
     },
     {
       "name": "subscription-optimization",
-      "pid": 83553,
+      "pid": 59006,
       "displayName": "Subscription Optimization",
-      "startTime": "2025-08-05T02:08:57.415Z"
+      "startTime": "2025-08-05T02:49:40.183Z"
     },
     {
       "name": "affiliate-optimization",
-      "pid": 83556,
+      "pid": 59007,
       "displayName": "Affiliate Optimization",
-      "startTime": "2025-08-05T02:08:57.421Z"
+      "startTime": "2025-08-05T02:49:40.192Z"
     },
     {
       "name": "ecommerce-optimization",
-      "pid": 83557,
+      "pid": 59008,
       "displayName": "Ecommerce Optimization",
-      "startTime": "2025-08-05T02:08:57.423Z"
+      "startTime": "2025-08-05T02:49:40.205Z"
     },
     {
       "name": "freemium-optimization",
-      "pid": 83558,
+      "pid": 59012,
       "displayName": "Freemium Optimization",
-      "startTime": "2025-08-05T02:08:57.425Z"
+      "startTime": "2025-08-05T02:49:40.211Z"
     },
     {
       "name": "performance-monitoring",
-      "pid": 83559,
+      "pid": 59013,
       "displayName": "Performance Monitoring",
-      "startTime": "2025-08-05T02:08:57.427Z"
+      "startTime": "2025-08-05T02:49:40.214Z"
     },
     {
       "name": "continuous-improvement",
-      "pid": 83560,
+      "pid": 59016,
       "displayName": "Continuous Improvement",
-      "startTime": "2025-08-05T02:08:57.429Z"
+      "startTime": "2025-08-05T02:49:40.217Z"
     }
   ]
 }

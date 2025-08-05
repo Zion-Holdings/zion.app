@@ -1,0 +1,22 @@
+{
+  "id": "affiliate-1754362180286",
+  "type": "affiliate",
+  "created": "2025-08-05T02:49:40.286Z",
+  "status": "active",
+  "config": {
+    "networks": [
+      "commission-junction",
+      "shareasale",
+      "amazon-associates"
+    ],
+    "strategies": [
+      "content-marketing",
+      "influencer-partnerships"
+    ]
+  },
+  "performance": {
+    "revenueGenerated": 0,
+    "conversions": 0,
+    "efficiency": 0
+  }
+}
