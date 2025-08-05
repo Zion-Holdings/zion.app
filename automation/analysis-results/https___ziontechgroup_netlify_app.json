@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app",
-  "timestamp": "2025-08-05T12:10:07.726Z",
+  "timestamp": "2025-08-05T12:12:56.813Z",
   "pageInfo": {
     "title": "Zion - The First Free AI-Powered Marketplace",
     "description": "Experience the future of commerce with our cutting-edge AI-powered marketplace. Connect with top-tier IT services, AI talents, and innovative products.",
@@ -140,11 +140,11 @@
         "type": "application/json"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-b984b49231b602aa.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-0dc04332c8e5ad88.js",
         "type": "text/javascript"
       },
       {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/marketplace-0dc04332c8e5ad88.js",
+        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/auth/signup-b984b49231b602aa.js",
         "type": "text/javascript"
       }
     ],

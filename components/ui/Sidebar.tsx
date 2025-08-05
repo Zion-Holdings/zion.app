@@ -409,9 +409,10 @@ const Sidebar: React.FC = () => {
       {/* Mobile toggle button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed top-4 left-4 z-50 lg:hidden p-2 bg-gray-800 rounded-lg shadow-lg"
+        className="fixed top-4 left-4 z-50 lg:hidden p-3 bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl shadow-2xl border border-gray-700/50 backdrop-blur-sm hover:scale-110 transition-all duration-300 group"
       >
-        <Menu className="w-6 h-6 text-white" />
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+        <Menu className="w-6 h-6 text-white relative z-10 group-hover:rotate-90 transition-transform duration-300" />
       </button>
     </>
   )

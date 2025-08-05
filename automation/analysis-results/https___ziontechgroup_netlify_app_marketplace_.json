@@ -1,6 +1,6 @@
 {
   "url": "https://ziontechgroup.netlify.app/marketplace/",
-  "timestamp": "2025-08-05T12:10:10.295Z",
+  "timestamp": "2025-08-05T12:13:01.222Z",
   "pageInfo": {
     "title": "Marketplace - Zion",
     "description": "Explore Zion's AI-powered marketplace for services, talents, equipment, and products.",
@@ -98,22 +98,6 @@
       {
         "src": "",
         "type": "application/json"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/talents-646d751ad4b812b0.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/equipment-154a1db97f4241d6.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/products-592dd8607ba8645a.js",
-        "type": "text/javascript"
-      },
-      {
-        "src": "https://ziontechgroup.netlify.app/_next/static/chunks/pages/services-a4f857295197d21a.js",
-        "type": "text/javascript"
       }
     ],
     "stylesheets": [
@@ -128,7 +112,7 @@
     "headingCount": 13,
     "imageCount": 0,
     "formCount": 0,
-    "scriptCount": 13,
+    "scriptCount": 9,
     "stylesheetCount": 1
   }
 }
