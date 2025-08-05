@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-08-05T10:55:30.633Z",
+  "timestamp": "2025-08-05T10:59:57.677Z",
   "totalAgents": 33,
   "activeAgents": 33,
   "byType": {
@@ -9,6 +9,6 @@
   },
   "averagePerformance": {
     "efficiency": "0.85",
-    "accuracy": "0.92"
+    "accuracy": "0.91"
   }
 }
