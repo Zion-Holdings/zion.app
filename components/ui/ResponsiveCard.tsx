@@ -52,6 +52,6 @@ const ResponsiveCard: React.FC<ResponsiveCardProps> = ({
       {children}
     </div>
   )
-}
+};
 
 export default ResponsiveCard 

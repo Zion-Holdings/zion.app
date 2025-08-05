@@ -3,6 +3,9 @@ import ModernLayout from '../components/layout/ModernLayout';
 import { useRouter } from 'next/router';
 import { useAuth } from '../src/contexts/AuthContext';
 import Head from 'next/head';
+import RealTimeMonitor from '../components/admin/RealTimeMonitor';
+import AgentMonitor from '../components/admin/AgentMonitor';
+import SystemHealthMonitor from '../components/admin/SystemHealthMonitor';
 
 interface AgentStatus {
   agentId: string;
@@ -51,7 +54,7 @@ interface AdminDashboardData {
   contentGeneration: any;
   analytics: any;
   lastUpdate: string;
-}
+};
 
 export default function AdminDashboard() {
   const router = useRouter();
@@ -190,7 +193,7 @@ export default function AdminDashboard() {
       
       <div className="min-h-screen bg-gray-100">
         <div className="bg-white shadow-sm border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
             <div className="flex justify-between items-center py-6">
               <div>
                 <h1 className="text-3xl font-bold text-gray-900">Real-Time Automation Dashboard</h1>
@@ -216,14 +219,14 @@ export default function AdminDashboard() {
                 <button
                   onClick={fetchDashboardData}
                   disabled={isLoading}
-                  className="px-4 py-2 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white rounded-lg transition-colors"
+                  className="px-4 py-2 bg-blue-600 hover bg-blue-700 disabled bg-gray-400 text-white rounded-lg transition-colors"
                 >
                   {isLoading ? 'Refreshing...' : 'Refresh'}
                 </button>
                 <span className="text-sm text-gray-500">Logged in as: {user?.email}</span>
                 <button
                   onClick={() => router.push('/dashboard')}
-                  className="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors"
+                  className="px-4 py-2 bg-gray-600 hover bg-gray-700 text-white rounded-lg transition-colors"
                 >
                   Back to Dashboard
                 </button>
@@ -232,12 +235,12 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
           {/* System Health Overview */}
           {dashboardData?.systemHealth && (
             <div className="bg-white rounded-lg shadow p-6 mb-8">
               <h2 className="text-xl font-semibold text-gray-900 mb-4">System Health</h2>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 md grid-cols-4 gap-4">
                 <div className="bg-blue-50 p-4 rounded-lg">
                   <div className="text-2xl font-bold text-blue-600">{dashboardData.systemHealth.totalAgents}</div>
                   <div className="text-sm text-blue-600">Total Agents</div>
@@ -265,7 +268,7 @@ export default function AdminDashboard() {
               {dashboardData.systemHealth.memoryUsage && (
                 <div className="mt-6">
                   <h3 className="text-lg font-medium text-gray-900 mb-3">Memory Usage</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-1 md grid-cols-4 gap-4">
                     <div className="bg-gray-50 p-3 rounded">
                       <div className="text-sm font-medium text-gray-600">RSS</div>
                       <div className="text-lg font-semibold text-gray-900">{formatBytes(dashboardData.systemHealth.memoryUsage.rss)}</div>
@@ -320,7 +323,7 @@ export default function AdminDashboard() {
               {/* Overview Tab */}
               {activeTab === 'overview' && (
                 <div className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 md grid-cols-3 gap-6">
                     <div className="bg-blue-50 p-4 rounded-lg">
                       <h3 className="text-lg font-semibold text-blue-900 mb-2">Active Agents</h3>
                       <div className="text-3xl font-bold text-blue-600">{dashboardData?.agents.filter(a => a.status === 'active').length || 0}</div>
@@ -340,7 +343,7 @@ export default function AdminDashboard() {
                   
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">System Status</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md grid-cols-2 gap-4">
                       <div>
                         <h4 className="font-medium text-gray-700 mb-2">Orchestrators</h4>
                         <div className="space-y-2">
@@ -389,7 +392,7 @@ export default function AdminDashboard() {
                       </thead>
                       <tbody className="bg-white divide-y divide-gray-200">
                         {dashboardData?.agents.map((agent) => (
-                          <tr key={agent.agentId} className="hover:bg-gray-50">
+                          <tr key={agent.agentId} className="hover bg-gray-50">
                             <td className="px-6 py-4 whitespace-nowrap">
                               <div className="text-sm font-medium text-gray-900">{agent.agentId}</div>
                               <div className="text-sm text-gray-500">{agent.type}</div>
@@ -440,7 +443,7 @@ export default function AdminDashboard() {
                           {orch.systemHealth}
                         </span>
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div className="grid grid-cols-1 md grid-cols-3 gap-4">
                         <div>
                           <div className="text-sm font-medium text-gray-600">Active Agents</div>
                           <div className="text-2xl font-bold text-gray-900">{orch.activeAgents}</div>
@@ -507,7 +510,7 @@ export default function AdminDashboard() {
                 <div>
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Content Generation</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md grid-cols-2 gap-4">
                       <div>
                         <div className="text-sm font-medium text-gray-600">Total Files</div>
                         <div className="text-2xl font-bold text-gray-900">{dashboardData?.contentGeneration?.totalFiles || 0}</div>
@@ -532,7 +535,7 @@ export default function AdminDashboard() {
                 <div>
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Analytics</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md grid-cols-2 gap-4">
                       <div>
                         <div className="text-sm font-medium text-gray-600">Total Reports</div>
                         <div className="text-2xl font-bold text-gray-900">{dashboardData?.analytics?.totalReports || 0}</div>

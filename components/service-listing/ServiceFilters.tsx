@@ -57,7 +57,7 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
               value="All Categories"
               checked={filters.category === 'All Categories'}
               onChange={(e) => handleFilterChange('category', e.target.value)}
-              className="mr-2 text-blue-600 focus:ring-blue-500"
+              className="mr-2 text-blue-600 focus ring-blue-500"
             />
             <span className="text-sm text-gray-700">All Categories</span>
           </label>
@@ -69,7 +69,7 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
                 value={category.name}
                 checked={filters.category === category.name}
                 onChange={(e) => handleFilterChange('category', e.target.value)}
-                className="mr-2 text-blue-600 focus:ring-blue-500"
+                className="mr-2 text-blue-600 focus ring-blue-500"
               />
               <span className="text-sm text-gray-700 flex items-center">
                 <span className="mr-2">{category.icon}</span>
@@ -121,7 +121,7 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
                 value={rating}
                 checked={filters.rating === rating}
                 onChange={(e) => handleFilterChange('rating', parseFloat(e.target.value))}
-                className="mr-2 text-blue-600 focus:ring-blue-500"
+                className="mr-2 text-blue-600 focus ring-blue-500"
               />
               <div className="flex items-center">
                 <div className="flex mr-2">
@@ -152,7 +152,7 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
                 value={time}
                 checked={filters.deliveryTime === time}
                 onChange={(e) => handleFilterChange('deliveryTime', e.target.value)}
-                className="mr-2 text-blue-600 focus:ring-blue-500"
+                className="mr-2 text-blue-600 focus ring-blue-500"
               />
               <span className="text-sm text-gray-700">{time}</span>
             </label>
@@ -164,7 +164,7 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
       {hasActiveFilters() && (
         <button
           onClick={onClearFilters}
-          className="w-full px-4 py-2 text-sm text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors flex items-center justify-center"
+          className="w-full px-4 py-2 text-sm text-gray-600 bg-gray-100 hover bg-gray-200 rounded-lg transition-colors flex items-center justify-center"
         >
           <X className="w-4 h-4 mr-2" />
           Clear All Filters
@@ -177,10 +177,10 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
     <>
       {/* Mobile Filter Toggle */}
       {isMobile && (
-        <div className="lg:hidden mb-4">
+        <div className="lg hidden mb-4">
           <button
             onClick={onToggleMobile}
-            className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm flex items-center justify-between hover:bg-gray-50"
+            className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm flex items-center justify-between hover bg-gray-50"
           >
             <span className="flex items-center text-gray-700">
               <Filter className="w-4 h-4 mr-2" />
@@ -224,7 +224,7 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
               <h2 className="text-xl font-bold text-gray-900">Filters</h2>
               <button
                 onClick={onToggleMobile}
-                className="text-gray-400 hover:text-gray-600"
+                className="text-gray-400 hover text-gray-600"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -237,4 +237,4 @@ const ServiceFilters: React.FC<ServiceFiltersProps> = ({
   );
 };
 
-export default ServiceFilters; 
+export default ServiceFilters;

@@ -1,7 +1,7 @@
-import React  from 'react';
-import ModernLayout  from '../components/layout/ModernLayout';
+import React from 'react';
+import ModernLayout from '../components/layout/ModernLayout';
 
-import Head  from 'next/head';
+import Head from 'next/head';
 
 export default function Docs() {
   return (
@@ -21,13 +21,13 @@ export default function Docs() {
           <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-white mb-4">Documentation</h1>
             <p className="text-xl text-gray-300 mb-8">Complete documentation for Zion's marketplace platform</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
             {[
               { title: 'Getting Started', description: 'Quick start guide for new users', link: '/api-docs' },
               { title: 'API Reference', description: 'Complete API documentation', link: '/api-docs' },

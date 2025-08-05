@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useMemo }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 
 interface EnergyMonitoring {
   id: string
@@ -449,7 +450,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">Zion</span>
@@ -485,7 +486,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
               <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-yellow-1200 to-orange-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-yellow-700 hover to-orange-700 transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-yellow-1200 to-orange-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-yellow-700 hover to-orange-700 transition-all duration-200">
                 Get Started
               </Link>
             </div>
@@ -494,7 +495,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-white mb-6">
@@ -506,10 +507,10 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
             for sustainable and efficient energy systems.
           </p>
           <div className="flex justify-center space-x-4">
-            <button className="px-8 py-3 bg-gradient-to-r from-yellow-1200 to-orange-600 text-white rounded-lg font-medium hover:from-yellow-700 hover to-orange-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-yellow-1200 to-orange-600 text-white rounded-lg font-medium hover from-yellow-700 hover to-orange-700 transition-all duration-200">
               Monitor Energy
             </button>
-            <button className="px-8 py-3 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-lg font-medium hover:from-green-700 hover to-teal-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-lg font-medium hover from-green-700 hover to-teal-700 transition-all duration-200">
               Optimize Grid
             </button>
           </div>
@@ -609,7 +610,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
             </div>
 
             {/* Energy Systems Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {filteredEnergyMonitoring.map((system) => (
                 <div key={system.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -647,7 +648,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
 
         {selectedView === 'renewable' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {renewableEnergy.map((system) => (
                 <div key={system.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -685,7 +686,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
 
         {selectedView === 'grid' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {smartGrid.map((grid) => (
                 <div key={grid.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -723,7 +724,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
 
         {selectedView === 'analytics' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {energyAnalytics.map((analytics) => (
                 <div key={analytics.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -762,7 +763,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
         {selectedView === 'insights' && data && (
           <div className="space-y-6">
             {/* Analytics Overview */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6">
               <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
                 <div className="text-3xl font-bold text-white">{formatNumber(data.totalCapacity)}</div>
                 <div className="text-gray-400">Total Capacity (kW)</div>
@@ -813,7 +814,7 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
 
       {/* Footer */}
       <div className="bg-black/20 border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
           <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>
@@ -868,6 +869,6 @@ const AIPoweredEnergyManagementRenewableEnergyPage: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default AIPoweredEnergyManagementRenewableEnergyPage 

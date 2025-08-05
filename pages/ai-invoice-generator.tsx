@@ -1,7 +1,8 @@
-import { useState }  from 'react';import ModernLayout from '../components/layout/ModernLayout'
+import { useState } from 'react';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
-import { sanitizeHtml }  from '../utils/sanitizeHtml';
+import Head from 'next/head';
+import { sanitizeHtml } from '../utils/sanitizeHtml';
 
 interface InvoiceItem {
   id: string;
@@ -159,7 +160,7 @@ const InvoiceGenerator = () => {
       
         {/* Header */}
         <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
+          <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
             <div className="text-center">
               <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
                 AI Invoice Generator
@@ -172,7 +173,7 @@ const InvoiceGenerator = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
           <div className="grid grid-cols-1 lg grid-cols-2 gap-12">
             {/* Input Form */}
             <div className="space-y-8">
@@ -190,7 +191,7 @@ const InvoiceGenerator = () => {
                         type="text"
                         value={input.invoiceNumber}
                         onChange={(e) => setInput({ ...input, invoiceNumber: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus border-transparent"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-blue-500 focus border-transparent"
                         placeholder="INV-001"
                       />
                     </div>
@@ -202,7 +203,7 @@ const InvoiceGenerator = () => {
                         type="date"
                         value={input.issueDate}
                         onChange={(e) => setInput({ ...input, issueDate: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus border-transparent"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus ring-2 focus ring-blue-500 focus border-transparent"
                       />
                     </div>
                     <div>
@@ -213,7 +214,7 @@ const InvoiceGenerator = () => {
                         type="date"
                         value={input.dueDate}
                         onChange={(e) => setInput({ ...input, dueDate: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus border-transparent"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus ring-2 focus ring-blue-500 focus border-transparent"
                       />
                     </div>
                   </div>
@@ -230,7 +231,7 @@ const InvoiceGenerator = () => {
                           type="text"
                           value={input.companyName}
                           onChange={(e) => setInput({ ...input, companyName: e.target.value })}
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus border-transparent"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-blue-500 focus border-transparent"
                           placeholder="Your Company"
                         />
                       </div>
@@ -242,7 +243,7 @@ const InvoiceGenerator = () => {
                           type="email"
                           value={input.companyEmail}
                           onChange={(e) => setInput({ ...input, companyEmail: e.target.value })}
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus border-transparent"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-blue-500 focus border-transparent"
                           placeholder="contact@company.com"
                         />
                       </div>
@@ -255,7 +256,7 @@ const InvoiceGenerator = () => {
                         value={input.companyAddress}
                         onChange={(e) => setInput({ ...input, companyAddress: e.target.value })}
                         rows={3}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus border-transparent"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-blue-500 focus border-transparent"
                         placeholder="Your company address"
                       />
                     </div>
@@ -273,7 +274,7 @@ const InvoiceGenerator = () => {
                           type="text"
                           value={input.clientName}
                           onChange={(e) => setInput({ ...input, clientName: e.target.value })}
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus border-transparent"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-blue-500 focus border-transparent"
                           placeholder="Client Name"
                         />
                       </div>
@@ -285,7 +286,7 @@ const InvoiceGenerator = () => {
                           type="email"
                           value={input.clientEmail}
                           onChange={(e) => setInput({ ...input, clientEmail: e.target.value })}
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus border-transparent"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-blue-500 focus border-transparent"
                           placeholder="client@email.com"
                         />
                       </div>
@@ -298,7 +299,7 @@ const InvoiceGenerator = () => {
                         value={input.clientAddress}
                         onChange={(e) => setInput({ ...input, clientAddress: e.target.value })}
                         rows={3}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus border-transparent"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-blue-500 focus border-transparent"
                         placeholder="Client address"
                       />
                     </div>
@@ -310,7 +311,7 @@ const InvoiceGenerator = () => {
                       <h3 className="text-lg font-semibold text-white">Invoice Items</h3>
                       <button
                         onClick={addItem}
-                        className="bg-blue-600 text-white px-4 py-4 rounded-lg hover:bg-blue-700 transition-colors"
+                        className="bg-blue-600 text-white px-4 py-4 rounded-lg hover bg-blue-700 transition-colors"
                       >
                         Add Item
                       </button>
@@ -340,7 +341,7 @@ const InvoiceGenerator = () => {
                                 type="text"
                                 value={item.description}
                                 onChange={(e) => updateItem(index, 'description', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-blue-500 focus border-transparent"
                                 placeholder="Service or product description"
                               />
                             </div>
@@ -352,7 +353,7 @@ const InvoiceGenerator = () => {
                                 type="number"
                                 value={item.quantity}
                                 onChange={(e) => updateItem(index, 'quantity', parseFloat(e.target.value) || 0)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus ring-2 focus ring-blue-500 focus border-transparent"
                                 min="0"
                                 step="0.01"
                               />
@@ -365,7 +366,7 @@ const InvoiceGenerator = () => {
                                 type="number"
                                 value={item.unitPrice}
                                 onChange={(e) => updateItem(index, 'unitPrice', parseFloat(e.target.value) || 0)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus ring-2 focus ring-blue-500 focus border-transparent"
                                 min="0"
                                 step="0.01"
                               />
@@ -398,7 +399,7 @@ const InvoiceGenerator = () => {
                             const { subtotal, taxAmount, total } = calculateTotals(input.items, taxRate);
                             setInput({ ...input, taxRate, taxAmount, total });
                           }}
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus border-transparent"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus ring-2 focus ring-blue-500 focus border-transparent"
                           min="0"
                           step="0.01"
                         />
@@ -411,7 +412,7 @@ const InvoiceGenerator = () => {
                           type="text"
                           value={input.paymentTerms}
                           onChange={(e) => setInput({ ...input, paymentTerms: e.target.value })}
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus border-transparent"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-blue-500 focus border-transparent"
                           placeholder="Net 30"
                         />
                       </div>
@@ -442,7 +443,7 @@ const InvoiceGenerator = () => {
                       value={input.notes}
                       onChange={(e) => setInput({ ...input, notes: e.target.value })}
                       rows={3}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus border-transparent"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-blue-500 focus border-transparent"
                       placeholder="Additional notes or terms"
                     />
                   </div>
@@ -451,7 +452,7 @@ const InvoiceGenerator = () => {
                   <button
                     onClick={generateInvoice}
                     disabled={loading || !input.invoiceNumber || !input.clientName || !input.companyName}
-                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-4 px-6 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 disabled:opacity-50 disabled cursor-not-allowed"
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-4 px-6 rounded-lg hover:from-blue-700 hover to-indigo-700 transition-all duration-200 disabled opacity-50 disabled cursor-not-allowed"
                   >
                     {loading ? 'Generating Invoice...' : 'Generate Invoice'}
                   </button>
@@ -474,7 +475,7 @@ const InvoiceGenerator = () => {
                       </button>
                       <button
                         onClick={downloadInvoice}
-                        className="bg-blue-600 text-white px-4 py-4 rounded-lg hover:bg-blue-700 transition-colors"
+                        className="bg-blue-600 text-white px-4 py-4 rounded-lg hover bg-blue-700 transition-colors"
                       >
                         Download
                       </button>
@@ -529,12 +530,8 @@ const InvoiceGenerator = () => {
       </div>
     </>
   
-  </ModernLayout>
-
-  </ModernLayout>
-
-  </ModernLayout>
-      );
+      </ModernLayout>
+  );
 };
 
 export default InvoiceGenerator;

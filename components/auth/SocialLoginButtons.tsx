@@ -60,7 +60,7 @@ const SocialLoginButtons: React.FC<SocialLoginButtonsProps> = ({
           key={provider.id}
           onClick={() => onSocialLogin(provider.id)}
           disabled={disabled || socialLoading !== null}
-          className="w-full flex items-center justify-center px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white hover:bg-white/20 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full flex items-center justify-center px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white hover:bg-white/20 transition-all duration-300 disabled opacity-50 disabled cursor-not-allowed"
         >
           {socialLoading === provider.id ? (
             <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
@@ -74,6 +74,6 @@ const SocialLoginButtons: React.FC<SocialLoginButtonsProps> = ({
       ))}
     </div>
   )
-}
+};
 
 export default SocialLoginButtons 

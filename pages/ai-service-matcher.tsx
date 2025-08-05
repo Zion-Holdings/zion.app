@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 
 interface ServiceMatch {
   id: string
@@ -161,7 +162,7 @@ const AIServiceMatcher: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <main className="flex-1 transition-all duration-500">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
@@ -187,7 +188,7 @@ const AIServiceMatcher: NextPage = () => {
                   value={userNeeds}
                   onChange={(e) => setUserNeeds(e.target.value)}
                   placeholder="Describe your project, goals, and specific requirements..."
-                  className="w-full px-4 py-3 bg-black/30 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                  className="w-full px-4 py-3 bg-black/30 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                   rows={4}
                 />
               </div>
@@ -200,7 +201,7 @@ const AIServiceMatcher: NextPage = () => {
                   <select
                     value={industry}
                     onChange={(e) => setIndustry(e.target.value)}
-                    className="w-full px-4 py-3 bg-black/30 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                    className="w-full px-4 py-3 bg-black/30 border border-white/20 rounded-lg text-white focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                   >
                     <option value="">Select Industry</option>
                     {industries.map((ind) => (
@@ -216,7 +217,7 @@ const AIServiceMatcher: NextPage = () => {
                   <select
                     value={budget}
                     onChange={(e) => setBudget(e.target.value)}
-                    className="w-full px-4 py-3 bg-black/30 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                    className="w-full px-4 py-3 bg-black/30 border border-white/20 rounded-lg text-white focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                   >
                     <option value="">Select Budget</option>
                     {budgets.map((bud) => (
@@ -232,7 +233,7 @@ const AIServiceMatcher: NextPage = () => {
                   <select
                     value={timeline}
                     onChange={(e) => setTimeline(e.target.value)}
-                    className="w-full px-4 py-3 bg-black/30 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                    className="w-full px-4 py-3 bg-black/30 border border-white/20 rounded-lg text-white focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                   >
                     <option value="">Select Timeline</option>
                     {timelines.map((time) => (
@@ -245,7 +246,7 @@ const AIServiceMatcher: NextPage = () => {
               <button
                 onClick={analyzeNeeds}
                 disabled={!userNeeds.trim() || isAnalyzing}
-                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover shadow-purple-500/25"
+                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled opacity-50 disabled cursor-not-allowed text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover shadow-purple-500/25"
               >
                 {isAnalyzing ? (
                   <div className="flex items-center justify-center">
@@ -319,7 +320,7 @@ const AIServiceMatcher: NextPage = () => {
                     <div className="mt-4 flex gap-3">
                       <Link
                         href={`/service-details?id=${match.id}`}
-                        className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white text-center py-4 px-4 rounded-lg transition-all duration-300"
+                        className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white text-center py-4 px-4 rounded-lg transition-all duration-300"
                       >
                         View Details
                       </Link>
@@ -337,7 +338,7 @@ const AIServiceMatcher: NextPage = () => {
                 </p>
                 <Link
                   href="/quote-request"
-                  className="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
+                  className="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 hover from-blue-700 hover to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
                 >
                   Request Custom Quote
                 </Link>
@@ -387,6 +388,6 @@ const AIServiceMatcher: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default AIServiceMatcher 

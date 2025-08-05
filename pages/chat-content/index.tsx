@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
-import Link  from 'next/link';
-import { motion }  from 'framer-motion';
+import Head from 'next/head';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const ChatContentIndex: NextPage = () => {
   const chatTopics = [
@@ -111,7 +112,7 @@ const ChatContentIndex: NextPage = () => {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-8">
             {chatTopics.map((topic, index) => (
               <motion.div
                 key={topic.href}
@@ -151,7 +152,7 @@ const ChatContentIndex: NextPage = () => {
           >
             <Link 
               href="/"
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-neon-blue to-neon-purple hover:from-neon-purple hover to-neon-blue text-white rounded-lg font-medium transition-all duration-300"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-neon-blue to-neon-purple hover from-neon-purple hover to-neon-blue text-white rounded-lg font-medium transition-all duration-300"
             >
               ← Back to Home
             </Link>
@@ -166,6 +167,6 @@ const ChatContentIndex: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default ChatContentIndex 

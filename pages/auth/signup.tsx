@@ -1,9 +1,10 @@
 
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
-import Link  from 'next/link';
-import AuthLayout  from '../../components/layout/AuthLayout';
+import Head from 'next/head';
+import Link from 'next/link';
+import AuthLayout from '../../components/layout/AuthLayout';
 
 const Signup: NextPage = () => {
   return (
@@ -16,7 +17,7 @@ const Signup: NextPage = () => {
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
-      <div className="max-w-md mx-auto px-4 sm:px-6 lg px-8 py-40">
+      <div className="max-w-md mx-auto px-4 sm px-6 lg px-8 py-40">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-4">
             Join <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
@@ -36,7 +37,7 @@ const Signup: NextPage = () => {
                 type="text"
                 id="name"
                 name="name"
-                className="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                className="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                 placeholder="Your full name"
               />
             </div>
@@ -49,7 +50,7 @@ const Signup: NextPage = () => {
                 type="email"
                 id="email"
                 name="email"
-                className="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                className="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                 placeholder="your.email@example.com"
               />
             </div>
@@ -62,14 +63,14 @@ const Signup: NextPage = () => {
                 type="password"
                 id="password"
                 name="password"
-                className="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                className="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                 placeholder="Create a strong password"
               />
             </div>
             
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-300"
+              className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-300"
             >
               Create Account
             </button>
@@ -91,6 +92,6 @@ const Signup: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default Signup

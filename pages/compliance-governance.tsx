@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useMemo }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 import { motion, AnimatePresence }  from 'framer-motion';
 
 interface ComplianceFramework {
@@ -485,17 +486,17 @@ const ComplianceGovernancePage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-white">Compliance & Governance Center</h1>
               <p className="text-gray-300 mt-2">Centralized compliance management and regulatory oversight</p>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                 Generate Report
               </button>
-              <button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover to-blue-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-green-600 to-blue-600 hover from-green-700 hover to-blue-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                 New Assessment
               </button>
             </div>
@@ -503,10 +504,10 @@ const ComplianceGovernancePage: NextPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
         {/* Key Metrics Overview */}
         {analytics && (
-          <div className="grid grid-cols-2 md:grid-cols-4 lg grid-cols-7 gap-4 mb-8">
+          <div className="grid grid-cols-2 md grid-cols-4 lg grid-cols-7 gap-4 mb-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -1009,12 +1010,8 @@ const ComplianceGovernancePage: NextPage = () => {
       </div>
     </div>
   
-  </ModernLayout>
-
-  </ModernLayout>
-
-  </ModernLayout>
-      );
+      </ModernLayout>
+  );
 };
 
 export default ComplianceGovernancePage;

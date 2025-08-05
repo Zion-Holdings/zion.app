@@ -1,7 +1,8 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
-import Link  from 'next/link';
+import Head from 'next/head';
+import Link from 'next/link';
 
 const AiConsultingPage: NextPage = () => {
   return (
@@ -16,7 +17,7 @@ const AiConsultingPage: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
@@ -38,7 +39,7 @@ const AiConsultingPage: NextPage = () => {
               <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25">
                 Join Zion
               </Link>
             </div>
@@ -51,7 +52,7 @@ const AiConsultingPage: NextPage = () => {
         <div className="relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
           
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44 lg py-32">
+          <div className="relative max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-44 lg py-32">
             <div className="text-center">
               <div className="mb-8">
                 <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
@@ -65,10 +66,10 @@ const AiConsultingPage: NextPage = () => {
               </div>
               
               <div className="mt-12 flex flex-col sm flex-row gap-4 justify-center">
-                <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
+                <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105">
                   Browse Services
                 </Link>
-                <Link href="/auth/signup" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
+                <Link href="/auth/signup" className="border border-purple-500 text-purple-400 hover bg-purple-500 hover text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
                   Join as Provider
                 </Link>
               </div>
@@ -77,7 +78,7 @@ const AiConsultingPage: NextPage = () => {
         </div>
         
         {/* Content Section */}
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg px-8 py-36">
+        <div className="max-w-4xl mx-auto px-4 sm px-6 lg px-8 py-36">
           <div className="prose prose-invert prose-lg max-w-none">
             <div className="text-gray-300 leading-relaxed">
               <p className="mb-6">Discover top professionals and services in the ai-consulting space on Zion AI Marketplace. Our platform connects you with verified experts who deliver exceptional results.</p>
@@ -102,7 +103,7 @@ const AiConsultingPage: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
           <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>
@@ -148,6 +149,6 @@ const AiConsultingPage: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default AiConsultingPage

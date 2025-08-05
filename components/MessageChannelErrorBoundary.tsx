@@ -57,6 +57,6 @@ class MessageChannelErrorBoundary extends Component<Props, State> {
 
     return this.props.children;
   }
-}
+};
 
-export default MessageChannelErrorBoundary; 
+export default MessageChannelErrorBoundary;

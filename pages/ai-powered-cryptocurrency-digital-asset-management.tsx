@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useMemo }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 
 interface Cryptocurrency {
   id: string
@@ -410,7 +411,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Zion</span>
@@ -428,7 +429,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
               <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-blue-700 hover to-cyan-700 transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-blue-700 hover to-cyan-700 transition-all duration-200">
                 Get Started
               </Link>
             </div>
@@ -437,7 +438,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-white mb-6">
@@ -449,10 +450,10 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
             cutting-edge technology.
           </p>
           <div className="flex justify-center space-x-4">
-            <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-medium hover:from-blue-700 hover to-cyan-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-medium hover from-blue-700 hover to-cyan-700 transition-all duration-200">
               Start Trading
             </button>
-            <button className="px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg font-medium hover:from-green-700 hover to-emerald-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg font-medium hover from-green-700 hover to-emerald-700 transition-all duration-200">
               Manage Portfolio
             </button>
           </div>
@@ -536,7 +537,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
 
         {selectedView === 'crypto' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {cryptocurrencies.map((crypto) => (
                 <div key={crypto.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -598,7 +599,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
             </div>
 
             {/* Assets Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {filteredAssets.map((asset) => (
                 <div key={asset.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -678,7 +679,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
 
         {selectedView === 'strategies' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {tradingStrategies.map((strategy) => (
                 <div key={strategy.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -717,7 +718,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
         {selectedView === 'analytics' && analytics && (
           <div className="space-y-6">
             {/* Analytics Overview */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6">
               <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
                 <div className="text-3xl font-bold text-white">{analytics.totalAssets}</div>
                 <div className="text-gray-400">Total Assets</div>
@@ -768,7 +769,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
 
       {/* Footer */}
       <div className="bg-black/20 border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
           <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>
@@ -817,6 +818,6 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default AIPoweredCryptocurrencyDigitalAssetManagementPage 

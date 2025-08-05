@@ -64,6 +64,6 @@ const ResponsiveText: React.FC<ResponsiveTextProps> = ({
       {children}
     </Component>
   )
-}
+};
 
 export default ResponsiveText 

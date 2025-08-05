@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 import { motion, AnimatePresence }  from 'framer-motion';
 
 interface SupportTicket {
@@ -268,7 +269,7 @@ const HelpDeskSupport: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <header className="bg-black/20 backdrop-blur-sm border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
               <Link href="/" className="text-2xl font-bold text-white">
@@ -287,7 +288,7 @@ const HelpDeskSupport: NextPage = () => {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-4">
             Help Desk & Support Ticket System
@@ -396,12 +397,12 @@ const HelpDeskSupport: NextPage = () => {
                   placeholder="Search tickets..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus ring-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-white/20"
                 />
                 <select
                   value={filterStatus}
                   onChange={(e) => setFilterStatus(e.target.value)}
-                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-white/20"
                 >
                   <option value="all">All Status</option>
                   <option value="open">Open</option>
@@ -412,7 +413,7 @@ const HelpDeskSupport: NextPage = () => {
                 <select
                   value={filterPriority}
                   onChange={(e) => setFilterPriority(e.target.value)}
-                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-white/20"
                 >
                   <option value="all">All Priorities</option>
                   <option value="urgent">Urgent</option>
@@ -423,7 +424,7 @@ const HelpDeskSupport: NextPage = () => {
                 <select
                   value={filterCategory}
                   onChange={(e) => setFilterCategory(e.target.value)}
-                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-white/20"
                 >
                   <option value="all">All Categories</option>
                   <option value="technical">Technical</option>
@@ -497,7 +498,7 @@ const HelpDeskSupport: NextPage = () => {
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
                 {agents.map((agent) => (
                   <motion.div
                     key={agent.id}
@@ -617,7 +618,7 @@ const HelpDeskSupport: NextPage = () => {
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
                 {categories.map((category) => (
                   <motion.div
                     key={category.id}
@@ -659,6 +660,6 @@ const HelpDeskSupport: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default HelpDeskSupport 

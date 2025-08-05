@@ -38,4 +38,4 @@ const ChatTrigger: React.FC<ChatTriggerProps> = ({
   );
 };
 
-export default ChatTrigger; 
+export default ChatTrigger;

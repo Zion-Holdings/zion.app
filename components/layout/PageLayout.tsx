@@ -19,6 +19,6 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
       </main>
     </div>
   )
-}
+};
 
 export default PageLayout 

@@ -2,96 +2,52 @@ const fs = require('fs');
 const path = require('path');
 
 // Function to fix import syntax errors
-function fixImportSyntaxErrors(filePath) {
+function fixImportSyntax(filePath) {
   try {
     let content = fs.readFileSync(filePath, 'utf8');
     let modified = false;
-
-    // Fix malformed import statements
-    const malformedImportPattern = /import:\s*React\s*from\s*'react';/g;
-    if (malformedImportPattern.test(content)) {
-      content = content.replace(malformedImportPattern, 'import React from \'react\';');
+    
+    // Fix missing newlines between import statements
+    const importFix = content.replace(/import\s+([^;]+);import\s+/g, 'import $1;\nimport ');
+    if (importFix !== content) {
+      content = importFix;
       modified = true;
     }
-
-    // Fix malformed component declarations
-    const malformedComponentPattern = /const\s+(\w+):\s*NextPage:\s*=\s*\(\s*\)\s*=>\s*\{/g;
-    if (malformedComponentPattern.test(content)) {
-      content = content.replace(malformedComponentPattern, 'const $1: NextPage = () => {');
+    
+    // Fix missing newlines after import statements
+    const importNewlineFix = content.replace(/import\s+([^;]+);([^\n])/g, 'import $1;\n$2');
+    if (importNewlineFix !== content) {
+      content = importNewlineFix;
       modified = true;
     }
-
-    // Fix malformed JSX structure with multiple return statements
-    const multipleReturnPattern = /return\s*\(\s*<ModernLayout>\s*return\s*\(\s*<ModernLayout>/g;
-    if (multipleReturnPattern.test(content)) {
-      content = content.replace(multipleReturnPattern, 'return (\n    <ModernLayout>');
+    
+    // Fix missing newlines before export statements
+    const exportFix = content.replace(/([^;\n])\s*export\s+/g, '$1;\n\nexport ');
+    if (exportFix !== content) {
+      content = exportFix;
       modified = true;
     }
-
-    // Fix malformed className attributes with colons
-    const malformedClassNamePattern = /className="([^"]*):([^"]*)"/g;
-    if (malformedClassNamePattern.test(content)) {
-      content = content.replace(malformedClassNamePattern, 'className="$1 $2"');
+    
+    // Fix missing newlines between type imports
+    const typeImportFix = content.replace(/import\s+type\s+([^;]+);import\s+/g, 'import type $1;\nimport ');
+    if (typeImportFix !== content) {
+      content = typeImportFix;
       modified = true;
     }
-
-    // Fix malformed closing tags
-    const malformedClosingPattern = /<\/ModernLayout>\s*<\/ModernLayout>\s*\)\s*;\s*\}\s*;\s*$/g;
-    if (malformedClosingPattern.test(content)) {
-      content = content.replace(malformedClosingPattern, '    </ModernLayout>\n  );\n};\n');
+    
+    // Fix missing newlines after type imports
+    const typeImportNewlineFix = content.replace(/import\s+type\s+([^;]+);([^\n])/g, 'import type $1;\n$2');
+    if (typeImportNewlineFix !== content) {
+      content = typeImportNewlineFix;
       modified = true;
     }
-
-    // Fix missing imports
-    if (content.includes('<Home') || content.includes('<Search') || content.includes('<User')) {
-      const hasIconImport = /import.*\{.*Home.*Search.*User.*\}.*from.*lucide-react/g.test(content);
-      if (!hasIconImport) {
-        const importPattern = /import.*from.*lucide-react.*;/g;
-        if (importPattern.test(content)) {
-          content = content.replace(importPattern, (match) => {
-            if (match.includes('Home') || match.includes('Search') || match.includes('User')) {
-              return match;
-            }
-            return match.replace('} from \'lucide-react\';', ', Home, Search, User } from \'lucide-react\';');
-          });
-        } else {
-          // Add import statement after existing imports
-          const lastImportIndex = content.lastIndexOf('import');
-          if (lastImportIndex !== -1) {
-            const lastImportEnd = content.indexOf(';', lastImportIndex) + 1;
-            content = content.slice(0, lastImportEnd) + '\nimport { Home, Search, User } from \'lucide-react\';' + content.slice(lastImportEnd);
-          }
-        }
-        modified = true;
-      }
-    }
-
-    // Fix malformed export statements
-    const malformedExportPattern = /export default\s+(\w+)\s*;\s*$/g;
-    if (malformedExportPattern.test(content)) {
-      content = content.replace(malformedExportPattern, 'export default $1;');
-      modified = true;
-    }
-
-    // Fix missing semicolons
-    const missingSemicolonPattern = /\)\s*;\s*\}\s*;\s*export default\s+(\w+)\s*$/g;
-    if (missingSemicolonPattern.test(content)) {
-      content = content.replace(missingSemicolonPattern, ');\n};\n\nexport default $1;');
-      modified = true;
-    }
-
-    // Fix malformed component structure
-    const malformedComponentStructurePattern = /const\s+(\w+)\s*:\s*NextPage\s*=\s*\(\s*\)\s*=>\s*\{\s*return\s*\(\s*<ModernLayout>\s*return\s*\(\s*<ModernLayout>/g;
-    if (malformedComponentStructurePattern.test(content)) {
-      content = content.replace(malformedComponentStructurePattern, 'const $1: NextPage = () => {\n  return (\n    <ModernLayout>');
-      modified = true;
-    }
-
+    
     if (modified) {
       fs.writeFileSync(filePath, content, 'utf8');
       console.log(`Fixed: ${filePath}`);
       return true;
     }
+    
     return false;
   } catch (error) {
     console.error(`Error processing ${filePath}:`, error.message);
@@ -99,36 +55,49 @@ function fixImportSyntaxErrors(filePath) {
   }
 }
 
-// Function to recursively find TypeScript files
-function findTsxFiles(dir) {
-  const files = [];
-  const items = fs.readdirSync(dir);
+// Function to recursively find and fix TypeScript/TSX files
+function fixFilesInDirectory(directory) {
+  const files = fs.readdirSync(directory);
+  let fixedCount = 0;
   
-  for (const item of items) {
-    const fullPath = path.join(dir, item);
-    const stat = fs.statSync(fullPath);
+  for (const file of files) {
+    const filePath = path.join(directory, file);
+    const stat = fs.statSync(filePath);
     
-    if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
-      files.push(...findTsxFiles(fullPath));
-    } else if (item.endsWith('.tsx')) {
-      files.push(fullPath);
+    if (stat.isDirectory()) {
+      fixedCount += fixFilesInDirectory(filePath);
+    } else if (file.endsWith('.tsx') || file.endsWith('.ts')) {
+      if (fixImportSyntax(filePath)) {
+        fixedCount++;
+      }
     }
   }
   
-  return files;
+  return fixedCount;
 }
 
 // Main execution
-const pagesDir = path.join(__dirname, 'pages');
-const files = findTsxFiles(pagesDir);
+console.log('Starting import syntax fixes...');
+const pagesDir = './pages';
+const componentsDir = './components';
+const srcDir = './src';
 
-console.log(`Found ${files.length} TypeScript files to process...`);
+let totalFixed = 0;
 
-let fixedCount = 0;
-for (const file of files) {
-  if (fixImportSyntaxErrors(file)) {
-    fixedCount++;
-  }
+if (fs.existsSync(pagesDir)) {
+  console.log('Fixing files in pages directory...');
+  totalFixed += fixFilesInDirectory(pagesDir);
 }
 
-console.log(`Fixed ${fixedCount} files.`); 
+if (fs.existsSync(componentsDir)) {
+  console.log('Fixing files in components directory...');
+  totalFixed += fixFilesInDirectory(componentsDir);
+}
+
+if (fs.existsSync(srcDir)) {
+  console.log('Fixing files in src directory...');
+  totalFixed += fixFilesInDirectory(srcDir);
+}
+
+console.log(`\nTotal files fixed: ${totalFixed}`);
+console.log('Import syntax fixes completed!'); 

@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
-import Link  from 'next/link';
-import ContrastDemo  from '../components/ui/ContrastDemo';
+import Head from 'next/head';
+import Link from 'next/link';
+import ContrastDemo from '../components/ui/ContrastDemo';
 
 const ContrastDemoPage: NextPage = () => {
   return (
@@ -23,7 +24,7 @@ const ContrastDemoPage: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-high-contrast-secondary backdrop-blur-md border-b border-high-contrast-primary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="text-2xl font-bold text-high-contrast">
@@ -47,7 +48,7 @@ const ContrastDemoPage: NextPage = () => {
 
       {/* Hero Section */}
       <section className="py-40">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg px-8 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm px-6 lg px-8 text-center">
           <h1 className="text-responsive-4xl lg text-responsive-5xl font-bold text-high-contrast mb-6">
             Enhanced Contrast System
           </h1>
@@ -87,19 +88,19 @@ const ContrastDemoPage: NextPage = () => {
 
       {/* Demo Section */}
       <section className="py-40">
-        <div className="max-w-12xl mx-auto px-4 sm:px-6 lg px-8">
+        <div className="max-w-12xl mx-auto px-4 sm px-6 lg px-8">
           <ContrastDemo />
         </div>
       </section>
 
       {/* Features Section */}
       <section className="py-40 bg-high-contrast-tertiary">
-        <div className="max-w-12xl mx-auto px-4 sm:px-6 lg px-8">
+        <div className="max-w-12xl mx-auto px-4 sm px-6 lg px-8">
           <h2 className="text-responsive-3xl font-bold text-high-contrast text-center mb-12">
             Accessibility Features
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-8">
             <div className="bg-high-contrast-card border-high-contrast-primary rounded-lg p-6">
               <h3 className="text-high-contrast text-lg font-semibold mb-4">High Contrast Mode</h3>
               <ul className="text-high-contrast-secondary space-y-2 text-sm">
@@ -145,7 +146,7 @@ const ContrastDemoPage: NextPage = () => {
 
       {/* CTA Section */}
       <section className="py-40">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg px-8 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm px-6 lg px-8 text-center">
           <h2 className="text-responsive-3xl font-bold text-high-contrast mb-6">
             Experience Better Accessibility
           </h2>
@@ -178,6 +179,6 @@ const ContrastDemoPage: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default ContrastDemoPage 

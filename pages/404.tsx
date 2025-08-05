@@ -1,7 +1,8 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
-import Link  from 'next/link';
+import Head from 'next/head';
+import Link from 'next/link';
 
 const Https___ziontechgroup_netlify_app_404Page: NextPage = () => {
   return (
@@ -23,7 +24,7 @@ const Https___ziontechgroup_netlify_app_404Page: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
@@ -45,7 +46,7 @@ const Https___ziontechgroup_netlify_app_404Page: NextPage = () => {
               <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25">
                 Join Zion
               </Link>
             </div>
@@ -58,7 +59,7 @@ const Https___ziontechgroup_netlify_app_404Page: NextPage = () => {
         <div className="relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
           
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44 lg py-32">
+          <div className="relative max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-44 lg py-32">
             <div className="text-center">
               <div className="mb-8">
                 <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
@@ -72,10 +73,10 @@ const Https___ziontechgroup_netlify_app_404Page: NextPage = () => {
               </div>
               
               <div className="mt-12 flex flex-col sm flex-row gap-4 justify-center">
-                <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
+                <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105">
                   Explore Marketplace
                 </Link>
-                <Link href="/auth/signup" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
+                <Link href="/auth/signup" className="border border-purple-500 text-purple-400 hover bg-purple-500 hover text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
                   Get Started
                 </Link>
               </div>
@@ -86,7 +87,7 @@ const Https___ziontechgroup_netlify_app_404Page: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
           <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>
@@ -134,6 +135,6 @@ const Https___ziontechgroup_netlify_app_404Page: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default Https___ziontechgroup_netlify_app_404Page

@@ -1,8 +1,8 @@
-import React  from 'react';
-import ModernLayout  from '../components/layout/ModernLayout';
+import React from 'react';
+import ModernLayout from '../components/layout/ModernLayout';
 
-import Head  from 'next/head';
-import { motion }  from 'framer-motion';
+import Head from 'next/head';
+import { motion } from 'framer-motion';
 
 export default function Analytics() {
   return (

@@ -1,7 +1,8 @@
-import { useState }  from 'react';import ModernLayout from '../components/layout/ModernLayout'
+import { useState } from 'react';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
-import { sanitizeHtml }  from '../utils/sanitizeHtml';
+import Head from 'next/head';
+import { sanitizeHtml } from '../utils/sanitizeHtml';
 
 interface Experience {
   id: string;
@@ -283,7 +284,7 @@ const ResumeBuilder = () => {
       
         {/* Header */}
         <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
+          <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
             <div className="text-center">
               <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
                 AI Resume Builder
@@ -296,7 +297,7 @@ const ResumeBuilder = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
           <div className="grid grid-cols-1 lg grid-cols-2 gap-12">
             {/* Input Form */}
             <div className="space-y-8">
@@ -336,7 +337,7 @@ const ResumeBuilder = () => {
                             ...input,
                             personalInfo: { ...input.personalInfo, firstName: e.target.value }
                           })}
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                           placeholder="John"
                         />
                       </div>
@@ -351,7 +352,7 @@ const ResumeBuilder = () => {
                             ...input,
                             personalInfo: { ...input.personalInfo, lastName: e.target.value }
                           })}
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                           placeholder="Doe"
                         />
                       </div>
@@ -369,7 +370,7 @@ const ResumeBuilder = () => {
                             ...input,
                             personalInfo: { ...input.personalInfo, email: e.target.value }
                           })}
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                           placeholder="john.doe@email.com"
                         />
                       </div>
@@ -384,7 +385,7 @@ const ResumeBuilder = () => {
                             ...input,
                             personalInfo: { ...input.personalInfo, phone: e.target.value }
                           })}
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                           placeholder="+1 302 464 0950"
                         />
                       </div>
@@ -401,7 +402,7 @@ const ResumeBuilder = () => {
                           ...input,
                           personalInfo: { ...input.personalInfo, location: e.target.value }
                         })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                         placeholder="San Francisco, CA"
                       />
                     </div>
@@ -418,7 +419,7 @@ const ResumeBuilder = () => {
                             ...input,
                             personalInfo: { ...input.personalInfo, linkedin: e.target.value }
                           })}
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                           placeholder="linkedin.com/in/johndoe"
                         />
                       </div>
@@ -433,7 +434,7 @@ const ResumeBuilder = () => {
                             ...input,
                             personalInfo: { ...input.personalInfo, website: e.target.value }
                           })}
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                           placeholder="johndoe.com"
                         />
                       </div>
@@ -450,7 +451,7 @@ const ResumeBuilder = () => {
                           personalInfo: { ...input.personalInfo, summary: e.target.value }
                         })}
                         rows={4}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                         placeholder="Experienced software engineer with 5+ years in full-stack development..."
                       />
                     </div>
@@ -494,7 +495,7 @@ const ResumeBuilder = () => {
                                 type="text"
                                 value={exp.company}
                                 onChange={(e) => updateExperience(index, 'company', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                                 placeholder="Company Name"
                               />
                             </div>
@@ -506,7 +507,7 @@ const ResumeBuilder = () => {
                                 type="text"
                                 value={exp.position}
                                 onChange={(e) => updateExperience(index, 'position', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                                 placeholder="Software Engineer"
                               />
                             </div>
@@ -521,7 +522,7 @@ const ResumeBuilder = () => {
                                 type="date"
                                 value={exp.startDate}
                                 onChange={(e) => updateExperience(index, 'startDate', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                               />
                             </div>
                             <div>
@@ -533,7 +534,7 @@ const ResumeBuilder = () => {
                                 value={exp.endDate}
                                 onChange={(e) => updateExperience(index, 'endDate', e.target.value)}
                                 disabled={exp.current}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent disabled opacity-50"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-purple-500 focus border-transparent disabled opacity-50"
                               />
                             </div>
                             <div className="flex items-center">
@@ -557,7 +558,7 @@ const ResumeBuilder = () => {
                               value={exp.description}
                               onChange={(e) => updateExperience(index, 'description', e.target.value)}
                               rows={3}
-                              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                               placeholder="Brief description of your role and responsibilities..."
                             />
                           </div>
@@ -573,7 +574,7 @@ const ResumeBuilder = () => {
                                     type="text"
                                     value={achievement}
                                     onChange={(e) => updateAchievement(index, achievementIndex, e.target.value)}
-                                    className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                                    className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                                     placeholder="Key achievement or responsibility..."
                                   />
                                   <button
@@ -635,7 +636,7 @@ const ResumeBuilder = () => {
                                 type="text"
                                 value={edu.institution}
                                 onChange={(e) => updateEducation(index, 'institution', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                                 placeholder="University Name"
                               />
                             </div>
@@ -647,7 +648,7 @@ const ResumeBuilder = () => {
                                 type="text"
                                 value={edu.degree}
                                 onChange={(e) => updateEducation(index, 'degree', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                                 placeholder="Bachelor's"
                               />
                             </div>
@@ -662,7 +663,7 @@ const ResumeBuilder = () => {
                                 type="text"
                                 value={edu.field}
                                 onChange={(e) => updateEducation(index, 'field', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                                 placeholder="Computer Science"
                               />
                             </div>
@@ -674,7 +675,7 @@ const ResumeBuilder = () => {
                                 type="date"
                                 value={edu.startDate}
                                 onChange={(e) => updateEducation(index, 'startDate', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                               />
                             </div>
                             <div>
@@ -686,7 +687,7 @@ const ResumeBuilder = () => {
                                 value={edu.endDate}
                                 onChange={(e) => updateEducation(index, 'endDate', e.target.value)}
                                 disabled={edu.current}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent disabled opacity-50"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-purple-500 focus border-transparent disabled opacity-50"
                               />
                             </div>
                           </div>
@@ -711,7 +712,7 @@ const ResumeBuilder = () => {
                               value={edu.description}
                               onChange={(e) => updateEducation(index, 'description', e.target.value)}
                               rows={3}
-                              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                               placeholder="Relevant coursework, projects, or achievements..."
                             />
                           </div>
@@ -758,7 +759,7 @@ const ResumeBuilder = () => {
                                 type="text"
                                 value={skill.name}
                                 onChange={(e) => updateSkill(index, 'name', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                                 placeholder="JavaScript"
                               />
                             </div>
@@ -769,7 +770,7 @@ const ResumeBuilder = () => {
                               <select
                                 value={skill.level}
                                 onChange={(e) => updateSkill(index, 'level', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                               >
                                 <option value="beginner">Beginner</option>
                                 <option value="intermediate">Intermediate</option>
@@ -785,7 +786,7 @@ const ResumeBuilder = () => {
                                 type="text"
                                 value={skill.category}
                                 onChange={(e) => updateSkill(index, 'category', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                                 placeholder="Technical"
                               />
                             </div>
@@ -813,7 +814,7 @@ const ResumeBuilder = () => {
                               type="text"
                               value={cert}
                               onChange={(e) => updateArrayItem('certifications', index, e.target.value)}
-                              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                               placeholder="AWS Certified Solutions Architect"
                             />
                             <button
@@ -845,7 +846,7 @@ const ResumeBuilder = () => {
                               type="text"
                               value={lang}
                               onChange={(e) => updateArrayItem('languages', index, e.target.value)}
-                              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                               placeholder="English (Native)"
                             />
                             <button
@@ -877,7 +878,7 @@ const ResumeBuilder = () => {
                               type="text"
                               value={project}
                               onChange={(e) => updateArrayItem('projects', index, e.target.value)}
-                              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                               placeholder="E-commerce Platform - React, Node.js"
                             />
                             <button
@@ -909,7 +910,7 @@ const ResumeBuilder = () => {
                               type="text"
                               value={achievement}
                               onChange={(e) => updateArrayItem('achievements', index, e.target.value)}
-                              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                               placeholder="Led team of 5 developers to deliver project 2 weeks early"
                             />
                             <button
@@ -937,7 +938,7 @@ const ResumeBuilder = () => {
                       <select
                         value={input.template}
                         onChange={(e) => setInput({ ...input, template: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                       >
                         <option value="modern">Modern</option>
                         <option value="classic">Classic</option>
@@ -953,7 +954,7 @@ const ResumeBuilder = () => {
                   <button
                     onClick={generateResume}
                     disabled={loading || !input.personalInfo.firstName || !input.personalInfo.lastName}
-                    className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-4 px-6 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200 disabled:opacity-50 disabled cursor-not-allowed"
+                    className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-4 px-6 rounded-lg hover:from-purple-700 hover to-indigo-700 transition-all duration-200 disabled opacity-50 disabled cursor-not-allowed"
                   >
                     {loading ? 'Generating Resume...' : 'Generate Resume'}
                   </button>
@@ -1031,12 +1032,8 @@ const ResumeBuilder = () => {
       </div>
     </>
   
-  </ModernLayout>
-
-  </ModernLayout>
-
-  </ModernLayout>
-      );
+      </ModernLayout>
+  );
 };
 
 export default ResumeBuilder;

@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 import { Home, Search, User }  from 'lucide-react';
 
 interface Recommendation {
@@ -235,7 +236,7 @@ const AIRecommendationEngine: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
@@ -256,7 +257,7 @@ const AIRecommendationEngine: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -281,7 +282,7 @@ const AIRecommendationEngine: NextPage = () => {
               <select
                 value={userProfile.projectType}
                 onChange={(e) => handleProfileUpdate('projectType', e.target.value)}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus ring-purple-500"
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500"
               >
                 <option value="">Select project type</option>
                 {projectTypes.map(type => (
@@ -296,7 +297,7 @@ const AIRecommendationEngine: NextPage = () => {
               <select
                 value={userProfile.budget}
                 onChange={(e) => handleProfileUpdate('budget', e.target.value)}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus ring-purple-500"
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500"
               >
                 <option value="">Select budget range</option>
                 {budgetOptions.map(budget => (
@@ -311,7 +312,7 @@ const AIRecommendationEngine: NextPage = () => {
               <select
                 value={userProfile.timeline}
                 onChange={(e) => handleProfileUpdate('timeline', e.target.value)}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus ring-purple-500"
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500"
               >
                 <option value="">Select timeline</option>
                 {timelineOptions.map(timeline => (
@@ -326,7 +327,7 @@ const AIRecommendationEngine: NextPage = () => {
               <select
                 value={userProfile.expertise}
                 onChange={(e) => handleProfileUpdate('expertise', e.target.value)}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus ring-purple-500"
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500"
               >
                 <option value="">Select expertise level</option>
                 {expertiseLevels.map(level => (
@@ -341,7 +342,7 @@ const AIRecommendationEngine: NextPage = () => {
             <label className="block text-white font-medium mb-2">Key Preferences (Optional)</label>
             <textarea
               placeholder="Describe your specific requirements, technologies, or preferences..."
-              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus ring-purple-500 h-24"
+              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 h-24"
               value={userProfile.preferences.join(', ')}
               onChange={(e) => handleProfileUpdate('preferences', e.target.value.split(', '))}
             />
@@ -352,7 +353,7 @@ const AIRecommendationEngine: NextPage = () => {
             <button
               onClick={analyzeProfile}
               disabled={isAnalyzing || !userProfile.projectType || !userProfile.budget}
-              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-lg hover:from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-purple-500 focus ring-offset-2 transition-colors text-lg font-semibold"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-lg hover:from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus ring-2 focus ring-purple-500 focus ring-offset-2 transition-colors text-lg font-semibold"
             >
               {isAnalyzing ? 'Analyzing...' : 'Get AI Recommendations'}
             </button>
@@ -398,7 +399,7 @@ const AIRecommendationEngine: NextPage = () => {
 
         {/* Recommendations Grid */}
         {recommendations.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
             {filteredRecommendations.map((recommendation) => (
               <div key={recommendation.id} className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20 hover bg-white/15 transition-colors">
                 {/* Match Score */}
@@ -455,7 +456,7 @@ const AIRecommendationEngine: NextPage = () => {
                 {/* Action Button */}
                 <Link
                   href={recommendation.link}
-                  className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-4 rounded-lg hover:from-blue-700 hover to-purple-700 transition-colors text-sm font-medium"
+                  className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-4 rounded-lg hover from-blue-700 hover to-purple-700 transition-colors text-sm font-medium"
                 >
                   View Details
                 </Link>
@@ -490,7 +491,7 @@ const AIRecommendationEngine: NextPage = () => {
             Our AI recommendation engine is here to help you find the perfect services, talents, and equipment for your next project.
           </p>
           <div className="flex flex-col sm flex-row gap-4 justify-center">
-            <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-lg hover:from-purple-700 hover to-pink-700 transition-colors">
+            <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-lg hover from-purple-700 hover to-pink-700 transition-colors">
               Explore Marketplace
             </Link>
             <Link href="/ai-virtual-assistant" className="bg-white/10 text-white px-8 py-3 rounded-lg hover bg-white/20 transition-colors border border-white/20">
@@ -507,6 +508,6 @@ const AIRecommendationEngine: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default AIRecommendationEngine 

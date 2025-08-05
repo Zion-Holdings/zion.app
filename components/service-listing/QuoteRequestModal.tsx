@@ -105,7 +105,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
     <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 z-50 overflow-y-auto">
-          <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+          <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm block sm p-0">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -121,7 +121,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.2 }}
-              className="inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full"
+              className="inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm max-w-2xl sm w-full"
             >
               {/* Header */}
               <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-4">
@@ -131,7 +131,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                   </h3>
                   <button
                     onClick={onClose}
-                    className="text-white hover:text-gray-200 transition-colors"
+                    className="text-white hover text-gray-200 transition-colors"
                   >
                     <X className="w-6 h-6" />
                   </button>
@@ -165,7 +165,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                   </div>
 
                   {/* Timeline */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         <Calendar className="w-4 h-4 inline mr-2" />
@@ -266,7 +266,7 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                       value={formData.additionalRequirements}
                       onChange={(e) => handleInputChange('additionalRequirements', e.target.value)}
                       rows={3}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus ring-2 focus ring-blue-500"
                       placeholder="Any additional requirements, preferences, or special considerations..."
                     />
                   </div>
@@ -277,13 +277,13 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
                   <button
                     type="button"
                     onClick={onClose}
-                    className="px-4 py-2 text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+                    className="px-4 py-2 text-gray-700 bg-gray-100 hover bg-gray-200 rounded-lg transition-colors"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus ring-blue-500 focus ring-offset-2"
                   >
                     Submit Request
                   </button>
@@ -297,4 +297,4 @@ const QuoteRequestModal: React.FC<QuoteRequestModalProps> = ({
   );
 };
 
-export default QuoteRequestModal; 
+export default QuoteRequestModal;

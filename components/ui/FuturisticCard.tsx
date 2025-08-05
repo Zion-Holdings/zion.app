@@ -62,7 +62,7 @@ const FuturisticCard: React.FC<FuturisticCardProps> = ({
       <div className={`relative glass-dark border ${currentColor.border} ${currentColor.hoverBorder} rounded-xl p-4 sm:p-6 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 ${currentColor.glow}`}>
         {/* Featured Badge */}
         {featured && (
-          <div className="absolute -top-2 sm:-top-3 -right-2 sm:-right-3 bg-gradient-to-r from-neon-pink to-neon-purple text-white text-xs font-bold px-2 sm:px-3 py-1 rounded-full neon-glow">
+          <div className="absolute -top-2 sm:-top-3 -right-2 sm -right-3 bg-gradient-to-r from-neon-pink to-neon-purple text-white text-xs font-bold px-2 sm px-3 py-1 rounded-full neon-glow">
             FEATURED
           </div>
         )}
@@ -76,18 +76,18 @@ const FuturisticCard: React.FC<FuturisticCardProps> = ({
 
         {/* Icon */}
         {icon && (
-          <div className="text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4 animate-cyber-float">
+          <div className="text-2xl sm:text-3xl lg text-4xl mb-3 sm mb-4 animate-cyber-float">
             {icon}
           </div>
         )}
 
         {/* Title */}
-        <h3 className="text-sm sm:text-base lg:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-neon-blue group-hover:to-neon-purple transition-all duration-300">
+        <h3 className="text-sm sm:text-base lg:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover from-neon-blue group-hover to-neon-purple transition-all duration-300">
           {title}
         </h3>
 
         {/* Description */}
-        <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
+        <p className="text-gray-400 text-xs sm text-sm mb-3 sm mb-4 line-clamp-3">
           {description}
         </p>
 
@@ -112,13 +112,13 @@ const FuturisticCard: React.FC<FuturisticCardProps> = ({
                   </svg>
                 ))}
               </div>
-              <span className="text-gray-400 text-xs sm:text-sm">{rating}</span>
+              <span className="text-gray-400 text-xs sm text-sm">{rating}</span>
             </div>
           )}
         </div>
 
         {/* Hover Effect Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-neon-blue/5 to-neon-purple/5 rounded-xl opacity-0 group-hover opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
         {/* Corner Accent */}
         <div className={`absolute top-0 right-0 w-6 h-6 sm:w-8 sm:h-8 border-t-2 border-r-2 ${currentColor.border} rounded-bl-xl opacity-50 group-hover:opacity-100 transition-opacity duration-300`}></div>
@@ -127,4 +127,4 @@ const FuturisticCard: React.FC<FuturisticCardProps> = ({
   );
 };
 
-export default FuturisticCard; 
+export default FuturisticCard;

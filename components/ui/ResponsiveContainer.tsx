@@ -40,6 +40,6 @@ const ResponsiveContainer: React.FC<ResponsiveContainerProps> = ({
       {children}
     </div>
   )
-}
+};
 
 export default ResponsiveContainer 

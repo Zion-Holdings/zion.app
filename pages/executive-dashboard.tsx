@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useMemo }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 import { motion, AnimatePresence }  from 'framer-motion';
 
 interface ExecutiveMetric {
@@ -466,7 +467,7 @@ const ExecutiveDashboardPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-white">Executive Dashboard</h1>
@@ -476,13 +477,13 @@ const ExecutiveDashboardPage: NextPage = () => {
               <select
                 value={timeframe}
                 onChange={(e) => setTimeframe(e.target.value as any)}
-                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-purple-500"
+                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500"
               >
                 <option value="month">Monthly</option>
                 <option value="quarter">Quarterly</option>
                 <option value="year">Yearly</option>
               </select>
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                 Export Report
               </button>
             </div>
@@ -490,9 +491,9 @@ const ExecutiveDashboardPage: NextPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
         {/* Key Metrics Overview */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg grid-cols-6 gap-4 mb-8">
+        <div className="grid grid-cols-2 md grid-cols-3 lg grid-cols-6 gap-4 mb-8">
           {metrics.slice(0, 6).map((metric, index) => (
             <motion.div
               key={metric.id}
@@ -983,12 +984,8 @@ const ExecutiveDashboardPage: NextPage = () => {
       </div>
     </div>
   
-  </ModernLayout>
-
-  </ModernLayout>
-
-  </ModernLayout>
-      );
+      </ModernLayout>
+  );
 };
 
 export default ExecutiveDashboardPage;

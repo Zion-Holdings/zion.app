@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 import { motion, AnimatePresence }  from 'framer-motion';
 
 interface Notification {
@@ -262,7 +263,7 @@ const NotificationsPage: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -296,7 +297,7 @@ const NotificationsPage: NextPage = () => {
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
@@ -337,7 +338,7 @@ const NotificationsPage: NextPage = () => {
                 placeholder="Search notifications..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus border-purple-500 transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus outline-none focus border-purple-500 transition-colors"
               />
             </div>
 
@@ -346,7 +347,7 @@ const NotificationsPage: NextPage = () => {
               <select
                 value={filter}
                 onChange={(e) => setFilter(e.target.value as 'all' | 'unread' | 'read')}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus border-purple-500 transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500 transition-colors"
               >
                 <option value="all">All Notifications</option>
                 <option value="unread">Unread Only</option>
@@ -359,7 +360,7 @@ const NotificationsPage: NextPage = () => {
               <select
                 value={typeFilter}
                 onChange={(e) => setTypeFilter(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus border-purple-500 transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus outline-none focus border-purple-500 transition-colors"
               >
                 <option value="all">All Types</option>
                 <option value="marketplace">Marketplace</option>
@@ -464,7 +465,7 @@ const NotificationsPage: NextPage = () => {
                           <Link
                             href={notification.action.url}
                             onClick={() => markAsRead(notification.id)}
-                            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105"
+                            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"
                           >
                             {notification.action.label}
                           </Link>
@@ -488,7 +489,7 @@ const NotificationsPage: NextPage = () => {
               Never miss important updates about services, talents, and marketplace activities.
             </p>
             <div className="flex flex-col sm flex-row gap-4 justify-center">
-              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
+              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105">
                 Explore Marketplace
               </Link>
               <Link href="/real-time-chat" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
@@ -506,6 +507,6 @@ const NotificationsPage: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default NotificationsPage 

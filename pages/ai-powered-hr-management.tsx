@@ -1,7 +1,8 @@
-import React, { useState, useEffect , useCallback }  from 'react';import ModernLayout from '../components/layout/ModernLayout'
+import React, { useState, useEffect , useCallback }  from 'react';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
-import Link  from 'next/link';
+import Head from 'next/head';
+import Link from 'next/link';
 
 interface Candidate {
   id: string;
@@ -312,7 +313,7 @@ const AIHRManagement: React.FC = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-sm border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="text-white font-bold text-xl">
@@ -332,7 +333,7 @@ const AIHRManagement: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
@@ -346,7 +347,7 @@ const AIHRManagement: React.FC = () => {
             <button
               onClick={generateHRInsights}
               disabled={loading}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 disabled opacity-50"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover from-blue-700 hover to-purple-700 transition-all duration-300 disabled opacity-50"
             >
               {loading ? 'Generating Insights...' : 'Generate AI Insights'}
             </button>
@@ -421,15 +422,15 @@ const AIHRManagement: React.FC = () => {
                 <div className="bg-white/5 p-6 rounded-xl border border-white/10">
                   <h3 className="text-xl font-semibold text-white mb-4">Quick Actions</h3>
                   <div className="space-y-3">
-                    <button className="w-full text-left p-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg hover:from-blue-600/30 hover to-purple-600/30 transition-all duration-300">
+                    <button className="w-full text-left p-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-lg hover from-blue-600/30 hover to-purple-600/30 transition-all duration-300">
                       <div className="text-white font-medium">Schedule Performance Reviews</div>
                       <div className="text-gray-400 text-sm">12 pending reviews</div>
                     </button>
-                    <button className="w-full text-left p-3 bg-gradient-to-r from-green-600/20 to-blue-600/20 rounded-lg hover:from-green-600/30 hover to-blue-600/30 transition-all duration-300">
+                    <button className="w-full text-left p-3 bg-gradient-to-r from-green-600/20 to-blue-600/20 rounded-lg hover from-green-600/30 hover to-blue-600/30 transition-all duration-300">
                       <div className="text-white font-medium">Review Candidate Pipeline</div>
                       <div className="text-gray-400 text-sm">8 candidates ready for interview</div>
                     </button>
-                    <button className="w-full text-left p-3 bg-gradient-to-r from-yellow-1200/20 to-orange-600/20 rounded-lg hover:from-yellow-1200/30 hover to-orange-600/30 transition-all duration-300">
+                    <button className="w-full text-left p-3 bg-gradient-to-r from-yellow-1200/20 to-orange-600/20 rounded-lg hover from-yellow-1200/30 hover to-orange-600/30 transition-all duration-300">
                       <div className="text-white font-medium">Update Job Postings</div>
                       <div className="text-gray-400 text-sm">3 positions need optimization</div>
                     </button>
@@ -783,7 +784,7 @@ const AIHRManagement: React.FC = () => {
 
       {/* Footer */}
       <footer className="bg-black/20 backdrop-blur-sm border-t border-white/10 mt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
           <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>
@@ -828,12 +829,8 @@ const AIHRManagement: React.FC = () => {
       </footer>
     </div>
   
-  </ModernLayout>
-
-  </ModernLayout>
-
-  </ModernLayout>
-      );
+      </ModernLayout>
+  );
 };
 
 export default AIHRManagement;

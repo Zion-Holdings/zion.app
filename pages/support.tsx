@@ -1,7 +1,7 @@
 import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
-import Link  from 'next/link';
+import Head from 'next/head';
+import Link from 'next/link';
 
 const SupportPage: NextPage = () => {
   return (
@@ -25,7 +25,7 @@ const SupportPage: NextPage = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3  gap-8">
+          <div className="grid grid-cols-1 md  grid-cols-2 lg grid-cols-3  gap-8">
             <div className="bg-cyber-card p-8 rounded-lg border border-cyber-border">
               <h3 className="text-xl font-semibold text-high-contrast mb-4">Help Desk</h3>
               <p className="text-high-contrast-secondary mb-4">

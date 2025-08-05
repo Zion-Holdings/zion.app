@@ -1,9 +1,9 @@
-import React  from 'react';
-import ModernLayout  from '../components/layout/ModernLayout';
+import React from 'react';
+import ModernLayout from '../components/layout/ModernLayout';
 
-import Head  from 'next/head';
-import { motion }  from 'framer-motion';
-import Link  from 'next/link';
+import Head from 'next/head';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -33,7 +33,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.1 }} className="flex flex-col sm flex-row justify-center gap-6 mb-12">
             <Link href="/marketplace" className="px-8 py-3 rounded-lg bg-purple-600 hover bg-purple-700 font-semibold transition">Browse Marketplace</Link>
             <Link href="/services" className="px-8 py-3 rounded-lg bg-pink-600 hover bg-pink-700 font-semibold transition">Our Services</Link>
-            <Link href="/talent-directory" className="px-8 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 font-semibold transition">Find Talent</Link>
+            <Link href="/talent-directory" className="px-8 py-3 rounded-lg bg-blue-600 hover bg-blue-700 font-semibold transition">Find Talent</Link>
             <Link href="/contact" className="px-8 py-3 rounded-lg bg-gray-800 hover bg-gray-900 font-semibold transition">Contact Us</Link>
           </motion.div>
         </section>
@@ -59,7 +59,7 @@ export default function Home() {
         <section className="py-36 text-center">
           <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.5 }} className="text-3xl font-bold mb-4">Ready to transform your business?</motion.h2>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.6 }} className="text-lg mb-8 text-gray-200">Join Zion Marketplace and unlock the power of AI-driven innovation today.</motion.p>
-          <Link href="/signup" className="px-30 py-4 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold text-lg shadow-lg hover:from-pink-500 hover to-purple-500 transition">Get Started</Link>
+          <Link href="/signup" className="px-30 py-4 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold text-lg shadow-lg hover from-pink-500 hover to-purple-500 transition">Get Started</Link>
         </section>
       </div>
     </>

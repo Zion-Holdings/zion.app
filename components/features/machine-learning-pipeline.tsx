@@ -25,10 +25,10 @@ const MachineLearningPipeline: React.FC<MachineLearningPipelineProps> = ({ class
         Advanced machine learning pipeline capabilities that enhance your business operations and drive growth.
       </p>
       <div className="flex space-x-2">
-        <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors">
+        <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors">
           Learn More
         </button>
-        <button className="border border-blue-600 text-blue-600 hover:bg-blue-50 px-4 py-2 rounded text-sm font-medium transition-colors">
+        <button className="border border-blue-600 text-blue-600 hover bg-blue-50 px-4 py-2 rounded text-sm font-medium transition-colors">
           Demo
         </button>
       </div>

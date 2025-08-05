@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 
 interface EscrowTransaction {
   id: string;
@@ -124,7 +125,7 @@ const EscrowServicesPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
@@ -145,7 +146,7 @@ const EscrowServicesPage: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -157,7 +158,7 @@ const EscrowServicesPage: NextPage = () => {
             Protected payments, automated dispute resolution, and complete transaction security.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="#features" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+            <Link href="#features" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
               Learn More
             </Link>
             <Link href="/marketplace" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
@@ -188,7 +189,7 @@ const EscrowServicesPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 pb-12">
         {/* Tabs */}
         <div className="flex flex-wrap gap-2 mb-8">
           {[
@@ -215,7 +216,7 @@ const EscrowServicesPage: NextPage = () => {
         {activeTab === 'overview' && (
           <div className="space-y-8">
             {/* Features */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
                 <div className="text-3xl mb-4">🔒</div>
                 <h3 className="text-xl font-semibold text-white mb-3">Secure Escrow</h3>
@@ -293,7 +294,7 @@ const EscrowServicesPage: NextPage = () => {
           <div className="space-y-6">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-bold text-white">Recent Transactions</h2>
-              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
                 New Transaction
               </Link>
             </div>
@@ -351,7 +352,7 @@ const EscrowServicesPage: NextPage = () => {
           <div className="space-y-6">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-bold text-white">Dispute Resolution</h2>
-              <Link href="/ai-powered-contract-legal" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+              <Link href="/ai-powered-contract-legal" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
                 Legal Support
               </Link>
             </div>
@@ -461,7 +462,7 @@ const EscrowServicesPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Trade Securely?
@@ -470,7 +471,7 @@ const EscrowServicesPage: NextPage = () => {
               Start using our escrow services for protected marketplace transactions.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
                 Start Trading
               </Link>
               <Link href="/payment-processing" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
@@ -483,7 +484,7 @@ const EscrowServicesPage: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
           <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">Zion Marketplace</h3>
@@ -534,6 +535,6 @@ const EscrowServicesPage: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default EscrowServicesPage 

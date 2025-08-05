@@ -301,7 +301,7 @@ function generateAIInsights(item: Recommendation, profile: UserProfile): string[
   }
   
   return insights.length > 0 ? insights : ['Good match for your project requirements'];
-}
+};
 
 export default async function handler(
   req: NextApiRequest,

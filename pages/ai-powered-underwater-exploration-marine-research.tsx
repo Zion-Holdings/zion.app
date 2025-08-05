@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useMemo }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 import { Home, Search, User }  from 'lucide-react';
 
 interface UnderwaterRobot {
@@ -445,7 +446,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Zion</span>
@@ -469,7 +470,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
               <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-blue-700 hover to-cyan-700 transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-blue-700 hover to-cyan-700 transition-all duration-200">
                 Get Started
               </Link>
             </div>
@@ -478,7 +479,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-white mb-6">
@@ -490,10 +491,10 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
             Discover the mysteries of the deep sea.
           </p>
           <div className="flex justify-center space-x-4">
-            <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-medium hover:from-blue-700 hover to-cyan-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-medium hover from-blue-700 hover to-cyan-700 transition-all duration-200">
               Deploy Robot
             </button>
-            <button className="px-8 py-3 bg-gradient-to-r from-teal-600 to-green-600 text-white rounded-lg font-medium hover:from-teal-700 hover to-green-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-teal-600 to-green-600 text-white rounded-lg font-medium hover from-teal-700 hover to-green-700 transition-all duration-200">
               Start Research
             </button>
           </div>
@@ -595,7 +596,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
             </div>
 
             {/* Robots Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {filteredRobots.map((robot) => (
                 <div key={robot.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -633,7 +634,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
 
         {selectedView === 'research' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {research.map((project) => (
                 <div key={project.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -671,7 +672,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
 
         {selectedView === 'monitoring' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {monitoring.map((station) => (
                 <div key={station.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -709,7 +710,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
 
         {selectedView === 'explorations' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {explorations.map((exploration) => (
                 <div key={exploration.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -739,7 +740,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
         {selectedView === 'analytics' && analytics && (
           <div className="space-y-6">
             {/* Analytics Overview */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6">
               <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
                 <div className="text-3xl font-bold text-white">{analytics.totalRobots}</div>
                 <div className="text-gray-400">Total Robots</div>
@@ -790,7 +791,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
 
       {/* Footer */}
       <div className="bg-black/20 border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
           <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>
@@ -859,6 +860,6 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default AIPoweredUnderwaterExplorationMarineResearchPage 

@@ -20,7 +20,7 @@ interface AnalysisRequest {
   industry?: string
   budget?: string
   timeline?: string
-}
+};
 
 export default async function handler(
   req: NextApiRequest,

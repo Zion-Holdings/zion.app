@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useMemo }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 
 interface CropMonitoring {
   id: string
@@ -456,7 +457,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">Zion</span>
@@ -486,7 +487,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
               <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-green-700 hover to-emerald-700 transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-green-700 hover to-emerald-700 transition-all duration-200">
                 Get Started
               </Link>
             </div>
@@ -495,7 +496,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-white mb-6">
@@ -507,10 +508,10 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
             for maximum yield and sustainability.
           </p>
           <div className="flex justify-center space-x-4">
-            <button className="px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg font-medium hover:from-green-700 hover to-emerald-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg font-medium hover from-green-700 hover to-emerald-700 transition-all duration-200">
               Monitor Crops
             </button>
-            <button className="px-8 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-lg font-medium hover:from-teal-700 hover to-cyan-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-lg font-medium hover from-teal-700 hover to-cyan-700 transition-all duration-200">
               Analyze Soil
             </button>
           </div>
@@ -610,7 +611,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
             </div>
 
             {/* Crops Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {filteredCropMonitoring.map((crop) => (
                 <div key={crop.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -650,7 +651,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
 
         {selectedView === 'soil' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {soilAnalysis.map((soil) => (
                 <div key={soil.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -685,7 +686,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
 
         {selectedView === 'irrigation' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {irrigationSystems.map((system) => (
                 <div key={system.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -723,7 +724,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
 
         {selectedView === 'farming' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {smartFarming.map((system) => (
                 <div key={system.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -762,7 +763,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
         {selectedView === 'analytics' && analytics && (
           <div className="space-y-6">
             {/* Analytics Overview */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6">
               <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
                 <div className="text-3xl font-bold text-white">{analytics.totalCrops}</div>
                 <div className="text-gray-400">Total Crops</div>
@@ -813,7 +814,7 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
 
       {/* Footer */}
       <div className="bg-black/20 border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
           <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>
@@ -866,6 +867,6 @@ const AIPoweredPrecisionAgricultureSmartFarmingPage: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default AIPoweredPrecisionAgricultureSmartFarmingPage 

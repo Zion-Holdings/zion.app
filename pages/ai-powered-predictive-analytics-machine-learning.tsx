@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useMemo }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 
 interface PredictiveModel {
   id: string
@@ -457,7 +458,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-400">Zion</span>
@@ -523,7 +524,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
               <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-emerald-600 to-green-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-emerald-700 hover to-green-700 transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-emerald-600 to-green-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-emerald-700 hover to-green-700 transition-all duration-200">
                 Get Started
               </Link>
             </div>
@@ -532,7 +533,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-white mb-6">
@@ -544,10 +545,10 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
             for data-driven insights and predictions.
           </p>
           <div className="flex justify-center space-x-4">
-            <button className="px-8 py-3 bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-lg font-medium hover:from-emerald-700 hover to-green-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-lg font-medium hover from-emerald-700 hover to-green-700 transition-all duration-200">
               Build Models
             </button>
-            <button className="px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg font-medium hover:from-green-700 hover to-emerald-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg font-medium hover from-green-700 hover to-emerald-700 transition-all duration-200">
               View Analytics
             </button>
           </div>
@@ -647,7 +648,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
             </div>
 
             {/* Predictive Models Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {filteredPredictiveModels.map((model) => (
                 <div key={model.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -685,7 +686,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
 
         {selectedView === 'algorithms' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {machineLearningAlgorithms.map((algorithm) => (
                 <div key={algorithm.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -723,7 +724,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
 
         {selectedView === 'deep-learning' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {deepLearning.map((model) => (
                 <div key={model.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -761,7 +762,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
 
         {selectedView === 'optimization' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {analyticsOptimization.map((optimization) => (
                 <div key={optimization.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -800,7 +801,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
         {selectedView === 'insights' && data && (
           <div className="space-y-6">
             {/* Analytics Overview */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6">
               <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
                 <div className="text-3xl font-bold text-white">{data.totalModels}</div>
                 <div className="text-gray-400">Total Models</div>
@@ -851,7 +852,7 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
 
       {/* Footer */}
       <div className="bg-black/20 border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
           <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>
@@ -916,6 +917,6 @@ const AIPoweredPredictiveAnalyticsMachineLearningPage: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default AIPoweredPredictiveAnalyticsMachineLearningPage 

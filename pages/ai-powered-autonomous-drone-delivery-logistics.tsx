@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useRef }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 
 interface DroneFleet {
   id: string
@@ -342,7 +343,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
 
       {/* Header */}
       <header className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-3">
@@ -360,7 +361,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
               <button
                 onClick={initializeDroneSystem}
                 disabled={isLoading}
-                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 disabled opacity-50"
+                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover from-blue-700 hover to-purple-700 transition-all duration-200 disabled opacity-50"
               >
                 {isLoading ? 'Initializing...' : 'Initialize System'}
               </button>
@@ -382,7 +383,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
 
       {/* Main Content */}
       <main className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
           
           {/* Tab Navigation */}
           <div className="mb-8">
@@ -475,19 +476,19 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                 <div className="lg col-span-3 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                   <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3>
                   <div className="grid grid-cols-1 md grid-cols-4 gap-4">
-                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover:from-blue-700 hover to-blue-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200">
                       <div className="text-2xl mb-2">📦</div>
                       <div className="font-semibold">Schedule Delivery</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover:from-green-700 hover to-green-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200">
                       <div className="text-2xl mb-2">🚁</div>
                       <div className="font-semibold">Deploy Drone</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover:from-purple-700 hover to-purple-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover from-purple-700 hover to-purple-800 transition-all duration-200">
                       <div className="text-2xl mb-2">📊</div>
                       <div className="font-semibold">View Analytics</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg text-white hover:from-orange-700 hover to-orange-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg text-white hover from-orange-700 hover to-orange-800 transition-all duration-200">
                       <div className="text-2xl mb-2">⚙️</div>
                       <div className="font-semibold">System Settings</div>
                     </button>
@@ -501,12 +502,12 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <h2 className="text-2xl font-bold text-white">Drone Fleet Management</h2>
-                  <button className="px-4 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover to-purple-700 transition-all duration-200">
+                  <button className="px-4 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover from-blue-700 hover to-purple-700 transition-all duration-200">
                     Add New Drone
                   </button>
                 </div>
                 
-                <div className="grid grid-cols-1 lg:grid-cols-2 xl grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 lg grid-cols-2 xl grid-cols-3 gap-6">
                   {mockDroneFleet.map((drone) => (
                     <div key={drone.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover border-gray-600 transition-all duration-200">
                       <div className="flex items-center justify-between mb-4">
@@ -566,7 +567,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                       
                       <div className="mt-4 pt-4 border-t border-gray-700">
                         <div className="flex space-x-2">
-                          <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors">
+                          <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover bg-blue-700 transition-colors">
                             Deploy
                           </button>
                           <button className="flex-1 px-3 py-4 bg-gray-600 text-white rounded-lg text-sm hover bg-gray-700 transition-colors">
@@ -588,7 +589,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <h2 className="text-2xl font-bold text-white">Delivery Routes</h2>
-                  <button className="px-4 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover to-purple-700 transition-all duration-200">
+                  <button className="px-4 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover from-blue-700 hover to-purple-700 transition-all duration-200">
                     Create Route
                   </button>
                 </div>
@@ -620,7 +621,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                         </div>
                       </div>
                       
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-4">
+                      <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-4">
                         <div>
                           <span className="text-gray-300 text-sm">Distance</span>
                           <p className="text-white font-semibold">{route.distance} km</p>
@@ -644,11 +645,11 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                           <button 
                             onClick={() => scheduleDelivery(route)}
                             disabled={isLoading}
-                            className="flex-1 px-3 py-4 bg-green-600 text-white rounded-lg text-sm hover:bg-green-700 transition-colors disabled opacity-50"
+                            className="flex-1 px-3 py-4 bg-green-600 text-white rounded-lg text-sm hover bg-green-700 transition-colors disabled opacity-50"
                           >
                             {isLoading ? 'Scheduling...' : 'Schedule Delivery'}
                           </button>
-                          <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors">
+                          <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover bg-blue-700 transition-colors">
                             Track Route
                           </button>
                           <button className="flex-1 px-3 py-4 bg-gray-600 text-white rounded-lg text-sm hover bg-gray-700 transition-colors">
@@ -667,7 +668,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <h2 className="text-2xl font-bold text-white">Logistics Hubs</h2>
-                  <button className="px-4 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover to-purple-700 transition-all duration-200">
+                  <button className="px-4 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover from-blue-700 hover to-purple-700 transition-all duration-200">
                     Add Hub
                   </button>
                 </div>
@@ -715,7 +716,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                       
                       <div className="mt-4 pt-4 border-t border-gray-700">
                         <div className="flex space-x-2">
-                          <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors">
+                          <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover bg-blue-700 transition-colors">
                             Manage
                           </button>
                           <button className="flex-1 px-3 py-4 bg-green-600 text-white rounded-lg text-sm hover bg-green-700 transition-colors">
@@ -793,7 +794,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Analytics Dashboard</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6">
                   <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
@@ -888,7 +889,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
 
       {/* Footer */}
       <footer className="relative z-10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
           <div className="text-center">
             <p className="text-gray-400">
               AI-Powered Autonomous Drone Delivery & Logistics System | Zion Tech Group
@@ -907,6 +908,6 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default AIPoweredAutonomousDroneDeliveryLogistics 

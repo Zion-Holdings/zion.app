@@ -20,7 +20,7 @@ const ContrastDemo: React.FC = () => {
       {/* Text Contrast Examples */}
       <section className="text-contrast-examples mb-8">
         <h2 className="text-high-contrast text-2xl font-bold mb-6">Enhanced Text Contrast</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md grid-cols-2 gap-6">
           <div className="bg-high-contrast-card border-high-contrast-primary rounded-lg p-6">
             <h3 className="text-high-contrast text-lg font-semibold mb-4">Primary Text</h3>
             <p className="text-high-contrast">
@@ -40,7 +40,7 @@ const ContrastDemo: React.FC = () => {
       {/* Interactive Elements Demo */}
       <section className="interactive-elements-demo mb-8">
         <h2 className="text-high-contrast text-2xl font-bold mb-6">Enhanced Interactive Elements</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md grid-cols-3 gap-6">
           <button className="btn btn-primary focus-high-contrast interactive-element w-full">
             Primary Button
           </button>
@@ -58,7 +58,7 @@ const ContrastDemo: React.FC = () => {
       {/* Status Indicators Demo */}
       <section className="status-indicators-demo mb-8">
         <h2 className="text-high-contrast text-2xl font-bold mb-6">Status Indicators</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md grid-cols-4 gap-4">
           <div className="bg-high-contrast-card border-high-contrast-success rounded-lg p-4">
             <div className="flex items-center mb-2">
               <span className="status-indicator active"></span>
@@ -131,4 +131,4 @@ const ContrastDemo: React.FC = () => {
   );
 };
 
-export default ContrastDemo; 
+export default ContrastDemo;

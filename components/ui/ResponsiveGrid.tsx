@@ -59,6 +59,6 @@ const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
       {children}
     </div>
   )
-}
+};
 
 export default ResponsiveGrid 

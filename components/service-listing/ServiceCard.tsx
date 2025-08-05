@@ -61,7 +61,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
       whileHover={{ y: -5 }}
-      className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 group"
+      className="bg-white rounded-xl shadow-lg hover shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 group"
     >
       {/* Card Header with Gradient */}
       <div className="relative h-48 bg-gradient-to-br from-cyan-500 via-blue-500 to-purple-600">
@@ -100,7 +100,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
       <div className="p-6">
         {/* Title and Provider */}
         <div className="mb-4">
-          <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
+          <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2 group-hover text-blue-600 transition-colors">
             {service.title}
           </h3>
           <div className="flex items-center text-sm text-gray-600">
@@ -160,7 +160,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           onClick={() => onRequestQuote(service)}
-          className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 shadow-lg hover:shadow-xl"
+          className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus ring-offset-2 shadow-lg hover shadow-xl"
         >
           Request Quote
         </motion.button>
@@ -169,4 +169,4 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onRequestQuote }) =>
   );
 };
 
-export default ServiceCard; 
+export default ServiceCard;

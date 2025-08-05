@@ -14,7 +14,7 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className =
       {/* Accessibility Controls */}
       <div className="accessibility-controls bg-high-contrast-card border-high-contrast-primary rounded-lg p-4 mb-6">
         <h3 className="text-high-contrast text-xl font-bold mb-4">Accessibility Controls</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md grid-cols-3 gap-4">
           <button
             onClick={() => setHighContrastMode(!highContrastMode)}
             className={`btn ${highContrastMode ? 'btn-primary' : 'btn-secondary'} focus-high-contrast`}
@@ -47,7 +47,7 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className =
         {/* Text Contrast Examples */}
         <section className="text-contrast-examples mb-8">
           <h2 className="text-high-contrast text-2xl font-bold mb-6">Enhanced Text Contrast</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md grid-cols-2 gap-6">
             <div className="bg-high-contrast-card border-high-contrast-primary rounded-lg p-6">
               <h3 className="text-high-contrast text-lg font-semibold mb-4">Primary Text</h3>
               <p className="text-high-contrast">
@@ -81,7 +81,7 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className =
         {/* Interactive Elements Demo */}
         <section className="interactive-elements-demo mb-8">
           <h2 className="text-high-contrast text-2xl font-bold mb-6">Enhanced Interactive Elements</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md grid-cols-3 gap-6">
             <button className="btn btn-primary focus-high-contrast interactive-element w-full">
               Primary Button
             </button>
@@ -99,7 +99,7 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className =
         {/* Status Indicators Demo */}
         <section className="status-indicators-demo mb-8">
           <h2 className="text-high-contrast text-2xl font-bold mb-6">Status Indicators</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md grid-cols-4 gap-4">
             <div className="bg-high-contrast-card border-high-contrast-success rounded-lg p-4">
               <div className="flex items-center mb-2">
                 <span className="status-indicator active"></span>
@@ -145,7 +145,7 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className =
         {/* Form Elements Demo */}
         <section className="form-elements-demo mb-8">
           <h2 className="text-high-contrast text-2xl font-bold mb-6">Enhanced Form Elements</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md grid-cols-2 gap-6">
             <div className="bg-high-contrast-card border-high-contrast-primary rounded-lg p-6">
               <label className="text-high-contrast block mb-2 font-semibold">
                 Enhanced Input Field
@@ -247,7 +247,7 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className =
         {/* Accessibility Features Summary */}
         <section className="accessibility-summary bg-high-contrast-card border-high-contrast-primary rounded-lg p-6">
           <h2 className="text-high-contrast text-2xl font-bold mb-4">Accessibility Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md grid-cols-2 gap-6">
             <div>
               <h3 className="text-high-contrast-accent text-lg font-semibold mb-3">Visual Enhancements</h3>
               <ul className="text-high-contrast-secondary space-y-2">
@@ -276,4 +276,4 @@ const EnhancedContrastDemo: React.FC<EnhancedContrastDemoProps> = ({ className =
   );
 };
 
-export default EnhancedContrastDemo; 
+export default EnhancedContrastDemo;

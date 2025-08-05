@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useRef }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 
 interface QuantumSensing {
   id: string
@@ -227,7 +228,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
 
       {/* Header */}
       <header className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-3">
@@ -260,7 +261,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
 
       {/* Main Content */}
       <main className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
           
           {/* Tab Navigation */}
           <div className="mb-8">
@@ -332,19 +333,19 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
                 <div className="lg col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                   <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3>
                   <div className="grid grid-cols-1 md grid-cols-4 gap-4">
-                    <button className="p-4 bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg text-white hover:from-teal-700 hover to-teal-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg text-white hover from-teal-700 hover to-teal-800 transition-all duration-200">
                       <div className="text-2xl mb-2">📡</div>
                       <div className="font-semibold">Start Sensing</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg text-white hover:from-cyan-700 hover to-cyan-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg text-white hover from-cyan-700 hover to-cyan-800 transition-all duration-200">
                       <div className="text-2xl mb-2">📷</div>
                       <div className="font-semibold">Quantum Imaging</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover:from-blue-700 hover to-blue-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover from-blue-700 hover to-blue-800 transition-all duration-200">
                       <div className="text-2xl mb-2">⚖️</div>
                       <div className="font-semibold">Metrology</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover:from-green-700 hover to-green-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover from-green-700 hover to-green-800 transition-all duration-200">
                       <div className="text-2xl mb-2">🎯</div>
                       <div className="font-semibold">Detection</div>
                     </button>
@@ -358,7 +359,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Quantum Sensing</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
                   {sensing.map((sensor) => (
                     <div key={sensor.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
@@ -403,7 +404,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Quantum Imaging</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
                   {imaging.map((image) => (
                     <div key={image.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
@@ -448,7 +449,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Quantum Metrology</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
                   {metrology.map((meter) => (
                     <div key={meter.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
@@ -493,7 +494,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Quantum Detection</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
                   {detection.map((detector) => (
                     <div key={detector.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
@@ -538,7 +539,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Quantum Interferometry</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
                   {interferometry.map((interferometer) => (
                     <div key={interferometer.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
@@ -583,7 +584,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Quantum Spectroscopy</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
                   {spectroscopy.map((spectrometer) => (
                     <div key={spectrometer.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
@@ -628,7 +629,7 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
 
       {/* Footer */}
       <footer className="relative z-10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
           <div className="text-center">
             <p className="text-gray-400">
               AI-Powered Quantum Sensing & Metrology | Zion Tech Group
@@ -647,6 +648,6 @@ const AIPoweredQuantumSensingMetrology: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default AIPoweredQuantumSensingMetrology 

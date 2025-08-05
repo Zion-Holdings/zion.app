@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useMemo }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 
 interface Prediction {
   id: string;
@@ -387,7 +388,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-600/20 to-teal-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-44">
+        <div className="relative max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-44">
           <div className="text-center">
             <h1 className="text-5xl md text-6xl font-bold text-white mb-6">
               AI-Powered Prediction & Forecasting System
@@ -412,7 +413,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
         {isLoading ? (
           <div className="flex justify-center items-center py-40">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-500"></div>
@@ -488,12 +489,12 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
               <div className="space-y-8">
                 {/* Controls */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md space-y-0">
+                  <div className="flex flex-col md flex-row justify-between items-center space-y-4 md space-y-0">
                     <div className="flex items-center space-x-4">
                       <select
                         value={selectedType}
                         onChange={(e) => setSelectedType(e.target.value)}
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus ring-emerald-500"
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-emerald-500"
                       >
                         <option value="all" className="bg-slate-800">All Types</option>
                         <option value="market" className="bg-slate-800">Market</option>
@@ -504,7 +505,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
                         <option value="behavior" className="bg-slate-800">Behavior</option>
                       </select>
                     </div>
-                    <button className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover to-teal-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300">
+                    <button className="bg-gradient-to-r from-emerald-600 to-teal-600 hover from-emerald-700 hover to-teal-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300">
                       Create Prediction
                     </button>
                   </div>
@@ -570,7 +571,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
                       </div>
 
                       <div className="flex space-x-2">
-                        <button className="flex-1 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover to-teal-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 bg-gradient-to-r from-emerald-600 to-teal-600 hover from-emerald-700 hover to-teal-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           View Details
                         </button>
                         <button className="flex-1 border border-white/20 text-white hover bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
@@ -586,7 +587,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
             {/* Analytics Tab */}
             {activeTab === 'analytics' && analytics && (
               <div className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6">
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                     <div className="text-3xl font-bold text-white mb-2">{analytics.totalPredictions.toLocaleString()}</div>
                     <div className="text-gray-400 text-sm">Total Predictions</div>
@@ -639,7 +640,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-emerald-600/20 to-teal-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-36">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Predict the Future?
@@ -649,7 +650,7 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
               and gain insights into future trends and opportunities.
             </p>
             <div className="flex flex-col sm flex-row gap-4 justify-center">
-              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-emerald-500/25 transform hover scale-105">
+              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover to-teal-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-emerald-500/25 transform hover scale-105">
                 Start Predicting
               </Link>
               <Link href="/talent-directory" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
@@ -667,6 +668,6 @@ const AIPoweredPredictionForecastingPage: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default AIPoweredPredictionForecastingPage 

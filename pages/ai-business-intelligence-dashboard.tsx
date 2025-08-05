@@ -1,6 +1,7 @@
-import { useState, useEffect }  from 'react';import ModernLayout from '../components/layout/ModernLayout'
+import { useState, useEffect }  from 'react';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 
 interface KPI {
   id: string;
@@ -226,7 +227,9 @@ const BusinessIntelligenceDashboard = () => {
   };
 
   const exportData = (format: 'pdf' | 'csv' | 'excel') => {
-    // Simulate export functionality
+    // Simulate;
+
+export functionality
     console.log(`Exporting data in ${format} format`);
   };
 
@@ -264,7 +267,7 @@ const BusinessIntelligenceDashboard = () => {
       
         {/* Header */}
         <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
+          <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
             <div className="flex justify-between items-center">
               <div>
                 <h1 className="text-4xl md text-5xl font-bold text-white mb-2">
@@ -278,7 +281,7 @@ const BusinessIntelligenceDashboard = () => {
                 <select
                   value={selectedTimeframe}
                   onChange={(e) => setSelectedTimeframe(e.target.value)}
-                  className="bg-white/10 border border-white/20 rounded-lg text-white px-4 py-4 focus:outline-none focus:ring-2 focus ring-purple-500"
+                  className="bg-white/10 border border-white/20 rounded-lg text-white px-4 py-4 focus outline-none focus ring-2 focus ring-purple-500"
                 >
                   {timeframes.map((tf) => (
                     <option key={tf.value} value={tf.value}>
@@ -297,7 +300,7 @@ const BusinessIntelligenceDashboard = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
           {/* Tab Navigation */}
           <div className="flex flex-wrap gap-2 mb-8">
             {tabs.map((tab) => (
@@ -320,7 +323,7 @@ const BusinessIntelligenceDashboard = () => {
           {activeTab === 'overview' && (
             <div className="space-y-8">
               {/* KPI Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
                 {kpis.map((kpi) => (
                   <div key={kpi.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
                     <div className="flex justify-between items-start mb-4">
@@ -543,7 +546,7 @@ const BusinessIntelligenceDashboard = () => {
                       <button
                         onClick={() => generateReport(report.id)}
                         disabled={loading}
-                        className="flex-1 bg-purple-600 text-white px-4 py-4 rounded-lg hover:bg-purple-700 transition-colors disabled opacity-50"
+                        className="flex-1 bg-purple-600 text-white px-4 py-4 rounded-lg hover bg-purple-700 transition-colors disabled opacity-50"
                       >
                         {loading ? 'Generating...' : 'Generate Now'}
                       </button>
@@ -601,12 +604,8 @@ const BusinessIntelligenceDashboard = () => {
       </div>
     </>
   
-  </ModernLayout>
-
-  </ModernLayout>
-
-  </ModernLayout>
-      );
+      </ModernLayout>
+  );
 };
 
 export default BusinessIntelligenceDashboard;

@@ -1,8 +1,9 @@
-import React, { useState, useEffect , useCallback }  from 'react';import ModernLayout from '../components/layout/ModernLayout'
+import React, { useState, useEffect , useCallback }  from 'react';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import { useAuth }  from '../src/contexts/AuthContext';
-import { useRouter }  from 'next/router';
-import Head  from 'next/head';
+import { useAuth } from '../src/contexts/AuthContext';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 export default function DebugAdmin() {
   const { user, loading, session } = useAuth();
@@ -98,7 +99,7 @@ export default function DebugAdmin() {
             <div className="space-y-4">
               <button
                 onClick={() => router.push('/admin-dashboard')}
-                className="px-4 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+                className="px-4 py-4 bg-blue-600 hover bg-blue-700 text-white rounded-lg transition-colors"
               >
                 Try Admin Dashboard
               </button>

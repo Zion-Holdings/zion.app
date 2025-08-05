@@ -18,7 +18,7 @@ interface QuoteRequestData {
   email: string;
   phone: string;
   company: string;
-}
+};
 
 export default async function handler(
   req: NextApiRequest,

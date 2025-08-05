@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
-import Link  from 'next/link';
-import { useState }  from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+import { useState } from 'react';
 import { Home, Search, User }  from 'lucide-react';
 
 const HelpCenter: NextPage = () => {
@@ -125,7 +126,7 @@ const HelpCenter: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="text-2xl font-bold">
@@ -145,7 +146,7 @@ const HelpCenter: NextPage = () => {
               <Link href="/auth/login" className="text-gray-300 hover text-white transition-colors">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-200">
                 Join Zion Now
               </Link>
             </div>
@@ -153,7 +154,7 @@ const HelpCenter: NextPage = () => {
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+      <main className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
@@ -171,7 +172,7 @@ const HelpCenter: NextPage = () => {
                 placeholder="Search for help articles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent backdrop-blur-sm"
+                className="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent backdrop-blur-sm"
               />
               <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
                 <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -183,7 +184,7 @@ const HelpCenter: NextPage = () => {
         </div>
 
         {/* Categories */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg grid-cols-6 gap-4 mb-12">
+        <div className="grid grid-cols-2 md grid-cols-3 lg grid-cols-6 gap-4 mb-12">
           {categories.map((category) => (
             <button
               key={category.id}
@@ -259,7 +260,7 @@ const HelpCenter: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/40 backdrop-blur-md border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
           <div className="text-center text-gray-400">
             <p>&copy; 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</p>
           </div>
@@ -291,6 +292,6 @@ const HelpCenter: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default HelpCenter 

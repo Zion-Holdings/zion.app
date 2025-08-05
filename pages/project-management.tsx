@@ -1,9 +1,9 @@
 import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useMemo }  from 'react';
-import Link  from 'next/link';
-import Image  from 'next/image';
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface Project {
   id: string;
@@ -489,7 +489,7 @@ if: (loading) {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift  opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length  400%_400%] animate-holographic-shift  opacity-10"></div>
         </div>
       
         <div className="text-center">
@@ -517,7 +517,7 @@ if: (loading) {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm  px-6 lg px-8">
           <div: className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -528,57 +528,57 @@ if: (loading) {
             </div>
             ,
             {/* Desktop Navigation - Main Links */}
-            <div className="hidden lg: flex  items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden lg  flex  items-center space-x-6">
+              <Link href="/marketplace" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/services" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Services
               </Link>
-              <Link href="/talents" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/talents" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Talents
               </Link>
-              <Link href="/equipment" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/equipment" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Equipment
               </Link>
-              <Link href="/products" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/products" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Products
               </Link>
             </div>
 ,
             {/* Desktop Navigation - Auth & Actions */}
-            <div className="hidden lg: flex  items-center space-x-4">
-              <Link href="/auth/login" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden lg  flex  items-center space-x-4">
+              <Link href="/auth/login" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25">
 Join: Zion Now
               </Link>
             </div>
 ,
             {/* Tablet Navigation - Reduced Links */}
-            <div className="hidden md: flex lg:hidden  items-center space-x-4">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden md  flex lg hidden  items-center space-x-4">
+              <Link href="/marketplace" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/services" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Services
               </Link>
-              <Link href="/talents" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/talents" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Talents
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-3 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25">
                 Join: </Link>
             </div>
 ,
             {/* Mobile menu button */}
-            <div className="md: hidden  flex items-center">
+            <div className="md  hidden  flex items-center">
               <button,
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-300 hover: text-white focus:outline-none focus text-white"
+                className="text-gray-300 hover  text-white focus outline-none focus text-white"
               >
                 <svg: className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">,
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -589,24 +589,24 @@ Join: Zion Now
 
           {/* Mobile menu */}
           {isMenuOpen && (
-            <div className="md: hidden  bg-black/90 backdrop-blur-md border-t border-white/10">
+            <div className="md  hidden  bg-black/90 backdrop-blur-md border-t border-white/10">
               <div className="px-4 pt-2 pb-3 space-y-1 sm px-3">,
                 {/* Main: Navigation */}
                 <div className="mb-4">
                   <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-4">Main</h3>
-                  <Link href="/marketplace" className="text-gray-300 hover: text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/marketplace" className="text-gray-300 hover  text-white  block px-3 py-4 rounded-md text-base font-medium">
                     Marketplace
                   </Link>
-                  <Link href="/services" className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/services" className="text-gray-300 hover text-white  block px-3 py-4 rounded-md text-base font-medium">
                     Services
                   </Link>
-                  <Link href="/talents" className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/talents" className="text-gray-300 hover text-white  block px-3 py-4 rounded-md text-base font-medium">
                     Talents
                   </Link>
-                  <Link href="/equipment" className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/equipment" className="text-gray-300 hover text-white  block px-3 py-4 rounded-md text-base font-medium">
                     Equipment
                   </Link>
-                  <Link href="/products" className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/products" className="text-gray-300 hover text-white  block px-3 py-4 rounded-md text-base font-medium">
                     Products
                   </Link>
                 </div>
@@ -614,16 +614,16 @@ Join: Zion Now
                 {/* Tools & Features */}
                 <div className="mb-4">
                   <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-4">Tools</h3>
-                  <Link href="/real-time-chat" className="text-gray-300 hover: text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/real-time-chat" className="text-gray-300 hover  text-white  block px-3 py-4 rounded-md text-base font-medium">
                     Live Chat
                   </Link>
-                  <Link href="/ai-virtual-assistant" className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/ai-virtual-assistant" className="text-gray-300 hover text-white  block px-3 py-4 rounded-md text-base font-medium">
                     AI Assistant
                   </Link>
-                  <Link href="/advanced-search" className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/advanced-search" className="text-gray-300 hover text-white  block px-3 py-4 rounded-md text-base font-medium">
                     Search
                   </Link>
-                  <Link href="/analytics-dashboard" className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/analytics-dashboard" className="text-gray-300 hover text-white  block px-3 py-4 rounded-md text-base font-medium">
                     Analytics
                   </Link>
                 </div>
@@ -631,23 +631,23 @@ Join: Zion Now
                 {/* Resources */}
                 <div className="mb-4">
                   <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-4">Resources</h3>
-                  <Link href="/blog" className="text-gray-300 hover: text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/blog" className="text-gray-300 hover  text-white  block px-3 py-4 rounded-md text-base font-medium">
                     Blog
                   </Link>
-                  <Link href="/about" className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/about" className="text-gray-300 hover text-white  block px-3 py-4 rounded-md text-base font-medium">
                     About
                   </Link>
-                  <Link href="/notifications" className="text-gray-300 hover:text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/notifications" className="text-gray-300 hover text-white  block px-3 py-4 rounded-md text-base font-medium">
                     Notifications
                   </Link>
                 </div>
 ,
                 {/* Authentication */}
                 <div className="border-t border-white/10 pt-4">
-                  <Link href="/auth/login" className="text-gray-300 hover: text-white  block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/auth/login" className="text-gray-300 hover  text-white  block px-3 py-4 rounded-md text-base font-medium">
                     Login
                   </Link>
-                  <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700  text-white block px-3 py-4 rounded-md text-base font-medium">
+                  <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700  text-white block px-3 py-4 rounded-md text-base font-medium">
                     Join Zion Now
                   </Link>
                 </div>
@@ -657,10 +657,10 @@ Join: Zion Now
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8  py-8">,
+      <div className="max-w-7xl mx-auto px-4 sm  px-6 lg px-8  py-8">,
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md: text-5xl  font-bold text-white mb-4">
+          <h1 className="text-4xl md  text-5xl  font-bold text-white mb-4">
             Project Management
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">,
@@ -696,7 +696,7 @@ Join: Zion Now
 
         {/* Project: Stats Overview */}
         {selectedView === 'overview' && projectStats && (
-          <div className="grid grid-cols-1 md: grid-cols-4  gap-6 mb-8">
+          <div className="grid grid-cols-1 md  grid-cols-4  gap-6 mb-8">
             <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-green-500/30 rounded-xl p-6 text-center">,
               <div className="text-3xl font-bold text-white mb-2">{projectStats.totalProjects}</div>
               <p className="text-green-300 text-sm">Total Projects</p>
@@ -718,13 +718,13 @@ Join: Zion Now
 
         {/* Search and Filters */}
         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-8">
-          <div className="grid grid-cols-1 lg: grid-cols-4  gap-4">
+          <div className="grid grid-cols-1 lg  grid-cols-4  gap-4">
             <div className="lg col-span-2">
               <input: type="text"
                 placeholder="Search projects...",
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500  transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus  outline-none focus border-purple-500  transition-colors"
               />
             </div>
             
@@ -732,7 +732,7 @@ Join: Zion Now
               <select,
                 value={filterStatus}
                 onChange={(e) => setFilterStatus(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500  transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors"
               >
                 <option value="all">All Status</option>
                 <option value="planning">Planning</option>
@@ -747,7 +747,7 @@ Join: Zion Now
               <select,
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500  transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus  outline-none focus border-purple-500  transition-colors"
               >
                 <option value="recent">Sort by Recent</option>
                 <option value="priority">Sort by Priority</option>
@@ -760,9 +760,9 @@ Join: Zion Now
 ,
         {/* Projects Grid */}
         {selectedView === 'projects' && (
-          <div className="grid grid-cols-1 lg: grid-cols-2  gap-6">
+          <div className="grid grid-cols-1 lg  grid-cols-2  gap-6">
             {filteredProjects.map((project) => (,
-              <div key={project.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover: bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover scale-105">,
+              <div key={project.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover: bg-gradient-to-br hover from-white/10 hover to-white/20 transition-all duration-300 transform hover scale-105">,
                 {/* Project: Header */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1">
@@ -821,11 +821,11 @@ Join: Zion Now
                 <div className="flex space-x-3">
                   <button 
                     onClick={() => setSelectedProject(project)}
-                    className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105"
+                    className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105"
                   >
                     View: Details
                   </button>
-                  <button className="border border-white/20 text-white hover:bg-white/10  px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover bg-white/10  px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
                     Edit
                   </button>
                 </div>
@@ -864,7 +864,7 @@ Join: Zion Now
 
         {/* Team: View */}
         {selectedView === 'team' && (
-          <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3  gap-6">,
+          <div className="grid grid-cols-1 md  grid-cols-2 lg grid-cols-3  gap-6">,
             {filteredProjects.flatMap(project => project.team).filter((member, index, self) => 
               self.findIndex(m => m.id === member.id) === index
             ).map((member) => (
@@ -906,7 +906,7 @@ Join: Zion Now
         {/* Analytics View */}
         {selectedView === 'analytics' && projectStats && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md: grid-cols-2  gap-6">
+            <div className="grid grid-cols-1 md  grid-cols-2  gap-6">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                 <h3 className="text-lg font-semibold text-white mb-4">Budget Overview</h3>
                 <div className="space-y-4">
@@ -956,11 +956,11 @@ Join: Zion Now
               Create new projects, assign tasks to team members, track progress, 
               and manage your project portfolio with our comprehensive platform.
             </p>
-            <div className="flex flex-col sm: flex-row  gap-4 justify-center">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
+            <div className="flex flex-col sm  flex-row  gap-4 justify-center">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105">
                 Create: New Project
               </button>
-              <Link href="/talent-directory" className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/talent-directory" className="border border-white/20 text-white hover bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 Find Team Members
               </Link>
             </div>

@@ -31,8 +31,8 @@ const ResponsiveNavigation: React.FC<ResponsiveNavigationProps> = ({
 
   return (
     <nav className={`sticky top-0 z-50 ${bgColor} ${className}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4 sm:py-6 max-[320px]:flex-wrap">
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
+        <div className="flex justify-between items-center py-4 sm py-6 max-[320px] flex-wrap">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
             {logo || (
@@ -45,7 +45,7 @@ const ResponsiveNavigation: React.FC<ResponsiveNavigationProps> = ({
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <div className="hidden md flex items-center space-x-6 lg space-x-8">
             {items.map((item, index) => (
               <motion.div
                 key={item.href}
@@ -74,13 +74,13 @@ const ResponsiveNavigation: React.FC<ResponsiveNavigationProps> = ({
           
           {/* Desktop CTA Button */}
           {ctaButton && (
-            <div className="hidden md:flex items-center space-x-4">
+            <div className="hidden md flex items-center space-x-4">
               {ctaButton}
             </div>
           )}
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="md hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`${textColor} focus:outline-none p-2`}
@@ -149,4 +149,4 @@ const ResponsiveNavigation: React.FC<ResponsiveNavigationProps> = ({
   );
 };
 
-export default ResponsiveNavigation; 
+export default ResponsiveNavigation;

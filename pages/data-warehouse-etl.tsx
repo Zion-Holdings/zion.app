@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 import { motion, AnimatePresence }  from 'framer-motion';
 
 interface DataSource {
@@ -151,7 +152,7 @@ const DataWarehouseETL: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <header className="bg-black/20 backdrop-blur-sm border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
               <Link href="/" className="text-2xl font-bold text-white">
@@ -170,7 +171,7 @@ const DataWarehouseETL: NextPage = () => {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-4">
             Data Warehouse & ETL Platform
@@ -304,7 +305,7 @@ const DataWarehouseETL: NextPage = () => {
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
                 {dataSources.map((source) => (
                   <motion.div
                     key={source.id}
@@ -444,6 +445,6 @@ const DataWarehouseETL: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default DataWarehouseETL 

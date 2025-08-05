@@ -1,8 +1,8 @@
 import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useMemo }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 import { motion, AnimatePresence }  from 'framer-motion';
 
 interface WorkflowNode {
@@ -611,7 +611,7 @@ id: '1',
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift  opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length  400%_400%] animate-holographic-shift  opacity-10"></div>
         </div>
       
         <div className="flex items-center justify-center min-h-screen">
@@ -632,17 +632,17 @@ id: '1',
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8  py-6">
+        <div className="max-w-7xl mx-auto px-4 sm  px-6 lg px-8  py-6">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-white">Workflow Designer & Process Builder</h1>
               <p className="text-gray-300 mt-2">Visual workflow design and business process automation</p>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700  text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700  text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                 New Workflow
               </button>
-              <button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700  text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-green-600 to-blue-600 hover from-green-700 hover to-blue-700  text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                 Import Template
               </button>
             </div>
@@ -650,7 +650,7 @@ id: '1',
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-8">,
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8  py-8">,
         {/* Workflow Selection */}
         <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10 mb-8">
           <div className="flex items-center justify-between mb-4">
@@ -668,7 +668,7 @@ id: '1',
               </select>
             </div>
           </div>
-          <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3  gap-4">
+          <div className="grid grid-cols-1 md  grid-cols-2 lg grid-cols-3  gap-4">
             {workflows.map((workflow) => (
               <motion.div,
                 key={workflow.id}
@@ -764,13 +764,13 @@ Designer: </button>
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-lg font-semibold text-white">Workflow Canvas</h3>
                     <div className="flex items-center space-x-2">
-                      <button className="bg-blue-600 hover: bg-blue-700  text-white px-3 py-3 rounded text-sm">
+                      <button className="bg-blue-600 hover  bg-blue-700  text-white px-3 py-3 rounded text-sm">
                         Add Node
                       </button>
-                      <button className="bg-green-600 hover:bg-green-700  text-white px-3 py-3 rounded text-sm">
+                      <button className="bg-green-600 hover bg-green-700  text-white px-3 py-3 rounded text-sm">
                         Connect
                       </button>
-                      <button className="bg-purple-600 hover:bg-purple-700  text-white px-3 py-3 rounded text-sm">
+                      <button className="bg-purple-600 hover bg-purple-700  text-white px-3 py-3 rounded text-sm">
                         Test
                       </button>
                     </div>
@@ -866,7 +866,7 @@ Designer: </button>
                       if (!node) return null;
                       
                       return (
-                        <div className="grid grid-cols-1 md: grid-cols-2  gap-6">
+                        <div className="grid grid-cols-1 md  grid-cols-2  gap-6">
                           <div>
                             <h4 className="text-white font-semibold mb-3">Basic Information</h4>
                             <div className="space-y-3">
@@ -940,7 +940,7 @@ Designer: </button>
 
             {activeTab === 'templates' && (
               <div className="space-y-6">
-                <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3  gap-6">,
+                <div className="grid grid-cols-1 md  grid-cols-2 lg grid-cols-3  gap-6">,
                   {templates.map((template, index) => (
                     <motion.div
                       key={template.id}
@@ -986,7 +986,7 @@ Designer: </button>
                         ))}
                       </div>
                       
-                      <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700  text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+                      <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover  from-purple-700 hover to-pink-700  text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                         Use Template
                       </button>
                     </motion.div>,
@@ -1023,7 +1023,7 @@ Designer: </button>
             )}
 
             {activeTab === 'analytics' && selectedWorkflow && (
-              <div className="grid grid-cols-1 lg: grid-cols-2  gap-6">
+              <div className="grid grid-cols-1 lg  grid-cols-2  gap-6">
                 <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
                   <h3 className="text-lg font-semibold text-white mb-4">Performance Metrics</h3>
                   <div className="space-y-4">

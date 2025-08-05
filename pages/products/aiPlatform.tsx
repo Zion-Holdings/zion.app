@@ -1,7 +1,8 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
-import Link  from 'next/link';
+import Head from 'next/head';
+import Link from 'next/link';
 
 const aiPlatformPage: NextPage = () => {
   return (
@@ -16,7 +17,7 @@ const aiPlatformPage: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
@@ -38,7 +39,7 @@ const aiPlatformPage: NextPage = () => {
               <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25">
                 Join Zion
               </Link>
             </div>
@@ -48,7 +49,7 @@ const aiPlatformPage: NextPage = () => {
 
       {/* Product Content */}
       <main className="flex-1">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-44">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-44">
           <div className="text-center mb-16">
             <h1 className="text-5xl md text-6xl font-bold text-white mb-6">
               Zion AI Platform
@@ -59,7 +60,7 @@ const aiPlatformPage: NextPage = () => {
           </div>
 
           {/* Features */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-8 mb-16">
             
               <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10">
                 <h3 className="text-xl font-bold text-white mb-4">Advanced AI matching algorithms</h3>
@@ -157,7 +158,7 @@ const aiPlatformPage: NextPage = () => {
                       </li>
                     
                   </ul>
-                  <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+                  <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
                     Get Started
                   </button>
                 </div>
@@ -203,7 +204,7 @@ const aiPlatformPage: NextPage = () => {
                       </li>
                     
                   </ul>
-                  <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+                  <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
                     Get Started
                   </button>
                 </div>
@@ -249,7 +250,7 @@ const aiPlatformPage: NextPage = () => {
                       </li>
                     
                   </ul>
-                  <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+                  <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
                     Get Started
                   </button>
                 </div>
@@ -264,6 +265,6 @@ const aiPlatformPage: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default aiPlatformPage

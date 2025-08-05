@@ -1,13 +1,14 @@
 // LinkedIn Automation Module
 // This module provides LinkedIn automation functionality
 
-// Export types
+// Export types;
+
 export interface LinkedInTask {
   id: string;
   type: 'post' | 'connect' | 'message';
   scheduledTime: Date;
   status: 'pending' | 'completed' | 'failed';
-}
+};
 
 export interface LinkedInConfig {
   apiKey: string;
@@ -19,7 +20,7 @@ export interface LinkedInConfig {
     maxPostsPerDay: number;
     delayBetweenActions: number;
   };
-}
+};
 
 export interface LinkedInPost {
   title: string;
@@ -27,7 +28,8 @@ export interface LinkedInPost {
   hashtags: string[];
 }
 
-// Export constants
+// Export constants;
+
 export const LINKEDIN_CONFIG: LinkedInConfig = {
   apiKey: process.env.LINKEDIN_API_KEY || '',
   credentials: {
@@ -40,7 +42,8 @@ export const LINKEDIN_CONFIG: LinkedInConfig = {
   }
 };
 
-// Content generator function
+// Content generator function;
+
 export async function generatePostContent(): Promise<LinkedInPost[]> {
   const posts: LinkedInPost[] = [
     {
@@ -63,7 +66,8 @@ export async function generatePostContent(): Promise<LinkedInPost[]> {
   return posts;
 }
 
-// Main LinkedIn Automation class
+// Main LinkedIn Automation class;
+
 export class LinkedInAutomation {
   private isInitialized = false;
   private config: LinkedInConfig;
@@ -95,10 +99,12 @@ export class LinkedInAutomation {
   }
 }
 
-// Export default class
+// Export default class;
+
 export default LinkedInAutomation;
 
-// Export individual components (placeholder implementations)
+// Export individual components (placeholder implementations);
+
 export class LinkedInBot {
   private isInitialized = false;
 
@@ -117,7 +123,7 @@ export class LinkedInBot {
   public async runAutomation(): Promise<void> {
     console.log('Running LinkedIn automation');
   }
-}
+};
 
 export class LinkedInScheduler {
   private isInitialized = false;
@@ -137,7 +143,7 @@ export class LinkedInScheduler {
   public async scheduleTask(task: LinkedInTask): Promise<void> {
     console.log('Scheduling task:', task);
   }
-}
+};
 
 export class LinkedInCronManager {
   private isInitialized = false;
@@ -175,10 +181,12 @@ export class LinkedInCronManager {
   }
 }
 
-// Export as default for backward compatibility
+// Export as default for backward compatibility;
+
 export const linkedInCronManager = new LinkedInCronManager();
 
-// Dynamic imports for server-side usage (placeholder implementations)
+// Dynamic imports for server-side usage (placeholder implementations);
+
 export const getLinkedInBot = async () => {
   return LinkedInBot;
 };

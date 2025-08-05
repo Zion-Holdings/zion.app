@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useMemo }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 
 interface SmartLearning {
   id: string
@@ -447,7 +448,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Zion</span>
@@ -495,7 +496,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
               <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-indigo-700 hover to-purple-700 transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover from-indigo-700 hover to-purple-700 transition-all duration-200">
                 Get Started
               </Link>
             </div>
@@ -504,7 +505,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-white mb-6">
@@ -516,10 +517,10 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
             for effective and personalized learning experiences.
           </p>
           <div className="flex justify-center space-x-4">
-            <button className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-medium hover:from-indigo-700 hover to-purple-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-medium hover from-indigo-700 hover to-purple-700 transition-all duration-200">
               Start Learning
             </button>
-            <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg font-medium hover:from-purple-700 hover to-indigo-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg font-medium hover from-purple-700 hover to-indigo-700 transition-all duration-200">
               View Analytics
             </button>
           </div>
@@ -619,7 +620,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
             </div>
 
             {/* Learning Platforms Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {filteredSmartLearning.map((platform) => (
                 <div key={platform.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -657,7 +658,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
 
         {selectedView === 'analytics' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {educationalAnalytics.map((analytics) => (
                 <div key={analytics.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -695,7 +696,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
 
         {selectedView === 'training' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {personalizedTraining.map((training) => (
                 <div key={training.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -733,7 +734,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
 
         {selectedView === 'optimization' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-6">
               {educationalOptimization.map((optimization) => (
                 <div key={optimization.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -772,7 +773,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
         {selectedView === 'insights' && data && (
           <div className="space-y-6">
             {/* Analytics Overview */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6">
               <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
                 <div className="text-3xl font-bold text-white">{formatNumber(data.totalStudents)}</div>
                 <div className="text-gray-400">Total Students</div>
@@ -823,7 +824,7 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
 
       {/* Footer */}
       <div className="bg-black/20 border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
           <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>
@@ -882,6 +883,6 @@ const AIPoweredEducationTrainingPage: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default AIPoweredEducationTrainingPage 

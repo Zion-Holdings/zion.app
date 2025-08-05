@@ -1,7 +1,8 @@
-import React, { useState }  from 'react';import ModernLayout from '../components/layout/ModernLayout'
+import React, { useState }  from 'react';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
-import Link  from 'next/link';
+import Head from 'next/head';
+import Link from 'next/link';
 
 const languages = [
   { code: 'en', name: 'English' },
@@ -60,7 +61,7 @@ export default function ContributeTranslations() {
                   name="language"
                   value={form.language}
                   onChange={handleChange}
-                  className="w-full px-4 py-4 rounded-lg bg-black/20 border border-white/10 text-white focus:outline-none focus:ring-2 focus ring-purple-500"
+                  className="w-full px-4 py-4 rounded-lg bg-black/20 border border-white/10 text-white focus outline-none focus ring-2 focus ring-purple-500"
                   required
                 >
                   <option value="">Select a language</option>
@@ -78,7 +79,7 @@ export default function ContributeTranslations() {
                   value={form.key}
                   onChange={handleChange}
                   placeholder="e.g. welcome, marketplace, services"
-                  className="w-full px-4 py-4 rounded-lg bg-black/20 border border-white/10 text-white focus:outline-none focus:ring-2 focus ring-purple-500"
+                  className="w-full px-4 py-4 rounded-lg bg-black/20 border border-white/10 text-white focus outline-none focus ring-2 focus ring-purple-500"
                   required
                 />
               </div>
@@ -91,11 +92,11 @@ export default function ContributeTranslations() {
                   value={form.translation}
                   onChange={handleChange}
                   placeholder="Enter your translation here"
-                  className="w-full px-4 py-4 rounded-lg bg-black/20 border border-white/10 text-white focus:outline-none focus:ring-2 focus ring-purple-500"
+                  className="w-full px-4 py-4 rounded-lg bg-black/20 border border-white/10 text-white focus outline-none focus ring-2 focus ring-purple-500"
                   required
                 />
               </div>
-              <button type="submit" className="w-full py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 font-semibold text-lg shadow-lg hover:from-pink-500 hover to-purple-500 transition">Submit Translation</button>
+              <button type="submit" className="w-full py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 font-semibold text-lg shadow-lg hover from-pink-500 hover to-purple-500 transition">Submit Translation</button>
             </form>
           )}
           <div className="mt-8 text-center">

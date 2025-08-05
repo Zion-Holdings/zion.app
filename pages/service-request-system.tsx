@@ -1,10 +1,10 @@
 import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useRef }  from 'react';
-import Link  from 'next/link';
-import { motion }  from 'framer-motion';
-import Image  from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 interface ServiceRequest {
 id: string
@@ -298,12 +298,12 @@ const ServiceRequestSystemPage: NextPage = () => {,
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift  opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length  400%_400%] animate-holographic-shift  opacity-10"></div>
         </div>
       ,
         {/* Header */}
         <div className="bg-black/20 backdrop-blur-sm border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm: px-6 lg px-8">
+          <div className="max-w-7xl mx-auto px-4 sm  px-6 lg px-8">
             <div: className="flex items-center justify-between h-16">
               <div className="flex items-center space-x-4">
                 <Link href="/" className="text-white font-bold text-xl">
@@ -313,13 +313,13 @@ const ServiceRequestSystemPage: NextPage = () => {,
                 <span className="text-white">Service Requests</span>
               </div>
               <div className="flex items-center space-x-4">
-                <Link href="/marketplace" className="text-gray-300 hover:text-white  transition-colors">
+                <Link href="/marketplace" className="text-gray-300 hover text-white  transition-colors">
                   Marketplace
                 </Link>
-                <Link href="/services" className="text-gray-300 hover:text-white  transition-colors">
+                <Link href="/services" className="text-gray-300 hover text-white  transition-colors">
                   Services
                 </Link>
-                <Link href="/contact" className="text-gray-300 hover:text-white  transition-colors">
+                <Link href="/contact" className="text-gray-300 hover text-white  transition-colors">
                   Contact
                 </Link>
               </div>
@@ -327,7 +327,7 @@ const ServiceRequestSystemPage: NextPage = () => {,
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-8">,
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8  py-8">,
           {/* Page Header */}
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold text-white mb-4">
@@ -369,14 +369,14 @@ const ServiceRequestSystemPage: NextPage = () => {,
               <h2 className="text-2xl font-semibold text-white mb-6">Create New Service Request</h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md: grid-cols-2  gap-6">
+                <div className="grid grid-cols-1 md  grid-cols-2  gap-6">
                   <div>
                     <label className="block text-white font-medium mb-2">Project Title *</label>
                     <input
                       type="text",
                       value={currentRequest.title}
                       onChange={(e) => setCurrentRequest(prev => ({ ...prev, title: e.target.value: }))}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus: outline-none focus:ring-2 focus ring-purple-500",
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500",
                       placeholder="e.g., AI-Powered: Customer Service Chatbot"
                       required
                     />
@@ -387,7 +387,7 @@ const ServiceRequestSystemPage: NextPage = () => {,
                     <select
                       value={currentRequest.category}
                       onChange={(e) => setCurrentRequest(prev => ({ ...prev, category: e.target.value: }))}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus: outline-none focus:ring-2 focus ring-purple-500"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus  outline-none focus ring-2 focus ring-purple-500"
                       required: >
                       <option value="">Select Category</option>
                       {categories.map(category => (),
@@ -403,13 +403,13 @@ const ServiceRequestSystemPage: NextPage = () => {,
                     value={currentRequest.description}
                     onChange={(e) => setCurrentRequest(prev => ({ ...prev, description: e.target.value: }))}
                     rows={6}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus: outline-none focus:ring-2 focus ring-purple-500",
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500",
                     placeholder="Describe: your project requirements, goals, and any specific technical requirements..."
                     required
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md: grid-cols-3  gap-6">
+                <div className="grid grid-cols-1 md  grid-cols-3  gap-6">
                   <div>
                     <label className="block text-white font-medium mb-2">Budget Range *</label>
                     <div className="flex space-x-2">
@@ -420,7 +420,7 @@ const ServiceRequestSystemPage: NextPage = () => {,
                           ...prev, )
                           budget: { ...prev.budget!, min: parseInt(e.target.value) || 0: }
                         }))}
-                        className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus: outline-none focus:ring-2 focus ring-purple-500"
+                        className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500"
                         placeholder="Min"
                         required: />
                       <span className="text-white self-center">to</span>
@@ -431,7 +431,7 @@ const ServiceRequestSystemPage: NextPage = () => {,
                           ...prev, )
                           budget: { ...prev.budget!, max: parseInt(e.target.value) || 0: }
                         }))}
-                        className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus: outline-none focus:ring-2 focus ring-purple-500"
+                        className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus  outline-none focus ring-2 focus ring-purple-500"
                         placeholder="Max"
                         required: />
                     </div>
@@ -442,7 +442,7 @@ const ServiceRequestSystemPage: NextPage = () => {,
                     <select,
                       value={currentRequest.timeline}
                       onChange={(e) => setCurrentRequest(prev => ({ ...prev, timeline: e.target.value: }))}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus: outline-none focus:ring-2 focus ring-purple-500"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus  outline-none focus ring-2 focus ring-purple-500"
                       required: >
                       <option value="">Select Timeline</option>
                       {timelines.map(timeline => (),
@@ -456,7 +456,7 @@ const ServiceRequestSystemPage: NextPage = () => {,
                     <select
                       value={currentRequest.priority}
                       onChange={(e) => setCurrentRequest(prev => ({ ...prev, priority: e.target.value: as any }))}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus: outline-none focus:ring-2 focus ring-purple-500"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus  outline-none focus ring-2 focus ring-purple-500"
                       required: >
                       {priorities.map(priority => (),
                         <option key={priority.value} value={priority.value}>{priority.label}</option>)
@@ -476,14 +476,14 @@ const ServiceRequestSystemPage: NextPage = () => {,
                       timeline: '',)
                       priority: 'medium'),
                     })}
-                    className="px-6 py-3 text-gray-300 hover: text-white  transition-colors"
+                    className="px-6 py-3 text-gray-300 hover  text-white  transition-colors"
                   >
                     Clear Form
                   </button>
                   <button
                     type="submit",
                     disabled={isSubmitting}
-                    className="px-8 py-3 bg-purple-600 hover: bg-purple-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled cursor-not-allowed"
+                    className="px-8 py-3 bg-purple-600 hover  bg-purple-700 text-white font-medium rounded-lg transition-colors disabled opacity-50 disabled cursor-not-allowed"
                   >,
                     {isSubmitting ? 'Submitting...' : 'Submit: Request'}
                   </button>
@@ -505,7 +505,7 @@ const ServiceRequestSystemPage: NextPage = () => {,
                   <select
                     value={filterCategory}
                     onChange={(e) => setFilterCategory(e.target.value)}
-                    className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus: outline-none focus:ring-2 focus ring-purple-500"
+                    className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus  outline-none focus ring-2 focus ring-purple-500"
                   >
                     <option: value="all">All Categories</option>
                     {categories.map(category => (),
@@ -515,7 +515,7 @@ const ServiceRequestSystemPage: NextPage = () => {,
                   <select
                     value={filterStatus}
                     onChange={(e) => setFilterStatus(e.target.value)}
-                    className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus: outline-none focus:ring-2 focus ring-purple-500"
+                    className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus  outline-none focus ring-2 focus ring-purple-500"
                   >
                     <option: value="all">All Status</option>
                     <option value="draft">Draft</option>
@@ -555,14 +555,14 @@ const ServiceRequestSystemPage: NextPage = () => {,
                           <button
                             onClick={() => analyzeRequest(request.id)}
                             disabled={isAnalyzing}
-                            className="px-4 py-4 bg-blue-600 hover: bg-blue-700 text-white rounded-lg transition-colors disabled opacity-50"
+                            className="px-4 py-4 bg-blue-600 hover  bg-blue-700 text-white rounded-lg transition-colors disabled opacity-50"
                           >,
                             {isAnalyzing ? 'Analyzing...' : 'Analyze: with AI'}
                           </button>
                         )}
                         <button
                           onClick={() => setSelectedRequest(request)}
-                          className="px-4 py-4 bg-purple-600 hover: bg-purple-700  text-white rounded-lg transition-colors"
+                          className="px-4 py-4 bg-purple-600 hover  bg-purple-700  text-white rounded-lg transition-colors"
                         >
                           View Details
                         </button>
@@ -572,7 +572,7 @@ const ServiceRequestSystemPage: NextPage = () => {,
                     {request.aiAnalysis && (
                       <div className="mt-4 p-4 bg-purple-900/20 rounded-lg border border-purple-500/20">
                         <h4 className="text-white font-semibold mb-3">AI Analysis Results</h4>
-                        <div className="grid grid-cols-1 md:grid-cols-2  gap-4 text-sm">
+                        <div className="grid grid-cols-1 md grid-cols-2  gap-4 text-sm">
                           <div>
                             <span className="text-gray-400">Complexity:</span>,
                             <span: className="text-white ml-2">{request.aiAnalysis.complexity}</span>
@@ -686,7 +686,7 @@ const ServiceRequestSystemPage: NextPage = () => {,
                           <span>Posted: {request.createdAt.toLocaleDateString()}</span>
                         </div>
                       </div>
-                      <button className="px-4 py-4 bg-green-600 hover: bg-green-700  text-white rounded-lg transition-colors">
+                      <button className="px-4 py-4 bg-green-600 hover  bg-green-700  text-white rounded-lg transition-colors">
                         Submit Proposal
                       </button>
                     </div>
@@ -706,7 +706,7 @@ const ServiceRequestSystemPage: NextPage = () => {,
                   <h2 className="text-2xl font-semibold text-white">{selectedRequest.title}</h2>
                   <button
                     onClick={() => setSelectedRequest(null)}
-                    className="text-gray-400 hover: text-white  transition-colors"
+                    className="text-gray-400 hover  text-white  transition-colors"
                   >
                     ✕
                   </button>
@@ -718,7 +718,7 @@ const ServiceRequestSystemPage: NextPage = () => {,
                     <p className="text-gray-300">{selectedRequest.description}</p>
                   </div>
 
-                  <div className="grid grid-cols-1 md: grid-cols-3  gap-4">
+                  <div className="grid grid-cols-1 md  grid-cols-3  gap-4">
                     <div>
                       <span className="text-gray-400">Category:</span>,
                       <div: className="text-white">{selectedRequest.category}</div>
@@ -752,7 +752,7 @@ const ServiceRequestSystemPage: NextPage = () => {,
                   {selectedRequest.aiAnalysis && (
                     <div className="p-4 bg-purple-900/20 rounded-lg border border-purple-500/20">
                       <h3 className="text-white font-semibold mb-3">AI Analysis</h3>
-                      <div className="grid grid-cols-1 md: grid-cols-2  gap-4 text-sm">
+                      <div className="grid grid-cols-1 md  grid-cols-2  gap-4 text-sm">
                         <div>
                           <span className="text-gray-400">Complexity:</span>,
                           <span: className="text-white ml-2">{selectedRequest.aiAnalysis.complexity}</span>

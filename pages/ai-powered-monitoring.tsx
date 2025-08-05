@@ -1,9 +1,9 @@
-import React  from 'react';
-import ModernLayout  from '../components/layout/ModernLayout';
+import React from 'react';
+import ModernLayout from '../components/layout/ModernLayout';
 
-import Head  from 'next/head';
-import Layout  from '../components/Layout';
-import { motion }  from 'framer-motion';
+import Head from 'next/head';
+import Layout from '../components/Layout';
+import { motion } from 'framer-motion';
 
 const AiPoweredMonitoring = () => {
   return (
@@ -24,7 +24,7 @@ const AiPoweredMonitoring = () => {
           <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
-        <section className="relative py-40 px-4 sm:px-6 lg px-8">
+        <section className="relative py-40 px-4 sm px-6 lg px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -39,7 +39,7 @@ const AiPoweredMonitoring = () => {
                 Real-time AI monitoring systems that provide continuous oversight and alerting.
               </p>
               <div className="flex flex-col sm flex-row gap-4 justify-center">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                <button className="bg-blue-600 hover bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
                   Get Started
                 </button>
                 <button className="border border-blue-600 text-blue-600 hover bg-blue-50 px-8 py-3 rounded-lg font-semibold transition-colors">
@@ -50,7 +50,7 @@ const AiPoweredMonitoring = () => {
           </div>
         </section>
 
-        <section className="py-40 px-4 sm:px-6 lg px-8 bg-white">
+        <section className="py-40 px-4 sm px-6 lg px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -66,7 +66,7 @@ const AiPoweredMonitoring = () => {
               </p>
             </motion.div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-8">
               
               <motion.div
                 key="0"
@@ -168,7 +168,7 @@ const AiPoweredMonitoring = () => {
           </div>
         </section>
 
-        <section className="py-40 px-4 sm:px-6 lg px-8 bg-gray-50">
+        <section className="py-40 px-4 sm px-6 lg px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -262,7 +262,7 @@ const AiPoweredMonitoring = () => {
           </div>
         </section>
 
-        <section className="py-40 px-4 sm:px-6 lg px-8 bg-blue-600">
+        <section className="py-40 px-4 sm px-6 lg px-8 bg-blue-600">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -279,7 +279,7 @@ const AiPoweredMonitoring = () => {
                 <button className="bg-white text-blue-600 hover bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors">
                   Start Free Trial
                 </button>
-                <button className="border border-white text-white hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold transition-colors">
+                <button className="border border-white text-white hover bg-blue-700 px-8 py-3 rounded-lg font-semibold transition-colors">
                   Schedule Demo
                 </button>
               </div>
@@ -289,12 +289,8 @@ const AiPoweredMonitoring = () => {
       </div>
     </Layout>
   
-  </ModernLayout>
-
-  </ModernLayout>
-
-  </ModernLayout>
-      );
+      </ModernLayout>
+  );
 };
 
 export default AiPoweredMonitoring;

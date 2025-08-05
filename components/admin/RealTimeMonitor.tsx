@@ -11,7 +11,7 @@ interface RealTimeMonitorProps {
   data: MonitorData;
   onRefresh: () => void;
   isLoading: boolean;
-}
+};
 
 export default function RealTimeMonitor({ data, onRefresh, isLoading }: RealTimeMonitorProps) {
   const [lastUpdate, setLastUpdate] = useState<Date>(new Date());
@@ -67,14 +67,14 @@ export default function RealTimeMonitor({ data, onRefresh, isLoading }: RealTime
           <button
             onClick={onRefresh}
             disabled={isLoading}
-            className="px-3 py-1 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white text-sm rounded transition-colors"
+            className="px-3 py-1 bg-blue-600 hover bg-blue-700 disabled bg-gray-400 text-white text-sm rounded transition-colors"
           >
             {isLoading ? 'Refreshing...' : 'Refresh'}
           </button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md grid-cols-3 gap-4">
         <div className="bg-blue-50 p-4 rounded-lg">
           <div className="text-2xl font-bold text-blue-600">
             {data?.agents?.filter((a: any) => a.status === 'active').length || 0}

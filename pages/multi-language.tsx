@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useMemo }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 
 interface Language {
   code: string;
@@ -357,7 +358,7 @@ const MultiLanguagePage: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -385,7 +386,7 @@ const MultiLanguagePage: NextPage = () => {
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
@@ -404,7 +405,7 @@ const MultiLanguagePage: NextPage = () => {
             <p className="text-gray-300">Choose your preferred language for the marketplace experience</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-4">
             {languages.map((language) => (
               <button
                 key={language.code}
@@ -450,7 +451,7 @@ const MultiLanguagePage: NextPage = () => {
             <h2 className="text-2xl font-bold text-white">Translation Preview</h2>
             <button
               onClick={() => setShowTranslations(!showTranslations)}
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg font-semibold transition-all duration-300"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg font-semibold transition-all duration-300"
             >
               {showTranslations ? 'Hide' : 'Show'} Translations
             </button>
@@ -460,7 +461,7 @@ const MultiLanguagePage: NextPage = () => {
             <div className="space-y-4">
               {translations.map((translation) => (
                 <div key={translation.key} className="bg-white/5 rounded-lg p-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-4">
                     <div>
                       <h4 className="text-sm font-medium text-gray-400 mb-2">English</h4>
                       <p className="text-white">{translation.english}</p>
@@ -469,7 +470,7 @@ const MultiLanguagePage: NextPage = () => {
                       <h4 className="text-sm font-medium text-gray-400 mb-2">{getLanguageCode(selectedLanguage)}</h4>
                       <p className="text-white">{getTranslation(translation.key, selectedLanguage)}</p>
                     </div>
-                    <div className="md:col-span-2 lg col-span-1">
+                    <div className="md col-span-2 lg col-span-1">
                       <h4 className="text-sm font-medium text-gray-400 mb-2">Key</h4>
                       <p className="text-purple-300 font-mono text-sm">{translation.key}</p>
                     </div>
@@ -602,7 +603,7 @@ const MultiLanguagePage: NextPage = () => {
               Help us expand language support by contributing translations.
             </p>
             <div className="flex flex-col sm flex-row gap-4 justify-center">
-              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
+              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105">
                 Explore Marketplace
               </Link>
               <Link href="/contribute-translations" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
@@ -620,6 +621,6 @@ const MultiLanguagePage: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default MultiLanguagePage 

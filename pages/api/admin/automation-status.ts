@@ -49,7 +49,7 @@ interface AdminDashboardData {
   contentGeneration: any;
   analytics: any;
   lastUpdate: string;
-}
+};
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'GET') {

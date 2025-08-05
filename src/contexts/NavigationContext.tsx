@@ -27,7 +27,7 @@ const NavigationContext = createContext<NavigationContextType | undefined>(undef
 
 interface NavigationProviderProps {
   children: React.ReactNode
-}
+};
 
 export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children }) => {
   const router = useRouter()
@@ -185,7 +185,7 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children
       {children}
     </NavigationContext.Provider>
   )
-}
+};
 
 export const useNavigation = (): NavigationContextType => {
   const context = useContext(NavigationContext)

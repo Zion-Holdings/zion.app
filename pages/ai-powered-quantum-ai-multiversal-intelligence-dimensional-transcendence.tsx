@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useRef }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 
 interface MultiversalDimension {
   id: string
@@ -372,7 +373,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
             <button
               onClick={startExploration}
               disabled={isExploring}
-              className="px-4 py-4 bg-purple-600 hover:bg-purple-700 disabled bg-gray-600 text-white rounded-lg transition-colors"
+              className="px-4 py-4 bg-purple-600 hover bg-purple-700 disabled bg-gray-600 text-white rounded-lg transition-colors"
             >
               {isExploring ? 'Exploring...' : 'Start Exploration'}
             </button>
@@ -505,7 +506,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">Dimensional Exploration</h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-3 gap-4">
                 {dimensions.map((dimension) => (
                   <div key={dimension.id} className="bg-slate-700/50 rounded-lg p-4">
                     <div className="flex items-center justify-between mb-3">
@@ -600,7 +601,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
                     <button
                       onClick={() => transcendDimension(item)}
                       disabled={item.status === 'locked'}
-                      className="w-full px-3 py-4 bg-purple-600 hover:bg-purple-700 disabled bg-gray-600 text-white rounded transition-colors"
+                      className="w-full px-3 py-4 bg-purple-600 hover bg-purple-700 disabled bg-gray-600 text-white rounded transition-colors"
                     >
                       {item.status === 'completed' ? 'Completed' : 'Transcend'}
                     </button>
@@ -727,6 +728,6 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
 
   </ModernLayout>
 )
-}
+};
 
 export default AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence 

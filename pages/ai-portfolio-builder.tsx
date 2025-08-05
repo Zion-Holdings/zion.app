@@ -1,7 +1,8 @@
-import { useState }  from 'react';import ModernLayout from '../components/layout/ModernLayout'
+import { useState } from 'react';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
-import { sanitizeHtml }  from '../utils/sanitizeHtml';
+import Head from 'next/head';
+import { sanitizeHtml } from '../utils/sanitizeHtml';
 
 interface PortfolioInput {
   name: string;
@@ -96,7 +97,7 @@ const PortfolioBuilder = () => {
               <div className="prose prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: portfolio }} />
               <div className="mt-6 flex gap-4">
                 <button onClick={() => navigator.clipboard.writeText(portfolio)} className="bg-emerald-600 hover bg-emerald-700 text-white px-4 py-4 rounded text-responsive-lg">Copy HTML</button>
-                <a href={`data:text/html,${encodeURIComponent(portfolio)}`} download="portfolio.html" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded text-responsive-lg">Download HTML</a>
+                <a href={`data:text/html,${encodeURIComponent(portfolio)}`} download="portfolio.html" className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded text-responsive-lg">Download HTML</a>
               </div>
             </div>
           )}
@@ -104,12 +105,8 @@ const PortfolioBuilder = () => {
       </div>
     </>
   
-  </ModernLayout>
-
-  </ModernLayout>
-
-  </ModernLayout>
-      );
+      </ModernLayout>
+  );
 };
 
 export default PortfolioBuilder;

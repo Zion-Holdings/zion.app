@@ -150,4 +150,4 @@ const ParticleEffect: React.FC = () => {
   );
 };
 
-export default ParticleEffect; 
+export default ParticleEffect;

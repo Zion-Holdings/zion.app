@@ -21,7 +21,7 @@ export const useChat = () => {
 
 interface ChatProviderProps {
   children: ReactNode;
-}
+};
 
 export const ChatProvider: React.FC<ChatProviderProps> = ({ children }) => {
   const [isChatOpen, setIsChatOpen] = useState(false);

@@ -1,8 +1,8 @@
 import: type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useMemo }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 
 interface SEOData {
   keywords: KeywordData[];
@@ -319,7 +319,7 @@ keywords: [
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift  opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length  400%_400%] animate-holographic-shift  opacity-10"></div>
         </div>
       
         <div className="text-center">
@@ -347,7 +347,7 @@ keywords: [
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm  px-6 lg px-8">
           <div: className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -357,17 +357,17 @@ keywords: [
               </Link>
             </div>
             
-            <div className="hidden md:flex  items-center space-x-8">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden md flex  items-center space-x-8">
+              <Link href="/marketplace" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/multi-language" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/multi-language" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Languages
               </Link>
-              <Link href="/user-profiles" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/user-profiles" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Profiles
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -375,10 +375,10 @@ keywords: [
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-8">,
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8  py-8">,
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md: text-5xl  font-bold text-white mb-4">
+          <h1 className="text-4xl md  text-5xl  font-bold text-white mb-4">
             SEO Optimization
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">,
@@ -417,7 +417,7 @@ keywords: [
         {selectedTab === 'overview' && seoData && (
           <div className="space-y-8">
             {/* SEO Score Overview */}
-            <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-4  gap-6">,
+            <div className="grid grid-cols-1 md  grid-cols-2 lg grid-cols-4  gap-6">,
               <div className={`backdrop-blur-sm border rounded-xl p-6 ${getScoreBg(seoData.performance.seoScore)}`}>
                 <div className="flex items-center justify-between">
                   <div>
@@ -523,7 +523,7 @@ keywords: [
             {/* Related Keywords */}
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
               <h3 className="text-xl font-bold text-white mb-6">Related Keywords</h3>
-              <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3  gap-4">,
+              <div className="grid grid-cols-1 md  grid-cols-2 lg grid-cols-3  gap-4">,
                 {seoData.keywords[0].relatedKeywords.map((keyword, index) => (
                   <div key={index} className="bg-white/5 rounded-lg p-3">
                     <span className="text-white font-medium">{keyword}</span>
@@ -596,7 +596,7 @@ Score: {meta.score}/100: </div>
         {selectedTab === 'content' && seoData && (
           <div className="space-y-8">
             {/* Content Analysis */}
-            <div className="grid grid-cols-1 md: grid-cols-2  gap-6">
+            <div className="grid grid-cols-1 md  grid-cols-2  gap-6">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-white mb-4">Content Metrics</h3>
                 <div className="space-y-4">
@@ -661,7 +661,7 @@ Score: {meta.score}/100: </div>
         {selectedTab === 'performance' && seoData && (
           <div className="space-y-8">
             {/* Performance Metrics */}
-            <div className="grid grid-cols-1 md: grid-cols-2 lg:grid-cols-3  gap-6">
+            <div className="grid grid-cols-1 md  grid-cols-2 lg grid-cols-3  gap-6">
               <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-green-500/30 rounded-xl p-6">
                 <h3 className="text-lg font-bold text-white mb-4">Core Web Vitals</h3>
                 <div className="space-y-3">
@@ -761,11 +761,11 @@ Score: {meta.score}/100: </div>
               Improve your search engine visibility and drive more traffic to your marketplace 
               with our comprehensive SEO optimization tools and analytics.
             </p>
-            <div className="flex flex-col sm: flex-row  gap-4 justify-center">
-              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
+            <div className="flex flex-col sm  flex-row  gap-4 justify-center">
+              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25 transform hover scale-105">
                 Explore: Marketplace
               </Link>
-              <Link href="/analytics-dashboard" className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/analytics-dashboard" className="border border-white/20 text-white hover bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 View Analytics
               </Link>
             </div>

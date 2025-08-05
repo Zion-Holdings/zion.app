@@ -90,7 +90,7 @@ interface HRData {
     affectedCount: number;
     recommendations: string[];
   }>;
-}
+};
 
 export default function handler(
   req: NextApiRequest,

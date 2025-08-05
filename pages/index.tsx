@@ -1,10 +1,11 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect }  from 'react';
-import Link  from 'next/link';
-import FuturisticHero  from '../components/ui/FuturisticHero';
-import FuturisticCard  from '../components/ui/FuturisticCard';
+import Link from 'next/link';
+import FuturisticHero from '../components/ui/FuturisticHero';
+import FuturisticCard from '../components/ui/FuturisticCard';
 
 const Home: NextPage = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -184,7 +185,7 @@ const Home: NextPage = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6">
               {marketplaceCategories.map((category, index) => (
                 <FuturisticCard
                   key={index}
@@ -210,7 +211,7 @@ const Home: NextPage = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6">
               {featuredServices.map((service, index) => (
                 <FuturisticCard
                   key={index}
@@ -235,7 +236,7 @@ const Home: NextPage = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6">
               {topTalents.map((talent, index) => (
                 <FuturisticCard
                   key={index}
@@ -261,7 +262,7 @@ const Home: NextPage = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6">
               {premiumEquipment.map((equipment, index) => (
                 <FuturisticCard
                   key={index}
@@ -287,13 +288,13 @@ const Home: NextPage = () => {
               <div className="flex flex-col sm flex-row gap-4 justify-center">
                 <Link
                   href="/auth/signup"
-                  className="px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg text-white font-semibold text-lg neon-glow hover:shadow-neon-blue transition-all duration-300 transform hover scale-105"
+                  className="px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg text-white font-semibold text-lg neon-glow hover shadow-neon-blue transition-all duration-300 transform hover scale-105"
                 >
                   Get Started Now
                 </Link>
                 <Link
                   href="/marketplace"
-                  className="px-8 py-4 glass border border-neon-blue/30 rounded-lg text-white font-semibold text-lg hover:border-neon-blue/60 transition-all duration-300 transform hover scale-105"
+                  className="px-8 py-4 glass border border-neon-blue/30 rounded-lg text-white font-semibold text-lg hover border-neon-blue/60 transition-all duration-300 transform hover scale-105"
                 >
                   Explore Marketplace
                 </Link>
@@ -310,6 +311,6 @@ const Home: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default Home 

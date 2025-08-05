@@ -71,7 +71,7 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
     const colorClass = colorClasses[chart.color];
 
     return (
-      <div key={chart.id} className="glass-dark border border-neon-blue/20 rounded-xl p-6 hover:border-neon-blue/40 transition-all duration-300">
+      <div key={chart.id} className="glass-dark border border-neon-blue/20 rounded-xl p-6 hover border-neon-blue/40 transition-all duration-300">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-white font-semibold">{chart.title}</h3>
           <div className={`w-3 h-3 rounded-full ${colorClass.bg}`}></div>
@@ -136,13 +136,13 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
       {/* Background Effects */}
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-        <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+        <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
       </div>
 
       <div className="relative z-10 container-responsive py-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-responsive-4xl lg:text-responsive-5xl font-bold text-white mb-4">
+          <h1 className="text-responsive-4xl lg text-responsive-5xl font-bold text-white mb-4">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
               {title}
             </span>
@@ -153,7 +153,7 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
         </div>
 
         {/* Metrics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6 mb-12">
           {metrics.map((metric, index) => {
             const colorClass = colorClasses[metric.color];
             return (
@@ -188,7 +188,7 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
         </div>
 
         {/* Charts Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
           {charts.map((chart, index) => (
             <div
               key={chart.id}
@@ -211,4 +211,4 @@ const FuturisticDashboard: React.FC<FuturisticDashboardProps> = ({
   );
 };
 
-export default FuturisticDashboard; 
+export default FuturisticDashboard;

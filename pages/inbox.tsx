@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useMemo }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 import { motion, AnimatePresence }  from 'framer-motion';
 
 interface Message {
@@ -376,14 +377,14 @@ const InboxPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-white">Inbox</h1>
               <p className="text-gray-300 mt-2">Manage all your marketplace communications</p>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                 Compose
               </button>
             </div>
@@ -391,10 +392,10 @@ const InboxPage: NextPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
         {/* Stats */}
         {stats && (
-          <div className="grid grid-cols-2 md:grid-cols-4 lg grid-cols-8 gap-4 mb-8">
+          <div className="grid grid-cols-2 md grid-cols-4 lg grid-cols-8 gap-4 mb-8">
             <div className="bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10">
               <div className="text-2xl font-bold text-white">{stats.totalMessages}</div>
               <div className="text-gray-400 text-sm">Total</div>
@@ -443,7 +444,7 @@ const InboxPage: NextPage = () => {
                   placeholder="Search messages..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus ring-purple-500"
+                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500"
                 />
               </div>
 
@@ -453,7 +454,7 @@ const InboxPage: NextPage = () => {
                 <select
                   value={filters.type}
                   onChange={(e) => setFilters(prev => ({ ...prev, type: e.target.value }))}
-                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-purple-500"
+                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500"
                 >
                   <option value="all">All Types</option>
                   <option value="marketplace">Marketplace</option>
@@ -473,7 +474,7 @@ const InboxPage: NextPage = () => {
                 <select
                   value={filters.priority}
                   onChange={(e) => setFilters(prev => ({ ...prev, priority: e.target.value }))}
-                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-purple-500"
+                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500"
                 >
                   <option value="all">All Priorities</option>
                   <option value="urgent">Urgent</option>
@@ -489,7 +490,7 @@ const InboxPage: NextPage = () => {
                 <select
                   value={filters.readStatus}
                   onChange={(e) => setFilters(prev => ({ ...prev, readStatus: e.target.value as any }))}
-                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-purple-500"
+                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus outline-none focus ring-2 focus ring-purple-500"
                 >
                   <option value="all">All Messages</option>
                   <option value="unread">Unread</option>
@@ -706,12 +707,8 @@ const InboxPage: NextPage = () => {
       </div>
     </div>
   
-  </ModernLayout>
-
-  </ModernLayout>
-
-  </ModernLayout>
-      );
+      </ModernLayout>
+  );
 };
 
 export default InboxPage;

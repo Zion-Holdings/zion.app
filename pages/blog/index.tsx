@@ -1,7 +1,8 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
-import Link  from 'next/link';
+import Head from 'next/head';
+import Link from 'next/link';
 
 const Blog: NextPage = () => {
   const blogPosts = [
@@ -226,6 +227,6 @@ const Blog: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default Blog 

@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
-import Link  from 'next/link';
-import { useState }  from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+import { useState } from 'react';
 
 const ApiDocs: NextPage = () => {
   const [activeSection, setActiveSection] = useState('authentication')
@@ -25,7 +26,7 @@ const ApiDocs: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="text-2xl font-bold">
@@ -48,7 +49,7 @@ const ApiDocs: NextPage = () => {
               <Link href="/auth/login" className="text-gray-300 hover text-white transition-colors">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-200">
                 Join Zion Now
               </Link>
             </div>
@@ -56,7 +57,7 @@ const ApiDocs: NextPage = () => {
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+      <main className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md text-5xl font-bold text-white mb-6">
@@ -251,7 +252,7 @@ print(data)`}</code>
             <div className="flex flex-col sm flex-row gap-4 justify-center">
               <Link 
                 href="/auth/signup"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg transition-all duration-200 font-semibold"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg transition-all duration-200 font-semibold"
               >
                 Get API Key
               </Link>
@@ -268,9 +269,10 @@ print(data)`}</code>
 
       {/* Footer */}
       <footer className="bg-black/40 backdrop-blur-md border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
           <div className="text-center text-gray-400">
-            <p>&copy; 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</p>
+            <p>&copy;
+ 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</p>
           </div>
         </div>
       </footer>
@@ -282,6 +284,6 @@ print(data)`}</code>
 
   </ModernLayout>
 )
-}
+};
 
 export default ApiDocs 

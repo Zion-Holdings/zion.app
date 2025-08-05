@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useRef }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 import { Home, Search, User }  from 'lucide-react';
 
 interface VRProduct {
@@ -272,7 +273,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -284,7 +285,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
             <div className="flex items-center space-x-4">
               <button
                 onClick={() => setIsVRMode(!isVRMode)}
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25"
               >
                 {isVRMode ? 'Exit VR' : 'Enter VR'}
               </button>
@@ -296,7 +297,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
       <main className="flex-1">
         {!isVRMode ? (
           /* VR Experience Selection */
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+          <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
             <div className="text-center mb-12">
               <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
                 AI-Powered Virtual Reality Marketplace
@@ -309,7 +310,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
                 <button
                   onClick={enterVRMode}
                   disabled={isLoading}
-                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25 disabled opacity-50"
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25 disabled opacity-50"
                 >
                   {isLoading ? 'Loading VR...' : 'Enter Virtual Reality'}
                 </button>
@@ -460,7 +461,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
                     <div className="flex space-x-2">
                       <button
                         onClick={() => purchaseProduct(selectedProduct)}
-                        className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover to-emerald-700 text-white px-4 py-4 rounded text-sm font-medium transition-all duration-300"
+                        className="bg-gradient-to-r from-green-600 to-emerald-600 hover from-green-700 hover to-emerald-700 text-white px-4 py-4 rounded text-sm font-medium transition-all duration-300"
                       >
                         Purchase
                       </button>
@@ -514,7 +515,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
       {/* Footer */}
       {!isVRMode && (
         <footer className="bg-black/40 backdrop-blur-md border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+          <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
             <div className="text-center text-gray-400">
               <p>© 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</p>
             </div>
@@ -547,6 +548,6 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default AIPoweredVirtualRealityMarketplace 

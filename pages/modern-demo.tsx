@@ -1,6 +1,7 @@
 
-import { Home, Search, User }  from 'lucide-react';import React  from 'react';
-import ModernLayout  from '../components/layout/ModernLayout';
+import { Home, Search, User }  from 'lucide-react';
+import React from 'react';
+import ModernLayout from '../components/layout/ModernLayout';
 import { 
   Zap, 
   Globe, 
@@ -255,6 +256,6 @@ const ModernDemo: React.FC = () => {
       </section>
     </ModernLayout>
   )
-}
+};
 
 export default ModernDemo 

@@ -1,9 +1,9 @@
 import type { NextPage }  from 'next';
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useEffect, useRef }  from 'react';
-import Link  from 'next/link';
-import PageLayout  from '../components/layout/PageLayout';
-import { motion }  from 'framer-motion';
+import Link from 'next/link';
+import PageLayout from '../components/layout/PageLayout';
+import { motion } from 'framer-motion';
 
 interface WorkspaceProject {
   id: string
@@ -205,7 +205,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
           <div className="flex items-center space-x-4">
             <button
               onClick={() => setIsAIAssistantOpen(!isAIAssistantOpen)}
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-300"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-300"
             >
               🤖 AI Assistant
             </button>
@@ -221,7 +221,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
               <h2 className="text-white font-semibold mb-4">Projects</h2>
               <button
                 onClick={handleCreateProject}
-                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-300 mb-4"
+                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-300 mb-4"
               >
                 + New Project
               </button>
@@ -306,7 +306,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                     </div>
                     <button
                       onClick={() => handleAISuggestion(suggestion)}
-                      className="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white px-3 py-3 rounded text-xs transition-colors"
+                      className="mt-2 w-full bg-blue-600 hover bg-blue-700 text-white px-3 py-3 rounded text-xs transition-colors"
                     >
                       {suggestion.action}
                     </button>
@@ -422,7 +422,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <h3 className="text-lg font-semibold text-white">Project Tasks</h3>
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                      <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                         + Add Task
                       </button>
                     </div>
@@ -467,7 +467,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <h3 className="text-lg font-semibold text-white">Project Documents</h3>
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                      <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                         + Upload Document
                       </button>
                     </div>
@@ -538,7 +538,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                         onChange={(e) => setNewMessage(e.target.value)}
                         onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
                         placeholder="Type your message..."
-                        className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-4 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus ring-purple-500"
+                        className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-4 text-white placeholder-white/60 focus outline-none focus ring-2 focus ring-purple-500"
                       />
                       <button
                         onClick={sendMessage}
@@ -602,6 +602,6 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
       </div>
     </PageLayout>
   )
-}
+};
 
 export default AIPoweredCollaborationWorkspace 

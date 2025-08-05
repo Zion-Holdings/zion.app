@@ -1,11 +1,12 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
-import Link  from 'next/link';
+import Head from 'next/head';
+import Link from 'next/link';
 import { useState, useEffect }  from 'react';
-import { useRouter }  from 'next/router';
-import { useAuth }  from '../../src/contexts/AuthContext';
-import AuthLayout  from '../../components/layout/AuthLayout';
+import { useRouter } from 'next/router';
+import { useAuth } from '../../src/contexts/AuthContext';
+import AuthLayout from '../../components/layout/AuthLayout';
 
 const ResetPassword: NextPage = () => {
   const [password, setPassword] = useState('')
@@ -73,7 +74,7 @@ const ResetPassword: NextPage = () => {
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
-      <div className="max-w-md mx-auto px-4 sm:px-6 lg px-8 py-40">
+      <div className="max-w-md mx-auto px-4 sm px-6 lg px-8 py-40">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-4">
             Reset Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Password</span>
@@ -106,7 +107,7 @@ const ResetPassword: NextPage = () => {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                className="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                 placeholder="Enter your new password"
                 required
               />
@@ -121,7 +122,7 @@ const ResetPassword: NextPage = () => {
                 id="confirmPassword"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
+                className="w-full px-4 py-3 bg-black/20 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
                 placeholder="Confirm your new password"
                 required
               />
@@ -130,7 +131,7 @@ const ResetPassword: NextPage = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled cursor-not-allowed text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-300"
+              className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 disabled opacity-50 disabled cursor-not-allowed text-white px-8 py-3 rounded-lg text-lg font-semibold transition-all duration-300"
             >
               {loading ? 'Updating Password...' : 'Update Password'}
             </button>
@@ -149,6 +150,6 @@ const ResetPassword: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default ResetPassword 

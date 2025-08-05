@@ -1,7 +1,8 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
-import Link  from 'next/link';
+import Head from 'next/head';
+import Link from 'next/link';
 
 const CybersecurityInTheAgeOfAiPage: NextPage = () => {
   return (
@@ -14,7 +15,7 @@ const CybersecurityInTheAgeOfAiPage: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <h1 className="text-2xl font-bold text-white">
@@ -28,7 +29,7 @@ const CybersecurityInTheAgeOfAiPage: NextPage = () => {
       </nav>
 
       <main className="flex-1">
-        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+        <article className="max-w-4xl mx-auto px-4 sm px-6 lg px-8 py-32">
           <h1 className="text-4xl md text-5xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
               Cybersecurity in the Age of AI
@@ -60,6 +61,6 @@ const CybersecurityInTheAgeOfAiPage: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default CybersecurityInTheAgeOfAiPage

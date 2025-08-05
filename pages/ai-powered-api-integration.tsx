@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback }  from 'react';
-import { NextPage }  from 'next';
-import Head  from 'next/head';
-import Link  from 'next/link';
-import PageLayout  from '../components/layout/PageLayout';
+import { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
+import PageLayout from '../components/layout/PageLayout';
 import { 
   Code, 
   Database, 
@@ -347,7 +347,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
           {activeTab === 'overview' && (
             <div className="space-y-6">
               {/* KPI Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6">
                 <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
                   <div className="flex items-center justify-between">
                     <div>
@@ -418,7 +418,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">API Integrations</h2>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                   + Add Integration
                 </button>
               </div>
@@ -470,7 +470,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">API Endpoints</h2>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                   + Add Endpoint
                 </button>
               </div>

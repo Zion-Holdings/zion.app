@@ -86,6 +86,6 @@ const ResponsiveButton: React.FC<ResponsiveButtonProps> = ({
       {content}
     </button>
   )
-}
+};
 
 export default ResponsiveButton 

@@ -1,8 +1,9 @@
-import React, { useState, useEffect , useCallback }  from 'react';import ModernLayout from '../components/layout/ModernLayout'
+import React, { useState, useEffect , useCallback }  from 'react';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import { NextPage }  from 'next';
-import Head  from 'next/head';
-import Link  from 'next/link';
+import { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
 import { 
   TrendingUp, 
   BarChart3, 
@@ -172,7 +173,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {
 
       {/* Header */}
       <header className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center space-x-4">
               <Link href="/" className="text-white hover text-gray-300 transition-colors">
@@ -201,7 +202,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {
 
       {/* Navigation Tabs */}
       <nav className="bg-black/10 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8">
           <div className="flex space-x-8">
             {tabs.map((tab) => {
               const Icon = tab.icon;
@@ -225,7 +226,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
         {loading ? (
           <div className="flex justify-center items-center h-124">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
@@ -236,7 +237,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {
             {activeTab === 'overview' && (
               <div className="space-y-6">
                 {/* KPI Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md grid-cols-2 lg grid-cols-4 gap-6">
                   <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
                     <div className="flex items-center justify-between">
                       <div>
@@ -334,7 +335,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {
               <div className="space-y-6">
                 <div className="flex justify-between items-center">
                   <h2 className="text-2xl font-bold text-white">Capacity Planning</h2>
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                  <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                     Create Plan
                   </button>
                 </div>
@@ -401,7 +402,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {
               <div className="space-y-6">
                 <div className="flex justify-between items-center">
                   <h2 className="text-2xl font-bold text-white">Demand Forecasting</h2>
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                  <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                     Generate Forecast
                   </button>
                 </div>
@@ -462,7 +463,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {
               <div className="space-y-6">
                 <div className="flex justify-between items-center">
                   <h2 className="text-2xl font-bold text-white">Resource Management</h2>
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                  <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                     Add Resource
                   </button>
                 </div>
@@ -531,7 +532,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {
               <div className="space-y-6">
                 <div className="flex justify-between items-center">
                   <h2 className="text-2xl font-bold text-white">Optimization Recommendations</h2>
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                  <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                     Generate Recommendations
                   </button>
                 </div>
@@ -645,7 +646,7 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/40 backdrop-blur-md border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-8">
           <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">AI-Powered Solutions</h3>
@@ -698,12 +699,8 @@ const AIPoweredCapacityPlanningPage: NextPage = () => {
       </footer>
     </div>
   
-  </ModernLayout>
-
-  </ModernLayout>
-
-  </ModernLayout>
-      );
+      </ModernLayout>
+  );
 };
 
 export default AIPoweredCapacityPlanningPage;

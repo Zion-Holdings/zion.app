@@ -1,8 +1,9 @@
-import type { NextPage }  from 'next';import ModernLayout from '../components/layout/ModernLayout'
+import type { NextPage }  from 'next';
+import ModernLayout from '../components/layout/ModernLayout'
 
-import Head  from 'next/head';
+import Head from 'next/head';
 import { useState, useRef, useEffect }  from 'react';
-import Link  from 'next/link';
+import Link from 'next/link';
 import { Home, Search, User }  from 'lucide-react';
 
 interface Message {
@@ -239,7 +240,7 @@ const AiVirtualAssistant: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
@@ -257,7 +258,7 @@ const AiVirtualAssistant: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm px-6 lg px-8 py-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -336,13 +337,13 @@ const AiVirtualAssistant: NextPage = () => {
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Ask me about services, talents, equipment, or anything else..."
-                  className="flex-1 px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus border-transparent"
+                  className="flex-1 px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus ring-2 focus ring-blue-500 focus border-transparent"
                   disabled={isLoading}
                 />
                 <button
                   onClick={handleSendMessage}
                   disabled={!inputValue.trim() || isLoading}
-                  className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500 focus ring-offset-2 transition-colors"
+                  className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus ring-2 focus ring-blue-500 focus ring-offset-2 transition-colors"
                   aria-label="Send message"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -381,13 +382,13 @@ const AiVirtualAssistant: NextPage = () => {
           <div className="bg-white/5 backdrop-blur-md rounded-lg p-8 border border-white/10">
             <h3 className="text-2xl font-bold text-white mb-4">Get Started</h3>
             <div className="space-y-4">
-              <Link href="/marketplace" className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-blue-700 hover to-purple-700 transition-colors">
+              <Link href="/marketplace" className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover from-blue-700 hover to-purple-700 transition-colors">
                 Explore Marketplace
               </Link>
               <Link href="/quote-request" className="block w-full text-center bg-white/10 text-white px-6 py-3 rounded-lg hover bg-white/20 transition-colors border border-white/20">
                 Request a Quote
               </Link>
-              <Link href="/auth/signup" className="block w-full text-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg hover:from-purple-700 hover to-pink-700 transition-colors">
+              <Link href="/auth/signup" className="block w-full text-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg hover from-purple-700 hover to-pink-700 transition-colors">
                 Join Zion
               </Link>
             </div>
@@ -420,6 +421,6 @@ const AiVirtualAssistant: NextPage = () => {
 
   </ModernLayout>
 )
-}
+};
 
 export default AiVirtualAssistant 
