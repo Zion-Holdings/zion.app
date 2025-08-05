@@ -1,6 +1,6 @@
 import React from "react";
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
-import Link from 'next/link";
+import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
+import Link from "next/link";
 
 interface Candidate {
   id: string;

@@ -1,6 +1,6 @@
-import React from 'react";
-import Sidebar from '../ui/Sidebar";
-import { useRouter } from "next/router"";
+import React from 'react';
+import Sidebar from '../ui/Sidebar';
+import { useRouter } from 'next/router';
 
 interface ModernLayoutProps {
   children: React.ReactNode;

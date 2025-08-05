@@ -1,5 +1,5 @@
-import React, { useState } from 'react";
-import { motion } from 'framer-motion";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 '
 export default function SearchFilter() {
   const [searchTerm, setSearchTerm] = useState('');

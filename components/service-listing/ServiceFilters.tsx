@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from 'framer-motion";
+import { motion } from "framer-motion";
 import { Filter, Star, DollarSign, Clock, X } from "lucide-react"";
 import type { ServiceFilters } from '../../utils/types/service";
 import { DELIVERY_TIMES } from '../../utils/types/service";

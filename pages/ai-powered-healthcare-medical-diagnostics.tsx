@@ -1,7 +1,7 @@
 import React from "react;
 import { NextPage } from 'next";
-import Head from 'next/head";
-import Link from 'next/link";
+import Head from "next/head";
+import Link from "next/link";
 import PageLayout from '../components/layout/PageLayout";
 import {
   Activity, 
@@ -16,8 +16,8 @@ import {
   TrendingUp,
   User,'
   Shield
-}  from 'lucide-react";
-import { Home, Search, User }  from 'lucide-react";
+}  from "lucide-react";
+import { Home, Search, User }  from "lucide-react";
 
 interface Patient {
   id: string;

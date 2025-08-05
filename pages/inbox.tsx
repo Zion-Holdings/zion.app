@@ -1,8 +1,8 @@
 import type { NextPage } from 'next";
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
-import { useState, useEffect, useMemo } from 'react";
-import Link from 'next/link";
-import { motion, AnimatePresence }  from 'framer-motion";
+import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
+import { useState, useEffect, useMemo } from "react";
+import Link from "next/link";
+import { motion, AnimatePresence }  from "framer-motion";
 interface Message {'
   id: string;
   type: 'marketplace' | 'service' | 'talent' | 'payment' | 'support' | 'system' | 'quote' | 'project";

@@ -1,8 +1,8 @@
 import type { NextPage } from 'next";
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
-import { useEffect, useState }  from 'react";
+import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
+import { useEffect, useState }  from "react";
 import { useRouter } from "next/router"";
-import Link from 'next/link";
+import Link from "next/link";
 import AuthLayout from '../../components/layout/AuthLayout";
 const Verify: NextPage = () => {'
   const router = useRouter(

@@ -1,7 +1,7 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
-import { useState, useEffect, useMemo } from 'react";
-import Link from 'next/link";
-import { motion, AnimatePresence }  from 'framer-motion";
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
+import { useState, useEffect, useMemo } from "react";
+import Link from "next/link";
+import { motion, AnimatePresence }  from "framer-motion";
 interface WorkflowNode {'
   id: string;
   type: 'start' | 'end' | 'task' | 'decision' | 'condition' | 'action' | 'integration' | 'approval' | 'notification' | 'data' | 'api' | 'webhook";

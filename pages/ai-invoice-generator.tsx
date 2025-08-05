@@ -1,7 +1,7 @@
 import React from "react;
 import type { NextPage } from 'next";
-import Head from 'next/head";
-import { motion } from 'framer-motion";
+import Head from "next/head";
+import { motion } from "framer-motion";
 const AiInvoiceGenerator: NextPage = () => {'
   const [invoiceData, setInvoiceData] = useState({
     clientName: '',

@@ -1,5 +1,5 @@
 
-import { Home, Search, User }  from 'lucide-react";
+import { Home, Search, User }  from "lucide-react";
 import React from "react";
 // import ModernLayout from '../components/layout/ModernLayout";
 import {
@@ -15,7 +15,7 @@ import {
   TrendingUp,
   Award,'
   Rocket
-}  from 'lucide-react";
+}  from "lucide-react";
 
 const ModernDemo: React.FC = () => {
   const features = [

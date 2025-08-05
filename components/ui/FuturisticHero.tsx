@@ -1,5 +1,5 @@
-import React, { useState, useEffect , useCallback } from 'react";
-import Link from 'next/link";
+import React, { useState, useEffect , useCallback } from "react";
+import Link from "next/link";
 
 const FuturisticHero: React.FC = () => {;
   const [currentTextIndex, setCurrentTextIndex] = useState(0);

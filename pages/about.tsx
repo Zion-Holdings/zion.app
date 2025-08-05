@@ -1,194 +1,61 @@
-import React from "react";
-import { NextPage } from 'next";
-import Head from 'next/head";
-import Link from 'next/link";
-import ModernLayout from '../components/layout/ModernLayout";
-import ResponsiveNavigation from '../components/ResponsiveNavigation";
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
+import Link from 'next/link';
+import ModernLayout from '../components/layout/ModernLayout';
+import ResponsiveNavigation from '../components/ResponsiveNavigation';
 
 const AboutPage: NextPage = () => {
   const navigationItems = [
-    { href: '/marketplace', label: 'Marketplace' },
+    { href: '/', label: 'Home' },
+    { href: '/services', label: 'Services' },
     { href: '/about', label: 'About' },
-    { href: '/auth/login', label: 'Login' }
+    { href: '/contact', label: 'Contact' }
   ];
-
-  const ctaButton = (
-    <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
-      Join Zion
-    </Link>
-  );
 
   return (
     <ModernLayout>
-      <div className="relative z-10 container-responsive py-8">
-        
-        {/* Background Effects */}
-        <div className="fixed inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
-        </div>
+      <Head>
+        <title>About Us - Zion App</title>
+        <meta name="description" content="Learn more about Zion App and our mission to revolutionize technology solutions." />
+      </Head>
       
-        <Head>
-          <title>About Us - Zion Tech Group</title>
-          <meta name="description" content="Learn about our company, mission, and values" />
-          <meta name="keywords" content="Zion, AI marketplace, technology solutions" />
-          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        </Head>
-
-        {/* Navigation */}
-        <ResponsiveNavigation 
-          items={navigationItems}
-          ctaButton={ctaButton}
-          variant="dark"
-        />
-
-        {/* Main Content */}
-        <main className="flex-1">
-          <div className="relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
-            
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44 lg:py-32">
-              <div className="text-center">
-                <div className="mb-8">
-                  <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                      About Us - Zion Tech Group
-                    </span>
-                  </h1>
-                  <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                    Learn about our company, mission, and values
-                  </p>
-                </div>
-                
-                <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
-                    Explore Marketplace
-                  </Link>
-                  <Link href="/auth/signup" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
-                    Get Started
-                  </Link>
-                </div>
-              </div>
-            </div>
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+        <ResponsiveNavigation items={navigationItems} />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold text-white mb-8">
+              About Zion App
+            </h1>
+            <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+              We are revolutionizing the way businesses approach technology solutions through innovative AI-powered platforms and cutting-edge automation.
+            </p>
           </div>
-
-          {/* About Content */}
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-bold text-white mb-6">
-                  Our Mission
-                </h2>
-                <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                  At Zion Tech Group, we're building the future of AI-powered marketplace technology. 
-                  Our mission is to democratize access to cutting-edge AI solutions and create a 
-                  seamless ecosystem where businesses can discover, deploy, and monetize AI services.
-                </p>
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  We believe that AI should be accessible to everyone, not just large corporations. 
-                  Through our innovative platform, we're making advanced AI capabilities available 
-                  to businesses of all sizes.
-                </p>
-              </div>
-              <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 p-8 rounded-lg border border-purple-500/20">
-                <h3 className="text-2xl font-bold text-white mb-4">What We Do</h3>
-                <ul className="space-y-3 text-gray-300">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
-                    AI Marketplace Platform
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
-                    Autonomous Agent Technology
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
-                    Content Generation Services
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
-                    Business Automation Solutions
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Values Section */}
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-white mb-4">Our Values</h2>
-              <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-                We're guided by core principles that shape everything we do
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+              <h3 className="text-xl font-semibold text-white mb-4">Our Mission</h3>
+              <p className="text-gray-300">
+                To empower businesses with intelligent, scalable, and innovative technology solutions that drive growth and efficiency.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 p-6 rounded-lg border border-purple-500/20">
-                <h3 className="text-xl font-bold text-white mb-3">Innovation</h3>
-                <p className="text-gray-300">
-                  We constantly push the boundaries of what's possible with AI technology, 
-                  always looking for new ways to solve complex problems.
-                </p>
-              </div>
-              <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 p-6 rounded-lg border border-purple-500/20">
-                <h3 className="text-xl font-bold text-white mb-3">Accessibility</h3>
-                <p className="text-gray-300">
-                  We believe AI should be available to everyone, regardless of technical 
-                  expertise or company size.
-                </p>
-              </div>
-              <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 p-6 rounded-lg border border-purple-500/20">
-                <h3 className="text-xl font-bold text-white mb-3">Quality</h3>
-                <p className="text-gray-300">
-                  We maintain the highest standards in everything we do, from our 
-                  technology to our customer service.
-                </p>
-              </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+              <h3 className="text-xl font-semibold text-white mb-4">Our Vision</h3>
+              <p className="text-gray-300">
+                To be the leading platform for AI-powered business solutions, making advanced technology accessible to all.
+              </p>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+              <h3 className="text-xl font-semibold text-white mb-4">Our Values</h3>
+              <p className="text-gray-300">
+                Innovation, integrity, excellence, and customer success drive everything we do.
+              </p>
             </div>
           </div>
-        </main>
-
-        {/* Footer */}
-        <footer className="bg-black/20 border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div>
-                <h3 className="text-white font-semibold mb-4">Zion</h3>
-                <p className="text-gray-400 text-sm">
-                  The future of AI-powered marketplace technology.
-                </p>
-              </div>
-              <div>
-                <h4 className="text-white font-semibold mb-4">Marketplace</h4>
-                <ul className="space-y-2 text-sm">
-                  <li><Link href="/marketplace" className="text-gray-400 hover:text-white transition-colors">Browse Services</Link></li>
-                  <li><Link href="/talents" className="text-gray-400 hover:text-white transition-colors">AI Talents</Link></li>
-                  <li><Link href="/equipment" className="text-gray-400 hover:text-white transition-colors">Equipment</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-white font-semibold mb-4">Company</h4>
-                <ul className="space-y-2 text-sm">
-                  <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li>
-                  <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
-                  <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-white font-semibold mb-4">Support</h4>
-                <ul className="space-y-2 text-sm">
-                  <li><Link href="/help" className="text-gray-400 hover:text-white transition-colors">Help Center</Link></li>
-                  <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact Us</Link></li>
-                  <li><Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link></li>
-                </ul>
-              </div>
-            </div>
-            <div className="border-t border-white/10 mt-8 pt-8 text-center">
-              <p className="text-gray-400 text-sm">&copy; 2024 Zion Tech Group. All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
+        </div>
       </div>
     </ModernLayout>
   );

@@ -1,6 +1,6 @@
-import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
-import Link from 'next/link";
-import { useState } from 'react";
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
+import Link from "next/link";
+import { useState } from "react";
 
 const TalentProfile: NextPage: () => {,
   ,

@@ -1,8 +1,8 @@
 import React from "react;
 // import ModernLayout from '../components/layout/ModernLayout';'
-import Head from 'next/head";
-import { motion } from 'framer-motion";
-import Link from 'next/link";
+import Head from "next/head";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Home() {
   return (

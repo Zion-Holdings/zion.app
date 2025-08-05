@@ -1,8 +1,8 @@
 import type { NextPage } from 'next";
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
-import { useState, useRef, useEffect }  from 'react";
-import Link from 'next/link";
-import { Home, Search, User }  from 'lucide-react";
+import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
+import { useState, useRef, useEffect }  from "react";
+import Link from "next/link";
+import { Home, Search, User }  from "lucide-react";
 
 interface Message {
   id: string;'

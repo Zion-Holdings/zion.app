@@ -1,5 +1,5 @@
 import React from "react";
-import { useMessageChannelHandler } from '../utils/messageChannelHandler";
+import { useMessageChannelHandler } from "../utils/messageChannelHandler";
 
 interface MessageChannelDebuggerProps {
   show?: boolean;

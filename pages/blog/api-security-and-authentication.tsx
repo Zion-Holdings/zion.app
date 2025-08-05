@@ -1,6 +1,6 @@
 import type { NextPage } from 'next";
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head";
-import Link from 'next/link";
+import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
+import Link from "next/link";
 
 const ApiSecurityAndAuthenticationPage: NextPage = () => {
   return (

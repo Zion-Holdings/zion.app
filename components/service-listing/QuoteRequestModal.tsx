@@ -1,5 +1,5 @@
-import React, { useState } from 'react";
-import { motion, AnimatePresence } from 'framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { X, Calendar, DollarSign, Mail, FileText, Clock } from "lucide-react"";
 import DatePicker from 'react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css";

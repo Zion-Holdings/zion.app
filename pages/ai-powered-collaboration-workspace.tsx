@@ -1,9 +1,9 @@
 import type { NextPage } from 'next";
-import Head from 'next/head";
-import { useState, useEffect, useRef }  from 'react";
-import Link from 'next/link";
+import Head from "next/head";
+import { useState, useEffect, useRef }  from "react";
+import Link from "next/link";
 import PageLayout from '../components/layout/PageLayout";
-import { motion } from 'framer-motion";
+import { motion } from "framer-motion";
 
 interface WorkspaceProject {
   id: string

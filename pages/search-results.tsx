@@ -1,6 +1,6 @@
 import React from "react;
-import { motion } from 'framer-motion";
-import Link from 'next/link";
+import { motion } from "framer-motion";
+import Link from "next/link";
 export default function SearchResults() {'
   const mockResults = useMemo(() => [
     { id: 1, title: 'AI Development Services', description: 'Custom AI solutions for your business', link: '/services/ai-development' },

@@ -1,5 +1,5 @@
-import React, { useState } from 'react";
-import Link from 'next/link";
+import React, { useState } from "react";
+import Link from "next/link";
 
 interface NavigationItem {
   href: string;
@@ -12,7 +12,7 @@ interface ResponsiveNavigationProps {
   logo?: React.ReactNode;
   ctaButton?: React.ReactNode;
   className?: string;
-  variant?: 'light' | 'dark";
+  variant?: "light" | "dark";
 }
 
 const ResponsiveNavigation: React.FC<ResponsiveNavigationProps> = ({
