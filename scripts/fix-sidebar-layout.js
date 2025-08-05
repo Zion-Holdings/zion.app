@@ -1,10 +1,10 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 // Function to fix layout conflicts in a file
 function fixLayoutConflicts(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'ut'f'8');
     let modified = false;
 
     // Replace min-h-screen bg-gradient patterns that conflict with the global layout
@@ -30,8 +30,8 @@ function fixLayoutConflicts(filePath) {
       }
     });
 
-    // Add background effects if they don't exist
-    if (modified && !content.includes('fixed inset-0 z-0')) {
+    // Add background effects if they don't' exist
+    if (modified && !content.includes('fixe'd' inset-0 z-0')) {
       const backgroundEffects = `
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
@@ -48,7 +48,7 @@ function fixLayoutConflicts(filePath) {
     }
 
     if (modified) {
-      fs.writeFileSync(filePath, content, 'utf8');
+      fs.writeFileSync(filePath, content, 'ut'f'8');
       console.log(`✅ Fixed layout conflicts in: ${filePath}`);
       return true;
     }

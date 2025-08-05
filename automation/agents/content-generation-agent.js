@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class ContentGenerationAgent {
   constructor() {
@@ -70,8 +70,8 @@ class ContentGenerationAgent {
     console.log(`🤖 Content Generation Agent ${this.agentId} initializing...`);
     
     // Set up signal handlers
-    process.on('SIGTERM', () => this.shutdown());
-    process.on('SIGINT', () => this.shutdown());
+    process.on('SIGTE'R'M', () => this.shutdown());
+    process.on('SIGI'N'T', () => this.shutdown());
     
     this.isRunning = true;
     console.log(`✅ Content Generation Agent ${this.agentId} started`);
@@ -89,7 +89,7 @@ class ContentGenerationAgent {
         // Wait before next cycle
         await new Promise(resolve => setTimeout(resolve, 30000)); // 30 seconds
       } catch (error) {
-        console.error('Error in content generation loop:', error.message);
+        console.error('Erro'r' in content generation loop:', error.message);
         await new Promise(resolve => setTimeout(resolve, 10000)); // Wait 10 seconds on error
       }
     }
@@ -98,11 +98,11 @@ class ContentGenerationAgent {
   async processContentGenerationTask() {
     const task = {
       id: `content-${Date.now()}`,
-      type: 'content-generation',
-      priority: 'normal',
+      type: 'content-generati'o'n',
+      priority: 'norm'a'l',
       data: {
-        contentType: 'blog-post',
-        topic: 'AI and Automation',
+        contentType: 'blog-po's't',
+        topic: 'A'I' and Automation',
         targetLength: 1000
       }
     };
@@ -124,12 +124,12 @@ class ContentGenerationAgent {
       console.log(`✅ Content generated successfully in ${responseTime}ms`);
       
       // Log the result
-      this.logResult(task.id, 'success', content);
+      this.logResult(task.id, 'succe's's', content);
       
     } catch (error) {
       this.performance.tasksFailed++;
       console.error(`❌ Content generation failed:`, error.message);
-      this.logResult(task.id, 'error', error.message);
+      this.logResult(task.id, 'err'o'r', error.message);
     }
   }
 
@@ -152,7 +152,7 @@ class ContentGenerationAgent {
       timestamp: new Date().toISOString(),
       taskId,
       status,
-      result: typeof result === 'string' ? result.substring(0, 200) + '...' : result,
+      result: typeof result === 'strin'g' ? result.substring(0, 200) + '...' : result,
       performance: this.performance
     };
     
@@ -179,6 +179,6 @@ class ContentGenerationAgent {
 // Start the agent
 const agent = new ContentGenerationAgent();
 agent.initialize().catch(error => {
-  console.error('Failed to initialize content generation agent:', error);
+  console.error('Faile'd' to initialize content generation agent:', error);
   process.exit(1);
 }); 

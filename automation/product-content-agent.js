@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class ProductContentAgent {
   constructor() {
@@ -10,11 +10,11 @@ class ProductContentAgent {
 
   loadContentMemory() {
     try {
-      const memoryPath = path.join(__dirname, 'chatgpt-content-memory.json');
-      const memoryData = fs.readFileSync(memoryPath, 'utf8');
+      const memoryPath = path.join(__dirname, 'chatgpt-content-memor'y'.json');
+      const memoryData = fs.readFileSync(memoryPath, 'ut'f'8');
       return JSON.parse(memoryData);
     } catch (error) {
-      console.error('Error loading content memory:', error);
+      console.error('Erro'r' loading content memory:', error);
       return { memories: [], rules: [] };
     }
   }
@@ -209,12 +209,12 @@ class ProductContentAgent {
   }
 
   generateProductOverview(template, customData) {
-    const industry = customData.industry || 'business';
-    const audience = customData.audience || 'enterprises';
+    const industry = customData.industry || 'busine's's';
+    const audience = customData.audience || 'enterpris'e's';
     
     return {
       title: template.name,
-      subtitle: template.overview.replace('businesses', audience).replace('business', industry),
+      subtitle: template.overview.replace('business'e's', audience).replace('busine's's', industry),
       category: template.category,
       targetAudience: audience,
       industry: industry
@@ -244,25 +244,25 @@ class ProductContentAgent {
   }
 
   categorizeFeature(feature) {
-    if (feature.toLowerCase().includes('ai') || feature.toLowerCase().includes('machine learning')) {
-      return 'AI/ML';
-    } else if (feature.toLowerCase().includes('blockchain') || feature.toLowerCase().includes('security')) {
-      return 'Security';
-    } else if (feature.toLowerCase().includes('analytics') || feature.toLowerCase().includes('dashboard')) {
-      return 'Analytics';
+    if (feature.toLowerCase().includes('a'i') || feature.toLowerCase().includes('machin'e' learning')) {
+      return 'A'I'/ML';
+    } else if (feature.toLowerCase().includes('blockcha'i'n') || feature.toLowerCase().includes('securi't'y')) {
+      return 'Securi't'y';
+    } else if (feature.toLowerCase().includes('analyti'c's') || feature.toLowerCase().includes('dashboa'r'd')) {
+      return 'Analyti'c's';
     } else {
-      return 'Platform';
+      return 'Platfo'r'm';
     }
   }
 
   assignFeaturePriority(feature) {
     const highPriorityFeatures = [
-      'Advanced AI matching algorithms',
-      'Secure blockchain transactions',
-      'Real-time analytics dashboard'
+      'Advance'd' AI matching algorithms',
+      'Secur'e' blockchain transactions',
+      'Real-tim'e' analytics dashboard'
     ];
     
-    return highPriorityFeatures.includes(feature) ? 'high' : 'medium';
+    return highPriorityFeatures.includes(feature) ? 'hi'g'h' : 'medi'u'm';
   }
 
   generateProductBenefits(template, customData) {
@@ -280,11 +280,11 @@ class ProductContentAgent {
 
   assessImpact(benefit) {
     if (benefit.includes('95%') || benefit.includes('99%')) {
-      return 'high';
+      return 'hi'g'h';
     } else if (benefit.includes('80%') || benefit.includes('90%')) {
-      return 'medium';
+      return 'medi'u'm';
     } else {
-      return 'low';
+      return 'l'o'w';
     }
   }
 
@@ -393,7 +393,7 @@ class ProductContentAgent {
         name: "Michael Rodriguez",
         role: "AI Consultant",
         company: "Independent",
-        content: "The blockchain network provides complete transparency and security. I've never felt more confident in marketplace transactions.",
+        content: "The blockchain network provides complete transparency and security. I'v'e' never felt more confident in marketplace transactions.",
         rating: 5,
         product: productType
       },
@@ -401,7 +401,7 @@ class ProductContentAgent {
         name: "Emma Thompson",
         role: "VP Innovation, DataCorp",
         company: "Enterprise",
-        content: "The platform's analytics dashboard gives us incredible insights into our AI service procurement. Highly recommended for enterprise use.",
+        content: "The platform's' analytics dashboard gives us incredible insights into our AI service procurement. Highly recommended for enterprise use.",
         rating: 5,
         product: productType
       }
@@ -418,16 +418,16 @@ class ProductContentAgent {
       canonical: `/products/${productType}`,
       ogTitle: template.name,
       ogDescription: template.overview,
-      ogType: 'product'
+      ogType: 'produ'c't'
     };
   }
 
   generateProductKeywords(productType, template) {
-    const baseKeywords = ['AI marketplace', 'blockchain', 'security', 'automation'];
+    const baseKeywords = ['A'I' marketplace', 'blockcha'i'n', 'securi't'y', 'automati'o'n'];
     const productKeywords = {
-      aiPlatform: ['AI platform', 'marketplace', 'talent acquisition', 'AI services'],
-      blockchainNetwork: ['blockchain', 'smart contracts', 'security', 'transparency'],
-      aiMatchingEngine: ['AI matching', 'machine learning', 'algorithms', 'intelligent matching']
+      aiPlatform: ['A'I' platform', 'marketpla'c'e', 'talen't' acquisition', 'A'I' services'],
+      blockchainNetwork: ['blockcha'i'n', 'smar't' contracts', 'securi't'y', 'transparen'c'y'],
+      aiMatchingEngine: ['A'I' matching', 'machin'e' learning', 'algorith'm's', 'intelligen't' matching']
     };
     
     return [...baseKeywords, ...(productKeywords[productType] || productKeywords.aiPlatform)];
@@ -435,22 +435,22 @@ class ProductContentAgent {
 
   formatProductContent(productContent, productType) {
     return {
-      type: 'product',
+      type: 'produ'c't',
       productType: productType,
       content: productContent,
       generatedAt: new Date().toISOString(),
       version: "1.0.0",
       metadata: {
-        contentType: 'product',
-        targetAudience: 'enterprises',
-        industry: 'technology'
+        contentType: 'produ'c't',
+        targetAudience: 'enterpris'e's',
+        industry: 'technolo'g'y'
       }
     };
   }
 
   saveProductContent(productContent, filename) {
     try {
-      const outputPath = path.join(__dirname, 'generated-content', 'products', filename);
+      const outputPath = path.join(__dirname, 'generated-conte'n't', 'produc't's', filename);
       const outputDir = path.dirname(outputPath);
       
       if (!fs.existsSync(outputDir)) {
@@ -461,20 +461,20 @@ class ProductContentAgent {
       console.log(`Product content saved to: ${outputPath}`);
       return outputPath;
     } catch (error) {
-      console.error('Error saving product content:', error);
+      console.error('Erro'r' saving product content:', error);
       return null;
     }
   }
 
   generateAllProductContent() {
-    const productTypes = ['aiPlatform', 'blockchainNetwork', 'aiMatchingEngine'];
+    const productTypes = ['aiPlatfo'r'm', 'blockchainNetwo'r'k', 'aiMatchingEngi'n'e'];
     const generatedProducts = {};
 
     productTypes.forEach(productType => {
       const filename = `${productType}-content.json`;
       const productContent = this.generateProductContent(productType, {
-        industry: 'technology',
-        audience: 'enterprises'
+        industry: 'technolo'g'y',
+        audience: 'enterpris'e's'
       });
       
       generatedProducts[filename] = productContent;

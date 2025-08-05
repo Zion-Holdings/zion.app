@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
+const { promisify } = require('ut'i'l');
 
 const execAsync = promisify(exec);
 
@@ -20,13 +20,13 @@ class SkillAssessmentAgent {
     const dirs = [
       this.reportsDir,
       this.logsDir,
-      path.join(this.reportsDir, 'assessment-reports'),
-      path.join(this.reportsDir, 'competency-reports'),
-      path.join(this.reportsDir, 'gap-analysis-reports'),
-      path.join(this.reportsDir, 'analysis-reports'),
-      path.join(this.reportsDir, 'optimization-reports'),
-      path.join(this.reportsDir, 'assessment-reports'),
-      path.join(this.reportsDir, 'analytics-reports')
+      path.join(this.reportsDir, 'assessment-repor't's'),
+      path.join(this.reportsDir, 'competency-repor't's'),
+      path.join(this.reportsDir, 'gap-analysis-repor't's'),
+      path.join(this.reportsDir, 'analysis-repor't's'),
+      path.join(this.reportsDir, 'optimization-repor't's'),
+      path.join(this.reportsDir, 'assessment-repor't's'),
+      path.join(this.reportsDir, 'analytics-repor't's')
     ];
     
     dirs.forEach(dir => {
@@ -60,7 +60,7 @@ class SkillAssessmentAgent {
 
   async analyzeSkillAssessment() {
     try {
-      console.log('Performing comprehensive skill assessment analysis...');
+      console.log('Performin'g' comprehensive skill assessment analysis...');
       
       const analysis = {
         timestamp: new Date().toISOString(),
@@ -86,10 +86,10 @@ class SkillAssessmentAgent {
       // Save analysis report
       await this.saveAnalysisReport(analysis);
       
-      console.log('Skill assessment analysis completed');
+      console.log('Skil'l' assessment analysis completed');
       
     } catch (error) {
-      console.error('Skill assessment analysis failed:', error);
+      console.error('Skil'l' assessment analysis failed:', error);
     }
   }
 
@@ -114,7 +114,7 @@ class SkillAssessmentAgent {
       assessments.push(learningProgress);
       
     } catch (error) {
-      console.error('Failed to analyze skill assessments:', error);
+      console.error('Faile'd' to analyze skill assessments:', error);
     }
     
     return assessments;
@@ -139,16 +139,16 @@ class SkillAssessmentAgent {
       };
       
       return {
-        type: 'Technical Skills',
+        type: 'Technica'l' Skills',
         value: technicalMetrics,
-        status: technicalMetrics.overallScore > 0.8 ? 'excellent' : technicalMetrics.overallScore > 0.6 ? 'good' : 'needs_improvement',
+        status: technicalMetrics.overallScore > 0.8 ? 'excelle'n't' : technicalMetrics.overallScore > 0.6 ? 'go'o'd' : 'need's'_improvement',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Technical Skills',
-        value: 'Unable to analyze technical skills',
-        status: 'error',
+        type: 'Technica'l' Skills',
+        value: 'Unabl'e' to analyze technical skills',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -157,7 +157,7 @@ class SkillAssessmentAgent {
   async analyzeProgrammingSkills() {
     try {
       // Analyze code quality and complexity
-      const { stdout } = await execAsync('find src/ -name "*.js" -o -name "*.ts" -o -name "*.jsx" -o -name "*.tsx" | wc -l');
+      const { stdout } = await execAsync('fin'd' src/ -name "*.js" -o -name "*.ts" -o -name "*.jsx" -o -name "*.tsx" | wc -l');
       const codeFiles = parseInt(stdout.trim());
       
       // Simulate programming skill metrics
@@ -170,16 +170,16 @@ class SkillAssessmentAgent {
       };
       
       return {
-        type: 'Programming Skills',
+        type: 'Programmin'g' Skills',
         value: programmingMetrics,
-        status: programmingMetrics.score > 0.8 ? 'excellent' : 'good',
+        status: programmingMetrics.score > 0.8 ? 'excelle'n't' : 'go'o'd',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Programming Skills',
-        value: 'Unable to analyze programming skills',
-        status: 'error',
+        type: 'Programmin'g' Skills',
+        value: 'Unabl'e' to analyze programming skills',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -188,7 +188,7 @@ class SkillAssessmentAgent {
   async analyzeFrameworkKnowledge() {
     try {
       // Check for framework usage
-      const frameworks = ['react', 'next', 'vue', 'angular', 'express', 'prisma', 'supabase'];
+      const frameworks = ['rea'c't', 'ne'x't', 'v'u'e', 'angul'a'r', 'expre's's', 'pris'm'a', 'supaba's'e'];
       let foundFrameworks = 0;
       
       for (const framework of frameworks) {
@@ -206,16 +206,16 @@ class SkillAssessmentAgent {
       };
       
       return {
-        type: 'Framework Knowledge',
+        type: 'Framewor'k' Knowledge',
         value: frameworkMetrics,
-        status: frameworkMetrics.score > 0.7 ? 'good' : 'needs_improvement',
+        status: frameworkMetrics.score > 0.7 ? 'go'o'd' : 'need's'_improvement',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Framework Knowledge',
-        value: 'Unable to analyze framework knowledge',
-        status: 'error',
+        type: 'Framewor'k' Knowledge',
+        value: 'Unabl'e' to analyze framework knowledge',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -224,7 +224,7 @@ class SkillAssessmentAgent {
   async analyzeToolProficiency() {
     try {
       // Check for development tools
-      const tools = ['git', 'npm', 'yarn', 'docker', 'eslint', 'prettier', 'typescript'];
+      const tools = ['g'i't', 'n'p'm', 'ya'r'n', 'dock'e'r', 'esli'n't', 'pretti'e'r', 'typescri'p't'];
       let foundTools = 0;
       
       for (const tool of tools) {
@@ -242,16 +242,16 @@ class SkillAssessmentAgent {
       };
       
       return {
-        type: 'Tool Proficiency',
+        type: 'Too'l' Proficiency',
         value: toolMetrics,
-        status: toolMetrics.score > 0.7 ? 'good' : 'needs_improvement',
+        status: toolMetrics.score > 0.7 ? 'go'o'd' : 'need's'_improvement',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Tool Proficiency',
-        value: 'Unable to analyze tool proficiency',
-        status: 'error',
+        type: 'Too'l' Proficiency',
+        value: 'Unabl'e' to analyze tool proficiency',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -270,16 +270,16 @@ class SkillAssessmentAgent {
       };
       
       return {
-        type: 'Soft Skills',
+        type: 'Sof't' Skills',
         value: softSkillMetrics,
-        status: softSkillMetrics.overallScore > 0.8 ? 'excellent' : 'good',
+        status: softSkillMetrics.overallScore > 0.8 ? 'excelle'n't' : 'go'o'd',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Soft Skills',
-        value: 'Unable to analyze soft skills',
-        status: 'error',
+        type: 'Sof't' Skills',
+        value: 'Unabl'e' to analyze soft skills',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -297,16 +297,16 @@ class SkillAssessmentAgent {
       };
       
       return {
-        type: 'Domain Knowledge',
+        type: 'Domai'n' Knowledge',
         value: domainMetrics,
-        status: domainMetrics.overallScore > 0.8 ? 'excellent' : 'good',
+        status: domainMetrics.overallScore > 0.8 ? 'excelle'n't' : 'go'o'd',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Domain Knowledge',
-        value: 'Unable to analyze domain knowledge',
-        status: 'error',
+        type: 'Domai'n' Knowledge',
+        value: 'Unabl'e' to analyze domain knowledge',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -324,16 +324,16 @@ class SkillAssessmentAgent {
       };
       
       return {
-        type: 'Learning Progress',
+        type: 'Learnin'g' Progress',
         value: progressMetrics,
-        status: progressMetrics.overallScore > 0.8 ? 'excellent' : 'good',
+        status: progressMetrics.overallScore > 0.8 ? 'excelle'n't' : 'go'o'd',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Learning Progress',
-        value: 'Unable to analyze learning progress',
-        status: 'error',
+        type: 'Learnin'g' Progress',
+        value: 'Unabl'e' to analyze learning progress',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -356,7 +356,7 @@ class SkillAssessmentAgent {
       competencies.push(performanceMetrics);
       
     } catch (error) {
-      console.error('Failed to analyze competency tracking:', error);
+      console.error('Faile'd' to analyze competency tracking:', error);
     }
     
     return competencies;
@@ -374,16 +374,16 @@ class SkillAssessmentAgent {
       };
       
       return {
-        type: 'Competency Levels',
+        type: 'Competenc'y' Levels',
         value: competencyMetrics,
-        status: competencyMetrics.overallLevel > 0.7 ? 'advanced' : 'intermediate',
+        status: competencyMetrics.overallLevel > 0.7 ? 'advanc'e'd' : 'intermedia't'e',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Competency Levels',
-        value: 'Unable to analyze competency levels',
-        status: 'error',
+        type: 'Competenc'y' Levels',
+        value: 'Unabl'e' to analyze competency levels',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -401,16 +401,16 @@ class SkillAssessmentAgent {
       };
       
       return {
-        type: 'Skill Development',
+        type: 'Skil'l' Development',
         value: developmentMetrics,
-        status: developmentMetrics.overallDevelopment > 0.8 ? 'excellent' : 'good',
+        status: developmentMetrics.overallDevelopment > 0.8 ? 'excelle'n't' : 'go'o'd',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Skill Development',
-        value: 'Unable to analyze skill development',
-        status: 'error',
+        type: 'Skil'l' Development',
+        value: 'Unabl'e' to analyze skill development',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -428,16 +428,16 @@ class SkillAssessmentAgent {
       };
       
       return {
-        type: 'Performance Metrics',
+        type: 'Performanc'e' Metrics',
         value: performanceMetrics,
-        status: performanceMetrics.overallPerformance > 0.8 ? 'excellent' : 'good',
+        status: performanceMetrics.overallPerformance > 0.8 ? 'excelle'n't' : 'go'o'd',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Performance Metrics',
-        value: 'Unable to analyze performance metrics',
-        status: 'error',
+        type: 'Performanc'e' Metrics',
+        value: 'Unabl'e' to analyze performance metrics',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -460,7 +460,7 @@ class SkillAssessmentAgent {
       gaps.push(knowledgeGaps);
       
     } catch (error) {
-      console.error('Failed to analyze skill gaps:', error);
+      console.error('Faile'd' to analyze skill gaps:', error);
     }
     
     return gaps;
@@ -470,24 +470,24 @@ class SkillAssessmentAgent {
     try {
       // Simulate technical skill gap analysis
       const technicalGaps = {
-        programmingLanguages: ['Python', 'Go', 'Rust'],
-        frameworks: ['Django', 'FastAPI', 'GraphQL'],
-        tools: ['Kubernetes', 'Terraform', 'Prometheus'],
+        programmingLanguages: ['Pyth'o'n', 'G'o', 'Ru's't'],
+        frameworks: ['Djan'g'o', 'FastA'P'I', 'Graph'Q'L'],
+        tools: ['Kubernet'e's', 'Terrafo'r'm', 'Promethe'u's'],
         gapSeverity: Math.random() * 0.3 + 0.3, // 30-60%
-        priority: Math.random() > 0.5 ? 'high' : 'medium'
+        priority: Math.random() > 0.5 ? 'hi'g'h' : 'medi'u'm'
       };
       
       return {
-        type: 'Technical Skill Gaps',
+        type: 'Technica'l' Skill Gaps',
         value: technicalGaps,
-        status: technicalGaps.gapSeverity < 0.4 ? 'low' : 'medium',
+        status: technicalGaps.gapSeverity < 0.4 ? 'l'o'w' : 'medi'u'm',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Technical Skill Gaps',
-        value: 'Unable to analyze technical gaps',
-        status: 'error',
+        type: 'Technica'l' Skill Gaps',
+        value: 'Unabl'e' to analyze technical gaps',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -502,20 +502,20 @@ class SkillAssessmentAgent {
         negotiation: Math.random() * 0.3 + 0.2, // 20-50%
         presentation: Math.random() * 0.2 + 0.1, // 10-30%
         gapSeverity: Math.random() * 0.3 + 0.2, // 20-50%
-        priority: Math.random() > 0.5 ? 'medium' : 'low'
+        priority: Math.random() > 0.5 ? 'medi'u'm' : 'l'o'w'
       };
       
       return {
-        type: 'Soft Skill Gaps',
+        type: 'Sof't' Skill Gaps',
         value: softSkillGaps,
-        status: softSkillGaps.gapSeverity < 0.3 ? 'low' : 'medium',
+        status: softSkillGaps.gapSeverity < 0.3 ? 'l'o'w' : 'medi'u'm',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Soft Skill Gaps',
-        value: 'Unable to analyze soft skill gaps',
-        status: 'error',
+        type: 'Sof't' Skill Gaps',
+        value: 'Unabl'e' to analyze soft skill gaps',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -530,20 +530,20 @@ class SkillAssessmentAgent {
         marketUnderstanding: Math.random() * 0.3 + 0.2, // 20-50%
         technicalDomain: Math.random() * 0.2 + 0.1, // 10-30%
         gapSeverity: Math.random() * 0.3 + 0.2, // 20-50%
-        priority: Math.random() > 0.5 ? 'medium' : 'low'
+        priority: Math.random() > 0.5 ? 'medi'u'm' : 'l'o'w'
       };
       
       return {
-        type: 'Knowledge Gaps',
+        type: 'Knowledg'e' Gaps',
         value: knowledgeGaps,
-        status: knowledgeGaps.gapSeverity < 0.3 ? 'low' : 'medium',
+        status: knowledgeGaps.gapSeverity < 0.3 ? 'l'o'w' : 'medi'u'm',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Knowledge Gaps',
-        value: 'Unable to analyze knowledge gaps',
-        status: 'error',
+        type: 'Knowledg'e' Gaps',
+        value: 'Unabl'e' to analyze knowledge gaps',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -553,35 +553,35 @@ class SkillAssessmentAgent {
     const recommendations = [];
     
     // Assessment recommendations
-    const assessmentIssues = analysis.assessments.filter(a => a.status === 'needs_improvement');
+    const assessmentIssues = analysis.assessments.filter(a => a.status === 'need's'_improvement');
     if (assessmentIssues.length > 0) {
       recommendations.push({
-        type: 'skill_assessment',
-        priority: 'medium',
-        message: 'Skill assessment improvements needed',
-        suggestion: 'Enhance skill assessment methods and tools'
+        type: 'skil'l'_assessment',
+        priority: 'medi'u'm',
+        message: 'Skil'l' assessment improvements needed',
+        suggestion: 'Enhanc'e' skill assessment methods and tools'
       });
     }
     
     // Competency recommendations
-    const competencyIssues = analysis.competencies.filter(c => c.status === 'needs_improvement');
+    const competencyIssues = analysis.competencies.filter(c => c.status === 'need's'_improvement');
     if (competencyIssues.length > 0) {
       recommendations.push({
-        type: 'competency_tracking',
-        priority: 'medium',
-        message: 'Competency tracking improvements needed',
-        suggestion: 'Improve competency tracking and development'
+        type: 'competenc'y'_tracking',
+        priority: 'medi'u'm',
+        message: 'Competenc'y' tracking improvements needed',
+        suggestion: 'Improv'e' competency tracking and development'
       });
     }
     
     // Gap recommendations
-    const gapIssues = analysis.gaps.filter(g => g.status === 'needs_improvement');
+    const gapIssues = analysis.gaps.filter(g => g.status === 'need's'_improvement');
     if (gapIssues.length > 0) {
       recommendations.push({
-        type: 'skill_gaps',
-        priority: 'medium',
-        message: 'Skill gap improvements needed',
-        suggestion: 'Address identified skill gaps through training'
+        type: 'skil'l'_gaps',
+        priority: 'medi'u'm',
+        message: 'Skil'l' gap improvements needed',
+        suggestion: 'Addres's' identified skill gaps through training'
       });
     }
     
@@ -590,7 +590,7 @@ class SkillAssessmentAgent {
 
   async monitorSkillAssessment() {
     try {
-      console.log('Monitoring skill assessment...');
+      console.log('Monitorin'g' skill assessment...');
       
       const monitoring = {
         timestamp: new Date().toISOString(),
@@ -617,24 +617,24 @@ class SkillAssessmentAgent {
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
-      console.error('Skill assessment monitoring failed:', error);
+      console.error('Skil'l' assessment monitoring failed:', error);
     }
   }
 
   checkAssessmentStatus(assessment) {
     const status = {
       assessment: assessment.type,
-      status: 'healthy',
+      status: 'healt'h'y',
       issues: [],
       lastChecked: new Date().toISOString()
     };
     
     // Check for common assessment issues
-    if (assessment.status === 'needs_improvement') {
+    if (assessment.status === 'need's'_improvement') {
       status.issues.push({
-        type: 'assessment',
-        severity: 'medium',
-        message: 'Skill assessment improvement needed'
+        type: 'assessme'n't',
+        severity: 'medi'u'm',
+        message: 'Skil'l' assessment improvement needed'
       });
     }
     
@@ -643,7 +643,7 @@ class SkillAssessmentAgent {
 
   async optimizeSkillAssessment() {
     try {
-      console.log('Optimizing skill assessment...');
+      console.log('Optimizin'g' skill assessment...');
       
       const optimizationReport = {
         timestamp: new Date().toISOString(),
@@ -660,7 +660,7 @@ class SkillAssessmentAgent {
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
           type: optimization.type,
-          status: 'completed',
+          status: 'complet'e'd',
           improvement: Math.random() * 0.95,
           description: `Applied ${optimization.suggestion}`
         });
@@ -668,17 +668,17 @@ class SkillAssessmentAgent {
       
       // Save optimization report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'optimization-reports', `optimization-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'optimization-repor't's', `optimization-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
-      console.error('Skill assessment optimization failed:', error);
+      console.error('Skil'l' assessment optimization failed:', error);
     }
   }
 
   async runSkillAnalysis() {
     try {
-      console.log('Running comprehensive skill analysis...');
+      console.log('Runnin'g' comprehensive skill analysis...');
       
       const skillAnalysisReport = {
         timestamp: new Date().toISOString(),
@@ -702,25 +702,25 @@ class SkillAssessmentAgent {
       
       // Save skill analysis report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'analytics-reports', `skill-analysis-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'analytics-repor't's', `skill-analysis-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(skillAnalysisReport, null, 2));
       
     } catch (error) {
-      console.error('Skill analysis failed:', error);
+      console.error('Skil'l' analysis failed:', error);
     }
   }
 
   async runAssessmentAnalysis() {
     try {
-      const { stdout } = await execAsync('npm run analyze:skill-assessments');
+      const { stdout } = await execAsync('np'm' run analyze:skill-assessments');
       return {
-        status: 'completed',
+        status: 'complet'e'd',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -729,15 +729,15 @@ class SkillAssessmentAgent {
 
   async runCompetencyAnalysis() {
     try {
-      const { stdout } = await execAsync('npm run analyze:competencies');
+      const { stdout } = await execAsync('np'm' run analyze:competencies');
       return {
-        status: 'completed',
+        status: 'complet'e'd',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -746,15 +746,15 @@ class SkillAssessmentAgent {
 
   async runGapAnalysis() {
     try {
-      const { stdout } = await execAsync('npm run analyze:skill-gaps');
+      const { stdout } = await execAsync('np'm' run analyze:skill-gaps');
       return {
-        status: 'completed',
+        status: 'complet'e'd',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -763,15 +763,15 @@ class SkillAssessmentAgent {
 
   async runAnalyticsAnalysis() {
     try {
-      const { stdout } = await execAsync('npm run analyze:skill-analytics');
+      const { stdout } = await execAsync('np'm' run analyze:skill-analytics');
       return {
-        status: 'completed',
+        status: 'complet'e'd',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -789,7 +789,7 @@ class SkillAssessmentAgent {
     // Count results
     for (const [type, result] of Object.entries(analysis)) {
       summary.total++;
-      if (result.status === 'completed') {
+      if (result.status === 'complet'e'd') {
         summary.completed++;
       } else {
         summary.failed++;
@@ -806,10 +806,10 @@ class SkillAssessmentAgent {
     const recommendations = [];
     
     for (const [type, result] of Object.entries(analysis)) {
-      if (result.status === 'failed') {
+      if (result.status === 'fail'e'd') {
         recommendations.push({
           type: type,
-          priority: 'medium',
+          priority: 'medi'u'm',
           message: `${type} skill analysis failed`,
           suggestion: `Fix ${type} skill analysis issues`
         });
@@ -821,7 +821,7 @@ class SkillAssessmentAgent {
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'assessment-reports', `analysis-${timestamp}.json`);
+    const reportPath = path.join(this.reportsDir, 'assessment-repor't's', `analysis-${timestamp}.json`);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     console.log(`Analysis report saved: ${reportPath}`);
   }
@@ -835,15 +835,15 @@ class SkillAssessmentAgent {
 // Start the agent
 const agent = new SkillAssessmentAgent();
 
-process.on('SIGTERM', () => {
+process.on('SIGTE'R'M', () => {
   agent.stop();
 });
 
-process.on('SIGINT', () => {
+process.on('SIGI'N'T', () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('Skill Assessment Agent failed to start:', error);
+  console.error('Skil'l' Assessment Agent failed to start:', error);
   process.exit(1);
 }); 

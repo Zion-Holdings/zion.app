@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class AgentMonitor {
     constructor() {
-        this.logDir = path.join(__dirname, 'logs');
+        this.logDir = path.join(__dirname, 'lo'g's');
         this.agents = [
-            'master-orchestrator',
-            'content-generator', 
-            'website-analyzer',
-            'market-research',
-            'sales-agent',
-            'solution-creator'
+            'master-orchestrat'o'r',
+            'content-generat'o'r', 
+            'website-analyz'e'r',
+            'market-resear'c'h',
+            'sales-age'n't',
+            'solution-creat'o'r'
         ];
     }
 
@@ -46,7 +46,7 @@ class AgentMonitor {
         // Check status every 30 seconds
         setInterval(() => {
             this.checkAgentStatus();
-            console.log('---');
+            console.log('-'-'-');
         }, 30000);
         
         // Initial check

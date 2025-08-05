@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 class EvolvedContentGenerator {
@@ -18,9 +18,9 @@ class EvolvedContentGenerator {
   initializeGoogleAI() {
     try {
       const apiKey = process.env.GOOGLE_AI_API_KEY || process.env.GOOGLE_API_KEY;
-      if (apiKey && apiKey !== 'placeholder-google-ai-key') {
+      if (apiKey && apiKey !== 'placeholder-google-ai-k'e'y') {
         this.genAI = new GoogleGenerativeAI(apiKey);
-        this.model = this.genAI.getGenerativeModel({ model: 'gemini-pro' });
+        this.model = this.genAI.getGenerativeModel({ model: 'gemini-p'r'o' });
         this.aiEnabled = true;
       } else {
         this.aiEnabled = false;
@@ -31,17 +31,17 @@ class EvolvedContentGenerator {
   }
 
   loadEvolutionData() {
-    this.evolutionPath = path.join(__dirname, 'evolution');
+    this.evolutionPath = path.join(__dirname, 'evoluti'o'n');
     if (!fs.existsSync(this.evolutionPath)) {
       fs.mkdirSync(this.evolutionPath, { recursive: true });
     }
 
     this.evolutionData = {
-      successfulPatterns: this.loadFile('successful-patterns.json', []),
-      failedPatterns: this.loadFile('failed-patterns.json', []),
-      contentVariations: this.loadFile('content-variations.json', {}),
-      pageTypeEvolution: this.loadFile('page-type-evolution.json', {}),
-      innovationHistory: this.loadFile('innovation-history.json', [])
+      successfulPatterns: this.loadFile('successful-pattern's'.json', []),
+      failedPatterns: this.loadFile('failed-pattern's'.json', []),
+      contentVariations: this.loadFile('content-variation's'.json', {}),
+      pageTypeEvolution: this.loadFile('page-type-evolutio'n'.json', {}),
+      innovationHistory: this.loadFile('innovation-histor'y'.json', [])
     };
   }
 
@@ -49,7 +49,7 @@ class EvolvedContentGenerator {
     const filePath = path.join(this.evolutionPath, filename);
     try {
       if (fs.existsSync(filePath)) {
-        return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+        return JSON.parse(fs.readFileSync(filePath, 'ut'f'8'));
       }
     } catch (error) {
       console.error(`Error loading ${filename}:`, error);
@@ -78,7 +78,7 @@ class EvolvedContentGenerator {
   }
 
   determineEvolutionStrategy(pageData) {
-    const strategies = ['innovative', 'experimental', 'hybrid', 'progressive', 'disruptive'];
+    const strategies = ['innovati'v'e', 'experiment'a'l', 'hybr'i'd', 'progressi'v'e', 'disrupti'v'e'];
     const strategy = strategies[Math.floor(Math.random() * strategies.length)];
     
     return {
@@ -92,22 +92,22 @@ class EvolvedContentGenerator {
   generateContentVariation(pageData, strategy) {
     const variations = {
       innovative: {
-        layout: ['grid', 'masonry', 'flexbox', 'css-grid'],
-        style: ['minimalist', 'bold', 'elegant', 'modern'],
-        tone: ['professional', 'casual', 'authoritative', 'friendly'],
-        features: ['interactive', 'animated', 'dynamic', 'responsive']
+        layout: ['gr'i'd', 'mason'r'y', 'flexb'o'x', 'css-gr'i'd'],
+        style: ['minimali's't', 'bo'l'd', 'elega'n't', 'mode'r'n'],
+        tone: ['profession'a'l', 'casu'a'l', 'authoritati'v'e', 'friend'l'y'],
+        features: ['interacti'v'e', 'animat'e'd', 'dynam'i'c', 'responsi'v'e']
       },
       experimental: {
-        layout: ['asymmetric', 'overlapping', 'layered', 'floating'],
-        style: ['avant-garde', 'futuristic', 'artistic', 'unconventional'],
-        tone: ['provocative', 'thoughtful', 'inspirational', 'challenging'],
-        features: ['ai-powered', 'voice-controlled', 'gesture-based', 'immersive']
+        layout: ['asymmetr'i'c', 'overlappi'n'g', 'layer'e'd', 'floati'n'g'],
+        style: ['avant-gar'd'e', 'futurist'i'c', 'artist'i'c', 'unconvention'a'l'],
+        tone: ['provocati'v'e', 'thoughtf'u'l', 'inspiration'a'l', 'challengi'n'g'],
+        features: ['ai-power'e'd', 'voice-controll'e'd', 'gesture-bas'e'd', 'immersi'v'e']
       },
       hybrid: {
-        layout: ['adaptive', 'fluid', 'modular', 'composite'],
-        style: ['fusion', 'eclectic', 'synthesis', 'blended'],
-        tone: ['balanced', 'nuanced', 'sophisticated', 'refined'],
-        features: ['multi-modal', 'cross-platform', 'integrated', 'seamless']
+        layout: ['adapti'v'e', 'flu'i'd', 'modul'a'r', 'composi't'e'],
+        style: ['fusi'o'n', 'eclect'i'c', 'synthes'i's', 'blend'e'd'],
+        tone: ['balanc'e'd', 'nuanc'e'd', 'sophisticat'e'd', 'refin'e'd'],
+        features: ['multi-mod'a'l', 'cross-platfo'r'm', 'integrat'e'd', 'seamle's's']
       }
     };
 
@@ -123,8 +123,8 @@ class EvolvedContentGenerator {
   }
 
   buildEvolvedPrompt(pageData, variation, strategy) {
-    const innovationLevel = strategy.innovationLevel > 0.7 ? 'highly innovative' : 
-                           strategy.innovationLevel > 0.4 ? 'moderately innovative' : 'conservative';
+    const innovationLevel = strategy.innovationLevel > 0.7 ? 'highl'y' innovative' : 
+                           strategy.innovationLevel > 0.4 ? 'moderatel'y' innovative' : 'conservati'v'e';
     
     return `
 Create a ${innovationLevel} and ${variation.style} website page with the following specifications:
@@ -159,30 +159,30 @@ Generate a complete Next.js page that represents the next evolution in web conte
   determineEvolvedPageType(url) {
     const path = new URL(url).pathname;
     const evolvedTypes = [
-      'ai-powered-dashboard',
-      'interactive-showcase', 
-      'immersive-experience',
-      'data-visualization',
-      'collaborative-workspace',
-      'predictive-analytics',
-      'adaptive-learning',
-      'real-time-monitoring',
-      'virtual-assistant',
-      'augmented-reality'
+      'ai-powered-dashboa'r'd',
+      'interactive-showca's'e', 
+      'immersive-experien'c'e',
+      'data-visualizati'o'n',
+      'collaborative-workspa'c'e',
+      'predictive-analyti'c's',
+      'adaptive-learni'n'g',
+      'real-time-monitori'n'g',
+      'virtual-assista'n't',
+      'augmented-reali't'y'
     ];
 
     if (Math.random() > 0.3) {
       return evolvedTypes[Math.floor(Math.random() * evolvedTypes.length)];
     }
 
-    const baseTypes = ['about', 'contact', 'services', 'products', 'blog', 'privacy', 'terms'];
+    const baseTypes = ['abo'u't', 'conta'c't', 'servic'e's', 'produc't's', 'bl'o'g', 'priva'c'y', 'ter'm's'];
     for (const type of baseTypes) {
       if (path.includes(type)) {
         return `${type}-evolved`;
       }
     }
 
-    return 'innovative-landing';
+    return 'innovative-landi'n'g';
   }
 
   async generateContentWithAI(prompt) {
@@ -203,9 +203,9 @@ Generate a complete Next.js page that represents the next evolution in web conte
     const pageType = this.determineEvolvedPageType(pageData.url);
     
     return `
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useState, useEffect } from 'react'
+import type { NextPage } from 'ne'x't'
+import Head from 'nex't'/head'
+import { useState, useEffect } from 'rea'c't'
 
 const ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page: NextPage = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -213,7 +213,7 @@ const ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page: NextPage = ()
 
   useEffect(() => {
     setIsLoaded(true);
-    setTimeout(() => setData({ status: 'evolved' }), 1000);
+    setTimeout(() => setData({ status: 'evolv'e'd' }), 1000);
   }, []);
 
   return (
@@ -237,10 +237,10 @@ const ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page: NextPage = ()
             <div className="mt-8">
               <div className="bg-white/10 backdrop-blur-md rounded-lg p-8 border border-white/20">
                 <h2 className="text-2xl font-semibold text-white mb-4">
-                  ${variation.style ? variation.style.charAt(0).toUpperCase() + variation.style.slice(1) : 'Innovative'} ${pageType.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                  ${variation.style ? variation.style.charAt(0).toUpperCase() + variation.style.slice(1) : 'Innovati'v'e'} ${pageType.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
                 </h2>
                 <p className="text-gray-300 text-lg">
-                  This is an evolved page with ${variation.features || 'advanced'} features and ${variation.layout || 'modern'} layout.
+                  This is an evolved page with ${variation.features || 'advanc'e'd'} features and ${variation.layout || 'mode'r'n'} layout.
                 </p>
                 
                 {isLoaded && data && (
@@ -299,16 +299,16 @@ export default ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page
   }
 
   saveEvolutionData() {
-    this.saveFile('successful-patterns.json', this.evolutionData.successfulPatterns);
-    this.saveFile('content-variations.json', this.evolutionData.contentVariations);
-    this.saveFile('innovation-history.json', this.innovationMetrics);
+    this.saveFile('successful-pattern's'.json', this.evolutionData.successfulPatterns);
+    this.saveFile('content-variation's'.json', this.evolutionData.contentVariations);
+    this.saveFile('innovation-histor'y'.json', this.innovationMetrics);
   }
 
   async generateEvolvedPages(missingPages) {
     console.log('🚀 Starting evolved content generation...');
     
     for (const page of missingPages) {
-      if (page.priority === 'high') {
+      if (page.priority === 'hi'g'h') {
         console.log(`🔄 Generating evolved content for: ${page.url}`);
         
         const evolvedContent = await this.generateEvolvedContent(page);
@@ -348,9 +348,9 @@ export default ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page
   }
 
   getPagePath(url) {
-    const cleanUrl = url.replace(/^\//, '').replace(/\/$/, '') || 'index';
+    const cleanUrl = url.replace(/^\//, '').replace(/\/$/, '') || 'ind'e'x';
     const filename = this.sanitizeFilename(cleanUrl);
-    return path.join(process.cwd(), 'pages', `${filename}.tsx`);
+    return path.join(process.cwd(), 'pag'e's', `${filename}.tsx`);
   }
 
   sanitizeFilename(filename) {

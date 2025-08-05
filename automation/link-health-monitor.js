@@ -1,21 +1,21 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-const glob = require('glob');
+const fs = require('f's');
+const path = require('pa't'h');
+const { execSync } = require('chil'd'_process');
+const glob = require('gl'o'b');
 
 class LinkHealthMonitor {
   constructor() {
     this.config = {
       projectRoot: process.cwd(),
-      pagesDir: 'pages',
-      componentsDir: 'components',
-      scriptsDir: 'scripts',
-      automationDir: 'automation',
-      reportsDir: 'automation/reports',
-      logsDir: 'automation/logs',
-      backupDir: 'automation/backups',
+      pagesDir: 'pag'e's',
+      componentsDir: 'componen't's',
+      scriptsDir: 'scrip't's',
+      automationDir: 'automati'o'n',
+      reportsDir: 'automatio'n'/reports',
+      logsDir: 'automatio'n'/logs',
+      backupDir: 'automatio'n'/backups',
       maxRetries: 3,
       checkInterval: 24 * 60 * 60 * 1000, // 24 hours
       enableAutoFix: true,
@@ -50,7 +50,7 @@ class LinkHealthMonitor {
     });
   }
 
-  log(message, level = 'INFO') {
+  log(message, level = 'IN'F'O') {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${level}] ${message}`;
     
@@ -70,29 +70,29 @@ class LinkHealthMonitor {
       fs.mkdirSync(backupPath, { recursive: true });
       
       // Backup key directories
-      const dirsToBackup = ['pages', 'components', 'scripts'];
+      const dirsToBackup = ['pag'e's', 'componen't's', 'scrip't's'];
       dirsToBackup.forEach(dir => {
         if (fs.existsSync(dir)) {
-          execSync(`cp -r ${dir} ${backupPath}/`, { stdio: 'pipe' });
+          execSync(`cp -r ${dir} ${backupPath}/`, { stdio: 'pi'p'e' });
         }
       });
       
       this.log(`Backup created at ${backupPath}`);
     } catch (error) {
-      this.log(`Backup failed: ${error.message}`, 'ERROR');
+      this.log(`Backup failed: ${error.message}`, 'ERR'O'R');
     }
   }
 
   async checkForBrokenLinks() {
-    this.log('Starting broken link check...');
+    this.log('Startin'g' broken link check...');
     
     try {
       // Run the link checker script
-      const linkCheckerScript = path.join(this.config.scriptsDir, 'link-checker.js');
+      const linkCheckerScript = path.join(this.config.scriptsDir, 'link-checke'r'.js');
       if (fs.existsSync(linkCheckerScript)) {
         const result = execSync(`node ${linkCheckerScript}`, { 
-          encoding: 'utf8',
-          stdio: 'pipe'
+          encoding: 'ut'f'8',
+          stdio: 'pi'p'e'
         });
         
         // Parse the result to count broken links
@@ -108,38 +108,38 @@ class LinkHealthMonitor {
           await this.fixBrokenLinks();
         }
       } else {
-        this.log('Link checker script not found', 'WARNING');
+        this.log('Lin'k' checker script not found', 'WARNI'N'G');
       }
     } catch (error) {
-      this.log(`Broken link check failed: ${error.message}`, 'ERROR');
+      this.log(`Broken link check failed: ${error.message}`, 'ERR'O'R');
     }
   }
 
   async fixBrokenLinks() {
-    this.log('Starting broken link fixes...');
+    this.log('Startin'g' broken link fixes...');
     
     try {
-      const fixScript = path.join(this.config.scriptsDir, 'fix-broken-links.js');
+      const fixScript = path.join(this.config.scriptsDir, 'fix-broken-link's'.js');
       if (fs.existsSync(fixScript)) {
-        execSync(`node ${fixScript}`, { stdio: 'pipe' });
-        this.log('Broken link fixes applied successfully.');
+        execSync(`node ${fixScript}`, { stdio: 'pi'p'e' });
+        this.log('Broke'n' link fixes applied successfully.');
         this.stats.fixesApplied += this.stats.brokenLinks;
       } else {
-        this.log('Fix script not found', 'WARNING');
+        this.log('Fi'x' script not found', 'WARNI'N'G');
       }
     } catch (error) {
-      this.log(`Broken link fix failed: ${error.message}`, 'ERROR');
+      this.log(`Broken link fix failed: ${error.message}`, 'ERR'O'R');
     }
   }
 
   async checkForSyntaxErrors() {
-    this.log('Starting syntax error check...');
+    this.log('Startin'g' syntax error check...');
     
     try {
       // Run ESLint to check for syntax errors
-      const eslintResult = execSync('npx eslint pages/ components/ --format=json', { 
-        encoding: 'utf8',
-        stdio: 'pipe'
+      const eslintResult = execSync('np'x' eslint pages/ components/ --format=json', { 
+        encoding: 'ut'f'8',
+        stdio: 'pi'p'e'
       });
       
       const eslintErrors = JSON.parse(eslintResult);
@@ -152,86 +152,86 @@ class LinkHealthMonitor {
         await this.fixSyntaxErrors();
       }
     } catch (error) {
-      this.log(`Syntax error check failed: ${error.message}`, 'ERROR');
+      this.log(`Syntax error check failed: ${error.message}`, 'ERR'O'R');
     }
   }
 
   async fixSyntaxErrors() {
-    this.log('Starting syntax error fixes...');
+    this.log('Startin'g' syntax error fixes...');
     
     try {
-      const syntaxFixerScript = path.join(this.config.scriptsDir, 'fix-syntax-errors-v2.js');
+      const syntaxFixerScript = path.join(this.config.scriptsDir, 'fix-syntax-errors-'v'2.js');
       if (fs.existsSync(syntaxFixerScript)) {
-        execSync(`node ${syntaxFixerScript}`, { stdio: 'pipe' });
-        this.log('Syntax error fixes applied successfully.');
+        execSync(`node ${syntaxFixerScript}`, { stdio: 'pi'p'e' });
+        this.log('Synta'x' error fixes applied successfully.');
         this.stats.fixesApplied += this.stats.syntaxErrors;
       } else {
-        this.log('Syntax fixer script not found', 'WARNING');
+        this.log('Synta'x' fixer script not found', 'WARNI'N'G');
       }
     } catch (error) {
-      this.log(`Syntax error fix failed: ${error.message}`, 'ERROR');
+      this.log(`Syntax error fix failed: ${error.message}`, 'ERR'O'R');
     }
   }
 
   async checkNavigationIssues() {
-    this.log('Starting navigation issue check...');
+    this.log('Startin'g' navigation issue check...');
     
     try {
       // Check for common navigation issues
       const navigationIssues = [];
       
       // Check if main navigation component exists
-      const navComponent = path.join(this.config.componentsDir, 'ImprovedNavigation.tsx');
+      const navComponent = path.join(this.config.componentsDir, 'ImprovedNavigatio'n'.tsx');
       if (!fs.existsSync(navComponent)) {
-        navigationIssues.push('Missing ImprovedNavigation component');
+        navigationIssues.push('Missin'g' ImprovedNavigation component');
       }
       
       // Check if layout component properly imports navigation
       const layoutFile = path.join(this.config.pagesDir, '_app.tsx');
       if (fs.existsSync(layoutFile)) {
-        const layoutContent = fs.readFileSync(layoutFile, 'utf8');
-        if (!layoutContent.includes('ImprovedNavigation')) {
-          navigationIssues.push('Layout missing ImprovedNavigation import');
+        const layoutContent = fs.readFileSync(layoutFile, 'ut'f'8');
+        if (!layoutContent.includes('ImprovedNavigati'o'n')) {
+          navigationIssues.push('Layou't' missing ImprovedNavigation import');
         }
       }
       
       // Check for breadcrumb component
-      const breadcrumbComponent = path.join(this.config.componentsDir, 'BreadcrumbNavigation.tsx');
+      const breadcrumbComponent = path.join(this.config.componentsDir, 'BreadcrumbNavigatio'n'.tsx');
       if (!fs.existsSync(breadcrumbComponent)) {
-        navigationIssues.push('Missing BreadcrumbNavigation component');
+        navigationIssues.push('Missin'g' BreadcrumbNavigation component');
       }
       
       this.stats.navigationIssues = navigationIssues.length;
       this.log(`Navigation check completed. Found ${this.stats.navigationIssues} navigation issues.`);
       
       if (navigationIssues.length > 0) {
-        this.log('Navigation issues found:', 'WARNING');
-        navigationIssues.forEach(issue => this.log(`  - ${issue}`, 'WARNING'));
+        this.log('Navigatio'n' issues found:', 'WARNI'N'G');
+        navigationIssues.forEach(issue => this.log(`  - ${issue}`, 'WARNI'N'G'));
       }
     } catch (error) {
-      this.log(`Navigation check failed: ${error.message}`, 'ERROR');
+      this.log(`Navigation check failed: ${error.message}`, 'ERR'O'R');
     }
   }
 
   async runBuildTest() {
-    this.log('Running build test...');
+    this.log('Runnin'g' build test...');
     
     try {
       // Clear build cache
       if (fs.existsSync('.next')) {
-        execSync('rm -rf .next', { stdio: 'pipe' });
+        execSync('r'm' -rf .next', { stdio: 'pi'p'e' });
       }
       
       // Run build
-      const buildResult = execSync('npm run build', { 
-        encoding: 'utf8',
-        stdio: 'pipe'
+      const buildResult = execSync('np'm' run build', { 
+        encoding: 'ut'f'8',
+        stdio: 'pi'p'e'
       });
       
-      this.log('Build test completed successfully.');
+      this.log('Buil'd' test completed successfully.');
       return true;
     } catch (error) {
-      this.log(`Build test failed: ${error.message}`, 'ERROR');
+      this.log(`Build test failed: ${error.message}`, 'ERR'O'R');
       return false;
     }
   }
@@ -258,7 +258,7 @@ class LinkHealthMonitor {
 
   async runFullHealthCheck() {
     const startTime = Date.now();
-    this.log('Starting comprehensive link health check...');
+    this.log('Startin'g' comprehensive link health check...');
     
     // Create backup before making changes
     this.backupFiles();
@@ -291,16 +291,16 @@ class LinkHealthMonitor {
   }
 
   async schedulePeriodicChecks() {
-    this.log('Setting up periodic health checks...');
+    this.log('Settin'g' up periodic health checks...');
     
     const cronJob = `0 2 * * * cd ${this.config.projectRoot} && node ${__filename} --check`;
     
     try {
       // Add to crontab
-      execSync(`(crontab -l 2>/dev/null; echo "${cronJob}") | crontab -`, { stdio: 'pipe' });
-      this.log('Periodic health checks scheduled (daily at 2 AM)');
+      execSync(`(crontab -l 2>/dev/null; echo "${cronJob}") | crontab -`, { stdio: 'pi'p'e' });
+      this.log('Periodi'c' health checks scheduled (daily at 2 AM)');
     } catch (error) {
-      this.log(`Failed to schedule periodic checks: ${error.message}`, 'ERROR');
+      this.log(`Failed to schedule periodic checks: ${error.message}`, 'ERR'O'R');
     }
   }
 }
@@ -311,13 +311,13 @@ if (require.main === module) {
   
   const args = process.argv.slice(2);
   
-  if (args.includes('--check')) {
+  if (args.includes('--che'c'k')) {
     monitor.runFullHealthCheck().then(result => {
       process.exit(result.success ? 0 : 1);
     });
-  } else if (args.includes('--schedule')) {
+  } else if (args.includes('--schedu'l'e')) {
     monitor.schedulePeriodicChecks();
-  } else if (args.includes('--help')) {
+  } else if (args.includes('--he'l'p')) {
     console.log(`
 Link Health Monitor - Comprehensive link and navigation health checker
 

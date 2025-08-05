@@ -5,7 +5,7 @@ const ContentGeneratorAgent = require('./content-generator-agent');
 async function main() {
   console.log('📝 Content Generator Runner');
   console.log('=' .repeat(50));
-  console.log('Starting content generation process...');
+  console.log('Startin'g' content generation process...');
   console.log('');
   
   try {
@@ -16,11 +16,11 @@ async function main() {
     console.log('🎉 Content generation completed successfully!');
     console.log('');
     console.log('📁 Generated content:');
-    console.log('- Service descriptions');
-    console.log('- Talent profiles');
-    console.log('- Blog posts');
-    console.log('- Testimonials');
-    console.log('- FAQs');
+    console.log('-' Service descriptions');
+    console.log('-' Talent profiles');
+    console.log('-' Blog posts');
+    console.log('-' Testimonials');
+    console.log('-' FAQs');
     console.log('');
     console.log('📊 Summary:');
     console.log(`- Total generated: ${results.summary.totalGenerated}`);

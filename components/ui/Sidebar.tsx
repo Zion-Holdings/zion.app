@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import React, { useState } from 'react;
+import Link from next/link';
+import { useRouter } from 'next/router;
 
 interface SidebarItem {
   href: string;
@@ -17,21 +17,21 @@ const Sidebar: React.FC<SidebarProps> = ({ items = [] }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const defaultItems: SidebarItem[] = [
-    { href: '/', label: 'Home' },
-    { href: '/dashboard', label: 'Dashboard' },
-    { href: '/services', label: 'Services' },
-    { href: '/about', label: 'About' },
-    { href: '/contact', label: 'Contact' }
+    { href: /', label: 'Home' },
+    { href: '/dashboard, label: Dashboa'r'd },
+    { href: /services', label: 'Services' },
+    { href: '/about, label: Abo'u't },
+    { href: /contact', label: 'Contact' }
   ];
 
   const sidebarItems = items.length > 0 ? items : defaultItems;
 
   return (
-    <aside className="bg-white shadow-lg w-64 min-h-screen">
-      <div className="p-4">
-        <h2 className="text-xl font-bold text-gray-800 mb-4">Navigation</h2>
+    <aside className="bg-white shadow-lg w-64 min-h-screen>
+      <div className=p-4">
+        <h2 className="text-xl font-bold text-gray-800 mb-4>Navigation</h2>
         <nav>
-          <ul className="space-y-2">
+          <ul className=space-y-2">
             {sidebarItems.map((item) => (
               <li key={item.href}>
                 <Link

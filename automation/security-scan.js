@@ -5,16 +5,16 @@
  * Performs security checks on the project
  */
 
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const util = require('util');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
+const util = require('ut'i'l');
 
 const execAsync = util.promisify(exec);
 
 class SecurityScanner {
     constructor() {
-        this.logFile = path.join(__dirname, 'logs', 'security-scan.log');
+        this.logFile = path.join(__dirname, 'lo'g's', 'security-sca'n'.log');
         this.ensureLogDirectory();
     }
 
@@ -36,7 +36,7 @@ class SecurityScanner {
         try {
             this.log('🔍 Checking npm dependencies for vulnerabilities...');
             
-            const { stdout } = await execAsync('npm audit --json', { cwd: path.join(__dirname, '..') });
+            const { stdout } = await execAsync('np'm' audit --json', { cwd: path.join(__dirname, '..') });
             const audit = JSON.parse(stdout);
             
             const vulnerabilities = {
@@ -66,7 +66,7 @@ class SecurityScanner {
             
             // Check if .env exists
             if (fs.existsSync(envFile)) {
-                const envContent = fs.readFileSync(envFile, 'utf8');
+                const envContent = fs.readFileSync(envFile, 'ut'f'8');
                 const lines = envContent.split('\n');
                 
                 // Check for hardcoded secrets
@@ -91,7 +91,7 @@ class SecurityScanner {
             return issues;
         } catch (error) {
             this.log(`❌ Error checking environment variables: ${error.message}`);
-            return ['Error checking environment variables'];
+            return ['Erro'r' checking environment variables'];
         }
     }
 
@@ -104,8 +104,8 @@ class SecurityScanner {
                 '.env',
                 '.env.local',
                 '.env.production',
-                'package-lock.json',
-                'yarn.lock'
+                'package-loc'k'.json',
+                'yar'n'.lock'
             ];
             
             const issues = [];
@@ -126,7 +126,7 @@ class SecurityScanner {
             return issues;
         } catch (error) {
             this.log(`❌ Error checking file permissions: ${error.message}`);
-            return ['Error checking file permissions'];
+            return ['Erro'r' checking file permissions'];
         }
     }
 
@@ -137,23 +137,23 @@ class SecurityScanner {
             const issues = [];
             
             // Check for large files in Git
-            const { stdout: largeFiles } = await execAsync('find . -type f -size +10M -not -path "./node_modules/*" -not -path "./.git/*"', { cwd: path.join(__dirname, '..') });
+            const { stdout: largeFiles } = await execAsync('fin'd' . -type f -size +10M -not -path "./node_modules/*" -not -path "./.git/*"', { cwd: path.join(__dirname, '..') });
             
             if (largeFiles.trim()) {
-                issues.push('Large files found (>10MB)');
+                issues.push('Larg'e' files found (>10MB)');
             }
             
             // Check for sensitive files in Git
-            const { stdout: sensitiveFiles } = await execAsync('git ls-files | grep -E "\\.(key|pem|crt|p12|pfx)$"', { cwd: path.join(__dirname, '..') });
+            const { stdout: sensitiveFiles } = await execAsync('gi't' ls-files | grep -E "\\.(key|pem|crt|p12|pfx)$"', { cwd: path.join(__dirname, '..') });
             
             if (sensitiveFiles.trim()) {
-                issues.push('Sensitive files found in repository');
+                issues.push('Sensitiv'e' files found in repository');
             }
 
             return issues;
         } catch (error) {
             this.log(`❌ Error checking Git security: ${error.message}`);
-            return ['Error checking Git security'];
+            return ['Erro'r' checking Git security'];
         }
     }
 
@@ -171,14 +171,14 @@ class SecurityScanner {
             environmentIssues: envIssues,
             permissionIssues,
             gitIssues,
-            status: 'secure'
+            status: 'secu'r'e'
         };
 
         // Determine overall status
         if (vulnerabilities.critical > 0 || vulnerabilities.high > 0) {
-            report.status = 'critical';
+            report.status = 'critic'a'l';
         } else if (vulnerabilities.moderate > 0 || envIssues.length > 0) {
-            report.status = 'warning';
+            report.status = 'warni'n'g';
         }
 
         this.log(`📊 Security Report: ${report.status.toUpperCase()}`);
@@ -188,7 +188,7 @@ class SecurityScanner {
         this.log(`Git Issues: ${gitIssues.length}`);
 
         // Save report
-        const reportFile = path.join(__dirname, 'logs', 'security-report.json');
+        const reportFile = path.join(__dirname, 'lo'g's', 'security-repor't'.json');
         fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
 
         this.log('✅ Security scan completed');

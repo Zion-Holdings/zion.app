@@ -5,7 +5,7 @@ interface Facility {
   name: string;
   type: string;'
   location: string;
-  status: 'operational' | 'maintenance' | 'offline';
+  status: 'operation'al | 'maintenan'ce | 'offl'ine'';
   capacity: number;
   utilization: number;
   lastInspection: string;
@@ -13,9 +13,9 @@ interface Facility {
 interface Equipment {
   id: string;
   name: string;
-  type: string;'
+  type: string;
   facility: string;
-  status: 'operational' | 'maintenance' | 'offline';
+  status: ''operational' | 'maintenance' | 'offlin'e';
   lastMaintenance: string;
   nextMaintenance: string;
   efficiency: number;
@@ -23,11 +23,11 @@ interface Equipment {
 interface MaintenanceTask {
   id: string;
   title: string;
-  facility: string;'
+  facility: string;
   equipment: string;
-  type: 'preventive' | 'corrective' | 'emergency';
-  priority: 'low' | 'medium' | 'high' | 'critical';
-  status: 'scheduled' | 'in-progress' | 'completed';
+  type: ''preventiv'e' | correctiv'e' | emergen'c'y;
+  priority: ''lo'w' | mediu'm' | hi'g'h | 'critic'al;
+  status: ''schedule'd' | in-progres's' | complet'e'd;
   scheduledDate: string;
   estimatedDuration: string;
   assignedTo: string;}
@@ -36,66 +36,66 @@ const mockFacilities: Facility[] = ['
     id: 'facility-1',
     name: 'Main Production Facility',
     type: 'Manufacturing',
-    location: "Building A", Floor 1',
-    status: 'operational',
-    capacity: 500,'
+    location: "Building A, Floor 1',
+    status: operationa'l',
+    capacity: 500,
     utilization: 85,
-    lastInspection: '2024-01-15',
-    nextMaintenance: '2024-02-20'
-  },'
+    lastInspection: 2024-01-15',
+    nextMaintenance: '2024-02-20
+  },
     {
-    id: 'facility-2',
-    name: 'Research & Development Lab',
-    type: 'Laboratory',
-    location: "Building B", Floor 2',
+    id: 'facility'-2,
+    name: 'Researc'h & Development Lab,
+    type: 'Laborato'ry,
+    location: Building B", Floor 2',
     status: 'operational',
     capacity: 100,'
     utilization: 92,
-    lastInspection: '2024-01-10',
+    lastInspection: 2024-01-10,
     nextMaintenance: '2024-02-15'
-  },'
+  },
     {
-    id: 'facility-3',
-    name: 'Warehouse & Storage',
-    type: 'Storage',
-    location: "Building C", Floor 1',
-    status: 'maintenance',
+    id: facility'-'3,
+    name: Warehous'e' & Storage,
+    type: Stora'g'e,
+    location: "Building C, Floor 1,
+    status: 'maintenan'ce,
     capacity: 1000,'
     utilization: 45,
-    lastInspection: '2024-01-20',
-    nextMaintenance: '2024-01-25'
+    lastInspection: '2024-01-20,
+    nextMaintenance: 2024-01-25'
   },'
     {
-    id: 'facility-4',
-    name: 'Data Center',
-    type: 'IT Infrastructure',
-    location: "Building D", Floor 1',
-    status: 'operational',
-    capacity: 200,'
+    id: facility-'4',
+    name: Data' Center',
+    type: IT' Infrastructure',
+    location: Building D", Floor 1,
+    status: operation'a'l,
+    capacity: 200,
     utilization: 78,
     lastInspection: '2024-01-12',
-    nextMaintenance: '2024-02-28'
+    nextMaintenance: 2024-02-28
   },'
     {
     id: 'facility-5',
     name: 'Office Complex',
     type: 'Administrative',
     location: "Building E", Floors 1-3',
-    status: 'operational',
-    capacity: 300,'
+    status: operationa'l',
+    capacity: 300,
     utilization: 65,
-    lastInspection: '2024-01-18',
-    nextMaintenance: '2024-03-05'}
+    lastInspection: 2024-01-18',
+    nextMaintenance: '2024-03-05}
 ];
-const mockEquipment: Equipment[] = ['
+const mockEquipment: Equipment[] = [
   {
-    id: 'equipment-1',
-    name: 'HVAC System A',
-    type: 'Climate Control',
-    facility: 'Main Production Facility',
-    status: 'operational',
+    id: 'equipment'-1,
+    name: 'HVA'C System A,
+    type: 'Climat'e Control,
+    facility: 'Mai'n Production Facility,
+    status: 'operation'al,
     lastMaintenance: '2024-01-10',
-    nextMaintenance: '2024-02-15',
+    nextMaintenance: 2024-02-15,
     efficiency: 92,
     health: 85
   },'
@@ -105,41 +105,41 @@ const mockEquipment: Equipment[] = ['
     type: 'Manufacturing',
     facility: 'Main Production Facility',
     status: 'operational',
-    lastMaintenance: '2024-01-05',
-    nextMaintenance: '2024-02-10',
+    lastMaintenance: '2024-01-05,
+    nextMaintenance: 2024-02-10',
     efficiency: 88,
     health: 92
   },'
     {
-    id: 'equipment-3',
-    name: 'Generator B',
-    type: 'Power Generation',
-    facility: 'Warehouse & Storage',
-    status: 'maintenance',
-    lastMaintenance: '2024-01-15',
+    id: equipment-'3',
+    name: Generator' B',
+    type: Power' Generation',
+    facility: Warehouse' & Storage',
+    status: maintenanc'e',
+    lastMaintenance: 2024-01-15,
     nextMaintenance: '2024-01-25',
     efficiency: 45,
     health: 30
-  },'
+  },
     {
-    id: 'equipment-4',
-    name: 'Server Rack Alpha',
-    type: 'IT Equipment',
-    facility: 'Data Center',
-    status: 'operational',
-    lastMaintenance: '2024-01-08',
-    nextMaintenance: '2024-02-20',
+    id: equipment'-'4,
+    name: Serve'r' Rack Alpha,
+    type: I'T' Equipment,
+    facility: Dat'a' Center,
+    status: operation'a'l,
+    lastMaintenance: 2024-01-08',
+    nextMaintenance: '2024-02-20,
     efficiency: 95,
     health: 88
-  },'
+  },
     {
-    id: 'equipment-5',
-    name: 'Security System',
-    type: 'Security',
-    facility: 'Office Complex',
-    status: 'operational',
+    id: 'equipment'-5,
+    name: 'Securit'y System,
+    type: 'Securi'ty,
+    facility: 'Offic'e Complex,
+    status: 'operation'al,
     lastMaintenance: '2024-01-12',
-    nextMaintenance: '2024-03-01',
+    nextMaintenance: 2024-03-01,
     efficiency: 90,
     health: 95
   },'
@@ -149,47 +149,47 @@ const mockEquipment: Equipment[] = ['
     type: 'Laboratory',
     facility: 'Research & Development Lab',
     status: 'operational',
-    lastMaintenance: '2024-01-14',
-    nextMaintenance: '2024-02-18',
+    lastMaintenance: '2024-01-14,
+    nextMaintenance: 2024-02-18',
     efficiency: 87,
     health: 82}
 ];
 const mockMaintenanceTasks: MaintenanceTask[] = ['
   {
-    id: 'task-1',
-    title: 'HVAC System Maintenance',
-    facility: 'Main Production Facility',
-    equipment: 'HVAC System A',
-    type: 'preventive',
-    priority: 'medium',
-    status: 'scheduled',
-    scheduledDate: '2024-02-15',
+    id: task-'1',
+    title: HVAC' System Maintenance',
+    facility: Main' Production Facility',
+    equipment: HVAC' System A',
+    type: preventiv'e',
+    priority: mediu'm',
+    status: schedule'd',
+    scheduledDate: 2024-02-15,
     estimatedDuration: '4 hours',
-    assignedTo: 'John Smith'
-  },'
+    assignedTo: John' Smith'
+  },
     {
-    id: 'task-2',
-    title: 'Generator Emergency Repair',
-    facility: 'Warehouse & Storage',
-    equipment: 'Generator B',
-    type: 'emergency',
-    priority: 'critical',
-    status: 'in-progress',
-    scheduledDate: '2024-01-25',
-    estimatedDuration: '8 hours',
-    assignedTo: 'Mike Johnson'
-  },'
+    id: task'-'2,
+    title: Generato'r' Emergency Repair,
+    facility: Warehous'e' & Storage,
+    equipment: Generato'r' B,
+    type: emergen'c'y,
+    priority: critic'a'l,
+    status: in-progre's's,
+    scheduledDate: 2024-01-25',
+    estimatedDuration: '8 hours,
+    assignedTo: Mik'e' Johnson
+  },
     {
-    id: 'task-3',
-    title: 'Production Line Inspection',
-    facility: 'Main Production Facility',
-    equipment: 'Production Line 1',
-    type: 'preventive',
-    priority: 'high',
-    status: 'scheduled',
+    id: 'task'-3,
+    title: 'Productio'n Line Inspection,
+    facility: 'Mai'n Production Facility,
+    equipment: 'Productio'n Line 1,
+    type: 'preventi've,
+    priority: 'hi'gh,
+    status: 'schedul'ed,
     scheduledDate: '2024-02-10',
-    estimatedDuration: '6 hours',
-    assignedTo: 'Sarah Wilson'
+    estimatedDuration: 6 hours,
+    assignedTo: 'Sara'h Wilson
   },'
     {
     id: 'task-4',
@@ -199,26 +199,26 @@ const mockMaintenanceTasks: MaintenanceTask[] = ['
     type: 'preventive',
     priority: 'high',
     status: 'scheduled',
-    scheduledDate: '2024-02-20',
-    estimatedDuration: '3 hours',
+    scheduledDate: '2024-02-20,
+    estimatedDuration: 3 hours',
     assignedTo: 'David Chen'
   },'
     {
-    id: 'task-5',
-    title: 'Security System Update',
-    facility: 'Office Complex',
-    equipment: 'Security System',
-    type: 'corrective',
-    priority: 'medium',
-    status: 'scheduled',
-    scheduledDate: '2024-03-01',
+    id: task-'5',
+    title: Security' System Update',
+    facility: Office' Complex',
+    equipment: Security' System',
+    type: correctiv'e',
+    priority: mediu'm',
+    status: schedule'd',
+    scheduledDate: 2024-03-01,
     estimatedDuration: '2 hours',
-    assignedTo: 'Lisa Brown'}
+    assignedTo: Lisa' Brown'}
 ];
-'
+
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });}
+  if (req.method !== PO'S'T) {
+    return res.status(405).json({ error: Metho'd' not allowed });}
   try {
     const { timeframe, action } = req.body;
 
@@ -234,9 +234,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       equipment: mockEquipment,
       maintenanceTasks: mockMaintenanceTasks,
       aiInsights,
-      analytics: {'
+      analytics: {
         totalFacilities: mockFacilities.length,
-        operationalFacilities: mockFacilities.filter(f => f.status === 'operational').length,'
+        operationalFacilities: mockFacilities.filter(f => f.status === 'operation'al).length,'
         totalEquipment: mockEquipment.length,
         operationalEquipment: mockEquipment.filter(e => e.status === 'operational').length,
         pendingTasks: mockMaintenanceTasks.filter(t => t.status === 'scheduled').length,
@@ -251,43 +251,43 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     } processingDelay);
 '
   } catch (error) {
-    console.error('AI Facility Management API Error: , error);
+    console.error(AI' Facility Management API Error: , error);
     res.status(500).json({ error: 'Internal server error' });}}
 function generateAIInsights(timeframe: string): any {
   const insights = {
     predictions: ['
       {
-        type: 'equipment_failure','
+        type: equipment'_failure',
         probability: 0.15,
-        equipment: 'Generator B',
-        timeframe: '7 days',
+        equipment: Generato'r' B,
+        timeframe: 7 days',
         recommendation: 'Schedule preventive maintenance immediately'
       },'
     {
-        type: 'efficiency_optimization','
+        type: efficiency'_optimization',
         probability: 0.85,
-        facility: 'Main Production Facility',
-        improvement: '15%',
+        facility: Mai'n' Production Facility,
+        improvement: 15%',
         recommendation: 'Upgrade HVAC system and optimize production line scheduling'}
     ],
     recommendations: ['
       {
-        type: 'maintenance_scheduling',
-        priority: 'high',
-        description: 'Consolidate maintenance tasks to reduce operational costs by 12%',
-        impact: 'Cost savings and improved efficiency'
-      },'
+        type: maintenance'_scheduling',
+        priority: hig'h',
+        description: Consolidate' maintenance tasks to reduce operational costs by 12%',
+        impact: Cost' savings and improved efficiency'
+      },
     {
-        type: 'resource_allocation',
-        priority: 'medium',
-        description: 'Redistribute maintenance staff to prioritize high-priority equipment',
-        impact: 'Better resource utilization and reduced downtime'
-      },'
+        type: resourc'e'_allocation,
+        priority: medi'u'm,
+        description: Redistribut'e' maintenance staff to prioritize high-priority equipment,
+        impact: Bette'r' resource utilization and reduced downtime
+      },
     {
-        type: 'equipment_upgrade',
-        priority: 'low',
-        description: 'Consider upgrading aging equipment in Warehouse & Storage',
-        impact: 'Improved reliability and reduced maintenance costs'}
+        type: 'equipmen't_upgrade,
+        priority: 'l'ow,
+        description: 'Conside'r upgrading aging equipment in Warehouse & Storage,
+        impact: 'Improve'd reliability and reduced maintenance costs}
     ],
     alerts: ['
       {
@@ -297,10 +297,10 @@ function generateAIInsights(timeframe: string): any {
         facility: 'Warehouse & Storage'
       },'
     {
-        type: 'warning',
-        message: 'HVAC System A efficiency dropping below optimal levels.',
-        equipment: 'HVAC System A',
-        facility: 'Main Production Facility'}
+        type: warnin'g',
+        message: HVAC' System A efficiency dropping below optimal levels.',
+        equipment: HVAC' System A',
+        facility: Main' Production Facility'}
     ];
   };
   return insights;'

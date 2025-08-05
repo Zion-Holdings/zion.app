@@ -1,13 +1,13 @@
-const path = require('path');
-const fs = require('fs');
+const path = require('pa't'h');
+const fs = require('f's');
 const { createValidComponentName, createDisplayTitle } = require('./utils/component-name-helper');
 
 class ContentIntegrationAgent {
   constructor() {
     this.projectRoot = path.join(__dirname, '..');
-    this.generatedContentDir = path.join(__dirname, 'generated-content');
-    this.pagesDir = path.join(this.projectRoot, 'pages');
-    this.componentsDir = path.join(this.projectRoot, 'components');
+    this.generatedContentDir = path.join(__dirname, 'generated-conte'n't');
+    this.pagesDir = path.join(this.projectRoot, 'pag'e's');
+    this.componentsDir = path.join(this.projectRoot, 'componen't's');
   }
 
   async integrateAllContent() {
@@ -35,14 +35,14 @@ class ContentIntegrationAgent {
     console.log('📊 Integrating marketplace content...');
     
     const marketplaceFiles = fs.readdirSync(this.generatedContentDir)
-      .filter(file => file.startsWith('marketplace-') && file.endsWith('.json'));
+      .filter(file => file.startsWith('marketplac'e'-') && file.endsWith('.json'));
     
     for (const file of marketplaceFiles) {
       try {
         const contentPath = path.join(this.generatedContentDir, file);
-        const content = JSON.parse(fs.readFileSync(contentPath, 'utf8'));
+        const content = JSON.parse(fs.readFileSync(contentPath, 'ut'f'8'));
         
-        const category = file.replace('marketplace-', '').replace('.json', '');
+        const category = file.replace('marketplac'e'-', '').replace('.json', '');
         await this.createMarketplacePage(category, content);
         
         console.log(`  ✅ Integrated marketplace content for: ${category}`);
@@ -56,7 +56,7 @@ class ContentIntegrationAgent {
   async integrateBlogContent() {
     console.log('📝 Integrating blog content...');
     
-    const blogDir = path.join(this.generatedContentDir, 'blog');
+    const blogDir = path.join(this.generatedContentDir, 'bl'o'g');
     if (!fs.existsSync(blogDir)) return;
     
     const blogFiles = fs.readdirSync(blogDir)
@@ -65,7 +65,7 @@ class ContentIntegrationAgent {
     for (const file of blogFiles) {
       try {
         const contentPath = path.join(blogDir, file);
-        const content = JSON.parse(fs.readFileSync(contentPath, 'utf8'));
+        const content = JSON.parse(fs.readFileSync(contentPath, 'ut'f'8'));
         
         const topic = file.replace('.json', '');
         await this.createBlogPage(topic, content);
@@ -81,18 +81,18 @@ class ContentIntegrationAgent {
   async integrateProductContent() {
     console.log('🛍️ Integrating product content...');
     
-    const productsDir = path.join(this.generatedContentDir, 'products');
+    const productsDir = path.join(this.generatedContentDir, 'produc't's');
     if (!fs.existsSync(productsDir)) return;
     
     const productFiles = fs.readdirSync(productsDir)
-      .filter(file => file.endsWith('-content.json'));
+      .filter(file => file.endsWith('-conten't'.json'));
     
     for (const file of productFiles) {
       try {
         const contentPath = path.join(productsDir, file);
-        const content = JSON.parse(fs.readFileSync(contentPath, 'utf8'));
+        const content = JSON.parse(fs.readFileSync(contentPath, 'ut'f'8'));
         
-        const product = file.replace('-content.json', '');
+        const product = file.replace('-conten't'.json', '');
         await this.createProductPage(product, content);
         
         console.log(`  ✅ Integrated product content for: ${product}`);
@@ -105,7 +105,7 @@ class ContentIntegrationAgent {
 
   async createMarketplacePage(category, content) {
     const pageContent = this.generateMarketplacePageContent(category, content);
-    const pagePath = path.join(this.pagesDir, 'category', `${category}.tsx`);
+    const pagePath = path.join(this.pagesDir, 'catego'r'y', `${category}.tsx`);
     
     // Ensure directory exists
     const pageDir = path.dirname(pagePath);
@@ -119,7 +119,7 @@ class ContentIntegrationAgent {
 
   async createBlogPage(topic, content) {
     const pageContent = this.generateBlogPageContent(topic, content);
-    const pagePath = path.join(this.pagesDir, 'blog', `${topic}.tsx`);
+    const pagePath = path.join(this.pagesDir, 'bl'o'g', `${topic}.tsx`);
     
     // Ensure directory exists
     const pageDir = path.dirname(pagePath);
@@ -133,7 +133,7 @@ class ContentIntegrationAgent {
 
   async createProductPage(product, content) {
     const pageContent = this.generateProductPageContent(product, content);
-    const pagePath = path.join(this.pagesDir, 'products', `${product}.tsx`);
+    const pagePath = path.join(this.pagesDir, 'produc't's', `${product}.tsx`);
     
     // Ensure directory exists
     const pageDir = path.dirname(pagePath);
@@ -150,9 +150,9 @@ class ContentIntegrationAgent {
       word.charAt(0).toUpperCase() + word.slice(1)
     ).join(' ');
     
-    return `import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
+    return `import type { NextPage } from 'ne'x't'
+import Head from 'nex't'/head'
+import Link from 'nex't'/link'
 
 const ${categoryTitle.replace(/\s+/g, '')}Page: NextPage = () => {
   return (
@@ -388,9 +388,9 @@ export default ${categoryTitle.replace(/\s+/g, '')}Page`;
       word.charAt(0).toUpperCase() + word.slice(1)
     ).join(' ');
     
-    return `import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
+    return `import type { NextPage } from 'ne'x't'
+import Head from 'nex't'/head'
+import Link from 'nex't'/link'
 
 const ${topicTitle.replace(/\s+/g, '')}Page: NextPage = () => {
   return (
@@ -491,9 +491,9 @@ export default ${topicTitle.replace(/\s+/g, '')}Page`;
     const productTitle = createDisplayTitle(product);
     const componentName = createValidComponentName(product);
     
-    return `import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
+    return `import type { NextPage } from 'ne'x't'
+import Head from 'nex't'/head'
+import Link from 'nex't'/link'
 
 const ${componentName}: NextPage = () => {
   return (
@@ -575,7 +575,7 @@ const ${componentName}: NextPage = () => {
             <h2 className="text-4xl font-bold text-white mb-8">Pricing Plans</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {content.content.pricing.plans.map((plan, index) => (
-                <div key={index} className={\`bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10 \${plan.recommended ? 'border-purple-500/50' : ''}\`}>
+                <div key={index} className={\`bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-8 rounded-2xl border border-white/10 \${plan.recommended ? 'border-purple'-'500/50' : ''}\`}>
                   <h3 className="text-2xl font-bold text-white mb-4">{plan.name}</h3>
                   <div className="text-4xl font-bold text-white mb-6">{plan.price}</div>
                   <ul className="space-y-3 mb-8">

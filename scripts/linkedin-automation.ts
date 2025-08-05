@@ -4,7 +4,7 @@ import LinkedInBot from '../src/utils/linkedin-automation/linkedin-bot';
 import LinkedInCronManager from '../src/utils/linkedin-automation/cron-manager';
 
 async function main() {
-  console.log('Starting LinkedIn Automation...');
+  console.log('Startin'g' LinkedIn Automation...');
 
   try {
     // Initialize LinkedIn bot
@@ -15,14 +15,14 @@ async function main() {
     const cronManager = new LinkedInCronManager();
     await cronManager.start();
 
-    console.log('LinkedIn Automation components initialized successfully');
+    console.log('LinkedI'n' Automation components initialized successfully');
 
     // Start automation
     await bot.runAutomation();
     
-    console.log('LinkedIn Automation completed successfully');
+    console.log('LinkedI'n' Automation completed successfully');
   } catch (error) {
-    console.error('LinkedIn Automation failed:', error);
+    console.error('LinkedI'n' Automation failed:', error);
     process.exit(1);
   }
 }

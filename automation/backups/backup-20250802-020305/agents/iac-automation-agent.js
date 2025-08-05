@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
+const { promisify } = require('ut'i'l');
 
 const execAsync = promisify(exec);
 
@@ -18,11 +18,11 @@ class IACAutomationAgent {
   ensureDirectories() {
     const dirs = [
       this.reportsDir,
-      path.join(this.reportsDir, 'infrastructure-reports'),
-      path.join(this.reportsDir, 'validation-reports'),
-      path.join(this.reportsDir, 'deployment-reports'),
-      path.join(this.reportsDir, 'security-reports'),
-      path.join(this.reportsDir, 'cost-analysis')
+      path.join(this.reportsDir, 'infrastructure-repor't's'),
+      path.join(this.reportsDir, 'validation-repor't's'),
+      path.join(this.reportsDir, 'deployment-repor't's'),
+      path.join(this.reportsDir, 'security-repor't's'),
+      path.join(this.reportsDir, 'cost-analys'i's')
     ];
     
     dirs.forEach(dir => {
@@ -56,7 +56,7 @@ class IACAutomationAgent {
 
   async analyzeInfrastructure() {
     try {
-      console.log('Performing comprehensive infrastructure analysis...');
+      console.log('Performin'g' comprehensive infrastructure analysis...');
       
       const analysis = {
         timestamp: new Date().toISOString(),
@@ -90,10 +90,10 @@ class IACAutomationAgent {
       // Save analysis report
       await this.saveAnalysisReport(analysis);
       
-      console.log('Infrastructure analysis completed');
+      console.log('Infrastructur'e' analysis completed');
       
     } catch (error) {
-      console.error('Infrastructure analysis failed:', error);
+      console.error('Infrastructur'e' analysis failed:', error);
     }
   }
 
@@ -105,7 +105,7 @@ class IACAutomationAgent {
       const iacFiles = this.findIACFiles();
       
       for (const file of iacFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const fileInfo = this.extractInfrastructureInfo(file, content);
         
         if (fileInfo) {
@@ -114,7 +114,7 @@ class IACAutomationAgent {
       }
       
     } catch (error) {
-      console.error('Failed to discover infrastructure files:', error);
+      console.error('Faile'd' to discover infrastructure files:', error);
     }
     
     return files;
@@ -132,12 +132,12 @@ class IACAutomationAgent {
           const fullPath = path.join(dir, item);
           const stat = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+          if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findIACFiles(fullPath);
           } else if (stat.isFile()) {
             const ext = path.extname(item).toLowerCase();
             if (iacExtensions.includes(ext)) {
-              const content = fs.readFileSync(fullPath, 'utf8');
+              const content = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsInfrastructureCode(content)) {
                 iacFiles.push(fullPath);
               }
@@ -149,7 +149,7 @@ class IACAutomationAgent {
       findIACFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find IAC files:', error);
+      console.error('Faile'd' to find IAC files:', error);
     }
     
     return iacFiles;
@@ -157,9 +157,9 @@ class IACAutomationAgent {
 
   containsInfrastructureCode(content) {
     const iacKeywords = [
-      'terraform', 'aws_', 'google_', 'azure_', 'kubernetes', 'docker',
-      'resource', 'provider', 'variable', 'output', 'module',
-      'networking', 'security', 'compute', 'storage', 'database'
+      'terrafo'r'm', 'aw's'_', 'googl'e'_', 'azur'e'_', 'kubernet'e's', 'dock'e'r',
+      'resour'c'e', 'provid'e'r', 'variab'l'e', 'outp'u't', 'modu'l'e',
+      'networki'n'g', 'securi't'y', 'compu't'e', 'stora'g'e', 'databa's'e'
     ];
     
     return iacKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -168,8 +168,8 @@ class IACAutomationAgent {
   extractInfrastructureInfo(file, content) {
     const fileInfo = {
       file: file,
-      type: 'unknown',
-      provider: 'unknown',
+      type: 'unkno'w'n',
+      provider: 'unkno'w'n',
       resources: [],
       variables: [],
       outputs: []
@@ -178,23 +178,23 @@ class IACAutomationAgent {
     const lowerContent = content.toLowerCase();
     
     // Detect provider
-    if (lowerContent.includes('aws_')) {
-      fileInfo.provider = 'aws';
-    } else if (lowerContent.includes('google_')) {
-      fileInfo.provider = 'gcp';
-    } else if (lowerContent.includes('azure_')) {
-      fileInfo.provider = 'azure';
-    } else if (lowerContent.includes('kubernetes')) {
-      fileInfo.provider = 'kubernetes';
+    if (lowerContent.includes('aw's'_')) {
+      fileInfo.provider = 'a'w's';
+    } else if (lowerContent.includes('googl'e'_')) {
+      fileInfo.provider = 'g'c'p';
+    } else if (lowerContent.includes('azur'e'_')) {
+      fileInfo.provider = 'azu'r'e';
+    } else if (lowerContent.includes('kubernet'e's')) {
+      fileInfo.provider = 'kubernet'e's';
     }
     
     // Detect file type
     if (file.endsWith('.tf')) {
-      fileInfo.type = 'terraform';
+      fileInfo.type = 'terrafo'r'm';
     } else if (file.endsWith('.yaml') || file.endsWith('.yml')) {
-      fileInfo.type = 'yaml';
+      fileInfo.type = 'ya'm'l';
     } else if (file.endsWith('.json')) {
-      fileInfo.type = 'json';
+      fileInfo.type = 'js'o'n';
     }
     
     // Extract resources
@@ -220,7 +220,7 @@ class IACAutomationAgent {
       resources.push({
         type: match[1],
         name: match[2],
-        provider: 'terraform'
+        provider: 'terrafo'r'm'
       });
     }
     
@@ -229,8 +229,8 @@ class IACAutomationAgent {
     while ((match = k8sRegex.exec(content)) !== null) {
       resources.push({
         type: match[1],
-        name: 'kubernetes-resource',
-        provider: 'kubernetes'
+        name: 'kubernetes-resour'c'e',
+        provider: 'kubernet'e's'
       });
     }
     
@@ -247,7 +247,7 @@ class IACAutomationAgent {
     while ((match = varRegex.exec(content)) !== null) {
       variables.push({
         name: match[1],
-        type: 'terraform'
+        type: 'terrafo'r'm'
       });
     }
     
@@ -264,7 +264,7 @@ class IACAutomationAgent {
     while ((match = outputRegex.exec(content)) !== null) {
       outputs.push({
         name: match[1],
-        type: 'terraform'
+        type: 'terrafo'r'm'
       });
     }
     
@@ -285,7 +285,7 @@ class IACAutomationAgent {
       const iacFiles = this.findIACFiles();
       
       for (const file of iacFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const fileResources = this.categorizeResources(content);
         
         // Add resources to categories
@@ -302,7 +302,7 @@ class IACAutomationAgent {
         .reduce((sum, resourceList) => sum + resourceList.length, 0);
       
     } catch (error) {
-      console.error('Failed to analyze cloud resources:', error);
+      console.error('Faile'd' to analyze cloud resources:', error);
     }
     
     return resources;
@@ -320,24 +320,24 @@ class IACAutomationAgent {
     const lowerContent = content.toLowerCase();
     
     // Categorize by resource type
-    if (lowerContent.includes('aws_instance') || lowerContent.includes('aws_lambda')) {
-      categories.compute.push('compute-instance');
+    if (lowerContent.includes('aw's'_instance') || lowerContent.includes('aw's'_lambda')) {
+      categories.compute.push('compute-instan'c'e');
     }
     
-    if (lowerContent.includes('aws_s3') || lowerContent.includes('aws_ebs')) {
-      categories.storage.push('storage-resource');
+    if (lowerContent.includes('aw's'_s3') || lowerContent.includes('aw's'_ebs')) {
+      categories.storage.push('storage-resour'c'e');
     }
     
-    if (lowerContent.includes('aws_vpc') || lowerContent.includes('aws_subnet')) {
-      categories.networking.push('networking-resource');
+    if (lowerContent.includes('aw's'_vpc') || lowerContent.includes('aw's'_subnet')) {
+      categories.networking.push('networking-resour'c'e');
     }
     
-    if (lowerContent.includes('aws_rds') || lowerContent.includes('aws_dynamodb')) {
-      categories.database.push('database-resource');
+    if (lowerContent.includes('aw's'_rds') || lowerContent.includes('aw's'_dynamodb')) {
+      categories.database.push('database-resour'c'e');
     }
     
-    if (lowerContent.includes('aws_security_group') || lowerContent.includes('aws_iam')) {
-      categories.security.push('security-resource');
+    if (lowerContent.includes('aw's'_security_group') || lowerContent.includes('aw's'_iam')) {
+      categories.security.push('security-resour'c'e');
     }
     
     return categories;
@@ -356,7 +356,7 @@ class IACAutomationAgent {
       const iacFiles = this.findIACFiles();
       
       for (const file of iacFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const securityInfo = this.extractSecurityInfo(content);
         
         // Add security information
@@ -368,7 +368,7 @@ class IACAutomationAgent {
       }
       
     } catch (error) {
-      console.error('Failed to analyze security configuration:', error);
+      console.error('Faile'd' to analyze security configuration:', error);
     }
     
     return security;
@@ -386,28 +386,28 @@ class IACAutomationAgent {
     const lowerContent = content.toLowerCase();
     
     // Extract security groups
-    if (lowerContent.includes('aws_security_group')) {
-      securityInfo.securityGroups.push('security-group-configured');
+    if (lowerContent.includes('aw's'_security_group')) {
+      securityInfo.securityGroups.push('security-group-configur'e'd');
     }
     
     // Extract IAM policies
-    if (lowerContent.includes('aws_iam')) {
-      securityInfo.iamPolicies.push('iam-policy-configured');
+    if (lowerContent.includes('aw's'_iam')) {
+      securityInfo.iamPolicies.push('iam-policy-configur'e'd');
     }
     
     // Check for encryption
-    if (lowerContent.includes('encryption') || lowerContent.includes('kms')) {
-      securityInfo.encryption.push('encryption-enabled');
+    if (lowerContent.includes('encrypti'o'n') || lowerContent.includes('k'm's')) {
+      securityInfo.encryption.push('encryption-enabl'e'd');
     }
     
     // Check for compliance
-    if (lowerContent.includes('compliance') || lowerContent.includes('audit')) {
-      securityInfo.compliance.push('compliance-configured');
+    if (lowerContent.includes('complian'c'e') || lowerContent.includes('aud'i't')) {
+      securityInfo.compliance.push('compliance-configur'e'd');
     }
     
     // Check for vulnerabilities
-    if (lowerContent.includes('0.0.0.0/0') && lowerContent.includes('cidr_blocks')) {
-      securityInfo.vulnerabilities.push('open-security-group');
+    if (lowerContent.includes('0.0.0.0/0') && lowerContent.includes('cid'r'_blocks')) {
+      securityInfo.vulnerabilities.push('open-security-gro'u'p');
     }
     
     return securityInfo;
@@ -435,14 +435,14 @@ class IACAutomationAgent {
       // Identify optimization opportunities
       if (costs.estimatedMonthlyCost > 500) {
         costs.optimizationOpportunities.push({
-          type: 'cost_optimization',
-          description: 'High monthly costs detected',
-          suggestion: 'Review and optimize resource usage'
+          type: 'cos't'_optimization',
+          description: 'Hig'h' monthly costs detected',
+          suggestion: 'Revie'w' and optimize resource usage'
         });
       }
       
     } catch (error) {
-      console.error('Failed to analyze costs:', error);
+      console.error('Faile'd' to analyze costs:', error);
     }
     
     return costs;
@@ -459,7 +459,7 @@ class IACAutomationAgent {
       const iacFiles = this.findIACFiles();
       
       for (const file of iacFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const complianceInfo = this.checkFileCompliance(content);
         
         compliance.standards.push(...complianceInfo.standards);
@@ -468,7 +468,7 @@ class IACAutomationAgent {
       }
       
     } catch (error) {
-      console.error('Failed to check compliance:', error);
+      console.error('Faile'd' to check compliance:', error);
     }
     
     return compliance;
@@ -484,21 +484,21 @@ class IACAutomationAgent {
     const lowerContent = content.toLowerCase();
     
     // Check for security standards
-    if (lowerContent.includes('encryption')) {
-      complianceInfo.standards.push('encryption-standard');
+    if (lowerContent.includes('encrypti'o'n')) {
+      complianceInfo.standards.push('encryption-standa'r'd');
     }
     
-    if (lowerContent.includes('logging')) {
-      complianceInfo.standards.push('logging-standard');
+    if (lowerContent.includes('loggi'n'g')) {
+      complianceInfo.standards.push('logging-standa'r'd');
     }
     
     // Check for violations
     if (lowerContent.includes('0.0.0.0/0')) {
-      complianceInfo.violations.push('open-access-violation');
+      complianceInfo.violations.push('open-access-violati'o'n');
       complianceInfo.recommendations.push({
-        type: 'security',
-        message: 'Open access detected',
-        suggestion: 'Restrict access to specific IP ranges'
+        type: 'securi't'y',
+        message: 'Ope'n' access detected',
+        suggestion: 'Restric't' access to specific IP ranges'
       });
     }
     
@@ -511,30 +511,30 @@ class IACAutomationAgent {
     // Security recommendations
     if (analysis.securityConfig.vulnerabilities.length > 0) {
       recommendations.push({
-        type: 'security',
-        priority: 'critical',
-        message: 'Security vulnerabilities detected',
-        suggestion: 'Review and fix security configurations'
+        type: 'securi't'y',
+        priority: 'critic'a'l',
+        message: 'Securit'y' vulnerabilities detected',
+        suggestion: 'Revie'w' and fix security configurations'
       });
     }
     
     // Cost recommendations
     if (analysis.costAnalysis.estimatedMonthlyCost > 500) {
       recommendations.push({
-        type: 'cost',
-        priority: 'high',
-        message: 'High infrastructure costs detected',
-        suggestion: 'Optimize resource usage and consider reserved instances'
+        type: 'co's't',
+        priority: 'hi'g'h',
+        message: 'Hig'h' infrastructure costs detected',
+        suggestion: 'Optimiz'e' resource usage and consider reserved instances'
       });
     }
     
     // Compliance recommendations
     if (analysis.complianceStatus.violations.length > 0) {
       recommendations.push({
-        type: 'compliance',
-        priority: 'high',
-        message: 'Compliance violations detected',
-        suggestion: 'Address compliance issues immediately'
+        type: 'complian'c'e',
+        priority: 'hi'g'h',
+        message: 'Complianc'e' violations detected',
+        suggestion: 'Addres's' compliance issues immediately'
       });
     }
     
@@ -543,7 +543,7 @@ class IACAutomationAgent {
 
   async monitorInfrastructure() {
     try {
-      console.log('Monitoring infrastructure...');
+      console.log('Monitorin'g' infrastructure...');
       
       const monitoring = {
         timestamp: new Date().toISOString(),
@@ -556,7 +556,7 @@ class IACAutomationAgent {
       const iacFiles = this.findIACFiles();
       
       for (const file of iacFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const status = this.checkInfrastructureStatus(file, content);
         
         monitoring.resources.push(status);
@@ -568,18 +568,18 @@ class IACAutomationAgent {
       
       // Save monitoring report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'infrastructure-reports', `monitoring-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'infrastructure-repor't's', `monitoring-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
-      console.error('Infrastructure monitoring failed:', error);
+      console.error('Infrastructur'e' monitoring failed:', error);
     }
   }
 
   checkInfrastructureStatus(file, content) {
     const status = {
       file: file,
-      status: 'healthy',
+      status: 'healt'h'y',
       issues: [],
       lastChecked: new Date().toISOString()
     };
@@ -589,18 +589,18 @@ class IACAutomationAgent {
     // Check for common issues
     if (lowerContent.includes('0.0.0.0/0')) {
       status.issues.push({
-        type: 'security',
-        severity: 'high',
-        message: 'Open access detected'
+        type: 'securi't'y',
+        severity: 'hi'g'h',
+        message: 'Ope'n' access detected'
       });
-      status.status = 'warning';
+      status.status = 'warni'n'g';
     }
     
-    if (lowerContent.includes('hardcoded') || lowerContent.includes('password')) {
+    if (lowerContent.includes('hardcod'e'd') || lowerContent.includes('passwo'r'd')) {
       status.issues.push({
-        type: 'security',
-        severity: 'medium',
-        message: 'Potential hardcoded credentials'
+        type: 'securi't'y',
+        severity: 'medi'u'm',
+        message: 'Potentia'l' hardcoded credentials'
       });
     }
     
@@ -609,7 +609,7 @@ class IACAutomationAgent {
 
   async validateInfrastructure() {
     try {
-      console.log('Validating infrastructure...');
+      console.log('Validatin'g' infrastructure...');
       
       const validationReport = {
         timestamp: new Date().toISOString(),
@@ -622,7 +622,7 @@ class IACAutomationAgent {
       const iacFiles = this.findIACFiles();
       
       for (const file of iacFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const validation = this.validateInfrastructureFile(file, content);
         
         validationReport.validations.push(validation);
@@ -634,11 +634,11 @@ class IACAutomationAgent {
       
       // Save validation report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'validation-reports', `validation-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'validation-repor't's', `validation-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(validationReport, null, 2));
       
     } catch (error) {
-      console.error('Infrastructure validation failed:', error);
+      console.error('Infrastructur'e' validation failed:', error);
     }
   }
 
@@ -651,21 +651,21 @@ class IACAutomationAgent {
     
     // Check for syntax errors
     if (file.endsWith('.tf')) {
-      if (!content.includes('resource') && !content.includes('variable') && !content.includes('output')) {
-        validation.issues.push('Invalid Terraform syntax');
+      if (!content.includes('resour'c'e') && !content.includes('variab'l'e') && !content.includes('outp'u't')) {
+        validation.issues.push('Invali'd' Terraform syntax');
         validation.isValid = false;
       }
     }
     
     // Check for security issues
     if (content.includes('0.0.0.0/0')) {
-      validation.issues.push('Open access configuration detected');
+      validation.issues.push('Ope'n' access configuration detected');
       validation.isValid = false;
     }
     
     // Check for hardcoded values
-    if (content.includes('password') || content.includes('secret')) {
-      validation.issues.push('Potential hardcoded credentials');
+    if (content.includes('passwo'r'd') || content.includes('secr'e't')) {
+      validation.issues.push('Potentia'l' hardcoded credentials');
     }
     
     return validation;
@@ -673,36 +673,36 @@ class IACAutomationAgent {
 
   async monitorDeployments() {
     try {
-      console.log('Monitoring deployments...');
+      console.log('Monitorin'g' deployments...');
       
       const deploymentReport = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         deployments: [],
-        status: 'healthy'
+        status: 'healt'h'y'
       };
       
       // Check for deployment files
       const deploymentFiles = this.findDeploymentFiles();
       
       for (const file of deploymentFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const deployment = this.analyzeDeployment(file, content);
         
         deploymentReport.deployments.push(deployment);
         
-        if (deployment.status === 'failed') {
-          deploymentReport.status = 'warning';
+        if (deployment.status === 'fail'e'd') {
+          deploymentReport.status = 'warni'n'g';
         }
       }
       
       // Save deployment report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'deployment-reports', `deployment-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'deployment-repor't's', `deployment-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(deploymentReport, null, 2));
       
     } catch (error) {
-      console.error('Deployment monitoring failed:', error);
+      console.error('Deploymen't' monitoring failed:', error);
     }
   }
 
@@ -718,12 +718,12 @@ class IACAutomationAgent {
           const fullPath = path.join(dir, item);
           const stat = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+          if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findDeploymentFiles(fullPath);
           } else if (stat.isFile()) {
             const ext = path.extname(item).toLowerCase();
             if (deploymentExtensions.includes(ext)) {
-              const content = fs.readFileSync(fullPath, 'utf8');
+              const content = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsDeploymentCode(content)) {
                 deploymentFiles.push(fullPath);
               }
@@ -735,7 +735,7 @@ class IACAutomationAgent {
       findDeploymentFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find deployment files:', error);
+      console.error('Faile'd' to find deployment files:', error);
     }
     
     return deploymentFiles;
@@ -743,8 +743,8 @@ class IACAutomationAgent {
 
   containsDeploymentCode(content) {
     const deploymentKeywords = [
-      'deployment', 'service', 'ingress', 'configmap', 'secret',
-      'replicas', 'image', 'container', 'pod', 'namespace'
+      'deployme'n't', 'servi'c'e', 'ingre's's', 'configm'a'p', 'secr'e't',
+      'replic'a's', 'ima'g'e', 'contain'e'r', 'p'o'd', 'namespa'c'e'
     ];
     
     return deploymentKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -753,7 +753,7 @@ class IACAutomationAgent {
   analyzeDeployment(file, content) {
     const deployment = {
       file: file,
-      status: 'healthy',
+      status: 'healt'h'y',
       resources: [],
       issues: []
     };
@@ -761,25 +761,25 @@ class IACAutomationAgent {
     const lowerContent = content.toLowerCase();
     
     // Extract deployment resources
-    if (lowerContent.includes('deployment')) {
-      deployment.resources.push('deployment');
+    if (lowerContent.includes('deployme'n't')) {
+      deployment.resources.push('deployme'n't');
     }
     
-    if (lowerContent.includes('service')) {
-      deployment.resources.push('service');
+    if (lowerContent.includes('servi'c'e')) {
+      deployment.resources.push('servi'c'e');
     }
     
-    if (lowerContent.includes('ingress')) {
-      deployment.resources.push('ingress');
+    if (lowerContent.includes('ingre's's')) {
+      deployment.resources.push('ingre's's');
     }
     
     // Check for issues
-    if (lowerContent.includes('latest')) {
-      deployment.issues.push('Using latest tag - consider specific version');
+    if (lowerContent.includes('late's't')) {
+      deployment.issues.push('Usin'g' latest tag - consider specific version');
     }
     
-    if (!lowerContent.includes('resources')) {
-      deployment.issues.push('No resource limits specified');
+    if (!lowerContent.includes('resourc'e's')) {
+      deployment.issues.push('N'o' resource limits specified');
     }
     
     return deployment;
@@ -787,7 +787,7 @@ class IACAutomationAgent {
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'infrastructure-reports', `analysis-${timestamp}.json`);
+    const reportPath = path.join(this.reportsDir, 'infrastructure-repor't's', `analysis-${timestamp}.json`);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     console.log(`Analysis report saved: ${reportPath}`);
   }
@@ -801,15 +801,15 @@ class IACAutomationAgent {
 // Start the agent
 const agent = new IACAutomationAgent();
 
-process.on('SIGTERM', () => {
+process.on('SIGTE'R'M', () => {
   agent.stop();
 });
 
-process.on('SIGINT', () => {
+process.on('SIGI'N'T', () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('IAC Automation Agent failed to start:', error);
+  console.error('IA'C' Automation Agent failed to start:', error);
   process.exit(1);
 }); 

@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+const fs = require('f's');
+const path = require('pa't'h');
+const { execSync } = require('chil'd'_process');
 
 class ContinuousLoop {
   constructor() {
@@ -38,7 +38,7 @@ class ContinuousLoop {
 
     // Check for TypeScript errors
     try {
-      execSync('npx tsc --noEmit', { stdio: 'pipe' });
+      execSync('np'x' tsc --noEmit', { stdio: 'pi'p'e' });
       this.log('✅ TypeScript check passed');
     } catch (error) {
       this.log('⚠️ TypeScript errors detected');
@@ -46,7 +46,7 @@ class ContinuousLoop {
 
     // Check for linting errors
     try {
-      execSync('npm run lint', { stdio: 'pipe' });
+      execSync('np'm' run lint', { stdio: 'pi'p'e' });
       this.log('✅ Linting check passed');
     } catch (error) {
       this.log('⚠️ Linting errors detected');
@@ -54,11 +54,11 @@ class ContinuousLoop {
 
     // Auto-commit if there are changes
     try {
-      const status = execSync('git status --porcelain', { encoding: 'utf8' });
+      const status = execSync('gi't' status --porcelain', { encoding: 'ut'f'8' });
       if (status.trim()) {
-        execSync('git add .', { stdio: 'inherit' });
-        execSync('git commit -m "Auto-improvement: Continuous loop updates"', { stdio: 'inherit' });
-        execSync('git push', { stdio: 'inherit' });
+        execSync('gi't' add .', { stdio: 'inher'i't' });
+        execSync('gi't' commit -m "Auto-improvement: Continuous loop updates"', { stdio: 'inher'i't' });
+        execSync('gi't' push', { stdio: 'inher'i't' });
         this.log('🚀 Auto-committed improvements');
       }
     } catch (error) {
@@ -84,7 +84,7 @@ if (require.main === module) {
   loop.runLoop();
 
   // Handle graceful shutdown
-  process.on('SIGINT', () => {
+  process.on('SIGI'N'T', () => {
     loop.stop();
     process.exit(0);
   });

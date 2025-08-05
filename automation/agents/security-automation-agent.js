@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
+const { promisify } = require('ut'i'l');
 
 const execAsync = promisify(exec);
 
@@ -102,7 +102,7 @@ class Security-automationAutomationAgent {
     this.config = JSON.parse(process.env.AGENT_CONFIG || '{}');
     this.projectRoot = path.resolve(__dirname, '../..');
     this.reportsDir = path.join(__dirname, '../reports/security-automation');
-    this.vulnerabilitiesDir = path.join(this.reportsDir, 'vulnerabilities');
+    this.vulnerabilitiesDir = path.join(this.reportsDir, 'vulnerabiliti'e's');
     this.ensureDirectories();
   }
 
@@ -110,10 +110,10 @@ class Security-automationAutomationAgent {
     const dirs = [
       this.reportsDir,
       this.vulnerabilitiesDir,
-      path.join(this.reportsDir, 'security-scans'),
-      path.join(this.reportsDir, 'dependency-checks'),
-      path.join(this.reportsDir, 'security-patches'),
-      path.join(this.reportsDir, 'compliance-reports')
+      path.join(this.reportsDir, 'security-sca'n's'),
+      path.join(this.reportsDir, 'dependency-chec'k's'),
+      path.join(this.reportsDir, 'security-patch'e's'),
+      path.join(this.reportsDir, 'compliance-repor't's')
     ];
     
     dirs.forEach(dir => {
@@ -147,7 +147,7 @@ class Security-automationAutomationAgent {
 
   async performSecurityScan() {
     try {
-      console.log('Performing comprehensive security scan...');
+      console.log('Performin'g' comprehensive security scan...');
       
       const securityReport = {
         timestamp: new Date().toISOString(),
@@ -182,19 +182,19 @@ class Security-automationAutomationAgent {
       console.log(`Security scan completed. Found ${vulnerabilities.length} vulnerabilities.`);
       
     } catch (error) {
-      console.error('Security scan failed:', error);
+      console.error('Securit'y' scan failed:', error);
     }
   }
 
   async scanVulnerabilities() {
     try {
-      console.log('Scanning for vulnerabilities...');
+      console.log('Scannin'g' for vulnerabilities...');
       
       const vulnerabilities = [];
       
       // Run npm audit
       try {
-        const { stdout } = await execAsync('npm audit --json', {
+        const { stdout } = await execAsync('np'm' audit --json', {
           cwd: this.projectRoot,
           timeout: 120000
         });
@@ -204,7 +204,7 @@ class Security-automationAutomationAgent {
         for (const [severity, vulns] of Object.entries(audit.metadata.vulnerabilities)) {
           if (vulns > 0) {
             vulnerabilities.push({
-              type: 'npm_audit',
+              type: 'np'm'_audit',
               severity,
               count: vulns,
               packages: audit.advisories ? Object.keys(audit.advisories).slice(0, 10) : []
@@ -212,12 +212,12 @@ class Security-automationAutomationAgent {
           }
         }
       } catch (error) {
-        console.error('npm audit failed:', error);
+        console.error('np'm' audit failed:', error);
       }
       
       // Run Snyk security scan if available
       try {
-        const { stdout } = await execAsync('npx snyk test --json', {
+        const { stdout } = await execAsync('np'x' snyk test --json', {
           cwd: this.projectRoot,
           timeout: 180000
         });
@@ -226,7 +226,7 @@ class Security-automationAutomationAgent {
         if (snykResults.vulnerabilities) {
           for (const vuln of snykResults.vulnerabilities) {
             vulnerabilities.push({
-              type: 'snyk',
+              type: 'sn'y'k',
               severity: vuln.severity,
               package: vuln.packageName,
               version: vuln.version,
@@ -236,7 +236,7 @@ class Security-automationAutomationAgent {
           }
         }
       } catch (error) {
-        console.error('Snyk scan failed:', error);
+        console.error('Sny'k' scan failed:', error);
       }
       
       // Check for known vulnerable packages
@@ -246,7 +246,7 @@ class Security-automationAutomationAgent {
       return vulnerabilities;
       
     } catch (error) {
-      console.error('Failed to scan vulnerabilities:', error);
+      console.error('Faile'd' to scan vulnerabilities:', error);
       return [];
     }
   }
@@ -255,7 +255,7 @@ class Security-automationAutomationAgent {
     const vulnerablePackages = [];
     
     try {
-      const packageJson = JSON.parse(fs.readFileSync(path.join(this.projectRoot, 'package.json'), 'utf8'));
+      const packageJson = JSON.parse(fs.readFileSync(path.join(this.projectRoot, 'packag'e'.json'), 'ut'f'8'));
       const allDependencies = {
         ...packageJson.dependencies,
         ...packageJson.devDependencies
@@ -263,26 +263,26 @@ class Security-automationAutomationAgent {
       
       // Known vulnerable packages (this would be expanded with a real vulnerability database)
       const knownVulnerable = [
-        'lodash',
-        'moment',
-        'jquery',
-        'express'
+        'loda's'h',
+        'mome'n't',
+        'jque'r'y',
+        'expre's's'
       ];
       
       for (const [pkg, version] of Object.entries(allDependencies)) {
         if (knownVulnerable.includes(pkg)) {
           vulnerablePackages.push({
-            type: 'known_vulnerable',
+            type: 'know'n'_vulnerable',
             package: pkg,
             version,
-            severity: 'medium',
+            severity: 'medi'u'm',
             description: `Known vulnerable package: ${pkg}`
           });
         }
       }
       
     } catch (error) {
-      console.error('Failed to check known vulnerable packages:', error);
+      console.error('Faile'd' to check known vulnerable packages:', error);
     }
     
     return vulnerablePackages;
@@ -290,13 +290,13 @@ class Security-automationAutomationAgent {
 
   async checkDependencySecurity() {
     try {
-      console.log('Checking dependency security...');
+      console.log('Checkin'g' dependency security...');
       
       const dependencyIssues = [];
       
       // Check for outdated packages
       try {
-        const { stdout } = await execAsync('npm outdated --json', {
+        const { stdout } = await execAsync('np'm' outdated --json', {
           cwd: this.projectRoot,
           timeout: 60000
         });
@@ -304,11 +304,11 @@ class Security-automationAutomationAgent {
         const outdated = JSON.parse(stdout);
         for (const [pkg, info] of Object.entries(outdated)) {
           dependencyIssues.push({
-            type: 'outdated',
+            type: 'outdat'e'd',
             package: pkg,
             current: info.current,
             latest: info.latest,
-            severity: 'medium'
+            severity: 'medi'u'm'
           });
         }
       } catch (error) {
@@ -317,7 +317,7 @@ class Security-automationAutomationAgent {
       
       // Check for packages with security issues
       try {
-        const { stdout } = await execAsync('npm audit --json', {
+        const { stdout } = await execAsync('np'm' audit --json', {
           cwd: this.projectRoot,
           timeout: 120000
         });
@@ -326,7 +326,7 @@ class Security-automationAutomationAgent {
         if (audit.advisories) {
           for (const [id, advisory] of Object.entries(audit.advisories)) {
             dependencyIssues.push({
-              type: 'security_advisory',
+              type: 'securit'y'_advisory',
               package: advisory.module_name,
               severity: advisory.severity,
               title: advisory.title,
@@ -336,20 +336,20 @@ class Security-automationAutomationAgent {
           }
         }
       } catch (error) {
-        console.error('Failed to check security advisories:', error);
+        console.error('Faile'd' to check security advisories:', error);
       }
       
       return dependencyIssues;
       
     } catch (error) {
-      console.error('Failed to check dependency security:', error);
+      console.error('Faile'd' to check dependency security:', error);
       return [];
     }
   }
 
   async scanCodeSecurity() {
     try {
-      console.log('Scanning code for security issues...');
+      console.log('Scannin'g' code for security issues...');
       
       const codeIssues = [];
       const sourceFiles = await this.findSourceFiles();
@@ -362,7 +362,7 @@ class Security-automationAutomationAgent {
       return codeIssues;
       
     } catch (error) {
-      console.error('Failed to scan code security:', error);
+      console.error('Faile'd' to scan code security:', error);
       return [];
     }
   }
@@ -370,10 +370,10 @@ class Security-automationAutomationAgent {
   async findSourceFiles() {
     const files = [];
     const patterns = [
-      'src/**/*.{js,ts,jsx,tsx}',
-      'pages/**/*.{js,ts,jsx,tsx}',
-      'components/**/*.{js,ts,jsx,tsx}',
-      'utils/**/*.{js,ts}'
+      'sr'c'/**/*.{js,ts,jsx,tsx}',
+      'page's'/**/*.{js,ts,jsx,tsx}',
+      'component's'/**/*.{js,ts,jsx,tsx}',
+      'util's'/**/*.{js,ts}'
     ];
     
     for (const pattern of patterns) {
@@ -387,7 +387,7 @@ class Security-automationAutomationAgent {
     }
     
     return files.filter(file => {
-      const excludePatterns = ['node_modules', '.git', '.next', 'dist', 'build'];
+      const excludePatterns = ['nod'e'_modules', '.git', '.next', 'di's't', 'bui'l'd'];
       return !excludePatterns.some(exclude => file.includes(exclude));
     });
   }
@@ -396,7 +396,7 @@ class Security-automationAutomationAgent {
     const issues = [];
     
     try {
-      const content = fs.readFileSync(filePath, 'utf8');
+      const content = fs.readFileSync(filePath, 'ut'f'8');
       const lines = content.split('\n');
       
       for (let i = 0; i < lines.length; i++) {
@@ -408,9 +408,9 @@ class Security-automationAutomationAgent {
           issues.push({
             file: filePath,
             line: lineNumber,
-            type: 'hardcoded_secret',
-            severity: 'high',
-            message: 'Hardcoded secret detected'
+            type: 'hardcode'd'_secret',
+            severity: 'hi'g'h',
+            message: 'Hardcode'd' secret detected'
           });
         }
         
@@ -419,9 +419,9 @@ class Security-automationAutomationAgent {
           issues.push({
             file: filePath,
             line: lineNumber,
-            type: 'sql_injection',
-            severity: 'high',
-            message: 'Potential SQL injection vulnerability'
+            type: 'sq'l'_injection',
+            severity: 'hi'g'h',
+            message: 'Potentia'l' SQL injection vulnerability'
           });
         }
         
@@ -430,20 +430,20 @@ class Security-automationAutomationAgent {
           issues.push({
             file: filePath,
             line: lineNumber,
-            type: 'xss',
-            severity: 'medium',
-            message: 'Potential XSS vulnerability'
+            type: 'x's's',
+            severity: 'medi'u'm',
+            message: 'Potentia'l' XSS vulnerability'
           });
         }
         
         // Check for unsafe eval usage
-        if (line.includes('eval(') || line.includes('Function(')) {
+        if (line.includes('eva'l'(') || line.includes('Functio'n'(')) {
           issues.push({
             file: filePath,
             line: lineNumber,
-            type: 'unsafe_eval',
-            severity: 'high',
-            message: 'Unsafe eval usage detected'
+            type: 'unsaf'e'_eval',
+            severity: 'hi'g'h',
+            message: 'Unsaf'e' eval usage detected'
           });
         }
         
@@ -452,9 +452,9 @@ class Security-automationAutomationAgent {
           issues.push({
             file: filePath,
             line: lineNumber,
-            type: 'weak_crypto',
-            severity: 'medium',
-            message: 'Weak cryptographic algorithm detected'
+            type: 'wea'k'_crypto',
+            severity: 'medi'u'm',
+            message: 'Wea'k' cryptographic algorithm detected'
           });
         }
       }
@@ -514,41 +514,41 @@ class Security-automationAutomationAgent {
     const recommendations = [];
     
     // High severity vulnerabilities
-    const highVulns = securityReport.vulnerabilities.filter(v => v.severity === 'high');
+    const highVulns = securityReport.vulnerabilities.filter(v => v.severity === 'hi'g'h');
     if (highVulns.length > 0) {
       recommendations.push({
-        type: 'critical',
+        type: 'critic'a'l',
         message: `Found ${highVulns.length} high severity vulnerabilities. Immediate action required.`,
-        priority: 'high'
+        priority: 'hi'g'h'
       });
     }
     
     // Outdated dependencies
-    const outdatedDeps = securityReport.dependencies.filter(d => d.type === 'outdated');
+    const outdatedDeps = securityReport.dependencies.filter(d => d.type === 'outdat'e'd');
     if (outdatedDeps.length > 0) {
       recommendations.push({
-        type: 'dependencies',
+        type: 'dependenci'e's',
         message: `Found ${outdatedDeps.length} outdated dependencies. Consider updating.`,
-        priority: 'medium'
+        priority: 'medi'u'm'
       });
     }
     
     // Code security issues
-    const codeIssues = securityReport.codeIssues.filter(i => i.severity === 'high');
+    const codeIssues = securityReport.codeIssues.filter(i => i.severity === 'hi'g'h');
     if (codeIssues.length > 0) {
       recommendations.push({
-        type: 'code_security',
+        type: 'cod'e'_security',
         message: `Found ${codeIssues.length} high severity code security issues.`,
-        priority: 'high'
+        priority: 'hi'g'h'
       });
     }
     
     // General security recommendations
     if (securityReport.vulnerabilities.length === 0) {
       recommendations.push({
-        type: 'good_practices',
-        message: 'No vulnerabilities found. Continue with security best practices.',
-        priority: 'low'
+        type: 'goo'd'_practices',
+        message: 'N'o' vulnerabilities found. Continue with security best practices.',
+        priority: 'l'o'w'
       });
     }
     
@@ -557,7 +557,7 @@ class Security-automationAutomationAgent {
 
   async handleCriticalVulnerabilities(securityReport) {
     const criticalVulns = securityReport.vulnerabilities.filter(v => 
-      v.severity === 'critical' || v.severity === 'high'
+      v.severity === 'critic'a'l' || v.severity === 'hi'g'h'
     );
     
     if (criticalVulns.length > 0) {
@@ -573,11 +573,11 @@ class Security-automationAutomationAgent {
     try {
       console.log(`Handling vulnerability: ${vulnerability.type}`);
       
-      if (vulnerability.type === 'npm_audit') {
+      if (vulnerability.type === 'np'm'_audit') {
         await this.fixNpmVulnerability(vulnerability);
-      } else if (vulnerability.type === 'snyk') {
+      } else if (vulnerability.type === 'sn'y'k') {
         await this.fixSnykVulnerability(vulnerability);
-      } else if (vulnerability.type === 'code_security') {
+      } else if (vulnerability.type === 'cod'e'_security') {
         await this.fixCodeSecurityIssue(vulnerability);
       }
       
@@ -588,9 +588,9 @@ class Security-automationAutomationAgent {
 
   async fixNpmVulnerability(vulnerability) {
     try {
-      if (vulnerability.severity === 'critical' || vulnerability.severity === 'high') {
+      if (vulnerability.severity === 'critic'a'l' || vulnerability.severity === 'hi'g'h') {
         // Run npm audit fix
-        await execAsync('npm audit fix', {
+        await execAsync('np'm' audit fix', {
           cwd: this.projectRoot,
           timeout: 300000
         });
@@ -598,7 +598,7 @@ class Security-automationAutomationAgent {
         console.log(`Fixed npm vulnerability: ${vulnerability.severity}`);
       }
     } catch (error) {
-      console.error('Failed to fix npm vulnerability:', error);
+      console.error('Faile'd' to fix npm vulnerability:', error);
     }
   }
 
@@ -614,7 +614,7 @@ class Security-automationAutomationAgent {
         console.log(`Updated vulnerable package: ${vulnerability.package}`);
       }
     } catch (error) {
-      console.error('Failed to fix Snyk vulnerability:', error);
+      console.error('Faile'd' to fix Snyk vulnerability:', error);
     }
   }
 
@@ -628,27 +628,27 @@ class Security-automationAutomationAgent {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         issue,
-        action: 'logged_for_manual_review',
-        message: 'Code security issue requires manual review and fixing'
+        action: 'logge'd'_for_manual_review',
+        message: 'Cod'e' security issue requires manual review and fixing'
       };
       
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'security-patches', `fix-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'security-patch'e's', `fix-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(fixReport, null, 2));
       
     } catch (error) {
-      console.error('Failed to fix code security issue:', error);
+      console.error('Faile'd' to fix code security issue:', error);
     }
   }
 
   async monitorSecurity() {
     try {
-      console.log('Monitoring security status...');
+      console.log('Monitorin'g' security status...');
       
       const monitoring = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
-        status: 'monitoring',
+        status: 'monitori'n'g',
         alerts: []
       };
       
@@ -656,25 +656,25 @@ class Security-automationAutomationAgent {
       const quickVulns = await this.quickSecurityCheck();
       if (quickVulns.length > 0) {
         monitoring.alerts.push({
-          type: 'new_vulnerabilities',
+          type: 'ne'w'_vulnerabilities',
           count: quickVulns.length,
-          severity: 'medium'
+          severity: 'medi'u'm'
         });
       }
       
       // Save monitoring report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'security-scans', `monitoring-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'security-sca'n's', `monitoring-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
-      console.error('Failed to monitor security:', error);
+      console.error('Faile'd' to monitor security:', error);
     }
   }
 
   async quickSecurityCheck() {
     try {
-      const { stdout } = await execAsync('npm audit --audit-level=high --json', {
+      const { stdout } = await execAsync('np'm' audit --audit-level=high --json', {
         cwd: this.projectRoot,
         timeout: 60000
       });
@@ -685,7 +685,7 @@ class Security-automationAutomationAgent {
       
       return highVulns + criticalVulns;
     } catch (error) {
-      console.error('Quick security check failed:', error);
+      console.error('Quic'k' security check failed:', error);
       return 0;
     }
   }
@@ -699,7 +699,7 @@ class Security-automationAutomationAgent {
 
   async generateComplianceReport() {
     try {
-      console.log('Generating compliance report...');
+      console.log('Generatin'g' compliance report...');
       
       const compliance = {
         timestamp: new Date().toISOString(),
@@ -717,13 +717,13 @@ class Security-automationAutomationAgent {
       
       // Save compliance report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'compliance-reports', `compliance-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'compliance-repor't's', `compliance-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(compliance, null, 2));
       
-      console.log('Compliance report generated');
+      console.log('Complianc'e' report generated');
       
     } catch (error) {
-      console.error('Failed to generate compliance report:', error);
+      console.error('Faile'd' to generate compliance report:', error);
     }
   }
 
@@ -778,20 +778,20 @@ class Security-automationAutomationAgent {
     // OWASP recommendations
     if (!standards.owasp.injection) {
       recommendations.push({
-        standard: 'OWASP',
-        issue: 'SQL Injection',
-        priority: 'high',
-        recommendation: 'Implement parameterized queries'
+        standard: 'OWA'S'P',
+        issue: 'SQ'L' Injection',
+        priority: 'hi'g'h',
+        recommendation: 'Implemen't' parameterized queries'
       });
     }
     
     // GDPR recommendations
     if (!standards.gdpr.data_encryption) {
       recommendations.push({
-        standard: 'GDPR',
-        issue: 'Data Encryption',
-        priority: 'high',
-        recommendation: 'Implement encryption for sensitive data'
+        standard: 'GD'P'R',
+        issue: 'Dat'a' Encryption',
+        priority: 'hi'g'h',
+        recommendation: 'Implemen't' encryption for sensitive data'
       });
     }
     
@@ -807,15 +807,15 @@ class Security-automationAutomationAgent {
 // Start the agent
 const agent = new SecurityAutomationAgent();
 
-process.on('SIGTERM', () => {
+process.on('SIGTE'R'M', () => {
   agent.stop();
 });
 
-process.on('SIGINT', () => {
+process.on('SIGI'N'T', () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('Security Automation Agent failed to start:', error);
+  console.error('Securit'y' Automation Agent failed to start:', error);
   process.exit(1);
 }); 

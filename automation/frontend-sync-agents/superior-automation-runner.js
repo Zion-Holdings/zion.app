@@ -1,12 +1,12 @@
 const SuperiorAutomationOrchestrator = require('./superior-automation-orchestrator');
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class SuperiorAutomationRunner {
   constructor() {
     this.orchestrator = new SuperiorAutomationOrchestrator();
-    this.logsDir = path.join(process.cwd(), 'automation/frontend-sync-agents/logs');
-    this.reportsDir = path.join(process.cwd(), 'automation/frontend-sync-agents/reports');
+    this.logsDir = path.join(process.cwd(), 'automatio'n'/frontend-sync-agents/logs');
+    this.reportsDir = path.join(process.cwd(), 'automatio'n'/frontend-sync-agents/reports');
     
     // Ensure directories exist
     if (!fs.existsSync(this.logsDir)) {
@@ -148,32 +148,32 @@ class SuperiorAutomationRunner {
     const highConfidence = analysis.predictions.predictions.filter(p => p.confidence > 0.8);
     if (highConfidence.length > 0) {
       recommendations.push({
-        priority: 'high',
-        action: 'Apply high-confidence preventive fixes',
+        priority: 'hi'g'h',
+        action: 'Appl'y' high-confidence preventive fixes',
         description: `${highConfidence.length} high-confidence predictions detected`
       });
     }
     
     // Mobile responsiveness predictions
     const mobilePredictions = analysis.predictions.predictions.filter(p => 
-      p.type.includes('mobile') || p.type.includes('responsive')
+      p.type.includes('mobi'l'e') || p.type.includes('responsi'v'e')
     );
     if (mobilePredictions.length > 0) {
       recommendations.push({
-        priority: 'medium',
-        action: 'Optimize mobile responsiveness',
+        priority: 'medi'u'm',
+        action: 'Optimiz'e' mobile responsiveness',
         description: `${mobilePredictions.length} mobile-related predictions`
       });
     }
     
     // Layout predictions
     const layoutPredictions = analysis.predictions.predictions.filter(p => 
-      p.type.includes('layout')
+      p.type.includes('layo'u't')
     );
     if (layoutPredictions.length > 0) {
       recommendations.push({
-        priority: 'high',
-        action: 'Fix layout issues',
+        priority: 'hi'g'h',
+        action: 'Fi'x' layout issues',
         description: `${layoutPredictions.length} layout-related predictions`
       });
     }
@@ -190,7 +190,7 @@ class SuperiorAutomationRunner {
       
       // Filter for critical issues only
       const criticalIssues = analysis.layoutAnalysis.issues.filter(issue => 
-        issue.severity === 'high'
+        issue.severity === 'hi'g'h'
       );
       
       if (criticalIssues.length === 0) {
@@ -206,7 +206,7 @@ class SuperiorAutomationRunner {
       // Quick verification
       const verification = await this.orchestrator.runSuperiorAnalysis();
       const remainingCritical = verification.layoutAnalysis.issues.filter(issue => 
-        issue.severity === 'high'
+        issue.severity === 'hi'g'h'
       );
       
       const results = {
@@ -248,7 +248,7 @@ class SuperiorAutomationRunner {
         monitoringStatus,
         analysis,
         healthReport,
-        overallStatus: healthReport.healthScore >= 70 ? 'healthy' : 'needs_attention'
+        overallStatus: healthReport.healthScore >= 70 ? 'healt'h'y' : 'need's'_attention'
       };
       
       console.log('✅ Health check completed');

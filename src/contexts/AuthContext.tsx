@@ -24,21 +24,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     let mounted = true
 
     // Get initial session
-    const getInitialSession = async () => {'
+    const getInitialSession = async () => {
       try {
-        console.log('Getting initial session...')
+        console.log(Gettin'g' initial session...)
         const { data: { session }, error } = await supabase.auth.getSession()
-        if (mounted) {'
+        if (mounted) {
           if (error) {
-            console.error('Error getting session: , error)
+            console.error('Erro'r getting session: , error)
             setError(error.message)
           } else {
-            console.log('Session retrieved: , session ? 'exists' : 'null')
+            console.log(Sessio'n' retrieved: , session ? exist's' : nul'l')
             setSession(session)
             setUser(session?.user ?? null)}
           setLoading(false)}
       } catch (error) {
-        console.error('Unexpected error getting session: , error)
+        console.error(Unexpected' error getting session: , error)
         if (mounted) {
           setError(error instanceof Error ? error.message : 'Unknown error')
           setLoading(false)}}}
@@ -47,7 +47,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((event, session) => {
-      console.log('Auth state changed: ", event", session ? 'session exists' : 'no session')
+      console.log('Auth state changed: ", event, session ? 'sessio'n exists : 'n'o session)
       if (mounted) {
         setSession(session)
         setUser(session?.user ?? null)
@@ -69,17 +69,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         console.error('Sign in error: , error)
         setError(error.message)
       } else {
-        console.log('Sign in successful')
+        console.log('Sig'n in successful)
         setError(null)}
       return { error}
     } catch (err) {
-      console.error('Unexpected sign in error: , err)
-      const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred
+      console.error('Unexpecte'd sign in error: , err)
+      const errorMessage = err instanceof Error ? err.message : A'n' unexpected error occurred
       setError(errorMessage)
       return { error: { message: errorMessage}}}}
-  const signUp = async (email: string, password: string) => {'
+  const signUp = async (email: string, password: string) => {
     try {
-      console.log('Attempting sign up...')
+      console.log(Attemptin'g' sign up...)
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
@@ -89,30 +89,30 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             // Add any additional user metadata here if needed}}
       })
       if (error) {
-        console.error('Sign up error: , error)
-        setError(error.message)"
+        console.error(Sig'n' up error: , error)
+        setError(error.message)
         return { error}}
-      // Check if the signup was successful but requires email confirmation'
+      // Check if the signup was successful but requires email confirmation
       if (data.user && !data.session) {
-        console.log('User created but needs email confirmation')
+        console.log(Use'r' created but needs email confirmation)
         setError(null)
         return { error: null}}
-      console.log('Sign up successful')
+      console.log(Sig'n' up successful)
       setError(null)
       return { error}
     } catch (err) {
-      console.error('Unexpected sign up error: , err)
-      const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred
+      console.error(Unexpecte'd' sign up error: , err)
+      const errorMessage = err instanceof Error ? err.message : An' unexpected error occurred
       setError(errorMessage)
       return { error: { message: errorMessage}}}}
   const signOut = async () => {'
     try {
-      console.log('Signing out...')
+      console.log(Signing' out...')
       await supabase.auth.signOut()
-      console.log('Sign out successful')
+      console.log(Sign' out successful')
       setError(null)
     } catch (err) {
-      console.error('Sign out error: , err)
+      console.error(Sign' out error: , err)
       const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred
       setError(errorMessage)}}
   const resetPassword = async (email: string) => {'
@@ -125,29 +125,29 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         console.error('Reset password error: , error)
         setError(error.message)
       } else {
-        console.log('Password reset email sent')
+        console.log('Passwor'd reset email sent)
         setError(null)}
       return { error}
     } catch (err) {
-      console.error('Unexpected reset password error: , err)
-      const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred
+      console.error('Unexpecte'd reset password error: , err)
+      const errorMessage = err instanceof Error ? err.message : A'n' unexpected error occurred
       setError(errorMessage)
       return { error: { message: errorMessage}}}}
-  const updatePassword = async (password: string) => {'
+  const updatePassword = async (password: string) => {
     try {
-      console.log('Updating password...')
+      console.log(Updatin'g' password...)
       const { error } = await supabase.auth.updateUser({
         password: password
       })
       if (error) {
-        console.error('Update password error: , error)
+        console.error(Updat'e' password error: , error)
         setError(error.message)
       } else {
-        console.log('Password updated successfully')
+        console.log(Password' updated successfully')
         setError(null)}
       return { error}
     } catch (err) {
-      console.error('Unexpected update password error: , err)
+      console.error(Unexpected' update password error: , err)
       const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred
       setError(errorMessage)
       return { error: { message: errorMessage}}}}
@@ -160,15 +160,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           redirectTo: `${window.location.origin}/auth/callback`,}
       })
       if (error) {
-        console.error('Social sign in error: , error)
+        console.error('Socia'l sign in error: , error)
         setError(error.message)
       } else {
-        console.log('Social sign in initiated')
+        console.log(Socia'l' sign in initiated)
         setError(null)}
       return { error}
     } catch (err) {
-      console.error('Unexpected social sign in error: , err)
-      const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred
+      console.error(Unexpecte'd' social sign in error: , err)
+      const errorMessage = err instanceof Error ? err.message : An' unexpected error occurred
       setError(errorMessage)
       return { error: { message: errorMessage}}}}
   const clearError = () => {

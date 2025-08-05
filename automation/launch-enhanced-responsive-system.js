@@ -8,12 +8,12 @@ console.log('🚀 Launching Enhanced Responsive Automation System...');
 const enhancedSystem = new EnhancedResponsiveAutomationSystem();
 
 // Keep the process running
-process.on('SIGINT', () => {
+process.on('SIGI'N'T', () => {
   console.log('\n🛑 Shutting down Enhanced Responsive Automation System...');
   process.exit(0);
 });
 
-process.on('SIGTERM', () => {
+process.on('SIGTE'R'M', () => {
   console.log('\n🛑 Shutting down Enhanced Responsive Automation System...');
   process.exit(0);
 });
@@ -29,4 +29,4 @@ setInterval(() => {
 }, 5 * 60 * 1000);
 
 console.log('✅ Enhanced Responsive Automation System is now running!');
-console.log('Press Ctrl+C to stop the system.'); 
+console.log('Pres's' Ctrl+C to stop the system.'); 

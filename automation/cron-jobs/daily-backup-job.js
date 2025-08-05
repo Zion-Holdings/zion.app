@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
+const { promisify } = require('ut'i'l');
 
 const execAsync = promisify(exec);
 
@@ -13,7 +13,7 @@ class DailyBackupJob {
     this.projectRoot = path.resolve(__dirname, '../..');
     this.reportsDir = path.join(__dirname, '../reports/daily-backup-reports');
     this.logsDir = path.join(__dirname, '../logs/daily-backup-logs');
-    this.backupDir = path.join(this.projectRoot, 'backups');
+    this.backupDir = path.join(this.projectRoot, 'backu'p's');
     this.ensureDirectories();
   }
 
@@ -22,12 +22,12 @@ class DailyBackupJob {
       this.reportsDir,
       this.logsDir,
       this.backupDir,
-      path.join(this.reportsDir, 'backup-reports'),
-      path.join(this.reportsDir, 'recovery-reports'),
-      path.join(this.reportsDir, 'analysis-reports'),
-      path.join(this.reportsDir, 'optimization-reports'),
-      path.join(this.reportsDir, 'backup-reports'),
-      path.join(this.reportsDir, 'analytics-reports')
+      path.join(this.reportsDir, 'backup-repor't's'),
+      path.join(this.reportsDir, 'recovery-repor't's'),
+      path.join(this.reportsDir, 'analysis-repor't's'),
+      path.join(this.reportsDir, 'optimization-repor't's'),
+      path.join(this.reportsDir, 'backup-repor't's'),
+      path.join(this.reportsDir, 'analytics-repor't's')
     ];
     
     dirs.forEach(dir => {
@@ -56,10 +56,10 @@ class DailyBackupJob {
   }
 
   async performBackupTask() {
-    console.log('Performing daily backup task...');
+    console.log('Performin'g' daily backup task...');
     
     const backupResult = {
-      status: 'completed',
+      status: 'complet'e'd',
       data: {},
       timestamp: new Date().toISOString()
     };
@@ -87,9 +87,9 @@ class DailyBackupJob {
       backupResult.data = {
         backupPath,
         results: results.map((result, index) => ({
-          task: ['source', 'config', 'data', 'reports', 'logs'][index],
+          task: ['sour'c'e', 'conf'i'g', 'da't'a', 'repor't's', 'lo'g's'][index],
           status: result.status,
-          value: result.status === 'fulfilled' ? result.value : result.reason
+          value: result.status === 'fulfill'e'd' ? result.value : result.reason
         }))
       };
       
@@ -100,7 +100,7 @@ class DailyBackupJob {
       await this.cleanupOldBackups();
       
     } catch (error) {
-      backupResult.status = 'failed';
+      backupResult.status = 'fail'e'd';
       backupResult.error = error.message;
     }
     
@@ -109,27 +109,27 @@ class DailyBackupJob {
 
   async backupSourceCode(backupPath) {
     try {
-      const sourceBackupPath = path.join(backupPath, 'src');
+      const sourceBackupPath = path.join(backupPath, 's'r'c');
       
       // Copy source code directory
-      await execAsync(`cp -r ${path.join(this.projectRoot, 'src')} ${sourceBackupPath}`);
+      await execAsync(`cp -r ${path.join(this.projectRoot, 's'r'c')} ${sourceBackupPath}`);
       
       // Copy package files
-      await execAsync(`cp ${path.join(this.projectRoot, 'package.json')} ${backupPath}/`);
-      await execAsync(`cp ${path.join(this.projectRoot, 'package-lock.json')} ${backupPath}/`);
+      await execAsync(`cp ${path.join(this.projectRoot, 'packag'e'.json')} ${backupPath}/`);
+      await execAsync(`cp ${path.join(this.projectRoot, 'package-loc'k'.json')} ${backupPath}/`);
       
       // Copy configuration files
-      await execAsync(`cp ${path.join(this.projectRoot, 'next.config.js')} ${backupPath}/`);
-      await execAsync(`cp ${path.join(this.projectRoot, 'tsconfig.json')} ${backupPath}/`);
+      await execAsync(`cp ${path.join(this.projectRoot, 'nex't'.config.js')} ${backupPath}/`);
+      await execAsync(`cp ${path.join(this.projectRoot, 'tsconfi'g'.json')} ${backupPath}/`);
       
       return {
-        status: 'completed',
-        message: 'Source code backed up successfully',
+        status: 'complet'e'd',
+        message: 'Sourc'e' code backed up successfully',
         size: await this.getDirectorySize(sourceBackupPath)
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         message: error.message
       };
     }
@@ -137,7 +137,7 @@ class DailyBackupJob {
 
   async backupConfiguration(backupPath) {
     try {
-      const configBackupPath = path.join(backupPath, 'config');
+      const configBackupPath = path.join(backupPath, 'conf'i'g');
       
       if (!fs.existsSync(configBackupPath)) {
         fs.mkdirSync(configBackupPath, { recursive: true });
@@ -147,9 +147,9 @@ class DailyBackupJob {
       const configFiles = [
         '.env.example',
         '.gitignore',
-        'README.md',
-        'tailwind.config.js',
-        'postcss.config.js'
+        'READM'E'.md',
+        'tailwin'd'.config.js',
+        'postcs's'.config.js'
       ];
       
       for (const file of configFiles) {
@@ -160,13 +160,13 @@ class DailyBackupJob {
       }
       
       return {
-        status: 'completed',
-        message: 'Configuration backed up successfully',
+        status: 'complet'e'd',
+        message: 'Configuratio'n' backed up successfully',
         size: await this.getDirectorySize(configBackupPath)
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         message: error.message
       };
     }
@@ -174,32 +174,32 @@ class DailyBackupJob {
 
   async backupData(backupPath) {
     try {
-      const dataBackupPath = path.join(backupPath, 'data');
+      const dataBackupPath = path.join(backupPath, 'da't'a');
       
       if (!fs.existsSync(dataBackupPath)) {
         fs.mkdirSync(dataBackupPath, { recursive: true });
       }
       
       // Copy automation data
-      const automationDataPath = path.join(this.projectRoot, 'automation');
+      const automationDataPath = path.join(this.projectRoot, 'automati'o'n');
       if (fs.existsSync(automationDataPath)) {
         await execAsync(`cp -r ${automationDataPath} ${dataBackupPath}/`);
       }
       
       // Copy content data
-      const contentDataPath = path.join(this.projectRoot, 'src/content');
+      const contentDataPath = path.join(this.projectRoot, 'sr'c'/content');
       if (fs.existsSync(contentDataPath)) {
         await execAsync(`cp -r ${contentDataPath} ${dataBackupPath}/`);
       }
       
       return {
-        status: 'completed',
-        message: 'Data backed up successfully',
+        status: 'complet'e'd',
+        message: 'Dat'a' backed up successfully',
         size: await this.getDirectorySize(dataBackupPath)
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         message: error.message
       };
     }
@@ -207,26 +207,26 @@ class DailyBackupJob {
 
   async backupReports(backupPath) {
     try {
-      const reportsBackupPath = path.join(backupPath, 'reports');
+      const reportsBackupPath = path.join(backupPath, 'repor't's');
       
       if (!fs.existsSync(reportsBackupPath)) {
         fs.mkdirSync(reportsBackupPath, { recursive: true });
       }
       
       // Copy automation reports
-      const automationReportsPath = path.join(this.projectRoot, 'automation/reports');
+      const automationReportsPath = path.join(this.projectRoot, 'automatio'n'/reports');
       if (fs.existsSync(automationReportsPath)) {
         await execAsync(`cp -r ${automationReportsPath} ${reportsBackupPath}/`);
       }
       
       return {
-        status: 'completed',
-        message: 'Reports backed up successfully',
+        status: 'complet'e'd',
+        message: 'Report's' backed up successfully',
         size: await this.getDirectorySize(reportsBackupPath)
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         message: error.message
       };
     }
@@ -234,26 +234,26 @@ class DailyBackupJob {
 
   async backupLogs(backupPath) {
     try {
-      const logsBackupPath = path.join(backupPath, 'logs');
+      const logsBackupPath = path.join(backupPath, 'lo'g's');
       
       if (!fs.existsSync(logsBackupPath)) {
         fs.mkdirSync(logsBackupPath, { recursive: true });
       }
       
       // Copy automation logs
-      const automationLogsPath = path.join(this.projectRoot, 'automation/logs');
+      const automationLogsPath = path.join(this.projectRoot, 'automatio'n'/logs');
       if (fs.existsSync(automationLogsPath)) {
         await execAsync(`cp -r ${automationLogsPath} ${logsBackupPath}/`);
       }
       
       return {
-        status: 'completed',
-        message: 'Logs backed up successfully',
+        status: 'complet'e'd',
+        message: 'Log's' backed up successfully',
         size: await this.getDirectorySize(logsBackupPath)
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         message: error.message
       };
     }
@@ -264,7 +264,7 @@ class DailyBackupJob {
       const { stdout } = await execAsync(`du -sh ${dirPath} | cut -f1`);
       return stdout.trim();
     } catch (error) {
-      return 'unknown';
+      return 'unkno'w'n';
     }
   }
 
@@ -281,13 +281,13 @@ class DailyBackupJob {
       console.log(`Backup compressed: ${compressedPath}`);
       
       return {
-        status: 'completed',
+        status: 'complet'e'd',
         compressedPath,
         size: await this.getFileSize(compressedPath)
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         message: error.message
       };
     }
@@ -298,7 +298,7 @@ class DailyBackupJob {
       const { stdout } = await execAsync(`ls -lh ${filePath} | awk '{print $5}'`);
       return stdout.trim();
     } catch (error) {
-      return 'unknown';
+      return 'unkno'w'n';
     }
   }
 
@@ -316,12 +316,12 @@ class DailyBackupJob {
       }
       
       return {
-        status: 'completed',
+        status: 'complet'e'd',
         removed: oldBackups.length
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         message: error.message
       };
     }
@@ -332,7 +332,7 @@ class DailyBackupJob {
       timestamp: new Date().toISOString(),
       jobId: this.jobId,
       jobType: this.jobType,
-      status: 'completed',
+      status: 'complet'e'd',
       execution: {},
       results: []
     };
@@ -342,7 +342,7 @@ class DailyBackupJob {
     
     // Save execution report
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'backup-reports', `execution-${timestamp}.json`);
+    const reportPath = path.join(this.reportsDir, 'backup-repor't's', `execution-${timestamp}.json`);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
     console.log(`Execution report saved: ${reportPath}`);
@@ -358,21 +358,21 @@ class DailyBackupJob {
       const totalSize = sizeOutput.trim();
       
       return {
-        status: 'completed',
+        status: 'complet'e'd',
         backupCount,
         totalSize,
         lastBackup: new Date().toISOString(),
         data: {
-          sourceCode: 'backed up',
-          configuration: 'backed up',
-          data: 'backed up',
-          reports: 'backed up',
-          logs: 'backed up'
+          sourceCode: 'backe'd' up',
+          configuration: 'backe'd' up',
+          data: 'backe'd' up',
+          reports: 'backe'd' up',
+          logs: 'backe'd' up'
         }
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         error: error.message
       };
     }
@@ -383,7 +383,7 @@ class DailyBackupJob {
       timestamp: new Date().toISOString(),
       jobId: this.jobId,
       jobType: this.jobType,
-      status: 'failed',
+      status: 'fail'e'd',
       error: error.message,
       stack: error.stack
     };
@@ -401,6 +401,6 @@ class DailyBackupJob {
 const job = new DailyBackupJob();
 
 job.execute().catch(error => {
-  console.error('Daily Backup Job failed to execute:', error);
+  console.error('Dail'y' Backup Job failed to execute:', error);
   process.exit(1);
 }); 

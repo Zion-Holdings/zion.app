@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
+const { promisify } = require('ut'i'l');
 
 const execAsync = promisify(exec);
 
@@ -18,11 +18,11 @@ class ComplianceAutomationAgent {
   ensureDirectories() {
     const dirs = [
       this.reportsDir,
-      path.join(this.reportsDir, 'compliance-reports'),
-      path.join(this.reportsDir, 'audit-reports'),
-      path.join(this.reportsDir, 'validation-reports'),
-      path.join(this.reportsDir, 'monitoring-reports'),
-      path.join(this.reportsDir, 'optimization-reports')
+      path.join(this.reportsDir, 'compliance-repor't's'),
+      path.join(this.reportsDir, 'audit-repor't's'),
+      path.join(this.reportsDir, 'validation-repor't's'),
+      path.join(this.reportsDir, 'monitoring-repor't's'),
+      path.join(this.reportsDir, 'optimization-repor't's')
     ];
     
     dirs.forEach(dir => {
@@ -56,7 +56,7 @@ class ComplianceAutomationAgent {
 
   async analyzeCompliance() {
     try {
-      console.log('Performing comprehensive compliance analysis...');
+      console.log('Performin'g' comprehensive compliance analysis...');
       
       const analysis = {
         timestamp: new Date().toISOString(),
@@ -90,10 +90,10 @@ class ComplianceAutomationAgent {
       // Save analysis report
       await this.saveAnalysisReport(analysis);
       
-      console.log('Compliance analysis completed');
+      console.log('Complianc'e' analysis completed');
       
     } catch (error) {
-      console.error('Compliance analysis failed:', error);
+      console.error('Complianc'e' analysis failed:', error);
     }
   }
 
@@ -105,7 +105,7 @@ class ComplianceAutomationAgent {
       const complianceFiles = this.findComplianceFiles();
       
       for (const file of complianceFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const standardInfo = this.extractStandardInfo(file, content);
         
         if (standardInfo) {
@@ -117,7 +117,7 @@ class ComplianceAutomationAgent {
       const regulatoryFiles = this.findRegulatoryFiles();
       
       for (const file of regulatoryFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const regulatoryInfo = this.extractRegulatoryInfo(file, content);
         
         if (regulatoryInfo) {
@@ -126,7 +126,7 @@ class ComplianceAutomationAgent {
       }
       
     } catch (error) {
-      console.error('Failed to discover compliance standards:', error);
+      console.error('Faile'd' to discover compliance standards:', error);
     }
     
     return standards;
@@ -143,12 +143,12 @@ class ComplianceAutomationAgent {
           const fullPath = path.join(dir, item);
           const stat = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+          if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findComplianceFiles(fullPath);
           } else if (stat.isFile()) {
             const ext = path.extname(item).toLowerCase();
             if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const content = fs.readFileSync(fullPath, 'utf8');
+              const content = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsComplianceCode(content)) {
                 complianceFiles.push(fullPath);
               }
@@ -160,7 +160,7 @@ class ComplianceAutomationAgent {
       findComplianceFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find compliance files:', error);
+      console.error('Faile'd' to find compliance files:', error);
     }
     
     return complianceFiles;
@@ -168,8 +168,8 @@ class ComplianceAutomationAgent {
 
   containsComplianceCode(content) {
     const complianceKeywords = [
-      'compliance', 'gdpr', 'hipaa', 'sox', 'pci', 'iso', 'audit',
-      'regulation', 'policy', 'standard', 'certification'
+      'complian'c'e', 'gd'p'r', 'hip'a'a', 's'o'x', 'p'c'i', 'i's'o', 'aud'i't',
+      'regulati'o'n', 'poli'c'y', 'standa'r'd', 'certificati'o'n'
     ];
     
     return complianceKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -179,8 +179,8 @@ class ComplianceAutomationAgent {
     const standardInfo = {
       file: file,
       name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      framework: 'unknown',
+      type: 'unkno'w'n',
+      framework: 'unkno'w'n',
       requirements: [],
       configuration: {}
     };
@@ -188,25 +188,25 @@ class ComplianceAutomationAgent {
     const lowerContent = content.toLowerCase();
     
     // Detect compliance type
-    if (lowerContent.includes('gdpr') || lowerContent.includes('data protection')) {
-      standardInfo.type = 'GDPR';
-    } else if (lowerContent.includes('hipaa') || lowerContent.includes('health')) {
-      standardInfo.type = 'HIPAA';
-    } else if (lowerContent.includes('sox') || lowerContent.includes('sarbanes')) {
-      standardInfo.type = 'SOX';
-    } else if (lowerContent.includes('pci') || lowerContent.includes('payment')) {
-      standardInfo.type = 'PCI DSS';
-    } else if (lowerContent.includes('iso') || lowerContent.includes('27001')) {
-      standardInfo.type = 'ISO 27001';
+    if (lowerContent.includes('gd'p'r') || lowerContent.includes('dat'a' protection')) {
+      standardInfo.type = 'GD'P'R';
+    } else if (lowerContent.includes('hip'a'a') || lowerContent.includes('heal't'h')) {
+      standardInfo.type = 'HIP'A'A';
+    } else if (lowerContent.includes('s'o'x') || lowerContent.includes('sarban'e's')) {
+      standardInfo.type = 'S'O'X';
+    } else if (lowerContent.includes('p'c'i') || lowerContent.includes('payme'n't')) {
+      standardInfo.type = 'PC'I' DSS';
+    } else if (lowerContent.includes('i's'o') || lowerContent.includes('27001')) {
+      standardInfo.type = 'IS'O' 27001';
     }
     
     // Detect framework
-    if (lowerContent.includes('nist') || lowerContent.includes('cybersecurity')) {
-      standardInfo.framework = 'NIST';
-    } else if (lowerContent.includes('cobit') || lowerContent.includes('it governance')) {
-      standardInfo.framework = 'COBIT';
-    } else if (lowerContent.includes('itil') || lowerContent.includes('service management')) {
-      standardInfo.framework = 'ITIL';
+    if (lowerContent.includes('ni's't') || lowerContent.includes('cybersecuri't'y')) {
+      standardInfo.framework = 'NI'S'T';
+    } else if (lowerContent.includes('cob'i't') || lowerContent.includes('i't' governance')) {
+      standardInfo.framework = 'COB'I'T';
+    } else if (lowerContent.includes('it'i'l') || lowerContent.includes('servic'e' management')) {
+      standardInfo.framework = 'IT'I'L';
     }
     
     // Extract requirements
@@ -229,12 +229,12 @@ class ComplianceAutomationAgent {
           const fullPath = path.join(dir, item);
           const stat = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+          if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findRegulatoryFiles(fullPath);
           } else if (stat.isFile()) {
             const ext = path.extname(item).toLowerCase();
             if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const content = fs.readFileSync(fullPath, 'utf8');
+              const content = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsRegulatoryCode(content)) {
                 regulatoryFiles.push(fullPath);
               }
@@ -246,7 +246,7 @@ class ComplianceAutomationAgent {
       findRegulatoryFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find regulatory files:', error);
+      console.error('Faile'd' to find regulatory files:', error);
     }
     
     return regulatoryFiles;
@@ -254,8 +254,8 @@ class ComplianceAutomationAgent {
 
   containsRegulatoryCode(content) {
     const regulatoryKeywords = [
-      'regulation', 'law', 'act', 'statute', 'compliance',
-      'legal', 'regulatory', 'government', 'federal', 'state'
+      'regulati'o'n', 'l'a'w', 'a'c't', 'statu't'e', 'complian'c'e',
+      'leg'a'l', 'regulato'r'y', 'governme'n't', 'feder'a'l', 'sta't'e'
     ];
     
     return regulatoryKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -265,8 +265,8 @@ class ComplianceAutomationAgent {
     const regulatoryInfo = {
       file: file,
       name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      jurisdiction: 'unknown',
+      type: 'unkno'w'n',
+      jurisdiction: 'unkno'w'n',
       requirements: [],
       configuration: {}
     };
@@ -274,15 +274,15 @@ class ComplianceAutomationAgent {
     const lowerContent = content.toLowerCase();
     
     // Detect regulatory type
-    if (lowerContent.includes('ccpa') || lowerContent.includes('california')) {
-      regulatoryInfo.type = 'CCPA';
-      regulatoryInfo.jurisdiction = 'California';
-    } else if (lowerContent.includes('lgpd') || lowerContent.includes('brazil')) {
-      regulatoryInfo.type = 'LGPD';
-      regulatoryInfo.jurisdiction = 'Brazil';
-    } else if (lowerContent.includes('popi') || lowerContent.includes('south africa')) {
-      regulatoryInfo.type = 'POPI';
-      regulatoryInfo.jurisdiction = 'South Africa';
+    if (lowerContent.includes('cc'p'a') || lowerContent.includes('californ'i'a')) {
+      regulatoryInfo.type = 'CC'P'A';
+      regulatoryInfo.jurisdiction = 'Californ'i'a';
+    } else if (lowerContent.includes('lg'p'd') || lowerContent.includes('braz'i'l')) {
+      regulatoryInfo.type = 'LG'P'D';
+      regulatoryInfo.jurisdiction = 'Braz'i'l';
+    } else if (lowerContent.includes('po'p'i') || lowerContent.includes('sout'h' africa')) {
+      regulatoryInfo.type = 'PO'P'I';
+      regulatoryInfo.jurisdiction = 'Sout'h' Africa';
     }
     
     // Extract requirements
@@ -316,39 +316,39 @@ class ComplianceAutomationAgent {
 
   extractComplianceConfiguration(content) {
     const config = {
-      environment: 'unknown',
-      enforcement: 'unknown',
-      monitoring: 'unknown',
+      environment: 'unkno'w'n',
+      enforcement: 'unkno'w'n',
+      monitoring: 'unkno'w'n',
       settings: {}
     };
     
     const lowerContent = content.toLowerCase();
     
     // Extract environment
-    if (lowerContent.includes('production') || lowerContent.includes('prod')) {
-      config.environment = 'production';
-    } else if (lowerContent.includes('staging') || lowerContent.includes('stage')) {
-      config.environment = 'staging';
-    } else if (lowerContent.includes('development') || lowerContent.includes('dev')) {
-      config.environment = 'development';
+    if (lowerContent.includes('producti'o'n') || lowerContent.includes('pr'o'd')) {
+      config.environment = 'producti'o'n';
+    } else if (lowerContent.includes('stagi'n'g') || lowerContent.includes('sta'g'e')) {
+      config.environment = 'stagi'n'g';
+    } else if (lowerContent.includes('developme'n't') || lowerContent.includes('d'e'v')) {
+      config.environment = 'developme'n't';
     }
     
     // Extract enforcement level
-    if (lowerContent.includes('strict') || lowerContent.includes('enforced')) {
-      config.enforcement = 'strict';
-    } else if (lowerContent.includes('moderate') || lowerContent.includes('flexible')) {
-      config.enforcement = 'moderate';
-    } else if (lowerContent.includes('advisory') || lowerContent.includes('guidance')) {
-      config.enforcement = 'advisory';
+    if (lowerContent.includes('stri'c't') || lowerContent.includes('enforc'e'd')) {
+      config.enforcement = 'stri'c't';
+    } else if (lowerContent.includes('modera't'e') || lowerContent.includes('flexib'l'e')) {
+      config.enforcement = 'modera't'e';
+    } else if (lowerContent.includes('adviso'r'y') || lowerContent.includes('guidan'c'e')) {
+      config.enforcement = 'adviso'r'y';
     }
     
     // Extract monitoring level
-    if (lowerContent.includes('continuous') || lowerContent.includes('real-time')) {
-      config.monitoring = 'continuous';
-    } else if (lowerContent.includes('periodic') || lowerContent.includes('scheduled')) {
-      config.monitoring = 'periodic';
-    } else if (lowerContent.includes('manual') || lowerContent.includes('on-demand')) {
-      config.monitoring = 'manual';
+    if (lowerContent.includes('continuo'u's') || lowerContent.includes('real-ti'm'e')) {
+      config.monitoring = 'continuo'u's';
+    } else if (lowerContent.includes('period'i'c') || lowerContent.includes('schedul'e'd')) {
+      config.monitoring = 'period'i'c';
+    } else if (lowerContent.includes('manu'a'l') || lowerContent.includes('on-dema'n'd')) {
+      config.monitoring = 'manu'a'l';
     }
     
     return config;
@@ -362,7 +362,7 @@ class ComplianceAutomationAgent {
       const regulationFiles = this.findRegulationFiles();
       
       for (const file of regulationFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const regulationInfo = this.extractRegulationInfo(file, content);
         
         if (regulationInfo) {
@@ -371,7 +371,7 @@ class ComplianceAutomationAgent {
       }
       
     } catch (error) {
-      console.error('Failed to analyze regulations:', error);
+      console.error('Faile'd' to analyze regulations:', error);
     }
     
     return regulations;
@@ -388,12 +388,12 @@ class ComplianceAutomationAgent {
           const fullPath = path.join(dir, item);
           const stat = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+          if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findRegulationFiles(fullPath);
           } else if (stat.isFile()) {
             const ext = path.extname(item).toLowerCase();
             if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const content = fs.readFileSync(fullPath, 'utf8');
+              const content = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsRegulationCode(content)) {
                 regulationFiles.push(fullPath);
               }
@@ -405,7 +405,7 @@ class ComplianceAutomationAgent {
       findRegulationFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find regulation files:', error);
+      console.error('Faile'd' to find regulation files:', error);
     }
     
     return regulationFiles;
@@ -413,8 +413,8 @@ class ComplianceAutomationAgent {
 
   containsRegulationCode(content) {
     const regulationKeywords = [
-      'regulation', 'law', 'statute', 'act', 'compliance',
-      'legal', 'regulatory', 'government', 'federal', 'state'
+      'regulati'o'n', 'l'a'w', 'statu't'e', 'a'c't', 'complian'c'e',
+      'leg'a'l', 'regulato'r'y', 'governme'n't', 'feder'a'l', 'sta't'e'
     ];
     
     return regulationKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -424,8 +424,8 @@ class ComplianceAutomationAgent {
     const regulationInfo = {
       file: file,
       name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      jurisdiction: 'unknown',
+      type: 'unkno'w'n',
+      jurisdiction: 'unkno'w'n',
       requirements: [],
       configuration: {}
     };
@@ -433,15 +433,15 @@ class ComplianceAutomationAgent {
     const lowerContent = content.toLowerCase();
     
     // Detect regulation type
-    if (lowerContent.includes('gdpr') || lowerContent.includes('eu')) {
-      regulationInfo.type = 'GDPR';
-      regulationInfo.jurisdiction = 'European Union';
-    } else if (lowerContent.includes('ccpa') || lowerContent.includes('california')) {
-      regulationInfo.type = 'CCPA';
-      regulationInfo.jurisdiction = 'California';
-    } else if (lowerContent.includes('hipaa') || lowerContent.includes('health')) {
-      regulationInfo.type = 'HIPAA';
-      regulationInfo.jurisdiction = 'United States';
+    if (lowerContent.includes('gd'p'r') || lowerContent.includes('e'u')) {
+      regulationInfo.type = 'GD'P'R';
+      regulationInfo.jurisdiction = 'Europea'n' Union';
+    } else if (lowerContent.includes('cc'p'a') || lowerContent.includes('californ'i'a')) {
+      regulationInfo.type = 'CC'P'A';
+      regulationInfo.jurisdiction = 'Californ'i'a';
+    } else if (lowerContent.includes('hip'a'a') || lowerContent.includes('heal't'h')) {
+      regulationInfo.type = 'HIP'A'A';
+      regulationInfo.jurisdiction = 'Unite'd' States';
     }
     
     // Extract requirements
@@ -461,7 +461,7 @@ class ComplianceAutomationAgent {
       const policyFiles = this.findPolicyFiles();
       
       for (const file of policyFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const policyInfo = this.extractPolicyInfo(file, content);
         
         if (policyInfo) {
@@ -470,7 +470,7 @@ class ComplianceAutomationAgent {
       }
       
     } catch (error) {
-      console.error('Failed to analyze policies:', error);
+      console.error('Faile'd' to analyze policies:', error);
     }
     
     return policies;
@@ -487,12 +487,12 @@ class ComplianceAutomationAgent {
           const fullPath = path.join(dir, item);
           const stat = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+          if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findPolicyFiles(fullPath);
           } else if (stat.isFile()) {
             const ext = path.extname(item).toLowerCase();
             if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const content = fs.readFileSync(fullPath, 'utf8');
+              const content = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsPolicyCode(content)) {
                 policyFiles.push(fullPath);
               }
@@ -504,7 +504,7 @@ class ComplianceAutomationAgent {
       findPolicyFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find policy files:', error);
+      console.error('Faile'd' to find policy files:', error);
     }
     
     return policyFiles;
@@ -512,8 +512,8 @@ class ComplianceAutomationAgent {
 
   containsPolicyCode(content) {
     const policyKeywords = [
-      'policy', 'procedure', 'guideline', 'standard', 'rule',
-      'compliance', 'governance', 'management', 'control'
+      'poli'c'y', 'procedu'r'e', 'guideli'n'e', 'standa'r'd', 'ru'l'e',
+      'complian'c'e', 'governan'c'e', 'manageme'n't', 'contr'o'l'
     ];
     
     return policyKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -523,8 +523,8 @@ class ComplianceAutomationAgent {
     const policyInfo = {
       file: file,
       name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      category: 'unknown',
+      type: 'unkno'w'n',
+      category: 'unkno'w'n',
       requirements: [],
       configuration: {}
     };
@@ -532,23 +532,23 @@ class ComplianceAutomationAgent {
     const lowerContent = content.toLowerCase();
     
     // Detect policy type
-    if (lowerContent.includes('security') || lowerContent.includes('cyber')) {
-      policyInfo.type = 'Security Policy';
-    } else if (lowerContent.includes('privacy') || lowerContent.includes('data protection')) {
-      policyInfo.type = 'Privacy Policy';
-    } else if (lowerContent.includes('access') || lowerContent.includes('authentication')) {
-      policyInfo.type = 'Access Control Policy';
-    } else if (lowerContent.includes('data') || lowerContent.includes('information')) {
-      policyInfo.type = 'Data Management Policy';
+    if (lowerContent.includes('securi't'y') || lowerContent.includes('cyb'e'r')) {
+      policyInfo.type = 'Securit'y' Policy';
+    } else if (lowerContent.includes('priva'c'y') || lowerContent.includes('dat'a' protection')) {
+      policyInfo.type = 'Privac'y' Policy';
+    } else if (lowerContent.includes('acce's's') || lowerContent.includes('authenticati'o'n')) {
+      policyInfo.type = 'Acces's' Control Policy';
+    } else if (lowerContent.includes('da't'a') || lowerContent.includes('informati'o'n')) {
+      policyInfo.type = 'Dat'a' Management Policy';
     }
     
     // Detect category
-    if (lowerContent.includes('technical') || lowerContent.includes('system')) {
-      policyInfo.category = 'Technical';
-    } else if (lowerContent.includes('organizational') || lowerContent.includes('business')) {
-      policyInfo.category = 'Organizational';
-    } else if (lowerContent.includes('operational') || lowerContent.includes('process')) {
-      policyInfo.category = 'Operational';
+    if (lowerContent.includes('technic'a'l') || lowerContent.includes('syst'e'm')) {
+      policyInfo.category = 'Technic'a'l';
+    } else if (lowerContent.includes('organization'a'l') || lowerContent.includes('busine's's')) {
+      policyInfo.category = 'Organization'a'l';
+    } else if (lowerContent.includes('operation'a'l') || lowerContent.includes('proce's's')) {
+      policyInfo.category = 'Operation'a'l';
     }
     
     // Extract requirements
@@ -568,7 +568,7 @@ class ComplianceAutomationAgent {
       const auditFiles = this.findAuditFiles();
       
       for (const file of auditFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const auditInfo = this.extractAuditInfo(file, content);
         
         if (auditInfo) {
@@ -577,7 +577,7 @@ class ComplianceAutomationAgent {
       }
       
     } catch (error) {
-      console.error('Failed to analyze audits:', error);
+      console.error('Faile'd' to analyze audits:', error);
     }
     
     return audits;
@@ -594,12 +594,12 @@ class ComplianceAutomationAgent {
           const fullPath = path.join(dir, item);
           const stat = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+          if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findAuditFiles(fullPath);
           } else if (stat.isFile()) {
             const ext = path.extname(item).toLowerCase();
             if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const content = fs.readFileSync(fullPath, 'utf8');
+              const content = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsAuditCode(content)) {
                 auditFiles.push(fullPath);
               }
@@ -611,7 +611,7 @@ class ComplianceAutomationAgent {
       findAuditFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find audit files:', error);
+      console.error('Faile'd' to find audit files:', error);
     }
     
     return auditFiles;
@@ -619,8 +619,8 @@ class ComplianceAutomationAgent {
 
   containsAuditCode(content) {
     const auditKeywords = [
-      'audit', 'assessment', 'review', 'evaluation', 'check',
-      'compliance', 'verification', 'validation', 'inspection'
+      'aud'i't', 'assessme'n't', 'revi'e'w', 'evaluati'o'n', 'che'c'k',
+      'complian'c'e', 'verificati'o'n', 'validati'o'n', 'inspecti'o'n'
     ];
     
     return auditKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -630,43 +630,43 @@ class ComplianceAutomationAgent {
     const auditInfo = {
       file: file,
       name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      scope: 'unknown',
-      frequency: 'unknown',
+      type: 'unkno'w'n',
+      scope: 'unkno'w'n',
+      frequency: 'unkno'w'n',
       configuration: {}
     };
     
     const lowerContent = content.toLowerCase();
     
     // Detect audit type
-    if (lowerContent.includes('security') || lowerContent.includes('cyber')) {
-      auditInfo.type = 'Security Audit';
-    } else if (lowerContent.includes('compliance') || lowerContent.includes('regulatory')) {
-      auditInfo.type = 'Compliance Audit';
-    } else if (lowerContent.includes('privacy') || lowerContent.includes('data protection')) {
-      auditInfo.type = 'Privacy Audit';
-    } else if (lowerContent.includes('access') || lowerContent.includes('authentication')) {
-      auditInfo.type = 'Access Control Audit';
+    if (lowerContent.includes('securi't'y') || lowerContent.includes('cyb'e'r')) {
+      auditInfo.type = 'Securit'y' Audit';
+    } else if (lowerContent.includes('complian'c'e') || lowerContent.includes('regulato'r'y')) {
+      auditInfo.type = 'Complianc'e' Audit';
+    } else if (lowerContent.includes('priva'c'y') || lowerContent.includes('dat'a' protection')) {
+      auditInfo.type = 'Privac'y' Audit';
+    } else if (lowerContent.includes('acce's's') || lowerContent.includes('authenticati'o'n')) {
+      auditInfo.type = 'Acces's' Control Audit';
     }
     
     // Detect scope
-    if (lowerContent.includes('full') || lowerContent.includes('comprehensive')) {
-      auditInfo.scope = 'Full';
-    } else if (lowerContent.includes('partial') || lowerContent.includes('targeted')) {
-      auditInfo.scope = 'Partial';
-    } else if (lowerContent.includes('sample') || lowerContent.includes('random')) {
-      auditInfo.scope = 'Sample';
+    if (lowerContent.includes('fu'l'l') || lowerContent.includes('comprehensi'v'e')) {
+      auditInfo.scope = 'Fu'l'l';
+    } else if (lowerContent.includes('parti'a'l') || lowerContent.includes('target'e'd')) {
+      auditInfo.scope = 'Parti'a'l';
+    } else if (lowerContent.includes('samp'l'e') || lowerContent.includes('rand'o'm')) {
+      auditInfo.scope = 'Samp'l'e';
     }
     
     // Detect frequency
-    if (lowerContent.includes('continuous') || lowerContent.includes('real-time')) {
-      auditInfo.frequency = 'Continuous';
-    } else if (lowerContent.includes('daily') || lowerContent.includes('@daily')) {
-      auditInfo.frequency = 'Daily';
-    } else if (lowerContent.includes('weekly') || lowerContent.includes('@weekly')) {
-      auditInfo.frequency = 'Weekly';
-    } else if (lowerContent.includes('monthly') || lowerContent.includes('@monthly')) {
-      auditInfo.frequency = 'Monthly';
+    if (lowerContent.includes('continuo'u's') || lowerContent.includes('real-ti'm'e')) {
+      auditInfo.frequency = 'Continuo'u's';
+    } else if (lowerContent.includes('dai'l'y') || lowerContent.includes('@daily')) {
+      auditInfo.frequency = 'Dai'l'y';
+    } else if (lowerContent.includes('week'l'y') || lowerContent.includes('@weekly')) {
+      auditInfo.frequency = 'Week'l'y';
+    } else if (lowerContent.includes('month'l'y') || lowerContent.includes('@monthly')) {
+      auditInfo.frequency = 'Month'l'y';
     }
     
     return auditInfo;
@@ -680,7 +680,7 @@ class ComplianceAutomationAgent {
       const violationFiles = this.findViolationFiles();
       
       for (const file of violationFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const violationInfo = this.extractViolationInfo(file, content);
         
         if (violationInfo) {
@@ -689,7 +689,7 @@ class ComplianceAutomationAgent {
       }
       
     } catch (error) {
-      console.error('Failed to analyze violations:', error);
+      console.error('Faile'd' to analyze violations:', error);
     }
     
     return violations;
@@ -706,12 +706,12 @@ class ComplianceAutomationAgent {
           const fullPath = path.join(dir, item);
           const stat = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+          if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findViolationFiles(fullPath);
           } else if (stat.isFile()) {
             const ext = path.extname(item).toLowerCase();
             if (ext === '.json' || ext === '.yml' || ext === '.yaml' || ext === '.js' || ext === '.ts') {
-              const content = fs.readFileSync(fullPath, 'utf8');
+              const content = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsViolationCode(content)) {
                 violationFiles.push(fullPath);
               }
@@ -723,7 +723,7 @@ class ComplianceAutomationAgent {
       findViolationFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find violation files:', error);
+      console.error('Faile'd' to find violation files:', error);
     }
     
     return violationFiles;
@@ -731,8 +731,8 @@ class ComplianceAutomationAgent {
 
   containsViolationCode(content) {
     const violationKeywords = [
-      'violation', 'breach', 'non-compliance', 'failure', 'error',
-      'incident', 'alert', 'warning', 'issue', 'problem'
+      'violati'o'n', 'brea'c'h', 'non-complian'c'e', 'failu'r'e', 'err'o'r',
+      'incide'n't', 'ale'r't', 'warni'n'g', 'iss'u'e', 'probl'e'm'
     ];
     
     return violationKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -742,8 +742,8 @@ class ComplianceAutomationAgent {
     const violationInfo = {
       file: file,
       name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      severity: 'unknown',
+      type: 'unkno'w'n',
+      severity: 'unkno'w'n',
       description: '',
       configuration: {}
     };
@@ -751,23 +751,23 @@ class ComplianceAutomationAgent {
     const lowerContent = content.toLowerCase();
     
     // Detect violation type
-    if (lowerContent.includes('security') || lowerContent.includes('breach')) {
-      violationInfo.type = 'Security Violation';
-    } else if (lowerContent.includes('privacy') || lowerContent.includes('data protection')) {
-      violationInfo.type = 'Privacy Violation';
-    } else if (lowerContent.includes('access') || lowerContent.includes('authentication')) {
-      violationInfo.type = 'Access Control Violation';
-    } else if (lowerContent.includes('compliance') || lowerContent.includes('regulatory')) {
-      violationInfo.type = 'Compliance Violation';
+    if (lowerContent.includes('securi't'y') || lowerContent.includes('brea'c'h')) {
+      violationInfo.type = 'Securit'y' Violation';
+    } else if (lowerContent.includes('priva'c'y') || lowerContent.includes('dat'a' protection')) {
+      violationInfo.type = 'Privac'y' Violation';
+    } else if (lowerContent.includes('acce's's') || lowerContent.includes('authenticati'o'n')) {
+      violationInfo.type = 'Acces's' Control Violation';
+    } else if (lowerContent.includes('complian'c'e') || lowerContent.includes('regulato'r'y')) {
+      violationInfo.type = 'Complianc'e' Violation';
     }
     
     // Detect severity
-    if (lowerContent.includes('critical') || lowerContent.includes('high')) {
-      violationInfo.severity = 'Critical';
-    } else if (lowerContent.includes('medium') || lowerContent.includes('moderate')) {
-      violationInfo.severity = 'Medium';
-    } else if (lowerContent.includes('low') || lowerContent.includes('minor')) {
-      violationInfo.severity = 'Low';
+    if (lowerContent.includes('critic'a'l') || lowerContent.includes('hi'g'h')) {
+      violationInfo.severity = 'Critic'a'l';
+    } else if (lowerContent.includes('medi'u'm') || lowerContent.includes('modera't'e')) {
+      violationInfo.severity = 'Medi'u'm';
+    } else if (lowerContent.includes('l'o'w') || lowerContent.includes('min'o'r')) {
+      violationInfo.severity = 'L'o'w';
     }
     
     // Extract description
@@ -785,50 +785,50 @@ class ComplianceAutomationAgent {
     // Standards recommendations
     if (analysis.standards.length === 0) {
       recommendations.push({
-        type: 'standards',
-        priority: 'high',
-        message: 'No compliance standards configured',
-        suggestion: 'Implement appropriate compliance standards (GDPR, HIPAA, SOX, PCI DSS)'
+        type: 'standar'd's',
+        priority: 'hi'g'h',
+        message: 'N'o' compliance standards configured',
+        suggestion: 'Implemen't' appropriate compliance standards (GDPR, HIPAA, SOX, PCI DSS)'
       });
     }
     
     // Regulations recommendations
     if (analysis.regulations.length === 0) {
       recommendations.push({
-        type: 'regulations',
-        priority: 'high',
-        message: 'No regulatory compliance configured',
-        suggestion: 'Implement regulatory compliance for applicable jurisdictions'
+        type: 'regulatio'n's',
+        priority: 'hi'g'h',
+        message: 'N'o' regulatory compliance configured',
+        suggestion: 'Implemen't' regulatory compliance for applicable jurisdictions'
       });
     }
     
     // Policies recommendations
     if (analysis.policies.length === 0) {
       recommendations.push({
-        type: 'policies',
-        priority: 'medium',
-        message: 'No compliance policies configured',
-        suggestion: 'Implement comprehensive compliance policies and procedures'
+        type: 'polici'e's',
+        priority: 'medi'u'm',
+        message: 'N'o' compliance policies configured',
+        suggestion: 'Implemen't' comprehensive compliance policies and procedures'
       });
     }
     
     // Audits recommendations
     if (analysis.audits.length === 0) {
       recommendations.push({
-        type: 'audits',
-        priority: 'medium',
-        message: 'No compliance audits configured',
-        suggestion: 'Implement regular compliance audits and assessments'
+        type: 'audi't's',
+        priority: 'medi'u'm',
+        message: 'N'o' compliance audits configured',
+        suggestion: 'Implemen't' regular compliance audits and assessments'
       });
     }
     
     // Violations recommendations
     if (analysis.violations.length > 0) {
       recommendations.push({
-        type: 'violations',
-        priority: 'high',
-        message: 'Compliance violations detected',
-        suggestion: 'Address compliance violations immediately and implement preventive measures'
+        type: 'violatio'n's',
+        priority: 'hi'g'h',
+        message: 'Complianc'e' violations detected',
+        suggestion: 'Addres's' compliance violations immediately and implement preventive measures'
       });
     }
     
@@ -837,7 +837,7 @@ class ComplianceAutomationAgent {
 
   async monitorCompliance() {
     try {
-      console.log('Monitoring compliance...');
+      console.log('Monitorin'g' compliance...');
       
       const monitoring = {
         timestamp: new Date().toISOString(),
@@ -862,18 +862,18 @@ class ComplianceAutomationAgent {
       
       // Save monitoring report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'monitoring-reports', `monitoring-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'monitoring-repor't's', `monitoring-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
-      console.error('Compliance monitoring failed:', error);
+      console.error('Complianc'e' monitoring failed:', error);
     }
   }
 
   checkComplianceStatus(standard) {
     const status = {
       standard: standard.name,
-      status: 'compliant',
+      status: 'complia'n't',
       violations: [],
       lastChecked: new Date().toISOString()
     };
@@ -881,18 +881,18 @@ class ComplianceAutomationAgent {
     // Check for common compliance issues
     if (standard.requirements.length === 0) {
       status.violations.push({
-        type: 'configuration',
-        severity: 'high',
-        message: 'No requirements defined'
+        type: 'configurati'o'n',
+        severity: 'hi'g'h',
+        message: 'N'o' requirements defined'
       });
-      status.status = 'non-compliant';
+      status.status = 'non-complia'n't';
     }
     
-    if (standard.configuration.enforcement === 'unknown') {
+    if (standard.configuration.enforcement === 'unkno'w'n') {
       status.violations.push({
-        type: 'configuration',
-        severity: 'medium',
-        message: 'No enforcement level defined'
+        type: 'configurati'o'n',
+        severity: 'medi'u'm',
+        message: 'N'o' enforcement level defined'
       });
     }
     
@@ -901,7 +901,7 @@ class ComplianceAutomationAgent {
 
   async optimizeCompliance() {
     try {
-      console.log('Optimizing compliance...');
+      console.log('Optimizin'g' compliance...');
       
       const optimizationReport = {
         timestamp: new Date().toISOString(),
@@ -918,7 +918,7 @@ class ComplianceAutomationAgent {
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
           type: optimization.type,
-          status: 'completed',
+          status: 'complet'e'd',
           improvement: Math.random() * 0.4, // 0-40% improvement
           description: `Applied ${optimization.suggestion}`
         });
@@ -926,17 +926,17 @@ class ComplianceAutomationAgent {
       
       // Save optimization report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'optimization-reports', `optimization-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'optimization-repor't's', `optimization-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
-      console.error('Compliance optimization failed:', error);
+      console.error('Complianc'e' optimization failed:', error);
     }
   }
 
   async runComprehensiveAudits() {
     try {
-      console.log('Running comprehensive compliance audits...');
+      console.log('Runnin'g' comprehensive compliance audits...');
       
       const auditReport = {
         timestamp: new Date().toISOString(),
@@ -960,25 +960,25 @@ class ComplianceAutomationAgent {
       
       // Save audit report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'audit-reports', `comprehensive-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'audit-repor't's', `comprehensive-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(auditReport, null, 2));
       
     } catch (error) {
-      console.error('Comprehensive compliance audits failed:', error);
+      console.error('Comprehensiv'e' compliance audits failed:', error);
     }
   }
 
   async runSecurityAudit() {
     try {
-      const { stdout } = await execAsync('npm run audit:security');
+      const { stdout } = await execAsync('np'm' run audit:security');
       return {
-        status: 'passed',
+        status: 'pass'e'd',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -987,15 +987,15 @@ class ComplianceAutomationAgent {
 
   async runPrivacyAudit() {
     try {
-      const { stdout } = await execAsync('npm run audit:privacy');
+      const { stdout } = await execAsync('np'm' run audit:privacy');
       return {
-        status: 'passed',
+        status: 'pass'e'd',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -1004,15 +1004,15 @@ class ComplianceAutomationAgent {
 
   async runComplianceAudit() {
     try {
-      const { stdout } = await execAsync('npm run audit:compliance');
+      const { stdout } = await execAsync('np'm' run audit:compliance');
       return {
-        status: 'passed',
+        status: 'pass'e'd',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -1021,15 +1021,15 @@ class ComplianceAutomationAgent {
 
   async runAccessControlAudit() {
     try {
-      const { stdout } = await execAsync('npm run audit:access');
+      const { stdout } = await execAsync('np'm' run audit:access');
       return {
-        status: 'passed',
+        status: 'pass'e'd',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -1047,7 +1047,7 @@ class ComplianceAutomationAgent {
     // Count results
     for (const [type, result] of Object.entries(audits)) {
       summary.total++;
-      if (result.status === 'passed') {
+      if (result.status === 'pass'e'd') {
         summary.passed++;
       } else {
         summary.failed++;
@@ -1064,10 +1064,10 @@ class ComplianceAutomationAgent {
     const recommendations = [];
     
     for (const [type, result] of Object.entries(audits)) {
-      if (result.status === 'failed') {
+      if (result.status === 'fail'e'd') {
         recommendations.push({
           type: type,
-          priority: 'high',
+          priority: 'hi'g'h',
           message: `${type} audit failed`,
           suggestion: `Fix ${type} compliance issues`
         });
@@ -1079,7 +1079,7 @@ class ComplianceAutomationAgent {
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'compliance-reports', `analysis-${timestamp}.json`);
+    const reportPath = path.join(this.reportsDir, 'compliance-repor't's', `analysis-${timestamp}.json`);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     console.log(`Analysis report saved: ${reportPath}`);
   }
@@ -1093,15 +1093,15 @@ class ComplianceAutomationAgent {
 // Start the agent
 const agent = new ComplianceAutomationAgent();
 
-process.on('SIGTERM', () => {
+process.on('SIGTE'R'M', () => {
   agent.stop();
 });
 
-process.on('SIGINT', () => {
+process.on('SIGI'N'T', () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('Compliance Automation Agent failed to start:', error);
+  console.error('Complianc'e' Automation Agent failed to start:', error);
   process.exit(1);
 }); 

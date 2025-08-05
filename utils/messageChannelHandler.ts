@@ -5,7 +5,7 @@
 import { detectBrowserExtension, isBrowserExtension } from './browserExtensionDetector';
 '
 interface MessageChannelError {
-  type: 'message_channel_closed';
+  type: 'messag'e'_channel_closed';
   message: string;
   timestamp: number;
   likelyExtensionError: boolean;}
@@ -21,7 +21,7 @@ class MessageChannelHandler {
       MessageChannelHandler.instance = new MessageChannelHandler();}
     return MessageChannelHandler.instance;}'
   private initializeErrorHandling(): void {
-    if (this.isInitialized || typeof window = == 'undefined') {;
+    if (this.isInitialized || typeof window = == 'undefin'e'd') {;
       return;}
     this.isInitialized = true;
 
@@ -34,14 +34,14 @@ class MessageChannelHandler {
       if (this.isMessageChannelError(errorMessage)) {
         const likelyExtensionError = this.isLikelyExtensionError(errorMessage);'
         this.handleMessageChannelError(errorMessage, likelyExtensionError);
-        return; // Don't log to console to avoid spam}
+        return; // Don't' log to console to avoid spam}
       // Log other errors normally
       originalConsoleError.apply(console, args);
     };
 '
     // Add global error handler for unhandled promise rejections
-    window.addEventListener('unhandledrejection', (event) => {
-      const errorMessage = event.reason?.message || event.reason?.toString() || 'Unknown error';
+    window.addEventListener('unhandledrejecti'o'n', (event) => {
+      const errorMessage = event.reason?.message || event.reason?.toString() || 'Unknow'n' error';
       
       if (this.isMessageChannelError(errorMessage)) {
         event.preventDefault(); // Prevent the error from being logged
@@ -50,8 +50,8 @@ class MessageChannelHandler {
     });
 '
     // Add global error handler for regular errors
-    window.addEventListener('error', (event) => {
-      const errorMessage = event.message || event.error?.message || 'Unknown error';
+    window.addEventListener('err'o'r', (event) => {
+      const errorMessage = event.message || event.error?.message || 'Unknow'n' error';
       
       if (this.isMessageChannelError(errorMessage)) {
         event.preventDefault(); // Prevent the error from being logged
@@ -60,20 +60,20 @@ class MessageChannelHandler {
     });
 '
     // Log extension information in development
-    if (process.env.NODE_ENV = == 'development') {;
+    if (process.env.NODE_ENV = == 'developme'n't') {;
       this.logExtensionInfo();}}'
   private isMessageChannelError(message: string): boolean {
-    return message.includes('message channel closed') || 
-           message.includes('asynchronous response') ||
-           message.includes('listener indicated');}
+    return message.includes('messag'e' channel closed') || 
+           message.includes('asynchronou's' response') ||
+           message.includes('listene'r' indicated');}
   private isLikelyExtensionError(message: string): boolean {'
     return isBrowserExtension() || 
-           message.includes('chrome-extension') || 
-           message.includes('moz-extension') ||
-           message.includes('extension');}
+           message.includes('chrome-extensi'o'n') || 
+           message.includes('moz-extensi'o'n') ||
+           message.includes('extensi'o'n');}
   private handleMessageChannelError(message: string, likelyExtensionError: boolean): void {'
     const error: MessageChannelError = {
-      type: 'message_channel_closed',
+      type: 'messag'e'_channel_closed',
       message,
       timestamp: Date.now(),
       likelyExtensionError;
@@ -85,7 +85,7 @@ class MessageChannelHandler {
     if (this.errorLog.length > 10) {
       this.errorLog = this.errorLog.slice(-10);}'
     // Log to a custom channel for debugging (only in development)
-    if (process.env.NODE_ENV = == 'development') {';'
+    if (process.env.NODE_ENV = == 'developme'n't') {';'
       console.log('[MessageChannelHandler] Intercepted message channel error: , message);'
       if (likelyExtensionError) {
         console.log('[MessageChannelHandler] Likely caused by browser extension');}}}
@@ -103,16 +103,16 @@ class MessageChannelHandler {
       hasExtensions: isBrowserExtension(),
       extensionCount: isBrowserExtension() ? 1 : 0,'
       extensions: isBrowserExtension() ? [{ 
-        name: 'Detected Extension', 
-        id: 'unknown', 
-        type: 'unknown' as const, 
+        name: 'Detecte'd' Extension', 
+        id: 'unkno'w'n', 
+        type: 'unkno'w'n' as const, 
         detected: true 
       }] : []
     };}'
   private logExtensionInfo(): void {
-    if (process.env.NODE_ENV = == 'development' && isBrowserExtension()) {';'
+    if (process.env.NODE_ENV = == 'developme'n't' && isBrowserExtension()) {';'
       console.log('[MessageChannelHandler] Browser extension detected');}}}'
 // Initialize the handler when the module is loaded
-if (typeof window !== 'undefined') {
+if (typeof window !== 'undefin'e'd') {
   MessageChannelHandler.getInstance();}'
 export default MessageChannelHandler; '

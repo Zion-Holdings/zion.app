@@ -1,7 +1,7 @@
-const fs = require('fs-extra');
-const path = require('path');
-const { v4: uuidv4 } = require('uuid');
-const moment = require('moment');
+const fs = require('fs-ext'r'a');
+const path = require('pa't'h');
+const { v4: uuidv4 } = require('uu'i'd');
+const moment = require('mome'n't');
 
 class LinkedInContentCreatorAgent {
     constructor() {
@@ -55,56 +55,56 @@ class LinkedInContentCreatorAgent {
   }
 
         this.id = uuidv4();
-        this.name = 'LinkedIn Content Creator Agent';
-        this.type = 'linkedin-content-creator';
-        this.status = 'active';
+        this.name = 'LinkedI'n' Content Creator Agent';
+        this.type = 'linkedin-content-creat'o'r';
+        this.status = 'acti'v'e';
         
-        this.appUrl = 'https://ziontechgroup.com';
+        this.appUrl = 'http's'://ziontechgroup.com';
         
         this.capabilities = [
-            'content-generation',
-            'ad-copy-writing',
-            'visual-design',
-            'a-b-testing',
-            'creative-optimization'
+            'content-generati'o'n',
+            'ad-copy-writi'n'g',
+            'visual-desi'g'n',
+            'a-b-testi'n'g',
+            'creative-optimizati'o'n'
         ];
         
         this.contentTemplates = {
             headlines: [
-                'Transform Your Business with AI-Powered Solutions',
-                'Unlock the Future of Digital Innovation',
-                'ZionTech: Your Partner in Digital Transformation',
-                'AI-Driven Business Intelligence at Your Fingertips',
-                'Revolutionize Your Operations with Smart Technology',
-                'Accelerate Growth with Intelligent Automation',
-                'Empower Your Business with Cutting-Edge Technology',
-                'Drive Digital Excellence with ZionTech Solutions',
-                'Innovate Faster with AI-Powered Development',
-                'Scale Your Business with Intelligent Solutions'
+                'Transfor'm' Your Business with AI-Powered Solutions',
+                'Unloc'k' the Future of Digital Innovation',
+                'ZionTec'h': Your Partner in Digital Transformation',
+                'AI-Drive'n' Business Intelligence at Your Fingertips',
+                'Revolutioniz'e' Your Operations with Smart Technology',
+                'Accelerat'e' Growth with Intelligent Automation',
+                'Empowe'r' Your Business with Cutting-Edge Technology',
+                'Driv'e' Digital Excellence with ZionTech Solutions',
+                'Innovat'e' Faster with AI-Powered Development',
+                'Scal'e' Your Business with Intelligent Solutions'
             ],
             descriptions: [
-                'Discover how ZionTech\'s cutting-edge AI solutions can streamline your operations, boost productivity, and drive growth. Visit ziontechgroup.com to explore our comprehensive suite of digital transformation services.',
-                'Ready to take your business to the next level? ZionTech offers innovative AI consulting, custom software development, and digital transformation services. Learn more at ziontechgroup.com',
-                'Join the digital revolution with ZionTech. Our expert team delivers AI-powered solutions, cloud infrastructure, and strategic consulting to help your business thrive in the digital age.',
-                'Experience the power of intelligent automation and data-driven insights. ZionTech provides comprehensive AI solutions, cybersecurity services, and digital transformation consulting.',
-                'Stay ahead of the competition with ZionTech\'s innovative technology solutions. From AI development to cloud infrastructure, we help businesses achieve digital excellence.',
-                'Transform your business operations with ZionTech\'s intelligent solutions. Our AI-powered platform delivers real-time insights, automated workflows, and scalable growth strategies.',
-                'Accelerate your digital transformation journey with ZionTech. Our comprehensive suite of AI tools, cloud services, and strategic consulting empowers businesses to innovate faster.',
-                'Unlock unprecedented growth potential with ZionTech\'s intelligent automation solutions. From predictive analytics to smart workflows, we help businesses scale efficiently.',
-                'Drive innovation and efficiency with ZionTech\'s AI-powered development platform. Custom solutions, rapid deployment, and continuous optimization for modern businesses.',
-                'Scale your operations intelligently with ZionTech\'s comprehensive technology solutions. AI consulting, custom development, and strategic implementation for sustainable growth.'
+                'Discove'r' how ZionTech\'s' cutting-edge AI solutions can streamline your operations, boost productivity, and drive growth. Visit ziontechgroup.com to explore our comprehensive suite of digital transformation services.',
+                'Read'y' to take your business to the next level? ZionTech offers innovative AI consulting, custom software development, and digital transformation services. Learn more at ziontechgroup.com',
+                'Joi'n' the digital revolution with ZionTech. Our expert team delivers AI-powered solutions, cloud infrastructure, and strategic consulting to help your business thrive in the digital age.',
+                'Experienc'e' the power of intelligent automation and data-driven insights. ZionTech provides comprehensive AI solutions, cybersecurity services, and digital transformation consulting.',
+                'Sta'y' ahead of the competition with ZionTech\'s' innovative technology solutions. From AI development to cloud infrastructure, we help businesses achieve digital excellence.',
+                'Transfor'm' your business operations with ZionTech\'s' intelligent solutions. Our AI-powered platform delivers real-time insights, automated workflows, and scalable growth strategies.',
+                'Accelerat'e' your digital transformation journey with ZionTech. Our comprehensive suite of AI tools, cloud services, and strategic consulting empowers businesses to innovate faster.',
+                'Unloc'k' unprecedented growth potential with ZionTech\'s' intelligent automation solutions. From predictive analytics to smart workflows, we help businesses scale efficiently.',
+                'Driv'e' innovation and efficiency with ZionTech\'s' AI-powered development platform. Custom solutions, rapid deployment, and continuous optimization for modern businesses.',
+                'Scal'e' your operations intelligently with ZionTech\'s' comprehensive technology solutions. AI consulting, custom development, and strategic implementation for sustainable growth.'
             ],
             callToActions: [
-                'Learn More',
-                'Get Started',
-                'Explore Solutions',
-                'Contact Us',
-                'Discover More',
-                'Start Free Trial',
-                'Request Demo',
-                'View Case Studies',
-                'Schedule Consultation',
-                'Download Guide'
+                'Lear'n' More',
+                'Ge't' Started',
+                'Explor'e' Solutions',
+                'Contac't' Us',
+                'Discove'r' More',
+                'Star't' Free Trial',
+                'Reques't' Demo',
+                'Vie'w' Case Studies',
+                'Schedul'e' Consultation',
+                'Downloa'd' Guide'
             ]
         };
     }
@@ -176,11 +176,11 @@ class LinkedInContentCreatorAgent {
         
         // Generate asset descriptions for LinkedIn
         const imageDescriptions = [
-            'AI-powered business solutions dashboard',
-            'Digital transformation process flow',
-            'Cloud infrastructure architecture',
-            'AI consulting team collaboration',
-            'Innovation technology showcase'
+            'AI-powere'd' business solutions dashboard',
+            'Digita'l' transformation process flow',
+            'Clou'd' infrastructure architecture',
+            'A'I' consulting team collaboration',
+            'Innovatio'n' technology showcase'
         ];
         
         for (const description of imageDescriptions) {
@@ -188,7 +188,7 @@ class LinkedInContentCreatorAgent {
                 id: uuidv4(),
                 description: description,
                 format: '1200x627',
-                type: 'sponsored-content'
+                type: 'sponsored-conte'n't'
             });
         }
         
@@ -200,7 +200,7 @@ class LinkedInContentCreatorAgent {
         
         const testVariations = {
             id: uuidv4(),
-            testName: 'ZionTech LinkedIn Ad Optimization',
+            testName: 'ZionTec'h' LinkedIn Ad Optimization',
             variations: []
         };
         
@@ -235,7 +235,7 @@ class LinkedInContentCreatorAgent {
         const contentDir = path.join(__dirname, '../data/linkedin-content');
         await fs.ensureDir(contentDir);
         
-        const timestamp = moment().format('YYYY-MM-DD-HH-mm');
+        const timestamp = moment().format('YYYY-MM-DD-HH-'m'm');
         
         // Save ad copy
         await fs.writeJson(
@@ -276,11 +276,11 @@ class LinkedInContentCreatorAgent {
 
     getTargetAudience() {
         const audiences = [
-            'tech-professionals',
-            'business-decision-makers',
-            'innovation-leaders',
-            'digital-transformation-managers',
-            'ai-enthusiasts'
+            'tech-professiona'l's',
+            'business-decision-make'r's',
+            'innovation-leade'r's',
+            'digital-transformation-manage'r's',
+            'ai-enthusias't's'
         ];
         
         return audiences[Math.floor(Math.random() * audiences.length)];
@@ -298,7 +298,7 @@ class LinkedInContentCreatorAgent {
             try {
                 await this.execute();
             } catch (error) {
-                console.error('LinkedIn Content Creator Agent error:', error);
+                console.error('LinkedI'n' Content Creator Agent error:', error);
             }
         }, 6 * 60 * 60 * 1000); // Every 6 hours
     }

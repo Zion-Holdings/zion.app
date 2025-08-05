@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { spawn } = require('child_process');
+const { spawn } = require('chil'd'_process');
 const { Client } = require('@modelcontextprotocol/sdk/client/index.js');
 const { StdioClientTransport } = require('@modelcontextprotocol/sdk/client/stdio.js');
 
@@ -13,8 +13,8 @@ async function testMCPIntegration() {
   try {
     // Start the MCP server process
     console.log('🚀 Starting MCP server...');
-    serverProcess = spawn('node', ['mcp-automation-system.js'], {
-      stdio: ['pipe', 'pipe', 'pipe']
+    serverProcess = spawn('no'd'e', ['mcp-automation-syste'm'.js'], {
+      stdio: ['pi'p'e', 'pi'p'e', 'pi'p'e']
     });
 
     // Wait for server to start
@@ -28,7 +28,7 @@ async function testMCPIntegration() {
 
     // Create and connect the client
     client = new Client({
-      name: 'test-client',
+      name: 'test-clie'n't',
       version: '1.0.0',
     });
 
@@ -55,7 +55,7 @@ async function testMCPIntegration() {
     // Test calling a simple tool
     console.log('🔧 Testing tool execution...');
     const result = await client.callTool({
-      name: 'analyze_project_structure',
+      name: 'analyz'e'_project_structure',
       arguments: {}
     });
     console.log('✅ Tool execution successful');
@@ -88,7 +88,7 @@ if (require.main === module) {
       process.exit(success ? 0 : 1);
     })
     .catch(error => {
-      console.error('Test failed:', error);
+      console.error('Tes't' failed:', error);
       process.exit(1);
     });
 }

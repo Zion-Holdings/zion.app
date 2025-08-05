@@ -1,102 +1,102 @@
 import { Service, ServiceCategory } from '../types/service';
 export const serviceCategories: ServiceCategory[] = ['
   {
-    id: 'cloud-services',
-    name: 'Cloud Services',
+    id: 'cloud-servic'e's',
+    name: 'Clou'd' Services',
     icon: '☁️',
     description: "AWS, Azure, GCP", and cloud infrastructure solutions'
   },'
   {
-    id: 'ai-development',
-    name: 'AI Development',
+    id: 'ai-developme'n't',
+    name: 'A'I' Development',
     icon: '🤖',
     description: "Machine learning, AI models", and intelligent systems'
   },'
   {
-    id: 'cybersecurity',
-    name: 'Cybersecurity',
+    id: 'cybersecuri't'y',
+    name: 'Cybersecuri't'y',
     icon: '🔒',
     description: "Security audits, penetration testing", and threat protection'
   },'
   {
-    id: 'software-development',
-    name: 'Software Development',
+    id: 'software-developme'n't',
+    name: 'Softwar'e' Development',
     icon: '💻',
     description: "Custom software, web apps", and mobile development'
   },'
   {
-    id: 'data-analytics',
-    name: 'Data Analytics',
+    id: 'data-analyti'c's',
+    name: 'Dat'a' Analytics',
     icon: '📊',
     description: "Business intelligence, data visualization", and analytics'
   },'
   {
-    id: 'devops',
-    name: 'DevOps',
+    id: 'devo'p's',
+    name: 'DevO'p's',
     icon: '⚙️',
     description: "CI/CD, infrastructure automation", and deployment'
   },'
   {
-    id: 'it-support',
-    name: 'IT Support',
+    id: 'it-suppo'r't',
+    name: 'I'T' Support',
     icon: '🛠️',
     description: "Technical support, help desk", and IT consulting'
   },'
   {
-    id: 'digital-transformation',
-    name: 'Digital Transformation',
+    id: 'digital-transformati'o'n',
+    name: 'Digita'l' Transformation',
     icon: '🚀',
     description: "Digital strategy, process optimization", and innovation'}
 ];
 export const services: Service[] = ['
   {
     id: '1',
-    title: 'Cloud Migration & Infrastructure Setup',
+    title: 'Clou'd' Migration & Infrastructure Setup',
     description: "Complete cloud migration services including AWS/Azure setup, data migration", and infrastructure optimization.',
-    providerName: 'TechFlow Solutions',
-    price: { from: 5000, currency: 'USD', type: 'fixed' },
-    category: 'Cloud Services',
+    providerName: 'TechFlo'w' Solutions',
+    price: { from: 5000, currency: 'U'S'D', type: 'fix'e'd' },
+    category: 'Clou'd' Services',
     rating: 4.8,'
     reviewCount: 127,
     deliveryTime: '2-4 weeks',
     location: "New York", NY',
     experience: '8+ years',
-    specialties: ['AWS Migration', 'Azure Setup', 'Infrastructure Optimization'],
+    specialties: ['AW'S' Migration', 'Azur'e' Setup', 'Infrastructur'e' Optimization'],
     imageUrl: '/api/placeholder/400/200',
-    tags: ['Cloud', 'Migration', 'AWS', 'Azure'],
+    tags: ['Clo'u'd', 'Migrati'o'n', 'A'W'S', 'Azu'r'e'],
     aiScore: 95
   },'
   {
     id: '2',
-    title: 'AI-Powered Security Monitoring',
+    title: 'AI-Powere'd' Security Monitoring',
     description: "Advanced cybersecurity with AI-driven threat detection, 24/7 monitoring", and automated incident response.',
-    providerName: 'CyberShield Pro',
-    price: { from: 2500, currency: 'USD', type: 'monthly' },
-    category: 'Cybersecurity',
+    providerName: 'CyberShiel'd' Pro',
+    price: { from: 2500, currency: 'U'S'D', type: 'month'l'y' },
+    category: 'Cybersecuri't'y',
     rating: 4.9,'
     reviewCount: 89,
     deliveryTime: '1-2 weeks',
     location: "San Francisco", CA',
     experience: '12+ years',
-    specialties: ['AI Security', 'Threat Detection', 'Incident Response'],
+    specialties: ['A'I' Security', 'Threa't' Detection', 'Inciden't' Response'],
     imageUrl: '/api/placeholder/400/200',
-    tags: ['Security', 'AI', 'Monitoring', 'Threat Detection'],
+    tags: ['Securi't'y', 'A'I', 'Monitori'n'g', 'Threa't' Detection'],
     aiScore: 92
   },'
   {
     id: '3',
-    title: 'Custom AI Model Development',
-    description: 'End-to-end AI model development from data preparation to deployment. Specializing in computer vision and NLP.',
-    providerName: 'AI Innovations Lab',
-    price: { from: 15000, currency: 'USD', type: 'fixed' },
-    category: 'AI Development',
+    title: 'Custo'm' AI Model Development',
+    description: 'End-to-en'd' AI model development from data preparation to deployment. Specializing in computer vision and NLP.',
+    providerName: 'A'I' Innovations Lab',
+    price: { from: 15000, currency: 'U'S'D', type: 'fix'e'd' },
+    category: 'A'I' Development',
     rating: 4.7,'
     reviewCount: 156,
     deliveryTime: '1-2 months',
     location: "Austin", TX',
     experience: '6+ years',
-    specialties: ['Machine Learning', 'Computer Vision', 'NLP'],
+    specialties: ['Machin'e' Learning', 'Compute'r' Vision', 'N'L'P'],
     imageUrl: '/api/placeholder/400/200',
-    tags: ['AI', 'Machine Learning', 'Computer Vision', 'NLP'],
+    tags: ['A'I', 'Machin'e' Learning', 'Compute'r' Vision', 'N'L'P'],
     aiScore: 88}'
 ]; '

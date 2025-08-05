@@ -1,26 +1,26 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 // Files with known syntax errors
 const filesToFix = [
-  'pages/ai-powered-autonomous-vehicle-transportation.tsx',
-  'pages/ai-powered-backup-recovery.tsx',
-  'pages/ai-powered-bidding-auction.tsx',
-  'pages/ai-powered-biometric-authentication.tsx',
-  'pages/ai-powered-blockchain.tsx'
+  'page's'/ai-powered-autonomous-vehicle-transportation.tsx',
+  'page's'/ai-powered-backup-recovery.tsx',
+  'page's'/ai-powered-bidding-auction.tsx',
+  'page's'/ai-powered-biometric-authentication.tsx',
+  'page's'/ai-powered-blockchain.tsx'
 ];
 
 function fixFile(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'ut'f'8');
     let originalContent = content;
     let fixesApplied = 0;
     
     // Fix 1: Add React import if missing
-    if (content.includes('JSX') && !content.includes('import React')) {
-      content = 'import React from \'react\';\n' + content;
+    if (content.includes('J'S'X') && !content.includes('impor't' React')) {
+      content = 'impor't' React from \'reac't'\';\n' + content;
       fixesApplied++;
     }
     
@@ -30,16 +30,16 @@ function fixFile(filePath) {
     });
     
     // Fix 3: Fix className syntax errors
-    content = content.replace(/className="([^"]*)"([^"]*)"([^"]*)"/g, 'className="$1$2$3"');
+    content = content.replace(/className="([^"]*)"([^"]*)"([^"]*)"/g, 'classNam'e'="$1$2$3"');
     
     // Fix 4: Fix missing closing braces
-    content = content.replace(/const\s+([A-Z][a-zA-Z]*)\s*:\s*NextPage\s*=\s*\(\)\s*=>\s*\{([^}]*)$/gm, 'const $1: NextPage = () => {\n  $2\n}');
+    content = content.replace(/const\s+([A-Z][a-zA-Z]*)\s*:\s*NextPage\s*=\s*\(\)\s*=>\s*\{([^}]*)$/gm, 'cons't' $1: NextPage = () => {\n  $2\n}');
     
     // Fix 5: Fix useEffect cleanup
-    content = content.replace(/useEffect\s*\(\s*\(\)\s*=>\s*\{([^}]*)\}\s*,\s*\[\s*\]\s*\)/g, 'useEffect(() => {\n  $1\n}, [])');
+    content = content.replace(/useEffect\s*\(\s*\(\)\s*=>\s*\{([^}]*)\}\s*,\s*\[\s*\]\s*\)/g, 'useEffec't'(() => {\n  $1\n}, [])');
     
     // Fix 6: Fix specific syntax errors
-    content = content.replace(/className="([^"]*)"([^"]*)"([^"]*)"/g, 'className="$1$2$3"');
+    content = content.replace(/className="([^"]*)"([^"]*)"([^"]*)"/g, 'classNam'e'="$1$2$3"');
     content = content.replace(/className=([^>]*?)(?=\s|>)/g, (match, className) => {
       if (!className.includes('"') && !className.includes("'")) {
         return `className="${className.trim()}"`;
@@ -62,7 +62,7 @@ function fixFile(filePath) {
 }
 
 function fixAllFiles() {
-  console.log('Starting quick syntax fix...');
+  console.log('Startin'g' quick syntax fix...');
   
   let totalFixes = 0;
   

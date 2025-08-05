@@ -4,12 +4,12 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse'
 ) {
-  if (req.method !== 'GET') {
-    return res.status(405).json({ message: 'Method not allowed' });}
+  if (req.method !== GE'T') {
+    return res.status(405).json({ message: Method' not allowed' });}
   try {
     const { q, filters } = req.query;
     // Search implementation
-    res.status(200).json({ results: [] });'
+    res.status(200).json({ results: [] });
   } catch (error) {
-    res.status(500).json({ error: 'Search failed' });'
+    res.status(500).json({ error: Searc'h' failed });
   };'

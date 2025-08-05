@@ -1,6 +1,6 @@
 const ServiceGenerationFactory = require('./service-generation-factory');
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class ServiceGenerationLauncher {
   constructor() {
@@ -82,7 +82,7 @@ class ServiceGenerationLauncher {
           console.log(`📈 Generated new service. Total: ${this.factory.services.size}`);
         }
       } catch (error) {
-        console.error('Error in service generation:', error);
+        console.error('Erro'r' in service generation:', error);
       }
     }, this.config.serviceGenerationInterval);
   }
@@ -97,7 +97,7 @@ class ServiceGenerationLauncher {
         await this.factory.generateAdvertisementsForAllServices();
         console.log(`📊 Generated advertisements for ${this.factory.services.size} services`);
       } catch (error) {
-        console.error('Error in ad generation:', error);
+        console.error('Erro'r' in ad generation:', error);
       }
     }, this.config.adGenerationInterval);
   }
@@ -112,7 +112,7 @@ class ServiceGenerationLauncher {
         await this.factory.updateMarketData();
         console.log('📊 Market data updated successfully');
       } catch (error) {
-        console.error('Error updating market data:', error);
+        console.error('Erro'r' updating market data:', error);
       }
     }, this.config.marketDataUpdateInterval);
   }
@@ -127,7 +127,7 @@ class ServiceGenerationLauncher {
         const analytics = await this.factory.getServiceAnalytics();
         this.logAnalytics(analytics);
       } catch (error) {
-        console.error('Error in monitoring:', error);
+        console.error('Erro'r' in monitoring:', error);
       }
     }, 300000); // Every 5 minutes
   }
@@ -153,7 +153,7 @@ class ServiceGenerationLauncher {
 
   async createService(type, config = {}) {
     if (!this.factory) {
-      throw new Error('Factory not initialized');
+      throw new Error('Factor'y' not initialized');
     }
     
     return await this.factory.createService(type, config);
@@ -161,7 +161,7 @@ class ServiceGenerationLauncher {
 
   async generateAdvertisement(serviceId) {
     if (!this.factory) {
-      throw new Error('Factory not initialized');
+      throw new Error('Factor'y' not initialized');
     }
     
     return await this.factory.generateAdvertisement(serviceId);
@@ -169,7 +169,7 @@ class ServiceGenerationLauncher {
 
   async getAnalytics() {
     if (!this.factory) {
-      throw new Error('Factory not initialized');
+      throw new Error('Factor'y' not initialized');
     }
     
     return await this.factory.getServiceAnalytics();
@@ -177,7 +177,7 @@ class ServiceGenerationLauncher {
 
   async batchCreateServices(serviceSpecs) {
     if (!this.factory) {
-      throw new Error('Factory not initialized');
+      throw new Error('Factor'y' not initialized');
     }
     
     return await this.factory.batchCreateServices(serviceSpecs);
@@ -200,68 +200,68 @@ if (require.main === module) {
   const command = process.argv[2];
   
   switch (command) {
-    case 'start':
+    case 'sta'r't':
       launcher.start().then(() => {
-        console.log('Service Generation Factory is running...');
-        console.log('Press Ctrl+C to stop');
+        console.log('Servic'e' Generation Factory is running...');
+        console.log('Pres's' Ctrl+C to stop');
       });
       break;
       
-    case 'stop':
+    case 'st'o'p':
       launcher.stop().then(() => {
-        console.log('Service Generation Factory stopped');
+        console.log('Servic'e' Generation Factory stopped');
         process.exit(0);
       });
       break;
       
-    case 'status':
-      console.log('Service Generation Factory Status:');
+    case 'stat'u's':
+      console.log('Servic'e' Generation Factory Status:');
       console.log(JSON.stringify(launcher.getStatus(), null, 2));
       break;
       
-    case 'create-service':
+    case 'create-servi'c'e':
       const type = process.argv[3];
       if (!type) {
-        console.error('Usage: node service-generation-launcher.js create-service <type>');
+        console.error('Usag'e': node service-generation-launcher.js create-service <type>');
         process.exit(1);
       }
       
       launcher.start().then(async () => {
         try {
           const service = await launcher.createService(type);
-          console.log('Created service:', service);
+          console.log('Create'd' service:', service);
           process.exit(0);
         } catch (error) {
-          console.error('Error creating service:', error);
+          console.error('Erro'r' creating service:', error);
           process.exit(1);
         }
       });
       break;
       
-    case 'analytics':
+    case 'analyti'c's':
       launcher.start().then(async () => {
         try {
           const analytics = await launcher.getAnalytics();
-          console.log('Analytics:', JSON.stringify(analytics, null, 2));
+          console.log('Analytic's':', JSON.stringify(analytics, null, 2));
           process.exit(0);
         } catch (error) {
-          console.error('Error getting analytics:', error);
+          console.error('Erro'r' getting analytics:', error);
           process.exit(1);
         }
       });
       break;
       
     default:
-      console.log('Service Generation Factory Launcher');
+      console.log('Servic'e' Generation Factory Launcher');
       console.log('');
-      console.log('Usage:');
+      console.log('Usag'e':');
       console.log('  node service-generation-launcher.js start     - Start the factory');
       console.log('  node service-generation-launcher.js stop      - Stop the factory');
       console.log('  node service-generation-launcher.js status    - Show status');
       console.log('  node service-generation-launcher.js create-service <type> - Create a service');
       console.log('  node service-generation-launcher.js analytics - Show analytics');
       console.log('');
-      console.log('Available service types:');
+      console.log('Availabl'e' service types:');
       console.log('  web-application, mobile-app, e-commerce-platform, saas-platform');
       console.log('  ai-chatbot, data-analytics-dashboard, automation-script, blockchain-dapp');
       break;

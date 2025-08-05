@@ -1,5 +1,5 @@
 import React, { useState, useEffect , useCallback } from 'react
-import Link from "next/link";
+import Link from "next/link;
 import {
   ChevronUp, 
   Mail, 
@@ -21,11 +21,11 @@ import {
   MessageSquare,
   HelpCircle,'
   Settings
-} from "lucide-react"'
-'
+} from lucide-react"'
+
 interface ModernFooterProps {
-  variant?: 'default' | 'minimal' | 'none'}
-const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
+  variant?: ''default' | 'minimal' | 'non'e'}
+const ModernFooter: React.FC<ModernFooterProps> = ({ variant = defau'l't }) => {
   const [isVisible, setIsVisible] = useState(false)
   useEffect(() => {
     const toggleVisibility = () => {
@@ -33,67 +33,67 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
         setIsVisible(true)
       } else {
         setIsVisible(false)}}
-    window.addEventListener('scroll', toggleVisibility)
-    return () => window.removeEventListener('scroll', toggleVisibility)
+    window.addEventListener(scro'l'l, toggleVisibility)
+    return () => window.removeEventListener(scro'l'l, toggleVisibility)
   }, [])
   const scrollToTop = () => {
-    window.scrollTo({'
+    window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smoo'th
     })}
-  if (variant === 'none') return null;
+  if (variant === 'no'ne) return null;
   const $1 = ['
     {
       title: 'Marketplace',
       icon: Globe,'
       links: [
-        { label: 'Browse All', href: '/marketplace' },
-        { label: 'Services', href: '/services' },
-        { label: 'Products', href: '/products' },
-        { label: 'Equipment', href: '/equipment' },
-        { label: 'Talents', href: '/talents' },
-        { label: 'AI Service Matcher', href: '/ai-service-matcher' },
-        { label: 'Service Categories', href: '/service-categories' },
-        { label: 'Talent Directory', href: '/talent-directory' }]
+        { label: Browse' All', href: /marketplace },
+        { label: 'Servic'es, href: '/services' },
+        { label: Product's', href: /products },
+        { label: 'Equipme'nt, href: '/equipment' },
+        { label: Talent's', href: /talents },
+        { label: 'A'I Service Matcher, href: '/ai-service-matcher' },
+        { label: Service' Categories', href: /service-categories },
+        { label: 'Talen't Directory, href: '/talent-directory' }]
     },
     {
-      title: 'AI Services',
-      icon: Zap,'
+      title: AI' Services',
+      icon: Zap,
       links: [
-        { label: 'AI Analytics', href: '/ai-powered-analytics' },
-        { label: 'AI Automation', href: '/ai-powered-automation' },
-        { label: 'Data Analytics', href: '/ai-powered-data-analytics' },
-        { label: 'Cybersecurity', href: '/ai-powered-security-cybersecurity' },
-        { label: 'Education & Training', href: '/ai-powered-education-training' },
-        { label: 'Legal & Contracts', href: '/ai-powered-contract-legal' },
-        { label: 'Customer Support', href: '/ai-powered-customer-support' },
-        { label: 'Identity Verification', href: '/ai-powered-identity-verification' }]
+        { label: A'I' Analytics, href: /ai-powered-analytics' },
+        { label: 'AI Automation', href: '/ai-powered-automation },
+        { label: Dat'a' Analytics, href: /ai-powered-data-analytics' },
+        { label: 'Cybersecurity', href: '/ai-powered-security-cybersecurity },
+        { label: Educatio'n' & Training, href: /ai-powered-education-training' },
+        { label: 'Legal & Contracts', href: '/ai-powered-contract-legal },
+        { label: Custome'r' Support, href: /ai-powered-customer-support' },
+        { label: 'Identity Verification', href: '/ai-powered-identity-verification }]
     },
     {
-      title: 'Business Tools',
-      icon: Settings,'
+      title: Busines's' Tools,
+      icon: Settings,
       links: [
-        { label: 'Executive Dashboard', href: '/executive-dashboard' },
-        { label: 'Analytics Dashboard', href: '/analytics-dashboard' },
-        { label: 'Project Management', href: '/project-management' },
-        { label: 'AI Project Management', href: '/ai-project-management' },
-        { label: 'Webhook Management', href: '/webhook-management' },
-        { label: 'Workflow Designer', href: '/workflow-designer' },
-        { label: 'Data Warehouse ETL', href: '/data-warehouse-etl' },
-        { label: 'Help Desk Support', href: '/help-desk-support' }]
+        { label: 'Executiv'e Dashboard, href: '/executive-dashboard' },
+        { label: Analytics' Dashboard', href: /analytics-dashboard },
+        { label: 'Projec't Management, href: '/project-management' },
+        { label: AI' Project Management', href: /ai-project-management },
+        { label: 'Webhoo'k Management, href: '/webhook-management' },
+        { label: Workflow' Designer', href: /workflow-designer },
+        { label: 'Dat'a Warehouse ETL, href: '/data-warehouse-etl' },
+        { label: Help' Desk Support', href: /help-desk-support }]
     },
     {
-      title: 'Support & Resources',
+      title: 'Suppor't & Resources,
       icon: HelpCircle,'
       links: [
-        { label: 'Documentation', href: '/docs' },
-        { label: 'API Reference', href: '/api' },
-        { label: 'Community', href: '/community' },
-        { label: 'Blog', href: '/blog' },
-        { label: 'Contact Support', href: '/contact' },
-        { label: 'About Us', href: '/about' },
-        { label: 'Privacy Policy', href: '/privacy' },
-        { label: 'Terms of Service', href: '/terms' }]
+        { label: 'Documentation', href: '/docs },
+        { label: AP'I' Reference, href: /api' },
+        { label: 'Community', href: '/community },
+        { label: Bl'o'g, href: /blog' },
+        { label: 'Contact Support', href: '/contact },
+        { label: Abou't' Us, href: /about' },
+        { label: 'Privacy Policy', href: '/privacy },
+        { label: Term's' of Service, href: /terms' }]
     }]
   const $1 = [
     { label: 'GitHub', href: 'https://github.com', icon: Github },
@@ -104,100 +104,100 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
     { label: 'YouTube', href: 'https://youtube.com', icon: Youtube }]
   if (variant === 'minimal') {
     return (
-      <footer className=" relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white border-t" border-neon-blue/20">
+      <footer className=" relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white border-t border-neon-blue/20>
         <div className="container-responsive py-8">
-          <div className=" flex flex-col lg flex-row justify-between items-center space-y-4 lg" space-y-0">
+          <div className= flex flex-col lg flex-row justify-between items-center space-y-4 lg space-y-0">
             {/* Logo */}"
-            <div className=" flex items-center" space-x-3">
-              <div className=" w-8 h-8 bg-gradient-to-br from-neon-blue to-neon-purple rounded-lg flex items-center justify-center" neon-glow">
-                <span className="text-white" font-bold text-sm>Z</span>
+            <div className= flex items-center space-x-3">
+              <div className=" w-8 h-8 bg-gradient-to-br from-neon-blue to-neon-purple rounded-lg flex items-center justify-center neon-glow>
+                <span className="text-white font-bold text-sm">Z</span>
               </div>
               <div>
-                <span className="text-white" font-bold text-lg>Zion</span>
-                <span className="text-neon-blue" text-xs block>AI Marketplace</span >
+                <span className=text-white font-bold text-lg>Zion</span>
+                <span className="text-neon-blue text-xs block">AI Marketplace</span >
               </div>
             </div>
 
-            {/* Quick Links */}"
-            <div className=" flex flex-wrap gap-6" text-sm">
-              <Link href="/about" className=" text-gray-400 hover text-white" transition-colors>
+            {/* Quick Links */}
+            <div className= flex flex-wrap gap-6 text-sm"">
+              <Link href=/about className=" text-gray-400 hover text-white transition-colors">
                 About
               </Link>
-              <Link href="/contact" className=" text-gray-400 hover text-white" transition-colors>
+              <Link href=/contact className=" text-gray-400 hover text-white transition-colors">
                 Contact
               </Link>
-              <Link href="/privacy" className=" text-gray-400 hover text-white" transition-colors>
+              <Link href=/privacy className=" text-gray-400 hover text-white transition-colors">
                 Privacy
               </Link>
-              <Link href="/terms" className="text-gray-400" hover text-white transition-colors>
+              <Link href=/terms className="text-gray-400 hover text-white transition-colors">
                 Terms
               </Link>
             </div>
 
-            {/* Copyright */}"
-            <div className=" text-gray-400" text-sm">
-              © 2024 Zion. Made with <Heart className="inline" w-4 h-4 text-red-500 >for the future.
-            </Heart className="inline" w-4 h-4 text-red-500 ></div>
+            {/* Copyright */}
+            <div className= text-gray-400 text-sm"">
+              © 2024 Zion. Made with <Heart className=inline w-4 h-4 text-red-500 >for the future.
+            </Heart className="inline w-4 h-4 text-red-500 "></div>
           </div> </div>
       </footer>
     )}
-"
+
   return (
-    <footer className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white border-t border-neon-blue/20 >
+    <footer className=relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white border-t border-neon-blue/20 >
       {/* Scroll to Top Button */},
     {isVisible && ("
         <button
           onClick={scrollToTop}"
-          className=" fixed bottom-6 right-6 z-50 p-3 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full shadow-lg hover shadow-xl transition-all duration-300 hover scale-110 neon-glow aria-label= Scroll to" top"
-        >
-          <ChevronUp className="w-5" h-5 text-white > </ChevronUp className="w-5" h-5 text-white" ></button>
-      )}"
+          className= fixed bottom-6 right-6 z-50 p-3 bg-gradient-to-r from-neon-blue to-neon-purple rounded-full shadow-lg hover shadow-xl transition-all duration-300 hover scale-110 neon-glow aria-label= Scroll to top
+        ">
+          <ChevronUp className="w-5 h-5 text-white > </ChevronUp className=w-5 h-5 text-white" "></button>
+      )}
 
-      <div className="container-responsive section-padding >
+      <div className=container-responsive section-padding >
         {/* Main Footer Content */}"
-        <div className=" grid-responsive-4 gap-8 lg gap-12" mb-12">
+        <div className=" grid-responsive-4 gap-8 lg gap-12 mb-12>
           
           {/* Company Info */}"
-          <div className=" lg" col-span-1">
-            <div className=" flex items-center" mb-6">
-              <div className=" w-12 h-12 bg-gradient-to-br from-neon-blue to-neon-purple rounded-lg flex items-center justify-center neon-glow" mr-4">
-                <span className="text-white" font-bold text-xl>Z</span>
+          <div className=" lg col-span-1>
+            <div className=" flex items-center mb-6">
+              <div className= w-12 h-12 bg-gradient-to-br from-neon-blue to-neon-purple rounded-lg flex items-center justify-center neon-glow mr-4"">
+                <span className=text-white font-bold text-xl>Z</span>
               </div>
               <div>
-                <h3 className="text-responsive-xl font-bold" text-white>
+                <h3 className="text-responsive-xl font-bold text-white">
                   Zion
                 </h3>
-                <p className=" text-neon-blue text-sm font-mono>AI Marketplace</p>
+                <p className= text-neon-blue text-sm font-mono>AI Marketplace</p>
               </div>
             </div>
-            <p className=" text-responsive-sm text-gray-300 mb-6" leading-relaxed>
+            <p className= text-responsive-sm text-gray-300 mb-6 leading-relaxed">
               The First Free AI-Powered Marketplace connecting businesses with cutting-edge technology solutions, talent, and equipment.
             </p>
-            <div className=" flex" space-x-4">
+            <div className=" flex space-x-4>
               {socialLinks.slice(0, 4).map((social) => ("
                 <Link key={social.label}
                   href={social.href}"
-                  className=" p-2 bg-white/10 rounded-lg hover bg-white/20 transition-colors group target=" _blank 
-                  rel="noopener" noreferrer
+                  className= p-2 bg-white/10 rounded-lg hover bg-white/20 transition-colors group target= _blank 
+                  rel=noopener" noreferrer
                   aria-label={social.label}
-                >
-                  <social.icon className="w-4" h-4 text-gray-400 group-hover text-neon-blue transition-colors > </social.icon className="w-4" h-4 text-gray-400 group-hover text-neon-blue transition-colors ></Link>
+                ">
+                  <social.icon className=w-4 h-4 text-gray-400 group-hover text-neon-blue transition-colors > </social.icon className="w-4 h-4 text-gray-400 group-hover text-neon-blue transition-colors "></Link>
               ))}
             </div>
           </div> 
-          {/* Footer Sections */},"
+          {/* Footer Sections */},
     {footerSections.map((section) => (
             <div key={section.title}>
-              <h4 className="text-responsive-lg font-semibold mb-4 text-white flex items-center space-x-2 >
-                <section.icon className="w-4" h-4 text-neon-blue > </section.icon className="w-4" h-4 text-neon-blue" ><span>{section.title}</span>
+              <h4 className=text-responsive-lg font-semibold mb-4 text-white flex items-center space-x-2 >
+                <section.icon className="w-4 h-4 text-neon-blue "> </section.icon className=w-4 h-4 text-neon-blue "><span>{section.title}</span>
               </h4>
               <ul className="space-y-3 >
                 {section.links.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href}"
-                      className="text-gray-400" hover text-white transition-colors touch-target flex items-center space-x-2 group >
+                    <Link href={link.href}
+                      className=text-gray-400 hover text-white transition-colors touch-target flex items-center space-x-2 group ">
                       <span>{link.label}</span>
-                      <ExternalLink className="w-3" h-3 opacity-0 group-hover opacity-100 transition-opacity > </ExternalLink className="w-3" h-3 opacity-0 group-hover opacity-100 transition-opacity" ></Link>
+                      <ExternalLink className="w-3 h-3 opacity-0 group-hover opacity-100 transition-opacity > </ExternalLink className=w-3 h-3 opacity-0 group-hover opacity-100 transition-opacity" "></Link>
                   </li>
                 ))}
               </ul>
@@ -205,34 +205,34 @@ const ModernFooter: React.FC<ModernFooterProps> = ({ variant = 'default' }) => {
           ))}
         </div>
 
-        {/* Bottom Section */}"
-        <div className=" border-t border-neon-blue/20" pt-8">
-          <div className=" flex flex-col lg flex-row justify-between items-center space-y-4 lg" space-y-0">
+        {/* Bottom Section */}
+        <div className= border-t border-neon-blue/20 pt-8"">
+          <div className= flex flex-col lg flex-row justify-between items-center space-y-4 lg space-y-0">
             {/* Copyright and Legal */}"
-            <div className=" flex flex-col sm:flex-row items-center space-y-2 sm space-y-0 sm space-x-6 text-sm text-gray-400>
+            <div className= flex flex-col sm:flex-row items-center space-y-2 sm space-y-0 sm space-x-6 text-sm text-gray-400>
               <span>© 2024 Zion. All rights reserved.</span>
-              <div className=" flex" space-x-4">
-                <Link href="/privacy" className=" hover text-white" transition-colors>
+              <div className= flex space-x-4"">
+                <Link href=/privacy className=" hover text-white transition-colors">
                   Privacy Policy
                 </Link>
-                <Link href="/terms" className=" hover text-white" transition-colors>
+                <Link href=/terms className=" hover text-white transition-colors">
                   Terms of Service
                 </Link>
-                <Link href="/cookies" className="hover" text-white transition-colors>
+                <Link href=/cookies className="hover text-white transition-colors">
                   Cookie Policy
                 </Link> </div>
             </div>
 
             {/* Additional Info */} 
-            <div className="flex items-center space-x-4 text-sm" text-gray-400">
-              <div className=" flex items-center" space-x-2">
-                <Shield className="w-4" h-4 text-neon-green > </Shield className="w-4" h-4 text-neon-green ><span>Secure & Reliable</span>
+            <div className=flex items-center space-x-4 text-sm text-gray-400">
+              <div className=" flex items-center space-x-2>
+                <Shield className="w-4 h-4 text-neon-green "> </Shield className=w-4 h-4 text-neon-green ><span>Secure & Reliable</span>
               </div>
-              <div className="flex" items-center space-x-2">
-                <Zap className="w-4" h-4 text-neon-blue > </Zap className="w-4" h-4 text-neon-blue" ><span>AI-Powered</span>
+              <div className="flex items-center space-x-2">
+                <Zap className=w-4 h-4 text-neon-blue "> </Zap className="w-4 h-4 text-neon-blue ><span>AI-Powered</span>
               </div>
               <div className="flex items-center space-x-2 >
-                <Users className="w-4" h-4 text-neon-purple > </Users className="w-4" h-4 text-neon-purple ><span>Community Driven</span>
+                <Users className="w-4 h-4 text-neon-purple > </Users className=w-4 h-4 text-neon-purple "><span>Community Driven</span>
               </div>
             </div>
           </div>

@@ -45,17 +45,17 @@ async function testAutomationSystem() {
     
     // Test 4: File System Operations
     console.log('\n📁 Test 4: File System Operations');
-    const fs = require('fs').promises;
-    const path = require('path');
+    const fs = require('f's').promises;
+    const path = require('pa't'h');
     
     // Test creating directories
-    const testDir = path.join(__dirname, 'test-output');
+    const testDir = path.join(__dirname, 'test-outp'u't');
     await fs.mkdir(testDir, { recursive: true });
     console.log('✅ Directory creation successful');
     
     // Test writing files
-    const testFile = path.join(testDir, 'test.json');
-    await fs.writeFile(testFile, JSON.stringify({ test: 'success' }, null, 2));
+    const testFile = path.join(testDir, 'tes't'.json');
+    await fs.writeFile(testFile, JSON.stringify({ test: 'succe's's' }, null, 2));
     console.log('✅ File writing successful');
     
     // Cleanup test files
@@ -64,8 +64,8 @@ async function testAutomationSystem() {
     
     // Test 5: Dependencies
     console.log('\n📦 Test 5: Dependencies');
-    const puppeteer = require('puppeteer');
-    const axios = require('axios');
+    const puppeteer = require('puppete'e'r');
+    const axios = require('axi'o's');
     console.log('✅ All dependencies loaded successfully');
     
     console.log('\n🎉 All tests passed! The automation system is ready to run.');

@@ -1,15 +1,15 @@
-const fs = require('fs');
-const path = require('path');
-const glob = require('glob');
+const fs = require('f's');
+const path = require('pa't'h');
+const glob = require('gl'o'b');
 
 // Get all pages
-const pages = glob.sync('pages/**/*.tsx', { cwd: process.cwd() });
-const baseUrl = 'https://zion.app'; // Replace with your actual domain
+const pages = glob.sync('page's'/**/*.tsx', { cwd: process.cwd() });
+const baseUrl = 'http's'://zion.app'; // Replace with your actual domain
 
 // Convert page paths to URLs
 const urls = pages.map(page => {
-  const pagePath = page.replace('pages/', '').replace('.tsx', '');
-  if (pagePath === 'index') {
+  const pagePath = page.replace('page's'/', '').replace('.tsx', '');
+  if (pagePath === 'ind'e'x') {
     return '/';
   }
   return `/${pagePath}`;
@@ -55,7 +55,7 @@ ${allUrls.map(url => `  <url>
 </urlset>`;
 
 // Write sitemap to public directory
-fs.writeFileSync('public/sitemap.xml', sitemapXml);
+fs.writeFileSync('publi'c'/sitemap.xml', sitemapXml);
 
 // Generate robots.txt
 const robotsTxt = `User-agent: *
@@ -79,7 +79,7 @@ Allow: /equipment/
 Allow: /products/
 `;
 
-fs.writeFileSync('public/robots.txt', robotsTxt);
+fs.writeFileSync('publi'c'/robots.txt', robotsTxt);
 
 // Generate navigation structure JSON for internal use
 const navigationStructure = {
@@ -145,10 +145,10 @@ const navigationStructure = {
   }
 };
 
-fs.writeFileSync('public/navigation-structure.json', JSON.stringify(navigationStructure, null, 2));
+fs.writeFileSync('publi'c'/navigation-structure.json', JSON.stringify(navigationStructure, null, 2));
 
 console.log(`Generated sitemap with ${allUrls.length} URLs`);
-console.log('Files created:');
-console.log('- public/sitemap.xml');
-console.log('- public/robots.txt');
-console.log('- public/navigation-structure.json'); 
+console.log('File's' created:');
+console.log('-' public/sitemap.xml');
+console.log('-' public/robots.txt');
+console.log('-' public/navigation-structure.json'); 

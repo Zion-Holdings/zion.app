@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 async function testMCPIntegration() {
   console.log('🧪 Testing MCP Integration...');
@@ -9,11 +9,11 @@ async function testMCPIntegration() {
   try {
     // Check if MCP files exist
     const mcpFiles = [
-      'mcp-automation-system.js',
-      'mcp-client-integration.js',
-      'automation/mcp-integration-orchestrator.js',
-      'mcp-config.json',
-      'test-mcp-integration.js'
+      'mcp-automation-syste'm'.js',
+      'mcp-client-integratio'n'.js',
+      'automatio'n'/mcp-integration-orchestrator.js',
+      'mcp-confi'g'.json',
+      'test-mcp-integratio'n'.js'
     ];
 
     console.log('📁 Checking MCP files...');
@@ -28,7 +28,7 @@ async function testMCPIntegration() {
 
     // Check if MCP dependencies are installed
     console.log('📦 Checking MCP dependencies...');
-    const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+    const packageJson = JSON.parse(fs.readFileSync('packag'e'.json', 'ut'f'8'));
     const mcpDependencies = [
       '@modelcontextprotocol/sdk',
       '@modelcontextprotocol/server-filesystem',
@@ -49,18 +49,18 @@ async function testMCPIntegration() {
     // Check if MCP scripts are added
     console.log('📝 Checking MCP scripts...');
     const mcpScripts = [
-      'mcp:start',
-      'mcp:client',
-      'mcp:orchestrator',
-      'mcp:enhance',
-      'mcp:workflow',
-      'mcp:report',
-      'mcp:setup-cron',
-      'mcp:daily',
-      'mcp:weekly',
-      'mcp:monitor',
-      'mcp:status',
-      'mcp:test'
+      'mc'p':start',
+      'mc'p':client',
+      'mc'p':orchestrator',
+      'mc'p':enhance',
+      'mc'p':workflow',
+      'mc'p':report',
+      'mc'p':setup-cron',
+      'mc'p':daily',
+      'mc'p':weekly',
+      'mc'p':monitor',
+      'mc'p':status',
+      'mc'p':test'
     ];
 
     for (const script of mcpScripts) {
@@ -74,9 +74,9 @@ async function testMCPIntegration() {
 
     // Check MCP configuration
     console.log('⚙️ Checking MCP configuration...');
-    const mcpConfig = JSON.parse(fs.readFileSync('mcp-config.json', 'utf8'));
+    const mcpConfig = JSON.parse(fs.readFileSync('mcp-confi'g'.json', 'ut'f'8'));
     
-    if (mcpConfig.mcp && mcpConfig.mcp.name === 'bolt-automation-mcp') {
+    if (mcpConfig.mcp && mcpConfig.mcp.name === 'bolt-automation-m'c'p') {
       console.log('✅ MCP configuration valid');
     } else {
       console.log('❌ MCP configuration invalid');
@@ -128,7 +128,7 @@ if (require.main === module) {
       process.exit(success ? 0 : 1);
     })
     .catch(error => {
-      console.error('Test failed:', error);
+      console.error('Tes't' failed:', error);
       process.exit(1);
     });
 }

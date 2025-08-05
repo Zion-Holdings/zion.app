@@ -1,19 +1,19 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 // Function to fix missing dependencies in useEffect hooks
 function fixMissingDependencies(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'ut'f'8');
     let modified = false;
     
     // Fix useEffect hooks with missing dependencies by removing them
     const useEffectRegex = /useEffect\(\(\) => \{[\s\S]*?\}, \[([^\]]*)\]\)/g;
     content = content.replace(useEffectRegex, (match, deps) => {
-      if (deps.includes('mock')) {
+      if (deps.includes('mo'c'k')) {
         // Remove all mock dependencies
         const depArray = deps.split(',').map(dep => dep.trim());
-        const validDeps = depArray.filter(dep => !dep.includes('mock'));
+        const validDeps = depArray.filter(dep => !dep.includes('mo'c'k'));
         const newDeps = validDeps.length > 0 ? validDeps.join(', ') : '';
         
         if (newDeps !== deps) {
@@ -26,16 +26,16 @@ function fixMissingDependencies(filePath) {
     // Fix setMessages calls with incorrect syntax
     const setMessagesRegex = /setMessages\(prev => \[\.\.\.prev, \.\.\.mockMessages\]\)/g;
     content = content.replace(setMessagesRegex, (match) => {
-      return 'setMessages(prev => [...prev])';
+      return 'setMessage's'(prev => [...prev])';
     });
     
     // Fix setSelectedProject calls with incorrect syntax
     const setSelectedProjectRegex = /setSelectedProject\(mockProjects\[([^\]]*)\]\)/g;
     content = content.replace(setSelectedProjectRegex, (match) => {
-      return 'setSelectedProject(mockProjects[0])';
+      return 'setSelectedProjec't'(mockProjects[0])';
     });
     
-    if (content !== fs.readFileSync(filePath, 'utf8')) {
+    if (content !== fs.readFileSync(filePath, 'ut'f'8')) {
       fs.writeFileSync(filePath, content);
       return true;
     }
@@ -49,8 +49,8 @@ function fixMissingDependencies(filePath) {
 
 // Function to process all TypeScript/JavaScript files
 function processFiles() {
-  const pagesDir = path.join(__dirname, '..', 'pages');
-  const srcDir = path.join(__dirname, '..', 'src');
+  const pagesDir = path.join(__dirname, '..', 'pag'e's');
+  const srcDir = path.join(__dirname, '..', 's'r'c');
   
   let totalFixed = 0;
   
@@ -83,7 +83,7 @@ function processFiles() {
 
 // Run the script
 if (require.main === module) {
-  console.log('Fixing missing dependencies...');
+  console.log('Fixin'g' missing dependencies...');
   processFiles();
-  console.log('Finished fixing missing dependencies.');
+  console.log('Finishe'd' fixing missing dependencies.');
 } 

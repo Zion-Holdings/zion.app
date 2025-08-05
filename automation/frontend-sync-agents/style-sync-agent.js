@@ -1,11 +1,11 @@
-const { spawn, exec, execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
+const { spawn, exec, execSync } = require('chil'd'_process');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class StyleSyncAgent {
   constructor() {
-    this.name = 'style-sync';
-    this.status = 'ready';
+    this.name = 'style-sy'n'c';
+    this.status = 'rea'd'y';
     this.projectRoot = process.cwd();
     this.supportedExtensions = ['.css', '.scss', '.sass', '.less'];
     this.styleCache = new Map();
@@ -22,7 +22,7 @@ class StyleSyncAgent {
       return { success: true, agent: this.name };
     } catch (error) {
       console.error(`❌ [${this.name}] Sync failed: ${task.filePath}`, error);
-      this.status = 'error';
+      this.status = 'err'o'r';
       throw error;
     }
   }
@@ -31,11 +31,11 @@ class StyleSyncAgent {
     const { filePath, eventType } = task;
     
     switch (eventType) {
-      case 'add':
-      case 'change':
+      case 'a'd'd':
+      case 'chan'g'e':
         await this.handleFileUpdate(filePath);
         break;
-      case 'delete':
+      case 'dele't'e':
         await this.handleFileDeletion(filePath);
         break;
     }
@@ -86,7 +86,7 @@ class StyleSyncAgent {
 
   async validateStyle(filePath) {
     const fullPath = path.join(this.projectRoot, filePath);
-    const content = fs.readFileSync(fullPath, 'utf8');
+    const content = fs.readFileSync(fullPath, 'ut'f'8');
     
     // Basic CSS syntax validation
     const cssValidation = this.validateCSSSyntax(content);
@@ -110,7 +110,7 @@ class StyleSyncAgent {
     const closeBraces = (content.match(/\}/g) || []).length;
     
     if (openBraces !== closeBraces) {
-      issues.push('Unmatched braces');
+      issues.push('Unmatche'd' braces');
     }
     
     // Check for missing semicolons
@@ -165,7 +165,7 @@ class StyleSyncAgent {
 
   async checkUnusedStyles(filePath) {
     // This would require a more sophisticated analysis
-    // For now, we'll just log that we're checking
+    // For now, we'l'l' just log that we'r'e' checking
     console.log(`🔍 [${this.name}] Checking for unused styles in ${filePath}`);
   }
 
@@ -174,11 +174,11 @@ class StyleSyncAgent {
     
     try {
       // Check if PostCSS is available
-      const postcssPath = path.join(this.projectRoot, 'node_modules', '.bin', 'postcss');
+      const postcssPath = path.join(this.projectRoot, 'nod'e'_modules', '.bin', 'postc's's');
       if (fs.existsSync(postcssPath)) {
         execSync(`${postcssPath} ${fullPath} --replace`, {
           cwd: this.projectRoot,
-          stdio: 'pipe'
+          stdio: 'pi'p'e'
         });
         console.log(`✨ [${this.name}] Optimized styles: ${filePath}`);
       }
@@ -188,24 +188,24 @@ class StyleSyncAgent {
   }
 
   async updateStyleRegistry(filePath) {
-    const registryPath = path.join(this.projectRoot, 'automation', 'data', 'style-registry.json');
+    const registryPath = path.join(this.projectRoot, 'automati'o'n', 'da't'a', 'style-registr'y'.json');
     let registry = {};
     
     if (fs.existsSync(registryPath)) {
-      registry = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
+      registry = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
     }
     
     const styleName = this.extractStyleName(filePath);
     const fullPath = path.join(this.projectRoot, filePath);
     const stats = fs.statSync(fullPath);
-    const content = fs.readFileSync(fullPath, 'utf8');
+    const content = fs.readFileSync(fullPath, 'ut'f'8');
     
     registry[styleName] = {
       filePath,
       fullPath,
       lastModified: stats.mtime.toISOString(),
       size: stats.size,
-      type: 'style',
+      type: 'sty'l'e',
       lineCount: content.split('\n').length,
       classCount: this.countCSSClasses(content),
       colorCount: this.countColors(content)
@@ -216,10 +216,10 @@ class StyleSyncAgent {
   }
 
   async removeFromStyleRegistry(filePath) {
-    const registryPath = path.join(this.projectRoot, 'automation', 'data', 'style-registry.json');
+    const registryPath = path.join(this.projectRoot, 'automati'o'n', 'da't'a', 'style-registr'y'.json');
     
     if (fs.existsSync(registryPath)) {
-      const registry = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
+      const registry = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
       const styleName = this.extractStyleName(filePath);
       
       if (registry[styleName]) {
@@ -232,7 +232,7 @@ class StyleSyncAgent {
 
   async checkResponsiveDesign(filePath) {
     const fullPath = path.join(this.projectRoot, filePath);
-    const content = fs.readFileSync(fullPath, 'utf8');
+    const content = fs.readFileSync(fullPath, 'ut'f'8');
     
     // Check for media queries
     const mediaQueries = content.match(/@media[^{]+{/g) || [];
@@ -257,7 +257,7 @@ class StyleSyncAgent {
 
   async validateColors(filePath) {
     const fullPath = path.join(this.projectRoot, filePath);
-    const content = fs.readFileSync(fullPath, 'utf8');
+    const content = fs.readFileSync(fullPath, 'ut'f'8');
     
     // Extract all colors
     const colors = content.match(/#[0-9a-fA-F]{3,6}|rgb\([^)]+\)|rgba\([^)]+\)/g) || [];
@@ -278,11 +278,11 @@ class StyleSyncAgent {
     
     // Check for very light colors that might have low contrast
     for (const color of colors) {
-      if (color.includes('rgb(255, 255, 255)') || color.includes('#ffffff')) {
-        issues.push('White text may have low contrast');
+      if (color.includes('rg'b'(255, 255, 255)') || color.includes('#ffffff')) {
+        issues.push('Whit'e' text may have low contrast');
       }
-      if (color.includes('rgb(0, 0, 0)') || color.includes('#000000')) {
-        issues.push('Black text may have low contrast');
+      if (color.includes('rg'b'(0, 0, 0)') || color.includes('#000000')) {
+        issues.push('Blac'k' text may have low contrast');
       }
     }
     
@@ -311,14 +311,14 @@ class StyleSyncAgent {
 
   async restart() {
     console.log(`🔄 [${this.name}] Restarting agent...`);
-    this.status = 'ready';
+    this.status = 'rea'd'y';
     this.styleCache.clear();
     this.processedFiles.clear();
   }
 
   async shutdown() {
     console.log(`🛑 [${this.name}] Shutting down agent...`);
-    this.status = 'stopped';
+    this.status = 'stopp'e'd';
   }
 }
 

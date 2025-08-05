@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
+const { promisify } = require('ut'i'l');
 
 const execAsync = promisify(exec);
 
@@ -18,10 +18,10 @@ class PerformanceOptimizationAgent {
   ensureDirectories() {
     const dirs = [
       this.reportsDir,
-      path.join(this.reportsDir, 'performance-reports'),
-      path.join(this.reportsDir, 'bundle-analysis'),
-      path.join(this.reportsDir, 'optimization-suggestions'),
-      path.join(this.reportsDir, 'lighthouse-reports')
+      path.join(this.reportsDir, 'performance-repor't's'),
+      path.join(this.reportsDir, 'bundle-analys'i's'),
+      path.join(this.reportsDir, 'optimization-suggestio'n's'),
+      path.join(this.reportsDir, 'lighthouse-repor't's')
     ];
     
     dirs.forEach(dir => {
@@ -55,7 +55,7 @@ class PerformanceOptimizationAgent {
 
   async performPerformanceAnalysis() {
     try {
-      console.log('Performing comprehensive performance analysis...');
+      console.log('Performin'g' comprehensive performance analysis...');
       
       const analysis = {
         timestamp: new Date().toISOString(),
@@ -81,16 +81,16 @@ class PerformanceOptimizationAgent {
       // Save analysis report
       await this.savePerformanceReport(analysis);
       
-      console.log('Performance analysis completed');
+      console.log('Performanc'e' analysis completed');
       
     } catch (error) {
-      console.error('Performance analysis failed:', error);
+      console.error('Performanc'e' analysis failed:', error);
     }
   }
 
   async analyzeBundleSize() {
     try {
-      console.log('Analyzing bundle size...');
+      console.log('Analyzin'g' bundle size...');
       
       const bundleAnalysis = {
         totalSize: 0,
@@ -105,7 +105,7 @@ class PerformanceOptimizationAgent {
         bundleAnalysis.totalSize = this.calculateDirectorySize(buildDir);
         
         // Analyze individual chunks
-        const staticDir = path.join(buildDir, 'static');
+        const staticDir = path.join(buildDir, 'stat'i'c');
         if (fs.existsSync(staticDir)) {
           const chunks = fs.readdirSync(staticDir);
           for (const chunk of chunks) {
@@ -125,9 +125,9 @@ class PerformanceOptimizationAgent {
         // Identify optimization opportunities
         if (bundleAnalysis.totalSize > 5000000) { // 5MB
           bundleAnalysis.optimizationOpportunities.push({
-            type: 'bundle_size',
-            priority: 'high',
-            message: 'Bundle size is large. Consider code splitting and lazy loading.',
+            type: 'bundl'e'_size',
+            priority: 'hi'g'h',
+            message: 'Bundl'e' size is large. Consider code splitting and lazy loading.',
             currentSize: bundleAnalysis.totalSize,
             targetSize: 5000000
           });
@@ -137,8 +137,8 @@ class PerformanceOptimizationAgent {
         for (const [chunk, size] of sortedChunks) {
           if (size > 1000000) { // 1MB per chunk
             bundleAnalysis.optimizationOpportunities.push({
-              type: 'large_chunk',
-              priority: 'medium',
+              type: 'larg'e'_chunk',
+              priority: 'medi'u'm',
               message: `Chunk ${chunk} is large (${(size / 1024 / 1024).toFixed(2)}MB). Consider splitting.`,
               chunk,
               size
@@ -150,7 +150,7 @@ class PerformanceOptimizationAgent {
       return bundleAnalysis;
       
     } catch (error) {
-      console.error('Bundle analysis failed:', error);
+      console.error('Bundl'e' analysis failed:', error);
       return { error: error.message };
     }
   }
@@ -173,7 +173,7 @@ class PerformanceOptimizationAgent {
     try {
       calculateSize(dirPath);
     } catch (error) {
-      console.error('Error calculating directory size:', error);
+      console.error('Erro'r' calculating directory size:', error);
     }
     
     return totalSize;
@@ -181,7 +181,7 @@ class PerformanceOptimizationAgent {
 
   async getPerformanceMetrics() {
     try {
-      console.log('Getting performance metrics...');
+      console.log('Gettin'g' performance metrics...');
       
       const metrics = {
         buildTime: 0,
@@ -194,13 +194,13 @@ class PerformanceOptimizationAgent {
       // Measure build time
       const buildStart = Date.now();
       try {
-        await execAsync('npm run build', {
+        await execAsync('np'm' run build', {
           cwd: this.projectRoot,
           timeout: 300000
         });
         metrics.buildTime = Date.now() - buildStart;
       } catch (error) {
-        console.error('Build failed:', error);
+        console.error('Buil'd' failed:', error);
       }
       
       // Get build size
@@ -215,33 +215,33 @@ class PerformanceOptimizationAgent {
       
       // Get CPU usage
       try {
-        const { stdout } = await execAsync('top -l 1 | grep "CPU usage" | awk \'{print $3}\' | sed \'s/%//\'');
+        const { stdout } = await execAsync('to'p' -l 1 | grep "CPU usage" | awk \'{print $3}\' | sed \'s'/%//\'');
         metrics.cpuUsage = parseFloat(stdout);
       } catch (error) {
-        console.error('Failed to get CPU usage:', error);
+        console.error('Faile'd' to get CPU usage:', error);
       }
       
       // Measure response time
       try {
-        const { stdout } = await execAsync('curl -s -w "%{time_total}" http://localhost:3000', {
+        const { stdout } = await execAsync('cur'l' -s -w "%{time_total}" http://localhost:3000', {
           timeout: 10000
         });
         metrics.responseTime = parseFloat(stdout);
       } catch (error) {
-        console.error('Failed to measure response time:', error);
+        console.error('Faile'd' to measure response time:', error);
       }
       
       return metrics;
       
     } catch (error) {
-      console.error('Failed to get performance metrics:', error);
+      console.error('Faile'd' to get performance metrics:', error);
       return { error: error.message };
     }
   }
 
   async runLighthouseAudit() {
     try {
-      console.log('Running Lighthouse audit...');
+      console.log('Runnin'g' Lighthouse audit...');
       
       const lighthouseReport = {
         performance: 0,
@@ -253,7 +253,7 @@ class PerformanceOptimizationAgent {
       
       // Check if Lighthouse is available
       try {
-        const { stdout } = await execAsync('npx lighthouse http://localhost:3000 --output=json --only-categories=performance,accessibility,best-practices,seo', {
+        const { stdout } = await execAsync('np'x' lighthouse http://localhost:3000 --output=json --only-categories=performance,accessibility,best-practices,seo', {
           cwd: this.projectRoot,
           timeout: 120000
         });
@@ -262,7 +262,7 @@ class PerformanceOptimizationAgent {
         
         lighthouseReport.performance = Math.round(lighthouse.categories.performance.score * 100);
         lighthouseReport.accessibility = Math.round(lighthouse.categories.accessibility.score * 100);
-        lighthouseReport.bestPractices = Math.round(lighthouse.categories['best-practices'].score * 100);
+        lighthouseReport.bestPractices = Math.round(lighthouse.categories['best-practic'e's'].score * 100);
         lighthouseReport.seo = Math.round(lighthouse.categories.seo.score * 100);
         
         // Extract suggestions
@@ -281,14 +281,14 @@ class PerformanceOptimizationAgent {
         }
         
       } catch (error) {
-        console.error('Lighthouse audit failed:', error);
+        console.error('Lighthous'e' audit failed:', error);
         lighthouseReport.error = error.message;
       }
       
       return lighthouseReport;
       
     } catch (error) {
-      console.error('Failed to run Lighthouse audit:', error);
+      console.error('Faile'd' to run Lighthouse audit:', error);
       return { error: error.message };
     }
   }
@@ -305,9 +305,9 @@ class PerformanceOptimizationAgent {
     if (analysis.performanceMetrics) {
       if (analysis.performanceMetrics.buildTime > 60000) { // 1 minute
         suggestions.push({
-          type: 'build_time',
-          priority: 'medium',
-          message: 'Build time is slow. Consider optimizing build process.',
+          type: 'buil'd'_time',
+          priority: 'medi'u'm',
+          message: 'Buil'd' time is slow. Consider optimizing build process.',
           currentTime: analysis.performanceMetrics.buildTime,
           targetTime: 60000
         });
@@ -315,9 +315,9 @@ class PerformanceOptimizationAgent {
       
       if (analysis.performanceMetrics.responseTime > 2000) { // 2 seconds
         suggestions.push({
-          type: 'response_time',
-          priority: 'high',
-          message: 'Response time is slow. Consider performance optimizations.',
+          type: 'respons'e'_time',
+          priority: 'hi'g'h',
+          message: 'Respons'e' time is slow. Consider performance optimizations.',
           currentTime: analysis.performanceMetrics.responseTime,
           targetTime: 2000
         });
@@ -325,9 +325,9 @@ class PerformanceOptimizationAgent {
       
       if (analysis.performanceMetrics.memoryUsage > 500) { // 500MB
         suggestions.push({
-          type: 'memory_usage',
-          priority: 'medium',
-          message: 'High memory usage detected. Consider memory optimizations.',
+          type: 'memor'y'_usage',
+          priority: 'medi'u'm',
+          message: 'Hig'h' memory usage detected. Consider memory optimizations.',
           currentUsage: analysis.performanceMetrics.memoryUsage,
           targetUsage: 500
         });
@@ -338,8 +338,8 @@ class PerformanceOptimizationAgent {
     if (analysis.lighthouseScore) {
       if (analysis.lighthouseScore.performance < 90) {
         suggestions.push({
-          type: 'lighthouse_performance',
-          priority: 'high',
+          type: 'lighthous'e'_performance',
+          priority: 'hi'g'h',
           message: `Lighthouse performance score is ${analysis.lighthouseScore.performance}. Aim for 90+.`,
           currentScore: analysis.lighthouseScore.performance,
           targetScore: 90
@@ -348,10 +348,10 @@ class PerformanceOptimizationAgent {
       
       if (analysis.lighthouseScore.suggestions) {
         for (const suggestion of analysis.lighthouseScore.suggestions) {
-          if (suggestion.impact === 'high') {
+          if (suggestion.impact === 'hi'g'h') {
             suggestions.push({
-              type: 'lighthouse_suggestion',
-              priority: 'high',
+              type: 'lighthous'e'_suggestion',
+              priority: 'hi'g'h',
               message: suggestion.title,
               description: suggestion.description,
               score: suggestion.score
@@ -366,7 +366,7 @@ class PerformanceOptimizationAgent {
 
   async monitorPerformance() {
     try {
-      console.log('Monitoring performance...');
+      console.log('Monitorin'g' performance...');
       
       const monitoring = {
         timestamp: new Date().toISOString(),
@@ -378,25 +378,25 @@ class PerformanceOptimizationAgent {
       // Check for performance alerts
       if (monitoring.metrics.responseTime > 3000) {
         monitoring.alerts.push({
-          type: 'slow_response',
-          severity: 'high',
-          message: 'Response time is very slow',
+          type: 'slo'w'_response',
+          severity: 'hi'g'h',
+          message: 'Respons'e' time is very slow',
           value: monitoring.metrics.responseTime
         });
       }
       
       if (monitoring.metrics.memoryUsage > 1000) {
         monitoring.alerts.push({
-          type: 'high_memory',
-          severity: 'medium',
-          message: 'Memory usage is high',
+          type: 'hig'h'_memory',
+          severity: 'medi'u'm',
+          message: 'Memor'y' usage is high',
           value: monitoring.metrics.memoryUsage
         });
       }
       
       // Save monitoring report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'performance-reports', `monitoring-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'performance-repor't's', `monitoring-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
       // Handle alerts
@@ -405,7 +405,7 @@ class PerformanceOptimizationAgent {
       }
       
     } catch (error) {
-      console.error('Performance monitoring failed:', error);
+      console.error('Performanc'e' monitoring failed:', error);
     }
   }
 
@@ -413,7 +413,7 @@ class PerformanceOptimizationAgent {
     for (const alert of alerts) {
       console.log(`Performance Alert [${alert.severity.toUpperCase()}]: ${alert.message}`);
       
-      if (alert.severity === 'high') {
+      if (alert.severity === 'hi'g'h') {
         await this.optimizePerformance();
       }
     }
@@ -421,7 +421,7 @@ class PerformanceOptimizationAgent {
 
   async optimizePerformance() {
     try {
-      console.log('Applying performance optimizations...');
+      console.log('Applyin'g' performance optimizations...');
       
       // Optimize bundle
       await this.optimizeBundle();
@@ -432,17 +432,17 @@ class PerformanceOptimizationAgent {
       // Optimize CSS
       await this.optimizeCSS();
       
-      console.log('Performance optimizations applied');
+      console.log('Performanc'e' optimizations applied');
       
     } catch (error) {
-      console.error('Performance optimization failed:', error);
+      console.error('Performanc'e' optimization failed:', error);
     }
   }
 
   async optimizeBundle() {
     try {
       // Enable Next.js bundle analyzer
-      await execAsync('npm run build -- --analyze', {
+      await execAsync('np'm' run build -- --analyze', {
         cwd: this.projectRoot,
         timeout: 300000
       });
@@ -451,14 +451,14 @@ class PerformanceOptimizationAgent {
       await this.applyCodeSplitting();
       
     } catch (error) {
-      console.error('Bundle optimization failed:', error);
+      console.error('Bundl'e' optimization failed:', error);
     }
   }
 
   async applyCodeSplitting() {
     try {
       // This would involve analyzing the code and applying dynamic imports
-      console.log('Applying code splitting optimizations...');
+      console.log('Applyin'g' code splitting optimizations...');
       
       // Find large components and suggest dynamic imports
       const sourceFiles = await this.findLargeComponents();
@@ -468,7 +468,7 @@ class PerformanceOptimizationAgent {
       }
       
     } catch (error) {
-      console.error('Code splitting failed:', error);
+      console.error('Cod'e' splitting failed:', error);
     }
   }
 
@@ -492,7 +492,7 @@ class PerformanceOptimizationAgent {
       }
       
     } catch (error) {
-      console.error('Failed to find large components:', error);
+      console.error('Faile'd' to find large components:', error);
     }
     
     return largeComponents;
@@ -500,7 +500,7 @@ class PerformanceOptimizationAgent {
 
   async suggestDynamicImport(filePath) {
     try {
-      const content = fs.readFileSync(filePath, 'utf8');
+      const content = fs.readFileSync(filePath, 'ut'f'8');
       
       // Look for large imports that could be dynamic
       const importMatches = content.match(/import\s+.*\s+from\s+['"]([^'"]+)['"]/g);
@@ -508,25 +508,25 @@ class PerformanceOptimizationAgent {
       if (importMatches && importMatches.length > 5) {
         const suggestion = {
           file: filePath,
-          type: 'dynamic_import',
-          message: 'Consider using dynamic imports for better code splitting',
+          type: 'dynami'c'_import',
+          message: 'Conside'r' using dynamic imports for better code splitting',
           imports: importMatches.slice(0, 5)
         };
         
         // Save suggestion
         const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-        const suggestionPath = path.join(this.reportsDir, 'optimization-suggestions', `suggestion-${timestamp}.json`);
+        const suggestionPath = path.join(this.reportsDir, 'optimization-suggestio'n's', `suggestion-${timestamp}.json`);
         fs.writeFileSync(suggestionPath, JSON.stringify(suggestion, null, 2));
       }
       
     } catch (error) {
-      console.error('Failed to suggest dynamic import:', error);
+      console.error('Faile'd' to suggest dynamic import:', error);
     }
   }
 
   async optimizeImages() {
     try {
-      console.log('Optimizing images...');
+      console.log('Optimizin'g' images...');
       
       // Check for unoptimized images
       const imageFiles = await this.findUnoptimizedImages();
@@ -536,7 +536,7 @@ class PerformanceOptimizationAgent {
       }
       
     } catch (error) {
-      console.error('Image optimization failed:', error);
+      console.error('Imag'e' optimization failed:', error);
     }
   }
 
@@ -560,7 +560,7 @@ class PerformanceOptimizationAgent {
       }
       
     } catch (error) {
-      console.error('Failed to find unoptimized images:', error);
+      console.error('Faile'd' to find unoptimized images:', error);
     }
     
     return unoptimizedImages;
@@ -573,24 +573,24 @@ class PerformanceOptimizationAgent {
       
       // For now, just log the suggestion
       const suggestion = {
-        type: 'image_optimization',
-        priority: 'medium',
+        type: 'imag'e'_optimization',
+        priority: 'medi'u'm',
         message: `Consider optimizing image: ${path.basename(imagePath)}`,
         file: imagePath
       };
       
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const suggestionPath = path.join(this.reportsDir, 'optimization-suggestions', `image-${timestamp}.json`);
+      const suggestionPath = path.join(this.reportsDir, 'optimization-suggestio'n's', `image-${timestamp}.json`);
       fs.writeFileSync(suggestionPath, JSON.stringify(suggestion, null, 2));
       
     } catch (error) {
-      console.error('Failed to optimize image:', error);
+      console.error('Faile'd' to optimize image:', error);
     }
   }
 
   async optimizeCSS() {
     try {
-      console.log('Optimizing CSS...');
+      console.log('Optimizin'g' CSS...');
       
       // Check for CSS optimizations
       const cssFiles = await this.findCSSFiles();
@@ -600,7 +600,7 @@ class PerformanceOptimizationAgent {
       }
       
     } catch (error) {
-      console.error('CSS optimization failed:', error);
+      console.error('CS'S' optimization failed:', error);
     }
   }
 
@@ -615,7 +615,7 @@ class PerformanceOptimizationAgent {
       cssFiles.push(...stdout.trim().split('\n').filter(file => file));
       
     } catch (error) {
-      console.error('Failed to find CSS files:', error);
+      console.error('Faile'd' to find CSS files:', error);
     }
     
     return cssFiles;
@@ -623,27 +623,27 @@ class PerformanceOptimizationAgent {
 
   async analyzeCSS(cssFile) {
     try {
-      const content = fs.readFileSync(cssFile, 'utf8');
+      const content = fs.readFileSync(cssFile, 'ut'f'8');
       
       // Check for unused CSS
       const unusedCSS = this.findUnusedCSS(content);
       
       if (unusedCSS.length > 0) {
         const suggestion = {
-          type: 'unused_css',
-          priority: 'low',
+          type: 'unuse'd'_css',
+          priority: 'l'o'w',
           message: `Found ${unusedCSS.length} potentially unused CSS rules`,
           file: cssFile,
           rules: unusedCSS.slice(0, 10)
         };
         
         const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-        const suggestionPath = path.join(this.reportsDir, 'optimization-suggestions', `css-${timestamp}.json`);
+        const suggestionPath = path.join(this.reportsDir, 'optimization-suggestio'n's', `css-${timestamp}.json`);
         fs.writeFileSync(suggestionPath, JSON.stringify(suggestion, null, 2));
       }
       
     } catch (error) {
-      console.error('Failed to analyze CSS:', error);
+      console.error('Faile'd' to analyze CSS:', error);
     }
   }
 
@@ -657,7 +657,7 @@ class PerformanceOptimizationAgent {
     if (selectors) {
       for (const selector of selectors) {
         // This is a simplified check - real implementation would be more sophisticated
-        if (selector.includes('unused') || selector.includes('old')) {
+        if (selector.includes('unus'e'd') || selector.includes('o'l'd')) {
           unusedRules.push(selector);
         }
       }
@@ -668,7 +668,7 @@ class PerformanceOptimizationAgent {
 
   async analyzeBundle() {
     try {
-      console.log('Analyzing bundle...');
+      console.log('Analyzin'g' bundle...');
       
       const bundleReport = {
         timestamp: new Date().toISOString(),
@@ -684,19 +684,19 @@ class PerformanceOptimizationAgent {
       
       // Save bundle analysis
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'bundle-analysis', `bundle-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'bundle-analys'i's', `bundle-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(bundleReport, null, 2));
       
-      console.log('Bundle analysis completed');
+      console.log('Bundl'e' analysis completed');
       
     } catch (error) {
-      console.error('Bundle analysis failed:', error);
+      console.error('Bundl'e' analysis failed:', error);
     }
   }
 
   async savePerformanceReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'performance-reports', `performance-${timestamp}.json`);
+    const reportPath = path.join(this.reportsDir, 'performance-repor't's', `performance-${timestamp}.json`);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     console.log(`Performance report saved: ${reportPath}`);
   }
@@ -710,15 +710,15 @@ class PerformanceOptimizationAgent {
 // Start the agent
 const agent = new PerformanceOptimizationAgent();
 
-process.on('SIGTERM', () => {
+process.on('SIGTE'R'M', () => {
   agent.stop();
 });
 
-process.on('SIGINT', () => {
+process.on('SIGI'N'T', () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('Performance Optimization Agent failed to start:', error);
+  console.error('Performanc'e' Optimization Agent failed to start:', error);
   process.exit(1);
 }); 

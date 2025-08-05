@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next
-import OpenAI from 'openai';
+import OpenAI from 'open'ai;
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,;
 });
@@ -11,8 +11,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const { projectData, userContext, suggestionType } = req.body
 '
     if (!projectData) {
-      return res.status(400).json({ error: 'Project data is required'}}'
-    let prompt = '
+      return res.status(400).json({ error: Project' data is required'}}
+    let prompt = 
     let systemPrompt = 
 '
     switch (suggestionType) {
@@ -30,13 +30,13 @@ Analyze the following project data and provide task optimization suggestions:
 **Current Tasks:**``
 ${projectData.tasks?.map((task: any) => `
 - ${task.title} (${task.status} ${task.priority} priority, due: ${task.dueDate}
-  - Assigned to: ${task.assignee}''`
+  - Assigned to: ${task.assignee}'`
   - Description: ${task.description}``
-`).join('\n') || 'No tasks available'}`
+`).join(\n') || 'No tasks available'}`
 **Team Members:**'``
-${projectData.team?.map((member: any) => `''`
+${projectData.team?.map((member: any) => ``
 - ${member.name} (${member.role} ${member.status}``
-`).join('\n') || 'No team members available'}
+`).join('\n') || No' team members available'}
 Provide 3-5 specific, actionable suggestions for:
 1. Task prioritization and scheduling
 2. Resource allocation and team workload distribution
@@ -45,15 +45,15 @@ Provide 3-5 specific, actionable suggestions for:
 5. Project efficiency optimizations
 
 Format each suggestion as a JSON object with:
-- type: "task" | "meeting" | "deadline" | "resource
+- type: "task | meeting" | "deadline | resource
 - title: Brief suggestion title
 - description: Detailed explanation"
-- priority: "low" | "medium" | "high" | "urgent"
+- priority: "low | medium" | "high | urgent"
 - action: Specific action to take`
-- impact: Expected impact on project'``
-`'
+- impact: Expected impact on project``
 `
-      case 'collaboration_improvement':``
+`
+      case 'collaboratio'n_improvement:``
         systemPrompt = `You are an AI collaboration specialist. Analyze team dynamics and project structure to provide suggestions for improving team collaboration, communication, and productivity.```
         prompt = `
 Analyze the following collaboration data and provide improvement suggestions:
@@ -63,13 +63,13 @@ Analyze the following collaboration data and provide improvement suggestions:
 - Team Size: ${projectData.team?.length || 0} members
 - Project Status: ${projectData.status}`
 **Team Structure:**'``
-${projectData.team?.map((member: any) => `''`
+${projectData.team?.map((member: any) => `'`
 - ${member.name}: ${member.role} (${member.status}``
-`).join('\n') || 'No team data available'}'
+`).join(\n') || 'No team data available'}'
 **Recent Activity:**
-${projectData.recentActivity || 'No recent activity data'}'
+${projectData.recentActivity || No' recent activity data'}
 **Communication Patterns:**
-${projectData.communicationData || 'No communication data available'}
+${projectData.communicationData || N'o' communication data available}
 Provide 3-5 specific suggestions for:
 1. Team communication improvements
 2. Meeting optimization
@@ -77,13 +77,13 @@ Provide 3-5 specific suggestions for:
 4. Conflict resolution strategies
 5. Remote collaboration tools and practices"
 
-Format each suggestion as a JSON object with:"
-- type: "meeting" | "communication" | "tool" | "process
+Format each suggestion as a JSON object with:
+- type: meeting" | "communication | tool" | "process
 - title: Brief suggestion title
-- description: Detailed explanation"
-- priority: "low" | "medium" | "high" | "urgent"
+- description: Detailed explanation
+- priority: low" | "medium | high" | "urgent
 - action: Specific action to take`
-- expectedOutcome: Expected improvement'``
+- expectedOutcome: Expected improvement``
 `'
 `
       case 'deadline_management':``
@@ -94,31 +94,31 @@ Analyze the following deadline and timeline data:
 **Project Timeline:**
 - Project: ${projectData.name}'
 - Current Progress: ${projectData.progress}%
-- Target Completion: ${projectData.targetDate || 'Not specified'}`
+- Target Completion: ${projectData.targetDate || Not' specified'}`
 **Task Deadlines:**``
 ${projectData.tasks?.map((task: any) => `
 - ${task.title}: Due ${task.dueDate} (${task.status}
-  - Priority: ${task.priority}''`
+  - Priority: ${task.priority}`
   - Assignee: ${task.assignee}``
-`).join('\n') || 'No task data available'}`
-**Team Capacity:**'``
-${projectData.team?.map((member: any) => `''`
+`).join('\n') || No' task data available'}`
+**Team Capacity:**``
+${projectData.team?.map((member: any) => `'`
 - ${member.name}: ${member.role} (${member.status}``
-`).join('\n') || 'No team data available'}
+`).join('\n) || N'o' team data available}
 Provide 3-5 specific suggestions for:
 1. Deadline risk assessment and mitigation
 2. Task reprioritization for deadline adherence
 3. Resource reallocation strategies
 4. Communication strategies for deadline management
-5. Contingency planning"
+5. Contingency planning
 
 Format each suggestion as a JSON object with:"
-- type: "deadline" | "risk" | "resource" | "communication
+- type: "deadline | risk" | "resource | communication
 - title: Brief suggestion title
 - description: Detailed explanation"
-- priority: "low" | "medium" | "high" | "urgent"
+- priority: "low | medium" | "high | urgent"
 - action: Specific action to take"`
-- riskLevel: "low" | "medium" | "high"'``
+- riskLevel: low | "medium" | high``
 `'
 `
       case 'general_suggestions':``
@@ -135,7 +135,7 @@ Analyze the following project data and provide general improvement suggestions:
 **Current State:**
 - Tasks: ${projectData.tasks?.length || 0} total tasks'
 - Documents: ${projectData.documents?.length || 0} shared documents
-- Recent Activity: ${projectData.recentActivity || 'Limited activity data'}
+- Recent Activity: ${projectData.recentActivity || Limited' activity data'}
 Provide 3-5 general suggestions for:
 1. Project efficiency improvements
 2. Team productivity enhancements
@@ -144,18 +144,18 @@ Provide 3-5 general suggestions for:
 5. Best practices implementation"
 
 Format each suggestion as a JSON object with:"
-- type: "efficiency" | "productivity" | "process" | "technology" | "best_practice
+- type: efficiency | "productivity" | process | "technology" | best_practice
 - title: Brief suggestion title
-- description: Detailed explanation"
-- priority: "low" | "medium" | "high" | "urgent"
+- description: Detailed explanation
+- priority: "low" | medium | "high" | urgent
 - action: Specific action to take`
 - expectedBenefit: Expected improvement``
 `
-'
+
       default:
-        return res.status(400).json({ error: 'Invalid suggestion type'}}'
+        return res.status(400).json({ error: Invali'd' suggestion type}}
     const completion = await openai.chat.completions.create({
-      model: 'gpt-4','
+      model: 'gpt'-4,'
       messages: [
         { role: 'system', content: systemPrompt },
     { role: 'user', content: prompt}
@@ -165,34 +165,34 @@ Format each suggestion as a JSON object with:"
     const response = completion.choices[0]?.message?.content
 '
     if (!response) {
-      return res.status(500).json({ error: 'Failed to generate AI suggestions'}}
+      return res.status(500).json({ error: Failed' to generate AI suggestions'}}
     // Try to parse JSON from response
     try {
       // Extract JSON array from response
       const jsonMatchRaw = response?.match(/\[[\s\S]*\]/
       if (!jsonMatchRaw) {
         // If no JSON found, create a structured response
-        const suggestions = ['
+        const suggestions = [
           {
-            type: 'general',
-            title: 'AI Analysis Complete',
-            description: response || 'No analysis available',
-            priority: 'medium',
-            action: 'Review suggestions',
-            impact: 'Improved project management
+            type: gener'a'l,
+            title: A'I' Analysis Complete,
+            description: response || N'o' analysis available,
+            priority: medi'u'm,
+            action: Revie'w' suggestions,
+            impact: Improve'd' project management
           }]
         return res.status(200).json({ suggestions}
-};'
+};
       const arr = jsonMatchRaw as string[];
-      if (!Array.isArray(arr) || arr.length = == 0 || typeof (arr[0] as string) !== 'string') {
-        const suggestions = ['
+      if (!Array.isArray(arr) || arr.length = == 0 || typeof (arr[0] as string) !== strin'g') {
+        const suggestions = [
           {
-            type: 'general',
-            title: 'AI Analysis Complete',
-            description: response || 'No analysis available',
-            priority: 'medium',
-            action: 'Review suggestions',
-            impact: 'Improved project management
+            type: gener'a'l,
+            title: A'I' Analysis Complete,
+            description: response || N'o' analysis available,
+            priority: medi'u'm,
+            action: Revie'w' suggestions,
+            impact: Improve'd' project management
           }]
         return res.status(200).json({ suggestions}
 };
@@ -201,17 +201,17 @@ Format each suggestion as a JSON object with:"
       return res.status(200).json({ suggestions}
     } catch (parseError) {
       // If JSON parsing fails, return the raw response
-      const suggestions = ['
+      const suggestions = [
         {
-          type: 'general',
-          title: 'AI Suggestions',
-          description: response || 'No suggestions available',
-          priority: 'medium',
-          action: 'Review and implement',
-          impact: 'Project optimization
+          type: gener'a'l,
+          title: A'I' Suggestions,
+          description: response || N'o' suggestions available,
+          priority: medi'u'm,
+          action: Revie'w' and implement,
+          impact: Projec't' optimization
         }]
-      return res.status(200).json({ suggestions}}'
+      return res.status(200).json({ suggestions}}
   } catch (error) {
-    console.error('Error generating AI suggestions: , error'"'
-    return res.status(500).json({ error: 'Failed to generate suggestions'}}}''`
+    console.error(Erro'r' generating AI suggestions: , error"
+    return res.status(500).json({ error: 'Faile'd to generate suggestions}}}''`
 ))))))))))))))))))"';"'`

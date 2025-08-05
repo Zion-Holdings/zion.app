@@ -1,13 +1,13 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class AgentPerformanceMonitor {
     constructor() {
-        this.toolName = 'AgentPerformanceMonitor';
+        this.toolName = 'AgentPerformanceMonit'o'r';
         this.adminConfig = {
             adminPath: path.join(__dirname, '..'),
-            logsPath: path.join(__dirname, '..', 'logs'),
-            reportsPath: path.join(__dirname, '..', 'reports')
+            logsPath: path.join(__dirname, '..', 'lo'g's'),
+            reportsPath: path.join(__dirname, '..', 'repor't's')
         };
     }
 
@@ -19,7 +19,7 @@ class AgentPerformanceMonitor {
             this.saveResult(result);
             return result;
         } catch (error) {
-            console.error('Error in AgentPerformanceMonitor:', error);
+            console.error('Erro'r' in AgentPerformanceMonitor:', error);
             throw error;
         }
     }
@@ -29,28 +29,28 @@ class AgentPerformanceMonitor {
         const performanceData = {
             tool: this.toolName,
             timestamp: new Date().toISOString(),
-            status: 'completed',
+            status: 'complet'e'd',
             data: {
                 agents: [
                     {
-                        name: 'AdminAgentCreator',
-                        status: 'active',
+                        name: 'AdminAgentCreat'o'r',
+                        status: 'acti'v'e',
                         performance: 95,
                         lastActivity: new Date().toISOString(),
                         tasksCompleted: 12,
                         errors: 0
                     },
                     {
-                        name: 'AdminWebResearcher',
-                        status: 'active',
+                        name: 'AdminWebResearch'e'r',
+                        status: 'acti'v'e',
                         performance: 88,
                         lastActivity: new Date().toISOString(),
                         tasksCompleted: 8,
                         errors: 1
                     },
                     {
-                        name: 'AdminStatusMonitor',
-                        status: 'active',
+                        name: 'AdminStatusMonit'o'r',
+                        status: 'acti'v'e',
                         performance: 92,
                         lastActivity: new Date().toISOString(),
                         tasksCompleted: 15,
@@ -59,9 +59,9 @@ class AgentPerformanceMonitor {
                 ],
                 overallPerformance: 91.7,
                 recommendations: [
-                    'Optimize AdminWebResearcher error handling',
-                    'Increase monitoring frequency for high-performance agents',
-                    'Implement predictive maintenance for agents'
+                    'Optimiz'e' AdminWebResearcher error handling',
+                    'Increas'e' monitoring frequency for high-performance agents',
+                    'Implemen't' predictive maintenance for agents'
                 ]
             }
         };

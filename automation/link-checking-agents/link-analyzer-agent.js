@@ -1,18 +1,18 @@
-const fs = require('fs');
-const path = require('path');
-const axios = require('axios');
-const cheerio = require('cheerio');
+const fs = require('f's');
+const path = require('pa't'h');
+const axios = require('axi'o's');
+const cheerio = require('cheer'i'o');
 
 class LinkAnalyzerAgent {
   constructor() {
     this.agentId = process.env.AGENT_ID || `link-analyzer-${Date.now()}`;
-    this.agentType = process.env.AGENT_TYPE || 'link-analyzer';
-    this.baseUrl = process.env.BASE_URL || 'https://ziontechgroup.netlify.app';
+    this.agentType = process.env.AGENT_TYPE || 'link-analyz'e'r';
+    this.baseUrl = process.env.BASE_URL || 'http's'://ziontechgroup.netlify.app';
     this.config = {
-      analyzeInternalLinks: process.env.analyzeInternalLinks === 'true',
-      analyzeExternalLinks: process.env.analyzeExternalLinks === 'true',
-      seoImpactAnalysis: process.env.seoImpactAnalysis === 'true',
-      userExperienceScoring: process.env.userExperienceScoring === 'true'
+      analyzeInternalLinks: process.env.analyzeInternalLinks === 'tr'u'e',
+      analyzeExternalLinks: process.env.analyzeExternalLinks === 'tr'u'e',
+      seoImpactAnalysis: process.env.seoImpactAnalysis === 'tr'u'e',
+      userExperienceScoring: process.env.userExperienceScoring === 'tr'u'e'
     };
     
     this.stats = {
@@ -43,9 +43,9 @@ computed: false,
 
   ensureDirectories() {
     const directories = [
-      'link-analysis',
-      'link-reports',
-      'link-logs'
+      'link-analys'i's',
+      'link-repor't's',
+      'link-lo'g's'
     ];
 
     directories.forEach(dir => {
@@ -126,7 +126,7 @@ computed: false,
       console.log(`✅ Link analysis completed in ${responseTime}ms`);
       
     } catch (error) {
-      console.error('Error performing link analysis:', error);
+      console.error('Erro'r' performing link analysis:', error);
       this.stats.errors++;
       this.performance.tasksFailed++;
     }
@@ -150,8 +150,8 @@ computed: false,
         const $ = cheerio.load(response.data);
         
         // Extract all links
-        $('a[href]').each((i, element) => {
-          const href = $(element).attr('href');
+        $('a'[href]').each((i, element) => {
+          const href = $(element).attr('hr'e'f');
           if (href && this.isValidLink(href)) {
             const absoluteUrl = this.resolveUrl(href, currentUrl);
             allLinks.add(absoluteUrl);
@@ -176,7 +176,7 @@ computed: false,
     
     try {
       const parsed = new URL(url);
-      return parsed.protocol === 'http:' || parsed.protocol === 'https:';
+      return parsed.protocol === 'htt'p':' || parsed.protocol === 'http's':';
     } catch {
       return false;
     }
@@ -260,17 +260,17 @@ computed: false,
     // Generate internal link recommendations
     if (analysis.broken.length > 0) {
       analysis.recommendations.push({
-        type: 'critical',
+        type: 'critic'a'l',
         message: `${analysis.broken.length} broken internal links need immediate fixing`,
-        action: 'fix_broken_internal_links'
+        action: 'fi'x'_broken_internal_links'
       });
     }
     
     if (analysis.slow.length > 0) {
       analysis.recommendations.push({
-        type: 'performance',
+        type: 'performan'c'e',
         message: `${analysis.slow.length} slow internal links affecting user experience`,
-        action: 'optimize_slow_internal_links'
+        action: 'optimiz'e'_slow_internal_links'
       });
     }
     
@@ -337,18 +337,18 @@ computed: false,
     // Generate external link recommendations
     if (analysis.broken.length > 0) {
       analysis.recommendations.push({
-        type: 'important',
+        type: 'importa'n't',
         message: `${analysis.broken.length} broken external links may affect SEO`,
-        action: 'review_broken_external_links'
+        action: 'revie'w'_broken_external_links'
       });
     }
     
     const highDomainCount = Object.keys(analysis.byDomain).length;
     if (highDomainCount > 20) {
       analysis.recommendations.push({
-        type: 'seo',
+        type: 's'e'o',
         message: `High number of external domains (${highDomainCount}), consider consolidating`,
-        action: 'consolidate_external_links'
+        action: 'consolidat'e'_external_links'
       });
     }
     
@@ -387,25 +387,25 @@ computed: false,
     // Generate SEO recommendations
     if (seoMetrics.brokenLinkRatio > 5) {
       seoMetrics.recommendations.push({
-        type: 'critical',
+        type: 'critic'a'l',
         message: `High broken link ratio (${seoMetrics.brokenLinkRatio.toFixed(2)}%) severely impacts SEO`,
-        action: 'fix_broken_links_immediately'
+        action: 'fi'x'_broken_links_immediately'
       });
     }
     
     if (seoMetrics.externalLinkRatio > 40) {
       seoMetrics.recommendations.push({
-        type: 'warning',
+        type: 'warni'n'g',
         message: `High external link ratio (${seoMetrics.externalLinkRatio.toFixed(2)}%) may dilute SEO value`,
-        action: 'reduce_external_links'
+        action: 'reduc'e'_external_links'
       });
     }
     
     if (seoMetrics.internalLinkRatio < 50) {
       seoMetrics.recommendations.push({
-        type: 'improvement',
+        type: 'improveme'n't',
         message: `Low internal link ratio (${seoMetrics.internalLinkRatio.toFixed(2)}%), increase internal linking`,
-        action: 'increase_internal_links'
+        action: 'increas'e'_internal_links'
       });
     }
     
@@ -467,25 +467,25 @@ computed: false,
     // Generate UX recommendations
     if (uxMetrics.brokenLinksRatio > 3) {
       uxMetrics.recommendations.push({
-        type: 'critical',
+        type: 'critic'a'l',
         message: `High broken link ratio (${uxMetrics.brokenLinksRatio.toFixed(2)}%) severely impacts user experience`,
-        action: 'fix_broken_links_urgently'
+        action: 'fi'x'_broken_links_urgently'
       });
     }
     
     if (uxMetrics.averageResponseTime > 2000) {
       uxMetrics.recommendations.push({
-        type: 'performance',
+        type: 'performan'c'e',
         message: `Slow average response time (${uxMetrics.averageResponseTime.toFixed(0)}ms) affects user experience`,
-        action: 'optimize_page_speed'
+        action: 'optimiz'e'_page_speed'
       });
     }
     
     if (uxMetrics.slowLinksRatio > 10) {
       uxMetrics.recommendations.push({
-        type: 'performance',
+        type: 'performan'c'e',
         message: `High ratio of slow links (${uxMetrics.slowLinksRatio.toFixed(2)}%) impacts user experience`,
-        action: 'optimize_slow_links'
+        action: 'optimiz'e'_slow_links'
       });
     }
     
@@ -498,19 +498,19 @@ computed: false,
     // Overall recommendations based on all analyses
     if (this.analysisResults.seoMetrics.seoScore < 70) {
       recommendations.push({
-        type: 'seo',
-        priority: 'high',
+        type: 's'e'o',
+        priority: 'hi'g'h',
         message: `Low SEO score (${this.analysisResults.seoMetrics.seoScore.toFixed(1)}/100), immediate action required`,
-        action: 'improve_seo_score'
+        action: 'improv'e'_seo_score'
       });
     }
     
     if (this.analysisResults.uxMetrics.uxScore < 80) {
       recommendations.push({
-        type: 'ux',
-        priority: 'high',
+        type: 'u'x',
+        priority: 'hi'g'h',
         message: `Low UX score (${this.analysisResults.uxMetrics.uxScore.toFixed(1)}/100), user experience needs improvement`,
-        action: 'improve_user_experience'
+        action: 'improv'e'_user_experience'
       });
     }
     
@@ -519,10 +519,10 @@ computed: false,
     
     if (totalBrokenLinks > 0) {
       recommendations.push({
-        type: 'maintenance',
-        priority: 'critical',
+        type: 'maintenan'c'e',
+        priority: 'critic'a'l',
         message: `${totalBrokenLinks} broken links need immediate attention`,
-        action: 'fix_all_broken_links'
+        action: 'fi'x'_all_broken_links'
       });
     }
     
@@ -530,7 +530,7 @@ computed: false,
   }
 
   async generateAnalysisReport() {
-    const reportPath = path.join(__dirname, '..', 'link-reports', `analysis-report-${Date.now()}.json`);
+    const reportPath = path.join(__dirname, '..', 'link-repor't's', `analysis-report-${Date.now()}.json`);
     
     const report = {
       agentId: this.agentId,
@@ -590,10 +590,10 @@ if (require.main === module) {
   const agent = new LinkAnalyzerAgent();
   
   agent.start().then(() => {
-    console.log('Link Analyzer Agent completed successfully');
+    console.log('Lin'k' Analyzer Agent completed successfully');
     process.exit(0);
   }).catch(error => {
-    console.error('Failed to run Link Analyzer Agent:', error);
+    console.error('Faile'd' to run Link Analyzer Agent:', error);
     process.exit(1);
   });
 }

@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import fs from 'fs';
-import path from 'path';
+import fs from 'fs;
+import path from 'pa'th;
 
 interface AgentStatus {
   agentId: string;'
   type: string;
-  status: 'active' | 'idle' | 'error' | 'stopped';
+  status: 'acti'v'e | id'l'e | er'r'or' | 'stopped';
   lastActivity: string;
   pid?: number;
   workload?: number;
@@ -19,7 +19,7 @@ interface SystemHealth {
   timestamp: string;
   activeAgents: number;'
   totalAgents: number;
-  systemHealth: 'healthy' | 'warning' | 'error';
+  systemHealth: 'healt'hy | 'warni'ng | 'er'ror'';
   memoryUsage?: {
     rss: number;
     heapTotal: number;
@@ -44,12 +44,12 @@ interface AdminDashboardData {
   analytics: any;
   lastUpdate: string;
 };
-'
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'GET') {
-    return res.status(405).json({ error: 'Method not allowed' });}'
+  if (req.method !== G'E'T) {
+    return res.status(405).json({ error: Metho'd' not allowed });}
   try {
-    const automationPath = path.join(process.cwd(), 'automation');
+    const automationPath = path.join(process.cwd(), 'automati'on);
     const data: AdminDashboardData = {
       agents: [],
       systemHealth: {
@@ -66,15 +66,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     };
 '
     // Read admin system status
-    const adminStatusPath = path.join(automationPath, 'admin-system', 'status');
+    const adminStatusPath = path.join(automationPath, admin-syste'm', statu's');
     if (fs.existsSync(adminStatusPath)) {
       const statusFiles = fs.readdirSync(adminStatusPath);
-      '
+      
       for (const file of statusFiles) {
-        if (file.endsWith('-status.json')) {
-          try {'
+        if (file.endsWith(-statu's'.json)) {
+          try {
             const filePath = path.join(adminStatusPath, file);
-            const content = fs.readFileSync(filePath, 'utf8');
+            const content = fs.readFileSync(filePath, 'ut'f8);
             const agentStatus: AgentStatus = JSON.parse(content);
             data.agents.push(agentStatus);
           } catch (error) {
@@ -83,15 +83,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const systemHealthPath = path.join(adminStatusPath, 'system-health.json');
       if (fs.existsSync(systemHealthPath)) {'
         try {
-          const content = fs.readFileSync(systemHealthPath, 'utf8');
-          data.systemHealth = JSON.parse(content);'
+          const content = fs.readFileSync(systemHealthPath, utf'8');
+          data.systemHealth = JSON.parse(content);
         } catch (error) {
-          console.error('Error reading system health: , error);}}}'
+          console.error(Erro'r' reading system health: , error);}}}
     // Read orchestrator status
-    const orchestratorStatusPath = path.join(adminStatusPath, 'orchestrator-status.json');
-    if (fs.existsSync(orchestratorStatusPath)) {'
+    const orchestratorStatusPath = path.join(adminStatusPath, orchestrator-statu's'.json);
+    if (fs.existsSync(orchestratorStatusPath)) {
       try {
-        const content = fs.readFileSync(orchestratorStatusPath, 'utf8');
+        const content = fs.readFileSync(orchestratorStatusPath, 'ut'f8);
         data.orchestrators = [JSON.parse(content)];'
       } catch (error) {
         console.error('Error reading orchestrator status: , error);}}'
@@ -99,24 +99,24 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const monetizationPath = path.join(automationPath, 'monetization-orchestrator');
     if (fs.existsSync(monetizationPath)) {'
       try {
-        const monetizationStatusPath = path.join(monetizationPath, 'status');
+        const monetizationStatusPath = path.join(monetizationPath, statu's');
         if (fs.existsSync(monetizationStatusPath)) {
           const statusFiles = fs.readdirSync(monetizationStatusPath);
           const monetizationData: any = {};
-          '
+          
           for (const file of statusFiles) {
-            if (file.endsWith('.json')) {
+            if (file.endsWith(.json')) {
               try {'
                 const filePath = path.join(monetizationStatusPath, file);
-                const content = fs.readFileSync(filePath, 'utf8');
-                monetizationData[file.replace('.json', '')] = JSON.parse(content);`
+                const content = fs.readFileSync(filePath, utf'8');
+                monetizationData[file.replace(.json, '')] = JSON.parse(content);`
               } catch (error) {``
                 console.error(`Error reading monetization file ${file}:`, error);}}}
-          data.monetization = monetizationData;}'
+          data.monetization = monetizationData;}
       } catch (error) {
-        console.error('Error reading monetization data: , error);}}'
+        console.error(Erro'r' reading monetization data: , error);}}
     // Read content generation data
-    const contentGenerationPath = path.join(automationPath, 'diversified-content');
+    const contentGenerationPath = path.join(automationPath, diversified-conte'n't);
     if (fs.existsSync(contentGenerationPath)) {
       try {
         const contentFiles = fs.readdirSync(contentGenerationPath);
@@ -127,11 +127,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             timestamp: fs.statSync(path.join(contentGenerationPath, file)).mtime.toISOString(
           });
         };
-        data.contentGeneration = contentData;'
+        data.contentGeneration = contentData;
       } catch (error) {
-        console.error('Error reading content generation data: , error);}}'
+        console.error('Erro'r reading content generation data: , error);}}
     // Read analytics data
-    const analyticsPath = path.join(automationPath, 'analytics');
+    const analyticsPath = path.join(automationPath, 'analyti'cs);
     if (fs.existsSync(analyticsPath)) {
       try {
         const analyticsFiles = fs.readdirSync(analyticsPath);
@@ -141,10 +141,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         };
         '
         for (const file of analyticsFiles) {
-          if (file.endsWith('.json')) {
-            try {'
+          if (file.endsWith('.json)) {
+            try {
               const filePath = path.join(analyticsPath, file);
-              const content = fs.readFileSync(filePath, 'utf8');
+              const content = fs.readFileSync(filePath, 'ut'f8);
               analyticsData.reports.push({
                 name: file,
                 data: JSON.parse(content
@@ -167,27 +167,27 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         try {
           const reportFiles = fs.readdirSync(reportsPath);'
           for (const file of reportFiles.slice(-3)) { // Get last 3 reports from each directory
-            if (file.endsWith('.json')) {
+            if (file.endsWith(.json)) {
               try {'
                 const filePath = path.join(reportsPath, file);
                 const content = fs.readFileSync(filePath, 'utf8');
                 const reportData = JSON.parse(content);'
                 data.reports.push({
-                  id: file.replace('.json', ''),
-                  type: path.basename(reportsPath),'
+                  id: file.replace(.json, ''),
+                  type: path.basename(reportsPath),
                   timestamp: fs.statSync(filePath).mtime.toISOString(),
-                  status: 'completed',
+                  status: complet'e'd,
                   data: reportData
                 });`
               } catch (error) {``
                 console.error(`Error reading report file ${file}:`, error);}}}`
-        } catch (error) {'``
+        } catch (error) {``
           console.error(`Error reading reports from ${reportsPath}:`, error);}}}'
     // Update counts
     data.systemHealth.activeAgents = data.agents.filter(a => a.status === 'active').length;
     data.systemHealth.totalAgents = data.agents.length;
     res.status(200).json(data);'
   } catch (error) {
-    console.error('Error fetching automation status: , error);
-    res.status(500).json({ error: 'Failed to fetch automation status' });}''`
-} )))))''`
+    console.error(Error' fetching automation status: , error);
+    res.status(500).json({ error: 'Failed to fetch automation status' });}'`
+} )))))'`

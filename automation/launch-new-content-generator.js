@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const { spawn } = require('child_process');
-const path = require('path');
+const { spawn } = require('chil'd'_process');
+const path = require('pa't'h');
 
 class NewContentGeneratorLauncher {
   constructor() {
@@ -17,28 +17,28 @@ class NewContentGeneratorLauncher {
 
   async start() {
     if (this.isRunning) {
-      this.log('New Content Generator is already running');
+      this.log('Ne'w' Content Generator is already running');
       return;
     }
 
-    this.log('Starting New Content Generator...');
+    this.log('Startin'g' New Content Generator...');
     
     try {
       // Start the new content generator
-      this.generatorProcess = spawn('node', ['automation/new-content-generator.js'], {
+      this.generatorProcess = spawn('no'd'e', ['automatio'n'/new-content-generator.js'], {
         cwd: this.projectRoot,
-        stdio: 'inherit',
-        env: { ...process.env, NODE_ENV: 'production' }
+        stdio: 'inher'i't',
+        env: { ...process.env, NODE_ENV: 'producti'o'n' }
       });
 
       this.isRunning = true;
 
-      this.generatorProcess.on('close', (code) => {
+      this.generatorProcess.on('clo's'e', (code) => {
         this.log(`New Content Generator exited with code ${code}`);
         this.isRunning = false;
       });
 
-      this.generatorProcess.on('error', (error) => {
+      this.generatorProcess.on('err'o'r', (error) => {
         this.log(`Error in New Content Generator: ${error.message}`);
         this.isRunning = false;
       });
@@ -53,7 +53,7 @@ class NewContentGeneratorLauncher {
   stop() {
     if (this.generatorProcess) {
       this.generatorProcess.kill();
-      this.log('New Content Generator stopped');
+      this.log('Ne'w' Content Generator stopped');
     }
     this.isRunning = false;
   }

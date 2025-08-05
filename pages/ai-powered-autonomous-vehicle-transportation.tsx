@@ -1,13 +1,13 @@
-import type { NextPage } from "next";
-import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
-import { useState, useEffect, useMemo } from "react";
-import Link from "next/link";
+import type { NextPage } from "next;
+import ModernLayout from '../components/layout/ModernLayout;import Head from next/head";
+import { useState, useEffect, useMemo } from "react;
+import Link from next/link";
 
 interface AutonomousVehicle {
-  id: string'
+  id: string;
   name: string
-  type: 'passenger' | 'cargo' | 'emergency' | 'delivery
-  status: 'active' | 'maintenance' | 'offline' | 'charging
+  type: ''passenger' | 'cargo' | 'emergenc'y' | delive'r'y
+  status: ''active' | 'maintenance' | 'offlin'e' | chargi'n'g
   location: {
     lat: number
     lng: number
@@ -25,10 +25,10 @@ interface VehicleAnalysis {
 interface TrafficOptimization {
   id: string
   location: string
-  currentFlow: number'
+  currentFlow: number
   optimizedFlow: number
-  congestionLevel: 'low' | 'medium' | 'high' | 'critical
-  optimizationType: 'signal' | 'route' | 'speed' | 'lane
+  congestionLevel: ''lo'w' | mediu'm' | hi'g'h | 'critica'l
+  optimizationType: ''signal' | 'route' | 'spee'd' | lan'e'
   impact: number
   aiAnalysis: TrafficAnalysis}
 interface TrafficAnalysis {
@@ -41,9 +41,9 @@ interface RoutePlanning {
   origin: string
   destination: string
   distance: number
-  duration: number'
+  duration: number
   trafficConditions: string
-  routeType: 'fastest' | 'shortest' | 'eco' | 'scenic
+  routeType: ''fastest' | 'shortest' | 'eco'' | scenic'
   waypoints: string[]
   aiAnalysis: RouteAnalysis}
 interface RouteAnalysis {
@@ -56,10 +56,10 @@ interface LogisticsOrder {
   customer: string
   origin: string
   destination: string
-  cargo: string'
+  cargo: string
   weight: number
-  priority: 'low' | 'medium' | 'high' | 'urgent
-  status: 'pending' | 'in-transit' | 'delivered' | 'cancelled
+  priority: 'l'o'w | medi'u'm | h'i'gh' | 'urgent
+  status: ''pendin'g' | in-transi't' | deliver'e'd | 'cancelle'd
   assignedVehicle: string
   eta: number
   aiAnalysis: LogisticsAnalysis}
@@ -76,9 +76,9 @@ interface TransportationAnalytics {
   aiInsights: TransportationInsight[]}
 interface TransportationInsight {
   id: string
-  title: string'
+  title: string
   description: string
-  impact: 'positive' | 'negative' | 'neutral
+  impact: ''positive' | 'negative' | 'neutra'l'
   confidence: number
   recommendations: string[]}
 const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
@@ -89,22 +89,22 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
   const [routes, setRoutes] = useState<RoutePlanning[]>([]
   const [logistics, setLogistics] = useState<LogisticsOrder[]>([]
   const [analytics, setAnalytics] = useState<TransportationAnalytics | null>(null
-  const [selectedView, setSelectedView] = useState<'overview' | 'vehicles' | 'traffic' | 'routes' | 'logistics' | 'analytics'>('overview
+  const [selectedView, setSelectedView] = useState<'overvi'ew | 'vehicl'es | 'traf'fic'' | 'rout'es | 'logisti'cs | 'analyt'ics''>(overview'
   const [selectedType, setSelectedType] = useState<string>('all
   const [isLoading, setIsLoading] = useState(false
   // Mock data
   const $1: $2[] = [
     {
       id: '1',
-      name: 'AV-001',
-      type: 'passenger',
-      status: 'active',
+      name: AV-'001',
+      type: passenge'r',
+      status: activ'e',
       location: {
-        lat: 40.7128,'
+        lat: 40.7128,
         lng: -74.0060,
 }
 }
-        address: "New York", NY'}}
+        address: "New York, NY}}
       battery: 85,'
       speed: 35,
       destination: 'Brooklyn Bridge',
@@ -113,34 +113,34 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         performanceScore: 9.2,
         safetyScore: 9.5,'
         efficiencyScore: 8.8,
-        recommendations: ['Optimize route for better efficiency', 'Consider traffic patterns', 'Monitor battery usage']}}
+        recommendations: [Optimize' route for better efficiency', Consider' traffic patterns', Monitor' battery usage']}}
     {
-      id: '2',
-      name: 'AV-002',
-      type: 'cargo',
-      status: 'active',
+      id: 2,
+      name: 'AV'-002,
+      type: 'car'go,
+      status: 'acti've,
       location: {
         lat: 34.0522,'
         lng: -118.2437,
-        address: "Los Angeles", CA'}
-      battery: 72,'
+        address: Los Angeles", CA'}
+      battery: 72,
       speed: 28,
-      destination: 'Port of Los Angeles',
+      destination: Por't' of Los Angeles,
       eta: 25,
       aiAnalysis: {
         performanceScore: 8.9,
-        safetyScore: 9.3,'
+        safetyScore: 9.3,
         efficiencyScore: 9.1,
-        recommendations: ['Adjust speed for cargo safety', 'Optimize loading sequence', 'Monitor weather conditions']}}
+        recommendations: ['Adjus't speed for cargo safety, 'Optimiz'e loading sequence, 'Monito'r weather conditions]}}
     {
       id: '3',
-      name: 'AV-003',
-      type: 'emergency',
-      status: 'active',
+      name: AV-'003',
+      type: emergenc'y',
+      status: activ'e',
       location: {
-        lat: 41.8781,'
+        lat: 41.8781,
         lng: -87.6298,
-        address: "Chicago", IL'}
+        address: "Chicago, IL}
       battery: 95,'
       speed: 45,
       destination: 'Emergency Response Center',
@@ -149,12 +149,12 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         performanceScore: 9.7,
         safetyScore: 9.8,'
         efficiencyScore: 9.4,
-        recommendations: ['Maintain high priority routing', 'Ensure clear communication', 'Monitor emergency protocols']}
+        recommendations: [Maintain' high priority routing', Ensure' clear communication', Monitor' emergency protocols']}
 }]
   const $1: $2[] = [
     {
-      id: '1',
-      location: 'Manhattan Downtown',
+      id: 1,
+      location: 'Manhatta'n Downtown,
       currentFlow: 1200,'
       optimizedFlow: 1800,
       congestionLevel: 'high',
@@ -164,10 +164,10 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         accuracy: 0.94,
         predictionScore: 0.91,'
         optimizationEfficiency: 0.88,
-        recommendations: ['Implement dynamic signal timing', 'Add traffic sensors', 'Optimize intersection design']}}
+        recommendations: [Implement' dynamic signal timing', Add' traffic sensors', Optimize' intersection design']}}
     {
-      id: '2',
-      location: 'Los Angeles Freeway',
+      id: 2,
+      location: 'Lo's Angeles Freeway,
       currentFlow: 800,'
       optimizedFlow: 1200,
       congestionLevel: 'medium',
@@ -177,49 +177,49 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         accuracy: 0.89,
         predictionScore: 0.87,'
         optimizationEfficiency: 0.85,
-        recommendations: ['Reroute through alternative highways', 'Implement carpool lanes', 'Add real-time updates']}
+        recommendations: [Reroute' through alternative highways', Implement' carpool lanes', Add' real-time updates']}
 }]
   const $1: $2[] = [
     {
-      id: '1',
-      origin: "Times Square", NY',
+      id: 1,
+      origin: Times Square", NY',
       destination: 'JFK Airport',
       distance: 15.2,'
       duration: 25,
-      trafficConditions: 'Moderate',
-      routeType: 'fastest',
-      waypoints: ['Queens Boulevard', 'Van Wyck Expressway'],
+      trafficConditions: Moderat'e',
+      routeType: fastes't',
+      waypoints: [Queens' Boulevard', Van' Wyck Expressway'],
       aiAnalysis: {
         efficiency: 0.92,
-        reliability: 0.89,'
+        reliability: 0.89,
         safetyScore: 0.94,
-        recommendations: ['Consider alternative routes during peak hours', 'Monitor construction updates', 'Optimize departure time']}}
+        recommendations: [Conside'r' alternative routes during peak hours, Monito'r' construction updates, Optimiz'e' departure time]}}
     {
-      id: '2',
+      id: 2',
       origin: 'Downtown LA',
       destination: 'Santa Monica Pier',
       distance: 12.8,'
       duration: 20,
-      trafficConditions: 'Light',
-      routeType: 'eco',
-      waypoints: ['Venice Boulevard', 'Ocean Avenue'],
+      trafficConditions: Ligh't',
+      routeType: ec'o',
+      waypoints: [Venice' Boulevard', Ocean' Avenue'],
       aiAnalysis: {
         efficiency: 0.88,
-        reliability: 0.91,'
+        reliability: 0.91,
         safetyScore: 0.89,
-        recommendations: ['Use eco-friendly driving mode', 'Consider public transit options', 'Plan for parking availability']}
+        recommendations: [Us'e' eco-friendly driving mode, Conside'r' public transit options, Pla'n' for parking availability]}
 }]
   const $1: $2[] = [
     {
-      id: '1',
+      id: 1',
       customer: 'TechCorp Inc.',
-      origin: "Silicon Valley", CA',
-      destination: "Seattle", WA',
-      cargo: 'Electronics','
+      origin: "Silicon Valley, CA',
+      destination: Seattle", WA,
+      cargo: Electroni'c's,
       weight: 500,
-      priority: 'high',
-      status: 'in-transit',
-      assignedVehicle: 'AV-002',
+      priority: 'hi'gh,
+      status: 'in-trans'it,
+      assignedVehicle: 'AV'-002,
       eta: 18,
       aiAnalysis: {
         optimizationScore: 0.91,
@@ -227,43 +227,43 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         deliveryReliability: 0.94,
         recommendations: ['Optimize loading sequence', 'Monitor weather conditions', 'Consider alternative routes']}}
     {
-      id: '2',
-      customer: 'MedSupply Co.',
-      origin: "Phoenix", AZ',
+      id: '2,
+      customer: MedSuppl'y' Co.,
+      origin: "Phoenix, AZ,
       destination: Denver, CO',
       cargo: 'Medical Supplies','
       weight: 200,
-      priority: 'urgent',
-      status: 'in-transit',
-      assignedVehicle: 'AV-003',
+      priority: urgen't',
+      status: in-transi't',
+      assignedVehicle: AV-'003',
       eta: 6,
       aiAnalysis: {
         optimizationScore: 0.95,
-        costEfficiency: 0.92,'
+        costEfficiency: 0.92,
         deliveryReliability: 0.97,
-        recommendations: ['Maintain temperature control', 'Prioritize delivery route', 'Monitor security protocols']}
+        recommendations: [Maintai'n' temperature control, Prioritiz'e' delivery route, Monito'r' security protocols]}
 }]
   const mockAnalytics: TransportationAnalytics = {
     totalVehicles: 156,
     activeRoutes: 89,
     averageSpeed: 32,
     deliverySuccessRate: 98.5,
-    aiInsights: ['
+    aiInsights: [
       {
         id: '1',
-        title: 'High Delivery Success Rate',
-        description: '98.5% delivery success rate exceeds industry standards with AI-optimized routing',
-        impact: 'positive','
+        title: High' Delivery Success Rate',
+        description: 98.5% delivery success rate exceeds industry standards with AI-optimized routing,
+        impact: 'positi've,'
         confidence: 0.94,
         recommendations: ['Maintain current optimization algorithms', 'Expand autonomous fleet', 'Implement predictive maintenance']
       },
 {
-        id: '2',
-        title: 'Traffic Optimization Impact',
-        description: 'AI-powered traffic optimization reduces congestion by 40% on average',
-        impact: 'positive','
+        id: '2,
+        title: Traffi'c' Optimization Impact,
+        description: AI-powere'd' traffic optimization reduces congestion by 40% on average,
+        impact: positi'v'e,
         confidence: 0.91,
-        recommendations: ['Deploy more traffic sensors', 'Expand optimization zones', 'Implement real-time updates']
+        recommendations: ['Deplo'y more traffic sensors, 'Expan'd optimization zones, 'Implemen't real-time updates]
       }]}
   useEffect(() => {
     setVehicles(mockVehicles
@@ -277,59 +277,59 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
       case 'active':
       case 'in-transit':
         return 'text-green-400
-      case 'maintenance':
-      case 'pending':
-        return 'text-yellow-400
-      case 'offline':
-      case 'cancelled':
-        return 'text-red-400
-      case 'charging':
-      case 'delivered':
-        return 'text-blue-400
+      case 'maintenan'ce:
+      case 'pendi'ng:
+        return 'text-yellow'-400
+      case offli'n'e:
+      case cancell'e'd:
+        return text-red'-'400
+      case chargin'g':
+      case delivere'd':
+        return text-blue-'400
       default:
         return 'text-gray-400'}}
   const getStatusBgColor = (status: string) => {'
     switch (status) {
-      case 'active':
-      case 'in-transit':
-        return 'bg-green-500
+      case activ'e':
+      case in-transi't':
+        return bg-green-'500
       case 'maintenance':
       case 'pending':
         return 'bg-yellow-500
-      case 'offline':
-      case 'cancelled':
-        return 'bg-red-500
-      case 'charging':
-      case 'delivered':
-        return 'bg-blue-500
+      case 'offli'ne:
+      case 'cancell'ed:
+        return 'bg-red'-500
+      case chargi'n'g:
+      case deliver'e'd:
+        return bg-blue'-'500
       default:
-        return 'bg-gray-500'}}
-  const getCongestionColor = (level: string) => {'
+        return bg-gray-'500'}}
+  const getCongestionColor = (level: string) => {
     switch (level) {
-      case 'low': return 'text-green-400
-      case 'medium': return 'text-yellow-400
+      case l'o'w: return text-green'-'400
+      case mediu'm': return text-yellow-'400
       case 'high': return 'text-orange-400
-      case 'critical': return 'text-red-400
-      default: return 'text-gray-400'}}
-  const getPriorityColor = (priority: string) => {'
+      case 'critic'al: return 'text-red'-400
+      default: return text-gray'-'400}}
+  const getPriorityColor = (priority: string) => {
     switch (priority) {
-      case 'urgent': return 'text-red-400
-      case 'high': return 'text-orange-400
-      case 'medium': return 'text-yellow-400
+      case 'urge'nt: return 'text-red'-400
+      case hi'g'h: return text-orange'-'400
+      case mediu'm': return text-yellow-'400
       case 'low': return 'text-green-400
-      default: return 'text-gray-400'}}
+      default: return 'text-gray'-400}}
   const getInsightColor = (impact: string) => {'
     switch (impact) {
       case 'positive': return 'text-green-400
-      case 'negative': return 'text-red-400
-      case 'neutral': return 'text-yellow-400
-      default: return 'text-gray-400'}}
-  const getInsightIcon = (impact: string) => {'
+      case 'negati've: return 'text-red'-400
+      case neutr'a'l: return text-yellow'-'400
+      default: return text-gray-'400'}}
+  const getInsightIcon = (impact: string) => {
     switch (impact) {
-      case 'positive': return '📈
-      case 'negative': return '📉
+      case positi'v'e: return 📈
+      case 'negati've: return '📉
       case 'neutral': return '📊
-      default: return '📊'}}
+      default: return 📊}}
   const filteredVehicles = useMemo(() => {'
     return vehicles.filter(vehicle => {
       const typeMatch = selectedType === 'all' || vehicle.type === selectedType
@@ -339,45 +339,45 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
     <div>
       <Head>
         <title>AI-Powered Autonomous Vehicle & Transportation - Zion</title>
-        <meta name="description content=Advanced AI-powered autonomous vehicle and transportation system with traffic optimization, route planning, and intelligent logistics management > </meta" name="description" content="Advanced AI-powered autonomous vehicle and transportation system with traffic optimization, route planning, and intelligent logistics" management" ><meta name="keywords content=autonomous vehicles, transportation, traffic optimization, route planning, logistics, AI transportation, Zion > </meta" name="keywords" content="autonomous vehicles, transportation, traffic optimization, route planning, logistics, AI transportation," Zion" ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no > </meta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0," user-scalable=no" ></Head>
+        <meta name=description content=Advanced AI-powered autonomous vehicle and transportation system with traffic optimization, route planning, and intelligent logistics management > </meta" name="description content=Advanced AI-powered autonomous vehicle and transportation system with traffic optimization, route planning, and intelligent logistics" management" ><meta name=keywords content=autonomous vehicles, transportation, traffic optimization, route planning, logistics, AI transportation, Zion > </meta name="keywords" content=autonomous vehicles, transportation, traffic optimization, route planning, logistics, AI transportation, Zion" ><meta name="viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no > </meta name=viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no ></Head>
 "
-      <div className="relative" z-10 container-responsive py-8>
+      <div className="relative z-10 container-responsive py-8>
         
         {/* Background Effects */}
-        </div><div className="fixed" inset-0 z-0>
+        </div><div className=fixed" inset-0 z-0>
           <div className=" absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
+          <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
         </div>
       {/* Header */}
       <div className="bg-black/20" backdrop-blur-md border-b border-white/10>
-        </div><div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>
-          <div className="flex" justify-between items-center>
-            <Link href=/ className="text-2xl" font-bold text-white >
-              </Link href=/" className=" text-2xl font-bold text-white ><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400>Zion</span>
+        </div><div className= max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>
+          <div className=flex" justify-between items-center>
+            <Link href=/ className="text-2xl font-bold text-white >
+              </Link href=/ className=" text-2xl font-bold text-white ><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400>Zion</span>
             </Link>
-            <div className=" flex" items-center space-x-4>
-              <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300" hover text-white px-3 py-4 rounded-md text-sm font-medium >Streaming
-              </Link href=/ai-powered-live-streaming-broadcasting className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium ></Link>
+            <div className= flex items-center space-x-4>
+              <Link href=/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium >Streaming
+              </Link href=/ai-powered-live-streaming-broadcasting className=text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium ></Link>
               <Link href=/ai-powered-voice-assistant-speech-recognition className=" text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium >Voice Assistant
               </Link href=/ai-powered-voice-assistant-speech-recognition className=" text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium ></Link>
-              <Link href=/ai-powered-holographic-display" className="text-gray-300" hover text-white px-3 py-4 rounded-md text-sm font-medium >Holographic
-              </Link href=/ai-powered-holographic-display  className="text-gray-300" hover text-white px-3 py-4 rounded-md text-sm font-medium ></Link>
-              <Link href=/auth/login className=" text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium >Login
+              <Link href=/ai-powered-holographic-display className=text-gray-300" hover text-white px-3 py-4 rounded-md text-sm font-medium >Holographic
+              </Link href=/ai-powered-holographic-display  className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium ></Link>
+              <Link href=/auth/login className= text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium >Login
               </Link href=/auth/login className=" text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium ></Link>
-              <Link href=/auth/signup className="bg-gradient-to-r" from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-blue-700 hover to-cyan-700 transition-all duration-200 >Get Started
-              </Link href=/auth/signup  className="bg-gradient-to-r" from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-blue-700 hover to-cyan-700 transition-all duration-200 ></Link>
+              <Link href=/auth/signup className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-blue-700 hover to-cyan-700 transition-all duration-200 >Get Started
+              </Link href=/auth/signup  className=bg-gradient-to-r" from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-blue-700 hover to-cyan-700 transition-all duration-200 ></Link>
             </div> </div>
         </div>
       </div>
 
       {/* Main Content */}"
-      <div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-8>
+      <div className=max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8>
         {/* Hero Section */}
         </div><div className="text-center" mb-12>
-          <h1 className=" text-5xl font-bold text-white mb-6 >
+          <h1 className= text-5xl font-bold text-white mb-6 >
             AI-Powered Autonomous Vehicle & Transportation
           </h1>
-          <p className=" text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
+          <p className= text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
             Experience the future of transportation with AI-powered autonomous vehicles, 
             intelligent traffic optimization, and advanced route planning. Revolutionize 
             mobility with cutting-edge technology.
@@ -386,28 +386,28 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
             <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200>
               Deploy Vehicle
             </button>
-            <button className=" px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg font-medium hover:from-green-700 hover to-emerald-700 transition-all duration-200 >
+            <button className= px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg font-medium hover:from-green-700 hover to-emerald-700 transition-all duration-200 >
               Optimize Traffic
             </button>
           </div>
         </div>
 
         {/* Navigation Tabs */}
-        <div className=" flex space-x-1 bg-black/20 rounded-lg p-1 mb-8>
+        <div className= flex space-x-1 bg-black/20 rounded-lg p-1 mb-8>
           {['
-            { id: 'overview', label: 'Overview', icon: '📊' },
-{ id: 'vehicles', label: 'Autonomous Vehicles', icon: '🚗' },
-    { id: 'traffic', label: 'Traffic Optimization', icon: '🚦' },
-{ id: 'routes', label: 'Route Planning', icon: '🗺️' },
-    { id: 'logistics', label: 'Logistics', icon: '📦' },
-{ id  'analytics', label  'Analytics', icon  '📈'}
+            { id: overvie'w', label: Overvie'w', icon: 📊 },
+{ id: 'vehicl'es, label: 'Autonomou's Vehicles, icon: '🚗' },
+    { id: traffi'c', label: Traffic' Optimization', icon: 🚦 },
+{ id: 'rout'es, label: 'Rout'e Planning, icon: '🗺️' },
+    { id: logistic's', label: Logistic's', icon: 📦 },
+{ id  'analyti'cs, label  'Analyti'cs, icon  '📈'}
           ].map((tab) => (
             "
               onClick={() => setSelectedView(tab.id as any)}
-              className="{`flex-1" flex items-center justify-center space-x-2 px-4 py-3 rounded-md text-sm font-medium transition-all duration-200 ${'
+              className="{`flex-1 flex items-center justify-center space-x-2 px-4 py-3 rounded-md text-sm font-medium transition-all duration-200 ${
                 selectedView === tab.id
-                  ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'`
-                    'text-gray-300 hover text-white hover bg-white/10'``
+                  ? bg-gradient-to-'r' from-blue-600 to-cyan-600 text-white`
+                    text-gray'-'300 hover text-white hover bg-white/10``
               }`}
             >
               <span>{tab.icon}</span>
@@ -415,23 +415,23 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
             </button>
           ))}
         </div>
-'
+
         {/* Content Sections */},
-{selectedView === 'overview' && (
-          <div className="grid" grid-cols-1 lg:grid-cols-2 gap-8>
+{selectedView === 'overvi'ew && (
+          <div className=grid" grid-cols-1 lg:grid-cols-2 gap-8>
             {/* Autonomous Vehicles Overview */}
-            </div><div className=" bg-black/20" rounded-lg p-6 border border-white/10 >
-              <h3 className=" text-xl font-semibold text-white mb-4>Autonomous Vehicles</h3>
+            </div><div className=" bg-black/20 rounded-lg p-6 border border-white/10 >
+              <h3 className= text-xl font-semibold text-white mb-4>Autonomous Vehicles</h3>
               <div className="space-y-4>"
                 {vehicles.slice(0, 3).map((vehicle) => (
-                  </div><div key={vehicle.id} className="p-4" bg-white/5 rounded-lg>
+                  </div><div key={vehicle.id} className=p-4 bg-white/5 rounded-lg>
                     <div className=" flex items-center justify-between mb-2>`
                       <h4 className="text-white font-medium>{vehicle.name}</h4>``
-                      <span className=" {`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(vehicle.status)} text-white`}>
+                      <span className= {`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(vehicle.status)} text-white`}>
                         {vehicle.status}
                       </span>
                     </div>
-                    <p className="text-gray-400" text-sm:mb-2>{vehicle.type} • {vehicle.location.address}</p>
+                    <p className=text-gray-400" text-sm:mb-2>{vehicle.type} • {vehicle.location.address}</p>
                     <div className="flex items-center space-x-4 text-sm text-gray-400 >
                       <span>{vehicle.battery}% battery</span>
                       <span>{vehicle.speed} mph</span>
@@ -441,15 +441,15 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
               </div>
             </div>
 
-            {/* Traffic Optimization Overview */}"
-            <div className=" bg-black/20 rounded-lg p-6 border border-white/10>
+            {/* Traffic Optimization Overview */}
+            <div className= bg-black/20 rounded-lg p-6 border border-white/10>
               <h3 className="text-xl font-semibold text-white mb-4>Traffic Optimization</h3>
               <div className=" space-y-4>
                 {trafficOptimizations.slice(0, 2).map((optimization) => (
-                  </div><div key={optimization.id} className=" p-4 bg-white/5 rounded-lg >
-                    <div className="flex" items-center justify-between mb-2>`
+                  </div><div key={optimization.id} className= p-4 bg-white/5 rounded-lg >
+                    <div className=flex" items-center justify-between mb-2>`
                       <h4 className=" text-white font-medium>{optimization.location}</h4>``
-                      <span className="{`px-4" py-3 rounded text-xs font-medium ${getCongestionColor(optimization.congestionLevel)}`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${getCongestionColor(optimization.congestionLevel)}`}>
                         {optimization.congestionLevel}
                       </span>
                     </div>
@@ -464,18 +464,18 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
             </div>
           </div>
         )}
-'"'
-        {selectedView === 'vehicles' && (
-          <div className="space-y-6>"
+''
+        {selectedView === vehicle's' && (
+          <div className=space-y-6>"
             {/* Vehicle Type Filter */}
-            </div><div className="flex" space-x-2 overflow-x-auto pb-2>'
-              {['all', 'passenger', 'cargo', 'emergency', 'delivery'].map((type) => (
+            </div><div className="flex space-x-2 overflow-x-auto pb-2>
+              {[a'l'l, passeng'e'r, car'g'o, emergen'c'y, delive'r'y].map((type) => (
                 `
                   onClick={() => setSelectedType(type)}``
-                  className="{`px-4" py-4 rounded-lg text-sm font-medium whitespace-nowrap ${'
+                  className={`px-4" py-4 rounded-lg text-sm font-medium whitespace-nowrap ${
                     selectedType === type
-                      ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'`
-                      : 'bg-white/10 text-gray-300 hover:text-white'``
+                      ? 'bg-gradient-to-'r from-blue-600 to-cyan-600 text-white`
+                      : 'bg-whit'e/10 text-gray-300 hover:text-white``
                   }`}
                 >
                   {type.charAt(0).toUpperCase() + type.slice(1)}
@@ -484,37 +484,37 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
             </div>
 
             {/* Vehicles Grid */}
-            <div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6>
               {filteredVehicles.map((vehicle) => (
-                </div><div key={vehicle.id} className=" bg-black/20" rounded-lg p-6 border border-white/10>
-                  <div className=" flex" items-center justify-between mb-4>`
-                    <h3 className=" text-white font-semibold >{vehicle.name}</h3>``
+                </div><div key={vehicle.id} className= bg-black/20" rounded-lg p-6 border border-white/10>
+                  <div className=" flex items-center justify-between mb-4>`
+                    <h3 className= text-white font-semibold >{vehicle.name}</h3>``
                     <span className="{`px-4"  py-3 rounded text-xs font-medium ${getStatusBgColor(vehicle.status)} text-white`}>
                       {vehicle.status}
                     </span>
                   </div>
-                  <p className="text-gray-400" text-sm mb-4>{vehicle.type} • {vehicle.location.address}</p>
+                  <p className=text-gray-400 text-sm mb-4>{vehicle.type} • {vehicle.location.address}</p>
                   <div className=" space-y-2 mb-4>
-                    </div><div className=" flex" justify-between text-sm >
-                      <span className=" text-gray-400>Battery</span>
+                    </div><div className=" flex justify-between text-sm >
+                      <span className= text-gray-400>Battery</span>
                       <span className="text-white>{vehicle.battery}%</span">
                     </div>
-                    <div className=" flex justify-between text-sm>
-                      <span className="text-gray-400>Speed</span>
+                    <div className= flex justify-between text-sm>
+                      <span className=text-gray-400>Speed</span>
                       <span className=" text-white>{vehicle.speed} mph</span>
                     </div>
                     <div className=" flex justify-between text-sm>
-                      <span className="text-gray-400>ETA</span>
-                      <span className=" text-white>{vehicle.eta} min</span>
+                      <span className=text-gray-400>ETA</span>
+                      <span className= text-white>{vehicle.eta} min</span>
                     </div>
                   </div>
                   <div className=" space-y-2>
                     </div><div className=" flex justify-between text-sm>
-                      <span className="text-gray-400>Performance</span>"
+                      <span className=text-gray-400>Performance</span>
                       <span className=" text-white>{vehicle.aiAnalysis.performanceScore}/10</span>
                     </div>
-                    <div className=" flex" justify-between text-sm>
-                      <span className=" text-gray-400>Safety</span>
+                    <div className=" flex justify-between text-sm>
+                      <span className= text-gray-400>Safety</span>
                       <span className="text-white>{vehicle.aiAnalysis.safetyScore}/10</span>"
                     </div>
                   </div>
@@ -525,33 +525,33 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         )}
 '
         {selectedView === 'traffic' && (
-          <div className="space-y-6>"
+          <div className=space-y-6>
             </div><div className=" grid" grid-cols-1 md grid-cols-2 gap-6>
-              {trafficOptimizations.map((optimization) => ("
-                <div key={optimization.id} className="bg-black/20" rounded-lg p-6 border border-white/10>
-                  </div><div className="flex" items-center justify-between mb-4>`
-                    <h3 className=" text-white font-semibold text-lg >{optimization.location}</h3>``
+              {trafficOptimizations.map((optimization) => (
+                <div key={optimization.id} className=bg-black/20" rounded-lg p-6 border border-white/10>
+                  </div><div className="flex items-center justify-between mb-4>`
+                    <h3 className= text-white font-semibold text-lg >{optimization.location}</h3>``
                     <span className="{`px-3"  py-3 rounded-full text-sm ${getCongestionColor(optimization.congestionLevel)}`}>
                       {optimization.congestionLevel}
                     </span>
                   </div>
-                  <p className="text-gray-400 mb-4">{optimization.optimizationType} optimization</p>
+                  <p className=text-gray-400 mb-4>{optimization.optimizationType} optimization</p>
                   <div className=" grid grid-cols-2 gap-4 mb-4>
-                    </div><div className="text-center">
-                      <div className="text-2xl" font-bold text-white>{optimization.impact}%</div>
-                      <div className="text-gray-400" text-sm>Improvement</div>
+                    </div><div className="text-center>
+                      <div className=text-2xl" font-bold text-white>{optimization.impact}%</div>
+                      <div className="text-gray-400 text-sm>Improvement</div>
                     </div>
-                    <div className="text-center>"
+                    <div className=text-center>"
                       </div><div className="text-2xl font-bold text-white >{optimization.optimizedFlow}</div>
-                      <div className=" text-gray-400 text-sm>Vehicles/hr</div>
+                      <div className= text-gray-400 text-sm>Vehicles/hr</div>
                     </div>
                   </div>
-                  <div className="space-y-2>"
-                    </div><div className="flex" justify-between" text-sm>
+                  <div className=space-y-2>"
+                    </div><div className="flex justify-between text-sm>
                       <span className="text-gray-400>Accuracy</span>"
-                      <span className="text-white>{Math.round(optimization.aiAnalysis.accuracy * 100)}%</span>
+                      <span className=text-white>{Math.round(optimization.aiAnalysis.accuracy * 100)}%</span>
                     </div>
-                    <div className=" flex justify-between text-sm>
+                    <div className= flex justify-between text-sm>
                       <span className="text-gray-400>Efficiency</span>
                       <span className=" text-white>{Math.round(optimization.aiAnalysis.optimizationEfficiency * 100)}%</span>
                     </div>
@@ -562,75 +562,35 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
           </div>
         )}
         {selectedView === 'routes' && (
-          <div className="space-y-6>"
+          <div className=space-y-6>
             </div><div className="grid grid-cols-1 md grid-cols-2 gap-6>
               {routes.map((route) => ("
-                <div key={route.id} className="bg-black/20" rounded-lg p-6 border border-white/10>
+                <div key={route.id} className=bg-black/20 rounded-lg p-6 border border-white/10>
                   </div><div className="flex" items-center justify-between mb-4 >
-                    <h3 className=" text-white font-semibold text-lg>{route.origin} → {route.destination}</h3>
-                    <span className="px-3" py-3 rounded-full text-sm bg-blue-500/20 text-blue-400>
+                    <h3 className= text-white font-semibold text-lg>{route.origin} → {route.destination}</h3>
+                    <span className=px-3" py-3 rounded-full text-sm bg-blue-500/20 text-blue-400>
                       {route.routeType}
                     </span>
                   </div>
-                  <p className="text-gray-400 mb-4">{route.trafficConditions} traffic</p>
-                  <div className=" grid grid-cols-2 gap-4 mb-4 >
+                  <p className="text-gray-400 mb-4>{route.trafficConditions} traffic</p>
+                  <div className= grid grid-cols-2 gap-4 mb-4 >
                     </div><div className="text-center">
-                      <div className="text-2xl" font-bold text-white>{route.distance} mi</div>
+                      <div className=text-2xl font-bold text-white>{route.distance} mi</div>
                       <div className="text-gray-400" text-sm>Distance</div>
                     </div>
-                    <div className="text-center>
-                      </div><div className=" text-2xl font-bold text-white>{route.duration} min</div>
+                    <div className=text-center>
+                      </div><div className= text-2xl font-bold text-white>{route.duration} min</div>
                       <div className="text-gray-400" text-sm>Duration</div>
                     </div>
                   </div>
-                  <div className="space-y-2>"
+                  <div className=space-y-2>
                     </div><div className=" flex justify-between text-sm >
                       <span className="text-gray-400>Efficiency</span>
-                      <span className="text-white>{Math.round(route.aiAnalysis.efficiency" * 100)}%</span>
+                      <span className=text-white>{Math.round(route.aiAnalysis.efficiency * 100)}%</span>
                     </div>
                     <div className="flex" justify-between text-sm>
-                      <span className=" text-gray-400>Safety</span>
-                      <span className="text-white">{Math.round(route.aiAnalysis.safetyScore * 100)}%</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-"''
-        {selectedView === 'logistics' && (
-          <div className="space-y-6>"
-            </div><div className="grid" grid-cols-1 md grid-cols-2 gap-6>
-              {logistics.map((order) => (
-                <div key={order.id} className="bg-black/20" rounded-lg p-6 border border-white/10>
-                  </div><div className="flex" items-center justify-between mb-4>`
-                    <h3 className=" text-white font-semibold text-lg>{order.customer}</h3>``
-                    <span className="{`px-3" py-3 rounded-full text-sm:${getStatusBgColor(order.status)} text-white`}>
-                      {order.status}
-                    </span>
-                  </div>
-                  <p className="text-gray-400 mb-4 >{order.cargo} • {order.weight} lbs</p>
-                  <div className=" grid grid-cols-2 gap-4 mb-4>
-                    </div><div className=" text-center>
-                      <div className="text-2xl" font-bold text-white>{order.eta} min</div>
-                      <div className="text-gray-400" text-sm>ETA</div>
-                    </div>`
-                    <div className="text-center>``
-                      </div><div className=" {`text-2xl font-bold ${getPriorityColor(order.priority)}`}>
-                        {order.priority}
-                      </div>
-                      <div className="text-gray-400" text-sm>Priority</div>
-                    </div>
-                  </div>
-                  <div className="space-y-2>
-                    </div><div className=" flex justify-between text-sm>
-                      <span className="text-gray-400>Optimization</span>
-                      <span className="text-white>{Math.round(order.aiAnalysis.optimizationScore" * 100)}%</span>
-                    </div>
-                    <div className="flex" justify-between text-sm >
-                      <span className="text-gray-400>Reliability</span>"
-                      <span className="text-white>{Math.round(order.aiAnalysis.deliveryReliability" * 100)}%</span>
+                      <span className= text-gray-400>Safety</span>
+                      <span className=text-white">{Math.round(route.aiAnalysis.safetyScore * 100)}%</span>
                     </div>
                   </div>
                 </div>
@@ -639,47 +599,87 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
           </div>
         )}
 "'
-        {selectedView === 'analytics' && analytics && ("
-          <div className="space-y-6>"
+        {selectedView === logisti'c's && (
+          <div className=space-y-6>
+            </div><div className="grid" grid-cols-1 md grid-cols-2 gap-6>
+              {logistics.map((order) => (
+                <div key={order.id} className=bg-black/20 rounded-lg p-6 border border-white/10>
+                  </div><div className="flex" items-center justify-between mb-4>`
+                    <h3 className= text-white font-semibold text-lg>{order.customer}</h3>``
+                    <span className={`px-3" py-3 rounded-full text-sm:${getStatusBgColor(order.status)} text-white`}>
+                      {order.status}
+                    </span>
+                  </div>
+                  <p className="text-gray-400 mb-4 >{order.cargo} • {order.weight} lbs</p>
+                  <div className= grid grid-cols-2 gap-4 mb-4>
+                    </div><div className= text-center>
+                      <div className="text-2xl" font-bold text-white>{order.eta} min</div>
+                      <div className=text-gray-400 text-sm>ETA</div>
+                    </div>`
+                    <div className="text-center>``
+                      </div><div className=" {`text-2xl font-bold ${getPriorityColor(order.priority)}`}>
+                        {order.priority}
+                      </div>
+                      <div className=text-gray-400 text-sm>Priority</div>
+                    </div>
+                  </div>
+                  <div className="space-y-2>
+                    </div><div className=" flex justify-between text-sm>
+                      <span className=text-gray-400>Optimization</span>
+                      <span className=text-white>{Math.round(order.aiAnalysis.optimizationScore" * 100)}%</span>
+                    </div>
+                    <div className="flex justify-between text-sm >
+                      <span className=text-gray-400>Reliability</span>"
+                      <span className="text-white>{Math.round(order.aiAnalysis.deliveryReliability * 100)}%</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {selectedView === 'analyti'cs && analytics && ("
+          <div className="space-y-6>
             {/* Analytics Overview */}
-            </div><div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-5 gap-6 >
+            </div><div className=grid" grid-cols-1 md:grid-cols-2 lg grid-cols-5 gap-6 >
               <div className=" bg-black/20 rounded-lg p-6 border border-white/10 text-center>
-                </div><div className=" text-3xl font-bold text-white>{analytics.totalVehicles}</div>
-                <div className="text-gray-400>Total" Vehicles</div>
+                </div><div className= text-3xl font-bold text-white>{analytics.totalVehicles}</div>
+                <div className=text-gray-400>Total" Vehicles</div>
               </div>
               <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center >
-                </div><div className=" text-3xl font-bold text-white>{analytics.activeRoutes}</div>
-                <div className="text-gray-400>Active" Routes</div>
+                </div><div className= text-3xl font-bold text-white>{analytics.activeRoutes}</div>
+                <div className=text-gray-400>Active" Routes</div>
               </div>
-              <div className="bg-black/20" rounded-lg p-6 border border-white/10 text-center>
-                </div><div className="text-3xl" font-bold text-white>{analytics.averageSpeed} mph</div>
+              <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center>
+                </div><div className=text-3xl" font-bold text-white>{analytics.averageSpeed} mph</div>
                 <div className="text-gray-400>Avg Speed</div>
               </div>
-              <div className="bg-black/20" rounded-lg p-6 border border-white/10 text-center>
+              <div className=bg-black/20 rounded-lg p-6 border border-white/10 text-center>
                 </div><div className="text-3xl font-bold text-white>{analytics.deliverySuccessRate}%</div>
                 <div className=" text-gray-400>Success Rate</div>
               </div>
-              <div className="bg-black/20"  rounded-lg p-6 border border-white/10 text-center>
+              <div className=bg-black/20  rounded-lg p-6 border border-white/10 text-center>
                 </div><div className="text-3xl" font-bold text-white>24/7</div>
-                <div className=" text-gray-400>Operation</div>
+                <div className= text-gray-400>Operation</div>
               </div>
             </div>
 
             {/* AI Insights */}
-            <div className=" bg-black/20 rounded-lg p-6 border border-white/10 >
+            <div className= bg-black/20 rounded-lg p-6 border border-white/10 >
               <h3 className="text-xl font-semibold text-white mb-4>AI Insights</h3>
               <div className=" space-y-4>
                 {analytics.aiInsights.map((insight) => (
-                  </div><div key={insight.id} className=" p-4 bg-white/5 rounded-lg>
-                    <div className="flex" items-center space-x-3 mb-2>`
+                  </div><div key={insight.id} className= p-4 bg-white/5 rounded-lg>
+                    <div className=flex" items-center space-x-3 mb-2>`
                       <span className=" text-2xl>{getInsightIcon(insight.impact)}</span>``
-                      <h4 className="{`text-lg" font-medium ${getInsightColor(insight.impact)}`}>
+                      <h4 className={`text-lg font-medium ${getInsightColor(insight.impact)}`}>
                         {insight.title}
                       </h4>
                       <span className="text-sm:text-gray-400>{Math.round(insight.confidence" * 100)}% confidence</span>
                     </div>
-                    <p className=" text-gray-300 mb-3 >{insight.description}</p>
-                    <div className=" space-y-2>
+                    <p className= text-gray-300 mb-3 >{insight.description}</p>
+                    <div className= space-y-2>
                       {insight.recommendations.map((rec, index) => (
                         </div><div key={index} className="flex" items-center space-x-2 text-sm text-gray-400>
                           <span>•</span>
@@ -695,39 +695,39 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         )}
       </div>
       {/* Footer */}
-      <div className="bg-black/20" border-t border-white/10 mt-16>
+      <div className=bg-black/20 border-t border-white/10 mt-16>
         </div><div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-8 >
-          <div className=" grid grid-cols-1 md grid-cols-4 gap-8>
+          <div className= grid grid-cols-1 md grid-cols-4 gap-8>
             </div><div>
-              <h3 className="text-white" font-semibold mb-4>Zion</h3>
-              <p className="text-gray-400" text-sm>
+              <h3 className=text-white" font-semibold mb-4>Zion</h3>
+              <p className="text-gray-400 text-sm>
                 The first free AI-powered marketplace for high-tech products, IT services, AI talents, and innovation.
               </p>
             </div>
             <div>
-              <h4 className="text-white font-semibold mb-4 >Features</h4>
+              <h4 className=text-white font-semibold mb-4 >Features</h4>
               <ul className=" space-y-2" text-sm text-gray-400>
-                <li><Link href=/ai-powered-live-streaming-broadcasting className="hover" text-white >Live Streaming</Link href=/ai-powered-live-streaming-broadcasting className="hover" text-white" ></Link></li>
-                <li><Link href=/ai-powered-voice-assistant-speech-recognition" className="hover" text-white >Voice Assistant</Link href=/ai-powered-voice-assistant-speech-recognition  className="hover" text-white ></Link></li>
+                <li><Link href=/ai-powered-live-streaming-broadcasting className=hover text-white >Live Streaming</Link href=/ai-powered-live-streaming-broadcasting className="hover" text-white ></Link></li>
+                <li><Link href=/ai-powered-voice-assistant-speech-recognition className="hover" text-white >Voice Assistant</Link href=/ai-powered-voice-assistant-speech-recognition  className=hover text-white ></Link></li>
                 <li><Link href=/ai-powered-holographic-display className=" hover text-white >Holographic Display</Link href=/ai-powered-holographic-display className=" hover text-white ></Link></li>
-                <li><Link href=/ai-powered-autonomous-vehicle-transportation" className="hover" text-white >Autonomous Vehicles</Link href=/ai-powered-autonomous-vehicle-transportation  className="hover" text-white ></Link></li> </ul>
+                <li><Link href=/ai-powered-autonomous-vehicle-transportation className=hover" text-white >Autonomous Vehicles</Link href=/ai-powered-autonomous-vehicle-transportation  className="hover text-white ></Link></li> </ul>
             </div>
             <div>
-              <h4 className=" text-white font-semibold mb-4>Services</h4>
+              <h4 className= text-white font-semibold mb-4>Services</h4>
               <ul className=" space-y-2 text-sm:text-gray-400>
-                <li><Link href=/marketplace className="hover" text-white >Marketplace</Link href=/marketplace className="hover" text-white ></Link></li>
-                <li><Link href=/services className=" hover text-white >IT Services</Link href=/services className="hover  text-white ></Link></li>
-                <li><Link href=/talents" className="hover" text-white >AI Talents</Link href=/talents  className="hover" text-white ></Link></li>
+                <li><Link href=/marketplace className="hover text-white >Marketplace</Link href=/marketplace className=hover" text-white ></Link></li>
+                <li><Link href=/services className=" hover text-white >IT Services</Link href=/services className=hover  text-white ></Link></li>
+                <li><Link href=/talents className="hover" text-white >AI Talents</Link href=/talents  className=hover text-white ></Link></li>
                 <li><Link href=/equipment className=" hover text-white >Equipment</Link href=/equipment className=" hover text-white ></Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-white" font-semibold mb-4>Support</h4>
+              <h4 className=text-white font-semibold mb-4>Support</h4>
               <ul className=" space-y-2" text-sm text-gray-400>
-                <li><Link href=/help-desk-support className=" hover text-white >Help Desk</Link href=/help-desk-support className=" hover text-white ></Link></li>
-                <li><Link href=/contact" className="hover" text-white >Contact</Link href=/contact  className="hover" text-white ></Link></li>
-                <li><Link href=/docs className=" hover text-white >Documentation</Link href=/docs className=" hover text-white ></Link></li>
-                <li><Link href=/status" className="hover" text-white >Status</Link href=/status  className="hover" text-white ></Link></li>
+                <li><Link href=/help-desk-support className= hover text-white >Help Desk</Link href=/help-desk-support className= hover text-white ></Link></li>
+                <li><Link href=/contact" className="hover text-white >Contact</Link href=/contact  className=hover" text-white ></Link></li>
+                <li><Link href=/docs className=" hover text-white >Documentation</Link href=/docs className= hover text-white ></Link></li>
+                <li><Link href=/status className="hover" text-white >Status</Link href=/status  className=hover text-white ></Link></li>
               </ul>
             </div>
           </div>

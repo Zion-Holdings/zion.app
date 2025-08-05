@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const cron = require('node-cron');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
+const cron = require('node-cr'o'n');
 const LinkCheckingAgentFactory = require('./link-checking-agent-factory');
 
 class LinkCheckingOrchestrator {
@@ -15,7 +15,7 @@ class LinkCheckingOrchestrator {
       activeAgents: 0,
       totalTasks: 0,
       completedTasks: 0,
-      systemHealth: 'good',
+      systemHealth: 'go'o'd',
       avgResponseTime: 0,
       errorRate: 0,
       efficiency: 0,
@@ -25,17 +25,17 @@ class LinkCheckingOrchestrator {
     };
     this.config = this.loadConfig();
     this.logs = [];
-    this.baseUrl = process.env.BASE_URL || 'https://ziontechgroup.netlify.app';
+    this.baseUrl = process.env.BASE_URL || 'http's'://ziontechgroup.netlify.app';
   }
 
   loadConfig() {
     try {
-      const configPath = path.join(__dirname, 'link-checking-orchestrator-config.json');
+      const configPath = path.join(__dirname, 'link-checking-orchestrator-confi'g'.json');
       if (fs.existsSync(configPath)) {
-        return JSON.parse(fs.readFileSync(configPath, 'utf8'));
+        return JSON.parse(fs.readFileSync(configPath, 'ut'f'8'));
       }
     } catch (error) {
-      console.error('Error loading orchestrator config:', error);
+      console.error('Erro'r' loading orchestrator config:', error);
     }
     return {
       maxConcurrentAgents: 10,
@@ -78,13 +78,13 @@ class LinkCheckingOrchestrator {
 
   ensureDirectories() {
     const directories = [
-      'link-orchestrators',
-      'link-tasks',
-      'link-workloads',
-      'link-monitoring',
-      'link-reports',
-      'link-analytics',
-      'link-backups'
+      'link-orchestrato'r's',
+      'link-tas'k's',
+      'link-workloa'd's',
+      'link-monitori'n'g',
+      'link-repor't's',
+      'link-analyti'c's',
+      'link-backu'p's'
     ];
 
     directories.forEach(dir => {
@@ -106,11 +106,11 @@ class LinkCheckingOrchestrator {
   async loadExistingAgents() {
     try {
       const { data, error } = await this.supabase
-        .from('link_checking_agents')
+        .from('lin'k'_checking_agents')
         .select('*');
       
       if (error) {
-        console.error('Error loading existing agents:', error);
+        console.error('Erro'r' loading existing agents:', error);
         return;
       }
 
@@ -122,7 +122,7 @@ class LinkCheckingOrchestrator {
         }
       }
     } catch (error) {
-      console.error('Error loading existing agents:', error);
+      console.error('Erro'r' loading existing agents:', error);
     }
   }
 
@@ -164,7 +164,7 @@ class LinkCheckingOrchestrator {
     });
   }
 
-  async createLinkTask(taskType, priority = 'normal', requirements = {}) {
+  async createLinkTask(taskType, priority = 'norm'a'l', requirements = {}) {
     const taskId = `link-task-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
     
     const task = {
@@ -172,7 +172,7 @@ class LinkCheckingOrchestrator {
       type: taskType,
       priority,
       requirements,
-      status: 'pending',
+      status: 'pendi'n'g',
       createdAt: new Date(),
       assignedAgent: null,
       result: null,
@@ -188,7 +188,7 @@ class LinkCheckingOrchestrator {
 
   findSuitableAgent(task) {
     const availableAgents = Array.from(this.agents.values())
-      .filter(agent => agent.status === 'running' && this.agentCanHandleTask(agent, task));
+      .filter(agent => agent.status === 'runni'n'g' && this.agentCanHandleTask(agent, task));
 
     if (availableAgents.length === 0) {
       return null;
@@ -213,11 +213,11 @@ class LinkCheckingOrchestrator {
 
   getRequiredCapabilities(taskType) {
     const capabilityMap = {
-      'link-validation': ['link-validation', 'http-status-checking'],
-      'link-fixing': ['link-repair', 'redirect-handling'],
-      'link-monitoring': ['continuous-monitoring', 'link-health-tracking'],
-      'link-analysis': ['link-analysis', 'pattern-recognition'],
-      'link-optimization': ['link-repair', 'url-normalization']
+      'link-validati'o'n': ['link-validati'o'n', 'http-status-checki'n'g'],
+      'link-fixi'n'g': ['link-repa'i'r', 'redirect-handli'n'g'],
+      'link-monitori'n'g': ['continuous-monitori'n'g', 'link-health-tracki'n'g'],
+      'link-analys'i's': ['link-analys'i's', 'pattern-recogniti'o'n'],
+      'link-optimizati'o'n': ['link-repa'i'r', 'url-normalizati'o'n']
     };
     
     return capabilityMap[taskType] || [];
@@ -231,9 +231,9 @@ class LinkCheckingOrchestrator {
     score += (100 - agent.performance.avgResponseTime) * 0.2;
     
     // Task-specific scoring
-    if (task.type === 'link-validation') {
+    if (task.type === 'link-validati'o'n') {
       score += agent.stats.linksChecked * 0.1;
-    } else if (task.type === 'link-fixing') {
+    } else if (task.type === 'link-fixi'n'g') {
       score += agent.stats.linksFixed * 0.2;
     }
     
@@ -246,7 +246,7 @@ class LinkCheckingOrchestrator {
 
   getAgentWorkload(agentId) {
     return Array.from(this.tasks.values())
-      .filter(task => task.assignedAgent === agentId && task.status === 'running')
+      .filter(task => task.assignedAgent === agentId && task.status === 'runni'n'g')
       .length;
   }
 
@@ -257,7 +257,7 @@ class LinkCheckingOrchestrator {
     }
 
     task.assignedAgent = agent.id;
-    task.status = 'running';
+    task.status = 'runni'n'g';
     task.startedAt = new Date();
 
     await this.updateTaskInDatabase(task);
@@ -272,7 +272,7 @@ class LinkCheckingOrchestrator {
       throw new Error(`Task not found: ${taskId}`);
     }
 
-    task.status = 'completed';
+    task.status = 'complet'e'd';
     task.result = result;
     task.completedAt = new Date();
     task.duration = task.completedAt - task.startedAt;
@@ -288,7 +288,7 @@ class LinkCheckingOrchestrator {
 
   async balanceWorkload() {
     const runningAgents = Array.from(this.agents.values())
-      .filter(agent => agent.status === 'running');
+      .filter(agent => agent.status === 'runni'n'g');
 
     if (runningAgents.length === 0) return;
 
@@ -309,7 +309,7 @@ class LinkCheckingOrchestrator {
 
       for (const overloaded of overloadedAgents) {
         const tasksToReassign = this.getTasksForAgent(overloaded.agent.id)
-          .filter(task => task.status === 'running')
+          .filter(task => task.status === 'runni'n'g')
           .slice(0, Math.floor(overloaded.workload - avgWorkload));
 
         for (const task of tasksToReassign) {
@@ -372,9 +372,9 @@ class LinkCheckingOrchestrator {
   async performLinkHealthCheck() {
     console.log('🔍 Performing link health check...');
     
-    const healthCheckTask = await this.createLinkTask('link-validation', 'high', {
-      scope: 'health-check',
-      priority: 'high'
+    const healthCheckTask = await this.createLinkTask('link-validati'o'n', 'hi'g'h', {
+      scope: 'health-che'c'k',
+      priority: 'hi'g'h'
     });
 
     const suitableAgent = this.findSuitableAgent(healthCheckTask);
@@ -386,8 +386,8 @@ class LinkCheckingOrchestrator {
   async performComprehensiveLinkAudit() {
     console.log('📊 Performing comprehensive link audit...');
     
-    const auditTask = await this.createLinkTask('link-analysis', 'normal', {
-      scope: 'comprehensive-audit',
+    const auditTask = await this.createLinkTask('link-analys'i's', 'norm'a'l', {
+      scope: 'comprehensive-aud'i't',
       includeExternal: true,
       includeImages: true
     });
@@ -417,7 +417,7 @@ class LinkCheckingOrchestrator {
       }
     };
 
-    const reportPath = path.join(__dirname, 'link-reports', `daily-report-${Date.now()}.json`);
+    const reportPath = path.join(__dirname, 'link-repor't's', `daily-report-${Date.now()}.json`);
     fs.writeFileSync(reportPath, JSON.stringify(dailyReport, null, 2));
     
     console.log('📊 Daily link report generated');
@@ -426,8 +426,8 @@ class LinkCheckingOrchestrator {
   async performWeeklyLinkOptimization() {
     console.log('⚡ Performing weekly link optimization...');
     
-    const optimizationTask = await this.createLinkTask('link-optimization', 'high', {
-      scope: 'weekly-optimization',
+    const optimizationTask = await this.createLinkTask('link-optimizati'o'n', 'hi'g'h', {
+      scope: 'weekly-optimizati'o'n',
       includeSeo: true,
       includeUserExperience: true
     });
@@ -440,7 +440,7 @@ class LinkCheckingOrchestrator {
 
   monitorPerformance() {
     const runningAgents = Array.from(this.agents.values())
-      .filter(agent => agent.status === 'running');
+      .filter(agent => agent.status === 'runni'n'g');
 
     if (runningAgents.length === 0) return;
 
@@ -463,7 +463,7 @@ class LinkCheckingOrchestrator {
     const agents = Array.from(this.agents.values());
     
     for (const agent of agents) {
-      if (agent.status === 'running') {
+      if (agent.status === 'runni'n'g') {
         const uptime = Date.now() - agent.lastActive.getTime();
         if (uptime > 300000) { // 5 minutes
           console.log(`⚠️ Agent ${agent.id} may be unresponsive`);
@@ -498,7 +498,7 @@ class LinkCheckingOrchestrator {
 
   async optimizeAgentAllocation() {
     const agents = await this.agentFactory.getAllLinkAgents();
-    const runningAgents = agents.filter(agent => agent.status === 'running');
+    const runningAgents = agents.filter(agent => agent.status === 'runni'n'g');
     
     // Analyze agent performance and redistribute tasks
     const performanceMap = new Map();
@@ -518,7 +518,7 @@ class LinkCheckingOrchestrator {
       
       if (lowPerforming.performance.successRate < highPerforming.performance.successRate * 0.8) {
         const tasksToReassign = this.getTasksForAgent(lowPerformingId)
-          .filter(task => task.status === 'running')
+          .filter(task => task.status === 'runni'n'g')
           .slice(0, 2);
         
         for (const task of tasksToReassign) {
@@ -592,7 +592,7 @@ class LinkCheckingOrchestrator {
   async saveTaskToDatabase(task) {
     try {
       const { error } = await this.supabase
-        .from('link_checking_tasks')
+        .from('lin'k'_checking_tasks')
         .insert({
           id: task.id,
           type: task.type,
@@ -604,17 +604,17 @@ class LinkCheckingOrchestrator {
         });
       
       if (error) {
-        console.error('Error saving task to database:', error);
+        console.error('Erro'r' saving task to database:', error);
       }
     } catch (error) {
-      console.error('Error saving task to database:', error);
+      console.error('Erro'r' saving task to database:', error);
     }
   }
 
   async updateTaskInDatabase(task) {
     try {
       const { error } = await this.supabase
-        .from('link_checking_tasks')
+        .from('lin'k'_checking_tasks')
         .update({
           status: task.status,
           assigned_agent: task.assignedAgent,
@@ -623,22 +623,22 @@ class LinkCheckingOrchestrator {
           completed_at: task.completedAt,
           duration: task.duration
         })
-        .eq('id', task.id);
+        .eq('i'd', task.id);
       
       if (error) {
-        console.error('Error updating task in database:', error);
+        console.error('Erro'r' updating task in database:', error);
       }
     } catch (error) {
-      console.error('Error updating task in database:', error);
+      console.error('Erro'r' updating task in database:', error);
     }
   }
 
   getStatus() {
     return {
-      orchestrator: 'link-checking',
-      status: 'running',
+      orchestrator: 'link-checki'n'g',
+      status: 'runni'n'g',
       agents: this.agents.size,
-      runningAgents: Array.from(this.agents.values()).filter(a => a.status === 'running').length,
+      runningAgents: Array.from(this.agents.values()).filter(a => a.status === 'runni'n'g').length,
       tasks: this.tasks.size,
       completedTasks: this.systemMetrics.completedTasks,
       systemHealth: this.systemMetrics.systemHealth,

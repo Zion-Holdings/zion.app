@@ -1,95 +1,75 @@
 const fs = require('fs');
 const path = require('path');
 
-function fixImportStatements() {
-    const directories = ['pages', 'components', 'src'];
+function fixImports(directory) {
+  const files = fs.readdirSync(directory, { withFileTypes: true });
+  
+  files.forEach(file => {
+    const filePath = path.join(directory, file.name);
     
-    directories.forEach(dir => {
-        if (fs.existsSync(dir)) {
-            const files = getAllFiles(dir, '.tsx');
-            files.forEach(file => {
-                try {
-                    let content = fs.readFileSync(file, 'utf8');
-                    
-                    // Fix broken import statements
-                    content = content
-                        // Fix unterminated string literals in imports
-                        .replace(/from "next\/app";/g, 'from "next/app";')
-                        .replace(/from "next\/document";/g, 'from "next/document";')
-                        .replace(/from "next\/head";/g, 'from "next/head";')
-                        .replace(/from "next\/link";/g, 'from "next/link";')
-                        .replace(/from "next\/router";/g, 'from "next/router";')
-                        .replace(/from "react";/g, 'from "react";')
-                        .replace(/from "framer-motion";/g, 'from "framer-motion";')
-                        .replace(/from "lucide-react";/g, 'from "lucide-react";')
-                        
-                        // Fix single quotes in imports
-                        .replace(/from 'next\/app';/g, 'from "next/app";')
-                        .replace(/from 'next\/document';/g, 'from "next/document";')
-                        .replace(/from 'next\/head';/g, 'from "next/head";')
-                        .replace(/from 'next\/link';/g, 'from "next/link";')
-                        .replace(/from 'next\/router';/g, 'from "next/router";')
-                        .replace(/from 'react';/g, 'from "react";')
-                        .replace(/from 'framer-motion';/g, 'from "framer-motion";')
-                        .replace(/from 'lucide-react';/g, 'from "lucide-react";')
-                        
-                        // Fix broken import paths
-                        .replace(/from '\.\.\/styles\/globals\.css';/g, 'from "../styles/globals.css";')
-                        .replace(/from '\.\.\/src\/contexts\/ChatContext';/g, 'from "../src/contexts/ChatContext";')
-                        .replace(/from '\.\.\/src\/contexts\/AuthContext';/g, 'from "../src/contexts/AuthContext";')
-                        .replace(/from '\.\.\/src\/contexts\/NavigationContext';/g, 'from "../src/contexts/NavigationContext";')
-                        .replace(/from '\.\.\/src\/components\/ChatAssistant';/g, 'from "../src/components/ChatAssistant";')
-                        .replace(/from '\.\.\/components\/MessageChannelDebugger';/g, 'from "../components/MessageChannelDebugger";')
-                        .replace(/from '\.\.\/components\/MessageChannelErrorBoundary';/g, 'from "../components/MessageChannelErrorBoundary";')
-                        .replace(/from '\.\.\/components\/ui\/Sidebar';/g, 'from "../components/ui/Sidebar";')
-                        .replace(/from '\.\.\/components\/ParticleEffect';/g, 'from "../components/ParticleEffect";')
-                        .replace(/from '\.\.\/utils\/messageChannelHandler';/g, 'from "../utils/messageChannelHandler";')
-                        
-                        // Fix double quotes in import paths
-                        .replace(/from "\.\.\/styles\/globals\.css";/g, 'from "../styles/globals.css";')
-                        .replace(/from "\.\.\/src\/contexts\/ChatContext";/g, 'from "../src/contexts/ChatContext";')
-                        .replace(/from "\.\.\/src\/contexts\/AuthContext";/g, 'from "../src/contexts/AuthContext";')
-                        .replace(/from "\.\.\/src\/contexts\/NavigationContext";/g, 'from "../src/contexts/NavigationContext";')
-                        .replace(/from "\.\.\/src\/components\/ChatAssistant";/g, 'from "../src/components/ChatAssistant";')
-                        .replace(/from "\.\.\/components\/MessageChannelDebugger";/g, 'from "../components/MessageChannelDebugger";')
-                        .replace(/from "\.\.\/components\/MessageChannelErrorBoundary";/g, 'from "../components/MessageChannelErrorBoundary";')
-                        .replace(/from "\.\.\/components\/ui\/Sidebar";/g, 'from "../components/ui/Sidebar";')
-                        .replace(/from "\.\.\/components\/ParticleEffect";/g, 'from "../components/ParticleEffect";')
-                        .replace(/from "\.\.\/utils\/messageChannelHandler";/g, 'from "../utils/messageChannelHandler";')
-                        
-                        // Remove stray quotes and semicolons
-                        .replace(/;""/g, ';')
-                        .replace(/;''/g, ';')
-                        .replace(/;;/g, ';')
-                        .replace(/;;;/g, ';');
-                    
-                    fs.writeFileSync(file, content);
-                    console.log(`✅ Fixed imports: ${file}`);
-                } catch (error) {
-                    console.log(`❌ Error fixing ${file}:`, error.message);
-                }
-            });
-        }
-    });
-}
-
-function getAllFiles(dir, ext) {
-    const files = [];
-    const items = fs.readdirSync(dir);
-    
-    for (const item of items) {
-        const fullPath = path.join(dir, item);
-        const stat = fs.statSync(fullPath);
+    if (file.isDirectory()) {
+      fixImports(filePath);
+    } else if (file.name.endsWith('.tsx') || file.name.endsWith('.ts') || file.name.endsWith('.js')) {
+      try {
+        let content = fs.readFileSync(filePath, 'utf8');
+        let modified = false;
         
-        if (stat.isDirectory()) {
-            files.push(...getAllFiles(fullPath, ext));
-        } else if (item.endsWith(ext)) {
-            files.push(fullPath);
+        // Fix broken import statements with extra quotes
+        const importFixes = [
+          // Fix React imports
+          [/import React from 'rea'c't';/g, "import React from 'react';"],
+          [/import React, \{ ([^}]+) \} from 'rea'c't';/g, "import React, { $1 } from 'react';"],
+          
+          // Fix Next.js imports
+          [/import type \{ AppProps \} from 'nex't'\/app';/g, "import type { AppProps } from 'next/app';"],
+          [/import \{ Html, Head, Main, NextScript \} from 'nex't'\/document';/g, "import { Html, Head, Main, NextScript } from 'next/document';"],
+          [/import \{ NextPage \} from 'ne'x't';/g, "import { NextPage } from 'next';"],
+          [/import Head from 'nex't'\/head';/g, "import Head from 'next/head';"],
+          [/import Link from 'nex't'\/link';/g, "import Link from 'next/link';"],
+          [/import \{ useRouter \} from 'nex't'\/router';/g, "import { useRouter } from 'next/router';"],
+          [/import Image from 'nex't'\/image';/g, "import Image from 'next/image';"],
+          
+          // Fix other common imports
+          [/import \{ motion \} from 'fra'me'r-motion';/g, "import { motion } from 'framer-motion';"],
+          [/import \{ useState, useEffect \} from 'rea'c't';/g, "import { useState, useEffect } from 'react';"],
+          [/import \{ useState, useEffect, useCallback \} from 'rea'c't';/g, "import { useState, useEffect, useCallback } from 'react';"],
+          
+          // Fix any remaining broken quotes in imports
+          [/'([^']*)'([^']*)'([^']*)'/g, (match, p1, p2, p3) => {
+            return `'${p1}${p2}${p3}'`;
+          }],
+          
+          // Fix double quotes in imports
+          [/"([^"]*)"([^"]*)"([^"]*)"/g, (match, p1, p2, p3) => {
+            return `"${p1}${p2}${p3}"`;
+          }]
+        ];
+        
+        importFixes.forEach(([pattern, replacement]) => {
+          if (pattern.test(content)) {
+            content = content.replace(pattern, replacement);
+            modified = true;
+          }
+        });
+        
+        if (modified) {
+          fs.writeFileSync(filePath, content);
+          console.log(`Fixed imports: ${filePath}`);
         }
+      } catch (error) {
+        console.error(`Error processing ${filePath}:`, error.message);
+      }
     }
-    
-    return files;
+  });
 }
 
-fixImportStatements();
-console.log('✅ Import statements fix completed'); 
+// Fix imports in all relevant directories
+const directories = ['pages', 'components', 'src'];
+directories.forEach(dir => {
+  if (fs.existsSync(dir)) {
+    console.log(`Processing directory: ${dir}`);
+    fixImports(dir);
+  }
+});
+
+console.log('Import fixes completed!'); 

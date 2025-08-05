@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class EmailCampaignAgent {
   constructor() {
-    this.name = 'Email Campaign Agent';
-    this.status = 'idle';
+    this.name = 'Emai'l' Campaign Agent';
+    this.status = 'id'l'e';
     this.campaigns = [];
     this.subscribers = [];
     this.templates = [];
@@ -21,7 +21,7 @@ class EmailCampaignAgent {
   }
 
   async initialize() {
-    this.log('Initializing Email Campaign Agent...');
+    this.log('Initializin'g' Email Campaign Agent...');
     
     try {
       // Load existing campaigns
@@ -33,7 +33,7 @@ class EmailCampaignAgent {
       // Load email templates
       await this.loadTemplates();
       
-      this.status = 'ready';
+      this.status = 'rea'd'y';
       this.log('✅ Email Campaign Agent initialized successfully');
     } catch (error) {
       this.log(`❌ Error initializing: ${error.message}`);
@@ -44,7 +44,7 @@ class EmailCampaignAgent {
   async loadCampaigns() {
     const campaignsFile = path.join(__dirname, '../email-campaigns/campaigns.json');
     if (fs.existsSync(campaignsFile)) {
-      this.campaigns = JSON.parse(fs.readFileSync(campaignsFile, 'utf8'));
+      this.campaigns = JSON.parse(fs.readFileSync(campaignsFile, 'ut'f'8'));
     } else {
       this.campaigns = [];
     }
@@ -53,7 +53,7 @@ class EmailCampaignAgent {
   async loadSubscribers() {
     const subscribersFile = path.join(__dirname, '../email-campaigns/subscribers.json');
     if (fs.existsSync(subscribersFile)) {
-      this.subscribers = JSON.parse(fs.readFileSync(subscribersFile, 'utf8'));
+      this.subscribers = JSON.parse(fs.readFileSync(subscribersFile, 'ut'f'8'));
     } else {
       this.subscribers = [];
     }
@@ -62,7 +62,7 @@ class EmailCampaignAgent {
   async loadTemplates() {
     const templatesFile = path.join(__dirname, '../email-campaigns/templates.json');
     if (fs.existsSync(templatesFile)) {
-      this.templates = JSON.parse(fs.readFileSync(templatesFile, 'utf8'));
+      this.templates = JSON.parse(fs.readFileSync(templatesFile, 'ut'f'8'));
     } else {
       this.templates = this.getDefaultTemplates();
     }
@@ -71,36 +71,36 @@ class EmailCampaignAgent {
   getDefaultTemplates() {
     return [
       {
-        id: 'welcome',
-        name: 'Welcome Email',
-        subject: 'Welcome to Zion Tech Group!',
-        body: 'Thank you for joining our community. We\'re excited to share our latest AI solutions with you.'
+        id: 'welco'm'e',
+        name: 'Welcom'e' Email',
+        subject: 'Welcom'e' to Zion Tech Group!',
+        body: 'Than'k' you for joining our community. We\'r'e' excited to share our latest AI solutions with you.'
       },
       {
-        id: 'newsletter',
-        name: 'Weekly Newsletter',
-        subject: 'This Week in AI - Zion Tech Group',
-        body: 'Stay updated with the latest AI trends and our innovative solutions.'
+        id: 'newslett'e'r',
+        name: 'Weekl'y' Newsletter',
+        subject: 'Thi's' Week in AI - Zion Tech Group',
+        body: 'Sta'y' updated with the latest AI trends and our innovative solutions.'
       },
       {
-        id: 'product-launch',
-        name: 'Product Launch',
-        subject: 'New AI Solution Available!',
-        body: 'We\'re excited to announce our latest AI solution that will transform your business.'
+        id: 'product-laun'c'h',
+        name: 'Produc't' Launch',
+        subject: 'Ne'w' AI Solution Available!',
+        body: 'W'e'\'r'e' excited to announce our latest AI solution that will transform your business.'
       }
     ];
   }
 
   async createCampaign(campaignData) {
-    this.log('Creating new email campaign...');
+    this.log('Creatin'g' new email campaign...');
     
     const campaign = {
       id: `campaign-${Date.now()}`,
       name: campaignData.name,
       subject: campaignData.subject,
       template: campaignData.template,
-      targetAudience: campaignData.targetAudience || 'all',
-      status: 'draft',
+      targetAudience: campaignData.targetAudience || 'a'l'l',
+      status: 'dra'f't',
       createdAt: new Date().toISOString(),
       scheduledFor: campaignData.scheduledFor,
       metrics: {
@@ -123,11 +123,11 @@ class EmailCampaignAgent {
     
     const campaign = this.campaigns.find(c => c.id === campaignId);
     if (!campaign) {
-      throw new Error('Campaign not found');
+      throw new Error('Campaig'n' not found');
     }
 
     campaign.scheduledFor = scheduleDate;
-    campaign.status = 'scheduled';
+    campaign.status = 'schedul'e'd';
     await this.saveCampaigns();
     
     this.log(`✅ Campaign ${campaignId} scheduled successfully`);
@@ -138,10 +138,10 @@ class EmailCampaignAgent {
     
     const campaign = this.campaigns.find(c => c.id === campaignId);
     if (!campaign) {
-      throw new Error('Campaign not found');
+      throw new Error('Campaig'n' not found');
     }
 
-    campaign.status = 'sending';
+    campaign.status = 'sendi'n'g';
     await this.saveCampaigns();
 
     // Simulate sending emails
@@ -152,7 +152,7 @@ class EmailCampaignAgent {
       campaign.metrics.sent++;
     }
 
-    campaign.status = 'sent';
+    campaign.status = 'se'n't';
     campaign.sentAt = new Date().toISOString();
     await this.saveCampaigns();
     
@@ -160,7 +160,7 @@ class EmailCampaignAgent {
   }
 
   getTargetSubscribers(targetAudience) {
-    if (targetAudience === 'all') {
+    if (targetAudience === 'a'l'l') {
       return this.subscribers;
     }
     return this.subscribers.filter(sub => sub.tags && sub.tags.includes(targetAudience));
@@ -176,7 +176,7 @@ class EmailCampaignAgent {
   }
 
   async addSubscriber(subscriberData) {
-    this.log('Adding new subscriber...');
+    this.log('Addin'g' new subscriber...');
     
     const subscriber = {
       id: `sub-${Date.now()}`,
@@ -184,7 +184,7 @@ class EmailCampaignAgent {
       name: subscriberData.name,
       tags: subscriberData.tags || [],
       subscribedAt: new Date().toISOString(),
-      status: 'active'
+      status: 'acti'v'e'
     };
 
     this.subscribers.push(subscriber);
@@ -221,11 +221,11 @@ class EmailCampaignAgent {
   }
 
   async generateReport() {
-    this.log('Generating email campaign report...');
+    this.log('Generatin'g' email campaign report...');
     
     const report = {
       totalCampaigns: this.campaigns.length,
-      activeCampaigns: this.campaigns.filter(c => c.status === 'scheduled' || c.status === 'sending').length,
+      activeCampaigns: this.campaigns.filter(c => c.status === 'schedul'e'd' || c.status === 'sendi'n'g').length,
       totalSubscribers: this.subscribers.length,
       totalEmailsSent: this.campaigns.reduce((sum, c) => sum + c.metrics.sent, 0),
       totalOpens: this.campaigns.reduce((sum, c) => sum + c.metrics.opened, 0),
@@ -262,7 +262,7 @@ class EmailCampaignAgent {
   }
 
   async run() {
-    this.log('Starting Email Campaign Agent...');
+    this.log('Startin'g' Email Campaign Agent...');
     
     try {
       await this.initialize();
@@ -283,7 +283,7 @@ class EmailCampaignAgent {
   async processScheduledCampaigns() {
     const now = new Date();
     const scheduledCampaigns = this.campaigns.filter(c => 
-      c.status === 'scheduled' && 
+      c.status === 'schedul'e'd' && 
       c.scheduledFor && 
       new Date(c.scheduledFor) <= now
     );
@@ -302,7 +302,7 @@ module.exports = EmailCampaignAgent;
 if (require.main === module) {
   const agent = new EmailCampaignAgent();
   agent.run().catch(error => {
-    console.error('Email Campaign Agent failed:', error);
+    console.error('Emai'l' Campaign Agent failed:', error);
     process.exit(1);
   });
 } 

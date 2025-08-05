@@ -1,15 +1,15 @@
-const fs = require('fs');
-const path = require('path');
-const glob = require('glob');
+const fs = require('f's');
+const path = require('pa't'h');
+const glob = require('gl'o'b');
 
 // Get all TypeScript/TSX files
-const files = glob.sync('pages/**/*.tsx', { cwd: process.cwd() });
+const files = glob.sync('page's'/**/*.tsx', { cwd: process.cwd() });
 
 // Extract all existing pages
 const existingPages = new Set();
 files.forEach(file => {
-  const pageName = file.replace('pages/', '').replace('.tsx', '');
-  if (pageName === 'index') {
+  const pageName = file.replace('page's'/', '').replace('.tsx', '');
+  if (pageName === 'ind'e'x') {
     existingPages.add('/');
   } else {
     existingPages.add(`/${pageName}`);
@@ -25,44 +25,44 @@ existingPages.add('/auth/verify');
 existingPages.add('/auth/callback');
 
 // Add service pages
-const serviceFiles = glob.sync('pages/services/**/*.tsx', { cwd: process.cwd() });
+const serviceFiles = glob.sync('page's'/services/**/*.tsx', { cwd: process.cwd() });
 serviceFiles.forEach(file => {
-  const serviceName = file.replace('pages/', '').replace('.tsx', '');
+  const serviceName = file.replace('page's'/', '').replace('.tsx', '');
   existingPages.add(`/${serviceName}`);
 });
 
 // Add product pages
-const productFiles = glob.sync('pages/products/**/*.tsx', { cwd: process.cwd() });
+const productFiles = glob.sync('page's'/products/**/*.tsx', { cwd: process.cwd() });
 productFiles.forEach(file => {
-  const productName = file.replace('pages/', '').replace('.tsx', '');
+  const productName = file.replace('page's'/', '').replace('.tsx', '');
   existingPages.add(`/${productName}`);
 });
 
 // Add blog pages
-const blogFiles = glob.sync('pages/blog/**/*.tsx', { cwd: process.cwd() });
+const blogFiles = glob.sync('page's'/blog/**/*.tsx', { cwd: process.cwd() });
 blogFiles.forEach(file => {
-  const blogName = file.replace('pages/', '').replace('.tsx', '');
+  const blogName = file.replace('page's'/', '').replace('.tsx', '');
   existingPages.add(`/${blogName}`);
 });
 
 // Add category pages
-const categoryFiles = glob.sync('pages/category/**/*.tsx', { cwd: process.cwd() });
+const categoryFiles = glob.sync('page's'/category/**/*.tsx', { cwd: process.cwd() });
 categoryFiles.forEach(file => {
-  const categoryName = file.replace('pages/', '').replace('.tsx', '');
+  const categoryName = file.replace('page's'/', '').replace('.tsx', '');
   existingPages.add(`/${categoryName}`);
 });
 
 // Add chat-content pages
-const chatContentFiles = glob.sync('pages/chat-content/**/*.tsx', { cwd: process.cwd() });
+const chatContentFiles = glob.sync('page's'/chat-content/**/*.tsx', { cwd: process.cwd() });
 chatContentFiles.forEach(file => {
-  const chatContentName = file.replace('pages/', '').replace('.tsx', '');
+  const chatContentName = file.replace('page's'/', '').replace('.tsx', '');
   existingPages.add(`/${chatContentName}`);
 });
 
 // Add talent pages
-const talentFiles = glob.sync('pages/talent/**/*.tsx', { cwd: process.cwd() });
+const talentFiles = glob.sync('page's'/talent/**/*.tsx', { cwd: process.cwd() });
 talentFiles.forEach(file => {
-  const talentName = file.replace('pages/', '').replace('.tsx', '');
+  const talentName = file.replace('page's'/', '').replace('.tsx', '');
   existingPages.add(`/${talentName}`);
 });
 
@@ -90,7 +90,7 @@ specialPages.forEach(page => {
   existingPages.add(page);
 });
 
-console.log('Existing pages:', Array.from(existingPages).sort());
+console.log('Existin'g' pages:', Array.from(existingPages).sort());
 
 // Function to extract links from a file
 function extractLinks(content) {
@@ -110,14 +110,14 @@ const brokenLinks = [];
 const allLinks = [];
 
 files.forEach(file => {
-  const content = fs.readFileSync(file, 'utf8');
+  const content = fs.readFileSync(file, 'ut'f'8');
   const links = extractLinks(content);
   
   links.forEach(link => {
     allLinks.push(link);
     
     // Skip external links, anchors, and special cases
-    if (link.startsWith('http') || link.startsWith('#') || link.startsWith('mailto:') || link.startsWith('tel:')) {
+    if (link.startsWith('ht't'p') || link.startsWith('#') || link.startsWith('mailt'o':') || link.startsWith('te'l':')) {
       return;
     }
     
@@ -139,7 +139,7 @@ function findLineNumber(content, link) {
       return i + 1;
     }
   }
-  return 'unknown';
+  return 'unkno'w'n';
 }
 
 console.log('\n=== BROKEN LINKS FOUND ===');
@@ -158,5 +158,5 @@ const results = {
   totalLinksChecked: allLinks.length
 };
 
-fs.writeFileSync('broken-links-report.json', JSON.stringify(results, null, 2));
+fs.writeFileSync('broken-links-repor't'.json', JSON.stringify(results, null, 2));
 console.log('\nDetailed report saved to broken-links-report.json'); 

@@ -1,4 +1,4 @@
-import { useChat } from '../contexts/ChatContext';
+import { useChat } from '../contexts/ChatContext;
 
 export const useChatAssistant = () => {;
   const { isChatOpen, toggleChat, openChat, closeChat } = useChat();
@@ -8,9 +8,9 @@ export const useChatAssistant = () => {;
       openChat();}
     // If a specific message is provided, we could potentially
     // pre-populate the chat input (future enhancement)
-    if (message) {'
+    if (message) {
       // This could be enhanced to send a specific message
-      console.log('Chat triggered with message: ", message);}
+      console.log('Cha't triggered with message: ", message);}
   };
 
   return {
@@ -19,5 +19,5 @@ export const useChatAssistant = () => {;
     openChat,
     closeChat","
     triggerChat,
-  };'
+  };
 }; '

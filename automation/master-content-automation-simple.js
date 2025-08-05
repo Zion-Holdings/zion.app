@@ -1,15 +1,15 @@
 // Simplified Master Content Automation System
 // Orchestrates content generation and integration following ChatGPT instructions
 // Source: https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 const SimplifiedContentGenerationAutomation = require('./content-generation-automation-simple');
 const ContentIntegrationSystem = require('./content-integration-system');
 
 class SimplifiedMasterContentAutomation {
   constructor() {
     this.projectRoot = process.cwd();
-    this.automationPath = path.join(this.projectRoot, 'automation');
+    this.automationPath = path.join(this.projectRoot, 'automati'o'n');
     this.ensureDirectories();
     this.contentGenerator = new SimplifiedContentGenerationAutomation();
     this.contentIntegrator = new ContentIntegrationSystem();
@@ -17,8 +17,8 @@ class SimplifiedMasterContentAutomation {
 
   ensureDirectories() {
     const dirs = [
-      path.join(this.automationPath, 'master-analytics'),
-      path.join(this.automationPath, 'logs')
+      path.join(this.automationPath, 'master-analyti'c's'),
+      path.join(this.automationPath, 'lo'g's')
     ];
     
     dirs.forEach(dir => {
@@ -36,7 +36,7 @@ class SimplifiedMasterContentAutomation {
       const generationResults = await this.contentGenerator.run();
       
       // Log generation results
-      const logFile = path.join(this.automationPath, 'logs', `generation-${Date.now()}.json`);
+      const logFile = path.join(this.automationPath, 'lo'g's', `generation-${Date.now()}.json`);
       fs.writeFileSync(logFile, JSON.stringify(generationResults, null, 2));
       
       console.log('✅ Content Generation Phase completed');
@@ -55,7 +55,7 @@ class SimplifiedMasterContentAutomation {
       const integrationResults = await this.contentIntegrator.run();
       
       // Log integration results
-      const logFile = path.join(this.automationPath, 'logs', `integration-${Date.now()}.json`);
+      const logFile = path.join(this.automationPath, 'lo'g's', `integration-${Date.now()}.json`);
       fs.writeFileSync(logFile, JSON.stringify(integrationResults, null, 2));
       
       console.log('✅ Content Integration Phase completed');
@@ -70,7 +70,7 @@ class SimplifiedMasterContentAutomation {
     console.log('🔍 Phase 3: Content Validation');
     
     try {
-      const contentPath = path.join(this.projectRoot, 'src', 'content', 'generated');
+      const contentPath = path.join(this.projectRoot, 's'r'c', 'conte'n't', 'generat'e'd');
       const validationResults = {
         filesExist: [],
         filesMissing: [],
@@ -84,7 +84,7 @@ class SimplifiedMasterContentAutomation {
         files.forEach(file => {
           if (file.endsWith('.json')) {
             const filePath = path.join(contentPath, file);
-            const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+            const content = JSON.parse(fs.readFileSync(filePath, 'ut'f'8'));
             
             validationResults.filesExist.push(file);
             
@@ -92,13 +92,13 @@ class SimplifiedMasterContentAutomation {
             if (content.content && Object.keys(content.content).length > 0) {
               validationResults.contentQuality.push({
                 file: file,
-                quality: 'good',
+                quality: 'go'o'd',
                 contentKeys: Object.keys(content.content).length
               });
             } else {
               validationResults.contentQuality.push({
                 file: file,
-                quality: 'poor',
+                quality: 'po'o'r',
                 contentKeys: content.content ? Object.keys(content.content).length : 0
               });
             }
@@ -107,7 +107,7 @@ class SimplifiedMasterContentAutomation {
       }
 
       // Check integration status
-      const componentsPath = path.join(this.projectRoot, 'src', 'components');
+      const componentsPath = path.join(this.projectRoot, 's'r'c', 'componen't's');
       if (fs.existsSync(componentsPath)) {
         const componentFiles = fs.readdirSync(componentsPath);
         validationResults.integrationStatus = componentFiles.filter(file => 
@@ -116,7 +116,7 @@ class SimplifiedMasterContentAutomation {
       }
 
       // Save validation results
-      const validationFile = path.join(this.automationPath, 'master-analytics', 'validation-results.json');
+      const validationFile = path.join(this.automationPath, 'master-analyti'c's', 'validation-result's'.json');
       fs.writeFileSync(validationFile, JSON.stringify(validationResults, null, 2));
 
       console.log('✅ Content Validation completed');
@@ -131,11 +131,11 @@ class SimplifiedMasterContentAutomation {
     console.log('🧠 Phase 4: Updating ChatGPT Memory');
     
     try {
-      const memoryPath = path.join(this.automationPath, 'chatgpt-content-memory.json');
+      const memoryPath = path.join(this.automationPath, 'chatgpt-content-memor'y'.json');
       let memory = { memories: [], rules: [] };
       
       if (fs.existsSync(memoryPath)) {
-        memory = JSON.parse(fs.readFileSync(memoryPath, 'utf8'));
+        memory = JSON.parse(fs.readFileSync(memoryPath, 'ut'f'8'));
       }
 
       // Add new memory about content automation
@@ -215,18 +215,18 @@ class SimplifiedMasterContentAutomation {
       };
 
       // Count actual files
-      const contentPath = path.join(this.projectRoot, 'src', 'content', 'generated');
+      const contentPath = path.join(this.projectRoot, 's'r'c', 'conte'n't', 'generat'e'd');
       if (fs.existsSync(contentPath)) {
         analytics.quality.contentFiles = fs.readdirSync(contentPath).length;
       }
 
-      const componentsPath = path.join(this.projectRoot, 'src', 'components');
+      const componentsPath = path.join(this.projectRoot, 's'r'c', 'componen't's');
       if (fs.existsSync(componentsPath)) {
         analytics.quality.componentFiles = fs.readdirSync(componentsPath).length;
       }
 
       // Save analytics
-      const analyticsFile = path.join(this.automationPath, 'master-analytics', 'master-analytics.json');
+      const analyticsFile = path.join(this.automationPath, 'master-analyti'c's', 'master-analytic's'.json');
       fs.writeFileSync(analyticsFile, JSON.stringify(analytics, null, 2));
 
       console.log('✅ Analytics generated');
@@ -274,8 +274,8 @@ class SimplifiedMasterContentAutomation {
       console.log('📊 Summary:');
       console.log(`   📝 Content types generated: ${Object.keys(results.generation.marketplaceContent || {}).length}`);
       console.log(`   🔗 Components integrated: ${Object.keys(results.integration || {}).length}`);
-      console.log(`   ✅ Validation status: ${results.validation ? 'passed' : 'failed'}`);
-      console.log(`   🧠 Memory updated: ${results.memory ? 'yes' : 'no'}`);
+      console.log(`   ✅ Validation status: ${results.validation ? 'pass'e'd' : 'fail'e'd'}`);
+      console.log(`   🧠 Memory updated: ${results.memory ? 'y'e's' : 'n'o'}`);
       console.log('');
       console.log('🚀 Content automation following ChatGPT instructions is now active!');
 

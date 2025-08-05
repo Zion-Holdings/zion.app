@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
+const { promisify } = require('ut'i'l');
 
 const execAsync = promisify(exec);
 
@@ -18,11 +18,11 @@ class MicroservicesOrchestrationAgent {
   ensureDirectories() {
     const dirs = [
       this.reportsDir,
-      path.join(this.reportsDir, 'service-reports'),
-      path.join(this.reportsDir, 'orchestration-reports'),
-      path.join(this.reportsDir, 'communication-reports'),
-      path.join(this.reportsDir, 'scaling-reports'),
-      path.join(this.reportsDir, 'health-reports')
+      path.join(this.reportsDir, 'service-repor't's'),
+      path.join(this.reportsDir, 'orchestration-repor't's'),
+      path.join(this.reportsDir, 'communication-repor't's'),
+      path.join(this.reportsDir, 'scaling-repor't's'),
+      path.join(this.reportsDir, 'health-repor't's')
     ];
     
     dirs.forEach(dir => {
@@ -56,7 +56,7 @@ class MicroservicesOrchestrationAgent {
 
   async analyzeMicroservices() {
     try {
-      console.log('Performing comprehensive microservices analysis...');
+      console.log('Performin'g' comprehensive microservices analysis...');
       
       const analysis = {
         timestamp: new Date().toISOString(),
@@ -90,10 +90,10 @@ class MicroservicesOrchestrationAgent {
       // Save analysis report
       await this.saveAnalysisReport(analysis);
       
-      console.log('Microservices analysis completed');
+      console.log('Microservice's' analysis completed');
       
     } catch (error) {
-      console.error('Microservices analysis failed:', error);
+      console.error('Microservice's' analysis failed:', error);
     }
   }
 
@@ -105,7 +105,7 @@ class MicroservicesOrchestrationAgent {
       const serviceFiles = this.findServiceFiles();
       
       for (const file of serviceFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const serviceInfo = this.extractServiceInfo(file, content);
         
         if (serviceInfo) {
@@ -117,7 +117,7 @@ class MicroservicesOrchestrationAgent {
       const composeFiles = this.findComposeFiles();
       
       for (const file of composeFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const composeInfo = this.extractComposeInfo(file, content);
         
         if (composeInfo) {
@@ -126,7 +126,7 @@ class MicroservicesOrchestrationAgent {
       }
       
     } catch (error) {
-      console.error('Failed to discover microservices:', error);
+      console.error('Faile'd' to discover microservices:', error);
     }
     
     return services;
@@ -144,12 +144,12 @@ class MicroservicesOrchestrationAgent {
           const fullPath = path.join(dir, item);
           const stat = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+          if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findServiceFiles(fullPath);
           } else if (stat.isFile()) {
             const ext = path.extname(item).toLowerCase();
             if (serviceExtensions.includes(ext)) {
-              const content = fs.readFileSync(fullPath, 'utf8');
+              const content = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsServiceCode(content)) {
                 serviceFiles.push(fullPath);
               }
@@ -161,7 +161,7 @@ class MicroservicesOrchestrationAgent {
       findServiceFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find service files:', error);
+      console.error('Faile'd' to find service files:', error);
     }
     
     return serviceFiles;
@@ -169,8 +169,8 @@ class MicroservicesOrchestrationAgent {
 
   containsServiceCode(content) {
     const serviceKeywords = [
-      'express', 'fastapi', 'spring', 'gin', 'microservice', 'service',
-      'app.listen', 'app.run', 'server.start', 'port', 'endpoint'
+      'expre's's', 'fasta'p'i', 'spri'n'g', 'g'i'n', 'microservi'c'e', 'servi'c'e',
+      'ap'p'.listen', 'ap'p'.run', 'serve'r'.start', 'po'r't', 'endpoi'n't'
     ];
     
     return serviceKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -180,8 +180,8 @@ class MicroservicesOrchestrationAgent {
     const serviceInfo = {
       file: file,
       name: path.basename(file, path.extname(file)),
-      type: 'unknown',
-      framework: 'unknown',
+      type: 'unkno'w'n',
+      framework: 'unkno'w'n',
       port: 0,
       endpoints: [],
       dependencies: []
@@ -190,18 +190,18 @@ class MicroservicesOrchestrationAgent {
     const lowerContent = content.toLowerCase();
     
     // Detect framework
-    if (lowerContent.includes('express')) {
-      serviceInfo.framework = 'express';
-      serviceInfo.type = 'nodejs';
-    } else if (lowerContent.includes('fastapi')) {
-      serviceInfo.framework = 'fastapi';
-      serviceInfo.type = 'python';
-    } else if (lowerContent.includes('spring')) {
-      serviceInfo.framework = 'spring';
-      serviceInfo.type = 'java';
-    } else if (lowerContent.includes('gin')) {
-      serviceInfo.framework = 'gin';
-      serviceInfo.type = 'go';
+    if (lowerContent.includes('expre's's')) {
+      serviceInfo.framework = 'expre's's';
+      serviceInfo.type = 'node'j's';
+    } else if (lowerContent.includes('fasta'p'i')) {
+      serviceInfo.framework = 'fasta'p'i';
+      serviceInfo.type = 'pyth'o'n';
+    } else if (lowerContent.includes('spri'n'g')) {
+      serviceInfo.framework = 'spri'n'g';
+      serviceInfo.type = 'ja'v'a';
+    } else if (lowerContent.includes('g'i'n')) {
+      serviceInfo.framework = 'g'i'n';
+      serviceInfo.type = 'g'o';
     }
     
     // Extract port
@@ -231,12 +231,12 @@ class MicroservicesOrchestrationAgent {
           const fullPath = path.join(dir, item);
           const stat = fs.statSync(fullPath);
           
-          if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+          if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
             findComposeFiles(fullPath);
           } else if (stat.isFile()) {
             const ext = path.extname(item).toLowerCase();
             if (composeExtensions.includes(ext)) {
-              const content = fs.readFileSync(fullPath, 'utf8');
+              const content = fs.readFileSync(fullPath, 'ut'f'8');
               if (this.containsComposeCode(content)) {
                 composeFiles.push(fullPath);
               }
@@ -248,7 +248,7 @@ class MicroservicesOrchestrationAgent {
       findComposeFiles(this.projectRoot);
       
     } catch (error) {
-      console.error('Failed to find compose files:', error);
+      console.error('Faile'd' to find compose files:', error);
     }
     
     return composeFiles;
@@ -256,7 +256,7 @@ class MicroservicesOrchestrationAgent {
 
   containsComposeCode(content) {
     const composeKeywords = [
-      'version:', 'services:', 'docker-compose', 'container_name', 'image'
+      'versio'n':', 'service's':', 'docker-compo's'e', 'containe'r'_name', 'ima'g'e'
     ];
     
     return composeKeywords.some(keyword => content.toLowerCase().includes(keyword));
@@ -265,8 +265,8 @@ class MicroservicesOrchestrationAgent {
   extractComposeInfo(file, content) {
     const composeInfo = {
       file: file,
-      name: 'docker-compose',
-      type: 'orchestration',
+      name: 'docker-compo's'e',
+      type: 'orchestrati'o'n',
       services: [],
       networks: [],
       volumes: []
@@ -278,7 +278,7 @@ class MicroservicesOrchestrationAgent {
     for (const line of lines) {
       const trimmedLine = line.trim();
       
-      if (trimmedLine.startsWith('- ') || trimmedLine.match(/^[a-zA-Z_][a-zA-Z0-9_]*:/)) {
+      if (trimmedLine.startsWith('-' ') || trimmedLine.match(/^[a-zA-Z_][a-zA-Z0-9_]*:/)) {
         if (currentService) {
           composeInfo.services.push(currentService);
         }
@@ -348,7 +348,7 @@ class MicroservicesOrchestrationAgent {
       const serviceFiles = this.findServiceFiles();
       
       for (const file of serviceFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const commInfo = this.extractCommunicationInfo(content);
         
         communication.patterns.push(...commInfo.patterns);
@@ -358,7 +358,7 @@ class MicroservicesOrchestrationAgent {
       }
       
     } catch (error) {
-      console.error('Failed to analyze communication:', error);
+      console.error('Faile'd' to analyze communication:', error);
     }
     
     return communication;
@@ -375,37 +375,37 @@ class MicroservicesOrchestrationAgent {
     const lowerContent = content.toLowerCase();
     
     // Detect communication patterns
-    if (lowerContent.includes('http') || lowerContent.includes('fetch')) {
-      commInfo.patterns.push('http-communication');
-      commInfo.protocols.push('http');
+    if (lowerContent.includes('ht't'p') || lowerContent.includes('fet'c'h')) {
+      commInfo.patterns.push('http-communicati'o'n');
+      commInfo.protocols.push('ht't'p');
     }
     
-    if (lowerContent.includes('websocket')) {
-      commInfo.patterns.push('websocket-communication');
-      commInfo.protocols.push('websocket');
+    if (lowerContent.includes('websock'e't')) {
+      commInfo.patterns.push('websocket-communicati'o'n');
+      commInfo.protocols.push('websock'e't');
     }
     
-    if (lowerContent.includes('grpc')) {
-      commInfo.patterns.push('grpc-communication');
-      commInfo.protocols.push('grpc');
+    if (lowerContent.includes('gr'p'c')) {
+      commInfo.patterns.push('grpc-communicati'o'n');
+      commInfo.protocols.push('gr'p'c');
     }
     
     // Detect message formats
-    if (lowerContent.includes('json')) {
-      commInfo.messageFormats.push('json');
+    if (lowerContent.includes('js'o'n')) {
+      commInfo.messageFormats.push('js'o'n');
     }
     
-    if (lowerContent.includes('xml')) {
-      commInfo.messageFormats.push('xml');
+    if (lowerContent.includes('x'm'l')) {
+      commInfo.messageFormats.push('x'm'l');
     }
     
-    if (lowerContent.includes('protobuf')) {
-      commInfo.messageFormats.push('protobuf');
+    if (lowerContent.includes('protob'u'f')) {
+      commInfo.messageFormats.push('protob'u'f');
     }
     
     // Check for issues
-    if (lowerContent.includes('localhost') && lowerContent.includes('hardcoded')) {
-      commInfo.issues.push('hardcoded-localhost');
+    if (lowerContent.includes('localho's't') && lowerContent.includes('hardcod'e'd')) {
+      commInfo.issues.push('hardcoded-localho's't');
     }
     
     return commInfo;
@@ -427,7 +427,7 @@ class MicroservicesOrchestrationAgent {
         
         // Categorize dependencies
         for (const dep of service.dependencies) {
-          if (dep.startsWith('@') || dep.includes('node_modules')) {
+          if (dep.startsWith('@') || dep.includes('nod'e'_modules')) {
             dependencies.externalDependencies.push(dep);
           } else {
             dependencies.internalDependencies.push(dep);
@@ -439,7 +439,7 @@ class MicroservicesOrchestrationAgent {
       dependencies.circularDependencies = this.detectCircularDependencies(dependencies.serviceGraph);
       
     } catch (error) {
-      console.error('Failed to analyze dependencies:', error);
+      console.error('Faile'd' to analyze dependencies:', error);
     }
     
     return dependencies;
@@ -472,7 +472,7 @@ class MicroservicesOrchestrationAgent {
       const serviceFiles = this.findServiceFiles();
       
       for (const file of serviceFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const scalingInfo = this.extractScalingInfo(content);
         
         scaling.patterns.push(...scalingInfo.patterns);
@@ -483,7 +483,7 @@ class MicroservicesOrchestrationAgent {
       scaling.recommendations = this.generateScalingRecommendations(scaling);
       
     } catch (error) {
-      console.error('Failed to analyze scaling:', error);
+      console.error('Faile'd' to analyze scaling:', error);
     }
     
     return scaling;
@@ -498,20 +498,20 @@ class MicroservicesOrchestrationAgent {
     const lowerContent = content.toLowerCase();
     
     // Detect scaling patterns
-    if (lowerContent.includes('cluster') || lowerContent.includes('worker')) {
-      scalingInfo.patterns.push('horizontal-scaling');
+    if (lowerContent.includes('clust'e'r') || lowerContent.includes('work'e'r')) {
+      scalingInfo.patterns.push('horizontal-scali'n'g');
     }
     
-    if (lowerContent.includes('thread') || lowerContent.includes('process')) {
-      scalingInfo.patterns.push('vertical-scaling');
+    if (lowerContent.includes('thre'a'd') || lowerContent.includes('proce's's')) {
+      scalingInfo.patterns.push('vertical-scali'n'g');
     }
     
-    if (lowerContent.includes('load-balancer')) {
-      scalingInfo.strategies.push('load-balancing');
+    if (lowerContent.includes('load-balanc'e'r')) {
+      scalingInfo.strategies.push('load-balanci'n'g');
     }
     
-    if (lowerContent.includes('cache') || lowerContent.includes('redis')) {
-      scalingInfo.strategies.push('caching');
+    if (lowerContent.includes('cac'h'e') || lowerContent.includes('red'i's')) {
+      scalingInfo.strategies.push('cachi'n'g');
     }
     
     return scalingInfo;
@@ -522,19 +522,19 @@ class MicroservicesOrchestrationAgent {
     
     if (scaling.patterns.length === 0) {
       recommendations.push({
-        type: 'scaling',
-        priority: 'medium',
-        message: 'No scaling patterns detected',
-        suggestion: 'Implement horizontal scaling with load balancing'
+        type: 'scali'n'g',
+        priority: 'medi'u'm',
+        message: 'N'o' scaling patterns detected',
+        suggestion: 'Implemen't' horizontal scaling with load balancing'
       });
     }
     
-    if (!scaling.strategies.includes('caching')) {
+    if (!scaling.strategies.includes('cachi'n'g')) {
       recommendations.push({
-        type: 'performance',
-        priority: 'medium',
-        message: 'No caching strategy detected',
-        suggestion: 'Implement caching for improved performance'
+        type: 'performan'c'e',
+        priority: 'medi'u'm',
+        message: 'N'o' caching strategy detected',
+        suggestion: 'Implemen't' caching for improved performance'
       });
     }
     
@@ -544,7 +544,7 @@ class MicroservicesOrchestrationAgent {
   async analyzeHealth() {
     const health = {
       services: [],
-      overallHealth: 'healthy',
+      overallHealth: 'healt'h'y',
       issues: [],
       metrics: {}
     };
@@ -556,8 +556,8 @@ class MicroservicesOrchestrationAgent {
         const serviceHealth = this.checkServiceHealth(service);
         health.services.push(serviceHealth);
         
-        if (serviceHealth.status === 'unhealthy') {
-          health.overallHealth = 'warning';
+        if (serviceHealth.status === 'unhealt'h'y') {
+          health.overallHealth = 'warni'n'g';
           health.issues.push(serviceHealth.issues);
         }
       }
@@ -566,7 +566,7 @@ class MicroservicesOrchestrationAgent {
       health.metrics = this.calculateHealthMetrics(health.services);
       
     } catch (error) {
-      console.error('Failed to analyze health:', error);
+      console.error('Faile'd' to analyze health:', error);
     }
     
     return health;
@@ -575,7 +575,7 @@ class MicroservicesOrchestrationAgent {
   checkServiceHealth(service) {
     const health = {
       service: service.name,
-      status: 'healthy',
+      status: 'healt'h'y',
       issues: [],
       uptime: Math.random() * 100,
       responseTime: Math.random() * 1000
@@ -583,18 +583,18 @@ class MicroservicesOrchestrationAgent {
     
     // Check for common health issues
     if (service.port === 0) {
-      health.issues.push('No port configured');
-      health.status = 'unhealthy';
+      health.issues.push('N'o' port configured');
+      health.status = 'unhealt'h'y';
     }
     
     if (service.endpoints.length === 0) {
-      health.issues.push('No endpoints defined');
-      health.status = 'warning';
+      health.issues.push('N'o' endpoints defined');
+      health.status = 'warni'n'g';
     }
     
     if (health.responseTime > 500) {
-      health.issues.push('High response time');
-      health.status = 'warning';
+      health.issues.push('Hig'h' response time');
+      health.status = 'warni'n'g';
     }
     
     return health;
@@ -610,8 +610,8 @@ class MicroservicesOrchestrationAgent {
     };
     
     if (services.length > 0) {
-      metrics.healthyServices = services.filter(s => s.status === 'healthy').length;
-      metrics.unhealthyServices = services.filter(s => s.status === 'unhealthy').length;
+      metrics.healthyServices = services.filter(s => s.status === 'healt'h'y').length;
+      metrics.unhealthyServices = services.filter(s => s.status === 'unhealt'h'y').length;
       metrics.averageResponseTime = services.reduce((sum, s) => sum + s.responseTime, 0) / services.length;
       metrics.averageUptime = services.reduce((sum, s) => sum + s.uptime, 0) / services.length;
     }
@@ -623,32 +623,32 @@ class MicroservicesOrchestrationAgent {
     const recommendations = [];
     
     // Health-based recommendations
-    if (analysis.health.overallHealth !== 'healthy') {
+    if (analysis.health.overallHealth !== 'healt'h'y') {
       recommendations.push({
-        type: 'health',
-        priority: 'high',
-        message: 'Service health issues detected',
-        suggestion: 'Review and fix unhealthy services'
+        type: 'heal't'h',
+        priority: 'hi'g'h',
+        message: 'Servic'e' health issues detected',
+        suggestion: 'Revie'w' and fix unhealthy services'
       });
     }
     
     // Communication-based recommendations
     if (analysis.communication.issues.length > 0) {
       recommendations.push({
-        type: 'communication',
-        priority: 'medium',
-        message: 'Communication issues detected',
-        suggestion: 'Review service communication patterns'
+        type: 'communicati'o'n',
+        priority: 'medi'u'm',
+        message: 'Communicatio'n' issues detected',
+        suggestion: 'Revie'w' service communication patterns'
       });
     }
     
     // Dependency-based recommendations
     if (analysis.dependencies.circularDependencies.length > 0) {
       recommendations.push({
-        type: 'dependencies',
-        priority: 'high',
-        message: 'Circular dependencies detected',
-        suggestion: 'Refactor to remove circular dependencies'
+        type: 'dependenci'e's',
+        priority: 'hi'g'h',
+        message: 'Circula'r' dependencies detected',
+        suggestion: 'Refacto'r' to remove circular dependencies'
       });
     }
     
@@ -662,7 +662,7 @@ class MicroservicesOrchestrationAgent {
 
   async monitorServices() {
     try {
-      console.log('Monitoring microservices...');
+      console.log('Monitorin'g' microservices...');
       
       const monitoring = {
         timestamp: new Date().toISOString(),
@@ -685,18 +685,18 @@ class MicroservicesOrchestrationAgent {
       
       // Save monitoring report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'service-reports', `monitoring-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'service-repor't's', `monitoring-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
-      console.error('Service monitoring failed:', error);
+      console.error('Servic'e' monitoring failed:', error);
     }
   }
 
   checkServiceStatus(service) {
     const status = {
       service: service.name,
-      status: 'running',
+      status: 'runni'n'g',
       issues: [],
       lastChecked: new Date().toISOString()
     };
@@ -704,18 +704,18 @@ class MicroservicesOrchestrationAgent {
     // Check for common issues
     if (service.port === 0) {
       status.issues.push({
-        type: 'configuration',
-        severity: 'high',
-        message: 'No port configured'
+        type: 'configurati'o'n',
+        severity: 'hi'g'h',
+        message: 'N'o' port configured'
       });
-      status.status = 'error';
+      status.status = 'err'o'r';
     }
     
     if (service.endpoints.length === 0) {
       status.issues.push({
-        type: 'configuration',
-        severity: 'medium',
-        message: 'No endpoints defined'
+        type: 'configurati'o'n',
+        severity: 'medi'u'm',
+        message: 'N'o' endpoints defined'
       });
     }
     
@@ -724,7 +724,7 @@ class MicroservicesOrchestrationAgent {
 
   async orchestrateServices() {
     try {
-      console.log('Orchestrating microservices...');
+      console.log('Orchestratin'g' microservices...');
       
       const orchestrationReport = {
         timestamp: new Date().toISOString(),
@@ -744,42 +744,42 @@ class MicroservicesOrchestrationAgent {
         orchestrationReport.results.push({
           service: service.name,
           action: orchestration.action,
-          status: 'completed',
-          result: 'Service orchestrated successfully'
+          status: 'complet'e'd',
+          result: 'Servic'e' orchestrated successfully'
         });
       }
       
       // Save orchestration report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'orchestration-reports', `orchestration-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'orchestration-repor't's', `orchestration-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(orchestrationReport, null, 2));
       
     } catch (error) {
-      console.error('Service orchestration failed:', error);
+      console.error('Servic'e' orchestration failed:', error);
     }
   }
 
   generateOrchestrationAction(service) {
-    const actions = ['scale', 'restart', 'update', 'monitor'];
+    const actions = ['sca'l'e', 'resta'r't', 'upda't'e', 'monit'o'r'];
     const randomAction = actions[Math.floor(Math.random() * actions.length)];
     
     return {
       service: service.name,
       action: randomAction,
-      priority: 'medium',
+      priority: 'medi'u'm',
       description: `${randomAction} service ${service.name}`
     };
   }
 
   async monitorHealth() {
     try {
-      console.log('Monitoring service health...');
+      console.log('Monitorin'g' service health...');
       
       const healthReport = {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         services: [],
-        overallHealth: 'healthy'
+        overallHealth: 'healt'h'y'
       };
       
       // Check service health
@@ -789,24 +789,24 @@ class MicroservicesOrchestrationAgent {
         const health = this.checkServiceHealth(service);
         healthReport.services.push(health);
         
-        if (health.status === 'unhealthy') {
-          healthReport.overallHealth = 'warning';
+        if (health.status === 'unhealt'h'y') {
+          healthReport.overallHealth = 'warni'n'g';
         }
       }
       
       // Save health report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'health-reports', `health-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'health-repor't's', `health-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(healthReport, null, 2));
       
     } catch (error) {
-      console.error('Health monitoring failed:', error);
+      console.error('Healt'h' monitoring failed:', error);
     }
   }
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'service-reports', `analysis-${timestamp}.json`);
+    const reportPath = path.join(this.reportsDir, 'service-repor't's', `analysis-${timestamp}.json`);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     console.log(`Analysis report saved: ${reportPath}`);
   }
@@ -820,15 +820,15 @@ class MicroservicesOrchestrationAgent {
 // Start the agent
 const agent = new MicroservicesOrchestrationAgent();
 
-process.on('SIGTERM', () => {
+process.on('SIGTE'R'M', () => {
   agent.stop();
 });
 
-process.on('SIGINT', () => {
+process.on('SIGI'N'T', () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('Microservices Orchestration Agent failed to start:', error);
+  console.error('Microservice's' Orchestration Agent failed to start:', error);
   process.exit(1);
 }); 

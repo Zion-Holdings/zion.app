@@ -1,16 +1,16 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 class EnhancedContentGenerator {
   constructor() {
     this.agentId = `enhanced-content-${Date.now()}`;
-    this.genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || 'your-api-key');
-    this.model = this.genAI.getGenerativeModel({ model: 'gemini-pro' });
+    this.genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || 'your-api-k'e'y');
+    this.model = this.genAI.getGenerativeModel({ model: 'gemini-p'r'o' });
     
     this.projectRoot = path.join(__dirname, '..');
-    this.pagesDir = path.join(this.projectRoot, 'pages');
-    this.componentsDir = path.join(this.projectRoot, 'components');
+    this.pagesDir = path.join(this.projectRoot, 'pag'e's');
+    this.componentsDir = path.join(this.projectRoot, 'componen't's');
     
     this.analytics = {
       pagesCreated: 0,
@@ -32,55 +32,55 @@ class EnhancedContentGenerator {
   loadContentIdeas() {
     return {
       blogTopics: [
-        'AI-Powered Marketplaces: The Future of Digital Commerce',
-        'Blockchain Technology in Modern Business Solutions',
-        'Machine Learning Applications in Enterprise Software',
-        'The Rise of Edge Computing in IoT Applications',
-        'Cybersecurity Trends for 2024 and Beyond',
-        'Cloud-Native Architecture Best Practices',
-        'DevOps Automation Strategies for Modern Teams',
-        'Data Analytics in Digital Transformation',
-        'API-First Development: Building Scalable Systems',
-        'Microservices Architecture: Benefits and Challenges',
-        'Quantum Computing: Implications for Business',
+        'AI-Powere'd' Marketplaces: The Future of Digital Commerce',
+        'Blockchai'n' Technology in Modern Business Solutions',
+        'Machin'e' Learning Applications in Enterprise Software',
+        'Th'e' Rise of Edge Computing in IoT Applications',
+        'Cybersecurit'y' Trends for 2024 and Beyond',
+        'Cloud-Nativ'e' Architecture Best Practices',
+        'DevOp's' Automation Strategies for Modern Teams',
+        'Dat'a' Analytics in Digital Transformation',
+        'API-Firs't' Development: Building Scalable Systems',
+        'Microservice's' Architecture: Benefits and Challenges',
+        'Quantu'm' Computing: Implications for Business',
         '5G Technology and Its Impact on IoT',
-        'Sustainable Technology: Green Computing Solutions',
-        'Digital Twins: Revolutionizing Industry 4.0',
-        'Augmented Reality in Enterprise Applications'
+        'Sustainabl'e' Technology: Green Computing Solutions',
+        'Digita'l' Twins: Revolutionizing Industry 4.0',
+        'Augmente'd' Reality in Enterprise Applications'
       ],
       marketplaceCategories: [
-        'ai-consulting',
-        'data-science',
-        'cloud-architecture',
-        'cybersecurity',
-        'devops-automation',
-        'mobile-development',
-        'web-development',
-        'ui-ux-design',
-        'product-management',
-        'technical-writing',
-        'quality-assurance',
-        'system-administration',
-        'network-engineering',
-        'database-administration',
-        'business-intelligence'
+        'ai-consulti'n'g',
+        'data-scien'c'e',
+        'cloud-architectu'r'e',
+        'cybersecuri't'y',
+        'devops-automati'o'n',
+        'mobile-developme'n't',
+        'web-developme'n't',
+        'ui-ux-desi'g'n',
+        'product-manageme'n't',
+        'technical-writi'n'g',
+        'quality-assuran'c'e',
+        'system-administrati'o'n',
+        'network-engineeri'n'g',
+        'database-administrati'o'n',
+        'business-intelligen'c'e'
       ],
       serviceTypes: [
-        'AI Model Development',
-        'Data Pipeline Engineering',
-        'Cloud Migration Services',
-        'Security Auditing',
-        'Performance Optimization',
-        'API Development',
-        'Mobile App Development',
-        'Web Application Development',
-        'UI/UX Design',
-        'Technical Documentation',
-        'Quality Assurance Testing',
-        'System Administration',
-        'Network Security',
-        'Database Design',
-        'Business Intelligence'
+        'A'I' Model Development',
+        'Dat'a' Pipeline Engineering',
+        'Clou'd' Migration Services',
+        'Securit'y' Auditing',
+        'Performanc'e' Optimization',
+        'AP'I' Development',
+        'Mobil'e' App Development',
+        'We'b' Application Development',
+        'U'I'/UX Design',
+        'Technica'l' Documentation',
+        'Qualit'y' Assurance Testing',
+        'Syste'm' Administration',
+        'Networ'k' Security',
+        'Databas'e' Design',
+        'Busines's' Intelligence'
       ]
     };
   }
@@ -88,53 +88,53 @@ class EnhancedContentGenerator {
   loadChatPatterns() {
     return {
       conversationStyles: [
-        'professional-technical',
-        'business-strategic',
-        'innovative-futuristic',
-        'practical-implementation',
-        'analytical-research',
-        'collaborative-team',
-        'customer-focused',
-        'solution-oriented',
-        'trend-analysis',
-        'expert-consultation'
+        'professional-technic'a'l',
+        'business-strateg'i'c',
+        'innovative-futurist'i'c',
+        'practical-implementati'o'n',
+        'analytical-resear'c'h',
+        'collaborative-te'a'm',
+        'customer-focus'e'd',
+        'solution-orient'e'd',
+        'trend-analys'i's',
+        'expert-consultati'o'n'
       ],
       contentStructures: [
-        'problem-solution',
-        'trend-analysis',
-        'case-study',
-        'how-to-guide',
-        'comparison-review',
-        'expert-interview',
-        'industry-insights',
-        'technology-deep-dive',
-        'best-practices',
-        'future-predictions'
+        'problem-soluti'o'n',
+        'trend-analys'i's',
+        'case-stu'd'y',
+        'how-to-gui'd'e',
+        'comparison-revi'e'w',
+        'expert-intervi'e'w',
+        'industry-insigh't's',
+        'technology-deep-di'v'e',
+        'best-practic'e's',
+        'future-predictio'n's'
       ],
       engagementPatterns: [
-        'question-answer',
-        'step-by-step-guide',
-        'interactive-demo',
-        'expert-advice',
-        'real-world-examples',
-        'technical-tutorial',
-        'business-strategy',
-        'innovation-spotlight',
-        'trend-discussion',
-        'solution-showcase'
+        'question-answ'e'r',
+        'step-by-step-gui'd'e',
+        'interactive-de'm'o',
+        'expert-advi'c'e',
+        'real-world-exampl'e's',
+        'technical-tutori'a'l',
+        'business-strate'g'y',
+        'innovation-spotlig'h't',
+        'trend-discussi'o'n',
+        'solution-showca's'e'
       ]
     };
   }
 
   ensureDirectories() {
     const dirs = [
-      path.join(this.pagesDir, 'blog'),
-      path.join(this.pagesDir, 'category'),
-      path.join(this.pagesDir, 'services'),
-      path.join(this.pagesDir, 'chat-content'),
-      path.join(this.componentsDir, 'content'),
-      path.join(__dirname, 'generated-content'),
-      path.join(__dirname, 'logs')
+      path.join(this.pagesDir, 'bl'o'g'),
+      path.join(this.pagesDir, 'catego'r'y'),
+      path.join(this.pagesDir, 'servic'e's'),
+      path.join(this.pagesDir, 'chat-conte'n't'),
+      path.join(this.componentsDir, 'conte'n't'),
+      path.join(__dirname, 'generated-conte'n't'),
+      path.join(__dirname, 'lo'g's')
     ];
     
     dirs.forEach(dir => {
@@ -164,7 +164,7 @@ class EnhancedContentGenerator {
         await new Promise(resolve => setTimeout(resolve, 500)); // 500ms delay
         
       } catch (error) {
-        console.error('Error in continuous generation:', error.message);
+        console.error('Erro'r' in continuous generation:', error.message);
         this.analytics.errors++;
         
         // Short delay on error
@@ -231,16 +231,16 @@ class EnhancedContentGenerator {
 
   getRandomChatTopic() {
     const topics = [
-      'AI-Powered Business Solutions Discussion',
-      'Technology Implementation Strategies',
-      'Digital Transformation Insights',
-      'Innovation in Enterprise Technology',
-      'Future of Work and Automation',
-      'Sustainable Technology Practices',
-      'Cybersecurity Best Practices',
-      'Cloud Computing Strategies',
-      'Data Analytics Implementation',
-      'Emerging Technology Trends'
+      'AI-Powere'd' Business Solutions Discussion',
+      'Technolog'y' Implementation Strategies',
+      'Digita'l' Transformation Insights',
+      'Innovatio'n' in Enterprise Technology',
+      'Futur'e' of Work and Automation',
+      'Sustainabl'e' Technology Practices',
+      'Cybersecurit'y' Best Practices',
+      'Clou'd' Computing Strategies',
+      'Dat'a' Analytics Implementation',
+      'Emergin'g' Technology Trends'
     ];
     
     return topics[Math.floor(Math.random() * topics.length)];
@@ -250,7 +250,7 @@ class EnhancedContentGenerator {
     try {
       const content = await this.generateChatBasedBlogContent(topic, pattern);
       const filename = this.sanitizeFilename(topic);
-      const pagePath = path.join(this.pagesDir, 'blog', `${filename}-chat.tsx`);
+      const pagePath = path.join(this.pagesDir, 'bl'o'g', `${filename}-chat.tsx`);
       
       const pageContent = this.generateChatBasedBlogPageContent(topic, content, pattern);
       fs.writeFileSync(pagePath, pageContent);
@@ -297,9 +297,9 @@ Make it feel like a natural conversation between experts discussing this topic.
     
     const safePageName = pageName.match(/^\d/) ? `Page${pageName}` : pageName;
     
-    return `import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
+    return `import type { NextPage } from 'ne'x't'
+import Head from 'nex't'/head'
+import Link from 'nex't'/link'
 
 const ${safePageName}ChatPage: NextPage = () => {
   return (
@@ -386,7 +386,7 @@ The conversation concludes with actionable recommendations for organizations loo
     try {
       const content = await this.generateChatBasedMarketplaceContent(category, pattern);
       const filename = this.sanitizeFilename(category);
-      const pagePath = path.join(this.pagesDir, 'category', `${filename}-chat.tsx`);
+      const pagePath = path.join(this.pagesDir, 'catego'r'y', `${filename}-chat.tsx`);
       
       const pageContent = this.generateChatBasedMarketplacePageContent(category, content, pattern);
       fs.writeFileSync(pagePath, pageContent);
@@ -432,9 +432,9 @@ Make it feel like a natural conversation between marketplace experts discussing 
     const pageName = categoryTitle.replace(/\s+/g, '');
     const safePageName = pageName.match(/^\d/) ? `Page${pageName}` : pageName;
     
-    return `import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
+    return `import type { NextPage } from 'ne'x't'
+import Head from 'nex't'/head'
+import Link from 'nex't'/link'
 
 const ${safePageName}ChatPage: NextPage = () => {
   return (
@@ -514,7 +514,7 @@ The discussion concludes with practical advice for both buyers and sellers in th
     try {
       const content = await this.generateChatBasedServiceContent(service, pattern);
       const filename = this.sanitizeFilename(service);
-      const pagePath = path.join(this.pagesDir, 'services', `${filename}-chat.tsx`);
+      const pagePath = path.join(this.pagesDir, 'servic'e's', `${filename}-chat.tsx`);
       
       const pageContent = this.generateChatBasedServicePageContent(service, content, pattern);
       fs.writeFileSync(pagePath, pageContent);
@@ -557,9 +557,9 @@ Make it feel like a natural conversation between service experts discussing this
     const pageName = service.replace(/[^a-zA-Z0-9]/g, '');
     const safePageName = pageName.match(/^\d/) ? `Page${pageName}` : pageName;
     
-    return `import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
+    return `import type { NextPage } from 'ne'x't'
+import Head from 'nex't'/head'
+import Link from 'nex't'/link'
 
 const ${safePageName}ChatPage: NextPage = () => {
   return (
@@ -639,7 +639,7 @@ The discussion concludes with practical advice for organizations looking to leve
     try {
       const content = await this.generateChatContent(topic);
       const filename = this.sanitizeFilename(topic);
-      const pagePath = path.join(this.pagesDir, 'chat-content', `${filename}.tsx`);
+      const pagePath = path.join(this.pagesDir, 'chat-conte'n't', `${filename}.tsx`);
       
       const pageContent = this.generateChatContentPageContent(topic, content);
       fs.writeFileSync(pagePath, pageContent);
@@ -684,9 +684,9 @@ Make it feel like a natural conversation between experts discussing this topic.
     
     const safePageName = pageName.match(/^\d/) ? `Page${pageName}` : pageName;
     
-    return `import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
+    return `import type { NextPage } from 'ne'x't'
+import Head from 'nex't'/head'
+import Link from 'nex't'/link'
 
 const ${safePageName}ChatContentPage: NextPage = () => {
   return (
@@ -757,17 +757,17 @@ export default ${safePageName}ChatContentPage`
     return `
 In this engaging conversation about ${topic}, our experts explore the latest developments and their implications.
 
-**Expert 1:** "Let's start by discussing the current state of ${topic.toLowerCase()}. What are the key trends you're seeing in the market?"
+**Expert 1:** "Let's' start by discussing the current state of ${topic.toLowerCase()}. What are the key trends you'r'e' seeing in the market?"
 
-**Expert 2:** "Great question. I'm observing several interesting developments, particularly around implementation strategies and client expectations. The landscape is evolving rapidly."
+**Expert 2:** "Great question. I'm' observing several interesting developments, particularly around implementation strategies and client expectations. The landscape is evolving rapidly."
 
-**Expert 1:** "That's fascinating. Can you share some specific examples of how organizations are adapting to these changes?"
+**Expert 1:** "That's' fascinating. Can you share some specific examples of how organizations are adapting to these changes?"
 
-**Expert 2:** "Absolutely. I've seen several successful implementations where companies have taken a strategic approach to ${topic.toLowerCase()}, focusing on alignment with broader business objectives."
+**Expert 2:** "Absolutely. I'v'e' seen several successful implementations where companies have taken a strategic approach to ${topic.toLowerCase()}, focusing on alignment with broader business objectives."
 
 **Expert 1:** "What challenges are organizations facing when implementing ${topic.toLowerCase()} solutions?"
 
-**Expert 2:** "The main challenges I'm seeing include resource allocation, skill gaps, and change management. Organizations need to invest in both technology and people."
+**Expert 2:** "The main challenges I'm' seeing include resource allocation, skill gaps, and change management. Organizations need to invest in both technology and people."
 
 **Expert 1:** "Excellent points. What advice would you give to organizations looking to get started with ${topic.toLowerCase()}?"
 
@@ -805,13 +805,13 @@ if (require.main === module) {
   const generator = new EnhancedContentGenerator();
   
   // Handle process signals
-  process.on('SIGINT', () => {
+  process.on('SIGI'N'T', () => {
     console.log('\nReceived SIGINT, shutting down gracefully...');
     generator.stop();
     process.exit(0);
   });
   
-  process.on('SIGTERM', () => {
+  process.on('SIGTE'R'M', () => {
     console.log('\nReceived SIGTERM, shutting down gracefully...');
     generator.stop();
     process.exit(0);

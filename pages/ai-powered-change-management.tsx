@@ -1,8 +1,8 @@
-import React from "react;
-import { NextPage } from 'next";
-import Head from "next/head";
-import Link from "next/link";
-import PageLayout from '../components/layout/PageLayout";
+import React from "react";
+import { NextPage } from 'next;
+import Head from next/head";
+import Link from "next/link;
+import PageLayout from ../components/layout/PageLayout';
 import {
   Users, 
   TrendingUp, 
@@ -16,19 +16,19 @@ import {
   Clock,
   Target,'
   Activity
-}  from "lucide-react";
-import { Home, Search, User }  from "lucide-react";
+}  from lucide-react";
+import { Home, Search, User }  from "lucide-react;
 
 interface ChangeInitiative {
   id: string;
   name: string;
-  type: 'technology' | 'process' | 'organizational' | 'cultural";
-  status: 'planning' | 'implementation' | 'monitoring' | 'completed";
-  priority: 'low' | 'medium' | 'high' | 'critical";
+  type: 'technolo'gy | 'proce'ss | 'organizatio'nal'' | cultural';
+  status: 'planni'n'g | implementati'o'n | monitor'i'ng' | 'completed";
+  priority: ''lo'w' | mediu'm' | hi'g'h | 'critica'l";
   startDate: string;
   endDate: string;
   progress: number;
-  impact: 'low' | 'medium' | 'high";
+  impact: ''low' | 'medium' | 'hig'h';
   budget: number;
   actualCost: number;}
 interface Stakeholder {
@@ -36,18 +36,18 @@ interface Stakeholder {
   name: string;
   role: string;
   department: string;
-  influence: 'high' | 'medium' | 'low";
-  support: 'champion' | 'supporter' | 'neutral' | 'resistant' | 'blocker";
+  influence: 'hi'gh | 'medi'um | 'l'ow;
+  support: ''champio'n' | supporte'r' | neutr'a'l | 'resista'nt | 'blocke'r";
   communicationPreference: string;
   lastContact: string;
   nextContact: string;}
 interface TrainingProgram {
   id: string;
   title: string;
-  type: 'workshop' | 'online' | 'mentoring' | 'certification";
+  type: ''workshop' | 'online' | 'mentorin'g' | certificatio'n'";
   targetAudience: string;
   duration: string;
-  status: 'planned' | 'in-progress' | 'completed";
+  status: 'plann'ed | 'in-progre'ss | 'comple'ted';
   completionRate: number;
   satisfactionScore: number;
   startDate: string;
@@ -55,13 +55,13 @@ interface TrainingProgram {
 interface ChangeMetric {
   id: string;
   name: string;
-  category: 'adoption' | 'productivity' | 'satisfaction' | 'cost";
+  category: 'adopti'o'n | productivi't'y | satisfact'i'on' | 'cost;
   currentValue: number;
   targetValue: number;
   unit: string;
-  trend: 'increasing' | 'decreasing' | 'stable";
+  trend: ''increasin'g' | decreasin'g' | stab'l'e";
   lastUpdated: string;}
-const AIPoweredChangeManagementPage: NextPage = () => {'
+const AIPoweredChangeManagementPage: NextPage = () => {
   ';
   const [activeTab, setActiveTab] = useState('overview');
   const [changeInitiatives, setChangeInitiatives] = useState<ChangeInitiative[]>([]);
@@ -69,7 +69,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
   const [trainingPrograms, setTrainingPrograms] = useState<TrainingProgram[]>([]);
   const [changeMetrics, setChangeMetrics] = useState<ChangeMetric[]>([]);
   const [loading, setLoading] = useState(false);
-  const [selectedTimeframe, setSelectedTimeframe] = useState('30d');
+  const [selectedTimeframe, setSelectedTimeframe] = useState('30d);
 
   useEffect(() => {
     loadChangeData();}
@@ -78,13 +78,13 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
   const loadChangeData = async () => {;
     setLoading(true);
     try {
-      const response = await fetch('/api/ai-change-management', {
+      const response = await fetch(/api/ai-change-management', {
         method: 'POST','
         headers: {
-          'Content-Type': 'application/json',}
-        body: JSON.stringify({'
+          Content-Typ'e': application'/json',}
+        body: JSON.stringify({
           timeframe: selectedTimeframe,
-          action: 'getData
+          action: getDat'a'
         }),;
       });
 
@@ -95,86 +95,86 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
         setTrainingPrograms(data.trainingPrograms || []);
         setChangeMetrics(data.changeMetrics || []);}
     } catch (error) {
-      console.error('Error loading change data: , error);
+      console.error(Error' loading change data: , error);
     } finally {
       setLoading(false);}
   };
   const getStatusColor = (status: string) => {'
-    switch (status) {';
-      case 'planning': return 'bg-blue-500";
-      case 'implementation': return 'bg-yellow-500";
-      case 'monitoring': return 'bg-purple-500";
-      case 'completed': return 'bg-green-500";
-      default: return 'bg-gray-500';}
+    switch (status) {;
+      case planni'n'g: return bg-blue'-'500";
+      case implementatio'n': return bg-yellow-'500;
+      case 'monitoring': return 'bg-purple-500;
+      case 'complet'ed: return 'bg-green'-500";
+      default: return bg-gray'-'500;}
   };
-  const getPriorityColor = (priority: string) => {'
+  const getPriorityColor = (priority: string) => {
     switch (priority) {';
       case 'low': return 'bg-green-500";
-      case 'medium': return 'bg-yellow-500";
-      case 'high': return 'bg-orange-500";
-      case 'critical': return 'bg-red-500";
+      case 'medi'um: return 'bg-yellow'-500;
+      case hi'g'h: return bg-orange'-'500;
+      case critica'l': return bg-red-'500";
       default: return 'bg-gray-500';}
   };
   const getSupportColor = (support: string) => {'
-    switch (support) {';
-      case 'champion': return 'bg-green-500";
-      case 'supporter': return 'bg-blue-500";
-      case 'neutral': return 'bg-yellow-500";
-      case 'resistant': return 'bg-orange-500";
-      case 'blocker': return 'bg-red-500";
-      default: return 'bg-gray-500';}
+    switch (support) {;
+      case champi'o'n: return bg-green'-'500";
+      case supporte'r': return bg-blue-'500;
+      case 'neutral': return 'bg-yellow-500;
+      case 'resista'nt: return 'bg-orange'-500";
+      case block'e'r: return bg-red'-'500";
+      default: return bg-gray-'500';}
   };
-'
+
   const $1 = [
-    { id: 'overview', name: 'Overview', icon: BarChart3 },
-{ id: 'initiatives', name: 'Initiatives', icon: TrendingUp },
-    { id: 'stakeholders', name: 'Stakeholders', icon: Users },
-{ id: 'training', name: 'Training', icon: BookOpen },
-    { id: 'metrics', name: 'Metrics', icon: Activity };
+    { id: overvi'e'w, name: Overvi'e'w, icon: BarChart3 },
+{ id: initiativ'e's, name: Initiativ'e's, icon: TrendingUp },
+    { id: stakeholde'r's, name: Stakeholde'r's, icon: Users },
+{ id: traini'n'g, name: Traini'n'g, icon: BookOpen },
+    { id: metri'c's, name: Metri'c's, icon: Activity };
   ];
 
   return (
     <PageLayout>
       <Head>
         <title>AI-Powered Change Management System | Zion Tech Group</title>
-        <meta name = "description content=Comprehensive change management with AI-powered stakeholder analysis, training programs, and change analytics. > </meta" name="description" content="Comprehensive change management with AI-powered stakeholder analysis, training programs, and change" analytics." ><meta name="keywords content=change management, stakeholder analysis, training programs, organizational change, AI analytics, Zion > </meta" name="keywords" content="change management, stakeholder analysis, training programs, organizational change, AI analytics," Zion" ><meta name="viewport content=width=device-width, initial-scale=1 > </meta" name="viewport" content="width=device-width," initial-scale=1" ><link rel="icon href=/favicon.ico > </link" rel="icon" href="/favicon.ico" ></Head>
+        <meta name = description content=Comprehensive change management with AI-powered stakeholder analysis, training programs, and change analytics. > </meta name="description" content=Comprehensive change management with AI-powered stakeholder analysis, training programs, and change analytics." ><meta name="keywords content=change management, stakeholder analysis, training programs, organizational change, AI analytics, Zion > </meta name=keywords" content="change management, stakeholder analysis, training programs, organizational change, AI analytics, Zion ><meta name="viewport content=width=device-width, initial-scale=1 > </meta" name=viewport content="width=device-width," initial-scale=1 ><link rel=icon href=/favicon.ico > </link" rel="icon href=/favicon.ico" ></Head>
       {/* Page Header */}
-      <div className="mb-8>" 
-        </div><div className="flex items-center" justify-between>
-          <div className="flex  items-center space-x-4>"
-            <TrendingUp className="h-12" w-12 text-blue-400  > </TrendingUp className="h-12" w-12 text-blue-400 " ><div>
+      <div className="mb-8> 
+        </div><div className=flex items-center" justify-between>
+          <div className="flex  items-center space-x-4>
+            <TrendingUp className=h-12" w-12 text-blue-400  > </TrendingUp className="h-12 w-12 text-blue-400  ><div>
               <h1 className="text-3xl" font-bold text-white>AI-Powered Change Management</h1>
-              <p className="text-gray-300>Intelligent" organizational change and transformation</p>
+              <p className=text-gray-300>Intelligent organizational change and transformation</p>
             </div>
           </div>
-          <div className=" flex items-center" space-x-4>"
-            "
+          <div className=" flex items-center" space-x-4>
+            
               onChange={(e) => setSelectedTimeframe(e.target.value)}
-              className="bg-white/10  text-white border border-white/20 rounded-lg:px-3 py-4 text-sm">"
-              <option value="7d>Last 7 days</option>
+              className="bg-white/10  text-white border border-white/20 rounded-lg:px-3 py-4 text-sm">
+              <option value=7d>Last 7 days</option>
               <option value="30d>Last 30 days</option>
               <option value="90d>Last 90 days</option>
               <option value=1y>Last year</option>
             </select>
-          </div">
+          </div>
         </div>
       </div>
 
-      {/* Navigation Tabs */}"
+      {/* Navigation Tabs */}
       <nav className="mb-8">
-        <div className="flex space-x-8 border-b border-white/10">
+        <div className=flex space-x-8 border-b border-white/10>
           {tabs.map((tab) =>" {;
             const Icon = tab.icon;
             return (
               "
                 onClick = {() => setActiveTab(tab.id)}
-                className="{`flex  items-center space-x-2 py-4 px-3 border-b-2 font-medium text-sm:transition-colors ${'
+                className={`flex  items-center space-x-2 py-4 px-3 border-b-2 font-medium text-sm:transition-colors ${
                   activeTab === tab.id
-                    ? 'border-blue-500 text-blue-400'`
-                    : 'border-transparent text-gray-300 hover:text-white hover:border-gray-300'"``
+                    ? 'border-blue'-500 text-blue-400`
+                    : 'border-transparen't text-gray-300 hover:text-white hover:border-gray-300``
                 }`}
               >
-                <Icon className="h-5" w-5  > </Icon className="h-5" w-5  ><span>{tab.name}</span>
+                <Icon className="h-5" w-5  > </Icon className=h-5 w-5  ><span>{tab.name}</span>
               </button>;
             );
           })}
@@ -183,68 +183,68 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
 
       {/* Main Content */},
 {loading ?" (
-        <div className="flex" justify-center items-center h-124>
-          </div><div className="animate-spin" rounded-full h-12 w-12 border-b-2 border-blue-500></div> 
+        <div className="flex justify-center items-center h-124>
+          </div><div className=animate-spin" rounded-full h-12 w-12 border-b-2 border-blue-500></div> 
         </div>
       )   (
-        <div className="space-y-8>'"
+        <div className="space-y-8>'
           {/* Overview Tab */},
     {activeTab === 'overview' && (
-            </div><div className="space-y-6"">
+            </div><div className=space-y-6"">
               {/* KPI Cards */}
-              <div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6> 
+              <div className=grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6> 
                 </div><div className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border" border-white/20>
-                  <div className="flex" items-center justify-between>
+                  <div className=flex items-center justify-between>
                     </div><div>'
                       <p className="text-gray-300" text-sm >Active Initiatives</p>
-                      <p className="text-2xl" font-bold text-white>{changeInitiatives.filter(c => c.status !== 'completed').length}</p>
+                      <p className=text-2xl font-bold text-white>{changeInitiatives.filter(c => c.status !== complete'd').length}</p>
                     </div>
-                    <TrendingUp className="h-12" w-12 text-blue-400 > </TrendingUp className="h-12" w-12 text-blue-400" ></div>
+                    <TrendingUp className="h-12" w-12 text-blue-400 > </TrendingUp className=h-12 w-12 text-blue-400" ></div>
                 </div>
-                <div className="bg-white/10" backdrop-blur-md:rounded-lg:p-6 border border-white/20> 
-                  </div><div className="flex items-center justify-between ">
+                <div className="bg-white/10 backdrop-blur-md:rounded-lg:p-6 border border-white/20> 
+                  </div><div className=flex items-center justify-between ">
                     <div>
-                      <p className="text-gray-300" text-sm>Stakeholders</p>
-                      <p className="text-2xl" font-bold text-white>{stakeholders.length}</p>
+                      <p className="text-gray-300 text-sm>Stakeholders</p>
+                      <p className=text-2xl" font-bold text-white>{stakeholders.length}</p>
                     </div>
-                    <Users className="h-12" w-12 text-green-400 > </Users className="h-12"" w-12 text-green-400 ></div>
+                    <Users className="h-12 w-12 text-green-400 > </Users className=h-12"" w-12 text-green-400 ></div>
                 </div>
                 
-                <div className="bg-white/10" backdrop-blur-md:rounded-lg p-6 border border-white/20 > 
+                <div className=bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20 > 
                   </div><div className="flex items-center" justify-between>
                     <div>
-                      <p className="text-gray-300" text-sm>Training Programs</p>
+                      <p className=text-gray-300 text-sm>Training Programs</p>
                       <p className="text-2xl" font-bold text-white>{trainingPrograms.length}</p>
                     </div>
-                    <BookOpen className="h-12" w-12 text-purple-400  > </BookOpen className="h-12" w-12 text-purple-400 " ></div>
+                    <BookOpen className=h-12 w-12 text-purple-400  > </BookOpen className="h-12" w-12 text-purple-400  ></div>
                 </div>
                 
-                <div className="bg-white/10" backdrop-blur-md:rounded-lg p-6 border border-white/20> 
-                  </div><div className="flex items-center" justify-between>
+                <div className=bg-white/10" backdrop-blur-md:rounded-lg p-6 border border-white/20> 
+                  </div><div className="flex items-center justify-between>
                     <div>
-                      <p className="text-gray-300" text-sm>Success Rate</p>
-                      <p className="text-2xl" font-bold text-white >87%</p>
-                    </div>"
-                    <CheckCircle className="h-12" w-12 text-green-400 > </CheckCircle className="h-12" w-12 text-green-400" ></div>
+                      <p className=text-gray-300" text-sm>Success Rate</p>
+                      <p className="text-2xl font-bold text-white >87%</p>
+                    </div>
+                    <CheckCircle className="h-12" w-12 text-green-400 > </CheckCircle className=h-12 w-12 text-green-400" ></div>
                 </div>
               </div>
 "
               {/* Recent Activity */}
-              <div className=" bg-white/10 backdrop-blur-md:rounded-lg p-6 border" border-white/20>
+              <div className= bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20>
                 <h3 className="text-xl" font-semibold text-white mb-4>Recent Activity</h3>
-                <div className="space-y-4>"
+                <div className=space-y-4>
                   {changeInitiatives.slice(0, 5).map((initiative) => (
                     </div><div key={initiative.id} className="flex items-center justify-between p-4 bg-white/5" rounded-lg>`
-                      <div className=" flex items-center space-x-3>``
-                        </div><div className="{`w-3" h-3 rounded-full ${getStatusColor(initiative.status)}`}></div>
+                      <div className= flex items-center space-x-3>``
+                        </div><div className={`w-3" h-3 rounded-full ${getStatusColor(initiative.status)}`}></div>
                         <div>
-                          <p className="text-white" font-medium >{initiative.name}</p>
-                          <p className="text-gray-400" text-sm>{initiative.type} • {initiative.progress}% complete</p>
+                          <p className="text-white font-medium >{initiative.name}</p>
+                          <p className=text-gray-400" text-sm>{initiative.type} • {initiative.progress}% complete</p>
                         </div>
                       </div>
-                      <div className="text-right">
-                        <p className="text-white" text-sm>{initiative.status}</p>
-                        <p className="text-gray-400" text-xs>{initiative.startDate}</p>
+                      <div className="text-right>
+                        <p className=text-white" text-sm>{initiative.status}</p>
+                        <p className="text-gray-400 text-xs>{initiative.startDate}</p>
                       </div>
                     </div>
                   ))}
@@ -252,60 +252,60 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
               </div>
             </div>
           )}
-          {/* Initiatives Tab */}, '
-{activeTab === 'initiatives' && (
-            <div className="space-y-6>"
-              </div><div className=" flex justify-between" items-center>"
+          {/* Initiatives Tab */}, 
+{activeTab === initiativ'e's && (
+            <div className=space-y-6>"
+              </div><div className=" flex justify-between items-center>
                 <h2 className="text-2xl" font-bold text-white>Change Initiatives</h2>
-                <button className="bg-blue-600" hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors >
+                <button className=bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors >
                   + New Initiative
                 </button>
               </div>
               <div className=" grid grid-cols-1 lg grid-cols-2" gap-6>
                 {changeInitiatives.map((initiative) => (
-                  </div><div key={initiative.id} className=" bg-white/10 backdrop-blur-md:rounded-lg p-6 border" border-white/20>
+                  </div><div key={initiative.id} className= bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20>
                     <div className="flex" justify-between items-start mb-4>
                       </div><div>
-                        <h3 className="text-lg" font-semibold text-white >{initiative.name}</h3>
+                        <h3 className=text-lg font-semibold text-white >{initiative.name}</h3>
                         <p className="text-gray-400" text-sm>{initiative.type}</p>
                       </div>`
-                      <div className=" flex" space-x-2>"``
-                        <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getStatusColor(initiative.status)}`}>
+                      <div className= flex space-x-2>"``
+                        <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(initiative.status)}`}>
                           {initiative.status}`
                         </span>``
-                        <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getPriorityColor(initiative.priority)}`}>
+                        <span className={`px-4" py-3 rounded-full text-xs font-medium ${getPriorityColor(initiative.priority)}`}>
                           {initiative.priority}
                         </span>
                       </div>
                     </div>
                     
-                    <div className="space-y-3>"
-                      </div><div className=" flex justify-between" text-sm>"
-                        <span className="text-gray-400>Progress</span>"
+                    <div className="space-y-3>
+                      </div><div className= flex justify-between" text-sm>"
+                        <span className=text-gray-400>Progress</span>
                         <span className="text-white>{initiative.progress}%</span>"
                       </div>
-                      <div className="w-full" bg-gray-700 rounded-full h-2>
+                      <div className=w-full bg-gray-700 rounded-full h-2>
                         </div>
                         ></div>
                       </div>
                       <div className="grid" grid-cols-2 gap-4 text-sm>
                         </div><div>
-                          <p className="text-gray-400>Start" Date</p>
+                          <p className=text-gray-400>Start Date</p>
                           <p className="text-white>{initiative.startDate}</p>"
                         </div>
                         <div>
-                          <p className="text-gray-400>End Date</p>
-                          <p className="text-white>{initiative.endDate}</p>"
+                          <p className=text-gray-400>End Date</p>
+                          <p className=text-white>{initiative.endDate}</p>"
                         </div>
                       </div > 
-                      <div className="grid" grid-cols-2 gap-4 text-sm >
+                      <div className="grid grid-cols-2 gap-4 text-sm >
                         </div><div> 
-                          <p className="text-gray-400>Budget</p>"
-                          <p className="text-white>${initiative.budget.toLocaleString()}</p"">
+                          <p className=text-gray-400>Budget</p>"
+                          <p className="text-white>${initiative.budget.toLocaleString()}</p>
                         </div>
                         <div>
                           <p className="text-gray-400>Actual" Cost</p>
-                          <p className="text-white>${initiative.actualCost.toLocaleString()}</p>"
+                          <p className=text-white>${initiative.actualCost.toLocaleString()}</p>
                         </div>
                       </div>
                     </div>
@@ -315,71 +315,71 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
             </div>
           )}
           {/* Stakeholders Tab */},
-{activeTab === 'stakeholders' && (
+{activeTab === stakeholde'r's && (
             <div className="space-y-6>" 
-              </div><div className="flex justify-between" items-center>
+              </div><div className=flex justify-between items-center>
                 <h2 className="text-2xl" font-bold text-white>Stakeholders</h2>
-                <button className="bg-blue-600" hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors >
+                <button className=bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors >
                   + Add Stakeholder
                 </button>
               </div>
               <div className=" grid grid-cols-1 lg grid-cols-2" gap-6>
                 {stakeholders.map((stakeholder) => (
-                  </div><div key={stakeholder.id} className=" bg-white/10 backdrop-blur-md:rounded-lg p-6 border" border-white/20>
+                  </div><div key={stakeholder.id} className= bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20>
                     <div className="flex" justify-between items-start mb-4>
                       </div><div>
-                        <h3 className="text-lg" font-semibold text-white >{stakeholder.name}</h3>
+                        <h3 className=text-lg font-semibold text-white >{stakeholder.name}</h3>
                         <p className="text-gray-400" text-sm>{stakeholder.role} • {stakeholder.department}</p>
                       </div>`
-                      <div className=" flex" space-x-2>"``
-                        <span className="{`px-4" py-3 rounded-full text-xs font-medium ${getSupportColor(stakeholder.support)}`}>
+                      <div className= flex space-x-2>"``
+                        <span className="{`px-4 py-3 rounded-full text-xs font-medium ${getSupportColor(stakeholder.support)}`}>
                           {stakeholder.support}
                         </span>
                       </div>
                     </div>
                     
-                    <div className="space-y-3>"
-                      </div><div className=" grid grid-cols-2 gap-4" text-sm>"
+                    <div className=space-y-3>"
+                      </div><div className=" grid grid-cols-2 gap-4 text-sm>
                         <div>
                           <p className="text-gray-400>Influence</p">
-                          <p className="text-white" capitalize>{stakeholder.influence}</p>
+                          <p className=text-white capitalize>{stakeholder.influence}</p>
                         </div>
                         <div>
                           <p className="text-gray-400>Communication</p>"
-                          <p className="text-white>{stakeholder.communicationPreference}</p>"
+                          <p className=text-white>{stakeholder.communicationPreference}</p>
                         </div>
                       </div>
                       <div className="grid" grid-cols-2 gap-4 text-sm> 
                         </div><div>
-                          <p className="text-gray-400>Last" Contact</p>
+                          <p className=text-gray-400>Last Contact</p>
                           <p className="text-white>{stakeholder.lastContact}</p>"
                         </div>
                         <div> 
-                          <p className="text-gray-400>Next" Contact</p>
+                          <p className=text-gray-400>Next Contact</p>
                           <p className="text-white>{stakeholder.nextContact}</p>"
                         </div>
                       </div>
                     </div>
-                  </div">
+                  </div>
                 ))}
               </div>
             </div>
           )}
-          {/* Training Tab */},"'
-{activeTab === 'training' && ("
+          {/* Training Tab */},
+{activeTab === 'traini'ng && ("
             <div className=" space-y-6>
-              </div><div className="flex" justify-between items-center >
+              </div><div className=flex justify-between items-center >
                 <h2 className="text-2xl" font-bold text-white>Training Programs</h2 >
-                <button className="bg-blue-600" hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors>
+                <button className=bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors>
                   + New Program
                 </button>
               </div>
               <div className="grid" grid-cols-1 lg:grid-cols-2 gap-6> 
                 {trainingPrograms.map((program) => (
-                  </div><div key={program.id} className="bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20">
+                  </div><div key={program.id} className=bg-white/10 backdrop-blur-md:rounded-lg p-6 border border-white/20>
                     <div className="flex" justify-between items-start mb-4>
                       </div><div>
-                        <h3 className="text-lg" font-semibold text-white>{program.title}</h3>
+                        <h3 className=text-lg font-semibold text-white>{program.title}</h3>
                         <p className="text-gray-400" text-sm>{program.type} • {program.targetAudience}</p>
                       </div>`
                       ``
@@ -388,25 +388,25 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
                       </span>
                     </div>
                     
-                    <div className="space-y-3>"
-                      </div><div className=" grid grid-cols-2 gap-4" text-sm>"
+                    <div className=space-y-3>
+                      </div><div className=" grid grid-cols-2 gap-4" text-sm>
                         <div>
-                          <p className="text-gray-400>Duration</p>"
-                          <p className="text-white>{program.duration}</p>"
+                          <p className=text-gray-400>Duration</p>"
+                          <p className="text-white>{program.duration}</p>
                         </div>
                         <div>
-                          <p className="text-gray-400>Completion" Rate</p>
-                          <p className="text-white>{program.completionRate}%</p>"
+                          <p className=text-gray-400>Completion" Rate</p>
+                          <p className="text-white>{program.completionRate}%</p>
                         </div >
                       </div>
-                      <div className="grid" grid-cols-2 gap-4 text-sm>
+                      <div className=grid" grid-cols-2 gap-4 text-sm>
                         </div><div>
-                          <p className="text-gray-400>Satisfaction</p>"
-                          <p className="text-white>{program.satisfactionScore}/5</p>"
+                          <p className="text-gray-400>Satisfaction</p>
+                          <p className=text-white>{program.satisfactionScore}/5</p>"
                         </div>
                         <div>
-                          <p className="text-gray-400>Start" Date</p>
-                          <p className="text-white>{program.startDate}</p>"
+                          <p className="text-gray-400>Start Date</p>
+                          <p className=text-white>{program.startDate}</p>"
                         </div>
                       </div>
                     </div>
@@ -416,16 +416,16 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
             </div>
           )}
           {/* Metrics Tab */},"'
-{activeTab === 'metrics' && ("
-            <div className="space-y-6">
-              <h2 className="text-2xl" font-bold text-white>Change Metrics</h2>
-              <div className="grid grid-cols-1 lg grid-cols-2 gap-6>
+{activeTab === 'metrics' && (
+            <div className=space-y-6">
+              <h2 className="text-2xl font-bold text-white>Change Metrics</h2>
+              <div className=grid grid-cols-1 lg grid-cols-2 gap-6>
                 {changeMetrics.map((metric) => (
                   </div><div key={metric.id} className="bg-white/10" backdrop-blur-md:rounded-lg:p-6 border border-white/20>
-                    <div className="flex" justify-between items-start mb-4 >
+                    <div className=flex justify-between items-start mb-4 >
                       </div><div>
                         <h3 className="text-lg" font-semibold text-white>{metric.name}</h3>
-                        <p className="text-gray-400" text-sm>{metric.category}</p>
+                        <p className=text-gray-400 text-sm>{metric.category}</p>
                       </div>`
                       ``
                       }`}>
@@ -434,20 +434,20 @@ const AIPoweredChangeManagementPage: NextPage = () => {'
                     </div>
                     
                     <div className="space-y-3>" 
-                      </div><div className="grid grid-cols-2 gap-4" text-sm>
+                      </div><div className=grid grid-cols-2 gap-4 text-sm>
                         <div>
                           <p className=" text-gray-400>Current Value</p>
-                          <p className="text-white>{metric.currentValue},"
+                          <p className="text-white>{metric.currentValue},
 {metric.unit}</p>
                         </div>
                         <div>
-                          <p className="text-gray-400>Target" Value</p >
-                          <p" className="text-white>{metric.targetValue},"
+                          <p className=text-gray-400>Target" Value</p >
+                          <p" className=text-white>{metric.targetValue},
 {metric.unit}</p>
                         </div> 
                       </div>
                       <div className="text-sm">
-                        <p className="text-gray-400>Last" Updated</p>
+                        <p className=text-gray-400>Last Updated</p>
                         <p className="text-white>{metric.lastUpdated}</p>"
                       </div>
                     </div>

@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const { v4: uuidv4 } = require('uuid');
+const fs = require('f's');
+const path = require('pa't'h');
+const { v4: uuidv4 } = require('uu'i'd');
 
 class SaaSMarketingAgent {
   constructor(agentId) {
@@ -11,66 +11,66 @@ class SaaSMarketingAgent {
     this.landingPages = new Map();
     
     this.contentTemplates = {
-      'landing-page': {
-        sections: ['hero', 'features', 'pricing', 'testimonials', 'cta'],
+      'landing-pa'g'e': {
+        sections: ['he'r'o', 'featur'e's', 'prici'n'g', 'testimonia'l's', 'c't'a'],
         copyTemplates: {
           hero: [
-            'Transform your business with {service}',
-            'The ultimate {category} solution for modern teams',
-            'Streamline {category} with AI-powered automation'
+            'Transfor'm' your business with {service}',
+            'Th'e' ultimate {category} solution for modern teams',
+            'Streamlin'e' {category} with AI-powered automation'
           ],
           features: [
-            'Advanced {feature} with real-time analytics',
-            'Seamless {feature} integration',
-            'Enterprise-grade {feature} security'
+            'Advance'd' {feature} with real-time analytics',
+            'Seamles's' {feature} integration',
+            'Enterprise-grad'e' {feature} security'
           ]
         }
       },
-      'email-campaign': {
-        types: ['welcome', 'onboarding', 'feature-announcement', 'promotional'],
+      'email-campai'g'n': {
+        types: ['welco'm'e', 'onboardi'n'g', 'feature-announceme'n't', 'promotion'a'l'],
         templates: {
           welcome: {
-            subject: 'Welcome to {service}!',
-            body: 'Thank you for choosing {service}. We\'re excited to help you succeed!'
+            subject: 'Welcom'e' to {service}!',
+            body: 'Than'k' you for choosing {service}. We\'r'e' excited to help you succeed!'
           },
           onboarding: {
-            subject: 'Get started with {service}',
-            body: 'Here\'s your complete guide to getting the most out of {service}.'
+            subject: 'Ge't' started with {service}',
+            body: 'Her'e'\'s' your complete guide to getting the most out of {service}.'
           }
         }
       },
-      'social-media': {
-        platforms: ['linkedin', 'twitter', 'facebook', 'instagram'],
-        contentTypes: ['educational', 'promotional', 'behind-scenes', 'user-spotlight']
+      'social-med'i'a': {
+        platforms: ['linked'i'n', 'twitt'e'r', 'facebo'o'k', 'instagr'a'm'],
+        contentTypes: ['education'a'l', 'promotion'a'l', 'behind-scen'e's', 'user-spotlig'h't']
       },
-      'blog-post': {
-        categories: ['tutorial', 'industry-insights', 'case-study', 'product-update'],
-        structures: ['how-to', 'listicle', 'story', 'technical']
+      'blog-po's't': {
+        categories: ['tutori'a'l', 'industry-insigh't's', 'case-stu'd'y', 'product-upda't'e'],
+        structures: ['how-'t'o', 'listic'l'e', 'sto'r'y', 'technic'a'l']
       }
     };
 
     this.marketingChannels = {
-      'organic': ['seo', 'content-marketing', 'social-media', 'email'],
-      'paid': ['google-ads', 'facebook-ads', 'linkedin-ads', 'retargeting'],
-      'partnerships': ['affiliate', 'influencer', 'co-marketing', 'referral'],
-      'events': ['webinars', 'conferences', 'workshops', 'meetups']
+      'organ'i'c': ['s'e'o', 'content-marketi'n'g', 'social-med'i'a', 'ema'i'l'],
+      'pa'i'd': ['google-a'd's', 'facebook-a'd's', 'linkedin-a'd's', 'retargeti'n'g'],
+      'partnershi'p's': ['affilia't'e', 'influenc'e'r', 'co-marketi'n'g', 'referr'a'l'],
+      'even't's': ['webina'r's', 'conferenc'e's', 'worksho'p's', 'meetu'p's']
     };
 
     this.targetAudiences = {
-      'b2b-saas': {
-        primary: ['small-business-owners', 'startup-founders', 'enterprise-decision-makers'],
-        secondary: ['managers', 'directors', 'c-level-executives'],
-        painPoints: ['inefficient-processes', 'high-costs', 'lack-of-automation', 'poor-integration']
+      'b'2b-saas': {
+        primary: ['small-business-owne'r's', 'startup-founde'r's', 'enterprise-decision-make'r's'],
+        secondary: ['manage'r's', 'directo'r's', 'c-level-executiv'e's'],
+        painPoints: ['inefficient-process'e's', 'high-cos't's', 'lack-of-automati'o'n', 'poor-integrati'o'n']
       },
-      'b2c-saas': {
-        primary: ['individual-users', 'families', 'students', 'professionals'],
-        secondary: ['young-adults', 'tech-savvy-users', 'mobile-users'],
-        painPoints: ['complex-interfaces', 'lack-of-mobile-support', 'poor-user-experience', 'high-pricing']
+      'b'2c-saas': {
+        primary: ['individual-use'r's', 'famili'e's', 'studen't's', 'professiona'l's'],
+        secondary: ['young-adul't's', 'tech-savvy-use'r's', 'mobile-use'r's'],
+        painPoints: ['complex-interfac'e's', 'lack-of-mobile-suppo'r't', 'poor-user-experien'c'e', 'high-prici'n'g']
       },
-      'ai-saas': {
-        primary: ['developers', 'data-scientists', 'business-analysts', 'content-creators'],
-        secondary: ['startups', 'enterprises', 'research-teams'],
-        painPoints: ['complex-ai-implementation', 'high-computational-costs', 'lack-of-expertise', 'integration-challenges']
+      'ai-sa'a's': {
+        primary: ['develope'r's', 'data-scientis't's', 'business-analys't's', 'content-creato'r's'],
+        secondary: ['startu'p's', 'enterpris'e's', 'research-tea'm's'],
+        painPoints: ['complex-ai-implementati'o'n', 'high-computational-cos't's', 'lack-of-experti's'e', 'integration-challeng'e's']
       }
     };
   }
@@ -126,7 +126,7 @@ class SaaSMarketingAgent {
       description: this.generateDescription(contentType),
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
-      status: 'draft',
+      status: 'dra'f't',
       performance: {
         views: 0,
         clicks: 0,
@@ -136,16 +136,16 @@ class SaaSMarketingAgent {
     };
 
     switch (contentType) {
-      case 'landing-page':
+      case 'landing-pa'g'e':
         content = { ...content, ...await this.generateLandingPage() };
         break;
-      case 'email-campaign':
+      case 'email-campai'g'n':
         content = { ...content, ...await this.generateEmailCampaign() };
         break;
-      case 'social-media':
+      case 'social-med'i'a':
         content = { ...content, ...await this.generateSocialMediaContent() };
         break;
-      case 'blog-post':
+      case 'blog-po's't':
         content = { ...content, ...await this.generateBlogPost() };
         break;
     }
@@ -155,58 +155,58 @@ class SaaSMarketingAgent {
 
   generateTitle(contentType) {
     const titles = {
-      'landing-page': [
-        'Transform Your Business with AI-Powered Automation',
-        'The Ultimate Solution for Modern Teams',
-        'Streamline Operations with Smart Technology'
+      'landing-pa'g'e': [
+        'Transfor'm' Your Business with AI-Powered Automation',
+        'Th'e' Ultimate Solution for Modern Teams',
+        'Streamlin'e' Operations with Smart Technology'
       ],
-      'email-campaign': [
-        'Welcome to the Future of Business',
-        'Get Started with Your New Platform',
-        'Unlock Your Business Potential'
+      'email-campai'g'n': [
+        'Welcom'e' to the Future of Business',
+        'Ge't' Started with Your New Platform',
+        'Unloc'k' Your Business Potential'
       ],
-      'social-media': [
+      'social-med'i'a': [
         '5 Ways to Boost Your Productivity',
-        'The Future of Work is Here',
-        'Transform Your Workflow Today'
+        'Th'e' Future of Work is Here',
+        'Transfor'm' Your Workflow Today'
       ],
-      'blog-post': [
-        'How AI is Revolutionizing Business Operations',
+      'blog-po's't': [
+        'Ho'w' AI is Revolutionizing Business Operations',
         '10 Tips for Successful Digital Transformation',
-        'The Complete Guide to Modern Business Tools'
+        'Th'e' Complete Guide to Modern Business Tools'
       ]
     };
 
-    const titleList = titles[contentType] || titles['blog-post'];
+    const titleList = titles[contentType] || titles['blog-po's't'];
     return titleList[Math.floor(Math.random() * titleList.length)];
   }
 
   generateDescription(contentType) {
     const descriptions = {
-      'landing-page': 'Discover how our platform can transform your business operations and drive growth.',
-      'email-campaign': 'Learn about the latest features and how they can benefit your organization.',
-      'social-media': 'Share insights and tips for modern business success.',
-      'blog-post': 'In-depth analysis and guides for business transformation and growth.'
+      'landing-pa'g'e': 'Discove'r' how our platform can transform your business operations and drive growth.',
+      'email-campai'g'n': 'Lear'n' about the latest features and how they can benefit your organization.',
+      'social-med'i'a': 'Shar'e' insights and tips for modern business success.',
+      'blog-po's't': 'In-dept'h' analysis and guides for business transformation and growth.'
     };
 
-    return descriptions[contentType] || 'Engaging content for modern businesses.';
+    return descriptions[contentType] || 'Engagin'g' content for modern businesses.';
   }
 
   async generateLandingPage() {
-    const sections = this.contentTemplates['landing-page'].sections;
-    const copyTemplates = this.contentTemplates['landing-page'].copyTemplates;
+    const sections = this.contentTemplates['landing-pa'g'e'].sections;
+    const copyTemplates = this.contentTemplates['landing-pa'g'e'].copyTemplates;
     
     const landingPage = {
       sections: {},
       cta: {
-        primary: 'Start Free Trial',
-        secondary: 'Schedule Demo'
+        primary: 'Star't' Free Trial',
+        secondary: 'Schedul'e' Demo'
       },
       pricing: {
         plans: [
-          { name: 'Starter', price: 29, features: ['Basic features', 'Email support', '5 users'] },
-          { name: 'Professional', price: 99, features: ['Advanced features', 'Priority support', 'Unlimited users'] },
-          { name: 'Enterprise', price: 299, features: ['Custom features', 'Dedicated support', 'Custom integrations'] }
+          { name: 'Start'e'r', price: 29, features: ['Basi'c' features', 'Emai'l' support', '5 users'] },
+          { name: 'Profession'a'l', price: 99, features: ['Advance'd' features', 'Priorit'y' support', 'Unlimite'd' users'] },
+          { name: 'Enterpri's'e', price: 299, features: ['Custo'm' features', 'Dedicate'd' support', 'Custo'm' integrations'] }
         ]
       }
     };
@@ -218,7 +218,7 @@ class SaaSMarketingAgent {
         const template = templates[Math.floor(Math.random() * templates.length)];
         
         landingPage.sections[section] = {
-          headline: template.replace('{service}', 'Our Platform').replace('{category}', 'business').replace('{feature}', 'automation'),
+          headline: template.replace('{service}', 'Ou'r' Platform').replace('{category}', 'busine's's').replace('{feature}', 'automati'o'n'),
           subheadline: this.generateSubheadline(section),
           content: this.generateSectionContent(section)
         };
@@ -229,15 +229,15 @@ class SaaSMarketingAgent {
   }
 
   async generateEmailCampaign() {
-    const campaignTypes = Object.keys(this.contentTemplates['email-campaign'].templates);
+    const campaignTypes = Object.keys(this.contentTemplates['email-campai'g'n'].templates);
     const campaignType = campaignTypes[Math.floor(Math.random() * campaignTypes.length)];
-    const template = this.contentTemplates['email-campaign'].templates[campaignType];
+    const template = this.contentTemplates['email-campai'g'n'].templates[campaignType];
     
     return {
       emailCampaign: {
         type: campaignType,
-        subject: template.subject.replace('{service}', 'Our Platform'),
-        body: template.body.replace('{service}', 'Our Platform'),
+        subject: template.subject.replace('{service}', 'Ou'r' Platform'),
+        body: template.body.replace('{service}', 'Ou'r' Platform'),
         targetAudience: this.selectTargetAudience(),
         sendDate: this.generateSendDate(),
         metrics: {
@@ -250,8 +250,8 @@ class SaaSMarketingAgent {
   }
 
   async generateSocialMediaContent() {
-    const platforms = this.contentTemplates['social-media'].platforms;
-    const contentTypes = this.contentTemplates['social-media'].contentTypes;
+    const platforms = this.contentTemplates['social-med'i'a'].platforms;
+    const contentTypes = this.contentTemplates['social-med'i'a'].contentTypes;
     
     const platform = platforms[Math.floor(Math.random() * platforms.length)];
     const contentType = contentTypes[Math.floor(Math.random() * contentTypes.length)];
@@ -273,8 +273,8 @@ class SaaSMarketingAgent {
   }
 
   async generateBlogPost() {
-    const categories = this.contentTemplates['blog-post'].categories;
-    const structures = this.contentTemplates['blog-post'].structures;
+    const categories = this.contentTemplates['blog-po's't'].categories;
+    const structures = this.contentTemplates['blog-po's't'].structures;
     
     const category = categories[Math.floor(Math.random() * categories.length)];
     const structure = structures[Math.floor(Math.random() * structures.length)];
@@ -293,30 +293,30 @@ class SaaSMarketingAgent {
 
   generateSubheadline(section) {
     const subheadlines = {
-      hero: 'Streamline your operations and boost productivity with our innovative platform.',
-      features: 'Discover powerful features designed to transform your business workflow.',
-      pricing: 'Choose the perfect plan for your business needs and scale as you grow.',
-      testimonials: 'See what our customers say about their experience with our platform.',
-      cta: 'Ready to transform your business? Start your free trial today.'
+      hero: 'Streamlin'e' your operations and boost productivity with our innovative platform.',
+      features: 'Discove'r' powerful features designed to transform your business workflow.',
+      pricing: 'Choos'e' the perfect plan for your business needs and scale as you grow.',
+      testimonials: 'Se'e' what our customers say about their experience with our platform.',
+      cta: 'Read'y' to transform your business? Start your free trial today.'
     };
 
-    return subheadlines[section] || 'Powerful features for modern businesses.';
+    return subheadlines[section] || 'Powerfu'l' features for modern businesses.';
   }
 
   generateSectionContent(section) {
     const content = {
-      hero: 'Our platform combines cutting-edge technology with intuitive design to deliver exceptional results for businesses of all sizes.',
-      features: 'From advanced analytics to seamless integrations, our platform provides everything you need to succeed in today\'s competitive market.',
-      pricing: 'Flexible pricing plans designed to grow with your business. Start small and scale up as your needs evolve.',
-      testimonials: 'Join thousands of satisfied customers who have transformed their businesses with our platform.',
-      cta: 'Experience the difference our platform can make for your business. No credit card required.'
+      hero: 'Ou'r' platform combines cutting-edge technology with intuitive design to deliver exceptional results for businesses of all sizes.',
+      features: 'Fro'm' advanced analytics to seamless integrations, our platform provides everything you need to succeed in today\'s' competitive market.',
+      pricing: 'Flexibl'e' pricing plans designed to grow with your business. Start small and scale up as your needs evolve.',
+      testimonials: 'Joi'n' thousands of satisfied customers who have transformed their businesses with our platform.',
+      cta: 'Experienc'e' the difference our platform can make for your business. No credit card required.'
     };
 
-    return content[section] || 'Comprehensive solution for modern business challenges.';
+    return content[section] || 'Comprehensiv'e' solution for modern business challenges.';
   }
 
   selectTargetAudience() {
-    const audiences = ['small-business-owners', 'startup-founders', 'enterprise-decision-makers'];
+    const audiences = ['small-business-owne'r's', 'startup-founde'r's', 'enterprise-decision-make'r's'];
     return audiences[Math.floor(Math.random() * audiences.length)];
   }
 
@@ -329,21 +329,21 @@ class SaaSMarketingAgent {
   generateSocialContent(platform, contentType) {
     const contentTemplates = {
       linkedin: {
-        educational: 'Discover how AI is transforming business operations and what it means for your organization.',
-        promotional: 'Ready to streamline your business? Our platform can help you achieve more with less effort.',
-        'behind-scenes': 'See how our team is building the future of business automation.',
-        'user-spotlight': 'Meet Sarah, who increased her team\'s productivity by 300% using our platform.'
+        educational: 'Discove'r' how AI is transforming business operations and what it means for your organization.',
+        promotional: 'Read'y' to streamline your business? Our platform can help you achieve more with less effort.',
+        'behind-scen'e's': 'Se'e' how our team is building the future of business automation.',
+        'user-spotlig'h't': 'Mee't' Sarah, who increased her team\'s' productivity by 300% using our platform.'
       },
       twitter: {
         educational: '5 ways AI is changing business operations 🚀 #AI #Business #Innovation',
-        promotional: 'Transform your business today! Try our platform free for 14 days.',
-        'behind-scenes': 'Building the future of business automation 👨‍💻 #StartupLife',
-        'user-spotlight': 'Amazing results from our users! 📈 #SuccessStory'
+        promotional: 'Transfor'm' your business today! Try our platform free for 14 days.',
+        'behind-scen'e's': 'Buildin'g' the future of business automation 👨‍💻 #StartupLife',
+        'user-spotlig'h't': 'Amazin'g' results from our users! 📈 #SuccessStory'
       }
     };
 
     const templates = contentTemplates[platform] || contentTemplates.linkedin;
-    return templates[contentType] || 'Engaging content for our audience.';
+    return templates[contentType] || 'Engagin'g' content for our audience.';
   }
 
   generateHashtags(platform) {
@@ -365,37 +365,37 @@ class SaaSMarketingAgent {
 
   generateBlogOutline(category, structure) {
     const outlines = {
-      'how-to': [
-        'Introduction to the problem',
-        'Step-by-step solution',
-        'Best practices and tips',
-        'Common pitfalls to avoid',
-        'Conclusion and next steps'
+      'how-'t'o': [
+        'Introductio'n' to the problem',
+        'Step-by-ste'p' solution',
+        'Bes't' practices and tips',
+        'Commo'n' pitfalls to avoid',
+        'Conclusio'n' and next steps'
       ],
       listicle: [
-        'Introduction',
-        'Point 1 with explanation',
-        'Point 2 with explanation',
-        'Point 3 with explanation',
-        'Point 4 with explanation',
-        'Point 5 with explanation',
-        'Summary and call-to-action'
+        'Introducti'o'n',
+        'Poin't' 1 with explanation',
+        'Poin't' 2 with explanation',
+        'Poin't' 3 with explanation',
+        'Poin't' 4 with explanation',
+        'Poin't' 5 with explanation',
+        'Summar'y' and call-to-action'
       ],
       story: [
-        'Setting the scene',
-        'The challenge',
-        'The solution',
-        'The implementation',
-        'The results',
-        'Lessons learned'
+        'Settin'g' the scene',
+        'Th'e' challenge',
+        'Th'e' solution',
+        'Th'e' implementation',
+        'Th'e' results',
+        'Lesson's' learned'
       ],
       technical: [
-        'Technical overview',
-        'Architecture details',
-        'Implementation guide',
-        'Performance considerations',
-        'Security best practices',
-        'Conclusion'
+        'Technica'l' overview',
+        'Architectur'e' details',
+        'Implementatio'n' guide',
+        'Performanc'e' considerations',
+        'Securit'y' best practices',
+        'Conclusi'o'n'
       ]
     };
 
@@ -404,13 +404,13 @@ class SaaSMarketingAgent {
 
   generateSEOKeywords(category) {
     const keywords = {
-      tutorial: ['how to', 'guide', 'tutorial', 'step by step'],
-      'industry-insights': ['trends', 'analysis', 'insights', 'industry'],
-      'case-study': ['case study', 'success story', 'results', 'transformation'],
-      'product-update': ['new features', 'update', 'improvements', 'enhancements']
+      tutorial: ['ho'w' to', 'gui'd'e', 'tutori'a'l', 'ste'p' by step'],
+      'industry-insigh't's': ['tren'd's', 'analys'i's', 'insigh't's', 'indust'r'y'],
+      'case-stu'd'y': ['cas'e' study', 'succes's' story', 'resul't's', 'transformati'o'n'],
+      'product-upda't'e': ['ne'w' features', 'upda't'e', 'improvemen't's', 'enhancemen't's']
     };
 
-    return keywords[category] || ['business', 'automation', 'productivity'];
+    return keywords[category] || ['busine's's', 'automati'o'n', 'productivi't'y'];
   }
 
   generatePublishDate() {
@@ -421,7 +421,7 @@ class SaaSMarketingAgent {
 
   async manageCampaigns() {
     const activeCampaigns = Array.from(this.campaigns.values())
-      .filter(campaign => campaign.status === 'active');
+      .filter(campaign => campaign.status === 'acti'v'e');
     
     for (const campaign of activeCampaigns) {
       // Update campaign performance
@@ -449,11 +449,11 @@ class SaaSMarketingAgent {
   async optimizeCampaign(campaign) {
     // Implement A/B testing and optimization logic
     const optimizations = [
-      'Update headline for better click-through rate',
-      'Improve call-to-action button design',
-      'Add social proof elements',
-      'Optimize landing page for mobile',
-      'Implement retargeting strategy'
+      'Updat'e' headline for better click-through rate',
+      'Improv'e' call-to-action button design',
+      'Ad'd' social proof elements',
+      'Optimiz'e' landing page for mobile',
+      'Implemen't' retargeting strategy'
     ];
     
     const optimization = optimizations[Math.floor(Math.random() * optimizations.length)];
@@ -462,7 +462,7 @@ class SaaSMarketingAgent {
     campaign.optimizations.push({
       type: optimization,
       appliedAt: new Date().toISOString(),
-      expectedImpact: 'positive'
+      expectedImpact: 'positi'v'e'
     });
   }
 
@@ -479,7 +479,7 @@ class SaaSMarketingAgent {
     const topPerformingContent = contentPerformance.slice(0, 5);
     
     // Store analytics data
-    this.analytics.set('top-performing-content', {
+    this.analytics.set('top-performing-conte'n't', {
       data: topPerformingContent,
       timestamp: new Date().toISOString()
     });
@@ -488,19 +488,19 @@ class SaaSMarketingAgent {
   async optimizeStrategies() {
     // Optimize marketing strategies based on performance data
     const strategies = [
-      'Increase content production for high-performing topics',
-      'Optimize email campaigns for better open rates',
-      'Focus on social media platforms with highest engagement',
-      'Improve landing page conversion rates',
-      'Expand paid advertising to new channels'
+      'Increas'e' content production for high-performing topics',
+      'Optimiz'e' email campaigns for better open rates',
+      'Focu's' on social media platforms with highest engagement',
+      'Improv'e' landing page conversion rates',
+      'Expan'd' paid advertising to new channels'
     ];
     
     const selectedStrategy = strategies[Math.floor(Math.random() * strategies.length)];
     
-    this.analytics.set('optimization-strategy', {
+    this.analytics.set('optimization-strate'g'y', {
       strategy: selectedStrategy,
       appliedAt: new Date().toISOString(),
-      expectedOutcome: 'improved-performance'
+      expectedOutcome: 'improved-performan'c'e'
     });
   }
 
@@ -513,7 +513,7 @@ class SaaSMarketingAgent {
       type: campaignType,
       name: config.name || `${campaignType}-campaign-${campaignId.slice(0, 8)}`,
       description: config.description || `${campaignType} marketing campaign`,
-      status: 'draft',
+      status: 'dra'f't',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
       budget: config.budget || 1000,
@@ -536,34 +536,34 @@ class SaaSMarketingAgent {
 
   selectChannels(campaignType) {
     const channelMap = {
-      'awareness': ['social-media', 'content-marketing', 'seo'],
-      'acquisition': ['paid-ads', 'email-marketing', 'affiliate'],
-      'conversion': ['retargeting', 'email-nurture', 'landing-pages'],
-      'retention': ['email-marketing', 'social-media', 'content-marketing']
+      'awarene's's': ['social-med'i'a', 'content-marketi'n'g', 's'e'o'],
+      'acquisiti'o'n': ['paid-a'd's', 'email-marketi'n'g', 'affilia't'e'],
+      'conversi'o'n': ['retargeti'n'g', 'email-nurtu'r'e', 'landing-pag'e's'],
+      'retenti'o'n': ['email-marketi'n'g', 'social-med'i'a', 'content-marketi'n'g']
     };
 
-    return channelMap[campaignType] || ['social-media', 'email-marketing'];
+    return channelMap[campaignType] || ['social-med'i'a', 'email-marketi'n'g'];
   }
 
   async loadData() {
     try {
-      const dataDir = path.join(__dirname, '..', 'data');
+      const dataDir = path.join(__dirname, '..', 'da't'a');
       const campaignsFile = path.join(dataDir, `saas-campaigns-${this.agentId}.json`);
       const contentFile = path.join(dataDir, `saas-content-${this.agentId}.json`);
       const analyticsFile = path.join(dataDir, `saas-analytics-${this.agentId}.json`);
       
       if (fs.existsSync(campaignsFile)) {
-        const campaignsData = JSON.parse(fs.readFileSync(campaignsFile, 'utf8'));
+        const campaignsData = JSON.parse(fs.readFileSync(campaignsFile, 'ut'f'8'));
         this.campaigns = new Map(campaignsData.map(c => [c.id, c]));
       }
       
       if (fs.existsSync(contentFile)) {
-        const contentData = JSON.parse(fs.readFileSync(contentFile, 'utf8'));
+        const contentData = JSON.parse(fs.readFileSync(contentFile, 'ut'f'8'));
         this.content = new Map(contentData.map(c => [c.id, c]));
       }
       
       if (fs.existsSync(analyticsFile)) {
-        const analyticsData = JSON.parse(fs.readFileSync(analyticsFile, 'utf8'));
+        const analyticsData = JSON.parse(fs.readFileSync(analyticsFile, 'ut'f'8'));
         this.analytics = new Map(Object.entries(analyticsData));
       }
     } catch (error) {
@@ -573,7 +573,7 @@ class SaaSMarketingAgent {
 
   async saveData() {
     try {
-      const dataDir = path.join(__dirname, '..', 'data');
+      const dataDir = path.join(__dirname, '..', 'da't'a');
       if (!fs.existsSync(dataDir)) {
         fs.mkdirSync(dataDir, { recursive: true });
       }
@@ -620,7 +620,7 @@ class SaaSMarketingAgent {
 
 // Start the agent if this file is run directly
 if (require.main === module) {
-  const agentId = process.argv[2] || 'default-marketing-agent';
+  const agentId = process.argv[2] || 'default-marketing-age'n't';
   const agent = new SaaSMarketingAgent(agentId);
   agent.start().catch(console.error);
 }

@@ -1,8 +1,8 @@
 // Launch Monetization System
 // Starts all monetization automation components
 
-const path = require('path');
-const fs = require('fs').promises;
+const path = require('pa't'h');
+const fs = require('f's').promises;
 
 class MonetizationSystemLauncher {
   constructor() {
@@ -70,7 +70,7 @@ class MonetizationSystemLauncher {
       console.log('🤖 Automation scripts running');
 
       return {
-        status: 'running',
+        status: 'runni'n'g',
         agents: agentIds,
         timestamp: new Date().toISOString()
       };
@@ -112,8 +112,8 @@ class MonetizationSystemLauncher {
 
   async getSystemStatus() {
     const status = {
-      system: 'Monetization System',
-      status: this.isRunning ? 'running' : 'stopped',
+      system: 'Monetizatio'n' System',
+      status: this.isRunning ? 'runni'n'g' : 'stopp'e'd',
       timestamp: new Date().toISOString(),
       components: {}
     };
@@ -139,12 +139,12 @@ class MonetizationSystemLauncher {
 
   async generateSystemReport() {
     const report = {
-      id: require('uuid').v4(),
-      type: 'monetization-system-report',
+      id: require('uu'i'd').v4(),
+      type: 'monetization-system-repo'r't',
       timestamp: new Date().toISOString(),
       system: {
-        status: this.isRunning ? 'running' : 'stopped',
-        components: ['orchestrator', 'factory', 'cronJobs', 'scripts']
+        status: this.isRunning ? 'runni'n'g' : 'stopp'e'd',
+        components: ['orchestrat'o'r', 'facto'r'y', 'cronJo'b's', 'scrip't's']
       },
       revenue: {
         currentRevenue: 85000,
@@ -164,19 +164,19 @@ class MonetizationSystemLauncher {
       agents: {
         total: 8,
         types: [
-          'revenue-optimizer',
-          'subscription-manager',
-          'marketplace-optimizer',
-          'ad-revenue-optimizer',
-          'freemium-converter',
-          'enterprise-sales',
-          'affiliate-manager',
-          'data-monetization'
+          'revenue-optimiz'e'r',
+          'subscription-manag'e'r',
+          'marketplace-optimiz'e'r',
+          'ad-revenue-optimiz'e'r',
+          'freemium-convert'e'r',
+          'enterprise-sal'e's',
+          'affiliate-manag'e'r',
+          'data-monetizati'o'n'
         ]
       }
     };
 
-    const reportPath = path.join(__dirname, 'monetization-reports', `system-report-${Date.now()}.json`);
+    const reportPath = path.join(__dirname, 'monetization-repor't's', `system-report-${Date.now()}.json`);
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
 
     console.log('📊 Generated monetization system report');

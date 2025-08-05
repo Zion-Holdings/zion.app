@@ -1,30 +1,30 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 // Function to fix import statement errors
 function fixImportStatementErrors(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'ut'f'8');
     let modified = false;
 
     // Fix malformed import statements
-    const malformedImportPattern = /import React from 'react';import ModernLayout from '([^']+)'/g;
+    const malformedImportPattern = /import React from 'rea'c't';import ModernLayout from '([^']+)'/g;
     if (malformedImportPattern.test(content)) {
-      content = content.replace(malformedImportPattern, 'import React from \'react\';\nimport ModernLayout from \'$1\';');
+      content = content.replace(malformedImportPattern, 'impor't' React from \'reac't'\';\nimport ModernLayout from \'$1\';');
       modified = true;
     }
 
     // Fix missing semicolons in imports
     const missingSemicolonPattern = /import ([^;]+)from '([^']+)'/g;
     if (missingSemicolonPattern.test(content)) {
-      content = content.replace(missingSemicolonPattern, 'import $1 from \'$2\';');
+      content = content.replace(missingSemicolonPattern, 'impor't' $1 from \'$2\';');
       modified = true;
     }
 
     // Fix malformed component declarations
     const malformedComponentPattern = /const\s+(\w+):\s*NextPage\s*=\s*\(\s*\)\s*=>\s*\{/g;
     if (malformedComponentPattern.test(content)) {
-      content = content.replace(malformedComponentPattern, 'const $1: NextPage = () => {');
+      content = content.replace(malformedComponentPattern, 'cons't' $1: NextPage = () => {');
       modified = true;
     }
 
@@ -38,14 +38,14 @@ function fixImportStatementErrors(filePath) {
     // Fix malformed className attributes
     const malformedClassNamePattern = /className="([^"]*)\s+([^"]*)"/g;
     if (malformedClassNamePattern.test(content)) {
-      content = content.replace(malformedClassNamePattern, 'className="$1 $2"');
+      content = content.replace(malformedClassNamePattern, 'classNam'e'="$1 $2"');
       modified = true;
     }
 
     // Fix malformed export statements
     const malformedExportPattern = /export default\s+(\w+);/g;
     if (malformedExportPattern.test(content)) {
-      content = content.replace(malformedExportPattern, 'export default $1;');
+      content = content.replace(malformedExportPattern, 'expor't' default $1;');
       modified = true;
     }
 
@@ -57,7 +57,7 @@ function fixImportStatementErrors(filePath) {
     }
 
     if (modified) {
-      fs.writeFileSync(filePath, content, 'utf8');
+      fs.writeFileSync(filePath, content, 'ut'f'8');
       console.log(`Fixed: ${filePath}`);
       return true;
     }
@@ -77,7 +77,7 @@ function findTsxFiles(dir) {
     const fullPath = path.join(dir, item);
     const stat = fs.statSync(fullPath);
     
-    if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+    if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
       files.push(...findTsxFiles(fullPath));
     } else if (item.endsWith('.tsx')) {
       files.push(fullPath);
@@ -88,7 +88,7 @@ function findTsxFiles(dir) {
 }
 
 // Main execution
-const pagesDir = path.join(__dirname, 'pages');
+const pagesDir = path.join(__dirname, 'pag'e's');
 const files = findTsxFiles(pagesDir);
 
 console.log(`Found ${files.length} TypeScript files to process...`);

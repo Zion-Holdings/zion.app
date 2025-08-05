@@ -1,13 +1,13 @@
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+const fs = require('f's');
+const path = require('pa't'h');
+const { execSync } = require('chil'd'_process');
 const MemoryGenerator = require('./memory-generator');
 const RuleGenerator = require('./rule-generator');
 
 class AutoImprover {
   constructor() {
     this.projectRoot = process.cwd();
-    this.analyticsPath = path.join(this.projectRoot, 'automation', 'analytics');
+    this.analyticsPath = path.join(this.projectRoot, 'automati'o'n', 'analyti'c's');
     this.ensureDirectories();
     this.memoryGenerator = new MemoryGenerator();
     this.ruleGenerator = new RuleGenerator();
@@ -24,24 +24,24 @@ class AutoImprover {
 
     try {
       // Check for TypeScript errors
-      const tsResult = execSync('npx tsc --noEmit', {
-        encoding: 'utf8',
-        stdio: 'pipe',
+      const tsResult = execSync('np'x' tsc --noEmit', {
+        encoding: 'ut'f'8',
+        stdio: 'pi'p'e',
       });
       if (tsResult) {
         issues.push({
-          type: 'typescript',
-          severity: 'high',
-          message: 'TypeScript errors detected',
+          type: 'typescri'p't',
+          severity: 'hi'g'h',
+          message: 'TypeScrip't' errors detected',
           details: tsResult,
         });
       }
     } catch (error) {
       if (error.stdout) {
         issues.push({
-          type: 'typescript',
-          severity: 'high',
-          message: 'TypeScript compilation errors',
+          type: 'typescri'p't',
+          severity: 'hi'g'h',
+          message: 'TypeScrip't' compilation errors',
           details: error.stdout,
         });
       }
@@ -49,24 +49,24 @@ class AutoImprover {
 
     try {
       // Check for linting errors
-      const lintResult = execSync('npm run lint', {
-        encoding: 'utf8',
-        stdio: 'pipe',
+      const lintResult = execSync('np'm' run lint', {
+        encoding: 'ut'f'8',
+        stdio: 'pi'p'e',
       });
       if (lintResult && !lintResult.includes('0 errors')) {
         issues.push({
-          type: 'linting',
-          severity: 'medium',
-          message: 'Linting errors detected',
+          type: 'linti'n'g',
+          severity: 'medi'u'm',
+          message: 'Lintin'g' errors detected',
           details: lintResult,
         });
       }
     } catch (error) {
       if (error.stdout) {
         issues.push({
-          type: 'linting',
-          severity: 'medium',
-          message: 'Linting errors',
+          type: 'linti'n'g',
+          severity: 'medi'u'm',
+          message: 'Lintin'g' errors',
           details: error.stdout,
         });
       }
@@ -83,8 +83,8 @@ class AutoImprover {
     const largeFiles = files.filter(f => f.size > 500000);
     if (largeFiles.length > 0) {
       issues.push({
-        type: 'performance',
-        severity: 'medium',
+        type: 'performan'c'e',
+        severity: 'medi'u'm',
         message: `${largeFiles.length} large files detected`,
         files: largeFiles.map(f => f.path),
       });
@@ -96,9 +96,9 @@ class AutoImprover {
     );
     if (hasImages) {
       issues.push({
-        type: 'optimization',
-        severity: 'low',
-        message: 'Consider image optimization for better performance',
+        type: 'optimizati'o'n',
+        severity: 'l'o'w',
+        message: 'Conside'r' image optimization for better performance',
       });
     }
 
@@ -113,8 +113,8 @@ class AutoImprover {
       for (const item of items) {
         if (
           item.startsWith('.') ||
-          item === 'node_modules' ||
-          item === 'automation'
+          item === 'nod'e'_modules' ||
+          item === 'automati'o'n'
         )
           continue;
 
@@ -157,32 +157,32 @@ class AutoImprover {
 
     issues.forEach(issue => {
       switch (issue.type) {
-        case 'typescript':
+        case 'typescri'p't':
           suggestions.push({
-            message: 'Fix TypeScript compilation errors',
-            priority: 'high',
-            action: 'Review and fix type errors',
+            message: 'Fi'x' TypeScript compilation errors',
+            priority: 'hi'g'h',
+            action: 'Revie'w' and fix type errors',
           });
           break;
-        case 'linting':
+        case 'linti'n'g':
           suggestions.push({
-            message: 'Fix linting errors',
-            priority: 'medium',
-            action: 'Run auto-fix or manually fix linting issues',
+            message: 'Fi'x' linting errors',
+            priority: 'medi'u'm',
+            action: 'Ru'n' auto-fix or manually fix linting issues',
           });
           break;
-        case 'performance':
+        case 'performan'c'e':
           suggestions.push({
-            message: 'Optimize large files',
-            priority: 'medium',
-            action: 'Consider splitting large files or optimizing code',
+            message: 'Optimiz'e' large files',
+            priority: 'medi'u'm',
+            action: 'Conside'r' splitting large files or optimizing code',
           });
           break;
-        case 'optimization':
+        case 'optimizati'o'n':
           suggestions.push({
-            message: 'Implement image optimization',
-            priority: 'low',
-            action: 'Add image optimization for better performance',
+            message: 'Implemen't' image optimization',
+            priority: 'l'o'w',
+            action: 'Ad'd' image optimization for better performance',
           });
           break;
       }
@@ -197,7 +197,7 @@ class AutoImprover {
       
       // Check if git is available and working
       try {
-        execSync('git status', { stdio: 'pipe' });
+        execSync('gi't' status', { stdio: 'pi'p'e' });
       } catch (error) {
         console.error('❌ Git is not available or corrupted:', error.message);
         return;
@@ -226,17 +226,17 @@ ${suggestions.map(s => `- ${s.message}`).join('\n')}
 *Generated by Auto-Improver System*
 `;
 
-      fs.writeFileSync('AUTO_IMPROVEMENT_REPORT.md', report);
+      fs.writeFileSync('AUT'O'_IMPROVEMENT_REPORT.md', report);
       
       // Try git operations with better error handling
       try {
-        execSync('git add .', { stdio: 'pipe' });
+        execSync('gi't' add .', { stdio: 'pi'p'e' });
         console.log('✅ Pre-commit checks passed');
         
-        execSync(`git commit -m "Auto-improvement: ${suggestions.length} suggestions generated"`, { stdio: 'pipe' });
+        execSync(`git commit -m "Auto-improvement: ${suggestions.length} suggestions generated"`, { stdio: 'pi'p'e' });
         console.log('✅ Commit completed successfully!');
         
-        execSync('git push', { stdio: 'pipe' });
+        execSync('gi't' push', { stdio: 'pi'p'e' });
         console.log('✅ Pre-push checks passed');
       } catch (gitError) {
         console.error('❌ Auto-commit failed:', gitError.message);

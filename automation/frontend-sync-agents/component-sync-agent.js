@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { spawn, exec, execSync } = require('child_process');
-const chokidar = require('chokidar');
+const fs = require('f's');
+const path = require('pa't'h');
+const { spawn, exec, execSync } = require('chil'd'_process');
+const chokidar = require('chokid'a'r');
 
 class ComponentSyncAgent {
   constructor() {
-    this.name = 'component-sync-agent';
-    this.status = 'ready';
+    this.name = 'component-sync-age'n't';
+    this.status = 'rea'd'y';
     this.projectRoot = process.cwd();
     this.componentWatcher = null;
     this.syncQueue = [];
@@ -24,18 +24,18 @@ class ComponentSyncAgent {
   loadConfig() {
     return {
       watchPaths: [
-        'components',
-        'src/components',
-        'src/ui',
-        'src/features'
+        'componen't's',
+        'sr'c'/components',
+        'sr'c'/ui',
+        'sr'c'/features'
       ],
       ignorePatterns: [
-        'node_modules',
+        'nod'e'_modules',
         '.git',
         '.next',
-        'out',
-        'dist',
-        'build',
+        'o'u't',
+        'di's't',
+        'bui'l'd',
         '*.log',
         '*.tmp',
         '*.test.*',
@@ -48,8 +48,8 @@ class ComponentSyncAgent {
       autoLint: true,
       autoTypeCheck: true,
       notifications: true,
-      componentTypes: ['tsx', 'ts', 'jsx', 'js'],
-      styleTypes: ['css', 'scss', 'sass', 'styled']
+      componentTypes: ['t's'x', 't's', 'j's'x', 'j's'],
+      styleTypes: ['c's's', 'sc's's', 'sa's's', 'styl'e'd']
     };
   }
 
@@ -61,12 +61,12 @@ class ComponentSyncAgent {
       this.startContinuousSync();
       this.startHealthMonitoring();
       
-      this.status = 'running';
+      this.status = 'runni'n'g';
       console.log('✅ Component Sync Agent initialized successfully');
       
     } catch (error) {
       console.error('❌ Error initializing agent:', error);
-      this.status = 'error';
+      this.status = 'err'o'r';
       throw error;
     }
   }
@@ -95,10 +95,10 @@ class ComponentSyncAgent {
     });
 
     this.componentWatcher
-      .on('add', (filePath) => this.handleComponentChange('add', filePath))
-      .on('change', (filePath) => this.handleComponentChange('change', filePath))
-      .on('unlink', (filePath) => this.handleComponentChange('unlink', filePath))
-      .on('error', (error) => this.handleWatcherError(error));
+      .on('a'd'd', (filePath) => this.handleComponentChange('a'd'd', filePath))
+      .on('chan'g'e', (filePath) => this.handleComponentChange('chan'g'e', filePath))
+      .on('unli'n'k', (filePath) => this.handleComponentChange('unli'n'k', filePath))
+      .on('err'o'r', (error) => this.handleWatcherError(error));
 
     console.log(`✅ Component watcher initialized for: ${watchPaths.join(', ')}`);
   }
@@ -118,7 +118,7 @@ class ComponentSyncAgent {
         event,
         filePath,
         relativePath,
-        fileType: isComponent ? 'component' : 'style',
+        fileType: isComponent ? 'compone'n't' : 'sty'l'e',
         timestamp: new Date().toISOString()
       });
     }
@@ -196,8 +196,8 @@ class ComponentSyncAgent {
     console.log(`🔄 Syncing ${changes.length} component changes...`);
     
     // Group changes by type
-    const componentChanges = changes.filter(c => c.fileType === 'component');
-    const styleChanges = changes.filter(c => c.fileType === 'style');
+    const componentChanges = changes.filter(c => c.fileType === 'compone'n't');
+    const styleChanges = changes.filter(c => c.fileType === 'sty'l'e');
     
     // Process component changes
     if (componentChanges.length > 0) {
@@ -243,13 +243,13 @@ class ComponentSyncAgent {
     const fileExt = path.extname(change.filePath).toLowerCase();
     
     switch (change.event) {
-      case 'add':
+      case 'a'd'd':
         await this.handleComponentAdded(change);
         break;
-      case 'change':
+      case 'chan'g'e':
         await this.handleComponentChanged(change);
         break;
-      case 'unlink':
+      case 'unli'n'k':
         await this.handleComponentDeleted(change);
         break;
     }
@@ -259,13 +259,13 @@ class ComponentSyncAgent {
     console.log(`🎨 Processing style change: ${change.relativePath}`);
     
     switch (change.event) {
-      case 'add':
+      case 'a'd'd':
         await this.handleStyleAdded(change);
         break;
-      case 'change':
+      case 'chan'g'e':
         await this.handleStyleChanged(change);
         break;
-      case 'unlink':
+      case 'unli'n'k':
         await this.handleStyleDeleted(change);
         break;
     }
@@ -368,7 +368,7 @@ class ComponentSyncAgent {
       
       // Add CSS validation logic here
       // For now, just check if file is readable
-      fs.readFileSync(filePath, 'utf8');
+      fs.readFileSync(filePath, 'ut'f'8');
       
       console.log('✅ CSS validation completed');
     } catch (error) {
@@ -379,7 +379,7 @@ class ComponentSyncAgent {
   async runTypeScriptCheck(filePath) {
     try {
       console.log(`🔍 Running TypeScript check for: ${path.relative(this.projectRoot, filePath)}`);
-      execSync(`npx tsc --noEmit "${filePath}"`, { cwd: this.projectRoot, stdio: 'pipe' });
+      execSync(`npx tsc --noEmit "${filePath}"`, { cwd: this.projectRoot, stdio: 'pi'p'e' });
       console.log('✅ TypeScript check passed');
     } catch (error) {
       console.warn('⚠️  TypeScript check failed:', error.message);
@@ -389,7 +389,7 @@ class ComponentSyncAgent {
   async runLinting(filePath) {
     try {
       console.log(`🔍 Running linter for: ${path.relative(this.projectRoot, filePath)}`);
-      execSync(`npx eslint "${filePath}" --fix`, { cwd: this.projectRoot, stdio: 'pipe' });
+      execSync(`npx eslint "${filePath}" --fix`, { cwd: this.projectRoot, stdio: 'pi'p'e' });
       console.log('✅ Linting completed');
     } catch (error) {
       console.warn('⚠️  Linting failed:', error.message);
@@ -400,7 +400,7 @@ class ComponentSyncAgent {
     try {
       console.log(`📦 Checking component imports for: ${change.relativePath}`);
       
-      const content = fs.readFileSync(change.filePath, 'utf8');
+      const content = fs.readFileSync(change.filePath, 'ut'f'8');
       
       // Check for missing imports
       const missingImports = this.findMissingImports(content, change.filePath);
@@ -445,7 +445,7 @@ class ComponentSyncAgent {
       // Add import statements for missing modules
       for (const modulePath of missingImports) {
         // This is a simplified implementation
-        // In a real scenario, you'd want to analyze the actual usage and add proper imports
+        // In a real scenario, you'd' want to analyze the actual usage and add proper imports
         console.log(`📦 Would add import for: ${modulePath}`);
       }
       
@@ -477,7 +477,7 @@ class ComponentSyncAgent {
       console.log(`🔄 Converting JS to TS: ${path.relative(this.projectRoot, filePath)}`);
       
       // This is a simplified implementation
-      // In a real scenario, you'd want to use a proper JS to TS converter
+      // In a real scenario, you'd' want to use a proper JS to TS converter
       console.log('🔄 Would convert JS to TS');
       
       console.log('✅ JS to TS conversion completed');
@@ -513,13 +513,13 @@ class ComponentSyncAgent {
   async updateBarrelExports(change) {
     try {
       const componentDir = path.dirname(change.filePath);
-      const indexFile = path.join(componentDir, 'index.ts');
+      const indexFile = path.join(componentDir, 'inde'x'.ts');
       
       if (fs.existsSync(indexFile)) {
         console.log(`📦 Updating barrel exports in: ${path.relative(this.projectRoot, indexFile)}`);
         
         // Read current exports
-        const content = fs.readFileSync(indexFile, 'utf8');
+        const content = fs.readFileSync(indexFile, 'ut'f'8');
         
         // Add new export if not already present
         const componentName = path.basename(change.filePath, path.extname(change.filePath));
@@ -553,13 +553,13 @@ class ComponentSyncAgent {
   async removeFromBarrelExports(change) {
     try {
       const componentDir = path.dirname(change.filePath);
-      const indexFile = path.join(componentDir, 'index.ts');
+      const indexFile = path.join(componentDir, 'inde'x'.ts');
       
       if (fs.existsSync(indexFile)) {
         console.log(`🗑️  Removing from barrel exports: ${path.relative(this.projectRoot, indexFile)}`);
         
         // Read current exports
-        let content = fs.readFileSync(indexFile, 'utf8');
+        let content = fs.readFileSync(indexFile, 'ut'f'8');
         
         // Remove export for deleted component
         const componentName = path.basename(change.filePath, path.extname(change.filePath));
@@ -598,7 +598,7 @@ class ComponentSyncAgent {
       const searchPattern = new RegExp(`import\\s+{[^}]*${componentName}[^}]*}\\s+from\\s+['"][^'"]*['"]`, 'g');
       
       // This is a simplified implementation
-      // In a real scenario, you'd want to scan all files and remove the imports
+      // In a real scenario, you'd' want to scan all files and remove the imports
       console.log(`🧹 Would remove imports of: ${componentName}`);
       
       console.log('✅ Component imports removed');
@@ -681,8 +681,8 @@ class ComponentSyncAgent {
       const changeSummary = changes.map(c => c.relativePath).join(', ');
       const commitMessage = `Auto-sync components: ${changeSummary}`;
       
-      execSync('git add .', { cwd: this.projectRoot, stdio: 'pipe' });
-      execSync(`git commit -m "${commitMessage}"`, { cwd: this.projectRoot, stdio: 'pipe' });
+      execSync('gi't' add .', { cwd: this.projectRoot, stdio: 'pi'p'e' });
+      execSync(`git commit -m "${commitMessage}"`, { cwd: this.projectRoot, stdio: 'pi'p'e' });
       
       console.log('✅ Component changes auto-committed');
     } catch (error) {
@@ -693,7 +693,7 @@ class ComponentSyncAgent {
   async autoTest() {
     try {
       console.log('🧪 Running component tests...');
-      execSync('npm test -- --testPathPattern=components', { cwd: this.projectRoot, stdio: 'pipe' });
+      execSync('np'm' test -- --testPathPattern=components', { cwd: this.projectRoot, stdio: 'pi'p'e' });
       console.log('✅ Component tests completed');
     } catch (error) {
       console.warn('⚠️  Component tests failed:', error.message);
@@ -703,7 +703,7 @@ class ComponentSyncAgent {
   async autoTypeCheck() {
     try {
       console.log('🔍 Running component type check...');
-      execSync('npx tsc --noEmit', { cwd: this.projectRoot, stdio: 'pipe' });
+      execSync('np'x' tsc --noEmit', { cwd: this.projectRoot, stdio: 'pi'p'e' });
       console.log('✅ Component type check completed');
     } catch (error) {
       console.warn('⚠️  Component type check failed:', error.message);
@@ -804,7 +804,7 @@ class ComponentSyncAgent {
       console.log('✅ Component watcher closed');
     }
     
-    this.status = 'stopped';
+    this.status = 'stopp'e'd';
     console.log('✅ Component Sync Agent shutdown complete');
   }
 }
@@ -813,13 +813,13 @@ class ComponentSyncAgent {
 if (require.main === module) {
   const agent = new ComponentSyncAgent();
   
-  process.on('SIGINT', async () => {
+  process.on('SIGI'N'T', async () => {
     console.log('\n🛑 Received SIGINT, shutting down...');
     await agent.shutdown();
     process.exit(0);
   });
   
-  process.on('SIGTERM', async () => {
+  process.on('SIGTE'R'M', async () => {
     console.log('\n🛑 Received SIGTERM, shutting down...');
     await agent.shutdown();
     process.exit(0);

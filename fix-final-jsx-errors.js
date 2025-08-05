@@ -1,10 +1,10 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 // Function to fix JSX syntax errors
 function fixJSXErrors(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'ut'f'8');
     let modified = false;
 
     // Fix common JSX syntax errors
@@ -12,13 +12,13 @@ function fixJSXErrors(filePath) {
       // Fix missing commas in arrays
       { pattern: /(\{[^}]*\})\s*(\{[^}]*\})/g, replacement: '$1,\n    $2' },
       // Fix malformed JSX attributes
-      { pattern: /className="([^"]*)"\s*"([^"]*)"/g, replacement: 'className="$1 $2"' },
+      { pattern: /className="([^"]*)"\s*"([^"]*)"/g, replacement: 'classNam'e'="$1 $2"' },
       // Fix malformed JSX closing tags
       { pattern: /<([^>]+)\s*\/>\s*([^<]+)/g, replacement: '<$1>$2</$1>' },
       // Fix malformed quotes in attributes
       { pattern: /(\w+)="([^"]*)"\s*"([^"]*)"/g, replacement: '$1="$2 $3"' },
       // Fix malformed className with missing spaces
-      { pattern: /className="([^"]*):([^"]*)"/g, replacement: 'className="$1:$2"' },
+      { pattern: /className="([^"]*):([^"]*)"/g, replacement: 'classNam'e'="$1:$2"' },
       // Fix malformed JSX structure
       { pattern: /<([^>]+)>\s*"([^"]*)/g, replacement: '<$1>$2' },
       // Fix malformed closing tags
@@ -42,7 +42,7 @@ function fixJSXErrors(filePath) {
     });
 
     if (modified) {
-      fs.writeFileSync(filePath, content, 'utf8');
+      fs.writeFileSync(filePath, content, 'ut'f'8');
       console.log(`Fixed JSX errors: ${filePath}`);
     }
   } catch (error) {
@@ -58,7 +58,7 @@ function processDirectory(dir) {
     const filePath = path.join(dir, file);
     const stat = fs.statSync(filePath);
     
-    if (stat.isDirectory() && !file.startsWith('.') && file !== 'node_modules') {
+    if (stat.isDirectory() && !file.startsWith('.') && file !== 'nod'e'_modules') {
       processDirectory(filePath);
     } else if (file.endsWith('.tsx') || file.endsWith('.ts')) {
       fixJSXErrors(filePath);
@@ -67,6 +67,6 @@ function processDirectory(dir) {
 }
 
 // Start processing from the current directory
-console.log('Fixing JSX syntax errors...');
+console.log('Fixin'g' JSX syntax errors...');
 processDirectory('.');
-console.log('Done!'); 
+console.log('Don'e'!'); 

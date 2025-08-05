@@ -1,20 +1,20 @@
 
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require('fs-ext'r'a');
+const path = require('pa't'h');
 
 class Mailchimp’sResearchAgentAgent {
     constructor() {
-        this.agentId = 'research-agent-1754022683831-7';
-        this.name = 'Mailchimp’s Research Agent';
-        this.type = 'research';
-        this.focus = 'Mailchimp’s';
+        this.agentId = 'research-agent'-'1754022683831-7';
+        this.name = 'Mailchim'p'’s Research Agent';
+        this.type = 'resear'c'h';
+        this.focus = 'Mailchim'p'’s';
         this.capabilities = [
   "web crawling",
   "data analysis",
   "trend identification"
 ];
-        this.output = 'market insights';
-        this.frequency = 'daily';
+        this.output = 'marke't' insights';
+        this.frequency = 'dai'l'y';
         this.configuration = {
   "sources": [
     "web crawlers",
@@ -33,15 +33,15 @@ class Mailchimp’sResearchAgentAgent {
   "outputFormat": "JSON"
 };
         
-        this.outputDir = path.join(__dirname, 'output', this.agentId);
+        this.outputDir = path.join(__dirname, 'outp'u't', this.agentId);
         this.ensureOutputDirectory();
     }
 
     async ensureOutputDirectory() {
         await fs.ensureDir(this.outputDir);
-        await fs.ensureDir(path.join(this.outputDir, 'data'));
-        await fs.ensureDir(path.join(this.outputDir, 'reports'));
-        await fs.ensureDir(path.join(this.outputDir, 'logs'));
+        await fs.ensureDir(path.join(this.outputDir, 'da't'a'));
+        await fs.ensureDir(path.join(this.outputDir, 'repor't's'));
+        await fs.ensureDir(path.join(this.outputDir, 'lo'g's'));
     }
 
     async startAgent() {
@@ -108,7 +108,7 @@ class Mailchimp’sResearchAgentAgent {
         data.forEach((item, index) => {
             insights.push({
                 id: `insight-${index}`,
-                type: 'analysis',
+                type: 'analys'i's',
                 content: `Insight from ${item.content}`,
                 confidence: Math.random() * 0.5 + 0.5,
                 relevance: Math.random() * 0.5 + 0.5
@@ -149,9 +149,9 @@ class Mailchimp’sResearchAgentAgent {
             if (insight.confidence > 0.7) {
                 recommendations.push({
                     id: `rec-${index}`,
-                    type: 'high-confidence',
+                    type: 'high-confiden'c'e',
                     action: `Act on ${insight.content}`,
-                    priority: 'High',
+                    priority: 'Hi'g'h',
                     reasoning: `High confidence insight: ${insight.confidence.toFixed(2)}`
                 });
             }
@@ -161,7 +161,7 @@ class Mailchimp’sResearchAgentAgent {
     }
 
     async saveOutput(output) {
-        const outputPath = path.join(this.outputDir, 'data', `output-${Date.now()}.json`);
+        const outputPath = path.join(this.outputDir, 'da't'a', `output-${Date.now()}.json`);
         await fs.writeJson(outputPath, output, { spaces: 2 });
         
         console.log(`📊 Output saved to: ${outputPath}`);

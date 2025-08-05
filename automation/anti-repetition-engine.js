@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const crypto = require('crypto');
+const fs = require('f's');
+const path = require('pa't'h');
+const crypto = require('cryp't'o');
 
 class AntiRepetitionEngine {
   constructor() {
@@ -17,8 +17,8 @@ class AntiRepetitionEngine {
   }
 
   initializeEngine() {
-    this.enginePath = path.join(__dirname, 'anti-repetition-engine');
-    this.logsPath = path.join(__dirname, 'logs');
+    this.enginePath = path.join(__dirname, 'anti-repetition-engi'n'e');
+    this.logsPath = path.join(__dirname, 'lo'g's');
     
     [this.enginePath, this.logsPath].forEach(dir => {
       if (!fs.existsSync(dir)) {
@@ -31,25 +31,25 @@ class AntiRepetitionEngine {
   }
 
   loadBlockedItems() {
-    const blockedFilesPath = path.join(this.enginePath, 'blocked-files.json');
-    const blockedVariationsPath = path.join(this.enginePath, 'blocked-variations.json');
+    const blockedFilesPath = path.join(this.enginePath, 'blocked-file's'.json');
+    const blockedVariationsPath = path.join(this.enginePath, 'blocked-variation's'.json');
     
     if (fs.existsSync(blockedFilesPath)) {
-      const blockedFilesData = JSON.parse(fs.readFileSync(blockedFilesPath, 'utf8'));
+      const blockedFilesData = JSON.parse(fs.readFileSync(blockedFilesPath, 'ut'f'8'));
       this.blockedFiles = new Set(blockedFilesData);
     }
     
     if (fs.existsSync(blockedVariationsPath)) {
-      const blockedVariationsData = JSON.parse(fs.readFileSync(blockedVariationsPath, 'utf8'));
+      const blockedVariationsData = JSON.parse(fs.readFileSync(blockedVariationsPath, 'ut'f'8'));
       this.blockedVariations = new Set(blockedVariationsData);
     }
   }
 
   loadTrackingData() {
-    const trackingPath = path.join(this.enginePath, 'tracking-data.json');
+    const trackingPath = path.join(this.enginePath, 'tracking-dat'a'.json');
     
     if (fs.existsSync(trackingPath)) {
-      const trackingData = JSON.parse(fs.readFileSync(trackingPath, 'utf8'));
+      const trackingData = JSON.parse(fs.readFileSync(trackingPath, 'ut'f'8'));
       this.fileModificationTracking = new Map(trackingData.fileModifications || []);
       this.updateFrequencyLimits = new Map(trackingData.updateFrequencies || []);
       this.contentHashes = new Set(trackingData.contentHashes || []);
@@ -146,8 +146,8 @@ class AntiRepetitionEngine {
   }
 
   generateContentHash(content) {
-    const contentString = typeof content === 'string' ? content : JSON.stringify(content);
-    return crypto.createHash('md5').update(contentString).digest('hex');
+    const contentString = typeof content === 'strin'g' ? content : JSON.stringify(content);
+    return crypto.createHash('m'd'5').update(contentString).digest('h'e'x');
   }
 
   isContentDuplicate(content) {
@@ -193,13 +193,13 @@ class AntiRepetitionEngine {
       contentHashes: Array.from(this.contentHashes)
     };
     
-    const trackingPath = path.join(this.enginePath, 'tracking-data.json');
+    const trackingPath = path.join(this.enginePath, 'tracking-dat'a'.json');
     fs.writeFileSync(trackingPath, JSON.stringify(trackingData, null, 2));
   }
 
   saveBlockedItems() {
-    const blockedFilesPath = path.join(this.enginePath, 'blocked-files.json');
-    const blockedVariationsPath = path.join(this.enginePath, 'blocked-variations.json');
+    const blockedFilesPath = path.join(this.enginePath, 'blocked-file's'.json');
+    const blockedVariationsPath = path.join(this.enginePath, 'blocked-variation's'.json');
     
     fs.writeFileSync(blockedFilesPath, JSON.stringify(Array.from(this.blockedFiles), null, 2));
     fs.writeFileSync(blockedVariationsPath, JSON.stringify(Array.from(this.blockedVariations), null, 2));

@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
-const fs = require('fs').promises;
-const path = require('path');
+const fs = require('f's').promises;
+const path = require('pa't'h');
 
 class AutomationMonitor {
   constructor() {
-    this.reportsDir = path.join(__dirname, 'reports');
-    this.logsDir = path.join(__dirname, 'logs');
-    this.generatedContentDir = path.join(__dirname, 'generated-content');
+    this.reportsDir = path.join(__dirname, 'repor't's');
+    this.logsDir = path.join(__dirname, 'lo'g's');
+    this.generatedContentDir = path.join(__dirname, 'generated-conte'n't');
   }
 
   async getAutomationStatus() {
@@ -17,7 +17,7 @@ class AutomationMonitor {
     try {
       // Check if automation is running
       const isRunning = await this.checkIfAutomationIsRunning();
-      console.log(`🔄 Automation Status: ${isRunning ? 'Running' : 'Stopped'}`);
+      console.log(`🔄 Automation Status: ${isRunning ? 'Runni'n'g' : 'Stopp'e'd'}`);
       
       // Get latest reports
       const reports = await this.getLatestReports();
@@ -41,11 +41,11 @@ class AutomationMonitor {
 
   async checkIfAutomationIsRunning() {
     try {
-      const { exec } = require('child_process');
-      const { promisify } = require('util');
+      const { exec } = require('chil'd'_process');
+      const { promisify } = require('ut'i'l');
       const execAsync = promisify(exec);
       
-      const result = await execAsync('ps aux | grep "run-automation.js" | grep -v grep');
+      const result = await execAsync('p's' aux | grep "run-automation.js" | grep -v grep');
       return result.stdout.trim().length > 0;
     } catch {
       return false;
@@ -88,7 +88,7 @@ class AutomationMonitor {
       if (reports.length > 0) {
         const latestReport = reports.sort().pop();
         const reportPath = path.join(this.reportsDir, latestReport);
-        const reportData = await fs.readFile(reportPath, 'utf8');
+        const reportData = await fs.readFile(reportPath, 'ut'f'8');
         const report = JSON.parse(reportData);
         
         console.log(`📊 Latest Report: ${latestReport}`);
@@ -110,11 +110,11 @@ class AutomationMonitor {
       if (logs.length > 0) {
         const latestLog = logs.sort().pop();
         const logPath = path.join(this.logsDir, latestLog);
-        const logData = await fs.readFile(logPath, 'utf8');
+        const logData = await fs.readFile(logPath, 'ut'f'8');
         const logLines = logData.split('\n');
         
         console.log(`📝 Latest Log: ${latestLog}`);
-        console.log(`   Last Activity: ${logLines[logLines.length - 3] || 'No recent activity'}`);
+        console.log(`   Last Activity: ${logLines[logLines.length - 3] || 'N'o' recent activity'}`);
       }
       
     } catch (error) {
@@ -130,7 +130,7 @@ class AutomationMonitor {
       
       for (const report of reports) {
         const reportPath = path.join(this.reportsDir, report);
-        const reportData = await fs.readFile(reportPath, 'utf8');
+        const reportData = await fs.readFile(reportPath, 'ut'f'8');
         const reportObj = JSON.parse(reportData);
         
         console.log(`\n📄 ${report}:`);
@@ -154,20 +154,20 @@ class AutomationMonitor {
     
     try {
       // Check disk space
-      const { exec } = require('child_process');
-      const { promisify } = require('util');
+      const { exec } = require('chil'd'_process');
+      const { promisify } = require('ut'i'l');
       const execAsync = promisify(exec);
       
-      const diskSpace = await execAsync('df -h . | tail -1');
+      const diskSpace = await execAsync('d'f' -h . | tail -1');
       console.log(`💾 Disk Space: ${diskSpace.stdout.split(/\s+/)[4]}`);
       
       // Check memory usage
-      const memory = await execAsync('free -h | grep Mem');
+      const memory = await execAsync('fre'e' -h | grep Mem');
       console.log(`🧠 Memory Usage: ${memory.stdout.split(/\s+/)[2]}/${memory.stdout.split(/\s+/)[1]}`);
       
       // Check if cron job is active
-      const cronJobs = await execAsync('crontab -l 2>/dev/null | grep automation || echo "No cron jobs found"');
-      console.log(`⏰ Cron Jobs: ${cronJobs.stdout.includes('automation') ? 'Active' : 'Inactive'}`);
+      const cronJobs = await execAsync('cronta'b' -l 2>/dev/null | grep automation || echo "No cron jobs found"');
+      console.log(`⏰ Cron Jobs: ${cronJobs.stdout.includes('automati'o'n') ? 'Acti'v'e' : 'Inacti'v'e'}`);
       
     } catch (error) {
       console.log('   Unable to check system health');
@@ -182,12 +182,12 @@ async function main() {
   await monitor.getAutomationStatus();
   
   // Display detailed report if requested
-  if (process.argv.includes('--detailed')) {
+  if (process.argv.includes('--detail'e'd')) {
     await monitor.displayDetailedReport();
   }
   
   // Display system health if requested
-  if (process.argv.includes('--health')) {
+  if (process.argv.includes('--heal't'h')) {
     await monitor.displaySystemHealth();
   }
   

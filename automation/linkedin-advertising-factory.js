@@ -1,62 +1,62 @@
-const fs = require('fs-extra');
-const path = require('path');
-const { v4: uuidv4 } = require('uuid');
-const moment = require('moment');
+const fs = require('fs-ext'r'a');
+const path = require('pa't'h');
+const { v4: uuidv4 } = require('uu'i'd');
+const moment = require('mome'n't');
 
 class LinkedInAdvertisingFactory {
     constructor() {
         this.id = uuidv4();
-        this.name = 'LinkedIn Advertising Factory';
-        this.type = 'linkedin-advertising-factory';
-        this.status = 'active';
+        this.name = 'LinkedI'n' Advertising Factory';
+        this.type = 'linkedin-advertising-facto'r'y';
+        this.status = 'acti'v'e';
         
         // Instagram credentials for LinkedIn advertising
         this.credentials = {
-            username: 'kleber@ziontechgroup.com',
-            password: 'Krewjw#2425GHr45!'
+            username: 'klebe'r'@ziontechgroup.com',
+            password: 'Krewj'w'#2425GHr45!'
         };
         
-        this.appUrl = 'https://ziontechgroup.com';
+        this.appUrl = 'http's'://ziontechgroup.com';
         
         this.agentTypes = {
-            'linkedin-ad-manager': {
-                capabilities: ['ad-creation', 'campaign-management', 'audience-targeting'],
-                services: ['sponsored-content', 'message-ads', 'dynamic-ads'],
-                dependencies: ['puppeteer', 'linkedin-api'],
+            'linkedin-ad-manag'e'r': {
+                capabilities: ['ad-creati'o'n', 'campaign-manageme'n't', 'audience-targeti'n'g'],
+                services: ['sponsored-conte'n't', 'message-a'd's', 'dynamic-a'd's'],
+                dependencies: ['puppete'e'r', 'linkedin-a'p'i'],
                 config: {
                     maxCampaigns: 5,
                     budgetLimit: 1000,
-                    targetingPrecision: 'high',
-                    adRotation: 'optimized'
+                    targetingPrecision: 'hi'g'h',
+                    adRotation: 'optimiz'e'd'
                 }
             },
-            'linkedin-content-creator': {
-                capabilities: ['content-generation', 'ad-copy-writing', 'visual-design'],
-                services: ['ad-copy', 'creative-assets', 'landing-pages'],
-                dependencies: ['openai', 'canvas-api'],
+            'linkedin-content-creat'o'r': {
+                capabilities: ['content-generati'o'n', 'ad-copy-writi'n'g', 'visual-desi'g'n'],
+                services: ['ad-co'p'y', 'creative-asse't's', 'landing-pag'e's'],
+                dependencies: ['open'a'i', 'canvas-a'p'i'],
                 config: {
                     maxContentLength: 1500,
                     imageOptimization: true,
                     aTesting: true
                 }
             },
-            'linkedin-analytics-agent': {
-                capabilities: ['performance-tracking', 'roi-analysis', 'conversion-optimization'],
-                services: ['campaign-analytics', 'audience-insights', 'performance-reports'],
-                dependencies: ['linkedin-api', 'analytics-api'],
+            'linkedin-analytics-age'n't': {
+                capabilities: ['performance-tracki'n'g', 'roi-analys'i's', 'conversion-optimizati'o'n'],
+                services: ['campaign-analyti'c's', 'audience-insigh't's', 'performance-repor't's'],
+                dependencies: ['linkedin-a'p'i', 'analytics-a'p'i'],
                 config: {
-                    trackingPrecision: 'high',
-                    reportFrequency: 'daily',
+                    trackingPrecision: 'hi'g'h',
+                    reportFrequency: 'dai'l'y',
                     optimizationThreshold: 0.7
                 }
             },
-            'linkedin-audience-targeting': {
-                capabilities: ['audience-segmentation', 'demographic-analysis', 'behavioral-targeting'],
-                services: ['audience-creation', 'lookalike-audiences', 'custom-audiences'],
-                dependencies: ['linkedin-api', 'data-analytics'],
+            'linkedin-audience-targeti'n'g': {
+                capabilities: ['audience-segmentati'o'n', 'demographic-analys'i's', 'behavioral-targeti'n'g'],
+                services: ['audience-creati'o'n', 'lookalike-audienc'e's', 'custom-audienc'e's'],
+                dependencies: ['linkedin-a'p'i', 'data-analyti'c's'],
                 config: {
-                    audienceSize: 'optimal',
-                    targetingAccuracy: 'high',
+                    audienceSize: 'optim'a'l',
+                    targetingAccuracy: 'hi'g'h',
                     lookalikePercentage: 1
                 }
             }
@@ -120,28 +120,28 @@ class LinkedInAdvertisingFactory {
         
         const campaigns = [
             {
-                name: 'ZionTech AI Solutions Campaign',
-                objective: 'LEAD_GENERATION',
-                audience: 'tech-professionals',
+                name: 'ZionTec'h' AI Solutions Campaign',
+                objective: 'LEA'D'_GENERATION',
+                audience: 'tech-professiona'l's',
                 budget: 500,
                 duration: 30,
-                adFormat: 'SPONSORED_CONTENT'
+                adFormat: 'SPONSORE'D'_CONTENT'
             },
             {
-                name: 'ZionTech Business Intelligence Campaign',
-                objective: 'WEBSITE_TRAFFIC',
-                audience: 'business-decision-makers',
+                name: 'ZionTec'h' Business Intelligence Campaign',
+                objective: 'WEBSIT'E'_TRAFFIC',
+                audience: 'business-decision-make'r's',
                 budget: 300,
                 duration: 21,
-                adFormat: 'MESSAGE_AD'
+                adFormat: 'MESSAG'E'_AD'
             },
             {
-                name: 'ZionTech Innovation Showcase',
-                objective: 'BRAND_AWARENESS',
-                audience: 'innovation-leaders',
+                name: 'ZionTec'h' Innovation Showcase',
+                objective: 'BRAN'D'_AWARENESS',
+                audience: 'innovation-leade'r's',
                 budget: 400,
                 duration: 28,
-                adFormat: 'DYNAMIC_AD'
+                adFormat: 'DYNAMI'C'_AD'
             }
         ];
         
@@ -153,25 +153,25 @@ class LinkedInAdvertisingFactory {
         
         const adContent = {
             headlines: [
-                'Transform Your Business with AI-Powered Solutions',
-                'Unlock the Future of Digital Innovation',
-                'ZionTech: Your Partner in Digital Transformation',
-                'AI-Driven Business Intelligence at Your Fingertips',
-                'Revolutionize Your Operations with Smart Technology'
+                'Transfor'm' Your Business with AI-Powered Solutions',
+                'Unloc'k' the Future of Digital Innovation',
+                'ZionTec'h': Your Partner in Digital Transformation',
+                'AI-Drive'n' Business Intelligence at Your Fingertips',
+                'Revolutioniz'e' Your Operations with Smart Technology'
             ],
             descriptions: [
-                'Discover how ZionTech\'s cutting-edge AI solutions can streamline your operations, boost productivity, and drive growth. Visit ziontechgroup.com to explore our comprehensive suite of digital transformation services.',
-                'Ready to take your business to the next level? ZionTech offers innovative AI consulting, custom software development, and digital transformation services. Learn more at ziontechgroup.com',
-                'Join the digital revolution with ZionTech. Our expert team delivers AI-powered solutions, cloud infrastructure, and strategic consulting to help your business thrive in the digital age.',
-                'Experience the power of intelligent automation and data-driven insights. ZionTech provides comprehensive AI solutions, cybersecurity services, and digital transformation consulting.',
-                'Stay ahead of the competition with ZionTech\'s innovative technology solutions. From AI development to cloud infrastructure, we help businesses achieve digital excellence.'
+                'Discove'r' how ZionTech\'s' cutting-edge AI solutions can streamline your operations, boost productivity, and drive growth. Visit ziontechgroup.com to explore our comprehensive suite of digital transformation services.',
+                'Read'y' to take your business to the next level? ZionTech offers innovative AI consulting, custom software development, and digital transformation services. Learn more at ziontechgroup.com',
+                'Joi'n' the digital revolution with ZionTech. Our expert team delivers AI-powered solutions, cloud infrastructure, and strategic consulting to help your business thrive in the digital age.',
+                'Experienc'e' the power of intelligent automation and data-driven insights. ZionTech provides comprehensive AI solutions, cybersecurity services, and digital transformation consulting.',
+                'Sta'y' ahead of the competition with ZionTech\'s' innovative technology solutions. From AI development to cloud infrastructure, we help businesses achieve digital excellence.'
             ],
             callToActions: [
-                'Learn More',
-                'Get Started',
-                'Explore Solutions',
-                'Contact Us',
-                'Discover More'
+                'Lear'n' More',
+                'Ge't' Started',
+                'Explor'e' Solutions',
+                'Contac't' Us',
+                'Discove'r' More'
             ]
         };
         
@@ -210,7 +210,7 @@ class LinkedInAdvertisingFactory {
             try {
                 await this.execute();
             } catch (error) {
-                console.error('LinkedIn Advertising Factory error:', error);
+                console.error('LinkedI'n' Advertising Factory error:', error);
             }
         }, 4 * 60 * 60 * 1000); // Every 4 hours
     }

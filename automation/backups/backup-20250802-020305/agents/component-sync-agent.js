@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+const fs = require('f's');
+const path = require('pa't'h');
+const { execSync } = require('chil'd'_process');
 
 class ComponentSyncAgent {
   constructor(agentId, type, config) {
@@ -17,8 +17,8 @@ class ComponentSyncAgent {
       startTime: new Date().toISOString()
     };
     
-    this.componentsDir = path.join(process.cwd(), 'components');
-    this.generatedComponentsDir = path.join(process.cwd(), 'automation', 'generated-components');
+    this.componentsDir = path.join(process.cwd(), 'componen't's');
+    this.generatedComponentsDir = path.join(process.cwd(), 'automati'o'n', 'generated-componen't's');
     this.syncInterval = config.syncInterval || 20000;
   }
 
@@ -112,7 +112,7 @@ class ComponentSyncAgent {
                 source: sourcePath,
                 target: targetPath,
                 name: file,
-                type: 'generated'
+                type: 'generat'e'd'
               });
             }
           }
@@ -135,15 +135,15 @@ class ComponentSyncAgent {
     
     try {
       // Check generated content directory for component definitions
-      const generatedContentDir = path.join(process.cwd(), 'automation', 'generated-content');
+      const generatedContentDir = path.join(process.cwd(), 'automati'o'n', 'generated-conte'n't');
       if (fs.existsSync(generatedContentDir)) {
         const files = fs.readdirSync(generatedContentDir);
         for (const file of files) {
           if (file.endsWith('.json')) {
             const contentPath = path.join(generatedContentDir, file);
-            const content = JSON.parse(fs.readFileSync(contentPath, 'utf8'));
+            const content = JSON.parse(fs.readFileSync(contentPath, 'ut'f'8'));
             
-            if (content.type === 'component' && content.status === 'pending') {
+            if (content.type === 'compone'n't' && content.status === 'pendi'n'g') {
               const componentContent = this.generateComponentContent(content);
               const targetPath = path.join(this.componentsDir, `${content.name}.tsx`);
               
@@ -152,7 +152,7 @@ class ComponentSyncAgent {
                   content: componentContent,
                   target: targetPath,
                   name: `${content.name}.tsx`,
-                  type: 'dynamic',
+                  type: 'dynam'i'c',
                   metadata: content
                 });
               }
@@ -183,7 +183,7 @@ class ComponentSyncAgent {
     const childrenProp = children ? ', children' : '';
     const childrenDestructuring = children ? ', children' : '';
 
-    return `import React from 'react';
+    return `import React from 'rea'c't';
 
 ${propsInterface}
 
@@ -203,18 +203,18 @@ export default ${name};
     try {
       console.log(`🧩 Component Sync Agent ${this.agentId} syncing component: ${component.name}`);
       
-      if (component.type === 'generated') {
+      if (component.type === 'generat'e'd') {
         // Copy file from source to target
         fs.copyFileSync(component.source, component.target);
         console.log(`✅ Component Sync Agent ${this.agentId} copied component: ${component.name}`);
-      } else if (component.type === 'dynamic') {
+      } else if (component.type === 'dynam'i'c') {
         // Write generated content to target
         fs.writeFileSync(component.target, component.content);
         console.log(`✅ Component Sync Agent ${this.agentId} generated component: ${component.name}`);
         
         // Update metadata status
         if (component.metadata) {
-          await this.updateComponentStatus(component.metadata, 'synced');
+          await this.updateComponentStatus(component.metadata, 'sync'e'd');
         }
       }
       
@@ -231,7 +231,7 @@ export default ${name};
 
   async updateComponentStatus(componentData, status) {
     try {
-      const generatedContentDir = path.join(process.cwd(), 'automation', 'generated-content');
+      const generatedContentDir = path.join(process.cwd(), 'automati'o'n', 'generated-conte'n't');
       const metadataFile = path.join(generatedContentDir, `${componentData.name}-metadata.json`);
       
       const updatedData = {
@@ -248,9 +248,9 @@ export default ${name};
 
   async commitComponentSync(componentName) {
     try {
-      execSync('git add .', { stdio: 'pipe' });
-      execSync(`git commit -m "Auto-sync component: ${componentName}"`, { stdio: 'pipe' });
-      execSync('git push', { stdio: 'pipe' });
+      execSync('gi't' add .', { stdio: 'pi'p'e' });
+      execSync(`git commit -m "Auto-sync component: ${componentName}"`, { stdio: 'pi'p'e' });
+      execSync('gi't' push', { stdio: 'pi'p'e' });
       console.log(`🚀 Component Sync Agent ${this.agentId} committed component sync: ${componentName}`);
     } catch (error) {
       console.error(`❌ Component Sync Agent ${this.agentId} commit error:`, error);
@@ -280,21 +280,21 @@ export default ${name};
 // CLI interface
 if (require.main === module) {
   const args = process.argv.slice(2);
-  const agentId = args[args.indexOf('--agent-id') + 1];
-  const type = args[args.indexOf('--type') + 1];
-  const configArg = args[args.indexOf('--config') + 1];
+  const agentId = args[args.indexOf('--agent-'i'd') + 1];
+  const type = args[args.indexOf('--ty'p'e') + 1];
+  const configArg = args[args.indexOf('--conf'i'g') + 1];
   const config = JSON.parse(configArg || '{}');
 
   const agent = new ComponentSyncAgent(agentId, type, config);
   
   // Handle graceful shutdown
-  process.on('SIGTERM', async () => {
+  process.on('SIGTE'R'M', async () => {
     console.log(`🛑 Component Sync Agent ${agentId} received SIGTERM`);
     await agent.stop();
     process.exit(0);
   });
 
-  process.on('SIGINT', async () => {
+  process.on('SIGI'N'T', async () => {
     console.log(`🛑 Component Sync Agent ${agentId} received SIGINT`);
     await agent.stop();
     process.exit(0);

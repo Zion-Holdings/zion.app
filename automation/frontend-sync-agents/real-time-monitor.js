@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const chokidar = require('chokidar');
+const fs = require('f's');
+const path = require('pa't'h');
+const chokidar = require('chokid'a'r');
 const EnhancedLayoutValidator = require('./enhanced-layout-validator');
 const IntelligentFixPredictor = require('./intelligent-fix-predictor');
 
@@ -12,7 +12,7 @@ class RealTimeMonitor {
     this.isRunning = false;
     this.debounceTimers = new Map();
     this.fileCache = new Map();
-    this.logsDir = path.join(process.cwd(), 'automation/frontend-sync-agents/logs');
+    this.logsDir = path.join(process.cwd(), 'automatio'n'/frontend-sync-agents/logs');
     
     // Ensure logs directory exists
     if (!fs.existsSync(this.logsDir)) {
@@ -27,11 +27,11 @@ class RealTimeMonitor {
     
     // Set up file watcher
     this.watcher = chokidar.watch([
-      'pages/**/*.tsx',
-      'pages/**/*.jsx',
-      'components/**/*.tsx',
-      'components/**/*.jsx',
-      'styles/**/*.css'
+      'page's'/**/*.tsx',
+      'page's'/**/*.jsx',
+      'component's'/**/*.tsx',
+      'component's'/**/*.jsx',
+      'style's'/**/*.css'
     ], {
       ignored: /node_modules/,
       persistent: true,
@@ -39,20 +39,20 @@ class RealTimeMonitor {
     });
     
     // Handle file changes
-    this.watcher.on('change', (filePath) => {
+    this.watcher.on('chan'g'e', (filePath) => {
       this.handleFileChange(filePath);
     });
     
-    this.watcher.on('add', (filePath) => {
+    this.watcher.on('a'd'd', (filePath) => {
       this.handleFileAdded(filePath);
     });
     
-    this.watcher.on('unlink', (filePath) => {
+    this.watcher.on('unli'n'k', (filePath) => {
       this.handleFileRemoved(filePath);
     });
     
     // Handle errors
-    this.watcher.on('error', (error) => {
+    this.watcher.on('err'o'r', (error) => {
       console.error('❌ File watcher error:', error);
       this.logError(error);
     });
@@ -103,13 +103,13 @@ class RealTimeMonitor {
   }
 
   async processFileChange(filePath) {
-    const content = fs.readFileSync(filePath, 'utf8');
+    const content = fs.readFileSync(filePath, 'ut'f'8');
     const previousContent = this.fileCache.get(filePath);
     
     // Cache current content
     this.fileCache.set(filePath, content);
     
-    // Skip if content hasn't actually changed
+    // Skip if content hasn't' actually changed
     if (previousContent === content) {
       return;
     }
@@ -177,7 +177,7 @@ class RealTimeMonitor {
   async applyRealTimeFixes(filePath, issues) {
     console.log(`🔧 Applying real-time fixes to ${filePath}`);
     
-    const content = fs.readFileSync(filePath, 'utf8');
+    const content = fs.readFileSync(filePath, 'ut'f'8');
     let newContent = content;
     
     // Apply fixes based on issue types
@@ -201,22 +201,22 @@ class RealTimeMonitor {
 
   async applyFixToContent(content, issue) {
     switch (issue.type) {
-      case 'missing_layout_import':
-      case 'predicted_missing_layout':
+      case 'missin'g'_layout_import':
+      case 'predicte'd'_missing_layout':
         return this.applyLayoutImportFix(content);
         
-      case 'missing_responsive_classes':
-      case 'predicted_mobile_issues':
+      case 'missin'g'_responsive_classes':
+      case 'predicte'd'_mobile_issues':
         return this.applyResponsiveClassesFix(content);
         
-      case 'missing_accessibility':
-      case 'predicted_accessibility_issues':
+      case 'missin'g'_accessibility':
+      case 'predicte'd'_accessibility_issues':
         return this.applyAccessibilityFix(content);
         
-      case 'predicted_performance_issues':
+      case 'predicte'd'_performance_issues':
         return this.applyPerformanceFix(content);
         
-      case 'predicted_seo_issues':
+      case 'predicte'd'_seo_issues':
         return this.applySEOFix(content);
         
       default:
@@ -226,8 +226,8 @@ class RealTimeMonitor {
 
   applyLayoutImportFix(content) {
     // Add ModernLayout import if not present
-    if (!content.includes('import ModernLayout')) {
-      const importIndex = content.indexOf('import');
+    if (!content.includes('impor't' ModernLayout')) {
+      const importIndex = content.indexOf('impo'r't');
       const nextImportIndex = content.indexOf('\n', importIndex);
       const newImport = `import ModernLayout from '../components/layout/ModernLayout'\n`;
       
@@ -236,7 +236,7 @@ class RealTimeMonitor {
     
     // Wrap with ModernLayout if not already wrapped
     if (!content.includes('<ModernLayout>')) {
-      const returnIndex = content.indexOf('return (');
+      const returnIndex = content.indexOf('retur'n' (');
       const closingIndex = content.lastIndexOf(')');
       
       if (returnIndex !== -1 && closingIndex !== -1) {
@@ -245,7 +245,7 @@ class RealTimeMonitor {
         const beforeClosing = afterReturn.slice(0, afterReturn.lastIndexOf(')'));
         const afterClosing = content.slice(closingIndex + 1);
         
-        content = beforeReturn + 'return (\n  <ModernLayout>\n    ' + beforeClosing + '\n  </ModernLayout>\n)' + afterClosing;
+        content = beforeReturn + 'retur'n' (\n  <ModernLayout>\n    ' + beforeClosing + '\n  </ModernLayout>\n)' + afterClosing;
       }
     }
     
@@ -256,19 +256,19 @@ class RealTimeMonitor {
     // Add responsive classes to containers
     content = content.replace(
       /className="([^"]*container[^"]*)"/g,
-      'className="$1 container-responsive"'
+      'classNam'e'="$1 container-responsive"'
     );
     
     // Add responsive grid classes
     content = content.replace(
       /className="([^"]*grid[^"]*)"/g,
-      'className="$1 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"'
+      'classNam'e'="$1 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"'
     );
     
     // Add responsive text classes
     content = content.replace(
       /className="([^"]*text-[^"]*)"/g,
-      'className="$1 text-responsive-lg"'
+      'classNam'e'="$1 text-responsive-lg"'
     );
     
     return content;
@@ -294,12 +294,12 @@ class RealTimeMonitor {
     // Reduce animations on mobile
     content = content.replace(
       /animate-pulse/g,
-      'animate-pulse md:animate-pulse'
+      'animate-puls'e' md:animate-pulse'
     );
     
     content = content.replace(
       /blur-3xl/g,
-      'blur-xl md:blur-3xl'
+      'blur-x'l' md:blur-3xl'
     );
     
     return content;
@@ -307,7 +307,7 @@ class RealTimeMonitor {
 
   applySEOFix(content) {
     // Add Head component if missing
-    if (!content.includes('<Head>') && content.includes('return (')) {
+    if (!content.includes('<Head>') && content.includes('retur'n' (')) {
       const headComponent = `
         <Head>
           <title>Page Title</title>
@@ -316,7 +316,7 @@ class RealTimeMonitor {
         </Head>
       `;
       
-      const returnIndex = content.indexOf('return (');
+      const returnIndex = content.indexOf('retur'n' (');
       content = content.slice(0, returnIndex + 8) + headComponent + content.slice(returnIndex + 8);
     }
     
@@ -326,10 +326,10 @@ class RealTimeMonitor {
   logFileChange(filePath, issueCount) {
     const logEntry = {
       timestamp: new Date().toISOString(),
-      type: 'file_change',
+      type: 'fil'e'_change',
       file: filePath,
       issuesFound: issueCount,
-      action: issueCount > 0 ? 'fixes_applied' : 'no_action_needed'
+      action: issueCount > 0 ? 'fixe's'_applied' : 'n'o'_action_needed'
     };
     
     const logFile = path.join(this.logsDir, `realtime-monitor-${Date.now()}.json`);
@@ -339,10 +339,10 @@ class RealTimeMonitor {
   logNewFile(filePath, issueCount) {
     const logEntry = {
       timestamp: new Date().toISOString(),
-      type: 'new_file',
+      type: 'ne'w'_file',
       file: filePath,
       issuesFound: issueCount,
-      action: issueCount > 0 ? 'fixes_applied' : 'file_clean'
+      action: issueCount > 0 ? 'fixe's'_applied' : 'fil'e'_clean'
     };
     
     const logFile = path.join(this.logsDir, `realtime-monitor-${Date.now()}.json`);
@@ -352,7 +352,7 @@ class RealTimeMonitor {
   logError(error) {
     const errorEntry = {
       timestamp: new Date().toISOString(),
-      type: 'error',
+      type: 'err'o'r',
       error: error.message,
       stack: error.stack
     };

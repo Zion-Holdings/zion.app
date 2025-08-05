@@ -11,18 +11,18 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>'
 ) {
-  if (req.method !== 'GET' && req.method !== 'POST') {
-    return res.status(405).json({'
+  if (req.method !== GE'T' && req.method !== POS'T') {
+    return res.status(405).json({
       success: false, 
-      message: 'Method not allowed',
+      message: Metho'd' not allowed,
       timestamp: new Date().toISOString(
     });}
   try {
     // Optimization Api API logic here
-    const data = {'
+    const data = {
       id: Date.now(),
-      type: 'optimization-api',
-      status: 'active',
+      type: 'optimization-a'pi,
+      status: 'acti've,
       timestamp: new Date().toISOString(;
     };
 

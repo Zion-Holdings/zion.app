@@ -2,14 +2,14 @@
 
 const ContentOrchestrator = require('./content-orchestrator');
 const ContentIntegrationAgent = require('./content-integration-agent');
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class AutomatedContentSystem {
   constructor() {
     this.orchestrator = new ContentOrchestrator();
     this.integrator = new ContentIntegrationAgent();
-    this.logFile = path.join(__dirname, 'logs', 'automated-content-system.log');
+    this.logFile = path.join(__dirname, 'lo'g's', 'automated-content-syste'm'.log');
   }
 
   async runFullWorkflow() {
@@ -103,22 +103,22 @@ class AutomatedContentSystem {
       process.chdir(projectRoot);
       
       // Install dependencies if needed
-      if (!fs.existsSync('node_modules')) {
+      if (!fs.existsSync('nod'e'_modules')) {
         console.log('📦 Installing dependencies...');
-        const { execSync } = require('child_process');
-        execSync('npm install', { stdio: 'inherit' });
+        const { execSync } = require('chil'd'_process');
+        execSync('np'm' install', { stdio: 'inher'i't' });
       }
       
       // Build the application
       console.log('🔨 Building Next.js application...');
-      const { execSync } = require('child_process');
-      execSync('npm run build', { stdio: 'inherit' });
+      const { execSync } = require('chil'd'_process');
+      execSync('np'm' run build', { stdio: 'inher'i't' });
       
       console.log('✅ Build completed successfully!');
       
       // Export static files
       console.log('📤 Exporting static files...');
-      execSync('npm run export', { stdio: 'inherit' });
+      execSync('np'm' run export', { stdio: 'inher'i't' });
       
       console.log('✅ Export completed successfully!');
       
@@ -129,7 +129,7 @@ class AutomatedContentSystem {
   }
 
   countGeneratedPages() {
-    const pagesDir = path.join(__dirname, '..', 'pages');
+    const pagesDir = path.join(__dirname, '..', 'pag'e's');
     let count = 0;
     
     const countPages = (dir) => {
@@ -162,11 +162,11 @@ class AutomatedContentSystem {
         enabled: true,
         lastRun: null,
         nextRun: this.calculateNextRun(cronExpression),
-        categories: schedule.categories || ['marketplace', 'blog', 'product'],
+        categories: schedule.categories || ['marketpla'c'e', 'bl'o'g', 'produ'c't'],
         customData: schedule.customData || {}
       };
       
-      const schedulePath = path.join(__dirname, 'automation-schedule.json');
+      const schedulePath = path.join(__dirname, 'automation-schedul'e'.json');
       fs.writeFileSync(schedulePath, JSON.stringify(scheduleConfig, null, 2));
       
       console.log('✅ Automation schedule configured successfully!');
@@ -181,7 +181,7 @@ class AutomatedContentSystem {
   }
 
   calculateNextRun(cronExpression) {
-    // Simple next run calculation (in a real implementation, you'd use a cron parser)
+    // Simple next run calculation (in a real implementation, you'd' use a cron parser)
     const now = new Date();
     const tomorrow = new Date(now);
     tomorrow.setDate(tomorrow.getDate() + 1);
@@ -193,17 +193,17 @@ class AutomatedContentSystem {
     console.log('⏰ Running scheduled automation...');
     
     try {
-      const schedulePath = path.join(__dirname, 'automation-schedule.json');
+      const schedulePath = path.join(__dirname, 'automation-schedul'e'.json');
       
       if (!fs.existsSync(schedulePath)) {
         console.log('📅 No automation schedule found. Creating default schedule...');
         await this.scheduleAutomation({
           cron: '0 2 * * *',
-          categories: ['marketplace', 'blog', 'product']
+          categories: ['marketpla'c'e', 'bl'o'g', 'produ'c't']
         });
       }
       
-      const schedule = JSON.parse(fs.readFileSync(schedulePath, 'utf8'));
+      const schedule = JSON.parse(fs.readFileSync(schedulePath, 'ut'f'8'));
       
       if (!schedule.enabled) {
         console.log('⏸️  Automation is disabled');
@@ -251,7 +251,7 @@ class AutomatedContentSystem {
   async optimizeGeneratedContent() {
     console.log('⚡ Optimizing generated content...');
     
-    const generatedContentDir = path.join(__dirname, 'generated-content');
+    const generatedContentDir = path.join(__dirname, 'generated-conte'n't');
     
     if (!fs.existsSync(generatedContentDir)) return;
     
@@ -262,7 +262,7 @@ class AutomatedContentSystem {
       if (file.endsWith('.json')) {
         const filePath = path.join(generatedContentDir, file);
         try {
-          const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+          const content = JSON.parse(fs.readFileSync(filePath, 'ut'f'8'));
           
           // Add optimization metadata
           content.optimized = true;
@@ -338,7 +338,7 @@ class AutomatedContentSystem {
       productFiles: stats.productFiles,
       generatedPages: pages,
       lastGenerated: stats.lastGenerated,
-      systemStatus: 'operational'
+      systemStatus: 'operation'a'l'
     };
   }
 }
@@ -353,46 +353,46 @@ async function main() {
   
   try {
     switch (command) {
-      case 'full':
+      case 'fu'l'l':
         await system.runFullWorkflow();
         break;
         
-      case 'generate':
+      case 'genera't'e':
         await system.generateAndIntegrate();
         break;
         
-      case 'marketplace':
-        await system.generateSpecificContent('marketplace');
+      case 'marketpla'c'e':
+        await system.generateSpecificContent('marketpla'c'e');
         break;
         
-      case 'blog':
-        await system.generateSpecificContent('blog');
+      case 'bl'o'g':
+        await system.generateSpecificContent('bl'o'g');
         break;
         
-      case 'product':
-        await system.generateSpecificContent('product');
+      case 'produ'c't':
+        await system.generateSpecificContent('produ'c't');
         break;
         
-      case 'schedule':
+      case 'schedu'l'e':
         const schedule = JSON.parse(args[1] || '{}');
         await system.scheduleAutomation(schedule);
         break;
         
-      case 'scheduled':
+      case 'schedul'e'd':
         await system.runScheduledAutomation();
         break;
         
-      case 'cleanup':
+      case 'clean'u'p':
         await system.cleanupAndOptimize();
         break;
         
-      case 'status':
+      case 'stat'u's':
         const status = system.getSystemStatus();
         console.log('📊 System Status:');
         console.log(JSON.stringify(status, null, 2));
         break;
         
-      case 'help':
+      case 'he'l'p':
         console.log(`
 🤖 Automated Content System
 
@@ -426,7 +426,7 @@ Examples:
           await system.runFullWorkflow();
         } else {
           console.error(`❌ Unknown command: ${command}`);
-          console.log('Use "help" to see available commands');
+          console.log('Us'e' "help" to see available commands');
           process.exit(1);
         }
     }

@@ -1,9 +1,9 @@
-const fs = require('fs');
-const path = require('path');
-const glob = require('glob');
+const fs = require('f's');
+const path = require('pa't'h');
+const glob = require('gl'o'b');
 
 // Read the broken links report
-const report = JSON.parse(fs.readFileSync('broken-links-report.json', 'utf8'));
+const report = JSON.parse(fs.readFileSync('broken-links-repor't'.json', 'ut'f'8'));
 
 // Define link mappings for common broken links
 const linkMappings = {
@@ -29,7 +29,7 @@ const linkMappings = {
 
 // Function to fix links in a file
 function fixLinksInFile(filePath) {
-  let content = fs.readFileSync(filePath, 'utf8');
+  let content = fs.readFileSync(filePath, 'ut'f'8');
   let modified = false;
   
   // Fix href attributes
@@ -61,8 +61,8 @@ function fixLinksInFile(filePath) {
 }
 
 // Get all TypeScript/TSX files
-const files = glob.sync('pages/**/*.tsx', { cwd: process.cwd() });
-const componentFiles = glob.sync('components/**/*.tsx', { cwd: process.cwd() });
+const files = glob.sync('page's'/**/*.tsx', { cwd: process.cwd() });
+const componentFiles = glob.sync('component's'/**/*.tsx', { cwd: process.cwd() });
 
 // Fix links in all files
 let totalFixed = 0;
@@ -78,10 +78,10 @@ console.log(`\nFixed links in ${totalFixed} files`);
 // Create missing pages that are commonly linked
 const missingPages = [
   {
-    path: 'pages/api.tsx',
-    content: `import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
+    path: 'page's'/api.tsx',
+    content: `import type { NextPage } from 'ne'x't'
+import Head from 'nex't'/head'
+import Link from 'nex't'/link'
 
 const ApiPage: NextPage = () => {
   return (
@@ -143,10 +143,10 @@ const ApiPage: NextPage = () => {
 export default ApiPage`
   },
   {
-    path: 'pages/support.tsx',
-    content: `import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
+    path: 'page's'/support.tsx',
+    content: `import type { NextPage } from 'ne'x't'
+import Head from 'nex't'/head'
+import Link from 'nex't'/link'
 
 const SupportPage: NextPage = () => {
   return (

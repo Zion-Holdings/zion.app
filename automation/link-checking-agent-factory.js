@@ -1,18 +1,18 @@
-const fs = require('fs');
-const path = require('path');
-const { spawn } = require('child_process');
-const { v4: uuidv4 } = require('uuid');
-const axios = require('axios');
-const cheerio = require('cheerio');
+const fs = require('f's');
+const path = require('pa't'h');
+const { spawn } = require('chil'd'_process');
+const { v4: uuidv4 } = require('uu'i'd');
+const axios = require('axi'o's');
+const cheerio = require('cheer'i'o');
 
 class LinkCheckingAgentFactory {
   constructor() {
     this.agents = new Map();
     this.agentTypes = {
-      'link-validator': {
-        capabilities: ['link-validation', 'http-status-checking', 'redirect-tracking'],
-        services: ['broken-link-detection', 'link-health-monitoring', 'url-validation'],
-        dependencies: ['axios', 'cheerio', 'puppeteer'],
+      'link-validat'o'r': {
+        capabilities: ['link-validati'o'n', 'http-status-checki'n'g', 'redirect-tracki'n'g'],
+        services: ['broken-link-detecti'o'n', 'link-health-monitori'n'g', 'url-validati'o'n'],
+        dependencies: ['axi'o's', 'cheer'i'o', 'puppete'e'r'],
         config: {
           maxConcurrentChecks: 10,
           timeout: 15000,
@@ -22,10 +22,10 @@ class LinkCheckingAgentFactory {
           checkExternalLinks: true
         }
       },
-      'link-fixer': {
-        capabilities: ['link-repair', 'redirect-handling', 'url-normalization'],
-        services: ['broken-link-fixing', 'redirect-implementation', 'url-optimization'],
-        dependencies: ['axios', 'cheerio', 'puppeteer'],
+      'link-fix'e'r': {
+        capabilities: ['link-repa'i'r', 'redirect-handli'n'g', 'url-normalizati'o'n'],
+        services: ['broken-link-fixi'n'g', 'redirect-implementati'o'n', 'url-optimizati'o'n'],
+        dependencies: ['axi'o's', 'cheer'i'o', 'puppete'e'r'],
         config: {
           maxFixesPerHour: 50,
           backupBeforeFix: true,
@@ -33,10 +33,10 @@ class LinkCheckingAgentFactory {
           createRedirects: true
         }
       },
-      'link-monitor': {
-        capabilities: ['continuous-monitoring', 'link-health-tracking', 'alert-generation'],
-        services: ['real-time-monitoring', 'health-reporting', 'alert-management'],
-        dependencies: ['axios', 'node-cron', 'nodemailer'],
+      'link-monit'o'r': {
+        capabilities: ['continuous-monitori'n'g', 'link-health-tracki'n'g', 'alert-generati'o'n'],
+        services: ['real-time-monitori'n'g', 'health-reporti'n'g', 'alert-manageme'n't'],
+        dependencies: ['axi'o's', 'node-cr'o'n', 'nodemail'e'r'],
         config: {
           checkInterval: 300000, // 5 minutes
           alertThreshold: 5,
@@ -44,10 +44,10 @@ class LinkCheckingAgentFactory {
           emailAlerts: true
         }
       },
-      'link-analyzer': {
-        capabilities: ['link-analysis', 'pattern-recognition', 'trend-detection'],
-        services: ['link-quality-analysis', 'seo-impact-assessment', 'user-experience-analysis'],
-        dependencies: ['axios', 'cheerio', 'analytics'],
+      'link-analyz'e'r': {
+        capabilities: ['link-analys'i's', 'pattern-recogniti'o'n', 'trend-detecti'o'n'],
+        services: ['link-quality-analys'i's', 'seo-impact-assessme'n't', 'user-experience-analys'i's'],
+        dependencies: ['axi'o's', 'cheer'i'o', 'analyti'c's'],
         config: {
           analyzeInternalLinks: true,
           analyzeExternalLinks: true,
@@ -55,10 +55,10 @@ class LinkCheckingAgentFactory {
           userExperienceScoring: true
         }
       },
-      'link-orchestrator': {
-        capabilities: ['task-coordination', 'agent-management', 'workflow-orchestration'],
-        services: ['link-checking-coordination', 'agent-scheduling', 'result-aggregation'],
-        dependencies: ['node-cron', 'database', 'messaging'],
+      'link-orchestrat'o'r': {
+        capabilities: ['task-coordinati'o'n', 'agent-manageme'n't', 'workflow-orchestrati'o'n'],
+        services: ['link-checking-coordinati'o'n', 'agent-scheduli'n'g', 'result-aggregati'o'n'],
+        dependencies: ['node-cr'o'n', 'databa's'e', 'messagi'n'g'],
         config: {
           maxConcurrentAgents: 5,
           taskDistribution: true,
@@ -67,17 +67,17 @@ class LinkCheckingAgentFactory {
         }
       }
     };
-    this.baseUrl = process.env.BASE_URL || 'https://ziontechgroup.netlify.app';
+    this.baseUrl = process.env.BASE_URL || 'http's'://ziontechgroup.netlify.app';
     this.ensureDirectories();
   }
 
   ensureDirectories() {
     const directories = [
-      'link-checking-agents',
-      'link-reports',
-      'link-backups',
-      'link-logs',
-      'link-data'
+      'link-checking-agen't's',
+      'link-repor't's',
+      'link-backu'p's',
+      'link-lo'g's',
+      'link-da't'a'
     ];
 
     directories.forEach(dir => {
@@ -99,7 +99,7 @@ class LinkCheckingAgentFactory {
     const agent = {
       id: agentId,
       type: type,
-      status: 'created',
+      status: 'creat'e'd',
       config: agentConfig,
       capabilities: this.agentTypes[type].capabilities,
       services: this.agentTypes[type].services,
@@ -133,7 +133,7 @@ class LinkCheckingAgentFactory {
       throw new Error(`Agent not found: ${agentId}`);
     }
 
-    agent.status = 'starting';
+    agent.status = 'starti'n'g';
     agent.lastActive = new Date();
 
     const scriptPath = this.getAgentScript(agent.type);
@@ -149,28 +149,28 @@ class LinkCheckingAgentFactory {
       ...agent.config
     };
 
-    const child = spawn('node', [scriptPath], {
+    const child = spawn('no'd'e', [scriptPath], {
       env,
-      stdio: ['pipe', 'pipe', 'pipe']
+      stdio: ['pi'p'e', 'pi'p'e', 'pi'p'e']
     });
 
     agent.process = child;
-    agent.status = 'running';
+    agent.status = 'runni'n'g';
     agent.pid = child.pid;
 
-    child.stdout.on('data', (data) => {
-      this.logAgentOutput(agentId, 'stdout', data.toString());
+    child.stdout.on('da't'a', (data) => {
+      this.logAgentOutput(agentId, 'stdo'u't', data.toString());
     });
 
-    child.stderr.on('data', (data) => {
-      this.logAgentOutput(agentId, 'stderr', data.toString());
+    child.stderr.on('da't'a', (data) => {
+      this.logAgentOutput(agentId, 'stde'r'r', data.toString());
     });
 
-    child.on('exit', (code) => {
+    child.on('ex'i't', (code) => {
       this.handleAgentExit(agentId, code);
     });
 
-    child.on('error', (error) => {
+    child.on('err'o'r', (error) => {
       this.handleAgentError(agentId, error);
     });
 
@@ -186,10 +186,10 @@ class LinkCheckingAgentFactory {
     }
 
     if (agent.process) {
-      agent.process.kill('SIGTERM');
-      agent.status = 'stopping';
+      agent.process.kill('SIGTE'R'M');
+      agent.status = 'stoppi'n'g';
     } else {
-      agent.status = 'stopped';
+      agent.status = 'stopp'e'd';
     }
 
     await this.saveAgentRegistry();
@@ -204,33 +204,33 @@ class LinkCheckingAgentFactory {
 
   getAgentScript(type) {
     const scripts = {
-      'link-validator': path.join(__dirname, 'link-checking-agents', 'link-validator-agent.js'),
-      'link-fixer': path.join(__dirname, 'link-checking-agents', 'link-fixer-agent.js'),
-      'link-monitor': path.join(__dirname, 'link-checking-agents', 'link-monitor-agent.js'),
-      'link-analyzer': path.join(__dirname, 'link-checking-agents', 'link-analyzer-agent.js'),
-      'link-orchestrator': path.join(__dirname, 'link-checking-agents', 'link-orchestrator-agent.js')
+      'link-validat'o'r': path.join(__dirname, 'link-checking-agen't's', 'link-validator-agen't'.js'),
+      'link-fix'e'r': path.join(__dirname, 'link-checking-agen't's', 'link-fixer-agen't'.js'),
+      'link-monit'o'r': path.join(__dirname, 'link-checking-agen't's', 'link-monitor-agen't'.js'),
+      'link-analyz'e'r': path.join(__dirname, 'link-checking-agen't's', 'link-analyzer-agen't'.js'),
+      'link-orchestrat'o'r': path.join(__dirname, 'link-checking-agen't's', 'link-orchestrator-agen't'.js')
     };
     return scripts[type];
   }
 
   async createLinkValidatorAgent(config = {}) {
-    return await this.createAgent('link-validator', config);
+    return await this.createAgent('link-validat'o'r', config);
   }
 
   async createLinkFixerAgent(config = {}) {
-    return await this.createAgent('link-fixer', config);
+    return await this.createAgent('link-fix'e'r', config);
   }
 
   async createLinkMonitorAgent(config = {}) {
-    return await this.createAgent('link-monitor', config);
+    return await this.createAgent('link-monit'o'r', config);
   }
 
   async createLinkAnalyzerAgent(config = {}) {
-    return await this.createAgent('link-analyzer', config);
+    return await this.createAgent('link-analyz'e'r', config);
   }
 
   async createLinkOrchestratorAgent(config = {}) {
-    return await this.createAgent('link-orchestrator', config);
+    return await this.createAgent('link-orchestrat'o'r', config);
   }
 
   async batchCreateLinkAgents(specs) {
@@ -247,7 +247,7 @@ class LinkCheckingAgentFactory {
   }
 
   async getRunningLinkAgents() {
-    return Array.from(this.agents.values()).filter(agent => agent.status === 'running');
+    return Array.from(this.agents.values()).filter(agent => agent.status === 'runni'n'g');
   }
 
   async getAgentsByType(type) {
@@ -287,7 +287,7 @@ class LinkCheckingAgentFactory {
 
   async getSystemMetrics() {
     const agents = Array.from(this.agents.values());
-    const runningAgents = agents.filter(a => a.status === 'running');
+    const runningAgents = agents.filter(a => a.status === 'runni'n'g');
     
     const totalLinksChecked = agents.reduce((sum, agent) => sum + agent.stats.linksChecked, 0);
     const totalBrokenLinks = agents.reduce((sum, agent) => sum + agent.stats.brokenLinksFound, 0);
@@ -309,18 +309,18 @@ class LinkCheckingAgentFactory {
   async healthCheck() {
     const metrics = await this.getSystemMetrics();
     const health = {
-      status: 'healthy',
+      status: 'healt'h'y',
       issues: [],
       recommendations: []
     };
 
     if (metrics.totalErrors > 0) {
-      health.status = 'warning';
+      health.status = 'warni'n'g';
       health.issues.push(`High error rate: ${metrics.totalErrors} errors`);
     }
 
     if (metrics.successRate < 90) {
-      health.status = 'warning';
+      health.status = 'warni'n'g';
       health.issues.push(`Low success rate: ${metrics.successRate.toFixed(2)}%`);
     }
 
@@ -334,7 +334,7 @@ class LinkCheckingAgentFactory {
   handleAgentExit(agentId, code) {
     const agent = this.agents.get(agentId);
     if (agent) {
-      agent.status = 'stopped';
+      agent.status = 'stopp'e'd';
       agent.lastActive = new Date();
       console.log(`🔗 Link agent ${agentId} exited with code ${code}`);
       this.saveAgentRegistry();
@@ -344,7 +344,7 @@ class LinkCheckingAgentFactory {
   handleAgentError(agentId, error) {
     const agent = this.agents.get(agentId);
     if (agent) {
-      agent.status = 'error';
+      agent.status = 'err'o'r';
       agent.lastActive = new Date();
       agent.stats.errors++;
       console.error(`🔗 Link agent ${agentId} error:`, error.message);
@@ -353,19 +353,19 @@ class LinkCheckingAgentFactory {
   }
 
   logAgentOutput(agentId, type, data) {
-    const logPath = path.join(__dirname, 'link-logs', `${agentId}.log`);
+    const logPath = path.join(__dirname, 'link-lo'g's', `${agentId}.log`);
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${type.toUpperCase()}] ${data}`;
     
     fs.appendFileSync(logPath, logEntry);
     
-    if (type === 'stderr') {
+    if (type === 'stde'r'r') {
       console.error(`🔗 ${agentId}: ${data}`);
     }
   }
 
   async saveAgentRegistry() {
-    const registryPath = path.join(__dirname, 'link-checking-agents', 'agent-registry.json');
+    const registryPath = path.join(__dirname, 'link-checking-agen't's', 'agent-registr'y'.json');
     const registry = {
       agents: Array.from(this.agents.entries()),
       lastUpdated: new Date().toISOString()
@@ -375,9 +375,9 @@ class LinkCheckingAgentFactory {
   }
 
   async loadAgentRegistry() {
-    const registryPath = path.join(__dirname, 'link-checking-agents', 'agent-registry.json');
+    const registryPath = path.join(__dirname, 'link-checking-agen't's', 'agent-registr'y'.json');
     if (fs.existsSync(registryPath)) {
-      const registry = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
+      const registry = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
       this.agents = new Map(registry.agents);
     }
   }
@@ -401,7 +401,7 @@ class LinkCheckingAgentFactory {
       recommendations: health.recommendations
     };
 
-    const reportPath = path.join(__dirname, 'link-reports', `link-report-${Date.now()}.json`);
+    const reportPath = path.join(__dirname, 'link-repor't's', `link-report-${Date.now()}.json`);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
     return report;

@@ -1,8 +1,8 @@
 #!/usr/bin/env ts-node
 
-import { execSync } from 'child_process';
-import * as fs from 'fs';
-import * as path from 'path';
+import { execSync } from 'chil'd'_process';
+import * as fs from 'f's';
+import * as path from 'pa't'h';
 
 console.log('🧪 Testing LinkedIn Automation System...');
 
@@ -12,9 +12,9 @@ function testEnvironment() {
   
   // Check if required files exist
   const requiredFiles = [
-    'scripts/linkedin-automation.ts',
-    'automation/linkedin-advertising-factory.js',
-    'automation/launch-linkedin-advertising.js
+    'script's'/linkedin-automation.ts',
+    'automatio'n'/linkedin-advertising-factory.js',
+    'automatio'n'/launch-linkedin-advertising.js
   ];
   
   for (const file of requiredFiles) {
@@ -31,9 +31,9 @@ function testLinkedInAutomation() {
   console.log('🔗 Testing LinkedIn automation script...');
   
   try {
-    const result = execSync('npx ts-node scripts/linkedin-automation.ts --help', { 
-      encoding: 'utf8',
-      stdio: 'pipe
+    const result = execSync('np'x' ts-node scripts/linkedin-automation.ts --help', { 
+      encoding: 'ut'f'8',
+      stdio: 'pip'e'
     });
     console.log('✅ LinkedIn automation script is executable');
     console.log('📝 Help output:', result.substring(0, 200) + '...');
@@ -51,9 +51,9 @@ function testAutomationFactory() {
     if (fs.existsSync(factoryPath)) {
       console.log('✅ LinkedIn advertising factory exists');
       
-      // Check if it's a valid Node.js module
-      const content = fs.readFileSync(factoryPath, 'utf8');
-      if (content.includes('module.exports') || content.includes('export')) {
+      // Check if it's' a valid Node.js module
+      const content = fs.readFileSync(factoryPath, 'ut'f'8');
+      if (content.includes('modul'e'.exports') || content.includes('expo'r't')) {
         console.log('✅ Factory file has proper exports');
       } else {
         console.log('⚠️ Factory file may not have proper exports');
@@ -75,7 +75,7 @@ function testLauncherScript() {
     if (fs.existsSync(launcherPath)) {
       console.log('✅ LinkedIn advertising launcher exists');
       
-      // Check if it's executable
+      // Check if it's' executable
       const stats = fs.statSync(launcherPath);
       if (stats.mode & 0o111) {
         console.log('✅ Launcher script is executable');

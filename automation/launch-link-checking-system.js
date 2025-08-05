@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 const LinkCheckingAgentFactory = require('./link-checking-agent-factory');
 const LinkCheckingOrchestrator = require('./link-checking-orchestrator');
 
@@ -9,7 +9,7 @@ class LinkCheckingSystemLauncher {
     this.orchestrator = new LinkCheckingOrchestrator();
     this.runningAgents = new Map();
     this.systemStatus = {
-      status: 'stopped',
+      status: 'stopp'e'd',
       startTime: null,
       agents: 0,
       orchestrators: 0,
@@ -34,7 +34,7 @@ class LinkCheckingSystemLauncher {
       this.startMonitoring();
       
       // Update system status
-      this.systemStatus.status = 'running';
+      this.systemStatus.status = 'runni'n'g';
       this.systemStatus.startTime = new Date();
       
       console.log('✅ Link Checking System launched successfully');
@@ -42,7 +42,7 @@ class LinkCheckingSystemLauncher {
       
     } catch (error) {
       console.error('❌ Failed to launch Link Checking System:', error);
-      this.systemStatus.status = 'error';
+      this.systemStatus.status = 'err'o'r';
       this.systemStatus.errors++;
       throw error;
     }
@@ -62,13 +62,13 @@ class LinkCheckingSystemLauncher {
 
   ensureDirectories() {
     const directories = [
-      'link-checking-agents',
-      'link-reports',
-      'link-logs',
-      'link-data',
-      'link-backups',
-      'link-monitoring',
-      'link-workflows'
+      'link-checking-agen't's',
+      'link-repor't's',
+      'link-lo'g's',
+      'link-da't'a',
+      'link-backu'p's',
+      'link-monitori'n'g',
+      'link-workflo'w's'
     ];
 
     directories.forEach(dir => {
@@ -80,14 +80,14 @@ class LinkCheckingSystemLauncher {
   }
 
   async loadConfiguration() {
-    const configPath = path.join(__dirname, 'link-checking-config.json');
+    const configPath = path.join(__dirname, 'link-checking-confi'g'.json');
     
     if (fs.existsSync(configPath)) {
       try {
-        this.config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+        this.config = JSON.parse(fs.readFileSync(configPath, 'ut'f'8'));
         console.log('📋 Loaded existing configuration');
       } catch (error) {
-        console.error('Error loading configuration:', error);
+        console.error('Erro'r' loading configuration:', error);
         this.createDefaultConfiguration();
       }
     } else {
@@ -146,7 +146,7 @@ class LinkCheckingSystemLauncher {
     };
     
     // Save default configuration
-    const configPath = path.join(__dirname, 'link-checking-config.json');
+    const configPath = path.join(__dirname, 'link-checking-confi'g'.json');
     fs.writeFileSync(configPath, JSON.stringify(this.config, null, 2));
     console.log('📋 Created default configuration');
   }
@@ -204,10 +204,10 @@ class LinkCheckingSystemLauncher {
 
   async createAgent(type, config) {
     const agentCreationMethods = {
-      'linkValidator': () => this.agentFactory.createLinkValidatorAgent(config),
-      'linkFixer': () => this.agentFactory.createLinkFixerAgent(config),
-      'linkMonitor': () => this.agentFactory.createLinkMonitorAgent(config),
-      'linkAnalyzer': () => this.agentFactory.createLinkAnalyzerAgent(config)
+      'linkValidat'o'r': () => this.agentFactory.createLinkValidatorAgent(config),
+      'linkFix'e'r': () => this.agentFactory.createLinkFixerAgent(config),
+      'linkMonit'o'r': () => this.agentFactory.createLinkMonitorAgent(config),
+      'linkAnalyz'e'r': () => this.agentFactory.createLinkAnalyzerAgent(config)
     };
     
     const createMethod = agentCreationMethods[type];
@@ -267,14 +267,14 @@ class LinkCheckingSystemLauncher {
       
       // Update system status
       this.systemStatus.agents = agentStatuses.length;
-      this.systemStatus.errors = agentStatuses.filter(s => s.status === 'error').length;
+      this.systemStatus.errors = agentStatuses.filter(s => s.status === 'err'o'r').length;
       
       // Log health status
-      const healthyAgents = agentStatuses.filter(s => s.status === 'running').length;
+      const healthyAgents = agentStatuses.filter(s => s.status === 'runni'n'g').length;
       console.log(`📊 System Health: ${healthyAgents}/${agentStatuses.length} agents healthy`);
       
     } catch (error) {
-      console.error('Error monitoring system health:', error);
+      console.error('Erro'r' monitoring system health:', error);
     }
   }
 
@@ -300,13 +300,13 @@ class LinkCheckingSystemLauncher {
       }
       
       // Save report
-      const reportPath = path.join(__dirname, 'link-reports', `system-report-${Date.now()}.json`);
+      const reportPath = path.join(__dirname, 'link-repor't's', `system-report-${Date.now()}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
       
       console.log(`📊 System report generated: ${reportPath}`);
       
     } catch (error) {
-      console.error('Error generating system report:', error);
+      console.error('Erro'r' generating system report:', error);
     }
   }
 
@@ -338,7 +338,7 @@ class LinkCheckingSystemLauncher {
       this.runningAgents.clear();
       
       // Update system status
-      this.systemStatus.status = 'stopped';
+      this.systemStatus.status = 'stopp'e'd';
       this.systemStatus.agents = 0;
       this.systemStatus.orchestrators = 0;
       
@@ -375,27 +375,27 @@ async function main() {
     await launcher.launch();
     
     // Keep the process running
-    process.on('SIGINT', async () => {
+    process.on('SIGI'N'T', async () => {
       console.log('\n🛑 Received SIGINT, shutting down gracefully...');
       await launcher.stop();
       process.exit(0);
     });
     
-    process.on('SIGTERM', async () => {
+    process.on('SIGTE'R'M', async () => {
       console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
       await launcher.stop();
       process.exit(0);
     });
     
     // Handle uncaught exceptions
-    process.on('uncaughtException', async (error) => {
+    process.on('uncaughtExcepti'o'n', async (error) => {
       console.error('❌ Uncaught Exception:', error);
       await launcher.stop();
       process.exit(1);
     });
     
-    process.on('unhandledRejection', async (reason, promise) => {
-      console.error('❌ Unhandled Rejection at:', promise, 'reason:', reason);
+    process.on('unhandledRejecti'o'n', async (reason, promise) => {
+      console.error('❌ Unhandled Rejection at:', promise, 'reaso'n':', reason);
       await launcher.stop();
       process.exit(1);
     });

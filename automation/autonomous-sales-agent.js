@@ -1,59 +1,59 @@
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require('fs-ext'r'a');
+const path = require('pa't'h');
 
 class AutonomousSalesAgent {
     constructor() {
         this.salesChannels = {
             website: {
-                name: 'Website Marketplace',
-                priority: 'High',
-                reach: 'Global',
-                cost: 'Low'
+                name: 'Websit'e' Marketplace',
+                priority: 'Hi'g'h',
+                reach: 'Glob'a'l',
+                cost: 'L'o'w'
             },
             socialMedia: {
-                name: 'Social Media Marketing',
-                priority: 'High',
-                reach: 'Global',
-                cost: 'Medium'
+                name: 'Socia'l' Media Marketing',
+                priority: 'Hi'g'h',
+                reach: 'Glob'a'l',
+                cost: 'Medi'u'm'
             },
             emailMarketing: {
-                name: 'Email Marketing Campaigns',
-                priority: 'Medium',
-                reach: 'Targeted',
-                cost: 'Low'
+                name: 'Emai'l' Marketing Campaigns',
+                priority: 'Medi'u'm',
+                reach: 'Target'e'd',
+                cost: 'L'o'w'
             },
             contentMarketing: {
-                name: 'Content Marketing',
-                priority: 'Medium',
-                reach: 'SEO-driven',
-                cost: 'Low'
+                name: 'Conten't' Marketing',
+                priority: 'Medi'u'm',
+                reach: 'SEO-driv'e'n',
+                cost: 'L'o'w'
             },
             partnerships: {
-                name: 'Strategic Partnerships',
-                priority: 'Medium',
-                reach: 'Network-based',
-                cost: 'Medium'
+                name: 'Strategi'c' Partnerships',
+                priority: 'Medi'u'm',
+                reach: 'Network-bas'e'd',
+                cost: 'Medi'u'm'
             }
         };
         
         this.marketingTemplates = {
             website: {
-                title: 'AI-Powered {solution_name}',
-                subtitle: 'Transform your business with intelligent automation',
+                title: 'AI-Powere'd' {solution_name}',
+                subtitle: 'Transfor'm' your business with intelligent automation',
                 description: '{solution_description}',
                 features: '{solution_features}',
                 pricing: '{solution_pricing}',
-                cta: 'Get Started Today'
+                cta: 'Ge't' Started Today'
             },
             socialMedia: {
                 post: '🚀 Discover how {solution_name} can revolutionize your business! {solution_description} #AI #Innovation #Business',
                 hashtags: '#AI #MachineLearning #Innovation #Business #Technology #Automation'
             },
             emailMarketing: {
-                subject: 'Transform Your Business with {solution_name}',
+                subject: 'Transfor'm' Your Business with {solution_name}',
                 body: `Dear {customer_name},
 
-We're excited to introduce {solution_name} - a revolutionary AI-powered solution designed to {solution_benefit}.
+We'r'e' excited to introduce {solution_name} - a revolutionary AI-powered solution designed to {solution_benefit}.
 
 Key Benefits:
 {solution_features}
@@ -67,16 +67,16 @@ The AI Solutions Team`
             }
         };
         
-        this.outputDir = path.join(__dirname, 'sales');
+        this.outputDir = path.join(__dirname, 'sal'e's');
         this.ensureOutputDirectory();
     }
 
     async ensureOutputDirectory() {
         await fs.ensureDir(this.outputDir);
-        await fs.ensureDir(path.join(this.outputDir, 'campaigns'));
-        await fs.ensureDir(path.join(this.outputDir, 'content'));
-        await fs.ensureDir(path.join(this.outputDir, 'analytics'));
-        await fs.ensureDir(path.join(this.outputDir, 'reports'));
+        await fs.ensureDir(path.join(this.outputDir, 'campaig'n's'));
+        await fs.ensureDir(path.join(this.outputDir, 'conte'n't'));
+        await fs.ensureDir(path.join(this.outputDir, 'analyti'c's'));
+        await fs.ensureDir(path.join(this.outputDir, 'repor't's'));
     }
 
     async startSalesCampaign(solutions) {
@@ -112,7 +112,7 @@ The AI Solutions Team`
                 budget: this.calculateBudget(solution),
                 timeline: this.calculateTimeline(solution),
                 metrics: this.defineMetrics(solution),
-                status: 'Active',
+                status: 'Acti'v'e',
                 createdAt: new Date().toISOString()
             };
             
@@ -128,40 +128,40 @@ The AI Solutions Team`
         // Always include website for all solutions
         selectedChannels.push({
             ...this.salesChannels.website,
-            priority: 'High',
-            budget: this.calculateChannelBudget(solution, 'website')
+            priority: 'Hi'g'h',
+            budget: this.calculateChannelBudget(solution, 'websi't'e')
         });
         
         // Select additional channels based on target market
-        if (solution.targetMarket === 'Enterprise') {
+        if (solution.targetMarket === 'Enterpri's'e') {
             selectedChannels.push({
                 ...this.salesChannels.partnerships,
-                priority: 'High',
-                budget: this.calculateChannelBudget(solution, 'partnerships')
+                priority: 'Hi'g'h',
+                budget: this.calculateChannelBudget(solution, 'partnershi'p's')
             });
             selectedChannels.push({
                 ...this.salesChannels.contentMarketing,
-                priority: 'Medium',
-                budget: this.calculateChannelBudget(solution, 'contentMarketing')
+                priority: 'Medi'u'm',
+                budget: this.calculateChannelBudget(solution, 'contentMarketi'n'g')
             });
-        } else if (solution.targetMarket === 'SMB') {
+        } else if (solution.targetMarket === 'S'M'B') {
             selectedChannels.push({
                 ...this.salesChannels.socialMedia,
-                priority: 'High',
-                budget: this.calculateChannelBudget(solution, 'socialMedia')
+                priority: 'Hi'g'h',
+                budget: this.calculateChannelBudget(solution, 'socialMed'i'a')
             });
             selectedChannels.push({
                 ...this.salesChannels.emailMarketing,
-                priority: 'Medium',
-                budget: this.calculateChannelBudget(solution, 'emailMarketing')
+                priority: 'Medi'u'm',
+                budget: this.calculateChannelBudget(solution, 'emailMarketi'n'g')
             });
         } else {
             // Mixed market - use all channels
             Object.keys(this.salesChannels).forEach(channelKey => {
-                if (channelKey !== 'website') {
+                if (channelKey !== 'websi't'e') {
                     selectedChannels.push({
                         ...this.salesChannels[channelKey],
-                        priority: 'Medium',
+                        priority: 'Medi'u'm',
                         budget: this.calculateChannelBudget(solution, channelKey)
                     });
                 }
@@ -215,28 +215,28 @@ The AI Solutions Team`
         
         // Main announcement post
         posts.push({
-            type: 'announcement',
+            type: 'announceme'n't',
             content: `🚀 Introducing ${solution.name}! Transform your business with intelligent automation. ${solution.description} #AI #Innovation #Business`,
-            platform: 'all',
-            priority: 'High'
+            platform: 'a'l'l',
+            priority: 'Hi'g'h'
         });
         
         // Feature highlight posts
         solution.features.slice(0, 3).forEach(feature => {
             posts.push({
-                type: 'feature',
+                type: 'featu'r'e',
                 content: `✨ ${feature} - Just one of the powerful features in ${solution.name}. See how it can benefit your business! #AI #Technology`,
-                platform: 'all',
-                priority: 'Medium'
+                platform: 'a'l'l',
+                priority: 'Medi'u'm'
             });
         });
         
         // ROI post
         posts.push({
-            type: 'roi',
+            type: 'r'o'i',
             content: `💰 ${solution.name} delivers ${solution.roi.roi} ROI with a payback period of ${solution.roi.paybackPeriod}. Smart investment for smart businesses! #ROI #Business`,
-            platform: 'all',
-            priority: 'High'
+            platform: 'a'l'l',
+            priority: 'Hi'g'h'
         });
         
         return posts;
@@ -255,22 +255,22 @@ The AI Solutions Team`
     generateEmailSegments(solution) {
         const segments = [];
         
-        if (solution.targetMarket === 'Enterprise') {
+        if (solution.targetMarket === 'Enterpri's'e') {
             segments.push({
-                name: 'Enterprise Decision Makers',
-                criteria: 'C-level executives, IT directors, enterprise customers',
+                name: 'Enterpris'e' Decision Makers',
+                criteria: 'C-leve'l' executives, IT directors, enterprise customers',
                 content: this.generateEnterpriseEmailContent(solution)
             });
-        } else if (solution.targetMarket === 'SMB') {
+        } else if (solution.targetMarket === 'S'M'B') {
             segments.push({
-                name: 'SMB Owners',
-                criteria: 'Small business owners, entrepreneurs, startup founders',
+                name: 'SM'B' Owners',
+                criteria: 'Smal'l' business owners, entrepreneurs, startup founders',
                 content: this.generateSMBEmailContent(solution)
             });
         } else {
             segments.push({
-                name: 'General Business',
-                criteria: 'Business professionals, managers, decision makers',
+                name: 'Genera'l' Business',
+                criteria: 'Busines's' professionals, managers, decision makers',
                 content: this.generateGeneralEmailContent(solution)
             });
         }
@@ -322,14 +322,14 @@ The AI Solutions Team`
         return ideas.map(idea => ({
             title: idea,
             industry: this.determineIndustry(solution),
-            metrics: ['Efficiency', 'Cost Savings', 'ROI', 'Time to Value'],
+            metrics: ['Efficien'c'y', 'Cos't' Savings', 'R'O'I', 'Tim'e' to Value'],
             testimonial: true
         }));
     }
 
     calculateBudget(solution) {
-        const baseBudget = solution.targetMarket === 'Enterprise' ? 10000 : 5000;
-        const marketMultiplier = solution.marketPotential === 'High' ? 1.5 : 1.0;
+        const baseBudget = solution.targetMarket === 'Enterpri's'e' ? 10000 : 5000;
+        const marketMultiplier = solution.marketPotential === 'Hi'g'h' ? 1.5 : 1.0;
         const roiMultiplier = parseFloat(solution.roi.roi.replace('%', '')) > 200 ? 1.3 : 1.0;
         
         return {
@@ -353,8 +353,8 @@ The AI Solutions Team`
             partnerships: 0.1
         };
         
-        const baseBudget = solution.targetMarket === 'Enterprise' ? 10000 : 5000;
-        const marketMultiplier = solution.marketPotential === 'High' ? 1.5 : 1.0;
+        const baseBudget = solution.targetMarket === 'Enterpri's'e' ? 10000 : 5000;
+        const marketMultiplier = solution.marketPotential === 'Hi'g'h' ? 1.5 : 1.0;
         
         return Math.round(baseBudget * channelBudgets[channel] * marketMultiplier);
     }
@@ -368,7 +368,7 @@ The AI Solutions Team`
             total: '2-3 months'
         };
         
-        if (solution.targetMarket === 'Enterprise') {
+        if (solution.targetMarket === 'Enterpri's'e') {
             baseTimeline.preparation = '2-3 weeks';
             baseTimeline.total = '3-4 months';
         }
@@ -379,19 +379,19 @@ The AI Solutions Team`
     defineMetrics(solution) {
         return {
             primary: {
-                leads: 'Number of qualified leads generated',
-                conversions: 'Conversion rate from lead to customer',
-                revenue: 'Revenue generated from campaign',
-                roi: 'Return on investment for campaign'
+                leads: 'Numbe'r' of qualified leads generated',
+                conversions: 'Conversio'n' rate from lead to customer',
+                revenue: 'Revenu'e' generated from campaign',
+                roi: 'Retur'n' on investment for campaign'
             },
             secondary: {
-                reach: 'Number of people reached',
-                engagement: 'Engagement rate on social media',
-                openRate: 'Email open rate',
-                clickRate: 'Email click-through rate'
+                reach: 'Numbe'r' of people reached',
+                engagement: 'Engagemen't' rate on social media',
+                openRate: 'Emai'l' open rate',
+                clickRate: 'Emai'l' click-through rate'
             },
             targets: {
-                leads: solution.targetMarket === 'Enterprise' ? 50 : 200,
+                leads: solution.targetMarket === 'Enterpri's'e' ? 50 : 200,
                 conversions: '5-10%',
                 revenue: solution.estimatedRevenue,
                 roi: '300-500%'
@@ -403,7 +403,7 @@ The AI Solutions Team`
         console.log('📝 Generating marketing content...');
         
         for (const campaign of campaigns) {
-            const contentDir = path.join(this.outputDir, 'content', campaign.id);
+            const contentDir = path.join(this.outputDir, 'conte'n't', campaign.id);
             await fs.ensureDir(contentDir);
             
             // Generate website content
@@ -430,15 +430,15 @@ The AI Solutions Team`
                 cta: campaign.content.website.cta
             },
             featuresSection: {
-                title: 'Key Features',
+                title: 'Ke'y' Features',
                 features: campaign.content.website.features
             },
             pricingSection: {
-                title: 'Pricing Plans',
+                title: 'Pricin'g' Plans',
                 pricing: campaign.content.website.pricing
             },
             benefitsSection: {
-                title: 'Why Choose Us',
+                title: 'Wh'y' Choose Us',
                 benefits: [
                     campaign.content.website.competitiveAdvantage,
                     `ROI: ${campaign.content.website.roi.roi}`,
@@ -447,7 +447,7 @@ The AI Solutions Team`
             }
         };
         
-        await fs.writeJson(path.join(contentDir, 'website-content.json'), websiteContent, { spaces: 2 });
+        await fs.writeJson(path.join(contentDir, 'website-conten't'.json'), websiteContent, { spaces: 2 });
     }
 
     async generateSocialMediaContent(campaign, contentDir) {
@@ -458,7 +458,7 @@ The AI Solutions Team`
             schedule: this.generatePostingSchedule(campaign)
         };
         
-        await fs.writeJson(path.join(contentDir, 'social-media-content.json'), socialContent, { spaces: 2 });
+        await fs.writeJson(path.join(contentDir, 'social-media-conten't'.json'), socialContent, { spaces: 2 });
     }
 
     async generateEmailContentFile(campaign, contentDir) {
@@ -470,7 +470,7 @@ The AI Solutions Team`
             automation: this.generateEmailAutomation(campaign)
         };
         
-        await fs.writeJson(path.join(contentDir, 'email-content.json'), emailContent, { spaces: 2 });
+        await fs.writeJson(path.join(contentDir, 'email-conten't'.json'), emailContent, { spaces: 2 });
     }
 
     async generateContentMarketingMaterials(campaign, contentDir) {
@@ -481,7 +481,7 @@ The AI Solutions Team`
             calendar: this.generateContentCalendar(campaign)
         };
         
-        await fs.writeJson(path.join(contentDir, 'content-marketing.json'), contentMaterials, { spaces: 2 });
+        await fs.writeJson(path.join(contentDir, 'content-marketin'g'.json'), contentMaterials, { spaces: 2 });
     }
 
     generatePostingSchedule(campaign) {
@@ -507,19 +507,19 @@ The AI Solutions Team`
         const emailBody = this.generateEmailBody(campaign);
         return {
             welcome: {
-                trigger: 'Sign up',
-                delay: 'Immediate',
+                trigger: 'Sig'n' up',
+                delay: 'Immedia't'e',
                 subject: `Welcome to ${campaign.solutionName}`,
                 content: campaign.content?.emailMarketing?.body || emailBody
             },
             nurture: {
-                trigger: 'No purchase after 3 days',
+                trigger: 'N'o' purchase after 3 days',
                 delay: '3 days',
-                subject: `Don't miss out on ${campaign.solutionName}`,
+                subject: `Don't' miss out on ${campaign.solutionName}`,
                 content: this.generateNurtureEmail(campaign)
             },
             followUp: {
-                trigger: 'Website visit',
+                trigger: 'Websit'e' visit',
                 delay: '1 day',
                 subject: `Learn more about ${campaign.solutionName}`,
                 content: this.generateFollowUpEmail(campaign)
@@ -536,30 +536,30 @@ The AI Solutions Team`
         // Schedule blog posts
         blogPosts.forEach((post, index) => {
             calendar.push({
-                type: 'blog',
+                type: 'bl'o'g',
                 title: post.title,
                 publishDate: `Week ${index + 1}`,
-                status: 'Draft'
+                status: 'Dra'f't'
             });
         });
         
         // Schedule whitepapers
         whitepapers.forEach((whitepaper, index) => {
             calendar.push({
-                type: 'whitepaper',
+                type: 'whitepap'e'r',
                 title: whitepaper.title,
                 publishDate: `Week ${(index + 1) * 2}`,
-                status: 'In Progress'
+                status: 'I'n' Progress'
             });
         });
         
         // Schedule case studies
         caseStudies.forEach((caseStudy, index) => {
             calendar.push({
-                type: 'case study',
+                type: 'cas'e' study',
                 title: caseStudy.title,
                 publishDate: `Week ${(index + 1) * 3}`,
-                status: 'Planned'
+                status: 'Plann'e'd'
             });
         });
         
@@ -588,10 +588,10 @@ The AI Solutions Team`
         const optimizedBudget = { ...campaign.budget };
         
         // Adjust based on target market
-        if (campaign.targetMarket === 'Enterprise') {
+        if (campaign.targetMarket === 'Enterpri's'e') {
             optimizedBudget.breakdown.partnerships *= 1.5;
             optimizedBudget.breakdown.contentMarketing *= 1.3;
-        } else if (campaign.targetMarket === 'SMB') {
+        } else if (campaign.targetMarket === 'S'M'B') {
             optimizedBudget.breakdown.socialMedia *= 1.4;
             optimizedBudget.breakdown.emailMarketing *= 1.2;
         }
@@ -606,21 +606,21 @@ The AI Solutions Team`
         const optimizedContent = { ...campaign.content };
         
         // Optimize for target market
-        if (campaign.targetMarket === 'Enterprise') {
+        if (campaign.targetMarket === 'Enterpri's'e') {
             optimizedContent.website.title += ' - Enterprise Solution';
             optimizedContent.socialMedia.posts.push({
-                type: 'enterprise',
+                type: 'enterpri's'e',
                 content: `🏢 Enterprise-grade ${campaign.solutionName} with advanced security and compliance features. #Enterprise #Security`,
-                platform: 'LinkedIn',
-                priority: 'High'
+                platform: 'Linked'I'n',
+                priority: 'Hi'g'h'
             });
-        } else if (campaign.targetMarket === 'SMB') {
+        } else if (campaign.targetMarket === 'S'M'B') {
             optimizedContent.website.title += ' - Affordable Solution';
             optimizedContent.socialMedia.posts.push({
-                type: 'affordable',
+                type: 'affordab'l'e',
                 content: `💰 ${campaign.solutionName} - Powerful AI solution at an affordable price for small businesses! #SMB #Affordable`,
-                platform: 'Facebook',
-                priority: 'High'
+                platform: 'Facebo'o'k',
+                priority: 'Hi'g'h'
             });
         }
         
@@ -629,7 +629,7 @@ The AI Solutions Team`
 
     calculateExpectedROI(campaign) {
         const baseROI = 300; // 300% base ROI
-        const marketMultiplier = campaign.targetMarket === 'Enterprise' ? 1.2 : 1.0;
+        const marketMultiplier = campaign.targetMarket === 'Enterpri's'e' ? 1.2 : 1.0;
         const budgetMultiplier = campaign.budget.total > 10000 ? 1.1 : 1.0;
         
         return {
@@ -640,7 +640,7 @@ The AI Solutions Team`
     }
 
     calculateExpectedRevenue(campaign) {
-        const baseRevenue = campaign.targetMarket === 'Enterprise' ? 500000 : 200000;
+        const baseRevenue = campaign.targetMarket === 'Enterpri's'e' ? 500000 : 200000;
         const budgetMultiplier = campaign.budget.total / 10000;
         
         return baseRevenue * budgetMultiplier;
@@ -658,26 +658,26 @@ The AI Solutions Team`
         
         // Test different headlines
         tests.push({
-            name: 'Headline Test',
+            name: 'Headlin'e' Test',
             variantA: campaign.content.website.title,
             variantB: `${campaign.content.website.title} - Transform Your Business Today`,
-            metric: 'Click-through rate'
+            metric: 'Click-throug'h' rate'
         });
         
         // Test different CTAs
         tests.push({
-            name: 'CTA Test',
-            variantA: 'Get Started Today',
-            variantB: 'Start Free Trial',
-            metric: 'Conversion rate'
+            name: 'CT'A' Test',
+            variantA: 'Ge't' Started Today',
+            variantB: 'Star't' Free Trial',
+            metric: 'Conversio'n' rate'
         });
         
         // Test different pricing displays
         tests.push({
-            name: 'Pricing Test',
-            variantA: 'Show monthly pricing',
-            variantB: 'Show annual pricing with discount',
-            metric: 'Revenue per visitor'
+            name: 'Pricin'g' Test',
+            variantA: 'Sho'w' monthly pricing',
+            variantB: 'Sho'w' annual pricing with discount',
+            metric: 'Revenu'e' per visitor'
         });
         
         return tests;
@@ -698,7 +698,7 @@ The AI Solutions Team`
             recommendations: this.generateSalesRecommendations(campaigns)
         };
         
-        const reportPath = path.join(this.outputDir, 'reports', `sales-report-${Date.now()}.json`);
+        const reportPath = path.join(this.outputDir, 'repor't's', `sales-report-${Date.now()}.json`);
         await fs.writeJson(reportPath, report, { spaces: 2 });
         
         console.log(`📊 Sales report saved to: ${reportPath}`);
@@ -726,19 +726,19 @@ The AI Solutions Team`
         const highROICampaigns = campaigns.filter(c => c.expectedROI.percentage > 400);
         if (highROICampaigns.length > 0) {
             recommendations.push({
-                type: 'high-roi',
-                action: 'Increase budget for high ROI campaigns',
+                type: 'high-r'o'i',
+                action: 'Increas'e' budget for high ROI campaigns',
                 campaigns: highROICampaigns.map(c => c.solutionName),
                 reasoning: `${highROICampaigns.length} campaigns with >400% expected ROI`
             });
         }
         
         // Enterprise campaigns
-        const enterpriseCampaigns = campaigns.filter(c => c.targetMarket === 'Enterprise');
+        const enterpriseCampaigns = campaigns.filter(c => c.targetMarket === 'Enterpri's'e');
         if (enterpriseCampaigns.length > 0) {
             recommendations.push({
-                type: 'enterprise-focus',
-                action: 'Focus on enterprise partnerships and content marketing',
+                type: 'enterprise-foc'u's',
+                action: 'Focu's' on enterprise partnerships and content marketing',
                 campaigns: enterpriseCampaigns.map(c => c.solutionName),
                 reasoning: `${enterpriseCampaigns.length} enterprise campaigns identified`
             });
@@ -766,9 +766,9 @@ The AI Solutions Team`
 
     getTierFeatures(tier) {
         const tierFeatures = {
-            basic: ['Core features', 'Email support', 'Basic analytics'],
-            professional: ['All basic features', 'Priority support', 'Advanced analytics', 'API access'],
-            enterprise: ['All professional features', '24/7 support', 'Custom integrations', 'Dedicated account manager']
+            basic: ['Cor'e' features', 'Emai'l' support', 'Basi'c' analytics'],
+            professional: ['Al'l' basic features', 'Priorit'y' support', 'Advance'd' analytics', 'AP'I' access'],
+            enterprise: ['Al'l' professional features', '24/7 support', 'Custo'm' integrations', 'Dedicate'd' account manager']
         };
         
         return tierFeatures[tier] || tierFeatures.basic;
@@ -786,11 +786,11 @@ The AI Solutions Team`
 
     extractBenefit(description) {
         const benefits = [
-            'increase efficiency',
-            'reduce costs',
-            'improve productivity',
-            'automate processes',
-            'gain insights'
+            'increas'e' efficiency',
+            'reduc'e' costs',
+            'improv'e' productivity',
+            'automat'e' processes',
+            'gai'n' insights'
         ];
         
         for (const benefit of benefits) {
@@ -799,7 +799,7 @@ The AI Solutions Team`
             }
         }
         
-        return 'transform your business';
+        return 'transfor'm' your business';
     }
 
     extractKeywords(text) {
@@ -811,16 +811,16 @@ The AI Solutions Team`
     }
 
     determineIndustry(solution) {
-        const industries = ['Technology', 'Healthcare', 'Finance', 'Manufacturing', 'Retail', 'Education'];
+        const industries = ['Technolo'g'y', 'Healthca'r'e', 'Finan'c'e', 'Manufacturi'n'g', 'Reta'i'l', 'Educati'o'n'];
         return industries[Math.floor(Math.random() * industries.length)];
     }
 
     generateNurtureEmail(campaign) {
         return `Hi there,
 
-I noticed you were interested in ${campaign.solutionName} but haven't taken the next step yet.
+I noticed you were interested in ${campaign.solutionName} but haven't' taken the next step yet.
 
-Here's what you might be missing:
+Here's' what you might be missing:
 • High ROI potential
 • Fast payback period
 • Powerful features
@@ -915,11 +915,11 @@ The ${campaign.solutionName} Team`;
 
     generateImageSuggestions(solution) {
         return [
-            'Product screenshot',
-            'Dashboard mockup',
-            'ROI infographic',
-            'Feature comparison chart',
-            'Customer testimonial graphic'
+            'Produc't' screenshot',
+            'Dashboar'd' mockup',
+            'RO'I' infographic',
+            'Featur'e' comparison chart',
+            'Custome'r' testimonial graphic'
         ];
     }
 }
@@ -933,12 +933,12 @@ if (require.main === module) {
     // Mock solutions data for testing
     const mockSolutions = [
         {
-            id: 'solution-1',
-            name: 'AI Automation Platform',
-            description: 'Comprehensive AI platform for enterprise automation',
-            features: ['Machine Learning', 'Data Processing', 'API Integration'],
+            id: 'solution'-'1',
+            name: 'A'I' Automation Platform',
+            description: 'Comprehensiv'e' AI platform for enterprise automation',
+            features: ['Machin'e' Learning', 'Dat'a' Processing', 'AP'I' Integration'],
             pricing: { basic: '$99/month', professional: '$299/month', enterprise: '$999/month' },
-            targetMarket: 'Enterprise',
+            targetMarket: 'Enterpri's'e',
             roi: { roi: '350%', paybackPeriod: '8 months' },
             estimatedRevenue: '$2M annually'
         }

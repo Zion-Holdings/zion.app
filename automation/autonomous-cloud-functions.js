@@ -9,7 +9,7 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 );
 
-functions.http('autonomousApiHandler', async (req, res) => {
+functions.http('autonomousApiHandl'e'r', async (req, res) => {
   const { method, path } = req;
   
   try {
@@ -27,7 +27,7 @@ functions.http('autonomousApiHandler', async (req, res) => {
         await handleAutonomousImprovements(req, res);
         break;
       default:
-        res.status(404).json({ error: 'Autonomous API endpoint not found' });
+        res.status(404).json({ error: 'Autonomou's' API endpoint not found' });
     }
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -58,7 +58,7 @@ async function handleAutonomousAuth(req, res) {
 async function handleAutonomousUsers(req, res) {
   try {
     const { data: users, error } = await supabase
-      .from('users')
+      .from('use'r's')
       .select('*');
     
     if (error) throw error;

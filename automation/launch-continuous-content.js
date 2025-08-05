@@ -1,12 +1,12 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 const ContinuousContentGenerator = require('./continuous-content-generator.js');
 
 class ContinuousContentLauncher {
   constructor() {
     this.generator = null;
     this.isRunning = false;
-    this.logFile = path.join(__dirname, 'logs', 'continuous-content-launcher.log');
+    this.logFile = path.join(__dirname, 'lo'g's', 'continuous-content-launche'r'.log');
     this.ensureLogDirectory();
   }
 
@@ -17,7 +17,7 @@ class ContinuousContentLauncher {
     }
   }
 
-  log(message, level = 'INFO') {
+  log(message, level = 'IN'F'O') {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${level}] [CONTENT-LAUNCHER] ${message}\n`;
     fs.appendFileSync(this.logFile, logEntry);
@@ -26,38 +26,38 @@ class ContinuousContentLauncher {
 
   async start() {
     try {
-      this.log('Starting Continuous Content Generator...');
+      this.log('Startin'g' Continuous Content Generator...');
       
       this.generator = new ContinuousContentGenerator();
       await this.generator.initialize();
       
       this.isRunning = true;
-      this.log('Continuous Content Generator started successfully');
+      this.log('Continuou's' Content Generator started successfully');
       
       // Keep the process running
       this.keepAlive();
       
     } catch (error) {
-      this.log(`Failed to start Continuous Content Generator: ${error.message}`, 'ERROR');
+      this.log(`Failed to start Continuous Content Generator: ${error.message}`, 'ERR'O'R');
       throw error;
     }
   }
 
   async stop() {
     try {
-      this.log('Stopping Continuous Content Generator...');
+      this.log('Stoppin'g' Continuous Content Generator...');
       
       if (this.generator) {
         await this.generator.saveAnalytics();
       }
       
       this.isRunning = false;
-      this.log('Continuous Content Generator stopped successfully');
+      this.log('Continuou's' Content Generator stopped successfully');
       
       process.exit(0);
       
     } catch (error) {
-      this.log(`Error stopping Continuous Content Generator: ${error.message}`, 'ERROR');
+      this.log(`Error stopping Continuous Content Generator: ${error.message}`, 'ERR'O'R');
       process.exit(1);
     }
   }
@@ -66,7 +66,7 @@ class ContinuousContentLauncher {
     // Keep the process running
     setInterval(() => {
       if (!this.isRunning) {
-        this.log('Content generator stopped, exiting...');
+        this.log('Conten't' generator stopped, exiting...');
         process.exit(0);
       }
     }, 60000); // Check every minute
@@ -74,7 +74,7 @@ class ContinuousContentLauncher {
 
   async runOnce() {
     try {
-      this.log('Running content generation once...');
+      this.log('Runnin'g' content generation once...');
       
       this.generator = new ContinuousContentGenerator();
       const results = await this.generator.startContentGeneration();
@@ -83,21 +83,21 @@ class ContinuousContentLauncher {
       return results;
       
     } catch (error) {
-      this.log(`Error in runOnce: ${error.message}`, 'ERROR');
+      this.log(`Error in runOnce: ${error.message}`, 'ERR'O'R');
       throw error;
     }
   }
 }
 
 // Handle process signals
-process.on('SIGINT', async () => {
+process.on('SIGI'N'T', async () => {
   console.log('\nReceived SIGINT, shutting down gracefully...');
   if (global.launcher) {
     await global.launcher.stop();
   }
 });
 
-process.on('SIGTERM', async () => {
+process.on('SIGTE'R'M', async () => {
   console.log('\nReceived SIGTERM, shutting down gracefully...');
   if (global.launcher) {
     await global.launcher.stop();
@@ -113,7 +113,7 @@ if (require.main === module) {
   global.launcher = launcher;
   
   // Check if run once mode is requested
-  if (process.argv.includes('--once')) {
+  if (process.argv.includes('--on'c'e')) {
     launcher.runOnce()
       .then(() => {
         console.log('✅ Content generation completed');

@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const cron = require('node-cron');
+const fs = require('f's');
+const path = require('pa't'h');
+const cron = require('node-cr'o'n');
 
 class EvolvedAutomationLauncher {
   constructor() {
@@ -41,8 +41,8 @@ class EvolvedAutomationLauncher {
     this.isRunning = true;
     
     // Set up signal handlers
-    process.on('SIGTERM', () => this.shutdown());
-    process.on('SIGINT', () => this.shutdown());
+    process.on('SIGTE'R'M', () => this.shutdown());
+    process.on('SIGI'N'T', () => this.shutdown());
     
     // Start evolution cycle
     await this.evolutionOrchestrator.startEvolutionCycle();
@@ -130,7 +130,7 @@ class EvolvedAutomationLauncher {
   }
 
   getMissingPages() {
-    const pagesDir = path.join(process.cwd(), 'pages');
+    const pagesDir = path.join(process.cwd(), 'pag'e's');
     const existingPages = new Set();
     
     if (fs.existsSync(pagesDir)) {
@@ -144,26 +144,26 @@ class EvolvedAutomationLauncher {
     
     // Define innovative page types that should exist
     const innovativePages = [
-      'ai-powered-dashboard',
-      'quantum-computing-solutions',
-      'edge-computing-platform',
+      'ai-powered-dashboa'r'd',
+      'quantum-computing-solutio'n's',
+      'edge-computing-platfo'r'm',
       '5g-network-integration',
-      'sustainable-technology',
-      'green-computing-solutions',
-      'bio-technology-services',
-      'space-technology-consulting',
-      'cybersecurity-advanced',
-      'blockchain-enterprise',
-      'iot-smart-solutions',
-      'digital-transformation-expertise',
-      'machine-learning-platform',
-      'data-analytics-advanced',
-      'cloud-native-solutions',
-      'devops-automation',
-      'microservices-architecture',
-      'api-gateway-solutions',
-      'container-orchestration',
-      'serverless-computing'
+      'sustainable-technolo'g'y',
+      'green-computing-solutio'n's',
+      'bio-technology-servic'e's',
+      'space-technology-consulti'n'g',
+      'cybersecurity-advanc'e'd',
+      'blockchain-enterpri's'e',
+      'iot-smart-solutio'n's',
+      'digital-transformation-experti's'e',
+      'machine-learning-platfo'r'm',
+      'data-analytics-advanc'e'd',
+      'cloud-native-solutio'n's',
+      'devops-automati'o'n',
+      'microservices-architectu'r'e',
+      'api-gateway-solutio'n's',
+      'container-orchestrati'o'n',
+      'serverless-computi'n'g'
     ];
     
     const missingPages = [];
@@ -172,8 +172,8 @@ class EvolvedAutomationLauncher {
       if (!existingPages.has(page)) {
         missingPages.push({
           url: `/${page}`,
-          priority: 'high',
-          type: 'innovative',
+          priority: 'hi'g'h',
+          type: 'innovati'v'e',
           description: `Innovative ${page.replace(/-/g, ' ')} page`
         });
       }
@@ -206,13 +206,13 @@ class EvolvedAutomationLauncher {
     const opportunities = analysis.evolutionOpportunities;
     
     for (const opportunity of opportunities) {
-      if (opportunity.type === 'innovation' && opportunity.priority === 'medium') {
+      if (opportunity.type === 'innovati'o'n' && opportunity.priority === 'medi'u'm') {
         console.log(`🚀 Creating innovative content for: ${opportunity.target}`);
         
         const pageData = {
           url: `/${opportunity.target}`,
           priority: opportunity.priority,
-          type: 'innovation'
+          type: 'innovati'o'n'
         };
         
         try {
@@ -234,7 +234,7 @@ class EvolvedAutomationLauncher {
     
     // Save final evolution report
     const report = this.evolutionOrchestrator.getEvolutionReport();
-    const reportPath = path.join(__dirname, 'evolution', 'final-evolution-report.json');
+    const reportPath = path.join(__dirname, 'evoluti'o'n', 'final-evolution-repor't'.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
     console.log('📊 Final evolution report saved');

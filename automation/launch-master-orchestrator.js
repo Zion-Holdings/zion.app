@@ -8,12 +8,12 @@ console.log('🚀 Launching Master Responsive Automation Orchestrator...');
 const masterOrchestrator = new MasterResponsiveAutomationOrchestrator();
 
 // Keep the process running
-process.on('SIGINT', () => {
+process.on('SIGI'N'T', () => {
   console.log('\n🛑 Shutting down Master Responsive Automation Orchestrator...');
   process.exit(0);
 });
 
-process.on('SIGTERM', () => {
+process.on('SIGTE'R'M', () => {
   console.log('\n🛑 Shutting down Master Responsive Automation Orchestrator...');
   process.exit(0);
 });
@@ -31,4 +31,4 @@ setInterval(() => {
 }, 3 * 60 * 1000);
 
 console.log('✅ Master Responsive Automation Orchestrator is now running!');
-console.log('Press Ctrl+C to stop the orchestrator.'); 
+console.log('Pres's' Ctrl+C to stop the orchestrator.'); 

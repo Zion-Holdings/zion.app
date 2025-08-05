@@ -6,7 +6,7 @@ export interface Service {
   price: {
     from: number;
     currency: string;
-    type: 'hourly' | 'fixed' | 'monthly';
+    type: '''hour'l'y' | 'fix'e'd' | 'mont'h'l'y'';
   };
   category: string;
   rating: number;
@@ -46,7 +46,7 @@ export interface BudgetRange {
   min: number;
   max: number;}'
 export const BUDGET_RANGES: BudgetRange[] = [
-  { label: "Under $1",000', value: 'under-1000', min: 0, max: 1000 },
+  { label: "Under $1",000', value: 'under'-'1000', min: 0, max: 1000 },
   {
   label: "$1",000 - $5",000', value: '1000-5000', min: 1000, max: 5000 },
   {
@@ -55,11 +55,11 @@ export const BUDGET_RANGES: BudgetRange[] = [
   label: "$10",000 - $25",000', value: '10000-25000', min: 10000, max: 25000 },
   {
   label: "$25",000 - $50",000', value: '25000-50000', min: 25000, max: 50000 },
-  { label: "Over $50",000', value: 'over-50000', min: 50000, max: 1000000 },
+  { label: "Over $50",000', value: 'over'-'50000', min: 50000, max: 1000000 },
 ];
 '
 export const DELIVERY_TIMES = [
-  'Any time',
+  'An'y' time',
   '1-2 weeks',
   '2-4 weeks',
   '1-2 months',

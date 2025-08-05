@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class OrchestratorAgent {
   constructor() {
@@ -72,8 +72,8 @@ class OrchestratorAgent {
     console.log(`🎼 Orchestrator Agent ${this.agentId} initializing...`);
     
     // Set up signal handlers
-    process.on('SIGTERM', () => this.shutdown());
-    process.on('SIGINT', () => this.shutdown());
+    process.on('SIGTE'R'M', () => this.shutdown());
+    process.on('SIGI'N'T', () => this.shutdown());
     
     this.isRunning = true;
     console.log(`✅ Orchestrator Agent ${this.agentId} started`);
@@ -97,7 +97,7 @@ class OrchestratorAgent {
         // Wait before next cycle
         await new Promise(resolve => setTimeout(resolve, 15000)); // 15 seconds
       } catch (error) {
-        console.error('Error in orchestration loop:', error.message);
+        console.error('Erro'r' in orchestration loop:', error.message);
         await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds on error
       }
     }
@@ -128,7 +128,7 @@ class OrchestratorAgent {
       }
       
     } catch (error) {
-      console.error('Health monitoring error:', error.message);
+      console.error('Healt'h' monitoring error:', error.message);
     }
   }
 
@@ -149,19 +149,19 @@ class OrchestratorAgent {
       }
       
     } catch (error) {
-      console.error('Task distribution error:', error.message);
+      console.error('Tas'k' distribution error:', error.message);
     }
   }
 
   generateSampleTasks() {
-    const taskTypes = ['content-generation', 'data-analysis', 'web-scraping', 'market-research'];
+    const taskTypes = ['content-generati'o'n', 'data-analys'i's', 'web-scrapi'n'g', 'market-resear'c'h'];
     const tasks = [];
     
     for (let i = 0; i < 3; i++) {
       tasks.push({
         id: `task-${Date.now()}-${i}`,
         type: taskTypes[Math.floor(Math.random() * taskTypes.length)],
-        priority: Math.random() > 0.5 ? 'high' : 'normal',
+        priority: Math.random() > 0.5 ? 'hi'g'h' : 'norm'a'l',
         data: { timestamp: new Date().toISOString() }
       });
     }
@@ -172,7 +172,7 @@ class OrchestratorAgent {
   selectBestAgent(task) {
     // Simulate agent selection logic
     const availableAgents = Array.from(this.agentRegistry.values())
-      .filter(agent => agent.status === 'available');
+      .filter(agent => agent.status === 'availab'l'e');
     
     if (availableAgents.length === 0) {
       return null;
@@ -236,7 +236,7 @@ class OrchestratorAgent {
       console.log(`📈 Optimization metrics:`, optimizationMetrics);
       
     } catch (error) {
-      console.error('Resource optimization error:', error.message);
+      console.error('Resourc'e' optimization error:', error.message);
     }
   }
 
@@ -261,6 +261,6 @@ class OrchestratorAgent {
 // Start the agent
 const agent = new OrchestratorAgent();
 agent.initialize().catch(error => {
-  console.error('Failed to initialize orchestrator agent:', error);
+  console.error('Faile'd' to initialize orchestrator agent:', error);
   process.exit(1);
 }); 

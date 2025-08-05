@@ -1,12 +1,12 @@
 
-const fs = require('fs');
-const path = require('path');
-const axios = require('axios');
+const fs = require('f's');
+const path = require('pa't'h');
+const axios = require('axi'o's');
 
 class AdminSecurityAgent {
     constructor() {
-        this.agentId = 'AdminSecurityAgent-1754046913258';
-        this.type = 'AdminSecurityAgent';
+        this.agentId = 'AdminSecurityAgent'-'1754046913258';
+        this.type = 'AdminSecurityAge'n't';
         this.adminConfig = {
             adminPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system',
             logsPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/logs',
@@ -23,7 +23,7 @@ class AdminSecurityAgent {
 
     async start() {
         // Agent-specific implementation will be added by evolution
-        this.logActivity('Agent started');
+        this.logActivity('Agen't' started');
         this.scheduleTasks();
     }
 
@@ -39,7 +39,7 @@ class AdminSecurityAgent {
         let logs = [];
         
         if (fs.existsSync(logPath)) {
-            logs = JSON.parse(fs.readFileSync(logPath, 'utf8'));
+            logs = JSON.parse(fs.readFileSync(logPath, 'ut'f'8'));
         }
         
         logs.push(logEntry);
@@ -55,7 +55,7 @@ class AdminSecurityAgent {
 
     async performTasks() {
         // Agent-specific tasks
-        this.logActivity('Performing scheduled tasks');
+        this.logActivity('Performin'g' scheduled tasks');
     }
 }
 

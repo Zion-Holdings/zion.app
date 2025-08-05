@@ -1,12 +1,12 @@
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
 
 class BackupSystem {
   constructor() {
     this.projectRoot = process.cwd();
-    this.backupDir = path.join(this.projectRoot, 'automation/backups');
-    this.backupLogFile = path.join(this.projectRoot, 'automation/backup-log.json');
+    this.backupDir = path.join(this.projectRoot, 'automatio'n'/backups');
+    this.backupLogFile = path.join(this.projectRoot, 'automatio'n'/backup-log.json');
     
     this.ensureDirectories();
     this.loadBackupLog();
@@ -14,11 +14,11 @@ class BackupSystem {
 
   ensureDirectories() {
     const dirs = [
-      'automation/backups',
-      'automation/backups/code',
-      'automation/backups/data',
-      'automation/backups/logs',
-      'automation/backups/config'
+      'automatio'n'/backups',
+      'automatio'n'/backups/code',
+      'automatio'n'/backups/data',
+      'automatio'n'/backups/logs',
+      'automatio'n'/backups/config'
     ];
     
     dirs.forEach(dir => {
@@ -31,7 +31,7 @@ class BackupSystem {
 
   loadBackupLog() {
     if (fs.existsSync(this.backupLogFile)) {
-      this.backupLog = JSON.parse(fs.readFileSync(this.backupLogFile, 'utf8'));
+      this.backupLog = JSON.parse(fs.readFileSync(this.backupLogFile, 'ut'f'8'));
     } else {
       this.backupLog = {
         lastBackup: null,
@@ -93,21 +93,21 @@ class BackupSystem {
   async backupCode(backupPath) {
     console.log('📁 Backing up code...');
     
-    const codeBackupPath = path.join(backupPath, 'code');
+    const codeBackupPath = path.join(backupPath, 'co'd'e');
     fs.mkdirSync(codeBackupPath, { recursive: true });
     
     // Copy source code (excluding node_modules and other unnecessary files)
     const excludePatterns = [
-      'node_modules',
+      'nod'e'_modules',
       '.git',
-      'automation/backups',
-      'automation/logs',
+      'automatio'n'/backups',
+      'automatio'n'/logs',
       '.next',
-      'out',
-      'dist'
+      'o'u't',
+      'di's't'
     ];
     
-    const copyCommand = `rsync -av --exclude='node_modules' --exclude='.git' --exclude='automation/backups' --exclude='automation/logs' --exclude='.next' --exclude='out' --exclude='dist' "${this.projectRoot}/" "${codeBackupPath}/"`;
+    const copyCommand = `rsync -av --exclude='nod'e'_modules' --exclude='.git' --exclude='automatio'n'/backups' --exclude='automatio'n'/logs' --exclude='.next' --exclude='o'u't' --exclude='di's't' "${this.projectRoot}/" "${codeBackupPath}/"`;
     
     return new Promise((resolve, reject) => {
       exec(copyCommand, (error, stdout, stderr) => {
@@ -125,13 +125,13 @@ class BackupSystem {
   async backupData(backupPath) {
     console.log('💾 Backing up data...');
     
-    const dataBackupPath = path.join(backupPath, 'data');
+    const dataBackupPath = path.join(backupPath, 'da't'a');
     fs.mkdirSync(dataBackupPath, { recursive: true });
     
     // Backup content files
-    const contentDir = path.join(this.projectRoot, 'src/content');
+    const contentDir = path.join(this.projectRoot, 'sr'c'/content');
     if (fs.existsSync(contentDir)) {
-      const contentBackupPath = path.join(dataBackupPath, 'content');
+      const contentBackupPath = path.join(dataBackupPath, 'conte'n't');
       fs.mkdirSync(contentBackupPath, { recursive: true });
       
       const copyCommand = `cp -r "${contentDir}" "${contentBackupPath}"`;
@@ -153,10 +153,10 @@ class BackupSystem {
   async backupLogs(backupPath) {
     console.log('📋 Backing up logs...');
     
-    const logsBackupPath = path.join(backupPath, 'logs');
+    const logsBackupPath = path.join(backupPath, 'lo'g's');
     fs.mkdirSync(logsBackupPath, { recursive: true });
     
-    const logsDir = path.join(this.projectRoot, 'automation/logs');
+    const logsDir = path.join(this.projectRoot, 'automatio'n'/logs');
     if (fs.existsSync(logsDir)) {
       const copyCommand = `cp -r "${logsDir}" "${logsBackupPath}"`;
       
@@ -177,16 +177,16 @@ class BackupSystem {
   async backupConfig(backupPath) {
     console.log('⚙️ Backing up configuration...');
     
-    const configBackupPath = path.join(backupPath, 'config');
+    const configBackupPath = path.join(backupPath, 'conf'i'g');
     fs.mkdirSync(configBackupPath, { recursive: true });
     
     // Backup important config files
     const configFiles = [
-      'package.json',
-      'next.config.js',
-      'tailwind.config.js',
-      'tsconfig.json',
-      'netlify.toml'
+      'packag'e'.json',
+      'nex't'.config.js',
+      'tailwin'd'.config.js',
+      'tsconfi'g'.json',
+      'netlif'y'.toml'
     ];
     
     for (const file of configFiles) {
@@ -216,7 +216,7 @@ class BackupSystem {
       checksum: await this.generateChecksum(backupPath)
     };
     
-    const manifestPath = path.join(backupPath, 'manifest.json');
+    const manifestPath = path.join(backupPath, 'manifes't'.json');
     fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
     
     console.log('✅ Backup manifest created');
@@ -238,7 +238,7 @@ class BackupSystem {
     return new Promise((resolve) => {
       exec(`find "${dirPath}" -type f -exec md5sum {} + | sort | md5sum`, (error, stdout) => {
         if (error) {
-          resolve('unknown');
+          resolve('unkno'w'n');
         } else {
           resolve(stdout.trim().split(' ')[0]);
         }
@@ -254,7 +254,7 @@ class BackupSystem {
       id: backupId,
       timestamp: new Date().toISOString(),
       path: backupPath,
-      size: 'pending' // Will be updated later
+      size: 'pendi'n'g' // Will be updated later
     });
     
     // Keep only last 50 backups in history
@@ -270,7 +270,7 @@ class BackupSystem {
     
     const maxBackups = 10; // Keep only last 10 backups
     const backupDirs = fs.readdirSync(this.backupDir)
-      .filter(dir => dir.startsWith('backup-'))
+      .filter(dir => dir.startsWith('backu'p'-'))
       .sort()
       .reverse();
     
@@ -299,12 +299,12 @@ class BackupSystem {
     }
     
     // Read manifest
-    const manifestPath = path.join(backupPath, 'manifest.json');
+    const manifestPath = path.join(backupPath, 'manifes't'.json');
     if (!fs.existsSync(manifestPath)) {
-      throw new Error('Backup manifest not found');
+      throw new Error('Backu'p' manifest not found');
     }
     
-    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'ut'f'8'));
     
     try {
       // Restore code
@@ -330,9 +330,9 @@ class BackupSystem {
   async restoreCode(backupPath) {
     console.log('📁 Restoring code...');
     
-    const codeBackupPath = path.join(backupPath, 'code');
+    const codeBackupPath = path.join(backupPath, 'co'd'e');
     if (!fs.existsSync(codeBackupPath)) {
-      throw new Error('Code backup not found');
+      throw new Error('Cod'e' backup not found');
     }
     
     const restoreCommand = `rsync -av "${codeBackupPath}/" "${this.projectRoot}/"`;
@@ -353,11 +353,11 @@ class BackupSystem {
   async restoreData(backupPath) {
     console.log('💾 Restoring data...');
     
-    const dataBackupPath = path.join(backupPath, 'data');
+    const dataBackupPath = path.join(backupPath, 'da't'a');
     if (fs.existsSync(dataBackupPath)) {
-      const contentBackupPath = path.join(dataBackupPath, 'content');
+      const contentBackupPath = path.join(dataBackupPath, 'conte'n't');
       if (fs.existsSync(contentBackupPath)) {
-        const contentDir = path.join(this.projectRoot, 'src/content');
+        const contentDir = path.join(this.projectRoot, 'sr'c'/content');
         fs.mkdirSync(contentDir, { recursive: true });
         
         const restoreCommand = `cp -r "${contentBackupPath}" "${contentDir}"`;
@@ -380,9 +380,9 @@ class BackupSystem {
   async restoreLogs(backupPath) {
     console.log('📋 Restoring logs...');
     
-    const logsBackupPath = path.join(backupPath, 'logs');
+    const logsBackupPath = path.join(backupPath, 'lo'g's');
     if (fs.existsSync(logsBackupPath)) {
-      const logsDir = path.join(this.projectRoot, 'automation/logs');
+      const logsDir = path.join(this.projectRoot, 'automatio'n'/logs');
       fs.mkdirSync(logsDir, { recursive: true });
       
       const restoreCommand = `cp -r "${logsBackupPath}" "${logsDir}"`;
@@ -404,7 +404,7 @@ class BackupSystem {
   async restoreConfig(backupPath) {
     console.log('⚙️ Restoring configuration...');
     
-    const configBackupPath = path.join(backupPath, 'config');
+    const configBackupPath = path.join(backupPath, 'conf'i'g');
     if (fs.existsSync(configBackupPath)) {
       const configFiles = fs.readdirSync(configBackupPath);
       
@@ -452,13 +452,13 @@ if (require.main === module) {
   const command = process.argv[2];
   const backupId = process.argv[3];
   
-  if (command === 'backup') {
+  if (command === 'back'u'p') {
     backupSystem.createBackup().catch(console.error);
-  } else if (command === 'restore' && backupId) {
+  } else if (command === 'resto'r'e' && backupId) {
     backupSystem.restoreBackup(backupId).catch(console.error);
-  } else if (command === 'continuous') {
+  } else if (command === 'continuo'u's') {
     backupSystem.runContinuousBackup().catch(console.error);
   } else {
-    console.log('Usage: node backup-system.js [backup|restore <backup-id>|continuous]');
+    console.log('Usag'e': node backup-system.js [backup|restore <backup-id>|continuous]');
   }
 } 

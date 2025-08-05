@@ -1,136 +1,108 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
-function fixAllStringLiterals() {
-    const directories = ['pages', 'components', 'src'];
-    
-    directories.forEach(dir => {
-        if (fs.existsSync(dir)) {
-            const files = getAllFiles(dir, '.tsx');
-            files.forEach(file => {
-                try {
-                    let content = fs.readFileSync(file, 'utf8');
-                    
-                    // Fix all unterminated string literals
-                    content = content
-                        // Fix unterminated string literals in import statements
-                        .replace(/from "react";/g, 'from "react";')
-                        .replace(/from 'react";/g, 'from "react";')
-                        .replace(/from "next\/app";/g, 'from "next/app";')
-                        .replace(/from 'next\/app";/g, 'from "next/app";')
-                        .replace(/from "next\/document";/g, 'from "next/document";')
-                        .replace(/from 'next\/document";/g, 'from "next/document";')
-                        .replace(/from "next\/head";/g, 'from "next/head";')
-                        .replace(/from 'next\/head";/g, 'from "next/head";')
-                        .replace(/from "next\/link";/g, 'from "next/link";')
-                        .replace(/from 'next\/link";/g, 'from "next/link";')
-                        .replace(/from "next\/router";/g, 'from "next/router";')
-                        .replace(/from 'next\/router";/g, 'from "next/router";')
-                        .replace(/from "framer-motion";/g, 'from "framer-motion";')
-                        .replace(/from 'framer-motion";/g, 'from "framer-motion";')
-                        .replace(/from "lucide-react";/g, 'from "lucide-react";')
-                        .replace(/from 'lucide-react";/g, 'from "lucide-react";')
-                        
-                        // Fix type imports
-                        .replace(/import type \{ NextPage \} from 'next";/g, 'import type { NextPage } from "next";')
-                        .replace(/import type \{ AppProps \} from 'next\/app";/g, 'import type { AppProps } from "next/app";')
-                        
-                        // Fix interface and type definitions
-                        .replace(/systemHealth: 'healthy' \| 'warning' \| 'error";/g, 'systemHealth: "healthy" | "warning" | "error";')
-                        .replace(/type: 'user' \| 'agent";/g, 'type: "user" | "agent";')
-                        .replace(/type: 'service' \| 'talent' \| 'equipment' \| 'product";/g, 'type: "service" | "talent" | "equipment" | "product";')
-                        .replace(/status: 'active' \| 'maintenance' \| 'offline' \| 'charging' \| 'in-transit";/g, 'status: "active" | "maintenance" | "offline" | "charging" | "in-transit";')
-                        .replace(/variant\?: 'light' \| 'dark";/g, 'variant?: "light" | "dark";')
-                        
-                        // Fix string literals in return statements
-                        .replace(/return '0 Bytes";/g, 'return "0 Bytes";')
-                        .replace(/return 'bg-green-100 text-green-800 border-green-200";/g, 'return "bg-green-100 text-green-800 border-green-200";')
-                        .replace(/return 'bg-yellow-100 text-yellow-800 border-yellow-200";/g, 'return "bg-yellow-100 text-yellow-800 border-yellow-200";')
-                        .replace(/return 'bg-red-100 text-red-800 border-red-200";/g, 'return "bg-red-100 text-red-800 border-red-200";')
-                        .replace(/return 'bg-gray-100 text-gray-800 border-gray-200";/g, 'return "bg-gray-100 text-gray-800 border-gray-200";')
-                        
-                        // Fix object property endings
-                        .replace(/isOnline: true}/g, 'isOnline: true')
-                        .replace(/tags: \[\]}/g, 'tags: []')
-                        .replace(/timestamp: Date}/g, 'timestamp: Date')
-                        
-                        // Fix function declarations
-                        .replace(/const \w+: NextPage = \(\) => {';/g, 'const $1: NextPage = () => {')
-                        .replace(/const \w+: NextPage = \(\) => {";/g, 'const $1: NextPage = () => {')
-                        
-                        // Fix array and object declarations
-                        .replace(/const \w+ = \[/g, 'const $1 = [')
-                        .replace(/const \w+ = \{/g, 'const $1 = {')
-                        
-                        // Remove stray quotes and semicolons
-                        .replace(/;""/g, ';')
-                        .replace(/;''/g, ';')
-                        .replace(/;;/g, ';')
-                        .replace(/;;;/g, ';')
-                        .replace(/;'/g, ';')
-                        .replace(/;"/g, ';')
-                        
-                        // Fix specific patterns
-                        .replace(/';'/g, ';')
-                        .replace(/";'/g, ';')
-                        .replace(/';"/g, ';')
-                        .replace(/";"/g, ';')
-                        
-                        // Fix broken object endings
-                        .replace(/},'/g, '},')
-                        .replace(/},'/g, '},')
-                        .replace(/},'/g, '},')
-                        .replace(/},'/g, '},')
-                        
-                        // Fix broken array endings
-                        .replace(/\]'/g, ']')
-                        .replace(/\]'/g, ']')
-                        .replace(/\]'/g, ']')
-                        .replace(/\]'/g, ']')
-                        
-                        // Fix broken function endings
-                        .replace(/\)'/g, ')')
-                        .replace(/\)'/g, ')')
-                        .replace(/\)'/g, ')')
-                        .replace(/\)'/g, ')')
-                        
-                        // Fix broken interface endings
-                        .replace(/\}'/g, '}')
-                        .replace(/\}'/g, '}')
-                        .replace(/\}'/g, '}')
-                        .replace(/\}'/g, '}')
-                        
-                        // Remove empty statements
-                        .replace(/;\s*;/g, ';')
-                        .replace(/;\s*;\s*;/g, ';');
-                    
-                    fs.writeFileSync(file, content);
-                    console.log(`✅ Fixed string literals: ${file}`);
-                } catch (error) {
-                    console.log(`❌ Error fixing ${file}:`, error.message);
-                }
-            });
-        }
-    });
+// Function to fix unterminated string literals
+function fixStringLiterals(content) {
+  // Fix common patterns of unterminated string literals
+  let fixed = content;
+  
+  // Fix patterns like: string -> string
+  fixed = fixed.replace(/string/g, 'strin'g');
+  
+  // Fix patterns like: '''ar-overl'a'y' | 'vr-immersi'o'n' | 'mr-bl'e'n'd'' -> '''ar-overl'a'y' | 'vr-immersi'o'n' | 'mr-bl'e'n'd''
+  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)/g, "'$1' | '$2' | '$3'");
+  
+  // Fix patterns like: '''acti'v'e' | 'developme'n't' | 'test'i'n'g'' | 'deploye'd' -> '''acti'v'e' | 'developme'n't' | 'test'i'n'g'' | 'deploy'e'd'
+  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g, "'$1' | '$2' | '$3' | '$4'");
+  
+  // Fix patterns like: '''spatial-mappi'n'g' | 'environment-understandi'n'g' | 'object-recognit'i'o'n'' | 'spatial-anchorin'g' -> '''spatial-mappi'n'g' | 'environment-understandi'n'g' | 'object-recognit'i'o'n'' | 'spatial-anchori'n'g'
+  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g, "'$1' | '$2' | '$3' | '$4'");
+  
+  // Fix patterns like: '''physical-tw'i'n' | 'virtual-tw'i'n' | 'hybrid-t'w'i'n'' | 'predictive-twi'n' -> '''physical-tw'i'n' | 'virtual-tw'i'n' | 'hybrid-t'w'i'n'' | 'predictive-tw'i'n'
+  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g, "'$1' | '$2' | '$3' | '$4'");
+  
+  // Fix patterns like: '''experience-optimizati'o'n' | 'content-creati'o'n' | 'interaction-des'i'g'n'' | 'performance-monitorin'g' -> '''experience-optimizati'o'n' | 'content-creati'o'n' | 'interaction-des'i'g'n'' | 'performance-monitori'n'g'
+  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g, "'$1' | '$2' | '$3' | '$4'");
+  
+  // Fix patterns like: '''experien'c'e' | 'spati'a'l' | 'digital-t'w'i'n'' | 'technolog'y' -> '''experien'c'e' | 'spati'a'l' | 'digital-t'w'i'n'' | 'technolo'g'y'
+  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g, "'$1' | '$2' | '$3' | '$4'");
+  
+  // Fix patterns like: '''positi'v'e' | 'negati'v'e' | 'neut'r'a'l' -> '''positi'v'e' | 'negati'v'e' | 'neut'r'a'l''
+  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g, "'$1' | '$2' | '$3'");
+  
+  // Fix patterns like: '''overvi'e'w' | 'experienc'e's' | 'spat'i'a'l'' | '''digital-tw'i'n' | 'technolo'g'y' | 'insig'h't's'' -> '''overvi'e'w' | 'experienc'e's' | 'spat'i'a'l'' | '''digital-tw'i'n' | 'technolo'g'y' | 'insig'h't's''
+  fixed = fixed.replace(/([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)'\s*\|\s*'([a-zA-Z-]+)(?!')/g, "'$1' | '$2' | '$3' | '$4' | '$5' | '$6'");
+  
+  // Fix patterns like: 'al'l' -> 'a'l'l'
+  fixed = fixed.replace(/'([a-zA-Z-]+)(?!')/g, "'$1'");
+  
+  // Fix patterns like: 'overvie'w' -> 'overvi'e'w'
+  fixed = fixed.replace(/'([a-zA-Z-]+)(?!')/g, "'$1'");
+  
+  // Fix patterns like: [] -> []
+  fixed = fixed.replace(/\[\]/g, '[]');
+  
+  // Fix patterns like: null -> null
+  fixed = fixed.replace(/null/g, 'nu'l'l');
+  
+  return fixed;
 }
 
-function getAllFiles(dir, ext) {
-    const files = [];
-    const items = fs.readdirSync(dir);
+// Function to process a file
+function processFile(filePath) {
+  try {
+    const content = fs.readFileSync(filePath, 'ut'f'8');
+    const fixedContent = fixStringLiterals(content);
+    
+    if (content !== fixedContent) {
+      fs.writeFileSync(filePath, fixedContent, 'ut'f'8');
+      console.log(`Fixed: ${filePath}`);
+      return true;
+    }
+    return false;
+  } catch (error) {
+    console.error(`Error processing ${filePath}:`, error.message);
+    return false;
+  }
+}
+
+// Function to recursively find all TypeScript/JavaScript files
+function findFiles(dir, extensions = ['.ts', '.tsx', '.js', '.jsx']) {
+  const files = [];
+  
+  function traverse(currentDir) {
+    const items = fs.readdirSync(currentDir);
     
     for (const item of items) {
-        const fullPath = path.join(dir, item);
-        const stat = fs.statSync(fullPath);
-        
-        if (stat.isDirectory()) {
-            files.push(...getAllFiles(fullPath, ext));
-        } else if (item.endsWith(ext)) {
-            files.push(fullPath);
+      const fullPath = path.join(currentDir, item);
+      const stat = fs.statSync(fullPath);
+      
+      if (stat.isDirectory()) {
+        // Skip node_modules and .git directories
+        if (item !== 'nod'e'_modules' && item !== '.git' && !item.startsWith('.')) {
+          traverse(fullPath);
         }
+      } else if (extensions.some(ext => item.endsWith(ext))) {
+        files.push(fullPath);
+      }
     }
-    
-    return files;
+  }
+  
+  traverse(dir);
+  return files;
 }
 
-fixAllStringLiterals();
-console.log('✅ All string literals fix completed'); 
+// Main execution
+const projectRoot = process.cwd();
+const files = findFiles(projectRoot);
+
+console.log(`Found ${files.length} files to process...`);
+
+let fixedCount = 0;
+for (const file of files) {
+  if (processFile(file)) {
+    fixedCount++;
+  }
+}
+
+console.log(`Fixed ${fixedCount} files.`); 

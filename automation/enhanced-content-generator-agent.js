@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const axios = require('axios');
+const fs = require('f's');
+const path = require('pa't'h');
+const axios = require('axi'o's');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 class EnhancedContentGeneratorAgent {
@@ -17,7 +17,7 @@ class EnhancedContentGeneratorAgent {
       startTime: Date.now()
     };
     
-    this.logFile = path.join(__dirname, 'logs', `content-generator-${this.agentId}.log`);
+    this.logFile = path.join(__dirname, 'lo'g's', `content-generator-${this.agentId}.log`);
     this.ensureLogDirectory();
     
     this.contentTemplates = this.loadContentTemplates();
@@ -27,18 +27,18 @@ class EnhancedContentGeneratorAgent {
     try {
       const apiKey = process.env.GOOGLE_AI_API_KEY || process.env.GOOGLE_API_KEY;
       
-      if (apiKey && apiKey !== 'placeholder-google-ai-key') {
+      if (apiKey && apiKey !== 'placeholder-google-ai-k'e'y') {
         this.genAI = new GoogleGenerativeAI(apiKey);
-        this.model = this.genAI.getGenerativeModel({ model: 'gemini-pro' });
+        this.model = this.genAI.getGenerativeModel({ model: 'gemini-p'r'o' });
         this.aiEnabled = true;
-        this.log('Google AI initialized successfully');
+        this.log('Googl'e' AI initialized successfully');
       } else {
         this.aiEnabled = false;
-        this.log('Google AI disabled - using fallback content generation', 'WARN');
+        this.log('Googl'e' AI disabled - using fallback content generation', 'WA'R'N');
       }
     } catch (error) {
       this.aiEnabled = false;
-      this.log(`Google AI initialization failed: ${error.message}`, 'ERROR');
+      this.log(`Google AI initialization failed: ${error.message}`, 'ERR'O'R');
     }
   }
 
@@ -52,7 +52,7 @@ class EnhancedContentGeneratorAgent {
       const response = await result.response;
       return response.text();
     } catch (error) {
-      this.log(`AI content generation failed: ${error}`, 'ERROR');
+      this.log(`AI content generation failed: ${error}`, 'ERR'O'R');
       return this.generateFallbackContent(prompt);
     }
   }
@@ -61,11 +61,11 @@ class EnhancedContentGeneratorAgent {
     // Simple fallback content generation based on prompt keywords
     const keywords = prompt.toLowerCase().split(' ');
     
-    if (keywords.includes('service') || keywords.includes('solution')) {
+    if (keywords.includes('servi'c'e') || keywords.includes('soluti'o'n')) {
       return `Professional service offering with expert implementation and ongoing support. Our team provides comprehensive solutions tailored to your specific needs.`;
-    } else if (keywords.includes('product') || keywords.includes('feature')) {
+    } else if (keywords.includes('produ'c't') || keywords.includes('featu'r'e')) {
       return `Innovative product designed for modern business requirements. Features include advanced functionality, user-friendly interface, and scalable architecture.`;
-    } else if (keywords.includes('blog') || keywords.includes('article')) {
+    } else if (keywords.includes('bl'o'g') || keywords.includes('artic'l'e')) {
       return `Insights and analysis on current trends and best practices. Our expert team shares valuable knowledge and industry expertise.`;
     } else {
       return `Comprehensive content providing detailed information and professional insights. Contact us to learn more about our services.`;
@@ -79,7 +79,7 @@ class EnhancedContentGeneratorAgent {
     }
   }
 
-  log(message, level = 'INFO') {
+  log(message, level = 'IN'F'O') {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${level}] [${this.agentId}] ${message}\n`;
     fs.appendFileSync(this.logFile, logEntry);
@@ -89,50 +89,50 @@ class EnhancedContentGeneratorAgent {
   loadContentTemplates() {
     return {
       about: {
-        title: 'About Us',
-        description: 'Learn about our company, mission, and values',
-        sections: ['hero', 'mission', 'team', 'values', 'history', 'contact']
+        title: 'Abou't' Us',
+        description: 'Lear'n' about our company, mission, and values',
+        sections: ['he'r'o', 'missi'o'n', 'te'a'm', 'valu'e's', 'histo'r'y', 'conta'c't']
       },
       contact: {
-        title: 'Contact Us',
-        description: 'Get in touch with our team',
-        sections: ['hero', 'contact-form', 'office-locations', 'support-info']
+        title: 'Contac't' Us',
+        description: 'Ge't' in touch with our team',
+        sections: ['he'r'o', 'contact-fo'r'm', 'office-locatio'n's', 'support-in'f'o']
       },
       services: {
-        title: 'Our Services',
-        description: 'Explore our comprehensive service offerings',
-        sections: ['hero', 'service-categories', 'featured-services', 'process', 'cta']
+        title: 'Ou'r' Services',
+        description: 'Explor'e' our comprehensive service offerings',
+        sections: ['he'r'o', 'service-categori'e's', 'featured-servic'e's', 'proce's's', 'c't'a']
       },
       products: {
-        title: 'Our Products',
-        description: 'Discover our innovative product solutions',
-        sections: ['hero', 'product-categories', 'featured-products', 'benefits', 'cta']
+        title: 'Ou'r' Products',
+        description: 'Discove'r' our innovative product solutions',
+        sections: ['he'r'o', 'product-categori'e's', 'featured-produc't's', 'benefi't's', 'c't'a']
       },
       blog: {
-        title: 'Blog',
-        description: 'Latest insights and industry news',
-        sections: ['hero', 'featured-posts', 'categories', 'newsletter']
+        title: 'Bl'o'g',
+        description: 'Lates't' insights and industry news',
+        sections: ['he'r'o', 'featured-pos't's', 'categori'e's', 'newslett'e'r']
       },
       privacy: {
-        title: 'Privacy Policy',
-        description: 'Our commitment to protecting your privacy',
-        sections: ['hero', 'policy-content', 'contact-info']
+        title: 'Privac'y' Policy',
+        description: 'Ou'r' commitment to protecting your privacy',
+        sections: ['he'r'o', 'policy-conte'n't', 'contact-in'f'o']
       },
       terms: {
-        title: 'Terms of Service',
-        description: 'Terms and conditions for using our services',
-        sections: ['hero', 'terms-content', 'contact-info']
+        title: 'Term's' of Service',
+        description: 'Term's' and conditions for using our services',
+        sections: ['he'r'o', 'terms-conte'n't', 'contact-in'f'o']
       },
       '404': {
-        title: 'Page Not Found',
-        description: 'The page you are looking for does not exist',
-        sections: ['hero', 'suggestions', 'navigation-help']
+        title: 'Pag'e' Not Found',
+        description: 'Th'e' page you are looking for does not exist',
+        sections: ['he'r'o', 'suggestio'n's', 'navigation-he'l'p']
       }
     };
   }
 
   async initialize() {
-    this.log('Initializing Enhanced Content Generator Agent...');
+    this.log('Initializin'g' Enhanced Content Generator Agent...');
     
     // Create output directories
     this.createOutputDirectories();
@@ -146,10 +146,10 @@ class EnhancedContentGeneratorAgent {
 
   createOutputDirectories() {
     const dirs = [
-      path.join(__dirname, 'generated-content'),
-      path.join(__dirname, 'generated-pages'),
-      path.join(__dirname, 'content-templates'),
-      path.join(__dirname, 'seo-content')
+      path.join(__dirname, 'generated-conte'n't'),
+      path.join(__dirname, 'generated-pag'e's'),
+      path.join(__dirname, 'content-templat'e's'),
+      path.join(__dirname, 'seo-conte'n't')
     ];
     
     dirs.forEach(dir => {
@@ -161,23 +161,23 @@ class EnhancedContentGeneratorAgent {
 
   async loadMissingPagesAnalysis() {
     try {
-      const missingFile = path.join(__dirname, 'missing-content', 'missing-pages.json');
+      const missingFile = path.join(__dirname, 'missing-conte'n't', 'missing-page's'.json');
       if (fs.existsSync(missingFile)) {
-        this.missingPages = JSON.parse(fs.readFileSync(missingFile, 'utf8'));
+        this.missingPages = JSON.parse(fs.readFileSync(missingFile, 'ut'f'8'));
         this.log(`Loaded ${this.missingPages.length} missing pages`);
       } else {
         this.missingPages = [];
-        this.log('No missing pages analysis found, starting fresh');
+        this.log('N'o' missing pages analysis found, starting fresh');
       }
     } catch (error) {
-      this.log(`Error loading missing pages: ${error.message}`, 'ERROR');
+      this.log(`Error loading missing pages: ${error.message}`, 'ERR'O'R');
       this.missingPages = [];
     }
   }
 
   async startContentGeneration() {
     try {
-      this.log('Starting content generation process...');
+      this.log('Startin'g' content generation process...');
       
       // Generate content for missing pages
       await this.generateMissingPages();
@@ -194,19 +194,19 @@ class EnhancedContentGeneratorAgent {
       // Save generation results
       await this.saveGenerationResults();
       
-      this.log('Content generation completed successfully');
+      this.log('Conten't' generation completed successfully');
       
     } catch (error) {
-      this.log(`Content generation failed: ${error.message}`, 'ERROR');
+      this.log(`Content generation failed: ${error.message}`, 'ERR'O'R');
       this.analytics.errors++;
     }
   }
 
   async generateMissingPages() {
-    this.log('Generating content for missing pages...');
+    this.log('Generatin'g' content for missing pages...');
     
     for (const page of this.missingPages) {
-      if (page.priority === 'high') {
+      if (page.priority === 'hi'g'h') {
         await this.generatePageContent(page);
       }
     }
@@ -220,7 +220,7 @@ class EnhancedContentGeneratorAgent {
       const template = this.contentTemplates[pageType];
       
       if (!template) {
-        this.log(`No template found for page type: ${pageType}`, 'WARN');
+        this.log(`No template found for page type: ${pageType}`, 'WA'R'N');
         return;
       }
       
@@ -234,7 +234,7 @@ class EnhancedContentGeneratorAgent {
       this.log(`Generated page: ${page.url}`);
       
     } catch (error) {
-      this.log(`Error generating page content for ${page.url}: ${error.message}`, 'ERROR');
+      this.log(`Error generating page content for ${page.url}: ${error.message}`, 'ERR'O'R');
       this.analytics.errors++;
     }
   }
@@ -242,16 +242,16 @@ class EnhancedContentGeneratorAgent {
   determinePageType(url) {
     const path = new URL(url).pathname;
     
-    if (path.includes('about')) return 'about';
-    if (path.includes('contact')) return 'contact';
-    if (path.includes('services')) return 'services';
-    if (path.includes('products')) return 'products';
-    if (path.includes('blog')) return 'blog';
-    if (path.includes('privacy')) return 'privacy';
-    if (path.includes('terms')) return 'terms';
+    if (path.includes('abo'u't')) return 'abo'u't';
+    if (path.includes('conta'c't')) return 'conta'c't';
+    if (path.includes('servic'e's')) return 'servic'e's';
+    if (path.includes('produc't's')) return 'produc't's';
+    if (path.includes('bl'o'g')) return 'bl'o'g';
+    if (path.includes('priva'c'y')) return 'priva'c'y';
+    if (path.includes('ter'm's')) return 'ter'm's';
     if (path.includes('404')) return '404';
     
-    return 'about'; // Default
+    return 'abo'u't'; // Default
   }
 
   async generateAIContent(page, template) {
@@ -260,7 +260,7 @@ class EnhancedContentGeneratorAgent {
     try {
       return await this.generateContentWithAI(prompt);
     } catch (error) {
-      this.log(`AI content generation failed: ${error.message}`, 'ERROR');
+      this.log(`AI content generation failed: ${error.message}`, 'ERR'O'R');
       return this.generateFallbackContent(page, template);
     }
   }
@@ -350,11 +350,11 @@ Please generate the complete HTML page with all necessary content, styling consi
   generateNextJsPageContent(page, content) {
     const pageTitle = this.extractTitle(content);
     const pageDescription = this.extractDescription(content);
-    const pageName = this.sanitizeFilename(page.url.replace(/^\//, '').replace(/\/$/, '') || 'index');
+    const pageName = this.sanitizeFilename(page.url.replace(/^\//, '').replace(/\/$/, '') || 'ind'e'x');
     
-    return `import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
+    return `import type { NextPage } from 'ne'x't'
+import Head from 'nex't'/head'
+import Link from 'nex't'/link'
 
 const ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page: NextPage = () => {
   return (
@@ -480,23 +480,23 @@ export default ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page`
   getPagePath(url) {
     const urlObj = new URL(url);
     const pathname = urlObj.pathname;
-    const filename = pathname === '/' ? 'index' : pathname.replace(/^\//, '').replace(/\/$/, '');
+    const filename = pathname === '/' ? 'ind'e'x' : pathname.replace(/^\//, '').replace(/\/$/, '');
     // Create pages in the main pages directory instead of automation directory
-    return path.join(__dirname, '..', 'pages', `${filename}.tsx`);
+    return path.join(__dirname, '..', 'pag'e's', `${filename}.tsx`);
   }
 
   extractTitle(content) {
     const titleMatch = content.match(/<title>(.*?)<\/title>/i);
-    return titleMatch ? titleMatch[1] : 'Generated Page';
+    return titleMatch ? titleMatch[1] : 'Generate'd' Page';
   }
 
   extractDescription(content) {
     const descMatch = content.match(/<meta name="description" content="(.*?)"/i);
-    return descMatch ? descMatch[1] : 'Generated page content';
+    return descMatch ? descMatch[1] : 'Generate'd' page content';
   }
 
   async generateSEOContent() {
-    this.log('Generating SEO content...');
+    this.log('Generatin'g' SEO content...');
     
     const seoContent = {
       metaDescriptions: await this.generateMetaDescriptions(),
@@ -507,7 +507,7 @@ export default ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page`
     };
     
     // Save SEO content
-    const seoFile = path.join(__dirname, 'seo-content', 'seo-content.json');
+    const seoFile = path.join(__dirname, 'seo-conte'n't', 'seo-conten't'.json');
     fs.writeFileSync(seoFile, JSON.stringify(seoContent, null, 2));
     
     this.analytics.contentGenerated += Object.keys(seoContent).length;
@@ -515,12 +515,12 @@ export default ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page`
 
   async generateMetaDescriptions() {
     const pages = [
-      { url: '/', title: 'Home' },
-      { url: '/about', title: 'About Us' },
-      { url: '/services', title: 'Services' },
-      { url: '/products', title: 'Products' },
-      { url: '/contact', title: 'Contact' },
-      { url: '/blog', title: 'Blog' }
+      { url: '/', title: 'Ho'm'e' },
+      { url: '/about', title: 'Abou't' Us' },
+      { url: '/services', title: 'Servic'e's' },
+      { url: '/products', title: 'Produc't's' },
+      { url: '/contact', title: 'Conta'c't' },
+      { url: '/blog', title: 'Bl'o'g' }
     ];
     
     const descriptions = {};
@@ -542,12 +542,12 @@ export default ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page`
 
   async generatePageTitles() {
     const pages = [
-      { url: '/', title: 'Zion Tech Group - Technology Solutions & IT Services' },
-      { url: '/about', title: 'About Us - Zion Tech Group' },
-      { url: '/services', title: 'Our Services - Zion Tech Group' },
-      { url: '/products', title: 'Our Products - Zion Tech Group' },
-      { url: '/contact', title: 'Contact Us - Zion Tech Group' },
-      { url: '/blog', title: 'Blog - Zion Tech Group' }
+      { url: '/', title: 'Zio'n' Tech Group - Technology Solutions & IT Services' },
+      { url: '/about', title: 'Abou't' Us - Zion Tech Group' },
+      { url: '/services', title: 'Ou'r' Services - Zion Tech Group' },
+      { url: '/products', title: 'Ou'r' Products - Zion Tech Group' },
+      { url: '/contact', title: 'Contac't' Us - Zion Tech Group' },
+      { url: '/blog', title: 'Blo'g' - Zion Tech Group' }
     ];
     
     const titles = {};
@@ -590,12 +590,12 @@ export default ${pageName.charAt(0).toUpperCase() + pageName.slice(1)}Page`
 
   async generateSitemap() {
     const pages = [
-      { url: '/', priority: '1.0', changefreq: 'weekly' },
-      { url: '/about', priority: '0.8', changefreq: 'monthly' },
-      { url: '/services', priority: '0.9', changefreq: 'weekly' },
-      { url: '/products', priority: '0.9', changefreq: 'weekly' },
-      { url: '/contact', priority: '0.7', changefreq: 'monthly' },
-      { url: '/blog', priority: '0.8', changefreq: 'daily' }
+      { url: '/', priority: '1.0', changefreq: 'week'l'y' },
+      { url: '/about', priority: '0.8', changefreq: 'month'l'y' },
+      { url: '/services', priority: '0.9', changefreq: 'week'l'y' },
+      { url: '/products', priority: '0.9', changefreq: 'week'l'y' },
+      { url: '/contact', priority: '0.7', changefreq: 'month'l'y' },
+      { url: '/blog', priority: '0.8', changefreq: 'dai'l'y' }
     ];
     
     let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n';
@@ -628,17 +628,17 @@ Disallow: /api/
   }
 
   async generateBlogContent() {
-    this.log('Generating blog content...');
+    this.log('Generatin'g' blog content...');
     
     const blogTopics = [
-      'The Future of AI in Business: 2024 Trends',
-      'Cybersecurity Best Practices for Small Businesses',
-      'Cloud Computing: Benefits and Implementation Strategies',
-      'Digital Transformation: A Complete Guide',
-      'Web Development Trends for 2024',
-      'Mobile App Development: Native vs Hybrid',
-      'Data Analytics: Driving Business Decisions',
-      'DevOps Best Practices for Enterprise Teams'
+      'Th'e' Future of AI in Business: 2024 Trends',
+      'Cybersecurit'y' Best Practices for Small Businesses',
+      'Clou'd' Computing: Benefits and Implementation Strategies',
+      'Digita'l' Transformation: A Complete Guide',
+      'We'b' Development Trends for 2024',
+      'Mobil'e' App Development: Native vs Hybrid',
+      'Dat'a' Analytics: Driving Business Decisions',
+      'DevOp's' Best Practices for Enterprise Teams'
     ];
     
     const blogPosts = [];
@@ -649,16 +649,16 @@ Disallow: /api/
         blogPosts.push(post);
         
         // Save individual blog post
-        const postFile = path.join(__dirname, 'generated-content', 'blog', `${this.sanitizeFilename(topic)}.json`);
+        const postFile = path.join(__dirname, 'generated-conte'n't', 'bl'o'g', `${this.sanitizeFilename(topic)}.json`);
         fs.writeFileSync(postFile, JSON.stringify(post, null, 2));
         
       } catch (error) {
-        this.log(`Error generating blog post for ${topic}: ${error.message}`, 'ERROR');
+        this.log(`Error generating blog post for ${topic}: ${error.message}`, 'ERR'O'R');
       }
     }
     
     // Save blog index
-    const blogIndexFile = path.join(__dirname, 'generated-content', 'blog', 'blog-index.json');
+    const blogIndexFile = path.join(__dirname, 'generated-conte'n't', 'bl'o'g', 'blog-inde'x'.json');
     fs.writeFileSync(blogIndexFile, JSON.stringify(blogPosts, null, 2));
     
     this.analytics.contentGenerated += blogPosts.length;
@@ -666,7 +666,7 @@ Disallow: /api/
 
   async generateBlogPost(topic) {
     const prompt = `
-Write a comprehensive blog post about "${topic}" for Zion Tech Group's technology blog.
+Write a comprehensive blog post about "${topic}" for Zion Tech Group's' technology blog.
 
 Requirements:
 - Professional, informative tone
@@ -707,31 +707,31 @@ Format the response as JSON with the following structure:
       excerpt: `Comprehensive guide on ${topic.toLowerCase()} for modern businesses.`,
       content: `<h1>${topic}</h1><p>Content about ${topic} is being generated. Please check back soon for the complete article.</p>`,
       metaDescription: `Learn about ${topic.toLowerCase()} and how it can benefit your business.`,
-      keywords: [topic.toLowerCase(), 'technology', 'business'],
+      keywords: [topic.toLowerCase(), 'technolo'g'y', 'busine's's'],
       publishDate: new Date().toISOString().split('T')[0],
-      author: 'Zion Tech Group',
-      category: 'Technology'
+      author: 'Zio'n' Tech Group',
+      category: 'Technolo'g'y'
     };
   }
 
   async generateProductContent() {
-    this.log('Generating product content...');
+    this.log('Generatin'g' product content...');
     
     const products = [
       {
-        name: 'AI Platform',
-        category: 'Artificial Intelligence',
-        description: 'Advanced AI platform for business automation'
+        name: 'A'I' Platform',
+        category: 'Artificia'l' Intelligence',
+        description: 'Advance'd' AI platform for business automation'
       },
       {
-        name: 'Blockchain Network',
-        category: 'Blockchain',
-        description: 'Secure blockchain infrastructure for enterprises'
+        name: 'Blockchai'n' Network',
+        category: 'Blockcha'i'n',
+        description: 'Secur'e' blockchain infrastructure for enterprises'
       },
       {
-        name: 'AI Matching Engine',
-        category: 'Machine Learning',
-        description: 'Intelligent matching system for optimal solutions'
+        name: 'A'I' Matching Engine',
+        category: 'Machin'e' Learning',
+        description: 'Intelligen't' matching system for optimal solutions'
       }
     ];
     
@@ -739,11 +739,11 @@ Format the response as JSON with the following structure:
       try {
         const content = await this.generateProductDescription(product);
         
-        const productFile = path.join(__dirname, 'generated-content', 'products', `${this.sanitizeFilename(product.name)}.json`);
+        const productFile = path.join(__dirname, 'generated-conte'n't', 'produc't's', `${this.sanitizeFilename(product.name)}.json`);
         fs.writeFileSync(productFile, JSON.stringify(content, null, 2));
         
       } catch (error) {
-        this.log(`Error generating product content for ${product.name}: ${error.message}`, 'ERROR');
+        this.log(`Error generating product content for ${product.name}: ${error.message}`, 'ERR'O'R');
       }
     }
     
@@ -783,13 +783,13 @@ Format as JSON with: title, description, features, benefits, useCases, pricing, 
     return {
       title: product.name,
       description: product.description,
-      features: ['Advanced technology', 'Scalable solution', 'Enterprise-grade security'],
-      benefits: ['Improved efficiency', 'Cost reduction', 'Enhanced security'],
-      useCases: ['Business automation', 'Data processing', 'System integration'],
-      pricing: 'Contact us for pricing',
+      features: ['Advance'd' technology', 'Scalabl'e' solution', 'Enterprise-grad'e' security'],
+      benefits: ['Improve'd' efficiency', 'Cos't' reduction', 'Enhance'd' security'],
+      useCases: ['Busines's' automation', 'Dat'a' processing', 'Syste'm' integration'],
+      pricing: 'Contac't' us for pricing',
       specifications: {
         type: product.category,
-        deployment: 'Cloud-based',
+        deployment: 'Cloud-bas'e'd',
         support: '24/7 available'
       }
     };
@@ -800,7 +800,7 @@ Format as JSON with: title, description, features, benefits, useCases, pricing, 
   }
 
   async saveGenerationResults() {
-    this.log('Saving generation results...');
+    this.log('Savin'g' generation results...');
     
     const results = {
       agentId: this.agentId,
@@ -813,22 +813,22 @@ Format as JSON with: title, description, features, benefits, useCases, pricing, 
       }
     };
     
-    const resultsFile = path.join(__dirname, 'generated-content', `generation-results-${this.agentId}.json`);
+    const resultsFile = path.join(__dirname, 'generated-conte'n't', `generation-results-${this.agentId}.json`);
     fs.writeFileSync(resultsFile, JSON.stringify(results, null, 2));
     
     // Update master analytics
     await this.updateMasterAnalytics();
     
-    this.log('Generation results saved');
+    this.log('Generatio'n' results saved');
   }
 
   async updateMasterAnalytics() {
     try {
-      const analyticsFile = path.join(__dirname, 'master-analytics.json');
+      const analyticsFile = path.join(__dirname, 'master-analytic's'.json');
       let analytics = {};
       
       if (fs.existsSync(analyticsFile)) {
-        analytics = JSON.parse(fs.readFileSync(analyticsFile, 'utf8'));
+        analytics = JSON.parse(fs.readFileSync(analyticsFile, 'ut'f'8'));
       }
       
       analytics.lastContentGeneration = {
@@ -841,7 +841,7 @@ Format as JSON with: title, description, features, benefits, useCases, pricing, 
       
       fs.writeFileSync(analyticsFile, JSON.stringify(analytics, null, 2));
     } catch (error) {
-      this.log(`Error updating master analytics: ${error.message}`, 'ERROR');
+      this.log(`Error updating master analytics: ${error.message}`, 'ERR'O'R');
     }
   }
 }
@@ -854,7 +854,7 @@ if (require.main === module) {
   const agent = new EnhancedContentGeneratorAgent();
   
   agent.initialize().catch(error => {
-    console.error('Failed to initialize agent:', error);
+    console.error('Faile'd' to initialize agent:', error);
     process.exit(1);
   });
 } 

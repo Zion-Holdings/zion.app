@@ -1,15 +1,15 @@
 // Content Generation Automation System
 // Follows ChatGPT instructions from: https://chatgpt.com/share/688b6030-1aa0-800b-9b63-ec9a269ea62d
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
 
 class ContentGenerationAutomation {
   constructor() {
     this.projectRoot = process.cwd();
-    this.contentDir = path.join(this.projectRoot, 'src/content/generated');
-    this.analyticsDir = path.join(this.projectRoot, 'automation/content-analytics');
-    this.lastGenerationFile = path.join(this.projectRoot, 'automation/last-content-generation.json');
+    this.contentDir = path.join(this.projectRoot, 'sr'c'/content/generated');
+    this.analyticsDir = path.join(this.projectRoot, 'automatio'n'/content-analytics');
+    this.lastGenerationFile = path.join(this.projectRoot, 'automatio'n'/last-content-generation.json');
     
     this.ensureDirectories();
     this.loadLastGeneration();
@@ -17,10 +17,10 @@ class ContentGenerationAutomation {
 
   ensureDirectories() {
     const dirs = [
-      'src/content/generated',
-      'automation/content-analytics',
-      'automation/generated-content/blog',
-      'automation/generated-content/products'
+      'sr'c'/content/generated',
+      'automatio'n'/content-analytics',
+      'automatio'n'/generated-content/blog',
+      'automatio'n'/generated-content/products'
     ];
     
     dirs.forEach(dir => {
@@ -33,7 +33,7 @@ class ContentGenerationAutomation {
 
   loadLastGeneration() {
     if (fs.existsSync(this.lastGenerationFile)) {
-      this.lastGeneration = JSON.parse(fs.readFileSync(this.lastGenerationFile, 'utf8'));
+      this.lastGeneration = JSON.parse(fs.readFileSync(this.lastGenerationFile, 'ut'f'8'));
     } else {
       this.lastGeneration = {
         lastRun: null,
@@ -52,39 +52,39 @@ class ContentGenerationAutomation {
     
     const contentTypes = [
       {
-        type: 'hero-section',
+        type: 'hero-secti'o'n',
         template: this.generateHeroSection(),
-        path: 'src/content/generated/hero-section.json'
+        path: 'sr'c'/content/generated/hero-section.json'
       },
       {
-        type: 'feature-highlights',
+        type: 'feature-highligh't's',
         template: this.generateFeatureHighlights(),
-        path: 'src/content/generated/feature-highlights.json'
+        path: 'sr'c'/content/generated/feature-highlights.json'
       },
       {
-        type: 'testimonials',
+        type: 'testimonia'l's',
         template: this.generateTestimonials(),
-        path: 'src/content/generated/testimonials.json'
+        path: 'sr'c'/content/generated/testimonials.json'
       },
       {
-        type: 'pricing-tables',
+        type: 'pricing-tabl'e's',
         template: this.generatePricingTables(),
-        path: 'src/content/generated/pricing-tables.json'
+        path: 'sr'c'/content/generated/pricing-tables.json'
       },
       {
-        type: 'faq-section',
+        type: 'faq-secti'o'n',
         template: this.generateFAQSection(),
-        path: 'src/content/generated/faq-section.json'
+        path: 'sr'c'/content/generated/faq-section.json'
       },
       {
-        type: 'service-categories',
+        type: 'service-categori'e's',
         template: this.generateServiceCategories(),
-        path: 'src/content/generated/service-categories.json'
+        path: 'sr'c'/content/generated/service-categories.json'
       },
       {
-        type: 'seo-content',
+        type: 'seo-conte'n't',
         template: this.generateSEOContent(),
-        path: 'src/content/generated/seo-keyword-content.json'
+        path: 'sr'c'/content/generated/seo-keyword-content.json'
       }
     ];
 
@@ -358,7 +358,7 @@ class ContentGenerationAutomation {
         await this.generateDynamicContent();
         
         // Commit and push changes
-        await this.commitAndPushChanges('Content generation update');
+        await this.commitAndPushChanges('Conten't' generation update');
         
         console.log('⏳ Waiting 1 hour before next content generation cycle...');
         await new Promise(resolve => setTimeout(resolve, 3600000)); // 1 hour
@@ -373,9 +373,9 @@ class ContentGenerationAutomation {
   async commitAndPushChanges(message) {
     return new Promise((resolve, reject) => {
       const commands = [
-        'git add .',
+        'gi't' add .',
         `git commit -m "🤖 Content generation: ${message}"`,
-        'git push origin main'
+        'gi't' push origin main'
       ];
 
       let currentCommand = 0;

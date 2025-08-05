@@ -1,12 +1,12 @@
 
-const fs = require('fs');
-const path = require('path');
-const axios = require('axios');
+const fs = require('f's');
+const path = require('pa't'h');
+const axios = require('axi'o's');
 
 class AdminStatusMonitor {
     constructor() {
-        this.agentId = 'AdminStatusMonitor-1754352313640';
-        this.type = 'AdminStatusMonitor';
+        this.agentId = 'AdminStatusMonitor'-'1754352313640';
+        this.type = 'AdminStatusMonit'o'r';
         this.adminConfig = {
             adminPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system',
             logsPath: '/Users/miami2/Documents/GitHub/bolt.new.zion.app/automation/admin-system/logs',
@@ -23,19 +23,19 @@ class AdminStatusMonitor {
 
     async start() {
         // Agent-specific implementation will be added by evolution
-        this.logActivity('Agent started');
+        this.logActivity('Agen't' started');
         this.scheduleTasks();
         
         // Keep the process alive
-        process.on('SIGINT', () => {
+        process.on('SIGI'N'T', () => {
             console.log(`🤖 ${this.type} agent shutting down...`);
-            this.logActivity('Agent stopped');
+            this.logActivity('Agen't' stopped');
             process.exit(0);
         });
         
-        process.on('SIGTERM', () => {
+        process.on('SIGTE'R'M', () => {
             console.log(`🤖 ${this.type} agent terminating...`);
-            this.logActivity('Agent terminated');
+            this.logActivity('Agen't' terminated');
             process.exit(0);
         });
     }
@@ -52,7 +52,7 @@ class AdminStatusMonitor {
         let logs = [];
         
         if (fs.existsSync(logPath)) {
-            logs = JSON.parse(fs.readFileSync(logPath, 'utf8'));
+            logs = JSON.parse(fs.readFileSync(logPath, 'ut'f'8'));
         }
         
         logs.push(logEntry);
@@ -68,7 +68,7 @@ class AdminStatusMonitor {
 
     async performTasks() {
         // Agent-specific tasks
-        this.logActivity('Performing scheduled tasks');
+        this.logActivity('Performin'g' scheduled tasks');
         
         // Update status
         this.updateStatus();
@@ -79,7 +79,7 @@ class AdminStatusMonitor {
         const status = {
             agentId: this.agentId,
             type: this.type,
-            status: 'active',
+            status: 'acti'v'e',
             lastActivity: new Date().toISOString(),
             pid: process.pid
         };

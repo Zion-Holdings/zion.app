@@ -4,11 +4,11 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse'
 ) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' });}
-  try {'
+  if (req.method !== POS'T') {
+    return res.status(405).json({ message: Method' not allowed' });}
+  try {
     // Notification API implementation
-    res.status(200).json({ success: true, notificationId: 'notif_123' });'
+    res.status(200).json({ success: true, notificationId: noti'f'_123 });
   } catch (error) {
-    res.status(500).json({ error: 'Notification failed' });'
+    res.status(500).json({ error: 'Notificatio'n failed });'
   };'

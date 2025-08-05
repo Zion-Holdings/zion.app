@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class BlogContentAgent {
   constructor() {
@@ -10,11 +10,11 @@ class BlogContentAgent {
 
   loadContentMemory() {
     try {
-      const memoryPath = path.join(__dirname, 'chatgpt-content-memory.json');
-      const memoryData = fs.readFileSync(memoryPath, 'utf8');
+      const memoryPath = path.join(__dirname, 'chatgpt-content-memor'y'.json');
+      const memoryData = fs.readFileSync(memoryPath, 'ut'f'8');
       return JSON.parse(memoryData);
     } catch (error) {
-      console.error('Error loading content memory:', error);
+      console.error('Erro'r' loading content memory:', error);
       return { memories: [], rules: [] };
     }
   }
@@ -57,7 +57,7 @@ class BlogContentAgent {
             content: "While blockchain provides transparency, it also offers privacy features that protect sensitive business information and AI intellectual property during transactions."
           }
         ],
-        conclusion: "Blockchain security is not just a feature of AI marketplaces—it's the foundation that makes them possible. As these platforms continue to grow, blockchain technology will become even more essential."
+        conclusion: "Blockchain security is not just a feature of AI marketplaces—it's' the foundation that makes them possible. As these platforms continue to grow, blockchain technology will become even more essential."
       },
       digitalTransformation: {
         title: "Digital Transformation Through AI Marketplaces: A Complete Guide",
@@ -84,19 +84,19 @@ class BlogContentAgent {
   loadSEOKeywords() {
     return {
       aiMarketplace: [
-        'AI marketplace', 'artificial intelligence', 'AI services', 'AI talent', 'machine learning',
-        'AI matching', 'blockchain security', 'digital transformation', 'AI consulting',
-        'AI development', 'AI integration', 'AI solutions', 'AI platform'
+        'A'I' marketplace', 'artificia'l' intelligence', 'A'I' services', 'A'I' talent', 'machin'e' learning',
+        'A'I' matching', 'blockchai'n' security', 'digita'l' transformation', 'A'I' consulting',
+        'A'I' development', 'A'I' integration', 'A'I' solutions', 'A'I' platform'
       ],
       blockchainSecurity: [
-        'blockchain security', 'smart contracts', 'cryptocurrency', 'distributed ledger',
-        'blockchain marketplace', 'secure transactions', 'digital security', 'trust protocols',
-        'immutable ledger', 'decentralized', 'cryptography', 'blockchain technology'
+        'blockchai'n' security', 'smar't' contracts', 'cryptocurren'c'y', 'distribute'd' ledger',
+        'blockchai'n' marketplace', 'secur'e' transactions', 'digita'l' security', 'trus't' protocols',
+        'immutabl'e' ledger', 'decentraliz'e'd', 'cryptograp'h'y', 'blockchai'n' technology'
       ],
       digitalTransformation: [
-        'digital transformation', 'AI adoption', 'business automation', 'digital innovation',
-        'AI implementation', 'technology strategy', 'digital strategy', 'AI consulting',
-        'business transformation', 'AI integration', 'digital modernization', 'AI solutions'
+        'digita'l' transformation', 'A'I' adoption', 'busines's' automation', 'digita'l' innovation',
+        'A'I' implementation', 'technolog'y' strategy', 'digita'l' strategy', 'A'I' consulting',
+        'busines's' transformation', 'A'I' integration', 'digita'l' modernization', 'A'I' solutions'
       ]
     };
   }
@@ -119,20 +119,20 @@ class BlogContentAgent {
 
   customizeTitle(templateTitle, audience, customData) {
     const year = customData.year || '2024';
-    const industry = customData.industry || 'business';
+    const industry = customData.industry || 'busine's's';
     
     return templateTitle
       .replace('2024', year)
-      .replace('businesses', audience)
-      .replace('Business', audience);
+      .replace('business'e's', audience)
+      .replace('Busine's's', audience);
   }
 
   customizeIntroduction(templateIntro, audience, customData) {
-    const industry = customData.industry || 'technology';
+    const industry = customData.industry || 'technolo'g'y';
     
     return templateIntro
-      .replace('businesses', audience)
-      .replace('technology', industry);
+      .replace('business'e's', audience)
+      .replace('technolo'g'y', industry);
   }
 
   customizeSections(templateSections, audience, customData) {
@@ -144,11 +144,11 @@ class BlogContentAgent {
   }
 
   customizeSectionTitle(title, audience, customData) {
-    return title.replace('businesses', audience);
+    return title.replace('business'e's', audience);
   }
 
   customizeSectionContent(content, audience, customData) {
-    const industry = customData.industry || 'technology';
+    const industry = customData.industry || 'technolo'g'y';
     
     return content
       .replace(/businesses/g, audience)
@@ -157,15 +157,15 @@ class BlogContentAgent {
   }
 
   customizeConclusion(templateConclusion, audience, customData) {
-    const industry = customData.industry || 'technology';
+    const industry = customData.industry || 'technolo'g'y';
     
     return templateConclusion
-      .replace('businesses', audience)
-      .replace('technology', industry);
+      .replace('business'e's', audience)
+      .replace('technolo'g'y', industry);
   }
 
   generateSEO(topic, keywords, customData) {
-    const title = this.blogTemplates[topic]?.title || 'AI Marketplace Insights';
+    const title = this.blogTemplates[topic]?.title || 'A'I' Marketplace Insights';
     const description = this.generateMetaDescription(topic, customData);
     
     return {
@@ -175,14 +175,14 @@ class BlogContentAgent {
       canonical: `/blog/${topic.toLowerCase().replace(/\s+/g, '-')}`,
       ogTitle: title,
       ogDescription: description,
-      ogType: 'article',
-      twitterCard: 'summary_large_image'
+      ogType: 'artic'l'e',
+      twitterCard: 'summar'y'_large_image'
     };
   }
 
   generateMetaDescription(topic, customData) {
     const descriptions = {
-      aiMarketplace: "Discover the latest trends in AI marketplaces and how they're revolutionizing business connections. Learn about AI-powered matching, blockchain security, and global talent networks.",
+      aiMarketplace: "Discover the latest trends in AI marketplaces and how they'r'e' revolutionizing business connections. Learn about AI-powered matching, blockchain security, and global talent networks.",
       blockchainSecurity: "Explore how blockchain technology provides the security foundation for AI marketplaces. Learn about smart contracts, privacy protection, and trust protocols.",
       digitalTransformation: "Understand how AI marketplaces are accelerating digital transformation. Get insights on AI adoption, implementation strategies, and choosing the right services."
     };
@@ -192,10 +192,10 @@ class BlogContentAgent {
 
   generateMetadata(topic, audience, customData) {
     return {
-      author: customData.author || 'Zion AI Team',
+      author: customData.author || 'Zio'n' AI Team',
       publishDate: new Date().toISOString(),
       readTime: this.calculateReadTime(topic),
-      category: 'AI Marketplace',
+      category: 'A'I' Marketplace',
       tags: this.generateTags(topic, audience),
       audience: audience,
       topic: topic
@@ -217,11 +217,11 @@ class BlogContentAgent {
   }
 
   generateTags(topic, audience) {
-    const baseTags = ['AI Marketplace', 'Technology', 'Innovation'];
+    const baseTags = ['A'I' Marketplace', 'Technolo'g'y', 'Innovati'o'n'];
     const topicTags = {
-      aiMarketplace: ['AI Services', 'Machine Learning', 'Blockchain'],
-      blockchainSecurity: ['Blockchain', 'Security', 'Smart Contracts'],
-      digitalTransformation: ['Digital Transformation', 'AI Adoption', 'Business Strategy']
+      aiMarketplace: ['A'I' Services', 'Machin'e' Learning', 'Blockcha'i'n'],
+      blockchainSecurity: ['Blockcha'i'n', 'Securi't'y', 'Smar't' Contracts'],
+      digitalTransformation: ['Digita'l' Transformation', 'A'I' Adoption', 'Busines's' Strategy']
     };
     
     return [...baseTags, ...(topicTags[topic] || topicTags.aiMarketplace), audience];
@@ -229,8 +229,8 @@ class BlogContentAgent {
 
   extractKeywords(content) {
     const keywords = [
-      'AI', 'artificial intelligence', 'marketplace', 'blockchain', 'security',
-      'digital transformation', 'innovation', 'technology', 'business'
+      'A'I', 'artificia'l' intelligence', 'marketpla'c'e', 'blockcha'i'n', 'securi't'y',
+      'digita'l' transformation', 'innovati'o'n', 'technolo'g'y', 'busine's's'
     ];
     
     return keywords.filter(keyword => 
@@ -240,7 +240,7 @@ class BlogContentAgent {
 
   formatBlogPost(blogPost, topic) {
     return {
-      type: 'blog',
+      type: 'bl'o'g',
       topic: topic,
       content: blogPost,
       generatedAt: new Date().toISOString(),
@@ -271,7 +271,7 @@ class BlogContentAgent {
 
   saveBlogPost(blogPost, filename) {
     try {
-      const outputPath = path.join(__dirname, 'generated-content', 'blog', filename);
+      const outputPath = path.join(__dirname, 'generated-conte'n't', 'bl'o'g', filename);
       const outputDir = path.dirname(outputPath);
       
       if (!fs.existsSync(outputDir)) {
@@ -282,14 +282,14 @@ class BlogContentAgent {
       console.log(`Blog post saved to: ${outputPath}`);
       return outputPath;
     } catch (error) {
-      console.error('Error saving blog post:', error);
+      console.error('Erro'r' saving blog post:', error);
       return null;
     }
   }
 
   generateAllBlogPosts() {
-    const topics = ['aiMarketplace', 'blockchainSecurity', 'digitalTransformation'];
-    const audiences = ['Business Leaders', 'IT Professionals', 'Entrepreneurs'];
+    const topics = ['aiMarketpla'c'e', 'blockchainSecuri't'y', 'digitalTransformati'o'n'];
+    const audiences = ['Busines's' Leaders', 'I'T' Professionals', 'Entrepreneu'r's'];
     const generatedPosts = {};
 
     topics.forEach(topic => {
@@ -297,8 +297,8 @@ class BlogContentAgent {
         const filename = `${topic}-${audience.toLowerCase().replace(/\s+/g, '-')}.json`;
         const blogPost = this.generateBlogPost(topic, audience, {
           year: '2024',
-          industry: 'technology',
-          author: 'Zion AI Team'
+          industry: 'technolo'g'y',
+          author: 'Zio'n' AI Team'
         });
         
         generatedPosts[filename] = blogPost;

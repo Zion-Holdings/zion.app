@@ -4,8 +4,8 @@ const RealTimeMonitor = require('./real-time-monitor');
 const LayoutValidationAgent = require('./layout-validation-agent');
 const MobileOptimizationAgent = require('./mobile-optimization-agent');
 const SidebarIntegrationAgent = require('./sidebar-integration-agent');
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class SuperiorAutomationOrchestrator {
   constructor() {
@@ -16,9 +16,9 @@ class SuperiorAutomationOrchestrator {
     this.mobileAgent = new MobileOptimizationAgent();
     this.sidebarAgent = new SidebarIntegrationAgent();
     
-    this.reportsDir = path.join(process.cwd(), 'automation/frontend-sync-agents/reports');
-    this.logsDir = path.join(process.cwd(), 'automation/frontend-sync-agents/logs');
-    this.dataDir = path.join(process.cwd(), 'automation/frontend-sync-agents/data');
+    this.reportsDir = path.join(process.cwd(), 'automatio'n'/frontend-sync-agents/reports');
+    this.logsDir = path.join(process.cwd(), 'automatio'n'/frontend-sync-agents/logs');
+    this.dataDir = path.join(process.cwd(), 'automatio'n'/frontend-sync-agents/data');
     
     // Ensure directories exist
     this.ensureDirectories();
@@ -213,36 +213,36 @@ class SuperiorAutomationOrchestrator {
     // Decision 1: If many layout issues, prioritize layout fixes
     if (analysis.layoutAnalysis.issues.length > 10) {
       decisions.push({
-        type: 'prioritize_layout_fixes',
-        priority: 'high',
-        description: 'Many layout issues detected, prioritizing layout fixes'
+        type: 'prioritiz'e'_layout_fixes',
+        priority: 'hi'g'h',
+        description: 'Man'y' layout issues detected, prioritizing layout fixes'
       });
     }
     
     // Decision 2: If mobile issues detected, apply mobile optimizations
     if (analysis.mobileAnalysis.issues.length > 5) {
       decisions.push({
-        type: 'apply_mobile_optimizations',
-        priority: 'medium',
-        description: 'Mobile issues detected, applying optimizations'
+        type: 'appl'y'_mobile_optimizations',
+        priority: 'medi'u'm',
+        description: 'Mobil'e' issues detected, applying optimizations'
       });
     }
     
     // Decision 3: If sidebar issues detected, fix sidebar integration
     if (analysis.sidebarAnalysis.issues.length > 3) {
       decisions.push({
-        type: 'fix_sidebar_integration',
-        priority: 'high',
-        description: 'Sidebar issues detected, fixing integration'
+        type: 'fi'x'_sidebar_integration',
+        priority: 'hi'g'h',
+        description: 'Sideba'r' issues detected, fixing integration'
       });
     }
     
     // Decision 4: If many predictions, apply preventive measures
     if (analysis.predictions.predictions.length > 20) {
       decisions.push({
-        type: 'apply_preventive_measures',
-        priority: 'medium',
-        description: 'Many predictions made, applying preventive measures'
+        type: 'appl'y'_preventive_measures',
+        priority: 'medi'u'm',
+        description: 'Man'y' predictions made, applying preventive measures'
       });
     }
     
@@ -254,19 +254,19 @@ class SuperiorAutomationOrchestrator {
     
     try {
       switch (decision.type) {
-        case 'prioritize_layout_fixes':
+        case 'prioritiz'e'_layout_fixes':
           await this.enhancedValidator.applyASTFixes();
           break;
           
-        case 'apply_mobile_optimizations':
+        case 'appl'y'_mobile_optimizations':
           await this.mobileAgent.applyFixes();
           break;
           
-        case 'fix_sidebar_integration':
+        case 'fi'x'_sidebar_integration':
           await this.sidebarAgent.applyFixes();
           break;
           
-        case 'apply_preventive_measures':
+        case 'appl'y'_preventive_measures':
           await this.predictor.applyPreventiveFixes();
           break;
       }
@@ -343,7 +343,7 @@ class SuperiorAutomationOrchestrator {
         summary: analysis.summary,
         monitoringStatus,
         recommendations,
-        status: healthScore >= 90 ? 'excellent' : healthScore >= 70 ? 'good' : healthScore >= 50 ? 'fair' : 'poor'
+        status: healthScore >= 90 ? 'excelle'n't' : healthScore >= 70 ? 'go'o'd' : healthScore >= 50 ? 'fa'i'r' : 'po'o'r'
       };
       
       // Save health report
@@ -388,40 +388,40 @@ class SuperiorAutomationOrchestrator {
     
     if (analysis.summary.criticalIssues > 0) {
       recommendations.push({
-        priority: 'high',
-        action: 'Apply critical fixes immediately',
+        priority: 'hi'g'h',
+        action: 'Appl'y' critical fixes immediately',
         description: `${analysis.summary.criticalIssues} critical issues need immediate attention`
       });
     }
     
     if (analysis.summary.mediumIssues > 5) {
       recommendations.push({
-        priority: 'medium',
-        action: 'Review and fix medium priority issues',
+        priority: 'medi'u'm',
+        action: 'Revie'w' and fix medium priority issues',
         description: `${analysis.summary.mediumIssues} medium priority issues should be addressed`
       });
     }
     
     if (analysis.mobileAnalysis.issues.length > 0) {
       recommendations.push({
-        priority: 'medium',
-        action: 'Improve mobile responsiveness',
-        description: 'Mobile optimization issues detected'
+        priority: 'medi'u'm',
+        action: 'Improv'e' mobile responsiveness',
+        description: 'Mobil'e' optimization issues detected'
       });
     }
     
     if (analysis.sidebarAnalysis.issues.length > 0) {
       recommendations.push({
-        priority: 'high',
-        action: 'Fix sidebar integration issues',
-        description: 'Sidebar functionality issues detected'
+        priority: 'hi'g'h',
+        action: 'Fi'x' sidebar integration issues',
+        description: 'Sideba'r' functionality issues detected'
       });
     }
     
     if (analysis.predictions.predictions.length > 10) {
       recommendations.push({
-        priority: 'medium',
-        action: 'Apply preventive measures',
+        priority: 'medi'u'm',
+        action: 'Appl'y' preventive measures',
         description: `${analysis.predictions.predictions.length} potential issues predicted`
       });
     }
@@ -454,9 +454,9 @@ class SuperiorAutomationOrchestrator {
       totalFixes: allFixes.length,
       totalPredictions: results.predictions.predictions.length,
       issuesBySeverity,
-      criticalIssues: allIssues.filter(issue => issue.severity === 'high').length,
-      mediumIssues: allIssues.filter(issue => issue.severity === 'medium').length,
-      lowIssues: allIssues.filter(issue => issue.severity === 'low').length,
+      criticalIssues: allIssues.filter(issue => issue.severity === 'hi'g'h').length,
+      mediumIssues: allIssues.filter(issue => issue.severity === 'medi'u'm').length,
+      lowIssues: allIssues.filter(issue => issue.severity === 'l'o'w').length,
       averageConfidence: results.predictions.confidence
     };
   }

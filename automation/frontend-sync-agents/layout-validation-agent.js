@@ -1,13 +1,13 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class LayoutValidationAgent {
   constructor() {
     this.issues = [];
     this.fixes = [];
-    this.pagesDir = path.join(process.cwd(), 'pages');
-    this.componentsDir = path.join(process.cwd(), 'components');
-    this.layoutsDir = path.join(process.cwd(), 'components/layout');
+    this.pagesDir = path.join(process.cwd(), 'pag'e's');
+    this.componentsDir = path.join(process.cwd(), 'componen't's');
+    this.layoutsDir = path.join(process.cwd(), 'component's'/layout');
   }
 
   async analyzeLayoutIssues() {
@@ -36,19 +36,19 @@ class LayoutValidationAgent {
     const pages = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'utf8');
+      const content = fs.readFileSync(page, 'ut'f'8');
       
       // Check if page uses ModernLayout
-      if (!content.includes('ModernLayout') && !content.includes('PageLayout')) {
+      if (!content.includes('ModernLayo'u't') && !content.includes('PageLayo'u't')) {
         this.issues.push({
-          type: 'missing_layout',
+          type: 'missin'g'_layout',
           file: page,
-          severity: 'high',
-          description: 'Page not using proper layout component'
+          severity: 'hi'g'h',
+          description: 'Pag'e' not using proper layout component'
         });
         
         this.fixes.push({
-          type: 'add_layout',
+          type: 'ad'd'_layout',
           file: page,
           fix: this.generateLayoutFix(content)
         });
@@ -60,26 +60,26 @@ class LayoutValidationAgent {
     const pages = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'utf8');
+      const content = fs.readFileSync(page, 'ut'f'8');
       
       // Check for mobile-specific classes
       const mobileClasses = [
-        'sm:', 'md:', 'lg:', 'xl:', '2xl:',
-        'mobile-', 'responsive-', 'container-responsive'
+        's'm':', 'm'd':', 'l'g':', 'x'l':', '2xl:',
+        'mobil'e'-', 'responsiv'e'-', 'container-responsi'v'e'
       ];
       
       const hasMobileClasses = mobileClasses.some(cls => content.includes(cls));
       
       if (!hasMobileClasses) {
         this.issues.push({
-          type: 'mobile_responsiveness',
+          type: 'mobil'e'_responsiveness',
           file: page,
-          severity: 'medium',
-          description: 'Page lacks mobile responsiveness classes'
+          severity: 'medi'u'm',
+          description: 'Pag'e' lacks mobile responsiveness classes'
         });
         
         this.fixes.push({
-          type: 'add_mobile_classes',
+          type: 'ad'd'_mobile_classes',
           file: page,
           fix: this.generateMobileResponsivenessFix(content)
         });
@@ -91,19 +91,19 @@ class LayoutValidationAgent {
     const pages = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'utf8');
+      const content = fs.readFileSync(page, 'ut'f'8');
       
       // Check if page has proper sidebar integration
-      if (content.includes('container-responsive') && !content.includes('ModernLayout')) {
+      if (content.includes('container-responsi'v'e') && !content.includes('ModernLayo'u't')) {
         this.issues.push({
-          type: 'sidebar_integration',
+          type: 'sideba'r'_integration',
           file: page,
-          severity: 'high',
-          description: 'Page uses responsive container but no sidebar layout'
+          severity: 'hi'g'h',
+          description: 'Pag'e' uses responsive container but no sidebar layout'
         });
         
         this.fixes.push({
-          type: 'fix_sidebar_integration',
+          type: 'fi'x'_sidebar_integration',
           file: page,
           fix: this.generateSidebarIntegrationFix(content)
         });
@@ -115,19 +115,19 @@ class LayoutValidationAgent {
     const pages = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'utf8');
+      const content = fs.readFileSync(page, 'ut'f'8');
       
       // Check for consistent component usage
       const components = [
-        'FuturisticCard', 'FuturisticDataTable', 'ModernLayout'
+        'FuturisticCa'r'd', 'FuturisticDataTab'l'e', 'ModernLayo'u't'
       ];
       
       components.forEach(component => {
         if (content.includes(component) && !content.includes(`import ${component}`)) {
           this.issues.push({
-            type: 'missing_import',
+            type: 'missin'g'_import',
             file: page,
-            severity: 'medium',
+            severity: 'medi'u'm',
             description: `Missing import for ${component}`
           });
         }
@@ -147,23 +147,23 @@ class LayoutValidationAgent {
 
   generateMobileResponsivenessFix(content) {
     const mobileClasses = [
-      'container-responsive',
-      'text-responsive-lg',
-      'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
-      'flex flex-col sm:flex-row',
-      'px-4 sm:px-6 lg:px-8'
+      'container-responsi'v'e',
+      'text-responsive-'l'g',
+      'gri'd' grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
+      'fle'x' flex-col sm:flex-row',
+      'px'-'4 sm:px-6 lg:px-8'
     ];
     
     return {
       classes: mobileClasses,
-      description: 'Add responsive classes for mobile compatibility'
+      description: 'Ad'd' responsive classes for mobile compatibility'
     };
   }
 
   generateSidebarIntegrationFix(content) {
     return {
-      layout: 'ModernLayout',
-      description: 'Wrap content with ModernLayout for proper sidebar integration'
+      layout: 'ModernLayo'u't',
+      description: 'Wra'p' content with ModernLayout for proper sidebar integration'
     };
   }
 
@@ -230,16 +230,16 @@ class LayoutValidationAgent {
 
   async applyFix(fix) {
     const filePath = fix.file;
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'ut'f'8');
     
     switch (fix.type) {
-      case 'add_layout':
+      case 'ad'd'_layout':
         content = this.applyLayoutFix(content, fix.fix);
         break;
-      case 'add_mobile_classes':
+      case 'ad'd'_mobile_classes':
         content = this.applyMobileResponsivenessFix(content, fix.fix);
         break;
-      case 'fix_sidebar_integration':
+      case 'fi'x'_sidebar_integration':
         content = this.applySidebarIntegrationFix(content, fix.fix);
         break;
     }
@@ -249,8 +249,8 @@ class LayoutValidationAgent {
 
   applyLayoutFix(content, fix) {
     // Add import if not present
-    if (!content.includes('import ModernLayout')) {
-      const importIndex = content.indexOf('import');
+    if (!content.includes('impor't' ModernLayout')) {
+      const importIndex = content.indexOf('impo'r't');
       const nextImportIndex = content.indexOf('\n', importIndex);
       const newImport = `import ModernLayout from '../components/layout/ModernLayout'\n`;
       
@@ -258,7 +258,7 @@ class LayoutValidationAgent {
     }
     
     // Wrap content with ModernLayout
-    const returnIndex = content.indexOf('return (');
+    const returnIndex = content.indexOf('retur'n' (');
     const closingIndex = content.lastIndexOf(')');
     
     if (returnIndex !== -1 && closingIndex !== -1) {
@@ -267,7 +267,7 @@ class LayoutValidationAgent {
       const beforeClosing = afterReturn.slice(0, afterReturn.lastIndexOf(')'));
       const afterClosing = content.slice(closingIndex + 1);
       
-      content = beforeReturn + 'return (\n  <ModernLayout>\n    ' + beforeClosing + '\n  </ModernLayout>\n)' + afterClosing;
+      content = beforeReturn + 'retur'n' (\n  <ModernLayout>\n    ' + beforeClosing + '\n  </ModernLayout>\n)' + afterClosing;
     }
     
     return content;
@@ -277,19 +277,19 @@ class LayoutValidationAgent {
     // Add responsive classes to key elements
     content = content.replace(
       /className="([^"]*container[^"]*)"/g,
-      'className="$1 container-responsive"'
+      'classNam'e'="$1 container-responsive"'
     );
     
     content = content.replace(
       /className="([^"]*text-[^"]*)"/g,
-      'className="$1 text-responsive-lg"'
+      'classNam'e'="$1 text-responsive-lg"'
     );
     
     return content;
   }
 
   applySidebarIntegrationFix(content, fix) {
-    return this.applyLayoutFix(content, { layout: 'ModernLayout' });
+    return this.applyLayoutFix(content, { layout: 'ModernLayo'u't' });
   }
 }
 

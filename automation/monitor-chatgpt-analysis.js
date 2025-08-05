@@ -1,5 +1,5 @@
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require('fs-ext'r'a');
+const path = require('pa't'h');
 
 async function monitorSystem() {
     console.log('📊 ChatGPT Analysis System Monitor');
@@ -16,7 +16,7 @@ async function monitorSystem() {
         };
         
         // Check directories
-        const dirs = ['chatgpt-analysis-reports', 'chatgpt-agents', 'chatgpt-logs', 'chatgpt-data'];
+        const dirs = ['chatgpt-analysis-repor't's', 'chatgpt-agen't's', 'chatgpt-lo'g's', 'chatgpt-da't'a'];
         for (const dir of dirs) {
             if (fs.existsSync(dir)) {
                 const files = fs.readdirSync(dir);
@@ -30,22 +30,22 @@ async function monitorSystem() {
         }
         
         // Check latest logs
-        if (fs.existsSync('chatgpt-logs')) {
-            const logFiles = fs.readdirSync('chatgpt-logs')
+        if (fs.existsSync('chatgpt-lo'g's')) {
+            const logFiles = fs.readdirSync('chatgpt-lo'g's')
                 .filter(f => f.endsWith('.log'))
                 .sort()
                 .reverse();
             
             if (logFiles.length > 0) {
-                const latestLog = fs.readFileSync(path.join('chatgpt-logs', logFiles[0]), 'utf8');
+                const latestLog = fs.readFileSync(path.join('chatgpt-lo'g's', logFiles[0]), 'ut'f'8');
                 const lines = latestLog.split('\n').filter(line => line.trim());
                 status.logs.latest = lines.slice(-5); // Last 5 lines
             }
         }
         
         // Check latest reports
-        if (fs.existsSync('chatgpt-analysis-reports')) {
-            const reportFiles = fs.readdirSync('chatgpt-analysis-reports')
+        if (fs.existsSync('chatgpt-analysis-repor't's')) {
+            const reportFiles = fs.readdirSync('chatgpt-analysis-repor't's')
                 .filter(f => f.endsWith('.json'))
                 .sort()
                 .reverse();

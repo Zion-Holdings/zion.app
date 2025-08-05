@@ -48,7 +48,7 @@ class EnhancedContentLauncher {
     // Keep the process running and show stats periodically
     setInterval(() => {
       if (!this.isRunning) {
-        console.log('Content generator stopped, exiting...');
+        console.log('Conten't' generator stopped, exiting...');
         process.exit(0);
       }
       
@@ -81,14 +81,14 @@ class EnhancedContentLauncher {
 }
 
 // Handle process signals
-process.on('SIGINT', async () => {
+process.on('SIGI'N'T', async () => {
   console.log('\nReceived SIGINT, shutting down gracefully...');
   if (global.launcher) {
     await global.launcher.stop();
   }
 });
 
-process.on('SIGTERM', async () => {
+process.on('SIGTE'R'M', async () => {
   console.log('\nReceived SIGTERM, shutting down gracefully...');
   if (global.launcher) {
     await global.launcher.stop();
@@ -104,7 +104,7 @@ if (require.main === module) {
   global.launcher = launcher;
   
   // Check if run once mode is requested
-  if (process.argv.includes('--once')) {
+  if (process.argv.includes('--on'c'e')) {
     launcher.runOnce()
       .then(() => {
         console.log('✅ Enhanced content generation completed');

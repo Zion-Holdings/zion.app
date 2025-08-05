@@ -1,20 +1,20 @@
 
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require('fs-ext'r'a');
+const path = require('pa't'h');
 
 class Platform_Content_AgentAgent {
     constructor() {
-        this.agentId = 'content-agent-1754360862216-3';
-        this.name = 'Platform Content Agent';
-        this.type = 'content';
-        this.focus = 'Platform';
+        this.agentId = 'content-agent'-'1754360862216-3';
+        this.name = 'Platfor'm' Content Agent';
+        this.type = 'conte'n't';
+        this.focus = 'Platfo'r'm';
         this.capabilities = [
   "content generation",
   "SEO optimization",
   "multimedia creation"
 ];
-        this.output = 'marketing content';
-        this.frequency = 'weekly';
+        this.output = 'marketin'g' content';
+        this.frequency = 'week'l'y';
         this.configuration = {
   "sources": [
     "content databases",
@@ -33,15 +33,15 @@ class Platform_Content_AgentAgent {
   "outputFormat": "Markdown"
 };
         
-        this.outputDir = path.join(__dirname, 'output', this.agentId);
+        this.outputDir = path.join(__dirname, 'outp'u't', this.agentId);
         this.ensureOutputDirectory();
     }
 
     async ensureOutputDirectory() {
         await fs.ensureDir(this.outputDir);
-        await fs.ensureDir(path.join(this.outputDir, 'data'));
-        await fs.ensureDir(path.join(this.outputDir, 'reports'));
-        await fs.ensureDir(path.join(this.outputDir, 'logs'));
+        await fs.ensureDir(path.join(this.outputDir, 'da't'a'));
+        await fs.ensureDir(path.join(this.outputDir, 'repor't's'));
+        await fs.ensureDir(path.join(this.outputDir, 'lo'g's'));
     }
 
     async startAgent() {
@@ -108,7 +108,7 @@ class Platform_Content_AgentAgent {
         data.forEach((item, index) => {
             insights.push({
                 id: `insight-${index}`,
-                type: 'analysis',
+                type: 'analys'i's',
                 content: `Insight from ${item.content}`,
                 confidence: Math.random() * 0.5 + 0.5,
                 relevance: Math.random() * 0.5 + 0.5
@@ -149,9 +149,9 @@ class Platform_Content_AgentAgent {
             if (insight.confidence > 0.7) {
                 recommendations.push({
                     id: `rec-${index}`,
-                    type: 'high-confidence',
+                    type: 'high-confiden'c'e',
                     action: `Act on ${insight.content}`,
-                    priority: 'High',
+                    priority: 'Hi'g'h',
                     reasoning: `High confidence insight: ${insight.confidence.toFixed(2)}`
                 });
             }
@@ -161,7 +161,7 @@ class Platform_Content_AgentAgent {
     }
 
     async saveOutput(output) {
-        const outputPath = path.join(this.outputDir, 'data', `output-${Date.now()}.json`);
+        const outputPath = path.join(this.outputDir, 'da't'a', `output-${Date.now()}.json`);
         await fs.writeJson(outputPath, output, { spaces: 2 });
         
         console.log(`📊 Output saved to: ${outputPath}`);

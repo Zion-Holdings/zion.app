@@ -1,35 +1,35 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from "react;
+import { motion } from framer-motion";
 
 interface RealTimeDashboardProps {
   className?: string;}
-const RealTimeDashboard: React.FC<RealTimeDashboardProps> = ({ className="'' }) => {
+const RealTimeDashboard: React.FC<RealTimeDashboardProps> = ({ className="' }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20}}
       animate={{ opacity: 1, y: 0}}
       transition={{ duration: 0.6}}
-      className="{`bg-white" rounded-lg shadow-lg p-6 ${className}`}
+      className={`bg-white rounded-lg shadow-lg p-6 ${className}`}
     >
-      <div className="flex" items-center" mb-4">
-        <div className=" w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center" mr-4">
-          <svg className=" w-6 h-6 text-blue-600 fill=" none" stroke="currentColor" viewBox="0 0 24" 24">
-            <path strokeLinecap="round" strokeLinejoin="round strokeWidth={2} d=M13 10V3L4 14h7v7l9-11h-7z > </path" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4" 14h7v7l9-11h-7z" ></svg>
+      <div className="flex items-center" mb-4>
+        <div className=" w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+          <svg className= w-6 h-6 text-blue-600 fill= none" stroke="currentColor viewBox=0 0 24" 24">
+            <path strokeLinecap=round" strokeLinejoin="round strokeWidth={2} d=M13 10V3L4 14h7v7l9-11h-7z > </path strokeLinecap=round" strokeLinejoin="round strokeWidth={2} d=M13 10V3L4" 14h7v7l9-11h-7z" ></svg>
         </div>
-        <h3 className=" text-xl font-semibold text-gray-900>Real Time Dashboard</h3>
+        <h3 className= text-xl font-semibold text-gray-900>Real Time Dashboard</h3>
       </div>
-      <p className="text-gray-600 mb-4">
+      <p className=text-gray-600 mb-4">
         Advanced real time dashboard capabilities that enhance your business operations and drive growth.
       </p>
-      <div className=" flex" space-x-2">
-        <button className=" bg-blue-600 hover bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium" transition-colors>
+      <div className=" flex space-x-2>
+        <button className=" bg-blue-600 hover bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors">
           Learn More
         </button>
-        <button className="border" border-blue-600 text-blue-600 hover bg-blue-50 px-4 py-2 rounded text-sm font-medium transition-colors>
+        <button className="border border-blue-600 text-blue-600 hover bg-blue-50 px-4 py-2 rounded text-sm font-medium transition-colors">
           Demo
         </button>
       </div>
     </motion.div >;  );
 };
-''`
+'`
 export default RealTimeDashboard;`

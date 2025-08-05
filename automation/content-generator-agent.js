@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class ContentGeneratorAgent {
   constructor() {
@@ -131,7 +131,7 @@ class ContentGeneratorAgent {
 
     for (const service of services) {
       const content = this.generateServiceContent(service);
-      await this.saveContent('service-descriptions', service.name.toLowerCase().replace(/\s+/g, '-'), content);
+      await this.saveContent('service-descriptio'n's', service.name.toLowerCase().replace(/\s+/g, '-'), content);
     }
     
     console.log('✅ Service descriptions generated');
@@ -220,7 +220,7 @@ class ContentGeneratorAgent {
 
     for (const talent of talents) {
       const content = this.generateTalentContent(talent);
-      await this.saveContent('talent-profiles', talent.name.toLowerCase().replace(/\s+/g, '-'), content);
+      await this.saveContent('talent-profil'e's', talent.name.toLowerCase().replace(/\s+/g, '-'), content);
     }
     
     console.log('✅ Talent profiles generated');
@@ -287,7 +287,7 @@ class ContentGeneratorAgent {
 
     for (const post of blogPosts) {
       const content = this.generateBlogContent(post);
-      await this.saveContent('blog-posts', post.title.toLowerCase().replace(/\s+/g, '-'), content);
+      await this.saveContent('blog-pos't's', post.title.toLowerCase().replace(/\s+/g, '-'), content);
     }
     
     console.log('✅ Blog posts generated');
@@ -344,7 +344,7 @@ class ContentGeneratorAgent {
 
     for (const testimonial of testimonials) {
       const content = this.generateTestimonialContent(testimonial);
-      await this.saveContent('testimonials', testimonial.name.toLowerCase().replace(/\s+/g, '-'), content);
+      await this.saveContent('testimonia'l's', testimonial.name.toLowerCase().replace(/\s+/g, '-'), content);
     }
     
     console.log('✅ Testimonials generated');
@@ -378,7 +378,7 @@ class ContentGeneratorAgent {
       },
       {
         question: "How can I get started with your services?",
-        answer: "Contact us through our website or call us directly. We'll schedule a consultation to discuss your project requirements."
+        answer: "Contact us through our website or call us directly. We'l'l' schedule a consultation to discuss your project requirements."
       },
       {
         question: "What is your typical project timeline?",
@@ -396,7 +396,7 @@ class ContentGeneratorAgent {
 
     for (const faq of faqTemplates) {
       const content = `## ${faq.question}\n\n${faq.answer}`;
-      await this.saveContent('faq', `faq-${Date.now()}`, content);
+      await this.saveContent('f'a'q', `faq-${Date.now()}`, content);
     }
   }
 
@@ -413,7 +413,7 @@ class ContentGeneratorAgent {
             url: page.url,
             title: page.title,
             content: content,
-            type: 'page'
+            type: 'pa'g'e'
           });
         }
       }
@@ -443,7 +443,7 @@ class ContentGeneratorAgent {
 # ${page.title}
 
 ## Overview
-${page.description || 'Comprehensive information about this service or feature.'}
+${page.description || 'Comprehensiv'e' information about this service or feature.'}
 
 ## Features
 - Advanced functionality
@@ -466,12 +466,12 @@ Get in touch to learn more about our ${page.title} services.
 
   async generateContentItem(contentItem) {
     const templates = {
-      'service': `## ${contentItem.title}\n\nProfessional ${contentItem.title.toLowerCase()} services with expert implementation and ongoing support.`,
-      'product': `## ${contentItem.title}\n\nInnovative ${contentItem.title.toLowerCase()} solution designed for modern business needs.`,
-      'blog': `## ${contentItem.title}\n\nInsights and analysis on ${contentItem.title.toLowerCase()} trends and best practices.`
+      'servi'c'e': `## ${contentItem.title}\n\nProfessional ${contentItem.title.toLowerCase()} services with expert implementation and ongoing support.`,
+      'produ'c't': `## ${contentItem.title}\n\nInnovative ${contentItem.title.toLowerCase()} solution designed for modern business needs.`,
+      'bl'o'g': `## ${contentItem.title}\n\nInsights and analysis on ${contentItem.title.toLowerCase()} trends and best practices.`
     };
     
-    return templates[contentItem.type] || `## ${contentItem.title}\n\n${contentItem.description || 'Comprehensive content about this topic.'}`;
+    return templates[contentItem.type] || `## ${contentItem.title}\n\n${contentItem.description || 'Comprehensiv'e' content about this topic.'}`;
   }
 
   async createPageFiles(generatedContent) {
@@ -479,7 +479,7 @@ Get in touch to learn more about our ${page.title} services.
     
     try {
       for (const item of generatedContent) {
-        if (item.type === 'page') {
+        if (item.type === 'pa'g'e') {
           await this.createPageFile(item);
         }
       }
@@ -491,11 +491,11 @@ Get in touch to learn more about our ${page.title} services.
   async createPageFile(pageItem) {
     try {
       const fileName = this.generateFileName(pageItem.url);
-      const filePath = path.join(__dirname, '..', 'pages', fileName);
+      const filePath = path.join(__dirname, '..', 'pag'e's', fileName);
       
       const fileContent = this.generatePageFileContent(pageItem);
       
-      await fs.writeFile(filePath, fileContent, 'utf8');
+      await fs.writeFile(filePath, fileContent, 'ut'f'8');
       console.log(`✅ Created page file: ${fileName}`);
       
     } catch (error) {
@@ -505,16 +505,16 @@ Get in touch to learn more about our ${page.title} services.
 
   generateFileName(url) {
     const path = url.replace(/^https?:\/\/[^\/]+/, '').replace(/\/$/, '');
-    if (path === '') return 'index.tsx';
+    if (path === '') return 'inde'x'.tsx';
     
     const segments = path.split('/').filter(segment => segment);
-    const fileName = segments[segments.length - 1] || 'index';
+    const fileName = segments[segments.length - 1] || 'ind'e'x';
     return `${fileName}.tsx`;
   }
 
   generatePageFileContent(pageItem) {
-    return `import React from 'react';
-import Head from 'next/head';
+    return `import React from 'rea'c't';
+import Head from 'nex't'/head';
 import Layout from '../components/Layout';
 
 export default function ${this.generateComponentName(pageItem.title)}() {
@@ -541,11 +541,11 @@ export default function ${this.generateComponentName(pageItem.title)}() {
       .replace(/[^a-zA-Z0-9\s]/g, '')
       .split(' ')
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join('') + 'Page';
+      .join('') + 'Pa'g'e';
   }
 
   async saveContent(type, name, content) {
-    const contentDir = path.join(process.cwd(), 'src', 'content', 'generated');
+    const contentDir = path.join(process.cwd(), 's'r'c', 'conte'n't', 'generat'e'd');
     if (!fs.existsSync(contentDir)) {
       fs.mkdirSync(contentDir, { recursive: true });
     }
@@ -576,7 +576,7 @@ export default function ${this.generateComponentName(pageItem.title)}() {
       }
     };
     
-    const reportPath = path.join(process.cwd(), 'automation', 'content-generation-report.json');
+    const reportPath = path.join(process.cwd(), 'automati'o'n', 'content-generation-repor't'.json');
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     
     console.log('💾 Content generation report saved');

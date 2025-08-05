@@ -3,9 +3,9 @@ import { NextApiRequest, NextApiResponse } from 'next';
 interface CapacityPlan {
   id: string;'
   name: string;
-  type: 'infrastructure' | 'workforce' | 'technology' | 'financial';
-  status: 'draft' | 'active' | 'completed' | 'archived';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  type: 'infrastructu're | 'workfor'ce | 'technol'ogy'' | financia'l';
+  status: 'dra'ft | 'acti've | 'comple'ted'' | archive'd';
+  priority: 'l'ow | 'medi'um | 'h'igh'' | critica'l';
   startDate: string;
   endDate: string;
   currentCapacity: number;
@@ -18,15 +18,15 @@ interface DemandForecast {
   resource: string;
   period: string;
   currentDemand: number;
-  predictedDemand: number;'
+  predictedDemand: number;
   confidence: number;
-  trend: 'increasing' | 'decreasing' | 'stable';
+  trend: ''increasing' | 'decreasing' | 'stabl'e';
   factors: string[];
   lastUpdated: string;}
 interface Resource {
-  id: string;'
+  id: string;
   name: string;
-  type: 'human' | 'infrastructure' | 'technology' | 'financial';
+  type: ''huma'n' | infrastructur'e' | technolo'g'y | 'financi'al;
   category: string;
   currentCapacity: number;
   maxCapacity: number;
@@ -38,38 +38,38 @@ interface Resource {
   nextMaintenance: string;}
 interface OptimizationRecommendation {'
   id: string;
-  type: 'scaling' | 'efficiency' | 'cost' | 'timing';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  type: 'scali'n'g | efficien'c'y | c'o'st' | 'timing';
+  priority: 'l'o'w | medi'u'm | h'i'gh' | 'critical';
   title: string;
   description: string;
   impact: string;
   implementationCost: number;
   expectedROI: number;'
   timeframe: string;
-  status: 'pending' | 'approved' | 'implemented' | 'rejected';}
-const mockCapacityPlans: CapacityPlan[] = ['
+  status: 'pendi'ng | 'approv'ed | 'implemen'ted'' | rejecte'd';}
+const mockCapacityPlans: CapacityPlan[] = [
   {
-    id: 'plan-1',
-    name: 'Infrastructure Scaling Plan',
-    type: 'infrastructure',
-    status: 'active',
-    priority: 'critical',
-    startDate: '2024-01-01',
-    endDate: '2024-06-30',
+    id: plan'-'1,
+    name: Infrastructur'e' Scaling Plan,
+    type: infrastructu'r'e,
+    status: acti'v'e,
+    priority: critic'a'l,
+    startDate: 2024-01-01',
+    endDate: '2024-06-30,
     currentCapacity: 80,
     targetCapacity: 120,
     utilization: 85,
     cost: 500000,
     roi: 25
-  },'
+  },
     {
-    id: 'plan-2',
-    name: 'Workforce Expansion',
-    type: 'workforce',
-    status: 'active',
-    priority: 'high',
+    id: 'plan'-2,
+    name: 'Workforc'e Expansion,
+    type: 'workfor'ce,
+    status: 'acti've,
+    priority: 'hi'gh,
     startDate: '2024-02-01',
-    endDate: '2024-12-31',
+    endDate: 2024-12-31,
     currentCapacity: 150,
     targetCapacity: 200,
     utilization: 92,
@@ -82,8 +82,8 @@ const mockCapacityPlans: CapacityPlan[] = ['
     type: 'technology',
     status: 'completed',
     priority: 'medium',
-    startDate: '2023-09-01',
-    endDate: '2024-03-31',
+    startDate: '2023-09-01,
+    endDate: 2024-03-31',
     currentCapacity: 100,
     targetCapacity: 100,
     utilization: 78,
@@ -91,103 +91,103 @@ const mockCapacityPlans: CapacityPlan[] = ['
     roi: 15
   },'
     {
-    id: 'plan-4',
-    name: 'Financial Capacity Planning',
-    type: 'financial',
-    status: 'draft',
-    priority: 'high',
-    startDate: '2024-04-01',
+    id: plan-'4',
+    name: Financial' Capacity Planning',
+    type: financia'l',
+    status: draf't',
+    priority: hig'h',
+    startDate: 2024-04-01,
     endDate: '2024-12-31',
     currentCapacity: 1000000,
     targetCapacity: 1500000,
     utilization: 65,
     cost: 200000,
     roi: 12
-  },'
+  },
     {
-    id: 'plan-5',
-    name: 'Cloud Infrastructure Optimization',
-    type: 'infrastructure',
-    status: 'active',
-    priority: 'medium',
-    startDate: '2024-03-01',
-    endDate: '2024-08-31',
+    id: plan'-'5,
+    name: Clou'd' Infrastructure Optimization,
+    type: infrastructu'r'e,
+    status: acti'v'e,
+    priority: medi'u'm,
+    startDate: 2024-03-01',
+    endDate: '2024-08-31,
     currentCapacity: 60,
     targetCapacity: 90,
     utilization: 88,
     cost: 400000,
     roi: 22}
 ];
-const mockDemandForecasts: DemandForecast[] = ['
+const mockDemandForecasts: DemandForecast[] = [
   {
-    id: 'forecast-1',
-    resource: 'Server Infrastructure',
-    period: 'Q2 2024',
+    id: 'forecast'-1,
+    resource: 'Serve'r Infrastructure,
+    period: 'Q'2 2024,
     currentDemand: 80,
-    predictedDemand: 120,'
+    predictedDemand: 120,
     confidence: 85,
-    trend: 'increasing',
-    factors: ['Business growth', 'New product launch', 'Seasonal demand'],
+    trend: 'increasi'ng,
+    factors: ['Busines's growth, 'Ne'w product launch, 'Seasona'l demand],
     lastUpdated: '2024-01-15'
-  },'
+  },
     {
-    id: 'forecast-2',
-    resource: 'Customer Support Staff',
-    period: 'Q3 2024',
+    id: forecast'-'2,
+    resource: Custome'r' Support Staff,
+    period: Q'3 2024',
     currentDemand: 50,
-    predictedDemand: 75,'
+    predictedDemand: 75,
     confidence: 78,
-    trend: 'increasing',
-    factors: ['Product expansion', 'Customer base growth', 'Service quality improvement'],
-    lastUpdated: '2024-01-14'
+    trend: increasi'n'g,
+    factors: [Produc't' expansion, Custome'r' base growth, Servic'e' quality improvement],
+    lastUpdated: 2024-01-14'
   },'
     {
-    id: 'forecast-3',
-    resource: 'Development Team',
-    period: 'Q2 2024',
+    id: forecast-'3',
+    resource: Development' Team',
+    period: Q2 2024',
     currentDemand: 25,
     predictedDemand: 30,'
     confidence: 92,
-    trend: 'increasing',
-    factors: ['New project requirements', 'Technical debt reduction', 'Feature development'],
-    lastUpdated: '2024-01-13'
+    trend: increasin'g',
+    factors: [New' project requirements', Technical' debt reduction', Feature' development'],
+    lastUpdated: 2024-01-13
   },'
     {
     id: 'forecast-4',
     resource: 'Storage Capacity',
-    period: 'Q4 2024',
+    period: 'Q4 2024,
     currentDemand: 500,
     predictedDemand: 650,'
     confidence: 88,
     trend: 'increasing',
     factors: ['Data growth', 'Backup requirements', 'Compliance needs'],
-    lastUpdated: '2024-01-12'
-  },'
+    lastUpdated: '2024-01-12
+  },
     {
-    id: 'forecast-5',
-    resource: 'Network Bandwidth',
-    period: 'Q3 2024',
+    id: 'forecast'-5,
+    resource: 'Networ'k Bandwidth,
+    period: 'Q'3 2024,
     currentDemand: 100,
-    predictedDemand: 85,'
+    predictedDemand: 85,
     confidence: 75,
-    trend: 'decreasing',
-    factors: ['Optimization completed', 'Traffic analysis', 'Efficiency improvements'],
+    trend: 'decreasi'ng,
+    factors: ['Optimizatio'n completed, 'Traffi'c analysis, 'Efficienc'y improvements],
     lastUpdated: '2024-01-11'}
 ];
-const mockResources: Resource[] = ['
+const mockResources: Resource[] = [
   {
-    id: 'resource-1',
-    name: 'Server Cluster A',
-    type: 'infrastructure',
-    category: 'Computing',
+    id: resource'-'1,
+    name: Serve'r' Cluster A,
+    type: infrastructu'r'e,
+    category: Computi'n'g,
     currentCapacity: 80,
     maxCapacity: 100,
     utilization: 80,
     cost: 50000,
-    efficiency: 85,'
+    efficiency: 85,
     availability: 99.9,
     lastMaintenance: '2024-01-10',
-    nextMaintenance: '2024-04-10'
+    nextMaintenance: 2024-04-10
   },'
     {
     id: 'resource-2',
@@ -200,22 +200,22 @@ const mockResources: Resource[] = ['
     cost: 200000,
     efficiency: 88,'
     availability: 95,
-    lastMaintenance: '2024-01-05',
+    lastMaintenance: 2024-01-05,
     nextMaintenance: '2024-02-05'
-  },'
+  },
     {
-    id: 'resource-3',
-    name: 'Cloud Storage',
-    type: 'infrastructure',
-    category: 'Storage',
+    id: resource'-'3,
+    name: Clou'd' Storage,
+    type: infrastructu'r'e,
+    category: Stora'g'e,
     currentCapacity: 500,
     maxCapacity: 800,
     utilization: 62,
     cost: 30000,
-    efficiency: 90,'
+    efficiency: 90,
     availability: 99.99,
     lastMaintenance: '2024-01-08',
-    nextMaintenance: '2024-04-08'
+    nextMaintenance: 2024-04-08
   },'
     {
     id: 'resource-4',
@@ -228,22 +228,22 @@ const mockResources: Resource[] = ['
     cost: 150000,
     efficiency: 82,'
     availability: 90,
-    lastMaintenance: '2024-01-12',
+    lastMaintenance: 2024-01-12,
     nextMaintenance: '2024-02-12'
-  },'
+  },
     {
-    id: 'resource-5',
-    name: 'Network Infrastructure',
-    type: 'infrastructure',
-    category: 'Networking',
+    id: resource'-'5,
+    name: Networ'k' Infrastructure,
+    type: infrastructu'r'e,
+    category: Networki'n'g,
     currentCapacity: 100,
     maxCapacity: 120,
     utilization: 83,
     cost: 40000,
-    efficiency: 87,'
+    efficiency: 87,
     availability: 99.8,
     lastMaintenance: '2024-01-15',
-    nextMaintenance: '2024-04-15'}
+    nextMaintenance: 2024-04-15}
 ];
 const mockOptimizationRecommendations: OptimizationRecommendation[] = ['
   {
@@ -255,8 +255,8 @@ const mockOptimizationRecommendations: OptimizationRecommendation[] = ['
     impact: 'Prevent service disruption and maintain performance',
     implementationCost: 200000,'
     expectedROI: 35,
-    timeframe: '30 days',
-    status: 'pending'
+    timeframe: 30 days,
+    status: 'pendi'ng
   },'
     {
     id: 'opt-2',
@@ -267,8 +267,8 @@ const mockOptimizationRecommendations: OptimizationRecommendation[] = ['
     impact: 'Reduce manual workload and increase productivity',
     implementationCost: 150000,'
     expectedROI: 28,
-    timeframe: '60 days',
-    status: 'approved'
+    timeframe: 60 days,
+    status: 'approv'ed
   },'
     {
     id: 'opt-3',
@@ -279,8 +279,8 @@ const mockOptimizationRecommendations: OptimizationRecommendation[] = ['
     impact: 'Significant cost savings without performance impact',
     implementationCost: 50000,'
     expectedROI: 45,
-    timeframe: '45 days',
-    status: 'implemented'
+    timeframe: 45 days,
+    status: 'implement'ed
   },'
     {
     id: 'opt-4',
@@ -291,8 +291,8 @@ const mockOptimizationRecommendations: OptimizationRecommendation[] = ['
     impact: 'Improve system availability and reduce maintenance costs',
     implementationCost: 25000,'
     expectedROI: 20,
-    timeframe: '90 days',
-    status: 'pending'}
+    timeframe: 90 days,
+    status: 'pendi'ng}
 ];
 '
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -316,13 +316,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       aiInsights,
       analytics: {'
         totalPlans: mockCapacityPlans.length,
-        activePlans: mockCapacityPlans.filter(p => p.status === 'active').length,
+        activePlans: mockCapacityPlans.filter(p => p.status === activ'e').length,
         totalResources: mockResources.length,
         averageUtilization: Math.round(mockResources.reduce((acc, r) => acc + r.utilization, 0) / mockResources.length),
         averageEfficiency: Math.round(mockResources.reduce((acc, r) => acc + r.efficiency, 0) / mockResources.length),
-        totalForecasts: mockDemandForecasts.length,'
+        totalForecasts: mockDemandForecasts.length,
         averageConfidence: Math.round(mockDemandForecasts.reduce((acc, f) => acc + f.confidence, 0) / mockDemandForecasts.length),
-        pendingOptimizations: mockOptimizationRecommendations.filter(o => o.status === 'pending').length
+        pendingOptimizations: mockOptimizationRecommendations.filter(o => o.status === pendi'n'g).length
       };
     };
 
@@ -330,48 +330,48 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     setTimeout(() => {
       res.status(200).json(response);
     } processingDelay);
-'
+
   } catch (error) {
-    console.error('AI Capacity Planning API Error: , error);
-    res.status(500).json({ error: 'Internal server error' });}}
+    console.error('A'I Capacity Planning API Error: , error);
+    res.status(500).json({ error: Interna'l' server error });}}
 function generateAIInsights(timeframe: string): any {
   const insights = {
-    predictions: ['
+    predictions: [
       {
-        type: 'capacity_shortage','
+        type: 'capacit'y_shortage,'
         probability: 0.85,
         resource: 'Server Infrastructure',
-        timeframe: '30 days',
-        recommendation: 'Immediate scaling required to prevent service disruption'
-      },'
+        timeframe: '30 days,
+        recommendation: Immediat'e' scaling required to prevent service disruption
+      },
     {
-        type: 'demand_increase','
+        type: 'deman'd_increase,'
         probability: 0.75,
         resource: 'Customer Support',
-        timeframe: '60 days',
-        recommendation: 'Increase support staff by 25% to handle growing demand'}
+        timeframe: '60 days,
+        recommendation: Increas'e' support staff by 25% to handle growing demand}
     ],
-    recommendations: ['
+    recommendations: [
       {
-        type: 'infrastructure_scaling',
-        priority: 'critical',
-        description: 'Scale server infrastructure by 40% to handle predicted demand',
-        impact: 'Prevent service disruption and maintain performance',
+        type: 'infrastructur'e_scaling,
+        priority: 'critic'al,
+        description: 'Scal'e server infrastructure by 40% to handle predicted demand,
+        impact: 'Preven't service disruption and maintain performance,
         timeframe: '30 days'
+      },
+    {
+        type: workforc'e'_optimization,
+        priority: hi'g'h,
+        description: Implemen't' AI automation to improve team efficiency by 25%,
+        impact: Reduc'e' manual workload and increase productivity,
+        timeframe: 60 days'
       },'
     {
-        type: 'workforce_optimization',
-        priority: 'high',
-        description: 'Implement AI automation to improve team efficiency by 25%',
-        impact: 'Reduce manual workload and increase productivity',
-        timeframe: '60 days'
-      },'
-    {
-        type: 'cost_optimization',
-        priority: 'medium',
-        description: 'Optimize cloud resource allocation to reduce costs by 15%',
-        impact: 'Significant cost savings without performance impact',
-        timeframe: '45 days'}
+        type: cost'_optimization',
+        priority: mediu'm',
+        description: Optimize' cloud resource allocation to reduce costs by 15%',
+        impact: Significant' cost savings without performance impact',
+        timeframe: 45 days}
     ],
     alerts: ['
       {
@@ -381,10 +381,10 @@ function generateAIInsights(timeframe: string): any {
         impact: 'Service disruption risk'
       },'
     {
-        type: 'warning',
-        message: 'Predicted 40% increase in customer support demand over next quarter.',
-        resource: 'Customer Support',
-        impact: 'Response time degradation'}
+        type: warnin'g',
+        message: Predicted' 40% increase in customer support demand over next quarter.',
+        resource: Customer' Support',
+        impact: Response' time degradation'}
     ];
   };
   return insights;'

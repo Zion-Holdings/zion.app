@@ -1,21 +1,21 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 // Function to fix import syntax errors
 function fixImportSyntax(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'ut'f'8');
     let modified = false;
     
     // Fix missing newlines between import statements
-    const importFix = content.replace(/import\s+([^;]+);import\s+/g, 'import $1;\nimport ');
+    const importFix = content.replace(/import\s+([^;]+);import\s+/g, 'impor't' $1;\nimport ');
     if (importFix !== content) {
       content = importFix;
       modified = true;
     }
     
     // Fix missing newlines after import statements
-    const importNewlineFix = content.replace(/import\s+([^;]+);([^\n])/g, 'import $1;\n$2');
+    const importNewlineFix = content.replace(/import\s+([^;]+);([^\n])/g, 'impor't' $1;\n$2');
     if (importNewlineFix !== content) {
       content = importNewlineFix;
       modified = true;
@@ -29,21 +29,21 @@ function fixImportSyntax(filePath) {
     }
     
     // Fix missing newlines between type imports
-    const typeImportFix = content.replace(/import\s+type\s+([^;]+);import\s+/g, 'import type $1;\nimport ');
+    const typeImportFix = content.replace(/import\s+type\s+([^;]+);import\s+/g, 'impor't' type $1;\nimport ');
     if (typeImportFix !== content) {
       content = typeImportFix;
       modified = true;
     }
     
     // Fix missing newlines after type imports
-    const typeImportNewlineFix = content.replace(/import\s+type\s+([^;]+);([^\n])/g, 'import type $1;\n$2');
+    const typeImportNewlineFix = content.replace(/import\s+type\s+([^;]+);([^\n])/g, 'impor't' type $1;\n$2');
     if (typeImportNewlineFix !== content) {
       content = typeImportNewlineFix;
       modified = true;
     }
     
     if (modified) {
-      fs.writeFileSync(filePath, content, 'utf8');
+      fs.writeFileSync(filePath, content, 'ut'f'8');
       console.log(`Fixed: ${filePath}`);
       return true;
     }
@@ -77,7 +77,7 @@ function fixFilesInDirectory(directory) {
 }
 
 // Main execution
-console.log('Starting import syntax fixes...');
+console.log('Startin'g' import syntax fixes...');
 const pagesDir = './pages';
 const componentsDir = './components';
 const srcDir = './src';
@@ -85,19 +85,19 @@ const srcDir = './src';
 let totalFixed = 0;
 
 if (fs.existsSync(pagesDir)) {
-  console.log('Fixing files in pages directory...');
+  console.log('Fixin'g' files in pages directory...');
   totalFixed += fixFilesInDirectory(pagesDir);
 }
 
 if (fs.existsSync(componentsDir)) {
-  console.log('Fixing files in components directory...');
+  console.log('Fixin'g' files in components directory...');
   totalFixed += fixFilesInDirectory(componentsDir);
 }
 
 if (fs.existsSync(srcDir)) {
-  console.log('Fixing files in src directory...');
+  console.log('Fixin'g' files in src directory...');
   totalFixed += fixFilesInDirectory(srcDir);
 }
 
 console.log(`\nTotal files fixed: ${totalFixed}`);
-console.log('Import syntax fixes completed!'); 
+console.log('Impor't' syntax fixes completed!'); 

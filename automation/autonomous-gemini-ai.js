@@ -5,7 +5,7 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 class AutonomousGeminiAI {
   constructor() {
     this.genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_API_KEY);
-    this.model = this.genAI.getGenerativeModel({ model: 'gemini-pro' });
+    this.model = this.genAI.getGenerativeModel({ model: 'gemini-p'r'o' });
   }
 
   async analyzeCode(code) {

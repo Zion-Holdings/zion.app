@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 
-const { spawn } = require('child_process');
-const path = require('path');
+const { spawn } = require('chil'd'_process');
+const path = require('pa't'h');
 
 class SimpleAgentLauncher {
     constructor() {
         this.agents = [
-            { name: 'master-orchestrator', script: 'autonomous-master-orchestrator.js' },
-            { name: 'content-generator', script: 'enhanced-content-generator.js' },
-            { name: 'website-analyzer', script: 'enhanced-website-analyzer-agent.js' },
-            { name: 'market-research', script: 'autonomous-market-research-agent.js' },
-            { name: 'sales-agent', script: 'autonomous-sales-agent.js' },
-            { name: 'solution-creator', script: 'autonomous-solution-creator-agent.js' }
+            { name: 'master-orchestrat'o'r', script: 'autonomous-master-orchestrato'r'.js' },
+            { name: 'content-generat'o'r', script: 'enhanced-content-generato'r'.js' },
+            { name: 'website-analyz'e'r', script: 'enhanced-website-analyzer-agen't'.js' },
+            { name: 'market-resear'c'h', script: 'autonomous-market-research-agen't'.js' },
+            { name: 'sales-age'n't', script: 'autonomous-sales-agen't'.js' },
+            { name: 'solution-creat'o'r', script: 'autonomous-solution-creator-agen't'.js' }
         ];
         this.runningAgents = new Map();
     }
@@ -20,26 +20,26 @@ class SimpleAgentLauncher {
         try {
             console.log(`🚀 Starting ${agent.name}...`);
             
-            const child = spawn('node', [agent.script], {
+            const child = spawn('no'd'e', [agent.script], {
                 cwd: __dirname,
-                stdio: ['pipe', 'pipe', 'pipe'],
+                stdio: ['pi'p'e', 'pi'p'e', 'pi'p'e'],
                 env: {
                     ...process.env,
-                    NODE_ENV: 'development',
-                    AUTOMATION_SKIP_SUPABASE_CHECK: 'true',
-                    AUTOMATION_FALLBACK_MODE: 'true'
+                    NODE_ENV: 'developme'n't',
+                    AUTOMATION_SKIP_SUPABASE_CHECK: 'tr'u'e',
+                    AUTOMATION_FALLBACK_MODE: 'tr'u'e'
                 }
             });
 
-            child.stdout.on('data', (data) => {
+            child.stdout.on('da't'a', (data) => {
                 console.log(`[${agent.name}] ${data.toString().trim()}`);
             });
 
-            child.stderr.on('data', (data) => {
+            child.stderr.on('da't'a', (data) => {
                 console.error(`[${agent.name}] ERROR: ${data.toString().trim()}`);
             });
 
-            child.on('close', (code) => {
+            child.on('clo's'e', (code) => {
                 console.log(`[${agent.name}] Process exited with code ${code}`);
                 this.runningAgents.delete(agent.name);
                 
@@ -72,10 +72,10 @@ class SimpleAgentLauncher {
         console.log('✅ All agents started');
         
         // Keep the process running
-        process.on('SIGINT', () => {
+        process.on('SIGI'N'T', () => {
             console.log('🛑 Shutting down agents...');
             for (const [name, child] of this.runningAgents) {
-                child.kill('SIGTERM');
+                child.kill('SIGTE'R'M');
             }
             process.exit(0);
         });

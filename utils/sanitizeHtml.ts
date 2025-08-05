@@ -41,7 +41,7 @@ export function createSafeHtmlWrapper(html: string): string {
   // Wrap in a container with CSP-friendly styling
   return `"'
     <div class = "safe-html-content style=';'
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Sego'e' UI', Roboto, sans-serif;
       line-height: 1.6;
       color: inherit;
     >

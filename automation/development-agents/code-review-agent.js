@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
+const { promisify } = require('ut'i'l');
 
 const execAsync = promisify(exec);
 
@@ -20,12 +20,12 @@ class CodeReviewAgent {
     const dirs = [
       this.reportsDir,
       this.logsDir,
-      path.join(this.reportsDir, 'quality-reports'),
-      path.join(this.reportsDir, 'best-practices-reports'),
-      path.join(this.reportsDir, 'analysis-reports'),
-      path.join(this.reportsDir, 'optimization-reports'),
-      path.join(this.reportsDir, 'review-reports'),
-      path.join(this.reportsDir, 'analytics-reports')
+      path.join(this.reportsDir, 'quality-repor't's'),
+      path.join(this.reportsDir, 'best-practices-repor't's'),
+      path.join(this.reportsDir, 'analysis-repor't's'),
+      path.join(this.reportsDir, 'optimization-repor't's'),
+      path.join(this.reportsDir, 'review-repor't's'),
+      path.join(this.reportsDir, 'analytics-repor't's')
     ];
     
     dirs.forEach(dir => {
@@ -59,7 +59,7 @@ class CodeReviewAgent {
 
   async analyzeCodeReview() {
     try {
-      console.log('Performing comprehensive code review analysis...');
+      console.log('Performin'g' comprehensive code review analysis...');
       
       const analysis = {
         timestamp: new Date().toISOString(),
@@ -85,10 +85,10 @@ class CodeReviewAgent {
       // Save analysis report
       await this.saveAnalysisReport(analysis);
       
-      console.log('Code review analysis completed');
+      console.log('Cod'e' review analysis completed');
       
     } catch (error) {
-      console.error('Code review analysis failed:', error);
+      console.error('Cod'e' review analysis failed:', error);
     }
   }
 
@@ -113,7 +113,7 @@ class CodeReviewAgent {
       quality.push(coverageResults);
       
     } catch (error) {
-      console.error('Failed to analyze code quality:', error);
+      console.error('Faile'd' to analyze code quality:', error);
     }
     
     return quality;
@@ -121,18 +121,18 @@ class CodeReviewAgent {
 
   async runESLintAnalysis() {
     try {
-      const { stdout } = await execAsync('npm run lint');
+      const { stdout } = await execAsync('np'm' run lint');
       return {
-        type: 'ESLint Analysis',
+        type: 'ESLin't' Analysis',
         value: stdout.trim(),
-        status: 'passed',
+        status: 'pass'e'd',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'ESLint Analysis',
+        type: 'ESLin't' Analysis',
         value: error.stdout || error.message,
-        status: 'failed',
+        status: 'fail'e'd',
         timestamp: new Date().toISOString()
       };
     }
@@ -140,18 +140,18 @@ class CodeReviewAgent {
 
   async runTypeScriptAnalysis() {
     try {
-      const { stdout } = await execAsync('npm run type-check');
+      const { stdout } = await execAsync('np'm' run type-check');
       return {
-        type: 'TypeScript Analysis',
+        type: 'TypeScrip't' Analysis',
         value: stdout.trim(),
-        status: 'passed',
+        status: 'pass'e'd',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'TypeScript Analysis',
+        type: 'TypeScrip't' Analysis',
         value: error.stdout || error.message,
-        status: 'failed',
+        status: 'fail'e'd',
         timestamp: new Date().toISOString()
       };
     }
@@ -159,18 +159,18 @@ class CodeReviewAgent {
 
   async runComplexityAnalysis() {
     try {
-      const { stdout } = await execAsync('npx complexity-report src/');
+      const { stdout } = await execAsync('np'x' complexity-report src/');
       return {
-        type: 'Complexity Analysis',
+        type: 'Complexit'y' Analysis',
         value: stdout.trim(),
-        status: 'completed',
+        status: 'complet'e'd',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Complexity Analysis',
-        value: 'Complexity analysis not available',
-        status: 'not_available',
+        type: 'Complexit'y' Analysis',
+        value: 'Complexit'y' analysis not available',
+        status: 'no't'_available',
         timestamp: new Date().toISOString()
       };
     }
@@ -178,18 +178,18 @@ class CodeReviewAgent {
 
   async runCoverageAnalysis() {
     try {
-      const { stdout } = await execAsync('npm run test:coverage');
+      const { stdout } = await execAsync('np'm' run test:coverage');
       return {
-        type: 'Coverage Analysis',
+        type: 'Coverag'e' Analysis',
         value: stdout.trim(),
-        status: 'completed',
+        status: 'complet'e'd',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Coverage Analysis',
-        value: error.stdout || 'Coverage analysis failed',
-        status: 'failed',
+        type: 'Coverag'e' Analysis',
+        value: error.stdout || 'Coverag'e' analysis failed',
+        status: 'fail'e'd',
         timestamp: new Date().toISOString()
       };
     }
@@ -216,7 +216,7 @@ class CodeReviewAgent {
       bestPractices.push(security);
       
     } catch (error) {
-      console.error('Failed to analyze best practices:', error);
+      console.error('Faile'd' to analyze best practices:', error);
     }
     
     return bestPractices;
@@ -224,13 +224,13 @@ class CodeReviewAgent {
 
   async checkNamingConventions() {
     try {
-      const { stdout } = await execAsync('find src/ -name "*.ts" -o -name "*.tsx" | head -10');
+      const { stdout } = await execAsync('fin'd' src/ -name "*.ts" -o -name "*.tsx" | head -10');
       const files = stdout.trim().split('\n');
       
       let violations = 0;
       for (const file of files) {
         if (file) {
-          const content = fs.readFileSync(file, 'utf8');
+          const content = fs.readFileSync(file, 'ut'f'8');
           // Check for camelCase variables and PascalCase components
           const camelCaseVars = content.match(/const\s+([a-z][a-zA-Z0-9]*)\s*=/g) || [];
           const pascalCaseComponents = content.match(/function\s+([A-Z][a-zA-Z0-9]*)/g) || [];
@@ -242,16 +242,16 @@ class CodeReviewAgent {
       }
       
       return {
-        type: 'Naming Conventions',
+        type: 'Namin'g' Conventions',
         value: `Checked ${files.length} files, found ${violations} violations`,
-        status: violations === 0 ? 'good' : 'needs_improvement',
+        status: violations === 0 ? 'go'o'd' : 'need's'_improvement',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Naming Conventions',
-        value: 'Unable to check naming conventions',
-        status: 'error',
+        type: 'Namin'g' Conventions',
+        value: 'Unabl'e' to check naming conventions',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -259,13 +259,13 @@ class CodeReviewAgent {
 
   async checkErrorHandling() {
     try {
-      const { stdout } = await execAsync('find src/ -name "*.ts" -o -name "*.tsx" | head -10');
+      const { stdout } = await execAsync('fin'd' src/ -name "*.ts" -o -name "*.tsx" | head -10');
       const files = stdout.trim().split('\n');
       
       let errorHandlingCount = 0;
       for (const file of files) {
         if (file) {
-          const content = fs.readFileSync(file, 'utf8');
+          const content = fs.readFileSync(file, 'ut'f'8');
           // Check for try-catch blocks and error handling
           const tryCatchBlocks = content.match(/try\s*\{/g) || [];
           const errorHandling = content.match(/catch\s*\(/g) || [];
@@ -277,16 +277,16 @@ class CodeReviewAgent {
       }
       
       return {
-        type: 'Error Handling',
+        type: 'Erro'r' Handling',
         value: `Found error handling in ${errorHandlingCount} out of ${files.length} files`,
-        status: errorHandlingCount > files.length / 2 ? 'good' : 'needs_improvement',
+        status: errorHandlingCount > files.length / 2 ? 'go'o'd' : 'need's'_improvement',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Error Handling',
-        value: 'Unable to check error handling',
-        status: 'error',
+        type: 'Erro'r' Handling',
+        value: 'Unabl'e' to check error handling',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -294,13 +294,13 @@ class CodeReviewAgent {
 
   async checkDocumentation() {
     try {
-      const { stdout } = await execAsync('find src/ -name "*.ts" -o -name "*.tsx" | head -10');
+      const { stdout } = await execAsync('fin'd' src/ -name "*.ts" -o -name "*.tsx" | head -10');
       const files = stdout.trim().split('\n');
       
       let documentedFiles = 0;
       for (const file of files) {
         if (file) {
-          const content = fs.readFileSync(file, 'utf8');
+          const content = fs.readFileSync(file, 'ut'f'8');
           // Check for JSDoc comments
           const jsdocComments = content.match(/\/\*\*[\s\S]*?\*\//g) || [];
           const inlineComments = content.match(/\/\/.*$/gm) || [];
@@ -312,16 +312,16 @@ class CodeReviewAgent {
       }
       
       return {
-        type: 'Documentation',
+        type: 'Documentati'o'n',
         value: `${documentedFiles} out of ${files.length} files have documentation`,
-        status: documentedFiles > files.length / 2 ? 'good' : 'needs_improvement',
+        status: documentedFiles > files.length / 2 ? 'go'o'd' : 'need's'_improvement',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Documentation',
-        value: 'Unable to check documentation',
-        status: 'error',
+        type: 'Documentati'o'n',
+        value: 'Unabl'e' to check documentation',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -329,13 +329,13 @@ class CodeReviewAgent {
 
   async checkSecurityPractices() {
     try {
-      const { stdout } = await execAsync('find src/ -name "*.ts" -o -name "*.tsx" | head -10');
+      const { stdout } = await execAsync('fin'd' src/ -name "*.ts" -o -name "*.tsx" | head -10');
       const files = stdout.trim().split('\n');
       
       let securityIssues = 0;
       for (const file of files) {
         if (file) {
-          const content = fs.readFileSync(file, 'utf8');
+          const content = fs.readFileSync(file, 'ut'f'8');
           // Check for potential security issues
           const evalUsage = content.match(/eval\s*\(/g) || [];
           const innerHTML = content.match(/innerHTML\s*=/g) || [];
@@ -348,16 +348,16 @@ class CodeReviewAgent {
       }
       
       return {
-        type: 'Security Practices',
+        type: 'Securit'y' Practices',
         value: `Found ${securityIssues} potential security issues`,
-        status: securityIssues === 0 ? 'good' : 'needs_attention',
+        status: securityIssues === 0 ? 'go'o'd' : 'need's'_attention',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Security Practices',
-        value: 'Unable to check security practices',
-        status: 'error',
+        type: 'Securit'y' Practices',
+        value: 'Unabl'e' to check security practices',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -380,7 +380,7 @@ class CodeReviewAgent {
       structure.push(importOrganization);
       
     } catch (error) {
-      console.error('Failed to analyze code structure:', error);
+      console.error('Faile'd' to analyze code structure:', error);
     }
     
     return structure;
@@ -388,23 +388,23 @@ class CodeReviewAgent {
 
   async analyzeFileOrganization() {
     try {
-      const { stdout } = await execAsync('find src/ -type f | wc -l');
+      const { stdout } = await execAsync('fin'd' src/ -type f | wc -l');
       const fileCount = parseInt(stdout.trim());
       
-      const { stdout: dirOutput } = await execAsync('find src/ -type d | wc -l');
+      const { stdout: dirOutput } = await execAsync('fin'd' src/ -type d | wc -l');
       const dirCount = parseInt(dirOutput.trim());
       
       return {
-        type: 'File Organization',
+        type: 'Fil'e' Organization',
         value: `${fileCount} files in ${dirCount} directories`,
-        status: fileCount > 0 ? 'organized' : 'needs_organization',
+        status: fileCount > 0 ? 'organiz'e'd' : 'need's'_organization',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'File Organization',
-        value: 'Unable to analyze file organization',
-        status: 'error',
+        type: 'Fil'e' Organization',
+        value: 'Unabl'e' to analyze file organization',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -412,23 +412,23 @@ class CodeReviewAgent {
 
   async analyzeComponentStructure() {
     try {
-      const { stdout } = await execAsync('find src/ -name "*.tsx" | wc -l');
+      const { stdout } = await execAsync('fin'd' src/ -name "*.tsx" | wc -l');
       const componentCount = parseInt(stdout.trim());
       
-      const { stdout: componentOutput } = await execAsync('grep -r "export default" src/ | wc -l');
+      const { stdout: componentOutput } = await execAsync('gre'p' -r "export default" src/ | wc -l');
       const exportedComponents = parseInt(componentOutput.trim());
       
       return {
-        type: 'Component Structure',
+        type: 'Componen't' Structure',
         value: `${componentCount} component files with ${exportedComponents} exported components`,
-        status: componentCount > 0 ? 'structured' : 'needs_structure',
+        status: componentCount > 0 ? 'structur'e'd' : 'need's'_structure',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Component Structure',
-        value: 'Unable to analyze component structure',
-        status: 'error',
+        type: 'Componen't' Structure',
+        value: 'Unabl'e' to analyze component structure',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -436,19 +436,19 @@ class CodeReviewAgent {
 
   async analyzeImportOrganization() {
     try {
-      const { stdout } = await execAsync('find src/ -name "*.ts" -o -name "*.tsx" | head -5');
+      const { stdout } = await execAsync('fin'd' src/ -name "*.ts" -o -name "*.tsx" | head -5');
       const files = stdout.trim().split('\n');
       
       let organizedImports = 0;
       for (const file of files) {
         if (file) {
-          const content = fs.readFileSync(file, 'utf8');
+          const content = fs.readFileSync(file, 'ut'f'8');
           const importLines = content.match(/^import.*$/gm) || [];
           
           if (importLines.length > 0) {
             // Check if imports are grouped and organized
             const hasOrganizedImports = importLines.some(line => 
-              line.includes('from') && line.trim().length > 0
+              line.includes('fr'o'm') && line.trim().length > 0
             );
             if (hasOrganizedImports) {
               organizedImports++;
@@ -458,16 +458,16 @@ class CodeReviewAgent {
       }
       
       return {
-        type: 'Import Organization',
+        type: 'Impor't' Organization',
         value: `${organizedImports} out of ${files.length} files have organized imports`,
-        status: organizedImports > files.length / 2 ? 'good' : 'needs_improvement',
+        status: organizedImports > files.length / 2 ? 'go'o'd' : 'need's'_improvement',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Import Organization',
-        value: 'Unable to analyze import organization',
-        status: 'error',
+        type: 'Impor't' Organization',
+        value: 'Unabl'e' to analyze import organization',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -477,35 +477,35 @@ class CodeReviewAgent {
     const recommendations = [];
     
     // Quality recommendations
-    const qualityIssues = analysis.quality.filter(q => q.status === 'failed' || q.status === 'needs_improvement');
+    const qualityIssues = analysis.quality.filter(q => q.status === 'fail'e'd' || q.status === 'need's'_improvement');
     if (qualityIssues.length > 0) {
       recommendations.push({
-        type: 'quality',
-        priority: 'high',
-        message: 'Code quality issues detected',
-        suggestion: 'Fix code quality issues and improve standards'
+        type: 'quali't'y',
+        priority: 'hi'g'h',
+        message: 'Cod'e' quality issues detected',
+        suggestion: 'Fi'x' code quality issues and improve standards'
       });
     }
     
     // Best practices recommendations
-    const practiceIssues = analysis.bestPractices.filter(p => p.status === 'needs_improvement' || p.status === 'needs_attention');
+    const practiceIssues = analysis.bestPractices.filter(p => p.status === 'need's'_improvement' || p.status === 'need's'_attention');
     if (practiceIssues.length > 0) {
       recommendations.push({
-        type: 'best_practices',
-        priority: 'medium',
-        message: 'Best practices improvements needed',
-        suggestion: 'Implement coding best practices and standards'
+        type: 'bes't'_practices',
+        priority: 'medi'u'm',
+        message: 'Bes't' practices improvements needed',
+        suggestion: 'Implemen't' coding best practices and standards'
       });
     }
     
     // Structure recommendations
-    const structureIssues = analysis.analysis.filter(s => s.status === 'needs_organization' || s.status === 'needs_structure');
+    const structureIssues = analysis.analysis.filter(s => s.status === 'need's'_organization' || s.status === 'need's'_structure');
     if (structureIssues.length > 0) {
       recommendations.push({
-        type: 'structure',
-        priority: 'medium',
-        message: 'Code structure improvements needed',
-        suggestion: 'Reorganize code structure and organization'
+        type: 'structu'r'e',
+        priority: 'medi'u'm',
+        message: 'Cod'e' structure improvements needed',
+        suggestion: 'Reorganiz'e' code structure and organization'
       });
     }
     
@@ -514,7 +514,7 @@ class CodeReviewAgent {
 
   async monitorCodeReview() {
     try {
-      console.log('Monitoring code review...');
+      console.log('Monitorin'g' code review...');
       
       const monitoring = {
         timestamp: new Date().toISOString(),
@@ -541,30 +541,30 @@ class CodeReviewAgent {
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
-      console.error('Code review monitoring failed:', error);
+      console.error('Cod'e' review monitoring failed:', error);
     }
   }
 
   checkQualityStatus(quality) {
     const status = {
       quality: quality.type,
-      status: 'healthy',
+      status: 'healt'h'y',
       issues: [],
       lastChecked: new Date().toISOString()
     };
     
     // Check for common quality issues
-    if (quality.status === 'failed') {
+    if (quality.status === 'fail'e'd') {
       status.issues.push({
-        type: 'quality',
-        severity: 'high',
-        message: 'Code quality check failed'
+        type: 'quali't'y',
+        severity: 'hi'g'h',
+        message: 'Cod'e' quality check failed'
       });
-    } else if (quality.status === 'needs_improvement') {
+    } else if (quality.status === 'need's'_improvement') {
       status.issues.push({
-        type: 'quality',
-        severity: 'medium',
-        message: 'Code quality needs improvement'
+        type: 'quali't'y',
+        severity: 'medi'u'm',
+        message: 'Cod'e' quality needs improvement'
       });
     }
     
@@ -573,7 +573,7 @@ class CodeReviewAgent {
 
   async optimizeCodeReview() {
     try {
-      console.log('Optimizing code review...');
+      console.log('Optimizin'g' code review...');
       
       const optimizationReport = {
         timestamp: new Date().toISOString(),
@@ -590,7 +590,7 @@ class CodeReviewAgent {
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
           type: optimization.type,
-          status: 'completed',
+          status: 'complet'e'd',
           improvement: Math.random() * 0.95,
           description: `Applied ${optimization.suggestion}`
         });
@@ -598,17 +598,17 @@ class CodeReviewAgent {
       
       // Save optimization report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'optimization-reports', `optimization-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'optimization-repor't's', `optimization-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
-      console.error('Code review optimization failed:', error);
+      console.error('Cod'e' review optimization failed:', error);
     }
   }
 
   async runCodeAnalysis() {
     try {
-      console.log('Running comprehensive code analysis...');
+      console.log('Runnin'g' comprehensive code analysis...');
       
       const codeAnalysisReport = {
         timestamp: new Date().toISOString(),
@@ -632,25 +632,25 @@ class CodeReviewAgent {
       
       // Save code analysis report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'analytics-reports', `code-analysis-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'analytics-repor't's', `code-analysis-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(codeAnalysisReport, null, 2));
       
     } catch (error) {
-      console.error('Code analysis failed:', error);
+      console.error('Cod'e' analysis failed:', error);
     }
   }
 
   async runQualityAnalysis() {
     try {
-      const { stdout } = await execAsync('npm run analyze:quality');
+      const { stdout } = await execAsync('np'm' run analyze:quality');
       return {
-        status: 'completed',
+        status: 'complet'e'd',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -659,15 +659,15 @@ class CodeReviewAgent {
 
   async runBestPracticesAnalysis() {
     try {
-      const { stdout } = await execAsync('npm run analyze:best-practices');
+      const { stdout } = await execAsync('np'm' run analyze:best-practices');
       return {
-        status: 'completed',
+        status: 'complet'e'd',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -676,15 +676,15 @@ class CodeReviewAgent {
 
   async runStructureAnalysis() {
     try {
-      const { stdout } = await execAsync('npm run analyze:structure');
+      const { stdout } = await execAsync('np'm' run analyze:structure');
       return {
-        status: 'completed',
+        status: 'complet'e'd',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -693,15 +693,15 @@ class CodeReviewAgent {
 
   async runAnalyticsAnalysis() {
     try {
-      const { stdout } = await execAsync('npm run analyze:analytics');
+      const { stdout } = await execAsync('np'm' run analyze:analytics');
       return {
-        status: 'completed',
+        status: 'complet'e'd',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -719,7 +719,7 @@ class CodeReviewAgent {
     // Count results
     for (const [type, result] of Object.entries(analysis)) {
       summary.total++;
-      if (result.status === 'completed') {
+      if (result.status === 'complet'e'd') {
         summary.completed++;
       } else {
         summary.failed++;
@@ -736,10 +736,10 @@ class CodeReviewAgent {
     const recommendations = [];
     
     for (const [type, result] of Object.entries(analysis)) {
-      if (result.status === 'failed') {
+      if (result.status === 'fail'e'd') {
         recommendations.push({
           type: type,
-          priority: 'medium',
+          priority: 'medi'u'm',
           message: `${type} code analysis failed`,
           suggestion: `Fix ${type} code analysis issues`
         });
@@ -751,7 +751,7 @@ class CodeReviewAgent {
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'quality-reports', `analysis-${timestamp}.json`);
+    const reportPath = path.join(this.reportsDir, 'quality-repor't's', `analysis-${timestamp}.json`);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     console.log(`Analysis report saved: ${reportPath}`);
   }
@@ -765,15 +765,15 @@ class CodeReviewAgent {
 // Start the agent
 const agent = new CodeReviewAgent();
 
-process.on('SIGTERM', () => {
+process.on('SIGTE'R'M', () => {
   agent.stop();
 });
 
-process.on('SIGINT', () => {
+process.on('SIGI'N'T', () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('Code Review Agent failed to start:', error);
+  console.error('Cod'e' Review Agent failed to start:', error);
   process.exit(1);
 }); 

@@ -1,27 +1,27 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 function fixFile(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'ut'f'8');
     let fixed = false;
     
     // Fix common syntax errors
     const fixes = [
       // Fix CSS class syntax
-      [/rounded-lg:shadow-md/g, 'rounded-lg shadow-md'],
-      [/text-lg:font-semibold/g, 'text-lg font-semibold'],
-      [/text-3xl:font-bold/g, 'text-3xl font-bold'],
-      [/text-xl:font-semibold/g, 'text-xl font-semibold'],
-      [/rounded-md:hover:bg-blue-700/g, 'rounded-md hover:bg-blue-700'],
-      [/hover:from-purple-700/g, 'hover:from-purple-700'],
-      [/hover:to-pink-700/g, 'hover:to-pink-700'],
-      [/hover:text-purple-300/g, 'hover:text-purple-300'],
-      [/hover:bg-black\/30/g, 'hover:bg-black/30'],
-      [/focus:outline-none/g, 'focus:outline-none'],
-      [/focus:ring-2/g, 'focus:ring-2'],
-      [/focus:ring-blue-500/g, 'focus:ring-blue-500'],
-      [/focus:border-blue-500/g, 'focus:border-blue-500'],
+      [/rounded-lg:shadow-md/g, 'rounded-l'g' shadow-md'],
+      [/text-lg:font-semibold/g, 'text-l'g' font-semibold'],
+      [/text-3xl:font-bold/g, 'text'-'3xl font-bold'],
+      [/text-xl:font-semibold/g, 'text-x'l' font-semibold'],
+      [/rounded-md:hover:bg-blue-700/g, 'rounded-m'd' hover:bg-blue-700'],
+      [/hover:from-purple-700/g, 'hove'r':from-purple-700'],
+      [/hover:to-pink-700/g, 'hove'r':to-pink-700'],
+      [/hover:text-purple-300/g, 'hove'r':text-purple-300'],
+      [/hover:bg-black\/30/g, 'hove'r':bg-black/30'],
+      [/focus:outline-none/g, 'focu's':outline-none'],
+      [/focus:ring-2/g, 'focu's':ring-2'],
+      [/focus:ring-blue-500/g, 'focu's':ring-blue-500'],
+      [/focus:border-blue-500/g, 'focu's':border-blue-500'],
       
       // Fix missing commas in object literals
       [/(\w+):\s*"([^"]+)"\s*(\w+):/g, '$1: "$2",\n    $3:'],
@@ -44,10 +44,10 @@ function fixFile(filePath) {
       [/import\s+(\w+)\s+from\s+['"]([^'"]+)['"]\s*$/gm, "import $1 from '$2';"],
       
       // Fix export statements
-      [/export\s+default\s+(\w+)\s*$/gm, 'export default $1;'],
+      [/export\s+default\s+(\w+)\s*$/gm, 'expor't' default $1;'],
       
       // Fix function declarations
-      [/function\s+(\w+)\s*\(\s*\)\s*{\s*$/gm, 'function $1() {'],
+      [/function\s+(\w+)\s*\(\s*\)\s*{\s*$/gm, 'functio'n' $1() {'],
       
       // Fix arrow functions
       [/(\w+)\s*=>\s*{\s*$/gm, '$1 => {'],
@@ -80,7 +80,7 @@ function fixFile(filePath) {
     });
     
     if (fixed) {
-      fs.writeFileSync(filePath, content, 'utf8');
+      fs.writeFileSync(filePath, content, 'ut'f'8');
       console.log(`Fixed: ${filePath}`);
     }
   } catch (error) {
@@ -105,10 +105,10 @@ function processDirectory(dir) {
 
 // Process all relevant directories
 const directories = [
-  'pages',
-  'components',
-  'src',
-  'utils'
+  'pag'e's',
+  'componen't's',
+  's'r'c',
+  'uti'l's'
 ];
 
 directories.forEach(dir => {
@@ -118,4 +118,4 @@ directories.forEach(dir => {
   }
 });
 
-console.log('Critical syntax fixes completed!'); 
+console.log('Critica'l' syntax fixes completed!'); 

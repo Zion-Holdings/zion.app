@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class MonitorAgent {
   constructor() {
@@ -71,8 +71,8 @@ class MonitorAgent {
     console.log(`🏥 Monitor Agent ${this.agentId} initializing...`);
     
     // Set up signal handlers
-    process.on('SIGTERM', () => this.shutdown());
-    process.on('SIGINT', () => this.shutdown());
+    process.on('SIGTE'R'M', () => this.shutdown());
+    process.on('SIGI'N'T', () => this.shutdown());
     
     this.isRunning = true;
     console.log(`✅ Monitor Agent ${this.agentId} started`);
@@ -96,7 +96,7 @@ class MonitorAgent {
         // Wait before next cycle
         await new Promise(resolve => setTimeout(resolve, 10000)); // 10 seconds
       } catch (error) {
-        console.error('Error in monitoring loop:', error.message);
+        console.error('Erro'r' in monitoring loop:', error.message);
         await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds on error
       }
     }
@@ -135,8 +135,8 @@ class MonitorAgent {
       console.log(`✅ Health checks completed in ${responseTime}ms`);
       
     } catch (error) {
-      console.error('Health check error:', error.message);
-      this.generateAlert('HEALTH_CHECK_ERROR', error.message);
+      console.error('Healt'h' check error:', error.message);
+      this.generateAlert('HEALT'H'_CHECK_ERROR', error.message);
     }
   }
 
@@ -151,14 +151,14 @@ class MonitorAgent {
     
     // Check for resource thresholds
     if (resources.cpuUsage > 80) {
-      this.generateAlert('HIGH_CPU_USAGE', `CPU usage at ${resources.cpuUsage.toFixed(1)}%`);
+      this.generateAlert('HIG'H'_CPU_USAGE', `CPU usage at ${resources.cpuUsage.toFixed(1)}%`);
     }
     
     if (resources.memoryUsage > 85) {
-      this.generateAlert('HIGH_MEMORY_USAGE', `Memory usage at ${resources.memoryUsage.toFixed(1)}%`);
+      this.generateAlert('HIG'H'_MEMORY_USAGE', `Memory usage at ${resources.memoryUsage.toFixed(1)}%`);
     }
     
-    return { type: 'system_resources', data: resources };
+    return { type: 'syste'm'_resources', data: resources };
   }
 
   async checkAgentHealth() {
@@ -173,10 +173,10 @@ class MonitorAgent {
     const healthPercentage = (agentHealth.healthyAgents / agentHealth.totalAgents) * 100;
     
     if (healthPercentage < 80) {
-      this.generateAlert('LOW_AGENT_HEALTH', `Agent health at ${healthPercentage.toFixed(1)}%`);
+      this.generateAlert('LO'W'_AGENT_HEALTH', `Agent health at ${healthPercentage.toFixed(1)}%`);
     }
     
-    return { type: 'agent_health', data: agentHealth };
+    return { type: 'agen't'_health', data: agentHealth };
   }
 
   async checkTaskQueue() {
@@ -189,14 +189,14 @@ class MonitorAgent {
     };
     
     if (queueStatus.pendingTasks > 30) {
-      this.generateAlert('HIGH_TASK_QUEUE', `${queueStatus.pendingTasks} pending tasks`);
+      this.generateAlert('HIG'H'_TASK_QUEUE', `${queueStatus.pendingTasks} pending tasks`);
     }
     
     if (queueStatus.failedTasks > 5) {
-      this.generateAlert('HIGH_FAILURE_RATE', `${queueStatus.failedTasks} failed tasks`);
+      this.generateAlert('HIG'H'_FAILURE_RATE', `${queueStatus.failedTasks} failed tasks`);
     }
     
-    return { type: 'task_queue', data: queueStatus };
+    return { type: 'tas'k'_queue', data: queueStatus };
   }
 
   async checkErrorRates() {
@@ -209,14 +209,14 @@ class MonitorAgent {
     };
     
     if (errorMetrics.errorRate > 5) {
-      this.generateAlert('HIGH_ERROR_RATE', `Error rate at ${errorMetrics.errorRate.toFixed(1)}%`);
+      this.generateAlert('HIG'H'_ERROR_RATE', `Error rate at ${errorMetrics.errorRate.toFixed(1)}%`);
     }
     
     if (errorMetrics.criticalErrors > 0) {
-      this.generateAlert('CRITICAL_ERRORS', `${errorMetrics.criticalErrors} critical errors detected`);
+      this.generateAlert('CRITICA'L'_ERRORS', `${errorMetrics.criticalErrors} critical errors detected`);
     }
     
-    return { type: 'error_rates', data: errorMetrics };
+    return { type: 'erro'r'_rates', data: errorMetrics };
   }
 
   async checkPerformanceMetrics() {
@@ -229,14 +229,14 @@ class MonitorAgent {
     };
     
     if (performance.averageResponseTime > 1500) {
-      this.generateAlert('SLOW_RESPONSE_TIME', `Average response time: ${performance.averageResponseTime.toFixed(0)}ms`);
+      this.generateAlert('SLO'W'_RESPONSE_TIME', `Average response time: ${performance.averageResponseTime.toFixed(0)}ms`);
     }
     
     if (performance.successRate < 90) {
-      this.generateAlert('LOW_SUCCESS_RATE', `Success rate at ${performance.successRate.toFixed(1)}%`);
+      this.generateAlert('LO'W'_SUCCESS_RATE', `Success rate at ${performance.successRate.toFixed(1)}%`);
     }
     
-    return { type: 'performance_metrics', data: performance };
+    return { type: 'performanc'e'_metrics', data: performance };
   }
 
   async checkForAlerts() {
@@ -257,11 +257,11 @@ class MonitorAgent {
       );
       
     } catch (error) {
-      console.error('Alert processing error:', error.message);
+      console.error('Aler't' processing error:', error.message);
     }
   }
 
-  generateAlert(type, message, severity = 'warning') {
+  generateAlert(type, message, severity = 'warni'n'g') {
     const alert = {
       id: `alert-${Date.now()}`,
       type,
@@ -317,7 +317,7 @@ class MonitorAgent {
       console.log(`📈 Monitoring report:`, report);
       
     } catch (error) {
-      console.error('Report generation error:', error.message);
+      console.error('Repor't' generation error:', error.message);
     }
   }
 
@@ -327,20 +327,20 @@ class MonitorAgent {
       .map(([timestamp, data]) => data);
     
     if (recentData.length === 0) {
-      return 'unknown';
+      return 'unkno'w'n';
     }
     
     const hasErrors = recentData.some(data => 
-      data.checks.some(check => check.type === 'error_rates' && check.data.errorRate > 5)
+      data.checks.some(check => check.type === 'erro'r'_rates' && check.data.errorRate > 5)
     );
     
     const hasAlerts = this.alerts.some(alert => !alert.processed);
     
     if (hasErrors || hasAlerts) {
-      return 'warning';
+      return 'warni'n'g';
     }
     
-    return 'healthy';
+    return 'healt'h'y';
   }
 
   async shutdown() {
@@ -365,6 +365,6 @@ class MonitorAgent {
 // Start the agent
 const agent = new MonitorAgent();
 agent.initialize().catch(error => {
-  console.error('Failed to initialize monitor agent:', error);
+  console.error('Faile'd' to initialize monitor agent:', error);
   process.exit(1);
 }); 

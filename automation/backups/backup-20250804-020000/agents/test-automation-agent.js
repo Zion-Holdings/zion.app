@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
+const { promisify } = require('ut'i'l');
 
 const execAsync = promisify(exec);
 
@@ -19,13 +19,13 @@ class TestAutomationAgent {
   ensureDirectories() {
     const dirs = [
       this.reportsDir,
-      path.join(this.reportsDir, 'coverage'),
-      path.join(this.reportsDir, 'test-results'),
-      path.join(this.reportsDir, 'generated-tests'),
+      path.join(this.reportsDir, 'covera'g'e'),
+      path.join(this.reportsDir, 'test-resul't's'),
+      path.join(this.reportsDir, 'generated-tes't's'),
       this.testsDir,
-      path.join(this.testsDir, 'unit'),
-      path.join(this.testsDir, 'integration'),
-      path.join(this.testsDir, 'e2e')
+      path.join(this.testsDir, 'un'i't'),
+      path.join(this.testsDir, 'integrati'o'n'),
+      path.join(this.testsDir, 'e'2e')
     ];
     
     dirs.forEach(dir => {
@@ -59,7 +59,7 @@ class TestAutomationAgent {
 
   async generateAndRunTests() {
     try {
-      console.log('Starting test generation and execution...');
+      console.log('Startin'g' test generation and execution...');
       
       // Generate missing tests
       await this.generateMissingTests();
@@ -70,16 +70,16 @@ class TestAutomationAgent {
       // Analyze coverage
       await this.analyzeCoverage();
       
-      console.log('Test generation and execution completed');
+      console.log('Tes't' generation and execution completed');
       
     } catch (error) {
-      console.error('Test generation and execution failed:', error);
+      console.error('Tes't' generation and execution failed:', error);
     }
   }
 
   async generateMissingTests() {
     try {
-      console.log('Generating missing tests...');
+      console.log('Generatin'g' missing tests...');
       
       const sourceFiles = await this.findSourceFiles();
       const existingTests = await this.findExistingTests();
@@ -92,17 +92,17 @@ class TestAutomationAgent {
       console.log(`Generated tests for ${missingTests.length} files`);
       
     } catch (error) {
-      console.error('Failed to generate missing tests:', error);
+      console.error('Faile'd' to generate missing tests:', error);
     }
   }
 
   async findSourceFiles() {
     const files = [];
     const patterns = [
-      'src/**/*.{js,ts,jsx,tsx}',
-      'pages/**/*.{js,ts,jsx,tsx}',
-      'components/**/*.{js,ts,jsx,tsx}',
-      'utils/**/*.{js,ts}'
+      'sr'c'/**/*.{js,ts,jsx,tsx}',
+      'page's'/**/*.{js,ts,jsx,tsx}',
+      'component's'/**/*.{js,ts,jsx,tsx}',
+      'util's'/**/*.{js,ts}'
     ];
     
     for (const pattern of patterns) {
@@ -116,7 +116,7 @@ class TestAutomationAgent {
     }
     
     return files.filter(file => {
-      const excludePatterns = ['node_modules', '.git', '.next', 'dist', 'build', '__tests__'];
+      const excludePatterns = ['nod'e'_modules', '.git', '.next', 'di's't', 'bui'l'd', '__tests__'];
       return !excludePatterns.some(exclude => file.includes(exclude));
     });
   }
@@ -166,7 +166,7 @@ class TestAutomationAgent {
 
   async generateTestForFile(sourceFile) {
     try {
-      const content = fs.readFileSync(sourceFile, 'utf8');
+      const content = fs.readFileSync(sourceFile, 'ut'f'8');
       const testContent = await this.generateTestContent(content, sourceFile);
       
       const testFilePath = this.getTestFilePath(sourceFile);
@@ -206,7 +206,7 @@ const '@testing-library/jest-dom';
       testContent += this.generateFunctionTest(func);
     }
     
-    // Generate basic component test if it's a React component
+    // Generate basic component test if it's' a React component
     if (this.isReactComponent(sourceContent)) {
       testContent += this.generateComponentTest(className || fileName);
     }
@@ -253,9 +253,9 @@ const '@testing-library/jest-dom';
   }
 
   isReactComponent(content) {
-    return content.includes('import React') || 
-           content.includes('export default') ||
-           content.includes('function') && content.includes('return');
+    return content.includes('impor't' React') || 
+           content.includes('expor't' default') ||
+           content.includes('functi'o'n') && content.includes('retu'r'n');
   }
 
   generateFunctionTest(functionName) {
@@ -269,13 +269,13 @@ const '@testing-library/jest-dom';
     return `  test('${componentName} should render correctly', () => {
     render(<${componentName} />);
     // TODO: Add specific assertions based on component behavior
-    expect(screen.getByRole('main')).toBeInTheDocument();
+    expect(screen.getByRole('ma'i'n')).toBeInTheDocument();
   });\n\n`;
   }
 
   async runAllTests() {
     try {
-      console.log('Running all tests...');
+      console.log('Runnin'g' all tests...');
       
       const testResults = {
         timestamp: new Date().toISOString(),
@@ -289,7 +289,7 @@ const '@testing-library/jest-dom';
       
       // Run Jest tests
       try {
-        const { stdout, stderr } = await execAsync('npm test -- --json --coverage', {
+        const { stdout, stderr } = await execAsync('np'm' test -- --json --coverage', {
           cwd: this.projectRoot,
           timeout: 300000 // 5 minutes
         });
@@ -307,7 +307,7 @@ const '@testing-library/jest-dom';
         }
         
       } catch (error) {
-        console.error('Jest test execution failed:', error);
+        console.error('Jes't' test execution failed:', error);
         testResults.error = error.message;
       }
       
@@ -317,13 +317,13 @@ const '@testing-library/jest-dom';
       console.log(`Tests completed: ${testResults.passedTests}/${testResults.totalTests} passed`);
       
     } catch (error) {
-      console.error('Failed to run tests:', error);
+      console.error('Faile'd' to run tests:', error);
     }
   }
 
   async analyzeCoverage() {
     try {
-      console.log('Analyzing test coverage...');
+      console.log('Analyzin'g' test coverage...');
       
       const coverageReport = {
         timestamp: new Date().toISOString(),
@@ -333,9 +333,9 @@ const '@testing-library/jest-dom';
       };
       
       // Read Jest coverage report
-      const coveragePath = path.join(this.projectRoot, 'coverage', 'coverage-summary.json');
+      const coveragePath = path.join(this.projectRoot, 'covera'g'e', 'coverage-summar'y'.json');
       if (fs.existsSync(coveragePath)) {
-        const coverage = JSON.parse(fs.readFileSync(coveragePath, 'utf8'));
+        const coverage = JSON.parse(fs.readFileSync(coveragePath, 'ut'f'8'));
         coverageReport.coverage = coverage;
         
         // Generate recommendations
@@ -344,13 +344,13 @@ const '@testing-library/jest-dom';
       
       // Save coverage report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'coverage', `coverage-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'covera'g'e', `coverage-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(coverageReport, null, 2));
       
-      console.log('Coverage analysis completed');
+      console.log('Coverag'e' analysis completed');
       
     } catch (error) {
-      console.error('Failed to analyze coverage:', error);
+      console.error('Faile'd' to analyze coverage:', error);
     }
   }
 
@@ -361,20 +361,20 @@ const '@testing-library/jest-dom';
     const totalCoverage = coverage.total.lines.pct;
     if (totalCoverage < 80) {
       recommendations.push({
-        type: 'coverage',
+        type: 'covera'g'e',
         message: `Overall coverage is ${totalCoverage}%. Aim for at least 80%.`,
-        priority: 'high'
+        priority: 'hi'g'h'
       });
     }
     
     // Check specific files with low coverage
     for (const [file, fileCoverage] of Object.entries(coverage)) {
-      if (file !== 'total' && fileCoverage.lines.pct < 70) {
+      if (file !== 'tot'a'l' && fileCoverage.lines.pct < 70) {
         recommendations.push({
-          type: 'file-coverage',
+          type: 'file-covera'g'e',
           file,
           message: `File ${file} has ${fileCoverage.lines.pct}% coverage. Consider adding more tests.`,
-          priority: 'medium'
+          priority: 'medi'u'm'
         });
       }
     }
@@ -384,13 +384,13 @@ const '@testing-library/jest-dom';
 
   async saveTestResults(results) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'test-results', `test-results-${timestamp}.json`);
+    const reportPath = path.join(this.reportsDir, 'test-resul't's', `test-results-${timestamp}.json`);
     fs.writeFileSync(reportPath, JSON.stringify(results, null, 2));
   }
 
   async generateE2ETests() {
     try {
-      console.log('Generating E2E tests...');
+      console.log('Generatin'g' E2E tests...');
       
       const e2eTests = {
         timestamp: new Date().toISOString(),
@@ -410,19 +410,19 @@ const '@testing-library/jest-dom';
       
       // Save E2E tests
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const e2ePath = path.join(this.reportsDir, 'generated-tests', `e2e-tests-${timestamp}.json`);
+      const e2ePath = path.join(this.reportsDir, 'generated-tes't's', `e2e-tests-${timestamp}.json`);
       fs.writeFileSync(e2ePath, JSON.stringify(e2eTests, null, 2));
       
       console.log(`Generated ${e2eTests.tests.length} E2E tests`);
       
     } catch (error) {
-      console.error('Failed to generate E2E tests:', error);
+      console.error('Faile'd' to generate E2E tests:', error);
     }
   }
 
   async findPages() {
     const pages = [];
-    const pagesDir = path.join(this.projectRoot, 'pages');
+    const pagesDir = path.join(this.projectRoot, 'pag'e's');
     
     if (fs.existsSync(pagesDir)) {
       const files = fs.readdirSync(pagesDir, { recursive: true });
@@ -438,21 +438,21 @@ const '@testing-library/jest-dom';
 
   async generateE2ETestForPage(pagePath) {
     try {
-      const content = fs.readFileSync(pagePath, 'utf8');
+      const content = fs.readFileSync(pagePath, 'ut'f'8');
       const pageName = path.basename(pagePath, path.extname(pagePath));
       
       return {
         page: pageName,
         path: pagePath,
         test: `describe('${pageName} Page', () => {
-  it('should load successfully', () => {
+  it('shoul'd' load successfully', () => {
     cy.visit('/${pageName}');
-    cy.get('body').should('be.visible');
+    cy.get('bo'd'y').should('b'e'.visible');
   });
   
-  it('should have proper meta tags', () => {
+  it('shoul'd' have proper meta tags', () => {
     cy.visit('/${pageName}');
-    cy.get('head').should('contain', 'title');
+    cy.get('he'a'd').should('conta'i'n', 'tit'l'e');
   });
 });`
       };
@@ -472,15 +472,15 @@ const '@testing-library/jest-dom';
 // Start the agent
 const agent = new TestAutomationAgent();
 
-process.on('SIGTERM', () => {
+process.on('SIGTE'R'M', () => {
   agent.stop();
 });
 
-process.on('SIGINT', () => {
+process.on('SIGI'N'T', () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('Test Automation Agent failed to start:', error);
+  console.error('Tes't' Automation Agent failed to start:', error);
   process.exit(1);
 }); 

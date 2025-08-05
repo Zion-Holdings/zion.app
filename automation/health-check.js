@@ -1,12 +1,12 @@
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
 
 class HealthCheck {
   constructor() {
     this.projectRoot = process.cwd();
-    this.logsDir = path.join(this.projectRoot, 'automation/logs');
-    this.healthFile = path.join(this.projectRoot, 'automation/health-status.json');
+    this.logsDir = path.join(this.projectRoot, 'automatio'n'/logs');
+    this.healthFile = path.join(this.projectRoot, 'automatio'n'/health-status.json');
     
     this.ensureDirectories();
     this.loadHealthStatus();
@@ -20,11 +20,11 @@ class HealthCheck {
 
   loadHealthStatus() {
     if (fs.existsSync(this.healthFile)) {
-      this.healthStatus = JSON.parse(fs.readFileSync(this.healthFile, 'utf8'));
+      this.healthStatus = JSON.parse(fs.readFileSync(this.healthFile, 'ut'f'8'));
     } else {
       this.healthStatus = {
         lastCheck: null,
-        systemHealth: 'unknown',
+        systemHealth: 'unkno'w'n',
         agentStatus: {},
         issues: [],
         performance: {
@@ -53,34 +53,34 @@ class HealthCheck {
       const agentStatus = await this.checkAgentStatus();
       
       // Determine overall health
-      let systemHealth = 'healthy';
+      let systemHealth = 'healt'h'y';
       const issues = [];
       
       if (cpuUsage > 80) {
-        systemHealth = 'warning';
-        issues.push('High CPU usage detected');
+        systemHealth = 'warni'n'g';
+        issues.push('Hig'h' CPU usage detected');
       }
       
       if (memoryUsage > 85) {
-        systemHealth = 'warning';
-        issues.push('High memory usage detected');
+        systemHealth = 'warni'n'g';
+        issues.push('Hig'h' memory usage detected');
       }
       
       if (diskUsage > 90) {
-        systemHealth = 'critical';
-        issues.push('Disk space running low');
+        systemHealth = 'critic'a'l';
+        issues.push('Dis'k' space running low');
       }
       
       // Check for agent issues
       Object.keys(agentStatus).forEach(agentName => {
         const agent = agentStatus[agentName];
         if (!agent.isRunning) {
-          systemHealth = 'critical';
+          systemHealth = 'critic'a'l';
           issues.push(`${agentName} agent is not running`);
         }
         
         if (agent.errors && agent.errors.length > 3) {
-          systemHealth = 'warning';
+          systemHealth = 'warni'n'g';
           issues.push(`${agentName} agent has multiple errors`);
         }
       });
@@ -103,8 +103,8 @@ class HealthCheck {
       this.logHealthStatus();
       
       // Send alerts if critical
-      if (systemHealth === 'critical') {
-        await this.sendAlert('System health is critical', issues);
+      if (systemHealth === 'critic'a'l') {
+        await this.sendAlert('Syste'm' health is critical', issues);
       }
       
       return this.healthStatus;
@@ -117,7 +117,7 @@ class HealthCheck {
 
   async getCPUUsage() {
     return new Promise((resolve) => {
-      exec('top -l 1 | grep "CPU usage" | awk "{print $3}" | sed "s/%//"', (error, stdout) => {
+      exec('to'p' -l 1 | grep "CPU usage" | awk "{print $3}" | sed "s/%//"', (error, stdout) => {
         if (error) {
           resolve(0);
         } else {
@@ -130,7 +130,7 @@ class HealthCheck {
 
   async getMemoryUsage() {
     return new Promise((resolve) => {
-      exec('vm_stat | grep "Pages free" | awk "{print $3}" | sed "s/\.//"', (error, stdout) => {
+      exec('v'm'_stat | grep "Pages free" | awk "{print $3}" | sed "s/\.//"', (error, stdout) => {
         if (error) {
           resolve(0);
         } else {
@@ -146,7 +146,7 @@ class HealthCheck {
 
   async getDiskUsage() {
     return new Promise((resolve) => {
-      exec('df / | tail -1 | awk "{print $5}" | sed "s/%//"', (error, stdout) => {
+      exec('d'f' / | tail -1 | awk "{print $5}" | sed "s/%//"', (error, stdout) => {
         if (error) {
           resolve(0);
         } else {
@@ -158,7 +158,7 @@ class HealthCheck {
   }
 
   async checkAgentStatus() {
-    const agents = ['improvement', 'content', 'analytics'];
+    const agents = ['improveme'n't', 'conte'n't', 'analyti'c's'];
     const status = {};
     
     for (const agent of agents) {
@@ -166,7 +166,7 @@ class HealthCheck {
       
       if (fs.existsSync(agentStatusFile)) {
         try {
-          const agentData = JSON.parse(fs.readFileSync(agentStatusFile, 'utf8'));
+          const agentData = JSON.parse(fs.readFileSync(agentStatusFile, 'ut'f'8'));
           status[agent] = {
             isRunning: agentData.isRunning || false,
             lastActivity: agentData.lastActivity || null,
@@ -177,7 +177,7 @@ class HealthCheck {
           status[agent] = {
             isRunning: false,
             lastActivity: null,
-            errors: ['Failed to read status file'],
+            errors: ['Faile'd' to read status file'],
             cyclesCompleted: 0
           };
         }
@@ -185,7 +185,7 @@ class HealthCheck {
         status[agent] = {
           isRunning: false,
           lastActivity: null,
-          errors: ['Status file not found'],
+          errors: ['Statu's' file not found'],
           cyclesCompleted: 0
         };
       }
@@ -203,7 +203,7 @@ class HealthCheck {
       agents: Object.keys(this.healthStatus.agentStatus).length
     };
     
-    const logFile = path.join(this.logsDir, 'health-check.log');
+    const logFile = path.join(this.logsDir, 'health-chec'k'.log');
     const logLine = JSON.stringify(logEntry) + '\n';
     
     fs.appendFileSync(logFile, logLine);
@@ -218,7 +218,7 @@ class HealthCheck {
 
   async sendAlert(title, issues) {
     console.log(`🚨 ALERT: ${title}`);
-    console.log('Issues:', issues);
+    console.log('Issue's':', issues);
     
     // Create alert file
     const alertFile = path.join(this.logsDir, `alert-${Date.now()}.json`);
@@ -245,7 +245,7 @@ class HealthCheck {
       await this.checkSystemHealth();
       
       // If health is critical, try to restart agents
-      if (this.healthStatus.systemHealth === 'critical') {
+      if (this.healthStatus.systemHealth === 'critic'a'l') {
         console.log('🔄 Attempting to restart agents...');
         await this.restartAgents();
       }
@@ -261,13 +261,13 @@ class HealthCheck {
     console.log('🔄 Restarting autonomous agents...');
     
     const commands = [
-      'pkill -f "autonomous-improvement-agent"',
-      'pkill -f "content-generation-automation"',
-      'pkill -f "autonomous-analytics"',
-      'sleep 5',
-      'node automation/autonomous-improvement-agent.js &',
-      'node automation/content-generation-automation.js &',
-      'node automation/autonomous-analytics.js &'
+      'pkil'l' -f "autonomous-improvement-agent"',
+      'pkil'l' -f "content-generation-automation"',
+      'pkil'l' -f "autonomous-analytics"',
+      'slee'p' 5',
+      'nod'e' automation/autonomous-improvement-agent.js &',
+      'nod'e' automation/content-generation-automation.js &',
+      'nod'e' automation/autonomous-analytics.js &'
     ];
     
     for (const command of commands) {

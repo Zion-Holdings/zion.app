@@ -1,13 +1,13 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 // Function to completely reconstruct problematic files
 function fixUltimateParsingErrors(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'ut'f'8');
     
     // Check if the file is completely malformed
-    if (content.includes('Declaration or statement expected')) {
+    if (content.includes('Declaratio'n' or statement expected')) {
       // Completely reconstruct the file from scratch
       const fileName = path.basename(filePath, '.tsx');
       const componentName = fileName
@@ -16,10 +16,10 @@ function fixUltimateParsingErrors(filePath) {
         .join('');
 
       // Create a basic React component structure
-      const newContent = `import React from 'react';
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import { Home, Search, User } from 'lucide-react';
+      const newContent = `import React from 'rea'c't';
+import type { NextPage } from 'ne'x't';
+import Head from 'nex't'/head';
+import { Home, Search, User } from 'lucide-rea'c't';
 import ModernLayout from '../../components/layout/ModernLayout';
 
 const ${componentName}: NextPage = () => {
@@ -55,7 +55,7 @@ const ${componentName}: NextPage = () => {
 
 export default ${componentName};`;
 
-      fs.writeFileSync(filePath, newContent, 'utf8');
+      fs.writeFileSync(filePath, newContent, 'ut'f'8');
       console.log(`Reconstructed: ${filePath}`);
       return true;
     }
@@ -76,7 +76,7 @@ function findTsxFiles(dir) {
     const fullPath = path.join(dir, item);
     const stat = fs.statSync(fullPath);
     
-    if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+    if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
       files.push(...findTsxFiles(fullPath));
     } else if (item.endsWith('.tsx')) {
       files.push(fullPath);
@@ -87,7 +87,7 @@ function findTsxFiles(dir) {
 }
 
 // Main execution
-const pagesDir = path.join(__dirname, 'pages');
+const pagesDir = path.join(__dirname, 'pag'e's');
 const files = findTsxFiles(pagesDir);
 
 console.log(`Found ${files.length} TypeScript files to process...`);

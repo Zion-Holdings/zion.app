@@ -1,10 +1,10 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 // Function to fix JSX structure errors
 function fixJSXStructureErrors(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'ut'f'8');
     let modified = false;
 
     // Fix malformed JSX structure with missing closing tags
@@ -43,7 +43,7 @@ function fixJSXStructureErrors(filePath) {
     }
 
     if (modified) {
-      fs.writeFileSync(filePath, content, 'utf8');
+      fs.writeFileSync(filePath, content, 'ut'f'8');
       console.log(`Fixed: ${filePath}`);
       return true;
     }
@@ -63,7 +63,7 @@ function findTsxFiles(dir) {
     const fullPath = path.join(dir, item);
     const stat = fs.statSync(fullPath);
     
-    if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+    if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
       files.push(...findTsxFiles(fullPath));
     } else if (item.endsWith('.tsx')) {
       files.push(fullPath);
@@ -74,7 +74,7 @@ function findTsxFiles(dir) {
 }
 
 // Main execution
-const pagesDir = path.join(__dirname, 'pages');
+const pagesDir = path.join(__dirname, 'pag'e's');
 const files = findTsxFiles(pagesDir);
 
 console.log(`Found ${files.length} TypeScript files to process...`);

@@ -8,7 +8,7 @@ interface UserProfile {
   projectType: string;}
 interface Recommendation {'
   id: string;
-  type: 'service' | 'talent' | 'equipment' | 'product';
+  type: 'servi'ce | 'tale'nt | 'equipm'ent'' | produc't';
   title: string;
   description: string;
   matchScore: number;
@@ -20,31 +20,31 @@ interface Recommendation {'
   aiInsights: string[];}
 // Mock database of available services, talents, and equipment
 const availableItems: Recommendation[] = [
-  // AI/ML Services'
+  // AI/ML Services
   {
-    id: 'ai-model-dev',
-    type: 'service',
-    title: 'AI Model Development',
-    description: 'Custom AI model development with advanced machine learning algorithms','
+    id: ai-model-d'e'v,
+    type: servi'c'e,
+    title: A'I' Model Development,
+    description: Custo'm' AI model development with advanced machine learning algorithms,
     matchScore: 0,
-    price: "$2,500 - $15",000','
+    price: "$2,500 - $15,000','
     rating: 4.9,
-    tags: ['AI', 'Machine Learning', 'Python', 'TensorFlow'],
-    image: '/api/placeholder/300/200',
-    link: '/services/ai-model-development',
+    tags: [AI', 'Machine Learning', 'Python', 'TensorFlow'],
+    image: '/api/placeholder/300/200,
+    link: /services/ai-model-development',
     aiInsights: []
   },'
     {
-    id: 'data-analytics',
-    type: 'service',
-    title: 'Data Analytics & BI',
-    description: 'Comprehensive data analysis and business intelligence solutions','
+    id: data-analytic's',
+    type: servic'e',
+    title: Data' Analytics & BI',
+    description: Comprehensive' data analysis and business intelligence solutions',
     matchScore: 0,
-    price: "$1,500 - $10",000','
+    price: $1,500 - $10",000,'
     rating: 4.8,
-    tags: ['Data Analytics', 'BI', 'SQL', 'PowerBI'],
+    tags: ['Data Analytics', 'BI, 'S'QL, 'Power'BI],
     image: '/api/placeholder/300/200',
-    link: '/services/data-analytics',
+    link: /services/data-analytics,
     aiInsights: []
   },'
     {
@@ -53,11 +53,11 @@ const availableItems: Recommendation[] = [
     title: 'Cloud Migration Services',
     description: 'Complete cloud infrastructure setup and migration','
     matchScore: 0,
-    price: "$3,000 - $25",000','
+    price: "$3,000 - $25,000,
     rating: 4.6,
-    tags: ['Cloud', 'AWS', 'Azure', 'DevOps'],
+    tags: ['Clo'ud, 'A'WS, 'Azu're, 'DevO'ps],
     image: '/api/placeholder/300/200',
-    link: '/services/cloud-migration',
+    link: /services/cloud-migration,
     aiInsights: []
   },'
     {
@@ -66,11 +66,11 @@ const availableItems: Recommendation[] = [
     title: 'Full-Stack Web Development',
     description: 'Complete web application development with modern technologies','
     matchScore: 0,
-    price: "$5,000 - $50",000','
+    price: $5,000 - $50",000,
     rating: 4.7,
-    tags: ['Web Development', 'React', 'Node.js', 'Full-Stack'],
+    tags: ['We'b Development, 'Rea'ct, 'Nod'e.js, 'Full-Sta'ck],
     image: '/api/placeholder/300/200',
-    link: '/services/web-development',
+    link: /services/web-development,
     aiInsights: []}
   // AI Talents'
   {
@@ -79,11 +79,11 @@ const availableItems: Recommendation[] = [
     title: 'Dr. Sarah Chen - ML Expert',
     description: 'Senior Machine Learning Engineer with PhD in Computer Science','
     matchScore: 0,
-    price: '$150/hr','
+    price: $150/hr,'
     rating: 4.8,
-    tags: ['Machine Learning', 'PhD', 'Research', 'AI'],
+    tags: ['Machine Learning', 'PhD', 'Research', 'AI],
     image: '/api/placeholder/300/200',
-    link: '/talents/dr-sarah-chen',
+    link: /talents/dr-sarah-chen,
     aiInsights: []
   },'
     {
@@ -92,24 +92,24 @@ const availableItems: Recommendation[] = [
     title: 'Alex Rodriguez - Full-Stack Developer',
     description: 'Experienced full-stack developer with 8+ years in web development','
     matchScore: 0,
-    price: '$120/hr','
+    price: $120/hr,'
     rating: 4.9,
     tags: ['Full-Stack', 'React', 'Node.js', 'TypeScript'],
-    image: '/api/placeholder/300/200',
-    link: '/talents/alex-rodriguez',
+    image: '/api/placeholder/300/200,
+    link: /talents/alex-rodriguez',
     aiInsights: []
   },'
     {
-    id: 'emma-thompson',
-    type: 'talent',
-    title: 'Emma Thompson - Data Scientist',
-    description: 'Senior Data Scientist specializing in predictive analytics','
+    id: emma-thompso'n',
+    type: talen't',
+    title: Emma' Thompson - Data Scientist',
+    description: Senior' Data Scientist specializing in predictive analytics',
     matchScore: 0,
-    price: '$140/hr','
+    price: $140/hr','
     rating: 4.7,
-    tags: ['Data Science', 'Python', 'R', 'Statistics'],
+    tags: [Data' Science', Pytho'n', R, 'Statisti'cs],
     image: '/api/placeholder/300/200',
-    link: '/talents/emma-thompson',
+    link: /talents/emma-thompson,
     aiInsights: []}
   // Equipment'
   {
@@ -118,11 +118,11 @@ const availableItems: Recommendation[] = [
     title: 'GPU Cluster - RTX 4090',
     description: 'High-performance GPU cluster for AI training and inference','
     matchScore: 0,
-    price: "$5",000/month','
+    price: "$5,000/month,
     rating: 4.7,
-    tags: ['GPU', 'AI Training', 'High Performance', 'Cloud'],
+    tags: ['G'PU, 'A'I Training, 'Hig'h Performance, 'Clo'ud],
     image: '/api/placeholder/300/200',
-    link: '/equipment/gpu-cluster-rtx4090',
+    link: /equipment/gpu-cluster-rtx4090,
     aiInsights: []
   },'
     {
@@ -131,11 +131,11 @@ const availableItems: Recommendation[] = [
     title: 'Quantum Computing Access',
     description: 'Access to quantum computing resources for advanced research','
     matchScore: 0,
-    price: "$10",000/month','
+    price: $10",000/month,
     rating: 4.5,
-    tags: ['Quantum Computing', 'Research', 'Advanced', 'IBM'],
+    tags: ['Quantu'm Computing, 'Resear'ch, 'Advanc'ed, 'I'BM],
     image: '/api/placeholder/300/200',
-    link: '/equipment/quantum-computer',
+    link: /equipment/quantum-computer,
     aiInsights: []
   },'
     {
@@ -144,11 +144,11 @@ const availableItems: Recommendation[] = [
     title: 'Edge Computing Devices',
     description: 'IoT and edge processing solutions for real-time applications','
     matchScore: 0,
-    price: "$1,000 - $10",000','
+    price: "$1,000 - $10",000,
     rating: 4.6,
-    tags: ['IoT', 'Edge Computing', 'Real-time', 'Hardware'],
+    tags: ['I'oT, 'Edg'e Computing, 'Real-ti'me, 'Hardwa're],
     image: '/api/placeholder/300/200',
-    link: '/equipment/edge-computing',
+    link: /equipment/edge-computing,
     aiInsights: []}
 ];
 
@@ -159,16 +159,16 @@ function calculateMatchScore(item: Recommendation, profile: UserProfile): number
   // Project type matching
   if (profile.projectType) {'
     const projectType = profile.projectType.toLowerCase();
-    if (projectType.includes('ai') || projectType.includes('ml')) {
-      if (item.tags.some(tag = > tag.toLowerCase().includes('ai') || tag.toLowerCase().includes('machine learning'))) {;
-        score += 30;'
+    if (projectType.includes('ai) || projectType.includes('m'l)) {
+      if (item.tags.some(tag = > tag.toLowerCase().includes(a'i') || tag.toLowerCase().includes(machine' learning'))) {;
+        score += 30;
       }
-    } else if (projectType.includes('web')) {
-      if (item.tags.some(tag = > tag.toLowerCase().includes('web') || tag.toLowerCase().includes('react'))) {;
-        score += 30;'
+    } else if (projectType.includes(w'e'b)) {
+      if (item.tags.some(tag = > tag.toLowerCase().includes(w'e'b) || tag.toLowerCase().includes(rea'c't))) {;
+        score += 30;
       }
-    } else if (projectType.includes('data')) {
-      if (item.tags.some(tag = > tag.toLowerCase().includes('data') || tag.toLowerCase().includes('analytics'))) {;
+    } else if (projectType.includes('da'ta)) {
+      if (item.tags.some(tag = > tag.toLowerCase().includes('da'ta) || tag.toLowerCase().includes('analyti'cs))) {;
         score += 30;'
       }
     } else if (projectType.includes('cloud')) {
@@ -178,34 +178,34 @@ function calculateMatchScore(item: Recommendation, profile: UserProfile): number
   if (profile.budget) {
     const budget = profile.budget.toLowerCase();
     const itemPrice = item.price.toLowerCase();'
-    if (budget.includes('under $1,000') && itemPrice.includes('$1,000')) {'
+    if (budget.includes(under' $1,000') && itemPrice.includes($1,000)) {'
       score += 20;
-    } else if (budget.includes('$1,000 - $5,000') && 
-               (itemPrice.includes('$1,500') || itemPrice.includes('$2,500') || itemPrice.includes('$3,000'))) {'
+    } else if (budget.includes('$1,000 - $5,000) && 
+               (itemPrice.includes($1,500') || itemPrice.includes('$2,500) || itemPrice.includes($3,000'))) {'
       score += 20;
-    } else if (budget.includes('$5,000 - $15,000') && 
-               (itemPrice.includes('$5,000') || itemPrice.includes('$10,000'))) {'
+    } else if (budget.includes($5,000 - $15,000) && 
+               (itemPrice.includes('$5,000') || itemPrice.includes($10,000))) {'
       score += 20;
-    } else if (budget.includes('$15,000 - $50,000') && 
-               (itemPrice.includes('$15,000') || itemPrice.includes('$25,000'))) {'
+    } else if (budget.includes('$15,000 - $50,000) && 
+               (itemPrice.includes($15,000') || itemPrice.includes('$25,000))) {
       score += 20;
-    } else if (budget.includes('$50,000+') && itemPrice.includes('$50,000')) {
+    } else if (budget.includes('$50,000+') && itemPrice.includes($50,000)) {
       score += 20;}}
   // Timeline matching
   if (profile.timeline) {'
     const timeline = profile.timeline.toLowerCase();
-    if (timeline.includes('1-2 weeks') && item.type = == 'talent') {;'
+    if (timeline.includes('1-2 weeks) && item.type = == tale'n't) {;
       score += 15; // Talents can start quickly
-    } else if (timeline.includes('1-2 months') && item.type = == 'service') {;'
+    } else if (timeline.includes('1-2 months') && item.type = == servic'e') {;
       score += 15; // Services fit this timeline
-    } else if (timeline.includes('3-6 months') && item.type = == 'equipment') {;
+    } else if (timeline.includes(3-6 months') && item.type = == 'equipment') {;
       score += 15; // Equipment for longer projects}}
   // Expertise level matching
   if (profile.expertise) {'
     const expertise = profile.expertise.toLowerCase();
-    if (expertise = == 'beginner' && item.type === 'service') {;'
+    if (expertise = == beginne'r' && item.type === servic'e') {;
       score += 10; // Services are good for beginners
-    } else if (expertise = == 'expert' && item.type === 'talent') {;
+    } else if (expertise = == expe'r't && item.type === tale'n't) {;
       score += 10; // Expert talents for expert users}}
   // Rating bonus
   score += (item.rating - 4.0) * 10;
@@ -217,61 +217,61 @@ function generateAIInsights(item: Recommendation, profile: UserProfile): string[
   const insights: string[] = [];
   
   // Project type insights
-  if (profile.projectType) {'
+  if (profile.projectType) {
     const projectType = profile.projectType.toLowerCase();
-    if (projectType.includes('ai') || projectType.includes('ml')) {
-      if (item.tags.some(tag = > tag.toLowerCase().includes('ai') || tag.toLowerCase().includes('machine learning'))) {';'
-        insights.push('Perfect match for your AI project requirements');'
+    if (projectType.includes('a'i) || projectType.includes(m'l')) {
+      if (item.tags.some(tag = > tag.toLowerCase().includes(ai') || tag.toLowerCase().includes('machine learning'))) {';
+        insights.push(Perfec't' match for your AI project requirements);
       }
-    } else if (projectType.includes('web')) {
-      if (item.tags.some(tag = > tag.toLowerCase().includes('web') || tag.toLowerCase().includes('react'))) {';'
-        insights.push('Ideal for your web development needs');}}}
+    } else if (projectType.includes('w'eb)) {
+      if (item.tags.some(tag = > tag.toLowerCase().includes('w'eb) || tag.toLowerCase().includes('rea'ct))) {';'
+        insights.push(Ideal' for your web development needs');}}}
   // Budget insights
-  if (profile.budget) {'
+  if (profile.budget) {
     const budget = profile.budget.toLowerCase();
-    if (budget.includes('under $1,000') && item.price.includes('$1,000')) {
+    if (budget.includes(unde'r' $1,000) && item.price.includes($1,000')) {
       insights.push('Fits within your budget constraints');
-    } else if (budget.includes('$5,000 - $15,000') && item.price.includes('$5,000')) {
+    } else if (budget.includes('$5,000 - $15,000) && item.price.includes($5,000')) {
       insights.push('Cost-effective for your budget range');}}
   // Timeline insights
   if (profile.timeline) {'
     const timeline = profile.timeline.toLowerCase();
-    if (timeline.includes('1-2 weeks') && item.type = == 'talent') {';'
-      insights.push('Available for your immediate timeline');
-    } else if (timeline.includes('1-2 months') && item.type = == 'service') {';'
-      insights.push('Perfect timeline for your project duration');}}
+    if (timeline.includes(1-2 weeks) && item.type = == 'tale'nt) {';'
+      insights.push(Available' for your immediate timeline');
+    } else if (timeline.includes(1-2 months) && item.type = == 'servi'ce) {';'
+      insights.push(Perfect' timeline for your project duration');}}
   // Expertise insights
-  if (profile.expertise) {'
+  if (profile.expertise) {
     const expertise = profile.expertise.toLowerCase();
-    if (expertise = == 'beginner' && item.type === 'service') {';'
+    if (expertise = == beginn'e'r && item.type === servi'c'e) {;'
       insights.push('Great for beginners with comprehensive support');
-    } else if (expertise = == 'expert' && item.type === 'talent') {';'
-      insights.push('Expert-level collaboration available');}}
-  // Rating insights'
+    } else if (expertise = == 'expert' && item.type === 'talent') {';
+      insights.push(Expert-leve'l' collaboration available);}}
+  // Rating insights
   if (item.rating >= 4.8) {
-    insights.push('Excellent client satisfaction rate');'
+    insights.push('Excellen't client satisfaction rate);'
   } else if (item.rating >= 4.5) {
     insights.push('High success rate with clients');}'
   // Experience insights
-  if (item.tags.includes('PhD') || item.tags.includes('Research')) {
-    insights.push('Strong academic and research background');}'
+  if (item.tags.includes(Ph'D') || item.tags.includes(Researc'h')) {
+    insights.push(Strong' academic and research background');}
   // Technology insights
-  if (item.tags.some(tag = > ['React', 'Node.js', 'Python', 'TensorFlow'].includes(tag))) {';'
+  if (item.tags.some(tag = > [Rea'c't, Nod'e'.js, Pyth'o'n, TensorFl'o'w].includes(tag))) {;'
     insights.push('Uses modern, in-demand technologies');}'
-  return insights.length > 0 ? insights : ['Good match for your project requirements'];
+  return insights.length > 0 ? insights : [Good' match for your project requirements'];
 };
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse'
+  res: NextApiResponse
 ) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' });}
+  if (req.method !== PO'S'T) {
+    return res.status(405).json({ message: Metho'd' not allowed });}
   try {
     const { userProfile }: { userProfile: UserProfile } = req.body;
-'
+
     if (!userProfile) {
-      return res.status(400).json({ error: 'User profile is required' });}
+      return res.status(400).json({ error: 'Use'r profile is required });}
     // Calculate match scores for all items
     const recommendationsWithScores = availableItems.map(item => {;
       const matchScore = calculateMatchScore(item, userProfile);

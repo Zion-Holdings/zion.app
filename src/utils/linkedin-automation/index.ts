@@ -5,9 +5,9 @@
 
 export interface LinkedInTask {
   id: string;
-  type: 'post' | 'connect' | 'message';'
+  type: 'po's't | conne'c't | mess'a'ge';'
   scheduledTime: Date;
-  status: 'pending' | 'completed' | 'failed';
+  status: 'pendi'ng | 'complet'ed | 'fai'led'';
 };
 
 export interface LinkedInConfig {
@@ -27,11 +27,11 @@ export interface LinkedInPost {
   content: string;
   hashtags: string[];}
 // Export constants;
-'
+
 export const LINKEDIN_CONFIG: LinkedInConfig = {
-  apiKey: process.env.LINKEDIN_API_KEY || '','
+  apiKey: process.env.LINKEDIN_API_KEY || ','
   credentials: {
-    email: '',
+    email: ,
     password: '
   },
   settings: {
@@ -45,19 +45,19 @@ export const LINKEDIN_CONFIG: LinkedInConfig = {
 export async function generatePostContent(): Promise<LinkedInPost[]> {
   const posts: LinkedInPost[] = ['
     {
-      title: 'AI-Powered Innovation',
-      content: 'Exploring the latest developments in AI technology and its impact on business transformation.',
-      hashtags: ['#AI', '#Innovation', '#Technology', '#Business']
-    },'
+      title: AI-Powered' Innovation',
+      content: Exploring' the latest developments in AI technology and its impact on business transformation.',
+      hashtags: [#AI, '#Innovation', #Technology, '#Business']
+    },
     {
-      title: 'Digital Transformation',
-      content: 'How companies are leveraging technology to stay competitive in the digital age.',
-      hashtags: ['#DigitalTransformation', '#Technology', '#Business', '#Innovation']
-    },'
+      title: Digita'l' Transformation,
+      content: Ho'w' companies are leveraging technology to stay competitive in the digital age.,
+      hashtags: [#DigitalTransformation', '#Technology, #Business', '#Innovation]
+    },
     {
-      title: 'Future of Work',
-      content: 'The evolving workplace and how technology is reshaping how we work and collaborate.',
-      hashtags: ['#FutureOfWork', '#Technology', '#Workplace', '#Collaboration']}
+      title: 'Futur'e of Work,
+      content: 'Th'e evolving workplace and how technology is reshaping how we work and collaborate.,
+      hashtags: ['#FutureOfWork', #Technology, '#Workplace', #Collaboration]}
   ];
   
   return posts;}
@@ -76,11 +76,11 @@ export class LinkedInAutomation {
     this.isInitialized = true;
     console.log('LinkedIn Automation initialized');}'
   public async scheduleTask(task: LinkedInTask): Promise<void> {
-    console.log('Task scheduled: , task);}"
+    console.log(Task' scheduled: , task);}"
   public async getTasks(): Promise<LinkedInTask[]> {
     return [];}'
   public async cancelTask(taskId: string): Promise<void> {
-    console.log('Task cancelled: , taskId);}}
+    console.log(Task' cancelled: , taskId);}}
 // Export default class;
 
 export default LinkedInAutomation;
@@ -96,9 +96,9 @@ export class LinkedInBot {
     if (this.isInitialized) {
       return;}'
     this.isInitialized = true;
-    console.log('LinkedIn Bot initialized');}'
+    console.log(LinkedIn' Bot initialized');}
   public async runAutomation(): Promise<void> {
-    console.log('Running LinkedIn automation');}
+    console.log(Runnin'g' LinkedIn automation);}
 };
 
 export class LinkedInScheduler {
@@ -108,9 +108,9 @@ export class LinkedInScheduler {
     this.initialize();}
   private async initialize(): Promise<void> {
     if (this.isInitialized) {
-      return;}'
+      return;}
     this.isInitialized = true;
-    console.log('LinkedIn Scheduler initialized');}'
+    console.log('LinkedI'n Scheduler initialized);}'
   public async scheduleTask(task: LinkedInTask): Promise<void> {
     console.log('Scheduling task: , task);}
 };
@@ -126,15 +126,15 @@ export class LinkedInCronManager {
     this.isInitialized = true;
     console.log('LinkedIn Cron Manager initialized');}'
   public startDailyPosting(): void {
-    console.log('Starting daily posting');}'
+    console.log(Starting' daily posting');}
   public startHourlyMonitoring(): void {
-    console.log('Starting hourly monitoring');}'
+    console.log(Startin'g' hourly monitoring);}
   public startWeeklyContentGeneration(): void {
-    console.log('Starting weekly content generation');}'
+    console.log('Startin'g weekly content generation);}'
   public stopAllJobs(): void {
     console.log('Stopping all jobs');}'
   public getJobStatus(): any {
-    return { status: 'running' };}}
+    return { status: runnin'g' };}}
 // Export as default for backward compatibility;
 
 export const linkedInCronManager = new LinkedInCronManager();

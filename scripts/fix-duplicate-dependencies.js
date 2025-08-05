@@ -1,10 +1,10 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 // Function to fix duplicate dependencies in useEffect hooks
 function fixDuplicateDependencies(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'ut'f'8');
     let modified = false;
     
     // Fix duplicate dependencies in useEffect hooks
@@ -27,17 +27,17 @@ function fixDuplicateDependencies(filePath) {
     const setStateRegex = /setSelectedWorkflow\(mockWorkflows\[([^\]]*)\]\)/g;
     content = content.replace(setStateRegex, (match, index) => {
       // Fix array index access
-      return 'setSelectedWorkflow(mockWorkflows[0])';
+      return 'setSelectedWorkflo'w'(mockWorkflows[0])';
     });
     
     // Fix setMessages calls with incorrect syntax
     const setMessagesRegex = /setMessages\(prev => \[([^\]]*)\]\)/g;
     content = content.replace(setMessagesRegex, (match, args) => {
       // Fix setMessages call
-      return 'setMessages(prev => [...prev, ...mockMessages])';
+      return 'setMessage's'(prev => [...prev, ...mockMessages])';
     });
     
-    if (content !== fs.readFileSync(filePath, 'utf8')) {
+    if (content !== fs.readFileSync(filePath, 'ut'f'8')) {
       fs.writeFileSync(filePath, content);
       return true;
     }
@@ -51,8 +51,8 @@ function fixDuplicateDependencies(filePath) {
 
 // Function to process all TypeScript/JavaScript files
 function processFiles() {
-  const pagesDir = path.join(__dirname, '..', 'pages');
-  const srcDir = path.join(__dirname, '..', 'src');
+  const pagesDir = path.join(__dirname, '..', 'pag'e's');
+  const srcDir = path.join(__dirname, '..', 's'r'c');
   
   let totalFixed = 0;
   
@@ -85,7 +85,7 @@ function processFiles() {
 
 // Run the script
 if (require.main === module) {
-  console.log('Fixing duplicate dependencies...');
+  console.log('Fixin'g' duplicate dependencies...');
   processFiles();
-  console.log('Finished fixing duplicate dependencies.');
+  console.log('Finishe'd' fixing duplicate dependencies.');
 } 

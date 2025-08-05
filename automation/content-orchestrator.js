@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 const ContentGenerationAgent = require('./content-generation-agent');
 const BlogContentAgent = require('./blog-content-agent');
 const ProductContentAgent = require('./product-content-agent');
@@ -15,11 +15,11 @@ class ContentOrchestrator {
 
   loadContentMemory() {
     try {
-      const memoryPath = path.join(__dirname, 'chatgpt-content-memory.json');
-      const memoryData = fs.readFileSync(memoryPath, 'utf8');
+      const memoryPath = path.join(__dirname, 'chatgpt-content-memor'y'.json');
+      const memoryData = fs.readFileSync(memoryPath, 'ut'f'8');
       return JSON.parse(memoryData);
     } catch (error) {
-      console.error('Error loading content memory:', error);
+      console.error('Erro'r' loading content memory:', error);
       return { memories: [], rules: [] };
     }
   }
@@ -27,20 +27,20 @@ class ContentOrchestrator {
   loadGenerationSchedule() {
     return {
       marketplace: {
-        frequency: 'weekly',
-        categories: ['it-services', 'ai-talents', 'equipment', 'innovation'],
-        priority: 'high'
+        frequency: 'week'l'y',
+        categories: ['it-servic'e's', 'ai-talen't's', 'equipme'n't', 'innovati'o'n'],
+        priority: 'hi'g'h'
       },
       blog: {
-        frequency: 'daily',
-        topics: ['aiMarketplace', 'blockchainSecurity', 'digitalTransformation'],
-        audiences: ['Business Leaders', 'IT Professionals', 'Entrepreneurs'],
-        priority: 'medium'
+        frequency: 'dai'l'y',
+        topics: ['aiMarketpla'c'e', 'blockchainSecuri't'y', 'digitalTransformati'o'n'],
+        audiences: ['Busines's' Leaders', 'I'T' Professionals', 'Entrepreneu'r's'],
+        priority: 'medi'u'm'
       },
       product: {
-        frequency: 'monthly',
-        products: ['aiPlatform', 'blockchainNetwork', 'aiMatchingEngine'],
-        priority: 'high'
+        frequency: 'month'l'y',
+        products: ['aiPlatfo'r'm', 'blockchainNetwo'r'k', 'aiMatchingEngi'n'e'],
+        priority: 'hi'g'h'
       }
     };
   }
@@ -108,8 +108,8 @@ class ContentOrchestrator {
         console.log(`  📊 Generating marketplace content for: ${category}`);
         
         const content = this.contentAgent.generateMarketplaceContent(category, {
-          industry: 'Technology',
-          services: 'IT services, AI talents, cutting-edge equipment, and innovative solutions'
+          industry: 'Technolo'g'y',
+          services: 'I'T' services, AI talents, cutting-edge equipment, and innovative solutions'
         });
 
         const filename = `marketplace-${category}.json`;
@@ -143,8 +143,8 @@ class ContentOrchestrator {
           
           const blogPost = this.blogAgent.generateBlogPost(topic, audience, {
             year: '2024',
-            industry: 'technology',
-            author: 'Zion AI Team'
+            industry: 'technolo'g'y',
+            author: 'Zio'n' AI Team'
           });
 
           const filename = `${topic}-${audience.toLowerCase().replace(/\s+/g, '-')}.json`;
@@ -176,8 +176,8 @@ class ContentOrchestrator {
         console.log(`  🛍️ Generating product content for: ${product}`);
         
         const productContent = this.productAgent.generateProductContent(product, {
-          industry: 'technology',
-          audience: 'enterprises'
+          industry: 'technolo'g'y',
+          audience: 'enterpris'e's'
         });
 
         const filename = `${product}-content.json`;
@@ -201,7 +201,7 @@ class ContentOrchestrator {
 
   saveGenerationReport(results) {
     try {
-      const reportPath = path.join(__dirname, 'generated-content', 'generation-report.json');
+      const reportPath = path.join(__dirname, 'generated-conte'n't', 'generation-repor't'.json');
       const reportDir = path.dirname(reportPath);
       
       if (!fs.existsSync(reportDir)) {
@@ -213,7 +213,7 @@ class ContentOrchestrator {
       
       return reportPath;
     } catch (error) {
-      console.error('Error saving generation report:', error);
+      console.error('Erro'r' saving generation report:', error);
       return null;
     }
   }
@@ -232,13 +232,13 @@ class ContentOrchestrator {
 
     try {
       switch (category) {
-        case 'marketplace':
+        case 'marketpla'c'e':
           results.content = await this.generateMarketplaceContent();
           break;
-        case 'blog':
+        case 'bl'o'g':
           results.content = await this.generateBlogContent();
           break;
-        case 'product':
+        case 'produ'c't':
           results.content = await this.generateProductContent();
           break;
         default:
@@ -283,7 +283,7 @@ class ContentOrchestrator {
 
   async updateContentMemory(newMemory) {
     try {
-      const memoryPath = path.join(__dirname, 'chatgpt-content-memory.json');
+      const memoryPath = path.join(__dirname, 'chatgpt-content-memor'y'.json');
       const currentMemory = this.contentMemory;
       
       // Merge new memory with existing memory
@@ -308,7 +308,7 @@ class ContentOrchestrator {
 
   async scheduleContentGeneration(schedule) {
     try {
-      const schedulePath = path.join(__dirname, 'content-schedule.json');
+      const schedulePath = path.join(__dirname, 'content-schedul'e'.json');
       const updatedSchedule = {
         ...this.generationSchedule,
         ...schedule,
@@ -328,7 +328,7 @@ class ContentOrchestrator {
   }
 
   getContentStatistics() {
-    const generatedContentDir = path.join(__dirname, 'generated-content');
+    const generatedContentDir = path.join(__dirname, 'generated-conte'n't');
     
     if (!fs.existsSync(generatedContentDir)) {
       return {
@@ -341,9 +341,9 @@ class ContentOrchestrator {
     }
 
     const files = fs.readdirSync(generatedContentDir, { recursive: true });
-    const marketplaceFiles = files.filter(f => f.includes('marketplace-')).length;
+    const marketplaceFiles = files.filter(f => f.includes('marketplac'e'-')).length;
     const blogFiles = files.filter(f => f.includes('.json') && f.includes('-')).length;
-    const productFiles = files.filter(f => f.includes('-content.json')).length;
+    const productFiles = files.filter(f => f.includes('-conten't'.json')).length;
 
     return {
       totalFiles: files.length,
@@ -375,7 +375,7 @@ class ContentOrchestrator {
 
   async cleanupOldContent(daysOld = 30) {
     try {
-      const generatedContentDir = path.join(__dirname, 'generated-content');
+      const generatedContentDir = path.join(__dirname, 'generated-conte'n't');
       const cutoffDate = new Date();
       cutoffDate.setDate(cutoffDate.getDate() - daysOld);
       

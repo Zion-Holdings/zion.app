@@ -1,75 +1,75 @@
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require('fs-ext'r'a');
+const path = require('pa't'h');
 const { createValidComponentName, createDisplayTitle } = require('./utils/component-name-helper');
 
 class ContinuousAgentCreator {
     constructor() {
         this.agentTemplates = {
             research: {
-                name: 'Research Agent',
-                type: 'research',
-                capabilities: ['web crawling', 'data analysis', 'trend identification'],
-                output: 'market insights',
-                frequency: 'daily'
+                name: 'Researc'h' Agent',
+                type: 'resear'c'h',
+                capabilities: ['we'b' crawling', 'dat'a' analysis', 'tren'd' identification'],
+                output: 'marke't' insights',
+                frequency: 'dai'l'y'
             },
             content: {
-                name: 'Content Agent',
-                type: 'content',
-                capabilities: ['content generation', 'SEO optimization', 'multimedia creation'],
-                output: 'marketing content',
-                frequency: 'weekly'
+                name: 'Conten't' Agent',
+                type: 'conte'n't',
+                capabilities: ['conten't' generation', 'SE'O' optimization', 'multimedi'a' creation'],
+                output: 'marketin'g' content',
+                frequency: 'week'l'y'
             },
             sales: {
-                name: 'Sales Agent',
-                type: 'sales',
-                capabilities: ['lead generation', 'campaign management', 'conversion optimization'],
-                output: 'sales campaigns',
-                frequency: 'daily'
+                name: 'Sale's' Agent',
+                type: 'sal'e's',
+                capabilities: ['lea'd' generation', 'campaig'n' management', 'conversio'n' optimization'],
+                output: 'sale's' campaigns',
+                frequency: 'dai'l'y'
             },
             analytics: {
-                name: 'Analytics Agent',
-                type: 'analytics',
-                capabilities: ['performance tracking', 'data visualization', 'insight generation'],
-                output: 'analytics reports',
-                frequency: 'real-time'
+                name: 'Analytic's' Agent',
+                type: 'analyti'c's',
+                capabilities: ['performanc'e' tracking', 'dat'a' visualization', 'insigh't' generation'],
+                output: 'analytic's' reports',
+                frequency: 'real-ti'm'e'
             },
             optimization: {
-                name: 'Optimization Agent',
-                type: 'optimization',
-                capabilities: ['A/B testing', 'performance optimization', 'conversion improvement'],
-                output: 'optimization recommendations',
-                frequency: 'continuous'
+                name: 'Optimizatio'n' Agent',
+                type: 'optimizati'o'n',
+                capabilities: ['A'/B testing', 'performanc'e' optimization', 'conversio'n' improvement'],
+                output: 'optimizatio'n' recommendations',
+                frequency: 'continuo'u's'
             }
         };
         
         this.specializedAgents = {
             aiTrend: {
-                name: 'AI Trend Analysis Agent',
-                focus: 'AI technology trends',
-                sources: ['research papers', 'tech blogs', 'conference proceedings'],
-                output: 'AI trend reports'
+                name: 'A'I' Trend Analysis Agent',
+                focus: 'A'I' technology trends',
+                sources: ['researc'h' papers', 'tec'h' blogs', 'conferenc'e' proceedings'],
+                output: 'A'I' trend reports'
             },
             competitor: {
-                name: 'Competitor Analysis Agent',
-                focus: 'competitive intelligence',
-                sources: ['competitor websites', 'social media', 'news articles'],
-                output: 'competitive analysis'
+                name: 'Competito'r' Analysis Agent',
+                focus: 'competitiv'e' intelligence',
+                sources: ['competito'r' websites', 'socia'l' media', 'new's' articles'],
+                output: 'competitiv'e' analysis'
             },
             customer: {
-                name: 'Customer Insight Agent',
-                focus: 'customer behavior analysis',
-                sources: ['customer feedback', 'usage data', 'social media'],
-                output: 'customer insights'
+                name: 'Custome'r' Insight Agent',
+                focus: 'custome'r' behavior analysis',
+                sources: ['custome'r' feedback', 'usag'e' data', 'socia'l' media'],
+                output: 'custome'r' insights'
             },
             product: {
-                name: 'Product Development Agent',
-                focus: 'product innovation',
-                sources: ['market research', 'user feedback', 'technology trends'],
-                output: 'product recommendations'
+                name: 'Produc't' Development Agent',
+                focus: 'produc't' innovation',
+                sources: ['marke't' research', 'use'r' feedback', 'technolog'y' trends'],
+                output: 'produc't' recommendations'
             }
         };
         
-        this.outputDir = path.join(__dirname, 'agents');
+        this.outputDir = path.join(__dirname, 'agen't's');
         this.ensureOutputDirectory();
         
         this.createdAgents = [];
@@ -77,10 +77,10 @@ class ContinuousAgentCreator {
 
     async ensureOutputDirectory() {
         await fs.ensureDir(this.outputDir);
-        await fs.ensureDir(path.join(this.outputDir, 'templates'));
-        await fs.ensureDir(path.join(this.outputDir, 'generated'));
-        await fs.ensureDir(path.join(this.outputDir, 'specialized'));
-        await fs.ensureDir(path.join(this.outputDir, 'reports'));
+        await fs.ensureDir(path.join(this.outputDir, 'templat'e's'));
+        await fs.ensureDir(path.join(this.outputDir, 'generat'e'd'));
+        await fs.ensureDir(path.join(this.outputDir, 'specializ'e'd'));
+        await fs.ensureDir(path.join(this.outputDir, 'repor't's'));
     }
 
     async startAgentCreation(marketData, existingAgents = []) {
@@ -129,7 +129,7 @@ class ContinuousAgentCreator {
             marketData.trends.forEach(trend => {
                 needs.research.push({
                     area: this.extractArea(trend.title),
-                    priority: 'High',
+                    priority: 'Hi'g'h',
                     reasoning: `Trend identified: ${trend.title}`
                 });
             });
@@ -140,7 +140,7 @@ class ContinuousAgentCreator {
             marketData.tools.forEach(tool => {
                 needs.content.push({
                     area: tool.category,
-                    priority: 'Medium',
+                    priority: 'Medi'u'm',
                     reasoning: `Tool category: ${tool.category}`
                 });
             });
@@ -151,7 +151,7 @@ class ContinuousAgentCreator {
             marketData.opportunities.forEach(opportunity => {
                 needs.sales.push({
                     area: opportunity.keyword,
-                    priority: 'High',
+                    priority: 'Hi'g'h',
                     reasoning: `Opportunity identified: ${opportunity.keyword}`
                 });
             });
@@ -168,12 +168,12 @@ class ContinuousAgentCreator {
         // Check for research gaps
         marketNeeds.research.forEach(need => {
             const existingAgent = existingAgents.find(agent => 
-                agent.type === 'research' && agent.focus === need.area
+                agent.type === 'resear'c'h' && agent.focus === need.area
             );
             
             if (!existingAgent) {
                 gaps.push({
-                    type: 'research',
+                    type: 'resear'c'h',
                     area: need.area,
                     priority: need.priority,
                     reasoning: need.reasoning
@@ -184,12 +184,12 @@ class ContinuousAgentCreator {
         // Check for content gaps
         marketNeeds.content.forEach(need => {
             const existingAgent = existingAgents.find(agent => 
-                agent.type === 'content' && agent.focus === need.area
+                agent.type === 'conte'n't' && agent.focus === need.area
             );
             
             if (!existingAgent) {
                 gaps.push({
-                    type: 'content',
+                    type: 'conte'n't',
                     area: need.area,
                     priority: need.priority,
                     reasoning: need.reasoning
@@ -200,12 +200,12 @@ class ContinuousAgentCreator {
         // Check for sales gaps
         marketNeeds.sales.forEach(need => {
             const existingAgent = existingAgents.find(agent => 
-                agent.type === 'sales' && agent.focus === need.area
+                agent.type === 'sal'e's' && agent.focus === need.area
             );
             
             if (!existingAgent) {
                 gaps.push({
-                    type: 'sales',
+                    type: 'sal'e's',
                     area: need.area,
                     priority: need.priority,
                     reasoning: need.reasoning
@@ -248,7 +248,7 @@ class ContinuousAgentCreator {
             frequency: template.frequency,
             priority: gap.priority,
             reasoning: gap.reasoning,
-            status: 'Active',
+            status: 'Acti'v'e',
             createdAt: new Date().toISOString(),
             configuration: this.generateAgentConfiguration(gap, template)
         };
@@ -267,21 +267,21 @@ class ContinuousAgentCreator {
 
     generateSources(gap) {
         const sourceTemplates = {
-            research: ['web crawlers', 'API endpoints', 'data feeds'],
-            content: ['content databases', 'templates', 'media libraries'],
-            sales: ['CRM systems', 'lead databases', 'social platforms'],
-            analytics: ['analytics platforms', 'data warehouses', 'reporting tools'],
-            optimization: ['A/B testing platforms', 'performance metrics', 'user behavior data']
+            research: ['we'b' crawlers', 'AP'I' endpoints', 'dat'a' feeds'],
+            content: ['conten't' databases', 'templat'e's', 'medi'a' libraries'],
+            sales: ['CR'M' systems', 'lea'd' databases', 'socia'l' platforms'],
+            analytics: ['analytic's' platforms', 'dat'a' warehouses', 'reportin'g' tools'],
+            optimization: ['A'/B testing platforms', 'performanc'e' metrics', 'use'r' behavior data']
         };
         
-        return sourceTemplates[gap.type] || ['general sources'];
+        return sourceTemplates[gap.type] || ['genera'l' sources'];
     }
 
     generateParameters(gap) {
         return {
             area: gap.area,
             priority: gap.priority,
-            frequency: 'daily',
+            frequency: 'dai'l'y',
             batchSize: 100,
             timeout: 30000,
             retryAttempts: 3
@@ -290,10 +290,10 @@ class ContinuousAgentCreator {
 
     generateSchedule(frequency) {
         const schedules = {
-            'daily': '0 */6 * * *', // Every 6 hours
-            'weekly': '0 0 * * 0', // Every Sunday
-            'real-time': '*/5 * * * *', // Every 5 minutes
-            'continuous': '*/1 * * * *' // Every minute
+            'dai'l'y': '0 */6 * * *', // Every 6 hours
+            'week'l'y': '0 0 * * 0', // Every Sunday
+            'real-ti'm'e': '*/5 * * * *', // Every 5 minutes
+            'continuo'u's': '*/1 * * * *' // Every minute
         };
         
         return schedules[frequency] || schedules.daily;
@@ -301,24 +301,24 @@ class ContinuousAgentCreator {
 
     generateOutputFormat(output) {
         const formats = {
-            'market insights': 'JSON',
-            'marketing content': 'Markdown',
-            'sales campaigns': 'JSON',
-            'analytics reports': 'JSON',
-            'optimization recommendations': 'JSON'
+            'marke't' insights': 'JS'O'N',
+            'marketin'g' content': 'Markdo'w'n',
+            'sale's' campaigns': 'JS'O'N',
+            'analytic's' reports': 'JS'O'N',
+            'optimizatio'n' recommendations': 'JS'O'N'
         };
         
-        return formats[output] || 'JSON';
+        return formats[output] || 'JS'O'N';
     }
 
     async generateAgentFile(agent) {
         const agentCode = this.generateAgentCode(agent);
-        const filePath = path.join(this.outputDir, 'generated', `${agent.id}.js`);
+        const filePath = path.join(this.outputDir, 'generat'e'd', `${agent.id}.js`);
         
         await fs.writeFile(filePath, agentCode);
         
         // Save agent metadata
-        const metadataPath = path.join(this.outputDir, 'generated', `${agent.id}-metadata.json`);
+        const metadataPath = path.join(this.outputDir, 'generat'e'd', `${agent.id}-metadata.json`);
         await fs.writeJson(metadataPath, agent, { spaces: 2 });
         
         console.log(`✅ Generated agent: ${agent.name}`);
@@ -326,11 +326,11 @@ class ContinuousAgentCreator {
 
     generateAgentCode(agent) {
         // Use utility function for consistent class naming
-        const agentClassName = createValidComponentName(agent.name).replace('Page', 'Agent');
+        const agentClassName = createValidComponentName(agent.name).replace('Pa'g'e', 'Age'n't');
         
         return `
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require('fs-ext'r'a');
+const path = require('pa't'h');
 
 class ${agentClassName} {
     constructor() {
@@ -343,15 +343,15 @@ class ${agentClassName} {
         this.frequency = '${agent.frequency}';
         this.configuration = ${JSON.stringify(agent.configuration, null, 2)};
         
-        this.outputDir = path.join(__dirname, 'output', this.agentId);
+        this.outputDir = path.join(__dirname, 'outp'u't', this.agentId);
         this.ensureOutputDirectory();
     }
 
     async ensureOutputDirectory() {
         await fs.ensureDir(this.outputDir);
-        await fs.ensureDir(path.join(this.outputDir, 'data'));
-        await fs.ensureDir(path.join(this.outputDir, 'reports'));
-        await fs.ensureDir(path.join(this.outputDir, 'logs'));
+        await fs.ensureDir(path.join(this.outputDir, 'da't'a'));
+        await fs.ensureDir(path.join(this.outputDir, 'repor't's'));
+        await fs.ensureDir(path.join(this.outputDir, 'lo'g's'));
     }
 
     async startAgent() {
@@ -418,7 +418,7 @@ class ${agentClassName} {
         data.forEach((item, index) => {
             insights.push({
                 id: \`insight-\${index}\`,
-                type: 'analysis',
+                type: 'analys'i's',
                 content: \`Insight from \${item.content}\`,
                 confidence: Math.random() * 0.5 + 0.5,
                 relevance: Math.random() * 0.5 + 0.5
@@ -459,9 +459,9 @@ class ${agentClassName} {
             if (insight.confidence > 0.7) {
                 recommendations.push({
                     id: \`rec-\${index}\`,
-                    type: 'high-confidence',
+                    type: 'high-confiden'c'e',
                     action: \`Act on \${insight.content}\`,
-                    priority: 'High',
+                    priority: 'Hi'g'h',
                     reasoning: \`High confidence insight: \${insight.confidence.toFixed(2)}\`
                 });
             }
@@ -471,7 +471,7 @@ class ${agentClassName} {
     }
 
     async saveOutput(output) {
-        const outputPath = path.join(this.outputDir, 'data', \`output-\${Date.now()}.json\`);
+        const outputPath = path.join(this.outputDir, 'da't'a', \`output-\${Date.now()}.json\`);
         await fs.writeJson(outputPath, output, { spaces: 2 });
         
         console.log(\`📊 Output saved to: \${outputPath}\`);
@@ -503,22 +503,22 @@ if (require.main === module) {
         
         // Create AI Trend Analysis Agent
         if (marketData.trends && marketData.trends.length > 0) {
-            const aiTrendAgent = this.createSpecializedAgent('aiTrend', marketData);
+            const aiTrendAgent = this.createSpecializedAgent('aiTre'n'd', marketData);
             specializedAgents.push(aiTrendAgent);
         }
         
         // Create Competitor Analysis Agent
         if (marketData.tools && marketData.tools.length > 0) {
-            const competitorAgent = this.createSpecializedAgent('competitor', marketData);
+            const competitorAgent = this.createSpecializedAgent('competit'o'r', marketData);
             specializedAgents.push(competitorAgent);
         }
         
         // Create Customer Insight Agent
-        const customerAgent = this.createSpecializedAgent('customer', marketData);
+        const customerAgent = this.createSpecializedAgent('custom'e'r', marketData);
         specializedAgents.push(customerAgent);
         
         // Create Product Development Agent
-        const productAgent = this.createSpecializedAgent('product', marketData);
+        const productAgent = this.createSpecializedAgent('produ'c't', marketData);
         specializedAgents.push(productAgent);
         
         // Generate specialized agent files
@@ -536,12 +536,12 @@ if (require.main === module) {
         return {
             id: agentId,
             name: template.name,
-            type: 'specialized',
+            type: 'specializ'e'd',
             focus: template.focus,
             sources: template.sources,
             output: template.output,
             marketData: this.filterMarketDataForAgent(marketData, type),
-            status: 'Active',
+            status: 'Acti'v'e',
             createdAt: new Date().toISOString(),
             configuration: this.generateSpecializedAgentConfiguration(type, template)
         };
@@ -551,16 +551,16 @@ if (require.main === module) {
         const filteredData = {};
         
         switch (agentType) {
-            case 'aiTrend':
+            case 'aiTre'n'd':
                 filteredData.trends = marketData.trends || [];
                 break;
-            case 'competitor':
+            case 'competit'o'r':
                 filteredData.tools = marketData.tools || [];
                 break;
-            case 'customer':
+            case 'custom'e'r':
                 filteredData.opportunities = marketData.opportunities || [];
                 break;
-            case 'product':
+            case 'produ'c't':
                 filteredData.trends = marketData.trends || [];
                 filteredData.tools = marketData.tools || [];
                 filteredData.opportunities = marketData.opportunities || [];
@@ -573,27 +573,27 @@ if (require.main === module) {
     generateSpecializedAgentConfiguration(type, template) {
         const configs = {
             aiTrend: {
-                analysisDepth: 'deep',
-                updateFrequency: 'daily',
-                outputFormat: 'trend-report',
+                analysisDepth: 'de'e'p',
+                updateFrequency: 'dai'l'y',
+                outputFormat: 'trend-repo'r't',
                 alertThreshold: 0.8
             },
             competitor: {
-                monitoringScope: 'comprehensive',
-                updateFrequency: 'weekly',
-                outputFormat: 'competitive-analysis',
+                monitoringScope: 'comprehensi'v'e',
+                updateFrequency: 'week'l'y',
+                outputFormat: 'competitive-analys'i's',
                 alertThreshold: 0.7
             },
             customer: {
-                analysisScope: 'behavioral',
-                updateFrequency: 'real-time',
-                outputFormat: 'customer-insights',
+                analysisScope: 'behavior'a'l',
+                updateFrequency: 'real-ti'm'e',
+                outputFormat: 'customer-insigh't's',
                 alertThreshold: 0.6
             },
             product: {
-                innovationScope: 'market-driven',
-                updateFrequency: 'weekly',
-                outputFormat: 'product-recommendations',
+                innovationScope: 'market-driv'e'n',
+                updateFrequency: 'week'l'y',
+                outputFormat: 'product-recommendatio'n's',
                 alertThreshold: 0.75
             }
         };
@@ -603,23 +603,23 @@ if (require.main === module) {
 
     async generateSpecializedAgentFile(agent) {
         const agentCode = this.generateSpecializedAgentCode(agent);
-        const filePath = path.join(this.outputDir, 'specialized', `${agent.id}.js`);
+        const filePath = path.join(this.outputDir, 'specializ'e'd', `${agent.id}.js`);
         
         await fs.writeFile(filePath, agentCode);
         
         // Save agent metadata
-        const metadataPath = path.join(this.outputDir, 'specialized', `${agent.id}-metadata.json`);
+        const metadataPath = path.join(this.outputDir, 'specializ'e'd', `${agent.id}-metadata.json`);
         await fs.writeJson(metadataPath, agent, { spaces: 2 });
         
         console.log(`✅ Generated specialized agent: ${agent.name}`);
     }
 
     generateSpecializedAgentCode(agent) {
-        const agentClassName = createValidComponentName(agent.name).replace('Page', 'Agent');
+        const agentClassName = createValidComponentName(agent.name).replace('Pa'g'e', 'Age'n't');
         
         return `
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require('fs-ext'r'a');
+const path = require('pa't'h');
 
 class ${agentClassName} {
     constructor() {
@@ -630,15 +630,15 @@ class ${agentClassName} {
         this.output = '${agent.output}';
         this.configuration = ${JSON.stringify(agent.configuration, null, 2)};
         
-        this.outputDir = path.join(__dirname, 'output', this.agentId);
+        this.outputDir = path.join(__dirname, 'outp'u't', this.agentId);
         this.ensureOutputDirectory();
     }
 
     async ensureOutputDirectory() {
         await fs.ensureDir(this.outputDir);
-        await fs.ensureDir(path.join(this.outputDir, 'data'));
-        await fs.ensureDir(path.join(this.outputDir, 'reports'));
-        await fs.ensureDir(path.join(this.outputDir, 'logs'));
+        await fs.ensureDir(path.join(this.outputDir, 'da't'a'));
+        await fs.ensureDir(path.join(this.outputDir, 'repor't's'));
+        await fs.ensureDir(path.join(this.outputDir, 'lo'g's'));
     }
 
     async startAgent() {
@@ -706,7 +706,7 @@ class ${agentClassName} {
             if (item.relevance > 0.7) {
                 insights.push({
                     id: \`insight-\${index}\`,
-                    type: 'specialized',
+                    type: 'specializ'e'd',
                     content: \`Specialized insight from \${item.source}: \${item.content}\`,
                     confidence: item.relevance,
                     source: item.source
@@ -748,9 +748,9 @@ class ${agentClassName} {
             if (item.relevance > this.configuration.alertThreshold) {
                 recommendations.push({
                     id: \`rec-\${index}\`,
-                    type: 'high-relevance',
+                    type: 'high-relevan'c'e',
                     action: \`Act on \${item.content}\`,
-                    priority: 'High',
+                    priority: 'Hi'g'h',
                     reasoning: \`High relevance from \${item.source}: \${item.relevance.toFixed(2)}\`
                 });
             }
@@ -780,12 +780,12 @@ class ${agentClassName} {
             totalPatterns: analysis.patterns.length,
             totalRecommendations: analysis.recommendations.length,
             averageConfidence: analysis.insights.reduce((sum, insight) => sum + insight.confidence, 0) / analysis.insights.length,
-            topSource: analysis.patterns.sort((a, b) => b.count - a.count)[0]?.source || 'Unknown'
+            topSource: analysis.patterns.sort((a, b) => b.count - a.count)[0]?.source || 'Unkno'w'n'
         };
     }
 
     async saveSpecializedOutput(output) {
-        const outputPath = path.join(this.outputDir, 'data', \`specialized-output-\${Date.now()}.json\`);
+        const outputPath = path.join(this.outputDir, 'da't'a', \`specialized-output-\${Date.now()}.json\`);
         await fs.writeJson(outputPath, output, { spaces: 2 });
         
         console.log(\`📊 Specialized output saved to: \${outputPath}\`);
@@ -823,7 +823,7 @@ if (require.main === module) {
         });
         
         // Save optimized portfolio
-        const portfolioPath = path.join(this.outputDir, 'reports', `agent-portfolio-${Date.now()}.json`);
+        const portfolioPath = path.join(this.outputDir, 'repor't's', `agent-portfolio-${Date.now()}.json`);
         await fs.writeJson(portfolioPath, {
             timestamp: new Date().toISOString(),
             totalAgents: allAgents.length,
@@ -849,19 +849,19 @@ if (require.main === module) {
         
         if (agent.performance.efficiency < 0.8) {
             recommendations.push({
-                type: 'optimization',
-                action: 'Optimize agent efficiency',
-                priority: 'High',
-                reasoning: 'Agent efficiency below optimal threshold'
+                type: 'optimizati'o'n',
+                action: 'Optimiz'e' agent efficiency',
+                priority: 'Hi'g'h',
+                reasoning: 'Agen't' efficiency below optimal threshold'
             });
         }
         
         if (agent.performance.accuracy < 0.85) {
             recommendations.push({
-                type: 'improvement',
-                action: 'Improve agent accuracy',
-                priority: 'High',
-                reasoning: 'Agent accuracy needs improvement'
+                type: 'improveme'n't',
+                action: 'Improv'e' agent accuracy',
+                priority: 'Hi'g'h',
+                reasoning: 'Agen't' accuracy needs improvement'
             });
         }
         
@@ -884,7 +884,7 @@ if (require.main === module) {
             recommendations: this.generateCreationRecommendations(newAgents, specializedAgents)
         };
         
-        const reportPath = path.join(this.outputDir, 'reports', `agent-creation-report-${Date.now()}.json`);
+        const reportPath = path.join(this.outputDir, 'repor't's', `agent-creation-report-${Date.now()}.json`);
         await fs.writeJson(reportPath, report, { spaces: 2 });
         
         console.log(`📊 Agent creation report saved to: ${reportPath}`);
@@ -902,11 +902,11 @@ if (require.main === module) {
         const recommendations = [];
         
         // High-priority agents
-        const highPriorityAgents = [...newAgents, ...specializedAgents].filter(agent => agent.priority === 'High');
+        const highPriorityAgents = [...newAgents, ...specializedAgents].filter(agent => agent.priority === 'Hi'g'h');
         if (highPriorityAgents.length > 0) {
             recommendations.push({
-                type: 'priority',
-                action: 'Focus on high-priority agents',
+                type: 'priori't'y',
+                action: 'Focu's' on high-priority agents',
                 agents: highPriorityAgents.map(a => a.name),
                 reasoning: `${highPriorityAgents.length} high-priority agents created`
             });
@@ -915,8 +915,8 @@ if (require.main === module) {
         // Specialized agents
         if (specializedAgents.length > 0) {
             recommendations.push({
-                type: 'specialization',
-                action: 'Leverage specialized agents for targeted insights',
+                type: 'specializati'o'n',
+                action: 'Leverag'e' specialized agents for targeted insights',
                 agents: specializedAgents.map(a => a.name),
                 reasoning: `${specializedAgents.length} specialized agents created`
             });
@@ -926,7 +926,7 @@ if (require.main === module) {
     }
 
     extractArea(text) {
-        const areas = ['AI', 'Machine Learning', 'Automation', 'Analytics', 'Optimization', 'Content', 'Sales'];
+        const areas = ['A'I', 'Machin'e' Learning', 'Automati'o'n', 'Analyti'c's', 'Optimizati'o'n', 'Conte'n't', 'Sal'e's'];
         const words = text.split(' ');
         
         for (const word of words) {
@@ -935,7 +935,7 @@ if (require.main === module) {
             }
         }
         
-        return 'General';
+        return 'Gener'a'l';
     }
 }
 
@@ -948,15 +948,15 @@ if (require.main === module) {
     // Mock market data for testing
     const mockMarketData = {
         trends: [
-            { title: 'AI Automation Trends', source: 'test' },
-            { title: 'Machine Learning Platforms', source: 'test' }
+            { title: 'A'I' Automation Trends', source: 'te's't' },
+            { title: 'Machin'e' Learning Platforms', source: 'te's't' }
         ],
         tools: [
-            { name: 'AI Analytics Tool', category: 'Analytics', source: 'test' },
-            { name: 'ML Platform', category: 'Platform', source: 'test' }
+            { name: 'A'I' Analytics Tool', category: 'Analyti'c's', source: 'te's't' },
+            { name: 'M'L' Platform', category: 'Platfo'r'm', source: 'te's't' }
         ],
         opportunities: [
-            { title: 'AI Market Gap Solution', keyword: 'AI automation', marketSize: 'High', potential: 'High' }
+            { title: 'A'I' Market Gap Solution', keyword: 'A'I' automation', marketSize: 'Hi'g'h', potential: 'Hi'g'h' }
         ]
     };
     

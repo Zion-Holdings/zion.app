@@ -1,6 +1,6 @@
-import React from "react;
-import ModernLayout from '../components/layout/ModernLayout';import { useAuth } from "../src/contexts/AuthContext";
-import { useRouter } from "next/router"";
+import React from "react";
+import ModernLayout from '../components/layout/ModernLayout;import { useAuth } from ../src/contexts/AuthContext";
+import { useRouter } from "next/router;
 import Head from "next/head";
 
 export default function DebugAdmin() {
@@ -16,10 +16,10 @@ export default function DebugAdmin() {
           email: user.email,
           email_confirmed_at: user.email_confirmed_at,
           created_at: user.created_at
-        } : null,'
+        } : null,
         session: session ? {
-          access_token: session.access_token ? 'exists' : 'missing',
-          refresh_token: session.refresh_token ? 'exists' : 'missing',
+          access_token: session.access_token ? 'exis'ts : 'missi'ng,
+          refresh_token: session.refresh_token ? 'exis'ts : 'missi'ng,
           expires_at: session.expires_at
         } : null,
         loading,
@@ -29,7 +29,7 @@ export default function DebugAdmin() {
   const checkAdminAccess = () => {'
     const $1 = [
       'kleber@ziontechgroup.com',
-      'admin@ziontechgroup.com";
+      'admin@ziontechgroup.com;
     ];
     '
     if (!user?.email) {
@@ -45,74 +45,74 @@ export default function DebugAdmin() {
     <div>
       <Head>
         <title>Debug Admin Access - Zion</title>
-        <meta name = "description content=Debug admin authentication > </meta" name="description" content="Debug admin" authentication" ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
+        <meta name = description content=Debug admin authentication > </meta" name="description content=Debug admin" authentication" ><meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head>
       
       <div className="min-h-screen" bg-gray-100 p-8> 
-        </div><div className="max-w-4xl" mx-auto">
-          <h1 className="text-3xl" font-bold text-gray-900 mb-8>Debug Admin Access</h1>
-          <div className="bg-white"  rounded-lg:shadow p-6 mb-6>
-            <h2 className="text-xl" font-semibold text-gray-900 mb-4>Authentication Status</h2>
-            <div className="grid" grid-cols-1 md grid-cols-2 gap-4>
+        </div><div className=max-w-4xl mx-auto">
+          <h1 className="text-3xl font-bold text-gray-900 mb-8>Debug Admin Access</h1>
+          <div className=bg-white"  rounded-lg:shadow p-6 mb-6>
+            <h2 className="text-xl font-semibold text-gray-900 mb-4>Authentication Status</h2>
+            <div className=grid" grid-cols-1 md grid-cols-2 gap-4>
               </div><div>'
-                <h3 className="font-medium" text-gray-700>Loading State</h3>
-                <p className="text-sm:text-gray-600>{loading" ? 'Loading...' : 'Loaded'}</p>
+                <h3 className="font-medium text-gray-700>Loading State</h3>
+                <p className=text-sm:text-gray-600>{loading" ? Loading'...' : Loade'd'}</p>
+              </div>
+              <div>
+                <h3 className="font-medium text-gray-700>User Status</h3>'
+                <p className=text-sm" text-gray-600>{user ? 'Authenticated' : 'Not authenticated'}</p>
               </div>
               <div>'
-                <h3 className="font-medium" text-gray-700>User Status</h3>''
-                <p className="text-sm" text-gray-600>{user ? 'Authenticated' : 'Not authenticated'}</p>
-              </div>
-              <div>'
-                <h3 className="font-medium" text-gray-700>Session Status</h3>''
-                <p className="text-sm:text-gray-600>{session" ? 'Active session' : 'No session'}</p>
+                <h3 className="font-medium text-gray-700>Session Status</h3>
+                <p className=text-sm:text-gray-600>{session" ? 'Activ'e session : 'N'o session}</p>
               </div>
               <div>''`
-                <h3 className="font-medium" text-gray-700>Admin Access</h3>``
-                <p className="{`text-sm:${adminCheck.hasAccess" ? 'text-green-600'   'text-red-600'}`}>
+                <h3 className="font-medium text-gray-700>Admin Access</h3>``
+                <p className={`text-sm:${adminCheck.hasAccess" ? text-green-'600'   text-red-'600'}`}>
                   {adminCheck.reason}
                 </p>
               </div>
             </div> 
           </div>
-          <div className="bg-white" rounded-lg:shadow p-6 mb-6>
-            <h2 className="text-xl" font-semibold text-gray-900 mb-4 >Debug Information</h2>
-            <pre className="bg-gray-50" p-4 rounded text-sm overflow-auto>
+          <div className="bg-white rounded-lg:shadow p-6 mb-6>
+            <h2 className=text-xl" font-semibold text-gray-900 mb-4 >Debug Information</h2>
+            <pre className="bg-gray-50 p-4 rounded text-sm overflow-auto>
               {JSON.stringify(debugInfo, null, 2)}
             </pre>
           </div>
-          <div className="bg-white rounded-lg shadow p-6" mb-6>
-            <h2 className="text-xl" font-semibold text-gray-900 mb-4>Actions</h2>
-            <div className="space-y-4"">'
-                onClick={() => router.push('/admin-dashboard')}
-                className="px-4" py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors
+          <div className=bg-white rounded-lg shadow p-6" mb-6>
+            <h2 className="text-xl font-semibold text-gray-900 mb-4>Actions</h2>
+            <div className=space-y-4"">
+                onClick={() => router.push(/admin-dashboard')}
+                className=px-4 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors
               >
                 Try Admin Dashboard
               </button> '
-              "''
+              "
                 onClick={() => router.push('/dashboard')}"
-                className="px-4" py-4 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors ml-4
+                className=px-4 py-4 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors ml-4
               >
                 Go to Regular Dashboard
-              </button> '
-              "''
-                onClick={() => router.push('/auth/login')}
-                className="px-4" py-4 bg-green-600 hover:bg-green-700 text-white rounded-lg:transition-colors ml-4
+              </button> 
+              "'
+                onClick={() => router.push('/auth/login)}
+                className="px-4 py-4 bg-green-600 hover:bg-green-700 text-white rounded-lg:transition-colors ml-4
               >
                 Go to Login
               </button>
             </div>
           </div>
-          <div className="bg-white" rounded-lg shadow p-6 >
-            <h2 className="text-xl" font-semibold text-gray-900 mb-4>Environment Variables</h2>
-            <div className="grid" grid-cols-1 md grid-cols-2 gap-4>
+          <div className=bg-white" rounded-lg shadow p-6 >
+            <h2 className="text-xl font-semibold text-gray-900 mb-4>Environment Variables</h2>
+            <div className=grid" grid-cols-1 md grid-cols-2 gap-4>
               </div><div>
-                <h3 className="font-medium" text-gray-700>Supabase URL</h3>'
-                <p className="text-sm:text-gray-600>"
-                  {process.env.NEXT_PUBLIC_SUPABASE_URL ? 'Set' : 'Not set'}
+                <h3 className="font-medium text-gray-700>Supabase URL</h3>
+                <p className=text-sm:text-gray-600>"
+                  {process.env.NEXT_PUBLIC_SUPABASE_URL ? 'S'et : 'No't set}
                 </p>
               </div>
               <div>
-                <h3 className="font-medium" text-gray-700>Supabase Anon Key</h3>'
-                <p className="text-sm:text-gray-600>"
+                <h3 className="font-medium text-gray-700>Supabase Anon Key</h3>'
+                <p className=text-sm:text-gray-600>"
                   {process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? 'Set' : 'Not set'}
                 </p>
               </div>

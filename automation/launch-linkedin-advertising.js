@@ -1,5 +1,5 @@
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require('fs-ext'r'a');
+const path = require('pa't'h');
 const LinkedInAdvertisingFactory = require('./linkedin-advertising-factory');
 const LinkedInAdManagerAgent = require('./agents/linkedin-ad-manager-agent');
 const LinkedInContentCreatorAgent = require('./agents/linkedin-content-creator-agent');
@@ -9,7 +9,7 @@ class LinkedInAdvertisingLauncher {
     constructor() {
         this.factory = new LinkedInAdvertisingFactory();
         this.agents = new Map();
-        this.status = 'stopped';
+        this.status = 'stopp'e'd';
         this.startTime = null;
         this.logs = [];
     }
@@ -18,7 +18,7 @@ class LinkedInAdvertisingLauncher {
         console.log('🚀 Starting LinkedIn Advertising Automation System...');
         
         try {
-            this.status = 'starting';
+            this.status = 'starti'n'g';
             this.startTime = new Date();
             
             // Initialize factory
@@ -33,16 +33,16 @@ class LinkedInAdvertisingLauncher {
             console.log('🔄 Starting continuous operation...');
             this.startContinuousOperation();
             
-            this.status = 'running';
+            this.status = 'runni'n'g';
             console.log('✅ LinkedIn Advertising Automation System started successfully');
             
             // Log startup
-            this.log('System started', 'info');
+            this.log('Syste'm' started', 'in'f'o');
             
         } catch (error) {
             console.error('❌ Failed to start LinkedIn Advertising System:', error.message);
-            this.status = 'error';
-            this.log(`Startup failed: ${error.message}`, 'error');
+            this.status = 'err'o'r';
+            this.log(`Startup failed: ${error.message}`, 'err'o'r');
             throw error;
         }
     }
@@ -70,7 +70,7 @@ class LinkedInAdvertisingLauncher {
                 console.log(`✅ Agent ${agent.name} executed successfully`);
             } catch (error) {
                 console.error(`❌ Agent ${agent.name} failed:`, error.message);
-                this.log(`Agent ${agent.name} failed: ${error.message}`, 'error');
+                this.log(`Agent ${agent.name} failed: ${error.message}`, 'err'o'r');
             }
         }
     }
@@ -116,13 +116,13 @@ class LinkedInAdvertisingLauncher {
                 id: agent.id,
                 name: agent.name,
                 status: agent.status,
-                lastExecution: agent.lastExecution || 'unknown'
+                lastExecution: agent.lastExecution || 'unkno'w'n'
             };
             
             healthReport.agents.push(agentHealth);
             
             // Check for issues
-            if (agent.status !== 'active') {
+            if (agent.status !== 'acti'v'e') {
                 healthReport.recommendations.push(`Restart agent: ${agent.name}`);
             }
         }
@@ -131,7 +131,7 @@ class LinkedInAdvertisingLauncher {
         await this.saveHealthReport(healthReport);
         
         // Log health status
-        this.log(`Health check completed - ${healthReport.agents.length} agents active`, 'info');
+        this.log(`Health check completed - ${healthReport.agents.length} agents active`, 'in'f'o');
     }
 
     async generatePerformanceReport() {
@@ -141,7 +141,7 @@ class LinkedInAdvertisingLauncher {
             timestamp: new Date().toISOString(),
             systemUptime: this.getUptime(),
             totalAgents: this.agents.size,
-            activeAgents: Array.from(this.agents.values()).filter(a => a.status === 'active').length,
+            activeAgents: Array.from(this.agents.values()).filter(a => a.status === 'acti'v'e').length,
             campaigns: [],
             metrics: {
                 totalImpressions: 0,
@@ -155,7 +155,7 @@ class LinkedInAdvertisingLauncher {
         };
         
         // Collect campaign data
-        const campaignsDir = path.join(__dirname, 'data/linkedin-ads');
+        const campaignsDir = path.join(__dirname, 'dat'a'/linkedin-ads');
         if (await fs.pathExists(campaignsDir)) {
             const campaignFiles = await fs.readdir(campaignsDir);
             for (const file of campaignFiles) {
@@ -196,22 +196,22 @@ class LinkedInAdvertisingLauncher {
     async stop() {
         console.log('🛑 Stopping LinkedIn Advertising Automation System...');
         
-        this.status = 'stopping';
+        this.status = 'stoppi'n'g';
         
         // Stop all agents
         for (const [id, agent] of this.agents) {
             try {
-                agent.status = 'stopped';
+                agent.status = 'stopp'e'd';
                 console.log(`✅ Stopped agent: ${agent.name}`);
             } catch (error) {
                 console.error(`❌ Failed to stop agent ${agent.name}:`, error.message);
             }
         }
         
-        this.status = 'stopped';
+        this.status = 'stopp'e'd';
         console.log('✅ LinkedIn Advertising Automation System stopped');
         
-        this.log('System stopped', 'info');
+        this.log('Syste'm' stopped', 'in'f'o');
     }
 
     getUptime() {
@@ -219,7 +219,7 @@ class LinkedInAdvertisingLauncher {
         return Date.now() - this.startTime.getTime();
     }
 
-    log(message, level = 'info') {
+    log(message, level = 'in'f'o') {
         const logEntry = {
             timestamp: new Date().toISOString(),
             level,
@@ -235,7 +235,7 @@ class LinkedInAdvertisingLauncher {
     }
 
     async saveHealthReport(report) {
-        const reportsDir = path.join(__dirname, 'reports/linkedin-health');
+        const reportsDir = path.join(__dirname, 'report's'/linkedin-health');
         await fs.ensureDir(reportsDir);
         
         const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
@@ -245,7 +245,7 @@ class LinkedInAdvertisingLauncher {
     }
 
     async savePerformanceReport(report) {
-        const reportsDir = path.join(__dirname, 'reports/linkedin-performance');
+        const reportsDir = path.join(__dirname, 'report's'/linkedin-performance');
         await fs.ensureDir(reportsDir);
         
         const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
@@ -259,7 +259,7 @@ class LinkedInAdvertisingLauncher {
             status: this.status,
             uptime: this.getUptime(),
             agentCount: this.agents.size,
-            activeAgents: Array.from(this.agents.values()).filter(a => a.status === 'active').length,
+            activeAgents: Array.from(this.agents.values()).filter(a => a.status === 'acti'v'e').length,
             startTime: this.startTime,
             logs: this.logs.slice(-10) // Last 10 logs
         };
@@ -274,13 +274,13 @@ if (require.main === module) {
     const launcher = new LinkedInAdvertisingLauncher();
     
     // Handle graceful shutdown
-    process.on('SIGINT', async () => {
+    process.on('SIGI'N'T', async () => {
         console.log('\n🛑 Received SIGINT, shutting down gracefully...');
         await launcher.stop();
         process.exit(0);
     });
     
-    process.on('SIGTERM', async () => {
+    process.on('SIGTE'R'M', async () => {
         console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
         await launcher.stop();
         process.exit(0);

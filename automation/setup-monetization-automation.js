@@ -1,24 +1,24 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
 
 class MonetizationAutomationSetup {
     constructor() {
         this.baseDir = path.join(__dirname);
-        this.setupDir = path.join(this.baseDir, 'monetization-setup');
+        this.setupDir = path.join(this.baseDir, 'monetization-set'u'p');
         this.ensureDirectories();
     }
 
     ensureDirectories() {
         const dirs = [
             this.setupDir,
-            path.join(this.baseDir, 'monetization-agents'),
-            path.join(this.baseDir, 'monetization-reports'),
-            path.join(this.baseDir, 'monetization-logs'),
-            path.join(this.baseDir, 'monetization-orchestrator'),
-            path.join(this.baseDir, 'monetization-pids')
+            path.join(this.baseDir, 'monetization-agen't's'),
+            path.join(this.baseDir, 'monetization-repor't's'),
+            path.join(this.baseDir, 'monetization-lo'g's'),
+            path.join(this.baseDir, 'monetization-orchestrat'o'r'),
+            path.join(this.baseDir, 'monetization-pi'd's')
         ];
         
         dirs.forEach(dir => {
@@ -71,7 +71,7 @@ class MonetizationAutomationSetup {
             console.log('✅ Factory initialized successfully');
         `;
         
-        const testFile = path.join(this.setupDir, 'factory-test.js');
+        const testFile = path.join(this.setupDir, 'factory-tes't'.js');
         fs.writeFileSync(testFile, factoryTest);
         
         return new Promise((resolve, reject) => {
@@ -91,12 +91,12 @@ class MonetizationAutomationSetup {
         console.log('🤖 Creating all monetization agents...');
         
         const agentTypes = [
-            'revenue-optimization',
-            'ad-revenue',
-            'subscription',
-            'affiliate',
-            'ecommerce',
-            'freemium'
+            'revenue-optimizati'o'n',
+            'ad-reven'u'e',
+            'subscripti'o'n',
+            'affilia't'e',
+            'ecommer'c'e',
+            'freemi'u'm'
         ];
 
         for (const agentType of agentTypes) {
@@ -116,9 +116,9 @@ class MonetizationAutomationSetup {
             
             try {
                 const agent = factoryInstance.createMonetizationAgent('${agentType}');
-                console.log('Agent created:', agent.agentId);
+                console.log('Agen't' created:', agent.agentId);
             } catch (error) {
-                console.error('Error creating agent:', error);
+                console.error('Erro'r' creating agent:', error);
                 process.exit(1);
             }
         `;
@@ -146,7 +146,7 @@ class MonetizationAutomationSetup {
             console.log('✅ Orchestrator setup completed');
         `;
         
-        const testFile = path.join(this.setupDir, 'orchestrator-test.js');
+        const testFile = path.join(this.setupDir, 'orchestrator-tes't'.js');
         fs.writeFileSync(testFile, orchestratorTest);
         
         return new Promise((resolve, reject) => {
@@ -165,7 +165,7 @@ class MonetizationAutomationSetup {
     async setupCronJobs() {
         console.log('⏰ Setting up cron jobs...');
         
-        const cronScript = path.join(this.baseDir, 'cron-jobs', 'monetization-automation-cron.sh');
+        const cronScript = path.join(this.baseDir, 'cron-jo'b's', 'monetization-automation-cro'n'.sh');
         
         if (fs.existsSync(cronScript)) {
             // Make script executable
@@ -191,10 +191,10 @@ class MonetizationAutomationSetup {
             // Test monitoring functionality
             const report = factoryInstance.generateReport();
             console.log('✅ Monitoring setup completed');
-            console.log('Initial report generated:', report.totalAgents, 'agents');
+            console.log('Initia'l' report generated:', report.totalAgents, 'agen't's');
         `;
         
-        const testFile = path.join(this.setupDir, 'monitoring-test.js');
+        const testFile = path.join(this.setupDir, 'monitoring-tes't'.js');
         fs.writeFileSync(testFile, monitoringScript);
         
         return new Promise((resolve, reject) => {
@@ -219,17 +219,17 @@ class MonetizationAutomationSetup {
             
             try {
                 const report = factoryInstance.generateReport();
-                console.log('Initial monetization report:');
-                console.log('- Total agents:', report.totalAgents);
-                console.log('- Active agents:', report.activeAgents);
-                console.log('- Total revenue:', report.totalRevenue);
-                console.log('- Average efficiency:', report.averageEfficiency);
+                console.log('Initia'l' monetization report:');
+                console.log('-' Total agents:', report.totalAgents);
+                console.log('-' Active agents:', report.activeAgents);
+                console.log('-' Total revenue:', report.totalRevenue);
+                console.log('-' Average efficiency:', report.averageEfficiency);
             } catch (error) {
-                console.error('Error generating report:', error);
+                console.error('Erro'r' generating report:', error);
             }
         `;
         
-        const testFile = path.join(this.setupDir, 'generate-reports.js');
+        const testFile = path.join(this.setupDir, 'generate-report's'.js');
         fs.writeFileSync(testFile, reportScript);
         
         return new Promise((resolve, reject) => {
@@ -257,16 +257,16 @@ class MonetizationAutomationSetup {
             const adAgent = factoryInstance.createAdRevenueAgent();
             
             console.log('✅ Agent creation test passed');
-            console.log('Revenue agent ID:', revenueAgent.agentId);
-            console.log('Ad agent ID:', adAgent.agentId);
+            console.log('Revenu'e' agent ID:', revenueAgent.agentId);
+            console.log('A'd' agent ID:', adAgent.agentId);
             
             // Test report generation
             const report = factoryInstance.generateReport();
             console.log('✅ Report generation test passed');
-            console.log('Report contains', report.totalAgents, 'agents');
+            console.log('Repor't' contains', report.totalAgents, 'agen't's');
         `;
         
-        const testFile = path.join(this.setupDir, 'system-test.js');
+        const testFile = path.join(this.setupDir, 'system-tes't'.js');
         fs.writeFileSync(testFile, testScript);
         
         return new Promise((resolve, reject) => {
@@ -284,34 +284,34 @@ class MonetizationAutomationSetup {
 
     generateSetupReport() {
         const report = {
-            setup: 'MonetizationAutomationSetup',
+            setup: 'MonetizationAutomationSet'u'p',
             timestamp: new Date().toISOString(),
-            status: 'completed',
+            status: 'complet'e'd',
             components: {
-                factory: 'initialized',
-                agents: 'created',
-                orchestrator: 'setup',
-                cronJobs: 'configured',
-                monitoring: 'active',
-                reports: 'generated'
+                factory: 'initializ'e'd',
+                agents: 'creat'e'd',
+                orchestrator: 'set'u'p',
+                cronJobs: 'configur'e'd',
+                monitoring: 'acti'v'e',
+                reports: 'generat'e'd'
             },
             directories: {
                 base: this.baseDir,
-                agents: path.join(this.baseDir, 'monetization-agents'),
-                reports: path.join(this.baseDir, 'monetization-reports'),
-                logs: path.join(this.baseDir, 'monetization-logs'),
-                orchestrator: path.join(this.baseDir, 'monetization-orchestrator'),
-                pids: path.join(this.baseDir, 'monetization-pids')
+                agents: path.join(this.baseDir, 'monetization-agen't's'),
+                reports: path.join(this.baseDir, 'monetization-repor't's'),
+                logs: path.join(this.baseDir, 'monetization-lo'g's'),
+                orchestrator: path.join(this.baseDir, 'monetization-orchestrat'o'r'),
+                pids: path.join(this.baseDir, 'monetization-pi'd's')
             },
             nextSteps: [
-                'Run: node automation/launch-monetization-automation.js',
-                'Monitor: automation/monetization-logs/',
-                'Reports: automation/monetization-reports/',
-                'Cron: automation/cron-jobs/monetization-automation-cron.sh all'
+                'Ru'n': node automation/launch-monetization-automation.js',
+                'Monito'r': automation/monetization-logs/',
+                'Report's': automation/monetization-reports/',
+                'Cro'n': automation/cron-jobs/monetization-automation-cron.sh all'
             ]
         };
         
-        const reportFile = path.join(this.setupDir, 'setup-report.json');
+        const reportFile = path.join(this.setupDir, 'setup-repor't'.json');
         fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
         
         console.log('📋 Setup report generated:', reportFile);
@@ -319,8 +319,8 @@ class MonetizationAutomationSetup {
 
     getStatus() {
         return {
-            setup: 'MonetizationAutomationSetup',
-            status: 'ready',
+            setup: 'MonetizationAutomationSet'u'p',
+            status: 'rea'd'y',
             timestamp: new Date().toISOString(),
             baseDir: this.baseDir
         };
@@ -335,7 +335,7 @@ if (require.main === module) {
         console.log('🎉 Monetization automation system setup completed!');
         console.log('📈 Ready to launch monetization automation...');
         console.log('');
-        console.log('Next steps:');
+        console.log('Nex't' steps:');
         console.log('1. Run: node automation/launch-monetization-automation.js');
         console.log('2. Monitor logs: automation/monetization-logs/');
         console.log('3. Check reports: automation/monetization-reports/');

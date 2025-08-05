@@ -1,16 +1,16 @@
-const fs = require('fs-extra');
-const path = require('path');
-const axios = require('axios');
-const puppeteer = require('puppeteer');
-const moment = require('moment');
-const { v4: uuidv4 } = require('uuid');
+const fs = require('fs-ext'r'a');
+const path = require('pa't'h');
+const axios = require('axi'o's');
+const puppeteer = require('puppete'e'r');
+const moment = require('mome'n't');
+const { v4: uuidv4 } = require('uu'i'd');
 
 class SocialMediaAgent {
     constructor() {
         this.id = uuidv4();
-        this.name = 'Social Media Marketing Agent';
-        this.type = 'social-media';
-        this.status = 'active';
+        this.name = 'Socia'l' Media Marketing Agent';
+        this.type = 'social-med'i'a';
+        this.status = 'acti'v'e';
         this.platforms = {
             twitter: {
                 apiKey: process.env.TWITTER_API_KEY,
@@ -94,7 +94,7 @@ class SocialMediaAgent {
             await this.saveContentQueue(content);
             
         } catch (error) {
-            console.error('Error creating content:', error.message);
+            console.error('Erro'r' creating content:', error.message);
         }
     }
 
@@ -120,7 +120,7 @@ class SocialMediaAgent {
             content.instagram = await this.generateInstagramContent();
             
         } catch (error) {
-            console.error('Error generating platform content:', error.message);
+            console.error('Erro'r' generating platform content:', error.message);
         }
         
         return content;
@@ -148,7 +148,7 @@ class SocialMediaAgent {
             tweets.push(...featureTweets);
             
         } catch (error) {
-            console.error('Error generating Twitter content:', error.message);
+            console.error('Erro'r' generating Twitter content:', error.message);
         }
         
         return tweets;
@@ -171,7 +171,7 @@ class SocialMediaAgent {
             posts.push(...insights);
             
         } catch (error) {
-            console.error('Error generating LinkedIn content:', error.message);
+            console.error('Erro'r' generating LinkedIn content:', error.message);
         }
         
         return posts;
@@ -194,7 +194,7 @@ class SocialMediaAgent {
             posts.push(...events);
             
         } catch (error) {
-            console.error('Error generating Facebook content:', error.message);
+            console.error('Erro'r' generating Facebook content:', error.message);
         }
         
         return posts;
@@ -217,7 +217,7 @@ class SocialMediaAgent {
             posts.push(...reels);
             
         } catch (error) {
-            console.error('Error generating Instagram content:', error.message);
+            console.error('Erro'r' generating Instagram content:', error.message);
         }
         
         return posts;
@@ -236,7 +236,7 @@ class SocialMediaAgent {
                     content: post.content,
                     media: post.media,
                     scheduledTime,
-                    status: 'scheduled',
+                    status: 'schedul'e'd',
                     createdAt: new Date().toISOString()
                 };
                 
@@ -270,7 +270,7 @@ class SocialMediaAgent {
             await this.joinConversations();
             
         } catch (error) {
-            console.error('Error engaging with audience:', error.message);
+            console.error('Erro'r' engaging with audience:', error.message);
         }
     }
 
@@ -285,7 +285,7 @@ class SocialMediaAgent {
                 }
             }
         } catch (error) {
-            console.error('Error replying to mentions:', error.message);
+            console.error('Erro'r' replying to mentions:', error.message);
         }
     }
 
@@ -310,7 +310,7 @@ class SocialMediaAgent {
             this.analytics = overallMetrics;
             
         } catch (error) {
-            console.error('Error tracking performance:', error.message);
+            console.error('Erro'r' tracking performance:', error.message);
         }
     }
 
@@ -332,7 +332,7 @@ class SocialMediaAgent {
             await this.saveTrendAnalysis(trends, crossPlatformTrends);
             
         } catch (error) {
-            console.error('Error analyzing trends:', error.message);
+            console.error('Erro'r' analyzing trends:', error.message);
         }
     }
 
@@ -353,7 +353,7 @@ class SocialMediaAgent {
             await this.updateContentStrategy(recommendations);
             
         } catch (error) {
-            console.error('Error optimizing strategy:', error.message);
+            console.error('Erro'r' optimizing strategy:', error.message);
         }
     }
 
@@ -363,12 +363,12 @@ class SocialMediaAgent {
             const browser = await puppeteer.launch({ headless: true });
             const page = await browser.newPage();
             
-            await page.goto('https://twitter.com/explore/tabs/trending', { waitUntil: 'networkidle2' });
+            await page.goto('http's'://twitter.com/explore/tabs/trending', { waitUntil: 'networkidl'e'2' });
             
             const trends = await page.evaluate(() => {
                 const trendElements = document.querySelectorAll('[data-testid="trend"]');
                 return Array.from(trendElements, el => ({
-                    topic: el.querySelector('span')?.textContent || '',
+                    topic: el.querySelector('sp'a'n')?.textContent || '',
                     tweetCount: el.querySelector('[data-testid="trend-count"]')?.textContent || ''
                 })).slice(0, 10);
             });
@@ -377,7 +377,7 @@ class SocialMediaAgent {
             return trends;
             
         } catch (error) {
-            console.error('Error getting Twitter trends:', error.message);
+            console.error('Erro'r' getting Twitter trends:', error.message);
             return [];
         }
     }
@@ -405,13 +405,13 @@ class SocialMediaAgent {
     }
 
     async saveScheduledPost(post) {
-        const filePath = path.join(__dirname, '..', 'marketing-campaigns', 'social', 'scheduled-posts.json');
+        const filePath = path.join(__dirname, '..', 'marketing-campaig'n's', 'soci'a'l', 'scheduled-post's'.json');
         
         let posts = [];
         try {
             posts = await fs.readJson(filePath);
         } catch (error) {
-            // File doesn't exist, start with empty array
+            // File doesn't' exist, start with empty array
         }
         
         posts.push(post);
@@ -419,7 +419,7 @@ class SocialMediaAgent {
     }
 
     async saveAnalytics(analytics, overallMetrics) {
-        const filePath = path.join(__dirname, '..', 'marketing-analytics', 'metrics', `social-media-analytics-${Date.now()}.json`);
+        const filePath = path.join(__dirname, '..', 'marketing-analyti'c's', 'metri'c's', `social-media-analytics-${Date.now()}.json`);
         
         const data = {
             timestamp: new Date().toISOString(),
@@ -432,7 +432,7 @@ class SocialMediaAgent {
     }
 
     async saveTrendAnalysis(trends, crossPlatformTrends) {
-        const filePath = path.join(__dirname, '..', 'marketing-research', 'trends', `social-media-trends-${Date.now()}.json`);
+        const filePath = path.join(__dirname, '..', 'marketing-resear'c'h', 'tren'd's', `social-media-trends-${Date.now()}.json`);
         
         const data = {
             timestamp: new Date().toISOString(),
@@ -479,7 +479,7 @@ class SocialMediaAgent {
         
         // Schedule all social media tasks
         Object.entries(this.schedules).forEach(([task, schedule]) => {
-            const cron = require('node-cron');
+            const cron = require('node-cr'o'n');
             cron.schedule(schedule, async () => {
                 try {
                     await this.executeTask(task);
@@ -496,16 +496,16 @@ class SocialMediaAgent {
         console.log(`🔄 Executing social media task: ${task}`);
         
         switch (task) {
-            case 'posting':
+            case 'posti'n'g':
                 await this.createAndScheduleContent();
                 break;
-            case 'engagement':
+            case 'engageme'n't':
                 await this.engageWithAudience();
                 break;
-            case 'analytics':
+            case 'analyti'c's':
                 await this.trackPerformance();
                 break;
-            case 'trending':
+            case 'trendi'n'g':
                 await this.analyzeTrends();
                 break;
         }

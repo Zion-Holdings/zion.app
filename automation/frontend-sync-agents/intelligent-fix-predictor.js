@@ -1,15 +1,15 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class IntelligentFixPredictor {
   constructor() {
     this.patterns = new Map();
     this.issueHistory = [];
     this.predictions = [];
-    this.pagesDir = path.join(process.cwd(), 'pages');
-    this.componentsDir = path.join(process.cwd(), 'components');
-    this.historyFile = path.join(process.cwd(), 'automation/frontend-sync-agents/data/issue-history.json');
-    this.patternsFile = path.join(process.cwd(), 'automation/frontend-sync-agents/data/patterns.json');
+    this.pagesDir = path.join(process.cwd(), 'pag'e's');
+    this.componentsDir = path.join(process.cwd(), 'componen't's');
+    this.historyFile = path.join(process.cwd(), 'automatio'n'/frontend-sync-agents/data/issue-history.json');
+    this.patternsFile = path.join(process.cwd(), 'automatio'n'/frontend-sync-agents/data/patterns.json');
     
     this.loadPatterns();
     this.loadHistory();
@@ -22,7 +22,7 @@ class IntelligentFixPredictor {
     const predictions = [];
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'utf8');
+      const content = fs.readFileSync(page, 'ut'f'8');
       const pagePredictions = this.analyzePageForPredictions(page, content);
       predictions.push(...pagePredictions);
     }
@@ -50,55 +50,55 @@ class IntelligentFixPredictor {
     // Pattern 1: Missing layout imports
     if (this.detectMissingLayoutPattern(content)) {
       predictions.push({
-        type: 'predicted_missing_layout',
+        type: 'predicte'd'_missing_layout',
         file: filePath,
         confidence: 0.95,
-        description: 'High probability of missing layout import',
-        preventiveAction: 'add_layout_import'
+        description: 'Hig'h' probability of missing layout import',
+        preventiveAction: 'ad'd'_layout_import'
       });
     }
     
     // Pattern 2: Mobile responsiveness issues
     if (this.detectMobileResponsivenessPattern(content)) {
       predictions.push({
-        type: 'predicted_mobile_issues',
+        type: 'predicte'd'_mobile_issues',
         file: filePath,
         confidence: 0.87,
-        description: 'Likely mobile responsiveness problems',
-        preventiveAction: 'add_responsive_classes'
+        description: 'Likel'y' mobile responsiveness problems',
+        preventiveAction: 'ad'd'_responsive_classes'
       });
     }
     
     // Pattern 3: Accessibility issues
     if (this.detectAccessibilityPattern(content)) {
       predictions.push({
-        type: 'predicted_accessibility_issues',
+        type: 'predicte'd'_accessibility_issues',
         file: filePath,
         confidence: 0.82,
-        description: 'Potential accessibility problems',
-        preventiveAction: 'add_accessibility_attributes'
+        description: 'Potentia'l' accessibility problems',
+        preventiveAction: 'ad'd'_accessibility_attributes'
       });
     }
     
     // Pattern 4: Performance issues
     if (this.detectPerformancePattern(content)) {
       predictions.push({
-        type: 'predicted_performance_issues',
+        type: 'predicte'd'_performance_issues',
         file: filePath,
         confidence: 0.78,
-        description: 'Possible performance problems',
-        preventiveAction: 'optimize_performance'
+        description: 'Possibl'e' performance problems',
+        preventiveAction: 'optimiz'e'_performance'
       });
     }
     
     // Pattern 5: SEO issues
     if (this.detectSEOPattern(content)) {
       predictions.push({
-        type: 'predicted_seo_issues',
+        type: 'predicte'd'_seo_issues',
         file: filePath,
         confidence: 0.85,
-        description: 'Potential SEO problems',
-        preventiveAction: 'add_seo_meta_tags'
+        description: 'Potentia'l' SEO problems',
+        preventiveAction: 'ad'd'_seo_meta_tags'
       });
     }
     
@@ -107,45 +107,45 @@ class IntelligentFixPredictor {
 
   detectMissingLayoutPattern(content) {
     const layoutPatterns = [
-      'container-responsive',
-      'relative z-10',
-      'text-responsive'
+      'container-responsi'v'e',
+      'relativ'e' z-10',
+      'text-responsi'v'e'
     ];
     
     const hasLayoutClasses = layoutPatterns.some(pattern => content.includes(pattern));
-    const hasLayoutImport = content.includes('ModernLayout') || content.includes('PageLayout');
+    const hasLayoutImport = content.includes('ModernLayo'u't') || content.includes('PageLayo'u't');
     
     return hasLayoutClasses && !hasLayoutImport;
   }
 
   detectMobileResponsivenessPattern(content) {
     const mobilePatterns = [
-      'sm:', 'md:', 'lg:', 'xl:',
-      'mobile-', 'responsive-'
+      's'm':', 'm'd':', 'l'g':', 'x'l':',
+      'mobil'e'-', 'responsiv'e'-'
     ];
     
     const hasMobileClasses = mobilePatterns.some(pattern => content.includes(pattern));
-    const hasContainer = content.includes('container');
+    const hasContainer = content.includes('contain'e'r');
     
     return hasContainer && !hasMobileClasses;
   }
 
   detectAccessibilityPattern(content) {
     const accessibilityPatterns = [
-      'aria-label', 'aria-describedby', 'role=',
-      'tabIndex', 'alt='
+      'aria-lab'e'l', 'aria-described'b'y', 'rol'e'=',
+      'tabInd'e'x', 'al't'='
     ];
     
     const hasAccessibility = accessibilityPatterns.some(pattern => content.includes(pattern));
-    const hasInteractiveElements = content.includes('button') || content.includes('link');
+    const hasInteractiveElements = content.includes('butt'o'n') || content.includes('li'n'k');
     
     return hasInteractiveElements && !hasAccessibility;
   }
 
   detectPerformancePattern(content) {
     const performancePatterns = [
-      'animate-pulse', 'animate-spin', 'blur-3xl',
-      'backdrop-blur', 'filter', 'transform'
+      'animate-pul's'e', 'animate-sp'i'n', 'blur'-'3xl',
+      'backdrop-bl'u'r', 'filt'e'r', 'transfo'r'm'
     ];
     
     const hasPerformanceIssues = performancePatterns.some(pattern => content.includes(pattern));
@@ -156,12 +156,12 @@ class IntelligentFixPredictor {
 
   detectSEOPattern(content) {
     const seoPatterns = [
-      '<Head>', '<title>', 'meta name="description"',
-      'meta name="keywords"'
+      '<Head>', '<title>', 'met'a' name="description"',
+      'met'a' name="keywords"'
     ];
     
     const hasSEO = seoPatterns.some(pattern => content.includes(pattern));
-    const hasContent = content.includes('h1') || content.includes('h2');
+    const hasContent = content.includes('h'1') || content.includes('h'2');
     
     return hasContent && !hasSEO;
   }
@@ -174,8 +174,8 @@ class IntelligentFixPredictor {
     
     commonIssues.forEach(issue => {
       patternPredictions.push({
-        type: 'historical_pattern',
-        file: 'multiple',
+        type: 'historica'l'_pattern',
+        file: 'multip'l'e',
         confidence: issue.frequency,
         description: `Historical pattern: ${issue.type}`,
         preventiveAction: issue.suggestedFix
@@ -212,14 +212,14 @@ class IntelligentFixPredictor {
 
   getSuggestedFix(issueType) {
     const fixMap = {
-      'missing_layout': 'add_layout_import',
-      'mobile_responsiveness': 'add_responsive_classes',
-      'accessibility': 'add_accessibility_attributes',
-      'performance': 'optimize_performance',
-      'seo': 'add_seo_meta_tags'
+      'missin'g'_layout': 'ad'd'_layout_import',
+      'mobil'e'_responsiveness': 'ad'd'_responsive_classes',
+      'accessibili't'y': 'ad'd'_accessibility_attributes',
+      'performan'c'e': 'optimiz'e'_performance',
+      's'e'o': 'ad'd'_seo_meta_tags'
     };
     
-    return fixMap[issueType] || 'general_optimization';
+    return fixMap[issueType] || 'genera'l'_optimization';
   }
 
   generatePreventiveFixes(predictions) {
@@ -237,42 +237,42 @@ class IntelligentFixPredictor {
 
   generatePreventiveFix(prediction) {
     switch (prediction.preventiveAction) {
-      case 'add_layout_import':
+      case 'ad'd'_layout_import':
         return {
-          type: 'preventive_layout_import',
-          description: 'Add ModernLayout import to prevent layout issues',
+          type: 'preventiv'e'_layout_import',
+          description: 'Ad'd' ModernLayout import to prevent layout issues',
           code: `import ModernLayout from '../components/layout/ModernLayout'`,
           confidence: prediction.confidence
         };
         
-      case 'add_responsive_classes':
+      case 'ad'd'_responsive_classes':
         return {
-          type: 'preventive_responsive_classes',
-          description: 'Add responsive classes to prevent mobile issues',
-          code: 'container-responsive grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
+          type: 'preventiv'e'_responsive_classes',
+          description: 'Ad'd' responsive classes to prevent mobile issues',
+          code: 'container-responsiv'e' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
           confidence: prediction.confidence
         };
         
-      case 'add_accessibility_attributes':
+      case 'ad'd'_accessibility_attributes':
         return {
-          type: 'preventive_accessibility',
-          description: 'Add accessibility attributes to prevent a11y issues',
-          code: 'aria-label role="main" tabIndex',
+          type: 'preventiv'e'_accessibility',
+          description: 'Ad'd' accessibility attributes to prevent a11y issues',
+          code: 'aria-labe'l' role="main" tabIndex',
           confidence: prediction.confidence
         };
         
-      case 'optimize_performance':
+      case 'optimiz'e'_performance':
         return {
-          type: 'preventive_performance',
-          description: 'Optimize animations and effects for better performance',
-          code: 'reduce-animations lazy-load optimize-css',
+          type: 'preventiv'e'_performance',
+          description: 'Optimiz'e' animations and effects for better performance',
+          code: 'reduce-animation's' lazy-load optimize-css',
           confidence: prediction.confidence
         };
         
-      case 'add_seo_meta_tags':
+      case 'ad'd'_seo_meta_tags':
         return {
-          type: 'preventive_seo',
-          description: 'Add SEO meta tags to prevent SEO issues',
+          type: 'preventiv'e'_seo',
+          description: 'Ad'd' SEO meta tags to prevent SEO issues',
           code: '<meta name="description" content="..." />',
           confidence: prediction.confidence
         };
@@ -322,19 +322,19 @@ class IntelligentFixPredictor {
   async applyPreventiveFix(fix) {
     // Apply preventive fixes based on type
     switch (fix.type) {
-      case 'preventive_layout_import':
+      case 'preventiv'e'_layout_import':
         await this.applyLayoutImportPrevention();
         break;
-      case 'preventive_responsive_classes':
+      case 'preventiv'e'_responsive_classes':
         await this.applyResponsiveClassesPrevention();
         break;
-      case 'preventive_accessibility':
+      case 'preventiv'e'_accessibility':
         await this.applyAccessibilityPrevention();
         break;
-      case 'preventive_performance':
+      case 'preventiv'e'_performance':
         await this.applyPerformancePrevention();
         break;
-      case 'preventive_seo':
+      case 'preventiv'e'_seo':
         await this.applySEOPrevention();
         break;
     }
@@ -344,14 +344,14 @@ class IntelligentFixPredictor {
     const pages = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'utf8');
+      const content = fs.readFileSync(page, 'ut'f'8');
       
-      if (!content.includes('ModernLayout') && content.includes('container-responsive')) {
+      if (!content.includes('ModernLayo'u't') && content.includes('container-responsi'v'e')) {
         // Add ModernLayout import and wrapper
         let newContent = content;
         
-        if (!content.includes('import ModernLayout')) {
-          const importIndex = content.indexOf('import');
+        if (!content.includes('impor't' ModernLayout')) {
+          const importIndex = content.indexOf('impo'r't');
           const nextImportIndex = content.indexOf('\n', importIndex);
           const newImport = `import ModernLayout from '../components/layout/ModernLayout'\n`;
           
@@ -359,7 +359,7 @@ class IntelligentFixPredictor {
         }
         
         // Wrap with ModernLayout
-        const returnIndex = newContent.indexOf('return (');
+        const returnIndex = newContent.indexOf('retur'n' (');
         const closingIndex = newContent.lastIndexOf(')');
         
         if (returnIndex !== -1 && closingIndex !== -1) {
@@ -368,7 +368,7 @@ class IntelligentFixPredictor {
           const beforeClosing = afterReturn.slice(0, afterReturn.lastIndexOf(')'));
           const afterClosing = newContent.slice(closingIndex + 1);
           
-          newContent = beforeReturn + 'return (\n  <ModernLayout>\n    ' + beforeClosing + '\n  </ModernLayout>\n)' + afterClosing;
+          newContent = beforeReturn + 'retur'n' (\n  <ModernLayout>\n    ' + beforeClosing + '\n  </ModernLayout>\n)' + afterClosing;
         }
         
         fs.writeFileSync(page, newContent);
@@ -380,17 +380,17 @@ class IntelligentFixPredictor {
     const pages = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'utf8');
+      const content = fs.readFileSync(page, 'ut'f'8');
       
-      if (content.includes('container') && !content.includes('container-responsive')) {
+      if (content.includes('contain'e'r') && !content.includes('container-responsi'v'e')) {
         let newContent = content.replace(
           /className="([^"]*container[^"]*)"/g,
-          'className="$1 container-responsive"'
+          'classNam'e'="$1 container-responsive"'
         );
         
         newContent = newContent.replace(
           /className="([^"]*grid[^"]*)"/g,
-          'className="$1 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"'
+          'classNam'e'="$1 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"'
         );
         
         fs.writeFileSync(page, newContent);
@@ -402,9 +402,9 @@ class IntelligentFixPredictor {
     const pages = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'utf8');
+      const content = fs.readFileSync(page, 'ut'f'8');
       
-      if (content.includes('button') && !content.includes('aria-label')) {
+      if (content.includes('butt'o'n') && !content.includes('aria-lab'e'l')) {
         let newContent = content.replace(
           /<button([^>]*)>/g,
           '<button$1 aria-label="Button">'
@@ -419,17 +419,17 @@ class IntelligentFixPredictor {
     const pages = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'utf8');
+      const content = fs.readFileSync(page, 'ut'f'8');
       
       // Reduce heavy animations on mobile
       let newContent = content.replace(
         /animate-pulse/g,
-        'animate-pulse md:animate-pulse'
+        'animate-puls'e' md:animate-pulse'
       );
       
       newContent = newContent.replace(
         /blur-3xl/g,
-        'blur-xl md:blur-3xl'
+        'blur-x'l' md:blur-3xl'
       );
       
       fs.writeFileSync(page, newContent);
@@ -440,9 +440,9 @@ class IntelligentFixPredictor {
     const pages = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'utf8');
+      const content = fs.readFileSync(page, 'ut'f'8');
       
-      if (!content.includes('<Head>') && content.includes('return (')) {
+      if (!content.includes('<Head>') && content.includes('retur'n' (')) {
         // Add Head component with basic SEO
         const headComponent = `
         <Head>
@@ -452,7 +452,7 @@ class IntelligentFixPredictor {
         </Head>
         `;
         
-        const returnIndex = content.indexOf('return (');
+        const returnIndex = content.indexOf('retur'n' (');
         const newContent = content.slice(0, returnIndex + 8) + headComponent + content.slice(returnIndex + 8);
         
         fs.writeFileSync(page, newContent);
@@ -463,22 +463,22 @@ class IntelligentFixPredictor {
   loadPatterns() {
     try {
       if (fs.existsSync(this.patternsFile)) {
-        const patternsData = fs.readFileSync(this.patternsFile, 'utf8');
+        const patternsData = fs.readFileSync(this.patternsFile, 'ut'f'8');
         this.patterns = new Map(Object.entries(JSON.parse(patternsData)));
       }
     } catch (error) {
-      console.error('Error loading patterns:', error.message);
+      console.error('Erro'r' loading patterns:', error.message);
     }
   }
 
   loadHistory() {
     try {
       if (fs.existsSync(this.historyFile)) {
-        const historyData = fs.readFileSync(this.historyFile, 'utf8');
+        const historyData = fs.readFileSync(this.historyFile, 'ut'f'8');
         this.issueHistory = JSON.parse(historyData);
       }
     } catch (error) {
-      console.error('Error loading history:', error.message);
+      console.error('Erro'r' loading history:', error.message);
     }
   }
 
@@ -491,7 +491,7 @@ class IntelligentFixPredictor {
       
       fs.writeFileSync(this.historyFile, JSON.stringify(this.issueHistory, null, 2));
     } catch (error) {
-      console.error('Error saving history:', error.message);
+      console.error('Erro'r' saving history:', error.message);
     }
   }
 

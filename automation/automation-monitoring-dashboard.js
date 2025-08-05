@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class AutomationMonitoringDashboard {
   constructor() {
@@ -23,9 +23,9 @@ class AutomationMonitoringDashboard {
   initializeDashboard() {
     console.log('📊 Initializing Automation Monitoring Dashboard...');
     
-    this.dashboardPath = path.join(__dirname, 'monitoring-dashboard');
-    this.reportsPath = path.join(__dirname, 'monitoring-reports');
-    this.alertsPath = path.join(__dirname, 'monitoring-alerts');
+    this.dashboardPath = path.join(__dirname, 'monitoring-dashboa'r'd');
+    this.reportsPath = path.join(__dirname, 'monitoring-repor't's');
+    this.alertsPath = path.join(__dirname, 'monitoring-aler't's');
     
     [this.dashboardPath, this.reportsPath, this.alertsPath].forEach(dir => {
       if (!fs.existsSync(dir)) {
@@ -40,10 +40,10 @@ class AutomationMonitoringDashboard {
     console.log('🔍 Loading automation systems...');
     
     // Enhanced Intelligent Automation System
-    this.automationSystems.set('enhanced-intelligent', {
-      name: 'Enhanced Intelligent Automation System',
-      type: 'AI-Powered',
-      status: 'unknown',
+    this.automationSystems.set('enhanced-intellige'n't', {
+      name: 'Enhance'd' Intelligent Automation System',
+      type: 'AI-Power'e'd',
+      status: 'unkno'w'n',
       health: 0.0,
       metrics: {
         contentGenerated: 0,
@@ -55,10 +55,10 @@ class AutomationMonitoringDashboard {
     });
 
     // AI-Powered Diversification Engine
-    this.automationSystems.set('ai-diversification', {
-      name: 'AI-Powered Diversification Engine',
-      type: 'Diversification',
-      status: 'unknown',
+    this.automationSystems.set('ai-diversificati'o'n', {
+      name: 'AI-Powere'd' Diversification Engine',
+      type: 'Diversificati'o'n',
+      status: 'unkno'w'n',
       health: 0.0,
       metrics: {
         contentDiversified: 0,
@@ -70,10 +70,10 @@ class AutomationMonitoringDashboard {
     });
 
     // Original Intelligent Automation System
-    this.automationSystems.set('intelligent-automation', {
-      name: 'Intelligent Automation System',
-      type: 'Core',
-      status: 'unknown',
+    this.automationSystems.set('intelligent-automati'o'n', {
+      name: 'Intelligen't' Automation System',
+      type: 'Co'r'e',
+      status: 'unkno'w'n',
       health: 0.0,
       metrics: {
         contentGenerated: 0,
@@ -130,7 +130,7 @@ class AutomationMonitoringDashboard {
       const isRunning = this.checkSystemProcess(systemKey);
       
       if (isRunning) {
-        system.status = 'running';
+        system.status = 'runni'n'g';
         system.health = this.calculateSystemHealth(systemKey);
         system.lastUpdate = new Date().toISOString();
         
@@ -139,13 +139,13 @@ class AutomationMonitoringDashboard {
         
         console.log(`✅ ${system.name} is running (Health: ${(system.health * 100).toFixed(1)}%)`);
       } else {
-        system.status = 'stopped';
+        system.status = 'stopp'e'd';
         system.health = 0.0;
         console.log(`⚠️ ${system.name} is not running`);
       }
     } catch (error) {
       console.error(`❌ Error checking ${system.name}:`, error);
-      system.status = 'error';
+      system.status = 'err'o'r';
       system.health = 0.0;
     }
   }
@@ -153,11 +153,11 @@ class AutomationMonitoringDashboard {
   checkSystemProcess(systemKey) {
     // Check for system-specific indicators
     switch (systemKey) {
-      case 'enhanced-intelligent':
+      case 'enhanced-intellige'n't':
         return this.checkEnhancedSystem();
-      case 'ai-diversification':
+      case 'ai-diversificati'o'n':
         return this.checkAIDiversificationSystem();
-      case 'intelligent-automation':
+      case 'intelligent-automati'o'n':
         return this.checkIntelligentAutomationSystem();
       default:
         return false;
@@ -166,24 +166,24 @@ class AutomationMonitoringDashboard {
 
   checkEnhancedSystem() {
     // Check for enhanced system indicators
-    const enhancedPath = path.join(__dirname, 'enhanced-system');
-    const contentPath = path.join(__dirname, 'content-generator');
+    const enhancedPath = path.join(__dirname, 'enhanced-syst'e'm');
+    const contentPath = path.join(__dirname, 'content-generat'o'r');
     
     return fs.existsSync(enhancedPath) && fs.existsSync(contentPath);
   }
 
   checkAIDiversificationSystem() {
     // Check for AI diversification system indicators
-    const aiPath = path.join(__dirname, 'ai-diversification-engine');
-    const diversifiedPath = path.join(__dirname, 'diversified-content');
+    const aiPath = path.join(__dirname, 'ai-diversification-engi'n'e');
+    const diversifiedPath = path.join(__dirname, 'diversified-conte'n't');
     
     return fs.existsSync(aiPath) && fs.existsSync(diversifiedPath);
   }
 
   checkIntelligentAutomationSystem() {
     // Check for intelligent automation system indicators
-    const intelligentPath = path.join(__dirname, 'intelligent-launcher');
-    const antiRepetitionPath = path.join(__dirname, 'anti-repetition-engine');
+    const intelligentPath = path.join(__dirname, 'intelligent-launch'e'r');
+    const antiRepetitionPath = path.join(__dirname, 'anti-repetition-engi'n'e');
     
     return fs.existsSync(intelligentPath) && fs.existsSync(antiRepetitionPath);
   }
@@ -192,7 +192,7 @@ class AutomationMonitoringDashboard {
     // Calculate health based on system performance and metrics
     const system = this.automationSystems.get(systemKey);
     
-    if (!system || system.status !== 'running') {
+    if (!system || system.status !== 'runni'n'g') {
       return 0.0;
     }
     
@@ -214,21 +214,21 @@ class AutomationMonitoringDashboard {
   updateSystemMetrics(systemKey, system) {
     // Update metrics based on system type
     switch (systemKey) {
-      case 'enhanced-intelligent':
+      case 'enhanced-intellige'n't':
         this.updateEnhancedSystemMetrics(system);
         break;
-      case 'ai-diversification':
+      case 'ai-diversificati'o'n':
         this.updateAIDiversificationMetrics(system);
         break;
-      case 'intelligent-automation':
+      case 'intelligent-automati'o'n':
         this.updateIntelligentAutomationMetrics(system);
         break;
     }
   }
 
   updateEnhancedSystemMetrics(system) {
-    const enhancedPath = path.join(__dirname, 'enhanced-system');
-    const contentPath = path.join(__dirname, 'content-generator');
+    const enhancedPath = path.join(__dirname, 'enhanced-syst'e'm');
+    const contentPath = path.join(__dirname, 'content-generat'o'r');
     
     if (fs.existsSync(contentPath)) {
       const contentFiles = fs.readdirSync(contentPath).filter(file => file.endsWith('.json'));
@@ -242,8 +242,8 @@ class AutomationMonitoringDashboard {
   }
 
   updateAIDiversificationMetrics(system) {
-    const contentPath = path.join(__dirname, 'diversified-content');
-    const featuresPath = path.join(__dirname, 'diversified-features');
+    const contentPath = path.join(__dirname, 'diversified-conte'n't');
+    const featuresPath = path.join(__dirname, 'diversified-featur'e's');
     
     if (fs.existsSync(contentPath)) {
       const contentFiles = fs.readdirSync(contentPath).filter(file => file.endsWith('.json'));
@@ -257,17 +257,17 @@ class AutomationMonitoringDashboard {
   }
 
   updateIntelligentAutomationMetrics(system) {
-    const intelligentPath = path.join(__dirname, 'intelligent-launcher');
+    const intelligentPath = path.join(__dirname, 'intelligent-launch'e'r');
     
     if (fs.existsSync(intelligentPath)) {
-      const healthFiles = fs.readdirSync(intelligentPath).filter(file => file.includes('health'));
+      const healthFiles = fs.readdirSync(intelligentPath).filter(file => file.includes('heal't'h'));
       system.metrics.evolutionCycles = healthFiles.length;
     }
   }
 
   calculateOverallHealth() {
     const activeSystems = Array.from(this.automationSystems.values())
-      .filter(system => system.status === 'running');
+      .filter(system => system.status === 'runni'n'g');
     
     this.metrics.activeSystems = activeSystems.length;
     
@@ -333,22 +333,22 @@ class AutomationMonitoringDashboard {
     
     // Check system health
     if (this.metrics.overallHealth < 0.7) {
-      recommendations.push('Improve overall system health by addressing performance issues');
+      recommendations.push('Improv'e' overall system health by addressing performance issues');
     }
     
     // Check content generation
     if (this.metrics.totalContentGenerated < 10) {
-      recommendations.push('Increase content generation to improve diversification');
+      recommendations.push('Increas'e' content generation to improve diversification');
     }
     
     // Check feature creation
     if (this.metrics.totalFeaturesCreated < 5) {
-      recommendations.push('Enhance feature creation capabilities');
+      recommendations.push('Enhanc'e' feature creation capabilities');
     }
     
     // Check system diversity
     if (this.metrics.activeSystems < this.metrics.totalSystems) {
-      recommendations.push('Activate all automation systems for maximum effectiveness');
+      recommendations.push('Activat'e' all automation systems for maximum effectiveness');
     }
     
     return recommendations;
@@ -361,22 +361,22 @@ class AutomationMonitoringDashboard {
     
     // Check for system failures
     this.automationSystems.forEach((system, key) => {
-      if (system.status === 'stopped' || system.status === 'error') {
+      if (system.status === 'stopp'e'd' || system.status === 'err'o'r') {
         alerts.push({
-          type: 'system-failure',
+          type: 'system-failu'r'e',
           system: system.name,
           message: `${system.name} is not running properly`,
-          severity: 'high',
+          severity: 'hi'g'h',
           timestamp: new Date().toISOString()
         });
       }
       
       if (system.health < 0.5) {
         alerts.push({
-          type: 'system-degradation',
+          type: 'system-degradati'o'n',
           system: system.name,
           message: `${system.name} health is below 50%`,
-          severity: 'medium',
+          severity: 'medi'u'm',
           timestamp: new Date().toISOString()
         });
       }
@@ -385,9 +385,9 @@ class AutomationMonitoringDashboard {
     // Check for low performance
     if (this.metrics.overallHealth < 0.6) {
       alerts.push({
-        type: 'performance-alert',
-        message: 'Overall automation performance is below optimal levels',
-        severity: 'medium',
+        type: 'performance-ale'r't',
+        message: 'Overal'l' automation performance is below optimal levels',
+        severity: 'medi'u'm',
         timestamp: new Date().toISOString()
       });
     }
@@ -410,7 +410,7 @@ class AutomationMonitoringDashboard {
       
       alertFiles.forEach(file => {
         try {
-          const alertData = JSON.parse(fs.readFileSync(path.join(this.alertsPath, file), 'utf8'));
+          const alertData = JSON.parse(fs.readFileSync(path.join(this.alertsPath, file), 'ut'f'8'));
           alerts.push(...alertData);
         } catch (error) {
           console.error(`Error reading alert file ${file}:`, error);
@@ -431,13 +431,13 @@ class AutomationMonitoringDashboard {
     const dashboardStatus = {
       timestamp: new Date().toISOString(),
       dashboardId: this.dashboardId,
-      status: 'running',
+      status: 'runni'n'g',
       metrics: this.metrics,
       systems: Array.from(this.automationSystems.values()),
       alerts: this.getActiveAlerts().length
     };
     
-    const statusPath = path.join(this.dashboardPath, 'dashboard-status.json');
+    const statusPath = path.join(this.dashboardPath, 'dashboard-statu's'.json');
     fs.writeFileSync(statusPath, JSON.stringify(dashboardStatus, null, 2));
     
     console.log('📊 Dashboard metrics updated');
@@ -446,7 +446,7 @@ class AutomationMonitoringDashboard {
   getDashboardStatus() {
     return {
       dashboardId: this.dashboardId,
-      status: 'running',
+      status: 'runni'n'g',
       metrics: this.metrics,
       systems: Array.from(this.automationSystems.values()),
       alerts: this.getActiveAlerts()
@@ -463,15 +463,15 @@ class AutomationMonitoringDashboard {
     console.log(`Diversification Score: ${this.metrics.totalDiversificationScore.toFixed(1)}`);
     console.log('');
     
-    console.log('SYSTEM STATUS:');
+    console.log('SYSTE'M' STATUS:');
     this.automationSystems.forEach((system, key) => {
-      const status = system.status === 'running' ? '✅' : '❌';
+      const status = system.status === 'runni'n'g' ? '✅' : '❌';
       const health = `${(system.health * 100).toFixed(1)}%`;
       console.log(`${status} ${system.name} - ${system.status} (Health: ${health})`);
     });
     
     console.log('');
-    console.log('RECENT ALERTS:');
+    console.log('RECEN'T' ALERTS:');
     const alerts = this.getActiveAlerts();
     if (alerts.length > 0) {
       alerts.slice(0, 5).forEach(alert => {
@@ -494,7 +494,7 @@ setInterval(() => {
 }, 120000);
 
 // Keep the dashboard running
-process.on('SIGINT', () => {
+process.on('SIGI'N'T', () => {
   console.log('\n🛑 Shutting down Automation Monitoring Dashboard...');
   process.exit(0);
 });

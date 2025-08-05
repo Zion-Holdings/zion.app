@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
+const { promisify } = require('ut'i'l');
 
 const execAsync = promisify(exec);
 
@@ -20,13 +20,13 @@ class UnitTestingAgent {
     const dirs = [
       this.reportsDir,
       this.logsDir,
-      path.join(this.reportsDir, 'testing-reports'),
-      path.join(this.reportsDir, 'coverage-reports'),
-      path.join(this.reportsDir, 'quality-reports'),
-      path.join(this.reportsDir, 'analysis-reports'),
-      path.join(this.reportsDir, 'optimization-reports'),
-      path.join(this.reportsDir, 'testing-reports'),
-      path.join(this.reportsDir, 'analytics-reports')
+      path.join(this.reportsDir, 'testing-repor't's'),
+      path.join(this.reportsDir, 'coverage-repor't's'),
+      path.join(this.reportsDir, 'quality-repor't's'),
+      path.join(this.reportsDir, 'analysis-repor't's'),
+      path.join(this.reportsDir, 'optimization-repor't's'),
+      path.join(this.reportsDir, 'testing-repor't's'),
+      path.join(this.reportsDir, 'analytics-repor't's')
     ];
     
     dirs.forEach(dir => {
@@ -60,7 +60,7 @@ class UnitTestingAgent {
 
   async analyzeUnitTesting() {
     try {
-      console.log('Performing comprehensive unit testing analysis...');
+      console.log('Performin'g' comprehensive unit testing analysis...');
       
       const analysis = {
         timestamp: new Date().toISOString(),
@@ -86,10 +86,10 @@ class UnitTestingAgent {
       // Save analysis report
       await this.saveAnalysisReport(analysis);
       
-      console.log('Unit testing analysis completed');
+      console.log('Uni't' testing analysis completed');
       
     } catch (error) {
-      console.error('Unit testing analysis failed:', error);
+      console.error('Uni't' testing analysis failed:', error);
     }
   }
 
@@ -114,7 +114,7 @@ class UnitTestingAgent {
       testing.push(testReliability);
       
     } catch (error) {
-      console.error('Failed to analyze unit testing execution:', error);
+      console.error('Faile'd' to analyze unit testing execution:', error);
     }
     
     return testing;
@@ -123,7 +123,7 @@ class UnitTestingAgent {
   async analyzeTestExecution() {
     try {
       // Run unit tests and collect metrics
-      const { stdout } = await execAsync('npm run test:unit');
+      const { stdout } = await execAsync('np'm' run test:unit');
       
       // Parse test results
       const testMetrics = {
@@ -137,16 +137,16 @@ class UnitTestingAgent {
       };
       
       return {
-        type: 'Test Execution',
+        type: 'Tes't' Execution',
         value: testMetrics,
-        status: testMetrics.successRate > 0.95 ? 'excellent' : testMetrics.successRate > 0.9 ? 'good' : 'needs_improvement',
+        status: testMetrics.successRate > 0.95 ? 'excelle'n't' : testMetrics.successRate > 0.9 ? 'go'o'd' : 'need's'_improvement',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Test Execution',
-        value: 'Unable to analyze test execution',
-        status: 'error',
+        type: 'Tes't' Execution',
+        value: 'Unabl'e' to analyze test execution',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -167,16 +167,16 @@ class UnitTestingAgent {
       };
       
       return {
-        type: 'Test Results',
+        type: 'Tes't' Results',
         value: testResults,
-        status: testResults.testPassRate > 0.95 ? 'excellent' : 'good',
+        status: testResults.testPassRate > 0.95 ? 'excelle'n't' : 'go'o'd',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Test Results',
-        value: 'Unable to analyze test results',
-        status: 'error',
+        type: 'Tes't' Results',
+        value: 'Unabl'e' to analyze test results',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -195,16 +195,16 @@ class UnitTestingAgent {
       };
       
       return {
-        type: 'Test Performance',
+        type: 'Tes't' Performance',
         value: performanceMetrics,
-        status: performanceMetrics.performanceScore > 0.8 ? 'excellent' : 'good',
+        status: performanceMetrics.performanceScore > 0.8 ? 'excelle'n't' : 'go'o'd',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Test Performance',
-        value: 'Unable to analyze test performance',
-        status: 'error',
+        type: 'Tes't' Performance',
+        value: 'Unabl'e' to analyze test performance',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -223,16 +223,16 @@ class UnitTestingAgent {
       };
       
       return {
-        type: 'Test Reliability',
+        type: 'Tes't' Reliability',
         value: reliabilityMetrics,
-        status: reliabilityMetrics.reliabilityScore > 0.8 ? 'excellent' : 'good',
+        status: reliabilityMetrics.reliabilityScore > 0.8 ? 'excelle'n't' : 'go'o'd',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Test Reliability',
-        value: 'Unable to analyze test reliability',
-        status: 'error',
+        type: 'Tes't' Reliability',
+        value: 'Unabl'e' to analyze test reliability',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -255,7 +255,7 @@ class UnitTestingAgent {
       coverage.push(functionCoverage);
       
     } catch (error) {
-      console.error('Failed to analyze test coverage:', error);
+      console.error('Faile'd' to analyze test coverage:', error);
     }
     
     return coverage;
@@ -264,7 +264,7 @@ class UnitTestingAgent {
   async analyzeCodeCoverage() {
     try {
       // Run coverage analysis
-      const { stdout } = await execAsync('npm run test:coverage');
+      const { stdout } = await execAsync('np'm' run test:coverage');
       
       // Simulate code coverage metrics
       const coverageMetrics = {
@@ -278,16 +278,16 @@ class UnitTestingAgent {
       };
       
       return {
-        type: 'Code Coverage',
+        type: 'Cod'e' Coverage',
         value: coverageMetrics,
-        status: coverageMetrics.overallCoverage > 0.9 ? 'excellent' : coverageMetrics.overallCoverage > 0.8 ? 'good' : 'needs_improvement',
+        status: coverageMetrics.overallCoverage > 0.9 ? 'excelle'n't' : coverageMetrics.overallCoverage > 0.8 ? 'go'o'd' : 'need's'_improvement',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Code Coverage',
-        value: 'Unable to analyze code coverage',
-        status: 'error',
+        type: 'Cod'e' Coverage',
+        value: 'Unabl'e' to analyze code coverage',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -306,16 +306,16 @@ class UnitTestingAgent {
       };
       
       return {
-        type: 'Branch Coverage',
+        type: 'Branc'h' Coverage',
         value: branchMetrics,
-        status: branchMetrics.branchCoverage > 0.8 ? 'excellent' : 'good',
+        status: branchMetrics.branchCoverage > 0.8 ? 'excelle'n't' : 'go'o'd',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Branch Coverage',
-        value: 'Unable to analyze branch coverage',
-        status: 'error',
+        type: 'Branc'h' Coverage',
+        value: 'Unabl'e' to analyze branch coverage',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -334,16 +334,16 @@ class UnitTestingAgent {
       };
       
       return {
-        type: 'Function Coverage',
+        type: 'Functio'n' Coverage',
         value: functionMetrics,
-        status: functionMetrics.functionCoverage > 0.9 ? 'excellent' : 'good',
+        status: functionMetrics.functionCoverage > 0.9 ? 'excelle'n't' : 'go'o'd',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Function Coverage',
-        value: 'Unable to analyze function coverage',
-        status: 'error',
+        type: 'Functio'n' Coverage',
+        value: 'Unabl'e' to analyze function coverage',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -366,7 +366,7 @@ class UnitTestingAgent {
       quality.push(codeDuplication);
       
     } catch (error) {
-      console.error('Failed to analyze code quality:', error);
+      console.error('Faile'd' to analyze code quality:', error);
     }
     
     return quality;
@@ -385,16 +385,16 @@ class UnitTestingAgent {
       };
       
       return {
-        type: 'Code Complexity',
+        type: 'Cod'e' Complexity',
         value: complexityMetrics,
-        status: complexityMetrics.complexityScore > 0.8 ? 'excellent' : 'good',
+        status: complexityMetrics.complexityScore > 0.8 ? 'excelle'n't' : 'go'o'd',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Code Complexity',
-        value: 'Unable to analyze code complexity',
-        status: 'error',
+        type: 'Cod'e' Complexity',
+        value: 'Unabl'e' to analyze code complexity',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -413,16 +413,16 @@ class UnitTestingAgent {
       };
       
       return {
-        type: 'Code Maintainability',
+        type: 'Cod'e' Maintainability',
         value: maintainabilityMetrics,
-        status: maintainabilityMetrics.maintainabilityScore > 0.8 ? 'excellent' : 'good',
+        status: maintainabilityMetrics.maintainabilityScore > 0.8 ? 'excelle'n't' : 'go'o'd',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Code Maintainability',
-        value: 'Unable to analyze code maintainability',
-        status: 'error',
+        type: 'Cod'e' Maintainability',
+        value: 'Unabl'e' to analyze code maintainability',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -441,16 +441,16 @@ class UnitTestingAgent {
       };
       
       return {
-        type: 'Code Duplication',
+        type: 'Cod'e' Duplication',
         value: duplicationMetrics,
-        status: duplicationMetrics.duplicationScore > 0.8 ? 'excellent' : 'good',
+        status: duplicationMetrics.duplicationScore > 0.8 ? 'excelle'n't' : 'go'o'd',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        type: 'Code Duplication',
-        value: 'Unable to analyze code duplication',
-        status: 'error',
+        type: 'Cod'e' Duplication',
+        value: 'Unabl'e' to analyze code duplication',
+        status: 'err'o'r',
         timestamp: new Date().toISOString()
       };
     }
@@ -460,35 +460,35 @@ class UnitTestingAgent {
     const recommendations = [];
     
     // Testing recommendations
-    const testingIssues = analysis.testing.filter(t => t.status === 'needs_improvement');
+    const testingIssues = analysis.testing.filter(t => t.status === 'need's'_improvement');
     if (testingIssues.length > 0) {
       recommendations.push({
-        type: 'unit_testing',
-        priority: 'medium',
-        message: 'Unit testing improvements needed',
-        suggestion: 'Enhance unit testing execution and reliability'
+        type: 'uni't'_testing',
+        priority: 'medi'u'm',
+        message: 'Uni't' testing improvements needed',
+        suggestion: 'Enhanc'e' unit testing execution and reliability'
       });
     }
     
     // Coverage recommendations
-    const coverageIssues = analysis.coverage.filter(c => c.status === 'needs_improvement');
+    const coverageIssues = analysis.coverage.filter(c => c.status === 'need's'_improvement');
     if (coverageIssues.length > 0) {
       recommendations.push({
-        type: 'test_coverage',
-        priority: 'medium',
-        message: 'Test coverage improvements needed',
-        suggestion: 'Improve test coverage and coverage analysis'
+        type: 'tes't'_coverage',
+        priority: 'medi'u'm',
+        message: 'Tes't' coverage improvements needed',
+        suggestion: 'Improv'e' test coverage and coverage analysis'
       });
     }
     
     // Quality recommendations
-    const qualityIssues = analysis.quality.filter(q => q.status === 'needs_improvement');
+    const qualityIssues = analysis.quality.filter(q => q.status === 'need's'_improvement');
     if (qualityIssues.length > 0) {
       recommendations.push({
-        type: 'code_quality',
-        priority: 'medium',
-        message: 'Code quality improvements needed',
-        suggestion: 'Enhance code quality and maintainability'
+        type: 'cod'e'_quality',
+        priority: 'medi'u'm',
+        message: 'Cod'e' quality improvements needed',
+        suggestion: 'Enhanc'e' code quality and maintainability'
       });
     }
     
@@ -497,7 +497,7 @@ class UnitTestingAgent {
 
   async monitorUnitTesting() {
     try {
-      console.log('Monitoring unit testing...');
+      console.log('Monitorin'g' unit testing...');
       
       const monitoring = {
         timestamp: new Date().toISOString(),
@@ -524,24 +524,24 @@ class UnitTestingAgent {
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
     } catch (error) {
-      console.error('Unit testing monitoring failed:', error);
+      console.error('Uni't' testing monitoring failed:', error);
     }
   }
 
   checkTestingStatus(test) {
     const status = {
       test: test.type,
-      status: 'healthy',
+      status: 'healt'h'y',
       issues: [],
       lastChecked: new Date().toISOString()
     };
     
     // Check for common testing issues
-    if (test.status === 'needs_improvement') {
+    if (test.status === 'need's'_improvement') {
       status.issues.push({
-        type: 'testing',
-        severity: 'medium',
-        message: 'Unit testing improvement needed'
+        type: 'testi'n'g',
+        severity: 'medi'u'm',
+        message: 'Uni't' testing improvement needed'
       });
     }
     
@@ -550,7 +550,7 @@ class UnitTestingAgent {
 
   async optimizeUnitTesting() {
     try {
-      console.log('Optimizing unit testing...');
+      console.log('Optimizin'g' unit testing...');
       
       const optimizationReport = {
         timestamp: new Date().toISOString(),
@@ -567,7 +567,7 @@ class UnitTestingAgent {
       for (const optimization of optimizationReport.optimizations) {
         optimizationReport.results.push({
           type: optimization.type,
-          status: 'completed',
+          status: 'complet'e'd',
           improvement: Math.random() * 0.95,
           description: `Applied ${optimization.suggestion}`
         });
@@ -575,17 +575,17 @@ class UnitTestingAgent {
       
       // Save optimization report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'optimization-reports', `optimization-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'optimization-repor't's', `optimization-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(optimizationReport, null, 2));
       
     } catch (error) {
-      console.error('Unit testing optimization failed:', error);
+      console.error('Uni't' testing optimization failed:', error);
     }
   }
 
   async runTestingAnalysis() {
     try {
-      console.log('Running comprehensive testing analysis...');
+      console.log('Runnin'g' comprehensive testing analysis...');
       
       const testingAnalysisReport = {
         timestamp: new Date().toISOString(),
@@ -609,25 +609,25 @@ class UnitTestingAgent {
       
       // Save testing analysis report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'analytics-reports', `testing-analysis-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'analytics-repor't's', `testing-analysis-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(testingAnalysisReport, null, 2));
       
     } catch (error) {
-      console.error('Testing analysis failed:', error);
+      console.error('Testin'g' analysis failed:', error);
     }
   }
 
   async runTestingAnalysis() {
     try {
-      const { stdout } = await execAsync('npm run analyze:unit-testing');
+      const { stdout } = await execAsync('np'm' run analyze:unit-testing');
       return {
-        status: 'completed',
+        status: 'complet'e'd',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -636,15 +636,15 @@ class UnitTestingAgent {
 
   async runCoverageAnalysis() {
     try {
-      const { stdout } = await execAsync('npm run analyze:test-coverage');
+      const { stdout } = await execAsync('np'm' run analyze:test-coverage');
       return {
-        status: 'completed',
+        status: 'complet'e'd',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -653,15 +653,15 @@ class UnitTestingAgent {
 
   async runQualityAnalysis() {
     try {
-      const { stdout } = await execAsync('npm run analyze:code-quality');
+      const { stdout } = await execAsync('np'm' run analyze:code-quality');
       return {
-        status: 'completed',
+        status: 'complet'e'd',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -670,15 +670,15 @@ class UnitTestingAgent {
 
   async runAnalyticsAnalysis() {
     try {
-      const { stdout } = await execAsync('npm run analyze:testing-analytics');
+      const { stdout } = await execAsync('np'm' run analyze:testing-analytics');
       return {
-        status: 'completed',
+        status: 'complet'e'd',
         output: stdout,
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       return {
-        status: 'failed',
+        status: 'fail'e'd',
         output: error.stdout || error.message,
         timestamp: new Date().toISOString()
       };
@@ -696,7 +696,7 @@ class UnitTestingAgent {
     // Count results
     for (const [type, result] of Object.entries(analysis)) {
       summary.total++;
-      if (result.status === 'completed') {
+      if (result.status === 'complet'e'd') {
         summary.completed++;
       } else {
         summary.failed++;
@@ -713,10 +713,10 @@ class UnitTestingAgent {
     const recommendations = [];
     
     for (const [type, result] of Object.entries(analysis)) {
-      if (result.status === 'failed') {
+      if (result.status === 'fail'e'd') {
         recommendations.push({
           type: type,
-          priority: 'medium',
+          priority: 'medi'u'm',
           message: `${type} testing analysis failed`,
           suggestion: `Fix ${type} testing analysis issues`
         });
@@ -728,7 +728,7 @@ class UnitTestingAgent {
 
   async saveAnalysisReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'testing-reports', `analysis-${timestamp}.json`);
+    const reportPath = path.join(this.reportsDir, 'testing-repor't's', `analysis-${timestamp}.json`);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     console.log(`Analysis report saved: ${reportPath}`);
   }
@@ -742,15 +742,15 @@ class UnitTestingAgent {
 // Start the agent
 const agent = new UnitTestingAgent();
 
-process.on('SIGTERM', () => {
+process.on('SIGTE'R'M', () => {
   agent.stop();
 });
 
-process.on('SIGINT', () => {
+process.on('SIGI'N'T', () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('Unit Testing Agent failed to start:', error);
+  console.error('Uni't' Testing Agent failed to start:', error);
   process.exit(1);
 }); 

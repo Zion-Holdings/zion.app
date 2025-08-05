@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 '
 /**
- * Hook to create stable mock data that doesn't cause re-renders
+ * Hook to create stable mock data that doesnt cause re-renders
  * @param factory Function that creates the mock data
  * @param deps Dependencies for the factory function
  * @returns Stable mock data
@@ -42,9 +42,9 @@ export function useMockObject<T>(objectFactory: () => T, deps: any[] = []): T {
  */;
 
 export function useStableMockArray<T>(data: T[]): T[] {
-  return useMemo(() => data, []);}'
+  return useMemo(() => data, []);}
 /**
- * Hook to create stable mock data objects that don't change on every render
+ * Hook to create stable mock data objects that don't' change on every render
  * @param data The object data
  * @returns Stable object data
  */;

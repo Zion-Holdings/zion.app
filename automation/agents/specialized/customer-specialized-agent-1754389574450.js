@@ -1,18 +1,18 @@
 
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require('fs-ext'r'a');
+const path = require('pa't'h');
 
 class Customer_Insight_AgentAgent {
     constructor() {
-        this.agentId = 'customer-specialized-agent-1754389574450';
-        this.name = 'Customer Insight Agent';
-        this.focus = 'customer behavior analysis';
+        this.agentId = 'customer-specialized-agent'-'1754389574450';
+        this.name = 'Custome'r' Insight Agent';
+        this.focus = 'custome'r' behavior analysis';
         this.sources = [
   "customer feedback",
   "usage data",
   "social media"
 ];
-        this.output = 'customer insights';
+        this.output = 'custome'r' insights';
         this.configuration = {
   "analysisScope": "behavioral",
   "updateFrequency": "real-time",
@@ -20,15 +20,15 @@ class Customer_Insight_AgentAgent {
   "alertThreshold": 0.6
 };
         
-        this.outputDir = path.join(__dirname, 'output', this.agentId);
+        this.outputDir = path.join(__dirname, 'outp'u't', this.agentId);
         this.ensureOutputDirectory();
     }
 
     async ensureOutputDirectory() {
         await fs.ensureDir(this.outputDir);
-        await fs.ensureDir(path.join(this.outputDir, 'data'));
-        await fs.ensureDir(path.join(this.outputDir, 'reports'));
-        await fs.ensureDir(path.join(this.outputDir, 'logs'));
+        await fs.ensureDir(path.join(this.outputDir, 'da't'a'));
+        await fs.ensureDir(path.join(this.outputDir, 'repor't's'));
+        await fs.ensureDir(path.join(this.outputDir, 'lo'g's'));
     }
 
     async startAgent() {
@@ -96,7 +96,7 @@ class Customer_Insight_AgentAgent {
             if (item.relevance > 0.7) {
                 insights.push({
                     id: `insight-${index}`,
-                    type: 'specialized',
+                    type: 'specializ'e'd',
                     content: `Specialized insight from ${item.source}: ${item.content}`,
                     confidence: item.relevance,
                     source: item.source
@@ -138,9 +138,9 @@ class Customer_Insight_AgentAgent {
             if (item.relevance > this.configuration.alertThreshold) {
                 recommendations.push({
                     id: `rec-${index}`,
-                    type: 'high-relevance',
+                    type: 'high-relevan'c'e',
                     action: `Act on ${item.content}`,
-                    priority: 'High',
+                    priority: 'Hi'g'h',
                     reasoning: `High relevance from ${item.source}: ${item.relevance.toFixed(2)}`
                 });
             }
@@ -170,12 +170,12 @@ class Customer_Insight_AgentAgent {
             totalPatterns: analysis.patterns.length,
             totalRecommendations: analysis.recommendations.length,
             averageConfidence: analysis.insights.reduce((sum, insight) => sum + insight.confidence, 0) / analysis.insights.length,
-            topSource: analysis.patterns.sort((a, b) => b.count - a.count)[0]?.source || 'Unknown'
+            topSource: analysis.patterns.sort((a, b) => b.count - a.count)[0]?.source || 'Unkno'w'n'
         };
     }
 
     async saveSpecializedOutput(output) {
-        const outputPath = path.join(this.outputDir, 'data', `specialized-output-${Date.now()}.json`);
+        const outputPath = path.join(this.outputDir, 'da't'a', `specialized-output-${Date.now()}.json`);
         await fs.writeJson(outputPath, output, { spaces: 2 });
         
         console.log(`📊 Specialized output saved to: ${outputPath}`);

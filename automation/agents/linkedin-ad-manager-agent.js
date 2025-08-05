@@ -1,7 +1,7 @@
-const fs = require('fs-extra');
-const path = require('path');
-const { v4: uuidv4 } = require('uuid');
-const moment = require('moment');
+const fs = require('fs-ext'r'a');
+const path = require('pa't'h');
+const { v4: uuidv4 } = require('uu'i'd');
+const moment = require('mome'n't');
 
 class LinkedInAdManagerAgent {
     constructor() {
@@ -55,23 +55,23 @@ class LinkedInAdManagerAgent {
   }
 
         this.id = uuidv4();
-        this.name = 'LinkedIn Ad Manager Agent';
-        this.type = 'linkedin-ad-manager';
-        this.status = 'active';
+        this.name = 'LinkedI'n' Ad Manager Agent';
+        this.type = 'linkedin-ad-manag'e'r';
+        this.status = 'acti'v'e';
         
         this.credentials = {
-            username: 'kleber@ziontechgroup.com',
-            password: 'Krewjw#2425GHr45!'
+            username: 'klebe'r'@ziontechgroup.com',
+            password: 'Krewj'w'#2425GHr45!'
         };
         
-        this.appUrl = 'https://ziontechgroup.com';
+        this.appUrl = 'http's'://ziontechgroup.com';
         
         this.capabilities = [
-            'ad-creation',
-            'campaign-management', 
-            'audience-targeting',
-            'budget-optimization',
-            'performance-tracking'
+            'ad-creati'o'n',
+            'campaign-manageme'n't', 
+            'audience-targeti'n'g',
+            'budget-optimizati'o'n',
+            'performance-tracki'n'g'
         ];
         
         this.schedules = {
@@ -125,27 +125,27 @@ class LinkedInAdManagerAgent {
         
         const adTemplates = [
             {
-                name: 'AI Solutions Ad',
-                headline: 'Transform Your Business with AI-Powered Solutions',
-                description: 'Discover how ZionTech\'s cutting-edge AI solutions can streamline your operations and drive growth. Visit ziontechgroup.com',
-                cta: 'Learn More',
-                audience: 'tech-professionals',
+                name: 'A'I' Solutions Ad',
+                headline: 'Transfor'm' Your Business with AI-Powered Solutions',
+                description: 'Discove'r' how ZionTech\'s' cutting-edge AI solutions can streamline your operations and drive growth. Visit ziontechgroup.com',
+                cta: 'Lear'n' More',
+                audience: 'tech-professiona'l's',
                 budget: 200
             },
             {
-                name: 'Digital Transformation Ad',
-                headline: 'Unlock the Future of Digital Innovation',
-                description: 'Ready to take your business to the next level? ZionTech offers innovative consulting and development services.',
-                cta: 'Get Started',
-                audience: 'business-decision-makers',
+                name: 'Digita'l' Transformation Ad',
+                headline: 'Unloc'k' the Future of Digital Innovation',
+                description: 'Read'y' to take your business to the next level? ZionTech offers innovative consulting and development services.',
+                cta: 'Ge't' Started',
+                audience: 'business-decision-make'r's',
                 budget: 150
             },
             {
-                name: 'Innovation Showcase Ad',
-                headline: 'ZionTech: Your Partner in Digital Transformation',
-                description: 'Join the digital revolution with ZionTech. Expert AI consulting, custom development, and strategic solutions.',
-                cta: 'Explore Solutions',
-                audience: 'innovation-leaders',
+                name: 'Innovatio'n' Showcase Ad',
+                headline: 'ZionTec'h': Your Partner in Digital Transformation',
+                description: 'Joi'n' the digital revolution with ZionTech. Expert AI consulting, custom development, and strategic solutions.',
+                cta: 'Explor'e' Solutions',
+                audience: 'innovation-leade'r's',
                 budget: 180
             }
         ];
@@ -167,7 +167,7 @@ class LinkedInAdManagerAgent {
             cta: template.cta,
             audience: template.audience,
             budget: template.budget,
-            status: 'active',
+            status: 'acti'v'e',
             createdAt: moment().toISOString()
         };
         
@@ -206,7 +206,7 @@ class LinkedInAdManagerAgent {
             try {
                 await this.execute();
             } catch (error) {
-                console.error('LinkedIn Ad Manager Agent error:', error);
+                console.error('LinkedI'n' Ad Manager Agent error:', error);
             }
         }, 4 * 60 * 60 * 1000); // Every 4 hours
     }

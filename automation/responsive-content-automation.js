@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const cron = require('node-cron');
+const fs = require('f's');
+const path = require('pa't'h');
+const cron = require('node-cr'o'n');
 
 class ResponsiveContentAutomation {
   constructor() {
@@ -21,9 +21,9 @@ class ResponsiveContentAutomation {
   }
 
   initializeAutomation() {
-    this.contentPath = path.join(__dirname, 'responsive-content');
-    this.fixesPath = path.join(__dirname, 'content-fixes');
-    this.metricsPath = path.join(__dirname, 'content-metrics');
+    this.contentPath = path.join(__dirname, 'responsive-conte'n't');
+    this.fixesPath = path.join(__dirname, 'content-fix'e's');
+    this.metricsPath = path.join(__dirname, 'content-metri'c's');
     
     [this.contentPath, this.fixesPath, this.metricsPath].forEach(dir => {
       if (!fs.existsSync(dir)) {
@@ -37,45 +37,45 @@ class ResponsiveContentAutomation {
 
   loadContentTypes() {
     this.contentTypes = {
-      'pages': {
-        path: path.join(process.cwd(), 'pages'),
+      'pag'e's': {
+        path: path.join(process.cwd(), 'pag'e's'),
         extensions: ['.tsx', '.js', '.jsx'],
-        responsiveChecks: ['viewport-meta', 'responsive-classes', 'mobile-friendly']
+        responsiveChecks: ['viewport-me't'a', 'responsive-class'e's', 'mobile-friend'l'y']
       },
-      'components': {
-        path: path.join(process.cwd(), 'components'),
+      'componen't's': {
+        path: path.join(process.cwd(), 'componen't's'),
         extensions: ['.tsx', '.js', '.jsx'],
-        responsiveChecks: ['flexible-layouts', 'responsive-props', 'mobile-optimized']
+        responsiveChecks: ['flexible-layou't's', 'responsive-pro'p's', 'mobile-optimiz'e'd']
       },
-      'styles': {
-        path: path.join(process.cwd(), 'styles'),
+      'styl'e's': {
+        path: path.join(process.cwd(), 'styl'e's'),
         extensions: ['.css', '.scss', '.sass'],
-        responsiveChecks: ['media-queries', 'flexible-units', 'mobile-first']
+        responsiveChecks: ['media-queri'e's', 'flexible-uni't's', 'mobile-fir's't']
       }
     };
   }
 
   loadCronJobs() {
     this.cronJobs = {
-      'content-scanning': {
+      'content-scanni'n'g': {
         schedule: '* * * * *', // Every minute
         job: () => this.scanContent(),
-        description: 'Continuous content scanning'
+        description: 'Continuou's' content scanning'
       },
-      'responsive-fixing': {
+      'responsive-fixi'n'g': {
         schedule: '*/2 * * * *', // Every 2 minutes
         job: () => this.applyResponsiveFixes(),
-        description: 'Apply responsive fixes'
+        description: 'Appl'y' responsive fixes'
       },
-      'accessibility-improvement': {
+      'accessibility-improveme'n't': {
         schedule: '*/5 * * * *', // Every 5 minutes
         job: () => this.improveAccessibility(),
-        description: 'Improve accessibility'
+        description: 'Improv'e' accessibility'
       },
-      'performance-optimization': {
+      'performance-optimizati'o'n': {
         schedule: '*/10 * * * *', // Every 10 minutes
         job: () => this.optimizePerformance(),
-        description: 'Optimize performance'
+        description: 'Optimiz'e' performance'
       }
     };
   }
@@ -109,7 +109,7 @@ class ResponsiveContentAutomation {
       totalFiles += files.length;
 
       for (const file of files) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const issues = this.analyzeResponsiveness(content, config.responsiveChecks);
         
         if (issues.length === 0) {
@@ -132,7 +132,7 @@ class ResponsiveContentAutomation {
 
     this.fixes.forEach((issues, filePath) => {
       try {
-        let content = fs.readFileSync(filePath, 'utf8');
+        let content = fs.readFileSync(filePath, 'ut'f'8');
         let modified = false;
 
         issues.forEach(issue => {
@@ -169,11 +169,11 @@ class ResponsiveContentAutomation {
 
       for (const file of files) {
         try {
-          let content = fs.readFileSync(file, 'utf8');
+          let content = fs.readFileSync(file, 'ut'f'8');
           let modified = false;
 
           // Add alt text to images
-          if (content.includes('<img') && !content.includes('alt=')) {
+          if (content.includes('<img') && !content.includes('al't'=')) {
             content = content.replace(
               /<img([^>]*)>/g,
               '<img$1 alt="Accessible image" />'
@@ -183,7 +183,7 @@ class ResponsiveContentAutomation {
           }
 
           // Add aria labels to buttons
-          if (content.includes('<button') && !content.includes('aria-label')) {
+          if (content.includes('<button') && !content.includes('aria-lab'e'l')) {
             content = content.replace(
               /<button([^>]*)>/g,
               '<button$1 aria-label="Interactive button" />'
@@ -227,11 +227,11 @@ class ResponsiveContentAutomation {
 
       for (const file of files) {
         try {
-          let content = fs.readFileSync(file, 'utf8');
+          let content = fs.readFileSync(file, 'ut'f'8');
           let modified = false;
 
           // Optimize images with lazy loading
-          if (content.includes('<img') && !content.includes('loading=')) {
+          if (content.includes('<img') && !content.includes('loadin'g'=')) {
             content = content.replace(
               /<img([^>]*)>/g,
               '<img$1 loading="lazy" />'
@@ -241,7 +241,7 @@ class ResponsiveContentAutomation {
           }
 
           // Add preload for critical resources
-          if (content.includes('<Head>') && !content.includes('rel="preload"')) {
+          if (content.includes('<Head>') && !content.includes('re'l'="preload"')) {
             content = content.replace(
               '<Head>',
               `<Head>
@@ -253,10 +253,10 @@ class ResponsiveContentAutomation {
           }
 
           // Optimize CSS classes
-          if (content.includes('className=')) {
+          if (content.includes('classNam'e'=')) {
             content = content.replace(
               /className="([^"]*)\s+([^"]*)"/g,
-              'className="$1 $2"'
+              'classNam'e'="$1 $2"'
             );
             modified = true;
             optimizations++;
@@ -286,7 +286,7 @@ class ResponsiveContentAutomation {
     const items = fs.readdirSync(dirPath, { recursive: true });
     
     items.forEach(item => {
-      if (typeof item === 'string') {
+      if (typeof item === 'strin'g') {
         const filePath = path.join(dirPath, item);
         const ext = path.extname(item);
         
@@ -304,59 +304,59 @@ class ResponsiveContentAutomation {
     
     checks.forEach(check => {
       switch (check) {
-        case 'viewport-meta':
-          if (!content.includes('viewport') && !content.includes('meta')) {
-            issues.push({ type: 'missing-viewport-meta', severity: 'high' });
+        case 'viewport-me't'a':
+          if (!content.includes('viewpo'r't') && !content.includes('me't'a')) {
+            issues.push({ type: 'missing-viewport-me't'a', severity: 'hi'g'h' });
           }
           break;
           
-        case 'responsive-classes':
-          if (!content.includes('className') && !content.includes('class=')) {
-            issues.push({ type: 'missing-responsive-classes', severity: 'medium' });
+        case 'responsive-class'e's':
+          if (!content.includes('classNa'm'e') && !content.includes('clas's'=')) {
+            issues.push({ type: 'missing-responsive-class'e's', severity: 'medi'u'm' });
           }
           break;
           
-        case 'mobile-friendly':
-          if (!content.includes('mobile') && !content.includes('responsive')) {
-            issues.push({ type: 'not-mobile-friendly', severity: 'medium' });
+        case 'mobile-friend'l'y':
+          if (!content.includes('mobi'l'e') && !content.includes('responsi'v'e')) {
+            issues.push({ type: 'not-mobile-friend'l'y', severity: 'medi'u'm' });
           }
           break;
           
-        case 'flexible-layouts':
-          if (!content.includes('flex') && !content.includes('grid')) {
-            issues.push({ type: 'missing-flexible-layouts', severity: 'medium' });
+        case 'flexible-layou't's':
+          if (!content.includes('fl'e'x') && !content.includes('gr'i'd')) {
+            issues.push({ type: 'missing-flexible-layou't's', severity: 'medi'u'm' });
           }
           break;
           
-        case 'responsive-props':
-          if (!content.includes('sm:') && !content.includes('md:') && !content.includes('lg:')) {
-            issues.push({ type: 'missing-responsive-props', severity: 'low' });
+        case 'responsive-pro'p's':
+          if (!content.includes('s'm':') && !content.includes('m'd':') && !content.includes('l'g':')) {
+            issues.push({ type: 'missing-responsive-pro'p's', severity: 'l'o'w' });
           }
           break;
           
-        case 'mobile-optimized':
-          if (!content.includes('mobile') && !content.includes('touch')) {
-            issues.push({ type: 'not-mobile-optimized', severity: 'medium' });
+        case 'mobile-optimiz'e'd':
+          if (!content.includes('mobi'l'e') && !content.includes('tou'c'h')) {
+            issues.push({ type: 'not-mobile-optimiz'e'd', severity: 'medi'u'm' });
           }
           break;
           
-        case 'media-queries':
+        case 'media-queri'e's':
           if (content.includes('@media')) {
             this.metrics.responsiveElements++;
           } else {
-            issues.push({ type: 'missing-media-queries', severity: 'medium' });
+            issues.push({ type: 'missing-media-queri'e's', severity: 'medi'u'm' });
           }
           break;
           
-        case 'flexible-units':
-          if (!content.includes('rem') && !content.includes('em') && !content.includes('vw')) {
-            issues.push({ type: 'missing-flexible-units', severity: 'low' });
+        case 'flexible-uni't's':
+          if (!content.includes('r'e'm') && !content.includes('e'm') && !content.includes('v'w')) {
+            issues.push({ type: 'missing-flexible-uni't's', severity: 'l'o'w' });
           }
           break;
           
-        case 'mobile-first':
-          if (!content.includes('mobile-first') && !content.includes('min-width')) {
-            issues.push({ type: 'not-mobile-first', severity: 'medium' });
+        case 'mobile-fir's't':
+          if (!content.includes('mobile-fir's't') && !content.includes('min-wid't'h')) {
+            issues.push({ type: 'not-mobile-fir's't', severity: 'medi'u'm' });
           }
           break;
       }
@@ -367,7 +367,7 @@ class ResponsiveContentAutomation {
 
   getResponsiveFix(issue) {
     switch (issue.type) {
-      case 'missing-viewport-meta':
+      case 'missing-viewport-me't'a':
         return (content) => {
           if (content.includes('<Head>')) {
             return content.replace(
@@ -379,7 +379,7 @@ class ResponsiveContentAutomation {
           return content;
         };
         
-      case 'missing-responsive-classes':
+      case 'missing-responsive-class'e's':
         return (content) => {
           return content.replace(
             '<div>',
@@ -387,39 +387,39 @@ class ResponsiveContentAutomation {
           );
         };
         
-      case 'not-mobile-friendly':
+      case 'not-mobile-friend'l'y':
         return (content) => {
           return content.replace(
             /className="([^"]*)"/g,
-            'className="$1 mobile-friendly"'
+            'classNam'e'="$1 mobile-friendly"'
           );
         };
         
-      case 'missing-flexible-layouts':
+      case 'missing-flexible-layou't's':
         return (content) => {
           return content.replace(
             /className="([^"]*)"/g,
-            'className="$1 flex flex-col sm:flex-row"'
+            'classNam'e'="$1 flex flex-col sm:flex-row"'
           );
         };
         
-      case 'missing-responsive-props':
+      case 'missing-responsive-pro'p's':
         return (content) => {
           return content.replace(
             /className="([^"]*)"/g,
-            'className="$1 sm:text-sm md:text-base lg:text-lg"'
+            'classNam'e'="$1 sm:text-sm md:text-base lg:text-lg"'
           );
         };
         
-      case 'not-mobile-optimized':
+      case 'not-mobile-optimiz'e'd':
         return (content) => {
           return content.replace(
             /className="([^"]*)"/g,
-            'className="$1 touch-friendly"'
+            'classNam'e'="$1 touch-friendly"'
           );
         };
         
-      case 'missing-media-queries':
+      case 'missing-media-queri'e's':
         return (content) => {
           return content + `
 @media (max-width: 768px) {
@@ -429,7 +429,7 @@ class ResponsiveContentAutomation {
 }`;
         };
         
-      case 'missing-flexible-units':
+      case 'missing-flexible-uni't's':
         return (content) => {
           return content.replace(
             /(\d+)px/g,
@@ -437,11 +437,11 @@ class ResponsiveContentAutomation {
           );
         };
         
-      case 'not-mobile-first':
+      case 'not-mobile-fir's't':
         return (content) => {
           return content.replace(
             /className="([^"]*)"/g,
-            'className="$1 mobile-first"'
+            'classNam'e'="$1 mobile-first"'
           );
         };
         
@@ -453,7 +453,7 @@ class ResponsiveContentAutomation {
   getAutomationStatus() {
     return {
       automationId: this.automationId,
-      status: 'running',
+      status: 'runni'n'g',
       contentTypes: Object.keys(this.contentTypes),
       metrics: this.metrics,
       pendingFixes: this.fixes.size

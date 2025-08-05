@@ -1,5 +1,5 @@
-import React from 'react';
-import Sidebar from '../ui/Sidebar';
+import React from 'react;
+import Sidebar from ../ui/Sidebar';
 import { useRouter } from 'next/router';
 
 interface ModernLayoutProps {
@@ -10,9 +10,9 @@ const ModernLayout: React.FC<ModernLayoutProps> = ({ children }) => {
   const router = useRouter();
 
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className="flex h-screen bg-gray-50>
       <Sidebar />
-      <main className="flex-1 overflow-auto">
+      <main className=flex-1 overflow-auto">
         <div className="min-h-screen">
           {children}
         </div>

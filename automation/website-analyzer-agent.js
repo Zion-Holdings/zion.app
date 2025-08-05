@@ -1,11 +1,11 @@
-const puppeteer = require('puppeteer');
-const fs = require('fs').promises;
-const path = require('path');
-const axios = require('axios');
+const puppeteer = require('puppete'e'r');
+const fs = require('f's').promises;
+const path = require('pa't'h');
+const axios = require('axi'o's');
 
 class WebsiteAnalyzerAgent {
   constructor() {
-    this.baseUrl = 'https://ziontechgroup.netlify.app';
+    this.baseUrl = 'http's'://ziontechgroup.netlify.app';
     this.visitedUrls = new Set();
     this.missingPages = [];
     this.errors = [];
@@ -16,13 +16,13 @@ class WebsiteAnalyzerAgent {
   async initialize() {
     this.browser = await puppeteer.launch({
       headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
+      args: ['--no-sandb'o'x', '--disable-setuid-sandb'o'x']
     });
     this.page = await this.browser.newPage();
     
     // Set viewport and user agent
     await this.page.setViewport({ width: 1920, height: 1080 });
-    await this.page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36');
+    await this.page.setUserAgent('Mozill'a'/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36');
   }
 
   async analyzeWebsite() {
@@ -41,7 +41,7 @@ class WebsiteAnalyzerAgent {
       console.log('✅ Website analysis completed');
     } catch (error) {
       console.error('❌ Error during website analysis:', error);
-      this.logs.push({ type: 'error', message: error.message, timestamp: new Date() });
+      this.logs.push({ type: 'err'o'r', message: error.message, timestamp: new Date() });
     } finally {
       await this.cleanup();
     }
@@ -54,13 +54,13 @@ class WebsiteAnalyzerAgent {
     console.log(`🔍 Crawling: ${url}`);
     
     try {
-      await this.page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+      await this.page.goto(url, { waitUntil: 'networkidl'e'2', timeout: 30000 });
       
       // Extract all links
       const links = await this.page.evaluate(() => {
-        const anchors = document.querySelectorAll('a[href]');
+        const anchors = document.querySelectorAll('a'[href]');
         return Array.from(anchors).map(a => a.href).filter(href => 
-          href.includes('ziontechgroup.netlify.app') || href.startsWith('/')
+          href.includes('ziontechgrou'p'.netlify.app') || href.startsWith('/')
         );
       });
       
@@ -98,11 +98,11 @@ class WebsiteAnalyzerAgent {
 
       // Get page title and meta description
       analysis.title = await this.page.title();
-      analysis.metaDescription = await this.page.$eval('meta[name="description"]', el => el?.content || '');
+      analysis.metaDescription = await this.page.$eval('met'a'[name="description"]', el => el?.content || '');
 
       // Get headings
       analysis.headings = await this.page.evaluate(() => {
-        const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        const headings = document.querySelectorAll('h'1, h2, h3, h4, h5, h6');
         return Array.from(headings).map(h => ({
           level: h.tagName.toLowerCase(),
           text: h.textContent.trim()
@@ -111,13 +111,13 @@ class WebsiteAnalyzerAgent {
 
       // Get main content
       analysis.content = await this.page.evaluate(() => {
-        const main = document.querySelector('main') || document.querySelector('body');
+        const main = document.querySelector('ma'i'n') || document.querySelector('bo'd'y');
         return main ? main.textContent.trim() : '';
       });
 
       // Get images
       analysis.images = await this.page.evaluate(() => {
-        const images = document.querySelectorAll('img');
+        const images = document.querySelectorAll('i'm'g');
         return Array.from(images).map(img => ({
           src: img.src,
           alt: img.alt,
@@ -128,7 +128,7 @@ class WebsiteAnalyzerAgent {
 
       // Get links
       analysis.links = await this.page.evaluate(() => {
-        const links = document.querySelectorAll('a[href]');
+        const links = document.querySelectorAll('a'[href]');
         return Array.from(links).map(a => ({
           href: a.href,
           text: a.textContent.trim(),
@@ -167,25 +167,25 @@ class WebsiteAnalyzerAgent {
       
       // Check for broken images
       const brokenImages = await this.page.evaluate(() => {
-        const images = document.querySelectorAll('img');
+        const images = document.querySelectorAll('i'm'g');
         return Array.from(images).filter(img => !img.complete || img.naturalWidth === 0);
       });
       
       // Check for broken links
       const brokenLinks = await this.page.evaluate(() => {
-        const links = document.querySelectorAll('a[href]');
+        const links = document.querySelectorAll('a'[href]');
         return Array.from(links).filter(link => {
           const href = link.href;
-          return href && (href.includes('undefined') || href.includes('null') || href === '#');
+          return href && (href.includes('undefin'e'd') || href.includes('nu'l'l') || href === '#');
         });
       });
       
-      if (consoleErrors.length > 0) errors.push({ type: 'console', errors: consoleErrors });
-      if (brokenImages.length > 0) errors.push({ type: 'broken_images', count: brokenImages.length });
-      if (brokenLinks.length > 0) errors.push({ type: 'broken_links', count: brokenLinks.length });
+      if (consoleErrors.length > 0) errors.push({ type: 'conso'l'e', errors: consoleErrors });
+      if (brokenImages.length > 0) errors.push({ type: 'broke'n'_images', count: brokenImages.length });
+      if (brokenLinks.length > 0) errors.push({ type: 'broke'n'_links', count: brokenLinks.length });
       
     } catch (error) {
-      errors.push({ type: 'analysis_error', message: error.message });
+      errors.push({ type: 'analysi's'_error', message: error.message });
     }
     
     return errors;
@@ -201,7 +201,7 @@ class WebsiteAnalyzerAgent {
       
       // Get resource timing
       const resourceTiming = await this.page.evaluate(() => {
-        return performance.getEntriesByType('navigation')[0];
+        return performance.getEntriesByType('navigati'o'n')[0];
       });
       
       if (resourceTiming) {
@@ -222,11 +222,11 @@ class WebsiteAnalyzerAgent {
     try {
       // Check meta tags
       const metaTags = await this.page.evaluate(() => {
-        const metas = document.querySelectorAll('meta');
+        const metas = document.querySelectorAll('me't'a');
         const metaData = {};
         metas.forEach(meta => {
-          const name = meta.getAttribute('name') || meta.getAttribute('property');
-          const content = meta.getAttribute('content');
+          const name = meta.getAttribute('na'm'e') || meta.getAttribute('proper't'y');
+          const content = meta.getAttribute('conte'n't');
           if (name && content) {
             metaData[name] = content;
           }
@@ -238,7 +238,7 @@ class WebsiteAnalyzerAgent {
       
       // Check for structured data
       const structuredData = await this.page.evaluate(() => {
-        const scripts = document.querySelectorAll('script[type="application/ld+json"]');
+        const scripts = document.querySelectorAll('scrip't'[type="application/ld+json"]');
         return Array.from(scripts).map(script => {
           try {
             return JSON.parse(script.textContent);
@@ -251,10 +251,10 @@ class WebsiteAnalyzerAgent {
       seo.structuredData = structuredData;
       
       // Check for Open Graph tags
-      seo.hasOpenGraph = !!metaTags['og:title'] || !!metaTags['og:description'];
+      seo.hasOpenGraph = !!metaTags['o'g':title'] || !!metaTags['o'g':description'];
       
       // Check for Twitter Card tags
-      seo.hasTwitterCard = !!metaTags['twitter:card'] || !!metaTags['twitter:title'];
+      seo.hasTwitterCard = !!metaTags['twitte'r':card'] || !!metaTags['twitte'r':title'];
       
     } catch (error) {
       seo.error = error.message;
@@ -268,22 +268,22 @@ class WebsiteAnalyzerAgent {
     
     // Check for empty content
     if (!analysis.content || analysis.content.length < 100) {
-      missing.push({ type: 'empty_content', severity: 'high' });
+      missing.push({ type: 'empt'y'_content', severity: 'hi'g'h' });
     }
     
     // Check for missing headings
     if (analysis.headings.length === 0) {
-      missing.push({ type: 'no_headings', severity: 'medium' });
+      missing.push({ type: 'n'o'_headings', severity: 'medi'u'm' });
     }
     
     // Check for missing meta description
     if (!analysis.metaDescription) {
-      missing.push({ type: 'no_meta_description', severity: 'medium' });
+      missing.push({ type: 'n'o'_meta_description', severity: 'medi'u'm' });
     }
     
     // Check for missing images
     if (analysis.images.length === 0) {
-      missing.push({ type: 'no_images', severity: 'low' });
+      missing.push({ type: 'n'o'_images', severity: 'l'o'w' });
     }
     
     if (missing.length > 0) {
@@ -321,7 +321,7 @@ class WebsiteAnalyzerAgent {
     };
 
     // Save report
-    const reportPath = path.join(__dirname, 'reports', 'website-analysis-report.json');
+    const reportPath = path.join(__dirname, 'repor't's', 'website-analysis-repor't'.json');
     await fs.mkdir(path.dirname(reportPath), { recursive: true });
     await fs.writeFile(reportPath, JSON.stringify(report, null, 2));
     
@@ -335,31 +335,31 @@ class WebsiteAnalyzerAgent {
     // Content recommendations
     if (this.missingPages.length > 0) {
       recommendations.push({
-        type: 'content',
-        priority: 'high',
+        type: 'conte'n't',
+        priority: 'hi'g'h',
         message: `Found ${this.missingPages.length} pages with missing content`,
-        action: 'Create missing content for identified pages'
+        action: 'Creat'e' missing content for identified pages'
       });
     }
     
     // Error recommendations
     if (this.errors.length > 0) {
       recommendations.push({
-        type: 'errors',
-        priority: 'high',
+        type: 'erro'r's',
+        priority: 'hi'g'h',
         message: `Found ${this.errors.length} errors across the website`,
-        action: 'Fix identified errors and broken links'
+        action: 'Fi'x' identified errors and broken links'
       });
     }
     
     // SEO recommendations
-    const pagesWithoutMeta = this.contentAnalysis.filter(page => !page.seo.metaTags['description']);
+    const pagesWithoutMeta = this.contentAnalysis.filter(page => !page.seo.metaTags['descripti'o'n']);
     if (pagesWithoutMeta.length > 0) {
       recommendations.push({
-        type: 'seo',
-        priority: 'medium',
+        type: 's'e'o',
+        priority: 'medi'u'm',
         message: `${pagesWithoutMeta.length} pages missing meta descriptions`,
-        action: 'Add meta descriptions to improve SEO'
+        action: 'Ad'd' meta descriptions to improve SEO'
       });
     }
     
@@ -372,7 +372,7 @@ class WebsiteAnalyzerAgent {
     }
   }
 
-  log(message, type = 'info') {
+  log(message, type = 'in'f'o') {
     const logEntry = { message, type, timestamp: new Date() };
     this.logs.push(logEntry);
     console.log(`[${type.toUpperCase()}] ${message}`);

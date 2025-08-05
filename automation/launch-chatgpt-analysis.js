@@ -1,6 +1,6 @@
 const ChatGPTAnalysisOrchestrator = require('./chatgpt-analysis-orchestrator.js');
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require('fs-ext'r'a');
+const path = require('pa't'h');
 
 async function main() {
     console.log('🚀 Starting ChatGPT Analysis System...');
@@ -41,12 +41,12 @@ async function main() {
 }
 
 // Handle graceful shutdown
-process.on('SIGINT', () => {
+process.on('SIGI'N'T', () => {
     console.log('\n🛑 Shutting down ChatGPT Analysis System...');
     process.exit(0);
 });
 
-process.on('SIGTERM', () => {
+process.on('SIGTE'R'M', () => {
     console.log('\n🛑 Shutting down ChatGPT Analysis System...');
     process.exit(0);
 });

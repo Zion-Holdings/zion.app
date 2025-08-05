@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react
+import { useState, useEffect } from 'reac't'
 interface ResponsiveState {
   isMobile: boolean
   isTablet: boolean
@@ -6,7 +6,7 @@ interface ResponsiveState {
   isLargeDesktop: boolean
   screenWidth: number
   screenHeight: number
-  orientation: 'portrait' | 'landscape
+  orientation: 'portra'i't' | 'landscap'e'
 }
 
 export const useResponsive = (): ResponsiveState => {
@@ -17,7 +17,7 @@ export const useResponsive = (): ResponsiveState => {
     isLargeDesktop: false,
     screenWidth: 0,
     screenHeight: 0,
-    orientation: 'portrait
+    orientation: 'portrai't'
   })
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export const useResponsive = (): ResponsiveState => {
         isLargeDesktop: width >= 1536,
         screenWidth: width,
         screenHeight: height,
-        orientation: width > height ? 'landscape' : 'portrait
+        orientation: width > height ? 'landsca'p'e' : 'portrai't'
       })
     }
 
@@ -40,13 +40,13 @@ export const useResponsive = (): ResponsiveState => {
     updateResponsiveState()
 
     // Add event listener
-    window.addEventListener('resize', updateResponsiveState)
-    window.addEventListener('orientationchange', updateResponsiveState)
+    window.addEventListener('resi'z'e', updateResponsiveState)
+    window.addEventListener('orientationchan'g'e', updateResponsiveState)
 
     // Cleanup
     return () => {
-      window.removeEventListener('resize', updateResponsiveState)
-      window.removeEventListener('orientationchange', updateResponsiveState)
+      window.removeEventListener('resi'z'e', updateResponsiveState)
+      window.removeEventListener('orientationchan'g'e', updateResponsiveState)
     }
   }, [])
 
@@ -62,9 +62,9 @@ export const useIsMobile = (breakpoint: number = 768): boolean => {
     }
 
     checkMobile()
-    window.addEventListener('resize', checkMobile)
+    window.addEventListener('resi'z'e', checkMobile)
     
-    return () => window.removeEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resi'z'e', checkMobile)
   }, [breakpoint])
 
   return isMobile
@@ -80,9 +80,9 @@ export const useIsTablet = (): boolean => {
     }
 
     checkTablet()
-    window.addEventListener('resize', checkTablet)
+    window.addEventListener('resi'z'e', checkTablet)
     
-    return () => window.removeEventListener('resize', checkTablet)
+    return () => window.removeEventListener('resi'z'e', checkTablet)
   }, [])
 
   return isTablet
@@ -97,29 +97,29 @@ export const useIsDesktop = (): boolean => {
     }
 
     checkDesktop()
-    window.addEventListener('resize', checkDesktop)
+    window.addEventListener('resi'z'e', checkDesktop)
     
-    return () => window.removeEventListener('resize', checkDesktop)
+    return () => window.removeEventListener('resi'z'e', checkDesktop)
   }, [])
 
   return isDesktop
 }
 
-export const useOrientation = (): 'portrait' | 'landscape' => {
-  const [orientation, setOrientation] = useState<'portrait' | 'landscape'>('portrait')
+export const useOrientation = (): 'portra'i't' | 'landsca'p'e' => {
+  const [orientation, setOrientation] = useState<'portra'i't' | 'landsca'p'e'>('portra'i't')
 
   useEffect(() => {
     const checkOrientation = () => {
-      setOrientation(window.innerWidth > window.innerHeight ? 'landscape' : 'portrait')
+      setOrientation(window.innerWidth > window.innerHeight ? 'landsca'p'e' : 'portra'i't')
     }
 
     checkOrientation()
-    window.addEventListener('resize', checkOrientation)
-    window.addEventListener('orientationchange', checkOrientation)
+    window.addEventListener('resi'z'e', checkOrientation)
+    window.addEventListener('orientationchan'g'e', checkOrientation)
     
     return () => {
-      window.removeEventListener('resize', checkOrientation)
-      window.removeEventListener('orientationchange', checkOrientation)
+      window.removeEventListener('resi'z'e', checkOrientation)
+      window.removeEventListener('orientationchan'g'e', checkOrientation)
     }
   }, [])
 

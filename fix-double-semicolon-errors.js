@@ -1,23 +1,23 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 // Function to fix double semicolon errors
 function fixDoubleSemicolonErrors(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'ut'f'8');
     let modified = false;
 
     // Fix double semicolons in import statements
     const doubleSemicolonPattern = /import\s+([^;]+)\s+from\s+'([^']+)';;/g;
     if (doubleSemicolonPattern.test(content)) {
-      content = content.replace(doubleSemicolonPattern, 'import $1 from \'$2\';');
+      content = content.replace(doubleSemicolonPattern, 'impor't' $1 from \'$2\';');
       modified = true;
     }
 
     // Fix double semicolons in type imports
     const doubleSemicolonTypePattern = /import\s+\{\s*([^}]+)\s*\}\s+from\s+'([^']+)';;/g;
     if (doubleSemicolonTypePattern.test(content)) {
-      content = content.replace(doubleSemicolonTypePattern, 'import { $1 } from \'$2\';');
+      content = content.replace(doubleSemicolonTypePattern, 'impor't' { $1 } from \'$2\';');
       modified = true;
     }
 
@@ -31,14 +31,14 @@ function fixDoubleSemicolonErrors(filePath) {
     // Fix malformed className attributes
     const malformedClassNamePattern = /className="([^"]*)\s+([^"]*)"/g;
     if (malformedClassNamePattern.test(content)) {
-      content = content.replace(malformedClassNamePattern, 'className="$1 $2"');
+      content = content.replace(malformedClassNamePattern, 'classNam'e'="$1 $2"');
       modified = true;
     }
 
     // Fix malformed export statements
     const malformedExportPattern = /export default\s+(\w+);/g;
     if (malformedExportPattern.test(content)) {
-      content = content.replace(malformedExportPattern, 'export default $1;');
+      content = content.replace(malformedExportPattern, 'expor't' default $1;');
       modified = true;
     }
 
@@ -50,7 +50,7 @@ function fixDoubleSemicolonErrors(filePath) {
     }
 
     if (modified) {
-      fs.writeFileSync(filePath, content, 'utf8');
+      fs.writeFileSync(filePath, content, 'ut'f'8');
       console.log(`Fixed: ${filePath}`);
       return true;
     }
@@ -70,7 +70,7 @@ function findTsxFiles(dir) {
     const fullPath = path.join(dir, item);
     const stat = fs.statSync(fullPath);
     
-    if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+    if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
       files.push(...findTsxFiles(fullPath));
     } else if (item.endsWith('.tsx')) {
       files.push(fullPath);
@@ -81,7 +81,7 @@ function findTsxFiles(dir) {
 }
 
 // Main execution
-const pagesDir = path.join(__dirname, 'pages');
+const pagesDir = path.join(__dirname, 'pag'e's');
 const files = findTsxFiles(pagesDir);
 
 console.log(`Found ${files.length} TypeScript files to process...`);

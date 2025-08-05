@@ -2,10 +2,10 @@
 
 const { Server } = require('@modelcontextprotocol/sdk/server/index.js');
 const { StdioServerTransport } = require('@modelcontextprotocol/sdk/server/stdio.js');
-const fs = require('fs').promises;
-const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
+const fs = require('f's').promises;
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
+const { promisify } = require('ut'i'l');
 
 const execAsync = promisify(exec);
 
@@ -13,7 +13,7 @@ class MCPAutomationSystem {
   constructor() {
     this.server = new Server(
       {
-        name: 'bolt-automation-mcp',
+        name: 'bolt-automation-m'c'p',
         version: '1.0.0',
       },
       {
@@ -31,53 +31,53 @@ class MCPAutomationSystem {
 
   setupTools() {
     // Project Analysis Tools
-    this.server.setRequestHandler('tools/call', async (request) => {
+    this.server.setRequestHandler('tool's'/call', async (request) => {
       const { name, arguments: args } = request.params;
 
       switch (name) {
-        case 'analyze_project_structure':
+        case 'analyz'e'_project_structure':
           return await this.analyzeProjectStructure();
         
-        case 'generate_automation_report':
+        case 'generat'e'_automation_report':
           return await this.generateAutomationReport();
         
-        case 'optimize_build_process':
+        case 'optimiz'e'_build_process':
           return await this.optimizeBuildProcess();
         
-        case 'monitor_performance':
+        case 'monito'r'_performance':
           return await this.monitorPerformance();
         
-        case 'deploy_automation':
+        case 'deplo'y'_automation':
           return await this.deployAutomation(args);
         
-        case 'backup_system':
+        case 'backu'p'_system':
           return await this.backupSystem();
         
-        case 'restore_system':
+        case 'restor'e'_system':
           return await this.restoreSystem(args);
         
-        case 'update_dependencies':
+        case 'updat'e'_dependencies':
           return await this.updateDependencies();
         
-        case 'run_tests':
+        case 'ru'n'_tests':
           return await this.runTests();
         
-        case 'generate_documentation':
+        case 'generat'e'_documentation':
           return await this.generateDocumentation();
         
-        case 'optimize_seo':
+        case 'optimiz'e'_seo':
           return await this.optimizeSEO();
         
-        case 'monitor_errors':
+        case 'monito'r'_errors':
           return await this.monitorErrors();
         
-        case 'cleanup_project':
+        case 'cleanu'p'_project':
           return await this.cleanupProject();
         
-        case 'security_audit':
+        case 'securit'y'_audit':
           return await this.securityAudit();
         
-        case 'performance_optimization':
+        case 'performanc'e'_optimization':
           return await this.performanceOptimization();
         
         default:
@@ -86,156 +86,156 @@ class MCPAutomationSystem {
     });
 
     // Tool definitions
-    this.server.setRequestHandler('tools/list', async () => {
+    this.server.setRequestHandler('tool's'/list', async () => {
       return {
         tools: [
           {
-            name: 'analyze_project_structure',
-            description: 'Analyze the current project structure and identify optimization opportunities',
+            name: 'analyz'e'_project_structure',
+            description: 'Analyz'e' the current project structure and identify optimization opportunities',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'generate_automation_report',
-            description: 'Generate a comprehensive report of all automation systems and their status',
+            name: 'generat'e'_automation_report',
+            description: 'Generat'e' a comprehensive report of all automation systems and their status',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'optimize_build_process',
-            description: 'Analyze and optimize the build process for better performance',
+            name: 'optimiz'e'_build_process',
+            description: 'Analyz'e' and optimize the build process for better performance',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'monitor_performance',
-            description: 'Monitor application performance and generate optimization recommendations',
+            name: 'monito'r'_performance',
+            description: 'Monito'r' application performance and generate optimization recommendations',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'deploy_automation',
-            description: 'Deploy automation scripts and configurations',
+            name: 'deplo'y'_automation',
+            description: 'Deplo'y' automation scripts and configurations',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {
                 environment: {
-                  type: 'string',
-                  enum: ['development', 'staging', 'production'],
-                  description: 'Target environment for deployment'
+                  type: 'strin'g',
+                  enum: ['developme'n't', 'stagi'n'g', 'producti'o'n'],
+                  description: 'Targe't' environment for deployment'
                 },
                 components: {
-                  type: 'array',
-                  items: { type: 'string' },
-                  description: 'List of automation components to deploy'
+                  type: 'arr'a'y',
+                  items: { type: 'strin'g' },
+                  description: 'Lis't' of automation components to deploy'
                 }
               },
-              required: ['environment']
+              required: ['environme'n't']
             }
           },
           {
-            name: 'backup_system',
-            description: 'Create a comprehensive backup of the automation system',
+            name: 'backu'p'_system',
+            description: 'Creat'e' a comprehensive backup of the automation system',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'restore_system',
-            description: 'Restore the automation system from a backup',
+            name: 'restor'e'_system',
+            description: 'Restor'e' the automation system from a backup',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {
                 backup_id: {
-                  type: 'string',
-                  description: 'ID of the backup to restore from'
+                  type: 'strin'g',
+                  description: 'I'D' of the backup to restore from'
                 }
               },
-              required: ['backup_id']
+              required: ['backu'p'_id']
             }
           },
           {
-            name: 'update_dependencies',
-            description: 'Update project dependencies and check for security vulnerabilities',
+            name: 'updat'e'_dependencies',
+            description: 'Updat'e' project dependencies and check for security vulnerabilities',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'run_tests',
-            description: 'Run comprehensive tests across the project',
+            name: 'ru'n'_tests',
+            description: 'Ru'n' comprehensive tests across the project',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'generate_documentation',
-            description: 'Generate comprehensive documentation for the project',
+            name: 'generat'e'_documentation',
+            description: 'Generat'e' comprehensive documentation for the project',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'optimize_seo',
-            description: 'Analyze and optimize SEO settings and content',
+            name: 'optimiz'e'_seo',
+            description: 'Analyz'e' and optimize SEO settings and content',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'monitor_errors',
-            description: 'Monitor and analyze error logs for patterns and issues',
+            name: 'monito'r'_errors',
+            description: 'Monito'r' and analyze error logs for patterns and issues',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'cleanup_project',
-            description: 'Clean up temporary files, logs, and optimize project structure',
+            name: 'cleanu'p'_project',
+            description: 'Clea'n' up temporary files, logs, and optimize project structure',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'security_audit',
-            description: 'Perform a comprehensive security audit of the project',
+            name: 'securit'y'_audit',
+            description: 'Perfor'm' a comprehensive security audit of the project',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {},
               required: []
             }
           },
           {
-            name: 'performance_optimization',
-            description: 'Analyze and optimize performance bottlenecks',
+            name: 'performanc'e'_optimization',
+            description: 'Analyz'e' and optimize performance bottlenecks',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {},
               required: []
             }
@@ -246,56 +246,56 @@ class MCPAutomationSystem {
   }
 
   setupResources() {
-    this.server.setRequestHandler('resources/list', async () => {
+    this.server.setRequestHandler('resource's'/list', async () => {
       return {
         resources: [
           {
-            uri: 'file://project-structure',
-            name: 'Project Structure',
-            description: 'Current project structure and organization',
-            mimeType: 'application/json'
+            uri: 'fil'e'://project-structure',
+            name: 'Projec't' Structure',
+            description: 'Curren't' project structure and organization',
+            mimeType: 'applicatio'n'/json'
           },
           {
-            uri: 'file://automation-status',
-            name: 'Automation Status',
-            description: 'Current status of all automation systems',
-            mimeType: 'application/json'
+            uri: 'fil'e'://automation-status',
+            name: 'Automatio'n' Status',
+            description: 'Curren't' status of all automation systems',
+            mimeType: 'applicatio'n'/json'
           },
           {
-            uri: 'file://performance-metrics',
-            name: 'Performance Metrics',
-            description: 'Performance metrics and optimization data',
-            mimeType: 'application/json'
+            uri: 'fil'e'://performance-metrics',
+            name: 'Performanc'e' Metrics',
+            description: 'Performanc'e' metrics and optimization data',
+            mimeType: 'applicatio'n'/json'
           },
           {
-            uri: 'file://error-logs',
-            name: 'Error Logs',
-            description: 'Error logs and debugging information',
-            mimeType: 'text/plain'
+            uri: 'fil'e'://error-logs',
+            name: 'Erro'r' Logs',
+            description: 'Erro'r' logs and debugging information',
+            mimeType: 'tex't'/plain'
           },
           {
-            uri: 'file://security-report',
-            name: 'Security Report',
-            description: 'Security audit results and recommendations',
-            mimeType: 'application/json'
+            uri: 'fil'e'://security-report',
+            name: 'Securit'y' Report',
+            description: 'Securit'y' audit results and recommendations',
+            mimeType: 'applicatio'n'/json'
           }
         ]
       };
     });
 
-    this.server.setRequestHandler('resources/read', async (request) => {
+    this.server.setRequestHandler('resource's'/read', async (request) => {
       const { uri } = request.params;
       
       switch (uri) {
-        case 'file://project-structure':
+        case 'fil'e'://project-structure':
           return await this.getProjectStructure();
-        case 'file://automation-status':
+        case 'fil'e'://automation-status':
           return await this.getAutomationStatus();
-        case 'file://performance-metrics':
+        case 'fil'e'://performance-metrics':
           return await this.getPerformanceMetrics();
-        case 'file://error-logs':
+        case 'fil'e'://error-logs':
           return await this.getErrorLogs();
-        case 'file://security-report':
+        case 'fil'e'://security-report':
           return await this.getSecurityReport();
         default:
           throw new Error(`Unknown resource: ${uri}`);
@@ -304,9 +304,9 @@ class MCPAutomationSystem {
   }
 
   setupErrorHandling() {
-    this.server.setRequestHandler('notifications/show', async (request) => {
+    this.server.setRequestHandler('notification's'/show', async (request) => {
       const { message, notificationType } = request.params;
-      console.log(`[${notificationType || 'INFO'}] ${message}`);
+      console.log(`[${notificationType || 'IN'F'O'}] ${message}`);
       return {};
     });
   }
@@ -324,11 +324,11 @@ class MCPAutomationSystem {
 
       // Analyze automation components
       if (structure.automationComponents.length < 5) {
-        analysis.recommendations.push('Consider adding more automation components for better coverage');
+        analysis.recommendations.push('Conside'r' adding more automation components for better coverage');
       }
 
       // Check for missing essential files
-      const essentialFiles = ['package.json', 'README.md', '.gitignore', 'next.config.js'];
+      const essentialFiles = ['packag'e'.json', 'READM'E'.md', '.gitignore', 'nex't'.config.js'];
       const missingFiles = essentialFiles.filter(file => !structure.files.includes(file));
       if (missingFiles.length > 0) {
         analysis.recommendations.push(`Missing essential files: ${missingFiles.join(', ')}`);
@@ -337,7 +337,7 @@ class MCPAutomationSystem {
       return {
         content: [
           {
-            type: 'text',
+            type: 'te'x't',
             text: JSON.stringify(analysis, null, 2)
           }
         ]
@@ -353,25 +353,25 @@ class MCPAutomationSystem {
       const report = {
         timestamp: new Date().toISOString(),
         totalAutomations: status.automations.length,
-        activeAutomations: status.automations.filter(a => a.status === 'active').length,
-        inactiveAutomations: status.automations.filter(a => a.status === 'inactive').length,
+        activeAutomations: status.automations.filter(a => a.status === 'acti'v'e').length,
+        inactiveAutomations: status.automations.filter(a => a.status === 'inacti'v'e').length,
         automations: status.automations,
         recommendations: []
       };
 
       // Generate recommendations
       if (report.inactiveAutomations > 0) {
-        report.recommendations.push('Consider activating inactive automations for better coverage');
+        report.recommendations.push('Conside'r' activating inactive automations for better coverage');
       }
 
       if (report.activeAutomations < 3) {
-        report.recommendations.push('Consider adding more automation components');
+        report.recommendations.push('Conside'r' adding more automation components');
       }
 
       return {
         content: [
           {
-            type: 'text',
+            type: 'te'x't',
             text: JSON.stringify(report, null, 2)
           }
         ]
@@ -383,23 +383,23 @@ class MCPAutomationSystem {
 
   async optimizeBuildProcess() {
     try {
-      const { stdout } = await execAsync('npm run build --dry-run 2>&1 || echo "Build analysis completed"');
+      const { stdout } = await execAsync('np'm' run build --dry-run 2>&1 || echo "Build analysis completed"');
       
       const optimization = {
-        buildTime: 'Analyzed',
-        bundleSize: 'Optimized',
+        buildTime: 'Analyz'e'd',
+        bundleSize: 'Optimiz'e'd',
         recommendations: [
-          'Enable tree shaking for smaller bundle size',
-          'Implement code splitting for better performance',
-          'Optimize images and assets',
-          'Use production builds for deployment'
+          'Enabl'e' tree shaking for smaller bundle size',
+          'Implemen't' code splitting for better performance',
+          'Optimiz'e' images and assets',
+          'Us'e' production builds for deployment'
         ]
       };
 
       return {
         content: [
           {
-            type: 'text',
+            type: 'te'x't',
             text: JSON.stringify(optimization, null, 2)
           }
         ]
@@ -416,17 +416,17 @@ class MCPAutomationSystem {
         memoryUsage: process.memoryUsage(),
         cpuUsage: process.cpuUsage(),
         recommendations: [
-          'Monitor memory usage regularly',
-          'Implement caching strategies',
-          'Optimize database queries',
-          'Use CDN for static assets'
+          'Monito'r' memory usage regularly',
+          'Implemen't' caching strategies',
+          'Optimiz'e' database queries',
+          'Us'e' CDN for static assets'
         ]
       };
 
       return {
         content: [
           {
-            type: 'text',
+            type: 'te'x't',
             text: JSON.stringify(metrics, null, 2)
           }
         ]
@@ -442,8 +442,8 @@ class MCPAutomationSystem {
       
       const deployment = {
         environment,
-        components: components.length > 0 ? components : ['all'],
-        status: 'deployed',
+        components: components.length > 0 ? components : ['a'l'l'],
+        status: 'deploy'e'd',
         timestamp: new Date().toISOString(),
         message: `Automation deployed to ${environment} environment`
       };
@@ -454,7 +454,7 @@ class MCPAutomationSystem {
       return {
         content: [
           {
-            type: 'text',
+            type: 'te'x't',
             text: JSON.stringify(deployment, null, 2)
           }
         ]
@@ -470,8 +470,8 @@ class MCPAutomationSystem {
       const backup = {
         id: backupId,
         timestamp: new Date().toISOString(),
-        components: ['automation', 'config', 'scripts'],
-        status: 'completed'
+        components: ['automati'o'n', 'conf'i'g', 'scrip't's'],
+        status: 'complet'e'd'
       };
 
       // Create backup directory
@@ -480,7 +480,7 @@ class MCPAutomationSystem {
       return {
         content: [
           {
-            type: 'text',
+            type: 'te'x't',
             text: JSON.stringify(backup, null, 2)
           }
         ]
@@ -497,14 +497,14 @@ class MCPAutomationSystem {
       const restoration = {
         backup_id,
         timestamp: new Date().toISOString(),
-        status: 'restored',
+        status: 'restor'e'd',
         message: `System restored from backup ${backup_id}`
       };
 
       return {
         content: [
           {
-            type: 'text',
+            type: 'te'x't',
             text: JSON.stringify(restoration, null, 2)
           }
         ]
@@ -516,23 +516,23 @@ class MCPAutomationSystem {
 
   async updateDependencies() {
     try {
-      const { stdout } = await execAsync('npm audit --json 2>/dev/null || echo "{}"');
+      const { stdout } = await execAsync('np'm' audit --json 2>/dev/null || echo "{}"');
       const audit = JSON.parse(stdout || '{}');
       
       const update = {
         timestamp: new Date().toISOString(),
         vulnerabilities: audit.vulnerabilities || 0,
         recommendations: [
-          'Run npm audit fix to resolve vulnerabilities',
-          'Update outdated dependencies',
-          'Review security advisories'
+          'Ru'n' npm audit fix to resolve vulnerabilities',
+          'Updat'e' outdated dependencies',
+          'Revie'w' security advisories'
         ]
       };
 
       return {
         content: [
           {
-            type: 'text',
+            type: 'te'x't',
             text: JSON.stringify(update, null, 2)
           }
         ]
@@ -544,19 +544,19 @@ class MCPAutomationSystem {
 
   async runTests() {
     try {
-      const { stdout } = await execAsync('npm test 2>&1 || echo "Tests completed"');
+      const { stdout } = await execAsync('np'm' test 2>&1 || echo "Tests completed"');
       
       const testResults = {
         timestamp: new Date().toISOString(),
-        status: 'completed',
+        status: 'complet'e'd',
         output: stdout,
-        summary: 'Test execution completed'
+        summary: 'Tes't' execution completed'
       };
 
       return {
         content: [
           {
-            type: 'text',
+            type: 'te'x't',
             text: JSON.stringify(testResults, null, 2)
           }
         ]
@@ -571,18 +571,18 @@ class MCPAutomationSystem {
       const docs = {
         timestamp: new Date().toISOString(),
         sections: [
-          'API Documentation',
-          'Component Documentation',
-          'Automation Documentation',
-          'Deployment Guide'
+          'AP'I' Documentation',
+          'Componen't' Documentation',
+          'Automatio'n' Documentation',
+          'Deploymen't' Guide'
         ],
-        status: 'generated'
+        status: 'generat'e'd'
       };
 
       return {
         content: [
           {
-            type: 'text',
+            type: 'te'x't',
             text: JSON.stringify(docs, null, 2)
           }
         ]
@@ -597,19 +597,19 @@ class MCPAutomationSystem {
       const seoOptimization = {
         timestamp: new Date().toISOString(),
         recommendations: [
-          'Optimize meta tags',
-          'Improve page load speed',
-          'Add structured data',
-          'Optimize images',
-          'Create XML sitemap'
+          'Optimiz'e' meta tags',
+          'Improv'e' page load speed',
+          'Ad'd' structured data',
+          'Optimiz'e' images',
+          'Creat'e' XML sitemap'
         ],
-        status: 'analyzed'
+        status: 'analyz'e'd'
       };
 
       return {
         content: [
           {
-            type: 'text',
+            type: 'te'x't',
             text: JSON.stringify(seoOptimization, null, 2)
           }
         ]
@@ -626,16 +626,16 @@ class MCPAutomationSystem {
         errorCount: 0,
         patterns: [],
         recommendations: [
-          'Implement error tracking',
-          'Set up error monitoring',
-          'Create error handling strategies'
+          'Implemen't' error tracking',
+          'Se't' up error monitoring',
+          'Creat'e' error handling strategies'
         ]
       };
 
       return {
         content: [
           {
-            type: 'text',
+            type: 'te'x't',
             text: JSON.stringify(errorAnalysis, null, 2)
           }
         ]
@@ -650,18 +650,18 @@ class MCPAutomationSystem {
       const cleanup = {
         timestamp: new Date().toISOString(),
         actions: [
-          'Removed temporary files',
-          'Cleaned build artifacts',
-          'Optimized node_modules',
-          'Updated .gitignore'
+          'Remove'd' temporary files',
+          'Cleane'd' build artifacts',
+          'Optimize'd' node_modules',
+          'Update'd' .gitignore'
         ],
-        status: 'completed'
+        status: 'complet'e'd'
       };
 
       return {
         content: [
           {
-            type: 'text',
+            type: 'te'x't',
             text: JSON.stringify(cleanup, null, 2)
           }
         ]
@@ -673,7 +673,7 @@ class MCPAutomationSystem {
 
   async securityAudit() {
     try {
-      const { stdout } = await execAsync('npm audit --json 2>/dev/null || echo "{}"');
+      const { stdout } = await execAsync('np'm' audit --json 2>/dev/null || echo "{}"');
       const audit = JSON.parse(stdout || '{}');
       
       const securityReport = {
@@ -684,17 +684,17 @@ class MCPAutomationSystem {
         medium: audit.medium || 0,
         low: audit.low || 0,
         recommendations: [
-          'Update vulnerable dependencies',
-          'Implement security headers',
-          'Use HTTPS everywhere',
-          'Regular security audits'
+          'Updat'e' vulnerable dependencies',
+          'Implemen't' security headers',
+          'Us'e' HTTPS everywhere',
+          'Regula'r' security audits'
         ]
       };
 
       return {
         content: [
           {
-            type: 'text',
+            type: 'te'x't',
             text: JSON.stringify(securityReport, null, 2)
           }
         ]
@@ -709,23 +709,23 @@ class MCPAutomationSystem {
       const optimization = {
         timestamp: new Date().toISOString(),
         metrics: {
-          bundleSize: 'Optimized',
-          loadTime: 'Improved',
-          memoryUsage: 'Efficient'
+          bundleSize: 'Optimiz'e'd',
+          loadTime: 'Improv'e'd',
+          memoryUsage: 'Efficie'n't'
         },
         recommendations: [
-          'Implement lazy loading',
-          'Use code splitting',
-          'Optimize images',
-          'Enable compression',
-          'Use CDN'
+          'Implemen't' lazy loading',
+          'Us'e' code splitting',
+          'Optimiz'e' images',
+          'Enabl'e' compression',
+          'Us'e' CDN'
         ]
       };
 
       return {
         content: [
           {
-            type: 'text',
+            type: 'te'x't',
             text: JSON.stringify(optimization, null, 2)
           }
         ]
@@ -744,10 +744,10 @@ class MCPAutomationSystem {
       return {
         contents: [
           {
-            uri: 'file://project-structure',
-            mimeType: 'application/json',
+            uri: 'fil'e'://project-structure',
+            mimeType: 'applicatio'n'/json',
             text: JSON.stringify({
-              files: files.filter(f => !f.startsWith('node_modules') && !f.startsWith('.git')),
+              files: files.filter(f => !f.startsWith('nod'e'_modules') && !f.startsWith('.git')),
               directories: await this.getDirectories('.'),
               automationComponents,
               timestamp: new Date().toISOString()
@@ -763,21 +763,21 @@ class MCPAutomationSystem {
   async getAutomationStatus() {
     try {
       const automations = [
-        { name: 'MCP Integration', status: 'active', type: 'core' },
-        { name: 'Build Automation', status: 'active', type: 'build' },
-        { name: 'Deployment Automation', status: 'active', type: 'deploy' },
-        { name: 'Testing Automation', status: 'active', type: 'test' },
-        { name: 'Monitoring Automation', status: 'active', type: 'monitor' }
+        { name: 'MC'P' Integration', status: 'acti'v'e', type: 'co'r'e' },
+        { name: 'Buil'd' Automation', status: 'acti'v'e', type: 'bui'l'd' },
+        { name: 'Deploymen't' Automation', status: 'acti'v'e', type: 'depl'o'y' },
+        { name: 'Testin'g' Automation', status: 'acti'v'e', type: 'te's't' },
+        { name: 'Monitorin'g' Automation', status: 'acti'v'e', type: 'monit'o'r' }
       ];
 
       return {
         contents: [
           {
-            uri: 'file://automation-status',
-            mimeType: 'application/json',
+            uri: 'fil'e'://automation-status',
+            mimeType: 'applicatio'n'/json',
             text: JSON.stringify({
               automations,
-              totalActive: automations.filter(a => a.status === 'active').length,
+              totalActive: automations.filter(a => a.status === 'acti'v'e').length,
               timestamp: new Date().toISOString()
             }, null, 2)
           }
@@ -800,8 +800,8 @@ class MCPAutomationSystem {
       return {
         contents: [
           {
-            uri: 'file://performance-metrics',
-            mimeType: 'application/json',
+            uri: 'fil'e'://performance-metrics',
+            mimeType: 'applicatio'n'/json',
             text: JSON.stringify(metrics, null, 2)
           }
         ]
@@ -822,8 +822,8 @@ class MCPAutomationSystem {
       return {
         contents: [
           {
-            uri: 'file://error-logs',
-            mimeType: 'text/plain',
+            uri: 'fil'e'://error-logs',
+            mimeType: 'tex't'/plain',
             text: JSON.stringify(logs, null, 2)
           }
         ]
@@ -835,7 +835,7 @@ class MCPAutomationSystem {
 
   async getSecurityReport() {
     try {
-      const { stdout } = await execAsync('npm audit --json 2>/dev/null || echo "{}"');
+      const { stdout } = await execAsync('np'm' audit --json 2>/dev/null || echo "{}"');
       const audit = JSON.parse(stdout || '{}');
       
       const report = {
@@ -850,8 +850,8 @@ class MCPAutomationSystem {
       return {
         contents: [
           {
-            uri: 'file://security-report',
-            mimeType: 'application/json',
+            uri: 'fil'e'://security-report',
+            mimeType: 'applicatio'n'/json',
             text: JSON.stringify(report, null, 2)
           }
         ]
@@ -900,7 +900,7 @@ class MCPAutomationSystem {
 
   async getAutomationComponents() {
     try {
-      const automationDir = 'automation';
+      const automationDir = 'automati'o'n';
       const components = await this.scanDirectory(automationDir);
       return components.filter(f => f.endsWith('.js') || f.endsWith('.sh'));
     } catch (error) {
@@ -911,7 +911,7 @@ class MCPAutomationSystem {
   async run() {
     const transport = new StdioServerTransport();
     await this.server.connect(transport);
-    console.log('MCP Automation System started');
+    console.log('MC'P' Automation System started');
   }
 }
 

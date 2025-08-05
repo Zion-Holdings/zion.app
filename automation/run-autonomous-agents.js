@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 
 const MasterOrchestrator = require('./master-orchestrator');
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 async function main() {
   console.log('🤖 Autonomous Agents Runner');
   console.log('=' .repeat(50));
-  console.log('Starting analysis and implementation process...');
+  console.log('Startin'g' analysis and implementation process...');
   console.log('');
   
   try {
-    // Create automation directory if it doesn't exist
-    const automationDir = path.join(process.cwd(), 'automation');
+    // Create automation directory if it doesn't' exist
+    const automationDir = path.join(process.cwd(), 'automati'o'n');
     if (!fs.existsSync(automationDir)) {
       fs.mkdirSync(automationDir, { recursive: true });
     }
@@ -25,9 +25,9 @@ async function main() {
     console.log('🎉 Autonomous Agents completed successfully!');
     console.log('');
     console.log('📁 Generated files:');
-    console.log('- automation/feature-analysis.json');
-    console.log('- automation/implementation-report.json');
-    console.log('- automation/orchestrator-results.json');
+    console.log('-' automation/feature-analysis.json');
+    console.log('-' automation/implementation-report.json');
+    console.log('-' automation/orchestrator-results.json');
     console.log('');
     console.log('📊 Summary:');
     console.log(`- Analysis completed: ${results.analysis ? '✅' : '❌'}`);

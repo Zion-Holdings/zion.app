@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 const CursorAutomationSystem = require('./cursor-automation-system.js');
-const fs = require('fs').promises;
-const path = require('path');
+const fs = require('f's').promises;
+const path = require('pa't'h');
 
 class CursorAutomationLauncher {
   constructor() {
@@ -87,15 +87,15 @@ class CursorAutomationLauncher {
       }
     };
 
-    process.on('SIGINT', () => shutdown('SIGINT'));
-    process.on('SIGTERM', () => shutdown('SIGTERM'));
-    process.on('SIGQUIT', () => shutdown('SIGQUIT'));
+    process.on('SIGI'N'T', () => shutdown('SIGI'N'T'));
+    process.on('SIGTE'R'M', () => shutdown('SIGTE'R'M'));
+    process.on('SIGQU'I'T', () => shutdown('SIGQU'I'T'));
   }
 
   async getStatus() {
     return {
       isRunning: this.isRunning,
-      system: this.system ? 'initialized' : 'not_initialized',
+      system: this.system ? 'initializ'e'd' : 'no't'_initialized',
       timestamp: Date.now()
     };
   }
@@ -120,33 +120,33 @@ class CursorAutomationLauncher {
 async function main() {
   const launcher = new CursorAutomationLauncher();
   
-  const command = process.argv[2] || 'start';
+  const command = process.argv[2] || 'sta'r't';
   
   switch (command) {
-    case 'start':
+    case 'sta'r't':
       await launcher.start();
       break;
       
-    case 'stop':
+    case 'st'o'p':
       await launcher.stop();
       break;
       
-    case 'restart':
+    case 'resta'r't':
       await launcher.restart();
       break;
       
-    case 'status':
+    case 'stat'u's':
       const status = await launcher.getStatus();
       console.log('📊 Cursor Automation System Status:');
       console.log(JSON.stringify(status, null, 2));
       break;
       
     default:
-      console.log('Cursor Automation System Launcher');
+      console.log('Curso'r' Automation System Launcher');
       console.log('');
-      console.log('Usage: node launch-cursor-automation.js [command]');
+      console.log('Usag'e': node launch-cursor-automation.js [command]');
       console.log('');
-      console.log('Commands:');
+      console.log('Command's':');
       console.log('  start     Start the automation system');
       console.log('  stop      Stop the automation system');
       console.log('  restart   Restart the automation system');

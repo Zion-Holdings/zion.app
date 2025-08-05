@@ -2,12 +2,12 @@
 
 const { Server } = require('@modelcontextprotocol/sdk/server/index.js');
 const { StdioServerTransport } = require('@modelcontextprotocol/sdk/server/stdio.js');
-const fs = require('fs').promises;
-const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
-const chokidar = require('chokidar');
-const OpenAI = require('openai');
+const fs = require('f's').promises;
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
+const { promisify } = require('ut'i'l');
+const chokidar = require('chokid'a'r');
+const OpenAI = require('open'a'i');
 
 const execAsync = promisify(exec);
 
@@ -15,7 +15,7 @@ class CursorAutomationSystem {
   constructor() {
     this.server = new Server(
       {
-        name: 'cursor-automation-system',
+        name: 'cursor-automation-syst'e'm',
         version: '2.0.0',
       },
       {
@@ -42,53 +42,53 @@ class CursorAutomationSystem {
 
   setupTools() {
     // Cursor-Specific Automation Tools
-    this.server.setRequestHandler('tools/call', async (request) => {
+    this.server.setRequestHandler('tool's'/call', async (request) => {
       const { name, arguments: args } = request.params;
 
       switch (name) {
-        case 'cursor_auto_refactor':
+        case 'curso'r'_auto_refactor':
           return await this.autoRefactorCode(args);
         
-        case 'cursor_generate_tests':
+        case 'curso'r'_generate_tests':
           return await this.generateTests(args);
         
-        case 'cursor_optimize_performance':
+        case 'curso'r'_optimize_performance':
           return await this.optimizePerformance(args);
         
-        case 'cursor_fix_errors':
+        case 'curso'r'_fix_errors':
           return await this.fixErrors(args);
         
-        case 'cursor_generate_documentation':
+        case 'curso'r'_generate_documentation':
           return await this.generateDocumentation(args);
         
-        case 'cursor_analyze_code_quality':
+        case 'curso'r'_analyze_code_quality':
           return await this.analyzeCodeQuality(args);
         
-        case 'cursor_suggest_improvements':
+        case 'curso'r'_suggest_improvements':
           return await this.suggestImprovements(args);
         
-        case 'cursor_auto_commit':
+        case 'curso'r'_auto_commit':
           return await this.autoCommit(args);
         
-        case 'cursor_smart_completion':
+        case 'curso'r'_smart_completion':
           return await this.smartCompletion(args);
         
-        case 'cursor_code_review':
+        case 'curso'r'_code_review':
           return await this.codeReview(args);
         
-        case 'cursor_dependency_analysis':
+        case 'curso'r'_dependency_analysis':
           return await this.dependencyAnalysis(args);
         
-        case 'cursor_security_scan':
+        case 'curso'r'_security_scan':
           return await this.securityScan(args);
         
-        case 'cursor_performance_audit':
+        case 'curso'r'_performance_audit':
           return await this.performanceAudit(args);
         
-        case 'cursor_auto_deploy':
+        case 'curso'r'_auto_deploy':
           return await this.autoDeploy(args);
         
-        case 'cursor_monitor_changes':
+        case 'curso'r'_monitor_changes':
           return await this.monitorChanges(args);
         
         default:
@@ -97,186 +97,186 @@ class CursorAutomationSystem {
     });
 
     // Tool definitions
-    this.server.setRequestHandler('tools/list', async () => {
+    this.server.setRequestHandler('tool's'/list', async () => {
       return {
         tools: [
           {
-            name: 'cursor_auto_refactor',
-            description: 'Automatically refactor code for better quality and maintainability',
+            name: 'curso'r'_auto_refactor',
+            description: 'Automaticall'y' refactor code for better quality and maintainability',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {
-                filePath: { type: 'string', description: 'Path to the file to refactor' },
-                refactorType: { type: 'string', enum: ['extract', 'simplify', 'optimize', 'cleanup'] },
-                preserveComments: { type: 'boolean', default: true }
+                filePath: { type: 'strin'g', description: 'Pat'h' to the file to refactor' },
+                refactorType: { type: 'strin'g', enum: ['extra'c't', 'simpli'f'y', 'optimi'z'e', 'clean'u'p'] },
+                preserveComments: { type: 'boole'a'n', default: true }
               },
-              required: ['filePath']
+              required: ['filePa't'h']
             }
           },
           {
-            name: 'cursor_generate_tests',
-            description: 'Generate comprehensive tests for code files',
+            name: 'curso'r'_generate_tests',
+            description: 'Generat'e' comprehensive tests for code files',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {
-                filePath: { type: 'string', description: 'Path to the file to generate tests for' },
-                testFramework: { type: 'string', enum: ['jest', 'mocha', 'vitest'], default: 'jest' },
-                coverage: { type: 'boolean', default: true }
+                filePath: { type: 'strin'g', description: 'Pat'h' to the file to generate tests for' },
+                testFramework: { type: 'strin'g', enum: ['je's't', 'moc'h'a', 'vite's't'], default: 'je's't' },
+                coverage: { type: 'boole'a'n', default: true }
               },
-              required: ['filePath']
+              required: ['filePa't'h']
             }
           },
           {
-            name: 'cursor_optimize_performance',
-            description: 'Analyze and optimize code performance',
+            name: 'curso'r'_optimize_performance',
+            description: 'Analyz'e' and optimize code performance',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {
-                filePath: { type: 'string', description: 'Path to the file to optimize' },
-                optimizationType: { type: 'string', enum: ['memory', 'speed', 'bundle', 'all'], default: 'all' }
+                filePath: { type: 'strin'g', description: 'Pat'h' to the file to optimize' },
+                optimizationType: { type: 'strin'g', enum: ['memo'r'y', 'spe'e'd', 'bund'l'e', 'a'l'l'], default: 'a'l'l' }
               },
-              required: ['filePath']
+              required: ['filePa't'h']
             }
           },
           {
-            name: 'cursor_fix_errors',
-            description: 'Automatically fix common code errors and issues',
+            name: 'curso'r'_fix_errors',
+            description: 'Automaticall'y' fix common code errors and issues',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {
-                filePath: { type: 'string', description: 'Path to the file to fix' },
-                fixType: { type: 'string', enum: ['lint', 'type', 'logic', 'all'], default: 'all' }
+                filePath: { type: 'strin'g', description: 'Pat'h' to the file to fix' },
+                fixType: { type: 'strin'g', enum: ['li'n't', 'ty'p'e', 'log'i'c', 'a'l'l'], default: 'a'l'l' }
               },
-              required: ['filePath']
+              required: ['filePa't'h']
             }
           },
           {
-            name: 'cursor_generate_documentation',
-            description: 'Generate comprehensive documentation for code',
+            name: 'curso'r'_generate_documentation',
+            description: 'Generat'e' comprehensive documentation for code',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {
-                filePath: { type: 'string', description: 'Path to the file to document' },
-                docType: { type: 'string', enum: ['jsdoc', 'tsdoc', 'markdown', 'api'], default: 'jsdoc' }
+                filePath: { type: 'strin'g', description: 'Pat'h' to the file to document' },
+                docType: { type: 'strin'g', enum: ['jsd'o'c', 'tsd'o'c', 'markdo'w'n', 'a'p'i'], default: 'jsd'o'c' }
               },
-              required: ['filePath']
+              required: ['filePa't'h']
             }
           },
           {
-            name: 'cursor_analyze_code_quality',
-            description: 'Analyze code quality and provide detailed metrics',
+            name: 'curso'r'_analyze_code_quality',
+            description: 'Analyz'e' code quality and provide detailed metrics',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {
-                filePath: { type: 'string', description: 'Path to the file to analyze' },
-                metrics: { type: 'array', items: { type: 'string' }, default: ['complexity', 'maintainability', 'readability'] }
+                filePath: { type: 'strin'g', description: 'Pat'h' to the file to analyze' },
+                metrics: { type: 'arr'a'y', items: { type: 'strin'g' }, default: ['complexi't'y', 'maintainabili't'y', 'readabili't'y'] }
               },
-              required: ['filePath']
+              required: ['filePa't'h']
             }
           },
           {
-            name: 'cursor_suggest_improvements',
-            description: 'Suggest code improvements based on best practices',
+            name: 'curso'r'_suggest_improvements',
+            description: 'Sugges't' code improvements based on best practices',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {
-                filePath: { type: 'string', description: 'Path to the file to analyze' },
-                improvementType: { type: 'string', enum: ['style', 'performance', 'security', 'all'], default: 'all' }
+                filePath: { type: 'strin'g', description: 'Pat'h' to the file to analyze' },
+                improvementType: { type: 'strin'g', enum: ['sty'l'e', 'performan'c'e', 'securi't'y', 'a'l'l'], default: 'a'l'l' }
               },
-              required: ['filePath']
+              required: ['filePa't'h']
             }
           },
           {
-            name: 'cursor_auto_commit',
-            description: 'Automatically commit changes with intelligent commit messages',
+            name: 'curso'r'_auto_commit',
+            description: 'Automaticall'y' commit changes with intelligent commit messages',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {
-                files: { type: 'array', items: { type: 'string' }, description: 'Files to commit' },
-                message: { type: 'string', description: 'Custom commit message (optional)' },
-                analyzeChanges: { type: 'boolean', default: true }
+                files: { type: 'arr'a'y', items: { type: 'strin'g' }, description: 'File's' to commit' },
+                message: { type: 'strin'g', description: 'Custo'm' commit message (optional)' },
+                analyzeChanges: { type: 'boole'a'n', default: true }
               }
             }
           },
           {
-            name: 'cursor_smart_completion',
-            description: 'Provide intelligent code completion suggestions',
+            name: 'curso'r'_smart_completion',
+            description: 'Provid'e' intelligent code completion suggestions',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {
-                filePath: { type: 'string', description: 'Path to the file' },
-                position: { type: 'object', properties: { line: { type: 'number' }, character: { type: 'number' } } },
-                context: { type: 'string', description: 'Code context around cursor' }
+                filePath: { type: 'strin'g', description: 'Pat'h' to the file' },
+                position: { type: 'obje'c't', properties: { line: { type: 'numb'e'r' }, character: { type: 'numb'e'r' } } },
+                context: { type: 'strin'g', description: 'Cod'e' context around cursor' }
               },
-              required: ['filePath', 'position']
+              required: ['filePa't'h', 'positi'o'n']
             }
           },
           {
-            name: 'cursor_code_review',
-            description: 'Perform automated code review with detailed feedback',
+            name: 'curso'r'_code_review',
+            description: 'Perfor'm' automated code review with detailed feedback',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {
-                filePath: { type: 'string', description: 'Path to the file to review' },
-                reviewType: { type: 'string', enum: ['security', 'performance', 'quality', 'comprehensive'], default: 'comprehensive' }
+                filePath: { type: 'strin'g', description: 'Pat'h' to the file to review' },
+                reviewType: { type: 'strin'g', enum: ['securi't'y', 'performan'c'e', 'quali't'y', 'comprehensi'v'e'], default: 'comprehensi'v'e' }
               },
-              required: ['filePath']
+              required: ['filePa't'h']
             }
           },
           {
-            name: 'cursor_dependency_analysis',
-            description: 'Analyze and optimize dependencies',
+            name: 'curso'r'_dependency_analysis',
+            description: 'Analyz'e' and optimize dependencies',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {
-                packagePath: { type: 'string', default: 'package.json', description: 'Path to package.json' },
-                analysisType: { type: 'string', enum: ['security', 'performance', 'updates', 'all'], default: 'all' }
+                packagePath: { type: 'strin'g', default: 'packag'e'.json', description: 'Pat'h' to package.json' },
+                analysisType: { type: 'strin'g', enum: ['securi't'y', 'performan'c'e', 'updat'e's', 'a'l'l'], default: 'a'l'l' }
               }
             }
           },
           {
-            name: 'cursor_security_scan',
-            description: 'Perform security analysis of code',
+            name: 'curso'r'_security_scan',
+            description: 'Perfor'm' security analysis of code',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {
-                filePath: { type: 'string', description: 'Path to the file to scan' },
-                scanType: { type: 'string', enum: ['vulnerabilities', 'secrets', 'permissions', 'all'], default: 'all' }
+                filePath: { type: 'strin'g', description: 'Pat'h' to the file to scan' },
+                scanType: { type: 'strin'g', enum: ['vulnerabiliti'e's', 'secre't's', 'permissio'n's', 'a'l'l'], default: 'a'l'l' }
               },
-              required: ['filePath']
+              required: ['filePa't'h']
             }
           },
           {
-            name: 'cursor_performance_audit',
-            description: 'Perform comprehensive performance audit',
+            name: 'curso'r'_performance_audit',
+            description: 'Perfor'm' comprehensive performance audit',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {
-                auditType: { type: 'string', enum: ['bundle', 'runtime', 'build', 'all'], default: 'all' },
-                outputPath: { type: 'string', description: 'Path for audit report' }
+                auditType: { type: 'strin'g', enum: ['bund'l'e', 'runti'm'e', 'bui'l'd', 'a'l'l'], default: 'a'l'l' },
+                outputPath: { type: 'strin'g', description: 'Pat'h' for audit report' }
               }
             }
           },
           {
-            name: 'cursor_auto_deploy',
-            description: 'Automatically deploy changes with safety checks',
+            name: 'curso'r'_auto_deploy',
+            description: 'Automaticall'y' deploy changes with safety checks',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {
-                environment: { type: 'string', enum: ['staging', 'production'], default: 'staging' },
-                runTests: { type: 'boolean', default: true },
-                runSecurityScan: { type: 'boolean', default: true }
+                environment: { type: 'strin'g', enum: ['stagi'n'g', 'producti'o'n'], default: 'stagi'n'g' },
+                runTests: { type: 'boole'a'n', default: true },
+                runSecurityScan: { type: 'boole'a'n', default: true }
               }
             }
           },
           {
-            name: 'cursor_monitor_changes',
-            description: 'Monitor file changes and trigger appropriate automations',
+            name: 'curso'r'_monitor_changes',
+            description: 'Monito'r' file changes and trigger appropriate automations',
             inputSchema: {
-              type: 'object',
+              type: 'obje'c't',
               properties: {
-                watchPaths: { type: 'array', items: { type: 'string' }, description: 'Paths to watch' },
-                triggers: { type: 'array', items: { type: 'string' }, description: 'Automation triggers' }
+                watchPaths: { type: 'arr'a'y', items: { type: 'strin'g' }, description: 'Path's' to watch' },
+                triggers: { type: 'arr'a'y', items: { type: 'strin'g' }, description: 'Automatio'n' triggers' }
               }
             }
           }
@@ -286,31 +286,31 @@ class CursorAutomationSystem {
   }
 
   setupResources() {
-    this.server.setRequestHandler('resources/list', async () => {
+    this.server.setRequestHandler('resource's'/list', async () => {
       return {
         resources: [
           {
-            uri: 'file://cursor-automation-config.json',
-            name: 'Cursor Automation Configuration',
-            description: 'Configuration for Cursor automation system',
-            mimeType: 'application/json'
+            uri: 'fil'e'://cursor-automation-config.json',
+            name: 'Curso'r' Automation Configuration',
+            description: 'Configuratio'n' for Cursor automation system',
+            mimeType: 'applicatio'n'/json'
           },
           {
-            uri: 'file://cursor-automation-logs.json',
-            name: 'Cursor Automation Logs',
-            description: 'Logs of automation activities',
-            mimeType: 'application/json'
+            uri: 'fil'e'://cursor-automation-logs.json',
+            name: 'Curso'r' Automation Logs',
+            description: 'Log's' of automation activities',
+            mimeType: 'applicatio'n'/json'
           }
         ]
       };
     });
 
-    this.server.setRequestHandler('resources/read', async (request) => {
+    this.server.setRequestHandler('resource's'/read', async (request) => {
       const { uri } = request.params;
       
-      if (uri === 'file://cursor-automation-config.json') {
+      if (uri === 'fil'e'://cursor-automation-config.json') {
         return await this.getAutomationConfig();
-      } else if (uri === 'file://cursor-automation-logs.json') {
+      } else if (uri === 'fil'e'://cursor-automation-logs.json') {
         return await this.getAutomationLogs();
       }
       
@@ -319,38 +319,38 @@ class CursorAutomationSystem {
   }
 
   setupErrorHandling() {
-    process.on('uncaughtException', (error) => {
-      console.error('Uncaught Exception:', error);
-      this.logError('uncaught_exception', error.message);
+    process.on('uncaughtExcepti'o'n', (error) => {
+      console.error('Uncaugh't' Exception:', error);
+      this.logError('uncaugh't'_exception', error.message);
     });
 
-    process.on('unhandledRejection', (reason, promise) => {
-      console.error('Unhandled Rejection:', reason);
-      this.logError('unhandled_rejection', reason);
+    process.on('unhandledRejecti'o'n', (reason, promise) => {
+      console.error('Unhandle'd' Rejection:', reason);
+      this.logError('unhandle'd'_rejection', reason);
     });
   }
 
   setupFileWatching() {
     this.fileWatcher = chokidar.watch([
-      'src/**/*.{js,ts,jsx,tsx}',
-      'components/**/*.{js,ts,jsx,tsx}',
-      'pages/**/*.{js,ts,jsx,tsx}',
-      'utils/**/*.{js,ts}'
+      'sr'c'/**/*.{js,ts,jsx,tsx}',
+      'component's'/**/*.{js,ts,jsx,tsx}',
+      'page's'/**/*.{js,ts,jsx,tsx}',
+      'util's'/**/*.{js,ts}'
     ], {
       ignored: /(node_modules|\.git|\.next)/,
       persistent: true
     });
 
     this.fileWatcher
-      .on('change', (filePath) => this.handleFileChange(filePath))
-      .on('add', (filePath) => this.handleFileAdd(filePath))
-      .on('unlink', (filePath) => this.handleFileDelete(filePath));
+      .on('chan'g'e', (filePath) => this.handleFileChange(filePath))
+      .on('a'd'd', (filePath) => this.handleFileAdd(filePath))
+      .on('unli'n'k', (filePath) => this.handleFileDelete(filePath));
   }
 
   async handleFileChange(filePath) {
     console.log(`File changed: ${filePath}`);
     this.automationQueue.push({
-      type: 'file_change',
+      type: 'fil'e'_change',
       filePath,
       timestamp: Date.now()
     });
@@ -361,7 +361,7 @@ class CursorAutomationSystem {
   async handleFileAdd(filePath) {
     console.log(`File added: ${filePath}`);
     this.automationQueue.push({
-      type: 'file_add',
+      type: 'fil'e'_add',
       filePath,
       timestamp: Date.now()
     });
@@ -370,7 +370,7 @@ class CursorAutomationSystem {
   async handleFileDelete(filePath) {
     console.log(`File deleted: ${filePath}`);
     this.automationQueue.push({
-      type: 'file_delete',
+      type: 'fil'e'_delete',
       filePath,
       timestamp: Date.now()
     });
@@ -385,18 +385,18 @@ class CursorAutomationSystem {
       
       try {
         switch (task.type) {
-          case 'file_change':
+          case 'fil'e'_change':
             await this.autoRefactorCode({ filePath: task.filePath });
             await this.analyzeCodeQuality({ filePath: task.filePath });
             break;
-          case 'file_add':
+          case 'fil'e'_add':
             await this.generateTests({ filePath: task.filePath });
             await this.generateDocumentation({ filePath: task.filePath });
             break;
         }
       } catch (error) {
         console.error(`Error processing automation task: ${error.message}`);
-        this.logError('automation_task_error', error.message);
+        this.logError('automatio'n'_task_error', error.message);
       }
     }
 
@@ -404,10 +404,10 @@ class CursorAutomationSystem {
   }
 
   async autoRefactorCode(args) {
-    const { filePath, refactorType = 'optimize', preserveComments = true } = args;
+    const { filePath, refactorType = 'optimi'z'e', preserveComments = true } = args;
     
     try {
-      const content = await fs.readFile(filePath, 'utf8');
+      const content = await fs.readFile(filePath, 'ut'f'8');
       
       const prompt = `Refactor the following code for better quality and maintainability. 
       Refactor type: ${refactorType}
@@ -419,14 +419,14 @@ class CursorAutomationSystem {
       Provide the refactored code with explanations of changes.`;
 
       const completion = await this.openai.chat.completions.create({
-        model: 'gpt-4',
+        model: 'gpt'-'4',
         messages: [
           {
-            role: 'system',
-            content: 'You are an expert software engineer specializing in code refactoring. Provide clean, optimized code with clear explanations.'
+            role: 'syst'e'm',
+            content: 'Yo'u' are an expert software engineer specializing in code refactoring. Provide clean, optimized code with clear explanations.'
           },
           {
-            role: 'user',
+            role: 'us'e'r',
             content: prompt
           }
         ],
@@ -444,20 +444,20 @@ class CursorAutomationSystem {
 
       return {
         success: true,
-        message: 'Code refactored successfully',
+        message: 'Cod'e' refactored successfully',
         changes: refactoredCode
       };
     } catch (error) {
-      this.logError('auto_refactor_error', error.message);
+      this.logError('aut'o'_refactor_error', error.message);
       throw error;
     }
   }
 
   async generateTests(args) {
-    const { filePath, testFramework = 'jest', coverage = true } = args;
+    const { filePath, testFramework = 'je's't', coverage = true } = args;
     
     try {
-      const content = await fs.readFile(filePath, 'utf8');
+      const content = await fs.readFile(filePath, 'ut'f'8');
       const testFilePath = filePath.replace(/\.(js|ts|jsx|tsx)$/, `.test.$1`);
       
       const prompt = `Generate comprehensive tests for the following code using ${testFramework}.
@@ -470,14 +470,14 @@ class CursorAutomationSystem {
       Generate complete test file.`;
 
       const completion = await this.openai.chat.completions.create({
-        model: 'gpt-4',
+        model: 'gpt'-'4',
         messages: [
           {
-            role: 'system',
+            role: 'syst'e'm',
             content: `You are an expert in ${testFramework} testing. Generate comprehensive, well-structured tests.`
           },
           {
-            role: 'user',
+            role: 'us'e'r',
             content: prompt
           }
         ],
@@ -499,16 +499,16 @@ class CursorAutomationSystem {
         testFile: testFilePath
       };
     } catch (error) {
-      this.logError('generate_tests_error', error.message);
+      this.logError('generat'e'_tests_error', error.message);
       throw error;
     }
   }
 
   async optimizePerformance(args) {
-    const { filePath, optimizationType = 'all' } = args;
+    const { filePath, optimizationType = 'a'l'l' } = args;
     
     try {
-      const content = await fs.readFile(filePath, 'utf8');
+      const content = await fs.readFile(filePath, 'ut'f'8');
       
       const prompt = `Optimize the following code for performance. Focus on: ${optimizationType}.
       
@@ -518,14 +518,14 @@ class CursorAutomationSystem {
       Provide optimized code with performance improvements.`;
 
       const completion = await this.openai.chat.completions.create({
-        model: 'gpt-4',
+        model: 'gpt'-'4',
         messages: [
           {
-            role: 'system',
-            content: 'You are a performance optimization expert. Provide optimized code with clear explanations of improvements.'
+            role: 'syst'e'm',
+            content: 'Yo'u' are a performance optimization expert. Provide optimized code with clear explanations of improvements.'
           },
           {
-            role: 'user',
+            role: 'us'e'r',
             content: prompt
           }
         ],
@@ -543,20 +543,20 @@ class CursorAutomationSystem {
 
       return {
         success: true,
-        message: 'Code optimized for performance',
+        message: 'Cod'e' optimized for performance',
         optimizations: optimizedCode
       };
     } catch (error) {
-      this.logError('optimize_performance_error', error.message);
+      this.logError('optimiz'e'_performance_error', error.message);
       throw error;
     }
   }
 
   async fixErrors(args) {
-    const { filePath, fixType = 'all' } = args;
+    const { filePath, fixType = 'a'l'l' } = args;
     
     try {
-      const content = await fs.readFile(filePath, 'utf8');
+      const content = await fs.readFile(filePath, 'ut'f'8');
       
       const prompt = `Fix common errors in the following code. Focus on: ${fixType}.
       
@@ -566,14 +566,14 @@ class CursorAutomationSystem {
       Provide corrected code with explanations of fixes.`;
 
       const completion = await this.openai.chat.completions.create({
-        model: 'gpt-4',
+        model: 'gpt'-'4',
         messages: [
           {
-            role: 'system',
-            content: 'You are an expert at fixing code errors. Provide corrected code with clear explanations.'
+            role: 'syst'e'm',
+            content: 'Yo'u' are an expert at fixing code errors. Provide corrected code with clear explanations.'
           },
           {
-            role: 'user',
+            role: 'us'e'r',
             content: prompt
           }
         ],
@@ -591,20 +591,20 @@ class CursorAutomationSystem {
 
       return {
         success: true,
-        message: 'Code errors fixed successfully',
+        message: 'Cod'e' errors fixed successfully',
         fixes: fixedCode
       };
     } catch (error) {
-      this.logError('fix_errors_error', error.message);
+      this.logError('fi'x'_errors_error', error.message);
       throw error;
     }
   }
 
   async generateDocumentation(args) {
-    const { filePath, docType = 'jsdoc' } = args;
+    const { filePath, docType = 'jsd'o'c' } = args;
     
     try {
-      const content = await fs.readFile(filePath, 'utf8');
+      const content = await fs.readFile(filePath, 'ut'f'8');
       
       const prompt = `Generate ${docType} documentation for the following code.
       
@@ -614,14 +614,14 @@ class CursorAutomationSystem {
       Provide comprehensive documentation.`;
 
       const completion = await this.openai.chat.completions.create({
-        model: 'gpt-4',
+        model: 'gpt'-'4',
         messages: [
           {
-            role: 'system',
+            role: 'syst'e'm',
             content: `You are an expert in ${docType} documentation. Generate comprehensive, clear documentation.`
           },
           {
-            role: 'user',
+            role: 'us'e'r',
             content: prompt
           }
         ],
@@ -640,16 +640,16 @@ class CursorAutomationSystem {
         documentation: docFilePath
       };
     } catch (error) {
-      this.logError('generate_documentation_error', error.message);
+      this.logError('generat'e'_documentation_error', error.message);
       throw error;
     }
   }
 
   async analyzeCodeQuality(args) {
-    const { filePath, metrics = ['complexity', 'maintainability', 'readability'] } = args;
+    const { filePath, metrics = ['complexi't'y', 'maintainabili't'y', 'readabili't'y'] } = args;
     
     try {
-      const content = await fs.readFile(filePath, 'utf8');
+      const content = await fs.readFile(filePath, 'ut'f'8');
       
       const prompt = `Analyze the code quality focusing on: ${metrics.join(', ')}.
       
@@ -659,14 +659,14 @@ class CursorAutomationSystem {
       Provide detailed analysis with scores and recommendations.`;
 
       const completion = await this.openai.chat.completions.create({
-        model: 'gpt-4',
+        model: 'gpt'-'4',
         messages: [
           {
-            role: 'system',
-            content: 'You are a code quality expert. Provide detailed analysis with actionable recommendations.'
+            role: 'syst'e'm',
+            content: 'Yo'u' are a code quality expert. Provide detailed analysis with actionable recommendations.'
           },
           {
-            role: 'user',
+            role: 'us'e'r',
             content: prompt
           }
         ],
@@ -681,21 +681,21 @@ class CursorAutomationSystem {
 
       return {
         success: true,
-        message: 'Code quality analysis completed',
+        message: 'Cod'e' quality analysis completed',
         analysis: analysisPath,
         metrics: metrics
       };
     } catch (error) {
-      this.logError('analyze_code_quality_error', error.message);
+      this.logError('analyz'e'_code_quality_error', error.message);
       throw error;
     }
   }
 
   async suggestImprovements(args) {
-    const { filePath, improvementType = 'all' } = args;
+    const { filePath, improvementType = 'a'l'l' } = args;
     
     try {
-      const content = await fs.readFile(filePath, 'utf8');
+      const content = await fs.readFile(filePath, 'ut'f'8');
       
       const prompt = `Suggest improvements for the following code focusing on: ${improvementType}.
       
@@ -705,14 +705,14 @@ class CursorAutomationSystem {
       Provide specific, actionable improvement suggestions.`;
 
       const completion = await this.openai.chat.completions.create({
-        model: 'gpt-4',
+        model: 'gpt'-'4',
         messages: [
           {
-            role: 'system',
-            content: 'You are an expert at suggesting code improvements. Provide specific, actionable recommendations.'
+            role: 'syst'e'm',
+            content: 'Yo'u' are an expert at suggesting code improvements. Provide specific, actionable recommendations.'
           },
           {
-            role: 'user',
+            role: 'us'e'r',
             content: prompt
           }
         ],
@@ -727,11 +727,11 @@ class CursorAutomationSystem {
 
       return {
         success: true,
-        message: 'Improvement suggestions generated',
+        message: 'Improvemen't' suggestions generated',
         suggestions: suggestionsPath
       };
     } catch (error) {
-      this.logError('suggest_improvements_error', error.message);
+      this.logError('sugges't'_improvements_error', error.message);
       throw error;
     }
   }
@@ -744,7 +744,7 @@ class CursorAutomationSystem {
       
       if (!commitMessage && analyzeChanges) {
         // Analyze changes to generate intelligent commit message
-        const { stdout } = await execAsync('git diff --cached --name-only');
+        const { stdout } = await execAsync('gi't' diff --cached --name-only');
         const changedFiles = stdout.trim().split('\n').filter(Boolean);
         
         const prompt = `Generate a concise, descriptive commit message for the following changes:
@@ -753,14 +753,14 @@ class CursorAutomationSystem {
         Provide a conventional commit message.`;
 
         const completion = await this.openai.chat.completions.create({
-          model: 'gpt-4',
+          model: 'gpt'-'4',
           messages: [
             {
-              role: 'system',
-              content: 'You are an expert at writing conventional commit messages. Provide clear, descriptive messages.'
+              role: 'syst'e'm',
+              content: 'Yo'u' are an expert at writing conventional commit messages. Provide clear, descriptive messages.'
             },
             {
-              role: 'user',
+              role: 'us'e'r',
               content: prompt
             }
           ],
@@ -774,18 +774,18 @@ class CursorAutomationSystem {
       if (files && files.length > 0) {
         await execAsync(`git add ${files.join(' ')}`);
       } else {
-        await execAsync('git add .');
+        await execAsync('gi't' add .');
       }
       
       await execAsync(`git commit -m "${commitMessage}"`);
 
       return {
         success: true,
-        message: 'Changes committed successfully',
+        message: 'Change's' committed successfully',
         commitMessage: commitMessage
       };
     } catch (error) {
-      this.logError('auto_commit_error', error.message);
+      this.logError('aut'o'_commit_error', error.message);
       throw error;
     }
   }
@@ -802,14 +802,14 @@ class CursorAutomationSystem {
       Provide relevant code completion suggestions.`;
 
       const completion = await this.openai.chat.completions.create({
-        model: 'gpt-4',
+        model: 'gpt'-'4',
         messages: [
           {
-            role: 'system',
-            content: 'You are an expert at providing intelligent code completion. Provide relevant, context-aware suggestions.'
+            role: 'syst'e'm',
+            content: 'Yo'u' are an expert at providing intelligent code completion. Provide relevant, context-aware suggestions.'
           },
           {
-            role: 'user',
+            role: 'us'e'r',
             content: prompt
           }
         ],
@@ -820,20 +820,20 @@ class CursorAutomationSystem {
 
       return {
         success: true,
-        message: 'Code completion suggestions generated',
+        message: 'Cod'e' completion suggestions generated',
         suggestions: suggestions
       };
     } catch (error) {
-      this.logError('smart_completion_error', error.message);
+      this.logError('smar't'_completion_error', error.message);
       throw error;
     }
   }
 
   async codeReview(args) {
-    const { filePath, reviewType = 'comprehensive' } = args;
+    const { filePath, reviewType = 'comprehensi'v'e' } = args;
     
     try {
-      const content = await fs.readFile(filePath, 'utf8');
+      const content = await fs.readFile(filePath, 'ut'f'8');
       
       const prompt = `Perform a ${reviewType} code review for the following code:
       
@@ -843,14 +843,14 @@ class CursorAutomationSystem {
       Provide detailed review with feedback and suggestions.`;
 
       const completion = await this.openai.chat.completions.create({
-        model: 'gpt-4',
+        model: 'gpt'-'4',
         messages: [
           {
-            role: 'system',
-            content: 'You are an expert code reviewer. Provide thorough, constructive feedback.'
+            role: 'syst'e'm',
+            content: 'Yo'u' are an expert code reviewer. Provide thorough, constructive feedback.'
           },
           {
-            role: 'user',
+            role: 'us'e'r',
             content: prompt
           }
         ],
@@ -865,20 +865,20 @@ class CursorAutomationSystem {
 
       return {
         success: true,
-        message: 'Code review completed',
+        message: 'Cod'e' review completed',
         review: reviewPath
       };
     } catch (error) {
-      this.logError('code_review_error', error.message);
+      this.logError('cod'e'_review_error', error.message);
       throw error;
     }
   }
 
   async dependencyAnalysis(args) {
-    const { packagePath = 'package.json', analysisType = 'all' } = args;
+    const { packagePath = 'packag'e'.json', analysisType = 'a'l'l' } = args;
     
     try {
-      const content = await fs.readFile(packagePath, 'utf8');
+      const content = await fs.readFile(packagePath, 'ut'f'8');
       const packageJson = JSON.parse(content);
       
       const prompt = `Analyze the dependencies in package.json for ${analysisType}:
@@ -889,14 +889,14 @@ class CursorAutomationSystem {
       Provide detailed analysis and recommendations.`;
 
       const completion = await this.openai.chat.completions.create({
-        model: 'gpt-4',
+        model: 'gpt'-'4',
         messages: [
           {
-            role: 'system',
-            content: 'You are an expert at dependency analysis. Provide detailed insights and recommendations.'
+            role: 'syst'e'm',
+            content: 'Yo'u' are an expert at dependency analysis. Provide detailed insights and recommendations.'
           },
           {
-            role: 'user',
+            role: 'us'e'r',
             content: prompt
           }
         ],
@@ -906,25 +906,25 @@ class CursorAutomationSystem {
       const analysis = completion.choices[0].message.content;
       
       // Save analysis to file
-      const analysisPath = 'dependency-analysis.md';
+      const analysisPath = 'dependency-analysi's'.md';
       await fs.writeFile(analysisPath, analysis);
 
       return {
         success: true,
-        message: 'Dependency analysis completed',
+        message: 'Dependenc'y' analysis completed',
         analysis: analysisPath
       };
     } catch (error) {
-      this.logError('dependency_analysis_error', error.message);
+      this.logError('dependenc'y'_analysis_error', error.message);
       throw error;
     }
   }
 
   async securityScan(args) {
-    const { filePath, scanType = 'all' } = args;
+    const { filePath, scanType = 'a'l'l' } = args;
     
     try {
-      const content = await fs.readFile(filePath, 'utf8');
+      const content = await fs.readFile(filePath, 'ut'f'8');
       
       const prompt = `Perform a ${scanType} security scan of the following code:
       
@@ -934,14 +934,14 @@ class CursorAutomationSystem {
       Identify security vulnerabilities and provide recommendations.`;
 
       const completion = await this.openai.chat.completions.create({
-        model: 'gpt-4',
+        model: 'gpt'-'4',
         messages: [
           {
-            role: 'system',
-            content: 'You are a security expert. Identify vulnerabilities and provide secure alternatives.'
+            role: 'syst'e'm',
+            content: 'Yo'u' are a security expert. Identify vulnerabilities and provide secure alternatives.'
           },
           {
-            role: 'user',
+            role: 'us'e'r',
             content: prompt
           }
         ],
@@ -956,44 +956,44 @@ class CursorAutomationSystem {
 
       return {
         success: true,
-        message: 'Security scan completed',
+        message: 'Securit'y' scan completed',
         report: reportPath
       };
     } catch (error) {
-      this.logError('security_scan_error', error.message);
+      this.logError('securit'y'_scan_error', error.message);
       throw error;
     }
   }
 
   async performanceAudit(args) {
-    const { auditType = 'all', outputPath } = args;
+    const { auditType = 'a'l'l', outputPath } = args;
     
     try {
-      const auditPath = outputPath || 'performance-audit.md';
+      const auditPath = outputPath || 'performance-audi't'.md';
       
       let auditResults = '';
       
-      if (auditType === 'bundle' || auditType === 'all') {
+      if (auditType === 'bund'l'e' || auditType === 'a'l'l') {
         try {
-          const { stdout } = await execAsync('npm run build');
+          const { stdout } = await execAsync('np'm' run build');
           auditResults += `## Bundle Analysis\n\n${stdout}\n\n`;
         } catch (error) {
           auditResults += `## Bundle Analysis\n\nError: ${error.message}\n\n`;
         }
       }
       
-      if (auditType === 'runtime' || auditType === 'all') {
+      if (auditType === 'runti'm'e' || auditType === 'a'l'l') {
         try {
-          const { stdout } = await execAsync('npm run test -- --coverage');
+          const { stdout } = await execAsync('np'm' run test -- --coverage');
           auditResults += `## Runtime Performance\n\n${stdout}\n\n`;
         } catch (error) {
           auditResults += `## Runtime Performance\n\nError: ${error.message}\n\n`;
         }
       }
       
-      if (auditType === 'build' || auditType === 'all') {
+      if (auditType === 'bui'l'd' || auditType === 'a'l'l') {
         try {
-          const { stdout } = await execAsync('npm run build');
+          const { stdout } = await execAsync('np'm' run build');
           auditResults += `## Build Performance\n\n${stdout}\n\n`;
         } catch (error) {
           auditResults += `## Build Performance\n\nError: ${error.message}\n\n`;
@@ -1004,25 +1004,25 @@ class CursorAutomationSystem {
 
       return {
         success: true,
-        message: 'Performance audit completed',
+        message: 'Performanc'e' audit completed',
         report: auditPath
       };
     } catch (error) {
-      this.logError('performance_audit_error', error.message);
+      this.logError('performanc'e'_audit_error', error.message);
       throw error;
     }
   }
 
   async autoDeploy(args) {
-    const { environment = 'staging', runTests = true, runSecurityScan = true } = args;
+    const { environment = 'stagi'n'g', runTests = true, runSecurityScan = true } = args;
     
     try {
       let deploySteps = [];
       
       if (runTests) {
         try {
-          const { stdout } = await execAsync('npm run test');
-          deploySteps.push('Tests passed');
+          const { stdout } = await execAsync('np'm' run test');
+          deploySteps.push('Test's' passed');
         } catch (error) {
           throw new Error(`Tests failed: ${error.message}`);
         }
@@ -1030,8 +1030,8 @@ class CursorAutomationSystem {
       
       if (runSecurityScan) {
         try {
-          const { stdout } = await execAsync('npm audit');
-          deploySteps.push('Security scan completed');
+          const { stdout } = await execAsync('np'm' audit');
+          deploySteps.push('Securit'y' scan completed');
         } catch (error) {
           console.warn(`Security scan warning: ${error.message}`);
         }
@@ -1039,19 +1039,19 @@ class CursorAutomationSystem {
       
       // Build the application
       try {
-        const { stdout } = await execAsync('npm run build');
-        deploySteps.push('Build completed');
+        const { stdout } = await execAsync('np'm' run build');
+        deploySteps.push('Buil'd' completed');
       } catch (error) {
         throw new Error(`Build failed: ${error.message}`);
       }
       
       // Deploy to environment
-      if (environment === 'production') {
-        await execAsync('git push origin main');
-        deploySteps.push('Deployed to production');
+      if (environment === 'producti'o'n') {
+        await execAsync('gi't' push origin main');
+        deploySteps.push('Deploye'd' to production');
       } else {
-        await execAsync('git push origin staging');
-        deploySteps.push('Deployed to staging');
+        await execAsync('gi't' push origin staging');
+        deploySteps.push('Deploye'd' to staging');
       }
 
       return {
@@ -1060,7 +1060,7 @@ class CursorAutomationSystem {
         steps: deploySteps
       };
     } catch (error) {
-      this.logError('auto_deploy_error', error.message);
+      this.logError('aut'o'_deploy_error', error.message);
       throw error;
     }
   }
@@ -1072,12 +1072,12 @@ class CursorAutomationSystem {
       // This is handled by the file watcher setup
       return {
         success: true,
-        message: 'File monitoring active',
-        watching: watchPaths || ['src/**/*', 'components/**/*', 'pages/**/*'],
-        triggers: triggers || ['auto_refactor', 'generate_tests', 'analyze_quality']
+        message: 'Fil'e' monitoring active',
+        watching: watchPaths || ['sr'c'/**/*', 'component's'/**/*', 'page's'/**/*'],
+        triggers: triggers || ['aut'o'_refactor', 'generat'e'_tests', 'analyz'e'_quality']
       };
     } catch (error) {
-      this.logError('monitor_changes_error', error.message);
+      this.logError('monito'r'_changes_error', error.message);
       throw error;
     }
   }
@@ -1112,8 +1112,8 @@ class CursorAutomationSystem {
 
     return {
       contents: [{
-        uri: 'file://cursor-automation-config.json',
-        mimeType: 'application/json',
+        uri: 'fil'e'://cursor-automation-config.json',
+        mimeType: 'applicatio'n'/json',
         text: JSON.stringify(config, null, 2)
       }]
     };
@@ -1124,17 +1124,17 @@ class CursorAutomationSystem {
       timestamp: Date.now(),
       activities: [
         {
-          type: 'system_start',
+          type: 'syste'm'_start',
           timestamp: Date.now() - 3600000,
-          message: 'Cursor automation system started'
+          message: 'Curso'r' automation system started'
         }
       ]
     };
 
     return {
       contents: [{
-        uri: 'file://cursor-automation-logs.json',
-        mimeType: 'application/json',
+        uri: 'fil'e'://cursor-automation-logs.json',
+        mimeType: 'applicatio'n'/json',
         text: JSON.stringify(logs, null, 2)
       }]
     };
@@ -1149,9 +1149,9 @@ class CursorAutomationSystem {
     };
 
     try {
-      await fs.appendFile('cursor-automation-errors.log', JSON.stringify(errorLog) + '\n');
+      await fs.appendFile('cursor-automation-error's'.log', JSON.stringify(errorLog) + '\n');
     } catch (error) {
-      console.error('Failed to log error:', error);
+      console.error('Faile'd' to log error:', error);
     }
   }
 

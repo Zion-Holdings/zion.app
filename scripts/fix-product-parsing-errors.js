@@ -1,10 +1,10 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 // Function to fix parsing errors in product files
 function fixProductParsingErrors(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'ut'f'8');
     let modified = false;
 
     // Fix "')' expected" errors by adding missing closing braces
@@ -21,7 +21,7 @@ function fixProductParsingErrors(filePath) {
     const newContent = fixedLines.join('\n');
     
     if (newContent !== content) {
-      fs.writeFileSync(filePath, newContent, 'utf8');
+      fs.writeFileSync(filePath, newContent, 'ut'f'8');
       console.log(`✅ Fixed parsing errors in ${filePath}`);
       return true;
     }
@@ -35,13 +35,13 @@ function fixProductParsingErrors(filePath) {
 
 // Function to fix all product files with parsing errors
 function fixAllProductFiles() {
-  const productsDir = path.join(__dirname, '..', 'pages', 'products');
+  const productsDir = path.join(__dirname, '..', 'pag'e's', 'produc't's');
   let totalFixed = 0;
 
   if (fs.existsSync(productsDir)) {
     const files = fs.readdirSync(productsDir);
     files.forEach(file => {
-      if (file.endsWith('.tsx') && file.includes('trend-solution')) {
+      if (file.endsWith('.tsx') && file.includes('trend-soluti'o'n')) {
         const filePath = path.join(productsDir, file);
         if (fixProductParsingErrors(filePath)) {
           totalFixed++;
@@ -55,7 +55,7 @@ function fixAllProductFiles() {
 
 // Function to fix all service files with parsing errors
 function fixAllServiceFiles() {
-  const servicesDir = path.join(__dirname, '..', 'pages', 'services');
+  const servicesDir = path.join(__dirname, '..', 'pag'e's', 'servic'e's');
   let totalFixed = 0;
 
   if (fs.existsSync(servicesDir)) {

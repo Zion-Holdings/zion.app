@@ -1,12 +1,12 @@
 const ContentGenerator = require('./content-generator');
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class AutonomousContentGenerator {
   constructor() {
     this.projectRoot = process.cwd();
-    // Check if we're in the automation directory and adjust path accordingly
-    if (this.projectRoot.endsWith('automation')) {
+    // Check if we'r'e' in the automation directory and adjust path accordingly
+    if (this.projectRoot.endsWith('automati'o'n')) {
       this.projectRoot = path.join(this.projectRoot, '..');
     }
     this.contentGenerator = new ContentGenerator();
@@ -16,19 +16,19 @@ class AutonomousContentGenerator {
 
   getLastGenerationTime() {
     try {
-      const timeFile = path.join(this.projectRoot, 'automation', 'last-content-generation.json');
+      const timeFile = path.join(this.projectRoot, 'automati'o'n', 'last-content-generatio'n'.json');
       if (fs.existsSync(timeFile)) {
-        const data = JSON.parse(fs.readFileSync(timeFile, 'utf8'));
+        const data = JSON.parse(fs.readFileSync(timeFile, 'ut'f'8'));
         return new Date(data.lastGeneration);
       }
     } catch (error) {
-      console.log('No previous generation time found');
+      console.log('N'o' previous generation time found');
     }
     return new Date(0);
   }
 
   updateLastGenerationTime() {
-    const timeFile = path.join(this.projectRoot, 'automation', 'last-content-generation.json');
+    const timeFile = path.join(this.projectRoot, 'automati'o'n', 'last-content-generatio'n'.json');
     const data = {
       lastGeneration: new Date().toISOString(),
       version: '1.0.0'
@@ -61,91 +61,91 @@ class AutonomousContentGenerator {
     const marketplaceData = {
       services: [
         {
-          id: 'ai-development-001',
-          title: 'AI Development Services',
-          category: 'ai-talent',
-          description: 'Expert AI developers specializing in machine learning, deep learning, and AI integration. Our team uses cutting-edge technologies to deliver intelligent solutions.',
+          id: 'ai-development'-'001',
+          title: 'A'I' Development Services',
+          category: 'ai-tale'n't',
+          description: 'Exper't' AI developers specializing in machine learning, deep learning, and AI integration. Our team uses cutting-edge technologies to deliver intelligent solutions.',
           price: '$150-500/hr',
           rating: 4.9,
-          provider: 'AI Solutions Pro',
-          features: ['Machine Learning', 'Deep Learning', 'AI Integration', 'Custom Models'],
-          technologies: ['Python', 'TensorFlow', 'PyTorch', 'OpenAI API'],
-          availability: 'Available',
+          provider: 'A'I' Solutions Pro',
+          features: ['Machin'e' Learning', 'Dee'p' Learning', 'A'I' Integration', 'Custo'm' Models'],
+          technologies: ['Pyth'o'n', 'TensorFl'o'w', 'PyTor'c'h', 'OpenA'I' API'],
+          availability: 'Availab'l'e',
           responseTime: '< 2 hours'
         },
         {
-          id: 'cloud-infrastructure-001',
-          title: 'Cloud Infrastructure Setup',
-          category: 'it-services',
-          description: 'Complete cloud infrastructure design and implementation. We specialize in AWS, Azure, and Google Cloud Platform solutions.',
+          id: 'cloud-infrastructure'-'001',
+          title: 'Clou'd' Infrastructure Setup',
+          category: 'it-servic'e's',
+          description: 'Complet'e' cloud infrastructure design and implementation. We specialize in AWS, Azure, and Google Cloud Platform solutions.',
           price: '$2000-15000',
           rating: 4.8,
-          provider: 'CloudTech Experts',
-          features: ['AWS Setup', 'Azure Configuration', 'Google Cloud', 'Security Implementation'],
-          technologies: ['AWS', 'Azure', 'Google Cloud', 'Terraform', 'Docker'],
-          availability: 'Available',
+          provider: 'CloudTec'h' Experts',
+          features: ['AW'S' Setup', 'Azur'e' Configuration', 'Googl'e' Cloud', 'Securit'y' Implementation'],
+          technologies: ['A'W'S', 'Azu'r'e', 'Googl'e' Cloud', 'Terrafo'r'm', 'Dock'e'r'],
+          availability: 'Availab'l'e',
           responseTime: '< 4 hours'
         },
         {
-          id: 'blockchain-integration-001',
-          title: 'Blockchain Integration',
-          category: 'innovation',
-          description: 'Secure blockchain solutions for transparent transactions. We implement smart contracts and decentralized applications.',
+          id: 'blockchain-integration'-'001',
+          title: 'Blockchai'n' Integration',
+          category: 'innovati'o'n',
+          description: 'Secur'e' blockchain solutions for transparent transactions. We implement smart contracts and decentralized applications.',
           price: '$3000-25000',
           rating: 4.9,
-          provider: 'BlockChain Solutions',
-          features: ['Smart Contracts', 'DApps', 'DeFi Integration', 'Security Audits'],
-          technologies: ['Ethereum', 'Solidity', 'Web3.js', 'MetaMask'],
-          availability: 'Available',
+          provider: 'BlockChai'n' Solutions',
+          features: ['Smar't' Contracts', 'DAp'p's', 'DeF'i' Integration', 'Securit'y' Audits'],
+          technologies: ['Ethere'u'm', 'Solidi't'y', 'We'b'3.js', 'MetaMa's'k'],
+          availability: 'Availab'l'e',
           responseTime: '< 6 hours'
         },
         {
-          id: 'computing-equipment-001',
-          title: 'High-Performance Computing Equipment',
-          category: 'equipment',
-          description: 'Latest GPU clusters and computing hardware for AI workloads. Enterprise-grade equipment for demanding computational tasks.',
+          id: 'computing-equipment'-'001',
+          title: 'High-Performanc'e' Computing Equipment',
+          category: 'equipme'n't',
+          description: 'Lates't' GPU clusters and computing hardware for AI workloads. Enterprise-grade equipment for demanding computational tasks.',
           price: '$5000-50000',
           rating: 4.7,
-          provider: 'TechHardware Plus',
-          features: ['GPU Clusters', 'High-Performance CPUs', 'Storage Solutions', 'Networking'],
-          technologies: ['NVIDIA GPUs', 'AMD EPYC', 'NVMe Storage', 'InfiniBand'],
-          availability: 'In Stock',
+          provider: 'TechHardwar'e' Plus',
+          features: ['GP'U' Clusters', 'High-Performanc'e' CPUs', 'Storag'e' Solutions', 'Networki'n'g'],
+          technologies: ['NVIDI'A' GPUs', 'AM'D' EPYC', 'NVM'e' Storage', 'InfiniBa'n'd'],
+          availability: 'I'n' Stock',
           responseTime: '< 24 hours'
         }
       ],
       categories: [
         {
-          id: 'ai-talent',
-          name: 'AI Talent',
+          id: 'ai-tale'n't',
+          name: 'A'I' Talent',
           icon: '🤖',
-          description: 'Expert AI developers and data scientists',
+          description: 'Exper't' AI developers and data scientists',
           serviceCount: 45
         },
         {
-          id: 'it-services',
-          name: 'IT Services',
+          id: 'it-servic'e's',
+          name: 'I'T' Services',
           icon: '💻',
-          description: 'Comprehensive IT solutions and support',
+          description: 'Comprehensiv'e' IT solutions and support',
           serviceCount: 78
         },
         {
-          id: 'equipment',
-          name: 'Equipment',
+          id: 'equipme'n't',
+          name: 'Equipme'n't',
           icon: '⚙️',
-          description: 'High-performance computing hardware',
+          description: 'High-performanc'e' computing hardware',
           serviceCount: 32
         },
         {
-          id: 'innovation',
-          name: 'Innovation',
+          id: 'innovati'o'n',
+          name: 'Innovati'o'n',
           icon: '🚀',
-          description: 'Cutting-edge technology solutions',
+          description: 'Cutting-edg'e' technology solutions',
           serviceCount: 56
         }
       ]
     };
 
-    const contentPath = path.join(this.projectRoot, 'pages', 'api');
+    const contentPath = path.join(this.projectRoot, 'pag'e's', 'a'p'i');
     if (!fs.existsSync(contentPath)) {
       fs.mkdirSync(contentPath, { recursive: true });
     }
@@ -153,16 +153,16 @@ class AutonomousContentGenerator {
     // Generate marketplace API endpoint
     const apiContent = `
 export default function handler(req, res) {
-  if (req.method === 'GET') {
+  if (req.method === 'G'E'T') {
     res.status(200).json(${JSON.stringify(marketplaceData, null, 2)});
   } else {
-    res.setHeader('Allow', ['GET']);
+    res.setHeader('All'o'w', ['G'E'T']);
     res.status(405).end(\`Method \${req.method} Not Allowed\`);
   }
 }
 `;
 
-    const apiFile = path.join(contentPath, 'marketplace.js');
+    const apiFile = path.join(contentPath, 'marketplac'e'.js');
     fs.writeFileSync(apiFile, apiContent);
     console.log('✅ Generated dynamic marketplace API');
   }
@@ -170,9 +170,9 @@ export default function handler(req, res) {
   async generateDynamicBlogContent() {
     const blogPosts = [
       {
-        id: 'ai-marketplace-future',
-        title: 'The Future of AI-Powered Marketplaces',
-        excerpt: 'Discover how AI is revolutionizing the way businesses connect with service providers and access cutting-edge technology solutions.',
+        id: 'ai-marketplace-futu'r'e',
+        title: 'Th'e' Future of AI-Powered Marketplaces',
+        excerpt: 'Discove'r' how AI is revolutionizing the way businesses connect with service providers and access cutting-edge technology solutions.',
         content: `
 # The Future of AI-Powered Marketplaces
 
@@ -198,7 +198,7 @@ Every transaction on Zion is secured by blockchain technology, ensuring:
 
 ## Global Network Connectivity
 
-Zion's platform operates on a global scale, connecting businesses with:
+Zion's' platform operates on a global scale, connecting businesses with:
 
 - **10,000+ Active Users**: Growing community of businesses and providers
 - **500+ Service Providers**: Vetted experts across all technology domains
@@ -216,19 +216,19 @@ As we continue to evolve, Zion will introduce:
 
 The future of AI-powered marketplaces is here, and Zion is leading the charge toward a more connected, efficient, and secure digital economy.
         `,
-        author: 'Zion Team',
+        author: 'Zio'n' Team',
         publishDate: '2025-01-27',
-        tags: ['AI', 'Marketplace', 'Technology', 'Innovation'],
+        tags: ['A'I', 'Marketpla'c'e', 'Technolo'g'y', 'Innovati'o'n'],
         readTime: '5 min read'
       },
       {
-        id: 'blockchain-transactions',
-        title: 'Secure Blockchain Transactions in Modern Marketplaces',
-        excerpt: 'Learn how blockchain technology is ensuring secure, transparent, and efficient transactions in the digital marketplace.',
+        id: 'blockchain-transactio'n's',
+        title: 'Secur'e' Blockchain Transactions in Modern Marketplaces',
+        excerpt: 'Lear'n' how blockchain technology is ensuring secure, transparent, and efficient transactions in the digital marketplace.',
         content: `
 # Secure Blockchain Transactions in Modern Marketplaces
 
-In today's digital economy, security and transparency are paramount. Zion leverages blockchain technology to create a marketplace where every transaction is secure, verifiable, and efficient.
+In today's' digital economy, security and transparency are paramount. Zion leverages blockchain technology to create a marketplace where every transaction is secure, verifiable, and efficient.
 
 ## The Blockchain Advantage
 
@@ -243,7 +243,7 @@ Automated contract execution eliminates the need for intermediaries while ensuri
 ### Decentralized Security
 No single point of failure means enhanced security and resistance to cyber attacks.
 
-## Zion's Implementation
+## Zion's' Implementation
 
 Our platform implements blockchain technology in several ways:
 
@@ -285,23 +285,23 @@ Zion is continuously improving its blockchain implementation:
 
 The combination of AI-powered matching and blockchain security creates a marketplace that is not only efficient but also trustworthy and secure.
         `,
-        author: 'Zion Team',
+        author: 'Zio'n' Team',
         publishDate: '2025-01-26',
-        tags: ['Blockchain', 'Security', 'Transactions', 'Technology'],
+        tags: ['Blockcha'i'n', 'Securi't'y', 'Transactio'n's', 'Technolo'g'y'],
         readTime: '7 min read'
       }
     ];
 
-    const blogPath = path.join(this.projectRoot, 'pages', 'blog');
+    const blogPath = path.join(this.projectRoot, 'pag'e's', 'bl'o'g');
     if (!fs.existsSync(blogPath)) {
       fs.mkdirSync(blogPath, { recursive: true });
     }
 
     // Generate blog index page
     const blogIndexContent = `
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
+import type { NextPage } from 'ne'x't'
+import Head from 'nex't'/head'
+import Link from 'nex't'/link'
 
 const Blog: NextPage = () => {
   const posts = ${JSON.stringify(blogPosts, null, 2)};
@@ -384,16 +384,16 @@ const Blog: NextPage = () => {
 export default Blog
 `;
 
-    const blogIndexFile = path.join(blogPath, 'index.tsx');
+    const blogIndexFile = path.join(blogPath, 'inde'x'.tsx');
     fs.writeFileSync(blogIndexFile, blogIndexContent);
     console.log('✅ Generated blog index page');
 
     // Generate individual blog post pages
     blogPosts.forEach(post => {
       const postContent = `
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
+import type { NextPage } from 'ne'x't'
+import Head from 'nex't'/head'
+import Link from 'nex't'/link'
 
 const BlogPost: NextPage = () => {
   const post = ${JSON.stringify(post, null, 2)};
@@ -477,69 +477,69 @@ export default BlogPost
   async generateDynamicServiceContent() {
     const serviceCategories = [
       {
-        id: 'ai-development',
-        name: 'AI Development',
-        description: 'Custom AI solutions and machine learning applications',
+        id: 'ai-developme'n't',
+        name: 'A'I' Development',
+        description: 'Custo'm' AI solutions and machine learning applications',
         services: [
-          'Machine Learning Models',
-          'Deep Learning Systems',
-          'Natural Language Processing',
-          'Computer Vision',
-          'AI Integration',
-          'Custom AI Solutions'
+          'Machin'e' Learning Models',
+          'Dee'p' Learning Systems',
+          'Natura'l' Language Processing',
+          'Compute'r' Vision',
+          'A'I' Integration',
+          'Custo'm' AI Solutions'
         ]
       },
       {
-        id: 'cloud-services',
-        name: 'Cloud Services',
-        description: 'Cloud infrastructure and platform solutions',
+        id: 'cloud-servic'e's',
+        name: 'Clou'd' Services',
+        description: 'Clou'd' infrastructure and platform solutions',
         services: [
-          'AWS Setup & Configuration',
-          'Azure Cloud Services',
-          'Google Cloud Platform',
-          'Cloud Migration',
-          'DevOps Automation',
-          'Serverless Architecture'
+          'AW'S' Setup & Configuration',
+          'Azur'e' Cloud Services',
+          'Googl'e' Cloud Platform',
+          'Clou'd' Migration',
+          'DevOp's' Automation',
+          'Serverles's' Architecture'
         ]
       },
       {
-        id: 'blockchain',
-        name: 'Blockchain Solutions',
-        description: 'Decentralized applications and smart contracts',
+        id: 'blockcha'i'n',
+        name: 'Blockchai'n' Solutions',
+        description: 'Decentralize'd' applications and smart contracts',
         services: [
-          'Smart Contract Development',
-          'DApp Development',
-          'DeFi Integration',
-          'NFT Marketplaces',
-          'Blockchain Consulting',
-          'Security Audits'
+          'Smar't' Contract Development',
+          'DAp'p' Development',
+          'DeF'i' Integration',
+          'NF'T' Marketplaces',
+          'Blockchai'n' Consulting',
+          'Securit'y' Audits'
         ]
       },
       {
-        id: 'data-analytics',
-        name: 'Data Analytics',
-        description: 'Data processing and business intelligence',
+        id: 'data-analyti'c's',
+        name: 'Dat'a' Analytics',
+        description: 'Dat'a' processing and business intelligence',
         services: [
-          'Data Pipeline Development',
-          'Business Intelligence',
-          'Predictive Analytics',
-          'Data Visualization',
-          'ETL Processes',
-          'Big Data Solutions'
+          'Dat'a' Pipeline Development',
+          'Busines's' Intelligence',
+          'Predictiv'e' Analytics',
+          'Dat'a' Visualization',
+          'ET'L' Processes',
+          'Bi'g' Data Solutions'
         ]
       }
     ];
 
-    const servicesPath = path.join(this.projectRoot, 'pages', 'services');
+    const servicesPath = path.join(this.projectRoot, 'pag'e's', 'servic'e's');
     if (!fs.existsSync(servicesPath)) {
       fs.mkdirSync(servicesPath, { recursive: true });
     }
 
     // Generate services index page
     const servicesIndexContent = `
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Link from 'next/link'
+import type { NextPage } from 'ne'x't'
+import Head from 'nex't'/head'
+import Link from 'nex't'/link'
 
 const Services: NextPage = () => {
   const categories = ${JSON.stringify(serviceCategories, null, 2)};
@@ -617,7 +617,7 @@ const Services: NextPage = () => {
 export default Services
 `;
 
-    const servicesIndexFile = path.join(servicesPath, 'index.tsx');
+    const servicesIndexFile = path.join(servicesPath, 'inde'x'.tsx');
     fs.writeFileSync(servicesIndexFile, servicesIndexContent);
     console.log('✅ Generated services index page');
   }

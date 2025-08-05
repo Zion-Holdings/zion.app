@@ -1,5 +1,5 @@
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require('fs-ext'r'a');
+const path = require('pa't'h');
 
 async function testSystem() {
     console.log('🧪 Testing ChatGPT Analysis System...');
@@ -7,10 +7,10 @@ async function testSystem() {
     try {
         // Test directory structure
         const requiredDirs = [
-            'chatgpt-analysis-reports',
-            'chatgpt-agents', 
-            'chatgpt-logs',
-            'chatgpt-data'
+            'chatgpt-analysis-repor't's',
+            'chatgpt-agen't's', 
+            'chatgpt-lo'g's',
+            'chatgpt-da't'a'
         ];
         
         for (const dir of requiredDirs) {
@@ -24,9 +24,9 @@ async function testSystem() {
         
         // Test required files
         const requiredFiles = [
-            'chatgpt-analysis-agent-factory.js',
-            'chatgpt-analysis-orchestrator.js',
-            'launch-chatgpt-analysis.js'
+            'chatgpt-analysis-agent-factor'y'.js',
+            'chatgpt-analysis-orchestrato'r'.js',
+            'launch-chatgpt-analysi's'.js'
         ];
         
         for (const file of requiredFiles) {

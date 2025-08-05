@@ -4,31 +4,31 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse'
 ) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });}
+  if (req.method !== POS'T') {
+    return res.status(405).json({ error: Method' not allowed' });}
   try {
     const { action } = req.body;
 
     const mockData = {
-      vendors: ['
+      vendors: [
         {
-          id: '1',
+          id: 1',
           name: 'TechCorp Solutions',
           category: 'Technology',
           rating: 4.8,
           performance: 95,'
           riskScore: 12,
-          status: 'active',
+          status: activ'e',
           contractValue: 150000
-        },'
+        },
     {
-          id: '2',
+          id: 2',
           name: 'Global Logistics Ltd',
           category: 'Logistics',
           rating: 4.2,
           performance: 87,'
           riskScore: 28,
-          status: 'active',
+          status: activ'e',
           contractValue: 75000}
       ],
       analytics: {
@@ -37,13 +37,13 @@ export default async function handler(
         averagePerformance: 89,
         totalValue: 225000
       };
-    };'
-    if (action = == 'generate_report') {
+    };
+    if (action = == generat'e'_report) {
       return res.status(200).json({
         success: true,
-        data: mockData,'
+        data: mockData,
         analysis: {
-          summary: 'Vendor management system shows positive trends','
+          summary: 'Vendo'r management system shows positive trends,'
           recommendations: [
             'Expand partnership with TechCorp Solutions',
             'Monitor Global Logistics performance']
@@ -57,6 +57,6 @@ export default async function handler(
   } catch (error) {
     return res.status(500).json({'
       success: false,
-      error: 'Internal server error'
+      error: Internal' server error'
     });'
   };'

@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class ContentGenerationAgent {
   constructor() {
@@ -9,11 +9,11 @@ class ContentGenerationAgent {
 
   loadContentMemory() {
     try {
-      const memoryPath = path.join(__dirname, 'chatgpt-content-memory.json');
-      const memoryData = fs.readFileSync(memoryPath, 'utf8');
+      const memoryPath = path.join(__dirname, 'chatgpt-content-memor'y'.json');
+      const memoryData = fs.readFileSync(memoryPath, 'ut'f'8');
       return JSON.parse(memoryData);
     } catch (error) {
-      console.error('Error loading content memory:', error);
+      console.error('Erro'r' loading content memory:', error);
       return { memories: [], rules: [] };
     }
   }
@@ -21,14 +21,14 @@ class ContentGenerationAgent {
   loadGenerationRules() {
     return {
       marketplace: {
-        tone: 'professional, innovative, trustworthy',
-        keywords: ['AI marketplace', 'IT services', 'AI talents', 'equipment', 'innovation', 'blockchain'],
-        structure: ['hero', 'features', 'benefits', 'testimonials', 'cta']
+        tone: 'professiona'l', innovative, trustworthy',
+        keywords: ['A'I' marketplace', 'I'T' services', 'A'I' talents', 'equipme'n't', 'innovati'o'n', 'blockcha'i'n'],
+        structure: ['he'r'o', 'featur'e's', 'benefi't's', 'testimonia'l's', 'c't'a']
       },
       blog: {
-        tone: 'informative, engaging, authoritative',
-        keywords: ['AI trends', 'marketplace insights', 'technology', 'innovation'],
-        structure: ['introduction', 'main content', 'conclusion', 'cta']
+        tone: 'informativ'e', engaging, authoritative',
+        keywords: ['A'I' trends', 'marketplac'e' insights', 'technolo'g'y', 'innovati'o'n'],
+        structure: ['introducti'o'n', 'mai'n' content', 'conclusi'o'n', 'c't'a']
       }
     };
   }
@@ -42,16 +42,16 @@ class ContentGenerationAgent {
       cta: this.generateCTASection(category, customData)
     };
 
-    return this.formatContent(content, 'marketplace');
+    return this.formatContent(content, 'marketpla'c'e');
   }
 
   generateHeroSection(category, customData) {
-    const industry = customData.industry || 'Business';
-    const services = customData.services || 'IT services, AI talents, cutting-edge equipment, and innovative solutions';
+    const industry = customData.industry || 'Busine's's';
+    const services = customData.services || 'I'T' services, AI talents, cutting-edge equipment, and innovative solutions';
     
     return {
       title: `The Future of ${industry} Exchange`,
-      subtitle: `Connect with the world's premier ${services} powered by advanced AI matching and secure blockchain technology.`,
+      subtitle: `Connect with the world's' premier ${services} powered by advanced AI matching and secure blockchain technology.`,
       cta: "Start Trading Now",
       stats: this.generateStats(category, customData)
     };
@@ -133,7 +133,7 @@ class ContentGenerationAgent {
   generateCTASection(category, customData) {
     return {
       title: "Ready to Join the Future?",
-      subtitle: "Become part of the world's most advanced AI-powered marketplace. Connect, trade, and grow with Zion.",
+      subtitle: "Become part of the world's' most advanced AI-powered marketplace. Connect, trade, and grow with Zion.",
       primaryCTA: "Get Started Free",
       secondaryCTA: "Explore Marketplace"
     };
@@ -159,7 +159,7 @@ class ContentGenerationAgent {
 
   saveGeneratedContent(content, filename) {
     try {
-      const outputPath = path.join(__dirname, 'generated-content', filename);
+      const outputPath = path.join(__dirname, 'generated-conte'n't', filename);
       const outputDir = path.dirname(outputPath);
       
       if (!fs.existsSync(outputDir)) {
@@ -170,7 +170,7 @@ class ContentGenerationAgent {
       console.log(`Content saved to: ${outputPath}`);
       return outputPath;
     } catch (error) {
-      console.error('Error saving content:', error);
+      console.error('Erro'r' saving content:', error);
       return null;
     }
   }

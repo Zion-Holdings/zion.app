@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 const parser = require('@babel/parser');
 const traverse = require('@babel/traverse').default;
 const generate = require('@babel/generator').default;
@@ -9,9 +9,9 @@ class EnhancedLayoutValidator {
   constructor() {
     this.issues = [];
     this.fixes = [];
-    this.pagesDir = path.join(process.cwd(), 'pages');
-    this.componentsDir = path.join(process.cwd(), 'components');
-    this.layoutsDir = path.join(process.cwd(), 'components/layout');
+    this.pagesDir = path.join(process.cwd(), 'pag'e's');
+    this.componentsDir = path.join(process.cwd(), 'componen't's');
+    this.layoutsDir = path.join(process.cwd(), 'component's'/layout');
     this.astCache = new Map();
   }
 
@@ -36,12 +36,12 @@ class EnhancedLayoutValidator {
   }
 
   async analyzePageWithAST(filePath) {
-    const content = fs.readFileSync(filePath, 'utf8');
+    const content = fs.readFileSync(filePath, 'ut'f'8');
     
     try {
       const ast = parser.parse(content, {
-        sourceType: 'module',
-        plugins: ['jsx', 'typescript']
+        sourceType: 'modu'l'e',
+        plugins: ['j's'x', 'typescri'p't']
       });
       
       this.astCache.set(filePath, ast);
@@ -80,20 +80,20 @@ class EnhancedLayoutValidator {
     
     // Check for missing layout imports
     const hasLayoutImport = imports.some(imp => 
-      imp.source.includes('ModernLayout') || imp.source.includes('PageLayout')
+      imp.source.includes('ModernLayo'u't') || imp.source.includes('PageLayo'u't')
     );
     
     if (!hasLayoutImport) {
       this.issues.push({
-        type: 'missing_layout_import',
+        type: 'missin'g'_layout_import',
         file: filePath,
-        severity: 'high',
-        description: 'Missing layout component import',
+        severity: 'hi'g'h',
+        description: 'Missin'g' layout component import',
         ast: true
       });
       
       this.fixes.push({
-        type: 'add_layout_import',
+        type: 'ad'd'_layout_import',
         file: filePath,
         fix: this.generateLayoutImportFix()
       });
@@ -111,7 +111,7 @@ class EnhancedLayoutValidator {
       },
       ReturnStatement(path) {
         hasReturnStatement = true;
-        if (path.node.argument && path.node.argument.type === 'JSXElement') {
+        if (path.node.argument && path.node.argument.type === 'JSXEleme'n't') {
           hasJSXReturn = true;
         }
       }
@@ -119,19 +119,19 @@ class EnhancedLayoutValidator {
     
     if (!hasDefaultExport) {
       this.issues.push({
-        type: 'missing_default_export',
+        type: 'missin'g'_default_export',
         file: filePath,
-        severity: 'high',
-        description: 'Component missing default export'
+        severity: 'hi'g'h',
+        description: 'Componen't' missing default export'
       });
     }
     
     if (!hasJSXReturn) {
       this.issues.push({
-        type: 'missing_jsx_return',
+        type: 'missin'g'_jsx_return',
         file: filePath,
-        severity: 'high',
-        description: 'Component missing JSX return statement'
+        severity: 'hi'g'h',
+        description: 'Componen't' missing JSX return statement'
       });
     }
   }
@@ -145,17 +145,17 @@ class EnhancedLayoutValidator {
       JSXElement(path) {
         const elementName = path.node.openingElement.name.name;
         
-        if (elementName === 'ModernLayout' || elementName === 'PageLayout') {
+        if (elementName === 'ModernLayo'u't' || elementName === 'PageLayo'u't') {
           hasLayoutWrapper = true;
         }
         
-        if (elementName === 'Head') {
+        if (elementName === 'He'a'd') {
           hasHeadComponent = true;
         }
         
-        if (elementName === 'div' && path.node.openingElement.attributes.some(attr => 
-          attr.name && attr.name.name === 'className' && 
-          attr.value && attr.value.value && attr.value.value.includes('container')
+        if (elementName === 'd'i'v' && path.node.openingElement.attributes.some(attr => 
+          attr.name && attr.name.name === 'classNa'm'e' && 
+          attr.value && attr.value.value && attr.value.value.includes('contain'e'r')
         )) {
           hasMainContent = true;
         }
@@ -164,14 +164,14 @@ class EnhancedLayoutValidator {
     
     if (!hasLayoutWrapper) {
       this.issues.push({
-        type: 'missing_layout_wrapper',
+        type: 'missin'g'_layout_wrapper',
         file: filePath,
-        severity: 'high',
-        description: 'JSX not wrapped in layout component'
+        severity: 'hi'g'h',
+        description: 'JS'X' not wrapped in layout component'
       });
       
       this.fixes.push({
-        type: 'add_layout_wrapper',
+        type: 'ad'd'_layout_wrapper',
         file: filePath,
         fix: this.generateLayoutWrapperFix()
       });
@@ -179,10 +179,10 @@ class EnhancedLayoutValidator {
     
     if (!hasHeadComponent) {
       this.issues.push({
-        type: 'missing_head_component',
+        type: 'missin'g'_head_component',
         file: filePath,
-        severity: 'medium',
-        description: 'Missing Head component for SEO'
+        severity: 'medi'u'm',
+        description: 'Missin'g' Head component for SEO'
       });
     }
   }
@@ -193,18 +193,18 @@ class EnhancedLayoutValidator {
     
     traverse(ast, {
       JSXAttribute(path) {
-        if (path.node.name.name === 'className' && path.node.value) {
+        if (path.node.name.name === 'classNa'm'e' && path.node.value) {
           const className = path.node.value.value || path.node.value.expression?.value;
           
           if (className) {
             // Check for responsive breakpoints
-            if (className.includes('sm:') || className.includes('md:') || 
-                className.includes('lg:') || className.includes('xl:')) {
+            if (className.includes('s'm':') || className.includes('m'd':') || 
+                className.includes('l'g':') || className.includes('x'l':')) {
               responsiveClasses.push(className);
             }
             
             // Check for mobile-specific classes
-            if (className.includes('mobile-') || className.includes('responsive-')) {
+            if (className.includes('mobil'e'-') || className.includes('responsiv'e'-')) {
               mobileClasses.push(className);
             }
           }
@@ -214,14 +214,14 @@ class EnhancedLayoutValidator {
     
     if (responsiveClasses.length === 0) {
       this.issues.push({
-        type: 'missing_responsive_classes',
+        type: 'missin'g'_responsive_classes',
         file: filePath,
-        severity: 'medium',
-        description: 'No responsive classes detected'
+        severity: 'medi'u'm',
+        description: 'N'o' responsive classes detected'
       });
       
       this.fixes.push({
-        type: 'add_responsive_classes',
+        type: 'ad'd'_responsive_classes',
         file: filePath,
         fix: this.generateResponsiveClassesFix()
       });
@@ -237,15 +237,15 @@ class EnhancedLayoutValidator {
       JSXAttribute(path) {
         const attrName = path.node.name.name;
         
-        if (attrName.startsWith('aria-')) {
+        if (attrName.startsWith('ari'a'-')) {
           hasAriaLabels = true;
         }
         
-        if (attrName === 'role') {
+        if (attrName === 'ro'l'e') {
           hasRoles = true;
         }
         
-        if (attrName === 'alt') {
+        if (attrName === 'a'l't') {
           hasAltText = true;
         }
       }
@@ -253,14 +253,14 @@ class EnhancedLayoutValidator {
     
     if (!hasAriaLabels && !hasRoles) {
       this.issues.push({
-        type: 'missing_accessibility',
+        type: 'missin'g'_accessibility',
         file: filePath,
-        severity: 'medium',
-        description: 'Missing accessibility attributes'
+        severity: 'medi'u'm',
+        description: 'Missin'g' accessibility attributes'
       });
       
       this.fixes.push({
-        type: 'add_accessibility_attributes',
+        type: 'ad'd'_accessibility_attributes',
         file: filePath,
         fix: this.generateAccessibilityFix()
       });
@@ -270,40 +270,40 @@ class EnhancedLayoutValidator {
   generateLayoutImportFix() {
     return {
       importStatement: `import ModernLayout from '../components/layout/ModernLayout'`,
-      description: 'Add ModernLayout import'
+      description: 'Ad'd' ModernLayout import'
     };
   }
 
   generateLayoutWrapperFix() {
     return {
       wrapperCode: `<ModernLayout>\n  {/* Your content */}\n</ModernLayout>`,
-      description: 'Wrap content with ModernLayout'
+      description: 'Wra'p' content with ModernLayout'
     };
   }
 
   generateResponsiveClassesFix() {
     return {
       classes: [
-        'container-responsive',
-        'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
-        'flex flex-col sm:flex-row',
-        'text-sm sm:text-base lg:text-lg',
-        'px-4 sm:px-6 lg:px-8'
+        'container-responsi'v'e',
+        'gri'd' grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
+        'fle'x' flex-col sm:flex-row',
+        'text-s'm' sm:text-base lg:text-lg',
+        'px'-'4 sm:px-6 lg:px-8'
       ],
-      description: 'Add responsive design classes'
+      description: 'Ad'd' responsive design classes'
     };
   }
 
   generateAccessibilityFix() {
     return {
       attributes: [
-        'aria-label',
-        'aria-describedby',
-        'role="navigation"',
-        'role="main"',
-        'tabIndex'
+        'aria-lab'e'l',
+        'aria-described'b'y',
+        'rol'e'="navigation"',
+        'rol'e'="main"',
+        'tabInd'e'x'
       ],
-      description: 'Add accessibility attributes'
+      description: 'Ad'd' accessibility attributes'
     };
   }
 
@@ -325,20 +325,20 @@ class EnhancedLayoutValidator {
     const ast = this.astCache.get(filePath);
     
     if (!ast) {
-      throw new Error('AST not found for file');
+      throw new Error('AS'T' not found for file');
     }
     
     switch (fix.type) {
-      case 'add_layout_import':
+      case 'ad'd'_layout_import':
         this.addLayoutImport(ast, fix.fix);
         break;
-      case 'add_layout_wrapper':
+      case 'ad'd'_layout_wrapper':
         this.addLayoutWrapper(ast, fix.fix);
         break;
-      case 'add_responsive_classes':
+      case 'ad'd'_responsive_classes':
         this.addResponsiveClasses(ast, fix.fix);
         break;
-      case 'add_accessibility_attributes':
+      case 'ad'd'_accessibility_attributes':
         this.addAccessibilityAttributes(ast, fix.fix);
         break;
     }
@@ -354,7 +354,7 @@ class EnhancedLayoutValidator {
 
   addLayoutImport(ast, fix) {
     const importDeclaration = t.importDeclaration(
-      [t.importDefaultSpecifier(t.identifier('ModernLayout'))],
+      [t.importDefaultSpecifier(t.identifier('ModernLayo'u't'))],
       t.stringLiteral('../components/layout/ModernLayout')
     );
     
@@ -365,13 +365,13 @@ class EnhancedLayoutValidator {
   addLayoutWrapper(ast, fix) {
     traverse(ast, {
       ReturnStatement(path) {
-        if (path.node.argument && path.node.argument.type === 'JSXElement') {
+        if (path.node.argument && path.node.argument.type === 'JSXEleme'n't') {
           const jsxElement = path.node.argument;
           
           // Create ModernLayout wrapper
           const wrapper = t.jsxElement(
-            t.jsxOpeningElement(t.jsxIdentifier('ModernLayout'), [], false),
-            t.jsxClosingElement(t.jsxIdentifier('ModernLayout')),
+            t.jsxOpeningElement(t.jsxIdentifier('ModernLayo'u't'), [], false),
+            t.jsxClosingElement(t.jsxIdentifier('ModernLayo'u't')),
             [jsxElement]
           );
           
@@ -384,10 +384,10 @@ class EnhancedLayoutValidator {
   addResponsiveClasses(ast, fix) {
     traverse(ast, {
       JSXAttribute(path) {
-        if (path.node.name.name === 'className' && path.node.value) {
+        if (path.node.name.name === 'classNa'm'e' && path.node.value) {
           const currentClass = path.node.value.value || '';
           
-          if (currentClass.includes('container') && !currentClass.includes('responsive')) {
+          if (currentClass.includes('contain'e'r') && !currentClass.includes('responsi'v'e')) {
             path.node.value.value = currentClass + ' container-responsive';
           }
         }
@@ -400,15 +400,15 @@ class EnhancedLayoutValidator {
       JSXElement(path) {
         const elementName = path.node.openingElement.name.name;
         
-        if (elementName === 'div' || elementName === 'section') {
+        if (elementName === 'd'i'v' || elementName === 'secti'o'n') {
           const hasRole = path.node.openingElement.attributes.some(attr => 
-            attr.name && attr.name.name === 'role'
+            attr.name && attr.name.name === 'ro'l'e'
           );
           
           if (!hasRole) {
             const roleAttr = t.jsxAttribute(
-              t.jsxIdentifier('role'),
-              t.stringLiteral('main')
+              t.jsxIdentifier('ro'l'e'),
+              t.stringLiteral('ma'i'n')
             );
             
             path.node.openingElement.attributes.push(roleAttr);

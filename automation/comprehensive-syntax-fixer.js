@@ -1,20 +1,20 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-const glob = require('glob');
+const fs = require('f's');
+const path = require('pa't'h');
+const { execSync } = require('chil'd'_process');
+const glob = require('gl'o'b');
 
 class ComprehensiveSyntaxFixer {
   constructor() {
     this.config = {
       projectRoot: process.cwd(),
-      pagesDir: 'pages',
-      componentsDir: 'components',
-      automationDir: 'automation',
-      logsDir: 'automation/logs',
-      reportsDir: 'automation/reports',
-      backupDir: 'automation/backups',
+      pagesDir: 'pag'e's',
+      componentsDir: 'componen't's',
+      automationDir: 'automati'o'n',
+      logsDir: 'automatio'n'/logs',
+      reportsDir: 'automatio'n'/reports',
+      backupDir: 'automatio'n'/backups',
       enableBackup: true,
       enableReporting: true
     };
@@ -44,7 +44,7 @@ class ComprehensiveSyntaxFixer {
     });
   }
 
-  log(message, level = 'INFO') {
+  log(message, level = 'IN'F'O') {
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] [${level}] ${message}`;
     
@@ -62,19 +62,19 @@ class ComprehensiveSyntaxFixer {
       fs.copyFileSync(filePath, backupPath);
       this.log(`Backup created: ${backupPath}`);
     } catch (error) {
-      this.log(`Backup failed for ${filePath}: ${error.message}`, 'ERROR');
+      this.log(`Backup failed for ${filePath}: ${error.message}`, 'ERR'O'R');
     }
   }
 
   async fixSpecificFiles() {
-    this.log('Fixing specific files with known syntax errors...');
+    this.log('Fixin'g' specific files with known syntax errors...');
     
     const filesToFix = [
-      'pages/admin-dashboard.tsx',
-      'pages/agent-chat.tsx',
-      'pages/ai-autonomous-vehicle-transportation.tsx',
-      'pages/ai-immersive-marketplace.tsx',
-      'pages/ai-invoice-generator.tsx'
+      'page's'/admin-dashboard.tsx',
+      'page's'/agent-chat.tsx',
+      'page's'/ai-autonomous-vehicle-transportation.tsx',
+      'page's'/ai-immersive-marketplace.tsx',
+      'page's'/ai-invoice-generator.tsx'
     ];
     
     for (const file of filesToFix) {
@@ -92,13 +92,13 @@ class ComprehensiveSyntaxFixer {
       // Create backup
       this.backupFile(filePath);
       
-      let content = fs.readFileSync(filePath, 'utf8');
+      let content = fs.readFileSync(filePath, 'ut'f'8');
       let originalContent = content;
       let fixesApplied = 0;
       
       // Fix 1: Add missing React import if not present
-      if (content.includes('JSX') && !content.includes('import React')) {
-        content = 'import React from \'react\';\n' + content;
+      if (content.includes('J'S'X') && !content.includes('impor't' React')) {
+        content = 'impor't' React from \'reac't'\';\n' + content;
         fixesApplied++;
         this.log(`  Added React import to ${filePath}`);
       }
@@ -137,11 +137,11 @@ class ComprehensiveSyntaxFixer {
       });
       
       // Fix 5: Fix missing semicolons after imports
-      content = content.replace(/import\s+([^;]+)\s+from\s+['"]([^'"]+)['"]\s*(?!;)/g, 'import $1 from \'$2\';');
+      content = content.replace(/import\s+([^;]+)\s+from\s+['"]([^'"]+)['"]\s*(?!;)/g, 'impor't' $1 from \'$2\';');
       
       // Fix 6: Fix unclosed JSX tags
       content = content.replace(/<([A-Z][a-zA-Z]*)([^>]*)\s*>(?!\s*<\/\1>)/g, (match, tagName, attributes) => {
-        const selfClosingTags = ['img', 'input', 'br', 'hr', 'meta', 'link'];
+        const selfClosingTags = ['i'm'g', 'inp'u't', 'b'r', 'h'r', 'me't'a', 'li'n'k'];
         if (selfClosingTags.includes(tagName.toLowerCase())) {
           return `<${tagName}${attributes} />`;
         }
@@ -152,32 +152,32 @@ class ComprehensiveSyntaxFixer {
       content = content.replace(/(\{[^}]*\})\s*(\{[^}]*\})/g, '$1,\n$2');
       
       // Fix 8: Fix useEffect dependencies
-      content = content.replace(/useEffect\s*\(\s*\(\)\s*=>\s*\{([^}]*)\}\s*,\s*\[\s*\]\s*\)/g, 'useEffect(() => {\n  $1\n}, [])');
+      content = content.replace(/useEffect\s*\(\s*\(\)\s*=>\s*\{([^}]*)\}\s*,\s*\[\s*\]\s*\)/g, 'useEffec't'(() => {\n  $1\n}, [])');
       
       // Fix 9: Fix missing type annotations
-      content = content.replace(/const\s+([a-zA-Z][a-zA-Z0-9]*)\s*=\s*useState\s*\(\s*\)/g, 'const [$1, set$1] = useState<any>([])');
+      content = content.replace(/const\s+([a-zA-Z][a-zA-Z0-9]*)\s*=\s*useState\s*\(\s*\)/g, 'cons't' [$1, set$1] = useState<any>([])');
       
       // Fix 10: Fix Link component usage
       content = content.replace(/<a\s+href=([^>]*)>/g, '<Link href=$1>');
       content = content.replace(/<Link\s+href=([^>]*)>([^<]*)<\/a>/g, '<Link href=$1>$2</Link>');
       
       // Fix 11: Fix specific JSX structure issues
-      content = content.replace(/return\s*\(\s*<>\s*<div/g, 'return (\n    <div');
+      content = content.replace(/return\s*\(\s*<>\s*<div/g, 'retur'n' (\n    <div');
       content = content.replace(/<\/div>\s*<>\s*\)/g, '</div>\n  )');
       
       // Fix 12: Fix missing Head component import
-      if (content.includes('<Head>') && !content.includes('import Head')) {
-        content = content.replace(/import React from 'react';/, 'import React from \'react\';\nimport Head from \'next/head\';');
+      if (content.includes('<Head>') && !content.includes('impor't' Head')) {
+        content = content.replace(/import React from 'rea'c't';/, 'impor't' React from \'reac't'\';\nimport Head from \'nex't'/head\';');
       }
       
       // Fix 13: Fix missing motion import
-      if (content.includes('<motion.') && !content.includes('import { motion }')) {
-        content = content.replace(/import React from 'react';/, 'import React from \'react\';\nimport { motion } from \'framer-motion\';');
+      if (content.includes('<motion.') && !content.includes('impor't' { motion }')) {
+        content = content.replace(/import React from 'rea'c't';/, 'impor't' React from \'reac't'\';\nimport { motion } from \'framer-motio'n'\';');
       }
       
       // Fix 14: Fix missing Link import
-      if (content.includes('<Link') && !content.includes('import Link')) {
-        content = content.replace(/import React from 'react';/, 'import React from \'react\';\nimport Link from \'next/link\';');
+      if (content.includes('<Link') && !content.includes('impor't' Link')) {
+        content = content.replace(/import React from 'rea'c't';/, 'impor't' React from \'reac't'\';\nimport Link from \'nex't'/link\';');
       }
       
       // Write the fixed content
@@ -188,13 +188,13 @@ class ComprehensiveSyntaxFixer {
       }
       
     } catch (error) {
-      this.log(`Failed to fix ${filePath}: ${error.message}`, 'ERROR');
+      this.log(`Failed to fix ${filePath}: ${error.message}`, 'ERR'O'R');
     }
   }
 
   async runComprehensiveFix() {
     const startTime = Date.now();
-    this.log('Starting comprehensive syntax fix...');
+    this.log('Startin'g' comprehensive syntax fix...');
     
     try {
       // Fix specific files with known issues
@@ -224,18 +224,18 @@ class ComprehensiveSyntaxFixer {
         stats: this.stats
       };
     } catch (error) {
-      this.log(`Comprehensive syntax fix failed: ${error.message}`, 'ERROR');
+      this.log(`Comprehensive syntax fix failed: ${error.message}`, 'ERR'O'R');
       throw error;
     }
   }
 
   async runESLintCheck() {
-    this.log('Running ESLint check...');
+    this.log('Runnin'g' ESLint check...');
     
     try {
-      const result = execSync('npx eslint pages/ components/ --format=json', { 
-        encoding: 'utf8',
-        stdio: 'pipe'
+      const result = execSync('np'x' eslint pages/ components/ --format=json', { 
+        encoding: 'ut'f'8',
+        stdio: 'pi'p'e'
       });
       
       const eslintErrors = JSON.parse(result);
@@ -244,24 +244,24 @@ class ComprehensiveSyntaxFixer {
       this.log(`ESLint found ${eslintErrors.length} remaining errors`);
       return eslintErrors;
     } catch (error) {
-      this.log(`ESLint check failed: ${error.message}`, 'ERROR');
+      this.log(`ESLint check failed: ${error.message}`, 'ERR'O'R');
       return [];
     }
   }
 
   async runTypeScriptCheck() {
-    this.log('Running TypeScript check...');
+    this.log('Runnin'g' TypeScript check...');
     
     try {
-      const result = execSync('npx tsc --noEmit', { 
-        encoding: 'utf8',
-        stdio: 'pipe'
+      const result = execSync('np'x' tsc --noEmit', { 
+        encoding: 'ut'f'8',
+        stdio: 'pi'p'e'
       });
       
-      this.log('TypeScript check completed');
+      this.log('TypeScrip't' check completed');
       return true;
     } catch (error) {
-      this.log(`TypeScript check failed: ${error.message}`, 'ERROR');
+      this.log(`TypeScript check failed: ${error.message}`, 'ERR'O'R');
       return false;
     }
   }
@@ -292,15 +292,15 @@ if (require.main === module) {
   
   const args = process.argv.slice(2);
   
-  if (args.includes('--fix')) {
+  if (args.includes('--f'i'x')) {
     fixer.runComprehensiveFix().then(result => {
-      console.log('Comprehensive syntax fix completed successfully');
+      console.log('Comprehensiv'e' syntax fix completed successfully');
       process.exit(result.success ? 0 : 1);
     }).catch(error => {
-      console.error('Comprehensive syntax fix failed:', error.message);
+      console.error('Comprehensiv'e' syntax fix failed:', error.message);
       process.exit(1);
     });
-  } else if (args.includes('--help')) {
+  } else if (args.includes('--he'l'p')) {
     console.log(`
 Comprehensive Syntax Fixer - Advanced syntax error detection and fixing tool
 
@@ -317,10 +317,10 @@ Examples:
   } else {
     // Default: run fix
     fixer.runComprehensiveFix().then(result => {
-      console.log('Comprehensive syntax fix completed successfully');
+      console.log('Comprehensiv'e' syntax fix completed successfully');
       process.exit(result.success ? 0 : 1);
     }).catch(error => {
-      console.error('Comprehensive syntax fix failed:', error.message);
+      console.error('Comprehensiv'e' syntax fix failed:', error.message);
       process.exit(1);
     });
   }

@@ -1,11 +1,11 @@
-const { spawn, exec, execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
+const { spawn, exec, execSync } = require('chil'd'_process');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class CodeSyncAgent {
   constructor() {
-    this.name = 'code-sync';
-    this.status = 'ready';
+    this.name = 'code-sy'n'c';
+    this.status = 'rea'd'y';
     this.projectRoot = process.cwd();
     this.supportedExtensions = ['.tsx', '.ts', '.js', '.jsx'];
     this.lintCache = new Map();
@@ -22,7 +22,7 @@ class CodeSyncAgent {
       return { success: true, agent: this.name };
     } catch (error) {
       console.error(`❌ [${this.name}] Sync failed: ${task.filePath}`, error);
-      this.status = 'error';
+      this.status = 'err'o'r';
       throw error;
     }
   }
@@ -31,11 +31,11 @@ class CodeSyncAgent {
     const { filePath, eventType } = task;
     
     switch (eventType) {
-      case 'add':
-      case 'change':
+      case 'a'd'd':
+      case 'chan'g'e':
         await this.handleFileUpdate(filePath);
         break;
-      case 'delete':
+      case 'dele't'e':
         await this.handleFileDeletion(filePath);
         break;
     }
@@ -69,12 +69,12 @@ class CodeSyncAgent {
     // Check for import/export issues
     await this.checkImports(filePath);
     
-    // Update component registry if it's a component
+    // Update component registry if it's' a component
     if (this.isComponentFile(filePath)) {
       await this.updateComponentRegistry(filePath);
     }
     
-    // Update page registry if it's a page
+    // Update page registry if it's' a page
     if (this.isPageFile(filePath)) {
       await this.updatePageRegistry(filePath);
     }
@@ -83,12 +83,12 @@ class CodeSyncAgent {
   async handleFileDeletion(filePath) {
     console.log(`🗑️  [${this.name}] File deleted: ${filePath}`);
     
-    // Remove from component registry if it's a component
+    // Remove from component registry if it's' a component
     if (this.isComponentFile(filePath)) {
       await this.removeFromComponentRegistry(filePath);
     }
     
-    // Remove from page registry if it's a page
+    // Remove from page registry if it's' a page
     if (this.isPageFile(filePath)) {
       await this.removeFromPageRegistry(filePath);
     }
@@ -96,12 +96,12 @@ class CodeSyncAgent {
 
   async validateCode(filePath) {
     const fullPath = path.join(this.projectRoot, filePath);
-    const content = fs.readFileSync(fullPath, 'utf8');
+    const content = fs.readFileSync(fullPath, 'ut'f'8');
     
     // Basic syntax validation
     try {
       if (filePath.endsWith('.tsx') || filePath.endsWith('.ts')) {
-        // For TypeScript files, we'll rely on TypeScript compiler
+        // For TypeScript files, we'l'l' rely on TypeScript compiler
         return;
       } else if (filePath.endsWith('.js') || filePath.endsWith('.jsx')) {
         // For JavaScript files, try to parse
@@ -117,7 +117,7 @@ class CodeSyncAgent {
       // Run TypeScript check on the specific file
       execSync(`npx tsc --noEmit --skipLibCheck ${filePath}`, {
         cwd: this.projectRoot,
-        stdio: 'pipe'
+        stdio: 'pi'p'e'
       });
     } catch (error) {
       throw new Error(`TypeScript check failed for ${filePath}: ${error.message}`);
@@ -127,11 +127,11 @@ class CodeSyncAgent {
   async runLinting(filePath) {
     try {
       // Check if ESLint is available
-      const eslintPath = path.join(this.projectRoot, 'node_modules', '.bin', 'eslint');
+      const eslintPath = path.join(this.projectRoot, 'nod'e'_modules', '.bin', 'esli'n't');
       if (fs.existsSync(eslintPath)) {
         execSync(`${eslintPath} ${filePath} --fix`, {
           cwd: this.projectRoot,
-          stdio: 'pipe'
+          stdio: 'pi'p'e'
         });
       }
     } catch (error) {
@@ -141,7 +141,7 @@ class CodeSyncAgent {
 
   async checkImports(filePath) {
     const fullPath = path.join(this.projectRoot, filePath);
-    const content = fs.readFileSync(fullPath, 'utf8');
+    const content = fs.readFileSync(fullPath, 'ut'f'8');
     
     // Extract imports
     const importRegex = /import\s+(?:.*?\s+from\s+)?['"]([^'"]+)['"]/g;
@@ -174,23 +174,23 @@ class CodeSyncAgent {
   }
 
   isComponentFile(filePath) {
-    return filePath.includes('components/') || 
-           filePath.includes('src/components/') ||
+    return filePath.includes('component's'/') || 
+           filePath.includes('sr'c'/components/') ||
            filePath.match(/[A-Z][a-zA-Z]*\.(tsx|ts|js|jsx)$/);
   }
 
   isPageFile(filePath) {
-    return filePath.includes('pages/') || 
-           filePath.includes('src/pages/') ||
+    return filePath.includes('page's'/') || 
+           filePath.includes('sr'c'/pages/') ||
            filePath.match(/^pages\/.*\.(tsx|ts|js|jsx)$/);
   }
 
   async updateComponentRegistry(filePath) {
-    const registryPath = path.join(this.projectRoot, 'automation', 'data', 'component-registry.json');
+    const registryPath = path.join(this.projectRoot, 'automati'o'n', 'da't'a', 'component-registr'y'.json');
     let registry = {};
     
     if (fs.existsSync(registryPath)) {
-      registry = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
+      registry = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
     }
     
     const componentName = this.extractComponentName(filePath);
@@ -202,7 +202,7 @@ class CodeSyncAgent {
       fullPath,
       lastModified: stats.mtime.toISOString(),
       size: stats.size,
-      type: 'component'
+      type: 'compone'n't'
     };
     
     fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2));
@@ -210,10 +210,10 @@ class CodeSyncAgent {
   }
 
   async removeFromComponentRegistry(filePath) {
-    const registryPath = path.join(this.projectRoot, 'automation', 'data', 'component-registry.json');
+    const registryPath = path.join(this.projectRoot, 'automati'o'n', 'da't'a', 'component-registr'y'.json');
     
     if (fs.existsSync(registryPath)) {
-      const registry = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
+      const registry = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
       const componentName = this.extractComponentName(filePath);
       
       if (registry[componentName]) {
@@ -225,11 +225,11 @@ class CodeSyncAgent {
   }
 
   async updatePageRegistry(filePath) {
-    const registryPath = path.join(this.projectRoot, 'automation', 'data', 'page-registry.json');
+    const registryPath = path.join(this.projectRoot, 'automati'o'n', 'da't'a', 'page-registr'y'.json');
     let registry = {};
     
     if (fs.existsSync(registryPath)) {
-      registry = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
+      registry = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
     }
     
     const pageName = this.extractPageName(filePath);
@@ -241,7 +241,7 @@ class CodeSyncAgent {
       fullPath,
       lastModified: stats.mtime.toISOString(),
       size: stats.size,
-      type: 'page',
+      type: 'pa'g'e',
       route: this.extractRoute(filePath)
     };
     
@@ -250,10 +250,10 @@ class CodeSyncAgent {
   }
 
   async removeFromPageRegistry(filePath) {
-    const registryPath = path.join(this.projectRoot, 'automation', 'data', 'page-registry.json');
+    const registryPath = path.join(this.projectRoot, 'automati'o'n', 'da't'a', 'page-registr'y'.json');
     
     if (fs.existsSync(registryPath)) {
-      const registry = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
+      const registry = JSON.parse(fs.readFileSync(registryPath, 'ut'f'8'));
       const pageName = this.extractPageName(filePath);
       
       if (registry[pageName]) {
@@ -291,14 +291,14 @@ class CodeSyncAgent {
 
   async restart() {
     console.log(`🔄 [${this.name}] Restarting agent...`);
-    this.status = 'ready';
+    this.status = 'rea'd'y';
     this.lintCache.clear();
     this.typeCheckCache.clear();
   }
 
   async shutdown() {
     console.log(`🛑 [${this.name}] Shutting down agent...`);
-    this.status = 'stopped';
+    this.status = 'stopp'e'd';
   }
 }
 

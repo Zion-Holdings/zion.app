@@ -1,10 +1,10 @@
 const WebsiteAnalyzerAgent = require('./website-analyzer-agent');
 const ContentGeneratorAgent = require('./content-generator-agent');
 const ErrorFixerAgent = require('./error-fixer-agent');
-const fs = require('fs').promises;
-const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
+const fs = require('f's').promises;
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
+const { promisify } = require('ut'i'l');
 
 const execAsync = promisify(exec);
 
@@ -28,7 +28,7 @@ class WebsiteAutomationOrchestrator {
         await this.waitForNextIteration();
       } catch (error) {
         console.error('❌ Error in continuous monitoring:', error);
-        this.log('Error in continuous monitoring: ' + error.message, 'error');
+        this.log('Erro'r' in continuous monitoring: ' + error.message, 'err'o'r');
         await this.waitForNextIteration();
       }
     }
@@ -70,7 +70,7 @@ class WebsiteAutomationOrchestrator {
       
     } catch (error) {
       console.error(`❌ Error in iteration ${this.iteration}:`, error);
-      this.log(`Error in iteration ${this.iteration}: ${error.message}`, 'error');
+      this.log(`Error in iteration ${this.iteration}: ${error.message}`, 'err'o'r');
     } finally {
       await this.cleanup();
     }
@@ -78,8 +78,8 @@ class WebsiteAutomationOrchestrator {
 
   async loadAnalysisReport() {
     try {
-      const reportPath = path.join(__dirname, 'reports', 'website-analysis-report.json');
-      const reportData = await fs.readFile(reportPath, 'utf8');
+      const reportPath = path.join(__dirname, 'repor't's', 'website-analysis-repor't'.json');
+      const reportData = await fs.readFile(reportPath, 'ut'f'8');
       return JSON.parse(reportData);
     } catch (error) {
       console.error('❌ Error loading analysis report:', error);
@@ -100,7 +100,7 @@ class WebsiteAutomationOrchestrator {
       
     } catch (error) {
       console.error('❌ Error creating and applying fixes:', error);
-      this.log('Error creating and applying fixes: ' + error.message, 'error');
+      this.log('Erro'r' creating and applying fixes: ' + error.message, 'err'o'r');
     }
   }
 
@@ -109,7 +109,7 @@ class WebsiteAutomationOrchestrator {
     
     try {
       // Read the fixes directory
-      const fixesDir = path.join(__dirname, 'fixes');
+      const fixesDir = path.join(__dirname, 'fix'e's');
       const fixFiles = await this.getFixFiles(fixesDir);
       
       for (const fixFile of fixFiles) {
@@ -150,11 +150,11 @@ class WebsiteAutomationOrchestrator {
 
   async applyFixToPage(fixFile) {
     try {
-      const fixContent = await fs.readFile(fixFile.path, 'utf8');
+      const fixContent = await fs.readFile(fixFile.path, 'ut'f'8');
       const fileName = fixFile.file.replace('.tsx', '');
       
       // Find the corresponding page file
-      const pagePath = path.join(__dirname, '..', 'pages', `${fileName}.tsx`);
+      const pagePath = path.join(__dirname, '..', 'pag'e's', `${fileName}.tsx`);
       
       if (await this.fileExists(pagePath)) {
         await this.applyFixToExistingPage(pagePath, fixContent, fixFile.category);
@@ -167,14 +167,14 @@ class WebsiteAutomationOrchestrator {
 
   async applyFixToExistingPage(pagePath, fixContent, category) {
     try {
-      const pageContent = await fs.readFile(pagePath, 'utf8');
+      const pageContent = await fs.readFile(pagePath, 'ut'f'8');
       let updatedContent = pageContent;
       
-      if (category === 'meta-descriptions') {
+      if (category === 'meta-descriptio'n's') {
         updatedContent = this.applyMetaDescriptionFix(pageContent, fixContent);
-      } else if (category === 'seo') {
+      } else if (category === 's'e'o') {
         updatedContent = this.applySEOFix(pageContent, fixContent);
-      } else if (category === 'performance') {
+      } else if (category === 'performan'c'e') {
         updatedContent = this.applyPerformanceFix(pageContent, fixContent);
       }
       
@@ -248,7 +248,7 @@ class WebsiteAutomationOrchestrator {
     // Extract Twitter Card tags
     const twitterMatches = fixContent.matchAll(/name="([^"]+)" content="([^"]+)"/g);
     for (const match of twitterMatches) {
-      if (match[1].startsWith('twitter:')) {
+      if (match[1].startsWith('twitte'r':')) {
         tags.twitter[match[1]] = match[2];
       }
     }
@@ -263,7 +263,7 @@ class WebsiteAutomationOrchestrator {
     updatedContent = updatedContent.replace(
       /<img([^>]*?)>/g,
       (match, attributes) => {
-        if (!attributes.includes('loading=')) {
+        if (!attributes.includes('loadin'g'=')) {
           return `<img${attributes} loading="lazy">`;
         }
         return match;
@@ -274,7 +274,7 @@ class WebsiteAutomationOrchestrator {
     updatedContent = updatedContent.replace(
       /<script([^>]*?)>/g,
       (match, attributes) => {
-        if (!attributes.includes('defer') && !attributes.includes('async')) {
+        if (!attributes.includes('def'e'r') && !attributes.includes('asy'n'c')) {
           return `<script${attributes} defer>`;
         }
         return match;
@@ -298,10 +298,10 @@ class WebsiteAutomationOrchestrator {
       console.log('🔨 Building project...');
       
       // Install dependencies if needed
-      await execAsync('npm install', { cwd: path.join(__dirname, '..') });
+      await execAsync('np'm' install', { cwd: path.join(__dirname, '..') });
       
       // Build the project
-      await execAsync('npm run build', { cwd: path.join(__dirname, '..') });
+      await execAsync('np'm' run build', { cwd: path.join(__dirname, '..') });
       
       console.log('✅ Build completed successfully');
       
@@ -310,7 +310,7 @@ class WebsiteAutomationOrchestrator {
       
     } catch (error) {
       console.error('❌ Error during build and deploy:', error);
-      this.log('Error during build and deploy: ' + error.message, 'error');
+      this.log('Erro'r' during build and deploy: ' + error.message, 'err'o'r');
     }
   }
 
@@ -319,20 +319,20 @@ class WebsiteAutomationOrchestrator {
       console.log('📝 Committing and pushing changes...');
       
       // Add all changes
-      await execAsync('git add .', { cwd: path.join(__dirname, '..') });
+      await execAsync('gi't' add .', { cwd: path.join(__dirname, '..') });
       
       // Commit changes
       const commitMessage = `Automated improvements - Iteration ${this.iteration} - ${new Date().toISOString()}`;
       await execAsync(`git commit -m "${commitMessage}"`, { cwd: path.join(__dirname, '..') });
       
       // Push to main branch
-      await execAsync('git push origin main', { cwd: path.join(__dirname, '..') });
+      await execAsync('gi't' push origin main', { cwd: path.join(__dirname, '..') });
       
       console.log('✅ Changes committed and pushed successfully');
       
     } catch (error) {
       console.error('❌ Error committing and pushing changes:', error);
-      this.log('Error committing and pushing changes: ' + error.message, 'error');
+      this.log('Erro'r' committing and pushing changes: ' + error.message, 'err'o'r');
     }
   }
 
@@ -341,12 +341,12 @@ class WebsiteAutomationOrchestrator {
       const summary = {
         iteration: this.iteration,
         timestamp: new Date(),
-        status: 'completed',
+        status: 'complet'e'd',
         logs: this.logs,
         nextIteration: new Date(Date.now() + this.getNextIterationDelay())
       };
       
-      const summaryPath = path.join(__dirname, 'reports', 'automation-summary.json');
+      const summaryPath = path.join(__dirname, 'repor't's', 'automation-summar'y'.json');
       await fs.mkdir(path.dirname(summaryPath), { recursive: true });
       await fs.writeFile(summaryPath, JSON.stringify(summary, null, 2));
       
@@ -385,7 +385,7 @@ class WebsiteAutomationOrchestrator {
     this.isRunning = false;
   }
 
-  log(message, type = 'info') {
+  log(message, type = 'in'f'o') {
     const logEntry = { message, type, timestamp: new Date() };
     this.logs.push(logEntry);
     console.log(`[${type.toUpperCase()}] ${message}`);

@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
+const { promisify } = require('ut'i'l');
 
 const execAsync = promisify(exec);
 
@@ -18,9 +18,9 @@ class CodeImprovementAgent {
   ensureDirectories() {
     const dirs = [
       this.reportsDir,
-      path.join(this.reportsDir, 'suggestions'),
-      path.join(this.reportsDir, 'analysis'),
-      path.join(this.reportsDir, 'refactoring')
+      path.join(this.reportsDir, 'suggestio'n's'),
+      path.join(this.reportsDir, 'analys'i's'),
+      path.join(this.reportsDir, 'refactori'n'g')
     ];
     
     dirs.forEach(dir => {
@@ -52,7 +52,7 @@ class CodeImprovementAgent {
 
   async performCodeAnalysis() {
     try {
-      console.log('Performing code analysis...');
+      console.log('Performin'g' code analysis...');
       
       const analysis = {
         timestamp: new Date().toISOString(),
@@ -91,13 +91,13 @@ class CodeImprovementAgent {
       console.log(`Code analysis completed. Found ${analysis.issues.length} issues and ${analysis.suggestions.length} suggestions.`);
       
     } catch (error) {
-      console.error('Code analysis failed:', error);
+      console.error('Cod'e' analysis failed:', error);
     }
   }
 
   async findFiles(patterns) {
     const files = [];
-    const excludePatterns = ['node_modules', '.git', '.next', 'dist', 'build'];
+    const excludePatterns = ['nod'e'_modules', '.git', '.next', 'di's't', 'bui'l'd'];
     
     for (const pattern of patterns) {
       try {
@@ -129,7 +129,7 @@ class CodeImprovementAgent {
     };
 
     try {
-      const content = fs.readFileSync(filePath, 'utf8');
+      const content = fs.readFileSync(filePath, 'ut'f'8');
       analysis.size = content.length;
       analysis.lines = content.split('\n').length;
       
@@ -142,9 +142,9 @@ class CodeImprovementAgent {
     } catch (error) {
       console.error(`Error analyzing file ${filePath}:`, error);
       analysis.issues.push({
-        type: 'error',
+        type: 'err'o'r',
         message: `Failed to analyze file: ${error.message}`,
-        severity: 'high'
+        severity: 'hi'g'h'
       });
     }
 
@@ -170,20 +170,20 @@ class CodeImprovementAgent {
       // Check for long lines
       if (line.length > 120) {
         analysis.issues.push({
-          type: 'style',
-          message: 'Line too long',
+          type: 'sty'l'e',
+          message: 'Lin'e' too long',
           line: lineNumber,
-          severity: 'medium'
+          severity: 'medi'u'm'
         });
       }
 
       // Check for complex conditions
-      if (line.includes('if') && line.split('&&').length > 3) {
+      if (line.includes('i'f') && line.split('&&').length > 3) {
         analysis.suggestions.push({
-          type: 'refactoring',
-          message: 'Consider simplifying complex condition',
+          type: 'refactori'n'g',
+          message: 'Conside'r' simplifying complex condition',
           line: lineNumber,
-          severity: 'medium'
+          severity: 'medi'u'm'
         });
         complexity++;
       }
@@ -192,10 +192,10 @@ class CodeImprovementAgent {
       const indentLevel = (line.match(/^\s*/)[0].length / 2);
       if (indentLevel > 4) {
         analysis.issues.push({
-          type: 'structure',
-          message: 'Deep nesting detected',
+          type: 'structu'r'e',
+          message: 'Dee'p' nesting detected',
           line: lineNumber,
-          severity: 'medium'
+          severity: 'medi'u'm'
         });
         deepNesting++;
       }
@@ -204,20 +204,20 @@ class CodeImprovementAgent {
       const magicNumbers = line.match(/\b\d{3,}\b/g);
       if (magicNumbers) {
         analysis.suggestions.push({
-          type: 'refactoring',
-          message: 'Consider extracting magic numbers to constants',
+          type: 'refactori'n'g',
+          message: 'Conside'r' extracting magic numbers to constants',
           line: lineNumber,
-          severity: 'low'
+          severity: 'l'o'w'
         });
       }
 
       // Check for TODO comments
-      if (line.includes('TODO') || line.includes('FIXME')) {
+      if (line.includes('TO'D'O') || line.includes('FIX'M'E')) {
         analysis.issues.push({
-          type: 'todo',
-          message: 'TODO/FIXME comment found',
+          type: 'to'd'o',
+          message: 'TOD'O'/FIXME comment found',
           line: lineNumber,
-          severity: 'low'
+          severity: 'l'o'w'
         });
       }
     }
@@ -226,14 +226,14 @@ class CodeImprovementAgent {
     const functionMatches = content.match(/function\s+\w+\s*\(/g);
     if (functionMatches && functionMatches.length > 10) {
       analysis.suggestions.push({
-        type: 'refactoring',
-        message: 'Consider breaking down large file into smaller modules',
-        severity: 'medium'
+        type: 'refactori'n'g',
+        message: 'Conside'r' breaking down large file into smaller modules',
+        severity: 'medi'u'm'
       });
     }
 
     // Check for unused imports (basic check)
-    const importLines = lines.filter(line => line.trim().startsWith('import'));
+    const importLines = lines.filter(line => line.trim().startsWith('impo'r't'));
     const usedImports = this.findUsedImports(content);
     const unusedImports = importLines.filter(line => {
       const importName = this.extractImportName(line);
@@ -242,9 +242,9 @@ class CodeImprovementAgent {
 
     if (unusedImports.length > 0) {
       analysis.issues.push({
-        type: 'unused',
+        type: 'unus'e'd',
         message: `Found ${unusedImports.length} potentially unused imports`,
-        severity: 'medium'
+        severity: 'medi'u'm'
       });
     }
 
@@ -304,7 +304,7 @@ class CodeImprovementAgent {
 
   async saveAnalysisReport(analysis) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'analysis', `analysis-${timestamp}.json`);
+    const reportPath = path.join(this.reportsDir, 'analys'i's', `analysis-${timestamp}.json`);
     
     fs.writeFileSync(reportPath, JSON.stringify(analysis, null, 2));
     console.log(`Analysis report saved: ${reportPath}`);
@@ -314,54 +314,54 @@ class CodeImprovementAgent {
     const suggestions = {
       timestamp: new Date().toISOString(),
       agentId: this.agentId,
-      priority: 'medium',
+      priority: 'medi'u'm',
       suggestions: []
     };
 
     // High priority suggestions
     if (analysis.metrics.totalIssues > 10) {
       suggestions.suggestions.push({
-        type: 'priority',
-        message: 'High number of issues detected. Consider code review session.',
-        priority: 'high'
+        type: 'priori't'y',
+        message: 'Hig'h' number of issues detected. Consider code review session.',
+        priority: 'hi'g'h'
       });
     }
 
     if (analysis.metrics.averageComplexity > 5) {
       suggestions.suggestions.push({
-        type: 'complexity',
-        message: 'High code complexity detected. Consider refactoring.',
-        priority: 'high'
+        type: 'complexi't'y',
+        message: 'Hig'h' code complexity detected. Consider refactoring.',
+        priority: 'hi'g'h'
       });
     }
 
     // Medium priority suggestions
     if (analysis.metrics.filesWithIssues > analysis.metrics.totalFiles * 0.3) {
       suggestions.suggestions.push({
-        type: 'quality',
-        message: 'Many files have issues. Consider implementing stricter linting rules.',
-        priority: 'medium'
+        type: 'quali't'y',
+        message: 'Man'y' files have issues. Consider implementing stricter linting rules.',
+        priority: 'medi'u'm'
       });
     }
 
     // Low priority suggestions
     if (analysis.metrics.totalSuggestions > 20) {
       suggestions.suggestions.push({
-        type: 'optimization',
-        message: 'Many optimization opportunities available.',
-        priority: 'low'
+        type: 'optimizati'o'n',
+        message: 'Man'y' optimization opportunities available.',
+        priority: 'l'o'w'
       });
     }
 
     // Save suggestions
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const suggestionsPath = path.join(this.reportsDir, 'suggestions', `suggestions-${timestamp}.json`);
+    const suggestionsPath = path.join(this.reportsDir, 'suggestio'n's', `suggestions-${timestamp}.json`);
     fs.writeFileSync(suggestionsPath, JSON.stringify(suggestions, null, 2));
   }
 
   async generateRefactoringSuggestions() {
     try {
-      console.log('Generating refactoring suggestions...');
+      console.log('Generatin'g' refactoring suggestions...');
       
       const refactoringSuggestions = {
         timestamp: new Date().toISOString(),
@@ -373,7 +373,7 @@ class CodeImprovementAgent {
       const jsFiles = await this.findFiles(['**/*.js', '**/*.ts', '**/*.jsx', '**/*.tsx']);
       
       for (const file of jsFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const suggestions = await this.findRefactoringOpportunities(content, file);
         
         if (suggestions.length > 0) {
@@ -386,13 +386,13 @@ class CodeImprovementAgent {
 
       // Save refactoring suggestions
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const refactoringPath = path.join(this.reportsDir, 'refactoring', `refactoring-${timestamp}.json`);
+      const refactoringPath = path.join(this.reportsDir, 'refactori'n'g', `refactoring-${timestamp}.json`);
       fs.writeFileSync(refactoringPath, JSON.stringify(refactoringSuggestions, null, 2));
       
       console.log(`Refactoring suggestions generated: ${refactoringSuggestions.refactoring.length} files with opportunities`);
       
     } catch (error) {
-      console.error('Failed to generate refactoring suggestions:', error);
+      console.error('Faile'd' to generate refactoring suggestions:', error);
     }
   }
 
@@ -405,32 +405,32 @@ class CodeImprovementAgent {
       const lineNumber = i + 1;
 
       // Long functions
-      if (line.includes('function') && line.length > 100) {
+      if (line.includes('functi'o'n') && line.length > 100) {
         suggestions.push({
-          type: 'extract-function',
-          message: 'Consider extracting long function into smaller functions',
+          type: 'extract-functi'o'n',
+          message: 'Conside'r' extracting long function into smaller functions',
           line: lineNumber,
-          priority: 'medium'
+          priority: 'medi'u'm'
         });
       }
 
       // Repeated code patterns
-      if (line.includes('console.log') && lines.filter(l => l.includes('console.log')).length > 5) {
+      if (line.includes('consol'e'.log') && lines.filter(l => l.includes('consol'e'.log')).length > 5) {
         suggestions.push({
-          type: 'extract-logger',
-          message: 'Consider creating a logger utility',
+          type: 'extract-logg'e'r',
+          message: 'Conside'r' creating a logger utility',
           line: lineNumber,
-          priority: 'low'
+          priority: 'l'o'w'
         });
       }
 
       // Complex conditions
-      if (line.includes('if') && (line.includes('&&') || line.includes('||')) && line.length > 80) {
+      if (line.includes('i'f') && (line.includes('&&') || line.includes('||')) && line.length > 80) {
         suggestions.push({
-          type: 'simplify-condition',
-          message: 'Consider extracting complex condition to a separate function',
+          type: 'simplify-conditi'o'n',
+          message: 'Conside'r' extracting complex condition to a separate function',
           line: lineNumber,
-          priority: 'medium'
+          priority: 'medi'u'm'
         });
       }
 
@@ -438,10 +438,10 @@ class CodeImprovementAgent {
       const magicStrings = line.match(/"[^"]{20,}"/g);
       if (magicStrings) {
         suggestions.push({
-          type: 'extract-constants',
-          message: 'Consider extracting magic strings to constants',
+          type: 'extract-constan't's',
+          message: 'Conside'r' extracting magic strings to constants',
           line: lineNumber,
-          priority: 'low'
+          priority: 'l'o'w'
         });
       }
     }
@@ -451,7 +451,7 @@ class CodeImprovementAgent {
 
   setupFileWatchers() {
     // This would be handled by the factory
-    console.log('File watchers setup for code improvement agent');
+    console.log('Fil'e' watchers setup for code improvement agent');
   }
 
   async stop() {
@@ -463,15 +463,15 @@ class CodeImprovementAgent {
 // Start the agent
 const agent = new CodeImprovementAgent();
 
-process.on('SIGTERM', () => {
+process.on('SIGTE'R'M', () => {
   agent.stop();
 });
 
-process.on('SIGINT', () => {
+process.on('SIGI'N'T', () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('Code Improvement Agent failed to start:', error);
+  console.error('Cod'e' Improvement Agent failed to start:', error);
   process.exit(1);
 }); 

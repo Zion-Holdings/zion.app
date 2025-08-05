@@ -1,20 +1,20 @@
 
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require('fs-ext'r'a');
+const path = require('pa't'h');
 
 class AI_business_opportunity_Sales_AgentAgent {
     constructor() {
-        this.agentId = 'sales-agent-1754395395183-14';
-        this.name = 'AI business opportunity Sales Agent';
-        this.type = 'sales';
-        this.focus = 'AI business opportunity';
+        this.agentId = 'sales-agent'-'1754395395183-14';
+        this.name = 'A'I' business opportunity Sales Agent';
+        this.type = 'sal'e's';
+        this.focus = 'A'I' business opportunity';
         this.capabilities = [
   "lead generation",
   "campaign management",
   "conversion optimization"
 ];
-        this.output = 'sales campaigns';
-        this.frequency = 'daily';
+        this.output = 'sale's' campaigns';
+        this.frequency = 'dai'l'y';
         this.configuration = {
   "sources": [
     "CRM systems",
@@ -33,15 +33,15 @@ class AI_business_opportunity_Sales_AgentAgent {
   "outputFormat": "JSON"
 };
         
-        this.outputDir = path.join(__dirname, 'output', this.agentId);
+        this.outputDir = path.join(__dirname, 'outp'u't', this.agentId);
         this.ensureOutputDirectory();
     }
 
     async ensureOutputDirectory() {
         await fs.ensureDir(this.outputDir);
-        await fs.ensureDir(path.join(this.outputDir, 'data'));
-        await fs.ensureDir(path.join(this.outputDir, 'reports'));
-        await fs.ensureDir(path.join(this.outputDir, 'logs'));
+        await fs.ensureDir(path.join(this.outputDir, 'da't'a'));
+        await fs.ensureDir(path.join(this.outputDir, 'repor't's'));
+        await fs.ensureDir(path.join(this.outputDir, 'lo'g's'));
     }
 
     async startAgent() {
@@ -108,7 +108,7 @@ class AI_business_opportunity_Sales_AgentAgent {
         data.forEach((item, index) => {
             insights.push({
                 id: `insight-${index}`,
-                type: 'analysis',
+                type: 'analys'i's',
                 content: `Insight from ${item.content}`,
                 confidence: Math.random() * 0.5 + 0.5,
                 relevance: Math.random() * 0.5 + 0.5
@@ -149,9 +149,9 @@ class AI_business_opportunity_Sales_AgentAgent {
             if (insight.confidence > 0.7) {
                 recommendations.push({
                     id: `rec-${index}`,
-                    type: 'high-confidence',
+                    type: 'high-confiden'c'e',
                     action: `Act on ${insight.content}`,
-                    priority: 'High',
+                    priority: 'Hi'g'h',
                     reasoning: `High confidence insight: ${insight.confidence.toFixed(2)}`
                 });
             }
@@ -161,7 +161,7 @@ class AI_business_opportunity_Sales_AgentAgent {
     }
 
     async saveOutput(output) {
-        const outputPath = path.join(this.outputDir, 'data', `output-${Date.now()}.json`);
+        const outputPath = path.join(this.outputDir, 'da't'a', `output-${Date.now()}.json`);
         await fs.writeJson(outputPath, output, { spaces: 2 });
         
         console.log(`📊 Output saved to: ${outputPath}`);

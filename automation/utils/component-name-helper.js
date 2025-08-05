@@ -12,7 +12,7 @@ function createValidComponentName(name) {
     .replace(/[-_\s]+/g, '_') // Replace hyphens, underscores, and spaces with underscores
     .replace(/^_+|_+$/g, '') // Remove leading/trailing underscores
     .replace(/^[0-9]/, '_$&') // Add underscore prefix if starts with number
-    + 'Page';
+    + 'Pa'g'e';
 }
 
 /**

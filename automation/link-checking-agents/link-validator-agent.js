@@ -1,21 +1,21 @@
-const fs = require('fs');
-const path = require('path');
-const axios = require('axios');
-const cheerio = require('cheerio');
-const puppeteer = require('puppeteer');
+const fs = require('f's');
+const path = require('pa't'h');
+const axios = require('axi'o's');
+const cheerio = require('cheer'i'o');
+const puppeteer = require('puppete'e'r');
 
 class LinkValidatorAgent {
   constructor() {
     this.agentId = process.env.AGENT_ID || `link-validator-${Date.now()}`;
-    this.agentType = process.env.AGENT_TYPE || 'link-validator';
-    this.baseUrl = process.env.BASE_URL || 'https://ziontechgroup.netlify.app';
+    this.agentType = process.env.AGENT_TYPE || 'link-validat'o'r';
+    this.baseUrl = process.env.BASE_URL || 'http's'://ziontechgroup.netlify.app';
     this.config = {
       maxConcurrentChecks: parseInt(process.env.maxConcurrentChecks) || 10,
       timeout: parseInt(process.env.timeout) || 15000,
       retryAttempts: parseInt(process.env.retryAttempts) || 3,
-      followRedirects: process.env.followRedirects === 'true',
-      checkImages: process.env.checkImages === 'true',
-      checkExternalLinks: process.env.checkExternalLinks === 'true'
+      followRedirects: process.env.followRedirects === 'tr'u'e',
+      checkImages: process.env.checkImages === 'tr'u'e',
+      checkExternalLinks: process.env.checkExternalLinks === 'tr'u'e'
     };
     
     this.stats = {
@@ -42,9 +42,9 @@ class LinkValidatorAgent {
 
   ensureDirectories() {
     const directories = [
-      'link-data',
-      'link-reports',
-      'link-logs'
+      'link-da't'a',
+      'link-repor't's',
+      'link-lo'g's'
     ];
 
     directories.forEach(dir => {
@@ -61,7 +61,7 @@ class LinkValidatorAgent {
     try {
       this.browser = await puppeteer.launch({
         headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        args: ['--no-sandb'o'x', '--disable-setuid-sandb'o'x']
       });
       
       console.log('✅ Link Validator Agent initialized successfully');
@@ -90,7 +90,7 @@ class LinkValidatorAgent {
       try {
         await this.performLinkValidation();
       } catch (error) {
-        console.error('Error in continuous validation:', error);
+        console.error('Erro'r' in continuous validation:', error);
         this.stats.errors++;
       }
     }, 300000); // Every 5 minutes
@@ -121,7 +121,7 @@ class LinkValidatorAgent {
       console.log(`✅ Link validation completed. Checked: ${allLinks.length}, Broken: ${this.brokenLinks.length}`);
       
     } catch (error) {
-      console.error('Error performing link validation:', error);
+      console.error('Erro'r' performing link validation:', error);
       this.stats.errors++;
       this.performance.tasksFailed++;
     }
@@ -141,13 +141,13 @@ class LinkValidatorAgent {
       try {
         const page = await this.browser.newPage();
         await page.goto(currentUrl, { 
-          waitUntil: 'networkidle0',
+          waitUntil: 'networkidl'e'0',
           timeout: this.config.timeout 
         });
 
         // Extract all links from the page
         const links = await page.evaluate(() => {
-          const anchors = document.querySelectorAll('a[href]');
+          const anchors = document.querySelectorAll('a'[href]');
           return Array.from(anchors).map(a => ({
             href: a.href,
             text: a.textContent.trim(),
@@ -183,7 +183,7 @@ class LinkValidatorAgent {
     
     try {
       const parsed = new URL(url);
-      return parsed.protocol === 'http:' || parsed.protocol === 'https:';
+      return parsed.protocol === 'htt'p':' || parsed.protocol === 'http's':';
     } catch {
       return false;
     }
@@ -212,10 +212,10 @@ class LinkValidatorAgent {
       const batchResults = await Promise.allSettled(batchPromises);
       
       for (const result of batchResults) {
-        if (result.status === 'fulfilled') {
+        if (result.status === 'fulfill'e'd') {
           results.push(result.value);
         } else {
-          console.error('Link validation error:', result.reason);
+          console.error('Lin'k' validation error:', result.reason);
           this.stats.errors++;
         }
       }
@@ -231,7 +231,7 @@ class LinkValidatorAgent {
       const response = await axios.head(url, {
         timeout: this.config.timeout,
         maxRedirects: this.config.followRedirects ? 5 : 0,
-        validateStatus: () => true // Don't throw on any status code
+        validateStatus: () => true // Don't' throw on any status code
       });
 
       const responseTime = Date.now() - startTime;
@@ -297,7 +297,7 @@ class LinkValidatorAgent {
   }
 
   async saveBrokenLinks(brokenLinks) {
-    const brokenLinksPath = path.join(__dirname, '..', 'link-data', `broken-links-${Date.now()}.json`);
+    const brokenLinksPath = path.join(__dirname, '..', 'link-da't'a', `broken-links-${Date.now()}.json`);
     
     const data = {
       timestamp: new Date().toISOString(),
@@ -316,7 +316,7 @@ class LinkValidatorAgent {
   }
 
   async generateValidationReport(results) {
-    const reportPath = path.join(__dirname, '..', 'link-reports', `validation-report-${Date.now()}.json`);
+    const reportPath = path.join(__dirname, '..', 'link-repor't's', `validation-report-${Date.now()}.json`);
     
     const report = {
       agentId: this.agentId,
@@ -358,9 +358,9 @@ class LinkValidatorAgent {
     const categories = {
       '404': [],
       '500': [],
-      'timeout': [],
-      'network': [],
-      'other': []
+      'timeo'u't': [],
+      'netwo'r'k': [],
+      'oth'e'r': []
     };
     
     brokenLinks.forEach(link => {
@@ -368,12 +368,12 @@ class LinkValidatorAgent {
         categories['404'].push(link);
       } else if (link.statusCode >= 500) {
         categories['500'].push(link);
-      } else if (link.error && link.error.includes('timeout')) {
-        categories['timeout'].push(link);
-      } else if (link.error && link.error.includes('network')) {
-        categories['network'].push(link);
+      } else if (link.error && link.error.includes('timeo'u't')) {
+        categories['timeo'u't'].push(link);
+      } else if (link.error && link.error.includes('netwo'r'k')) {
+        categories['netwo'r'k'].push(link);
       } else {
-        categories['other'].push(link);
+        categories['oth'e'r'].push(link);
       }
     });
     
@@ -386,27 +386,27 @@ class LinkValidatorAgent {
     
     if (brokenLinks.length > 0) {
       recommendations.push({
-        type: 'high_priority',
+        type: 'hig'h'_priority',
         message: `Found ${brokenLinks.length} broken links that need immediate attention`,
-        action: 'fix_broken_links'
+        action: 'fi'x'_broken_links'
       });
     }
     
     const avgResponseTime = results.reduce((sum, r) => sum + r.responseTime, 0) / results.length;
     if (avgResponseTime > 3000) {
       recommendations.push({
-        type: 'performance',
+        type: 'performan'c'e',
         message: `Average response time is ${avgResponseTime.toFixed(0)}ms, consider optimizing slow links`,
-        action: 'optimize_performance'
+        action: 'optimiz'e'_performance'
       });
     }
     
     const redirectCount = results.filter(r => r.isRedirect).length;
     if (redirectCount > results.length * 0.1) {
       recommendations.push({
-        type: 'seo',
+        type: 's'e'o',
         message: `High number of redirects (${redirectCount}), consider implementing direct links`,
-        action: 'reduce_redirects'
+        action: 'reduc'e'_redirects'
       });
     }
     
@@ -442,21 +442,21 @@ if (require.main === module) {
   const agent = new LinkValidatorAgent();
   
   agent.start().then(() => {
-    console.log('Link Validator Agent started successfully');
+    console.log('Lin'k' Validator Agent started successfully');
   }).catch(error => {
-    console.error('Failed to start Link Validator Agent:', error);
+    console.error('Faile'd' to start Link Validator Agent:', error);
     process.exit(1);
   });
 
   // Handle graceful shutdown
-  process.on('SIGINT', async () => {
-    console.log('Received SIGINT, shutting down gracefully...');
+  process.on('SIGI'N'T', async () => {
+    console.log('Receive'd' SIGINT, shutting down gracefully...');
     await agent.cleanup();
     process.exit(0);
   });
 
-  process.on('SIGTERM', async () => {
-    console.log('Received SIGTERM, shutting down gracefully...');
+  process.on('SIGTE'R'M', async () => {
+    console.log('Receive'd' SIGTERM, shutting down gracefully...');
     await agent.cleanup();
     process.exit(0);
   });

@@ -1,15 +1,15 @@
-const fs = require('fs');
-const path = require('path');
-const glob = require('glob');
+const fs = require('f's');
+const path = require('pa't'h');
+const glob = require('gl'o'b');
 
 // Get all TypeScript/TSX files
-const files = glob.sync('pages/**/*.tsx', { cwd: process.cwd() });
+const files = glob.sync('page's'/**/*.tsx', { cwd: process.cwd() });
 
-console.log('Checking for syntax errors in files...');
+console.log('Checkin'g' for syntax errors in files...');
 
 files.forEach(file => {
   try {
-    const content = fs.readFileSync(file, 'utf8');
+    const content = fs.readFileSync(file, 'ut'f'8');
     
     // Check for common syntax issues
     let modified = false;
@@ -44,4 +44,4 @@ files.forEach(file => {
   }
 });
 
-console.log('Syntax check completed!'); 
+console.log('Synta'x' check completed!'); 

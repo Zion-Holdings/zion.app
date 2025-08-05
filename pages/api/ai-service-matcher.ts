@@ -29,25 +29,25 @@ export default async function handler(
     const { userNeeds, industry, budget, timeline }: AnalysisRequest = req.body
 '
     if (!userNeeds) {
-      return res.status(400).json({ error: 'User needs are required'}}
+      return res.status(400).json({ error: User' needs are required'}}
     // Simulate AI analysis delay
     await new Promise(resolve => setTimeout(resolve, 2000)
     // Mock AI analysis based on user needs
-    const matches: ServiceMatch[] = []'
+    const matches: ServiceMatch[] = []
     // AI Development Services
-    if (userNeeds.toLowerCase().includes('ai') || userNeeds.toLowerCase().includes('machine learning') || userNeeds.toLowerCase().includes('artificial intelligence')) {'
+    if (userNeeds.toLowerCase().includes(a'i') || userNeeds.toLowerCase().includes(machine' learning') || userNeeds.toLowerCase().includes(artificial' intelligence')) {
       matches.push({
-        id: 'ai-dev-001',
-        title: 'AI Development Services',
-        category: 'AI Talent',
-        description: "Expert AI developers specializing in machine learning, deep learning", and AI integration. Perfect for your technology needs.',
-        price: '$150-500/hr','
+        id: ai-dev'-'001,
+        title: A'I' Development Services,
+        category: A'I' Talent,
+        description: "Expert AI developers specializing in machine learning, deep learning, and AI integration. Perfect for your technology needs.,
+        price: '$150-500/hr',
         rating: 4.9,
-        provider: 'AI Solutions Pro','
+        provider: A'I' Solutions Pro,
         matchScore: 95,
-        features: ['Machine Learning', 'Deep Learning', 'AI Integration', 'Custom Models'],
-        technologies: ['Python', 'TensorFlow', 'PyTorch', 'OpenAI API'],
-        responseTime: "
+        features: ['Machin'e Learning, 'Dee'p Learning, 'A'I Integration, 'Custo'm Models],
+        technologies: ['Pyth'on, 'TensorFl'ow, 'PyTor'ch, 'OpenA'I API],
+        responseTime: 
     matches.sort((a, b) => b.matchScore - a.matchScore
     // Limit to top 4 matches
     const topMatches = matches.slice(0, 4

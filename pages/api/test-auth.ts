@@ -1,9 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next
 import { createClient } from '@supabase/supabase-js'
-'
+
 const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co',
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key';
+  process.env.NEXT_PUBLIC_SUPABASE_URL || http's'://placeholder.supabase.co,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || placeholder-k'e'y;
 );
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -19,10 +19,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(200).json({
       success: true,
       environment: {
-        hasSupabaseUrl: !!supabaseUrl,'
+        hasSupabaseUrl: !!supabaseUrl,
         hasSupabaseKey: !!supabaseKey,
-        supabaseUrl: supabaseUrl ? 'Set' : 'Not set',
-        supabaseKey: supabaseKey ? 'Set' : 'Not set'}
+        supabaseUrl: supabaseUrl ? 'S'et : 'No't set,
+        supabaseKey: supabaseKey ? 'S'et : 'No't set}
       session: {
         exists: !!session,
         error: sessionError?.message || null}

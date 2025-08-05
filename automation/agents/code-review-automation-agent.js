@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
+const { promisify } = require('ut'i'l');
 
 const execAsync = promisify(exec);
 
@@ -108,10 +108,10 @@ class Code-review-automationAutomationAgent {
   ensureDirectories() {
     const dirs = [
       this.reportsDir,
-      path.join(this.reportsDir, 'review-reports'),
-      path.join(this.reportsDir, 'quality-reports'),
-      path.join(this.reportsDir, 'suggestion-reports'),
-      path.join(this.reportsDir, 'standards-reports')
+      path.join(this.reportsDir, 'review-repor't's'),
+      path.join(this.reportsDir, 'quality-repor't's'),
+      path.join(this.reportsDir, 'suggestion-repor't's'),
+      path.join(this.reportsDir, 'standards-repor't's')
     ];
     
     dirs.forEach(dir => {
@@ -145,7 +145,7 @@ class Code-review-automationAutomationAgent {
 
   async performCodeReview() {
     try {
-      console.log('Performing comprehensive code review...');
+      console.log('Performin'g' comprehensive code review...');
       
       const review = {
         timestamp: new Date().toISOString(),
@@ -175,10 +175,10 @@ class Code-review-automationAutomationAgent {
       // Save review report
       await this.saveReviewReport(review);
       
-      console.log('Code review completed');
+      console.log('Cod'e' review completed');
       
     } catch (error) {
-      console.error('Code review failed:', error);
+      console.error('Cod'e' review failed:', error);
     }
   }
 
@@ -192,7 +192,7 @@ class Code-review-automationAutomationAgent {
     };
     
     try {
-      console.log('Analyzing code quality...');
+      console.log('Analyzin'g' code quality...');
       
       // Analyze complexity
       quality.complexity = await this.analyzeComplexity();
@@ -210,7 +210,7 @@ class Code-review-automationAutomationAgent {
       quality.performance = await this.analyzePerformance();
       
     } catch (error) {
-      console.error('Code quality analysis failed:', error);
+      console.error('Cod'e' quality analysis failed:', error);
     }
     
     return quality;
@@ -228,7 +228,7 @@ class Code-review-automationAutomationAgent {
       const sourceFiles = await this.findSourceFiles();
       
       for (const file of sourceFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const lines = content.split('\n');
         
         // Calculate cyclomatic complexity
@@ -249,7 +249,7 @@ class Code-review-automationAutomationAgent {
       }
       
     } catch (error) {
-      console.error('Complexity analysis failed:', error);
+      console.error('Complexit'y' analysis failed:', error);
     }
     
     return complexity;
@@ -358,7 +358,7 @@ class Code-review-automationAutomationAgent {
       const sourceFiles = await this.findSourceFiles();
       
       for (const file of sourceFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         
         // Check for code duplication
         maintainability.codeDuplication[file] = this.detectCodeDuplication(content);
@@ -377,7 +377,7 @@ class Code-review-automationAutomationAgent {
       }
       
     } catch (error) {
-      console.error('Maintainability analysis failed:', error);
+      console.error('Maintainabilit'y' analysis failed:', error);
     }
     
     return maintainability;
@@ -490,7 +490,7 @@ class Code-review-automationAutomationAgent {
       const sourceFiles = await this.findSourceFiles();
       
       for (const file of sourceFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         
         // Check naming conventions
         readability.namingConventions[file] = this.checkNamingConventions(content);
@@ -506,7 +506,7 @@ class Code-review-automationAutomationAgent {
       }
       
     } catch (error) {
-      console.error('Readability analysis failed:', error);
+      console.error('Readabilit'y' analysis failed:', error);
     }
     
     return readability;
@@ -522,9 +522,9 @@ class Code-review-automationAutomationAgent {
       const variableName = match[1];
       if (!/^[a-z][a-zA-Z0-9]*$/.test(variableName)) {
         issues.push({
-          type: 'naming_convention',
+          type: 'namin'g'_convention',
           variable: variableName,
-          suggestion: 'Use camelCase for variable names'
+          suggestion: 'Us'e' camelCase for variable names'
         });
       }
     }
@@ -535,9 +535,9 @@ class Code-review-automationAutomationAgent {
       const className = match[1];
       if (!/^[A-Z][a-zA-Z0-9]*$/.test(className)) {
         issues.push({
-          type: 'naming_convention',
+          type: 'namin'g'_convention',
           class: className,
-          suggestion: 'Use PascalCase for class names'
+          suggestion: 'Us'e' PascalCase for class names'
         });
       }
     }
@@ -566,11 +566,11 @@ class Code-review-automationAutomationAgent {
           analysis.documentationComments++;
         }
         
-        if (line.includes('TODO')) {
+        if (line.includes('TO'D'O')) {
           analysis.todoComments++;
         }
         
-        if (line.includes('FIXME')) {
+        if (line.includes('FIX'M'E')) {
           analysis.fixmeComments++;
         }
       }
@@ -604,10 +604,10 @@ class Code-review-automationAutomationAgent {
       // Check for long lines
       if (line.length > 100) {
         issues.push({
-          type: 'long_line',
+          type: 'lon'g'_line',
           line: i + 1,
           length: line.length,
-          suggestion: 'Consider breaking long lines'
+          suggestion: 'Conside'r' breaking long lines'
         });
       }
       
@@ -615,10 +615,10 @@ class Code-review-automationAutomationAgent {
       const leadingSpaces = line.match(/^\s*/)[0].length;
       if (leadingSpaces % 2 !== 0 && leadingSpaces > 0) {
         issues.push({
-          type: 'inconsistent_indentation',
+          type: 'inconsisten't'_indentation',
           line: i + 1,
           spaces: leadingSpaces,
-          suggestion: 'Use consistent indentation (2 or 4 spaces)'
+          suggestion: 'Us'e' consistent indentation (2 or 4 spaces)'
         });
       }
     }
@@ -675,7 +675,7 @@ class Code-review-automationAutomationAgent {
       const sourceFiles = await this.findSourceFiles();
       
       for (const file of sourceFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         
         // Check test coverage
         testability.testCoverage[file] = await this.checkTestCoverage(file);
@@ -691,7 +691,7 @@ class Code-review-automationAutomationAgent {
       }
       
     } catch (error) {
-      console.error('Testability analysis failed:', error);
+      console.error('Testabilit'y' analysis failed:', error);
     }
     
     return testability;
@@ -713,15 +713,15 @@ class Code-review-automationAutomationAgent {
       }
       
       // Check coverage percentage (this would require actual test execution)
-      // For now, we'll estimate based on file structure
-      const content = fs.readFileSync(filePath, 'utf8');
+      // For now, we'l'l' estimate based on file structure
+      const content = fs.readFileSync(filePath, 'ut'f'8');
       const functions = content.match(/function\s+\w+\s*\(/g) || [];
       const classes = content.match(/class\s+\w+/g) || [];
       
       coverage.coveragePercentage = Math.min(100, (functions.length + classes.length) * 10);
       
     } catch (error) {
-      console.error('Test coverage check failed:', error);
+      console.error('Tes't' coverage check failed:', error);
     }
     
     return coverage;
@@ -832,7 +832,7 @@ class Code-review-automationAutomationAgent {
       const sourceFiles = await this.findSourceFiles();
       
       for (const file of sourceFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         
         // Check for inefficient patterns
         performance.inefficientPatterns.push(...this.findInefficientPatterns(content, file));
@@ -845,7 +845,7 @@ class Code-review-automationAutomationAgent {
       }
       
     } catch (error) {
-      console.error('Performance analysis failed:', error);
+      console.error('Performanc'e' analysis failed:', error);
     }
     
     return performance;
@@ -858,9 +858,9 @@ class Code-review-automationAutomationAgent {
     const nestedLoopPattern = /for\s*\([^)]*\)\s*{[^}]*for\s*\([^)]*\)/g;
     if (nestedLoopPattern.test(content)) {
       patterns.push({
-        type: 'nested_loops',
+        type: 'neste'd'_loops',
         file: filePath,
-        suggestion: 'Consider using more efficient algorithms or data structures'
+        suggestion: 'Conside'r' using more efficient algorithms or data structures'
       });
     }
     
@@ -868,9 +868,9 @@ class Code-review-automationAutomationAgent {
     const reRenderPattern = /useEffect\s*\(\s*\(\)\s*=>\s*{[^}]*}\s*,\s*\[\s*\]\s*\)/g;
     if (reRenderPattern.test(content)) {
       patterns.push({
-        type: 'unnecessary_re_render',
+        type: 'unnecessar'y'_re_render',
         file: filePath,
-        suggestion: 'Add proper dependencies to useEffect or use useCallback/useMemo'
+        suggestion: 'Ad'd' proper dependencies to useEffect or use useCallback/useMemo'
       });
     }
     
@@ -886,9 +886,9 @@ class Code-review-automationAutomationAgent {
       const removeListenerPattern = /removeEventListener\s*\([^)]*\)/g;
       if (!removeListenerPattern.test(content)) {
         leaks.push({
-          type: 'event_listener_leak',
+          type: 'even't'_listener_leak',
           file: filePath,
-          suggestion: 'Add removeEventListener in cleanup function'
+          suggestion: 'Ad'd' removeEventListener in cleanup function'
         });
       }
     }
@@ -899,9 +899,9 @@ class Code-review-automationAutomationAgent {
       const clearIntervalPattern = /clearInterval\s*\([^)]*\)/g;
       if (!clearIntervalPattern.test(content)) {
         leaks.push({
-          type: 'interval_leak',
+          type: 'interva'l'_leak',
           file: filePath,
-          suggestion: 'Add clearInterval in cleanup function'
+          suggestion: 'Ad'd' clearInterval in cleanup function'
         });
       }
     }
@@ -923,9 +923,9 @@ class Code-review-automationAutomationAgent {
     for (const pattern of expensivePatterns) {
       if (pattern.test(content)) {
         opportunities.push({
-          type: 'expensive_operation',
+          type: 'expensiv'e'_operation',
           file: filePath,
-          suggestion: 'Consider memoizing expensive operations'
+          suggestion: 'Conside'r' memoizing expensive operations'
         });
       }
     }
@@ -940,7 +940,7 @@ class Code-review-automationAutomationAgent {
       const sourceFiles = await this.findSourceFiles();
       
       for (const file of sourceFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         
         // Generate refactoring suggestions
         suggestions.push(...this.generateRefactoringSuggestions(content, file));
@@ -953,7 +953,7 @@ class Code-review-automationAutomationAgent {
       }
       
     } catch (error) {
-      console.error('Suggestion generation failed:', error);
+      console.error('Suggestio'n' generation failed:', error);
     }
     
     return suggestions;
@@ -966,12 +966,12 @@ class Code-review-automationAutomationAgent {
     const longFunctions = this.findLongFunctions(content);
     for (const func of longFunctions) {
       suggestions.push({
-        type: 'refactor_long_function',
-        priority: 'medium',
+        type: 'refacto'r'_long_function',
+        priority: 'medi'u'm',
         file: filePath,
         function: func.name,
         message: `Function ${func.name} is ${func.lines} lines long. Consider breaking it into smaller functions.`,
-        suggestion: 'Extract smaller functions for better readability and testability'
+        suggestion: 'Extrac't' smaller functions for better readability and testability'
       });
     }
     
@@ -979,12 +979,12 @@ class Code-review-automationAutomationAgent {
     const largeClasses = this.findLargeClasses(content);
     for (const cls of largeClasses) {
       suggestions.push({
-        type: 'refactor_large_class',
-        priority: 'medium',
+        type: 'refacto'r'_large_class',
+        priority: 'medi'u'm',
         file: filePath,
         class: cls.name,
         message: `Class ${cls.name} is ${cls.lines} lines long. Consider breaking it into smaller classes.`,
-        suggestion: 'Extract smaller classes or use composition'
+        suggestion: 'Extrac't' smaller classes or use composition'
       });
     }
     
@@ -998,8 +998,8 @@ class Code-review-automationAutomationAgent {
     const inefficientPatterns = this.findInefficientPatterns(content, filePath);
     for (const pattern of inefficientPatterns) {
       suggestions.push({
-        type: 'performance_optimization',
-        priority: 'high',
+        type: 'performanc'e'_optimization',
+        priority: 'hi'g'h',
         file: filePath,
         message: pattern.suggestion,
         suggestion: pattern.suggestion
@@ -1016,11 +1016,11 @@ class Code-review-automationAutomationAgent {
     const testFile = filePath.replace(/\.(js|jsx|ts|tsx)$/, '.test.$1');
     if (!fs.existsSync(testFile)) {
       suggestions.push({
-        type: 'add_tests',
-        priority: 'medium',
+        type: 'ad'd'_tests',
+        priority: 'medi'u'm',
         file: filePath,
         message: `No test file found for ${path.basename(filePath)}`,
-        suggestion: 'Create comprehensive tests for this file'
+        suggestion: 'Creat'e' comprehensive tests for this file'
       });
     }
     
@@ -1034,7 +1034,7 @@ class Code-review-automationAutomationAgent {
       const sourceFiles = await this.findSourceFiles();
       
       for (const file of sourceFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         
         // Identify critical issues
         issues.push(...this.identifyCriticalIssues(content, file));
@@ -1047,7 +1047,7 @@ class Code-review-automationAutomationAgent {
       }
       
     } catch (error) {
-      console.error('Issue identification failed:', error);
+      console.error('Issu'e' identification failed:', error);
     }
     
     return issues;
@@ -1067,11 +1067,11 @@ class Code-review-automationAutomationAgent {
     for (const pattern of securityPatterns) {
       if (pattern.test(content)) {
         issues.push({
-          severity: 'critical',
-          type: 'security_vulnerability',
+          severity: 'critic'a'l',
+          type: 'securit'y'_vulnerability',
           file: filePath,
-          message: 'Potential security vulnerability detected',
-          suggestion: 'Review and fix security issues'
+          message: 'Potentia'l' security vulnerability detected',
+          suggestion: 'Revie'w' and fix security issues'
         });
       }
     }
@@ -1093,11 +1093,11 @@ class Code-review-automationAutomationAgent {
     for (const pattern of codeSmellPatterns) {
       if (pattern.test(content)) {
         issues.push({
-          severity: 'warning',
-          type: 'code_smell',
+          severity: 'warni'n'g',
+          type: 'cod'e'_smell',
           file: filePath,
-          message: 'Code smell detected',
-          suggestion: 'Address TODO/FIXME comments'
+          message: 'Cod'e' smell detected',
+          suggestion: 'Addres's' TODO/FIXME comments'
         });
       }
     }
@@ -1117,11 +1117,11 @@ class Code-review-automationAutomationAgent {
     for (const pattern of stylePatterns) {
       if (pattern.test(content)) {
         issues.push({
-          severity: 'info',
-          type: 'style_issue',
+          severity: 'in'f'o',
+          type: 'styl'e'_issue',
           file: filePath,
-          message: 'Development artifact detected',
-          suggestion: 'Remove console.log and debugger statements'
+          message: 'Developmen't' artifact detected',
+          suggestion: 'Remov'e' console.log and debugger statements'
         });
       }
     }
@@ -1140,39 +1140,39 @@ class Code-review-automationAutomationAgent {
     try {
       // Run ESLint
       try {
-        const { stdout } = await execAsync('npx eslint . --format=json', {
+        const { stdout } = await execAsync('np'x' eslint . --format=json', {
           cwd: this.projectRoot,
           timeout: 60000
         });
         standards.eslint = JSON.parse(stdout);
       } catch (error) {
-        console.error('ESLint check failed:', error);
+        console.error('ESLin't' check failed:', error);
       }
       
       // Run Prettier check
       try {
-        const { stdout } = await execAsync('npx prettier --check .', {
+        const { stdout } = await execAsync('np'x' prettier --check .', {
           cwd: this.projectRoot,
           timeout: 60000
         });
-        standards.prettier = { status: 'passed' };
+        standards.prettier = { status: 'pass'e'd' };
       } catch (error) {
-        standards.prettier = { status: 'failed', error: error.message };
+        standards.prettier = { status: 'fail'e'd', error: error.message };
       }
       
       // Run TypeScript check
       try {
-        const { stdout } = await execAsync('npx tsc --noEmit', {
+        const { stdout } = await execAsync('np'x' tsc --noEmit', {
           cwd: this.projectRoot,
           timeout: 60000
         });
-        standards.typescript = { status: 'passed' };
+        standards.typescript = { status: 'pass'e'd' };
       } catch (error) {
-        standards.typescript = { status: 'failed', error: error.message };
+        standards.typescript = { status: 'fail'e'd', error: error.message };
       }
       
     } catch (error) {
-      console.error('Coding standards check failed:', error);
+      console.error('Codin'g' standards check failed:', error);
     }
     
     return standards;
@@ -1193,7 +1193,7 @@ class Code-review-automationAutomationAgent {
       metrics.files = sourceFiles.length;
       
       for (const file of sourceFiles) {
-        const content = fs.readFileSync(file, 'utf8');
+        const content = fs.readFileSync(file, 'ut'f'8');
         const lines = content.split('\n');
         
         metrics.linesOfCode += lines.length;
@@ -1214,7 +1214,7 @@ class Code-review-automationAutomationAgent {
       metrics.maintainability = Math.max(0, 171 - 5.2 * Math.log(metrics.complexity) - 0.23 * Math.log(metrics.linesOfCode) - 16.2 * Math.log(metrics.functions));
       
     } catch (error) {
-      console.error('Metrics calculation failed:', error);
+      console.error('Metric's' calculation failed:', error);
     }
     
     return metrics;
@@ -1223,10 +1223,10 @@ class Code-review-automationAutomationAgent {
   async findSourceFiles() {
     const files = [];
     const patterns = [
-      'src/**/*.{js,ts,jsx,tsx}',
-      'pages/**/*.{js,ts,jsx,tsx}',
-      'components/**/*.{js,ts,jsx,tsx}',
-      'utils/**/*.{js,ts}'
+      'sr'c'/**/*.{js,ts,jsx,tsx}',
+      'page's'/**/*.{js,ts,jsx,tsx}',
+      'component's'/**/*.{js,ts,jsx,tsx}',
+      'util's'/**/*.{js,ts}'
     ];
     
     for (const pattern of patterns) {
@@ -1240,14 +1240,14 @@ class Code-review-automationAutomationAgent {
     }
     
     return files.filter(file => {
-      const excludePatterns = ['node_modules', '.git', '.next', 'dist', 'build'];
+      const excludePatterns = ['nod'e'_modules', '.git', '.next', 'di's't', 'bui'l'd'];
       return !excludePatterns.some(exclude => file.includes(exclude));
     });
   }
 
   async reviewCodeChanges() {
     try {
-      console.log('Reviewing code changes...');
+      console.log('Reviewin'g' code changes...');
       
       // Check for recent changes
       const changedFiles = await this.detectChangedFiles();
@@ -1261,7 +1261,7 @@ class Code-review-automationAutomationAgent {
       }
       
     } catch (error) {
-      console.error('Code change review failed:', error);
+      console.error('Cod'e' change review failed:', error);
     }
   }
 
@@ -1270,14 +1270,14 @@ class Code-review-automationAutomationAgent {
     
     try {
       // Check for files modified in the last hour
-      const { stdout } = await execAsync('find . -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" -newermt "1 hour ago"', {
+      const { stdout } = await execAsync('fin'd' . -name "*.js" -o -name "*.jsx" -o -name "*.ts" -o -name "*.tsx" -newermt "1 hour ago"', {
         cwd: this.projectRoot
       });
       
       changedFiles.push(...stdout.trim().split('\n').filter(file => file));
       
     } catch (error) {
-      console.error('Failed to detect changed files:', error);
+      console.error('Faile'd' to detect changed files:', error);
     }
     
     return changedFiles;
@@ -1287,7 +1287,7 @@ class Code-review-automationAutomationAgent {
     try {
       console.log(`Reviewing file: ${filePath}`);
       
-      const content = fs.readFileSync(filePath, 'utf8');
+      const content = fs.readFileSync(filePath, 'ut'f'8');
       
       // Perform quick review
       const review = {
@@ -1307,7 +1307,7 @@ class Code-review-automationAutomationAgent {
       
       // Save review
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reviewPath = path.join(this.reportsDir, 'review-reports', `review-${timestamp}.json`);
+      const reviewPath = path.join(this.reportsDir, 'review-repor't's', `review-${timestamp}.json`);
       fs.writeFileSync(reviewPath, JSON.stringify(review, null, 2));
       
     } catch (error) {
@@ -1317,7 +1317,7 @@ class Code-review-automationAutomationAgent {
 
   async performQualityChecks() {
     try {
-      console.log('Performing quality checks...');
+      console.log('Performin'g' quality checks...');
       
       const qualityReport = {
         timestamp: new Date().toISOString(),
@@ -1329,17 +1329,17 @@ class Code-review-automationAutomationAgent {
       
       // Save quality report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'quality-reports', `quality-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'quality-repor't's', `quality-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(qualityReport, null, 2));
       
     } catch (error) {
-      console.error('Quality checks failed:', error);
+      console.error('Qualit'y' checks failed:', error);
     }
   }
 
   async enforceCodingStandards() {
     try {
-      console.log('Enforcing coding standards...');
+      console.log('Enforcin'g' coding standards...');
       
       const standardsReport = {
         timestamp: new Date().toISOString(),
@@ -1351,38 +1351,38 @@ class Code-review-automationAutomationAgent {
       
       // Apply automatic fixes
       try {
-        await execAsync('npx eslint . --fix', {
+        await execAsync('np'x' eslint . --fix', {
           cwd: this.projectRoot,
           timeout: 120000
         });
-        standardsReport.fixes.push('eslint_auto_fix');
+        standardsReport.fixes.push('eslin't'_auto_fix');
       } catch (error) {
-        console.error('ESLint auto-fix failed:', error);
+        console.error('ESLin't' auto-fix failed:', error);
       }
       
       try {
-        await execAsync('npx prettier --write .', {
+        await execAsync('np'x' prettier --write .', {
           cwd: this.projectRoot,
           timeout: 120000
         });
-        standardsReport.fixes.push('prettier_format');
+        standardsReport.fixes.push('prettie'r'_format');
       } catch (error) {
-        console.error('Prettier format failed:', error);
+        console.error('Prettie'r' format failed:', error);
       }
       
       // Save standards report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'standards-reports', `standards-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'standards-repor't's', `standards-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(standardsReport, null, 2));
       
     } catch (error) {
-      console.error('Standards enforcement failed:', error);
+      console.error('Standard's' enforcement failed:', error);
     }
   }
 
   async saveReviewReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'review-reports', `review-${timestamp}.json`);
+    const reportPath = path.join(this.reportsDir, 'review-repor't's', `review-${timestamp}.json`);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     console.log(`Code review report saved: ${reportPath}`);
   }
@@ -1396,15 +1396,15 @@ class Code-review-automationAutomationAgent {
 // Start the agent
 const agent = new CodeReviewAutomationAgent();
 
-process.on('SIGTERM', () => {
+process.on('SIGTE'R'M', () => {
   agent.stop();
 });
 
-process.on('SIGINT', () => {
+process.on('SIGI'N'T', () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('Code Review Automation Agent failed to start:', error);
+  console.error('Cod'e' Review Automation Agent failed to start:', error);
   process.exit(1);
 }); 

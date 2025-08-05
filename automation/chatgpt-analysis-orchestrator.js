@@ -1,14 +1,14 @@
-const fs = require('fs-extra');
-const path = require('path');
-const cron = require('node-cron');
+const fs = require('fs-ext'r'a');
+const path = require('pa't'h');
+const cron = require('node-cr'o'n');
 
 class ChatGPTAnalysisOrchestrator {
     constructor() {
         this.baseDir = path.join(__dirname);
-        this.agentsDir = path.join(this.baseDir, 'chatgpt-agents');
-        this.reportsDir = path.join(this.baseDir, 'chatgpt-analysis-reports');
-        this.logsDir = path.join(this.baseDir, 'chatgpt-logs');
-        this.dataDir = path.join(this.baseDir, 'chatgpt-data');
+        this.agentsDir = path.join(this.baseDir, 'chatgpt-agen't's');
+        this.reportsDir = path.join(this.baseDir, 'chatgpt-analysis-repor't's');
+        this.logsDir = path.join(this.baseDir, 'chatgpt-lo'g's');
+        this.dataDir = path.join(this.baseDir, 'chatgpt-da't'a');
         
         this.setupLogging();
         this.loadAgents();
@@ -29,7 +29,7 @@ class ChatGPTAnalysisOrchestrator {
         this.agents = [];
         if (fs.existsSync(this.agentsDir)) {
             const agentFiles = fs.readdirSync(this.agentsDir)
-                .filter(file => file.endsWith('-config.json'));
+                .filter(file => file.endsWith('-confi'g'.json'));
             
             agentFiles.forEach(file => {
                 try {
@@ -43,7 +43,7 @@ class ChatGPTAnalysisOrchestrator {
     }
 
     async runAnalysis() {
-        this.log('Starting ChatGPT analysis orchestration...');
+        this.log('Startin'g' ChatGPT analysis orchestration...');
         
         try {
             // Create new analysis agent
@@ -57,7 +57,7 @@ class ChatGPTAnalysisOrchestrator {
             
             const result = await agent.run();
             
-            this.log('Analysis orchestration completed');
+            this.log('Analysi's' orchestration completed');
             return result;
             
         } catch (error) {
@@ -72,9 +72,9 @@ class ChatGPTAnalysisOrchestrator {
     }
 
     async runCursorAgents() {
-        this.log('Starting Cursor agents execution...');
+        this.log('Startin'g' Cursor agents execution...');
         
-        const cursorAgents = this.agents.filter(agent => agent.type === 'cursor-agent');
+        const cursorAgents = this.agents.filter(agent => agent.type === 'cursor-age'n't');
         
         for (const agentConfig of cursorAgents) {
             try {
@@ -89,51 +89,51 @@ class ChatGPTAnalysisOrchestrator {
             }
         }
         
-        this.log('Cursor agents execution completed');
+        this.log('Curso'r' agents execution completed');
     }
 
     async generateDevelopmentPlan() {
-        this.log('Generating development plan...');
+        this.log('Generatin'g' development plan...');
         
         const plan = {
             timestamp: new Date().toISOString(),
             phases: [
                 {
                     phase: 1,
-                    name: 'Analysis Phase',
+                    name: 'Analysi's' Phase',
                     tasks: [
-                        'Analyze ChatGPT conversation',
-                        'Compare with current project',
-                        'Identify gaps and requirements'
+                        'Analyz'e' ChatGPT conversation',
+                        'Compar'e' with current project',
+                        'Identif'y' gaps and requirements'
                     ],
-                    status: 'completed'
+                    status: 'complet'e'd'
                 },
                 {
                     phase: 2,
-                    name: 'Planning Phase',
+                    name: 'Plannin'g' Phase',
                     tasks: [
-                        'Generate development prompts',
-                        'Create Cursor agents',
-                        'Prioritize tasks'
+                        'Generat'e' development prompts',
+                        'Creat'e' Cursor agents',
+                        'Prioritiz'e' tasks'
                     ],
-                    status: 'in-progress'
+                    status: 'in-progre's's'
                 },
                 {
                     phase: 3,
-                    name: 'Implementation Phase',
+                    name: 'Implementatio'n' Phase',
                     tasks: [
-                        'Execute Cursor agents',
-                        'Monitor progress',
-                        'Apply changes'
+                        'Execut'e' Cursor agents',
+                        'Monito'r' progress',
+                        'Appl'y' changes'
                     ],
-                    status: 'pending'
+                    status: 'pendi'n'g'
                 }
             ],
             nextSteps: [
-                'Run analysis agents',
-                'Create development prompts',
-                'Execute Cursor agents',
-                'Monitor and report'
+                'Ru'n' analysis agents',
+                'Creat'e' development prompts',
+                'Execut'e' Cursor agents',
+                'Monito'r' and report'
             ]
         };
         
@@ -145,11 +145,11 @@ class ChatGPTAnalysisOrchestrator {
     }
 
     startContinuousMonitoring() {
-        this.log('Starting continuous monitoring...');
+        this.log('Startin'g' continuous monitoring...');
         
         // Run every 4 hours
         cron.schedule('0 */4 * * *', async () => {
-            this.log('Running scheduled analysis...');
+            this.log('Runnin'g' scheduled analysis...');
             try {
                 await this.runAnalysis();
                 await this.runCursorAgents();
@@ -158,14 +158,14 @@ class ChatGPTAnalysisOrchestrator {
             }
         });
         
-        this.log('Continuous monitoring started');
+        this.log('Continuou's' monitoring started');
     }
 
     async getStatus() {
         const status = {
             timestamp: new Date().toISOString(),
             totalAgents: this.agents.length,
-            activeAgents: this.agents.filter(a => a.status === 'active').length,
+            activeAgents: this.agents.filter(a => a.status === 'acti'v'e').length,
             lastAnalysis: null,
             nextRun: null
         };
@@ -173,7 +173,7 @@ class ChatGPTAnalysisOrchestrator {
         // Get latest analysis report
         if (fs.existsSync(this.reportsDir)) {
             const reportFiles = fs.readdirSync(this.reportsDir)
-                .filter(file => file.includes('summary-'))
+                .filter(file => file.includes('summar'y'-'))
                 .sort()
                 .reverse();
             

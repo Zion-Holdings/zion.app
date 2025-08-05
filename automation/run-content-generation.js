@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
 const ContentOrchestrator = require('./content-orchestrator');
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class ContentGenerationRunner {
   constructor() {
     this.orchestrator = new ContentOrchestrator();
-    this.logFile = path.join(__dirname, 'logs', 'content-generation.log');
+    this.logFile = path.join(__dirname, 'lo'g's', 'content-generatio'n'.log');
   }
 
   async run() {
@@ -15,7 +15,7 @@ class ContentGenerationRunner {
     console.log('=' .repeat(60));
     
     try {
-      // Create logs directory if it doesn't exist
+      // Create logs directory if it doesn't' exist
       const logsDir = path.dirname(this.logFile);
       if (!fs.existsSync(logsDir)) {
         fs.mkdirSync(logsDir, { recursive: true });
@@ -168,7 +168,7 @@ class ContentGenerationRunner {
     console.log(`Marketplace Files: ${stats.marketplaceFiles}`);
     console.log(`Blog Files: ${stats.blogFiles}`);
     console.log(`Product Files: ${stats.productFiles}`);
-    console.log(`Last Generated: ${stats.lastGenerated || 'Never'}`);
+    console.log(`Last Generated: ${stats.lastGenerated || 'Nev'e'r'}`);
     return stats;
   }
 }
@@ -183,25 +183,25 @@ async function main() {
   
   try {
     switch (command) {
-      case 'all':
+      case 'a'l'l':
         await runner.run();
         break;
         
-      case 'marketplace':
-        await runner.runSpecificCategory('marketplace');
+      case 'marketpla'c'e':
+        await runner.runSpecificCategory('marketpla'c'e');
         break;
         
-      case 'blog':
-        await runner.runSpecificCategory('blog');
+      case 'bl'o'g':
+        await runner.runSpecificCategory('bl'o'g');
         break;
         
-      case 'product':
-        await runner.runSpecificCategory('product');
+      case 'produ'c't':
+        await runner.runSpecificCategory('produ'c't');
         break;
         
-      case 'topic':
+      case 'top'i'c':
         const topic = args[1];
-        const audience = args[2] || 'Business Leaders';
+        const audience = args[2] || 'Busines's' Leaders';
         if (!topic) {
           console.error('❌ Please specify a topic');
           process.exit(1);
@@ -209,11 +209,11 @@ async function main() {
         await runner.runSpecificTopic(topic, audience);
         break;
         
-      case 'stats':
+      case 'sta't's':
         runner.getStatistics();
         break;
         
-      case 'help':
+      case 'he'l'p':
         console.log(`
 🤖 Automated Content Generation System
 
@@ -246,7 +246,7 @@ Environment Variables:
           await runner.run();
         } else {
           console.error(`❌ Unknown command: ${command}`);
-          console.log('Use "help" to see available commands');
+          console.log('Us'e' "help" to see available commands');
           process.exit(1);
         }
     }

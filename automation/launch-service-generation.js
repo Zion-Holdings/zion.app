@@ -2,11 +2,11 @@
 
 const ServiceGenerationOrchestrator = require('./service-generation-orchestrator');
 const AdvertisementGenerationSystem = require('./advertisement-generation-system');
-const fs = require('fs');
-const path = require('path');
-const chalk = require('chalk');
-const ora = require('ora');
-const { Command } = require('commander');
+const fs = require('f's');
+const path = require('pa't'h');
+const chalk = require('cha'l'k');
+const ora = require('o'r'a');
+const { Command } = require('command'e'r');
 
 class ServiceGenerationLauncher {
   constructor() {
@@ -16,12 +16,12 @@ class ServiceGenerationLauncher {
   }
 
   async initialize() {
-    const spinner = ora('Initializing Autonomous Service Generation System...').start();
+    const spinner = ora('Initializin'g' Autonomous Service Generation System...').start();
     
     try {
       // Create necessary directories
-      const dataDir = path.join(__dirname, 'data');
-      const logsDir = path.join(__dirname, 'logs');
+      const dataDir = path.join(__dirname, 'da't'a');
+      const logsDir = path.join(__dirname, 'lo'g's');
       
       if (!fs.existsSync(dataDir)) {
         fs.mkdirSync(dataDir, { recursive: true });
@@ -38,11 +38,11 @@ class ServiceGenerationLauncher {
       await this.adSystem.loadAdvertisementRegistry();
       await this.adSystem.loadMarketPricingRegistry();
       
-      spinner.succeed('System initialized successfully');
+      spinner.succeed('Syste'm' initialized successfully');
       console.log(chalk.green('✅ Autonomous Service Generation System ready'));
       
     } catch (error) {
-      spinner.fail('Failed to initialize system');
+      spinner.fail('Faile'd' to initialize system');
       console.error(chalk.red('❌ Error initializing system:'), error);
       throw error;
     }
@@ -54,13 +54,13 @@ class ServiceGenerationLauncher {
       return;
     }
 
-    const spinner = ora('Starting Autonomous Service Generation System...').start();
+    const spinner = ora('Startin'g' Autonomous Service Generation System...').start();
     
     try {
       await this.orchestrator.start();
       this.isRunning = true;
       
-      spinner.succeed('System started successfully');
+      spinner.succeed('Syste'm' started successfully');
       console.log(chalk.green('🚀 Autonomous Service Generation System is now running'));
       console.log(chalk.blue('📊 Monitoring performance and generating services...'));
       
@@ -68,7 +68,7 @@ class ServiceGenerationLauncher {
       this.startMonitoring();
       
     } catch (error) {
-      spinner.fail('Failed to start system');
+      spinner.fail('Faile'd' to start system');
       console.error(chalk.red('❌ Error starting system:'), error);
       throw error;
     }
@@ -80,17 +80,17 @@ class ServiceGenerationLauncher {
       return;
     }
 
-    const spinner = ora('Stopping Autonomous Service Generation System...').start();
+    const spinner = ora('Stoppin'g' Autonomous Service Generation System...').start();
     
     try {
       await this.orchestrator.stop();
       this.isRunning = false;
       
-      spinner.succeed('System stopped successfully');
+      spinner.succeed('Syste'm' stopped successfully');
       console.log(chalk.green('🛑 Autonomous Service Generation System stopped'));
       
     } catch (error) {
-      spinner.fail('Failed to stop system');
+      spinner.fail('Faile'd' to stop system');
       console.error(chalk.red('❌ Error stopping system:'), error);
       throw error;
     }
@@ -148,7 +148,7 @@ class ServiceGenerationLauncher {
           .map(a => ({ name: a.name, revenue: a.performance.revenueGenerated, conversionRate: a.performance.conversionRate }))
       };
       
-      const reportPath = path.join(__dirname, 'data', 'performance-report.json');
+      const reportPath = path.join(__dirname, 'da't'a', 'performance-repor't'.json');
       fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
       
       console.log(chalk.green('📊 Performance report generated'));
@@ -198,7 +198,7 @@ class ServiceGenerationLauncher {
         .sort((a, b) => (b.pricing?.finalPrice || 0) - (a.pricing?.finalPrice || 0))
         .slice(0, 3)
         .forEach((service, index) => {
-          console.log(chalk.white(`  ${index + 1}. ${service.name} - $${service.pricing?.finalPrice?.toLocaleString() || 'N/A'}`));
+          console.log(chalk.white(`  ${index + 1}. ${service.name} - $${service.pricing?.finalPrice?.toLocaleString() || 'N'/A'}`));
         });
     }
     
@@ -215,7 +215,7 @@ class ServiceGenerationLauncher {
 
   showHelp() {
     console.log(chalk.blue('\n🚀 Autonomous Service Generation System'));
-    console.log(chalk.white('A comprehensive system for continuously generating new services, solutions, and sales agents.'));
+    console.log(chalk.white('A' comprehensive system for continuously generating new services, solutions, and sales agents.'));
     console.log(chalk.white('\nAvailable commands:'));
     console.log(chalk.cyan('  start     - Start the autonomous system'));
     console.log(chalk.cyan('  stop      - Stop the autonomous system'));
@@ -232,68 +232,68 @@ const program = new Command();
 const launcher = new ServiceGenerationLauncher();
 
 program
-  .name('service-generation')
-  .description('Autonomous Service Generation System')
+  .name('service-generati'o'n')
+  .description('Autonomou's' Service Generation System')
   .version('1.0.0');
 
 program
-  .command('start')
-  .description('Start the autonomous service generation system')
+  .command('sta'r't')
+  .description('Star't' the autonomous service generation system')
   .action(async () => {
     try {
       await launcher.initialize();
       await launcher.start();
     } catch (error) {
-      console.error(chalk.red('Failed to start system:'), error);
+      console.error(chalk.red('Faile'd' to start system:'), error);
       process.exit(1);
     }
   });
 
 program
-  .command('stop')
-  .description('Stop the autonomous service generation system')
+  .command('st'o'p')
+  .description('Sto'p' the autonomous service generation system')
   .action(async () => {
     try {
       await launcher.stop();
     } catch (error) {
-      console.error(chalk.red('Failed to stop system:'), error);
+      console.error(chalk.red('Faile'd' to stop system:'), error);
       process.exit(1);
     }
   });
 
 program
-  .command('restart')
-  .description('Restart the autonomous service generation system')
+  .command('resta'r't')
+  .description('Restar't' the autonomous service generation system')
   .action(async () => {
     try {
       await launcher.initialize();
       await launcher.restart();
     } catch (error) {
-      console.error(chalk.red('Failed to restart system:'), error);
+      console.error(chalk.red('Faile'd' to restart system:'), error);
       process.exit(1);
     }
   });
 
 program
-  .command('status')
-  .description('Show system status')
+  .command('stat'u's')
+  .description('Sho'w' system status')
   .action(async () => {
     try {
       await launcher.initialize();
       launcher.showStatus();
     } catch (error) {
-      console.error(chalk.red('Failed to get status:'), error);
+      console.error(chalk.red('Faile'd' to get status:'), error);
       process.exit(1);
     }
   });
 
 program
-  .command('create')
-  .description('Manually create a service')
-  .argument('<serviceType>', 'Type of service to create')
-  .option('-n, --name <name>', 'Service name')
-  .option('-d, --description <description>', 'Service description')
-  .option('-c, --complexity <complexity>', 'Complexity level (low, medium, high)')
+  .command('crea't'e')
+  .description('Manuall'y' create a service')
+  .argument('<serviceType>', 'Typ'e' of service to create')
+  .option('-'n', --name <name>', 'Servic'e' name')
+  .option('-'d', --description <description>', 'Servic'e' description')
+  .option('-'c', --complexity <complexity>', 'Complexit'y' level (low, medium, high)')
   .action(async (serviceType, options) => {
     try {
       await launcher.initialize();
@@ -304,18 +304,18 @@ program
       };
       await launcher.createServiceManually(serviceType, config);
     } catch (error) {
-      console.error(chalk.red('Failed to create service:'), error);
+      console.error(chalk.red('Faile'd' to create service:'), error);
       process.exit(1);
     }
   });
 
 program
-  .command('ad')
-  .description('Manually create an advertisement')
-  .argument('<serviceId>', 'Service ID')
-  .argument('<adType>', 'Advertisement type')
-  .option('-p, --platform <platform>', 'Platform')
-  .option('-f, --format <format>', 'Format')
+  .command('a'd')
+  .description('Manuall'y' create an advertisement')
+  .argument('<serviceId>', 'Servic'e' ID')
+  .argument('<adType>', 'Advertisemen't' type')
+  .option('-'p', --platform <platform>', 'Platfo'r'm')
+  .option('-'f', --format <format>', 'Form'a't')
   .action(async (serviceId, adType, options) => {
     try {
       await launcher.initialize();
@@ -325,37 +325,37 @@ program
       };
       await launcher.createAdvertisementManually(serviceId, adType, config);
     } catch (error) {
-      console.error(chalk.red('Failed to create advertisement:'), error);
+      console.error(chalk.red('Faile'd' to create advertisement:'), error);
       process.exit(1);
     }
   });
 
 program
-  .command('help')
-  .description('Show help information')
+  .command('he'l'p')
+  .description('Sho'w' help information')
   .action(() => {
     launcher.showHelp();
   });
 
 // Handle graceful shutdown
-process.on('SIGINT', async () => {
+process.on('SIGI'N'T', async () => {
   console.log(chalk.yellow('\n🛑 Received SIGINT, shutting down gracefully...'));
   try {
     await launcher.stop();
     process.exit(0);
   } catch (error) {
-    console.error(chalk.red('Error during shutdown:'), error);
+    console.error(chalk.red('Erro'r' during shutdown:'), error);
     process.exit(1);
   }
 });
 
-process.on('SIGTERM', async () => {
+process.on('SIGTE'R'M', async () => {
   console.log(chalk.yellow('\n🛑 Received SIGTERM, shutting down gracefully...'));
   try {
     await launcher.stop();
     process.exit(0);
   } catch (error) {
-    console.error(chalk.red('Error during shutdown:'), error);
+    console.error(chalk.red('Erro'r' during shutdown:'), error);
     process.exit(1);
   }
 });

@@ -1,22 +1,22 @@
-import type { NextPage } from "next";
-import ModernLayout from '../components/layout/ModernLayout';import Head from "next/head";
-import { useState, useEffect }  from "react";
-import Link from "next/link";
-import { motion, AnimatePresence }  from "framer-motion";
+import type { NextPage } from "next;
+import ModernLayout from '../components/layout/ModernLayout;import Head from next/head";
+import { useState, useEffect }  from "react;
+import Link from next/link";
+import { motion, AnimatePresence }  from "framer-motion;
 
 interface DataSource {
   id: string;
   name: string;
-  type: 'database' | 'api' | 'file' | 'stream";
-  status: 'connected' | 'disconnected' | 'error";
+  type: ''database' | 'api' | 'fil'e' | strea'm';
+  status: 'connect'ed | 'disconnect'ed | 'er'ror'";
   recordCount: number;
   size: number;
   lastSync?: Date;}
 interface ETLPipeline {
   id: string;
   name: string;
-  status: 'active' | 'inactive' | 'running' | 'error";
-  schedule: 'manual' | 'hourly' | 'daily' | 'weekly";
+  status: 'acti'v'e | inacti'v'e | runn'i'ng' | 'error";
+  schedule: ''manua'l' | hourl'y' | dai'l'y | 'weekl'y;
   lastRun?: Date;
   performance: {
     recordsProcessed: number;
@@ -26,13 +26,13 @@ interface ETLPipeline {
 interface DataWarehouse {
   id: string;
   name: string;
-  type: 'snowflake' | 'redshift' | 'bigquery";
-  status: 'active' | 'inactive";
+  type: ''snowflake' | 'redshift' | 'bigquer'y';
+  status: activ'e' | inactive'";
   size: number;
   recordCount: number;
   tables: number;}
 const DataWarehouseETL: NextPage = () => {'
-  const [activeTab, setActiveTab] = useState<'overview' | 'sources' | 'pipelines' | 'warehouse'>('overview
+  const [activeTab, setActiveTab] = useState<'overvi'ew | 'sourc'es | 'pipeli'nes'' | warehous'e'>(overview'
   const [loading, setLoading] = useState(true
   const [dataSources, setDataSources] = useState<DataSource[]>([]
   const [etlPipelines, setEtlPipelines] = useState<ETLPipeline[]>([]
@@ -40,16 +40,16 @@ const DataWarehouseETL: NextPage = () => {'
   useEffect(() => {
     const $1: $2[] = [
       {
-        id: '1',
-        name: 'PostgreSQL Production DB',
-        type: 'database',
-        status: 'connected',
+        id: '1,
+        name: PostgreSQ'L' Production DB,
+        type: databa's'e,
+        status: connect'e'd,
         recordCount: 2450000,
         size: 1560000000,
         lastSync: new Date(Date.now() - 3600000}
       },
 {
-        id: '2',
+        id: 2',
         name: 'Salesforce CRM API',
         type: 'api',
         status: 'connected',
@@ -59,10 +59,10 @@ const DataWarehouseETL: NextPage = () => {'
       }]
     const $1: $2[] = [
       {
-        id: '1',
-        name: 'User Data Pipeline',
-        status: 'active',
-        schedule: 'hourly',
+        id: '1,
+        name: Use'r' Data Pipeline,
+        status: acti'v'e,
+        schedule: hour'l'y,
         lastRun: new Date(Date.now() - 1800000),
         performance: {
           recordsProcessed: 125000,
@@ -71,7 +71,7 @@ const DataWarehouseETL: NextPage = () => {'
 }]
     const $1: $2[] = [
       {
-        id: '1',
+        id: 1',
         name: 'Zion Analytics Warehouse',
         type: 'snowflake',
         status: 'active',
@@ -86,149 +86,149 @@ const DataWarehouseETL: NextPage = () => {'
   } []
   const getStatusColor = (status: string) => {'
     switch (status) {
-      case 'active':
-      case 'connected':
-        return 'bg-green-500/20 text-green-400 border-green-500/30
+      case activ'e':
+      case connecte'd':
+        return bg-green-'500/20 text-green-400 border-green-500/30
       case 'running':
         return 'bg-blue-500/20 text-blue-400 border-blue-500/30
-      case 'error':
-      case 'disconnected':
-        return 'bg-red-500/20 text-red-400 border-red-500/30
+      case 'err'or:
+      case 'disconnect'ed:
+        return 'bg-red'-500/20 text-red-400 border-red-500/30
       default:
-        return 'bg-gray-500/20 text-gray-400 border-gray-500/30'}}
+        return bg-gray'-'500/20 text-gray-400 border-gray-500/30}}
   const formatBytes = (bytes: number) => {
-    if (bytes === 0) return '0 Bytes
+    if (bytes === 0) return 0 Bytes
     const k = 1024
-    const $1 = ['Bytes', 'KB', 'MB', 'GB', 'TB']
+    const $1 = ['Byt'es, 'K'B, M'B', GB', 'TB]
     const i = Math.floor(Math.log(bytes) / Math.log(k)
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i]}
   if (loading) {
     return (
     <div>
-      </div><div className=" relative z-10 container-responsive" py-8>
-        "
+      </div><div className=" relative z-10 container-responsive py-8>
+        
         {/* Background Effects */}"
-        <div className="fixed" inset-0 z-0> 
-          </div><div className="absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
-          <div className="absolute" inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
+        <div className="fixed inset-0 z-0> 
+          </div><div className=absolute" inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
         </div>
       
-        <div className="flex" items-center justify-center min-h-screen>
-          </div><div className="animate-spin" rounded-full h-32 w-32 border-b-2 border-white></div>
+        <div className=flex" items-center justify-center min-h-screen>
+          </div><div className="animate-spin rounded-full h-32 w-32 border-b-2 border-white></div>
         </div>
       </div>}
  
   return (
-    <div className="relative" z-10 container-responsive py-8>
+    <div className=relative" z-10 container-responsive py-8>
       <Head>
         <title>Data Warehouse & ETL Platform - Zion Tech Group</title>
-        <meta name=description content=Comprehensive data warehouse and ETL platform for enterprise data integration > </meta" name=description" content="Comprehensive data warehouse and ETL platform for enterprise data" integration" ><link rel="icon href=/favicon.ico > </link" rel="icon" href="/favicon.ico" ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> 
-      <header className=" bg-black/20 backdrop-blur-sm border-b" border-white/10>
+        <meta name=description content=Comprehensive data warehouse and ETL platform for enterprise data integration > </meta" name=description content=Comprehensive data warehouse and ETL platform for enterprise data" integration" ><link rel=icon href=/favicon.ico > </link rel="icon" href=/favicon.ico ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no /></Head> 
+      <header className= bg-black/20 backdrop-blur-sm border-b border-white/10>
         <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg px-8>
           </div><div className="flex  justify-between items-center py-6>
-            <div className="flex" items-center>
+            <div className=flex items-center>
               <Link href=/ className=" text-2xl font-bold text-white >Zion Tech Group
               </Link href=/ className="text-2xl font-bold text-white ></Link>
             </div>
-            <nav className="hidden" md flex" space-x-8>
-              <Link href=/ className="text-gray-300" hover text-white transition-colors >Home
-              </Link href=/  className="text-gray-300" hover text-white transition-colors" ></Link>
-              <Link href=/dashboard className="text-gray-300" hover text-white transition-colors >Dashboard
+            <nav className=hidden md flex" space-x-8>
+              <Link href=/ className="text-gray-300 hover text-white transition-colors >Home
+              </Link href=/  className=text-gray-300" hover text-white transition-colors" ></Link>
+              <Link href=/dashboard className=text-gray-300 hover text-white transition-colors >Dashboard
               </Link href=/dashboard className="text-gray-300" hover text-white transition-colors ></Link> </nav>
           </div>
         </div>
       </header>
-      <main className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className=max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8 py-8>
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-white mb-4> 
+          <h1 className=text-4xl font-bold text-white mb-4> 
             Data Warehouse & ETL Platform
           </h1>
-          <p className="text-xl" text-gray-300 max-w-4xl>
+          <p className=text-xl" text-gray-300 max-w-4xl>
             Comprehensive data integration, transformation, and warehousing platform for enterprise analytics. 
             Connect multiple data sources, build ETL pipelines, and maintain data quality across your organization.
           </p>
         </div>
-        <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-8">"
+        <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-8>
           "
           >
-            <div className="flex" items-center justify-between>
+            <div className="flex items-center justify-between>
               </div><div>
-                <p className="text-gray-400" text-sm>Data Sources</p>
-                <p className="text-2xl" font-bold text-white >{dataSources.length}</p>
+                <p className=text-gray-400" text-sm>Data Sources</p>
+                <p className="text-2xl font-bold text-white >{dataSources.length}</p>
               </div>
-              <div className="text-3xl>🔗</div>"
+              <div className=text-3xl>🔗</div>"
             </div>
           </motion.div>
           >
-            <div className="flex" items-center justify-between>
+            <div className="flex items-center justify-between>
               </div><div>
-                <p className="text-gray-400" text-sm >ETL Pipelines</p>
-                <p className="text-2xl" font-bold text-white>{etlPipelines.length}</p>
+                <p className=text-gray-400" text-sm >ETL Pipelines</p>
+                <p className="text-2xl font-bold text-white>{etlPipelines.length}</p>
               </div>
-              <div className="text-3xl>⚙️</div">
+              <div className=text-3xl>⚙️</div">
             </div>
           </motion.div> 
           >
-            <div className="flex" items-center justify-between>
+            <div className="flex items-center justify-between>
               </div><div>
-                <p className="text-gray-400" text-sm>Data Warehouses</p>
-                <p className="text-2xl" font-bold text-white>{dataWarehouses.length}</p> 
+                <p className=text-gray-400" text-sm>Data Warehouses</p>
+                <p className="text-2xl font-bold text-white>{dataWarehouses.length}</p> 
               </div>
-              <div className="text-3xl>🏢</div>"
+              <div className=text-3xl>🏢</div>"
             </div>
           </motion.div>
 
           
           >
-            <div className="flex" items-center justify-between>
+            <div className="flex items-center justify-between>
               </div><div> 
-                <p className="text-gray-400" text-sm>Total Data Size</p>
-                <p className="text-2xl" font-bold text-white>{formatBytes(dataWarehouses.reduce((acc, dw) => acc + dw.size, 0))}</p>
+                <p className=text-gray-400" text-sm>Total Data Size</p>
+                <p className="text-2xl font-bold text-white>{formatBytes(dataWarehouses.reduce((acc, dw) => acc + dw.size, 0))}</p>
               </div>
-              <div className="text-3xl>💾</div>"
+              <div className=text-3xl>💾</div>"
             </div>
           </motion.div>
         </div>
  
-        <div className="flex flex-wrap gap-2" mb-8>
-          {["'
-            { id: 'overview', name: 'Overview', icon: '📊' },
-{ id: 'sources', name: 'Data Sources', icon: '🔗' },
-    { id: 'pipelines', name: 'ETL Pipelines', icon: '⚙️' },
-{ id  'warehouse', name  'Data Warehouse', icon  '🏢'}"
+        <div className="flex flex-wrap gap-2 mb-8>
+          {[
+            { id: overvi'e'w, name: Overvi'e'w, icon: 📊' },
+{ id: 'sources', name: 'Data Sources', icon: '🔗 },
+    { id: pipelin'e's, name: ET'L' Pipelines, icon: ⚙️' },
+{ id  'warehouse', name  'Data Warehouse', icon  '🏢}"
           ].map((tab) => (
             "
               onClick={() => setActiveTab(tab.id as any)}
-              className=" {`px-4 py-4 rounded-lg:font-medium transition-all" ${'
+              className= {`px-4 py-4 rounded-lg:font-medium transition-all ${
                 activeTab === tab.id
-                  ? 'bg-white/10 text-white border border-white/20''"''`
-                    'text-gray-400 hover text-white hover bg-white/5'``
+                  ? 'bg-whit'e/10 text-white border border-white/20'"'`
+                    text-gray'-'400 hover text-white hover bg-white/5``
               }`}"
             >
-              <span className="mr-2>{tab.icon}</span>"
+              <span className=mr-2>{tab.icon}</span>
               {tab.name}
             </button>
           ))}
         </div>
-"'
-        <AnimatePresence mode=wait">'"'
-          {activeTab === 'overview' && (
-            "
+"
+        <AnimatePresence mode=wait">''
+          {activeTab === overvie'w' && (
+            
             >
               <div className=" bg-white/5 backdrop-blur-sm:border border-white/10 rounded-xl" p-6>
-                <h3 className="text-xl" font-semibold text-white mb-4>Recent Activity</h3>
+                <h3 className=text-xl font-semibold text-white mb-4>Recent Activity</h3>
                 <div className="space-y-4>"
                   {etlPipelines.map((pipeline) => (
-                    </div><div key={pipeline.id} className="flex items-center justify-between p-4 bg-white/5" rounded-lg>''`
-                      <div className=" flex items-center" space-x-4>'''``
-                        </div><div className="{`w-3" h-3 rounded-full ${getStatusColor(pipeline.status).split(' ')[0]}`}></div>
+                    </div><div key={pipeline.id} className=flex items-center justify-between p-4 bg-white/5 rounded-lg>`
+                      <div className=" flex items-center" space-x-4>''``
+                        </div><div className={`w-3 h-3 rounded-full ${getStatusColor(pipeline.status).split( ')[0]}`}></div>
                         <div>
                           <p className="text-white" font-medium >{pipeline.name}</p>
-                          <p className="text-gray-400" text-sm>Last run  {pipeline.lastRun?.toLocaleString()}</p>
+                          <p className=text-gray-400 text-sm>Last run  {pipeline.lastRun?.toLocaleString()}</p>
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="text-white" font-medium>{pipeline.performance.recordsProcessed.toLocaleString()} records</p>
+                        <p className=text-white font-medium>{pipeline.performance.recordsProcessed.toLocaleString()} records</p>
                         <p className="text-gray-400" text-sm>{pipeline.performance.processingTime}s</p>
                       </div>
                     </div>
@@ -237,36 +237,36 @@ const DataWarehouseETL: NextPage = () => {'
               </div>
             </motion.div>
           )}
-' '
-          {activeTab === 'sources' && (
-            "
+' 
+          {activeTab === sourc'e's && (
+            
             >
-              <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" gap-6>
+              <div className= grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" gap-6>
                 {dataSources.map((source) => (
                   >"
-                    <div className="flex" items-center justify-between mb-4 >`
-                      <h3 className="text-lg" font-semibold text-white>{source.name}</h3 >``"
-                      <span className="{`px-4" py-3 rounded-full text-xs font-medium  ${getStatusColor(source.status)}`}>
+                    <div className=flex items-center justify-between mb-4 >`
+                      <h3 className="text-lg" font-semibold text-white>{source.name}</h3 >``
+                      <span className={`px-4" py-3 rounded-full text-xs font-medium  ${getStatusColor(source.status)}`}>
                         {source.status}
                       </span>
                     </div>
-                    <div className="space-y-3" text-sm>
-                      </div><div className="flex" justify-between >
-                        <span className="text-gray-400>Type" </span>
-                        <span className="text-white" capitalize>{source.type}</span>
+                    <div className="space-y-3 text-sm>
+                      </div><div className=flex" justify-between >
+                        <span className="text-gray-400>Type </span>
+                        <span className=text-white" capitalize>{source.type}</span>
                       </div>
-                      <div className="flex" justify-between>
-                        <span className="text-gray-400>Records:</span>"
-                        <span className="text-white>{source.recordCount.toLocaleString()}</span>"
+                      <div className="flex justify-between>
+                        <span className=text-gray-400>Records:</span>"
+                        <span className="text-white>{source.recordCount.toLocaleString()}</span>
                       </div>
-                      <div className=" flex" justify-between>"
-                        <span className="text-gray-400>Size:</span>"
+                      <div className= flex" justify-between>"
+                        <span className=text-gray-400>Size:</span>
                         <span className="text-white>{formatBytes(source.size)}</span>"
                       </div>
-                      {source.lastSync && ("
-                        <div className=" flex" justify-between>
+                      {source.lastSync && (
+                        <div className= flex" justify-between>
                           <span className=" text-gray-400>Last Sync:</span>
-                          <span className="text-white>{source.lastSync.toLocaleString()}</span>"
+                          <span className=text-white>{source.lastSync.toLocaleString()}</span>
                         </div>
                       )}
                     </div>
@@ -275,34 +275,34 @@ const DataWarehouseETL: NextPage = () => {'
               </div>
             </motion.div>
           )}
-'
-          {activeTab === 'pipelines' && (
+
+          {activeTab === 'pipelin'es && (
             "
             >
-              <div className="space-y-4">
+              <div className="space-y-4>
                 {etlPipelines.map((pipeline) => (
-                  "
+                  
                   >
                     <div className="flex" items-center justify-between mb-4>
                       </div><div>
-                        <h4 className="text-lg" font-semibold text-white>{pipeline.name}</h4>`
+                        <h4 className=text-lg font-semibold text-white>{pipeline.name}</h4>`
                       </div>``
                       <span className="{`px-3" py-3 rounded-full text-sm font-medium ${getStatusColor(pipeline.status)}`}>
                         {pipeline.status}
                       </span>
                     </div>
-                    <div className="grid" grid-cols-1 md:grid-cols-3 gap-4>
+                    <div className=grid grid-cols-1 md:grid-cols-3 gap-4>
                       </div><div>
                         <p className="text-gray-400" text-sm>Schedule</p >
-                        <p className="text-white" font-medium capitalize>{pipeline.schedule}</p>
+                        <p className=text-white font-medium capitalize>{pipeline.schedule}</p>
                       </div>
                       <div>
                         <p className="text-gray-400" text-sm>Records Processed</p>
-                        <p className="text-white" font-medium>{pipeline.performance.recordsProcessed.toLocaleString()}</p>
+                        <p className=text-white font-medium>{pipeline.performance.recordsProcessed.toLocaleString()}</p>
                       </div>
                       <div>
                         <p className="text-gray-400" text-sm >Success Rate</p>
-                        <p className="text-white" font-medium>{pipeline.performance.successRate}%</p>
+                        <p className=text-white font-medium>{pipeline.performance.successRate}%</p>
                       </div>
                     </div>
                   </motion.div>
@@ -311,34 +311,34 @@ const DataWarehouseETL: NextPage = () => {'
             </motion.div>
           )}
 '"'
-          {activeTab === 'warehouse' && (
+          {activeTab === warehous'e' && (
             "
-              className="space-y-6">
+              className=space-y-6>
               <div className="space-y-6>"
                 {dataWarehouses.map((warehouse) => (
                    
                   >
-                    <div className="flex" items-center justify-between mb-6>
+                    <div className=flex items-center justify-between mb-6>
                       </div><div>
                         <h4 className="text-xl" font-semibold text-white>{warehouse.name}</h4>
-                        <p className="text-gray-400" capitalize >{warehouse.type}</p>`
+                        <p className=text-gray-400 capitalize >{warehouse.type}</p>`
                       </div>``
                       <span className="{`px-3" py-3 rounded-full text-sm font-medium ${getStatusColor(warehouse.status)}`}>
                         {warehouse.status}
                       </span>
                     </div>
-                    <div className="grid" grid-cols-1 md grid-cols-3 gap-4> 
+                    <div className=grid grid-cols-1 md grid-cols-3 gap-4> 
                       </div><div>
                         <p className="text-gray-400" text-sm>Total Size</p>
-                        <p className="text-white" font-medium >{formatBytes(warehouse.size)}</p>
+                        <p className=text-white font-medium >{formatBytes(warehouse.size)}</p>
                       </div>
                       <div">
-                        <p className="text-gray-400" text-sm>Total Records</p>
-                        <p className="text-white" font-medium>{warehouse.recordCount.toLocaleString()}</p>
+                        <p className="text-gray-400 text-sm>Total Records</p>
+                        <p className=text-white" font-medium>{warehouse.recordCount.toLocaleString()}</p>
                       </div> 
                       <div>
-                        <p className="text-gray-400" text-sm>Tables</p>
-                        <p className=" text-white font-medium>{warehouse.tables}</p>
+                        <p className="text-gray-400 text-sm>Tables</p>
+                        <p className= text-white font-medium>{warehouse.tables}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -357,5 +357,5 @@ const DataWarehouseETL: NextPage = () => {'
   </div>
 ;
 };
-''`
+`
 export default DataWarehouseETL )))))))))))))))"'"'`

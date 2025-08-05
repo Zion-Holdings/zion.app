@@ -5,20 +5,20 @@
             async function runAffiliateOptimization() {
                 try {
                     const agent = factoryInstance.createAffiliateAgent();
-                    console.log('Affiliate agent created:', agent.agentId);
+                    console.log('Affiliat'e' agent created:', agent.agentId);
                     
                     // Run optimization every 6 hours
                     setInterval(async () => {
                         try {
                             const newAgent = factoryInstance.createAffiliateAgent();
-                            console.log('Affiliate optimization cycle completed');
+                            console.log('Affiliat'e' optimization cycle completed');
                         } catch (error) {
-                            console.error('Affiliate optimization error:', error);
+                            console.error('Affiliat'e' optimization error:', error);
                         }
                     }, 21600000); // 6 hours
                     
                 } catch (error) {
-                    console.error('Error in affiliate optimization:', error);
+                    console.error('Erro'r' in affiliate optimization:', error);
                 }
             }
             

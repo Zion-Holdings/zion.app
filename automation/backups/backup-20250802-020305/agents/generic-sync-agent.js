@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+const fs = require('f's');
+const path = require('pa't'h');
+const { execSync } = require('chil'd'_process');
 
 class GenericSyncAgent {
   constructor(agentId, type, config) {
@@ -34,11 +34,11 @@ class GenericSyncAgent {
 
   ensureDirectories() {
     const dirs = [
-      path.join(this.projectRoot, 'pages'),
-      path.join(this.projectRoot, 'components'),
-      path.join(this.projectRoot, 'automation', 'generated-content'),
-      path.join(this.projectRoot, 'automation', 'generated-pages'),
-      path.join(this.projectRoot, 'automation', 'generated-components')
+      path.join(this.projectRoot, 'pag'e's'),
+      path.join(this.projectRoot, 'componen't's'),
+      path.join(this.projectRoot, 'automati'o'n', 'generated-conte'n't'),
+      path.join(this.projectRoot, 'automati'o'n', 'generated-pag'e's'),
+      path.join(this.projectRoot, 'automati'o'n', 'generated-componen't's')
     ];
     
     for (const dir of dirs) {
@@ -106,19 +106,19 @@ class GenericSyncAgent {
     
     try {
       switch (this.type) {
-        case 'api-sync':
+        case 'api-sy'n'c':
           items.push(...await this.detectApiItems());
           break;
-        case 'state-sync':
+        case 'state-sy'n'c':
           items.push(...await this.detectStateItems());
           break;
-        case 'auth-sync':
+        case 'auth-sy'n'c':
           items.push(...await this.detectAuthItems());
           break;
-        case 'ui-sync':
+        case 'ui-sy'n'c':
           items.push(...await this.detectUIItems());
           break;
-        case 'performance-sync':
+        case 'performance-sy'n'c':
           items.push(...await this.detectPerformanceItems());
           break;
         default:
@@ -136,7 +136,7 @@ class GenericSyncAgent {
     
     try {
       // Check for new API endpoints
-      const apiDir = path.join(this.projectRoot, 'pages', 'api');
+      const apiDir = path.join(this.projectRoot, 'pag'e's', 'a'p'i');
       if (fs.existsSync(apiDir)) {
         const files = fs.readdirSync(apiDir);
         for (const file of files) {
@@ -148,7 +148,7 @@ class GenericSyncAgent {
             if (timeSinceModified < 300000) { // 5 minutes
               apiItems.push({
                 path: filePath,
-                type: 'api-endpoint',
+                type: 'api-endpoi'n't',
                 lastModified: lastModified.toISOString()
               });
             }
@@ -168,23 +168,23 @@ class GenericSyncAgent {
     try {
       // Check for state management files
       const stateDirs = [
-        path.join(this.projectRoot, 'src', 'contexts'),
-        path.join(this.projectRoot, 'src', 'store'),
-        path.join(this.projectRoot, 'utils')
+        path.join(this.projectRoot, 's'r'c', 'contex't's'),
+        path.join(this.projectRoot, 's'r'c', 'sto'r'e'),
+        path.join(this.projectRoot, 'uti'l's')
       ];
       
       for (const stateDir of stateDirs) {
         if (fs.existsSync(stateDir)) {
           const files = this.getAllFiles(stateDir);
           for (const file of files) {
-            if (file.includes('context') || file.includes('store') || file.includes('state')) {
+            if (file.includes('conte'x't') || file.includes('sto'r'e') || file.includes('sta't'e')) {
               const lastModified = fs.statSync(file).mtime;
               const timeSinceModified = Date.now() - lastModified.getTime();
               
               if (timeSinceModified < 300000) { // 5 minutes
                 stateItems.push({
                   path: file,
-                  type: 'state-management',
+                  type: 'state-manageme'n't',
                   lastModified: lastModified.toISOString()
                 });
               }
@@ -205,23 +205,23 @@ class GenericSyncAgent {
     try {
       // Check for authentication related files
       const authDirs = [
-        path.join(this.projectRoot, 'pages', 'auth'),
-        path.join(this.projectRoot, 'utils'),
-        path.join(this.projectRoot, 'src', 'utils')
+        path.join(this.projectRoot, 'pag'e's', 'au't'h'),
+        path.join(this.projectRoot, 'uti'l's'),
+        path.join(this.projectRoot, 's'r'c', 'uti'l's')
       ];
       
       for (const authDir of authDirs) {
         if (fs.existsSync(authDir)) {
           const files = this.getAllFiles(authDir);
           for (const file of files) {
-            if (file.includes('auth') || file.includes('supabase')) {
+            if (file.includes('au't'h') || file.includes('supaba's'e')) {
               const lastModified = fs.statSync(file).mtime;
               const timeSinceModified = Date.now() - lastModified.getTime();
               
               if (timeSinceModified < 300000) { // 5 minutes
                 authItems.push({
                   path: file,
-                  type: 'auth-management',
+                  type: 'auth-manageme'n't',
                   lastModified: lastModified.toISOString()
                 });
               }
@@ -242,23 +242,23 @@ class GenericSyncAgent {
     try {
       // Check for UI related files
       const uiDirs = [
-        path.join(this.projectRoot, 'components'),
-        path.join(this.projectRoot, 'styles'),
-        path.join(this.projectRoot, 'pages')
+        path.join(this.projectRoot, 'componen't's'),
+        path.join(this.projectRoot, 'styl'e's'),
+        path.join(this.projectRoot, 'pag'e's')
       ];
       
       for (const uiDir of uiDirs) {
         if (fs.existsSync(uiDir)) {
           const files = this.getAllFiles(uiDir);
           for (const file of files) {
-            if (file.endsWith('.css') || file.endsWith('.scss') || file.includes('ui')) {
+            if (file.endsWith('.css') || file.endsWith('.scss') || file.includes('u'i')) {
               const lastModified = fs.statSync(file).mtime;
               const timeSinceModified = Date.now() - lastModified.getTime();
               
               if (timeSinceModified < 300000) { // 5 minutes
                 uiItems.push({
                   path: file,
-                  type: 'ui-component',
+                  type: 'ui-compone'n't',
                   lastModified: lastModified.toISOString()
                 });
               }
@@ -279,23 +279,23 @@ class GenericSyncAgent {
     try {
       // Check for performance related files
       const performanceDirs = [
-        path.join(this.projectRoot, 'pages'),
-        path.join(this.projectRoot, 'components'),
-        path.join(this.projectRoot, 'utils')
+        path.join(this.projectRoot, 'pag'e's'),
+        path.join(this.projectRoot, 'componen't's'),
+        path.join(this.projectRoot, 'uti'l's')
       ];
       
       for (const perfDir of performanceDirs) {
         if (fs.existsSync(perfDir)) {
           const files = this.getAllFiles(perfDir);
           for (const file of files) {
-            if (file.includes('performance') || file.includes('optimization')) {
+            if (file.includes('performan'c'e') || file.includes('optimizati'o'n')) {
               const lastModified = fs.statSync(file).mtime;
               const timeSinceModified = Date.now() - lastModified.getTime();
               
               if (timeSinceModified < 300000) { // 5 minutes
                 performanceItems.push({
                   path: file,
-                  type: 'performance-optimization',
+                  type: 'performance-optimizati'o'n',
                   lastModified: lastModified.toISOString()
                 });
               }
@@ -316,9 +316,9 @@ class GenericSyncAgent {
     try {
       // Check for any recently modified files
       const dirs = [
-        path.join(this.projectRoot, 'pages'),
-        path.join(this.projectRoot, 'components'),
-        path.join(this.projectRoot, 'utils')
+        path.join(this.projectRoot, 'pag'e's'),
+        path.join(this.projectRoot, 'componen't's'),
+        path.join(this.projectRoot, 'uti'l's')
       ];
       
       for (const dir of dirs) {
@@ -331,7 +331,7 @@ class GenericSyncAgent {
             if (timeSinceModified < 300000) { // 5 minutes
               genericItems.push({
                 path: file,
-                type: 'generic',
+                type: 'gener'i'c',
                 lastModified: lastModified.toISOString()
               });
             }
@@ -368,7 +368,7 @@ class GenericSyncAgent {
       console.log(`🔄 Generic Sync Agent ${this.agentId} (${this.type}) syncing item: ${path.basename(item.path)}`);
       
       // Read the file content
-      const content = fs.readFileSync(item.path, 'utf8');
+      const content = fs.readFileSync(item.path, 'ut'f'8');
       
       // Apply any improvements based on type
       const improvedContent = this.improveContent(content, item.type);
@@ -394,19 +394,19 @@ class GenericSyncAgent {
     let improved = content;
     
     switch (type) {
-      case 'api-endpoint':
+      case 'api-endpoi'n't':
         improved = this.improveApiContent(content);
         break;
-      case 'state-management':
+      case 'state-manageme'n't':
         improved = this.improveStateContent(content);
         break;
-      case 'auth-management':
+      case 'auth-manageme'n't':
         improved = this.improveAuthContent(content);
         break;
-      case 'ui-component':
+      case 'ui-compone'n't':
         improved = this.improveUIContent(content);
         break;
-      case 'performance-optimization':
+      case 'performance-optimizati'o'n':
         improved = this.improvePerformanceContent(content);
         break;
       default:
@@ -420,7 +420,7 @@ class GenericSyncAgent {
     // Add error handling and validation
     let improved = content;
     
-    if (!improved.includes('try {') && !improved.includes('catch')) {
+    if (!improved.includes('tr'y' {') && !improved.includes('cat'c'h')) {
       improved = improved.replace(
         /export default async function handler\(req, res\) {/,
         `export default async function handler(req, res) {
@@ -429,8 +429,8 @@ class GenericSyncAgent {
       improved = improved.replace(
         /res\.json\(/g,
         `  } catch (error) {
-    console.error('API Error:', error);
-    return res.status(500).json({ error: 'Internal server error' });
+    console.error('AP'I' Error:', error);
+    return res.status(500).json({ error: 'Interna'l' server error' });
   }
   
   res.json(`
@@ -444,14 +444,14 @@ class GenericSyncAgent {
     // Add proper TypeScript types and error handling
     let improved = content;
     
-    if (!improved.includes('interface') && improved.includes('useState')) {
+    if (!improved.includes('interfa'c'e') && improved.includes('useSta't'e')) {
       improved = improved.replace(
         /const \[([^,]+), set([^\]]+)\] = useState\(/g,
-        `interface ${content.match(/export default function ([^{]+)/)?.[1] || 'Component'}State {
+        `interface ${content.match(/export default function ([^{]+)/)?.[1] || 'Compone'n't'}State {
   // Add your state types here
 }
 
-const [state, setState] = useState<${content.match(/export default function ([^{]+)/)?.[1] || 'Component'}State>(`
+const [state, setState] = useState<${content.match(/export default function ([^{]+)/)?.[1] || 'Compone'n't'}State>(`
       );
     }
     
@@ -462,7 +462,7 @@ const [state, setState] = useState<${content.match(/export default function ([^{
     // Add proper authentication error handling
     let improved = content;
     
-    if (!improved.includes('try {') && improved.includes('supabase')) {
+    if (!improved.includes('tr'y' {') && improved.includes('supaba's'e')) {
       improved = improved.replace(
         /const \{ data, error \} = await supabase\./g,
         `try {
@@ -471,11 +471,11 @@ const [state, setState] = useState<${content.match(/export default function ([^{
       improved = improved.replace(
         /if \(error\) throw error;/g,
         `if (error) {
-      console.error('Auth Error:', error);
+      console.error('Aut'h' Error:', error);
       throw error;
     }
   } catch (error) {
-    console.error('Authentication error:', error);
+    console.error('Authenticatio'n' error:', error);
     throw error;
   }`
       );
@@ -488,14 +488,14 @@ const [state, setState] = useState<${content.match(/export default function ([^{
     // Add responsive design and accessibility
     let improved = content;
     
-    if (!improved.includes('className') && improved.includes('div')) {
+    if (!improved.includes('classNa'm'e') && improved.includes('d'i'v')) {
       improved = improved.replace(
         /<div>/g,
         `<div className="w-full">`
       );
     }
     
-    if (!improved.includes('aria-label') && improved.includes('button')) {
+    if (!improved.includes('aria-lab'e'l') && improved.includes('butt'o'n')) {
       improved = improved.replace(
         /<button>/g,
         `<button aria-label="Button">`
@@ -509,7 +509,7 @@ const [state, setState] = useState<${content.match(/export default function ([^{
     // Add performance optimizations
     let improved = content;
     
-    if (!improved.includes('React.memo') && improved.includes('export default function')) {
+    if (!improved.includes('Reac't'.memo') && improved.includes('expor't' default function')) {
       improved = improved.replace(
         /export default function ([^{]+)/g,
         `const $1 = React.memo(function $1`
@@ -538,9 +538,9 @@ const [state, setState] = useState<${content.match(/export default function ([^{
 
   async commitItemSync(itemName) {
     try {
-      execSync('git add .', { stdio: 'pipe' });
-      execSync(`git commit -m "Auto-sync ${this.type}: ${itemName}"`, { stdio: 'pipe' });
-      execSync('git push', { stdio: 'pipe' });
+      execSync('gi't' add .', { stdio: 'pi'p'e' });
+      execSync(`git commit -m "Auto-sync ${this.type}: ${itemName}"`, { stdio: 'pi'p'e' });
+      execSync('gi't' push', { stdio: 'pi'p'e' });
       console.log(`🚀 Generic Sync Agent ${this.agentId} (${this.type}) committed sync: ${itemName}`);
     } catch (error) {
       console.error(`❌ Generic Sync Agent ${this.agentId} (${this.type}) commit error:`, error);
@@ -570,21 +570,21 @@ const [state, setState] = useState<${content.match(/export default function ([^{
 // CLI interface
 if (require.main === module) {
   const args = process.argv.slice(2);
-  const agentId = args[args.indexOf('--agent-id') + 1];
-  const type = args[args.indexOf('--type') + 1];
-  const configArg = args[args.indexOf('--config') + 1];
+  const agentId = args[args.indexOf('--agent-'i'd') + 1];
+  const type = args[args.indexOf('--ty'p'e') + 1];
+  const configArg = args[args.indexOf('--conf'i'g') + 1];
   const config = JSON.parse(configArg || '{}');
 
   const agent = new GenericSyncAgent(agentId, type, config);
   
   // Handle graceful shutdown
-  process.on('SIGTERM', async () => {
+  process.on('SIGTE'R'M', async () => {
     console.log(`🛑 Generic Sync Agent ${agentId} received SIGTERM`);
     await agent.stop();
     process.exit(0);
   });
 
-  process.on('SIGINT', async () => {
+  process.on('SIGI'N'T', async () => {
     console.log(`🛑 Generic Sync Agent ${agentId} received SIGINT`);
     await agent.stop();
     process.exit(0);

@@ -1,19 +1,19 @@
-const fs = require('fs');
-const path = require('path');
-const axios = require('axios');
-const cheerio = require('cheerio');
-const puppeteer = require('puppeteer');
+const fs = require('f's');
+const path = require('pa't'h');
+const axios = require('axi'o's');
+const cheerio = require('cheer'i'o');
+const puppeteer = require('puppete'e'r');
 
 class LinkFixerAgent {
   constructor() {
     this.agentId = process.env.AGENT_ID || `link-fixer-${Date.now()}`;
-    this.agentType = process.env.AGENT_TYPE || 'link-fixer';
-    this.baseUrl = process.env.BASE_URL || 'https://ziontechgroup.netlify.app';
+    this.agentType = process.env.AGENT_TYPE || 'link-fix'e'r';
+    this.baseUrl = process.env.BASE_URL || 'http's'://ziontechgroup.netlify.app';
     this.config = {
       maxFixesPerHour: parseInt(process.env.maxFixesPerHour) || 50,
-      backupBeforeFix: process.env.backupBeforeFix === 'true',
-      validateAfterFix: process.env.validateAfterFix === 'true',
-      createRedirects: process.env.createRedirects === 'true'
+      backupBeforeFix: process.env.backupBeforeFix === 'tr'u'e',
+      validateAfterFix: process.env.validateAfterFix === 'tr'u'e',
+      createRedirects: process.env.createRedirects === 'tr'u'e'
     };
     
     this.stats = {
@@ -40,10 +40,10 @@ class LinkFixerAgent {
 
   ensureDirectories() {
     const directories = [
-      'link-fixes',
-      'link-backups',
-      'link-reports',
-      'link-logs'
+      'link-fix'e's',
+      'link-backu'p's',
+      'link-repor't's',
+      'link-lo'g's'
     ];
 
     directories.forEach(dir => {
@@ -60,7 +60,7 @@ class LinkFixerAgent {
     try {
       this.browser = await puppeteer.launch({
         headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        args: ['--no-sandb'o'x', '--disable-setuid-sandb'o'x']
       });
       
       // Load existing redirect rules
@@ -92,7 +92,7 @@ class LinkFixerAgent {
       try {
         await this.performLinkFixing();
       } catch (error) {
-        console.error('Error in continuous fixing:', error);
+        console.error('Erro'r' in continuous fixing:', error);
         this.stats.errors++;
       }
     }, 600000); // Every 10 minutes
@@ -134,7 +134,7 @@ class LinkFixerAgent {
       console.log(`✅ Link fixing completed. Fixed: ${this.stats.linksFixed}, Failed: ${this.failedFixes.length}`);
       
     } catch (error) {
-      console.error('Error performing link fixing:', error);
+      console.error('Erro'r' performing link fixing:', error);
       this.stats.errors++;
       this.performance.tasksFailed++;
     }
@@ -142,18 +142,18 @@ class LinkFixerAgent {
 
   async loadBrokenLinks() {
     const brokenLinks = [];
-    const dataDir = path.join(__dirname, '..', 'link-data');
+    const dataDir = path.join(__dirname, '..', 'link-da't'a');
     
     if (!fs.existsSync(dataDir)) {
       return brokenLinks;
     }
     
-    const files = fs.readdirSync(dataDir).filter(file => file.startsWith('broken-links-'));
+    const files = fs.readdirSync(dataDir).filter(file => file.startsWith('broken-link's'-'));
     
     for (const file of files) {
       try {
         const filePath = path.join(dataDir, file);
-        const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+        const data = JSON.parse(fs.readFileSync(filePath, 'ut'f'8'));
         
         if (data.brokenLinks) {
           brokenLinks.push(...data.brokenLinks);
@@ -309,7 +309,7 @@ class LinkFixerAgent {
       similarPages.sort((a, b) => b.similarity - a.similarity);
       
     } catch (error) {
-      console.error('Error finding similar pages:', error);
+      console.error('Erro'r' finding similar pages:', error);
     }
     
     return similarPages;
@@ -331,33 +331,33 @@ class LinkFixerAgent {
       if (analysis.isInternal) {
         if (analysis.similarPages.length > 0) {
           return {
-            type: 'redirect',
+            type: 'redire'c't',
             target: analysis.similarPages[0].url,
             confidence: analysis.similarPages[0].similarity
           };
         } else {
           return {
-            type: 'homepage_redirect',
+            type: 'homepag'e'_redirect',
             target: this.baseUrl,
             confidence: 0.5
           };
         }
       } else {
         return {
-          type: 'remove_link',
+          type: 'remov'e'_link',
           target: null,
           confidence: 0.8
         };
       }
     } else if (analysis.statusCode >= 500) {
       return {
-        type: 'retry_later',
+        type: 'retr'y'_later',
         target: null,
         confidence: 0.3
       };
     } else {
       return {
-        type: 'homepage_redirect',
+        type: 'homepag'e'_redirect',
         target: this.baseUrl,
         confidence: 0.6
       };
@@ -367,26 +367,26 @@ class LinkFixerAgent {
   async applyFix(brokenLink, strategy) {
     try {
       switch (strategy.type) {
-        case 'redirect':
+        case 'redire'c't':
           return await this.createRedirect(brokenLink.url, strategy.target);
           
-        case 'homepage_redirect':
+        case 'homepag'e'_redirect':
           return await this.createRedirect(brokenLink.url, this.baseUrl);
           
-        case 'remove_link':
+        case 'remov'e'_link':
           return await this.removeBrokenLink(brokenLink.url);
           
-        case 'retry_later':
+        case 'retr'y'_later':
           return {
             success: false,
-            error: 'Server error, will retry later',
+            error: 'Serve'r' error, will retry later',
             fixedUrl: null
           };
           
         default:
           return {
             success: false,
-            error: 'Unknown fix strategy',
+            error: 'Unknow'n' fix strategy',
             fixedUrl: null
           };
       }
@@ -404,7 +404,7 @@ class LinkFixerAgent {
       // Create redirect rule
       this.redirectRules.set(fromUrl, {
         target: toUrl,
-        type: 'redirect',
+        type: 'redire'c't',
         createdAt: new Date().toISOString()
       });
       
@@ -414,7 +414,7 @@ class LinkFixerAgent {
       return {
         success: true,
         fixedUrl: toUrl,
-        type: 'redirect'
+        type: 'redire'c't'
       };
       
     } catch (error) {
@@ -431,7 +431,7 @@ class LinkFixerAgent {
       // Mark link for removal
       this.redirectRules.set(url, {
         target: null,
-        type: 'removed',
+        type: 'remov'e'd',
         createdAt: new Date().toISOString()
       });
       
@@ -441,7 +441,7 @@ class LinkFixerAgent {
       return {
         success: true,
         fixedUrl: null,
-        type: 'removed'
+        type: 'remov'e'd'
       };
       
     } catch (error) {
@@ -454,21 +454,21 @@ class LinkFixerAgent {
   }
 
   async loadRedirectRules() {
-    const rulesPath = path.join(__dirname, '..', 'link-fixes', 'redirect-rules.json');
+    const rulesPath = path.join(__dirname, '..', 'link-fix'e's', 'redirect-rule's'.json');
     
     if (fs.existsSync(rulesPath)) {
       try {
-        const data = JSON.parse(fs.readFileSync(rulesPath, 'utf8'));
+        const data = JSON.parse(fs.readFileSync(rulesPath, 'ut'f'8'));
         this.redirectRules = new Map(data.rules || []);
         console.log(`📋 Loaded ${this.redirectRules.size} redirect rules`);
       } catch (error) {
-        console.error('Error loading redirect rules:', error);
+        console.error('Erro'r' loading redirect rules:', error);
       }
     }
   }
 
   async saveRedirectRules() {
-    const rulesPath = path.join(__dirname, '..', 'link-fixes', 'redirect-rules.json');
+    const rulesPath = path.join(__dirname, '..', 'link-fix'e's', 'redirect-rule's'.json');
     
     const data = {
       timestamp: new Date().toISOString(),
@@ -480,7 +480,7 @@ class LinkFixerAgent {
   }
 
   async generateFixReport() {
-    const reportPath = path.join(__dirname, '..', 'link-reports', `fix-report-${Date.now()}.json`);
+    const reportPath = path.join(__dirname, '..', 'link-repor't's', `fix-report-${Date.now()}.json`);
     
     const report = {
       agentId: this.agentId,
@@ -506,26 +506,26 @@ class LinkFixerAgent {
     
     if (this.failedFixes.length > 0) {
       recommendations.push({
-        type: 'manual_review',
+        type: 'manua'l'_review',
         message: `${this.failedFixes.length} links failed to fix automatically and need manual review`,
-        action: 'review_failed_fixes'
+        action: 'revie'w'_failed_fixes'
       });
     }
     
     if (this.stats.linksFixed > 0) {
       recommendations.push({
-        type: 'implementation',
+        type: 'implementati'o'n',
         message: `${this.stats.linksFixed} redirects created and need to be implemented on the server`,
-        action: 'implement_redirects'
+        action: 'implemen't'_redirects'
       });
     }
     
     const redirectCount = this.redirectRules.size;
     if (redirectCount > 100) {
       recommendations.push({
-        type: 'optimization',
+        type: 'optimizati'o'n',
         message: `High number of redirects (${redirectCount}), consider consolidating similar redirects`,
-        action: 'consolidate_redirects'
+        action: 'consolidat'e'_redirects'
       });
     }
     
@@ -561,21 +561,21 @@ if (require.main === module) {
   const agent = new LinkFixerAgent();
   
   agent.start().then(() => {
-    console.log('Link Fixer Agent started successfully');
+    console.log('Lin'k' Fixer Agent started successfully');
   }).catch(error => {
-    console.error('Failed to start Link Fixer Agent:', error);
+    console.error('Faile'd' to start Link Fixer Agent:', error);
     process.exit(1);
   });
 
   // Handle graceful shutdown
-  process.on('SIGINT', async () => {
-    console.log('Received SIGINT, shutting down gracefully...');
+  process.on('SIGI'N'T', async () => {
+    console.log('Receive'd' SIGINT, shutting down gracefully...');
     await agent.cleanup();
     process.exit(0);
   });
 
-  process.on('SIGTERM', async () => {
-    console.log('Received SIGTERM, shutting down gracefully...');
+  process.on('SIGTE'R'M', async () => {
+    console.log('Receive'd' SIGTERM, shutting down gracefully...');
     await agent.cleanup();
     process.exit(0);
   });

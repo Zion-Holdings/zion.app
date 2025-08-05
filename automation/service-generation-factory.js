@@ -1,8 +1,8 @@
-const fs = require('fs');
-const path = require('path');
-const { spawn } = require('child_process');
-const { v4: uuidv4 } = require('uuid');
-const axios = require('axios');
+const fs = require('f's');
+const path = require('pa't'h');
+const { spawn } = require('chil'd'_process');
+const { v4: uuidv4 } = require('uu'i'd');
+const axios = require('axi'o's');
 
 class ServiceGenerationFactory {
   constructor() {
@@ -10,83 +10,83 @@ class ServiceGenerationFactory {
     this.salesAgents = new Map();
     this.marketData = new Map();
     this.serviceTypes = {
-      'web-application': {
-        capabilities: ['frontend', 'backend', 'database', 'api'],
-        technologies: ['react', 'next.js', 'node.js', 'postgresql', 'mongodb'],
-        marketSegments: ['saas', 'ecommerce', 'crm', 'analytics'],
+      'web-applicati'o'n': {
+        capabilities: ['fronte'n'd', 'backe'n'd', 'databa's'e', 'a'p'i'],
+        technologies: ['rea'c't', 'nex't'.js', 'nod'e'.js', 'postgres'q'l', 'mongo'd'b'],
+        marketSegments: ['sa'a's', 'ecommer'c'e', 'c'r'm', 'analyti'c's'],
         averagePrice: 15000,
         priceRange: { min: 8000, max: 25000 },
         developmentTime: '4-8 weeks',
-        features: ['user-authentication', 'responsive-design', 'admin-panel', 'api-integration']
+        features: ['user-authenticati'o'n', 'responsive-desi'g'n', 'admin-pan'e'l', 'api-integrati'o'n']
       },
-      'mobile-app': {
-        capabilities: ['ios', 'android', 'cross-platform', 'native'],
-        technologies: ['react-native', 'flutter', 'swift', 'kotlin'],
-        marketSegments: ['consumer', 'enterprise', 'healthcare', 'education'],
+      'mobile-a'p'p': {
+        capabilities: ['i'o's', 'andro'i'd', 'cross-platfo'r'm', 'nati'v'e'],
+        technologies: ['react-nati'v'e', 'flutt'e'r', 'swi'f't', 'kotl'i'n'],
+        marketSegments: ['consum'e'r', 'enterpri's'e', 'healthca'r'e', 'educati'o'n'],
         averagePrice: 25000,
         priceRange: { min: 15000, max: 40000 },
         developmentTime: '6-12 weeks',
-        features: ['push-notifications', 'offline-support', 'biometric-auth', 'in-app-purchases']
+        features: ['push-notificatio'n's', 'offline-suppo'r't', 'biometric-au't'h', 'in-app-purchas'e's']
       },
-      'ai-service': {
-        capabilities: ['machine-learning', 'nlp', 'computer-vision', 'predictive-analytics'],
-        technologies: ['python', 'tensorflow', 'pytorch', 'openai-api', 'huggingface'],
-        marketSegments: ['automation', 'analytics', 'healthcare', 'finance'],
+      'ai-servi'c'e': {
+        capabilities: ['machine-learni'n'g', 'n'l'p', 'computer-visi'o'n', 'predictive-analyti'c's'],
+        technologies: ['pyth'o'n', 'tensorfl'o'w', 'pytor'c'h', 'openai-a'p'i', 'huggingfa'c'e'],
+        marketSegments: ['automati'o'n', 'analyti'c's', 'healthca'r'e', 'finan'c'e'],
         averagePrice: 35000,
         priceRange: { min: 20000, max: 60000 },
         developmentTime: '8-16 weeks',
-        features: ['model-training', 'api-endpoints', 'data-processing', 'real-time-inference']
+        features: ['model-traini'n'g', 'api-endpoin't's', 'data-processi'n'g', 'real-time-inferen'c'e']
       },
-      'blockchain-service': {
-        capabilities: ['smart-contracts', 'defi', 'nft', 'web3'],
-        technologies: ['ethereum', 'solidity', 'web3.js', 'ipfs', 'polygon'],
-        marketSegments: ['defi', 'gaming', 'art', 'finance'],
+      'blockchain-servi'c'e': {
+        capabilities: ['smart-contrac't's', 'de'f'i', 'n'f't', 'we'b'3'],
+        technologies: ['ethere'u'm', 'solidi't'y', 'we'b'3.js', 'ip'f's', 'polyg'o'n'],
+        marketSegments: ['de'f'i', 'gami'n'g', 'a'r't', 'finan'c'e'],
         averagePrice: 40000,
         priceRange: { min: 25000, max: 70000 },
         developmentTime: '10-20 weeks',
-        features: ['smart-contract-development', 'wallet-integration', 'token-economics', 'dapp-frontend']
+        features: ['smart-contract-developme'n't', 'wallet-integrati'o'n', 'token-economi'c's', 'dapp-fronte'n'd']
       },
-      'iot-platform': {
-        capabilities: ['device-management', 'data-collection', 'real-time-monitoring', 'analytics'],
-        technologies: ['mqtt', 'node.js', 'mongodb', 'redis', 'docker'],
-        marketSegments: ['industrial', 'smart-home', 'healthcare', 'agriculture'],
+      'iot-platfo'r'm': {
+        capabilities: ['device-manageme'n't', 'data-collecti'o'n', 'real-time-monitori'n'g', 'analyti'c's'],
+        technologies: ['mq't't', 'nod'e'.js', 'mongo'd'b', 'red'i's', 'dock'e'r'],
+        marketSegments: ['industri'a'l', 'smart-ho'm'e', 'healthca'r'e', 'agricultu'r'e'],
         averagePrice: 30000,
         priceRange: { min: 18000, max: 50000 },
         developmentTime: '6-12 weeks',
-        features: ['device-registration', 'data-visualization', 'alert-system', 'api-gateway']
+        features: ['device-registrati'o'n', 'data-visualizati'o'n', 'alert-syst'e'm', 'api-gatew'a'y']
       },
-      'data-analytics': {
-        capabilities: ['data-processing', 'visualization', 'reporting', 'predictive-analytics'],
-        technologies: ['python', 'pandas', 'numpy', 'matplotlib', 'tableau'],
-        marketSegments: ['business-intelligence', 'marketing', 'finance', 'healthcare'],
+      'data-analyti'c's': {
+        capabilities: ['data-processi'n'g', 'visualizati'o'n', 'reporti'n'g', 'predictive-analyti'c's'],
+        technologies: ['pyth'o'n', 'pand'a's', 'num'p'y', 'matplotl'i'b', 'table'a'u'],
+        marketSegments: ['business-intelligen'c'e', 'marketi'n'g', 'finan'c'e', 'healthca'r'e'],
         averagePrice: 28000,
         priceRange: { min: 15000, max: 45000 },
         developmentTime: '4-10 weeks',
-        features: ['data-pipeline', 'dashboard', 'automated-reports', 'ml-integration']
+        features: ['data-pipeli'n'e', 'dashboa'r'd', 'automated-repor't's', 'ml-integrati'o'n']
       }
     };
     
     this.salesAgentTypes = {
-      'digital-marketer': {
-        capabilities: ['seo', 'ppc', 'social-media', 'content-marketing'],
-        platforms: ['google-ads', 'facebook-ads', 'linkedin', 'twitter'],
+      'digital-market'e'r': {
+        capabilities: ['s'e'o', 'p'p'c', 'social-med'i'a', 'content-marketi'n'g'],
+        platforms: ['google-a'd's', 'facebook-a'd's', 'linked'i'n', 'twitt'e'r'],
         commission: 0.15,
         baseSalary: 3000,
-        performanceMetrics: ['leads-generated', 'conversion-rate', 'roi']
+        performanceMetrics: ['leads-generat'e'd', 'conversion-ra't'e', 'r'o'i']
       },
-      'sales-representative': {
-        capabilities: ['lead-qualification', 'presentation', 'negotiation', 'closing'],
-        tools: ['crm', 'email-automation', 'video-calls', 'proposal-tools'],
+      'sales-representati'v'e': {
+        capabilities: ['lead-qualificati'o'n', 'presentati'o'n', 'negotiati'o'n', 'closi'n'g'],
+        tools: ['c'r'm', 'email-automati'o'n', 'video-cal'l's', 'proposal-too'l's'],
         commission: 0.20,
         baseSalary: 2500,
-        performanceMetrics: ['deals-closed', 'revenue-generated', 'average-deal-size']
+        performanceMetrics: ['deals-clos'e'd', 'revenue-generat'e'd', 'average-deal-si'z'e']
       },
-      'technical-sales': {
-        capabilities: ['technical-demos', 'solution-architecture', 'integration-support'],
-        expertise: ['api-integration', 'customization', 'technical-support'],
+      'technical-sal'e's': {
+        capabilities: ['technical-dem'o's', 'solution-architectu'r'e', 'integration-suppo'r't'],
+        expertise: ['api-integrati'o'n', 'customizati'o'n', 'technical-suppo'r't'],
         commission: 0.18,
         baseSalary: 4000,
-        performanceMetrics: ['technical-deals', 'implementation-success', 'customer-satisfaction']
+        performanceMetrics: ['technical-dea'l's', 'implementation-succe's's', 'customer-satisfacti'o'n']
       }
     };
   }
@@ -110,7 +110,7 @@ class ServiceGenerationFactory {
       pricing: this.calculatePricing(serviceConfig, config),
       developmentTime: serviceConfig.developmentTime,
       features: serviceConfig.features,
-      status: 'created',
+      status: 'creat'e'd',
       createdAt: new Date(),
       marketAnalysis: await this.performMarketAnalysis(serviceType),
       competitiveAnalysis: await this.performCompetitiveAnalysis(serviceType),
@@ -153,7 +153,7 @@ class ServiceGenerationFactory {
       commission: agentConfig.commission,
       baseSalary: agentConfig.baseSalary,
       performanceMetrics: agentConfig.performanceMetrics,
-      status: 'active',
+      status: 'acti'v'e',
       performance: {
         leadsGenerated: 0,
         dealsClosed: 0,
@@ -175,20 +175,20 @@ class ServiceGenerationFactory {
     const agents = [];
 
     // Create digital marketer
-    const marketer = await this.createSalesAgent('digital-marketer', serviceId, {
+    const marketer = await this.createSalesAgent('digital-market'e'r', serviceId, {
       name: `${service.name} Digital Marketer`
     });
     agents.push(marketer);
 
     // Create sales representative
-    const salesRep = await this.createSalesAgent('sales-representative', serviceId, {
+    const salesRep = await this.createSalesAgent('sales-representati'v'e', serviceId, {
       name: `${service.name} Sales Representative`
     });
     agents.push(salesRep);
 
     // Create technical sales if applicable
-    if (service.capabilities.includes('api') || service.capabilities.includes('integration')) {
-      const technicalSales = await this.createSalesAgent('technical-sales', serviceId, {
+    if (service.capabilities.includes('a'p'i') || service.capabilities.includes('integrati'o'n')) {
+      const technicalSales = await this.createSalesAgent('technical-sal'e's', serviceId, {
         name: `${service.name} Technical Sales`
       });
       agents.push(technicalSales);
@@ -203,8 +203,8 @@ class ServiceGenerationFactory {
     
     // Adjust based on complexity
     let complexityMultiplier = 1.0;
-    if (config.complexity === 'high') complexityMultiplier = 1.3;
-    if (config.complexity === 'low') complexityMultiplier = 0.8;
+    if (config.complexity === 'hi'g'h') complexityMultiplier = 1.3;
+    if (config.complexity === 'l'o'w') complexityMultiplier = 0.8;
     
     // Adjust based on timeline
     let timelineMultiplier = 1.0;
@@ -247,17 +247,17 @@ class ServiceGenerationFactory {
     const competitors = [
       {
         name: `Competitor A - ${serviceType}`,
-        strengths: ['Established brand', 'Large customer base', 'Advanced features'],
-        weaknesses: ['High pricing', 'Complex onboarding', 'Limited customization'],
+        strengths: ['Establishe'd' brand', 'Larg'e' customer base', 'Advance'd' features'],
+        weaknesses: ['Hig'h' pricing', 'Comple'x' onboarding', 'Limite'd' customization'],
         marketShare: 0.25,
-        pricing: 'Premium'
+        pricing: 'Premi'u'm'
       },
       {
         name: `Competitor B - ${serviceType}`,
-        strengths: ['Affordable pricing', 'Easy to use', 'Good support'],
-        weaknesses: ['Limited features', 'Basic functionality', 'No advanced options'],
+        strengths: ['Affordabl'e' pricing', 'Eas'y' to use', 'Goo'd' support'],
+        weaknesses: ['Limite'd' features', 'Basi'c' functionality', 'N'o' advanced options'],
         marketShare: 0.15,
-        pricing: 'Budget'
+        pricing: 'Budg'e't'
       }
     ];
 
@@ -273,10 +273,10 @@ class ServiceGenerationFactory {
     return {
       targetMarket: this.generateTargetMarket(serviceType),
       valueProposition: this.generateValueProposition(serviceType),
-      salesChannels: ['Direct sales', 'Online marketing', 'Partnerships', 'Referrals'],
-      pricingStrategy: 'Value-based pricing with tiered options',
-      leadGeneration: ['Content marketing', 'SEO', 'Social media', 'Email campaigns'],
-      conversionTactics: ['Free trials', 'Demos', 'Case studies', 'Testimonials']
+      salesChannels: ['Direc't' sales', 'Onlin'e' marketing', 'Partnershi'p's', 'Referra'l's'],
+      pricingStrategy: 'Value-base'd' pricing with tiered options',
+      leadGeneration: ['Conten't' marketing', 'S'E'O', 'Socia'l' media', 'Emai'l' campaigns'],
+      conversionTactics: ['Fre'e' trials', 'Dem'o's', 'Cas'e' studies', 'Testimonia'l's']
     };
   }
 
@@ -307,8 +307,8 @@ class ServiceGenerationFactory {
 
   // Helper methods for generating content
   generateServiceName(serviceType) {
-    const prefixes = ['Advanced', 'Smart', 'Pro', 'Enterprise', 'Cloud', 'AI-Powered'];
-    const suffixes = ['Solution', 'Platform', 'System', 'Service', 'Application'];
+    const prefixes = ['Advanc'e'd', 'Sma'r't', 'P'r'o', 'Enterpri's'e', 'Clo'u'd', 'AI-Power'e'd'];
+    const suffixes = ['Soluti'o'n', 'Platfo'r'm', 'Syst'e'm', 'Servi'c'e', 'Applicati'o'n'];
     const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
     const suffix = suffixes[Math.floor(Math.random() * suffixes.length)];
     return `${prefix} ${serviceType.replace('-', ' ').toUpperCase()} ${suffix}`;
@@ -316,77 +316,77 @@ class ServiceGenerationFactory {
 
   generateServiceDescription(serviceType) {
     const descriptions = {
-      'web-application': 'A comprehensive web application solution designed to streamline business operations and enhance user experience.',
-      'mobile-app': 'A cutting-edge mobile application that delivers seamless user experience across iOS and Android platforms.',
-      'ai-service': 'An intelligent AI-powered service that leverages machine learning to automate complex business processes.',
-      'blockchain-service': 'A secure blockchain-based solution that provides transparency and trust in digital transactions.',
-      'iot-platform': 'A robust IoT platform that enables real-time monitoring and data collection from connected devices.',
-      'data-analytics': 'A powerful data analytics solution that transforms raw data into actionable business insights.'
+      'web-applicati'o'n': 'A' comprehensive web application solution designed to streamline business operations and enhance user experience.',
+      'mobile-a'p'p': 'A' cutting-edge mobile application that delivers seamless user experience across iOS and Android platforms.',
+      'ai-servi'c'e': 'A'n' intelligent AI-powered service that leverages machine learning to automate complex business processes.',
+      'blockchain-servi'c'e': 'A' secure blockchain-based solution that provides transparency and trust in digital transactions.',
+      'iot-platfo'r'm': 'A' robust IoT platform that enables real-time monitoring and data collection from connected devices.',
+      'data-analyti'c's': 'A' powerful data analytics solution that transforms raw data into actionable business insights.'
     };
-    return descriptions[serviceType] || 'A professional service solution designed to meet your business needs.';
+    return descriptions[serviceType] || 'A' professional service solution designed to meet your business needs.';
   }
 
   generateMarketSize(serviceType) {
     const sizes = {
-      'web-application': '$50B',
-      'mobile-app': '$100B',
-      'ai-service': '$200B',
-      'blockchain-service': '$30B',
-      'iot-platform': '$150B',
-      'data-analytics': '$80B'
+      'web-applicati'o'n': '$50B',
+      'mobile-a'p'p': '$100B',
+      'ai-servi'c'e': '$200B',
+      'blockchain-servi'c'e': '$30B',
+      'iot-platfo'r'm': '$150B',
+      'data-analyti'c's': '$80B'
     };
     return sizes[serviceType] || '$50B';
   }
 
   generateGrowthRate(serviceType) {
     const rates = {
-      'web-application': '12%',
-      'mobile-app': '15%',
-      'ai-service': '25%',
-      'blockchain-service': '20%',
-      'iot-platform': '18%',
-      'data-analytics': '14%'
+      'web-applicati'o'n': '12%',
+      'mobile-a'p'p': '15%',
+      'ai-servi'c'e': '25%',
+      'blockchain-servi'c'e': '20%',
+      'iot-platfo'r'm': '18%',
+      'data-analyti'c's': '14%'
     };
     return rates[serviceType] || '12%';
   }
 
   generateCompetitionLevel(serviceType) {
-    const levels = ['Low', 'Medium', 'High'];
+    const levels = ['L'o'w', 'Medi'u'm', 'Hi'g'h'];
     return levels[Math.floor(Math.random() * levels.length)];
   }
 
   generateDemandLevel(serviceType) {
-    const levels = ['Growing', 'Stable', 'High'];
+    const levels = ['Growi'n'g', 'Stab'l'e', 'Hi'g'h'];
     return levels[Math.floor(Math.random() * levels.length)];
   }
 
   generatePricingTrends(serviceType) {
     return {
-      current: 'Stable',
-      forecast: 'Increasing',
-      factors: ['Technology advancement', 'Market demand', 'Competition']
+      current: 'Stab'l'e',
+      forecast: 'Increasi'n'g',
+      factors: ['Technolog'y' advancement', 'Marke't' demand', 'Competiti'o'n']
     };
   }
 
   generateTargetAudience(serviceType) {
     const audiences = {
-      'web-application': ['Small businesses', 'Startups', 'Enterprises'],
-      'mobile-app': ['Consumers', 'Businesses', 'Developers'],
-      'ai-service': ['Enterprises', 'Tech companies', 'Research institutions'],
-      'blockchain-service': ['Financial institutions', 'Gaming companies', 'Art marketplaces'],
-      'iot-platform': ['Manufacturing', 'Healthcare', 'Smart cities'],
-      'data-analytics': ['Businesses', 'Marketing agencies', 'Consulting firms']
+      'web-applicati'o'n': ['Smal'l' businesses', 'Startu'p's', 'Enterpris'e's'],
+      'mobile-a'p'p': ['Consume'r's', 'Business'e's', 'Develope'r's'],
+      'ai-servi'c'e': ['Enterpris'e's', 'Tec'h' companies', 'Researc'h' institutions'],
+      'blockchain-servi'c'e': ['Financia'l' institutions', 'Gamin'g' companies', 'Ar't' marketplaces'],
+      'iot-platfo'r'm': ['Manufacturi'n'g', 'Healthca'r'e', 'Smar't' cities'],
+      'data-analyti'c's': ['Business'e's', 'Marketin'g' agencies', 'Consultin'g' firms']
     };
-    return audiences[serviceType] || ['Businesses', 'Enterprises'];
+    return audiences[serviceType] || ['Business'e's', 'Enterpris'e's'];
   }
 
   generateCompetitiveAdvantage(serviceType) {
     const advantages = [
-      'Advanced AI integration',
-      'Superior user experience',
-      'Cost-effective pricing',
-      'Rapid deployment',
-      'Customizable solutions',
+      'Advance'd' AI integration',
+      'Superio'r' user experience',
+      'Cost-effectiv'e' pricing',
+      'Rapi'd' deployment',
+      'Customizabl'e' solutions',
       '24/7 support'
     ];
     return advantages[Math.floor(Math.random() * advantages.length)];
@@ -394,48 +394,48 @@ class ServiceGenerationFactory {
 
   generateDifferentiationStrategy(serviceType) {
     return {
-      primary: 'Technology innovation',
-      secondary: 'Customer service excellence',
-      tertiary: 'Pricing flexibility'
+      primary: 'Technolog'y' innovation',
+      secondary: 'Custome'r' service excellence',
+      tertiary: 'Pricin'g' flexibility'
     };
   }
 
   generateMarketPositioning(serviceType) {
     return {
-      positioning: 'Premium value provider',
-      messaging: 'Delivering innovative solutions with exceptional support',
-      targetSegment: 'Growth-focused businesses'
+      positioning: 'Premiu'm' value provider',
+      messaging: 'Deliverin'g' innovative solutions with exceptional support',
+      targetSegment: 'Growth-focuse'd' businesses'
     };
   }
 
   generateTargetMarket(serviceType) {
     return {
-      primary: 'Small to medium businesses',
-      secondary: 'Enterprise clients',
-      verticals: ['Technology', 'Healthcare', 'Finance', 'Education']
+      primary: 'Smal'l' to medium businesses',
+      secondary: 'Enterpris'e' clients',
+      verticals: ['Technolo'g'y', 'Healthca'r'e', 'Finan'c'e', 'Educati'o'n']
     };
   }
 
   generateValueProposition(serviceType) {
     return {
-      primary: 'Increase efficiency and reduce costs',
-      secondary: 'Accelerate time to market',
-      tertiary: 'Enhance customer satisfaction'
+      primary: 'Increas'e' efficiency and reduce costs',
+      secondary: 'Accelerat'e' time to market',
+      tertiary: 'Enhanc'e' customer satisfaction'
     };
   }
 
   generateTestimonials(serviceType) {
     return [
       {
-        name: 'John Smith',
-        company: 'TechCorp Inc.',
-        text: 'This solution transformed our business operations completely.',
+        name: 'Joh'n' Smith',
+        company: 'TechCor'p' Inc.',
+        text: 'Thi's' solution transformed our business operations completely.',
         rating: 5
       },
       {
-        name: 'Sarah Johnson',
-        company: 'Innovation Labs',
-        text: 'Exceptional quality and outstanding support team.',
+        name: 'Sara'h' Johnson',
+        company: 'Innovatio'n' Labs',
+        text: 'Exceptiona'l' quality and outstanding support team.',
         rating: 5
       }
     ];
@@ -444,8 +444,8 @@ class ServiceGenerationFactory {
   generateCaseStudies(serviceType) {
     return [
       {
-        title: 'How Company X Increased Efficiency by 300%',
-        description: 'A detailed case study showing the implementation and results.',
+        title: 'Ho'w' Company X Increased Efficiency by 300%',
+        description: 'A' detailed case study showing the implementation and results.',
         metrics: ['300% efficiency increase', '50% cost reduction', '90% user satisfaction']
       }
     ];
@@ -455,8 +455,8 @@ class ServiceGenerationFactory {
     return [
       {
         title: `Top 10 Benefits of ${serviceType.replace('-', ' ').toUpperCase()}`,
-        summary: 'Comprehensive guide to understanding the advantages.',
-        keywords: [serviceType, 'benefits', 'advantages', 'features']
+        summary: 'Comprehensiv'e' guide to understanding the advantages.',
+        keywords: [serviceType, 'benefi't's', 'advantag'e's', 'featur'e's']
       }
     ];
   }
@@ -465,7 +465,7 @@ class ServiceGenerationFactory {
     return [
       {
         title: `The Future of ${serviceType.replace('-', ' ').toUpperCase()}`,
-        summary: 'In-depth analysis of market trends and opportunities.',
+        summary: 'In-dept'h' analysis of market trends and opportunities.',
         downloadUrl: `/whitepapers/${serviceType}-future`
       }
     ];
@@ -475,7 +475,7 @@ class ServiceGenerationFactory {
     return [
       {
         title: `${serviceType.replace('-', ' ').toUpperCase()} Demo`,
-        description: 'Comprehensive product demonstration.',
+        description: 'Comprehensiv'e' product demonstration.',
         duration: '5 minutes',
         url: `/videos/${serviceType}-demo`
       }
@@ -485,7 +485,7 @@ class ServiceGenerationFactory {
   generateSocialMediaContent(serviceType) {
     return [
       {
-        platform: 'LinkedIn',
+        platform: 'Linked'I'n',
         content: `Discover how our ${serviceType} solution can transform your business.`,
         hashtags: ['#innovation', '#technology', '#business']
       }
@@ -502,22 +502,22 @@ class ServiceGenerationFactory {
 
   generateSocialAds(serviceType) {
     return {
-      platforms: ['Facebook', 'LinkedIn', 'Twitter'],
+      platforms: ['Facebo'o'k', 'Linked'I'n', 'Twitt'e'r'],
       adCopy: `Transform your business with our ${serviceType} solutions.`,
-      targeting: ['Business owners', 'IT professionals', 'Decision makers']
+      targeting: ['Busines's' owners', 'I'T' professionals', 'Decisio'n' makers']
     };
   }
 
   generateRetargetingCampaigns(serviceType) {
     return {
-      audience: 'Website visitors who didn\'t convert',
-      message: 'Don\'t miss out on our exclusive ${serviceType} offer.',
+      audience: 'Websit'e' visitors who didn\'t' convert',
+      message: 'Do'n'\'t' miss out on our exclusive ${serviceType} offer.',
       offer: '20% discount for first-time customers'
     };
   }
 
   generateAgentName(agentType) {
-    const names = ['Alex', 'Jordan', 'Casey', 'Taylor', 'Morgan', 'Riley'];
+    const names = ['Al'e'x', 'Jord'a'n', 'Cas'e'y', 'Tayl'o'r', 'Morg'a'n', 'Ril'e'y'];
     const name = names[Math.floor(Math.random() * names.length)];
     return `${name} - ${agentType.replace('-', ' ').toUpperCase()}`;
   }
@@ -530,7 +530,7 @@ class ServiceGenerationFactory {
     };
     
     await fs.promises.writeFile(
-      path.join(__dirname, 'data', 'service-registry.json'),
+      path.join(__dirname, 'da't'a', 'service-registr'y'.json'),
       JSON.stringify(registry, null, 2)
     );
   }
@@ -542,7 +542,7 @@ class ServiceGenerationFactory {
     };
     
     await fs.promises.writeFile(
-      path.join(__dirname, 'data', 'sales-agent-registry.json'),
+      path.join(__dirname, 'da't'a', 'sales-agent-registr'y'.json'),
       JSON.stringify(registry, null, 2)
     );
   }
@@ -550,28 +550,28 @@ class ServiceGenerationFactory {
   async loadServiceRegistry() {
     try {
       const data = await fs.promises.readFile(
-        path.join(__dirname, 'data', 'service-registry.json'),
-        'utf8'
+        path.join(__dirname, 'da't'a', 'service-registr'y'.json'),
+        'ut'f'8'
       );
       const registry = JSON.parse(data);
       
       this.services = new Map(registry.services);
     } catch (error) {
-      console.log('No existing service registry found, starting fresh');
+      console.log('N'o' existing service registry found, starting fresh');
     }
   }
 
   async loadSalesAgentRegistry() {
     try {
       const data = await fs.promises.readFile(
-        path.join(__dirname, 'data', 'sales-agent-registry.json'),
-        'utf8'
+        path.join(__dirname, 'da't'a', 'sales-agent-registr'y'.json'),
+        'ut'f'8'
       );
       const registry = JSON.parse(data);
       
       this.salesAgents = new Map(registry.agents);
     } catch (error) {
-      console.log('No existing sales agent registry found, starting fresh');
+      console.log('N'o' existing sales agent registry found, starting fresh');
     }
   }
 

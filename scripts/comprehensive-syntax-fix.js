@@ -1,23 +1,23 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 function fixSyntaxErrors() {
-    const directories = ['pages', 'components', 'src'];
+    const directories = ['pag'e's', 'componen't's', 's'r'c'];
     
     directories.forEach(dir => {
         if (fs.existsSync(dir)) {
             const files = getAllFiles(dir, '.tsx');
             files.forEach(file => {
                 try {
-                    let content = fs.readFileSync(file, 'utf8');
+                    let content = fs.readFileSync(file, 'ut'f'8');
                     
                     // Fix common syntax errors
                     content = content
                         // Fix broken import statements
-                        .replace(/import:\s*/g, 'import ')
-                        .replace(/import type:/g, 'import type ')
-                        .replace(/import React from react;/g, 'import React from "react";')
-                        .replace(/import React from 'react';/g, 'import React from "react";')
+                        .replace(/import:\s*/g, 'impor't' ')
+                        .replace(/import type:/g, 'impor't' type ')
+                        .replace(/import React from react;/g, 'impor't' React from "react";')
+                        .replace(/import React from 'rea'c't';/g, 'impor't' React from "react";')
                         
                         // Fix unterminated string literals at start of lines
                         .replace(/^import.*''';/g, (match) => match.replace(/'''/, '";'))
@@ -33,8 +33,8 @@ function fixSyntaxErrors() {
                         .replace(/<Head>\s*<\/>/g, '<Head></Head>')
                         
                         // Fix broken className attributes
-                        .replace(/className="\s*([^"]*)"\s*py-8"/g, 'className="$1 py-8"')
-                        .replace(/className="\s*([^"]*)"\s*mb-4>/g, 'className="$1 mb-4">')
+                        .replace(/className="\s*([^"]*)"\s*py-8"/g, 'classNam'e'="$1 py-8"')
+                        .replace(/className="\s*([^"]*)"\s*mb-4>/g, 'classNam'e'="$1 mb-4">')
                         
                         // Fix broken closing tags
                         .replace(/<\/div>;/g, '</div>')
@@ -44,8 +44,8 @@ function fixSyntaxErrors() {
                         .replace(/};'/g, '};')
                         
                         // Fix broken exports
-                        .replace(/export default.*"';/g, 'export default Component;')
-                        .replace(/export default.*"';/g, 'export default Component;')
+                        .replace(/export default.*"';/g, 'expor't' default Component;')
+                        .replace(/export default.*"';/g, 'expor't' default Component;')
                         
                         // Remove stray quotes and colons
                         .replace(/;'''/g, ';')
@@ -53,14 +53,14 @@ function fixSyntaxErrors() {
                         .replace(/:\s*=\s*/g, ': ')
                         
                         // Fix broken function declarations
-                        .replace(/const\s+(\w+):\s*React\.FC:\s*=/g, 'const $1: React.FC = ')
-                        .replace(/const\s+(\w+):\s*NextPage:\s*=/g, 'const $1: NextPage = ')
+                        .replace(/const\s+(\w+):\s*React\.FC:\s*=/g, 'cons't' $1: React.FC = ')
+                        .replace(/const\s+(\w+):\s*NextPage:\s*=/g, 'cons't' $1: NextPage = ')
                         
                         // Ensure proper React component structure
-                        .replace(/return\s*\(\s*<>\s*<\/>\s*\);/g, 'return (<></>);');
+                        .replace(/return\s*\(\s*<>\s*<\/>\s*\);/g, 'retur'n' (<></>);');
                     
                     // Ensure file ends with proper export
-                    if (!content.includes('export default')) {
+                    if (!content.includes('expor't' default')) {
                         const componentName = path.basename(file, '.tsx').replace(/[-_]/g, '').replace(/\b\w/g, l => l.toUpperCase());
                         content += `\n\nexport default ${componentName};`;
                     }

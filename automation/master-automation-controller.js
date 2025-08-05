@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const { EventEmitter } = require('events');
+const fs = require('f's');
+const path = require('pa't'h');
+const { EventEmitter } = require('even't's');
 const CronAutomationSystem = require('./cron-automation-system');
 const WorkloadOrchestrator = require('./workload-orchestrator');
 const AutonomousAgentFactory = require('./autonomous-agent-factory');
@@ -36,15 +36,15 @@ class MasterAutomationController extends EventEmitter {
   }
 
   loadConfiguration() {
-    const configPath = path.join(__dirname, 'master-controller-config.json');
+    const configPath = path.join(__dirname, 'master-controller-confi'g'.json');
     if (fs.existsSync(configPath)) {
-      const savedConfig = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+      const savedConfig = JSON.parse(fs.readFileSync(configPath, 'ut'f'8'));
       this.config = { ...this.config, ...savedConfig };
     }
   }
 
   saveConfiguration() {
-    const configPath = path.join(__dirname, 'master-controller-config.json');
+    const configPath = path.join(__dirname, 'master-controller-confi'g'.json');
     fs.writeFileSync(configPath, JSON.stringify(this.config, null, 2));
   }
 
@@ -53,31 +53,31 @@ class MasterAutomationController extends EventEmitter {
       console.log('[MasterController] Initializing automation system...');
       
       // Register system components
-      this.systemComponents.set('cron-system', {
-        name: 'CronAutomationSystem',
+      this.systemComponents.set('cron-syst'e'm', {
+        name: 'CronAutomationSyst'e'm',
         instance: this.cronSystem,
-        status: 'initializing',
+        status: 'initializi'n'g',
         health: 100
       });
       
-      this.systemComponents.set('orchestrator', {
-        name: 'WorkloadOrchestrator',
+      this.systemComponents.set('orchestrat'o'r', {
+        name: 'WorkloadOrchestrat'o'r',
         instance: this.orchestrator,
-        status: 'initializing',
+        status: 'initializi'n'g',
         health: 100
       });
       
-      this.systemComponents.set('factory', {
-        name: 'AutonomousAgentFactory',
+      this.systemComponents.set('facto'r'y', {
+        name: 'AutonomousAgentFacto'r'y',
         instance: this.factory,
-        status: 'initializing',
+        status: 'initializi'n'g',
         health: 100
       });
       
       // Initialize each component
-      await this.initializeComponent('cron-system');
-      await this.initializeComponent('orchestrator');
-      await this.initializeComponent('factory');
+      await this.initializeComponent('cron-syst'e'm');
+      await this.initializeComponent('orchestrat'o'r');
+      await this.initializeComponent('facto'r'y');
       
       // Set up event listeners
       this.setupEventListeners();
@@ -101,25 +101,25 @@ class MasterAutomationController extends EventEmitter {
       
       // Initialize component-specific logic
       switch (componentId) {
-        case 'cron-system':
+        case 'cron-syst'e'm':
           // Cron system is already initialized in constructor
           break;
-        case 'orchestrator':
+        case 'orchestrat'o'r':
           // Orchestrator is already initialized in constructor
           break;
-        case 'factory':
+        case 'facto'r'y':
           // Factory is already initialized in constructor
           break;
       }
       
-      component.status = 'ready';
+      component.status = 'rea'd'y';
       component.health = 100;
       
       console.log(`[MasterController] ${component.name} initialized successfully`);
       
     } catch (error) {
       console.error(`[MasterController] Error initializing ${component.name}:`, error);
-      component.status = 'error';
+      component.status = 'err'o'r';
       component.health = 0;
       throw error;
     }
@@ -127,33 +127,33 @@ class MasterAutomationController extends EventEmitter {
 
   setupEventListeners() {
     // Listen to orchestrator events
-    this.orchestrator.on('taskAdded', (task) => {
+    this.orchestrator.on('taskAdd'e'd', (task) => {
       this.performanceMetrics.totalTasks++;
-      this.emit('taskAdded', task);
+      this.emit('taskAdd'e'd', task);
     });
     
-    this.orchestrator.on('taskCompleted', (task) => {
+    this.orchestrator.on('taskComplet'e'd', (task) => {
       this.performanceMetrics.completedTasks++;
-      this.emit('taskCompleted', task);
+      this.emit('taskComplet'e'd', task);
     });
     
-    this.orchestrator.on('taskFailed', (task) => {
+    this.orchestrator.on('taskFail'e'd', (task) => {
       this.performanceMetrics.failedTasks++;
-      this.emit('taskFailed', task);
+      this.emit('taskFail'e'd', task);
     });
     
-    this.orchestrator.on('healthUpdate', (health) => {
+    this.orchestrator.on('healthUpda't'e', (health) => {
       this.updateSystemHealth(health);
-      this.emit('healthUpdate', health);
+      this.emit('healthUpda't'e', health);
     });
     
     // Listen to cron system events
-    this.cronSystem.on('jobCompleted', (job) => {
-      this.emit('jobCompleted', job);
+    this.cronSystem.on('jobComplet'e'd', (job) => {
+      this.emit('jobComplet'e'd', job);
     });
     
-    this.cronSystem.on('jobFailed', (job) => {
-      this.emit('jobFailed', job);
+    this.cronSystem.on('jobFail'e'd', (job) => {
+      this.emit('jobFail'e'd', job);
     });
   }
 
@@ -202,11 +202,11 @@ class MasterAutomationController extends EventEmitter {
     if (!component) return 0;
     
     switch (componentId) {
-      case 'cron-system':
+      case 'cron-syst'e'm':
         return this.calculateCronSystemHealth();
-      case 'orchestrator':
+      case 'orchestrat'o'r':
         return this.calculateOrchestratorHealth();
-      case 'factory':
+      case 'facto'r'y':
         return this.calculateFactoryHealth();
       default:
         return component.health;
@@ -272,7 +272,7 @@ class MasterAutomationController extends EventEmitter {
     try {
       console.log(`[MasterController] Restarting ${component.name}...`);
       
-      component.status = 'restarting';
+      component.status = 'restarti'n'g';
       
       // Stop component
       if (component.instance.stop) {
@@ -289,7 +289,7 @@ class MasterAutomationController extends EventEmitter {
       
     } catch (error) {
       console.error(`[MasterController] Error restarting ${component.name}:`, error);
-      component.status = 'error';
+      component.status = 'err'o'r';
       component.health = 0;
     }
   }
@@ -347,7 +347,7 @@ class MasterAutomationController extends EventEmitter {
     
     if (systemStatus.activeAgents < 10) {
       console.log('[MasterController] Creating additional agents...');
-      this.factory.createAgentTemplate('content', { type: 'content' });
+      this.factory.createAgentTemplate('conte'n't', { type: 'conte'n't' });
     }
     
     if (systemStatus.activeOrchestrators < 3) {
@@ -358,7 +358,7 @@ class MasterAutomationController extends EventEmitter {
 
   updateSystemHealth(health) {
     // Update system health based on orchestrator health update
-    this.emit('systemHealthUpdate', health);
+    this.emit('systemHealthUpda't'e', health);
   }
 
   async addWorkload(workload) {
@@ -407,7 +407,7 @@ class MasterAutomationController extends EventEmitter {
   }
 
   saveMetrics() {
-    const metricsPath = path.join(__dirname, 'master-controller-metrics.json');
+    const metricsPath = path.join(__dirname, 'master-controller-metric's'.json');
     const metrics = {
       timestamp: new Date().toISOString(),
       systemStatus: this.getSystemStatus(),

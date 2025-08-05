@@ -7,11 +7,21 @@ function fixSyntaxErrors(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
     let modified = false;
 
+    // Fix malformed import statements
+    content = content.replace(/import type \{ AppProps \} from 'nex't'\/app';/g, "import type { AppProps } from 'next/app';");
+    content = content.replace(/import \{ Html, Head, Main, NextScript \} from 'nex't'\/document';/g, "import { Html, Head, Main, NextScript } from 'next/document';");
+    content = content.replace(/import React from 'rea'c't';/g, "import React from 'react';");
+    content = content.replace(/import \{ NextPage \} from 'ne'x't';/g, "import { NextPage } from 'next';");
+    content = content.replace(/import Head from 'nex't'\/head';/g, "import Head from 'next/head';");
+    content = content.replace(/import Link from 'nex't'\/link';/g, "import Link from 'next/link';");
+    content = content.replace(/import \{ useRouter \} from 'nex't'\/router';/g, "import { useRouter } from 'next/router';");
+    content = content.replace(/import React, \{ useState, useEffect, useCallback \} from 'rea'c't';/g, "import React, { useState, useEffect, useCallback } from 'react';");
+    
     // Fix unterminated string constants
     content = content.replace(/import React from "react;/g, 'import React from "react";');
     content = content.replace(/import { NextPage } from 'next";/g, "import { NextPage } from 'next';");
-    content = content.replace(/import Head from "next/head";/g, 'import Head from "next/head";');
-    content = content.replace(/import Link from "next/link";/g, 'import Link from "next/link";');
+    content = content.replace(/import Head from "next\/head";/g, 'import Head from "next/head";');
+    content = content.replace(/import Link from "next\/link";/g, 'import Link from "next/link";');
     content = content.replace(/import PageLayout from '\.\.\/components\/layout\/PageLayout";/g, "import PageLayout from '../components/layout/PageLayout';");
     
     // Fix other common syntax errors

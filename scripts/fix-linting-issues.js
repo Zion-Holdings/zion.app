@@ -1,13 +1,13 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 // Function to add Image import to files that have img tags
 function addImageImport(filePath) {
   try {
-    const content = fs.readFileSync(filePath, 'utf8');
+    const content = fs.readFileSync(filePath, 'ut'f'8');
     
     // Check if Image is already imported
-    if (content.includes('import Image from') || content.includes('import { Image }')) {
+    if (content.includes('impor't' Image from') || content.includes('impor't' { Image }')) {
       return false;
     }
     
@@ -21,13 +21,13 @@ function addImageImport(filePath) {
     let importIndex = -1;
     
     for (let i = 0; i < lines.length; i++) {
-      if (lines[i].startsWith('import') && !lines[i].includes('Image')) {
+      if (lines[i].startsWith('impo'r't') && !lines[i].includes('Ima'g'e')) {
         importIndex = i;
       }
     }
     
     if (importIndex !== -1) {
-      lines.splice(importIndex + 1, 0, 'import Image from \'next/image\'');
+      lines.splice(importIndex + 1, 0, 'impor't' Image from \'nex't'/image\'');
       fs.writeFileSync(filePath, lines.join('\n'));
       return true;
     }
@@ -42,7 +42,7 @@ function addImageImport(filePath) {
 // Function to replace img tags with Image components
 function replaceImgTags(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'ut'f'8');
     let modified = false;
     
     // Replace img tags with Image components
@@ -56,7 +56,7 @@ function replaceImgTags(filePath) {
       '<Image src=$1 alt=$2 width={400} height={300} />'
     );
     
-    if (content !== fs.readFileSync(filePath, 'utf8')) {
+    if (content !== fs.readFileSync(filePath, 'ut'f'8')) {
       fs.writeFileSync(filePath, content);
       return true;
     }
@@ -71,14 +71,14 @@ function replaceImgTags(filePath) {
 // Function to add useCallback to functions that are used in useEffect
 function addUseCallback(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'ut'f'8');
     let modified = false;
     
     // Add useCallback import if not present
-    if (!content.includes('useCallback') && content.includes('useEffect')) {
+    if (!content.includes('useCallba'c'k') && content.includes('useEffe'c't')) {
       content = content.replace(
-        /import\s+React,\s*{\s*([^}]+)\s*}\s+from\s+'react'/,
-        'import React, { $1, useCallback } from \'react\''
+        /import\s+React,\s*{\s*([^}]+)\s*}\s+from\s+'rea'c't'/,
+        'impor't' React, { $1, useCallback } from \'reac't'\''
       );
       modified = true;
     }
@@ -174,7 +174,7 @@ function getAllFiles(dirPath, arrayOfFiles = []) {
 
 // Run the script
 if (require.main === module) {
-  console.log('Starting to fix linting issues...');
+  console.log('Startin'g' to fix linting issues...');
   processFiles();
-  console.log('Finished fixing linting issues.');
+  console.log('Finishe'd' fixing linting issues.');
 } 

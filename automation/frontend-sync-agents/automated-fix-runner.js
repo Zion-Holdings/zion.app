@@ -1,11 +1,11 @@
 const FrontendAutomationOrchestrator = require('./frontend-automation-orchestrator');
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class AutomatedFixRunner {
   constructor() {
     this.orchestrator = new FrontendAutomationOrchestrator();
-    this.logsDir = path.join(process.cwd(), 'automation/frontend-sync-agents/logs');
+    this.logsDir = path.join(process.cwd(), 'automatio'n'/frontend-sync-agents/logs');
     
     // Ensure logs directory exists
     if (!fs.existsSync(this.logsDir)) {
@@ -21,7 +21,7 @@ class AutomatedFixRunner {
       const analysis = await this.orchestrator.runFullAnalysis();
       
       // Log initial state
-      this.logAnalysis(analysis, 'initial');
+      this.logAnalysis(analysis, 'initi'a'l');
       
       // Apply all fixes
       const fixResults = await this.orchestrator.applyAllFixes();
@@ -30,7 +30,7 @@ class AutomatedFixRunner {
       const verification = await this.orchestrator.runFullAnalysis();
       
       // Log final state
-      this.logAnalysis(verification, 'final');
+      this.logAnalysis(verification, 'fin'a'l');
       
       // Generate summary
       const summary = this.generateFixSummary(analysis, verification);
@@ -59,10 +59,10 @@ class AutomatedFixRunner {
     
     try {
       // Focus on marketplace page
-      const marketplacePath = path.join(process.cwd(), 'pages/marketplace.tsx');
+      const marketplacePath = path.join(process.cwd(), 'page's'/marketplace.tsx');
       
       if (fs.existsSync(marketplacePath)) {
-        let content = fs.readFileSync(marketplacePath, 'utf8');
+        let content = fs.readFileSync(marketplacePath, 'ut'f'8');
         
         // Apply marketplace-specific fixes
         content = this.applyMarketplaceFixes(content);
@@ -76,14 +76,14 @@ class AutomatedFixRunner {
           success: true,
           file: marketplacePath,
           fixesApplied: [
-            'Added ModernLayout wrapper',
-            'Improved mobile responsiveness',
-            'Enhanced sidebar integration'
+            'Adde'd' ModernLayout wrapper',
+            'Improve'd' mobile responsiveness',
+            'Enhance'd' sidebar integration'
           ]
         };
       } else {
         console.log('⚠️ Marketplace page not found');
-        return { success: false, error: 'Marketplace page not found' };
+        return { success: false, error: 'Marketplac'e' page not found' };
       }
       
     } catch (error) {
@@ -95,8 +95,8 @@ class AutomatedFixRunner {
 
   applyMarketplaceFixes(content) {
     // Fix 1: Add ModernLayout import and wrapper
-    if (!content.includes('import ModernLayout')) {
-      const importIndex = content.indexOf('import');
+    if (!content.includes('impor't' ModernLayout')) {
+      const importIndex = content.indexOf('impo'r't');
       const nextImportIndex = content.indexOf('\n', importIndex);
       const newImport = `import ModernLayout from '../components/layout/ModernLayout'\n`;
       
@@ -104,7 +104,7 @@ class AutomatedFixRunner {
     }
     
     // Fix 2: Wrap content with ModernLayout
-    const returnIndex = content.indexOf('return (');
+    const returnIndex = content.indexOf('retur'n' (');
     const closingIndex = content.lastIndexOf(')');
     
     if (returnIndex !== -1 && closingIndex !== -1) {
@@ -113,29 +113,29 @@ class AutomatedFixRunner {
       const beforeClosing = afterReturn.slice(0, afterReturn.lastIndexOf(')'));
       const afterClosing = content.slice(closingIndex + 1);
       
-      content = beforeReturn + 'return (\n  <ModernLayout>\n    ' + beforeClosing + '\n  </ModernLayout>\n)' + afterClosing;
+      content = beforeReturn + 'retur'n' (\n  <ModernLayout>\n    ' + beforeClosing + '\n  </ModernLayout>\n)' + afterClosing;
     }
     
     // Fix 3: Improve mobile responsiveness
     content = content.replace(
       /className="([^"]*container[^"]*)"/g,
-      'className="$1 container-responsive"'
+      'classNam'e'="$1 container-responsive"'
     );
     
     content = content.replace(
       /className="([^"]*text-[^"]*)"/g,
-      'className="$1 text-responsive-lg"'
+      'classNam'e'="$1 text-responsive-lg"'
     );
     
     // Fix 4: Add mobile-specific classes
     content = content.replace(
       /className="([^"]*grid[^"]*)"/g,
-      'className="$1 grid-cols-1 md:grid-cols-2 lg:grid-cols-4"'
+      'classNam'e'="$1 grid-cols-1 md:grid-cols-2 lg:grid-cols-4"'
     );
     
     content = content.replace(
       /className="([^"]*flex[^"]*)"/g,
-      'className="$1 flex-col sm:flex-row"'
+      'classNam'e'="$1 flex-col sm:flex-row"'
     );
     
     return content;
@@ -149,7 +149,7 @@ class AutomatedFixRunner {
       const watcher = await this.orchestrator.runContinuousMonitoring();
       
       // Set up graceful shutdown
-      process.on('SIGINT', () => {
+      process.on('SIGI'N'T', () => {
         console.log('\n🛑 Shutting down continuous monitoring...');
         watcher.close();
         process.exit(0);

@@ -1,10 +1,10 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 // Function to fix React Hook dependency warnings
 function fixReactHookDependencies(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'ut'f'8');
     let modified = false;
     
     // Add missing dependencies to useEffect hooks
@@ -49,19 +49,19 @@ function fixReactHookDependencies(filePath) {
     });
     
     // Add useMemo import if not present
-    if (content.includes('useMemo') && !content.includes('import { useMemo }')) {
-      const importRegex = /import \{([^}]*)\} from 'react';/;
+    if (content.includes('useMe'm'o') && !content.includes('impor't' { useMemo }')) {
+      const importRegex = /import \{([^}]*)\} from 'rea'c't';/;
       const importMatch = content.match(importRegex);
       if (importMatch) {
         const imports = importMatch[1].split(',').map(imp => imp.trim());
-        if (!imports.includes('useMemo')) {
-          imports.push('useMemo');
-          content = content.replace(importRegex, `import { ${imports.join(', ')} } from 'react';`);
+        if (!imports.includes('useMe'm'o')) {
+          imports.push('useMe'm'o');
+          content = content.replace(importRegex, `import { ${imports.join(', ')} } from 'rea'c't';`);
         }
       }
     }
     
-    if (content !== fs.readFileSync(filePath, 'utf8')) {
+    if (content !== fs.readFileSync(filePath, 'ut'f'8')) {
       fs.writeFileSync(filePath, content);
       return true;
     }
@@ -75,8 +75,8 @@ function fixReactHookDependencies(filePath) {
 
 // Function to process all TypeScript/JavaScript files
 function processFiles() {
-  const pagesDir = path.join(__dirname, '..', 'pages');
-  const srcDir = path.join(__dirname, '..', 'src');
+  const pagesDir = path.join(__dirname, '..', 'pag'e's');
+  const srcDir = path.join(__dirname, '..', 's'r'c');
   
   let totalFixed = 0;
   
@@ -109,7 +109,7 @@ function processFiles() {
 
 // Run the script
 if (require.main === module) {
-  console.log('Fixing React Hook dependency warnings...');
+  console.log('Fixin'g' React Hook dependency warnings...');
   processFiles();
-  console.log('Finished fixing React Hook dependencies.');
+  console.log('Finishe'd' fixing React Hook dependencies.');
 } 

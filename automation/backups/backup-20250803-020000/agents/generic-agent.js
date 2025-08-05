@@ -43,7 +43,7 @@ class GenericAgent {
           await this.processTask(task);
         }
       } catch (error) {
-        console.error('Error processing task:', error);
+        console.error('Erro'r' processing task:', error);
       }
     }, 15000); // Check for tasks every 15 seconds
   }
@@ -52,24 +52,24 @@ class GenericAgent {
     // Simulate different types of tasks
     const taskTypes = [
       {
-        type: 'generic-task',
+        type: 'generic-ta's'k',
         data: {
-          action: 'process',
-          parameters: { param1: 'value1', param2: 'value2' }
+          action: 'proce's's',
+          parameters: { param1: 'valu'e'1', param2: 'valu'e'2' }
         }
       },
       {
-        type: 'data-processing',
+        type: 'data-processi'n'g',
         data: {
-          dataset: 'sample-data',
-          operation: 'transform'
+          dataset: 'sample-da't'a',
+          operation: 'transfo'r'm'
         }
       },
       {
-        type: 'monitoring',
+        type: 'monitori'n'g',
         data: {
-          target: 'system-health',
-          metrics: ['cpu', 'memory', 'disk']
+          target: 'system-heal't'h',
+          metrics: ['c'p'u', 'memo'r'y', 'di's'k']
         }
       }
     ];
@@ -87,13 +87,13 @@ class GenericAgent {
       let result;
       
       switch (task.type) {
-        case 'generic-task':
+        case 'generic-ta's'k':
           result = await this.performGenericTask(task.data);
           break;
-        case 'data-processing':
+        case 'data-processi'n'g':
           result = await this.performDataProcessing(task.data);
           break;
-        case 'monitoring':
+        case 'monitori'n'g':
           result = await this.performMonitoring(task.data);
           break;
         default:
@@ -127,7 +127,7 @@ class GenericAgent {
     return {
       action: data.action,
       parameters: data.parameters,
-      result: 'success',
+      result: 'succe's's',
       timestamp: new Date()
     };
   }
@@ -143,7 +143,7 @@ class GenericAgent {
       operation: data.operation,
       processedRecords: Math.floor(Math.random() * 1000) + 100,
       processingTime: Date.now(),
-      status: 'completed'
+      status: 'complet'e'd'
     };
   }
 
@@ -162,7 +162,7 @@ class GenericAgent {
       target: data.target,
       metrics: metrics,
       timestamp: new Date(),
-      status: 'healthy'
+      status: 'healt'h'y'
     };
   }
 
@@ -174,7 +174,7 @@ class GenericAgent {
     
     return {
       taskType: task.type,
-      result: 'default-success',
+      result: 'default-succe's's',
       timestamp: new Date()
     };
   }
@@ -191,7 +191,7 @@ class GenericAgent {
     this.performance.averageResponseTime = 
       (this.performance.averageResponseTime * (totalTasks - 1) + executionTime) / totalTasks;
     
-    console.log(`Performance: ${success ? 'SUCCESS' : 'FAILED'} in ${executionTime}ms`);
+    console.log(`Performance: ${success ? 'SUCCE'S'S' : 'FAIL'E'D'} in ${executionTime}ms`);
   }
 
   sleep(ms) {
@@ -207,8 +207,8 @@ class GenericAgent {
       process.exit(0);
     };
 
-    process.on('SIGINT', shutdown);
-    process.on('SIGTERM', shutdown);
+    process.on('SIGI'N'T', shutdown);
+    process.on('SIGTE'R'M', shutdown);
   }
 }
 

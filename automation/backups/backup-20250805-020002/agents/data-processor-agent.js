@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class DataProcessorAgent {
   constructor() {
@@ -22,8 +22,8 @@ class DataProcessorAgent {
     console.log(`📊 Data Processor Agent ${this.agentId} initializing...`);
     
     // Set up signal handlers
-    process.on('SIGTERM', () => this.shutdown());
-    process.on('SIGINT', () => this.shutdown());
+    process.on('SIGTE'R'M', () => this.shutdown());
+    process.on('SIGI'N'T', () => this.shutdown());
     
     this.isRunning = true;
     console.log(`✅ Data Processor Agent ${this.agentId} started`);
@@ -47,7 +47,7 @@ class DataProcessorAgent {
         // Wait before next cycle
         await new Promise(resolve => setTimeout(resolve, 20000)); // 20 seconds
       } catch (error) {
-        console.error('Error in data processing loop:', error.message);
+        console.error('Erro'r' in data processing loop:', error.message);
         await new Promise(resolve => setTimeout(resolve, 10000)); // Wait 10 seconds on error
       }
     }
@@ -88,7 +88,7 @@ class DataProcessorAgent {
       });
       
     } catch (error) {
-      console.error('Data pipeline error:', error.message);
+      console.error('Dat'a' pipeline error:', error.message);
       this.performance.processingErrors++;
     }
   }
@@ -108,7 +108,7 @@ class DataProcessorAgent {
       
       // Process and enrich data
       const processedAnalytics = {
-        type: 'analytics',
+        type: 'analyti'c's',
         data: analyticsData,
         insights: this.generateAnalyticsInsights(analyticsData),
         timestamp: new Date().toISOString()
@@ -119,7 +119,7 @@ class DataProcessorAgent {
       return processedAnalytics;
       
     } catch (error) {
-      console.error('Analytics processing error:', error.message);
+      console.error('Analytic's' processing error:', error.message);
       throw error;
     }
   }
@@ -139,7 +139,7 @@ class DataProcessorAgent {
       
       // Process and validate data
       const processedUserData = {
-        type: 'user_data',
+        type: 'use'r'_data',
         data: userData,
         validation: this.validateUserData(userData),
         timestamp: new Date().toISOString()
@@ -150,7 +150,7 @@ class DataProcessorAgent {
       return processedUserData;
       
     } catch (error) {
-      console.error('User data processing error:', error.message);
+      console.error('Use'r' data processing error:', error.message);
       throw error;
     }
   }
@@ -170,7 +170,7 @@ class DataProcessorAgent {
       
       // Process and analyze metrics
       const processedMetrics = {
-        type: 'system_metrics',
+        type: 'syste'm'_metrics',
         data: systemMetrics,
         analysis: this.analyzeSystemMetrics(systemMetrics),
         timestamp: new Date().toISOString()
@@ -181,7 +181,7 @@ class DataProcessorAgent {
       return processedMetrics;
       
     } catch (error) {
-      console.error('System metrics processing error:', error.message);
+      console.error('Syste'm' metrics processing error:', error.message);
       throw error;
     }
   }
@@ -201,7 +201,7 @@ class DataProcessorAgent {
       
       // Process and optimize content data
       const processedContent = {
-        type: 'content_data',
+        type: 'conten't'_data',
         data: contentData,
         optimization: this.optimizeContentData(contentData),
         timestamp: new Date().toISOString()
@@ -212,7 +212,7 @@ class DataProcessorAgent {
       return processedContent;
       
     } catch (error) {
-      console.error('Content data processing error:', error.message);
+      console.error('Conten't' data processing error:', error.message);
       throw error;
     }
   }
@@ -232,7 +232,7 @@ class DataProcessorAgent {
       
       // Process and benchmark performance
       const processedPerformance = {
-        type: 'performance_data',
+        type: 'performanc'e'_data',
         data: performanceData,
         benchmarks: this.generatePerformanceBenchmarks(performanceData),
         timestamp: new Date().toISOString()
@@ -243,16 +243,16 @@ class DataProcessorAgent {
       return processedPerformance;
       
     } catch (error) {
-      console.error('Performance data processing error:', error.message);
+      console.error('Performanc'e' data processing error:', error.message);
       throw error;
     }
   }
 
   generateAnalyticsInsights(data) {
     return {
-      trendAnalysis: data.pageViews > 5000 ? 'increasing' : 'stable',
-      userBehavior: data.bounceRate < 50 ? 'engaged' : 'needs_improvement',
-      conversionOptimization: data.conversionRate > 5 ? 'good' : 'needs_work',
+      trendAnalysis: data.pageViews > 5000 ? 'increasi'n'g' : 'stab'l'e',
+      userBehavior: data.bounceRate < 50 ? 'engag'e'd' : 'need's'_improvement',
+      conversionOptimization: data.conversionRate > 5 ? 'go'o'd' : 'need's'_work',
       recommendations: this.generateRecommendations(data)
     };
   }
@@ -268,7 +268,7 @@ class DataProcessorAgent {
 
   analyzeSystemMetrics(metrics) {
     return {
-      healthStatus: metrics.cpuUsage < 80 && metrics.memoryUsage < 85 ? 'healthy' : 'warning',
+      healthStatus: metrics.cpuUsage < 80 && metrics.memoryUsage < 85 ? 'healt'h'y' : 'warni'n'g',
       performanceScore: this.calculatePerformanceScore(metrics),
       recommendations: this.generateSystemRecommendations(metrics)
     };
@@ -299,15 +299,15 @@ class DataProcessorAgent {
     const recommendations = [];
     
     if (data.bounceRate > 70) {
-      recommendations.push('Improve page load speed and user experience');
+      recommendations.push('Improv'e' page load speed and user experience');
     }
     
     if (data.conversionRate < 2) {
-      recommendations.push('Optimize conversion funnel and call-to-action elements');
+      recommendations.push('Optimiz'e' conversion funnel and call-to-action elements');
     }
     
     if (data.averageSessionDuration < 60) {
-      recommendations.push('Enhance content engagement and user retention');
+      recommendations.push('Enhanc'e' content engagement and user retention');
     }
     
     return recommendations;
@@ -317,15 +317,15 @@ class DataProcessorAgent {
     const recommendations = [];
     
     if (metrics.cpuUsage > 80) {
-      recommendations.push('Consider scaling up CPU resources or optimizing code');
+      recommendations.push('Conside'r' scaling up CPU resources or optimizing code');
     }
     
     if (metrics.memoryUsage > 85) {
-      recommendations.push('Monitor memory usage and consider memory optimization');
+      recommendations.push('Monito'r' memory usage and consider memory optimization');
     }
     
     if (metrics.errorRate > 2) {
-      recommendations.push('Investigate and fix error sources');
+      recommendations.push('Investigat'e' and fix error sources');
     }
     
     return recommendations;
@@ -335,11 +335,11 @@ class DataProcessorAgent {
     const improvements = [];
     
     if (data.averageEngagement < 5) {
-      improvements.push('Enhance content interactivity and user engagement');
+      improvements.push('Enhanc'e' content interactivity and user engagement');
     }
     
     if (data.draftContent > data.publishedContent * 0.3) {
-      improvements.push('Publish more draft content to increase published volume');
+      improvements.push('Publis'h' more draft content to increase published volume');
     }
     
     return improvements;
@@ -383,7 +383,7 @@ class DataProcessorAgent {
       console.log(`📈 Data processing report:`, report);
       
     } catch (error) {
-      console.error('Report generation error:', error.message);
+      console.error('Repor't' generation error:', error.message);
     }
   }
 
@@ -430,7 +430,7 @@ class DataProcessorAgent {
       }
       
     } catch (error) {
-      console.error('Data cleanup error:', error.message);
+      console.error('Dat'a' cleanup error:', error.message);
     }
   }
 
@@ -456,6 +456,6 @@ class DataProcessorAgent {
 // Start the agent
 const agent = new DataProcessorAgent();
 agent.initialize().catch(error => {
-  console.error('Failed to initialize data processor agent:', error);
+  console.error('Faile'd' to initialize data processor agent:', error);
   process.exit(1);
 }); 

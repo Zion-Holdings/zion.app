@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class FeatureAnalysisAgent {
   constructor() {
@@ -14,19 +14,19 @@ class FeatureAnalysisAgent {
     console.log('🔍 Analyzing project structure...');
     
     // Analyze pages directory
-    const pagesDir = path.join(process.cwd(), 'pages');
+    const pagesDir = path.join(process.cwd(), 'pag'e's');
     this.projectStructure.pages = this.scanDirectory(pagesDir);
     
     // Analyze components
-    const componentsDir = path.join(process.cwd(), 'components');
+    const componentsDir = path.join(process.cwd(), 'componen't's');
     this.projectStructure.components = this.scanDirectory(componentsDir);
     
     // Analyze src directory
-    const srcDir = path.join(process.cwd(), 'src');
+    const srcDir = path.join(process.cwd(), 's'r'c');
     this.projectStructure.src = this.scanDirectory(srcDir);
     
     // Analyze API routes
-    const apiDir = path.join(process.cwd(), 'pages/api');
+    const apiDir = path.join(process.cwd(), 'page's'/api');
     this.projectStructure.api = this.scanDirectory(apiDir);
     
     console.log('✅ Project structure analysis complete');
@@ -50,7 +50,7 @@ class FeatureAnalysisAgent {
         structure[item] = this.scanDirectory(fullPath);
       } else {
         structure[item] = {
-          type: 'file',
+          type: 'fi'l'e',
           size: stat.size,
           modified: stat.mtime
         };
@@ -64,64 +64,64 @@ class FeatureAnalysisAgent {
     console.log('🔍 Analyzing ChatGPT specification...');
     
     // This would normally fetch and analyze the ChatGPT link
-    // For now, we'll create a mock analysis based on common marketplace features
+    // For now, we'l'l' create a mock analysis based on common marketplace features
     
     const chatGPTSpec = {
       features: [
-        'user-authentication',
-        'service-marketplace',
-        'talent-directory',
-        'equipment-rental',
-        'quote-requests',
-        'real-time-chat',
-        'payment-processing',
-        'review-system',
-        'search-and-filter',
-        'user-profiles',
-        'service-categories',
-        'blog-content',
-        'admin-dashboard',
-        'analytics',
-        'notifications',
-        'mobile-responsive',
-        'multi-language',
-        'seo-optimization'
+        'user-authenticati'o'n',
+        'service-marketpla'c'e',
+        'talent-directo'r'y',
+        'equipment-rent'a'l',
+        'quote-reques't's',
+        'real-time-ch'a't',
+        'payment-processi'n'g',
+        'review-syst'e'm',
+        'search-and-filt'e'r',
+        'user-profil'e's',
+        'service-categori'e's',
+        'blog-conte'n't',
+        'admin-dashboa'r'd',
+        'analyti'c's',
+        'notificatio'n's',
+        'mobile-responsi'v'e',
+        'multi-langua'g'e',
+        'seo-optimizati'o'n'
       ],
       pages: [
-        'home',
-        'marketplace',
-        'services',
-        'talents',
-        'equipment',
-        'about',
-        'contact',
-        'login',
-        'signup',
-        'profile',
-        'dashboard',
-        'quote-request',
-        'blog',
-        'search-results',
-        'service-details',
-        'talent-profile',
-        'equipment-details',
-        'admin',
-        'analytics'
+        'ho'm'e',
+        'marketpla'c'e',
+        'servic'e's',
+        'talen't's',
+        'equipme'n't',
+        'abo'u't',
+        'conta'c't',
+        'log'i'n',
+        'sign'u'p',
+        'profi'l'e',
+        'dashboa'r'd',
+        'quote-reque's't',
+        'bl'o'g',
+        'search-resul't's',
+        'service-detai'l's',
+        'talent-profi'l'e',
+        'equipment-detai'l's',
+        'adm'i'n',
+        'analyti'c's'
       ],
       content: [
-        'hero-section',
-        'feature-highlights',
-        'testimonials',
-        'service-descriptions',
-        'talent-profiles',
-        'equipment-catalog',
-        'blog-posts',
-        'faq',
-        'pricing',
-        'contact-info',
-        'about-content',
-        'terms-of-service',
-        'privacy-policy'
+        'hero-secti'o'n',
+        'feature-highligh't's',
+        'testimonia'l's',
+        'service-descriptio'n's',
+        'talent-profil'e's',
+        'equipment-catal'o'g',
+        'blog-pos't's',
+        'f'a'q',
+        'prici'n'g',
+        'contact-in'f'o',
+        'about-conte'n't',
+        'terms-of-servi'c'e',
+        'privacy-poli'c'y'
       ]
     };
     
@@ -166,17 +166,17 @@ class FeatureAnalysisAgent {
     
     // Extract features from existing files
     if (projectStructure.pages) {
-      if (projectStructure.pages.auth) features.push('user-authentication');
-      if (projectStructure.pages.marketplace) features.push('service-marketplace');
-      if (projectStructure.pages.talents) features.push('talent-directory');
-      if (projectStructure.pages.equipment) features.push('equipment-rental');
-      if (projectStructure.pages['quote-request']) features.push('quote-requests');
-      if (projectStructure.pages.blog) features.push('blog-content');
-      if (projectStructure.pages.about) features.push('about-page');
+      if (projectStructure.pages.auth) features.push('user-authenticati'o'n');
+      if (projectStructure.pages.marketplace) features.push('service-marketpla'c'e');
+      if (projectStructure.pages.talents) features.push('talent-directo'r'y');
+      if (projectStructure.pages.equipment) features.push('equipment-rent'a'l');
+      if (projectStructure.pages['quote-reque's't']) features.push('quote-reques't's');
+      if (projectStructure.pages.blog) features.push('blog-conte'n't');
+      if (projectStructure.pages.about) features.push('about-pa'g'e');
     }
     
     if (projectStructure.api) {
-      if (projectStructure.api['quote-request']) features.push('api-endpoints');
+      if (projectStructure.api['quote-reque's't']) features.push('api-endpoin't's');
     }
     
     return features;
@@ -206,7 +206,7 @@ class FeatureAnalysisAgent {
     for (const key in obj) {
       const newPrefix = prefix ? `${prefix}.${key}` : key;
       
-      if (typeof obj[key] === 'object' && obj[key] !== null) {
+      if (typeof obj[key] === 'obje'c't' && obj[key] !== null) {
         result.push(...this.flattenObject(obj[key], newPrefix));
       } else {
         result.push(newPrefix);
@@ -222,7 +222,7 @@ class FeatureAnalysisAgent {
     const comparison = await this.compareFeatures();
     
     const plan = {
-      priority: 'high',
+      priority: 'hi'g'h',
       estimatedTime: '2-3 weeks',
       tasks: []
     };
@@ -230,7 +230,7 @@ class FeatureAnalysisAgent {
     // Add missing features
     comparison.missingFeatures.forEach(feature => {
       plan.tasks.push({
-        type: 'feature',
+        type: 'featu'r'e',
         name: feature,
         priority: this.getFeaturePriority(feature),
         description: this.getFeatureDescription(feature)
@@ -240,7 +240,7 @@ class FeatureAnalysisAgent {
     // Add missing pages
     comparison.missingPages.forEach(page => {
       plan.tasks.push({
-        type: 'page',
+        type: 'pa'g'e',
         name: page,
         priority: this.getPagePriority(page),
         description: this.getPageDescription(page)
@@ -250,7 +250,7 @@ class FeatureAnalysisAgent {
     // Add missing content
     comparison.missingContent.forEach(content => {
       plan.tasks.push({
-        type: 'content',
+        type: 'conte'n't',
         name: content,
         priority: this.getContentPriority(content),
         description: this.getContentDescription(content)
@@ -266,18 +266,18 @@ class FeatureAnalysisAgent {
 
   getFeaturePriority(feature) {
     const priorities = {
-      'user-authentication': 10,
-      'service-marketplace': 10,
-      'payment-processing': 9,
-      'real-time-chat': 8,
-      'review-system': 8,
-      'search-and-filter': 7,
-      'admin-dashboard': 6,
-      'analytics': 6,
-      'notifications': 5,
-      'mobile-responsive': 9,
-      'seo-optimization': 7,
-      'multi-language': 4
+      'user-authenticati'o'n': 10,
+      'service-marketpla'c'e': 10,
+      'payment-processi'n'g': 9,
+      'real-time-ch'a't': 8,
+      'review-syst'e'm': 8,
+      'search-and-filt'e'r': 7,
+      'admin-dashboa'r'd': 6,
+      'analyti'c's': 6,
+      'notificatio'n's': 5,
+      'mobile-responsi'v'e': 9,
+      'seo-optimizati'o'n': 7,
+      'multi-langua'g'e': 4
     };
     
     return priorities[feature] || 5;
@@ -285,16 +285,16 @@ class FeatureAnalysisAgent {
 
   getPagePriority(page) {
     const priorities = {
-      'home': 10,
-      'marketplace': 10,
-      'login': 10,
-      'signup': 10,
-      'profile': 8,
-      'dashboard': 7,
-      'contact': 6,
-      'about': 5,
-      'admin': 6,
-      'analytics': 6
+      'ho'm'e': 10,
+      'marketpla'c'e': 10,
+      'log'i'n': 10,
+      'sign'u'p': 10,
+      'profi'l'e': 8,
+      'dashboa'r'd': 7,
+      'conta'c't': 6,
+      'abo'u't': 5,
+      'adm'i'n': 6,
+      'analyti'c's': 6
     };
     
     return priorities[page] || 5;
@@ -302,13 +302,13 @@ class FeatureAnalysisAgent {
 
   getContentPriority(content) {
     const priorities = {
-      'hero-section': 10,
-      'service-descriptions': 9,
-      'testimonials': 7,
-      'blog-posts': 6,
-      'faq': 5,
-      'pricing': 7,
-      'contact-info': 6
+      'hero-secti'o'n': 10,
+      'service-descriptio'n's': 9,
+      'testimonia'l's': 7,
+      'blog-pos't's': 6,
+      'f'a'q': 5,
+      'prici'n'g': 7,
+      'contact-in'f'o': 6
     };
     
     return priorities[content] || 5;
@@ -316,18 +316,18 @@ class FeatureAnalysisAgent {
 
   getFeatureDescription(feature) {
     const descriptions = {
-      'user-authentication': 'Implement secure user authentication with Supabase',
-      'service-marketplace': 'Create a comprehensive service marketplace',
-      'payment-processing': 'Integrate payment processing for transactions',
-      'real-time-chat': 'Add real-time chat functionality for users',
-      'review-system': 'Implement review and rating system',
-      'search-and-filter': 'Add advanced search and filtering capabilities',
-      'admin-dashboard': 'Create admin dashboard for management',
-      'analytics': 'Add analytics and reporting features',
-      'notifications': 'Implement notification system',
-      'mobile-responsive': 'Ensure mobile responsiveness',
-      'seo-optimization': 'Optimize for search engines',
-      'multi-language': 'Add multi-language support'
+      'user-authenticati'o'n': 'Implemen't' secure user authentication with Supabase',
+      'service-marketpla'c'e': 'Creat'e' a comprehensive service marketplace',
+      'payment-processi'n'g': 'Integrat'e' payment processing for transactions',
+      'real-time-ch'a't': 'Ad'd' real-time chat functionality for users',
+      'review-syst'e'm': 'Implemen't' review and rating system',
+      'search-and-filt'e'r': 'Ad'd' advanced search and filtering capabilities',
+      'admin-dashboa'r'd': 'Creat'e' admin dashboard for management',
+      'analyti'c's': 'Ad'd' analytics and reporting features',
+      'notificatio'n's': 'Implemen't' notification system',
+      'mobile-responsi'v'e': 'Ensur'e' mobile responsiveness',
+      'seo-optimizati'o'n': 'Optimiz'e' for search engines',
+      'multi-langua'g'e': 'Ad'd' multi-language support'
     };
     
     return descriptions[feature] || `Implement ${feature} functionality`;
@@ -335,16 +335,16 @@ class FeatureAnalysisAgent {
 
   getPageDescription(page) {
     const descriptions = {
-      'home': 'Create an engaging homepage with hero section',
-      'marketplace': 'Build comprehensive marketplace page',
-      'login': 'Implement user login page',
-      'signup': 'Create user registration page',
-      'profile': 'Build user profile management page',
-      'dashboard': 'Create user dashboard',
-      'contact': 'Add contact page with form',
-      'about': 'Create about page with company information',
-      'admin': 'Build admin panel',
-      'analytics': 'Create analytics dashboard'
+      'ho'm'e': 'Creat'e' an engaging homepage with hero section',
+      'marketpla'c'e': 'Buil'd' comprehensive marketplace page',
+      'log'i'n': 'Implemen't' user login page',
+      'sign'u'p': 'Creat'e' user registration page',
+      'profi'l'e': 'Buil'd' user profile management page',
+      'dashboa'r'd': 'Creat'e' user dashboard',
+      'conta'c't': 'Ad'd' contact page with form',
+      'abo'u't': 'Creat'e' about page with company information',
+      'adm'i'n': 'Buil'd' admin panel',
+      'analyti'c's': 'Creat'e' analytics dashboard'
     };
     
     return descriptions[page] || `Create ${page} page`;
@@ -352,13 +352,13 @@ class FeatureAnalysisAgent {
 
   getContentDescription(content) {
     const descriptions = {
-      'hero-section': 'Create compelling hero section for homepage',
-      'service-descriptions': 'Generate detailed service descriptions',
-      'testimonials': 'Add customer testimonials section',
-      'blog-posts': 'Create blog content system',
-      'faq': 'Add frequently asked questions',
-      'pricing': 'Create pricing tables and plans',
-      'contact-info': 'Add contact information and form'
+      'hero-secti'o'n': 'Creat'e' compelling hero section for homepage',
+      'service-descriptio'n's': 'Generat'e' detailed service descriptions',
+      'testimonia'l's': 'Ad'd' customer testimonials section',
+      'blog-pos't's': 'Creat'e' blog content system',
+      'f'a'q': 'Ad'd' frequently asked questions',
+      'prici'n'g': 'Creat'e' pricing tables and plans',
+      'contact-in'f'o': 'Ad'd' contact information and form'
     };
     
     return descriptions[content] || `Create ${content} content`;
@@ -374,7 +374,7 @@ class FeatureAnalysisAgent {
       improvementPlan: await this.generateImprovementPlan()
     };
     
-    const analysisPath = path.join(process.cwd(), 'automation', 'feature-analysis.json');
+    const analysisPath = path.join(process.cwd(), 'automati'o'n', 'feature-analysi's'.json');
     fs.writeFileSync(analysisPath, JSON.stringify(analysis, null, 2));
     
     console.log('💾 Analysis saved to automation/feature-analysis.json');

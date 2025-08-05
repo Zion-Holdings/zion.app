@@ -1,19 +1,19 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 function fixSpecificFiles() {
     const filesToFix = [
-        'components/ResponsiveNavigation.tsx',
-        'components/admin/RealTimeMonitor.tsx',
-        'components/admin/SystemHealthMonitor.tsx',
-        'components/layout/ModernLayout.tsx',
-        'components/ui/Sidebar.tsx'
+        'component's'/ResponsiveNavigation.tsx',
+        'component's'/admin/RealTimeMonitor.tsx',
+        'component's'/admin/SystemHealthMonitor.tsx',
+        'component's'/layout/ModernLayout.tsx',
+        'component's'/ui/Sidebar.tsx'
     ];
     
     filesToFix.forEach(file => {
         if (fs.existsSync(file)) {
             try {
-                let content = fs.readFileSync(file, 'utf8');
+                let content = fs.readFileSync(file, 'ut'f'8');
                 
                 // Fix specific patterns found in the error messages
                 content = content
@@ -21,14 +21,14 @@ function fixSpecificFiles() {
                     .replace(/';$/gm, '";')
                     
                     // Fix broken import statements
-                    .replace(/import React from "react";;'/g, 'import React from "react";')
-                    .replace(/import Link from 'next\/link';;;/g, 'import Link from "next/link";')
-                    .replace(/import \{ useRouter \} from 'next\/router';;;/g, 'import { useRouter } from "next/router";')
+                    .replace(/import React from "react";;'/g, 'impor't' React from "react";')
+                    .replace(/import Link from 'nex't'\/link';;;/g, 'impor't' Link from "next/link";')
+                    .replace(/import \{ useRouter \} from 'nex't'\/router';;;/g, 'impor't' { useRouter } from "next/router";')
                     
                     // Fix broken className attributes
-                    .replace(/className="\s*([^"]*)"\s*>/g, 'className="$1">')
-                    .replace(/className="\s*([^"]*)"\s*py-8"/g, 'className="$1 py-8"')
-                    .replace(/className="\s*([^"]*)"\s*mb-4>/g, 'className="$1 mb-4">')
+                    .replace(/className="\s*([^"]*)"\s*>/g, 'classNam'e'="$1">')
+                    .replace(/className="\s*([^"]*)"\s*py-8"/g, 'classNam'e'="$1 py-8"')
+                    .replace(/className="\s*([^"]*)"\s*mb-4>/g, 'classNam'e'="$1 mb-4">')
                     
                     // Fix broken JSX structure
                     .replace(/<div className="\s*([^"]*)"\s*>/g, '<div className="$1">')
@@ -36,32 +36,32 @@ function fixSpecificFiles() {
                     .replace(/<div className="\s*([^"]*)"\s*mb-4>/g, '<div className="$1 mb-4">')
                     
                     // Fix broken function parameters
-                    .replace(/className = "'','/g, 'className = ""')
-                    .replace(/variant = 'light'/g, 'variant = "light"')
+                    .replace(/className = "'','/g, 'classNam'e' = ""')
+                    .replace(/variant = 'lig'h't'/g, 'varian't' = "light"')
                     
                     // Fix broken useState declarations
-                    .replace(/useState<Date>\(new Date\(\)\);'/g, 'useState<Date>(new Date());')
-                    .replace(/useState<'connected' \| 'disconnected' \| 'reconnecting'>\('connected'\);'/g, 'useState<"connected" | "disconnected" | "reconnecting">("connected");')
+                    .replace(/useState<Date>\(new Date\(\)\);'/g, 'useStat'e'<Date>(new Date());')
+                    .replace(/useState<'connect'e'd' \| 'disconnect'e'd' \| 'reconnecti'n'g'>\('connect'e'd'\);'/g, 'useStat'e'<"connected" | "disconnected" | "reconnecting">("connected");')
                     
                     // Fix broken function declarations
-                    .replace(/const formatBytes = \(bytes: number\) => {';/g, 'const formatBytes = (bytes: number) => {')
-                    .replace(/const getSystemHealthColor = \(health: string\) => {';/g, 'const getSystemHealthColor = (health: string) => {')
-                    .replace(/switch \(health\) {';/g, 'switch (health) {')
+                    .replace(/const formatBytes = \(bytes: number\) => {';/g, 'cons't' formatBytes = (bytes: number) => {')
+                    .replace(/const getSystemHealthColor = \(health: string\) => {';/g, 'cons't' getSystemHealthColor = (health: string) => {')
+                    .replace(/switch \(health\) {';/g, 'switc'h' (health) {')
                     
                     // Fix broken return statements
-                    .replace(/return 'bg-green-100 text-green-800 border-green-200';'/g, 'return "bg-green-100 text-green-800 border-green-200";')
-                    .replace(/return 'bg-yellow-100 text-yellow-800 border-yellow-200';'/g, 'return "bg-yellow-100 text-yellow-800 border-yellow-200";')
-                    .replace(/return 'bg-red-100 text-red-800 border-red-200';'/g, 'return "bg-red-100 text-red-800 border-red-200";')
+                    .replace(/return 'bg-green'-'100 text-green-800 border-green-200';'/g, 'retur'n' "bg-green-100 text-green-800 border-green-200";')
+                    .replace(/return 'bg-yellow'-'100 text-yellow-800 border-yellow-200';'/g, 'retur'n' "bg-yellow-100 text-yellow-800 border-yellow-200";')
+                    .replace(/return 'bg-red'-'100 text-red-800 border-red-200';'/g, 'retur'n' "bg-red-100 text-red-800 border-red-200";')
                     
                     // Fix broken JSX elements
                     .replace(/<div className="\s*flex items-center">""/g, '<div className="flex items-center">')
                     .replace(/<div className="\s*([^"]*)"\s*>/g, '<div className="$1">')
                     
                     // Fix broken imports in Sidebar
-                    .replace(/import \{ useRouter \} from 'next\/router/g, 'import { useRouter } from "next/router"')
-                    .replace(/} from 'lucide-react/g, '} from "lucide-react"')
-                    .replace(/LifeBuoy,'/g, 'LifeBuoy,')
-                    .replace(/DollarSign'/g, 'DollarSign')
+                    .replace(/import \{ useRouter \} from 'nex't'\/router/g, 'impor't' { useRouter } from "next/router"')
+                    .replace(/} from 'lucide-reac't'/g, '} from "lucide-react"')
+                    .replace(/LifeBuoy,'/g, 'LifeBuo'y',')
+                    .replace(/DollarSign'/g, 'DollarSi'g'n')
                     
                     // Remove stray quotes and semicolons
                     .replace(/;''/g, ';')

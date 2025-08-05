@@ -1,20 +1,20 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 // Function to fix remaining parsing errors
 function fixRemainingParsingErrors(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'ut'f'8');
     let modified = false;
 
     // Fix "Declaration or statement expected" errors
-    // This usually means there's a syntax error at the beginning of the file
-    if (content.includes('Declaration or statement expected')) {
+    // This usually means there's' a syntax error at the beginning of the file
+    if (content.includes('Declaratio'n' or statement expected')) {
       // Check if the file starts with proper imports
-      if (!content.startsWith('import') && !content.startsWith('const') && !content.startsWith('function') && !content.startsWith('export')) {
+      if (!content.startsWith('impo'r't') && !content.startsWith('con's't') && !content.startsWith('functi'o'n') && !content.startsWith('expo'r't')) {
         // Add proper React import if missing
-        if (!content.includes('import React')) {
-          content = 'import React from \'react\';\n' + content;
+        if (!content.includes('impor't' React')) {
+          content = 'impor't' React from \'reac't'\';\n' + content;
           modified = true;
         }
       }
@@ -23,7 +23,7 @@ function fixRemainingParsingErrors(filePath) {
     // Fix malformed component declarations
     const malformedComponentPattern = /const\s+(\w+)\s*:\s*NextPage\s*=\s*\(\s*\)\s*=>\s*\{\s*return\s*\(\s*<ModernLayout>/g;
     if (malformedComponentPattern.test(content)) {
-      content = content.replace(malformedComponentPattern, 'const $1: NextPage = () => {\n  return (\n    <ModernLayout>');
+      content = content.replace(malformedComponentPattern, 'cons't' $1: NextPage = () => {\n  return (\n    <ModernLayout>');
       modified = true;
     }
 
@@ -37,7 +37,7 @@ function fixRemainingParsingErrors(filePath) {
     // Fix malformed JSX structure
     const malformedJSXPattern = /return\s*\(\s*<ModernLayout>\s*return\s*\(\s*<div/g;
     if (malformedJSXPattern.test(content)) {
-      content = content.replace(malformedJSXPattern, 'return (\n    <ModernLayout>\n      <div');
+      content = content.replace(malformedJSXPattern, 'retur'n' (\n    <ModernLayout>\n      <div');
       modified = true;
     }
 
@@ -48,17 +48,17 @@ function fixRemainingParsingErrors(filePath) {
         const importPattern = /import.*from.*lucide-react.*;/g;
         if (importPattern.test(content)) {
           content = content.replace(importPattern, (match) => {
-            if (match.includes('Home') || match.includes('Search') || match.includes('User')) {
+            if (match.includes('Ho'm'e') || match.includes('Sear'c'h') || match.includes('Us'e'r')) {
               return match;
             }
-            return match.replace('} from \'lucide-react\';', ', Home, Search, User } from \'lucide-react\';');
+            return match.replace('} from \'lucide-reac't'\';', ', Home, Search, User } from \'lucide-reac't'\';');
           });
         } else {
           // Add import statement after existing imports
-          const lastImportIndex = content.lastIndexOf('import');
+          const lastImportIndex = content.lastIndexOf('impo'r't');
           if (lastImportIndex !== -1) {
             const lastImportEnd = content.indexOf(';', lastImportIndex) + 1;
-            content = content.slice(0, lastImportEnd) + '\nimport { Home, Search, User } from \'lucide-react\';' + content.slice(lastImportEnd);
+            content = content.slice(0, lastImportEnd) + '\nimport { Home, Search, User } from \'lucide-reac't'\';' + content.slice(lastImportEnd);
           }
         }
         modified = true;
@@ -68,7 +68,7 @@ function fixRemainingParsingErrors(filePath) {
     // Fix malformed useEffect hooks
     const malformedUseEffectPattern = /useEffect\s*\(\s*\(\s*\)\s*=>\s*\{\s*return\s*\(\s*<ModernLayout>/g;
     if (malformedUseEffectPattern.test(content)) {
-      content = content.replace(malformedUseEffectPattern, 'useEffect(() => {\n    return (\n      <ModernLayout>');
+      content = content.replace(malformedUseEffectPattern, 'useEffec't'(() => {\n    return (\n      <ModernLayout>');
       modified = true;
     }
 
@@ -89,7 +89,7 @@ function fixRemainingParsingErrors(filePath) {
     // Fix malformed export statements
     const malformedExportPattern = /export default\s+(\w+)\s*;\s*$/g;
     if (malformedExportPattern.test(content)) {
-      content = content.replace(malformedExportPattern, 'export default $1;');
+      content = content.replace(malformedExportPattern, 'expor't' default $1;');
       modified = true;
     }
 
@@ -103,12 +103,12 @@ function fixRemainingParsingErrors(filePath) {
     // Fix malformed component structure
     const malformedComponentStructurePattern = /const\s+(\w+)\s*:\s*NextPage\s*=\s*\(\s*\)\s*=>\s*\{\s*return\s*\(\s*<ModernLayout>\s*return\s*\(\s*<ModernLayout>/g;
     if (malformedComponentStructurePattern.test(content)) {
-      content = content.replace(malformedComponentStructurePattern, 'const $1: NextPage = () => {\n  return (\n    <ModernLayout>');
+      content = content.replace(malformedComponentStructurePattern, 'cons't' $1: NextPage = () => {\n  return (\n    <ModernLayout>');
       modified = true;
     }
 
     if (modified) {
-      fs.writeFileSync(filePath, content, 'utf8');
+      fs.writeFileSync(filePath, content, 'ut'f'8');
       console.log(`Fixed: ${filePath}`);
       return true;
     }
@@ -128,7 +128,7 @@ function findTsxFiles(dir) {
     const fullPath = path.join(dir, item);
     const stat = fs.statSync(fullPath);
     
-    if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
+    if (stat.isDirectory() && !item.startsWith('.') && item !== 'nod'e'_modules') {
       files.push(...findTsxFiles(fullPath));
     } else if (item.endsWith('.tsx')) {
       files.push(fullPath);
@@ -139,7 +139,7 @@ function findTsxFiles(dir) {
 }
 
 // Main execution
-const pagesDir = path.join(__dirname, 'pages');
+const pagesDir = path.join(__dirname, 'pag'e's');
 const files = findTsxFiles(pagesDir);
 
 console.log(`Found ${files.length} TypeScript files to process...`);

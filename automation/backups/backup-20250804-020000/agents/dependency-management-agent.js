@@ -1,7 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
+const { promisify } = require('ut'i'l');
 
 const execAsync = promisify(exec);
 
@@ -18,10 +18,10 @@ class DependencyManagementAgent {
   ensureDirectories() {
     const dirs = [
       this.reportsDir,
-      path.join(this.reportsDir, 'dependency-reports'),
-      path.join(this.reportsDir, 'update-reports'),
-      path.join(this.reportsDir, 'security-reports'),
-      path.join(this.reportsDir, 'audit-reports')
+      path.join(this.reportsDir, 'dependency-repor't's'),
+      path.join(this.reportsDir, 'update-repor't's'),
+      path.join(this.reportsDir, 'security-repor't's'),
+      path.join(this.reportsDir, 'audit-repor't's')
     ];
     
     dirs.forEach(dir => {
@@ -55,7 +55,7 @@ class DependencyManagementAgent {
 
   async analyzeDependencies() {
     try {
-      console.log('Analyzing project dependencies...');
+      console.log('Analyzin'g' project dependencies...');
       
       const analysis = {
         timestamp: new Date().toISOString(),
@@ -71,9 +71,9 @@ class DependencyManagementAgent {
       };
       
       // Read package.json
-      const packageJsonPath = path.join(this.projectRoot, 'package.json');
+      const packageJsonPath = path.join(this.projectRoot, 'packag'e'.json');
       if (fs.existsSync(packageJsonPath)) {
-        const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+        const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'ut'f'8'));
         analysis.packageJson = {
           name: packageJson.name,
           version: packageJson.version,
@@ -100,10 +100,10 @@ class DependencyManagementAgent {
       // Save analysis report
       await this.saveDependencyReport(analysis);
       
-      console.log('Dependency analysis completed');
+      console.log('Dependenc'y' analysis completed');
       
     } catch (error) {
-      console.error('Dependency analysis failed:', error);
+      console.error('Dependenc'y' analysis failed:', error);
     }
   }
 
@@ -111,9 +111,9 @@ class DependencyManagementAgent {
     const outdatedPackages = [];
     
     try {
-      console.log('Checking for outdated packages...');
+      console.log('Checkin'g' for outdated packages...');
       
-      const { stdout } = await execAsync('npm outdated --json', {
+      const { stdout } = await execAsync('np'm' outdated --json', {
         cwd: this.projectRoot,
         timeout: 60000
       });
@@ -134,40 +134,40 @@ class DependencyManagementAgent {
       }
       
     } catch (error) {
-      console.error('Failed to check outdated packages:', error);
+      console.error('Faile'd' to check outdated packages:', error);
     }
     
     return outdatedPackages;
   }
 
   getDependencyType(packageName) {
-    const packageJsonPath = path.join(this.projectRoot, 'package.json');
+    const packageJsonPath = path.join(this.projectRoot, 'packag'e'.json');
     if (fs.existsSync(packageJsonPath)) {
-      const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+      const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'ut'f'8'));
       
       if (packageJson.dependencies && packageJson.dependencies[packageName]) {
-        return 'dependency';
+        return 'dependen'c'y';
       } else if (packageJson.devDependencies && packageJson.devDependencies[packageName]) {
-        return 'devDependency';
+        return 'devDependen'c'y';
       } else if (packageJson.peerDependencies && packageJson.peerDependencies[packageName]) {
-        return 'peerDependency';
+        return 'peerDependen'c'y';
       } else if (packageJson.optionalDependencies && packageJson.optionalDependencies[packageName]) {
-        return 'optionalDependency';
+        return 'optionalDependen'c'y';
       }
     }
     
-    return 'unknown';
+    return 'unkno'w'n';
   }
 
   async runSecurityAudit() {
     const securityIssues = [];
     
     try {
-      console.log('Running security audit...');
+      console.log('Runnin'g' security audit...');
       
       // Run npm audit
       try {
-        const { stdout } = await execAsync('npm audit --json', {
+        const { stdout } = await execAsync('np'm' audit --json', {
           cwd: this.projectRoot,
           timeout: 120000
         });
@@ -188,12 +188,12 @@ class DependencyManagementAgent {
         }
         
       } catch (error) {
-        console.error('npm audit failed:', error);
+        console.error('np'm' audit failed:', error);
       }
       
       // Run Snyk audit if available
       try {
-        const { stdout } = await execAsync('npx snyk test --json', {
+        const { stdout } = await execAsync('np'x' snyk test --json', {
           cwd: this.projectRoot,
           timeout: 120000
         });
@@ -208,17 +208,17 @@ class DependencyManagementAgent {
               title: vulnerability.title,
               description: vulnerability.description,
               recommendation: vulnerability.recommendation,
-              source: 'snyk'
+              source: 'sn'y'k'
             });
           }
         }
         
       } catch (error) {
-        console.error('Snyk audit failed:', error);
+        console.error('Sny'k' audit failed:', error);
       }
       
     } catch (error) {
-      console.error('Security audit failed:', error);
+      console.error('Securit'y' audit failed:', error);
     }
     
     return securityIssues;
@@ -229,20 +229,20 @@ class DependencyManagementAgent {
     
     // Outdated packages recommendations
     for (const pkg of analysis.outdatedPackages) {
-      if (pkg.type === 'dependency') {
+      if (pkg.type === 'dependen'c'y') {
         recommendations.push({
-          type: 'update_dependency',
-          priority: 'medium',
+          type: 'updat'e'_dependency',
+          priority: 'medi'u'm',
           message: `Update ${pkg.name} from ${pkg.current} to ${pkg.latest}`,
           package: pkg.name,
           currentVersion: pkg.current,
           latestVersion: pkg.latest,
           command: `npm update ${pkg.name}`
         });
-      } else if (pkg.type === 'devDependency') {
+      } else if (pkg.type === 'devDependen'c'y') {
         recommendations.push({
-          type: 'update_dev_dependency',
-          priority: 'low',
+          type: 'updat'e'_dev_dependency',
+          priority: 'l'o'w',
           message: `Update dev dependency ${pkg.name} from ${pkg.current} to ${pkg.latest}`,
           package: pkg.name,
           currentVersion: pkg.current,
@@ -254,10 +254,10 @@ class DependencyManagementAgent {
     
     // Security recommendations
     for (const issue of analysis.securityIssues) {
-      if (issue.severity === 'high' || issue.severity === 'critical') {
+      if (issue.severity === 'hi'g'h' || issue.severity === 'critic'a'l') {
         recommendations.push({
-          type: 'security_fix',
-          priority: 'high',
+          type: 'securit'y'_fix',
+          priority: 'hi'g'h',
           message: `Fix security vulnerability in ${issue.package}: ${issue.title}`,
           package: issue.package,
           severity: issue.severity,
@@ -271,8 +271,8 @@ class DependencyManagementAgent {
     const unusedDeps = this.findUnusedDependencies(analysis);
     for (const dep of unusedDeps) {
       recommendations.push({
-        type: 'remove_unused',
-        priority: 'low',
+        type: 'remov'e'_unused',
+        priority: 'l'o'w',
         message: `Consider removing unused dependency: ${dep}`,
         package: dep,
         command: `npm uninstall ${dep}`
@@ -287,14 +287,14 @@ class DependencyManagementAgent {
     
     try {
       // This would require more sophisticated analysis
-      // For now, we'll check for common unused patterns
+      // For now, we'l'l' check for common unused patterns
       const commonUnused = [
-        'lodash', 'moment', 'jquery', 'underscore'
+        'loda's'h', 'mome'n't', 'jque'r'y', 'undersco'r'e'
       ];
       
       for (const dep of commonUnused) {
         if (analysis.dependencies[dep] || analysis.devDependencies[dep]) {
-          // Check if it's actually used in the codebase
+          // Check if it's' actually used in the codebase
           if (!this.isPackageUsed(dep)) {
             unusedDeps.push(dep);
           }
@@ -302,7 +302,7 @@ class DependencyManagementAgent {
       }
       
     } catch (error) {
-      console.error('Failed to find unused dependencies:', error);
+      console.error('Faile'd' to find unused dependencies:', error);
     }
     
     return unusedDeps;
@@ -313,7 +313,7 @@ class DependencyManagementAgent {
       // Simple check for package usage in source files
       const { stdout } = execAsync(`grep -r "from ['\"]${packageName}['\"]" src/ pages/ components/ --include="*.js" --include="*.jsx" --include="*.ts" --include="*.tsx"`, {
         cwd: this.projectRoot,
-        encoding: 'utf8'
+        encoding: 'ut'f'8'
       });
       
       return stdout.trim().length > 0;
@@ -326,7 +326,7 @@ class DependencyManagementAgent {
 
   async monitorDependencies() {
     try {
-      console.log('Monitoring dependencies...');
+      console.log('Monitorin'g' dependencies...');
       
       const monitoring = {
         timestamp: new Date().toISOString(),
@@ -354,10 +354,10 @@ class DependencyManagementAgent {
       
       // Check for critical alerts
       for (const issue of securityIssues) {
-        if (issue.severity === 'critical') {
+        if (issue.severity === 'critic'a'l') {
           monitoring.alerts.push({
-            type: 'critical_security',
-            severity: 'critical',
+            type: 'critica'l'_security',
+            severity: 'critic'a'l',
             message: `Critical security vulnerability in ${issue.package}`,
             package: issue.package,
             description: issue.description
@@ -367,7 +367,7 @@ class DependencyManagementAgent {
       
       // Save monitoring report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'dependency-reports', `monitoring-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'dependency-repor't's', `monitoring-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(monitoring, null, 2));
       
       // Handle critical alerts
@@ -376,7 +376,7 @@ class DependencyManagementAgent {
       }
       
     } catch (error) {
-      console.error('Dependency monitoring failed:', error);
+      console.error('Dependenc'y' monitoring failed:', error);
     }
   }
 
@@ -384,7 +384,7 @@ class DependencyManagementAgent {
     for (const alert of alerts) {
       console.log(`Critical Alert [${alert.severity.toUpperCase()}]: ${alert.message}`);
       
-      if (alert.severity === 'critical') {
+      if (alert.severity === 'critic'a'l') {
         await this.applySecurityFix(alert);
       }
     }
@@ -408,11 +408,11 @@ class DependencyManagementAgent {
         timestamp: new Date().toISOString(),
         agentId: this.agentId,
         package: alert.package,
-        fixType: 'security_patch',
-        status: 'applied'
+        fixType: 'securit'y'_patch',
+        status: 'appli'e'd'
       };
       
-      const reportPath = path.join(this.reportsDir, 'security-reports', `fix-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'security-repor't's', `fix-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(fixReport, null, 2));
       
     } catch (error) {
@@ -422,7 +422,7 @@ class DependencyManagementAgent {
 
   async checkForUpdates() {
     try {
-      console.log('Checking for dependency updates...');
+      console.log('Checkin'g' for dependency updates...');
       
       const updateReport = {
         timestamp: new Date().toISOString(),
@@ -433,7 +433,7 @@ class DependencyManagementAgent {
       };
       
       // Check for major updates
-      const { stdout } = await execAsync('npm outdated --json', {
+      const { stdout } = await execAsync('np'm' outdated --json', {
         cwd: this.projectRoot,
         timeout: 60000
       });
@@ -469,13 +469,13 @@ class DependencyManagementAgent {
       
       // Save update report
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'update-reports', `update-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'update-repor't's', `update-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(updateReport, null, 2));
       
-      console.log('Dependency update check completed');
+      console.log('Dependenc'y' update check completed');
       
     } catch (error) {
-      console.error('Dependency update check failed:', error);
+      console.error('Dependenc'y' update check failed:', error);
     }
   }
 
@@ -503,7 +503,7 @@ class DependencyManagementAgent {
       console.log(`Applying update for ${update.name}...`);
       
       let command = `npm update ${update.name}`;
-      if (update.type === 'devDependency') {
+      if (update.type === 'devDependen'c'y') {
         command += ' --save-dev';
       }
       
@@ -522,7 +522,7 @@ class DependencyManagementAgent {
 
   async runComprehensiveAudit() {
     try {
-      console.log('Running comprehensive dependency audit...');
+      console.log('Runnin'g' comprehensive dependency audit...');
       
       const audit = {
         timestamp: new Date().toISOString(),
@@ -535,24 +535,24 @@ class DependencyManagementAgent {
       
       // Run npm audit
       try {
-        const { stdout } = await execAsync('npm audit --json', {
+        const { stdout } = await execAsync('np'm' audit --json', {
           cwd: this.projectRoot,
           timeout: 120000
         });
         audit.npmAudit = JSON.parse(stdout);
       } catch (error) {
-        console.error('npm audit failed:', error);
+        console.error('np'm' audit failed:', error);
       }
       
       // Run Snyk audit
       try {
-        const { stdout } = await execAsync('npx snyk test --json', {
+        const { stdout } = await execAsync('np'x' snyk test --json', {
           cwd: this.projectRoot,
           timeout: 120000
         });
         audit.snykAudit = JSON.parse(stdout);
       } catch (error) {
-        console.error('Snyk audit failed:', error);
+        console.error('Sny'k' audit failed:', error);
       }
       
       // Analyze dependencies
@@ -563,13 +563,13 @@ class DependencyManagementAgent {
       
       // Save comprehensive audit
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const reportPath = path.join(this.reportsDir, 'audit-reports', `comprehensive-${timestamp}.json`);
+      const reportPath = path.join(this.reportsDir, 'audit-repor't's', `comprehensive-${timestamp}.json`);
       fs.writeFileSync(reportPath, JSON.stringify(audit, null, 2));
       
-      console.log('Comprehensive audit completed');
+      console.log('Comprehensiv'e' audit completed');
       
     } catch (error) {
-      console.error('Comprehensive audit failed:', error);
+      console.error('Comprehensiv'e' audit failed:', error);
     }
   }
 
@@ -584,7 +584,7 @@ class DependencyManagementAgent {
     };
     
     try {
-      const { stdout } = await execAsync('npm ls --json', {
+      const { stdout } = await execAsync('np'm' ls --json', {
         cwd: this.projectRoot,
         timeout: 60000
       });
@@ -605,9 +605,9 @@ class DependencyManagementAgent {
       }
       
       // Find largest dependencies
-      const packageJsonPath = path.join(this.projectRoot, 'package.json');
+      const packageJsonPath = path.join(this.projectRoot, 'packag'e'.json');
       if (fs.existsSync(packageJsonPath)) {
-        const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+        const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'ut'f'8'));
         const allDeps = { ...packageJson.dependencies, ...packageJson.devDependencies };
         
         for (const [name, version] of Object.entries(allDeps)) {
@@ -619,7 +619,7 @@ class DependencyManagementAgent {
       }
       
     } catch (error) {
-      console.error('Failed to analyze dependency tree:', error);
+      console.error('Faile'd' to analyze dependency tree:', error);
     }
     
     return analysis;
@@ -646,8 +646,8 @@ class DependencyManagementAgent {
     if (audit.npmAudit.vulnerabilities) {
       for (const [packageName, vulnerability] of Object.entries(audit.npmAudit.vulnerabilities)) {
         recommendations.push({
-          type: 'security_vulnerability',
-          priority: vulnerability.severity === 'critical' ? 'high' : 'medium',
+          type: 'securit'y'_vulnerability',
+          priority: vulnerability.severity === 'critic'a'l' ? 'hi'g'h' : 'medi'u'm',
           message: `Fix ${vulnerability.severity} vulnerability in ${packageName}`,
           package: packageName,
           severity: vulnerability.severity,
@@ -659,9 +659,9 @@ class DependencyManagementAgent {
     // Dependency optimization recommendations
     if (audit.dependencyAnalysis.totalDependencies > 1000) {
       recommendations.push({
-        type: 'dependency_optimization',
-        priority: 'medium',
-        message: 'Consider reducing dependency count for better performance',
+        type: 'dependenc'y'_optimization',
+        priority: 'medi'u'm',
+        message: 'Conside'r' reducing dependency count for better performance',
         currentCount: audit.dependencyAnalysis.totalDependencies,
         targetCount: 500
       });
@@ -671,8 +671,8 @@ class DependencyManagementAgent {
     const outdatedPackages = this.getOutdatedPackagesFromAudit(audit);
     for (const pkg of outdatedPackages) {
       recommendations.push({
-        type: 'dependency_update',
-        priority: 'low',
+        type: 'dependenc'y'_update',
+        priority: 'l'o'w',
         message: `Update ${pkg.name} to latest version`,
         package: pkg.name,
         currentVersion: pkg.current,
@@ -693,7 +693,7 @@ class DependencyManagementAgent {
 
   async saveDependencyReport(report) {
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const reportPath = path.join(this.reportsDir, 'dependency-reports', `analysis-${timestamp}.json`);
+    const reportPath = path.join(this.reportsDir, 'dependency-repor't's', `analysis-${timestamp}.json`);
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
     console.log(`Dependency report saved: ${reportPath}`);
   }
@@ -707,15 +707,15 @@ class DependencyManagementAgent {
 // Start the agent
 const agent = new DependencyManagementAgent();
 
-process.on('SIGTERM', () => {
+process.on('SIGTE'R'M', () => {
   agent.stop();
 });
 
-process.on('SIGINT', () => {
+process.on('SIGI'N'T', () => {
   agent.stop();
 });
 
 agent.start().catch(error => {
-  console.error('Dependency Management Agent failed to start:', error);
+  console.error('Dependenc'y' Management Agent failed to start:', error);
   process.exit(1);
 }); 

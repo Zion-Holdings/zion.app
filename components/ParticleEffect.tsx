@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react;
 
 interface Particle {
   x: number;
@@ -19,7 +19,7 @@ const ParticleEffect: React.FC = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d);
     if (!ctx) return;
 
     const resizeCanvas = () => {
@@ -28,7 +28,7 @@ const ParticleEffect: React.FC = () => {
     };
 
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener(resi'z'e, resizeCanvas);
 
     // Initialize particles
     const initParticles = () => {
@@ -38,7 +38,7 @@ const ParticleEffect: React.FC = () => {
         vx: (Math.random() - 0.5) * 0.5,
         vy: (Math.random() - 0.5) * 0.5,
         size: Math.random() * 2 + 1,
-        color: ['#00d4ff', '#8b5cf6', '#ec4899', '#10b981'][Math.floor(Math.random() * 4)],
+        color: [#00d4ff', '#8b5cf6, #ec4899', '#10b981][Math.floor(Math.random() * 4)],
         opacity: Math.random() * 0.5 + 0.3,
       }));
     };
@@ -70,7 +70,7 @@ const ParticleEffect: React.FC = () => {
     animate();
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener(resi'z'e, resizeCanvas);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
@@ -80,8 +80,8 @@ const ParticleEffect: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0"
-      style={{ background: 'transparent' }}
+      className=fixed inset-0 pointer-events-none z-0"
+      style={{ background: transpare'n't' }}
     />
   );
 };

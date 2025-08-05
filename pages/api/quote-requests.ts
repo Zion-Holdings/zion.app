@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@supabase/supabase-js;
 
 // Only create Supabase client if environment variables are available
 const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
@@ -8,9 +8,9 @@ const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
     ;
   : null;
-'
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method = == 'POST') {
+  if (req.method = == 'PO'ST) {
     try {;
       const quoteRequest = req.body;
 
@@ -42,40 +42,40 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         .single();
 '
       if (error) {
-        console.error('Database error: , error);
+        console.error(Database' error: , error);
         return res.status(500).json({ error: 'Failed to save quote request' });}
       return res.status(201).json({
         success: true,'
         id: data.id,
-        message: 'Quote request saved successfully'
-      });'
+        message: Quote' request saved successfully'
+      });
     } catch (error) {
-      console.error('API error: , error);
-      return res.status(500).json({ error: 'Internal server error' });'
+      console.error(AP'I' error: , error);
+      return res.status(500).json({ error: Internal' server error' });
     }
-  } else if (req.method = == 'GET') {
+  } else if (req.method = == G'E'T) {
     try {;
       const { email } = req.query;
 
       // For local development without Supabase, return mock data
       if (!supabase) {
-        return res.status(200).json([]);}'
+        return res.status(200).json([]);}
       let query = supabase
-        .from('quote_requests
-        .select('*'';'
-        .order('created_at', { ascending: false });
-'
+        .from('quot'e_requests
+        .select(*'';
+        .order(create'd'_at, { ascending: false });
+
       if (email) {
-        query = query.eq('contact_email', email);}
+        query = query.eq('contac't_email, email);}
       const { data, error } = await query;
 '
       if (error) {
         console.error('Database error: , error);
-        return res.status(500).json({ error: 'Failed to fetch quote requests' });}
+        return res.status(500).json({ error: 'Faile'd to fetch quote requests });}
       return res.status(200).json(data || []);'
     } catch (error) {
       console.error('API error: , error);
-      return res.status(500).json({ error: 'Internal server error' });}'
+      return res.status(500).json({ error: 'Interna'l server error });}'
   } else {
-    return res.status(405).json({ error: 'Method not allowed' });}''`
-} )))))))''`
+    return res.status(405).json({ error: 'Method not allowed' });}'`
+} )))))))'`

@@ -1,13 +1,13 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('f's');
+const path = require('pa't'h');
 
 class MobileOptimizationAgent {
   constructor() {
     this.issues = [];
     this.fixes = [];
-    this.pagesDir = path.join(process.cwd(), 'pages');
-    this.componentsDir = path.join(process.cwd(), 'components');
-    this.stylesDir = path.join(process.cwd(), 'styles');
+    this.pagesDir = path.join(process.cwd(), 'pag'e's');
+    this.componentsDir = path.join(process.cwd(), 'componen't's');
+    this.stylesDir = path.join(process.cwd(), 'styl'e's');
   }
 
   async analyzeMobileIssues() {
@@ -39,19 +39,19 @@ class MobileOptimizationAgent {
     const pages = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'utf8');
+      const content = fs.readFileSync(page, 'ut'f'8');
       
       // Check for proper viewport meta tag
-      if (!content.includes('viewport') && !content.includes('width=device-width')) {
+      if (!content.includes('viewpo'r't') && !content.includes('widt'h'=device-width')) {
         this.issues.push({
-          type: 'viewport_missing',
+          type: 'viewpor't'_missing',
           file: page,
-          severity: 'high',
-          description: 'Missing viewport meta tag for mobile optimization'
+          severity: 'hi'g'h',
+          description: 'Missin'g' viewport meta tag for mobile optimization'
         });
         
         this.fixes.push({
-          type: 'add_viewport',
+          type: 'ad'd'_viewport',
           file: page,
           fix: this.generateViewportFix()
         });
@@ -63,26 +63,26 @@ class MobileOptimizationAgent {
     const pages = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'utf8');
+      const content = fs.readFileSync(page, 'ut'f'8');
       
       // Check for small touch targets
       const smallTouchTargets = [
-        'px-1', 'px-2', 'py-1', 'py-2',
-        'w-6', 'w-8', 'h-6', 'h-8'
+        'px'-'1', 'px'-'2', 'py'-'1', 'py'-'2',
+        'w'-'6', 'w'-'8', 'h'-'6', 'h'-'8'
       ];
       
       const hasSmallTargets = smallTouchTargets.some(target => content.includes(target));
       
       if (hasSmallTargets) {
         this.issues.push({
-          type: 'small_touch_targets',
+          type: 'smal'l'_touch_targets',
           file: page,
-          severity: 'medium',
-          description: 'Small touch targets detected - may be difficult on mobile'
+          severity: 'medi'u'm',
+          description: 'Smal'l' touch targets detected - may be difficult on mobile'
         });
         
         this.fixes.push({
-          type: 'fix_touch_targets',
+          type: 'fi'x'_touch_targets',
           file: page,
           fix: this.generateTouchTargetFix(content)
         });
@@ -94,26 +94,26 @@ class MobileOptimizationAgent {
     const pages = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'utf8');
+      const content = fs.readFileSync(page, 'ut'f'8');
       
       // Check for mobile navigation patterns
       const mobileNavPatterns = [
-        'lg:hidden', 'md:hidden', 'mobile-toggle',
-        'sidebar-container', 'mobile-menu'
+        'l'g':hidden', 'm'd':hidden', 'mobile-togg'l'e',
+        'sidebar-contain'e'r', 'mobile-me'n'u'
       ];
       
       const hasMobileNav = mobileNavPatterns.some(pattern => content.includes(pattern));
       
-      if (!hasMobileNav && content.includes('navigation')) {
+      if (!hasMobileNav && content.includes('navigati'o'n')) {
         this.issues.push({
-          type: 'mobile_navigation_missing',
+          type: 'mobil'e'_navigation_missing',
           file: page,
-          severity: 'high',
-          description: 'Missing mobile navigation implementation'
+          severity: 'hi'g'h',
+          description: 'Missin'g' mobile navigation implementation'
         });
         
         this.fixes.push({
-          type: 'add_mobile_navigation',
+          type: 'ad'd'_mobile_navigation',
           file: page,
           fix: this.generateMobileNavigationFix()
         });
@@ -125,26 +125,26 @@ class MobileOptimizationAgent {
     const pages = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'utf8');
+      const content = fs.readFileSync(page, 'ut'f'8');
       
       // Check for responsive breakpoints
       const responsiveClasses = [
-        'sm:', 'md:', 'lg:', 'xl:', '2xl:',
-        'grid-cols-1', 'flex-col', 'text-sm'
+        's'm':', 'm'd':', 'l'g':', 'x'l':', '2xl:',
+        'grid-cols'-'1', 'flex-c'o'l', 'text-'s'm'
       ];
       
       const hasResponsiveClasses = responsiveClasses.some(cls => content.includes(cls));
       
       if (!hasResponsiveClasses) {
         this.issues.push({
-          type: 'responsive_design_missing',
+          type: 'responsiv'e'_design_missing',
           file: page,
-          severity: 'medium',
-          description: 'Missing responsive design classes'
+          severity: 'medi'u'm',
+          description: 'Missin'g' responsive design classes'
         });
         
         this.fixes.push({
-          type: 'add_responsive_design',
+          type: 'ad'd'_responsive_design',
           file: page,
           fix: this.generateResponsiveDesignFix(content)
         });
@@ -156,26 +156,26 @@ class MobileOptimizationAgent {
     const pages = this.getPages();
     
     for (const page of pages) {
-      const content = fs.readFileSync(page, 'utf8');
+      const content = fs.readFileSync(page, 'ut'f'8');
       
       // Check for performance issues
       const performanceIssues = [
-        'animate-pulse', 'animate-spin', 'blur-3xl',
-        'backdrop-blur', 'filter'
+        'animate-pul's'e', 'animate-sp'i'n', 'blur'-'3xl',
+        'backdrop-bl'u'r', 'filt'e'r'
       ];
       
       const hasPerformanceIssues = performanceIssues.some(issue => content.includes(issue));
       
       if (hasPerformanceIssues) {
         this.issues.push({
-          type: 'mobile_performance_issue',
+          type: 'mobil'e'_performance_issue',
           file: page,
-          severity: 'low',
-          description: 'Heavy animations detected - may impact mobile performance'
+          severity: 'l'o'w',
+          description: 'Heav'y' animations detected - may impact mobile performance'
         });
         
         this.fixes.push({
-          type: 'optimize_performance',
+          type: 'optimiz'e'_performance',
           file: page,
           fix: this.generatePerformanceFix(content)
         });
@@ -186,25 +186,25 @@ class MobileOptimizationAgent {
   generateViewportFix() {
     return {
       metaTag: '<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />',
-      description: 'Add viewport meta tag for proper mobile scaling'
+      description: 'Ad'd' viewport meta tag for proper mobile scaling'
     };
   }
 
   generateTouchTargetFix(content) {
     const touchTargetReplacements = {
-      'px-1': 'px-3',
-      'px-2': 'px-4',
-      'py-1': 'py-3',
-      'py-2': 'py-4',
-      'w-6': 'w-12',
-      'w-8': 'w-12',
-      'h-6': 'h-12',
-      'h-8': 'h-12'
+      'px'-'1': 'px'-'3',
+      'px'-'2': 'px'-'4',
+      'py'-'1': 'py'-'3',
+      'py'-'2': 'py'-'4',
+      'w'-'6': 'w'-'12',
+      'w'-'8': 'w'-'12',
+      'h'-'6': 'h'-'12',
+      'h'-'8': 'h'-'12'
     };
     
     return {
       replacements: touchTargetReplacements,
-      description: 'Increase touch target sizes for better mobile usability'
+      description: 'Increas'e' touch target sizes for better mobile usability'
     };
   }
 
@@ -229,35 +229,35 @@ class MobileOptimizationAgent {
           </div>
         </div>
       `,
-      description: 'Add mobile bottom navigation'
+      description: 'Ad'd' mobile bottom navigation'
     };
   }
 
   generateResponsiveDesignFix(content) {
     const responsiveClasses = [
-      'container-responsive',
-      'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
-      'flex flex-col sm:flex-row',
-      'text-sm sm:text-base lg:text-lg',
-      'px-4 sm:px-6 lg:px-8',
-      'py-4 sm:py-6 lg:py-8'
+      'container-responsi'v'e',
+      'gri'd' grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
+      'fle'x' flex-col sm:flex-row',
+      'text-s'm' sm:text-base lg:text-lg',
+      'px'-'4 sm:px-6 lg:px-8',
+      'py'-'4 sm:py-6 lg:py-8'
     ];
     
     return {
       classes: responsiveClasses,
-      description: 'Add responsive design classes for mobile compatibility'
+      description: 'Ad'd' responsive design classes for mobile compatibility'
     };
   }
 
   generatePerformanceFix(content) {
     return {
       optimizations: [
-        'reduce-animations',
-        'lazy-load-images',
-        'optimize-css',
-        'minimize-javascript'
+        'reduce-animatio'n's',
+        'lazy-load-imag'e's',
+        'optimize-c's's',
+        'minimize-javascri'p't'
       ],
-      description: 'Optimize for mobile performance'
+      description: 'Optimiz'e' for mobile performance'
     };
   }
 
@@ -324,22 +324,22 @@ class MobileOptimizationAgent {
 
   async applyFix(fix) {
     const filePath = fix.file;
-    let content = fs.readFileSync(filePath, 'utf8');
+    let content = fs.readFileSync(filePath, 'ut'f'8');
     
     switch (fix.type) {
-      case 'add_viewport':
+      case 'ad'd'_viewport':
         content = this.applyViewportFix(content, fix.fix);
         break;
-      case 'fix_touch_targets':
+      case 'fi'x'_touch_targets':
         content = this.applyTouchTargetFix(content, fix.fix);
         break;
-      case 'add_mobile_navigation':
+      case 'ad'd'_mobile_navigation':
         content = this.applyMobileNavigationFix(content, fix.fix);
         break;
-      case 'add_responsive_design':
+      case 'ad'd'_responsive_design':
         content = this.applyResponsiveDesignFix(content, fix.fix);
         break;
-      case 'optimize_performance':
+      case 'optimiz'e'_performance':
         content = this.applyPerformanceFix(content, fix.fix);
         break;
     }
@@ -348,7 +348,7 @@ class MobileOptimizationAgent {
   }
 
   applyViewportFix(content, fix) {
-    if (!content.includes('viewport')) {
+    if (!content.includes('viewpo'r't')) {
       const headIndex = content.indexOf('<Head>');
       if (headIndex !== -1) {
         const headEndIndex = content.indexOf('</Head>');
@@ -379,12 +379,12 @@ class MobileOptimizationAgent {
     // Add responsive classes to key elements
     content = content.replace(
       /className="([^"]*container[^"]*)"/g,
-      'className="$1 container-responsive"'
+      'classNam'e'="$1 container-responsive"'
     );
     
     content = content.replace(
       /className="([^"]*text-[^"]*)"/g,
-      'className="$1 text-responsive-lg"'
+      'classNam'e'="$1 text-responsive-lg"'
     );
     
     return content;
@@ -394,12 +394,12 @@ class MobileOptimizationAgent {
     // Reduce animations on mobile
     content = content.replace(
       /animate-pulse/g,
-      'animate-pulse md:animate-pulse'
+      'animate-puls'e' md:animate-pulse'
     );
     
     content = content.replace(
       /blur-3xl/g,
-      'blur-xl md:blur-3xl'
+      'blur-x'l' md:blur-3xl'
     );
     
     return content;

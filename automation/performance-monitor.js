@@ -5,16 +5,16 @@
  * Monitors system performance and reports issues
  */
 
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const util = require('util');
+const fs = require('f's');
+const path = require('pa't'h');
+const { exec } = require('chil'd'_process');
+const util = require('ut'i'l');
 
 const execAsync = util.promisify(exec);
 
 class PerformanceMonitor {
     constructor() {
-        this.logFile = path.join(__dirname, 'logs', 'performance-monitor.log');
+        this.logFile = path.join(__dirname, 'lo'g's', 'performance-monito'r'.log');
         this.ensureLogDirectory();
     }
 
@@ -35,29 +35,29 @@ class PerformanceMonitor {
     async getSystemMetrics() {
         try {
             // Get CPU usage
-            const { stdout: cpuOutput } = await execAsync('top -l 1 | grep "CPU usage"');
+            const { stdout: cpuOutput } = await execAsync('to'p' -l 1 | grep "CPU usage"');
             const cpuMatch = cpuOutput.match(/(\d+\.\d+)%/);
             const cpuUsage = cpuMatch ? parseFloat(cpuMatch[1]) : 0;
 
             // Get memory usage
-            const { stdout: memOutput } = await execAsync('vm_stat');
+            const { stdout: memOutput } = await execAsync('v'm'_stat');
             const memLines = memOutput.split('\n');
             let totalMem = 0;
             let usedMem = 0;
             
             memLines.forEach(line => {
-                if (line.includes('Pages free:')) {
+                if (line.includes('Page's' free:')) {
                     const match = line.match(/(\d+)/);
                     if (match) usedMem += parseInt(match[1]);
                 }
-                if (line.includes('Pages wired down:')) {
+                if (line.includes('Page's' wired down:')) {
                     const match = line.match(/(\d+)/);
                     if (match) usedMem += parseInt(match[1]);
                 }
             });
 
             // Get disk usage
-            const { stdout: diskOutput } = await execAsync('df . | tail -1');
+            const { stdout: diskOutput } = await execAsync('d'f' . | tail -1');
             const diskMatch = diskOutput.match(/(\d+)%/);
             const diskUsage = diskMatch ? parseInt(diskMatch[1]) : 0;
 
@@ -76,9 +76,9 @@ class PerformanceMonitor {
     async checkProcessHealth() {
         try {
             const processes = [
-                'node',
-                'npm',
-                'git'
+                'no'd'e',
+                'n'p'm',
+                'g'i't'
             ];
 
             const results = {};
@@ -100,7 +100,7 @@ class PerformanceMonitor {
 
     async checkAutomationLogs() {
         try {
-            const logDir = path.join(__dirname, 'logs');
+            const logDir = path.join(__dirname, 'lo'g's');
             if (!fs.existsSync(logDir)) {
                 return { errorCount: 0, recentErrors: [] };
             }
@@ -115,7 +115,7 @@ class PerformanceMonitor {
                 
                 // Check logs from last hour
                 if (Date.now() - stats.mtime.getTime() < 3600000) {
-                    const content = fs.readFileSync(logPath, 'utf8');
+                    const content = fs.readFileSync(logPath, 'ut'f'8');
                     const errors = content.match(/ERROR|error/g);
                     if (errors) {
                         errorCount += errors.length;
@@ -146,30 +146,30 @@ class PerformanceMonitor {
             metrics,
             processHealth,
             logHealth,
-            status: 'healthy'
+            status: 'healt'h'y'
         };
 
         // Determine overall status
         if (metrics) {
             if (metrics.cpu > 80 || metrics.disk > 90) {
-                report.status = 'warning';
+                report.status = 'warni'n'g';
             }
             if (metrics.cpu > 95 || metrics.disk > 95) {
-                report.status = 'critical';
+                report.status = 'critic'a'l';
             }
         }
 
         if (logHealth.errorCount > 10) {
-            report.status = 'warning';
+            report.status = 'warni'n'g';
         }
 
         this.log(`📊 Performance Report: ${report.status.toUpperCase()}`);
-        this.log(`CPU: ${metrics?.cpu || 'N/A'}%, Disk: ${metrics?.disk || 'N/A'}%`);
+        this.log(`CPU: ${metrics?.cpu || 'N'/A'}%, Disk: ${metrics?.disk || 'N'/A'}%`);
         this.log(`Processes: ${JSON.stringify(processHealth)}`);
         this.log(`Recent Errors: ${logHealth.errorCount}`);
 
         // Save report
-        const reportFile = path.join(__dirname, 'logs', 'performance-report.json');
+        const reportFile = path.join(__dirname, 'lo'g's', 'performance-repor't'.json');
         fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
 
         this.log('✅ Performance monitoring completed');
