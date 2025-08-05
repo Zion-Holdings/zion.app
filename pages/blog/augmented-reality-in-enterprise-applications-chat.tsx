@@ -36,7 +36,7 @@ const AugmentedRealityInEnterpriseApplicationsChatPage: NextPage = () => {
               </span>
             </h1>
             <div className="flex items-center text-gray-400 text-sm mb-8">
-              <span>Expert Discussion • analytical-research • technology-deep-dive</span>
+              <span>Expert Discussion • expert-consultation • problem-solution</span>
             </div>
           </div>
           
