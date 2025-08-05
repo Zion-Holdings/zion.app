@@ -1,11 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { createClient } from @supabase/supabase-js;
-;
-const $1 = createClient(;';
+const $1 = createClient(;
   process.env.NEXT_PUBLIC_SUPABASE_URL || http's'://placeholder.supabase.co,;
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || placeholder-key;
-);
-;};
+);};
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {;
   try {;
     // Test environment variables;
@@ -20,8 +18,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       environment: {;
         hasSupabaseUrl: !!supabaseUrl,;
         hasSupabaseKey: !!supabaseKey,;
-        supabaseUrl: supabaseUrl ? Set : Not set,;';
-        supabaseKey: supabaseKey ? 'S'et : Not set};';
+        supabaseUrl: supabaseUrl ? Set : Not set,;
+        supabaseKey: supabaseKey ? 'S'et : Not set};
       session: '{;
         exists: !!session,;
         error: sessionError?.message || null};
@@ -34,4 +32,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(500).json({;
       success: false,;
       error: error instanceof Error ? error.message : Unknown error}};
-} ))));';
+} ))));

@@ -274,6 +274,12 @@ function fixSyntaxErrors(filePath) {
     content = content.replace(/className="text-3xl font-bold text-gray-900 mb-8>Admin Panel<\/h1>/g, 'className="text-3xl font-bold text-gray-900 mb-8">Admin Panel</h1>');
     content = content.replace(/className=bg-white shadow rounded-lg p-6"/g, 'className="bg-white shadow rounded-lg p-6"');
 
+    // Fix new patterns for remaining errors
+    content = content.replace(/import type \{ NextApiRequest, NextApiResponse \} from 'next;/g, "import type { NextApiRequest, NextApiResponse } from 'next';");
+    content = content.replace(/interface \w+ \{;/g, (match) => match.replace('{;', '{'));
+    content = content.replace(/;\s*;/g, ';');
+    content = content.replace(/^\s*;\s*$/gm, '');
+
     if (content !== fs.readFileSync(filePath, 'utf8')) {
       fs.writeFileSync(filePath, content, 'utf8');
       console.log(`Fixed syntax errors in: ${filePath}`);

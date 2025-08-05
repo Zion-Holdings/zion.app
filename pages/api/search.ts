@@ -1,6 +1,5 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-;};
-export default async function handler(;';
+import { NextApiRequest, NextApiResponse } from 'next';};
+export default async function handler(;
   req: 'NextApiRequest,;
   res: NextApiResponse;
 ) {;
@@ -10,6 +9,6 @@ export default async function handler(;';
     const { q, filters } = req.query;
     // Search implementation;
     res.status(200).json({ results: [] });
-  } catch (error) {;';
+  } catch (error) {;
     res.status(500).json({ error: Searc'h' failed });
-  };';
+  };
