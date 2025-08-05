@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -9,7 +9,7 @@ interface FacilityPlan {
   name: string;
   description: string;
   type: volumetric | light_field | holographic_projection | spatial'_computing | mixe'd_reality | augmented'_reality;
-  status: 'active | inactive | rendering' | error' | offline';
+  status: 'active | inactive | rendering' | error' | offline
   resolution: 'number;
   refreshRate: number;
   fieldOfView: number;
@@ -40,7 +40,7 @@ interface FacilityPlan {
   name: string;
   description: string;
   type: spatial_mapping | spatial_tracking | spatial_interaction | spatial_audio | spatia'l'_gestures | spatial_environment;
-  status: 'active | inactive | mapping'' | error | offline';
+  status: 'active | inactive | mapping'' | error | offline
   sensors: 'number;
   accuracy: number;
   aiAnalysis: SpatialAnalysis;}
@@ -112,7 +112,7 @@ interface FacilityPlan {
   id: string;
   title: string;
   description: string;
-  impact: positive | negative | neutra'l';
+  impact: positive | negative | neutra'l
   confidence: 'number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {

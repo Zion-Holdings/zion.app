@@ -1,11 +1,11 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import fs from 'fs';
-import path from 'path';
+import { NextApiRequest, NextApiResponse } from 'next
+import fs from 'fs
+import path from 'path
 
 interface AgentStatus {
   agentId: string;
   type: string;
-  status: 'active' | 'idle' | 'error' | 'stopped';
+  status: 'active' | 'idle' | 'error' | 'stopped
   lastActivity: string;
   pid?: number;
   workload?: number;
@@ -21,7 +21,7 @@ interface SystemHealth {
   timestamp: string;
   activeAgents: number;
   totalAgents: number;
-  systemHealth: 'healthy' | 'warning' | 'error';
+  systemHealth: 'healthy' | 'warning' | 'error
   memoryUsage?: {
     rss: number;
     heapTotal: number;

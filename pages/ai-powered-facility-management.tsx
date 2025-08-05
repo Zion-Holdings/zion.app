@@ -48,7 +48,7 @@ interface FacilityPlan {
   equipment: string;
   type: preventive | corrective | emergency;
   priority: 'low | 'medium | hig'h' | critical;
-  status: 'scheduled | in-progress | completed';
+  status: 'scheduled | in-progress | completed
   scheduledDate: 'string;
   estimatedDuration: string;
   assignedTo: string;
@@ -440,5 +440,5 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
     </PageLayout>;
                 );
 };"
-';
+
 export default $1;""</div>

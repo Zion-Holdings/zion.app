@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -8,8 +8,8 @@ interface FacilityPlan {
   id: "'string;
   name: string;
   description: string;
-  status: active | inactive | draft | archive'd';
-  category: 'business | technical | marketing'' | sales | 'suppo'rt | custom';
+  status: active | inactive | draft | archive'd
+  category: 'business | technical | marketing'' | sales | 'suppo'rt | custom
   priority: 'low | medium | hi'gh | critical;
   steps: 'WorkflowStep[];
   triggers: WorkflowTrigger[];
@@ -31,7 +31,7 @@ interface FacilityPlan {
 interface FacilityPlan {
   id: string;
   name: string;
-  type: event | schedule | manual | api | webhoo'k';
+  type: event | schedule | manual | api | webhoo'k
   condition: 'string;
   isActive: boolean;
   lastTriggered?: Date;
@@ -45,7 +45,7 @@ interface FacilityPlan {
   predictedImprovements: WorkflowImprovement[];}
 interface FacilityPlan {
   id: string;
-  type: performance | cost | reliability | scalability';
+  type: performance | cost | reliability | scalability
   description: 'string;
   impact: number;
   implementationTime: number;
@@ -79,7 +79,7 @@ interface FacilityPlan {
 interface FacilityPlan {
   id: string;
   'name: 'string;
-  type: api | webhook | database | service | custom';
+  type: api | webhook | database | service | custom
   provider: 'string;
   status: active | inactive | err'or | maintenance;
   endpoints: 'IntegrationEndpoint[];
@@ -120,7 +120,7 @@ interface FacilityPlan {
   id: string;
   title: string;
   description: string;
-  impact: positive | negative | neutral'';
+  impact: positive | negative | neutral'
   confidence: 'number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {
@@ -922,5 +922,5 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
   </div>
 ;
 };
-';
+
 export default AIPoweredWorkflowOrchestrationPage )))))))))))))))))))))))))"'"</div>

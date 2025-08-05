@@ -1,5 +1,5 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import OpenAI from openai';
+import { NextApiRequest, NextApiResponse } from 'next
+import OpenAI from openai
 
 // Only create OpenAI client if API key is available;
 const $1 = process.env.OPENAI_API_KEY

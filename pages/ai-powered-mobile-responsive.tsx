@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link";
@@ -8,7 +8,7 @@ import { Home, Search, User }  from "lucide-react;
 interface FacilityPlan {
   id: "'string;
   name: string;
-  type: smartphone | tablet | phablet | foldable';
+  type: smartphone | tablet | phablet | foldable
   screenSize: 'string;
   resolution: string;
   pixelDensity: number;

@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next
 import { createClient } from @supabase/supabase-js
 ;
 const $1 = createClient(
@@ -35,4 +35,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(500).json({
       success: false,
       error: error instanceof Error ? error.message : Unknown error}}
-} ))))';
+} ))))

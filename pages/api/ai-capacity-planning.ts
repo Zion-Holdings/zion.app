@@ -1,11 +1,11 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next
 
 interface FacilityPlan {
   id: string;
   name: string;
-  type: 'infrastructure' | 'workforce' | 'technology' | 'financial';
-  status: 'draft' | 'active' | 'completed' | 'archived';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  type: 'infrastructure' | 'workforce' | 'technology' | 'financial
+  status: 'draft' | 'active' | 'completed' | 'archived
+  priority: 'low' | 'medium' | 'high' | 'critical
   startDate: string;
   endDate: string;
   currentCapacity: number;
@@ -22,7 +22,7 @@ interface DemandForecast {
   currentDemand: number;
   predictedDemand: number;
   confidence: number;
-  trend: 'increasing' | 'decreasing' | 'stable';
+  trend: 'increasing' | 'decreasing' | 'stable
   factors: string[];
   lastUpdated: string;
 }
@@ -44,15 +44,15 @@ interface ResourceCapacity {
 
 interface OptimizationRecommendation {
   id: string;
-  type: 'scaling' | 'efficiency' | 'cost' | 'timing';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  type: 'scaling' | 'efficiency' | 'cost' | 'timing
+  priority: 'low' | 'medium' | 'high' | 'critical
   title: string;
   description: string;
   impact: string;
   implementationCost: number;
   expectedROI: number;
   timeframe: string;
-  status: pending | approved | implemented | 'rejected';
+  status: pending | approved | implemented | 'rejected
 }
 
 const mockCapacityPlans: CapacityPlan[] = [
@@ -63,7 +63,7 @@ const mockCapacityPlans: CapacityPlan[] = [
     status: 'active',
     priority: 'critical',
     startDate: '2024-01-01',
-    endDate: '2024-06-30,
+    endDate: '2024-06-30',
     currentCapacity: 80,
     targetCapacity: 120,
     utilization: 85,

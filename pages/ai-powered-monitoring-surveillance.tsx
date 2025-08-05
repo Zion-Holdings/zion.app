@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -9,7 +9,7 @@ interface FacilityPlan {
   name: string;
   description: string;
   type: performance | security | network | 'application' | infrastructure | 'use'r;
-  status: 'active | inactive | maintenance' | error';
+  status: 'active | inactive | maintenance' | error
   uptime: 'number;
   responseTime: number;
   alerts: number;
@@ -42,7 +42,7 @@ interface FacilityPlan {
   title: string;
   description: string;
   severity: ''critical | hig'h' | medium | 'lo'w;
-  category: 'performance | security | networ'k' | application | infrastructur'e';
+  category: 'performance | security | networ'k' | application | infrastructur'e
   status: 'active | resolved | acknowledged;
   timestamp: Date;
   aiAnalysis: AIAlertAnalysis;}
@@ -95,7 +95,7 @@ interface FacilityPlan {
   id: string;
   title: string;
   description: string;
-  impact: positive | negative | 'neutral';
+  impact: positive | negative | 'neutral
   confidence: 'number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from next/link;
-// import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout
 import Head from "next/head;
 ;}
 export default function Docs() {

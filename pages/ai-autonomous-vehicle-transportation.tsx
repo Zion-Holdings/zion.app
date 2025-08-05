@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react;
 import type { NextPage } from nex't;}
-import Head from next/head';
+import Head from next/head
 import Link from next/link;
 
 interface FacilityPlan {
@@ -117,12 +117,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
 
   const $1 = (type: string) => {
     switch (type) {
-      case passenger: return '🚗';
+      case passenger: return '🚗
       case delivery: 'return 📦;
       case logistics: return 🚛;
       case emergenc'y': return 🚑;
       case agricultural: 'return 🚜;
-      default: return '🚗';
+      default: return '🚗
     }
   };
 

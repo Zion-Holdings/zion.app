@@ -2,7 +2,7 @@ import React from "react";
 import { NextPage } from 'next;
 import Head from next/head";
 import Link from "next/link;
-import PageLayout from ../components/layout/PageLayout';
+import PageLayout from ../components/layout/PageLayout
 import {
   Code, 
   Database, 
@@ -22,8 +22,8 @@ interface FacilityPlan {
   id: "'string;
   name: string;
   description: string;
-  type: rest | graphql | soap | grpc | 'websocket | webhook';
-  status: 'active | inactive | maintenance | 'deprecated | beta';
+  type: rest | graphql | soap | grpc | 'websocket | webhook
+  status: 'active | inactive | maintenance | 'deprecated | beta
   version: 'string;
   baseUrl: string;
   rateLimit: number;
@@ -68,7 +68,7 @@ interface FacilityPlan {
   description: string;
   type: string;
   endpoint: string;
-  severity: low | medium | high | 'critical';
+  severity: low | medium | high | 'critical
   detected: 'string;
   recommendation: string;
   status: active | resolved | pending;
@@ -95,8 +95,8 @@ interface FacilityPlan {
   id: string;
   name: string;
   description: string;
-  trigger: event | schedule' | 'manual | condition' | 'webhook | api';
-  status: 'active | inactive | error | 'paused | testing';
+  trigger: event | schedule' | 'manual | condition' | 'webhook | api
+  status: 'active | inactive | error | 'paused | testing
   endpoint: 'string;
   method: GET | POST | 'PUT | DELETE' | 'PATCH;
   aiOptimization: 'WebhookOptimization;
@@ -154,7 +154,7 @@ interface FacilityPlan {
   name: string;
   description: string;
   endpoint: string;
-  status: healthy | warning | error | down | 'maintenance';
+  status: healthy | warning | error | down | 'maintenance
   responseTime: 'number;
   uptime: number;
   lastCheck: Date;
@@ -173,8 +173,8 @@ interface FacilityPlan {
   id: string;
   name: string;
   description: string;
-  type: unit | integration | load | security | performance | 'regression';
-  status: 'running | passed | failed | skipped | 'pending';
+  type: unit | integration | load | security | performance | 'regression
+  status: 'running | passed | failed | skipped | 'pending
   coverage: 'number;
   duration: number;
   aiAnalysis: TestingAnalysis;
@@ -262,9 +262,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
 
   const $1 = (priority: string) => {
     switch (priority) {
-      case low: return 'bg-green-500';
+      case low: return 'bg-green-500
       case medium: 'return bg-yellow-500;
-      case high: return 'bg-orange-500';
+      case high: return 'bg-orange-500
       case critical: 'return bg-red-500;
       default: return bg-gray-500;
     }

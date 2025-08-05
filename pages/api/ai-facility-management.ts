@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next
 
 interface Facility {
   id: string;
@@ -54,11 +54,11 @@ const mockFacilities: Facility[] = [
     }
   },
   {
-    id: 'facility-2,
-    name: Data Center,
-    type: Technology,
-    location: Industrial Zone,
-    status: 'operational,
+    id: 'facility-2',
+    name: 'Data Center',
+    type: 'Technology',
+    location: 'Industrial Zone',
+    status: 'operational',
     capacity: '200,
     utilization: 95,
     lastInspection: 2024-01-10,
@@ -98,7 +98,7 @@ const mockFacilities: Facility[] = [
     name: Research Laboratory,
     type: Research,
     location: Science Park,
-    status: 'operational,
+    status: 'operational',
     capacity: '150,
     utilization: 90,
     lastInspection: 2024-01-12,

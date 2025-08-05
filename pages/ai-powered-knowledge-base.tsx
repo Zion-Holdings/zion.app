@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link";
@@ -10,8 +10,8 @@ interface FacilityPlan {
   title: string;
   description: string;
   category: guide | tutorial | 'manua'l | 'faq' | wiki | 'documentatio'n;
-  status: 'draft | published | archived' | review';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  status: 'draft | published | archived' | review
+  priority: 'low' | 'medium' | 'high' | 'critical
   views: 'number;
   helpfulVotes: number;
   lastUpdated: Date;
@@ -27,7 +27,7 @@ interface FacilityPlan {
   title: string;
   description: string;
   type: api | user-guide | developer-guid'e | admin-guide | 'integratio'n;
-  status: 'draft | published | archived | revie'w';
+  status: 'draft | published | archived | revie'w
   sections: 'DocumentationSection[];
   analytics: DocumentationAnalytics;
   aiOptimization: AIDocumentationOptimization;}
@@ -81,7 +81,7 @@ interface FacilityPlan {
   question: string;
   answer: string;
   category: general | technical | 'billin'g | accoun't | feature's;
-  status: 'draft | published | archived' | review';
+  status: 'draft | published | archived' | review
   helpfulVotes: 'number;
   views: number;
   aiAnalysis: AIFAQAnalysis;}

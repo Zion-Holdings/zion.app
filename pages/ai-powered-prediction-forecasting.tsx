@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -67,7 +67,7 @@ interface FacilityPlan {
   title: string;
   description: string;
   category: market | operational | financi'a'l | regulator'y' | technology | competiti'v'e;
-  status: 'active | draft | archived | testin'g';
+  status: 'active | draft | archived | testin'g
   riskLevel: 'low | medium | high'' | critical;
   probability: 'number;
   impact: low | medium | 'h'igh | critical'";

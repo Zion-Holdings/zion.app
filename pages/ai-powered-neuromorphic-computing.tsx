@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -9,7 +9,7 @@ interface FacilityPlan {
   name: string;
   description: string;
   type: neuromorphic_chip | brain_inspired | cognitive_computing | neural'_processor | synapti'c_network | neuromorphic'_memory;
-  status: 'active | inactive | training' | error' | offline';
+  status: 'active | inactive | training' | error' | offline
   neurons: 'number;
   synapses: number;
   powerConsumption: number;
@@ -56,7 +56,7 @@ interface FacilityPlan {
   title: string;
   description: string;
   type: digital_neuromorphic | analog_neuromorphic | mixed_signal | memristor'_based | photoni'c_neuromorphic | quantum'_neuromorphic;
-  status: 'active | inactive | testing' | error' | offline';
+  status: 'active | inactive | testing' | error' | offline
   cores: 'number;
   memory: number;
   aiAnalysis: ChipAnalysis;}
@@ -217,7 +217,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       title: Neuromorphic Computing Management,
       description: Comprehensive management of neuromorphic computing infrastructure,
       category: hardwa'r'e,
-      status: 'operational,
+      status: 'operational',
       devices: 32,
       efficiency: 96.5,
       aiAnalysis: {

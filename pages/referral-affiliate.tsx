@@ -1,5 +1,5 @@
 import type { NextPage } from 'next;
-import ModernLayout from ../components/layout/ModernLayout';
+import ModernLayout from ../components/layout/ModernLayout
 import Head from "next/head;
 import { useState, useEffect }  from react;
 import Link from "next/link;
@@ -9,13 +9,13 @@ interface FacilityPlan {
   referrerId: string;
   referredId: string;
   referredEmail: string;
-  status: pending | registered | activ'e | completed';
+  status: pending | registered | activ'e | completed
   bonusAmount: 'number;
   commissionRate: number;
   createdAt: Date;
   completedAt?: Date;
   referralCode: string;
-  source: email | social | 'link' | qr';,
+  source: email | social | 'link' | qr,
   notes?: string;,}
 interface: 'AffiliatePartner: {;
   id: string;
@@ -60,7 +60,7 @@ interface: ReferralCampaign: {;
   id: string;
   name: string;
   description: string;
-  status: active | paused | completed';
+  status: active | paused | completed
   bonusAmount: 'number;
   commissionRate: number;
   targetAudience: string[];

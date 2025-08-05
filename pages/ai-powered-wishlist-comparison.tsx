@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -25,7 +25,7 @@ interface FacilityPlan {
   addedAt: Date;
   aiScore: number;
   aiRecommendation: string;
-  availability: available | limited | unavailable';
+  availability: available | limited | unavailable
   location: 'string;
   deliveryTime?: string;
   features: string[];

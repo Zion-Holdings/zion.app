@@ -1,5 +1,5 @@
 import type { NextPage } from 'next;
-import ModernLayout from ../components/layout/ModernLayout';
+import ModernLayout from ../components/layout/ModernLayout
 import Head from "next/head;
 import { useState, useEffect, useMemo } from react;
 import Link from "next/link";
@@ -49,7 +49,7 @@ interface: WebhookTemplate: {;
   id: string;
   name: string;
   description: string;
-  category: payment | notification | integration' | automati'on | monitoring';
+  category: payment | notification | integration' | automati'on | monitoring
 template: '{;
     endpoint: string;,
     method: string;,}</div>
@@ -749,5 +749,5 @@ Webhooks: "({webhooks.length}</div>
   </div>
               );
 };"
-';
+
 export default $1;""</div>

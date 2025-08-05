@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next
 
 interface FacilityPlan {
   preferences: "'string[];
@@ -220,11 +220,11 @@ function generateAIInsights(item: 'Recommendation, profile: UserProfile): string
   if (profile.projectType) {
     const $1 = profile.projectType.toLowerCase();
     if (projectType.includes(ai) || projectType.includes(ml)) {
-      if (item.tags.some(tag = > tag.toLowerCase().includes(ai') || tag.toLowerCase().includes(machine learning))) {';
+      if (item.tags.some(tag = > tag.toLowerCase().includes(ai') || tag.toLowerCase().includes(machine learning))) {
         insights.push(Perfec't match for your AI project requirements);
       }
     } else if (projectType.includes(w'eb)) {
-      if (item.tags.some(tag = > tag.toLowerCase().includes('web) || tag.toLowerCase().includes(rea'ct))) {';
+      if (item.tags.some(tag = > tag.toLowerCase().includes('web) || tag.toLowerCase().includes(rea'ct))) {
         insights.push(Ideal for your web development needs');}}}
   // Budget insights
   if (profile.budget) {
@@ -236,7 +236,7 @@ function generateAIInsights(item: 'Recommendation, profile: UserProfile): string
   // Timeline insights
   if (profile.timeline) {
     const $1 = profile.timeline.toLowerCase();
-    if (timeline.includes(1-2 weeks) && item.type = == tale'nt) {';
+    if (timeline.includes(1-2 weeks) && item.type = == tale'nt) {
       insights.push(Available for your immediate timeline');
     } else if (timeline.includes(1-2 months) && item.type = == 'service) {;'
       insights.push(Perfect' timeline for your project duration);}}

@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link";
@@ -25,7 +25,7 @@ interface FacilityPlan {
   name: string;
   description: string;
   icon: string;
-  category: transaction | social | skil'l' | milestone | specia'l';
+  category: transaction | social | skil'l' | milestone | specia'l
   rarity: 'common | rare | epic'' | legendary;
   unlockedAt?: Date;
   progress?: number;

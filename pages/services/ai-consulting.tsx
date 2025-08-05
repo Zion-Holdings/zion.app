@@ -1,5 +1,5 @@
 import React from "react";
-// import ModernLayout from '../components/layout/ModernLayout';
+// import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import Layout from ../../components/Layout";
 ;
@@ -33,5 +33,5 @@ const $1 = () => {
   </div>,
   );
 };
-';
+
 export default $1;</div>

@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link";
@@ -10,7 +10,7 @@ interface FacilityPlan {
   name: string;
   description: string;
   type: facial_recognition | fingerprint_scanning | voice_recognition | iris_scanning | gai't_analysis | 'behavioral_biometrics;
-  status: 'active | inactive | training' | err'or | offline';
+  status: 'active | inactive | training' | err'or | offline
   accuracy: 'number;
   falsePositiveRate: number;
   processingTime: number;
@@ -41,7 +41,7 @@ interface FacilityPlan {
   name: string;
   description: string;
   type: optical_scanning | capacitive_scanning | ultrasonic_scanning | thermal_scanning | 'pressur'e_scanning | multispectral_scanning;
-  status: 'active | inactive | trainin'g' | error | offlin'e';
+  status: 'active | inactive | trainin'g' | error | offlin'e
   minutiaePoints: 'number;
   qualityScore: number;
   aiAnalysis: FingerprintAnalysis;}
@@ -222,7 +222,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       title: Biometric Security Center,
       description: Centralized biometric security management system,
       category: 'securi'ty,
-      status: 'operational,
+      status: 'operational',
       devices: 25,
       securityLevel: 95,
       aiAnalysis: {

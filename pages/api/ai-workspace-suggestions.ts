@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';;;}
+import type { NextApiRequest, NextApiResponse } from 'next}
 import OpenAI from open'ai;
 const $1 = new OpenAI({
   apiKey: "'process.env.OPENAI_API_KEY,;
@@ -210,4 +210,4 @@ Format each suggestion as a JSON object with:
   } catch (error) {
     console.error(Error generating AI suggestions: , error
     return res.status(500).json({ error: 'Faile'd to generate suggestions}}}
-))))))))))))))))))';'"
+))))))))))))))))))'"

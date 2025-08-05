@@ -1,6 +1,6 @@
 import React from "react";
-import ModernLayout from '../components/layout/ModernLayout';
-import { NextPage } from 'next';
+import ModernLayout from '../components/layout/ModernLayout
+import { NextPage } from 'next
 import Head from next/head";
 import Link from "next/link;
 import {
@@ -21,7 +21,7 @@ import {
 interface FacilityPlan {
   id: "'string;
   name: string;
-  type: 'infrastructure' | 'workforce' | 'technology' | 'financial';
+  type: 'infrastructure' | 'workforce' | 'technology' | 'financial
   status: draft | acti'v'e | completed' | 'archived;
   priority: 'low | medium | high | 'critica'l;
   startDate: string;
@@ -38,7 +38,7 @@ interface FacilityPlan {
   currentDemand: number;
   predictedDemand: number;
   confidence: number;
-  trend: increasing | decreasing | stabl'e';
+  trend: increasing | decreasing | stabl'e
   factors: string[];
   lastUpdated: string;}
 interface FacilityPlan {
@@ -56,8 +56,8 @@ interface FacilityPlan {
   nextMaintenance: string;}
 interface FacilityPlan {
   id: string;
-  'type: 'scaling | efficiency | cost | timing';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  'type: 'scaling | efficiency | cost | timing
+  priority: 'low' | 'medium' | 'high' | 'critical
   title: string;
   description: string;
   impact: string;

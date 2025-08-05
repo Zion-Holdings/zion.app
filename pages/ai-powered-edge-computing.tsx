@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -9,7 +9,7 @@ interface FacilityPlan {
   name: string;
   description: string;
   type: iot_gateway | edge_server | micro_data_center | edge'_device | edg'e_router | edge'_storage;
-  status: 'active | inactive | maintenance' | error' | offline';
+  status: 'active | inactive | maintenance' | error' | offline
   location: 'string;
   capacity: number;
   latency: number;
@@ -57,7 +57,7 @@ interface FacilityPlan {
   title: string;
   description: string;
   type: real_time | batch_processing | stream_processing | 'predictive' | descriptive' | prescriptiv'e;
-  status: 'running | completed | failed' | scheduled';
+  status: 'running | completed | failed' | scheduled
   dataPoints: 'number;
   processingTime: number;
   aiAnalysis: AnalyticsAnalysis;}
@@ -599,5 +599,5 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
   </div>
 ;
 };
-';
+
 export default AIPoweredEdgeComputingPage )))))))))))))))))))))))))))))''"</div>

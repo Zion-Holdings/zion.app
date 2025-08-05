@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -8,8 +8,8 @@ interface FacilityPlan {
   id: "'string;
   title: string;
   description: string;
-  type: meeting | webinar | workshop | ''conference | deadline' | 'milestone | custo'm';
-  status: 'upcoming | ongoing | completed | cancelled';
+  type: meeting | webinar | workshop | ''conference | deadline' | 'milestone | custo'm
+  status: 'upcoming | ongoing | completed | cancelled
   priority: 'low | medium | hi'gh | critical;
   startDate: 'Date;
   endDate: Date;
@@ -30,7 +30,7 @@ interface FacilityPlan {
   duration: number;
   speaker?: string;
   description: string;
-  status: pending | in-progress | completed';
+  status: pending | in-progress | completed
 interface FacilityPlan {
   attendanceRate: 'number;
   engagementScore: number;
@@ -62,7 +62,7 @@ interface FacilityPlan {
   days: string[];}
 interface FacilityPlan {
   id: string;
-  type: available | busy | tentative | out-of-offic'e';
+  type: available | busy | tentative | out-of-offic'e
   startTime: 'string;
   endTime: string;
   days: string[];}

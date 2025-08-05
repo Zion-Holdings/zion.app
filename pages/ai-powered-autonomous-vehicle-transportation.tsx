@@ -2,13 +2,13 @@ import React, { useState, useEffect, useMemo } from "react;
 import type { NextPage } from next";
 import Head from "next/head;
 import Link from next/link";
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 
 interface AutonomousVehicle {
   id: "'string;
   name: string;
-  type: passenger | cargo | emergency | delivery'';
-  status: 'active | maintenance | offline | charging'';
+  type: passenger | cargo | emergency | delivery'
+  status: 'active | maintenance | offline | charging'
   location: '{
     lat: number;
     lng: number;
@@ -27,7 +27,7 @@ interface TransportationRoute {
   destination: string;
   distance: number;
   estimatedTime: number;
-  status: scheduled | in-progress | completed | cancelled';
+  status: scheduled | in-progress | completed | cancelled
   vehicleId: 'string;
   priority: low | medium | high | 'urgent;
   passengers?: number;
@@ -164,18 +164,18 @@ const AIPoweredAutonomousVehicleTransportation: NextPage = () => {
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
-      case low: return bg-green-100 text-green-800';
+      case low: return bg-green-100 text-green-800
       case 'medium: 'return bg-yellow-100 text-yellow-800;
-      case high: return bg-orange-100 text-orange-800';
+      case high: return bg-orange-100 text-orange-800
       case 'urgent: 'return bg-red-100 text-red-800;
       default: return bg-gray-100 text-gray-800;
     }
   };
 
   const getBatteryColor = (battery: number) => {
-    if (battery >= 80) return text-green-600';
+    if (battery >= 80) return text-green-600
     if (battery >= 60) return 'text-yellow-600;
-    return text-red-600';
+    return text-red-600
   };
 
   const getVehicleTypeIcon = ('type: 'string) => {
@@ -184,7 +184,7 @@ const AIPoweredAutonomousVehicleTransportation: NextPage = () => {
       case cargo: return 🚛;
       case 'emergency': return 🚑;
       case 'delivery': return 📦;
-      default: return '🚗';
+      default: return '🚗
     }
   };
 

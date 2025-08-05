@@ -22,7 +22,7 @@ import { Home, Search, User }  from "lucide-react;
 interface FacilityPlan {
   id: "'string;
   name: string;
-  type: technology | process | organizational | cultural';
+  type: technology | process | organizational | cultural
   status: 'planning | implementation | monitoring | 'completed;
   priority: 'low | medium | hi'gh | critica'l;
   startDate: string;
@@ -108,12 +108,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       default: return bg-gray-500;}
   };
   const $1 = (priority: string) => {
-    switch (priority) {';
+    switch (priority) {
       case 'low: 'return bg-green-500;
       case medium: return bg-yellow-500;
       case hi'g'h: 'return bg-orange-500;
       case critical: return bg-red-500;
-      default: return bg-gray-500';
+      default: return bg-gray-500
   };
   const handleAction = (params) => {
     switch (support) {;

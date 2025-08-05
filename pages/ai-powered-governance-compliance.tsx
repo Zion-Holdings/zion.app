@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -7,8 +7,8 @@ import Link from next/link;
 interface FacilityPlan {
   id: "'string;
   name: string;
-  category: data-privacy | security | financia'l' | operational' | 'regulatory | custo'm';
-  status: 'active | draft | review | archived';
+  category: data-privacy | security | financia'l' | operational' | 'regulatory | custo'm
+  status: 'active | draft | review | archived
   priority: 'low | medium | hi'gh | critical;
   description: 'string;
   complianceRate: number;

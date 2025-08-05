@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -112,7 +112,7 @@ interface FacilityPlan {
   id: string;
   title: string;
   description: string;
-  impact: positive | negative | neutra'l';
+  impact: positive | negative | neutra'l
   confidence: 'number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {
@@ -217,7 +217,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       title: Nanotechnology Management',
       description: 'Comprehensive management of nanotechnology research and development,
       category: research,
-      status: 'operational,
+      status: 'operational',
       devices: '15,
       efficiency: 96.5,
       aiAnalysis: {

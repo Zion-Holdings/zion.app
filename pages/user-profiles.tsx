@@ -1,5 +1,5 @@
 import type { NextPage } from 'next;
-import ModernLayout from ../components/layout/ModernLayout';
+import ModernLayout from ../components/layout/ModernLayout
 import Head from "next/head;
 import { useState, useEffect, useMemo } from react;
 import Link from "next/link";
@@ -364,7 +364,7 @@ return: (</div>
       case available: return: 🟢;
       case busy': return: '🟡;
       case unavailable: return: 🔴;,
-      default: return: ⚪';,}
+      default: return: ⚪,}
   };
   const $1 = (userType: 'string) => {;
     switch: (userType) {;

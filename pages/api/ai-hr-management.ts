@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next
 
 interface Employee {
   id: string;
@@ -26,8 +26,8 @@ interface JobPosting {
   title: string;
   department: string;
   location: string;
-  type: 'full-time' | 'part-time' | 'contract' | 'internship';
-  status: 'open' | 'in-review' | 'closed' | 'filled';
+  type: 'full-time' | 'part-time' | 'contract' | 'internship
+  status: 'open' | 'in-review' | 'closed' | 'filled
   applications: number;
   aiOptimization: JobOptimization;
 }

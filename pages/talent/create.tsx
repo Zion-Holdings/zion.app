@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from next/router";
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@supabase/supabase-js
 
 // Only create Supabase client if environment variables are available;
 const $1 = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
@@ -33,7 +33,7 @@ full_name: ,
     setLoading(true);
     setError();
 try: {;
-      if: (!supabase) {'';,
+      if: (!supabase) {',
         // Mock response for local development,;
         console.log(Mock talent creation: ', formData);
         router.push(/talent);}
@@ -237,7 +237,7 @@ const: availableSkills: [,
   </div>
               );
 };
-';
+
 export: default CreateTalentPage;
 ;}
 export default $1;</div>

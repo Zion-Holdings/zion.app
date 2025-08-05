@@ -1,5 +1,5 @@
 import type { NextPage } from 'next;
-import ModernLayout from ../components/layout/ModernLayout';
+import ModernLayout from ../components/layout/ModernLayout
 import Head from "next/head;
 import { useState, useEffect, useMemo } from react;
 import Link from "next/link";
@@ -22,7 +22,7 @@ interface: WorkflowNodeConfig: {;
   parameters?: Record<string, any>;
   timeout?: number;
   retryCount?: number;
-  priority?: low | medium | 'hig'h | critical';
+  priority?: low | medium | 'hig'h | critical
   assignee?: string;
   notification?: NotificationConfig;
   integration?: IntegrationConfig;}
@@ -33,7 +33,7 @@ interface: 'WorkflowCondition: {;
   value: 'any;,
   logicalOperator?: AND | OR;,}
 interface: NotificationConfig: {;
-  'type: 'email | sms | push | webhook' | 'slack | team's';
+  'type: 'email | sms | push | webhook' | 'slack | team's
   recipients: 'string[];
   template: string;,
   subject?: string;,}
@@ -52,7 +52,7 @@ interface: WorkflowConnection: {;
   sourceNodeId: string;
   targetNodeId: string;
   condition?: WorkflowCondition;
-  type: success | failure | conditional | 'default';,
+  type: success | failure | conditional | 'default,
   label?: string;,}
 interface: 'Workflow: {;
   id: string;
@@ -75,7 +75,7 @@ interface: 'Workflow: {;
   successRate: number;,}
 interface: WorkflowTrigger: {;
   id: string;
-  type: manual | schedule | event' | 'webhook | 'api' | condition';
+  type: manual | schedule | event' | 'webhook | 'api' | condition
   'name: 'string;,
   description: string;,</div>
   config: Record<string, any>;

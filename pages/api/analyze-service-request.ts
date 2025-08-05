@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';;;}
+import type { NextApiRequest, NextApiResponse } from 'next}
 import OpenAI from open'ai;
 const $1 = new OpenAI({
   apiKey: "'process.env.OPENAI_API_KEY,;
@@ -132,4 +132,4 @@ Provide realistic and practical insights that would help both the client and pot
         recommendedApproach: 'Agile development with regular client feedback and milestone reviews
       }
       message: Service request analyzed successfully (fallback analysis)}}'
-} )))))))))';"'"
+} )))))))))"'"

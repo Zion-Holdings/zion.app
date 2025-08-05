@@ -1,5 +1,5 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import { createClient } from @supabase/supabase-js';
+import { NextApiRequest, NextApiResponse } from 'next
+import { createClient } from @supabase/supabase-js
 
 // Only create Supabase client if environment variables are available;
 const $1 = process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
@@ -62,7 +62,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(200).json([]);}
       let $1 = supabase
         .from('quote_requests
-        .select(*';
+        .select(*
         .order('created_at, { ascending: 'false });
 
       if (email) {

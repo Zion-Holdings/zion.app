@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -23,7 +23,7 @@ interface FacilityPlan {
   };
   sensors: {
     type: string;
-    status: active | inactive | error';
+    status: active | inactive | error
     data: 'any;
   }[];}
 interface FacilityPlan {
@@ -31,7 +31,7 @@ interface FacilityPlan {
   robotId: string;
   taskType: assembly | inspectio'n | transport' | 'cleaning | weldi'n'g | painting;
   status: 'queued | running | complet'e'd | failed | 'pause'd;
-  priority: 'low | medium | high | urgen't';
+  priority: 'low | medium | high | urgen't
   startTime: 'Date;
   endTime?: Date;
   duration: number;
@@ -455,7 +455,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
     } 1000);
   }, []);
   const $1 = useMemo(() => {'
-    let $1 = robots.filter(robot => {';
+    let $1 = robots.filter(robot => {
       if (filterType !== all && robot.type !== filterType) return false;
       if (filterStatus !== al'l' && robot.status !== filterStatus) return false;
       if (searchTerm && !robot.name.toLowerCase().includes(searchTerm.toLowerCase())) {

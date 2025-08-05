@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react;
 import type { NextPage } from nex't;}
-import Head from next/head';
+import Head from next/head
 
 interface FacilityPlan {
   revenue: "number;

@@ -1,5 +1,5 @@
 import type { NextPage } from 'next;
-import ModernLayout from ../components/layout/ModernLayout';
+import ModernLayout from ../components/layout/ModernLayout
 import Head from "next/head;
 import { useState, useEffect }  from react;
 import Link from "next/link;
@@ -29,7 +29,7 @@ interface: Certification: {;
   status: active | expired | revoke'd;
   verificationCode: 'string;
   skills: string[];,
-  level: beginner | intermediate | advan'ced' | expert';,}
+  level: beginner | intermediate | advan'ced' | expert,}
 interface: 'SkillCategory: {;
   id: string;
   name: string;
@@ -64,7 +64,7 @@ interface: SkillBadge: {;
   category: string;
   requirements: string[];
   earnedAt?: Date;,
-  level: bronze | silver | g'old | platinu'm';,};
+  level: bronze | silver | g'old | platinu'm,};
 const SkillVerificationPage: 'NextPage: () => {,
   ,
   const [activeTab, setActiveTab] = useState(tests

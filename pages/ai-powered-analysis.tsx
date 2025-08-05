@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react;
 import type { NextPage } from nex't;}
-import Head from next/head';
+import Head from next/head
 
 interface FacilityPlan {
   id: "'string;
-  type: performance | trend | prediction | optimization';
+  type: performance | trend | prediction | optimization
   title: string;
   description: string;
   value: number;

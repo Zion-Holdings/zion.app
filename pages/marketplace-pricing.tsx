@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect }  from "react;}
 import Link from next/link;
@@ -7,7 +7,7 @@ import Link from next/link;
 interface FacilityPlan {
   id: "'string;
   name: string;
-  type: basic | premium | enterprise | custom';
+  type: basic | premium | enterprise | custom
   monthlyFee: 'number;
   yearlyFee: number;
   transactionFee: number; // percentage
@@ -49,7 +49,7 @@ interface FacilityPlan {
   totalFees: number;
   netAmount: number;
   date: Date;
-  status: pending | completed | refunded';
+  status: pending | completed | refunded
 interface FacilityPlan {
   id: string;
   period: string;

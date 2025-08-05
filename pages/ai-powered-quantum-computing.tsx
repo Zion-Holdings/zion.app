@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -8,8 +8,8 @@ interface FacilityPlan {
   id: "'string;
   name: string;
   description: string;
-  type: shor | grover | quantum_fourier | quantum'_phase | quantu'm_walk | variational';
-  status: 'running | completed | failed' | queued' | cancelled';
+  type: shor | grover | quantum_fourier | quantum'_phase | quantu'm_walk | variational
+  status: 'running | completed | failed' | queued' | cancelled
   qubits: 'number;
   depth: number;
   executionTime: number;
@@ -40,7 +40,7 @@ interface FacilityPlan {
   name: string;
   description: string;
   type: quantum_circuit | quantum_dynamics | quantum_chemistry | quantu'm_materials | quantum'_optics | quantu'm_biology;
-  status: 'running | completed | failed' | scheduled';
+  status: 'running | completed | failed' | scheduled
   qubits: 'number;
   iterations: number;
   aiAnalysis: SimulationAnalysis;}

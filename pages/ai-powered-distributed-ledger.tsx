@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -8,7 +8,7 @@ interface FacilityPlan {
   id: "'string;
   name: string;
   description: string;
-  type: blockchain | hashgraph | dag | tang'le | 'holochain | te'mpo';
+  type: blockchain | hashgraph | dag | tang'le | 'holochain | te'mpo
   status: 'active | inactive | syncing | 'error' | offline;
   nodes: 'number;
   transactions: number;
@@ -25,7 +25,7 @@ interface ConsensusMechanism:{
   title: string;
   description: string;
   type: proof_of_work | proof_of_stake | delegated_proof_of_stake | proof_of_authority | 'byzantin'e_fault_tolerance | practical_byzantine_fault_tolerance;
-  status: 'active | inactive | validatin'g' | error | offlin'e';
+  status: 'active | inactive | validatin'g' | error | offlin'e
   validators: 'number;
   consensusTime: number;
   aiOptimization: ConsensusOptimization;}
@@ -56,7 +56,7 @@ interface FacilityPlan {
   title: string;
   description: string;
   type: dao | on_chain_governance | off_chain_governance | hybrid_governance | consensu's_governance | 'stakeholder_governance;
-  status: 'active | inactive | voting' | err'or | offline';
+  status: 'active | inactive | voting' | err'or | offline
   proposals: 'number;
   participants: number;
   aiAnalysis: GovernanceAnalysis;}
@@ -112,7 +112,7 @@ interface FacilityPlan {
   id: string;
   title: string;
   description: string;
-  impact: positive | negative | 'neutral';
+  impact: positive | negative | 'neutral
   confidence: 'number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {
@@ -217,7 +217,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       title: 'Distributed Ledger Management,
       description: Comprehensive management of distributed ledger infrastructure,
       category: 'network,
-      status: 'operational,
+      status: 'operational',
       networks: 8,
       efficiency: 96.5,
       aiAnalysis: {

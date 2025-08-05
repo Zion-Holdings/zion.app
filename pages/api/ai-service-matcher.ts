@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';;
+import type { NextApiRequest, NextApiResponse } from 'next;
 interface FacilityPlan {
   id: "'string
   title: string
@@ -65,4 +65,4 @@ export default async function handler(
     return res.status(500).json({ 
       error: Internal server error,
       message: 'Failed to analyze service requirements'}}'
-} )))))))))))))))))';
+} )))))))))))))))))

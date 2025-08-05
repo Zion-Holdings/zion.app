@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -23,7 +23,7 @@ interface FacilityPlan {
   };
   features: {
     type: string;
-    status: active | inactive | error';
+    status: active | inactive | error
     data: 'any;
   }[];}
 interface FacilityPlan {
@@ -31,7 +31,7 @@ interface FacilityPlan {
   experienceId: string;
   sessionType: gaming | exploratio'n | training' | 'social | eve'n't | shopping;
   status: 'active | completed | fail'e'd | paused | 'queue'd;
-  priority: 'low | medium | high | urgen't';
+  priority: 'low | medium | high | urgen't
   startTime: 'Date;
   endTime?: Date;
   duration: number;
@@ -502,7 +502,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       case failed: return text-red-400 bg-red-500/20;
       case queu'e'd: 'return text-yellow-400 bg-yellow-500/20;
       case paused: return text-orange-400 bg-orange-500/20;
-      default: return text-gray-400 bg-gray-500/20';
+      default: return text-gray-400 bg-gray-500/20
   };
   const $1 = ('type: 'string) => {
     switch (type) {;

@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link";
@@ -11,9 +11,9 @@ interface FacilityPlan {
   value: number;
   previousValue: number;
   unit: string;
-  trend: up | down | stable'';
+  trend: up | down | stable'
   changePercent: 'number;
-  category: financial | operational | customer'' | market | 'technolo'gy | strategic';
+  category: financial | operational | customer'' | market | 'technolo'gy | strategic
   priority: 'high | medium | lo'w;
   target?: number;
   status: 'on-track | at-risk | behind | 'exceedi'ng;}
@@ -22,7 +22,7 @@ interface FacilityPlan {
   name: string;
   description: string;
   category: growth | efficiency | innovatio'n | 'risk | complianc'e;
-  status: 'on-track | at-risk | behin'd | completed';
+  status: 'on-track | at-risk | behin'd | completed
   progress: 'number;
   startDate: Date;
   endDate: Date;
@@ -36,7 +36,7 @@ interface FacilityPlan {
   title: string;
   description: string;
   category: opportunity | threa't | tr'end | 'competition;
-  impact: 'high | mediu'm | low';
+  impact: 'high | mediu'm | low
   confidence: 'number;
   source: string;
   date: Date;
@@ -379,7 +379,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       default: "return text-gray-400;}
   };
   const $1 = (priority: string) => {
-    switch (priority) {';
+    switch (priority) {
       case critica'l: 'return bg-red-600;
       case high: return bg-orange-600;
       case medi'um: 'return bg-yellow-1200;

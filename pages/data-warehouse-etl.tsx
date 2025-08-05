@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect }  from "react;}
 import Link from next/link;
@@ -8,8 +8,8 @@ import { motion, AnimatePresence }  from "framer-motion;
 interface FacilityPlan {
   id: "'string;
   name: string;
-  type: database | api | file | stream';
-  status: 'connected | disconnected | error';
+  type: database | api | file | stream
+  status: 'connected | disconnected | error
   recordCount: 'number;
   size: number;
   lastSync?: Date;}
@@ -28,7 +28,7 @@ interface FacilityPlan {
   id: string;
   name: string;
   type: snowflake | redshift | bigquery;
-  status: active | inactive';
+  status: active | inactive
   size: 'number;
   recordCount: number;
   tables: number;};

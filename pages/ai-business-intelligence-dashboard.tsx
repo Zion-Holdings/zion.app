@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react;
 import type { NextPage } from nex't;}
-import Head from next/head';
+import Head from next/head
 
 interface FacilityPlan {
   id: "'string;
@@ -155,7 +155,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       case up': return ↗️;
       case 'down: 'return ↘️;
       case stable: return →;
-      default: return →';
+      default: return →
     }
   };
 
@@ -170,9 +170,9 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
 
   const $1 = (type: string) => {
     switch (type) {
-      case positive: return bg-green-100 text-green-800';
+      case positive: return bg-green-100 text-green-800
       case 'negative: 'return bg-red-100 text-red-800;
-      case warning: return bg-yellow-100 text-yellow-800';
+      case warning: return bg-yellow-100 text-yellow-800
       case 'neutral: 'return bg-gray-100 text-gray-800;
       default: return bg-gray-100 text-gray-800;
     }

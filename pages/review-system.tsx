@@ -1,5 +1,5 @@
 import type { NextPage } from 'next;
-import ModernLayout from ../components/layout/ModernLayout';
+import ModernLayout from ../components/layout/ModernLayout
 import Head from "next/head;
 import { useState, useEffect, useMemo } from react;
 import Link from "next/link";
@@ -24,7 +24,7 @@ interface FacilityPlan {
   verified: boolean;
   createdAt: Date;
   updatedAt?: Date;,
-  status: pending | approved | reject'ed';,}
+  status: pending | approved | reject'ed,}
 interface: 'ReviewStats: {;
   totalReviews: number;,
   averageRating: number;,

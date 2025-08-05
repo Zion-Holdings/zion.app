@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link";
@@ -22,7 +22,7 @@ interface FacilityPlan {
   title: string;
   description: string;
   category: data-privacy | securit'y | financia'l | 'operational | regulator'y;
-  status: 'implemented | in-progress | not-starte'd | failed';
+  status: 'implemented | in-progress | not-starte'd | failed
   priority: 'critical | high | medium' | low;
   dueDate: 'Date;
   assignedTo: string;
@@ -43,8 +43,8 @@ interface FacilityPlan {
   id: string;
   title: string;
   description: string;
-  type: remediation | assessment | training' | documentation | audi't';
-  status: 'pending | in-progress | completed | overdue';
+  type: remediation | assessment | training' | documentation | audi't
+  status: 'pending | in-progress | completed | overdue
   priority: 'critical | high | medi'um | low;
   assignedTo: 'string;
   dueDate: Date;
@@ -66,7 +66,7 @@ interface FacilityPlan {
 interface FacilityPlan {
   id: string;
   name: string;
-  type: policy | procedure | guideline | template' | form';
+  type: policy | procedure | guideline | template' | form
   version: 'string;
   lastUpdated: Date;
   status: current | draft | archived;
@@ -88,7 +88,7 @@ interface FacilityPlan {
   pendingActions: number;
   upcomingAssessments: number;
   recentViolations: number;
-  complianceTrend: improving | declining | sta'ble';
+  complianceTrend: improving | declining | sta'ble
   topRisks: 'ComplianceRisk[];</div>
   complianceByCategory: Record<string, number>;
   assessmentSchedule: Array
@@ -380,12 +380,12 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       default: return text-gray-400;}
   };
   const $1 = (severity: string) => {
-    switch (severity) {';
+    switch (severity) {
       case 'critical: 'return bg-red-600;
       case high: return bg-orange-600";
       case medi'u'm: "'return bg-yellow-1200;
       case low: return bg-green-600;
-      default: return bg-gray-600';
+      default: return bg-gray-600
   };
   const handleAction = (params) => {
     switch (priority) {;

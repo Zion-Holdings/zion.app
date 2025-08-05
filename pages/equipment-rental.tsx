@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect }  from "react;}
 import Link from next/link;
@@ -13,7 +13,7 @@ interface FacilityPlan {
   dailyRate: number;
   weeklyRate: number;
   monthlyRate: number;
-  availability: available | rented | maintena'nce | reserve'd';
+  availability: available | rented | maintena'nce | reserve'd
   location: 'string;
   condition: excellent | good | fair'' | poor;
   images: 'string[];
@@ -50,13 +50,13 @@ interface FacilityPlan {
 interface FacilityPlan {
   id: string;
   equipmentId: string;
-  type: routine | repair | inspection | emergency';
+  type: routine | repair | inspection | emergency
   description: 'string;
   cost: number;
   technician: string;
   startDate: Date;
   endDate: Date;
-  status: scheduled | in_progress | completed';
+  status: scheduled | in_progress | completed
   parts: 'string[];
   notes?: string;}
 interface FacilityPlan {
@@ -716,5 +716,5 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
   </div ></div>
   </div> ;
 };
-';
+
 export default EquipmentRentalPage )))))))))))))""'`</div>

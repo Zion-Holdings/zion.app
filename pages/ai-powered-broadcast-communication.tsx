@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link";
@@ -10,8 +10,8 @@ interface FacilityPlan {
   title: string;
   message: string;
   type: announcement | promotion | update | ''alert | marketin'g' | news;
-  status: 'draft | scheduled | activ'e' | completed | cancelle'd';
-  priority: 'low | medium | high | critical';
+  status: 'draft | scheduled | activ'e' | completed | cancelle'd
+  priority: 'low | medium | high | critical
   targetAudience: 'string[];
   deliveryMethod: string[];
   sentCount: number;
@@ -66,7 +66,7 @@ interface FacilityPlan {
   id: string;
   name: string;
   description: string;
-  trigger: user-action | time-based | 'event-base'd | segment-based';
+  trigger: user-action | time-based | 'event-base'd | segment-based
   status: 'active | inactive | draft' | testing;
   performance: 'AutomationPerformance;
   aiAnalysis: AIMarketingAnalysis;}

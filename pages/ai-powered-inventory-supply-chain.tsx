@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -8,7 +8,7 @@ interface FacilityPlan {
   id: "'string;
   name: string;
   category: physical | digital | servic'e' | talent;
-  'type: 'product | service | equipment | material';
+  'type: 'product | service | equipment | material
   status: 'in-stock | low-stock | out-of-stock | 'discontinued;
   quantity: 'number;
   reserved: number;
@@ -61,7 +61,7 @@ interface FacilityPlan {
   orderNumber: string;
   customer: string;
   items: LogisticsOrderItem[];
-  status: pending | processing | shipped' | deliver'ed | cancelled';
+  status: pending | processing | shipped' | deliver'ed | cancelled
   priority: 'low | medium | high' | urgent;
   orderDate: 'Date;
   estimatedDelivery: Date;
@@ -75,7 +75,7 @@ interface FacilityPlan {
   quantity: number;
   unitPrice: number;
   totalPrice: number;
-  status: available | backordered | substitut'ed';
+  status: available | backordered | substitut'ed
 interface FacilityPlan {
   id: string;
   optimalRoute: string;
@@ -97,7 +97,7 @@ interface FacilityPlan {
   id: string;
   title: string;
   description: string;
-  impact: positive | negative | neutr'al';
+  impact: positive | negative | neutr'al
   confidence: 'number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {
@@ -749,5 +749,5 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
   </div>
 ;
 };
-';
+
 export default AIPoweredInventorySupplyChainPage ))))))))))))))))))))"'"</div>

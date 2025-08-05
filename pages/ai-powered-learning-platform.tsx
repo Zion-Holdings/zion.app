@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -9,7 +9,7 @@ interface FacilityPlan {
   title: string;
   description: string;
   category: string;
-  level: beginner | intermediate | 'advance'd | expert';
+  level: beginner | intermediate | 'advance'd | expert
   duration: 'number; // hours
   modules: Module[];
   instructor: Instructor;
@@ -31,7 +31,7 @@ interface FacilityPlan {
   title: string;
   description: string;
   duration: number; // minutes
-  type: video | interactive | quiz' | project | ai-simulation';
+  type: video | interactive | quiz' | project | ai-simulation
   content: 'string[];
   aiFeatures: string[];
   progress: number;
@@ -81,7 +81,7 @@ interface FacilityPlan {
   courses: string[];
   skills: string[];
   careerOutcome: string;
-  difficulty: beginner | intermediate | advance'd';
+  difficulty: beginner | intermediate | advance'd
   aiRecommended: 'boolean;
   completionRate: number;}
 interface FacilityPlan {

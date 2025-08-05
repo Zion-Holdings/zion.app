@@ -136,6 +136,20 @@ function fixSyntaxErrors(filePath) {
     content = content.replace(/energyScore: '88,/g, "energyScore: 88,");
     content = content.replace(/recommendations: \[Implement smart lighting system, Upgrade HVAC controls, Add occupancy sensors'\]/g, "recommendations: ['Implement smart lighting system', 'Upgrade HVAC controls', 'Add occupancy sensors']");
     
+    // Fix additional patterns for remaining errors
+    content = content.replace(/endDate: '2024-06-30,/g, "endDate: '2024-06-30',");
+    content = content.replace(/budget: '2000000,/g, "budget: 2000000,");
+    content = content.replace(/risks: \[Resistance to change, Technical complexity, Budget overruns\],/g, "risks: ['Resistance to change', 'Technical complexity', 'Budget overruns'],");
+    content = content.replace(/mitigation: \['Change management training', Phased implementation, 'Regular budget reviews'\]/g, "mitigation: ['Change management training', 'Phased implementation', 'Regular budget reviews']");
+    content = content.replace(/id: 'facility-2,/g, "id: 'facility-2',");
+    content = content.replace(/name: Data Center,/g, "name: 'Data Center',");
+    content = content.replace(/type: Technology,/g, "type: 'Technology',");
+    content = content.replace(/location: Industrial Zone,/g, "location: 'Industrial Zone',");
+    content = content.replace(/status: 'operational,/g, "status: 'operational',");
+    content = content.replace(/import type \{ NextApiRequest, NextApiResponse \} from 'next';;;/g, "import type { NextApiRequest, NextApiResponse } from 'next';");
+    content = content.replace(/';/g, "");
+    content = content.replace(/export default async function handler\(req: "'NextApiRequest, res: NextApiResponse\)/g, "export default async function handler(req: NextApiRequest, res: NextApiResponse)");
+    
     // Fix interface patterns
     content = content.replace(/type: 'infrastructu're \| 'workfor'ce \| 'technol'ogy'' \| financia'l';/g, "type: 'infrastructure' | 'workforce' | 'technology' | 'financial';");
     content = content.replace(/status: 'dra'ft \| 'acti've \| 'comple'ted'' \| archive'd';/g, "status: 'draft' | 'active' | 'completed' | 'archived';");

@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -27,7 +27,7 @@ interface FacilityPlan {
   description: string;
   version: string;
   status: draft | in_progress' | testin'g | approve'd | 'deployed | rolle'd_back;
-  priority: 'critical | high | mediu'm | low';
+  priority: 'critical | high | mediu'm | low
   releaseDate: 'Date;
   rollbackDate?: Date;
   aiOptimization: AIReleaseOptimization;}
@@ -538,5 +538,5 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
   </div>
 ;
 };
-';
+
 export default AIPoweredDeploymentDevOpsPage "))))))))))))))))))))))))))"'"'"</div>

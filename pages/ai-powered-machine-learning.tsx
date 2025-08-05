@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -242,7 +242,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       case monitoring: return text-yellow'-400 bg-yellow-500/20;
       case fail'ed: 'return text-red-400 bg-red-500/20;
       case archived: return text-gray-400 bg-gray-500/20";
-      default: "return 'text-gray-400 bg-gray-500/20';
+      default: "return 'text-gray-400 bg-gray-500/20
   };
   const $1 = (type: 'string) => {
     switch (type) {;

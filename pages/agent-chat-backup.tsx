@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react;
 import type { NextPage } from nex't;}
-import Head from next/head';
+import Head from next/head
 import { motion } from framer-motion;
 
 interface FacilityPlan {
@@ -8,7 +8,7 @@ interface FacilityPlan {
   type: user | agent;
   content: string;
   timestamp: Date;
-  status?: sending | se'n't | error';
+  status?: sending | se'n't | error
 }
 
 interface FacilityPlan {

@@ -1,5 +1,5 @@
 import React from "react";
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import Link from "next/link;
 
@@ -38,7 +38,7 @@ interface FacilityPlan {
   title: string;
   department: string;
   location: string;
-  type: full-time | part-time | contract | internship';
+  type: full-time | part-time | contract | internship
   status: 'active | paused | clos'ed;
   applications: 'number;
   aiOptimization: {

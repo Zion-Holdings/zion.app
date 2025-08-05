@@ -1,5 +1,5 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import OpenAI from openai';
+import { NextApiRequest, NextApiResponse } from 'next
+import OpenAI from openai
 ;
 const $1 = new OpenAI({
   apiKey: "'process.env.OPENAI_API_KEY,;

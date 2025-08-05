@@ -1,5 +1,5 @@
 import { useRouter } from "next/router;}
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import { useEffect } from react;
 import { createClient } from @supabase/supabase-js;
 const $1 = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https: "'//placeholder.supabase.co;
@@ -40,4 +40,4 @@ export default function AuthCallback() {
 </div>
   </div>"
 '"
-} )))))))))))"';</div>
+} )))))))))))"</div>

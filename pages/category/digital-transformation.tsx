@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import Link from "next/link;
 ;
@@ -64,5 +64,5 @@ const AIPoweredPredictiveAnalytics: "'NextPage = () => {
 </div>
   </div > };
 };
-';
+
 export default DigitalTransformationPage)'"</div>

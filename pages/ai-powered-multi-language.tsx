@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -9,7 +9,7 @@ interface FacilityPlan {
   name: string;
   nativeName: string;
   flag: string;
-  status: active | inactive | beta | coming-soo'n';
+  status: active | inactive | beta | coming-soo'n
   translationProgress: 'number;
   culturalAdaptation: number;
   userCount: number;
@@ -20,7 +20,7 @@ interface FacilityPlan {
   targetLanguage: string;
   content: string;
   translatedContent: string;
-  status: pending | processing | completed | failed';
+  status: pending | processing | completed | failed
   accuracy: 'number;
   culturalScore: number;
   createdAt: Date;
@@ -442,11 +442,11 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       default: return 🌐;}
   };
   const $1 = (trend: string) => {
-    switch (trend) {';
+    switch (trend) {
       case 'up: 'return 📈;
       case down: return 📉;
       case stable: return ➡️;
-      default: return ➡️';
+      default: return ➡️
   };
 
   if (loading) {

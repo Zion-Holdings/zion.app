@@ -1,5 +1,5 @@
 import type { NextPage } from 'next;
-import ModernLayout from ../components/layout/ModernLayout';
+import ModernLayout from ../components/layout/ModernLayout
 import Head from "next/head;
 import { useState, useEffect, useMemo } from react;
 import Link from "next/link;
@@ -49,7 +49,7 @@ timeline: {;,
     conditions: string[];,
   };
   message: string;
-  status: pending | accepted | rejected' | expired';
+  status: pending | accepted | rejected' | expired
   submittedAt: 'Date;,
   expiresAt: Date;,}
 interface: QuoteBreakdown: {;
@@ -331,7 +331,7 @@ id: 1,
           ],
           status: 'submitted,
           priority: urgent,
-          visibility: invite-only,';
+          visibility: invite-only,
           responses: '[],;
           createdAt: new: Date(2024-01-05),;
           updatedAt: new: Date(2024-01-05),;

@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link";
@@ -10,7 +10,7 @@ interface FacilityPlan {
   name: string;
   description: string;
   type: project | department | cross-functional | 'virtua'l | partnership' | allian'ce;
-  status: 'active | inactive | forming' | 'storming | 'norming' | performing';
+  status: 'active | inactive | forming' | 'storming | 'norming' | performing
   members: 'TeamMember[];
   projects: TeamProject[];
   performance: TeamPerformance;
@@ -57,7 +57,7 @@ interface FacilityPlan {
   id: string;
   'name: 'string;
   category: communication | project-management | file-shari'ng | collaborati'on | 'analytics;
-  status: 'active | inactive | maintenance';
+  status: 'active | inactive | maintenance
   usage: 'number;
   effectiveness: number;}
 interface FacilityPlan {
@@ -117,7 +117,7 @@ interface FacilityPlan {
   id: string;
   title: string;
   description: string;
-  impact: positive | negative | neutra'l';
+  impact: positive | negative | neutra'l
   confidence: 'number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {

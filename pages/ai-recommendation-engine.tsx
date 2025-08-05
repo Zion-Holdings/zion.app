@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect }  from "react;}
 import Link from next/link;
@@ -132,7 +132,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
     Beginner,
     Intermedia't'e,
     Advanced,
-    Exper't';
+    Exper't
   ];
 
   const $1 = [
@@ -145,7 +145,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
     IoT/Edge Computing,
     Blockcha'i'n,
     VR/AR,
-    Othe'r';
+    Othe'r
   ];
 
   const $1 = (field: 'keyof UserProfile, value: string | string[]) => {

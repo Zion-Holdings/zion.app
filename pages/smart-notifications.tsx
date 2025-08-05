@@ -1,12 +1,12 @@
 import type { NextPage } from 'next;
-import ModernLayout from ../components/layout/ModernLayout';
+import ModernLayout from ../components/layout/ModernLayout
 import Head from "next/head;
 import { useState, useEffect, useMemo } from react;
 import Link from "next/link;
 interface FacilityPlan {
   id: "'string;
   type: message | project | paymen't | syste'm' | recommendation | ale'r't | reminder | 'updat'e;
-  priority: 'low | medium | high | urgen't';
+  priority: 'low | medium | high | urgen't
   title: string;
   message: string;
   sender?: string;

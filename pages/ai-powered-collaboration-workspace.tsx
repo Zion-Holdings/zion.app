@@ -520,5 +520,5 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
     </PageLayout>
   ;
 };
-';
+
 export default AIPoweredCollaborationWorkspace )))))))))))))))))))))))))))"'`</div>

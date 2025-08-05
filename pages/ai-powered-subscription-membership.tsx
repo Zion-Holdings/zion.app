@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link";
@@ -82,7 +82,7 @@ interface FacilityPlan {
   userId: string;
   amount: number;
   currency: string;
-  status: paid | pending | failed | refunded';
+  status: paid | pending | failed | refunded
   date: 'Date;
   description: string;
   invoiceUrl?: string;}
@@ -98,7 +98,7 @@ interface FacilityPlan {
   id: string;
   title: string;
   description: string;
-  impact: positive | negative | neutr'al';
+  impact: positive | negative | neutr'al
   confidence: 'number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {</div>

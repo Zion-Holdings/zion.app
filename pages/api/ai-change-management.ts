@@ -1,11 +1,11 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next
 
 interface ChangeInitiative {
   id: string;
   name: string;
-  type: 'technology' | 'process' | 'organizational' | 'cultural';
-  status: 'planning' | 'implementation' | 'monitoring' | 'completed';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  type: 'technology' | 'process' | 'organizational' | 'cultural
+  status: 'planning' | 'implementation' | 'monitoring' | 'completed
+  priority: 'low' | 'medium' | 'high' | 'critical
   startDate: string;
   endDate: string;
   description: string;
@@ -23,7 +23,7 @@ interface ChangeAnalytics {
   completedInitiatives: number;
   averageProgress: number;
   successRate: number;
-  riskLevel: 'low' | 'medium' | 'high';
+  riskLevel: 'low' | 'medium' | 'high
   stakeholderSatisfaction: number;
   aiOptimizationScore: number;
 }
@@ -40,10 +40,10 @@ const mockChangeInitiatives: ChangeInitiative[] = [
     description: 'Comprehensive digital transformation to modernize all business processes',
     impact: 'High - Will improve efficiency by 40% and reduce costs by 25%',
     stakeholders: ['IT Department', 'Operations', 'Finance', 'HR'],
-    budget: '2000000,
+    budget: 2000000,
     progress: 65,
-    risks: [Resistance to change, Technical complexity, Budget overruns],
-    mitigation: ['Change management training', Phased implementation, 'Regular budget reviews']
+    risks: ['Resistance to change', 'Technical complexity', 'Budget overruns'],
+    mitigation: ['Change management training', 'Phased implementation', 'Regular budget reviews']
   },
   {
     id: 'change-2,

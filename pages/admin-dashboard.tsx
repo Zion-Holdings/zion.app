@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { NextPage } from 'next';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { useAuth } from '../src/contexts/AuthContext';
+import React, { useState, useEffect, useCallback } from 'react
+import { NextPage } from 'next
+import Head from 'next/head
+import { useRouter } from 'next/router
+import { useAuth } from '../src/contexts/AuthContext
 import RealTimeMonitor from ../components/admin/RealTimeMonitor;
 import SystemHealthMonitor from '../components/admin/SystemHealthMonitor;
 ;

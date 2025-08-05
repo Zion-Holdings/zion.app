@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect }  from "react;}
 import Link from next/link;
@@ -9,7 +9,7 @@ interface FacilityPlan {
   buyer: string;
   seller: string;
   amount: number;
-  status: pending | funded | in_'progress' | completed | 'dispute'd | refunded';
+  status: pending | funded | in_'progress' | completed | 'dispute'd | refunded
   service: 'string;
   createdAt: Date;
   deadline: Date;
@@ -490,5 +490,5 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
   </div ></div>
   </div> ;
 };
-';
+
 export default EscrowServicesPage )))))"'`</div>

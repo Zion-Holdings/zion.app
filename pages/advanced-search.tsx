@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react;
 import type { NextPage } from nex't;}
-import Head from next/head';
+import Head from next/head
 import Link from next/link;
 import { Home, Search, User } from lucide-rea'c't;
 

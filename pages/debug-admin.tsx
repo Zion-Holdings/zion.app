@@ -1,5 +1,5 @@
 import React from "react";
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import { useAuth } from ../src/contexts/AuthContext;
 import { useRouter } from "next/router;}
 import Head from "next/head;

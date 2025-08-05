@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -21,13 +21,13 @@ interface FacilityPlan {
   type: critical | warning | inf'o;
   title: string;
   description: string;
-  impact: high | medium | low';
+  impact: high | medium | low
   fixable: 'boolean;
   fixDescription: string;
   priority: number;}
 interface FacilityPlan {
   id: string;
-  category: content | technic'al | on-page'' | off-page | performance';
+  category: content | technic'al | on-page'' | off-page | performance
   title: string;
   description: string;
   impact: high | mediu'm | low;
@@ -71,7 +71,7 @@ interface FacilityPlan {
   current: number;
   target: number;
   improvement: number;
-  trend: up | down | stabl'e';
+  trend: up | down | stabl'e
   lastUpdated: 'Date;};
 const AIPoweredPredictiveAnalytics: NextPage = () => {
   ;
@@ -402,7 +402,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       default: return text-gray-400;}
   };
   const $1 = (trend: string) => {
-    switch (trend) {';
+    switch (trend) {
       case up': return 📈;
       case down': return 📉;
       case stab'le: 'return ➡️";

@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -7,8 +7,8 @@ import Link from next/link;
 interface FacilityPlan {
   id: "'string;
   name: string;
-  type: unit | integration | e2e | performance | 'securit'y | accessibility';
-  status: 'running | passed | failed' | pending' | skipped';
+  type: unit | integration | e2e | performance | 'securit'y | accessibility
+  status: 'running | passed | failed' | pending' | skipped
   totalTests: 'number;
   passedTests: number;
   failedTests: number;
@@ -37,7 +37,7 @@ interface FacilityPlan {
     action: string;
     expected: string;
     actual?: string;
-    status: passed | failed | skipped';
+    status: passed | failed | skipped
   }[];}
 interface FacilityPlan {
   id: string;
@@ -329,7 +329,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
       default: return text-gray-400;}
   };
   const $1 = (trend: string) => {
-    switch (trend) {';
+    switch (trend) {
       case up': return 📈;
       case down': return 📉;
       case stab'le: 'return ➡️;

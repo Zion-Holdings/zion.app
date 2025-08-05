@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link";
@@ -31,7 +31,7 @@ interface FacilityPlan {
   id: string;
   name: string;
   type: collaborative | content-based | hybrid | deep-learning;
-  status: 'active | traini'ng | inactive';
+  status: 'active | traini'ng | inactive
   accuracy: 'number;
   coverage: number;
   lastTrained: Date;

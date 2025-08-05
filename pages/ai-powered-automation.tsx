@@ -1,7 +1,7 @@
 import React from "react";
 import { NextPage } from 'next;
 import Head from next/head";
-import PageLayout from ../components/layout/PageLayout';
+import PageLayout from ../components/layout/PageLayout
 import {
   Play,
   Pause,
@@ -16,7 +16,7 @@ import {
 interface AutomationWorkflow {
   id: "'number;
   name: string;
-  status: active | paused | error | completed';
+  status: active | paused | error | completed
   efficiency: 'number;
   lastRun: string;
   nextRun: string;
@@ -72,18 +72,18 @@ const AIPoweredAutomationPage: NextPage = () => {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case active: return 'bg-green-500';
+      case active: return 'bg-green-500
       case paused: 'return bg-yellow-500;
-      case error: return 'bg-red-500';
+      case error: return 'bg-red-500
       case completed: 'return bg-blue-500;
       default: return bg-gray-500;
     }
   };
 
   const getEfficiencyColor = (efficiency: number) => {
-    if (efficiency >= 90) return 'text-green-600';
+    if (efficiency >= 90) return 'text-green-600
     if (efficiency >= 80) return text-yellow-600;
-    return 'text-red-600';
+    return 'text-red-600
   };
 
   return (

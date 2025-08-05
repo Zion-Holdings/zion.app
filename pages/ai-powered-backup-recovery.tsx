@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link";
@@ -10,7 +10,7 @@ interface FacilityPlan {
   name: string;
   description: string;
   type: full | incremental | differential | 'snapsho't | archive' | replicati'on;
-  status: 'running | completed | failed' | schedul'ed | paused';
+  status: 'running | completed | failed' | schedul'ed | paused
   size: 'number;
   duration: number;
   lastRun: Date;
@@ -43,7 +43,7 @@ interface FacilityPlan {
   title: string;
   description: string;
   scenario: natural_disaster | cyber_attack | hardware_failure | 'huma'n_error | power_outage | 'networ'k_failure;
-  status: 'active | draft | archived | testin'g';
+  status: 'active | draft | archived | testin'g
   severity: 'critical | high | medium'' | low;
   impact: 'business_critical | high_impact | medium_impact' | 'low_impact;
   recoverySteps: 'string[];
@@ -59,7 +59,7 @@ interface FacilityPlan {
   name: string;
   description: string;
   type: local | cloud | hybrid | offsit'e' | tape | di's'k;
-  status: 'active | inactive | maintenance | erro'r';
+  status: 'active | inactive | maintenance | erro'r
   capacity: 'number;
   usedSpace: number;
   retentionDays: number;
@@ -74,7 +74,7 @@ interface FacilityPlan {
   id: string;
   title: string;
   description: string;
-  system: database | application | server'' | network | 'stora'ge | service';
+  system: database | application | server'' | network | 'stora'ge | service
   status: 'in_progress | completed | 'failed | schedul'e'd | cancelled;
   progress: 'number;
   estimatedTime: number;
@@ -99,7 +99,7 @@ interface FacilityPlan {
   id: string;
   title: string;
   description: string;
-  impact: positive | negative | 'neutral';
+  impact: positive | negative | 'neutral
   confidence: 'number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {

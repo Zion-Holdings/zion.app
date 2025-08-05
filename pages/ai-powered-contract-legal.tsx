@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link";
@@ -9,7 +9,7 @@ interface FacilityPlan {
   id: "'string;
   title: string;
   type: service | employment | partnership | ''nda | licensin'g' | custom;
-  status: 'draft | pending | activ'e' | completed' | 'disputed | terminate'd';
+  status: 'draft | pending | activ'e' | completed' | 'disputed | terminate'd
   parties: 'ContractParty[];
   terms: ContractTerm[];
   value: number;
@@ -18,7 +18,7 @@ interface FacilityPlan {
   endDate?: Date;
   aiGenerated: boolean;
   complianceScore: number;
-  riskLevel: 'low' | 'medium' | 'high';
+  riskLevel: 'low' | 'medium' | 'high
   legalReview: 'LegalReview;
   signatures: Signature[];
   attachments: Attachment[];}
@@ -127,7 +127,7 @@ interface FacilityPlan {
     id: string;
     title: string;
     description: string;
-    impact: positive | negative' | neutral';
+    impact: positive | negative' | neutral
     confidence: 'number;
     recommendations: string[];
   }[];};
@@ -748,5 +748,5 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
   </div>
 ;
 };
-';
+
 export default AIPoweredContractLegalPage )))))))))))))))))))))))))))))))))))'"</div>

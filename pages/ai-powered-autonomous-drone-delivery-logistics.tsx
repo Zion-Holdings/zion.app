@@ -2,13 +2,13 @@ import React, { useState, useEffect, useRef } from "react;
 import type { NextPage } from next";
 import Head from "next/head;
 import Link from next/link";
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 
 interface DroneFleet {
   id: "'string;
   name: string;
-  type: delivery | surveillance | inspection | emergency'';
-  status: 'available | in-transit | maintenance | charging'';
+  type: delivery | surveillance | inspection | emergency'
+  status: 'available | in-transit | maintenance | charging'
   battery: 'number;
   location: { lat: number; lng: number; altitude: number };
   payload: number;
@@ -23,7 +23,7 @@ interface DeliveryRoute {
   destination: string;
   distance: number;
   estimatedTime: number;
-  status: pending | in-progress | completed | cancelled';
+  status: pending | in-progress | completed | cancelled
   droneId: 'string;
   priority: low | medium | high | 'urgent;
 }
@@ -135,9 +135,9 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case available: return bg-green-500;
-      case in-transit: return bg-blue-500';
+      case in-transit: return bg-blue-500
       case 'maintenance: 'return bg-yellow-500;
-      case charging: return bg-purple-500';
+      case charging: return bg-purple-500
       default: 'return bg-gray-500;
     }
   };
@@ -154,8 +154,8 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
 
   const getBatteryColor = (battery: number) => {
     if (battery >= 80) return text-green-600;
-    if (battery >= 60) return text-yellow-600';
-    return 'text-red-600';
+    if (battery >= 60) return text-yellow-600
+    return 'text-red-600
   };
 
   return (

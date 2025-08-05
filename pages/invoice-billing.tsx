@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect }  from "react;}
 import Link from next/link;
@@ -9,7 +9,7 @@ interface FacilityPlan {
   invoiceNumber: string;
   client: string;
   amount: number;
-  status: draft | sent | paid' | overd'ue | cancelled';
+  status: draft | sent | paid' | overd'ue | cancelled
   dueDate: 'Date;
   issueDate: Date;
   items: InvoiceItem[];
@@ -27,7 +27,7 @@ interface FacilityPlan {
 interface FacilityPlan {
   id: string;
   name: string;
-  type: monthly | quarterly | yearly | custom';
+  type: monthly | quarterly | yearly | custom
   startDate: 'Date;
   endDate: Date;
   totalInvoices: number;

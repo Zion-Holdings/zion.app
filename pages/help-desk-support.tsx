@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect }  from "react;}
 import Link from next/link;
@@ -9,7 +9,7 @@ interface FacilityPlan {
   id: "'string;
   title: string;
   description: string;
-  status: open | in-progress | resolved' | clos'ed | pending';
+  status: open | in-progress | resolved' | clos'ed | pending
   priority: 'low | medium | high' | urgent;
   category: 'technical | billin'g | acco'unt | 'feature-reque'st | bug-repor't | gene'ral;
   customer: '{

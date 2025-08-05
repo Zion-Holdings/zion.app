@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link";
@@ -251,7 +251,7 @@ const AIPoweredPredictiveAnalytics: NextPage = () => {
 
   const $1 = useMemo(() => {
     return messages.filter(message => {
-      // Type filter';
+      // Type filter
       if (filters.type !== al'l && message.type !== filters.type) return false;
       
       // Priority filter

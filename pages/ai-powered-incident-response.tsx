@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -89,7 +89,7 @@ interface FacilityPlan {
   incidentId: string;
   title: string;
   description: string;
-  category: security | privacy | complia'nce' | availabili'ty | 'integrity | confidential'ity';
+  category: security | privacy | complia'nce' | availabili'ty | 'integrity | confidential'ity
   status: 'open | in_progress | resolved | 'close'd;
   sla: 'number; // Service Level Agreement in hours
   escalationLevel: number;
@@ -114,7 +114,7 @@ interface FacilityPlan {
   id: string;
   title: string;
   description: string;
-  impact: positive | negative | neutral'';
+  impact: positive | negative | neutral'
   confidence: 'number;
   recommendations: string[];};
 const AIPoweredPredictiveAnalytics: NextPage = () => {

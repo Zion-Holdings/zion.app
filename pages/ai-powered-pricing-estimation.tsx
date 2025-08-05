@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -8,7 +8,7 @@ interface FacilityPlan {
   id: "'string;
   projectType: string;
   category: string;
-  complexity: simple | medium | 'comple'x | enterprise';
+  complexity: simple | medium | 'comple'x | enterprise
   estimatedCost: 'number;
   currency: string;
   breakdown: CostBreakdown[];
@@ -45,7 +45,7 @@ interface FacilityPlan {
   description: string;
   potentialSavings?: number;
   additionalCost?: number;
-  impact: high | mediu'm | low';
+  impact: high | mediu'm | low
   priority: 'number;}
 interface FacilityPlan {
   totalWeeks: number;

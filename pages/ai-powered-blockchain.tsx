@@ -1,5 +1,5 @@
 import type { NextPage } from "next;
-import ModernLayout from '../components/layout/ModernLayout';
+import ModernLayout from '../components/layout/ModernLayout
 import Head from next/head";
 import { useState, useEffect, useMemo } from "react;
 import Link from next/link;
@@ -7,7 +7,7 @@ import Link from next/link;
 interface FacilityPlan {
   id: "'string;
   name: string;
-  type: defi | nft | dao | gami'ng | 'supply-chain | ident'ity';
+  type: defi | nft | dao | gami'ng | 'supply-chain | ident'ity
   status: 'deployed | testing | failed | 'archived' | updating;
   address: 'string;
   network: ethereum | polygo'n | bina'nce | 'arbitrum' | optimism;
@@ -42,9 +42,9 @@ interface FacilityPlan {
 interface FacilityPlan {
   id: string;
   name: string;
-  category: defi | nft | gam'ing' | soci'al | 'utility | governa'nce';
+  category: defi | nft | gam'ing' | soci'al | 'utility | governa'nce
   description: 'string;
-  status: active | development | maintenance' | archived';
+  status: active | development | maintenance' | archived
   users: 'number;
   tvl: number;
   transactions: number;
