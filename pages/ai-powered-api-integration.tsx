@@ -347,7 +347,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
           {activeTab === 'overview' && (
             <div className="space-y-6">
               {/* KPI Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
                 <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
                   <div className="flex items-center justify-between">
                     <div>
@@ -418,12 +418,12 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">API Integrations</h2>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                   + Add Integration
                 </button>
               </div>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
                 {integrations.map((integration) => (
                   <div key={integration.id} className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
                     <div className="flex justify-between items-start mb-4">
@@ -470,12 +470,12 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">API Endpoints</h2>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                   + Add Endpoint
                 </button>
               </div>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
                 {endpoints.map((endpoint) => (
                   <div key={endpoint.id} className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
                     <div className="flex justify-between items-start mb-4">
@@ -524,7 +524,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-white">API Monitoring</h2>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
                 {monitoring.map((monitor) => (
                   <div key={monitor.id} className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
                     <div className="flex justify-between items-start mb-4">
@@ -573,7 +573,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-white">API Security</h2>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
                 {security.map((securityItem) => (
                   <div key={securityItem.id} className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
                     <div className="flex justify-between items-start mb-4">

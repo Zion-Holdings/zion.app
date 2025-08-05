@@ -136,7 +136,7 @@ const Partners: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -147,7 +147,7 @@ const Partners: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="text-2xl font-bold">
@@ -155,22 +155,22 @@ const Partners: NextPage = () => {
               </Link>
             </div>
             <div className="flex items-center space-x-4">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover text-white transition-colors">
                 Marketplace
               </Link>
-              <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+              <Link href="/about" className="text-gray-300 hover text-white transition-colors">
                 About
               </Link>
-              <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
+              <Link href="/contact" className="text-gray-300 hover text-white transition-colors">
                 Contact
               </Link>
-              <Link href="/careers" className="text-gray-300 hover:text-white transition-colors">
+              <Link href="/careers" className="text-gray-300 hover text-white transition-colors">
                 Careers
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover text-white transition-colors">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-200">
                 Join Zion Now
               </Link>
             </div>
@@ -178,10 +178,10 @@ const Partners: NextPage = () => {
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h1 className="text-4xl md text-5xl font-bold text-white mb-6">
             Partner with Zion
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
@@ -193,7 +193,7 @@ const Partners: NextPage = () => {
         {/* Partnership Types */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Partnership Opportunities</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
             {partnershipTypes.map((type) => (
               <div key={type.type} className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm">
                 <div className="text-3xl mb-4">{type.icon}</div>
@@ -234,7 +234,7 @@ const Partners: NextPage = () => {
           </div>
 
           {/* Partners Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
             {filteredPartners.map((partner) => (
               <div key={partner.id} className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm">
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg mx-auto mb-4 flex items-center justify-center">
@@ -256,7 +256,7 @@ const Partners: NextPage = () => {
                     href={partner.website} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="text-purple-400 hover:text-purple-300 text-sm"
+                    className="text-purple-400 hover text-purple-300 text-sm"
                   >
                     Visit Website →
                   </a>
@@ -275,7 +275,7 @@ const Partners: NextPage = () => {
               that share our vision of democratizing access to technology and innovation.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 md grid-cols-3 gap-6 mb-8">
               <div className="text-center">
                 <div className="text-3xl mb-4">📋</div>
                 <h3 className="text-lg font-semibold text-white mb-2">Submit Application</h3>
@@ -302,7 +302,7 @@ const Partners: NextPage = () => {
             <div className="text-center">
               <Link 
                 href="/contact"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg transition-all duration-200 font-semibold"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg transition-all duration-200 font-semibold"
               >
                 Apply to Become a Partner
               </Link>
@@ -313,7 +313,7 @@ const Partners: NextPage = () => {
         {/* Partnership Benefits */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-white mb-8 text-center">Partnership Benefits</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md grid-cols-2 gap-8">
             <div className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm">
               <h3 className="text-xl font-semibold text-white mb-4">For Technology Companies</h3>
               <ul className="space-y-3">
@@ -366,16 +366,16 @@ const Partners: NextPage = () => {
             <p className="text-xl text-gray-300 mb-6">
               Join Zion's network of innovative partners and help us democratize access to technology.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
               <Link 
                 href="/contact"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg transition-all duration-200 font-semibold"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg transition-all duration-200 font-semibold"
               >
                 Contact Partnership Team
               </Link>
               <Link 
                 href="/about"
-                className="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-lg transition-all duration-200 font-semibold"
+                className="border border-white/20 hover border-white/40 text-white px-8 py-4 rounded-lg transition-all duration-200 font-semibold"
               >
                 Learn More About Zion
               </Link>
@@ -386,7 +386,7 @@ const Partners: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/40 backdrop-blur-md border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           <div className="text-center text-gray-400">
             <p>&copy; 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</p>
           </div>

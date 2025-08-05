@@ -249,7 +249,7 @@ const NotificationsPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -262,7 +262,7 @@ const NotificationsPage: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -272,23 +272,23 @@ const NotificationsPage: NextPage = () => {
               </Link>
             </div>
             
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden md flex items-center space-x-8">
+              <Link href="/marketplace" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/services" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Services
               </Link>
-              <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/talents" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Talents
               </Link>
-              <Link href="/products" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/products" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Products
               </Link>
-              <Link href="/real-time-chat" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/real-time-chat" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Live Chat
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -296,10 +296,10 @@ const NotificationsPage: NextPage = () => {
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
             Notifications
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -308,7 +308,7 @@ const NotificationsPage: NextPage = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-8">
           <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
             <div className="text-3xl font-bold text-white mb-2">{notifications.length}</div>
             <div className="text-gray-300">Total</div>
@@ -329,15 +329,15 @@ const NotificationsPage: NextPage = () => {
 
         {/* Filters and Search */}
         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md grid-cols-4 gap-4">
             {/* Search */}
-            <div className="md:col-span-2">
+            <div className="md col-span-2">
               <input
                 type="text"
                 placeholder="Search notifications..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus border-purple-500 transition-colors"
               />
             </div>
 
@@ -346,7 +346,7 @@ const NotificationsPage: NextPage = () => {
               <select
                 value={filter}
                 onChange={(e) => setFilter(e.target.value as 'all' | 'unread' | 'read')}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus border-purple-500 transition-colors"
               >
                 <option value="all">All Notifications</option>
                 <option value="unread">Unread Only</option>
@@ -359,7 +359,7 @@ const NotificationsPage: NextPage = () => {
               <select
                 value={typeFilter}
                 onChange={(e) => setTypeFilter(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus border-purple-500 transition-colors"
               >
                 <option value="all">All Types</option>
                 <option value="marketplace">Marketplace</option>
@@ -378,7 +378,7 @@ const NotificationsPage: NextPage = () => {
           <div className="flex justify-between items-center mt-4">
             <button
               onClick={markAllAsRead}
-              className="text-sm text-gray-300 hover:text-white transition-colors"
+              className="text-sm text-gray-300 hover text-white transition-colors"
             >
               Mark all as read
             </button>
@@ -434,7 +434,7 @@ const NotificationsPage: NextPage = () => {
                           </span>
                           <button
                             onClick={() => deleteNotification(notification.id)}
-                            className="text-gray-400 hover:text-red-400 transition-colors"
+                            className="text-gray-400 hover text-red-400 transition-colors"
                           >
                             ×
                           </button>
@@ -464,7 +464,7 @@ const NotificationsPage: NextPage = () => {
                           <Link
                             href={notification.action.url}
                             onClick={() => markAsRead(notification.id)}
-                            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
+                            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105"
                           >
                             {notification.action.label}
                           </Link>
@@ -487,11 +487,11 @@ const NotificationsPage: NextPage = () => {
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Never miss important updates about services, talents, and marketplace activities.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
+              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                 Explore Marketplace
               </Link>
-              <Link href="/real-time-chat" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/real-time-chat" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 Start Chatting
               </Link>
             </div>

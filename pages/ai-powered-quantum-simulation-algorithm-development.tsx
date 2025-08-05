@@ -211,7 +211,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -223,7 +223,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
 
       {/* Header */}
       <header className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-3">
@@ -256,7 +256,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
 
       {/* Main Content */}
       <main className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           
           {/* Tab Navigation */}
           <div className="mb-8">
@@ -291,7 +291,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
             
             {/* Simulation Dashboard */}
             {activeTab === 'dashboard' && (
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 lg grid-cols-3 gap-6">
                 {/* System Status */}
                 <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                   <div className="flex items-center space-x-3 mb-4">
@@ -325,22 +325,22 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
                 </div>
 
                 {/* Quick Actions */}
-                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                <div className="lg col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                   <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <button className="p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg text-white hover:from-indigo-700 hover:to-indigo-800 transition-all duration-200">
+                  <div className="grid grid-cols-1 md grid-cols-4 gap-4">
+                    <button className="p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg text-white hover:from-indigo-700 hover to-indigo-800 transition-all duration-200">
                       <div className="text-2xl mb-2">🔄</div>
                       <div className="font-semibold">Run Simulation</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover:from-purple-700 hover to-purple-800 transition-all duration-200">
                       <div className="text-2xl mb-2">🧮</div>
                       <div className="font-semibold">Develop Algorithm</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover:from-blue-700 hover to-blue-800 transition-all duration-200">
                       <div className="text-2xl mb-2">🔧</div>
                       <div className="font-semibold">Design Circuit</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover:from-green-700 hover:to-green-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover:from-green-700 hover to-green-800 transition-all duration-200">
                       <div className="text-2xl mb-2">📊</div>
                       <div className="font-semibold">Measure State</div>
                     </button>
@@ -354,7 +354,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Quantum Simulations</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
                   {simulations.map((simulation) => (
                     <div key={simulation.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
@@ -399,7 +399,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Quantum Algorithms</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
                   {algorithms.map((algorithm) => (
                     <div key={algorithm.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
@@ -444,7 +444,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Quantum Gates</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
                   {gates.map((gate) => (
                     <div key={gate.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
@@ -485,7 +485,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Quantum States</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
                   {states.map((state) => (
                     <div key={state.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
@@ -530,7 +530,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Quantum Circuits</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
                   {circuits.map((circuit) => (
                     <div key={circuit.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
@@ -579,7 +579,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Quantum Measurements</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
                   {measurements.map((measurement) => (
                     <div key={measurement.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
@@ -624,7 +624,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
 
       {/* Footer */}
       <footer className="relative z-10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           <div className="text-center">
             <p className="text-gray-400">
               AI-Powered Quantum Simulation & Algorithm Development | Zion Tech Group

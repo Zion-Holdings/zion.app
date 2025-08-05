@@ -538,7 +538,7 @@ const AIPoweredTestingPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="text-center">
@@ -566,7 +566,7 @@ const AIPoweredTestingPage: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -576,14 +576,14 @@ const AIPoweredTestingPage: NextPage = () => {
               </Link>
             </div>
             
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/ai-powered-security" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden md flex items-center space-x-8">
+              <Link href="/ai-powered-security" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Security
               </Link>
-              <Link href="/ai-powered-content-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/ai-powered-content-management" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Content
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -591,10 +591,10 @@ const AIPoweredTestingPage: NextPage = () => {
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
             AI-Powered Testing
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -631,7 +631,7 @@ const AIPoweredTestingPage: NextPage = () => {
 
         {/* Analytics Overview */}
         {selectedView === 'overview' && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md grid-cols-3 gap-6 mb-8">
             {analytics.map((metric) => (
               <div key={metric.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                 <div className="flex items-center justify-between mb-4">
@@ -658,14 +658,14 @@ const AIPoweredTestingPage: NextPage = () => {
         {/* Search and Filters */}
         {selectedView === 'suites' && (
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-8">
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-              <div className="lg:col-span-2">
+            <div className="grid grid-cols-1 lg grid-cols-4 gap-4">
+              <div className="lg col-span-2">
                 <input
                   type="text"
                   placeholder="Search test suites..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus border-purple-500 transition-colors"
                 />
               </div>
               
@@ -673,7 +673,7 @@ const AIPoweredTestingPage: NextPage = () => {
                 <select
                   value={filterType}
                   onChange={(e) => setFilterType(e.target.value)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus border-purple-500 transition-colors"
                 >
                   <option value="all">All Types</option>
                   <option value="unit">Unit Tests</option>
@@ -689,7 +689,7 @@ const AIPoweredTestingPage: NextPage = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus border-purple-500 transition-colors"
                 >
                   <option value="recent">Sort by Recent</option>
                   <option value="priority">Sort by Priority</option>
@@ -703,7 +703,7 @@ const AIPoweredTestingPage: NextPage = () => {
 
         {/* Test Suites List */}
         {selectedView === 'suites' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
             {filteredTestSuites.map((suite) => (
               <div key={suite.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                 <div className="flex items-start justify-between mb-4">
@@ -776,10 +776,10 @@ const AIPoweredTestingPage: NextPage = () => {
                 </div>
 
                 <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                     Run Tests
                   </button>
-                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
                     View Details
                   </button>
                 </div>
@@ -811,7 +811,7 @@ const AIPoweredTestingPage: NextPage = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                <div className="grid grid-cols-2 md grid-cols-4 gap-4 mb-4">
                   <div>
                     <p className="text-sm text-gray-400">Duration</p>
                     <p className="text-lg font-semibold text-orange-400">{testCase.duration}s</p>
@@ -858,10 +858,10 @@ const AIPoweredTestingPage: NextPage = () => {
                 </div>
 
                 <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                     Run Test
                   </button>
-                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
                     Edit Test
                   </button>
                 </div>
@@ -893,7 +893,7 @@ const AIPoweredTestingPage: NextPage = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                <div className="grid grid-cols-2 md grid-cols-4 gap-4 mb-4">
                   <div>
                     <p className="text-sm text-gray-400">Total Tests</p>
                     <p className="text-lg font-semibold text-white">{execution.totalTests}</p>
@@ -914,7 +914,7 @@ const AIPoweredTestingPage: NextPage = () => {
 
                 <div className="mb-4">
                   <p className="text-sm text-gray-400 mb-2">Performance Metrics:</p>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-2 md grid-cols-4 gap-4">
                     <div>
                       <p className="text-xs text-gray-400">Avg Response</p>
                       <p className="text-sm font-semibold text-white">{execution.performance.avgResponseTime}s</p>
@@ -935,10 +935,10 @@ const AIPoweredTestingPage: NextPage = () => {
                 </div>
 
                 <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                     View Details
                   </button>
-                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
                     Download Report
                   </button>
                 </div>
@@ -957,11 +957,11 @@ const AIPoweredTestingPage: NextPage = () => {
               Leverage intelligent testing to ensure quality with AI-driven 
               test automation, performance testing, and automated test generation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                 Create Tests
               </button>
-              <Link href="/service-marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/service-marketplace" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 View Services
               </Link>
             </div>

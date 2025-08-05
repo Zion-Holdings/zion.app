@@ -12,7 +12,7 @@ const Accessibility: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -23,7 +23,7 @@ const Accessibility: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="text-2xl font-bold text-white">
@@ -31,13 +31,13 @@ const Accessibility: NextPage = () => {
               </Link>
             </div>
             <div className="flex items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/marketplace" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Marketplace
               </Link>
-              <Link href="/about" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/about" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 About
               </Link>
-              <Link href="/contact" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/contact" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Contact
               </Link>
             </div>
@@ -46,7 +46,7 @@ const Accessibility: NextPage = () => {
       </nav>
 
       {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-40">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg px-8 py-40">
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-white mb-6">
             Accessibility at <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
@@ -71,7 +71,7 @@ const Accessibility: NextPage = () => {
           {/* Accessibility Features */}
           <div>
             <h2 className="text-3xl font-bold text-white text-center mb-12">Accessibility Features</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-8">
               <div className="bg-black/20 backdrop-blur-md rounded-lg p-6 border border-white/10">
                 <Eye className="w-12 h-12 text-purple-400 mb-4" />
                 <h3 className="text-xl font-semibold text-white mb-3">Visual Accessibility</h3>
@@ -149,7 +149,7 @@ const Accessibility: NextPage = () => {
           {/* Standards Compliance */}
           <div className="bg-black/20 backdrop-blur-md rounded-lg p-8 border border-white/10">
             <h2 className="text-3xl font-bold text-white mb-6">Standards Compliance</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md grid-cols-2 gap-8">
               <div>
                 <h3 className="text-xl font-semibold text-white mb-4">WCAG 2.1 Compliance</h3>
                 <p className="text-gray-300 mb-4">
@@ -179,7 +179,7 @@ const Accessibility: NextPage = () => {
           {/* Assistive Technologies */}
           <div>
             <h2 className="text-3xl font-bold text-white text-center mb-12">Assistive Technology Support</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md grid-cols-2 gap-8">
               <div className="bg-black/20 backdrop-blur-md rounded-lg p-6 border border-white/10">
                 <h3 className="text-xl font-semibold text-white mb-4">Screen Readers</h3>
                 <ul className="text-gray-300 space-y-2">
@@ -207,7 +207,7 @@ const Accessibility: NextPage = () => {
           {/* Testing and Feedback */}
           <div className="bg-black/20 backdrop-blur-md rounded-lg p-8 border border-white/10">
             <h2 className="text-3xl font-bold text-white mb-6">Testing and Feedback</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md grid-cols-2 gap-8">
               <div>
                 <h3 className="text-xl font-semibold text-white mb-4">Our Testing Process</h3>
                 <ul className="text-gray-300 space-y-2">
@@ -224,7 +224,7 @@ const Accessibility: NextPage = () => {
                 <p className="text-gray-300 mb-4">
                   We welcome feedback on accessibility issues and suggestions for improvement.
                 </p>
-                <Link href="/contact" className="text-purple-400 hover:text-purple-300 transition-colors">
+                <Link href="/contact" className="text-purple-400 hover text-purple-300 transition-colors">
                   Contact us about accessibility →
                 </Link>
               </div>
@@ -234,7 +234,7 @@ const Accessibility: NextPage = () => {
           {/* Resources */}
           <div>
             <h2 className="text-3xl font-bold text-white text-center mb-12">Accessibility Resources</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md grid-cols-2 gap-8">
               <div className="bg-black/20 backdrop-blur-md rounded-lg p-6 border border-white/10">
                 <h3 className="text-xl font-semibold text-white mb-4">For Users</h3>
                 <ul className="text-gray-300 space-y-2">
@@ -265,11 +265,11 @@ const Accessibility: NextPage = () => {
             <p className="text-xl text-gray-300 mb-8">
               Our team is here to help ensure you have the best possible experience on our platform.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
+              <Link href="/contact" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
                 Contact Support
               </Link>
-              <Link href="/help-desk-support" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/help-desk-support" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 Help Center
               </Link>
             </div>
@@ -278,17 +278,17 @@ const Accessibility: NextPage = () => {
       </div>
     
         {/* Mobile Navigation */}
-        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
+        <div className="lg hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
           <div className="flex justify-around items-center py-2">
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <Home className="w-5 h-5" />
               <span className="text-xs">Home</span>
             </button>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <Search className="w-5 h-5" />
               <span className="text-xs">Search</span>
             </button>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <User className="w-5 h-5" />
               <span className="text-xs">Profile</span>
             </button>

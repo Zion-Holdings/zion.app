@@ -259,15 +259,15 @@ const BusinessIntelligenceDashboard = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         {/* Header */}
         <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
             <div className="flex justify-between items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
+                <h1 className="text-4xl md text-5xl font-bold text-white mb-2">
                   AI Business Intelligence Dashboard
                 </h1>
                 <p className="text-xl text-gray-300">
@@ -278,7 +278,7 @@ const BusinessIntelligenceDashboard = () => {
                 <select
                   value={selectedTimeframe}
                   onChange={(e) => setSelectedTimeframe(e.target.value)}
-                  className="bg-white/10 border border-white/20 rounded-lg text-white px-4 py-4 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="bg-white/10 border border-white/20 rounded-lg text-white px-4 py-4 focus:outline-none focus:ring-2 focus ring-purple-500"
                 >
                   {timeframes.map((tf) => (
                     <option key={tf.value} value={tf.value}>
@@ -288,7 +288,7 @@ const BusinessIntelligenceDashboard = () => {
                 </select>
                 <button
                   onClick={() => exportData('pdf')}
-                  className="bg-purple-600 text-white px-4 py-4 rounded-lg hover:bg-purple-700 transition-colors"
+                  className="bg-purple-600 text-white px-4 py-4 rounded-lg hover bg-purple-700 transition-colors"
                 >
                   Export
                 </button>
@@ -297,7 +297,7 @@ const BusinessIntelligenceDashboard = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           {/* Tab Navigation */}
           <div className="flex flex-wrap gap-2 mb-8">
             {tabs.map((tab) => (
@@ -320,7 +320,7 @@ const BusinessIntelligenceDashboard = () => {
           {activeTab === 'overview' && (
             <div className="space-y-8">
               {/* KPI Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
                 {kpis.map((kpi) => (
                   <div key={kpi.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
                     <div className="flex justify-between items-start mb-4">
@@ -352,7 +352,7 @@ const BusinessIntelligenceDashboard = () => {
               </div>
 
               {/* Charts */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-8">
                 <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
                   <h3 className="text-white font-semibold mb-4">Revenue Trend</h3>
                   <div className="h-124 flex items-center justify-center text-gray-400">
@@ -381,7 +381,7 @@ const BusinessIntelligenceDashboard = () => {
           {/* Analytics Tab */}
           {activeTab === 'analytics' && (
             <div className="space-y-8">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 lg grid-cols-3 gap-6">
                 <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
                   <h3 className="text-white font-semibold mb-4">Sales Analytics</h3>
                   <div className="space-y-4">
@@ -439,7 +439,7 @@ const BusinessIntelligenceDashboard = () => {
 
               <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
                 <h3 className="text-white font-semibold mb-4">Predictive Analytics</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md grid-cols-2 gap-6">
                   <div>
                     <h4 className="text-gray-300 mb-2">Revenue Forecast</h4>
                     <div className="text-2xl font-bold text-white mb-2">$1,450,000</div>
@@ -460,7 +460,7 @@ const BusinessIntelligenceDashboard = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">AI-Powered Insights</h2>
-                <button className="bg-purple-600 text-white px-4 py-4 rounded-lg hover:bg-purple-700 transition-colors">
+                <button className="bg-purple-600 text-white px-4 py-4 rounded-lg hover bg-purple-700 transition-colors">
                   Generate New Insights
                 </button>
               </div>
@@ -493,7 +493,7 @@ const BusinessIntelligenceDashboard = () => {
                         <span className="text-sm text-gray-400">Impact: <span className="text-white">{insight.impact}</span></span>
                         <span className="text-sm text-gray-400">Recommendation: <span className="text-white">{insight.recommendation}</span></span>
                       </div>
-                      <button className="text-purple-400 hover:text-purple-300 transition-colors">
+                      <button className="text-purple-400 hover text-purple-300 transition-colors">
                         View Details
                       </button>
                     </div>
@@ -508,12 +508,12 @@ const BusinessIntelligenceDashboard = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">Automated Reports</h2>
-                <button className="bg-purple-600 text-white px-4 py-4 rounded-lg hover:bg-purple-700 transition-colors">
+                <button className="bg-purple-600 text-white px-4 py-4 rounded-lg hover bg-purple-700 transition-colors">
                   Create New Report
                 </button>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md grid-cols-2 gap-6">
                 {reports.map((report) => (
                   <div key={report.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
                     <div className="flex justify-between items-start mb-4">
@@ -543,11 +543,11 @@ const BusinessIntelligenceDashboard = () => {
                       <button
                         onClick={() => generateReport(report.id)}
                         disabled={loading}
-                        className="flex-1 bg-purple-600 text-white px-4 py-4 rounded-lg hover:bg-purple-700 transition-colors disabled:opacity-50"
+                        className="flex-1 bg-purple-600 text-white px-4 py-4 rounded-lg hover:bg-purple-700 transition-colors disabled opacity-50"
                       >
                         {loading ? 'Generating...' : 'Generate Now'}
                       </button>
-                      <button className="bg-white/10 text-white px-4 py-4 rounded-lg hover:bg-white/20 transition-colors">
+                      <button className="bg-white/10 text-white px-4 py-4 rounded-lg hover bg-white/20 transition-colors">
                         Download
                       </button>
                     </div>
@@ -562,7 +562,7 @@ const BusinessIntelligenceDashboard = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">Smart Alerts</h2>
-                <button className="bg-purple-600 text-white px-4 py-4 rounded-lg hover:bg-purple-700 transition-colors">
+                <button className="bg-purple-600 text-white px-4 py-4 rounded-lg hover bg-purple-700 transition-colors">
                   Configure Alerts
                 </button>
               </div>

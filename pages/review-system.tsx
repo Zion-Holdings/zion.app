@@ -35,7 +35,7 @@ interface: ReviewStats {;
   verifiedReviews: number;,
 }
 
-const ReviewSystemPage: NextPage: = () => {;,
+const ReviewSystemPage: NextPage = () => {;,
   const [reviews, setReviews] = useState<Review[]>([]);
   const [stats, setStats] = useState<ReviewStats>({
 totalReviews: 0,
@@ -313,7 +313,7 @@ return: (
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift: opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift  opacity-10"></div>
         </div>
       
       <Head>
@@ -326,7 +326,7 @@ return: (
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg px-8">
           <div: className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -336,17 +336,17 @@ return: (
               </Link>
             </div>
             
-            <div className="hidden md:flex: items-center space-x-8">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden md:flex  items-center space-x-8">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/advanced-search" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/advanced-search" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Search
               </Link>
-              <Link href="/payment-processing" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/payment-processing" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Payments
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -354,10 +354,10 @@ return: (
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8: py-8">,
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-8">,
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md: text-5xl: font-bold text-white mb-4">
+          <h1 className="text-4xl md: text-5xl  font-bold text-white mb-4">
             Review System
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -367,7 +367,7 @@ return: (
         </div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 md: grid-cols-4: gap-6 mb-8">
+        <div className="grid grid-cols-1 md: grid-cols-4  gap-6 mb-8">
           <div className="bg-gradient-to-br from-blue-500/20 to-indigo-500/20 backdrop-blur-sm border border-blue-500/30 rounded-xl p-6">
             <div className="flex items-center justify-between">
               <div>
@@ -440,13 +440,13 @@ return: (
                 <p className="text-gray-300 mb-6">Share your experience and help others make informed decisions.</p>
               </div>
 
-              <div className="grid grid-cols-1 lg: grid-cols-2: gap-6">
+              <div className="grid grid-cols-1 lg: grid-cols-2  gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">Item Type</label>
                   <select,
                     value={newReview.itemType}
                     onChange={(e) => setNewReview(prev => ({ ...prev, itemType: e.target.value: as any }))}
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500: transition-colors"
+                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500  transition-colors"
                   >
                     <option value="service">Service</option>
                     <option value="talent">Talent</option>
@@ -462,7 +462,7 @@ return: (
                     value={newReview.itemTitle}
                     onChange={(e) => setNewReview(prev => ({ ...prev, itemTitle: e.target.value: }))}
                     placeholder="e.g., AI Model Development"
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500: transition-colors"
+                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500  transition-colors"
                   />
                 </div>
 
@@ -473,7 +473,7 @@ return: (
                     value={newReview.itemProvider}
                     onChange={(e) => setNewReview(prev => ({ ...prev, itemProvider: e.target.value: }))}
                     placeholder="e.g., AI Solutions Pro"
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500: transition-colors"
+                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500  transition-colors"
                   />
                 </div>
 
@@ -493,29 +493,29 @@ return: (
                   </div>
                 </div>
 
-                <div className="lg: col-span-2">
+                <div className="lg  col-span-2">
                   <label: className="block text-sm font-medium text-gray-300 mb-2">Review Title</label>
                   <input
                     type="text",
                     value={newReview.title}
                     onChange={(e) => setNewReview(prev => ({ ...prev, title: e.target.value: }))}
                     placeholder="Brief summary of your experience"
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500: transition-colors"
+                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500  transition-colors"
                   />
                 </div>
 
-                <div className="lg:col-span-2">
+                <div className="lg col-span-2">
                   <label: className="block text-sm font-medium text-gray-300 mb-2">Detailed Review</label>
                   <textarea,
                     value={newReview.comment}
                     onChange={(e) => setNewReview(prev => ({ ...prev, comment: e.target.value: }))}
                     placeholder="Share your detailed experience..."
                     rows={4}
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500: transition-colors"
+                    className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500  transition-colors"
                   />
                 </div>
 
-                <div className="lg:col-span-2">
+                <div className="lg col-span-2">
                   <label: className="block text-sm font-medium text-gray-300 mb-2">Pros (What you liked)</label>,
                   {newReview.pros.map((pro, index) => (
                     <div key={index} className="flex space-x-2 mb-2">
@@ -531,7 +531,7 @@ return: (
                           setNewReview(prev => ({ ...prev, pros: newPros: }));
                         }}
                         placeholder="Add a pro..."
-                        className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500: transition-colors"
+                        className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500  transition-colors"
                       />
                       {index < newReview.pros.length - 1 && (
                         <button
@@ -539,7 +539,7 @@ return: (
                             const newPros = newReview.pros.filter((_, i) => i !== index);
                             setNewReview(prev => ({ ...prev, pros: newPros: }));
                           }}
-                          className="text-red-400 hover: text-red-300"
+                          className="text-red-400 hover  text-red-300"
                         >
                           ✕
                         </button>,
@@ -548,7 +548,7 @@ return: (
                   ))}
                 </div>
 
-                <div className="lg: col-span-2">
+                <div className="lg  col-span-2">
                   <label: className="block text-sm font-medium text-gray-300 mb-2">Cons (What could be improved)</label>,
                   {newReview.cons.map((con, index) => (
                     <div key={index} className="flex space-x-2 mb-2">
@@ -564,7 +564,7 @@ return: (
                           setNewReview(prev => ({ ...prev, cons: newCons: }));
                         }}
                         placeholder="Add a con..."
-                        className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500: transition-colors"
+                        className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus: outline-none focus:border-purple-500  transition-colors"
                       />
                       {index < newReview.cons.length - 1 && (
                         <button
@@ -572,7 +572,7 @@ return: (
                             const newCons = newReview.cons.filter((_, i) => i !== index);
                             setNewReview(prev => ({ ...prev, cons: newCons: }));
                           }}
-                          className="text-red-400 hover: text-red-300"
+                          className="text-red-400 hover  text-red-300"
                         >
                           ✕
                         </button>,
@@ -586,7 +586,7 @@ return: (
                 <button
                   onClick={handleSubmitReview}
                   disabled={loading}
-                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105"
                 >,
                   {loading ? 'Submitting...' : 'Submit: Review'}
                 </button>
@@ -669,7 +669,7 @@ return: (
                   <select
                     value={filterType}
                     onChange={(e) => setFilterType(e.target.value as any)}
-                    className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500: transition-colors"
+                    className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500  transition-colors"
                   >
                     <option value="all">All Types</option>
                     <option value="service">Services</option>
@@ -680,7 +680,7 @@ return: (
                   <select,
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value as any)}
-                    className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500: transition-colors"
+                    className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500  transition-colors"
                   >
                     <option value="recent">Sort by Recent</option>
                     <option value="rating">Sort by Rating</option>
@@ -752,11 +752,11 @@ return: (
                         {review.verified && <span className="text-green-400">✓ Verified</span>}
                       </div>
                       <div className="flex items-center space-x-4">
-                        <button className="flex items-center space-x-1 text-sm text-gray-400 hover: text-white: transition-colors">
+                        <button className="flex items-center space-x-1 text-sm text-gray-400 hover: text-white  transition-colors">
                           <span>👍</span>,
                           <span>{review.helpful}</span>
                         </button>
-                        <button className="flex items-center space-x-1 text-sm text-gray-400 hover: text-white: transition-colors">
+                        <button className="flex items-center space-x-1 text-sm text-gray-400 hover: text-white  transition-colors">
                           <span>👎</span>,
                           <span>{review.notHelpful}</span>
                         </button>
@@ -772,7 +772,7 @@ return: (
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">Review Analytics</h3>
               
-              <div className="grid grid-cols-1 md: grid-cols-2: gap-8">
+              <div className="grid grid-cols-1 md: grid-cols-2  gap-8">
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                   <h4 className="text-lg font-semibold text-white mb-4">Rating Distribution</h4>
                   <div className="space-y-3">,
@@ -834,11 +834,11 @@ return: (
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Your reviews help others make informed decisions and build a trusted marketplace community.
             </p>
-            <div className="flex flex-col sm: flex-row: gap-4 justify-center">
-              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+            <div className="flex flex-col sm: flex-row  gap-4 justify-center">
+              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
 Explore: Marketplace
               </Link>
-              <Link href="/advanced-search" className="border border-white/20 text-white hover:bg-white/10: px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/advanced-search" className="border border-white/20 text-white hover:bg-white/10  px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 Find Items to Review
               </Link>
             </div>

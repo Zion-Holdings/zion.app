@@ -306,7 +306,7 @@ const MarketplacePricingPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -318,19 +318,19 @@ const MarketplacePricingPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <nav className="flex items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/invoice-billing" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/invoice-billing" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Billing
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </nav>
@@ -339,9 +339,9 @@ const MarketplacePricingPage: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
               Marketplace Pricing & Commission
             </span>
@@ -351,17 +351,17 @@ const MarketplacePricingPage: NextPage = () => {
             Choose the right tier for your business needs and maximize your revenue potential.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="#pricing" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+            <Link href="#pricing" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
               View Pricing
             </Link>
-            <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+            <Link href="/marketplace" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
               Calculate Fees
             </Link>
           </div>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-12">
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">
             <div className="text-3xl font-bold text-white mb-2">{formatCurrency(4800)}</div>
             <p className="text-gray-300 text-sm">Total Revenue</p>
@@ -382,7 +382,7 @@ const MarketplacePricingPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 pb-12">
         {/* Tabs */}
         <div className="flex flex-wrap gap-2 mb-8">
           {[
@@ -438,7 +438,7 @@ const MarketplacePricingPage: NextPage = () => {
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-white text-center mb-8">Choose Your Plan</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md grid-cols-3 gap-8">
               {pricingTiers.map((tier) => (
                 <div key={tier.id} className={`relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-8 hover:bg-white/10 transition-all duration-300 ${
                   tier.popular ? 'border-purple-500/50 bg-gradient-to-br from-purple-500/10 to-pink-500/10' : ''
@@ -535,7 +535,7 @@ const MarketplacePricingPage: NextPage = () => {
                     </span>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md grid-cols-2 gap-6">
                     <div>
                       <h4 className="text-white font-semibold mb-4">Volume Discounts</h4>
                       <div className="space-y-3">
@@ -616,7 +616,7 @@ const MarketplacePricingPage: NextPage = () => {
                   </thead>
                   <tbody className="divide-y divide-white/10">
                     {transactions.map((transaction) => (
-                      <tr key={transaction.id} className="hover:bg-white/5">
+                      <tr key={transaction.id} className="hover bg-white/5">
                         <td className="text-white py-3 px-6">{transaction.id}</td>
                         <td className="text-white py-3 px-6">{formatCurrency(transaction.amount)}</td>
                         <td className="text-white py-3 px-6">{transaction.category}</td>
@@ -656,7 +656,7 @@ const MarketplacePricingPage: NextPage = () => {
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                  <div className="grid grid-cols-1 md grid-cols-4 gap-4 mb-6">
                     <div className="text-center">
                       <div className="text-white font-semibold">{formatCurrency(report.commissionRevenue)}</div>
                       <div className="text-gray-300 text-sm">Commission Revenue</div>
@@ -701,7 +701,7 @@ const MarketplacePricingPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Start Earning Today
@@ -711,10 +711,10 @@ const MarketplacePricingPage: NextPage = () => {
               with our transparent commission structure and competitive rates.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="#pricing" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+              <Link href="#pricing" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
                 View Plans
               </Link>
-              <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/marketplace" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 Start Selling
               </Link>
             </div>
@@ -724,8 +724,8 @@ const MarketplacePricingPage: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+          <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">Zion Marketplace</h3>
               <p className="text-gray-300 text-sm">
@@ -735,28 +735,28 @@ const MarketplacePricingPage: NextPage = () => {
             <div>
               <h4 className="text-white font-semibold mb-4">Pricing & Commissions</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/marketplace-pricing" className="text-gray-400 hover:text-white transition-colors">Pricing Tiers</Link></li>
-                <li><Link href="/invoice-billing" className="text-gray-400 hover:text-white transition-colors">Billing System</Link></li>
-                <li><Link href="/dispute-resolution" className="text-gray-400 hover:text-white transition-colors">Dispute Resolution</Link></li>
-                <li><Link href="/skill-verification" className="text-gray-400 hover:text-white transition-colors">Skill Verification</Link></li>
+                <li><Link href="/marketplace-pricing" className="text-gray-400 hover text-white transition-colors">Pricing Tiers</Link></li>
+                <li><Link href="/invoice-billing" className="text-gray-400 hover text-white transition-colors">Billing System</Link></li>
+                <li><Link href="/dispute-resolution" className="text-gray-400 hover text-white transition-colors">Dispute Resolution</Link></li>
+                <li><Link href="/skill-verification" className="text-gray-400 hover text-white transition-colors">Skill Verification</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact Us</Link></li>
-                <li><Link href="/real-time-chat" className="text-gray-400 hover:text-white transition-colors">Live Chat</Link></li>
-                <li><Link href="/notifications" className="text-gray-400 hover:text-white transition-colors">Notifications</Link></li>
-                <li><Link href="/ai-powered-contract-legal" className="text-gray-400 hover:text-white transition-colors">Legal Support</Link></li>
+                <li><Link href="/contact" className="text-gray-400 hover text-white transition-colors">Contact Us</Link></li>
+                <li><Link href="/real-time-chat" className="text-gray-400 hover text-white transition-colors">Live Chat</Link></li>
+                <li><Link href="/notifications" className="text-gray-400 hover text-white transition-colors">Notifications</Link></li>
+                <li><Link href="/ai-powered-contract-legal" className="text-gray-400 hover text-white transition-colors">Legal Support</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Connect</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
-                <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
-                <li><Link href="/auth/signup" className="text-gray-400 hover:text-white transition-colors">Sign Up</Link></li>
-                <li><Link href="/auth/login" className="text-gray-400 hover:text-white transition-colors">Login</Link></li>
+                <li><Link href="/about" className="text-gray-400 hover text-white transition-colors">About Us</Link></li>
+                <li><Link href="/blog" className="text-gray-400 hover text-white transition-colors">Blog</Link></li>
+                <li><Link href="/auth/signup" className="text-gray-400 hover text-white transition-colors">Sign Up</Link></li>
+                <li><Link href="/auth/login" className="text-gray-400 hover text-white transition-colors">Login</Link></li>
               </ul>
             </div>
           </div>

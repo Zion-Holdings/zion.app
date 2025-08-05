@@ -25,13 +25,13 @@ const ApiPage: NextPage = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-8">
             <div className="bg-cyber-card p-8 rounded-lg border border-cyber-border">
               <h3 className="text-xl font-semibold text-high-contrast mb-4">REST API</h3>
               <p className="text-high-contrast-secondary mb-4">
                 Access our comprehensive REST API for marketplace integration
               </p>
-              <Link href="/api-docs" className="text-neon-blue hover:text-neon-purple">
+              <Link href="/api-docs" className="text-neon-blue hover text-neon-purple">
                 View Documentation →
               </Link>
             </div>
@@ -41,7 +41,7 @@ const ApiPage: NextPage = () => {
               <p className="text-high-contrast-secondary mb-4">
                 Set up webhooks for real-time notifications and updates
               </p>
-              <Link href="/webhook-management" className="text-neon-blue hover:text-neon-purple">
+              <Link href="/webhook-management" className="text-neon-blue hover text-neon-purple">
                 Configure Webhooks →
               </Link>
             </div>
@@ -51,7 +51,7 @@ const ApiPage: NextPage = () => {
               <p className="text-high-contrast-secondary mb-4">
                 Download our SDKs for popular programming languages
               </p>
-              <Link href="/docs" className="text-neon-blue hover:text-neon-purple">
+              <Link href="/docs" className="text-neon-blue hover text-neon-purple">
                 Download SDK →
               </Link>
             </div>

@@ -301,7 +301,7 @@ const AdvancedSearchPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -314,7 +314,7 @@ const AdvancedSearchPage: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -324,20 +324,20 @@ const AdvancedSearchPage: NextPage = () => {
               </Link>
             </div>
             
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden md flex items-center space-x-8">
+              <Link href="/marketplace" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/services" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Services
               </Link>
-              <Link href="/equipment-rental" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/equipment-rental" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Rent Equipment
               </Link>
-              <Link href="/payment-processing" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/payment-processing" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Payments
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -345,10 +345,10 @@ const AdvancedSearchPage: NextPage = () => {
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
             Advanced Search
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -359,21 +359,21 @@ const AdvancedSearchPage: NextPage = () => {
 
         {/* Search Bar */}
         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-8">
-          <div className="flex flex-col lg:flex-row gap-4">
+          <div className="flex flex-col lg flex-row gap-4">
             <div className="flex-1">
               <input
                 type="text"
                 placeholder="Search for services, talents, equipment, or products..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+                className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus border-purple-500 transition-colors"
               />
             </div>
             <div className="flex space-x-4">
               <select
                 value={selectedType}
                 onChange={(e) => setSelectedType(e.target.value as any)}
-                className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus border-purple-500 transition-colors"
               >
                 <option value="all">All Types</option>
                 <option value="service">Services</option>
@@ -384,7 +384,7 @@ const AdvancedSearchPage: NextPage = () => {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                className="bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus border-purple-500 transition-colors"
               >
                 <option value="relevance">Sort by Relevance</option>
                 <option value="price">Sort by Price</option>
@@ -395,15 +395,15 @@ const AdvancedSearchPage: NextPage = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg grid-cols-4 gap-8">
           {/* Filters Sidebar */}
-          <div className="lg:col-span-1">
+          <div className="lg col-span-1">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 sticky top-24">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-lg font-semibold text-white">Filters</h3>
                 <button
                   onClick={clearFilters}
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                  className="text-sm text-gray-400 hover text-white transition-colors"
                 >
                   Clear All
                 </button>
@@ -425,7 +425,7 @@ const AdvancedSearchPage: NextPage = () => {
                             handleFilterChange('category', filters.category.filter(c => c !== category));
                           }
                         }}
-                        className="rounded border-white/20 bg-white/10 text-purple-500 focus:ring-purple-500"
+                        className="rounded border-white/20 bg-white/10 text-purple-500 focus ring-purple-500"
                       />
                       <span className="text-sm text-gray-300">{category}</span>
                     </label>
@@ -486,7 +486,7 @@ const AdvancedSearchPage: NextPage = () => {
                             handleFilterChange('location', filters.location.filter(l => l !== location));
                           }
                         }}
-                        className="rounded border-white/20 bg-white/10 text-purple-500 focus:ring-purple-500"
+                        className="rounded border-white/20 bg-white/10 text-purple-500 focus ring-purple-500"
                       />
                       <span className="text-sm text-gray-300">{location}</span>
                     </label>
@@ -527,7 +527,7 @@ const AdvancedSearchPage: NextPage = () => {
                     type="checkbox"
                     checked={filters.verified}
                     onChange={(e) => handleFilterChange('verified', e.target.checked)}
-                    className="rounded border-white/20 bg-white/10 text-purple-500 focus:ring-purple-500"
+                    className="rounded border-white/20 bg-white/10 text-purple-500 focus ring-purple-500"
                   />
                   <span className="text-sm text-gray-300">Verified Only</span>
                 </label>
@@ -536,7 +536,7 @@ const AdvancedSearchPage: NextPage = () => {
                     type="checkbox"
                     checked={filters.featured}
                     onChange={(e) => handleFilterChange('featured', e.target.checked)}
-                    className="rounded border-white/20 bg-white/10 text-purple-500 focus:ring-purple-500"
+                    className="rounded border-white/20 bg-white/10 text-purple-500 focus ring-purple-500"
                   />
                   <span className="text-sm text-gray-300">Featured Only</span>
                 </label>
@@ -545,7 +545,7 @@ const AdvancedSearchPage: NextPage = () => {
           </div>
 
           {/* Results */}
-          <div className="lg:col-span-3">
+          <div className="lg col-span-3">
             {/* Results Header */}
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center space-x-4">
@@ -593,7 +593,7 @@ const AdvancedSearchPage: NextPage = () => {
             ) : (
               <div className={viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 gap-6' : 'space-y-4'}>
                 {filteredResults.map((result) => (
-                  <div key={result.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover:scale-105">
+                  <div key={result.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-gradient-to-br hover:from-white/10 hover:to-white/20 transition-all duration-300 transform hover scale-105">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center space-x-3">
                         <div className="text-2xl">{getTypeIcon(result.type)}</div>
@@ -649,10 +649,10 @@ const AdvancedSearchPage: NextPage = () => {
                     </div>
 
                     <div className="flex space-x-3">
-                      <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                      <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                         View Details
                       </button>
-                      <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                      <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                         Contact
                       </button>
                     </div>
@@ -672,11 +672,11 @@ const AdvancedSearchPage: NextPage = () => {
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Try our AI-powered recommendation system or contact our experts for personalized assistance.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
+              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                 AI Recommendations
               </Link>
-              <Link href="/real-time-chat" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/real-time-chat" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 Chat with Expert
               </Link>
             </div>

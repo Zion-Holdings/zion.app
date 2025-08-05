@@ -464,7 +464,7 @@ const ComplianceGovernancePage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="flex items-center justify-center min-h-screen">
@@ -485,17 +485,17 @@ const ComplianceGovernancePage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-white">Compliance & Governance Center</h1>
               <p className="text-gray-300 mt-2">Centralized compliance management and regulatory oversight</p>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                 Generate Report
               </button>
-              <button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover to-blue-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                 New Assessment
               </button>
             </div>
@@ -503,10 +503,10 @@ const ComplianceGovernancePage: NextPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
         {/* Key Metrics Overview */}
         {analytics && (
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg grid-cols-7 gap-4 mb-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -640,7 +640,7 @@ const ComplianceGovernancePage: NextPage = () => {
 
           <div className="p-6">
             {activeTab === 'overview' && (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-8">
                 {/* Compliance by Category */}
                 <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
                   <h3 className="text-lg font-semibold text-white mb-4">Compliance by Category</h3>
@@ -715,7 +715,7 @@ const ComplianceGovernancePage: NextPage = () => {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div className="grid grid-cols-1 md grid-cols-3 gap-4 mb-4">
                       <div>
                         <span className="text-gray-400 text-sm">Last Assessment</span>
                         <p className="text-white font-medium">{formatDate(framework.lastAssessment)}</p>
@@ -737,7 +737,7 @@ const ComplianceGovernancePage: NextPage = () => {
                       ></div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md grid-cols-2 gap-4">
                       <div>
                         <h4 className="text-white font-semibold mb-2">Requirements</h4>
                         <div className="space-y-2">
@@ -799,7 +799,7 @@ const ComplianceGovernancePage: NextPage = () => {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+                    <div className="grid grid-cols-1 md grid-cols-4 gap-4 mb-4">
                       <div>
                         <span className="text-gray-400 text-sm">Version</span>
                         <p className="text-white font-medium">{policy.version}</p>
@@ -885,7 +885,7 @@ const ComplianceGovernancePage: NextPage = () => {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div className="grid grid-cols-1 md grid-cols-3 gap-4 mb-4">
                       <div>
                         <span className="text-gray-400 text-sm">Owner</span>
                         <p className="text-white font-medium">{risk.owner}</p>
@@ -937,7 +937,7 @@ const ComplianceGovernancePage: NextPage = () => {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div className="grid grid-cols-1 md grid-cols-3 gap-4 mb-4">
                       <div>
                         <span className="text-gray-400 text-sm">Type</span>
                         <p className="text-white font-medium capitalize">{action.type}</p>

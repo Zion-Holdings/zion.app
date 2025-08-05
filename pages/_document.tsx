@@ -3,9 +3,7 @@ import { Html, Head, Main, NextScript } from 'next/document';import ModernLayout
 
 export default function Document() {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
+    <ModernLayout>
     return (
     <Html lang="en">
       <Head>

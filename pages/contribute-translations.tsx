@@ -43,7 +43,7 @@ export default function ContributeTranslations() {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="max-w-xl w-full bg-black/30 rounded-xl shadow-lg p-8 border border-white/10">
@@ -60,7 +60,7 @@ export default function ContributeTranslations() {
                   name="language"
                   value={form.language}
                   onChange={handleChange}
-                  className="w-full px-4 py-4 rounded-lg bg-black/20 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-4 rounded-lg bg-black/20 border border-white/10 text-white focus:outline-none focus:ring-2 focus ring-purple-500"
                   required
                 >
                   <option value="">Select a language</option>
@@ -78,7 +78,7 @@ export default function ContributeTranslations() {
                   value={form.key}
                   onChange={handleChange}
                   placeholder="e.g. welcome, marketplace, services"
-                  className="w-full px-4 py-4 rounded-lg bg-black/20 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-4 rounded-lg bg-black/20 border border-white/10 text-white focus:outline-none focus:ring-2 focus ring-purple-500"
                   required
                 />
               </div>
@@ -91,15 +91,15 @@ export default function ContributeTranslations() {
                   value={form.translation}
                   onChange={handleChange}
                   placeholder="Enter your translation here"
-                  className="w-full px-4 py-4 rounded-lg bg-black/20 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-4 rounded-lg bg-black/20 border border-white/10 text-white focus:outline-none focus:ring-2 focus ring-purple-500"
                   required
                 />
               </div>
-              <button type="submit" className="w-full py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 font-semibold text-lg shadow-lg hover:from-pink-500 hover:to-purple-500 transition">Submit Translation</button>
+              <button type="submit" className="w-full py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 font-semibold text-lg shadow-lg hover:from-pink-500 hover to-purple-500 transition">Submit Translation</button>
             </form>
           )}
           <div className="mt-8 text-center">
-            <Link href="/multi-language" className="text-purple-300 hover:underline">Back to Multi-Language Page</Link>
+            <Link href="/multi-language" className="text-purple-300 hover underline">Back to Multi-Language Page</Link>
           </div>
         </div>
       </div>

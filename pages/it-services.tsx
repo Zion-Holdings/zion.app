@@ -227,12 +227,12 @@ const ITServicesPage: React.FC = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         {/* Header */}
         <div className="bg-white shadow-sm border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
             <div className="text-center">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
                 IT Service Providers
@@ -247,10 +247,10 @@ const ITServicesPage: React.FC = () => {
 
         {/* Filters */}
         <div className="bg-white border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
+            <div className="flex flex-col lg flex-row gap-4 items-center justify-between">
               {/* Search */}
-              <div className="w-full lg:w-96">
+              <div className="w-full lg w-96">
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -262,17 +262,17 @@ const ITServicesPage: React.FC = () => {
                     placeholder="Search providers, services, or specialties..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="block w-full pl-10 pr-3 py-4 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                    className="block w-full pl-10 pr-3 py-4 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus border-blue-500"
                   />
                 </div>
               </div>
 
               {/* Category Filter */}
-              <div className="w-full lg:w-124">
+              <div className="w-full lg w-124">
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="block w-full px-3 py-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  className="block w-full px-3 py-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus border-blue-500"
                 >
                   {categories.map((category) => (
                     <option key={category} value={category}>
@@ -283,11 +283,11 @@ const ITServicesPage: React.FC = () => {
               </div>
 
               {/* Sort */}
-              <div className="w-full lg:w-48">
+              <div className="w-full lg w-48">
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as 'aiScore' | 'rating' | 'reviewCount')}
-                  className="block w-full px-3 py-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  className="block w-full px-3 py-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus border-blue-500"
                 >
                   <option value="aiScore">Sort by AI Score</option>
                   <option value="rating">Sort by Rating</option>
@@ -299,7 +299,7 @@ const ITServicesPage: React.FC = () => {
         </div>
 
         {/* Results */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           {/* Results count */}
           <div className="mb-6">
             <p className="text-gray-600">
@@ -308,11 +308,11 @@ const ITServicesPage: React.FC = () => {
           </div>
 
           {/* Provider Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
             {filteredProviders.map((provider) => (
               <div
                 key={provider.id}
-                className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-200"
+                className="bg-white rounded-lg shadow-md hover shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-200"
               >
                 {/* Card Header */}
                 <div className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600">
@@ -393,7 +393,7 @@ const ITServicesPage: React.FC = () => {
                   {/* Request Quote Button */}
                   <button
                     onClick={() => handleRequestQuote(provider.id)}
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus ring-offset-2"
                   >
                     Request Quote
                   </button>

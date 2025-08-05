@@ -347,7 +347,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -372,13 +372,13 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
             <button
               onClick={startExploration}
               disabled={isExploring}
-              className="px-4 py-4 bg-purple-600 hover:bg-purple-700 disabled:bg-gray-600 text-white rounded-lg transition-colors"
+              className="px-4 py-4 bg-purple-600 hover:bg-purple-700 disabled bg-gray-600 text-white rounded-lg transition-colors"
             >
               {isExploring ? 'Exploring...' : 'Start Exploration'}
             </button>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md grid-cols-4 gap-4">
             <div className="bg-slate-700/50 rounded-lg p-4">
               <div className="flex items-center justify-between">
                 <span className="text-gray-300">Consciousness</span>
@@ -446,7 +446,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">Multiversal Dashboard</h3>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
                 <div className="bg-slate-700/50 rounded-lg p-4">
                   <h4 className="text-white font-semibold mb-3">Current Dimension</h4>
                   {currentDimension && (
@@ -505,7 +505,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">Dimensional Exploration</h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-4">
                 {dimensions.map((dimension) => (
                   <div key={dimension.id} className="bg-slate-700/50 rounded-lg p-4">
                     <div className="flex items-center justify-between mb-3">
@@ -536,7 +536,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
                     
                     <button
                       onClick={() => navigateToDimension(dimension)}
-                      className="w-full px-3 py-4 bg-purple-600 hover:bg-purple-700 text-white rounded transition-colors"
+                      className="w-full px-3 py-4 bg-purple-600 hover bg-purple-700 text-white rounded transition-colors"
                     >
                       Navigate
                     </button>
@@ -600,7 +600,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
                     <button
                       onClick={() => transcendDimension(item)}
                       disabled={item.status === 'locked'}
-                      className="w-full px-3 py-4 bg-purple-600 hover:bg-purple-700 disabled:bg-gray-600 text-white rounded transition-colors"
+                      className="w-full px-3 py-4 bg-purple-600 hover:bg-purple-700 disabled bg-gray-600 text-white rounded transition-colors"
                     >
                       {item.status === 'completed' ? 'Completed' : 'Transcend'}
                     </button>
@@ -615,7 +615,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">Multiversal Intelligence</h3>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md grid-cols-2 gap-4">
                 {intelligence.map((item) => (
                   <div key={item.id} className="bg-slate-700/50 rounded-lg p-4">
                     <div className="flex items-center justify-between mb-3">
@@ -679,7 +679,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
                       return (
                         <div
                           key={dimension.id}
-                          className="absolute w-3 h-3 bg-purple-400 rounded-full cursor-pointer hover:bg-purple-300 transition-colors"
+                          className="absolute w-3 h-3 bg-purple-400 rounded-full cursor-pointer hover bg-purple-300 transition-colors"
                           style={{ left: x, top: y }}
                           title={dimension.name}
                         ></div>
@@ -707,13 +707,13 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
             Advanced quantum AI multiversal intelligence, dimensional transcendence, and consciousness exploration capabilities
           </p>
           <div className="flex justify-center space-x-4">
-            <Link href="/" className="text-purple-400 hover:text-purple-300 transition-colors">
+            <Link href="/" className="text-purple-400 hover text-purple-300 transition-colors">
               Home
             </Link>
-            <Link href="/about" className="text-purple-400 hover:text-purple-300 transition-colors">
+            <Link href="/about" className="text-purple-400 hover text-purple-300 transition-colors">
               About
             </Link>
-            <Link href="/contact" className="text-purple-400 hover:text-purple-300 transition-colors">
+            <Link href="/contact" className="text-purple-400 hover text-purple-300 transition-colors">
               Contact
             </Link>
           </div>

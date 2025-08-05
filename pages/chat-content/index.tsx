@@ -111,7 +111,7 @@ const ChatContentIndex: NextPage = () => {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-8">
             {chatTopics.map((topic, index) => (
               <motion.div
                 key={topic.href}
@@ -119,7 +119,7 @@ const ChatContentIndex: NextPage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className="bg-cyber-card p-6 rounded-lg border border-cyber-border hover:border-neon-blue transition-all duration-300"
+                className="bg-cyber-card p-6 rounded-lg border border-cyber-border hover border-neon-blue transition-all duration-300"
               >
                 <div className="flex items-start space-x-4">
                   <div className="text-3xl">{topic.icon}</div>
@@ -133,7 +133,7 @@ const ChatContentIndex: NextPage = () => {
                     </p>
                     <Link 
                       href={topic.href}
-                      className="inline-flex items-center text-neon-blue hover:text-neon-purple transition-colors text-sm font-medium"
+                      className="inline-flex items-center text-neon-blue hover text-neon-purple transition-colors text-sm font-medium"
                     >
                       Start Chat →
                     </Link>
@@ -151,7 +151,7 @@ const ChatContentIndex: NextPage = () => {
           >
             <Link 
               href="/"
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-neon-blue to-neon-purple hover:from-neon-purple hover:to-neon-blue text-white rounded-lg font-medium transition-all duration-300"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-neon-blue to-neon-purple hover:from-neon-purple hover to-neon-blue text-white rounded-lg font-medium transition-all duration-300"
             >
               ← Back to Home
             </Link>

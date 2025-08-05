@@ -131,7 +131,7 @@ const DataWarehouseETL: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="flex items-center justify-center min-h-screen">
@@ -151,18 +151,18 @@ const DataWarehouseETL: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <header className="bg-black/20 backdrop-blur-sm border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
               <Link href="/" className="text-2xl font-bold text-white">
                 Zion Tech Group
               </Link>
             </div>
-            <nav className="hidden md:flex space-x-8">
-              <Link href="/" className="text-gray-300 hover:text-white transition-colors">
+            <nav className="hidden md flex space-x-8">
+              <Link href="/" className="text-gray-300 hover text-white transition-colors">
                 Home
               </Link>
-              <Link href="/dashboard" className="text-gray-300 hover:text-white transition-colors">
+              <Link href="/dashboard" className="text-gray-300 hover text-white transition-colors">
                 Dashboard
               </Link>
             </nav>
@@ -170,7 +170,7 @@ const DataWarehouseETL: NextPage = () => {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-4">
             Data Warehouse & ETL Platform
@@ -181,7 +181,7 @@ const DataWarehouseETL: NextPage = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -304,13 +304,13 @@ const DataWarehouseETL: NextPage = () => {
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
                 {dataSources.map((source) => (
                   <motion.div
                     key={source.id}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all"
+                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover bg-white/10 transition-all"
                   >
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="text-lg font-semibold text-white">{source.name}</h3>
@@ -369,7 +369,7 @@ const DataWarehouseETL: NextPage = () => {
                       </span>
                     </div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md grid-cols-3 gap-4">
                       <div>
                         <p className="text-gray-400 text-sm">Schedule</p>
                         <p className="text-white font-medium capitalize">{pipeline.schedule}</p>
@@ -415,7 +415,7 @@ const DataWarehouseETL: NextPage = () => {
                       </span>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md grid-cols-3 gap-4">
                       <div>
                         <p className="text-gray-400 text-sm">Total Size</p>
                         <p className="text-white font-medium">{formatBytes(warehouse.size)}</p>

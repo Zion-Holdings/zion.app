@@ -562,7 +562,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="text-center">
@@ -590,7 +590,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -600,14 +600,14 @@ const AIPoweredContentManagementPage: NextPage = () => {
               </Link>
             </div>
             
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/ai-powered-mobile-responsive" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden md flex items-center space-x-8">
+              <Link href="/ai-powered-mobile-responsive" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Mobile
               </Link>
-              <Link href="/ai-powered-multi-language" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/ai-powered-multi-language" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Languages
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -615,10 +615,10 @@ const AIPoweredContentManagementPage: NextPage = () => {
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
             AI-Powered Content Management
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -655,7 +655,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
 
         {/* Analytics Overview */}
         {selectedView === 'overview' && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md grid-cols-3 gap-6 mb-8">
             {analytics.map((metric) => (
               <div key={metric.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                 <div className="flex items-center justify-between mb-4">
@@ -682,14 +682,14 @@ const AIPoweredContentManagementPage: NextPage = () => {
         {/* Search and Filters */}
         {selectedView === 'content' && (
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-8">
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-              <div className="lg:col-span-2">
+            <div className="grid grid-cols-1 lg grid-cols-4 gap-4">
+              <div className="lg col-span-2">
                 <input
                   type="text"
                   placeholder="Search content..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus border-purple-500 transition-colors"
                 />
               </div>
               
@@ -697,7 +697,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
                 <select
                   value={filterType}
                   onChange={(e) => setFilterType(e.target.value)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus border-purple-500 transition-colors"
                 >
                   <option value="all">All Types</option>
                   <option value="blog">Blog Posts</option>
@@ -713,7 +713,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus border-purple-500 transition-colors"
                 >
                   <option value="recent">Sort by Recent</option>
                   <option value="popular">Sort by Popular</option>
@@ -743,7 +743,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
                   </span>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                <div className="grid grid-cols-2 md grid-cols-4 gap-4 mb-4">
                   <div>
                     <p className="text-sm text-gray-400">AI Score</p>
                     <p className={`text-lg font-semibold ${getScoreColor(item.aiScore)}`}>{item.aiScore}%</p>
@@ -775,7 +775,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
 
                 <div className="mb-4">
                   <p className="text-sm text-gray-400 mb-2">AI Features:</p>
-                  <div className="grid grid-cols-2 md:grid-cols-5 gap-2 text-xs">
+                  <div className="grid grid-cols-2 md grid-cols-5 gap-2 text-xs">
                     <div className="flex items-center space-x-1">
                       <span>{item.aiFeatures.autoGenerated ? '✅' : '❌'}</span>
                       <span className="text-gray-300">Auto Generated</span>
@@ -800,10 +800,10 @@ const AIPoweredContentManagementPage: NextPage = () => {
                 </div>
 
                 <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                     Edit Content
                   </button>
-                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
                     View Analytics
                   </button>
                 </div>
@@ -814,7 +814,7 @@ const AIPoweredContentManagementPage: NextPage = () => {
 
         {/* Templates */}
         {selectedView === 'templates' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
             {templates.map((template) => (
               <div key={template.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                 <div className="flex items-center justify-between mb-4">
@@ -841,10 +841,10 @@ const AIPoweredContentManagementPage: NextPage = () => {
                 </div>
                 
                 <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                     Use Template
                   </button>
-                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
                     Edit Template
                   </button>
                 </div>
@@ -888,10 +888,10 @@ const AIPoweredContentManagementPage: NextPage = () => {
                 </div>
 
                 <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                     Run Workflow
                   </button>
-                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
                     Edit Workflow
                   </button>
                 </div>
@@ -910,11 +910,11 @@ const AIPoweredContentManagementPage: NextPage = () => {
               Leverage intelligent content management to create, optimize, and 
               schedule content with AI-driven automation and analytics.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                 Create Content
               </button>
-              <Link href="/service-marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/service-marketplace" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 View Services
               </Link>
             </div>

@@ -319,7 +319,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -330,19 +330,19 @@ const AIImmersiveMarketplacePage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/marketplace" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Marketplace
               </Link>
-              <Link href="/ai-project-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-project-management" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Projects
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </div>
@@ -350,10 +350,10 @@ const AIImmersiveMarketplacePage: NextPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
             AI <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Immersive</span> Marketplace
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
@@ -418,7 +418,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
           <>
             {/* Overview */}
             {selectedView === 'overview' && (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6 mb-8">
                 <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
                   <div className="text-3xl mb-2">🛍️</div>
                   <div className="text-2xl font-bold text-white">{products.length}</div>
@@ -446,7 +446,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
             {selectedView === 'products' && (
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white mb-6">AI-Recommended Immersive Products</h2>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
                   {products.map((product) => (
                     <div key={product.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
                       <div className="flex justify-between items-start mb-4">
@@ -499,10 +499,10 @@ const AIImmersiveMarketplacePage: NextPage = () => {
                       </div>
 
                       <div className="flex space-x-2">
-                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-medium transition-all duration-300">
+                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-medium transition-all duration-300">
                           🥽 VR Tour
                         </button>
-                        <button className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 py-4 rounded-lg text-sm font-medium transition-all duration-300">
+                        <button className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover to-cyan-700 text-white px-4 py-4 rounded-lg text-sm font-medium transition-all duration-300">
                           📱 AR Try-On
                         </button>
                       </div>
@@ -516,7 +516,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
             {selectedView === 'showrooms' && (
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white mb-6">Virtual Showrooms</h2>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
                   {showrooms.map((showroom) => (
                     <div key={showroom.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
                       <div className="flex justify-between items-start mb-4">
@@ -562,7 +562,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
                         ))}
                       </div>
 
-                      <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+                      <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                         🏪 Enter Showroom
                       </button>
                     </div>
@@ -575,7 +575,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
             {selectedView === 'experiences' && (
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white mb-6">Immersive Experiences</h2>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
                   {experiences.map((experience) => (
                     <div key={experience.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
                       <div className="flex items-start space-x-3 mb-4">
@@ -618,7 +618,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
                         ))}
                       </div>
 
-                      <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+                      <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover to-cyan-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                         🌟 Start Experience
                       </button>
                     </div>
@@ -631,7 +631,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
             {selectedView === 'insights' && (
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white mb-6">AI-Powered Insights</h2>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
                   {insights.map((insight, index) => (
                     <div key={index} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
                       <div className="flex items-start space-x-3 mb-4">

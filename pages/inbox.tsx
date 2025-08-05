@@ -355,7 +355,7 @@ const InboxPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="flex items-center justify-center min-h-screen">
@@ -376,14 +376,14 @@ const InboxPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-white">Inbox</h1>
               <p className="text-gray-300 mt-2">Manage all your marketplace communications</p>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                 Compose
               </button>
             </div>
@@ -391,10 +391,10 @@ const InboxPage: NextPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
         {/* Stats */}
         {stats && (
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg grid-cols-8 gap-4 mb-8">
             <div className="bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10">
               <div className="text-2xl font-bold text-white">{stats.totalMessages}</div>
               <div className="text-gray-400 text-sm">Total</div>
@@ -430,9 +430,9 @@ const InboxPage: NextPage = () => {
           </div>
         )}
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg grid-cols-4 gap-8">
           {/* Filters Sidebar */}
-          <div className="lg:col-span-1">
+          <div className="lg col-span-1">
             <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
               <h3 className="text-lg font-semibold text-white mb-4">Filters</h3>
               
@@ -443,7 +443,7 @@ const InboxPage: NextPage = () => {
                   placeholder="Search messages..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus ring-purple-500"
                 />
               </div>
 
@@ -453,7 +453,7 @@ const InboxPage: NextPage = () => {
                 <select
                   value={filters.type}
                   onChange={(e) => setFilters(prev => ({ ...prev, type: e.target.value }))}
-                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-purple-500"
                 >
                   <option value="all">All Types</option>
                   <option value="marketplace">Marketplace</option>
@@ -473,7 +473,7 @@ const InboxPage: NextPage = () => {
                 <select
                   value={filters.priority}
                   onChange={(e) => setFilters(prev => ({ ...prev, priority: e.target.value }))}
-                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-purple-500"
                 >
                   <option value="all">All Priorities</option>
                   <option value="urgent">Urgent</option>
@@ -489,7 +489,7 @@ const InboxPage: NextPage = () => {
                 <select
                   value={filters.readStatus}
                   onChange={(e) => setFilters(prev => ({ ...prev, readStatus: e.target.value as any }))}
-                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-purple-500"
                 >
                   <option value="all">All Messages</option>
                   <option value="unread">Unread</option>
@@ -504,7 +504,7 @@ const InboxPage: NextPage = () => {
                     type="checkbox"
                     checked={filters.starred}
                     onChange={(e) => setFilters(prev => ({ ...prev, starred: e.target.checked }))}
-                    className="mr-2 rounded border-white/20 bg-white/10 text-purple-600 focus:ring-purple-500"
+                    className="mr-2 rounded border-white/20 bg-white/10 text-purple-600 focus ring-purple-500"
                   />
                   Starred Only
                 </label>
@@ -513,7 +513,7 @@ const InboxPage: NextPage = () => {
           </div>
 
           {/* Messages List */}
-          <div className="lg:col-span-3">
+          <div className="lg col-span-3">
             <div className="bg-white/5 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden">
               <div className="p-4 border-b border-white/10">
                 <div className="flex justify-between items-center">
@@ -594,7 +594,7 @@ const InboxPage: NextPage = () => {
                                     e.stopPropagation();
                                     toggleStar(message.id);
                                   }}
-                                  className="text-gray-400 hover:text-yellow-400 transition-colors"
+                                  className="text-gray-400 hover text-yellow-400 transition-colors"
                                 >
                                   {message.starred ? '⭐' : '☆'}
                                 </button>
@@ -660,7 +660,7 @@ const InboxPage: NextPage = () => {
                   </div>
                   <button
                     onClick={() => setSelectedMessage(null)}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover text-white transition-colors"
                   >
                     <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

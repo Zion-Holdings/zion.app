@@ -5,9 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function Analytics() {
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
+    <ModernLayout>
     return (
     <>
       <Head>

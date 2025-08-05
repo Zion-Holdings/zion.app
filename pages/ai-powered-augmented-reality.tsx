@@ -296,7 +296,7 @@ const AIPoweredAugmentedRealityPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="text-center">
@@ -324,7 +324,7 @@ const AIPoweredAugmentedRealityPage: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -334,14 +334,14 @@ const AIPoweredAugmentedRealityPage: NextPage = () => {
               </Link>
             </div>
             
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/ai-powered-robotics" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden md flex items-center space-x-8">
+              <Link href="/ai-powered-robotics" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Robotics
               </Link>
-              <Link href="/ai-powered-iot" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/ai-powered-iot" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 IoT
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -349,10 +349,10 @@ const AIPoweredAugmentedRealityPage: NextPage = () => {
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
             AI-Powered Augmented Reality
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -387,7 +387,7 @@ const AIPoweredAugmentedRealityPage: NextPage = () => {
 
         {/* Analytics Overview */}
         {selectedView === 'overview' && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md grid-cols-3 gap-6 mb-8">
             {analytics.map((metric) => (
               <div key={metric.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                 <div className="flex items-center justify-between mb-4">
@@ -413,7 +413,7 @@ const AIPoweredAugmentedRealityPage: NextPage = () => {
 
         {/* AR Experiences */}
         {selectedView === 'experiences' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
             {filteredExperiences.map((experience) => (
               <div key={experience.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                 <div className="flex items-start justify-between mb-4">
@@ -496,10 +496,10 @@ const AIPoweredAugmentedRealityPage: NextPage = () => {
                 </div>
 
                 <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                     Launch Experience
                   </button>
-                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
                     Configure
                   </button>
                 </div>
@@ -518,11 +518,11 @@ const AIPoweredAugmentedRealityPage: NextPage = () => {
               Leverage intelligent augmented reality technology to create immersive experiences, 
               spatial computing, and AI-driven AR optimization.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                 Create Experience
               </button>
-              <Link href="/service-marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/service-marketplace" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 View Services
               </Link>
             </div>
@@ -531,17 +531,17 @@ const AIPoweredAugmentedRealityPage: NextPage = () => {
       </div>
     
         {/* Mobile Navigation */}
-        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
+        <div className="lg hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
           <div className="flex justify-around items-center py-2">
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <Home className="w-5 h-5" />
               <span className="text-xs">Home</span>
             </button>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <Search className="w-5 h-5" />
               <span className="text-xs">Search</span>
             </button>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <User className="w-5 h-5" />
               <span className="text-xs">Profile</span>
             </button>

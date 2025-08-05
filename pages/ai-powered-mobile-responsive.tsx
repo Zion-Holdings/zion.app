@@ -514,7 +514,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="text-center">
@@ -542,7 +542,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -552,17 +552,17 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
               </Link>
             </div>
             
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/ai-powered-multi-language" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden md flex items-center space-x-8">
+              <Link href="/ai-powered-multi-language" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Languages
               </Link>
-              <Link href="/ai-powered-seo" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/ai-powered-seo" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 SEO
               </Link>
-              <Link href="/ai-powered-automation" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/ai-powered-automation" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Automation
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -570,10 +570,10 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
             AI-Powered Mobile Responsive
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -610,7 +610,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
 
         {/* Performance Metrics Overview */}
         {selectedView === 'overview' && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md grid-cols-3 gap-6 mb-8">
             {performanceMetrics.map((metric) => (
               <div key={metric.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                 <div className="flex items-center justify-between mb-4">
@@ -637,14 +637,14 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
         {/* Search and Filters */}
         {selectedView === 'devices' && (
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-8">
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-              <div className="lg:col-span-2">
+            <div className="grid grid-cols-1 lg grid-cols-4 gap-4">
+              <div className="lg col-span-2">
                 <input
                   type="text"
                   placeholder="Search devices..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors"
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus border-purple-500 transition-colors"
                 />
               </div>
               
@@ -652,7 +652,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
                 <select
                   value={filterDeviceType}
                   onChange={(e) => setFilterDeviceType(e.target.value)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus border-purple-500 transition-colors"
                 >
                   <option value="all">All Devices</option>
                   <option value="smartphone">Smartphones</option>
@@ -665,7 +665,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus border-purple-500 transition-colors"
                 >
                   <option value="recent">Sort by Name</option>
                   <option value="performance">Sort by Performance</option>
@@ -679,7 +679,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
 
         {/* Devices List */}
         {selectedView === 'devices' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
             {filteredDevices.map((device) => (
               <div key={device.id} className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                 <div className="flex items-center justify-between mb-4">
@@ -744,10 +744,10 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
                 </div>
 
                 <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                     View Details
                   </button>
-                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
                     Test Device
                   </button>
                 </div>
@@ -774,7 +774,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                <div className="grid grid-cols-1 md grid-cols-3 gap-4 mb-4">
                   <div>
                     <p className="text-sm text-gray-400">Load Time</p>
                     <p className="text-lg font-semibold text-blue-400">{breakpoint.performance.averageLoadTime}s</p>
@@ -802,10 +802,10 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
                 </div>
 
                 <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                     View Details
                   </button>
-                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
                     Test Breakpoint
                   </button>
                 </div>
@@ -839,7 +839,7 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
                   <p className="text-white text-sm">{optimization.optimizedLayout}</p>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                <div className="grid grid-cols-2 md grid-cols-4 gap-4 mb-4">
                   <div>
                     <p className="text-sm text-gray-400">Load Time</p>
                     <p className="text-lg font-semibold text-green-400">+{optimization.improvements.loadTime}%</p>
@@ -882,10 +882,10 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
                 </div>
 
                 <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                     Apply Optimization
                   </button>
-                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
                     Test Layout
                   </button>
                 </div>
@@ -904,11 +904,11 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
               Leverage intelligent mobile optimization to enhance user experience, 
               improve performance, and ensure seamless mobile accessibility.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                 Start Optimization
               </button>
-              <Link href="/service-marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/service-marketplace" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 View Services
               </Link>
             </div>
@@ -917,17 +917,17 @@ const AIPoweredMobileResponsivePage: NextPage = () => {
       </div>
     
         {/* Mobile Navigation */}
-        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
+        <div className="lg hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
           <div className="flex justify-around items-center py-2">
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <Home className="w-5 h-5" />
               <span className="text-xs">Home</span>
             </button>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <Search className="w-5 h-5" />
               <span className="text-xs">Search</span>
             </button>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <User className="w-5 h-5" />
               <span className="text-xs">Profile</span>
             </button>

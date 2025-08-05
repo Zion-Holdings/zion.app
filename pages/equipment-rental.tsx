@@ -324,7 +324,7 @@ const EquipmentRentalPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -336,19 +336,19 @@ const EquipmentRentalPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <nav className="flex items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/project-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/project-management" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Projects
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </nav>
@@ -357,9 +357,9 @@ const EquipmentRentalPage: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400">
               Equipment Rental & Management
             </span>
@@ -369,17 +369,17 @@ const EquipmentRentalPage: NextPage = () => {
             and access high-quality tools and machinery through our comprehensive rental system.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="#equipment" className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+            <Link href="#equipment" className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
               Browse Equipment
             </Link>
-            <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+            <Link href="/marketplace" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
               List Equipment
             </Link>
           </div>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-12">
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">
             <div className="text-3xl font-bold text-white mb-2">{stats.totalEquipment}</div>
             <p className="text-gray-300 text-sm">Total Equipment</p>
@@ -400,7 +400,7 @@ const EquipmentRentalPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 pb-12">
         {/* Tabs */}
         <div className="flex flex-wrap gap-2 mb-8">
           {[
@@ -429,7 +429,7 @@ const EquipmentRentalPage: NextPage = () => {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-orange-500"
             >
               <option value="all">All Categories</option>
               <option value="Photography">Photography</option>
@@ -441,7 +441,7 @@ const EquipmentRentalPage: NextPage = () => {
             <select
               value={filterAvailability}
               onChange={(e) => setFilterAvailability(e.target.value)}
-              className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-orange-500"
             >
               <option value="all">All Availability</option>
               <option value="available">Available</option>
@@ -457,14 +457,14 @@ const EquipmentRentalPage: NextPage = () => {
           <div className="space-y-6">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-bold text-white">Available Equipment</h2>
-              <Link href="/marketplace" className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+              <Link href="/marketplace" className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
                 List Equipment
               </Link>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {filteredEquipment.map((item) => (
-                <div key={item.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:bg-white/10 transition-all duration-300">
+                <div key={item.id} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover bg-white/10 transition-all duration-300">
                   <div className="mb-4">
                     <Image src={item.images[0]} 
                       alt={item.name}
@@ -525,11 +525,11 @@ const EquipmentRentalPage: NextPage = () => {
                   
                   <div className="flex gap-2">
                     {item.availability === 'available' && (
-                      <button className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-3 py-4 rounded text-sm transition-colors">
+                      <button className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover to-red-700 text-white px-3 py-4 rounded text-sm transition-colors">
                         Rent Now
                       </button>
                     )}
-                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-white/10 text-white hover bg-white/20 px-3 py-4 rounded text-sm transition-colors">
                       View Details
                     </button>
                   </div>
@@ -559,7 +559,7 @@ const EquipmentRentalPage: NextPage = () => {
                   </thead>
                   <tbody className="divide-y divide-white/10">
                     {rentals.map((rental) => (
-                      <tr key={rental.id} className="hover:bg-white/5">
+                      <tr key={rental.id} className="hover bg-white/5">
                         <td className="text-white py-3 px-6">{rental.id}</td>
                         <td className="text-white py-3 px-6">
                           {equipment.find(e => e.id === rental.equipmentId)?.name}
@@ -612,7 +612,7 @@ const EquipmentRentalPage: NextPage = () => {
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div className="grid grid-cols-1 md grid-cols-2 gap-4 mb-4">
                     <div>
                       <span className="text-gray-300 text-sm">Type:</span>
                       <div className="text-white capitalize">{record.type}</div>
@@ -652,10 +652,10 @@ const EquipmentRentalPage: NextPage = () => {
                   )}
                   
                   <div className="flex gap-2">
-                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-white/10 text-white hover bg-white/20 px-3 py-4 rounded text-sm transition-colors">
                       View Details
                     </button>
-                    <button className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-3 py-4 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover to-red-700 text-white px-3 py-4 rounded text-sm transition-colors">
                       Schedule Maintenance
                     </button>
                   </div>
@@ -669,7 +669,7 @@ const EquipmentRentalPage: NextPage = () => {
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-white">Rental Analytics</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 md grid-cols-3 gap-6 mb-8">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">
                 <div className="text-3xl font-bold text-white mb-2">{formatCurrency(analytics.totalRevenue)}</div>
                 <p className="text-gray-300 text-sm">Total Revenue</p>
@@ -684,7 +684,7 @@ const EquipmentRentalPage: NextPage = () => {
               </div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 gap-6">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
                 <h3 className="text-lg font-semibold text-white mb-4">Monthly Revenue</h3>
                 <div className="space-y-3">
@@ -721,7 +721,7 @@ const EquipmentRentalPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-orange-900/50 to-red-900/50 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Rent Professional Equipment Today
@@ -731,10 +731,10 @@ const EquipmentRentalPage: NextPage = () => {
               we have everything you need to get the job done professionally.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="#equipment" className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+              <Link href="#equipment" className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover to-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
                 Browse Equipment
               </Link>
-              <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/marketplace" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 List Your Equipment
               </Link>
             </div>
@@ -744,8 +744,8 @@ const EquipmentRentalPage: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+          <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">Zion Marketplace</h3>
               <p className="text-gray-300 text-sm">
@@ -755,28 +755,28 @@ const EquipmentRentalPage: NextPage = () => {
             <div>
               <h4 className="text-white font-semibold mb-4">Equipment Rental</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/equipment-rental" className="text-gray-400 hover:text-white transition-colors">Browse Equipment</Link></li>
-                <li><Link href="/project-management" className="text-gray-400 hover:text-white transition-colors">Project Management</Link></li>
-                <li><Link href="/marketplace-pricing" className="text-gray-400 hover:text-white transition-colors">Pricing & Commissions</Link></li>
-                <li><Link href="/referral-affiliate" className="text-gray-400 hover:text-white transition-colors">Referral System</Link></li>
+                <li><Link href="/equipment-rental" className="text-gray-400 hover text-white transition-colors">Browse Equipment</Link></li>
+                <li><Link href="/project-management" className="text-gray-400 hover text-white transition-colors">Project Management</Link></li>
+                <li><Link href="/marketplace-pricing" className="text-gray-400 hover text-white transition-colors">Pricing & Commissions</Link></li>
+                <li><Link href="/referral-affiliate" className="text-gray-400 hover text-white transition-colors">Referral System</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact Us</Link></li>
-                <li><Link href="/real-time-chat" className="text-gray-400 hover:text-white transition-colors">Live Chat</Link></li>
-                <li><Link href="/notifications" className="text-gray-400 hover:text-white transition-colors">Notifications</Link></li>
-                <li><Link href="/ai-powered-contract-legal" className="text-gray-400 hover:text-white transition-colors">Legal Support</Link></li>
+                <li><Link href="/contact" className="text-gray-400 hover text-white transition-colors">Contact Us</Link></li>
+                <li><Link href="/real-time-chat" className="text-gray-400 hover text-white transition-colors">Live Chat</Link></li>
+                <li><Link href="/notifications" className="text-gray-400 hover text-white transition-colors">Notifications</Link></li>
+                <li><Link href="/ai-powered-contract-legal" className="text-gray-400 hover text-white transition-colors">Legal Support</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Connect</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
-                <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
-                <li><Link href="/auth/signup" className="text-gray-400 hover:text-white transition-colors">Sign Up</Link></li>
-                <li><Link href="/auth/login" className="text-gray-400 hover:text-white transition-colors">Login</Link></li>
+                <li><Link href="/about" className="text-gray-400 hover text-white transition-colors">About Us</Link></li>
+                <li><Link href="/blog" className="text-gray-400 hover text-white transition-colors">Blog</Link></li>
+                <li><Link href="/auth/signup" className="text-gray-400 hover text-white transition-colors">Sign Up</Link></li>
+                <li><Link href="/auth/login" className="text-gray-400 hover text-white transition-colors">Login</Link></li>
               </ul>
             </div>
           </div>

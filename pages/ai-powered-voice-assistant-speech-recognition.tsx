@@ -375,7 +375,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -387,25 +387,25 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Streaming
               </Link>
-              <Link href="/ai-powered-virtual-reality" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-virtual-reality" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 VR
               </Link>
-              <Link href="/ai-powered-holographic-display" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-holographic-display" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Holographic
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-purple-700 hover to-pink-700 transition-all duration-200">
                 Get Started
               </Link>
             </div>
@@ -414,7 +414,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-white mb-6">
@@ -476,7 +476,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
 
         {/* Content Sections */}
         {selectedView === 'overview' && (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg grid-cols-2 gap-8">
             {/* Voice Commands Overview */}
             <div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl font-semibold text-white mb-4">Voice Commands</h3>
@@ -543,7 +543,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
             </div>
 
             {/* Commands Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {filteredCommands.map((command) => (
                 <div key={command.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -585,7 +585,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
 
         {selectedView === 'transcription' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 gap-6">
               {transcriptions.map((transcription) => (
                 <div key={transcription.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -628,7 +628,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
 
         {selectedView === 'speech' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 gap-6">
               {speechOutputs.map((speech) => (
                 <div key={speech.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -670,7 +670,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
 
         {selectedView === 'assistants' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 gap-6">
               {assistants.map((assistant) => (
                 <div key={assistant.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -721,7 +721,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
         {selectedView === 'analytics' && analytics && (
           <div className="space-y-6">
             {/* Analytics Overview */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-5 gap-6">
               <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
                 <div className="text-3xl font-bold text-white">{analytics.totalCommands}</div>
                 <div className="text-gray-400">Total Commands</div>
@@ -776,8 +776,8 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
 
       {/* Footer */}
       <div className="bg-black/20 border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+          <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>
               <p className="text-gray-400 text-sm">
@@ -787,28 +787,28 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
             <div>
               <h4 className="text-white font-semibold mb-4">Features</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/ai-powered-live-streaming-broadcasting" className="hover:text-white">Live Streaming</Link></li>
-                <li><Link href="/ai-powered-virtual-reality" className="hover:text-white">Virtual Reality</Link></li>
-                <li><Link href="/ai-powered-holographic-display" className="hover:text-white">Holographic Display</Link></li>
-                <li><Link href="/ai-powered-voice-assistant-speech-recognition" className="hover:text-white">Voice Assistant</Link></li>
+                <li><Link href="/ai-powered-live-streaming-broadcasting" className="hover text-white">Live Streaming</Link></li>
+                <li><Link href="/ai-powered-virtual-reality" className="hover text-white">Virtual Reality</Link></li>
+                <li><Link href="/ai-powered-holographic-display" className="hover text-white">Holographic Display</Link></li>
+                <li><Link href="/ai-powered-voice-assistant-speech-recognition" className="hover text-white">Voice Assistant</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/marketplace" className="hover:text-white">Marketplace</Link></li>
-                <li><Link href="/services" className="hover:text-white">IT Services</Link></li>
-                <li><Link href="/talents" className="hover:text-white">AI Talents</Link></li>
-                <li><Link href="/equipment" className="hover:text-white">Equipment</Link></li>
+                <li><Link href="/marketplace" className="hover text-white">Marketplace</Link></li>
+                <li><Link href="/services" className="hover text-white">IT Services</Link></li>
+                <li><Link href="/talents" className="hover text-white">AI Talents</Link></li>
+                <li><Link href="/equipment" className="hover text-white">Equipment</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/help-desk-support" className="hover:text-white">Help Desk</Link></li>
-                <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
-                <li><Link href="/docs" className="hover:text-white">Documentation</Link></li>
-                <li><Link href="/status" className="hover:text-white">Status</Link></li>
+                <li><Link href="/help-desk-support" className="hover text-white">Help Desk</Link></li>
+                <li><Link href="/contact" className="hover text-white">Contact</Link></li>
+                <li><Link href="/docs" className="hover text-white">Documentation</Link></li>
+                <li><Link href="/status" className="hover text-white">Status</Link></li>
               </ul>
             </div>
           </div>
@@ -819,17 +819,17 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
       </div>
     
         {/* Mobile Navigation */}
-        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
+        <div className="lg hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
           <div className="flex justify-around items-center py-2">
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <Home className="w-5 h-5" />
               <span className="text-xs">Home</span>
             </button>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <Search className="w-5 h-5" />
               <span className="text-xs">Search</span>
             </button>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <User className="w-5 h-5" />
               <span className="text-xs">Profile</span>
             </button>

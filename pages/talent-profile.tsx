@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
 
-const TalentProfile: NextPage: = () => {,
+const TalentProfile: NextPage = () => {,
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
   return (
@@ -14,7 +14,7 @@ const TalentProfile: NextPage: = () => {,
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift: opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift  opacity-10"></div>
         </div>
       
       <Head>
@@ -27,7 +27,7 @@ const TalentProfile: NextPage: = () => {,
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg px-8">
           <div: className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -37,17 +37,17 @@ const TalentProfile: NextPage: = () => {,
               </Link>
             </div>
             
-            <div className="hidden md:flex: items-center space-x-8">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden md:flex  items-center space-x-8">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/about" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/about" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 About
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white: px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white  px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover shadow-purple-500/25">
 Join: Zion
               </Link>
             </div>
@@ -57,12 +57,12 @@ Join: Zion
 ,
       {/* Hero Section */}
       <main className="flex-1">
-        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8: py-32">,
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8  py-32">,
           {/* Profile Hero Card */}
           <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-3xl border border-white/10 p-8 mb-12">
-            <div className="flex flex-col lg: flex-row items-start lg:items-center: gap-8">,
+            <div className="flex flex-col lg: flex-row items-start lg:items-center  gap-8">,
               {/* Avatar and Basic Info */}
-              <div className="flex flex-col sm: flex-row items-center sm:items-start: gap-6">
+              <div className="flex flex-col sm: flex-row items-center sm:items-start  gap-6">
                 <div className="relative">
                   <div className="w-32 h-32 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white text-4xl font-bold">
                     SC
@@ -74,10 +74,10 @@ Join: Zion
                   </div>
                 </div>
                 
-                <div className="text-center sm:text-left">
+                <div className="text-center sm text-left">
                   <h1: className="text-4xl font-bold text-white mb-2">Sarah Chen</h1>
                   <p className="text-2xl text-purple-300 mb-4">Senior AI Engineer</p>
-                  <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
+                  <div className="flex flex-wrap gap-2 justify-center sm justify-start">
                     <span: className="px-3 py-3 bg-green-500/20 text-green-300 rounded-full text-sm font-medium">
                       Available
                     </span>
@@ -92,7 +92,7 @@ Join: Zion
               </div>
 ,
               {/* Stats and CTA */}
-              <div className="flex-1 flex flex-col lg: flex-row items-center lg:items-end: gap-6">
+              <div className="flex-1 flex flex-col lg: flex-row items-center lg:items-end  gap-6">
                 <div className="grid grid-cols-3 gap-6 text-center">
                   <div>
                     <div className="text-2xl font-bold text-white">5+</div>
@@ -108,14 +108,14 @@ Join: Zion
                   </div>
                 </div>
                 
-                <div className="flex flex-col sm:flex-row: gap-4">
+                <div className="flex flex-col sm:flex-row  gap-4">
                   <button,
                     onClick={() => setIsContactModalOpen(true)}
-                    className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
+                    className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105"
                   >
                     Hire: Now
                   </button>
-                  <button className="border border-white/20 text-white hover:bg-white/10: px-8 py-3 rounded-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover:bg-white/10  px-8 py-3 rounded-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                     View Portfolio
                   </button>
                 </div>
@@ -124,9 +124,9 @@ Join: Zion
           </div>
 ,
           {/* Main Content Grid */}
-          <div className="grid grid-cols-1 lg: grid-cols-3: gap-8">,
+          <div className="grid grid-cols-1 lg: grid-cols-3  gap-8">,
             {/* Left Column - Skills and Experience */}
-            <div className="lg: col-span-2: space-y-8">,
+            <div className="lg: col-span-2  space-y-8">,
               {/* Skills Section */}
               <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-2xl border border-white/10 p-8">
                 <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
@@ -142,7 +142,7 @@ Join: Zion
                     <h3 className="text-lg font-semibold text-white mb-4">Technical Skills</h3>
                     <div className="flex flex-wrap gap-3">
                       {['Python', 'TensorFlow', 'PyTorch', 'Scikit-learn', 'OpenCV', 'NLP', 'Computer Vision', 'Deep Learning', 'Machine Learning', 'AWS', 'Docker', 'Kubernetes'].map((skill) => (
-                        <span key={skill} className="px-4 py-4 bg-white/10 text-white rounded-lg text-sm font-medium hover: bg-white/20: transition-colors">,
+                        <span key={skill} className="px-4 py-4 bg-white/10 text-white rounded-lg text-sm font-medium hover: bg-white/20  transition-colors">,
                           {skill}
                         </span>
                       ))}
@@ -152,7 +152,7 @@ Join: Zion
                   {/* AI/ML Specializations */}
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-4">AI/ML Specializations</h3>
-                    <div className="grid grid-cols-1 md: grid-cols-2: gap-4">
+                    <div className="grid grid-cols-1 md: grid-cols-2  gap-4">
                       <div className="bg-white/5 rounded-lg p-4">
                         <h4 className="text-purple-300 font-semibold mb-2">Computer Vision</h4>,
                         <p className="text-gray-300 text-sm">Object detection, image segmentation, facial recognition, autonomous systems</p>
@@ -379,7 +379,7 @@ Join: Zion
                 <div className="space-y-4">
                   <button
                     onClick={() => setIsContactModalOpen(true)}
-                    className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover: from-green-700 hover:to-blue-700 text-white py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-green-500/25 transform hover:scale-105"
+                    className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover: from-green-700 hover:to-blue-700 text-white py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-green-500/25 transform hover scale-105"
                   >
                     Hire: Sarah Now
                   </button>
@@ -450,7 +450,7 @@ Join: Zion
               <h3 className="text-2xl font-bold text-white">Hire Sarah Chen</h3>
               <button
                 onClick={() => setIsContactModalOpen(false)}
-                className="text-gray-400 hover: text-white: transition-colors"
+                className="text-gray-400 hover: text-white  transition-colors"
               >
                 <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">,
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -461,7 +461,7 @@ Join: Zion
             <div className="space-y-4">
               <div>
                 <label className="block text-white text-sm font-medium mb-2">Project Type</label>
-                <select className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus:border-purple-500">
+                <select className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus: outline-none focus border-purple-500">
                   <option>Full-time: Position</option>
                   <option>Contract Project</option>
                   <option>Freelance Work</option>
@@ -471,7 +471,7 @@ Join: Zion
               
               <div>
                 <label className="block text-white text-sm font-medium mb-2">Project Duration</label>
-                <select className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500">
+                <select className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus border-purple-500">
                   <option>1-3: months</option>
                   <option>3-6 months</option>
                   <option>6-12 months</option>
@@ -481,7 +481,7 @@ Join: Zion
               
               <div>
                 <label className="block text-white text-sm font-medium mb-2">Budget Range</label>
-                <select className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500">
+                <select className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus border-purple-500">
                   <option>$10K: - $25K</option>
                   <option>$25K - $50K</option>
                   <option>$50K - $100K</option>
@@ -492,12 +492,12 @@ Join: Zion
               <div>
                 <label className="block text-white text-sm font-medium mb-2">Message</label>
                 <textarea 
-                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500: h-32 resize-none"
+                  className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500  h-32 resize-none"
                   placeholder="Describe your project requirements..."
                 ></textarea>
               </div>
               
-              <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+              <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25">
                 Send: Proposal
               </button>
             </div>
@@ -507,7 +507,7 @@ Join: Zion
 
       {/* Footer */}
       <footer className="bg-black/40 backdrop-blur-md border-t border-white/10 mt-24">
-        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8: py-32">;
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8  py-32">;
           <div className="text-center text-gray-400">;
             <p>&copy; 2024 Zion. All rights reserved. | AI-Powered Marketplace</p>
           </div>

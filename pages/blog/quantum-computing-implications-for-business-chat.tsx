@@ -11,7 +11,7 @@ const QuantumComputingImplicationsForBusinessChatPage: NextPage = () => {
       </Head>
 
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <h1 className="text-2xl font-bold text-white">
@@ -25,18 +25,18 @@ const QuantumComputingImplicationsForBusinessChatPage: NextPage = () => {
       </nav>
 
       <main className="flex-1">
-        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg px-8 py-12">
           <div className="mb-8">
-            <Link href="/blog" className="text-purple-400 hover:text-purple-300 transition-colors mb-4 inline-block">
+            <Link href="/blog" className="text-purple-400 hover text-purple-300 transition-colors mb-4 inline-block">
               ← Back to Blog
             </Link>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-4xl md text-5xl font-bold text-white mb-6">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
                 Quantum Computing: Implications for Business
               </span>
             </h1>
             <div className="flex items-center text-gray-400 text-sm mb-8">
-              <span>Expert Discussion • professional-technical • technology-deep-dive</span>
+              <span>Expert Discussion • analytical-research • future-predictions</span>
             </div>
           </div>
           
@@ -59,11 +59,11 @@ const QuantumComputingImplicationsForBusinessChatPage: NextPage = () => {
           </div>
           
           <div className="mt-12 pt-8 border-t border-white/10">
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+            <div className="flex flex-col sm flex-row gap-4">
+              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg hover shadow-purple-500/25">
                 Explore Our Services
               </Link>
-              <Link href="/blog" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+              <Link href="/blog" className="border border-purple-500 text-purple-400 hover:bg-purple-500 hover text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
                 Read More Articles
               </Link>
             </div>

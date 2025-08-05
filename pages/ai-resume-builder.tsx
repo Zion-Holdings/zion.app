@@ -278,14 +278,14 @@ const ResumeBuilder = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         {/* Header */}
         <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
                 AI Resume Builder
               </h1>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -296,8 +296,8 @@ const ResumeBuilder = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+          <div className="grid grid-cols-1 lg grid-cols-2 gap-12">
             {/* Input Form */}
             <div className="space-y-8">
               <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10">
@@ -324,7 +324,7 @@ const ResumeBuilder = () => {
                   <div className="space-y-6">
                     <h2 className="text-2xl font-bold text-white mb-6">Personal Information</h2>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">
                           First Name *
@@ -336,7 +336,7 @@ const ResumeBuilder = () => {
                             ...input,
                             personalInfo: { ...input.personalInfo, firstName: e.target.value }
                           })}
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                           placeholder="John"
                         />
                       </div>
@@ -351,13 +351,13 @@ const ResumeBuilder = () => {
                             ...input,
                             personalInfo: { ...input.personalInfo, lastName: e.target.value }
                           })}
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                           placeholder="Doe"
                         />
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">
                           Email *
@@ -369,7 +369,7 @@ const ResumeBuilder = () => {
                             ...input,
                             personalInfo: { ...input.personalInfo, email: e.target.value }
                           })}
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                           placeholder="john.doe@email.com"
                         />
                       </div>
@@ -384,7 +384,7 @@ const ResumeBuilder = () => {
                             ...input,
                             personalInfo: { ...input.personalInfo, phone: e.target.value }
                           })}
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                           placeholder="+1 302 464 0950"
                         />
                       </div>
@@ -401,12 +401,12 @@ const ResumeBuilder = () => {
                           ...input,
                           personalInfo: { ...input.personalInfo, location: e.target.value }
                         })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                         placeholder="San Francisco, CA"
                       />
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-gray-300 mb-2">
                           LinkedIn
@@ -418,7 +418,7 @@ const ResumeBuilder = () => {
                             ...input,
                             personalInfo: { ...input.personalInfo, linkedin: e.target.value }
                           })}
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                           placeholder="linkedin.com/in/johndoe"
                         />
                       </div>
@@ -433,7 +433,7 @@ const ResumeBuilder = () => {
                             ...input,
                             personalInfo: { ...input.personalInfo, website: e.target.value }
                           })}
-                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                          className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                           placeholder="johndoe.com"
                         />
                       </div>
@@ -450,7 +450,7 @@ const ResumeBuilder = () => {
                           personalInfo: { ...input.personalInfo, summary: e.target.value }
                         })}
                         rows={4}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                         placeholder="Experienced software engineer with 5+ years in full-stack development..."
                       />
                     </div>
@@ -464,7 +464,7 @@ const ResumeBuilder = () => {
                       <h2 className="text-2xl font-bold text-white">Work Experience</h2>
                       <button
                         onClick={addExperience}
-                        className="bg-purple-600 text-white px-4 py-4 rounded-lg hover:bg-purple-700 transition-colors"
+                        className="bg-purple-600 text-white px-4 py-4 rounded-lg hover bg-purple-700 transition-colors"
                       >
                         Add Experience
                       </button>
@@ -478,14 +478,14 @@ const ResumeBuilder = () => {
                             {input.experience.length > 1 && (
                               <button
                                 onClick={() => removeExperience(index)}
-                                className="text-red-400 hover:text-red-300 transition-colors"
+                                className="text-red-400 hover text-red-300 transition-colors"
                               >
                                 Remove
                               </button>
                             )}
                           </div>
 
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                          <div className="grid grid-cols-1 md grid-cols-2 gap-4 mb-4">
                             <div>
                               <label className="block text-sm font-medium text-gray-300 mb-2">
                                 Company *
@@ -494,7 +494,7 @@ const ResumeBuilder = () => {
                                 type="text"
                                 value={exp.company}
                                 onChange={(e) => updateExperience(index, 'company', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                                 placeholder="Company Name"
                               />
                             </div>
@@ -506,13 +506,13 @@ const ResumeBuilder = () => {
                                 type="text"
                                 value={exp.position}
                                 onChange={(e) => updateExperience(index, 'position', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                                 placeholder="Software Engineer"
                               />
                             </div>
                           </div>
 
-                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                          <div className="grid grid-cols-1 md grid-cols-3 gap-4 mb-4">
                             <div>
                               <label className="block text-sm font-medium text-gray-300 mb-2">
                                 Start Date
@@ -521,7 +521,7 @@ const ResumeBuilder = () => {
                                 type="date"
                                 value={exp.startDate}
                                 onChange={(e) => updateExperience(index, 'startDate', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                               />
                             </div>
                             <div>
@@ -533,7 +533,7 @@ const ResumeBuilder = () => {
                                 value={exp.endDate}
                                 onChange={(e) => updateExperience(index, 'endDate', e.target.value)}
                                 disabled={exp.current}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent disabled:opacity-50"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent disabled opacity-50"
                               />
                             </div>
                             <div className="flex items-center">
@@ -542,7 +542,7 @@ const ResumeBuilder = () => {
                                   type="checkbox"
                                   checked={exp.current}
                                   onChange={(e) => updateExperience(index, 'current', e.target.checked)}
-                                  className="rounded border-white/20 bg-white/10 text-purple-600 focus:ring-purple-500"
+                                  className="rounded border-white/20 bg-white/10 text-purple-600 focus ring-purple-500"
                                 />
                                 <span>Current Position</span>
                               </label>
@@ -557,7 +557,7 @@ const ResumeBuilder = () => {
                               value={exp.description}
                               onChange={(e) => updateExperience(index, 'description', e.target.value)}
                               rows={3}
-                              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                               placeholder="Brief description of your role and responsibilities..."
                             />
                           </div>
@@ -573,12 +573,12 @@ const ResumeBuilder = () => {
                                     type="text"
                                     value={achievement}
                                     onChange={(e) => updateAchievement(index, achievementIndex, e.target.value)}
-                                    className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                    className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                                     placeholder="Key achievement or responsibility..."
                                   />
                                   <button
                                     onClick={() => removeAchievement(index, achievementIndex)}
-                                    className="text-red-400 hover:text-red-300 transition-colors px-3"
+                                    className="text-red-400 hover text-red-300 transition-colors px-3"
                                   >
                                     Remove
                                   </button>
@@ -586,7 +586,7 @@ const ResumeBuilder = () => {
                               ))}
                               <button
                                 onClick={() => addAchievement(index)}
-                                className="text-purple-400 hover:text-purple-300 transition-colors"
+                                className="text-purple-400 hover text-purple-300 transition-colors"
                               >
                                 + Add Achievement
                               </button>
@@ -605,7 +605,7 @@ const ResumeBuilder = () => {
                       <h2 className="text-2xl font-bold text-white">Education</h2>
                       <button
                         onClick={addEducation}
-                        className="bg-purple-600 text-white px-4 py-4 rounded-lg hover:bg-purple-700 transition-colors"
+                        className="bg-purple-600 text-white px-4 py-4 rounded-lg hover bg-purple-700 transition-colors"
                       >
                         Add Education
                       </button>
@@ -619,14 +619,14 @@ const ResumeBuilder = () => {
                             {input.education.length > 1 && (
                               <button
                                 onClick={() => removeEducation(index)}
-                                className="text-red-400 hover:text-red-300 transition-colors"
+                                className="text-red-400 hover text-red-300 transition-colors"
                               >
                                 Remove
                               </button>
                             )}
                           </div>
 
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                          <div className="grid grid-cols-1 md grid-cols-2 gap-4 mb-4">
                             <div>
                               <label className="block text-sm font-medium text-gray-300 mb-2">
                                 Institution *
@@ -635,7 +635,7 @@ const ResumeBuilder = () => {
                                 type="text"
                                 value={edu.institution}
                                 onChange={(e) => updateEducation(index, 'institution', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                                 placeholder="University Name"
                               />
                             </div>
@@ -647,13 +647,13 @@ const ResumeBuilder = () => {
                                 type="text"
                                 value={edu.degree}
                                 onChange={(e) => updateEducation(index, 'degree', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                                 placeholder="Bachelor's"
                               />
                             </div>
                           </div>
 
-                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                          <div className="grid grid-cols-1 md grid-cols-3 gap-4 mb-4">
                             <div>
                               <label className="block text-sm font-medium text-gray-300 mb-2">
                                 Field of Study
@@ -662,7 +662,7 @@ const ResumeBuilder = () => {
                                 type="text"
                                 value={edu.field}
                                 onChange={(e) => updateEducation(index, 'field', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                                 placeholder="Computer Science"
                               />
                             </div>
@@ -674,7 +674,7 @@ const ResumeBuilder = () => {
                                 type="date"
                                 value={edu.startDate}
                                 onChange={(e) => updateEducation(index, 'startDate', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                               />
                             </div>
                             <div>
@@ -686,7 +686,7 @@ const ResumeBuilder = () => {
                                 value={edu.endDate}
                                 onChange={(e) => updateEducation(index, 'endDate', e.target.value)}
                                 disabled={edu.current}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent disabled:opacity-50"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent disabled opacity-50"
                               />
                             </div>
                           </div>
@@ -697,7 +697,7 @@ const ResumeBuilder = () => {
                                 type="checkbox"
                                 checked={edu.current}
                                 onChange={(e) => updateEducation(index, 'current', e.target.checked)}
-                                className="rounded border-white/20 bg-white/10 text-purple-600 focus:ring-purple-500"
+                                className="rounded border-white/20 bg-white/10 text-purple-600 focus ring-purple-500"
                               />
                               <span>Currently Studying</span>
                             </label>
@@ -711,7 +711,7 @@ const ResumeBuilder = () => {
                               value={edu.description}
                               onChange={(e) => updateEducation(index, 'description', e.target.value)}
                               rows={3}
-                              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                               placeholder="Relevant coursework, projects, or achievements..."
                             />
                           </div>
@@ -728,7 +728,7 @@ const ResumeBuilder = () => {
                       <h2 className="text-2xl font-bold text-white">Skills</h2>
                       <button
                         onClick={addSkill}
-                        className="bg-purple-600 text-white px-4 py-4 rounded-lg hover:bg-purple-700 transition-colors"
+                        className="bg-purple-600 text-white px-4 py-4 rounded-lg hover bg-purple-700 transition-colors"
                       >
                         Add Skill
                       </button>
@@ -742,14 +742,14 @@ const ResumeBuilder = () => {
                             {input.skills.length > 1 && (
                               <button
                                 onClick={() => removeSkill(index)}
-                                className="text-red-400 hover:text-red-300 transition-colors"
+                                className="text-red-400 hover text-red-300 transition-colors"
                               >
                                 Remove
                               </button>
                             )}
                           </div>
 
-                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                          <div className="grid grid-cols-1 md grid-cols-3 gap-4">
                             <div>
                               <label className="block text-sm font-medium text-gray-300 mb-2">
                                 Skill Name *
@@ -758,7 +758,7 @@ const ResumeBuilder = () => {
                                 type="text"
                                 value={skill.name}
                                 onChange={(e) => updateSkill(index, 'name', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                                 placeholder="JavaScript"
                               />
                             </div>
@@ -769,7 +769,7 @@ const ResumeBuilder = () => {
                               <select
                                 value={skill.level}
                                 onChange={(e) => updateSkill(index, 'level', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                               >
                                 <option value="beginner">Beginner</option>
                                 <option value="intermediate">Intermediate</option>
@@ -785,7 +785,7 @@ const ResumeBuilder = () => {
                                 type="text"
                                 value={skill.category}
                                 onChange={(e) => updateSkill(index, 'category', e.target.value)}
-                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                                 placeholder="Technical"
                               />
                             </div>
@@ -813,12 +813,12 @@ const ResumeBuilder = () => {
                               type="text"
                               value={cert}
                               onChange={(e) => updateArrayItem('certifications', index, e.target.value)}
-                              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                               placeholder="AWS Certified Solutions Architect"
                             />
                             <button
                               onClick={() => removeArrayItem('certifications', index)}
-                              className="text-red-400 hover:text-red-300 transition-colors px-3"
+                              className="text-red-400 hover text-red-300 transition-colors px-3"
                             >
                               Remove
                             </button>
@@ -826,7 +826,7 @@ const ResumeBuilder = () => {
                         ))}
                         <button
                           onClick={() => addArrayItem('certifications', '')}
-                          className="text-purple-400 hover:text-purple-300 transition-colors"
+                          className="text-purple-400 hover text-purple-300 transition-colors"
                         >
                           + Add Certification
                         </button>
@@ -845,12 +845,12 @@ const ResumeBuilder = () => {
                               type="text"
                               value={lang}
                               onChange={(e) => updateArrayItem('languages', index, e.target.value)}
-                              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                               placeholder="English (Native)"
                             />
                             <button
                               onClick={() => removeArrayItem('languages', index)}
-                              className="text-red-400 hover:text-red-300 transition-colors px-3"
+                              className="text-red-400 hover text-red-300 transition-colors px-3"
                             >
                               Remove
                             </button>
@@ -858,7 +858,7 @@ const ResumeBuilder = () => {
                         ))}
                         <button
                           onClick={() => addArrayItem('languages', '')}
-                          className="text-purple-400 hover:text-purple-300 transition-colors"
+                          className="text-purple-400 hover text-purple-300 transition-colors"
                         >
                           + Add Language
                         </button>
@@ -877,12 +877,12 @@ const ResumeBuilder = () => {
                               type="text"
                               value={project}
                               onChange={(e) => updateArrayItem('projects', index, e.target.value)}
-                              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                               placeholder="E-commerce Platform - React, Node.js"
                             />
                             <button
                               onClick={() => removeArrayItem('projects', index)}
-                              className="text-red-400 hover:text-red-300 transition-colors px-3"
+                              className="text-red-400 hover text-red-300 transition-colors px-3"
                             >
                               Remove
                             </button>
@@ -890,7 +890,7 @@ const ResumeBuilder = () => {
                         ))}
                         <button
                           onClick={() => addArrayItem('projects', '')}
-                          className="text-purple-400 hover:text-purple-300 transition-colors"
+                          className="text-purple-400 hover text-purple-300 transition-colors"
                         >
                           + Add Project
                         </button>
@@ -909,12 +909,12 @@ const ResumeBuilder = () => {
                               type="text"
                               value={achievement}
                               onChange={(e) => updateArrayItem('achievements', index, e.target.value)}
-                              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                               placeholder="Led team of 5 developers to deliver project 2 weeks early"
                             />
                             <button
                               onClick={() => removeArrayItem('achievements', index)}
-                              className="text-red-400 hover:text-red-300 transition-colors px-3"
+                              className="text-red-400 hover text-red-300 transition-colors px-3"
                             >
                               Remove
                             </button>
@@ -922,7 +922,7 @@ const ResumeBuilder = () => {
                         ))}
                         <button
                           onClick={() => addArrayItem('achievements', '')}
-                          className="text-purple-400 hover:text-purple-300 transition-colors"
+                          className="text-purple-400 hover text-purple-300 transition-colors"
                         >
                           + Add Achievement
                         </button>
@@ -937,7 +937,7 @@ const ResumeBuilder = () => {
                       <select
                         value={input.template}
                         onChange={(e) => setInput({ ...input, template: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                       >
                         <option value="modern">Modern</option>
                         <option value="classic">Classic</option>
@@ -953,7 +953,7 @@ const ResumeBuilder = () => {
                   <button
                     onClick={generateResume}
                     disabled={loading || !input.personalInfo.firstName || !input.personalInfo.lastName}
-                    className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-4 px-6 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-4 px-6 rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200 disabled:opacity-50 disabled cursor-not-allowed"
                   >
                     {loading ? 'Generating Resume...' : 'Generate Resume'}
                   </button>
@@ -970,13 +970,13 @@ const ResumeBuilder = () => {
                     <div className="flex space-x-3">
                       <button
                         onClick={copyToClipboard}
-                        className="bg-green-600 text-white px-4 py-4 rounded-lg hover:bg-green-700 transition-colors"
+                        className="bg-green-600 text-white px-4 py-4 rounded-lg hover bg-green-700 transition-colors"
                       >
                         Copy
                       </button>
                       <button
                         onClick={downloadResume}
-                        className="bg-purple-600 text-white px-4 py-4 rounded-lg hover:bg-purple-700 transition-colors"
+                        className="bg-purple-600 text-white px-4 py-4 rounded-lg hover bg-purple-700 transition-colors"
                       >
                         Download
                       </button>

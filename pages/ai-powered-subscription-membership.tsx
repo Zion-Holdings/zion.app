@@ -522,7 +522,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -535,9 +535,9 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-44">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-5xl md text-6xl font-bold text-white mb-6">
               AI-Powered Subscription & Membership
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
@@ -560,7 +560,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
         {isLoading ? (
           <div className="flex justify-center items-center py-40">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
@@ -626,7 +626,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                  <div className="grid grid-cols-1 md grid-cols-3 gap-6 mb-6">
                     <div className="bg-white/5 rounded-lg p-4">
                       <div className="text-sm text-gray-400 mb-1">Current Plan</div>
                       <div className="text-white font-semibold">Basic Plan</div>
@@ -674,7 +674,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
                   {/* Benefits */}
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-4">Your Benefits</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md grid-cols-2 gap-4">
                       {userMembership.benefits.map((benefit) => (
                         <div key={benefit.id} className="bg-white/5 rounded-lg p-4">
                           <div className="flex items-center justify-between mb-2">
@@ -706,7 +706,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
             {/* Tiers Tab */}
             {activeTab === 'tiers' && (
               <div className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
                   {subscriptionTiers.map((tier) => (
                     <div key={tier.id} className={`bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10 ${
                       tier.recommended ? 'ring-2 ring-purple-500' : ''
@@ -803,7 +803,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
             {/* Analytics Tab */}
             {activeTab === 'analytics' && analytics && (
               <div className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                     <div className="text-3xl font-bold text-white mb-2">{analytics.totalMembers.toLocaleString()}</div>
                     <div className="text-gray-400 text-sm">Total Members</div>
@@ -856,7 +856,7 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Unlock Premium Benefits?
@@ -865,11 +865,11 @@ const AIPoweredSubscriptionMembershipPage: NextPage = () => {
               Upgrade your membership to access advanced AI features, 
               priority support, and exclusive marketplace benefits.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
+              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                 View Plans
               </Link>
-              <Link href="/talent-directory" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/talent-directory" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 Contact Sales
               </Link>
             </div>

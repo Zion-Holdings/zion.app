@@ -7,7 +7,7 @@ const gap_solution_1754022651946_2Page: NextPage = () => {
   return (
     <ModernLayout>
       <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             AI prediction Solution
@@ -17,7 +17,7 @@ const gap_solution_1754022651946_2Page: NextPage = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 md grid-cols-3 gap-8 mt-12">
           
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
@@ -142,7 +142,7 @@ const gap_solution_1754022651946_2Page: NextPage = () => {
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Pricing Plans
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md grid-cols-3 gap-8">
             
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
@@ -151,7 +151,7 @@ const gap_solution_1754022651946_2Page: NextPage = () => {
               <p className="text-3xl font-bold text-blue-600 mb-4">
                 $299/month
               </p>
-              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover:bg-blue-700">
+              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover bg-blue-700">
                 Get Started
               </button>
             </div>
@@ -163,7 +163,7 @@ const gap_solution_1754022651946_2Page: NextPage = () => {
               <p className="text-3xl font-bold text-blue-600 mb-4">
                 $598/month
               </p>
-              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover:bg-blue-700">
+              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover bg-blue-700">
                 Get Started
               </button>
             </div>
@@ -175,7 +175,7 @@ const gap_solution_1754022651946_2Page: NextPage = () => {
               <p className="text-3xl font-bold text-blue-600 mb-4">
                 $1196/month
               </p>
-              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover:bg-blue-700">
+              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover bg-blue-700">
                 Get Started
               </button>
             </div>
@@ -187,7 +187,7 @@ const gap_solution_1754022651946_2Page: NextPage = () => {
               <p className="text-3xl font-bold text-blue-600 mb-4">
                 Contact sales
               </p>
-              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover:bg-blue-700">
+              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover bg-blue-700">
                 Get Started
               </button>
             </div>

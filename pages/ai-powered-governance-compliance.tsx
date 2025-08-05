@@ -219,7 +219,7 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -232,9 +232,9 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-indigo-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-44">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-5xl md text-6xl font-bold text-white mb-6">
               AI-Powered Governance & Compliance Management System
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
@@ -257,7 +257,7 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
         {isLoading ? (
           <div className="flex justify-center items-center py-40">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
@@ -303,12 +303,12 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
               <div className="space-y-8">
                 {/* Controls */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md space-y-0">
                     <div className="flex items-center space-x-4">
                       <select
                         value={selectedCategory}
                         onChange={(e) => setSelectedCategory(e.target.value)}
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus ring-blue-500"
                       >
                         <option value="all" className="bg-slate-800">All Categories</option>
                         <option value="data-privacy" className="bg-slate-800">Data Privacy</option>
@@ -319,14 +319,14 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
                         <option value="custom" className="bg-slate-800">Custom</option>
                       </select>
                     </div>
-                    <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300">
+                    <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover to-indigo-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300">
                       Create Policy
                     </button>
                   </div>
                 </div>
 
                 {/* Policies Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
                   {filteredPolicies.map((policy) => (
                     <div key={policy.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                       <div className="flex items-start justify-between mb-4">
@@ -387,10 +387,10 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
                       </div>
 
                       <div className="flex space-x-2">
-                        <button className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover to-indigo-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           View Details
                         </button>
-                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 border border-white/20 text-white hover bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           Edit Policy
                         </button>
                       </div>
@@ -415,7 +415,7 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
                       </span>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+                    <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-6">
                       <div className="bg-white/5 rounded-lg p-4">
                         <div className="text-sm text-gray-400 mb-1">Compliance Rate</div>
                         <div className="text-2xl font-bold text-white">{framework.complianceRate}%</div>
@@ -454,7 +454,7 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
             {/* Analytics Tab */}
             {activeTab === 'analytics' && analytics && (
               <div className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                     <div className="text-3xl font-bold text-white mb-2">{analytics.totalPolicies.toLocaleString()}</div>
                     <div className="text-gray-400 text-sm">Total Policies</div>
@@ -507,7 +507,7 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-blue-600/20 to-indigo-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Enhance Your Governance?
@@ -516,11 +516,11 @@ const AIPoweredGovernanceCompliancePage: NextPage = () => {
               Start your governance and compliance journey with our AI-powered management system 
               and ensure comprehensive oversight and regulatory adherence.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-blue-500/25 transform hover:scale-105">
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
+              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-blue-500/25 transform hover scale-105">
                 Start Governance
               </Link>
-              <Link href="/talent-directory" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/talent-directory" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 Learn More
               </Link>
             </div>

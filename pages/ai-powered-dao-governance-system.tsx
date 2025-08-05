@@ -332,7 +332,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -344,7 +344,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
 
       {/* Header */}
       <header className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-3">
@@ -384,7 +384,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
 
       {/* Main Content */}
       <main className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           
           {/* Tab Navigation */}
           <div className="mb-8">
@@ -418,7 +418,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
             
             {/* DAO Overview */}
             {activeTab === 'overview' && (
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 lg grid-cols-3 gap-6">
                 {/* Token Info */}
                 <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                   <div className="flex items-center space-x-3 mb-4">
@@ -452,10 +452,10 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
                 </div>
 
                 {/* Governance Stats */}
-                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                <div className="lg col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                   <h3 className="text-lg font-semibold text-white mb-4">Governance Statistics</h3>
                   {daoMetrics && (
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-2 md grid-cols-4 gap-4">
                       <div className="text-center">
                         <div className="text-2xl font-bold text-white">{daoMetrics.totalProposals}</div>
                         <div className="text-gray-400 text-sm">Total Proposals</div>
@@ -477,22 +477,22 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
                 </div>
 
                 {/* Quick Actions */}
-                <div className="lg:col-span-3 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                <div className="lg col-span-3 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                   <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200">
+                  <div className="grid grid-cols-1 md grid-cols-4 gap-4">
+                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover:from-purple-700 hover to-purple-800 transition-all duration-200">
                       <div className="text-2xl mb-2">📝</div>
                       <div className="font-semibold">Create Proposal</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover:from-blue-700 hover to-blue-800 transition-all duration-200">
                       <div className="text-2xl mb-2">🗳️</div>
                       <div className="font-semibold">Vote</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover:from-green-700 hover:to-green-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-green-600 to-green-700 rounded-lg text-white hover:from-green-700 hover to-green-800 transition-all duration-200">
                       <div className="text-2xl mb-2">💰</div>
                       <div className="font-semibold">Treasury</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg text-white hover:from-orange-700 hover:to-orange-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg text-white hover:from-orange-700 hover to-orange-800 transition-all duration-200">
                       <div className="text-2xl mb-2">👥</div>
                       <div className="font-semibold">Members</div>
                     </button>
@@ -506,7 +506,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <h2 className="text-2xl font-bold text-white">DAO Proposals</h2>
-                  <button className="px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-200">
+                  <button className="px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover to-pink-700 transition-all duration-200">
                     Create Proposal
                   </button>
                 </div>
@@ -536,7 +536,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
                       
                       <p className="text-gray-300 mb-4">{proposal.description}</p>
                       
-                      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+                      <div className="grid grid-cols-1 md grid-cols-4 gap-4 mb-4">
                         <div>
                           <span className="text-gray-300 text-sm">Votes For</span>
                           <p className="text-green-400 font-semibold">{proposal.votesFor.toLocaleString()}</p>
@@ -559,14 +559,14 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
                         <button 
                           onClick={() => voteOnProposal(proposal.id, 'for')}
                           disabled={isLoading || proposal.status !== 'active'}
-                          className="flex-1 px-3 py-4 bg-green-600 text-white rounded-lg text-sm hover:bg-green-700 transition-colors disabled:opacity-50"
+                          className="flex-1 px-3 py-4 bg-green-600 text-white rounded-lg text-sm hover:bg-green-700 transition-colors disabled opacity-50"
                         >
                           Vote For
                         </button>
                         <button 
                           onClick={() => voteOnProposal(proposal.id, 'against')}
                           disabled={isLoading || proposal.status !== 'active'}
-                          className="flex-1 px-3 py-4 bg-red-600 text-white rounded-lg text-sm hover:bg-red-700 transition-colors disabled:opacity-50"
+                          className="flex-1 px-3 py-4 bg-red-600 text-white rounded-lg text-sm hover:bg-red-700 transition-colors disabled opacity-50"
                         >
                           Vote Against
                         </button>
@@ -574,7 +574,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
                           <button 
                             onClick={() => executeProposal(proposal.id)}
                             disabled={isLoading}
-                            className="flex-1 px-3 py-4 bg-purple-600 text-white rounded-lg text-sm hover:bg-purple-700 transition-colors disabled:opacity-50"
+                            className="flex-1 px-3 py-4 bg-purple-600 text-white rounded-lg text-sm hover:bg-purple-700 transition-colors disabled opacity-50"
                           >
                             Execute
                           </button>
@@ -591,9 +591,9 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">DAO Treasury</h2>
                 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 lg grid-cols-3 gap-6">
                   {/* Treasury Overview */}
-                  <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                  <div className="lg col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                     <h3 className="text-lg font-semibold text-white mb-4">Treasury Overview</h3>
                     <div className="space-y-4">
                       <div className="flex justify-between items-center">
@@ -648,7 +648,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">DAO Members</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
                   {mockMembers.map((member) => (
                     <div key={member.address} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex items-center space-x-3 mb-4">
@@ -700,7 +700,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Governance Parameters</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md grid-cols-2 gap-6">
                   <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                     <h3 className="text-lg font-semibold text-white mb-4">Voting Parameters</h3>
                     <div className="space-y-3">
@@ -753,7 +753,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">DAO Analytics</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
                   <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
@@ -810,7 +810,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
 
       {/* Footer */}
       <footer className="relative z-10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           <div className="text-center">
             <p className="text-gray-400">
               AI-Powered DAO Governance System | Zion Tech Group

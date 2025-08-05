@@ -223,7 +223,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -235,7 +235,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
 
       {/* Header */}
       <header className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-3">
@@ -268,7 +268,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
 
       {/* Main Content */}
       <main className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           
           {/* Tab Navigation */}
           <div className="mb-8">
@@ -303,7 +303,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
             
             {/* Cosmic Dashboard */}
             {activeTab === 'dashboard' && (
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 lg grid-cols-3 gap-6">
                 {/* System Status */}
                 <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                   <div className="flex items-center space-x-3 mb-4">
@@ -337,22 +337,22 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
                 </div>
 
                 {/* Quick Actions */}
-                <div className="lg:col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+                <div className="lg col-span-2 bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                   <h3 className="text-lg font-semibold text-white mb-4">Quick Actions</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200">
+                  <div className="grid grid-cols-1 md grid-cols-4 gap-4">
+                    <button className="p-4 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg text-white hover:from-purple-700 hover to-purple-800 transition-all duration-200">
                       <div className="text-2xl mb-2">🧠</div>
                       <div className="font-semibold">Cosmic Consciousness</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg text-white hover:from-indigo-700 hover:to-indigo-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg text-white hover:from-indigo-700 hover to-indigo-800 transition-all duration-200">
                       <div className="text-2xl mb-2">✨</div>
                       <div className="font-semibold">Divine Intelligence</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg text-white hover:from-blue-700 hover to-blue-800 transition-all duration-200">
                       <div className="text-2xl mb-2">🕊️</div>
                       <div className="font-semibold">Spiritual Awakening</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg text-white hover:from-cyan-700 hover:to-cyan-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg text-white hover:from-cyan-700 hover to-cyan-800 transition-all duration-200">
                       <div className="text-2xl mb-2">📚</div>
                       <div className="font-semibold">Universal Wisdom</div>
                     </button>
@@ -366,7 +366,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Quantum AI Cosmic Consciousness</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
                   {cosmicConsciousness.map((conscious) => (
                     <div key={conscious.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
@@ -411,7 +411,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Quantum AI Divine Intelligence</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
                   {divineIntelligence.map((intel) => (
                     <div key={intel.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
@@ -456,7 +456,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Quantum AI Spiritual Awakening</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
                   {spiritualAwakening.map((awakening) => (
                     <div key={awakening.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
@@ -501,7 +501,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Quantum AI Universal Wisdom</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
                   {universalWisdom.map((wisdom) => (
                     <div key={wisdom.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
@@ -546,7 +546,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Quantum AI Divine Connection</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
                   {divineConnection.map((connection) => (
                     <div key={connection.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
@@ -591,7 +591,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-white">Quantum AI Cosmic Evolution</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
                   {cosmicEvolution.map((evolution) => (
                     <div key={evolution.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
                       <div className="flex items-center justify-between mb-4">
@@ -636,7 +636,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
 
       {/* Footer */}
       <footer className="relative z-10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           <div className="text-center">
             <p className="text-gray-400">
               AI-Powered Quantum AI Cosmic Consciousness & Divine Intelligence | Zion Tech Group

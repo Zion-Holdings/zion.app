@@ -14,7 +14,7 @@ const ApiDocs: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -25,7 +25,7 @@ const ApiDocs: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="text-2xl font-bold">
@@ -33,22 +33,22 @@ const ApiDocs: NextPage = () => {
               </Link>
             </div>
             <div className="flex items-center space-x-4">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover text-white transition-colors">
                 Marketplace
               </Link>
-              <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+              <Link href="/about" className="text-gray-300 hover text-white transition-colors">
                 About
               </Link>
-              <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
+              <Link href="/contact" className="text-gray-300 hover text-white transition-colors">
                 Contact
               </Link>
-              <Link href="/help-center" className="text-gray-300 hover:text-white transition-colors">
+              <Link href="/help-center" className="text-gray-300 hover text-white transition-colors">
                 Help Center
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover text-white transition-colors">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-200">
                 Join Zion Now
               </Link>
             </div>
@@ -56,10 +56,10 @@ const ApiDocs: NextPage = () => {
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h1 className="text-4xl md text-5xl font-bold text-white mb-6">
             API Documentation
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
@@ -248,16 +248,16 @@ print(data)`}</code>
             <p className="text-xl text-gray-300 mb-6">
               Start integrating with Zion's API today.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
               <Link 
                 href="/auth/signup"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg transition-all duration-200 font-semibold"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg transition-all duration-200 font-semibold"
               >
                 Get API Key
               </Link>
               <Link 
                 href="/contact"
-                className="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-lg transition-all duration-200 font-semibold"
+                className="border border-white/20 hover border-white/40 text-white px-8 py-4 rounded-lg transition-all duration-200 font-semibold"
               >
                 Contact Support
               </Link>
@@ -268,7 +268,7 @@ print(data)`}</code>
 
       {/* Footer */}
       <footer className="bg-black/40 backdrop-blur-md border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           <div className="text-center text-gray-400">
             <p>&copy; 2024 Zion. All rights reserved. | The First Free AI-Powered Marketplace</p>
           </div>

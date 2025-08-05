@@ -172,7 +172,7 @@ export default function AdminDashboard() {
       
       <div className="min-h-screen bg-gray-100">
         <div className="bg-white shadow-sm border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
             <div className="flex justify-between items-center py-6">
               <div>
                 <h1 className="text-3xl font-bold text-gray-900">Autonomous Agent Dashboard</h1>
@@ -182,7 +182,7 @@ export default function AdminDashboard() {
                 <span className="text-sm text-gray-500">Logged in as: {user?.email}</span>
                 <button
                   onClick={() => router.push('/dashboard')}
-                  className="px-4 py-4 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors"
+                  className="px-4 py-4 bg-gray-600 hover bg-gray-700 text-white rounded-lg transition-colors"
                 >
                   Back to Dashboard
                 </button>
@@ -191,10 +191,10 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
           <div className="bg-white rounded-lg shadow p-6">
             <h2 className="text-xl font-semibold text-gray-900 mb-4">System Overview</h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+            <div className="grid grid-cols-1 md grid-cols-4 gap-4 mb-6">
               <div className="bg-blue-50 p-4 rounded-lg">
                 <div className="text-2xl font-bold text-blue-600">{agents.length}</div>
                 <div className="text-sm text-blue-600">Total Agents</div>
@@ -233,7 +233,7 @@ export default function AdminDashboard() {
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
                   {agents.map((agent) => (
-                    <tr key={agent.id} className="hover:bg-gray-50">
+                    <tr key={agent.id} className="hover bg-gray-50">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm font-medium text-gray-900">{agent.name}</div>
                         <div className="text-sm text-gray-500">ID: {agent.id}</div>

@@ -218,7 +218,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
           {activeTab === 'overview' && (
             <div className="space-y-6">
               {/* KPI Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
                 <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
                   <div className="flex items-center justify-between">
                     <div>
@@ -289,12 +289,12 @@ const AIPoweredChangeManagementPage: NextPage = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">Change Initiatives</h2>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                   + New Initiative
                 </button>
               </div>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
                 {changeInitiatives.map((initiative) => (
                   <div key={initiative.id} className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
                     <div className="flex justify-between items-start mb-4">
@@ -357,12 +357,12 @@ const AIPoweredChangeManagementPage: NextPage = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">Stakeholders</h2>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                   + Add Stakeholder
                 </button>
               </div>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
                 {stakeholders.map((stakeholder) => (
                   <div key={stakeholder.id} className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
                     <div className="flex justify-between items-start mb-4">
@@ -411,12 +411,12 @@ const AIPoweredChangeManagementPage: NextPage = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">Training Programs</h2>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                   + New Program
                 </button>
               </div>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
                 {trainingPrograms.map((program) => (
                   <div key={program.id} className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
                     <div className="flex justify-between items-start mb-4">
@@ -466,7 +466,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
             <div className="space-y-6">
               <h2 className="text-2xl font-bold text-white">Change Metrics</h2>
               
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
                 {changeMetrics.map((metric) => (
                   <div key={metric.id} className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
                     <div className="flex justify-between items-start mb-4">

@@ -233,7 +233,7 @@ Best regards,
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -244,19 +244,19 @@ Best regards,
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/marketplace" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/services" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Services
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </div>
@@ -264,10 +264,10 @@ Best regards,
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
             AI-Powered <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Investor Matchmaking</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -282,7 +282,7 @@ Best regards,
               <h2 className="text-2xl font-bold text-white mb-6">Tell Us About Your Startup</h2>
               
               <form onSubmit={handleProfileSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-300 mb-2">
                       Startup Name *
@@ -292,7 +292,7 @@ Best regards,
                       required
                       value={startupProfile.name}
                       onChange={(e) => setStartupProfile({...startupProfile, name: e.target.value})}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus ring-purple-500"
                       placeholder="Enter your startup name"
                     />
                   </div>
@@ -305,7 +305,7 @@ Best regards,
                       required
                       value={startupProfile.industry}
                       onChange={(e) => setStartupProfile({...startupProfile, industry: e.target.value})}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-purple-500"
                     >
                       <option value="">Select Industry</option>
                       {industries.map(industry => (
@@ -322,7 +322,7 @@ Best regards,
                       required
                       value={startupProfile.stage}
                       onChange={(e) => setStartupProfile({...startupProfile, stage: e.target.value})}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-purple-500"
                     >
                       <option value="">Select Stage</option>
                       {stages.map(stage => (
@@ -339,7 +339,7 @@ Best regards,
                       type="text"
                       value={startupProfile.location}
                       onChange={(e) => setStartupProfile({...startupProfile, location: e.target.value})}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus ring-purple-500"
                       placeholder="City, State/Country"
                     />
                   </div>
@@ -351,7 +351,7 @@ Best regards,
                     <select
                       value={startupProfile.teamSize}
                       onChange={(e) => setStartupProfile({...startupProfile, teamSize: e.target.value})}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-purple-500"
                     >
                       <option value="">Select Team Size</option>
                       {teamSizes.map(size => (
@@ -368,7 +368,7 @@ Best regards,
                       required
                       value={startupProfile.fundingNeeded}
                       onChange={(e) => setStartupProfile({...startupProfile, fundingNeeded: e.target.value})}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-purple-500"
                     >
                       <option value="">Select Funding Range</option>
                       {fundingRanges.map(range => (
@@ -386,7 +386,7 @@ Best regards,
                     type="url"
                     value={startupProfile.website}
                     onChange={(e) => setStartupProfile({...startupProfile, website: e.target.value})}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus ring-purple-500"
                     placeholder="https://yourstartup.com"
                   />
                 </div>
@@ -400,7 +400,7 @@ Best regards,
                     rows={4}
                     value={startupProfile.pitchSummary}
                     onChange={(e) => setStartupProfile({...startupProfile, pitchSummary: e.target.value})}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus ring-purple-500"
                     placeholder="Briefly describe your startup, problem you're solving, and your unique value proposition..."
                   />
                 </div>
@@ -409,7 +409,7 @@ Best regards,
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-purple-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-purple-500 disabled:opacity-50 disabled cursor-not-allowed"
                   >
                     {isLoading ? 'Finding Investors...' : 'Find Investors'}
                   </button>
@@ -424,13 +424,13 @@ Best regards,
               <h2 className="text-2xl font-bold text-white">Matched Investors</h2>
               <button
                 onClick={() => setShowForm(true)}
-                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white hover:bg-white/20"
+                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white hover bg-white/20"
               >
                 Update Profile
               </button>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
               {investors.map((investor) => (
                 <div key={investor.id} className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
                   <div className="flex justify-between items-start mb-4">
@@ -475,7 +475,7 @@ Best regards,
                   <div className="flex space-x-3">
                     <button
                       onClick={() => generatePitchEmail(investor)}
-                      className="flex-1 px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-pink-700"
+                      className="flex-1 px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg hover:from-purple-700 hover to-pink-700"
                     >
                       Generate Pitch Email
                     </button>
@@ -483,7 +483,7 @@ Best regards,
                       href={investor.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-4 bg-white/10 border border-white/20 text-white rounded-lg hover:bg-white/20"
+                      className="px-4 py-4 bg-white/10 border border-white/20 text-white rounded-lg hover bg-white/20"
                     >
                       Visit Website
                     </a>
@@ -510,7 +510,7 @@ Best regards,
                 </h3>
                 <button
                   onClick={() => setSelectedInvestor(null)}
-                  className="text-gray-400 hover:text-white"
+                  className="text-gray-400 hover text-white"
                 >
                   ✕
                 </button>
@@ -520,7 +520,7 @@ Best regards,
                 value={pitchEmail}
                 onChange={(e) => setPitchEmail(e.target.value)}
                 rows={15}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 mb-4"
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus ring-purple-500 mb-4"
               />
               
               <div className="flex space-x-3">
@@ -529,19 +529,19 @@ Best regards,
                     navigator.clipboard.writeText(pitchEmail)
                     alert('Email copied to clipboard!')
                   }}
-                  className="px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-pink-700"
+                  className="px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg hover:from-purple-700 hover to-pink-700"
                 >
                   Copy to Clipboard
                 </button>
                 <a
                   href={`mailto:${selectedInvestor.contactEmail}?subject=Investment Opportunity - ${startupProfile.name}&body=${encodeURIComponent(pitchEmail)}`}
-                  className="px-4 py-4 bg-white/10 border border-white/20 text-white rounded-lg hover:bg-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 text-white rounded-lg hover bg-white/20"
                 >
                   Open in Email Client
                 </a>
                 <button
                   onClick={() => setSelectedInvestor(null)}
-                  className="px-4 py-4 bg-white/10 border border-white/20 text-white rounded-lg hover:bg-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 text-white rounded-lg hover bg-white/20"
                 >
                   Close
                 </button>

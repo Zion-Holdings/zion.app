@@ -176,7 +176,7 @@ const QuoteRequestForm = () => {
           type="text"
           value={formData.projectName}
           onChange={(e) => handleInputChange('projectName', e.target.value)}
-          className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus ring-blue-500"
           placeholder="Enter project name"
         />
       </div>
@@ -186,7 +186,7 @@ const QuoteRequestForm = () => {
         <select
           value={formData.projectType}
           onChange={(e) => handleInputChange('projectType', e.target.value)}
-          className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus ring-blue-500"
         >
           <option value="">Select project type</option>
           <option value="commercial">Commercial</option>
@@ -207,7 +207,7 @@ const QuoteRequestForm = () => {
           value={formData.projectDescription}
           onChange={(e) => handleInputChange('projectDescription', e.target.value)}
           rows={4}
-          className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus ring-blue-500"
           placeholder="Describe your project in detail..."
         />
       </div>
@@ -219,7 +219,7 @@ const QuoteRequestForm = () => {
             type="text"
             value={formData.location}
             onChange={(e) => handleInputChange('location', e.target.value)}
-            className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus ring-blue-500"
             placeholder="Project location"
           />
         </div>
@@ -230,7 +230,7 @@ const QuoteRequestForm = () => {
             type="text"
             value={formData.duration}
             onChange={(e) => handleInputChange('duration', e.target.value)}
-            className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus ring-blue-500"
             placeholder="e.g., 2 hours, 1 day"
           />
         </div>
@@ -247,7 +247,7 @@ const QuoteRequestForm = () => {
             type="date"
             value={formData.startDate}
             onChange={(e) => handleInputChange('startDate', e.target.value)}
-            className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus ring-blue-500"
           />
         </div>
 
@@ -257,7 +257,7 @@ const QuoteRequestForm = () => {
             type="date"
             value={formData.endDate}
             onChange={(e) => handleInputChange('endDate', e.target.value)}
-            className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus ring-blue-500"
           />
         </div>
       </div>
@@ -267,7 +267,7 @@ const QuoteRequestForm = () => {
         <select
           value={formData.urgency}
           onChange={(e) => handleInputChange('urgency', e.target.value)}
-          className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus ring-blue-500"
         >
           <option value="">Select urgency level</option>
           {urgencyLevels.map(level => (
@@ -285,7 +285,7 @@ const QuoteRequestForm = () => {
         <select
           value={formData.budgetRange}
           onChange={(e) => handleInputChange('budgetRange', e.target.value)}
-          className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus ring-blue-500"
         >
           <option value="">Select budget range</option>
           {budgetRanges.map(range => (
@@ -300,7 +300,7 @@ const QuoteRequestForm = () => {
           value={formData.budgetDetails}
           onChange={(e) => handleInputChange('budgetDetails', e.target.value)}
           rows={3}
-          className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus ring-blue-500"
           placeholder="Any specific budget requirements or constraints..."
         />
       </div>
@@ -314,7 +314,7 @@ const QuoteRequestForm = () => {
               type="text"
               value={formData.clientName}
               onChange={(e) => handleInputChange('clientName', e.target.value)}
-              className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus ring-blue-500"
               placeholder="Your full name"
             />
           </div>
@@ -325,7 +325,7 @@ const QuoteRequestForm = () => {
               type="text"
               value={formData.company}
               onChange={(e) => handleInputChange('company', e.target.value)}
-              className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus ring-blue-500"
               placeholder="Company name (optional)"
             />
           </div>
@@ -336,7 +336,7 @@ const QuoteRequestForm = () => {
               type="email"
               value={formData.email}
               onChange={(e) => handleInputChange('email', e.target.value)}
-              className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus ring-blue-500"
               placeholder="your.email@example.com"
             />
           </div>
@@ -347,7 +347,7 @@ const QuoteRequestForm = () => {
               type="tel"
               value={formData.phone}
               onChange={(e) => handleInputChange('phone', e.target.value)}
-              className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus ring-blue-500"
               placeholder="Phone number"
             />
           </div>
@@ -453,8 +453,6 @@ const QuoteRequestForm = () => {
   ];
 
   return (
-  <ModernLayout>
-    return (
     <ModernLayout>
       <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-4xl mx-auto px-4">
@@ -513,14 +511,14 @@ const QuoteRequestForm = () => {
               {currentStep < 5 ? (
                 <button
                   onClick={nextStep}
-                  className="px-6 py-4 bg-blue-500 text-white rounded-md font-medium hover:bg-blue-600 text-responsive-lg"
+                  className="px-6 py-4 bg-blue-500 text-white rounded-md font-medium hover bg-blue-600 text-responsive-lg"
                 >
                   Next
                 </button>
               ) : (
                 <button
                   onClick={handleSubmit}
-                  className="px-6 py-4 bg-green-500 text-white rounded-md font-medium hover:bg-green-600 text-responsive-lg"
+                  className="px-6 py-4 bg-green-500 text-white rounded-md font-medium hover bg-green-600 text-responsive-lg"
                 >
                   Submit Quote Request
                 </button>

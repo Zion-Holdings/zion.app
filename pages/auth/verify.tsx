@@ -27,9 +27,7 @@ const Verify: NextPage = () => {
   }, [router.query])
 
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
+    <ModernLayout>
     return (
     <AuthLayout>
       <Head>
@@ -38,7 +36,7 @@ const Verify: NextPage = () => {
       
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
-      <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8 py-40">
+      <div className="max-w-md mx-auto px-4 sm:px-6 lg px-8 py-40">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-4">
             Email <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Verification</span>
@@ -66,7 +64,7 @@ const Verify: NextPage = () => {
               <p className="text-green-300 mb-4">{message}</p>
               <Link 
                 href="/auth/login" 
-                className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+                className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
               >
                 Continue to Login
               </Link>
@@ -83,7 +81,7 @@ const Verify: NextPage = () => {
               <p className="text-red-300 mb-4">{message}</p>
               <Link 
                 href="/auth/login" 
-                className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+                className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
               >
                 Back to Login
               </Link>

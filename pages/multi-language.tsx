@@ -329,7 +329,7 @@ const MultiLanguagePage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="text-center">
@@ -357,7 +357,7 @@ const MultiLanguagePage: NextPage = () => {
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex-shrink-0">
@@ -367,17 +367,17 @@ const MultiLanguagePage: NextPage = () => {
               </Link>
             </div>
             
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+            <div className="hidden md flex items-center space-x-8">
+              <Link href="/marketplace" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/user-profiles" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/user-profiles" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Profiles
               </Link>
-              <Link href="/analytics-dashboard" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/analytics-dashboard" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Analytics
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -385,10 +385,10 @@ const MultiLanguagePage: NextPage = () => {
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
             Multi-Language Support
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -404,7 +404,7 @@ const MultiLanguagePage: NextPage = () => {
             <p className="text-gray-300">Choose your preferred language for the marketplace experience</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-4">
             {languages.map((language) => (
               <button
                 key={language.code}
@@ -450,7 +450,7 @@ const MultiLanguagePage: NextPage = () => {
             <h2 className="text-2xl font-bold text-white">Translation Preview</h2>
             <button
               onClick={() => setShowTranslations(!showTranslations)}
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-semibold transition-all duration-300"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg font-semibold transition-all duration-300"
             >
               {showTranslations ? 'Hide' : 'Show'} Translations
             </button>
@@ -460,7 +460,7 @@ const MultiLanguagePage: NextPage = () => {
             <div className="space-y-4">
               {translations.map((translation) => (
                 <div key={translation.key} className="bg-white/5 rounded-lg p-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-4">
                     <div>
                       <h4 className="text-sm font-medium text-gray-400 mb-2">English</h4>
                       <p className="text-white">{translation.english}</p>
@@ -469,7 +469,7 @@ const MultiLanguagePage: NextPage = () => {
                       <h4 className="text-sm font-medium text-gray-400 mb-2">{getLanguageCode(selectedLanguage)}</h4>
                       <p className="text-white">{getTranslation(translation.key, selectedLanguage)}</p>
                     </div>
-                    <div className="md:col-span-2 lg:col-span-1">
+                    <div className="md:col-span-2 lg col-span-1">
                       <h4 className="text-sm font-medium text-gray-400 mb-2">Key</h4>
                       <p className="text-purple-300 font-mono text-sm">{translation.key}</p>
                     </div>
@@ -481,7 +481,7 @@ const MultiLanguagePage: NextPage = () => {
         </div>
 
         {/* Language Statistics */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md grid-cols-3 gap-6 mb-8">
           <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-sm border border-green-500/30 rounded-xl p-6">
             <div className="flex items-center justify-between">
               <div>
@@ -514,7 +514,7 @@ const MultiLanguagePage: NextPage = () => {
         </div>
 
         {/* Language Features */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div className="grid grid-cols-1 md grid-cols-2 gap-8 mb-8">
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
             <h3 className="text-xl font-bold text-white mb-4">🌐 Global Accessibility</h3>
             <ul className="space-y-3 text-gray-300">
@@ -601,11 +601,11 @@ const MultiLanguagePage: NextPage = () => {
               Join our global community and access the marketplace in your preferred language. 
               Help us expand language support by contributing translations.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
+              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                 Explore Marketplace
               </Link>
-              <Link href="/contribute-translations" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/contribute-translations" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 Contribute Translations
               </Link>
             </div>

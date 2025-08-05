@@ -336,7 +336,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -349,9 +349,9 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-44">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-5xl md text-6xl font-bold text-white mb-6">
               AI-Powered Broadcast & Communication System
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
@@ -374,7 +374,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
         {isLoading ? (
           <div className="flex justify-center items-center py-40">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
@@ -450,12 +450,12 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
               <div className="space-y-8">
                 {/* Controls */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md space-y-0">
                     <div className="flex items-center space-x-4">
                       <select
                         value={selectedType}
                         onChange={(e) => setSelectedType(e.target.value)}
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus ring-purple-500"
                       >
                         <option value="all" className="bg-slate-800">All Types</option>
                         <option value="announcement" className="bg-slate-800">Announcement</option>
@@ -466,14 +466,14 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                         <option value="news" className="bg-slate-800">News</option>
                       </select>
                     </div>
-                    <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300">
+                    <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300">
                       Create Broadcast
                     </button>
                   </div>
                 </div>
 
                 {/* Broadcasts Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
                   {filteredBroadcasts.map((broadcast) => (
                     <div key={broadcast.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                       <div className="flex items-start justify-between mb-4">
@@ -532,10 +532,10 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                       </div>
 
                       <div className="flex space-x-2">
-                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           View Details
                         </button>
-                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 border border-white/20 text-white hover bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           Edit Broadcast
                         </button>
                       </div>
@@ -571,7 +571,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                       <p className="text-gray-300 text-sm">{announcement.content}</p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+                    <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-6">
                       <div className="bg-white/5 rounded-lg p-4">
                         <div className="text-sm text-gray-400 mb-1">Views</div>
                         <div className="text-2xl font-bold text-white">{announcement.views.toLocaleString()}</div>
@@ -594,7 +594,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                     <div>
                       <h4 className="text-lg font-semibold text-white mb-3">AI Optimization</h4>
                       <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                        <div className="grid grid-cols-1 md grid-cols-3 gap-4 text-sm">
                           <div>
                             <div className="text-gray-400 mb-1">Visibility Score</div>
                             <div className="text-white font-semibold">{announcement.aiOptimization.visibilityScore}%</div>
@@ -636,7 +636,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                       </span>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+                    <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-6">
                       <div className="bg-white/5 rounded-lg p-4">
                         <div className="text-sm text-gray-400 mb-1">Total Sent</div>
                         <div className="text-2xl font-bold text-white">{campaign.analytics.totalSent.toLocaleString()}</div>
@@ -659,7 +659,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                     <div>
                       <h4 className="text-lg font-semibold text-white mb-3">AI Optimization</h4>
                       <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                        <div className="grid grid-cols-1 md grid-cols-3 gap-4 text-sm">
                           <div>
                             <div className="text-gray-400 mb-1">Optimization Score</div>
                             <div className="text-white font-semibold">{campaign.aiOptimization.optimizationScore}%</div>
@@ -701,7 +701,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                       </span>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+                    <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-6">
                       <div className="bg-white/5 rounded-lg p-4">
                         <div className="text-sm text-gray-400 mb-1">Total Executions</div>
                         <div className="text-2xl font-bold text-white">{automation.performance.totalExecutions.toLocaleString()}</div>
@@ -724,7 +724,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                     <div>
                       <h4 className="text-lg font-semibold text-white mb-3">AI Analysis</h4>
                       <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                        <div className="grid grid-cols-1 md grid-cols-3 gap-4 text-sm">
                           <div>
                             <div className="text-gray-400 mb-1">Efficiency Score</div>
                             <div className="text-white font-semibold">{automation.aiAnalysis.efficiencyScore}%</div>
@@ -770,7 +770,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                       <p className="text-gray-300 text-sm">{promotion.content}</p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+                    <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-6">
                       <div className="bg-white/5 rounded-lg p-4">
                         <div className="text-sm text-gray-400 mb-1">Impressions</div>
                         <div className="text-2xl font-bold text-white">{promotion.impressions.toLocaleString()}</div>
@@ -793,7 +793,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
                     <div>
                       <h4 className="text-lg font-semibold text-white mb-3">AI Analysis</h4>
                       <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                        <div className="grid grid-cols-1 md grid-cols-3 gap-4 text-sm">
                           <div>
                             <div className="text-gray-400 mb-1">Effectiveness Score</div>
                             <div className="text-white font-semibold">{promotion.aiAnalysis.effectivenessScore}%</div>
@@ -823,7 +823,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
             {/* Analytics Tab */}
             {activeTab === 'analytics' && analytics && (
               <div className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                     <div className="text-3xl font-bold text-white mb-2">{analytics.totalBroadcasts.toLocaleString()}</div>
                     <div className="text-gray-400 text-sm">Total Broadcasts</div>
@@ -876,7 +876,7 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Broadcast?
@@ -885,11 +885,11 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
               Start your communication journey with our AI-powered broadcast system 
               and reach your audience with intelligent messaging.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
+              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                 Start Broadcasting
               </Link>
-              <Link href="/talent-directory" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/talent-directory" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 Learn More
               </Link>
             </div>

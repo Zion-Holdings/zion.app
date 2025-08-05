@@ -110,14 +110,14 @@ const ContractGenerator = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         {/* Header */}
         <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              <h1 className="text-4xl md text-5xl font-bold text-white mb-4">
                 AI Contract Generator
               </h1>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -128,8 +128,8 @@ const ContractGenerator = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
+          <div className="grid grid-cols-1 lg grid-cols-2 gap-12">
             {/* Input Form */}
             <div className="space-y-8">
               <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10">
@@ -144,7 +144,7 @@ const ContractGenerator = () => {
                     <select
                       value={input.contractType}
                       onChange={(e) => setInput({ ...input, contractType: e.target.value })}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                     >
                       <option value="">Select contract type</option>
                       {contractTypes.map((type) => (
@@ -154,7 +154,7 @@ const ContractGenerator = () => {
                   </div>
 
                   {/* Party 1 */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2">
                         Party 1 Name *
@@ -163,7 +163,7 @@ const ContractGenerator = () => {
                         type="text"
                         value={input.party1Name}
                         onChange={(e) => setInput({ ...input, party1Name: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                         placeholder="Enter name"
                       />
                     </div>
@@ -175,14 +175,14 @@ const ContractGenerator = () => {
                         type="email"
                         value={input.party1Email}
                         onChange={(e) => setInput({ ...input, party1Email: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                         placeholder="Enter email"
                       />
                     </div>
                   </div>
 
                   {/* Party 2 */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2">
                         Party 2 Name *
@@ -191,7 +191,7 @@ const ContractGenerator = () => {
                         type="text"
                         value={input.party2Name}
                         onChange={(e) => setInput({ ...input, party2Name: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                         placeholder="Enter name"
                       />
                     </div>
@@ -203,7 +203,7 @@ const ContractGenerator = () => {
                         type="email"
                         value={input.party2Email}
                         onChange={(e) => setInput({ ...input, party2Email: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                         placeholder="Enter email"
                       />
                     </div>
@@ -218,7 +218,7 @@ const ContractGenerator = () => {
                       type="text"
                       value={input.projectTitle}
                       onChange={(e) => setInput({ ...input, projectTitle: e.target.value })}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                       placeholder="Enter project title"
                     />
                   </div>
@@ -231,13 +231,13 @@ const ContractGenerator = () => {
                       value={input.projectDescription}
                       onChange={(e) => setInput({ ...input, projectDescription: e.target.value })}
                       rows={3}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                       placeholder="Describe the project or service"
                     />
                   </div>
 
                   {/* Dates */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2">
                         Start Date *
@@ -246,7 +246,7 @@ const ContractGenerator = () => {
                         type="date"
                         value={input.startDate}
                         onChange={(e) => setInput({ ...input, startDate: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                       />
                     </div>
                     <div>
@@ -257,13 +257,13 @@ const ContractGenerator = () => {
                         type="date"
                         value={input.endDate}
                         onChange={(e) => setInput({ ...input, endDate: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                       />
                     </div>
                   </div>
 
                   {/* Payment */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2">
                         Payment Amount *
@@ -272,7 +272,7 @@ const ContractGenerator = () => {
                         type="text"
                         value={input.paymentAmount}
                         onChange={(e) => setInput({ ...input, paymentAmount: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                         placeholder="e.g., $5,000"
                       />
                     </div>
@@ -284,7 +284,7 @@ const ContractGenerator = () => {
                         type="text"
                         value={input.paymentTerms}
                         onChange={(e) => setInput({ ...input, paymentTerms: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                        className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                         placeholder="e.g., Net 30"
                       />
                     </div>
@@ -299,7 +299,7 @@ const ContractGenerator = () => {
                       value={input.deliverables}
                       onChange={(e) => setInput({ ...input, deliverables: e.target.value })}
                       rows={3}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                       placeholder="List the deliverables or services"
                     />
                   </div>
@@ -313,7 +313,7 @@ const ContractGenerator = () => {
                       value={input.terms}
                       onChange={(e) => setInput({ ...input, terms: e.target.value })}
                       rows={4}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                       placeholder="Additional terms and conditions"
                     />
                   </div>
@@ -327,7 +327,7 @@ const ContractGenerator = () => {
                       value={input.specialConditions}
                       onChange={(e) => setInput({ ...input, specialConditions: e.target.value })}
                       rows={3}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus border-transparent"
                       placeholder="Any special conditions or requirements"
                     />
                   </div>
@@ -336,7 +336,7 @@ const ContractGenerator = () => {
                   <button
                     onClick={generateContract}
                     disabled={loading || !input.contractType || !input.party1Name || !input.party2Name}
-                    className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-200 disabled:opacity-50 disabled cursor-not-allowed"
                   >
                     {loading ? 'Generating Contract...' : 'Generate Contract'}
                   </button>
@@ -353,13 +353,13 @@ const ContractGenerator = () => {
                     <div className="flex space-x-3">
                       <button
                         onClick={copyToClipboard}
-                        className="bg-green-600 text-white px-4 py-4 rounded-lg hover:bg-green-700 transition-colors"
+                        className="bg-green-600 text-white px-4 py-4 rounded-lg hover bg-green-700 transition-colors"
                       >
                         Copy
                       </button>
                       <button
                         onClick={downloadContract}
-                        className="bg-blue-600 text-white px-4 py-4 rounded-lg hover:bg-blue-700 transition-colors"
+                        className="bg-blue-600 text-white px-4 py-4 rounded-lg hover bg-blue-700 transition-colors"
                       >
                         Download
                       </button>

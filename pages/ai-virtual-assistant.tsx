@@ -199,12 +199,12 @@ const AiVirtualAssistant: NextPage = () => {
           <div className="whitespace-pre-wrap text-sm leading-relaxed">{message.content}</div>
           
           {message.actions && message.role === 'assistant' && (
-            <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-2">
+            <div className="mt-4 grid grid-cols-1 md grid-cols-2 gap-2">
               {message.actions.map((action, index) => (
                 <button
                   key={index}
                   onClick={() => handleQuickAction(action.action)}
-                  className="text-left px-4 py-4 text-sm bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-md transition-colors border border-blue-200"
+                  className="text-left px-4 py-4 text-sm bg-blue-50 hover bg-blue-100 text-blue-700 rounded-md transition-colors border border-blue-200"
                 >
                   {action.label}
                 </button>
@@ -228,7 +228,7 @@ const AiVirtualAssistant: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -239,16 +239,16 @@ const AiVirtualAssistant: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/marketplace" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Marketplace
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </div>
@@ -257,9 +257,9 @@ const AiVirtualAssistant: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
               AI Virtual Assistant
             </span>
@@ -271,7 +271,7 @@ const AiVirtualAssistant: NextPage = () => {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md grid-cols-3 gap-8 mb-12">
           <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
             <div className="text-3xl mb-4">🤖</div>
             <h3 className="text-xl font-semibold text-white mb-2">Intelligent Recommendations</h3>
@@ -336,13 +336,13 @@ const AiVirtualAssistant: NextPage = () => {
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Ask me about services, talents, equipment, or anything else..."
-                  className="flex-1 px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="flex-1 px-4 py-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus border-transparent"
                   disabled={isLoading}
                 />
                 <button
                   onClick={handleSendMessage}
                   disabled={!inputValue.trim() || isLoading}
-                  className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+                  className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500 focus ring-offset-2 transition-colors"
                   aria-label="Send message"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -355,7 +355,7 @@ const AiVirtualAssistant: NextPage = () => {
         </div>
 
         {/* Additional Features */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-16 grid grid-cols-1 md grid-cols-2 gap-8">
           <div className="bg-white/5 backdrop-blur-md rounded-lg p-8 border border-white/10">
             <h3 className="text-2xl font-bold text-white mb-4">Why Choose Our AI Assistant?</h3>
             <ul className="space-y-3 text-gray-300">
@@ -381,13 +381,13 @@ const AiVirtualAssistant: NextPage = () => {
           <div className="bg-white/5 backdrop-blur-md rounded-lg p-8 border border-white/10">
             <h3 className="text-2xl font-bold text-white mb-4">Get Started</h3>
             <div className="space-y-4">
-              <Link href="/marketplace" className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-colors">
+              <Link href="/marketplace" className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-blue-700 hover to-purple-700 transition-colors">
                 Explore Marketplace
               </Link>
-              <Link href="/quote-request" className="block w-full text-center bg-white/10 text-white px-6 py-3 rounded-lg hover:bg-white/20 transition-colors border border-white/20">
+              <Link href="/quote-request" className="block w-full text-center bg-white/10 text-white px-6 py-3 rounded-lg hover bg-white/20 transition-colors border border-white/20">
                 Request a Quote
               </Link>
-              <Link href="/auth/signup" className="block w-full text-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-colors">
+              <Link href="/auth/signup" className="block w-full text-center bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-lg hover:from-purple-700 hover to-pink-700 transition-colors">
                 Join Zion
               </Link>
             </div>
@@ -396,17 +396,17 @@ const AiVirtualAssistant: NextPage = () => {
       </div>
     
         {/* Mobile Navigation */}
-        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
+        <div className="lg hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
           <div className="flex justify-around items-center py-2">
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <Home className="w-5 h-5" />
               <span className="text-xs">Home</span>
             </button>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <Search className="w-5 h-5" />
               <span className="text-xs">Search</span>
             </button>
-            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover text-white">
               <User className="w-5 h-5" />
               <span className="text-xs">Profile</span>
             </button>

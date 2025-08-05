@@ -205,7 +205,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
           <div className="flex items-center space-x-4">
             <button
               onClick={() => setIsAIAssistantOpen(!isAIAssistantOpen)}
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-300"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-300"
             >
               🤖 AI Assistant
             </button>
@@ -221,7 +221,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
               <h2 className="text-white font-semibold mb-4">Projects</h2>
               <button
                 onClick={handleCreateProject}
-                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-300 mb-4"
+                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-300 mb-4"
               >
                 + New Project
               </button>
@@ -266,7 +266,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
               <h2 className="text-white font-semibold mb-4">Team Members</h2>
               <button
                 onClick={handleInviteMembers}
-                className="w-full bg-white/10 hover:bg-white/20 text-white px-4 py-4 rounded-lg transition-all duration-300 mb-4"
+                className="w-full bg-white/10 hover bg-white/20 text-white px-4 py-4 rounded-lg transition-all duration-300 mb-4"
               >
                 + Invite Members
               </button>
@@ -306,7 +306,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                     </div>
                     <button
                       onClick={() => handleAISuggestion(suggestion)}
-                      className="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white px-3 py-3 rounded text-xs transition-colors"
+                      className="mt-2 w-full bg-blue-600 hover bg-blue-700 text-white px-3 py-3 rounded text-xs transition-colors"
                     >
                       {suggestion.action}
                     </button>
@@ -363,7 +363,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
 
                 {/* Tab Content */}
                 {activeTab === 'overview' && (
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
                     {/* Recent Activity */}
                     <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
                       <h3 className="text-lg font-semibold text-white mb-4">Recent Activity</h3>
@@ -422,12 +422,12 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <h3 className="text-lg font-semibold text-white">Project Tasks</h3>
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                      <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                         + Add Task
                       </button>
                     </div>
                     
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 lg grid-cols-2 gap-4">
                       {selectedProject.tasks.map((task) => (
                         <div key={task.id} className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
                           <div className="flex justify-between items-start mb-3">
@@ -467,12 +467,12 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <h3 className="text-lg font-semibold text-white">Project Documents</h3>
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
+                      <button className="bg-blue-600 hover bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                         + Upload Document
                       </button>
                     </div>
                     
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 lg grid-cols-2 gap-4">
                       {selectedProject.documents.map((document) => (
                         <div key={document.id} className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
                           <div className="flex items-center space-x-3">
@@ -487,7 +487,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                                 {document.type} • {(document.size / 1024 / 1024).toFixed(1)} MB
                               </p>
                             </div>
-                            <button className="text-white/60 hover:text-white">
+                            <button className="text-white/60 hover text-white">
                               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                               </svg>
@@ -538,11 +538,11 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                         onChange={(e) => setNewMessage(e.target.value)}
                         onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
                         placeholder="Type your message..."
-                        className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-4 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-4 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus ring-purple-500"
                       />
                       <button
                         onClick={sendMessage}
-                        className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-4 rounded-lg transition-colors"
+                        className="bg-purple-600 hover bg-purple-700 text-white px-4 py-4 rounded-lg transition-colors"
                       >
                         Send
                       </button>
@@ -562,7 +562,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                 <h3 className="text-white font-semibold">AI Assistant</h3>
                 <button
                   onClick={() => setIsAIAssistantOpen(false)}
-                  className="text-white/60 hover:text-white"
+                  className="text-white/60 hover text-white"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

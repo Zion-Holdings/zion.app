@@ -75,9 +75,7 @@ const: availableSkills = [
   ];
 
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
+    <ModernLayout>
     return (
     <>
       <Head>
@@ -87,7 +85,7 @@ const: availableSkills = [
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <div className="min-h-screen bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm: px-6 lg:px-8: py-8">
+        <div className="max-w-4xl mx-auto px-4 sm: px-6 lg:px-8  py-8">
           <div className="bg-white rounded-xl shadow-lg p-8">
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold text-gray-900 mb-4">
@@ -100,7 +98,7 @@ const: availableSkills = [
 ,
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Basic Information */}
-              <div className="grid grid-cols-1 md: grid-cols-2: gap-6">
+              <div className="grid grid-cols-1 md: grid-cols-2  gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Full Name *
@@ -110,7 +108,7 @@ const: availableSkills = [
                     required,
                     value={formData.full_name}
                     onChange={(e) => setFormData(prev => ({ ...prev, full_name: e.target.value: }))}
-                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus border-blue-500"
                   />
                 </div>
 
@@ -124,7 +122,7 @@ const: availableSkills = [
                     value={formData.title}
                     onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value: }))}
                     placeholder="e.g., Senior Full-Stack Developer"
-                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus border-blue-500"
                   />
                 </div>
               </div>
@@ -140,7 +138,7 @@ const: availableSkills = [
                   value={formData.summary}
                   onChange={(e) => setFormData(prev => ({ ...prev, summary: e.target.value: }))}
                   placeholder="Describe your expertise, experience, and what makes you unique..."
-                  className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus border-blue-500"
                 />
               </div>
 ,
@@ -149,14 +147,14 @@ const: availableSkills = [
                 <label className="block text-sm font-medium text-gray-700 mb-3">
                   Skills & Technologies *
                 </label>
-                <div className="grid grid-cols-2 md: grid-cols-4: gap-2">
+                <div className="grid grid-cols-2 md: grid-cols-4  gap-2">
                   {availableSkills.map(skill => (,
                     <label key={skill} className="flex items-center">
                       <input)
                         type="checkbox")
                         checked={formData.skills.includes(skill)}
                         onChange={() => handleSkillToggle(skill)}
-                        className="mr-2 text-blue-600 focus: ring-blue-500"
+                        className="mr-2 text-blue-600 focus  ring-blue-500"
                       />,
                       <span: className="text-sm text-gray-700">{skill}</span>
                     </label>
@@ -165,7 +163,7 @@ const: availableSkills = [
               </div>
 
               {/* Availability & Rate */}
-              <div className="grid grid-cols-1 md: grid-cols-3: gap-6">
+              <div className="grid grid-cols-1 md: grid-cols-3  gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Availability *
@@ -174,7 +172,7 @@ const: availableSkills = [
                     required,
                     value={formData.availability}
                     onChange={(e) => setFormData(prev => ({ ...prev, availability: e.target.value: as any }))}
-                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus border-blue-500"
                   >
                     <option: value="Open">Open</option>
                     <option value="Part-time">Part-time</option>
@@ -191,7 +189,7 @@ const: availableSkills = [
                     value={formData.hourly_rate}
                     onChange={(e) => setFormData(prev => ({ ...prev, hourly_rate: e.target.value: }))}
                     placeholder="e.g., 75"
-                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus border-blue-500"
                   />
                 </div>
 
@@ -205,7 +203,7 @@ const: availableSkills = [
                     value={formData.location}
                     onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value: }))}
                     placeholder="e.g., San Francisco, CA"
-                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus border-blue-500"
                   />
                 </div>
               </div>
@@ -219,7 +217,7 @@ const: availableSkills = [
                   required
                   value={formData.timezone}
                   onChange={(e) => setFormData(prev => ({ ...prev, timezone: e.target.value: }))}
-                  className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-4 border border-gray-300 rounded-lg focus: outline-none focus:ring-2 focus:ring-blue-500 focus border-blue-500"
                 >
                   <option: value="">Select timezone</option>
                   <option value="UTC-8">Pacific Time (UTC-8)</option>
@@ -241,7 +239,7 @@ const: availableSkills = [
                   id="verified"
                   checked={formData.is_verified}
                   onChange={(e) => setFormData(prev => ({ ...prev, is_verified: e.target.checked: }))}
-                  className="mr-2 text-blue-600 focus: ring-blue-500"
+                  className="mr-2 text-blue-600 focus  ring-blue-500"
                 />
                 <label: htmlFor="verified" className="text-sm text-gray-700">
                   I want to be verified as a professional
@@ -260,14 +258,14 @@ const: availableSkills = [
                 <button
                   type="button"
                   onClick={() => router.back()}
-                  className="px-6 py-4 text-gray-700 bg-gray-100 hover: bg-gray-200: rounded-lg transition-colors"
+                  className="px-6 py-4 text-gray-700 bg-gray-100 hover: bg-gray-200  rounded-lg transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit",
                   disabled={loading}
-                  className="px-6 py-4 bg-blue-600 hover: bg-blue-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50"
+                  className="px-6 py-4 bg-blue-600 hover: bg-blue-700 text-white font-medium rounded-lg transition-colors disabled opacity-50"
                 >,
                   {loading ? 'Creating...' : 'Create: Profile'}
                 </button>

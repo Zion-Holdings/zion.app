@@ -248,7 +248,7 @@ const HelpDeskSupport: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="flex items-center justify-center min-h-screen">
@@ -268,18 +268,18 @@ const HelpDeskSupport: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <header className="bg-black/20 backdrop-blur-sm border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center">
               <Link href="/" className="text-2xl font-bold text-white">
                 Zion Tech Group
               </Link>
             </div>
-            <nav className="hidden md:flex space-x-8">
-              <Link href="/" className="text-gray-300 hover:text-white transition-colors">
+            <nav className="hidden md flex space-x-8">
+              <Link href="/" className="text-gray-300 hover text-white transition-colors">
                 Home
               </Link>
-              <Link href="/dashboard" className="text-gray-300 hover:text-white transition-colors">
+              <Link href="/dashboard" className="text-gray-300 hover text-white transition-colors">
                 Dashboard
               </Link>
             </nav>
@@ -287,7 +287,7 @@ const HelpDeskSupport: NextPage = () => {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-white mb-4">
             Help Desk & Support Ticket System
@@ -298,7 +298,7 @@ const HelpDeskSupport: NextPage = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -396,12 +396,12 @@ const HelpDeskSupport: NextPage = () => {
                   placeholder="Search tickets..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus ring-white/20"
                 />
                 <select
                   value={filterStatus}
                   onChange={(e) => setFilterStatus(e.target.value)}
-                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-white/20"
                 >
                   <option value="all">All Status</option>
                   <option value="open">Open</option>
@@ -412,7 +412,7 @@ const HelpDeskSupport: NextPage = () => {
                 <select
                   value={filterPriority}
                   onChange={(e) => setFilterPriority(e.target.value)}
-                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-white/20"
                 >
                   <option value="all">All Priorities</option>
                   <option value="urgent">Urgent</option>
@@ -423,7 +423,7 @@ const HelpDeskSupport: NextPage = () => {
                 <select
                   value={filterCategory}
                   onChange={(e) => setFilterCategory(e.target.value)}
-                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-white/20"
                 >
                   <option value="all">All Categories</option>
                   <option value="technical">Technical</option>
@@ -478,7 +478,7 @@ const HelpDeskSupport: NextPage = () => {
                       </div>
                       <div className="flex items-center gap-2">
                         <span className="text-gray-400 text-sm">{ticket.responses.length} responses</span>
-                        <button className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white hover:bg-white/20 transition-colors">
+                        <button className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white hover bg-white/20 transition-colors">
                           View Details
                         </button>
                       </div>
@@ -497,7 +497,7 @@ const HelpDeskSupport: NextPage = () => {
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
                 {agents.map((agent) => (
                   <motion.div
                     key={agent.id}
@@ -561,7 +561,7 @@ const HelpDeskSupport: NextPage = () => {
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md grid-cols-2 gap-6">
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
                   <h3 className="text-xl font-semibold text-white mb-4">Ticket Statistics</h3>
                   <div className="space-y-4">
@@ -617,7 +617,7 @@ const HelpDeskSupport: NextPage = () => {
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
                 {categories.map((category) => (
                   <motion.div
                     key={category.id}

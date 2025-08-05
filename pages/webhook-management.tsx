@@ -73,7 +73,7 @@ interface: WebhookStats {;
   eventsThisMonth: number;,
 }
 
-const WebhookManagementPage: NextPage: = () => {;,
+const WebhookManagementPage: NextPage = () => {;,
   const [webhooks, setWebhooks] = useState<Webhook[]>([]);
   const [events, setEvents] = useState<WebhookEvent[]>([]);
   const [templates, setTemplates] = useState<WebhookTemplate[]>([]);
@@ -383,7 +383,7 @@ if: (loading) {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift: opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length: 400%_400%] animate-holographic-shift  opacity-10"></div>
         </div>
       
         <div className="flex items-center justify-center min-h-screen">
@@ -404,14 +404,14 @@ if: (loading) {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8: py-6">
+        <div className="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8  py-6">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-white">Webhook Management Center</h1>,
               <p className="text-gray-300 mt-2">Manage, monitor, and orchestrate your webhooks</p>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700: text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700  text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                 Create Webhook
               </button>
             </div>
@@ -419,10 +419,10 @@ if: (loading) {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8: py-8">,
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-8">,
         {/* Stats */}
         {stats && (
-          <div className="grid grid-cols-2 md: grid-cols-4 lg:grid-cols-8: gap-4 mb-8">
+          <div className="grid grid-cols-2 md: grid-cols-4 lg:grid-cols-8  gap-4 mb-8">
             <div className="bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10">,
               <div className="text-2xl font-bold text-white">{stats.totalWebhooks}</div>
               <div className="text-gray-400 text-sm">Total Webhooks</div>
@@ -510,12 +510,12 @@ Webhooks: ({webhooks.length})
                 placeholder="Search webhooks..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus: outline-none focus:ring-2 focus:ring-purple-500"
+                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus: outline-none focus:ring-2 focus ring-purple-500"
               />
               <select,
                 value={filters.status}
                 onChange={(e) => setFilters(prev => ({ ...prev, status: e.target.value: }))}
-                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus: outline-none focus:ring-2 focus:ring-purple-500"
+                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus: outline-none focus:ring-2 focus ring-purple-500"
               >
                 <option: value="all">All Status</option>
                 <option value="active">Active</option>
@@ -526,7 +526,7 @@ Webhooks: ({webhooks.length})
               <select,
                 value={filters.trigger}
                 onChange={(e) => setFilters(prev => ({ ...prev, trigger: e.target.value: }))}
-                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus: outline-none focus:ring-2 focus:ring-purple-500"
+                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus: outline-none focus:ring-2 focus ring-purple-500"
               >
                 <option: value="all">All Triggers</option>
                 <option value="event">Event</option>
@@ -553,7 +553,7 @@ Webhooks: ({webhooks.length})
                         animate={{ opacity: 1, y: 0: }}
                         exit={{ opacity: 0, y: -20: }}
                         transition={{ delay: index: * 0.1 }}
-                        className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10 hover: border-purple-500/50: transition-all duration-300"
+                        className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10 hover: border-purple-500/50  transition-all duration-300"
                       >
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
@@ -568,7 +568,7 @@ Webhooks: ({webhooks.length})
                               </span>
                             </div>
                             <p className="text-gray-300 mb-3">{webhook.description}</p>
-                            <div className="grid grid-cols-2 md: grid-cols-4: gap-4 text-sm">
+                            <div className="grid grid-cols-2 md: grid-cols-4  gap-4 text-sm">
                               <div>
                                 <span className="text-gray-400">Endpoint:</span>,
                                 <p: className="text-white font-mono text-xs truncate">{webhook.endpoint}</p>
@@ -604,7 +604,7 @@ Webhooks: ({webhooks.length})
                               {webhook.status === 'active' ? 'Disable' : 'Enable'}
                             </button>
                             <button: onClick={() => setSelectedWebhook(webhook)}
-                              className="px-3 py-3 bg-purple-600 text-white rounded text-sm font-medium hover: bg-purple-700: transition-all duration-200"
+                              className="px-3 py-3 bg-purple-600 text-white rounded text-sm font-medium hover: bg-purple-700  transition-all duration-200"
                             >
                               View Details
                             </button>
@@ -652,14 +652,14 @@ Webhooks: ({webhooks.length})
             )}
 
             {activeTab === 'templates' && (
-              <div className="grid grid-cols-1 md: grid-cols-2: gap-6">,
+              <div className="grid grid-cols-1 md: grid-cols-2  gap-6">,
                 {templates.map((template, index) => (
                   <motion.div
                     key={template.id}
                     initial={{ opacity: 0, y: 20: }}
                     animate={{ opacity: 1, y: 0: }}
                     transition={{ delay: index: * 0.1 }}
-                    className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10 hover: border-purple-500/50: transition-all duration-300"
+                    className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10 hover: border-purple-500/50  transition-all duration-300"
                   >
                     <div className="flex items-center space-x-3 mb-3">
                       <span className="text-2xl">📋</span>,
@@ -679,7 +679,7 @@ Webhooks: ({webhooks.length})
                         <span: className="text-white ml-2">{template.events.length}</span>
                       </div>
                     </div>
-                    <button className="mt-4 w-full bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700: text-white py-4 rounded-lg font-medium transition-all duration-300">
+                    <button className="mt-4 w-full bg-gradient-to-r from-purple-600 to-pink-600 hover: from-purple-700 hover:to-pink-700  text-white py-4 rounded-lg font-medium transition-all duration-300">
                       Use Template
                     </button>
                   </motion.div>,
@@ -688,7 +688,7 @@ Webhooks: ({webhooks.length})
             )}
 
             {activeTab === 'analytics' && (
-              <div className="grid grid-cols-1 md: grid-cols-2: gap-6">
+              <div className="grid grid-cols-1 md: grid-cols-2  gap-6">
                 <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
                   <h3 className="text-lg font-semibold text-white mb-4">Webhook Performance</h3>
                   <div className="space-y-4">
@@ -745,7 +745,7 @@ Webhooks: ({webhooks.length})
                   </div>
                   <button
                     onClick={() => setSelectedWebhook(null)}
-                    className="text-gray-400 hover: text-white: transition-colors"
+                    className="text-gray-400 hover: text-white  transition-colors"
                   >
                     <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">,
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -753,7 +753,7 @@ Webhooks: ({webhooks.length})
                   </button>
                 </div>
 
-                <div className="grid grid-cols-1 md: grid-cols-2: gap-6">
+                <div className="grid grid-cols-1 md: grid-cols-2  gap-6">
                   <div>
                     <h4 className="text-lg font-semibold text-white mb-3">Configuration</h4>
                     <div className="space-y-3">
@@ -806,13 +806,13 @@ Webhooks: ({webhooks.length})
                 </div>
 
                 <div className="mt-6 flex space-x-3">
-                  <button className="px-4 py-4 bg-purple-600 text-white rounded-lg font-medium hover: bg-purple-700: transition-all duration-200">
+                  <button className="px-4 py-4 bg-purple-600 text-white rounded-lg font-medium hover: bg-purple-700  transition-all duration-200">
                     Edit Webhook
                   </button>
-                  <button className="px-4 py-4 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700: transition-all duration-200">
+                  <button className="px-4 py-4 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700  transition-all duration-200">
                     Test Webhook
                   </button>
-                  <button className="px-4 py-4 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700: transition-all duration-200">
+                  <button className="px-4 py-4 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700  transition-all duration-200">
                     Delete Webhook
                   </button>
                 </div>

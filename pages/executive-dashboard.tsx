@@ -445,7 +445,7 @@ const ExecutiveDashboardPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
         <div className="flex items-center justify-center min-h-screen">
@@ -466,7 +466,7 @@ const ExecutiveDashboardPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-white">Executive Dashboard</h1>
@@ -476,13 +476,13 @@ const ExecutiveDashboardPage: NextPage = () => {
               <select
                 value={timeframe}
                 onChange={(e) => setTimeframe(e.target.value as any)}
-                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus ring-purple-500"
               >
                 <option value="month">Monthly</option>
                 <option value="quarter">Quarterly</option>
                 <option value="year">Yearly</option>
               </select>
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                 Export Report
               </button>
             </div>
@@ -490,16 +490,16 @@ const ExecutiveDashboardPage: NextPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
         {/* Key Metrics Overview */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg grid-cols-6 gap-4 mb-8">
           {metrics.slice(0, 6).map((metric, index) => (
             <motion.div
               key={metric.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10 hover:border-purple-500/50 transition-all duration-300"
+              className="bg-white/5 backdrop-blur-md rounded-lg p-4 border border-white/10 hover border-purple-500/50 transition-all duration-300"
             >
               <div className="flex items-center justify-between mb-2">
                 <span className="text-gray-400 text-sm">{metric.name}</span>
@@ -587,7 +587,7 @@ const ExecutiveDashboardPage: NextPage = () => {
 
           <div className="p-6">
             {activeTab === 'overview' && (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-8">
                 {/* Financial Summary */}
                 <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
                   <h3 className="text-lg font-semibold text-white mb-4">Financial Summary</h3>
@@ -636,7 +636,7 @@ const ExecutiveDashboardPage: NextPage = () => {
             )}
 
             {activeTab === 'financial' && financial && (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-8">
                 {/* Revenue & Profit */}
                 <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
                   <h3 className="text-lg font-semibold text-white mb-4">Revenue & Profit</h3>
@@ -732,7 +732,7 @@ const ExecutiveDashboardPage: NextPage = () => {
                       </div>
                     </div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div className="grid grid-cols-1 md grid-cols-3 gap-4 mb-4">
                       <div>
                         <span className="text-gray-400 text-sm">Owner</span>
                         <p className="text-white font-medium">{initiative.owner}</p>
@@ -770,7 +770,7 @@ const ExecutiveDashboardPage: NextPage = () => {
             )}
 
             {activeTab === 'operational' && operations && (
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 lg grid-cols-3 gap-6">
                 {/* Efficiency Metrics */}
                 <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
                   <h3 className="text-lg font-semibold text-white mb-4">Efficiency</h3>
@@ -926,7 +926,7 @@ const ExecutiveDashboardPage: NextPage = () => {
             )}
 
             {activeTab === 'customers' && customers && (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 lg grid-cols-2 gap-8">
                 {/* Customer Metrics */}
                 <div className="bg-white/5 backdrop-blur-md rounded-lg p-6 border border-white/10">
                   <h3 className="text-lg font-semibold text-white mb-4">Customer Metrics</h3>

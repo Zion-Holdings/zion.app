@@ -39,8 +39,6 @@ export default function AuthCallback() {
   }, [router])
 
   return (
-  <ModernLayout>
-    return (
     <ModernLayout>
       <div className="min-h-screen flex items-center justify-center">
       <div className="text-center text-responsive-lg text-responsive-lg">

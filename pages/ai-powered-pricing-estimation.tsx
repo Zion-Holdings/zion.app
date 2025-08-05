@@ -507,7 +507,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -520,9 +520,9 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-44">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-5xl md text-6xl font-bold text-white mb-6">
               AI-Powered Pricing & Cost Estimation
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
@@ -545,7 +545,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
         {isLoading ? (
           <div className="flex justify-center items-center py-40">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
@@ -591,13 +591,13 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
               <div className="space-y-8">
                 {/* Filters */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 md grid-cols-3 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2">Category</label>
                       <select
                         value={selectedCategory}
                         onChange={(e) => setSelectedCategory(e.target.value)}
-                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus ring-purple-500"
                       >
                         {categories.map(category => (
                           <option key={category} value={category} className="bg-slate-800">
@@ -611,7 +611,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                       <select
                         value={selectedComplexity}
                         onChange={(e) => setSelectedComplexity(e.target.value)}
-                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus ring-purple-500"
                       >
                         <option value="all" className="bg-slate-800">All Complexities</option>
                         <option value="simple" className="bg-slate-800">Simple</option>
@@ -625,7 +625,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                       <select
                         value={sortBy}
                         onChange={(e) => setSortBy(e.target.value as any)}
-                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus ring-purple-500"
                       >
                         <option value="date" className="bg-slate-800">Date</option>
                         <option value="cost" className="bg-slate-800">Cost</option>
@@ -636,7 +636,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                 </div>
 
                 {/* Estimates Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 lg grid-cols-2 gap-8">
                   {filteredEstimates.map((estimate) => (
                     <div key={estimate.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                       {/* Header */}
@@ -708,10 +708,10 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
 
                       {/* Action Buttons */}
                       <div className="flex space-x-2">
-                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           View Details
                         </button>
-                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 border border-white/20 text-white hover bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           Get Quote
                         </button>
                       </div>
@@ -723,7 +723,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
 
             {/* Pricing Models Tab */}
             {activeTab === 'models' && (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
                 {pricingModels.map((model) => (
                   <div key={model.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                     <h3 className="text-xl font-semibold text-white mb-3">{model.name}</h3>
@@ -764,7 +764,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                       </div>
                     </div>
 
-                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
+                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                       Learn More
                     </button>
                   </div>
@@ -777,7 +777,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
               <div className="space-y-8">
                 {budgetOptimizations.map((optimization, index) => (
                   <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div className="grid grid-cols-1 md grid-cols-3 gap-6 mb-6">
                       <div className="text-center">
                         <div className="text-2xl font-bold text-red-400">${optimization.originalBudget.toLocaleString()}</div>
                         <div className="text-sm text-gray-400">Original Budget</div>
@@ -814,7 +814,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                         {optimization.tradeoffs.map((tradeoff, tradeIndex) => (
                           <div key={tradeIndex} className="bg-white/5 rounded-lg p-3">
                             <h5 className="font-semibold text-white mb-2">{tradeoff.option}</h5>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 md grid-cols-2 gap-4">
                               <div>
                                 <div className="text-sm font-medium text-green-400 mb-1">Pros:</div>
                                 <ul className="space-y-1">
@@ -846,7 +846,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Get Accurate Pricing Estimates?
@@ -855,11 +855,11 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
               Our AI-powered pricing system analyzes market data, project complexity, and your specific requirements 
               to provide accurate cost estimates and optimization recommendations.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover scale-105">
                 Get Free Estimate
               </Link>
-              <Link href="/ai-service-matcher" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/ai-service-matcher" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 Try AI Matcher
               </Link>
             </div>

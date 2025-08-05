@@ -112,7 +112,7 @@ const EscrowServicesPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -124,19 +124,19 @@ const EscrowServicesPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <nav className="flex items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/payment-processing" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
+              <Link href="/payment-processing" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Payments
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </nav>
@@ -145,9 +145,9 @@ const EscrowServicesPage: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl md text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
               Escrow Services
             </span>
@@ -157,17 +157,17 @@ const EscrowServicesPage: NextPage = () => {
             Protected payments, automated dispute resolution, and complete transaction security.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="#features" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+            <Link href="#features" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
               Learn More
             </Link>
-            <Link href="/marketplace" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+            <Link href="/marketplace" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
               Start Trading
             </Link>
           </div>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md grid-cols-4 gap-6 mb-12">
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 text-center">
             <div className="text-3xl font-bold text-white mb-2">$2.5M+</div>
             <p className="text-gray-300 text-sm">Protected Transactions</p>
@@ -188,7 +188,7 @@ const EscrowServicesPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 pb-12">
         {/* Tabs */}
         <div className="flex flex-wrap gap-2 mb-8">
           {[
@@ -215,7 +215,7 @@ const EscrowServicesPage: NextPage = () => {
         {activeTab === 'overview' && (
           <div className="space-y-8">
             {/* Features */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
                 <div className="text-3xl mb-4">🔒</div>
                 <h3 className="text-xl font-semibold text-white mb-3">Secure Escrow</h3>
@@ -263,7 +263,7 @@ const EscrowServicesPage: NextPage = () => {
             {/* How It Works */}
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-8">
               <h2 className="text-2xl font-bold text-white mb-6">How Escrow Works</h2>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md grid-cols-4 gap-6">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">1</div>
                   <h3 className="text-lg font-semibold text-white mb-2">Agreement</h3>
@@ -293,7 +293,7 @@ const EscrowServicesPage: NextPage = () => {
           <div className="space-y-6">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-bold text-white">Recent Transactions</h2>
-              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
                 New Transaction
               </Link>
             </div>
@@ -313,7 +313,7 @@ const EscrowServicesPage: NextPage = () => {
                   </thead>
                   <tbody className="divide-y divide-white/10">
                     {transactions.map((transaction) => (
-                      <tr key={transaction.id} className="hover:bg-white/5">
+                      <tr key={transaction.id} className="hover bg-white/5">
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-white font-medium">
                           {transaction.id}
                         </td>
@@ -335,8 +335,8 @@ const EscrowServicesPage: NextPage = () => {
                           {transaction.deadline.toLocaleDateString()}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm">
-                          <button className="text-purple-400 hover:text-purple-300 mr-3">View</button>
-                          <button className="text-blue-400 hover:text-blue-300">Update</button>
+                          <button className="text-purple-400 hover text-purple-300 mr-3">View</button>
+                          <button className="text-blue-400 hover text-blue-300">Update</button>
                         </td>
                       </tr>
                     ))}
@@ -351,12 +351,12 @@ const EscrowServicesPage: NextPage = () => {
           <div className="space-y-6">
             <div className="flex justify-between items-center">
               <h2 className="text-2xl font-bold text-white">Dispute Resolution</h2>
-              <Link href="/ai-powered-contract-legal" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
+              <Link href="/ai-powered-contract-legal" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300">
                 Legal Support
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 gap-6">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
                 <h3 className="text-lg font-semibold text-white mb-4">Active Disputes</h3>
                 {disputes.map((dispute) => (
@@ -414,7 +414,7 @@ const EscrowServicesPage: NextPage = () => {
           <div className="space-y-6">
             <h2 className="text-2xl font-bold text-white">Escrow Account</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-3 gap-6">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
                 <h3 className="text-lg font-semibold text-white mb-4">Account Balance</h3>
                 <div className="text-3xl font-bold text-white mb-2">${escrowAccount.balance.toLocaleString()}</div>
@@ -434,7 +434,7 @@ const EscrowServicesPage: NextPage = () => {
 
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
               <h3 className="text-lg font-semibold text-white mb-4">Account Statistics</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md grid-cols-2 gap-6">
                 <div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-gray-300">Completed Transactions</span>
@@ -461,7 +461,7 @@ const EscrowServicesPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Trade Securely?
@@ -470,10 +470,10 @@ const EscrowServicesPage: NextPage = () => {
               Start using our escrow services for protected marketplace transactions.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
+              <Link href="/marketplace" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover to-pink-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg">
                 Start Trading
               </Link>
-              <Link href="/payment-processing" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/payment-processing" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 Learn About Payments
               </Link>
             </div>
@@ -483,8 +483,8 @@ const EscrowServicesPage: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/20 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+          <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-lg font-semibold text-white mb-4">Zion Marketplace</h3>
               <p className="text-gray-300 text-sm">
@@ -494,28 +494,28 @@ const EscrowServicesPage: NextPage = () => {
             <div>
               <h4 className="text-white font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/marketplace" className="text-gray-400 hover:text-white transition-colors">Marketplace</Link></li>
-                <li><Link href="/escrow-services" className="text-gray-400 hover:text-white transition-colors">Escrow Services</Link></li>
-                <li><Link href="/payment-processing" className="text-gray-400 hover:text-white transition-colors">Payment Processing</Link></li>
-                <li><Link href="/ai-virtual-assistant" className="text-gray-400 hover:text-white transition-colors">AI Assistant</Link></li>
+                <li><Link href="/marketplace" className="text-gray-400 hover text-white transition-colors">Marketplace</Link></li>
+                <li><Link href="/escrow-services" className="text-gray-400 hover text-white transition-colors">Escrow Services</Link></li>
+                <li><Link href="/payment-processing" className="text-gray-400 hover text-white transition-colors">Payment Processing</Link></li>
+                <li><Link href="/ai-virtual-assistant" className="text-gray-400 hover text-white transition-colors">AI Assistant</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact Us</Link></li>
-                <li><Link href="/ai-powered-contract-legal" className="text-gray-400 hover:text-white transition-colors">Legal Support</Link></li>
-                <li><Link href="/real-time-chat" className="text-gray-400 hover:text-white transition-colors">Live Chat</Link></li>
-                <li><Link href="/notifications" className="text-gray-400 hover:text-white transition-colors">Notifications</Link></li>
+                <li><Link href="/contact" className="text-gray-400 hover text-white transition-colors">Contact Us</Link></li>
+                <li><Link href="/ai-powered-contract-legal" className="text-gray-400 hover text-white transition-colors">Legal Support</Link></li>
+                <li><Link href="/real-time-chat" className="text-gray-400 hover text-white transition-colors">Live Chat</Link></li>
+                <li><Link href="/notifications" className="text-gray-400 hover text-white transition-colors">Notifications</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Connect</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
-                <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
-                <li><Link href="/auth/signup" className="text-gray-400 hover:text-white transition-colors">Sign Up</Link></li>
-                <li><Link href="/auth/login" className="text-gray-400 hover:text-white transition-colors">Login</Link></li>
+                <li><Link href="/about" className="text-gray-400 hover text-white transition-colors">About Us</Link></li>
+                <li><Link href="/blog" className="text-gray-400 hover text-white transition-colors">Blog</Link></li>
+                <li><Link href="/auth/signup" className="text-gray-400 hover text-white transition-colors">Sign Up</Link></li>
+                <li><Link href="/auth/login" className="text-gray-400 hover text-white transition-colors">Login</Link></li>
               </ul>
             </div>
           </div>

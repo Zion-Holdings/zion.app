@@ -398,7 +398,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -410,25 +410,25 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Streaming
               </Link>
-              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Voice Assistant
               </Link>
-              <Link href="/ai-powered-autonomous-vehicle-transportation" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-autonomous-vehicle-transportation" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Autonomous Vehicles
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-blue-700 hover to-cyan-700 transition-all duration-200">
                 Get Started
               </Link>
             </div>
@@ -437,7 +437,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-white mb-6">
@@ -449,10 +449,10 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
             cutting-edge technology.
           </p>
           <div className="flex justify-center space-x-4">
-            <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg font-medium hover:from-blue-700 hover to-cyan-700 transition-all duration-200">
               Start Trading
             </button>
-            <button className="px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg font-medium hover:from-green-700 hover:to-emerald-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg font-medium hover:from-green-700 hover to-emerald-700 transition-all duration-200">
               Manage Portfolio
             </button>
           </div>
@@ -485,7 +485,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
 
         {/* Content Sections */}
         {selectedView === 'overview' && (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg grid-cols-2 gap-8">
             {/* Cryptocurrencies Overview */}
             <div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl font-semibold text-white mb-4">Top Cryptocurrencies</h3>
@@ -536,7 +536,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
 
         {selectedView === 'crypto' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {cryptocurrencies.map((crypto) => (
                 <div key={crypto.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -598,7 +598,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
             </div>
 
             {/* Assets Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {filteredAssets.map((asset) => (
                 <div key={asset.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -640,7 +640,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
 
         {selectedView === 'portfolios' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md grid-cols-2 gap-6">
               {portfolios.map((portfolio) => (
                 <div key={portfolio.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -678,7 +678,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
 
         {selectedView === 'strategies' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {tradingStrategies.map((strategy) => (
                 <div key={strategy.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -717,7 +717,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
         {selectedView === 'analytics' && analytics && (
           <div className="space-y-6">
             {/* Analytics Overview */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
               <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
                 <div className="text-3xl font-bold text-white">{analytics.totalAssets}</div>
                 <div className="text-gray-400">Total Assets</div>
@@ -768,8 +768,8 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
 
       {/* Footer */}
       <div className="bg-black/20 border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+          <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>
               <p className="text-gray-400 text-sm">
@@ -779,28 +779,28 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
             <div>
               <h4 className="text-white font-semibold mb-4">Features</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/ai-powered-live-streaming-broadcasting" className="hover:text-white">Live Streaming</Link></li>
-                <li><Link href="/ai-powered-voice-assistant-speech-recognition" className="hover:text-white">Voice Assistant</Link></li>
-                <li><Link href="/ai-powered-autonomous-vehicle-transportation" className="hover:text-white">Autonomous Vehicles</Link></li>
-                <li><Link href="/ai-powered-cryptocurrency-digital-asset-management" className="hover:text-white">Cryptocurrency</Link></li>
+                <li><Link href="/ai-powered-live-streaming-broadcasting" className="hover text-white">Live Streaming</Link></li>
+                <li><Link href="/ai-powered-voice-assistant-speech-recognition" className="hover text-white">Voice Assistant</Link></li>
+                <li><Link href="/ai-powered-autonomous-vehicle-transportation" className="hover text-white">Autonomous Vehicles</Link></li>
+                <li><Link href="/ai-powered-cryptocurrency-digital-asset-management" className="hover text-white">Cryptocurrency</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/marketplace" className="hover:text-white">Marketplace</Link></li>
-                <li><Link href="/services" className="hover:text-white">IT Services</Link></li>
-                <li><Link href="/talents" className="hover:text-white">AI Talents</Link></li>
-                <li><Link href="/equipment" className="hover:text-white">Equipment</Link></li>
+                <li><Link href="/marketplace" className="hover text-white">Marketplace</Link></li>
+                <li><Link href="/services" className="hover text-white">IT Services</Link></li>
+                <li><Link href="/talents" className="hover text-white">AI Talents</Link></li>
+                <li><Link href="/equipment" className="hover text-white">Equipment</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/help-desk-support" className="hover:text-white">Help Desk</Link></li>
-                <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
-                <li><Link href="/docs" className="hover:text-white">Documentation</Link></li>
-                <li><Link href="/status" className="hover:text-white">Status</Link></li>
+                <li><Link href="/help-desk-support" className="hover text-white">Help Desk</Link></li>
+                <li><Link href="/contact" className="hover text-white">Contact</Link></li>
+                <li><Link href="/docs" className="hover text-white">Documentation</Link></li>
+                <li><Link href="/status" className="hover text-white">Status</Link></li>
               </ul>
             </div>
           </div>

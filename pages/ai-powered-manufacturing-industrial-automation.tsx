@@ -435,7 +435,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -447,46 +447,46 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold text-white">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Streaming
               </Link>
-              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Voice Assistant
               </Link>
-              <Link href="/ai-powered-autonomous-vehicle-transportation" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-autonomous-vehicle-transportation" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Autonomous Vehicles
               </Link>
-              <Link href="/ai-powered-cryptocurrency-digital-asset-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-cryptocurrency-digital-asset-management" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Cryptocurrency
               </Link>
-              <Link href="/ai-powered-space-exploration-satellite-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-space-exploration-satellite-management" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Space Exploration
               </Link>
-              <Link href="/ai-powered-underwater-exploration-marine-research" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-underwater-exploration-marine-research" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Underwater Exploration
               </Link>
-              <Link href="/ai-powered-climate-change-environmental-sustainability" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-climate-change-environmental-sustainability" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Climate Change
               </Link>
-              <Link href="/ai-powered-precision-agriculture-smart-farming" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-precision-agriculture-smart-farming" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Precision Agriculture
               </Link>
-              <Link href="/ai-powered-healthcare-medical-diagnostics" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-healthcare-medical-diagnostics" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Healthcare
               </Link>
-              <Link href="/ai-powered-energy-management-renewable-energy" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-energy-management-renewable-energy" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Energy Management
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-purple-700 hover to-pink-700 transition-all duration-200">
                 Get Started
               </Link>
             </div>
@@ -495,7 +495,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-white mb-6">
@@ -507,10 +507,10 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
             for efficient and high-quality manufacturing processes.
           </p>
           <div className="flex justify-center space-x-4">
-            <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium hover:from-purple-700 hover to-pink-700 transition-all duration-200">
               Monitor Production
             </button>
-            <button className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-medium hover:from-indigo-700 hover:to-purple-700 transition-all duration-200">
+            <button className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-medium hover:from-indigo-700 hover to-purple-700 transition-all duration-200">
               Optimize Quality
             </button>
           </div>
@@ -543,7 +543,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
 
         {/* Content Sections */}
         {selectedView === 'overview' && (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg grid-cols-2 gap-8">
             {/* Smart Manufacturing Overview */}
             <div className="bg-black/20 rounded-lg p-6 border border-white/10">
               <h3 className="text-xl font-semibold text-white mb-4">Active Manufacturing Systems</h3>
@@ -610,7 +610,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
             </div>
 
             {/* Manufacturing Systems Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {filteredSmartManufacturing.map((system) => (
                 <div key={system.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -648,7 +648,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
 
         {selectedView === 'automation' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {industrialAutomation.map((system) => (
                 <div key={system.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -686,7 +686,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
 
         {selectedView === 'quality' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {qualityControl.map((system) => (
                 <div key={system.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -724,7 +724,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
 
         {selectedView === 'optimization' && (
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-3 gap-6">
               {productionOptimization.map((optimization) => (
                 <div key={optimization.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -763,7 +763,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
         {selectedView === 'insights' && data && (
           <div className="space-y-6">
             {/* Analytics Overview */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
               <div className="bg-black/20 rounded-lg p-6 border border-white/10 text-center">
                 <div className="text-3xl font-bold text-white">{formatNumber(data.totalProduction)}</div>
                 <div className="text-gray-400">Total Production</div>
@@ -814,8 +814,8 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
 
       {/* Footer */}
       <div className="bg-black/20 border-t border-white/10 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-8">
+          <div className="grid grid-cols-1 md grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>
               <p className="text-gray-400 text-sm">
@@ -825,35 +825,35 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
             <div>
               <h4 className="text-white font-semibold mb-4">Features</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/ai-powered-live-streaming-broadcasting" className="hover:text-white">Live Streaming</Link></li>
-                <li><Link href="/ai-powered-voice-assistant-speech-recognition" className="hover:text-white">Voice Assistant</Link></li>
-                <li><Link href="/ai-powered-autonomous-vehicle-transportation" className="hover:text-white">Autonomous Vehicles</Link></li>
-                <li><Link href="/ai-powered-cryptocurrency-digital-asset-management" className="hover:text-white">Cryptocurrency</Link></li>
-                <li><Link href="/ai-powered-space-exploration-satellite-management" className="hover:text-white">Space Exploration</Link></li>
-                <li><Link href="/ai-powered-underwater-exploration-marine-research" className="hover:text-white">Underwater Exploration</Link></li>
-                <li><Link href="/ai-powered-climate-change-environmental-sustainability" className="hover:text-white">Climate Change</Link></li>
-                <li><Link href="/ai-powered-precision-agriculture-smart-farming" className="hover:text-white">Precision Agriculture</Link></li>
-                <li><Link href="/ai-powered-healthcare-medical-diagnostics" className="hover:text-white">Healthcare</Link></li>
-                <li><Link href="/ai-powered-energy-management-renewable-energy" className="hover:text-white">Energy Management</Link></li>
-                <li><Link href="/ai-powered-manufacturing-industrial-automation" className="hover:text-white">Manufacturing</Link></li>
+                <li><Link href="/ai-powered-live-streaming-broadcasting" className="hover text-white">Live Streaming</Link></li>
+                <li><Link href="/ai-powered-voice-assistant-speech-recognition" className="hover text-white">Voice Assistant</Link></li>
+                <li><Link href="/ai-powered-autonomous-vehicle-transportation" className="hover text-white">Autonomous Vehicles</Link></li>
+                <li><Link href="/ai-powered-cryptocurrency-digital-asset-management" className="hover text-white">Cryptocurrency</Link></li>
+                <li><Link href="/ai-powered-space-exploration-satellite-management" className="hover text-white">Space Exploration</Link></li>
+                <li><Link href="/ai-powered-underwater-exploration-marine-research" className="hover text-white">Underwater Exploration</Link></li>
+                <li><Link href="/ai-powered-climate-change-environmental-sustainability" className="hover text-white">Climate Change</Link></li>
+                <li><Link href="/ai-powered-precision-agriculture-smart-farming" className="hover text-white">Precision Agriculture</Link></li>
+                <li><Link href="/ai-powered-healthcare-medical-diagnostics" className="hover text-white">Healthcare</Link></li>
+                <li><Link href="/ai-powered-energy-management-renewable-energy" className="hover text-white">Energy Management</Link></li>
+                <li><Link href="/ai-powered-manufacturing-industrial-automation" className="hover text-white">Manufacturing</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/marketplace" className="hover:text-white">Marketplace</Link></li>
-                <li><Link href="/services" className="hover:text-white">IT Services</Link></li>
-                <li><Link href="/talents" className="hover:text-white">AI Talents</Link></li>
-                <li><Link href="/equipment" className="hover:text-white">Equipment</Link></li>
+                <li><Link href="/marketplace" className="hover text-white">Marketplace</Link></li>
+                <li><Link href="/services" className="hover text-white">IT Services</Link></li>
+                <li><Link href="/talents" className="hover text-white">AI Talents</Link></li>
+                <li><Link href="/equipment" className="hover text-white">Equipment</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><Link href="/help-desk-support" className="hover:text-white">Help Desk</Link></li>
-                <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
-                <li><Link href="/docs" className="hover:text-white">Documentation</Link></li>
-                <li><Link href="/status" className="hover:text-white">Status</Link></li>
+                <li><Link href="/help-desk-support" className="hover text-white">Help Desk</Link></li>
+                <li><Link href="/contact" className="hover text-white">Contact</Link></li>
+                <li><Link href="/docs" className="hover text-white">Documentation</Link></li>
+                <li><Link href="/status" className="hover text-white">Status</Link></li>
               </ul>
             </div>
           </div>

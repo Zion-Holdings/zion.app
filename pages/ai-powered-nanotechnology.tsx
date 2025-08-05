@@ -376,7 +376,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-          <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
+          <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
       <Head>
@@ -389,9 +389,9 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-44">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-5xl md text-6xl font-bold text-white mb-6">
               AI-Powered Nanotechnology & Molecular Engineering System
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
@@ -414,7 +414,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32">
         {isLoading ? (
           <div className="flex justify-center items-center py-40">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-500"></div>
@@ -500,12 +500,12 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
               <div className="space-y-8">
                 {/* Controls */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                  <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md space-y-0">
                     <div className="flex items-center space-x-4">
                       <select
                         value={selectedType}
                         onChange={(e) => setSelectedType(e.target.value)}
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus ring-indigo-500"
                       >
                         <option value="all" className="bg-slate-800">All Types</option>
                         <option value="nanomaterials" className="bg-slate-800">Nanomaterials</option>
@@ -516,14 +516,14 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
                         <option value="nanophotonics" className="bg-slate-800">Nanophotonics</option>
                       </select>
                     </div>
-                    <button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300">
+                    <button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover to-purple-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300">
                       Create Nanotechnology System
                     </button>
                   </div>
                 </div>
 
                 {/* Nanotechnology Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 lg grid-cols-2 gap-6">
                   {filteredNanotechnology.map((tech) => (
                     <div key={tech.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                       <div className="flex items-start justify-between mb-4">
@@ -590,10 +590,10 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
                       </div>
 
                       <div className="flex space-x-2">
-                        <button className="flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover to-purple-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           View Details
                         </button>
-                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 border border-white/20 text-white hover bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           Configure
                         </button>
                       </div>
@@ -606,7 +606,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
             {/* Overview Tab */}
             {activeTab === 'overview' && analytics && (
               <div className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                     <div className="text-3xl font-bold text-white mb-2">{analytics.totalNanodevices.toLocaleString()}</div>
                     <div className="text-gray-400 text-sm">Total Nanodevices</div>
@@ -659,7 +659,7 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-indigo-600/20 to-purple-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Explore Nanotechnology?
@@ -668,11 +668,11 @@ const AIPoweredNanotechnologyPage: NextPage = () => {
               Start your nanotechnology journey with our AI-powered system 
               and ensure comprehensive nanotechnology management.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-indigo-500/25 transform hover:scale-105">
+            <div className="flex flex-col sm flex-row gap-4 justify-center">
+              <Link href="/ai-service-matcher" className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-indigo-500/25 transform hover scale-105">
                 Start Exploring
               </Link>
-              <Link href="/talent-directory" className="border border-white/20 text-white hover:bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+              <Link href="/talent-directory" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                 Learn More
               </Link>
             </div>

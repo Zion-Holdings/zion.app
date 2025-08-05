@@ -49,9 +49,7 @@ export default function DebugAdmin() {
   const adminCheck = checkAdminAccess();
 
   return (
-  <ModernLayout>
-    return (
-  <ModernLayout>
+    <ModernLayout>
     return (
     <>
       <Head>
@@ -66,7 +64,7 @@ export default function DebugAdmin() {
           
           <div className="bg-white rounded-lg shadow p-6 mb-6">
             <h2 className="text-xl font-semibold text-gray-900 mb-4">Authentication Status</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md grid-cols-2 gap-4">
               <div>
                 <h3 className="font-medium text-gray-700">Loading State</h3>
                 <p className="text-sm text-gray-600">{loading ? 'Loading...' : 'Loaded'}</p>
@@ -100,19 +98,19 @@ export default function DebugAdmin() {
             <div className="space-y-4">
               <button
                 onClick={() => router.push('/admin-dashboard')}
-                className="px-4 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+                className="px-4 py-4 bg-blue-600 hover bg-blue-700 text-white rounded-lg transition-colors"
               >
                 Try Admin Dashboard
               </button>
               <button
                 onClick={() => router.push('/dashboard')}
-                className="px-4 py-4 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors ml-4"
+                className="px-4 py-4 bg-gray-600 hover bg-gray-700 text-white rounded-lg transition-colors ml-4"
               >
                 Go to Regular Dashboard
               </button>
               <button
                 onClick={() => router.push('/auth/login')}
-                className="px-4 py-4 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors ml-4"
+                className="px-4 py-4 bg-green-600 hover bg-green-700 text-white rounded-lg transition-colors ml-4"
               >
                 Go to Login
               </button>
@@ -121,7 +119,7 @@ export default function DebugAdmin() {
 
           <div className="bg-white rounded-lg shadow p-6">
             <h2 className="text-xl font-semibold text-gray-900 mb-4">Environment Variables</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md grid-cols-2 gap-4">
               <div>
                 <h3 className="font-medium text-gray-700">Supabase URL</h3>
                 <p className="text-sm text-gray-600">
