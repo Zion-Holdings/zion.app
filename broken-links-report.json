@@ -1378,7 +1378,108 @@
     "/webhook-management",
     "/workflow-designer"
   ],
-  "brokenLinks": [],
-  "totalBrokenLinks": 0,
+  "brokenLinks": [
+    {
+      "file": "pages/chat-content/ai-powered-business-solutions-discussion.tsx",
+      "link": "/chat-content",
+      "line": 30
+    },
+    {
+      "file": "pages/chat-content/ai-powered-business-solutions-discussion.tsx",
+      "link": "/chat-content",
+      "line": 30
+    },
+    {
+      "file": "pages/chat-content/cloud-computing-strategies.tsx",
+      "link": "/chat-content",
+      "line": 30
+    },
+    {
+      "file": "pages/chat-content/cloud-computing-strategies.tsx",
+      "link": "/chat-content",
+      "line": 30
+    },
+    {
+      "file": "pages/chat-content/cybersecurity-best-practices.tsx",
+      "link": "/chat-content",
+      "line": 30
+    },
+    {
+      "file": "pages/chat-content/cybersecurity-best-practices.tsx",
+      "link": "/chat-content",
+      "line": 30
+    },
+    {
+      "file": "pages/chat-content/data-analytics-implementation.tsx",
+      "link": "/chat-content",
+      "line": 30
+    },
+    {
+      "file": "pages/chat-content/data-analytics-implementation.tsx",
+      "link": "/chat-content",
+      "line": 30
+    },
+    {
+      "file": "pages/chat-content/digital-transformation-insights.tsx",
+      "link": "/chat-content",
+      "line": 30
+    },
+    {
+      "file": "pages/chat-content/digital-transformation-insights.tsx",
+      "link": "/chat-content",
+      "line": 30
+    },
+    {
+      "file": "pages/chat-content/emerging-technology-trends.tsx",
+      "link": "/chat-content",
+      "line": 30
+    },
+    {
+      "file": "pages/chat-content/emerging-technology-trends.tsx",
+      "link": "/chat-content",
+      "line": 30
+    },
+    {
+      "file": "pages/chat-content/future-of-work-and-automation.tsx",
+      "link": "/chat-content",
+      "line": 30
+    },
+    {
+      "file": "pages/chat-content/future-of-work-and-automation.tsx",
+      "link": "/chat-content",
+      "line": 30
+    },
+    {
+      "file": "pages/chat-content/innovation-in-enterprise-technology.tsx",
+      "link": "/chat-content",
+      "line": 30
+    },
+    {
+      "file": "pages/chat-content/innovation-in-enterprise-technology.tsx",
+      "link": "/chat-content",
+      "line": 30
+    },
+    {
+      "file": "pages/chat-content/sustainable-technology-practices.tsx",
+      "link": "/chat-content",
+      "line": 30
+    },
+    {
+      "file": "pages/chat-content/sustainable-technology-practices.tsx",
+      "link": "/chat-content",
+      "line": 30
+    },
+    {
+      "file": "pages/chat-content/technology-implementation-strategies.tsx",
+      "link": "/chat-content",
+      "line": 30
+    },
+    {
+      "file": "pages/chat-content/technology-implementation-strategies.tsx",
+      "link": "/chat-content",
+      "line": 30
+    }
+  ],
+  "totalBrokenLinks": 20,
   "totalLinksChecked": 2284
 }
