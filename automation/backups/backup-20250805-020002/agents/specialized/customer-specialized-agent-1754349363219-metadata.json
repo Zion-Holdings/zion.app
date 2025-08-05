@@ -1,0 +1,30 @@
+{
+  "id": "customer-specialized-agent-1754349363219",
+  "name": "Customer Insight Agent",
+  "type": "specialized",
+  "focus": "customer behavior analysis",
+  "sources": [
+    "customer feedback",
+    "usage data",
+    "social media"
+  ],
+  "output": "customer insights",
+  "marketData": {
+    "opportunities": [
+      {
+        "title": "AI Market Gap Solution",
+        "keyword": "AI automation",
+        "marketSize": "High",
+        "potential": "High"
+      }
+    ]
+  },
+  "status": "Active",
+  "createdAt": "2025-08-04T23:16:03.219Z",
+  "configuration": {
+    "analysisScope": "behavioral",
+    "updateFrequency": "real-time",
+    "outputFormat": "customer-insights",
+    "alertThreshold": 0.6
+  }
+}

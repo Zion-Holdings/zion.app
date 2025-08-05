@@ -1,0 +1,115 @@
+{
+  "pageTitle": "AI-Powered AI-Powered sustainability Solution",
+  "metaDescription": "Innovative solution leveraging the latest trend: Breakneck data center growth challenges Microsoft’s sustainability goals",
+  "heroSection": {
+    "title": "AI-Powered AI-Powered sustainability Solution",
+    "subtitle": "Transform your business with intelligent automation",
+    "cta": "Get Started Today"
+  },
+  "featuresSection": {
+    "title": "Key Features",
+    "features": [
+      {
+        "name": "Advanced AI Algorithms",
+        "description": "Advanced advanced ai algorithms capabilities",
+        "icon": "✨"
+      },
+      {
+        "name": "Real-time Processing",
+        "description": "Advanced real-time processing capabilities",
+        "icon": "✨"
+      },
+      {
+        "name": "Scalable Architecture",
+        "description": "Advanced scalable architecture capabilities",
+        "icon": "✨"
+      },
+      {
+        "name": "API Integration",
+        "description": "Advanced api integration capabilities",
+        "icon": "✨"
+      },
+      {
+        "name": "Analytics Dashboard",
+        "description": "Advanced analytics dashboard capabilities",
+        "icon": "✨"
+      },
+      {
+        "name": "Custom Workflows",
+        "description": "Advanced custom workflows capabilities",
+        "icon": "✨"
+      },
+      {
+        "name": "Trend-based sustainability",
+        "description": "Advanced trend-based sustainability capabilities",
+        "icon": "✨"
+      },
+      {
+        "name": "Market Intelligence",
+        "description": "Advanced market intelligence capabilities",
+        "icon": "✨"
+      },
+      {
+        "name": "Predictive Analytics",
+        "description": "Advanced predictive analytics capabilities",
+        "icon": "✨"
+      },
+      {
+        "name": "Automated Insights",
+        "description": "Advanced automated insights capabilities",
+        "icon": "✨"
+      }
+    ]
+  },
+  "pricingSection": {
+    "title": "Pricing Plans",
+    "pricing": [
+      {
+        "tier": "Basic",
+        "price": "$79/month",
+        "features": [
+          "Core features",
+          "Email support",
+          "Basic analytics"
+        ]
+      },
+      {
+        "tier": "Professional",
+        "price": "$199/month",
+        "features": [
+          "All basic features",
+          "Priority support",
+          "Advanced analytics",
+          "API access"
+        ]
+      },
+      {
+        "tier": "Enterprise",
+        "price": "$599/month",
+        "features": [
+          "All professional features",
+          "24/7 support",
+          "Custom integrations",
+          "Dedicated account manager"
+        ]
+      },
+      {
+        "tier": "Custom",
+        "price": "Contact sales",
+        "features": [
+          "Core features",
+          "Email support",
+          "Basic analytics"
+        ]
+      }
+    ]
+  },
+  "benefitsSection": {
+    "title": "Why Choose Us",
+    "benefits": [
+      "First-mover advantage in sustainability",
+      "ROI: 300.0%",
+      "Payback Period: 3.0 months"
+    ]
+  }
+}

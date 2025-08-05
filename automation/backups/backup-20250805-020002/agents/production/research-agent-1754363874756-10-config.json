@@ -1,0 +1,42 @@
+{
+  "id": "research-agent-1754363874756-10",
+  "name": "AI Research Agent",
+  "type": "research",
+  "focus": "AI",
+  "capabilities": [
+    "web crawling",
+    "data analysis",
+    "trend identification"
+  ],
+  "output": "market insights",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Trend identified: Why open-source AI became an American national priority",
+  "status": "Active",
+  "createdAt": "2025-08-05T03:17:54.756Z",
+  "configuration": {
+    "sources": [
+      "web crawlers",
+      "API endpoints",
+      "data feeds"
+    ],
+    "parameters": {
+      "area": "AI",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.9707328544726166,
+    "accuracy": 0.9346744810503432,
+    "reliability": 0.9656894432057488,
+    "scalability": 0.6794257742563954
+  },
+  "recommendations": []
+}

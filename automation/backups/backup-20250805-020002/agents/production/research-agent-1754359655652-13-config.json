@@ -1,0 +1,42 @@
+{
+  "id": "research-agent-1754359655652-13",
+  "name": "General Research Agent",
+  "type": "research",
+  "focus": "General",
+  "capabilities": [
+    "web crawling",
+    "data analysis",
+    "trend identification"
+  ],
+  "output": "market insights",
+  "frequency": "daily",
+  "priority": "High",
+  "reasoning": "Trend identified: artificial intelligence",
+  "status": "Active",
+  "createdAt": "2025-08-05T02:07:35.652Z",
+  "configuration": {
+    "sources": [
+      "web crawlers",
+      "API endpoints",
+      "data feeds"
+    ],
+    "parameters": {
+      "area": "General",
+      "priority": "High",
+      "frequency": "daily",
+      "batchSize": 100,
+      "timeout": 30000,
+      "retryAttempts": 3
+    },
+    "schedule": "0 */6 * * *",
+    "outputFormat": "JSON"
+  },
+  "optimized": true,
+  "performance": {
+    "efficiency": 0.8382795861991809,
+    "accuracy": 0.9363151608774339,
+    "reliability": 0.9539994397071707,
+    "scalability": 0.6635022187394177
+  },
+  "recommendations": []
+}
