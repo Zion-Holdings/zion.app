@@ -136,8 +136,8 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all')
   const [isLoading, setIsLoading] = useState(true)
 
-  // Mock data
-  const mockBackupJobs: BackupJob[] = [
+  // Mock data using useMemo to prevent re-renders
+  const mockBackupJobs = useMockArray<BackupJob>(() => [
     {
       id: '1',
       name: 'Daily Database Backup',
@@ -156,9 +156,9 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
         recommendations: ['Optimize compression', 'Schedule during off-peak hours']
       }
     }
-  ]
+  ])
 
-  const mockRecoveryPlans: RecoveryPlan[] = [
+  const mockRecoveryPlans = useMockArray<RecoveryPlan>(() => [
     {
       id: '1',
       name: 'Critical System Recovery',
@@ -176,9 +176,9 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
         recommendations: ['Reduce RTO', 'Improve monitoring']
       }
     }
-  ]
+  ])
 
-  const mockDisasterRecoveries: DisasterRecovery[] = [
+  const mockDisasterRecoveries = useMockArray<DisasterRecovery>(() => [
     {
       id: '1',
       title: 'Data Center Failure Recovery',
@@ -196,9 +196,9 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
         recommendations: ['Improve redundancy', 'Test recovery procedures']
       }
     }
-  ]
+  ])
 
-  const mockBackupStorages: BackupStorage[] = [
+  const mockBackupStorages = useMockArray<BackupStorage>(() => [
     {
       id: '1',
       name: 'Cloud Backup Storage',
@@ -216,9 +216,9 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
         recommendations: ['Implement tiered storage', 'Optimize retention policies']
       }
     }
-  ]
+  ])
 
-  const mockSystemRestorations: SystemRestoration[] = [
+  const mockSystemRestorations = useMockArray<SystemRestoration>(() => [
     {
       id: '1',
       title: 'Database System Restoration',
@@ -236,9 +236,9 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
         recommendations: ['Monitor performance', 'Verify data integrity']
       }
     }
-  ]
+  ])
 
-  const mockAnalytics: BackupRecoveryAnalytics = {
+  const mockAnalytics = useMockObject<BackupRecoveryAnalytics>(() => ({
     totalBackups: 28,
     activeRecoveryPlans: 12,
     disasterScenarios: 6,
@@ -256,7 +256,7 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
         recommendations: ['Continue AI monitoring', 'Expand backup coverage']
       }
     ]
-  }
+  }))
 
   useEffect(() => {
     setTimeout(() => {

@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
+import { useMockArray, useMockObject } from '../src/utils/mockDataHelpers'
 
 interface BiometricAuthentication {
   id: string;
@@ -143,177 +144,177 @@ interface BiometricAuthenticationInsight {
 }
 
 const AIPoweredBiometricAuthenticationPage: NextPage = () => {
-  const [biometricAuthentication, setBiometricAuthentication] = useState<BiometricAuthentication[]>([])
-  const [facialRecognition, setFacialRecognition] = useState<FacialRecognition[]>([])
-  const [fingerprintScanning, setFingerprintScanning] = useState<FingerprintScanning[]>([])
-  const [voiceRecognition, setVoiceRecognition] = useState<VoiceRecognition[]>([])
-  const [irisScanning, setIrisScanning] = useState<IrisScanning[]>([])
-  const [biometricSecurityManagement, setBiometricSecurityManagement] = useState<BiometricSecurityManagement[]>([])
+  const [biometricAuthentications, setBiometricAuthentications] = useState<BiometricAuthentication[]>([])
+  const [facialRecognitions, setFacialRecognitions] = useState<FacialRecognition[]>([])
+  const [fingerprintScannings, setFingerprintScannings] = useState<FingerprintScanning[]>([])
+  const [voiceRecognitions, setVoiceRecognitions] = useState<VoiceRecognition[]>([])
+  const [irisScannings, setIrisScannings] = useState<IrisScanning[]>([])
+  const [biometricSecurityManagements, setBiometricSecurityManagements] = useState<BiometricSecurityManagement[]>([])
   const [analytics, setAnalytics] = useState<BiometricAuthenticationAnalytics | null>(null)
-  const [activeTab, setActiveTab] = useState<'biometric' | 'facial' | 'fingerprint' | 'voice' | 'iris' | 'management' | 'overview'>('biometric')
+  const [activeTab, setActiveTab] = useState<'biometrics' | 'facial' | 'fingerprint' | 'voice' | 'iris' | 'security' | 'analytics'>('biometrics')
   const [selectedType, setSelectedType] = useState<string>('all')
   const [isLoading, setIsLoading] = useState(true)
 
-  // Mock data
-  const mockBiometricAuthentication: BiometricAuthentication[] = [
+  // Mock data using useMemo to prevent re-renders
+  const mockBiometricAuthentication = useMockArray<BiometricAuthentication>(() => [
     {
       id: '1',
       name: 'Multi-Modal Biometric System',
-      description: 'Comprehensive biometric authentication system with multiple modalities',
+      description: 'Advanced biometric authentication system with multiple modalities',
       type: 'facial_recognition',
       status: 'active',
       accuracy: 98.5,
       falsePositiveRate: 0.1,
-      processingTime: 0.8,
+      processingTime: 1.2,
       aiAnalysis: {
         id: '1',
-        securityScore: 96,
+        securityScore: 95,
         accuracyScore: 98,
-        reliabilityScore: 97,
-        recommendations: ['Enhance anti-spoofing measures', 'Optimize processing algorithms']
+        reliabilityScore: 96,
+        recommendations: ['Improve liveness detection', 'Optimize processing speed']
       }
     }
-  ]
+  ])
 
-  const mockFacialRecognition: FacialRecognition[] = [
+  const mockFacialRecognition = useMockArray<FacialRecognition>(() => [
     {
       id: '1',
-      title: 'Advanced Facial Recognition',
-      description: 'High-accuracy facial recognition system with liveness detection',
+      title: 'Advanced Face Recognition',
+      description: 'High-accuracy facial recognition system with anti-spoofing',
       type: 'face_verification',
       status: 'active',
       confidence: 99.2,
-      livenessScore: 98.8,
+      livenessScore: 98.5,
       aiOptimization: {
         id: '1',
         recognitionScore: 99,
         livenessScore: 98,
         antiSpoofingScore: 97,
-        recommendations: ['Improve lighting conditions', 'Enhance anti-spoofing algorithms']
+        recommendations: ['Enhance anti-spoofing', 'Improve lighting conditions']
       }
     }
-  ]
+  ])
 
-  const mockFingerprintScanning: FingerprintScanning[] = [
+  const mockFingerprintScanning = useMockArray<FingerprintScanning>(() => [
     {
       id: '1',
       name: 'Ultrasonic Fingerprint Scanner',
-      description: 'Advanced ultrasonic fingerprint scanning with high accuracy',
+      description: 'Advanced ultrasonic fingerprint scanning technology',
       type: 'ultrasonic_scanning',
       status: 'active',
       minutiaePoints: 45,
-      qualityScore: 96.5,
+      qualityScore: 96.8,
       aiAnalysis: {
         id: '1',
-        qualityScore: 96,
+        qualityScore: 97,
         matchingScore: 98,
-        uniquenessScore: 97,
-        recommendations: ['Optimize sensor sensitivity', 'Enhance image processing']
+        uniquenessScore: 99,
+        recommendations: ['Improve sensor calibration', 'Enhance image processing']
       }
     }
-  ]
+  ])
 
-  const mockVoiceRecognition: VoiceRecognition[] = [
+  const mockVoiceRecognition = useMockArray<VoiceRecognition>(() => [
     {
       id: '1',
-      voiceId: 'VR-001',
+      voiceId: 'VOICE_001',
       title: 'Voice Biometric System',
-      description: 'Advanced voice recognition system for speaker identification',
-      type: 'speaker_identification',
+      description: 'Advanced voice recognition with emotion detection',
+      type: 'voice_biometrics',
       status: 'active',
       samples: 150,
-      confidence: 95.8,
+      confidence: 97.5,
       aiAnalysis: {
         id: '1',
-        voiceScore: 95,
-        clarityScore: 94,
-        uniquenessScore: 96,
-        recommendations: ['Improve noise reduction', 'Enhance voice modeling']
+        voiceScore: 98,
+        clarityScore: 96,
+        uniquenessScore: 97,
+        recommendations: ['Increase sample size', 'Improve noise reduction']
       }
     }
-  ]
+  ])
 
-  const mockIrisScanning: IrisScanning[] = [
+  const mockIrisScanning = useMockArray<IrisScanning>(() => [
     {
       id: '1',
-      irisId: 'IS-001',
+      irisId: 'IRIS_001',
       title: 'High-Resolution Iris Scanner',
-      description: 'Advanced iris scanning system with high accuracy',
+      description: 'Advanced iris recognition with high accuracy',
       type: 'iris_verification',
       status: 'active',
       resolution: 2048,
-      accuracy: 99.9,
+      accuracy: 99.8,
       aiAnalysis: {
         id: '1',
         irisScore: 99,
         clarityScore: 98,
         uniquenessScore: 99,
-        recommendations: ['Optimize lighting conditions', 'Enhance iris segmentation']
+        recommendations: ['Optimize lighting', 'Improve focus detection']
       }
     }
-  ]
+  ])
 
-  const mockBiometricSecurityManagement: BiometricSecurityManagement[] = [
+  const mockBiometricSecurityManagement = useMockArray<BiometricSecurityManagement>(() => [
     {
       id: '1',
-      systemId: 'BSM-001',
-      title: 'Biometric Security Management',
-      description: 'Comprehensive management of biometric security infrastructure',
+      systemId: 'SYS_001',
+      title: 'Biometric Security Center',
+      description: 'Centralized biometric security management system',
       category: 'security',
       status: 'operational',
-      devices: 24,
-      securityLevel: 99.5,
+      devices: 25,
+      securityLevel: 95,
       aiAnalysis: {
         id: '1',
-        securityScore: 98,
-        performanceScore: 96,
+        securityScore: 96,
+        performanceScore: 94,
         reliabilityScore: 97,
-        recommendations: ['Monitor device health', 'Optimize security protocols']
+        recommendations: ['Enhance encryption', 'Improve monitoring']
       }
     }
-  ]
+  ])
 
-  const mockAnalytics: BiometricAuthenticationAnalytics = {
-    totalBiometricDevices: 89,
-    activeFacialRecognition: 32,
-    fingerprintScanners: 28,
-    voiceRecognitionSystems: 15,
-    irisScanners: 14,
-    managedSystems: 6,
+  const mockAnalytics = useMockObject<BiometricAuthenticationAnalytics>(() => ({
+    totalBiometricDevices: 45,
+    activeFacialRecognition: 12,
+    fingerprintScanners: 18,
+    voiceRecognitionSystems: 8,
+    irisScanners: 7,
+    managedSystems: 15,
     averageAccuracy: 98.2,
-    aiOptimizationScore: 97,
+    aiOptimizationScore: 96.5,
     aiInsights: [
       {
         id: '1',
-        title: 'High Biometric Authentication Accuracy',
-        description: 'AI-powered biometric authentication system shows 98.2% accuracy score with optimized security measures',
+        title: 'High Biometric Accuracy',
+        description: 'AI-powered biometric system shows 98.2% average accuracy across all modalities',
         impact: 'positive',
         confidence: 0.97,
-        recommendations: ['Continue AI monitoring', 'Expand biometric capabilities']
+        recommendations: ['Continue AI optimization', 'Expand system coverage']
       }
     ]
-  }
+  }))
 
   useEffect(() => {
     setTimeout(() => {
-      setBiometricAuthentication(mockBiometricAuthentication)
-      setFacialRecognition(mockFacialRecognition)
-      setFingerprintScanning(mockFingerprintScanning)
-      setVoiceRecognition(mockVoiceRecognition)
-      setIrisScanning(mockIrisScanning)
-      setBiometricSecurityManagement(mockBiometricSecurityManagement)
+      setBiometricAuthentications(mockBiometricAuthentication)
+      setFacialRecognitions(mockFacialRecognition)
+      setFingerprintScannings(mockFingerprintScanning)
+      setVoiceRecognitions(mockVoiceRecognition)
+      setIrisScannings(mockIrisScanning)
+      setBiometricSecurityManagements(mockBiometricSecurityManagement)
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
   }, [mockBiometricAuthentication, mockFacialRecognition, mockFingerprintScanning, mockVoiceRecognition, mockIrisScanning, mockBiometricSecurityManagement, mockAnalytics])
 
   const filteredBiometricDevices = useMemo(() => {
-    let filtered = biometricAuthentication
+    let filtered = biometricAuthentications
     if (selectedType !== 'all') {
       filtered = filtered.filter(device => device.type === selectedType)
     }
     return filtered
-  }, [biometricAuthentication, selectedType])
+  }, [biometricAuthentications, selectedType])
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -417,14 +418,14 @@ const AIPoweredBiometricAuthenticationPage: NextPage = () => {
             {/* Tabs */}
             <div className="flex flex-wrap justify-center mb-8">
               <button
-                onClick={() => setActiveTab('biometric')}
+                onClick={() => setActiveTab('biometrics')}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === 'biometric'
+                  activeTab === 'biometrics'
                     ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
                 }`}
               >
-                Biometric Authentication ({biometricAuthentication.length})
+                Biometric Authentication ({biometricAuthentications.length})
               </button>
               <button
                 onClick={() => setActiveTab('facial')}
@@ -434,7 +435,7 @@ const AIPoweredBiometricAuthenticationPage: NextPage = () => {
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
                 }`}
               >
-                Facial Recognition ({facialRecognition.length})
+                Facial Recognition ({facialRecognitions.length})
               </button>
               <button
                 onClick={() => setActiveTab('fingerprint')}
@@ -444,7 +445,7 @@ const AIPoweredBiometricAuthenticationPage: NextPage = () => {
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
                 }`}
               >
-                Fingerprint Scanning ({fingerprintScanning.length})
+                Fingerprint Scanning ({fingerprintScannings.length})
               </button>
               <button
                 onClick={() => setActiveTab('voice')}
@@ -454,7 +455,7 @@ const AIPoweredBiometricAuthenticationPage: NextPage = () => {
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
                 }`}
               >
-                Voice Recognition ({voiceRecognition.length})
+                Voice Recognition ({voiceRecognitions.length})
               </button>
               <button
                 onClick={() => setActiveTab('iris')}
@@ -464,22 +465,22 @@ const AIPoweredBiometricAuthenticationPage: NextPage = () => {
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
                 }`}
               >
-                Iris Scanning ({irisScanning.length})
+                Iris Scanning ({irisScannings.length})
               </button>
               <button
-                onClick={() => setActiveTab('management')}
+                onClick={() => setActiveTab('security')}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === 'management'
+                  activeTab === 'security'
                     ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
                 }`}
               >
-                Management ({biometricSecurityManagement.length})
+                Management ({biometricSecurityManagements.length})
               </button>
               <button
-                onClick={() => setActiveTab('overview')}
+                onClick={() => setActiveTab('analytics')}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === 'overview'
+                  activeTab === 'analytics'
                     ? 'bg-gradient-to-r from-green-600 to-emerald-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
                 }`}
@@ -489,7 +490,7 @@ const AIPoweredBiometricAuthenticationPage: NextPage = () => {
             </div>
 
             {/* Biometric Authentication Tab */}
-            {activeTab === 'biometric' && (
+            {activeTab === 'biometrics' && (
               <div className="space-y-8">
                 {/* Controls */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
@@ -597,7 +598,7 @@ const AIPoweredBiometricAuthenticationPage: NextPage = () => {
             )}
 
             {/* Overview Tab */}
-            {activeTab === 'overview' && analytics && (
+            {activeTab === 'analytics' && analytics && (
               <div className="space-y-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">

@@ -220,7 +220,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
 
   useEffect(() => {
     loadAPIData();
-  }, [selectedTimeframe]);
+  }, [selectedTimeframe, loadAPIData]);
 
   const loadAPIData = async () => {
     setLoading(true);

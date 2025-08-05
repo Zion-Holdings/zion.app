@@ -79,6 +79,17 @@ publicAssets.forEach(asset => {
   existingPages.add(asset);
 });
 
+// Add special pages that exist but might not be detected by the file system
+const specialPages = [
+  '/chat-content', // This is the index page for chat-content
+  '/api',
+  '/support'
+];
+
+specialPages.forEach(page => {
+  existingPages.add(page);
+});
+
 console.log('Existing pages:', Array.from(existingPages).sort());
 
 // Function to extract links from a file

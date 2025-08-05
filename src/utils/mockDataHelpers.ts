@@ -7,7 +7,7 @@ import { useMemo } from 'react';
  * @returns Stable mock data
  */
 export function useMockData<T>(factory: () => T, deps: any[] = []): T {
-  return useMemo(factory, deps);
+  return useMemo(factory, [factory, ...deps]);
 }
 
 /**
@@ -16,7 +16,7 @@ export function useMockData<T>(factory: () => T, deps: any[] = []): T {
  * @returns Stable analytics data
  */
 export function useMockAnalytics(analyticsData: any) {
-  return useMemo(() => analyticsData, []);
+  return useMemo(() => analyticsData, [analyticsData]);
 }
 
 /**
@@ -26,7 +26,7 @@ export function useMockAnalytics(analyticsData: any) {
  * @returns Stable array
  */
 export function useMockArray<T>(arrayFactory: () => T[], deps: any[] = []): T[] {
-  return useMemo(arrayFactory, deps);
+  return useMemo(arrayFactory, [arrayFactory, ...deps]);
 }
 
 /**
@@ -36,5 +36,5 @@ export function useMockArray<T>(arrayFactory: () => T[], deps: any[] = []): T[] 
  * @returns Stable object
  */
 export function useMockObject<T>(objectFactory: () => T, deps: any[] = []): T {
-  return useMemo(objectFactory, deps);
+  return useMemo(objectFactory, [objectFactory, ...deps]);
 } 

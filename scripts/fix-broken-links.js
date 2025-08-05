@@ -15,7 +15,7 @@ const linkMappings = {
   '/ai-powered-data-analytics/': '/ai-powered-data-analytics',
   
   // Fix chat-content links
-  '/chat-content': '/chat-content/ai-powered-business-solutions-discussion',
+  '/chat-content': '/chat-content',
   
   // Fix missing pages by redirecting to similar ones
   '/api': '/api-docs',

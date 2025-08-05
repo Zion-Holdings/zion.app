@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
+import { useMockArray, useMockObject } from '../src/utils/mockDataHelpers'
 
 interface Broadcast {
   id: string;
@@ -151,17 +152,17 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
   const [selectedType, setSelectedType] = useState<string>('all')
   const [isLoading, setIsLoading] = useState(true)
 
-  // Mock data
-  const mockBroadcasts: Broadcast[] = [
+  // Mock data using useMemo to prevent re-renders
+  const mockBroadcasts = useMockArray<Broadcast>(() => [
     {
       id: '1',
-      title: 'New AI Features Available',
-      message: 'We\'ve launched new AI-powered features to enhance your marketplace experience.',
-      type: 'announcement',
+      title: 'System Maintenance Alert',
+      message: 'Scheduled system maintenance notification',
+      type: 'alert',
       status: 'active',
       priority: 'high',
-      targetAudience: ['all-users', 'premium-users'],
-      deliveryMethod: ['email', 'push', 'in-app'],
+      targetAudience: ['all-users'],
+      deliveryMethod: ['email'],
       sentCount: 15420,
       openedCount: 12336,
       clickedCount: 3084,
@@ -170,19 +171,19 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
         engagementScore: 85,
         openRate: 80,
         clickRate: 25,
-        recommendations: ['Add personalization', 'Include call-to-action']
+        recommendations: ['Optimize timing', 'Improve targeting']
       }
     }
-  ]
+  ])
 
-  const mockAnnouncements: Announcement[] = [
+  const mockAnnouncements = useMockArray<Announcement>(() => [
     {
       id: '1',
-      title: 'Platform Maintenance Scheduled',
-      content: 'We will be performing scheduled maintenance on Sunday, 2:00 AM - 4:00 AM EST.',
-      category: 'maintenance',
+      title: 'New Feature Release',
+      content: 'Announcement of new AI-powered features',
+      category: 'feature',
       status: 'published',
-      priority: 'high',
+      priority: 'medium',
       targetUsers: ['all-users'],
       views: 2340,
       acknowledgments: 1890,
@@ -190,16 +191,16 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
         id: '1',
         visibilityScore: 92,
         engagementScore: 88,
-        recommendations: ['Add maintenance details', 'Include alternative contact methods']
+        recommendations: ['Enhance visuals', 'Add call-to-action']
       }
     }
-  ]
+  ])
 
-  const mockCampaigns: CommunicationCampaign[] = [
+  const mockCampaigns = useMockArray<CommunicationCampaign>(() => [
     {
       id: '1',
-      name: 'Welcome Series Campaign',
-      description: 'Multi-channel welcome campaign for new users',
+      name: 'AI Innovation Campaign',
+      description: 'Marketing campaign for AI-powered solutions',
       type: 'multi-channel',
       status: 'active',
       targetSegments: ['new-users'],
@@ -216,16 +217,16 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
         id: '1',
         optimizationScore: 87,
         engagementPrediction: 82,
-        recommendations: ['Personalize content', 'Add onboarding steps']
+        recommendations: ['Optimize messaging', 'Improve targeting']
       }
     }
-  ]
+  ])
 
-  const mockAutomations: MarketingAutomation[] = [
+  const mockAutomations = useMockArray<MarketingAutomation>(() => [
     {
       id: '1',
-      name: 'Abandoned Cart Recovery',
-      description: 'Automated recovery emails for abandoned carts',
+      name: 'Welcome Series Automation',
+      description: 'Automated welcome email series for new users',
       trigger: 'user-action',
       status: 'active',
       performance: {
@@ -239,17 +240,17 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
         id: '1',
         efficiencyScore: 89,
         conversionPrediction: 15,
-        recommendations: ['Optimize timing', 'Add incentives']
+        recommendations: ['Improve personalization', 'Optimize timing']
       }
     }
-  ]
+  ])
 
-  const mockPromotionalMessages: PromotionalMessage[] = [
+  const mockPromotionalMessages = useMockArray<PromotionalMessage>(() => [
     {
       id: '1',
-      title: 'Flash Sale - 50% Off Premium Features',
-      content: 'Limited time offer! Get 50% off all premium features for the next 24 hours only.',
-      type: 'discount',
+      title: 'Special Offer Alert',
+      content: 'Limited time promotional offer',
+      type: 'offer',
       status: 'active',
       targetAudience: ['free-users', 'inactive-users'],
       deliveryChannels: ['email', 'push', 'in-app'],
@@ -260,30 +261,30 @@ const AIPoweredBroadcastCommunicationPage: NextPage = () => {
         id: '1',
         effectivenessScore: 82,
         conversionRate: 15,
-        recommendations: ['Add countdown timer', 'Include social proof']
+        recommendations: ['Increase urgency', 'Improve offer value']
       }
     }
-  ]
+  ])
 
-  const mockAnalytics: BroadcastCommunicationAnalytics = {
-    totalBroadcasts: 45,
-    activeAnnouncements: 12,
+  const mockAnalytics = useMockObject<BroadcastCommunicationAnalytics>(() => ({
+    totalBroadcasts: 156,
+    activeAnnouncements: 23,
     campaignsCount: 8,
     automationsCount: 15,
-    promotionalMessages: 23,
-    averageEngagement: 78.5,
-    aiOptimizationScore: 89,
+    promotionalMessages: 45,
+    averageEngagement: 87.5,
+    aiOptimizationScore: 92.3,
     aiInsights: [
       {
         id: '1',
-        title: 'High Broadcast Engagement',
-        description: 'Broadcast messages show 25% higher engagement with AI optimization',
+        title: 'High Engagement Rates',
+        description: 'AI-optimized broadcasts show 87.5% average engagement rate',
         impact: 'positive',
         confidence: 0.94,
-        recommendations: ['Continue AI monitoring', 'Expand personalization']
+        recommendations: ['Continue AI optimization', 'Expand automation']
       }
     ]
-  }
+  }))
 
   useEffect(() => {
     setTimeout(() => {

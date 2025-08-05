@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface LiveStream {
   id: string
@@ -449,7 +450,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
                 {streams.slice(0, 3).map((stream) => (
                   <div key={stream.id} className="flex items-center space-x-4 p-4 bg-white/5 rounded-lg">
                     <div className="relative">
-                      <img src={stream.thumbnail} alt={stream.title} className="w-16 h-12 object-cover rounded" />
+                      <Image src={stream.thumbnail} alt={stream.title} width={64} height={48} className="object-cover rounded" />
                       <div className={`absolute top-0 right-0 w-3 h-3 ${getStatusBgColor(stream.status)} rounded-full`}></div>
                     </div>
                     <div className="flex-1">
@@ -507,7 +508,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
               {filteredStreams.map((stream) => (
                 <div key={stream.id} className="bg-black/20 rounded-lg overflow-hidden border border-white/10">
                   <div className="relative">
-                    <img src={stream.thumbnail} alt={stream.title} className="w-full h-48 object-cover" />
+                    <Image src={stream.thumbnail} alt={stream.title} width={400} height={192} className="w-full h-48 object-cover" />
                     <div className="absolute top-2 left-2">
                       <span className={`px-2 py-1 rounded text-xs font-medium ${getStatusBgColor(stream.status)} text-white`}>
                         {stream.status.toUpperCase()}
