@@ -1,8 +1,8 @@
 import type { NextPage }  from 'next';
-import ModernLayout  from '../components/layout/ModernLayout';
-import Head  from 'next/head';
+import ModernLayout from '../components/layout/ModernLayout';
+import Head from 'next/head';
 import { useState, useEffect }  from 'react';
-import { motion }  from 'framer-motion';
+import { motion } from 'framer-motion';
 
 interface ChatMessage {
   id: string;
@@ -144,7 +144,7 @@ const AgentChat: NextPage = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-center mb-12"
             >
-              <h1 className="text-responsive-4xl lg:text-responsive-5xl font-bold text-high-contrast mb-4">
+              <h1 className="text-responsive-4xl lg text-responsive-5xl font-bold text-high-contrast mb-4">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
                   AI Agent Chat
                 </span>
@@ -154,12 +154,12 @@ const AgentChat: NextPage = () => {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg grid-cols-3 gap-8">
               {/* Agent Selection */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="lg:col-span-1"
+                className="lg col-span-1"
               >
                 <div className="glass-dark border border-neon-blue/30 rounded-2xl p-6">
                   <h2 className="text-2xl font-bold text-high-contrast mb-6">
@@ -203,7 +203,7 @@ const AgentChat: NextPage = () => {
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="lg:col-span-2"
+                className="lg col-span-2"
               >
                 <div className="glass-dark border border-neon-blue/30 rounded-2xl h-[600px] flex flex-col">
                   {/* Chat Header */}
@@ -292,14 +292,14 @@ const AgentChat: NextPage = () => {
                           onChange={(e) => setInputMessage(e.target.value)}
                           onKeyPress={handleKeyPress}
                           placeholder="Type your message..."
-                          className="flex-1 bg-transparent border border-neon-blue/30 rounded-lg px-4 py-3 text-high-contrast placeholder-high-contrast-secondary focus:outline-none focus:border-neon-blue/60 transition-colors"
+                          className="flex-1 bg-transparent border border-neon-blue/30 rounded-lg px-4 py-3 text-high-contrast placeholder-high-contrast-secondary focus outline-none focus border-neon-blue/60 transition-colors"
                         />
                         <motion.button
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                           onClick={sendMessage}
                           disabled={!inputMessage.trim()}
-                          className="px-6 py-3 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg text-white font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-neon-blue transition-all duration-300"
+                          className="px-6 py-3 bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg text-white font-semibold disabled:opacity-50 disabled cursor-not-allowed hover shadow-neon-blue transition-all duration-300"
                         >
                           Send
                         </motion.button>
@@ -318,11 +318,11 @@ const AgentChat: NextPage = () => {
             >
               <div className="glass-dark border border-neon-blue/30 rounded-2xl p-6">
                 <h3 className="text-xl font-semibold text-high-contrast mb-4">Quick Actions</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md grid-cols-3 gap-4">
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="p-4 glass border border-neon-blue/30 rounded-xl text-high-contrast hover:border-neon-blue/60 transition-all duration-300"
+                    className="p-4 glass border border-neon-blue/30 rounded-xl text-high-contrast hover border-neon-blue/60 transition-all duration-300"
                     onClick={() => startNewChat(availableAgents[0])}
                   >
                     <div className="text-2xl mb-2">🚀</div>
@@ -332,7 +332,7 @@ const AgentChat: NextPage = () => {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="p-4 glass border border-neon-blue/30 rounded-xl text-high-contrast hover:border-neon-blue/60 transition-all duration-300"
+                    className="p-4 glass border border-neon-blue/30 rounded-xl text-high-contrast hover border-neon-blue/60 transition-all duration-300"
                     onClick={() => startNewChat(availableAgents[1])}
                   >
                     <div className="text-2xl mb-2">💻</div>
@@ -342,7 +342,7 @@ const AgentChat: NextPage = () => {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="p-4 glass border border-neon-blue/30 rounded-xl text-high-contrast hover:border-neon-blue/60 transition-all duration-300"
+                    className="p-4 glass border border-neon-blue/30 rounded-xl text-high-contrast hover border-neon-blue/60 transition-all duration-300"
                     onClick={() => startNewChat(availableAgents[2])}
                   >
                     <div className="text-2xl mb-2">📊</div>
@@ -359,4 +359,4 @@ const AgentChat: NextPage = () => {
   );
 };
 
-export default AgentChat; 
+export default AgentChat;
