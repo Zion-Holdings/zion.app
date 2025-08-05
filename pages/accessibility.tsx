@@ -1,36 +1,36 @@
-import React from "react";
-import { NextPage } from 'next";
-import Head from "next/head";
+import React from 'react';
+import { NextPage } from 'next';
+import Head from 'next/head';
 
 const Accessibility: NextPage = () => {
   return (
-    <div>
+    <>
       <Head>
-        <title>Accessibility - Zion Tech Group</title>
-        <meta name="description" content="Accessibility information and features" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Accessibility - Zion App</title>
+        <meta name="description" content="Accessibility information for Zion App" />
       </Head>
-      
-      <div className="relative z-10 container-responsive py-8">
-        
-        {/* Background Effects */}
-        <div className="fixed inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90"></div>
-        </div>
-        
-        {/* Main Content */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Accessibility
-            </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We are committed to making our platform accessible to all users.
+      <div className="min-h-screen bg-gray-50 py-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl font-bold text-gray-900 mb-8">Accessibility</h1>
+          <div className="bg-white shadow rounded-lg p-6">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">Our Commitment</h2>
+            <p className="text-gray-600 mb-4">
+              Zion App is committed to ensuring digital accessibility for people with disabilities. 
+              We are continually improving the user experience for everyone and applying the relevant 
+              accessibility standards.
             </p>
+            <h2 className="text-xl font-semibold text-gray-900 mb-4 mt-6">Features</h2>
+            <ul className="list-disc list-inside text-gray-600 space-y-2">
+              <li>Keyboard navigation support</li>
+              <li>Screen reader compatibility</li>
+              <li>High contrast mode</li>
+              <li>Resizable text</li>
+              <li>Alternative text for images</li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
