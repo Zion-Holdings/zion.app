@@ -7,8 +7,6 @@ class EvolvedContentGenerator {
     this.agentId = `evolved-generator-${Date.now()}`;
     this.initializeGoogleAI();
     this.loadEvolutionData();
-    this.contentHistory = new Map();
-    this.generationPatterns = new Map();
     this.innovationMetrics = {
       uniqueContentGenerated: 0,
       newPageTypesCreated: 0,
@@ -38,7 +36,6 @@ class EvolvedContentGenerator {
       fs.mkdirSync(this.evolutionPath, { recursive: true });
     }
 
-    // Load existing evolution data
     this.evolutionData = {
       successfulPatterns: this.loadFile('successful-patterns.json', []),
       failedPatterns: this.loadFile('failed-patterns.json', []),
@@ -81,16 +78,7 @@ class EvolvedContentGenerator {
   }
 
   determineEvolutionStrategy(pageData) {
-    const strategies = [
-      'innovative',
-      'experimental', 
-      'hybrid',
-      'progressive',
-      'disruptive'
-    ];
-
-    // Analyze previous patterns to determine best strategy
-    const recentPatterns = this.evolutionData.successfulPatterns.slice(-10);
+    const strategies = ['innovative', 'experimental', 'hybrid', 'progressive', 'disruptive'];
     const strategy = strategies[Math.floor(Math.random() * strategies.length)];
     
     return {
@@ -164,21 +152,12 @@ Requirements:
 9. Implement progressive enhancement
 10. Create an immersive user experience
 
-Previous successful patterns to build upon:
-${this.getRecentSuccessfulPatterns()}
-
-Avoid these failed patterns:
-${this.getRecentFailedPatterns()}
-
 Generate a complete Next.js page that represents the next evolution in web content.
     `;
   }
 
   determineEvolvedPageType(url) {
     const path = new URL(url).pathname;
-    const baseTypes = ['about', 'contact', 'services', 'products', 'blog', 'privacy', 'terms'];
-    
-    // Create evolved page types
     const evolvedTypes = [
       'ai-powered-dashboard',
       'interactive-showcase', 
@@ -192,12 +171,11 @@ Generate a complete Next.js page that represents the next evolution in web conte
       'augmented-reality'
     ];
 
-    // 70% chance to use evolved type, 30% chance to use base type
     if (Math.random() > 0.3) {
       return evolvedTypes[Math.floor(Math.random() * evolvedTypes.length)];
     }
 
-    // Check for base type patterns
+    const baseTypes = ['about', 'contact', 'services', 'products', 'blog', 'privacy', 'terms'];
     for (const type of baseTypes) {
       if (path.includes(type)) {
         return `${type}-evolved`;
@@ -205,16 +183,6 @@ Generate a complete Next.js page that represents the next evolution in web conte
     }
 
     return 'innovative-landing';
-  }
-
-  getRecentSuccessfulPatterns() {
-    const recent = this.evolutionData.successfulPatterns.slice(-5);
-    return recent.map(p => `- ${p.pattern}: ${p.successRate}% success rate`).join('\n');
-  }
-
-  getRecentFailedPatterns() {
-    const recent = this.evolutionData.failedPatterns.slice(-5);
-    return recent.map(p => `- ${p.pattern}: ${p.failureReason}`).join('\n');
   }
 
   async generateContentWithAI(prompt) {
@@ -245,7 +213,6 @@ const ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page: NextPage = ()
 
   useEffect(() => {
     setIsLoaded(true);
-    // Simulate data loading
     setTimeout(() => setData({ status: 'evolved' }), 1000);
   }, []);
 
@@ -306,31 +273,26 @@ export default ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page
       uniqueElements: this.calculateUniqueness(content)
     };
 
-    // Record as successful pattern
     this.evolutionData.successfulPatterns.push({
       ...pattern,
       successRate: Math.random() * 100,
       performance: Math.random() * 100
     });
 
-    // Update content variations
     const pageType = pattern.pageType;
     if (!this.evolutionData.contentVariations[pageType]) {
       this.evolutionData.contentVariations[pageType] = [];
     }
     this.evolutionData.contentVariations[pageType].push(variation);
 
-    // Update innovation metrics
     this.innovationMetrics.uniqueContentGenerated++;
     this.innovationMetrics.contentVariations++;
     this.innovationMetrics.learningIterations++;
 
-    // Save evolution data
     this.saveEvolutionData();
   }
 
   calculateUniqueness(content) {
-    // Simple uniqueness calculation based on content characteristics
     const words = content.split(/\s+/).length;
     const uniqueWords = new Set(content.toLowerCase().split(/\s+/)).size;
     return (uniqueWords / words) * 100;
@@ -369,7 +331,6 @@ export default ${pageType.charAt(0).toUpperCase() + pageType.slice(1)}Page
     
     fs.writeFileSync(pagePath, content);
     
-    // Save evolution metadata
     const metadata = {
       url: page.url,
       evolvedAt: new Date().toISOString(),

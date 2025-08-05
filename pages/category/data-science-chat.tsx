@@ -37,7 +37,7 @@ const DataScienceChatPage: NextPage = () => {
                 Expert discussion about data science services and opportunities
               </p>
               <div className="mt-4 text-gray-400 text-sm">
-                <span>business-strategic • industry-insights • step-by-step-guide</span>
+                <span>solution-oriented • technology-deep-dive • question-answer</span>
               </div>
             </div>
           </div>
