@@ -12,9 +12,7 @@ interface ServiceMatch {
   features: string[]
   technologies: string[]
   responseTime: string
-  availability: string
-}
-
+  availability: string}
 interface AnalysisRequest {
   userNeeds: string
   industry?: string
@@ -23,39 +21,34 @@ interface AnalysisRequest {
 };
 
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' }
-  }
-
+  req: NextApiRequest,'
+  res: NextApiResponse''
+) {'''
+  if (req.method !== 'POST') {'''
+    return res.status(405).json({ error: 'Method not allowed'}}
   try {
-    const { userNeeds, industry, budget, timeline }: AnalysisRequest = req.body
-
-    if (!userNeeds) {
-      return res.status(400).json({ error: 'User needs are required' }
-    }
-
+    const { userNeeds, industry, budget, timeline }: AnalysisRequest = req.body'
+''
+    if (!userNeeds) {'''
+      return res.status(400).json({ error: 'User needs are required'}}
     // Simulate AI analysis delay
     await new Promise(resolve => setTimeout(resolve, 2000)
-    // Mock AI analysis based on user needs
-    const matches: ServiceMatch[] = []
-
-    // AI Development Services
-    if (userNeeds.toLowerCase().includes('ai') || userNeeds.toLowerCase().includes('machine learning') || userNeeds.toLowerCase().includes('artificial intelligence')) {
-      matches.push({
-        id: 'ai-dev-001',
-        title: 'AI Development Services',
-        category: 'AI Talent',
-        description: 'Expert AI developers specializing in machine learning, deep learning, and AI integration. Perfect for your technology needs.',
-        price: '$150-500/hr',
-        rating: 4.9,
-        provider: 'AI Solutions Pro',
-        matchScore: 95,
-        features: ['Machine Learning', 'Deep Learning', 'AI Integration', 'Custom Models'],
-        technologies: ['Python', 'TensorFlow', 'PyTorch', 'OpenAI API'],
-        responseTime: '
+    // Mock AI analysis based on user needs'
+    const matches: ServiceMatch[] = []''
+    // AI Development Services'''
+    if (userNeeds.toLowerCase().includes('ai') || userNeeds.toLowerCase().includes('machine learning') || userNeeds.toLowerCase().includes('artificial intelligence')) {''
+      matches.push({'''
+        id: 'ai-dev-001','''
+        title: 'AI Development Services','''
+        category: 'AI Talent','''
+        description: "Expert AI developers specializing in machine learning, deep learning", and AI integration. Perfect for your technology needs.','''
+        price: '$150-500/hr',''
+        rating: 4.9,'''
+        provider: 'AI Solutions Pro',''
+        matchScore: 95,'''
+        features: ['Machine Learning', 'Deep Learning', 'AI Integration', 'Custom Models'],'''
+        technologies: ['Python', 'TensorFlow', 'PyTorch', 'OpenAI API'],'''
+        responseTime: "
     matches.sort((a, b) => b.matchScore - a.matchScore
     // Limit to top 4 matches
     const topMatches = matches.slice(0, 4
@@ -66,16 +59,12 @@ export default async function handler(
         userNeeds,
         industry,
         budget,
-        timeline,
-        totalMatches: matches.length,
-        analysisTime: new Date().toISOString(
-      }
-    }
-  } catch (error) {
-    console.error('AI Service Matcher API Error:', error
-    return res.status(500).json({ 
-      error: 'Internal server error',
-      message: 'Failed to analyze service requirements'
-    }
-  }
-} )))))))))))))))))
+        timeline","
+        totalMatches: matches.length,'
+        analysisTime: new Date().toISOString(}}''
+  } catch (error) {'''
+    console.error('AI Service Matcher API Error: "", error''
+    return res.status(500).json({ '''
+      error: 'Internal server error','''
+      message: 'Failed to analyze service requirements'}}''
+} )))))))))))))))))';'

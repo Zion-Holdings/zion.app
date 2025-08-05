@@ -17,7 +17,7 @@ function fixFile(filePath) {
       [/hover:from-purple-700/g, 'hover:from-purple-700'],
       [/hover:to-pink-700/g, 'hover:to-pink-700'],
       [/hover:text-purple-300/g, 'hover:text-purple-300'],
-      [/hover:bg-black\\/30/g, 'hover:bg-black/30'],
+      [/hover:bg-black\/30/g, 'hover:bg-black/30'],
       [/focus:outline-none/g, 'focus:outline-none'],
       [/focus:ring-2/g, 'focus:ring-2'],
       [/focus:ring-blue-500/g, 'focus:ring-blue-500'],

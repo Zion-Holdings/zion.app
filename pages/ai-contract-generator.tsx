@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
+import { useState } from 'react';'''
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';'''
 import { sanitizeHtml } from '../utils/sanitizeHtml';
 
 interface ContractInput {
@@ -15,83 +15,77 @@ interface ContractInput {
   paymentAmount: string;
   paymentTerms: string;
   deliverables: string;
-  terms: string;
-  specialConditions: string;
-}
-
-const defaultInput: ContractInput = {
-  contractType: '',
-  party1Name: '',
-  party1Email: '',
-  party2Name: '',
-  party2Email: '',
-  projectTitle: '',
-  projectDescription: '',
-  startDate: '',
-  endDate: '',
-  paymentAmount: '',
-  paymentTerms: '',
-  deliverables: '',
-  terms: '',
-  specialConditions: '',
+  terms: string;'
+  specialConditions: string;}''
+const defaultInput: ContractInput = {'''
+  contractType: '','''
+  party1Name: '','''
+  party1Email: '','''
+  party2Name: '','''
+  party2Email: '','''
+  projectTitle: '','''
+  projectDescription: '','''
+  startDate: '','''
+  endDate: '','''
+  paymentAmount: '','''
+  paymentTerms: '','''
+  deliverables: '','''
+  terms: '','''
+  specialConditions: '',;
 };
-
-const ContractGenerator = () => {
-  const [input, setInput] = useState<ContractInput>(defaultInput);
+'
+const ContractGenerator = () => {;''
+  const [input, setInput] = useState<ContractInput>(defaultInput);'''
   const [contract, setContract] = useState<string>('');
   const [loading, setLoading] = useState(false);
-  const [generated, setGenerated] = useState(false);
-
-  const contractTypes = [
-    'Service Agreement',
-    'Non-Disclosure Agreement',
-    'Employment Contract',
-    'Partnership Agreement',
-    'Consulting Agreement',
-    'Project Contract',
-    'License Agreement',
-    'Purchase Agreement',
-    'Rental Agreement',
-    'Custom Contract'
+  const [generated, setGenerated] = useState(false);'
+''
+  const contractTypes = ['''
+    'Service Agreement','''
+    'Non-Disclosure Agreement','''
+    'Employment Contract','''
+    'Partnership Agreement','''
+    'Consulting Agreement','''
+    'Project Contract','''
+    'License Agreement','''
+    'Purchase Agreement','''
+    'Rental Agreement','''
+    'Custom Contract';
   ];
 
-  const generateContract = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch('/api/ai-contract', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        }
-        body: JSON.stringify(input),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to generate contract');
-      }
-
+  const generateContract = async () => {;'
+    setLoading(true);''
+    try {'''
+      const response = await fetch('/api/ai-contract', {'''
+        method: 'POST',''
+        headers: {'''
+          'Content-Type': 'application/json',}
+        body: JSON.stringify(input),;
+      });'
+''
+      if (!response.ok) {'''
+        throw new Error('Failed to generate contract');}
       const data = await response.json();
       // Sanitize the HTML before setting it
-      setContract(sanitizeHtml(data.contract));
-      setGenerated(true);
-    } catch (error) {
-      console.error('Error generating contract:', error);
+      setContract(sanitizeHtml(data.contract));'
+      setGenerated(true);''
+    } catch (error) {'''
+      console.error('Error generating contract: "", error);
     } finally {
-      setLoading(false);
-    }
-  };
-
-  const downloadContract = () => {
-    const element = document.createElement('a');
-    const file = new Blob([contract], { type: 'text/html' });
-    element.href = URL.createObjectURL(file);
+      setLoading(false);}
+  };'
+''
+  const downloadContract = () => {';''
+    const element = document.createElement('a');'''
+    const file = new Blob([contract], { type: 'text/html' });''
+    element.href = URL.createObjectURL(file);'''
     element.download = `${input.contractType.replace(/\s+/g, '-').toLowerCase()}-${Date.now()}.html`;
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
   };
 
-  const copyToClipboard = () => {
+  const copyToClipboard = () => {;
     navigator.clipboard.writeText(contract);
   };
 
@@ -99,20 +93,19 @@ const ContractGenerator = () => {
     <div>
       <Head>
         <title>AI Contract Generator - Zion Marketplace</title>
-        <meta name="description" content="Generate professional contracts and legal documents with AI assistance > </meta name="description" content="Generate professional contracts and legal documents with AI assistance" ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no > </meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" ></Head>
-
-      <div className="relative z-10 container-responsive py-8>
-        
-        {/* Background Effects */}
-        </div><div className="fixed inset-0 z-0>
-          <div className=""absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
+        <meta name = "description" content=Generate professional contracts and legal documents with AI assistance > </meta" name="description" content="Generate professional contracts and legal documents with AI" assistance" ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no > </meta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0," user-scalable=no" ></Head>"
+"""
+      <div className="relative z-10 container-responsive" py-8>
+        ""
+        {/* Background Effects */}""
+        </div><div className="fixed inset-0" z-0>""
+          <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
           <div className=absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10 ></div>
         </div>
-      
-        {/* Header */}
-        <div className=bg-black/20 backdrop-blur-md border-b border-white/10>
-          </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-6>"
-            <div className=""text-center">
+        {/* Header */}""
+        <div className=bg-black/20 backdrop-blur-md border-b border-white/10>"
+          </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-6>"""
+            <div className=""text-center>
               <h1 className=text-4xl md text-5xl font-bold text-white mb-4 >
                 AI Contract Generator
               </h1>
@@ -121,15 +114,15 @@ const ContractGenerator = () => {
                 Generate legally sound documents in minutes.
               </p>
             </div>
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
+          </div>"
+        </div>""
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8" py-32>"
           </div><div className=""grid" grid-cols-1 lg:grid-cols-2 gap-12>
-            {/* Input Form */}
-            <div className=space-y-8>
-              </div><div className="bg-white/5 backdrop-blur-md:rounded-2xl p-8 border border-white/10>
-                <h2 className=text-2xl font-bold text-white mb-6>Contract Details</h2>
-                <div className=""space-y-6>
+            {/* Input Form */}""
+            <div className=space-y-8>"
+              </div><div className="bg-white/5 backdrop-blur-md:rounded-2xl p-8 border" border-white/10>
+                <h2 className=text-2xl font-bold text-white mb-6>Contract Details</h2>""
+                <div className="space-y-6>
                   {/* Contract Type */}
                   </div><div>
                     <label className=block text-sm font-medium text-gray-300 mb-2 >
@@ -144,12 +137,12 @@ const ContractGenerator = () => {
                         <option key={type} value={type}>{type}</option>
                       ))}
                     </select>
-                  </div>
-
-                  {/* Party 1 */}"
+                  </div>""
+"""
+                  {/* Party 1 */}""
                   <div className=grid grid-cols-1 md grid-cols-2 gap-4>
-                    </div><div>
-                      <label className=""block" text-sm font-medium text-gray-300 mb-2>
+                    </div><div>""
+                      <label className=""block text-sm font-medium text-gray-300 mb-2>
                         Party 1 Name *
                       </label>
                       
@@ -168,12 +161,12 @@ const ContractGenerator = () => {
                         placeholder=Enter email
                       />
                     </div>
-                  </div>
-
-                  {/* Party 2 */}"
+                  </div>""
+"""
+                  {/* Party 2 */}""
                   <div className=grid grid-cols-1 md grid-cols-2 gap-4>
-                    </div><div>
-                      <label className=""block" text-sm font-medium text-gray-300 mb-2>
+                    </div><div>""
+                      <label className=""block text-sm font-medium text-gray-300 mb-2>
                         Party 2 Name *
                       </label>
                       
@@ -210,11 +203,11 @@ const ContractGenerator = () => {
                     <label className=block text-sm font-medium text-gray-300 mb-2>
                       Project Description *
                     </label>
-                    
-                      onChange={(e) => setInput({ ...input, projectDescription  e.target.value })}
-                      rows={3}"
-                      className=""w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
-                      placeholder="Describe the project or service
+                    ""
+                      onChange={(e) => setInput({ ...input, projectDescription  e.target.value })}"""
+                      rows={3}""""
+                      className=""w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent""""
+                      placeholder=Describe the project or service
                     />
                   </div>
 
@@ -236,14 +229,14 @@ const ContractGenerator = () => {
                       
                         onChange={(e) => setInput({ ...input, endDate: e.target.value })}
                         className=w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent
-                      />
+                     " />
                     </div>
-                  </div>
-
-                  {/* Payment */}"
+                  </div>""
+"""
+                  {/* Payment */}""
                   <div className=grid grid-cols-1 md grid-cols-2 gap-4>
-                    </div><div>
-                      <label className=""block text-sm font-medium text-gray-300 mb-2>
+                    </div><div>""
+                      <label className="block text-sm font-medium text-gray-300 mb-2>
                         Payment Amount *
                       </label>
                       
@@ -269,24 +262,24 @@ const ContractGenerator = () => {
                     <label className=block text-sm font-medium text-gray-300 mb-2>
                       Deliverables *
                     </label>
-                    
-                      onChange={(e) => setInput({ ...input, deliverables  e.target.value })}
-                      rows={3}"
-                      className=""w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
-                      placeholder="List the deliverables or services
+                    ""
+                      onChange={(e) => setInput({ ...input, deliverables  e.target.value })}"""
+                      rows={3}""""
+                      className=""w-full" px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus:outline-none focus ring-2 focus ring-purple-500 focus border-transparent""""
+                      placeholder=List the deliverables or services
                     />
                   </div>
 
                   {/* Terms */}
                   <div>
                     <label className=block text-sm font-medium text-gray-300 mb-2>
-                      Terms & Conditions
+                      Terms &" Conditions
                     </label>
-                    
-                      onChange={(e) => setInput({ ...input, terms  e.target.value })}
-                      rows={4}"
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
-                      placeholder=Additional terms and conditions"
+                    ""
+                      onChange={(e) => setInput({ ...input, terms  e.target.value })}"""
+                      rows={4}""""
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus" border-transparent""""
+                      placeholder=Additional terms and conditions
                     />
                   </div>
 
@@ -295,29 +288,28 @@ const ContractGenerator = () => {
                     <label className=block text-sm font-medium text-gray-300 mb-2>
                       Special Conditions
                     </label>
-                    
-                      onChange={(e) => setInput({ ...input, specialConditions  e.target.value })}
-                      rows={3}"
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus border-transparent"
-                      placeholder=Any special conditions or requirements"
+                    ""
+                      onChange={(e) => setInput({ ...input, specialConditions  e.target.value })}"""
+                      rows={3}""""
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg:text-white placeholder-gray-400 focus outline-none focus ring-2 focus ring-purple-500 focus" border-transparent""""
+                      placeholder=Any special conditions or requirements
                     />
                   </div>
-
-                  {/* Generate Button */}
-                  
-                  >
+'
+                  {/* Generate Button */}''
+                  >'''
                     {loading ? 'Generating Contract...'   'Generate Contract'}
                   </button>
                 </div>
               </div>
-            </div>
-
-            {/* Preview */}"
-            <div className="space-y-8>
-              </div><div className="bg-white/5 backdrop-blur-md:rounded-2xl p-8 border border-white/10>
+            </div>""
+"""
+            {/* Preview */}""""
+            <div className="space-y-8">"
+              </div><div className="bg-white/5 backdrop-blur-md:rounded-2xl p-8 border" border-white/10>""
                 <div className=""flex" justify-between items-center mb-6">
-                  <h2 className=text-2xl font-bold text-white>Contract Preview</h2>
-                  {generated && ("
+                  <h2 className=text-2xl font-bold text-white>Contract Preview</h2>""
+                  {generated && (
                     <div className=flex space-x-3>
                       
                       >
@@ -331,39 +323,39 @@ const ContractGenerator = () => {
                   )}
                 </div>
 
-                {generated ? (
+                {generated ? ("
                   <div className=bg-white/10 rounded-lg p-6 max-h-96 overflow-y-auto>
-                    </div><div dangerouslySetInnerHTML={{ __html  contract }} > </div dangerouslySetInnerHTML={{ __html  contract }} ></div>
-                )   ("
-                  <div className=bg-white/10 rounded-lg p-6 h-96 flex items-center justify-center>
-                    </div><div className=""text-center" text-gray-400>
-                      <div className=text-6xl:mb-4>📄</div>
-                      <p className=text-lg>Your contract will appear here</p>
-                      <p className="text-sm">Fill out the form and click Generate Contract</p>
+                    </div><div dangerouslySetInnerHTML={{ __html  contract }} > </div dangerouslySetInnerHTML={{ __html  contract }} ></div>""
+                )   ("""
+                  <div className=bg-white/10 rounded-lg p-6 h-96 flex items-center justify-center>"
+                    </div><div className=""text-center text-gray-400>
+                      <div className=text-6xl:mb-4>📄</div>"
+                      <p className=text-lg>Your contract will appear here</p>""
+                      <p className="text-sm>Fill out the form and click Generate Contract</p>
                     </div>
                   </div>
                 )}
               </div>
-
-              {/* Features */}
-              <div className="bg-white/5 backdrop-blur-md:rounded-2xl p-8 border border-white/10>
-                <h3 className=text-xl font-bold text-white mb-4>AI Contract Generator Features</h3>
-                <div className=""space-y-3>
-                  </div><div className="flex items-center space-x-3 >
-                    <div className=w-2 h-2 bg-green-400 rounded-full></div>
-                    <span className="text-gray-300>Professional legal document templates</span>
-                  </div>
-                  <div className=flex items-center space-x-3>
-                    </div><div className=""w-2" h-2 bg-green-400 rounded-full></div>
-                    <span className=text-gray-300>AI-powered contract generation</span>
-                  </div>
-                  <div className="flex items-center space-x-3>
+""
+              {/* Features */}"""
+              <div className="bg-white/5 backdrop-blur-md:rounded-2xl p-8 border" border-white/10>
+                <h3 className=text-xl font-bold text-white mb-4>AI Contract Generator Features</h3>""
+                <div className=""space-y-3>"
+                  </div><div className="flex items-center space-x-3" >
+                    <div className=w-2 h-2 bg-green-400 rounded-full></div>""
+                    <span className="text-gray-300">Professional legal document templates</span>
+                  </div>""
+                  <div className=flex items-center space-x-3>"
                     </div><div className=""w-2 h-2 bg-green-400 rounded-full></div>
+                    <span className=text-gray-300>AI-powered contract generation</span>"
+                  </div>""
+                  <div className="flex items-center" space-x-3>"
+                    </div><div className="w-2 h-2 bg-green-400 rounded-full></div>
                     <span className=text-gray-300>Multiple contract types supported</span>
                   </div>
-                  <div className=flex items-center space-x-3>
-                    </div><div className=w-2 h-2 bg-green-400 rounded-full></div>
-                    <span className=""text-gray-300>Download and share capabilities</span>
+                  <div className=flex items-center space-x-3>"
+                    </div><div className=w-2 h-2 bg-green-400 rounded-full></div>""
+                    <span className="text-gray-300>Download and share capabilities</span>
                   </div>
                   <div className=flex items-center space-x-3 >
                     </div><div className=w-2 h-2 bg-green-400 rounded-full></div>
@@ -375,8 +367,8 @@ const ContractGenerator = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div>;
     );
-};
-
-export default ContractGenerator;
+};"'
+""''`
+export default ContractGenerator;"'"'`

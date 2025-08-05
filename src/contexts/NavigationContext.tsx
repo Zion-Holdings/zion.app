@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react'
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react''''
 import { useRouter } from 'next/router'
 
 interface NavigationState {
@@ -6,9 +6,7 @@ interface NavigationState {
   isMobileMenuOpen: boolean
   activeDropdown: string | null
   recentPages: string[]
-  favorites: string[]
-}
-
+  favorites: string[]}
 interface NavigationContextType {
   state: NavigationState
   openSearch: () => void
@@ -20,13 +18,10 @@ interface NavigationContextType {
   removeFromFavorites: (path: string) => void
   navigateTo: (path: string) => void
   goBack: () => void
-  goForward: () => void
-}
-
+  goForward: () => void}
 const NavigationContext = createContext<NavigationContextType | undefined>(undefined)
-
 interface NavigationProviderProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 };
 
 export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children }) => {
@@ -38,134 +33,95 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children
     recentPages: [],
     favorites: []
   })
-
   const addToRecent = useCallback((path: string) => {
     setState(prev => ({
       ...prev,
       recentPages: [path, ...prev.recentPages.filter(p => p !== path)].slice(0, 10)
     }))
   }, [])
-
   const addToFavorites = (path: string) => {
     setState(prev => ({
       ...prev,
       favorites: prev.favorites.includes(path) ? prev.favorites : [...prev.favorites, path].slice(0, 9)
-    }))
-  }
-
+    }))}
   const removeFromFavorites = (path: string) => {
     setState(prev => ({
       ...prev,
       favorites: prev.favorites.filter(p => p !== path)
-    }))
-  }
-
+    }))}
   const navigateTo = useCallback((path: string) => {
     addToRecent(path)
     router.push(path)
   }, [router, addToRecent])
-
   const goBack = useCallback(() => {
     router.back()
   }, [router])
-
   const goForward = useCallback(() => {
     router.forward()
   }, [router])
-
   const openSearch = () => {
-    setState(prev => ({ ...prev, isSearchOpen: true }))
-  }
-
+    setState(prev => ({ ...prev, isSearchOpen: true }))}
   const closeSearch = () => {
-    setState(prev => ({ ...prev, isSearchOpen: false }))
-  }
-
+    setState(prev => ({ ...prev, isSearchOpen: false }))}
   const toggleMobileMenu = () => {
-    setState(prev => ({ 
+    setState(prev => ({
       ...prev, 
       isMobileMenuOpen: !prev.isMobileMenuOpen,
       activeDropdown: null // Close dropdowns when toggling mobile menu
-    }))
-  }
-
+    }))}
   const setActiveDropdown = (dropdown: string | null) => {
-    setState(prev => ({ ...prev, activeDropdown: dropdown }))
-  }
-
-  // Load favorites from localStorage (SSR-safe)
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
+    setState(prev => ({ ...prev, activeDropdown: dropdown }))}'
+  // Load favorites from localStorage (SSR-safe)''
+  useEffect(() => {'''
+    if (typeof window !== 'undefined') {'''
       const savedFavorites = localStorage.getItem('navigation-favorites')
       if (savedFavorites) {
         try {
-          const favorites = JSON.parse(savedFavorites)
-          setState(prev => ({ ...prev, favorites }))
-        } catch (error) {
-          console.error('Error loading navigation favorites:', error)
-        }
-      }
-    }
-  }, [])
-
-  // Save favorites to localStorage (SSR-safe)
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('navigation-favorites', JSON.stringify(state.favorites))
-    }
+          const favorites = JSON.parse(savedFavorites)'
+          setState(prev => ({ ...prev, favorites }))''
+        } catch (error) {'''
+          console.error('Error loading navigation favorites: "", error)}}}
+  }, [])'
+  // Save favorites to localStorage (SSR-safe)''
+  useEffect(() => {'''
+    if (typeof window !== 'undefined') {'''
+      localStorage.setItem('navigation-favorites', JSON.stringify(state.favorites))}
   }, [state.favorites])
-
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      // Escape: Close search and mobile menu
+  useEffect(() => {'
+    const handleKeyDown = (event: KeyboardEvent) => {''
+      // Escape: Close search and mobile menu'''
       if (event.key === 'Escape') {
         if (state.isSearchOpen) {
-          closeSearch()
-        }
+          closeSearch()}
         if (state.isMobileMenuOpen) {
-          toggleMobileMenu()
-        }
-        setActiveDropdown(null)
-      }
-
-      // Cmd/Ctrl + K: Open search
+          toggleMobileMenu()}'
+        setActiveDropdown(null)}''
+      // Cmd/Ctrl + K: Open search'''
       if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
-        event.preventDefault()
-        openSearch()
-      }
-
-      // Cmd/Ctrl + B: Toggle mobile menu
+        event.preventDefault()'
+        openSearch()}''
+      // Cmd/Ctrl + B: Toggle mobile menu'''
       if ((event.metaKey || event.ctrlKey) && event.key === 'b') {
-        event.preventDefault()
-        toggleMobileMenu()
-      }
-
-      // Cmd/Ctrl + Left Arrow: Go back
+        event.preventDefault()'
+        toggleMobileMenu()}''
+      // Cmd/Ctrl + Left Arrow: Go back'''
       if ((event.metaKey || event.ctrlKey) && event.key === 'ArrowLeft') {
-        event.preventDefault()
-        goBack()
-      }
-
-      // Cmd/Ctrl + Right Arrow: Go forward
+        event.preventDefault()'
+        goBack()}''
+      // Cmd/Ctrl + Right Arrow: Go forward'''
       if ((event.metaKey || event.ctrlKey) && event.key === 'ArrowRight') {
-        event.preventDefault()
-        goForward()
-      }
-
-      // Cmd/Ctrl + 1-9: Quick navigation to favorites
+        event.preventDefault()'
+        goForward()}''
+      // Cmd/Ctrl + 1-9: Quick navigation to favorites'''
       if (event.key >= '1' && event.key <= '9' && (event.metaKey || event.ctrlKey)) {
         event.preventDefault()
         const index = parseInt(event.key) - 1
-        if (state.favorites[index]) {
-          navigateTo(state.favorites[index])
-        }
-      }
-    }
-
-    document.addEventListener('keydown', handleKeyDown)
+        if (state.favorites[index]) {'
+          navigateTo(state.favorites[index])}}}''
+'''
+    document.addEventListener('keydown', handleKeyDown)'''
     return () => document.removeEventListener('keydown', handleKeyDown)
   }, [state.isSearchOpen, state.isMobileMenuOpen, state.activeDropdown, state.favorites, goBack, goForward, navigateTo])
-
   const value: NavigationContextType = {
     state,
     openSearch,
@@ -177,20 +133,17 @@ export const NavigationProvider: React.FC<NavigationProviderProps> = ({ children
     removeFromFavorites,
     navigateTo,
     goBack,
-    goForward
-  }
-
+    goForward}
   return (
     <NavigationContext.Provider value={value}>
       {children}
     </NavigationContext.Provider>
-  )
+  );
 };
 
-export const useNavigation = (): NavigationContextType => {
-  const context = useContext(NavigationContext)
-  if (context === undefined) {
-    throw new Error('useNavigation must be used within a NavigationProvider')
-  }
-  return context
-} 
+export const useNavigation = (): NavigationContextType => {'
+  const context = useContext(NavigationContext)''
+  if (context === undefined) {'''
+    throw new Error('useNavigation must be used within a NavigationProvider')}'
+  return context''
+} ';'

@@ -1,5 +1,5 @@
-export interface LinkedInConfig { 
+export interface LinkedInConfig {
   apiKey: string;
-  advertising: { 
-    preferredTimes: string[] 
+  advertising: {
+    preferredTimes: string[]
   };

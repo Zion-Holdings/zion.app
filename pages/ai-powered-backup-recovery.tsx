@@ -1,110 +1,90 @@
-import type { NextPage } from 'next';
-import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';
-import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link';
+import type { NextPage } from 'next';'''
+import ModernLayout from '../components/layout/ModernLayout';import Head from 'next/head';'''
+import { useState, useEffect, useMemo } from 'react';'''
+import Link from 'next/link';'''
 import { useMockArray, useMockObject }  from '../src/utils/mockDataHelpers';
 
 interface BackupJob {
-  id: string;
-  name: string;
-  description: string;
-  type: 'full' | 'incremental' | 'differential' | 'snapshot' | 'archive' | 'replication';
+  id: string;'
+  name: string;''
+  description: string;'''
+  type: 'full' | 'incremental' | 'differential' | 'snapshot' | 'archive' | 'replication';'''
   status: 'running' | 'completed' | 'failed' | 'scheduled' | 'paused';
   size: number;
   duration: number;
   lastRun: Date;
   nextRun: Date;
-  aiAnalysis: AIBackupAnalysis;
-}
-
+  aiAnalysis: AIBackupAnalysis;}
 interface AIBackupAnalysis {
   id: string;
   successRate: number;
   efficiencyScore: number;
   reliabilityScore: number;
-  recommendations: string[];
-}
-
+  recommendations: string[];}
 interface RecoveryPlan {
-  id: string;
-  name: string;
-  description: string;
-  category: 'disaster' | 'system' | 'data' | 'application' | 'infrastructure' | 'business';
-  status: 'active' | 'draft' | 'archived' | 'testing';
-  rto: number; // Recovery Time Objective in minutes
-  rpo: number; // Recovery Point Objective in minutes
+  id: string;'
+  name: string;''
+  description: string;'''
+  category: 'disaster' | 'system' | 'data' | 'application' | 'infrastructure' | 'business';'''
+  status: 'active' | 'draft' | 'archived' | 'testing';'
+  rto: number; // Recovery Time Objective in minutes''
+  rpo: number; // Recovery Point Objective in minutes'''
   priority: 'critical' | 'high' | 'medium' | 'low';
-  aiOptimization: AIRecoveryOptimization;
-}
-
+  aiOptimization: AIRecoveryOptimization;}
 interface AIRecoveryOptimization {
   id: string;
   optimizationScore: number;
   efficiencyScore: number;
   reliabilityScore: number;
-  recommendations: string[];
-}
-
+  recommendations: string[];}
 interface DisasterRecovery {
-  id: string;
-  title: string;
-  description: string;
-  scenario: 'natural_disaster' | 'cyber_attack' | 'hardware_failure' | 'human_error' | 'power_outage' | 'network_failure';
-  status: 'active' | 'draft' | 'archived' | 'testing';
-  severity: 'critical' | 'high' | 'medium' | 'low';
+  id: string;'
+  title: string;''
+  description: string;'''
+  scenario: 'natural_disaster' | 'cyber_attack' | 'hardware_failure' | 'human_error' | 'power_outage' | 'network_failure';'''
+  status: 'active' | 'draft' | 'archived' | 'testing';'''
+  severity: 'critical' | 'high' | 'medium' | 'low';'''
   impact: 'business_critical' | 'high_impact' | 'medium_impact' | 'low_impact';
   recoverySteps: string[];
-  aiAnalysis: AIDisasterAnalysis;
-}
-
+  aiAnalysis: AIDisasterAnalysis;}
 interface AIDisasterAnalysis {
   id: string;
   riskScore: number;
   impactScore: number;
   recoveryScore: number;
-  recommendations: string[];
-}
-
+  recommendations: string[];}
 interface BackupStorage {
-  id: string;
-  name: string;
-  description: string;
-  type: 'local' | 'cloud' | 'hybrid' | 'offsite' | 'tape' | 'disk';
+  id: string;'
+  name: string;''
+  description: string;'''
+  type: 'local' | 'cloud' | 'hybrid' | 'offsite' | 'tape' | 'disk';'''
   status: 'active' | 'inactive' | 'maintenance' | 'error';
   capacity: number;
   usedSpace: number;
   retentionDays: number;
-  aiOptimization: AIStorageOptimization;
-}
-
+  aiOptimization: AIStorageOptimization;}
 interface AIStorageOptimization {
   id: string;
   optimizationScore: number;
   efficiencyScore: number;
   utilizationScore: number;
-  recommendations: string[];
-}
-
+  recommendations: string[];}
 interface SystemRestoration {
-  id: string;
-  title: string;
-  description: string;
-  system: 'database' | 'application' | 'server' | 'network' | 'storage' | 'service';
+  id: string;'
+  title: string;''
+  description: string;'''
+  system: 'database' | 'application' | 'server' | 'network' | 'storage' | 'service';'''
   status: 'in_progress' | 'completed' | 'failed' | 'scheduled' | 'cancelled';
   progress: number;
   estimatedTime: number;
   startTime: Date;
-  aiAnalysis: AIRestorationAnalysis;
-}
-
+  aiAnalysis: AIRestorationAnalysis;}
 interface AIRestorationAnalysis {
   id: string;
   successRate: number;
   efficiencyScore: number;
   reliabilityScore: number;
-  recommendations: string[];
-}
-
+  recommendations: string[];}
 interface BackupRecoveryAnalytics {
   totalBackups: number;
   activeRecoveryPlans: number;
@@ -113,127 +93,113 @@ interface BackupRecoveryAnalytics {
   restorationJobs: number;
   averageSuccessRate: number;
   aiOptimizationScore: number;
-  aiInsights: BackupRecoveryInsight[];
-}
-
+  aiInsights: BackupRecoveryInsight[];}
 interface BackupRecoveryInsight {
-  id: string;
-  title: string;
-  description: string;
+  id: string;'
+  title: string;''
+  description: string;'''
   impact: 'positive' | 'negative' | 'neutral';
   confidence: number;
-  recommendations: string[];
-}
-
+  recommendations: string[];}
 const AIPoweredBackupRecoveryPage: NextPage = () => {
   
   const [backupJobs, setBackupJobs] = useState<BackupJob[]>([]
   const [recoveryPlans, setRecoveryPlans] = useState<RecoveryPlan[]>([]
   const [disasterRecoveries, setDisasterRecoveries] = useState<DisasterRecovery[]>([]
-  const [backupStorages, setBackupStorages] = useState<BackupStorage[]>([]
-  const [systemRestorations, setSystemRestorations] = useState<SystemRestoration[]>([]
-  const [analytics, setAnalytics] = useState<BackupRecoveryAnalytics | null>(null
-  const [activeTab, setActiveTab] = useState<'backups' | 'recovery' | 'disasters' | 'storage' | 'restoration' | 'analytics'>('backups'
+  const [backupStorages, setBackupStorages] = useState<BackupStorage[]>([]'
+  const [systemRestorations, setSystemRestorations] = useState<SystemRestoration[]>([]''
+  const [analytics, setAnalytics] = useState<BackupRecoveryAnalytics | null>(null'''
+  const [activeTab, setActiveTab] = useState<'backups' | 'recovery' | 'disasters' | 'storage' | 'restoration' | 'analytics'>('backups''''
   const [selectedType, setSelectedType] = useState<string>('all'
   const [isLoading, setIsLoading] = useState(true
-  // Mock data using useMemo to prevent re-renders
-  const mockBackupJobs = useMockArray<BackupJob>(() => [
-    {
-      id: '1',
-      name: 'Daily Database Backup',
-      description: 'Automated daily backup of all database systems',
-      type: 'full',
-      status: 'completed',
-      size: 2048576, // 2GB in MB
-      duration: 45,
-      lastRun: new Date('2024-01-20T02:00:00'),
-      nextRun: new Date('2024-01-21T02:00:00'),
-      aiAnalysis: {
+  // Mock data using useMemo to prevent re-renders'
+  const mockBackupJobs = useMockArray<BackupJob>(() => [''
+    {'''
+      id: '1','''
+      name: 'Daily Database Backup','''
+      description: 'Automated daily backup of all database systems','''
+      type: 'full','''
+      status: 'completed','
+      size: 2048576, // 2GB in MB''
+      duration: 45,'''
+      lastRun: new Date('2024-01-20T02:00:00'),'''
+      nextRun: new Date('2024-01-21T02:00:00'),''
+      aiAnalysis: {'''
         id: '1',
-        successRate: 98,
-        efficiencyScore: 92,
-        reliabilityScore: 95,
-        recommendations: ['Optimize compression', 'Schedule during off-peak hours']
+        successRate: 98,'
+        efficiencyScore: 92,''
+        reliabilityScore: 95,'''
 }
-      }
-    }
-  ]
-  const mockRecoveryPlans = useMockArray<RecoveryPlan>(() => [
-    {
-      id: '1',
-      name: 'Critical System Recovery',
-      description: 'Comprehensive recovery plan for critical business systems',
-      category: 'disaster',
-      status: 'active',
-      rto: 60, // 60 minutes
-      rpo: 15, // 15 minutes
-      priority: 'critical',
-      aiOptimization: {
+        recommendations: ['Optimize compression', 'Schedule during off-peak hours']}}
+    }]'
+  const mockRecoveryPlans = useMockArray<RecoveryPlan>(() => [''
+    {'''
+      id: '1','''
+      name: 'Critical System Recovery','''
+      description: 'Comprehensive recovery plan for critical business systems','''
+      category: 'disaster','''
+      status: 'active','
+      rto: 60, // 60 minutes''
+      rpo: 15, // 15 minutes'''
+      priority: 'critical',''
+      aiOptimization: {'''
         id: '1',
-        optimizationScore: 94,
-        efficiencyScore: 89,
-        reliabilityScore: 92,
-        recommendations: ['Reduce RTO', 'Improve monitoring']
-      }
-    }
-  ]
-  const mockDisasterRecoveries = useMockArray<DisasterRecovery>(() => [
-    {
-      id: '1',
-      title: 'Data Center Failure Recovery',
-      description: 'Recovery procedures for data center failure scenarios',
-      scenario: 'hardware_failure',
-      status: 'active',
-      severity: 'critical',
-      impact: 'business_critical',
-      recoverySteps: ['Activate backup systems', 'Restore from latest backup', 'Verify data integrity'],
-      aiAnalysis: {
+        optimizationScore: 94,'
+        efficiencyScore: 89,''
+        reliabilityScore: 92,'''
+        recommendations: ['Reduce RTO', 'Improve monitoring']}
+}]'
+  const mockDisasterRecoveries = useMockArray<DisasterRecovery>(() => [''
+    {'''
+      id: '1','''
+      title: 'Data Center Failure Recovery','''
+      description: 'Recovery procedures for data center failure scenarios','''
+      scenario: 'hardware_failure','''
+      status: 'active','''
+      severity: 'critical','''
+      impact: 'business_critical','''
+      recoverySteps: ['Activate backup systems', 'Restore from latest backup', 'Verify data integrity'],''
+      aiAnalysis: {'''
         id: '1',
-        riskScore: 85,
-        impactScore: 92,
-        recoveryScore: 88,
-        recommendations: ['Improve redundancy', 'Test recovery procedures']
-      }
-    }
-  ]
-  const mockBackupStorages = useMockArray<BackupStorage>(() => [
-    {
-      id: '1',
-      name: 'Cloud Backup Storage',
-      description: 'Primary cloud-based backup storage system',
-      type: 'cloud',
+        riskScore: 85,'
+        impactScore: 92,''
+        recoveryScore: 88,'''
+        recommendations: ['Improve redundancy', 'Test recovery procedures']}
+}]'
+  const mockBackupStorages = useMockArray<BackupStorage>(() => [''
+    {'''
+      id: '1','''
+      name: 'Cloud Backup Storage','''
+      description: 'Primary cloud-based backup storage system','''
+      type: 'cloud','''
       status: 'active',
       capacity: 10240000, // 10TB in MB
-      usedSpace: 5120000, // 5TB in MB
-      retentionDays: 365,
-      aiOptimization: {
+      usedSpace: 5120000, // 5TB in MB'
+      retentionDays: 365,''
+      aiOptimization: {'''
         id: '1',
-        optimizationScore: 91,
-        efficiencyScore: 87,
-        utilizationScore: 50,
-        recommendations: ['Implement tiered storage', 'Optimize retention policies']
-      }
-    }
-  ]
-  const mockSystemRestorations = useMockArray<SystemRestoration>(() => [
-    {
-      id: '1',
-      title: 'Database System Restoration',
-      description: 'Restoration of primary database system from backup',
-      system: 'database',
-      status: 'completed',
-      progress: 100,
-      estimatedTime: 30,
-      startTime: new Date('2024-01-20T10:00:00'),
-      aiAnalysis: {
+        optimizationScore: 91,'
+        efficiencyScore: 87,''
+        utilizationScore: 50,'''
+        recommendations: ['Implement tiered storage', 'Optimize retention policies']}
+}]'
+  const mockSystemRestorations = useMockArray<SystemRestoration>(() => [''
+    {'''
+      id: '1','''
+      title: 'Database System Restoration','''
+      description: 'Restoration of primary database system from backup','''
+      system: 'database','''
+      status: 'completed','
+      progress: 100,''
+      estimatedTime: 30,'''
+      startTime: new Date('2024-01-20T10:00:00'),''
+      aiAnalysis: {'''
         id: '1',
-        successRate: 100,
-        efficiencyScore: 95,
-        reliabilityScore: 98,
-        recommendations: ['Monitor performance', 'Verify data integrity']
-      }
-    }
-  ]
+        successRate: 100,'
+        efficiencyScore: 95,''
+        reliabilityScore: 98,'''
+        recommendations: ['Monitor performance', 'Verify data integrity']}
+}]
   const mockAnalytics = useMockObject<BackupRecoveryAnalytics>(() => ({
     totalBackups: 28,
     activeRecoveryPlans: 12,
@@ -241,17 +207,16 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
     storageSystems: 8,
     restorationJobs: 15,
     averageSuccessRate: 96.5,
-    aiOptimizationScore: 93,
-    aiInsights: [
-      {
-        id: '1',
-        title: 'High Backup Success Rate',
-        description: 'AI-powered backup system shows 98% success rate with optimized scheduling',
-        impact: 'positive',
-        confidence: 0.95,
+    aiOptimizationScore: 93,'
+    aiInsights: [''
+      {'''
+        id: '1','''
+        title: 'High Backup Success Rate','''
+        description: 'AI-powered backup system shows 98% success rate with optimized scheduling','''
+        impact: 'positive',''
+        confidence: 0.95,'''
         recommendations: ['Continue AI monitoring', 'Expand backup coverage']
-      }
-    ]
+      }]
   })
   useEffect(() => {
     setTimeout(() => {
@@ -263,292 +228,282 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
       setAnalytics(mockAnalytics
       setIsLoading(false
     } 1000
-  } []
-  const filteredBackups = useMemo(() => {
-    let filtered = backupJobs
+  } []'
+  const filteredBackups = useMemo(() => {''
+    let filtered = backupJobs'''
     if (selectedType !== 'all') {
-      filtered = filtered.filter(backup => backup.type === selectedType
-    }
-    return filtered
-  } [backupJobs, selectedType]
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'running': return 'bg-blue-500/20 text-blue-300'
-      case 'completed': return 'bg-green-500/20 text-green-300'
-      case 'failed': return 'bg-red-500/20 text-red-300'
-      case 'scheduled': return 'bg-yellow-500/20 text-yellow-300'
-      case 'paused': return 'bg-gray-500/20 text-gray-300'
-      default: return 'bg-gray-500/20 text-gray-300'
-    }
-  }
-
-  const getPriorityColor = (priority: string) => {
-    switch (priority) {
-      case 'critical': return 'bg-red-500/20 text-red-300'
-      case 'high': return 'bg-orange-500/20 text-orange-300'
-      case 'medium': return 'bg-yellow-500/20 text-yellow-300'
-      case 'low': return 'bg-green-500/20 text-green-300'
-      default: return 'bg-gray-500/20 text-gray-300'
-    }
-  }
-
-  const formatBytes = (bytes: number) => {
-    const sizes = ['B', 'KB', 'MB', 'GB', 'TB']
-    if (bytes === 0) return '0 B'
-    const i = Math.floor(Math.log(bytes) / Math.log(1024)
-    return Math.round(bytes / Math.pow(1024, i) * 100) / 100 + ' ' + sizes[i]
-  }
-
+      filtered = filtered.filter(backup => backup.type === selectedType}
+    return filtered;
+  } [backupJobs, selectedType]'
+  const getStatusColor = (status: string) => {''
+    switch (status) {'''
+      case 'running': return 'bg-blue-500/20 text-blue-300''''
+      case 'completed': return 'bg-green-500/20 text-green-300''''
+      case 'failed': return 'bg-red-500/20 text-red-300''''
+      case 'scheduled': return 'bg-yellow-500/20 text-yellow-300''''
+      case 'paused': return 'bg-gray-500/20 text-gray-300''''
+      default: return 'bg-gray-500/20 text-gray-300'}}'
+  const getPriorityColor = (priority: string) => {''
+    switch (priority) {'''
+      case 'critical': return 'bg-red-500/20 text-red-300''''
+      case 'high': return 'bg-orange-500/20 text-orange-300''''
+      case 'medium': return 'bg-yellow-500/20 text-yellow-300''''
+      case 'low': return 'bg-green-500/20 text-green-300''''
+      default: return 'bg-gray-500/20 text-gray-300'}}''
+  const formatBytes = (bytes: number) => {'''
+    const sizes = ['B', 'KB', 'MB', 'GB', 'TB']'''
+    if (bytes === 0) return '0 B'''
+    const i = Math.floor(Math.log(bytes) / Math.log(1024)'''
+    return Math.round(bytes / Math.pow(1024, i) * 100) / 100 + ' ' + sizes[i]}
   return (
-    <>
+    <div>
       <Head>
         <title>AI-Powered Backup & Recovery System | Zion Tech Group</title>
-        <meta name="description" content="Data backup, disaster recovery, system restoration, backup management, recovery planning, and automated backup scheduling powered by AI. > </meta name="description" content="Data backup, disaster recovery, system restoration, backup management, recovery planning, and automated backup scheduling powered by AI." ><meta name="keywords" content="backup, recovery, disaster, restoration, data protection, AI backup > </meta name="keywords" content="backup, recovery, disaster, restoration, data protection, AI backup" ><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no > </meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" ></Head>
-
+        <meta name="description" content=Data backup, disaster recovery, system restoration, backup management, recovery planning, and automated backup scheduling powered by AI. > </meta" name="description" content="Data backup, disaster recovery, system restoration, backup management, recovery planning, and automated backup scheduling powered by" AI." ><meta name="keywords" content=backup, recovery, disaster, restoration, data protection, AI backup > </meta" name="keywords" content="backup, recovery, disaster, restoration, data protection, AI" backup" ><meta name="viewport" content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no > </meta" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0," user-scalable=no" ></Head>"
+"""
       <div className="relative z-10 container-responsive py-8>
         
-        {/* Background Effects */}
-        </div><div className="fixed inset-0 z-0">
+        {/* Background Effects */}"
+        </div><div className="fixed inset-0 z-0>
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-90></div>
           <div className="absolute inset-0 bg-holographic bg-[length 400%_400%] animate-holographic-shift opacity-10></div>
         </div>
-      
-      {/* Header */}
+      "
+      {/* Header */}"""
       <div className="relative overflow-hidden>
-        </div><div className="absolute inset-0 bg-gradient-to-r from-violet-600/20 to-purple-600/20></div>
+        </div><div className="absolute" inset-0 bg-gradient-to-r from-violet-600/20 to-purple-600/20></div>"
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-44>
-          </div><div className="text-center">
+          </div><div className="text-center">""
             <h1 className="text-5xl md text-6xl font-bold text-white mb-6>
               AI-Powered Backup & Recovery System
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto>
               Data backup, disaster recovery, system restoration, 
-              backup management, recovery planning, and automated backup scheduling powered by AI.
-            </p>
+              backup management, recovery planning, and automated backup scheduling powered by AI."
+            </p>""
             <div className="flex flex-wrap justify-center gap-4>
-              </div><div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
+              </div><div className="bg-white/10" backdrop-blur-sm rounded-lg px-6 py-3">""
                 <span className="text-white font-semibold>💾 Data Backup</span>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
+              <div className="bg-white/10" backdrop-blur-sm rounded-lg px-6 py-3>""
                 <span className="text-white font-semibold>🔄 Disaster Recovery</span>
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
-                <span className="text-white font-semibold>🛠️ System Restoration</span>
+              <div className="bg-white/10" backdrop-blur-sm rounded-lg px-6 py-3>""
+                <span className="text-white" font-semibold>🛠️ System Restoration</span>
               </div>
             </div>
-          </div>
+          </div">
         </div>
-      </div>
-
-      {/* Main Content */}
+      </div>"
+""
+      {/* Main Content */}"""
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-32>
         {isLoading ? (
-          </div><div className="flex justify-center items-center py-40">
-            <div className=animate-spin rounded-full h-12 w-12 border-b-2 border-violet-500></div>
+          </div><div className="flex justify-center items-center py-40>
+            <div className="animate-spin" rounded-full h-12 w-12 border-b-2 border-violet-500></div>
           </div>
         ) : (
-          </>
-            {/* Tabs */}
-            <div className="flex flex-wrap justify-center mb-8>
-              
-                onClick={() => setActiveTab('backups')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === 'backups'
-                    ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
+          </div>"
+            {/* Tabs */}"""
+            <div className="flex flex-wrap justify-center mb-8>'
+              ''
+                onClick={() => setActiveTab('backups')}''
+                className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${'''
+                  activeTab === 'backups''''
+                    ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white''''`
+                    : 'bg-white/10 text-gray-300 hover:bg-white/20'``
                 }`}
               >
-                Backups ({backupJobs.length})
-              </button>
-              
-                onClick={() => setActiveTab('recovery')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === 'recovery'
-                    ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                Backups ({backupJobs.length})'
+              </button>''
+              '''`
+                onClick={() => setActiveTab('recovery')}''``
+                className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${'''
+                  activeTab === 'recovery''''
+                    ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white''''`
+                    : 'bg-white/10 text-gray-300 hover:bg-white/20'``
                 }`}
               >
-                Recovery ({recoveryPlans.length})
-              </button>
-              
-                onClick={() => setActiveTab('disasters')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === 'disasters'
-                    ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                Recovery ({recoveryPlans.length})'
+              </button>''
+              '''`
+                onClick={() => setActiveTab('disasters')}''``
+                className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${'''
+                  activeTab === 'disasters''''
+                    ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white''''`
+                    : 'bg-white/10 text-gray-300 hover:bg-white/20'``
                 }`}
               >
-                Disasters ({disasterRecoveries.length})
-              </button>
-              
-                onClick={() => setActiveTab('storage')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === 'storage'
-                    ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                Disasters ({disasterRecoveries.length})'
+              </button>''
+              '''`
+                onClick={() => setActiveTab('storage')}''``
+                className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${'''
+                  activeTab === 'storage''''
+                    ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white''''`
+                    : 'bg-white/10 text-gray-300 hover:bg-white/20'``
                 }`}
               >
-                Storage ({backupStorages.length})
-              </button>
-              
-                onClick={() => setActiveTab('restoration')}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                  activeTab === 'restoration'
-                    ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white'
-                    : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                Storage ({backupStorages.length})'
+              </button>''
+              '''`
+                onClick={() => setActiveTab('restoration')}''``
+                className="{`px-6" py-3 rounded-lg font-semibold transition-all duration-300 ${'''
+                  activeTab === 'restoration''''
+                    ? 'bg-gradient-to-r from-violet-600 to-purple-600 text-white''''`
+                    : 'bg-white/10 text-gray-300 hover:bg-white/20'``
                 }`}
               >
                 Restoration ({systemRestorations.length})
               </button>
-            </div>
-
-            {/* Backups Tab */},
-{activeTab === 'backups' && (
+            </div>'
+''
+            {/* Backups Tab */},'"''
+{activeTab === 'backups' && ("""
               <div className="space-y-8>
                 {/* Controls */}
-                </div><div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                </div><div className="bg-white/10 backdrop-blur-sm rounded-xl p-6>""
                   <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md space-y-0>
-                    </div><div className="flex items-center space-x-4">
-                      
-                        onChange={(e) => setSelectedType(e.target.value)}
+                    </div><div className="flex" items-center space-x-4">
+                      ""
+                        onChange={(e) => setSelectedType(e.target.value)}"""
                         className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus outline-none focus ring-2 focus ring-violet-500 >"
                         <option value=""all" className="bg-slate-800>All Types</option>
-                        <option value="full" className="bg-slate-800>Full</option>
-                        <option value="incremental" className="bg-slate-800>Incremental</option>
-                        <option value="differential" className="bg-slate-800>Differential</option>
-                        <option value="snapshot" className="bg-slate-800>Snapshot</option>
-                        <option value="archive" className="bg-slate-800>Archive</option>
-                        <option value="replication" className="bg-slate-800>Replication</option>
-                      </select>
-                    </div>
-                    <button className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover to-purple-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300>
+                        <option value=full className="bg-slate-800">Full</option>
+                        <option value="incremental" className="bg-slate-800">Incremental</option>
+                        <option value="differential" className="bg-slate-800">Differential</option>
+                        <option value="snapshot" className="bg-slate-800">Snapshot</option>
+                        <option value="archive" className="bg-slate-800">Archive</option>
+                        <option value="replication" className="bg-slate-800">Replication</option>
+                      </select>"
+                    </div>""
+                    <button className="bg-gradient-to-r" from-violet-600 to-purple-600 hover:from-violet-700 hover to-purple-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300>
                       Create Backup
-                    </button>
+                    </button">
                   </div>
-                </div>
-
-                {/* Backups Grid */}
+                </div>"
+""
+                {/* Backups Grid */}"""
                 <div className="grid grid-cols-1 lg grid-cols-2 gap-6>
                   {filteredBackups.map((backup) => (
-                    </div><div key={backup.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                    </div><div key={backup.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10>""
                       <div className="flex items-start justify-between mb-4>
                         </div><div>
-                          <h3 className="text-xl font-semibold text-white mb-2>{backup.name}</h3>
-                          <p className="text-gray-300 text-sm capitalize>{backup.type} Backup</p>
-                        </div>
-                        <div className="text-right>
-                          <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(backup.status)}`}>
+                          <h3 className="text-xl" font-semibold text-white mb-2>{backup.name}</h3>
+                          <p className="text-gray-300 text-sm capitalize">{backup.type} Backup</p>
+                        </div>""`
+                        <div className="text-right>``
+                          <span className="{`px-3" py-3 rounded-full text-sm font-medium ${getStatusColor(backup.status)}`}>
                             {backup.status}
-                          </span>
-                          <div className="mt-2">
-                            <span className="px-4 py-3 rounded-full text-xs font-medium bg-violet-500/20 text-violet-300>
+                          </span>"
+                          <div className="mt-2>
+                            <span className="px-4" py-3 rounded-full text-xs font-medium bg-violet-500/20 text-violet-300>
                               {formatBytes(backup.size)}
                             </span>
                           </div>
                         </div>
+                      </div>"
+"""
+                      <div className="mb-4>
+                        <p className="text-gray-300" text-sm>{backup.description}</p>
                       </div>
-
-                      <div className="mb-4">
-                        <p className="text-gray-300 text-sm>{backup.description}</p>
-                      </div>
-
+"""
                       <div className="grid grid-cols-3 gap-4 mb-4>
-                        </div><div className="bg-white/5 rounded-lg p-4">
+                        </div><div className="bg-white/5" rounded-lg p-4">""
                           <div className="text-sm text-gray-400 mb-1>Duration</div>
-                          <div className="text-2xl font-bold text-white>{backup.duration}m</div>
-                        </div>
+                          <div className="text-2xl" font-bold text-white>{backup.duration}m</div>
+                        </div>"
                         <div className="bg-white/5 rounded-lg p-4>
-                          </div><div className="text-sm text-gray-400 mb-1>Size</div>
+                          </div><div className="text-sm" text-gray-400 mb-1>Size</div>"
                           <div className="text-2xl font-bold text-white>{formatBytes(backup.size)}</div>
                         </div>
-                        <div className="bg-white/5 rounded-lg p-4>
+                        <div className="bg-white/5" rounded-lg p-4>"
                           </div><div className="text-sm text-gray-400 mb-1>Next Run</div>
-                          <div className="text-sm font-bold text-white>
+                          <div className="text-sm" font-bold text-white>
                             {backup.nextRun.toLocaleDateString()}
                           </div>
                         </div>
-                      </div>
-
-                      {/* AI Analysis */}
-                      <div className="mb-4">
-                        <h4 className="text-lg font-semibold text-white mb-3>AI Analysis</h4>
+                      </div>"
+""
+                      {/* AI Analysis */}"""
+                      <div className="mb-4>
+                        <h4 className="text-lg" font-semibold text-white mb-3>AI Analysis</h4>"
                         <div className="bg-gradient-to-r from-violet-600/20 to-purple-600/20 rounded-lg p-4>
-                          </div><div className="grid grid-cols-3 gap-4 text-sm>
-                            <div>
+                          </div><div className="grid" grid-cols-3 gap-4 text-sm>"
+                            <div>"
                               </div><div className="text-gray-400 mb-1>Success Rate</div>
-                              <div className="text-white font-semibold>{backup.aiAnalysis.successRate}%</div>
+                              <div className="text-white" font-semibold>{backup.aiAnalysis.successRate}%</div>
                             </div>
-                            <div>
+                            <div>"
                               </div><div className="text-gray-400 mb-1>Efficiency</div>
-                              <div className="text-white font-semibold>{backup.aiAnalysis.efficiencyScore}%</div>
-                            </div>
-                            <div>
+                              <div className="text-white" font-semibold>{backup.aiAnalysis.efficiencyScore}%</div>
+                            </div>"
+                            <div>"
                               </div><div className="text-gray-400 mb-1>Reliability</div>
-                              <div className="text-white font-semibold>{backup.aiAnalysis.reliabilityScore}%</div>
+                              <div className="text-white" font-semibold>{backup.aiAnalysis.reliabilityScore}%</div>
                             </div>
-                          </div>
+                          </div>""
                           <div className="mt-3>
-                            </div><div className="text-sm font-medium text-gray-400 mb-1>Recommendations:</div>
-                            <div className="text-xs text-gray-300>
+                            </div><div className="text-sm" font-medium text-gray-400 mb-1>Recommendations:</div>"'
+                            <div className="text-xs text-gray-300>''
                               {backup.aiAnalysis.recommendations.join(', ')}
                             </div>
                           </div>
                         </div>
                       </div>
 
-                      <div className="flex space-x-2">
+                      <div className="flex space-x-2>""
                         <button className="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover to-purple-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300>
                           View Details
                         </button>
-                        <button className="flex-1 border border-white/20 text-white hover bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>
+                        <button className="flex-1" border border-white/20 text-white hover bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300>
                           Configure
                         </button>
                       </div>
-                    </div>
-                  ))}
+                    </div">
+                  ))}"
                 </div>
-              </div>
-            )}
-
-            {/* Analytics Tab */},
-{activeTab === 'analytics' && analytics && (
+              </div>"
+            )}""'
+            {/* Analytics Tab */},"""''
+{activeTab === 'analytics' && analytics && ("""
               <div className="space-y-8>
-                </div><div className="grid grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">
+                </div><div className="grid" grid-cols-1 md:grid-cols-2 lg grid-cols-4 gap-6">""
                   <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10>
-                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.totalBackups.toLocaleString()}</div>
+                    </div><div className="text-3xl" font-bold text-white mb-2>{analytics.totalBackups.toLocaleString()}</div>"
                     <div className="text-gray-400 text-sm>Total Backups</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10>
-                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.activeRecoveryPlans.toLocaleString()}</div>
+                  <div className="bg-white/10" backdrop-blur-sm rounded-xl p-6 border border-white/10>
+                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.activeRecoveryPlans.toLocaleString()}</div>""
                     <div className="text-gray-400 text-sm>Recovery Plans</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10>
-                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.averageSuccessRate}%</div>
+                  <div className="bg-white/10" backdrop-blur-sm rounded-xl p-6 border border-white/10>
+                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.averageSuccessRate}%</div>""
                     <div className="text-gray-400 text-sm>Success Rate</div>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10>
-                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.aiOptimizationScore}%</div>
+                  <div className="bg-white/10" backdrop-blur-sm rounded-xl p-6 border border-white/10>
+                    </div><div className="text-3xl font-bold text-white mb-2>{analytics.aiOptimizationScore}%</div>""
                     <div className="text-gray-400 text-sm>AI Optimization Score</div>
                   </div>
                 </div>
-
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-                  <h3 className="text-xl font-semibold text-white mb-6>AI Insights</h3>
+"
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10>
+                  <h3 className="text-xl font-semibold text-white mb-6>AI Insights</h3>"
                   <div className="space-y-4>
                     {analytics.aiInsights.map((insight) => (
-                      </div><div key={insight.id} className="bg-gradient-to-r from-violet-600/20 to-purple-600/20 rounded-lg p-4">
-                        <div className="flex items-start justify-between mb-2">
-                          <h4 className="text-white font-semibold>{insight.title}</h4>
-                          
-                          }`}>
+                      </div><div key={insight.id} className="bg-gradient-to-r from-violet-600/20 to-purple-600/20 rounded-lg p-4>""
+                        <div className="flex items-start justify-between mb-2>
+                          <h4 className="text-white" font-semibold>{insight.title}</h4">`
+                          ``"
+                         " }`}>"
                             {insight.impact}
                           </span>
-                        </div>
+                        </div>""
                         <p className="text-gray-300 text-sm mb-3>{insight.description}</p>
-                        <div className="text-xs text-gray-400 mb-2>
-                          Confidence: {Math.round(insight.confidence * 100)}%
-                        </div>
-                        <div className="text-xs text-gray-400>
+                        <div className="text-xs" text-gray-400 mb-2>
+                          Confidence: {Math.round(insight.confidence * 100)}%"
+                        </div>""'
+                        <div className="text-xs text-gray-400>''
                           <strong>Recommendations:</strong> {insight.recommendations.join(', ')}
                         </div>
                       </div>
@@ -561,30 +516,29 @@ const AIPoweredBackupRecoveryPage: NextPage = () => {
         )}
       </div>
 
-      {/* CTA Section */}
+      {/* CTA Section */}""
       <div className="bg-gradient-to-r from-violet-600/20 to-purple-600/20 mt-16>
-        </div><div className="max-w-7xl mx-auto px-4 sm:px-6 lg px-8 py-36">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-4>
+        </div><div className="max-w-7xl" mx-auto px-4 sm:px-6 lg px-8 py-36">""
+          <div className="text-center>
+            <h2 className="text-3xl" font-bold text-white mb-4>
               Ready to Protect Your Data?
-            </h2>
+            </h2>""
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto>
               Start your backup journey with our AI-powered recovery system 
               and ensure comprehensive data protection and business continuity.
-            </p>
-            <div className="flex flex-col sm flex-row gap-4 justify-center">
+            </p>"
+            <div className="flex flex-col sm flex-row gap-4 justify-center>
               <Link href="/ai-service-matcher" className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover to-purple-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-lg hover shadow-violet-500/25 transform hover scale-105>
                 Start Backing Up
               </Link>
-              <Link href="/talent-directory" className="border border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm>
+              <Link href="/talent-directory" className="border" border-white/20 text-white hover bg-white/10 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 backdrop-blur-sm>
                 Learn More
               </Link>
             </div>
           </div>
         </div>
       </div>
-    </>
-  
-};
-
-export default AIPoweredBackupRecoveryPage ))))))))))))))))))))))))))))
+    </> ;"
+};"'
+""''`
+export default AIPoweredBackupRecoveryPage ))))))))))))))))))))))))))))"'"'`

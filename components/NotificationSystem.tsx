@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react';'''
 import { motion } from 'framer-motion';
 
 export default function NotificationSystem() {
   return (
-    <motion.div className="notification-system>
+    <motion.div className = notification-system>
       {/* Notification system implementation */}
-    </motion.div>
-  );
-}
+    </motion.div>;"'
+  );""''
+}"'"'

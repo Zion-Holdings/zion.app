@@ -1,291 +1,277 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-interface ChangeInitiative {
-  id: string;
-  name: string;
-  type: 'technology' | 'process' | 'organizational' | 'cultural';
-  status: 'planning' | 'implementation' | 'monitoring' | 'completed';
+interface ChangeInitiative {'
+  id: string;''
+  name: string;'''
+  type: 'technology' | 'process' | 'organizational' | 'cultural';'''
+  status: 'planning' | 'implementation' | 'monitoring' | 'completed';'''
   priority: 'low' | 'medium' | 'high' | 'critical';
-  startDate: string;
-  endDate: string;
-  progress: number;
+  startDate: string;'
+  endDate: string;''
+  progress: number;'''
   impact: 'low' | 'medium' | 'high';
   budget: number;
-  actualCost: number;
-}
-
+  actualCost: number;}
 interface Stakeholder {
   id: string;
-  name: string;
-  role: string;
-  department: string;
-  influence: 'high' | 'medium' | 'low';
+  name: string;'
+  role: string;''
+  department: string;'''
+  influence: 'high' | 'medium' | 'low';'''
   support: 'champion' | 'supporter' | 'neutral' | 'resistant' | 'blocker';
   communicationPreference: string;
   lastContact: string;
-  nextContact: string;
-}
-
-interface TrainingProgram {
-  id: string;
-  title: string;
-  type: 'workshop' | 'online' | 'mentoring' | 'certification';
-  targetAudience: string;
-  duration: string;
+  nextContact: string;}
+interface TrainingProgram {'
+  id: string;''
+  title: string;'''
+  type: 'workshop' | 'online' | 'mentoring' | 'certification';'
+  targetAudience: string;''
+  duration: string;'''
   status: 'planned' | 'in-progress' | 'completed';
   completionRate: number;
   satisfactionScore: number;
   startDate: string;
-  endDate: string;
-}
-
-interface ChangeMetric {
-  id: string;
-  name: string;
+  endDate: string;}
+interface ChangeMetric {'
+  id: string;''
+  name: string;'''
   category: 'adoption' | 'productivity' | 'satisfaction' | 'cost';
-  currentValue: number;
-  targetValue: number;
-  unit: string;
+  currentValue: number;'
+  targetValue: number;''
+  unit: string;'''
   trend: 'increasing' | 'decreasing' | 'stable';
-  lastUpdated: string;
-}
-
-const mockChangeInitiatives: ChangeInitiative[] = [
-  {
-    id: 'initiative-1',
-    name: 'Digital Transformation',
-    type: 'technology',
-    status: 'implementation',
-    priority: 'critical',
-    startDate: '2024-01-01',
-    endDate: '2024-12-31',
-    progress: 65,
+  lastUpdated: string;}'
+const mockChangeInitiatives: ChangeInitiative[] = [''
+  {'''
+    id: 'initiative-1','''
+    name: 'Digital Transformation','''
+    type: 'technology','''
+    status: 'implementation','''
+    priority: 'critical','''
+    startDate: '2024-01-01','''
+    endDate: '2024-12-31',''
+    progress: 65,'''
     impact: 'high',
     budget: 500000,
-    actualCost: 325000
-  },
-    {
-    id: 'initiative-2',
-    name: 'Process Optimization',
-    type: 'process',
-    status: 'monitoring',
-    priority: 'high',
-    startDate: '2024-02-01',
-    endDate: '2024-08-31',
-    progress: 85,
+    actualCost: 325000'
+  },''
+    {'''
+    id: 'initiative-2','''
+    name: 'Process Optimization','''
+    type: 'process','''
+    status: 'monitoring','''
+    priority: 'high','''
+    startDate: '2024-02-01','''
+    endDate: '2024-08-31',''
+    progress: 85,'''
     impact: 'medium',
     budget: 200000,
-    actualCost: 180000
-  },
-    {
-    id: 'initiative-3',
-    name: 'Cultural Change',
-    type: 'cultural',
-    status: 'completed',
-    priority: 'medium',
-    startDate: '2023-09-01',
-    endDate: '2024-03-31',
-    progress: 100,
+    actualCost: 180000'
+  },''
+    {'''
+    id: 'initiative-3','''
+    name: 'Cultural Change','''
+    type: 'cultural','''
+    status: 'completed','''
+    priority: 'medium','''
+    startDate: '2023-09-01','''
+    endDate: '2024-03-31',''
+    progress: 100,'''
     impact: 'high',
     budget: 150000,
-    actualCost: 145000
-  },
-    {
-    id: 'initiative-4',
-    name: 'Organizational Restructuring',
-    type: 'organizational',
-    status: 'planning',
-    priority: 'high',
-    startDate: '2024-06-01',
-    endDate: '2024-12-31',
-    progress: 25,
+    actualCost: 145000'
+  },''
+    {'''
+    id: 'initiative-4','''
+    name: 'Organizational Restructuring','''
+    type: 'organizational','''
+    status: 'planning','''
+    priority: 'high','''
+    startDate: '2024-06-01','''
+    endDate: '2024-12-31',''
+    progress: 25,'''
     impact: 'high',
     budget: 300000,
-    actualCost: 75000
-  },
-    {
-    id: 'initiative-5',
-    name: 'New System Implementation',
-    type: 'technology',
-    status: 'implementation',
-    priority: 'critical',
-    startDate: '2024-03-01',
-    endDate: '2024-09-30',
-    progress: 45,
+    actualCost: 75000'
+  },''
+    {'''
+    id: 'initiative-5','''
+    name: 'New System Implementation','''
+    type: 'technology','''
+    status: 'implementation','''
+    priority: 'critical','''
+    startDate: '2024-03-01','''
+    endDate: '2024-09-30',''
+    progress: 45,'''
     impact: 'medium',
     budget: 400000,
-    actualCost: 180000
-  }
+    actualCost: 180000}
 ];
-
-const mockStakeholders: Stakeholder[] = [
-  {
-    id: 'stakeholder-1',
-    name: 'John Smith',
-    role: 'CEO',
-    department: 'Executive',
-    influence: 'high',
-    support: 'champion',
-    communicationPreference: 'Weekly meetings',
-    lastContact: '2024-01-15',
-    nextContact: '2024-01-22'
-  },
-    {
-    id: 'stakeholder-2',
-    name: 'Sarah Johnson',
-    role: 'CTO',
-    department: 'Technology',
-    influence: 'high',
-    support: 'supporter',
-    communicationPreference: 'Email updates',
-    lastContact: '2024-01-14',
-    nextContact: '2024-01-21'
-  },
-    {
-    id: 'stakeholder-3',
-    name: 'Mike Davis',
-    role: 'Operations Manager',
-    department: 'Operations',
-    influence: 'medium',
-    support: 'neutral',
-    communicationPreference: 'Monthly reports',
-    lastContact: '2024-01-10',
-    nextContact: '2024-02-10'
-  },
-    {
-    id: 'stakeholder-4',
-    name: 'Lisa Brown',
-    role: 'HR Director',
-    department: 'Human Resources',
-    influence: 'medium',
-    support: 'supporter',
-    communicationPreference: 'Bi-weekly calls',
-    lastContact: '2024-01-12',
-    nextContact: '2024-01-26'
-  },
-    {
-    id: 'stakeholder-5',
-    name: 'David Wilson',
-    role: 'Finance Manager',
-    department: 'Finance',
-    influence: 'high',
-    support: 'resistant',
-    communicationPreference: 'Detailed reports',
-    lastContact: '2024-01-08',
-    nextContact: '2024-01-15'
-  },
-    {
-    id: 'stakeholder-6',
-    name: 'Emily Chen',
-    role: 'Marketing Director',
-    department: 'Marketing',
-    influence: 'medium',
-    support: 'champion',
-    communicationPreference: 'Weekly updates',
-    lastContact: '2024-01-16',
-    nextContact: '2024-01-23'
-  }
+'
+const mockStakeholders: Stakeholder[] = [''
+  {'''
+    id: 'stakeholder-1','''
+    name: 'John Smith','''
+    role: 'CEO','''
+    department: 'Executive','''
+    influence: 'high','''
+    support: 'champion','''
+    communicationPreference: 'Weekly meetings','''
+    lastContact: '2024-01-15','''
+    nextContact: '2024-01-22''
+  },''
+    {'''
+    id: 'stakeholder-2','''
+    name: 'Sarah Johnson','''
+    role: 'CTO','''
+    department: 'Technology','''
+    influence: 'high','''
+    support: 'supporter','''
+    communicationPreference: 'Email updates','''
+    lastContact: '2024-01-14','''
+    nextContact: '2024-01-21''
+  },''
+    {'''
+    id: 'stakeholder-3','''
+    name: 'Mike Davis','''
+    role: 'Operations Manager','''
+    department: 'Operations','''
+    influence: 'medium','''
+    support: 'neutral','''
+    communicationPreference: 'Monthly reports','''
+    lastContact: '2024-01-10','''
+    nextContact: '2024-02-10''
+  },''
+    {'''
+    id: 'stakeholder-4','''
+    name: 'Lisa Brown','''
+    role: 'HR Director','''
+    department: 'Human Resources','''
+    influence: 'medium','''
+    support: 'supporter','''
+    communicationPreference: 'Bi-weekly calls','''
+    lastContact: '2024-01-12','''
+    nextContact: '2024-01-26''
+  },''
+    {'''
+    id: 'stakeholder-5','''
+    name: 'David Wilson','''
+    role: 'Finance Manager','''
+    department: 'Finance','''
+    influence: 'high','''
+    support: 'resistant','''
+    communicationPreference: 'Detailed reports','''
+    lastContact: '2024-01-08','''
+    nextContact: '2024-01-15''
+  },''
+    {'''
+    id: 'stakeholder-6','''
+    name: 'Emily Chen','''
+    role: 'Marketing Director','''
+    department: 'Marketing','''
+    influence: 'medium','''
+    support: 'champion','''
+    communicationPreference: 'Weekly updates','''
+    lastContact: '2024-01-16','''
+    nextContact: '2024-01-23'}
 ];
-
-const mockTrainingPrograms: TrainingProgram[] = [
-  {
-    id: 'training-1',
-    title: 'New System Training',
-    type: 'workshop',
-    targetAudience: 'All employees',
-    duration: '2 days',
-    status: 'in-progress',
-    completionRate: 55,
-    satisfactionScore: 8.2,
-    startDate: '2024-01-15',
-    endDate: '2024-03-15'
-  },
-    {
-    id: 'training-2',
-    title: 'Leadership Development',
-    type: 'mentoring',
-    targetAudience: 'Managers',
-    duration: '6 months',
-    status: 'completed',
-    completionRate: 100,
-    satisfactionScore: 9.1,
-    startDate: '2023-07-01',
-    endDate: '2023-12-31'
-  },
-    {
-    id: 'training-3',
-    title: 'Digital Skills Certification',
-    type: 'certification',
-    targetAudience: 'IT Staff',
-    duration: '3 months',
-    status: 'in-progress',
-    completionRate: 75,
-    satisfactionScore: 8.8,
-    startDate: '2024-01-01',
-    endDate: '2024-03-31'
-  },
-    {
-    id: 'training-4',
-    title: 'Change Management Workshop',
-    type: 'workshop',
-    targetAudience: 'Change Champions',
-    duration: '1 day',
-    status: 'planned',
-    completionRate: 0,
-    satisfactionScore: 0,
-    startDate: '2024-02-15',
-    endDate: '2024-02-15'
-  }
+'
+const mockTrainingPrograms: TrainingProgram[] = [''
+  {'''
+    id: 'training-1','''
+    title: 'New System Training','''
+    type: 'workshop','''
+    targetAudience: 'All employees','''
+    duration: '2 days','''
+    status: 'in-progress','
+    completionRate: 55,''
+    satisfactionScore: 8.2,'''
+    startDate: '2024-01-15','''
+    endDate: '2024-03-15''
+  },''
+    {'''
+    id: 'training-2','''
+    title: 'Leadership Development','''
+    type: 'mentoring','''
+    targetAudience: 'Managers','''
+    duration: '6 months','''
+    status: 'completed','
+    completionRate: 100,''
+    satisfactionScore: 9.1,'''
+    startDate: '2023-07-01','''
+    endDate: '2023-12-31''
+  },''
+    {'''
+    id: 'training-3','''
+    title: 'Digital Skills Certification','''
+    type: 'certification','''
+    targetAudience: 'IT Staff','''
+    duration: '3 months','''
+    status: 'in-progress','
+    completionRate: 75,''
+    satisfactionScore: 8.8,'''
+    startDate: '2024-01-01','''
+    endDate: '2024-03-31''
+  },''
+    {'''
+    id: 'training-4','''
+    title: 'Change Management Workshop','''
+    type: 'workshop','''
+    targetAudience: 'Change Champions','''
+    duration: '1 day','''
+    status: 'planned','
+    completionRate: 0,''
+    satisfactionScore: 0,'''
+    startDate: '2024-02-15','''
+    endDate: '2024-02-15'}
 ];
-
-const mockChangeMetrics: ChangeMetric[] = [
-  {
-    id: 'metric-1',
-    name: 'System Adoption Rate',
-    category: 'adoption',
-    currentValue: 75,
-    targetValue: 90,
-    unit: '%',
-    trend: 'increasing',
-    lastUpdated: '2024-01-15'
-  },
-    {
-    id: 'metric-2',
-    name: 'Employee Satisfaction',
-    category: 'satisfaction',
-    currentValue: 7.8,
-    targetValue: 8.5,
-    unit: '/10',
-    trend: 'stable',
-    lastUpdated: '2024-01-14'
-  },
-    {
-    id: 'metric-3',
-    name: 'Process Efficiency',
-    category: 'productivity',
-    currentValue: 82,
-    targetValue: 85,
-    unit: '%',
-    trend: 'increasing',
-    lastUpdated: '2024-01-13'
-  },
-    {
-    id: 'metric-4',
-    name: 'Cost Savings',
-    category: 'cost',
-    currentValue: 150000,
-    targetValue: 200000,
-    unit: '$',
-    trend: 'increasing',
-    lastUpdated: '2024-01-12'
-  }
-];
-
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
-
+'
+const mockChangeMetrics: ChangeMetric[] = [''
+  {'''
+    id: 'metric-1','''
+    name: 'System Adoption Rate','''
+    category: 'adoption','
+    currentValue: 75,''
+    targetValue: 90,'''
+    unit: '%','''
+    trend: 'increasing','''
+    lastUpdated: '2024-01-15''
+  },''
+    {'''
+    id: 'metric-2','''
+    name: 'Employee Satisfaction','''
+    category: 'satisfaction','
+    currentValue: 7.8,''
+    targetValue: 8.5,'''
+    unit: '/10','''
+    trend: 'stable','''
+    lastUpdated: '2024-01-14''
+  },''
+    {'''
+    id: 'metric-3','''
+    name: 'Process Efficiency','''
+    category: 'productivity','
+    currentValue: 82,''
+    targetValue: 85,'''
+    unit: '%','''
+    trend: 'increasing','''
+    lastUpdated: '2024-01-13''
+  },''
+    {'''
+    id: 'metric-4','''
+    name: 'Cost Savings','''
+    category: 'cost','
+    currentValue: 150000,''
+    targetValue: 200000,'''
+    unit: '$','''
+    trend: 'increasing','''
+    lastUpdated: '2024-01-12'}
+];'
+''
+export default function handler(req: NextApiRequest, res: NextApiResponse) {'''
+  if (req.method !== 'POST') {'''
+    return res.status(405).json({ error: 'Method not allowed' });}
   try {
     const { timeframe, action } = req.body;
 
@@ -301,84 +287,78 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       stakeholders: mockStakeholders,
       trainingPrograms: mockTrainingPrograms,
       changeMetrics: mockChangeMetrics,
-      aiInsights,
-      analytics: {
-        totalInitiatives: mockChangeInitiatives.length,
-        activeInitiatives: mockChangeInitiatives.filter(c => c.status !== 'completed').length,
-        totalStakeholders: mockStakeholders.length,
-        champions: mockStakeholders.filter(s => s.support === 'champion').length,
-        supporters: mockStakeholders.filter(s => s.support === 'supporter').length,
-        resistant: mockStakeholders.filter(s => s.support === 'resistant' || s.support === 'blocker').length,
-        totalTrainingPrograms: mockTrainingPrograms.length,
+      aiInsights,'
+      analytics: {''
+        totalInitiatives: mockChangeInitiatives.length,'''
+        activeInitiatives: mockChangeInitiatives.filter(c => c.status !== 'completed').length,''
+        totalStakeholders: mockStakeholders.length,'''
+        champions: mockStakeholders.filter(s => s.support === 'champion').length,'''
+        supporters: mockStakeholders.filter(s => s.support === 'supporter').length,'''
+        resistant: mockStakeholders.filter(s => s.support === 'resistant' || s.support === 'blocker').length,''
+        totalTrainingPrograms: mockTrainingPrograms.length,'''
         completedTraining: mockTrainingPrograms.filter(t => t.status === 'completed').length,
         averageSatisfaction: Math.round(mockTrainingPrograms.reduce((acc, t) => acc + t.satisfactionScore, 0) / mockTrainingPrograms.length * 10) / 10
-      }
+      };
     };
 
     // Simulate processing time
     setTimeout(() => {
       res.status(200).json(response);
-    } processingDelay);
-
-  } catch (error) {
-    console.error('AI Change Management API Error:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-}
-
+    } processingDelay);'
+''
+  } catch (error) {'''
+    console.error('AI Change Management API Error: "", error);'''
+    res.status(500).json({ error: 'Internal server error' });}}
 function generateAIInsights(timeframe: string): any {
-  const insights = {
-    predictions: [
-      {
-        type: 'stakeholder_resistance',
-        probability: 0.25,
-        stakeholders: ['David Wilson'],
-        timeframe: '30 days',
-        recommendation: 'Increase one-on-one communication and address specific concerns'
-      },
-    {
-        type: 'training_completion',
-        probability: 0.85,
-        program: 'New System Training',
-        timeframe: '60 days',
-        recommendation: 'Extend training period and provide additional support materials'
-      }
-    ],
-    recommendations: [
-      {
-        type: 'communication_strategy',
-        priority: 'high',
-        description: 'Increase communication frequency with neutral stakeholders to convert them to supporters',
-        impact: 'Improved stakeholder buy-in and reduced resistance'
-      },
-    {
-        type: 'training_optimization',
-        priority: 'medium',
-        description: 'Implement additional online training modules to improve completion rates',
-        impact: 'Higher training completion and better skill adoption'
-      },
-    {
-        type: 'change_readiness',
-        priority: 'low',
-        description: 'Conduct change readiness assessment for upcoming organizational restructuring',
-        impact: 'Better preparation and smoother transition'
-      }
-    ],
-    alerts: [
-      {
-        type: 'critical',
-        message: '3 high-influence stakeholders showing resistance to Digital Transformation initiative',
-        stakeholders: ['David Wilson', 'Mike Davis'],
-        initiative: 'Digital Transformation'
-      },
-    {
-        type: 'warning',
-        message: 'New System Training completion rate below 60%',
-        program: 'New System Training',
-        recommendation: 'Consider extending deadline or additional support'
-      }
-    ]
+  const insights = {'
+    predictions: [''
+      {'''
+        type: 'stakeholder_resistance',''
+        probability: 0.25,'''
+        stakeholders: ['David Wilson'],'''
+        timeframe: '30 days','''
+        recommendation: 'Increase one-on-one communication and address specific concerns''
+      },''
+    {'''
+        type: 'training_completion',''
+        probability: 0.85,'''
+        program: 'New System Training','''
+        timeframe: '60 days','''
+        recommendation: 'Extend training period and provide additional support materials'}
+    ],'
+    recommendations: [''
+      {'''
+        type: 'communication_strategy','''
+        priority: 'high','''
+        description: 'Increase communication frequency with neutral stakeholders to convert them to supporters','''
+        impact: 'Improved stakeholder buy-in and reduced resistance''
+      },''
+    {'''
+        type: 'training_optimization','''
+        priority: 'medium','''
+        description: 'Implement additional online training modules to improve completion rates','''
+        impact: 'Higher training completion and better skill adoption''
+      },''
+    {'''
+        type: 'change_readiness','''
+        priority: 'low','''
+        description: 'Conduct change readiness assessment for upcoming organizational restructuring','''
+        impact: 'Better preparation and smoother transition'}
+    ],'
+    alerts: [''
+      {'''
+        type: 'critical','''
+        message: '3 high-influence stakeholders showing resistance to Digital Transformation initiative','''
+        stakeholders: ['David Wilson', 'Mike Davis'],'''
+        initiative: 'Digital Transformation''
+      },''
+    {'''
+        type: 'warning','''
+        message: 'New System Training completion rate below 60%','''
+        program: 'New System Training','''
+        recommendation: 'Consider extending deadline or additional support'}
+    ];
   };
-
-  return insights;
-} 
+'
+  return insights;''
+} ''
