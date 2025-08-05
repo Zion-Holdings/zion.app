@@ -298,6 +298,7 @@ const Sidebar: React.FC = () => {
         border-r border-gray-700/50 z-50 transition-all duration-500 ease-in-out backdrop-blur-sm
         ${isOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 lg:relative lg:z-auto
         w-80 shadow-2xl before:absolute before:inset-0 before:bg-gradient-to-r before:from-cyan-500/10 before:to-purple-500/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500
+        lg:z-10
       `}>
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-700 bg-gradient-to-r from-gray-800 to-gray-900">
@@ -410,6 +411,7 @@ const Sidebar: React.FC = () => {
       <button
         onClick={() => setIsOpen(true)}
         className="fixed top-4 left-4 z-50 lg:hidden p-3 bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl shadow-2xl border border-gray-700/50 backdrop-blur-sm hover:scale-110 transition-all duration-300 group"
+        aria-label="Open sidebar"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
         <Menu className="w-6 h-6 text-white relative z-10 group-hover:rotate-90 transition-transform duration-300" />

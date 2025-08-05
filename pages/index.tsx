@@ -274,12 +274,12 @@ const Home: NextPage = () => {
         <section className="relative py-20 lg:py-32">
           <div className="container-responsive">
             <div className="glass-dark border border-neon-blue/30 rounded-2xl p-12 text-center">
-              <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-white mb-6">
+              <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-high-contrast mb-6">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple">
                   Ready to Start Trading?
                 </span>
               </h2>
-              <p className="text-responsive-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+              <p className="text-responsive-lg text-high-contrast-secondary mb-8 max-w-2xl mx-auto">
                 Join thousands of users already trading on Zion. Experience the future of AI-powered commerce today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -53,7 +53,7 @@ const FuturisticHero: React.FC = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-responsive-lg lg:text-responsive-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-responsive-lg lg:text-responsive-xl text-high-contrast-secondary mb-8 max-w-2xl mx-auto leading-relaxed">
             Experience the future of commerce with our cutting-edge AI-powered marketplace. 
             Connect with top-tier IT services, AI talents, and innovative products in a seamless, 
             secure environment.
@@ -84,7 +84,7 @@ const FuturisticHero: React.FC = () => {
               <div className="text-3xl lg:text-4xl font-bold text-neon-blue neon-text mb-2">
                 10K+
               </div>
-              <div className="text-gray-400 text-sm lg:text-base">
+              <div className="text-high-contrast-secondary text-sm lg:text-base">
                 Active Users
               </div>
             </div>
@@ -92,7 +92,7 @@ const FuturisticHero: React.FC = () => {
               <div className="text-3xl lg:text-4xl font-bold text-neon-purple neon-text mb-2">
                 500+
               </div>
-              <div className="text-gray-400 text-sm lg:text-base">
+              <div className="text-high-contrast-secondary text-sm lg:text-base">
                 AI Services
               </div>
             </div>
