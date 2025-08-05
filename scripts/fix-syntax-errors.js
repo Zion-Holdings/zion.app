@@ -52,19 +52,6 @@ function fixSyntaxErrors(filePath) {
     // Fix additional API patterns
     content = content.replace(/import type \{ NextApiRequest, NextApiResponse \} from 'next/g, "import type { NextApiRequest, NextApiResponse } from 'next';");
     content = content.replace(/import type \{ NextApiRequest, NextApiResponse \} from 'next';';/g, "import type { NextApiRequest, NextApiResponse } from 'next';");
-    content = content.replace(/interface \$1 {/g, "interface CapacityPlan {");
-    content = content.replace(/interface CapacityPlan {/g, "interface ChangePlan {");
-    content = content.replace(/interface ChangePlan {/g, "interface FacilityPlan {");
-    content = content.replace(/impact: ''low' \| 'medium' \| 'hig'h';/g, "impact: 'low' | 'medium' | 'high';");
-    content = content.replace(/const \$1 = ";'/g, "const contractHtml = `");
-    content = content.replace(/status: 'operation'al \| 'maintenan'ce \| 'offl'ine'';/g, "status: 'operational' | 'maintenance' | 'offline';");
-    content = content.replace(/candidates: Array\s*}>;/g, "candidates: Array<Candidate>;");
-    content = content.replace(/employees: Array\s*}>;/g, "employees: Array<Employee>;");
-    content = content.replace(/jobPostings: Array\s*}>;/g, "jobPostings: Array<JobPosting>;");
-    content = content.replace(/performanceReviews: Array\s*}>;/g, "performanceReviews: Array<PerformanceReview>;");
-    content = content.replace(/`"/g, "`");
-    content = content.replace(/\$\{terms \? ""<\/div>/g, "${terms ? `");
-    content = content.replace(/import type \{ NextApiRequest, NextApiResponse \} from 'next';';/g, "import type { NextApiRequest, NextApiResponse } from 'next';");
     content = content.replace(/import type \{ NextApiRequest, NextApiResponse \} from 'next';;';/g, "import type { NextApiRequest, NextApiResponse } from 'next';");
     content = content.replace(/';}/g, "';");
     content = content.replace(/import Image from 'next\/image';/g, "import Image from 'next/image';");
