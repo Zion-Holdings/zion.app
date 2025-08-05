@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 
 interface KPI {
@@ -245,11 +246,18 @@ const BusinessIntelligenceDashboard = () => {
   ];
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <>
       <Head>
         <title>AI Business Intelligence Dashboard - Zion Marketplace</title>
         <meta name="description" content="Real-time business intelligence, predictive analytics, and AI-powered insights" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <div className="relative z-10 container-responsive py-8">
         
@@ -275,7 +283,7 @@ const BusinessIntelligenceDashboard = () => {
                 <select
                   value={selectedTimeframe}
                   onChange={(e) => setSelectedTimeframe(e.target.value)}
-                  className="bg-white/10 border border-white/20 rounded-lg text-white px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="bg-white/10 border border-white/20 rounded-lg text-white px-4 py-4 focus:outline-none focus:ring-2 focus:ring-purple-500"
                 >
                   {timeframes.map((tf) => (
                     <option key={tf.value} value={tf.value}>
@@ -285,7 +293,7 @@ const BusinessIntelligenceDashboard = () => {
                 </select>
                 <button
                   onClick={() => exportData('pdf')}
-                  className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors"
+                  className="bg-purple-600 text-white px-4 py-4 rounded-lg hover:bg-purple-700 transition-colors"
                 >
                   Export
                 </button>
@@ -301,7 +309,7 @@ const BusinessIntelligenceDashboard = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 ${
+                className={`flex items-center space-x-2 px-4 py-4 rounded-lg transition-all duration-200 ${
                   activeTab === tab.id
                     ? 'bg-purple-600 text-white'
                     : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -352,7 +360,7 @@ const BusinessIntelligenceDashboard = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
                   <h3 className="text-white font-semibold mb-4">Revenue Trend</h3>
-                  <div className="h-64 flex items-center justify-center text-gray-400">
+                  <div className="h-124 flex items-center justify-center text-gray-400">
                     <div className="text-center">
                       <div className="text-4xl mb-2">📈</div>
                       <p>Interactive Revenue Chart</p>
@@ -363,7 +371,7 @@ const BusinessIntelligenceDashboard = () => {
 
                 <div className="bg-white/5 backdrop-blur-md rounded-xl p-6 border border-white/10">
                   <h3 className="text-white font-semibold mb-4">Customer Growth</h3>
-                  <div className="h-64 flex items-center justify-center text-gray-400">
+                  <div className="h-124 flex items-center justify-center text-gray-400">
                     <div className="text-center">
                       <div className="text-4xl mb-2">👥</div>
                       <p>Interactive Customer Chart</p>
@@ -457,7 +465,7 @@ const BusinessIntelligenceDashboard = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">AI-Powered Insights</h2>
-                <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                <button className="bg-purple-600 text-white px-4 py-4 rounded-lg hover:bg-purple-700 transition-colors">
                   Generate New Insights
                 </button>
               </div>
@@ -505,7 +513,7 @@ const BusinessIntelligenceDashboard = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">Automated Reports</h2>
-                <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                <button className="bg-purple-600 text-white px-4 py-4 rounded-lg hover:bg-purple-700 transition-colors">
                   Create New Report
                 </button>
               </div>
@@ -518,7 +526,7 @@ const BusinessIntelligenceDashboard = () => {
                         <h3 className="text-white font-semibold">{report.name}</h3>
                         <p className="text-gray-400 text-sm capitalize">{report.type} Report</p>
                       </div>
-                      <div className={`px-2 py-1 rounded-full text-xs ${
+                      <div className={`px-4 py-3 rounded-full text-xs ${
                         report.status === 'generated' ? 'bg-green-500/20 text-green-400' :
                         report.status === 'pending' ? 'bg-yellow-500/20 text-yellow-400' :
                         'bg-red-500/20 text-red-400'
@@ -540,11 +548,11 @@ const BusinessIntelligenceDashboard = () => {
                       <button
                         onClick={() => generateReport(report.id)}
                         disabled={loading}
-                        className="flex-1 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors disabled:opacity-50"
+                        className="flex-1 bg-purple-600 text-white px-4 py-4 rounded-lg hover:bg-purple-700 transition-colors disabled:opacity-50"
                       >
                         {loading ? 'Generating...' : 'Generate Now'}
                       </button>
-                      <button className="bg-white/10 text-white px-4 py-2 rounded-lg hover:bg-white/20 transition-colors">
+                      <button className="bg-white/10 text-white px-4 py-4 rounded-lg hover:bg-white/20 transition-colors">
                         Download
                       </button>
                     </div>
@@ -559,7 +567,7 @@ const BusinessIntelligenceDashboard = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">Smart Alerts</h2>
-                <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                <button className="bg-purple-600 text-white px-4 py-4 rounded-lg hover:bg-purple-700 transition-colors">
                   Configure Alerts
                 </button>
               </div>
@@ -597,7 +605,13 @@ const BusinessIntelligenceDashboard = () => {
         </div>
       </div>
     </>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+);
 };
 
 export default BusinessIntelligenceDashboard; 

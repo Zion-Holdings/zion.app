@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -78,15 +79,22 @@ const ChatContentIndex: NextPage = () => {
   ];
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <>
       <Head>
         <title>Chat Content - Zion</title>
         <meta name="description" content="Explore our comprehensive chat content covering AI, cloud computing, cybersecurity, and more" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       
       <div className="min-h-screen bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue">
-        <div className="container-responsive py-20">
+        <div className="container-responsive py-40">
           <div className="text-center mb-16">
             <motion.h1 
               initial={{ opacity: 0, y: -20 }}
@@ -156,7 +164,13 @@ const ChatContentIndex: NextPage = () => {
         </div>
       </div>
     </>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default ChatContentIndex 

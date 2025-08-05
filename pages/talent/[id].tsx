@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';import ModernLayout from '../components/layout/ModernLayout'
+
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { createClient } from '@supabase/supabase-js';
@@ -139,6 +140,10 @@ const TalentDetailPage: React.FC = () => {
 
   const renderStars = (rating: number) => {
     return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
       <div className="flex items-center">
         {[1, 2, 3, 4, 5].map((star) => (
           <svg
@@ -174,7 +179,7 @@ const TalentDetailPage: React.FC = () => {
           <p className="text-gray-600 mb-4">{error || 'The talent profile you are looking for does not exist.'}</p>
           <button
             onClick={() => router.push('/talent')}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-4 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
             Back to Talent Directory
           </button>
@@ -188,7 +193,8 @@ const TalentDetailPage: React.FC = () => {
       <Head>
         <title>{talent.full_name} - {talent.title} | Zion AI Marketplace</title>
         <meta name="description" content={`${talent.full_name} - ${talent.title}. ${talent.summary}`} />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <div className="min-h-screen bg-gray-50">
         {/* Header */}
@@ -231,13 +237,13 @@ const TalentDetailPage: React.FC = () => {
                   </div>
                   <div className="flex items-center space-x-2">
                     {talent.is_verified && (
-                      <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                      <div className="bg-blue-100 text-blue-800 px-3 py-3 rounded-full text-sm font-medium">
                         Verified
                       </div>
                     )}
-                    <div className={`px-3 py-1 rounded-full text-sm font-medium ${
+                    <div className={`px-3 py-3 rounded-full text-sm font-medium ${
                       talent.availability === 'Open' ? 'bg-green-100 text-green-800' :
-                      talent.availability === 'Part-time' ? 'bg-yellow-100 text-yellow-800' :
+                      talent.availability === 'Part-time' ? 'bg-yellow-100 text-yellow-1200' :
                       'bg-red-100 text-red-800'
                     }`}>
                       {talent.availability}
@@ -260,7 +266,7 @@ const TalentDetailPage: React.FC = () => {
                     {talent.skills.map((skill, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+                        className="px-3 py-3 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
                       >
                         {skill}
                       </span>
@@ -348,7 +354,11 @@ const TalentDetailPage: React.FC = () => {
         </div>
       </div>
     </>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+);
 };
 
 export default TalentDetailPage; 

@@ -1,4 +1,5 @@
-import type { AppProps } from 'next/app';
+import type { AppProps } from 'next/app';import ModernLayout from '../components/layout/ModernLayout'
+
 import '../styles/globals.css'
 import { ChatProvider } from '../src/contexts/ChatContext';
 import { AuthProvider } from '../src/contexts/AuthContext';
@@ -19,6 +20,10 @@ function ChatWrapper() {
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <MessageChannelErrorBoundary>
       <AuthProvider>
         <NavigationProvider>
@@ -36,5 +41,9 @@ export default function App({ Component, pageProps }: AppProps) {
         </NavigationProvider>
       </AuthProvider>
     </MessageChannelErrorBoundary>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+)
 } 

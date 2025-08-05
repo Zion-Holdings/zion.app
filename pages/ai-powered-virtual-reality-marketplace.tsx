@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -252,6 +253,12 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -264,7 +271,8 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
         <title>AI-Powered Virtual Reality Marketplace - Zion</title>
         <meta name="description" content="Experience the future of shopping with AI-powered virtual reality marketplace. Explore products in immersive 3D environments." />
         <meta name="keywords" content="VR marketplace, AI shopping, virtual reality, 3D products, immersive shopping" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
@@ -280,7 +288,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
             <div className="flex items-center space-x-4">
               <button
                 onClick={() => setIsVRMode(!isVRMode)}
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25"
               >
                 {isVRMode ? 'Exit VR' : 'Enter VR'}
               </button>
@@ -292,7 +300,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
       <main className="flex-1">
         {!isVRMode ? (
           /* VR Experience Selection */
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                 AI-Powered Virtual Reality Marketplace
@@ -456,13 +464,13 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
                     <div className="flex space-x-2">
                       <button
                         onClick={() => purchaseProduct(selectedProduct)}
-                        className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-4 py-2 rounded text-sm font-medium transition-all duration-300"
+                        className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-4 py-4 rounded text-sm font-medium transition-all duration-300"
                       >
                         Purchase
                       </button>
                       <button
                         onClick={() => setSelectedProduct(null)}
-                        className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded text-sm font-medium transition-all duration-300"
+                        className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-4 rounded text-sm font-medium transition-all duration-300"
                       >
                         Close
                       </button>
@@ -480,7 +488,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
                       <button
                         key={experience.id}
                         onClick={() => changeExperience(experience)}
-                        className={`block w-full text-left px-3 py-2 rounded text-sm transition-all duration-300 ${
+                        className={`block w-full text-left px-3 py-4 rounded text-sm transition-all duration-300 ${
                           currentExperience?.id === experience.id
                             ? 'bg-purple-600 text-white'
                             : 'text-gray-300 hover:text-white hover:bg-gray-700'
@@ -497,7 +505,7 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
               <div className="absolute top-4 right-4 pointer-events-auto">
                 <button
                   onClick={exitVRMode}
-                  className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-medium transition-all duration-300"
+                  className="bg-red-600 hover:bg-red-700 text-white px-4 py-4 rounded text-sm font-medium transition-all duration-300"
                 >
                   Exit VR
                 </button>
@@ -517,8 +525,32 @@ const AIPoweredVirtualRealityMarketplace: NextPage = () => {
           </div>
         </footer>
       )}
-    </div>
-  )
+    
+        {/* Mobile Navigation */}
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
+          <div className="flex justify-around items-center py-2">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <Home className="w-5 h-5" />
+              <span className="text-xs">Home</span>
+            </button>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <Search className="w-5 h-5" />
+              <span className="text-xs">Search</span>
+            </button>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <User className="w-5 h-5" />
+              <span className="text-xs">Profile</span>
+            </button>
+          </div>
+        </div>
+      </div>
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredVirtualRealityMarketplace 

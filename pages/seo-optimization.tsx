@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -320,6 +321,12 @@ const SEOOptimizationPage: NextPage = () => {
 
   if (loading) {
     return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -330,7 +337,7 @@ const SEOOptimizationPage: NextPage = () => {
       
         <div className="text-center">
           <div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg">
-            <svg className="animate-spin -ml-1 mr-3 h-6 w-6 text-purple-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <svg className="animate-spin -ml-1 mr-3 h-12 w-12 text-purple-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
@@ -348,7 +355,8 @@ const SEOOptimizationPage: NextPage = () => {
         <meta name="description" content="Comprehensive SEO optimization tools for marketplace visibility and search engine performance" />
         <meta name="keywords" content="SEO optimization, keyword research, meta tags, content analysis, search engine optimization, Zion" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
@@ -363,16 +371,16 @@ const SEOOptimizationPage: NextPage = () => {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/multi-language" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/multi-language" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Languages
               </Link>
-              <Link href="/user-profiles" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/user-profiles" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Profiles
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -406,7 +414,7 @@ const SEOOptimizationPage: NextPage = () => {
               <button
                 key={tab.id}
                 onClick={() => setSelectedTab(tab.id as any)}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                className={`flex items-center space-x-2 px-4 py-4 rounded-md text-sm font-medium transition-all duration-200 ${
                   selectedTab === tab.id
                     ? 'bg-purple-600 text-white'
                     : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -473,7 +481,7 @@ const SEOOptimizationPage: NextPage = () => {
               <div className="space-y-4">
                 {seoData.suggestions.map((suggestion, index) => (
                   <div key={index} className="flex items-start space-x-4 p-4 bg-white/5 rounded-lg">
-                    <div className={`px-3 py-1 rounded-full text-xs font-medium ${getSuggestionColor(suggestion.type)}`}>
+                    <div className={`px-3 py-3 rounded-full text-xs font-medium ${getSuggestionColor(suggestion.type)}`}>
                       {suggestion.type.toUpperCase()}
                     </div>
                     <div className="flex-1">
@@ -551,7 +559,7 @@ const SEOOptimizationPage: NextPage = () => {
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <h4 className="text-white font-semibold mb-2">{meta.page}</h4>
-                        <div className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${getScoreBg(meta.score)}`}>
+                        <div className={`inline-block px-3 py-3 rounded-full text-sm font-medium ${getScoreBg(meta.score)}`}>
                           Score: {meta.score}/100
                         </div>
                       </div>
@@ -572,7 +580,7 @@ const SEOOptimizationPage: NextPage = () => {
                         <h5 className="text-sm font-medium text-gray-400 mb-1">Keywords</h5>
                         <div className="flex flex-wrap gap-2">
                           {meta.keywords.map((keyword, idx) => (
-                            <span key={idx} className="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">
+                            <span key={idx} className="text-xs bg-purple-500/20 text-purple-300 px-4 py-3 rounded">
                               {keyword}
                             </span>
                           ))}
@@ -780,7 +788,13 @@ const SEOOptimizationPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default SEOOptimizationPage 

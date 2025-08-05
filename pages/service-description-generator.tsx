@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState } from 'react';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 
 interface ServiceFormData {
@@ -106,6 +107,12 @@ export default function ServiceDescriptionGenerator() {
   };
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -117,7 +124,8 @@ export default function ServiceDescriptionGenerator() {
       <Head>
         <title>Service Description Generator - Bolt.new</title>
         <meta name="description" content="Generate professional service descriptions using AI" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
@@ -164,7 +172,7 @@ export default function ServiceDescriptionGenerator() {
                     value={formData.title}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="e.g., Professional Web Development Services"
                   />
                 </div>
@@ -180,7 +188,7 @@ export default function ServiceDescriptionGenerator() {
                     onChange={handleInputChange}
                     required
                     rows={3}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="e.g., Responsive design, SEO optimization, 24/7 support"
                   />
                 </div>
@@ -195,7 +203,7 @@ export default function ServiceDescriptionGenerator() {
                     name="targetAudience"
                     value={formData.targetAudience}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="e.g., Small businesses, startups, e-commerce"
                   />
                 </div>
@@ -210,7 +218,7 @@ export default function ServiceDescriptionGenerator() {
                     name="industry"
                     value={formData.industry}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="e.g., Technology, Healthcare, Finance"
                   />
                 </div>
@@ -225,7 +233,7 @@ export default function ServiceDescriptionGenerator() {
                     name="pricing"
                     value={formData.pricing}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="e.g., Hourly rates, project-based, subscription"
                   />
                 </div>
@@ -240,7 +248,7 @@ export default function ServiceDescriptionGenerator() {
                     name="location"
                     value={formData.location}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="e.g., Remote, Local, Worldwide"
                   />
                 </div>
@@ -304,7 +312,7 @@ export default function ServiceDescriptionGenerator() {
                       value={generatedDescription.content}
                       onChange={handleDescriptionChange}
                       rows={12}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-3 py-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   ) : (
                     <div className="bg-gray-50 p-4 rounded-md">
@@ -327,7 +335,7 @@ export default function ServiceDescriptionGenerator() {
                   </div>
                 </div>
               ) : (
-                <div className="text-center py-12">
+                <div className="text-center py-32">
                   <div className="text-gray-400 mb-4">
                     <svg className="mx-auto h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -362,5 +370,11 @@ export default function ServiceDescriptionGenerator() {
         </div>
       </div>
     </div>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+);
 } 

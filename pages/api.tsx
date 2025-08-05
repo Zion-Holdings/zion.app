@@ -1,18 +1,26 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import Link from 'next/link';
 
 const ApiPage: NextPage = () => {
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <>
       <Head>
         <title>API Documentation - Zion</title>
         <meta name="description" content="API documentation and integration guides" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       
       <div className="min-h-screen bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue">
-        <div className="container-responsive py-20">
+        <div className="container-responsive py-40">
           <div className="text-center mb-16">
             <h1 className="text-responsive-4xl font-bold text-high-contrast mb-6">
               API Documentation
@@ -56,7 +64,13 @@ const ApiPage: NextPage = () => {
         </div>
       </div>
     </>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default ApiPage

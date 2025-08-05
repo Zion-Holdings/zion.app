@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -215,6 +216,12 @@ const AIRecommendationEngine: NextPage = () => {
   );
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -227,7 +234,8 @@ const AIRecommendationEngine: NextPage = () => {
         <title>AI Recommendation Engine - Zion</title>
         <meta name="description" content="Intelligent AI-powered recommendation engine that matches you with the perfect services, talents, and equipment based on your specific needs and preferences." />
         <meta name="keywords" content="AI recommendations, intelligent matching, personalized suggestions, marketplace AI, Zion" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -237,13 +245,13 @@ const AIRecommendationEngine: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Marketplace
               </Link>
-              <Link href="/ai-virtual-assistant" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-virtual-assistant" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 AI Assistant
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </div>
@@ -252,7 +260,7 @@ const AIRecommendationEngine: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -378,7 +386,7 @@ const AIRecommendationEngine: NextPage = () => {
                 <button
                   key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  className={`px-4 py-4 rounded-lg text-sm font-medium transition-colors ${
                     selectedCategory === category.id
                       ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                       : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -420,7 +428,7 @@ const AIRecommendationEngine: NextPage = () => {
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {recommendation.tags.map(tag => (
-                    <span key={tag} className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded">
+                    <span key={tag} className="px-4 py-3 bg-purple-500/20 text-purple-300 text-xs rounded">
                       {tag}
                     </span>
                   ))}
@@ -451,7 +459,7 @@ const AIRecommendationEngine: NextPage = () => {
                 {/* Action Button */}
                 <Link
                   href={recommendation.link}
-                  className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-colors text-sm font-medium"
+                  className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-4 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-colors text-sm font-medium"
                 >
                   View Details
                 </Link>
@@ -496,7 +504,13 @@ const AIRecommendationEngine: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIRecommendationEngine 

@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -263,6 +264,12 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
       }
     }, 5000)
 
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
     return () => clearInterval(trackingInterval)
   }, [realTimeTracking])
 
@@ -334,7 +341,8 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
         <title>AI-Powered Autonomous Drone Delivery & Logistics | Zion Tech</title>
         <meta name="description" content="Experience the future of logistics with AI-powered autonomous drone delivery. Real-time tracking, intelligent route optimization, and seamless marketplace integration." />
         <meta name="keywords" content="AI drone delivery, autonomous logistics, drone fleet management, real-time tracking, route optimization, marketplace delivery" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <header className="relative z-10">
@@ -363,7 +371,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
               
               <button
                 onClick={() => setRealTimeTracking(!realTimeTracking)}
-                className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+                className={`px-4 py-4 rounded-lg font-medium transition-all duration-200 ${
                   realTimeTracking 
                     ? 'bg-green-600 text-white hover:bg-green-700' 
                     : 'bg-gray-600 text-white hover:bg-gray-700'
@@ -394,7 +402,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-md font-medium transition-all duration-200 ${
+                  className={`flex items-center space-x-2 px-4 py-4 rounded-md font-medium transition-all duration-200 ${
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
                       : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
@@ -450,14 +458,14 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-lg font-semibold text-white">Live Fleet Tracking</h3>
                     <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse md:animate-pulse"></div>
                       <span className="text-green-400 text-sm">Live</span>
                     </div>
                   </div>
                   
                   <div 
                     ref={mapRef}
-                    className="w-full h-64 bg-gray-900 rounded-lg border border-gray-600 flex items-center justify-center"
+                    className="w-full h-124 bg-gray-900 rounded-lg border border-gray-600 flex items-center justify-center"
                   >
                     <div className="text-center">
                       <div className="text-4xl mb-2">🗺️</div>
@@ -497,7 +505,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <h2 className="text-2xl font-bold text-white">Drone Fleet Management</h2>
-                  <button className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200">
+                  <button className="px-4 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200">
                     Add New Drone
                   </button>
                 </div>
@@ -515,7 +523,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                             <p className="text-gray-400 text-sm">ID: {drone.id}</p>
                           </div>
                         </div>
-                        <div className={`px-3 py-1 rounded-full text-xs font-medium ${getDroneStatusColor(drone.status)}`}>
+                        <div className={`px-3 py-3 rounded-full text-xs font-medium ${getDroneStatusColor(drone.status)}`}>
                           {drone.status}
                         </div>
                       </div>
@@ -562,13 +570,13 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                       
                       <div className="mt-4 pt-4 border-t border-gray-700">
                         <div className="flex space-x-2">
-                          <button className="flex-1 px-3 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors">
+                          <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors">
                             Deploy
                           </button>
-                          <button className="flex-1 px-3 py-2 bg-gray-600 text-white rounded-lg text-sm hover:bg-gray-700 transition-colors">
+                          <button className="flex-1 px-3 py-4 bg-gray-600 text-white rounded-lg text-sm hover:bg-gray-700 transition-colors">
                             Details
                           </button>
-                          <button className="flex-1 px-3 py-2 bg-yellow-600 text-white rounded-lg text-sm hover:bg-yellow-700 transition-colors">
+                          <button className="flex-1 px-3 py-4 bg-yellow-1200 text-white rounded-lg text-sm hover:bg-yellow-700 transition-colors">
                             Maintain
                           </button>
                         </div>
@@ -584,7 +592,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <h2 className="text-2xl font-bold text-white">Delivery Routes</h2>
-                  <button className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200">
+                  <button className="px-4 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200">
                     Create Route
                   </button>
                 </div>
@@ -603,10 +611,10 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                           </div>
                         </div>
                         <div className="flex items-center space-x-3">
-                          <div className={`px-3 py-1 rounded-full text-xs font-medium ${getPriorityColor(route.priority)} text-white`}>
+                          <div className={`px-3 py-3 rounded-full text-xs font-medium ${getPriorityColor(route.priority)} text-white`}>
                             {route.priority}
                           </div>
-                          <div className={`px-3 py-1 rounded-full text-xs font-medium ${
+                          <div className={`px-3 py-3 rounded-full text-xs font-medium ${
                             route.status === 'completed' ? 'bg-green-500' :
                             route.status === 'in-progress' ? 'bg-blue-500' :
                             route.status === 'failed' ? 'bg-red-500' : 'bg-yellow-500'
@@ -640,14 +648,14 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                           <button 
                             onClick={() => scheduleDelivery(route)}
                             disabled={isLoading}
-                            className="flex-1 px-3 py-2 bg-green-600 text-white rounded-lg text-sm hover:bg-green-700 transition-colors disabled:opacity-50"
+                            className="flex-1 px-3 py-4 bg-green-600 text-white rounded-lg text-sm hover:bg-green-700 transition-colors disabled:opacity-50"
                           >
                             {isLoading ? 'Scheduling...' : 'Schedule Delivery'}
                           </button>
-                          <button className="flex-1 px-3 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors">
+                          <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors">
                             Track Route
                           </button>
-                          <button className="flex-1 px-3 py-2 bg-gray-600 text-white rounded-lg text-sm hover:bg-gray-700 transition-colors">
+                          <button className="flex-1 px-3 py-4 bg-gray-600 text-white rounded-lg text-sm hover:bg-gray-700 transition-colors">
                             Details
                           </button>
                         </div>
@@ -663,7 +671,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <h2 className="text-2xl font-bold text-white">Logistics Hubs</h2>
-                  <button className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200">
+                  <button className="px-4 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200">
                     Add Hub
                   </button>
                 </div>
@@ -711,13 +719,13 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                       
                       <div className="mt-4 pt-4 border-t border-gray-700">
                         <div className="flex space-x-2">
-                          <button className="flex-1 px-3 py-2 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors">
+                          <button className="flex-1 px-3 py-4 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-700 transition-colors">
                             Manage
                           </button>
-                          <button className="flex-1 px-3 py-2 bg-green-600 text-white rounded-lg text-sm hover:bg-green-700 transition-colors">
+                          <button className="flex-1 px-3 py-4 bg-green-600 text-white rounded-lg text-sm hover:bg-green-700 transition-colors">
                             Inventory
                           </button>
-                          <button className="flex-1 px-3 py-2 bg-purple-600 text-white rounded-lg text-sm hover:bg-purple-700 transition-colors">
+                          <button className="flex-1 px-3 py-4 bg-purple-600 text-white rounded-lg text-sm hover:bg-purple-700 transition-colors">
                             Contact
                           </button>
                         </div>
@@ -768,7 +776,7 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
                       <div key={restriction.id} className="p-3 bg-gray-700/50 rounded-lg">
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-white font-medium">{restriction.type}</span>
-                          <div className={`px-2 py-1 rounded text-xs ${
+                          <div className={`px-4 py-3 rounded text-xs ${
                             restriction.severity === 'critical' ? 'bg-red-500' :
                             restriction.severity === 'high' ? 'bg-orange-500' :
                             restriction.severity === 'medium' ? 'bg-yellow-500' : 'bg-green-500'
@@ -896,7 +904,13 @@ const AIPoweredAutonomousDroneDeliveryLogistics: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredAutonomousDroneDeliveryLogistics 

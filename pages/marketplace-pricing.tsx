@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -299,6 +300,12 @@ const MarketplacePricingPage: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -311,7 +318,8 @@ const MarketplacePricingPage: NextPage = () => {
         <title>Marketplace Pricing & Commission System - Zion Marketplace</title>
         <meta name="description" content="Comprehensive marketplace pricing and commission system. Transparent fee structure, revenue sharing, and tiered pricing for marketplace participants." />
         <meta name="keywords" content="marketplace pricing, commission system, revenue sharing, tiered pricing, marketplace fees" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -321,13 +329,13 @@ const MarketplacePricingPage: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <nav className="flex items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/invoice-billing" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/invoice-billing" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Billing
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </nav>
@@ -336,7 +344,7 @@ const MarketplacePricingPage: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -408,7 +416,7 @@ const MarketplacePricingPage: NextPage = () => {
             <div className="bg-white/10 rounded-lg p-1">
               <button
                 onClick={() => setSelectedPeriod('monthly')}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-4 py-4 rounded-md text-sm font-medium transition-colors ${
                   selectedPeriod === 'monthly'
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                     : 'text-gray-300 hover:text-white'
@@ -418,7 +426,7 @@ const MarketplacePricingPage: NextPage = () => {
               </button>
               <button
                 onClick={() => setSelectedPeriod('yearly')}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-4 py-4 rounded-md text-sm font-medium transition-colors ${
                   selectedPeriod === 'yearly'
                     ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                     : 'text-gray-300 hover:text-white'
@@ -442,7 +450,7 @@ const MarketplacePricingPage: NextPage = () => {
                 }`}>
                   {tier.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-3 rounded-full text-sm font-medium">
                         Most Popular
                       </span>
                     </div>
@@ -527,7 +535,7 @@ const MarketplacePricingPage: NextPage = () => {
                       <h3 className="text-xl font-semibold text-white mb-2">{structure.category}</h3>
                       <p className="text-gray-300">Base Commission Rate: {formatPercentage(structure.baseRate)}</p>
                     </div>
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getTierColor('premium')}`}>
+                    <span className={`px-3 py-3 rounded-full text-xs font-medium border ${getTierColor('premium')}`}>
                       Active
                     </span>
                   </div>
@@ -621,7 +629,7 @@ const MarketplacePricingPage: NextPage = () => {
                         <td className="text-white py-3 px-6">{formatCurrency(transaction.platformFee)}</td>
                         <td className="text-white py-3 px-6">{formatCurrency(transaction.netAmount)}</td>
                         <td className="py-3 px-6">
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor(transaction.status)}`}>
+                          <span className={`px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(transaction.status)}`}>
                             {transaction.status.toUpperCase()}
                           </span>
                         </td>
@@ -698,7 +706,7 @@ const MarketplacePricingPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Start Earning Today
@@ -765,7 +773,13 @@ const MarketplacePricingPage: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default MarketplacePricingPage 

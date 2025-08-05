@@ -1,10 +1,17 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import Link from 'next/link';
 import { Eye, Volume2, MousePointer, Smartphone, Monitor, Globe } from 'lucide-react';
 
 const Accessibility: NextPage = () => {
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -16,7 +23,8 @@ const Accessibility: NextPage = () => {
       <Head>
         <title>Accessibility - Zion</title>
         <meta name="description" content="Zion's accessibility features and commitment to making our AI-powered marketplace accessible to all users." />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -28,13 +36,13 @@ const Accessibility: NextPage = () => {
               </Link>
             </div>
             <div className="flex items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Marketplace
               </Link>
-              <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/about" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 About
               </Link>
-              <Link href="/contact" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/contact" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Contact
               </Link>
             </div>
@@ -43,7 +51,7 @@ const Accessibility: NextPage = () => {
       </nav>
 
       {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-40">
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-white mb-6">
             Accessibility at <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
@@ -273,8 +281,32 @@ const Accessibility: NextPage = () => {
           </div>
         </div>
       </div>
-    </div>
-  )
+    
+        {/* Mobile Navigation */}
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
+          <div className="flex justify-around items-center py-2">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <Home className="w-5 h-5" />
+              <span className="text-xs">Home</span>
+            </button>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <Search className="w-5 h-5" />
+              <span className="text-xs">Search</span>
+            </button>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <User className="w-5 h-5" />
+              <span className="text-xs">Profile</span>
+            </button>
+          </div>
+        </div>
+      </div>
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default Accessibility 

@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState } from 'react';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { sanitizeHtml } from '../utils/sanitizeHtml';
 
@@ -96,11 +97,18 @@ const ContractGenerator = () => {
   };
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <>
       <Head>
         <title>AI Contract Generator - Zion Marketplace</title>
         <meta name="description" content="Generate professional contracts and legal documents with AI assistance" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <div className="relative z-10 container-responsive py-8">
         
@@ -125,7 +133,7 @@ const ContractGenerator = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Input Form */}
             <div className="space-y-8">
@@ -350,13 +358,13 @@ const ContractGenerator = () => {
                     <div className="flex space-x-3">
                       <button
                         onClick={copyToClipboard}
-                        className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
+                        className="bg-green-600 text-white px-4 py-4 rounded-lg hover:bg-green-700 transition-colors"
                       >
                         Copy
                       </button>
                       <button
                         onClick={downloadContract}
-                        className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                        className="bg-blue-600 text-white px-4 py-4 rounded-lg hover:bg-blue-700 transition-colors"
                       >
                         Download
                       </button>
@@ -410,7 +418,13 @@ const ContractGenerator = () => {
         </div>
       </div>
     </>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+);
 };
 
 export default ContractGenerator; 

@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -610,6 +611,12 @@ const AIPoweredRoboticsPage: NextPage = () => {
 
   if (loading) {
     return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -620,7 +627,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
       
         <div className="text-center">
           <div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg">
-            <svg className="animate-spin -ml-1 mr-3 h-6 w-6 text-purple-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <svg className="animate-spin -ml-1 mr-3 h-12 w-12 text-purple-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
@@ -638,7 +645,8 @@ const AIPoweredRoboticsPage: NextPage = () => {
         <meta name="description" content="Intelligent robot control, automation, sensor integration, and AI-driven robotics optimization" />
         <meta name="keywords" content="AI robotics, robot control, automation, sensor integration, Zion" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
@@ -653,13 +661,13 @@ const AIPoweredRoboticsPage: NextPage = () => {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/ai-powered-iot" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/ai-powered-iot" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 IoT
               </Link>
-              <Link href="/ai-powered-blockchain" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/ai-powered-blockchain" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Blockchain
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -692,7 +700,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
               <button
                 key={tab.id}
                 onClick={() => setSelectedView(tab.id as any)}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                className={`flex items-center space-x-2 px-4 py-4 rounded-md text-sm font-medium transition-all duration-200 ${
                   selectedView === tab.id
                     ? 'bg-purple-600 text-white'
                     : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -745,11 +753,11 @@ const AIPoweredRoboticsPage: NextPage = () => {
                     </div>
                   </div>
                   <div className="text-right">
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(robot.status)}`}>
+                    <span className={`px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(robot.status)}`}>
                       {robot.status.toUpperCase()}
                     </span>
                     <div className="mt-2">
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${robot.aiEnabled ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${robot.aiEnabled ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
                         {robot.aiEnabled ? 'AI ENABLED' : 'AI DISABLED'}
                       </span>
                     </div>
@@ -794,7 +802,7 @@ const AIPoweredRoboticsPage: NextPage = () => {
                     {robot.sensors.map((sensor, index) => (
                       <div key={index} className="flex items-center justify-between text-xs">
                         <span className="text-gray-300">{sensor.type}</span>
-                        <span className={`px-2 py-1 rounded text-xs ${sensor.status === 'active' ? 'text-green-400 bg-green-500/20' : sensor.status === 'error' ? 'text-red-400 bg-red-500/20' : 'text-gray-400 bg-gray-500/20'}`}>
+                        <span className={`px-4 py-3 rounded text-xs ${sensor.status === 'active' ? 'text-green-400 bg-green-500/20' : sensor.status === 'error' ? 'text-red-400 bg-red-500/20' : 'text-gray-400 bg-gray-500/20'}`}>
                           {sensor.status}
                         </span>
                       </div>
@@ -808,10 +816,10 @@ const AIPoweredRoboticsPage: NextPage = () => {
                 </div>
 
                 <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
                     Control Robot
                   </button>
-                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
                     Monitor
                   </button>
                 </div>
@@ -834,11 +842,11 @@ const AIPoweredRoboticsPage: NextPage = () => {
                     </div>
                   </div>
                   <div className="text-right">
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${getTaskStatusColor(task.status)}`}>
+                    <span className={`px-3 py-3 rounded-full text-xs font-medium ${getTaskStatusColor(task.status)}`}>
                       {task.status.toUpperCase()}
                     </span>
                     <div className="mt-2">
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${task.aiAssisted ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${task.aiAssisted ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
                         {task.aiAssisted ? 'AI ASSISTED' : 'MANUAL'}
                       </span>
                     </div>
@@ -896,10 +904,10 @@ const AIPoweredRoboticsPage: NextPage = () => {
                 </div>
 
                 <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
                     View Details
                   </button>
-                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
                     {task.status === 'running' ? 'Pause' : 'Start'}
                   </button>
                 </div>
@@ -919,11 +927,11 @@ const AIPoweredRoboticsPage: NextPage = () => {
                     <p className="text-gray-300 text-sm">{automation.description}</p>
                   </div>
                   <div className="text-right">
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${getAutomationStatusColor(automation.status)}`}>
+                    <span className={`px-3 py-3 rounded-full text-xs font-medium ${getAutomationStatusColor(automation.status)}`}>
                       {automation.status.toUpperCase()}
                     </span>
                     <div className="mt-2">
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${automation.aiOptimized ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${automation.aiOptimized ? 'text-green-400 bg-green-500/20' : 'text-red-400 bg-red-500/20'}`}>
                         {automation.aiOptimized ? 'AI OPTIMIZED' : 'MANUAL'}
                       </span>
                     </div>
@@ -977,10 +985,10 @@ const AIPoweredRoboticsPage: NextPage = () => {
                 </div>
 
                 <div className="flex space-x-3">
-                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                  <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
                     View Logs
                   </button>
-                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
                     Edit Automation
                   </button>
                 </div>
@@ -1011,7 +1019,13 @@ const AIPoweredRoboticsPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredRoboticsPage 

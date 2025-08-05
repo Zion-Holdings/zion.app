@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -30,11 +31,18 @@ export default function ContributeTranslations() {
   };
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <>
       <Head>
         <title>Contribute Translations - Zion Marketplace</title>
         <meta name="description" content="Help translate Zion Marketplace and make it accessible to everyone." />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -57,7 +65,7 @@ export default function ContributeTranslations() {
                   name="language"
                   value={form.language}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded-lg bg-black/20 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-4 rounded-lg bg-black/20 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                   required
                 >
                   <option value="">Select a language</option>
@@ -75,7 +83,7 @@ export default function ContributeTranslations() {
                   value={form.key}
                   onChange={handleChange}
                   placeholder="e.g. welcome, marketplace, services"
-                  className="w-full px-4 py-2 rounded-lg bg-black/20 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-4 rounded-lg bg-black/20 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                   required
                 />
               </div>
@@ -88,7 +96,7 @@ export default function ContributeTranslations() {
                   value={form.translation}
                   onChange={handleChange}
                   placeholder="Enter your translation here"
-                  className="w-full px-4 py-2 rounded-lg bg-black/20 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-4 rounded-lg bg-black/20 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                   required
                 />
               </div>
@@ -101,5 +109,11 @@ export default function ContributeTranslations() {
         </div>
       </div>
     </>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+);
 }

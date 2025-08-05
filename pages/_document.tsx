@@ -1,7 +1,12 @@
-import { Html, Head, Main, NextScript } from 'next/document';
+import { Html, Head, Main, NextScript } from 'next/document';import ModernLayout from '../components/layout/ModernLayout'
+
 
 export default function Document() {
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <Html lang="en">
       <Head>
         <meta
@@ -18,5 +23,9 @@ export default function Document() {
         <NextScript />
       </body>
     </Html>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+)
 } 

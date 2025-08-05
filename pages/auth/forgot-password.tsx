@@ -1,17 +1,23 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import Link from 'next/link';
 import AuthLayout from '../../components/layout/AuthLayout';
 
 const ForgotPassword: NextPage = () => {
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <AuthLayout>
       <Head>
         <title>Forgot Password - Zion</title>
         <meta name="description" content="Reset your Zion account password." />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
-      <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8 py-40">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-4">
             Reset Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Password</span>
@@ -52,7 +58,11 @@ const ForgotPassword: NextPage = () => {
         </div>
       </div>
     </AuthLayout>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default ForgotPassword 

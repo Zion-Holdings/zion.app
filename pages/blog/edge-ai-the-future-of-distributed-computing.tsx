@@ -1,14 +1,20 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import Link from 'next/link';
 
 const EdgeAiTheFutureOfDistributedComputingPage: NextPage = () => {
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Edge AI: The Future of Distributed Computing - Zion Tech Blog</title>
         <meta name="description" content="Learn about edge ai: the future of distributed computing and its impact on modern business technology." />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,7 +31,7 @@ const EdgeAiTheFutureOfDistributedComputingPage: NextPage = () => {
       </nav>
 
       <main className="flex-1">
-        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
               Edge AI: The Future of Distributed Computing
@@ -52,7 +58,11 @@ const EdgeAiTheFutureOfDistributedComputingPage: NextPage = () => {
         </article>
       </main>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default EdgeAiTheFutureOfDistributedComputingPage

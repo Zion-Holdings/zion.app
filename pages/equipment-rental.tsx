@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -317,6 +318,12 @@ const EquipmentRentalPage: NextPage = () => {
   const stats = getStats()
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -329,7 +336,8 @@ const EquipmentRentalPage: NextPage = () => {
         <title>Equipment Rental & Management - Zion Marketplace</title>
         <meta name="description" content="Comprehensive equipment rental and management system. Rent professional equipment, track availability, and manage maintenance schedules." />
         <meta name="keywords" content="equipment rental, professional equipment, availability tracking, maintenance management, marketplace rentals" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -339,13 +347,13 @@ const EquipmentRentalPage: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <nav className="flex items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/project-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/project-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Projects
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </nav>
@@ -354,7 +362,7 @@ const EquipmentRentalPage: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400">
@@ -426,7 +434,7 @@ const EquipmentRentalPage: NextPage = () => {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500"
             >
               <option value="all">All Categories</option>
               <option value="Photography">Photography</option>
@@ -438,7 +446,7 @@ const EquipmentRentalPage: NextPage = () => {
             <select
               value={filterAvailability}
               onChange={(e) => setFilterAvailability(e.target.value)}
-              className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500"
             >
               <option value="all">All Availability</option>
               <option value="available">Available</option>
@@ -473,11 +481,11 @@ const EquipmentRentalPage: NextPage = () => {
                         <p className="text-gray-300 text-sm">{item.category}</p>
                       </div>
                       <div className="text-right">
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getAvailabilityColor(item.availability)}`}>
+                        <span className={`px-3 py-3 rounded-full text-xs font-medium border ${getAvailabilityColor(item.availability)}`}>
                           {item.availability.toUpperCase()}
                         </span>
                         <div className="mt-2">
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getConditionColor(item.condition)}`}>
+                          <span className={`px-3 py-3 rounded-full text-xs font-medium border ${getConditionColor(item.condition)}`}>
                             {item.condition.toUpperCase()}
                           </span>
                         </div>
@@ -513,7 +521,7 @@ const EquipmentRentalPage: NextPage = () => {
                     <span className="text-gray-300 text-sm">Features:</span>
                     <div className="flex flex-wrap gap-1 mt-1">
                       {item.specifications.features.slice(0, 3).map((feature, index) => (
-                        <span key={index} className="px-2 py-1 bg-white/10 rounded text-xs text-white">
+                        <span key={index} className="px-4 py-3 bg-white/10 rounded text-xs text-white">
                           {feature}
                         </span>
                       ))}
@@ -522,11 +530,11 @@ const EquipmentRentalPage: NextPage = () => {
                   
                   <div className="flex gap-2">
                     {item.availability === 'available' && (
-                      <button className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-3 py-2 rounded text-sm transition-colors">
+                      <button className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-3 py-4 rounded text-sm transition-colors">
                         Rent Now
                       </button>
                     )}
-                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors">
                       View Details
                     </button>
                   </div>
@@ -564,12 +572,12 @@ const EquipmentRentalPage: NextPage = () => {
                         <td className="text-white py-3 px-6">{rental.totalDays} days</td>
                         <td className="text-white py-3 px-6">{formatCurrency(rental.totalCost)}</td>
                         <td className="py-3 px-6">
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor(rental.status)}`}>
+                          <span className={`px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(rental.status)}`}>
                             {rental.status.toUpperCase()}
                           </span>
                         </td>
                         <td className="py-3 px-6">
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor(rental.paymentStatus)}`}>
+                          <span className={`px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(rental.paymentStatus)}`}>
                             {rental.paymentStatus.toUpperCase()}
                           </span>
                         </td>
@@ -600,7 +608,7 @@ const EquipmentRentalPage: NextPage = () => {
                       <p className="text-gray-300 text-sm">{record.description}</p>
                     </div>
                     <div className="text-right">
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor(record.status)}`}>
+                      <span className={`px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(record.status)}`}>
                         {record.status.toUpperCase()}
                       </span>
                       <div className="mt-2">
@@ -633,7 +641,7 @@ const EquipmentRentalPage: NextPage = () => {
                       <span className="text-gray-300 text-sm">Parts Used:</span>
                       <div className="flex flex-wrap gap-1 mt-1">
                         {record.parts.map((part, index) => (
-                          <span key={index} className="px-2 py-1 bg-white/10 rounded text-xs text-white">
+                          <span key={index} className="px-4 py-3 bg-white/10 rounded text-xs text-white">
                             {part}
                           </span>
                         ))}
@@ -649,10 +657,10 @@ const EquipmentRentalPage: NextPage = () => {
                   )}
                   
                   <div className="flex gap-2">
-                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors">
                       View Details
                     </button>
-                    <button className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-3 py-4 rounded text-sm transition-colors">
                       Schedule Maintenance
                     </button>
                   </div>
@@ -718,7 +726,7 @@ const EquipmentRentalPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-orange-900/50 to-red-900/50 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Rent Professional Equipment Today
@@ -785,7 +793,13 @@ const EquipmentRentalPage: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default EquipmentRentalPage 

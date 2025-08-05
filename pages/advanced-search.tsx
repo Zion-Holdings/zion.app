@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -236,7 +237,13 @@ const AdvancedSearchPage: NextPage = () => {
     filtered.sort((a, b) => {
       switch (sortBy) {
         case 'price':
-          return (a.price || 0) - (b.price || 0);
+          return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (a.price || 0) - (b.price || 0);
         case 'rating':
           return (b.rating || 0) - (a.rating || 0);
         case 'date':
@@ -307,7 +314,8 @@ const AdvancedSearchPage: NextPage = () => {
         <meta name="description" content="Advanced search and filter system for finding services, talents, equipment, and products on Zion marketplace" />
         <meta name="keywords" content="advanced search, marketplace search, filter, Zion" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
@@ -322,19 +330,19 @@ const AdvancedSearchPage: NextPage = () => {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Services
               </Link>
-              <Link href="/equipment-rental" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/equipment-rental" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Rent Equipment
               </Link>
-              <Link href="/payment-processing" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/payment-processing" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Payments
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -505,7 +513,7 @@ const AdvancedSearchPage: NextPage = () => {
                           handleFilterChange('tags', [...filters.tags, tag]);
                         }
                       }}
-                      className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+                      className={`px-3 py-3 rounded-full text-xs font-medium transition-colors ${
                         filters.tags.includes(tag)
                           ? 'bg-purple-500 text-white'
                           : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -572,9 +580,9 @@ const AdvancedSearchPage: NextPage = () => {
 
             {/* Results Grid/List */}
             {loading ? (
-              <div className="text-center py-12">
+              <div className="text-center py-32">
                 <div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg">
-                  <svg className="animate-spin -ml-1 mr-3 h-6 w-6 text-purple-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <svg className="animate-spin -ml-1 mr-3 h-12 w-12 text-purple-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
@@ -582,7 +590,7 @@ const AdvancedSearchPage: NextPage = () => {
                 </div>
               </div>
             ) : filteredResults.length === 0 ? (
-              <div className="text-center py-12">
+              <div className="text-center py-32">
                 <div className="text-6xl mb-4">🔍</div>
                 <h3 className="text-xl font-semibold text-white mb-2">No results found</h3>
                 <p className="text-gray-400">Try adjusting your search terms or filters</p>
@@ -596,14 +604,14 @@ const AdvancedSearchPage: NextPage = () => {
                         <div className="text-2xl">{getTypeIcon(result.type)}</div>
                         <div>
                           <h3 className="text-lg font-semibold text-white">{result.title}</h3>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getTypeColor(result.type)}`}>
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium border ${getTypeColor(result.type)}`}>
                             {result.type.charAt(0).toUpperCase() + result.type.slice(1)}
                           </span>
                         </div>
                       </div>
                       <div className="flex items-center space-x-2">
                         {result.featured && (
-                          <span className="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded border border-yellow-500/30">
+                          <span className="text-xs bg-yellow-500/20 text-yellow-300 px-4 py-3 rounded border border-yellow-500/30">
                             Featured
                           </span>
                         )}
@@ -639,17 +647,17 @@ const AdvancedSearchPage: NextPage = () => {
 
                     <div className="flex flex-wrap gap-2 mb-4">
                       {result.tags.slice(0, 3).map((tag) => (
-                        <span key={tag} className="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">
+                        <span key={tag} className="text-xs bg-purple-500/20 text-purple-300 px-4 py-3 rounded">
                           {tag}
                         </span>
                       ))}
                     </div>
 
                     <div className="flex space-x-3">
-                      <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
+                      <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105">
                         View Details
                       </button>
-                      <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-2 rounded-lg font-semibold transition-all duration-300 backdrop-blur-sm">
+                      <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg font-semibold transition-all duration-300 backdrop-blur-sm">
                         Contact
                       </button>
                     </div>
@@ -681,7 +689,13 @@ const AdvancedSearchPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AdvancedSearchPage 

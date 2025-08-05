@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -349,6 +350,12 @@ const DisputeResolutionPage: NextPage = () => {
   const stats = getDisputeStats()
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -361,7 +368,8 @@ const DisputeResolutionPage: NextPage = () => {
         <title>Dispute Resolution Center - Zion Marketplace</title>
         <meta name="description" content="Comprehensive dispute resolution center for marketplace conflicts. Professional mediation, arbitration, and fair resolution services." />
         <meta name="keywords" content="dispute resolution, mediation, arbitration, conflict resolution, marketplace disputes" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -371,13 +379,13 @@ const DisputeResolutionPage: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <nav className="flex items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/escrow-services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/escrow-services" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Escrow
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </nav>
@@ -386,7 +394,7 @@ const DisputeResolutionPage: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400">
@@ -462,7 +470,7 @@ const DisputeResolutionPage: NextPage = () => {
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500"
             >
               <option value="all">All Status</option>
               <option value="open">Open</option>
@@ -474,7 +482,7 @@ const DisputeResolutionPage: NextPage = () => {
             <select
               value={filterType}
               onChange={(e) => setFilterType(e.target.value)}
-              className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500"
             >
               <option value="all">All Types</option>
               <option value="payment">Payment</option>
@@ -508,10 +516,10 @@ const DisputeResolutionPage: NextPage = () => {
                       </div>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor(dispute.status)}`}>
+                      <span className={`px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(dispute.status)}`}>
                         {dispute.status.toUpperCase()}
                       </span>
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getPriorityColor(dispute.priority)}`}>
+                      <span className={`px-3 py-3 rounded-full text-xs font-medium border ${getPriorityColor(dispute.priority)}`}>
                         {dispute.priority.toUpperCase()}
                       </span>
                     </div>
@@ -540,10 +548,10 @@ const DisputeResolutionPage: NextPage = () => {
                   </div>
                   
                   <div className="flex gap-2">
-                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors">
                       View Details
                     </button>
-                    <button className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-3 py-4 rounded text-sm transition-colors">
                       Update Status
                     </button>
                   </div>
@@ -565,7 +573,7 @@ const DisputeResolutionPage: NextPage = () => {
                       <h3 className="text-lg font-semibold text-white">{mediator.name}</h3>
                       <p className="text-gray-300 text-sm">Professional Mediator</p>
                     </div>
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium border ${
+                    <span className={`px-3 py-3 rounded-full text-xs font-medium border ${
                       mediator.availability === 'available' 
                         ? 'text-green-400 bg-green-500/20 border-green-500/30'
                         : mediator.availability === 'busy'
@@ -593,7 +601,7 @@ const DisputeResolutionPage: NextPage = () => {
                       <span className="text-gray-300 text-sm">Specializations:</span>
                       <div className="flex flex-wrap gap-1 mt-1">
                         {mediator.specialization.map((spec, index) => (
-                          <span key={index} className="px-2 py-1 bg-white/10 rounded text-xs text-white">
+                          <span key={index} className="px-4 py-3 bg-white/10 rounded text-xs text-white">
                             {spec}
                           </span>
                         ))}
@@ -602,10 +610,10 @@ const DisputeResolutionPage: NextPage = () => {
                   </div>
                   
                   <div className="flex gap-2">
-                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors">
                       View Profile
                     </button>
-                    <button className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-3 py-4 rounded text-sm transition-colors">
                       Request Assignment
                     </button>
                   </div>
@@ -627,7 +635,7 @@ const DisputeResolutionPage: NextPage = () => {
                       <h3 className="text-lg font-semibold text-white">Resolution Proposal</h3>
                       <p className="text-gray-300 text-sm">Dispute: {proposal.disputeId}</p>
                     </div>
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium border ${
+                    <span className={`px-3 py-3 rounded-full text-xs font-medium border ${
                       proposal.status === 'pending' 
                         ? 'text-yellow-400 bg-yellow-500/20 border-yellow-500/30'
                         : proposal.status === 'accepted'
@@ -669,7 +677,7 @@ const DisputeResolutionPage: NextPage = () => {
                       <div key={response.id} className="bg-white/5 rounded p-3">
                         <div className="flex justify-between items-center mb-2">
                           <span className="text-white font-medium">{response.partyId}</span>
-                          <span className={`px-2 py-1 rounded text-xs font-medium ${
+                          <span className={`px-4 py-3 rounded text-xs font-medium ${
                             response.response === 'accept'
                               ? 'text-green-400 bg-green-500/20'
                               : response.response === 'reject'
@@ -688,10 +696,10 @@ const DisputeResolutionPage: NextPage = () => {
                   </div>
                   
                   <div className="flex gap-2 mt-4">
-                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors">
                       View Details
                     </button>
-                    <button className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-3 py-4 rounded text-sm transition-colors">
                       Respond
                     </button>
                   </div>
@@ -715,7 +723,7 @@ const DisputeResolutionPage: NextPage = () => {
                   <p>4. Provide detailed description and supporting evidence</p>
                   <p>5. Choose your preferred resolution method</p>
                 </div>
-                <button className="w-full mt-4 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-4 py-2 rounded text-sm transition-colors">
+                <button className="w-full mt-4 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-4 py-4 rounded text-sm transition-colors">
                   File Dispute
                 </button>
               </div>
@@ -728,7 +736,7 @@ const DisputeResolutionPage: NextPage = () => {
                   <p><strong>Negotiation:</strong> Direct discussion between parties</p>
                   <p><strong>Expert Review:</strong> Technical assessment by specialists</p>
                 </div>
-                <button className="w-full mt-4 bg-white/10 text-white hover:bg-white/20 px-4 py-2 rounded text-sm transition-colors">
+                <button className="w-full mt-4 bg-white/10 text-white hover:bg-white/20 px-4 py-4 rounded text-sm transition-colors">
                   Learn More
                 </button>
               </div>
@@ -742,7 +750,7 @@ const DisputeResolutionPage: NextPage = () => {
                   <p>• Screenshots and documentation</p>
                   <p>• Witness statements</p>
                 </div>
-                <button className="w-full mt-4 bg-white/10 text-white hover:bg-white/20 px-4 py-2 rounded text-sm transition-colors">
+                <button className="w-full mt-4 bg-white/10 text-white hover:bg-white/20 px-4 py-4 rounded text-sm transition-colors">
                   View Guidelines
                 </button>
               </div>
@@ -755,7 +763,7 @@ const DisputeResolutionPage: NextPage = () => {
                   <p>• 92% satisfaction rate from parties</p>
                   <p>• $2.3M in disputes resolved this year</p>
                 </div>
-                <button className="w-full mt-4 bg-white/10 text-white hover:bg-white/20 px-4 py-2 rounded text-sm transition-colors">
+                <button className="w-full mt-4 bg-white/10 text-white hover:bg-white/20 px-4 py-4 rounded text-sm transition-colors">
                   Read Stories
                 </button>
               </div>
@@ -766,7 +774,7 @@ const DisputeResolutionPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-orange-900/50 to-red-900/50 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Fair Resolution for All
@@ -833,7 +841,13 @@ const DisputeResolutionPage: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default DisputeResolutionPage 

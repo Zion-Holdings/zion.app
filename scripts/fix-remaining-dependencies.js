@@ -8,7 +8,7 @@ function fixRemainingDependencies(filePath) {
     let modified = false;
     
     // Fix useEffect hooks with mock dependencies by removing them
-    const useEffectRegex = /useEffect\\(\\(\\) => \\{[\\s\\S]*?\\}, \\[([^\\]]*)\\]\\)/g;
+    const useEffectRegex = /useEffect\(\s*\(\)\s*=>\s*\{[\s\S]*?\},\s*\[([^\]]*)\]\s*\)/g;
     content = content.replace(useEffectRegex, (match, deps) => {
       if (deps.includes('mock')) {
         // Remove all mock dependencies
@@ -18,20 +18,20 @@ function fixRemainingDependencies(filePath) {
         
         if (newDeps !== deps) {
           modified = true;
-          return match.replace(/\\[([^\\]]*)\\]/, `[${newDeps}]`);
+          return match.replace(/\[([^\]]*)\]/, `[${newDeps}]`);
         }
       }
       return match;
     });
     
     // Fix useMemo hooks with missing dependencies
-    const useMemoRegex = /useMemo\\(\\(\\) => ([^,]+), \\[([^\\]]*)\\]\\)/g;
+    const useMemoRegex = /useMemo\(\s*\(\)\s*=>\s*([^,]+),\s*\[([^\]]*)\]\s*\)/g;
     content = content.replace(useMemoRegex, (match, factory, deps) => {
       if (deps.includes('data') && !deps.includes('factory')) {
         // Add factory to dependencies if data is missing
         const newDeps = deps ? `${deps}, factory` : 'factory';
         modified = true;
-        return match.replace(/\\[([^\\]]*)\\]/, `[${newDeps}]`);
+        return match.replace(/\[([^\]]*)\]/, `[${newDeps}]`);
       }
       return match;
     });

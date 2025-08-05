@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -19,6 +20,12 @@ const AIPoweredCustomerSupport: NextPage = () => {
   })
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -31,7 +38,8 @@ const AIPoweredCustomerSupport: NextPage = () => {
         <title>AI-Powered Customer Support System | Zion</title>
         <meta name="description" content="Advanced AI-powered customer support with intelligent chatbots, automated ticket routing, and personalized assistance." />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
@@ -46,13 +54,13 @@ const AIPoweredCustomerSupport: NextPage = () => {
             </div>
             
             <div className="hidden lg:flex items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Services
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -61,7 +69,7 @@ const AIPoweredCustomerSupport: NextPage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20">
+      <section className="py-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -98,7 +106,7 @@ const AIPoweredCustomerSupport: NextPage = () => {
       </section>
 
       {/* Support Dashboard */}
-      <section className="py-20 bg-gradient-to-br from-slate-800/50 to-slate-900/50">
+      <section className="py-40 bg-gradient-to-br from-slate-800/50 to-slate-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -137,7 +145,7 @@ const AIPoweredCustomerSupport: NextPage = () => {
           <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-8 rounded-lg border border-white/10">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-xl font-bold text-white">AI Chatbot Performance</h3>
-              <div className={`px-3 py-1 rounded-full text-sm font-medium ${
+              <div className={`px-3 py-3 rounded-full text-sm font-medium ${
                 chatbot.isActive ? 'bg-green-500/20 text-green-300' : 'bg-red-500/20 text-red-300'
               }`}>
                 {chatbot.isActive ? 'Active' : 'Inactive'}
@@ -162,7 +170,7 @@ const AIPoweredCustomerSupport: NextPage = () => {
       </section>
 
       {/* Features */}
-      <section className="py-20">
+      <section className="py-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -210,7 +218,7 @@ const AIPoweredCustomerSupport: NextPage = () => {
       </section>
 
       {/* Use Cases */}
-      <section className="py-20 bg-gradient-to-br from-slate-800/50 to-slate-900/50">
+      <section className="py-40 bg-gradient-to-br from-slate-800/50 to-slate-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -253,7 +261,7 @@ const AIPoweredCustomerSupport: NextPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-900/50 to-pink-900/50">
+      <section className="py-40 bg-gradient-to-br from-purple-900/50 to-pink-900/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Transform Support?
@@ -273,7 +281,7 @@ const AIPoweredCustomerSupport: NextPage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-12">
+      <footer className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
@@ -315,7 +323,13 @@ const AIPoweredCustomerSupport: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredCustomerSupport 

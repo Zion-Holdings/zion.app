@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -325,6 +326,12 @@ const AIProjectManagementPage: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -336,7 +343,8 @@ const AIProjectManagementPage: NextPage = () => {
       <Head>
         <title>AI Project Management - Zion</title>
         <meta name="description" content="Intelligent project management with AI-powered automation and workflow orchestration" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -346,13 +354,13 @@ const AIProjectManagementPage: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Marketplace
               </Link>
-              <Link href="/investor-matchmaking" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/investor-matchmaking" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Investors
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </div>
@@ -360,7 +368,7 @@ const AIProjectManagementPage: NextPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -396,7 +404,7 @@ const AIProjectManagementPage: NextPage = () => {
         </div>
 
         {isLoading ? (
-          <div className="text-center py-12">
+          <div className="text-center py-32">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 mx-auto"></div>
             <p className="text-gray-400 mt-4">Loading AI insights...</p>
           </div>
@@ -501,7 +509,7 @@ const AIProjectManagementPage: NextPage = () => {
                           <div className="flex items-center space-x-3 mb-2">
                             <h3 className="text-lg font-semibold text-white">{task.title}</h3>
                             {task.aiOptimized && (
-                              <span className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">
+                              <span className="px-4 py-3 bg-purple-500/20 text-purple-300 text-xs rounded-full">
                                 AI Optimized
                               </span>
                             )}
@@ -566,7 +574,7 @@ const AIProjectManagementPage: NextPage = () => {
                         <div className="text-sm font-medium text-gray-400 mb-2">Workflow Steps:</div>
                         {workflow.steps.map((step) => (
                           <div key={step.id} className="flex items-center space-x-3 text-sm">
-                            <span className={`px-2 py-1 rounded-full text-xs ${
+                            <span className={`px-4 py-3 rounded-full text-xs ${
                               step.type === 'ai-powered' ? 'bg-purple-500/20 text-purple-300' :
                               step.type === 'automated' ? 'bg-blue-500/20 text-blue-300' :
                               'bg-gray-500/20 text-gray-300'
@@ -596,7 +604,7 @@ const AIProjectManagementPage: NextPage = () => {
                         <div className="flex-1">
                           <div className="flex items-center space-x-2 mb-2">
                             <h3 className="text-lg font-semibold text-white">{insight.title}</h3>
-                            <span className={`px-2 py-1 rounded-full text-xs ${getInsightColor(insight.type).replace('text-', 'bg-')} ${getInsightColor(insight.type)}`}>
+                            <span className={`px-4 py-3 rounded-full text-xs ${getInsightColor(insight.type).replace('text-', 'bg-')} ${getInsightColor(insight.type)}`}>
                               {insight.impact}
                             </span>
                           </div>
@@ -626,7 +634,13 @@ const AIProjectManagementPage: NextPage = () => {
         )}
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIProjectManagementPage 

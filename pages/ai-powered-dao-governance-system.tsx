@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -325,6 +326,12 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -337,7 +344,8 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
         <title>AI-Powered DAO Governance System | Zion Tech</title>
         <meta name="description" content="Experience decentralized governance with AI-powered DAO system. Community-driven decision making, transparent voting, and automated execution." />
         <meta name="keywords" content="DAO governance, decentralized autonomous organization, blockchain voting, smart contracts, community governance, AI governance" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <header className="relative z-10">
@@ -397,7 +405,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-md font-medium transition-all duration-200 ${
+                  className={`flex items-center space-x-2 px-4 py-4 rounded-md font-medium transition-all duration-200 ${
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                       : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
@@ -503,7 +511,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
                   <h2 className="text-2xl font-bold text-white">DAO Proposals</h2>
-                  <button className="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-200">
+                  <button className="px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-200">
                     Create Proposal
                   </button>
                 </div>
@@ -522,10 +530,10 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
                           </div>
                         </div>
                         <div className="flex items-center space-x-3">
-                          <div className={`px-3 py-1 rounded-full text-xs font-medium ${getProposalStatusColor(proposal.status)}`}>
+                          <div className={`px-3 py-3 rounded-full text-xs font-medium ${getProposalStatusColor(proposal.status)}`}>
                             {proposal.status}
                           </div>
-                          <div className={`px-3 py-1 rounded-full text-xs font-medium ${getCategoryColor(proposal.category)} text-white`}>
+                          <div className={`px-3 py-3 rounded-full text-xs font-medium ${getCategoryColor(proposal.category)} text-white`}>
                             {proposal.category}
                           </div>
                         </div>
@@ -556,14 +564,14 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
                         <button 
                           onClick={() => voteOnProposal(proposal.id, 'for')}
                           disabled={isLoading || proposal.status !== 'active'}
-                          className="flex-1 px-3 py-2 bg-green-600 text-white rounded-lg text-sm hover:bg-green-700 transition-colors disabled:opacity-50"
+                          className="flex-1 px-3 py-4 bg-green-600 text-white rounded-lg text-sm hover:bg-green-700 transition-colors disabled:opacity-50"
                         >
                           Vote For
                         </button>
                         <button 
                           onClick={() => voteOnProposal(proposal.id, 'against')}
                           disabled={isLoading || proposal.status !== 'active'}
-                          className="flex-1 px-3 py-2 bg-red-600 text-white rounded-lg text-sm hover:bg-red-700 transition-colors disabled:opacity-50"
+                          className="flex-1 px-3 py-4 bg-red-600 text-white rounded-lg text-sm hover:bg-red-700 transition-colors disabled:opacity-50"
                         >
                           Vote Against
                         </button>
@@ -571,7 +579,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
                           <button 
                             onClick={() => executeProposal(proposal.id)}
                             disabled={isLoading}
-                            className="flex-1 px-3 py-2 bg-purple-600 text-white rounded-lg text-sm hover:bg-purple-700 transition-colors disabled:opacity-50"
+                            className="flex-1 px-3 py-4 bg-purple-600 text-white rounded-lg text-sm hover:bg-purple-700 transition-colors disabled:opacity-50"
                           >
                             Execute
                           </button>
@@ -680,7 +688,7 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
                       <div className="mt-4 pt-4 border-t border-gray-700">
                         <div className="flex flex-wrap gap-2">
                           {member.badges.map((badge) => (
-                            <span key={badge} className="px-2 py-1 bg-purple-600 text-white text-xs rounded-full">
+                            <span key={badge} className="px-4 py-3 bg-purple-600 text-white text-xs rounded-full">
                               {badge}
                             </span>
                           ))}
@@ -819,7 +827,13 @@ const AIPoweredDAOGovernanceSystem: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredDAOGovernanceSystem 

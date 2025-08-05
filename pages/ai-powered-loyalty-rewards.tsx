@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -461,6 +462,12 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -473,12 +480,13 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
         <title>AI-Powered Loyalty & Rewards | Zion Tech Group</title>
         <meta name="description" content="Earn points, unlock badges, achieve milestones, and redeem rewards with our AI-powered loyalty and gamification system." />
         <meta name="keywords" content="loyalty program, rewards, points, badges, achievements, gamification, marketplace rewards" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               AI-Powered Loyalty & Rewards
@@ -503,9 +511,9 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {isLoading ? (
-          <div className="flex justify-center items-center py-20">
+          <div className="flex justify-center items-center py-40">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
           </div>
         ) : (
@@ -672,7 +680,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                   <div key={badge.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                     <div className="flex items-start justify-between mb-4">
                       <span className="text-4xl">{badge.icon}</span>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getRarityColor(badge.rarity)}`}>
+                      <span className={`px-4 py-3 rounded-full text-xs font-medium ${getRarityColor(badge.rarity)}`}>
                         {badge.rarity}
                       </span>
                     </div>
@@ -683,7 +691,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                     <div className="space-y-3">
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-400">Category:</span>
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getCategoryColor(badge.category)}`}>
+                        <span className={`px-4 py-3 rounded-full text-xs font-medium ${getCategoryColor(badge.category)}`}>
                           {badge.category}
                         </span>
                       </div>
@@ -719,7 +727,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                     <div className="flex items-start justify-between mb-4">
                       <span className="text-4xl">{achievement.icon}</span>
                       {achievement.aiRecommended && (
-                        <span className="px-2 py-1 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300">
+                        <span className="px-4 py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300">
                           AI Recommended
                         </span>
                       )}
@@ -762,7 +770,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                   <div key={reward.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                     <div className="flex items-start justify-between mb-4">
                       <div className="text-3xl">🎁</div>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getRewardTypeColor(reward.type)}`}>
+                      <span className={`px-4 py-3 rounded-full text-xs font-medium ${getRewardTypeColor(reward.type)}`}>
                         {reward.type}
                       </span>
                     </div>
@@ -795,7 +803,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                       )}
                     </div>
                     
-                    <button className={`w-full mt-4 py-2 px-4 rounded-lg font-medium transition-all duration-300 ${
+                    <button className={`w-full mt-4 py-4 px-4 rounded-lg font-medium transition-all duration-300 ${
                       reward.available
                         ? 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white'
                         : 'bg-gray-600 text-gray-400 cursor-not-allowed'
@@ -855,7 +863,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                     <div className="flex items-start justify-between mb-4">
                       <h3 className="text-xl font-semibold text-white">{event.name}</h3>
                       {event.aiOptimized && (
-                        <span className="px-2 py-1 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300">
+                        <span className="px-4 py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300">
                           AI Optimized
                         </span>
                       )}
@@ -889,14 +897,14 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
                       <div className="text-sm font-medium text-gray-400 mb-2">Rewards:</div>
                       <div className="flex space-x-2">
                         {event.rewards.slice(0, 3).map((reward, index) => (
-                          <span key={index} className="px-2 py-1 bg-white/10 rounded-full text-xs text-gray-300">
+                          <span key={index} className="px-4 py-3 bg-white/10 rounded-full text-xs text-gray-300">
                             {reward.name}
                           </span>
                         ))}
                       </div>
                     </div>
                     
-                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                       Join Event
                     </button>
                   </div>
@@ -909,7 +917,7 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Start Earning Rewards?
@@ -930,7 +938,13 @@ const AIPoweredLoyaltyRewardsPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredLoyaltyRewardsPage 

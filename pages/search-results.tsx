@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -27,11 +28,18 @@ export default function SearchResults() {
   };
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <>
       <Head>
         <title>Search Results - Zion Marketplace</title>
         <meta name="description" content="Search results for Zion Marketplace" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -40,7 +48,7 @@ export default function SearchResults() {
           <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
-        <section className="py-20 px-4 max-w-3xl mx-auto">
+        <section className="py-40 px-4 max-w-3xl mx-auto">
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-4xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text text-center">
             Search Results
           </motion.h1>
@@ -64,7 +72,7 @@ export default function SearchResults() {
                     <h2 className="text-2xl font-bold mb-2 text-purple-300">{item.title}</h2>
                     <p className="text-gray-200 mb-2">{item.description}</p>
                   </div>
-                  <Link href={item.link} className="px-6 py-2 rounded-lg bg-purple-700 hover:bg-purple-800 font-semibold transition mt-4 sm:mt-0">View</Link>
+                  <Link href={item.link} className="px-6 py-4 rounded-lg bg-purple-700 hover:bg-purple-800 font-semibold transition mt-4 sm:mt-0">View</Link>
                 </motion.div>
               ))
             )}
@@ -72,5 +80,11 @@ export default function SearchResults() {
         </section>
       </div>
     </>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+);
 }

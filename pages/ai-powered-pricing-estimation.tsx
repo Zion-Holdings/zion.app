@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -500,6 +501,12 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -512,12 +519,13 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
         <title>AI-Powered Pricing & Cost Estimation | Zion Tech Group</title>
         <meta name="description" content="Intelligent pricing analysis, cost breakdowns, budget optimization, and financial planning powered by AI for marketplace projects." />
         <meta name="keywords" content="AI pricing, cost estimation, budget optimization, financial planning, project pricing, market analysis" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               AI-Powered Pricing & Cost Estimation
@@ -542,9 +550,9 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {isLoading ? (
-          <div className="flex justify-center items-center py-20">
+          <div className="flex justify-center items-center py-40">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
           </div>
         ) : (
@@ -594,7 +602,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                       <select
                         value={selectedCategory}
                         onChange={(e) => setSelectedCategory(e.target.value)}
-                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                       >
                         {categories.map(category => (
                           <option key={category} value={category} className="bg-slate-800">
@@ -608,7 +616,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                       <select
                         value={selectedComplexity}
                         onChange={(e) => setSelectedComplexity(e.target.value)}
-                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                       >
                         <option value="all" className="bg-slate-800">All Complexities</option>
                         <option value="simple" className="bg-slate-800">Simple</option>
@@ -622,7 +630,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                       <select
                         value={sortBy}
                         onChange={(e) => setSortBy(e.target.value as any)}
-                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                       >
                         <option value="date" className="bg-slate-800">Date</option>
                         <option value="cost" className="bg-slate-800">Cost</option>
@@ -641,10 +649,10 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                         <div>
                           <h3 className="text-xl font-semibold text-white mb-2">{estimate.projectType}</h3>
                           <div className="flex items-center space-x-2">
-                            <span className="px-2 py-1 rounded-full text-xs font-medium bg-blue-500/20 text-blue-300">
+                            <span className="px-4 py-3 rounded-full text-xs font-medium bg-blue-500/20 text-blue-300">
                               {estimate.category}
                             </span>
-                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${getComplexityColor(estimate.complexity)}`}>
+                            <span className={`px-4 py-3 rounded-full text-xs font-medium ${getComplexityColor(estimate.complexity)}`}>
                               {estimate.complexity.charAt(0).toUpperCase() + estimate.complexity.slice(1)}
                             </span>
                           </div>
@@ -664,7 +672,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                         <div className="text-sm text-gray-400 mb-2">AI-Powered Features:</div>
                         <div className="flex flex-wrap gap-2">
                           {estimate.aiFactors.map((factor, index) => (
-                            <span key={index} className="px-2 py-1 bg-purple-500/20 rounded-full text-xs text-purple-300">
+                            <span key={index} className="px-4 py-3 bg-purple-500/20 rounded-full text-xs text-purple-300">
                               {factor}
                             </span>
                           ))}
@@ -705,10 +713,10 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
 
                       {/* Action Buttons */}
                       <div className="flex space-x-2">
-                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           View Details
                         </button>
-                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           Get Quote
                         </button>
                       </div>
@@ -754,14 +762,14 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
                       <div className="text-sm font-medium text-gray-400 mb-2">Best For:</div>
                       <div className="flex flex-wrap gap-1">
                         {model.bestFor.map((item, index) => (
-                          <span key={index} className="px-2 py-1 bg-blue-500/20 rounded-full text-xs text-blue-300">
+                          <span key={index} className="px-4 py-3 bg-blue-500/20 rounded-full text-xs text-blue-300">
                             {item}
                           </span>
                         ))}
                       </div>
                     </div>
 
-                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                       Learn More
                     </button>
                   </div>
@@ -843,7 +851,7 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Get Accurate Pricing Estimates?
@@ -864,7 +872,13 @@ const AIPoweredPricingEstimationPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredPricingEstimationPage 

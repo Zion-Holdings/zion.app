@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
@@ -182,6 +183,12 @@ const AiVirtualAssistant: NextPage = () => {
 
   const renderMessage = (message: Message) => {
     return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
       <div
         key={message.id}
         className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
@@ -201,7 +208,7 @@ const AiVirtualAssistant: NextPage = () => {
                 <button
                   key={index}
                   onClick={() => handleQuickAction(action.action)}
-                  className="text-left px-4 py-2 text-sm bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-md transition-colors border border-blue-200"
+                  className="text-left px-4 py-4 text-sm bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-md transition-colors border border-blue-200"
                 >
                   {action.label}
                 </button>
@@ -231,7 +238,8 @@ const AiVirtualAssistant: NextPage = () => {
       <Head>
         <title>AI Virtual Assistant - Zion</title>
         <meta name="description" content="Experience Zion's AI-powered virtual assistant. Get intelligent recommendations, expert guidance, and seamless marketplace navigation." />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -241,10 +249,10 @@ const AiVirtualAssistant: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Marketplace
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </div>
@@ -253,7 +261,7 @@ const AiVirtualAssistant: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -292,7 +300,7 @@ const AiVirtualAssistant: NextPage = () => {
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-4 rounded-t-lg">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 </div>
@@ -390,8 +398,32 @@ const AiVirtualAssistant: NextPage = () => {
           </div>
         </div>
       </div>
-    </div>
-  )
+    
+        {/* Mobile Navigation */}
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
+          <div className="flex justify-around items-center py-2">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <Home className="w-5 h-5" />
+              <span className="text-xs">Home</span>
+            </button>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <Search className="w-5 h-5" />
+              <span className="text-xs">Search</span>
+            </button>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <User className="w-5 h-5" />
+              <span className="text-xs">Profile</span>
+            </button>
+          </div>
+        </div>
+      </div>
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AiVirtualAssistant 

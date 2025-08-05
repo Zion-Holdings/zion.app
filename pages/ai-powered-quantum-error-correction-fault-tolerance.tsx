@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -207,6 +208,12 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -219,7 +226,8 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
         <title>AI-Powered Quantum Error Correction & Fault Tolerance | Zion Tech</title>
         <meta name="description" content="Advanced quantum error correction and fault tolerance with AI-powered error correction codes, fault-tolerant operations, and decoherence mitigation." />
         <meta name="keywords" content="quantum error correction, fault tolerance, decoherence mitigation, quantum noise reduction, quantum fault diagnosis" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <header className="relative z-10">
@@ -243,7 +251,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
                 disabled={isErrorCorrection}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
                   isErrorCorrection 
-                    ? 'bg-yellow-600 text-white' 
+                    ? 'bg-yellow-1200 text-white' 
                     : 'bg-red-600 text-white hover:bg-red-700'
                 } disabled:opacity-50`}
               >
@@ -273,7 +281,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-md font-medium transition-all duration-200 ${
+                  className={`flex items-center space-x-2 px-4 py-4 rounded-md font-medium transition-all duration-200 ${
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-red-600 to-orange-600 text-white'
                       : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
@@ -336,7 +344,7 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
                       <div className="text-2xl mb-2">⚡</div>
                       <div className="font-semibold">Fault Tolerance</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-lg text-white hover:from-yellow-700 hover:to-yellow-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-yellow-1200 to-yellow-700 rounded-lg text-white hover:from-yellow-700 hover:to-yellow-1200 transition-all duration-200">
                       <div className="text-2xl mb-2">🌊</div>
                       <div className="font-semibold">Mitigate Decoherence</div>
                     </button>
@@ -640,7 +648,13 @@ const AIPoweredQuantumErrorCorrectionFaultTolerance: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredQuantumErrorCorrectionFaultTolerance 

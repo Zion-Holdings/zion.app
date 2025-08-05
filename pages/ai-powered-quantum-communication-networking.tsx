@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -207,6 +208,12 @@ const AIPoweredQuantumCommunicationNetworking: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -219,7 +226,8 @@ const AIPoweredQuantumCommunicationNetworking: NextPage = () => {
         <title>AI-Powered Quantum Communication & Networking | Zion Tech</title>
         <meta name="description" content="Advanced quantum communication and networking with AI-powered quantum routing, quantum switching, and quantum protocols." />
         <meta name="keywords" content="quantum communication, quantum networking, quantum routing, quantum switching, quantum protocols" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <header className="relative z-10">
@@ -243,7 +251,7 @@ const AIPoweredQuantumCommunicationNetworking: NextPage = () => {
                 disabled={isCommunicating}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
                   isCommunicating 
-                    ? 'bg-yellow-600 text-white' 
+                    ? 'bg-yellow-1200 text-white' 
                     : 'bg-blue-600 text-white hover:bg-blue-700'
                 } disabled:opacity-50`}
               >
@@ -273,7 +281,7 @@ const AIPoweredQuantumCommunicationNetworking: NextPage = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-md font-medium transition-all duration-200 ${
+                  className={`flex items-center space-x-2 px-4 py-4 rounded-md font-medium transition-all duration-200 ${
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'
                       : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
@@ -636,7 +644,13 @@ const AIPoweredQuantumCommunicationNetworking: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredQuantumCommunicationNetworking 

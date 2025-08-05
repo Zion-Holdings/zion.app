@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -371,6 +372,12 @@ const UserProfilesPage: NextPage = () => {
 
   const renderStars = (rating: number) => {
     return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
       <div className="flex items-center">
         {[1, 2, 3, 4, 5].map((star) => (
           <svg
@@ -425,7 +432,7 @@ const UserProfilesPage: NextPage = () => {
       
         <div className="text-center">
           <div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg">
-            <svg className="animate-spin -ml-1 mr-3 h-6 w-6 text-purple-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <svg className="animate-spin -ml-1 mr-3 h-12 w-12 text-purple-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
@@ -443,7 +450,8 @@ const UserProfilesPage: NextPage = () => {
         <meta name="description" content="Comprehensive user profiles with skills, experience, portfolio, and social connections" />
         <meta name="keywords" content="user profiles, skills, experience, portfolio, marketplace profiles, Zion" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
@@ -458,16 +466,16 @@ const UserProfilesPage: NextPage = () => {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/analytics-dashboard" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/analytics-dashboard" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Analytics
               </Link>
-              <Link href="/review-system" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/review-system" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Reviews
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -548,12 +556,12 @@ const UserProfilesPage: NextPage = () => {
                   </div>
                 </div>
                 <div className="flex flex-col items-end space-y-2">
-                  <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getUserTypeColor(profile.userType)}`}>
+                  <span className={`px-4 py-3 rounded-full text-xs font-medium border ${getUserTypeColor(profile.userType)}`}>
                     {profile.userType.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
                   </span>
                   <div className="flex items-center space-x-1">
                     <span className="text-sm">{getAvailabilityIcon(profile.availability)}</span>
-                    <span className={`text-xs px-2 py-1 rounded-full ${getAvailabilityColor(profile.availability)}`}>
+                    <span className={`text-xs px-4 py-3 rounded-full ${getAvailabilityColor(profile.availability)}`}>
                       {profile.availability}
                     </span>
                   </div>
@@ -570,7 +578,7 @@ const UserProfilesPage: NextPage = () => {
                 <h4 className="text-sm font-medium text-white mb-2">Skills</h4>
                 <div className="flex flex-wrap gap-2">
                   {profile.skills.slice(0, 5).map((skill, index) => (
-                    <span key={index} className="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">
+                    <span key={index} className="text-xs bg-purple-500/20 text-purple-300 px-4 py-3 rounded">
                       {skill}
                     </span>
                   ))}
@@ -613,11 +621,11 @@ const UserProfilesPage: NextPage = () => {
               <div className="flex space-x-3">
                 <button
                   onClick={() => setSelectedProfile(profile)}
-                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
+                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
                 >
                   View Profile
                 </button>
-                <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
                   Contact
                 </button>
               </div>
@@ -685,7 +693,7 @@ const UserProfilesPage: NextPage = () => {
                   <h3 className="text-lg font-semibold text-white mb-3">Skills</h3>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {selectedProfile.skills.map((skill, index) => (
-                      <span key={index} className="text-sm bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full">
+                      <span key={index} className="text-sm bg-purple-500/20 text-purple-300 px-3 py-3 rounded-full">
                         {skill}
                       </span>
                     ))}
@@ -730,7 +738,7 @@ const UserProfilesPage: NextPage = () => {
                       <p className="text-gray-300 text-sm mb-3">{item.description}</p>
                       <div className="flex flex-wrap gap-1 mb-3">
                         {item.technologies.map((tech, index) => (
-                          <span key={index} className="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded">
+                          <span key={index} className="text-xs bg-blue-500/20 text-blue-300 px-4 py-3 rounded">
                             {tech}
                           </span>
                         ))}
@@ -807,7 +815,13 @@ const UserProfilesPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default UserProfilesPage 

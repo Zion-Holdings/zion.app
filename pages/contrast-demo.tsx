@@ -1,10 +1,17 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import Link from 'next/link';
 import ContrastDemo from '../components/ui/ContrastDemo';
 
 const ContrastDemoPage: NextPage = () => {
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -16,7 +23,8 @@ const ContrastDemoPage: NextPage = () => {
       <Head>
         <title>Enhanced Contrast Demo - Zion</title>
         <meta name="description" content="Demonstration of Zion's enhanced contrast system and accessibility features for better visibility." />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-high-contrast-secondary backdrop-blur-md border-b border-high-contrast-primary">
@@ -28,13 +36,13 @@ const ContrastDemoPage: NextPage = () => {
               </Link>
             </div>
             <div className="flex items-center space-x-6">
-              <Link href="/marketplace" className="text-high-contrast-secondary hover:text-high-contrast px-3 py-2 rounded-md text-sm font-medium focus-high-contrast">
+              <Link href="/marketplace" className="text-high-contrast-secondary hover:text-high-contrast px-3 py-4 rounded-md text-sm font-medium focus-high-contrast">
                 Marketplace
               </Link>
-              <Link href="/accessibility" className="text-high-contrast-secondary hover:text-high-contrast px-3 py-2 rounded-md text-sm font-medium focus-high-contrast">
+              <Link href="/accessibility" className="text-high-contrast-secondary hover:text-high-contrast px-3 py-4 rounded-md text-sm font-medium focus-high-contrast">
                 Accessibility
               </Link>
-              <Link href="/" className="text-high-contrast-secondary hover:text-high-contrast px-3 py-2 rounded-md text-sm font-medium focus-high-contrast">
+              <Link href="/" className="text-high-contrast-secondary hover:text-high-contrast px-3 py-4 rounded-md text-sm font-medium focus-high-contrast">
                 Home
               </Link>
             </div>
@@ -43,7 +51,7 @@ const ContrastDemoPage: NextPage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20">
+      <section className="py-40">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-responsive-4xl lg:text-responsive-5xl font-bold text-high-contrast mb-6">
             Enhanced Contrast System
@@ -83,15 +91,15 @@ const ContrastDemoPage: NextPage = () => {
       </section>
 
       {/* Demo Section */}
-      <section className="py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-40">
+        <div className="max-w-12xl mx-auto px-4 sm:px-6 lg:px-8">
           <ContrastDemo />
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-high-contrast-tertiary">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-40 bg-high-contrast-tertiary">
+        <div className="max-w-12xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-responsive-3xl font-bold text-high-contrast text-center mb-12">
             Accessibility Features
           </h2>
@@ -141,7 +149,7 @@ const ContrastDemoPage: NextPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <section className="py-40">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-responsive-3xl font-bold text-high-contrast mb-6">
             Experience Better Accessibility
@@ -168,7 +176,13 @@ const ContrastDemoPage: NextPage = () => {
         </div>
       </section>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default ContrastDemoPage 

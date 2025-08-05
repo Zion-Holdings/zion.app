@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -309,6 +310,12 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -321,12 +328,13 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
         <title>AI-Powered Wishlist & Comparison | Zion Tech Group</title>
         <meta name="description" content="Save items to your wishlist, compare them with AI analysis, and get intelligent recommendations for the best choices." />
         <meta name="keywords" content="wishlist, comparison, AI recommendations, marketplace, save items, compare services" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               AI-Powered Wishlist & Comparison
@@ -351,9 +359,9 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {isLoading ? (
-          <div className="flex justify-center items-center py-20">
+          <div className="flex justify-center items-center py-40">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
           </div>
         ) : (
@@ -402,7 +410,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                       <select
                         value={selectedCategory}
                         onChange={(e) => setSelectedCategory(e.target.value)}
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                       >
                         {categories.map(category => (
                           <option key={category} value={category} className="bg-slate-800">
@@ -413,7 +421,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                       <select
                         value={sortBy}
                         onChange={(e) => setSortBy(e.target.value as any)}
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                       >
                         <option value="date" className="bg-slate-800">Date Added</option>
                         <option value="price" className="bg-slate-800">Price</option>
@@ -445,7 +453,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                       {selectedItems.length > 0 && (
                         <button
                           onClick={handleCompare}
-                          className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300"
+                          className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300"
                         >
                           Compare ({selectedItems.length})
                         </button>
@@ -467,7 +475,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                               onChange={() => handleItemSelect(item.id)}
                               className="w-4 h-4 text-purple-600 bg-white/10 border-white/20 rounded focus:ring-purple-500"
                             />
-                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${getTypeColor(item.type)}`}>
+                            <span className={`px-4 py-3 rounded-full text-xs font-medium ${getTypeColor(item.type)}`}>
                               {item.type}
                             </span>
                           </div>
@@ -488,7 +496,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
 
                         {/* Provider */}
                         <div className="flex items-center space-x-3 mb-4">
-                          <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                          <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
                             <span className="text-white font-semibold text-xs">
                               {item.provider.name.split(' ').map(n => n[0]).join('')}
                             </span>
@@ -521,7 +529,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                         {/* Tags */}
                         <div className="flex flex-wrap gap-1 mb-4">
                           {item.tags.slice(0, 3).map((tag, index) => (
-                            <span key={index} className="px-2 py-1 bg-white/10 rounded-full text-xs text-gray-300">
+                            <span key={index} className="px-4 py-3 bg-white/10 rounded-full text-xs text-gray-300">
                               {tag}
                             </span>
                           ))}
@@ -535,10 +543,10 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
 
                         {/* Action Buttons */}
                         <div className="flex space-x-2">
-                          <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                          <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                             View Details
                           </button>
-                          <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                          <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
                             Remove
                           </button>
                         </div>
@@ -575,7 +583,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                               <span className="text-gray-400">Provider: {item.provider.name}</span>
                               <span className="text-gray-400">Rating: {item.rating}</span>
                               <span className="text-gray-400">AI Score: {item.aiScore}</span>
-                              <span className={`px-2 py-1 rounded-full text-xs font-medium ${getAvailabilityColor(item.availability)}`}>
+                              <span className={`px-4 py-3 rounded-full text-xs font-medium ${getAvailabilityColor(item.availability)}`}>
                                 {item.availability}
                               </span>
                             </div>
@@ -668,7 +676,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
                           <div key={rec.id} className="bg-white/5 rounded-lg p-4">
                             <div className="flex items-start justify-between mb-2">
                               <h5 className="text-white font-semibold">{rec.title}</h5>
-                              <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                              <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                                 rec.category === 'price' ? 'bg-green-500/20 text-green-300' :
                                 rec.category === 'quality' ? 'bg-blue-500/20 text-blue-300' :
                                 rec.category === 'features' ? 'bg-purple-500/20 text-purple-300' :
@@ -734,7 +742,7 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Make Smart Decisions?
@@ -755,7 +763,13 @@ const AIPoweredWishlistComparisonPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredWishlistComparisonPage 

@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -242,6 +243,12 @@ const NotificationsPage: NextPage = () => {
   const unreadCount = notifications.filter(n => !n.read).length;
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -255,7 +262,8 @@ const NotificationsPage: NextPage = () => {
         <meta name="description" content="Manage your notifications and stay updated with marketplace activities" />
         <meta name="keywords" content="notifications, marketplace updates, Zion" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
@@ -270,22 +278,22 @@ const NotificationsPage: NextPage = () => {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Services
               </Link>
-              <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Talents
               </Link>
-              <Link href="/products" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/products" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Products
               </Link>
-              <Link href="/real-time-chat" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/real-time-chat" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Live Chat
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -388,9 +396,9 @@ const NotificationsPage: NextPage = () => {
         {/* Notifications List */}
         <div className="space-y-4">
           {loading ? (
-            <div className="text-center py-12">
+            <div className="text-center py-32">
               <div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg">
-                <svg className="animate-spin -ml-1 mr-3 h-6 w-6 text-purple-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <svg className="animate-spin -ml-1 mr-3 h-12 w-12 text-purple-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
@@ -398,7 +406,7 @@ const NotificationsPage: NextPage = () => {
               </div>
             </div>
           ) : filteredNotifications.length === 0 ? (
-            <div className="text-center py-12">
+            <div className="text-center py-32">
               <div className="text-6xl mb-4">🔔</div>
               <h3 className="text-xl font-semibold text-white mb-2">No notifications found</h3>
               <p className="text-gray-400">Try adjusting your filters or search terms</p>
@@ -442,7 +450,7 @@ const NotificationsPage: NextPage = () => {
                       </p>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-4">
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                          <span className={`px-3 py-3 rounded-full text-xs font-medium ${
                             notification.type === 'marketplace' ? 'bg-purple-500/20 text-purple-300' :
                             notification.type === 'service' ? 'bg-orange-500/20 text-orange-300' :
                             notification.type === 'talent' ? 'bg-indigo-500/20 text-indigo-300' :
@@ -452,7 +460,7 @@ const NotificationsPage: NextPage = () => {
                             {notification.type.charAt(0).toUpperCase() + notification.type.slice(1)}
                           </span>
                           {!notification.read && (
-                            <span className="text-xs text-blue-400 bg-blue-500/20 px-2 py-1 rounded-full">
+                            <span className="text-xs text-blue-400 bg-blue-500/20 px-4 py-3 rounded-full">
                               New
                             </span>
                           )}
@@ -461,7 +469,7 @@ const NotificationsPage: NextPage = () => {
                           <Link
                             href={notification.action.url}
                             onClick={() => markAsRead(notification.id)}
-                            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
+                            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
                           >
                             {notification.action.label}
                           </Link>
@@ -496,7 +504,13 @@ const NotificationsPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default NotificationsPage 

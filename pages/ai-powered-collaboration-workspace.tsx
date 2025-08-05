@@ -191,7 +191,8 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
         <title>AI-Powered Collaboration Workspace - Zion</title>
         <meta name="description" content="Real-time collaboration workspace with AI assistance for project management, document collaboration, and team coordination." />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Page Header */}
       <div className="mb-8">
@@ -204,7 +205,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
           <div className="flex items-center space-x-4">
             <button
               onClick={() => setIsAIAssistantOpen(!isAIAssistantOpen)}
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg transition-all duration-300"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-300"
             >
               🤖 AI Assistant
             </button>
@@ -214,13 +215,13 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
 
       <div className="flex h-screen">
         {/* Sidebar */}
-        <div className="w-80 bg-black/20 backdrop-blur-lg border-r border-white/10">
+        <div className="w-120 bg-black/20 backdrop-blur-lg border-r border-white/10">
           <div className="p-6">
             <div className="mb-6">
               <h2 className="text-white font-semibold mb-4">Projects</h2>
               <button
                 onClick={handleCreateProject}
-                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg transition-all duration-300 mb-4"
+                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-300 mb-4"
               >
                 + New Project
               </button>
@@ -265,7 +266,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
               <h2 className="text-white font-semibold mb-4">Team Members</h2>
               <button
                 onClick={handleInviteMembers}
-                className="w-full bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg transition-all duration-300 mb-4"
+                className="w-full bg-white/10 hover:bg-white/20 text-white px-4 py-4 rounded-lg transition-all duration-300 mb-4"
               >
                 + Invite Members
               </button>
@@ -274,7 +275,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                 {selectedProject?.team.map((member) => (
                   <div key={member.id} className="flex items-center space-x-3 p-2 rounded-lg bg-white/5">
                     <div className="relative">
-                      <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
                         {member.name.charAt(0)}
                       </div>
                       <div className={`absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-black ${getStatusColor(member.status)}`} />
@@ -299,13 +300,13 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                         <h4 className="text-white text-sm font-medium">{suggestion.title}</h4>
                         <p className="text-white/60 text-xs mt-1">{suggestion.description}</p>
                       </div>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getPriorityColor(suggestion.priority)}`}>
+                      <span className={`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(suggestion.priority)}`}>
                         {suggestion.priority}
                       </span>
                     </div>
                     <button
                       onClick={() => handleAISuggestion(suggestion)}
-                      className="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-xs transition-colors"
+                      className="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white px-3 py-3 rounded text-xs transition-colors"
                     >
                       {suggestion.action}
                     </button>
@@ -349,7 +350,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                     <button
                       key={tab}
                       onClick={() => setActiveTab(tab)}
-                      className={`py-2 px-1 border-b-2 font-medium text-sm transition-colors ${
+                      className={`py-4 px-3 border-b-2 font-medium text-sm transition-colors ${
                         activeTab === tab
                           ? 'border-purple-500 text-purple-400'
                           : 'border-transparent text-gray-300 hover:text-white hover:border-gray-300'
@@ -399,7 +400,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                           <div key={member.id} className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                             <div className="flex items-center space-x-3">
                               <div className="relative">
-                                <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
+                                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-semibold">
                                   {member.name.charAt(0)}
                                 </div>
                                 <div className={`absolute -bottom-1 -right-1 w-3 h-3 rounded-full border-2 border-black ${getStatusColor(member.status)}`} />
@@ -421,7 +422,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <h3 className="text-lg font-semibold text-white">Project Tasks</h3>
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                         + Add Task
                       </button>
                     </div>
@@ -431,7 +432,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                         <div key={task.id} className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
                           <div className="flex justify-between items-start mb-3">
                             <h4 className="text-white font-medium">{task.title}</h4>
-                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${getPriorityColor(task.priority)}`}>
+                            <span className={`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(task.priority)}`}>
                               {task.priority}
                             </span>
                           </div>
@@ -466,7 +467,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between items-center">
                       <h3 className="text-lg font-semibold text-white">Project Documents</h3>
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                         + Upload Document
                       </button>
                     </div>
@@ -513,7 +514,7 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                           className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                         >
                           <div
-                            className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
+                            className={`max-w-xs lg:max-w-md px-4 py-4 rounded-lg ${
                               message.sender === 'user'
                                 ? 'bg-purple-600 text-white'
                                 : 'bg-white/10 text-white'
@@ -537,11 +538,11 @@ const AIPoweredCollaborationWorkspace: NextPage = () => {
                         onChange={(e) => setNewMessage(e.target.value)}
                         onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
                         placeholder="Type your message..."
-                        className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-4 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-500"
                       />
                       <button
                         onClick={sendMessage}
-                        className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors"
+                        className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-4 rounded-lg transition-colors"
                       >
                         Send
                       </button>

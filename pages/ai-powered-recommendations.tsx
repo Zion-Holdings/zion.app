@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -246,7 +247,13 @@ const AIPoweredRecommendationsPage: NextPage = () => {
         case 'confidence':
           return b.confidence - a.confidence
         case 'rating':
-          return (b.rating || 0) - (a.rating || 0)
+          return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (b.rating || 0) - (a.rating || 0)
         case 'price':
           return (a.price || 0) - (b.price || 0)
         case 'aiScore':
@@ -289,12 +296,13 @@ const AIPoweredRecommendationsPage: NextPage = () => {
         <title>AI-Powered Recommendations | Zion Tech Group</title>
         <meta name="description" content="Discover personalized AI-powered recommendations for products, services, and talents tailored to your needs and preferences." />
         <meta name="keywords" content="AI recommendations, personalized suggestions, machine learning, predictive analytics, smart matching" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               AI-Powered Recommendations
@@ -319,9 +327,9 @@ const AIPoweredRecommendationsPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {isLoading ? (
-          <div className="flex justify-center items-center py-20">
+          <div className="flex justify-center items-center py-40">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
           </div>
         ) : (
@@ -337,7 +345,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
                   <select
                     value={selectedCategory}
                     onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                   >
                     {categories.map(category => (
                       <option key={category} value={category} className="bg-slate-800">
@@ -353,7 +361,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
                   <select
                     value={filterType}
                     onChange={(e) => setFilterType(e.target.value)}
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                   >
                     <option value="all" className="bg-slate-800">All Types</option>
                     <option value="product" className="bg-slate-800">Products</option>
@@ -369,7 +377,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value as any)}
-                    className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                   >
                     <option value="confidence" className="bg-slate-800">Confidence Score</option>
                     <option value="rating" className="bg-slate-800">Rating</option>
@@ -393,7 +401,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
                     {/* Header */}
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center space-x-2">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                           recommendation.type === 'product' ? 'bg-blue-500/20 text-blue-300' :
                           recommendation.type === 'service' ? 'bg-green-500/20 text-green-300' :
                           recommendation.type === 'talent' ? 'bg-purple-500/20 text-purple-300' :
@@ -402,12 +410,12 @@ const AIPoweredRecommendationsPage: NextPage = () => {
                           {recommendation.type.charAt(0).toUpperCase() + recommendation.type.slice(1)}
                         </span>
                         {recommendation.trending && (
-                          <span className="px-2 py-1 rounded-full text-xs font-medium bg-red-500/20 text-red-300">
+                          <span className="px-4 py-3 rounded-full text-xs font-medium bg-red-500/20 text-red-300">
                             Trending
                           </span>
                         )}
                         {recommendation.featured && (
-                          <span className="px-2 py-1 rounded-full text-xs font-medium bg-yellow-500/20 text-yellow-300">
+                          <span className="px-4 py-3 rounded-full text-xs font-medium bg-yellow-500/20 text-yellow-300">
                             Featured
                           </span>
                         )}
@@ -434,7 +442,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
                     {/* Tags */}
                     <div className="flex flex-wrap gap-1 mb-3">
                       {recommendation.tags.slice(0, 3).map((tag, index) => (
-                        <span key={index} className="px-2 py-1 bg-white/10 rounded-full text-xs text-gray-300">
+                        <span key={index} className="px-4 py-3 bg-white/10 rounded-full text-xs text-gray-300">
                           {tag}
                         </span>
                       ))}
@@ -471,7 +479,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
                     </div>
 
                     {/* Action Button */}
-                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300 transform hover:scale-105">
+                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300 transform hover:scale-105">
                       View Details
                     </button>
                   </div>
@@ -479,7 +487,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
               </div>
 
               {filteredRecommendations.length === 0 && (
-                <div className="text-center py-12">
+                <div className="text-center py-32">
                   <div className="text-6xl mb-4">🔍</div>
                   <h3 className="text-xl font-semibold text-white mb-2">No recommendations found</h3>
                   <p className="text-gray-400">Try adjusting your filters to see more recommendations.</p>
@@ -498,7 +506,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
                 <div key={engine.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-lg font-semibold text-white">{engine.name}</h3>
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                    <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                       engine.status === 'active' ? 'bg-green-500/20 text-green-300' :
                       engine.status === 'training' ? 'bg-yellow-500/20 text-yellow-300' :
                       'bg-red-500/20 text-red-300'
@@ -567,7 +575,7 @@ const AIPoweredRecommendationsPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Get Personalized Recommendations?
@@ -587,7 +595,13 @@ const AIPoweredRecommendationsPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredRecommendationsPage 

@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -501,6 +502,12 @@ const QuoteRequestsPage: NextPage = () => {
 
   if (loading) {
     return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -511,7 +518,7 @@ const QuoteRequestsPage: NextPage = () => {
       
         <div className="text-center">
           <div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg">
-            <svg className="animate-spin -ml-1 mr-3 h-6 w-6 text-purple-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <svg className="animate-spin -ml-1 mr-3 h-12 w-12 text-purple-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
@@ -529,7 +536,8 @@ const QuoteRequestsPage: NextPage = () => {
         <meta name="description" content="Submit and manage custom project quote requests with detailed specifications, budget requirements, and professional responses" />
         <meta name="keywords" content="quote requests, project quotes, custom projects, budget planning, Zion" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
@@ -544,16 +552,16 @@ const QuoteRequestsPage: NextPage = () => {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/talent-directory" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/talent-directory" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Talents
               </Link>
-              <Link href="/service-marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/service-marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Services
               </Link>
-              <Link href="/mobile-responsive" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/mobile-responsive" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Mobile
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -627,7 +635,7 @@ const QuoteRequestsPage: NextPage = () => {
             <select
               value={selectedStatus}
               onChange={(e) => setSelectedStatus(e.target.value)}
-              className="bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-purple-500 transition-colors"
+              className="bg-white/10 border border-white/20 rounded-lg px-4 py-4 text-white focus:outline-none focus:border-purple-500 transition-colors"
             >
               <option value="all">All Status</option>
               <option value="draft">Draft</option>
@@ -656,10 +664,10 @@ const QuoteRequestsPage: NextPage = () => {
                   </div>
                 </div>
                 <div className="flex flex-col items-end space-y-2">
-                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(request.status)}`}>
+                  <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(request.status)}`}>
                     {request.status.charAt(0).toUpperCase() + request.status.slice(1)}
                   </span>
-                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${getPriorityColor(request.priority)}`}>
+                  <span className={`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(request.priority)}`}>
                     {request.priority.toUpperCase()}
                   </span>
                 </div>
@@ -691,7 +699,7 @@ const QuoteRequestsPage: NextPage = () => {
                 <p className="text-sm text-gray-400 mb-2">Required Skills</p>
                 <div className="flex flex-wrap gap-2">
                   {request.skills.slice(0, 4).map((skill, index) => (
-                    <span key={index} className="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">
+                    <span key={index} className="text-xs bg-purple-500/20 text-purple-300 px-4 py-3 rounded">
                       {skill}
                     </span>
                   ))}
@@ -721,11 +729,11 @@ const QuoteRequestsPage: NextPage = () => {
               <div className="flex space-x-3">
                 <button 
                   onClick={() => setSelectedRequest(request)}
-                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
+                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
                 >
                   View Details
                 </button>
-                <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
                   Edit
                 </button>
               </div>
@@ -758,7 +766,13 @@ const QuoteRequestsPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default QuoteRequestsPage 

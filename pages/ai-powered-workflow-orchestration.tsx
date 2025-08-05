@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -523,6 +524,12 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -535,12 +542,13 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
         <title>AI-Powered Workflow & Process Orchestration System | Zion Tech Group</title>
         <meta name="description" content="Workflow automation, process orchestration, integration management, and API/webhook coordination powered by AI." />
         <meta name="keywords" content="workflow, orchestration, automation, integration, API, webhook, process management" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               AI-Powered Workflow & Process Orchestration System
@@ -565,9 +573,9 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {isLoading ? (
-          <div className="flex justify-center items-center py-20">
+          <div className="flex justify-center items-center py-40">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-500"></div>
           </div>
         ) : (
@@ -626,7 +634,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                       <select
                         value={selectedCategory}
                         onChange={(e) => setSelectedCategory(e.target.value)}
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
                       >
                         <option value="all" className="bg-slate-800">All Categories</option>
                         <option value="business" className="bg-slate-800">Business</option>
@@ -637,7 +645,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                         <option value="custom" className="bg-slate-800">Custom</option>
                       </select>
                     </div>
-                    <button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300">
+                    <button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300">
                       Create Workflow
                     </button>
                   </div>
@@ -653,11 +661,11 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                           <p className="text-gray-300 text-sm capitalize">{workflow.category} • {workflow.priority} priority</p>
                         </div>
                         <div className="text-right">
-                          <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(workflow.status)}`}>
+                          <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(workflow.status)}`}>
                             {workflow.status}
                           </span>
                           <div className="mt-2">
-                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${getPriorityColor(workflow.priority)}`}>
+                            <span className={`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(workflow.priority)}`}>
                               {workflow.priority}
                             </span>
                           </div>
@@ -676,7 +684,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                             <div key={step.id} className="bg-white/5 rounded-lg p-3">
                               <div className="flex items-center justify-between mb-2">
                                 <div className="text-white font-semibold text-sm">{step.name}</div>
-                                <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStepStatusColor(step.status)}`}>
+                                <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStepStatusColor(step.status)}`}>
                                   {step.status}
                                 </span>
                               </div>
@@ -722,10 +730,10 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                       </div>
 
                       <div className="flex space-x-2">
-                        <button className="flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           View Details
                         </button>
-                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           Edit Workflow
                         </button>
                       </div>
@@ -745,7 +753,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                         <h3 className="text-xl font-semibold text-white mb-2">{process.name}</h3>
                         <p className="text-gray-300 text-sm">{process.description}</p>
                       </div>
-                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(process.status)}`}>
+                      <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(process.status)}`}>
                         {process.status}
                       </span>
                     </div>
@@ -810,7 +818,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                         <h3 className="text-xl font-semibold text-white mb-2">{integration.name}</h3>
                         <p className="text-gray-300 text-sm capitalize">{integration.type} • {integration.provider}</p>
                       </div>
-                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(integration.status)}`}>
+                      <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(integration.status)}`}>
                         {integration.status}
                       </span>
                     </div>
@@ -845,7 +853,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                                 <div className="text-white font-semibold text-sm">{endpoint.name}</div>
                                 <div className="text-gray-400 text-xs">{endpoint.method} {endpoint.url}</div>
                               </div>
-                              <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStepStatusColor(endpoint.status)}`}>
+                              <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStepStatusColor(endpoint.status)}`}>
                                 {endpoint.status}
                               </span>
                             </div>
@@ -967,7 +975,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
                       <div key={insight.id} className="bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-lg p-4">
                         <div className="flex items-start justify-between mb-2">
                           <h4 className="text-white font-semibold">{insight.title}</h4>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                             insight.impact === 'positive' ? 'bg-green-500/20 text-green-300' :
                             insight.impact === 'negative' ? 'bg-red-500/20 text-red-300' :
                             'bg-yellow-500/20 text-yellow-300'
@@ -994,7 +1002,7 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-indigo-600/20 to-purple-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Automate Your Workflows?
@@ -1015,7 +1023,13 @@ const AIPoweredWorkflowOrchestrationPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredWorkflowOrchestrationPage 

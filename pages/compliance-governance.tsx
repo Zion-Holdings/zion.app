@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -427,7 +428,7 @@ const ComplianceGovernancePage: NextPage = () => {
     switch (severity) {
       case 'critical': return 'bg-red-600';
       case 'high': return 'bg-orange-600';
-      case 'medium': return 'bg-yellow-600';
+      case 'medium': return 'bg-yellow-1200';
       case 'low': return 'bg-green-600';
       default: return 'bg-gray-600';
     }
@@ -437,7 +438,7 @@ const ComplianceGovernancePage: NextPage = () => {
     switch (priority) {
       case 'critical': return 'bg-red-600';
       case 'high': return 'bg-orange-600';
-      case 'medium': return 'bg-yellow-600';
+      case 'medium': return 'bg-yellow-1200';
       case 'low': return 'bg-green-600';
       default: return 'bg-gray-600';
     }
@@ -456,6 +457,12 @@ const ComplianceGovernancePage: NextPage = () => {
   };
 
   if (loading) {
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
     return (
       <div className="relative z-10 container-responsive py-8">
         
@@ -478,7 +485,8 @@ const ComplianceGovernancePage: NextPage = () => {
         <title>Compliance & Governance Center - Zion Marketplace</title>
         <meta name="description" content="Comprehensive compliance and governance center for managing regulatory frameworks, policies, and risk assessments." />
         <meta name="keywords" content="compliance, governance, regulatory, GDPR, SOC2, PCI-DSS, risk management, Zion" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -489,10 +497,10 @@ const ComplianceGovernancePage: NextPage = () => {
               <p className="text-gray-300 mt-2">Centralized compliance management and regulatory oversight</p>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                 Generate Report
               </button>
-              <button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                 New Assessment
               </button>
             </div>
@@ -672,7 +680,7 @@ const ComplianceGovernancePage: NextPage = () => {
                             <p className="text-white font-medium">{assessment.framework}</p>
                             <p className="text-gray-400 text-sm">{formatDate(assessment.nextAssessment)}</p>
                           </div>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                             assessment.status === 'upcoming' ? 'bg-blue-600' :
                             assessment.status === 'overdue' ? 'bg-red-600' : 'bg-green-600'
                           } text-white`}>
@@ -700,7 +708,7 @@ const ComplianceGovernancePage: NextPage = () => {
                       <div>
                         <div className="flex items-center space-x-3 mb-2">
                           <h3 className="text-lg font-semibold text-white">{framework.name}</h3>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(framework.status)}`}>
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(framework.status)}`}>
                             {framework.status.replace('-', ' ')}
                           </span>
                         </div>
@@ -741,7 +749,7 @@ const ComplianceGovernancePage: NextPage = () => {
                           {framework.requirements.slice(0, 3).map((req) => (
                             <div key={req.id} className="flex items-center justify-between p-2 bg-white/5 rounded">
                               <span className="text-gray-300 text-sm">{req.title}</span>
-                              <span className={`px-2 py-1 rounded-full text-xs font-medium ${getPriorityColor(req.priority)}`}>
+                              <span className={`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(req.priority)}`}>
                                 {req.status.replace('-', ' ')}
                               </span>
                             </div>
@@ -754,7 +762,7 @@ const ComplianceGovernancePage: NextPage = () => {
                           {framework.risks.slice(0, 3).map((risk) => (
                             <div key={risk.id} className="flex items-center justify-between p-2 bg-white/5 rounded">
                               <span className="text-gray-300 text-sm">{risk.title}</span>
-                              <span className={`px-2 py-1 rounded-full text-xs font-medium ${getSeverityColor(risk.severity)}`}>
+                              <span className={`px-4 py-3 rounded-full text-xs font-medium ${getSeverityColor(risk.severity)}`}>
                                 {risk.severity}
                               </span>
                             </div>
@@ -781,9 +789,9 @@ const ComplianceGovernancePage: NextPage = () => {
                       <div>
                         <div className="flex items-center space-x-3 mb-2">
                           <h3 className="text-lg font-semibold text-white">{policy.name}</h3>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                             policy.status === 'active' ? 'bg-green-600' :
-                            policy.status === 'draft' ? 'bg-yellow-600' : 'bg-gray-600'
+                            policy.status === 'draft' ? 'bg-yellow-1200' : 'bg-gray-600'
                           } text-white`}>
                             {policy.status}
                           </span>
@@ -831,7 +839,7 @@ const ComplianceGovernancePage: NextPage = () => {
                               <span className="text-white font-medium">{doc.name}</span>
                               <p className="text-gray-400 text-sm">v{doc.version} • {formatDate(doc.lastUpdated)}</p>
                             </div>
-                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                            <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                               doc.status === 'current' ? 'bg-green-600' : 'bg-gray-600'
                             } text-white`}>
                               {doc.status}
@@ -859,10 +867,10 @@ const ComplianceGovernancePage: NextPage = () => {
                       <div>
                         <div className="flex items-center space-x-3 mb-2">
                           <h3 className="text-lg font-semibold text-white">{risk.title}</h3>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${getSeverityColor(risk.severity)}`}>
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${getSeverityColor(risk.severity)}`}>
                             {risk.severity}
                           </span>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                             risk.status === 'open' ? 'bg-red-600' :
                             risk.status === 'mitigated' ? 'bg-green-600' : 'bg-gray-600'
                           } text-white`}>
@@ -915,13 +923,13 @@ const ComplianceGovernancePage: NextPage = () => {
                       <div>
                         <div className="flex items-center space-x-3 mb-2">
                           <h3 className="text-lg font-semibold text-white">{action.title}</h3>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${getPriorityColor(action.priority)}`}>
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(action.priority)}`}>
                             {action.priority}
                           </span>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                             action.status === 'completed' ? 'bg-green-600' :
                             action.status === 'in-progress' ? 'bg-blue-600' :
-                            action.status === 'overdue' ? 'bg-red-600' : 'bg-yellow-600'
+                            action.status === 'overdue' ? 'bg-red-600' : 'bg-yellow-1200'
                           } text-white`}>
                             {action.status.replace('-', ' ')}
                           </span>
@@ -974,14 +982,14 @@ const ComplianceGovernancePage: NextPage = () => {
                       <div>
                         <div className="flex items-center space-x-3 mb-2">
                           <h3 className="text-white font-semibold">{audit.action}</h3>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                             audit.severity === 'critical' ? 'bg-red-600' :
-                            audit.severity === 'warning' ? 'bg-yellow-600' :
+                            audit.severity === 'warning' ? 'bg-yellow-1200' :
                             audit.severity === 'error' ? 'bg-orange-600' : 'bg-blue-600'
                           } text-white`}>
                             {audit.severity}
                           </span>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                             audit.category === 'compliance' ? 'bg-purple-600' :
                             audit.category === 'governance' ? 'bg-green-600' :
                             audit.category === 'security' ? 'bg-red-600' : 'bg-blue-600'
@@ -1005,7 +1013,13 @@ const ComplianceGovernancePage: NextPage = () => {
         </div>
       </div>
     </div>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+);
 };
 
 export default ComplianceGovernancePage; 

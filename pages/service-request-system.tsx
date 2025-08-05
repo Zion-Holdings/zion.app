@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -283,12 +284,19 @@ const ServiceRequestSystemPage: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <>
       <Head>
         <title>Service Request System - Zion Marketplace</title>
         <meta name="description" content="Submit and manage service requests with AI-powered analysis and provider matching" />
         <meta name="keywords" content="service request, AI analysis, provider matching, project quotes" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <div className="relative z-10 container-responsive py-8">
         
@@ -508,7 +516,7 @@ const ServiceRequestSystemPage: NextPage = () => {
                   <select
                     value={filterCategory}
                     onChange={(e) => setFilterCategory(e.target.value)}
-                    className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                   >
                     <option value="all">All Categories</option>
                     {categories.map(category => (
@@ -518,7 +526,7 @@ const ServiceRequestSystemPage: NextPage = () => {
                   <select
                     value={filterStatus}
                     onChange={(e) => setFilterStatus(e.target.value)}
-                    className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                   >
                     <option value="all">All Status</option>
                     <option value="draft">Draft</option>
@@ -538,10 +546,10 @@ const ServiceRequestSystemPage: NextPage = () => {
                       <div className="flex-1">
                         <div className="flex items-center space-x-3 mb-2">
                           <h3 className="text-xl font-semibold text-white">{request.title}</h3>
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(request.status)}`}>
+                          <span className={`px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(request.status)}`}>
                             {request.status.charAt(0).toUpperCase() + request.status.slice(1)}
                           </span>
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${getPriorityColor(request.priority)}`}>
+                          <span className={`px-3 py-3 rounded-full text-xs font-medium ${getPriorityColor(request.priority)}`}>
                             {request.priority.charAt(0).toUpperCase() + request.priority.slice(1)} Priority
                           </span>
                         </div>
@@ -558,14 +566,14 @@ const ServiceRequestSystemPage: NextPage = () => {
                           <button
                             onClick={() => analyzeRequest(request.id)}
                             disabled={isAnalyzing}
-                            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors disabled:opacity-50"
+                            className="px-4 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors disabled:opacity-50"
                           >
                             {isAnalyzing ? 'Analyzing...' : 'Analyze with AI'}
                           </button>
                         )}
                         <button
                           onClick={() => setSelectedRequest(request)}
-                          className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors"
+                          className="px-4 py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors"
                         >
                           View Details
                         </button>
@@ -598,7 +606,7 @@ const ServiceRequestSystemPage: NextPage = () => {
                             <span className="text-gray-400">Recommended Skills:</span>
                             <div className="flex flex-wrap gap-2 mt-1">
                               {request.aiAnalysis.recommendedSkills.map((skill, index) => (
-                                <span key={index} className="px-2 py-1 bg-blue-600/20 text-blue-300 rounded text-xs">
+                                <span key={index} className="px-4 py-3 bg-blue-600/20 text-blue-300 rounded text-xs">
                                   {skill}
                                 </span>
                               ))}
@@ -618,7 +626,7 @@ const ServiceRequestSystemPage: NextPage = () => {
                                 <Image 
                                   src={response.providerAvatar} 
                                   alt={response.providerName} 
-                                  className="w-8 h-8 rounded-full" 
+                                  className="w-12 h-12 rounded-full" 
                                   width={32} 
                                   height={32} 
                                 />
@@ -636,10 +644,10 @@ const ServiceRequestSystemPage: NextPage = () => {
                               <p className="text-gray-300 text-sm mb-2">{response.proposal}</p>
                               <div className="flex items-center justify-between text-sm">
                                 <span className="text-gray-400">Timeline: {response.timeline}</span>
-                                <span className={`px-2 py-1 rounded text-xs ${
+                                <span className={`px-4 py-3 rounded text-xs ${
                                   response.status === 'accepted' ? 'bg-green-600/20 text-green-300' :
                                   response.status === 'rejected' ? 'bg-red-600/20 text-red-300' :
-                                  'bg-yellow-600/20 text-yellow-300'
+                                  'bg-yellow-1200/20 text-yellow-300'
                                 }`}>
                                   {response.status.charAt(0).toUpperCase() + response.status.slice(1)}
                                 </span>
@@ -674,10 +682,10 @@ const ServiceRequestSystemPage: NextPage = () => {
                       <div className="flex-1">
                         <div className="flex items-center space-x-3 mb-2">
                           <h3 className="text-xl font-semibold text-white">{request.title}</h3>
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(request.status)}`}>
+                          <span className={`px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(request.status)}`}>
                             {request.status.charAt(0).toUpperCase() + request.status.slice(1)}
                           </span>
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${getPriorityColor(request.priority)}`}>
+                          <span className={`px-3 py-3 rounded-full text-xs font-medium ${getPriorityColor(request.priority)}`}>
                             {request.priority.charAt(0).toUpperCase() + request.priority.slice(1)} Priority
                           </span>
                         </div>
@@ -689,7 +697,7 @@ const ServiceRequestSystemPage: NextPage = () => {
                           <span>Posted: {request.createdAt.toLocaleDateString()}</span>
                         </div>
                       </div>
-                      <button className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors">
+                      <button className="px-4 py-4 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors">
                         Submit Proposal
                       </button>
                     </div>
@@ -778,7 +786,7 @@ const ServiceRequestSystemPage: NextPage = () => {
                           <span className="text-gray-400">Recommended Skills:</span>
                           <div className="flex flex-wrap gap-2 mt-1">
                             {selectedRequest.aiAnalysis.recommendedSkills.map((skill, index) => (
-                              <span key={index} className="px-2 py-1 bg-blue-600/20 text-blue-300 rounded text-xs">
+                              <span key={index} className="px-4 py-3 bg-blue-600/20 text-blue-300 rounded text-xs">
                                 {skill}
                               </span>
                             ))}
@@ -798,7 +806,7 @@ const ServiceRequestSystemPage: NextPage = () => {
                               <Image 
                                 src={response.providerAvatar} 
                                 alt={response.providerName} 
-                                className="w-8 h-8 rounded-full" 
+                                className="w-12 h-12 rounded-full" 
                                 width={32} 
                                 height={32} 
                               />
@@ -816,10 +824,10 @@ const ServiceRequestSystemPage: NextPage = () => {
                             <p className="text-gray-300 text-sm mb-2">{response.proposal}</p>
                             <div className="flex items-center justify-between text-sm">
                               <span className="text-gray-400">Timeline: {response.timeline}</span>
-                              <span className={`px-2 py-1 rounded text-xs ${
+                              <span className={`px-4 py-3 rounded text-xs ${
                                 response.status === 'accepted' ? 'bg-green-600/20 text-green-300' :
                                 response.status === 'rejected' ? 'bg-red-600/20 text-red-300' :
-                                'bg-yellow-600/20 text-yellow-300'
+                                'bg-yellow-1200/20 text-yellow-300'
                               }`}>
                                 {response.status.charAt(0).toUpperCase() + response.status.slice(1)}
                               </span>
@@ -836,7 +844,13 @@ const ServiceRequestSystemPage: NextPage = () => {
         )}
       </div>
     </>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default ServiceRequestSystemPage 

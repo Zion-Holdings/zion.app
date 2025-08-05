@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -233,6 +234,12 @@ const PaymentProcessingPage: NextPage = () => {
     .reduce((sum, tx) => sum + tx.amount, 0);
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -246,7 +253,8 @@ const PaymentProcessingPage: NextPage = () => {
         <meta name="description" content="Secure payment processing for marketplace transactions, multiple payment methods, and financial management" />
         <meta name="keywords" content="payment processing, secure payments, marketplace transactions, Zion" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
@@ -261,19 +269,19 @@ const PaymentProcessingPage: NextPage = () => {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Services
               </Link>
-              <Link href="/equipment-rental" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/equipment-rental" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Rent Equipment
               </Link>
-              <Link href="/real-time-chat" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/real-time-chat" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Live Chat
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -370,7 +378,7 @@ const PaymentProcessingPage: NextPage = () => {
                   <div className="text-4xl mb-4">👨‍💻</div>
                   <h4 className="text-lg font-semibold text-white mb-2">Service Providers</h4>
                   <p className="text-gray-300 text-sm mb-4">Pay for IT services, AI development, and consulting</p>
-                  <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                  <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-4 rounded-lg text-sm font-medium transition-colors">
                     Pay for Services
                   </button>
                 </div>
@@ -379,7 +387,7 @@ const PaymentProcessingPage: NextPage = () => {
                   <div className="text-4xl mb-4">⚙️</div>
                   <h4 className="text-lg font-semibold text-white mb-2">Equipment Rental</h4>
                   <p className="text-gray-300 text-sm mb-4">Pay for hardware rentals and computing equipment</p>
-                  <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                  <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-4 rounded-lg text-sm font-medium transition-colors">
                     Pay for Equipment
                   </button>
                 </div>
@@ -388,7 +396,7 @@ const PaymentProcessingPage: NextPage = () => {
                   <div className="text-4xl mb-4">🎯</div>
                   <h4 className="text-lg font-semibold text-white mb-2">Talent Payments</h4>
                   <p className="text-gray-300 text-sm mb-4">Pay for AI talents and expert consultants</p>
-                  <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                  <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-4 rounded-lg text-sm font-medium transition-colors">
                     Pay for Talents
                   </button>
                 </div>
@@ -421,7 +429,7 @@ const PaymentProcessingPage: NextPage = () => {
                         }`}>
                           {transaction.amount >= 0 ? '+' : ''}${transaction.amount.toLocaleString()}
                         </p>
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(transaction.status)}`}>
+                        <span className={`px-3 py-3 rounded-full text-xs font-medium ${getStatusColor(transaction.status)}`}>
                           {transaction.status}
                         </span>
                       </div>
@@ -436,7 +444,7 @@ const PaymentProcessingPage: NextPage = () => {
             <div>
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-2xl font-bold text-white">Payment Methods</h3>
-                <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-4 rounded-lg text-sm font-medium transition-colors">
                   + Add Method
                 </button>
               </div>
@@ -455,7 +463,7 @@ const PaymentProcessingPage: NextPage = () => {
                       </div>
                       <div className="flex items-center space-x-2">
                         {method.isDefault && (
-                          <span className="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">
+                          <span className="text-xs bg-purple-500/20 text-purple-300 px-4 py-3 rounded">
                             Default
                           </span>
                         )}
@@ -467,10 +475,10 @@ const PaymentProcessingPage: NextPage = () => {
                       </div>
                     </div>
                     <div className="flex space-x-2">
-                      <button className="flex-1 bg-purple-600 hover:bg-purple-700 text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors">
+                      <button className="flex-1 bg-purple-600 hover:bg-purple-700 text-white px-3 py-4 rounded-lg text-sm font-medium transition-colors">
                         Edit
                       </button>
-                      <button className="flex-1 bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors">
+                      <button className="flex-1 bg-red-600 hover:bg-red-700 text-white px-3 py-4 rounded-lg text-sm font-medium transition-colors">
                         Remove
                       </button>
                     </div>
@@ -510,7 +518,7 @@ const PaymentProcessingPage: NextPage = () => {
                 <h4 className="text-lg font-semibold text-white mb-4">Recent Activity</h4>
                 <div className="space-y-3">
                   {transactions.slice(0, 5).map((transaction) => (
-                    <div key={transaction.id} className="flex items-center justify-between py-2">
+                    <div key={transaction.id} className="flex items-center justify-between py-4">
                       <div className="flex items-center space-x-3">
                         <span className="text-lg">{getTypeIcon(transaction.type)}</span>
                         <span className="text-white">{transaction.description}</span>
@@ -664,7 +672,13 @@ const PaymentProcessingPage: NextPage = () => {
         </div>
       )}
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default PaymentProcessingPage 

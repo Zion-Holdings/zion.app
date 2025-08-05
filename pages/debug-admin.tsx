@@ -1,4 +1,5 @@
-import React, { useState, useEffect , useCallback } from 'react';
+import React, { useState, useEffect , useCallback } from 'react';import ModernLayout from '../components/layout/ModernLayout'
+
 import { useAuth } from '../src/contexts/AuthContext';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
@@ -48,11 +49,16 @@ export default function DebugAdmin() {
   const adminCheck = checkAdminAccess();
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <>
       <Head>
         <title>Debug Admin Access - Zion</title>
         <meta name="description" content="Debug admin authentication" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       
       <div className="min-h-screen bg-gray-100 p-8">
         <div className="max-w-4xl mx-auto">
@@ -94,19 +100,19 @@ export default function DebugAdmin() {
             <div className="space-y-4">
               <button
                 onClick={() => router.push('/admin-dashboard')}
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+                className="px-4 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
               >
                 Try Admin Dashboard
               </button>
               <button
                 onClick={() => router.push('/dashboard')}
-                className="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors ml-4"
+                className="px-4 py-4 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors ml-4"
               >
                 Go to Regular Dashboard
               </button>
               <button
                 onClick={() => router.push('/auth/login')}
-                className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors ml-4"
+                className="px-4 py-4 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors ml-4"
               >
                 Go to Login
               </button>
@@ -133,5 +139,9 @@ export default function DebugAdmin() {
         </div>
       </div>
     </>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+);
 } 

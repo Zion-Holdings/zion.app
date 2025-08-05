@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useAuth } from '../src/contexts/AuthContext';
 import { useEffect, useState } from 'react';
@@ -30,6 +31,12 @@ const DebugAuth: NextPage = () => {
   }, [user, session, loading, error])
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -41,7 +48,8 @@ const DebugAuth: NextPage = () => {
       <Head>
         <title>Auth Debug - Zion</title>
         <meta name="description" content="Authentication debug information" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <div className="max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold text-white mb-8">Authentication Debug</h1>
@@ -114,19 +122,19 @@ const DebugAuth: NextPage = () => {
           <div className="space-y-4">
             <button
               onClick={() => window.location.reload()}
-              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+              className="px-4 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
             >
               Refresh Page
             </button>
             <button
               onClick={() => window.open('/auth/login', '_blank')}
-              className="ml-4 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors"
+              className="ml-4 px-4 py-4 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors"
             >
               Open Login Page
             </button>
             <button
               onClick={() => window.open('/dashboard', '_blank')}
-              className="ml-4 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors"
+              className="ml-4 px-4 py-4 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors"
             >
               Open Dashboard
             </button>
@@ -134,7 +142,13 @@ const DebugAuth: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default DebugAuth 

@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -348,6 +349,12 @@ const InboxPage: NextPage = () => {
 
   if (loading) {
     return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -369,7 +376,8 @@ const InboxPage: NextPage = () => {
         <title>Inbox - Zion Marketplace</title>
         <meta name="description" content="Manage all your marketplace communications in one place. View messages, quotes, payments, and project updates." />
         <meta name="keywords" content="inbox, messages, communication, marketplace, Zion" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -380,7 +388,7 @@ const InboxPage: NextPage = () => {
               <p className="text-gray-300 mt-2">Manage all your marketplace communications</p>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                 Compose
               </button>
             </div>
@@ -440,7 +448,7 @@ const InboxPage: NextPage = () => {
                   placeholder="Search messages..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
                 />
               </div>
 
@@ -450,7 +458,7 @@ const InboxPage: NextPage = () => {
                 <select
                   value={filters.type}
                   onChange={(e) => setFilters(prev => ({ ...prev, type: e.target.value }))}
-                  className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                 >
                   <option value="all">All Types</option>
                   <option value="marketplace">Marketplace</option>
@@ -470,7 +478,7 @@ const InboxPage: NextPage = () => {
                 <select
                   value={filters.priority}
                   onChange={(e) => setFilters(prev => ({ ...prev, priority: e.target.value }))}
-                  className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                 >
                   <option value="all">All Priorities</option>
                   <option value="urgent">Urgent</option>
@@ -486,7 +494,7 @@ const InboxPage: NextPage = () => {
                 <select
                   value={filters.readStatus}
                   onChange={(e) => setFilters(prev => ({ ...prev, readStatus: e.target.value as any }))}
-                  className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-3 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                 >
                   <option value="all">All Messages</option>
                   <option value="unread">Unread</option>
@@ -612,7 +620,7 @@ const InboxPage: NextPage = () => {
                                   <Link
                                     key={actionIndex}
                                     href={action.url}
-                                    className={`text-xs px-3 py-1 rounded-full transition-all duration-200 ${
+                                    className={`text-xs px-3 py-3 rounded-full transition-all duration-200 ${
                                       action.type === 'primary'
                                         ? 'bg-purple-600 text-white hover:bg-purple-700'
                                         : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -659,7 +667,7 @@ const InboxPage: NextPage = () => {
                     onClick={() => setSelectedMessage(null)}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </button>
@@ -685,7 +693,7 @@ const InboxPage: NextPage = () => {
                       <Link
                         key={index}
                         href={action.url}
-                        className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+                        className={`px-4 py-4 rounded-lg font-medium transition-all duration-200 ${
                           action.type === 'primary'
                             ? 'bg-purple-600 text-white hover:bg-purple-700'
                             : 'bg-white/10 text-gray-300 hover:bg-white/20'
@@ -702,7 +710,13 @@ const InboxPage: NextPage = () => {
         )}
       </div>
     </div>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+);
 };
 
 export default InboxPage; 

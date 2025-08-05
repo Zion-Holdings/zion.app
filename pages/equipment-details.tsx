@@ -1,16 +1,24 @@
-import React from 'react';
+import React from 'react';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 
 export default function EquipmentDetails() {
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <>
       <Head>
         <title>Equipment-details</title>
         <meta name="description" content="Page for equipment-details functionality" />
-      </Head>
       
-      <div className="relative z-10 container-responsive py-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
+      
+      <div className="relative z-10 container-responsive py-8 container-responsive">
         
         {/* Background Effects */}
         <div className="fixed inset-0 z-0">
@@ -18,14 +26,14 @@ export default function EquipmentDetails() {
           <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-8 container-responsive">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl font-bold text-gray-900 mb-8">
+            <h1 className="text-4xl font-bold text-gray-900 mb-8 text-responsive-lg">
               Equipment-details
             </h1>
             
@@ -36,5 +44,11 @@ export default function EquipmentDetails() {
         </div>
       </div>
     </>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+);
 }

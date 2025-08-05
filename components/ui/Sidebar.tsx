@@ -138,7 +138,21 @@ interface SidebarSection {
   items: SidebarItem[]
 }
 
-const Sidebar: React.FC = () => {
+
+  // Accessibility improvements
+  const sidebarProps = {
+    'aria-label': 'Main navigation',
+    'role': 'navigation',
+    'aria-expanded': isOpen,
+    'aria-hidden': !isOpen
+  }
+  
+  const toggleProps = {
+    'aria-label': isOpen ? 'Close sidebar' : 'Open sidebar',
+    'aria-expanded': isOpen,
+    'aria-controls': 'sidebar-navigation'
+  }
+      const Sidebar: React.FC = () => {
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set())

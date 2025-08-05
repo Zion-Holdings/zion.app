@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -7,6 +8,12 @@ const TalentProfile: NextPage = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -36,16 +43,16 @@ const TalentProfile: NextPage = () => {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/about" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 About
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
                 Join Zion
               </Link>
             </div>
@@ -55,7 +62,7 @@ const TalentProfile: NextPage = () => {
 
       {/* Hero Section */}
       <main className="flex-1">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           {/* Profile Hero Card */}
           <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-3xl border border-white/10 p-8 mb-12">
             <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
@@ -65,7 +72,7 @@ const TalentProfile: NextPage = () => {
                   <div className="w-32 h-32 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-white text-4xl font-bold">
                     SC
                   </div>
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-slate-900 flex items-center justify-center">
+                  <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-green-500 rounded-full border-4 border-slate-900 flex items-center justify-center">
                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
@@ -76,13 +83,13 @@ const TalentProfile: NextPage = () => {
                   <h1 className="text-4xl font-bold text-white mb-2">Sarah Chen</h1>
                   <p className="text-2xl text-purple-300 mb-4">Senior AI Engineer</p>
                   <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
-                    <span className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm font-medium">
+                    <span className="px-3 py-3 bg-green-500/20 text-green-300 rounded-full text-sm font-medium">
                       Available
                     </span>
-                    <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">
+                    <span className="px-3 py-3 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">
                       Remote
                     </span>
-                    <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm font-medium">
+                    <span className="px-3 py-3 bg-purple-500/20 text-purple-300 rounded-full text-sm font-medium">
                       Verified
                     </span>
                   </div>
@@ -128,7 +135,7 @@ const TalentProfile: NextPage = () => {
               {/* Skills Section */}
               <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-2xl border border-white/10 p-8">
                 <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                  <svg className="w-6 h-6 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-12 h-12 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                   Skills & Expertise
@@ -140,7 +147,7 @@ const TalentProfile: NextPage = () => {
                     <h3 className="text-lg font-semibold text-white mb-4">Technical Skills</h3>
                     <div className="flex flex-wrap gap-3">
                       {['Python', 'TensorFlow', 'PyTorch', 'Scikit-learn', 'OpenCV', 'NLP', 'Computer Vision', 'Deep Learning', 'Machine Learning', 'AWS', 'Docker', 'Kubernetes'].map((skill) => (
-                        <span key={skill} className="px-4 py-2 bg-white/10 text-white rounded-lg text-sm font-medium hover:bg-white/20 transition-colors">
+                        <span key={skill} className="px-4 py-4 bg-white/10 text-white rounded-lg text-sm font-medium hover:bg-white/20 transition-colors">
                           {skill}
                         </span>
                       ))}
@@ -175,7 +182,7 @@ const TalentProfile: NextPage = () => {
               {/* Projects Section */}
               <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 rounded-2xl border border-white/10 p-8">
                 <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                  <svg className="w-6 h-6 mr-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-12 h-12 mr-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                   </svg>
                   Featured Projects
@@ -185,48 +192,48 @@ const TalentProfile: NextPage = () => {
                   <div className="bg-white/5 rounded-xl p-6">
                     <div className="flex items-start justify-between mb-4">
                       <h3 className="text-xl font-semibold text-white">Autonomous Vehicle Perception System</h3>
-                      <span className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm">Completed</span>
+                      <span className="px-3 py-3 bg-green-500/20 text-green-300 rounded-full text-sm">Completed</span>
                     </div>
                     <p className="text-gray-300 mb-4">
                       Developed a real-time object detection and tracking system for autonomous vehicles using YOLO and DeepSORT algorithms. Achieved 95% accuracy in adverse weather conditions.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Python</span>
-                      <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">TensorFlow</span>
-                      <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">OpenCV</span>
-                      <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">ROS</span>
+                      <span className="px-3 py-3 bg-blue-500/20 text-blue-300 rounded-full text-sm">Python</span>
+                      <span className="px-3 py-3 bg-blue-500/20 text-blue-300 rounded-full text-sm">TensorFlow</span>
+                      <span className="px-3 py-3 bg-blue-500/20 text-blue-300 rounded-full text-sm">OpenCV</span>
+                      <span className="px-3 py-3 bg-blue-500/20 text-blue-300 rounded-full text-sm">ROS</span>
                     </div>
                   </div>
 
                   <div className="bg-white/5 rounded-xl p-6">
                     <div className="flex items-start justify-between mb-4">
                       <h3 className="text-xl font-semibold text-white">AI-Powered Customer Service Chatbot</h3>
-                      <span className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm">Completed</span>
+                      <span className="px-3 py-3 bg-green-500/20 text-green-300 rounded-full text-sm">Completed</span>
                     </div>
                     <p className="text-gray-300 mb-4">
                       Built an intelligent chatbot using BERT and GPT models that handles customer inquiries with 90% resolution rate. Integrated with CRM systems and reduced support costs by 60%.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Python</span>
-                      <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Transformers</span>
-                      <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">NLP</span>
-                      <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">FastAPI</span>
+                      <span className="px-3 py-3 bg-blue-500/20 text-blue-300 rounded-full text-sm">Python</span>
+                      <span className="px-3 py-3 bg-blue-500/20 text-blue-300 rounded-full text-sm">Transformers</span>
+                      <span className="px-3 py-3 bg-blue-500/20 text-blue-300 rounded-full text-sm">NLP</span>
+                      <span className="px-3 py-3 bg-blue-500/20 text-blue-300 rounded-full text-sm">FastAPI</span>
                     </div>
                   </div>
 
                   <div className="bg-white/5 rounded-xl p-6">
                     <div className="flex items-start justify-between mb-4">
                       <h3 className="text-xl font-semibold text-white">Medical Image Analysis Platform</h3>
-                      <span className="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-sm">In Progress</span>
+                      <span className="px-3 py-3 bg-yellow-500/20 text-yellow-300 rounded-full text-sm">In Progress</span>
                     </div>
                     <p className="text-gray-300 mb-4">
                       Developing a deep learning platform for medical image analysis that can detect early signs of diseases with 98% accuracy. Using U-Net architecture for segmentation tasks.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">PyTorch</span>
-                      <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Medical Imaging</span>
-                      <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">U-Net</span>
-                      <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">DICOM</span>
+                      <span className="px-3 py-3 bg-blue-500/20 text-blue-300 rounded-full text-sm">PyTorch</span>
+                      <span className="px-3 py-3 bg-blue-500/20 text-blue-300 rounded-full text-sm">Medical Imaging</span>
+                      <span className="px-3 py-3 bg-blue-500/20 text-blue-300 rounded-full text-sm">U-Net</span>
+                      <span className="px-3 py-3 bg-blue-500/20 text-blue-300 rounded-full text-sm">DICOM</span>
                     </div>
                   </div>
                 </div>
@@ -235,7 +242,7 @@ const TalentProfile: NextPage = () => {
               {/* Experience Section */}
               <div className="bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-2xl border border-white/10 p-8">
                 <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                  <svg className="w-6 h-6 mr-3 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-12 h-12 mr-3 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.815-8.864-2.244M21 13.255v-3.51A23.931 23.931 0 0012 12c-3.183 0-6.22.815-8.864 2.244M21 13.255a23.931 23.931 0 01-9.864 2.244M21 13.255a23.931 23.931 0 00-9.864-2.244M12 15c-3.183 0-6.22-.815-8.864-2.244M12 15c3.183 0 6.22.815 8.864 2.244M12 15c-3.183 0-6.22.815-8.864-2.244M12 15c3.183 0 6.22-.815 8.864 2.244" />
                   </svg>
                   Professional Experience
@@ -298,7 +305,7 @@ const TalentProfile: NextPage = () => {
               {/* Availability Section */}
               <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-2xl border border-white/10 p-8">
                 <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                  <svg className="w-6 h-6 mr-3 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-12 h-12 mr-3 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                   Availability
@@ -308,7 +315,7 @@ const TalentProfile: NextPage = () => {
                   <div className="bg-white/5 rounded-lg p-4">
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-white font-semibold">Current Status</span>
-                      <span className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm">Available</span>
+                      <span className="px-3 py-3 bg-green-500/20 text-green-300 rounded-full text-sm">Available</span>
                     </div>
                     <p className="text-gray-300 text-sm">Ready for new projects starting immediately</p>
                   </div>
@@ -368,7 +375,7 @@ const TalentProfile: NextPage = () => {
               {/* Contact & Hire CTA */}
               <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 rounded-2xl border border-white/10 p-8">
                 <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                  <svg className="w-6 h-6 mr-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-12 h-12 mr-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   Get In Touch
@@ -409,7 +416,7 @@ const TalentProfile: NextPage = () => {
               {/* Certifications */}
               <div className="bg-gradient-to-br from-yellow-500/10 to-orange-500/10 rounded-2xl border border-white/10 p-8">
                 <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                  <svg className="w-6 h-6 mr-3 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-12 h-12 mr-3 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                   </svg>
                   Certifications
@@ -450,7 +457,7 @@ const TalentProfile: NextPage = () => {
                 onClick={() => setIsContactModalOpen(false)}
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
@@ -505,14 +512,20 @@ const TalentProfile: NextPage = () => {
 
       {/* Footer */}
       <footer className="bg-black/40 backdrop-blur-md border-t border-white/10 mt-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="text-center text-gray-400">
             <p>&copy; 2024 Zion. All rights reserved. | AI-Powered Marketplace</p>
           </div>
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default TalentProfile 

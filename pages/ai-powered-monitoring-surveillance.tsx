@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -292,6 +293,12 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -304,12 +311,13 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
         <title>AI-Powered Monitoring & Surveillance System | Zion Tech Group</title>
         <meta name="description" content="Real-time monitoring, surveillance tracking, system observation, performance monitoring, security monitoring, and automated alerting powered by AI." />
         <meta name="keywords" content="monitoring, surveillance, tracking, observation, performance, security, AI monitoring" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/20 to-blue-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               AI-Powered Monitoring & Surveillance System
@@ -334,9 +342,9 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {isLoading ? (
-          <div className="flex justify-center items-center py-20">
+          <div className="flex justify-center items-center py-40">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-500"></div>
           </div>
         ) : (
@@ -415,7 +423,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
                       <select
                         value={selectedType}
                         onChange={(e) => setSelectedType(e.target.value)}
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
                       >
                         <option value="all" className="bg-slate-800">All Types</option>
                         <option value="performance" className="bg-slate-800">Performance</option>
@@ -426,7 +434,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
                         <option value="user" className="bg-slate-800">User</option>
                       </select>
                     </div>
-                    <button className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300">
+                    <button className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300">
                       Add System
                     </button>
                   </div>
@@ -442,11 +450,11 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
                           <p className="text-gray-300 text-sm capitalize">{system.type} System</p>
                         </div>
                         <div className="text-right">
-                          <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(system.status)}`}>
+                          <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(system.status)}`}>
                             {system.status}
                           </span>
                           <div className="mt-2">
-                            <span className="px-2 py-1 rounded-full text-xs font-medium bg-cyan-500/20 text-cyan-300">
+                            <span className="px-4 py-3 rounded-full text-xs font-medium bg-cyan-500/20 text-cyan-300">
                               {system.uptime}% uptime
                             </span>
                           </div>
@@ -500,10 +508,10 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
                       </div>
 
                       <div className="flex space-x-2">
-                        <button className="flex-1 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           View Details
                         </button>
-                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           Configure
                         </button>
                       </div>
@@ -542,7 +550,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
                       <div key={insight.id} className="bg-gradient-to-r from-cyan-600/20 to-blue-600/20 rounded-lg p-4">
                         <div className="flex items-start justify-between mb-2">
                           <h4 className="text-white font-semibold">{insight.title}</h4>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                             insight.impact === 'positive' ? 'bg-green-500/20 text-green-300' :
                             insight.impact === 'negative' ? 'bg-red-500/20 text-red-300' :
                             'bg-yellow-500/20 text-yellow-300'
@@ -569,7 +577,7 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-cyan-600/20 to-blue-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Monitor Everything?
@@ -590,7 +598,13 @@ const AIPoweredMonitoringSurveillancePage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredMonitoringSurveillancePage 

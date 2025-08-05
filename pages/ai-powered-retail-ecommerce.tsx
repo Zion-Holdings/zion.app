@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -428,6 +429,12 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
   }, [smartRetail, selectedType])
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -440,7 +447,8 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
         <title>AI-Powered Retail & E-commerce - Zion</title>
         <meta name="description" content="Advanced AI-powered retail and e-commerce platform with smart retail operations, customer analytics, and intelligent retail optimization" />
         <meta name="keywords" content="retail, e-commerce, smart retail, customer analytics, AI retail, Zion" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -450,46 +458,46 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Streaming
               </Link>
-              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Voice Assistant
               </Link>
-              <Link href="/ai-powered-autonomous-vehicle-transportation" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-autonomous-vehicle-transportation" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Autonomous Vehicles
               </Link>
-              <Link href="/ai-powered-cryptocurrency-digital-asset-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-cryptocurrency-digital-asset-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Cryptocurrency
               </Link>
-              <Link href="/ai-powered-space-exploration-satellite-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-space-exploration-satellite-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Space Exploration
               </Link>
-              <Link href="/ai-powered-underwater-exploration-marine-research" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-underwater-exploration-marine-research" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Underwater Exploration
               </Link>
-              <Link href="/ai-powered-climate-change-environmental-sustainability" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-climate-change-environmental-sustainability" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Climate Change
               </Link>
-              <Link href="/ai-powered-precision-agriculture-smart-farming" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-precision-agriculture-smart-farming" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Precision Agriculture
               </Link>
-              <Link href="/ai-powered-healthcare-medical-diagnostics" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-healthcare-medical-diagnostics" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Healthcare
               </Link>
-              <Link href="/ai-powered-energy-management-renewable-energy" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-energy-management-renewable-energy" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Energy Management
               </Link>
-              <Link href="/ai-powered-manufacturing-industrial-automation" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-manufacturing-industrial-automation" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Manufacturing
               </Link>
-              <Link href="/ai-powered-finance-banking" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-finance-banking" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Finance & Banking
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200">
                 Get Started
               </Link>
             </div>
@@ -555,7 +563,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
                   <div key={store.id} className="p-4 bg-white/5 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="text-white font-medium">{store.name}</h4>
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${getStatusBgColor(store.status)} text-white`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(store.status)} text-white`}>
                         {store.status}
                       </span>
                     </div>
@@ -577,7 +585,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
                   <div key={platform.id} className="p-4 bg-white/5 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="text-white font-medium">{platform.name}</h4>
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${getStatusBgColor(platform.status)} text-white`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(platform.status)} text-white`}>
                         {platform.status}
                       </span>
                     </div>
@@ -601,7 +609,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
                 <button
                   key={type}
                   onClick={() => setSelectedType(type)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap ${
+                  className={`px-4 py-4 rounded-lg text-sm font-medium whitespace-nowrap ${
                     selectedType === type
                       ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'
                       : 'bg-white/10 text-gray-300 hover:text-white'
@@ -618,7 +626,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
                 <div key={store.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{store.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${getStatusBgColor(store.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(store.status)} text-white`}>
                       {store.status}
                     </span>
                   </div>
@@ -656,7 +664,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
                 <div key={platform.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{platform.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${getStatusBgColor(platform.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(platform.status)} text-white`}>
                       {platform.status}
                     </span>
                   </div>
@@ -694,7 +702,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
                 <div key={analytics.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{analytics.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${getStatusBgColor(analytics.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(analytics.status)} text-white`}>
                       {analytics.status}
                     </span>
                   </div>
@@ -732,7 +740,7 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
                 <div key={optimization.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{optimization.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${getStatusBgColor(optimization.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(optimization.status)} text-white`}>
                       {optimization.status}
                     </span>
                   </div>
@@ -868,7 +876,13 @@ const AIPoweredRetailEcommercePage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredRetailEcommercePage 

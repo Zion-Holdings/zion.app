@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -340,6 +341,12 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
   ]
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -353,7 +360,8 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
         <meta name="description" content="Advanced quantum AI multiversal intelligence and dimensional transcendence with AI-powered quantum dimensional exploration, multiversal mapping, and consciousness transcendence capabilities." />
         <meta name="keywords" content="quantum AI multiversal intelligence, quantum AI dimensional transcendence, quantum AI dimensional exploration, quantum AI multiversal mapping, quantum AI consciousness transcendence" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
@@ -369,7 +377,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
             <button
               onClick={startExploration}
               disabled={isExploring}
-              className="px-4 py-2 bg-purple-600 hover:bg-purple-700 disabled:bg-gray-600 text-white rounded-lg transition-colors"
+              className="px-4 py-4 bg-purple-600 hover:bg-purple-700 disabled:bg-gray-600 text-white rounded-lg transition-colors"
             >
               {isExploring ? 'Exploring...' : 'Start Exploration'}
             </button>
@@ -424,7 +432,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-4 py-2 rounded-lg transition-colors ${
+              className={`px-4 py-4 rounded-lg transition-colors ${
                 activeTab === tab.id
                   ? 'bg-purple-600 text-white'
                   : 'bg-slate-700 text-gray-300 hover:bg-slate-600'
@@ -507,9 +515,9 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
                   <div key={dimension.id} className="bg-slate-700/50 rounded-lg p-4">
                     <div className="flex items-center justify-between mb-3">
                       <h4 className="text-white font-semibold">{dimension.name}</h4>
-                      <span className={`px-2 py-1 rounded text-xs ${
+                      <span className={`px-4 py-3 rounded text-xs ${
                         dimension.status === 'active' ? 'bg-green-600' :
-                        dimension.status === 'exploring' ? 'bg-yellow-600' :
+                        dimension.status === 'exploring' ? 'bg-yellow-1200' :
                         dimension.status === 'mapped' ? 'bg-blue-600' : 'bg-gray-600'
                       }`}>
                         {dimension.status}
@@ -533,7 +541,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
                     
                     <button
                       onClick={() => navigateToDimension(dimension)}
-                      className="w-full px-3 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded transition-colors"
+                      className="w-full px-3 py-4 bg-purple-600 hover:bg-purple-700 text-white rounded transition-colors"
                     >
                       Navigate
                     </button>
@@ -553,9 +561,9 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
                   <div key={item.id} className="bg-slate-700/50 rounded-lg p-4">
                     <div className="flex items-center justify-between mb-3">
                       <h4 className="text-white font-semibold">{item.name}</h4>
-                      <span className={`px-2 py-1 rounded text-xs ${
+                      <span className={`px-4 py-3 rounded text-xs ${
                         item.status === 'completed' ? 'bg-green-600' :
-                        item.status === 'in-progress' ? 'bg-yellow-600' :
+                        item.status === 'in-progress' ? 'bg-yellow-1200' :
                         item.status === 'available' ? 'bg-blue-600' : 'bg-gray-600'
                       }`}>
                         {item.status}
@@ -597,7 +605,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
                     <button
                       onClick={() => transcendDimension(item)}
                       disabled={item.status === 'locked'}
-                      className="w-full px-3 py-2 bg-purple-600 hover:bg-purple-700 disabled:bg-gray-600 text-white rounded transition-colors"
+                      className="w-full px-3 py-4 bg-purple-600 hover:bg-purple-700 disabled:bg-gray-600 text-white rounded transition-colors"
                     >
                       {item.status === 'completed' ? 'Completed' : 'Transcend'}
                     </button>
@@ -617,9 +625,9 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
                   <div key={item.id} className="bg-slate-700/50 rounded-lg p-4">
                     <div className="flex items-center justify-between mb-3">
                       <h4 className="text-white font-semibold">{item.name}</h4>
-                      <span className={`px-2 py-1 rounded text-xs ${
+                      <span className={`px-4 py-3 rounded text-xs ${
                         item.status === 'active' ? 'bg-green-600' :
-                        item.status === 'evolving' ? 'bg-yellow-600' :
+                        item.status === 'evolving' ? 'bg-yellow-1200' :
                         item.status === 'transcending' ? 'bg-purple-600' : 'bg-blue-600'
                       }`}>
                         {item.status}
@@ -662,7 +670,7 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
               
               <div className="bg-slate-700/50 rounded-lg p-6">
                 <div className="text-center">
-                  <div className="w-64 h-64 mx-auto bg-gradient-to-br from-purple-900 to-blue-900 rounded-full relative">
+                  <div className="w-124 h-124 mx-auto bg-gradient-to-br from-purple-900 to-blue-900 rounded-full relative">
                     {/* Central point */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full"></div>
                     
@@ -717,7 +725,13 @@ const AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence: NextPag
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredQuantumAIMultiversalIntelligenceDimensionalTranscendence 

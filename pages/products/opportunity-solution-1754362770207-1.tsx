@@ -1,11 +1,16 @@
 
-import React from 'react';
+import React from 'react';import ModernLayout from '../components/layout/ModernLayout'
+
 import { NextPage } from 'next';
 
 const Intelligent_business_opportunity_PlatformPage: NextPage = () => {
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Intelligent Business Opportunity Platform
@@ -149,7 +154,7 @@ const Intelligent_business_opportunity_PlatformPage: NextPage = () => {
               <p className="text-3xl font-bold text-blue-600 mb-4">
                 $79.2/month
               </p>
-              <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">
+              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover:bg-blue-700">
                 Get Started
               </button>
             </div>
@@ -161,7 +166,7 @@ const Intelligent_business_opportunity_PlatformPage: NextPage = () => {
               <p className="text-3xl font-bold text-blue-600 mb-4">
                 $158.4/month
               </p>
-              <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">
+              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover:bg-blue-700">
                 Get Started
               </button>
             </div>
@@ -173,7 +178,7 @@ const Intelligent_business_opportunity_PlatformPage: NextPage = () => {
               <p className="text-3xl font-bold text-blue-600 mb-4">
                 $316.8/month
               </p>
-              <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">
+              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover:bg-blue-700">
                 Get Started
               </button>
             </div>
@@ -185,7 +190,7 @@ const Intelligent_business_opportunity_PlatformPage: NextPage = () => {
               <p className="text-3xl font-bold text-blue-600 mb-4">
                 Contact sales
               </p>
-              <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">
+              <button className="w-full bg-blue-600 text-white py-4 px-4 rounded-md hover:bg-blue-700">
                 Get Started
               </button>
             </div>
@@ -194,7 +199,11 @@ const Intelligent_business_opportunity_PlatformPage: NextPage = () => {
         </div>
       </div>
     </div>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+);
 };
 
 export default Intelligent_business_opportunity_PlatformPage;

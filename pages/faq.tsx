@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -140,6 +141,12 @@ const FAQ: NextPage = () => {
   const filteredFAQs = faqs[activeCategory as keyof typeof faqs] || []
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -151,7 +158,8 @@ const FAQ: NextPage = () => {
       <Head>
         <title>FAQ - Zion</title>
         <meta name="description" content="Frequently asked questions about Zion's AI-powered marketplace. Find answers about services, payments, account management, and more." />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -178,7 +186,7 @@ const FAQ: NextPage = () => {
               <Link href="/auth/login" className="text-gray-300 hover:text-white transition-colors">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-200">
                 Join Zion Now
               </Link>
             </div>
@@ -186,7 +194,7 @@ const FAQ: NextPage = () => {
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -295,8 +303,32 @@ const FAQ: NextPage = () => {
           </div>
         </div>
       </footer>
-    </div>
-  )
+    
+        {/* Mobile Navigation */}
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
+          <div className="flex justify-around items-center py-2">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <Home className="w-5 h-5" />
+              <span className="text-xs">Home</span>
+            </button>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <Search className="w-5 h-5" />
+              <span className="text-xs">Search</span>
+            </button>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <User className="w-5 h-5" />
+              <span className="text-xs">Profile</span>
+            </button>
+          </div>
+        </div>
+      </div>
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default FAQ 

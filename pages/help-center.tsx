@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -106,6 +107,12 @@ const HelpCenter: NextPage = () => {
   const filteredFAQs = faqs[activeCategory as keyof typeof faqs] || []
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -117,7 +124,8 @@ const HelpCenter: NextPage = () => {
       <Head>
         <title>Help Center - Zion</title>
         <meta name="description" content="Get help and support for using Zion's AI-powered marketplace. Find answers to frequently asked questions and tutorials." />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -141,7 +149,7 @@ const HelpCenter: NextPage = () => {
               <Link href="/auth/login" className="text-gray-300 hover:text-white transition-colors">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-200">
                 Join Zion Now
               </Link>
             </div>
@@ -149,7 +157,7 @@ const HelpCenter: NextPage = () => {
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -170,7 +178,7 @@ const HelpCenter: NextPage = () => {
                 className="w-full px-6 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent backdrop-blur-sm"
               />
               <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
@@ -261,8 +269,32 @@ const HelpCenter: NextPage = () => {
           </div>
         </div>
       </footer>
-    </div>
-  )
+    
+        {/* Mobile Navigation */}
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
+          <div className="flex justify-around items-center py-2">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <Home className="w-5 h-5" />
+              <span className="text-xs">Home</span>
+            </button>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <Search className="w-5 h-5" />
+              <span className="text-xs">Search</span>
+            </button>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <User className="w-5 h-5" />
+              <span className="text-xs">Profile</span>
+            </button>
+          </div>
+        </div>
+      </div>
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default HelpCenter 

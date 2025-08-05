@@ -162,7 +162,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
       <div className="mb-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <TrendingUp className="h-8 w-8 text-blue-400" />
+            <TrendingUp className="h-12 w-12 text-blue-400" />
             <div>
               <h1 className="text-3xl font-bold text-white">AI-Powered Change Management</h1>
               <p className="text-gray-300">Intelligent organizational change and transformation</p>
@@ -172,7 +172,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
             <select
               value={selectedTimeframe}
               onChange={(e) => setSelectedTimeframe(e.target.value)}
-              className="bg-white/10 text-white border border-white/20 rounded-lg px-3 py-2 text-sm"
+              className="bg-white/10 text-white border border-white/20 rounded-lg px-3 py-4 text-sm"
             >
               <option value="7d">Last 7 days</option>
               <option value="30d">Last 30 days</option>
@@ -192,7 +192,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center space-x-2 py-4 px-1 border-b-2 font-medium text-sm transition-colors ${
+                className={`flex items-center space-x-2 py-4 px-3 border-b-2 font-medium text-sm transition-colors ${
                   activeTab === tab.id
                     ? 'border-blue-500 text-blue-400'
                     : 'border-transparent text-gray-300 hover:text-white hover:border-gray-300'
@@ -208,7 +208,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
 
       {/* Main Content */}
       {loading ? (
-        <div className="flex justify-center items-center h-64">
+        <div className="flex justify-center items-center h-124">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
         </div>
       ) : (
@@ -224,7 +224,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
                       <p className="text-gray-300 text-sm">Active Initiatives</p>
                       <p className="text-2xl font-bold text-white">{changeInitiatives.filter(c => c.status !== 'completed').length}</p>
                     </div>
-                    <TrendingUp className="h-8 w-8 text-blue-400" />
+                    <TrendingUp className="h-12 w-12 text-blue-400" />
                   </div>
                 </div>
                 
@@ -234,7 +234,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
                       <p className="text-gray-300 text-sm">Stakeholders</p>
                       <p className="text-2xl font-bold text-white">{stakeholders.length}</p>
                     </div>
-                    <Users className="h-8 w-8 text-green-400" />
+                    <Users className="h-12 w-12 text-green-400" />
                   </div>
                 </div>
                 
@@ -244,7 +244,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
                       <p className="text-gray-300 text-sm">Training Programs</p>
                       <p className="text-2xl font-bold text-white">{trainingPrograms.length}</p>
                     </div>
-                    <BookOpen className="h-8 w-8 text-purple-400" />
+                    <BookOpen className="h-12 w-12 text-purple-400" />
                   </div>
                 </div>
                 
@@ -254,7 +254,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
                       <p className="text-gray-300 text-sm">Success Rate</p>
                       <p className="text-2xl font-bold text-white">87%</p>
                     </div>
-                    <CheckCircle className="h-8 w-8 text-green-400" />
+                    <CheckCircle className="h-12 w-12 text-green-400" />
                   </div>
                 </div>
               </div>
@@ -288,7 +288,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">Change Initiatives</h2>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                   + New Initiative
                 </button>
               </div>
@@ -302,10 +302,10 @@ const AIPoweredChangeManagementPage: NextPage = () => {
                         <p className="text-gray-400 text-sm">{initiative.type}</p>
                       </div>
                       <div className="flex space-x-2">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(initiative.status)}`}>
+                        <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(initiative.status)}`}>
                           {initiative.status}
                         </span>
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getPriorityColor(initiative.priority)}`}>
+                        <span className={`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(initiative.priority)}`}>
                           {initiative.priority}
                         </span>
                       </div>
@@ -356,7 +356,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">Stakeholders</h2>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                   + Add Stakeholder
                 </button>
               </div>
@@ -370,7 +370,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
                         <p className="text-gray-400 text-sm">{stakeholder.role} • {stakeholder.department}</p>
                       </div>
                       <div className="flex space-x-2">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getSupportColor(stakeholder.support)}`}>
+                        <span className={`px-4 py-3 rounded-full text-xs font-medium ${getSupportColor(stakeholder.support)}`}>
                           {stakeholder.support}
                         </span>
                       </div>
@@ -410,7 +410,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">Training Programs</h2>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                   + New Program
                 </button>
               </div>
@@ -423,7 +423,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
                         <h3 className="text-lg font-semibold text-white">{program.title}</h3>
                         <p className="text-gray-400 text-sm">{program.type} • {program.targetAudience}</p>
                       </div>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                      <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                         program.status === 'completed' ? 'bg-green-500' :
                         program.status === 'in-progress' ? 'bg-yellow-500' : 'bg-blue-500'
                       }`}>
@@ -473,7 +473,7 @@ const AIPoweredChangeManagementPage: NextPage = () => {
                         <h3 className="text-lg font-semibold text-white">{metric.name}</h3>
                         <p className="text-gray-400 text-sm">{metric.category}</p>
                       </div>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                      <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                         metric.trend === 'increasing' ? 'bg-green-500' :
                         metric.trend === 'decreasing' ? 'bg-red-500' : 'bg-yellow-500'
                       }`}>

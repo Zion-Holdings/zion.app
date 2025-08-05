@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -312,6 +313,12 @@ const AIImmersiveMarketplacePage: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -323,7 +330,8 @@ const AIImmersiveMarketplacePage: NextPage = () => {
       <Head>
         <title>AI Immersive Marketplace - Zion</title>
         <meta name="description" content="Experience the future of shopping with AI-powered immersive marketplace featuring VR/AR experiences" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -333,13 +341,13 @@ const AIImmersiveMarketplacePage: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Marketplace
               </Link>
-              <Link href="/ai-project-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-project-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Projects
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </div>
@@ -347,7 +355,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -407,7 +415,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
         </div>
 
         {isLoading ? (
-          <div className="text-center py-12">
+          <div className="text-center py-32">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 mx-auto"></div>
             <p className="text-gray-400 mt-4">Loading immersive experiences...</p>
           </div>
@@ -489,17 +497,17 @@ const AIImmersiveMarketplacePage: NextPage = () => {
 
                       <div className="flex flex-wrap gap-2 mb-4">
                         {product.features.slice(0, 3).map((feature) => (
-                          <span key={feature} className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">
+                          <span key={feature} className="px-4 py-3 bg-purple-500/20 text-purple-300 text-xs rounded-full">
                             {feature}
                           </span>
                         ))}
                       </div>
 
                       <div className="flex space-x-2">
-                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300">
+                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-medium transition-all duration-300">
                           🥽 VR Tour
                         </button>
-                        <button className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300">
+                        <button className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 py-4 rounded-lg text-sm font-medium transition-all duration-300">
                           📱 AR Try-On
                         </button>
                       </div>
@@ -559,7 +567,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
                         ))}
                       </div>
 
-                      <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300">
+                      <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                         🏪 Enter Showroom
                       </button>
                     </div>
@@ -615,7 +623,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
                         ))}
                       </div>
 
-                      <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300">
+                      <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                         🌟 Start Experience
                       </button>
                     </div>
@@ -636,7 +644,7 @@ const AIImmersiveMarketplacePage: NextPage = () => {
                         <div className="flex-1">
                           <div className="flex items-center space-x-2 mb-2">
                             <h3 className="text-lg font-semibold text-white">{insight.title}</h3>
-                            <span className={`px-2 py-1 rounded-full text-xs ${getInsightColor(insight.type).replace('text-', 'bg-')} ${getInsightColor(insight.type)}`}>
+                            <span className={`px-4 py-3 rounded-full text-xs ${getInsightColor(insight.type).replace('text-', 'bg-')} ${getInsightColor(insight.type)}`}>
                               {insight.type}
                             </span>
                           </div>
@@ -666,7 +674,13 @@ const AIImmersiveMarketplacePage: NextPage = () => {
         )}
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIImmersiveMarketplacePage 

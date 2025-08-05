@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -216,6 +217,12 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -228,7 +235,8 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
         <title>AI-Powered Quantum Machine Learning & Neural Networks | Zion Tech</title>
         <meta name="description" content="Advanced quantum machine learning and neural networks with AI-powered quantum classification, regression, and feature maps." />
         <meta name="keywords" content="quantum machine learning, quantum neural networks, quantum classification, quantum regression, quantum feature maps" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <header className="relative z-10">
@@ -252,7 +260,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
                 disabled={isTraining}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
                   isTraining 
-                    ? 'bg-yellow-600 text-white' 
+                    ? 'bg-yellow-1200 text-white' 
                     : 'bg-emerald-600 text-white hover:bg-emerald-700'
                 } disabled:opacity-50`}
               >
@@ -282,7 +290,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-md font-medium transition-all duration-200 ${
+                  className={`flex items-center space-x-2 px-4 py-4 rounded-md font-medium transition-all duration-200 ${
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white'
                       : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
@@ -349,7 +357,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
                       <div className="text-2xl mb-2">📈</div>
                       <div className="font-semibold">Predict Values</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-lg text-white hover:from-yellow-700 hover:to-yellow-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-yellow-1200 to-yellow-700 rounded-lg text-white hover:from-yellow-700 hover:to-yellow-1200 transition-all duration-200">
                       <div className="text-2xl mb-2">🎯</div>
                       <div className="font-semibold">Optimize Model</div>
                     </button>
@@ -553,7 +561,7 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
                         <div className="text-sm text-gray-300 mb-2">Applications:</div>
                         <div className="flex flex-wrap gap-1">
                           {featureMap.applications.map((app, index) => (
-                            <span key={index} className="text-xs bg-emerald-600 text-white px-2 py-1 rounded">
+                            <span key={index} className="text-xs bg-emerald-600 text-white px-4 py-3 rounded">
                               {app}
                             </span>
                           ))}
@@ -676,7 +684,13 @@ const AIPoweredQuantumMachineLearningNeuralNetworks: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredQuantumMachineLearningNeuralNetworks 

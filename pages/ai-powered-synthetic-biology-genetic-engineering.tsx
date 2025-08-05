@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -163,6 +164,12 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -175,7 +182,8 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {
         <title>AI-Powered Synthetic Biology & Genetic Engineering | Zion Tech</title>
         <meta name="description" content="Advanced synthetic biology and genetic engineering with AI-powered DNA editing, protein design, and biological system engineering." />
         <meta name="keywords" content="synthetic biology, genetic engineering, CRISPR, DNA editing, protein design, biotechnology" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <header className="relative z-10">
@@ -199,7 +207,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {
                 disabled={isSimulating}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
                   isSimulating 
-                    ? 'bg-yellow-600 text-white' 
+                    ? 'bg-yellow-1200 text-white' 
                     : 'bg-green-600 text-white hover:bg-green-700'
                 } disabled:opacity-50`}
               >
@@ -228,7 +236,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-md font-medium transition-all duration-200 ${
+                  className={`flex items-center space-x-2 px-4 py-4 rounded-md font-medium transition-all duration-200 ${
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-green-600 to-blue-600 text-white'
                       : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
@@ -317,7 +325,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {
                           <h3 className="text-lg font-semibold text-white">{sequence.name}</h3>
                           <p className="text-gray-400 text-sm capitalize">{sequence.type}</p>
                         </div>
-                        <div className={`px-2 py-1 rounded text-xs font-medium ${getSequenceTypeColor(sequence.type)}`}>
+                        <div className={`px-4 py-3 rounded text-xs font-medium ${getSequenceTypeColor(sequence.type)}`}>
                           {sequence.status}
                         </div>
                       </div>
@@ -389,7 +397,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {
                       <div className="mt-4 pt-4 border-t border-gray-700">
                         <div className="flex flex-wrap gap-2">
                           {protein.mutations.map((mutation) => (
-                            <span key={mutation} className="px-2 py-1 bg-blue-600 text-white text-xs rounded-full">
+                            <span key={mutation} className="px-4 py-3 bg-blue-600 text-white text-xs rounded-full">
                               {mutation}
                             </span>
                           ))}
@@ -434,7 +442,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {
                       <div className="mt-4 pt-4 border-t border-gray-700">
                         <div className="flex flex-wrap gap-2">
                           {circuit.components.map((component) => (
-                            <span key={component} className="px-2 py-1 bg-purple-600 text-white text-xs rounded-full">
+                            <span key={component} className="px-4 py-3 bg-purple-600 text-white text-xs rounded-full">
                               {component}
                             </span>
                           ))}
@@ -520,7 +528,7 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {
                       <div className="mt-4 pt-4 border-t border-gray-700">
                         <div className="flex flex-wrap gap-2">
                           {organism.modifications.map((mod) => (
-                            <span key={mod} className="px-2 py-1 bg-green-600 text-white text-xs rounded-full">
+                            <span key={mod} className="px-4 py-3 bg-green-600 text-white text-xs rounded-full">
                               {mod}
                             </span>
                           ))}
@@ -549,7 +557,13 @@ const AIPoweredSyntheticBiologyGeneticEngineering: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredSyntheticBiologyGeneticEngineering 

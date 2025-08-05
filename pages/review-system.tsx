@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -208,7 +209,13 @@ const ReviewSystemPage: NextPage = () => {
         case 'rating':
           return b.rating - a.rating;
         case 'helpful':
-          return (b.helpful - b.notHelpful) - (a.helpful - a.notHelpful);
+          return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (b.helpful - b.notHelpful) - (a.helpful - a.notHelpful);
         case 'verified':
           return (b.verified ? 1 : 0) - (a.verified ? 1 : 0);
         case 'recent':
@@ -319,7 +326,8 @@ const ReviewSystemPage: NextPage = () => {
         <meta name="description" content="Comprehensive review and rating system for marketplace services, talents, equipment, and products" />
         <meta name="keywords" content="reviews, ratings, feedback, marketplace reviews, Zion" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
@@ -334,16 +342,16 @@ const ReviewSystemPage: NextPage = () => {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/advanced-search" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/advanced-search" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Search
               </Link>
-              <Link href="/payment-processing" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/payment-processing" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Payments
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -608,7 +616,7 @@ const ReviewSystemPage: NextPage = () => {
                       </div>
                       <div className="flex items-center space-x-2">
                         {renderStars(review.rating)}
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getTypeColor(review.itemType)}`}>
+                        <span className={`px-4 py-3 rounded-full text-xs font-medium border ${getTypeColor(review.itemType)}`}>
                           {review.itemType.charAt(0).toUpperCase() + review.itemType.slice(1)}
                         </span>
                       </div>
@@ -707,7 +715,7 @@ const ReviewSystemPage: NextPage = () => {
                       </div>
                       <div className="flex items-center space-x-2">
                         {renderStars(review.rating)}
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium border ${getTypeColor(review.itemType)}`}>
+                        <span className={`px-4 py-3 rounded-full text-xs font-medium border ${getTypeColor(review.itemType)}`}>
                           {review.itemType.charAt(0).toUpperCase() + review.itemType.slice(1)}
                         </span>
                       </div>
@@ -789,7 +797,7 @@ const ReviewSystemPage: NextPage = () => {
                             style={{ width: `${(stats.ratingDistribution[rating] || 0) / stats.totalReviews * 100}%` }}
                           ></div>
                         </div>
-                        <span className="text-sm text-gray-300 w-8 text-right">
+                        <span className="text-sm text-gray-300 w-12 text-right">
                           {stats.ratingDistribution[rating] || 0}
                         </span>
                       </div>
@@ -844,7 +852,13 @@ const ReviewSystemPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default ReviewSystemPage 

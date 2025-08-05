@@ -10,7 +10,8 @@ const AiPoweredAnalysis = () => {
         <title>Ai Powered Analysis - Zion App</title>
         <meta name="description" content="Comprehensive AI-driven analysis tools that provide deep insights into your data and operations." />
         <meta name="keywords" content="ai-powered-analysis, AI, automation, technology, solutions" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       
       <div className="relative z-10 container-responsive py-8">
         
@@ -20,7 +21,7 @@ const AiPoweredAnalysis = () => {
           <div className="absolute inset-0 bg-holographic bg-[length:400%_400%] animate-holographic-shift opacity-10"></div>
         </div>
       
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <section className="relative py-40 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -46,7 +47,7 @@ const AiPoweredAnalysis = () => {
           </div>
         </section>
 
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className="py-40 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -72,7 +73,7 @@ const AiPoweredAnalysis = () => {
                 className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
               >
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
@@ -88,7 +89,7 @@ const AiPoweredAnalysis = () => {
                 className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
               >
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
@@ -104,7 +105,7 @@ const AiPoweredAnalysis = () => {
                 className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
               >
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
@@ -120,7 +121,7 @@ const AiPoweredAnalysis = () => {
                 className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
               >
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
@@ -136,7 +137,7 @@ const AiPoweredAnalysis = () => {
                 className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
               >
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
@@ -152,7 +153,7 @@ const AiPoweredAnalysis = () => {
                 className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow"
               >
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
@@ -164,7 +165,7 @@ const AiPoweredAnalysis = () => {
           </div>
         </section>
 
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <section className="py-40 px-4 sm:px-6 lg:px-8 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -189,7 +190,7 @@ const AiPoweredAnalysis = () => {
                 transition={{ duration: 0.6, delay: 0 }}
                 className="flex items-start space-x-4"
               >
-                <div className="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                   <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -207,7 +208,7 @@ const AiPoweredAnalysis = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="flex items-start space-x-4"
               >
-                <div className="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                   <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -225,7 +226,7 @@ const AiPoweredAnalysis = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="flex items-start space-x-4"
               >
-                <div className="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                   <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -243,7 +244,7 @@ const AiPoweredAnalysis = () => {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="flex items-start space-x-4"
               >
-                <div className="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                   <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -258,7 +259,7 @@ const AiPoweredAnalysis = () => {
           </div>
         </section>
 
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-blue-600">
+        <section className="py-40 px-4 sm:px-6 lg:px-8 bg-blue-600">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

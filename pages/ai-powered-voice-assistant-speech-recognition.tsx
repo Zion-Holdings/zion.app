@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -367,6 +368,12 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
   }, [commands, selectedCategory])
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -379,7 +386,8 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
         <title>AI-Powered Voice Assistant & Speech Recognition - Zion</title>
         <meta name="description" content="Advanced AI-powered voice assistant and speech recognition platform with voice commands, speech-to-text, text-to-speech, and intelligent voice interactions" />
         <meta name="keywords" content="voice assistant, speech recognition, speech-to-text, text-to-speech, AI voice, Zion" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -389,19 +397,19 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Streaming
               </Link>
-              <Link href="/ai-powered-virtual-reality" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-virtual-reality" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 VR
               </Link>
-              <Link href="/ai-powered-holographic-display" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-holographic-display" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Holographic
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-200">
                 Get Started
               </Link>
             </div>
@@ -481,7 +489,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
                   <div key={command.id} className="p-4 bg-white/5 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="text-white font-medium">{command.command}</h4>
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${getStatusBgColor(command.status)} text-white`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(command.status)} text-white`}>
                         {command.status}
                       </span>
                     </div>
@@ -503,7 +511,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
                   <div key={assistant.id} className="p-4 bg-white/5 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="text-white font-medium">{assistant.name}</h4>
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${getStatusBgColor(assistant.status)} text-white`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(assistant.status)} text-white`}>
                         {assistant.status}
                       </span>
                     </div>
@@ -527,7 +535,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap ${
+                  className={`px-4 py-4 rounded-lg text-sm font-medium whitespace-nowrap ${
                     selectedCategory === category
                       ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                       : 'bg-white/10 text-gray-300 hover:text-white'
@@ -544,7 +552,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
                 <div key={command.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{command.command}</h3>
-                    <span className={`px-2 py-1 rounded text-xs font-medium ${getStatusBgColor(command.status)} text-white`}>
+                    <span className={`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(command.status)} text-white`}>
                       {command.status}
                     </span>
                   </div>
@@ -586,7 +594,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
                 <div key={transcription.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold text-lg">{transcription.title}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${
+                    <span className={`px-3 py-3 rounded-full text-sm ${
                       transcription.status === 'completed' ? 'bg-green-500/20 text-green-400' : 'bg-yellow-500/20 text-yellow-400'
                     }`}>
                       {transcription.status}
@@ -629,7 +637,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
                 <div key={speech.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold text-lg">{speech.title}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${
+                    <span className={`px-3 py-3 rounded-full text-sm ${
                       speech.status === 'completed' ? 'bg-green-500/20 text-green-400' : 'bg-yellow-500/20 text-yellow-400'
                     }`}>
                       {speech.status}
@@ -671,7 +679,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
                 <div key={assistant.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold text-lg">{assistant.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${
+                    <span className={`px-3 py-3 rounded-full text-sm ${
                       assistant.status === 'online' ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'
                     }`}>
                       {assistant.status}
@@ -682,7 +690,7 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
                     <h4 className="text-white font-medium mb-2">Capabilities:</h4>
                     <div className="flex flex-wrap gap-2">
                       {assistant.capabilities.map((capability, index) => (
-                        <span key={index} className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded">
+                        <span key={index} className="px-4 py-3 bg-purple-500/20 text-purple-300 text-xs rounded">
                           {capability}
                         </span>
                       ))}
@@ -813,8 +821,32 @@ const AIPoweredVoiceAssistantSpeechRecognitionPage: NextPage = () => {
           </div>
         </div>
       </div>
-    </div>
-  )
+    
+        {/* Mobile Navigation */}
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
+          <div className="flex justify-around items-center py-2">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <Home className="w-5 h-5" />
+              <span className="text-xs">Home</span>
+            </button>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <Search className="w-5 h-5" />
+              <span className="text-xs">Search</span>
+            </button>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <User className="w-5 h-5" />
+              <span className="text-xs">Profile</span>
+            </button>
+          </div>
+        </div>
+      </div>
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredVoiceAssistantSpeechRecognitionPage 

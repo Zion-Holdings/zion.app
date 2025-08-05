@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -133,11 +134,18 @@ const Blog: NextPage = () => {
   ];
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
         <title>Blog - Zion</title>
         <meta name="description" content="Latest insights on AI-powered marketplaces, blockchain technology, and digital innovation" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -149,13 +157,13 @@ const Blog: NextPage = () => {
               </Link>
             </div>
             <div className="flex items-center space-x-4 lg:space-x-8">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium touch-target">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-responsive-sm font-medium touch-target">
                 Marketplace
               </Link>
-              <Link href="/blog" className="text-white px-3 py-2 rounded-md text-responsive-sm font-medium touch-target">
+              <Link href="/blog" className="text-white px-3 py-4 rounded-md text-responsive-sm font-medium touch-target">
                 Blog
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-responsive-sm font-medium touch-target">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-responsive-sm font-medium touch-target">
                 Login
               </Link>
             </div>
@@ -184,7 +192,7 @@ const Blog: NextPage = () => {
               <div className="mb-4">
                 <div className="flex items-center space-x-2 mb-3">
                   {post.tags.slice(0, 2).map((tag) => (
-                    <span key={tag} className="px-2 py-1 bg-purple-500/20 text-purple-300 text-responsive-xs rounded-full">
+                    <span key={tag} className="px-4 py-3 bg-purple-500/20 text-purple-300 text-responsive-xs rounded-full">
                       {tag}
                     </span>
                   ))}
@@ -216,7 +224,13 @@ const Blog: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default Blog 

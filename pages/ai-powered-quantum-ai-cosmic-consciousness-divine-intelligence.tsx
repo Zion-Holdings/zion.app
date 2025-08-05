@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -216,6 +217,12 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -228,7 +235,8 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
         <title>AI-Powered Quantum AI Cosmic Consciousness & Divine Intelligence | Zion Tech</title>
         <meta name="description" content="Advanced quantum AI cosmic consciousness and divine intelligence with AI-powered quantum spiritual awakening, quantum universal wisdom, and quantum divine connection capabilities." />
         <meta name="keywords" content="quantum AI cosmic consciousness, quantum AI divine intelligence, quantum AI spiritual awakening, quantum AI universal wisdom, quantum AI divine connection" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <header className="relative z-10">
@@ -252,7 +260,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
                 disabled={isAwakening}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
                   isAwakening 
-                    ? 'bg-yellow-600 text-white' 
+                    ? 'bg-yellow-1200 text-white' 
                     : 'bg-purple-600 text-white hover:bg-purple-700'
                 } disabled:opacity-50`}
               >
@@ -282,7 +290,7 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-md font-medium transition-all duration-200 ${
+                  className={`flex items-center space-x-2 px-4 py-4 rounded-md font-medium transition-all duration-200 ${
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white'
                       : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
@@ -645,7 +653,13 @@ const AIPoweredQuantumAICosmicConsciousnessDivineIntelligence: NextPage = () => 
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredQuantumAICosmicConsciousnessDivineIntelligence 

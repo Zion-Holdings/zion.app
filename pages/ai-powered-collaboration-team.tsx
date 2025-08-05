@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -301,7 +302,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockTeams, mockWorkspaces, mockPartnerships, mockAnalytics])
+  }, [])
 
   const filteredTeams = useMemo(() => {
     let filtered = teams
@@ -334,6 +335,12 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -346,12 +353,13 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
         <title>AI-Powered Collaboration & Team Management System | Zion Tech Group</title>
         <meta name="description" content="Team coordination, workspace management, partnership building, and alliance management powered by AI." />
         <meta name="keywords" content="collaboration, team management, workspace, partnership, alliance, AI collaboration" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-teal-600/20 to-cyan-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               AI-Powered Collaboration & Team Management System
@@ -376,9 +384,9 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {isLoading ? (
-          <div className="flex justify-center items-center py-20">
+          <div className="flex justify-center items-center py-40">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-500"></div>
           </div>
         ) : (
@@ -437,7 +445,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
                       <select
                         value={selectedType}
                         onChange={(e) => setSelectedType(e.target.value)}
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
                       >
                         <option value="all" className="bg-slate-800">All Types</option>
                         <option value="project" className="bg-slate-800">Project</option>
@@ -448,7 +456,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
                         <option value="alliance" className="bg-slate-800">Alliance</option>
                       </select>
                     </div>
-                    <button className="bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300">
+                    <button className="bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300">
                       Create Team
                     </button>
                   </div>
@@ -463,7 +471,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
                           <h3 className="text-xl font-semibold text-white mb-2">{team.name}</h3>
                           <p className="text-gray-300 text-sm capitalize">{team.type} • {team.status}</p>
                         </div>
-                        <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(team.status)}`}>
+                        <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(team.status)}`}>
                           {team.status}
                         </span>
                       </div>
@@ -507,10 +515,10 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
                       </div>
 
                       <div className="flex space-x-2">
-                        <button className="flex-1 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           View Details
                         </button>
-                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           Manage Team
                         </button>
                       </div>
@@ -530,7 +538,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
                         <h3 className="text-xl font-semibold text-white mb-2">{workspace.name}</h3>
                         <p className="text-gray-300 text-sm capitalize">{workspace.type} Workspace</p>
                       </div>
-                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor('active')}`}>
+                      <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor('active')}`}>
                         Active
                       </span>
                     </div>
@@ -595,7 +603,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
                         <h3 className="text-xl font-semibold text-white mb-2">{partnership.name}</h3>
                         <p className="text-gray-300 text-sm capitalize">{partnership.type} Partnership</p>
                       </div>
-                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(partnership.status)}`}>
+                      <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(partnership.status)}`}>
                         {partnership.status}
                       </span>
                     </div>
@@ -679,7 +687,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
                       <div key={insight.id} className="bg-gradient-to-r from-teal-600/20 to-cyan-600/20 rounded-lg p-4">
                         <div className="flex items-start justify-between mb-2">
                           <h4 className="text-white font-semibold">{insight.title}</h4>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                             insight.impact === 'positive' ? 'bg-green-500/20 text-green-300' :
                             insight.impact === 'negative' ? 'bg-red-500/20 text-red-300' :
                             'bg-yellow-500/20 text-yellow-300'
@@ -706,7 +714,7 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-teal-600/20 to-cyan-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Enhance Your Collaboration?
@@ -727,7 +735,13 @@ const AIPoweredCollaborationTeamPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredCollaborationTeamPage 

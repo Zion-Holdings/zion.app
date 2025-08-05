@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -523,6 +524,12 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
   }, [satellites, selectedType])
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -535,7 +542,8 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
         <title>AI-Powered Space Exploration & Satellite Management - Zion</title>
         <meta name="description" content="Advanced AI-powered space exploration and satellite management platform with orbital tracking, mission planning, and intelligent space analytics" />
         <meta name="keywords" content="space exploration, satellite management, orbital tracking, space missions, AI space, Zion" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -545,22 +553,22 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Streaming
               </Link>
-              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Voice Assistant
               </Link>
-              <Link href="/ai-powered-autonomous-vehicle-transportation" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-autonomous-vehicle-transportation" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Autonomous Vehicles
               </Link>
-              <Link href="/ai-powered-cryptocurrency-digital-asset-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-cryptocurrency-digital-asset-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Cryptocurrency
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200">
                 Get Started
               </Link>
             </div>
@@ -627,7 +635,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
                   <div key={satellite.id} className="p-4 bg-white/5 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="text-white font-medium">{satellite.name}</h4>
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${getStatusBgColor(satellite.status)} text-white`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(satellite.status)} text-white`}>
                         {satellite.status}
                       </span>
                     </div>
@@ -651,7 +659,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
                   <div key={mission.id} className="p-4 bg-white/5 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="text-white font-medium">{mission.name}</h4>
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${getStatusBgColor(mission.status)} text-white`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(mission.status)} text-white`}>
                         {mission.status}
                       </span>
                     </div>
@@ -675,7 +683,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
                 <button
                   key={type}
                   onClick={() => setSelectedType(type)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap ${
+                  className={`px-4 py-4 rounded-lg text-sm font-medium whitespace-nowrap ${
                     selectedType === type
                       ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'
                       : 'bg-white/10 text-gray-300 hover:text-white'
@@ -692,7 +700,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
                 <div key={satellite.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{satellite.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${getStatusBgColor(satellite.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(satellite.status)} text-white`}>
                       {satellite.status}
                     </span>
                   </div>
@@ -734,7 +742,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
                 <div key={mission.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{mission.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${getStatusBgColor(mission.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(mission.status)} text-white`}>
                       {mission.status}
                     </span>
                   </div>
@@ -772,7 +780,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
                 <div key={trajectory.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{trajectory.name}</h3>
-                    <span className="px-3 py-1 rounded-full text-sm bg-blue-500/20 text-blue-400">
+                    <span className="px-3 py-3 rounded-full text-sm bg-blue-500/20 text-blue-400">
                       {trajectory.type}
                     </span>
                   </div>
@@ -810,7 +818,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
                 <div key={station.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{station.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${getStatusBgColor(station.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(station.status)} text-white`}>
                       {station.status}
                     </span>
                   </div>
@@ -848,7 +856,7 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
                 <div key={exploration.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{exploration.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${getStatusBgColor(exploration.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(exploration.status)} text-white`}>
                       {exploration.status}
                     </span>
                   </div>
@@ -966,8 +974,32 @@ const AIPoweredSpaceExplorationSatelliteManagementPage: NextPage = () => {
           </div>
         </div>
       </div>
-    </div>
-  )
+    
+        {/* Mobile Navigation */}
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
+          <div className="flex justify-around items-center py-2">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <Home className="w-5 h-5" />
+              <span className="text-xs">Home</span>
+            </button>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <Search className="w-5 h-5" />
+              <span className="text-xs">Search</span>
+            </button>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <User className="w-5 h-5" />
+              <span className="text-xs">Profile</span>
+            </button>
+          </div>
+        </div>
+      </div>
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredSpaceExplorationSatelliteManagementPage 

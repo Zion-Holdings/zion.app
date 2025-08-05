@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -226,6 +227,12 @@ Best regards,
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -237,7 +244,8 @@ Best regards,
       <Head>
         <title>Investor Matchmaking - Zion</title>
         <meta name="description" content="Connect with the right investors for your startup using AI-powered matchmaking" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -247,13 +255,13 @@ Best regards,
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Services
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </div>
@@ -261,7 +269,7 @@ Best regards,
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -421,7 +429,7 @@ Best regards,
               <h2 className="text-2xl font-bold text-white">Matched Investors</h2>
               <button
                 onClick={() => setShowForm(true)}
-                className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white hover:bg-white/20"
+                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white hover:bg-white/20"
               >
                 Update Profile
               </button>
@@ -472,7 +480,7 @@ Best regards,
                   <div className="flex space-x-3">
                     <button
                       onClick={() => generatePitchEmail(investor)}
-                      className="flex-1 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-pink-700"
+                      className="flex-1 px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-pink-700"
                     >
                       Generate Pitch Email
                     </button>
@@ -480,7 +488,7 @@ Best regards,
                       href={investor.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 bg-white/10 border border-white/20 text-white rounded-lg hover:bg-white/20"
+                      className="px-4 py-4 bg-white/10 border border-white/20 text-white rounded-lg hover:bg-white/20"
                     >
                       Visit Website
                     </a>
@@ -490,7 +498,7 @@ Best regards,
             </div>
 
             {investors.length === 0 && (
-              <div className="text-center py-12">
+              <div className="text-center py-32">
                 <p className="text-gray-400 text-lg">No investors matched your criteria. Try updating your profile.</p>
               </div>
             )}
@@ -526,19 +534,19 @@ Best regards,
                     navigator.clipboard.writeText(pitchEmail)
                     alert('Email copied to clipboard!')
                   }}
-                  className="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-pink-700"
+                  className="px-4 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium rounded-lg hover:from-purple-700 hover:to-pink-700"
                 >
                   Copy to Clipboard
                 </button>
                 <a
                   href={`mailto:${selectedInvestor.contactEmail}?subject=Investment Opportunity - ${startupProfile.name}&body=${encodeURIComponent(pitchEmail)}`}
-                  className="px-4 py-2 bg-white/10 border border-white/20 text-white rounded-lg hover:bg-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 text-white rounded-lg hover:bg-white/20"
                 >
                   Open in Email Client
                 </a>
                 <button
                   onClick={() => setSelectedInvestor(null)}
-                  className="px-4 py-2 bg-white/10 border border-white/20 text-white rounded-lg hover:bg-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 text-white rounded-lg hover:bg-white/20"
                 >
                   Close
                 </button>
@@ -548,7 +556,13 @@ Best regards,
         )}
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default InvestorMatchmakingPage 

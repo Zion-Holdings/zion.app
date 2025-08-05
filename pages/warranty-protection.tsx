@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -142,6 +143,12 @@ const WarrantyProtectionPage: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -154,7 +161,8 @@ const WarrantyProtectionPage: NextPage = () => {
         <title>Warranty & Protection Services - Zion Marketplace</title>
         <meta name="description" content="Comprehensive warranty and protection services for marketplace purchases. Extended coverage, claim processing, and peace of mind for every transaction." />
         <meta name="keywords" content="warranty protection, extended coverage, claim processing, marketplace protection, purchase protection" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -164,13 +172,13 @@ const WarrantyProtectionPage: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <nav className="flex items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/escrow-services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/escrow-services" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Escrow
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </nav>
@@ -179,7 +187,7 @@ const WarrantyProtectionPage: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
@@ -263,7 +271,7 @@ const WarrantyProtectionPage: NextPage = () => {
                 }`}>
                   {plan.popular && (
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                      <span className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-3 rounded-full text-sm font-semibold">
                         Most Popular
                       </span>
                     </div>
@@ -388,7 +396,7 @@ const WarrantyProtectionPage: NextPage = () => {
                       <h3 className="text-lg font-semibold text-white">{claim.product}</h3>
                       <p className="text-gray-300 text-sm">{claim.issue}</p>
                     </div>
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor(claim.status)}`}>
+                    <span className={`px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(claim.status)}`}>
                       {claim.status.toUpperCase()}
                     </span>
                   </div>
@@ -414,7 +422,7 @@ const WarrantyProtectionPage: NextPage = () => {
                     <h4 className="text-white font-semibold mb-2">Evidence:</h4>
                     <div className="flex flex-wrap gap-2">
                       {claim.evidence.map((item, index) => (
-                        <span key={index} className="bg-white/10 text-gray-300 px-2 py-1 rounded text-xs">
+                        <span key={index} className="bg-white/10 text-gray-300 px-4 py-3 rounded text-xs">
                           {item}
                         </span>
                       ))}
@@ -596,7 +604,7 @@ const WarrantyProtectionPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-blue-900/50 to-cyan-900/50 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Protect Your Investments
@@ -662,7 +670,13 @@ const WarrantyProtectionPage: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default WarrantyProtectionPage 

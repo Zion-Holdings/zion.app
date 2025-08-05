@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -488,6 +489,12 @@ const ProjectManagementPage: NextPage = () => {
 
   if (loading) {
     return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -498,7 +505,7 @@ const ProjectManagementPage: NextPage = () => {
       
         <div className="text-center">
           <div className="inline-flex items-center px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 shadow-lg">
-            <svg className="animate-spin -ml-1 mr-3 h-6 w-6 text-purple-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <svg className="animate-spin -ml-1 mr-3 h-12 w-12 text-purple-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
@@ -516,7 +523,8 @@ const ProjectManagementPage: NextPage = () => {
         <meta name="description" content="Comprehensive project management platform with task tracking, team collaboration, and project analytics" />
         <meta name="keywords" content="project management, task tracking, team collaboration, project analytics, Zion" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
@@ -532,48 +540,48 @@ const ProjectManagementPage: NextPage = () => {
             
             {/* Desktop Navigation - Main Links */}
             <div className="hidden lg:flex items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Services
               </Link>
-              <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Talents
               </Link>
-              <Link href="/equipment" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/equipment" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Equipment
               </Link>
-              <Link href="/products" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/products" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Products
               </Link>
             </div>
 
             {/* Desktop Navigation - Auth & Actions */}
             <div className="hidden lg:flex items-center space-x-4">
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
                 Join Zion Now
               </Link>
             </div>
 
             {/* Tablet Navigation - Reduced Links */}
             <div className="hidden md:flex lg:hidden items-center space-x-4">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Services
               </Link>
-              <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Talents
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
                 Join
               </Link>
             </div>
@@ -584,7 +592,7 @@ const ProjectManagementPage: NextPage = () => {
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-gray-300 hover:text-white focus:outline-none focus:text-white"
               >
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               </button>
@@ -594,64 +602,64 @@ const ProjectManagementPage: NextPage = () => {
           {/* Mobile menu */}
           {isMenuOpen && (
             <div className="md:hidden bg-black/90 backdrop-blur-md border-t border-white/10">
-              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              <div className="px-4 pt-2 pb-3 space-y-1 sm:px-3">
                 {/* Main Navigation */}
                 <div className="mb-4">
-                  <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Main</h3>
-                  <Link href="/marketplace" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-4">Main</h3>
+                  <Link href="/marketplace" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
                     Marketplace
                   </Link>
-                  <Link href="/services" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <Link href="/services" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
                     Services
                   </Link>
-                  <Link href="/talents" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <Link href="/talents" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
                     Talents
                   </Link>
-                  <Link href="/equipment" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <Link href="/equipment" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
                     Equipment
                   </Link>
-                  <Link href="/products" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <Link href="/products" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
                     Products
                   </Link>
                 </div>
 
                 {/* Tools & Features */}
                 <div className="mb-4">
-                  <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Tools</h3>
-                  <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-4">Tools</h3>
+                  <Link href="/real-time-chat" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
                     Live Chat
                   </Link>
-                  <Link href="/ai-virtual-assistant" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <Link href="/ai-virtual-assistant" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
                     AI Assistant
                   </Link>
-                  <Link href="/advanced-search" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <Link href="/advanced-search" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
                     Search
                   </Link>
-                  <Link href="/analytics-dashboard" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <Link href="/analytics-dashboard" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
                     Analytics
                   </Link>
                 </div>
 
                 {/* Resources */}
                 <div className="mb-4">
-                  <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-2">Resources</h3>
-                  <Link href="/blog" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <h3 className="text-xs font-semibold text-purple-400 uppercase tracking-wide px-3 py-4">Resources</h3>
+                  <Link href="/blog" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
                     Blog
                   </Link>
-                  <Link href="/about" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <Link href="/about" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
                     About
                   </Link>
-                  <Link href="/notifications" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <Link href="/notifications" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
                     Notifications
                   </Link>
                 </div>
 
                 {/* Authentication */}
                 <div className="border-t border-white/10 pt-4">
-                  <Link href="/auth/login" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <Link href="/auth/login" className="text-gray-300 hover:text-white block px-3 py-4 rounded-md text-base font-medium">
                     Login
                   </Link>
-                  <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white block px-3 py-4 rounded-md text-base font-medium">
                     Join Zion Now
                   </Link>
                 </div>
@@ -686,7 +694,7 @@ const ProjectManagementPage: NextPage = () => {
               <button
                 key={view.id}
                 onClick={() => setSelectedView(view.id as any)}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                className={`flex items-center space-x-2 px-4 py-4 rounded-md text-sm font-medium transition-all duration-200 ${
                   selectedView === view.id
                     ? 'bg-purple-600 text-white'
                     : 'text-gray-300 hover:text-white hover:bg-white/10'
@@ -776,10 +784,10 @@ const ProjectManagementPage: NextPage = () => {
                     <p className="text-gray-300 text-sm mb-2">{project.description}</p>
                   </div>
                   <div className="flex flex-col items-end space-y-2">
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(project.status)}`}>
+                    <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(project.status)}`}>
                       {project.status.charAt(0).toUpperCase() + project.status.slice(1)}
                     </span>
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${getPriorityColor(project.priority)}`}>
+                    <span className={`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(project.priority)}`}>
                       {project.priority.toUpperCase()}
                     </span>
                   </div>
@@ -827,11 +835,11 @@ const ProjectManagementPage: NextPage = () => {
                 <div className="flex space-x-3">
                   <button 
                     onClick={() => setSelectedProject(project)}
-                    className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
+                    className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105"
                   >
                     View Details
                   </button>
-                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
+                  <button className="border border-white/20 text-white hover:bg-white/10 px-4 py-4 rounded-lg text-sm font-semibold transition-all duration-300 backdrop-blur-sm">
                     Edit
                   </button>
                 </div>
@@ -851,7 +859,7 @@ const ProjectManagementPage: NextPage = () => {
                     <div key={task.id} className="bg-white/5 rounded-lg p-4">
                       <div className="flex items-center justify-between mb-2">
                         <h4 className="text-white font-medium">{task.title}</h4>
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getTaskStatusColor(task.status)}`}>
+                        <span className={`px-4 py-3 rounded-full text-xs font-medium ${getTaskStatusColor(task.status)}`}>
                           {task.status.replace('-', ' ')}
                         </span>
                       </div>
@@ -899,7 +907,7 @@ const ProjectManagementPage: NextPage = () => {
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-gray-400">Status</span>
-                    <span className={`px-2 py-1 rounded-full text-xs ${member.status === 'active' ? 'text-green-400 bg-green-500/20' : 'text-gray-400 bg-gray-500/20'}`}>
+                    <span className={`px-4 py-3 rounded-full text-xs ${member.status === 'active' ? 'text-green-400 bg-green-500/20' : 'text-gray-400 bg-gray-500/20'}`}>
                       {member.status}
                     </span>
                   </div>
@@ -974,7 +982,13 @@ const ProjectManagementPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default ProjectManagementPage 

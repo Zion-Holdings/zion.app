@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 
 interface ServiceProvider {
@@ -213,11 +214,18 @@ const ITServicesPage: React.FC = () => {
   };
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <>
       <Head>
         <title>IT Service Providers - Find the Best IT Solutions</title>
         <meta name="description" content="Discover top-rated IT service providers. Compare AI-matched scores, ratings, and get quotes from the best IT consultants and managed service providers." />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <div className="relative z-10 container-responsive py-8">
         
@@ -259,17 +267,17 @@ const ITServicesPage: React.FC = () => {
                     placeholder="Search providers, services, or specialties..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                    className="block w-full pl-10 pr-3 py-4 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
               </div>
 
               {/* Category Filter */}
-              <div className="w-full lg:w-64">
+              <div className="w-full lg:w-124">
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  className="block w-full px-3 py-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 >
                   {categories.map((category) => (
                     <option key={category} value={category}>
@@ -284,7 +292,7 @@ const ITServicesPage: React.FC = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as 'aiScore' | 'rating' | 'reviewCount')}
-                  className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  className="block w-full px-3 py-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                 >
                   <option value="aiScore">Sort by AI Score</option>
                   <option value="rating">Sort by Rating</option>
@@ -314,14 +322,14 @@ const ITServicesPage: React.FC = () => {
                 {/* Card Header */}
                 <div className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600">
                   <div className="absolute top-4 right-4">
-                    <div className="bg-white bg-opacity-90 rounded-full px-3 py-1">
+                    <div className="bg-white bg-opacity-90 rounded-full px-3 py-3">
                       <span className="text-sm font-semibold text-gray-800">
                         AI Score: {provider.aiScore}
                       </span>
                     </div>
                   </div>
                   <div className="absolute bottom-4 left-4">
-                    <div className="bg-white bg-opacity-90 rounded-lg px-3 py-2">
+                    <div className="bg-white bg-opacity-90 rounded-lg px-3 py-4">
                       <span className="text-sm font-medium text-gray-800">
                         {provider.category}
                       </span>
@@ -374,13 +382,13 @@ const ITServicesPage: React.FC = () => {
                       {provider.specialties.slice(0, 3).map((specialty, index) => (
                         <span
                           key={index}
-                          className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full"
+                          className="inline-block bg-blue-100 text-blue-800 text-xs px-4 py-3 rounded-full"
                         >
                           {specialty}
                         </span>
                       ))}
                       {provider.specialties.length > 3 && (
-                        <span className="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full">
+                        <span className="inline-block bg-gray-100 text-gray-600 text-xs px-4 py-3 rounded-full">
                           +{provider.specialties.length - 3} more
                         </span>
                       )}
@@ -390,7 +398,7 @@ const ITServicesPage: React.FC = () => {
                   {/* Request Quote Button */}
                   <button
                     onClick={() => handleRequestQuote(provider.id)}
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                   >
                     Request Quote
                   </button>
@@ -401,7 +409,7 @@ const ITServicesPage: React.FC = () => {
 
           {/* No Results */}
           {filteredProviders.length === 0 && (
-            <div className="text-center py-12">
+            <div className="text-center py-32">
               <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.47-.881-6.08-2.33" />
               </svg>
@@ -414,7 +422,13 @@ const ITServicesPage: React.FC = () => {
         </div>
       </div>
     </>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+);
 };
 
 export default ITServicesPage;

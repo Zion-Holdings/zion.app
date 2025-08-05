@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -193,6 +194,12 @@ const InvoiceBillingPage: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -205,7 +212,8 @@ const InvoiceBillingPage: NextPage = () => {
         <title>Invoice & Billing Management - Zion Marketplace</title>
         <meta name="description" content="Comprehensive invoice and billing management system for marketplace transactions. Generate invoices, track payments, and manage billing cycles." />
         <meta name="keywords" content="invoice billing, payment tracking, billing cycles, financial management, marketplace billing" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -215,13 +223,13 @@ const InvoiceBillingPage: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <nav className="flex items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/payment-processing" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/payment-processing" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Payments
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </nav>
@@ -230,7 +238,7 @@ const InvoiceBillingPage: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">
@@ -314,7 +322,7 @@ const InvoiceBillingPage: NextPage = () => {
                       <h3 className="text-lg font-semibold text-white">{invoice.invoiceNumber}</h3>
                       <p className="text-gray-300 text-sm">{invoice.client}</p>
                     </div>
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor(invoice.status)}`}>
+                    <span className={`px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(invoice.status)}`}>
                       {invoice.status.toUpperCase()}
                     </span>
                   </div>
@@ -341,10 +349,10 @@ const InvoiceBillingPage: NextPage = () => {
                   </div>
                   
                   <div className="flex gap-2">
-                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors">
                       View Details
                     </button>
-                    <button className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-3 py-4 rounded text-sm transition-colors">
                       Download PDF
                     </button>
                   </div>
@@ -366,7 +374,7 @@ const InvoiceBillingPage: NextPage = () => {
                       <h3 className="text-lg font-semibold text-white">{cycle.name}</h3>
                       <p className="text-gray-300 text-sm capitalize">{cycle.type} Cycle</p>
                     </div>
-                    <span className="px-3 py-1 rounded-full text-xs font-medium bg-green-500/20 text-green-400 border border-green-500/30">
+                    <span className="px-3 py-3 rounded-full text-xs font-medium bg-green-500/20 text-green-400 border border-green-500/30">
                       Active
                     </span>
                   </div>
@@ -404,10 +412,10 @@ const InvoiceBillingPage: NextPage = () => {
                   </div>
                   
                   <div className="flex gap-2">
-                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors">
                       View Details
                     </button>
-                    <button className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-3 py-4 rounded text-sm transition-colors">
                       Generate Report
                     </button>
                   </div>
@@ -444,7 +452,7 @@ const InvoiceBillingPage: NextPage = () => {
                         <td className="text-white py-3 px-6">{payment.method}</td>
                         <td className="text-white py-3 px-6">{payment.date.toLocaleDateString()}</td>
                         <td className="py-3 px-6">
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getPaymentStatusColor(payment.status)}`}>
+                          <span className={`px-3 py-3 rounded-full text-xs font-medium border ${getPaymentStatusColor(payment.status)}`}>
                             {payment.status.toUpperCase()}
                           </span>
                         </td>
@@ -483,7 +491,7 @@ const InvoiceBillingPage: NextPage = () => {
                     <span className="text-white">{formatCurrency(9800)}</span>
                   </div>
                 </div>
-                <button className="w-full mt-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-4 py-2 rounded text-sm transition-colors">
+                <button className="w-full mt-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-4 py-4 rounded text-sm transition-colors">
                   Download Report
                 </button>
               </div>
@@ -504,7 +512,7 @@ const InvoiceBillingPage: NextPage = () => {
                     <span className="text-white">10%</span>
                   </div>
                 </div>
-                <button className="w-full mt-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-4 py-2 rounded text-sm transition-colors">
+                <button className="w-full mt-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-4 py-4 rounded text-sm transition-colors">
                   View Details
                 </button>
               </div>
@@ -525,7 +533,7 @@ const InvoiceBillingPage: NextPage = () => {
                     <span className="text-yellow-400">{formatCurrency(3520)}</span>
                   </div>
                 </div>
-                <button className="w-full mt-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-4 py-2 rounded text-sm transition-colors">
+                <button className="w-full mt-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-4 py-4 rounded text-sm transition-colors">
                   Send Reminders
                 </button>
               </div>
@@ -554,7 +562,7 @@ const InvoiceBillingPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-green-900/50 to-emerald-900/50 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Streamline Your Billing
@@ -621,7 +629,13 @@ const InvoiceBillingPage: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default InvoiceBillingPage 

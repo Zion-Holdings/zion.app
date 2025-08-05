@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -417,7 +418,7 @@ const ExecutiveDashboardPage: NextPage = () => {
     switch (priority) {
       case 'critical': return 'bg-red-600';
       case 'high': return 'bg-orange-600';
-      case 'medium': return 'bg-yellow-600';
+      case 'medium': return 'bg-yellow-1200';
       case 'low': return 'bg-green-600';
       default: return 'bg-gray-600';
     }
@@ -437,6 +438,12 @@ const ExecutiveDashboardPage: NextPage = () => {
   };
 
   if (loading) {
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
     return (
       <div className="relative z-10 container-responsive py-8">
         
@@ -459,7 +466,8 @@ const ExecutiveDashboardPage: NextPage = () => {
         <title>Executive Dashboard - Zion Marketplace</title>
         <meta name="description" content="High-level strategic insights and executive reporting dashboard for C-level executives and board members." />
         <meta name="keywords" content="executive dashboard, strategic insights, business intelligence, KPI reporting, Zion" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -473,13 +481,13 @@ const ExecutiveDashboardPage: NextPage = () => {
               <select
                 value={timeframe}
                 onChange={(e) => setTimeframe(e.target.value as any)}
-                className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
               >
                 <option value="month">Monthly</option>
                 <option value="quarter">Quarterly</option>
                 <option value="year">Yearly</option>
               </select>
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                 Export Report
               </button>
             </div>
@@ -621,7 +629,7 @@ const ExecutiveDashboardPage: NextPage = () => {
                           <p className="text-gray-400 text-sm">{initiative.owner}</p>
                         </div>
                         <div className="text-right">
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(initiative.status)}`}>
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(initiative.status)}`}>
                             {initiative.progress}%
                           </span>
                         </div>
@@ -714,10 +722,10 @@ const ExecutiveDashboardPage: NextPage = () => {
                       <div>
                         <div className="flex items-center space-x-3 mb-2">
                           <h3 className="text-lg font-semibold text-white">{initiative.name}</h3>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${getPriorityColor(initiative.priority)}`}>
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(initiative.priority)}`}>
                             {initiative.priority}
                           </span>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(initiative.status)}`}>
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(initiative.status)}`}>
                             {initiative.status.replace('-', ' ')}
                           </span>
                         </div>
@@ -755,7 +763,7 @@ const ExecutiveDashboardPage: NextPage = () => {
                       <span className="text-gray-400 text-sm">KPIs</span>
                       <div className="flex flex-wrap gap-2 mt-1">
                         {initiative.kpis.map((kpi, idx) => (
-                          <span key={idx} className="px-2 py-1 bg-purple-600 text-white rounded text-xs">
+                          <span key={idx} className="px-4 py-3 bg-purple-600 text-white rounded text-xs">
                             {kpi}
                           </span>
                         ))}
@@ -883,16 +891,16 @@ const ExecutiveDashboardPage: NextPage = () => {
                       <div>
                         <div className="flex items-center space-x-3 mb-2">
                           <h3 className="text-lg font-semibold text-white">{insight.title}</h3>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                             insight.category === 'opportunity' ? 'bg-green-600' :
                             insight.category === 'threat' ? 'bg-red-600' :
-                            insight.category === 'trend' ? 'bg-blue-600' : 'bg-yellow-600'
+                            insight.category === 'trend' ? 'bg-blue-600' : 'bg-yellow-1200'
                           } text-white`}>
                             {insight.category}
                           </span>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                             insight.impact === 'high' ? 'bg-red-600' :
-                            insight.impact === 'medium' ? 'bg-yellow-600' : 'bg-green-600'
+                            insight.impact === 'medium' ? 'bg-yellow-1200' : 'bg-green-600'
                           } text-white`}>
                             {insight.impact} impact
                           </span>
@@ -979,7 +987,13 @@ const ExecutiveDashboardPage: NextPage = () => {
         </div>
       </div>
     </div>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+);
 };
 
 export default ExecutiveDashboardPage; 

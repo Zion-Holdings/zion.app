@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';import ModernLayout from '../components/layout/ModernLayout'
+
 import { useRouter } from 'next/router';
 import { useAuth } from '../src/contexts/AuthContext';
 import Head from 'next/head';
@@ -139,6 +140,10 @@ export default function AdminDashboard() {
   // Show loading state while checking authentication
   if (loading || isCheckingAuth) {
     return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
@@ -164,7 +169,8 @@ export default function AdminDashboard() {
       <Head>
         <title>Admin Dashboard - Zion</title>
         <meta name="description" content="Admin dashboard for managing autonomous agents" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       
       <div className="min-h-screen bg-gray-100">
         <div className="bg-white shadow-sm border-b">
@@ -178,7 +184,7 @@ export default function AdminDashboard() {
                 <span className="text-sm text-gray-500">Logged in as: {user?.email}</span>
                 <button
                   onClick={() => router.push('/dashboard')}
-                  className="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors"
+                  className="px-4 py-4 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors"
                 >
                   Back to Dashboard
                 </button>
@@ -202,10 +208,10 @@ export default function AdminDashboard() {
                 <div className="text-sm text-green-600">Active Agents</div>
               </div>
               <div className="bg-yellow-50 p-4 rounded-lg">
-                <div className="text-2xl font-bold text-yellow-600">
+                <div className="text-2xl font-bold text-yellow-1200">
                   {agents.filter(a => a.status === 'idle').length}
                 </div>
-                <div className="text-sm text-yellow-600">Idle Agents</div>
+                <div className="text-sm text-yellow-1200">Idle Agents</div>
               </div>
               <div className="bg-red-50 p-4 rounded-lg">
                 <div className="text-2xl font-bold text-red-600">
@@ -236,9 +242,9 @@ export default function AdminDashboard() {
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{agent.type}</td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
+                        <span className={`inline-flex px-4 py-3 text-xs font-semibold rounded-full ${
                           agent.status === 'active' ? 'bg-green-100 text-green-800' :
-                          agent.status === 'idle' ? 'bg-yellow-100 text-yellow-800' :
+                          agent.status === 'idle' ? 'bg-yellow-100 text-yellow-1200' :
                           agent.status === 'error' ? 'bg-red-100 text-red-800' :
                           'bg-gray-100 text-gray-800'
                         }`}>
@@ -277,5 +283,9 @@ export default function AdminDashboard() {
         </div>
       </div>
     </>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+);
 } 

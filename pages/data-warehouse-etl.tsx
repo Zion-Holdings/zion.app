@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -124,6 +125,12 @@ const DataWarehouseETL: NextPage = () => {
 
   if (loading) {
     return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -145,7 +152,8 @@ const DataWarehouseETL: NextPage = () => {
         <title>Data Warehouse & ETL Platform - Zion Tech Group</title>
         <meta name="description" content="Comprehensive data warehouse and ETL platform for enterprise data integration" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <header className="bg-black/20 backdrop-blur-sm border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -249,7 +257,7 @@ const DataWarehouseETL: NextPage = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`px-4 py-2 rounded-lg font-medium transition-all ${
+              className={`px-4 py-4 rounded-lg font-medium transition-all ${
                 activeTab === tab.id
                   ? 'bg-white/10 text-white border border-white/20'
                   : 'text-gray-400 hover:text-white hover:bg-white/5'
@@ -311,7 +319,7 @@ const DataWarehouseETL: NextPage = () => {
                   >
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="text-lg font-semibold text-white">{source.name}</h3>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(source.status)}`}>
+                      <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(source.status)}`}>
                         {source.status}
                       </span>
                     </div>
@@ -361,7 +369,7 @@ const DataWarehouseETL: NextPage = () => {
                       <div>
                         <h4 className="text-lg font-semibold text-white">{pipeline.name}</h4>
                       </div>
-                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(pipeline.status)}`}>
+                      <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(pipeline.status)}`}>
                         {pipeline.status}
                       </span>
                     </div>
@@ -407,7 +415,7 @@ const DataWarehouseETL: NextPage = () => {
                         <h4 className="text-xl font-semibold text-white">{warehouse.name}</h4>
                         <p className="text-gray-400 capitalize">{warehouse.type}</p>
                       </div>
-                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(warehouse.status)}`}>
+                      <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(warehouse.status)}`}>
                         {warehouse.status}
                       </span>
                     </div>
@@ -434,7 +442,13 @@ const DataWarehouseETL: NextPage = () => {
         </AnimatePresence>
       </main>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default DataWarehouseETL 

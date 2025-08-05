@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -391,6 +392,12 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
   }, [digitalAssets, selectedType])
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -403,7 +410,8 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
         <title>AI-Powered Cryptocurrency & Digital Asset Management - Zion</title>
         <meta name="description" content="Advanced AI-powered cryptocurrency and digital asset management platform with trading strategies, portfolio optimization, and intelligent investment insights" />
         <meta name="keywords" content="cryptocurrency, digital assets, portfolio management, trading strategies, AI investment, blockchain, Zion" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -413,19 +421,19 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Streaming
               </Link>
-              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Voice Assistant
               </Link>
-              <Link href="/ai-powered-autonomous-vehicle-transportation" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-autonomous-vehicle-transportation" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Autonomous Vehicles
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200">
                 Get Started
               </Link>
             </div>
@@ -491,7 +499,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
                   <div key={crypto.id} className="p-4 bg-white/5 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="text-white font-medium">{crypto.symbol} - {crypto.name}</h4>
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${getChangeBgColor(crypto.change24h)} text-white`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${getChangeBgColor(crypto.change24h)} text-white`}>
                         {formatPercentage(crypto.change24h)}
                       </span>
                     </div>
@@ -515,7 +523,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
                   <div key={portfolio.id} className="p-4 bg-white/5 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="text-white font-medium">{portfolio.name}</h4>
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${getChangeBgColor(portfolio.totalReturn)} text-white`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${getChangeBgColor(portfolio.totalReturn)} text-white`}>
                         {formatPercentage(portfolio.totalReturn)}
                       </span>
                     </div>
@@ -538,7 +546,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
                 <div key={crypto.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{crypto.symbol}</h3>
-                    <span className={`px-2 py-1 rounded text-xs font-medium ${getChangeBgColor(crypto.change24h)} text-white`}>
+                    <span className={`px-4 py-3 rounded text-xs font-medium ${getChangeBgColor(crypto.change24h)} text-white`}>
                       {formatPercentage(crypto.change24h)}
                     </span>
                   </div>
@@ -583,7 +591,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
                 <button
                   key={type}
                   onClick={() => setSelectedType(type)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap ${
+                  className={`px-4 py-4 rounded-lg text-sm font-medium whitespace-nowrap ${
                     selectedType === type
                       ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'
                       : 'bg-white/10 text-gray-300 hover:text-white'
@@ -600,7 +608,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
                 <div key={asset.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{asset.symbol}</h3>
-                    <span className={`px-2 py-1 rounded text-xs font-medium ${getChangeBgColor(asset.totalReturn)} text-white`}>
+                    <span className={`px-4 py-3 rounded text-xs font-medium ${getChangeBgColor(asset.totalReturn)} text-white`}>
                       {formatPercentage(asset.totalReturn)}
                     </span>
                   </div>
@@ -642,7 +650,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
                 <div key={portfolio.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold text-lg">{portfolio.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${getChangeBgColor(portfolio.totalReturn)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm ${getChangeBgColor(portfolio.totalReturn)} text-white`}>
                       {formatPercentage(portfolio.totalReturn)}
                     </span>
                   </div>
@@ -680,7 +688,7 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
                 <div key={strategy.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{strategy.name}</h3>
-                    <span className="px-3 py-1 rounded-full text-sm bg-blue-500/20 text-blue-400">
+                    <span className="px-3 py-3 rounded-full text-sm bg-blue-500/20 text-blue-400">
                       {strategy.type}
                     </span>
                   </div>
@@ -807,7 +815,13 @@ const AIPoweredCryptocurrencyDigitalAssetManagementPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredCryptocurrencyDigitalAssetManagementPage 

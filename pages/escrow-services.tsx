@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -105,6 +106,12 @@ const EscrowServicesPage: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -117,7 +124,8 @@ const EscrowServicesPage: NextPage = () => {
         <title>Escrow Services - Zion Marketplace</title>
         <meta name="description" content="Secure escrow services for marketplace transactions. Protected payments, dispute resolution, and transaction security." />
         <meta name="keywords" content="escrow services, secure payments, dispute resolution, marketplace security, transaction protection" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -127,13 +135,13 @@ const EscrowServicesPage: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <nav className="flex items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/payment-processing" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/payment-processing" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Payments
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </nav>
@@ -142,7 +150,7 @@ const EscrowServicesPage: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -324,7 +332,7 @@ const EscrowServicesPage: NextPage = () => {
                           ${transaction.amount.toLocaleString()}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
-                          <span className={`inline-flex px-3 py-1 rounded-full text-xs font-medium border ${getStatusBadge(transaction.status)}`}>
+                          <span className={`inline-flex px-3 py-3 rounded-full text-xs font-medium border ${getStatusBadge(transaction.status)}`}>
                             {transaction.status.replace('_', ' ').toUpperCase()}
                           </span>
                         </td>
@@ -360,7 +368,7 @@ const EscrowServicesPage: NextPage = () => {
                   <div key={dispute.id} className="border border-white/10 rounded-lg p-4 mb-4">
                     <div className="flex justify-between items-start mb-2">
                       <span className="text-sm text-white font-medium">{dispute.id}</span>
-                      <span className="text-xs text-yellow-400 bg-yellow-500/20 px-2 py-1 rounded">
+                      <span className="text-xs text-yellow-400 bg-yellow-500/20 px-4 py-3 rounded">
                         {dispute.status.replace('_', ' ').toUpperCase()}
                       </span>
                     </div>
@@ -374,28 +382,28 @@ const EscrowServicesPage: NextPage = () => {
                 <h3 className="text-lg font-semibold text-white mb-4">Resolution Process</h3>
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3 mt-1">1</div>
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3 mt-1">1</div>
                     <div>
                       <h4 className="text-white font-medium">Submit Dispute</h4>
                       <p className="text-sm text-gray-300">File a dispute with detailed evidence</p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3 mt-1">2</div>
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3 mt-1">2</div>
                     <div>
                       <h4 className="text-white font-medium">AI Review</h4>
                       <p className="text-sm text-gray-300">AI analyzes evidence and transaction history</p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3 mt-1">3</div>
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3 mt-1">3</div>
                     <div>
                       <h4 className="text-white font-medium">Human Oversight</h4>
                       <p className="text-sm text-gray-300">Expert review for complex cases</p>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3 mt-1">4</div>
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3 mt-1">4</div>
                     <div>
                       <h4 className="text-white font-medium">Resolution</h4>
                       <p className="text-sm text-gray-300">Fair outcome within 48 hours</p>
@@ -458,7 +466,7 @@ const EscrowServicesPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Trade Securely?
@@ -524,7 +532,13 @@ const EscrowServicesPage: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default EscrowServicesPage 

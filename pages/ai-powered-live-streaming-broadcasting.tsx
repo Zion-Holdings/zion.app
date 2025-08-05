@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -346,6 +347,12 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
   }, [streams, selectedCategory])
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -358,7 +365,8 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
         <title>AI-Powered Live Streaming & Broadcasting - Zion</title>
         <meta name="description" content="Advanced AI-powered live streaming and broadcasting platform with real-time analytics, content analysis, and engagement tracking" />
         <meta name="keywords" content="live streaming, broadcasting, AI analytics, content analysis, real-time engagement, Zion" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -368,19 +376,19 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/ai-powered-virtual-reality" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-virtual-reality" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 VR
               </Link>
-              <Link href="/ai-powered-augmented-reality" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-augmented-reality" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 AR
               </Link>
-              <Link href="/ai-powered-holographic-display" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-holographic-display" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Holographic
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-200">
                 Get Started
               </Link>
             </div>
@@ -492,7 +500,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap ${
+                  className={`px-4 py-4 rounded-lg text-sm font-medium whitespace-nowrap ${
                     selectedCategory === category
                       ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                       : 'bg-white/10 text-gray-300 hover:text-white'
@@ -510,12 +518,12 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
                   <div className="relative">
                     <Image src={stream.thumbnail} alt={stream.title} width={400} height={192} className="w-full h-48 object-cover" />
                     <div className="absolute top-2 left-2">
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${getStatusBgColor(stream.status)} text-white`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(stream.status)} text-white`}>
                         {stream.status.toUpperCase()}
                       </span>
                     </div>
                     <div className="absolute top-2 right-2">
-                      <span className="px-2 py-1 rounded text-xs font-medium bg-black/50 text-white">
+                      <span className="px-4 py-3 rounded text-xs font-medium bg-black/50 text-white">
                         {stream.quality}
                       </span>
                     </div>
@@ -529,7 +537,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
                     </div>
                     <div className="mt-3 flex flex-wrap gap-1">
                       {stream.tags.slice(0, 3).map((tag) => (
-                        <span key={tag} className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded">
+                        <span key={tag} className="px-4 py-3 bg-purple-500/20 text-purple-300 text-xs rounded">
                           {tag}
                         </span>
                       ))}
@@ -548,7 +556,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
                 <div key={channel.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold text-lg">{channel.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${
+                    <span className={`px-3 py-3 rounded-full text-sm ${
                       channel.status === 'active' ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'
                     }`}>
                       {channel.status}
@@ -644,7 +652,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
               <div className="h-96 overflow-y-auto space-y-3 mb-4">
                 {liveChat.map((message) => (
                   <div key={message.id} className="flex items-start space-x-3 p-3 bg-white/5 rounded-lg">
-                    <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-medium">
+                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-medium">
                       {message.username.charAt(0).toUpperCase()}
                     </div>
                     <div className="flex-1">
@@ -654,7 +662,7 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
                           {message.timestamp.toLocaleTimeString()}
                         </span>
                         {message.aiAnalysis.moderationRequired && (
-                          <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">
+                          <span className="px-4 py-3 bg-red-500/20 text-red-400 text-xs rounded">
                             Flagged
                           </span>
                         )}
@@ -673,9 +681,9 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
                 <input
                   type="text"
                   placeholder="Type your message..."
-                  className="flex-1 px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="flex-1 px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
                 />
-                <button className="px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-200">
+                <button className="px-6 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-200">
                   Send
                 </button>
               </div>
@@ -728,7 +736,13 @@ const AIPoweredLiveStreamingBroadcastingPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredLiveStreamingBroadcastingPage 

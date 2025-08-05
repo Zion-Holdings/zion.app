@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -381,6 +382,12 @@ const WebhookManagementPage: NextPage = () => {
 
   if (loading) {
     return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -402,7 +409,8 @@ const WebhookManagementPage: NextPage = () => {
         <title>Webhook Management Center - Zion Marketplace</title>
         <meta name="description" content="Manage, monitor, and orchestrate webhooks in a centralized dashboard. Track events, configure endpoints, and ensure reliable integrations." />
         <meta name="keywords" content="webhook management, webhook monitoring, API integration, event tracking, Zion" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -413,7 +421,7 @@ const WebhookManagementPage: NextPage = () => {
               <p className="text-gray-300 mt-2">Manage, monitor, and orchestrate your webhooks</p>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                 Create Webhook
               </button>
             </div>
@@ -513,12 +521,12 @@ const WebhookManagementPage: NextPage = () => {
                 placeholder="Search webhooks..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
               />
               <select
                 value={filters.status}
                 onChange={(e) => setFilters(prev => ({ ...prev, status: e.target.value }))}
-                className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
               >
                 <option value="all">All Status</option>
                 <option value="active">Active</option>
@@ -529,7 +537,7 @@ const WebhookManagementPage: NextPage = () => {
               <select
                 value={filters.trigger}
                 onChange={(e) => setFilters(prev => ({ ...prev, trigger: e.target.value }))}
-                className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
               >
                 <option value="all">All Triggers</option>
                 <option value="event">Event</option>
@@ -543,7 +551,7 @@ const WebhookManagementPage: NextPage = () => {
             {activeTab === 'webhooks' && (
               <div className="space-y-4">
                 {filteredWebhooks.length === 0 ? (
-                  <div className="text-center py-12">
+                  <div className="text-center py-32">
                     <div className="text-6xl mb-4">🪝</div>
                     <h3 className="text-xl font-semibold text-white mb-2">No webhooks found</h3>
                     <p className="text-gray-400">Try adjusting your filters or create a new webhook</p>
@@ -564,10 +572,10 @@ const WebhookManagementPage: NextPage = () => {
                             <div className="flex items-center space-x-3 mb-2">
                               <span className="text-2xl">🪝</span>
                               <h3 className="text-lg font-semibold text-white">{webhook.name}</h3>
-                              <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(webhook.status)}`}>
+                              <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(webhook.status)}`}>
                                 {getStatusIcon(webhook.status)} {webhook.status}
                               </span>
-                              <span className={`px-2 py-1 rounded-full text-xs font-medium ${getMethodColor(webhook.method)}`}>
+                              <span className={`px-4 py-3 rounded-full text-xs font-medium ${getMethodColor(webhook.method)}`}>
                                 {webhook.method}
                               </span>
                             </div>
@@ -599,7 +607,7 @@ const WebhookManagementPage: NextPage = () => {
                           <div className="flex items-center space-x-2 ml-4">
                             <button
                               onClick={() => toggleWebhookStatus(webhook.id)}
-                              className={`px-3 py-1 rounded text-sm font-medium transition-all duration-200 ${
+                              className={`px-3 py-3 rounded text-sm font-medium transition-all duration-200 ${
                                 webhook.status === 'active'
                                   ? 'bg-red-600 text-white hover:bg-red-700'
                                   : 'bg-green-600 text-white hover:bg-green-700'
@@ -609,7 +617,7 @@ const WebhookManagementPage: NextPage = () => {
                             </button>
                             <button
                               onClick={() => setSelectedWebhook(webhook)}
-                              className="px-3 py-1 bg-purple-600 text-white rounded text-sm font-medium hover:bg-purple-700 transition-all duration-200"
+                              className="px-3 py-3 bg-purple-600 text-white rounded text-sm font-medium hover:bg-purple-700 transition-all duration-200"
                             >
                               View Details
                             </button>
@@ -635,10 +643,10 @@ const WebhookManagementPage: NextPage = () => {
                     <div className="flex items-center justify-between">
                       <div>
                         <div className="flex items-center space-x-2 mb-1">
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                             event.status === 'success' ? 'bg-green-600 text-white' :
                             event.status === 'failed' ? 'bg-red-600 text-white' :
-                            'bg-yellow-600 text-white'
+                            'bg-yellow-1200 text-white'
                           }`}>
                             {event.status}
                           </span>
@@ -669,7 +677,7 @@ const WebhookManagementPage: NextPage = () => {
                     <div className="flex items-center space-x-3 mb-3">
                       <span className="text-2xl">📋</span>
                       <h3 className="text-lg font-semibold text-white">{template.name}</h3>
-                      <span className="px-2 py-1 rounded-full text-xs font-medium bg-purple-600 text-white">
+                      <span className="px-4 py-3 rounded-full text-xs font-medium bg-purple-600 text-white">
                         {template.category}
                       </span>
                     </div>
@@ -684,7 +692,7 @@ const WebhookManagementPage: NextPage = () => {
                         <span className="text-white ml-2">{template.events.length}</span>
                       </div>
                     </div>
-                    <button className="mt-4 w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 rounded-lg font-medium transition-all duration-300">
+                    <button className="mt-4 w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 rounded-lg font-medium transition-all duration-300">
                       Use Template
                     </button>
                   </motion.div>
@@ -752,7 +760,7 @@ const WebhookManagementPage: NextPage = () => {
                     onClick={() => setSelectedWebhook(null)}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </button>
@@ -778,7 +786,7 @@ const WebhookManagementPage: NextPage = () => {
                         <span className="text-gray-400">Events:</span>
                         <div className="flex flex-wrap gap-1 mt-1">
                           {selectedWebhook.events.map(event => (
-                            <span key={event} className="px-2 py-1 bg-purple-600 text-white rounded text-xs">
+                            <span key={event} className="px-4 py-3 bg-purple-600 text-white rounded text-xs">
                               {event}
                             </span>
                           ))}
@@ -811,13 +819,13 @@ const WebhookManagementPage: NextPage = () => {
                 </div>
 
                 <div className="mt-6 flex space-x-3">
-                  <button className="px-4 py-2 bg-purple-600 text-white rounded-lg font-medium hover:bg-purple-700 transition-all duration-200">
+                  <button className="px-4 py-4 bg-purple-600 text-white rounded-lg font-medium hover:bg-purple-700 transition-all duration-200">
                     Edit Webhook
                   </button>
-                  <button className="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all duration-200">
+                  <button className="px-4 py-4 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-all duration-200">
                     Test Webhook
                   </button>
-                  <button className="px-4 py-2 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition-all duration-200">
+                  <button className="px-4 py-4 bg-red-600 text-white rounded-lg font-medium hover:bg-red-700 transition-all duration-200">
                     Delete Webhook
                   </button>
                 </div>
@@ -827,7 +835,13 @@ const WebhookManagementPage: NextPage = () => {
         )}
       </div>
     </div>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+);
 };
 
 export default WebhookManagementPage; 

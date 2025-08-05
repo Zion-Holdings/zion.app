@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -7,6 +8,12 @@ const ApiDocs: NextPage = () => {
   const [activeSection, setActiveSection] = useState('authentication')
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -18,7 +25,8 @@ const ApiDocs: NextPage = () => {
       <Head>
         <title>API Documentation - Zion</title>
         <meta name="description" content="Comprehensive API documentation for Zion's marketplace platform." />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -45,7 +53,7 @@ const ApiDocs: NextPage = () => {
               <Link href="/auth/login" className="text-gray-300 hover:text-white transition-colors">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg transition-all duration-200">
                 Join Zion Now
               </Link>
             </div>
@@ -53,7 +61,7 @@ const ApiDocs: NextPage = () => {
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -110,7 +118,7 @@ const ApiDocs: NextPage = () => {
               
               <div className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-sm font-medium">GET</span>
+                  <span className="bg-green-500/20 text-green-300 px-3 py-3 rounded-full text-sm font-medium">GET</span>
                   <code className="text-purple-300 font-mono">/api/marketplace</code>
                 </div>
                 <p className="text-gray-300 mb-4">Retrieve marketplace listings and services</p>
@@ -134,7 +142,7 @@ const ApiDocs: NextPage = () => {
 
               <div className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-sm">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">POST</span>
+                  <span className="bg-blue-500/20 text-blue-300 px-3 py-3 rounded-full text-sm font-medium">POST</span>
                   <code className="text-purple-300 font-mono">/api/quote-request</code>
                 </div>
                 <p className="text-gray-300 mb-4">Submit a quote request for services</p>
@@ -272,7 +280,13 @@ print(data)`}</code>
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default ApiDocs 

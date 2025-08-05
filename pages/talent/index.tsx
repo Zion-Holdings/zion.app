@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { createClient } from '@supabase/supabase-js';
 
@@ -123,6 +124,10 @@ const TalentPage: React.FC = () => {
 
   const renderStars = (rating: number) => {
     return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
       <div className="flex items-center">
         {[1, 2, 3, 4, 5].map((star) => (
           <svg
@@ -155,7 +160,8 @@ const TalentPage: React.FC = () => {
       <Head>
         <title>IT Talents - Find Top Tech Professionals</title>
         <meta name="description" content="Discover and hire top IT professionals. Browse profiles, compare skills, and connect with talented developers, designers, and tech experts." />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <div className="min-h-screen bg-gray-50">
         {/* Header */}
@@ -183,7 +189,7 @@ const TalentPage: React.FC = () => {
                   placeholder="Search talents, skills, or titles..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
 
@@ -192,7 +198,7 @@ const TalentPage: React.FC = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as 'rating' | 'rate' | 'experience')}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
                   <option value="rating">Sort by Rating</option>
                   <option value="rate">Sort by Rate</option>
@@ -208,7 +214,7 @@ const TalentPage: React.FC = () => {
                   <button
                     key={skill}
                     onClick={() => handleSkillToggle(skill)}
-                    className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                    className={`px-3 py-3 rounded-full text-sm font-medium transition-colors ${
                       selectedSkills.includes(skill)
                         ? 'bg-blue-600 text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -241,14 +247,14 @@ const TalentPage: React.FC = () => {
                 {/* Card Header */}
                 <div className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600">
                   <div className="absolute top-4 right-4">
-                    <div className="bg-white bg-opacity-90 rounded-full px-3 py-1">
+                    <div className="bg-white bg-opacity-90 rounded-full px-3 py-3">
                       <span className="text-sm font-semibold text-gray-800">
                         ${talent.hourly_rate}/hr
                       </span>
                     </div>
                   </div>
                   <div className="absolute bottom-4 left-4">
-                    <div className="bg-white bg-opacity-90 rounded-lg px-3 py-2">
+                    <div className="bg-white bg-opacity-90 rounded-lg px-3 py-4">
                       <span className="text-sm font-medium text-gray-800">
                         {talent.availability}
                       </span>
@@ -299,13 +305,13 @@ const TalentPage: React.FC = () => {
                       {talent.skills.slice(0, 4).map((skill, index) => (
                         <span
                           key={index}
-                          className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full"
+                          className="inline-block bg-blue-100 text-blue-800 text-xs px-4 py-3 rounded-full"
                         >
                           {skill}
                         </span>
                       ))}
                       {talent.skills.length > 4 && (
-                        <span className="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full">
+                        <span className="inline-block bg-gray-100 text-gray-600 text-xs px-4 py-3 rounded-full">
                           +{talent.skills.length - 4} more
                         </span>
                       )}
@@ -313,7 +319,7 @@ const TalentPage: React.FC = () => {
                   </div>
 
                   {/* Contact Button */}
-                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-4 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                     Contact Talent
                   </button>
                 </div>
@@ -323,7 +329,7 @@ const TalentPage: React.FC = () => {
 
           {/* No Results */}
           {filteredTalents.length === 0 && (
-            <div className="text-center py-12">
+            <div className="text-center py-32">
               <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
               </svg>
@@ -336,7 +342,11 @@ const TalentPage: React.FC = () => {
         </div>
       </div>
     </>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+);
 };
 
 export default TalentPage;

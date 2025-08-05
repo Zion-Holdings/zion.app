@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -428,6 +429,12 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
   }, [smartManufacturing, selectedType])
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -440,7 +447,8 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
         <title>AI-Powered Manufacturing & Industrial Automation - Zion</title>
         <meta name="description" content="Advanced AI-powered manufacturing and industrial automation platform with smart manufacturing, quality control, and intelligent production optimization" />
         <meta name="keywords" content="manufacturing, industrial automation, smart manufacturing, quality control, AI manufacturing, Zion" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -450,40 +458,40 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Streaming
               </Link>
-              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Voice Assistant
               </Link>
-              <Link href="/ai-powered-autonomous-vehicle-transportation" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-autonomous-vehicle-transportation" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Autonomous Vehicles
               </Link>
-              <Link href="/ai-powered-cryptocurrency-digital-asset-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-cryptocurrency-digital-asset-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Cryptocurrency
               </Link>
-              <Link href="/ai-powered-space-exploration-satellite-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-space-exploration-satellite-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Space Exploration
               </Link>
-              <Link href="/ai-powered-underwater-exploration-marine-research" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-underwater-exploration-marine-research" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Underwater Exploration
               </Link>
-              <Link href="/ai-powered-climate-change-environmental-sustainability" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-climate-change-environmental-sustainability" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Climate Change
               </Link>
-              <Link href="/ai-powered-precision-agriculture-smart-farming" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-precision-agriculture-smart-farming" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Precision Agriculture
               </Link>
-              <Link href="/ai-powered-healthcare-medical-diagnostics" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-healthcare-medical-diagnostics" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Healthcare
               </Link>
-              <Link href="/ai-powered-energy-management-renewable-energy" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-energy-management-renewable-energy" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Energy Management
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-200">
                 Get Started
               </Link>
             </div>
@@ -549,7 +557,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
                   <div key={system.id} className="p-4 bg-white/5 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="text-white font-medium">{system.name}</h4>
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${getStatusBgColor(system.status)} text-white`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(system.status)} text-white`}>
                         {system.status}
                       </span>
                     </div>
@@ -571,7 +579,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
                   <div key={system.id} className="p-4 bg-white/5 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="text-white font-medium">{system.name}</h4>
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${getStatusBgColor(system.status)} text-white`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(system.status)} text-white`}>
                         {system.status}
                       </span>
                     </div>
@@ -595,7 +603,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
                 <button
                   key={type}
                   onClick={() => setSelectedType(type)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap ${
+                  className={`px-4 py-4 rounded-lg text-sm font-medium whitespace-nowrap ${
                     selectedType === type
                       ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
                       : 'bg-white/10 text-gray-300 hover:text-white'
@@ -612,7 +620,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
                 <div key={system.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{system.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${getStatusBgColor(system.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(system.status)} text-white`}>
                       {system.status}
                     </span>
                   </div>
@@ -650,7 +658,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
                 <div key={system.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{system.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${getStatusBgColor(system.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(system.status)} text-white`}>
                       {system.status}
                     </span>
                   </div>
@@ -688,7 +696,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
                 <div key={system.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{system.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${getStatusBgColor(system.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(system.status)} text-white`}>
                       {system.status}
                     </span>
                   </div>
@@ -726,7 +734,7 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
                 <div key={optimization.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{optimization.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${getStatusBgColor(optimization.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(optimization.status)} text-white`}>
                       {optimization.status}
                     </span>
                   </div>
@@ -860,7 +868,13 @@ const AIPoweredManufacturingIndustrialAutomationPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredManufacturingIndustrialAutomationPage 

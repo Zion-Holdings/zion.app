@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -425,6 +426,12 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
   }, [robots, selectedType])
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -437,7 +444,8 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
         <title>AI-Powered Underwater Exploration & Marine Research - Zion</title>
         <meta name="description" content="Advanced AI-powered underwater exploration and marine research platform with robotics, ocean monitoring, and intelligent marine analytics" />
         <meta name="keywords" content="underwater exploration, marine research, ocean monitoring, underwater robotics, AI marine, Zion" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -447,25 +455,25 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Streaming
               </Link>
-              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Voice Assistant
               </Link>
-              <Link href="/ai-powered-autonomous-vehicle-transportation" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-autonomous-vehicle-transportation" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Autonomous Vehicles
               </Link>
-              <Link href="/ai-powered-cryptocurrency-digital-asset-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-cryptocurrency-digital-asset-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Cryptocurrency
               </Link>
-              <Link href="/ai-powered-space-exploration-satellite-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-space-exploration-satellite-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Space Exploration
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200">
                 Get Started
               </Link>
             </div>
@@ -531,7 +539,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
                   <div key={robot.id} className="p-4 bg-white/5 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="text-white font-medium">{robot.name}</h4>
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${getStatusBgColor(robot.status)} text-white`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(robot.status)} text-white`}>
                         {robot.status}
                       </span>
                     </div>
@@ -555,7 +563,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
                   <div key={project.id} className="p-4 bg-white/5 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="text-white font-medium">{project.name}</h4>
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${getStatusBgColor(project.status)} text-white`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(project.status)} text-white`}>
                         {project.status}
                       </span>
                     </div>
@@ -579,7 +587,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
                 <button
                   key={type}
                   onClick={() => setSelectedType(type)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap ${
+                  className={`px-4 py-4 rounded-lg text-sm font-medium whitespace-nowrap ${
                     selectedType === type
                       ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'
                       : 'bg-white/10 text-gray-300 hover:text-white'
@@ -596,7 +604,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
                 <div key={robot.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{robot.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${getStatusBgColor(robot.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(robot.status)} text-white`}>
                       {robot.status}
                     </span>
                   </div>
@@ -634,7 +642,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
                 <div key={project.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{project.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${getStatusBgColor(project.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(project.status)} text-white`}>
                       {project.status}
                     </span>
                   </div>
@@ -672,7 +680,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
                 <div key={station.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{station.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${getStatusBgColor(station.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(station.status)} text-white`}>
                       {station.status}
                     </span>
                   </div>
@@ -710,7 +718,7 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
                 <div key={exploration.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{exploration.name}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${getStatusBgColor(exploration.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(exploration.status)} text-white`}>
                       {exploration.status}
                     </span>
                   </div>
@@ -829,8 +837,32 @@ const AIPoweredUnderwaterExplorationMarineResearchPage: NextPage = () => {
           </div>
         </div>
       </div>
-    </div>
-  )
+    
+        {/* Mobile Navigation */}
+        <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
+          <div className="flex justify-around items-center py-2">
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <Home className="w-5 h-5" />
+              <span className="text-xs">Home</span>
+            </button>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <Search className="w-5 h-5" />
+              <span className="text-xs">Search</span>
+            </button>
+            <button className="flex flex-col items-center p-2 text-gray-400 hover:text-white">
+              <User className="w-5 h-5" />
+              <span className="text-xs">Profile</span>
+            </button>
+          </div>
+        </div>
+      </div>
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredUnderwaterExplorationMarineResearchPage 

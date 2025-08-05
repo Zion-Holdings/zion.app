@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -583,7 +584,7 @@ const WorkflowDesignerPage: NextPage = () => {
       case 'start': return 'bg-green-600';
       case 'end': return 'bg-red-600';
       case 'task': return 'bg-blue-600';
-      case 'decision': return 'bg-yellow-600';
+      case 'decision': return 'bg-yellow-1200';
       case 'condition': return 'bg-purple-600';
       case 'action': return 'bg-indigo-600';
       case 'integration': return 'bg-orange-600';
@@ -615,6 +616,12 @@ const WorkflowDesignerPage: NextPage = () => {
 
   if (loading) {
     return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -636,7 +643,8 @@ const WorkflowDesignerPage: NextPage = () => {
         <title>Workflow Designer & Process Builder - Zion Marketplace</title>
         <meta name="description" content="Visual workflow designer and process builder for creating complex business automation workflows." />
         <meta name="keywords" content="workflow designer, process builder, automation, business process, Zion" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -647,10 +655,10 @@ const WorkflowDesignerPage: NextPage = () => {
               <p className="text-gray-300 mt-2">Visual workflow design and business process automation</p>
             </div>
             <div className="flex items-center space-x-4">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                 New Workflow
               </button>
-              <button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300">
+              <button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                 Import Template
               </button>
             </div>
@@ -668,7 +676,7 @@ const WorkflowDesignerPage: NextPage = () => {
               <select 
                 value={designMode}
                 onChange={(e) => setDesignMode(e.target.value as any)}
-                className="bg-white/10 border border-white/20 text-white rounded px-3 py-1 text-sm"
+                className="bg-white/10 border border-white/20 text-white rounded px-3 py-3 text-sm"
               >
                 <option value="view">View</option>
                 <option value="edit">Edit</option>
@@ -692,9 +700,9 @@ const WorkflowDesignerPage: NextPage = () => {
                     <h3 className="text-white font-semibold">{workflow.name}</h3>
                     <p className="text-gray-400 text-sm">{workflow.description}</p>
                   </div>
-                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                  <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                     workflow.status === 'active' ? 'bg-green-600' :
-                    workflow.status === 'draft' ? 'bg-yellow-600' :
+                    workflow.status === 'draft' ? 'bg-yellow-1200' :
                     workflow.status === 'paused' ? 'bg-orange-600' : 'bg-gray-600'
                   } text-white`}>
                     {workflow.status}
@@ -776,13 +784,13 @@ const WorkflowDesignerPage: NextPage = () => {
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-lg font-semibold text-white">Workflow Canvas</h3>
                     <div className="flex items-center space-x-2">
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-3 rounded text-sm">
                         Add Node
                       </button>
-                      <button className="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm">
+                      <button className="bg-green-600 hover:bg-green-700 text-white px-3 py-3 rounded text-sm">
                         Connect
                       </button>
-                      <button className="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded text-sm">
+                      <button className="bg-purple-600 hover:bg-purple-700 text-white px-3 py-3 rounded text-sm">
                         Test
                       </button>
                     </div>
@@ -888,7 +896,7 @@ const WorkflowDesignerPage: NextPage = () => {
                                 <input
                                   type="text"
                                   value={node.name}
-                                  className="w-full bg-white/10 border border-white/20 text-white rounded px-3 py-2 mt-1"
+                                  className="w-full bg-white/10 border border-white/20 text-white rounded px-3 py-4 mt-1"
                                   placeholder="Node name"
                                 />
                               </div>
@@ -896,14 +904,14 @@ const WorkflowDesignerPage: NextPage = () => {
                                 <label className="text-gray-400 text-sm">Description</label>
                                 <textarea
                                   value={node.description}
-                                  className="w-full bg-white/10 border border-white/20 text-white rounded px-3 py-2 mt-1"
+                                  className="w-full bg-white/10 border border-white/20 text-white rounded px-3 py-4 mt-1"
                                   rows={3}
                                   placeholder="Node description"
                                 />
                               </div>
                               <div>
                                 <label className="text-gray-400 text-sm">Type</label>
-                                <select className="w-full bg-white/10 border border-white/20 text-white rounded px-3 py-2 mt-1">
+                                <select className="w-full bg-white/10 border border-white/20 text-white rounded px-3 py-4 mt-1">
                                   <option value="task">Task</option>
                                   <option value="decision">Decision</option>
                                   <option value="notification">Notification</option>
@@ -921,7 +929,7 @@ const WorkflowDesignerPage: NextPage = () => {
                                 <input
                                   type="number"
                                   value={node.config.timeout || 30}
-                                  className="w-full bg-white/10 border border-white/20 text-white rounded px-3 py-2 mt-1"
+                                  className="w-full bg-white/10 border border-white/20 text-white rounded px-3 py-4 mt-1"
                                 />
                               </div>
                               <div>
@@ -929,12 +937,12 @@ const WorkflowDesignerPage: NextPage = () => {
                                 <input
                                   type="number"
                                   value={node.config.retryCount || 3}
-                                  className="w-full bg-white/10 border border-white/20 text-white rounded px-3 py-2 mt-1"
+                                  className="w-full bg-white/10 border border-white/20 text-white rounded px-3 py-4 mt-1"
                                 />
                               </div>
                               <div>
                                 <label className="text-gray-400 text-sm">Priority</label>
-                                <select className="w-full bg-white/10 border border-white/20 text-white rounded px-3 py-2 mt-1">
+                                <select className="w-full bg-white/10 border border-white/20 text-white rounded px-3 py-4 mt-1">
                                   <option value="low">Low</option>
                                   <option value="medium">Medium</option>
                                   <option value="high">High</option>
@@ -967,9 +975,9 @@ const WorkflowDesignerPage: NextPage = () => {
                           <h3 className="text-white font-semibold">{template.name}</h3>
                           <p className="text-gray-300 text-sm mt-1">{template.description}</p>
                         </div>
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                           template.complexity === 'simple' ? 'bg-green-600' :
-                          template.complexity === 'medium' ? 'bg-yellow-600' :
+                          template.complexity === 'medium' ? 'bg-yellow-1200' :
                           template.complexity === 'complex' ? 'bg-orange-600' : 'bg-red-600'
                         } text-white`}>
                           {template.complexity}
@@ -993,13 +1001,13 @@ const WorkflowDesignerPage: NextPage = () => {
                       
                       <div className="flex flex-wrap gap-2 mb-4">
                         {template.tags.map((tag) => (
-                          <span key={tag} className="px-2 py-1 bg-purple-600/20 text-purple-400 text-xs rounded">
+                          <span key={tag} className="px-4 py-3 bg-purple-600/20 text-purple-400 text-xs rounded">
                             {tag}
                           </span>
                         ))}
                       </div>
                       
-                      <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300">
+                      <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                         Use Template
                       </button>
                     </motion.div>
@@ -1086,7 +1094,13 @@ const WorkflowDesignerPage: NextPage = () => {
         </div>
       </div>
     </div>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+);
 };
 
 export default WorkflowDesignerPage; 

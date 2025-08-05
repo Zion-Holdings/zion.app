@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -403,6 +404,12 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
   }, [vehicles, selectedType])
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -415,7 +422,8 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         <title>AI-Powered Autonomous Vehicle & Transportation - Zion</title>
         <meta name="description" content="Advanced AI-powered autonomous vehicle and transportation system with traffic optimization, route planning, and intelligent logistics management" />
         <meta name="keywords" content="autonomous vehicles, transportation, traffic optimization, route planning, logistics, AI transportation, Zion" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -425,19 +433,19 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-live-streaming-broadcasting" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Streaming
               </Link>
-              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-voice-assistant-speech-recognition" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Voice Assistant
               </Link>
-              <Link href="/ai-powered-holographic-display" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-powered-holographic-display" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Holographic
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200">
+              <Link href="/auth/signup" className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-4 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200">
                 Get Started
               </Link>
             </div>
@@ -503,7 +511,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
                   <div key={vehicle.id} className="p-4 bg-white/5 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="text-white font-medium">{vehicle.name}</h4>
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${getStatusBgColor(vehicle.status)} text-white`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(vehicle.status)} text-white`}>
                         {vehicle.status}
                       </span>
                     </div>
@@ -525,7 +533,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
                   <div key={optimization.id} className="p-4 bg-white/5 rounded-lg">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="text-white font-medium">{optimization.location}</h4>
-                      <span className={`px-2 py-1 rounded text-xs font-medium ${getCongestionColor(optimization.congestionLevel)}`}>
+                      <span className={`px-4 py-3 rounded text-xs font-medium ${getCongestionColor(optimization.congestionLevel)}`}>
                         {optimization.congestionLevel}
                       </span>
                     </div>
@@ -549,7 +557,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
                 <button
                   key={type}
                   onClick={() => setSelectedType(type)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap ${
+                  className={`px-4 py-4 rounded-lg text-sm font-medium whitespace-nowrap ${
                     selectedType === type
                       ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'
                       : 'bg-white/10 text-gray-300 hover:text-white'
@@ -566,7 +574,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
                 <div key={vehicle.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold">{vehicle.name}</h3>
-                    <span className={`px-2 py-1 rounded text-xs font-medium ${getStatusBgColor(vehicle.status)} text-white`}>
+                    <span className={`px-4 py-3 rounded text-xs font-medium ${getStatusBgColor(vehicle.status)} text-white`}>
                       {vehicle.status}
                     </span>
                   </div>
@@ -608,7 +616,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
                 <div key={optimization.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold text-lg">{optimization.location}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${getCongestionColor(optimization.congestionLevel)}`}>
+                    <span className={`px-3 py-3 rounded-full text-sm ${getCongestionColor(optimization.congestionLevel)}`}>
                       {optimization.congestionLevel}
                     </span>
                   </div>
@@ -646,7 +654,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
                 <div key={route.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold text-lg">{route.origin} → {route.destination}</h3>
-                    <span className="px-3 py-1 rounded-full text-sm bg-blue-500/20 text-blue-400">
+                    <span className="px-3 py-3 rounded-full text-sm bg-blue-500/20 text-blue-400">
                       {route.routeType}
                     </span>
                   </div>
@@ -684,7 +692,7 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
                 <div key={order.id} className="bg-black/20 rounded-lg p-6 border border-white/10">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-white font-semibold text-lg">{order.customer}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${getStatusBgColor(order.status)} text-white`}>
+                    <span className={`px-3 py-3 rounded-full text-sm ${getStatusBgColor(order.status)} text-white`}>
                       {order.status}
                     </span>
                   </div>
@@ -817,7 +825,13 @@ const AIPoweredAutonomousVehicleTransportationPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredAutonomousVehicleTransportationPage 

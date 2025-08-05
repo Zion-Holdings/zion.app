@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
@@ -26,13 +27,18 @@ const Verify: NextPage = () => {
   }, [router.query])
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <AuthLayout>
       <Head>
         <title>Email Verification - Zion</title>
         <meta name="description" content="Verify your email address to complete your Zion account setup." />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
-      <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8 py-40">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-4">
             Email <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Verification</span>
@@ -53,7 +59,7 @@ const Verify: NextPage = () => {
           {status === 'success' && (
             <div className="text-center">
               <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
@@ -70,7 +76,7 @@ const Verify: NextPage = () => {
           {status === 'error' && (
             <div className="text-center">
               <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </div>
@@ -86,7 +92,11 @@ const Verify: NextPage = () => {
         </div>
       </div>
     </AuthLayout>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default Verify 

@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -156,6 +157,12 @@ const Home: NextPage = () => {
   ]
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <>
       <Head>
         <title>Zion - The First Free AI-Powered Marketplace</title>
@@ -169,7 +176,7 @@ const Home: NextPage = () => {
         <FuturisticHero />
 
         {/* Marketplace Categories */}
-        <section className="relative py-20 lg:py-32">
+        <section className="relative py-40 lg:py-32">
           <div className="container-responsive">
             <div className="text-center mb-16">
               <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-high-contrast mb-6">
@@ -194,7 +201,7 @@ const Home: NextPage = () => {
         </section>
 
         {/* Featured Services */}
-        <section className="relative py-20 lg:py-32">
+        <section className="relative py-40 lg:py-32">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark via-cyber-darker to-cyber-dark-blue opacity-50"></div>
           <div className="container-responsive relative z-10">
             <div className="text-center mb-16">
@@ -220,7 +227,7 @@ const Home: NextPage = () => {
         </section>
 
         {/* Top AI Talents */}
-        <section className="relative py-20 lg:py-32">
+        <section className="relative py-40 lg:py-32">
           <div className="container-responsive">
             <div className="text-center mb-16">
               <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-high-contrast mb-6">
@@ -245,7 +252,7 @@ const Home: NextPage = () => {
         </section>
 
         {/* Premium Equipment */}
-        <section className="relative py-20 lg:py-32">
+        <section className="relative py-40 lg:py-32">
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-dark-blue via-cyber-darker to-cyber-dark opacity-50"></div>
           <div className="container-responsive relative z-10">
             <div className="text-center mb-16">
@@ -271,7 +278,7 @@ const Home: NextPage = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="relative py-20 lg:py-32">
+        <section className="relative py-40 lg:py-32">
           <div className="container-responsive">
             <div className="glass-dark border border-neon-blue/30 rounded-2xl p-12 text-center">
               <h2 className="text-responsive-3xl lg:text-responsive-4xl font-bold text-high-contrast mb-6">
@@ -301,7 +308,13 @@ const Home: NextPage = () => {
         </section>
       </main>
     </>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default Home 

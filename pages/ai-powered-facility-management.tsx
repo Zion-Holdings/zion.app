@@ -169,7 +169,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {
       <div className="mb-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <Building className="h-8 w-8 text-blue-400" />
+            <Building className="h-12 w-12 text-blue-400" />
             <div>
               <h1 className="text-3xl font-bold text-white">AI-Powered Facility Management</h1>
               <p className="text-gray-300">Intelligent building automation and facility optimization</p>
@@ -179,7 +179,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {
             <select
               value={selectedTimeframe}
               onChange={(e) => setSelectedTimeframe(e.target.value)}
-              className="bg-white/10 text-white border border-white/20 rounded-lg px-3 py-2 text-sm"
+              className="bg-white/10 text-white border border-white/20 rounded-lg px-3 py-4 text-sm"
             >
               <option value="7d">Last 7 days</option>
               <option value="30d">Last 30 days</option>
@@ -199,7 +199,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center space-x-2 py-4 px-1 border-b-2 font-medium text-sm transition-colors ${
+                className={`flex items-center space-x-2 py-4 px-3 border-b-2 font-medium text-sm transition-colors ${
                   activeTab === tab.id
                     ? 'border-blue-500 text-blue-400'
                     : 'border-transparent text-gray-300 hover:text-white hover:border-gray-300'
@@ -215,7 +215,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {
 
       {/* Main Content */}
       {loading ? (
-        <div className="flex justify-center items-center h-64">
+        <div className="flex justify-center items-center h-124">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
         </div>
       ) : (
@@ -231,7 +231,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {
                       <p className="text-gray-300 text-sm">Active Facilities</p>
                       <p className="text-2xl font-bold text-white">{facilities.filter(f => f.status === 'operational').length}</p>
                     </div>
-                    <Building className="h-8 w-8 text-blue-400" />
+                    <Building className="h-12 w-12 text-blue-400" />
                   </div>
                 </div>
                 
@@ -241,7 +241,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {
                       <p className="text-gray-300 text-sm">Maintenance Tasks</p>
                       <p className="text-2xl font-bold text-white">{maintenanceTasks.length}</p>
                     </div>
-                    <Wrench className="h-8 w-8 text-green-400" />
+                    <Wrench className="h-12 w-12 text-green-400" />
                   </div>
                 </div>
                 
@@ -251,7 +251,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {
                       <p className="text-gray-300 text-sm">Energy Efficiency</p>
                       <p className="text-2xl font-bold text-white">87%</p>
                     </div>
-                    <Zap className="h-8 w-8 text-purple-400" />
+                    <Zap className="h-12 w-12 text-purple-400" />
                   </div>
                 </div>
                 
@@ -261,7 +261,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {
                       <p className="text-gray-300 text-sm">Security Score</p>
                       <p className="text-2xl font-bold text-white">94%</p>
                     </div>
-                    <AlertTriangle className="h-8 w-8 text-green-400" />
+                    <AlertTriangle className="h-12 w-12 text-green-400" />
                   </div>
                 </div>
               </div>
@@ -295,7 +295,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">Facilities</h2>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                   + Add Facility
                 </button>
               </div>
@@ -308,7 +308,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {
                         <h3 className="text-lg font-semibold text-white">{facility.name}</h3>
                         <p className="text-gray-400 text-sm">{facility.type} • {facility.location}</p>
                       </div>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(facility.status)}`}>
+                      <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(facility.status)}`}>
                         {facility.status}
                       </span>
                     </div>
@@ -347,7 +347,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {
             <div className="space-y-6">
               <div className="flex justify-between items-center">
                 <h2 className="text-2xl font-bold text-white">Maintenance Tasks</h2>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-4 rounded-lg transition-colors">
                   + Schedule Task
                 </button>
               </div>
@@ -360,7 +360,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {
                         <h3 className="text-lg font-semibold text-white">{task.title}</h3>
                         <p className="text-gray-400 text-sm">{task.facility} • {task.type}</p>
                       </div>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${getPriorityColor(task.priority)}`}>
+                      <span className={`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(task.priority)}`}>
                         {task.priority}
                       </span>
                     </div>
@@ -409,7 +409,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {
                         <h3 className="text-lg font-semibold text-white">{metric.name}</h3>
                         <p className="text-gray-400 text-sm">{metric.facility} • {metric.category}</p>
                       </div>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                      <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                         metric.trend === 'decreasing' ? 'bg-green-500' :
                         metric.trend === 'increasing' ? 'bg-red-500' : 'bg-yellow-500'
                       }`}>
@@ -453,7 +453,7 @@ const AIPoweredFacilityManagementPage: NextPage = () => {
                         <h3 className="text-lg font-semibold text-white">{event.title}</h3>
                         <p className="text-gray-400 text-sm">{event.facility} • {event.type}</p>
                       </div>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                      <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                         event.severity === 'low' ? 'bg-green-500' :
                         event.severity === 'medium' ? 'bg-yellow-500' :
                         event.severity === 'high' ? 'bg-orange-500' : 'bg-red-500'

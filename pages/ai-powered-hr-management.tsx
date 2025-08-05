@@ -1,4 +1,5 @@
-import React, { useState, useEffect , useCallback } from 'react';
+import React, { useState, useEffect , useCallback } from 'react';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -293,6 +294,12 @@ const AIHRManagement: React.FC = () => {
   };
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -305,7 +312,8 @@ const AIHRManagement: React.FC = () => {
         <title>AI-Powered HR Management & Talent Acquisition | Zion</title>
         <meta name="description" content="Intelligent human resources management, talent acquisition, employee performance tracking, and HR analytics powered by AI." />
         <meta name="keywords" content="AI HR management, talent acquisition, employee performance, HR analytics, recruitment, Zion" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-sm border-b border-white/10">
@@ -317,10 +325,10 @@ const AIHRManagement: React.FC = () => {
               </Link>
             </div>
             <div className="flex items-center space-x-4">
-              <Link href="/" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Home
               </Link>
-              <Link href="/sitemap" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/sitemap" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Services
               </Link>
             </div>
@@ -329,7 +337,7 @@ const AIHRManagement: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -426,7 +434,7 @@ const AIHRManagement: React.FC = () => {
                       <div className="text-white font-medium">Review Candidate Pipeline</div>
                       <div className="text-gray-400 text-sm">8 candidates ready for interview</div>
                     </button>
-                    <button className="w-full text-left p-3 bg-gradient-to-r from-yellow-600/20 to-orange-600/20 rounded-lg hover:from-yellow-600/30 hover:to-orange-600/30 transition-all duration-300">
+                    <button className="w-full text-left p-3 bg-gradient-to-r from-yellow-1200/20 to-orange-600/20 rounded-lg hover:from-yellow-1200/30 hover:to-orange-600/30 transition-all duration-300">
                       <div className="text-white font-medium">Update Job Postings</div>
                       <div className="text-gray-400 text-sm">3 positions need optimization</div>
                     </button>
@@ -444,7 +452,7 @@ const AIHRManagement: React.FC = () => {
                   <select
                     value={selectedDepartment}
                     onChange={(e) => setSelectedDepartment(e.target.value)}
-                    className="bg-white/10 text-white border border-white/20 rounded-lg px-4 py-2"
+                    className="bg-white/10 text-white border border-white/20 rounded-lg px-4 py-4"
                   >
                     <option value="all">All Departments</option>
                     <option value="engineering">Engineering</option>
@@ -467,7 +475,7 @@ const AIHRManagement: React.FC = () => {
                             <p className="text-gray-400">{candidate.position}</p>
                           </div>
                           <div className="flex items-center gap-2">
-                            <span className={`px-2 py-1 rounded-full text-xs text-white ${getStatusColor(candidate.status)}`}>
+                            <span className={`px-4 py-3 rounded-full text-xs text-white ${getStatusColor(candidate.status)}`}>
                               {candidate.status}
                             </span>
                             <span className="text-white font-semibold">{candidate.score}%</span>
@@ -508,7 +516,7 @@ const AIHRManagement: React.FC = () => {
                             <h5 className="text-white font-semibold">{job.title}</h5>
                             <p className="text-gray-400">{job.department} • {job.location}</p>
                           </div>
-                          <span className={`px-2 py-1 rounded-full text-xs text-white ${
+                          <span className={`px-4 py-3 rounded-full text-xs text-white ${
                             job.status === 'active' ? 'bg-green-500' : job.status === 'paused' ? 'bg-yellow-500' : 'bg-gray-500'
                           }`}>
                             {job.status}
@@ -594,7 +602,7 @@ const AIHRManagement: React.FC = () => {
                       <p className="text-gray-300 text-sm mb-3">12 employees need upskilling programs</p>
                       <button className="text-green-400 hover:text-green-300 text-sm">View Details →</button>
                     </div>
-                    <div className="bg-gradient-to-r from-yellow-600/20 to-orange-600/20 p-4 rounded-lg border border-white/10">
+                    <div className="bg-gradient-to-r from-yellow-1200/20 to-orange-600/20 p-4 rounded-lg border border-white/10">
                       <h5 className="text-white font-semibold mb-2">Career Progression</h5>
                       <p className="text-gray-300 text-sm mb-3">8 employees ready for promotion</p>
                       <button className="text-yellow-400 hover:text-yellow-300 text-sm">View Details →</button>
@@ -740,7 +748,7 @@ const AIHRManagement: React.FC = () => {
                       <div className="text-white font-medium">High-Performing Employees</div>
                       <div className="text-gray-300 text-sm">15 employees identified for promotion</div>
                     </div>
-                    <div className="p-3 bg-gradient-to-r from-yellow-600/20 to-orange-600/20 rounded-lg">
+                    <div className="p-3 bg-gradient-to-r from-yellow-1200/20 to-orange-600/20 rounded-lg">
                       <div className="text-white font-medium">Retention Risk</div>
                       <div className="text-gray-300 text-sm">3 employees at risk of leaving</div>
                     </div>
@@ -780,7 +788,7 @@ const AIHRManagement: React.FC = () => {
 
       {/* Footer */}
       <footer className="bg-black/20 backdrop-blur-sm border-t border-white/10 mt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>
@@ -824,7 +832,13 @@ const AIHRManagement: React.FC = () => {
         </div>
       </footer>
     </div>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+);
 };
 
 export default AIHRManagement; 

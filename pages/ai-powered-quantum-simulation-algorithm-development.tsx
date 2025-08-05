@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -204,6 +205,12 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -216,7 +223,8 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
         <title>AI-Powered Quantum Simulation & Algorithm Development | Zion Tech</title>
         <meta name="description" content="Advanced quantum simulation and algorithm development with AI-powered circuit simulation, gate operations, and quantum state analysis." />
         <meta name="keywords" content="quantum simulation, algorithm development, quantum gates, quantum circuits, quantum measurement" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <header className="relative z-10">
@@ -240,7 +248,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
                 disabled={isSimulating}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
                   isSimulating 
-                    ? 'bg-yellow-600 text-white' 
+                    ? 'bg-yellow-1200 text-white' 
                     : 'bg-indigo-600 text-white hover:bg-indigo-700'
                 } disabled:opacity-50`}
               >
@@ -270,7 +278,7 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-md font-medium transition-all duration-200 ${
+                  className={`flex items-center space-x-2 px-4 py-4 rounded-md font-medium transition-all duration-200 ${
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'
                       : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
@@ -633,7 +641,13 @@ const AIPoweredQuantumSimulationAlgorithmDevelopment: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredQuantumSimulationAlgorithmDevelopment 

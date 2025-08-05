@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -204,6 +205,12 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -216,7 +223,8 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
         <title>AI-Powered Quantum Cryptography & Secure Communication | Zion Tech</title>
         <meta name="description" content="Advanced quantum cryptography and secure communication with AI-powered quantum key distribution, quantum-resistant cryptography, and quantum secure protocols." />
         <meta name="keywords" content="quantum cryptography, quantum key distribution, quantum-resistant cryptography, quantum secure communication, quantum digital signatures" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <header className="relative z-10">
@@ -240,7 +248,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
                 disabled={isKeyExchange}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
                   isKeyExchange 
-                    ? 'bg-yellow-600 text-white' 
+                    ? 'bg-yellow-1200 text-white' 
                     : 'bg-blue-600 text-white hover:bg-blue-700'
                 } disabled:opacity-50`}
               >
@@ -270,7 +278,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-md font-medium transition-all duration-200 ${
+                  className={`flex items-center space-x-2 px-4 py-4 rounded-md font-medium transition-all duration-200 ${
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'
                       : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
@@ -337,7 +345,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
                       <div className="text-2xl mb-2">✍️</div>
                       <div className="font-semibold">Sign Document</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-lg text-white hover:from-yellow-700 hover:to-yellow-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-yellow-1200 to-yellow-700 rounded-lg text-white hover:from-yellow-700 hover:to-yellow-1200 transition-all duration-200">
                       <div className="text-2xl mb-2">🎲</div>
                       <div className="font-semibold">Generate Random</div>
                     </button>
@@ -611,7 +619,7 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
                         <div className="text-sm text-gray-300 mb-2">Applications:</div>
                         <div className="flex flex-wrap gap-1">
                           {protocol.applications.map((app, index) => (
-                            <span key={index} className="text-xs bg-blue-600 text-white px-2 py-1 rounded">
+                            <span key={index} className="text-xs bg-blue-600 text-white px-4 py-3 rounded">
                               {app}
                             </span>
                           ))}
@@ -640,7 +648,13 @@ const AIPoweredQuantumCryptographySecureCommunication: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredQuantumCryptographySecureCommunication 

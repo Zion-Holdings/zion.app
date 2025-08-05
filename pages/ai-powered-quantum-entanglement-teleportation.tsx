@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -183,6 +184,12 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -195,7 +202,8 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
         <title>AI-Powered Quantum Entanglement & Teleportation | Zion Tech</title>
         <meta name="description" content="Advanced quantum entanglement and teleportation with AI-powered quantum communication, entanglement management, and quantum state teleportation." />
         <meta name="keywords" content="quantum entanglement, quantum teleportation, quantum communication, quantum networking, quantum cryptography" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <header className="relative z-10">
@@ -219,7 +227,7 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
                 disabled={isTeleporting}
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
                   isTeleporting 
-                    ? 'bg-yellow-600 text-white' 
+                    ? 'bg-yellow-1200 text-white' 
                     : 'bg-purple-600 text-white hover:bg-purple-700'
                 } disabled:opacity-50`}
               >
@@ -248,7 +256,7 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-md font-medium transition-all duration-200 ${
+                  className={`flex items-center space-x-2 px-4 py-4 rounded-md font-medium transition-all duration-200 ${
                     activeTab === tab.id
                       ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white'
                       : 'text-gray-300 hover:text-white hover:bg-gray-700/50'
@@ -315,7 +323,7 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
                       <div className="text-2xl mb-2">🚀</div>
                       <div className="font-semibold">Teleport State</div>
                     </button>
-                    <button className="p-4 bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-lg text-white hover:from-yellow-700 hover:to-yellow-800 transition-all duration-200">
+                    <button className="p-4 bg-gradient-to-r from-yellow-1200 to-yellow-700 rounded-lg text-white hover:from-yellow-700 hover:to-yellow-1200 transition-all duration-200">
                       <div className="text-2xl mb-2">🌐</div>
                       <div className="font-semibold">Build Network</div>
                     </button>
@@ -576,7 +584,13 @@ const AIPoweredQuantumEntanglementTeleportation: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredQuantumEntanglementTeleportation 

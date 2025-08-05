@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -292,7 +293,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
       setAnalytics(mockAnalytics)
       setIsLoading(false)
     }, 1000)
-  }, [mockContracts, mockDisputes, mockTemplates, mockComplianceChecks, mockAnalytics])
+  }, [])
 
   const filteredContracts = useMemo(() => {
     let filtered = contracts
@@ -358,6 +359,12 @@ const AIPoweredContractLegalPage: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -370,12 +377,13 @@ const AIPoweredContractLegalPage: NextPage = () => {
         <title>AI-Powered Contract & Legal Management | Zion Tech Group</title>
         <meta name="description" content="Generate contracts, ensure legal compliance, resolve disputes, and manage legal aspects with AI-powered assistance." />
         <meta name="keywords" content="contract management, legal compliance, dispute resolution, AI legal assistant, contract generation" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               AI-Powered Contract & Legal Management
@@ -400,9 +408,9 @@ const AIPoweredContractLegalPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {isLoading ? (
-          <div className="flex justify-center items-center py-20">
+          <div className="flex justify-center items-center py-40">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
           </div>
         ) : (
@@ -471,7 +479,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                       <select
                         value={selectedStatus}
                         onChange={(e) => setSelectedStatus(e.target.value)}
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                       >
                         <option value="all" className="bg-slate-800">All Status</option>
                         <option value="draft" className="bg-slate-800">Draft</option>
@@ -483,7 +491,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                       <select
                         value={selectedType}
                         onChange={(e) => setSelectedType(e.target.value)}
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                       >
                         <option value="all" className="bg-slate-800">All Types</option>
                         <option value="service" className="bg-slate-800">Service</option>
@@ -494,7 +502,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                       <select
                         value={sortBy}
                         onChange={(e) => setSortBy(e.target.value as any)}
-                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                       >
                         <option value="date" className="bg-slate-800">Date</option>
                         <option value="value" className="bg-slate-800">Value</option>
@@ -502,7 +510,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                         <option value="compliance" className="bg-slate-800">Compliance</option>
                       </select>
                     </div>
-                    <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300">
+                    <button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-4 rounded-lg font-medium transition-all duration-300">
                       Create Contract
                     </button>
                   </div>
@@ -515,10 +523,10 @@ const AIPoweredContractLegalPage: NextPage = () => {
                       <div className="flex items-start justify-between mb-4">
                         <h3 className="text-lg font-semibold text-white">{contract.title}</h3>
                         <div className="flex space-x-2">
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(contract.status)}`}>
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(contract.status)}`}>
                             {contract.status}
                           </span>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${getRiskColor(contract.riskLevel)}`}>
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${getRiskColor(contract.riskLevel)}`}>
                             {contract.riskLevel} risk
                           </span>
                         </div>
@@ -535,7 +543,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                         </div>
                         <div className="flex justify-between text-sm">
                           <span className="text-gray-400">Compliance Score:</span>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${getComplianceColor(contract.complianceScore)}`}>
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${getComplianceColor(contract.complianceScore)}`}>
                             {contract.complianceScore}%
                           </span>
                         </div>
@@ -552,7 +560,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                           {contract.parties.map((party) => (
                             <div key={party.id} className="flex items-center justify-between text-sm">
                               <span className="text-white">{party.name}</span>
-                              <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                              <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                                 party.verified ? 'bg-green-500/20 text-green-300' : 'bg-yellow-500/20 text-yellow-300'
                               }`}>
                                 {party.type}
@@ -568,7 +576,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                         <div className="space-y-2 text-sm">
                           <div className="flex justify-between">
                             <span className="text-gray-400">Status:</span>
-                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                            <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                               contract.legalReview.status === 'approved' ? 'bg-green-500/20 text-green-300' :
                               contract.legalReview.status === 'rejected' ? 'bg-red-500/20 text-red-300' :
                               'bg-yellow-500/20 text-yellow-300'
@@ -585,10 +593,10 @@ const AIPoweredContractLegalPage: NextPage = () => {
 
                       {/* Action Buttons */}
                       <div className="flex space-x-2">
-                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           View Details
                         </button>
-                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           Edit
                         </button>
                       </div>
@@ -605,7 +613,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                   <div key={dispute.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                     <div className="flex items-start justify-between mb-4">
                       <h3 className="text-lg font-semibold text-white">Dispute #{dispute.id}</h3>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                      <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                         dispute.status === 'resolved' ? 'bg-green-500/20 text-green-300' :
                         dispute.status === 'closed' ? 'bg-gray-500/20 text-gray-300' :
                         'bg-yellow-500/20 text-yellow-300'
@@ -669,10 +677,10 @@ const AIPoweredContractLegalPage: NextPage = () => {
 
                       {/* Action Buttons */}
                       <div className="flex space-x-2">
-                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           View Details
                         </button>
-                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           Add Evidence
                         </button>
                       </div>
@@ -690,7 +698,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                     <div className="flex items-start justify-between mb-4">
                       <h3 className="text-lg font-semibold text-white">{template.name}</h3>
                       {template.aiOptimized && (
-                        <span className="px-2 py-1 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300">
+                        <span className="px-4 py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300">
                           AI Optimized
                         </span>
                       )}
@@ -705,7 +713,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-400">Compliance Score:</span>
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getComplianceColor(template.complianceScore)}`}>
+                        <span className={`px-4 py-3 rounded-full text-xs font-medium ${getComplianceColor(template.complianceScore)}`}>
                           {template.complianceScore}%
                         </span>
                       </div>
@@ -722,7 +730,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                       </div>
                     </div>
 
-                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                       Use Template
                     </button>
                   </div>
@@ -737,7 +745,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                   <div key={check.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                     <div className="flex items-start justify-between mb-4">
                       <h3 className="text-lg font-semibold text-white">{check.checkType}</h3>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                      <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                         check.status === 'pass' ? 'bg-green-500/20 text-green-300' :
                         check.status === 'fail' ? 'bg-red-500/20 text-red-300' :
                         'bg-yellow-500/20 text-yellow-300'
@@ -768,7 +776,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                       </div>
                     </div>
 
-                    <button className="w-full border border-white/20 text-white hover:bg-white/10 py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                    <button className="w-full border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
                       View Details
                     </button>
                   </div>
@@ -783,7 +791,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
                   <div key={insight.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                     <div className="flex items-start justify-between mb-4">
                       <h3 className="text-lg font-semibold text-white">{insight.title}</h3>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                      <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                         insight.impact === 'positive' ? 'bg-green-500/20 text-green-300' :
                         insight.impact === 'negative' ? 'bg-red-500/20 text-red-300' :
                         'bg-yellow-500/20 text-yellow-300'
@@ -818,7 +826,7 @@ const AIPoweredContractLegalPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Manage Your Legal Affairs?
@@ -839,7 +847,13 @@ const AIPoweredContractLegalPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredContractLegalPage 

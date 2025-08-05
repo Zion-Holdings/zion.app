@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -19,6 +20,12 @@ const AIPoweredAutomation: NextPage = () => {
   ])
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -31,7 +38,8 @@ const AIPoweredAutomation: NextPage = () => {
         <title>AI-Powered Automation System | Zion</title>
         <meta name="description" content="Advanced AI-powered automation system with workflow orchestration, intelligent process management, and automated decision making." />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
@@ -46,13 +54,13 @@ const AIPoweredAutomation: NextPage = () => {
             </div>
             
             <div className="hidden lg:flex items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Services
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -61,7 +69,7 @@ const AIPoweredAutomation: NextPage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20">
+      <section className="py-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -98,7 +106,7 @@ const AIPoweredAutomation: NextPage = () => {
       </section>
 
       {/* Dashboard Overview */}
-      <section className="py-20 bg-gradient-to-br from-slate-800/50 to-slate-900/50">
+      <section className="py-40 bg-gradient-to-br from-slate-800/50 to-slate-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -156,7 +164,7 @@ const AIPoweredAutomation: NextPage = () => {
       </section>
 
       {/* Features */}
-      <section className="py-20">
+      <section className="py-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -204,7 +212,7 @@ const AIPoweredAutomation: NextPage = () => {
       </section>
 
       {/* Use Cases */}
-      <section className="py-20 bg-gradient-to-br from-slate-800/50 to-slate-900/50">
+      <section className="py-40 bg-gradient-to-br from-slate-800/50 to-slate-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -247,7 +255,7 @@ const AIPoweredAutomation: NextPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-900/50 to-pink-900/50">
+      <section className="py-40 bg-gradient-to-br from-purple-900/50 to-pink-900/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Automate?
@@ -267,7 +275,7 @@ const AIPoweredAutomation: NextPage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-12">
+      <footer className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
@@ -309,7 +317,13 @@ const AIPoweredAutomation: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredAutomation 

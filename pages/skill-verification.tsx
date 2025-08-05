@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -295,6 +296,12 @@ const SkillVerificationPage: NextPage = () => {
   const stats = getStats()
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -307,7 +314,8 @@ const SkillVerificationPage: NextPage = () => {
         <title>Skill Verification & Certification - Zion Marketplace</title>
         <meta name="description" content="Comprehensive skill verification and certification system for marketplace users. Validate expertise, earn certifications, and build credibility." />
         <meta name="keywords" content="skill verification, certification, skill testing, expertise validation, marketplace credentials" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -317,13 +325,13 @@ const SkillVerificationPage: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <nav className="flex items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/ai-powered-learning-platform" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/ai-powered-learning-platform" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Learning
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </nav>
@@ -332,7 +340,7 @@ const SkillVerificationPage: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
@@ -404,7 +412,7 @@ const SkillVerificationPage: NextPage = () => {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="all">All Categories</option>
               {skillCategories.map(category => (
@@ -414,7 +422,7 @@ const SkillVerificationPage: NextPage = () => {
             <select
               value={filterDifficulty}
               onChange={(e) => setFilterDifficulty(e.target.value)}
-              className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="all">All Difficulties</option>
               <option value="beginner">Beginner</option>
@@ -444,10 +452,10 @@ const SkillVerificationPage: NextPage = () => {
                       <p className="text-gray-300 text-sm">{test.category}</p>
                     </div>
                     <div className="flex flex-col gap-2">
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getDifficultyColor(test.difficulty)}`}>
+                      <span className={`px-3 py-3 rounded-full text-xs font-medium border ${getDifficultyColor(test.difficulty)}`}>
                         {test.difficulty.toUpperCase()}
                       </span>
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor(test.status)}`}>
+                      <span className={`px-3 py-3 rounded-full text-xs font-medium border ${getStatusColor(test.status)}`}>
                         {test.status.replace('_', ' ').toUpperCase()}
                       </span>
                     </div>
@@ -483,7 +491,7 @@ const SkillVerificationPage: NextPage = () => {
                     <span className="text-gray-300 text-sm">Skills:</span>
                     <div className="flex flex-wrap gap-1 mt-1">
                       {test.skills.map((skill, index) => (
-                        <span key={index} className="px-2 py-1 bg-white/10 rounded text-xs text-white">
+                        <span key={index} className="px-4 py-3 bg-white/10 rounded text-xs text-white">
                           {skill}
                         </span>
                       ))}
@@ -492,26 +500,26 @@ const SkillVerificationPage: NextPage = () => {
                   
                   <div className="flex gap-2">
                     {test.status === 'available' && (
-                      <button className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-3 py-2 rounded text-sm transition-colors">
+                      <button className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-3 py-4 rounded text-sm transition-colors">
                         Start Test
                       </button>
                     )}
                     {test.status === 'in_progress' && (
-                      <button className="flex-1 bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-700 hover:to-orange-700 text-white px-3 py-2 rounded text-sm transition-colors">
+                      <button className="flex-1 bg-gradient-to-r from-yellow-1200 to-orange-600 hover:from-yellow-700 hover:to-orange-700 text-white px-3 py-4 rounded text-sm transition-colors">
                         Continue Test
                       </button>
                     )}
                     {test.status === 'completed' && (
-                      <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-2 rounded text-sm transition-colors">
+                      <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors">
                         View Results
                       </button>
                     )}
                     {test.status === 'certified' && (
-                      <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-2 rounded text-sm transition-colors">
+                      <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded text-sm transition-colors">
                         View Certificate
                       </button>
                     )}
-                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors">
                       Details
                     </button>
                   </div>
@@ -558,7 +566,7 @@ const SkillVerificationPage: NextPage = () => {
                     ></div>
                   </div>
                   
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 py-2 rounded text-sm transition-colors">
+                  <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 py-4 rounded text-sm transition-colors">
                     Explore Tests
                   </button>
                 </div>
@@ -618,10 +626,10 @@ const SkillVerificationPage: NextPage = () => {
                   )}
                   
                   <div className="flex gap-2">
-                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors">
                       View Details
                     </button>
-                    <button className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-3 py-4 rounded text-sm transition-colors">
                       Retake Test
                     </button>
                   </div>
@@ -646,7 +654,7 @@ const SkillVerificationPage: NextPage = () => {
                         <p className="text-gray-300 text-sm">{badge.category}</p>
                       </div>
                     </div>
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getBadgeLevelColor(badge.level)}`}>
+                    <span className={`px-3 py-3 rounded-full text-xs font-medium border ${getBadgeLevelColor(badge.level)}`}>
                       {badge.level.toUpperCase()}
                     </span>
                   </div>
@@ -672,7 +680,7 @@ const SkillVerificationPage: NextPage = () => {
                     </div>
                   )}
                   
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 py-2 rounded text-sm transition-colors">
+                  <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 py-4 rounded text-sm transition-colors">
                     {badge.earnedAt ? 'View Badge' : 'Work Towards Badge'}
                   </button>
                 </div>
@@ -684,7 +692,7 @@ const SkillVerificationPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-blue-900/50 to-cyan-900/50 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Validate Your Expertise
@@ -751,7 +759,13 @@ const SkillVerificationPage: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default SkillVerificationPage 

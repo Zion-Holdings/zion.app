@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { createClient } from '@supabase/supabase-js';
@@ -77,11 +78,16 @@ const CreateTalentPage: React.FC = () => {
   ];
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <>
       <Head>
         <title>Create Talent Profile - Zion AI Marketplace</title>
         <meta name="description" content="Create your talent profile and join the Zion AI Marketplace" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <div className="min-h-screen bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -107,7 +113,7 @@ const CreateTalentPage: React.FC = () => {
                     required
                     value={formData.full_name}
                     onChange={(e) => setFormData(prev => ({ ...prev, full_name: e.target.value }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
 
@@ -121,7 +127,7 @@ const CreateTalentPage: React.FC = () => {
                     value={formData.title}
                     onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value }))}
                     placeholder="e.g., Senior Full-Stack Developer"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
               </div>
@@ -137,7 +143,7 @@ const CreateTalentPage: React.FC = () => {
                   value={formData.summary}
                   onChange={(e) => setFormData(prev => ({ ...prev, summary: e.target.value }))}
                   placeholder="Describe your expertise, experience, and what makes you unique..."
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
 
@@ -171,7 +177,7 @@ const CreateTalentPage: React.FC = () => {
                     required
                     value={formData.availability}
                     onChange={(e) => setFormData(prev => ({ ...prev, availability: e.target.value as any }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   >
                     <option value="Open">Open</option>
                     <option value="Part-time">Part-time</option>
@@ -188,7 +194,7 @@ const CreateTalentPage: React.FC = () => {
                     value={formData.hourly_rate}
                     onChange={(e) => setFormData(prev => ({ ...prev, hourly_rate: e.target.value }))}
                     placeholder="e.g., 75"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
 
@@ -202,7 +208,7 @@ const CreateTalentPage: React.FC = () => {
                     value={formData.location}
                     onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
                     placeholder="e.g., San Francisco, CA"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-3 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
               </div>
@@ -216,7 +222,7 @@ const CreateTalentPage: React.FC = () => {
                   required
                   value={formData.timezone}
                   onChange={(e) => setFormData(prev => ({ ...prev, timezone: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
                   <option value="">Select timezone</option>
                   <option value="UTC-8">Pacific Time (UTC-8)</option>
@@ -257,14 +263,14 @@ const CreateTalentPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => router.back()}
-                  className="px-6 py-2 text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+                  className="px-6 py-4 text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={loading}
-                  className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50"
+                  className="px-6 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50"
                 >
                   {loading ? 'Creating...' : 'Create Profile'}
                 </button>
@@ -274,7 +280,11 @@ const CreateTalentPage: React.FC = () => {
         </div>
       </div>
     </>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+);
 };
 
 export default CreateTalentPage; 

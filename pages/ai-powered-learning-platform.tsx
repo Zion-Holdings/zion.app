@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -345,6 +346,12 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -357,12 +364,13 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
         <title>AI-Powered Learning Platform | Zion Tech Group</title>
         <meta name="description" content="Personalized AI-powered learning platform with courses, skill assessments, certifications, and mentorship programs for marketplace users." />
         <meta name="keywords" content="AI learning, skill development, online courses, certifications, mentorship, personalized education" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               AI-Powered Learning Platform
@@ -387,9 +395,9 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {isLoading ? (
-          <div className="flex justify-center items-center py-20">
+          <div className="flex justify-center items-center py-40">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
           </div>
         ) : (
@@ -449,7 +457,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                       <select
                         value={selectedCategory}
                         onChange={(e) => setSelectedCategory(e.target.value)}
-                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                       >
                         {categories.map(category => (
                           <option key={category} value={category} className="bg-slate-800">
@@ -463,7 +471,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                       <select
                         value={selectedLevel}
                         onChange={(e) => setSelectedLevel(e.target.value)}
-                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                       >
                         <option value="all" className="bg-slate-800">All Levels</option>
                         <option value="beginner" className="bg-slate-800">Beginner</option>
@@ -477,7 +485,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                       <select
                         value={sortBy}
                         onChange={(e) => setSortBy(e.target.value as any)}
-                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-4 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                       >
                         <option value="popularity" className="bg-slate-800">Popularity</option>
                         <option value="rating" className="bg-slate-800">Rating</option>
@@ -497,14 +505,14 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                         <div>
                           <h3 className="text-xl font-semibold text-white mb-2">{course.title}</h3>
                           <div className="flex items-center space-x-2">
-                            <span className="px-2 py-1 rounded-full text-xs font-medium bg-blue-500/20 text-blue-300">
+                            <span className="px-4 py-3 rounded-full text-xs font-medium bg-blue-500/20 text-blue-300">
                               {course.category}
                             </span>
-                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${getLevelColor(course.level)}`}>
+                            <span className={`px-4 py-3 rounded-full text-xs font-medium ${getLevelColor(course.level)}`}>
                               {course.level.charAt(0).toUpperCase() + course.level.slice(1)}
                             </span>
                             {course.aiPowered && (
-                              <span className="px-2 py-1 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300">
+                              <span className="px-4 py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300">
                                 AI-Powered
                               </span>
                             )}
@@ -560,7 +568,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                       {/* Tags */}
                       <div className="flex flex-wrap gap-1 mb-4">
                         {course.tags.slice(0, 3).map((tag, index) => (
-                          <span key={index} className="px-2 py-1 bg-white/10 rounded-full text-xs text-gray-300">
+                          <span key={index} className="px-4 py-3 bg-white/10 rounded-full text-xs text-gray-300">
                             {tag}
                           </span>
                         ))}
@@ -568,10 +576,10 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
 
                       {/* Action Buttons */}
                       <div className="flex space-x-2">
-                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           {course.isFree ? 'Enroll Free' : 'Enroll Now'}
                         </button>
-                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                        <button className="flex-1 border border-white/20 text-white hover:bg-white/10 py-4 px-4 rounded-lg font-medium transition-all duration-300">
                           Preview
                         </button>
                       </div>
@@ -592,7 +600,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                     <div className="space-y-3 mb-4">
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-400">Difficulty:</span>
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getLevelColor(assessment.difficulty)}`}>
+                        <span className={`px-4 py-3 rounded-full text-xs font-medium ${getLevelColor(assessment.difficulty)}`}>
                           {assessment.difficulty}
                         </span>
                       </div>
@@ -620,7 +628,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                       </div>
                     </div>
 
-                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                       Start Assessment
                     </button>
                   </div>
@@ -636,7 +644,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                     <div className="flex items-start justify-between mb-4">
                       <h3 className="text-xl font-semibold text-white">{path.title}</h3>
                       {path.aiRecommended && (
-                        <span className="px-2 py-1 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300">
+                        <span className="px-4 py-3 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300">
                           AI Recommended
                         </span>
                       )}
@@ -651,7 +659,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-400">Difficulty:</span>
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${getLevelColor(path.difficulty)}`}>
+                        <span className={`px-4 py-3 rounded-full text-xs font-medium ${getLevelColor(path.difficulty)}`}>
                           {path.difficulty}
                         </span>
                       </div>
@@ -665,7 +673,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                       <div className="text-sm font-medium text-gray-400 mb-2">Skills You'll Learn:</div>
                       <div className="flex flex-wrap gap-1">
                         {path.skills.slice(0, 4).map((skill, index) => (
-                          <span key={index} className="px-2 py-1 bg-blue-500/20 rounded-full text-xs text-blue-300">
+                          <span key={index} className="px-4 py-3 bg-blue-500/20 rounded-full text-xs text-blue-300">
                             {skill}
                           </span>
                         ))}
@@ -677,7 +685,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                       <div className="text-white font-semibold">{path.careerOutcome}</div>
                     </div>
 
-                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                       Start Learning Path
                     </button>
                   </div>
@@ -693,7 +701,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                     <div className="flex items-start justify-between mb-4">
                       <h3 className="text-lg font-semibold text-white">{cert.name}</h3>
                       {cert.aiVerified && (
-                        <span className="px-2 py-1 rounded-full text-xs font-medium bg-green-500/20 text-green-300">
+                        <span className="px-4 py-3 rounded-full text-xs font-medium bg-green-500/20 text-green-300">
                           AI Verified
                         </span>
                       )}
@@ -725,7 +733,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
                       </ul>
                     </div>
 
-                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300">
+                    <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-4 px-4 rounded-lg font-medium transition-all duration-300">
                       View Details
                     </button>
                   </div>
@@ -738,7 +746,7 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Accelerate Your Career?
@@ -759,7 +767,13 @@ const AIPoweredLearningPlatformPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredLearningPlatformPage 

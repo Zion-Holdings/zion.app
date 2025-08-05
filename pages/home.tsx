@@ -1,15 +1,23 @@
-import React from 'react';
+import React from 'react';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 export default function Home() {
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <>
       <Head>
         <title>Zion Marketplace - Home</title>
         <meta name="description" content="Welcome to Zion Marketplace. Discover AI-powered services, products, and talent for the future of business." />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -19,7 +27,7 @@ export default function Home() {
         </div>
       
         {/* Hero Section */}
-        <section className="py-24 px-4 text-center">
+        <section className="py-44 px-4 text-center">
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text">
             Welcome to Zion Marketplace
           </motion.h1>
@@ -34,7 +42,7 @@ export default function Home() {
           </motion.div>
         </section>
         {/* Features Section */}
-        <section className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <section className="max-w-12xl mx-auto px-4 py-32 grid grid-cols-1 md:grid-cols-3 gap-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2 }} className="bg-black/30 rounded-xl p-8 shadow-lg border border-white/10">
             <h2 className="text-2xl font-bold mb-4 text-purple-400">AI Services</h2>
             <p className="text-gray-200 mb-4">Access a wide range of AI-powered business solutions, from automation to analytics, tailored for your needs.</p>
@@ -52,12 +60,18 @@ export default function Home() {
           </motion.div>
         </section>
         {/* Call to Action */}
-        <section className="py-16 text-center">
+        <section className="py-36 text-center">
           <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.5 }} className="text-3xl font-bold mb-4">Ready to transform your business?</motion.h2>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.6 }} className="text-lg mb-8 text-gray-200">Join Zion Marketplace and unlock the power of AI-driven innovation today.</motion.p>
-          <Link href="/signup" className="px-10 py-4 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold text-lg shadow-lg hover:from-pink-500 hover:to-purple-500 transition">Get Started</Link>
+          <Link href="/signup" className="px-30 py-4 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold text-lg shadow-lg hover:from-pink-500 hover:to-purple-500 transition">Get Started</Link>
         </section>
       </div>
     </>
-  );
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+);
 }

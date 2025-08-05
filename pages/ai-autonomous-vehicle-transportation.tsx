@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -433,6 +434,12 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -444,7 +451,8 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
       <Head>
         <title>AI Autonomous Vehicle & Transportation - Zion</title>
         <meta name="description" content="AI-powered autonomous vehicle management, intelligent transportation systems, and logistics optimization" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -454,13 +462,13 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Zion</span>
             </Link>
             <div className="flex items-center space-x-4">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Marketplace
               </Link>
-              <Link href="/ai-immersive-marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/ai-immersive-marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Immersive
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </div>
@@ -468,7 +476,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -505,7 +513,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
         </div>
 
         {isLoading ? (
-          <div className="text-center py-12">
+          <div className="text-center py-32">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
             <p className="text-gray-400 mt-4">Loading autonomous vehicle data...</p>
           </div>
@@ -594,7 +602,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
 
                       <div className="flex flex-wrap gap-2 mb-4">
                         {vehicle.features.slice(0, 2).map((feature) => (
-                          <span key={feature} className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full">
+                          <span key={feature} className="px-4 py-3 bg-blue-500/20 text-blue-300 text-xs rounded-full">
                             {feature}
                           </span>
                         ))}
@@ -686,7 +694,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
                         ))}
                       </div>
 
-                      <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300">
+                      <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                         🗺️ View Route
                       </button>
                     </div>
@@ -750,7 +758,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
                         ))}
                       </div>
 
-                      <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300">
+                      <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-4 py-4 rounded-lg font-medium transition-all duration-300">
                         📦 Track Operation
                       </button>
                     </div>
@@ -811,7 +819,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
                                   <div className="text-white font-medium">{incident.type}</div>
                                   <div className="text-gray-300 text-xs">{incident.description}</div>
                                 </div>
-                                <div className={`text-xs px-2 py-1 rounded ${
+                                <div className={`text-xs px-4 py-3 rounded ${
                                   incident.severity === 'high' ? 'bg-red-500/20 text-red-300' :
                                   incident.severity === 'medium' ? 'bg-yellow-500/20 text-yellow-300' :
                                   'bg-green-500/20 text-green-300'
@@ -851,7 +859,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
                         <div className="flex-1">
                           <div className="flex items-center space-x-2 mb-2">
                             <h3 className="text-lg font-semibold text-white">{insight.title}</h3>
-                            <span className={`px-2 py-1 rounded-full text-xs ${getInsightColor(insight.type).replace('text-', 'bg-')} ${getInsightColor(insight.type)}`}>
+                            <span className={`px-4 py-3 rounded-full text-xs ${getInsightColor(insight.type).replace('text-', 'bg-')} ${getInsightColor(insight.type)}`}>
                               {insight.type}
                             </span>
                           </div>
@@ -859,7 +867,7 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
                           <div className="flex items-center space-x-4 text-sm">
                             <span className="text-gray-400">Confidence:</span>
                             <span className="text-white">{insight.confidence}%</span>
-                            <span className={`px-2 py-1 rounded text-xs ${
+                            <span className={`px-4 py-3 rounded text-xs ${
                               insight.impact === 'positive' ? 'bg-green-500/20 text-green-300' :
                               insight.impact === 'negative' ? 'bg-red-500/20 text-red-300' :
                               'bg-gray-500/20 text-gray-300'
@@ -888,7 +896,13 @@ const AIAutonomousVehicleTransportationPage: NextPage = () => {
         )}
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIAutonomousVehicleTransportationPage 

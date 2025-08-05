@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -348,6 +349,12 @@ const ServiceCategoriesPage: NextPage = () => {
   const stats = getStats()
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -360,7 +367,8 @@ const ServiceCategoriesPage: NextPage = () => {
         <title>Service Categories & Specialization - Zion Marketplace</title>
         <meta name="description" content="Comprehensive service categories and specialization system. Find expert providers, specialized services, and category-specific features." />
         <meta name="keywords" content="service categories, specialization, expert providers, marketplace services, Zion" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="bg-black/20 backdrop-blur-md border-b border-white/10">
@@ -370,13 +378,13 @@ const ServiceCategoriesPage: NextPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Zion</span>
             </Link>
             <nav className="flex items-center space-x-6">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/project-management" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/project-management" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Projects
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium">
                 Login
               </Link>
             </nav>
@@ -385,7 +393,7 @@ const ServiceCategoriesPage: NextPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -457,12 +465,12 @@ const ServiceCategoriesPage: NextPage = () => {
             placeholder="Search categories or providers..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 flex-1 min-w-64"
+            className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 flex-1 min-w-124"
           />
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
           >
             <option value="all">All Categories</option>
             {categories.map(category => (
@@ -487,7 +495,7 @@ const ServiceCategoriesPage: NextPage = () => {
                   <div className="flex items-center justify-between mb-4">
                     <div className="text-4xl">{category.icon}</div>
                     {category.featured && (
-                      <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-medium rounded-full">
+                      <span className="px-3 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-medium rounded-full">
                         Featured
                       </span>
                     )}
@@ -519,12 +527,12 @@ const ServiceCategoriesPage: NextPage = () => {
                     <span className="text-gray-300 text-sm">Subcategories:</span>
                     <div className="flex flex-wrap gap-1 mt-1">
                       {category.subcategories.slice(0, 3).map((sub) => (
-                        <span key={sub.id} className="px-2 py-1 bg-white/10 rounded text-xs text-white">
+                        <span key={sub.id} className="px-4 py-3 bg-white/10 rounded text-xs text-white">
                           {sub.name}
                         </span>
                       ))}
                       {category.subcategories.length > 3 && (
-                        <span className="px-2 py-1 bg-white/10 rounded text-xs text-white">
+                        <span className="px-4 py-3 bg-white/10 rounded text-xs text-white">
                           +{category.subcategories.length - 3} more
                         </span>
                       )}
@@ -535,7 +543,7 @@ const ServiceCategoriesPage: NextPage = () => {
                     <span className="text-gray-300 text-sm">Requirements:</span>
                     <div className="flex flex-wrap gap-1 mt-1">
                       {category.requirements.slice(0, 2).map((req, index) => (
-                        <span key={index} className="px-2 py-1 bg-purple-500/20 rounded text-xs text-purple-300">
+                        <span key={index} className="px-4 py-3 bg-purple-500/20 rounded text-xs text-purple-300">
                           {req}
                         </span>
                       ))}
@@ -543,10 +551,10 @@ const ServiceCategoriesPage: NextPage = () => {
                   </div>
                   
                   <div className="flex gap-2">
-                    <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded text-sm transition-colors">
                       View Details
                     </button>
-                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors">
                       Browse Providers
                     </button>
                   </div>
@@ -569,12 +577,12 @@ const ServiceCategoriesPage: NextPage = () => {
                       <p className="text-gray-300 text-sm">{categories.find(c => c.id === provider.category)?.name}</p>
                     </div>
                     <div className="text-right">
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getAvailabilityColor(provider.availability)}`}>
+                      <span className={`px-3 py-3 rounded-full text-xs font-medium border ${getAvailabilityColor(provider.availability)}`}>
                         {provider.availability.toUpperCase()}
                       </span>
                       {provider.verified && (
                         <div className="mt-2">
-                          <span className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs font-medium text-blue-300">
+                          <span className="px-3 py-3 bg-blue-500/20 border border-blue-500/30 rounded-full text-xs font-medium text-blue-300">
                             VERIFIED
                           </span>
                         </div>
@@ -609,12 +617,12 @@ const ServiceCategoriesPage: NextPage = () => {
                     <span className="text-gray-300 text-sm">Skills:</span>
                     <div className="flex flex-wrap gap-1 mt-1">
                       {provider.skills.slice(0, 3).map((skill, index) => (
-                        <span key={index} className="px-2 py-1 bg-white/10 rounded text-xs text-white">
+                        <span key={index} className="px-4 py-3 bg-white/10 rounded text-xs text-white">
                           {skill}
                         </span>
                       ))}
                       {provider.skills.length > 3 && (
-                        <span className="px-2 py-1 bg-white/10 rounded text-xs text-white">
+                        <span className="px-4 py-3 bg-white/10 rounded text-xs text-white">
                           +{provider.skills.length - 3} more
                         </span>
                       )}
@@ -622,10 +630,10 @@ const ServiceCategoriesPage: NextPage = () => {
                   </div>
                   
                   <div className="flex gap-2">
-                    <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-3 py-4 rounded text-sm transition-colors">
                       View Profile
                     </button>
-                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-2 rounded text-sm transition-colors">
+                    <button className="flex-1 bg-white/10 text-white hover:bg-white/20 px-3 py-4 rounded text-sm transition-colors">
                       Contact
                     </button>
                   </div>
@@ -691,7 +699,7 @@ const ServiceCategoriesPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Find Your Perfect Service Match
@@ -758,7 +766,13 @@ const ServiceCategoriesPage: NextPage = () => {
         </div>
       </footer>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default ServiceCategoriesPage 

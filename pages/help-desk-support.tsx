@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -241,6 +242,12 @@ const HelpDeskSupport: NextPage = () => {
 
   if (loading) {
     return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
       <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -262,7 +269,8 @@ const HelpDeskSupport: NextPage = () => {
         <title>Help Desk & Support Ticket System - Zion Tech Group</title>
         <meta name="description" content="Comprehensive help desk and support ticket system for customer support management" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       <header className="bg-black/20 backdrop-blur-sm border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -366,7 +374,7 @@ const HelpDeskSupport: NextPage = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`px-4 py-2 rounded-lg font-medium transition-all ${
+              className={`px-4 py-4 rounded-lg font-medium transition-all ${
                 activeTab === tab.id
                   ? 'bg-white/10 text-white border border-white/20'
                   : 'text-gray-400 hover:text-white hover:bg-white/5'
@@ -393,12 +401,12 @@ const HelpDeskSupport: NextPage = () => {
                   placeholder="Search tickets..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/20"
                 />
                 <select
                   value={filterStatus}
                   onChange={(e) => setFilterStatus(e.target.value)}
-                  className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/20"
                 >
                   <option value="all">All Status</option>
                   <option value="open">Open</option>
@@ -409,7 +417,7 @@ const HelpDeskSupport: NextPage = () => {
                 <select
                   value={filterPriority}
                   onChange={(e) => setFilterPriority(e.target.value)}
-                  className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/20"
                 >
                   <option value="all">All Priorities</option>
                   <option value="urgent">Urgent</option>
@@ -420,7 +428,7 @@ const HelpDeskSupport: NextPage = () => {
                 <select
                   value={filterCategory}
                   onChange={(e) => setFilterCategory(e.target.value)}
-                  className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/20"
+                  className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/20"
                 >
                   <option value="all">All Categories</option>
                   <option value="technical">Technical</option>
@@ -443,10 +451,10 @@ const HelpDeskSupport: NextPage = () => {
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
                           <h3 className="text-lg font-semibold text-white">{ticket.title}</h3>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(ticket.status)}`}>
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${getStatusColor(ticket.status)}`}>
                             {ticket.status}
                           </span>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${getPriorityColor(ticket.priority)}`}>
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${getPriorityColor(ticket.priority)}`}>
                             {ticket.priority}
                           </span>
                         </div>
@@ -464,7 +472,7 @@ const HelpDeskSupport: NextPage = () => {
                       <div className="flex items-center gap-4">
                         <div className="flex gap-2">
                           {ticket.tags.map((tag) => (
-                            <span key={tag} className="px-2 py-1 bg-white/10 rounded text-xs text-white">
+                            <span key={tag} className="px-4 py-3 bg-white/10 rounded text-xs text-white">
                               {tag}
                             </span>
                           ))}
@@ -475,7 +483,7 @@ const HelpDeskSupport: NextPage = () => {
                       </div>
                       <div className="flex items-center gap-2">
                         <span className="text-gray-400 text-sm">{ticket.responses.length} responses</span>
-                        <button className="px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white hover:bg-white/20 transition-colors">
+                        <button className="px-4 py-4 bg-white/10 border border-white/20 rounded-lg text-white hover:bg-white/20 transition-colors">
                           View Details
                         </button>
                       </div>
@@ -507,7 +515,7 @@ const HelpDeskSupport: NextPage = () => {
                         <h3 className="text-lg font-semibold text-white">{agent.name}</h3>
                         <p className="text-gray-400 text-sm">{agent.email}</p>
                       </div>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                      <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                         agent.status === 'online' ? 'bg-green-500/20 text-green-400 border-green-500/30' :
                         agent.status === 'busy' ? 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30' :
                         'bg-gray-500/20 text-gray-400 border-gray-500/30'
@@ -538,7 +546,7 @@ const HelpDeskSupport: NextPage = () => {
                     <div className="mt-4 pt-4 border-t border-white/10">
                       <div className="flex flex-wrap gap-2">
                         {agent.specialties.map((specialty) => (
-                          <span key={specialty} className="px-2 py-1 bg-white/10 rounded text-xs text-white">
+                          <span key={specialty} className="px-4 py-3 bg-white/10 rounded text-xs text-white">
                             {specialty}
                           </span>
                         ))}
@@ -649,7 +657,13 @@ const HelpDeskSupport: NextPage = () => {
         </AnimatePresence>
       </main>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default HelpDeskSupport 

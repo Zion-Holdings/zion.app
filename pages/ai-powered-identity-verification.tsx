@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
@@ -550,6 +551,12 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
   }
 
   return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
     <div className="relative z-10 container-responsive py-8">
         
         {/* Background Effects */}
@@ -562,12 +569,13 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
         <title>AI-Powered Identity Verification & Trust System | Zion Tech Group</title>
         <meta name="description" content="Comprehensive identity verification, background checks, trust scoring, and reputation management powered by AI." />
         <meta name="keywords" content="identity verification, background check, trust score, reputation, AI verification, security" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Header */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-44">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               AI-Powered Identity Verification & Trust System
@@ -592,9 +600,9 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         {isLoading ? (
-          <div className="flex justify-center items-center py-20">
+          <div className="flex justify-center items-center py-40">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500"></div>
           </div>
         ) : (
@@ -654,10 +662,10 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
                         <p className="text-gray-300">Type: {verification.verificationType}</p>
                       </div>
                       <div className="flex space-x-2">
-                        <span className={`px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(verification.status)}`}>
+                        <span className={`px-3 py-3 rounded-full text-sm font-medium ${getStatusColor(verification.status)}`}>
                           {verification.status}
                         </span>
-                        <span className={`px-3 py-1 rounded-full text-sm font-medium ${getRiskColor(verification.aiAnalysis.riskLevel)}`}>
+                        <span className={`px-3 py-3 rounded-full text-sm font-medium ${getRiskColor(verification.aiAnalysis.riskLevel)}`}>
                           {verification.aiAnalysis.riskLevel} risk
                         </span>
                       </div>
@@ -725,7 +733,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
                               <div className="text-gray-400 text-sm">{doc.type.replace('_', ' ')}</div>
                             </div>
                             <div className="text-right">
-                              <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                              <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                                 doc.status === 'approved' ? 'bg-green-500/20 text-green-300' :
                                 doc.status === 'pending' ? 'bg-yellow-500/20 text-yellow-300' :
                                 'bg-red-500/20 text-red-300'
@@ -784,7 +792,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
                   <div key={check.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                     <div className="flex items-start justify-between mb-6">
                       <h3 className="text-xl font-semibold text-white">Background Check #{check.id}</h3>
-                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                      <span className={`px-3 py-3 rounded-full text-sm font-medium ${
                         check.status === 'completed' ? 'bg-green-500/20 text-green-300' :
                         check.status === 'pending' ? 'bg-yellow-500/20 text-yellow-300' :
                         'bg-red-500/20 text-red-300'
@@ -826,7 +834,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
                             <div key={result.id} className="bg-white/5 rounded-lg p-4">
                               <div className="flex items-center justify-between mb-2">
                                 <h5 className="text-white font-semibold">{result.category}</h5>
-                                <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                                <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                                   result.status === 'clear' ? 'bg-green-500/20 text-green-300' :
                                   result.status === 'issue' ? 'bg-red-500/20 text-red-300' :
                                   'bg-yellow-500/20 text-yellow-300'
@@ -913,7 +921,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
                               </div>
                               <div className="text-right">
                                 <div className="text-white font-semibold">{rec.rating}/5</div>
-                                <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                                <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                                   rec.verified ? 'bg-green-500/20 text-green-300' : 'bg-yellow-500/20 text-yellow-300'
                                 }`}>
                                   {rec.verified ? 'Verified' : 'Pending'}
@@ -962,7 +970,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
                       <div key={insight.id} className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-lg p-4">
                         <div className="flex items-start justify-between mb-2">
                           <h4 className="text-white font-semibold">{insight.title}</h4>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                          <span className={`px-4 py-3 rounded-full text-xs font-medium ${
                             insight.impact === 'positive' ? 'bg-green-500/20 text-green-300' :
                             insight.impact === 'negative' ? 'bg-red-500/20 text-red-300' :
                             'bg-yellow-500/20 text-yellow-300'
@@ -989,7 +997,7 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
 
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
               Ready to Build Trust?
@@ -1010,7 +1018,13 @@ const AIPoweredIdentityVerificationPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default AIPoweredIdentityVerificationPage 

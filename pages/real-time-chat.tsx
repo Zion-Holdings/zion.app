@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { NextPage } from 'next';import ModernLayout from '../components/layout/ModernLayout'
+
 import Head from 'next/head';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
@@ -114,6 +115,12 @@ const RealTimeChatPage: NextPage = () => {
       }
     }, 5000) // Check every 5 seconds
 
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
+    return (
+  <ModernLayout>
     return () => clearInterval(interval)
   }, [selectedRoom])
 
@@ -194,7 +201,8 @@ const RealTimeChatPage: NextPage = () => {
         <meta name="description" content="Connect with users, service providers, and AI assistants in real-time on Zion Marketplace" />
         <meta name="keywords" content="real-time chat, marketplace communication, AI assistant, Zion" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /></Head>
 
       {/* Navigation */}
       <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
@@ -209,22 +217,22 @@ const RealTimeChatPage: NextPage = () => {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Marketplace
               </Link>
-              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/services" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Services
               </Link>
-              <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/talents" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Talents
               </Link>
-              <Link href="/products" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/products" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Products
               </Link>
-              <Link href="/ai-virtual-assistant" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/ai-virtual-assistant" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 AI Assistant
               </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-4 rounded-md text-sm font-medium transition-colors">
                 Login
               </Link>
             </div>
@@ -273,7 +281,7 @@ const RealTimeChatPage: NextPage = () => {
                         )}
                       </div>
                       {room.unreadCount > 0 && (
-                        <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full">
+                        <span className="bg-red-500 text-white text-xs px-4 py-3 rounded-full">
                           {room.unreadCount}
                         </span>
                       )}
@@ -322,13 +330,13 @@ const RealTimeChatPage: NextPage = () => {
                           <Image 
                             src={message.avatar || "https://api.dicebear.com/7.x/avataaars/svg?seed=User"}
                             alt={message.sender}
-                            className="w-8 h-8 rounded-full" 
+                            className="w-12 h-12 rounded-full" 
                             width={32} 
                             height={32} 
                           />
                         </div>
                         <div className={`ml-3 ${message.sender === 'You' ? 'mr-3' : ''}`}>
-                          <div className={`rounded-lg px-4 py-2 ${
+                          <div className={`rounded-lg px-4 py-4 ${
                             message.sender === 'You'
                               ? 'bg-purple-600 text-white'
                               : message.type === 'ai'
@@ -354,13 +362,13 @@ const RealTimeChatPage: NextPage = () => {
                         <Image 
                           src="https://api.dicebear.com/7.x/bottts/svg?seed=AI"
                           alt="AI Assistant"
-                          className="w-8 h-8 rounded-full"
+                          className="w-12 h-12 rounded-full"
                           width={32} 
                           height={32} 
                         />
                       </div>
                       <div className="ml-3">
-                        <div className="bg-blue-600 text-white rounded-lg px-4 py-2">
+                        <div className="bg-blue-600 text-white rounded-lg px-4 py-4">
                           <div className="text-sm font-medium mb-1">AI Assistant</div>
                           <div className="flex space-x-1">
                             <div className="w-2 h-2 bg-white rounded-full animate-bounce"></div>
@@ -449,7 +457,13 @@ const RealTimeChatPage: NextPage = () => {
         </div>
       </div>
     </div>
-  )
+  
+  </ModernLayout>
+
+  </ModernLayout>
+
+  </ModernLayout>
+)
 }
 
 export default RealTimeChatPage 
