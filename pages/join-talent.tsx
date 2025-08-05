@@ -56,7 +56,7 @@ const Https___ziontechgroup_netlify_app_join_talentPage: NextPage = () => {
                     About Us - Zion Tech Group
                   </span>
                 </h1>
-                <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                <p className="text-high-contrast-tertiary text-sm">
                   Learn about our company, mission, and values
                 </p>
               </div>
@@ -80,37 +80,37 @@ const Https___ziontechgroup_netlify_app_join_talentPage: NextPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Zion</h3>
-              <p className="text-gray-400 text-sm">
+              <p className="text-high-contrast-tertiary text-sm">
                 The future of AI-powered marketplace technology.
               </p>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Marketplace</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/marketplace" className="text-gray-400 hover:text-white transition-colors">Browse Services</Link></li>
-                <li><Link href="/talents" className="text-gray-400 hover:text-white transition-colors">AI Talents</Link></li>
-                <li><Link href="/equipment" className="text-gray-400 hover:text-white transition-colors">Equipment</Link></li>
+                <li><Link href="/marketplace" className="text-high-contrast-tertiary hover:text-white transition-colors">Browse Services</Link></li>
+                <li><Link href="/talents" className="text-high-contrast-tertiary hover:text-white transition-colors">AI Talents</Link></li>
+                <li><Link href="/equipment" className="text-high-contrast-tertiary hover:text-white transition-colors">Equipment</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li>
-                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
-                <li><Link href="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
+                <li><Link href="/about" className="text-high-contrast-tertiary hover:text-white transition-colors">About</Link></li>
+                <li><Link href="/contact" className="text-high-contrast-tertiary hover:text-white transition-colors">Contact</Link></li>
+                <li><Link href="/blog" className="text-high-contrast-tertiary hover:text-white transition-colors">Blog</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/help" className="text-gray-400 hover:text-white transition-colors">Help Center</Link></li>
-                <li><Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy</Link></li>
-                <li><Link href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link></li>
+                <li><Link href="/help" className="text-high-contrast-tertiary hover:text-white transition-colors">Help Center</Link></li>
+                <li><Link href="/privacy" className="text-high-contrast-tertiary hover:text-white transition-colors">Privacy</Link></li>
+                <li><Link href="/terms" className="text-high-contrast-tertiary hover:text-white transition-colors">Terms</Link></li>
               </ul>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-white/10 text-center">
-            <p className="text-gray-400 text-sm">
+            <p className="text-high-contrast-tertiary text-sm">
               © 2024 Zion. All rights reserved.
             </p>
           </div>

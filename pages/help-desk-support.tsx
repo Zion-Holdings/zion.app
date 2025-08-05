@@ -207,11 +207,11 @@ const HelpDeskSupport: NextPage = () => {
       case 'resolved':
         return 'bg-green-500/20 text-green-400 border-green-500/30'
       case 'closed':
-        return 'bg-gray-500/20 text-gray-400 border-gray-500/30'
+        return 'bg-gray-500/20 text-high-contrast-tertiary border-gray-500/30'
       case 'pending':
         return 'bg-orange-500/20 text-orange-400 border-orange-500/30'
       default:
-        return 'bg-gray-500/20 text-gray-400 border-gray-500/30'
+        return 'bg-gray-500/20 text-high-contrast-tertiary border-gray-500/30'
     }
   }
 
@@ -296,7 +296,7 @@ const HelpDeskSupport: NextPage = () => {
           >
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-400 text-sm">Total Tickets</p>
+                <p className="text-high-contrast-tertiary text-sm">Total Tickets</p>
                 <p className="text-2xl font-bold text-white">{tickets.length}</p>
               </div>
               <div className="text-3xl">🎫</div>
