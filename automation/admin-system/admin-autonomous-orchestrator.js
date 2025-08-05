@@ -105,7 +105,7 @@ class AdminAutonomousOrchestrator {
         });
         
         // Create PID file for cron system tracking
-        const pidPath = path.join(this.adminConfig.adminPath, 'pids', `admin-${agentType.toLowerCase()}.pid`);
+        const pidPath = path.join(this.adminConfig.adminPath, 'pids', `admin-${agentType.toLowerCase().replace('admin', '')}.pid`);
         fs.writeFileSync(pidPath, agentProcess.pid.toString());
         
         // Store process information
