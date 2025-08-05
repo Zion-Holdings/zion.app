@@ -294,10 +294,10 @@ const Sidebar: React.FC = () => {
 
       {/* Sidebar */}
       <div className={`
-        fixed top-0 left-0 h-full bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 
-        border-r border-gray-700 z-50 transition-transform duration-300 ease-in-out
+        fixed top-0 left-0 h-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 
+        border-r border-gray-700/50 z-50 transition-all duration-500 ease-in-out backdrop-blur-sm
         ${isOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 lg:relative lg:z-auto
-        w-80 shadow-2xl
+        w-80 shadow-2xl before:absolute before:inset-0 before:bg-gradient-to-r before:from-cyan-500/10 before:to-purple-500/10 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500
       `}>
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-700 bg-gradient-to-r from-gray-800 to-gray-900">
@@ -319,16 +319,17 @@ const Sidebar: React.FC = () => {
         </div>
 
         {/* Search */}
-        <div className="p-4 border-b border-gray-700">
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+        <div className="p-4 border-b border-gray-700/50">
+          <div className="relative group">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400 group-focus-within:text-cyan-400 transition-colors duration-300" />
             <input
               type="text"
-              placeholder="Search..."
+              placeholder="Search features..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 backdrop-blur-sm transition-all duration-300 hover:bg-gray-800/70"
             />
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-500/20 to-purple-500/20 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
           </div>
         </div>
 
@@ -339,16 +340,17 @@ const Sidebar: React.FC = () => {
               <div key={section.id} className="px-4">
                 <button
                   onClick={() => toggleSection(section.id)}
-                  className="w-full flex items-center justify-between p-3 text-left text-gray-300 hover:text-white hover:bg-gray-700 rounded-lg transition-colors group"
+                  className="w-full flex items-center justify-between p-3 text-left text-gray-300 hover:text-white hover:bg-gray-700/50 rounded-xl transition-all duration-300 group relative overflow-hidden"
                 >
-                  <div className="flex items-center space-x-3">
-                    <section.icon className="w-5 h-5" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="flex items-center space-x-3 relative z-10">
+                    <section.icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                     <span className="font-medium">{section.title}</span>
                   </div>
                   {expandedSections.has(section.id) ? (
-                    <ChevronDown className="w-4 h-4" />
+                    <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
                   ) : (
-                    <ChevronRight className="w-4 h-4" />
+                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   )}
                 </button>
                 
