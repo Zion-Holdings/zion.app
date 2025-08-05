@@ -150,13 +150,18 @@ class EnhancedAutomationOrchestrator {
   }
 
   executeStrategy(strategyKey, strategy) {
-    const optimalVariation = this.selectOptimalVariation(strategy.variations);
-    
-    if (optimalVariation && !this.antiRepetitionEngine.isVariationBlocked(optimalVariation)) {
-      this.createDiversifiedContent(strategyKey, optimalVariation, strategy);
-      this.updateDiversificationMetrics(strategyKey, optimalVariation);
-    } else {
-      console.log(`⚠️ No optimal variation available for ${strategyKey}`);
+    try {
+      const optimalVariation = this.selectOptimalVariation(strategy.variations);
+      
+      if (optimalVariation && !this.antiRepetitionEngine.isVariationBlocked(optimalVariation)) {
+        this.createDiversifiedContent(strategyKey, optimalVariation, strategy);
+        this.updateDiversificationMetrics(strategyKey, optimalVariation);
+      } else {
+        console.log(`⚠️ No optimal variation available for ${strategyKey}`);
+      }
+    } catch (error) {
+      console.error(`❌ Error executing strategy ${strategyKey}:`, error.message);
+      // Continue with other strategies
     }
   }
 
@@ -248,18 +253,23 @@ class EnhancedAutomationOrchestrator {
   }
 
   createDiversifiedContent(strategyKey, variation, strategy) {
-    console.log(`🎯 Creating diversified content for ${strategyKey}: ${variation}`);
-    
-    const contentGenerator = this.getContentGenerator(strategyKey, variation, strategy);
-    const diversifiedContent = contentGenerator.generate();
-    
-    if (this.validateContentUniqueness(diversifiedContent)) {
-      this.saveDiversifiedContent(strategyKey, variation, diversifiedContent, strategy);
-      this.antiRepetitionEngine.addContentHash(diversifiedContent);
-      this.antiRepetitionEngine.trackContentVariation(variation);
-    } else {
-      console.log(`⚠️ Content similarity detected, skipping ${variation}`);
-      this.growthMetrics.repetitiveUpdatesBlocked++;
+    try {
+      console.log(`🎯 Creating diversified content for ${strategyKey}: ${variation}`);
+      
+      const contentGenerator = this.getContentGenerator(strategyKey, variation, strategy);
+      const diversifiedContent = contentGenerator.generate();
+      
+      if (this.validateContentUniqueness(diversifiedContent)) {
+        this.saveDiversifiedContent(strategyKey, variation, diversifiedContent, strategy);
+        this.antiRepetitionEngine.addContentHash(diversifiedContent);
+        this.antiRepetitionEngine.trackContentVariation(variation);
+      } else {
+        console.log(`⚠️ Content similarity detected, skipping ${variation}`);
+        this.growthMetrics.repetitiveUpdatesBlocked++;
+      }
+    } catch (error) {
+      console.error(`❌ Error creating diversified content for ${strategyKey}:${variation}:`, error.message);
+      // Continue with other content generation
     }
   }
 

@@ -1,0 +1,154 @@
+const fs = require('fs');
+const path = require('path');
+const glob = require('glob');
+
+// Get all pages
+const pages = glob.sync('pages/**/*.tsx', { cwd: process.cwd() });
+const baseUrl = 'https://zion.app'; // Replace with your actual domain
+
+// Convert page paths to URLs
+const urls = pages.map(page => {
+  const pagePath = page.replace('pages/', '').replace('.tsx', '');
+  if (pagePath === 'index') {
+    return '/';
+  }
+  return `/${pagePath}`;
+});
+
+// Add important static pages
+const staticPages = [
+  '/about',
+  '/contact',
+  '/privacy-policy',
+  '/terms-of-service',
+  '/help-desk-support',
+  '/faq',
+  '/docs',
+  '/api-docs',
+  '/marketplace',
+  '/services',
+  '/talents',
+  '/equipment',
+  '/products',
+  '/blog',
+  '/careers',
+  '/press',
+  '/partners',
+  '/innovation',
+  '/security',
+  '/compliance-governance',
+  '/status'
+];
+
+// Combine all URLs
+const allUrls = [...new Set([...urls, ...staticPages])];
+
+// Generate sitemap XML
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${allUrls.map(url => `  <url>
+    <loc>${baseUrl}${url}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>${url === '/' ? '1.0' : url.startsWith('/services/') || url.startsWith('/blog/') ? '0.8' : '0.6'}</priority>
+  </url>`).join('\n')}
+</urlset>`;
+
+// Write sitemap to public directory
+fs.writeFileSync('public/sitemap.xml', sitemapXml);
+
+// Generate robots.txt
+const robotsTxt = `User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: ${baseUrl}/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# Allow important pages
+Allow: /services/
+Allow: /blog/
+Allow: /marketplace/
+Allow: /talents/
+Allow: /equipment/
+Allow: /products/
+`;
+
+fs.writeFileSync('public/robots.txt', robotsTxt);
+
+// Generate navigation structure JSON for internal use
+const navigationStructure = {
+  main: {
+    home: '/',
+    services: '/services',
+    marketplace: '/marketplace',
+    resources: '/blog',
+    company: '/about'
+  },
+  services: {
+    ai: [
+      '/services/ai-consulting',
+      '/services/ai-model-development',
+      '/services/machine-learning-implementation',
+      '/services/ai-powered-automation',
+      '/services/ai-powered-data-analytics',
+      '/services/ai-powered-business-intelligence'
+    ],
+    cloud: [
+      '/services/cloud-migration-services',
+      '/services/devops-automation',
+      '/services/performance-optimization',
+      '/services/edge-ai-implementation'
+    ],
+    security: [
+      '/services/security-auditing',
+      '/services/ai-powered-security-cybersecurity',
+      '/services/ai-powered-identity-verification'
+    ],
+    emerging: [
+      '/services/quantum-computing-solutions',
+      '/services/blockchain-development',
+      '/services/iot-solutions'
+    ]
+  },
+  marketplace: {
+    browse: '/marketplace',
+    talent: '/talent-directory',
+    join: '/join-talent',
+    categories: '/service-categories',
+    post: '/post-request',
+    quotes: '/quote-requests'
+  },
+  resources: {
+    blog: '/blog',
+    docs: '/docs',
+    api: '/api-docs',
+    help: '/help-desk-support',
+    faq: '/faq'
+  },
+  company: {
+    about: '/about',
+    careers: '/careers',
+    press: '/press',
+    partners: '/partners',
+    contact: '/contact',
+    privacy: '/privacy-policy',
+    terms: '/terms-of-service',
+    security: '/security',
+    compliance: '/compliance-governance',
+    status: '/status'
+  }
+};
+
+fs.writeFileSync('public/navigation-structure.json', JSON.stringify(navigationStructure, null, 2));
+
+console.log(`Generated sitemap with ${allUrls.length} URLs`);
+console.log('Files created:');
+console.log('- public/sitemap.xml');
+console.log('- public/robots.txt');
+console.log('- public/navigation-structure.json'); 

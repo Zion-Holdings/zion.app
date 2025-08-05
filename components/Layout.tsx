@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import EnhancedNavigation from './EnhancedNavigation';
+import ImprovedNavigation from './ImprovedNavigation';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -21,121 +21,121 @@ const Layout: React.FC<LayoutProps> = ({
       href: '/services', 
       label: 'Services',
       children: [
-        { href: '/services/ai-consulting', label: 'AI Consulting' },
-        { href: '/services/ai-model-development', label: 'AI Model Development' },
-        { href: '/services/machine-learning-implementation', label: 'Machine Learning' },
-        { href: '/services/cloud-migration-services', label: 'Cloud Migration' },
-        { href: '/services/devops-automation', label: 'DevOps Automation' },
-        { href: '/services/security-auditing', label: 'Security Auditing' },
-        { href: '/services/performance-optimization', label: 'Performance Optimization' },
-        { href: '/services/edge-ai-implementation', label: 'Edge AI' },
-        { href: '/services/quantum-computing-solutions', label: 'Quantum Computing' },
-        { href: '/services/blockchain-development', label: 'Blockchain Development' },
-        { href: '/services/iot-solutions', label: 'IoT Solutions' },
-        { href: '/services/ai-powered-automation', label: 'Process Automation' },
-        { href: '/services/ai-powered-data-analytics', label: 'Data Analytics' },
-        { href: '/services/ai-powered-business-intelligence', label: 'Business Intelligence' },
-        { href: '/services/ai-powered-customer-support', label: 'Customer Support' },
-        { href: '/services/ai-powered-contract-legal', label: 'Contract & Legal' },
-        { href: '/services/ai-powered-collaboration-workspace', label: 'Collaboration Workspace' },
-        { href: '/services/ai-powered-hr-management', label: 'HR Management' },
-        { href: '/services/ai-powered-finance-banking', label: 'Finance & Banking' },
-        { href: '/services/ai-powered-healthcare-medical-diagnostics', label: 'Healthcare & Medical' },
-        { href: '/services/ai-powered-retail-ecommerce', label: 'Retail & E-commerce' },
-        { href: '/services/ai-powered-manufacturing-industrial-automation', label: 'Manufacturing & Industrial' },
-        { href: '/services/ai-powered-education-training', label: 'Education & Training' },
-        { href: '/services/ai-powered-energy-management-renewable-energy', label: 'Energy Management' },
-        { href: '/services/ai-powered-entertainment-gaming', label: 'Entertainment & Gaming' },
-        { href: '/services/ai-powered-event-calendar', label: 'Event Calendar' },
-        { href: '/services/ai-powered-facility-management', label: 'Facility Management' },
-        { href: '/services/ai-powered-feedback-survey', label: 'Feedback & Survey' },
-        { href: '/services/ai-powered-governance-compliance', label: 'Governance & Compliance' },
-        { href: '/services/ai-powered-holographic-display', label: 'Holographic Display' },
-        { href: '/services/ai-powered-identity-verification', label: 'Identity Verification' },
-        { href: '/services/ai-powered-incident-response', label: 'Incident Response' },
-        { href: '/services/ai-powered-inventory-supply-chain', label: 'Inventory & Supply Chain' },
-        { href: '/services/ai-powered-iot', label: 'IoT Integration' },
-        { href: '/services/ai-powered-knowledge-base', label: 'Knowledge Base' },
-        { href: '/services/ai-powered-learning-platform', label: 'Learning Platform' },
-        { href: '/services/ai-powered-live-streaming-broadcasting', label: 'Live Streaming' },
-        { href: '/services/ai-powered-loyalty-rewards', label: 'Loyalty & Rewards' },
-        { href: '/services/ai-powered-machine-learning', label: 'Machine Learning' },
-        { href: '/services/ai-powered-mixed-reality-spatial-computing', label: 'Mixed Reality' },
-        { href: '/services/ai-powered-mobile-responsive', label: 'Mobile Responsive' },
-        { href: '/services/ai-powered-multi-language', label: 'Multi-language' },
-        { href: '/services/ai-powered-monitoring-surveillance', label: 'Monitoring & Surveillance' },
-        { href: '/services/ai-powered-prediction-forecasting', label: 'Prediction & Forecasting' },
-        { href: '/services/ai-powered-pricing-estimation', label: 'Pricing & Estimation' },
-        { href: '/services/ai-powered-quality-assurance', label: 'Quality Assurance' },
-        { href: '/services/ai-powered-recommendations', label: 'Recommendations' },
-        { href: '/services/ai-powered-security-cybersecurity', label: 'Security & Cybersecurity' },
-        { href: '/services/ai-powered-seo', label: 'SEO Optimization' },
-        { href: '/services/ai-powered-social-media-community', label: 'Social Media & Community' },
-        { href: '/services/ai-powered-subscription-membership', label: 'Subscription & Membership' },
-        { href: '/services/ai-powered-testing', label: 'Testing' },
-        { href: '/services/ai-powered-virtual-reality', label: 'Virtual Reality' },
-        { href: '/services/ai-powered-voice-assistant-speech-recognition', label: 'Voice Assistant' },
-        { href: '/services/ai-powered-workflow-orchestration', label: 'Workflow Orchestration' },
+        { href: '/services/ai-consulting', label: 'AI Consulting', icon: '🤖', description: 'Strategic AI implementation' },
+        { href: '/services/ai-model-development', label: 'AI Model Development', icon: '🧠', description: 'Custom ML models' },
+        { href: '/services/machine-learning-implementation', label: 'Machine Learning', icon: '📊', description: 'ML solutions' },
+        { href: '/services/cloud-migration-services', label: 'Cloud Migration', icon: '☁️', description: 'Seamless cloud setup' },
+        { href: '/services/devops-automation', label: 'DevOps Automation', icon: '⚙️', description: 'CI/CD pipelines' },
+        { href: '/services/security-auditing', label: 'Security Auditing', icon: '🔒', description: 'Security assessments' },
+        { href: '/services/performance-optimization', label: 'Performance Optimization', icon: '⚡', description: 'System optimization' },
+        { href: '/services/edge-ai-implementation', label: 'Edge AI', icon: '🌐', description: 'Edge computing solutions' },
+        { href: '/services/quantum-computing-solutions', label: 'Quantum Computing', icon: '⚛️', description: 'Quantum solutions' },
+        { href: '/services/blockchain-development', label: 'Blockchain Development', icon: '🔗', description: 'Blockchain solutions' },
+        { href: '/services/iot-solutions', label: 'IoT Solutions', icon: '📡', description: 'IoT integration' },
+        { href: '/services/ai-powered-automation', label: 'Process Automation', icon: '🤖', description: 'Workflow automation' },
+        { href: '/services/ai-powered-data-analytics', label: 'Data Analytics', icon: '📈', description: 'Advanced analytics' },
+        { href: '/services/ai-powered-business-intelligence', label: 'Business Intelligence', icon: '💼', description: 'BI solutions' },
+        { href: '/services/ai-powered-customer-support', label: 'Customer Support', icon: '🎧', description: 'AI-powered support' },
+        { href: '/services/ai-powered-contract-legal', label: 'Contract & Legal', icon: '📋', description: 'Legal automation' },
+        { href: '/services/ai-powered-collaboration-workspace', label: 'Collaboration Workspace', icon: '👥', description: 'Team collaboration' },
+        { href: '/services/ai-powered-hr-management', label: 'HR Management', icon: '👨‍💼', description: 'HR automation' },
+        { href: '/services/ai-powered-finance-banking', label: 'Finance & Banking', icon: '💰', description: 'Financial solutions' },
+        { href: '/services/ai-powered-healthcare-medical-diagnostics', label: 'Healthcare & Medical', icon: '🏥', description: 'Medical AI' },
+        { href: '/services/ai-powered-retail-ecommerce', label: 'Retail & E-commerce', icon: '🛒', description: 'Retail solutions' },
+        { href: '/services/ai-powered-manufacturing-industrial-automation', label: 'Manufacturing & Industrial', icon: '🏭', description: 'Industrial AI' },
+        { href: '/services/ai-powered-education-training', label: 'Education & Training', icon: '🎓', description: 'Educational AI' },
+        { href: '/services/ai-powered-energy-management-renewable-energy', label: 'Energy Management', icon: '⚡', description: 'Energy optimization' },
+        { href: '/services/ai-powered-entertainment-gaming', label: 'Entertainment & Gaming', icon: '🎮', description: 'Gaming AI' },
+        { href: '/services/ai-powered-event-calendar', label: 'Event Calendar', icon: '📅', description: 'Event management' },
+        { href: '/services/ai-powered-facility-management', label: 'Facility Management', icon: '🏢', description: 'Facility optimization' },
+        { href: '/services/ai-powered-feedback-survey', label: 'Feedback & Survey', icon: '📝', description: 'Feedback collection' },
+        { href: '/services/ai-powered-governance-compliance', label: 'Governance & Compliance', icon: '📋', description: 'Compliance automation' },
+        { href: '/services/ai-powered-holographic-display', label: 'Holographic Display', icon: '👁️', description: 'Holographic tech' },
+        { href: '/services/ai-powered-identity-verification', label: 'Identity Verification', icon: '🆔', description: 'Identity management' },
+        { href: '/services/ai-powered-incident-response', label: 'Incident Response', icon: '🚨', description: 'Security response' },
+        { href: '/services/ai-powered-inventory-supply-chain', label: 'Inventory & Supply Chain', icon: '📦', description: 'Supply chain AI' },
+        { href: '/services/ai-powered-iot', label: 'IoT Integration', icon: '🌐', description: 'IoT solutions' },
+        { href: '/services/ai-powered-knowledge-base', label: 'Knowledge Base', icon: '📚', description: 'Knowledge management' },
+        { href: '/services/ai-powered-learning-platform', label: 'Learning Platform', icon: '🎓', description: 'Learning AI' },
+        { href: '/services/ai-powered-live-streaming-broadcasting', label: 'Live Streaming', icon: '📺', description: 'Streaming solutions' },
+        { href: '/services/ai-powered-loyalty-rewards', label: 'Loyalty & Rewards', icon: '🎁', description: 'Loyalty programs' },
+        { href: '/services/ai-powered-machine-learning', label: 'Machine Learning', icon: '🧠', description: 'ML solutions' },
+        { href: '/services/ai-powered-mixed-reality-spatial-computing', label: 'Mixed Reality', icon: '🥽', description: 'AR/VR solutions' },
+        { href: '/services/ai-powered-mobile-responsive', label: 'Mobile Responsive', icon: '📱', description: 'Mobile optimization' },
+        { href: '/services/ai-powered-multi-language', label: 'Multi-language', icon: '🌍', description: 'Translation services' },
+        { href: '/services/ai-powered-monitoring-surveillance', label: 'Monitoring & Surveillance', icon: '👁️', description: 'Monitoring AI' },
+        { href: '/services/ai-powered-prediction-forecasting', label: 'Prediction & Forecasting', icon: '🔮', description: 'Predictive analytics' },
+        { href: '/services/ai-powered-pricing-estimation', label: 'Pricing & Estimation', icon: '💰', description: 'Pricing optimization' },
+        { href: '/services/ai-powered-quality-assurance', label: 'Quality Assurance', icon: '✅', description: 'QA automation' },
+        { href: '/services/ai-powered-recommendations', label: 'Recommendations', icon: '💡', description: 'Recommendation engines' },
+        { href: '/services/ai-powered-security-cybersecurity', label: 'Security & Cybersecurity', icon: '🛡️', description: 'Security AI' },
+        { href: '/services/ai-powered-seo', label: 'SEO Optimization', icon: '🔍', description: 'SEO automation' },
+        { href: '/services/ai-powered-social-media-community', label: 'Social Media & Community', icon: '📱', description: 'Social media AI' },
+        { href: '/services/ai-powered-subscription-membership', label: 'Subscription & Membership', icon: '💳', description: 'Subscription management' },
+        { href: '/services/ai-powered-testing', label: 'Testing', icon: '🧪', description: 'Automated testing' },
+        { href: '/services/ai-powered-virtual-reality', label: 'Virtual Reality', icon: '🥽', description: 'VR solutions' },
+        { href: '/services/ai-powered-voice-assistant-speech-recognition', label: 'Voice Assistant', icon: '🎤', description: 'Voice AI' },
+        { href: '/services/ai-powered-workflow-orchestration', label: 'Workflow Orchestration', icon: '🔄', description: 'Workflow automation' },
       ]
     },
     { 
       href: '/marketplace', 
       label: 'Marketplace',
       children: [
-        { href: '/marketplace', label: 'Browse Services' },
-        { href: '/talent-directory', label: 'Talent Directory' },
-        { href: '/join-talent', label: 'Join Talent' },
-        { href: '/service-categories', label: 'Service Categories' },
-        { href: '/post-request', label: 'Post Request' },
-        { href: '/quote-requests', label: 'Quote Requests' },
-        { href: '/review-system', label: 'Reviews' },
-        { href: '/payment-processing', label: 'Payment Processing' },
-        { href: '/escrow-services', label: 'Escrow Services' },
-        { href: '/warranty-protection', label: 'Warranty Protection' },
-        { href: '/dispute-resolution', label: 'Dispute Resolution' },
-        { href: '/referral-affiliate', label: 'Referral & Affiliate' },
+        { href: '/marketplace', label: 'Browse Services', icon: '🔍', description: 'Find services' },
+        { href: '/talent-directory', label: 'Talent Directory', icon: '👥', description: 'Find experts' },
+        { href: '/join-talent', label: 'Join Talent', icon: '➕', description: 'Become a provider' },
+        { href: '/service-categories', label: 'Service Categories', icon: '📂', description: 'Browse categories' },
+        { href: '/post-request', label: 'Post Request', icon: '📝', description: 'Request services' },
+        { href: '/quote-requests', label: 'Quote Requests', icon: '💰', description: 'Get quotes' },
+        { href: '/review-system', label: 'Reviews', icon: '⭐', description: 'Read reviews' },
+        { href: '/payment-processing', label: 'Payment Processing', icon: '💳', description: 'Secure payments' },
+        { href: '/escrow-services', label: 'Escrow Services', icon: '🔒', description: 'Secure transactions' },
+        { href: '/warranty-protection', label: 'Warranty Protection', icon: '🛡️', description: 'Service protection' },
+        { href: '/dispute-resolution', label: 'Dispute Resolution', icon: '⚖️', description: 'Conflict resolution' },
+        { href: '/referral-affiliate', label: 'Referral & Affiliate', icon: '🤝', description: 'Referral program' },
       ]
     },
     { 
       href: '/blog', 
       label: 'Resources',
       children: [
-        { href: '/blog', label: 'Blog' },
-        { href: '/blog/cybersecurity-in-the-age-of-ai', label: 'Cybersecurity' },
-        { href: '/blog/machine-learning-in-healthcare', label: 'Healthcare ML' },
-        { href: '/blog/blockchain-for-supply-chain-management', label: 'Blockchain' },
-        { href: '/blog/digital-transformation-strategies', label: 'Digital Transformation' },
-        { href: '/blog/edge-ai-the-future-of-distributed-computing', label: 'Edge AI' },
-        { href: '/blog/cloud-native-architecture-patterns', label: 'Cloud Architecture' },
-        { href: '/blog/microservices-best-practices', label: 'Microservices' },
-        { href: '/blog/sustainable-technology-solutions', label: 'Sustainable Tech' },
-        { href: '/blog/augmented-reality-in-enterprise', label: 'AR in Enterprise' },
-        { href: '/blog/serverless-computing-benefits', label: 'Serverless Computing' },
-        { href: '/blog/data-privacy-and-gdpr-compliance', label: 'Data Privacy' },
-        { href: '/blog/devops-automation-tools', label: 'DevOps Tools' },
-        { href: '/blog/quantum-computing-applications-in-business', label: 'Quantum Computing' },
-        { href: '/blog/api-security-and-authentication', label: 'API Security' },
-        { href: '/docs', label: 'Documentation' },
-        { href: '/api-docs', label: 'API Documentation' },
-        { href: '/help-desk-support', label: 'Help Desk' },
-        { href: '/faq', label: 'FAQ' },
+        { href: '/blog', label: 'Blog', icon: '📝', description: 'Latest insights' },
+        { href: '/blog/cybersecurity-in-the-age-of-ai', label: 'Cybersecurity', icon: '🔒', description: 'Security insights' },
+        { href: '/blog/machine-learning-in-healthcare', label: 'Healthcare ML', icon: '🏥', description: 'Healthcare AI' },
+        { href: '/blog/blockchain-for-supply-chain-management', label: 'Blockchain', icon: '🔗', description: 'Blockchain insights' },
+        { href: '/blog/digital-transformation-strategies', label: 'Digital Transformation', icon: '🔄', description: 'Transformation guides' },
+        { href: '/blog/edge-ai-the-future-of-distributed-computing', label: 'Edge AI', icon: '🌐', description: 'Edge computing' },
+        { href: '/blog/cloud-native-architecture-patterns', label: 'Cloud Architecture', icon: '☁️', description: 'Cloud patterns' },
+        { href: '/blog/microservices-best-practices', label: 'Microservices', icon: '🔧', description: 'Microservices guide' },
+        { href: '/blog/sustainable-technology-solutions', label: 'Sustainable Tech', icon: '🌱', description: 'Green technology' },
+        { href: '/blog/augmented-reality-in-enterprise', label: 'AR in Enterprise', icon: '🥽', description: 'AR applications' },
+        { href: '/blog/serverless-computing-benefits', label: 'Serverless Computing', icon: '⚡', description: 'Serverless benefits' },
+        { href: '/blog/data-privacy-and-gdpr-compliance', label: 'Data Privacy', icon: '🔒', description: 'Privacy compliance' },
+        { href: '/blog/devops-automation-tools', label: 'DevOps Tools', icon: '⚙️', description: 'DevOps automation' },
+        { href: '/blog/quantum-computing-applications-in-business', label: 'Quantum Computing', icon: '⚛️', description: 'Quantum business' },
+        { href: '/blog/api-security-and-authentication', label: 'API Security', icon: '🔐', description: 'API protection' },
+        { href: '/docs', label: 'Documentation', icon: '📚', description: 'Technical docs' },
+        { href: '/api-docs', label: 'API Documentation', icon: '🔌', description: 'API reference' },
+        { href: '/help-desk-support', label: 'Help Desk', icon: '🎧', description: 'Get support' },
+        { href: '/faq', label: 'FAQ', icon: '❓', description: 'Frequently asked' },
       ]
     },
     { 
       href: '/about', 
       label: 'Company',
       children: [
-        { href: '/about', label: 'About Us' },
-        { href: '/careers', label: 'Careers' },
-        { href: '/press', label: 'Press' },
-        { href: '/partners', label: 'Partners' },
-        { href: '/innovation', label: 'Innovation' },
-        { href: '/contact', label: 'Contact' },
-        { href: '/privacy-policy', label: 'Privacy Policy' },
-        { href: '/terms-of-service', label: 'Terms of Service' },
-        { href: '/security', label: 'Security' },
-        { href: '/compliance-governance', label: 'Compliance' },
-        { href: '/status', label: 'System Status' },
+        { href: '/about', label: 'About Us', icon: '🏢', description: 'Our story' },
+        { href: '/careers', label: 'Careers', icon: '💼', description: 'Join our team' },
+        { href: '/press', label: 'Press', icon: '📰', description: 'Press releases' },
+        { href: '/partners', label: 'Partners', icon: '🤝', description: 'Partnerships' },
+        { href: '/innovation', label: 'Innovation', icon: '💡', description: 'Our innovations' },
+        { href: '/contact', label: 'Contact', icon: '📞', description: 'Get in touch' },
+        { href: '/privacy-policy', label: 'Privacy Policy', icon: '🔒', description: 'Privacy information' },
+        { href: '/terms-of-service', label: 'Terms of Service', icon: '📋', description: 'Terms and conditions' },
+        { href: '/security', label: 'Security', icon: '🛡️', description: 'Security measures' },
+        { href: '/compliance-governance', label: 'Compliance', icon: '📋', description: 'Compliance info' },
+        { href: '/status', label: 'System Status', icon: '📊', description: 'Service status' },
       ]
     },
   ];
@@ -144,7 +144,7 @@ const Layout: React.FC<LayoutProps> = ({
     <motion.button
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg font-medium transition-colors text-sm lg:text-base"
+      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 text-sm lg:text-base shadow-lg"
     >
       Get Started
     </motion.button>
@@ -161,7 +161,7 @@ const Layout: React.FC<LayoutProps> = ({
       
       <div className="min-h-screen bg-gray-50">
         {/* Header */}
-        <EnhancedNavigation 
+        <ImprovedNavigation 
           items={navigationItems}
           ctaButton={ctaButton}
           variant="light"
@@ -215,66 +215,22 @@ const Layout: React.FC<LayoutProps> = ({
                 </ul>
               </div>
               
-              {/* Resources & Company */}
+              {/* Marketplace */}
               <div>
-                <h4 className="text-md font-semibold mb-4">Resources & Company</h4>
+                <h4 className="text-md font-semibold mb-4">Marketplace</h4>
                 <ul className="space-y-2 text-gray-400">
-                  <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
-                  <li><Link href="/blog/cybersecurity-in-the-age-of-ai" className="hover:text-white transition-colors">Cybersecurity</Link></li>
-                  <li><Link href="/blog/machine-learning-in-healthcare" className="hover:text-white transition-colors">Healthcare ML</Link></li>
-                  <li><Link href="/blog/blockchain-for-supply-chain-management" className="hover:text-white transition-colors">Blockchain</Link></li>
-                  <li><Link href="/blog/digital-transformation-strategies" className="hover:text-white transition-colors">Digital Transformation</Link></li>
-                  <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
-                  <li><Link href="/careers" className="hover:text-white transition-colors">Careers</Link></li>
-                  <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
-                </ul>
-              </div>
-            </div>
-            
-            {/* Additional Footer Sections */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 pt-8 border-t border-gray-800">
-              {/* Advanced Technologies */}
-              <div>
-                <h4 className="text-md font-semibold mb-4">Advanced Technologies</h4>
-                <ul className="space-y-2 text-gray-400">
-                  <li><Link href="/quantum-computing" className="hover:text-white transition-colors">Quantum Computing</Link></li>
-                  <li><Link href="/blockchain-solutions" className="hover:text-white transition-colors">Blockchain Solutions</Link></li>
-                  <li><Link href="/iot-platforms" className="hover:text-white transition-colors">IoT Platforms</Link></li>
-                  <li><Link href="/virtual-reality" className="hover:text-white transition-colors">Virtual Reality</Link></li>
-                  <li><Link href="/augmented-reality" className="hover:text-white transition-colors">Augmented Reality</Link></li>
-                  <li><Link href="/mixed-reality" className="hover:text-white transition-colors">Mixed Reality</Link></li>
-                </ul>
-              </div>
-              
-              {/* Business Solutions */}
-              <div>
-                <h4 className="text-md font-semibold mb-4">Business Solutions</h4>
-                <ul className="space-y-2 text-gray-400">
-                  <li><Link href="/marketplace" className="hover:text-white transition-colors">Marketplace</Link></li>
+                  <li><Link href="/marketplace" className="hover:text-white transition-colors">Browse Services</Link></li>
                   <li><Link href="/talent-directory" className="hover:text-white transition-colors">Talent Directory</Link></li>
                   <li><Link href="/join-talent" className="hover:text-white transition-colors">Join Talent</Link></li>
-                  <li><Link href="/project-management" className="hover:text-white transition-colors">Project Management</Link></li>
-                  <li><Link href="/analytics-dashboard" className="hover:text-white transition-colors">Analytics Dashboard</Link></li>
-                  <li><Link href="/executive-dashboard" className="hover:text-white transition-colors">Executive Dashboard</Link></li>
-                </ul>
-              </div>
-              
-              {/* Support & Tools */}
-              <div>
-                <h4 className="text-md font-semibold mb-4">Support & Tools</h4>
-                <ul className="space-y-2 text-gray-400">
-                  <li><Link href="/help-desk-support" className="hover:text-white transition-colors">Help Desk</Link></li>
-                  <li><Link href="/docs" className="hover:text-white transition-colors">Documentation</Link></li>
-                  <li><Link href="/api-docs" className="hover:text-white transition-colors">API Docs</Link></li>
-                  <li><Link href="/status" className="hover:text-white transition-colors">System Status</Link></li>
-                  <li><Link href="/security" className="hover:text-white transition-colors">Security</Link></li>
-                  <li><Link href="/compliance-governance" className="hover:text-white transition-colors">Compliance</Link></li>
+                  <li><Link href="/service-categories" className="hover:text-white transition-colors">Service Categories</Link></li>
+                  <li><Link href="/post-request" className="hover:text-white transition-colors">Post Request</Link></li>
+                  <li><Link href="/quote-requests" className="hover:text-white transition-colors">Quote Requests</Link></li>
                 </ul>
               </div>
             </div>
             
             <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-              <p>&copy; 2024 Zion App. All rights reserved. | <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link> | <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link></p>
+              <p>&copy; 2024 Zion App. All rights reserved.</p>
             </div>
           </div>
         </footer>
