@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useAuth } from '../../src/contexts/AuthContext'
-import PageLayout from '../../components/layout/PageLayout'
+import AuthLayout from '../../components/layout/AuthLayout'
 
 const ResetPassword: NextPage = () => {
   const [password, setPassword] = useState('')

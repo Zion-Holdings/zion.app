@@ -24,7 +24,7 @@ const IotPlatforms = () => {
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
                 Iot Platforms
               </h1>
-              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              <p className="text-xl text-high-contrast-secondary mb-8 max-w-3xl mx-auto">
                 Comprehensive IoT platforms that connect and manage your smart devices and sensors.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -50,7 +50,7 @@ const IotPlatforms = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 Key Features
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-high-contrast-secondary max-w-2xl mx-auto">
                 Discover the powerful capabilities that make our iot-platforms solution stand out
               </p>
             </motion.div>
@@ -70,7 +70,7 @@ const IotPlatforms = () => {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Advanced AI Capabilities</h3>
-                <p className="text-gray-600">Leverage cutting-edge AI technology for superior results</p>
+                <p className="text-high-contrast-tertiary">Leverage cutting-edge AI technology for superior results</p>
               </motion.div>
               
               <motion.div
@@ -86,7 +86,7 @@ const IotPlatforms = () => {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Real-time Processing</h3>
-                <p className="text-gray-600">Process data and make decisions in real-time</p>
+                <p className="text-high-contrast-tertiary">Process data and make decisions in real-time</p>
               </motion.div>
               
               <motion.div
@@ -102,7 +102,7 @@ const IotPlatforms = () => {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Scalable Architecture</h3>
-                <p className="text-gray-600">Scale your operations with flexible, cloud-native architecture</p>
+                <p className="text-high-contrast-tertiary">Scale your operations with flexible, cloud-native architecture</p>
               </motion.div>
               
               <motion.div
@@ -118,7 +118,7 @@ const IotPlatforms = () => {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Comprehensive Analytics</h3>
-                <p className="text-gray-600">Get detailed insights and analytics for informed decisions</p>
+                <p className="text-high-contrast-tertiary">Get detailed insights and analytics for informed decisions</p>
               </motion.div>
               
               <motion.div

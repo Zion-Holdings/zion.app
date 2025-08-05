@@ -2,11 +2,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import PageLayout from '../../components/layout/PageLayout'
+import AuthLayout from '../../components/layout/AuthLayout'
 
 const Signup: NextPage = () => {
   return (
-    <PageLayout>
+    <AuthLayout>
       <Head>
         <title>Sign Up - Zion</title>
         <meta name="description" content="Create your Zion account to access the AI-powered marketplace." />
@@ -81,7 +81,7 @@ const Signup: NextPage = () => {
           </div>
         </div>
       </div>
-    </PageLayout>
+    </AuthLayout>
   )
 }
 

@@ -1,64 +1,51 @@
 {
-  "name": "autonomous-service-generation-system",
+  "name": "autonomous-automation-system",
   "version": "1.0.0",
-  "description": "Autonomous system for continuously generating new services, solutions, and sales agents with market analysis and advertisement creation",
-  "main": "service-generation-orchestrator.js",
+  "description": "Autonomous automation system with responsive content agents and continuous improvement",
+  "main": "start-autonomous-system.js",
   "scripts": {
-    "start": "node service-generation-orchestrator.js",
-    "dev": "nodemon service-generation-orchestrator.js",
+    "start": "node start-autonomous-system.js",
+    "dev": "nodemon start-autonomous-system.js",
     "test": "jest",
-    "setup": "bash service-generation-cron.sh install",
-    "status": "bash service-generation-cron.sh status",
-    "logs": "bash service-generation-cron.sh logs",
-    "cleanup": "bash service-generation-cron.sh cleanup"
+    "status": "node -e \"console.log(require('./start-autonomous-system.js').getSystemStatus())\"",
+    "monitor": "node monitor-system.js"
   },
   "keywords": [
     "autonomous",
-    "service-generation",
     "automation",
-    "ai-agents",
-    "sales-automation",
-    "market-analysis",
-    "advertisement-generation"
+    "agents",
+    "ai",
+    "responsive",
+    "content",
+    "continuous-improvement"
   ],
-  "author": "Autonomous AI System",
+  "author": "Zion Tech Group",
   "license": "MIT",
   "dependencies": {
-    "@google/generative-ai": "^0.24.1",
-    "axios": "^1.11.0",
-    "chalk": "^4.1.2",
-    "cheerio": "^1.1.2",
-    "cli-progress": "^3.12.0",
-    "commander": "^11.1.0",
-    "cron-parser": "^5.3.0",
-    "fs-extra": "^11.1.1",
-    "inquirer": "^8.2.6",
-    "lodash": "^4.17.21",
-    "moment": "^2.29.4",
+    "@google/generative-ai": "^0.2.1",
     "node-cron": "^3.0.3",
-    "node-fetch": "^3.3.2",
+    "fs-extra": "^11.2.0",
+    "chalk": "^4.1.2",
     "ora": "^5.4.1",
-    "puppeteer": "^24.15.0",
-    "table": "^6.8.1",
-    "uuid": "^9.0.1",
-    "winston": "^3.11.0"
+    "figlet": "^1.7.0",
+    "cli-table3": "^0.6.3",
+    "moment": "^2.29.4",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "eslint": "^8.54.0",
+    "nodemon": "^3.0.2",
     "jest": "^29.7.0",
-    "nodemon": "^3.0.1",
-    "prettier": "^3.1.0"
+    "eslint": "^8.55.0"
   },
   "engines": {
-    "node": ">=16.0.0",
-    "npm": ">=8.0.0"
+    "node": ">=16.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/autonomous-ai/service-generation-system"
+    "url": "https://github.com/ziontechgroup/autonomous-automation-system.git"
   },
   "bugs": {
-    "url": "https://github.com/autonomous-ai/service-generation-system/issues"
+    "url": "https://github.com/ziontechgroup/autonomous-automation-system/issues"
   },
-  "homepage": "https://github.com/autonomous-ai/service-generation-system#readme"
+  "homepage": "https://github.com/ziontechgroup/autonomous-automation-system#readme"
 }
