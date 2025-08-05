@@ -1,8 +1,21 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import ResponsiveNavigation from '../components/ResponsiveNavigation'
 
 const Https___ziontechgroup_netlify_app_aboutPage: NextPage = () => {
+  const navigationItems = [
+    { href: '/marketplace', label: 'Marketplace' },
+    { href: '/about', label: 'About' },
+    { href: '/auth/login', label: 'Login' },
+  ];
+
+  const ctaButton = (
+    <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
+      Join Zion
+    </Link>
+  );
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
@@ -12,36 +25,11 @@ const Https___ziontechgroup_netlify_app_aboutPage: NextPage = () => {
       </Head>
 
       {/* Navigation */}
-      <nav className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <h1 className="text-2xl font-bold text-white">
-                  <Link href="/" className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                    Zion
-                  </Link>
-                </h1>
-              </div>
-            </div>
-            
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/marketplace" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Marketplace
-              </Link>
-              <Link href="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                About
-              </Link>
-              <Link href="/auth/login" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Login
-              </Link>
-              <Link href="/auth/signup" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-purple-500/25">
-                Join Zion
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <ResponsiveNavigation 
+        items={navigationItems}
+        ctaButton={ctaButton}
+        variant="dark"
+      />
 
       {/* Main Content */}
       <main className="flex-1">
@@ -104,15 +92,14 @@ const Https___ziontechgroup_netlify_app_aboutPage: NextPage = () => {
               <h4 className="text-white font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm">
                 <li><Link href="/help" className="text-gray-400 hover:text-white transition-colors">Help Center</Link></li>
-                <li><Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy</Link></li>
-                <li><Link href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms</Link></li>
+                <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact Us</Link></li>
+                <li><Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link></li>
               </ul>
             </div>
           </div>
-          <div className="mt-8 pt-8 border-t border-white/10 text-center">
-            <p className="text-gray-400 text-sm">
-              © 2024 Zion. All rights reserved.
-            </p>
+          
+          <div className="border-t border-white/10 mt-8 pt-8 text-center">
+            <p className="text-gray-400 text-sm">&copy; 2024 Zion Tech Group. All rights reserved.</p>
           </div>
         </div>
       </footer>
