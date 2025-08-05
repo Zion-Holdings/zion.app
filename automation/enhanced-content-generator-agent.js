@@ -258,9 +258,7 @@ class EnhancedContentGeneratorAgent {
     const prompt = this.buildContentPrompt(page, template);
     
     try {
-      const result = await this.model.generateContent(prompt);
-      const response = await result.response;
-      return response.text();
+      return await this.generateContentWithAI(prompt);
     } catch (error) {
       this.log(`AI content generation failed: ${error.message}`, 'ERROR');
       return this.generateFallbackContent(page, template);
