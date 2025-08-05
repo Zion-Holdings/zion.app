@@ -361,18 +361,19 @@ const Sidebar: React.FC = () => {
                         key={item.href}
                         href={item.href}
                         className={`
-                          flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors
+                          flex items-center space-x-3 px-3 py-2 rounded-xl transition-all duration-300 relative overflow-hidden group
                           ${isActive(item.href) 
-                            ? 'bg-blue-600 text-white' 
-                            : 'text-gray-400 hover:text-white hover:bg-gray-700'
+                            ? 'bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-lg' 
+                            : 'text-gray-400 hover:text-white hover:bg-gray-700/50'
                           }
                         `}
                         onClick={() => setIsOpen(false)}
                       >
-                        {item.icon && <item.icon className="w-4 h-4" />}
-                        <span className="text-sm">{item.label}</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        {item.icon && <item.icon className="w-4 h-4 relative z-10 group-hover:scale-110 transition-transform duration-300" />}
+                        <span className="text-sm relative z-10">{item.label}</span>
                         {item.badge && (
-                          <span className="ml-auto px-2 py-1 text-xs bg-blue-600 text-white rounded-full">
+                          <span className="ml-auto px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full relative z-10 animate-pulse">
                             {item.badge}
                           </span>
                         )}
