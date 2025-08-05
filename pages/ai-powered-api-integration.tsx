@@ -218,7 +218,7 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
   const [loading, setLoading] = useState(true);
   const [selectedTimeframe, setSelectedTimeframe] = useState('7d');
 
-  const loadAPIData = async () => {
+  const loadAPIData = useCallback(async () => {
     setLoading(true);
     try {
       const response = await fetch('/api/ai-api-integration', {
@@ -244,11 +244,11 @@ const AIPoweredAPIIntegrationPage: NextPage = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [selectedTimeframe]);
 
   useEffect(() => {
     loadAPIData();
-  }, [selectedTimeframe, loadAPIData]);
+  }, [loadAPIData]);
 
   const getStatusColor = (status: string) => {
     switch (status) {
